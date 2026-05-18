@@ -1,6 +1,6 @@
 {
   "project_name": "IndologyScholars",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "last_updated": "2026-05-18T18:45:00+03:00",
   "status": "Production-Ready",
   "pipeline_verification": {
@@ -56,7 +56,7 @@
     {
       "path": "index.html",
       "type": "Interactive Web App",
-      "description": "Sleek, responsive dark-mode dashboard with dual-language (Russian/English) support, elegant lifespan displays, and six interactive SVG/Canvas charts (including Interactive Academic Collaboration Network, Cities Geography representation, Age Demographics, and Gender Composition)."
+      "description": "Sleek, responsive dark-mode dashboard with dual-language (Russian/English) support, elegant lifespan displays, and eight interactive SVG/Canvas charts (including Interactive Academic Collaboration Network, Cities Geography SVG map, Institutions Leaderboard, Thematic Word Cloud, Age Demographics, and Gender Composition)."
     },
     {
       "path": "site_data.js",
