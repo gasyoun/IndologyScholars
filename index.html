@@ -722,8 +722,11 @@
 </head>
 <body>
 
-    <!-- Premium Language Switcher -->
-    <div class="lang-switch-container">
+    <!-- Premium Controls Container -->
+    <div class="lang-switch-container" style="display: flex; gap: 1rem;">
+        <button class="lang-switch-btn" id="export-md-btn" onclick="exportToMarkdown()" style="background: rgba(139, 92, 246, 0.15); border-color: rgba(139, 92, 246, 0.4);">
+            <span style="font-size: 1rem;">⬇️</span> Markdown
+        </button>
         <button class="lang-switch-btn" id="lang-switch-btn" onclick="toggleLanguage()">
             <span style="font-size: 1rem;">🌐</span> RU / EN
         </button>
@@ -780,6 +783,14 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                     </svg>
                     <input type="text" class="search-input" id="scholars-search" placeholder="Поиск ученых по фамилии, имени, отчеству..." oninput="handleFilterChange()">
+                </div>
+
+                <div class="search-wrapper" style="flex: 1;">
+                    <!-- Document Search Icon SVG -->
+                    <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                    <input type="text" class="search-input" id="talks-search" placeholder="Поиск в названиях докладов..." oninput="handleFilterChange()">
                 </div>
                 
                 <select class="select-filter" id="filter-series" onchange="handleFilterChange()">
@@ -1137,7 +1148,8 @@ CREATE TABLE presentation_person (
                 chartNetworkTitle: "Интерактивный граф научных связей (Коллаборации по секциям)",
                 netResetBtn: "Сбросить",
                 netPauseBtn: "Пауза",
-                netResumeBtn: "Запуск"
+                netResumeBtn: "Запуск",
+                searchTalksPlaceholder: "Поиск в названиях докладов..."
             },
             en: {
                 mainHeading: "Russian Indological Scholarship",
@@ -1155,6 +1167,7 @@ CREATE TABLE presentation_person (
                 tabCharts: "Statistical Insights",
                 tabSchema: "Database Architecture",
                 searchPlaceholder: "Search scholars by display name or initials...",
+                searchTalksPlaceholder: "Search in presentation titles...",
                 filterAll: "All Conferences",
                 filterZograf: "Zograf Readings (St. Petersburg)",
                 filterRoerich: "Roerich Readings (Moscow)",
@@ -1250,6 +1263,8 @@ CREATE TABLE presentation_person (
 
             // Search placeholder
             document.getElementById('scholars-search').placeholder = t.searchPlaceholder;
+            const talksSearch = document.getElementById('talks-search');
+            if (talksSearch) talksSearch.placeholder = t.searchTalksPlaceholder;
 
             // Filters
             document.getElementById('opt-all').textContent = t.filterAll;
@@ -1400,6 +1415,8 @@ CREATE TABLE presentation_person (
         // Handle filters and sort changes
         function handleFilterChange() {
             const searchVal = document.getElementById('scholars-search').value.toLowerCase().trim();
+            const talksSearchInput = document.getElementById('talks-search');
+            const talksSearchVal = talksSearchInput ? talksSearchInput.value.toLowerCase().trim() : '';
             const seriesFilter = document.getElementById('filter-series').value;
             const sortFilter = document.getElementById('filter-sort').value;
 
@@ -1410,11 +1427,16 @@ CREATE TABLE presentation_person (
                                       (s.full_name_ru && s.full_name_ru.toLowerCase().includes(searchVal)) ||
                                       (s.full_name_en && s.full_name_en.toLowerCase().includes(searchVal)) ||
                                       s.all_affiliations.some(aff => aff.toLowerCase().includes(searchVal)) ||
-                                      s.talks.some(talk => 
+                                      (s.sessions || s.talks).some(talk => 
                                           talk.title.toLowerCase().includes(searchVal) || 
                                           (talk.geography && talk.geography.ru.toLowerCase().includes(searchVal)) ||
                                           (talk.geography && talk.geography.en.toLowerCase().includes(searchVal))
                                       );
+                
+                let matchesTalksSearch = true;
+                if (talksSearchVal) {
+                    matchesTalksSearch = (s.sessions || s.talks).some(talk => talk.title.toLowerCase().includes(talksSearchVal));
+                }
                 
                 let matchesSeries = true;
                 if (seriesFilter === 'zograf') {
@@ -1429,7 +1451,7 @@ CREATE TABLE presentation_person (
                     matchesSeries = s.roerich_talks === 0;
                 }
 
-                return matchesSearch && matchesSeries;
+                return matchesSearch && matchesTalksSearch && matchesSeries;
             });
 
             // Apply Sorting
@@ -1581,10 +1603,20 @@ CREATE TABLE presentation_person (
                         `;
                     }
                     
+                    const talksSearchInput = document.getElementById('talks-search');
+                    const talksSearchVal = talksSearchInput ? talksSearchInput.value.trim() : '';
+                    let displayTitle = talk.title;
+                    if (talksSearchVal !== '') {
+                        // escape regex characters just in case
+                        const safeSearch = talksSearchVal.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                        const regex = new RegExp(`(${safeSearch})`, 'gi');
+                        displayTitle = displayTitle.replace(regex, '<mark style="background-color: rgba(139, 92, 246, 0.5); color: #fff; padding: 0 2px; border-radius: 2px;">$1</mark>');
+                    }
+
                     return `
                         <div class="talk-item">
                             <div class="talk-title">
-                                «${talk.title}» 
+                                «${displayTitle}» 
                                 ${talk.is_online ? `<span class="badge badge-online">${t.onlineBadge}</span>` : ''}
                                 ${orderPillHtml}
                                 ${themeBadgeHtml}
@@ -2650,6 +2682,40 @@ CREATE TABLE presentation_person (
             isNetPhysicsRunning = !isNetPhysicsRunning;
             const t = TRANSLATIONS[currentLang];
             document.getElementById('net-pause-btn').textContent = isNetPhysicsRunning ? t.netPauseBtn : t.netResumeBtn;
+        }
+
+        function exportToMarkdown() {
+            const isRu = currentLang === 'ru';
+            let content = isRu ? `# Выборка исследователей-индологов\n` : `# Selected Indology Scholars\n`;
+            content += isRu ? `*Сгенерировано платформой IndologyScholars: ${new Date().toISOString().split('T')[0]}*\n` : `*Generated by IndologyScholars Platform: ${new Date().toISOString().split('T')[0]}*\n`;
+            content += isRu ? `*Найдено ученых: ${filteredScholars.length}*\n\n---\n\n` : `*Scholars Found: ${filteredScholars.length}*\n\n---\n\n`;
+
+            filteredScholars.forEach(s => {
+                content += `## ${s.name}\n`;
+                content += isRu ? `* **Докладов**: ${s.total_talks} (Зографские: ${s.zograf_talks}, Рериховские: ${s.roerich_talks})\n` : `* **Total Talks**: ${s.total_talks} (Zograf: ${s.zograf_talks}, Roerich: ${s.roerich_talks})\n`;
+                
+                const yearsList = [...new Set(s.sessions.map(sess => sess.year))].sort();
+                const yearsStr = yearsList.length > 0 ? (yearsList.length === 1 ? `${yearsList[0]}` : `${yearsList[0]} - ${yearsList[yearsList.length - 1]}`) : 'N/A';
+                content += isRu ? `* **Годы активности**: ${yearsStr}\n` : `* **Active Years**: ${yearsStr}\n`;
+                content += isRu ? `* **Доминирующая тема**: ${translateThemeCode(s.dominant_theme)}\n\n` : `* **Dominant Theme**: ${translateThemeCode(s.dominant_theme)}\n\n`;
+                
+                content += isRu ? `### Список докладов:\n` : `### Presentations List:\n`;
+                s.sessions.sort((a, b) => b.year - a.year).forEach((sess, idx) => {
+                    const venueStr = sess.series === 'Zograf' ? (isRu ? 'Зографские' : 'Zograf Readings') : (isRu ? 'Рериховские' : 'Roerich Readings');
+                    content += `${idx + 1}. ${sess.title} (${sess.year}, ${venueStr})\n`;
+                });
+                content += `\n---\n\n`;
+            });
+
+            const blob = new Blob([content], { type: 'text/markdown;charset=utf-8' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `indology_export_${new Date().toISOString().split('T')[0]}.md`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
         }
 
         // Initialize Application
