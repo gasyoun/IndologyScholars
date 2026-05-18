@@ -688,6 +688,57 @@ def main():
             "weight": w
         })
 
+    # 5. Affiliations Leaderboard
+    def normalize_affiliation(aff):
+        if not aff: return None
+        a = aff.lower()
+        if 'ивр ' in a or 'восточных рукописей' in a: return 'ИВР РАН'
+        if 'ив ран' in a or 'востоковедения ран' in a or 'ивран' in a: return 'ИВ РАН'
+        if 'спбгу' in a or 'петербургский' in a: return 'СПбГУ'
+        if 'мгу' in a or 'ломоносова' in a: return 'МГУ'
+        if 'вшэ' in a or 'высшая школа' in a: return 'НИУ ВШЭ'
+        if 'рггу' in a or 'гуманитарный' in a: return 'РГГУ'
+        if 'маэ' in a or 'кунсткамера' in a: return 'МАЭ РАН'
+        if 'эрмитаж' in a: return 'Государственный Эрмитаж'
+        if 'институт философии' in a or 'иф ран' in a: return 'ИФ РАН'
+        if 'независим' in a or 'independent' in a: return 'Независимые исследователи'
+        return None
+        
+    inst_map = {}
+    for s in scholars:
+        # Keep track of unique scholars per inst
+        for t in s["talks"]:
+            norm = normalize_affiliation(t["affiliation"])
+            if norm:
+                if norm not in inst_map:
+                    inst_map[norm] = {"name": norm, "total_talks": 0, "scholars_set": set()}
+                inst_map[norm]["total_talks"] += 1
+                inst_map[norm]["scholars_set"].add(s["id"])
+                
+    institutions_stats = []
+    for k, v in inst_map.items():
+        institutions_stats.append({
+            "name": k,
+            "total_talks": v["total_talks"],
+            "unique_scholars": len(v["scholars_set"])
+        })
+    institutions_stats.sort(key=lambda x: x["total_talks"], reverse=True)
+
+    # 6. Word Cloud (N-gram)
+    import re
+    stop_words = set(['в', 'на', 'и', 'с', 'по', 'к', 'для', 'о', 'из', 'от', 'за', 'до', 'как', 'не', 'что', 'или', 'а', 'же', 'то', 'у', 'об', 'это', 'при', 'он', 'его', 'было', 'быть', 'так', 'только', 'этом', 'ли', 'бы', 'их', 'ее', 'если', 'все', 'во', 'мы', 'нам', 'под', 'над', 'проблема', 'вопрос', 'исследование', 'текст', 'перевод', 'анализ', 'опыт', 'некоторые', 'книги', 'слова', 'язык', 'языка', 'словарь', 'история', 'век', 'года', 'проблемы', 'книга', 'текста', 'тексты', 'the', 'of', 'and', 'in', 'to', 'a', 'on', 'for', 'with', 'by', 'an', 'as', 'at', 'from'])
+    word_freq = {}
+    for s in scholars:
+        for t in s["talks"]:
+            # Extract words
+            words = re.findall(r'[а-яА-Яa-zA-Z]{4,}', t["title"].lower())
+            for w in words:
+                if w not in stop_words:
+                    word_freq[w] = word_freq.get(w, 0) + 1
+    
+    top_words = sorted(word_freq.items(), key=lambda x: x[1], reverse=True)[:60]
+    word_cloud = [{"text": w[0], "weight": w[1]} for w in top_words]
+
     # Write as a javascript module file
     site_data = {
         "scholars": scholars,
@@ -696,6 +747,8 @@ def main():
         "geography_stats": geography_stats,
         "gender_stats": gender_stats,
         "age_stats": age_groups,
+        "institutions_stats": institutions_stats,
+        "word_cloud": word_cloud,
         "network": {
             "nodes": network_nodes,
             "links": network_links

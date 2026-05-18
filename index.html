@@ -909,6 +909,33 @@
                     </div>
                 </div>
 
+                <!-- Institutions Leaderboard -->
+                <div class="chart-card">
+                    <h3 class="chart-title" id="chart-inst-title">Рейтинг научно-исследовательских центров</h3>
+                    <div id="chart-inst" style="height: 350px; overflow-y: auto;">
+                        <table style="width: 100%; border-collapse: collapse; margin-top: 0.5rem;">
+                            <thead>
+                                <tr style="border-bottom: 1px solid rgba(255,255,255,0.1); color: var(--text-secondary); font-size: 0.8rem; text-align: left;">
+                                    <th style="padding: 0.5rem;">Аффилиация</th>
+                                    <th style="padding: 0.5rem;">Ученые</th>
+                                    <th style="padding: 0.5rem;">Доклады</th>
+                                </tr>
+                            </thead>
+                            <tbody id="inst-tbody">
+                                <!-- Dynamic Leaderboard rows -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Thematic Word Cloud -->
+                <div class="chart-card">
+                    <h3 class="chart-title" id="chart-words-title">Тематическое облако тегов (N-Gram Analysis)</h3>
+                    <div id="chart-words" style="height: 350px; position: relative; background: rgba(10, 14, 26, 0.4); border-radius: 8px; display: flex; flex-wrap: wrap; justify-content: center; align-content: center; padding: 1rem; overflow: hidden; gap: 0.5rem;">
+                        <!-- Dynamic Word Cloud spans -->
+                    </div>
+                </div>
+
             </div>
         </section>
 
@@ -1149,7 +1176,12 @@ CREATE TABLE presentation_person (
                 netResetBtn: "Сбросить",
                 netPauseBtn: "Пауза",
                 netResumeBtn: "Запуск",
-                searchTalksPlaceholder: "Поиск в названиях докладов..."
+                searchTalksPlaceholder: "Поиск в названиях докладов...",
+                chartInstTitle: "Рейтинг научно-исследовательских центров",
+                chartWordsTitle: "Тематическое облако тегов (N-Gram Analysis)",
+                thAffil: "Аффилиация",
+                thScholars: "Ученые",
+                thTalks: "Доклады"
             },
             en: {
                 mainHeading: "Russian Indological Scholarship",
@@ -1224,7 +1256,12 @@ CREATE TABLE presentation_person (
                 chartNetworkTitle: "Interactive Academic Collaboration Graph (Session Co-occurrence)",
                 netResetBtn: "Reset",
                 netPauseBtn: "Pause",
-                netResumeBtn: "Resume"
+                netResumeBtn: "Resume",
+                chartInstTitle: "Academic and Research Institutions Leaderboard",
+                chartWordsTitle: "Thematic Tag Cloud (N-Gram Analysis)",
+                thAffil: "Affiliation",
+                thScholars: "Scholars",
+                thTalks: "Talks"
             }
         };
 
@@ -1303,11 +1340,18 @@ CREATE TABLE presentation_person (
                 document.getElementById('chart-network-title').textContent = t.chartNetworkTitle;
                 document.getElementById('net-reset-btn').textContent = t.netResetBtn;
                 document.getElementById('net-pause-btn').textContent = isNetPhysicsRunning ? t.netPauseBtn : t.netResumeBtn;
+                document.getElementById('chart-inst-title').textContent = t.chartInstTitle;
+                document.getElementById('chart-words-title').textContent = t.chartWordsTitle;
+                document.querySelectorAll('#inst-table th')[0].textContent = t.thAffil;
+                document.querySelectorAll('#inst-table th')[1].textContent = t.thScholars;
+                document.querySelectorAll('#inst-table th')[2].textContent = t.thTalks;
                 renderGrowthChart();
                 renderCohortDistribution();
                 renderGeoChart();
                 renderAgeChart();
                 renderGenderChart();
+                renderInstChart();
+                renderWordCloud();
             }
         }
 
@@ -1332,11 +1376,18 @@ CREATE TABLE presentation_person (
                 document.getElementById('chart-network-title').textContent = t.chartNetworkTitle;
                 document.getElementById('net-reset-btn').textContent = t.netResetBtn;
                 document.getElementById('net-pause-btn').textContent = isNetPhysicsRunning ? t.netPauseBtn : t.netResumeBtn;
+                document.getElementById('chart-inst-title').textContent = t.chartInstTitle;
+                document.getElementById('chart-words-title').textContent = t.chartWordsTitle;
+                document.querySelectorAll('#inst-table th')[0].textContent = t.thAffil;
+                document.querySelectorAll('#inst-table th')[1].textContent = t.thScholars;
+                document.querySelectorAll('#inst-table th')[2].textContent = t.thTalks;
                 renderGrowthChart();
                 renderCohortDistribution();
                 renderGeoChart();
                 renderAgeChart();
                 renderGenderChart();
+                renderInstChart();
+                renderWordCloud();
                 startNetworkGraph();
             } else {
                 stopNetworkGraph();
@@ -2321,6 +2372,88 @@ CREATE TABLE presentation_person (
 
             addLabel(x, 90, labelMaleTitle, `${mPercent.toFixed(1)}%`, '#c084fc');
             addLabel(x + wM + 15, 230, labelFemaleTitle, `${fPercent.toFixed(1)}%`, '#f472b6');
+        }
+
+        // Draw Interactive Institutions Leaderboard
+        function renderInstChart() {
+            const tbody = document.getElementById('inst-tbody');
+            if (!tbody) return;
+            tbody.innerHTML = '';
+            const instData = CONFERENCE_DATA.institutions_stats || [];
+            
+            // Top 10 institutions
+            const displayData = instData.slice(0, 10);
+            
+            displayData.forEach(d => {
+                const tr = document.createElement('tr');
+                tr.style.borderBottom = '1px solid rgba(255,255,255,0.05)';
+                tr.innerHTML = `
+                    <td style="padding: 0.75rem 0.5rem; color: #ffffff; font-weight: 500;">
+                        <span style="color: var(--accent-secondary); cursor: pointer; border-bottom: 1px dashed rgba(236,72,153,0.4);" onclick="switchTab('scholars'); setDashboardSearch('${d.name.replace(/'/g, "\\'")}')">
+                            ${translateAffiliation(d.name)}
+                        </span>
+                    </td>
+                    <td style="padding: 0.75rem 0.5rem; color: var(--text-secondary);">${d.unique_scholars}</td>
+                    <td style="padding: 0.75rem 0.5rem; color: var(--accent-primary); font-weight: 700;">${d.total_talks}</td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        // Draw Interactive Word Cloud
+        function renderWordCloud() {
+            const container = document.getElementById('chart-words');
+            if (!container) return;
+            container.innerHTML = '';
+            
+            const wordsData = CONFERENCE_DATA.word_cloud || [];
+            if (wordsData.length === 0) return;
+            
+            const maxWeight = Math.max(...wordsData.map(w => w.weight));
+            const minWeight = Math.min(...wordsData.map(w => w.weight));
+            
+            // Generate spans
+            wordsData.forEach(w => {
+                const span = document.createElement('span');
+                
+                // Scale font size linearly between 0.8rem and 2.5rem
+                const normalizedWeight = (w.weight - minWeight) / (maxWeight - minWeight);
+                const fontSize = 0.8 + normalizedWeight * 1.7;
+                
+                // Color gradient based on weight
+                const opacity = 0.4 + normalizedWeight * 0.6;
+                
+                span.textContent = w.text;
+                span.style.fontSize = fontSize + 'rem';
+                span.style.color = \`rgba(139, 92, 246, \${opacity})\`;
+                span.style.lineHeight = '1';
+                span.style.fontWeight = normalizedWeight > 0.5 ? '700' : '400';
+                span.style.cursor = 'pointer';
+                span.style.transition = '0.2s';
+                span.style.whiteSpace = 'nowrap';
+                
+                // Interactive highlight on hover
+                span.onmouseover = () => {
+                    span.style.color = '#ffffff';
+                    span.style.textShadow = '0 0 10px rgba(139, 92, 246, 0.8)';
+                };
+                span.onmouseout = () => {
+                    span.style.color = \`rgba(139, 92, 246, \${opacity})\`;
+                    span.style.textShadow = 'none';
+                };
+                
+                // Click to search
+                span.onclick = () => {
+                    switchTab('scholars');
+                    const talksSearch = document.getElementById('talks-search');
+                    if (talksSearch) {
+                        talksSearch.value = w.text;
+                        handleFilterChange();
+                    }
+                };
+                
+                container.appendChild(span);
+            });
         }
 
         // ==========================================

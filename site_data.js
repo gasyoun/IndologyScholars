@@ -49049,6 +49049,295 @@ const CONFERENCE_DATA = {
     "senior": 18,
     "elders": 18
   },
+  "institutions_stats": [
+    {
+      "name": "ИВ РАН",
+      "total_talks": 160,
+      "unique_scholars": 40
+    },
+    {
+      "name": "МГУ",
+      "total_talks": 36,
+      "unique_scholars": 16
+    },
+    {
+      "name": "СПбГУ",
+      "total_talks": 30,
+      "unique_scholars": 5
+    },
+    {
+      "name": "НИУ ВШЭ",
+      "total_talks": 15,
+      "unique_scholars": 10
+    },
+    {
+      "name": "ИФ РАН",
+      "total_talks": 12,
+      "unique_scholars": 4
+    },
+    {
+      "name": "РГГУ",
+      "total_talks": 4,
+      "unique_scholars": 2
+    },
+    {
+      "name": "Независимые исследователи",
+      "total_talks": 2,
+      "unique_scholars": 2
+    },
+    {
+      "name": "Государственный Эрмитаж",
+      "total_talks": 1,
+      "unique_scholars": 1
+    },
+    {
+      "name": "ИВР РАН",
+      "total_talks": 1,
+      "unique_scholars": 1
+    }
+  ],
+  "word_cloud": [
+    {
+      "text": "индии",
+      "weight": 31
+    },
+    {
+      "text": "поэзии",
+      "weight": 29
+    },
+    {
+      "text": "традиции",
+      "weight": 28
+    },
+    {
+      "text": "индийской",
+      "weight": 24
+    },
+    {
+      "text": "рериха",
+      "weight": 19
+    },
+    {
+      "text": "москва",
+      "weight": 18
+    },
+    {
+      "text": "образ",
+      "weight": 17
+    },
+    {
+      "text": "вопросу",
+      "weight": 17
+    },
+    {
+      "text": "особенности",
+      "weight": 17
+    },
+    {
+      "text": "санскритской",
+      "weight": 16
+    },
+    {
+      "text": "интерпретации",
+      "weight": 15
+    },
+    {
+      "text": "текстов",
+      "weight": 15
+    },
+    {
+      "text": "философии",
+      "weight": 14
+    },
+    {
+      "text": "языке",
+      "weight": 13
+    },
+    {
+      "text": "буддийской",
+      "weight": 12
+    },
+    {
+      "text": "роль",
+      "weight": 12
+    },
+    {
+      "text": "бхакти",
+      "weight": 12
+    },
+    {
+      "text": "примере",
+      "weight": 12
+    },
+    {
+      "text": "традиция",
+      "weight": 11
+    },
+    {
+      "text": "истории",
+      "weight": 11
+    },
+    {
+      "text": "рамаяны",
+      "weight": 11
+    },
+    {
+      "text": "культуре",
+      "weight": 11
+    },
+    {
+      "text": "буддийских",
+      "weight": 10
+    },
+    {
+      "text": "индийские",
+      "weight": 10
+    },
+    {
+      "text": "средневековой",
+      "weight": 10
+    },
+    {
+      "text": "древней",
+      "weight": 10
+    },
+    {
+      "text": "текстах",
+      "weight": 10
+    },
+    {
+      "text": "контексте",
+      "weight": 10
+    },
+    {
+      "text": "собрания",
+      "weight": 10
+    },
+    {
+      "text": "буддизма",
+      "weight": 9
+    },
+    {
+      "text": "будды",
+      "weight": 9
+    },
+    {
+      "text": "индийского",
+      "weight": 9
+    },
+    {
+      "text": "санскритских",
+      "weight": 9
+    },
+    {
+      "text": "рерих",
+      "weight": 9
+    },
+    {
+      "text": "санкт",
+      "weight": 9
+    },
+    {
+      "text": "тамильской",
+      "weight": 9
+    },
+    {
+      "text": "материале",
+      "weight": 9
+    },
+    {
+      "text": "сюжет",
+      "weight": 8
+    },
+    {
+      "text": "литературе",
+      "weight": 8
+    },
+    {
+      "text": "интерпретация",
+      "weight": 8
+    },
+    {
+      "text": "канона",
+      "weight": 8
+    },
+    {
+      "text": "источниках",
+      "weight": 8
+    },
+    {
+      "text": "петербург",
+      "weight": 8
+    },
+    {
+      "text": "семантика",
+      "weight": 8
+    },
+    {
+      "text": "тантры",
+      "weight": 8
+    },
+    {
+      "text": "индийских",
+      "weight": 8
+    },
+    {
+      "text": "буддийского",
+      "weight": 7
+    },
+    {
+      "text": "литературы",
+      "weight": 7
+    },
+    {
+      "text": "реконструкции",
+      "weight": 7
+    },
+    {
+      "text": "тибетского",
+      "weight": 7
+    },
+    {
+      "text": "концепции",
+      "weight": 7
+    },
+    {
+      "text": "пуранах",
+      "weight": 7
+    },
+    {
+      "text": "структуре",
+      "weight": 7
+    },
+    {
+      "text": "века",
+      "weight": 7
+    },
+    {
+      "text": "проблеме",
+      "weight": 7
+    },
+    {
+      "text": "абхинавагупты",
+      "weight": 7
+    },
+    {
+      "text": "хинди",
+      "weight": 7
+    },
+    {
+      "text": "мира",
+      "weight": 6
+    },
+    {
+      "text": "времени",
+      "weight": 6
+    },
+    {
+      "text": "истоки",
+      "weight": 6
+    }
+  ],
   "network": {
     "nodes": [
       {
