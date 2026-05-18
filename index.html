@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Russian Indological Scholarship: Unified Database & Statistical Dashboard</title>
-    <meta name="description" content="A premium interactive database and dashboard mapping the academic history, scholars, and presentations of the Zograf Readings and Roerich Readings conferences (2004–2025).">
+    <title>Российская индологическая наука: Единый архив и статистический дашборд</title>
+    <meta name="description" content="Интерактивная база данных и аналитическая панель, объединяющая научные доклады конференций «Зографские чтения» и «Рериховские чтения» (2004–2025 гг.).">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -123,6 +123,37 @@
             margin-bottom: 1.5rem;
             letter-spacing: 0.05em;
             text-transform: uppercase;
+        }
+
+        /* Language Switcher Button Style */
+        .lang-switch-container {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            z-index: 1000;
+        }
+
+        .lang-switch-btn {
+            background: rgba(17, 24, 44, 0.6);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            font-family: var(--font-display);
+            font-weight: 600;
+            cursor: pointer;
+            backdrop-filter: blur(10px);
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .lang-switch-btn:hover {
+            border-color: var(--accent-primary);
+            box-shadow: 0 4px 20px rgba(139, 92, 246, 0.3);
+            transform: translateY(-2px);
         }
 
         /* Stats Grid Section */
@@ -691,12 +722,18 @@
 </head>
 <body>
 
+    <!-- Premium Language Switcher -->
+    <div class="lang-switch-container">
+        <button class="lang-switch-btn" id="lang-switch-btn" onclick="toggleLanguage()">
+            <span style="font-size: 1rem;">🌐</span> RU / EN
+        </button>
+    </div>
+
     <!-- Header Hero Section -->
     <header>
         <div class="header-glow"></div>
-        <span class="tag" id="tag-title">Scientific Metadata Hub</span>
-        <h1 id="main-heading">Russian Indological Scholarship</h1>
-        <p>A unified, interactive statistical archive containing complete relational metadata of all historical years of the <strong class="gradient-text">Zograf Readings</strong> (2004–2025) and <strong class="gradient-text">Roerich Readings</strong> (2007–2025).</p>
+        <h1 id="main-heading">Российская индологическая наука</h1>
+        <p id="sub-heading">Единый интерактивный архив и статистическая панель научных докладов конференций «Зографские чтения» (2004–2025 гг.) и «Рериховских чтений» (2007–2025 гг.).</p>
     </header>
 
     <!-- Main Container -->
@@ -706,32 +743,32 @@
         <section class="stats-grid" id="stats-dashboard">
             <div class="stat-card" id="card-scholars">
                 <div class="stat-num gradient-text" id="stat-scholars-count">188</div>
-                <div class="stat-label">Unique Scholars</div>
-                <div class="stat-desc">Deduplicated indologists & speakers</div>
+                <div class="stat-label" id="stat-scholars-label">Уникальные ученые</div>
+                <div class="stat-desc" id="stat-scholars-desc">Дедуплицированные индологи и докладчики</div>
             </div>
             <div class="stat-card" id="card-talks">
                 <div class="stat-num gradient-text" id="stat-talks-count">707</div>
-                <div class="stat-label">Presentations & Talks</div>
-                <div class="stat-desc">Parsed from program HTML caches</div>
+                <div class="stat-label" id="stat-talks-label">Доклады и презентации</div>
+                <div class="stat-desc" id="stat-talks-desc">Извлечено из кэша программ конференций</div>
             </div>
             <div class="stat-card" id="card-years">
                 <div class="stat-num gradient-text" id="stat-years-count">22</div>
-                <div class="stat-label">Historical Years</div>
-                <div class="stat-desc">Covering 2004 through 2025</div>
+                <div class="stat-label" id="stat-years-label">Года исследований</div>
+                <div class="stat-desc" id="stat-years-desc">Период с 2004 по 2025 годы</div>
             </div>
             <div class="stat-card" id="card-overlap">
                 <div class="stat-num gradient-text" id="stat-overlap-count">30</div>
-                <div class="stat-label">Core Overlap Cohort</div>
-                <div class="stat-desc">Scholars active in both forums</div>
+                <div class="stat-label" id="stat-overlap-label">Ядро индологов</div>
+                <div class="stat-desc" id="stat-overlap-desc">Ученые, участвовавшие в обеих конференциях</div>
             </div>
         </section>
 
         <!-- Dynamic Control Center Buttons -->
         <nav class="controls" id="dashboard-controls">
-            <button class="tab-btn active" id="tab-scholars" onclick="switchTab('scholars')">Scholars Directory</button>
-            <button class="tab-btn" id="tab-timeline" onclick="switchTab('timeline')">Conferences Timeline</button>
-            <button class="tab-btn" id="tab-charts" onclick="switchTab('charts')">Statistical Insights</button>
-            <button class="tab-btn" id="tab-schema" onclick="switchTab('schema')">Database Architecture</button>
+            <button class="tab-btn active" id="tab-scholars" onclick="switchTab('scholars')">Каталог востоковедов</button>
+            <button class="tab-btn" id="tab-timeline" onclick="switchTab('timeline')">Хронология докладов</button>
+            <button class="tab-btn" id="tab-charts" onclick="switchTab('charts')">Статистический анализ</button>
+            <button class="tab-btn" id="tab-schema" onclick="switchTab('schema')">Архитектура БД</button>
         </nav>
 
         <!-- Tab 1: Scholars Directory -->
@@ -742,21 +779,23 @@
                     <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                     </svg>
-                    <input type="text" class="search-input" id="scholars-search" placeholder="Search scholars by display name or initials..." oninput="handleFilterChange()">
+                    <input type="text" class="search-input" id="scholars-search" placeholder="Поиск ученых по фамилии, имени, отчеству..." oninput="handleFilterChange()">
                 </div>
                 
                 <select class="select-filter" id="filter-series" onchange="handleFilterChange()">
-                    <option value="all">All Conferences</option>
-                    <option value="zograf">Zograf Readings (St. Petersburg)</option>
-                    <option value="roerich">Roerich Readings (Moscow)</option>
-                    <option value="both">Both (Overlapping Cohort)</option>
+                    <option value="all" id="opt-all">Все конференции</option>
+                    <option value="zograf" id="opt-zograf">Зографские чтения (Санкт-Петербург)</option>
+                    <option value="roerich" id="opt-roerich">Рериховские чтения (Москва)</option>
+                    <option value="both" id="opt-both">Обе конференции (Общий актив)</option>
+                    <option value="never-zograf" id="opt-never-zograf">Никогда не выступали на Зографских чт.</option>
+                    <option value="never-roerich" id="opt-never-roerich">Никогда не выступали на Рериховских чт.</option>
                 </select>
 
                 <select class="select-filter" id="filter-sort" onchange="handleFilterChange()">
-                    <option value="talks-desc">Sort by Talks (High to Low)</option>
-                    <option value="talks-asc">Sort by Talks (Low to High)</option>
-                    <option value="name-asc">Sort by Name (A-Z)</option>
-                    <option value="name-desc">Sort by Name (Z-A)</option>
+                    <option value="talks-desc" id="opt-talks-desc">Сортировать по докладам (по убыванию)</option>
+                    <option value="talks-asc" id="opt-talks-asc">Сортировать по докладам (по возрастанию)</option>
+                    <option value="name-asc" id="opt-name-asc">Сортировать по алфавиту (А-Я)</option>
+                    <option value="name-desc" id="opt-name-desc">Сортировать по алфавиту (Я-А)</option>
                 </select>
             </div>
 
@@ -764,11 +803,11 @@
                 <table id="scholars-table">
                     <thead>
                         <tr>
-                            <th style="width: 50%;">Scholar Display Name</th>
-                            <th style="width: 15%;">Total Talks</th>
-                            <th style="width: 15%;">Zograf Talks</th>
-                            <th style="width: 15%;">Roerich Talks</th>
-                            <th style="width: 15%;">Years Active</th>
+                            <th style="width: 50%;" id="th-name">ФИО ученого / Докладчика</th>
+                            <th style="width: 15%;" id="th-total">Всего докладов</th>
+                            <th style="width: 15%;" id="th-zograf">Зографские</th>
+                            <th style="width: 15%;" id="th-roerich">Рериховские</th>
+                            <th style="width: 15%;" id="th-years">Период активности</th>
                         </tr>
                     </thead>
                     <tbody id="scholars-tbody">
@@ -778,9 +817,9 @@
             </div>
 
             <div class="pagination-bar" id="scholars-pagination">
-                <button class="page-btn" id="prev-page-btn" onclick="changePage(-1)">Previous</button>
-                <span id="page-indicator" style="font-family: var(--font-display); font-weight: 500;">Page 1 of 10</span>
-                <button class="page-btn" id="next-page-btn" onclick="changePage(1)">Next</button>
+                <button class="page-btn" id="prev-page-btn" onclick="changePage(-1)">Предыдущая</button>
+                <span id="page-indicator" style="font-family: var(--font-display); font-weight: 500;">Страница 1 из 10</span>
+                <button class="page-btn" id="next-page-btn" onclick="changePage(1)">Следующая</button>
             </div>
         </section>
 
@@ -797,21 +836,64 @@
                 
                 <!-- Annual Growth Chart -->
                 <div class="chart-card">
-                    <h3 class="chart-title">Annual Trends: Growth of Presented Research (2004–2025)</h3>
+                    <h3 class="chart-title" id="chart-annual-title">Динамика научных исследований: Объем докладов по годам (2004–2025 гг.)</h3>
                     <div id="chart-annual-growth" style="height: 350px;">
-                        <!-- Premium Interactive SVG Bar/Line Chart -->
                         <svg id="svg-growth" width="100%" height="100%" viewBox="0 0 700 350" style="background: rgba(10, 14, 26, 0.4); border-radius: 8px;">
-                            <!-- Lines, Bars and Text rendered dynamically via JS -->
+                            <!-- Dynamic SVG chart -->
                         </svg>
                     </div>
                 </div>
 
                 <!-- Scholar Affinity Distribution -->
                 <div class="chart-card">
-                    <h3 class="chart-title">Scientific Affinity and Geographic Cohorts</h3>
+                    <h3 class="chart-title" id="chart-affinity-title">Научное сродство и географическое распределение кадров</h3>
                     <div id="chart-affinity" style="height: 350px;">
                         <svg id="svg-affinity" width="100%" height="100%" viewBox="0 0 700 350" style="background: rgba(10, 14, 26, 0.4); border-radius: 8px;">
-                            <!-- Affinity Cohort visual details -->
+                            <!-- Dynamic SVG chart -->
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Scholar Age Distribution Chart -->
+                <div class="chart-card">
+                    <h3 class="chart-title" id="chart-age-title">Демография: Возрастной состав исследователей (по году рождения)</h3>
+                    <div id="chart-age" style="height: 350px;">
+                        <svg id="svg-age" width="100%" height="100%" viewBox="0 0 700 350" style="background: rgba(10, 14, 26, 0.4); border-radius: 8px;">
+                            <!-- Dynamic SVG chart -->
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Gender Representation Chart -->
+                <div class="chart-card">
+                    <h3 class="chart-title" id="chart-gender-title">Гендерное представительство научного сообщества</h3>
+                    <div id="chart-gender" style="height: 350px;">
+                        <svg id="svg-gender" width="100%" height="100%" viewBox="0 0 700 350" style="background: rgba(10, 14, 26, 0.4); border-radius: 8px;">
+                            <!-- Dynamic SVG chart -->
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Interactive Academic Collaboration Graph (Network) -->
+                <div class="chart-card" style="grid-column: span 2;">
+                    <h3 class="chart-title" id="chart-network-title">Интерактивный граф научных связей (Коллаборации по секциям)</h3>
+                    <div id="chart-network-container" style="height: 480px; position: relative; background: rgba(10, 14, 26, 0.45); border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.05);">
+                        <canvas id="canvas-network" style="width: 100%; height: 100%; display: block; cursor: grab;"></canvas>
+                        <div id="network-tooltip" style="position: absolute; display: none; background: rgba(17, 24, 44, 0.95); border: 1px solid rgba(139, 92, 246, 0.5); padding: 0.75rem 1rem; border-radius: 8px; font-size: 0.85rem; color: #ffffff; pointer-events: none; backdrop-filter: blur(10px); box-shadow: 0 10px 25px rgba(0,0,0,0.3); z-index: 100; transition: opacity 0.15s ease;"></div>
+                        <!-- Control buttons for network -->
+                        <div style="position: absolute; bottom: 1rem; right: 1rem; display: flex; gap: 0.5rem; z-index: 99;">
+                            <button onclick="resetNetworkPhysics()" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.1); color: #ffffff; padding: 0.4rem 0.8rem; border-radius: 4px; font-size: 0.8rem; cursor: pointer; backdrop-filter: blur(5px); transition: 0.2s;" id="net-reset-btn">Сбросить</button>
+                            <button onclick="toggleNetworkPhysics()" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.1); color: #ffffff; padding: 0.4rem 0.8rem; border-radius: 4px; font-size: 0.8rem; cursor: pointer; backdrop-filter: blur(5px); transition: 0.2s;" id="net-pause-btn">Пауза</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Geographic Distribution Chart -->
+                <div class="chart-card" style="grid-column: span 2;">
+                    <h3 class="chart-title" id="chart-geo-title">Географическое представительство: Научные доклады по городам</h3>
+                    <div id="chart-geo" style="height: 350px;">
+                        <svg id="svg-geo" width="100%" height="100%" viewBox="0 0 700 350" style="background: rgba(10, 14, 26, 0.4); border-radius: 8px;">
+                            <!-- Dynamic SVG geographic chart -->
                         </svg>
                     </div>
                 </div>
@@ -822,8 +904,8 @@
         <!-- Tab 4: Database Architecture -->
         <section class="dashboard-section" id="sec-schema">
             <div class="schema-card">
-                <h3 class="chart-title" style="margin-bottom: 0.5rem;">Relational Database Schema (conferences.db)</h3>
-                <p style="color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 0.95rem;">The underlying normalized SQLite database utilizes a robust, referentially-sound DDL mapping venues, events, day schedules, sessions, presenters, and talks.</p>
+                <h3 class="chart-title" style="margin-bottom: 0.5rem;" id="db-title">Реляционная схема базы данных (conferences.db)</h3>
+                <p style="color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 0.95rem;" id="db-desc">Нормализованная база данных SQLite использует строгие ссылочные связи для сопоставления площадок, дат, залов заседаний, сессий, докладчиков и тем научных сообщений.</p>
                 <div class="code-block" id="schema-ddl-code">
 -- SQLite normalized database schema
 CREATE TABLE event_series (
@@ -971,20 +1053,248 @@ CREATE TABLE presentation_person (
 
     <!-- Footer Section -->
     <footer>
-        <div class="footer-logo">IndologyScholars</div>
-        <p>&copy; 2026 Russian Indological Research Archive. All rights reserved.</p>
-        <p>Built with ❤️ for scholars, researchers, and students. Data mapped under MIT License.</p>
+        <p id="footer-copyright">&copy; 2026 Российский индологический научный архив, д-р Марцис Гасунс. Все права защищены.</p>
     </footer>
 
     <!-- Load the dynamically compiled Javascript Data structure -->
     <script src="site_data.js"></script>
 
-    <!-- Main Dynamic Application Script -->
+    <!-- Main Dynamic Application Script with Bilingual Localization (RU / EN) -->
     <script>
+        // Language state
+        let currentLang = 'ru';
+
+        const TRANSLATIONS = {
+            ru: {
+                mainHeading: "Российская индологическая наука",
+                subHeading: "Интерактивный архив более чем 20-летней истории Зографских чтений (2004–2025 гг.) и Рериховских чтений (2007–2025 гг.) в России.",
+                statScholars: "Уникальные ученые",
+                statScholarsDesc: "Дедуплицированные индологи и докладчики",
+                statTalks: "Доклады и презентации",
+                statTalksDesc: "Извлечено из кэша программ конференций",
+                statYears: "Года исследований",
+                statYearsDesc: "Период с 2004 по 2025 годы",
+                statOverlap: "Ядро индологов",
+                statOverlapDesc: "Ученые, участвовавшие в обеих конференциях",
+                tabScholars: "Каталог востоковедов",
+                tabTimeline: "Хронология докладов",
+                tabCharts: "Статистический анализ",
+                tabSchema: "Архитектура БД",
+                searchPlaceholder: "Поиск ученых по фамилии, имени, отчеству...",
+                filterAll: "Все конференции",
+                filterZograf: "Зографские чтения (Санкт-Петербург)",
+                filterRoerich: "Рериховские чтения (Москва)",
+                filterBoth: "Обе конференции (Общий актив)",
+                filterNeverZograf: "Никогда не выступали на Зографских чт.",
+                filterNeverRoerich: "Никогда не выступали на Рериховских чт.",
+                sortTalksDesc: "Сортировать по докладам (по убыванию)",
+                sortTalksAsc: "Сортировать по докладам (по возрастанию)",
+                sortNameAsc: "Сортировать по алфавиту (А-Я)",
+                sortNameDesc: "Сортировать по алфавиту (Я-А)",
+                colName: "ФИО ученого / Докладчика",
+                colTotal: "Всего докладов",
+                colZograf: "Зографские",
+                colRoerich: "Рериховские",
+                colYears: "Период активности",
+                btnPrev: "Предыдущая",
+                btnNext: "Следующая",
+                pageIndicator: "Страница {current} из {total} ({count} ученых)",
+                emptySearch: "Докладчики с такими параметрами не найдены.",
+                detailsTitle: "Научные доклады и темы ({count})",
+                venue: "Площадка",
+                session: "Заседание",
+                day: "День недели",
+                chartAnnualTitle: "Динамика научных исследований: Объем докладов по годам (2004–2025 гг.)",
+                chartAffinityTitle: "Научное сродство и географическое распределение кадров",
+                chartLegendTotal: "Общий объем научных докладов",
+                chartLegendZograf: "Зографские чтения (СПб)",
+                chartLegendRoerich: "Рериховские чтения (Москва)",
+                spbCohort: "Санкт-Петербург ({count})",
+                spbCohortDesc: "{percent}% ученых только в Зографских чт.",
+                overlapCohort: "Общее ядро ({count})",
+                overlapCohortDesc: "{percent}% ученых в обеих конференциях",
+                moscowCohort: "Москва ({count})",
+                moscowCohortDesc: "{percent}% ученых только в Рериховских чт.",
+                dbTitle: "Реляционная схема базы данных (conferences.db)",
+                dbDesc: "Нормализованная база данных SQLite использует строгие ссылочные связи для сопоставления площадок, дат, залов заседаний, сессий, докладчиков и тем научных сообщений.",
+                onlineBadge: "Zoom / Онлайн",
+                zografReadingsLabel: "Зографские чтения",
+                roerichReadingsLabel: "Рериховские чтения",
+                footerCopyright: "© 2026 Российский индологический научный архив, д-р Марцис Гасунс. Все права защищены.",
+                
+                // New academic and temporal keys
+                studentBadge: "Студент / Аспирант",
+                independentBadge: "Независимый исследователь (НИ)",
+                firstTalkBadge: "Открывающий доклад",
+                lastTalkBadge: "Закрывающий доклад",
+                orderTalkBadge: "{num}-й доклад из {total}",
+                changedAffilLabel: "Аффилиации за все годы:",
+                timeLabel: "Интервал",
+                chartGeoTitle: "Географическое представительство: Научные доклады по городам",
+                geoNoData: "Географические данные не указаны",
+                chartAgeTitle: "Демография: Возрастной состав исследователей (по году рождения)",
+                chartGenderTitle: "Гендерное представительство научного сообщества",
+                chartNetworkTitle: "Интерактивный граф научных связей (Коллаборации по секциям)",
+                netResetBtn: "Сбросить",
+                netPauseBtn: "Пауза",
+                netResumeBtn: "Запуск"
+            },
+            en: {
+                mainHeading: "Russian Indological Scholarship",
+                subHeading: "Interactive archive of last 20+ years of the Zograf Readings (2004–2025) and Roerich Readings (2007–2025) from Russia.",
+                statScholars: "Unique Scholars",
+                statScholarsDesc: "Deduplicated indologists & speakers",
+                statTalks: "Presentations & Talks",
+                statTalksDesc: "Parsed from program HTML caches",
+                statYears: "Historical Years",
+                statYearsDesc: "Covering 2004 through 2025",
+                statOverlap: "Core Overlap Cohort",
+                statOverlapDesc: "Scholars active in both forums",
+                tabScholars: "Scholars Directory",
+                tabTimeline: "Conferences Timeline",
+                tabCharts: "Statistical Insights",
+                tabSchema: "Database Architecture",
+                searchPlaceholder: "Search scholars by display name or initials...",
+                filterAll: "All Conferences",
+                filterZograf: "Zograf Readings (St. Petersburg)",
+                filterRoerich: "Roerich Readings (Moscow)",
+                filterBoth: "Both (Overlapping Cohort)",
+                filterNeverZograf: "Never active at Zograf Readings",
+                filterNeverRoerich: "Never active at Roerich Readings",
+                sortTalksDesc: "Sort by Talks (High to Low)",
+                sortTalksAsc: "Sort by Talks (Low to High)",
+                sortNameAsc: "Sort by Name (A-Z)",
+                sortNameDesc: "Sort by Name (Z-A)",
+                colName: "Scholar Display Name",
+                colTotal: "Total Talks",
+                colZograf: "Zograf Talks",
+                colRoerich: "Roerich Talks",
+                colYears: "Years Active",
+                btnPrev: "Previous",
+                btnNext: "Next",
+                pageIndicator: "Page {current} of {total} ({count} scholars)",
+                emptySearch: "No scholars found matching the filters.",
+                detailsTitle: "Academic Presentations and Roles ({count})",
+                venue: "Venue",
+                session: "Session",
+                day: "Day of Week",
+                chartAnnualTitle: "Annual Trends: Growth of Presented Research (2004–2025)",
+                chartAffinityTitle: "Scientific Affinity and Geographic Cohorts",
+                chartLegendTotal: "Total Presented Papers",
+                chartLegendZograf: "Zograf Readings (SPb)",
+                chartLegendRoerich: "Roerich Readings (Moscow)",
+                spbCohort: "St. Petersburg ({count})",
+                spbCohortDesc: "{percent}% Zograf-only cohort",
+                overlapCohort: "Overlap Core ({count})",
+                overlapCohortDesc: "{percent}% cross-active cohort",
+                moscowCohort: "Moscow ({count})",
+                moscowCohortDesc: "{percent}% Roerich-only cohort",
+                dbTitle: "Relational Database Schema (conferences.db)",
+                dbDesc: "The underlying normalized SQLite database utilizes a robust, referentially-sound DDL mapping venues, events, day schedules, sessions, presenters, and talks.",
+                onlineBadge: "Zoom / Online",
+                zografReadingsLabel: "Zograf Readings",
+                roerichReadingsLabel: "Roerich Readings",
+                footerCopyright: "© 2026 Russian Indological Research Archive, Dr. Mārcis Gasūns. All rights reserved.",
+                
+                // New academic and temporal keys
+                studentBadge: "Student / PG",
+                independentBadge: "Independent Researcher (IR)",
+                firstTalkBadge: "Opening Talk",
+                lastTalkBadge: "Closing Talk",
+                orderTalkBadge: "Talk {num} of {total}",
+                changedAffilLabel: "Affiliations history:",
+                timeLabel: "Interval",
+                chartGeoTitle: "Geographical Representation: Papers by Cities",
+                geoNoData: "Geographical data not specified",
+                chartAgeTitle: "Demographics: Scholar Age Distribution (by birth year)",
+                chartGenderTitle: "Gender Representation in Indology Scholarship",
+                chartNetworkTitle: "Interactive Academic Collaboration Graph (Session Co-occurrence)",
+                netResetBtn: "Reset",
+                netPauseBtn: "Pause",
+                netResumeBtn: "Resume"
+            }
+        };
+
         // Pagination state
         let currentPage = 1;
         const pageSize = 12;
         let filteredScholars = [];
+
+        // Toggle language in real-time
+        function toggleLanguage() {
+            currentLang = currentLang === 'ru' ? 'en' : 'ru';
+            
+            // Update button label
+            document.getElementById('lang-switch-btn').innerHTML = `<span style="font-size: 1rem;">🌐</span> ${currentLang === 'ru' ? 'RU / EN' : 'EN / RU'}`;
+            
+            // Translate static elements
+            const t = TRANSLATIONS[currentLang];
+            document.getElementById('main-heading').textContent = t.mainHeading;
+            document.getElementById('sub-heading').textContent = t.subHeading;
+            
+            // Metrics
+            document.getElementById('stat-scholars-label').textContent = t.statScholars;
+            document.getElementById('stat-scholars-desc').textContent = t.statScholarsDesc;
+            document.getElementById('stat-talks-label').textContent = t.statTalks;
+            document.getElementById('stat-talks-desc').textContent = t.statTalksDesc;
+            document.getElementById('stat-years-label').textContent = t.statYears;
+            document.getElementById('stat-years-desc').textContent = t.statYearsDesc;
+            document.getElementById('stat-overlap-label').textContent = t.statOverlap;
+            document.getElementById('stat-overlap-desc').textContent = t.statOverlapDesc;
+
+            // Navigation
+            document.getElementById('tab-scholars').textContent = t.tabScholars;
+            document.getElementById('tab-timeline').textContent = t.tabTimeline;
+            document.getElementById('tab-charts').textContent = t.tabCharts;
+            document.getElementById('tab-schema').textContent = t.tabSchema;
+
+            // Search placeholder
+            document.getElementById('scholars-search').placeholder = t.searchPlaceholder;
+
+            // Filters
+            document.getElementById('opt-all').textContent = t.filterAll;
+            document.getElementById('opt-zograf').textContent = t.filterZograf;
+            document.getElementById('opt-roerich').textContent = t.filterRoerich;
+            document.getElementById('opt-both').textContent = t.filterBoth;
+            document.getElementById('opt-never-zograf').textContent = t.filterNeverZograf;
+            document.getElementById('opt-never-roerich').textContent = t.filterNeverRoerich;
+
+            document.getElementById('opt-talks-desc').textContent = t.sortTalksDesc;
+            document.getElementById('opt-talks-asc').textContent = t.sortTalksAsc;
+            document.getElementById('opt-name-asc').textContent = t.sortNameAsc;
+            document.getElementById('opt-name-desc').textContent = t.sortNameDesc;
+
+            // Table headers
+            document.getElementById('th-name').textContent = t.colName;
+            document.getElementById('th-total').textContent = t.colTotal;
+            document.getElementById('th-zograf').textContent = t.colZograf;
+            document.getElementById('th-roerich').textContent = t.colRoerich;
+            document.getElementById('th-years').textContent = t.colYears;
+
+            // Schema
+            document.getElementById('db-title').textContent = t.dbTitle;
+            document.getElementById('db-desc').textContent = t.dbDesc;
+
+            // Footer
+            document.getElementById('footer-copyright').textContent = t.footerCopyright;
+
+            // Re-render dynamic content
+            renderScholarsTable();
+            initTimeline();
+            if (document.getElementById('sec-charts').classList.contains('active')) {
+                document.getElementById('chart-geo-title').textContent = t.chartGeoTitle;
+                document.getElementById('chart-age-title').textContent = t.chartAgeTitle;
+                document.getElementById('chart-gender-title').textContent = t.chartGenderTitle;
+                document.getElementById('chart-network-title').textContent = t.chartNetworkTitle;
+                document.getElementById('net-reset-btn').textContent = t.netResetBtn;
+                document.getElementById('net-pause-btn').textContent = isNetPhysicsRunning ? t.netPauseBtn : t.netResumeBtn;
+                renderGrowthChart();
+                renderCohortDistribution();
+                renderGeoChart();
+                renderAgeChart();
+                renderGenderChart();
+            }
+        }
 
         // Tab switcher
         function switchTab(tabId) {
@@ -1000,8 +1310,21 @@ CREATE TABLE presentation_person (
             
             // Re-render SVG charts when switching to statistical insights tab
             if (tabId === 'charts') {
+                const t = TRANSLATIONS[currentLang];
+                document.getElementById('chart-geo-title').textContent = t.chartGeoTitle;
+                document.getElementById('chart-age-title').textContent = t.chartAgeTitle;
+                document.getElementById('chart-gender-title').textContent = t.chartGenderTitle;
+                document.getElementById('chart-network-title').textContent = t.chartNetworkTitle;
+                document.getElementById('net-reset-btn').textContent = t.netResetBtn;
+                document.getElementById('net-pause-btn').textContent = isNetPhysicsRunning ? t.netPauseBtn : t.netResumeBtn;
                 renderGrowthChart();
                 renderCohortDistribution();
+                renderGeoChart();
+                renderAgeChart();
+                renderGenderChart();
+                startNetworkGraph();
+            } else {
+                stopNetworkGraph();
             }
         }
 
@@ -1013,16 +1336,65 @@ CREATE TABLE presentation_person (
             }
         }
 
-        // Format dates helper
+        // Format dates/labels helper
         function formatDayLabel(label) {
-            if (!label) return 'unspecified';
-            return label.replace(/\s+/g, ' ');
+            if (!label) return currentLang === 'ru' ? 'не указан' : 'unspecified';
+            // Translate day word if English
+            let dayText = label.replace(/\s+/g, ' ');
+            if (currentLang === 'en') {
+                dayText = dayText.replace(/Понедельник/g, 'Monday')
+                                 .replace(/Вторник/g, 'Tuesday')
+                                 .replace(/Среда/g, 'Wednesday')
+                                 .replace(/Четверг/g, 'Thursday')
+                                 .replace(/Пятница/g, 'Friday')
+                                 .replace(/Суббота/g, 'Saturday')
+                                 .replace(/Воскресенье/g, 'Sunday')
+                                 .replace(/мая/g, 'May')
+                                 .replace(/декабря/g, 'December');
+            }
+            return dayText;
+        }
+
+        // Translate dynamic values
+        function translateAffiliation(val) {
+            if (!val) return currentLang === 'ru' ? 'не указана' : 'unspecified';
+            if (currentLang === 'en') {
+                return val.replace(/СПб/g, 'SPb')
+                          .replace(/СПбГУ/g, 'SPbSU')
+                          .replace(/ИВР РАН/g, 'IOM RAS')
+                          .replace(/ИВ РАН/g, 'IOS RAS')
+                          .replace(/МГУ/g, 'MSU')
+                          .replace(/РГГУ/g, 'RSUH')
+                          .replace(/ВШЭ/g, 'HSE')
+                          .replace(/ИНД/g, 'IND')
+                          .replace(/МОСКВА/g, 'MOSCOW');
+            }
+            return val;
         }
 
         // Initialize scholars directory
         function initScholars() {
             filteredScholars = [...CONFERENCE_DATA.scholars];
             renderScholarsTable();
+        }
+
+        // Click-to-filter helper for affiliations and cities on dashboard
+        function setDashboardSearch(keyword) {
+            const searchInput = document.getElementById('scholars-search');
+            searchInput.value = keyword;
+            handleFilterChange();
+        }
+
+        // Translate theme code dynamically
+        function translateThemeCode(code) {
+            const themes = {
+                AcademicHistory: { ru: "История науки и архивы", en: "History of Scholarship" },
+                Linguistics: { ru: "Лингвистика и филология", en: "Linguistics & Philology" },
+                Philosophy: { ru: "Философия и религия", en: "Philosophy & Religion" },
+                Art: { ru: "Искусство и литература", en: "Art & Literature" },
+                History: { ru: "История и этнография", en: "History & Ethnography" }
+            };
+            return themes[code] ? themes[code][currentLang] : (currentLang === 'ru' ? 'История и этнография' : 'History & Ethnography');
         }
 
         // Handle filters and sort changes
@@ -1033,7 +1405,16 @@ CREATE TABLE presentation_person (
 
             // Apply search & conference affinity filters
             filteredScholars = CONFERENCE_DATA.scholars.filter(s => {
-                const matchesSearch = s.name.toLowerCase().includes(searchVal);
+                const matchesSearch = s.name.toLowerCase().includes(searchVal) ||
+                                      s.original_fullname.toLowerCase().includes(searchVal) ||
+                                      (s.full_name_ru && s.full_name_ru.toLowerCase().includes(searchVal)) ||
+                                      (s.full_name_en && s.full_name_en.toLowerCase().includes(searchVal)) ||
+                                      s.all_affiliations.some(aff => aff.toLowerCase().includes(searchVal)) ||
+                                      s.talks.some(talk => 
+                                          talk.title.toLowerCase().includes(searchVal) || 
+                                          (talk.geography && talk.geography.ru.toLowerCase().includes(searchVal)) ||
+                                          (talk.geography && talk.geography.en.toLowerCase().includes(searchVal))
+                                      );
                 
                 let matchesSeries = true;
                 if (seriesFilter === 'zograf') {
@@ -1042,6 +1423,10 @@ CREATE TABLE presentation_person (
                     matchesSeries = s.roerich_talks > 0 && s.zograf_talks === 0;
                 } else if (seriesFilter === 'both') {
                     matchesSeries = s.zograf_talks > 0 && s.roerich_talks > 0;
+                } else if (seriesFilter === 'never-zograf') {
+                    matchesSeries = s.zograf_talks === 0;
+                } else if (seriesFilter === 'never-roerich') {
+                    matchesSeries = s.roerich_talks === 0;
                 }
 
                 return matchesSearch && matchesSeries;
@@ -1067,6 +1452,7 @@ CREATE TABLE presentation_person (
             const tbody = document.getElementById('scholars-tbody');
             tbody.innerHTML = '';
 
+            const t = TRANSLATIONS[currentLang];
             const totalItems = filteredScholars.length;
             const totalPages = Math.ceil(totalItems / pageSize) || 1;
 
@@ -1077,7 +1463,13 @@ CREATE TABLE presentation_person (
             // Update Pagination display
             document.getElementById('prev-page-btn').disabled = currentPage === 1;
             document.getElementById('next-page-btn').disabled = currentPage === totalPages;
-            document.getElementById('page-indicator').textContent = `Page ${currentPage} of ${totalPages} (${totalItems} scholars)`;
+            
+            document.getElementById('prev-page-btn').textContent = t.btnPrev;
+            document.getElementById('next-page-btn').textContent = t.btnNext;
+            document.getElementById('page-indicator').textContent = t.pageIndicator
+                .replace('{current}', currentPage)
+                .replace('{total}', totalPages)
+                .replace('{count}', totalItems);
 
             const startIdx = (currentPage - 1) * pageSize;
             const endIdx = Math.min(startIdx + pageSize, totalItems);
@@ -1085,28 +1477,45 @@ CREATE TABLE presentation_person (
             const displayList = filteredScholars.slice(startIdx, endIdx);
 
             if (displayList.length === 0) {
-                tbody.innerHTML = `<tr><td colspan="5" style="text-align: center; color: var(--text-muted); padding: 3rem;">No scholars found matching the filters.</td></tr>`;
+                tbody.innerHTML = `<tr><td colspan="5" style="text-align: center; color: var(--text-muted); padding: 3rem;">${t.emptySearch}</td></tr>`;
                 return;
             }
 
             displayList.forEach(s => {
                 let badgeClass = 'badge-both';
-                let badgeLabel = 'Both Readings';
+                let badgeLabel = t.filterBoth;
                 if (s.zograf_talks > 0 && s.roerich_talks === 0) {
                     badgeClass = 'badge-zograf';
-                    badgeLabel = 'Zograf Readings';
+                    badgeLabel = t.zografReadingsLabel;
                 } else if (s.roerich_talks > 0 && s.zograf_talks === 0) {
                     badgeClass = 'badge-roerich';
-                    badgeLabel = 'Roerich Readings';
+                    badgeLabel = t.roerichReadingsLabel;
                 }
 
                 // Master row
                 const row = document.createElement('tr');
                 row.style.cursor = 'pointer';
                 row.onclick = () => toggleRowDetail(s.id);
+                
+                // Localized display name and years of life formatting
+                const displayName = currentLang === 'ru' ? s.full_name_ru : s.full_name_en;
+                let lifeYears = '';
+                if (s.birth_year) {
+                    if (s.death_year) {
+                        lifeYears = ` (${s.birth_year}–${s.death_year})`;
+                    } else {
+                        lifeYears = currentLang === 'ru' ? ` (род. {birth_year})`.replace('{birth_year}', s.birth_year) : ` (b. {birth_year})`.replace('{birth_year}', s.birth_year);
+                    }
+                }
+                
                 row.innerHTML = `
                     <td>
-                        <div style="font-weight: 600; color: #ffffff;">${s.name}</div>
+                        <div style="font-weight: 600; color: #ffffff;">
+                            <a href="scholars/${s.id}.html" style="color: #ffffff; text-decoration: none; border-bottom: 1px dashed rgba(255,255,255,0.4); transition: var(--transition);" onmouseover="this.style.color='var(--accent-primary)'; this.style.borderColor='var(--accent-primary)'" onmouseout="this.style.color='#ffffff'; this.style.borderColor='rgba(255,255,255,0.4)'" onclick="event.stopPropagation();">
+                                ${displayName}
+                            </a>
+                            <span style="color: var(--text-secondary); font-weight: 400; font-size: 0.85rem; margin-left: 0.4rem;">${lifeYears}</span>
+                        </div>
                         <span class="badge ${badgeClass}" style="margin-top: 0.25rem;">${badgeLabel}</span>
                     </td>
                     <td style="font-weight: 700; color: var(--accent-primary); font-size: 1.1rem;">${s.total_talks}</td>
@@ -1121,19 +1530,122 @@ CREATE TABLE presentation_person (
                 detailRow.id = 'detail-' + s.id;
                 detailRow.className = 'scholar-row-detail';
                 
-                let talksListHtml = s.talks.map(t => `
-                    <div class="talk-item">
-                        <div class="talk-title">«${t.title}» ${t.is_online ? '<span class="badge badge-online">Zoom / Online</span>' : ''}</div>
-                        <div class="talk-meta">
-                            Presented at <strong>${t.series}</strong> (${t.year}) | Affiliation: <em>${t.affiliation || 'unspecified'}</em>
+                // Add scholarly badges
+                let academicBadgesHtml = '';
+                if (s.is_student) {
+                    academicBadgesHtml += `<span class="badge badge-roerich" style="margin-right: 0.5rem; margin-bottom: 0.5rem; text-transform: none; font-size: 0.8rem;">🎓 ${t.studentBadge}</span>`;
+                }
+                if (s.is_independent) {
+                    academicBadgesHtml += `<span class="badge badge-zograf" style="margin-right: 0.5rem; margin-bottom: 0.5rem; text-transform: none; font-size: 0.8rem;">💼 ${t.independentBadge}</span>`;
+                }
+                
+                let affiliationHistoryHtml = '';
+                if (s.has_changed_affiliations && s.all_affiliations.length > 1) {
+                    const mappedAffHtml = s.all_affiliations.map(aff => {
+                        return `<span style="color: var(--accent-secondary); cursor: pointer; border-bottom: 1px dashed rgba(236,72,153,0.4);" onclick="event.stopPropagation(); setDashboardSearch('${aff.replace(/'/g, "\\'")}')">${translateAffiliation(aff)}</span>`;
+                    }).join(' → ');
+                    affiliationHistoryHtml += `
+                        <div style="margin-top: 0.5rem; margin-bottom: 1rem; font-size: 0.85rem; color: var(--text-secondary); background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); padding: 0.5rem 1rem; border-radius: 6px;">
+                            <strong>${t.changedAffilLabel}</strong> ${mappedAffHtml}
                         </div>
-                    </div>
-                `).join('');
+                    `;
+                }
+                
+                let talksListHtml = s.talks.map(talk => {
+                    const translatedSeries = talk.series.includes('Zograf') ? t.zografReadingsLabel : t.roerichReadingsLabel;
+                    const dayName = talk.day_of_week ? talk.day_of_week[currentLang] : (currentLang === 'ru' ? 'Не указан' : 'Not specified');
+                    
+                    // Order pills
+                    let orderPillHtml = `<span class="badge" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: var(--text-secondary); font-size: 0.7rem; text-transform: none; margin-left: 0.5rem;"># ${t.orderTalkBadge.replace('{num}', talk.order_in_session).replace('{total}', talk.total_in_session)}</span>`;
+                    if (talk.is_first_talk) {
+                        orderPillHtml += `<span class="badge badge-zograf" style="font-size: 0.7rem; text-transform: none; margin-left: 0.5rem;">🥇 ${t.firstTalkBadge}</span>`;
+                    }
+                    if (talk.is_last_talk) {
+                        orderPillHtml += `<span class="badge badge-roerich" style="font-size: 0.7rem; text-transform: none; margin-left: 0.5rem;">🎖️ ${t.lastTalkBadge}</span>`;
+                    }
+                    
+                    const talkThemeCode = talk.theme ? talk.theme.code : 'History';
+                    const talkThemeName = talk.theme ? talk.theme[currentLang] : (currentLang === 'ru' ? 'История и этнография' : 'History & Ethnography');
+                    const themeBadgeHtml = `<span class="badge badge-theme theme-${talkThemeCode}" style="font-size: 0.7rem; text-transform: none; margin-left: 0.5rem; font-weight: 600;">${talkThemeName}</span>`;
+
+                    // Clickable city tag
+                    let cityHtml = '';
+                    if (talk.geography && talk.geography[currentLang] !== 'Не указана' && talk.geography[currentLang] !== 'Not specified') {
+                        cityHtml = `
+                            <span style="margin-left: 1.5rem;">
+                                📍 <strong>${currentLang === 'ru' ? 'Город' : 'City'}</strong>: 
+                                <span style="color: var(--accent-primary); cursor: pointer; border-bottom: 1px dashed rgba(139,92,246,0.4);" onclick="event.stopPropagation(); setDashboardSearch('${talk.geography[currentLang].replace(/'/g, "\\'")}')">
+                                    ${talk.geography[currentLang]}
+                                </span>
+                            </span>
+                        `;
+                    }
+                    
+                    return `
+                        <div class="talk-item">
+                            <div class="talk-title">
+                                «${talk.title}» 
+                                ${talk.is_online ? `<span class="badge badge-online">${t.onlineBadge}</span>` : ''}
+                                ${orderPillHtml}
+                                ${themeBadgeHtml}
+                            </div>
+                            <div class="talk-meta" style="margin-top: 0.5rem;">
+                                <span>🏛️ ${currentLang === 'ru' ? 'Выступление на' : 'Presented at'} <strong>${translatedSeries}</strong> (${talk.year})</span>
+                                <span style="margin-left: 1rem;">
+                                    🏢 ${currentLang === 'ru' ? 'Аффилиация' : 'Affiliation'}: 
+                                    <em style="color: var(--accent-secondary); cursor: pointer; border-bottom: 1px dashed rgba(236,72,153,0.4);" onclick="event.stopPropagation(); setDashboardSearch('${talk.affiliation.replace(/'/g, "\\'")}')">
+                                        ${translateAffiliation(talk.affiliation)}
+                                    </em>
+                                </span>
+                            </div>
+                            <div class="talk-meta" style="margin-top: 0.25rem; font-size: 0.78rem; color: var(--text-muted);">
+                                <span>📅 <strong>${t.day}</strong>: ${dayName}</span>
+                                <span style="margin-left: 1.5rem;">⏰ <strong>${t.timeLabel}</strong>: ${talk.time_interval}</span>
+                                <span style="margin-left: 1.5rem;">💬 <strong>${t.session}</strong>: ${talk.session_title}</span>
+                                ${cityHtml}
+                            </div>
+                        </div>
+                    `;
+                }).join('');
 
                 detailRow.innerHTML = `
                     <td colspan="5">
                         <div class="detail-wrapper">
-                            <div class="detail-title">Academic Presentations and Roles (${s.talks.length})</div>
+                            <div style="display: flex; flex-wrap: wrap; align-items: center; margin-bottom: 0.5rem;">
+                                ${academicBadgesHtml}
+                            </div>
+                            ${affiliationHistoryHtml}
+                            
+                            <!-- Premium Careers & Analytics Panel -->
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-top: 0.5rem; margin-bottom: 1rem;">
+                                <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); padding: 0.8rem; border-radius: 8px;">
+                                    <div style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.25rem;">
+                                        ${t.zografReadingsLabel}
+                                    </div>
+                                    <div style="font-family: var(--font-display); font-weight: 600; font-size: 0.95rem; color: #ffffff;">
+                                        ${s.zograf_first ? `${currentLang === 'ru' ? 'Впервые' : 'First'}: ${s.zograf_first} | ${currentLang === 'ru' ? 'Последний раз' : 'Last'}: ${s.zograf_last}` : (currentLang === 'ru' ? 'Никогда не выступал' : 'Never presented')}
+                                    </div>
+                                </div>
+                                <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); padding: 0.8rem; border-radius: 8px;">
+                                    <div style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.25rem;">
+                                        ${t.roerichReadingsLabel}
+                                    </div>
+                                    <div style="font-family: var(--font-display); font-weight: 600; font-size: 0.95rem; color: #ffffff;">
+                                        ${s.roerich_first ? `${currentLang === 'ru' ? 'Впервые' : 'First'}: ${s.roerich_first} | ${currentLang === 'ru' ? 'Последний раз' : 'Last'}: ${s.roerich_last}` : (currentLang === 'ru' ? 'Никогда не выступал' : 'Never presented')}
+                                    </div>
+                                </div>
+                                <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); padding: 0.8rem; border-radius: 8px;">
+                                    <div style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.25rem;">
+                                        ${currentLang === 'ru' ? 'Профиль исследований' : 'Research Profile'}
+                                    </div>
+                                    <div style="font-family: var(--font-display); font-weight: 600; font-size: 0.95rem; color: #ffffff;">
+                                        ${s.thematic_breadth === 'Interdisciplinary' ? (currentLang === 'ru' ? 'Междисциплинарный исследователь' : 'Interdisciplinary Scholar') : (currentLang === 'ru' ? 'Узкий специалист' : 'Specialized Specialist')}
+                                        ${s.dominant_theme ? `<span class="badge theme-${s.dominant_theme}" style="margin-left: 0.4rem; padding: 0.1rem 0.4rem; font-size: 0.7rem; text-transform: none; font-weight: 600;">${translateThemeCode(s.dominant_theme)}</span>` : ''}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="detail-title">${t.detailsTitle.replace('{count}', s.talks.length)}</div>
                             ${talksListHtml}
                         </div>
                     </td>
@@ -1166,6 +1678,7 @@ CREATE TABLE presentation_person (
             const container = document.getElementById('timeline-accordion');
             container.innerHTML = '';
 
+            const t = TRANSLATIONS[currentLang];
             const years = Object.keys(CONFERENCE_DATA.timeline).sort((a,b) => b - a);
 
             years.forEach(year => {
@@ -1179,13 +1692,13 @@ CREATE TABLE presentation_person (
                 card.className = 'year-card';
 
                 let yearBadgeHtml = '';
-                if (zTalks.length > 0) yearBadgeHtml += `<span class="badge badge-zograf" style="margin-right: 0.5rem;">Zograf: ${zTalks.length}</span>`;
-                if (rTalks.length > 0) yearBadgeHtml += `<span class="badge badge-roerich">Roerich: ${rTalks.length}</span>`;
+                if (zTalks.length > 0) yearBadgeHtml += `<span class="badge badge-zograf" style="margin-right: 0.5rem;">${t.colZograf}: ${zTalks.length}</span>`;
+                if (rTalks.length > 0) yearBadgeHtml += `<span class="badge badge-roerich">${t.colRoerich}: ${rTalks.length}</span>`;
 
                 card.innerHTML = `
                     <div class="year-header" onclick="toggleYear('${year}')">
                         <div class="year-title">
-                            ${year} г.
+                            ${year} ${currentLang === 'ru' ? 'г.' : ''}
                             <div style="display: inline-flex;">${yearBadgeHtml}</div>
                         </div>
                         <div class="year-indicator">
@@ -1198,45 +1711,93 @@ CREATE TABLE presentation_person (
                     <div class="year-body">
                         ${zTalks.length > 0 ? `
                             <div class="series-block">
-                                <div class="series-title-header">XLVI Зографские чтения (Санкт-Петербург)</div>
+                                <div class="series-title-header">${t.zografReadingsLabel}</div>
                                 <div class="talks-timeline-list">
-                                    ${zTalks.map(t => `
-                                        <div class="timeline-talk-card">
-                                            <div class="timeline-talk-title">«${t.title}»</div>
-                                            <div class="timeline-talk-speaker">
-                                                <strong>${t.speaker}</strong> 
-                                                <span class="badge badge-zograf" style="font-size: 0.7rem;">${t.affiliation || 'unspecified'}</span>
-                                                ${t.is_online ? '<span class="badge badge-online">Zoom / Online</span>' : ''}
+                                    ${zTalks.map(talk => {
+                                        const dayName = talk.day_of_week ? talk.day_of_week[currentLang] : (currentLang === 'ru' ? 'Не указан' : 'Not specified');
+                                        
+                                        // Rank/order badge
+                                        let orderPillHtml = `<span class="badge" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: var(--text-secondary); font-size: 0.65rem; text-transform: none; margin-left: 0.5rem; padding: 0.15rem 0.4rem;"># ${t.orderTalkBadge.replace('{num}', talk.order_in_session).replace('{total}', talk.total_in_session)}</span>`;
+                                        if (talk.is_first_talk) {
+                                            orderPillHtml += `<span class="badge badge-zograf" style="font-size: 0.65rem; text-transform: none; margin-left: 0.5rem; padding: 0.15rem 0.4rem;">🥇 ${t.firstTalkBadge}</span>`;
+                                        }
+                                        if (talk.is_last_talk) {
+                                            orderPillHtml += `<span class="badge badge-roerich" style="font-size: 0.65rem; text-transform: none; margin-left: 0.5rem; padding: 0.15rem 0.4rem;">🎖️ ${t.lastTalkBadge}</span>`;
+                                        }
+
+                                        let presenterBadges = '';
+                                        if (talk.is_student) presenterBadges += `<span class="badge badge-roerich" style="font-size: 0.65rem; text-transform: none; margin-left: 0.5rem; padding: 0.15rem 0.4rem;">🎓 ${t.studentBadge}</span>`;
+                                        if (talk.is_independent) presenterBadges += `<span class="badge badge-zograf" style="font-size: 0.65rem; text-transform: none; margin-left: 0.5rem; padding: 0.15rem 0.4rem;">💼 ${t.independentBadge}</span>`;
+
+                                        return `
+                                            <div class="timeline-talk-card">
+                                                <div class="timeline-talk-title">
+                                                    «${talk.title}»
+                                                    ${orderPillHtml}
+                                                </div>
+                                                <div class="timeline-talk-speaker">
+                                                    <strong>${talk.speaker}</strong> 
+                                                    <span class="badge badge-zograf" style="font-size: 0.7rem;">${translateAffiliation(talk.affiliation)}</span>
+                                                    ${talk.is_online ? `<span class="badge badge-online">${t.onlineBadge}</span>` : ''}
+                                                    ${presenterBadges}
+                                                </div>
+                                                <div class="timeline-talk-meta" style="margin-top: 0.75rem;">
+                                                    <span>🏛️ <strong>${t.venue}</strong>: ${translateAffiliation(talk.venue)}</span>
+                                                    <span>💬 <strong>${t.session}</strong>: ${talk.session || (currentLang === 'ru' ? 'Научное заседание' : 'Scientific Session')}</span>
+                                                </div>
+                                                <div class="timeline-talk-meta" style="margin-top: 0.25rem; font-size: 0.78rem; color: var(--text-muted);">
+                                                    <span>📅 <strong>${t.day}</strong>: ${dayName} (${talk.date || ''})</span>
+                                                    <span>⏰ <strong>${t.timeLabel}</strong>: ${talk.time_interval}</span>
+                                                </div>
                                             </div>
-                                            <div class="timeline-talk-meta">
-                                                <span>Venue: ${t.venue}</span>
-                                                <span>Session: ${t.session || 'Scientific Session'}</span>
-                                                <span>Day: ${formatDayLabel(t.day)}</span>
-                                            </div>
-                                        </div>
-                                    `).join('')}
+                                        `;
+                                    }).join('')}
                                 </div>
                             </div>
                         ` : ''}
                         ${rTalks.length > 0 ? `
                             <div class="series-block">
-                                <div class="series-title-header roerich">Рериховские чтения (Москва)</div>
+                                <div class="series-title-header roerich">${t.roerichReadingsLabel}</div>
                                 <div class="talks-timeline-list">
-                                    ${rTalks.map(t => `
-                                        <div class="timeline-talk-card">
-                                            <div class="timeline-talk-title">«${t.title}»</div>
-                                            <div class="timeline-talk-speaker">
-                                                <strong>${t.speaker}</strong> 
-                                                <span class="badge badge-roerich" style="font-size: 0.7rem;">${t.affiliation || 'unspecified'}</span>
-                                                ${t.is_online ? '<span class="badge badge-online">Zoom / Online</span>' : ''}
+                                    ${rTalks.map(talk => {
+                                        const dayName = talk.day_of_week ? talk.day_of_week[currentLang] : (currentLang === 'ru' ? 'Не указан' : 'Not specified');
+                                        
+                                        // Rank/order badge
+                                        let orderPillHtml = `<span class="badge" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: var(--text-secondary); font-size: 0.65rem; text-transform: none; margin-left: 0.5rem; padding: 0.15rem 0.4rem;"># ${t.orderTalkBadge.replace('{num}', talk.order_in_session).replace('{total}', talk.total_in_session)}</span>`;
+                                        if (talk.is_first_talk) {
+                                            orderPillHtml += `<span class="badge badge-zograf" style="font-size: 0.65rem; text-transform: none; margin-left: 0.5rem; padding: 0.15rem 0.4rem;">🥇 ${t.firstTalkBadge}</span>`;
+                                        }
+                                        if (talk.is_last_talk) {
+                                            orderPillHtml += `<span class="badge badge-roerich" style="font-size: 0.65rem; text-transform: none; margin-left: 0.5rem; padding: 0.15rem 0.4rem;">🎖️ ${t.lastTalkBadge}</span>`;
+                                        }
+
+                                        let presenterBadges = '';
+                                        if (talk.is_student) presenterBadges += `<span class="badge badge-roerich" style="font-size: 0.65rem; text-transform: none; margin-left: 0.5rem; padding: 0.15rem 0.4rem;">🎓 ${t.studentBadge}</span>`;
+                                        if (talk.is_independent) presenterBadges += `<span class="badge badge-zograf" style="font-size: 0.65rem; text-transform: none; margin-left: 0.5rem; padding: 0.15rem 0.4rem;">💼 ${t.independentBadge}</span>`;
+
+                                        return `
+                                            <div class="timeline-talk-card">
+                                                <div class="timeline-talk-title">
+                                                    «${talk.title}»
+                                                    ${orderPillHtml}
+                                                </div>
+                                                <div class="timeline-talk-speaker">
+                                                    <strong>${talk.speaker}</strong> 
+                                                    <span class="badge badge-roerich" style="font-size: 0.7rem;">${translateAffiliation(talk.affiliation)}</span>
+                                                    ${talk.is_online ? `<span class="badge badge-online">${t.onlineBadge}</span>` : ''}
+                                                    ${presenterBadges}
+                                                </div>
+                                                <div class="timeline-talk-meta" style="margin-top: 0.75rem;">
+                                                    <span>🏛️ <strong>${t.venue}</strong>: ${translateAffiliation(talk.venue)}</span>
+                                                    <span>💬 <strong>${t.session}</strong>: ${talk.session || (currentLang === 'ru' ? 'Научное заседание' : 'Scientific Session')}</span>
+                                                </div>
+                                                <div class="timeline-talk-meta" style="margin-top: 0.25rem; font-size: 0.78rem; color: var(--text-muted);">
+                                                    <span>📅 <strong>${t.day}</strong>: ${dayName} (${talk.date || ''})</span>
+                                                    <span>⏰ <strong>${t.timeLabel}</strong>: ${talk.time_interval}</span>
+                                                </div>
                                             </div>
-                                            <div class="timeline-talk-meta">
-                                                <span>Venue: ${t.venue}</span>
-                                                <span>Session: ${t.session || 'Scientific Session'}</span>
-                                                <span>Day: ${formatDayLabel(t.day)}</span>
-                                            </div>
-                                        </div>
-                                    `).join('')}
+                                        `;
+                                    }).join('')}
                                 </div>
                             </div>
                         ` : ''}
@@ -1251,6 +1812,7 @@ CREATE TABLE presentation_person (
             const svg = document.getElementById('svg-growth');
             svg.innerHTML = '';
 
+            const t = TRANSLATIONS[currentLang];
             const data = CONFERENCE_DATA.stats;
             const width = 700;
             const height = 350;
@@ -1376,9 +1938,9 @@ CREATE TABLE presentation_person (
                 svg.appendChild(t);
             };
 
-            drawLegend(width - 450, 20, '#a78bfa', 'Total Presented Papers');
-            drawLegend(width - 300, 20, 'var(--accent-primary)', 'Zograf Readings');
-            drawLegend(width - 180, 20, 'var(--accent-secondary)', 'Roerich Readings');
+            drawLegend(width - 450, 20, '#a78bfa', t.chartLegendTotal);
+            drawLegend(width - 250, 20, 'var(--accent-primary)', t.chartLegendZograf);
+            drawLegend(width - 120, 20, 'var(--accent-secondary)', t.chartLegendRoerich);
         }
 
         // Draw Interactive SVG Cohort/Geographic distribution Chart
@@ -1386,6 +1948,7 @@ CREATE TABLE presentation_person (
             const svg = document.getElementById('svg-affinity');
             svg.innerHTML = '';
 
+            const t = TRANSLATIONS[currentLang];
             const width = 700;
             const height = 350;
 
@@ -1408,15 +1971,15 @@ CREATE TABLE presentation_person (
             const wO = (oPercent / 100) * wMax;
             const wR = (rPercent / 100) * wMax;
 
-            const drawBarSegment = (xPos, widthSeg, color, hoverGlow) => {
-                const r = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
-                r.setAttribute('x', xPos);
-                r.setAttribute('y', y);
-                r.setAttribute('width', widthSeg);
-                r.setAttribute('height', h);
-                r.setAttribute('fill', color);
-                r.setAttribute('rx', '4');
-                svg.appendChild(r);
+            const drawBarSegment = (xPos, widthSeg, color) => {
+                const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+                rect.setAttribute('x', xPos);
+                rect.setAttribute('y', y);
+                rect.setAttribute('width', widthSeg);
+                rect.setAttribute('height', h);
+                rect.setAttribute('fill', color);
+                rect.setAttribute('rx', '4');
+                svg.appendChild(rect);
             };
 
             drawBarSegment(x, wZ, 'var(--accent-primary)');
@@ -1453,15 +2016,653 @@ CREATE TABLE presentation_person (
                 svg.appendChild(t2);
             };
 
-            addLabel(x, 90, `St. Petersburg (${zCount})`, `${zPercent.toFixed(1)}% Zograf-only cohort`, '#c084fc');
-            addLabel(x + wZ + 15, 230, `Overlap Core (${oCount})`, `${oPercent.toFixed(1)}% cross-active cohort`, '#e879f9');
-            addLabel(x + wZ + wO - 40, 90, `Moscow (${rCount})`, `${rPercent.toFixed(1)}% Roerich-only cohort`, '#f472b6');
+            addLabel(x, 90, t.spbCohort.replace('{count}', zCount), t.spbCohortDesc.replace('{percent}', zPercent.toFixed(1)), '#c084fc');
+            addLabel(x + wZ + 15, 230, t.overlapCohort.replace('{count}', oCount), t.overlapCohortDesc.replace('{percent}', oPercent.toFixed(1)), '#e879f9');
+            addLabel(x + wZ + wO - 40, 90, t.moscowCohort.replace('{count}', rCount), t.moscowCohortDesc.replace('{percent}', rPercent.toFixed(1)), '#f472b6');
+        }
+
+        // Draw Interactive SVG Geography chart
+        function renderGeoChart() {
+            const svg = document.getElementById('svg-geo');
+            if (!svg) return;
+            svg.innerHTML = '';
+            
+            const t = TRANSLATIONS[currentLang];
+            const geoData = CONFERENCE_DATA.geography_stats || [];
+            
+            if (geoData.length === 0) {
+                svg.innerHTML = `<text x="350" y="175" fill="var(--text-muted)" font-size="14px" text-anchor="middle">${t.geoNoData || 'No geographic data'}</text>`;
+                return;
+            }
+            
+            const width = 700;
+            const height = 350;
+            const paddingLeft = 140;
+            const paddingRight = 60;
+            const paddingTop = 40;
+            const paddingBottom = 40;
+            
+            const maxCount = Math.max(...geoData.map(d => d.count)) || 1;
+            const barHeight = 22;
+            const gap = 12;
+            
+            // Display top 8 cities
+            const displayData = geoData.slice(0, 8);
+            
+            displayData.forEach((d, idx) => {
+                const y = paddingTop + idx * (barHeight + gap);
+                const barWidth = ((width - paddingLeft - paddingRight) * d.count) / maxCount;
+                const cityName = currentLang === 'ru' ? d.ru : d.en;
+                
+                // Y axis label (City name)
+                const label = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+                label.setAttribute('x', paddingLeft - 15);
+                label.setAttribute('y', y + barHeight / 2 + 5);
+                label.setAttribute('fill', 'var(--text-primary)');
+                label.setAttribute('font-size', '12px');
+                label.setAttribute('font-family', 'var(--font-display)');
+                label.setAttribute('font-weight', '500');
+                label.setAttribute('text-anchor', 'end');
+                label.textContent = cityName;
+                svg.appendChild(label);
+                
+                // Bar background
+                const bgBar = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+                bgBar.setAttribute('x', paddingLeft);
+                bgBar.setAttribute('y', y);
+                bgBar.setAttribute('width', width - paddingLeft - paddingRight);
+                bgBar.setAttribute('height', barHeight);
+                bgBar.setAttribute('fill', 'rgba(255,255,255,0.02)');
+                bgBar.setAttribute('rx', '4');
+                svg.appendChild(bgBar);
+                
+                // Filled bar
+                const bar = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+                bar.setAttribute('x', paddingLeft);
+                bar.setAttribute('y', y);
+                bar.setAttribute('width', barWidth);
+                bar.setAttribute('height', barHeight);
+                bar.setAttribute('fill', 'url(#geo-gradient)');
+                bar.setAttribute('rx', '4');
+                svg.appendChild(bar);
+                
+                // Value label on the right
+                const valLabel = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+                valLabel.setAttribute('x', paddingLeft + barWidth + 10);
+                valLabel.setAttribute('y', y + barHeight / 2 + 5);
+                valLabel.setAttribute('fill', 'var(--text-secondary)');
+                valLabel.setAttribute('font-size', '11px');
+                valLabel.setAttribute('font-family', 'var(--font-mono)');
+                valLabel.setAttribute('font-weight', '600');
+                valLabel.textContent = d.count;
+                svg.appendChild(valLabel);
+            });
+            
+            // Gradient def
+            const defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
+            defs.innerHTML = `
+                <linearGradient id="geo-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#8b5cf6" />
+                    <stop offset="100%" stop-color="#3b82f6" />
+                </linearGradient>
+            `;
+            svg.appendChild(defs);
+        }
+
+        // Draw Interactive SVG Demographics (Age Group) Chart
+        function renderAgeChart() {
+            const svg = document.getElementById('svg-age');
+            if (!svg) return;
+            svg.innerHTML = '';
+
+            const t = TRANSLATIONS[currentLang];
+            const ageStats = CONFERENCE_DATA.age_stats || { young: 0, mid_career: 0, senior: 0, elders: 0 };
+            
+            const ageLabels = {
+                young: { ru: "Молодые ученые (<35)", en: "Young Scholars (<35)" },
+                mid_career: { ru: "Средний возраст (35-50)", en: "Mid-Career (35-50)" },
+                senior: { ru: "Старшие ученые (50-70)", en: "Senior Scholars (50-70)" },
+                elders: { ru: "Почетные ученые (70+)", en: "Eminent Elders (70+)" }
+            };
+
+            const data = [
+                { key: "young", count: ageStats.young, label: ageLabels.young[currentLang] },
+                { key: "mid_career", count: ageStats.mid_career, label: ageLabels.mid_career[currentLang] },
+                { key: "senior", count: ageStats.senior, label: ageLabels.senior[currentLang] },
+                { key: "elders", count: ageStats.elders, label: ageLabels.elders[currentLang] }
+            ];
+
+            const width = 700;
+            const height = 350;
+            const paddingLeft = 180;
+            const paddingRight = 60;
+            const paddingTop = 50;
+            const paddingBottom = 40;
+
+            const maxCount = Math.max(...data.map(d => d.count)) || 1;
+            const barHeight = 28;
+            const gap = 20;
+
+            data.forEach((d, idx) => {
+                const y = paddingTop + idx * (barHeight + gap);
+                const barWidth = ((width - paddingLeft - paddingRight) * d.count) / maxCount;
+
+                // Y-axis label
+                const label = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+                label.setAttribute('x', paddingLeft - 15);
+                label.setAttribute('y', y + barHeight / 2 + 5);
+                label.setAttribute('fill', 'var(--text-primary)');
+                label.setAttribute('font-size', '12px');
+                label.setAttribute('font-family', 'var(--font-display)');
+                label.setAttribute('font-weight', '500');
+                label.setAttribute('text-anchor', 'end');
+                label.textContent = d.label;
+                svg.appendChild(label);
+
+                // Bar Background
+                const bgBar = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+                bgBar.setAttribute('x', paddingLeft);
+                bgBar.setAttribute('y', y);
+                bgBar.setAttribute('width', width - paddingLeft - paddingRight);
+                bgBar.setAttribute('height', barHeight);
+                bgBar.setAttribute('fill', 'rgba(255,255,255,0.02)');
+                bgBar.setAttribute('rx', '4');
+                svg.appendChild(bgBar);
+
+                // Filled Bar
+                const bar = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+                bar.setAttribute('x', paddingLeft);
+                bar.setAttribute('y', y);
+                bar.setAttribute('width', barWidth);
+                bar.setAttribute('height', barHeight);
+                bar.setAttribute('fill', 'url(#age-gradient)');
+                bar.setAttribute('rx', '4');
+                svg.appendChild(bar);
+
+                // Value Label
+                const valLabel = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+                valLabel.setAttribute('x', paddingLeft + barWidth + 10);
+                valLabel.setAttribute('y', y + barHeight / 2 + 5);
+                valLabel.setAttribute('fill', 'var(--text-secondary)');
+                valLabel.setAttribute('font-size', '11px');
+                valLabel.setAttribute('font-family', 'var(--font-mono)');
+                valLabel.setAttribute('font-weight', '600');
+                valLabel.textContent = d.count;
+                svg.appendChild(valLabel);
+            });
+
+            // Gradient definition
+            const defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
+            defs.innerHTML = `
+                <linearGradient id="age-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#10b981" />
+                    <stop offset="100%" stop-color="#059669" />
+                </linearGradient>
+            `;
+            svg.appendChild(defs);
+        }
+
+        // Draw Interactive SVG Gender Composition Chart
+        function renderGenderChart() {
+            const svg = document.getElementById('svg-gender');
+            if (!svg) return;
+            svg.innerHTML = '';
+
+            const t = TRANSLATIONS[currentLang];
+            const genderStats = CONFERENCE_DATA.gender_stats || { M: 0, F: 0 };
+            
+            const total = genderStats.M + genderStats.F;
+            const mPercent = total ? (genderStats.M / total) * 100 : 0;
+            const fPercent = total ? (genderStats.F / total) * 100 : 0;
+
+            const x = 50;
+            const y = 150;
+            const wMax = 600;
+            const h = 40;
+
+            const wM = (mPercent / 100) * wMax;
+            const wF = (fPercent / 100) * wMax;
+
+            const drawBarSegment = (xPos, widthSeg, color) => {
+                const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+                rect.setAttribute('x', xPos);
+                rect.setAttribute('y', y);
+                rect.setAttribute('width', widthSeg);
+                rect.setAttribute('height', h);
+                rect.setAttribute('fill', color);
+                rect.setAttribute('rx', '4');
+                svg.appendChild(rect);
+            };
+
+            drawBarSegment(x, wM, 'var(--accent-primary)');
+            drawBarSegment(x + wM + 4, wF, 'var(--accent-secondary)');
+
+            // Labels
+            const addLabel = (xText, yText, title, subtitle, color) => {
+                const t1 = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+                t1.setAttribute('x', xText);
+                t1.setAttribute('y', yText);
+                t1.setAttribute('fill', '#ffffff');
+                t1.setAttribute('font-size', '13px');
+                t1.setAttribute('font-weight', '600');
+                t1.textContent = title;
+                svg.appendChild(t1);
+
+                const t2 = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+                t2.setAttribute('x', xText);
+                t2.setAttribute('y', yText + 18);
+                t2.setAttribute('fill', color);
+                t2.setAttribute('font-size', '11px');
+                t2.textContent = subtitle;
+                svg.appendChild(t2);
+            };
+
+            const labelMaleTitle = currentLang === 'ru' ? `Мужчины (${genderStats.M})` : `Male (${genderStats.M})`;
+            const labelFemaleTitle = currentLang === 'ru' ? `Женщины (${genderStats.F})` : `Female (${genderStats.F})`;
+
+            addLabel(x, 90, labelMaleTitle, `${mPercent.toFixed(1)}%`, '#c084fc');
+            addLabel(x + wM + 15, 230, labelFemaleTitle, `${fPercent.toFixed(1)}%`, '#f472b6');
+        }
+
+        // ==========================================
+        // Interactive Collaboration Graph (Network)
+        // ==========================================
+        let netNodes = [];
+        let netLinks = [];
+        let isNetPhysicsRunning = true;
+        let netAnimationId = null;
+        let netHoveredNode = null;
+        let netDraggedNode = null;
+        let netMouseX = 0;
+        let netMouseY = 0;
+        let netIsInitialized = false;
+
+        function initNetwork() {
+            const canvas = document.getElementById('canvas-network');
+            if (!canvas) return;
+
+            const rect = canvas.parentNode.getBoundingClientRect();
+            const width = rect.width || 700;
+            const height = rect.height || 480;
+
+            // Setup canvas high-DPI scaling
+            const dpr = window.devicePixelRatio || 1;
+            canvas.width = width * dpr;
+            canvas.height = height * dpr;
+            canvas.style.width = width + 'px';
+            canvas.style.height = height + 'px';
+
+            if (netIsInitialized) return;
+
+            const data = CONFERENCE_DATA.network;
+            if (!data) return;
+
+            // 1. Initialize nodes with force physics variables
+            netNodes = data.nodes.map((n, i) => {
+                const angle = (i / data.nodes.length) * Math.PI * 2;
+                const radius = Math.min(width, height) * 0.32;
+                return {
+                    ...n,
+                    x: width / 2 + Math.cos(angle) * radius + (Math.random() - 0.5) * 60,
+                    y: height / 2 + Math.sin(angle) * radius + (Math.random() - 0.5) * 60,
+                    vx: 0,
+                    vy: 0,
+                    r: Math.max(6, Math.min(18, 4 + Math.sqrt(n.talks) * 2.5))
+                };
+            });
+
+            // 2. Initialize links mapping references
+            const nodeMap = {};
+            netNodes.forEach(n => { nodeMap[n.id] = n; });
+
+            netLinks = data.links.map(l => {
+                return {
+                    source: nodeMap[l.source],
+                    target: nodeMap[l.target],
+                    weight: l.weight
+                };
+            }).filter(l => l.source && l.target);
+
+            // 3. Set up event listeners
+            canvas.addEventListener('mousemove', handleNetMouseMove);
+            canvas.addEventListener('mousedown', handleNetMouseDown);
+            window.addEventListener('mouseup', handleNetMouseUp);
+            canvas.addEventListener('click', handleNetClick);
+            canvas.addEventListener('mouseleave', handleNetMouseLeave);
+
+            netIsInitialized = true;
+        }
+
+        function handleNetMouseMove(e) {
+            const canvas = e.currentTarget;
+            const rect = canvas.getBoundingClientRect();
+            netMouseX = e.clientX - rect.left;
+            netMouseY = e.clientY - rect.top;
+
+            if (netDraggedNode) return;
+
+            // Find hovered node
+            let found = null;
+            let minDist = Infinity;
+            for (let i = 0; i < netNodes.length; i++) {
+                const n = netNodes[i];
+                const dx = n.x - netMouseX;
+                const dy = n.y - netMouseY;
+                const dist = Math.sqrt(dx * dx + dy * dy);
+                if (dist < n.r + 6) {
+                    if (dist < minDist) {
+                        minDist = dist;
+                        found = n;
+                    }
+                }
+            }
+
+            netHoveredNode = found;
+            canvas.style.cursor = found ? 'grab' : 'default';
+
+            // Manage tooltip display
+            const tooltip = document.getElementById('network-tooltip');
+            if (tooltip) {
+                if (found) {
+                    const t = TRANSLATIONS[currentLang];
+                    const originalScholar = CONFERENCE_DATA.scholars.find(s => s.id === found.id);
+                    const seriesLabel = found.series === 'Both' ? 
+                        (currentLang === 'ru' ? 'Обе конференции' : 'Both forums') : 
+                        (found.series === 'Zograf' ? (currentLang === 'ru' ? 'Зографские чт.' : 'Zograf Readings') : (currentLang === 'ru' ? 'Рериховские чт.' : 'Roerich Readings'));
+                    
+                    tooltip.innerHTML = `
+                        <div style="font-weight:700; font-family:var(--font-display); font-size:0.95rem; margin-bottom:0.25rem; color:#ffffff;">${found.name}</div>
+                        <div style="font-size:0.75rem; color:var(--text-secondary); margin-bottom:0.4rem;">${seriesLabel}</div>
+                        <div style="display:flex; justify-content:space-between; gap:1.5rem; font-size:0.8rem;">
+                            <span style="color:var(--text-muted);">${currentLang === 'ru' ? 'Всего докладов:' : 'Total Talks:'}</span>
+                            <span style="font-weight:600; color:var(--accent-secondary); font-family:var(--font-mono);">${found.talks}</span>
+                        </div>
+                        <div style="display:flex; justify-content:space-between; gap:1.5rem; font-size:0.8rem; margin-top:0.15rem;">
+                            <span style="color:var(--text-muted);">${currentLang === 'ru' ? 'Направление:' : 'Theme:'}</span>
+                            <span style="font-weight:600; color:#10b981;">${translateThemeCode(found.theme)}</span>
+                        </div>
+                        <div style="font-size:0.7rem; color:var(--text-muted); margin-top:0.6rem; border-top:1px solid rgba(255,255,255,0.06); padding-top:0.4rem; font-style:italic;">
+                            ${currentLang === 'ru' ? 'Кликните для перехода в профиль' : 'Click to view catalog profile'}
+                        </div>
+                    `;
+                    tooltip.style.left = Math.min(rect.width - 240, netMouseX + 15) + 'px';
+                    tooltip.style.top = Math.min(rect.height - 130, netMouseY + 15) + 'px';
+                    tooltip.style.display = 'block';
+                    tooltip.style.opacity = '1';
+                } else {
+                    tooltip.style.display = 'none';
+                    tooltip.style.opacity = '0';
+                }
+            }
+        }
+
+        function handleNetMouseDown(e) {
+            if (netHoveredNode) {
+                netDraggedNode = netHoveredNode;
+                document.getElementById('canvas-network').style.cursor = 'grabbing';
+            }
+        }
+
+        function handleNetMouseUp(e) {
+            if (netDraggedNode) {
+                netDraggedNode = null;
+                const canvas = document.getElementById('canvas-network');
+                if (canvas) canvas.style.cursor = netHoveredNode ? 'grab' : 'default';
+            }
+        }
+
+        function handleNetClick(e) {
+            if (netHoveredNode) {
+                // Navigate to directory and set search filter to the clicked scholar!
+                switchTab('scholars');
+                setDashboardSearch(netHoveredNode.name);
+                
+                // Hide tooltip
+                const tooltip = document.getElementById('network-tooltip');
+                if (tooltip) {
+                    tooltip.style.display = 'none';
+                    tooltip.style.opacity = '0';
+                }
+            }
+        }
+
+        function handleNetMouseLeave(e) {
+            netHoveredNode = null;
+            const tooltip = document.getElementById('network-tooltip');
+            if (tooltip) {
+                tooltip.style.display = 'none';
+                tooltip.style.opacity = '0';
+            }
+        }
+
+        function startNetworkGraph() {
+            initNetwork();
+            if (!netAnimationId) {
+                netAnimationId = requestAnimationFrame(networkTick);
+            }
+        }
+
+        function stopNetworkGraph() {
+            if (netAnimationId) {
+                cancelAnimationFrame(netAnimationId);
+                netAnimationId = null;
+            }
+        }
+
+        function networkTick() {
+            updateNetworkPhysics();
+            drawNetwork();
+            netAnimationId = requestAnimationFrame(networkTick);
+        }
+
+        function updateNetworkPhysics() {
+            if (!isNetPhysicsRunning && !netDraggedNode) return;
+
+            const canvas = document.getElementById('canvas-network');
+            if (!canvas) return;
+            const width = canvas.width / (window.devicePixelRatio || 1);
+            const height = canvas.height / (window.devicePixelRatio || 1);
+            const centerX = width / 2;
+            const centerY = height / 2;
+
+            const kRepel = 240;
+            const kAttract = 0.055;
+            const friction = 0.86;
+            const gravity = 0.025;
+            const linkDistance = 85;
+
+            // 1. Repulsion between all pairs
+            for (let i = 0; i < netNodes.length; i++) {
+                const nodeA = netNodes[i];
+                for (let j = i + 1; j < netNodes.length; j++) {
+                    const nodeB = netNodes[j];
+                    const dx = nodeB.x - nodeA.x;
+                    const dy = nodeB.y - nodeA.y;
+                    const distSq = dx * dx + dy * dy + 0.1;
+                    const dist = Math.sqrt(distSq);
+                    if (dist < 320) {
+                        const force = (kRepel * (nodeA.r + nodeB.r)) / distSq;
+                        const fx = (dx / dist) * force;
+                        const fy = (dy / dist) * force;
+
+                        nodeA.vx -= fx;
+                        nodeA.vy -= fy;
+                        nodeB.vx += fx;
+                        nodeB.vy += fy;
+                    }
+                }
+            }
+
+            // 2. Attraction along connected links
+            for (let i = 0; i < netLinks.length; i++) {
+                const link = netLinks[i];
+                const dx = link.target.x - link.source.x;
+                const dy = link.target.y - link.source.y;
+                const dist = Math.sqrt(dx * dx + dy * dy) || 0.1;
+                const force = kAttract * (dist - linkDistance) * Math.sqrt(link.weight);
+                const fx = (dx / dist) * force;
+                const fy = (dy / dist) * force;
+
+                link.source.vx += fx;
+                link.source.vy += fy;
+                link.target.vx -= fx;
+                link.target.vy -= fy;
+            }
+
+            // 3. Gravity center pull and velocity updates
+            for (let i = 0; i < netNodes.length; i++) {
+                const n = netNodes[i];
+
+                if (n === netDraggedNode) {
+                    n.x = netMouseX;
+                    n.y = netMouseY;
+                    n.vx = 0;
+                    n.vy = 0;
+                    continue;
+                }
+
+                n.vx += (centerX - n.x) * gravity;
+                n.vy += (centerY - n.y) * gravity;
+
+                n.vx *= friction;
+                n.vy *= friction;
+
+                n.x += n.vx;
+                n.y += n.vy;
+
+                n.x = Math.max(n.r + 5, Math.min(width - n.r - 5, n.x));
+                n.y = Math.max(n.r + 5, Math.min(height - n.r - 5, n.y));
+            }
+        }
+
+        function drawNetwork() {
+            const canvas = document.getElementById('canvas-network');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            const dpr = window.devicePixelRatio || 1;
+            const width = canvas.width / dpr;
+            const height = canvas.height / dpr;
+
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.save();
+            ctx.scale(dpr, dpr);
+
+            const THEME_COLORS = {
+                AcademicHistory: '#8b5cf6', // Violet
+                Linguistics: '#3b82f6',     // Blue
+                Philosophy: '#10b981',      // Green
+                Art: '#ec4899',             // Pink
+                History: '#f59e0b'          // Orange
+            };
+
+            let isHighlightMode = netHoveredNode !== null;
+            let connectedNodeIds = new Set();
+            if (isHighlightMode) {
+                connectedNodeIds.add(netHoveredNode.id);
+                netLinks.forEach(l => {
+                    if (l.source.id === netHoveredNode.id) connectedNodeIds.add(l.target.id);
+                    if (l.target.id === netHoveredNode.id) connectedNodeIds.add(l.source.id);
+                });
+            }
+
+            // 1. Draw Links
+            for (let i = 0; i < netLinks.length; i++) {
+                const link = netLinks[i];
+                let isHighlighted = false;
+                if (isHighlightMode) {
+                    if (link.source.id === netHoveredNode.id || link.target.id === netHoveredNode.id) {
+                        isHighlighted = true;
+                    }
+                }
+
+                let opacity = isHighlightMode ? (isHighlighted ? 0.65 : 0.02) : 0.15;
+                let thickness = Math.min(5, 1 + link.weight * 0.75);
+
+                ctx.beginPath();
+                ctx.moveTo(link.source.x, link.source.y);
+                ctx.lineTo(link.target.x, link.target.y);
+                ctx.strokeStyle = isHighlighted ? 'rgba(139, 92, 246, ' + opacity + ')' : 'rgba(255, 255, 255, ' + opacity + ')';
+                ctx.lineWidth = thickness;
+                ctx.stroke();
+            }
+
+            // 2. Draw Nodes
+            for (let i = 0; i < netNodes.length; i++) {
+                const n = netNodes[i];
+                const color = THEME_COLORS[n.theme] || THEME_COLORS.History;
+
+                let isNodeHighlighted = !isHighlightMode || connectedNodeIds.has(n.id);
+                let opacity = isNodeHighlighted ? 1.0 : 0.18;
+
+                ctx.beginPath();
+                ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
+
+                if (n === netHoveredNode) {
+                    ctx.shadowColor = color;
+                    ctx.shadowBlur = 18;
+                } else {
+                    ctx.shadowBlur = 0;
+                }
+
+                ctx.fillStyle = hexToRGBA(color, opacity);
+                ctx.fill();
+
+                ctx.strokeStyle = hexToRGBA('#ffffff', opacity * 0.35);
+                ctx.lineWidth = 1.5;
+                ctx.stroke();
+
+                if (n === netHoveredNode || (n.talks >= 5 && isNodeHighlighted)) {
+                    ctx.shadowBlur = 0;
+                    ctx.fillStyle = hexToRGBA('#ffffff', opacity * 0.95);
+                    ctx.font = n === netHoveredNode ? 'bold 11px var(--font-sans)' : '9px var(--font-sans)';
+                    ctx.textAlign = 'center';
+                    ctx.fillText(n.name, n.x, n.y - n.r - 6);
+                }
+            }
+
+            ctx.restore();
+        }
+
+        function hexToRGBA(hex, alpha) {
+            const r = parseInt(hex.slice(1, 3), 16);
+            const g = parseInt(hex.slice(3, 5), 16);
+            const b = parseInt(hex.slice(5, 7), 16);
+            return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+        }
+
+        function resetNetworkPhysics() {
+            const canvas = document.getElementById('canvas-network');
+            if (!canvas) return;
+            const width = canvas.width / (window.devicePixelRatio || 1);
+            const height = canvas.height / (window.devicePixelRatio || 1);
+
+            netNodes.forEach((n, i) => {
+                const angle = (i / netNodes.length) * Math.PI * 2;
+                const radius = Math.min(width, height) * 0.32;
+                n.x = width / 2 + Math.cos(angle) * radius + (Math.random() - 0.5) * 60;
+                n.y = height / 2 + Math.sin(angle) * radius + (Math.random() - 0.5) * 60;
+                n.vx = 0;
+                n.vy = 0;
+            });
+        }
+
+        function toggleNetworkPhysics() {
+            isNetPhysicsRunning = !isNetPhysicsRunning;
+            const t = TRANSLATIONS[currentLang];
+            document.getElementById('net-pause-btn').textContent = isNetPhysicsRunning ? t.netPauseBtn : t.netResumeBtn;
         }
 
         // Initialize Application
         window.addEventListener('DOMContentLoaded', () => {
             initScholars();
             initTimeline();
+            
+            // Check for search parameter in URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const searchQuery = urlParams.get('search');
+            if (searchQuery) {
+                setDashboardSearch(decodeURIComponent(searchQuery));
+            }
         });
     </script>
 </body>

@@ -1,108 +1,231 @@
-# Сводный список санскритологов и индологов
+# Russian Indological Scholarship: Unified Relational Archive
 
-## 1. Зарубежные санскритологи (XXI век)
+> [!NOTE]
+> This repository houses a premier digital humanities research platform and automated data pipeline integrating two decades of historical program archives from Russia's two preeminent Indological conferences: the **Zograf Readings** (St. Petersburg, IOM RAS / SPbSU, since 2004) and the **Roerich Readings** (Moscow, IAS RAS, since 2007).
 
-### Западная школа
-* **Мадхав Дешпанде (Madhav Deshpande)** — история языка, грамматика Панини.
-* **Патрик Оливель (Patrick Olivelle)** — Дхармашастры, Упанишады, аскетизм.
-* **Стефани Джемисон (Stephanie Jamison)** — перевод Ригведы, ведийский санскрит.
-* **Майкл Витцель (Michael Witzel)** — ведийская диалектология, древняя история.
-* **Шелдон Поллок (Sheldon Pollock)** — «санскритский космополис», эстетика, политика культуры.
-* **Томас Оберлис (Thomas Oberlies)** — эпический и буддийский гибридный санскрит.
-* **Доминик Вуястик (Dominik Wujastyk)** — история медицины (Аюрведа), кодикология.
-
-### Индийская школа
-* **Пушпа Дикшит (Pushpa Dixit)** — методика преподавания Панини.
-* **Рама Натх Шарма (Rama Nath Sharma)** — фундаментальный анализ «Аштадхьяи».
-* **В. Н. Джха (V. N. Jha)** — Ньяя, философия языка.
-* **Ашок Аклуджкар (Ashok Aklujkar)** — лингвофилософия Бхартрихари.
-
-### Недавно ушедшие (XXI век)
-* **С. Д. Джоши (S. D. Joshi)** — критические издания грамматических текстов.
-* **Фритс Стааль (Frits Staal)** — ритуалы, структура грамматики.
-* **Джордж Кардона (George Cardona)** — теоретическая грамматика Панини.
+The project features a complete modular ETL pipeline in Python that extracts, normalizes, and matches Cyrillic scholar names, resolves lifespans and historical affiliations, compiles a referentially-sound SQLite database, exports scientific datasets (CSV), and compiles a high-fidelity glassmorphic dark-mode web portal featuring 213 static scholar profile pages, five interactive SVG analytics charts, and real-time bilingual (Russian/English) state toggles.
 
 ---
 
-## 2. Отечественная школа
+## 🏛️ 1. System Architecture & Data Pipeline
 
-### Дореволюционный (императорский) период
-* **Роберт Ленц** — первый профессор санскрита в России.
-* **Павел Петров** — основоположник казанской и московской школ.
-* **Оттон Бетлингк** — «Петербургские словари», издание Панини.
-* **Иван Минаев** — изучение пали, буддизма, фольклора.
-* **Сергей Ольденбург** — основатель «Bibliotheca Buddhica».
+The system is designed with a strict Separation of Concerns, dividing the lifecycle into five autonomous phases:
 
-### Советская и постсоветская классика
-* **Фёдор Щербатской** — буддийская логика и философия.
-* **Владимир Кальянов** — академический перевод «Махабхараты».
-* **Татьяна Елизаренкова** — перевод «Ригведы», ведийская лингвистика.
-* **Вера Кочергина** — «Санскритско-русский словарь», учебник санскрита.
-* **Андрей Зализняк** — системное описание грамматики санскрита.
-* **Григорий Бонгард-Левин** — история и культура древней Индии.
-* **Александр Пятигорский** — психология буддизма, семиотика.
+```mermaid
+graph TD
+    A[HTML Cache: html_cache/] -->|Smart HTML Parser| B[build_and_populate_db.py]
+    C[zograf-roerich-db.md: Seed Metadata] -->|Markdown CSV Reader| B
+    B -->|Normalize & Deduplicate Persons| D[conferences.db SQLite]
+    D -->|SQL Queries| E[generate_analytics.py]
+    D -->|JSON Serialization| F[generate_site_data.py]
+    D -->|HTML Static Compiler| K[generate_scholars_pages.py]
+    E -->|Scientific Reports| G[analytics_output/*.csv]
+    E -->|Analytical Overview| H[indology_scholars_analytics.md]
+    F -->|Unified JS Payload| I[site_data.js]
+    I -->|Client-side rendering| J[index.html Web Portal]
+    K -->|213 Static Profile Pages| L[scholars/*.html]
+    L -->|Bidirectional Links| J
+```
 
-### Культурологическая и семиотическая плеяда
-* **Павел Гринцер** — перевод и анализ «Рамаяны», теория эпоса и поэтики.
-* **Владимир Топоров** — перевод «Дхаммапады», ведийская мифология, компаративистика.
-* **Александр Сыркин** — перевод Упанишад, «Камасутры», психология культуры.
-* **Вячеслав Вс. Иванов** — индоевропеистика, реконструкция мифологии.
-* **Борис Огибенин** — структура мифологических текстов Ригведы.
-* **Виктор Самозванцев** — социально-правовая история, Артхашастра.
-* **Ярослав Васильков** — этнография и мифология «Махабхараты».
+### Phase 1: Local HTML Cache (`html_cache/`)
+Conference programs across all historical years are safely cached locally in raw HTML formats. This guarantees a completely hermetic build environment, immune to online URL restructuring or server downtime from institutional web portals.
 
-### Специализированные направления (лингвистика, эстетика, философия)
-* **Виктория Вертоградова** — пракриты, индийское искусство, эпиграфика.
-* **Юлия Алиханова** — классическая литература, драма, эстетика.
-* **Владимир Эрман** — история литературы, переводы Калидасы.
-* **Светлана Невелева** — поэтика и мифология эпоса.
-* **Борис Смирнов** — философские переводы «Махабхараты» и «Бхагавадгиты».
-* **Алексей Вигасин** — история, древнеиндийское право.
-* **Борис Захарьин** — типология и история индоарийских языков.
+### Phase 2: Relational DDL Compilation & Ingestion (`build_and_populate_db.py`)
+The primary assembly engine:
+1.  **Table Compilation:** Compiles 12 highly normalized SQL tables enforcing strict referential integrity (foreign keys).
+2.  **Seed Ingestion:** Parses seed metadata (venues, geographic coords, calendars) directly from `zograf-roerich-db.md`.
+3.  **Smart Parsers:** Extracts session timelines, speaker names, raw Cyrillic affiliations, presentation titles, and calendar schedules from the raw HTML templates.
+4.  **Identity Matching Engine:** Enforces advanced regex matching to map name variations (e.g. "V. V. Vertogradova", "Victoria Vertogradova", "Vertogradova V.") into singular deduplicated researcher identities, automatically tracking academic transitions and lifespans.
 
-  # Система архивации данных индологов: Руководство по архитектуре и началу работы
+### Phase 3: Scientific Analytics Engine (`generate_analytics.py`)
+Computes cross-conference affinity indices and cohort overlapping:
+*   Identifies the **overlapping cohort** (the core intellectual bridge presenting active research at both SPb and Moscow forums).
+*   Generates targeted scientific CSV tables inside `analytics_output/` and outputs the Markdown overview [indology_scholars_analytics.md](file:///c:/Users/user/Documents/GitHub/IndologyScholars/indology_scholars_analytics.md).
 
-Добро пожаловать в автоматизированный конвейер для оцифровки, структурирования и индексирования данных об исторических деятелях индологии. Эта система предназначена для преобразования неструктурированного традиционного словарного текста из базы данных К. Карттунена *«Who Was Who of Indian Studies»* в высокоточную реляционную базу данных.
+### Phase 4: Static Profile Generation (`generate_scholars_pages.py`)
+Compiles **213 custom static HTML pages** under `scholars/` (e.g., [scholars/PERS_f074f69f.html](file:///c:/Users/user/Documents/GitHub/IndologyScholars/scholars/PERS_f074f69f.html)). Each file is a standalone, SEO-optimized glassmorphic card showcasing the scholar's complete historical presentation chronology, institutional changes, regional mobility tracks, and thematic profiles.
 
-Полученная инфраструктура данных полностью децентрализована (модульна), что позволяет бесшовно интегрировать её со статичными цифровыми репозиториями (например, с проектами на базе Vite, такими как BookIndex) и синхронизировать с внешними инструментами, такими как Google Workspace.
+### Phase 5: Client-Side Web Portal & Interactive Charts (`index.html`)
+A state-of-the-art Single Page Application built on vanilla CSS and JS:
+*   **Bilingual Translation Core:** Automatically launches in Russian by default (retaining zero English in UI text). A toggle in the top navigation swaps the entire application state (metrics cards, charts, legend, titles, table headers, DDL documentation) to English in real-time.
+*   **Cross-filtering & City Tags:** Allows users to click on any affiliation or city tag to instantly search, filter, and paginate the master database.
 
-## Обзор архитектуры
+---
 
-Чтобы обеспечить целостность данных, предотвратить тайм-ауты API и сохранить строгую академическую разметку, система работает на основе модульной трехэтапной архитектуры. Процесс сбора сырых данных строго отделен от парсинга с помощью ИИ и генерации файлов для фронтенда.
+## 🗃️ 2. Relational Database Schema (`conferences.db`)
 
-### Этап 1: Сбор данных (`scraper.py`)
-Этот модуль отвечает исключительно за получение исходного архивного текста.
-* Он проходит по алфавитным указателям (slugs) на исходном сайте.
-* Извлекает теги `<p>`, содержащие биографические данные, с помощью `BeautifulSoup`.
-* Безопасно сохраняет неформатированные строки в основную таблицу `scholars` в локальной базе данных SQLite, сохраняя оригинальный текст в качестве эталонного источника (ground-truth).
+The relational database is fully normalized and modeled according to the Third Normal Form (3NF), ensuring zero duplication of transactional metadata.
 
-### Этап 2: Извлечение сущностей (`extractor.py`)
-Этот модуль нормализует сырые строки в структурированные поля данных с использованием LLM.
-* Он использует функцию Structured Outputs от OpenAI и библиотеку `pydantic` для обеспечения строгого соблюдения JSON-схемы.
-* Преобразует сложные европейские топонимы, исторические даты и академический жаргон в изолированные поля (`birth_date`, `specializations`, `institutions`).
-* Выделяет теги специализаций в независимую реляционную таблицу (`scholar_tags`), что позволяет проводить точный перекрестный поиск по лингвистическим и филологическим дисциплинам.
+```mermaid
+erDiagram
+    event_series ||--o{ event : contains
+    place ||--o{ venue : locates
+    organization ||--o{ venue : owns
+    organization ||--o{ presentation_person : affiliates
+    venue ||--o{ event_day_venue : hosts
+    event ||--o{ event_day : schedules
+    event_day ||--o{ event_day_venue : structures
+    event_day_venue ||--o{ session : divides
+    session ||--o{ presentation : details
+    presentation ||--o{ presentation_person : connects
+    person ||--o{ presentation_person : presents
+    presentation ||--o{ media : attaches
 
-### Этап 3: Маршрутизация памятных дат и вывод (`query.py`)
-Модуль запросов математически обрабатывает структурированную базу данных для удовлетворения конкретных нужд фронтенда, не изменяя при этом основные данные.
-* **Генерация Markdown:** Вычисляет стандартные академические юбилеи (50, 75, 100, 200+ лет) в заданном диапазоне (например, 2026–2045 гг.) и автоматически генерирует файлы Markdown с метаданными YAML (frontmatter). Эти файлы структурированы по интервалам рождений и смертей и готовы к немедленному развертыванию в цифровом репозитории.
+    event_series {
+        int event_series_id PK
+        text series_name_en
+        text series_name_ru
+        text notes
+    }
+    place {
+        text place_id PK
+        text address_text
+        text city
+        text country
+        real latitude
+        real longitude
+    }
+    organization {
+        text organization_id PK
+        text display_name
+        text display_name_ru
+        text org_type
+    }
+    venue {
+        text venue_id PK
+        text display_name
+        text organization_id FK
+        text place_id FK
+    }
+    event {
+        text event_id PK
+        int event_series_id FK
+        int year
+        text theme_ru
+        text start_date
+        text end_date
+    }
+    person {
+        text person_id PK
+        text display_name
+        text normalized_key
+        text birth_year
+        text death_year
+        text gender
+    }
+    presentation {
+        text presentation_id PK
+        text session_id FK
+        text title
+        int is_online
+        text theme_code
+    }
+    presentation_person {
+        text presentation_id PK,FK
+        text person_id PK,FK
+        text role PK
+        text affiliation_text_raw
+        text organization_id FK
+        text city_tag
+        int order_in_session
+        int total_in_session
+    }
+```
 
-## Интеграция с Google Календарем
+---
 
-Система включает специальный скрипт синхронизации (`calendar_sync.py`), который связывает локальную базу данных с вашей рабочей средой, обеспечивая активное отслеживание исторических дат.
+## 💼 3. Practical Use Cases & Research Applications
 
-* **Целевое назначение:** Добавляет события исключительно в указанный Google Календарь под названием «Indology».
-* **Структура событий:** Создает ежегодные повторяющиеся события на весь день (all-day events).
-* **Динамические заголовки:** Заголовки событий имеют статический формат **«Birth Anniversary: [Имя ученого] (b. [Год])»**, чтобы оставаться исторически точными независимо от текущего календарного года.
-* **Логика резервных дат:** Для исторических записей, в которых отсутствует точный месяц и день (например, "b. 1852"), система автоматически переносит годовщину на **30 января** в качестве стандартного заполнителя (placeholder), отмечая это допущение в описании события.
+The IndologyScholars platform enables deep historical and sociological analysis of academic communities. Below are six practical use cases for researchers, historians of science, and academic coordinators.
 
-## Порядок запуска
+### Use Case A: Prosopographical Profiling & Career Chronologies
+*   **Objective:** Reconstruct the complete academic lifespan and scientific trajectory of a specific indologist.
+*   **Method:** A researcher searches for **«Вертоградова Виктория Викторовна»** in the directory. By clicking her name, the platform redirects to her dedicated academic profile: [scholars/PERS_f074f69f.html](file:///c:/Users/user/Documents/GitHub/IndologyScholars/scholars/PERS_f074f69f.html).
+*   **Result:** The researcher discovers her exact lifespan, gender, and complete chronological progression of presentations. The profile automatically highlights that she has presented classical research on art history, epigraphy, and Prakrits, displaying time intervals, days of the week, and exact session structures for each presentation.
 
-Для локального развертывания конвейера запускайте модули строго в следующем порядке:
+### Use Case B: Geographic Mobility & Regional Network Mapping
+*   **Objective:** Identify the regional distribution of scholars presenting Indological research and locate regional academic hubs (outside Moscow/St. Petersburg).
+*   **Method:** A historian wants to see the role of regional institutes (e.g., Krasnodar or Penza). On the dashboard, they expand any detail card and click on the **«Краснодар»** city tag.
+*   **Result:** The search engine instantly captures the tag, filtering all 213 scholars to show only those affiliated with Krasnodar institutions. By studying their presentation topics and years active, the researcher maps the growth of regional Buddhist and Sanskrit research clusters.
 
-1. **Инициализация среды:** Убедитесь, что установлены `sqlite3`, `beautifulsoup4`, `openai` и клиентские библиотеки Google API.
-2. **Запуск `scraper.py`:** Заполнение базы `indology_scholars.db` исходными текстами.
-3. **Запуск `extractor.py`:** Генерация структурированной схемы и тегов специализаций.
-4. **Запуск `query.py`:** Генерация файлов Markdown с юбилеями на следующие 20 лет.
-5. **Запуск `calendar_sync.py`:** Аутентификация через OAuth 2.0 и экспорт обработанных юбилейных событий в ваш активный календарь.
-* **Леонид Куликов** — историческая морфология санскритского глагола.
-* **Виктория Лысенко** — философия Вайшешики и буддизма.
+### Use Case C: Tracking Academic Migration & Institutional Shifts
+*   **Objective:** Trace how scholars transition between academic organizations over their careers.
+*   **Method:** In the expanded scholar row, the **«Careers & Analytics»** card detects whether a researcher has changed affiliations. If they have, it renders an active institutional path: e.g., `ИВ РАН → РГГУ → ИКВИА НИУ ВШЭ`.
+*   **Result:** Clicking on any of these institutional links instantly queries the database, listing all other scholars active in that institution, allowing researchers to study academic hiring, migration waves, and departmental alignment over a 20-year period.
+
+### Use Case D: Interdisciplinary Profile & Thematic Shifts Analysis
+*   **Objective:** Evaluate if scholars adhere strictly to a single sub-field or if their research represents interdisciplinary coverage.
+*   **Method:** In the scholar's expanded profile, the platform calculates their **Research Profile** and **Dominant Theme**. If they frequently swap categories between presentations (e.g. *Linguistics* in 2008 and *Philosophy* in 2018), they are tagged as an `Interdisciplinary Scholar` (`Междисциплинарный исследователь`).
+*   **Result:** A coordinator filters the directory to find all interdisciplinary researchers, studying the intersections of linguistics, classic philosophy, and art history to trace how scientific paradigms cross-pollinate.
+
+### Use Case E: Isolating Regional Cohorts & Conference Affinity
+*   **Objective:** Isolate St. Petersburg-only or Moscow-only academic groups to analyze institutional affinity or regional isolation.
+*   **Method:** A user selects **«Никогда не выступали на Рериховских чт.»** (Never active at Roerich Readings) in the advanced series filter.
+*   **Result:** The directory filters out the Moscow cohort, isolating the 119 St. Petersburg-centric scholars who only present at the Zograf Readings. This allows sociologists of science to study localized academic groups, local traditions, and the communication gap between key regional forums.
+
+### Use Case F: High-Performance Demographics & Gender Analysis
+*   **Objective:** Audit the demographic health and gender balance of the Russian Indological community.
+*   **Method:** A policymaker clicks on the **«Статистический анализ»** (Statistical Insights) tab.
+*   **Result:** The platform renders the demographic bar chart showing age splits (*Young*, *Mid-career*, *Senior*, *Eminent Elders*) alongside the gender representation progress bar. This visualizes whether the field is successfully attracting young postgraduate researchers (under 35) or if it relies primarily on senior scholars.
+
+---
+
+## 🚀 4. Quick Start & Execution
+
+### Prerequisites
+*   **Python 3.8+** installed locally.
+*   A modern web browser.
+
+### Ingestion & Compilation Pipeline
+To compile, process, and deploy the entire platform from scratch, run the scripts in sequence:
+
+1.  **Compile Database:** Rebuilds the normalized SQLite schema and parses all HTML files from the cached directories:
+    ```bash
+    python build_and_populate_db.py
+    ```
+2.  **Generate CSV & Analytics:** Calculates cohort statistics and exports datasets inside `analytics_output/`:
+    ```bash
+    python generate_analytics.py
+    ```
+3.  **Serialize JS Payload:** Serializes SQL entries into the high-performance `site_data.js` module for the browser:
+    ```bash
+    python generate_site_data.py
+    ```
+4.  **Compile Static Profile Pages:** Generates the 213 individual SEO-optimized scholar profile HTML pages:
+    ```bash
+    python generate_scholars_pages.py
+    ```
+5.  **Launch Local Web Server:** Start Python's built-in lightweight HTTP server to bypass CORS policy restrictions:
+    ```bash
+    python -m http.server 8000
+    ```
+    Open your browser and navigate to: **`http://localhost:8000/`**
+
+---
+
+## 🤖 5. Automated Semi-Annual Deployment Workflow
+
+The project is configured with a automated **GitHub Actions** workflow (`.github/workflows/rebuild_and_deploy.yml`) scheduled to execute twice a year on critical academic boundary dates:
+
+*   **June 20 (00:00 UTC):** Immediately following the completion of the spring **Zograf Readings** in St. Petersburg.
+*   **December 20 (00:00 UTC):** Immediately following the completion of the winter **Roerich Readings** in Moscow.
+
+### How It Works:
+1.  **Active Crawling:** The workflow runs `fetch_latest_programs.py`, querying institutional portals (IOM RAS and IAS RAS) for newly announced programs, saving new programs directly to the HTML cache.
+2.  **Rebuild Pipeline:** Sequentially runs `build_and_populate_db.py`, `generate_analytics.py`, `generate_site_data.py`, and `generate_scholars_pages.py`.
+3.  **Git Commit:** Commits all updated databases, JS payloads, static profile pages, and analytical datasets back to the `main` branch.
+4.  **GitHub Pages Deployment:** Automatically deploys the updated dashboard live to **`https://gasyoun.github.io/IndologyScholars/`**.
+
+---
+
+## 📈 6. Core Database Statistics
+
+*   **Unique Indologists Deduplicated:** 213 scholars
+*   **Total Presentations Parsed:** 732 talks
+*   **Historical Timeline Covered:** 2004 – 2025
+*   **Zograf Readings (St. Petersburg):** 21 events cataloged
+*   **Roerich Readings (Moscow):** 18 events cataloged
+*   **Cross-Conference Core Cohort (Overlap):** 32 scholars active in both forums
+*   **St. Petersburg-Centric Cohort:** 119 scholars
+*   **Moscow-Centric Cohort:** 62 scholars
+*   **Verification Status:** **`PASSED`** (referential keys and identity constraints fully validated)

@@ -1,0 +1,11 @@
+--- UTF-8 ---
+
+﻿<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>ИВР РАН (Санкт-Петербург) - XXV Зографские чтения, 2004</title>
+<meta name="title" content="XXV Зографские чтения, 2004" />
+<meta name="author" content="" />
+<meta name="description" content=",Санкт-Петербургский Институт Восточных Рукописей Российской Академии Наук - официальный сайт" />
+<meta name="keywords" content=",востоковедение, история, филология, источниковедение, рукописное дело, рукописи, исламо
+
+Windows-1251 failed: 'charmap' codec can't decode byte 0x98 in position 90: character maps to <undefined>

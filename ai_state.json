@@ -1,0 +1,91 @@
+{
+  "project_name": "IndologyScholars",
+  "version": "1.5.0",
+  "last_updated": "2026-05-18T18:45:00+03:00",
+  "status": "Production-Ready",
+  "pipeline_verification": {
+    "database": "conferences.db",
+    "unique_scholars_count": 213,
+    "total_presentations_count": 732,
+    "conferences_mapped": {
+      "zograf_readings": {
+        "event_series_id": 1,
+        "events_count": 21,
+        "years": "2004-2025"
+      },
+      "roerich_readings": {
+        "event_series_id": 2,
+        "events_count": 18,
+        "years": "2007-2025"
+      }
+    },
+    "overlapping_cohort_count": 32,
+    "verification_status": "PASSED"
+  },
+  "deliverables": [
+    {
+      "path": "indologists_scholarly_analysis.md",
+      "type": "Markdown Scholarly Report",
+      "description": "Comprehensive proso-biographical report, classifying young/independent scholars, dynamic affiliation shifts, online footprints, complete biography lifespans, and resolved names."
+    },
+    {
+      "path": "conferences.db",
+      "type": "SQLite Database",
+      "description": "Normalized, referentially-sound relational SQL database mapping historical indology conferences, now featuring explicit place entities and lifespans."
+    },
+    {
+      "path": "analytics_output/total_indologists.csv",
+      "type": "CSV Dataset",
+      "description": "Master list of all 213 deduplicated indologists with contribution splits."
+    },
+    {
+      "path": "analytics_output/zograf_only_indologists.csv",
+      "type": "CSV Dataset",
+      "description": "Subset of 119 St. Petersburg-centric scholars active only in Zograf Readings."
+    },
+    {
+      "path": "analytics_output/roerich_only_indologists.csv",
+      "type": "CSV Dataset",
+      "description": "Subset of 62 Moscow-centric scholars active only in Roerich Readings."
+    },
+    {
+      "path": "indology_scholars_analytics.md",
+      "type": "Markdown Analytical Report",
+      "description": "Detailed comparative report ranking top scholars and analyzing the cross-conference overlap cohort."
+    },
+    {
+      "path": "index.html",
+      "type": "Interactive Web App",
+      "description": "Sleek, responsive dark-mode dashboard with dual-language (Russian/English) support, elegant lifespan displays, and five interactive SVG charts (including Cities Geography representation, Age Demographics, and Gender Composition)."
+    },
+    {
+      "path": "site_data.js",
+      "type": "JavaScript Data Structure",
+      "description": "Unified client-side database module generated automatically from SQLite with precompiled city counts, gender representation metrics, and age group stats."
+    },
+    {
+      "path": ".github/workflows/rebuild_and_deploy.yml",
+      "type": "GitHub Actions Workflow",
+      "description": "CI/CD automated pipeline running twice-yearly (June 20 & Dec 20) to crawl, rebuild, and deploy updated portal."
+    }
+  ],
+  "architecture_details": {
+    "scraper": "scraper.py - Handles raw HTML caching and extraction from university & institute portals.",
+    "active_crawler": "fetch_latest_programs.py - Automatically queries online news & announcements for latest conference files.",
+    "database_builder": "build_and_populate_db.py - Normalizes, cleans Cyrillic initials, deduplicates identities, and populates SQL schemas.",
+    "analytics_engine": "generate_analytics.py - Performs comparative analyses and exports targeted datasets.",
+    "site_generator": "generate_site_data.py - Packs relational tables into high-performance JS data structures.",
+    "frontend": "index.html + site_data.js - Interactive glassmorphic single-page visualization portal with localized biographical information."
+  },
+  "internationalization": {
+    "default_language": "RU (Russian)",
+    "supported_languages": ["RU", "EN"],
+    "features": "Real-time state switcher for all tables, lifespans, headers, stats, timeline events, and interactive SVG charts without page reload."
+  },
+  "automation": {
+    "schedule": "Twice a year (June 20 & December 20 at 00:00 UTC)",
+    "workflow_path": ".github/workflows/rebuild_and_deploy.yml",
+    "pages_url": "https://gasyoun.github.io/IndologyScholars/",
+    "manual_trigger": "Supported (workflow_dispatch)"
+  }
+}

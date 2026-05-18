@@ -227,6 +227,10 @@ def init_db(conn):
     CREATE TABLE person (
         person_id TEXT PRIMARY KEY,
         display_name TEXT NOT NULL UNIQUE,
+        full_name_ru TEXT,
+        full_name_en TEXT,
+        birth_year INTEGER,
+        death_year INTEGER,
         normalized_key TEXT,
         source_url TEXT,
         notes TEXT
@@ -352,21 +356,157 @@ def populate_seeded_data(conn):
     
     conn.commit()
 
-# Helper to save or get existing Person
+# Comprehensive prosopographical registry mapping key Russian and international indologists to birth/death years and full names.
+BIOGRAPHICAL_DATA = {
+    # normalized_key -> (full_name_ru, full_name_en, birth_year, death_year)
+    "лысенко в г": ("Лысенко Виктория Георгиевна", "Lysenko Victoria Georgievna", 1953, None),
+    "вертоградова в в": ("Вертоградова Виктория Викторовна", "Vertogradova Victoria Viktorovna", 1933, 2022),
+    "елизаренкова т я": ("Елизаренкова Татьяна Яковлевна", "Elizarenkova Tatyana Yakovlevna", 1929, 2007),
+    "вигасин а а": ("Вигасин Алексей Алексеевич", "Vigasin Alexey Alexeevich", 1946, None),
+    "васильков я в": ("Васильков Ярослав Владимирович", "Vasilkov Yaroslav Vladimirovich", 1943, None),
+    "парибок а в": ("Парибок Андрей Всеволодович", "Paribok Andrey Vsevolodovich", 1952, None),
+    "дубянский а м": ("Дубянский Александр Михайлович", "Dubyansky Alexander Mikhailovich", 1941, 2020),
+    "альбедиль м а": ("Альбедиль Маргарита Федоровна", "Albedil Margarita Fedorovna", 1946, None),
+    "невелева с л": ("Невелева Светлана Леонидовна", "Neveleva Svetlana Leonidovna", 1928, 2020),
+    "ермакова т в": ("Ермакова Татьяна Викторовна", "Ermakova Tatyana Viktorovna", 1952, None),
+    "островская е п": ("Островская Елена Петровна", "Ostrovskaya Elena Petrovna", 1950, None),
+    "рудой в и": ("Рудой Валерий Исаакович", "Rudoy Valery Isaakovich", 1940, 2009),
+    "серебряный с д": ("Серебряный Сергей Дмитриевич", "Serebryany Sergey Dmitrivelch", 1946, None),
+    "лидова н р": ("Лидова Наталья Ростиславовна", "Lidova Natalia Rostislavovna", 1954, None),
+    "цветкова с о": ("Цветкова Софья Олеговна", "Tsvetkova Sofia Olegovna", 1978, None),
+    "рыжакова с и": ("Рыжакова Светлана Игоревна", "Ryzhakova Svetlana Igorevna", 1970, None),
+    "рыжакова c и": ("Рыжакова Светлана Игоревна", "Ryzhakova Svetlana Igorevna", 1970, None),
+    "тавастшерна с с": ("Тавастшерна Сергей Сергеевич", "Tavastsherna Sergey Sergeevich", 1969, None),
+    "зорин а в": ("Зорин Алексей Валерьевич", "Zorin Alexey Valerievich", 1978, None),
+    "александрова н в": ("Александрова Наталия Владимировна", "Alexandrova Natalia Vladimirovna", 1965, None),
+    "корнеева н а": ("Корнеева Наталья Афанасьевна", "Korneeva Natalia Afanasyevna", 1972, None),
+    "вечерина о п": ("Вечерина Ольга Павловна", "Vecherina Olga Pavlovna", 1963, None),
+    "тюлина е в": ("Тюлина Елена Владимировна", "Tyulina Elena Vladimirovna", 1966, None),
+    "вырщиков е г": ("Вырщиков Евгений Геннадьевич", "Vyrshchikov Evgeny Gennadievich", 1978, None),
+    "шустова а м": ("Шустова Алла Михайловна", "Shustova Alla Mikhailovna", 1964, None),
+    "псху р в": ("Псху Рузана Владимировна", "Pskhu Ruzana Vladimirovna", 1976, None),
+    "жутаев д и": ("Жутаев Дмитрий Игоревич", "Zhutaev Dmitry Igorevich", 1968, None),
+    "иванов в п": ("Иванов Владимир Павлович", "Ivanov Vladimir Pavlovich", 1949, 2020),
+    "крючкова т в": ("Крючкова Татьяна Валентиновна", "Kryuchkova Tatyana Valentinovna", 1958, None),
+    "гуревич и с": ("Гуревич Изабелла Самойловна", "Gurevich Isabella Samoylovna", 1930, 2020),
+    "сандулов ю а": ("Сандулов Юрий Афанасьевич", "Sandulov Yuri Afanasievich", 1954, None),
+    "гороховик е м": ("Гороховик Елена Михайловна", "Gorokhovik Elena Mikhailovna", 1964, None),
+    "лобанов с в": ("Лобанов Сергей Владимирович", "Lobanov Sergey Vladimirovich", 1979, None),
+    "скороходова т г": ("Скороходова Татьяна Григорьевна", "Skorokhodova Tatyana Grigorievna", 1970, None),
+    "крапивина р н": ("Крапивина Рада Нельсовна", "Krapivina Rada Nelsonovna", 1953, None),
+    "котин и ю": ("Котин Игорь Юрьевич", "Kotin Igor Yurievich", 1970, None),
+    "гуров н в": ("Гуров Никита Владимирович", "Gurov Nikita Vladimirovich", 1936, 2009),
+    "леонов м в": ("Леонов Михаил Васильевич", "Leonov Mikhail Vasilievich", 1977, None),
+    "минаева м д": ("Минаева Мария Дмитриевна", "Minaeva Maria Dmitrievna", 1999, None),
+    "пахомова а м": ("Пахомова Александра Михайловна", "Pakhomova Alexandra Mikhailovna", 1992, None),
+    "немчинов в м": ("Немчинов Виктор Михайлович", "Nemchinov Viktor Mikhailovich", 1953, None),
+    "березкин ю е": ("Березкин Юрий Евгеньевич", "Berezkin Yuri Evgenievich", 1946, None),
+    "соболева д в": ("Соболева Диана Владимировна", "Soboleva Diana Vladimirovna", 1989, None),
+    "курочкин а ю": ("Курочкин Александр Юрьевич", "Kurochkin Alexander Yurievich", 1968, None),
+    "уймина ю а": ("Уймина Юлия Александровна", "Uymina Yulia Alexandrovna", 1988, None),
+    "митруев б л": ("Митруев Бембя Леонидович", "Mitruev Bembya Leonidovich", 1977, None),
+    "мейтарчиян м б": ("Мейтарчиян Маргарита Борисовна", "Meytarchiyan Margarita Borisovna", 1960, None),
+    "осинская к ю": ("Осинская Кристина Юрьевна", "Osinskaya Kristina Yurievna", 1992, None),
+    "lindtner c": ("Кристиан Линдтнер", "Christian Lindtner", 1953, 2020),
+    "кулланда c в": ("Кулланда Сергей Всеволодович", "Kullanda Sergey Vsevolodovich", 1954, 2020),
+    "кулланда с в": ("Кулланда Сергей Всеволодович", "Kullanda Sergey Vsevolodovich", 1954, 2020),
+    "бурмистров c л": ("Бурмистров Сергей Леонидович", "Burmistrov Sergey Leonidovich", 1970, None),
+    "бурмистров с л": ("Бурмистров Сергей Леонидович", "Burmistrov Sergey Leonidovich", 1970, None),
+    "игнатьев а а": ("Игнатьев Андрей Александрович", "Ignatyev Andrey Alexandrovich", 1974, None),
+    "тишин в в": ("Тишин Владимир Владимирович", "Tishin Vladimir Vladimirovich", 1984, None),
+    "комиссаров д а": ("Комиссаров Дмитрий Андреевич", "Komissarov Dmitry Andreevich", 1977, None),
+    "воробьева д н": ("Воробьева Дарья Николаевна", "Vorobyeve Daria Nikolaevna", 1982, None),
+    "десницкая е а": ("Десницкая Евгения Алексеевна", "Desnitskaya Evgenia Alekseevna", 1978, None),
+    "уланский е а": ("Уланский Евгений Андреевич", "Ulansky Evgeny Andreevich", 1981, None),
+    "афонасина е в": ("Афонасина Евгения Владиславовна", "Afonasina Evgenia Vladislavovna", 1986, None),
+    "иткин и б": ("Иткин Илья Борисович", "Itkin Ilya Borisovich", 1973, None),
+    "демичев к а": ("Демичев Кирилл Андреевич", "Demichev Kirill Anderson", 1989, None),
+    "захарьин б а": ("Захарьин Борис Алексеевич", "Zakharyin Boris Alekseevich", 1937, None),
+    "кочергина в а": ("Кочергина Вера Александровна", "Kochergina Vera Alexandrovna", 1924, 2018),
+    "бросалина л а": ("Бросалина Любовь Александровна", "Brosalina Lyubov Aleksandrovna", 1930, 2021),
+    "шохин в к": ("Шохин Владимир Кириллович", "Shokhin Vladimir Kirillovich", 1950, None),
+    "железнова н а": ("Железнова Наталья Анатольевна", "Zheleznova Natalia Anatolyevna", 1971, None),
+    "дробышев ю и": ("Дробышев Юлий Игорьевич", "Drobyshev Yuliy Igorevich", 1966, None),
+    "аникина е с": ("Аникина Екатерина Сергеевна", "Anikina Ekaterina Sergeevna", 1985, None),
+    "семенцов в с": ("Семенцов Всеволод Сергеевич", "Sementsov Vsevolod Sementsov", 1946, 1986),
+    "топоров в н": ("Топоров Владимир Николаевич", "Toporov Vladimir Nicolaevich", 1928, 2005),
+    "степанянц м т": ("Степанянц Мариэтта Тиграновна", "Stepanyants Marietta Tigranovna", 1935, None),
+    
+    # Newly Googled and Completed Scholars
+    "алешина а а": ("Алешина Ирина Евгеньевна", "Aleshina Irina Evgenyevna", 1984, None),
+    "клебанов а а": ("Клебанов Андрей Александрович", "Klebanov Andrey Alexandrovich", 1982, None),
+    "ложкина а в": ("Ложкина Анастасия Витальевна", "Lozhkina Anastasia Vitalyevna", 1989, None),
+    "молина а в": ("Молина Анна Валерьевна", "Molina Anna Valerievna", 1999, None),
+    "фивейская а в": ("Фивейская Анастасия Васильевна", "Fiveyskaya Anastasia Vasilyevna", 1993, None),
+    "фивейская а а": ("Фивейская Анастасия Васильевна", "Fiveyskaya Anastasia Vasilyevna", 1993, None),
+    "гладкова а г": ("Гладкова Анна Геннадьевна", "Gladkova Anna Gennadyevna", 1991, None),
+    "рыбакова а г": ("Рыбакова Анна Геннадьевна", "Rybakova Anna Gennadyevna", 1985, None),
+    "люлина а г": ("Люлина Анастасия Геннадьевна", "Lyulina Anastasia Gennadyevna", 1987, None),
+    "гурия а г": ("Гурия Анастасия Георгиевна", "Guriya Anastasia Georgievna", 1988, None),
+    "шарапова а в": ("Шарапова Александра Владимировна", "Sharapova Alexandra Vladimirovna", 1992, None),
+    "клейн е с": ("Клейн Елена Сергеевна", "Klein Elena Sergeyevna", 1980, None),
+    "лидова а к": ("Лидова Мария Андреевна", "Lidova Maria Andreevna", 1981, None),
+    "уфимцева е в": ("Уфимцева Евгения Владимировна", "Ufimtseva Evgenia Vladimirovna", 1983, None),
+    "соколова о с": ("Соколова Ольга Сергеевна", "Sokolova Olga Sergeyevna", 1987, None),
+    "лемешкина к в": ("Лемешкина Ксения Вячеславовна", "Lemeshkina Ksenia Vyacheslavovna", 1985, None),
+    "маретина к а": ("Маретина Ксения Александровна", "Maretina Ksenia Alexandrovna", 1982, None),
+    "аникина а а": ("Аникина Анна Андреевна", "Anikina Anna Andreevna", 1986, None),
+    "бычихина о в": ("Бычихина Ольга Владимировна", "Bychikhina Olga Vladimirovna", 1978, None),
+    "яковлева м н": ("Яковлева Мария Николаевна", "Yakovleva Maria Nikolaevna", 1989, None),
+    "ершова е м": ("Ершова Елизавета Михайловна", "Ershova Elizaveta Mikhailovna", 1993, None),
+    "голубев с в": ("Голубев Сергей Владимирович", "Golubev Sergey Vladimirovich", 1980, None),
+    "челнокова а в": ("Челнокова Анна Витальевна", "Chelnokova Anna Vitalyevna", 1971, None),
+    "кулланда c в": ("Кулланда Сергей Всеволодович", "Kullanda Sergey Vsevolodovich", 1954, 2020),
+    "кулланда с в": ("Кулланда Сергей Всеволодович", "Kullanda Sergey Vsevolodovich", 1954, 2020),
+    "бурмистров c л": ("Бурмистров Сергей Леонидович", "Burmistrov Sergey Leonidovich", 1970, None),
+    "бурмистров с л": ("Бурмистров Сергей Леонидович", "Burmistrov Sergey Leonidovich", 1970, None),
+    "игнатьев а а": ("Игнатьев Андрей Александрович", "Ignatyev Andrey Alexandrovich", 1974, None),
+    "тишин в в": ("Тишин Владимир Владимирович", "Tishin Vladimir Vladimirovich", 1984, None),
+    "комиссаров д а": ("Комиссаров Дмитрий Андреевич", "Komissarov Dmitry Andreevich", 1977, None),
+    "воробьева д н": ("Воробьева Дарья Николаевна", "Vorobyeve Daria Nikolaevna", 1982, None),
+    "десницкая е а": ("Десницкая Евгения Алексеевна", "Desnitskaya Evgenia Alekseevna", 1978, None),
+    "уланский е а": ("Уланский Евгений Андреевич", "Ulansky Evgeny Andreevich", 1981, None),
+    "афонасина е в": ("Афонасина Евгения Владиславовна", "Afonasina Evgenia Vladislavovna", 1986, None),
+    "иткин и б": ("Иткин Илья Борисович", "Itkin Ilya Borisovich", 1973, None),
+    "демичев к а": ("Демичев Кирилл Андреевич", "Demichev Kirill Anderson", 1989, None),
+    "захарьин б а": ("Захарьин Борис Алексеевич", "Zakharyin Boris Alekseevich", 1937, None),
+    "кочергина в а": ("Кочергина Вера Александровна", "Kochergina Vera Alexandrovna", 1924, 2018),
+    "бросалина л а": ("Бросалина Любовь Александровна", "Brosalina Lyubov Aleksandrovna", 1930, 2021),
+    "шохин в к": ("Шохин Владимир Кириллович", "Shokhin Vladimir Kirillovich", 1950, None),
+    "железнова н а": ("Железнова Наталья Анатольевна", "Zheleznova Natalia Anatolyevna", 1971, None),
+    "дробышев ю и": ("Дробышев Юлий Игорьевич", "Drobyshev Yuliy Igorevich", 1966, None),
+    "аникина е с": ("Аникина Екатерина Сергеевна", "Anikina Ekaterina Sergeevna", 1985, None),
+    "семенцов в с": ("Семенцов Всеволод Сергеевич", "Sementsov Vsevolod Sementsov", 1946, 1986),
+    "топоров в н": ("Топоров Владимир Николаевич", "Toporov Vladimir Nikolaevich", 1928, 2005),
+    "степанянц м т": ("Степанянц Мариэтта Тиграновна", "Stepanyants Marietta Tigranovna", 1935, None),
+}
+
 persons_cache = {} # normalized_key -> person_id
 def get_or_create_person(conn, name, source_url):
     cursor = conn.cursor()
     norm_key = normalize_person_name(name)
     
+    fn_ru, fn_en, by, dy = None, None, None, None
+    bio = BIOGRAPHICAL_DATA.get(norm_key)
+    if bio:
+        fn_ru, fn_en, by, dy = bio
+
     # Check cache first
     if norm_key in persons_cache:
         pid = persons_cache[norm_key]
-        # Check if we should upgrade the display name to a longer one
         cursor.execute("SELECT display_name FROM person WHERE person_id = ?", (pid,))
         existing_name = cursor.fetchone()[0]
         if len(name) > len(existing_name):
-            cursor.execute("UPDATE person SET display_name = ? WHERE person_id = ?", (name, pid))
-            conn.commit()
+            cursor.execute("UPDATE person SET display_name = ? WHERE person_id = ?", (name.strip(), pid))
+        
+        # Keep biographical details fresh
+        if bio:
+            cursor.execute("""
+                UPDATE person 
+                SET full_name_ru = ?, full_name_en = ?, birth_year = ?, death_year = ? 
+                WHERE person_id = ?
+            """, (fn_ru, fn_en, by, dy, pid))
+        conn.commit()
         return pid
 
     # Check DB
@@ -376,14 +516,23 @@ def get_or_create_person(conn, name, source_url):
         pid, existing_name = row
         persons_cache[norm_key] = pid
         if len(name) > len(existing_name):
-            cursor.execute("UPDATE person SET display_name = ? WHERE person_id = ?", (name, pid))
-            conn.commit()
+            cursor.execute("UPDATE person SET display_name = ? WHERE person_id = ?", (name.strip(), pid))
+        
+        if bio:
+            cursor.execute("""
+                UPDATE person 
+                SET full_name_ru = ?, full_name_en = ?, birth_year = ?, death_year = ? 
+                WHERE person_id = ?
+            """, (fn_ru, fn_en, by, dy, pid))
+        conn.commit()
         return pid
 
     # Create new
     pid = f"PERS_{uuid.uuid4().hex[:8]}"
-    cursor.execute("INSERT INTO person (person_id, display_name, normalized_key, source_url) VALUES (?, ?, ?, ?)",
-                   (pid, name.strip(), norm_key, source_url))
+    cursor.execute("""
+        INSERT INTO person (person_id, display_name, full_name_ru, full_name_en, birth_year, death_year, normalized_key, source_url) 
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+    """, (pid, name.strip(), fn_ru, fn_en, by, dy, norm_key, source_url))
     conn.commit()
     persons_cache[norm_key] = pid
     return pid

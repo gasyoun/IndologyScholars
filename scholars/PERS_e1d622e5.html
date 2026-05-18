@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>С. Мажитов | Российский индологический архив</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0b0f19;
+            --bg-secondary: #111827;
+            --card-bg: rgba(31, 41, 55, 0.45);
+            --card-border: rgba(255, 255, 255, 0.07);
+            --text-primary: #ffffff;
+            --text-secondary: #9ca3af;
+            --text-muted: #6b7280;
+            --accent-primary: #8b5cf6;
+            --accent-secondary: #3b82f6;
+            --accent-glow: rgba(139, 92, 246, 0.15);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --font-mono: 'Fira Code', monospace;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(139, 92, 246, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(59, 130, 246, 0.08) 0%, transparent 40%);
+            background-attachment: fixed;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* Header Navigation */
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-family: var(--font-display);
+            font-weight: 500;
+            font-size: 0.95rem;
+            padding: 0.6rem 1.2rem;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--card-border);
+            border-radius: 9999px;
+            cursor: pointer;
+            transition: var(--transition);
+            margin-bottom: 2rem;
+        }
+
+        .back-btn:hover {
+            color: #ffffff;
+            background: var(--accent-glow);
+            border-color: var(--accent-primary);
+            box-shadow: 0 0 15px rgba(139, 92, 246, 0.2);
+            transform: translateX(-4px);
+        }
+
+        /* Profile Header */
+        .profile-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 2.5rem;
+            backdrop-filter: blur(12px);
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+        }
+
+        .profile-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            padding-bottom: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .profile-title h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 2.2rem;
+            line-height: 1.2;
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+        }
+
+        .profile-title .lifespan {
+            color: var(--text-secondary);
+            font-weight: 400;
+            font-size: 1.4rem;
+            margin-left: 0.5rem;
+        }
+
+        .status-badges {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-top: 0.5rem;
+        }
+
+        .status-badge {
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .student-badge {
+            background: rgba(59, 130, 246, 0.15);
+            color: #60a5fa;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+        }
+
+        .independent-badge {
+            background: rgba(16, 185, 129, 0.15);
+            color: #34d399;
+            border: 1px solid rgba(16, 185, 129, 0.3);
+        }
+
+        /* Profile Details Grid */
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .detail-item {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            border-radius: 8px;
+            padding: 1rem;
+        }
+
+        .detail-label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.25rem;
+        }
+
+        .detail-value {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.05rem;
+            color: #ffffff;
+        }
+
+        .theme-badge {
+            display: inline-block;
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 0.15rem 0.5rem;
+            border-radius: 4px;
+            margin-top: 0.25rem;
+        }
+
+        /* Tags lists */
+        .tags-section {
+            margin-bottom: 1.5rem;
+        }
+
+        .tags-title {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+
+        .tags-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .aff-tag, .city-tag {
+            font-size: 0.85rem;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 6px;
+            padding: 0.3rem 0.8rem;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .aff-tag:hover {
+            background: rgba(139, 92, 246, 0.08);
+            border-color: var(--accent-primary);
+            color: #ffffff;
+        }
+
+        .city-tag:hover {
+            background: rgba(59, 130, 246, 0.08);
+            border-color: var(--accent-secondary);
+            color: #ffffff;
+        }
+
+        /* Timeline / Talks section */
+        .section-title {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.6rem;
+            color: #ffffff;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .talks-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .talk-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .talk-card:hover {
+            border-color: rgba(139, 92, 246, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+        }
+
+        .talk-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.75rem;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .talk-year {
+            font-family: var(--font-mono);
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--accent-secondary);
+        }
+
+        .talk-title {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 0.75rem;
+        }
+
+        .talk-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 0.5rem 1.5rem;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 0.75rem;
+        }
+
+        .talk-details strong {
+            color: var(--text-primary);
+        }
+
+        /* Theme color badging */
+        .badge-theme {
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.15rem 0.5rem;
+            border-radius: 4px;
+            text-transform: uppercase;
+        }
+
+        .theme-Philosophy { background: rgba(139, 92, 246, 0.15); color: #c084fc; border: 1px solid rgba(139, 92, 246, 0.3); }
+        .theme-Linguistics { background: rgba(59, 130, 246, 0.15); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.3); }
+        .theme-History { background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3); }
+        .theme-Art { background: rgba(236, 72, 153, 0.15); color: #f472b6; border: 1px solid rgba(236, 72, 153, 0.3); }
+        .theme-AcademicHistory { background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3); }
+
+        .badge {
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            display: inline-block;
+        }
+
+        .badge-online { background: rgba(59, 130, 246, 0.15); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.3); }
+        .badge-first { background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3); }
+        .badge-last { background: rgba(239, 68, 68, 0.15); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.3); }
+        .badge-order { background: rgba(255, 255, 255, 0.05); color: var(--text-secondary); border: 1px solid rgba(255, 255, 255, 0.1); }
+
+        /* Footer Copyright */
+        footer {
+            margin-top: 4rem;
+            border-top: 1px solid var(--card-border);
+            padding-top: 1.5rem;
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-family: var(--font-display);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Back Button -->
+        <a href="../index.html" class="back-btn">
+            <span>←</span>
+            <span class="lang-ru-inline">Назад на главную</span>
+            <span class="lang-en-inline">Back to Dashboard</span>
+        </a>
+
+        <!-- Profile Card -->
+        <div class="profile-card">
+            <div class="profile-header">
+                <div class="profile-title">
+                    <h1 class="lang-ru">С. Мажитов<span class="lifespan"></span></h1>
+                    <h1 class="lang-en">С. Мажитов<span class="lifespan"></span></h1>
+                    
+                    <div class="status-badges">
+                        
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scholar Meta Fields -->
+            <div class="details-grid">
+                <div class="detail-item">
+                    <div class="detail-label">
+                        <span class="lang-ru">Пол</span>
+                        <span class="lang-en">Gender</span>
+                    </div>
+                    <div class="detail-value">
+                        <span class="lang-ru">Мужчина</span>
+                        <span class="lang-en">Male</span>
+                    </div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">
+                        <span class="lang-ru">Научный профиль</span>
+                        <span class="lang-en">Research Profile</span>
+                    </div>
+                    <div class="detail-value">
+                        <span class="lang-ru">Узкий специалист</span>
+                        <span class="lang-en">Specialized Specialist</span>
+                        <br>
+                        <span class="badge-theme theme-Philosophy" style="margin-top: 0.4rem;">
+                            <span class="lang-ru">Философия и религия</span>
+                            <span class="lang-en">Philosophy & Religion</span>
+                        </span>
+                    </div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">
+                        <span class="lang-ru">Зографские чтения</span>
+                        <span class="lang-en">Zograf Readings</span>
+                    </div>
+                    <div class="detail-value" style="font-size: 0.9rem;">
+                        <span class="lang-ru">Никогда не выступал</span>
+                        <span class="lang-en">Never presented</span>
+                    </div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">
+                        <span class="lang-ru">Рериховские чтения</span>
+                        <span class="lang-en">Roerich Readings</span>
+                    </div>
+                    <div class="detail-value" style="font-size: 0.9rem;">
+                        <span class="lang-ru">Впервые: 2012 г. | Последний раз: 2012 г.</span>
+                        <span class="lang-en">First: 2012 | Last: 2012</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Affiliations -->
+            <div class="tags-section" style="display: block;">
+                <div class="tags-title">
+                    <span class="lang-ru">Аффилиации за все годы</span>
+                    <span class="lang-en">Affiliation History</span>
+                </div>
+                <div class="tags-list">
+                    <span class="aff-tag" onclick="filterByKeyword('Институт истории и этнологии им. Ч.Ч. Валиханова КН МОН РК, г. Алматы, Казахстан')">Институт истории и этнологии им. Ч.Ч. Валиханова КН МОН РК, г. Алматы, Казахстан</span>
+                </div>
+            </div>
+
+            <!-- Cities -->
+            <div class="tags-section" style="display: none;">
+                <div class="tags-title">
+                    <span class="lang-ru">Географические центры</span>
+                    <span class="lang-en">Geographical Centers</span>
+                </div>
+                <div class="tags-list">
+                    
+                </div>
+            </div>
+        </div>
+
+        <!-- Presentations list -->
+        <div>
+            <h3 class="section-title">
+                <span>📚</span>
+                <span class="lang-ru">Научные доклады (1)</span>
+                <span class="lang-en">Presented Papers (1)</span>
+            </h3>
+
+            <div class="talks-list lang-ru">
+                
+            <div class="talk-card">
+                <div class="talk-header">
+                    <span class="talk-year">2012 (Рериховские чтения)</span>
+                    <span class="badge badge-theme theme-Philosophy">Философия и религия</span>
+                </div>
+                <h4 class="talk-title">Актуализация информативной основы средневекового текста Центральной Азии в современном мире (на примере «Тарих-и Рашиди» Мирзы Хайдара Дуглата»)</h4>
+                <div class="talk-details">
+                    <div><strong>Секция:</strong> Научное заседание</div>
+                    <div><strong>Время:</strong> 2012-12-09 (Воскресенье), 11:00–18:00</div>
+                    <div><strong>Место проведения:</strong> IV RAS (Rozhdestvenka, 12)</div>
+                </div>
+                <div style="margin-top: 0.5rem; display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                       <span class="badge badge-order">5-й доклад из 7</span>
+                </div>
+            </div>
+            
+            </div>
+            
+            <div class="talks-list lang-en">
+                
+            <div class="talk-card">
+                <div class="talk-header">
+                    <span class="talk-year">2012 (Roerich Readings)</span>
+                    <span class="badge badge-theme theme-Philosophy">Philosophy & Religion</span>
+                </div>
+                <h4 class="talk-title">Актуализация информативной основы средневекового текста Центральной Азии в современном мире (на примере «Тарих-и Рашиди» Мирзы Хайдара Дуглата»)</h4>
+                <div class="talk-details">
+                    <div><strong>Session:</strong> Научное заседание</div>
+                    <div><strong>Time:</strong> 2012-12-09 (Sunday), 11:00–18:00</div>
+                    <div><strong>Venue:</strong> IV RAS (Rozhdestvenka, 12)</div>
+                </div>
+                <div style="margin-top: 0.5rem; display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                       <span class="badge badge-order">Talk 5 of 7</span>
+                </div>
+            </div>
+            
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <div class="lang-ru">© 2026 Российский индологический научный архив, д-р Марцис Гасунс. Все права защищены.</div>
+            <div class="lang-en">© 2026 Russian Indological Research Archive, Dr. Mārcis Gasūns. All rights reserved.</div>
+        </footer>
+    </div>
+
+    <script>
+        // Set language display based on dashboard preferences
+        function applyLanguage() {
+            const lang = localStorage.getItem('indology_lang') || 'ru';
+            
+            document.querySelectorAll('.lang-ru').forEach(el => el.style.display = lang === 'ru' ? 'block' : 'none');
+            document.querySelectorAll('.lang-en').forEach(el => el.style.display = lang === 'en' ? 'block' : 'none');
+            
+            document.querySelectorAll('.lang-ru-inline').forEach(el => el.style.display = lang === 'ru' ? 'inline' : 'none');
+            document.querySelectorAll('.lang-en-inline').forEach(el => el.style.display = lang === 'en' ? 'inline' : 'none');
+        }
+
+        // Helper function to link back to dashboard with search keyword
+        function filterByKeyword(keyword) {
+            window.location.href = '../index.html?search=' + encodeURIComponent(keyword);
+        }
+
+        applyLanguage();
+    </script>
+</body>
+</html>

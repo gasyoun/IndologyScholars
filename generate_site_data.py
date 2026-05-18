@@ -1,12 +1,321 @@
 import sqlite3
 import json
+import datetime
+import re
 
 DB_PATH = "conferences.db"
 OUTPUT_FILE = "site_data.js"
 
+def format_to_initials(name):
+    name = name.strip()
+    name = re.sub(r'\s+', ' ', name)
+    name = re.sub(r'[\.,;\s]+$', '', name)
+    
+    # 1. Pattern: Initials Last (e.g. "В. В. Вертоградова" or "В.В.Вертоградова" or "В. Вертоградова")
+    m1 = re.match(r'^([А-ЯЁA-Z]\.?)\s*([А-ЯЁA-Z]\.?\s*)?([А-ЯЁA-Z][а-яёa-z\-]+)$', name)
+    if m1:
+        init1 = m1.group(1).replace('.', '').strip()
+        init2 = m1.group(2).replace('.', '').strip() if m1.group(2) else ""
+        last = m1.group(3)
+        if init2:
+            return f"{init1}. {init2}. {last}"
+        else:
+            return f"{init1}. {last}"
+            
+    # 2. Pattern: Last Initials (e.g. "Вертоградова В. В." or "Вертоградова В.В.")
+    m2 = re.match(r'^([А-ЯЁA-Z][а-яёa-z\-]+)\s+([А-ЯЁA-Z]\.?)\s*([А-ЯЁA-Z]\.?)?$', name)
+    if m2:
+        last = m2.group(1)
+        init1 = m2.group(2).replace('.', '').strip()
+        init2 = m2.group(3).replace('.', '').strip() if m2.group(3) else ""
+        if init2:
+            return f"{init1}. {init2}. {last}"
+        else:
+            return f"{init1}. {last}"
+            
+    # 3. Pattern: Full Name (e.g. "Александрова Наталия Владимировна" or "Наталия Владимировна Александрова")
+    parts = name.split()
+    if len(parts) == 3:
+        patronymic_idx = -1
+        for idx, p in enumerate(parts):
+            if p.endswith(('вич', 'вна', 'чна', 'чич', 'вна.', 'вич.')):
+                patronymic_idx = idx
+                break
+        
+        if patronymic_idx == 2:
+            last = parts[0]
+            first = parts[1]
+            patr = parts[2]
+            return f"{first[0]}. {patr[0]}. {last}"
+        elif patronymic_idx == 1:
+            last = parts[2]
+            first = parts[0]
+            patr = parts[1]
+            return f"{first[0]}. {patr[0]}. {last}"
+            
+    if len(parts) == 2:
+        if parts[0].endswith(('ова', 'ева', 'ина', 'ын', 'ий', 'ев', 'ов', 'их', 'ых', 'ко', 'ук', 'юк')):
+            last = parts[0]
+            first = parts[1]
+        else:
+            first = parts[0]
+            last = parts[1]
+        return f"{first[0]}. {last}"
+        
+    return name
+
+def get_day_of_week(date_str):
+    if not date_str:
+        return {"ru": "Не указан", "en": "Not specified"}
+    try:
+        dt = datetime.datetime.strptime(date_str, "%Y-%m-%d")
+        wd = dt.weekday()
+        days_ru = ["Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота", "Воскресенье"]
+        days_en = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+        return {"ru": days_ru[wd], "en": days_en[wd]}
+    except Exception:
+        return {"ru": "Не указан", "en": "Not specified"}
+
+def extract_geography(affiliation_text):
+    if not affiliation_text:
+        return {"ru": "Не указана", "en": "Not specified"}
+    aff_low = affiliation_text.lower()
+    
+    cities = [
+        ("санкт-петербург", "Санкт-Петербург", "St. Petersburg"),
+        ("спб", "Санкт-Петербург", "St. Petersburg"),
+        ("ленинград", "Санкт-Петербург", "St. Petersburg"),
+        ("москва", "Москва", "Moscow"),
+        ("краснодар", "Краснодар", "Krasnodar"),
+        ("нижний новгород", "Нижний Новгород", "Nizhny Novgorod"),
+        ("томск", "Томск", "Tomsk"),
+        ("новосибирск", "Новосибирск", "Novosibirsk"),
+        ("владивосток", "Владивосток", "Vladivostok"),
+        ("улан-удэ", "Улан-Удэ", "Ulan-Ude"),
+        ("казань", "Казань", "Kazan"),
+        ("пенза", "Пенза", "Penza"),
+        ("элиста", "Элиста", "Elista"),
+        ("копенгаген", "Копенгаген", "Copenhagen"),
+        ("copenhagen", "Копенгаген", "Copenhagen"),
+        ("тарту", "Тарту", "Tartu"),
+        ("tartu", "Тарту", "Tartu"),
+        ("вильнюс", "Вильнюс", "Vilnius"),
+        ("vilnius", "Вильнюс", "Vilnius"),
+        ("париж", "Париж", "Paris"),
+        ("paris", "Париж", "Paris"),
+        ("оксфорд", "Оксфорд", "Oxford"),
+        ("oxford", "Оксфорд", "Oxford"),
+        ("дели", "Дели", "Delhi"),
+        ("delhi", "Дели", "Delhi")
+    ]
+    
+    for keyword, ru, en in cities:
+        if keyword in aff_low:
+            return {"ru": ru, "en": en}
+            
+    return {"ru": "Не указана", "en": "Not specified"}
+
+def clean_title(title):
+    if not title:
+        return ""
+    # Strip (онлайн), [онлайн], (он-лайн), (online), [online], ( zoom ), [ zoom ], case insensitive
+    cleaned = re.sub(r'\s*[\(\[][оО]н[-]?лайн[\)\]]\s*', ' ', title)
+    cleaned = re.sub(r'\s*[\(\[][oO]nline[\)\]]\s*', ' ', cleaned)
+    cleaned = re.sub(r'\s*[\(\[][zZ]oom[\)\]]\s*', ' ', cleaned)
+    # Remove multiple spaces and strip
+    cleaned = re.sub(r'\s+', ' ', cleaned)
+    return cleaned.strip()
+
+def classify_gender(full_name_ru, display_name):
+    name_to_check = (full_name_ru or display_name or "").strip()
+    parts = name_to_check.split()
+    
+    # 1. Patronymics check
+    for p in parts:
+        p_low = p.lower()
+        if p_low.endswith(('вна', 'евна', 'овна', 'ична', 'инична')):
+            return "F"
+        if p_low.endswith(('вич', 'евич', 'ович', 'ич', 'чич')):
+            return "M"
+            
+    # 2. First name check
+    female_first_names = ["маргарита", "наталия", "надежда", "елена", "ирина", "ольга", "татьяна", "анна", "мария", "софия", "евгения", "галина", "светлана", "людмила", "александра", "екатерина", "юлия", "любовь", "нина", "дарья", "лариса", "ксен", "ярослав", "вера", "тамара", "алена", "виктория", "марина", "жанна", "светлана", "надежда", "марианна"]
+    male_first_names = ["михаил", "бабасан", "павел", "андрей", "иван", "сергей", "алексей", "дмитрий", "владимир", "николай", "александр", "петр", "федор", "степан", "григорий", "ярослав", "василий", "георгий", "юрий", "максим", "кирилл", "артем", "роман", "евгений", "виктор", "леонид", "олег", "игорь", "святослав", "марцис", "макс", "эрман", "никита", "семен"]
+    
+    for p in parts:
+        p_low = p.lower()
+        if p_low in female_first_names:
+            return "F"
+        if p_low in male_first_names:
+            return "M"
+            
+    # 3. Last name endings check
+    for p in parts:
+        p_low = p.lower()
+        if p_low.endswith(('ова', 'ева', 'ина', 'ая', 'ына')):
+            return "F"
+        if p_low.endswith(('ов', 'ев', 'ин', 'ий', 'ын')):
+            return "M"
+            
+    # Guess based on last letter of first word (usually last name or first name)
+    if parts:
+        last_letter = parts[0][-1].lower()
+        if last_letter in ['а', 'я', 'и']:
+            return "F"
+            
+    return "M"
+
+def classify_theme(title):
+    title_low = (title or "").lower()
+    
+    # 1. History of scholarship / archives
+    if any(term in title_low for term in ["рерих", "зограф", "конгресс", "биогр", "архив", "востоковед", "индолог", "экспедиц", "дневник", "переписк", "письм", "коллекц", "музей"]):
+        return {
+            "ru": "История науки и архивы",
+            "en": "History of Scholarship",
+            "code": "AcademicHistory"
+        }
+    
+    # 2. Linguistics & Philology
+    if any(term in title_low for term in ["язык", "грамматик", "санскрит", "пали", "глагол", "фонет", "морфол", "лингв", "лексико", "диалект", "слово", "перевод", "синтакс", "словарь", "этимол", "текстолог"]):
+        return {
+            "ru": "Лингвистика и филология",
+            "en": "Linguistics & Philology",
+            "code": "Linguistics"
+        }
+        
+    # 3. Philosophy & Religion
+    if any(term in title_low for term in ["философ", "религ", "будди", "будд", "шива", "текст", "упанишад", "учен", "йог", "индуиз", "ведичес", "кришн", "теософ", "миф", "ритуал", "божес", "космо", "сакрал"]):
+        return {
+            "ru": "Философия и религия",
+            "en": "Philosophy & Religion",
+            "code": "Philosophy"
+        }
+        
+    # 4. Art & Literature
+    if any(term in title_low for term in ["литератур", "поэз", "драм", "театр", "искусств", "архитект", "живоп", "поэт", "роман", "повес", "песн", "эпос", "фолькл", "сказ", "миниатюр", "изобраз"]):
+        return {
+            "ru": "Искусство и литература",
+            "en": "Art & Literature",
+            "code": "Art"
+        }
+        
+    # 5. History & Ethnography
+    if any(term in title_low for term in ["этногр", "культур", "быт", "традиц", "обыча", "истори", "археол", "племен", "каст", "общес", "социал", "государс", "династ", "обряд", "одежд", "празд", "населен", "геогр"]):
+        return {
+            "ru": "История и этнография",
+            "en": "History & Ethnography",
+            "code": "History"
+        }
+        
+    return {
+        "ru": "История и этнография",
+        "en": "History & Ethnography",
+        "code": "History"
+    }
+
 def main():
     conn = sqlite3.connect(DB_PATH)
     cursor = conn.cursor()
+    
+    # Pre-fetch session order mapping
+    cursor.execute("""
+        SELECT pr.presentation_id, pr.session_id
+        FROM presentation pr
+        ORDER BY pr.presentation_id ASC
+    """)
+    pres_session_list = cursor.fetchall()
+    session_pres_map = {}
+    for pid, sess_id in pres_session_list:
+        if sess_id not in session_pres_map:
+            session_pres_map[sess_id] = []
+        session_pres_map[sess_id].append(pid)
+        
+    # Compile presenter metadata (student, independent, affiliation change, biographical info)
+    cursor.execute("SELECT person_id, display_name, birth_year, death_year, full_name_ru, full_name_en FROM person")
+    persons_raw = cursor.fetchall()
+    
+    person_meta = {}
+    for r_p in persons_raw:
+        pid, display_name = r_p[0], r_p[1]
+        birth_year = r_p[2]
+        death_year = r_p[3]
+        full_name_ru = r_p[4]
+        full_name_en = r_p[5]
+        
+        std_name = format_to_initials(display_name)
+        
+        # Check student and independent status based on all historical affiliations
+        cursor.execute("SELECT affiliation_text_raw FROM presentation_person WHERE person_id = ?", (pid,))
+        affils = [r[0] for r in cursor.fetchall() if r[0]]
+        
+        is_student = False
+        is_independent = False
+        for a in affils:
+            a_low = a.lower()
+            if any(term in a_low for term in ["студент", "аспирант", "магистрант", "бакалавр", "student", "postgraduate", "phd"]):
+                is_student = True
+            if any(term in a_low for term in ["независимый", "ни ", " ни", "independent", "без аффилиации"]):
+                is_independent = True
+                
+        # Check if affiliation changed over the years
+        cursor.execute("""
+            SELECT DISTINCT pp.affiliation_text_raw
+            FROM presentation_person pp
+            WHERE pp.person_id = ? AND pp.affiliation_text_raw IS NOT NULL AND pp.affiliation_text_raw != ''
+        """, (pid,))
+        unique_affils = [r[0] for r in cursor.fetchall()]
+        has_changed_affiliations = len(unique_affils) > 1
+        
+        # Calculate Gender
+        gender = classify_gender(full_name_ru, display_name)
+        
+        # Calculate Zograf first/last years seen
+        cursor.execute("""
+            SELECT MIN(e.year), MAX(e.year)
+            FROM presentation pr
+            JOIN presentation_person pp ON pp.presentation_id = pr.presentation_id
+            JOIN session s ON s.session_id = pr.session_id
+            JOIN event_day_venue edv ON edv.event_day_venue_id = s.event_day_venue_id
+            JOIN event_day ed ON ed.event_day_id = edv.event_day_id
+            JOIN event e ON e.event_id = ed.event_id
+            WHERE pp.person_id = ? AND e.event_series_id = 1
+        """, (pid,))
+        z_res = cursor.fetchone()
+        zograf_first = z_res[0] if z_res and z_res[0] else None
+        zograf_last = z_res[1] if z_res and z_res[1] else None
+        
+        # Calculate Roerich first/last years seen
+        cursor.execute("""
+            SELECT MIN(e.year), MAX(e.year)
+            FROM presentation pr
+            JOIN presentation_person pp ON pp.presentation_id = pr.presentation_id
+            JOIN session s ON s.session_id = pr.session_id
+            JOIN event_day_venue edv ON edv.event_day_venue_id = s.event_day_venue_id
+            JOIN event_day ed ON ed.event_day_id = edv.event_day_id
+            JOIN event e ON e.event_id = ed.event_id
+            WHERE pp.person_id = ? AND e.event_series_id = 2
+        """, (pid,))
+        r_res = cursor.fetchone()
+        roerich_first = r_res[0] if r_res and r_res[0] else None
+        roerich_last = r_res[1] if r_res and r_res[1] else None
+        
+        person_meta[pid] = {
+            "std_name": std_name,
+            "is_student": is_student,
+            "is_independent": is_independent,
+            "has_changed_affiliations": has_changed_affiliations,
+            "all_affiliations": unique_affils,
+            "birth_year": birth_year,
+            "death_year": death_year,
+            "full_name_ru": full_name_ru,
+            "full_name_en": full_name_en,
+            "gender": gender,
+            "zograf_first": zograf_first,
+            "zograf_last": zograf_last,
+            "roerich_first": roerich_first,
+            "roerich_last": roerich_last
+        }
     
     # 1. Fetch all scholars
     cursor.execute("""
@@ -31,16 +340,25 @@ def main():
     """)
     scholars_raw = cursor.fetchall()
     
+    geo_counts = {}
     scholars = []
     for r in scholars_raw:
+        pid = r[0]
+        meta = person_meta[pid]
+        
         # Get all talks for this scholar
         cursor.execute("""
             SELECT 
+                pr.presentation_id,
                 pr.title, 
                 e.year, 
                 es.series_name_en, 
                 pp.affiliation_text_raw,
-                pr.is_online
+                pr.is_online,
+                ed.calendar_date,
+                s.session_title,
+                s.time_text_raw,
+                s.session_id
             FROM presentation pr
             JOIN presentation_person pp ON pp.presentation_id = pr.presentation_id
             JOIN session s ON s.session_id = pr.session_id
@@ -50,41 +368,115 @@ def main():
             JOIN event_series es ON es.event_series_id = e.event_series_id
             WHERE pp.person_id = ?
             ORDER BY e.year DESC
-        """, (r[0],))
+        """, (pid,))
         talks_raw = cursor.fetchall()
+        
         talks = []
+        theme_counts = {}
         for t in talks_raw:
+            pres_id, title, year, series, affiliation, is_online, calendar_date, session_title, time_text, sess_id = t
+            
+            # Clean title (strip 'онлайн')
+            cleaned_title = clean_title(title)
+            
+            # Classify theme
+            theme = classify_theme(cleaned_title)
+            t_code = theme["code"]
+            theme_counts[t_code] = theme_counts.get(t_code, 0) + 1
+            
+            # Day of the week calculation
+            day_of_week = get_day_of_week(calendar_date)
+            
+            # Geography extraction
+            geo = extract_geography(affiliation)
+            if geo["ru"] != "Не указана":
+                gkey = geo["ru"]
+                if gkey not in geo_counts:
+                    geo_counts[gkey] = {"ru": geo["ru"], "en": geo["en"], "count": 0}
+                geo_counts[gkey]["count"] += 1
+            
+            # Position order in session
+            s_list = session_pres_map.get(sess_id, [pres_id])
+            try:
+                order_idx = s_list.index(pres_id)
+            except ValueError:
+                order_idx = 0
+            
+            is_first = (order_idx == 0)
+            is_last = (order_idx == len(s_list) - 1)
+            
             talks.append({
-                "title": t[0],
-                "year": t[1],
-                "series": t[2],
-                "affiliation": t[3],
-                "is_online": bool(t[4])
+                "presentation_id": pres_id,
+                "title": cleaned_title,
+                "year": year,
+                "series": series,
+                "affiliation": affiliation,
+                "geography": geo,
+                "theme": theme,
+                "is_online": bool(is_online),
+                "date": calendar_date,
+                "day_of_week": day_of_week,
+                "session_title": session_title,
+                "time_interval": time_text or "Не указано",
+                "is_first_talk": is_first,
+                "is_last_talk": is_last,
+                "order_in_session": order_idx + 1,
+                "total_in_session": len(s_list)
             })
             
+        # Determine dominant theme and academic breadth
+        dominant_theme = None
+        thematic_breadth = "Specialized"
+        
+        if theme_counts:
+            sorted_themes = sorted(theme_counts.items(), key=lambda x: (-x[1], x[0]))
+            dominant_theme = sorted_themes[0][0]
+            if len(theme_counts) > 1:
+                thematic_breadth = "Interdisciplinary"
+            
         scholars.append({
-            "id": r[0],
-            "name": r[1],
+            "id": pid,
+            "name": meta["std_name"],
+            "original_fullname": r[1],
+            "full_name_ru": meta["full_name_ru"] or meta["std_name"],
+            "full_name_en": meta["full_name_en"] or meta["std_name"],
+            "birth_year": meta["birth_year"],
+            "death_year": meta["death_year"],
+            "gender": meta["gender"],
+            "zograf_first": meta["zograf_first"],
+            "zograf_last": meta["zograf_last"],
+            "roerich_first": meta["roerich_first"],
+            "roerich_last": meta["roerich_last"],
+            "dominant_theme": dominant_theme,
+            "thematic_breadth": thematic_breadth,
             "total_talks": r[3],
             "zograf_talks": r[4],
             "roerich_talks": r[5],
             "first_year": r[6],
             "last_year": r[7],
+            "is_student": meta["is_student"],
+            "is_independent": meta["is_independent"],
+            "has_changed_affiliations": meta["has_changed_affiliations"],
+            "all_affiliations": meta["all_affiliations"],
             "talks": talks
         })
         
     # 2. Fetch all timeline talks grouped by Year and Series
     cursor.execute("""
         SELECT 
+            pr.presentation_id,
             e.year,
             es.series_name_en,
-            p.display_name,
+            p.person_id,
             pp.affiliation_text_raw,
             pr.title,
             pr.is_online,
             v.display_name,
             ed.day_label_raw,
-            s.session_title
+            s.session_title,
+            ed.calendar_date,
+            s.time_text_raw,
+            s.session_id
         FROM presentation pr
         JOIN presentation_person pp ON pp.presentation_id = pr.presentation_id
         JOIN person p ON p.person_id = pp.person_id
@@ -100,20 +492,59 @@ def main():
     
     timeline = {}
     for r in timeline_raw:
-        year = str(r[0])
-        series = r[1]
+        pres_id, year_val, series, pid, affiliation, title, is_online, venue_name, day_label, session_title, calendar_date, time_text, sess_id = r
+        year = str(year_val)
+        meta = person_meta[pid]
+        
         if year not in timeline:
             timeline[year] = {"Zograf": [], "Roerich": []}
         
+        # Day of the week
+        day_of_week = get_day_of_week(calendar_date)
+        
+        # Geography extraction
+        geo = extract_geography(affiliation)
+        
+        # Order in session
+        s_list = session_pres_map.get(sess_id, [pres_id])
+        try:
+            order_idx = s_list.index(pres_id)
+        except ValueError:
+            order_idx = 0
+            
+        is_first = (order_idx == 0)
+        is_last = (order_idx == len(s_list) - 1)
+        
+        series_key = "Zograf" if "Zograf" in series else "Roerich"
+        # Clean title
+        cleaned_title = clean_title(title)
+        
+        # Classify theme
+        theme = classify_theme(cleaned_title)
+
         series_key = "Zograf" if "Zograf" in series else "Roerich"
         timeline[year][series_key].append({
-            "speaker": r[2],
-            "affiliation": r[3],
-            "title": r[4],
-            "is_online": bool(r[5]),
-            "venue": r[6],
-            "day": r[7],
-            "session": r[8]
+            "presentation_id": pres_id,
+            "speaker": meta["std_name"],
+            "speaker_original": meta["std_name"],
+            "speaker_id": pid,
+            "is_student": meta["is_student"],
+            "is_independent": meta["is_independent"],
+            "affiliation": affiliation,
+            "geography": geo,
+            "title": cleaned_title,
+            "theme": theme,
+            "is_online": bool(is_online),
+            "venue": venue_name,
+            "day": day_label,
+            "date": calendar_date,
+            "day_of_week": day_of_week,
+            "session": session_title,
+            "time_interval": time_text or "Не указано",
+            "is_first_talk": is_first,
+            "is_last_talk": is_last,
+            "order_in_session": order_idx + 1,
+            "total_in_session": len(s_list)
         })
 
     # 3. Calculate year-by-year statistics for charts
@@ -139,11 +570,86 @@ def main():
             "total": r[1] + r[2]
         })
 
+    # Format geography stats
+    geography_stats = list(geo_counts.values())
+    geography_stats.sort(key=lambda x: x["count"], reverse=True)
+
+    # 4. Calculate Gender and Age stats
+    male_count = sum(1 for s in scholars if s["gender"] == "M")
+    female_count = sum(1 for s in scholars if s["gender"] == "F")
+    gender_stats = {
+        "M": male_count,
+        "F": female_count
+    }
+    
+    age_groups = {
+        "young": 0,       # < 35
+        "mid_career": 0,  # 35-50
+        "senior": 0,      # 50-70
+        "elders": 0       # 70+
+    }
+    for s in scholars:
+        if s["birth_year"]:
+            try:
+                age = 2026 - int(s["birth_year"])
+                if age < 35:
+                    age_groups["young"] += 1
+                elif age <= 50:
+                    age_groups["mid_career"] += 1
+                elif age <= 70:
+                    age_groups["senior"] += 1
+                else:
+                    age_groups["elders"] += 1
+            except Exception:
+                pass
+
+    # Extract co-occurrence collaboration network
+    network_nodes = []
+    for s in scholars:
+        series = "Both"
+        if s["zograf_talks"] > 0 and s["roerich_talks"] == 0:
+            series = "Zograf"
+        elif s["roerich_talks"] > 0 and s["zograf_talks"] == 0:
+            series = "Roerich"
+            
+        network_nodes.append({
+            "id": s["id"],
+            "name": s["name"],
+            "talks": s["total_talks"],
+            "theme": s["dominant_theme"] or "History",
+            "series": series
+        })
+
+    cursor.execute("""
+        SELECT pp1.person_id, pp2.person_id, COUNT(DISTINCT p1.session_id) as weight
+        FROM presentation_person pp1
+        JOIN presentation p1 ON pp1.presentation_id = p1.presentation_id
+        JOIN presentation p2 ON p1.session_id = p2.session_id AND p1.presentation_id != p2.presentation_id
+        JOIN presentation_person pp2 ON p2.presentation_id = pp2.presentation_id
+        WHERE pp1.person_id < pp2.person_id
+        GROUP BY pp1.person_id, pp2.person_id
+    """)
+    links_raw = cursor.fetchall()
+    network_links = []
+    for p1, p2, w in links_raw:
+        network_links.append({
+            "source": p1,
+            "target": p2,
+            "weight": w
+        })
+
     # Write as a javascript module file
     site_data = {
         "scholars": scholars,
         "timeline": timeline,
-        "stats": stats
+        "stats": stats,
+        "geography_stats": geography_stats,
+        "gender_stats": gender_stats,
+        "age_stats": age_groups,
+        "network": {
+            "nodes": network_nodes,
+            "links": network_links
+        }
     }
     
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
@@ -151,7 +657,7 @@ def main():
         json.dump(site_data, f, ensure_ascii=False, indent=2)
         f.write(";\n")
         
-    print(f"Successfully generated JS data structure in {OUTPUT_FILE}!")
+    print(f"Successfully generated JS data structure in {OUTPUT_FILE} with full temporal, position order, and student/independent academic metadata!")
     conn.close()
 
 if __name__ == "__main__":

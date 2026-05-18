@@ -1,0 +1,12 @@
+Line 494: D2004_1,E2004,1,2004-05-24,"Понедельник, 24 мая",https://www.orientalstudies.ru/rus/index.php?Itemid=48&id=80&option=com_content&task=view,unspecified
+Line 495: D2004_2,E2004,2,2004-05-25,"Вторник, 25 мая",https://www.orientalstudies.ru/rus/index.php?Itemid=48&id=80&option=com_content&task=view,unspecified
+Line 496: D2004_3,E2004,3,2004-05-26,"Среда, 26 мая",https://www.orientalstudies.ru/rus/index.php?Itemid=48&id=80&option=com_content&task=view,unspecified
+Line 498: D2006_1,E2006,1,2006-05-15,"День первый – 15 мая 2006 г., понедельник",https://www.orientalstudies.ru/rus/index.php?Itemid=48&id=1251&option=com_content&task=view,unspecified
+Line 499: D2006_2,E2006,2,2006-05-16,"День второй – 16 мая 2006 г., вторник",https://www.orientalstudies.ru/rus/index.php?Itemid=48&id=1251&option=com_content&task=view,unspecified
+Line 500: D2006_3,E2006,3,2006-05-17,"День третий – 17 мая 2006 г., среда",https://www.orientalstudies.ru/rus/index.php?Itemid=48&id=1251&option=com_content&task=view,unspecified
+Line 593: DV2004_1_1,D2004_1,V001,1,unspecified,"Зеленый зал","Конференция проводится ... Дворцовая наб., 18, Зеленый Зал.",https://www.orientalstudies.ru/rus/index.php?Itemid=48&id=80&option=com_content&task=view
+Line 594: DV2004_2_1,D2004_2,V001,1,unspecified,"Зеленый зал","Конференция проводится ... Дворцовая наб., 18, Зеленый Зал.",https://www.orientalstudies.ru/rus/index.php?Itemid=48&id=80&option=com_content&task=view
+Line 595: DV2004_3_1,D2004_3,V001,1,unspecified,"Зеленый зал","Конференция проводится ... Дворцовая наб., 18, Зеленый Зал.",https://www.orientalstudies.ru/rus/index.php?Itemid=48&id=80&option=com_content&task=view
+Line 597: DV2006_1_1,D2006_1,V001,1,"начало 11:00","Зеленый зал","Зеленый зал СПбФ ИВ РАН (Дворцовая наб., 18).",https://www.orientalstudies.ru/rus/index.php?Itemid=48&id=1251&option=com_content&task=view
+Line 598: DV2006_2_1,D2006_2,V002,1,"начало 11:00","Конференц-зал","Конференц-зал, Кунсткамера (Университетская наб., 3).",https://www.orientalstudies.ru/rus/index.php?Itemid=48&id=1251&option=com_content&task=view
+Line 599: DV2006_3_1,D2006_3,V007,1,"начало 11:00","Конференц-зал","Конференц-зал, Европейский университет (Гагаринская ул., 3).",https://www.orientalstudies.ru/rus/index.php?Itemid=48&id=1251&option=com_content&task=view
