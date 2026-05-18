@@ -4,10 +4,13 @@ import csv
 import io
 import sqlite3
 import uuid
+import hashlib
+import json
 
 MD_PATH = "zograf-roerich-db.md"
 DB_PATH = "conferences.db"
 CACHE_DIR = "html_cache"
+PERSON_ID_MAP_PATH = "person_ids.json"
 
 # Smart HTML Parser to extract text with block level newlines
 from html.parser import HTMLParser
@@ -39,6 +42,7 @@ class SmartHTMLParser(HTMLParser):
 # Normalize names for cross-linking Zograf and Roerich speakers
 def normalize_person_name(name):
     name = name.strip().replace('\xa0', ' ').replace('\u200b', '')
+    name = re.sub(r'\bC(?=\.)', 'С', name)
     # Strip trailing punctuation
     name = re.sub(r'[\.,;\s]+$', '', name)
     
@@ -482,6 +486,31 @@ BIOGRAPHICAL_DATA = {
 }
 
 persons_cache = {} # normalized_key -> person_id
+person_id_overrides = None
+
+
+def load_person_id_overrides():
+    global person_id_overrides
+    if person_id_overrides is not None:
+        return person_id_overrides
+
+    if os.path.exists(PERSON_ID_MAP_PATH):
+        with open(PERSON_ID_MAP_PATH, "r", encoding="utf-8") as f:
+            data = json.load(f)
+        person_id_overrides = data.get("normalized_keys", {})
+    else:
+        person_id_overrides = {}
+    return person_id_overrides
+
+
+def person_id_for_key(norm_key):
+    override = load_person_id_overrides().get(norm_key)
+    if override:
+        return override
+    digest = hashlib.sha1(norm_key.encode("utf-8")).hexdigest()[:8]
+    return f"PERS_{digest}"
+
+
 def get_or_create_person(conn, name, source_url):
     cursor = conn.cursor()
     norm_key = normalize_person_name(name)
@@ -527,8 +556,26 @@ def get_or_create_person(conn, name, source_url):
         conn.commit()
         return pid
 
-    # Create new
-    pid = f"PERS_{uuid.uuid4().hex[:8]}"
+    mapped_pid = person_id_for_key(norm_key)
+    cursor.execute("SELECT person_id, display_name FROM person WHERE person_id = ?", (mapped_pid,))
+    row = cursor.fetchone()
+    if row:
+        pid, existing_name = row
+        persons_cache[norm_key] = pid
+        if len(name) > len(existing_name):
+            cursor.execute("UPDATE person SET display_name = ? WHERE person_id = ?", (name.strip(), pid))
+
+        if bio:
+            cursor.execute("""
+                UPDATE person
+                SET full_name_ru = ?, full_name_en = ?, birth_year = ?, death_year = ?
+                WHERE person_id = ?
+            """, (fn_ru, fn_en, by, dy, pid))
+        conn.commit()
+        return pid
+
+    # Create new. Person IDs are stable because they are used in public profile URLs.
+    pid = mapped_pid
     cursor.execute("""
         INSERT INTO person (person_id, display_name, full_name_ru, full_name_en, birth_year, death_year, normalized_key, source_url) 
         VALUES (?, ?, ?, ?, ?, ?, ?, ?)
@@ -552,6 +599,68 @@ def preprocess_line(line):
     line = re.sub(r'^\s*\d{1,2}\s*[\.:]\s*\d{2}\s*\.?\s*', '', line)
     line = re.sub(r'^\s*\d{1,2}\s*\.\s*', '', line)
     return line.strip()
+
+
+def infer_zograf_calendar_date(year, line):
+    month_match = re.search(r'\b(\d{1,2})\s*(?:мая|РјР°СЏ)\b', line, flags=re.IGNORECASE)
+    if month_match:
+        day = int(month_match.group(1))
+        if 1 <= day <= 31:
+            return f"{year}-05-{day:02d}"
+
+    numeric_match = re.search(r'\b(\d{1,2})[./-]0?5(?:[./-]\d{2,4})?\b', line)
+    if numeric_match:
+        day = int(numeric_match.group(1))
+        if 1 <= day <= 31:
+            return f"{year}-05-{day:02d}"
+
+    return None
+
+
+def ensure_zograf_event_day_venue(cursor, event_id, year, day_number, source_url, source_line, previous_edv_id=None):
+    day_id = f"D{year}_{day_number}"
+    edv_id = f"DV{year}_{day_number}_1"
+
+    cursor.execute(
+        "SELECT event_day_venue_id FROM event_day_venue WHERE event_day_id = ? ORDER BY occurrence_order LIMIT 1",
+        (day_id,),
+    )
+    existing = cursor.fetchone()
+    if existing:
+        return existing[0]
+
+    cursor.execute("SELECT 1 FROM event_day WHERE event_day_id = ?", (day_id,))
+    if not cursor.fetchone():
+        cursor.execute(
+            "INSERT INTO event_day VALUES (?,?,?,?,?,?,?)",
+            (
+                day_id,
+                event_id,
+                day_number,
+                infer_zograf_calendar_date(year, source_line),
+                source_line,
+                source_url,
+                "Generated from parsed Zograf programme date not present in seed table.",
+            ),
+        )
+
+    venue_id = "V001"
+    room_text = "unspecified"
+    time_text = "unspecified"
+    if previous_edv_id:
+        cursor.execute(
+            "SELECT venue_id, room_text_raw, time_text_raw FROM event_day_venue WHERE event_day_venue_id = ?",
+            (previous_edv_id,),
+        )
+        previous = cursor.fetchone()
+        if previous:
+            venue_id, room_text, time_text = previous
+
+    cursor.execute(
+        "INSERT OR IGNORE INTO event_day_venue VALUES (?,?,?,?,?,?,?,?)",
+        (edv_id, day_id, venue_id, 1, room_text, time_text, source_url, source_line),
+    )
+    return edv_id
 
 # Regex to detect presentations
 TALK_REGEX = re.compile(
@@ -583,6 +692,7 @@ def populate_zograf_talks(conn):
         day_number = 0
         current_day_id = None
         current_edv_id = None
+        last_valid_edv_id = None
         current_session_id = None
         
         for line in lines:
@@ -592,14 +702,10 @@ def populate_zograf_talks(conn):
                 day_number += 1
                 current_day_id = f"D{year}_{day_number}"
                 
-                # Fetch corresponding event day venue id
-                cursor.execute("SELECT event_day_venue_id FROM event_day_venue WHERE event_day_id = ?", (current_day_id,))
-                edv_row = cursor.fetchone()
-                if edv_row:
-                    current_edv_id = edv_row[0]
-                else:
-                    # Fallback default
-                    current_edv_id = f"DV{year}_{day_number}_1"
+                current_edv_id = ensure_zograf_event_day_venue(
+                    cursor, event_id, year, day_number, source_url, line, last_valid_edv_id
+                )
+                last_valid_edv_id = current_edv_id
                 
                 current_session_id = None
             
@@ -633,9 +739,10 @@ def populate_zograf_talks(conn):
                         # Ensure we have a day and venue
                         day_number = 1
                         current_day_id = f"D{year}_1"
-                        cursor.execute("SELECT event_day_venue_id FROM event_day_venue WHERE event_day_id = ?", (current_day_id,))
-                        edv_row = cursor.fetchone()
-                        current_edv_id = edv_row[0] if edv_row else f"DV{year}_1_1"
+                        current_edv_id = ensure_zograf_event_day_venue(
+                            cursor, event_id, year, day_number, source_url, "Automatic default day", last_valid_edv_id
+                        )
+                        last_valid_edv_id = current_edv_id
                     
                     # Create default session
                     current_session_id = f"SESS_{uuid.uuid4().hex[:8]}"

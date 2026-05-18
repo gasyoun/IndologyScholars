@@ -1,0 +1,94 @@
+{
+  "generated": "2026-05-18",
+  "summary": {
+    "total_scholars": 209,
+    "total_presentations": 835,
+    "total_events": 39,
+    "years_covered": 19,
+    "start_year": 2004,
+    "end_year": 2025,
+    "overlap_scholars": 37,
+    "zograf_only_scholars": 115,
+    "roerich_only_scholars": 57,
+    "person_rows": 209,
+    "presentation_rows": 835,
+    "event_rows": 39
+  },
+  "checks": [
+    {
+      "id": "dangling_sessions",
+      "label": "Sessions without joinable event_day_venue",
+      "severity": "error",
+      "count": 0,
+      "status": "pass"
+    },
+    {
+      "id": "missing_dates",
+      "label": "Presentations attached to undated event days",
+      "severity": "warning",
+      "count": 2,
+      "status": "review"
+    },
+    {
+      "id": "missing_affiliations",
+      "label": "Presentation-person rows without raw affiliation",
+      "severity": "info",
+      "count": 0,
+      "status": "pass"
+    },
+    {
+      "id": "placeholder_titles",
+      "label": "Presentations with placeholder-like titles",
+      "severity": "info",
+      "count": 1,
+      "status": "review"
+    },
+    {
+      "id": "duplicate_full_names",
+      "label": "Duplicate full Russian names after normalization",
+      "severity": "warning",
+      "count": 0,
+      "status": "pass"
+    },
+    {
+      "id": "latin_initials",
+      "label": "Mixed Latin initials in Cyrillic names",
+      "severity": "info",
+      "count": 1,
+      "status": "review"
+    }
+  ],
+  "samples": {
+    "missing_dates": [
+      {
+        "presentation_id": "PRES_57f9f927",
+        "scholar": "Битинайте Елена Алексеевна",
+        "title": "Живое",
+        "year": 2022,
+        "series_name_en": "Zograf Readings"
+      },
+      {
+        "presentation_id": "PRES_fedf49bc",
+        "scholar": "Жукова Любовь Евгеньевна",
+        "title": "Вивекананда",
+        "year": 2022,
+        "series_name_en": "Zograf Readings"
+      }
+    ],
+    "placeholder_titles": [
+      {
+        "presentation_id": "PRES_33940d0a",
+        "scholar": "Б. В. Загуменнов",
+        "title": "Тема уточняется"
+      }
+    ],
+    "latin_initials": [
+      {
+        "person_id": "PERS_cdbd7a15",
+        "display_name": "C. В. Кулланда",
+        "full_name_ru": "Кулланда Сергей Всеволодович",
+        "normalized_key": "кулланда с в"
+      }
+    ]
+  }
+}

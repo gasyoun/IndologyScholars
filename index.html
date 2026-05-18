@@ -5,6 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Российская индологическая наука: Единый архив и статистический дашборд</title>
     <meta name="description" content="Интерактивная база данных и аналитическая панель, объединяющая научные доклады конференций «Зографские чтения» и «Рериховские чтения» (2004–2025 гг.).">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://gasyoun.github.io/IndologyScholars/">
+    <link rel="alternate" hreflang="ru" href="https://gasyoun.github.io/IndologyScholars/">
+    <link rel="alternate" hreflang="en" href="https://gasyoun.github.io/IndologyScholars/en.html">
+    <link rel="icon" href="/IndologyScholars/assets/favicon.svg" type="image/svg+xml">
+    <link rel="manifest" href="/IndologyScholars/site.webmanifest">
+    <meta name="theme-color" content="#0a0e1a">
+    <meta name="keywords" content="Индология, Зографские чтения, Рериховские чтения, наука, востоковедение, ИВР РАН, ИВ РАН, МГУ, СПбГУ, статистика, научные доклады">
+    <meta name="author" content="Dr. Mārcis Gasūns">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gasyoun.github.io/IndologyScholars/">
+    <meta property="og:title" content="Российская индологическая наука: Единый архив">
+    <meta property="og:description" content="Интерактивная база данных докладов конференций «Зографские чтения» и «Рериховские чтения» с расширенной аналитикой и интерактивными графами.">
+    <meta property="og:image" content="https://gasyoun.github.io/IndologyScholars/assets/og-image.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://gasyoun.github.io/IndologyScholars/">
+    <meta property="twitter:title" content="Российская индологическая наука: Единый архив">
+    <meta property="twitter:description" content="Интерактивная база данных докладов конференций «Зографские чтения» и «Рериховские чтения» с расширенной аналитикой.">
+    <meta property="twitter:image" content="https://gasyoun.github.io/IndologyScholars/assets/og-image.png">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Dataset",
+      "name": "Russian Indological Research Archive",
+      "alternateName": "Российский индологический научный архив",
+      "description": "Normalized archive of Zograf Readings and Roerich Readings conference presentations, scholars, affiliations, cities, and themes.",
+      "url": "https://gasyoun.github.io/IndologyScholars/",
+      "creator": {
+        "@type": "Person",
+        "name": "Dr. Mārcis Gasūns"
+      },
+      "license": "https://github.com/gasyoun/IndologyScholars/blob/main/LICENSE",
+      "isAccessibleForFree": true,
+      "keywords": ["Indology", "digital humanities", "conference archive", "Zograf Readings", "Roerich Readings"],
+      "distribution": [
+        {
+          "@type": "DataDownload",
+          "encodingFormat": "application/javascript",
+          "contentUrl": "https://gasyoun.github.io/IndologyScholars/site_data.js"
+        },
+        {
+          "@type": "DataDownload",
+          "encodingFormat": "application/json",
+          "contentUrl": "https://gasyoun.github.io/IndologyScholars/datapackage.json"
+        }
+      ]
+    }
+    </script>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -260,6 +312,31 @@
             color: #ffffff;
             background: var(--accent-gradient);
             box-shadow: 0 4px 15px rgba(139, 92, 246, 0.35);
+        }
+
+        .publication-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.75rem;
+            margin: -1.25rem auto 2.5rem auto;
+        }
+
+        .publication-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            border: 1px solid var(--border-color);
+            background: rgba(17, 24, 44, 0.55);
+            border-radius: 8px;
+            padding: 0.55rem 0.85rem;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .publication-links a:hover {
+            color: #ffffff;
+            border-color: var(--accent-primary);
+            background: rgba(139, 92, 246, 0.12);
         }
 
         /* Sections content styling */
@@ -766,6 +843,20 @@
             </div>
         </section>
 
+        <nav class="publication-links" aria-label="Static archive pages">
+            <a href="scholars/">Профили</a>
+            <a href="conferences/">Конференции</a>
+            <a href="themes/">Темы</a>
+            <a href="cities/">Города</a>
+            <a href="institutions/">Институции</a>
+            <a href="search.html">Поиск</a>
+            <a href="download-data.html">Данные</a>
+            <a href="data-quality.html">Качество</a>
+            <a href="methodology.html">Методология</a>
+            <a href="en.html">English</a>
+            <a href="how-to-cite.html">Цитирование</a>
+        </nav>
+
         <!-- Dynamic Control Center Buttons -->
         <nav class="controls" id="dashboard-controls">
             <button class="tab-btn active" id="tab-scholars" onclick="switchTab('scholars')">Каталог востоковедов</button>
@@ -913,7 +1004,7 @@
                 <div class="chart-card">
                     <h3 class="chart-title" id="chart-inst-title">Рейтинг научно-исследовательских центров</h3>
                     <div id="chart-inst" style="height: 350px; overflow-y: auto;">
-                        <table style="width: 100%; border-collapse: collapse; margin-top: 0.5rem;">
+                        <table id="inst-table" style="width: 100%; border-collapse: collapse; margin-top: 0.5rem;">
                             <thead>
                                 <tr style="border-bottom: 1px solid rgba(255,255,255,0.1); color: var(--text-secondary); font-size: 0.8rem; text-align: left;">
                                     <th style="padding: 0.5rem;">Аффилиация</th>
@@ -1270,6 +1361,23 @@ CREATE TABLE presentation_person (
         const pageSize = 12;
         let filteredScholars = [];
 
+        function updateSummaryStats() {
+            const summary = CONFERENCE_DATA.summary || {};
+            const scholarsCount = summary.total_scholars || (CONFERENCE_DATA.scholars ? CONFERENCE_DATA.scholars.length : 0);
+            const talksCount = summary.total_presentations || 0;
+            const yearsCount = summary.years_covered || (CONFERENCE_DATA.stats ? CONFERENCE_DATA.stats.length : 0);
+            const overlapCount = summary.overlap_scholars || 0;
+            document.getElementById('stat-scholars-count').textContent = scholarsCount;
+            document.getElementById('stat-talks-count').textContent = talksCount;
+            document.getElementById('stat-years-count').textContent = yearsCount;
+            document.getElementById('stat-overlap-count').textContent = overlapCount;
+            if (summary.start_year && summary.end_year) {
+                document.getElementById('stat-years-desc').textContent = currentLang === 'ru'
+                    ? `Период с ${summary.start_year} по ${summary.end_year} годы`
+                    : `Period from ${summary.start_year} to ${summary.end_year}`;
+            }
+        }
+
         // Toggle language in real-time
         function toggleLanguage() {
             currentLang = currentLang === 'ru' ? 'en' : 'ru';
@@ -1331,6 +1439,7 @@ CREATE TABLE presentation_person (
             document.getElementById('footer-copyright').textContent = t.footerCopyright;
 
             // Re-render dynamic content
+            updateSummaryStats();
             renderScholarsTable();
             initTimeline();
             if (document.getElementById('sec-charts').classList.contains('active')) {
@@ -2880,6 +2989,7 @@ CREATE TABLE presentation_person (
 
         // Initialize Application
         window.addEventListener('DOMContentLoaded', () => {
+            updateSummaryStats();
             initScholars();
             initTimeline();
             

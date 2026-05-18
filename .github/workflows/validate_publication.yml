@@ -1,0 +1,51 @@
+name: Validate Publication Build
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - 'README.md'
+      - 'README_RU.md'
+      - 'CHANGELOG.md'
+      - 'ai_state.json'
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests beautifulsoup4
+
+      - name: Compile Python Generators
+        run: |
+          python -m py_compile build_and_populate_db.py generate_analytics.py generate_site_data.py generate_scholars_pages.py generate_publication_pages.py validate_publication.py prepare_pages_artifact.py publication_helpers.py
+
+      - name: Rebuild Publication Artifacts
+        run: |
+          python build_and_populate_db.py
+          python generate_analytics.py
+          python generate_site_data.py
+          python generate_scholars_pages.py
+          python generate_publication_pages.py
+
+      - name: Validate Publication Artifacts
+        run: |
+          python validate_publication.py
+          python prepare_pages_artifact.py

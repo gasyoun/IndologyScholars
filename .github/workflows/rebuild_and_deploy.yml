@@ -59,13 +59,24 @@ jobs:
         run: |
           python generate_scholars_pages.py
 
+      - name: Generate Publication & SEO Pages
+        run: |
+          python generate_publication_pages.py
+
+      - name: Validate Publication Build
+        run: |
+          python validate_publication.py
+
       - name: Commit & Push Compiled Artifacts
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           
           # Add only changed datasets, database, caching, and static pages
-          git add html_cache/*.html conferences.db site_data.js analytics_output/*.csv indology_scholars_analytics.md scholars/*.html
+          git add html_cache/*.html conferences.db site_data.js analytics_output/*.csv analytics_output/*.json indology_scholars_analytics.md scholars/*.html
+          git add assets/*.png assets/*.svg conferences/*.html themes/*.html cities/*.html institutions/*.html
+          git add sitemap.xml robots.txt site.webmanifest search.html search-index.json CITATION.cff datapackage.json
+          git add 404.html en.html download-data.html data-quality.html methodology.html data-sources.html known-limitations.html how-to-cite.html
           
           # Check if there are changes before committing to avoid empty commit errors
           if git diff-index --quiet HEAD --; then
@@ -78,10 +89,14 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
+      - name: Prepare Pages Artifact
+        run: |
+          python prepare_pages_artifact.py
+
       - name: Upload Pages Artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: '.'
+          path: '_site'
           
       - name: Deploy to GitHub Pages
         id: deployment

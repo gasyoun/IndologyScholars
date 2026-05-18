@@ -1,0 +1,85 @@
+{
+  "profile": "data-package",
+  "name": "indology-scholars",
+  "title": "Russian Indological Research Archive",
+  "description": "Normalized archive of Russian Indological conference presentations and scholar profiles.",
+  "homepage": "https://gasyoun.github.io/IndologyScholars/",
+  "created": "2026-05-18",
+  "licenses": [
+    {
+      "name": "Apache-2.0",
+      "path": "LICENSE"
+    }
+  ],
+  "contributors": [
+    {
+      "title": "Dr. Mārcis Gasūns",
+      "role": "author"
+    }
+  ],
+  "keywords": [
+    "Indology",
+    "digital humanities",
+    "conference archive"
+  ],
+  "sources": [
+    {
+      "title": "Zograf Readings programs",
+      "path": "html_cache/"
+    },
+    {
+      "title": "Roerich Readings programs",
+      "path": "html_cache/"
+    }
+  ],
+  "stats": {
+    "total_scholars": 209,
+    "total_presentations": 835,
+    "total_events": 39,
+    "years_covered": 19,
+    "start_year": 2004,
+    "end_year": 2025,
+    "overlap_scholars": 37,
+    "zograf_only_scholars": 115,
+    "roerich_only_scholars": 57,
+    "person_rows": 209,
+    "presentation_rows": 835,
+    "event_rows": 39
+  },
+  "resources": [
+    {
+      "name": "site-data",
+      "path": "site_data.js",
+      "format": "js",
+      "mediatype": "application/javascript",
+      "description": "Browser payload with scholars, presentations, charts, and network data."
+    },
+    {
+      "name": "database",
+      "path": "conferences.db",
+      "format": "sqlite",
+      "mediatype": "application/vnd.sqlite3",
+      "description": "Normalized SQLite database."
+    },
+    {
+      "name": "search-index",
+      "path": "search-index.json",
+      "format": "json",
+      "mediatype": "application/json",
+      "description": "Static search index for generated scholar and presentation pages."
+    },
+    {
+      "name": "data-quality-report",
+      "path": "analytics_output/data_quality_report.json",
+      "format": "json",
+      "mediatype": "application/json",
+      "description": "Machine-readable data quality checks and review samples."
+    },
+    {
+      "name": "analytics",
+      "path": "analytics_output/",
+      "format": "csv",
+      "description": "Derived analytical CSV exports."
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+{
+  "description": "Optional authority identifiers used by generators when known. Add ORCID, Wikidata, VIAF, ROR, or official URLs without changing code.",
+  "persons": {},
+  "organizations": {}
+}

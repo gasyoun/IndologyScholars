@@ -3,6 +3,8 @@ import json
 import datetime
 import re
 
+from publication_helpers import assign_unique_slugs, load_authority_overrides
+
 DB_PATH = "conferences.db"
 OUTPUT_FILE = "site_data.js"
 
@@ -461,6 +463,13 @@ def main():
             "talks": talks
         })
         
+    # Assign SEO-friendly URL slugs (Latin transliteration with manual overrides
+    # from authority_ids.json -> persons[id].preferred_latin_name).
+    authority_overrides = load_authority_overrides()
+    assign_unique_slugs(scholars, authority_overrides)
+
+    slug_by_id = {s["id"]: s["url_slug"] for s in scholars}
+
     # 2. Fetch all timeline talks grouped by Year and Series
     cursor.execute("""
         SELECT 
@@ -528,6 +537,7 @@ def main():
             "speaker": meta["std_name"],
             "speaker_original": meta["std_name"],
             "speaker_id": pid,
+            "speaker_slug": slug_by_id.get(pid),
             "is_student": meta["is_student"],
             "is_independent": meta["is_independent"],
             "affiliation": affiliation,
@@ -664,6 +674,7 @@ def main():
             
         network_nodes.append({
             "id": s["id"],
+            "slug": s["url_slug"],
             "name": s["name"],
             "talks": s["total_talks"],
             "theme": s["dominant_theme"] or "History",
@@ -739,8 +750,24 @@ def main():
     top_words = sorted(word_freq.items(), key=lambda x: x[1], reverse=True)[:60]
     word_cloud = [{"text": w[0], "weight": w[1]} for w in top_words]
 
+    # Summary values are used by the dashboard, publication pages, and validation.
+    total_presentations = sum(len(year_data["Zograf"]) + len(year_data["Roerich"]) for year_data in timeline.values())
+    stat_years = [row["year"] for row in stats]
+    summary = {
+        "total_scholars": len(scholars),
+        "total_presentations": total_presentations,
+        "total_events": sum(1 for _ in conn.execute("SELECT 1 FROM event")),
+        "years_covered": len(stat_years),
+        "start_year": min(stat_years) if stat_years else None,
+        "end_year": max(stat_years) if stat_years else None,
+        "overlap_scholars": sum(1 for s in scholars if s["zograf_talks"] > 0 and s["roerich_talks"] > 0),
+        "zograf_only_scholars": sum(1 for s in scholars if s["zograf_talks"] > 0 and s["roerich_talks"] == 0),
+        "roerich_only_scholars": sum(1 for s in scholars if s["roerich_talks"] > 0 and s["zograf_talks"] == 0)
+    }
+
     # Write as a javascript module file
     site_data = {
+        "summary": summary,
         "scholars": scholars,
         "timeline": timeline,
         "stats": stats,
@@ -757,7 +784,7 @@ def main():
     
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         f.write("const CONFERENCE_DATA = ")
-        json.dump(site_data, f, ensure_ascii=False, indent=2)
+        json.dump(site_data, f, ensure_ascii=False, separators=(",", ":"))
         f.write(";\n")
         
     print(f"Successfully generated JS data structure in {OUTPUT_FILE} with full temporal, position order, and student/independent academic metadata!")

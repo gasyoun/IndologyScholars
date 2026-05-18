@@ -1,921 +1,391 @@
-import sqlite3
-import os
-import re
+import datetime as dt
+import json
+from collections import defaultdict
+from pathlib import Path
+from urllib.parse import quote
 
-DB_PATH = "conferences.db"
-OUTPUT_DIR = "scholars"
+from publication_helpers import (
+    AUTHOR_NAME,
+    SITE_NAME,
+    SITE_URL,
+    clean_text,
+    describe_year_span,
+    esc,
+    load_site_data,
+    page_shell,
+    site_url,
+    slugify,
+    theme_label,
+    theme_path,
+)
 
-os.makedirs(OUTPUT_DIR, exist_ok=True)
 
-# Helper functions identical to main site generator
-def format_to_initials(name):
-    name = name.strip()
-    name = re.sub(r'\s+', ' ', name)
-    name = re.sub(r'[\.,;\s]+$', '', name)
-    parts = name.split()
-    if len(parts) == 3:
-        patronymic_idx = -1
-        for idx, p in enumerate(parts):
-            if p.endswith(('вич', 'вна', 'чна', 'чич', 'вна.', 'вич.')):
-                patronymic_idx = idx
-                break
-        if patronymic_idx == 2:
-            return f"{parts[1][0]}. {parts[2][0]}. {parts[0]}"
-        elif patronymic_idx == 1:
-            return f"{parts[0][0]}. {parts[1][0]}. {parts[2]}"
-    if len(parts) == 2:
-        return f"{parts[0][0]}. {parts[1]}"
-    return name
+OUTPUT_DIR = Path("scholars")
+AUTHORITY_PATH = Path("authority_ids.json")
+LEGACY_REDIRECTS_PATH = Path("legacy_redirects.json")
+BUILD_DATE = dt.date.today().isoformat()
 
-def clean_title(title):
-    if not title:
-        return ""
-    cleaned = re.sub(r'\s*[\(\[][оО]н[-]?лайн[\)\]]\s*', ' ', title)
-    cleaned = re.sub(r'\s*[\(\[][oO]nline[\)\]]\s*', ' ', cleaned)
-    cleaned = re.sub(r'\s*[\(\[][zZ]oom[\)\]]\s*', ' ', cleaned)
-    cleaned = re.sub(r'\s+', ' ', cleaned)
-    return cleaned.strip()
 
-def classify_gender(full_name_ru, display_name):
-    name_to_check = (full_name_ru or display_name or "").strip()
-    parts = name_to_check.split()
-    for p in parts:
-        p_low = p.lower()
-        if p_low.endswith(('вна', 'евна', 'овна', 'ична', 'инична')):
-            return "F"
-        if p_low.endswith(('вич', 'евич', 'ович', 'ич', 'чич')):
-            return "M"
-    female_first_names = ["маргарита", "наталия", "надежда", "елена", "ирина", "ольга", "татьяна", "анна", "мария", "софия", "евгения", "галина", "светлана", "людмила", "александра", "екатерина", "юлия", "любовь", "нина", "дарья", "лариса", "ксен", "ярослав", "вера", "тамара", "алена", "виктория", "марина", "жанна", "светлана", "надежда", "марианна"]
-    for p in parts:
-        if p.lower() in female_first_names:
-            return "F"
-    for p in parts:
-        p_low = p.lower()
-        if p_low.endswith(('ова', 'ева', 'ина', 'ая', 'ына')):
-            return "F"
-        if p_low.endswith(('ов', 'ев', 'ин', 'ий', 'ын')):
-            return "M"
-    if parts:
-        last_letter = parts[0][-1].lower()
-        if last_letter in ['а', 'я', 'и']:
-            return "F"
-    return "M"
+def conference_path(series, year):
+    key = "zograf" if "Zograf" in (series or "") else "roerich"
+    return f"conferences/{key}-{year}.html"
 
-def classify_theme(title):
-    title_low = (title or "").lower()
-    if any(term in title_low for term in ["рерих", "зограф", "конгресс", "биогр", "архив", "востоковед", "индолог", "экспедиц", "дневник", "переписк", "письм", "коллекц", "музей"]):
-        return {
-            "ru": "История науки и архивы",
-            "en": "History of Scholarship",
-            "code": "AcademicHistory"
-        }
-    if any(term in title_low for term in ["язык", "грамматик", "санскрит", "пали", "глагол", "фонет", "морфол", "лингв", "лексико", "диалект", "слово", "перевод", "синтакс", "словарь", "этимол", "текстолог"]):
-        return {
-            "ru": "Лингвистика и филология",
-            "en": "Linguistics & Philology",
-            "code": "Linguistics"
-        }
-    if any(term in title_low for term in ["философ", "религ", "будди", "будд", "шива", "текст", "упанишад", "учен", "йог", "индуиз", "ведичес", "кришн", "теософ", "миф", "ритуал", "божес", "космо", "сакрал"]):
-        return {
-            "ru": "Философия и религия",
-            "en": "Philosophy & Religion",
-            "code": "Philosophy"
-        }
-    if any(term in title_low for term in ["литератур", "поэз", "драм", "театр", "искусств", "архитект", "живоп", "поэт", "роман", "повес", "песн", "эпос", "фолькл", "сказ", "миниатюр", "изобраз"]):
-        return {
-            "ru": "Искусство и литература",
-            "en": "Art & Literature",
-            "code": "Art"
-        }
-    if any(term in title_low for term in ["этногр", "культур", "быт", "традиц", "обыча", "истори", "археол", "племен", "каст", "общес", "социал", "государс", "династ", "обряд", "одежд", "празд", "населен", "геогр"]):
-        return {
-            "ru": "История и этнография",
-            "en": "History & Ethnography",
-            "code": "History"
-        }
-    return {
-        "ru": "История и этнография",
-        "en": "History & Ethnography",
-        "code": "History"
+
+def city_path(city):
+    return f"cities/{slugify(city, 'city')}.html"
+
+
+def dashboard_search_href(query):
+    return f"../index.html?search={quote(clean_text(query))}"
+
+
+def load_authority_ids():
+    if not AUTHORITY_PATH.exists():
+        return {"persons": {}, "organizations": {}}
+    return json.loads(AUTHORITY_PATH.read_text(encoding="utf-8"))
+
+
+def load_legacy_redirects():
+    if not LEGACY_REDIRECTS_PATH.exists():
+        return {}
+    return json.loads(LEGACY_REDIRECTS_PATH.read_text(encoding="utf-8")).get("redirects", {})
+
+
+def good_city(city):
+    return city and city not in ("Не указана", "Not specified")
+
+
+def format_lifespan(scholar, lang="ru"):
+    birth = scholar.get("birth_year")
+    death = scholar.get("death_year")
+    if birth and death:
+        return f" ({birth}-{death})"
+    if birth:
+        return f" (род. {birth})" if lang == "ru" else f" (b. {birth})"
+    return ""
+
+
+def scholar_description(scholar):
+    name = scholar.get("full_name_ru") or scholar.get("name")
+    total = scholar.get("total_talks", 0)
+    years = describe_year_span(scholar.get("first_year"), scholar.get("last_year"))
+    theme = theme_label(scholar.get("dominant_theme"), "ru")
+    return f"{name}: {total} докладов в архиве Зографских и Рериховских чтений, период активности {years}, основной профиль: {theme}."
+
+
+def unique_affiliations(scholar, limit=16):
+    values = []
+    seen = set()
+    for value in scholar.get("all_affiliations") or []:
+        key = clean_text(value).lower()
+        if key and key not in seen:
+            seen.add(key)
+            values.append(value)
+    return values[:limit]
+
+
+def unique_cities(scholar):
+    values = []
+    seen = set()
+    for talk in scholar.get("talks", []):
+        city = (talk.get("geography") or {}).get("ru")
+        if good_city(city) and city not in seen:
+            seen.add(city)
+            values.append(city)
+    return values
+
+
+def chip_links(items, href_factory, class_name="chip"):
+    if not items:
+        return '<span class="meta">No records</span>'
+    return "".join(f'<a class="{class_name}" href="{href_factory(item)}">{esc(item)}</a>' for item in items)
+
+
+def talk_card(talk):
+    theme = talk.get("theme") or {}
+    theme_code = theme.get("code", "History")
+    city = (talk.get("geography") or {}).get("ru")
+    city_html = ""
+    if good_city(city):
+        city_html = f' · <a href="../{city_path(city)}">{esc(city)}</a>'
+    return f"""
+        <article class="talk">
+            <strong>{esc(talk.get("title"))}</strong>
+            <div class="meta">
+                <a href="../{conference_path(talk.get("series"), talk.get("year"))}">{esc(talk.get("series"))} {esc(talk.get("year"))}</a>
+                · <a href="../{theme_path(theme_code)}">{esc(theme_label(theme_code))}</a>{city_html}
+            </div>
+            <div class="meta">{esc(talk.get("date"))} · {esc((talk.get("day_of_week") or {}).get("ru"))} · {esc(talk.get("time_interval"))}</div>
+            <div class="meta">{esc(talk.get("session_title") or "Секция не указана")}</div>
+        </article>
+    """
+
+
+def related_scholars(scholar, scholars_by_theme, scholars_by_city):
+    candidate_ids = []
+    theme = scholar.get("dominant_theme")
+    if theme:
+        candidate_ids.extend(scholars_by_theme.get(theme, []))
+    for city in unique_cities(scholar):
+        candidate_ids.extend(scholars_by_city.get(city, []))
+
+    seen = set()
+    related = []
+    for candidate in candidate_ids:
+        if candidate["id"] == scholar["id"] or candidate["id"] in seen:
+            continue
+        seen.add(candidate["id"])
+        related.append(candidate)
+    related.sort(key=lambda item: (-item.get("total_talks", 0), item.get("full_name_ru") or item.get("name")))
+    return related[:8]
+
+
+def profile_structured_data(scholar, authority):
+    path = f"scholars/{scholar['url_slug']}.html"
+    name_ru = scholar.get("full_name_ru") or scholar.get("name")
+    name_en = scholar.get("full_name_en") or scholar.get("name")
+    same_as = []
+    person_authority = (authority.get("persons") or {}).get(scholar["id"], {})
+    for key in ("orcid", "wikidata", "viaf", "url"):
+        value = person_authority.get(key)
+        if value:
+            same_as.append(value)
+
+    person = {
+        "@type": "Person",
+        "@id": site_url(path) + "#person",
+        "identifier": scholar["id"],
+        "name": name_en or name_ru,
+        "alternateName": [value for value in [name_ru, name_en, scholar.get("name"), scholar.get("original_fullname")] if value],
+        "description": scholar_description(scholar),
+        "knowsAbout": [theme_label(scholar.get("dominant_theme")), theme_label(scholar.get("dominant_theme"), "ru")],
+        "affiliation": [{"@type": "Organization", "name": aff} for aff in unique_affiliations(scholar, limit=8)],
     }
+    if scholar.get("birth_year"):
+        person["birthDate"] = str(scholar["birth_year"])
+    if scholar.get("death_year"):
+        person["deathDate"] = str(scholar["death_year"])
+    if same_as:
+        person["sameAs"] = same_as
 
-def get_day_of_week(date_str):
-    if not date_str:
-        return {"ru": "Не указан", "en": "Not specified"}
-    import datetime
-    try:
-        dt = datetime.datetime.strptime(date_str, "%Y-%m-%d")
-        wd = dt.weekday()
-        days_ru = ["Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота", "Воскресенье"]
-        days_en = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
-        return {"ru": days_ru[wd], "en": days_en[wd]}
-    except Exception:
-        return {"ru": "Не указан", "en": "Not specified"}
-
-def extract_geography(affiliation_text):
-    if not affiliation_text:
-        return {"ru": "Не указана", "en": "Not specified"}
-    aff_low = affiliation_text.lower()
-    cities = [
-        ("санкт-петербург", "Санкт-Петербург", "St. Petersburg"),
-        ("спб", "Санкт-Петербург", "St. Petersburg"),
-        ("ленинград", "Санкт-Петербург", "St. Petersburg"),
-        ("москва", "Москва", "Moscow"),
-        ("краснодар", "Краснодар", "Krasnodar"),
-        ("нижний новгород", "Нижний Новгород", "Nizhny Novgorod"),
-        ("томск", "Томск", "Tomsk"),
-        ("новосибирск", "Новосибирск", "Novosibirsk"),
-        ("владивосток", "Владивосток", "Vladivostok"),
-        ("улан-удэ", "Улан-Удэ", "Ulan-Ude"),
-        ("казань", "Казань", "Kazan"),
-        ("пенза", "Пенза", "Penza"),
-        ("элиста", "Элиста", "Elista"),
-        ("копенгаген", "Копенгаген", "Copenhagen"),
-        ("тарту", "Тарту", "Tartu"),
-        ("вильнюс", "Вильнюс", "Vilnius"),
-        ("париж", "Париж", "Paris"),
-        ("оксфорд", "Оксфорд", "Oxford"),
-        ("дели", "Дели", "Delhi")
+    return [
+        {
+            "@context": "https://schema.org",
+            "@type": "ProfilePage",
+            "name": f"{name_ru} | {SITE_NAME}",
+            "description": scholar_description(scholar),
+            "url": site_url(path),
+            "dateModified": BUILD_DATE,
+            "mainEntity": person,
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": "Home", "item": SITE_URL},
+                {"@type": "ListItem", "position": 2, "name": "Scholars", "item": site_url("scholars/")},
+                {"@type": "ListItem", "position": 3, "name": name_ru, "item": site_url(path)},
+            ],
+        },
     ]
-    for keyword, ru, en in cities:
-        if keyword in aff_low:
-            return {"ru": ru, "en": en}
-    return {"ru": "Не указана", "en": "Not specified"}
 
-def main():
-    conn = sqlite3.connect(DB_PATH)
-    cursor = conn.cursor()
-    
-    # Pre-fetch session order mapping
-    cursor.execute("""
-        SELECT pr.presentation_id, pr.session_id
-        FROM presentation pr
-        ORDER BY pr.presentation_id ASC
-    """)
-    pres_session_list = cursor.fetchall()
-    session_pres_map = {}
-    for pid, sess_id in pres_session_list:
-        if sess_id not in session_pres_map:
-            session_pres_map[sess_id] = []
-        session_pres_map[sess_id].append(pid)
-        
-    cursor.execute("SELECT person_id, display_name, birth_year, death_year, full_name_ru, full_name_en FROM person")
-    persons = cursor.fetchall()
-    
-    for r_p in persons:
-        pid, display_name, birth_year, death_year, full_name_ru, full_name_en = r_p
-        
-        # Build scholar names
-        std_name = format_to_initials(display_name)
-        full_name_ru_val = full_name_ru or std_name
-        full_name_en_val = full_name_en or std_name
-        
-        # Gender
-        gender = classify_gender(full_name_ru_val, display_name)
-        gender_ru = "Мужчина" if gender == "M" else "Женщина"
-        gender_en = "Male" if gender == "M" else "Female"
-        
-        # Calculate first and last Zograf/Roerich
-        # Zograf (event_series_id = 1)
-        cursor.execute("""
-            SELECT MIN(e.year), MAX(e.year)
-            FROM presentation pr
-            JOIN presentation_person pp ON pp.presentation_id = pr.presentation_id
-            JOIN session s ON s.session_id = pr.session_id
-            JOIN event_day_venue edv ON edv.event_day_venue_id = s.event_day_venue_id
-            JOIN event_day ed ON ed.event_day_id = edv.event_day_id
-            JOIN event e ON e.event_id = ed.event_id
-            WHERE pp.person_id = ? AND e.event_series_id = 1
-        """, (pid,))
-        z_res = cursor.fetchone()
-        z_first = z_res[0] if z_res and z_res[0] else None
-        z_last = z_res[1] if z_res and z_res[1] else None
-        
-        # Roerich (event_series_id = 2)
-        cursor.execute("""
-            SELECT MIN(e.year), MAX(e.year)
-            FROM presentation pr
-            JOIN presentation_person pp ON pp.presentation_id = pr.presentation_id
-            JOIN session s ON s.session_id = pr.session_id
-            JOIN event_day_venue edv ON edv.event_day_venue_id = s.event_day_venue_id
-            JOIN event_day ed ON ed.event_day_id = edv.event_day_id
-            JOIN event e ON e.event_id = ed.event_id
-            WHERE pp.person_id = ? AND e.event_series_id = 2
-        """, (pid,))
-        r_res = cursor.fetchone()
-        r_first = r_res[0] if r_res and r_res[0] else None
-        r_last = r_res[1] if r_res and r_res[1] else None
-        
-        # Fetch all presentations with sessions and days
-        cursor.execute("""
-            SELECT 
-                pr.presentation_id,
-                pr.title, 
-                e.year, 
-                es.series_name_en, 
-                pp.affiliation_text_raw,
-                pr.is_online,
-                ed.calendar_date,
-                s.session_title,
-                s.time_text_raw,
-                s.session_id,
-                v.display_name
-            FROM presentation pr
-            JOIN presentation_person pp ON pp.presentation_id = pr.presentation_id
-            JOIN session s ON s.session_id = pr.session_id
-            JOIN event_day_venue edv ON edv.event_day_venue_id = s.event_day_venue_id
-            JOIN venue v ON v.venue_id = edv.venue_id
-            JOIN event_day ed ON ed.event_day_id = edv.event_day_id
-            JOIN event e ON e.event_id = ed.event_id
-            JOIN event_series es ON es.event_series_id = e.event_series_id
-            WHERE pp.person_id = ?
-            ORDER BY e.year DESC, es.event_series_id ASC
-        """, (pid,))
-        talks_raw = cursor.fetchall()
-        
-        # Compile affiliations, cities, themes
-        affiliations = set()
-        cities = set()
-        themes = set()
-        talks = []
-        theme_counts = {}
-        
-        is_student = False
-        is_independent = False
-        
-        for t in talks_raw:
-            pres_id, title, year, series, affiliation, is_online, calendar_date, session_title, time_text, sess_id, venue_display = t
-            cleaned_title = clean_title(title)
-            
-            # Sub-category checks for roles
-            if affiliation:
-                aff_low = affiliation.lower()
-                if any(term in aff_low for term in ["студент", "аспирант", "магистрант", "бакалавр", "student", "postgraduate", "phd"]):
-                    is_student = True
-                if any(term in aff_low for term in ["независимый", "ни ", " ни", "independent", "без аффилиации"]):
-                    is_independent = True
-                affiliations.add(affiliation)
-                
-                # Extract city
-                geo = extract_geography(affiliation)
-                if geo["ru"] != "Не указана":
-                    cities.add(geo["ru"])
-            
-            # Theme classification
-            theme = classify_theme(cleaned_title)
-            t_code = theme["code"]
-            theme_counts[t_code] = theme_counts.get(t_code, 0) + 1
-            themes.add(theme["ru"])
-            
-            # Position order in session
-            s_list = session_pres_map.get(sess_id, [pres_id])
-            try:
-                order_idx = s_list.index(pres_id)
-            except ValueError:
-                order_idx = 0
-            
-            is_first = (order_idx == 0)
-            is_last = (order_idx == len(s_list) - 1)
-            
-            day_of_week = get_day_of_week(calendar_date)
-            
-            talks.append({
-                "title": cleaned_title,
-                "year": year,
-                "series": "Зографские чтения" if "Zograf" in series else "Рериховские чтения",
-                "series_en": "Zograf Readings" if "Zograf" in series else "Roerich Readings",
-                "is_online": bool(is_online),
-                "theme_ru": theme["ru"],
-                "theme_en": theme["en"],
-                "theme_code": theme["code"],
-                "date": calendar_date or "Не указана",
-                "day_ru": day_of_week["ru"],
-                "day_en": day_of_week["en"],
-                "time": time_text or "Не указано",
-                "session_ru": session_title or "Секционный доклад",
-                "venue": venue_display or "Научный центр",
-                "is_first": is_first,
-                "is_last": is_last,
-                "order": order_idx + 1,
-                "total": len(s_list)
-            })
-            
-        # Dominant theme & breadth
-        dom_theme_code = "History"
-        dom_theme_ru = "История и этнография"
-        dom_theme_en = "History & Ethnography"
-        if theme_counts:
-            sorted_t = sorted(theme_counts.items(), key=lambda x: (-x[1], x[0]))
-            dom_theme_code = sorted_t[0][0]
-            # Resolve dominant labels
-            sample_themes = {
-                "AcademicHistory": ("История науки и архивы", "History of Scholarship"),
-                "Linguistics": ("Лингвистика и филология", "Linguistics & Philology"),
-                "Philosophy": ("Философия и религия", "Philosophy & Religion"),
-                "Art": ("Искусство и литература", "Art & Literature"),
-                "History": ("История и этнография", "History & Ethnography")
-            }
-            dom_theme_ru, dom_theme_en = sample_themes.get(dom_theme_code, ("История и этнография", "History & Ethnography"))
-            
-        breadth_ru = "Междисциплинарный исследователь" if len(theme_counts) > 1 else "Узкий специалист"
-        breadth_en = "Interdisciplinary Scholar" if len(theme_counts) > 1 else "Specialized Specialist"
-        
-        # Formulate HTML lifespan
-        lifespan_ru = ""
-        lifespan_en = ""
-        if birth_year:
-            if death_year:
-                lifespan_ru = f" ({birth_year}–{death_year})"
-                lifespan_en = f" ({birth_year}–{death_year})"
-            else:
-                lifespan_ru = f" (род. {birth_year})"
-                lifespan_en = f" (b. {birth_year})"
-                
-        # Generate clean affiliations list html
-        aff_tags_ru = ""
-        aff_tags_en = ""
-        for aff in sorted(affiliations):
-            aff_tags_ru += f'<span class="aff-tag" onclick="filterByKeyword(\'{aff}\')">{aff}</span>'
-            aff_tags_en += f'<span class="aff-tag" onclick="filterByKeyword(\'{aff}\')">{aff}</span>'
-            
-        city_lookup = {
-            "Санкт-Петербург": "St. Petersburg",
-            "Москва": "Moscow",
-            "Краснодар": "Krasnodar",
-            "Нижний Новгород": "Nizhny Novgorod",
-            "Томск": "Tomsk",
-            "Новосибирск": "Novosibirsk",
-            "Владивосток": "Vladivostok",
-            "Улан-Удэ": "Ulan-Ude",
-            "Казань": "Kazan",
-            "Пенза": "Penza",
-            "Элиста": "Elista",
-            "Копенгаген": "Copenhagen",
-            "Тарту": "Tartu",
-            "Вильнюс": "Vilnius",
-            "Париж": "Paris",
-            "Оксфорд": "Oxford",
-            "Дели": "Delhi"
-        }
-        
-        city_tags_ru = ""
-        city_tags_en = ""
-        for city in sorted(cities):
-            city_tags_ru += f'<span class="city-tag" onclick="filterByKeyword(\'{city}\')">{city}</span>'
-            c_en = city_lookup.get(city, city)
-            city_tags_en += f'<span class="city-tag" onclick="filterByKeyword(\'{c_en}\')">{c_en}</span>'
-            
-        # Zograf / Roerich first/last text strings
-        zograf_timeline_ru = f"Впервые: {z_first} г. | Последний раз: {z_last} г." if z_first else "Никогда не выступал"
-        zograf_timeline_en = f"First: {z_first} | Last: {z_last}" if z_first else "Never presented"
-        
-        roerich_timeline_ru = f"Впервые: {r_first} г. | Последний раз: {r_last} г." if r_first else "Никогда не выступал"
-        roerich_timeline_en = f"First: {r_first} | Last: {r_last}" if r_first else "Never presented"
-        
-        # Build talk rows HTML
-        talk_rows_html_ru = ""
-        talk_rows_html_en = ""
-        for tk in talks:
-            online_badge_ru = '<span class="badge badge-online">Zoom / Онлайн</span>' if tk["is_online"] else ""
-            online_badge_en = '<span class="badge badge-online">Zoom / Online</span>' if tk["is_online"] else ""
-            
-            first_badge_ru = '<span class="badge badge-first">Открывающий доклад</span>' if tk["is_first"] else ""
-            first_badge_en = '<span class="badge badge-first">Opening Talk</span>' if tk["is_first"] else ""
-            
-            last_badge_ru = '<span class="badge badge-last">Закрывающий доклад</span>' if tk["is_last"] else ""
-            last_badge_en = '<span class="badge badge-last">Closing Talk</span>' if tk["is_last"] else ""
-            
-            seq_badge_ru = f'<span class="badge badge-order">{tk["order"]}-й доклад из {tk["total"]}</span>'
-            seq_badge_en = f'<span class="badge badge-order">Talk {tk["order"]} of {tk["total"]}</span>'
-            
-            talk_rows_html_ru += f"""
-            <div class="talk-card">
-                <div class="talk-header">
-                    <span class="talk-year">{tk["year"]} ({tk["series"]})</span>
-                    <span class="badge badge-theme theme-{tk["theme_code"]}">{tk["theme_ru"]}</span>
-                </div>
-                <h4 class="talk-title">{tk["title"]}</h4>
-                <div class="talk-details">
-                    <div><strong>Секция:</strong> {tk["session_ru"]}</div>
-                    <div><strong>Время:</strong> {tk["date"]} ({tk["day_ru"]}), {tk["time"]}</div>
-                    <div><strong>Место проведения:</strong> {tk["venue"]}</div>
-                </div>
-                <div style="margin-top: 0.5rem; display: flex; gap: 0.5rem; flex-wrap: wrap;">
-                    {online_badge_ru} {first_badge_ru} {last_badge_ru} {seq_badge_ru}
-                </div>
-            </div>
-            """
-            
-            talk_rows_html_en += f"""
-            <div class="talk-card">
-                <div class="talk-header">
-                    <span class="talk-year">{tk["year"]} ({tk["series_en"]})</span>
-                    <span class="badge badge-theme theme-{tk["theme_code"]}">{tk["theme_en"]}</span>
-                </div>
-                <h4 class="talk-title">{tk["title"]}</h4>
-                <div class="talk-details">
-                    <div><strong>Session:</strong> {tk["session_ru"]}</div>
-                    <div><strong>Time:</strong> {tk["date"]} ({tk["day_en"]}), {tk["time"]}</div>
-                    <div><strong>Venue:</strong> {tk["venue"]}</div>
-                </div>
-                <div style="margin-top: 0.5rem; display: flex; gap: 0.5rem; flex-wrap: wrap;">
-                    {online_badge_en} {first_badge_en} {last_badge_en} {seq_badge_en}
-                </div>
-            </div>
-            """
-            
-        # Academic status tags
-        status_badges_ru = ""
-        status_badges_en = ""
-        if is_student:
-            status_badges_ru += '<span class="status-badge student-badge">Студент / Аспирант</span>'
-            status_badges_en += '<span class="status-badge student-badge">Student / PG</span>'
-        if is_independent:
-            status_badges_ru += '<span class="status-badge independent-badge">Независимый исследователь (НИ)</span>'
-            status_badges_en += '<span class="status-badge independent-badge">Independent Researcher (IR)</span>'
-            
-        html_content = f"""<!DOCTYPE html>
+
+def build_indexes(scholars):
+    by_theme = defaultdict(list)
+    by_city = defaultdict(list)
+    for scholar in scholars:
+        if scholar.get("dominant_theme"):
+            by_theme[scholar["dominant_theme"]].append(scholar)
+        for city in unique_cities(scholar):
+            by_city[city].append(scholar)
+    return by_theme, by_city
+
+
+def render_profile(scholar, related, authority):
+    name_ru = scholar.get("full_name_ru") or scholar.get("name")
+    name_en = scholar.get("full_name_en") or scholar.get("name")
+    description = scholar_description(scholar)
+    path = f"scholars/{scholar['url_slug']}.html"
+    theme_code = scholar.get("dominant_theme") or "History"
+    cities = unique_cities(scholar)
+    affiliations = unique_affiliations(scholar)
+
+    related_html = "".join(
+        f'<article class="card"><strong><a href="{item["url_slug"]}.html">{esc(item.get("full_name_ru") or item.get("name"))}</a></strong><div class="meta">{esc(item.get("total_talks"))} talks · {esc(theme_label(item.get("dominant_theme")))}</div></article>'
+        for item in related
+    ) or '<p class="meta">No related scholars found in this generated index.</p>'
+
+    status = []
+    if scholar.get("is_student"):
+        status.append("Student / postgraduate")
+    if scholar.get("is_independent"):
+        status.append("Independent researcher")
+
+    body = f"""
+        <header>
+            <h1>{esc(name_ru)}<span class="life">{esc(format_lifespan(scholar, "ru"))}</span></h1>
+            <p>{esc(name_en)}{esc(format_lifespan(scholar, "en"))}</p>
+            <p>{esc(description)}</p>
+        </header>
+
+        <section class="grid">
+            <article class="card"><strong>Talks</strong><div class="metric">{esc(scholar.get("total_talks"))}</div><div class="meta">Presentation records</div></article>
+            <article class="card"><strong>Activity</strong><div class="metric">{esc(describe_year_span(scholar.get("first_year"), scholar.get("last_year")))}</div><div class="meta">Observed conference years</div></article>
+            <article class="card"><strong>Theme</strong><div class="metric"><a href="../{theme_path(theme_code)}">{esc(theme_label(theme_code))}</a></div><div class="meta">{esc(theme_label(theme_code, "ru"))}</div></article>
+            <article class="card"><strong>Conference split</strong><div class="meta">Zograf: {esc(scholar.get("zograf_talks"))} · Roerich: {esc(scholar.get("roerich_talks"))}</div></article>
+        </section>
+
+        <h2>Affiliations</h2>
+        <div class="chip-row">{chip_links(affiliations, dashboard_search_href)}</div>
+
+        <h2>Geographic Centers</h2>
+        <div class="chip-row">{chip_links(cities, lambda city: '../' + city_path(city))}</div>
+
+        <h2>Status Tags</h2>
+        <div class="chip-row">{''.join(f'<span class="chip">{esc(item)}</span>' for item in status) or '<span class="meta">No special status tags.</span>'}</div>
+
+        <h2>Presentations</h2>
+        <section class="list">{''.join(talk_card(talk) for talk in scholar.get("talks", []))}</section>
+
+        <h2>Related Scholars</h2>
+        <section class="grid">{related_html}</section>
+    """
+
+    extra_css = """
+    <style>
+        .life { color: var(--soft); font-size: 0.62em; font-weight: 500; margin-left: 0.4rem; }
+        .metric { font-size: 1.4rem; font-weight: 700; margin-top: 0.2rem; }
+        .chip-row { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    </style>
+    """
+    return page_shell(
+        f"{name_ru} | {SITE_NAME}",
+        description,
+        path,
+        body,
+        profile_structured_data(scholar, authority),
+        extra_head=extra_css,
+    )
+
+
+def render_scholars_index(scholars):
+    cards = []
+    for scholar in sorted(scholars, key=lambda item: item.get("full_name_ru") or item.get("name")):
+        name = scholar.get("full_name_ru") or scholar.get("name")
+        years = describe_year_span(scholar.get("first_year"), scholar.get("last_year"))
+        cards.append(
+            f'<article class="card"><strong><a href="{scholar["url_slug"]}.html">{esc(name)}</a></strong>'
+            f'<div class="meta">{esc(scholar.get("total_talks"))} talks · {esc(years)} · {esc(theme_label(scholar.get("dominant_theme")))}</div></article>'
+        )
+    body = f"""
+        <header>
+            <h1>Scholar Profiles</h1>
+            <p>Static index of generated scholar profile pages for the Indology Scholars archive.</p>
+        </header>
+        <section class="grid">{''.join(cards)}</section>
+    """
+    structured = [
+        {
+            "@context": "https://schema.org",
+            "@type": "CollectionPage",
+            "name": "Scholar Profiles",
+            "description": "Static index of generated scholar profile pages.",
+            "url": site_url("scholars/"),
+            "dateModified": BUILD_DATE,
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": "Home", "item": SITE_URL},
+                {"@type": "ListItem", "position": 2, "name": "Scholars", "item": site_url("scholars/")},
+            ],
+        },
+    ]
+    return page_shell(
+        f"Scholar Profiles | {SITE_NAME}",
+        "Static index of generated scholar profile pages for the Indology Scholars archive.",
+        "scholars/",
+        body,
+        structured,
+    )
+
+
+def render_legacy_redirect(legacy_id, target_scholar):
+    target_slug = target_scholar["url_slug"]
+    target_href = f"{target_slug}.html"
+    target_url = site_url(f"scholars/{target_slug}.html")
+    name = target_scholar.get("full_name_ru") or target_scholar.get("name")
+    title = f"{clean_text(name)} moved | {SITE_NAME}"
+    description = f"Legacy profile URL for {clean_text(name)}. The canonical profile is {target_url}."
+    return f"""<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{full_name_ru_val} | Российский индологический архив</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
-    <style>
-        :root {{
-            --bg-primary: #0b0f19;
-            --bg-secondary: #111827;
-            --card-bg: rgba(31, 41, 55, 0.45);
-            --card-border: rgba(255, 255, 255, 0.07);
-            --text-primary: #ffffff;
-            --text-secondary: #9ca3af;
-            --text-muted: #6b7280;
-            --accent-primary: #8b5cf6;
-            --accent-secondary: #3b82f6;
-            --accent-glow: rgba(139, 92, 246, 0.15);
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            --font-display: 'Outfit', sans-serif;
-            --font-body: 'Inter', sans-serif;
-            --font-mono: 'Fira Code', monospace;
-        }}
-
-        * {{
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }}
-
-        body {{
-            background-color: var(--bg-primary);
-            color: var(--text-primary);
-            font-family: var(--font-body);
-            line-height: 1.6;
-            padding: 2rem 1rem;
-            min-height: 100vh;
-            background-image: 
-                radial-gradient(circle at 10% 20%, rgba(139, 92, 246, 0.08) 0%, transparent 40%),
-                radial-gradient(circle at 90% 80%, rgba(59, 130, 246, 0.08) 0%, transparent 40%);
-            background-attachment: fixed;
-        }}
-
-        .container {{
-            max-width: 900px;
-            margin: 0 auto;
-        }}
-
-        /* Header Navigation */
-        .back-btn {{
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-family: var(--font-display);
-            font-weight: 500;
-            font-size: 0.95rem;
-            padding: 0.6rem 1.2rem;
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid var(--card-border);
-            border-radius: 9999px;
-            cursor: pointer;
-            transition: var(--transition);
-            margin-bottom: 2rem;
-        }}
-
-        .back-btn:hover {{
-            color: #ffffff;
-            background: var(--accent-glow);
-            border-color: var(--accent-primary);
-            box-shadow: 0 0 15px rgba(139, 92, 246, 0.2);
-            transform: translateX(-4px);
-        }}
-
-        /* Profile Header */
-        .profile-card {{
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            border-radius: 16px;
-            padding: 2.5rem;
-            backdrop-filter: blur(12px);
-            margin-bottom: 2rem;
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
-        }}
-
-        .profile-header {{
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            flex-wrap: wrap;
-            gap: 1.5rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-            padding-bottom: 1.5rem;
-            margin-bottom: 1.5rem;
-        }}
-
-        .profile-title h1 {{
-            font-family: var(--font-display);
-            font-weight: 700;
-            font-size: 2.2rem;
-            line-height: 1.2;
-            color: #ffffff;
-            margin-bottom: 0.5rem;
-        }}
-
-        .profile-title .lifespan {{
-            color: var(--text-secondary);
-            font-weight: 400;
-            font-size: 1.4rem;
-            margin-left: 0.5rem;
-        }}
-
-        .status-badges {{
-            display: flex;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-            margin-top: 0.5rem;
-        }}
-
-        .status-badge {{
-            font-size: 0.8rem;
-            font-weight: 600;
-            padding: 0.25rem 0.75rem;
-            border-radius: 9999px;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }}
-
-        .student-badge {{
-            background: rgba(59, 130, 246, 0.15);
-            color: #60a5fa;
-            border: 1px solid rgba(59, 130, 246, 0.3);
-        }}
-
-        .independent-badge {{
-            background: rgba(16, 185, 129, 0.15);
-            color: #34d399;
-            border: 1px solid rgba(16, 185, 129, 0.3);
-        }}
-
-        /* Profile Details Grid */
-        .details-grid {{
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 1.5rem;
-        }}
-
-        .detail-item {{
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 255, 255, 0.04);
-            border-radius: 8px;
-            padding: 1rem;
-        }}
-
-        .detail-label {{
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: 0.25rem;
-        }}
-
-        .detail-value {{
-            font-family: var(--font-display);
-            font-weight: 600;
-            font-size: 1.05rem;
-            color: #ffffff;
-        }}
-
-        .theme-badge {{
-            display: inline-block;
-            font-size: 0.8rem;
-            font-weight: 600;
-            padding: 0.15rem 0.5rem;
-            border-radius: 4px;
-            margin-top: 0.25rem;
-        }}
-
-        /* Tags lists */
-        .tags-section {{
-            margin-bottom: 1.5rem;
-        }}
-
-        .tags-title {{
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: var(--text-secondary);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: 0.5rem;
-        }}
-
-        .tags-list {{
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }}
-
-        .aff-tag, .city-tag {{
-            font-size: 0.85rem;
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 6px;
-            padding: 0.3rem 0.8rem;
-            color: var(--text-secondary);
-            cursor: pointer;
-            transition: var(--transition);
-        }}
-
-        .aff-tag:hover {{
-            background: rgba(139, 92, 246, 0.08);
-            border-color: var(--accent-primary);
-            color: #ffffff;
-        }}
-
-        .city-tag:hover {{
-            background: rgba(59, 130, 246, 0.08);
-            border-color: var(--accent-secondary);
-            color: #ffffff;
-        }}
-
-        /* Timeline / Talks section */
-        .section-title {{
-            font-family: var(--font-display);
-            font-weight: 700;
-            font-size: 1.6rem;
-            color: #ffffff;
-            margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }}
-
-        .talks-list {{
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }}
-
-        .talk-card {{
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            border-radius: 12px;
-            padding: 1.5rem;
-            transition: var(--transition);
-        }}
-
-        .talk-card:hover {{
-            border-color: rgba(139, 92, 246, 0.3);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 20px rgba(0,0,0,0.25);
-        }}
-
-        .talk-header {{
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 0.75rem;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }}
-
-        .talk-year {{
-            font-family: var(--font-mono);
-            font-weight: 600;
-            font-size: 0.9rem;
-            color: var(--accent-secondary);
-        }}
-
-        .talk-title {{
-            font-family: var(--font-display);
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: #ffffff;
-            margin-bottom: 0.75rem;
-        }}
-
-        .talk-details {{
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 0.5rem 1.5rem;
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            padding-top: 0.75rem;
-        }}
-
-        .talk-details strong {{
-            color: var(--text-primary);
-        }}
-
-        /* Theme color badging */
-        .badge-theme {{
-            font-size: 0.75rem;
-            font-weight: 600;
-            padding: 0.15rem 0.5rem;
-            border-radius: 4px;
-            text-transform: uppercase;
-        }}
-
-        .theme-Philosophy {{ background: rgba(139, 92, 246, 0.15); color: #c084fc; border: 1px solid rgba(139, 92, 246, 0.3); }}
-        .theme-Linguistics {{ background: rgba(59, 130, 246, 0.15); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.3); }}
-        .theme-History {{ background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3); }}
-        .theme-Art {{ background: rgba(236, 72, 153, 0.15); color: #f472b6; border: 1px solid rgba(236, 72, 153, 0.3); }}
-        .theme-AcademicHistory {{ background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3); }}
-
-        .badge {{
-            font-size: 0.75rem;
-            font-weight: 600;
-            padding: 0.2rem 0.6rem;
-            border-radius: 4px;
-            display: inline-block;
-        }}
-
-        .badge-online {{ background: rgba(59, 130, 246, 0.15); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.3); }}
-        .badge-first {{ background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3); }}
-        .badge-last {{ background: rgba(239, 68, 68, 0.15); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.3); }}
-        .badge-order {{ background: rgba(255, 255, 255, 0.05); color: var(--text-secondary); border: 1px solid rgba(255, 255, 255, 0.1); }}
-
-        /* Footer Copyright */
-        footer {{
-            margin-top: 4rem;
-            border-top: 1px solid var(--card-border);
-            padding-top: 1.5rem;
-            text-align: center;
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            font-family: var(--font-display);
-        }}
-    </style>
+    <title>{esc(title)}</title>
+    <meta name="description" content="{esc(description)}">
+    <meta name="robots" content="noindex,follow">
+    <link rel="canonical" href="{esc(target_url)}">
+    <meta http-equiv="refresh" content="0; url={esc(target_href)}">
+    <script>window.location.replace("{esc(target_href)}");</script>
 </head>
-<body>
-    <div class="container">
-        <!-- Back Button -->
-        <a href="../index.html" class="back-btn">
-            <span>←</span>
-            <span class="lang-ru-inline">Назад на главную</span>
-            <span class="lang-en-inline">Back to Dashboard</span>
-        </a>
-
-        <!-- Profile Card -->
-        <div class="profile-card">
-            <div class="profile-header">
-                <div class="profile-title">
-                    <h1 class="lang-ru">{full_name_ru_val}<span class="lifespan">{lifespan_ru}</span></h1>
-                    <h1 class="lang-en">{full_name_en_val}<span class="lifespan">{lifespan_en}</span></h1>
-                    
-                    <div class="status-badges">
-                        {status_badges_ru}
-                    </div>
-                </div>
-            </div>
-
-            <!-- Scholar Meta Fields -->
-            <div class="details-grid">
-                <div class="detail-item">
-                    <div class="detail-label">
-                        <span class="lang-ru">Пол</span>
-                        <span class="lang-en">Gender</span>
-                    </div>
-                    <div class="detail-value">
-                        <span class="lang-ru">{gender_ru}</span>
-                        <span class="lang-en">{gender_en}</span>
-                    </div>
-                </div>
-                <div class="detail-item">
-                    <div class="detail-label">
-                        <span class="lang-ru">Научный профиль</span>
-                        <span class="lang-en">Research Profile</span>
-                    </div>
-                    <div class="detail-value">
-                        <span class="lang-ru">{breadth_ru}</span>
-                        <span class="lang-en">{breadth_en}</span>
-                        <br>
-                        <span class="badge-theme theme-{dom_theme_code}" style="margin-top: 0.4rem;">
-                            <span class="lang-ru">{dom_theme_ru}</span>
-                            <span class="lang-en">{dom_theme_en}</span>
-                        </span>
-                    </div>
-                </div>
-                <div class="detail-item">
-                    <div class="detail-label">
-                        <span class="lang-ru">Зографские чтения</span>
-                        <span class="lang-en">Zograf Readings</span>
-                    </div>
-                    <div class="detail-value" style="font-size: 0.9rem;">
-                        <span class="lang-ru">{zograf_timeline_ru}</span>
-                        <span class="lang-en">{zograf_timeline_en}</span>
-                    </div>
-                </div>
-                <div class="detail-item">
-                    <div class="detail-label">
-                        <span class="lang-ru">Рериховские чтения</span>
-                        <span class="lang-en">Roerich Readings</span>
-                    </div>
-                    <div class="detail-value" style="font-size: 0.9rem;">
-                        <span class="lang-ru">{roerich_timeline_ru}</span>
-                        <span class="lang-en">{roerich_timeline_en}</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Affiliations -->
-            <div class="tags-section" style="display: { 'block' if affiliations else 'none' };">
-                <div class="tags-title">
-                    <span class="lang-ru">Аффилиации за все годы</span>
-                    <span class="lang-en">Affiliation History</span>
-                </div>
-                <div class="tags-list">
-                    {aff_tags_ru}
-                </div>
-            </div>
-
-            <!-- Cities -->
-            <div class="tags-section" style="display: { 'block' if cities else 'none' };">
-                <div class="tags-title">
-                    <span class="lang-ru">Географические центры</span>
-                    <span class="lang-en">Geographical Centers</span>
-                </div>
-                <div class="tags-list">
-                    {city_tags_ru}
-                </div>
-            </div>
-        </div>
-
-        <!-- Presentations list -->
-        <div>
-            <h3 class="section-title">
-                <span>📚</span>
-                <span class="lang-ru">Научные доклады ({len(talks)})</span>
-                <span class="lang-en">Presented Papers ({len(talks)})</span>
-            </h3>
-
-            <div class="talks-list lang-ru">
-                {talk_rows_html_ru}
-            </div>
-            
-            <div class="talks-list lang-en">
-                {talk_rows_html_en}
-            </div>
-        </div>
-
-        <!-- Footer -->
-        <footer>
-            <div class="lang-ru">© 2026 Российский индологический научный архив, д-р Марцис Гасунс. Все права защищены.</div>
-            <div class="lang-en">© 2026 Russian Indological Research Archive, Dr. Mārcis Gasūns. All rights reserved.</div>
-        </footer>
-    </div>
-
-    <script>
-        // Set language display based on dashboard preferences
-        function applyLanguage() {{
-            const lang = localStorage.getItem('indology_lang') || 'ru';
-            
-            document.querySelectorAll('.lang-ru').forEach(el => el.style.display = lang === 'ru' ? 'block' : 'none');
-            document.querySelectorAll('.lang-en').forEach(el => el.style.display = lang === 'en' ? 'block' : 'none');
-            
-            document.querySelectorAll('.lang-ru-inline').forEach(el => el.style.display = lang === 'ru' ? 'inline' : 'none');
-            document.querySelectorAll('.lang-en-inline').forEach(el => el.style.display = lang === 'en' ? 'inline' : 'none');
-        }}
-
-        // Helper function to link back to dashboard with search keyword
-        function filterByKeyword(keyword) {{
-            window.location.href = '../index.html?search=' + encodeURIComponent(keyword);
-        }}
-
-        applyLanguage();
-    </script>
+<body data-legacy-redirect="{esc(legacy_id)}">
+    <p><a href="{esc(target_href)}">{esc(name)}</a></p>
 </body>
-</html>"""
-        
-        # Write individual file
-        with open(os.path.join(OUTPUT_DIR, f"{pid}.html"), "w", encoding="utf-8") as f_out:
-            f_out.write(html_content)
-            
-    conn.close()
-    print(f"Successfully generated {len(persons)} premium static scholar profile pages in '{OUTPUT_DIR}/'!")
+</html>
+"""
+
+
+def main():
+    OUTPUT_DIR.mkdir(exist_ok=True)
+    data = load_site_data("site_data.js")
+    scholars = data.get("scholars", [])
+    by_theme, by_city = build_indexes(scholars)
+    authority = load_authority_ids()
+    legacy_redirects = load_legacy_redirects()
+    scholars_by_id = {scholar["id"]: scholar for scholar in scholars}
+
+    written_files = {"index.html"}
+    generated_slugs = set()
+    for scholar in scholars:
+        slug = scholar["url_slug"]
+        generated_slugs.add(slug)
+        related = related_scholars(scholar, by_theme, by_city)
+        html = render_profile(scholar, related, authority)
+        canonical_filename = f"{slug}.html"
+        (OUTPUT_DIR / canonical_filename).write_text(html, encoding="utf-8", newline="\n")
+        written_files.add(canonical_filename)
+
+        # Redirect from the legacy PERS_<hash>.html path to the new slug-based canonical.
+        pers_filename = f"{scholar['id']}.html"
+        if pers_filename != canonical_filename:
+            redirect_html = render_legacy_redirect(scholar["id"], scholar)
+            (OUTPUT_DIR / pers_filename).write_text(redirect_html, encoding="utf-8", newline="\n")
+            written_files.add(pers_filename)
+
+    for legacy_id, target_id in legacy_redirects.items():
+        target_scholar = scholars_by_id.get(target_id)
+        if not target_scholar:
+            raise ValueError(f"Legacy redirect {legacy_id} points to missing scholar {target_id}")
+        if legacy_id == target_scholar["url_slug"]:
+            continue  # Would self-redirect; canonical already written above.
+        legacy_filename = f"{legacy_id}.html"
+        html = render_legacy_redirect(legacy_id, target_scholar)
+        (OUTPUT_DIR / legacy_filename).write_text(html, encoding="utf-8", newline="\n")
+        written_files.add(legacy_filename)
+
+    for stale in OUTPUT_DIR.glob("*.html"):
+        if stale.name not in written_files:
+            stale.unlink()
+
+    (OUTPUT_DIR / "index.html").write_text(render_scholars_index(scholars), encoding="utf-8", newline="\n")
+
+    print(
+        f"Successfully generated {len(generated_slugs)} canonical scholar profile pages "
+        f"in '{OUTPUT_DIR}/' (plus PERS_<hash> redirects and {len(legacy_redirects)} legacy redirects)."
+    )
+
 
 if __name__ == "__main__":
     main()
