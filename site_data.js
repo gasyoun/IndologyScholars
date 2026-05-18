@@ -48971,52 +48971,72 @@ const CONFERENCE_DATA = {
     {
       "ru": "Санкт-Петербург",
       "en": "St. Petersburg",
-      "count": 178
+      "count": 178,
+      "lat": 59.9343,
+      "lon": 30.3351
     },
     {
       "ru": "Москва",
       "en": "Moscow",
-      "count": 176
+      "count": 176,
+      "lat": 55.7558,
+      "lon": 37.6173
     },
     {
       "ru": "Пенза",
       "en": "Penza",
-      "count": 8
+      "count": 8,
+      "lat": 53.1959,
+      "lon": 45.0183
     },
     {
       "ru": "Краснодар",
       "en": "Krasnodar",
-      "count": 5
+      "count": 5,
+      "lat": 45.0393,
+      "lon": 38.9872
     },
     {
       "ru": "Казань",
       "en": "Kazan",
-      "count": 5
+      "count": 5,
+      "lat": 55.7963,
+      "lon": 49.1088
     },
     {
       "ru": "Элиста",
       "en": "Elista",
-      "count": 4
+      "count": 4,
+      "lat": 46.3078,
+      "lon": 44.2558
     },
     {
       "ru": "Новосибирск",
       "en": "Novosibirsk",
-      "count": 2
+      "count": 2,
+      "lat": 55.0084,
+      "lon": 82.9357
     },
     {
       "ru": "Нижний Новгород",
       "en": "Nizhny Novgorod",
-      "count": 1
+      "count": 1,
+      "lat": 56.3269,
+      "lon": 44.0059
     },
     {
       "ru": "Вильнюс",
       "en": "Vilnius",
-      "count": 1
+      "count": 1,
+      "lat": null,
+      "lon": null
     },
     {
       "ru": "Улан-Удэ",
       "en": "Ulan-Ude",
-      "count": 1
+      "count": 1,
+      "lat": 51.8344,
+      "lon": 107.5845
     }
   ],
   "gender_stats": {

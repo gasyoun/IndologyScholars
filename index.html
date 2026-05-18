@@ -2053,7 +2053,7 @@ CREATE TABLE presentation_person (
             addLabel(x + wZ + wO - 40, 90, t.moscowCohort.replace('{count}', rCount), t.moscowCohortDesc.replace('{percent}', rPercent.toFixed(1)), '#f472b6');
         }
 
-        // Draw Interactive SVG Geography chart
+        // Draw Interactive SVG Geography chart (Geo-Map)
         function renderGeoChart() {
             const svg = document.getElementById('svg-geo');
             if (!svg) return;
@@ -2061,84 +2061,111 @@ CREATE TABLE presentation_person (
             
             const t = TRANSLATIONS[currentLang];
             const geoData = CONFERENCE_DATA.geography_stats || [];
+            const validGeo = geoData.filter(d => d.lat && d.lon && d.count > 0);
             
-            if (geoData.length === 0) {
+            if (validGeo.length === 0) {
                 svg.innerHTML = `<text x="350" y="175" fill="var(--text-muted)" font-size="14px" text-anchor="middle">${t.geoNoData || 'No geographic data'}</text>`;
                 return;
             }
             
             const width = 700;
             const height = 350;
-            const paddingLeft = 140;
-            const paddingRight = 60;
-            const paddingTop = 40;
-            const paddingBottom = 40;
+            const padding = 40;
             
-            const maxCount = Math.max(...geoData.map(d => d.count)) || 1;
-            const barHeight = 22;
-            const gap = 12;
+            // Geographic bounds (focus on Eurasia)
+            const minLon = 10; // Europe
+            const maxLon = 140; // East Russia/Japan
+            const minLat = 35; // South Europe / India
+            const maxLat = 65; // North Russia
             
-            // Display top 8 cities
-            const displayData = geoData.slice(0, 8);
+            function project(lat, lon) {
+                // Simple equirectangular projection inverted for SVG Y-axis
+                const x = padding + ((lon - minLon) / (maxLon - minLon)) * (width - 2 * padding);
+                const y = height - padding - ((lat - minLat) / (maxLat - minLat)) * (height - 2 * padding);
+                return {x, y};
+            }
             
-            displayData.forEach((d, idx) => {
-                const y = paddingTop + idx * (barHeight + gap);
-                const barWidth = ((width - paddingLeft - paddingRight) * d.count) / maxCount;
-                const cityName = currentLang === 'ru' ? d.ru : d.en;
-                
-                // Y axis label (City name)
-                const label = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-                label.setAttribute('x', paddingLeft - 15);
-                label.setAttribute('y', y + barHeight / 2 + 5);
-                label.setAttribute('fill', 'var(--text-primary)');
-                label.setAttribute('font-size', '12px');
-                label.setAttribute('font-family', 'var(--font-display)');
-                label.setAttribute('font-weight', '500');
-                label.setAttribute('text-anchor', 'end');
-                label.textContent = cityName;
-                svg.appendChild(label);
-                
-                // Bar background
-                const bgBar = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
-                bgBar.setAttribute('x', paddingLeft);
-                bgBar.setAttribute('y', y);
-                bgBar.setAttribute('width', width - paddingLeft - paddingRight);
-                bgBar.setAttribute('height', barHeight);
-                bgBar.setAttribute('fill', 'rgba(255,255,255,0.02)');
-                bgBar.setAttribute('rx', '4');
-                svg.appendChild(bgBar);
-                
-                // Filled bar
-                const bar = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
-                bar.setAttribute('x', paddingLeft);
-                bar.setAttribute('y', y);
-                bar.setAttribute('width', barWidth);
-                bar.setAttribute('height', barHeight);
-                bar.setAttribute('fill', 'url(#geo-gradient)');
-                bar.setAttribute('rx', '4');
-                svg.appendChild(bar);
-                
-                // Value label on the right
-                const valLabel = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-                valLabel.setAttribute('x', paddingLeft + barWidth + 10);
-                valLabel.setAttribute('y', y + barHeight / 2 + 5);
-                valLabel.setAttribute('fill', 'var(--text-secondary)');
-                valLabel.setAttribute('font-size', '11px');
-                valLabel.setAttribute('font-family', 'var(--font-mono)');
-                valLabel.setAttribute('font-weight', '600');
-                valLabel.textContent = d.count;
-                svg.appendChild(valLabel);
-            });
-            
-            // Gradient def
+            // Defs for glowing points
             const defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
             defs.innerHTML = `
-                <linearGradient id="geo-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" stop-color="#8b5cf6" />
-                    <stop offset="100%" stop-color="#3b82f6" />
-                </linearGradient>
+                <radialGradient id="glow-grad" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.6"/>
+                    <stop offset="100%" stop-color="#3b82f6" stop-opacity="0"/>
+                </radialGradient>
             `;
             svg.appendChild(defs);
+            
+            // Draw connections to Moscow and St Petersburg
+            const spb = validGeo.find(d => d.ru === 'Санкт-Петербург');
+            const msk = validGeo.find(d => d.ru === 'Москва');
+            
+            const drawLines = (center) => {
+                if (!center) return;
+                const cP = project(center.lat, center.lon);
+                validGeo.forEach(d => {
+                    if (d === center) return;
+                    const p = project(d.lat, d.lon);
+                    const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+                    line.setAttribute('x1', cP.x);
+                    line.setAttribute('y1', cP.y);
+                    line.setAttribute('x2', p.x);
+                    line.setAttribute('y2', p.y);
+                    line.setAttribute('stroke', 'rgba(139, 92, 246, 0.25)');
+                    line.setAttribute('stroke-width', '1');
+                    svg.appendChild(line);
+                });
+            };
+            drawLines(spb);
+            drawLines(msk);
+            
+            // Draw points
+            validGeo.forEach(d => {
+                const {x, y} = project(d.lat, d.lon);
+                const cityName = currentLang === 'ru' ? d.ru : d.en;
+                const r = Math.max(4, Math.min(18, Math.sqrt(d.count) * 2));
+                
+                // Glow effect
+                const glow = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+                glow.setAttribute('cx', x);
+                glow.setAttribute('cy', y);
+                glow.setAttribute('r', r * 2.5);
+                glow.setAttribute('fill', 'url(#glow-grad)');
+                svg.appendChild(glow);
+                
+                // Core point
+                const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+                circle.setAttribute('cx', x);
+                circle.setAttribute('cy', y);
+                circle.setAttribute('r', r);
+                circle.setAttribute('fill', '#60a5fa');
+                circle.setAttribute('stroke', '#ffffff');
+                circle.setAttribute('stroke-width', '1.5');
+                circle.style.cursor = 'pointer';
+                circle.onclick = () => {
+                    switchTab('scholars');
+                    setDashboardSearch(d.ru);
+                };
+                
+                // Tooltip
+                const title = document.createElementNS('http://www.w3.org/2000/svg', 'title');
+                title.textContent = `${cityName}: ${d.count} ${currentLang === 'ru' ? 'докладов' : 'talks'}`;
+                circle.appendChild(title);
+                
+                svg.appendChild(circle);
+                
+                // Label
+                if (d.count > 2 || d.ru === 'Санкт-Петербург' || d.ru === 'Москва') {
+                    const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+                    text.setAttribute('x', x);
+                    text.setAttribute('y', y - r - 6);
+                    text.setAttribute('fill', '#e2e8f0');
+                    text.setAttribute('font-size', '11px');
+                    text.setAttribute('font-family', 'var(--font-display)');
+                    text.setAttribute('text-anchor', 'middle');
+                    text.textContent = cityName;
+                    svg.appendChild(text);
+                }
+            });
         }
 
         // Draw Interactive SVG Demographics (Age Group) Chart
