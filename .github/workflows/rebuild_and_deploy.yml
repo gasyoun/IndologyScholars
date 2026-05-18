@@ -55,13 +55,17 @@ jobs:
         run: |
           python generate_site_data.py
 
+      - name: Generate Static Pages for Individual Scholars
+        run: |
+          python generate_scholars_pages.py
+
       - name: Commit & Push Compiled Artifacts
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           
-          # Add only changed datasets, database and caching
-          git add html_cache/*.html conferences.db site_data.js analytics_output/*.csv indology_scholars_analytics.md
+          # Add only changed datasets, database, caching, and static pages
+          git add html_cache/*.html conferences.db site_data.js analytics_output/*.csv indology_scholars_analytics.md scholars/*.html
           
           # Check if there are changes before committing to avoid empty commit errors
           if git diff-index --quiet HEAD --; then
