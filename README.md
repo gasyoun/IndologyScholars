@@ -170,7 +170,17 @@ The IndologyScholars platform enables deep historical and sociological analysis 
 
 ---
 
-## 🚀 4. Quick Start & Execution
+## 🧑‍💻 4. For Developers
+
+See **[CLAUDE.md](CLAUDE.md)** for comprehensive development guidance, including:
+- Core pipeline commands and incremental workflows
+- Database schema reference and data structures
+- Development guidelines, testing procedures, and troubleshooting
+- GitHub Actions deployment details
+
+---
+
+## 🚀 5. Quick Start & Execution
 
 ### Prerequisites
 *   **Python 3.8+** installed locally.
@@ -203,7 +213,7 @@ To compile, process, and deploy the entire platform from scratch, run the script
 
 ---
 
-## 🤖 5. Automated Semi-Annual Deployment Workflow
+## 🤖 6. Automated Semi-Annual Deployment Workflow
 
 The project is configured with a automated **GitHub Actions** workflow (`.github/workflows/rebuild_and_deploy.yml`) scheduled to execute twice a year on critical academic boundary dates:
 
@@ -218,7 +228,7 @@ The project is configured with a automated **GitHub Actions** workflow (`.github
 
 ---
 
-## 📈 6. Core Database Statistics
+## 📈 7. Core Database Statistics
 
 *   **Unique Indologists Deduplicated:** 213 scholars
 *   **Total Presentations Parsed:** 732 talks
