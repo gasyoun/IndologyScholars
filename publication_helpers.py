@@ -58,11 +58,12 @@ def _looks_like_patronymic(token):
 def load_authority_overrides(path="authority_ids.json"):
     target = Path(path)
     if not target.exists():
-        return {"persons": {}, "organizations": {}}
+        return {"persons": {}, "organizations": {}, "places": {}}
     payload = json.loads(target.read_text(encoding="utf-8"))
     return {
         "persons": payload.get("persons") or {},
         "organizations": payload.get("organizations") or {},
+        "places": payload.get("places") or {},
     }
 
 
@@ -129,6 +130,101 @@ def assign_unique_slugs(scholars, authority_overrides=None, slug_key="url_slug")
 
 def site_url(path=""):
     return SITE_URL + str(path).lstrip("/")
+
+
+def _normalize_external_id(value, prefix):
+    if not value:
+        return None
+    s = str(value).strip()
+    if not s:
+        return None
+    if s.startswith("http://") or s.startswith("https://"):
+        return s
+    return prefix + s
+
+
+def _collect_alt_names(*sources):
+    names = []
+    for source in sources:
+        if not source:
+            continue
+        if isinstance(source, str):
+            names.append(source)
+        elif isinstance(source, (list, tuple)):
+            names.extend(s for s in source if s)
+    return list(dict.fromkeys(n for n in names if n))
+
+
+def place_structured_data(city_ru, city_en, geo, place_auth, canonical_path):
+    place_auth = place_auth or {}
+    place = {
+        "@type": "Place",
+        "@id": site_url(canonical_path) + "#place",
+        "name": city_ru,
+    }
+    alt = _collect_alt_names(
+        city_en if city_en and city_en != city_ru else None,
+        place_auth.get("alternateName"),
+    )
+    if alt:
+        place["alternateName"] = alt
+    if geo and geo.get("lat") is not None and geo.get("lon") is not None:
+        place["geo"] = {
+            "@type": "GeoCoordinates",
+            "latitude": geo["lat"],
+            "longitude": geo["lon"],
+        }
+    country = place_auth.get("country") or "Russia"
+    country_ru = place_auth.get("country_ru") or ("Россия" if country == "Russia" else None)
+    country_node = {"@type": "Country", "name": country}
+    if country_ru:
+        country_node["alternateName"] = country_ru
+    place["containedInPlace"] = country_node
+    same_as = []
+    qid = place_auth.get("wikidata")
+    if qid:
+        same_as.append(_normalize_external_id(qid, "https://www.wikidata.org/wiki/"))
+    extra = place_auth.get("sameAs")
+    if isinstance(extra, str):
+        same_as.append(extra)
+    elif isinstance(extra, list):
+        same_as.extend(extra)
+    same_as = [u for u in same_as if u]
+    if same_as:
+        place["sameAs"] = list(dict.fromkeys(same_as))
+    return place
+
+
+def organization_structured_data(short_name, org_auth, canonical_path):
+    org_auth = org_auth or {}
+    org = {
+        "@type": "ResearchOrganization",
+        "@id": site_url(canonical_path) + "#org",
+        "name": short_name,
+    }
+    alt = _collect_alt_names(
+        org_auth.get("name_en") if org_auth.get("name_en") != short_name else None,
+        org_auth.get("full_name_ru") if org_auth.get("full_name_ru") != short_name else None,
+        org_auth.get("alternateName"),
+    )
+    if alt:
+        org["alternateName"] = alt
+    if org_auth.get("url"):
+        org["url"] = org_auth["url"]
+    same_as = []
+    if org_auth.get("wikidata"):
+        same_as.append(_normalize_external_id(org_auth["wikidata"], "https://www.wikidata.org/wiki/"))
+    if org_auth.get("ror"):
+        same_as.append(_normalize_external_id(org_auth["ror"], "https://ror.org/"))
+    extra = org_auth.get("sameAs")
+    if isinstance(extra, str):
+        same_as.append(extra)
+    elif isinstance(extra, list):
+        same_as.extend(extra)
+    same_as = [u for u in same_as if u]
+    if same_as:
+        org["sameAs"] = list(dict.fromkeys(same_as))
+    return org
 
 
 def json_ld(data):

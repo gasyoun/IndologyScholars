@@ -19,8 +19,11 @@ from publication_helpers import (
     describe_year_span,
     esc,
     json_ld,
+    load_authority_overrides,
     load_site_data,
+    organization_structured_data,
     page_shell,
+    place_structured_data,
     site_url,
     slugify,
     theme_label,
@@ -808,12 +811,19 @@ def generate_theme_pages(data, records):
     )
 
 
-def generate_city_pages(data, records):
+def generate_city_pages(data, records, authority):
     grouped = defaultdict(list)
     for record in records:
         city = (record.get("geography") or {}).get("ru")
         if city and city not in ("Не указана", "Not specified"):
             grouped[city].append(record)
+
+    city_meta = {
+        item["ru"]: {"en": item.get("en"), "lat": item.get("lat"), "lon": item.get("lon")}
+        for item in (data.get("geography_stats") or [])
+        if item.get("ru")
+    }
+    places_auth = authority.get("places") or {}
 
     cards = []
     for city, talks in sorted(grouped.items(), key=lambda item: (-len(item[1]), item[0])):
@@ -826,6 +836,19 @@ def generate_city_pages(data, records):
         </header>
         <section class="list">{''.join(talk_card(t, '../') for t in talks[:250])}</section>
         """
+        city_geo = city_meta.get(city, {})
+        place_node = place_structured_data(
+            city_ru=city,
+            city_en=city_geo.get("en"),
+            geo={"lat": city_geo.get("lat"), "lon": city_geo.get("lon")},
+            place_auth=places_auth.get(city),
+            canonical_path=path,
+        )
+        structured = [
+            {"@context": "https://schema.org", **place_node},
+            page_data(city, f"Archive records associated with {city}.", path),
+            make_breadcrumbs([("Home", ""), ("Cities", "cities/"), (city, path)]),
+        ]
         write_text(
             path,
             page_shell(
@@ -833,7 +856,7 @@ def generate_city_pages(data, records):
                 f"Presentation records and scholar affiliations associated with {city}.",
                 path,
                 body,
-                [page_data(city, f"Archive records associated with {city}.", path), make_breadcrumbs([("Home", ""), ("Cities", "cities/"), (city, path)])],
+                structured,
             ),
         )
 
@@ -856,12 +879,14 @@ def generate_city_pages(data, records):
     )
 
 
-def generate_institution_pages(data, records):
+def generate_institution_pages(data, records, authority):
     grouped = defaultdict(list)
     for record in records:
         institution = normalize_affiliation(record.get("affiliation"))
         if institution:
             grouped[institution].append(record)
+
+    orgs_auth = authority.get("organizations") or {}
 
     cards = []
     for institution, talks in sorted(grouped.items(), key=lambda item: (-len(item[1]), item[0])):
@@ -874,12 +899,13 @@ def generate_institution_pages(data, records):
         </header>
         <section class="list">{''.join(talk_card(t, '../') for t in talks[:250])}</section>
         """
+        org_node = organization_structured_data(institution, orgs_auth.get(institution), path)
         structured = page_data(
             institution,
             f"Archive records associated with {institution}.",
             path,
             "ProfilePage",
-            {"mainEntity": {"@type": "Organization", "name": institution}},
+            {"mainEntity": org_node},
         )
         write_text(
             path,
@@ -1014,14 +1040,23 @@ def generate_sitemap():
 
 def ensure_authority_file():
     path = Path("authority_ids.json")
-    if path.exists():
-        return
-    payload = {
-        "description": "Optional authority identifiers used by generators when known. Add ORCID, Wikidata, VIAF, ROR, or official URLs without changing code.",
+    seed = {
+        "description": "Optional authority identifiers used by generators when known. Add ORCID, Wikidata, VIAF, ROR, preferred Latin names, English alt names, or official URLs without changing code.",
         "persons": {},
         "organizations": {},
+        "places": {},
     }
-    write_text(path, json.dumps(payload, ensure_ascii=False, indent=2))
+    if not path.exists():
+        write_text(path, json.dumps(seed, ensure_ascii=False, indent=2))
+        return
+    payload = json.loads(path.read_text(encoding="utf-8"))
+    changed = False
+    for key, default in seed.items():
+        if key not in payload:
+            payload[key] = default
+            changed = True
+    if changed:
+        write_text(path, json.dumps(payload, ensure_ascii=False, indent=2))
 
 
 def fetch_db_summary():
@@ -1041,6 +1076,7 @@ def fetch_db_summary():
 def main():
     ensure_dirs()
     ensure_authority_file()
+    authority = load_authority_overrides()
     data = load_site_data("site_data.js")
     records = timeline_records(data)
     data.setdefault("summary", {}).update(fetch_db_summary())
@@ -1053,8 +1089,8 @@ def main():
     generate_english_landing(data)
     generate_conference_pages(data, records)
     generate_theme_pages(data, records)
-    generate_city_pages(data, records)
-    generate_institution_pages(data, records)
+    generate_city_pages(data, records, authority)
+    generate_institution_pages(data, records, authority)
     generate_publication_docs(data)
     generate_sitemap()
     print("Generated publication pages, sitemap, robots, search index, citation files, and preview assets.")
