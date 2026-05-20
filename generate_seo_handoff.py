@@ -123,7 +123,7 @@ def build_markdown(places_to_ask, orgs_to_ask):
 
 def main():
     HANDOFF_DIR.mkdir(exist_ok=True)
-    data = load_site_data("site_data.js")
+    data = load_site_data("site_data.json")
     records = timeline_records(data)
     authority = load_authority_overrides()
 

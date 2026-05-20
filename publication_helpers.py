@@ -232,7 +232,7 @@ def json_ld(data):
     return payload.replace("</", "<\\/")
 
 
-def load_site_data(path="site_data.js"):
+def load_site_data(path="site_data.json"):
     text = Path(path).read_text(encoding="utf-8").strip()
     prefix = "const CONFERENCE_DATA = "
     if text.startswith(prefix):

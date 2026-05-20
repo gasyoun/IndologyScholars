@@ -153,7 +153,7 @@ def discover_in_use_keys():
         from publication_helpers import load_site_data
         from generate_publication_pages import normalize_affiliation, timeline_records
 
-        data = load_site_data("site_data.js")
+        data = load_site_data("site_data.json")
         records = timeline_records(data)
         places = {
             item["ru"]
@@ -177,7 +177,7 @@ def main():
     parser.add_argument(
         "--strict",
         action="store_true",
-        help="Skip items whose key isn't currently in use in site_data.js.",
+        help="Skip items whose key isn't currently in use in site_data.json.",
     )
     args = parser.parse_args()
 

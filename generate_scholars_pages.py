@@ -339,7 +339,7 @@ def render_legacy_redirect(legacy_id, target_scholar):
 
 def main():
     OUTPUT_DIR.mkdir(exist_ok=True)
-    data = load_site_data("site_data.js")
+    data = load_site_data("site_data.json")
     scholars = data.get("scholars", [])
     by_theme, by_city = build_indexes(scholars)
     authority = load_authority_ids()

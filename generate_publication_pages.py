@@ -229,7 +229,7 @@ keywords:
         "resources": [
             {
                 "name": "site-data",
-                "path": "site_data.js",
+                "path": "site_data.json",
                 "format": "js",
                 "mediatype": "application/javascript",
                 "description": "Browser payload with scholars, presentations, charts, and network data.",
@@ -400,7 +400,7 @@ def generate_download_page(data):
     summary = data.get("summary", {})
     resources = [
         ("SQLite database", "conferences.db", "Normalized relational source of events, sessions, presentations, people, venues, and affiliation strings."),
-        ("Dashboard payload", "site_data.js", "Generated browser data used by the interactive dashboard and static scholar pages."),
+        ("Dashboard payload", "site_data.json", "Generated browser data used by the interactive dashboard and static scholar pages."),
         ("Static search index", "search-index.json", "Compact JSON index for generated scholar and presentation pages."),
         ("Citation metadata", "CITATION.cff", "Machine-readable citation record for dataset/software reuse."),
         ("Frictionless datapackage", "datapackage.json", "Dataset metadata, resource list, license, and source notes."),
@@ -983,7 +983,7 @@ def generate_publication_docs(data):
         <section class="list">
             <article class="card"><strong>Suggested citation</strong><div class="meta">{esc(AUTHOR_NAME)}. {esc(SITE_NAME)}: Unified Relational Archive. {BUILD_DATE}. {SITE_URL}</div></article>
             <article class="card"><strong>Machine-readable citation</strong><div class="meta"><a href="CITATION.cff">CITATION.cff</a> · <a href="datapackage.json">datapackage.json</a></div></article>
-            <article class="card"><strong>Dataset outputs</strong><div class="meta"><a href="analytics_output/">analytics_output/</a> · <a href="site_data.js">site_data.js</a></div></article>
+            <article class="card"><strong>Dataset outputs</strong><div class="meta"><a href="analytics_output/">analytics_output/</a> · <a href="site_data.json">site_data.json</a></div></article>
         </section>
             """,
         ),
@@ -1077,7 +1077,7 @@ def main():
     ensure_dirs()
     ensure_authority_file()
     authority = load_authority_overrides()
-    data = load_site_data("site_data.js")
+    data = load_site_data("site_data.json")
     records = timeline_records(data)
     data.setdefault("summary", {}).update(fetch_db_summary())
 

@@ -59,7 +59,7 @@
       "description": "Sleek, responsive dark-mode dashboard with dual-language (Russian/English) support, elegant lifespan displays, and eight interactive SVG/Canvas charts (including Interactive Academic Collaboration Network, Cities Geography SVG map, Institutions Leaderboard, Thematic Word Cloud, Age Demographics, and Gender Composition)."
     },
     {
-      "path": "site_data.js",
+      "path": "site_data.json",
       "type": "JavaScript Data Structure",
       "description": "Unified client-side database module generated automatically from SQLite with precompiled city counts, gender representation metrics, age group stats, and node/link network graph matrices."
     },
@@ -75,7 +75,7 @@
     "database_builder": "build_and_populate_db.py - Normalizes, cleans Cyrillic initials, deduplicates identities, and populates SQL schemas.",
     "analytics_engine": "generate_analytics.py - Performs comparative analyses and exports targeted datasets.",
     "site_generator": "generate_site_data.py - Packs relational tables into high-performance JS data structures.",
-    "frontend": "index.html + site_data.js - Interactive glassmorphic single-page visualization portal with localized biographical information."
+    "frontend": "index.html + site_data.json - Interactive glassmorphic single-page visualization portal with localized biographical information."
   },
   "internationalization": {
     "default_language": "RU (Russian)",

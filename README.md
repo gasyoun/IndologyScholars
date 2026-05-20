@@ -21,7 +21,7 @@ graph TD
     D -->|HTML Static Compiler| K[generate_scholars_pages.py]
     E -->|Scientific Reports| G[analytics_output/*.csv]
     E -->|Analytical Overview| H[indology_scholars_analytics.md]
-    F -->|Unified JS Payload| I[site_data.js]
+    F -->|Unified JS Payload| I[site_data.json]
     I -->|Client-side rendering| J[index.html Web Portal]
     K -->|213 Static Profile Pages| L[scholars/*.html]
     L -->|Bidirectional Links| J
@@ -197,7 +197,7 @@ To compile, process, and deploy the entire platform from scratch, run the script
     ```bash
     python generate_analytics.py
     ```
-3.  **Serialize JS Payload:** Serializes SQL entries into the high-performance `site_data.js` module for the browser:
+3.  **Serialize JS Payload:** Serializes SQL entries into the high-performance `site_data.json` module for the browser:
     ```bash
     python generate_site_data.py
     ```

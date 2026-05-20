@@ -73,7 +73,7 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           
           # Add only changed datasets, database, caching, and static pages
-          git add html_cache/*.html conferences.db site_data.js analytics_output/*.csv analytics_output/*.json indology_scholars_analytics.md scholars/*.html
+          git add html_cache/*.html conferences.db site_data.json analytics_output/*.csv analytics_output/*.json indology_scholars_analytics.md scholars/*.html
           git add assets/*.png assets/*.svg conferences/*.html themes/*.html cities/*.html institutions/*.html
           git add sitemap.xml robots.txt site.webmanifest search.html search-index.json CITATION.cff datapackage.json
           git add 404.html en.html download-data.html data-quality.html methodology.html data-sources.html known-limitations.html how-to-cite.html

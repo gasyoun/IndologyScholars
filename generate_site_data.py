@@ -6,7 +6,7 @@ import re
 from publication_helpers import assign_unique_slugs, load_authority_overrides
 
 DB_PATH = "conferences.db"
-OUTPUT_FILE = "site_data.js"
+OUTPUT_FILE = "site_data.json"
 
 def format_to_initials(name):
     name = name.strip()
@@ -783,11 +783,9 @@ def main():
     }
     
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-        f.write("const CONFERENCE_DATA = ")
         json.dump(site_data, f, ensure_ascii=False, separators=(",", ":"))
-        f.write(";\n")
-        
-    print(f"Successfully generated JS data structure in {OUTPUT_FILE} with full temporal, position order, and student/independent academic metadata!")
+
+    print(f"Successfully generated JSON data payload in {OUTPUT_FILE} with full temporal, position order, and student/independent academic metadata!")
     conn.close()
 
 if __name__ == "__main__":

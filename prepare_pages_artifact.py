@@ -6,7 +6,7 @@ PUBLIC_PATHS = [
     "index.html",
     "404.html",
     "en.html",
-    "site_data.js",
+    "site_data.json",
     "search-index.json",
     "search.html",
     "download-data.html",

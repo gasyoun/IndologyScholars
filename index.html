@@ -12,6 +12,7 @@
     <link rel="icon" href="/IndologyScholars/assets/favicon.svg" type="image/svg+xml">
     <link rel="manifest" href="/IndologyScholars/site.webmanifest">
     <meta name="theme-color" content="#0a0e1a">
+    <link rel="preload" href="site_data.json" as="fetch" crossorigin>
     <meta name="keywords" content="Индология, Зографские чтения, Рериховские чтения, наука, востоковедение, ИВР РАН, ИВ РАН, МГУ, СПбГУ, статистика, научные доклады">
     <meta name="author" content="Dr. Mārcis Gasūns">
 
@@ -47,7 +48,7 @@
         {
           "@type": "DataDownload",
           "encodingFormat": "application/javascript",
-          "contentUrl": "https://gasyoun.github.io/IndologyScholars/site_data.js"
+          "contentUrl": "https://gasyoun.github.io/IndologyScholars/site_data.json"
         },
         {
           "@type": "DataDownload",
@@ -1185,11 +1186,11 @@ CREATE TABLE presentation_person (
         <p id="footer-copyright">&copy; 2026 Российский индологический научный архив, д-р Марцис Гасунс. Все права защищены.</p>
     </footer>
 
-    <!-- Load the dynamically compiled Javascript Data structure -->
-    <script src="site_data.js"></script>
-
     <!-- Main Dynamic Application Script with Bilingual Localization (RU / EN) -->
     <script>
+        // Kick off data fetch immediately (preload tag in <head> ensures it starts even earlier)
+        const _dataPromise = fetch('site_data.json').then(r => r.json());
+
         // Language state
         let currentLang = 'ru';
 
@@ -2987,12 +2988,14 @@ CREATE TABLE presentation_person (
             URL.revokeObjectURL(url);
         }
 
-        // Initialize Application
-        window.addEventListener('DOMContentLoaded', () => {
+        // Initialize Application — wait for both DOM and data fetch
+        const _domReady = new Promise(resolve => window.addEventListener('DOMContentLoaded', resolve));
+        Promise.all([_dataPromise, _domReady]).then(([data]) => {
+            window.CONFERENCE_DATA = data;
             updateSummaryStats();
             initScholars();
             initTimeline();
-            
+
             // Check for search parameter in URL
             const urlParams = new URLSearchParams(window.location.search);
             const searchQuery = urlParams.get('search');

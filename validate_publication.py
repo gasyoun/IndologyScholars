@@ -16,7 +16,7 @@ def read(path):
 
 def main():
     errors = []
-    data = load_site_data("site_data.js")
+    data = load_site_data("site_data.json")
     summary = data.get("summary", {})
     scholars = data.get("scholars", [])
 
@@ -124,7 +124,7 @@ def main():
     if Path("search-index.json").exists():
         content = read("search-index.json")
         if len(re.findall(r'"type":"Scholar"', content)) != len(scholars):
-            fail(errors, "search-index.json scholar count does not match site_data.js")
+            fail(errors, "search-index.json scholar count does not match site_data.json")
 
     if Path("404.html").exists():
         not_found = read("404.html")

@@ -32,7 +32,7 @@ Computes cross-conference affinity indices, cohort overlapping, and generates CS
 ### Phase 4: Static Profile Generation (`generate_scholars_pages.py`)
 Generates 213 individual SEO-optimized glassmorphic HTML cards under `scholars/` (e.g., `scholars/PERS_f074f69f.html`). Each profiles career chronology, institutional transitions, regional mobility, and thematic coverage.
 
-### Phase 5: Web Portal (`index.html` + `site_data.js`)
+### Phase 5: Web Portal (`index.html` + `site_data.json`)
 Single-page application (vanilla CSS/JS):
 - **Bilingual Core:** Defaults to Russian; toggle swaps entire UI state (metrics, charts, labels) to English in real-time
 - **Cross-filtering:** Click any affiliation or city tag to instant-filter the 213-scholar directory with pagination
@@ -48,7 +48,7 @@ Execute in sequence to rebuild the entire platform from scratch:
 ```bash
 python build_and_populate_db.py        # Compile schema, ingest HTML, deduplicate persons
 python generate_analytics.py           # Compute statistics, export CSVs to analytics_output/
-python generate_site_data.js           # Serialize SQL entries into JS payload
+python generate_site_data.json           # Serialize SQL entries into JS payload
 python generate_scholars_pages.py      # Generate 213 static profile pages
 python -m http.server 8000             # Launch local server at http://localhost:8000
 ```
@@ -117,7 +117,7 @@ python import_seo_handoff.py           # Import SEO analytics back into database
 | `themes/` | CSS theme or template definitions |
 | `zograf-roerich-db.md` | Seed metadata source (venues, coords, calendar events) |
 | `conferences.db` | SQLite database (primary data store) |
-| `site_data.js` | High-performance JS payload for browser (auto-generated) |
+| `site_data.json` | High-performance JS payload for browser (auto-generated) |
 | `index.html` | Main web portal SPA entry point |
 
 ---
@@ -126,7 +126,7 @@ python import_seo_handoff.py           # Import SEO analytics back into database
 
 ### Primary Artifacts
 - **`conferences.db`** — SQLite database with 12 normalized tables. Primary source of truth after ingestion.
-- **`site_data.js`** — JS object serialization of SQL queries. ~200KB payload. Client-side rendering reads this.
+- **`site_data.json`** — JS object serialization of SQL queries. ~200KB payload. Client-side rendering reads this.
 - **`person_ids.json`** — Deduplication mapping: raw name → canonical `person_id`. Used for cross-linking Zograf ↔ Roerich presenters.
 - **`authority_ids.json`** — Authority URIs and external identifiers.
 - **`search-index.json`** — Full-text search index.
@@ -249,7 +249,7 @@ Live site: **https://gasyoun.github.io/IndologyScholars/**
 **A:** Run `python build_and_populate_db.py` to re-scan `html_cache/` and ingest new programs.
 
 ### Q: Bilingual toggle not working
-**A:** Check `site_data.js` is present and recent. Regenerate with `python generate_site_data.py`. Verify `index.html` has translation map loaded.
+**A:** Check `site_data.json` is present and recent. Regenerate with `python generate_site_data.py`. Verify `index.html` has translation map loaded.
 
 ### Q: GitHub Actions deployment failed
 **A:** Check workflow logs at https://github.com/gasyoun/IndologyScholars/actions. Common causes: network timeout on `fetch_latest_programs.py`, encoding errors in Python (missing `reconfigure(encoding='utf-8')`), or missing dependency (`pip install requests beautifulsoup4`).
