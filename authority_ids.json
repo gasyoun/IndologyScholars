@@ -1,6 +1,177 @@
 {
   "description": "Optional authority identifiers used by generators when known. Add ORCID, Wikidata, VIAF, ROR, or official URLs without changing code.",
   "persons": {},
-  "organizations": {},
-  "places": {}
+  "organizations": {
+    "ИВ РАН": {
+      "full_name_ru": "Институт востоковедения Российской академии наук",
+      "name_en": "Institute of Oriental Studies of the Russian Academy of Sciences",
+      "alternateName": [
+        "IOS RAS"
+      ],
+      "url": "https://www.ivran.ru",
+      "wikidata": "Q1414442"
+    },
+    "СПбГУ": {
+      "full_name_ru": "Санкт-Петербургский государственный университет",
+      "name_en": "Saint Petersburg State University",
+      "alternateName": [
+        "SPbU"
+      ],
+      "url": "https://spbu.ru",
+      "wikidata": "Q27621",
+      "ror": "00k2yeb14"
+    },
+    "МГУ": {
+      "full_name_ru": "Московский государственный университет имени М. В. Ломоносова",
+      "name_en": "Lomonosov Moscow State University",
+      "alternateName": [
+        "MSU"
+      ],
+      "url": "https://www.msu.ru",
+      "wikidata": "Q13164",
+      "ror": "02drsyg33"
+    },
+    "НИУ ВШЭ": {
+      "full_name_ru": "Национальный исследовательский университет «Высшая школа экономики»",
+      "name_en": "HSE University",
+      "alternateName": [
+        "Higher School of Economics"
+      ],
+      "url": "https://www.hse.ru",
+      "wikidata": "Q1340150",
+      "ror": "03p90cg98"
+    },
+    "ИФ РАН": {
+      "full_name_ru": "Институт философии Российской академии наук",
+      "name_en": "Institute of Philosophy, Russian Academy of Sciences",
+      "alternateName": [
+        "IPH RAS"
+      ],
+      "url": "https://iphras.ru",
+      "wikidata": "Q4201389"
+    },
+    "РГГУ": {
+      "full_name_ru": "Российский государственный гуманитарный университет",
+      "name_en": "Russian State University for the Humanities",
+      "alternateName": [
+        "RSUH"
+      ],
+      "url": "https://www.rsuh.ru",
+      "wikidata": "Q1056588"
+    },
+    "МАЭ РАН": {
+      "full_name_ru": "Музей антропологии и этнографии имени Петра Великого (Кунсткамера) Российской академии наук",
+      "name_en": "Peter the Great Museum of Anthropology and Ethnography (the Kunstkamera)",
+      "alternateName": [
+        "Kunstkamera"
+      ],
+      "url": "https://www.kunstkamera.ru",
+      "wikidata": "Q618774"
+    },
+    "Государственный Эрмитаж": {
+      "full_name_ru": "Государственный Эрмитаж",
+      "name_en": "State Hermitage Museum",
+      "alternateName": [
+        "The Hermitage"
+      ],
+      "url": "https://www.hermitagemuseum.org",
+      "wikidata": "Q132783"
+    },
+    "ИВР РАН": {
+      "full_name_ru": "Институт восточных рукописей Российской академии наук",
+      "name_en": "Institute of Oriental Manuscripts of the Russian Academy of Sciences",
+      "alternateName": [
+        "IOM RAS"
+      ],
+      "url": "https://www.orientalstudies.ru",
+      "wikidata": "Q1413813"
+    }
+  },
+  "places": {
+    "Санкт-Петербург": {
+      "name_en": "St. Petersburg",
+      "alternateName": [
+        "Saint Petersburg",
+        "Sankt-Peterburg"
+      ],
+      "wikidata": "Q656",
+      "country": "Russia",
+      "country_ru": "Россия"
+    },
+    "Москва": {
+      "name_en": "Moscow",
+      "alternateName": [
+        "Moskva"
+      ],
+      "wikidata": "Q649",
+      "country": "Russia",
+      "country_ru": "Россия"
+    },
+    "Пенза": {
+      "name_en": "Penza",
+      "wikidata": "Q5545",
+      "country": "Russia",
+      "country_ru": "Россия"
+    },
+    "Краснодар": {
+      "name_en": "Krasnodar",
+      "alternateName": [
+        "Yekaterinodar"
+      ],
+      "wikidata": "Q3219",
+      "country": "Russia",
+      "country_ru": "Россия"
+    },
+    "Казань": {
+      "name_en": "Kazan",
+      "alternateName": [
+        "Qazan"
+      ],
+      "wikidata": "Q900",
+      "country": "Russia",
+      "country_ru": "Россия"
+    },
+    "Элиста": {
+      "name_en": "Elista",
+      "wikidata": "Q3877",
+      "country": "Russia",
+      "country_ru": "Россия"
+    },
+    "Новосибирск": {
+      "name_en": "Novosibirsk",
+      "alternateName": [
+        "Novonikolayevsk"
+      ],
+      "wikidata": "Q883",
+      "country": "Russia",
+      "country_ru": "Россия"
+    },
+    "Нижний Новгород": {
+      "name_en": "Nizhny Novgorod",
+      "alternateName": [
+        "Gorky"
+      ],
+      "wikidata": "Q891",
+      "country": "Russia",
+      "country_ru": "Россия"
+    },
+    "Вильнюс": {
+      "name_en": "Vilnius",
+      "alternateName": [
+        "Vilna"
+      ],
+      "wikidata": "Q216",
+      "country": "Lithuania",
+      "country_ru": "Литва"
+    },
+    "Улан-Удэ": {
+      "name_en": "Ulan-Ude",
+      "alternateName": [
+        "Verkhneudinsk"
+      ],
+      "wikidata": "Q4338",
+      "country": "Russia",
+      "country_ru": "Россия"
+    }
+  }
 }
