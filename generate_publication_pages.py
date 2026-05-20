@@ -265,7 +265,11 @@ keywords:
     }
     write_text("datapackage.json", json.dumps(datapackage, ensure_ascii=False, indent=2))
 
-    robots = f"""User-agent: *
+    robots = f"""User-agent: Yandex
+Host: gasyoun.github.io
+Clean-param: search&sort&page&filter /IndologyScholars/
+
+User-agent: *
 Allow: /
 
 Sitemap: {site_url('sitemap.xml')}
@@ -829,10 +833,11 @@ def generate_city_pages(data, records, authority):
     for city, talks in sorted(grouped.items(), key=lambda item: (-len(item[1]), item[0])):
         path = city_path(city)
         cards.append(f'<article class="card"><strong><a href="../{path}">{esc(city)}</a></strong><div class="meta">{len(talks)} presentation records</div></article>')
+        city_desc = f"Доклады учёных и аффилиации, связанные с {city}. Архив Зографских и Рериховских чтений (2004–2025)."
         body = f"""
         <header>
             <h1>{esc(city)}</h1>
-            <p>Scholar affiliations and presentation records associated with {esc(city)}.</p>
+            <p>{esc(city_desc)}</p>
         </header>
         <section class="list">{''.join(talk_card(t, '../') for t in talks[:250])}</section>
         """
@@ -846,14 +851,14 @@ def generate_city_pages(data, records, authority):
         )
         structured = [
             {"@context": "https://schema.org", **place_node},
-            page_data(city, f"Archive records associated with {city}.", path),
+            page_data(city, city_desc, path),
             make_breadcrumbs([("Home", ""), ("Cities", "cities/"), (city, path)]),
         ]
         write_text(
             path,
             page_shell(
                 f"{city} | {SITE_NAME}",
-                f"Presentation records and scholar affiliations associated with {city}.",
+                city_desc,
                 path,
                 body,
                 structured,
@@ -871,10 +876,10 @@ def generate_city_pages(data, records, authority):
         "cities/index.html",
         page_shell(
             f"Geographic centers | {SITE_NAME}",
-            "City-level indexes for scholar affiliations in the Indology Scholars archive.",
+            "Географические центры российской индологии: города, с которыми связаны учёные Зографских и Рериховских чтений (2004–2025).",
             "cities/",
             index_body,
-            [page_data("Geographic centers", "City-level archive indexes.", "cities/"), make_breadcrumbs([("Home", ""), ("Cities", "cities/")])],
+            [page_data("Geographic centers", "Географические центры российской индологии.", "cities/"), make_breadcrumbs([("Home", ""), ("Cities", "cities/")])],
         ),
     )
 
@@ -892,17 +897,18 @@ def generate_institution_pages(data, records, authority):
     for institution, talks in sorted(grouped.items(), key=lambda item: (-len(item[1]), item[0])):
         path = institution_path(institution)
         cards.append(f'<article class="card"><strong><a href="../{path}">{esc(institution)}</a></strong><div class="meta">{len(talks)} presentation records</div></article>')
+        inst_desc = f"Учёные и доклады, связанные с {institution}: архив участия в Зографских и Рериховских чтениях (2004–2025)."
         body = f"""
         <header>
             <h1>{esc(institution)}</h1>
-            <p>Normalized institution landing page built from historical affiliation strings.</p>
+            <p>{esc(inst_desc)}</p>
         </header>
         <section class="list">{''.join(talk_card(t, '../') for t in talks[:250])}</section>
         """
         org_node = organization_structured_data(institution, orgs_auth.get(institution), path)
         structured = page_data(
             institution,
-            f"Archive records associated with {institution}.",
+            inst_desc,
             path,
             "ProfilePage",
             {"mainEntity": org_node},
@@ -911,7 +917,7 @@ def generate_institution_pages(data, records, authority):
             path,
             page_shell(
                 f"{institution} | {SITE_NAME}",
-                f"Presentation records and scholar links associated with {institution}.",
+                inst_desc,
                 path,
                 body,
                 [structured, make_breadcrumbs([("Home", ""), ("Institutions", "institutions/"), (institution, path)])],
@@ -929,10 +935,10 @@ def generate_institution_pages(data, records, authority):
         "institutions/index.html",
         page_shell(
             f"Institutions | {SITE_NAME}",
-            "Institution-level indexes for the Indology Scholars archive.",
+            "Организации и научные учреждения российской индологии: институты, кафедры и университеты участников Зографских и Рериховских чтений (2004–2025).",
             "institutions/",
             index_body,
-            [page_data("Institutions", "Institution-level archive indexes.", "institutions/"), make_breadcrumbs([("Home", ""), ("Institutions", "institutions/")])],
+            [page_data("Institutions", "Организации российской индологии.", "institutions/"), make_breadcrumbs([("Home", ""), ("Institutions", "institutions/")])],
         ),
     )
 

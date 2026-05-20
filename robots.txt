@@ -1,3 +1,7 @@
+User-agent: Yandex
+Host: gasyoun.github.io
+Clean-param: search&sort&page&filter /IndologyScholars/
+
 User-agent: *
 Allow: /
 

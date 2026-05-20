@@ -283,6 +283,8 @@ def page_shell(title, description, canonical_path, body, structured_data=None, e
     <meta name="description" content="{desc_html}">
     <meta name="robots" content="{esc(robots)}">
     <link rel="canonical" href="{canonical}">
+    <link rel="alternate" hreflang="{esc(language)}" href="{canonical}">
+    <link rel="alternate" hreflang="x-default" href="{canonical}">
     <link rel="icon" href="/IndologyScholars/assets/favicon.svg" type="image/svg+xml">
     <meta name="theme-color" content="#0a0e1a">
     <meta property="og:type" content="website">
