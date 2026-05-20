@@ -23,6 +23,7 @@ from publication_helpers import (
 OUTPUT_DIR = Path("scholars")
 AUTHORITY_PATH = Path("authority_ids.json")
 LEGACY_REDIRECTS_PATH = Path("legacy_redirects.json")
+SLUG_REDIRECTS_PATH = Path("slug_redirects.json")
 BUILD_DATE = dt.date.today().isoformat()
 
 
@@ -49,6 +50,12 @@ def load_legacy_redirects():
     if not LEGACY_REDIRECTS_PATH.exists():
         return {}
     return json.loads(LEGACY_REDIRECTS_PATH.read_text(encoding="utf-8")).get("redirects", {})
+
+
+def load_slug_redirects():
+    if not SLUG_REDIRECTS_PATH.exists():
+        return {}
+    return json.loads(SLUG_REDIRECTS_PATH.read_text(encoding="utf-8"))
 
 
 def good_city(city):
@@ -344,6 +351,7 @@ def main():
     by_theme, by_city = build_indexes(scholars)
     authority = load_authority_ids()
     legacy_redirects = load_legacy_redirects()
+    slug_redirects = load_slug_redirects()
     scholars_by_id = {scholar["id"]: scholar for scholar in scholars}
 
     written_files = {"index.html"}
@@ -375,6 +383,18 @@ def main():
         (OUTPUT_DIR / legacy_filename).write_text(html, encoding="utf-8", newline="\n")
         written_files.add(legacy_filename)
 
+    # Slug-rename redirects: old published slug → new canonical slug.
+    for old_slug, target_id in slug_redirects.items():
+        target_scholar = scholars_by_id.get(target_id)
+        if not target_scholar:
+            continue
+        if old_slug == target_scholar["url_slug"]:
+            continue  # Already the canonical slug; no redirect needed.
+        old_filename = f"{old_slug}.html"
+        html = render_legacy_redirect(old_slug, target_scholar)
+        (OUTPUT_DIR / old_filename).write_text(html, encoding="utf-8", newline="\n")
+        written_files.add(old_filename)
+
     for stale in OUTPUT_DIR.glob("*.html"):
         if stale.name not in written_files:
             stale.unlink()
@@ -383,7 +403,8 @@ def main():
 
     print(
         f"Successfully generated {len(generated_slugs)} canonical scholar profile pages "
-        f"in '{OUTPUT_DIR}/' (plus PERS_<hash> redirects and {len(legacy_redirects)} legacy redirects)."
+        f"in '{OUTPUT_DIR}/' (plus PERS_<hash> redirects, {len(legacy_redirects)} legacy redirects, "
+        f"and {len(slug_redirects)} slug-rename redirects)."
     )
 
 

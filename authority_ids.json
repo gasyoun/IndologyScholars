@@ -1,6 +1,109 @@
 {
   "description": "Optional authority identifiers used by generators when known. Add ORCID, Wikidata, VIAF, ROR, or official URLs without changing code.",
-  "persons": {},
+  "persons": {
+    "PERS_05d56645": {
+      "preferred_latin_name": "Alexander Babin"
+    },
+    "PERS_0665f215": {
+      "preferred_latin_name": "Vladimir Shokhin"
+    },
+    "PERS_0e0a154e": {
+      "preferred_latin_name": "Lev Titlin"
+    },
+    "PERS_11da326d": {
+      "preferred_latin_name": "Sergey Tavastsherna"
+    },
+    "PERS_12125da9": {
+      "preferred_latin_name": "Victoria Lysenko"
+    },
+    "PERS_1c6fcce5": {
+      "preferred_latin_name": "Elizaveta Kuzina"
+    },
+    "PERS_1fa7cc0c": {
+      "preferred_latin_name": "Alexander Dubyansky"
+    },
+    "PERS_36dabb79": {
+      "preferred_latin_name": "Anastasia Guriya"
+    },
+    "PERS_3b196639": {
+      "preferred_latin_name": "Nikolai Gordiichuk"
+    },
+    "PERS_3c202afd": {
+      "preferred_latin_name": "Rada Krapivina"
+    },
+    "PERS_40862f5e": {
+      "preferred_latin_name": "Natalia Korneeva"
+    },
+    "PERS_41d6aa73": {
+      "preferred_latin_name": "Daria Vorobyeva"
+    },
+    "PERS_50d73711": {
+      "preferred_latin_name": "Anna Smirnitskaya"
+    },
+    "PERS_5228da95": {
+      "preferred_latin_name": "Victoria Vertogradova"
+    },
+    "PERS_58b39545": {
+      "preferred_latin_name": "Evgenia Renkovskaya"
+    },
+    "PERS_61202bf3": {
+      "preferred_latin_name": "Yulia Alikhanova"
+    },
+    "PERS_6ae5c779": {
+      "preferred_latin_name": "Anastasia Fiveyskaya"
+    },
+    "PERS_72506535": {
+      "preferred_latin_name": "Anastasia Krylova"
+    },
+    "PERS_8516d1e4": {
+      "preferred_latin_name": "Marcis Gasuns"
+    },
+    "PERS_8e117242": {
+      "preferred_latin_name": "Elena Yuditskaya"
+    },
+    "PERS_92868e4f": {
+      "preferred_latin_name": "Dmitry Zhutaev"
+    },
+    "PERS_93e2effb": {
+      "preferred_latin_name": "Dmitry Komissarov"
+    },
+    "PERS_9f398436": {
+      "preferred_latin_name": "Leonid Kulikov"
+    },
+    "PERS_c52dfaa0": {
+      "preferred_latin_name": "Sofia Tsvetkova"
+    },
+    "PERS_cdbd7a15": {
+      "preferred_latin_name": "Sergey Kullanda"
+    },
+    "PERS_cfb92c5f": {
+      "preferred_latin_name": "Evgeny Ulansky"
+    },
+    "PERS_d98da899": {
+      "preferred_latin_name": "Svetlana Ryzhakova"
+    },
+    "PERS_e1dd6b3e": {
+      "preferred_latin_name": "Natalia Lidova"
+    },
+    "PERS_e31ca12d": {
+      "preferred_latin_name": "Olga Vecherina"
+    },
+    "PERS_ebb6d156": {
+      "preferred_latin_name": "Anastasia Lozhkina"
+    },
+    "PERS_efc88709": {
+      "preferred_latin_name": "Natalia Kanaeva"
+    },
+    "PERS_f074f69f": {
+      "preferred_latin_name": "Natalia Alexandrova"
+    },
+    "PERS_f2fef030": {
+      "preferred_latin_name": "Areg Mekhakyan"
+    },
+    "PERS_f5b8b340": {
+      "preferred_latin_name": "Alexey Vigasin"
+    }
+  },
   "organizations": {
     "ИВ РАН": {
       "full_name_ru": "Институт востоковедения Российской академии наук",
