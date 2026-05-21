@@ -2,10 +2,17 @@ import os
 import re
 import csv
 import io
+import sys
 import sqlite3
 import uuid
 import hashlib
 import json
+
+try:
+    sys.stdout.reconfigure(encoding='utf-8')
+    sys.stderr.reconfigure(encoding='utf-8')
+except Exception:
+    pass
 
 MD_PATH = "zograf-roerich-db.md"
 DB_PATH = "conferences.db"
@@ -667,6 +674,61 @@ TALK_REGEX = re.compile(
     r'^([А-ЯЁA-Z][а-яёa-z\-]+(?:\s+[А-ЯЁA-Z][а-яёa-z\-]+){1,2}|\s*[А-ЯЁA-Z]\.\s*[А-ЯЁA-Z]\.\s*[А-ЯЁA-Z][а-яёa-z\-]+|\s*[А-ЯЁA-Z][а-яёa-z\-]+\s+[А-ЯЁA-Z]\.\s*[А-ЯЁA-Z]\.)\s*\(([^)]+)\)\.?\s*(.+)$'
 )
 
+# Extended regex: comma-separated co-authors sharing a single affil (e.g. PDF programs 2026+)
+TALK_REGEX_COAUTHORS = re.compile(
+    r'^([А-ЯЁA-Z][а-яёa-z\-]+(?:\s+[А-ЯЁA-Z][а-яёa-z\-]+){1,3}'
+    r'(?:\s*,\s*[А-ЯЁA-Z][а-яёa-z\-]+(?:\s+[А-ЯЁA-Z][а-яёa-z\-]+){1,3})+)\s*'
+    r'\(([^)]+)\)\.?\s*(.+)$'
+)
+
+# Detect two consecutive "Author (City). Author (City). Title" — co-authors with distinct affils
+TALK_REGEX_TWO_AFFIL = re.compile(
+    r'^([А-ЯЁA-Z][а-яёa-z\-]+(?:\s+[А-ЯЁA-Z][а-яёa-z\-]+){1,3})\s*\(([^)]+)\)\.\s*'
+    r'([А-ЯЁA-Z][а-яёa-z\-]+(?:\s+[А-ЯЁA-Z][а-яёa-z\-]+){1,3})\s*\(([^)]+)\)\.\s*(.+)$'
+)
+
+
+def read_program_text(year, conference="zograf"):
+    """Read program text from cached .html or .pdf, return normalized text with newlines.
+
+    Tries `{conference}_{year}.html` first, then `{conference}_{year}.pdf` using pypdf.
+    Returns None if neither cached file is present.
+    """
+    html_path = os.path.join(CACHE_DIR, f"{conference}_{year}.html")
+    pdf_path = os.path.join(CACHE_DIR, f"{conference}_{year}.pdf")
+
+    if os.path.exists(html_path):
+        with open(html_path, 'r', encoding='utf-8') as f:
+            html = f.read()
+        parser = SmartHTMLParser()
+        parser.feed(html)
+        return parser.get_text()
+
+    if os.path.exists(pdf_path):
+        try:
+            from pypdf import PdfReader
+        except ImportError:
+            print(f"  WARNING: pypdf not installed, cannot read {pdf_path}", file=sys.stderr)
+            return None
+        reader = PdfReader(pdf_path)
+        pages_text = []
+        for page in reader.pages:
+            t = page.extract_text() or ""
+            # PDF text extraction may merge talk lines into multi-line paragraphs separated
+            # by single newlines. Collapse intra-paragraph wraps so the line-based parser sees
+            # one logical line per talk. Heuristic: a line ending in non-terminal punctuation
+            # likely continues on the next line.
+            pages_text.append(t)
+        return "\n".join(pages_text)
+
+    return None
+
+
+def split_coauthor_names(speaker_block):
+    """Split 'Ivanov A B, Petrov C D' into ['Ivanov A B', 'Petrov C D']."""
+    parts = re.split(r'\s*,\s*(?=[А-ЯЁA-Z])', speaker_block)
+    return [p.strip() for p in parts if p.strip()]
+
 def populate_zograf_talks(conn):
     cursor = conn.cursor()
     
@@ -675,18 +737,10 @@ def populate_zograf_talks(conn):
     z_events = cursor.fetchall()
     
     for event_id, year, source_url in z_events:
-        filename = f"zograf_{year}.html"
-        filepath = os.path.join(CACHE_DIR, filename)
-        if not os.path.exists(filepath):
+        text = read_program_text(year, conference="zograf")
+        if text is None:
             continue
-            
-        with open(filepath, 'r', encoding='utf-8') as f:
-            html = f.read()
-            
-        parser = SmartHTMLParser()
-        parser.feed(html)
-        text = parser.get_text()
-        
+
         lines = [line.strip() for line in text.split('\n') if line.strip()]
         
         day_number = 0
@@ -699,15 +753,19 @@ def populate_zograf_talks(conn):
             # 1. Detect Day break in Zograf
             # Heuristics: date lines with month "мая"
             if "мая" in line and (str(year) in line or len(line) < 60) and not TALK_REGEX.match(preprocess_line(line)):
-                day_number += 1
-                current_day_id = f"D{year}_{day_number}"
-                
-                current_edv_id = ensure_zograf_event_day_venue(
-                    cursor, event_id, year, day_number, source_url, line, last_valid_edv_id
-                )
-                last_valid_edv_id = current_edv_id
-                
-                current_session_id = None
+                # Skip conference-range headers like "26 — 29 мая 2026 г."
+                if re.search(r'\d{1,2}\s*[—–-]\s*\d{1,2}\s*мая', line):
+                    pass  # range header, not a per-day break
+                else:
+                    day_number += 1
+                    current_day_id = f"D{year}_{day_number}"
+
+                    current_edv_id = ensure_zograf_event_day_venue(
+                        cursor, event_id, year, day_number, source_url, line, last_valid_edv_id
+                    )
+                    last_valid_edv_id = current_edv_id
+
+                    current_session_id = None
             
             # 2. Detect Session/Time block
             time_match = re.search(r'(\d{2}[:\.]\d{2})\s*[-—–]\s*(\d{2}[:\.]\d{2})', line)
@@ -725,14 +783,33 @@ def populate_zograf_talks(conn):
                                    (current_session_id, current_edv_id, sess_title, "panel", start_time, end_time, time_match.group(0), None, source_url, line, None))
                     conn.commit()
             
-            # 3. Detect presentation talk line
+            # 3. Detect presentation talk line — try richer patterns first
             cleaned_line = preprocess_line(line)
-            match = TALK_REGEX.match(cleaned_line)
-            if match:
-                speaker_raw = match.group(1).strip()
-                affil_raw = match.group(2).strip()
-                title_raw = clean_title(match.group(3))
-                
+
+            speakers_with_affil = []  # list of (speaker_raw, affil_raw)
+            title_raw = None
+
+            m_two = TALK_REGEX_TWO_AFFIL.match(cleaned_line)
+            if m_two:
+                speakers_with_affil = [
+                    (m_two.group(1).strip(), m_two.group(2).strip()),
+                    (m_two.group(3).strip(), m_two.group(4).strip()),
+                ]
+                title_raw = clean_title(m_two.group(5))
+            else:
+                m_co = TALK_REGEX_COAUTHORS.match(cleaned_line)
+                if m_co:
+                    names = split_coauthor_names(m_co.group(1))
+                    affil = m_co.group(2).strip()
+                    speakers_with_affil = [(n, affil) for n in names]
+                    title_raw = clean_title(m_co.group(3))
+                else:
+                    m_single = TALK_REGEX.match(cleaned_line)
+                    if m_single:
+                        speakers_with_affil = [(m_single.group(1).strip(), m_single.group(2).strip())]
+                        title_raw = clean_title(m_single.group(3))
+
+            if speakers_with_affil and title_raw is not None:
                 # Handle edge cases where speaker is listed but no session has been defined yet
                 if not current_session_id:
                     if not current_edv_id:
@@ -743,25 +820,24 @@ def populate_zograf_talks(conn):
                             cursor, event_id, year, day_number, source_url, "Automatic default day", last_valid_edv_id
                         )
                         last_valid_edv_id = current_edv_id
-                    
+
                     # Create default session
                     current_session_id = f"SESS_{uuid.uuid4().hex[:8]}"
                     cursor.execute("INSERT INTO session VALUES (?,?,?,?,?,?,?,?,?,?,?)",
                                    (current_session_id, current_edv_id, "Научное заседание", "panel", "11:00", "18:00", "11:00–18:00", None, source_url, "Automatic default session", None))
                     conn.commit()
-                
-                # Insert presentation
+
+                # Insert presentation (one row, multiple speakers)
                 pres_id = f"PRES_{uuid.uuid4().hex[:8]}"
                 is_online_val = 1 if 'онлайн' in line.lower() else 0
                 cursor.execute("INSERT INTO presentation VALUES (?,?,?,?,?,?,?,?,?,?,?)",
                                (pres_id, current_session_id, title_raw, None, "ru", None, is_online_val, None, source_url, line, None))
-                
-                # Get/Create Speaker Person
-                person_id = get_or_create_person(conn, speaker_raw, source_url)
-                
-                # Map Speaker to Presentation
-                cursor.execute("INSERT INTO presentation_person VALUES (?,?,?,?,?,?,?,?)",
-                               (pres_id, person_id, "speaker", 1, affil_raw, None, source_url, None))
+
+                for order_idx, (speaker_raw, affil_raw) in enumerate(speakers_with_affil, start=1):
+                    person_id = get_or_create_person(conn, speaker_raw, source_url)
+                    role = "speaker" if order_idx == 1 else "coauthor"
+                    cursor.execute("INSERT INTO presentation_person VALUES (?,?,?,?,?,?,?,?)",
+                                   (pres_id, person_id, role, order_idx, affil_raw, None, source_url, None))
                 conn.commit()
 
 def populate_roerich_talks(conn):
