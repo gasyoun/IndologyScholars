@@ -52,7 +52,26 @@ except Exception:
 VIDEO_CSV = Path("analytics_output/youtube_video_list.csv")
 MAPPING_CSV = Path("analytics_output/video_presentation_mapping.csv")
 DB_PATH = "conferences.db"
-AUTO_THRESHOLD = 0.65  # ratio above which we accept without review
+AUTO_THRESHOLD = 0.55  # ratio above which we accept without review
+
+# Patterns identifying videos that are NOT individual talks (full-session
+# recordings, deleted entries, private entries). These get status=skip so
+# they don't clog the needs_review queue.
+SESSION_RECORDING_RE = re.compile(r"^(?:XL+|XLI|XLII|XLIII|XLIV|XLV|XLVI|XLVII)\b.*\d{1,2}[.\-:]\d{1,2}", re.IGNORECASE)
+
+
+def is_noise_title(title):
+    """True if the video is obvious non-talk content."""
+    if not title:
+        return True, "empty_title"
+    t = title.strip()
+    if t == "Deleted video":
+        return True, "deleted"
+    if "Private video" in t:
+        return True, "private"
+    if SESSION_RECORDING_RE.match(t):
+        return True, "session_recording"
+    return False, ""
 
 
 def normalize(text):
@@ -70,14 +89,10 @@ def normalize(text):
     return t
 
 
-def load_zograf_presentations(years):
-    """Return list of dicts: presentation_id, title, year, speaker for Zograf
-    presentations in the given year set."""
-    if not years:
-        return []
+def load_zograf_presentations():
+    """Return list of dicts for ALL Zograf presentations across all years."""
     conn = sqlite3.connect(DB_PATH)
-    placeholders = ",".join("?" for _ in years)
-    rows = conn.execute(f"""
+    rows = conn.execute("""
         SELECT pr.presentation_id, pr.title, e.year,
                GROUP_CONCAT(pers.display_name, ' / ') AS speakers
         FROM presentation pr
@@ -87,9 +102,9 @@ def load_zograf_presentations(years):
         JOIN event e ON e.event_id = ed.event_id
         JOIN presentation_person pp ON pp.presentation_id = pr.presentation_id
         JOIN person pers ON pers.person_id = pp.person_id
-        WHERE e.event_series_id = 1 AND e.year IN ({placeholders})
+        WHERE e.event_series_id = 1
         GROUP BY pr.presentation_id
-    """, list(years)).fetchall()
+    """).fetchall()
     conn.close()
     return [{"presentation_id": pid, "title": title, "year": year, "speakers": speakers}
             for pid, title, year, speakers in rows]
@@ -129,31 +144,59 @@ def main():
         for row in csv.DictReader(f):
             videos.append(row)
 
-    years_in_videos = {int(v["year"]) for v in videos if v.get("year") and v["year"].isdigit()}
-    presentations = load_zograf_presentations(years_in_videos)
+    presentations = load_zograf_presentations()
     by_year = defaultdict(list)
     for p in presentations:
         by_year[p["year"]].append(p)
-    print(f"Loaded {len(videos)} videos and {len(presentations)} Zograf presentations across years {sorted(years_in_videos)}")
+    print(f"Loaded {len(videos)} videos and {len(presentations)} Zograf presentations across years {sorted(by_year.keys())}")
 
+    # Strategy: try the video's nominal year first; if no good match, fall back
+    # to searching all Zograf years (some playlists mix multi-year content).
+    # Auto-skip obvious noise (deleted/private/session-recording videos).
     out_rows = []
-    counts = {"auto": 0, "needs_review": 0, "no_year": 0}
+    counts = {"auto": 0, "needs_review": 0, "skip": 0}
+    all_presentations = presentations
     for v in videos:
-        year_str = v.get("year", "")
-        if not year_str or not year_str.isdigit():
-            out_rows.append({**v, "presentation_id": "", "presentation_title": "",
-                             "speaker_display": "", "similarity": 0.0, "status": "needs_review"})
-            counts["no_year"] += 1
+        # Noise filter — short-circuit before any fuzzy matching
+        noise, reason = is_noise_title(v.get("video_title", ""))
+        if noise:
+            counts["skip"] += 1
+            out_rows.append({
+                "video_id": v["video_id"],
+                "video_url": v["video_url"],
+                "video_title": v["video_title"],
+                "year": v.get("year", ""),
+                "title_hint": "",
+                "speaker_hint": f"(auto-skipped: {reason})",
+                "similarity": 0.0,
+                "status": "skip",
+                "presentation_id_snapshot": "",
+            })
             continue
-        candidates = by_year.get(int(year_str), [])
-        match, ratio = best_match(v["video_title"], candidates)
+
+        year_str = v.get("year", "")
+        primary_year = int(year_str) if year_str.isdigit() else None
+
+        # Pass 1: nominal year
+        match, ratio = (None, 0.0)
+        if primary_year is not None:
+            match, ratio = best_match(v["video_title"], by_year.get(primary_year, []))
+
+        # Pass 2: cross-year fallback if nominal year didn't produce a confident hit
+        used_year = primary_year
+        if ratio < AUTO_THRESHOLD:
+            xmatch, xratio = best_match(v["video_title"], all_presentations)
+            if xratio > ratio:
+                match, ratio = xmatch, xratio
+                used_year = (xmatch or {}).get("year") if xmatch else primary_year
+
         status = "auto" if ratio >= AUTO_THRESHOLD else "needs_review"
         counts[status] = counts.get(status, 0) + 1
         out_rows.append({
             "video_id": v["video_id"],
             "video_url": v["video_url"],
             "video_title": v["video_title"],
-            "year": year_str,
+            "year": str(used_year) if used_year is not None else "",
             "title_hint": (match or {}).get("title", ""),
             "speaker_hint": (match or {}).get("speakers", ""),
             "similarity": round(ratio, 3),
@@ -173,7 +216,7 @@ def main():
     print(f"\nWrote {MAPPING_CSV}")
     print(f"  auto (similarity ≥ {AUTO_THRESHOLD}): {counts.get('auto', 0)}")
     print(f"  needs_review: {counts.get('needs_review', 0)}")
-    print(f"  no_year: {counts.get('no_year', 0)}")
+    print(f"  skip (noise: deleted/private/session-recording): {counts.get('skip', 0)}")
     print("\nReview the needs_review rows. Set status to 'manual_confirmed' to accept the match,")
     print("'skip' to drop the video, or replace presentation_id with the correct value.")
     print("Then commit the CSV; the build pipeline picks up 'auto' and 'manual_confirmed' rows.")
