@@ -145,6 +145,6 @@ We analyze the structure of Russian Indological conferences through the lens of 
 
 **Nodes Generated:** 271
 
-**Edges Generated:** 4561
+**Edges Generated:** 4698
 
 The network is exported into standard edge list and node list CSV formats (`network_nodes.csv` and `network_edges.csv`) for use in external graphing tools like Gephi or Cytoscape.

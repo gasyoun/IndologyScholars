@@ -140,10 +140,11 @@ Edge types:
 | `person_event` | A scholar appears in a conference event. |
 | `person_organization` | A scholar is linked to a normalized affiliation observed in a program. |
 | `person_theme` | A scholar is linked to a broad title-derived theme. |
+| `organization_theme` | A normalized organization is linked to a broad theme through presentations by affiliated scholars. |
 | `person_person_copresentation` | Two scholars appear on the same presentation record. |
 | `person_person_same_session` | Two scholars appear in the same session. This is co-presence, not proof of collaboration. |
 
-These are participation networks, not citation networks or comprehensive publication networks.
+These are participation networks, not citation networks or comprehensive publication networks. Organization-theme edges describe observed conference-program affiliation context; they do not claim an institution's complete research profile.
 
 ## 6. Analytics CSVs
 

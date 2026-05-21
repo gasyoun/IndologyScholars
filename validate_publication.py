@@ -4,6 +4,7 @@ import json
 import sqlite3
 import sys
 from pathlib import Path
+import jsonschema
 
 from publication_helpers import clean_person_urls, is_public_authority_record, load_authority_overrides, load_site_data
 
@@ -79,6 +80,12 @@ def main():
         if dangling_sessions:
             fail(errors, f"DB has {dangling_sessions} sessions without a joinable event_day_venue")
 
+    try:
+        schema = json.loads(read("authority_ids.schema.json"))
+        jsonschema.validate(instance=authority, schema=schema)
+    except jsonschema.exceptions.ValidationError as e:
+        fail(errors, f"authority_ids.json schema validation failed: {e.message} at path {list(e.path)}")
+
     persons_auth = authority.get("persons") or {}
     for person_id, person_auth in persons_auth.items():
         if not isinstance(person_auth, dict):
@@ -89,7 +96,7 @@ def main():
         for key, value in raw_public_fields.items():
             normalized_key = "official_url" if key == "url" else key
             if normalized_key not in normalized_public_urls:
-                fail(errors, f"authority_ids.json persons.{person_id}.{key} has invalid format: {value}")
+                fail(errors, f"authority_ids.json persons.{person_id}.{key} has invalid semantic format: {value}")
         if raw_public_fields and is_public_authority_record(person_auth) and not person_auth.get("checked_at"):
             fail(errors, f"authority_ids.json persons.{person_id} is public but missing checked_at")
         if raw_public_fields and not is_public_authority_record(person_auth):
@@ -318,6 +325,7 @@ def main():
             "person_event",
             "person_organization",
             "person_theme",
+            "organization_theme",
             "person_person_copresentation",
             "person_person_same_session",
         }

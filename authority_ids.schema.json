@@ -1,0 +1,80 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Authority IDs Schema",
+  "description": "Schema for validating authority_ids.json",
+  "type": "object",
+  "properties": {
+    "description": {
+      "type": "string"
+    },
+    "persons": {
+      "type": "object",
+      "patternProperties": {
+        "^PERS_[a-f0-9]{8}$": {
+          "type": "object",
+          "properties": {
+            "preferred_latin_name": { "type": "string" },
+            "orcid": { "type": "string", "pattern": "^(https://orcid\\.org/)?\\d{4}-\\d{4}-\\d{4}-\\d{3}[\\dX]$" },
+            "wikidata": { "type": "string", "pattern": "^(https://www\\.wikidata\\.org/wiki/)?Q\\d+$" },
+            "viaf": { "type": "string", "pattern": "^(https://viaf\\.org/viaf/)?\\d+/?$" },
+            "openalex": { "type": "string", "pattern": "^(https://openalex\\.org/)?A\\d+$" },
+            "google_scholar": { "type": "string", "pattern": "^(https://scholar\\.google\\.com/citations\\?user=)?[A-Za-z0-9_-]+$" },
+            "scopus_author_id": { "type": "string", "pattern": "^(https://www\\.scopus\\.com/authid/detail\\.uri\\?authorId=)?\\d+$" },
+            "researcher_id": { "type": "string", "pattern": "^(https://www\\.webofscience\\.com/wos/author/record/)?([A-Z]{1,3}-\\d{4}-\\d{4}|[A-Z0-9-]+)$" },
+            "rinc_author_id": { "type": "string", "pattern": "^(https://www\\.elibrary\\.ru/author_profile\\.asp\\?id=)?\\d+$" },
+            "url": { "type": "string", "pattern": "^https?://" },
+            "official_url": { "type": "string", "pattern": "^https?://" },
+            "confidence": { "type": "string", "enum": ["confirmed", "manual", "high", "candidate", "ambiguous", "todo", ""] },
+            "source": { "type": "string" },
+            "checked_at": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+            "notes": { "type": "string" }
+          },
+          "additionalProperties": false
+        }
+      }
+    },
+    "organizations": {
+      "type": "object",
+      "patternProperties": {
+        "^.*$": {
+          "type": "object",
+          "properties": {
+            "full_name_ru": { "type": "string" },
+            "name_en": { "type": "string" },
+            "alternateName": { "type": "array", "items": { "type": "string" } },
+            "url": { "type": "string", "pattern": "^https?://" },
+            "wikidata": { "type": "string", "pattern": "^(https://www\\.wikidata\\.org/wiki/)?Q\\d+$" },
+            "ror": { "type": "string", "pattern": "^(https://ror\\.org/)?0[a-z0-9]{6}\\d{2}$" },
+            "grid": { "type": "string" },
+            "isni": { "type": "string" },
+            "confidence": { "type": "string" },
+            "checked_at": { "type": "string" }
+          },
+          "additionalProperties": false
+        }
+      }
+    },
+    "places": {
+      "type": "object",
+      "patternProperties": {
+        "^.*$": {
+          "type": "object",
+          "properties": {
+            "name_ru": { "type": "string" },
+            "name_en": { "type": "string" },
+            "alternateName": { "type": "array", "items": { "type": "string" } },
+            "wikidata": { "type": "string", "pattern": "^(https://www\\.wikidata\\.org/wiki/)?Q\\d+$" },
+            "country_code": { "type": "string" },
+            "country": { "type": "string" },
+            "country_ru": { "type": "string" },
+            "lat": { "type": "number" },
+            "lon": { "type": "number" },
+            "confidence": { "type": "string" }
+          },
+          "additionalProperties": false
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}

@@ -122,6 +122,7 @@ def generate_network_exports(cursor):
         add_edge(edges, person_node, event_node, "person_event", row["year"], row["series_name_en"])
 
         org = normalize_affiliation(row["affiliation_text_raw"])
+        org_node = None
         if org:
             org_node = node_id("organization", org)
             if org_node not in nodes:
@@ -147,6 +148,8 @@ def generate_network_exports(cursor):
             }
         nodes[theme_node]["weight"] += 1
         add_edge(edges, person_node, theme_node, "person_theme", row["year"], row["series_name_en"])
+        if org_node:
+            add_edge(edges, org_node, theme_node, "organization_theme", row["year"], row["series_name_en"])
 
         presentations[row["presentation_id"]].append((person_node, row))
         sessions[row["session_id"]].append((person_node, row))

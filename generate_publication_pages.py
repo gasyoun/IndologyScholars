@@ -1748,36 +1748,6 @@ def generate_institution_pages(data, records, authority):
 
 def generate_publication_docs(data):
     docs = {
-        "networks.html": (
-            "Network Analysis",
-            "Co-presence and institutional networks of Russian Indology scholars.",
-            """
-        <header>
-            <h1>Network Analysis</h1>
-            <p>We analyze the structure of Russian Indological conferences through the lens of participation networks.</p>
-        </header>
-        <h2>Participation Networks vs Citation Networks</h2>
-        <p>Unlike traditional bibliometric networks (which map who cites whom), our networks map <strong>co-presence and shared scholarly context</strong>. They answer questions such as:</p>
-        <ul>
-            <li>Who presents in the same sessions?</li>
-            <li>Which institutions are most strongly connected to specific themes?</li>
-            <li>Who serves as a "bridge" between different conference series or cities?</li>
-        </ul>
-        
-        <h2>Available Network Exports</h2>
-        <p>You can download our raw network exports to run your own analyses in Gephi, Cytoscape, or Python NetworkX.</p>
-        <section class="grid">
-            <article class="card">
-                <strong><a href="analytics_output/network_nodes.csv">network_nodes.csv</a></strong>
-                <p>Contains typed nodes for all Persons, Organizations, Events, and Themes.</p>
-            </article>
-            <article class="card">
-                <strong><a href="analytics_output/network_edges.csv">network_edges.csv</a></strong>
-                <p>Contains weighted edges specifying the exact type of relationship (e.g., <code>person_person_same_session</code>, <code>person_theme</code>).</p>
-            </article>
-        </section>
-            """,
-        ),
         "methodology.html": (
             "Methodology",
             "How the archive is built from cached conference programs, normalized names, and derived analytical fields.",
@@ -2000,6 +1970,10 @@ def generate_publication_docs(data):
                 <p>A scholar is linked to a broad generated theme inferred from presentation titles.</p>
             </article>
             <article class="card">
+                <strong>organization_theme</strong>
+                <p>A normalized organization is linked to a broad theme through presentations by affiliated scholars. This summarizes observed conference-program context, not the institution's complete scholarly profile.</p>
+            </article>
+            <article class="card">
                 <strong>person_person_copresentation</strong>
                 <p>Two scholars appear on the same presentation record.</p>
             </article>
@@ -2012,7 +1986,7 @@ def generate_publication_docs(data):
         <section class="list">
             <article class="card">
                 <strong>Participation Network</strong>
-                <p>The export models observed conference participation. It is not a citation network, publication network, or comprehensive institutional history.</p>
+                <p>The export models observed conference participation. It is not a citation network, publication network, institutional ranking, or comprehensive institutional history.</p>
             </article>
             <article class="card">
                 <strong>Stable Identifiers</strong>
