@@ -223,8 +223,14 @@
                 <p>Raw affiliation strings listed in the programs are cleaned and mapped to canonical organization entities (e.g. "СПбГУ", "ИВР РАН") to track institutional participation trajectories.</p>
             </article>
             <article class="card">
-                <strong>Broad Theme Labels</strong>
-                <p>Each presentation is classified into one or more high-level research themes (e.g., Art, Linguistics, Philosophy) based on a titles-based heuristic mapping.</p>
+                <strong>Broad Theme Labels & Classification</strong>
+                <p>Each presentation is classified into hierarchical research themes based on a titles-based heuristic mapping. The classification operates on four distinct levels (L1–L4):</p>
+                <ul>
+                    <li><strong>L1 (Broad Discipline):</strong> The primary academic domain (e.g., Linguistics, History, Art).</li>
+                    <li><strong>L2 (Period or Area):</strong> Sub-field constraints (e.g., Ancient History, Modern Literature).</li>
+                    <li><strong>L3 (Object/Region):</strong> Specific focus (e.g., Buddhist texts, South Indian architecture).</li>
+                    <li><strong>L4 (Type):</strong> The nature of the presentation (e.g., text translation, field report, comparative analysis).</li>
+                </ul>
             </article>
             <article class="card">
                 <strong>Derived Analytics</strong>
@@ -232,7 +238,22 @@
             </article>
         </section>
 
-        <p><em>Note on thematic classification:</em> Presentation themes are mapped directly from the individual talk titles in our corpus and do not represent a scholar's complete lifetime research output or scientific profile.</p>
+        <p><em>Note on thematic classification:</em> Presentation themes are mapped directly from the individual talk titles in our corpus and do not represent a scholar's complete lifetime research output or scientific profile. Ambiguous titles may be flagged for manual review or grouped into multi-topic clusters.</p>
+
+        <h2>Reproducibility</h2>
+        <p>This archive is built using an open, automated pipeline. To reproduce the exact dataset and HTML site from the primary SQLite database:</p>
+        <div style="background: rgba(255,255,255,0.04); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; margin-bottom: 2rem;">
+            <p style="margin-top: 0;"><strong>Requirements:</strong> Python 3.10+</p>
+            <p><strong>Build Order:</strong></p>
+            <ol style="color: var(--muted); padding-left: 1.5rem; margin-bottom: 0;">
+                <li><code>python generate_analytics.py</code> (Generates core CSV metrics and queues)</li>
+                <li><code>python generate_site_data.py</code> (Builds JSON payloads for the frontend)</li>
+                <li><code>python generate_scholars_pages.py</code> (Compiles scholar profiles and authority links)</li>
+                <li><code>python generate_publication_pages.py</code> (Assembles themes, networks, and general pages)</li>
+                <li><code>python validate_publication.py</code> (Verifies data integrity and JSON schemas)</li>
+            </ol>
+            <p style="margin-bottom: 0; margin-top: 1rem; font-size: 0.9rem;"><strong>Last Build Date:</strong> 2026-05-21</p>
+        </div>
 
         <div class="footer">© 2026 Russian Indological Research Archive. Generated from the normalized conference archive.</div>
     </main>
