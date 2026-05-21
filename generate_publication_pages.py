@@ -1086,6 +1086,18 @@ def fetch_db_summary():
     return summary
 
 
+def youtube_video_total():
+    csv_path = Path("analytics_output/youtube_playlist_summary.csv")
+    if not csv_path.exists():
+        return None
+    total = 0
+    for line in csv_path.read_text(encoding="utf-8").splitlines()[1:]:
+        parts = line.split(",")
+        if len(parts) >= 3 and parts[2].strip().isdigit():
+            total += int(parts[2].strip())
+    return total or None
+
+
 def patch_index_stats(data):
     summary = data.get("summary", {})
     total_scholars = summary.get("total_scholars", 0)
@@ -1094,6 +1106,7 @@ def patch_index_stats(data):
     end_year = summary.get("end_year", 2025)
     years_count = end_year - start_year + 1
     overlap = summary.get("overlap_scholars", 0)
+    youtube_total = youtube_video_total()
 
     conn = sqlite3.connect(DB_PATH)
     series_max = dict(conn.execute("SELECT event_series_id, MAX(year) FROM event GROUP BY event_series_id").fetchall())
@@ -1116,6 +1129,8 @@ def patch_index_stats(data):
     html = replace_stat(html, "stat-talks-count", total_presentations)
     html = replace_stat(html, "stat-years-count", years_count)
     html = replace_stat(html, "stat-overlap-count", overlap)
+    if youtube_total:
+        html = replace_stat(html, "stat-youtube-count", youtube_total)
 
     html = re.sub(
         r'(<div class="stat-desc" id="stat-years-desc">)Период с \d+ по \d+ годы(</div>)',
@@ -1155,7 +1170,7 @@ def patch_index_stats(data):
     print(
         f"Patched index.html: scholars={total_scholars}, presentations={total_presentations}, "
         f"years={start_year}–{end_year} ({years_count}), overlap={overlap}, "
-        f"Zograf {zograf_end}, Roerich {roerich_end}"
+        f"Zograf {zograf_end}, Roerich {roerich_end}, youtube={youtube_total or 'n/a'}"
     )
 
 

@@ -9,3 +9,6 @@ _site/
 *.secret
 *api_key*
 *api-key*
+
+# Author working drafts (private revision notes, not for publication)
+article/ppv_corr.md

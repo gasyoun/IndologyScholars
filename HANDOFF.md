@@ -57,6 +57,13 @@
 
 10. **README.md and README_RU.md updated**: all scholar/talk/cohort numbers refreshed to current state (226 / 899 / 39 overlap / 132 Zograf-only / 55 Roerich-only). Timeline note added in RU readme that Zograf extends to 2026 while Roerich stays at 2025. README files remain in workflow's `paths-ignore` so they don't re-trigger CI.
 
+11. **YouTube data integrated** (172 video archive):
+    - Added 5th stat-card to `index.html` (#card-youtube, "172 Видеозаписи / Зографские чтения 2023–2025 на YouTube").
+    - `patch_index_stats()` extended to read `analytics_output/youtube_playlist_summary.csv` (2023: 68, 2024: 56, 2025: 36, secondary: 12) and inline the total on each CI rebuild.
+    - Article §4.4 updated: replaced vague "более ста единиц" with exact figures and explicit 68→56→36 decline observation.
+    - Deleted broken `analytics_output/youtube_stats.csv` (was error-stubs from a failed scrape attempt; real data is in playlist_summary).
+    - Added `article/ppv_corr.md` (author's revision-notes WIP) to `.gitignore`.
+
 ### Key Findings (Ready for Discussion)
 
 **Debut-Timing Profile:**
