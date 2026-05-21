@@ -57,7 +57,17 @@ AUTO_THRESHOLD = 0.55  # ratio above which we accept without review
 # Patterns identifying videos that are NOT individual talks (full-session
 # recordings, deleted entries, private entries). These get status=skip so
 # they don't clog the needs_review queue.
-SESSION_RECORDING_RE = re.compile(r"^(?:XL+|XLI|XLII|XLIII|XLIV|XLV|XLVI|XLVII)\b.*\d{1,2}[.\-:]\d{1,2}", re.IGNORECASE)
+# Catches:
+#   "XLIV Зографские чтения, 23.05.2023, 14.00 – 17.15"    (numeric date+time)
+#   "XLI Зографские чтения (13 мая 2020 г.), ч. 2"          (Russian month name + часть)
+#   "XLV ЗОГРАФСКИЕ ЧТЕНИЯ, 17 мая 2024 г. Часть 1"        (Russian month name + Часть)
+#   "Институт Восточных Рукописей РАН. 1-ый день, ..."     (whole-day recording)
+SESSION_RECORDING_RES = [
+    re.compile(r"^(?:XL+|XLI+|XLV+|XLVI*|XLVII)\b.*\d{1,2}[.\-:]\d{1,2}", re.IGNORECASE),
+    re.compile(r"(?:XL+|XLI+|XLV+|XLVI*|XLVII)\b.*зограф", re.IGNORECASE),
+    re.compile(r"\bзограф.*\b(ч\.|часть|часов|день)\s*\d", re.IGNORECASE),
+    re.compile(r"^Институт\s+Восточных\s+Рукописей.*день", re.IGNORECASE),
+]
 
 
 def is_noise_title(title):
@@ -69,8 +79,9 @@ def is_noise_title(title):
         return True, "deleted"
     if "Private video" in t:
         return True, "private"
-    if SESSION_RECORDING_RE.match(t):
-        return True, "session_recording"
+    for pat in SESSION_RECORDING_RES:
+        if pat.search(t):
+            return True, "session_recording"
     return False, ""
 
 
