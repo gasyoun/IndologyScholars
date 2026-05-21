@@ -169,11 +169,16 @@ def main():
 
     # ── indology_scholars_analytics.md (single "w" block) ────────────────────
 
+    zograf_range = cursor.execute("SELECT MIN(year), MAX(year) FROM event WHERE event_series_id = 1").fetchone()
+    roerich_range = cursor.execute("SELECT MIN(year), MAX(year) FROM event WHERE event_series_id = 2").fetchone()
+    zograf_label = f"{zograf_range[0]}–{zograf_range[1]}"
+    roerich_label = f"{roerich_range[0]}–{roerich_range[1]}"
+
     with open("indology_scholars_analytics.md", "w", encoding="utf-8") as f:
         f.write("# Russian Indological Scholarship: Comparative Statistical Analytics\n\n")
         f.write("> [!NOTE]\n")
         f.write("> This analytical report is generated dynamically based on the relational SQL database "
-                "compiled from Zograf Readings (2004–2025) and Roerich Readings (2007–2025) conference programs.\n\n")
+                f"compiled from Zograf Readings ({zograf_label}) and Roerich Readings ({roerich_label}) conference programs.\n\n")
 
         f.write("## 1. High-Level Executive Summary\n\n")
         f.write(f"- **Total Unique Scholars Identified**: {len(total_scholars)}\n")

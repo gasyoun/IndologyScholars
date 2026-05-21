@@ -80,7 +80,7 @@
 | Path | Purpose | Status |
 |------|---------|--------|
 | `article/ppv_draft.md` | Main manuscript (10 sections + 3 appendices) | ✅ v0.3 ready |
-| `conferences.db` | SQLite database (12 normalized tables, 226 scholars, 732 presentations) | ✅ Current |
+| `conferences.db` | SQLite database (12 normalized tables, 226 scholars, 899 presentations) | ✅ Current |
 | `analytics_output/debut_timing.csv` | Age-at-debut analysis (66 scholars) | ✅ NEW |
 | `analytics_output/debut_timing.svg` | Visualization: debut year vs age | ✅ NEW |
 | `analytics_output/youtube_playlist_summary.csv` | Zograf video counts 2023–2025 | ✅ NEW |
@@ -95,7 +95,7 @@
 ### Main Body (10 Sections)
 1. **Введение** — Two institutional models; calendar timing; visitor access barriers
 2. **Методология** — Data sources; deduplication; theme taxonomy (L1–L4); no technical implementation details
-3. **Объём и границы** — 226 scholars, 732 presentations, 2004–2026; note 2024 data pending
+3. **Объём и границы** — 226 scholars, 899 presentations, 2004–2026; note 2024 data pending
 4. **Метрики закрытости** — Gini coefficient, core retention, newcomer rate; includes subsection 4.4 on participation barriers (online collapse 100% → 1.7%)
 5. **Критерии членства** — Documentary evidence for Zograf 2026 (19 A / 41 B / 1 C classification); 68.3% without institutional documentation
 6. **Миграции и сети** — Individual institution trajectories; teacher-student examples (Lysenko, Kuzina); RGGU→HSE migration

@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-**IndologyScholars** is a comprehensive digital humanities platform and ETL pipeline integrating two decades of Russian Indological conference programs (Zograf Readings in St. Petersburg and Roerich Readings in Moscow). The system extracts, deduplicates, and analyzes 213 scholars across 732 presentations, compiling a normalized SQLite database, generating scientific analytics, and deploying an interactive bilingual web portal with 213 static scholar profile pages and real-time data visualization.
+**IndologyScholars** is a comprehensive digital humanities platform and ETL pipeline integrating two decades of Russian Indological conference programs (Zograf Readings in St. Petersburg and Roerich Readings in Moscow). The system extracts, deduplicates, and analyzes 226 scholars across 899 presentations, compiling a normalized SQLite database, generating scientific analytics, and deploying an interactive bilingual web portal with 226 static scholar profile pages and real-time data visualization.
 
 ---
 
@@ -30,12 +30,12 @@ Primary assembly engine:
 Computes cross-conference affinity indices, cohort overlapping, and generates CSV datasets to `analytics_output/`. Identifies the 32-scholar overlap cohort presenting at both conferences.
 
 ### Phase 4: Static Profile Generation (`generate_scholars_pages.py`)
-Generates 213 individual SEO-optimized glassmorphic HTML cards under `scholars/` (e.g., `scholars/PERS_f074f69f.html`). Each profiles career chronology, institutional transitions, regional mobility, and thematic coverage.
+Generates 226 individual SEO-optimized glassmorphic HTML cards under `scholars/` (e.g., `scholars/PERS_f074f69f.html`). Each profiles career chronology, institutional transitions, regional mobility, and thematic coverage.
 
 ### Phase 5: Web Portal (`index.html` + `site_data.json`)
 Single-page application (vanilla CSS/JS):
 - **Bilingual Core:** Defaults to Russian; toggle swaps entire UI state (metrics, charts, labels) to English in real-time
-- **Cross-filtering:** Click any affiliation or city tag to instant-filter the 213-scholar directory with pagination
+- **Cross-filtering:** Click any affiliation or city tag to instant-filter the 226-scholar directory with pagination
 - **Interactive Charts:** Five SVG analytics visualizations (demographics, gender, career timeline, institutional distribution, semantic word cloud)
 
 ---
@@ -49,7 +49,7 @@ Execute in sequence to rebuild the entire platform from scratch:
 python build_and_populate_db.py        # Compile schema, ingest HTML, deduplicate persons
 python generate_analytics.py           # Compute statistics, export CSVs to analytics_output/
 python generate_site_data.json           # Serialize SQL entries into JS payload
-python generate_scholars_pages.py      # Generate 213 static profile pages
+python generate_scholars_pages.py      # Generate 226 static profile pages
 python -m http.server 8000             # Launch local server at http://localhost:8000
 ```
 
@@ -112,7 +112,7 @@ python import_seo_handoff.py           # Import SEO analytics back into database
 | `gemini_handoff/` | SEO authority handoff data (`.reply.jsonl` format) |
 | `html_cache/` | Cached HTML snapshots from institutional portals |
 | `institutions/` | Generated institution profile pages (15+ static HTML files) |
-| `scholars/` | 213 static scholar profile HTML cards (auto-generated) |
+| `scholars/` | 226 static scholar profile HTML cards (auto-generated) |
 | `scratch/` | Development scripts (non-production, safe to modify) |
 | `themes/` | CSS theme or template definitions |
 | `zograf-roerich-db.md` | Seed metadata source (venues, coords, calendar events) |
@@ -132,7 +132,7 @@ python import_seo_handoff.py           # Import SEO analytics back into database
 - **`search-index.json`** — Full-text search index.
 
 ### Generated Outputs (Auto-created after each pipeline run)
-- `scholars/*.html` — 213 individual scholar profile pages
+- `scholars/*.html` — 226 individual scholar profile pages
 - `cities/*.html` — City profile aggregate pages
 - `institutions/*.html` — Institution profile pages
 - `analytics_output/*.csv` — Scientific datasets (affiliation_leaderboard.csv, overlap_cohort.csv, etc.)
