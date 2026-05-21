@@ -125,8 +125,10 @@ def score_candidate(candidate: dict, cyrillic_surname: str, latin_name: str) -> 
     if candidate.get("affiliations"):
         score += 0.1
     alternatives = candidate.get("display_name_alternatives") or []
-    if any(latin_name.lower().split()[0] in a.lower() for a in alternatives if a):
-        score += 0.1
+    if latin_name and latin_name.strip():
+        latin_first = latin_name.lower().split()[0]
+        if any(latin_first in a.lower() for a in alternatives if a):
+            score += 0.1
     return round(min(score, 1.0), 2)
 
 
