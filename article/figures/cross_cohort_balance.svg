@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="980" height="700" viewBox="0 0 980 700">
 <style>
 text{font-family:Arial,'Liberation Sans',sans-serif;fill:#1f2933}.small{font-size:12px}.axis{font-size:13px}.label{font-size:12px}.title{font-size:20px;font-weight:700}.subtitle{font-size:13px;fill:#52616b}.tick{stroke:#c9d2dc;stroke-width:1}.grid{stroke:#edf1f5;stroke-width:1}</style>
-<text x="34.0" y="32.0" class="title" text-anchor="start">Рис. 1. Перекрестная когорта: баланс участия на двух площадках</text>
+<text x="34.0" y="32.0" class="title" text-anchor="start">Рис. 4. Перекрестная когорта: баланс участия на двух площадках</text>
 <text x="34.0" y="56.0" class="subtitle" text-anchor="start">39 участников, выступавших и на Зографских, и на Рериховских чтениях; диагональ означает равный вклад.</text>
 <rect x="86.0" y="82.0" width="846.0" height="534.0" rx="0" fill="#ffffff" stroke="#cfd8e3" opacity="1.0"/>
 <line x1="86.0" y1="82.0" x2="86.0" y2="616.0" stroke="#edf1f5" stroke-width="1"/>

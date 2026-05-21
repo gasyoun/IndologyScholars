@@ -228,7 +228,7 @@ def figure_cross_cohort(person_series: dict[str, dict[str, PersonSeries]]) -> di
         points.append((z, r, total, balance, first, last, data["Zograf"].name, orient, color))
 
     body = [
-        text(34, 32, "Рис. 1. Перекрестная когорта: баланс участия на двух площадках", "title"),
+        text(34, 32, "Рис. 4. Перекрестная когорта: баланс участия на двух площадках", "title"),
         text(
             34,
             56,
@@ -295,7 +295,7 @@ def figure_participant_dynamics(person_series: dict[str, dict[str, PersonSeries]
     summaries: dict[str, list[dict[str, float]]] = {}
     width, height = 1120, 760
     body = [
-        text(34, 32, "Рис. 2. Обновление состава: новички, ядро и повторные участники", "title"),
+        text(34, 32, "Рис. 1. Обновление состава: новички, ядро и повторные участники", "title"),
         text(34, 56, "Столбцы показывают структуру участников по годам; линия — долю дебютантов.", "subtitle"),
     ]
     colors = {"new": "#7aa6d8", "core": "#2f6fbb", "repeat": "#aeb8c4"}
@@ -468,7 +468,7 @@ def figure_birth_year_coverage(person_series: dict[str, dict[str, PersonSeries]]
     left, top, plot_w, plot_h = 110, 92, 640, 310
     ymax = max(max(c.values()) for c in counts.values()) + 10
     body = [
-        text(34, 32, "Рис. 4. Покрытие годом рождения зависит от частоты участия", "title"),
+        text(34, 32, "Рис. 2. Покрытие годом рождения зависит от частоты участия", "title"),
         text(34, 56, "Неизвестные годы рождения сконцентрированы среди разовых и редких участников.", "subtitle"),
         rect(left, top, plot_w, plot_h, "#ffffff", "#cfd8e3"),
     ]

@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="860" height="520" viewBox="0 0 860 520">
 <style>
 text{font-family:Arial,'Liberation Sans',sans-serif;fill:#1f2933}.small{font-size:12px}.axis{font-size:13px}.label{font-size:12px}.title{font-size:20px;font-weight:700}.subtitle{font-size:13px;fill:#52616b}.tick{stroke:#c9d2dc;stroke-width:1}.grid{stroke:#edf1f5;stroke-width:1}</style>
-<text x="34.0" y="32.0" class="title" text-anchor="start">Рис. 4. Покрытие годом рождения зависит от частоты участия</text>
+<text x="34.0" y="32.0" class="title" text-anchor="start">Рис. 2. Покрытие годом рождения зависит от частоты участия</text>
 <text x="34.0" y="56.0" class="subtitle" text-anchor="start">Неизвестные годы рождения сконцентрированы среди разовых и редких участников.</text>
 <rect x="110.0" y="92.0" width="640.0" height="310.0" rx="0" fill="#ffffff" stroke="#cfd8e3" opacity="1.0"/>
 <line x1="110.0" y1="402.0" x2="750.0" y2="402.0" stroke="#edf1f5" stroke-width="1"/>

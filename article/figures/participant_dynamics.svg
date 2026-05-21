@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1120" height="760" viewBox="0 0 1120 760">
 <style>
 text{font-family:Arial,'Liberation Sans',sans-serif;fill:#1f2933}.small{font-size:12px}.axis{font-size:13px}.label{font-size:12px}.title{font-size:20px;font-weight:700}.subtitle{font-size:13px;fill:#52616b}.tick{stroke:#c9d2dc;stroke-width:1}.grid{stroke:#edf1f5;stroke-width:1}</style>
-<text x="34.0" y="32.0" class="title" text-anchor="start">Рис. 2. Обновление состава: новички, ядро и повторные участники</text>
+<text x="34.0" y="32.0" class="title" text-anchor="start">Рис. 1. Обновление состава: новички, ядро и повторные участники</text>
 <text x="34.0" y="56.0" class="subtitle" text-anchor="start">Столбцы показывают структуру участников по годам; линия — долю дебютантов.</text>
 <text x="96.0" y="76.0" class="axis" text-anchor="start" font-weight="700">Зографские чтения</text>
 <rect x="96.0" y="90.0" width="930.0" height="230.0" rx="0" fill="#ffffff" stroke="#cfd8e3" opacity="1.0"/>
