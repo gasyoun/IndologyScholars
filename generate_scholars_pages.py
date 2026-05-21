@@ -115,6 +115,14 @@ def talk_card(talk):
     city_html = ""
     if good_city(city):
         city_html = f' · <a href="../{city_path(city)}">{esc(city)}</a>'
+    videos = talk.get("videos") or []
+    video_html = ""
+    if videos:
+        links = " · ".join(
+            f'<a href="{esc(v["url"])}" rel="noopener" target="_blank">▶ YouTube</a>'
+            for v in videos
+        )
+        video_html = f'<div class="meta">{links}</div>'
     return f"""
         <article class="talk">
             <strong>{esc(talk.get("title"))}</strong>
@@ -124,6 +132,7 @@ def talk_card(talk):
             </div>
             <div class="meta">{esc(talk.get("date"))} · {esc((talk.get("day_of_week") or {}).get("ru"))} · {esc(talk.get("time_interval"))}</div>
             <div class="meta">{esc(talk.get("session_title") or "Секция не указана")}</div>
+            {video_html}
         </article>
     """
 

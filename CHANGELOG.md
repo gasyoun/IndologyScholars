@@ -35,6 +35,14 @@
 *   Удалён `analytics_output/youtube_stats.csv` (содержал только error-стабы от неудачной попытки автоматического скрейпа); рабочие данные были и остаются в `analytics_output/youtube_playlist_summary.csv`.
 *   `article/ppv_corr.md` (рабочий список авторских правок) добавлен в `.gitignore`.
 
+**Конвейер per-lecture YouTube-привязок (заготовлен; готов к запуску при наличии API-ключа):**
+*   `scratch/youtube_fetch_videos.py` — ручной запуск, читает `YOUTUBE_API_KEY` из `.env`, обходит YouTube Data API v3 (`playlistItems.list`) по каждому плейлисту из `youtube_playlist_summary.csv`, выгружает `analytics_output/youtube_video_list.csv` (один ряд на видео: id, url, title, year, position, published_at). Бюджет квоты ~16 единиц на полный обход; бесплатный лимит — 10 000 единиц/сутки.
+*   `scratch/youtube_match_videos.py` — нечёткое сопоставление заголовков видео с докладами текущей БД (`difflib.SequenceMatcher`, без внешних зависимостей). Пишет `analytics_output/video_presentation_mapping.csv` с колонками `video_id, video_url, video_title, year, title_hint, speaker_hint, similarity, status, presentation_id_snapshot`. Маппинг ключуется по *естественным* признакам (year + title_hint + speaker_hint), а не по `presentation_id`, поскольку последний переcоздаётся как `uuid.uuid4().hex[:8]` на каждой сборке.
+*   `build_and_populate_db.py:ingest_video_media()` запускается в каждой сборке: для строк со статусом `auto` / `manual_confirmed` повторно ищет лучшее соответствие в текущей БД и вставляет запись в таблицу `media` (`attached_to_type=presentation`, `media_type=video`, `media_url=YouTube URL`).
+*   `generate_site_data.py` подтягивает медиа per-presentation в массив `talks[*].videos`; `generate_scholars_pages.py:talk_card()` рендерит ссылку `▶ YouTube` под каждым докладом на странице учёного.
+*   Подтверждено end-to-end на тестовой одной-строке фикстуре; коммит-готовый `video_presentation_mapping.csv` сейчас пуст (только заголовок), ждёт реального запуска `fetch_videos.py` с API-ключом.
+*   **Замеченный долг (тот же корень, что у `theme_codes_final.csv`)**: `presentation_id` нестабилен между сборками; любой внешний CSV с этим ключом устаревает на следующем CI-прогоне. `theme_codes_final.csv` (895 LLM-кодов) сейчас имеет нулевое пересечение с актуальными ID. Долгосрочное решение — детерминированные ID (хеш от `year+series+title+first_speaker`), отложено на следующую сессию.
+
 **Документация:**
 *   `README.md` и `README_RU.md` обновлены: 213 → 226 учёных, 732 → 899 докладов, 32 → 39 в перекрестной когорте, 119 → 132 петербургских, 62 → 55 московских; добавлена отметка о расширении до 2026 г.
 *   `HANDOFF.md` — итоги вечерней сессии (десять пунктов) для следующего собеседника.

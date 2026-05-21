@@ -319,9 +319,19 @@ def main():
             "roerich_last": roerich_last
         }
     
+    # Load video media keyed by presentation_id (so each talk can render its YouTube link)
+    cursor.execute("""
+        SELECT attached_to_id, media_url, media_title
+        FROM media
+        WHERE attached_to_type = 'presentation' AND media_type = 'video'
+    """)
+    videos_by_pres = {}
+    for pres_id, url, title in cursor.fetchall():
+        videos_by_pres.setdefault(pres_id, []).append({"url": url, "title": title})
+
     # 1. Fetch all scholars
     cursor.execute("""
-        SELECT 
+        SELECT
             p.person_id,
             p.display_name,
             p.normalized_key,
@@ -423,7 +433,8 @@ def main():
                 "is_first_talk": is_first,
                 "is_last_talk": is_last,
                 "order_in_session": order_idx + 1,
-                "total_in_session": len(s_list)
+                "total_in_session": len(s_list),
+                "videos": videos_by_pres.get(pres_id, [])
             })
             
         # Determine dominant theme and academic breadth

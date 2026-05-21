@@ -1048,25 +1048,129 @@ def verify_db(conn):
     for row in overlap[:10]:
         print(f" - {row[0]}")
 
+def ingest_video_media(conn):
+    """Read analytics_output/video_presentation_mapping.csv and insert
+    YouTube videos as media rows attached to their matched presentations.
+
+    The mapping is keyed by natural attributes (year + title_hint + speaker_hint),
+    NOT by presentation_id (which is regenerated on each rebuild). For each
+    auto/manual_confirmed row we re-fuzzy-match the hints against the current
+    Zograf presentations of that year and attach the video to the best match.
+    """
+    import csv as _csv
+    import difflib as _difflib
+    import re as _re
+
+    mapping_path = "analytics_output/video_presentation_mapping.csv"
+    try:
+        f = open(mapping_path, "r", encoding="utf-8")
+    except FileNotFoundError:
+        print(f"  (no {mapping_path} — skipping video ingestion)")
+        return
+
+    cursor = conn.cursor()
+
+    def _norm(text):
+        if not text:
+            return ""
+        t = text.lower().replace("ё", "е")
+        t = _re.sub(r"[^\w\s\-]", " ", t)
+        return _re.sub(r"\s+", " ", t).strip()
+
+    # Cache presentations per year (year -> list of (pres_id, title, speakers))
+    by_year_cache = {}
+
+    def _get_candidates(year):
+        if year not in by_year_cache:
+            rows = cursor.execute("""
+                SELECT pr.presentation_id, pr.title,
+                       GROUP_CONCAT(pers.display_name, ' / ')
+                FROM presentation pr
+                JOIN session s ON s.session_id = pr.session_id
+                JOIN event_day_venue edv ON edv.event_day_venue_id = s.event_day_venue_id
+                JOIN event_day ed ON ed.event_day_id = edv.event_day_id
+                JOIN event e ON e.event_id = ed.event_id
+                JOIN presentation_person pp ON pp.presentation_id = pr.presentation_id
+                JOIN person pers ON pers.person_id = pp.person_id
+                WHERE e.event_series_id = 1 AND e.year = ?
+                GROUP BY pr.presentation_id
+            """, (year,)).fetchall()
+            by_year_cache[year] = [(pid, t, sp) for pid, t, sp in rows]
+        return by_year_cache[year]
+
+    inserted = 0
+    no_match = 0
+    skipped = 0
+    REINGEST_THRESHOLD = 0.55  # slightly looser than matcher's 0.65 because hints come from DB itself
+
+    with f:
+        for row in _csv.DictReader(f):
+            status = (row.get("status") or "").strip()
+            if status not in ("auto", "manual_confirmed"):
+                skipped += 1
+                continue
+            year_str = (row.get("year") or "").strip()
+            if not year_str.isdigit():
+                skipped += 1
+                continue
+            year = int(year_str)
+            video_url = (row.get("video_url") or "").strip()
+            video_id = (row.get("video_id") or "").strip()
+            video_title = (row.get("video_title") or "").strip()
+            title_hint = (row.get("title_hint") or "").strip()
+            speaker_hint = (row.get("speaker_hint") or "").strip()
+            if not video_url or not title_hint:
+                skipped += 1
+                continue
+
+            # Re-match hint against current presentations
+            target = _norm(title_hint + " " + speaker_hint)
+            best_pid = None
+            best_ratio = 0.0
+            for pid, title, speakers in _get_candidates(year):
+                candidate_norm = _norm(title + " " + (speakers or ""))
+                r = _difflib.SequenceMatcher(None, target, candidate_norm).ratio()
+                if r > best_ratio:
+                    best_ratio = r
+                    best_pid = pid
+            if not best_pid or best_ratio < REINGEST_THRESHOLD:
+                no_match += 1
+                continue
+
+            media_id = f"YT_{video_id}"
+            cursor.execute("DELETE FROM media WHERE media_id = ?", (media_id,))
+            cursor.execute(
+                "INSERT INTO media VALUES (?,?,?,?,?,?,?,?,?)",
+                (media_id, "presentation", best_pid, "video", video_url, video_title,
+                 "video/youtube", video_url, f"hint-matched at build time (ratio={best_ratio:.2f}, status={status})")
+            )
+            inserted += 1
+    conn.commit()
+    print(f"  Video media: {inserted} inserted, {no_match} could not be matched against current DB, {skipped} skipped (status != auto/manual_confirmed)")
+
+
 def main():
     print(f"Opening Database connection to {DB_PATH}")
     conn = sqlite3.connect(DB_PATH)
-    
+
     print("Initializing Database tables...")
     init_db(conn)
-    
+
     print("Populating seeded database tables from zograf-roerich-db.md...")
     populate_seeded_data(conn)
-    
+
     print("Populating parsed Zograf Reading talks (2004-2025)...")
     populate_zograf_talks(conn)
-    
+
     print("Populating parsed Roerich Reading talks (2007-2025)...")
     populate_roerich_talks(conn)
-    
+
+    print("Ingesting YouTube video media from mapping CSV (if present)...")
+    ingest_video_media(conn)
+
     print("Verifying database integrity and statistics...")
     verify_db(conn)
-    
+
     conn.close()
     print("\nDatabase building and populating pipeline successfully completed!")
 

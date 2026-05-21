@@ -64,6 +64,17 @@
     - Deleted broken `analytics_output/youtube_stats.csv` (was error-stubs from a failed scrape attempt; real data is in playlist_summary).
     - Added `article/ppv_corr.md` (author's revision-notes WIP) to `.gitignore`.
 
+12. **Per-lecture YouTube link pipeline scaffolded** (videos render on individual scholar profile pages once mapping CSV is populated):
+    - `scratch/youtube_fetch_videos.py` — manual run, requires `YOUTUBE_API_KEY` in `.env`. Hits YouTube Data API v3 `playlistItems.list` for each playlist in `analytics_output/youtube_playlist_summary.csv` and writes `analytics_output/youtube_video_list.csv` (one row per video). Quota cost ~16 units total; free tier is 10,000/day.
+    - `scratch/youtube_match_videos.py` — reads the video list and fuzzy-matches each video's title against current Zograf presentations of that year (difflib SequenceMatcher; stdlib only). Writes `analytics_output/video_presentation_mapping.csv` with `auto` (similarity ≥ 0.65) or `needs_review` status. Reviewer edits the CSV to mark borderline rows as `manual_confirmed` or `skip`.
+    - `build_and_populate_db.py:ingest_video_media()` runs at every DB build. For each `auto`/`manual_confirmed` row it re-fuzzy-matches the `title_hint`+`speaker_hint` against the current DB (because `presentation_id` is regenerated as random UUID on every rebuild — see issue note below) and inserts a row in the `media` table.
+    - `generate_site_data.py` joins `media` per presentation into the talks dict; `generate_scholars_pages.py:talk_card()` renders `▶ YouTube` links on each presentation card.
+    - Pipeline E2E-tested with a single-row fixture; mapping CSV currently committed empty (header-only) awaiting the real fetch run.
+
+    **To use:** (1) get YouTube Data API v3 key from console.cloud.google.com → add `YOUTUBE_API_KEY=...` to `.env`; (2) `python scratch/youtube_fetch_videos.py`; (3) `python scratch/youtube_match_videos.py`; (4) review `analytics_output/video_presentation_mapping.csv` for `needs_review` rows; (5) commit + push — CI builds, ingestion fires, scholar pages get YouTube links.
+
+    **Lurking issue — same root cause as `theme_codes_final.csv` orphan**: `build_and_populate_db.py` assigns random UUIDs to `presentation_id` on each rebuild (`uuid.uuid4().hex[:8]`). Any external CSV keyed on `presentation_id` is invalidated on the next CI run. `theme_codes_final.csv` (895 rows of LLM-coded themes) currently has zero overlap with current DB IDs — its theme codes are still semantically valid but cannot be JOIN-ed back to presentations. The video pipeline sidesteps this by keying on natural hints (year + title + speaker) and re-matching at ingestion. Long-term fix would be to make `presentation_id` deterministic (hash of year + series + title + first_speaker); deferred to a future session.
+
 ### Key Findings (Ready for Discussion)
 
 **Debut-Timing Profile:**
