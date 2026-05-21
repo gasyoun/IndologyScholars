@@ -10,10 +10,12 @@ from html import escape
 from pathlib import Path
 
 try:
-    from scipy.stats import chi2_contingency, fisher_exact
+    from scipy.stats import chi2_contingency, fisher_exact, kruskal, spearmanr
 except Exception:  # pragma: no cover - optional in portable use
     chi2_contingency = None
     fisher_exact = None
+    kruskal = None
+    spearmanr = None
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -319,6 +321,18 @@ def affiliation_groups(values: list[str]) -> list[str]:
     return groups or ["не нормализовано/только город"]
 
 
+def counter_cosine(a: Counter[str], b: Counter[str]) -> float | None:
+    keys = set(a) | set(b)
+    if not keys:
+        return None
+    dot = sum(a[k] * b[k] for k in keys)
+    norm_a = math.sqrt(sum(a[k] ** 2 for k in keys))
+    norm_b = math.sqrt(sum(b[k] ** 2 for k in keys))
+    if not norm_a or not norm_b:
+        return None
+    return dot / (norm_a * norm_b)
+
+
 def hypothesis_ikvia_bridge(con: sqlite3.Connection, people: dict[str, dict[str, object]], theme_rows: list[dict[str, str]]) -> tuple[list[dict[str, object]], list[dict[str, object]]]:
     raw_affils: dict[str, list[str]] = defaultdict(list)
     for pid, affil in con.execute("select person_id, affiliation_text_raw from presentation_person"):
@@ -369,7 +383,59 @@ def hypothesis_ikvia_bridge(con: sqlite3.Connection, people: dict[str, dict[str,
     return rows, summary
 
 
-def hypothesis_age_at_debut(con: sqlite3.Connection, people: dict[str, dict[str, object]]) -> tuple[list[dict[str, object]], list[dict[str, object]], list[dict[str, object]]]:
+def hypothesis_ikvia_theme_adaptation(con: sqlite3.Connection, people: dict[str, dict[str, object]], theme_rows: list[dict[str, str]]) -> list[dict[str, object]]:
+    raw_affils: dict[str, list[str]] = defaultdict(list)
+    for pid, affil in con.execute("select person_id, affiliation_text_raw from presentation_person"):
+        if affil and affil not in raw_affils[pid]:
+            raw_affils[pid].append(affil)
+
+    themes_by_pres = db_presentation_themes(con, theme_rows)
+    l1_by_person_series: dict[str, dict[str, Counter[str]]] = defaultdict(lambda: defaultdict(Counter))
+    for pid, pres_id, series_name in con.execute(
+        """
+        select pp.person_id, pp.presentation_id, es.series_name_en
+        from presentation_person pp
+        join presentation pr using(presentation_id)
+        join session s using(session_id)
+        join event_day_venue edv using(event_day_venue_id)
+        join event_day ed using(event_day_id)
+        join event e using(event_id)
+        join event_series es using(event_series_id)
+        """
+    ):
+        row = themes_by_pres.get(pres_id)
+        if row:
+            series = "Zograf" if "Zograf" in series_name else "Roerich"
+            l1_by_person_series[pid][series][row["l1"]] += 1
+
+    rows = []
+    for pid, info in people.items():
+        series = info["series"]
+        groups = affiliation_groups(raw_affils[pid])
+        if not ("Zograf" in series and "Roerich" in series and "ИКВИА/ВШЭ" in groups):
+            continue
+        z_counter = l1_by_person_series[pid]["Zograf"]
+        r_counter = l1_by_person_series[pid]["Roerich"]
+        z_top = z_counter.most_common(1)[0][0] if z_counter else ""
+        r_top = r_counter.most_common(1)[0][0] if r_counter else ""
+        cosine = counter_cosine(z_counter, r_counter)
+        rows.append(
+            {
+                "person_id": pid,
+                "display_name": info["name"],
+                "zograf_talks": sum(z_counter.values()),
+                "roerich_talks": sum(r_counter.values()),
+                "zograf_l1": "; ".join(f"{k}:{v}" for k, v in z_counter.most_common()),
+                "roerich_l1": "; ".join(f"{k}:{v}" for k, v in r_counter.most_common()),
+                "same_top_l1": "yes" if z_top and z_top == r_top else "no",
+                "l1_cosine_similarity": round(cosine, 3) if cosine is not None else "",
+            }
+        )
+    rows.sort(key=lambda r: (r["same_top_l1"] != "yes", -float(r["l1_cosine_similarity"] or 0), str(r["display_name"])))
+    return rows
+
+
+def hypothesis_age_at_debut(con: sqlite3.Connection, people: dict[str, dict[str, object]]) -> tuple[list[dict[str, object]], list[dict[str, object]], list[dict[str, object]], dict[str, object]]:
     first_seen: dict[str, tuple[int, str]] = {}
     for pid, year, series in con.execute(
         """
@@ -442,7 +508,17 @@ def hypothesis_age_at_debut(con: sqlite3.Connection, people: dict[str, dict[str,
                 "max_age_at_debut": max(ages) if ages else "",
             }
         )
-    return rows, summary, missing
+
+    stats: dict[str, object] = {}
+    if spearmanr and len(rows) >= 3:
+        rho, p_value = spearmanr([int(r["first_year"]) for r in rows], [int(r["age_at_debut"]) for r in rows])
+        stats.update({"spearman_rho": round(float(rho), 3), "spearman_p": round(float(p_value), 4)})
+    if kruskal:
+        groups = [[int(r["age_at_debut"]) for r in rows if pred(int(r["first_year"]))] for _label, pred in bins]
+        if all(groups):
+            h_value, p_value = kruskal(*groups)
+            stats.update({"kruskal_h": round(float(h_value), 3), "kruskal_p": round(float(p_value), 4)})
+    return rows, summary, missing, stats
 
 
 def figure_age_at_debut(rows: list[dict[str, object]]) -> None:
@@ -634,6 +710,38 @@ def build_person_event_graph(con: sqlite3.Connection) -> tuple[dict[str, set[str
     return graph, names
 
 
+def build_person_session_graph(con: sqlite3.Connection) -> tuple[dict[str, set[str]], dict[str, str], Counter[str], dict[str, int]]:
+    session_people = defaultdict(set)
+    names = {}
+    session_sizes = {}
+    for pid, name, session_id in con.execute(
+        """
+        select pp.person_id, p.display_name, s.session_id
+        from presentation_person pp
+        join person p using(person_id)
+        join presentation pr using(presentation_id)
+        join session s using(session_id)
+        """
+    ):
+        session_people[session_id].add(pid)
+        names[pid] = name
+    graph = defaultdict(set)
+    session_counts: Counter[str] = Counter()
+    for session_id, people in session_people.items():
+        session_sizes[session_id] = len(people)
+        people_list = list(people)
+        if len(people_list) >= 2:
+            for pid in people_list:
+                session_counts[pid] += 1
+        for i, a in enumerate(people_list):
+            for b in people_list[i + 1 :]:
+                graph[a].add(b)
+                graph[b].add(a)
+    for pid in names:
+        graph[pid]
+    return graph, names, session_counts, session_sizes
+
+
 def betweenness_centrality(graph: dict[str, set[str]]) -> dict[str, float]:
     nodes = list(graph)
     centrality = dict.fromkeys(nodes, 0.0)
@@ -712,6 +820,40 @@ def hypothesis_network_bridges(con: sqlite3.Connection, people: dict[str, dict[s
     return rows
 
 
+def hypothesis_network_bridges_session(con: sqlite3.Connection, people: dict[str, dict[str, object]]) -> tuple[list[dict[str, object]], dict[str, object]]:
+    graph, names, session_counts, session_sizes = build_person_session_graph(con)
+    centrality = betweenness_centrality(graph)
+    rows = []
+    for pid, info in people.items():
+        series = info["series"]
+        z = int(series.get("Zograf", {}).get("count", 0))
+        r = int(series.get("Roerich", {}).get("count", 0))
+        total = z + r
+        balance = round((z - r) / total, 3) if total else 0
+        rows.append(
+            {
+                "person_id": pid,
+                "display_name": names.get(pid, info["name"]),
+                "session_betweenness": round(centrality.get(pid, 0.0), 6),
+                "session_graph_degree": len(graph[pid]),
+                "multi_person_sessions": session_counts[pid],
+                "total_participations": total,
+                "zograf": z,
+                "roerich": r,
+                "balance": balance,
+                "series_attended": "both" if z and r else ("zograf_only" if z else "roerich_only"),
+            }
+        )
+    rows.sort(key=lambda r: (float(r["session_betweenness"]), int(r["multi_person_sessions"]), int(r["total_participations"])), reverse=True)
+    stats = {
+        "sessions_total": len(session_sizes),
+        "sessions_multi_person": sum(1 for value in session_sizes.values() if value >= 2),
+        "sessions_large_10plus": sum(1 for value in session_sizes.values() if value >= 10),
+        "largest_session_size": max(session_sizes.values()) if session_sizes else 0,
+    }
+    return rows, stats
+
+
 def figure_network_bridges(rows: list[dict[str, object]]) -> None:
     top = rows[:15]
     width, height = 1000, 620
@@ -732,6 +874,26 @@ def figure_network_bridges(rows: list[dict[str, object]]) -> None:
     (OUT / "network_bridges.svg").write_text(svg(width, height, body), encoding="utf-8")
 
 
+def figure_network_bridges_session(rows: list[dict[str, object]]) -> None:
+    top = rows[:15]
+    width, height = 1000, 620
+    left, top_y, plot_w, row_h = 250, 76, 650, 28
+    max_val = max(float(r["session_betweenness"]) for r in top) or 1
+    body = [
+        text(32, 30, "Сетевые посредники по совместным сессиям", "title"),
+        text(32, 52, "Betweenness в графе, где ребро означает участие в одной программной сессии.", "sub"),
+    ]
+    colors = {"both": "#7b5ea7", "zograf_only": "#2f6fbb", "roerich_only": "#b8554b"}
+    for i, row in enumerate(top):
+        y = top_y + i * row_h
+        body.append(text(left - 12, y + 17, short_name(str(row["display_name"])), "small", "end"))
+        w = float(row["session_betweenness"]) / max_val * plot_w
+        body.append(rect(left, y, w, 18, colors[str(row["series_attended"])]))
+        body.append(text(left + w + 8, y + 14, row["session_betweenness"], "label"))
+    body.append(text(left, height - 32, "Цвет: обе площадки / только Зограф / только Рерих", "sub"))
+    (OUT / "network_bridges_session.svg").write_text(svg(width, height, body), encoding="utf-8")
+
+
 def write_markdown_summary(stats: dict[str, object]) -> None:
     lines = [
         "# Отработка новых гипотез",
@@ -750,13 +912,15 @@ def write_markdown_summary(stats: dict[str, object]) -> None:
         "",
         f"- Участников перекрестной когорты с исторической аффилиацией ИКВИА/ВШЭ: {stats.get('ikvia_cross_count', 0)} из 39.",
         f"- Крупнейшие институциональные группы перекрестной когорты: {stats.get('top_cross_institutions', '')}.",
+        f"- Тематическая адаптация ИКВИА/ВШЭ между площадками: совпадение ведущей L1 у {stats.get('ikvia_same_top_l1', 0)} из {stats.get('ikvia_adaptation_count', 0)} участников; медианная cosine similarity={stats.get('ikvia_median_cosine', 'н/д')}.",
         "- Первый вывод: ИКВИА/ВШЭ выглядит как важный новый мост, но не как единственный центр связности.",
-        "- См. `ikvia_bridge_cross_cohort.csv` и `institution_bridge_summary.csv`.",
+        "- См. `ikvia_bridge_cross_cohort.csv`, `ikvia_theme_adaptation.csv` и `institution_bridge_summary.csv`.",
         "",
         "## H3. Возраст первого выступления",
         "",
         f"- Участников с подтвержденным возрастом дебюта: {stats.get('age_debut_known', 0)}.",
         f"- Периодные медианы: {stats.get('age_summary_line', '')}.",
+        f"- Тест тренда: Spearman ρ={stats.get('age_spearman_rho', 'н/д')}, p={stats.get('age_spearman_p', 'н/д')}; Kruskal-Wallis H={stats.get('age_kruskal_h', 'н/д')}, p={stats.get('age_kruskal_p', 'н/д')}.",
         "- Первый вывод: есть намек на снижение возраста входа, но кейс Гасунс/Крылова пока не проверяется из-за отсутствующих годов рождения.",
         "- См. `age_at_debut.csv`, `age_at_debut_summary.csv`, `age_at_debut_missing_priority.csv` и `age_at_debut.svg`.",
         "",
@@ -775,8 +939,10 @@ def write_markdown_summary(stats: dict[str, object]) -> None:
         "## H6. Сетевые посредники",
         "",
         f"- Верх списка по betweenness: {stats.get('network_top_line', '')}.",
-        "- Первый вывод: список хорошо работает как поисковый инструмент, но текущая проекция по годовому событию слишком плотная; следующий шаг — взвешенная двудольная сеть и/или сессионный уровень.",
-        "- См. `network_bridges.csv` и `network_bridges.svg`.",
+        f"- На уровне сессий верх списка: {stats.get('network_session_top_line', '')}.",
+        f"- Контроль плотности сессионного графа: {stats.get('sessions_multi_person', 0)} многоперсонных сессий из {stats.get('sessions_total', 0)}, крупных сессий ≥10 участников: {stats.get('sessions_large_10plus', 0)}.",
+        "- Первый вывод: сессионный граф лучше отделяет устойчивых докладчиков от реальных посредников, но ранние программы с крупными дневными блоками всё еще завышают связность.",
+        "- См. `network_bridges.csv`, `network_bridges_session.csv`, `network_bridges.svg` и `network_bridges_session.svg`.",
         "",
     ]
     (OUT / "hypothesis_workup.md").write_text("\n".join(lines), encoding="utf-8")
@@ -797,8 +963,10 @@ def main() -> None:
     ikvia_rows, ikvia_summary = hypothesis_ikvia_bridge(con, people, theme_rows)
     write_csv(OUT / "ikvia_bridge_cross_cohort.csv", ikvia_rows)
     write_csv(OUT / "institution_bridge_summary.csv", ikvia_summary)
+    ikvia_adaptation = hypothesis_ikvia_theme_adaptation(con, people, theme_rows)
+    write_csv(OUT / "ikvia_theme_adaptation.csv", ikvia_adaptation)
 
-    age_rows, age_summary, age_missing = hypothesis_age_at_debut(con, people)
+    age_rows, age_summary, age_missing, age_stats = hypothesis_age_at_debut(con, people)
     write_csv(OUT / "age_at_debut.csv", age_rows)
     write_csv(OUT / "age_at_debut_summary.csv", age_summary)
     write_csv(OUT / "age_at_debut_missing_priority.csv", age_missing)
@@ -816,6 +984,11 @@ def main() -> None:
     network_rows = hypothesis_network_bridges(con, people)
     write_csv(OUT / "network_bridges.csv", network_rows)
     figure_network_bridges(network_rows)
+    network_session_rows, network_session_stats = hypothesis_network_bridges_session(con, people)
+    write_csv(OUT / "network_bridges_session.csv", network_session_rows)
+    figure_network_bridges_session(network_session_rows)
+
+    ikvia_cosines = [float(row["l1_cosine_similarity"]) for row in ikvia_adaptation if row["l1_cosine_similarity"] != ""]
 
     stats = {
         "subtitle_groups": subtitle_stats.get("groups_with_coded_talks", ""),
@@ -824,14 +997,23 @@ def main() -> None:
         "subtitle_l2_v": subtitle_stats.get("l2_cramers_v", "н/д"),
         "ikvia_cross_count": sum(1 for row in ikvia_rows if row["has_ikvia_hse"] == "yes"),
         "top_cross_institutions": "; ".join(f"{row['affiliation_group']}={row['cross_cohort_people']}" for row in ikvia_summary[:3]),
+        "ikvia_adaptation_count": len(ikvia_adaptation),
+        "ikvia_same_top_l1": sum(1 for row in ikvia_adaptation if row["same_top_l1"] == "yes"),
+        "ikvia_median_cosine": round(median(ikvia_cosines), 3) if ikvia_cosines else "н/д",
         "age_debut_known": len(age_rows),
         "age_summary_line": "; ".join(
             f"{row['debut_period']}: {row['median_age_at_debut']} (n={row['n_known_birth_year']})" for row in age_summary
         ),
+        "age_spearman_rho": age_stats.get("spearman_rho", "н/д"),
+        "age_spearman_p": age_stats.get("spearman_p", "н/д"),
+        "age_kruskal_h": age_stats.get("kruskal_h", "н/д"),
+        "age_kruskal_p": age_stats.get("kruskal_p", "н/д"),
         "publication_sources": len(publication_rows),
         "video_presentations": sum(1 for _, in con.execute("select distinct attached_to_id from media where media_type='video' and attached_to_type='presentation'")),
         "video_status_line": "; ".join(f"{row['status']}={row['videos']}" for row in video_status),
         "network_top_line": "; ".join(str(row["display_name"]) for row in network_rows[:7]),
+        "network_session_top_line": "; ".join(str(row["display_name"]) for row in network_session_rows[:7]),
+        **network_session_stats,
         **theme_match_stats,
     }
     write_markdown_summary(stats)

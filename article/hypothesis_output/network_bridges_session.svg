@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="620" viewBox="0 0 1000 620">
+<style>text{font-family:Arial,'Liberation Sans',sans-serif;fill:#1f2933}.title{font-size:20px;font-weight:700}.sub{font-size:13px;fill:#52616b}.axis{font-size:13px}.small{font-size:12px}.label{font-size:11px}</style>
+<text x="32.0" y="30.0" class="title" text-anchor="start">Сетевые посредники по совместным сессиям</text>
+<text x="32.0" y="52.0" class="sub" text-anchor="start">Betweenness в графе, где ребро означает участие в одной программной сессии.</text>
+<text x="238.0" y="93.0" class="small" text-anchor="end">Рыжакова С. И.</text>
+<rect x="250.0" y="76.0" width="650.0" height="18.0" fill="#7b5ea7" stroke="none" opacity="1.0"/>
+<text x="908.0" y="90.0" class="label" text-anchor="start">0.110511</text>
+<text x="238.0" y="121.0" class="small" text-anchor="end">Лысенко В. Г.</text>
+<rect x="250.0" y="104.0" width="410.7" height="18.0" fill="#7b5ea7" stroke="none" opacity="1.0"/>
+<text x="668.7" y="118.0" class="label" text-anchor="start">0.069833</text>
+<text x="238.0" y="149.0" class="small" text-anchor="end">Цветкова С. О.</text>
+<rect x="250.0" y="132.0" width="381.6" height="18.0" fill="#7b5ea7" stroke="none" opacity="1.0"/>
+<text x="639.6" y="146.0" class="label" text-anchor="start">0.064877</text>
+<text x="238.0" y="177.0" class="small" text-anchor="end">Шомахмадов С. Х.</text>
+<rect x="250.0" y="160.0" width="351.9" height="18.0" fill="#2f6fbb" stroke="none" opacity="1.0"/>
+<text x="609.9" y="174.0" class="label" text-anchor="start">0.059827</text>
+<text x="238.0" y="205.0" class="small" text-anchor="end">Тавастшерна С. С.</text>
+<rect x="250.0" y="188.0" width="334.6" height="18.0" fill="#7b5ea7" stroke="none" opacity="1.0"/>
+<text x="592.6" y="202.0" class="label" text-anchor="start">0.056891</text>
+<text x="238.0" y="233.0" class="small" text-anchor="end">Александрова Н. В.</text>
+<rect x="250.0" y="216.0" width="276.8" height="18.0" fill="#7b5ea7" stroke="none" opacity="1.0"/>
+<text x="534.8" y="230.0" class="label" text-anchor="start">0.047062</text>
+<text x="238.0" y="261.0" class="small" text-anchor="end">Васильков Я. В.</text>
+<rect x="250.0" y="244.0" width="269.2" height="18.0" fill="#2f6fbb" stroke="none" opacity="1.0"/>
+<text x="527.2" y="258.0" class="label" text-anchor="start">0.045771</text>
+<text x="238.0" y="289.0" class="small" text-anchor="end">Корнеева Н. А.</text>
+<rect x="250.0" y="272.0" width="250.4" height="18.0" fill="#7b5ea7" stroke="none" opacity="1.0"/>
+<text x="508.4" y="286.0" class="label" text-anchor="start">0.042574</text>
+<text x="238.0" y="317.0" class="small" text-anchor="end">Ю. И. Дробышев</text>
+<rect x="250.0" y="300.0" width="232.5" height="18.0" fill="#b8554b" stroke="none" opacity="1.0"/>
+<text x="490.5" y="314.0" class="label" text-anchor="start">0.039536</text>
+<text x="238.0" y="345.0" class="small" text-anchor="end">Лидова Н. Р.</text>
+<rect x="250.0" y="328.0" width="228.5" height="18.0" fill="#7b5ea7" stroke="none" opacity="1.0"/>
+<text x="486.5" y="342.0" class="label" text-anchor="start">0.038846</text>
+<text x="238.0" y="373.0" class="small" text-anchor="end">Псху Р. В.</text>
+<rect x="250.0" y="356.0" width="198.5" height="18.0" fill="#2f6fbb" stroke="none" opacity="1.0"/>
+<text x="456.5" y="370.0" class="label" text-anchor="start">0.033755</text>
+<text x="238.0" y="401.0" class="small" text-anchor="end">Парибок А. В.</text>
+<rect x="250.0" y="384.0" width="191.4" height="18.0" fill="#2f6fbb" stroke="none" opacity="1.0"/>
+<text x="449.4" y="398.0" class="label" text-anchor="start">0.032547</text>
+<text x="238.0" y="429.0" class="small" text-anchor="end">Скороходова Т. Г.</text>
+<rect x="250.0" y="412.0" width="169.9" height="18.0" fill="#2f6fbb" stroke="none" opacity="1.0"/>
+<text x="427.9" y="426.0" class="label" text-anchor="start">0.028887</text>
+<text x="238.0" y="457.0" class="small" text-anchor="end">А. М. Шустова</text>
+<rect x="250.0" y="440.0" width="158.1" height="18.0" fill="#b8554b" stroke="none" opacity="1.0"/>
+<text x="416.1" y="454.0" class="label" text-anchor="start">0.026877</text>
+<text x="238.0" y="485.0" class="small" text-anchor="end">Ермакова Т. В.</text>
+<rect x="250.0" y="468.0" width="121.9" height="18.0" fill="#2f6fbb" stroke="none" opacity="1.0"/>
+<text x="379.9" y="482.0" class="label" text-anchor="start">0.020717</text>
+<text x="250.0" y="588.0" class="sub" text-anchor="start">Цвет: обе площадки / только Зограф / только Рерих</text>
+</svg>
