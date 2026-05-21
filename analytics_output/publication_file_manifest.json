@@ -435,13 +435,13 @@
     },
     {
       "path": "datapackage.json",
-      "size_bytes": 8073,
-      "sha256": "f0c5f2e46cbcb4f761ff262b48eeb31f9e1623e93fab7f390aa12d5cb4ab6b13"
+      "size_bytes": 8262,
+      "sha256": "bbca9846d012f3d3fd772fb9d7924670529cb0837b44cdb8b6b423e98c064db1"
     },
     {
       "path": "download-data.html",
-      "size_bytes": 16920,
-      "sha256": "79ea21713d6cef137e518957f9b14d427735ee5f9e90a6107a9703bc0d3244c1"
+      "size_bytes": 18112,
+      "sha256": "9f01811b4bcc0290dbba8524037a996c5f7c62f9db995d59d7ebcc3635383156"
     },
     {
       "path": "en.html",
