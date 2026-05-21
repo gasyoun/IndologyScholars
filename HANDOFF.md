@@ -53,6 +53,10 @@
 
 8. **Legacy-redirect cleanup**: emptied `legacy_redirects.json` (was holding 7 orphan PERS_<hash> → current-scholar redirects from past dedup merges). Validator no longer defends against orphan canonicals — any future orphan will fail validation, forcing cleanup at the source.
 
+9. **`index.html` stats auto-patched on every CI run.** `generate_publication_pages.py` now ends with `patch_index_stats(data)`, which regex-replaces the four `#stat-*-count` divs (scholars, talks, years, overlap), the `stat-years-desc` range, and the per-series year strings (RU + EN) in the meta description, sub-heading, and chart titles from the current `site_data.json` summary. `index.html` added to the workflow's `git add` list so the bot commits the patched version. **Crawlers, social-card scrapers, and tools that don't execute JS now see live numbers (226/899/23/39/2026) instead of the previous hardcoded fallbacks (188/707/22/30/2025).**
+
+10. **README.md and README_RU.md updated**: all scholar/talk/cohort numbers refreshed to current state (226 / 899 / 39 overlap / 132 Zograf-only / 55 Roerich-only). Timeline note added in RU readme that Zograf extends to 2026 while Roerich stays at 2025. README files remain in workflow's `paths-ignore` so they don't re-trigger CI.
+
 ### Key Findings (Ready for Discussion)
 
 **Debut-Timing Profile:**
@@ -291,7 +295,9 @@ event_series → event → event_day → event_day_venue → session → present
 - §7 ^2^ footnote: OpenAlex birth-year proxy tested twice and rejected (audit scripts kept)
 - Restored CI deploy pipeline (4 commits: pip cache, validator slug-awareness, pages environment, pypdf)
 - Cleaned up 7 orphan PERS_<hash> redirects + tightened validator (no more bookmark-preservation defense)
-- Verified live site at https://gasyoun.github.io/IndologyScholars/ now serves 226/899/2026
+- Added `patch_index_stats()` to build pipeline so static `index.html` fallbacks stay in sync with `site_data.json` (for crawlers/no-JS readers)
+- Updated README.md + README_RU.md with current scholar/talk/cohort numbers
+- Verified live site at https://gasyoun.github.io/IndologyScholars/ now serves 226/899/2026 in both JS-rendered AND static HTML views
 
 **For Next Session:**
 - Article is ready for PDF conversion → ППВ submission (Task #5 in Pending)
