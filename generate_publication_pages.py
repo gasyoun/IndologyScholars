@@ -3,10 +3,17 @@ import json
 import re
 import sqlite3
 import struct
+import sys
 import zlib
 from collections import defaultdict
 from pathlib import Path
 from urllib.parse import quote
+
+try:
+    sys.stdout.reconfigure(encoding="utf-8")
+    sys.stderr.reconfigure(encoding="utf-8")
+except Exception:
+    pass
 
 from publication_helpers import (
     AUTHOR_NAME,
@@ -1079,6 +1086,79 @@ def fetch_db_summary():
     return summary
 
 
+def patch_index_stats(data):
+    summary = data.get("summary", {})
+    total_scholars = summary.get("total_scholars", 0)
+    total_presentations = summary.get("total_presentations", 0)
+    start_year = summary.get("start_year", 2004)
+    end_year = summary.get("end_year", 2025)
+    years_count = end_year - start_year + 1
+    overlap = summary.get("overlap_scholars", 0)
+
+    conn = sqlite3.connect(DB_PATH)
+    series_max = dict(conn.execute("SELECT event_series_id, MAX(year) FROM event GROUP BY event_series_id").fetchall())
+    conn.close()
+    zograf_end = series_max.get(1, end_year)
+    roerich_end = series_max.get(2, end_year)
+
+    path = Path("index.html")
+    html = path.read_text(encoding="utf-8")
+
+    def replace_stat(text, stat_id, value):
+        return re.sub(
+            rf'(<div class="stat-num gradient-text" id="{stat_id}">)\d+(</div>)',
+            rf'\g<1>{value}\g<2>',
+            text,
+            count=1,
+        )
+
+    html = replace_stat(html, "stat-scholars-count", total_scholars)
+    html = replace_stat(html, "stat-talks-count", total_presentations)
+    html = replace_stat(html, "stat-years-count", years_count)
+    html = replace_stat(html, "stat-overlap-count", overlap)
+
+    html = re.sub(
+        r'(<div class="stat-desc" id="stat-years-desc">)Период с \d+ по \d+ годы(</div>)',
+        rf'\g<1>Период с {start_year} по {end_year} годы\g<2>',
+        html,
+        count=1,
+    )
+
+    html = re.sub(
+        r'(«Зографские? чтени[яй]» \(2004[–-])\d{4}( гг\.\))',
+        rf'\g<1>{zograf_end}\g<2>',
+        html,
+    )
+    html = re.sub(
+        r'(Zograf Readings \(2004[–-])\d{4}(\))',
+        rf'\g<1>{zograf_end}\g<2>',
+        html,
+    )
+    html = re.sub(
+        r'(«Рериховских? чтени[яй]» \(2007[–-])\d{4}( гг\.\))',
+        rf'\g<1>{roerich_end}\g<2>',
+        html,
+    )
+    html = re.sub(
+        r'(Roerich Readings \(2007[–-])\d{4}(\))',
+        rf'\g<1>{roerich_end}\g<2>',
+        html,
+    )
+
+    html = re.sub(
+        r'\(2004[–-]\d{4}( гг\.)?\)',
+        lambda m: f'(2004–{end_year}{" гг." if " гг." in m.group(0) else ""})',
+        html,
+    )
+
+    path.write_text(html, encoding="utf-8", newline="\n")
+    print(
+        f"Patched index.html: scholars={total_scholars}, presentations={total_presentations}, "
+        f"years={start_year}–{end_year} ({years_count}), overlap={overlap}, "
+        f"Zograf {zograf_end}, Roerich {roerich_end}"
+    )
+
+
 def main():
     ensure_dirs()
     ensure_authority_file()
@@ -1099,6 +1179,7 @@ def main():
     generate_institution_pages(data, records, authority)
     generate_publication_docs(data)
     generate_sitemap()
+    patch_index_stats(data)
     print("Generated publication pages, sitemap, robots, search index, citation files, and preview assets.")
 
 

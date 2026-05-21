@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Российская индологическая наука: Единый архив и статистический дашборд</title>
-    <meta name="description" content="Интерактивная база данных и аналитическая панель, объединяющая научные доклады конференций «Зографские чтения» и «Рериховские чтения» (2004–2025 гг.).">
+    <meta name="description" content="Интерактивная база данных и аналитическая панель, объединяющая научные доклады конференций «Зографские чтения» и «Рериховские чтения» (2004–2026 гг.).">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://gasyoun.github.io/IndologyScholars/">
     <link rel="alternate" hreflang="ru" href="https://gasyoun.github.io/IndologyScholars/">
@@ -814,7 +814,7 @@
     <header>
         <div class="header-glow"></div>
         <h1 id="main-heading">Российская индологическая наука</h1>
-        <p id="sub-heading">Единый интерактивный архив и статистическая панель научных докладов конференций «Зографские чтения» (2004–2025 гг.) и «Рериховских чтений» (2007–2025 гг.).</p>
+        <p id="sub-heading">Единый интерактивный архив и статистическая панель научных докладов конференций «Зографские чтения» (2004–2026 гг.) и «Рериховских чтений» (2007–2025 гг.).</p>
     </header>
 
     <!-- Main Container -->
@@ -823,22 +823,22 @@
         <!-- Stats Dashboard Grid -->
         <section class="stats-grid" id="stats-dashboard">
             <div class="stat-card" id="card-scholars">
-                <div class="stat-num gradient-text" id="stat-scholars-count">188</div>
+                <div class="stat-num gradient-text" id="stat-scholars-count">226</div>
                 <div class="stat-label" id="stat-scholars-label">Уникальные ученые</div>
                 <div class="stat-desc" id="stat-scholars-desc">Дедуплицированные индологи и докладчики</div>
             </div>
             <div class="stat-card" id="card-talks">
-                <div class="stat-num gradient-text" id="stat-talks-count">707</div>
+                <div class="stat-num gradient-text" id="stat-talks-count">899</div>
                 <div class="stat-label" id="stat-talks-label">Доклады и презентации</div>
                 <div class="stat-desc" id="stat-talks-desc">Извлечено из кэша программ конференций</div>
             </div>
             <div class="stat-card" id="card-years">
-                <div class="stat-num gradient-text" id="stat-years-count">22</div>
+                <div class="stat-num gradient-text" id="stat-years-count">23</div>
                 <div class="stat-label" id="stat-years-label">Года исследований</div>
-                <div class="stat-desc" id="stat-years-desc">Период с 2004 по 2025 годы</div>
+                <div class="stat-desc" id="stat-years-desc">Период с 2004 по 2026 годы</div>
             </div>
             <div class="stat-card" id="card-overlap">
-                <div class="stat-num gradient-text" id="stat-overlap-count">30</div>
+                <div class="stat-num gradient-text" id="stat-overlap-count">39</div>
                 <div class="stat-label" id="stat-overlap-label">Ядро индологов</div>
                 <div class="stat-desc" id="stat-overlap-desc">Ученые, участвовавшие в обеих конференциях</div>
             </div>
@@ -939,7 +939,7 @@
                 
                 <!-- Annual Growth Chart -->
                 <div class="chart-card">
-                    <h3 class="chart-title" id="chart-annual-title">Динамика научных исследований: Объем докладов по годам (2004–2025 гг.)</h3>
+                    <h3 class="chart-title" id="chart-annual-title">Динамика научных исследований: Объем докладов по годам (2004–2026 гг.)</h3>
                     <div id="chart-annual-growth" style="height: 350px;">
                         <svg id="svg-growth" width="100%" height="100%" viewBox="0 0 700 350" style="background: rgba(10, 14, 26, 0.4); border-radius: 8px;">
                             <!-- Dynamic SVG chart -->
@@ -1197,7 +1197,7 @@ CREATE TABLE presentation_person (
         const TRANSLATIONS = {
             ru: {
                 mainHeading: "Российская индологическая наука",
-                subHeading: "Интерактивный архив более чем 20-летней истории Зографских чтений (2004–2025 гг.) и Рериховских чтений (2007–2025 гг.) в России.",
+                subHeading: "Интерактивный архив более чем 20-летней истории Зографских чтений (2004–2026 гг.) и Рериховских чтений (2007–2025 гг.) в России.",
                 statScholars: "Уникальные ученые",
                 statScholarsDesc: "Дедуплицированные индологи и докладчики",
                 statTalks: "Доклады и презентации",
@@ -1234,7 +1234,7 @@ CREATE TABLE presentation_person (
                 venue: "Площадка",
                 session: "Заседание",
                 day: "День недели",
-                chartAnnualTitle: "Динамика научных исследований: Объем докладов по годам (2004–2025 гг.)",
+                chartAnnualTitle: "Динамика научных исследований: Объем докладов по годам (2004–2026 гг.)",
                 chartAffinityTitle: "Научное сродство и географическое распределение кадров",
                 chartLegendTotal: "Общий объем научных докладов",
                 chartLegendZograf: "Зографские чтения (СПб)",
@@ -1277,7 +1277,7 @@ CREATE TABLE presentation_person (
             },
             en: {
                 mainHeading: "Russian Indological Scholarship",
-                subHeading: "Interactive archive of last 20+ years of the Zograf Readings (2004–2025) and Roerich Readings (2007–2025) from Russia.",
+                subHeading: "Interactive archive of last 20+ years of the Zograf Readings (2004–2026) and Roerich Readings (2007–2025) from Russia.",
                 statScholars: "Unique Scholars",
                 statScholarsDesc: "Deduplicated indologists & speakers",
                 statTalks: "Presentations & Talks",
@@ -1315,7 +1315,7 @@ CREATE TABLE presentation_person (
                 venue: "Venue",
                 session: "Session",
                 day: "Day of Week",
-                chartAnnualTitle: "Annual Trends: Growth of Presented Research (2004–2025)",
+                chartAnnualTitle: "Annual Trends: Growth of Presented Research (2004–2026)",
                 chartAffinityTitle: "Scientific Affinity and Geographic Cohorts",
                 chartLegendTotal: "Total Presented Papers",
                 chartLegendZograf: "Zograf Readings (SPb)",

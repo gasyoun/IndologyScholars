@@ -3,7 +3,7 @@
 > [!NOTE]
 > This repository houses a premier digital humanities research platform and automated data pipeline integrating two decades of historical program archives from Russia's two preeminent Indological conferences: the **Zograf Readings** (St. Petersburg, IOM RAS / SPbSU, since 2004) and the **Roerich Readings** (Moscow, IAS RAS, since 2007).
 
-The project features a complete modular ETL pipeline in Python that extracts, normalizes, and matches Cyrillic scholar names, resolves lifespans and historical affiliations, compiles a referentially-sound SQLite database, exports scientific datasets (CSV), and compiles a high-fidelity glassmorphic dark-mode web portal featuring 213 static scholar profile pages, five interactive SVG analytics charts, and real-time bilingual (Russian/English) state toggles.
+The project features a complete modular ETL pipeline in Python that extracts, normalizes, and matches Cyrillic scholar names, resolves lifespans and historical affiliations, compiles a referentially-sound SQLite database, exports scientific datasets (CSV), and compiles a high-fidelity glassmorphic dark-mode web portal featuring 226 static scholar profile pages, five interactive SVG analytics charts, and real-time bilingual (Russian/English) state toggles.
 
 ---
 
@@ -23,7 +23,7 @@ graph TD
     E -->|Analytical Overview| H[indology_scholars_analytics.md]
     F -->|Unified JS Payload| I[site_data.json]
     I -->|Client-side rendering| J[index.html Web Portal]
-    K -->|213 Static Profile Pages| L[scholars/*.html]
+    K -->|226 Static Profile Pages| L[scholars/*.html]
     L -->|Bidirectional Links| J
 ```
 
@@ -43,7 +43,7 @@ Computes cross-conference affinity indices and cohort overlapping:
 *   Generates targeted scientific CSV tables inside `analytics_output/` and outputs the Markdown overview [indology_scholars_analytics.md](file:///c:/Users/user/Documents/GitHub/IndologyScholars/indology_scholars_analytics.md).
 
 ### Phase 4: Static Profile Generation (`generate_scholars_pages.py`)
-Compiles **213 custom static HTML pages** under `scholars/` (e.g., [scholars/PERS_f074f69f.html](file:///c:/Users/user/Documents/GitHub/IndologyScholars/scholars/PERS_f074f69f.html)). Each file is a standalone, SEO-optimized glassmorphic card showcasing the scholar's complete historical presentation chronology, institutional changes, regional mobility tracks, and thematic profiles.
+Compiles **226 custom static HTML pages** under `scholars/` (e.g., [scholars/PERS_f074f69f.html](file:///c:/Users/user/Documents/GitHub/IndologyScholars/scholars/PERS_f074f69f.html)). Each file is a standalone, SEO-optimized glassmorphic card showcasing the scholar's complete historical presentation chronology, institutional changes, regional mobility tracks, and thematic profiles.
 
 ### Phase 5: Client-Side Web Portal & Interactive Charts (`index.html`)
 A state-of-the-art Single Page Application built on vanilla CSS and JS:
@@ -146,7 +146,7 @@ The IndologyScholars platform enables deep historical and sociological analysis 
 ### Use Case B: Geographic Mobility & Regional Network Mapping
 *   **Objective:** Identify the regional distribution of scholars presenting Indological research and locate regional academic hubs (outside Moscow/St. Petersburg).
 *   **Method:** A historian wants to see the role of regional institutes (e.g., Krasnodar or Penza). On the dashboard, they expand any detail card and click on the **«Краснодар»** city tag.
-*   **Result:** The search engine instantly captures the tag, filtering all 213 scholars to show only those affiliated with Krasnodar institutions. By studying their presentation topics and years active, the researcher maps the growth of regional Buddhist and Sanskrit research clusters.
+*   **Result:** The search engine instantly captures the tag, filtering all 226 scholars to show only those affiliated with Krasnodar institutions. By studying their presentation topics and years active, the researcher maps the growth of regional Buddhist and Sanskrit research clusters.
 
 ### Use Case C: Tracking Academic Migration & Institutional Shifts
 *   **Objective:** Trace how scholars transition between academic organizations over their careers.
@@ -161,7 +161,7 @@ The IndologyScholars platform enables deep historical and sociological analysis 
 ### Use Case E: Isolating Regional Cohorts & Conference Affinity
 *   **Objective:** Isolate St. Petersburg-only or Moscow-only academic groups to analyze institutional affinity or regional isolation.
 *   **Method:** A user selects **«Никогда не выступали на Рериховских чт.»** (Never active at Roerich Readings) in the advanced series filter.
-*   **Result:** The directory filters out the Moscow cohort, isolating the 119 St. Petersburg-centric scholars who only present at the Zograf Readings. This allows sociologists of science to study localized academic groups, local traditions, and the communication gap between key regional forums.
+*   **Result:** The directory filters out the Moscow cohort, isolating the 132 St. Petersburg-centric scholars who only present at the Zograf Readings. This allows sociologists of science to study localized academic groups, local traditions, and the communication gap between key regional forums.
 
 ### Use Case F: High-Performance Demographics & Gender Analysis
 *   **Objective:** Audit the demographic health and gender balance of the Russian Indological community.
@@ -201,7 +201,7 @@ To compile, process, and deploy the entire platform from scratch, run the script
     ```bash
     python generate_site_data.py
     ```
-4.  **Compile Static Profile Pages:** Generates the 213 individual SEO-optimized scholar profile HTML pages:
+4.  **Compile Static Profile Pages:** Generates the 226 individual SEO-optimized scholar profile HTML pages:
     ```bash
     python generate_scholars_pages.py
     ```
@@ -230,12 +230,14 @@ The project is configured with a automated **GitHub Actions** workflow (`.github
 
 ## 📈 7. Core Database Statistics
 
-*   **Unique Indologists Deduplicated:** 213 scholars
-*   **Total Presentations Parsed:** 732 talks
-*   **Historical Timeline Covered:** 2004 – 2025
-*   **Zograf Readings (St. Petersburg):** 21 events cataloged
-*   **Roerich Readings (Moscow):** 18 events cataloged
-*   **Cross-Conference Core Cohort (Overlap):** 32 scholars active in both forums
-*   **St. Petersburg-Centric Cohort:** 119 scholars
-*   **Moscow-Centric Cohort:** 62 scholars
+*   **Unique Indologists Deduplicated:** 226 scholars
+*   **Total Presentations Parsed:** 899 talks (across 895 unique titles)
+*   **Historical Timeline Covered:** 2004 – 2026
+*   **Zograf Readings (St. Petersburg):** 2004 – 2026
+*   **Roerich Readings (Moscow):** 2007 – 2025
+*   **Cross-Conference Core Cohort (Overlap):** 39 scholars active in both forums
+*   **St. Petersburg-Centric Cohort (Zograf-only):** 132 scholars
+*   **Moscow-Centric Cohort (Roerich-only):** 55 scholars
 *   **Verification Status:** **`PASSED`** (referential keys and identity constraints fully validated)
+
+Stats are regenerated and inlined into `index.html` on every CI rebuild so that crawlers and no-JS readers see the current numbers, not stale fallbacks. The live dashboard at https://gasyoun.github.io/IndologyScholars/ overrides them client-side from `site_data.json` for live filtering.

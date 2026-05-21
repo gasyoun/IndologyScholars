@@ -80,6 +80,7 @@ jobs:
           git add assets/*.png assets/*.svg conferences/*.html themes/*.html cities/*.html institutions/*.html
           git add sitemap.xml robots.txt site.webmanifest search.html search-index.json CITATION.cff datapackage.json
           git add 404.html en.html download-data.html data-quality.html methodology.html data-sources.html known-limitations.html how-to-cite.html
+          git add index.html
           
           # Check if there are changes before committing to avoid empty commit errors
           if git diff-index --quiet HEAD --; then
