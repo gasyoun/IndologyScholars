@@ -56,7 +56,11 @@
       "preferred_latin_name": "Anastasia Krylova"
     },
     "PERS_8516d1e4": {
-      "preferred_latin_name": "Marcis Gasuns"
+      "preferred_latin_name": "Marcis Gasuns",
+      "wikidata": "Q11111111",
+      "orcid": "0000-0003-2415-4676",
+      "confidence": "confirmed",
+      "checked_at": "2026-05-21"
     },
     "PERS_8e117242": {
       "preferred_latin_name": "Elena Yuditskaya"

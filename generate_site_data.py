@@ -7,6 +7,8 @@ from publication_helpers import assign_unique_slugs, load_authority_overrides
 
 DB_PATH = "conferences.db"
 OUTPUT_FILE = "site_data.json"
+DATA_SCHEMA_VERSION = "1.0.0"
+PIPELINE_VERSION = "2026-05-21"
 
 def format_to_initials(name):
     name = name.strip()
@@ -778,6 +780,13 @@ def main():
 
     # Write as a javascript module file
     site_data = {
+        "schema_version": DATA_SCHEMA_VERSION,
+        "generated": datetime.date.today().isoformat(),
+        "build": {
+            "source": "IndologyScholars",
+            "pipeline_version": PIPELINE_VERSION,
+            "generator": "generate_site_data.py"
+        },
         "summary": summary,
         "scholars": scholars,
         "timeline": timeline,

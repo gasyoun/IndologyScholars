@@ -1,5 +1,11 @@
 {
-  "generated": "2026-05-21",
+  "schema_version": "1.0.0",
+  "generated": "2026-05-22",
+  "build": {
+    "source": "IndologyScholars",
+    "pipeline_version": "2026-05-21",
+    "generator": "generate_publication_pages.py"
+  },
   "summary": {
     "total_scholars": 226,
     "total_presentations": 899,
@@ -61,7 +67,7 @@
   "samples": {
     "placeholder_titles": [
       {
-        "presentation_id": "PRES_b14ff4be",
+        "presentation_id": "PRES_117aeb7260",
         "scholar": "Б. В. Загуменнов",
         "title": "Тема уточняется"
       }

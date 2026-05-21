@@ -1,9 +1,11 @@
+import csv
 import re
+import json
 import sqlite3
 import sys
 from pathlib import Path
 
-from publication_helpers import load_site_data
+from publication_helpers import clean_person_urls, is_public_authority_record, load_authority_overrides, load_site_data
 
 
 def fail(errors, message):
@@ -14,17 +16,55 @@ def read(path):
     return Path(path).read_text(encoding="utf-8")
 
 
+AUTHORITY_ID_FIELDS = {
+    "orcid",
+    "wikidata",
+    "viaf",
+    "openalex",
+    "google_scholar",
+    "official_url",
+    "url",
+    "scopus_author_id",
+    "researcher_id",
+    "rinc_author_id",
+}
+
+
+def valid_wikidata(value):
+    text = str(value or "").strip()
+    text = re.sub(r"^https?://www\.wikidata\.org/wiki/", "", text)
+    return bool(re.match(r"^Q\d+$", text))
+
+
+def valid_ror(value):
+    text = str(value or "").strip()
+    text = re.sub(r"^https?://ror\.org/", "", text)
+    return bool(re.match(r"^0[a-z0-9]{6}\d{2}$", text))
+
+
+def valid_http_url(value):
+    text = str(value or "").strip()
+    return text.startswith("https://") or text.startswith("http://")
+
+
 def main():
     errors = []
     data = load_site_data("site_data.json")
     summary = data.get("summary", {})
     scholars = data.get("scholars", [])
+    authority = load_authority_overrides()
+
+    if not data.get("schema_version"):
+        fail(errors, "site_data.json missing schema_version")
+    if not data.get("generated"):
+        fail(errors, "site_data.json missing generated date")
 
     if Path("conferences.db").exists():
         conn = sqlite3.connect("conferences.db")
         cur = conn.cursor()
         db_persons = cur.execute("SELECT COUNT(DISTINCT person_id) FROM presentation_person").fetchone()[0]
         db_presenter_records = cur.execute("SELECT COUNT(*) FROM presentation_person").fetchone()[0]
+        db_presentation_rows = cur.execute("SELECT COUNT(*) FROM presentation").fetchone()[0]
         dangling_sessions = cur.execute("""
             SELECT COUNT(*)
             FROM session s
@@ -38,6 +78,41 @@ def main():
             fail(errors, f"summary.total_presentations={summary.get('total_presentations')} but DB presenter records={db_presenter_records}")
         if dangling_sessions:
             fail(errors, f"DB has {dangling_sessions} sessions without a joinable event_day_venue")
+
+    persons_auth = authority.get("persons") or {}
+    for person_id, person_auth in persons_auth.items():
+        if not isinstance(person_auth, dict):
+            fail(errors, f"authority_ids.json persons.{person_id} should be an object")
+            continue
+        raw_public_fields = {key: person_auth.get(key) for key in AUTHORITY_ID_FIELDS if person_auth.get(key)}
+        normalized_public_urls = clean_person_urls(person_auth)
+        for key, value in raw_public_fields.items():
+            normalized_key = "official_url" if key == "url" else key
+            if normalized_key not in normalized_public_urls:
+                fail(errors, f"authority_ids.json persons.{person_id}.{key} has invalid format: {value}")
+        if raw_public_fields and is_public_authority_record(person_auth) and not person_auth.get("checked_at"):
+            fail(errors, f"authority_ids.json persons.{person_id} is public but missing checked_at")
+        if raw_public_fields and not is_public_authority_record(person_auth):
+            # Candidate or unspecified authority IDs are allowed only if they remain internal.
+            pass
+
+    for org_key, org_auth in (authority.get("organizations") or {}).items():
+        if not isinstance(org_auth, dict):
+            fail(errors, f"authority_ids.json organizations.{org_key} should be an object")
+            continue
+        if org_auth.get("wikidata") and not valid_wikidata(org_auth.get("wikidata")):
+            fail(errors, f"authority_ids.json organizations.{org_key}.wikidata has invalid format")
+        if org_auth.get("ror") and not valid_ror(org_auth.get("ror")):
+            fail(errors, f"authority_ids.json organizations.{org_key}.ror has invalid format")
+        if org_auth.get("url") and not valid_http_url(org_auth.get("url")):
+            fail(errors, f"authority_ids.json organizations.{org_key}.url has invalid format")
+
+    for place_key, place_auth in (authority.get("places") or {}).items():
+        if not isinstance(place_auth, dict):
+            fail(errors, f"authority_ids.json places.{place_key} should be an object")
+            continue
+        if place_auth.get("wikidata") and not valid_wikidata(place_auth.get("wikidata")):
+            fail(errors, f"authority_ids.json places.{place_key}.wikidata has invalid format")
 
     scholar_ids = {s["id"] for s in scholars}
     scholar_pages = []
@@ -75,6 +150,10 @@ def main():
             fail(errors, f"{page} missing JSON-LD")
         if "<script>" in html:
             fail(errors, f"{page} should not need inline runtime script")
+        person_id = page.stem
+        person_auth = persons_auth.get(person_id, {})
+        if person_auth and not is_public_authority_record(person_auth) and '"sameAs"' in html:
+            fail(errors, f"{page} exposes sameAs for non-public authority record")
 
     for page, html in redirect_pages:
         if 'meta name="robots" content="noindex,follow"' not in html:
@@ -98,8 +177,22 @@ def main():
         "data-quality.html",
         "CITATION.cff",
         "datapackage.json",
+        "data_dictionary.md",
         "conferences.db",
         "analytics_output/data_quality_report.json",
+        "analytics_output/authority_coverage.csv",
+        "analytics_output/authority_review_queue.csv",
+        "analytics_output/presentation_id_manifest.csv",
+        "analytics_output/id_stability_audit.json",
+        "analytics_output/id_migration_presentation.csv",
+        "analytics_output/id_migration_presentation.json",
+        "analytics_output/field_provenance_biographical.csv",
+        "analytics_output/field_provenance_authority.csv",
+        "analytics_output/field_provenance_themes.csv",
+        "analytics_output/network_nodes.csv",
+        "analytics_output/network_edges.csv",
+        "analytics_output/publication_file_manifest.csv",
+        "analytics_output/publication_file_manifest.json",
         "assets/og-image.png",
         "assets/favicon.svg",
         "scholars/index.html",
@@ -111,6 +204,8 @@ def main():
         "data-sources.html",
         "known-limitations.html",
         "how-to-cite.html",
+        "metrics-guide.html",
+        "networks.html",
     ]
     for path in required:
         if not Path(path).exists():
@@ -118,7 +213,7 @@ def main():
 
     if Path("sitemap.xml").exists():
         sitemap = read("sitemap.xml")
-        for page in ["", "en.html", "search.html", "download-data.html", "data-quality.html", "scholars/", "conferences/", "themes/", "cities/", "institutions/"]:
+        for page in ["", "en.html", "search.html", "download-data.html", "data-quality.html", "scholars/", "conferences/", "themes/", "cities/", "institutions/", "metrics-guide.html", "networks.html"]:
             expected = "https://gasyoun.github.io/IndologyScholars/" + page
             if expected not in sitemap:
                 fail(errors, f"sitemap.xml missing {expected}")
@@ -147,8 +242,122 @@ def main():
 
     if Path("analytics_output/data_quality_report.json").exists():
         report = read("analytics_output/data_quality_report.json")
+        report_json = json.loads(report)
+        if not report_json.get("schema_version"):
+            fail(errors, "data_quality_report.json missing schema_version")
         if '"dangling_sessions"' not in report or '"checks"' not in report:
             fail(errors, "data_quality_report.json missing expected checks")
+
+    if Path("datapackage.json").exists():
+        datapackage = json.loads(read("datapackage.json"))
+        if not datapackage.get("schema_version"):
+            fail(errors, "datapackage.json missing schema_version")
+        resources = {item.get("name"): item for item in datapackage.get("resources", [])}
+        for resource_name in [
+            "site-data",
+            "data-dictionary",
+            "data-quality-report",
+            "presentation-id-manifest",
+            "id-stability-audit",
+            "field-provenance-biographical",
+            "field-provenance-authority",
+            "field-provenance-themes",
+            "network-nodes",
+            "network-edges",
+            "publication-file-manifest",
+        ]:
+            if resource_name not in resources:
+                fail(errors, f"datapackage.json missing resource {resource_name}")
+        for resource_name in ["site-data", "data-quality-report", "presentation-id-manifest", "network-nodes", "network-edges", "publication-file-manifest"]:
+            if resource_name in resources and "schema" not in resources[resource_name]:
+                fail(errors, f"datapackage.json resource {resource_name} missing schema")
+
+    if Path("data_dictionary.md").exists():
+        dictionary = read("data_dictionary.md")
+        for needle in [
+            "Stable Identifier Policy",
+            "Provenance Sidecars",
+            "Network Exports",
+            "presentation_id_manifest.csv",
+            "network_edges.csv",
+            "publication_file_manifest.csv",
+        ]:
+            if needle not in dictionary:
+                fail(errors, f"data_dictionary.md missing {needle}")
+
+    if Path("analytics_output/presentation_id_manifest.csv").exists() and Path("conferences.db").exists():
+        manifest_rows = max(0, len(read("analytics_output/presentation_id_manifest.csv").splitlines()) - 1)
+        if manifest_rows != db_presentation_rows:
+            fail(errors, f"presentation_id_manifest.csv has {manifest_rows} rows but DB presentation rows={db_presentation_rows}")
+
+    for provenance_path in [
+        "analytics_output/field_provenance_biographical.csv",
+        "analytics_output/field_provenance_authority.csv",
+        "analytics_output/field_provenance_themes.csv",
+    ]:
+        if Path(provenance_path).exists():
+            lines = read(provenance_path).splitlines()
+            if len(lines) < 2:
+                fail(errors, f"{provenance_path} has no provenance rows")
+
+    if Path("analytics_output/network_nodes.csv").exists():
+        with open("analytics_output/network_nodes.csv", encoding="utf-8", newline="") as f:
+            reader = csv.DictReader(f)
+            node_types = {row.get("node_type") for row in reader}
+        expected_node_types = {"person", "event", "organization", "theme"}
+        if not node_types:
+            fail(errors, "network_nodes.csv has no node rows")
+        if not node_types.issubset(expected_node_types):
+            fail(errors, f"network_nodes.csv has unexpected node types: {sorted(node_types - expected_node_types)}")
+
+    if Path("analytics_output/network_edges.csv").exists():
+        with open("analytics_output/network_edges.csv", encoding="utf-8", newline="") as f:
+            reader = csv.DictReader(f)
+            edge_types = {row.get("edge_type") for row in reader}
+        expected_edge_types = {
+            "person_event",
+            "person_organization",
+            "person_theme",
+            "person_person_copresentation",
+            "person_person_same_session",
+        }
+        if not edge_types:
+            fail(errors, "network_edges.csv has no edge rows")
+        if not edge_types.issubset(expected_edge_types):
+            fail(errors, f"network_edges.csv has unexpected edge types: {sorted(edge_types - expected_edge_types)}")
+
+    if Path("analytics_output/publication_file_manifest.csv").exists():
+        with open("analytics_output/publication_file_manifest.csv", encoding="utf-8", newline="") as f:
+            reader = csv.DictReader(f)
+            manifest_rows = list(reader)
+        if not manifest_rows:
+            fail(errors, "publication_file_manifest.csv has no file rows")
+        manifest_paths = {row.get("path") for row in manifest_rows}
+        for path in ["index.html", "datapackage.json", "analytics_output/network_edges.csv"]:
+            if path not in manifest_paths:
+                fail(errors, f"publication_file_manifest.csv missing {path}")
+        for row in manifest_rows:
+            digest = row.get("sha256", "")
+            if not re.fullmatch(r"[0-9a-f]{64}", digest):
+                fail(errors, f"publication_file_manifest.csv has invalid sha256 for {row.get('path')}")
+                break
+
+    if Path("analytics_output/publication_file_manifest.json").exists():
+        manifest_json = json.loads(read("analytics_output/publication_file_manifest.json"))
+        if not manifest_json.get("schema_version"):
+            fail(errors, "publication_file_manifest.json missing schema_version")
+        if manifest_json.get("file_count", 0) < 1:
+            fail(errors, "publication_file_manifest.json has no files")
+
+    if Path("analytics_output/id_stability_audit.json").exists():
+        audit = json.loads(read("analytics_output/id_stability_audit.json"))
+        audit_summary = audit.get("summary", {})
+        if audit_summary.get("changed_ids_for_same_stable_key") != 0:
+            fail(errors, "id_stability_audit.json reports changed presentation IDs for matching stable keys")
+        if audit_summary.get("missing_stable_keys_after") != 0 or audit_summary.get("new_stable_keys_after") != 0:
+            fail(errors, "id_stability_audit.json reports stable-key drift")
+        if audit_summary.get("after_duplicate_stable_key_rows") != 0:
+            fail(errors, "id_stability_audit.json reports duplicate stable-key rows")
 
     if errors:
         print("Publication validation failed:")

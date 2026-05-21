@@ -3,10 +3,185 @@ import csv
 import os
 import statistics
 import datetime
+from collections import defaultdict
+
+from generate_site_data import classify_theme
 
 DB_PATH = "conferences.db"
 OUTPUT_DIR = "analytics_output"
 os.makedirs(OUTPUT_DIR, exist_ok=True)
+
+
+def normalize_affiliation(aff):
+    if not aff:
+        return None
+    value = aff.lower()
+    if "ивр " in value or "восточных рукописей" in value:
+        return "ИВР РАН"
+    if "ив ран" in value or "востоковедения ран" in value or "ивран" in value:
+        return "ИВ РАН"
+    if "спбгу" in value or "петербургский" in value:
+        return "СПбГУ"
+    if "мгу" in value or "ломоносова" in value:
+        return "МГУ"
+    if "вшэ" in value or "высшая школа" in value:
+        return "НИУ ВШЭ"
+    if "рггу" in value or "гуманитарный" in value:
+        return "РГГУ"
+    if "маэ" in value or "кунсткамера" in value:
+        return "МАЭ РАН"
+    if "эрмитаж" in value:
+        return "Государственный Эрмитаж"
+    if "институт философии" in value or "иф ран" in value:
+        return "ИФ РАН"
+    if "независим" in value or "independent" in value:
+        return "Независимые исследователи"
+    return None
+
+
+def node_id(node_type, local_id):
+    return f"{node_type}:{local_id}"
+
+
+def add_edge(edges, source, target, edge_type, year=None, series=None, weight=1):
+    if not source or not target or source == target:
+        return
+    # Person-person edges are undirected in this export; keep a stable order.
+    if edge_type.startswith("person_person") and source > target:
+        source, target = target, source
+    key = (source, target, edge_type, year or "", series or "")
+    current = edges.get(key)
+    if current:
+        current["weight"] += weight
+    else:
+        edges[key] = {
+            "source": source,
+            "target": target,
+            "edge_type": edge_type,
+            "year": year or "",
+            "series": series or "",
+            "weight": weight,
+        }
+
+
+def generate_network_exports(cursor):
+    cursor.execute("""
+        SELECT
+            pr.presentation_id,
+            pr.title,
+            e.event_id,
+            e.year,
+            es.series_name_en,
+            s.session_id,
+            pp.person_id,
+            p.display_name,
+            p.full_name_ru,
+            pp.role,
+            pp.author_order,
+            pp.affiliation_text_raw
+        FROM presentation pr
+        JOIN presentation_person pp ON pp.presentation_id = pr.presentation_id
+        JOIN person p ON p.person_id = pp.person_id
+        JOIN session s ON s.session_id = pr.session_id
+        JOIN event_day_venue edv ON edv.event_day_venue_id = s.event_day_venue_id
+        JOIN event_day ed ON ed.event_day_id = edv.event_day_id
+        JOIN event e ON e.event_id = ed.event_id
+        JOIN event_series es ON es.event_series_id = e.event_series_id
+        ORDER BY e.year, es.event_series_id, s.session_id, pr.presentation_id, pp.author_order
+    """)
+    rows = [dict(zip([col[0] for col in cursor.description], row)) for row in cursor.fetchall()]
+
+    nodes = {}
+    edges = {}
+    presentations = defaultdict(list)
+    sessions = defaultdict(list)
+
+    for row in rows:
+        person_local_id = row["person_id"]
+        person_node = node_id("person", person_local_id)
+        if person_node not in nodes:
+            nodes[person_node] = {
+                "node_id": person_node,
+                "node_type": "person",
+                "label": row["full_name_ru"] or row["display_name"],
+                "local_id": person_local_id,
+                "weight": 0,
+            }
+        nodes[person_node]["weight"] += 1
+
+        event_node = node_id("event", row["event_id"])
+        if event_node not in nodes:
+            nodes[event_node] = {
+                "node_id": event_node,
+                "node_type": "event",
+                "label": f"{row['series_name_en']} {row['year']}",
+                "local_id": row["event_id"],
+                "weight": 0,
+            }
+        nodes[event_node]["weight"] += 1
+        add_edge(edges, person_node, event_node, "person_event", row["year"], row["series_name_en"])
+
+        org = normalize_affiliation(row["affiliation_text_raw"])
+        if org:
+            org_node = node_id("organization", org)
+            if org_node not in nodes:
+                nodes[org_node] = {
+                    "node_id": org_node,
+                    "node_type": "organization",
+                    "label": org,
+                    "local_id": org,
+                    "weight": 0,
+                }
+            nodes[org_node]["weight"] += 1
+            add_edge(edges, person_node, org_node, "person_organization", row["year"], row["series_name_en"])
+
+        theme = classify_theme(row["title"] or "").get("code") or "History"
+        theme_node = node_id("theme", theme)
+        if theme_node not in nodes:
+            nodes[theme_node] = {
+                "node_id": theme_node,
+                "node_type": "theme",
+                "label": theme,
+                "local_id": theme,
+                "weight": 0,
+            }
+        nodes[theme_node]["weight"] += 1
+        add_edge(edges, person_node, theme_node, "person_theme", row["year"], row["series_name_en"])
+
+        presentations[row["presentation_id"]].append((person_node, row))
+        sessions[row["session_id"]].append((person_node, row))
+
+    for members in presentations.values():
+        people = sorted({person for person, _ in members})
+        if len(people) < 2:
+            continue
+        sample = members[0][1]
+        for i, source in enumerate(people):
+            for target in people[i + 1:]:
+                add_edge(edges, source, target, "person_person_copresentation", sample["year"], sample["series_name_en"])
+
+    for members in sessions.values():
+        people = sorted({person for person, _ in members})
+        if len(people) < 2:
+            continue
+        sample = members[0][1]
+        for i, source in enumerate(people):
+            for target in people[i + 1:]:
+                add_edge(edges, source, target, "person_person_same_session", sample["year"], sample["series_name_en"])
+
+    with open(os.path.join(OUTPUT_DIR, "network_nodes.csv"), "w", encoding="utf-8", newline="") as f:
+        fieldnames = ["node_id", "node_type", "label", "local_id", "weight"]
+        writer = csv.DictWriter(f, fieldnames=fieldnames)
+        writer.writeheader()
+        writer.writerows(sorted(nodes.values(), key=lambda row: (row["node_type"], row["label"])))
+
+    with open(os.path.join(OUTPUT_DIR, "network_edges.csv"), "w", encoding="utf-8", newline="") as f:
+        fieldnames = ["source", "target", "edge_type", "year", "series", "weight"]
+        writer = csv.DictWriter(f, fieldnames=fieldnames)
+        writer.writeheader()
+        writer.writerows(sorted(edges.values(), key=lambda row: (row["edge_type"], row["source"], row["target"], str(row["year"]))))
+
+    return len(nodes), len(edges)
 
 def main():
     conn = sqlite3.connect(DB_PATH)
@@ -146,6 +321,8 @@ def main():
         writer.writeheader()
         writer.writerows(age_trend_rows)
 
+    network_node_count, network_edge_count = generate_network_exports(cursor)
+
     # ── missing_birth_years.md ────────────────────────────────────────────────
 
     with open("missing_birth_years.md", "w", encoding="utf-8") as f:
@@ -212,7 +389,8 @@ def main():
         f.write("1. **total_indologists.csv** — complete master list.\n")
         f.write("2. **zograf_only_indologists.csv** — Petersburg-centric scholars.\n")
         f.write("3. **roerich_only_indologists.csv** — Moscow-centric scholars.\n")
-        f.write("4. **age_cohort_trend.csv** — median age per conference event (speakers with known birth year).\n\n")
+        f.write("4. **age_cohort_trend.csv** — median age per conference event (speakers with known birth year).\n")
+        f.write("5. **network_nodes.csv / network_edges.csv** — participation network exports with explicit edge types.\n\n")
 
         f.write("## 6. Демографический тренд: возраст участников на день конференции\n\n")
         f.write("> Возраст = год начала конференции − год рождения участника (погрешность ≤1 год).\n")
@@ -239,6 +417,7 @@ def main():
 
     print(f"analytics_output/: total_indologists.csv, zograf_only_indologists.csv, "
           f"roerich_only_indologists.csv, age_cohort_trend.csv")
+    print(f"network exports: {network_node_count} nodes, {network_edge_count} edges")
     print(f"indology_scholars_analytics.md: sections 1–6 written.")
     print(f"missing_birth_years.md: {len(missing_rows)} scholars listed.")
     conn.close()

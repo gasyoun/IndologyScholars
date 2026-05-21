@@ -93,6 +93,7 @@ The complete structured lists have been generated and exported to the `analytics
 2. **zograf_only_indologists.csv** — Petersburg-centric scholars.
 3. **roerich_only_indologists.csv** — Moscow-centric scholars.
 4. **age_cohort_trend.csv** — median age per conference event (speakers with known birth year).
+5. **network_nodes.csv / network_edges.csv** — participation network exports with explicit edge types.
 
 ## 6. Демографический тренд: возраст участников на день конференции
 

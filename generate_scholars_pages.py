@@ -17,6 +17,8 @@ from publication_helpers import (
     slugify,
     theme_label,
     theme_path,
+    clean_person_urls,
+    is_public_authority_record,
 )
 
 
@@ -162,10 +164,13 @@ def profile_structured_data(scholar, authority):
     name_en = scholar.get("full_name_en") or scholar.get("name")
     same_as = []
     person_authority = (authority.get("persons") or {}).get(scholar["id"], {})
-    for key in ("orcid", "wikidata", "viaf", "url"):
-        value = person_authority.get(key)
-        if value:
-            same_as.append(value)
+    
+    if is_public_authority_record(person_authority):
+        urls_dict = clean_person_urls(person_authority)
+        for key in ("orcid", "wikidata", "viaf", "openalex", "google_scholar", "official_url", "scopus_author_id", "researcher_id", "rinc_author_id"):
+            val = urls_dict.get(key)
+            if val:
+                same_as.append(val)
 
     person = {
         "@type": "Person",
@@ -237,6 +242,33 @@ def render_profile(scholar, related, authority):
     if scholar.get("is_independent"):
         status.append("Independent researcher")
 
+    person_authority = (authority.get("persons") or {}).get(scholar["id"], {})
+
+    external_links_html = ""
+    if is_public_authority_record(person_authority):
+        urls_dict = clean_person_urls(person_authority)
+        if urls_dict:
+            links = []
+            labels = {
+                "orcid": "ORCID",
+                "wikidata": "Wikidata",
+                "viaf": "VIAF",
+                "openalex": "OpenAlex",
+                "google_scholar": "Google Scholar",
+                "official_url": "Official profile",
+                "scopus_author_id": "Scopus",
+                "researcher_id": "ResearcherID",
+                "rinc_author_id": "РИНЦ / eLIBRARY"
+            }
+            for key, label in labels.items():
+                url = urls_dict.get(key)
+                if url:
+                    links.append(f'<a class="chip" href="{esc(url)}" target="_blank" rel="noopener">{esc(label)}</a>')
+            if links:
+                external_links_html = f"""
+        <h2>External Identifiers</h2>
+        <div class="chip-row">{''.join(links)}</div>"""
+
     body = f"""
         <header>
             <h1>{esc(name_ru)}<span class="life">{esc(format_lifespan(scholar, "ru"))}</span></h1>
@@ -258,7 +290,7 @@ def render_profile(scholar, related, authority):
         <div class="chip-row">{chip_links(cities, lambda city: '../' + city_path(city))}</div>
 
         <h2>Status Tags</h2>
-        <div class="chip-row">{''.join(f'<span class="chip">{esc(item)}</span>' for item in status) or '<span class="meta">No special status tags.</span>'}</div>
+        <div class="chip-row">{''.join(f'<span class="chip">{esc(item)}</span>' for item in status) or '<span class="meta">No special status tags.</span>'}</div>{external_links_html}
 
         <h2>Presentations</h2>
         <section class="list">{''.join(talk_card(talk) for talk in scholar.get("talks", []))}</section>

@@ -16,6 +16,7 @@ PUBLIC_PATHS = [
     "site.webmanifest",
     "CITATION.cff",
     "datapackage.json",
+    "data_dictionary.md",
     "conferences.db",
     "LICENSE",
     "README.md",
@@ -24,6 +25,8 @@ PUBLIC_PATHS = [
     "data-sources.html",
     "known-limitations.html",
     "how-to-cite.html",
+    "metrics-guide.html",
+    "networks.html",
     "indology_scholars_analytics.md",
 ]
 

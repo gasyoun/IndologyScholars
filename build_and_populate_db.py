@@ -4,9 +4,9 @@ import csv
 import io
 import sys
 import sqlite3
-import uuid
 import hashlib
 import json
+import unicodedata
 
 try:
     sys.stdout.reconfigure(encoding='utf-8')
@@ -608,6 +608,31 @@ def preprocess_line(line):
     return line.strip()
 
 
+def canonical_id_text(value):
+    text = "" if value is None else str(value)
+    text = unicodedata.normalize("NFKC", text)
+    text = text.replace("\xa0", " ").replace("\u200b", "")
+    text = text.replace("ё", "е").replace("Ё", "Е")
+    text = re.sub(r"\s+", " ", text.strip().lower())
+    return text
+
+
+def stable_hash(*parts, length=10):
+    basis = "|".join(canonical_id_text(part) for part in parts)
+    return hashlib.sha1(basis.encode("utf-8")).hexdigest()[:length]
+
+
+def stable_session_id(series_slug, year, day_or_venue, session_title, time_text, source_url, source_line):
+    prefix = "SESS_R" if series_slug == "roerich" else "SESS"
+    digest = stable_hash(series_slug, year, day_or_venue, session_title, time_text, source_url, source_line)
+    return f"{prefix}_{digest}"
+
+
+def stable_presentation_id(series_slug, year, title, first_speaker, session_order):
+    digest = stable_hash(series_slug, year, title, normalize_person_name(first_speaker or ""), str(session_order))
+    return f"PRES_{digest}"
+
+
 def infer_zograf_calendar_date(year, line):
     month_match = re.search(r'\b(\d{1,2})\s*(?:мая|РјР°СЏ)\b', line, flags=re.IGNORECASE)
     if month_match:
@@ -748,6 +773,7 @@ def populate_zograf_talks(conn):
         current_edv_id = None
         last_valid_edv_id = None
         current_session_id = None
+        session_order = 0
         
         for line in lines:
             # 1. Detect Day break in Zograf
@@ -778,7 +804,10 @@ def populate_zograf_talks(conn):
                 
                 # Insert session
                 if current_edv_id:
-                    current_session_id = f"SESS_{uuid.uuid4().hex[:8]}"
+                    session_order += 1
+                    current_session_id = stable_session_id(
+                        "zograf", year, current_edv_id, sess_title, time_match.group(0), source_url, f"{session_order}|{line}"
+                    )
                     cursor.execute("INSERT INTO session VALUES (?,?,?,?,?,?,?,?,?,?,?)",
                                    (current_session_id, current_edv_id, sess_title, "panel", start_time, end_time, time_match.group(0), None, source_url, line, None))
                     conn.commit()
@@ -822,13 +851,16 @@ def populate_zograf_talks(conn):
                         last_valid_edv_id = current_edv_id
 
                     # Create default session
-                    current_session_id = f"SESS_{uuid.uuid4().hex[:8]}"
+                    session_order += 1
+                    current_session_id = stable_session_id(
+                        "zograf", year, current_edv_id, "Научное заседание", "11:00–18:00", source_url, f"{session_order}|Automatic default session"
+                    )
                     cursor.execute("INSERT INTO session VALUES (?,?,?,?,?,?,?,?,?,?,?)",
                                    (current_session_id, current_edv_id, "Научное заседание", "panel", "11:00", "18:00", "11:00–18:00", None, source_url, "Automatic default session", None))
                     conn.commit()
 
                 # Insert presentation (one row, multiple speakers)
-                pres_id = f"PRES_{uuid.uuid4().hex[:8]}"
+                pres_id = stable_presentation_id("zograf", year, title_raw, speakers_with_affil[0][0], session_order)
                 is_online_val = 1 if 'онлайн' in line.lower() else 0
                 cursor.execute("INSERT INTO presentation VALUES (?,?,?,?,?,?,?,?,?,?,?)",
                                (pres_id, current_session_id, title_raw, None, "ru", None, is_online_val, None, source_url, line, None))
@@ -895,6 +927,7 @@ def populate_roerich_talks(conn):
         current_day_id = None
         current_edv_id = None
         current_session_id = None
+        session_order = 0
         
         for line in lines:
             # 1. Detect Day break in Roerich
@@ -934,7 +967,10 @@ def populate_roerich_talks(conn):
                 room = room_match.group(1).strip() if room_match else None
                 
                 if current_edv_id:
-                    current_session_id = f"SESS_R_{uuid.uuid4().hex[:8]}"
+                    session_order += 1
+                    current_session_id = stable_session_id(
+                        "roerich", year, current_edv_id, sess_title, raw_t, f"https://ancient.ivran.ru/novosti?year={year}", f"{session_order}|{line}"
+                    )
                     cursor.execute("INSERT INTO session VALUES (?,?,?,?,?,?,?,?,?,?,?)",
                                    (current_session_id, current_edv_id, sess_title, "panel", start_t, end_t, raw_t, None, f"https://ancient.ivran.ru/novosti?year={year}", line, room))
                     conn.commit()
@@ -966,12 +1002,15 @@ def populate_roerich_talks(conn):
                 
                 # Default session if none exists
                 if not current_session_id:
-                    current_session_id = f"SESS_R_{uuid.uuid4().hex[:8]}"
+                    session_order += 1
+                    current_session_id = stable_session_id(
+                        "roerich", year, current_edv_id, "Научное заседание", "11:00–18:00", f"https://ancient.ivran.ru/novosti?year={year}", f"{session_order}|Default"
+                    )
                     cursor.execute("INSERT INTO session VALUES (?,?,?,?,?,?,?,?,?,?,?)",
                                    (current_session_id, current_edv_id, "Научное заседание", "panel", "11:00", "18:00", "11:00–18:00", None, f"https://ancient.ivran.ru/novosti?year={year}", "Default", None))
                 
                 # Insert presentation
-                pres_id = f"PRES_R_{uuid.uuid4().hex[:8]}"
+                pres_id = stable_presentation_id("roerich", year, title_raw, speaker_raw, session_order)
                 is_online_val = 1 if 'онлайн' in line.lower() else 0
                 cursor.execute("INSERT INTO presentation VALUES (?,?,?,?,?,?,?,?,?,?,?)",
                                (pres_id, current_session_id, title_raw, None, "ru", None, is_online_val, None, f"https://ancient.ivran.ru/novosti?year={year}", line, None))

@@ -31,15 +31,18 @@ jobs:
       - name: Install Dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install requests beautifulsoup4
+          pip install -r requirements.txt
 
       - name: Compile Python Generators
         run: |
-          python -m py_compile build_and_populate_db.py generate_analytics.py generate_site_data.py generate_scholars_pages.py generate_publication_pages.py validate_publication.py prepare_pages_artifact.py publication_helpers.py
+          python -m py_compile build_and_populate_db.py generate_analytics.py generate_site_data.py generate_scholars_pages.py generate_publication_pages.py validate_publication.py prepare_pages_artifact.py publication_helpers.py scratch/export_presentation_id_manifest.py scratch/compare_id_manifests.py
 
       - name: Rebuild Publication Artifacts
         run: |
+          python scratch/export_presentation_id_manifest.py --out scratch/ci_manifest_before.csv
           python build_and_populate_db.py
+          python scratch/export_presentation_id_manifest.py --out scratch/ci_manifest_after.csv
+          python scratch/compare_id_manifests.py scratch/ci_manifest_before.csv scratch/ci_manifest_after.csv --out analytics_output/id_stability_audit.json --csv-out analytics_output/id_stability_changed_ids.csv
           python generate_analytics.py
           python generate_site_data.py
           python generate_scholars_pages.py

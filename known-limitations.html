@@ -34,7 +34,7 @@
       "name": "Russian Indological Research Archive",
       "url": "https://gasyoun.github.io/IndologyScholars/"
     },
-    "dateModified": "2026-05-21"
+    "dateModified": "2026-05-22"
   },
   {
     "@context": "https://schema.org",
@@ -161,6 +161,25 @@
             color: var(--text);
             font-size: 1rem;
         }
+        .caveat-block {
+            border: 1px solid rgba(139,92,246,0.35);
+            border-left: 4px solid var(--accent);
+            border-radius: 8px;
+            background: rgba(139,92,246,0.07);
+            padding: 0.9rem 1.1rem;
+            margin: 1.25rem 0 1.75rem;
+            max-width: 820px;
+        }
+        .caveat-block strong {
+            color: #c4b5fd;
+            display: block;
+            margin-bottom: 0.35rem;
+        }
+        .caveat-block p {
+            font-size: 0.93rem;
+            margin: 0;
+            color: var(--muted);
+        }
     </style>
 </head>
 <body>
@@ -177,13 +196,42 @@
             <a href="/IndologyScholars/data-quality.html">Quality</a>
             <a href="/IndologyScholars/en.html">English</a>
             <a href="/IndologyScholars/how-to-cite.html">Cite</a>
+            <a href="/IndologyScholars/metrics-guide.html">Metrics</a>
         </nav>
 
-        <header><h1>Known Limitations</h1><p>This is a structured research aid, not a final authority file. Each derived field should be read together with its source program record.</p></header>
+        <header>
+            <h1>Known Limitations</h1>
+            <p>Users of this archive should be aware of the following structural limitations and boundary conditions of digital humanities reconstruction:</p>
+        </header>
         <section class="list">
-            <article class="card"><strong>Name matching</strong><div class="meta">Identity matching is deterministic and may require manual review for ambiguous initials, transliteration variants, or shared surnames.</div></article>
-            <article class="card"><strong>Affiliations</strong><div class="meta">Institution pages use normalized clusters derived from raw affiliation strings; historical forms may be broader than formal employment relationships.</div></article>
-            <article class="card"><strong>Themes</strong><div class="meta">Theme labels are broad heuristic classes based on presentation titles and should be treated as navigational aids.</div></article>
+            <article class="card">
+                <strong>Name and Initials Ambiguity</strong>
+                <p>Some historical programs omit full first names or patronymics. Identity matching relies on initials and surnames, which creates risk of identity collision or incorrect grouping without manual verification.</p>
+            </article>
+            <article class="card">
+                <strong>Transliteration and Spelling Variants</strong>
+                <p>Russian name spelling, especially in international publications and Romanized metadata, varies significantly. Finding correct external identifiers (e.g. ORCID, Wikidata) requires resolving these spelling variations.</p>
+            </article>
+            <article class="card">
+                <strong>Historical and Temporary Affiliations</strong>
+                <p>Affiliations represent the institutional connection reported by the scholar at the time of the conference. They do not capture permanent employment history, retirements, or multiple simultaneous affiliations.</p>
+            </article>
+            <article class="card">
+                <strong>Broad Theme Classification</strong>
+                <p>Thematic classification is a coarse categorization based on presentation titles. It serves as a navigational index rather than a detailed content-analysis model.</p>
+            </article>
+            <article class="card">
+                <strong>External Database Coverage Gaps</strong>
+                <p>Global open indexes like OpenAlex have lower coverage for Soviet and Russian humanities publications. Consequently, citation counts or publication list completeness from these sources are biased.</p>
+            </article>
+            <article class="card">
+                <strong>РИНЦ / eLIBRARY Constraints</strong>
+                <p>RINС/eLIBRARY contains extensive data but lacks a public, unrestricted API. All linkages are mapped via human review and cannot be scraped or fetched in bulk automatically.</p>
+            </article>
+            <article class="card">
+                <strong>Presentation Identifier Stability</strong>
+                <p>Presentation and session records use deterministic hash-based identifiers. For audit-heavy reuse, combine those IDs with the published presentation ID manifest and migration report.</p>
+            </article>
         </section>
 
         <div class="footer">© 2026 Russian Indological Research Archive. Generated from the normalized conference archive.</div>

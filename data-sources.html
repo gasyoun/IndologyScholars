@@ -34,7 +34,7 @@
       "name": "Russian Indological Research Archive",
       "url": "https://gasyoun.github.io/IndologyScholars/"
     },
-    "dateModified": "2026-05-21"
+    "dateModified": "2026-05-22"
   },
   {
     "@context": "https://schema.org",
@@ -161,6 +161,25 @@
             color: var(--text);
             font-size: 1rem;
         }
+        .caveat-block {
+            border: 1px solid rgba(139,92,246,0.35);
+            border-left: 4px solid var(--accent);
+            border-radius: 8px;
+            background: rgba(139,92,246,0.07);
+            padding: 0.9rem 1.1rem;
+            margin: 1.25rem 0 1.75rem;
+            max-width: 820px;
+        }
+        .caveat-block strong {
+            color: #c4b5fd;
+            display: block;
+            margin-bottom: 0.35rem;
+        }
+        .caveat-block p {
+            font-size: 0.93rem;
+            margin: 0;
+            color: var(--muted);
+        }
     </style>
 </head>
 <body>
@@ -177,13 +196,45 @@
             <a href="/IndologyScholars/data-quality.html">Quality</a>
             <a href="/IndologyScholars/en.html">English</a>
             <a href="/IndologyScholars/how-to-cite.html">Cite</a>
+            <a href="/IndologyScholars/metrics-guide.html">Metrics</a>
         </nav>
 
-        <header><h1>Data Sources</h1><p>The archive works from local cached copies of public conference program pages so that rebuilds are reproducible even if upstream pages change.</p></header>
+        <header>
+            <h1>Data Sources</h1>
+            <p>The archive distinguishes between primary corpus materials representing the actual conference records and external authority databases used for context and entity disambiguation.</p>
+        </header>
+
+        <h2>Primary Corpus Sources</h2>
+        <section class="grid">
+            <article class="card">
+                <strong>Zograf Readings</strong>
+                <div class="meta">Programs and lists of presentations from the St. Petersburg Readings (2004–present). Cached files are stored in html_cache/zograf_*.html.</div>
+            </article>
+            <article class="card">
+                <strong>Roerich Readings</strong>
+                <div class="meta">Programs and lists of presentations from the Moscow Readings (2007–present). Cached files are stored in html_cache/roerich_*.html.</div>
+            </article>
+            <article class="card">
+                <strong>Curated Seed Data</strong>
+                <div class="meta">Explicit event dates, session chairs, venue configurations, and media mappings are maintained in zograf-roerich-db.md.</div>
+            </article>
+        </section>
+
+        <h2>External Authority Mappings</h2>
+        <p>To link our local corpus with the global scientific web, we match scholars and institutions to external authority files. These external records are treated as verified assertions, not primary data sources:</p>
         <section class="list">
-            <article class="card"><strong>Zograf Readings</strong><div class="meta">IOM RAS / St. Petersburg program materials represented in html_cache/zograf_*.html.</div></article>
-            <article class="card"><strong>Roerich Readings</strong><div class="meta">IAS RAS / Moscow program materials represented in html_cache/roerich_*.html.</div></article>
-            <article class="card"><strong>Curated seed data</strong><div class="meta">zograf-roerich-db.md provides stable event, venue, media, and organization seed records.</div></article>
+            <article class="card">
+                <strong>Authority Overrides</strong>
+                <div class="meta">Canonical identifiers, latin names, and manual overrides are loaded from authority_ids.json.</div>
+            </article>
+            <article class="card">
+                <strong>Scholarly & Citation Databases</strong>
+                <div class="meta">Optional connections to ORCID, Wikidata, VIAF, OpenAlex, Google Scholar, and РИНЦ/eLIBRARY are recorded when manually verified.</div>
+            </article>
+            <article class="card">
+                <strong>Institutional Registries</strong>
+                <div class="meta">Normalized organizations are linked to ROR (Research Organization Registry) to ensure global interoperability.</div>
+            </article>
         </section>
 
         <div class="footer">© 2026 Russian Indological Research Archive. Generated from the normalized conference archive.</div>

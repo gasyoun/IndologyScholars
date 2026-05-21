@@ -1,0 +1,3042 @@
+{
+  "schema_version": "1.0.0",
+  "generated": "2026-05-22",
+  "build": {
+    "source": "IndologyScholars",
+    "pipeline_version": "2026-05-21",
+    "generator": "generate_publication_pages.py"
+  },
+  "file_count": 606,
+  "files": [
+    {
+      "path": "404.html",
+      "size_bytes": 8248,
+      "sha256": "9d8e8380d0d77a999f6420a0101ef74388f12a711417a1efe21503d390f65cad"
+    },
+    {
+      "path": "CITATION.cff",
+      "size_bytes": 719,
+      "sha256": "915a253ed421ac0230b9477723c7ce7ad3df336cef67a955044d044d256d4cd6"
+    },
+    {
+      "path": "analytics_output/age_cohort_trend.csv",
+      "size_bytes": 1797,
+      "sha256": "4dbe9958a99d2637ef8cf4e9bd0c46fd7bd07dc0df1bae52bee017bf22513b77"
+    },
+    {
+      "path": "analytics_output/authority_coverage.csv",
+      "size_bytes": 21889,
+      "sha256": "2c9c1886787f2d07b571a7a42998b0df4f84333e46b1d23c4bb77ccfa8e0c06d"
+    },
+    {
+      "path": "analytics_output/authority_review_queue.csv",
+      "size_bytes": 81376,
+      "sha256": "47e34ae35fdd1dcc85fb098a82514c5d15591c01cbff2f169e4e7664cc2fa340"
+    },
+    {
+      "path": "analytics_output/closedness_metrics.csv",
+      "size_bytes": 285,
+      "sha256": "dda653f87071d06123ec6fd77628c6a35419628de3aa1da5b1a4fd27da23ecf0"
+    },
+    {
+      "path": "analytics_output/cohort_survival.csv",
+      "size_bytes": 5096,
+      "sha256": "719030a80a38c2e3bb91f27303aeaa8932ace65843c352ab7274217bea1bf519"
+    },
+    {
+      "path": "analytics_output/data_quality_report.json",
+      "size_bytes": 2109,
+      "sha256": "a6d5efb5eca357d30abc9b7a3ba8d2702d1436c07b72ecc3273debac11d88d70"
+    },
+    {
+      "path": "analytics_output/debut_timing.csv",
+      "size_bytes": 14264,
+      "sha256": "e703528304a181bc1dd018d2ac1374fee5fea420f0958dda19abb032635cf362"
+    },
+    {
+      "path": "analytics_output/debut_timing.svg",
+      "size_bytes": 16870,
+      "sha256": "7013150fb705f96a9eacdf5e9273abbe3423243515169f1107e6cab9f188faab"
+    },
+    {
+      "path": "analytics_output/field_provenance_authority.csv",
+      "size_bytes": 8669,
+      "sha256": "4e89fa2cdae4d55d7aa786c7139f30a81ad4cd36f42cb57b32386d201588d1a1"
+    },
+    {
+      "path": "analytics_output/field_provenance_biographical.csv",
+      "size_bytes": 55515,
+      "sha256": "51083a0b3bf9dfd949a6ece8b32e185a93b3528d8b89bc3f8afc15af8c9853b2"
+    },
+    {
+      "path": "analytics_output/field_provenance_themes.csv",
+      "size_bytes": 284664,
+      "sha256": "76d83e74af24ff948b30828d7ad537f8f2e2bcee833abccbeca3437bca9d77a3"
+    },
+    {
+      "path": "analytics_output/id_migration_presentation.csv",
+      "size_bytes": 216718,
+      "sha256": "c335f19ca4a0edf4962f2314a9f86e323d107273923dcdc45d4153eb1f1104e7"
+    },
+    {
+      "path": "analytics_output/id_migration_presentation.json",
+      "size_bytes": 440979,
+      "sha256": "ab93bf02befb4ecda1f3db64b9e7e2cfe40b6cac996749efd361af930bdfd451"
+    },
+    {
+      "path": "analytics_output/id_stability_audit.json",
+      "size_bytes": 935,
+      "sha256": "552e7c6243873929d5eccf2d7c42bce6cca4c10114afc47adae124423f018ffa"
+    },
+    {
+      "path": "analytics_output/id_stability_changed_ids.csv",
+      "size_bytes": 99,
+      "sha256": "d415e5cf3dd0f05b8821395f12e9f7c9e9ff7b0c4b40ff455f130e9bd0f87cb6"
+    },
+    {
+      "path": "analytics_output/network_edges.csv",
+      "size_bytes": 387549,
+      "sha256": "fc5e795b88cd673f38e73ab12396a756b31afebd4f34a491615b57be75ef173e"
+    },
+    {
+      "path": "analytics_output/network_nodes.csv",
+      "size_bytes": 21977,
+      "sha256": "72cb6ff0b6bbf0f23f525e136700ae822fa427aafb512a2fa17e31149e1a4a56"
+    },
+    {
+      "path": "analytics_output/newcomer_rate_by_year.csv",
+      "size_bytes": 754,
+      "sha256": "385a9b9e8aee97cc6e1473bda63344c195eaad61efef7387b29fa2be71ec6cd3"
+    },
+    {
+      "path": "analytics_output/no_affiliation_history.md",
+      "size_bytes": 11973,
+      "sha256": "e5a5907d3e926fe99ca0b686c5b193f45ac45e5c1fcefa462bc50727154324e3"
+    },
+    {
+      "path": "analytics_output/online_repeaters_2020_plus.csv",
+      "size_bytes": 289,
+      "sha256": "c7ba1364fc8afc36acc059631d27cb3f05c151ecc264c110f7192948500bd938"
+    },
+    {
+      "path": "analytics_output/online_share_by_year.csv",
+      "size_bytes": 1389,
+      "sha256": "dc1cef88f69306dc88a0379dda9160612616767a2913e83612848e739e261a7b"
+    },
+    {
+      "path": "analytics_output/presentation_id_manifest.csv",
+      "size_bytes": 345759,
+      "sha256": "0c6959d42bda385f2ee4ebc03c2b4edd5b69d29ca191c9782e382e98eba0d956"
+    },
+    {
+      "path": "analytics_output/rinc_lookup_queue.csv",
+      "size_bytes": 37582,
+      "sha256": "c8158c83fa4c490969189267696f78f374a8959e1556d39554da7d837a4f763b"
+    },
+    {
+      "path": "analytics_output/roerich_only_indologists.csv",
+      "size_bytes": 2845,
+      "sha256": "c5c5acfbbd2b6f33dab1ffa356562e3e7c33679855f9fc29e4998adc60fd276f"
+    },
+    {
+      "path": "analytics_output/theme_codes_baseline.csv",
+      "size_bytes": 187960,
+      "sha256": "d56fb118383c57e4cc3b1e51be8b7f514670820166a0e2bd3bf58b023c201bd8"
+    },
+    {
+      "path": "analytics_output/theme_codes_final.csv",
+      "size_bytes": 307511,
+      "sha256": "262d92cac781b0b7c683ac1423a68d75467e69e7938b54f23427a9bf6412aa68"
+    },
+    {
+      "path": "analytics_output/theme_codes_llm.csv",
+      "size_bytes": 290168,
+      "sha256": "d903baaf0f023493a85a08f17ed09a18c7daffae844df3a1439e2546fb417aca"
+    },
+    {
+      "path": "analytics_output/theme_codes_uncertain.csv",
+      "size_bytes": 4175,
+      "sha256": "ac3d04b89a0f9636b861c1eb27bc46b871d633e799af368f1611058251ace953"
+    },
+    {
+      "path": "analytics_output/theme_review_queue.csv",
+      "size_bytes": 148032,
+      "sha256": "567f9e5367ac5a0155fb7605aba678a9921cdcdd96a84e363555929451d88410"
+    },
+    {
+      "path": "analytics_output/total_indologists.csv",
+      "size_bytes": 17442,
+      "sha256": "7edef9f8dfc282e053c3ec09054ece7d32674ebed1b39c00bd02f1cd645259aa"
+    },
+    {
+      "path": "analytics_output/video_presentation_mapping.csv",
+      "size_bytes": 66007,
+      "sha256": "92c1e1b62da4a52e4e01520c938ac16ff8ed82609fe062ee23f639068106d275"
+    },
+    {
+      "path": "analytics_output/youtube_playlist_summary.csv",
+      "size_bytes": 340,
+      "sha256": "f88dec55a953f86aa585176fe3ff3d0f15bb85e154cf69caceade65c26712a37"
+    },
+    {
+      "path": "analytics_output/youtube_video_list.csv",
+      "size_bytes": 53481,
+      "sha256": "e5f10d3de55fc06304a996a0a52cccb85d9893e9431190e6ed5a9e6530db7763"
+    },
+    {
+      "path": "analytics_output/zograf_2026_affiliation_audit.csv",
+      "size_bytes": 15014,
+      "sha256": "804aae06baaac8b52d6ce2a11d4798a2a912e7eb316da4e253f494406b11edc1"
+    },
+    {
+      "path": "analytics_output/zograf_2026_no_affiliation.md",
+      "size_bytes": 8168,
+      "sha256": "d4855e4fe0c51ad088596bc948b2b2a54b6dfa79c5f9ab17931784347f2976b6"
+    },
+    {
+      "path": "analytics_output/zograf_only_indologists.csv",
+      "size_bytes": 8964,
+      "sha256": "54aa010beaf3390061b74784318a66c3ef1d9919e10c70f5df8eb9ddfc948c0c"
+    },
+    {
+      "path": "assets/favicon.svg",
+      "size_bytes": 350,
+      "sha256": "8d8e26574a1ed52f656a5532dbd77b9ebeb7abdb10e4afc785e62bece5ad19d3"
+    },
+    {
+      "path": "assets/og-image.png",
+      "size_bytes": 98726,
+      "sha256": "8060348074349368f7565a41f153af337c9eabbd1e075fbba1ec9946ff082825"
+    },
+    {
+      "path": "cities/deli.html",
+      "size_bytes": 9106,
+      "sha256": "9924a6f3310fd7009eccac467d5af4092b1c27916529087f9136b3d9e9e35c83"
+    },
+    {
+      "path": "cities/elista.html",
+      "size_bytes": 10773,
+      "sha256": "be5a91868f1a8126561c65287504f1702d30cf0877c4e325d7b47d1c048734a3"
+    },
+    {
+      "path": "cities/index.html",
+      "size_bytes": 9658,
+      "sha256": "6ab15869f7d5b72a27d01817949cfdd1d8f9c3b81541919437b063b3ce0bc70a"
+    },
+    {
+      "path": "cities/kazan.html",
+      "size_bytes": 12508,
+      "sha256": "6b975ced8bf632df633178c510d63061654fcb04277cc8af6b1c91c2ffbcdd0d"
+    },
+    {
+      "path": "cities/krasnodar.html",
+      "size_bytes": 12437,
+      "sha256": "6e14cc8c4a17df27645645ed8825dc28290eec5e83795be6a7709a7e056b8269"
+    },
+    {
+      "path": "cities/moskva.html",
+      "size_bytes": 145859,
+      "sha256": "cbdaaf92f5b4480f8fd627a504f828fc70deb2e7eceb8957bff2c6638e833de1"
+    },
+    {
+      "path": "cities/nizhnii-novgorod.html",
+      "size_bytes": 9680,
+      "sha256": "245ede4858e5a57b290a46ff3fa202ca0aba9fcbb8160bfe65864f449b2dafd7"
+    },
+    {
+      "path": "cities/novosibirsk.html",
+      "size_bytes": 10664,
+      "sha256": "7044ce3e7a1b3856c581f73963e00f01d94c12af6713627462370ef639b73b24"
+    },
+    {
+      "path": "cities/penza.html",
+      "size_bytes": 14455,
+      "sha256": "5cec9b7538b38255ec93e2664bedab342b602350ac7df523a863f69244c78881"
+    },
+    {
+      "path": "cities/sankt-peterburg.html",
+      "size_bytes": 148937,
+      "sha256": "b78247859e5b1e1b9b884cb6a53de750fb1613f9410aaf596d713fb3ed59d4ad"
+    },
+    {
+      "path": "cities/ulan-ude.html",
+      "size_bytes": 9383,
+      "sha256": "d3133bd709211abd55699602a844297ef1f8e977b0c04160b8e1150202d38c2b"
+    },
+    {
+      "path": "cities/vilnyus.html",
+      "size_bytes": 9199,
+      "sha256": "4191ab2c826db9e22e1308d2a7c1aca0b78bdcae60cba8c9fe92cb2a2f54f632"
+    },
+    {
+      "path": "conferences/index.html",
+      "size_bytes": 12425,
+      "sha256": "03a10ace103c1db85d349cba920461a4c04eb38b509892f39436e09688735aaf"
+    },
+    {
+      "path": "conferences/roerich-2010.html",
+      "size_bytes": 8245,
+      "sha256": "194c27913f2ee42d6fb45a9bc52db6d7d610692352037b6cc99075f8e5cfc9fb"
+    },
+    {
+      "path": "conferences/roerich-2012.html",
+      "size_bytes": 23010,
+      "sha256": "d80cf0631dab9e2cd813b7c50d18f42cedbd06a7881dc5e0a044079fac5f2a14"
+    },
+    {
+      "path": "conferences/roerich-2015.html",
+      "size_bytes": 22617,
+      "sha256": "bc46a269f974a6310329d6e996f00f990ae76209efaff6a58843faec8099f6ee"
+    },
+    {
+      "path": "conferences/roerich-2016.html",
+      "size_bytes": 23146,
+      "sha256": "1b5ecba6bf5034246bc9fb23b797eae4f591db3ddcb8f588b8a2bbe6a51b6470"
+    },
+    {
+      "path": "conferences/roerich-2017.html",
+      "size_bytes": 25129,
+      "sha256": "057302dd607bff8f86b8958ad1fd21f7dce1db9b5f5b64990536c41ee7a595ce"
+    },
+    {
+      "path": "conferences/roerich-2018.html",
+      "size_bytes": 25315,
+      "sha256": "7dda4a0b36708a6851ceee5a77a5428365453d836a6e03364ee062f3c2286ae3"
+    },
+    {
+      "path": "conferences/roerich-2019.html",
+      "size_bytes": 22947,
+      "sha256": "41d782449abfcf26efaa22c9bf4feb69731bbbbeb459e91e0f4c6ac9612131d9"
+    },
+    {
+      "path": "conferences/roerich-2020.html",
+      "size_bytes": 23332,
+      "sha256": "7595c1c9a0b621fa4f4340dba50b7ded270f97ad86d62b587706a2342183d143"
+    },
+    {
+      "path": "conferences/roerich-2021.html",
+      "size_bytes": 23521,
+      "sha256": "ed217f7924ead08feb3da1e6580c0415c05726dd624deefb14d3ed8e8bec2d28"
+    },
+    {
+      "path": "conferences/roerich-2022.html",
+      "size_bytes": 21618,
+      "sha256": "4c5b099a2414ba3b45d698bbf7f3229e9398304f0858cf3633132cd540b63d6a"
+    },
+    {
+      "path": "conferences/roerich-2023.html",
+      "size_bytes": 16187,
+      "sha256": "0dfc541ef265efda69118a6d17987459c23d06b8c738c306c6bd07788d6e48af"
+    },
+    {
+      "path": "conferences/roerich-2024.html",
+      "size_bytes": 22644,
+      "sha256": "762a06b89c494970392fa58bcaea3b1cf1c1c9ccd2639f7763736ee3506e4cfe"
+    },
+    {
+      "path": "conferences/roerich-2025.html",
+      "size_bytes": 28038,
+      "sha256": "ff4387c602bd56ff32cef67929abaf5f908e5132ddb74010220c69bfda4a62a7"
+    },
+    {
+      "path": "conferences/zograf-2004.html",
+      "size_bytes": 13612,
+      "sha256": "446ce0b0c091429ed84d4c5e134116ba20be46cfc1071176c586a15ffcfa972c"
+    },
+    {
+      "path": "conferences/zograf-2006.html",
+      "size_bytes": 21710,
+      "sha256": "580691b73635bc0792fdcabe65170ef7dca24238c10a3c45a577a6c76be79a52"
+    },
+    {
+      "path": "conferences/zograf-2007.html",
+      "size_bytes": 20502,
+      "sha256": "756a759dce8add71e5d0f5761102f578f031b7ea505f39146457a864132c5332"
+    },
+    {
+      "path": "conferences/zograf-2010.html",
+      "size_bytes": 13670,
+      "sha256": "bd67932f48d463ab76c5cb1c5173d7a6cdb53b1097b9b2107500c869eb47cfbd"
+    },
+    {
+      "path": "conferences/zograf-2011.html",
+      "size_bytes": 23583,
+      "sha256": "50bfd4c8b13e93d86246c3f75e82b5d54c3d9ea4d68e7998941cd9e20e6d3b54"
+    },
+    {
+      "path": "conferences/zograf-2012.html",
+      "size_bytes": 23953,
+      "sha256": "27e04e60f320bed43641f67e690cef50419c89a15e5616fa0941f1632bea3189"
+    },
+    {
+      "path": "conferences/zograf-2013.html",
+      "size_bytes": 23638,
+      "sha256": "16efc89110bdec37d49a0ed35f7f281e2f441ae92129303147b2c6728f2cf146"
+    },
+    {
+      "path": "conferences/zograf-2014.html",
+      "size_bytes": 27960,
+      "sha256": "3144c802704d6dac562329da5748af4c0fd79d8635eb4dd11392e1c3514aa819"
+    },
+    {
+      "path": "conferences/zograf-2018.html",
+      "size_bytes": 30753,
+      "sha256": "4e42692c7cae74e6b592b08052a7755c8684e981cb15b4a13e07bd8acae944b1"
+    },
+    {
+      "path": "conferences/zograf-2019.html",
+      "size_bytes": 33217,
+      "sha256": "c91ea883fa23ab267adb62c22a84af8f0f7f0aa1eb03c188f18ae53293389961"
+    },
+    {
+      "path": "conferences/zograf-2020.html",
+      "size_bytes": 32714,
+      "sha256": "f97b6e0829488bb994878a23f53e99321408049230f7ee94f881d5e5828e2b6b"
+    },
+    {
+      "path": "conferences/zograf-2021.html",
+      "size_bytes": 32286,
+      "sha256": "c70a26f534fb238022b5744385d16ac4bea232e5023dc3ae1e628c274f30fe86"
+    },
+    {
+      "path": "conferences/zograf-2022.html",
+      "size_bytes": 24157,
+      "sha256": "754ea638702d1d40a5d2b6d9eb58140f1d651cf8b9690980735800e2018bfa3c"
+    },
+    {
+      "path": "conferences/zograf-2023.html",
+      "size_bytes": 21780,
+      "sha256": "57d36bc54b44a1f3e87e9dda611b3799610a095add6ac95d8bb21fa2c0552b66"
+    },
+    {
+      "path": "conferences/zograf-2024.html",
+      "size_bytes": 10190,
+      "sha256": "65d2f953002fe90b6d2b9ef6e082b598b1dc25abc8d77f2241ffc56829ab4ec8"
+    },
+    {
+      "path": "conferences/zograf-2025.html",
+      "size_bytes": 39659,
+      "sha256": "cf1ae0334ab884852757d8c18bc20c8cceefa5fa482c39d9a40975f9ed8ef386"
+    },
+    {
+      "path": "conferences/zograf-2026.html",
+      "size_bytes": 35955,
+      "sha256": "e834e4817471d02a4198df3a43797b4015694febb00673a5ed370434d3b02aa6"
+    },
+    {
+      "path": "data-quality.html",
+      "size_bytes": 11755,
+      "sha256": "f0a1b54963049ef29604d53711a5ad4d0000ac740a33fa6497d8167499775d97"
+    },
+    {
+      "path": "data_dictionary.md",
+      "size_bytes": 12204,
+      "sha256": "91c31cda31947ab5abd3b39cb307b6349400695759f79222408c823ef8bf86a1"
+    },
+    {
+      "path": "datapackage.json",
+      "size_bytes": 8073,
+      "sha256": "5916505a4f040cb802e994ceb035868a10904526f1f58fe582a9c5cdab20d9a3"
+    },
+    {
+      "path": "download-data.html",
+      "size_bytes": 16921,
+      "sha256": "31fc9349d10f11482769e802e1c51456a60dd229e52f9f06b3fec1da787c5273"
+    },
+    {
+      "path": "en.html",
+      "size_bytes": 9703,
+      "sha256": "4cd0f1110e49bd7782066ba2c56b0e54d7134691673864437d961809ca04fc1b"
+    },
+    {
+      "path": "how-to-cite.html",
+      "size_bytes": 8810,
+      "sha256": "fad16dfac06706b41febc047927cc6c253b0a0096ef8c68055f80789188f9ebb"
+    },
+    {
+      "path": "index.html",
+      "size_bytes": 146521,
+      "sha256": "ee969bb48dce0f29d0f262b6687165603c1de849766d428682da114af552600b"
+    },
+    {
+      "path": "institutions/gosudarstvennyi-ermitazh.html",
+      "size_bytes": 9731,
+      "sha256": "a5767ce599723b3dfcd3a34d2042de4dca2cb2f94815d0d96aab903b41abc707"
+    },
+    {
+      "path": "institutions/if-ran.html",
+      "size_bytes": 15671,
+      "sha256": "6b19f23902a9d30e7bda66be6095fe6cdaa75d7c87c9fba42a7d37cbc6d5aeb5"
+    },
+    {
+      "path": "institutions/index.html",
+      "size_bytes": 9688,
+      "sha256": "370103f41d76c1feded51af995669e041f48dd9d5ac8920d71718dbd6084b5a3"
+    },
+    {
+      "path": "institutions/iv-ran.html",
+      "size_bytes": 91528,
+      "sha256": "854d0d751bbbf704b7f8e9d84285c86b210b1fc5a99828fb1609b0295e87938f"
+    },
+    {
+      "path": "institutions/ivr-ran.html",
+      "size_bytes": 9332,
+      "sha256": "c5e72ac6e1c8d08fbf478cfab0783026d4e6cec45946f0e54c1accc63d024de5"
+    },
+    {
+      "path": "institutions/mae-ran.html",
+      "size_bytes": 9974,
+      "sha256": "0b733f32459b8ec00a782a5ad1205ac568a0e2ceec4a7a30fbd908ed025a1eb3"
+    },
+    {
+      "path": "institutions/mgu.html",
+      "size_bytes": 26765,
+      "sha256": "8e0d34aee85f9026de41d02ad9113d4539cc7f4776cc5e12246cbacff5dd10e6"
+    },
+    {
+      "path": "institutions/nezavisimye-issledovateli.html",
+      "size_bytes": 9977,
+      "sha256": "c9ece3ceaaf99a46351ebe4d0d985a10b1daca4c9bf9dc9693c4027193a57fae"
+    },
+    {
+      "path": "institutions/niu-vshe.html",
+      "size_bytes": 17017,
+      "sha256": "353a36e4ef74a5a0da781ac4c4a54cfd98793a822d12ae9c7d8c49a0520e98ec"
+    },
+    {
+      "path": "institutions/rggu.html",
+      "size_bytes": 10788,
+      "sha256": "d4460e7b80b5937eeca372e9a1bead82a7bce12668b094ba61bac79869b885b9"
+    },
+    {
+      "path": "institutions/spbgu.html",
+      "size_bytes": 29535,
+      "sha256": "1b244c74ef8a904e17f74f353f80b63c98f45b329ec8163c1a08ef1925b41dec"
+    },
+    {
+      "path": "known-limitations.html",
+      "size_bytes": 10068,
+      "sha256": "df5e81167517b4f44f39a3dd201ce669d782541b1793a32eae69212b6b5a6f9f"
+    },
+    {
+      "path": "methodology.html",
+      "size_bytes": 10019,
+      "sha256": "d74024eb5952286c868ba3fa191b5e9702c8eb70627e1839a9d8f4c5a14755c8"
+    },
+    {
+      "path": "metrics-guide.html",
+      "size_bytes": 10190,
+      "sha256": "cf874a07a802482c52bfe7e2c25e988426b026aaa1a90beabd43721d60d5602e"
+    },
+    {
+      "path": "networks.html",
+      "size_bytes": 10687,
+      "sha256": "467258a88103c8dbec1b772d3fd461493a2a02e9f190106900be0d7a5c2f6b34"
+    },
+    {
+      "path": "robots.txt",
+      "size_bytes": 188,
+      "sha256": "87f0648ba8630db5532ef50c8d2521f08c878967687774d8e6b55b09f906109d"
+    },
+    {
+      "path": "scholars/PERS_003adcfe.html",
+      "size_bytes": 906,
+      "sha256": "5e8274738bbbac4aba471b459980b0f87deeb587f4bc588534f631c31da62936"
+    },
+    {
+      "path": "scholars/PERS_00c3b0cc.html",
+      "size_bytes": 813,
+      "sha256": "d27d43e99d684cfefcc2ec64e53cb1bb82bbe006af65a7e8335428c80e018e85"
+    },
+    {
+      "path": "scholars/PERS_01aafd44.html",
+      "size_bytes": 798,
+      "sha256": "95686e593cd0b80a73dfdb9470b49f513c8fdf7c0e70a6d8aee8b072e12b87e9"
+    },
+    {
+      "path": "scholars/PERS_04c4d444.html",
+      "size_bytes": 824,
+      "sha256": "e679c109fed2feb8e29f1c864e785ad3b41548639ba86656d9d00aa39e60e67c"
+    },
+    {
+      "path": "scholars/PERS_05707a8e.html",
+      "size_bytes": 837,
+      "sha256": "3d92ff44f3280283798ba6ae2d2aeeb9ad2fae8e0b1ba7c9619e5869a5b3537b"
+    },
+    {
+      "path": "scholars/PERS_05d56645.html",
+      "size_bytes": 837,
+      "sha256": "8e8f98a10ad672d649a926c8fd75f747c07fe0fb030cd0e3864a2081e30e1be1"
+    },
+    {
+      "path": "scholars/PERS_0665f215.html",
+      "size_bytes": 932,
+      "sha256": "370226804e57767fa81d3fc85c8428d537d7f07fcad587d37aba3d70abbcca9e"
+    },
+    {
+      "path": "scholars/PERS_06ee047f.html",
+      "size_bytes": 814,
+      "sha256": "ab04808faa2ab92dfbaefa575ceaa83106cc5c4df09a78124e906842945fe25d"
+    },
+    {
+      "path": "scholars/PERS_07adc1e6.html",
+      "size_bytes": 798,
+      "sha256": "787930a03817fc81f7f11f34057217a67b587604c5cdfa11d0db494553a41ea0"
+    },
+    {
+      "path": "scholars/PERS_088c4df7.html",
+      "size_bytes": 855,
+      "sha256": "60a31521207b69b8e7b2bb0aee73ca5600cdd1ccb05fc406a4ff867d4d97d074"
+    },
+    {
+      "path": "scholars/PERS_0a2e5f24.html",
+      "size_bytes": 939,
+      "sha256": "ce33f4843752db4474734b6f9d0864daa2959f0db29a46d5d7d57be0cda7e326"
+    },
+    {
+      "path": "scholars/PERS_0c451d76.html",
+      "size_bytes": 934,
+      "sha256": "fae6c9c9eb4fc5ebf2c1c9aaf2ea34c1f7540b9632e34a0898a8e2d3828316bc"
+    },
+    {
+      "path": "scholars/PERS_0e0a154e.html",
+      "size_bytes": 818,
+      "sha256": "b6283f9528ff4a8bd75a0f3a04a1603c60dc3e6c548a19c1800339ec3b1ed636"
+    },
+    {
+      "path": "scholars/PERS_0fd718a7.html",
+      "size_bytes": 820,
+      "sha256": "a8771f9a376de0ffc5d5aead130eaa3b159f44f7f7254ce31620aac81bf213f0"
+    },
+    {
+      "path": "scholars/PERS_10547db9.html",
+      "size_bytes": 877,
+      "sha256": "375e94f5abb302b67be69f88002e9bd4cae82947e8c79414fe6b08cba11fdb7b"
+    },
+    {
+      "path": "scholars/PERS_1130c736.html",
+      "size_bytes": 960,
+      "sha256": "65a4f7fa8c319fda8fbe37a8d674655daeaf8970646924150054224bfbab68c1"
+    },
+    {
+      "path": "scholars/PERS_11da326d.html",
+      "size_bytes": 965,
+      "sha256": "1c38982053ab41e87e17813f6ca12395f82987eb2830f00c254626c631795afb"
+    },
+    {
+      "path": "scholars/PERS_12125da9.html",
+      "size_bytes": 944,
+      "sha256": "b60f5af9ad2018558de40d5e97d1dcef745de16354e378a173d1c5b858fc124b"
+    },
+    {
+      "path": "scholars/PERS_142b5c2b.html",
+      "size_bytes": 866,
+      "sha256": "1bcc45b7433ce0baade34c0aa38ed1fc1614c4ddef40208e4d3903d9d28a3665"
+    },
+    {
+      "path": "scholars/PERS_147ab928.html",
+      "size_bytes": 842,
+      "sha256": "0b5f94084ca6ec645a74a26c865c216e96119b606b47896a45b3c10af4ccd641"
+    },
+    {
+      "path": "scholars/PERS_168a3a8b.html",
+      "size_bytes": 798,
+      "sha256": "30fa35197b55d9944ab218bd88eea049076590a489359fe456abdb933bbe99bf"
+    },
+    {
+      "path": "scholars/PERS_180c5e5c.html",
+      "size_bytes": 798,
+      "sha256": "5a01859c66eb65a19f7da281d8d6e6d99d290a401e2203a1090a1afb663e110a"
+    },
+    {
+      "path": "scholars/PERS_18fcab2a.html",
+      "size_bytes": 842,
+      "sha256": "a0115ff341573b22522caf3a37beeb96615fadad78637ac3fe12d9f958f51065"
+    },
+    {
+      "path": "scholars/PERS_1a097e52.html",
+      "size_bytes": 934,
+      "sha256": "5e158d826546b18ba41ce76ddb98b0a4466f3a0ea58f0a2b13006d3ce6260b4a"
+    },
+    {
+      "path": "scholars/PERS_1c6fcce5.html",
+      "size_bytes": 848,
+      "sha256": "bb08ab96124a82971a43af51c8d49cdcab79a2f3b3367dd322b48f80375b5679"
+    },
+    {
+      "path": "scholars/PERS_1fa7cc0c.html",
+      "size_bytes": 977,
+      "sha256": "10b157ebad30f5d3cc1200a5c06eacb60dce1c9d528e0fb03dfff1784af46e28"
+    },
+    {
+      "path": "scholars/PERS_2011b78d.html",
+      "size_bytes": 820,
+      "sha256": "d37ea603ca65ae9b68dbb4a7ec63adbc07141cfe01024ced019bf2022a2bff87"
+    },
+    {
+      "path": "scholars/PERS_2095dc59.html",
+      "size_bytes": 819,
+      "sha256": "6a0de28e59fdb775460326567a68a672f9836585a2a687d40df04455dd050fc0"
+    },
+    {
+      "path": "scholars/PERS_22d87263.html",
+      "size_bytes": 809,
+      "sha256": "8d033cd96cb581f18a88b4cee36cd18a766deffc824af14d051d9bbc44f78fb7"
+    },
+    {
+      "path": "scholars/PERS_23215083.html",
+      "size_bytes": 844,
+      "sha256": "f1f62109723edb65b9e3f75847c3ac45b40aca145cd7d20618f0a30ae792d018"
+    },
+    {
+      "path": "scholars/PERS_23abae7d.html",
+      "size_bytes": 836,
+      "sha256": "2679cc0fc60b639303c1cb470d61db1573ea15bb3c555c0561860e20d127f29f"
+    },
+    {
+      "path": "scholars/PERS_23f54085.html",
+      "size_bytes": 847,
+      "sha256": "a5707d9eec9b02b4f53c0081504645ef9eaa339323c5f0da5050b485fc043786"
+    },
+    {
+      "path": "scholars/PERS_260a598a.html",
+      "size_bytes": 814,
+      "sha256": "40e821893830fadbaa5aa62c80e929741e4e2c27d65950f1b77a4c7bc61655ae"
+    },
+    {
+      "path": "scholars/PERS_26c3214a.html",
+      "size_bytes": 781,
+      "sha256": "6b3308637d78b61b64eb4323ef8cb0dd2258d4c47115ea58cf55e047b1655e64"
+    },
+    {
+      "path": "scholars/PERS_26ce5ec1.html",
+      "size_bytes": 764,
+      "sha256": "6e4fcab0443b6c8fff0c26ae13c223415448baab8d73c7ea69413a28f15056b4"
+    },
+    {
+      "path": "scholars/PERS_28317057.html",
+      "size_bytes": 841,
+      "sha256": "5150e71c78eecbc6b14d03d79743baff8b9998cd9b46c6540ab565eb966b4bec"
+    },
+    {
+      "path": "scholars/PERS_287fe378.html",
+      "size_bytes": 917,
+      "sha256": "202f2997b60f1f7fdbbef598c04d796cee06819116566f33f0ec0d18a257fdd1"
+    },
+    {
+      "path": "scholars/PERS_29607432.html",
+      "size_bytes": 803,
+      "sha256": "bc123a8ba2b4d304b63f0a9c5f3fdbc11b291d3b1cb18808304563c36dd82133"
+    },
+    {
+      "path": "scholars/PERS_2a2e5602.html",
+      "size_bytes": 820,
+      "sha256": "64ab67befbf50bd606b6020a4f6d67dee066059935bcad551c28269585ee9b53"
+    },
+    {
+      "path": "scholars/PERS_2b7ca933.html",
+      "size_bytes": 820,
+      "sha256": "d0e0ae5bdd37553c784cc6140b2384c5e5a9cac474cdd0150ddc743d57d01d6e"
+    },
+    {
+      "path": "scholars/PERS_2c40b9b1.html",
+      "size_bytes": 912,
+      "sha256": "9183023d7ea23ae1fde358518e18564f40519d296279051cee4e0418e2136fbd"
+    },
+    {
+      "path": "scholars/PERS_2c9b38ec.html",
+      "size_bytes": 798,
+      "sha256": "751ae5042c101e5452be9e08f007e60b8f645447b7ed8413ec3518dea70cc480"
+    },
+    {
+      "path": "scholars/PERS_2e00cb36.html",
+      "size_bytes": 831,
+      "sha256": "36084b123da46302e96e62de6eb12f909b3e7506d1fe9282bd7f0d5f5190bd98"
+    },
+    {
+      "path": "scholars/PERS_2e2b9553.html",
+      "size_bytes": 836,
+      "sha256": "74c701f7c46640bf5278b280400eb2ea34f4056bf0e81d04e471daa4c3cfbe7c"
+    },
+    {
+      "path": "scholars/PERS_2fd442aa.html",
+      "size_bytes": 809,
+      "sha256": "3fe28b43403a82b3b7ffa60be007fbf4c193088c485c91be836cbdf5b3ceda39"
+    },
+    {
+      "path": "scholars/PERS_3074a8e5.html",
+      "size_bytes": 826,
+      "sha256": "9130cbe8f4dd73b062269d24db3f1e48f3e2d946d418456728948d62cb87f796"
+    },
+    {
+      "path": "scholars/PERS_30b54681.html",
+      "size_bytes": 803,
+      "sha256": "b5005b47126bfe12b63a800b992cf4869369e1f376e6038fbde65ce27c909242"
+    },
+    {
+      "path": "scholars/PERS_310b2911.html",
+      "size_bytes": 864,
+      "sha256": "05cc2b0efde6cf698ee7c4a2b0ab7c08269e7139f144e1c876f00d74f01c6084"
+    },
+    {
+      "path": "scholars/PERS_3195408b.html",
+      "size_bytes": 825,
+      "sha256": "df01cedc9fc733218e118ea558beab828fbe984c54d0e5dfd624d427fb6a0748"
+    },
+    {
+      "path": "scholars/PERS_3357f25b.html",
+      "size_bytes": 988,
+      "sha256": "37915c3a95caff2236cef692775d4622acafb357743c12920e1a3168a521cfdc"
+    },
+    {
+      "path": "scholars/PERS_34c0d384.html",
+      "size_bytes": 809,
+      "sha256": "7094b8559fa7c7ef18480294abfb19dfc2fed2674353fd80d391bbf0b5c83b50"
+    },
+    {
+      "path": "scholars/PERS_35a30342.html",
+      "size_bytes": 809,
+      "sha256": "9c285ab35b2aef90b1373af32c27bd576098edad1f9a884e35893ce4c3149b3e"
+    },
+    {
+      "path": "scholars/PERS_35ac9c82.html",
+      "size_bytes": 877,
+      "sha256": "2c0d4b3361a9b5e9197666aa69d245cf5171aafe8610d8208b789c21b34c754d"
+    },
+    {
+      "path": "scholars/PERS_35c57654.html",
+      "size_bytes": 809,
+      "sha256": "b62017c8ebd99a14db94a04d513ece64f7a620a32d7857a4ddf9f2ba32985716"
+    },
+    {
+      "path": "scholars/PERS_36dabb79.html",
+      "size_bytes": 938,
+      "sha256": "03a9af1634d9a24b4699dc3d1c5fdb78d35ac1dc8145933ed2c63090334117c6"
+    },
+    {
+      "path": "scholars/PERS_37bb2d43.html",
+      "size_bytes": 831,
+      "sha256": "9336559a06512de59641c879900010454692138ea4cbe7912318cf806ed753c8"
+    },
+    {
+      "path": "scholars/PERS_37d557c2.html",
+      "size_bytes": 831,
+      "sha256": "6a632835a381d766c37f08eb372712b0451afc8b5f9584b33b7de78a9287cee3"
+    },
+    {
+      "path": "scholars/PERS_38c5f03f.html",
+      "size_bytes": 966,
+      "sha256": "c3c4ddf4bf8ab08ae2b6ae106a54ee78ee492ba889c109a55d2958382cbbd5f4"
+    },
+    {
+      "path": "scholars/PERS_3b196639.html",
+      "size_bytes": 876,
+      "sha256": "eaec223e61de36545c55a2de68a2aa82cea887b87b658daa3e8b202994afa375"
+    },
+    {
+      "path": "scholars/PERS_3c202afd.html",
+      "size_bytes": 916,
+      "sha256": "fc24d0fa66dba46bb6d974830ef9ab828d161da33599cad78cdcbc80ffe55e44"
+    },
+    {
+      "path": "scholars/PERS_3c7d41ac.html",
+      "size_bytes": 787,
+      "sha256": "daef6f5fb9b91217196070b18a48e56e492e8a26bec903d866b51c2bf7ed0a5d"
+    },
+    {
+      "path": "scholars/PERS_3d22e8d4.html",
+      "size_bytes": 820,
+      "sha256": "91963fb61a180add51f65157a6ce6d5629bb4a221d4f6cd42c85cacc5e4066da"
+    },
+    {
+      "path": "scholars/PERS_3d3b302d.html",
+      "size_bytes": 934,
+      "sha256": "958092cb8840b8d40d1be0a12d2c42f7f42de74b38633c15e3c354f7fe23ee6c"
+    },
+    {
+      "path": "scholars/PERS_3d4df70f.html",
+      "size_bytes": 847,
+      "sha256": "2fb5e244c1512b10fc92a98175bfcbbc3c946fb4a37d5fac6a3b63eac4378a96"
+    },
+    {
+      "path": "scholars/PERS_3e105f43.html",
+      "size_bytes": 946,
+      "sha256": "39fa7b6543d03af5a5579410bf032fd4101e50f0706f06076e61cb7405c51e72"
+    },
+    {
+      "path": "scholars/PERS_3e38ff72.html",
+      "size_bytes": 814,
+      "sha256": "1d17bcdd25afa9e610bef5acf8b5689520e7faa8e2bbac479b704aee9093aa5b"
+    },
+    {
+      "path": "scholars/PERS_3fd690ee.html",
+      "size_bytes": 842,
+      "sha256": "27fe7bfa3f2269aed0cfbbf1f5d1897b18fde5efb965351c1a4554cada1fc138"
+    },
+    {
+      "path": "scholars/PERS_40375fef.html",
+      "size_bytes": 815,
+      "sha256": "fe7a71c6b6267acbd8dd5ee14524fb157a08fd26a43f477722ab803d13673761"
+    },
+    {
+      "path": "scholars/PERS_40862f5e.html",
+      "size_bytes": 950,
+      "sha256": "8d0b58e52c1b4124a3ffc649f2f7955a8177567a7e58e1e68014887abd97a102"
+    },
+    {
+      "path": "scholars/PERS_40f75cf9.html",
+      "size_bytes": 787,
+      "sha256": "adc7b87cff8fdb305c4021368e6c697c31918d3e39d4297aa41be2e718aa631e"
+    },
+    {
+      "path": "scholars/PERS_41d6aa73.html",
+      "size_bytes": 933,
+      "sha256": "5d6da87da2408c190a5ea9155acb4bf36068629718f6a1cb58f8f132040cf348"
+    },
+    {
+      "path": "scholars/PERS_42da4866.html",
+      "size_bytes": 820,
+      "sha256": "c08e87fa8fde445cc2840bb2dcf1ac4534e050fb5254a8d34ed29a3aef659b86"
+    },
+    {
+      "path": "scholars/PERS_44440578.html",
+      "size_bytes": 791,
+      "sha256": "8cfb804f30c8c7f9ee079a10ed15ce9503a9d172d566a0c4dd1a87dbfbb8fd32"
+    },
+    {
+      "path": "scholars/PERS_45a76880.html",
+      "size_bytes": 820,
+      "sha256": "5c42e4b89d548010d29bcfa1344f49d168049d4609a89ac53ecd80788cb22a47"
+    },
+    {
+      "path": "scholars/PERS_467d4dbb.html",
+      "size_bytes": 951,
+      "sha256": "3aed648c4a4a047d7ac20b970f17b4641c35383d95716f167a2497c9eb8b4788"
+    },
+    {
+      "path": "scholars/PERS_47ad46f1.html",
+      "size_bytes": 820,
+      "sha256": "7dfcb48e84be59b2aaa4c6c2a4ba66864b015b7aa9d9c0b79f1ba9f60233303d"
+    },
+    {
+      "path": "scholars/PERS_4a0de87e.html",
+      "size_bytes": 820,
+      "sha256": "d4886a15cf5bcf6194f30e4383243eef1eeabffa6d11f7678a596e24e8c549aa"
+    },
+    {
+      "path": "scholars/PERS_4ebb20aa.html",
+      "size_bytes": 847,
+      "sha256": "d4c4b366aaa6ccf7ac6e34f5a6f987efe279e73cdf247f0a85798e11ee4cf90e"
+    },
+    {
+      "path": "scholars/PERS_4fff9d16.html",
+      "size_bytes": 916,
+      "sha256": "084cbd793d1e3dadbe47dc591ec24237eb028f135c761751b4dba1a0d520cddc"
+    },
+    {
+      "path": "scholars/PERS_50c46233.html",
+      "size_bytes": 956,
+      "sha256": "cbeed4324d85b0a4fcfb148d8f2598af1d8789e7b24af1667bbab8e255c4e68c"
+    },
+    {
+      "path": "scholars/PERS_50d73711.html",
+      "size_bytes": 883,
+      "sha256": "9ef8cfe6f2cd8e80deb0f32f5354e45c9cee21fc0e1d530943db6ea59c0c49b0"
+    },
+    {
+      "path": "scholars/PERS_51524b11.html",
+      "size_bytes": 917,
+      "sha256": "119f3b99f640ed21d21bf3f00f0dc242e7f3580cae7dd7ed1e3f536dc936e5a5"
+    },
+    {
+      "path": "scholars/PERS_51e0a171.html",
+      "size_bytes": 916,
+      "sha256": "9ba3a0a2317435e04d6e11862a4e8392961684655294ec45277c5851f0d9a80f"
+    },
+    {
+      "path": "scholars/PERS_5228da95.html",
+      "size_bytes": 999,
+      "sha256": "dc35005566ee8b824aed95cdf507847b0d4c9addebc445fa4b03be76e6546d80"
+    },
+    {
+      "path": "scholars/PERS_526da44f.html",
+      "size_bytes": 863,
+      "sha256": "1b9ef18b9ea7c4c3a8a92b7e2e87b5964d94fafd83be9ab618ad4a7c52142059"
+    },
+    {
+      "path": "scholars/PERS_52d3f72c.html",
+      "size_bytes": 992,
+      "sha256": "24664d460a68a9601d7f1fc51e8cfdce75ac05af250bf2341c5f5a49bcc3a037"
+    },
+    {
+      "path": "scholars/PERS_5331196d.html",
+      "size_bytes": 858,
+      "sha256": "eb87b5e65e3329647412958623ba3e838069a88f32a5ee33099cbe2ab102840a"
+    },
+    {
+      "path": "scholars/PERS_554c138a.html",
+      "size_bytes": 814,
+      "sha256": "d14fd1fdfa4d9332de132bbe219933eba28bf986a3f8dd7cafea33834a4a9431"
+    },
+    {
+      "path": "scholars/PERS_56508328.html",
+      "size_bytes": 970,
+      "sha256": "3c32af55ed1f153d58ea47f1cd5adaf447f00b3932f8280330d969c54f5762dc"
+    },
+    {
+      "path": "scholars/PERS_587b08ec.html",
+      "size_bytes": 916,
+      "sha256": "32b1f7ed73d83ba4ff9819254dd2df90ab675c43d7e6a4fcc08f746e6abb8a7c"
+    },
+    {
+      "path": "scholars/PERS_58b39545.html",
+      "size_bytes": 887,
+      "sha256": "f3518997a03eef8de1de04ea3b84e5030437bc1359e4e6ab42e333c45b8f2fdc"
+    },
+    {
+      "path": "scholars/PERS_58e18506.html",
+      "size_bytes": 820,
+      "sha256": "e6fa33c1bf3c278673fc59ad7f56336498100a6668148899f03e6604fc2a19cf"
+    },
+    {
+      "path": "scholars/PERS_5bbfea37.html",
+      "size_bytes": 858,
+      "sha256": "5860f8192fb033948e2e9ab3afd2107ff8499309781f8e12d345446b3e1bfd73"
+    },
+    {
+      "path": "scholars/PERS_5d324297.html",
+      "size_bytes": 819,
+      "sha256": "64274a23cce2fec6348f92102f763f5c7491590260c75aed7a1bc09032fdddd4"
+    },
+    {
+      "path": "scholars/PERS_5d34c947.html",
+      "size_bytes": 825,
+      "sha256": "70ece4a1c96d1ee1f5b0dd25e22f1d50209f2ae7704553523ae77723af4f8bff"
+    },
+    {
+      "path": "scholars/PERS_5e2a5a5c.html",
+      "size_bytes": 836,
+      "sha256": "fc16b71c7de451de9a0757c4c65dc7bea91ea638344b7d6be32168a7aa9f6ea1"
+    },
+    {
+      "path": "scholars/PERS_5ed752d9.html",
+      "size_bytes": 809,
+      "sha256": "5f430911922609e1a219d1861af715be9728ce55abf971097be3a0aeb079044e"
+    },
+    {
+      "path": "scholars/PERS_5f6689e8.html",
+      "size_bytes": 831,
+      "sha256": "ca957561967ace6adde0189f678dedc82f96d4cda8fa2a67653918c1aceaf0e1"
+    },
+    {
+      "path": "scholars/PERS_5f6fa17b.html",
+      "size_bytes": 982,
+      "sha256": "ab0f28275d19bf21f5f924bef21edcc4d6889ba6f908b6473fd95f75d913c2d0"
+    },
+    {
+      "path": "scholars/PERS_61202bf3.html",
+      "size_bytes": 866,
+      "sha256": "1bf24d1732bed53510f3e383a75a3ced83a364e29c72af75711517bb831b6082"
+    },
+    {
+      "path": "scholars/PERS_61de659d.html",
+      "size_bytes": 787,
+      "sha256": "1c7a168e6b556b9eecda033f38caa87b2aa94225e7917c4488115c4a3ab3177d"
+    },
+    {
+      "path": "scholars/PERS_6441d568.html",
+      "size_bytes": 820,
+      "sha256": "1c3fa4b1d5218bad8c92a4eba8d2aa53476fba2174ec7b828bfe77e7108f81a3"
+    },
+    {
+      "path": "scholars/PERS_6578b52d.html",
+      "size_bytes": 917,
+      "sha256": "d0c086d49bf4feb0053b3b809dabaf30f793d9a9d1140b718d6a12628846a8c9"
+    },
+    {
+      "path": "scholars/PERS_68270eaf.html",
+      "size_bytes": 820,
+      "sha256": "5b66f4f958a3c578d3ffd47b99e50250c7540be9661ca7d7ca29752198a2c3ec"
+    },
+    {
+      "path": "scholars/PERS_68e9019d.html",
+      "size_bytes": 814,
+      "sha256": "6a138946c2d241aef62023d8ad20b94475b7fde0e7f62a580948f11bfaedf743"
+    },
+    {
+      "path": "scholars/PERS_69750b7c.html",
+      "size_bytes": 820,
+      "sha256": "80a1667f0747e13b16c3c24c71cc8acae88856ef77900d31ad4541ccc717449e"
+    },
+    {
+      "path": "scholars/PERS_6a165aa7.html",
+      "size_bytes": 825,
+      "sha256": "d295567aa9ca7714c3b086dd92735cfccc77198faddba0affd4580ac98ff77ac"
+    },
+    {
+      "path": "scholars/PERS_6ae5c779.html",
+      "size_bytes": 982,
+      "sha256": "b51ba3e3b70ba17ed08036547c8815b3c6a4b180ee60211dff6079b3cb5d7a3b"
+    },
+    {
+      "path": "scholars/PERS_6b867946.html",
+      "size_bytes": 820,
+      "sha256": "eb2bf586cc7123aca569f04c4b72163e9c56f92d8c7336b976e7573d3d6d7835"
+    },
+    {
+      "path": "scholars/PERS_6e211759.html",
+      "size_bytes": 921,
+      "sha256": "f18b4e5f3c348ebc1377961c3ce33db9003a3091f4ce064bf94377fd0f9ce445"
+    },
+    {
+      "path": "scholars/PERS_6f89f9c1.html",
+      "size_bytes": 830,
+      "sha256": "655293a5438c97fd610827ea4e5750706187106b1d5956baf19c826775b318dd"
+    },
+    {
+      "path": "scholars/PERS_72506535.html",
+      "size_bytes": 859,
+      "sha256": "7ae5b9ead4273f28c1a981f52be8b229e82ae97c65bb51445983f0005a2f20ed"
+    },
+    {
+      "path": "scholars/PERS_7542d270.html",
+      "size_bytes": 825,
+      "sha256": "8bd5dca37ec36a6f641ca0666a1d061181cbbacdf05b37e38a15ec8a030ae7ab"
+    },
+    {
+      "path": "scholars/PERS_7700f517.html",
+      "size_bytes": 866,
+      "sha256": "924c2892da701d0bebe51b5db8e4b27ad5e60d2d48521f28f0a3497b2d3384fb"
+    },
+    {
+      "path": "scholars/PERS_7d6f456c.html",
+      "size_bytes": 820,
+      "sha256": "3ae847e7cff607f1bf101af0c97c036ad74b33d0cdd29a5ca1be517aae7eeaae"
+    },
+    {
+      "path": "scholars/PERS_7da0afff.html",
+      "size_bytes": 921,
+      "sha256": "461648086b8948275dd31ffdd91b89c4470d46f16ad9f4963c09c87d19651a6b"
+    },
+    {
+      "path": "scholars/PERS_7eb0dc30.html",
+      "size_bytes": 798,
+      "sha256": "63f7456d3d3f601c6cddc870bdaf958f251d354a3bc32aa1362bef5f220eef4e"
+    },
+    {
+      "path": "scholars/PERS_7efcddc6.html",
+      "size_bytes": 809,
+      "sha256": "9762898b436184f89feed832a81c9a072e0dde46f7af4bba211e34d17896c504"
+    },
+    {
+      "path": "scholars/PERS_7f908d49.html",
+      "size_bytes": 842,
+      "sha256": "a547172d9e5ed7d045e6769e41978c4a9660c9f258e17ffa2f2c712353246ebe"
+    },
+    {
+      "path": "scholars/PERS_8108c314.html",
+      "size_bytes": 825,
+      "sha256": "10eea7a918003664d884aace67613afd8c961e36306d355a919aa775a34c6496"
+    },
+    {
+      "path": "scholars/PERS_829c1de5.html",
+      "size_bytes": 967,
+      "sha256": "c5a2a209b3cdbf6136a74552abe1c2addeca9f9ebd44000ab2b5ff7b4922d26d"
+    },
+    {
+      "path": "scholars/PERS_8516d1e4.html",
+      "size_bytes": 833,
+      "sha256": "c7d6c26d2b36c673543cc5f69f93547abbc382acbd35e86d4ff746813848b868"
+    },
+    {
+      "path": "scholars/PERS_856eb5c6.html",
+      "size_bytes": 765,
+      "sha256": "8d23bd90a4cb29c4b7bdc1af7387c108a65bf383d3571bd77b1fe0d96d61607b"
+    },
+    {
+      "path": "scholars/PERS_874cbfb7.html",
+      "size_bytes": 994,
+      "sha256": "230f684d49fb3aa18232b4a814674fa9e34e3f6c63ed46ca019868adbe05a5ac"
+    },
+    {
+      "path": "scholars/PERS_88e5311f.html",
+      "size_bytes": 863,
+      "sha256": "7a036c1b305a0ab4c8a1317a7125bb36c15f5f67543fcdf8976a951e61e8c184"
+    },
+    {
+      "path": "scholars/PERS_8df3730a.html",
+      "size_bytes": 825,
+      "sha256": "842abe7dcdff7f1ff96cbd411b3ff5ecc94e227e2bc6cc88d87e558184dd5c5b"
+    },
+    {
+      "path": "scholars/PERS_8df81b6d.html",
+      "size_bytes": 841,
+      "sha256": "cb72811c131c8d3bc633eaa367e492fda994e95206553a7029bfe1fec0631061"
+    },
+    {
+      "path": "scholars/PERS_8e117242.html",
+      "size_bytes": 854,
+      "sha256": "b5a1be235dc3e2427c0bf63510bd8b8dddc92925a61c46781f96c4a1aa0c5310"
+    },
+    {
+      "path": "scholars/PERS_900efc73.html",
+      "size_bytes": 825,
+      "sha256": "88c7db17c00da54f9ecc3b5168e1f7969947befef44ed7278f69643577cd5640"
+    },
+    {
+      "path": "scholars/PERS_91b473b1.html",
+      "size_bytes": 927,
+      "sha256": "c83b85f0ca6a51b53a1dab87fd26bf3ef0c86e3f17c52ea143f14c73fff933c8"
+    },
+    {
+      "path": "scholars/PERS_92868e4f.html",
+      "size_bytes": 910,
+      "sha256": "1506c02b263f5ab093447ea69c8ed0dff07e0e42b967ece0357a44d9e249a702"
+    },
+    {
+      "path": "scholars/PERS_92f293f8.html",
+      "size_bytes": 829,
+      "sha256": "9a07a5080f6880b32fe997c487150d922f4ed0c65a5fe628146e3deca2153d61"
+    },
+    {
+      "path": "scholars/PERS_92f41884.html",
+      "size_bytes": 787,
+      "sha256": "0773f6440d907b15a6538b292c5e96540890e71117907e2883503bd5d535a2e2"
+    },
+    {
+      "path": "scholars/PERS_9366fe2c.html",
+      "size_bytes": 814,
+      "sha256": "e61d1bf534d5c02ed7f6e299f112d54dfadab6a442a73e4f599684ad77b175ef"
+    },
+    {
+      "path": "scholars/PERS_936e1165.html",
+      "size_bytes": 910,
+      "sha256": "a864a4347cbd1a93c4546bc776df1c22d04a92e8ce34e06c5449507572a70b64"
+    },
+    {
+      "path": "scholars/PERS_9374fd12.html",
+      "size_bytes": 965,
+      "sha256": "9ad49aecd18a0331ba4337a288c78a64d810d13cff775dabe26c7f3304317077"
+    },
+    {
+      "path": "scholars/PERS_93e2effb.html",
+      "size_bytes": 955,
+      "sha256": "be3ac1be9949a2c4fbdf10dbdaadfa8894e38b3784ec629102e85394ccdf119f"
+    },
+    {
+      "path": "scholars/PERS_94aa5d0a.html",
+      "size_bytes": 825,
+      "sha256": "85138162ca734654ada3d859089b380e213af69cf93c893deda1cdb4cdfb4f4a"
+    },
+    {
+      "path": "scholars/PERS_94f33410.html",
+      "size_bytes": 858,
+      "sha256": "7cbfd8486061416a58f61bfcb9807efa34dfc4a17132036f817812cb4fca922f"
+    },
+    {
+      "path": "scholars/PERS_96b8b195.html",
+      "size_bytes": 836,
+      "sha256": "17b3671eb635586abdfd14d77eb0e6e89d219ade13c00e0400ff0135ccb4381f"
+    },
+    {
+      "path": "scholars/PERS_9a855a7b.html",
+      "size_bytes": 821,
+      "sha256": "4247cd9ebcb7a1d2762cf30aa25bd92bd50d6ef264002f63e6f43f8b8b2b540b"
+    },
+    {
+      "path": "scholars/PERS_9ad66151.html",
+      "size_bytes": 819,
+      "sha256": "8d1cffdeffc582003552dea3d9675a196e48646da6d369ae2ca1b8bc8a255195"
+    },
+    {
+      "path": "scholars/PERS_9bf51055.html",
+      "size_bytes": 850,
+      "sha256": "7d9705b701ade32f9f35f323f71164101bdf757b2b760653029b1ea11f2bc40d"
+    },
+    {
+      "path": "scholars/PERS_9ddf9210.html",
+      "size_bytes": 831,
+      "sha256": "bba8f95d3f8556301659275832106a8cbc6bf9f5fa075ea593832b6c686fb82a"
+    },
+    {
+      "path": "scholars/PERS_9e9c9566.html",
+      "size_bytes": 820,
+      "sha256": "9c7b2102146bceaa3dcf9ccb5167303477edcd0c7709fa3d050511e370d16c76"
+    },
+    {
+      "path": "scholars/PERS_9f398436.html",
+      "size_bytes": 844,
+      "sha256": "4be494c9767a2fdc954578c64a964428f1f1d01dba9b11879a33d31a62a8d02d"
+    },
+    {
+      "path": "scholars/PERS_a0264ac5.html",
+      "size_bytes": 955,
+      "sha256": "ae0b1e41e2235c89ffcffd8abbb7797a2d734cebfe376ed2b67b43a4725b9aa0"
+    },
+    {
+      "path": "scholars/PERS_a0f3d86d.html",
+      "size_bytes": 820,
+      "sha256": "91a89ff1a40890b2fa6cb7308e5896f845e8ffe9f66a5a1a7cde780f2ffd94fb"
+    },
+    {
+      "path": "scholars/PERS_a1484b38.html",
+      "size_bytes": 858,
+      "sha256": "195150f478beba60f00d92c12431bacd155db099f214f1dad9feaca167658a20"
+    },
+    {
+      "path": "scholars/PERS_a638a4b3.html",
+      "size_bytes": 820,
+      "sha256": "84d1089c4b4709fcd95297cc0e2c348f5a046552f1f46af97a9137621a69516e"
+    },
+    {
+      "path": "scholars/PERS_a84aedaa.html",
+      "size_bytes": 852,
+      "sha256": "6c962d67a0010e396dca657f8d9dbcb5f309d4e5160e0b09d2a40d43b0e36d03"
+    },
+    {
+      "path": "scholars/PERS_a8983673.html",
+      "size_bytes": 793,
+      "sha256": "8cffc74e085b921c3096a1db28f7877d63bc9c194dd4cd553ae9bb107af6c8c8"
+    },
+    {
+      "path": "scholars/PERS_a901d460.html",
+      "size_bytes": 825,
+      "sha256": "34c5e7af51699771510598a7545e17e080cc93843ccb737e340c81d61cf9deca"
+    },
+    {
+      "path": "scholars/PERS_aebd34a2.html",
+      "size_bytes": 787,
+      "sha256": "2d5de884c4af71e233bb968451300c019eb3bc3c2fcd118e59f3ed5022b6aeec"
+    },
+    {
+      "path": "scholars/PERS_af811d47.html",
+      "size_bytes": 820,
+      "sha256": "911cb0892fd8adb3ce76d580f0db4303199b2c8add879a68eeda3aa2a83858af"
+    },
+    {
+      "path": "scholars/PERS_b024f2dd.html",
+      "size_bytes": 844,
+      "sha256": "79c178f4cb985483f8e73e02a824e034f6bccf664582bf55e0dbfd1320abf1d5"
+    },
+    {
+      "path": "scholars/PERS_b2c121e9.html",
+      "size_bytes": 836,
+      "sha256": "8a8a2370567c03e813d932dc7a6ff59700c13e568cc6720c0f66a5cd435d44a8"
+    },
+    {
+      "path": "scholars/PERS_b5dd77b1.html",
+      "size_bytes": 863,
+      "sha256": "02e17582be84ee19fe1e17501f3e3d7e66a9c8e348e8cd92238e58d5cb3f1f78"
+    },
+    {
+      "path": "scholars/PERS_b62a9567.html",
+      "size_bytes": 953,
+      "sha256": "6f76c820bde557f490542cfed138efd807a34029db75abc79cd70f8fbc2dc479"
+    },
+    {
+      "path": "scholars/PERS_b76851a7.html",
+      "size_bytes": 916,
+      "sha256": "6c3594d332b7bf6e326602e565c49d7dcfb02771bf91c397f48a117b416d7904"
+    },
+    {
+      "path": "scholars/PERS_b881461b.html",
+      "size_bytes": 932,
+      "sha256": "fd80be000fd3862d21c737fc5751ef6ea927a279bca06c79b989601425e1afbf"
+    },
+    {
+      "path": "scholars/PERS_ba81468a.html",
+      "size_bytes": 798,
+      "sha256": "0f2184d3091a96076b8669282eee5251e016cd0a513f7d4a40013964c34649da"
+    },
+    {
+      "path": "scholars/PERS_bc97fb65.html",
+      "size_bytes": 891,
+      "sha256": "871a4541c14727bc4a5a76bf50341badcaaee21e637337ce1f9dba84ef7d4e73"
+    },
+    {
+      "path": "scholars/PERS_bcaec2d8.html",
+      "size_bytes": 825,
+      "sha256": "3f3529d8fd7a6be2c1a8f5cedde83622ec2e8e52f86d5569efed3d08da2900ca"
+    },
+    {
+      "path": "scholars/PERS_bd77e495.html",
+      "size_bytes": 809,
+      "sha256": "96b2c2e51c09ed28a01909db24385f9d7be9171ab8ec0856e00b63ea3be63a9e"
+    },
+    {
+      "path": "scholars/PERS_bdaaf440.html",
+      "size_bytes": 804,
+      "sha256": "bb293e1d3459ce6b806857cda10d566785e652ae467bdb04f751bb23a2459445"
+    },
+    {
+      "path": "scholars/PERS_bf91d4b8.html",
+      "size_bytes": 917,
+      "sha256": "1d6a80c0fdf73e7291f56d6cedfc0a481f1956bae3ad87dd539bf6507679f32b"
+    },
+    {
+      "path": "scholars/PERS_c2ffc606.html",
+      "size_bytes": 803,
+      "sha256": "32eeaabbdc40ea7d0d8ad133c25a7b1e2e070b60e836efcf32ff8b746436642a"
+    },
+    {
+      "path": "scholars/PERS_c31236d2.html",
+      "size_bytes": 916,
+      "sha256": "78603f591e8b7a47d7e143ae8ce5f7b96cf12f82a7966d9f7507eb4635be79b8"
+    },
+    {
+      "path": "scholars/PERS_c48611e0.html",
+      "size_bytes": 937,
+      "sha256": "7c5b3b6b633a76be3d238604b73c96a6d3b6a27a7d34a0fd4cedd69501566b84"
+    },
+    {
+      "path": "scholars/PERS_c52dfaa0.html",
+      "size_bytes": 915,
+      "sha256": "8beb5479783185edcff6e543eda4daec545db2b14feac31aa8a5d58d94076e2a"
+    },
+    {
+      "path": "scholars/PERS_c5677a3f.html",
+      "size_bytes": 911,
+      "sha256": "b941154c08e8c06816502161e4ab5fe25b052dc5fa6e30953a36a0f8b23c9657"
+    },
+    {
+      "path": "scholars/PERS_c582889e.html",
+      "size_bytes": 872,
+      "sha256": "484c8a8606157bad39ce5431ba453f10db5a366701f90493713fb6d378695b0f"
+    },
+    {
+      "path": "scholars/PERS_c6bbcef3.html",
+      "size_bytes": 831,
+      "sha256": "428f4eee19bf93fe6af3d8b6cb893f0dc70a5bb5edd6dfbad47b7687be6bbdd4"
+    },
+    {
+      "path": "scholars/PERS_cac87738.html",
+      "size_bytes": 836,
+      "sha256": "fd5acf5ac4cbc9c2d20623bd93321d389867e8150f347a9f914a6b3c99099c43"
+    },
+    {
+      "path": "scholars/PERS_cb52ebc2.html",
+      "size_bytes": 966,
+      "sha256": "5c1d4bd2bfb80cb8a8313f2d36d2457b343513a8182baa4da0a04215511cff7f"
+    },
+    {
+      "path": "scholars/PERS_cb967ae4.html",
+      "size_bytes": 858,
+      "sha256": "58da6d9198e5a247ec95bad4e4f9748a4dbc7d58a84cb9e1a1b59aed16796146"
+    },
+    {
+      "path": "scholars/PERS_cca8f93d.html",
+      "size_bytes": 938,
+      "sha256": "b8451d28df8f5c577b89ad62465f36b9e1215a4349a84a58ccf04228ded29410"
+    },
+    {
+      "path": "scholars/PERS_cdbd7a15.html",
+      "size_bytes": 945,
+      "sha256": "0c1ab304e1f26707fda1c8eda7bc209ce97f28498575ec83da48e3c845f80269"
+    },
+    {
+      "path": "scholars/PERS_ce100d3f.html",
+      "size_bytes": 835,
+      "sha256": "4d4dd1c22b334c9723a45767ef38e3351a41a85e1dad210f0974995c3a147914"
+    },
+    {
+      "path": "scholars/PERS_ced3d7b4.html",
+      "size_bytes": 889,
+      "sha256": "5c73539e0fa7d86833a3250f434507155faaa4e8bd5fec0d3e4c4eea3c1ddabb"
+    },
+    {
+      "path": "scholars/PERS_cfb92c5f.html",
+      "size_bytes": 928,
+      "sha256": "a405984ab89345ba0ebd805b90783a0a21098a63eb4ec958a859653848154fad"
+    },
+    {
+      "path": "scholars/PERS_d01427ca.html",
+      "size_bytes": 802,
+      "sha256": "12b1aef9b9813749352a55098da81d77041fc7aa8c9f41016ebe4a74f41e829b"
+    },
+    {
+      "path": "scholars/PERS_d218805b.html",
+      "size_bytes": 814,
+      "sha256": "3d76cfcbcbeb5fa4790404318dcd9fde28170f10ec4f906674fdf531e712fa57"
+    },
+    {
+      "path": "scholars/PERS_d2559ba1.html",
+      "size_bytes": 825,
+      "sha256": "e3eca9a95b95b701e69595239c3201e981acc8a64b4719523a08397bce31b5d6"
+    },
+    {
+      "path": "scholars/PERS_d3cb634e.html",
+      "size_bytes": 855,
+      "sha256": "0f1e9826283a11d928bfdd0a2ebe1178cfb3c153c430afc2d9d26f49db7d5149"
+    },
+    {
+      "path": "scholars/PERS_d4c2cc5e.html",
+      "size_bytes": 803,
+      "sha256": "a306f3ebbe2bdd71094fea7b136419e0b97bd60f16c005a14c70216437d96594"
+    },
+    {
+      "path": "scholars/PERS_d98da899.html",
+      "size_bytes": 948,
+      "sha256": "5bf54dd22146c9b829f37462e710c4cc7560443ebebe6bc424a80acf51cb5850"
+    },
+    {
+      "path": "scholars/PERS_da862dde.html",
+      "size_bytes": 915,
+      "sha256": "21a0fefbbf97decac3b11e3142aa8b8e8b97caf5d1257847e48426824e22e455"
+    },
+    {
+      "path": "scholars/PERS_db046be0.html",
+      "size_bytes": 820,
+      "sha256": "bc8959abec2c8a10c8ec4524a87e2fddf6388a7c2992e49af2ff074bb147dbfd"
+    },
+    {
+      "path": "scholars/PERS_db0a826b.html",
+      "size_bytes": 820,
+      "sha256": "fe4d6a05da768ab2e89a2018d1cdd3f309770d49e0c87ecdb0beea8729883eb4"
+    },
+    {
+      "path": "scholars/PERS_dd7de77e.html",
+      "size_bytes": 831,
+      "sha256": "755e60588e449c1033dc4012c22d8a8fe214601be0728b609493355837af6a1e"
+    },
+    {
+      "path": "scholars/PERS_de59a2bc.html",
+      "size_bytes": 814,
+      "sha256": "b5caaeab0f6eb57df52eff63b4e750982828348939d165950db3e78f5558fadd"
+    },
+    {
+      "path": "scholars/PERS_df6e2007.html",
+      "size_bytes": 819,
+      "sha256": "c5a22241fbe6f01f2dd4467c3d44f3a642ce01fc841b5cb844abba249f104eb6"
+    },
+    {
+      "path": "scholars/PERS_dfaf6803.html",
+      "size_bytes": 809,
+      "sha256": "c7217625a38009679e025582e0eed4b4e3701a3ea1776226634061a5a83b1403"
+    },
+    {
+      "path": "scholars/PERS_e1d622e5.html",
+      "size_bytes": 814,
+      "sha256": "461eae39cf578cd776dfbe332fbdb3c603de602db3a2446979529efb97f0b213"
+    },
+    {
+      "path": "scholars/PERS_e1dd6b3e.html",
+      "size_bytes": 940,
+      "sha256": "97d5a5a985a13d1d3f2eefb92a1405695dc8b6ed0b5fdf44f9842b41ebd619fb"
+    },
+    {
+      "path": "scholars/PERS_e30ad8b7.html",
+      "size_bytes": 820,
+      "sha256": "3daf7408f8ff806d50fc3af0c35283aaec820c654536caba06a2e6d1a8b7f0db"
+    },
+    {
+      "path": "scholars/PERS_e31ca12d.html",
+      "size_bytes": 910,
+      "sha256": "5465084d2fae43a921f9ab912aafe7ba2304ff8c09191366f7cd172d743c12cc"
+    },
+    {
+      "path": "scholars/PERS_e4aab278.html",
+      "size_bytes": 825,
+      "sha256": "b77f6805b34fcd97fc11df1d660509db12aae091061f5df9bc3997d1e2ea6d6c"
+    },
+    {
+      "path": "scholars/PERS_e5a5ac24.html",
+      "size_bytes": 955,
+      "sha256": "972284870fbfbb0710fd33875806a87c8540086a1ee85ef7a39a9000ad8048fb"
+    },
+    {
+      "path": "scholars/PERS_e72d4c09.html",
+      "size_bytes": 798,
+      "sha256": "ad4902fa5195a9c0252b497a15e272e8620abdc8c55d77284074068d4168ecc5"
+    },
+    {
+      "path": "scholars/PERS_e9545a0b.html",
+      "size_bytes": 905,
+      "sha256": "81da5ee9ac6d04bd14fa99bc790e9223e6af2799d7f8b7d249a15b67fb0cbc35"
+    },
+    {
+      "path": "scholars/PERS_e96139bd.html",
+      "size_bytes": 809,
+      "sha256": "5c10bd0fc646fb57226c8c10c51ade57cc563f6ba461f33df06044a30b4e3c25"
+    },
+    {
+      "path": "scholars/PERS_ea44fd14.html",
+      "size_bytes": 960,
+      "sha256": "f726f7005fc12824209352114649c22605b63b181f5c60f2686430e80892312c"
+    },
+    {
+      "path": "scholars/PERS_ebb6d156.html",
+      "size_bytes": 960,
+      "sha256": "d388d837bfce8092b51723a845950f924c19b96f66f07711bc89a50054f49e68"
+    },
+    {
+      "path": "scholars/PERS_ecdfe667.html",
+      "size_bytes": 842,
+      "sha256": "dd43f07a58e11fe869a914a9e19a5345c611b500b0ae8d9aafafec78ac4dbd43"
+    },
+    {
+      "path": "scholars/PERS_ed83f502.html",
+      "size_bytes": 842,
+      "sha256": "b553117923a28af74bca22433d539d657c5c7029ebc2196b95c90f3f5574c658"
+    },
+    {
+      "path": "scholars/PERS_ee3448c3.html",
+      "size_bytes": 820,
+      "sha256": "bdf614f96055dc9d8d9f202a42a8558938581da4116f443082ff30f65b846019"
+    },
+    {
+      "path": "scholars/PERS_efc88709.html",
+      "size_bytes": 849,
+      "sha256": "b7f6232507e913934e3540d1060a9f1f53c6dd251fa6dece362b069e86fc524b"
+    },
+    {
+      "path": "scholars/PERS_f074f69f.html",
+      "size_bytes": 995,
+      "sha256": "7d8b3815d63171d1c99c225c3e9d24132834f22aca5955023002c5a64cd5c9e1"
+    },
+    {
+      "path": "scholars/PERS_f19cd8a1.html",
+      "size_bytes": 866,
+      "sha256": "f83af33b7dd2bceea7c17a29f60afe42a97db2951fc224abcde36a98ac88479c"
+    },
+    {
+      "path": "scholars/PERS_f1a308b7.html",
+      "size_bytes": 825,
+      "sha256": "adf70dcd74e682bb8757e0c154bf2cb7f05ff1d480ec22afd0886b3b4be62c32"
+    },
+    {
+      "path": "scholars/PERS_f1f2471d.html",
+      "size_bytes": 820,
+      "sha256": "156885239d89f0930cdd05aac43a72d2f88f2b780b52e57818dc4e1860e2d795"
+    },
+    {
+      "path": "scholars/PERS_f2fef030.html",
+      "size_bytes": 844,
+      "sha256": "7bd285a07e23dea27fa2f14eb3539e888c993da469c6cfe334f27b14178ebae7"
+    },
+    {
+      "path": "scholars/PERS_f56c5a7e.html",
+      "size_bytes": 803,
+      "sha256": "ccf0d0e000c4e2ec592b6b3803c1b73c991130e1a0a646fbe16941eb9242ecea"
+    },
+    {
+      "path": "scholars/PERS_f5a69b65.html",
+      "size_bytes": 814,
+      "sha256": "1bfe4d8a49c45a30b169f968d048895e41f97bcd3e27caadf44e3f4719b7e6f3"
+    },
+    {
+      "path": "scholars/PERS_f5b8b340.html",
+      "size_bytes": 928,
+      "sha256": "e760c53662d9495e8924ce8f086c999710e21216e3da980c137391997dabd321"
+    },
+    {
+      "path": "scholars/PERS_f619aeed.html",
+      "size_bytes": 814,
+      "sha256": "845d71614eb03a49bc9ab3321a16f7bcbd58d2b0d588e8329396a21f7493008d"
+    },
+    {
+      "path": "scholars/PERS_f82b6a8e.html",
+      "size_bytes": 798,
+      "sha256": "698884446a77ce4db7131a500f541dd91cf88eedf4f97e87d9c6c7dc37f84088"
+    },
+    {
+      "path": "scholars/PERS_f8ab5755.html",
+      "size_bytes": 825,
+      "sha256": "e7603bc0b50144ccdf514184af8243606eee3d1417a501608ce619dc513579ce"
+    },
+    {
+      "path": "scholars/PERS_f940c5b3.html",
+      "size_bytes": 831,
+      "sha256": "a6c5a1b27a68592b26afc4653e96c6129e1d28decffa5805ac3344934fbd687b"
+    },
+    {
+      "path": "scholars/PERS_fb25c80f.html",
+      "size_bytes": 944,
+      "sha256": "a292ec326ff7a02e211d07310ab6dec8c02b642e657442f8bd19e96ca5ba7a1a"
+    },
+    {
+      "path": "scholars/PERS_fb73fb38.html",
+      "size_bytes": 814,
+      "sha256": "a3cada7dc2b2d17eed7492c31cbae6fc0f08c57915f30edeac3f7eccbb7f2d73"
+    },
+    {
+      "path": "scholars/PERS_fc976255.html",
+      "size_bytes": 809,
+      "sha256": "dfbc4e00bf09c36da5464f46a0f0c9c4f01c37cad12bd52223a0154eb6d2be10"
+    },
+    {
+      "path": "scholars/PERS_fe03c926.html",
+      "size_bytes": 825,
+      "sha256": "0ffd42bd9667b6d6ff5f6400b5a0190fce8e497ba0a775cf53c9521f1ca3b41e"
+    },
+    {
+      "path": "scholars/abinyakin.html",
+      "size_bytes": 13220,
+      "sha256": "2a86fe58ac82f9448bdcebf770a78b8bd965dcf5764ec1e0bd3e3de74362b9ad"
+    },
+    {
+      "path": "scholars/akimushkina.html",
+      "size_bytes": 13318,
+      "sha256": "64d1f17ffeaa2decc2e075bb1aeeb02a415a751fd215e11987e604bb0c8fa3d4"
+    },
+    {
+      "path": "scholars/albedil.html",
+      "size_bytes": 19079,
+      "sha256": "2b250ea8d09a93ce682b49316f10efb0bf8777db7e9d99e411e6c7a5010b0128"
+    },
+    {
+      "path": "scholars/aleksandrova-nataliya.html",
+      "size_bytes": 1003,
+      "sha256": "ef957e21c39ce7d73609193542f236099dd751f442952707b1d0822e94bb70ae"
+    },
+    {
+      "path": "scholars/aleshina-irina.html",
+      "size_bytes": 13579,
+      "sha256": "e4de1972f1c0459dc0b496e2dd0e98c3bc3ec8970ccf80cefe8608198af9c070"
+    },
+    {
+      "path": "scholars/alexander-babin.html",
+      "size_bytes": 20591,
+      "sha256": "468855b6e8cc0d41a8c42a575611361742b2f3a35ee1e4381f1bfee38edd3073"
+    },
+    {
+      "path": "scholars/alexander-dubyansky.html",
+      "size_bytes": 21890,
+      "sha256": "83dd29c936639e174531eeda032afb3266f7d64c7d5c9666f2738e4b9dbc1eb4"
+    },
+    {
+      "path": "scholars/alexey-vigasin.html",
+      "size_bytes": 16270,
+      "sha256": "a3f1a23abe91e1790cce1b95fadacb91a4a4cb080e01184a9976f1730415f09f"
+    },
+    {
+      "path": "scholars/alikhanova.html",
+      "size_bytes": 863,
+      "sha256": "77113167a84eb8874f3fe5bc28750016fbb184b287d53d86a1fd8878a54a8bc5"
+    },
+    {
+      "path": "scholars/anastasia-fiveyskaya.html",
+      "size_bytes": 14639,
+      "sha256": "fbf333eea3306c190f30a96242ab1471d2a492012fe5bd8c7ef3b01340fe956a"
+    },
+    {
+      "path": "scholars/anastasia-guriya.html",
+      "size_bytes": 18317,
+      "sha256": "061b9b76159c66d291e673831117186998051e6eed686ca95517ed11a9a49699"
+    },
+    {
+      "path": "scholars/anastasia-krylova.html",
+      "size_bytes": 17721,
+      "sha256": "8b60da7d7f63faf44ea34174a5697a3283ca9e268b395bd13ba9bf5d90e93eda"
+    },
+    {
+      "path": "scholars/anastasia-lozhkina.html",
+      "size_bytes": 17275,
+      "sha256": "360fe5b4dd3d0170c8cefd3f69d22e5b1d98231dea3cd00c9a921b63cca11861"
+    },
+    {
+      "path": "scholars/anisimova.html",
+      "size_bytes": 14187,
+      "sha256": "a141359d4dd057d5ba4709d5357fd08fc4dffb25c44034151c924c73863c38d0"
+    },
+    {
+      "path": "scholars/anna-smirnitskaya.html",
+      "size_bytes": 17480,
+      "sha256": "e644f61783a8083a345707937332612d3620813b3dc6fff6e30d55aa19a8925c"
+    },
+    {
+      "path": "scholars/arapov.html",
+      "size_bytes": 12982,
+      "sha256": "3aa4bce6bd7b87f2fe00b994154560990390147b2de189aca8048d6b466c9b19"
+    },
+    {
+      "path": "scholars/areg-mekhakyan.html",
+      "size_bytes": 19565,
+      "sha256": "ff1c119d9b58fa8e9b2cf9887bfede98efd8340b4b43daa544d8ed8e54dfaede"
+    },
+    {
+      "path": "scholars/atmanova-8c4df7.html",
+      "size_bytes": 15071,
+      "sha256": "a4cd1056e93ca9f44b1534a395cf9914b38a4a65d597974a3e4274bfb5487179"
+    },
+    {
+      "path": "scholars/atmanova-cb634e.html",
+      "size_bytes": 13144,
+      "sha256": "0cb8a45ad4e6946a6adc914143c1678232986f64622bebd43614bc8877252bde"
+    },
+    {
+      "path": "scholars/babin.html",
+      "size_bytes": 829,
+      "sha256": "961b6185c824e40a989e1bba2186bafd5adbd2a20eacda544549d1a131c88e18"
+    },
+    {
+      "path": "scholars/belimova.html",
+      "size_bytes": 13128,
+      "sha256": "756a11209cfaac400542c9c267c145ef8da5b171fecd69364df69e099757fb67"
+    },
+    {
+      "path": "scholars/belov.html",
+      "size_bytes": 13244,
+      "sha256": "40945b2ec737afcf35b59dbf6c0b15a73524d212bae4f5d8259d02e966655538"
+    },
+    {
+      "path": "scholars/berezkin-yurii.html",
+      "size_bytes": 14653,
+      "sha256": "8d65476217d295aea1bc5b2bc11a1e9b223463d960d4ae72e96235b948822ac4"
+    },
+    {
+      "path": "scholars/beshchuk.html",
+      "size_bytes": 13162,
+      "sha256": "65acf7b9ae7fcf23367afeb484921caf349bc4a4594b0cc6f1c946c4fc8182b5"
+    },
+    {
+      "path": "scholars/bitinaite.html",
+      "size_bytes": 15998,
+      "sha256": "ad8db4f14a7d2236fab18d79372e232d6c6eaffc38219ce1744e3eed9b1b0a84"
+    },
+    {
+      "path": "scholars/blinderman.html",
+      "size_bytes": 14239,
+      "sha256": "d7f2e65f7c67bf04509330d339e4cde84f8377e05d73d8510c21040c3ccf3c33"
+    },
+    {
+      "path": "scholars/bogolyubov.html",
+      "size_bytes": 13290,
+      "sha256": "6bce78bc90672ee5cc9bfba03d488339b22223490040878437ae375fd3c14f5d"
+    },
+    {
+      "path": "scholars/bondarev.html",
+      "size_bytes": 13232,
+      "sha256": "2edbc1a28d3d60c284fa415f22f04ef454e3cc94710957f41b52e8a892557b3e"
+    },
+    {
+      "path": "scholars/borisov.html",
+      "size_bytes": 13026,
+      "sha256": "b5abe2b20c0a8d76a1e47ac2f6fe08b5aa7ca5beecd4eeab543b8cc93b8e9963"
+    },
+    {
+      "path": "scholars/boskhomdzhiev.html",
+      "size_bytes": 13213,
+      "sha256": "c97bb20525f111edf307ad5d6c9a73a529f946e9b732b73ad9151863fc3db896"
+    },
+    {
+      "path": "scholars/brosalina.html",
+      "size_bytes": 15892,
+      "sha256": "9405203d3d84fde757d7fd20ddcce9a2ce2747e010718dacc83623d8901b48a0"
+    },
+    {
+      "path": "scholars/bryleva.html",
+      "size_bytes": 13567,
+      "sha256": "2e345feac6632d713f917969e8a338880e864d5e6696980afb2fa9f8a1c92b7e"
+    },
+    {
+      "path": "scholars/burmistrov-sergei.html",
+      "size_bytes": 19745,
+      "sha256": "5aea6f27d20b828d0dbcf0fb23384bdf8261c906614e5e36ad121ead0c49d9e9"
+    },
+    {
+      "path": "scholars/bushuev.html",
+      "size_bytes": 13258,
+      "sha256": "6332c22b82fce98e53c17a8cdfab7b69f4b6fbaf2b11e09a1864f5b89923047d"
+    },
+    {
+      "path": "scholars/chelnokova-anna.html",
+      "size_bytes": 16751,
+      "sha256": "167f3641af3bd4a220ea2587a128ae7363a5af1d4fba86d09d8ff409f443a3b7"
+    },
+    {
+      "path": "scholars/chernavin.html",
+      "size_bytes": 13854,
+      "sha256": "108b09e24f291725f19e284a681e374843442a43022e29347b6145e1f3b2131a"
+    },
+    {
+      "path": "scholars/daria-vorobyeva.html",
+      "size_bytes": 20388,
+      "sha256": "42b2897d6b6a443249072ea6b71be0aa24318d1d25799b0fb91e4c0d32e939ce"
+    },
+    {
+      "path": "scholars/demchenko.html",
+      "size_bytes": 18288,
+      "sha256": "3466cbbbf7ff56e9b1cf625883c9cc00bb35ad3a33148bdd880cdcfddfec4958"
+    },
+    {
+      "path": "scholars/demenova.html",
+      "size_bytes": 13443,
+      "sha256": "da59a19d868fa4b593c6e37ec9340a32200d5f0dc28e2cfb7b3cbf0d048d230d"
+    },
+    {
+      "path": "scholars/demichev-kirill.html",
+      "size_bytes": 14731,
+      "sha256": "d1eba2a152ebbfeb584620c80fcaa9cfce8dde721600e1670c886ae3ab9a4b32"
+    },
+    {
+      "path": "scholars/desnitskaya-evgeniya.html",
+      "size_bytes": 20880,
+      "sha256": "01129852ddcf13d24cf06a5988b730febb3db884dd2d32b80de6ffbb98d3d4b0"
+    },
+    {
+      "path": "scholars/dmitrieva.html",
+      "size_bytes": 13294,
+      "sha256": "8a5c6a72509bb40e3b0bbacbfd507f5c1ca71d5f343b4cadab99368835f76a8d"
+    },
+    {
+      "path": "scholars/dmitry-komissarov.html",
+      "size_bytes": 16748,
+      "sha256": "31865733e59cbd59e0afad2436b4f9ebb4f757879be5edc6b2367a84daf504c7"
+    },
+    {
+      "path": "scholars/dmitry-zhutaev.html",
+      "size_bytes": 19201,
+      "sha256": "6c3c00d8e14482e50759304be346922a98af848c5c886f29e31dd4dbd9603d9b"
+    },
+    {
+      "path": "scholars/donchenko.html",
+      "size_bytes": 14828,
+      "sha256": "2a7109fb3f9cbdfe510057b98b3b234b43cb8bb60466d0e2979afa4095d75037"
+    },
+    {
+      "path": "scholars/drachuk.html",
+      "size_bytes": 13078,
+      "sha256": "0e80a44bd3bd78120e4675a75ed051e0760e9f2952e9ba62f45ef1db309daf8c"
+    },
+    {
+      "path": "scholars/drobyshev-yulii.html",
+      "size_bytes": 19623,
+      "sha256": "deb5f3511503ef6929796f115f9f2d5b7f4ed02860bebce55fc892e124cbb460"
+    },
+    {
+      "path": "scholars/druzhinin.html",
+      "size_bytes": 14625,
+      "sha256": "9d1af608d6df99361c36180df2168d4bc50cb499b7d1fe99ff6487511f55c59d"
+    },
+    {
+      "path": "scholars/dubyanskaya.html",
+      "size_bytes": 14581,
+      "sha256": "edbd84004c1efc6df9eec96d99712f0dd3852e9b56ab9fa8f243ea36c4cb8cbc"
+    },
+    {
+      "path": "scholars/dubyanskii-aleksandr.html",
+      "size_bytes": 984,
+      "sha256": "3cdbe17003fed208aab7bc06e99fd58ce33712a1867df1acf749a0af77c08062"
+    },
+    {
+      "path": "scholars/egorova.html",
+      "size_bytes": 13913,
+      "sha256": "519f8b68c1c5f19313951760c8aa84501ade528fe83f686ef3a6833d98dc0386"
+    },
+    {
+      "path": "scholars/elena-yuditskaya.html",
+      "size_bytes": 18640,
+      "sha256": "11f354ac1049331f1471ab443d144043d164f92669104332f2325c64002969b8"
+    },
+    {
+      "path": "scholars/elikhina.html",
+      "size_bytes": 16008,
+      "sha256": "da40b86a549ac6328dd661a1b61e5b38e6bc0359adedaf2b5a5e8f0e370d94c1"
+    },
+    {
+      "path": "scholars/elizaveta-kuzina.html",
+      "size_bytes": 17258,
+      "sha256": "67f391f49366fa6e853d359efc1a2062273ab6db0496417bcff078c7a9210a2f"
+    },
+    {
+      "path": "scholars/erchenkov.html",
+      "size_bytes": 16113,
+      "sha256": "477310ff0e5ecbff5935ee1aa8198927ba04404393ec3fab93e92f4e5f255da6"
+    },
+    {
+      "path": "scholars/ermakova-tatyana.html",
+      "size_bytes": 18928,
+      "sha256": "5c40ca54e41bf736522d17e9a13bd0bea652ab5d07c3463edfa2c8db65072c93"
+    },
+    {
+      "path": "scholars/evgenia-renkovskaya.html",
+      "size_bytes": 16280,
+      "sha256": "b92b279801bdea5fa172a7848c74bf561d058d4d93f80baca2372e090d9ba1b6"
+    },
+    {
+      "path": "scholars/evgeny-ulansky.html",
+      "size_bytes": 17953,
+      "sha256": "b55690e9a21b9a53bc12b0eaa292d66e675d104cc80e2b2d02eda2388b882aad"
+    },
+    {
+      "path": "scholars/fagradyan.html",
+      "size_bytes": 13232,
+      "sha256": "4293a141ac5f88934f84b23875453c9658654007f2c48768daccd6afdbcee266"
+    },
+    {
+      "path": "scholars/fedorova.html",
+      "size_bytes": 13145,
+      "sha256": "f11cf223db00d086203e323ff160cb24eb822139194ba9139ec3dffd954f24f4"
+    },
+    {
+      "path": "scholars/fiveiskaya-anastasiya.html",
+      "size_bytes": 990,
+      "sha256": "50c7135704e573f6ee9d2f108697be211435885aab489f222c3612ca68688aeb"
+    },
+    {
+      "path": "scholars/fomin.html",
+      "size_bytes": 15274,
+      "sha256": "7576d5595acea9d9a64ce70c0401f8a7611484739c52d3fce858b42b10faab30"
+    },
+    {
+      "path": "scholars/galimova.html",
+      "size_bytes": 13516,
+      "sha256": "98ef3e0fde90dc3b958e65d43136b065797418cd2859635e920cb5ce79b1cac2"
+    },
+    {
+      "path": "scholars/gasuns.html",
+      "size_bytes": 826,
+      "sha256": "01cc3950ed469cc8481ebac22294b8b5e528716695f6d460d7da1ef2cfc184ad"
+    },
+    {
+      "path": "scholars/gavrikov.html",
+      "size_bytes": 13064,
+      "sha256": "dbdf7c82297a42c623ad85f08bbb4b09e7f1d25c1eec7cf44870ba091bc08603"
+    },
+    {
+      "path": "scholars/gladkova-anna.html",
+      "size_bytes": 13792,
+      "sha256": "69ed02e9f3bc7943757b9deeb9cd291eeae29c669cf674cf06d566b31546158b"
+    },
+    {
+      "path": "scholars/gordiichuk.html",
+      "size_bytes": 873,
+      "sha256": "237287a9e5e1447daac8c6bb481957a9ec90a7dda440c73337a294967d48eae6"
+    },
+    {
+      "path": "scholars/guriya-anastasiya.html",
+      "size_bytes": 942,
+      "sha256": "4337cdc3e9345d11aac27115603d6a9a568f6e778e9adcdaa3251e3bd0c4bc58"
+    },
+    {
+      "path": "scholars/gurov-nikita.html",
+      "size_bytes": 14485,
+      "sha256": "e18fefcc00328ce4cf16966386e7ffb66496474935495211b3a8174cfc687e77"
+    },
+    {
+      "path": "scholars/guzevataya.html",
+      "size_bytes": 13309,
+      "sha256": "cc0b30e5beada55c892d5521cc643638d69f16131ee230ad9d58ca1cdf4e1edb"
+    },
+    {
+      "path": "scholars/harjender-singh.html",
+      "size_bytes": 13109,
+      "sha256": "c9ecb81649b9266f1f77ce30b2e182871ab141ee3dc9211ba95a649de44990b0"
+    },
+    {
+      "path": "scholars/ignatev-andrei.html",
+      "size_bytes": 20206,
+      "sha256": "70f9336bf332b7b5f06a0744d6f7d376a8a9fe9e5bcaf28d844c2f424b774061"
+    },
+    {
+      "path": "scholars/ignatova.html",
+      "size_bytes": 13235,
+      "sha256": "e30b431b1f8be226a68b2ff7ac7040a5aec84c3d905505b1681d01290e09a6a8"
+    },
+    {
+      "path": "scholars/index.html",
+      "size_bytes": 48645,
+      "sha256": "59ad915e2ab686239c130f82fb4e09dc8b329730cca7d4191304a5c4d0c28986"
+    },
+    {
+      "path": "scholars/itkin-ilya.html",
+      "size_bytes": 13823,
+      "sha256": "7bbff324b4e3f055be1941611ebf2e3d746a07c920bb527845e6cd8cc9919bd6"
+    },
+    {
+      "path": "scholars/ivanov-vladimir.html",
+      "size_bytes": 15724,
+      "sha256": "d1c227e3fb687e5a4426a005513aca0c6fa291d00b665c698a3d588a62edcb17"
+    },
+    {
+      "path": "scholars/kanaeva.html",
+      "size_bytes": 843,
+      "sha256": "8c35988aa6eba795d7b1edd04d54f455052cc2892a2938c29a11d16b4d85147c"
+    },
+    {
+      "path": "scholars/kardinskaya.html",
+      "size_bytes": 13148,
+      "sha256": "397200fc0dc8801bd977ad2f5bd7fd2ac3e35920891b9a1df854d2a28eb71071"
+    },
+    {
+      "path": "scholars/karysheva.html",
+      "size_bytes": 13026,
+      "sha256": "2253efea2ec4f476c384941a32425d420112d78630155e03fec5126d9b49f131"
+    },
+    {
+      "path": "scholars/kasym.html",
+      "size_bytes": 13098,
+      "sha256": "a06ddc7684391e696ad871384b474b02b69e7690d3e13bafb2708b4912ff17ab"
+    },
+    {
+      "path": "scholars/kavalevskaya.html",
+      "size_bytes": 13151,
+      "sha256": "ecedc0b8a9e52cba6fbb3af7d781981657a00fa043ea2a0915580fa2cc45bdfc"
+    },
+    {
+      "path": "scholars/kesharpu.html",
+      "size_bytes": 13093,
+      "sha256": "8a8c2b6bd000df494eaf0d4211d006e98c54ddc220b64c8f65cf73f26c095d7a"
+    },
+    {
+      "path": "scholars/khazizova.html",
+      "size_bytes": 13280,
+      "sha256": "f69a27310ef4197f408eb0584512a821fa985aed1645d532d8d23d3858f9f644"
+    },
+    {
+      "path": "scholars/khelena.html",
+      "size_bytes": 12909,
+      "sha256": "02249aed87765e00cf34a7f6d668ff40cb863ea496b50fd959df081a9ec5f136"
+    },
+    {
+      "path": "scholars/khmurkin.html",
+      "size_bytes": 15540,
+      "sha256": "ed4fe0f3c77b992bdcdf112b29588309fc0096210cece324dbe17d61e373509b"
+    },
+    {
+      "path": "scholars/khrushcheva.html",
+      "size_bytes": 15398,
+      "sha256": "6a74ee99e2c9b5cbe8ea725dae9b62b98e15d3606a61f6a3d87a4189e3612670"
+    },
+    {
+      "path": "scholars/kitinov.html",
+      "size_bytes": 18174,
+      "sha256": "512e59ede7eb437a8ef2496c78651485576d769a7c8cb3d30baf0c254777d5b1"
+    },
+    {
+      "path": "scholars/klebanov-andrei.html",
+      "size_bytes": 13540,
+      "sha256": "d062d3b703d4f20117abe0a4088c9786018cee529c9d656339887d710e3d583e"
+    },
+    {
+      "path": "scholars/kogan.html",
+      "size_bytes": 14270,
+      "sha256": "6fed8f63b4b55fa6726d39da5152c5fe21d8faade6baaa4fee7831336ff15ee1"
+    },
+    {
+      "path": "scholars/kokova.html",
+      "size_bytes": 14286,
+      "sha256": "871c537680a173b5ccc5eefe8b1942d4c76acf8bf5f05ee0cd2b3b211ac09885"
+    },
+    {
+      "path": "scholars/komarov.html",
+      "size_bytes": 13047,
+      "sha256": "04377b19c88f62bf8143fb2dc086ce5bcd69b62c9cc94a3b081498c1d43ec41a"
+    },
+    {
+      "path": "scholars/komarova.html",
+      "size_bytes": 14969,
+      "sha256": "cc1bc82e6b7ba2eecf3a760e3539d4b502ce0cf4ce1461fab23f3e258e60b8f4"
+    },
+    {
+      "path": "scholars/komissarov-dmitrii.html",
+      "size_bytes": 960,
+      "sha256": "a88f1fa82223119fe4019b5594f285237c94879e128c6564cab1a2d0f28aec7f"
+    },
+    {
+      "path": "scholars/komissaruk.html",
+      "size_bytes": 13357,
+      "sha256": "01c9c68e1465d926265f194f5252c191f57ed52185b8e6d239f7e5b90aacf80b"
+    },
+    {
+      "path": "scholars/korablin.html",
+      "size_bytes": 15052,
+      "sha256": "72eb17395bb23e2edc865fbb74c0d69f413dc1d0b1b996874af80155afceab8a"
+    },
+    {
+      "path": "scholars/korneev.html",
+      "size_bytes": 13402,
+      "sha256": "be7245640242083154d7d5ae1b3487854d9fb33b86a69eac57b7649e526cf94e"
+    },
+    {
+      "path": "scholars/korneeva-natalya.html",
+      "size_bytes": 953,
+      "sha256": "f7bb78a32ea46d14c025cd1795ffb8447f9400e8bf7fdc615ad279c613293926"
+    },
+    {
+      "path": "scholars/korneeva.html",
+      "size_bytes": 13350,
+      "sha256": "2ab0565107ae4a1f2ee26ca127acb60bd14e77264822bddee1b21b91d7bef276"
+    },
+    {
+      "path": "scholars/korobov.html",
+      "size_bytes": 13291,
+      "sha256": "1550317e2fc77e2fa739785b0f1ea030d5d0554136c45e78182c8b41cd2db2a0"
+    },
+    {
+      "path": "scholars/korovina.html",
+      "size_bytes": 15105,
+      "sha256": "b995108333f3113caaf9eb22ecc9ad4ac56aed4a77434afb01f0f10633056473"
+    },
+    {
+      "path": "scholars/kostina.html",
+      "size_bytes": 16313,
+      "sha256": "9360687880978170de008e15fa8835127ba4070038e8ac9a3dc7b43bce558e05"
+    },
+    {
+      "path": "scholars/kotin-igor.html",
+      "size_bytes": 16764,
+      "sha256": "d26703bd6d1a123909b7bb1ac27a0203acc1a61df23d6263d0d3870e04caa103"
+    },
+    {
+      "path": "scholars/kovalevskaya.html",
+      "size_bytes": 13464,
+      "sha256": "1840c6cef623c0d41810644346e5af8cbbc554c8c785b75f35664d4e097a118f"
+    },
+    {
+      "path": "scholars/krapivina-rada.html",
+      "size_bytes": 917,
+      "sha256": "e5dd7b598ca2a3a9ddf8d6bbd299cf4e711a096de08d5de410e8597636db52fe"
+    },
+    {
+      "path": "scholars/krasnodembskaya.html",
+      "size_bytes": 18182,
+      "sha256": "17909abc95e32efe45fd43e9d30389cc309fda69c1afad6650f17e4241e2b455"
+    },
+    {
+      "path": "scholars/kroitser.html",
+      "size_bytes": 13274,
+      "sha256": "c18c07123a9fc45ad7f41723d5887d0ff67d63c96fd7c5d0ff92f80d3a509896"
+    },
+    {
+      "path": "scholars/krylova.html",
+      "size_bytes": 853,
+      "sha256": "23341d4974d3ba43b7305891be6d62a86aa79d0d0897f79d3cc4535e382a4f0a"
+    },
+    {
+      "path": "scholars/kryshtop.html",
+      "size_bytes": 13330,
+      "sha256": "78b05fc5391c006f0efc792df27acfa8af4962638b51dd781d158289f070c854"
+    },
+    {
+      "path": "scholars/kryuchkova.html",
+      "size_bytes": 13163,
+      "sha256": "be20ab8ea7819579c1a2cc4c4873aa32bd9965534b9a333a59d3123b701f7c8e"
+    },
+    {
+      "path": "scholars/kryukova.html",
+      "size_bytes": 14532,
+      "sha256": "5f336e02bb26c1212324ba5519be8d0480959f1204063a99ebf9c1f8b0f8ab8d"
+    },
+    {
+      "path": "scholars/kulikov.html",
+      "size_bytes": 838,
+      "sha256": "61ba795c879ab8933588ce869105609b24dee39501eb8d056c13328dceaa70f1"
+    },
+    {
+      "path": "scholars/kullanda-sergei.html",
+      "size_bytes": 947,
+      "sha256": "61e69c53f335e3dbedc8daabed67e05c8d8126f51da5713f10a87febc3490280"
+    },
+    {
+      "path": "scholars/kurochkin-aleksandr.html",
+      "size_bytes": 14230,
+      "sha256": "60cbb8390cf2e239f90525ad1c911626472c37742cfae3298e902150f07d0cc8"
+    },
+    {
+      "path": "scholars/kuzina.html",
+      "size_bytes": 841,
+      "sha256": "45a9c45f5a8817f4a97100f9a12097e6e00b3e83bd1749e4df195f616fbc348a"
+    },
+    {
+      "path": "scholars/lapshin.html",
+      "size_bytes": 13194,
+      "sha256": "7543bc62dcc686da330dadbc262a6040aa566c283397e4015b1827b7eb2f79f4"
+    },
+    {
+      "path": "scholars/leitan.html",
+      "size_bytes": 12922,
+      "sha256": "ccc2da4990f3149111cc8ff8cbc3d6f0515a61e25524a392c416d090748d1a53"
+    },
+    {
+      "path": "scholars/lekareva.html",
+      "size_bytes": 14243,
+      "sha256": "04830ba30a3456e390e613ffb73965d10d35c454bd8ae8c1397c72b9641c8132"
+    },
+    {
+      "path": "scholars/lelyukhin.html",
+      "size_bytes": 16456,
+      "sha256": "2d2bee03133e2ef86f3d48aaae6ac8d71f0b9b3bc9397392aee4fa06986ad17e"
+    },
+    {
+      "path": "scholars/lemeshkina-kseniya.html",
+      "size_bytes": 15436,
+      "sha256": "50b48f7a3d78641dd99477562d2254d56555d2fd596be273ef2e810d587a070e"
+    },
+    {
+      "path": "scholars/leonid-kulikov.html",
+      "size_bytes": 17921,
+      "sha256": "5ee3b220458c8fa3174a1c8b1fa25899e887dec3feac60601303a2fdabab1627"
+    },
+    {
+      "path": "scholars/leonov-mikhail.html",
+      "size_bytes": 13975,
+      "sha256": "71562fffc5200dbee715cc40b2cc17ed1b89491efbc0e88b36da61a8ecc99301"
+    },
+    {
+      "path": "scholars/lepekhova.html",
+      "size_bytes": 16110,
+      "sha256": "8c7ee7bd9274bd0f36a54945dda89cf7b93f82f8e96fc07e87672d2bb6bbdf51"
+    },
+    {
+      "path": "scholars/lev-titlin.html",
+      "size_bytes": 17338,
+      "sha256": "9ac8c966a13bf0138a418fed6757a3c330739ee688e8bfb3fc0818ea82166e00"
+    },
+    {
+      "path": "scholars/lidova-natalya.html",
+      "size_bytes": 941,
+      "sha256": "f0c7f7f7285652bdf1d738b0ddbbc6b1591f853cf80b93f12994bfcc19d00723"
+    },
+    {
+      "path": "scholars/lindtner.html",
+      "size_bytes": 12855,
+      "sha256": "f4d5503f806766f7ded1e4ef0807e99936742a7112ba53c91a9457da7df40450"
+    },
+    {
+      "path": "scholars/lobanov-sergei.html",
+      "size_bytes": 16109,
+      "sha256": "67c26b1ced5686e03856ea7d54bee1375154d2e35e95b4ef231870ccb3baba04"
+    },
+    {
+      "path": "scholars/lozhkina-anastasiya.html",
+      "size_bytes": 966,
+      "sha256": "1cb01e547b78fbd47647f873ee449d7d5f69b1d4f06f0af666c8f250398229c1"
+    },
+    {
+      "path": "scholars/luchina.html",
+      "size_bytes": 13953,
+      "sha256": "a8b27704fb783ab55a286e9f3f11fa33a6adb25e72ed1a140a45c82c278f5ce6"
+    },
+    {
+      "path": "scholars/luzhinskaya.html",
+      "size_bytes": 14295,
+      "sha256": "334fb075d9b11e2ebf390d497af00d297a02ffdd5f1f0cc2367d3a4978020f70"
+    },
+    {
+      "path": "scholars/lysenko-viktoriya.html",
+      "size_bytes": 948,
+      "sha256": "b880c295e54ee6d0c864b26da6b2ff7de97dcc45ce00fbb91cde882f526f953d"
+    },
+    {
+      "path": "scholars/lyulina-anastasiya.html",
+      "size_bytes": 19130,
+      "sha256": "a9e1d164991d2db98747dc3a699a44a4c5c5f304b1db58507a2f24ee7398ec00"
+    },
+    {
+      "path": "scholars/malyutin.html",
+      "size_bytes": 13908,
+      "sha256": "00890702ae4a936b4dd7cec3f4ceb21fe97bfcca7d668bed8c46347e6df992c5"
+    },
+    {
+      "path": "scholars/marcis-gasuns.html",
+      "size_bytes": 17355,
+      "sha256": "3536d5869f190fd53176ee4aeb1221807f6458d1146bdf3aae46ef31be5fb3bd"
+    },
+    {
+      "path": "scholars/maretina-kseniya.html",
+      "size_bytes": 14599,
+      "sha256": "b2322a2ec876951efe290c232fa1deb2b5dd7cd1e0d53f0f722469856357a15c"
+    },
+    {
+      "path": "scholars/mazhitov.html",
+      "size_bytes": 13845,
+      "sha256": "ac49794e2bdae184c0a5ec08a1ce76a7e2eb8a180ce48de235d2106e272dda50"
+    },
+    {
+      "path": "scholars/mazurina.html",
+      "size_bytes": 14705,
+      "sha256": "408dc1e097401494b80889498128e6e803bb7a899295e9596f7c16eb680a36ed"
+    },
+    {
+      "path": "scholars/meitarchiyan-margarita.html",
+      "size_bytes": 14085,
+      "sha256": "9d3216dd394874c52ae9d852d87c1f0179aab5313f73f81aabcd5fe97a8d6df1"
+    },
+    {
+      "path": "scholars/mekhakyan-6e2007.html",
+      "size_bytes": 822,
+      "sha256": "08e7280f2db878076ea878b6ba99b415e4bb2657984104b33f24fe477a2287c3"
+    },
+    {
+      "path": "scholars/mekhakyan-fef030.html",
+      "size_bytes": 847,
+      "sha256": "ce59fa149b19bf80ed760a2b1ce2d0ec8e795661540d32020b3a98fdb8e3a502"
+    },
+    {
+      "path": "scholars/mekhakyan.html",
+      "size_bytes": 16723,
+      "sha256": "d5a2b8d25f450d6ad08f67f28fa9db1b6cadaf138f4e9e605fe558e27ba8d64f"
+    },
+    {
+      "path": "scholars/merenkova.html",
+      "size_bytes": 13250,
+      "sha256": "6c476628f7e93858ca2303d39a6929ca30ae5da5c15deb8e630ce44bafb654a4"
+    },
+    {
+      "path": "scholars/minaeva-mariya.html",
+      "size_bytes": 15250,
+      "sha256": "f87e124c201f4dce56c00ed3705987bb869a0badf5bf797ec26b6321f50e02f1"
+    },
+    {
+      "path": "scholars/mitruev-bembya.html",
+      "size_bytes": 14060,
+      "sha256": "76bae0e80eeb2d9e8afad0ac2280877c1a8652b1f57a58a4a2e9bfd624337913"
+    },
+    {
+      "path": "scholars/molina-anna.html",
+      "size_bytes": 15261,
+      "sha256": "2edfebab1743423874f8a1c72927388d680ce2ce69d9dbe8064aec70e9e9a047"
+    },
+    {
+      "path": "scholars/motyleva.html",
+      "size_bytes": 13145,
+      "sha256": "782b08ac1b0a2c2a7f8d40e2256787eb77cda09d900da77f4d85958bf0d2a211"
+    },
+    {
+      "path": "scholars/mrachkovskaya.html",
+      "size_bytes": 13398,
+      "sha256": "efe4bcd59ea71641451821a99b5644d2bef8a43dd86d9d42b2923226c85bc561"
+    },
+    {
+      "path": "scholars/naimushina.html",
+      "size_bytes": 13551,
+      "sha256": "a0a7ed5b55ec818c22b7357b2e874a05772485ffc0e253f9048b38046826a80f"
+    },
+    {
+      "path": "scholars/natalia-alexandrova.html",
+      "size_bytes": 27400,
+      "sha256": "07504fc5d2a48f7e18e26c2367acb7facf2aa83da147d5f65e153746ff6c27c3"
+    },
+    {
+      "path": "scholars/natalia-kanaeva.html",
+      "size_bytes": 16937,
+      "sha256": "34e46f162bc779a0b48204a4c814fa30d49933d24bc39e374f9b29f55f304560"
+    },
+    {
+      "path": "scholars/natalia-korneeva.html",
+      "size_bytes": 22925,
+      "sha256": "aaf8adea83f52102fdf1346951c3d9a31c4bfef854a9154d7bd0114c3738094d"
+    },
+    {
+      "path": "scholars/natalia-lidova.html",
+      "size_bytes": 22140,
+      "sha256": "a4b4485e058f1473c2d2f288b314e7daf6f24344db75ed112aa9b55bda4bc011"
+    },
+    {
+      "path": "scholars/negreev.html",
+      "size_bytes": 13180,
+      "sha256": "38a1cac494ed7e59275d6547ce6894a5dc3ca61b0f51678569cdc5d989b2544b"
+    },
+    {
+      "path": "scholars/nemchinov-viktor.html",
+      "size_bytes": 14533,
+      "sha256": "cc5740469929a7367728160697fce2529a1bcc3d05bc34d7a1529f8f2be2df1a"
+    },
+    {
+      "path": "scholars/nesterkin.html",
+      "size_bytes": 13284,
+      "sha256": "7977ec769bed4b9b47c5b1b6225c4cb32eabf1254605810003aba86de03aea38"
+    },
+    {
+      "path": "scholars/neveleva-svetlana.html",
+      "size_bytes": 14569,
+      "sha256": "ed64b0a8d5dbd726a36f04e5ba6bd783a23d49f358b391830b811f869739231b"
+    },
+    {
+      "path": "scholars/nikolai-gordiichuk.html",
+      "size_bytes": 18621,
+      "sha256": "91c2ccd0d2747013615c71156014b0656a770afe3f4b42e2c96c1a1dd392ebe9"
+    },
+    {
+      "path": "scholars/nikolskaya.html",
+      "size_bytes": 13412,
+      "sha256": "75e79e6f2a81ec61275774acc8ae46d2d24b00b84dc9e4c6a17b4b92ea0ab6c6"
+    },
+    {
+      "path": "scholars/nina.html",
+      "size_bytes": 12844,
+      "sha256": "e9ae8c2dcbde88dbd547440822b3638ce44954f6bb480b26fc1e826dad8b78c6"
+    },
+    {
+      "path": "scholars/novoselova.html",
+      "size_bytes": 13214,
+      "sha256": "a096b2552c121038cc19ee774a373fa7ba3debce770dffb72a1a771f190a2637"
+    },
+    {
+      "path": "scholars/ofertas.html",
+      "size_bytes": 18634,
+      "sha256": "b41368afab1a5c5496a9daf7cc2cc72c4846cf24f0c75a38c35de1ec5c754bba"
+    },
+    {
+      "path": "scholars/ogneva.html",
+      "size_bytes": 18676,
+      "sha256": "6c2962fa286bbac69ca6d648cf2c5b0fa0901b4c42d6559883c7cbb5285332eb"
+    },
+    {
+      "path": "scholars/olga-vecherina.html",
+      "size_bytes": 21538,
+      "sha256": "92f3a54ecbe6ee6477bbd27ffb2289fc9399a720ddd2daf5b446bc80115a03c6"
+    },
+    {
+      "path": "scholars/oranskaya.html",
+      "size_bytes": 17231,
+      "sha256": "948bea16976f1d7ef3b980d85c6c4c94f8bde968ccea9faa4fbb39e56e82f0db"
+    },
+    {
+      "path": "scholars/ostrovskaya-elena.html",
+      "size_bytes": 21346,
+      "sha256": "fb7960536b2b526c24a759f0e3846beef8e57f5ffc5e76bfa49388afd1308340"
+    },
+    {
+      "path": "scholars/pakhomov.html",
+      "size_bytes": 19137,
+      "sha256": "933b1de6f8eb673d3e51e23e8b4cbd21958638cb25610936d3222fc7cd096661"
+    },
+    {
+      "path": "scholars/pakhomova-aleksandra.html",
+      "size_bytes": 14085,
+      "sha256": "2a394acbbd6f1ac8cace42bb82c68b27b5b2527c146130b350bf8b823e51b3eb"
+    },
+    {
+      "path": "scholars/paramonov-00f517.html",
+      "size_bytes": 13473,
+      "sha256": "4b03a79caff82d175aca15609f4a902fb85cb31d094df1b5a9973b99b722a25a"
+    },
+    {
+      "path": "scholars/paramonov-2b5c2b.html",
+      "size_bytes": 13328,
+      "sha256": "a3f66f574957dce19e798326f9c56137eeb3bbc87dbd7bc14a1ef5c53c627038"
+    },
+    {
+      "path": "scholars/paribok-andrei.html",
+      "size_bytes": 22817,
+      "sha256": "205f7e020f4eaaef076dc6a3e9a57f4e23475e3343938f0c48d6db26698fdd03"
+    },
+    {
+      "path": "scholars/pavlova.html",
+      "size_bytes": 13118,
+      "sha256": "d0d3af5917f97cdf171c02fc04a440c7e86b2c7c00b98283dc08eacb2c56b864"
+    },
+    {
+      "path": "scholars/pokatilov.html",
+      "size_bytes": 13277,
+      "sha256": "8a2ed5089c539f497310954a5a40b3e3d2333d2cac3f6de693552b510159f019"
+    },
+    {
+      "path": "scholars/pskhu-ruzana.html",
+      "size_bytes": 20355,
+      "sha256": "ac51b96a687619e1806d7db842dc4fda753b5a57ad6e019067a7039302a01f08"
+    },
+    {
+      "path": "scholars/pushkareva.html",
+      "size_bytes": 13182,
+      "sha256": "79885ef3b37402c5413e1c4bd8693738368ab8fe1317c4432d0630c0f4f2800d"
+    },
+    {
+      "path": "scholars/rada-krapivina.html",
+      "size_bytes": 16036,
+      "sha256": "96a1c3380c980eec2579c5de0d0ba3d60348b5239502b0cb41da1730dd0a0760"
+    },
+    {
+      "path": "scholars/ratushnyi.html",
+      "size_bytes": 13260,
+      "sha256": "9548fafb3958971d23bf1bb6d6587d4060af6a0595e3688f2cef92caae134a42"
+    },
+    {
+      "path": "scholars/renkovskaya.html",
+      "size_bytes": 885,
+      "sha256": "d70e086468da560e948e64014ae5baf82b9ac0dcfc3b05a5ced84769608df316"
+    },
+    {
+      "path": "scholars/rodionov.html",
+      "size_bytes": 13233,
+      "sha256": "ba780448fb3a736920dddae2b0896ea8419ffce19e4a8bc99e9b4d91f7dc403d"
+    },
+    {
+      "path": "scholars/roman.html",
+      "size_bytes": 12932,
+      "sha256": "cd6df46f38c4f7b85880e2ba981cbf83eafecc7e4196e97ec2828c934f8f1037"
+    },
+    {
+      "path": "scholars/rozhnova.html",
+      "size_bytes": 13201,
+      "sha256": "579c0495fe83ffa539374179d77dc5e0c7f4f4337f1a23363e39fa82b91cdba5"
+    },
+    {
+      "path": "scholars/rusanov-215083.html",
+      "size_bytes": 16220,
+      "sha256": "23f39a6812e136988f2bd34f712a30c1c4ad13e0b397587040ebc5872691230a"
+    },
+    {
+      "path": "scholars/rusanov-24f2dd.html",
+      "size_bytes": 13122,
+      "sha256": "b28dd5f80260af2d3d1142bd459d49d68ab0e6d0ed2d752621512f6d643a1af4"
+    },
+    {
+      "path": "scholars/rybakova-anna.html",
+      "size_bytes": 17144,
+      "sha256": "4b7fea36867d441bd690faf65d6a23820ab60c5b3a71084716de2663b77881d8"
+    },
+    {
+      "path": "scholars/ryzhakova-svetlana.html",
+      "size_bytes": 953,
+      "sha256": "1acef735c05c4d6c7dd62bcc485c78c4e85b4a9dd9d608b192277440b8d41062"
+    },
+    {
+      "path": "scholars/sabirova.html",
+      "size_bytes": 17291,
+      "sha256": "fd333d44935721408b259371aeff4293cfe24593d96d860b52e2fe7ff3e4909f"
+    },
+    {
+      "path": "scholars/safina.html",
+      "size_bytes": 14516,
+      "sha256": "34e4e32cadec652706c43badcdc68e7eb45a1cc0aa08c44b10dc02a4772832df"
+    },
+    {
+      "path": "scholars/selivanova.html",
+      "size_bytes": 13267,
+      "sha256": "2cfb077f6dc00e59ee92a904f38513a67abf6393dc02dc732d5c90a42540172d"
+    },
+    {
+      "path": "scholars/senina.html",
+      "size_bytes": 13326,
+      "sha256": "e64add6df348836f1690b6fd4b9011a10a4a3806a1533e4596fde9ea105dbc8f"
+    },
+    {
+      "path": "scholars/serebryanyi-sergei.html",
+      "size_bytes": 13874,
+      "sha256": "383b82b8e74231c6e43cc95dc308fbc4fa888084cf0e466dc13c5d70ba6bdf15"
+    },
+    {
+      "path": "scholars/sergeeva.html",
+      "size_bytes": 13141,
+      "sha256": "8cf19e183b105ca4474e3f0f373f3a49de3d77b6b49dbc6ffa67dc10d2d7266b"
+    },
+    {
+      "path": "scholars/sergey-kullanda.html",
+      "size_bytes": 14500,
+      "sha256": "5b1fc9270e65a530422b04e93bdfe07488d09d1623f344296de6c2e76d2ee7b4"
+    },
+    {
+      "path": "scholars/sergey-tavastsherna.html",
+      "size_bytes": 27010,
+      "sha256": "fedf0f0a69f6ef289ec01c212c544b04ed743ae3b9e04e881cdfd38234c35770"
+    },
+    {
+      "path": "scholars/shalakhov.html",
+      "size_bytes": 13390,
+      "sha256": "c62fe04f058613e6e57038932f6c201817841da85f2e21b432366d7683605bbf"
+    },
+    {
+      "path": "scholars/shaposhnikova.html",
+      "size_bytes": 13146,
+      "sha256": "79f6d73e63c907af510686ed6f382eef786b010cba87465ec6b1f05777e5fe3a"
+    },
+    {
+      "path": "scholars/sharapova-aleksandra.html",
+      "size_bytes": 13855,
+      "sha256": "c9412340058d111f84b1e791346f68e7049d47937088220b52fd8f71d3b098fd"
+    },
+    {
+      "path": "scholars/sharygin.html",
+      "size_bytes": 13065,
+      "sha256": "4a3304b0528a5eeb49b7c23f48f0605f2f8801d29cdabdeff97416b432baf26a"
+    },
+    {
+      "path": "scholars/shcherbak.html",
+      "size_bytes": 13030,
+      "sha256": "13b055c2a313afe1eb97487d09ca90f1d128dd8efd823365c5c3690d1a32e841"
+    },
+    {
+      "path": "scholars/shilinskene.html",
+      "size_bytes": 13074,
+      "sha256": "8fef0d1004c019c225dee07996e0004cb6f7b48a36970ae436b8471f9ca465b7"
+    },
+    {
+      "path": "scholars/shokhin-vladimir.html",
+      "size_bytes": 935,
+      "sha256": "f0fef1a438f366d5781740a9c5c2d083558646063d15a850cc387dad9dcb6652"
+    },
+    {
+      "path": "scholars/shomakhmadov.html",
+      "size_bytes": 16780,
+      "sha256": "b4967895a069c831208df38a7ffaf328f354c792bb50f1e2578f128585dc8347"
+    },
+    {
+      "path": "scholars/shrestkha.html",
+      "size_bytes": 17674,
+      "sha256": "0186f6f592c5abae7f61c94197563d73410bf11c096768e820f647810c73e84a"
+    },
+    {
+      "path": "scholars/shukla.html",
+      "size_bytes": 13079,
+      "sha256": "0bd42495b1828022b138da4aa33e270a17fc38f9cc36347928c39a7b027a6bf2"
+    },
+    {
+      "path": "scholars/shustova-alla.html",
+      "size_bytes": 20149,
+      "sha256": "0b52c160b13c4c714ca7f2f765950345cbb56f5c795b6d4270aff2121eea040f"
+    },
+    {
+      "path": "scholars/skorokhodova-tatyana.html",
+      "size_bytes": 19253,
+      "sha256": "f6822592cd32140e33f9e360fe97ddfadeda4e9c895e25e2455a601d327d8046"
+    },
+    {
+      "path": "scholars/skorokhodova.html",
+      "size_bytes": 13278,
+      "sha256": "f665af5e0cfbb1fbee693d1a4b783908ff053e21dfb808c9716b017c71908df5"
+    },
+    {
+      "path": "scholars/slinko.html",
+      "size_bytes": 13093,
+      "sha256": "39b5211a8570d1b0bf50d3ede1c3085615c8e6929a78d7b5ed539d3db9c7cc7e"
+    },
+    {
+      "path": "scholars/smirnitskaya.html",
+      "size_bytes": 882,
+      "sha256": "89fe087f945a43d6fe9174817329947c9d2f667faf3854956beaf77af6d0b8a0"
+    },
+    {
+      "path": "scholars/smirnova.html",
+      "size_bytes": 13164,
+      "sha256": "2799106fd34d76bfc3f7015a61b1bc01d0cda161d3b9ae652ea3f46f835131c4"
+    },
+    {
+      "path": "scholars/soboleva-diana.html",
+      "size_bytes": 15132,
+      "sha256": "30121ed214ddc0887c2139f4ca4ff836c871c807b78725fdc50b5248aa39c643"
+    },
+    {
+      "path": "scholars/soboleva.html",
+      "size_bytes": 14796,
+      "sha256": "6bb6c3ceddd7b244c5bc6dfbb938e4cd074f653a7121fbbeb5523d13dcfbcbfb"
+    },
+    {
+      "path": "scholars/sofia-tsvetkova.html",
+      "size_bytes": 27778,
+      "sha256": "287bb3741bfca31309739c1d6cf22410d63fa08a8b3fcc3715ca22616793387d"
+    },
+    {
+      "path": "scholars/sokolova.html",
+      "size_bytes": 13226,
+      "sha256": "ea775bd384aba1c6c9023415c54cdff595ad73f66248a2f9f95308260c29f036"
+    },
+    {
+      "path": "scholars/stolyarova.html",
+      "size_bytes": 15580,
+      "sha256": "1f310bea2e731c2a4477d00fdc87819e2375c641144a0e84da8bd7014695b333"
+    },
+    {
+      "path": "scholars/strelkov.html",
+      "size_bytes": 13262,
+      "sha256": "fd4139363feb5239996663f9c7a6f0eea18da75fbcd5e6862891c13ded7dcf11"
+    },
+    {
+      "path": "scholars/strelkova.html",
+      "size_bytes": 14362,
+      "sha256": "f66943b18d4dd11a2528f439f26811436924881f78bac8c642cedb12d9df0d82"
+    },
+    {
+      "path": "scholars/streltsova.html",
+      "size_bytes": 15780,
+      "sha256": "db86823006231371044be5b81e103bcd8fd67cc60a0cfd78710be45a1d6502c2"
+    },
+    {
+      "path": "scholars/stukalin.html",
+      "size_bytes": 13256,
+      "sha256": "3a8dec9752ac8359d3314545631f79a0d76a92c85b9b42cb6e8c20ab8c61b705"
+    },
+    {
+      "path": "scholars/svetlana-ryzhakova.html",
+      "size_bytes": 25597,
+      "sha256": "2eabd305cfa2272792c3d92a29e7b26f919a4385624a3464a72d3687c2cfa0db"
+    },
+    {
+      "path": "scholars/svetlana.html",
+      "size_bytes": 13661,
+      "sha256": "5ef3ee5f99b9f3741a38a6f40f97995f11f15155dc61a7f293c4f9db4416f2a8"
+    },
+    {
+      "path": "scholars/tanonova.html",
+      "size_bytes": 13234,
+      "sha256": "cb082e4aabf2106796f8eab051024c79fed59a8454c5801ab838b227553b30a9"
+    },
+    {
+      "path": "scholars/tavastsherna-sergei.html",
+      "size_bytes": 971,
+      "sha256": "5e069db87989ec2ee1ef45128a322a0a0b27b4785e89cde673f8598bec4f091d"
+    },
+    {
+      "path": "scholars/terentev.html",
+      "size_bytes": 14222,
+      "sha256": "9304e7699235566a2faad9c00538ce777900a082542675a66634b93513be39fa"
+    },
+    {
+      "path": "scholars/tishin-vladimir.html",
+      "size_bytes": 14440,
+      "sha256": "3e1bbd7d7a9b69aacc02492f18884889baa86b44af7a2d7ee1ccbcdab3d07d74"
+    },
+    {
+      "path": "scholars/titlin.html",
+      "size_bytes": 811,
+      "sha256": "4ca09b0fa766fce10ccabe80c05be955bede443544e2a96ff957cbbcda51327e"
+    },
+    {
+      "path": "scholars/tolchelnikov.html",
+      "size_bytes": 14039,
+      "sha256": "8996a08342a9ed2422b58dd812edf7c3bd1381255b0eff84b136e30586171aaf"
+    },
+    {
+      "path": "scholars/tsendina.html",
+      "size_bytes": 13429,
+      "sha256": "a55a67654e4267cbc864eb545af49414c7baa177a336cc5e1c4291fd9159c960"
+    },
+    {
+      "path": "scholars/tsvetkova-sofya.html",
+      "size_bytes": 917,
+      "sha256": "8eac782eb1be8fc469483766776f749a2da8b992261f570fa6429ec2ac2f911e"
+    },
+    {
+      "path": "scholars/tyulina-elena.html",
+      "size_bytes": 20358,
+      "sha256": "6d4a7cb91b7971632c22fa7c2b33546590e9eb42c53474c587536d88ac391b6f"
+    },
+    {
+      "path": "scholars/uimina-yuliya.html",
+      "size_bytes": 13994,
+      "sha256": "1d3791f4af678da528b372d92723ed9b1f800c452a5dbb74457d60d9e889d20c"
+    },
+    {
+      "path": "scholars/ulanskii-evgenii.html",
+      "size_bytes": 931,
+      "sha256": "b0c1cf948e01876537ad0bcd22bb11cc5255c2b4e84973abb04b5d882c0e85d0"
+    },
+    {
+      "path": "scholars/usenko.html",
+      "size_bytes": 13050,
+      "sha256": "64f972d688f7b1d08ad6ff9e4195b0e9128bbdd7f81a4d1965e885690f440b18"
+    },
+    {
+      "path": "scholars/uspenskaya.html",
+      "size_bytes": 14827,
+      "sha256": "773c9f8c5752f84418d446b8974b6c51917f8d9710ce73a79449c8b3115cbb8c"
+    },
+    {
+      "path": "scholars/v-m-shelkovich.html",
+      "size_bytes": 13246,
+      "sha256": "d6d8b2182a1db61dab10187a3d1209e76e37ae8b7586be27fca8df327177aefb"
+    },
+    {
+      "path": "scholars/vasilev.html",
+      "size_bytes": 14116,
+      "sha256": "775e86c76a9379212c34599bf562cc2efe33c7b1f92d2f50364702c27f5bc3a2"
+    },
+    {
+      "path": "scholars/vasilkov-yaroslav.html",
+      "size_bytes": 22203,
+      "sha256": "31ca4213655744561793329b8a1e7de0a69fdc05958fa4e900a728ef6eacf330"
+    },
+    {
+      "path": "scholars/vatman.html",
+      "size_bytes": 13284,
+      "sha256": "53e39c170a442b5480c1abdea21411f025094fb52b3b71ab81b5cd2a542234cc"
+    },
+    {
+      "path": "scholars/vecherina-olga.html",
+      "size_bytes": 911,
+      "sha256": "2ccfe9323b5c42f828bf7406b16e0528593810451fe79609f29f43e4226d6af0"
+    },
+    {
+      "path": "scholars/vertogradova-viktoriya.html",
+      "size_bytes": 1008,
+      "sha256": "78328dc514c14023e9b070bfbf50e21023fee771af5f1d2eaecbdcdeb086a13e"
+    },
+    {
+      "path": "scholars/victoria-lysenko.html",
+      "size_bytes": 23997,
+      "sha256": "08874f5daa7d925d9d8f0f64f204bfa9808d86d5802d019d7e0b28c48af5ef11"
+    },
+    {
+      "path": "scholars/victoria-vertogradova.html",
+      "size_bytes": 21223,
+      "sha256": "d88a97a5bae087f9118880d320758d8a956c6ed4818f6302e6979a229ebb80f5"
+    },
+    {
+      "path": "scholars/vigasin-aleksei.html",
+      "size_bytes": 930,
+      "sha256": "8841f801928aa2d883530e174e64e80424558436320f1e19625335e085b1fb77"
+    },
+    {
+      "path": "scholars/vigel.html",
+      "size_bytes": 13135,
+      "sha256": "41f63c28f28265304e65f42ef7c01e410953ea601405429ea6c754ee6078651c"
+    },
+    {
+      "path": "scholars/vladimir-shokhin.html",
+      "size_bytes": 16824,
+      "sha256": "b78293c777d5aa4c9899f663932eeef116da537eb0c67d9146ba5dbe9a16981e"
+    },
+    {
+      "path": "scholars/voloshina.html",
+      "size_bytes": 17817,
+      "sha256": "1881cb5deabe5c568d5eca0eb2c0847af418b7dd952eee8af83549ef59238d07"
+    },
+    {
+      "path": "scholars/vorobeva-darya.html",
+      "size_bytes": 934,
+      "sha256": "1cebc3f5b3e1c56af88366b63f821e5432b94daba147105ed619580cfd7621cd"
+    },
+    {
+      "path": "scholars/vozchikov.html",
+      "size_bytes": 13091,
+      "sha256": "ae25b5d62763f44fa8bb2ca1f8f3fb5fed4c817d39a4a2b7ff6d55270f70e9b9"
+    },
+    {
+      "path": "scholars/vozdigan.html",
+      "size_bytes": 14803,
+      "sha256": "6dda9171e75fb31d050a81b05d6d008e3353bf9e7873a20dbcad90c8460a70b3"
+    },
+    {
+      "path": "scholars/vvedenskaya.html",
+      "size_bytes": 13254,
+      "sha256": "4d9130c6e4b3b61db9e106ffbe6e61a0acc6efcb453fb400168dcd5d253549db"
+    },
+    {
+      "path": "scholars/vyrshchikov-evgenii.html",
+      "size_bytes": 20958,
+      "sha256": "3ded6bb02e5a64a10987985ba152fa4fdde61fee0f4c630dc8da2cb0df0e3b3b"
+    },
+    {
+      "path": "scholars/yakovleva-mariya.html",
+      "size_bytes": 15350,
+      "sha256": "dcfa1cf11b3cc6214ddf1c1486e423d940b1d554a04cb49782485c16f04fc54c"
+    },
+    {
+      "path": "scholars/yuditskaya-117242.html",
+      "size_bytes": 858,
+      "sha256": "9e12c6a54f055b7fb9779ddad5cb11fd7a5aa8126952c28bff3bfbf7d49e4a3d"
+    },
+    {
+      "path": "scholars/yuditskaya-c4d444.html",
+      "size_bytes": 828,
+      "sha256": "1045e4088005c3c19b414e72dc3fa2cf573beabbd13e70e12b8cfc6a6301ca45"
+    },
+    {
+      "path": "scholars/yuditskaya.html",
+      "size_bytes": 13018,
+      "sha256": "9802264ad677c7db35c92222e86c0e1fcebebf2530a0ed7c026e1cbece311f72"
+    },
+    {
+      "path": "scholars/yulia-alikhanova.html",
+      "size_bytes": 19477,
+      "sha256": "ea27de6f03a29f25dabfa24115779a21193a587677b416cf146467b3e2e35858"
+    },
+    {
+      "path": "scholars/zagorulko.html",
+      "size_bytes": 13311,
+      "sha256": "3b71e05ee571469754040cd8a7bd36d4cc14cc52e85191f4d8f3833526e5068a"
+    },
+    {
+      "path": "scholars/zagumennov-547db9.html",
+      "size_bytes": 13282,
+      "sha256": "6bb4f7974df9f9250009ed89fa56894f6766bd82f213067f93cb981373e9f2df"
+    },
+    {
+      "path": "scholars/zagumennov-ac9c82.html",
+      "size_bytes": 13203,
+      "sha256": "5e6e53eb47d67768c3a7077f0e4414cdaee883ff603b3d00090331b2a33565d1"
+    },
+    {
+      "path": "scholars/zastrozhnova.html",
+      "size_bytes": 13344,
+      "sha256": "8c3314dbf873529848a918c95a3ad0a491a443e566e84b9e2e1727ef3d23d238"
+    },
+    {
+      "path": "scholars/zevatskii.html",
+      "size_bytes": 13378,
+      "sha256": "f412dafca9664172edfd81572c4002f35c329fe1a7a6ab20966a592239ce2a52"
+    },
+    {
+      "path": "scholars/zheleznova-natalya.html",
+      "size_bytes": 13711,
+      "sha256": "bb7c1950790445b148d7e8987f0f5cc0a04b6736536e4a973d3980fd096027d2"
+    },
+    {
+      "path": "scholars/zhukova.html",
+      "size_bytes": 15302,
+      "sha256": "e5dface78c512c698bb3c2e960273227bbc915752aee8b67ed1bbdde9d8ef402"
+    },
+    {
+      "path": "scholars/zhutaev-dmitrii.html",
+      "size_bytes": 912,
+      "sha256": "a36d62b53af0da2c91de2c4dd4a64ffdd417a60a7894dce8f8b51d557c0910b1"
+    },
+    {
+      "path": "scholars/zimina.html",
+      "size_bytes": 16088,
+      "sha256": "a53f70d6d10f68336a3ad382af51d810b9bcce5028f397b98a8c74bb299cd749"
+    },
+    {
+      "path": "scholars/zorin-aleksei.html",
+      "size_bytes": 18256,
+      "sha256": "e38df2c0dadb062533c80c8cf95bdbeaade0ad5ba7d271804c9765793db8e95f"
+    },
+    {
+      "path": "search-index.json",
+      "size_bytes": 407310,
+      "sha256": "732ec73ebb055d3423d5820ac5b60b7187b3c6c7839c3993378efff9ea9c153d"
+    },
+    {
+      "path": "search.html",
+      "size_bytes": 8750,
+      "sha256": "bd88565c7862529575142a48988ed1b719ce46d44f6ae5ebef2309d98136ab69"
+    },
+    {
+      "path": "site.webmanifest",
+      "size_bytes": 348,
+      "sha256": "7d9f6bed4002c86a8a58c6ccd57c73da3a21c95b7e7269efec9a53cf8c5228e8"
+    },
+    {
+      "path": "site_data.json",
+      "size_bytes": 1740174,
+      "sha256": "83529146ba14979d1aba0270582227a26ed22dad89c459078f13a6f309b743ed"
+    },
+    {
+      "path": "sitemap.xml",
+      "size_bytes": 43540,
+      "sha256": "eed6321603e250590964627d0b008b521d1c733c27ef4f1e0c5149075ec57a5b"
+    },
+    {
+      "path": "themes/academichistory.html",
+      "size_bytes": 42099,
+      "sha256": "853ea103760adc82ace4685a0b66476df5f237577aa8f8a2822f76f81a709830"
+    },
+    {
+      "path": "themes/art.html",
+      "size_bytes": 56011,
+      "sha256": "a4130b05fe87e95bde899dd8e477824f3c249e4a86bdb70ad0412620f12b05f5"
+    },
+    {
+      "path": "themes/history.html",
+      "size_bytes": 134116,
+      "sha256": "01b9656e712372a6fa8abea0829df304ef50e0890bbe1f813244d939f74b1c72"
+    },
+    {
+      "path": "themes/index.html",
+      "size_bytes": 8450,
+      "sha256": "55db5c1318122901b79bdb557fb2733f07b49dc8f2517cb1721110fbaf59a237"
+    },
+    {
+      "path": "themes/linguistics.html",
+      "size_bytes": 87435,
+      "sha256": "5781fe78dfc203917e305dd496a096333fe760519ca25bc174f28219f84e3ac1"
+    },
+    {
+      "path": "themes/philosophy.html",
+      "size_bytes": 146533,
+      "sha256": "4ecfbd79a6bf371c38680759fba40421eb17299c4ff18d903f18e4b6a3387e76"
+    }
+  ]
+}

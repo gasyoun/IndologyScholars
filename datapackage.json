@@ -1,10 +1,17 @@
 {
   "profile": "data-package",
+  "schema_version": "1.0.0",
+  "generated": "2026-05-22",
+  "build": {
+    "source": "IndologyScholars",
+    "pipeline_version": "2026-05-21",
+    "generator": "generate_publication_pages.py"
+  },
   "name": "indology-scholars",
   "title": "Russian Indological Research Archive",
   "description": "Normalized archive of Russian Indological conference presentations and scholar profiles.",
   "homepage": "https://gasyoun.github.io/IndologyScholars/",
-  "created": "2026-05-21",
+  "created": "2026-05-22",
   "licenses": [
     {
       "name": "Apache-2.0",
@@ -52,7 +59,31 @@
       "path": "site_data.json",
       "format": "js",
       "mediatype": "application/javascript",
-      "description": "Browser payload with scholars, presentations, charts, and network data."
+      "description": "Browser payload with scholars, presentations, charts, and network data.",
+      "schema": {
+        "fields": [
+          {
+            "name": "schema_version",
+            "type": "string"
+          },
+          {
+            "name": "generated",
+            "type": "date"
+          },
+          {
+            "name": "summary",
+            "type": "object"
+          },
+          {
+            "name": "scholars",
+            "type": "array"
+          },
+          {
+            "name": "timeline",
+            "type": "object"
+          }
+        ]
+      }
     },
     {
       "name": "database",
@@ -73,7 +104,206 @@
       "path": "analytics_output/data_quality_report.json",
       "format": "json",
       "mediatype": "application/json",
-      "description": "Machine-readable data quality checks and review samples."
+      "description": "Machine-readable data quality checks and review samples.",
+      "schema": {
+        "fields": [
+          {
+            "name": "schema_version",
+            "type": "string"
+          },
+          {
+            "name": "generated",
+            "type": "date"
+          },
+          {
+            "name": "summary",
+            "type": "object"
+          },
+          {
+            "name": "checks",
+            "type": "array"
+          }
+        ]
+      }
+    },
+    {
+      "name": "data-dictionary",
+      "path": "data_dictionary.md",
+      "format": "md",
+      "mediatype": "text/markdown",
+      "description": "Human-readable field guide for reusable CSV, JSON, SQLite, and generated publication outputs."
+    },
+    {
+      "name": "presentation-id-manifest",
+      "path": "analytics_output/presentation_id_manifest.csv",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "description": "Stable presentation ID manifest used to audit rebuild stability.",
+      "schema": {
+        "fields": [
+          {
+            "name": "presentation_id",
+            "type": "string"
+          },
+          {
+            "name": "series",
+            "type": "string"
+          },
+          {
+            "name": "year",
+            "type": "integer"
+          },
+          {
+            "name": "event_id",
+            "type": "string"
+          },
+          {
+            "name": "session_id",
+            "type": "string"
+          },
+          {
+            "name": "title",
+            "type": "string"
+          },
+          {
+            "name": "first_speaker",
+            "type": "string"
+          },
+          {
+            "name": "all_speakers",
+            "type": "string"
+          },
+          {
+            "name": "source_url",
+            "type": "string"
+          },
+          {
+            "name": "source_snippet_hash",
+            "type": "string"
+          },
+          {
+            "name": "stable_key_candidate",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    {
+      "name": "id-stability-audit",
+      "path": "analytics_output/id_stability_audit.json",
+      "format": "json",
+      "mediatype": "application/json",
+      "description": "Machine-readable audit proving presentation IDs are stable across unchanged rebuilds."
+    },
+    {
+      "name": "field-provenance-biographical",
+      "path": "analytics_output/field_provenance_biographical.csv",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "description": "Field-level provenance for curated person names and life dates."
+    },
+    {
+      "name": "field-provenance-authority",
+      "path": "analytics_output/field_provenance_authority.csv",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "description": "Field-level provenance for external authority identifiers and organization records."
+    },
+    {
+      "name": "field-provenance-themes",
+      "path": "analytics_output/field_provenance_themes.csv",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "description": "Field-level provenance for generated presentation theme labels and review candidates."
+    },
+    {
+      "name": "network-nodes",
+      "path": "analytics_output/network_nodes.csv",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "description": "Typed nodes for person, event, organization, and theme network analysis.",
+      "schema": {
+        "fields": [
+          {
+            "name": "node_id",
+            "type": "string"
+          },
+          {
+            "name": "node_type",
+            "type": "string"
+          },
+          {
+            "name": "label",
+            "type": "string"
+          },
+          {
+            "name": "local_id",
+            "type": "string"
+          },
+          {
+            "name": "weight",
+            "type": "integer"
+          }
+        ]
+      }
+    },
+    {
+      "name": "network-edges",
+      "path": "analytics_output/network_edges.csv",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "description": "Weighted network edges with explicit relation type, year, and conference series.",
+      "schema": {
+        "fields": [
+          {
+            "name": "source",
+            "type": "string"
+          },
+          {
+            "name": "target",
+            "type": "string"
+          },
+          {
+            "name": "edge_type",
+            "type": "string"
+          },
+          {
+            "name": "year",
+            "type": "integer"
+          },
+          {
+            "name": "series",
+            "type": "string"
+          },
+          {
+            "name": "weight",
+            "type": "integer"
+          }
+        ]
+      }
+    },
+    {
+      "name": "publication-file-manifest",
+      "path": "analytics_output/publication_file_manifest.csv",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "description": "Generated publication file manifest with byte sizes and SHA-256 checksums.",
+      "schema": {
+        "fields": [
+          {
+            "name": "path",
+            "type": "string"
+          },
+          {
+            "name": "size_bytes",
+            "type": "integer"
+          },
+          {
+            "name": "sha256",
+            "type": "string"
+          }
+        ]
+      }
     },
     {
       "name": "analytics",

@@ -1,4 +1,6 @@
 import datetime as dt
+import csv
+import hashlib
 import json
 import re
 import sqlite3
@@ -34,11 +36,14 @@ from publication_helpers import (
     site_url,
     slugify,
     theme_label,
+    clean_person_urls,
 )
 
 
 DB_PATH = "conferences.db"
 BUILD_DATE = dt.date.today().isoformat()
+DATA_SCHEMA_VERSION = "1.0.0"
+PIPELINE_VERSION = "2026-05-21"
 PUBLIC_DIRS = ["assets", "conferences", "themes", "cities", "institutions"]
 
 
@@ -61,6 +66,81 @@ def file_size_label(path):
         if size < 1024 or unit == "GB":
             return f"{size:.1f} {unit}" if unit != "B" else f"{size} B"
         size /= 1024
+
+
+def file_sha256(path):
+    h = hashlib.sha256()
+    with open(path, "rb") as f:
+        for chunk in iter(lambda: f.read(1024 * 1024), b""):
+            h.update(chunk)
+    return h.hexdigest()
+
+
+def generated_manifest_paths():
+    roots = [
+        "404.html",
+        "CITATION.cff",
+        "data_dictionary.md",
+        "datapackage.json",
+        "download-data.html",
+        "data-quality.html",
+        "en.html",
+        "how-to-cite.html",
+        "index.html",
+        "known-limitations.html",
+        "methodology.html",
+        "metrics-guide.html",
+        "networks.html",
+        "robots.txt",
+        "search.html",
+        "search-index.json",
+        "site.webmanifest",
+        "site_data.json",
+        "sitemap.xml",
+    ]
+    directories = ["analytics_output", "assets", "cities", "conferences", "institutions", "scholars", "themes"]
+    paths = [Path(path) for path in roots]
+    for dirname in directories:
+        root = Path(dirname)
+        if root.exists():
+            paths.extend(path for path in root.rglob("*") if path.is_file())
+    excluded = {
+        Path("analytics_output/publication_file_manifest.csv"),
+        Path("analytics_output/publication_file_manifest.json"),
+    }
+    return sorted({path for path in paths if path.exists() and path not in excluded}, key=lambda p: str(p).replace("\\", "/"))
+
+
+def generate_publication_file_manifest():
+    rows = []
+    for path in generated_manifest_paths():
+        rel = str(path).replace("\\", "/")
+        rows.append({
+            "path": rel,
+            "size_bytes": path.stat().st_size,
+            "sha256": file_sha256(path),
+        })
+
+    Path("analytics_output").mkdir(exist_ok=True)
+    csv_path = Path("analytics_output/publication_file_manifest.csv")
+    with open(csv_path, "w", encoding="utf-8", newline="") as f:
+        writer = csv.DictWriter(f, fieldnames=["path", "size_bytes", "sha256"])
+        writer.writeheader()
+        writer.writerows(rows)
+
+    payload = {
+        "schema_version": DATA_SCHEMA_VERSION,
+        "generated": BUILD_DATE,
+        "build": {
+            "source": "IndologyScholars",
+            "pipeline_version": PIPELINE_VERSION,
+            "generator": "generate_publication_pages.py",
+        },
+        "file_count": len(rows),
+        "files": rows,
+    }
+    write_text("analytics_output/publication_file_manifest.json", json.dumps(payload, ensure_ascii=False, indent=2))
+    return len(rows)
 
 
 def normalize_affiliation(aff):
@@ -220,6 +300,13 @@ keywords:
 
     datapackage = {
         "profile": "data-package",
+        "schema_version": DATA_SCHEMA_VERSION,
+        "generated": BUILD_DATE,
+        "build": {
+            "source": "IndologyScholars",
+            "pipeline_version": PIPELINE_VERSION,
+            "generator": "generate_publication_pages.py",
+        },
         "name": "indology-scholars",
         "title": SITE_NAME,
         "description": "Normalized archive of Russian Indological conference presentations and scholar profiles.",
@@ -240,6 +327,15 @@ keywords:
                 "format": "js",
                 "mediatype": "application/javascript",
                 "description": "Browser payload with scholars, presentations, charts, and network data.",
+                "schema": {
+                    "fields": [
+                        {"name": "schema_version", "type": "string"},
+                        {"name": "generated", "type": "date"},
+                        {"name": "summary", "type": "object"},
+                        {"name": "scholars", "type": "array"},
+                        {"name": "timeline", "type": "object"},
+                    ]
+                },
             },
             {
                 "name": "database",
@@ -261,6 +357,118 @@ keywords:
                 "format": "json",
                 "mediatype": "application/json",
                 "description": "Machine-readable data quality checks and review samples.",
+                "schema": {
+                    "fields": [
+                        {"name": "schema_version", "type": "string"},
+                        {"name": "generated", "type": "date"},
+                        {"name": "summary", "type": "object"},
+                        {"name": "checks", "type": "array"},
+                    ]
+                },
+            },
+            {
+                "name": "data-dictionary",
+                "path": "data_dictionary.md",
+                "format": "md",
+                "mediatype": "text/markdown",
+                "description": "Human-readable field guide for reusable CSV, JSON, SQLite, and generated publication outputs.",
+            },
+            {
+                "name": "presentation-id-manifest",
+                "path": "analytics_output/presentation_id_manifest.csv",
+                "format": "csv",
+                "mediatype": "text/csv",
+                "description": "Stable presentation ID manifest used to audit rebuild stability.",
+                "schema": {
+                    "fields": [
+                        {"name": "presentation_id", "type": "string"},
+                        {"name": "series", "type": "string"},
+                        {"name": "year", "type": "integer"},
+                        {"name": "event_id", "type": "string"},
+                        {"name": "session_id", "type": "string"},
+                        {"name": "title", "type": "string"},
+                        {"name": "first_speaker", "type": "string"},
+                        {"name": "all_speakers", "type": "string"},
+                        {"name": "source_url", "type": "string"},
+                        {"name": "source_snippet_hash", "type": "string"},
+                        {"name": "stable_key_candidate", "type": "string"},
+                    ]
+                },
+            },
+            {
+                "name": "id-stability-audit",
+                "path": "analytics_output/id_stability_audit.json",
+                "format": "json",
+                "mediatype": "application/json",
+                "description": "Machine-readable audit proving presentation IDs are stable across unchanged rebuilds.",
+            },
+            {
+                "name": "field-provenance-biographical",
+                "path": "analytics_output/field_provenance_biographical.csv",
+                "format": "csv",
+                "mediatype": "text/csv",
+                "description": "Field-level provenance for curated person names and life dates.",
+            },
+            {
+                "name": "field-provenance-authority",
+                "path": "analytics_output/field_provenance_authority.csv",
+                "format": "csv",
+                "mediatype": "text/csv",
+                "description": "Field-level provenance for external authority identifiers and organization records.",
+            },
+            {
+                "name": "field-provenance-themes",
+                "path": "analytics_output/field_provenance_themes.csv",
+                "format": "csv",
+                "mediatype": "text/csv",
+                "description": "Field-level provenance for generated presentation theme labels and review candidates.",
+            },
+            {
+                "name": "network-nodes",
+                "path": "analytics_output/network_nodes.csv",
+                "format": "csv",
+                "mediatype": "text/csv",
+                "description": "Typed nodes for person, event, organization, and theme network analysis.",
+                "schema": {
+                    "fields": [
+                        {"name": "node_id", "type": "string"},
+                        {"name": "node_type", "type": "string"},
+                        {"name": "label", "type": "string"},
+                        {"name": "local_id", "type": "string"},
+                        {"name": "weight", "type": "integer"},
+                    ]
+                },
+            },
+            {
+                "name": "network-edges",
+                "path": "analytics_output/network_edges.csv",
+                "format": "csv",
+                "mediatype": "text/csv",
+                "description": "Weighted network edges with explicit relation type, year, and conference series.",
+                "schema": {
+                    "fields": [
+                        {"name": "source", "type": "string"},
+                        {"name": "target", "type": "string"},
+                        {"name": "edge_type", "type": "string"},
+                        {"name": "year", "type": "integer"},
+                        {"name": "series", "type": "string"},
+                        {"name": "weight", "type": "integer"},
+                    ]
+                },
+            },
+            {
+                "name": "publication-file-manifest",
+                "path": "analytics_output/publication_file_manifest.csv",
+                "format": "csv",
+                "mediatype": "text/csv",
+                "description": "Generated publication file manifest with byte sizes and SHA-256 checksums.",
+                "schema": {
+                    "fields": [
+                        {"name": "path", "type": "string"},
+                        {"name": "size_bytes", "type": "integer"},
+                        {"name": "sha256", "type": "string"},
+                    ]
+                },
             },
             {
                 "name": "analytics",
@@ -415,7 +623,14 @@ def generate_download_page(data):
         ("Static search index", "search-index.json", "Compact JSON index for generated scholar and presentation pages."),
         ("Citation metadata", "CITATION.cff", "Machine-readable citation record for dataset/software reuse."),
         ("Frictionless datapackage", "datapackage.json", "Dataset metadata, resource list, license, and source notes."),
+        ("Data dictionary", "data_dictionary.md", "Human-readable field guide for reusable CSV, JSON, SQLite, and generated publication outputs."),
         ("Data quality report", "analytics_output/data_quality_report.json", "Machine-readable quality checks and review samples."),
+        ("Biographical provenance", "analytics_output/field_provenance_biographical.csv", "Field-level provenance for curated person names and life dates."),
+        ("Authority provenance", "analytics_output/field_provenance_authority.csv", "Field-level provenance for external identifiers and organization authority records."),
+        ("Theme provenance", "analytics_output/field_provenance_themes.csv", "Field-level provenance for generated presentation theme labels."),
+        ("Network nodes", "analytics_output/network_nodes.csv", "Typed person, event, organization, and theme nodes for downstream network analysis."),
+        ("Network edges", "analytics_output/network_edges.csv", "Weighted edges with explicit relation types for participation, affiliation, theme, and co-presence analysis."),
+        ("Publication file manifest", "analytics_output/publication_file_manifest.csv", "Generated file list with byte sizes and SHA-256 checksums for reproducible release checks."),
         ("Analytics exports", "analytics_output/", "CSV exports and derived analytical report material."),
     ]
     cards = []
@@ -480,7 +695,13 @@ def generate_download_page(data):
 
 def collect_data_quality(data):
     report = {
+        "schema_version": DATA_SCHEMA_VERSION,
         "generated": BUILD_DATE,
+        "build": {
+            "source": "IndologyScholars",
+            "pipeline_version": PIPELINE_VERSION,
+            "generator": "generate_publication_pages.py",
+        },
         "summary": data.get("summary", {}),
         "checks": [],
         "samples": {},
@@ -601,16 +822,556 @@ def collect_data_quality(data):
     return report
 
 
-def generate_data_quality_page(data):
+# ---------------------------------------------------------------------------
+# Phase 4 helper: split Cyrillic full name into (surname, first, patronymic)
+# Handles:
+#   'Цветкова Софья Олеговна'  -> ('Цветкова', 'Софья', 'Олеговна')
+#   'С. О. Цветкова'           -> ('Цветкова', 'С', 'О')
+#   'Александрова Н. В.'       -> ('Александрова', 'Н', 'В')
+# ---------------------------------------------------------------------------
+def extract_russian_name_parts(full_name_ru: str, display_name: str = "") -> tuple:
+    """
+    Return (surname, first_name_or_initial, patronymic_or_initial) from a Russian
+    name string.  Falls back to display_name if full_name_ru is blank.
+    All three parts may be empty strings but the tuple always has 3 elements.
+    """
+    name = (full_name_ru or display_name or "").strip()
+    if not name:
+        return ("", "", "")
+
+    parts = name.split()
+    if not parts:
+        return ("", "", "")
+
+    # Pattern: first part looks like initials "А." or "А. О."
+    init_re = re.compile(r'^[А-ЯЁA-Z]\.$')
+
+    if len(parts) == 1:
+        return (parts[0], "", "")
+
+    # Case: Initials + Surname  →  "А. О. Цветкова" or "А.О. Цветкова"
+    if init_re.match(parts[0]):
+        surname = parts[-1]
+        initials = [p.rstrip(".") for p in parts[:-1] if p.strip(".")]
+        first = initials[0] if len(initials) >= 1 else ""
+        patron = initials[1] if len(initials) >= 2 else ""
+        return (surname, first, patron)
+
+    # Case: Surname + Initials  →  "Цветкова А. О." or "Цветкова А."
+    if len(parts) >= 2 and init_re.match(parts[1]):
+        surname = parts[0]
+        initials = [p.rstrip(".") for p in parts[1:] if p.strip(".")]
+        first = initials[0] if len(initials) >= 1 else ""
+        patron = initials[1] if len(initials) >= 2 else ""
+        return (surname, first, patron)
+
+    # Case: Full Cyrillic  →  "Цветкова Софья Олеговна"
+    if len(parts) >= 3:
+        return (parts[0], parts[1], parts[2])
+    if len(parts) == 2:
+        return (parts[0], parts[1], "")
+
+    return (parts[0], "", "")
+
+
+def generate_authority_coverage(data, authority):
+    scholars = data.get("scholars", [])
+    persons_auth = authority.get("persons", {})
+
+    coverage_rows = []
+    review_queue = []
+
+    total_scholars = len(scholars)
+    scholars_with_any = 0
+    total_orcid = 0
+    total_wikidata = 0
+    total_viaf = 0
+    total_openalex = 0
+    total_rinc = 0
+    total_google_scholar = 0
+    total_official_url = 0
+
+    for s in scholars:
+        pid = s["id"]
+        dname = s.get("display_name") or s.get("name") or ""
+        fullname_ru = s.get("full_name_ru") or s.get("original_fullname") or ""
+
+        person_auth = persons_auth.get(pid, {})
+        pref_latin = person_auth.get("preferred_latin_name", "")
+
+        urls_dict = clean_person_urls(person_auth)
+
+        has_orcid = 1 if "orcid" in urls_dict else 0
+        has_wikidata = 1 if "wikidata" in urls_dict else 0
+        has_viaf = 1 if "viaf" in urls_dict else 0
+        has_openalex = 1 if "openalex" in urls_dict else 0
+        has_rinc = 1 if "rinc_author_id" in urls_dict else 0
+        has_google = 1 if "google_scholar" in urls_dict else 0
+        has_official = 1 if "official_url" in urls_dict else 0
+
+        has_any = 1 if (has_orcid or has_wikidata or has_viaf or has_openalex or has_rinc or has_google or has_official) else 0
+
+        confidence = person_auth.get("confidence", "")
+        checked_at = person_auth.get("checked_at", "")
+
+        if has_any:
+            scholars_with_any += 1
+        total_orcid += has_orcid
+        total_wikidata += has_wikidata
+        total_viaf += has_viaf
+        total_openalex += has_openalex
+        total_rinc += has_rinc
+        total_google_scholar += has_google
+        total_official_url += has_official
+
+        talks = s.get("total_talks", 0)
+
+        coverage_rows.append({
+            "person_id": pid,
+            "display_name": dname,
+            "full_name_ru": fullname_ru,
+            "preferred_latin_name": pref_latin,
+            "total_talks": talks,
+            "has_orcid": has_orcid,
+            "has_wikidata": has_wikidata,
+            "has_viaf": has_viaf,
+            "has_openalex": has_openalex,
+            "has_rinc": has_rinc,
+            "has_google_scholar": has_google,
+            "has_official_url": has_official,
+            "has_any_external_id": has_any,
+            "authority_confidence": confidence,
+            "checked_at": checked_at
+        })
+
+        reasons = []
+        priority = 99
+
+        if talks >= 5 and not has_any:
+            reasons.append("Many talks and no external ID")
+            priority = min(priority, 1)
+        elif talks > 0 and not has_any:
+            reasons.append("Active scholar and no external ID")
+            priority = min(priority, 2)
+
+        if re.search(r"\b[A-ZА-ЯЁ]\.", dname):
+            reasons.append("Initials-only display name")
+            priority = min(priority, 2)
+
+        if not pref_latin:
+            reasons.append("Missing preferred Latin name")
+            priority = min(priority, 3)
+
+        if has_any and (not confidence or not checked_at):
+            reasons.append("Existing ID but missing confidence or checked_at")
+            priority = min(priority, 4)
+
+        if reasons:
+            suggested_query = f"{fullname_ru or dname} индолог"
+            # Phase 4: build precise eLIBRARY search URL from name parts
+            surname, first_i, patron_i = extract_russian_name_parts(fullname_ru, dname)
+            rinc_params = []
+            if surname:
+                rinc_params.append(f"fams={quote(surname)}")
+            if first_i:
+                rinc_params.append(f"imas={quote(first_i)}")
+            if patron_i:
+                rinc_params.append(f"otchs={quote(patron_i)}")
+            rinc_search_url = (
+                "https://elibrary.ru/authors.asp?" + "&".join(rinc_params)
+                if rinc_params else ""
+            )
+            # Phase 4: build OpenAlex search URL from preferred Latin name
+            openalex_search_url = (
+                f"https://openalex.org/authors?search={quote(pref_latin)}"
+                if pref_latin else ""
+            )
+            review_queue.append({
+                "priority_rank": priority,
+                "person_id": pid,
+                "display_name": dname,
+                "full_name_ru": fullname_ru,
+                "total_talks": talks,
+                "reason": "; ".join(reasons),
+                "suggested_query": suggested_query,
+                "rinc_search_url": rinc_search_url,
+                "openalex_search_url": openalex_search_url,
+                "review_status": "todo"
+            })
+
+    review_queue.sort(key=lambda r: (r["priority_rank"], -r["total_talks"], r["display_name"]))
+
+    Path("analytics_output").mkdir(exist_ok=True)
+
+    with open("analytics_output/authority_coverage.csv", "w", encoding="utf-8", newline="") as f:
+        fieldnames = [
+            "person_id", "display_name", "full_name_ru", "preferred_latin_name", "total_talks",
+            "has_orcid", "has_wikidata", "has_viaf", "has_openalex", "has_rinc", "has_google_scholar",
+            "has_official_url", "has_any_external_id", "authority_confidence", "checked_at"
+        ]
+        writer = csv.DictWriter(f, fieldnames=fieldnames)
+        writer.writeheader()
+        for r in coverage_rows:
+            writer.writerow(r)
+
+    with open("analytics_output/authority_review_queue.csv", "w", encoding="utf-8", newline="") as f:
+        fieldnames = [
+            "priority_rank", "person_id", "display_name", "full_name_ru", "total_talks",
+            "reason", "suggested_query", "rinc_search_url", "openalex_search_url",
+            "review_status"
+        ]
+        writer = csv.DictWriter(f, fieldnames=fieldnames)
+        writer.writeheader()
+        for r in review_queue:
+            writer.writerow(r)
+
+    return {
+        "total_scholars": total_scholars,
+        "scholars_with_any": scholars_with_any,
+        "total_orcid": total_orcid,
+        "total_wikidata": total_wikidata,
+        "total_viaf": total_viaf,
+        "total_openalex": total_openalex,
+        "total_rinc": total_rinc,
+        "total_google_scholar": total_google_scholar,
+        "total_official_url": total_official_url,
+        "queue_size": len(review_queue)
+    }
+
+
+def generate_provenance_sidecars(data, authority, records):
+    Path("analytics_output").mkdir(exist_ok=True)
+
+    bio_rows = []
+    if Path(DB_PATH).exists():
+        conn = sqlite3.connect(DB_PATH)
+        conn.row_factory = sqlite3.Row
+        for row in conn.execute(
+            """
+            SELECT person_id, display_name, full_name_ru, full_name_en, birth_year, death_year, source_url
+            FROM person
+            ORDER BY display_name
+            """
+        ).fetchall():
+            for field in ("full_name_ru", "full_name_en", "birth_year", "death_year"):
+                value = row[field]
+                if value is None or str(value).strip() == "":
+                    continue
+                confidence = "confirmed" if field in ("full_name_ru", "full_name_en") else "manual"
+                bio_rows.append({
+                    "entity_type": "person",
+                    "entity_id": row["person_id"],
+                    "display_name": row["display_name"],
+                    "field_name": field,
+                    "field_value": value,
+                    "source_type": "curated_biographical_data",
+                    "source_url": row["source_url"] or "",
+                    "confidence": confidence,
+                    "checked_at": BUILD_DATE,
+                    "notes": "Loaded into person table during DB build.",
+                })
+        conn.close()
+
+    with open("analytics_output/field_provenance_biographical.csv", "w", encoding="utf-8", newline="") as f:
+        fieldnames = [
+            "entity_type", "entity_id", "display_name", "field_name", "field_value",
+            "source_type", "source_url", "confidence", "checked_at", "notes",
+        ]
+        writer = csv.DictWriter(f, fieldnames=fieldnames)
+        writer.writeheader()
+        writer.writerows(bio_rows)
+
+    authority_rows = []
+    for person_id, person_auth in sorted((authority.get("persons") or {}).items()):
+        if not isinstance(person_auth, dict):
+            continue
+        confidence = person_auth.get("confidence") or "unspecified"
+        source = person_auth.get("source") or "authority_ids.json"
+        checked_at = person_auth.get("checked_at") or ""
+        for field_name, value in sorted(person_auth.items()):
+            if field_name in {"confidence", "source", "checked_at", "notes"}:
+                continue
+            if value in (None, "", []):
+                continue
+            authority_rows.append({
+                "entity_type": "person",
+                "entity_id": person_id,
+                "field_name": field_name,
+                "field_value": json.dumps(value, ensure_ascii=False) if isinstance(value, list) else value,
+                "source_type": source,
+                "confidence": confidence,
+                "checked_at": checked_at,
+                "notes": person_auth.get("notes", ""),
+            })
+    for org_key, org_auth in sorted((authority.get("organizations") or {}).items()):
+        if not isinstance(org_auth, dict):
+            continue
+        confidence = org_auth.get("confidence") or "unspecified"
+        checked_at = org_auth.get("checked_at") or ""
+        for field_name, value in sorted(org_auth.items()):
+            if field_name in {"confidence", "checked_at", "notes"}:
+                continue
+            if value in (None, "", []):
+                continue
+            authority_rows.append({
+                "entity_type": "organization",
+                "entity_id": org_key,
+                "field_name": field_name,
+                "field_value": json.dumps(value, ensure_ascii=False) if isinstance(value, list) else value,
+                "source_type": "authority_ids.json",
+                "confidence": confidence,
+                "checked_at": checked_at,
+                "notes": org_auth.get("notes", ""),
+            })
+
+    with open("analytics_output/field_provenance_authority.csv", "w", encoding="utf-8", newline="") as f:
+        fieldnames = [
+            "entity_type", "entity_id", "field_name", "field_value",
+            "source_type", "confidence", "checked_at", "notes",
+        ]
+        writer = csv.DictWriter(f, fieldnames=fieldnames)
+        writer.writeheader()
+        writer.writerows(authority_rows)
+
+    theme_rows = []
+    for rec in records:
+        title = rec.get("title") or ""
+        theme = rec.get("theme") or {}
+        l1, l1_conf = _score_rules(title, _THEME_L1_RULES)
+        l3, l3_conf = _score_rules(title, _THEME_L3_RULES)
+        theme_rows.append({
+            "entity_type": "presentation",
+            "entity_id": rec.get("presentation_id") or "",
+            "field_name": "theme.code",
+            "field_value": theme.get("code") or "",
+            "source_type": "generate_site_data.classify_theme",
+            "confidence": "heuristic",
+            "checked_at": BUILD_DATE,
+            "title": title,
+            "l1_review_candidate": l1 or "",
+            "l1_confidence": l1_conf,
+            "l3_review_candidate": l3 or "",
+            "l3_confidence": l3_conf,
+            "notes": "Theme labels are navigational aids derived from presentation titles.",
+        })
+
+    with open("analytics_output/field_provenance_themes.csv", "w", encoding="utf-8", newline="") as f:
+        fieldnames = [
+            "entity_type", "entity_id", "field_name", "field_value", "source_type",
+            "confidence", "checked_at", "title", "l1_review_candidate", "l1_confidence",
+            "l3_review_candidate", "l3_confidence", "notes",
+        ]
+        writer = csv.DictWriter(f, fieldnames=fieldnames)
+        writer.writeheader()
+        writer.writerows(theme_rows)
+
+    return {
+        "biographical_rows": len(bio_rows),
+        "authority_rows": len(authority_rows),
+        "theme_rows": len(theme_rows),
+    }
+
+
+# ---------------------------------------------------------------------------
+# Phase 5: Thematic Classification Review Queue
+# Mirrors the keyword rules from scratch/theme_coding_baseline.py.
+# Runs automatically during each build so the queue stays up to date.
+# ---------------------------------------------------------------------------
+
+# L1 discipline keyword rules (simplified subset for inline use)
+_THEME_L1_RULES = {
+    "linguistics": [
+        r"\bграмматик", r"\bэтимолог", r"\bлексик", r"\bсинтакс", r"\bморфолог",
+        r"\bязык", r"\bдиалект", r"\bсанскрит", r"\bимператив", r"\bПанин",
+    ],
+    "philosophy": [
+        r"\bфилософ", r"\bэпистемолог", r"\bмадхьямак", r"\bйогачар", r"\bадвайта",
+        r"\bведанта", r"\bньяя", r"\bдаршан", r"\bпратьякша", r"\bпрамана",
+    ],
+    "literature": [
+        r"\bэпос", r"\bМБХ\b", r"\bРамаян", r"\bкавь", r"\bроман", r"\bповес",
+        r"\bпоэзи", r"\bпоэтик", r"\bТагор", r"\bфольклор", r"\bлитератур",
+    ],
+    "history": [
+        r"\bистори", r"\bархив", r"\bархео", r"\bэпиграф", r"\bнумизмат",
+        r"\bисточник", r"\bдатировк", r"\bпутеш", r"\bколлекци",
+    ],
+    "religion": [
+        r"\bбуддизм", r"\bбудди", r"\bритуал", r"\bиндуи", r"\bхрам",
+        r"\bведий", r"\bВеда", r"\bупанишад", r"\bмифолог", r"\bдхарм",
+        r"\bшиваит", r"\bтантр", r"\bбхакти",
+    ],
+    "tibetology": [
+        r"\bтибет", r"\bТибет", r"\bМахаян", r"\bКамалашил",
+    ],
+    "ethnography": [
+        r"\bантрополог", r"\bэтнограф", r"\bплемен", r"\bАдиваси",
+    ],
+    "art_archaeology": [
+        r"\bархитектур", r"\bиконограф", r"\bхудожни", r"\bскульпт",
+        r"\bживопис", r"\bвизуальност", r"\bЭрмитаж",
+    ],
+}
+
+_THEME_L3_RULES = {
+    "text":      [r"\bтекст", r"\bтрактат", r"\bкоммент", r"\bперевод", r"\bрукопис"],
+    "fieldwork": [r"\bполев", r"\bантрополог", r"\bэтнограф", r"\bперформанс"],
+    "archive":   [r"\bархив", r"\bбиблиотек", r"\bколлекци", r"\bрукопис"],
+    "artefact":  [r"\bархитектур", r"\bСтуп", r"\bпамятник", r"\bскульпт", r"\bиконограф"],
+}
+
+
+def _score_rules(title: str, rules: dict) -> tuple:
+    """Return (best_category_or_None, confidence_0_to_1)."""
+    if not title:
+        return (None, 0.0)
+    scores = {}
+    for cat, patterns in rules.items():
+        hits = sum(1 for p in patterns if re.search(p, title, re.IGNORECASE))
+        if hits:
+            scores[cat] = hits
+    if not scores:
+        return (None, 0.0)
+    best_cat, best_hits = max(scores.items(), key=lambda x: x[1])
+    total = sum(scores.values())
+    margin = best_hits / total
+    confidence = round(min(1.0, 0.4 + 0.3 * best_hits + 0.3 * margin), 2)
+    return (best_cat, confidence)
+
+
+def generate_theme_review_queue(records: list) -> int:
+    """
+    Phase 5 — build analytics_output/theme_review_queue.csv from presentation
+    records using inline keyword heuristics.  Flags records where:
+      - L1 classification is None (unclassified), OR
+      - L3 material is None, OR
+      - confidence for L1 or L3 is below 0.5
+
+    Returns the number of rows written.
+    """
+    queue = []
+    for rec in records:
+        title = rec.get("title") or ""
+        pres_id = rec.get("presentation_id") or ""
+        year = rec.get("year", "")
+        series = rec.get("series_label") or rec.get("series_key", "")
+        theme_code = (rec.get("theme") or {}).get("code") or ""
+
+        l1, l1_conf = _score_rules(title, _THEME_L1_RULES)
+        l3, l3_conf = _score_rules(title, _THEME_L3_RULES)
+
+        min_conf = min(l1_conf, l3_conf)
+        needs_review = (l1 is None or l3 is None or min_conf < 0.5)
+
+        if needs_review:
+            queue.append({
+                "presentation_id": pres_id,
+                "year": year,
+                "series": series,
+                "title": title,
+                "existing_theme_code": theme_code,
+                "l1_baseline": l1 or "",
+                "l1_conf": l1_conf,
+                "l3_baseline": l3 or "",
+                "l3_conf": l3_conf,
+                "review_status": "todo",
+                "notes": "",
+            })
+
+    # Sort: unclassified (l1 None) first, then by l1_conf ascending
+    queue.sort(key=lambda r: (0 if not r["l1_baseline"] else 1, r["l1_conf"]))
+
+    Path("analytics_output").mkdir(exist_ok=True)
+    out_path = "analytics_output/theme_review_queue.csv"
+    fieldnames = [
+        "presentation_id", "year", "series", "title", "existing_theme_code",
+        "l1_baseline", "l1_conf", "l3_baseline", "l3_conf",
+        "review_status", "notes",
+    ]
+    with open(out_path, "w", encoding="utf-8", newline="") as f:
+        writer = csv.DictWriter(f, fieldnames=fieldnames)
+        writer.writeheader()
+        writer.writerows(queue)
+
+    return len(queue)
+
+
+def generate_data_quality_page(data, authority_stats):
+
     report = collect_data_quality(data)
     write_text("analytics_output/data_quality_report.json", json.dumps(report, ensure_ascii=False, indent=2))
+
+    t = authority_stats["total_scholars"] or 1
+    wikidata_pct = round(authority_stats["total_wikidata"] * 100 / t, 1)
+    orcid_pct = round(authority_stats["total_orcid"] * 100 / t, 1)
+    viaf_pct = round(authority_stats["total_viaf"] * 100 / t, 1)
+    openalex_pct = round(authority_stats["total_openalex"] * 100 / t, 1)
+    rinc_pct = round(authority_stats["total_rinc"] * 100 / t, 1)
+    google_pct = round(authority_stats["total_google_scholar"] * 100 / t, 1)
+    official_pct = round(authority_stats["total_official_url"] * 100 / t, 1)
+    overall_pct = round(authority_stats["scholars_with_any"] * 100 / t, 1)
+
     rows = []
+
+    # Identifier coverage card
+    rows.append(
+        f"""
+        <article class="card" style="grid-column: span 2;">
+            <strong>Identifier Mapping Coverage</strong>
+            <div class="meta" style="margin-top: 0.5rem; line-height: 1.8;">
+                Wikidata: {authority_stats["total_wikidata"]} ({wikidata_pct}%) &middot;
+                ORCID: {authority_stats["total_orcid"]} ({orcid_pct}%) &middot;
+                VIAF: {authority_stats["total_viaf"]} ({viaf_pct}%) &middot;
+                OpenAlex: {authority_stats["total_openalex"]} ({openalex_pct}%) &middot;
+                РИНЦ/eLIBRARY: {authority_stats["total_rinc"]} ({rinc_pct}%) &middot;
+                Google Scholar: {authority_stats["total_google_scholar"]} ({google_pct}%) &middot;
+                Official URL: {authority_stats["total_official_url"]} ({official_pct}%)
+                <br>
+                <strong>Overall Coverage:</strong> {authority_stats["scholars_with_any"]} of {authority_stats["total_scholars"]} scholars mapped ({overall_pct}%)
+                <br>
+                <a href="analytics_output/authority_coverage.csv" style="font-weight: bold; margin-top: 0.5rem; display: inline-block;">Download Coverage Report (CSV)</a>
+            </div>
+        </article>
+        """
+    )
+
+    # Review queue card
+    rows.append(
+        f"""
+        <article class="card">
+            <strong>Authority Review Queue</strong>
+            <div class="meta" style="margin-top: 0.5rem; line-height: 1.8;">
+                Queue Size: {authority_stats["queue_size"]} scholars pending review.
+                <br>
+                Prioritizes active scholars with no external identifier, missing Latin translations, or initials-only display names.
+                <br>
+                <a href="analytics_output/authority_review_queue.csv" style="font-weight: bold; margin-top: 0.5rem; display: inline-block;">Download Review Queue (CSV)</a>
+            </div>
+        </article>
+        """
+    )
+
+    rows.append(
+        """
+        <article class="card" style="grid-column: span 2;">
+            <strong>Field-level provenance sidecars</strong>
+            <div class="meta" style="margin-top: 0.5rem; line-height: 1.8;">
+                <a href="analytics_output/field_provenance_biographical.csv">Biographical fields</a> &middot;
+                <a href="analytics_output/field_provenance_authority.csv">Authority identifiers</a> &middot;
+                <a href="analytics_output/field_provenance_themes.csv">Theme labels</a>
+                <br>
+                These CSVs expose source, confidence, and checked-date metadata for high-risk derived or curated fields.
+            </div>
+        </article>
+        """
+    )
+
     for check in report["checks"]:
         rows.append(
             f"""
             <article class="card">
                 <strong>{esc(check["label"])}</strong>
-                <div class="meta">Status: {esc(check["status"])} В· Severity: {esc(check["severity"])} В· Count: {esc(check["count"])}</div>
+                <div class="meta">Status: {esc(check["status"])} · Severity: {esc(check["severity"])} · Count: {esc(check["count"])}</div>
             </article>
             """
         )
@@ -700,6 +1461,7 @@ def generate_english_landing(data):
             <article class="card"><strong><a href="scholars/">Scholar Profiles</a></strong><div class="meta">Canonical generated pages with presentations, affiliations, themes, and related scholars.</div></article>
             <article class="card"><strong><a href="conferences/">Conference Indexes</a></strong><div class="meta">Year-by-year Zograf Readings and Roerich Readings pages.</div></article>
             <article class="card"><strong><a href="search.html">Search</a></strong><div class="meta">Static search across people, talks, cities, institutions, and themes.</div></article>
+            <article class="card"><strong><a href="networks.html">Networks</a></strong><div class="meta">Participation and co-presence networks.</div></article>
             <article class="card"><strong><a href="download-data.html">Download Data</a></strong><div class="meta">SQLite, generated JSON/JS payloads, citation metadata, and analytics exports.</div></article>
             <article class="card"><strong><a href="methodology.html">Methodology</a></strong><div class="meta">Pipeline, source material, normalization, and generated outputs.</div></article>
             <article class="card"><strong><a href="how-to-cite.html">How To Cite</a></strong><div class="meta">Citation guidance and machine-readable citation files.</div></article>
@@ -783,15 +1545,31 @@ def generate_theme_pages(data, records):
         title = theme_label(code)
         ru_title = theme_label(code, "ru")
         cards.append(f'<article class="card"><strong><a href="../{path}">{esc(title)}</a></strong><div class="meta">{esc(ru_title)} · {len(talks)} presentation records</div></article>')
+        # Phase 5 caveat block: transparent classification disclaimer
+        caveat_block = f"""
+        <aside class="caveat-block" role="note" aria-label="Classification notice">
+            <strong>&#x1F4CB; Classification note</strong>
+            <p>
+                This theme is assigned based on the <em>title</em> of each presentation using a
+                keyword heuristic. It reflects how the talk was <em>labelled at this conference</em>,
+                not the scholar's complete research profile or lifetime specialisation.
+                A single researcher may appear across multiple themes. Multi-topic presentations
+                may be simplified or placed in the most prominent category.
+                See <a href="../methodology.html#theme-classification">Methodology &rsaquo; Thematic Classification</a>
+                for full details.
+            </p>
+        </aside>"""
         body = f"""
         <header>
             <h1>{esc(title)}</h1>
             <p>{esc(ru_title)}. Presentations classified under this broad research theme.</p>
         </header>
+        {caveat_block}
         <section class="list">
             {''.join(talk_card(t, '../') for t in talks[:250])}
         </section>
         """
+
         write_text(
             path,
             page_shell(
@@ -952,27 +1730,116 @@ def generate_institution_pages(data, records, authority):
 
 def generate_publication_docs(data):
     docs = {
+        "networks.html": (
+            "Network Analysis",
+            "Co-presence and institutional networks of Russian Indology scholars.",
+            """
+        <header>
+            <h1>Network Analysis</h1>
+            <p>We analyze the structure of Russian Indological conferences through the lens of participation networks.</p>
+        </header>
+        <h2>Participation Networks vs Citation Networks</h2>
+        <p>Unlike traditional bibliometric networks (which map who cites whom), our networks map <strong>co-presence and shared scholarly context</strong>. They answer questions such as:</p>
+        <ul>
+            <li>Who presents in the same sessions?</li>
+            <li>Which institutions are most strongly connected to specific themes?</li>
+            <li>Who serves as a "bridge" between different conference series or cities?</li>
+        </ul>
+        
+        <h2>Available Network Exports</h2>
+        <p>You can download our raw network exports to run your own analyses in Gephi, Cytoscape, or Python NetworkX.</p>
+        <section class="grid">
+            <article class="card">
+                <strong><a href="analytics_output/network_nodes.csv">network_nodes.csv</a></strong>
+                <p>Contains typed nodes for all Persons, Organizations, Events, and Themes.</p>
+            </article>
+            <article class="card">
+                <strong><a href="analytics_output/network_edges.csv">network_edges.csv</a></strong>
+                <p>Contains weighted edges specifying the exact type of relationship (e.g., <code>person_person_same_session</code>, <code>person_theme</code>).</p>
+            </article>
+        </section>
+            """,
+        ),
         "methodology.html": (
             "Methodology",
             "How the archive is built from cached conference programs, normalized names, and derived analytical fields.",
             """
-        <header><h1>Methodology</h1><p>The archive is generated by a reproducible pipeline that parses cached program pages, normalizes scholar identities, and compiles a relational SQLite database.</p></header>
-        <section class="grid">
-            <article class="card"><strong>Input</strong><p>Historical HTML program pages and curated seed metadata for venues, events, organizations, and media records.</p></article>
-            <article class="card"><strong>Normalization</strong><p>Names, affiliations, dates, sessions, venues, cities, and broad research themes are normalized before the browser payload and static pages are generated.</p></article>
-            <article class="card"><strong>Outputs</strong><p>The pipeline emits SQLite, CSV analytics, a dashboard payload, static scholar profiles, collection pages, sitemap, and search index.</p></article>
+        <header>
+            <h1>Methodology</h1>
+            <p>The Russian Indological Research Archive employs a structured digital humanities pipeline to transform historical conference programs into a clean, relational research database.</p>
+        </header>
+        <h2>Data, Metadata, and Derived Fields</h2>
+        <p>Our methodology clearly distinguishes between raw primary records, curated metadata, and derived fields:</p>
+        <section class="list">
+            <article class="card">
+                <strong>Primary Source Programs</strong>
+                <p>The raw inputs are HTML or text transcriptions of the original printed or online conference programs. These are treated as immutable historical artifacts.</p>
+            </article>
+            <article class="card">
+                <strong>Presentation Records</strong>
+                <p>Each presentation is modeled as a distinct event-associated record with a title, session placement, sequence order, date, and time interval.</p>
+            </article>
+            <article class="card">
+                <strong>Normalized Persons</strong>
+                <p>Speaker names are extracted and resolved to canonical scholar entities using deterministic matching, resolving spelling variants, typos, and initials to prevent identity splitting or collision.</p>
+            </article>
+            <article class="card">
+                <strong>Normalized Affiliations</strong>
+                <p>Raw affiliation strings listed in the programs are cleaned and mapped to canonical organization entities (e.g. "СПбГУ", "ИВР РАН") to track institutional participation trajectories.</p>
+            </article>
+            <article class="card">
+                <strong>Broad Theme Labels</strong>
+                <p>Each presentation is classified into one or more high-level research themes (e.g., Art, Linguistics, Philosophy) based on a titles-based heuristic mapping.</p>
+            </article>
+            <article class="card">
+                <strong>Derived Analytics</strong>
+                <p>Aggregate counts (total presentations, series overlap, geographic center clusters) are calculated from the relational graph and exported as open datasets.</p>
+            </article>
         </section>
+        
+        <p><em>Note on thematic classification:</em> Presentation themes are mapped directly from the individual talk titles in our corpus and do not represent a scholar's complete lifetime research output or scientific profile.</p>
             """,
         ),
         "data-sources.html": (
             "Data Sources",
             "Primary sources and cached program material used by the archive.",
             """
-        <header><h1>Data Sources</h1><p>The archive works from local cached copies of public conference program pages so that rebuilds are reproducible even if upstream pages change.</p></header>
+        <header>
+            <h1>Data Sources</h1>
+            <p>The archive distinguishes between primary corpus materials representing the actual conference records and external authority databases used for context and entity disambiguation.</p>
+        </header>
+        
+        <h2>Primary Corpus Sources</h2>
+        <section class="grid">
+            <article class="card">
+                <strong>Zograf Readings</strong>
+                <div class="meta">Programs and lists of presentations from the St. Petersburg Readings (2004–present). Cached files are stored in html_cache/zograf_*.html.</div>
+            </article>
+            <article class="card">
+                <strong>Roerich Readings</strong>
+                <div class="meta">Programs and lists of presentations from the Moscow Readings (2007–present). Cached files are stored in html_cache/roerich_*.html.</div>
+            </article>
+            <article class="card">
+                <strong>Curated Seed Data</strong>
+                <div class="meta">Explicit event dates, session chairs, venue configurations, and media mappings are maintained in zograf-roerich-db.md.</div>
+            </article>
+        </section>
+
+        <h2>External Authority Mappings</h2>
+        <p>To link our local corpus with the global scientific web, we match scholars and institutions to external authority files. These external records are treated as verified assertions, not primary data sources:</p>
         <section class="list">
-            <article class="card"><strong>Zograf Readings</strong><div class="meta">IOM RAS / St. Petersburg program materials represented in html_cache/zograf_*.html.</div></article>
-            <article class="card"><strong>Roerich Readings</strong><div class="meta">IAS RAS / Moscow program materials represented in html_cache/roerich_*.html.</div></article>
-            <article class="card"><strong>Curated seed data</strong><div class="meta">zograf-roerich-db.md provides stable event, venue, media, and organization seed records.</div></article>
+            <article class="card">
+                <strong>Authority Overrides</strong>
+                <div class="meta">Canonical identifiers, latin names, and manual overrides are loaded from authority_ids.json.</div>
+            </article>
+            <article class="card">
+                <strong>Scholarly & Citation Databases</strong>
+                <div class="meta">Optional connections to ORCID, Wikidata, VIAF, OpenAlex, Google Scholar, and РИНЦ/eLIBRARY are recorded when manually verified.</div>
+            </article>
+            <article class="card">
+                <strong>Institutional Registries</strong>
+                <div class="meta">Normalized organizations are linked to ROR (Research Organization Registry) to ensure global interoperability.</div>
+            </article>
         </section>
             """,
         ),
@@ -980,11 +1847,39 @@ def generate_publication_docs(data):
             "Known Limitations",
             "Known limitations and interpretation notes for the generated archive.",
             """
-        <header><h1>Known Limitations</h1><p>This is a structured research aid, not a final authority file. Each derived field should be read together with its source program record.</p></header>
+        <header>
+            <h1>Known Limitations</h1>
+            <p>Users of this archive should be aware of the following structural limitations and boundary conditions of digital humanities reconstruction:</p>
+        </header>
         <section class="list">
-            <article class="card"><strong>Name matching</strong><div class="meta">Identity matching is deterministic and may require manual review for ambiguous initials, transliteration variants, or shared surnames.</div></article>
-            <article class="card"><strong>Affiliations</strong><div class="meta">Institution pages use normalized clusters derived from raw affiliation strings; historical forms may be broader than formal employment relationships.</div></article>
-            <article class="card"><strong>Themes</strong><div class="meta">Theme labels are broad heuristic classes based on presentation titles and should be treated as navigational aids.</div></article>
+            <article class="card">
+                <strong>Name and Initials Ambiguity</strong>
+                <p>Some historical programs omit full first names or patronymics. Identity matching relies on initials and surnames, which creates risk of identity collision or incorrect grouping without manual verification.</p>
+            </article>
+            <article class="card">
+                <strong>Transliteration and Spelling Variants</strong>
+                <p>Russian name spelling, especially in international publications and Romanized metadata, varies significantly. Finding correct external identifiers (e.g. ORCID, Wikidata) requires resolving these spelling variations.</p>
+            </article>
+            <article class="card">
+                <strong>Historical and Temporary Affiliations</strong>
+                <p>Affiliations represent the institutional connection reported by the scholar at the time of the conference. They do not capture permanent employment history, retirements, or multiple simultaneous affiliations.</p>
+            </article>
+            <article class="card">
+                <strong>Broad Theme Classification</strong>
+                <p>Thematic classification is a coarse categorization based on presentation titles. It serves as a navigational index rather than a detailed content-analysis model.</p>
+            </article>
+            <article class="card">
+                <strong>External Database Coverage Gaps</strong>
+                <p>Global open indexes like OpenAlex have lower coverage for Soviet and Russian humanities publications. Consequently, citation counts or publication list completeness from these sources are biased.</p>
+            </article>
+            <article class="card">
+                <strong>РИНЦ / eLIBRARY Constraints</strong>
+                <p>RINС/eLIBRARY contains extensive data but lacks a public, unrestricted API. All linkages are mapped via human review and cannot be scraped or fetched in bulk automatically.</p>
+            </article>
+            <article class="card">
+                <strong>Presentation Identifier Stability</strong>
+                <p>Presentation and session records use deterministic hash-based identifiers. For audit-heavy reuse, combine those IDs with the published presentation ID manifest and migration report.</p>
+            </article>
         </section>
             """,
         ),
@@ -992,11 +1887,123 @@ def generate_publication_docs(data):
             "How To Cite",
             "Citation guidance for using the Indology Scholars dataset and web archive.",
             f"""
-        <header><h1>How To Cite</h1><p>Use the repository citation file for software and dataset references. Include the access date for web page citations.</p></header>
+        <header>
+            <h1>How To Cite</h1>
+            <p>If you use this archive, its dataset, or code for publication, please cite the relational database and web archive as a source.</p>
+        </header>
         <section class="list">
-            <article class="card"><strong>Suggested citation</strong><div class="meta">{esc(AUTHOR_NAME)}. {esc(SITE_NAME)}: Unified Relational Archive. {BUILD_DATE}. {SITE_URL}</div></article>
-            <article class="card"><strong>Machine-readable citation</strong><div class="meta"><a href="CITATION.cff">CITATION.cff</a> · <a href="datapackage.json">datapackage.json</a></div></article>
-            <article class="card"><strong>Dataset outputs</strong><div class="meta"><a href="analytics_output/">analytics_output/</a> · <a href="site_data.json">site_data.json</a></div></article>
+            <article class="card">
+                <strong>Suggested Dataset & Code Citation</strong>
+                <div class="meta">{esc(AUTHOR_NAME)}. {esc(SITE_NAME)}: Unified Relational Archive. {BUILD_DATE}. {SITE_URL}</div>
+            </article>
+            <article class="card">
+                <strong>Original Event Citation</strong>
+                <p>When making claims about the exact historical wording of a presentation, session, or scheduling, please cite both the primary conference program and this digital archive.</p>
+            </article>
+            <article class="card">
+                <strong>Access Date</strong>
+                <p>Always include the access date and dataset version, as the archive is dynamically updated when new conference programs are integrated.</p>
+            </article>
+            <article class="card">
+                <strong>Machine-Readable Formats</strong>
+                <div class="meta">Citation metadata is available in standard format: <a href="CITATION.cff">CITATION.cff</a> and <a href="datapackage.json">datapackage.json</a>.</div>
+            </article>
+        </section>
+            """,
+        ),
+        "metrics-guide.html": (
+            "Metrics Guide",
+            "How to read and interpret the local participation metrics and research analytics of the archive.",
+            """
+        <header>
+            <h1>Metrics Guide</h1>
+            <p>How to read the local participation metrics and research analytics of the archive.</p>
+        </header>
+        <section class="list">
+            <article class="card">
+                <strong>Total Talks (Общее число докладов)</strong>
+                <p>The total count of presentation records mapped to a scholar. This represents the total observed participation in the indexed conferences (Zograf Readings and Roerich Readings) since 2004.</p>
+            </article>
+            <article class="card">
+                <strong>Series Overlap (Пересечение серий)</strong>
+                <p>Indicates the cohort of scholars who participate in both the Zograf Readings (St. Petersburg) and Roerich Readings (Moscow) series. This overlap metric measures the geographic and academic integration between the two primary scientific communities.</p>
+            </article>
+            <article class="card">
+                <strong>Newcomer Rate (Доля новых участников)</strong>
+                <p>The percentage of speakers in a given conference year or session who have no recorded talks in any prior years of that series. A higher newcomer rate highlights active academic renewal, open recruitment, or shifting research networks.</p>
+            </article>
+            <article class="card">
+                <strong>Institution Bridge (Институциональные мосты)</strong>
+                <p>Identifies speakers and sessions that link different organizations. This highlights structural collaboration or mobility, mapping researchers who hold multiple historical affiliations or bridge distinct centers (e.g. St. Petersburg University and Institute of Oriental Manuscripts).</p>
+            </article>
+            <article class="card">
+                <strong>Theme Diversity (Тематическое разнообразие)</strong>
+                <p>Measures how presentations are distributed across different scientific themes (Academic History, Linguistics, Philosophy, Art, History) within a conference or for an institution. A diverse distribution indicates a broad multidisciplinarity, while a low diversity indicates high specialization.</p>
+            </article>
+            <article class="card">
+                <strong>Video Coverage (Видео-покрытие)</strong>
+                <p>The percentage of presentation records that have direct video links (e.g., YouTube recordings) mapped. High video coverage enhances the transparency, visibility, and open accessibility of the scholarly presentations.</p>
+            </article>
+        </section>
+            """,
+        ),
+        "networks.html": (
+            "Network Exports",
+            "How to interpret the participation network CSV exports in the Indology Scholars archive.",
+            """
+        <header>
+            <h1>Network Exports</h1>
+            <p>Typed network files for studying participation, affiliation, thematic proximity, and conference co-presence.</p>
+        </header>
+        <section class="grid">
+            <article class="card">
+                <strong>Nodes</strong>
+                <div class="meta"><a href="analytics_output/network_nodes.csv">analytics_output/network_nodes.csv</a></div>
+                <p>Contains person, event, organization, and theme nodes. The `weight` column counts observed participation or assignment frequency within the generated archive.</p>
+            </article>
+            <article class="card">
+                <strong>Edges</strong>
+                <div class="meta"><a href="analytics_output/network_edges.csv">analytics_output/network_edges.csv</a></div>
+                <p>Contains weighted relations with `source`, `target`, `edge_type`, `year`, `series`, and `weight` columns.</p>
+            </article>
+        </section>
+        <h2>Edge Types</h2>
+        <section class="list">
+            <article class="card">
+                <strong>person_event</strong>
+                <p>A scholar is attached to a conference event through one or more presentation records.</p>
+            </article>
+            <article class="card">
+                <strong>person_organization</strong>
+                <p>A scholar is linked to a normalized affiliation observed in a conference program. This is historical participation metadata, not a permanent employment claim.</p>
+            </article>
+            <article class="card">
+                <strong>person_theme</strong>
+                <p>A scholar is linked to a broad generated theme inferred from presentation titles.</p>
+            </article>
+            <article class="card">
+                <strong>person_person_copresentation</strong>
+                <p>Two scholars appear on the same presentation record.</p>
+            </article>
+            <article class="card">
+                <strong>person_person_same_session</strong>
+                <p>Two scholars appear in the same conference session. This is a co-presence relation and should not be interpreted as collaboration by itself.</p>
+            </article>
+        </section>
+        <h2>Interpretation Notes</h2>
+        <section class="list">
+            <article class="card">
+                <strong>Participation Network</strong>
+                <p>The export models observed conference participation. It is not a citation network, publication network, or comprehensive institutional history.</p>
+            </article>
+            <article class="card">
+                <strong>Stable Identifiers</strong>
+                <p>Edges use stable local IDs from the current database build. Presentation-level stability can be audited through <a href="analytics_output/presentation_id_manifest.csv">presentation_id_manifest.csv</a>.</p>
+            </article>
+            <article class="card">
+                <strong>Reusable Package</strong>
+                <p>The network CSV schemas are declared in <a href="datapackage.json">datapackage.json</a> and listed on the <a href="download-data.html">download page</a>.</p>
+            </article>
         </section>
             """,
         ),
@@ -1032,6 +2039,8 @@ def generate_sitemap():
         "data-sources.html",
         "known-limitations.html",
         "how-to-cite.html",
+        "metrics-guide.html",
+        "networks.html",
     ]
     html_paths.extend(str(p).replace("\\", "/") for p in Path("scholars").glob("*.html") if not is_legacy_redirect(p))
     for dirname in ("conferences", "themes", "cities", "institutions"):
@@ -1184,18 +2193,22 @@ def main():
 
     generate_home_assets(data)
     generate_search(data, records)
+    authority_stats = generate_authority_coverage(data, authority)
+    generate_provenance_sidecars(data, authority, records)
     generate_download_page(data)
-    generate_data_quality_page(data)
+    generate_data_quality_page(data, authority_stats)
     generate_404_page()
     generate_english_landing(data)
     generate_conference_pages(data, records)
     generate_theme_pages(data, records)
+    theme_queue_size = generate_theme_review_queue(records)
     generate_city_pages(data, records, authority)
     generate_institution_pages(data, records, authority)
     generate_publication_docs(data)
     generate_sitemap()
     patch_index_stats(data)
-    print("Generated publication pages, sitemap, robots, search index, citation files, and preview assets.")
+    manifest_count = generate_publication_file_manifest()
+    print(f"Generated publication pages, sitemap, robots, search index, citation files, and preview assets. Theme review queue: {theme_queue_size} items. File manifest: {manifest_count} files.")
 
 
 if __name__ == "__main__":

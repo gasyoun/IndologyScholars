@@ -36,7 +36,7 @@
       "name": "Russian Indological Research Archive",
       "url": "https://gasyoun.github.io/IndologyScholars/"
     },
-    "dateModified": "2026-05-21"
+    "dateModified": "2026-05-22"
   },
   {
     "@context": "https://schema.org",
@@ -163,6 +163,25 @@
             color: var(--text);
             font-size: 1rem;
         }
+        .caveat-block {
+            border: 1px solid rgba(139,92,246,0.35);
+            border-left: 4px solid var(--accent);
+            border-radius: 8px;
+            background: rgba(139,92,246,0.07);
+            padding: 0.9rem 1.1rem;
+            margin: 1.25rem 0 1.75rem;
+            max-width: 820px;
+        }
+        .caveat-block strong {
+            color: #c4b5fd;
+            display: block;
+            margin-bottom: 0.35rem;
+        }
+        .caveat-block p {
+            font-size: 0.93rem;
+            margin: 0;
+            color: var(--muted);
+        }
     </style>
 </head>
 <body>
@@ -179,6 +198,7 @@
             <a href="/IndologyScholars/data-quality.html">Quality</a>
             <a href="/IndologyScholars/en.html">English</a>
             <a href="/IndologyScholars/how-to-cite.html">Cite</a>
+            <a href="/IndologyScholars/metrics-guide.html">Metrics</a>
         </nav>
 
         <header>
@@ -195,6 +215,7 @@
             <article class="card"><strong><a href="scholars/">Scholar Profiles</a></strong><div class="meta">Canonical generated pages with presentations, affiliations, themes, and related scholars.</div></article>
             <article class="card"><strong><a href="conferences/">Conference Indexes</a></strong><div class="meta">Year-by-year Zograf Readings and Roerich Readings pages.</div></article>
             <article class="card"><strong><a href="search.html">Search</a></strong><div class="meta">Static search across people, talks, cities, institutions, and themes.</div></article>
+            <article class="card"><strong><a href="networks.html">Networks</a></strong><div class="meta">Participation and co-presence networks.</div></article>
             <article class="card"><strong><a href="download-data.html">Download Data</a></strong><div class="meta">SQLite, generated JSON/JS payloads, citation metadata, and analytics exports.</div></article>
             <article class="card"><strong><a href="methodology.html">Methodology</a></strong><div class="meta">Pipeline, source material, normalization, and generated outputs.</div></article>
             <article class="card"><strong><a href="how-to-cite.html">How To Cite</a></strong><div class="meta">Citation guidance and machine-readable citation files.</div></article>

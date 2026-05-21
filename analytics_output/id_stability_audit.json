@@ -1,0 +1,28 @@
+{
+  "generated": "2026-05-22",
+  "summary": {
+    "before_rows": 895,
+    "after_rows": 895,
+    "before_unique_presentation_ids": 895,
+    "after_unique_presentation_ids": 895,
+    "common_presentation_ids": 895,
+    "removed_presentation_ids": 0,
+    "added_presentation_ids": 0,
+    "before_unique_stable_keys": 895,
+    "after_unique_stable_keys": 895,
+    "common_stable_keys": 895,
+    "missing_stable_keys_after": 0,
+    "new_stable_keys_after": 0,
+    "unchanged_ids_for_same_stable_key": 895,
+    "changed_ids_for_same_stable_key": 0,
+    "before_duplicate_presentation_ids": 0,
+    "after_duplicate_presentation_ids": 0,
+    "before_duplicate_stable_key_rows": 0,
+    "after_duplicate_stable_key_rows": 0
+  },
+  "changed_ids_for_same_stable_key_records": [],
+  "changed_ids_for_same_stable_key_sample": [],
+  "missing_stable_keys_after_sample": [],
+  "new_stable_keys_after_sample": [],
+  "duplicate_stable_key_samples": []
+}

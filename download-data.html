@@ -34,7 +34,7 @@
       "name": "Russian Indological Research Archive",
       "url": "https://gasyoun.github.io/IndologyScholars/"
     },
-    "dateModified": "2026-05-21"
+    "dateModified": "2026-05-22"
   },
   {
     "@context": "https://schema.org",
@@ -80,9 +80,51 @@
       },
       {
         "@type": "DataDownload",
+        "name": "Data dictionary",
+        "contentUrl": "https://gasyoun.github.io/IndologyScholars/data_dictionary.md",
+        "description": "Human-readable field guide for reusable CSV, JSON, SQLite, and generated publication outputs."
+      },
+      {
+        "@type": "DataDownload",
         "name": "Data quality report",
         "contentUrl": "https://gasyoun.github.io/IndologyScholars/analytics_output/data_quality_report.json",
         "description": "Machine-readable quality checks and review samples."
+      },
+      {
+        "@type": "DataDownload",
+        "name": "Biographical provenance",
+        "contentUrl": "https://gasyoun.github.io/IndologyScholars/analytics_output/field_provenance_biographical.csv",
+        "description": "Field-level provenance for curated person names and life dates."
+      },
+      {
+        "@type": "DataDownload",
+        "name": "Authority provenance",
+        "contentUrl": "https://gasyoun.github.io/IndologyScholars/analytics_output/field_provenance_authority.csv",
+        "description": "Field-level provenance for external identifiers and organization authority records."
+      },
+      {
+        "@type": "DataDownload",
+        "name": "Theme provenance",
+        "contentUrl": "https://gasyoun.github.io/IndologyScholars/analytics_output/field_provenance_themes.csv",
+        "description": "Field-level provenance for generated presentation theme labels."
+      },
+      {
+        "@type": "DataDownload",
+        "name": "Network nodes",
+        "contentUrl": "https://gasyoun.github.io/IndologyScholars/analytics_output/network_nodes.csv",
+        "description": "Typed person, event, organization, and theme nodes for downstream network analysis."
+      },
+      {
+        "@type": "DataDownload",
+        "name": "Network edges",
+        "contentUrl": "https://gasyoun.github.io/IndologyScholars/analytics_output/network_edges.csv",
+        "description": "Weighted edges with explicit relation types for participation, affiliation, theme, and co-presence analysis."
+      },
+      {
+        "@type": "DataDownload",
+        "name": "Publication file manifest",
+        "contentUrl": "https://gasyoun.github.io/IndologyScholars/analytics_output/publication_file_manifest.csv",
+        "description": "Generated file list with byte sizes and SHA-256 checksums for reproducible release checks."
       },
       {
         "@type": "DataDownload",
@@ -217,6 +259,25 @@
             color: var(--text);
             font-size: 1rem;
         }
+        .caveat-block {
+            border: 1px solid rgba(139,92,246,0.35);
+            border-left: 4px solid var(--accent);
+            border-radius: 8px;
+            background: rgba(139,92,246,0.07);
+            padding: 0.9rem 1.1rem;
+            margin: 1.25rem 0 1.75rem;
+            max-width: 820px;
+        }
+        .caveat-block strong {
+            color: #c4b5fd;
+            display: block;
+            margin-bottom: 0.35rem;
+        }
+        .caveat-block p {
+            font-size: 0.93rem;
+            margin: 0;
+            color: var(--muted);
+        }
     </style>
 </head>
 <body>
@@ -233,6 +294,7 @@
             <a href="/IndologyScholars/data-quality.html">Quality</a>
             <a href="/IndologyScholars/en.html">English</a>
             <a href="/IndologyScholars/how-to-cite.html">Cite</a>
+            <a href="/IndologyScholars/metrics-guide.html">Metrics</a>
         </nav>
 
         <header>
@@ -273,19 +335,61 @@
             <article class="card">
                 <strong><a href="datapackage.json">Frictionless datapackage</a></strong>
                 <div class="meta">Dataset metadata, resource list, license, and source notes.</div>
-                <div class="meta">2.1 KB</div>
+                <div class="meta">7.9 KB</div>
+            </article>
+
+            <article class="card">
+                <strong><a href="data_dictionary.md">Data dictionary</a></strong>
+                <div class="meta">Human-readable field guide for reusable CSV, JSON, SQLite, and generated publication outputs.</div>
+                <div class="meta">11.9 KB</div>
             </article>
 
             <article class="card">
                 <strong><a href="analytics_output/data_quality_report.json">Data quality report</a></strong>
                 <div class="meta">Machine-readable quality checks and review samples.</div>
-                <div class="meta">1.9 KB</div>
+                <div class="meta">2.1 KB</div>
+            </article>
+
+            <article class="card">
+                <strong><a href="analytics_output/field_provenance_biographical.csv">Biographical provenance</a></strong>
+                <div class="meta">Field-level provenance for curated person names and life dates.</div>
+                <div class="meta">54.2 KB</div>
+            </article>
+
+            <article class="card">
+                <strong><a href="analytics_output/field_provenance_authority.csv">Authority provenance</a></strong>
+                <div class="meta">Field-level provenance for external identifiers and organization authority records.</div>
+                <div class="meta">8.5 KB</div>
+            </article>
+
+            <article class="card">
+                <strong><a href="analytics_output/field_provenance_themes.csv">Theme provenance</a></strong>
+                <div class="meta">Field-level provenance for generated presentation theme labels.</div>
+                <div class="meta">278.0 KB</div>
+            </article>
+
+            <article class="card">
+                <strong><a href="analytics_output/network_nodes.csv">Network nodes</a></strong>
+                <div class="meta">Typed person, event, organization, and theme nodes for downstream network analysis.</div>
+                <div class="meta">21.5 KB</div>
+            </article>
+
+            <article class="card">
+                <strong><a href="analytics_output/network_edges.csv">Network edges</a></strong>
+                <div class="meta">Weighted edges with explicit relation types for participation, affiliation, theme, and co-presence analysis.</div>
+                <div class="meta">378.5 KB</div>
+            </article>
+
+            <article class="card">
+                <strong><a href="analytics_output/publication_file_manifest.csv">Publication file manifest</a></strong>
+                <div class="meta">Generated file list with byte sizes and SHA-256 checksums for reproducible release checks.</div>
+                <div class="meta">58.5 KB</div>
             </article>
 
             <article class="card">
                 <strong><a href="analytics_output/">Analytics exports</a></strong>
                 <div class="meta">CSV exports and derived analytical report material.</div>
-                <div class="meta">4.0 KB</div>
+                <div class="meta">16.0 KB</div>
             </article>
             </section>
 

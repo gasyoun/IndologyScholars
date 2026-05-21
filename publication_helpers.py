@@ -143,6 +143,120 @@ def _normalize_external_id(value, prefix):
     return prefix + s
 
 
+PUBLIC_AUTHORITY_CONFIDENCE = {"confirmed", "manual", "high"}
+
+
+def is_public_authority_record(person_authority):
+    if not person_authority:
+        return False
+    confidence = str(person_authority.get("confidence") or "").strip().lower()
+    return confidence in PUBLIC_AUTHORITY_CONFIDENCE
+
+
+def _orcid_url(value):
+    s = str(value or "").strip()
+    s = re.sub(r"^https?://orcid\.org/", "", s)
+    s = s.upper()
+    if re.match(r"^\d{4}-\d{4}-\d{4}-\d{3}[\dX]$", s):
+        return f"https://orcid.org/{s}"
+    return None
+
+
+def _wikidata_url(value):
+    s = str(value or "").strip()
+    s = re.sub(r"^https?://www\.wikidata\.org/wiki/", "", s)
+    if re.match(r"^Q\d+$", s):
+        return f"https://www.wikidata.org/wiki/{s}"
+    return None
+
+
+def _viaf_url(value):
+    s = str(value or "").strip()
+    s = re.sub(r"^https?://viaf\.org/viaf/", "", s).strip("/")
+    if re.match(r"^\d+$", s):
+        return f"https://viaf.org/viaf/{s}"
+    return None
+
+
+def _openalex_url(value):
+    s = str(value or "").strip()
+    s = re.sub(r"^https?://openalex\.org/", "", s)
+    if re.match(r"^A\d+$", s):
+        return f"https://openalex.org/{s}"
+    return None
+
+
+def _google_scholar_url(value):
+    s = str(value or "").strip()
+    if s.startswith("https://scholar.google.") and "citations?user=" in s:
+        return s
+    if re.match(r"^[A-Za-z0-9_-]+$", s):
+        return f"https://scholar.google.com/citations?user={s}"
+    return None
+
+
+def _scopus_url(value):
+    s = str(value or "").strip()
+    s = re.sub(r"^https?://www\.scopus\.com/authid/detail\.uri\?authorId=", "", s)
+    if re.match(r"^\d+$", s):
+        return f"https://www.scopus.com/authid/detail.uri?authorId={s}"
+    return None
+
+
+def _researcher_id_url(value):
+    s = str(value or "").strip()
+    s = re.sub(r"^https?://www\.webofscience\.com/wos/author/record/", "", s)
+    if re.match(r"^[A-Z]{1,3}-\d{4}-\d{4}$", s) or re.match(r"^[A-Z0-9-]+$", s):
+        return f"https://www.webofscience.com/wos/author/record/{s}"
+    return None
+
+
+def _rinc_url(value):
+    s = str(value or "").strip()
+    s = re.sub(r"^https?://(?:www\.)?elibrary\.ru/author_profile\.asp\?id=", "", s)
+    if re.match(r"^\d+$", s):
+        return f"https://www.elibrary.ru/author_profile.asp?id={s}"
+    return None
+
+
+def _official_url(value):
+    s = str(value or "").strip()
+    if s.startswith("https://") or s.startswith("http://"):
+        return s
+    return None
+
+
+def clean_person_urls(person_authority):
+    if not person_authority:
+        return {}
+    urls = {}
+
+    def add_valid(key, target_key, normalizer):
+        val = person_authority.get(key)
+        if val:
+            norm = normalizer(val)
+            if norm:
+                urls[target_key] = norm
+
+    add_valid("orcid", "orcid", _orcid_url)
+    add_valid("wikidata", "wikidata", _wikidata_url)
+    add_valid("viaf", "viaf", _viaf_url)
+    add_valid("openalex", "openalex", _openalex_url)
+    add_valid("google_scholar", "google_scholar", _google_scholar_url)
+    add_valid("scopus_author_id", "scopus_author_id", _scopus_url)
+    add_valid("researcher_id", "researcher_id", _researcher_id_url)
+    add_valid("rinc_author_id", "rinc_author_id", _rinc_url)
+
+    # url or official_url
+    url_val = person_authority.get("official_url") or person_authority.get("url")
+    if url_val:
+        norm = _official_url(url_val)
+        if norm:
+            urls["official_url"] = norm
+
+    return urls
+
+
 def _collect_alt_names(*sources):
     names = []
     for source in sources:
@@ -402,6 +516,25 @@ def page_shell(title, description, canonical_path, body, structured_data=None, e
             color: var(--text);
             font-size: 1rem;
         }}
+        .caveat-block {{
+            border: 1px solid rgba(139,92,246,0.35);
+            border-left: 4px solid var(--accent);
+            border-radius: 8px;
+            background: rgba(139,92,246,0.07);
+            padding: 0.9rem 1.1rem;
+            margin: 1.25rem 0 1.75rem;
+            max-width: 820px;
+        }}
+        .caveat-block strong {{
+            color: #c4b5fd;
+            display: block;
+            margin-bottom: 0.35rem;
+        }}
+        .caveat-block p {{
+            font-size: 0.93rem;
+            margin: 0;
+            color: var(--muted);
+        }}
     </style>
 </head>
 <body>
@@ -418,6 +551,7 @@ def page_shell(title, description, canonical_path, body, structured_data=None, e
             <a href="/IndologyScholars/data-quality.html">Quality</a>
             <a href="/IndologyScholars/en.html">English</a>
             <a href="/IndologyScholars/how-to-cite.html">Cite</a>
+            <a href="/IndologyScholars/metrics-guide.html">Metrics</a>
         </nav>
 {body}
         <div class="footer">© 2026 {esc(SITE_NAME)}. Generated from the normalized conference archive.</div>

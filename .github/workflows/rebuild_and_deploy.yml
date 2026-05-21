@@ -48,7 +48,10 @@ jobs:
 
       - name: Rebuild & Populate SQLite Database
         run: |
+          python scratch/export_presentation_id_manifest.py --out scratch/ci_manifest_before.csv
           python build_and_populate_db.py
+          python scratch/export_presentation_id_manifest.py --out scratch/ci_manifest_after.csv
+          python scratch/compare_id_manifests.py scratch/ci_manifest_before.csv scratch/ci_manifest_after.csv --out analytics_output/id_stability_audit.json --csv-out analytics_output/id_stability_changed_ids.csv
 
       - name: Generate Comparative Statistical Reports & CSVs
         run: |
@@ -78,8 +81,8 @@ jobs:
           # Add only changed datasets, database, caching, and static pages
           git add html_cache/*.html conferences.db site_data.json analytics_output/*.csv analytics_output/*.json indology_scholars_analytics.md scholars/*.html
           git add assets/*.png assets/*.svg conferences/*.html themes/*.html cities/*.html institutions/*.html
-          git add sitemap.xml robots.txt site.webmanifest search.html search-index.json CITATION.cff datapackage.json
-          git add 404.html en.html download-data.html data-quality.html methodology.html data-sources.html known-limitations.html how-to-cite.html
+          git add sitemap.xml robots.txt site.webmanifest search.html search-index.json CITATION.cff datapackage.json data_dictionary.md
+          git add 404.html en.html download-data.html data-quality.html methodology.html data-sources.html known-limitations.html how-to-cite.html metrics-guide.html networks.html
           git add index.html
           
           # Check if there are changes before committing to avoid empty commit errors

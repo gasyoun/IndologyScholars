@@ -34,7 +34,7 @@
       "name": "Russian Indological Research Archive",
       "url": "https://gasyoun.github.io/IndologyScholars/"
     },
-    "dateModified": "2026-05-21"
+    "dateModified": "2026-05-22"
   },
   {
     "@context": "https://schema.org",
@@ -161,6 +161,25 @@
             color: var(--text);
             font-size: 1rem;
         }
+        .caveat-block {
+            border: 1px solid rgba(139,92,246,0.35);
+            border-left: 4px solid var(--accent);
+            border-radius: 8px;
+            background: rgba(139,92,246,0.07);
+            padding: 0.9rem 1.1rem;
+            margin: 1.25rem 0 1.75rem;
+            max-width: 820px;
+        }
+        .caveat-block strong {
+            color: #c4b5fd;
+            display: block;
+            margin-bottom: 0.35rem;
+        }
+        .caveat-block p {
+            font-size: 0.93rem;
+            margin: 0;
+            color: var(--muted);
+        }
     </style>
 </head>
 <body>
@@ -177,6 +196,7 @@
             <a href="/IndologyScholars/data-quality.html">Quality</a>
             <a href="/IndologyScholars/en.html">English</a>
             <a href="/IndologyScholars/how-to-cite.html">Cite</a>
+            <a href="/IndologyScholars/metrics-guide.html">Metrics</a>
         </nav>
 
         <header>
@@ -184,39 +204,78 @@
             <p>Automated checks for join integrity, missing metadata, identity normalization, and review queues.</p>
         </header>
         <section class="grid">
+        <article class="card" style="grid-column: span 2;">
+            <strong>Identifier Mapping Coverage</strong>
+            <div class="meta" style="margin-top: 0.5rem; line-height: 1.8;">
+                Wikidata: 1 (0.4%) &middot;
+                ORCID: 1 (0.4%) &middot;
+                VIAF: 0 (0.0%) &middot;
+                OpenAlex: 0 (0.0%) &middot;
+                РИНЦ/eLIBRARY: 0 (0.0%) &middot;
+                Google Scholar: 0 (0.0%) &middot;
+                Official URL: 0 (0.0%)
+                <br>
+                <strong>Overall Coverage:</strong> 1 of 226 scholars mapped (0.4%)
+                <br>
+                <a href="analytics_output/authority_coverage.csv" style="font-weight: bold; margin-top: 0.5rem; display: inline-block;">Download Coverage Report (CSV)</a>
+            </div>
+        </article>
+
+        <article class="card">
+            <strong>Authority Review Queue</strong>
+            <div class="meta" style="margin-top: 0.5rem; line-height: 1.8;">
+                Queue Size: 226 scholars pending review.
+                <br>
+                Prioritizes active scholars with no external identifier, missing Latin translations, or initials-only display names.
+                <br>
+                <a href="analytics_output/authority_review_queue.csv" style="font-weight: bold; margin-top: 0.5rem; display: inline-block;">Download Review Queue (CSV)</a>
+            </div>
+        </article>
+
+        <article class="card" style="grid-column: span 2;">
+            <strong>Field-level provenance sidecars</strong>
+            <div class="meta" style="margin-top: 0.5rem; line-height: 1.8;">
+                <a href="analytics_output/field_provenance_biographical.csv">Biographical fields</a> &middot;
+                <a href="analytics_output/field_provenance_authority.csv">Authority identifiers</a> &middot;
+                <a href="analytics_output/field_provenance_themes.csv">Theme labels</a>
+                <br>
+                These CSVs expose source, confidence, and checked-date metadata for high-risk derived or curated fields.
+            </div>
+        </article>
+
             <article class="card">
                 <strong>Sessions without joinable event_day_venue</strong>
-                <div class="meta">Status: pass В· Severity: error В· Count: </div>
+                <div class="meta">Status: pass · Severity: error · Count: </div>
             </article>
 
             <article class="card">
                 <strong>Presentations attached to undated event days</strong>
-                <div class="meta">Status: pass В· Severity: warning В· Count: </div>
+                <div class="meta">Status: pass · Severity: warning · Count: </div>
             </article>
 
             <article class="card">
                 <strong>Presentation-person rows without raw affiliation</strong>
-                <div class="meta">Status: pass В· Severity: info В· Count: </div>
+                <div class="meta">Status: pass · Severity: info · Count: </div>
             </article>
 
             <article class="card">
                 <strong>Presentations with placeholder-like titles</strong>
-                <div class="meta">Status: review В· Severity: info В· Count: 1</div>
+                <div class="meta">Status: review · Severity: info · Count: 1</div>
             </article>
 
             <article class="card">
                 <strong>Duplicate full Russian names after normalization</strong>
-                <div class="meta">Status: pass В· Severity: warning В· Count: </div>
+                <div class="meta">Status: pass · Severity: warning · Count: </div>
             </article>
 
             <article class="card">
                 <strong>Mixed Latin initials in Cyrillic names</strong>
-                <div class="meta">Status: review В· Severity: info В· Count: 1</div>
+                <div class="meta">Status: review · Severity: info · Count: 1</div>
             </article>
             </section>
         <h2>Machine-readable report</h2>
         <p><a href="analytics_output/data_quality_report.json">analytics_output/data_quality_report.json</a></p>
-        <h2>placeholder_titles</h2><ul><li>{&quot;presentation_id&quot;: &quot;PRES_b14ff4be&quot;, &quot;scholar&quot;: &quot;Б. В. Загуменнов&quot;, &quot;title&quot;: &quot;Тема уточняется&quot;}</li></ul><h2>latin_initials</h2><ul><li>{&quot;person_id&quot;: &quot;PERS_cdbd7a15&quot;, &quot;display_name&quot;: &quot;C. В. Кулланда&quot;, &quot;full_name_ru&quot;: &quot;Кулланда Сергей Всеволодович&quot;, &quot;normalized_key&quot;: &quot;кулланда с в&quot;}</li></ul>
+        <h2>placeholder_titles</h2><ul><li>{&quot;presentation_id&quot;: &quot;PRES_117aeb7260&quot;, &quot;scholar&quot;: &quot;Б. В. Загуменнов&quot;, &quot;title&quot;: &quot;Тема уточняется&quot;}</li></ul><h2>latin_initials</h2><ul><li>{&quot;person_id&quot;: &quot;PERS_cdbd7a15&quot;, &quot;display_name&quot;: &quot;C. В. Кулланда&quot;, &quot;full_name_ru&quot;: &quot;Кулланда Сергей Всеволодович&quot;, &quot;normalized_key&quot;: &quot;кулланда с в&quot;}</li></ul>
 
         <div class="footer">© 2026 Russian Indological Research Archive. Generated from the normalized conference archive.</div>
     </main>
