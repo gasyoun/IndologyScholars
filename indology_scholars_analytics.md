@@ -1,7 +1,7 @@
 # Russian Indological Scholarship: Comparative Statistical Analytics
 
 > [!NOTE]
-> This analytical report is generated dynamically based on the relational SQL database compiled from Zograf Readings (2004–2025) and Roerich Readings (2007–2025) conference programs.
+> This analytical report is generated dynamically based on the relational SQL database compiled from Zograf Readings (2004–2026) and Roerich Readings (2007–2025) conference programs.
 
 ## 1. High-Level Executive Summary
 
