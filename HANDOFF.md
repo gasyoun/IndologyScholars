@@ -1,20 +1,20 @@
 # HANDOFF: IndologyScholars Article (v0.3)
 
-**Last Updated:** 2026-05-21  
+**Last Updated:** 2026-05-21 (evening session)  
 **Session:** Continuation of comprehensive retrospective on Russian Indology (Zograf & Roerich Readings)  
-**Status:** Article draft ready for journal submission; auxiliary analytics complete
+**Status:** Article draft ready for journal submission; auxiliary analytics complete; CI/deploy pipeline restored; live site current
 
 ---
 
 ## 📋 Current Article Status
 
 **File:** `article/ppv_draft.md`  
-**Version:** v0.3 (post-publication refinements)  
-**Size:** ~45k characters (~15 pages, 7000 words)  
+**Version:** v0.3 (post-publication refinements + appendices B & C filled)  
+**Size:** ~60k characters (~20 pages with appendices)  
 **Target Journal:** ППВ (Письменные памятники Востока); fallback: Восток (Oriens)  
 **Submission Format:** 22–26 pages, 10 sections + 3 appendices
 
-### Recent Corrections (Session 2026-05-21)
+### Recent Corrections (Session 2026-05-21, morning)
 
 1. **Biographical Data Fixed:**
    - Tsvetkova: Database corrected (Софья → Светлана)
@@ -30,6 +30,28 @@
    - `analytics_output/debut_timing.csv` — 66 scholars with age-at-debut analysis
    - `analytics_output/debut_timing.svg` — Scatter plot visualization (debut year vs age)
    - `analytics_output/youtube_playlist_summary.csv` — Zograf YouTube recording counts
+
+### Session 2026-05-21 (evening) — Appendices, OpenAlex experiment, CI restoration
+
+4. **Appendix B filled** (`article/ppv_draft_appendix_b.md` + spliced into main draft):
+   - 20-year yearly table (2004–2026) showing % newcomers and median age per series.
+   - Key finding: newcomer rate collapse 100% → 10–11% by 2021–2022, median age rise to 57–59 by 2025–2026. Apparent rebounds in 2025 (Rerikh 38.9%) and 2026 (Zograf 31.7%) — likely reflect organizational changes (worth flagging in commentary).
+
+5. **Appendix C filled** (`article/ppv_draft_appendix_c.md` + spliced into main draft):
+   - 3 summary tables (L1 discipline, L2 period, L4 character) + 30-row representative sample (confidence ≥ 0.8).
+   - Full 895-row CSV at `article/supplementary_theme_codes.csv` for journal submission.
+   - Numbers confirmed: Zograf = literature 22% + philosophy 21.7%; Rerikh = religion 25.4% + history 15.8% + art 9.6%. L4 fundamental ~93% on both sides → H4 (applied-topic filter) not supported.
+
+6. **OpenAlex birth-year proxy — REJECTED.** Tested as Task #9 alternative method. Tried twice (60 top scholars, then stricter filter). Both runs systematically under-estimated by 30–50 years for senior scholars (Альбедиль "1990" but actually ~1946; Краснодембская "1994" but 1937). Root cause: OpenAlex doesn't index Russian humanities pre-~2010. Documented as §7 footnote ^2^. Audit scripts kept in `scratch/fetch_openalex_birthyears*.py`. **Do not retry this method.**
+
+7. **CI / deploy pipeline restored** (4 fixes):
+   - `requirements.txt` added (was missing → pip cache failed before any Python ran for 15+ pushes).
+   - `validate_publication.py` made slug-rename-aware: follows `<link rel="canonical">` on redirect pages to verify the slug target exists.
+   - `environment: github-pages` declared on the deploy job (required by `actions/deploy-pages@v4`).
+   - `pypdf` added to requirements so CI can read `html_cache/zograf_2026.pdf` (the script does conditional import + warning fallback otherwise).
+   - **Live site now reflects 226 scholars / 899 presentations / 2026** (was frozen at 188 / 707 / 2025 since ~2026-05-19).
+
+8. **Legacy-redirect cleanup**: emptied `legacy_redirects.json` (was holding 7 orphan PERS_<hash> → current-scholar redirects from past dedup merges). Validator no longer defends against orphan canonicals — any future orphan will fail validation, forcing cleanup at the source.
 
 ### Key Findings (Ready for Discussion)
 
@@ -119,10 +141,7 @@ event_series → event → event_day → event_day_venue → session → present
    - Method: Dissertation advisors + user knowledge
    - Goal: Show institutional lineages within core 37
 
-3. **Birth Year Proxies** (Task #9, in progress)
-   - 110 scholars missing birth_year
-   - Method: First publication year via OpenAlex API (open, no auth required)
-   - Skeleton ready: `scratch/rinc_proxy_skeleton.py`
+3. ~~**Birth Year Proxies**~~ — **REJECTED 2026-05-21**. OpenAlex coverage gap makes the first-publication-year proxy unusable for Soviet-era scholars (under-estimates by 30–50 years). See §7 ^2^. For the 110 missing scholars, only manual research or RSL/RINC will work.
 
 ### Medium Priority
 4. **Collections/Sborniki Analysis**
@@ -224,8 +243,7 @@ event_series → event → event_day → event_day_venue → session → present
 ## 💡 Known Limitations & Open Questions
 
 1. **Birth Years:** Only 99/226 (44%) have documented birth years
-   - Proxy via first publication year in progress (Task #9)
-   - Will likely add 40–60 more estimates
+   - OpenAlex first-publication-year proxy was tested and rejected (see Recent Corrections item 6 and §7 ^2^). Need manual research for the remaining 127.
 
 2. **Degrees:** Not yet extracted (0/226)
    - Critical for distinguishing institutional hierarchies
@@ -260,7 +278,7 @@ event_series → event → event_day → event_day_venue → session → present
 
 ## 📝 Session Notes
 
-**This Handoff Session (2026-05-21):**
+**Session 2026-05-21 (morning):**
 - Fixed 3 biographical errors (names, dates)
 - Generated debut-timing analysis (66 scholars, median 41 years)
 - Clarified theme-scholar methodology in §8
@@ -268,11 +286,18 @@ event_series → event → event_day → event_day_venue → session → present
 - Extracted YouTube statistics (160+12 recordings)
 - Committed changes to main (commit aa15d53)
 
+**Session 2026-05-21 (evening):**
+- Filled Appendices B & C via delegated Haiku subagents; spliced into ppv_draft.md
+- §7 ^2^ footnote: OpenAlex birth-year proxy tested twice and rejected (audit scripts kept)
+- Restored CI deploy pipeline (4 commits: pip cache, validator slug-awareness, pages environment, pypdf)
+- Cleaned up 7 orphan PERS_<hash> redirects + tightened validator (no more bookmark-preservation defense)
+- Verified live site at https://gasyoun.github.io/IndologyScholars/ now serves 226/899/2026
+
 **For Next Session:**
-- Start with `article/ppv_draft.md` commit `aa15d53`
-- Check `.ai_state.md` for task dependencies
-- Address Task #6 (degrees/alma mater) for institutional distinction
-- Consider author availability for sign-off on print layout
+- Article is ready for PDF conversion → ППВ submission (Task #5 in Pending)
+- Address Task #6 (degrees/alma mater) for institutional school distinction
+- Author sign-off on final v0.3 text before PDF
+- 127 unknown birth years: only addressable by manual RSL/RINC research, NOT OpenAlex
 
 ---
 

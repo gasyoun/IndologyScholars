@@ -1,12 +1,4 @@
 {
-  "description": "Legacy scholar profile URLs that should remain reachable after identity merges or parser cleanup. Values point to canonical scholar profile IDs.",
-  "redirects": {
-    "PERS_3a1d7af8": "PERS_00c3b0cc",
-    "PERS_5d5c1c98": "PERS_9bf51055",
-    "PERS_67b4e688": "PERS_a0264ac5",
-    "PERS_74d47cf3": "PERS_cdbd7a15",
-    "PERS_7d908f8d": "PERS_d98da899",
-    "PERS_8dbe16c6": "PERS_e30ad8b7",
-    "PERS_fbcb2153": "PERS_6ae5c779"
-  }
+  "description": "Reserved for redirects we explicitly want to preserve. Empty by default — orphan PERS_<hash> URLs from past dedup merges are not kept (validator will flag them as stale).",
+  "redirects": {}
 }

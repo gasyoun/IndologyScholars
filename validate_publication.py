@@ -62,9 +62,9 @@ def main():
     valid_ids = set(page_ids)
     valid_ids.update(pers_id for pers_id, slug in slug_to_target.items() if slug in slug_pages)
     missing = scholar_ids - valid_ids
-    stale_canonical = (valid_ids - scholar_ids) - set(slug_to_target)
-    if missing or stale_canonical:
-        fail(errors, f"Scholar page mismatch: missing={sorted(missing)[:10]} stale={sorted(stale_canonical)[:10]}")
+    stale = valid_ids - scholar_ids
+    if missing or stale:
+        fail(errors, f"Scholar page mismatch: missing={sorted(missing)[:10]} stale={sorted(stale)[:10]}")
 
     for page, html in scholar_pages:
         if '<meta name="description"' not in html:
