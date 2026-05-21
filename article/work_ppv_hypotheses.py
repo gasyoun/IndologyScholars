@@ -1,0 +1,842 @@
+from __future__ import annotations
+
+import csv
+import math
+import re
+import sqlite3
+from collections import Counter, defaultdict, deque
+from dataclasses import dataclass
+from html import escape
+from pathlib import Path
+
+try:
+    from scipy.stats import chi2_contingency, fisher_exact
+except Exception:  # pragma: no cover - optional in portable use
+    chi2_contingency = None
+    fisher_exact = None
+
+
+ROOT = Path(__file__).resolve().parents[1]
+DB = ROOT / "conferences.db"
+ANALYTICS = ROOT / "analytics_output"
+HTML_CACHE = ROOT / "html_cache"
+OUT = ROOT / "article" / "hypothesis_output"
+
+
+def read_csv(path: Path) -> list[dict[str, str]]:
+    with path.open("r", encoding="utf-8", newline="") as f:
+        return list(csv.DictReader(f))
+
+
+def write_csv(path: Path, rows: list[dict[str, object]], fieldnames: list[str] | None = None) -> None:
+    if fieldnames is None:
+        fieldnames = list(rows[0].keys()) if rows else []
+    with path.open("w", encoding="utf-8", newline="") as f:
+        writer = csv.DictWriter(f, fieldnames=fieldnames)
+        writer.writeheader()
+        writer.writerows(rows)
+
+
+def pct(n: int | float, d: int | float) -> float:
+    return round(100 * n / d, 1) if d else 0.0
+
+
+def median(values: list[float]) -> float | None:
+    if not values:
+        return None
+    xs = sorted(values)
+    n = len(xs)
+    mid = n // 2
+    if n % 2:
+        return xs[mid]
+    return (xs[mid - 1] + xs[mid]) / 2
+
+
+def svg(width: int, height: int, body: list[str]) -> str:
+    return (
+        f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" '
+        f'viewBox="0 0 {width} {height}">\n'
+        "<style>"
+        "text{font-family:Arial,'Liberation Sans',sans-serif;fill:#1f2933}"
+        ".title{font-size:20px;font-weight:700}.sub{font-size:13px;fill:#52616b}"
+        ".axis{font-size:13px}.small{font-size:12px}.label{font-size:11px}"
+        "</style>\n"
+        + "\n".join(body)
+        + "\n</svg>\n"
+    )
+
+
+def text(x: float, y: float, value: object, cls: str = "small", anchor: str = "start", weight: str | None = None) -> str:
+    weight_attr = f' font-weight="{weight}"' if weight else ""
+    return (
+        f'<text x="{x:.1f}" y="{y:.1f}" class="{cls}" text-anchor="{anchor}"{weight_attr}>'
+        f"{escape(str(value))}</text>"
+    )
+
+
+def rect(x: float, y: float, w: float, h: float, fill: str, stroke: str = "none", opacity: float = 1.0) -> str:
+    return (
+        f'<rect x="{x:.1f}" y="{y:.1f}" width="{w:.1f}" height="{h:.1f}" '
+        f'fill="{fill}" stroke="{stroke}" opacity="{opacity}"/>'
+    )
+
+
+def line(x1: float, y1: float, x2: float, y2: float, stroke: str = "#cfd8e3", width: float = 1.0) -> str:
+    return f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{x2:.1f}" y2="{y2:.1f}" stroke="{stroke}" stroke-width="{width}"/>'
+
+
+def circle(x: float, y: float, r: float, fill: str, stroke: str = "#fff") -> str:
+    return f'<circle cx="{x:.1f}" cy="{y:.1f}" r="{r:.1f}" fill="{fill}" stroke="{stroke}" stroke-width="1.2"/>'
+
+
+def short_name(name: str) -> str:
+    parts = name.replace("\xa0", " ").split()
+    if len(parts) >= 3 and len(parts[0]) > 2:
+        return f"{parts[0]} {parts[1][0]}. {parts[2][0]}."
+    return " ".join(parts[:3])
+
+
+def norm_title(title: str) -> str:
+    value = title or ""
+    value = value.lower().replace("ё", "е")
+    value = re.sub(r"<[^>]+>", " ", value)
+    value = re.sub(r"[«»“”\"'`.,:;!?()\[\]{}<>/\\|–—-]+", " ", value)
+    value = re.sub(r"\s+", " ", value)
+    return value.strip()
+
+
+def theme_lookup(theme_rows: list[dict[str, str]]) -> dict[tuple[str, int, str], dict[str, str]]:
+    out = {}
+    for row in theme_rows:
+        series = "Zograf" if row["series"] == "Zograf Readings" else "Roerich"
+        out[(series, int(row["year"]), norm_title(row["title"]))] = row
+    return out
+
+
+def db_presentation_themes(con: sqlite3.Connection, theme_rows: list[dict[str, str]]) -> dict[str, dict[str, str]]:
+    lookup = theme_lookup(theme_rows)
+    out = {}
+    for pres_id, title, series_name, year in con.execute(
+        """
+        select pr.presentation_id, pr.title, es.series_name_en, e.year
+        from presentation pr
+        join session s using(session_id)
+        join event_day_venue edv using(event_day_venue_id)
+        join event_day ed using(event_day_id)
+        join event e using(event_id)
+        join event_series es using(event_series_id)
+        """
+    ):
+        series = "Zograf" if "Zograf" in series_name else "Roerich"
+        row = lookup.get((series, int(year), norm_title(title or "")))
+        if row:
+            out[pres_id] = row
+    return out
+
+
+def theme_match_diagnostics(con: sqlite3.Connection, theme_rows: list[dict[str, str]]) -> tuple[list[dict[str, object]], dict[str, object]]:
+    themes_by_pres = db_presentation_themes(con, theme_rows)
+    by_series: dict[str, dict[str, int]] = defaultdict(lambda: {"presentations": 0, "matched": 0})
+    for pres_id, series_name in con.execute(
+        """
+        select pr.presentation_id, es.series_name_en
+        from presentation pr
+        join session s using(session_id)
+        join event_day_venue edv using(event_day_venue_id)
+        join event_day ed using(event_day_id)
+        join event e using(event_id)
+        join event_series es using(event_series_id)
+        """
+    ):
+        series = "Zograf" if "Zograf" in series_name else "Roerich"
+        by_series[series]["presentations"] += 1
+        if pres_id in themes_by_pres:
+            by_series[series]["matched"] += 1
+
+    rows = []
+    total_presentations = 0
+    total_matched = 0
+    for series in sorted(by_series):
+        presentations = by_series[series]["presentations"]
+        matched = by_series[series]["matched"]
+        total_presentations += presentations
+        total_matched += matched
+        rows.append(
+            {
+                "series": series,
+                "presentations": presentations,
+                "theme_matched": matched,
+                "theme_unmatched": presentations - matched,
+                "match_pct": pct(matched, presentations),
+            }
+        )
+    rows.append(
+        {
+            "series": "ALL",
+            "presentations": total_presentations,
+            "theme_matched": total_matched,
+            "theme_unmatched": total_presentations - total_matched,
+            "match_pct": pct(total_matched, total_presentations),
+        }
+    )
+    return rows, {"theme_match_total": total_matched, "theme_presentations_total": total_presentations, "theme_match_pct": pct(total_matched, total_presentations)}
+
+
+def roerich_heading(year: int) -> str:
+    path = HTML_CACHE / f"roerich_{year}.html"
+    if not path.exists():
+        return ""
+    html = path.read_text(encoding="utf-8", errors="replace")
+    for match in re.finditer(r"<h[123][^>]*>(.*?)</h[123]>", html, flags=re.I | re.S):
+        value = re.sub(r"<[^>]+>", " ", match.group(1))
+        value = (
+            value.replace("&nbsp;", " ")
+            .replace("&laquo;", "«")
+            .replace("&raquo;", "»")
+            .replace("&ndash;", "–")
+        )
+        value = " ".join(value.split())
+        if "Рериховские чтения" in value or "Рериховских чтений" in value:
+            return value
+    return ""
+
+
+def infer_theme_group(heading: str) -> str:
+    low = heading.lower()
+    if "проблемы формирования текста" in low:
+        return "text_formation"
+    if "древняя и средневековая индия" in low:
+        return "ancient_medieval_india"
+    if "рериховские чтения" in low:
+        return "generic_roerich"
+    return "unknown"
+
+
+def hypothesis_program_subtitles(theme_rows: list[dict[str, str]], con: sqlite3.Connection) -> tuple[list[dict[str, object]], dict[str, object]]:
+    by_year = defaultdict(list)
+    for row in theme_rows:
+        if row["series"] == "Roerich Readings":
+            by_year[int(row["year"])].append(row)
+
+    db_themes = {
+        year: theme
+        for year, theme in con.execute(
+            "select year, theme_ru from event e join event_series es using(event_series_id) where es.series_name_en='Roerich Readings'"
+        )
+    }
+    rows: list[dict[str, object]] = []
+    for year in sorted(set(db_themes) | set(by_year)):
+        heading = roerich_heading(year)
+        group = infer_theme_group(heading)
+        talks = by_year.get(year, [])
+        l2 = Counter(r["l2"] for r in talks)
+        l1 = Counter(r["l1"] for r in talks)
+        rows.append(
+            {
+                "year": year,
+                "db_theme_ru": db_themes.get(year, ""),
+                "html_heading": heading,
+                "theme_group_from_html": group,
+                "coded_talks": len(talks),
+                "classical_medieval_pct": pct(l2["classical"] + l2["medieval"], len(talks)),
+                "religion_history_literature_pct": pct(l1["religion"] + l1["history"] + l1["literature"], len(talks)),
+                "top_l1": "; ".join(f"{k}:{v}" for k, v in l1.most_common(3)),
+                "top_l2": "; ".join(f"{k}:{v}" for k, v in l2.most_common(3)),
+            }
+        )
+
+    # Compare the years that actually have coded talks.
+    coded = [r for r in rows if r["coded_talks"]]
+    groups = sorted({str(r["theme_group_from_html"]) for r in coded})
+    stats: dict[str, object] = {"groups_with_coded_talks": ", ".join(groups)}
+    if chi2_contingency and len(groups) >= 2:
+        matrix = []
+        labels = ["classical", "medieval", "modern", "contemporary", "colonial", "vedic", "unspecified"]
+        for group in groups:
+            counter = Counter()
+            for row in theme_rows:
+                if row["series"] != "Roerich Readings":
+                    continue
+                heading = roerich_heading(int(row["year"]))
+                if infer_theme_group(heading) == group:
+                    counter[row["l2"]] += 1
+            matrix.append([counter[label] for label in labels])
+        # Drop zero-only columns.
+        keep = [i for i in range(len(labels)) if sum(row[i] for row in matrix)]
+        matrix = [[row[i] for i in keep] for row in matrix]
+        if len(matrix) > 1 and len(matrix[0]) > 1:
+            chi2, p_value, dof, _ = chi2_contingency(matrix)
+            n = sum(sum(row) for row in matrix)
+            v = math.sqrt(chi2 / (n * (min(len(matrix), len(matrix[0])) - 1)))
+            stats.update({"l2_chi2": round(chi2, 3), "l2_p": p_value, "l2_cramers_v": round(v, 3), "l2_dof": dof})
+    return rows, stats
+
+
+def person_series_counts(con: sqlite3.Connection) -> dict[str, dict[str, object]]:
+    rows = con.execute(
+        """
+        select pp.person_id, p.display_name, p.birth_year, es.series_name_en, count(*), min(e.year), max(e.year)
+        from presentation_person pp
+        join person p using(person_id)
+        join presentation pr using(presentation_id)
+        join session s using(session_id)
+        join event_day_venue edv using(event_day_venue_id)
+        join event_day ed using(event_day_id)
+        join event e using(event_id)
+        join event_series es using(event_series_id)
+        group by pp.person_id, es.series_name_en
+        """
+    ).fetchall()
+    out: dict[str, dict[str, object]] = defaultdict(lambda: {"series": {}})
+    for pid, name, birth, series, count, first, last in rows:
+        key = "Zograf" if "Zograf" in series else "Roerich"
+        out[pid]["name"] = name
+        out[pid]["birth_year"] = birth
+        out[pid]["series"][key] = {"count": count, "first": first, "last": last}
+    return out
+
+
+AFFIL_GROUPS = [
+    ("ИКВИА/ВШЭ", re.compile(r"ИКВИА|ВШЭ|Высш", re.I)),
+    ("ИВ РАН", re.compile(r"\bИВ РАН\b|Институт востоковедения", re.I)),
+    ("ИВР РАН", re.compile(r"ИВР|Институт восточных рукопис", re.I)),
+    ("СПбГУ", re.compile(r"СПбГУ|Санкт-Петербургский государственный", re.I)),
+    ("ИФ РАН", re.compile(r"\bИФ РАН\b|Институт философии", re.I)),
+    ("ИМЛИ РАН", re.compile(r"ИМЛИ", re.I)),
+    ("РГГУ", re.compile(r"РГГУ", re.I)),
+    ("РУДН", re.compile(r"РУДН", re.I)),
+    ("ИСАА МГУ", re.compile(r"ИСАА|МГУ", re.I)),
+    ("ИЭА РАН", re.compile(r"ИЭА", re.I)),
+    ("МАЭ РАН", re.compile(r"МАЭ|Кунсткам", re.I)),
+    ("ИЯз/ИЯ РАН", re.compile(r"ИЯз|ИЯ РАН", re.I)),
+    ("независимый исследователь", re.compile(r"\bНИ\b|независ", re.I)),
+]
+
+
+def affiliation_groups(values: list[str]) -> list[str]:
+    joined = " | ".join(v for v in values if v)
+    groups = [name for name, pattern in AFFIL_GROUPS if pattern.search(joined)]
+    return groups or ["не нормализовано/только город"]
+
+
+def hypothesis_ikvia_bridge(con: sqlite3.Connection, people: dict[str, dict[str, object]], theme_rows: list[dict[str, str]]) -> tuple[list[dict[str, object]], list[dict[str, object]]]:
+    raw_affils: dict[str, list[str]] = defaultdict(list)
+    for pid, affil in con.execute("select person_id, affiliation_text_raw from presentation_person"):
+        if affil and affil not in raw_affils[pid]:
+            raw_affils[pid].append(affil)
+
+    l1_by_person = defaultdict(Counter)
+    themes_by_pres = db_presentation_themes(con, theme_rows)
+    for pid, pres_id in con.execute("select person_id, presentation_id from presentation_person"):
+        row = themes_by_pres.get(pres_id)
+        if row:
+            l1_by_person[pid][row["l1"]] += 1
+
+    rows = []
+    inst_counter: Counter[str] = Counter()
+    for pid, info in people.items():
+        series = info["series"]
+        if not ("Zograf" in series and "Roerich" in series):
+            continue
+        z = int(series["Zograf"]["count"])
+        r = int(series["Roerich"]["count"])
+        total = z + r
+        balance = round((z - r) / total, 3)
+        groups = affiliation_groups(raw_affils[pid])
+        for group in groups:
+            inst_counter[group] += 1
+        rows.append(
+            {
+                "person_id": pid,
+                "display_name": info["name"],
+                "total": total,
+                "zograf": z,
+                "roerich": r,
+                "balance": balance,
+                "first_year": min(series["Zograf"]["first"], series["Roerich"]["first"]),
+                "last_year": max(series["Zograf"]["last"], series["Roerich"]["last"]),
+                "affiliation_groups": "; ".join(groups),
+                "has_ikvia_hse": "yes" if "ИКВИА/ВШЭ" in groups else "no",
+                "top_l1": "; ".join(f"{k}:{v}" for k, v in l1_by_person[pid].most_common(3)),
+                "raw_affiliations": " | ".join(raw_affils[pid]),
+            }
+        )
+    rows.sort(key=lambda r: (r["has_ikvia_hse"] != "yes", -int(r["total"]), str(r["display_name"])))
+    summary = [
+        {"affiliation_group": group, "cross_cohort_people": count}
+        for group, count in inst_counter.most_common()
+    ]
+    return rows, summary
+
+
+def hypothesis_age_at_debut(con: sqlite3.Connection, people: dict[str, dict[str, object]]) -> tuple[list[dict[str, object]], list[dict[str, object]], list[dict[str, object]]]:
+    first_seen: dict[str, tuple[int, str]] = {}
+    for pid, year, series in con.execute(
+        """
+        select pp.person_id, e.year, es.series_name_en
+        from presentation_person pp
+        join presentation pr using(presentation_id)
+        join session s using(session_id)
+        join event_day_venue edv using(event_day_venue_id)
+        join event_day ed using(event_day_id)
+        join event e using(event_id)
+        join event_series es using(event_series_id)
+        order by e.year
+        """
+    ):
+        if pid not in first_seen:
+            first_seen[pid] = (year, "Zograf" if "Zograf" in series else "Roerich")
+
+    rows = []
+    missing = []
+    for pid, info in people.items():
+        series = info["series"]
+        total = sum(int(v["count"]) for v in series.values())
+        z = int(series.get("Zograf", {}).get("count", 0))
+        r = int(series.get("Roerich", {}).get("count", 0))
+        first_year, first_series = first_seen[pid]
+        birth = info["birth_year"]
+        if birth is None:
+            if total >= 5 or str(info["name"]) in {"М. Ю. Гасунс", "А. С. Крылова"}:
+                missing.append(
+                    {
+                        "person_id": pid,
+                        "display_name": info["name"],
+                        "total": total,
+                        "zograf": z,
+                        "roerich": r,
+                        "first_year": first_year,
+                        "reason": "needed_for_age_debut_or_high_activity",
+                    }
+                )
+            continue
+        rows.append(
+            {
+                "person_id": pid,
+                "display_name": info["name"],
+                "birth_year": birth,
+                "first_year": first_year,
+                "age_at_debut": first_year - int(birth),
+                "first_series": first_series,
+                "series_attended": "both" if z and r else ("zograf_only" if z else "roerich_only"),
+                "total": total,
+                "zograf": z,
+                "roerich": r,
+            }
+        )
+
+    summary = []
+    bins = [
+        ("2004-2010", lambda y: 2004 <= y <= 2010),
+        ("2011-2017", lambda y: 2011 <= y <= 2017),
+        ("2018-2026", lambda y: 2018 <= y <= 2026),
+    ]
+    for label, pred in bins:
+        ages = [int(r["age_at_debut"]) for r in rows if pred(int(r["first_year"]))]
+        summary.append(
+            {
+                "debut_period": label,
+                "n_known_birth_year": len(ages),
+                "median_age_at_debut": median(ages),
+                "min_age_at_debut": min(ages) if ages else "",
+                "max_age_at_debut": max(ages) if ages else "",
+            }
+        )
+    return rows, summary, missing
+
+
+def figure_age_at_debut(rows: list[dict[str, object]]) -> None:
+    width, height = 980, 600
+    left, top, plot_w, plot_h = 82, 78, 800, 410
+    xs = [int(r["first_year"]) for r in rows]
+    ys = [int(r["age_at_debut"]) for r in rows]
+    xmin, xmax = min(xs), max(xs)
+    ymin, ymax = 15, max(ys) + 5
+
+    def sx(x):
+        return left + (x - xmin) / (xmax - xmin) * plot_w
+
+    def sy(y):
+        return top + (1 - (y - ymin) / (ymax - ymin)) * plot_h
+
+    body = [
+        text(32, 32, "Возраст первого выступления", "title"),
+        text(32, 54, "Только участники с подтвержденным годом рождения; цвет показывает охват площадок.", "sub"),
+        rect(left, top, plot_w, plot_h, "#fff", "#cfd8e3"),
+    ]
+    for year in range(xmin, xmax + 1, 2):
+        x = sx(year)
+        body.append(line(x, top, x, top + plot_h, "#edf1f5"))
+        body.append(text(x, top + plot_h + 24, year, "axis", "middle"))
+    for age in range(20, ymax + 1, 10):
+        y = sy(age)
+        body.append(line(left, y, left + plot_w, y, "#edf1f5"))
+        body.append(text(left - 10, y + 4, age, "axis", "end"))
+    colors = {"both": "#7b5ea7", "zograf_only": "#2f6fbb", "roerich_only": "#b8554b"}
+    for row in rows:
+        color = colors[str(row["series_attended"])]
+        r = 4 + math.sqrt(int(row["total"])) * 0.8
+        body.append(circle(sx(int(row["first_year"])), sy(int(row["age_at_debut"])), r, color))
+    for row in sorted(rows, key=lambda r: int(r["total"]), reverse=True)[:10]:
+        body.append(text(sx(int(row["first_year"])) + 7, sy(int(row["age_at_debut"])) - 6, short_name(str(row["display_name"])), "label"))
+    body.append(text(left + plot_w / 2, height - 38, "Год первого выступления", "axis", "middle"))
+    body.append(text(20, top + plot_h / 2, "Возраст", "axis", "middle"))
+    legend_x, legend_y = 700, 92
+    for i, (label, color) in enumerate([("обе площадки", "#7b5ea7"), ("только Зограф", "#2f6fbb"), ("только Рерих", "#b8554b")]):
+        body.append(circle(legend_x, legend_y + i * 24, 6, color))
+        body.append(text(legend_x + 16, legend_y + 4 + i * 24, label, "small"))
+    (OUT / "age_at_debut.svg").write_text(svg(width, height, body), encoding="utf-8")
+
+
+def hypothesis_publication_sources(con: sqlite3.Connection) -> list[dict[str, object]]:
+    rows = []
+    for media_id, title, url, source_url in con.execute(
+        "select media_id, media_title, media_url, source_url from media where media_type='pdf' order by media_id"
+    ):
+        rows.append(
+            {
+                "media_id": media_id,
+                "media_title": title,
+                "media_url": url,
+                "source_url": source_url,
+                "current_linkage": "post-level only",
+                "workup_status": "source inventory; presentation/article conversion requires contents parsing",
+            }
+        )
+    return rows
+
+
+def hypothesis_video_availability(con: sqlite3.Connection, theme_rows: list[dict[str, str]]) -> tuple[list[dict[str, object]], list[dict[str, object]], list[dict[str, object]]]:
+    video_counts = Counter(
+        pres_id
+        for (pres_id,) in con.execute(
+            "select distinct attached_to_id from media where media_type='video' and attached_to_type='presentation'"
+        )
+    )
+    presentation_meta = {
+        pres_id: (series, year)
+        for pres_id, series, year in con.execute(
+            """
+            select pr.presentation_id, es.series_name_en, e.year
+            from presentation pr
+            join session s using(session_id)
+            join event_day_venue edv using(event_day_venue_id)
+            join event_day ed using(event_day_id)
+            join event e using(event_id)
+            join event_series es using(event_series_id)
+            """
+        )
+    }
+    by_year = defaultdict(lambda: {"presentations": 0, "with_video": 0})
+    for pres_id, (series, year) in presentation_meta.items():
+        key = ("Zograf" if "Zograf" in series else "Roerich", year)
+        by_year[key]["presentations"] += 1
+        if video_counts[pres_id]:
+            by_year[key]["with_video"] += 1
+    year_rows = []
+    for (series, year), counts in sorted(by_year.items(), key=lambda item: (item[0][0], item[0][1])):
+        year_rows.append(
+            {
+                "series": series,
+                "year": year,
+                "presentations": counts["presentations"],
+                "presentations_with_video": counts["with_video"],
+                "video_coverage_pct": pct(counts["with_video"], counts["presentations"]),
+            }
+        )
+
+    themes_by_pres = db_presentation_themes(con, theme_rows)
+    by_l1 = defaultdict(lambda: {"presentations": 0, "with_video": 0})
+    for pres_id, (series, _year) in presentation_meta.items():
+        row = themes_by_pres.get(pres_id)
+        if not row:
+            continue
+        key = (series, row["l1"])
+        by_l1[key]["presentations"] += 1
+        if video_counts[pres_id]:
+            by_l1[key]["with_video"] += 1
+    l1_rows = []
+    for (series, l1), counts in sorted(by_l1.items()):
+        l1_rows.append(
+            {
+                "series": series,
+                "l1": l1,
+                "presentations": counts["presentations"],
+                "presentations_with_video": counts["with_video"],
+                "video_coverage_pct": pct(counts["with_video"], counts["presentations"]),
+            }
+        )
+
+    mapping_rows = read_csv(ANALYTICS / "video_presentation_mapping.csv")
+    status_rows = [
+        {"status": status, "videos": count}
+        for status, count in Counter(row["status"] for row in mapping_rows).most_common()
+    ]
+    return year_rows, l1_rows, status_rows
+
+
+def figure_video_coverage(year_rows: list[dict[str, object]]) -> None:
+    rows = [r for r in year_rows if r["series"] == "Zograf" and int(r["year"]) >= 2018]
+    width, height = 900, 520
+    left, top, plot_w, plot_h = 92, 72, 720, 320
+    years = [int(r["year"]) for r in rows]
+    ymax = max(int(r["presentations"]) for r in rows) + 8
+    body = [
+        text(32, 30, "Видео-доступность Зографских чтений", "title"),
+        text(32, 52, "Темная часть столбца — доклады, связанные с публичной записью в базе.", "sub"),
+        rect(left, top, plot_w, plot_h, "#fff", "#cfd8e3"),
+    ]
+    for y in range(0, ymax + 1, 15):
+        yy = top + plot_h - y / ymax * plot_h
+        body.append(line(left, yy, left + plot_w, yy, "#edf1f5"))
+        body.append(text(left - 10, yy + 4, y, "axis", "end"))
+    bar_w = plot_w / len(rows) * 0.55
+    for i, row in enumerate(rows):
+        x = left + (i + 0.5) * plot_w / len(rows)
+        total = int(row["presentations"])
+        with_video = int(row["presentations_with_video"])
+        h_total = total / ymax * plot_h
+        h_video = with_video / ymax * plot_h
+        body.append(rect(x - bar_w / 2, top + plot_h - h_total, bar_w, h_total, "#cbd5df"))
+        body.append(rect(x - bar_w / 2, top + plot_h - h_video, bar_w, h_video, "#2f6fbb"))
+        body.append(text(x, top + plot_h + 24, row["year"], "axis", "middle"))
+        body.append(text(x, top + plot_h - h_video - 7, f"{row['video_coverage_pct']}%", "label", "middle"))
+    body.append(text(left + plot_w / 2, height - 42, "Год", "axis", "middle"))
+    (OUT / "video_coverage_zograf.svg").write_text(svg(width, height, body), encoding="utf-8")
+
+
+def build_person_event_graph(con: sqlite3.Connection) -> tuple[dict[str, set[str]], dict[str, str]]:
+    event_people = defaultdict(set)
+    names = {}
+    for pid, name, event_id in con.execute(
+        """
+        select pp.person_id, p.display_name, e.event_id
+        from presentation_person pp
+        join person p using(person_id)
+        join presentation pr using(presentation_id)
+        join session s using(session_id)
+        join event_day_venue edv using(event_day_venue_id)
+        join event_day ed using(event_day_id)
+        join event e using(event_id)
+        """
+    ):
+        event_people[event_id].add(pid)
+        names[pid] = name
+    graph = defaultdict(set)
+    for people in event_people.values():
+        people_list = list(people)
+        for i, a in enumerate(people_list):
+            for b in people_list[i + 1 :]:
+                graph[a].add(b)
+                graph[b].add(a)
+    for pid in names:
+        graph[pid]
+    return graph, names
+
+
+def betweenness_centrality(graph: dict[str, set[str]]) -> dict[str, float]:
+    nodes = list(graph)
+    centrality = dict.fromkeys(nodes, 0.0)
+    for source in nodes:
+        stack: list[str] = []
+        predecessors = {w: [] for w in nodes}
+        sigma = dict.fromkeys(nodes, 0.0)
+        sigma[source] = 1.0
+        distance = dict.fromkeys(nodes, -1)
+        distance[source] = 0
+        queue = deque([source])
+        while queue:
+            v = queue.popleft()
+            stack.append(v)
+            for w in graph[v]:
+                if distance[w] < 0:
+                    queue.append(w)
+                    distance[w] = distance[v] + 1
+                if distance[w] == distance[v] + 1:
+                    sigma[w] += sigma[v]
+                    predecessors[w].append(v)
+        delta = dict.fromkeys(nodes, 0.0)
+        while stack:
+            w = stack.pop()
+            for v in predecessors[w]:
+                if sigma[w]:
+                    delta[v] += (sigma[v] / sigma[w]) * (1 + delta[w])
+            if w != source:
+                centrality[w] += delta[w]
+    n = len(nodes)
+    if n > 2:
+        scale = 1 / ((n - 1) * (n - 2))
+        for node in centrality:
+            centrality[node] *= scale
+    return centrality
+
+
+def hypothesis_network_bridges(con: sqlite3.Connection, people: dict[str, dict[str, object]]) -> list[dict[str, object]]:
+    graph, names = build_person_event_graph(con)
+    centrality = betweenness_centrality(graph)
+    event_counts = Counter()
+    for pid, event_id in con.execute(
+        """
+        select distinct pp.person_id, e.event_id
+        from presentation_person pp
+        join presentation pr using(presentation_id)
+        join session s using(session_id)
+        join event_day_venue edv using(event_day_venue_id)
+        join event_day ed using(event_day_id)
+        join event e using(event_id)
+        """
+    ):
+        event_counts[pid] += 1
+    rows = []
+    for pid, info in people.items():
+        series = info["series"]
+        z = int(series.get("Zograf", {}).get("count", 0))
+        r = int(series.get("Roerich", {}).get("count", 0))
+        total = z + r
+        balance = round((z - r) / total, 3) if total else 0
+        rows.append(
+            {
+                "person_id": pid,
+                "display_name": names.get(pid, info["name"]),
+                "betweenness": round(centrality.get(pid, 0.0), 6),
+                "graph_degree": len(graph[pid]),
+                "events_attended": event_counts[pid],
+                "total_participations": total,
+                "zograf": z,
+                "roerich": r,
+                "balance": balance,
+                "series_attended": "both" if z and r else ("zograf_only" if z else "roerich_only"),
+            }
+        )
+    rows.sort(key=lambda r: (float(r["betweenness"]), int(r["events_attended"]), int(r["total_participations"])), reverse=True)
+    return rows
+
+
+def figure_network_bridges(rows: list[dict[str, object]]) -> None:
+    top = rows[:15]
+    width, height = 1000, 620
+    left, top_y, plot_w, row_h = 250, 76, 650, 28
+    max_val = max(float(r["betweenness"]) for r in top) or 1
+    body = [
+        text(32, 30, "Сетевые посредники по совместному участию в событиях", "title"),
+        text(32, 52, "Betweenness в графе, где ребро означает участие в одном и том же годовом событии.", "sub"),
+    ]
+    colors = {"both": "#7b5ea7", "zograf_only": "#2f6fbb", "roerich_only": "#b8554b"}
+    for i, row in enumerate(top):
+        y = top_y + i * row_h
+        body.append(text(left - 12, y + 17, short_name(str(row["display_name"])), "small", "end"))
+        w = float(row["betweenness"]) / max_val * plot_w
+        body.append(rect(left, y, w, 18, colors[str(row["series_attended"])]))
+        body.append(text(left + w + 8, y + 14, row["betweenness"], "label"))
+    body.append(text(left, height - 32, "Цвет: обе площадки / только Зограф / только Рерих", "sub"))
+    (OUT / "network_bridges.svg").write_text(svg(width, height, body), encoding="utf-8")
+
+
+def write_markdown_summary(stats: dict[str, object]) -> None:
+    lines = [
+        "# Отработка новых гипотез",
+        "",
+        "Сгенерировано `article/work_ppv_hypotheses.py` из локальной SQLite-базы, кешированных HTML и CSV из `analytics_output`.",
+        f"Контроль стыковки тематических кодов с БД по серии/году/нормализованному названию: {stats.get('theme_match_total', 0)} из {stats.get('theme_presentations_total', 0)} докладов ({stats.get('theme_match_pct', 0)}%).",
+        "",
+        "## H1. Подзаголовок программы и реальное содержание",
+        "",
+        f"- Группы подзаголовков Рериховских чтений с кодированными докладами: {stats.get('subtitle_groups', '')}.",
+        f"- Проверка L2 по группам: χ²={stats.get('subtitle_l2_chi2', 'н/д')}, p={stats.get('subtitle_l2_p', 'н/д')}, V={stats.get('subtitle_l2_v', 'н/д')}.",
+        "- Первый вывод: подзаголовки полезны как источник, но пока не дают сильного объяснения тематического распределения.",
+        "- Важная предварительная проблема: поле `event.theme_ru` в БД для Рериховских чтений унифицировано и скрывает реальные вариации заголовков, видимые в HTML.",
+        "",
+        "## H2. ИКВИА/ВШЭ как мост",
+        "",
+        f"- Участников перекрестной когорты с исторической аффилиацией ИКВИА/ВШЭ: {stats.get('ikvia_cross_count', 0)} из 39.",
+        f"- Крупнейшие институциональные группы перекрестной когорты: {stats.get('top_cross_institutions', '')}.",
+        "- Первый вывод: ИКВИА/ВШЭ выглядит как важный новый мост, но не как единственный центр связности.",
+        "- См. `ikvia_bridge_cross_cohort.csv` и `institution_bridge_summary.csv`.",
+        "",
+        "## H3. Возраст первого выступления",
+        "",
+        f"- Участников с подтвержденным возрастом дебюта: {stats.get('age_debut_known', 0)}.",
+        f"- Периодные медианы: {stats.get('age_summary_line', '')}.",
+        "- Первый вывод: есть намек на снижение возраста входа, но кейс Гасунс/Крылова пока не проверяется из-за отсутствующих годов рождения.",
+        "- См. `age_at_debut.csv`, `age_at_debut_summary.csv`, `age_at_debut_missing_priority.csv` и `age_at_debut.svg`.",
+        "",
+        "## H4. Публикационная конверсия",
+        "",
+        f"- В БД сейчас есть PDF-источников: {stats.get('publication_sources', 0)}, но они связаны с постами, а не с отдельными докладами.",
+        "- Это означает, что гипотеза пока не проверяется автоматически; нужен слой парсинга оглавлений/сборников.",
+        "",
+        "## H5. Видео-доступность",
+        "",
+        f"- Презентаций с привязанной видеозаписью в таблице `media`: {stats.get('video_presentations', 0)}.",
+        f"- Статусы внешнего video mapping: {stats.get('video_status_line', '')}.",
+        "- Первый вывод: видеослой можно использовать, но только с явной оговоркой о неполной и неравномерной привязке.",
+        "- См. `video_availability_by_year.csv`, `video_availability_by_l1.csv`, `video_mapping_status.csv` и `video_coverage_zograf.svg`.",
+        "",
+        "## H6. Сетевые посредники",
+        "",
+        f"- Верх списка по betweenness: {stats.get('network_top_line', '')}.",
+        "- Первый вывод: список хорошо работает как поисковый инструмент, но текущая проекция по годовому событию слишком плотная; следующий шаг — взвешенная двудольная сеть и/или сессионный уровень.",
+        "- См. `network_bridges.csv` и `network_bridges.svg`.",
+        "",
+    ]
+    (OUT / "hypothesis_workup.md").write_text("\n".join(lines), encoding="utf-8")
+
+
+def main() -> None:
+    OUT.mkdir(parents=True, exist_ok=True)
+    con = sqlite3.connect(DB)
+    theme_rows = read_csv(ANALYTICS / "theme_codes_final.csv")
+    people = person_series_counts(con)
+
+    theme_match_rows, theme_match_stats = theme_match_diagnostics(con, theme_rows)
+    write_csv(OUT / "theme_match_diagnostics.csv", theme_match_rows)
+
+    subtitle_rows, subtitle_stats = hypothesis_program_subtitles(theme_rows, con)
+    write_csv(OUT / "roerich_theme_heading_audit.csv", subtitle_rows)
+
+    ikvia_rows, ikvia_summary = hypothesis_ikvia_bridge(con, people, theme_rows)
+    write_csv(OUT / "ikvia_bridge_cross_cohort.csv", ikvia_rows)
+    write_csv(OUT / "institution_bridge_summary.csv", ikvia_summary)
+
+    age_rows, age_summary, age_missing = hypothesis_age_at_debut(con, people)
+    write_csv(OUT / "age_at_debut.csv", age_rows)
+    write_csv(OUT / "age_at_debut_summary.csv", age_summary)
+    write_csv(OUT / "age_at_debut_missing_priority.csv", age_missing)
+    figure_age_at_debut(age_rows)
+
+    publication_rows = hypothesis_publication_sources(con)
+    write_csv(OUT / "publication_sources_inventory.csv", publication_rows)
+
+    video_year, video_l1, video_status = hypothesis_video_availability(con, theme_rows)
+    write_csv(OUT / "video_availability_by_year.csv", video_year)
+    write_csv(OUT / "video_availability_by_l1.csv", video_l1)
+    write_csv(OUT / "video_mapping_status.csv", video_status)
+    figure_video_coverage(video_year)
+
+    network_rows = hypothesis_network_bridges(con, people)
+    write_csv(OUT / "network_bridges.csv", network_rows)
+    figure_network_bridges(network_rows)
+
+    stats = {
+        "subtitle_groups": subtitle_stats.get("groups_with_coded_talks", ""),
+        "subtitle_l2_chi2": subtitle_stats.get("l2_chi2", "н/д"),
+        "subtitle_l2_p": subtitle_stats.get("l2_p", "н/д"),
+        "subtitle_l2_v": subtitle_stats.get("l2_cramers_v", "н/д"),
+        "ikvia_cross_count": sum(1 for row in ikvia_rows if row["has_ikvia_hse"] == "yes"),
+        "top_cross_institutions": "; ".join(f"{row['affiliation_group']}={row['cross_cohort_people']}" for row in ikvia_summary[:3]),
+        "age_debut_known": len(age_rows),
+        "age_summary_line": "; ".join(
+            f"{row['debut_period']}: {row['median_age_at_debut']} (n={row['n_known_birth_year']})" for row in age_summary
+        ),
+        "publication_sources": len(publication_rows),
+        "video_presentations": sum(1 for _, in con.execute("select distinct attached_to_id from media where media_type='video' and attached_to_type='presentation'")),
+        "video_status_line": "; ".join(f"{row['status']}={row['videos']}" for row in video_status),
+        "network_top_line": "; ".join(str(row["display_name"]) for row in network_rows[:7]),
+        **theme_match_stats,
+    }
+    write_markdown_summary(stats)
+    print(f"Wrote hypothesis outputs to {OUT}")
+
+
+if __name__ == "__main__":
+    main()
