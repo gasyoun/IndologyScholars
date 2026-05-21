@@ -1,7 +1,7 @@
 {
   "profile": "data-package",
   "schema_version": "1.0.0",
-  "generated": "2026-05-22",
+  "generated": "2026-05-21",
   "build": {
     "source": "IndologyScholars",
     "pipeline_version": "2026-05-21",
@@ -11,7 +11,7 @@
   "title": "Russian Indological Research Archive",
   "description": "Normalized archive of Russian Indological conference presentations and scholar profiles.",
   "homepage": "https://gasyoun.github.io/IndologyScholars/",
-  "created": "2026-05-22",
+  "created": "2026-05-21",
   "licenses": [
     {
       "name": "Apache-2.0",
