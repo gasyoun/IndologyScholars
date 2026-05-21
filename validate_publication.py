@@ -49,9 +49,22 @@ def main():
         else:
             scholar_pages.append((page, html))
 
+    canonical_re = re.compile(r'<link rel="canonical" href="https://gasyoun\.github\.io/IndologyScholars/scholars/([^"]+)\.html"')
+    slug_to_target = {}
+    for page, html in redirect_pages:
+        match = canonical_re.search(html)
+        if match:
+            slug_to_target[page.stem] = match.group(1)
+
+    slug_pages = {p.stem for p in Path("scholars").glob("*.html") if not p.name.startswith("PERS_") and p.name != "index.html"}
+
     page_ids = {p.stem for p, _ in scholar_pages}
-    if scholar_ids != page_ids:
-        fail(errors, f"Scholar page mismatch: missing={sorted(scholar_ids - page_ids)[:10]} stale={sorted(page_ids - scholar_ids)[:10]}")
+    valid_ids = set(page_ids)
+    valid_ids.update(pers_id for pers_id, slug in slug_to_target.items() if slug in slug_pages)
+    missing = scholar_ids - valid_ids
+    stale_canonical = (valid_ids - scholar_ids) - set(slug_to_target)
+    if missing or stale_canonical:
+        fail(errors, f"Scholar page mismatch: missing={sorted(missing)[:10]} stale={sorted(stale_canonical)[:10]}")
 
     for page, html in scholar_pages:
         if '<meta name="description"' not in html:
@@ -117,7 +130,8 @@ def main():
                 fail(errors, f"sitemap.xml should not include legacy redirect {expected}")
         sample_profiles = sorted(scholar_ids)[:5]
         for scholar_id in sample_profiles:
-            expected = f"https://gasyoun.github.io/IndologyScholars/scholars/{scholar_id}.html"
+            slug = slug_to_target.get(scholar_id, scholar_id)
+            expected = f"https://gasyoun.github.io/IndologyScholars/scholars/{slug}.html"
             if expected not in sitemap:
                 fail(errors, f"sitemap.xml missing {expected}")
 
