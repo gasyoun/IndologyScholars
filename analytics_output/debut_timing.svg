@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="1200" height="700" viewBox="0 0 1200 700">
+<defs>
+<style>
+  .axis-line { stroke: #ccc; stroke-width: 1; }
+  .grid-line { stroke: #eee; stroke-width: 1; }
+  .axis-label { font-family: Arial, sans-serif; font-size: 12px; fill: #666; }
+  .title { font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; fill: #333; }
+  .legend { font-family: Arial, sans-serif; font-size: 11px; fill: #666; }
+  .dot { cursor: pointer; }
+  .tooltip { font-family: Arial, sans-serif; font-size: 10px; }
+</style>
+</defs>
+
+<!-- Background -->
+<rect width="1200" height="700" fill="white" stroke="#ddd" stroke-width="1"/>
+
+<!-- Title -->
+<text x="600" y="30" text-anchor="middle" class="title">
+  Debut Timing of Russian Indologists (Age vs First Talk Year)
+</text>
+
+<!-- Grid lines and axes -->
+<line x1="80" y1="80" x2="80" y2="620" class="axis-line" stroke-width="2"/>
+<line x1="80" y1="620" x2="1120" y2="620" class="axis-line" stroke-width="2"/>
+
+<!-- X-axis grid and labels (year) -->
+<line x1="80.0" y1="80" x2="80.0" y2="620" class="grid-line"/>
+<text x="80.0" y="640" text-anchor="middle" class="axis-label">2004</text>
+<line x1="179.04761904761904" y1="80" x2="179.04761904761904" y2="620" class="grid-line"/>
+<text x="179.04761904761904" y="640" text-anchor="middle" class="axis-label">2006</text>
+<line x1="228.57142857142858" y1="80" x2="228.57142857142858" y2="620" class="grid-line"/>
+<text x="228.57142857142858" y="640" text-anchor="middle" class="axis-label">2007</text>
+<line x1="377.14285714285717" y1="80" x2="377.14285714285717" y2="620" class="grid-line"/>
+<text x="377.14285714285717" y="640" text-anchor="middle" class="axis-label">2010</text>
+<line x1="426.6666666666667" y1="80" x2="426.6666666666667" y2="620" class="grid-line"/>
+<text x="426.6666666666667" y="640" text-anchor="middle" class="axis-label">2011</text>
+<line x1="476.1904761904762" y1="80" x2="476.1904761904762" y2="620" class="grid-line"/>
+<text x="476.1904761904762" y="640" text-anchor="middle" class="axis-label">2012</text>
+<line x1="525.7142857142858" y1="80" x2="525.7142857142858" y2="620" class="grid-line"/>
+<text x="525.7142857142858" y="640" text-anchor="middle" class="axis-label">2013</text>
+<line x1="575.2380952380952" y1="80" x2="575.2380952380952" y2="620" class="grid-line"/>
+<text x="575.2380952380952" y="640" text-anchor="middle" class="axis-label">2014</text>
+<line x1="624.7619047619048" y1="80" x2="624.7619047619048" y2="620" class="grid-line"/>
+<text x="624.7619047619048" y="640" text-anchor="middle" class="axis-label">2015</text>
+<line x1="674.2857142857143" y1="80" x2="674.2857142857143" y2="620" class="grid-line"/>
+<text x="674.2857142857143" y="640" text-anchor="middle" class="axis-label">2016</text>
+<line x1="723.8095238095239" y1="80" x2="723.8095238095239" y2="620" class="grid-line"/>
+<text x="723.8095238095239" y="640" text-anchor="middle" class="axis-label">2017</text>
+<line x1="773.3333333333334" y1="80" x2="773.3333333333334" y2="620" class="grid-line"/>
+<text x="773.3333333333334" y="640" text-anchor="middle" class="axis-label">2018</text>
+<line x1="822.8571428571429" y1="80" x2="822.8571428571429" y2="620" class="grid-line"/>
+<text x="822.8571428571429" y="640" text-anchor="middle" class="axis-label">2019</text>
+<line x1="872.3809523809524" y1="80" x2="872.3809523809524" y2="620" class="grid-line"/>
+<text x="872.3809523809524" y="640" text-anchor="middle" class="axis-label">2020</text>
+<line x1="921.9047619047619" y1="80" x2="921.9047619047619" y2="620" class="grid-line"/>
+<text x="921.9047619047619" y="640" text-anchor="middle" class="axis-label">2021</text>
+<line x1="1070.4761904761904" y1="80" x2="1070.4761904761904" y2="620" class="grid-line"/>
+<text x="1070.4761904761904" y="640" text-anchor="middle" class="axis-label">2024</text>
+<line x1="1120.0" y1="80" x2="1120.0" y2="620" class="grid-line"/>
+<text x="1120.0" y="640" text-anchor="middle" class="axis-label">2025</text>
+<line x1="75" y1="602.0" x2="1120" y2="602.0" class="grid-line"/>
+<text x="50" y="606.0" text-anchor="end" class="axis-label">20</text>
+<line x1="75" y1="512.0" x2="1120" y2="512.0" class="grid-line"/>
+<text x="50" y="516.0" text-anchor="end" class="axis-label">30</text>
+<line x1="75" y1="422.0" x2="1120" y2="422.0" class="grid-line"/>
+<text x="50" y="426.0" text-anchor="end" class="axis-label">40</text>
+<line x1="75" y1="332.0" x2="1120" y2="332.0" class="grid-line"/>
+<text x="50" y="336.0" text-anchor="end" class="axis-label">50</text>
+<line x1="75" y1="242.0" x2="1120" y2="242.0" class="grid-line"/>
+<text x="50" y="246.0" text-anchor="end" class="axis-label">60</text>
+<line x1="75" y1="152.0" x2="1120" y2="152.0" class="grid-line"/>
+<text x="50" y="156.0" text-anchor="end" class="axis-label">70</text>
+<text x="600" y="680" text-anchor="middle" class="axis-label">First Talk Year</text>
+<text x="20" y="350" text-anchor="middle" class="axis-label" transform="rotate(-90 20 350)">Age at Debut (years)</text>
+<circle cx="80.0" cy="215.0" r="6" fill="#d41159" opacity="0.7" class="dot"><title>Дубянский Александр Михайлович (63 y.o., 14 talks)</title></circle>
+<circle cx="80.0" cy="512.0" r="6" fill="#d41159" opacity="0.7" class="dot"><title>Игнатьев Андрей Александрович (30 y.o., 12 talks)</title></circle>
+<circle cx="80.0" cy="323.0" r="6" fill="#d41159" opacity="0.7" class="dot"><title>Лысенко Виктория Георгиевна (51 y.o., 16 talks)</title></circle>
+<circle cx="80.0" cy="476.0" r="6" fill="#d41159" opacity="0.7" class="dot"><title>Рыжакова Светлана Игоревна (34 y.o., 19 talks)</title></circle>
+<circle cx="179.04761904761904" cy="530.0" r="5" fill="#1b9e77" opacity="0.7" class="dot"><title>А. В. Зорин (28 y.o., 7 talks)</title></circle>
+<circle cx="179.04761904761904" cy="125.0" r="6" fill="#d41159" opacity="0.7" class="dot"><title>В. В. Вертоградова (73 y.o., 13 talks)</title></circle>
+<circle cx="179.04761904761904" cy="215.0" r="6" fill="#d41159" opacity="0.7" class="dot"><title>Васильков Ярослав Владимирович (63 y.o., 12 talks)</title></circle>
+<circle cx="179.04761904761904" cy="242.0" r="5" fill="#1b9e77" opacity="0.7" class="dot"><title>Вигасин Алексей Алексеевич (60 y.o., 5 talks)</title></circle>
+<circle cx="179.04761904761904" cy="440.0" r="6" fill="#d41159" opacity="0.7" class="dot"><title>Д. И. Жутаев (38 y.o., 10 talks)</title></circle>
+<circle cx="179.04761904761904" cy="530.0" r="6" fill="#d41159" opacity="0.7" class="dot"><title>Десницкая Евгения Алексеевна (28 y.o., 11 talks)</title></circle>
+<circle cx="179.04761904761904" cy="152.0" r="4" fill="#7570b3" opacity="0.7" class="dot"><title>Н. В. Гуров (70 y.o., 2 talks)</title></circle>
+<circle cx="179.04761904761904" cy="296.0" r="6" fill="#d41159" opacity="0.7" class="dot"><title>Парибок Андрей Всеволодович (54 y.o., 13 talks)</title></circle>
+<circle cx="179.04761904761904" cy="80.0" r="4" fill="#7570b3" opacity="0.7" class="dot"><title>С. Л. Невелева (78 y.o., 2 talks)</title></circle>
+<circle cx="179.04761904761904" cy="449.0" r="6" fill="#d41159" opacity="0.7" class="dot"><title>Тавастшерна Сергей Сергеевич (37 y.o., 20 talks)</title></circle>
+<circle cx="228.57142857142858" cy="611.0" r="5" fill="#1b9e77" opacity="0.7" class="dot"><title>А. Г. Гурия (19 y.o., 8 talks)</title></circle>
+<circle cx="228.57142857142858" cy="287.0" r="5" fill="#1b9e77" opacity="0.7" class="dot"><title>Ермакова Татьяна Викторовна (55 y.o., 8 talks)</title></circle>
+<circle cx="228.57142857142858" cy="269.0" r="6" fill="#d41159" opacity="0.7" class="dot"><title>Островская Елена Петровна (57 y.o., 10 talks)</title></circle>
+<circle cx="228.57142857142858" cy="503.0" r="6" fill="#d41159" opacity="0.7" class="dot"><title>Псху Рузана Владимировна (31 y.o., 12 talks)</title></circle>
+<circle cx="228.57142857142858" cy="620.0" r="4" fill="#7570b3" opacity="0.7" class="dot"><title>Соболева Дарья Валерьевна (18 y.o., 3 talks)</title></circle>
+<circle cx="228.57142857142858" cy="521.0" r="6" fill="#d41159" opacity="0.7" class="dot"><title>Цветкова Светлана Олеговна (29 y.o., 22 talks)</title></circle>
+<circle cx="377.14285714285717" cy="440.0" r="6" fill="#d41159" opacity="0.7" class="dot"><title>Корнеева Наталья Афанасьевна (38 y.o., 15 talks)</title></circle>
+<circle cx="377.14285714285717" cy="278.0" r="6" fill="#d41159" opacity="0.7" class="dot"><title>Лидова Наталья Ростиславовна (56 y.o., 13 talks)</title></circle>
+<circle cx="426.6666666666667" cy="269.0" r="4" fill="#7570b3" opacity="0.7" class="dot"><title>C. В. Кулланда (57 y.o., 2 talks)</title></circle>
+<circle cx="426.6666666666667" cy="413.0" r="5" fill="#1b9e77" opacity="0.7" class="dot"><title>Котин Игорь Юрьевич (41 y.o., 6 talks)</title></circle>
+<circle cx="426.6666666666667" cy="260.0" r="4" fill="#7570b3" opacity="0.7" class="dot"><title>Крапивина Раиса Николаевна (58 y.o., 4 talks)</title></circle>
+<circle cx="426.6666666666667" cy="413.0" r="5" fill="#1b9e77" opacity="0.7" class="dot"><title>Скороходова Татьяна Григорьевна (41 y.o., 9 talks)</title></circle>
+<circle cx="426.6666666666667" cy="422.0" r="5" fill="#1b9e77" opacity="0.7" class="dot"><title>Челнокова Анна Витальевна (40 y.o., 5 talks)</title></circle>
+<circle cx="426.6666666666667" cy="197.0" r="4" fill="#7570b3" opacity="0.7" class="dot"><title>Ю. Е. Березкин (65 y.o., 2 talks)</title></circle>
+<circle cx="476.1904761904762" cy="350.0" r="6" fill="#d41159" opacity="0.7" class="dot"><title>А. М. Шустова (48 y.o., 12 talks)</title></circle>
+<circle cx="476.1904761904762" cy="359.0" r="6" fill="#d41159" opacity="0.7" class="dot"><title>Александрова Наталия Владимировна (47 y.o., 20 talks)</title></circle>
+<circle cx="476.1904761904762" cy="530.0" r="4" fill="#7570b3" opacity="0.7" class="dot"><title>В.В. Тишин (28 y.o., 2 talks)</title></circle>
+<circle cx="476.1904761904762" cy="368.0" r="6" fill="#d41159" opacity="0.7" class="dot"><title>Е. В. Тюлина (46 y.o., 12 talks)</title></circle>
+<circle cx="476.1904761904762" cy="476.0" r="6" fill="#d41159" opacity="0.7" class="dot"><title>Е. Г. Вырщиков (34 y.o., 12 talks)</title></circle>
+<circle cx="476.1904761904762" cy="215.0" r="4" fill="#7570b3" opacity="0.7" class="dot"><title>Иванов Владимир Павлович (63 y.o., 4 talks)</title></circle>
+<circle cx="476.1904761904762" cy="575.0" r="4" fill="#7570b3" opacity="0.7" class="dot"><title>К.А. Демичев (23 y.o., 2 talks)</title></circle>
+<circle cx="476.1904761904762" cy="485.0" r="5" fill="#1b9e77" opacity="0.7" class="dot"><title>Лобанов Сергей Владимирович (33 y.o., 5 talks)</title></circle>
+<circle cx="476.1904761904762" cy="512.0" r="4" fill="#7570b3" opacity="0.7" class="dot"><title>Маретина Ксения Александровна (30 y.o., 2 talks)</title></circle>
+<circle cx="525.7142857142858" cy="395.0" r="5" fill="#1b9e77" opacity="0.7" class="dot"><title>Бурмистров Сергей Леонидович (43 y.o., 9 talks)</title></circle>
+<circle cx="575.2380952380952" cy="323.0" r="6" fill="#d41159" opacity="0.7" class="dot"><title>Вечерина Ольга Павловна (51 y.o., 13 talks)</title></circle>
+<circle cx="624.7619047619048" cy="548.0" r="5" fill="#1b9e77" opacity="0.7" class="dot"><title>А. В. Ложкина (26 y.o., 6 talks)</title></circle>
+<circle cx="624.7619047619048" cy="485.0" r="6" fill="#d41159" opacity="0.7" class="dot"><title>Воробьева Дарья Николаевна (33 y.o., 10 talks)</title></circle>
+<circle cx="624.7619047619048" cy="341.0" r="6" fill="#d41159" opacity="0.7" class="dot"><title>Ю. И. Дробышев (49 y.o., 11 talks)</title></circle>
+<circle cx="674.2857142857143" cy="494.0" r="4" fill="#7570b3" opacity="0.7" class="dot"><title>А.А. Алешина (32 y.o., 1 talks)</title></circle>
+<circle cx="723.8095238095239" cy="512.0" r="5" fill="#1b9e77" opacity="0.7" class="dot"><title>А. Г. Люлина (30 y.o., 9 talks)</title></circle>
+<circle cx="773.3333333333334" cy="332.0" r="4" fill="#7570b3" opacity="0.7" class="dot"><title>А. Ю. Курочкин (50 y.o., 2 talks)</title></circle>
+<circle cx="773.3333333333334" cy="413.0" r="5" fill="#1b9e77" opacity="0.7" class="dot"><title>Комиссаров Дмитрий Алексеевич (41 y.o., 5 talks)</title></circle>
+<circle cx="773.3333333333334" cy="359.0" r="4" fill="#7570b3" opacity="0.7" class="dot"><title>Н.А. Железнова (47 y.o., 1 talks)</title></circle>
+<circle cx="773.3333333333334" cy="512.0" r="4" fill="#7570b3" opacity="0.7" class="dot"><title>Ю. А. Уймина (30 y.o., 2 talks)</title></circle>
+<circle cx="822.8571428571429" cy="404.0" r="4" fill="#7570b3" opacity="0.7" class="dot"><title>М.В. Леонов (42 y.o., 2 talks)</title></circle>
+<circle cx="822.8571428571429" cy="476.0" r="5" fill="#1b9e77" opacity="0.7" class="dot"><title>Рыбакова Анна Геннадьевна (34 y.o., 6 talks)</title></circle>
+<circle cx="822.8571428571429" cy="440.0" r="5" fill="#1b9e77" opacity="0.7" class="dot"><title>Уланский Евгений Александрович (38 y.o., 7 talks)</title></circle>
+<circle cx="822.8571428571429" cy="512.0" r="4" fill="#7570b3" opacity="0.7" class="dot"><title>Яковлева Мария Николаевна (30 y.o., 3 talks)</title></circle>
+<circle cx="872.3809523809524" cy="467.0" r="4" fill="#7570b3" opacity="0.7" class="dot"><title>Лемешкина Ксения Вячеславовна (35 y.o., 3 talks)</title></circle>
+<circle cx="872.3809523809524" cy="116.0" r="4" fill="#7570b3" opacity="0.7" class="dot"><title>Серебряный Сергей Дмитриевич (74 y.o., 1 talks)</title></circle>
+<circle cx="872.3809523809524" cy="539.0" r="4" fill="#7570b3" opacity="0.7" class="dot"><title>Фивейская А. В. (27 y.o., 2 talks)</title></circle>
+<circle cx="872.3809523809524" cy="152.0" r="5" fill="#1b9e77" opacity="0.7" class="dot"><title>Шохин Владимир Кириллович (70 y.o., 5 talks)</title></circle>
+<circle cx="921.9047619047619" cy="521.0" r="4" fill="#7570b3" opacity="0.7" class="dot"><title>А. М. Пахомова (29 y.o., 2 talks)</title></circle>
+<circle cx="921.9047619047619" cy="431.0" r="4" fill="#7570b3" opacity="0.7" class="dot"><title>Клебанов А. А. (39 y.o., 1 talks)</title></circle>
+<circle cx="921.9047619047619" cy="233.0" r="4" fill="#7570b3" opacity="0.7" class="dot"><title>М.Б. Мейтарчиян (61 y.o., 2 talks)</title></circle>
+<circle cx="921.9047619047619" cy="386.0" r="4" fill="#7570b3" opacity="0.7" class="dot"><title>Митруев Б. Л. (44 y.o., 2 talks)</title></circle>
+<circle cx="921.9047619047619" cy="521.0" r="4" fill="#7570b3" opacity="0.7" class="dot"><title>Шарапова А. В. (29 y.o., 1 talks)</title></circle>
+<circle cx="1070.4761904761904" cy="143.0" r="4" fill="#7570b3" opacity="0.7" class="dot"><title>В.М. Немчинов (71 y.o., 2 talks)</title></circle>
+<circle cx="1070.4761904761904" cy="557.0" r="4" fill="#7570b3" opacity="0.7" class="dot"><title>Минаева Маргарита Денисовна (25 y.o., 3 talks)</title></circle>
+<circle cx="1070.4761904761904" cy="557.0" r="4" fill="#7570b3" opacity="0.7" class="dot"><title>Молина Анна Вениаминовна (25 y.o., 3 talks)</title></circle>
+<circle cx="1120.0" cy="476.0" r="4" fill="#7570b3" opacity="0.7" class="dot"><title>Гладкова Анна Геннадьевна (34 y.o., 1 talks)</title></circle>
+<circle cx="1120.0" cy="314.0" r="4" fill="#7570b3" opacity="0.7" class="dot"><title>И.Б. Иткин (52 y.o., 1 talks)</title></circle>
+<g class="legend">
+  <circle cx="1000" cy="100" r="5" fill="#d41159"/>
+  <text x="1015" y="105">≥10 talks</text>
+
+  <circle cx="1000" cy="125" r="4.5" fill="#1b9e77"/>
+  <text x="1015" y="130">5–9 talks</text>
+
+  <circle cx="1000" cy="150" r="4" fill="#7570b3"/>
+  <text x="1015" y="155">&lt;5 talks</text>
+</g>
+
+</svg>
