@@ -1,0 +1,27 @@
+presentation_id,year,series,title,l1,l2,l3,l4,source,confidence,why
+PRES_5e122b1b,2006,Zograf Readings,Тема уточняется,other,unspecified,unspecified,methodological,llm,0.5,Тема уточняется — невозможно определить категорию.
+PRES_10dd9b6a,2022,Zograf Readings,,other,unspecified,unspecified,fundamental,llm,0.5,"Пустой заголовок, невозможно определить."
+PRES_2c964ef8,2022,Zograf Readings,,other,unspecified,unspecified,fundamental,llm,0.5,Пустой заголовок.
+PRES_79535730,2022,Zograf Readings,К,other,unspecified,unspecified,fundamental,llm,0.5,Заголовок 'К' неинформативен.
+PRES_2117a141,2022,Zograf Readings,,other,unspecified,unspecified,fundamental,llm,0.5,Пустой заголовок.
+PRES_5f783d17,2022,Zograf Readings,,other,unspecified,unspecified,fundamental,llm,0.5,Пустой заголовок.
+PRES_d0969155,2022,Zograf Readings,Формирование,other,unspecified,unspecified,fundamental,llm,0.5,Заголовок 'Формирование' неполный.
+PRES_89316d20,2022,Zograf Readings,,other,unspecified,unspecified,fundamental,llm,0.5,Пустой заголовок.
+PRES_1ca80314,2022,Zograf Readings,,other,unspecified,unspecified,fundamental,llm,0.5,Пустой заголовок.
+PRES_357a21a5,2022,Zograf Readings,,other,unspecified,unspecified,fundamental,llm,0.5,Пустой заголовок.
+PRES_3b4892b7,2022,Zograf Readings,,other,unspecified,unspecified,fundamental,llm,0.5,Пустой заголовок.
+PRES_feb979fb,2022,Zograf Readings,,other,unspecified,unspecified,fundamental,llm,0.5,Пустой заголовок.
+PRES_8d322c4f,2022,Zograf Readings,,other,unspecified,unspecified,fundamental,llm,0.5,Пустой заголовок.
+PRES_93c8e280,2022,Zograf Readings,,other,unspecified,unspecified,fundamental,llm,0.5,Пустой заголовок.
+PRES_e33d416c,2022,Zograf Readings,,other,unspecified,unspecified,fundamental,llm,0.5,Пустой заголовок.
+PRES_26401f35,2022,Zograf Readings,,other,unspecified,unspecified,fundamental,llm,0.5,Пустой заголовок.
+PRES_b6aa3bd9,2022,Zograf Readings,Новый,other,unspecified,unspecified,fundamental,llm,0.3,"Заголовок «Новый» слишком общий, невозможно определить дисциплину, период, материал."
+PRES_7d97b8a8,2022,Zograf Readings,Живое,religion,classical,text,fundamental,llm,0.5,"«Живое» может относиться к концепции дживы в индуизме, вероятно, анализ текста."
+PRES_326880c9,2022,Zograf Readings,Этапы,history,unspecified,text,fundamental,llm,0.5,"«Этапы» — историческое исследование этапов развития чего-либо, период неясен."
+PRES_7619a6d5,2022,Zograf Readings,,other,unspecified,unspecified,fundamental,llm,0.2,"Пустой заголовок, невозможно определить."
+PRES_d87a49f2,2026,Zograf Readings,,other,unspecified,unspecified,fundamental,llm,0.5,"Пустой заголовок, невозможно определить."
+PRES_3b15c2e2,2026,Zograf Readings,Предание в тексте и,other,unspecified,unspecified,fundamental,llm,0.5,"Неполный заголовок, невозможно определить."
+PRES_dc7ea7ac,2026,Zograf Readings,Заметки о роли индийской,other,unspecified,unspecified,fundamental,llm,0.5,"Неполный заголовок, невозможно определить."
+PRES_86e97fa7,2026,Zograf Readings,,other,unspecified,unspecified,fundamental,llm,0.5,"Пустой заголовок, невозможно определить"
+PRES_4e213573,2026,Zograf Readings,Непальский вариант,other,unspecified,unspecified,fundamental,llm,0.5,"Название неполное, невозможно определить."
+PRES_d86e3dee,2026,Zograf Readings,,other,unspecified,unspecified,fundamental,llm,0.0,Пустой заголовок.
