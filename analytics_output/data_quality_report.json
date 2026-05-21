@@ -1,9 +1,9 @@
 {
-  "generated": "2026-05-20",
+  "generated": "2026-05-21",
   "summary": {
     "total_scholars": 209,
-    "total_presentations": 835,
-    "total_events": 39,
+    "total_presentations": 839,
+    "total_events": 40,
     "years_covered": 19,
     "start_year": 2004,
     "end_year": 2025,
@@ -11,8 +11,8 @@
     "zograf_only_scholars": 115,
     "roerich_only_scholars": 57,
     "person_rows": 209,
-    "presentation_rows": 835,
-    "event_rows": 39
+    "presentation_rows": 837,
+    "event_rows": 40
   },
   "checks": [
     {
@@ -26,8 +26,8 @@
       "id": "missing_dates",
       "label": "Presentations attached to undated event days",
       "severity": "warning",
-      "count": 2,
-      "status": "review"
+      "count": 0,
+      "status": "pass"
     },
     {
       "id": "missing_affiliations",
@@ -59,25 +59,9 @@
     }
   ],
   "samples": {
-    "missing_dates": [
-      {
-        "presentation_id": "PRES_57f9f927",
-        "scholar": "Битинайте Елена Алексеевна",
-        "title": "Живое",
-        "year": 2022,
-        "series_name_en": "Zograf Readings"
-      },
-      {
-        "presentation_id": "PRES_fedf49bc",
-        "scholar": "Жукова Любовь Евгеньевна",
-        "title": "Вивекананда",
-        "year": 2022,
-        "series_name_en": "Zograf Readings"
-      }
-    ],
     "placeholder_titles": [
       {
-        "presentation_id": "PRES_33940d0a",
+        "presentation_id": "PRES_b620b4dd",
         "scholar": "Б. В. Загуменнов",
         "title": "Тема уточняется"
       }
