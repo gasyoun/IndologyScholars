@@ -415,6 +415,14 @@ def main():
                         f"| {r['avg_age']} | {r['median_age']} "
                         f"| {r['p25_age']}–{r['p75_age']} | {r['min_age']}–{r['max_age']} |\n")
 
+        f.write("\n## 7. Network Analysis\n\n")
+        f.write("We analyze the structure of Russian Indological conferences through the lens of participation networks. ")
+        f.write("Unlike traditional bibliometric networks (which map who cites whom), our networks map **co-presence and shared scholarly context**. ")
+        f.write("They help identify institutional centers of gravity, disciplinary clustering, and bridge scholars between the Zograf and Roerich readings.\n\n")
+        f.write(f"**Nodes Generated:** {network_node_count}\n\n")
+        f.write(f"**Edges Generated:** {network_edge_count}\n\n")
+        f.write("The network is exported into standard edge list and node list CSV formats (`network_nodes.csv` and `network_edges.csv`) for use in external graphing tools like Gephi or Cytoscape.\n")
+
     print(f"analytics_output/: total_indologists.csv, zograf_only_indologists.csv, "
           f"roerich_only_indologists.csv, age_cohort_trend.csv")
     print(f"network exports: {network_node_count} nodes, {network_edge_count} edges")

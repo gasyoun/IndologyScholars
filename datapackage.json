@@ -15,7 +15,13 @@
   "licenses": [
     {
       "name": "Apache-2.0",
-      "path": "LICENSE"
+      "path": "LICENSE",
+      "title": "Software License"
+    },
+    {
+      "name": "CC-BY-4.0",
+      "title": "Dataset License (Derived Metadata)",
+      "path": "https://creativecommons.org/licenses/by/4.0/"
     }
   ],
   "contributors": [

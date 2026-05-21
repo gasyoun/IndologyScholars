@@ -312,7 +312,10 @@ keywords:
         "description": "Normalized archive of Russian Indological conference presentations and scholar profiles.",
         "homepage": SITE_URL,
         "created": BUILD_DATE,
-        "licenses": [{"name": "Apache-2.0", "path": "LICENSE"}],
+        "licenses": [
+            {"name": "Apache-2.0", "path": "LICENSE", "title": "Software License"},
+            {"name": "CC-BY-4.0", "title": "Dataset License (Derived Metadata)", "path": "https://creativecommons.org/licenses/by/4.0/"}
+        ],
         "contributors": [{"title": AUTHOR_NAME, "role": "author"}],
         "keywords": ["Indology", "digital humanities", "conference archive"],
         "sources": [
@@ -666,6 +669,21 @@ def generate_download_page(data):
         </section>
         <h2>Files</h2>
         <section class="grid">{''.join(cards)}</section>
+
+        <h2 style="margin-top:2.5rem;">Reproducibility</h2>
+        <div class="card" style="padding: 2rem;">
+            <p>The entire dataset is generated deterministically from primary source HTML caches. To reproduce the current build locally:</p>
+            <ol>
+                <li><code>python build_and_populate_db.py</code> (Creates the SQLite database and generates deterministic <code>presentation_id</code> hashes based on event, year, title, speaker, and session order)</li>
+                <li><code>python generate_analytics.py</code> (Generates all CSV exports and networks)</li>
+                <li><code>python generate_site_data.py</code> (Compiles the browser payload)</li>
+                <li><code>python generate_scholars_pages.py</code> (Builds individual static profiles)</li>
+                <li><code>python generate_publication_pages.py</code> (Builds all other pages, search index, and updates index.html)</li>
+                <li><code>python validate_publication.py</code> (Runs integrity checks)</li>
+            </ol>
+            <p><strong>Pipeline Version:</strong> {esc(PIPELINE_VERSION)}</p>
+            <p><strong>Build Date:</strong> {esc(BUILD_DATE)}</p>
+        </div>
     """
     structured = [
         page_data("Download data", "Reusable dataset files for the archive.", "download-data.html"),

@@ -58,6 +58,12 @@ Implemented on 2026-05-21:
    - CI runs a before/after database rebuild manifest comparison before generating publication artifacts;
    - `.github/workflows/rebuild_and_deploy.yml` now refreshes ID stability artifacts during deploy builds;
    - deploy commits and Pages artifacts now include `metrics-guide.html` and `networks.html`.
+11. Stable ID regression tests:
+   - `tests/test_stable_ids.py` covers canonical text normalization;
+   - stable hash output is checked for determinism and expected hex length;
+   - presentation/session ID prefixes are checked;
+   - manifest comparison is tested for clean unchanged rebuilds and changed-ID detection;
+   - `.github/workflows/validate_publication.yml` runs `python -m unittest discover -s tests`.
 
 Verified:
 
@@ -73,6 +79,7 @@ Verified:
 - network export validation passed: 271 node rows and 4561 edge rows were generated with expected node and edge types.
 - publication file manifest validation passed: 605 generated files are listed with SHA-256 checksums.
 - local CI-equivalent validation passed: compile, ID manifest before/after comparison, full generators, publication validation, and Pages artifact preparation.
+- stable ID regression tests passed locally with `python -m unittest discover -s tests`.
 
 ## 1. Implementation Principles
 

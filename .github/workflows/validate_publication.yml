@@ -35,7 +35,11 @@ jobs:
 
       - name: Compile Python Generators
         run: |
-          python -m py_compile build_and_populate_db.py generate_analytics.py generate_site_data.py generate_scholars_pages.py generate_publication_pages.py validate_publication.py prepare_pages_artifact.py publication_helpers.py scratch/export_presentation_id_manifest.py scratch/compare_id_manifests.py
+          python -m py_compile build_and_populate_db.py generate_analytics.py generate_site_data.py generate_scholars_pages.py generate_publication_pages.py validate_publication.py prepare_pages_artifact.py publication_helpers.py scratch/export_presentation_id_manifest.py scratch/compare_id_manifests.py tests/test_stable_ids.py
+
+      - name: Run Regression Tests
+        run: |
+          python -m unittest discover -s tests
 
       - name: Rebuild Publication Artifacts
         run: |

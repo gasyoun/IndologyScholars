@@ -335,7 +335,7 @@
             <article class="card">
                 <strong><a href="datapackage.json">Frictionless datapackage</a></strong>
                 <div class="meta">Dataset metadata, resource list, license, and source notes.</div>
-                <div class="meta">7.9 KB</div>
+                <div class="meta">8.1 KB</div>
             </article>
 
             <article class="card">
@@ -392,6 +392,21 @@
                 <div class="meta">4.0 KB</div>
             </article>
             </section>
+
+        <h2 style="margin-top:2.5rem;">Reproducibility</h2>
+        <div class="card" style="padding: 2rem;">
+            <p>The entire dataset is generated deterministically from primary source HTML caches. To reproduce the current build locally:</p>
+            <ol>
+                <li><code>python build_and_populate_db.py</code> (Creates the SQLite database and generates deterministic <code>presentation_id</code> hashes based on event, year, title, speaker, and session order)</li>
+                <li><code>python generate_analytics.py</code> (Generates all CSV exports and networks)</li>
+                <li><code>python generate_site_data.py</code> (Compiles the browser payload)</li>
+                <li><code>python generate_scholars_pages.py</code> (Builds individual static profiles)</li>
+                <li><code>python generate_publication_pages.py</code> (Builds all other pages, search index, and updates index.html)</li>
+                <li><code>python validate_publication.py</code> (Runs integrity checks)</li>
+            </ol>
+            <p><strong>Pipeline Version:</strong> 2026-05-21</p>
+            <p><strong>Build Date:</strong> 2026-05-22</p>
+        </div>
 
         <div class="footer">© 2026 Russian Indological Research Archive. Generated from the normalized conference archive.</div>
     </main>

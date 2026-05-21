@@ -12,3 +12,7 @@ _site/
 
 # Author working drafts (private revision notes, not for publication)
 article/ppv_corr.md
+
+# Local ID audit scratch manifests
+scratch/ci_manifest_*.csv
+scratch/manifest_*.csv

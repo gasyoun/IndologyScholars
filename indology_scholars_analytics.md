@@ -138,3 +138,13 @@ The complete structured lists have been generated and exported to the `analytics
 | 2023 | 2023-12-09 | 9 | 60.1 | 57 | 48.0–73.0 | 36–90 |
 | 2024 | 2024-12-09 | 20 | 55.5 | 56.5 | 39.2–70.8 | 25–91 |
 | 2025 | 2025-12-09 | 19 | 53.1 | 53 | 44.0–61.0 | 26–75 |
+
+## 7. Network Analysis
+
+We analyze the structure of Russian Indological conferences through the lens of participation networks. Unlike traditional bibliometric networks (which map who cites whom), our networks map **co-presence and shared scholarly context**. They help identify institutional centers of gravity, disciplinary clustering, and bridge scholars between the Zograf and Roerich readings.
+
+**Nodes Generated:** 271
+
+**Edges Generated:** 4561
+
+The network is exported into standard edge list and node list CSV formats (`network_nodes.csv` and `network_edges.csv`) for use in external graphing tools like Gephi or Cytoscape.
