@@ -12,11 +12,12 @@ OG_IMAGE_PATH = "assets/og-image.png"
 OG_IMAGE_URL = SITE_URL + OG_IMAGE_PATH
 
 THEME_LABELS = {
-    "AcademicHistory": ("История науки и архивы", "History of Scholarship"),
-    "Linguistics": ("Лингвистика и филология", "Linguistics & Philology"),
-    "Philosophy": ("Философия и религия", "Philosophy & Religion"),
-    "Art": ("Искусство и литература", "Art & Literature"),
-    "History": ("История и этнография", "History & Ethnography"),
+    "history_and_culture": ("История, этнография и общество", "History, Culture & Society"),
+    "religion_and_philosophy": ("Религия и философия", "Religion & Philosophy"),
+    "literature_and_poetry": ("Литература и поэзия", "Literature & Poetry"),
+    "linguistics_and_philology": ("Лингвистика и филология", "Linguistics & Philology"),
+    "art_and_material_culture": ("Искусство и материальная культура", "Art & Material Culture"),
+    "unspecified": ("Разное / Не классифицировано", "Other / Unspecified"),
 }
 
 CYRILLIC_TO_LATIN = {
@@ -357,12 +358,12 @@ def load_site_data(path="site_data.json"):
 
 
 def theme_label(code, lang="en"):
-    ru, en = THEME_LABELS.get(code or "History", THEME_LABELS["History"])
+    ru, en = THEME_LABELS.get(code or "unspecified", THEME_LABELS["unspecified"])
     return ru if lang == "ru" else en
 
 
 def theme_path(code):
-    return f"themes/{slugify(code or 'History', 'theme')}.html"
+    return f"themes/{slugify(code or 'unspecified', 'theme')}.html"
 
 
 def describe_year_span(first_year, last_year):

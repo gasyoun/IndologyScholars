@@ -1152,25 +1152,41 @@ def generate_provenance_sidecars(data, authority, records):
         writer.writerows(authority_rows)
 
     theme_rows = []
+    
+    # Load LLM classification results
+    llm_themes = {}
+    try:
+        with open("analytics_output/theme_codes_final_v2.csv", encoding="utf-8") as f:
+            for r in csv.DictReader(f):
+                key = (str(r["year"]).strip(), str(r["series"]).strip(), str(r["title"]).strip())
+                llm_themes[key] = r
+    except FileNotFoundError:
+        pass
+        
     for rec in records:
         title = rec.get("title") or ""
+        pres_id = rec.get("presentation_id") or ""
+        year = rec.get("year", "")
+        series = rec.get("series_label") or rec.get("series_key", "")
         theme = rec.get("theme") or {}
-        l1, l1_conf = _score_rules(title, _THEME_L1_RULES)
-        l3, l3_conf = _score_rules(title, _THEME_L3_RULES)
+        
+        key = (str(year).strip(), str(series).strip(), str(title).strip())
+        lr = llm_themes.get(key, {})
+        
         theme_rows.append({
             "entity_type": "presentation",
-            "entity_id": rec.get("presentation_id") or "",
+            "entity_id": pres_id,
             "field_name": "theme.code",
             "field_value": theme.get("code") or "",
-            "source_type": "generate_site_data.classify_theme",
-            "confidence": "heuristic",
+            "source_type": lr.get("source", "heuristic"),
+            "confidence": lr.get("confidence", ""),
             "checked_at": BUILD_DATE,
             "title": title,
-            "l1_review_candidate": l1 or "",
-            "l1_confidence": l1_conf,
-            "l3_review_candidate": l3 or "",
-            "l3_confidence": l3_conf,
-            "notes": "Theme labels are navigational aids derived from presentation titles.",
+            "l1_review_candidate": lr.get("l1", ""),
+            "l1_confidence": lr.get("confidence", ""),
+            "l3_review_candidate": lr.get("l3", ""),
+            "l3_confidence": "",
+            "notes": lr.get("why", ""),
         })
 
     with open("analytics_output/field_provenance_themes.csv", "w", encoding="utf-8", newline="") as f:
@@ -1268,18 +1284,35 @@ def generate_theme_review_queue(records: list) -> int:
     Returns the number of rows written.
     """
     queue = []
+    
+    # Load LLM classification results
+    llm_themes = {}
+    try:
+        with open("analytics_output/theme_codes_final_v2.csv", encoding="utf-8") as f:
+            for r in csv.DictReader(f):
+                key = (str(r["year"]).strip(), str(r["series"]).strip(), str(r["title"]).strip())
+                llm_themes[key] = r
+    except FileNotFoundError:
+        pass
+        
     for rec in records:
         title = rec.get("title") or ""
         pres_id = rec.get("presentation_id") or ""
         year = rec.get("year", "")
         series = rec.get("series_label") or rec.get("series_key", "")
         theme_code = (rec.get("theme") or {}).get("code") or ""
+        
+        key = (str(year).strip(), str(series).strip(), str(title).strip())
+        lr = llm_themes.get(key, {})
+        
+        l1 = lr.get("l1")
+        l3 = lr.get("l3")
+        try:
+            conf = float(lr.get("confidence") or 0.0)
+        except ValueError:
+            conf = 0.0
 
-        l1, l1_conf = _score_rules(title, _THEME_L1_RULES)
-        l3, l3_conf = _score_rules(title, _THEME_L3_RULES)
-
-        min_conf = min(l1_conf, l3_conf)
-        needs_review = (l1 is None or l3 is None or min_conf < 0.5)
+        needs_review = (l1 in (None, "", "unspecified") or l3 in (None, "", "unspecified") or conf < 0.6)
 
         if needs_review:
             queue.append({
@@ -1289,15 +1322,15 @@ def generate_theme_review_queue(records: list) -> int:
                 "title": title,
                 "existing_theme_code": theme_code,
                 "l1_baseline": l1 or "",
-                "l1_conf": l1_conf,
+                "l1_conf": conf,
                 "l3_baseline": l3 or "",
-                "l3_conf": l3_conf,
+                "l3_conf": conf,
                 "review_status": "todo",
-                "notes": "",
+                "notes": lr.get("why", ""),
             })
 
     # Sort: unclassified (l1 None) first, then by l1_conf ascending
-    queue.sort(key=lambda r: (0 if not r["l1_baseline"] else 1, r["l1_conf"]))
+    queue.sort(key=lambda r: (0 if not r["l1_baseline"] or r["l1_baseline"] == "unspecified" else 1, r["l1_conf"]))
 
     Path("analytics_output").mkdir(exist_ok=True)
     out_path = "analytics_output/theme_review_queue.csv"

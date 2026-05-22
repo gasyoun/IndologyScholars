@@ -169,54 +169,42 @@ def classify_gender(full_name_ru, display_name):
             
     return "M"
 
-def classify_theme(title):
-    title_low = (title or "").lower()
-    
-    # 1. History of scholarship / archives
-    if any(term in title_low for term in ["рерих", "зограф", "конгресс", "биогр", "архив", "востоковед", "индолог", "экспедиц", "дневник", "переписк", "письм", "коллекц", "музей"]):
-        return {
-            "ru": "История науки и архивы",
-            "en": "History of Scholarship",
-            "code": "AcademicHistory"
-        }
-    
-    # 2. Linguistics & Philology
-    if any(term in title_low for term in ["язык", "грамматик", "санскрит", "пали", "глагол", "фонет", "морфол", "лингв", "лексико", "диалект", "слово", "перевод", "синтакс", "словарь", "этимол", "текстолог"]):
-        return {
-            "ru": "Лингвистика и филология",
-            "en": "Linguistics & Philology",
-            "code": "Linguistics"
-        }
-        
-    # 3. Philosophy & Religion
-    if any(term in title_low for term in ["философ", "религ", "будди", "будд", "шива", "текст", "упанишад", "учен", "йог", "индуиз", "ведичес", "кришн", "теософ", "миф", "ритуал", "божес", "космо", "сакрал"]):
-        return {
-            "ru": "Философия и религия",
-            "en": "Philosophy & Religion",
-            "code": "Philosophy"
-        }
-        
-    # 4. Art & Literature
-    if any(term in title_low for term in ["литератур", "поэз", "драм", "театр", "искусств", "архитект", "живоп", "поэт", "роман", "повес", "песн", "эпос", "фолькл", "сказ", "миниатюр", "изобраз"]):
-        return {
-            "ru": "Искусство и литература",
-            "en": "Art & Literature",
-            "code": "Art"
-        }
-        
-    # 5. History & Ethnography
-    if any(term in title_low for term in ["этногр", "культур", "быт", "традиц", "обыча", "истори", "археол", "племен", "каст", "общес", "социал", "государс", "династ", "обряд", "одежд", "празд", "населен", "геогр"]):
-        return {
-            "ru": "История и этнография",
-            "en": "History & Ethnography",
-            "code": "History"
-        }
-        
-    return {
-        "ru": "История и этнография",
-        "en": "History & Ethnography",
-        "code": "History"
+import csv
+
+def load_theme_mapping():
+    mapping = {}
+    try:
+        with open("analytics_output/theme_codes_final_v2.csv", encoding="utf-8") as f:
+            for row in csv.DictReader(f):
+                key = (str(row["year"]).strip(), str(row["series"]).strip(), str(row["title"]).strip())
+                mapping[key] = row["l1"]
+    except FileNotFoundError:
+        pass
+    return mapping
+
+# Pre-load the mapping once globally
+_THEME_MAPPING = load_theme_mapping()
+
+def get_theme_meta(code):
+    """Return dict with ru/en labels for a given L1 code."""
+    meta = {
+        "history_and_culture": {"ru": "История, этнография и общество", "en": "History, Culture & Society"},
+        "religion_and_philosophy": {"ru": "Религия и философия", "en": "Religion & Philosophy"},
+        "literature_and_poetry": {"ru": "Литература и поэзия", "en": "Literature & Poetry"},
+        "linguistics_and_philology": {"ru": "Лингвистика и филология", "en": "Linguistics & Philology"},
+        "art_and_material_culture": {"ru": "Искусство и материальная культура", "en": "Art & Material Culture"},
+        "unspecified": {"ru": "Разное / Не классифицировано", "en": "Other / Unspecified"}
     }
+    res = meta.get(code)
+    if not res:
+        res = {"ru": str(code), "en": str(code)}
+    res["code"] = code
+    return res
+
+def classify_theme(year, series, title):
+    key = (str(year).strip(), str(series).strip(), str(title).strip())
+    code = _THEME_MAPPING.get(key, "unspecified")
+    return get_theme_meta(code)
 
 def main():
     conn = sqlite3.connect(DB_PATH)
@@ -394,7 +382,7 @@ def main():
             cleaned_title = clean_title(title)
             
             # Classify theme
-            theme = classify_theme(cleaned_title)
+            theme = classify_theme(year, series, cleaned_title)
             t_code = theme["code"]
             theme_counts[t_code] = theme_counts.get(t_code, 0) + 1
             
@@ -542,7 +530,7 @@ def main():
         cleaned_title = clean_title(title)
         
         # Classify theme
-        theme = classify_theme(cleaned_title)
+        theme = classify_theme(year_val, series, cleaned_title)
 
         series_key = "Zograf" if "Zograf" in series else "Roerich"
         timeline[year][series_key].append({
