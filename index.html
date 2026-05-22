@@ -2541,7 +2541,7 @@ CREATE TABLE presentation_person (
                 
                 span.textContent = w.text;
                 span.style.fontSize = fontSize + 'rem';
-                span.style.color = \`rgba(139, 92, 246, \${opacity})\`;
+                span.style.color = `rgba(139, 92, 246, ${opacity})`;
                 span.style.lineHeight = '1';
                 span.style.fontWeight = normalizedWeight > 0.5 ? '700' : '400';
                 span.style.cursor = 'pointer';
@@ -2554,7 +2554,7 @@ CREATE TABLE presentation_person (
                     span.style.textShadow = '0 0 10px rgba(139, 92, 246, 0.8)';
                 };
                 span.onmouseout = () => {
-                    span.style.color = \`rgba(139, 92, 246, \${opacity})\`;
+                    span.style.color = `rgba(139, 92, 246, ${opacity})`;
                     span.style.textShadow = 'none';
                 };
                 
