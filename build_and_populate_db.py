@@ -242,6 +242,9 @@ def init_db(conn):
         full_name_en TEXT,
         birth_year INTEGER,
         death_year INTEGER,
+        degree TEXT,
+        degree_year TEXT,
+        degree_source_url TEXT,
         normalized_key TEXT,
         source_url TEXT,
         notes TEXT
@@ -492,6 +495,51 @@ BIOGRAPHICAL_DATA = {
     "степанянц м т": ("Степанянц Мариэтта Тиграновна", "Stepanyants Marietta Tigranovna", 1935, None),
 }
 
+# Academic degrees, looked up from authoritative sources (institutional pages,
+# Wikipedia, ИСТИНА, dissercat) and recorded in article/hypothesis_output/
+# degree_lookup_queue.csv. normalized_key -> (degree, degree_year, degree_source_url).
+DEGREE_DATA = {
+    "цветкова с о": ("кандидат филологических наук", "", "https://orient.spbu.ru/index.php/en/about-faas/academics/item/tsvetkova-svetlana-olegovna"),
+    "тавастшерна с с": ("кандидат филологических наук", "2009", "https://www.orient.spbu.ru/index.php/ru/o-fakultete/sotrudniki/item/tavastsherna-sergej-sergeevich"),
+    "александрова н в": ("кандидат исторических наук", "1989", "https://www.hse.ru/org/persons/210188843"),
+    "рыжакова с и": ("доктор исторических наук", "", "https://iea-ras.ru/?page_id=6695"),
+    "лысенко в г": ("доктор философских наук", "", "https://ru.wikipedia.org/wiki/Лысенко,_Виктория_Георгиевна"),
+    "корнеева н а": ("кандидат исторических наук", "", "https://www.dissercat.com/content/istochnikovedcheskii-analiz-vishnu-smriti-problemy-khronologii-i-perevoda"),
+    "дубянский а м": ("кандидат филологических наук", "1974", "https://ru.wikipedia.org/wiki/Дубянский,_Александр_Михайлович"),
+    "вертоградова в в": ("доктор филологических наук", "", "https://www.ivran.ru/persons/147"),
+    "лидова н р": ("кандидат филологических наук", "1991", "http://imli.ru/index.php/institut/sotrudniki/1156-lidova-natalya-rostislavovna"),
+    "вечерина о п": ("кандидат исторических наук", "1998", "https://istina.msu.ru/workers/419301481/"),
+    "алиханова ю м": ("кандидат филологических наук", "1970", "https://ru.wikipedia.org/wiki/Алиханова,_Юлия_Марковна"),
+    "воробьева д н": ("кандидат искусствоведения", "2013", "https://sias.ru/institute/persons/3743.html"),
+    "огнева е д": ("кандидат исторических наук", "1979", "https://ru.wikipedia.org/wiki/Огнева,_Елена_Дмитриевна"),
+    "гурия а г": ("кандидат филологических наук", "", "https://istina.msu.ru/workers/111004308/"),
+    "титлин л и": ("кандидат философских наук", "", "https://iphras.ru/titlin.htm"),
+    "куликов л и": ("кандидат филологических наук; PhD (Leiden)", "2001", "https://ru.wikipedia.org/wiki/Куликов,_Леонид_Игоревич"),
+    "крылова а с": ("кандидат филологических наук", "", "https://ivran.ru/persons/AnastasiyaKrylova"),
+    "канаева н а": ("доктор философских наук", "2021", "https://www.hse.ru/staff/nkanaeva/"),
+    "ложкина а в": ("кандидат философских наук", "2020", "https://iphras.ru/lozhkina.htm"),
+    "вигасин а а": ("доктор исторических наук", "1995", "https://ru.wikipedia.org/wiki/Вигасин,_Алексей_Алексеевич"),
+    "комиссаров д а": ("кандидат филологических наук", "2012", "https://www.hse.ru/org/persons/209813167/"),
+    "шохин в к": ("доктор философских наук", "", "https://iphras.ru/shokhin.htm"),
+    "ренковская е а": ("кандидат филологических наук", "2021", "https://istina.msu.ru/profile/Zumrutanka/"),
+    "крапивина р н": ("кандидат исторических наук", "1983", "http://www.orientalstudies.ru/rus/index.php?option=com_personalities&Itemid=74&person=34"),
+    "кулланда с в": ("кандидат исторических наук", "1988", "https://ru.wikipedia.org/wiki/Кулланда,_Сергей_Всеволодович"),
+}
+
+# Authoritative biographical corrections, applied AFTER BIOGRAPHICAL_DATA so they
+# win over earlier (and duplicated) entries. Confirmed via web lookup + corr.md.
+BIOGRAPHICAL_DATA.update({
+    "вертоградова в в": ("Вертоградова Виктория Викторовна", "Vertogradova Victoria Viktorovna", 1933, None),   # жива — не 2022
+    "цветкова с о": ("Цветкова Светлана Олеговна", "Tsvetkova Svetlana Olegovna", 1978, None),                  # Светлана, не Софья
+    "вечерина о п": ("Вечерина Ольга Павловна", "Vecherina Olga Pavlovna", 1960, 2023),                          # 1960–2023
+    "жутаев д и": ("Жутаев Дар Игоревич", "Zhutaev Dar Igorevich", 1969, 2020),                                  # Дар, не Дмитрий; †2020
+    "крапивина р н": ("Крапивина Раиса Николаевна", "Krapivina Raisa Nikolaevna", 1953, None),                   # Раиса Николаевна, не Рада Нельсовна
+    "ложкина а в": ("Ложкина Анастасия Витальевна", "Lozhkina Anastasia Vitalyevna", 1992, None),                # род. 1992
+    "комиссаров д а": ("Комиссаров Дмитрий Алексеевич", "Komissarov Dmitry Alekseevich", 1977, None),            # Алексеевич, не Андреевич
+    "алиханова ю м": ("Алиханова Юлия Марковна", "Alikhanova Yulia Markovna", 1936, None),
+    "огнева е д": ("Огнева Елена Дмитриевна", "Ogneva Elena Dmitrievna", 1944, None),
+})
+
 persons_cache = {} # normalized_key -> person_id
 person_id_overrides = None
 
@@ -518,14 +566,22 @@ def person_id_for_key(norm_key):
     return f"PERS_{digest}"
 
 
+def _apply_degree(cursor, pid, deg):
+    if deg:
+        cursor.execute(
+            "UPDATE person SET degree = ?, degree_year = ?, degree_source_url = ? WHERE person_id = ?",
+            (deg[0], deg[1], deg[2], pid))
+
+
 def get_or_create_person(conn, name, source_url):
     cursor = conn.cursor()
     norm_key = normalize_person_name(name)
-    
+
     fn_ru, fn_en, by, dy = None, None, None, None
     bio = BIOGRAPHICAL_DATA.get(norm_key)
     if bio:
         fn_ru, fn_en, by, dy = bio
+    deg = DEGREE_DATA.get(norm_key)
 
     # Check cache first
     if norm_key in persons_cache:
@@ -542,6 +598,7 @@ def get_or_create_person(conn, name, source_url):
                 SET full_name_ru = ?, full_name_en = ?, birth_year = ?, death_year = ? 
                 WHERE person_id = ?
             """, (fn_ru, fn_en, by, dy, pid))
+        _apply_degree(cursor, pid, deg)
         conn.commit()
         return pid
 
@@ -560,6 +617,7 @@ def get_or_create_person(conn, name, source_url):
                 SET full_name_ru = ?, full_name_en = ?, birth_year = ?, death_year = ? 
                 WHERE person_id = ?
             """, (fn_ru, fn_en, by, dy, pid))
+        _apply_degree(cursor, pid, deg)
         conn.commit()
         return pid
 
@@ -578,15 +636,17 @@ def get_or_create_person(conn, name, source_url):
                 SET full_name_ru = ?, full_name_en = ?, birth_year = ?, death_year = ?
                 WHERE person_id = ?
             """, (fn_ru, fn_en, by, dy, pid))
+        _apply_degree(cursor, pid, deg)
         conn.commit()
         return pid
 
     # Create new. Person IDs are stable because they are used in public profile URLs.
     pid = mapped_pid
+    deg_val, deg_yr, deg_url = deg if deg else (None, None, None)
     cursor.execute("""
-        INSERT INTO person (person_id, display_name, full_name_ru, full_name_en, birth_year, death_year, normalized_key, source_url) 
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?)
-    """, (pid, name.strip(), fn_ru, fn_en, by, dy, norm_key, source_url))
+        INSERT INTO person (person_id, display_name, full_name_ru, full_name_en, birth_year, death_year, degree, degree_year, degree_source_url, normalized_key, source_url)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    """, (pid, name.strip(), fn_ru, fn_en, by, dy, deg_val, deg_yr, deg_url, norm_key, source_url))
     conn.commit()
     persons_cache[norm_key] = pid
     return pid

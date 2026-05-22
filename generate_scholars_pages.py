@@ -74,6 +74,21 @@ def format_lifespan(scholar, lang="ru"):
     return ""
 
 
+def format_degree(scholar):
+    """Russian academic degree line with year and source link (empty if none)."""
+    degree = clean_text(scholar.get("degree") or "")
+    if not degree:
+        return ""
+    text = esc(degree)
+    year = clean_text(str(scholar.get("degree_year") or ""))
+    if year:
+        text += f", {esc(year)}"
+    url = clean_text(scholar.get("degree_source_url") or "")
+    if url:
+        text += f' · <a href="{esc(url)}" target="_blank" rel="noopener">источник</a>'
+    return f'<p class="degree">{text}</p>'
+
+
 def scholar_description(scholar):
     name = scholar.get("full_name_ru") or scholar.get("name")
     total = scholar.get("total_talks", 0)
@@ -186,6 +201,11 @@ def profile_structured_data(scholar, authority):
         person["birthDate"] = str(scholar["birth_year"])
     if scholar.get("death_year"):
         person["deathDate"] = str(scholar["death_year"])
+    if scholar.get("degree"):
+        person["hasCredential"] = {
+            "@type": "EducationalOccupationalCredential",
+            "credentialCategory": scholar["degree"],
+        }
     if same_as:
         person["sameAs"] = same_as
 
@@ -273,6 +293,7 @@ def render_profile(scholar, related, authority):
         <header>
             <h1>{esc(name_ru)}<span class="life">{esc(format_lifespan(scholar, "ru"))}</span></h1>
             <p>{esc(name_en)}{esc(format_lifespan(scholar, "en"))}</p>
+            {format_degree(scholar)}
             <p>{esc(description)}</p>
         </header>
 
@@ -302,6 +323,8 @@ def render_profile(scholar, related, authority):
     extra_css = """
     <style>
         .life { color: var(--soft); font-size: 0.62em; font-weight: 500; margin-left: 0.4rem; }
+        .degree { color: var(--soft); font-size: 0.95rem; font-weight: 600; margin: 0.15rem 0 0.5rem; }
+        .degree a { font-weight: 400; font-size: 0.85em; }
         .metric { font-size: 1.4rem; font-weight: 700; margin-top: 0.2rem; }
         .chip-row { display: flex; flex-wrap: wrap; gap: 0.5rem; }
     </style>

@@ -248,9 +248,14 @@ def main():
         session_pres_map[sess_id].append(pid)
         
     # Compile presenter metadata (student, independent, affiliation change, biographical info)
-    cursor.execute("SELECT person_id, display_name, birth_year, death_year, full_name_ru, full_name_en FROM person")
+    # Degree columns exist only after a rebuild with the updated schema; detect
+    # them so this script also runs against an older DB without crashing.
+    person_cols = {r[1] for r in cursor.execute("PRAGMA table_info(person)").fetchall()}
+    has_degree = {"degree", "degree_year", "degree_source_url"} <= person_cols
+    degree_select = ", degree, degree_year, degree_source_url" if has_degree else ""
+    cursor.execute(f"SELECT person_id, display_name, birth_year, death_year, full_name_ru, full_name_en{degree_select} FROM person")
     persons_raw = cursor.fetchall()
-    
+
     person_meta = {}
     for r_p in persons_raw:
         pid, display_name = r_p[0], r_p[1]
@@ -258,7 +263,10 @@ def main():
         death_year = r_p[3]
         full_name_ru = r_p[4]
         full_name_en = r_p[5]
-        
+        degree = r_p[6] if has_degree else None
+        degree_year = r_p[7] if has_degree else None
+        degree_source_url = r_p[8] if has_degree else None
+
         std_name = format_to_initials(display_name)
         
         # Check student and independent status based on all historical affiliations
@@ -330,7 +338,10 @@ def main():
             "zograf_first": zograf_first,
             "zograf_last": zograf_last,
             "roerich_first": roerich_first,
-            "roerich_last": roerich_last
+            "roerich_last": roerich_last,
+            "degree": degree,
+            "degree_year": degree_year,
+            "degree_source_url": degree_source_url
         }
     
     # Load video media keyed by presentation_id (so each talk can render its YouTube link)
@@ -477,6 +488,9 @@ def main():
             "full_name_en": meta["full_name_en"] or meta["std_name"],
             "birth_year": meta["birth_year"],
             "death_year": meta["death_year"],
+            "degree": meta.get("degree"),
+            "degree_year": meta.get("degree_year"),
+            "degree_source_url": meta.get("degree_source_url"),
             "gender": meta["gender"],
             "zograf_first": meta["zograf_first"],
             "zograf_last": meta["zograf_last"],

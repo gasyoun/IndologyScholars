@@ -5,7 +5,7 @@ import statistics
 import datetime
 from collections import defaultdict
 
-from generate_site_data import classify_theme
+from generate_site_data import classify_theme, clean_title
 
 DB_PATH = "conferences.db"
 OUTPUT_DIR = "analytics_output"
@@ -136,7 +136,7 @@ def generate_network_exports(cursor):
             nodes[org_node]["weight"] += 1
             add_edge(edges, person_node, org_node, "person_organization", row["year"], row["series_name_en"])
 
-        theme = classify_theme(row["title"] or "").get("code") or "History"
+        theme = classify_theme(row["year"], row["series_name_en"], clean_title(row["title"] or "")).get("code") or "History"
         theme_node = node_id("theme", theme)
         if theme_node not in nodes:
             nodes[theme_node] = {
