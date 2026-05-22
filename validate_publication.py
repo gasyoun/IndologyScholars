@@ -3,6 +3,7 @@ import re
 import json
 import sqlite3
 import sys
+from collections import defaultdict
 from pathlib import Path
 import jsonschema
 
@@ -48,6 +49,25 @@ def valid_http_url(value):
     return text.startswith("https://") or text.startswith("http://")
 
 
+def normalized_authority_value(field, value):
+    text = str(value or "").strip()
+    if field == "orcid":
+        return re.sub(r"^https?://orcid\.org/", "", text)
+    if field == "wikidata":
+        return re.sub(r"^https?://www\.wikidata\.org/wiki/", "", text)
+    if field == "viaf":
+        return re.sub(r"^https?://viaf\.org/viaf/", "", text).rstrip("/")
+    if field == "openalex":
+        return re.sub(r"^https?://openalex\.org/", "", text)
+    if field == "rinc_author_id":
+        return re.sub(r"^https?://www\.elibrary\.ru/author_profile\.asp\?id=", "", text)
+    if field == "scopus_author_id":
+        return re.sub(r"^https?://www\.scopus\.com/authid/detail\.uri\?authorId=", "", text)
+    if field == "researcher_id":
+        return re.sub(r"^https?://www\.webofscience\.com/wos/author/record/", "", text)
+    return text
+
+
 def main():
     errors = []
     data = load_site_data("site_data.json")
@@ -86,8 +106,12 @@ def main():
     except jsonschema.exceptions.ValidationError as e:
         fail(errors, f"authority_ids.json schema validation failed: {e.message} at path {list(e.path)}")
 
+    scholar_ids = {s["id"] for s in scholars}
     persons_auth = authority.get("persons") or {}
+    duplicate_authority_ids = defaultdict(list)
     for person_id, person_auth in persons_auth.items():
+        if person_id not in scholar_ids:
+            fail(errors, f"authority_ids.json persons.{person_id} does not match a generated scholar")
         if not isinstance(person_auth, dict):
             fail(errors, f"authority_ids.json persons.{person_id} should be an object")
             continue
@@ -97,11 +121,17 @@ def main():
             normalized_key = "official_url" if key == "url" else key
             if normalized_key not in normalized_public_urls:
                 fail(errors, f"authority_ids.json persons.{person_id}.{key} has invalid semantic format: {value}")
+            if normalized_key != "official_url":
+                normalized_value = normalized_authority_value(key, value)
+                duplicate_authority_ids[(normalized_key, normalized_value)].append(person_id)
         if raw_public_fields and is_public_authority_record(person_auth) and not person_auth.get("checked_at"):
             fail(errors, f"authority_ids.json persons.{person_id} is public but missing checked_at")
         if raw_public_fields and not is_public_authority_record(person_auth):
             # Candidate or unspecified authority IDs are allowed only if they remain internal.
             pass
+    for (field, value), person_ids in sorted(duplicate_authority_ids.items()):
+        if value and len(set(person_ids)) > 1:
+            fail(errors, f"authority_ids.json duplicate {field}={value} for persons {sorted(set(person_ids))}")
 
     for org_key, org_auth in (authority.get("organizations") or {}).items():
         if not isinstance(org_auth, dict):
@@ -121,7 +151,6 @@ def main():
         if place_auth.get("wikidata") and not valid_wikidata(place_auth.get("wikidata")):
             fail(errors, f"authority_ids.json places.{place_key}.wikidata has invalid format")
 
-    scholar_ids = {s["id"] for s in scholars}
     scholar_pages = []
     redirect_pages = []
     for page in Path("scholars").glob("PERS_*.html"):
