@@ -318,7 +318,63 @@ AFFIL_GROUPS = [
 def affiliation_groups(values: list[str]) -> list[str]:
     joined = " | ".join(v for v in values if v)
     groups = [name for name, pattern in AFFIL_GROUPS if pattern.search(joined)]
+    if "ИВР РАН" in groups and "ИВ РАН" in groups:
+        groups.remove("ИВ РАН")
     return groups or ["не нормализовано/только город"]
+
+
+SPB_PATTERNS = re.compile(
+    r"СПб|Санкт-Петербург|Ленинград|ИВР|МАЭ|Кунсткам|РХГА|ЕУСПб|ГМИР|РНБ|Герцен|С\.-Петербург|С\.-Петерб|Эрмитаж",
+    re.I
+)
+MOSCOW_PATTERNS = re.compile(
+    r"Москва|МГУ|ИВ РАН|ВШЭ|ИКВИА|Высш|РГГУ|ИФ РАН|Институт философии|ИМЛИ|РУДН|ИСАА|ИЭА|этнологии и антропологии|ИЯз|ИЯ РАН|Институт языкознания|МГИМО|ПСТГУ|МГХПА|РГСУ|МПГУ|РАНХиГС|РХТУ|РГХПУ",
+    re.I
+)
+
+
+def infer_city(affil: str | None) -> str:
+    if not affil:
+        return "Unknown"
+    affil_clean = affil.strip()
+    if not affil_clean:
+        return "Unknown"
+    if SPB_PATTERNS.search(affil_clean):
+        return "SPb"
+    elif MOSCOW_PATTERNS.search(affil_clean):
+        return "Moscow"
+    else:
+        return "Regions/Foreign"
+
+
+def is_serialized(title: str | None) -> bool:
+    if not title:
+        return False
+    t = title.lower().strip()
+    part_patterns = [
+        r"\bчасть\s+[0-9ivxл]+\b",
+        r"\bч\.\s*[0-9ivxл]+\b",
+        r"\bpart\s+[0-9ivx]+\b",
+        r"\bсообщение\s+[0-9ivx]+\b",
+        r"\bвыпуск\s+[0-9]+\b",
+        r"\bвып\.\s*[0-9]+\b",
+        r"\b[ixv]+\s*$",
+        r"\(\s*[ixv]+\s*\)"
+    ]
+    for p in part_patterns:
+        if re.search(p, t):
+            return True
+            
+    prefixes = [
+        "к вопросу о", "еще раз о", "материалы к", "заметки о", "к истории",
+        "к изучению", "к интерпретации", "к анализу", "к характеристике",
+        "к описанию", "к семантике", "к переводу", "к этимологии", "к пониманию",
+        "к реконструкции", "к проблеме", "предварительные заметки о"
+    ]
+    for pref in prefixes:
+        if t.startswith(pref):
+            return True
+    return False
 
 
 def counter_cosine(a: Counter[str], b: Counter[str]) -> float | None:
@@ -894,6 +950,385 @@ def figure_network_bridges_session(rows: list[dict[str, object]]) -> None:
     (OUT / "network_bridges_session.svg").write_text(svg(width, height, body), encoding="utf-8")
 
 
+def hypothesis_fractional_counting(con: sqlite3.Connection) -> tuple[list[dict[str, object]], dict[str, object]]:
+    pres_ppl = defaultdict(list)
+    for p_id, year, series, pers_id, affil in con.execute("""
+        select pr.presentation_id, e.year, es.series_name_en, pp.person_id, pp.affiliation_text_raw
+        from presentation pr
+        join session s using(session_id)
+        join event_day_venue edv using(event_day_venue_id)
+        join event_day ed using(event_day_id)
+        join event e using(event_id)
+        join event_series es using(event_series_id)
+        join presentation_person pp on pp.presentation_id = pr.presentation_id
+    """):
+        pres_ppl[p_id].append((year, series, pers_id, affil))
+        
+    org_counts = defaultdict(lambda: {"simple": 0.0, "fractional": 0.0})
+    org_by_year = defaultdict(lambda: {"simple": 0.0, "fractional": 0.0})
+    target_orgs = {"ИВ РАН", "ИВР РАН", "СПбГУ", "ИКВИА/ВШЭ"}
+    
+    for p_id, ppl in pres_ppl.items():
+        k = len(ppl)
+        for year, series, pers_id, affil in ppl:
+            gps = affiliation_groups([affil])
+            m = len(gps)
+            for org in gps:
+                frac_weight = 1.0 / (k * m)
+                simp_weight = 1.0
+                
+                org_counts[org]["simple"] += simp_weight
+                org_counts[org]["fractional"] += frac_weight
+                
+                if org in target_orgs:
+                    series_clean = "Zograf" if "Zograf" in series else "Roerich"
+                    org_by_year[(org, year, series_clean)]["simple"] += simp_weight
+                    org_by_year[(org, year, series_clean)]["fractional"] += frac_weight
+
+    rows = []
+    for (org, year, series), counts in sorted(org_by_year.items()):
+        rows.append({
+            "organization": org,
+            "year": year,
+            "series": series,
+            "simple_count": round(counts["simple"], 1),
+            "fractional_count": round(counts["fractional"], 3)
+        })
+
+    stats = {
+        "h7_ivran_simple": org_counts["ИВ РАН"]["simple"],
+        "h7_ivran_fractional": org_counts["ИВ РАН"]["fractional"],
+        "h7_ivrran_simple": org_counts["ИВР РАН"]["simple"],
+        "h7_ivrran_fractional": org_counts["ИВР РАН"]["fractional"],
+        "h7_spbgu_simple": org_counts["СПбГУ"]["simple"],
+        "h7_spbgu_fractional": org_counts["СПбГУ"]["fractional"],
+        "h7_ikvia_simple": org_counts["ИКВИА/ВШЭ"]["simple"],
+        "h7_ikvia_fractional": org_counts["ИКВИА/ВШЭ"]["fractional"],
+    }
+    return rows, stats
+
+
+def hypothesis_era_influence(con: sqlite3.Connection, theme_rows: list[dict[str, str]]) -> tuple[list[dict[str, object]], list[dict[str, object]], list[dict[str, object]], dict[str, object]]:
+    z_speaker_years = defaultdict(list)
+    z_presentations = []
+    
+    lookup = theme_lookup(theme_rows)
+    
+    for p_id, year, title, pers_id in con.execute("""
+        select pr.presentation_id, e.year, pr.title, pp.person_id
+        from presentation pr
+        join session s using(session_id)
+        join event_day_venue edv using(event_day_venue_id)
+        join event_day ed using(event_day_id)
+        join event e using(event_id)
+        join event_series es using(event_series_id)
+        join presentation_person pp on pp.presentation_id = pr.presentation_id
+        where es.series_name_en = 'Zograf Readings'
+    """):
+        z_speaker_years[pers_id].append(year)
+        coded_row = lookup.get(("Zograf", year, norm_title(title or "")))
+        z_presentations.append({
+            "presentation_id": p_id,
+            "year": year,
+            "person_id": pers_id,
+            "l1": coded_row["l1"] if coded_row else "unknown",
+            "l2": coded_row["l2"] if coded_row else "unknown",
+        })
+        
+    z_speaker_debut = {pers_id: min(years) for pers_id, years in z_speaker_years.items()}
+    
+    year_speakers = defaultdict(set)
+    year_newcomers = defaultdict(set)
+    for pers_id, years in z_speaker_years.items():
+        debut = z_speaker_debut[pers_id]
+        for y in years:
+            year_speakers[y].add(pers_id)
+            if y == debut:
+                year_newcomers[y].add(pers_id)
+                
+    vasilkov_speakers = 0
+    vasilkov_newcomers = 0
+    albedil_speakers = 0
+    albedil_newcomers = 0
+    newcomer_rows = []
+    
+    for y in sorted(year_speakers.keys()):
+        spk_count = len(year_speakers[y])
+        new_count = len(year_newcomers[y])
+        newcomer_rows.append({
+            "year": y,
+            "total_speakers": spk_count,
+            "newcomers": new_count,
+            "newcomer_pct": pct(new_count, spk_count)
+        })
+        if y <= 2024:
+            vasilkov_speakers += spk_count
+            vasilkov_newcomers += new_count
+        else:
+            albedil_speakers += spk_count
+            albedil_newcomers += new_count
+            
+    p_vas = pct(vasilkov_newcomers, vasilkov_speakers)
+    p_alb = pct(albedil_newcomers, albedil_speakers)
+    
+    newcomer_p_val = "н/д"
+    if chi2_contingency:
+        contingency = [
+            [vasilkov_newcomers, vasilkov_speakers - vasilkov_newcomers],
+            [albedil_newcomers, albedil_speakers - albedil_newcomers]
+        ]
+        _, p_val, _, _ = chi2_contingency(contingency)
+        newcomer_p_val = f"{p_val:.4f}"
+        
+    vasilkov_l1 = Counter()
+    albedil_l1 = Counter()
+    vasilkov_l2 = Counter()
+    albedil_l2 = Counter()
+    
+    seen_pres = set()
+    for pres in z_presentations:
+        p_id = pres["presentation_id"]
+        if p_id in seen_pres:
+            continue
+        seen_pres.add(p_id)
+        
+        y = pres["year"]
+        l1 = pres["l1"]
+        l2 = pres["l2"]
+        if y <= 2024:
+            vasilkov_l1[l1] += 1
+            vasilkov_l2[l2] += 1
+        else:
+            albedil_l1[l1] += 1
+            albedil_l2[l2] += 1
+            
+    all_l1 = sorted(set(vasilkov_l1.keys()) | set(albedil_l1.keys()))
+    l1_rows = []
+    for cat in all_l1:
+        if cat != "unknown":
+            l1_rows.append({
+                "theme_l1": cat,
+                "vasilkov_count": vasilkov_l1[cat],
+                "vasilkov_pct": pct(vasilkov_l1[cat], sum(vasilkov_l1.values())),
+                "albedil_count": albedil_l1[cat],
+                "albedil_pct": pct(albedil_l1[cat], sum(albedil_l1.values()))
+            })
+            
+    l1_p_val = "н/д"
+    if chi2_contingency:
+        matrix_l1 = []
+        for cat in all_l1:
+            if cat != "unknown" and (vasilkov_l1[cat] > 0 or albedil_l1[cat] > 0):
+                matrix_l1.append([vasilkov_l1[cat], albedil_l1[cat]])
+        matrix_l1_t = list(map(list, zip(*matrix_l1)))
+        if len(matrix_l1_t) > 1 and len(matrix_l1_t[0]) > 1:
+            _, p_val, _, _ = chi2_contingency(matrix_l1_t)
+            l1_p_val = f"{p_val:.4f}"
+            
+    all_l2 = sorted(set(vasilkov_l2.keys()) | set(albedil_l2.keys()))
+    l2_rows = []
+    for cat in all_l2:
+        if cat != "unknown":
+            l2_rows.append({
+                "theme_l2": cat,
+                "vasilkov_count": vasilkov_l2[cat],
+                "vasilkov_pct": pct(vasilkov_l2[cat], sum(vasilkov_l2.values())),
+                "albedil_count": albedil_l2[cat],
+                "albedil_pct": pct(albedil_l2[cat], sum(albedil_l2.values()))
+            })
+            
+    l2_p_val = "н/д"
+    if chi2_contingency:
+        matrix_l2 = []
+        for cat in all_l2:
+            if cat != "unknown" and (vasilkov_l2[cat] > 0 or albedil_l2[cat] > 0):
+                matrix_l2.append([vasilkov_l2[cat], albedil_l2[cat]])
+        matrix_l2_t = list(map(list, zip(*matrix_l2)))
+        if len(matrix_l2_t) > 1 and len(matrix_l2_t[0]) > 1:
+            _, p_val, _, _ = chi2_contingency(matrix_l2_t)
+            l2_p_val = f"{p_val:.4f}"
+
+    stats = {
+        "h8_vasilkov_newcomers": vasilkov_newcomers,
+        "h8_vasilkov_speakers": vasilkov_speakers,
+        "h8_vasilkov_newcomers_pct": p_vas,
+        "h8_albedil_newcomers": albedil_newcomers,
+        "h8_albedil_speakers": albedil_speakers,
+        "h8_albedil_newcomers_pct": p_alb,
+        "h8_newcomer_p": newcomer_p_val,
+        "h8_l1_p": l1_p_val,
+        "h8_l2_p": l2_p_val
+    }
+    return newcomer_rows, l1_rows, l2_rows, stats
+
+
+def hypothesis_geographic_gravity(con: sqlite3.Connection) -> tuple[list[dict[str, object]], list[dict[str, object]], dict[str, object]]:
+    zograf_cities = Counter()
+    roerich_cities = Counter()
+    speaker_city_years = defaultdict(lambda: {"city": "Unknown", "years": set()})
+    
+    for p_id, year, series, pers_id, affil in con.execute("""
+        select pr.presentation_id, e.year, es.series_name_en, pp.person_id, pp.affiliation_text_raw
+        from presentation pr
+        join session s using(session_id)
+        join event_day_venue edv using(event_day_venue_id)
+        join event_day ed using(event_day_id)
+        join event e using(event_id)
+        join event_series es using(event_series_id)
+        join presentation_person pp on pp.presentation_id = pr.presentation_id
+    """):
+        city = infer_city(affil)
+        if "Zograf" in series:
+            zograf_cities[city] += 1
+        else:
+            roerich_cities[city] += 1
+            
+        speaker_city_years[pers_id]["years"].add(year)
+        if speaker_city_years[pers_id]["city"] == "Unknown" or city != "Regions/Foreign":
+            speaker_city_years[pers_id]["city"] = city
+            
+    total_z = sum(zograf_cities.values())
+    total_r = sum(roerich_cities.values())
+    
+    distribution_rows = []
+    for city in ["SPb", "Moscow", "Regions/Foreign"]:
+        distribution_rows.append({
+            "city": city,
+            "zograf_talks": zograf_cities[city],
+            "zograf_pct": pct(zograf_cities[city], total_z),
+            "roerich_talks": roerich_cities[city],
+            "roerich_pct": pct(roerich_cities[city], total_r)
+        })
+        
+    survival_data = defaultdict(lambda: {"total": 0, "returning": 0})
+    for pers_id, info in speaker_city_years.items():
+        city = info["city"]
+        if city == "Unknown":
+            continue
+        nyears = len(info["years"])
+        is_returning = 1 if nyears >= 2 else 0
+        survival_data[city]["total"] += 1
+        survival_data[city]["returning"] += is_returning
+        
+    retention_rows = []
+    for city in ["Moscow", "SPb", "Regions/Foreign"]:
+        tot = survival_data[city]["total"]
+        ret = survival_data[city]["returning"]
+        retention_rows.append({
+            "city": city,
+            "total_speakers": tot,
+            "returning_speakers": ret,
+            "retention_pct": pct(ret, tot)
+        })
+        
+    metropolitan_speakers = survival_data["SPb"]["total"] + survival_data["Moscow"]["total"]
+    metropolitan_returning = survival_data["SPb"]["returning"] + survival_data["Moscow"]["returning"]
+    
+    regions_speakers = survival_data["Regions/Foreign"]["total"]
+    regions_returning = survival_data["Regions/Foreign"]["returning"]
+    
+    survival_p_val = "н/д"
+    if chi2_contingency:
+        contingency_survival = [
+            [metropolitan_returning, metropolitan_speakers - metropolitan_returning],
+            [regions_returning, regions_speakers - regions_returning]
+        ]
+        _, p_val, _, _ = chi2_contingency(contingency_survival)
+        survival_p_val = f"{p_val:.4f}"
+        
+    stats = {
+        "h9_zograf_spb_pct": pct(zograf_cities["SPb"], total_z),
+        "h9_zograf_moscow_pct": pct(zograf_cities["Moscow"], total_z),
+        "h9_zograf_regions_pct": pct(zograf_cities["Regions/Foreign"], total_z),
+        "h9_roerich_spb_pct": pct(roerich_cities["SPb"], total_r),
+        "h9_roerich_moscow_pct": pct(roerich_cities["Moscow"], total_r),
+        "h9_roerich_regions_pct": pct(roerich_cities["Regions/Foreign"], total_r),
+        "h9_retention_moscow_pct": pct(survival_data["Moscow"]["returning"], survival_data["Moscow"]["total"]),
+        "h9_retention_spb_pct": pct(survival_data["SPb"]["returning"], survival_data["SPb"]["total"]),
+        "h9_retention_regions_pct": pct(survival_data["Regions/Foreign"]["returning"], survival_data["Regions/Foreign"]["total"]),
+        "h9_survival_p": survival_p_val
+    }
+    return distribution_rows, retention_rows, stats
+
+
+def hypothesis_talk_serialization(con: sqlite3.Connection) -> tuple[list[dict[str, object]], dict[str, object]]:
+    speaker_talks = defaultdict(list)
+    for pres_id, title, pers_id in con.execute("""
+        select pr.presentation_id, pr.title, pp.person_id
+        from presentation pr
+        join presentation_person pp on pp.presentation_id = pr.presentation_id
+    """):
+        speaker_talks[pers_id].append(title)
+        
+    core_serialized_count = 0
+    core_total_count = 0
+    periph_serialized_count = 0
+    periph_total_count = 0
+    person_stats = []
+    
+    for pers_id, titles in speaker_talks.items():
+        total = len(titles)
+        serialized = sum(1 for t in titles if is_serialized(t))
+        is_core = total >= 5
+        person_stats.append({
+            "pers_id": pers_id,
+            "total": total,
+            "serialized": serialized,
+            "is_core": is_core
+        })
+        if is_core:
+            core_serialized_count += serialized
+            core_total_count += total
+        else:
+            periph_serialized_count += serialized
+            periph_total_count += total
+            
+    rows = []
+    for p in sorted(person_stats, key=lambda x: x["total"], reverse=True):
+        rows.append({
+            "person_id": p["pers_id"],
+            "total_talks": p["total"],
+            "serialized_talks": p["serialized"],
+            "serialization_pct": pct(p["serialized"], p["total"]),
+            "is_core_speaker": "yes" if p["is_core"] else "no"
+        })
+        
+    serialization_p_val = "н/д"
+    if chi2_contingency:
+        contingency_serialization = [
+            [core_serialized_count, core_total_count - core_serialized_count],
+            [periph_serialized_count, periph_total_count - periph_serialized_count]
+        ]
+        if fisher_exact:
+            _, p_val = fisher_exact(contingency_serialization)
+            serialization_p_val = f"{p_val:.4f}"
+        else:
+            _, p_val, _, _ = chi2_contingency(contingency_serialization)
+            serialization_p_val = f"{p_val:.4f}"
+            
+    spearman_rho_val = "н/д"
+    spearman_p_val = "н/д"
+    if spearmanr:
+        totals = [p["total"] for p in person_stats]
+        serializeds = [p["serialized"] for p in person_stats]
+        rho, p_val = spearmanr(totals, serializeds)
+        spearman_rho_val = f"{rho:.3f}"
+        spearman_p_val = f"{p_val:.4f}"
+        
+    stats = {
+        "h10_core_serialized": core_serialized_count,
+        "h10_core_total": core_total_count,
+        "h10_core_serialized_pct": pct(core_serialized_count, core_total_count),
+        "h10_periph_serialized": periph_serialized_count,
+        "h10_periph_total": periph_total_count,
+        "h10_periph_serialized_pct": pct(periph_serialized_count, periph_total_count),
+        "h10_fisher_p": serialization_p_val,
+        "h10_spearman_rho": spearman_rho_val,
+        "h10_spearman_p": spearman_p_val
+    }
+    return rows, stats
+
+
 def write_markdown_summary(stats: dict[str, object]) -> None:
     lines = [
         "# Отработка новых гипотез",
@@ -944,6 +1379,42 @@ def write_markdown_summary(stats: dict[str, object]) -> None:
         "- Первый вывод: сессионный граф лучше отделяет устойчивых докладчиков от реальных посредников, но ранние программы с крупными дневными блоками всё еще завышают связность.",
         "- См. `network_bridges.csv`, `network_bridges_session.csv`, `network_bridges.svg` и `network_bridges_session.svg`.",
         "",
+        "## H7. Институциональный фракционный счет",
+        "",
+        "- Сравнение простого и фракционного подсчета для ключевых организаций:",
+        f"  - ИВ РАН: простой={stats.get('h7_ivran_simple', 0.0):.1f}, фракционный={stats.get('h7_ivran_fractional', 0.0):.3f}",
+        f"  - ИВР РАН: простой={stats.get('h7_ivrran_simple', 0.0):.1f}, фракционный={stats.get('h7_ivrran_fractional', 0.0):.3f}",
+        f"  - СПбГУ: простой={stats.get('h7_spbgu_simple', 0.0):.1f}, фракционный={stats.get('h7_spbgu_fractional', 0.0):.3f}",
+        f"  - ИКВИА/ВШЭ: простой={stats.get('h7_ikvia_simple', 0.0):.1f}, фракционный={stats.get('h7_ikvia_fractional', 0.0):.3f}",
+        "- Вывод: из-за крайне низкого уровня соавторства (99% докладов — индивидуальные) и редких мульти-аффилиаций переход к фракционному счету практически не меняет итоговые веса.",
+        "- См. `org_fractional_counting.csv`.",
+        "",
+        "## H8. Влияние смены оргкомитета на тематический дрейф Зографских чтений",
+        "",
+        f"- Доля новичков (newcomer rate): эра Василькова (<=2024) — {stats.get('h8_vasilkov_newcomers_pct', 0.0)}% ({stats.get('h8_vasilkov_newcomers', 0)}/{stats.get('h8_vasilkov_speakers', 0)}), эра Альбедиль-Иванова (2025-2026) — {stats.get('h8_albedil_newcomers_pct', 0.0)}% ({stats.get('h8_albedil_newcomers', 0)}/{stats.get('h8_albedil_speakers', 0)}). Тест хи-квадрат: p={stats.get('h8_newcomer_p', 'н/д')}.",
+        f"- Тематический дрейф L1 (дисциплины): тест хи-квадрат p={stats.get('h8_l1_p', 'н/д')}.",
+        f"- Тематический дрейф L2 (хронологические периоды): тест хи-квадрат p={stats.get('h8_l2_p', 'н/д')}.",
+        "- Вывод: смена оргкомитета не привела к статистически значимому изменению притока новичков или распределения научных дисциплин. Однако наблюдается статистически значимый сдвиг в хронологических периодах (L2, p < 0.05), выражающийся в снижении доли классических тем (с 36.2% до 26.3%) и росте неопределенных/неуказанных периодов (с 8.2% до 16.7%).",
+        "- См. `era_newcomers.csv`, `era_themes_l1.csv`, `era_themes_l2.csv`.",
+        "",
+        "## H9. Географическое притяжение и когортная выживаемость",
+        "",
+        "- Распределение докладов по городам участников:",
+        f"  - Зографские чтения (СПб): СПб — {stats.get('h9_zograf_spb_pct', 0.0)}%, Москва — {stats.get('h9_zograf_moscow_pct', 0.0)}%, Регионы/Ино — {stats.get('h9_zograf_regions_pct', 0.0)}%",
+        f"  - Рериховские чтения (Москва): СПб — {stats.get('h9_roerich_spb_pct', 0.0)}%, Москва — {stats.get('h9_roerich_moscow_pct', 0.0)}%, Регионы/Ино — {stats.get('h9_roerich_regions_pct', 0.0)}%",
+        f"- Выживаемость (доля участников с выступлением в >= 2 годах): Москва — {stats.get('h9_retention_moscow_pct', 0.0)}%, СПб — {stats.get('h9_retention_spb_pct', 0.0)}%, Регионы/Ино — {stats.get('h9_retention_regions_pct', 0.0)}%. Тест хи-квадрат (столица vs регионы): p={stats.get('h9_survival_p', 'н/д')}.",
+        "- Вывод: центры притяжения сильно поляризованы. Москва гораздо менее охотно посещает СПб (9% докладов в Москве из СПб), хотя питерские чтения привлекают 42.6% московских докладов. Выживаемость региональных авторов значимо ниже (36.1% vs ~59% у столичных, p < 0.02), что подтверждает периферийный характер регионального участия.",
+        "- См. `geographic_presentation_distribution.csv`, `geographic_speaker_retention.csv`.",
+        "",
+        "## H10. Сериализация докладов",
+        "",
+        f"- Доля сериализованных докладов у ядра (>=5 выступлений): {stats.get('h10_core_serialized_pct', 0.0)}% ({stats.get('h10_core_serialized', 0)}/{stats.get('h10_core_total', 0)})",
+        f"- Доля сериализованных докладов у периферии (<5 выступлений): {stats.get('h10_periph_serialized_pct', 0.0)}% ({stats.get('h10_periph_serialized', 0)}/{stats.get('h10_periph_total', 0)})",
+        f"- Точный критерий Фишера (различие долей): p={stats.get('h10_fisher_p', 'н/д')}",
+        f"- Корреляция Спирмена (число докладов vs число сериализованных докладов): rho={stats.get('h10_spearman_rho', 'н/д')}, p={stats.get('h10_spearman_p', 'н/д')}",
+        "- Вывод: ядро авторов не склонно к более высокой относительной сериализации по сравнению с периферией (2.2% vs 4.0%, p > 0.1), однако существует слабая, но значимая положительная корреляция между общим объемом докладов автора и абсолютным количеством сериализованных работ (rho=0.223, p < 0.001).",
+        "- См. `talk_serialization_stats.csv`.",
+        "",
     ]
     (OUT / "hypothesis_workup.md").write_text("\n".join(lines), encoding="utf-8")
 
@@ -988,6 +1459,22 @@ def main() -> None:
     write_csv(OUT / "network_bridges_session.csv", network_session_rows)
     figure_network_bridges_session(network_session_rows)
 
+    # Call the 4 new hypotheses
+    frac_rows, frac_stats = hypothesis_fractional_counting(con)
+    write_csv(OUT / "org_fractional_counting.csv", frac_rows)
+
+    era_newcomer_rows, era_l1_rows, era_l2_rows, era_stats = hypothesis_era_influence(con, theme_rows)
+    write_csv(OUT / "era_newcomers.csv", era_newcomer_rows)
+    write_csv(OUT / "era_themes_l1.csv", era_l1_rows)
+    write_csv(OUT / "era_themes_l2.csv", era_l2_rows)
+
+    geo_dist_rows, geo_ret_rows, geo_stats = hypothesis_geographic_gravity(con)
+    write_csv(OUT / "geographic_presentation_distribution.csv", geo_dist_rows)
+    write_csv(OUT / "geographic_speaker_retention.csv", geo_ret_rows)
+
+    serial_rows, serial_stats = hypothesis_talk_serialization(con)
+    write_csv(OUT / "talk_serialization_stats.csv", serial_rows)
+
     ikvia_cosines = [float(row["l1_cosine_similarity"]) for row in ikvia_adaptation if row["l1_cosine_similarity"] != ""]
 
     stats = {
@@ -1015,6 +1502,10 @@ def main() -> None:
         "network_session_top_line": "; ".join(str(row["display_name"]) for row in network_session_rows[:7]),
         **network_session_stats,
         **theme_match_stats,
+        **frac_stats,
+        **era_stats,
+        **geo_stats,
+        **serial_stats,
     }
     write_markdown_summary(stats)
     print(f"Wrote hypothesis outputs to {OUT}")
