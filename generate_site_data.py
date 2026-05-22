@@ -182,8 +182,32 @@ def load_theme_mapping():
         pass
     return mapping
 
-# Pre-load the mapping once globally
+def load_gumilyov_mapping():
+    mapping = {}
+    try:
+        with open("analytics_output/gumilyov_scale.csv", encoding="utf-8") as f:
+            for row in csv.DictReader(f):
+                key = (str(row["year"]).strip(), str(row["series_id"]).strip(), str(row["title"]).strip())
+                mapping[key] = row["gumilyov_level"]
+    except FileNotFoundError:
+        pass
+    return mapping
+
+def load_tags_mapping():
+    mapping = {}
+    try:
+        with open("analytics_output/presentation_tags.csv", encoding="utf-8") as f:
+            for row in csv.DictReader(f):
+                tags = row["tags"].split("|") if row["tags"] else []
+                mapping[row["presentation_id"]] = tags
+    except FileNotFoundError:
+        pass
+    return mapping
+
+# Pre-load the mappings once globally
 _THEME_MAPPING = load_theme_mapping()
+_GUMILYOV_MAPPING = load_gumilyov_mapping()
+_TAGS_MAPPING = load_tags_mapping()
 
 def get_theme_meta(code):
     """Return dict with ru/en labels for a given L1 code."""
@@ -386,6 +410,10 @@ def main():
             t_code = theme["code"]
             theme_counts[t_code] = theme_counts.get(t_code, 0) + 1
             
+            # Gumilyov scale
+            g_key = (str(year).strip(), str(series).strip(), cleaned_title)
+            g_scale = int(_GUMILYOV_MAPPING.get(g_key, 2)) # Default to 2 (Regional)
+            
             # Day of the week calculation
             day_of_week = get_day_of_week(calendar_date)
             
@@ -407,6 +435,8 @@ def main():
             is_first = (order_idx == 0)
             is_last = (order_idx == len(s_list) - 1)
             
+            p_tags = _TAGS_MAPPING.get(str(pres_id), [])
+            
             talks.append({
                 "presentation_id": pres_id,
                 "title": cleaned_title,
@@ -415,6 +445,8 @@ def main():
                 "affiliation": affiliation,
                 "geography": geo,
                 "theme": theme,
+                "gumilyov_scale": g_scale,
+                "tags": p_tags,
                 "is_online": bool(is_online),
                 "date": calendar_date,
                 "day_of_week": day_of_week,
@@ -531,6 +563,12 @@ def main():
         
         # Classify theme
         theme = classify_theme(year_val, series, cleaned_title)
+        
+        # Gumilyov scale
+        g_key = (str(year_val).strip(), str(series).strip(), cleaned_title)
+        g_scale = int(_GUMILYOV_MAPPING.get(g_key, 2))
+
+        p_tags = _TAGS_MAPPING.get(str(pres_id), [])
 
         series_key = "Zograf" if "Zograf" in series else "Roerich"
         timeline[year][series_key].append({
@@ -545,6 +583,8 @@ def main():
             "geography": geo,
             "title": cleaned_title,
             "theme": theme,
+            "gumilyov_scale": g_scale,
+            "tags": p_tags,
             "is_online": bool(is_online),
             "venue": venue_name,
             "day": day_label,

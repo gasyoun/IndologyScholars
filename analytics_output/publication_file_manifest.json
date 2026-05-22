@@ -6,7 +6,7 @@
     "pipeline_version": "2026-05-21",
     "generator": "generate_publication_pages.py"
   },
-  "file_count": 617,
+  "file_count": 620,
   "files": [
     {
       "path": "404.html",
@@ -74,6 +74,16 @@
       "sha256": "a6fed1a6fbca4a9e805d3dc9a3287049a1530be660c7de7d90ec94eff465173a"
     },
     {
+      "path": "analytics_output/gumilyov_scale.csv",
+      "size_bytes": 121761,
+      "sha256": "78c99533a0529a5a9d397433a1333b10cea96b890c04da413e61f83cb5e2e5af"
+    },
+    {
+      "path": "analytics_output/gumilyov_video_comparison.csv",
+      "size_bytes": 27404,
+      "sha256": "2d9f84ce828c9af805d0731a3b259b5495ecef52da42f3b2366dc4d8149103e2"
+    },
+    {
       "path": "analytics_output/id_migration_presentation.csv",
       "size_bytes": 216718,
       "sha256": "c335f19ca4a0edf4962f2314a9f86e323d107273923dcdc45d4153eb1f1104e7"
@@ -137,6 +147,11 @@
       "path": "analytics_output/presentation_id_manifest.csv",
       "size_bytes": 345759,
       "sha256": "0c6959d42bda385f2ee4ebc03c2b4edd5b69d29ca191c9782e382e98eba0d956"
+    },
+    {
+      "path": "analytics_output/presentation_tags.csv",
+      "size_bytes": 53661,
+      "sha256": "79dccf59428da8cc218fddab6c0defa5677789a1aa967febce1e5902784df2b9"
     },
     {
       "path": "analytics_output/rinc_lookup_queue.csv",
@@ -466,7 +481,7 @@
     {
       "path": "download-data.html",
       "size_bytes": 18113,
-      "sha256": "cb4307f178d50df2456131115ca1b493763f6189cbda29b68c1389e1171f5dea"
+      "sha256": "866e4a53667938f627b0688519d902f8ddc28403005c68c766321dd9ccd21636"
     },
     {
       "path": "en.html",
@@ -480,8 +495,8 @@
     },
     {
       "path": "index.html",
-      "size_bytes": 146515,
-      "sha256": "7742552df607633517ebee916cc98dffc7b74010426ce259f9835b07444f2887"
+      "size_bytes": 148215,
+      "sha256": "ac2f5ffdeb535646b2f36d7e392ab203fe2cde79b6a4ca3ada29d316e8a7b0b2"
     },
     {
       "path": "institutions/gosudarstvennyi-ermitazh.html",
@@ -3025,8 +3040,8 @@
     },
     {
       "path": "site_data.json",
-      "size_bytes": 1773164,
-      "sha256": "344fab59ae57a49831c1bcf50d3c9f9432e6d39ebaa55e86b27af42d275762f6"
+      "size_bytes": 1910680,
+      "sha256": "ef044c541f31a2b3f2d4ee762489968315f93fb0b8d6066dba336ba51d1b2645"
     },
     {
       "path": "sitemap.xml",

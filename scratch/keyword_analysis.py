@@ -46,7 +46,8 @@ def preprocess_titles(data):
         
     return processed
 
-def run_nmf_clustering(texts, n_topics=6, n_top_words=20):
+def run_nmf_clustering(texts_data, n_topics=6, n_top_words=20):
+    texts = [item[2] for item in texts_data]
     tfidf_vectorizer = TfidfVectorizer(max_df=0.90, min_df=2, use_idf=True)
     tfidf_matrix = tfidf_vectorizer.fit_transform(texts)
     
@@ -63,7 +64,23 @@ def run_nmf_clustering(texts, n_topics=6, n_top_words=20):
             "topic_idx": topic_idx + 1,
             "keywords": top_features
         })
-    return topics
+        
+    # Also get top 3 keywords per document based on tfidf scores
+    doc_tags = {}
+    import numpy as np
+    
+    # tfidf_matrix is sparse, convert row by row
+    for doc_idx, text_tuple in enumerate(texts_data):
+        row = tfidf_matrix.getrow(doc_idx).toarray()[0]
+        if row.sum() == 0:
+            doc_tags[text_tuple[0]] = [] # no tags
+            continue
+        # Get top 3 words
+        top_indices = row.argsort()[-3:][::-1]
+        tags = [tfidf_feature_names[i] for i in top_indices if row[i] > 0]
+        doc_tags[text_tuple[0]] = tags
+
+    return topics, doc_tags
 
 def main():
     print("Loading titles from DB...")
@@ -71,24 +88,34 @@ def main():
     
     print("Lemmatizing titles...")
     processed_data = preprocess_titles(data)
-    texts = [item[2] for item in processed_data if item[2]]
+    valid_data = [item for item in processed_data if item[2]]
     
-    print(f"Extracted {len(texts)} valid processed titles.")
+    print(f"Extracted {len(valid_data)} valid processed titles.")
     
     n_topics = 6
     print(f"Running NMF for {n_topics} clusters...")
-    topics = run_nmf_clustering(texts, n_topics=n_topics, n_top_words=25)
+    topics, doc_tags = run_nmf_clustering(valid_data, n_topics=n_topics, n_top_words=25)
     
     OUT_MD.parent.mkdir(exist_ok=True)
     with open(OUT_MD, "w", encoding="utf-8") as f:
         f.write("# Keyword Clusters (TF-IDF + NMF)\n\n")
-        f.write(f"Based on `{len(texts)}` presentation titles, analyzed via pymorphy3.\n\n")
+        f.write(f"Based on `{len(valid_data)}` presentation titles, analyzed via pymorphy3.\n\n")
         
         for t in topics:
             f.write(f"### Cluster {t['topic_idx']}\n")
             f.write(f"- **Keywords:** {', '.join(t['keywords'])}\n\n")
             
     print(f"Wrote clusters to {OUT_MD}")
+    
+    # Write doc tags
+    import csv
+    tags_out = ROOT / "analytics_output" / "presentation_tags.csv"
+    with open(tags_out, "w", encoding="utf-8", newline="") as f:
+        writer = csv.writer(f)
+        writer.writerow(["presentation_id", "tags"])
+        for pid, tags in doc_tags.items():
+            writer.writerow([pid, "|".join(tags)])
+    print(f"Wrote doc tags to {tags_out}")
 
 if __name__ == "__main__":
     main()

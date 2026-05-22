@@ -1753,9 +1753,25 @@ CREATE TABLE presentation_person (
                         orderPillHtml += `<span class="badge badge-roerich" style="font-size: 0.7rem; text-transform: none; margin-left: 0.5rem;">🎖️ ${t.lastTalkBadge}</span>`;
                     }
                     
-                    const talkThemeCode = talk.theme ? talk.theme.code : 'History';
-                    const talkThemeName = talk.theme ? talk.theme[currentLang] : (currentLang === 'ru' ? 'История и этнография' : 'History & Ethnography');
+                    const talkThemeCode = talk.theme ? talk.theme.code : 'unspecified';
+                    const talkThemeName = talk.theme ? talk.theme[currentLang] : (currentLang === 'ru' ? 'Разное' : 'Other');
                     const themeBadgeHtml = `<span class="badge badge-theme theme-${talkThemeCode}" style="font-size: 0.7rem; text-transform: none; margin-left: 0.5rem; font-weight: 600;">${talkThemeName}</span>`;
+
+                    // Gumilyov scale badge
+                    const gScale = talk.gumilyov_scale || 2;
+                    let gScaleName = "";
+                    let gScaleColor = "";
+                    if (gScale === 1) {
+                        gScaleName = currentLang === 'ru' ? 'Микро' : 'Micro';
+                        gScaleColor = '#4b5563'; // gray
+                    } else if (gScale === 2) {
+                        gScaleName = currentLang === 'ru' ? 'Региональный' : 'Regional';
+                        gScaleColor = '#3b82f6'; // blue
+                    } else {
+                        gScaleName = currentLang === 'ru' ? 'Глобальный' : 'Global';
+                        gScaleColor = '#8b5cf6'; // purple
+                    }
+                    const gumilyovBadgeHtml = `<span class="badge" title="Уровень обобщения по Л.Н. Гумилеву" style="font-size: 0.7rem; text-transform: none; margin-left: 0.5rem; font-weight: 600; background: ${gScaleColor}22; color: ${gScaleColor}; border: 1px solid ${gScaleColor}44;">L${gScale} ${gScaleName}</span>`;
 
                     // Clickable city tag
                     let cityHtml = '';
@@ -1779,6 +1795,13 @@ CREATE TABLE presentation_person (
                         const regex = new RegExp(`(${safeSearch})`, 'gi');
                         displayTitle = displayTitle.replace(regex, '<mark style="background-color: rgba(139, 92, 246, 0.5); color: #fff; padding: 0 2px; border-radius: 2px;">$1</mark>');
                     }
+                    
+                    let tagsHtml = '';
+                    if (talk.tags && talk.tags.length > 0) {
+                        tagsHtml = `<div style="margin-top: 0.5rem; display: flex; flex-wrap: wrap; gap: 0.25rem;">
+                            ${talk.tags.map(tag => `<span style="font-size: 0.65rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 0.1rem 0.4rem; border-radius: 4px; color: var(--text-secondary);">#${tag}</span>`).join('')}
+                        </div>`;
+                    }
 
                     return `
                         <div class="talk-item">
@@ -1787,6 +1810,7 @@ CREATE TABLE presentation_person (
                                 ${talk.is_online ? `<span class="badge badge-online">${t.onlineBadge}</span>` : ''}
                                 ${orderPillHtml}
                                 ${themeBadgeHtml}
+                                ${gumilyovBadgeHtml}
                             </div>
                             <div class="talk-meta" style="margin-top: 0.5rem;">
                                 <span>🏛️ ${currentLang === 'ru' ? 'Выступление на' : 'Presented at'} <strong>${translatedSeries}</strong> (${talk.year})</span>
