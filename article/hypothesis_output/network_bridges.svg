@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1000" height="620" viewBox="0 0 1000 620">
 <style>text{font-family:Arial,'Liberation Sans',sans-serif;fill:#1f2933}.title{font-size:20px;font-weight:700}.sub{font-size:13px;fill:#52616b}.axis{font-size:13px}.small{font-size:12px}.label{font-size:11px}</style>
-<text x="32.0" y="30.0" class="title" text-anchor="start">Сетевые посредники по совместному участию в событиях</text>
+<text x="32.0" y="30.0" class="title" text-anchor="start">Событийная центральность участников</text>
 <text x="32.0" y="52.0" class="sub" text-anchor="start">Betweenness в графе, где ребро означает участие в одном и том же годовом событии.</text>
 <text x="238.0" y="93.0" class="small" text-anchor="end">Тавастшерна С. С.</text>
 <rect x="250.0" y="76.0" width="650.0" height="18.0" fill="#7b5ea7" stroke="none" opacity="1.0"/>

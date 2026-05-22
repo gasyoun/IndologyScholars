@@ -2,8 +2,8 @@ person_id,display_name,zograf_talks,roerich_talks,zograf_l1,roerich_l1,same_top_
 PERS_41d6aa73,Воробьева Дарья Николаевна,2,8,art_archaeology:2,art_archaeology:8,yes,1.0
 PERS_efc88709,Канаева Наталия Алексеевна,3,3,philosophy:3,philosophy:3,yes,1.0
 PERS_ced3d7b4,Молина Анна Вениаминовна,1,2,literature:1,literature:2,yes,1.0
-PERS_f074f69f,Александрова Наталия Владимировна,9,11,religion:7; art_archaeology:1; other:1,religion:9; art_archaeology:1; linguistics:1,yes,0.984
-PERS_05d56645,Бабин Александр Николаевич,4,6,art_archaeology:3; history:1,art_archaeology:4; tibetology:1; history:1,yes,0.969
-PERS_93e2effb,Комиссаров Дмитрий Алексеевич,4,1,religion:2; literature:1; other:1,religion:1,yes,0.816
-PERS_9f398436,Куликов Леонид Игоревич,4,3,linguistics:2; literature:1; religion:1,linguistics:3,yes,0.816
+PERS_f074f69f,Александрова Наталия Владимировна,9,11,religion:7; other:1; art_archaeology:1,religion:9; linguistics:1; art_archaeology:1,yes,0.984
+PERS_05d56645,Бабин Александр Николаевич,4,6,art_archaeology:3; history:1,art_archaeology:4; history:1; tibetology:1,yes,0.969
+PERS_93e2effb,Комиссаров Дмитрий Алексеевич,4,1,religion:2; other:1; literature:1,religion:1,yes,0.816
+PERS_9f398436,Куликов Леонид Игоревич,4,3,linguistics:2; religion:1; literature:1,linguistics:3,yes,0.816
 PERS_4fff9d16,Минаева Маргарита Денисовна,1,2,other:1,literature:2,no,0.0

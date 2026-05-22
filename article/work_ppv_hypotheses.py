@@ -536,8 +536,8 @@ def figure_age_at_debut(rows: list[dict[str, object]]) -> None:
         return top + (1 - (y - ymin) / (ymax - ymin)) * plot_h
 
     body = [
-        text(32, 32, "Возраст первого выступления", "title"),
-        text(32, 54, "Только участники с подтвержденным годом рождения; цвет показывает охват площадок.", "sub"),
+        text(32, 32, "Возраст первого наблюдаемого выступления в корпусе", "title"),
+        text(32, 54, "Только участники с подтвержденным годом рождения; нисходящий тренд статистически неустойчив.", "sub"),
         rect(left, top, plot_w, plot_h, "#fff", "#cfd8e3"),
     ]
     for year in range(xmin, xmax + 1, 2):
@@ -658,8 +658,8 @@ def figure_video_coverage(year_rows: list[dict[str, object]]) -> None:
     years = [int(r["year"]) for r in rows]
     ymax = max(int(r["presentations"]) for r in rows) + 8
     body = [
-        text(32, 30, "Видео-доступность Зографских чтений", "title"),
-        text(32, 52, "Темная часть столбца — доклады, связанные с публичной записью в базе.", "sub"),
+        text(32, 30, "Видео-доступность Зографских чтений: привязанные записи", "title"),
+        text(32, 52, "Темная часть столбца — доклады, связанные с публичной записью в базе; привязка неполная.", "sub"),
         rect(left, top, plot_w, plot_h, "#fff", "#cfd8e3"),
     ]
     for y in range(0, ymax + 1, 15):
@@ -860,7 +860,7 @@ def figure_network_bridges(rows: list[dict[str, object]]) -> None:
     left, top_y, plot_w, row_h = 250, 76, 650, 28
     max_val = max(float(r["betweenness"]) for r in top) or 1
     body = [
-        text(32, 30, "Сетевые посредники по совместному участию в событиях", "title"),
+        text(32, 30, "Событийная центральность участников", "title"),
         text(32, 52, "Betweenness в графе, где ребро означает участие в одном и том же годовом событии.", "sub"),
     ]
     colors = {"both": "#7b5ea7", "zograf_only": "#2f6fbb", "roerich_only": "#b8554b"}
@@ -880,8 +880,8 @@ def figure_network_bridges_session(rows: list[dict[str, object]]) -> None:
     left, top_y, plot_w, row_h = 250, 76, 650, 28
     max_val = max(float(r["session_betweenness"]) for r in top) or 1
     body = [
-        text(32, 30, "Сетевые посредники по совместным сессиям", "title"),
-        text(32, 52, "Betweenness в графе, где ребро означает участие в одной программной сессии.", "sub"),
+        text(32, 30, "Сессионная центральность участников", "title"),
+        text(32, 52, "Betweenness в графе, где ребро означает участие в одной программной сессии; результат предварительный.", "sub"),
     ]
     colors = {"both": "#7b5ea7", "zograf_only": "#2f6fbb", "roerich_only": "#b8554b"}
     for i, row in enumerate(top):

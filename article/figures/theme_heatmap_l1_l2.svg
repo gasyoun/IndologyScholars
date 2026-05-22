@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1180" height="730" viewBox="0 0 1180 730">
 <style>
 text{font-family:Arial,'Liberation Sans',sans-serif;fill:#1f2933}.small{font-size:12px}.axis{font-size:13px}.label{font-size:12px}.title{font-size:20px;font-weight:700}.subtitle{font-size:13px;fill:#52616b}.tick{stroke:#c9d2dc;stroke-width:1}.grid{stroke:#edf1f5;stroke-width:1}</style>
-<text x="34.0" y="32.0" class="title" text-anchor="start">Рис. 3. Тематическая матрица L1 × L2</text>
+<text x="34.0" y="32.0" class="title" text-anchor="start">Тематическая матрица L1 × L2</text>
 <text x="34.0" y="56.0" class="subtitle" text-anchor="start">Интенсивность ячейки — доля всех докладов данной площадки; подписи даны для ячеек ≥4%.</text>
 <text x="172.0" y="74.0" class="axis" text-anchor="start" font-weight="700">Зографские</text>
 <text x="203.0" y="104.0" class="small" text-anchor="middle">вед.</text>

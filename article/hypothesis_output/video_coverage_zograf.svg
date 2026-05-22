@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="900" height="520" viewBox="0 0 900 520">
 <style>text{font-family:Arial,'Liberation Sans',sans-serif;fill:#1f2933}.title{font-size:20px;font-weight:700}.sub{font-size:13px;fill:#52616b}.axis{font-size:13px}.small{font-size:12px}.label{font-size:11px}</style>
-<text x="32.0" y="30.0" class="title" text-anchor="start">Видео-доступность Зографских чтений</text>
-<text x="32.0" y="52.0" class="sub" text-anchor="start">Темная часть столбца — доклады, связанные с публичной записью в базе.</text>
+<text x="32.0" y="30.0" class="title" text-anchor="start">Видео-доступность Зографских чтений: привязанные записи</text>
+<text x="32.0" y="52.0" class="sub" text-anchor="start">Темная часть столбца — доклады, связанные с публичной записью в базе; привязка неполная.</text>
 <rect x="92.0" y="72.0" width="720.0" height="320.0" fill="#fff" stroke="#cfd8e3" opacity="1.0"/>
 <line x1="92.0" y1="392.0" x2="812.0" y2="392.0" stroke="#edf1f5" stroke-width="1.0"/>
 <text x="82.0" y="396.0" class="axis" text-anchor="end">0</text>

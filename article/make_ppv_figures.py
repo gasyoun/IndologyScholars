@@ -228,7 +228,7 @@ def figure_cross_cohort(person_series: dict[str, dict[str, PersonSeries]]) -> di
         points.append((z, r, total, balance, first, last, data["Zograf"].name, orient, color))
 
     body = [
-        text(34, 32, "Рис. 4. Перекрестная когорта: баланс участия на двух площадках", "title"),
+        text(34, 32, "Перекрестная когорта: баланс участия на двух площадках", "title"),
         text(
             34,
             56,
@@ -295,8 +295,8 @@ def figure_participant_dynamics(person_series: dict[str, dict[str, PersonSeries]
     summaries: dict[str, list[dict[str, float]]] = {}
     width, height = 1120, 760
     body = [
-        text(34, 32, "Рис. 1. Обновление состава: новички, ядро и повторные участники", "title"),
-        text(34, 56, "Столбцы показывают структуру участников по годам; линия — долю дебютантов.", "subtitle"),
+        text(34, 32, "Обновление состава: новички, ретроспективное ядро и повторные участники", "title"),
+        text(34, 56, "Столбцы показывают структуру участников по годам; линия — долю дебютантов и не соединяет лакуны.", "subtitle"),
     ]
     colors = {"new": "#7aa6d8", "core": "#2f6fbb", "repeat": "#aeb8c4"}
     panel_specs = [("Zograf", 90), ("Roerich", 420)]
@@ -344,8 +344,19 @@ def figure_participant_dynamics(person_series: dict[str, dict[str, PersonSeries]
             yy = top + plot_h - (pct / 100) * plot_h
             body.append(text(left + plot_w + 12, yy + 4, f"{pct}%", "axis", "start"))
 
+        markers = [(2020, "COVID", 14, 5, "start")]
+        if series == "Zograf":
+            markers.extend([(2024, "", 14, 5, "start"), (2026, "", 30, -5, "end")])
+        for year, label, dy, dx, anchor in markers:
+            if xmin <= year <= xmax:
+                x = left + (year - xmin + 0.5) / (xmax - xmin + 1) * plot_w
+                body.append(line(x, top, x, top + plot_h, "#d6a36a", 1.1, "4 4"))
+                if label:
+                    body.append(text(x + dx, top + dy, label, "axis", anchor))
+
         bar_w = plot_w / (xmax - xmin + 1) * 0.68
         prev_line = None
+        prev_year = None
         for row in rows:
             x = left + (row["year"] - xmin + 0.5) / (xmax - xmin + 1) * plot_w
             bottom = top + plot_h
@@ -354,10 +365,11 @@ def figure_participant_dynamics(person_series: dict[str, dict[str, PersonSeries]
                 body.append(rect(x - bar_w / 2, bottom - h, bar_w, h, colors[key]))
                 bottom -= h
             line_y = top + plot_h - (row["newcomer_pct"] / 100) * plot_h
-            if prev_line:
+            if prev_line and prev_year is not None and row["year"] == prev_year + 1:
                 body.append(line(prev_line[0], prev_line[1], x, line_y, "#8a4f7d", 2.2))
             body.append(circle(x, line_y, 3.5, "#8a4f7d"))
             prev_line = (x, line_y)
+            prev_year = row["year"]
 
         for year in range(xmin, xmax + 1, 2):
             x = left + (year - xmin + 0.5) / (xmax - xmin + 1) * plot_w
@@ -369,7 +381,7 @@ def figure_participant_dynamics(person_series: dict[str, dict[str, PersonSeries]
     legend = [
         ("новички", colors["new"]),
         ("прочие повторные", colors["repeat"]),
-        ("ядро ≥5 докладов", colors["core"]),
+        ("ретросп. ядро ≥5 докл.", colors["core"]),
         ("доля новичков", "#8a4f7d"),
     ]
     x = 96
@@ -380,7 +392,7 @@ def figure_participant_dynamics(person_series: dict[str, dict[str, PersonSeries]
         else:
             body.append(rect(x, legend_y - 16, 24, 14, color))
         body.append(text(x + 34, legend_y - 4, label, "small"))
-        x += 210
+        x += 230
 
     (OUT / "participant_dynamics.svg").write_text(svg(width, height, body), encoding="utf-8")
     return summaries
@@ -403,7 +415,7 @@ def figure_theme_heatmap() -> dict[str, dict[tuple[str, str], int]]:
 
     width, height = 1180, 730
     body = [
-        text(34, 32, "Рис. 3. Тематическая матрица L1 × L2", "title"),
+        text(34, 32, "Тематическая матрица L1 × L2", "title"),
         text(34, 56, "Интенсивность ячейки — доля всех докладов данной площадки; подписи даны для ячеек ≥4%.", "subtitle"),
     ]
     cell_w, cell_h = 62, 42
@@ -466,31 +478,36 @@ def figure_birth_year_coverage(person_series: dict[str, dict[str, PersonSeries]]
 
     width, height = 860, 520
     left, top, plot_w, plot_h = 110, 92, 640, 310
-    ymax = max(max(c.values()) for c in counts.values()) + 10
+    ymax = 100
     body = [
-        text(34, 32, "Рис. 2. Покрытие годом рождения зависит от частоты участия", "title"),
+        text(34, 32, "Покрытие годом рождения зависит от частоты участия", "title"),
         text(34, 56, "Неизвестные годы рождения сконцентрированы среди разовых и редких участников.", "subtitle"),
         rect(left, top, plot_w, plot_h, "#ffffff", "#cfd8e3"),
     ]
-    for y in range(0, ymax + 1, 20):
+    for y in range(0, ymax + 1, 25):
         yy = top + plot_h - y / ymax * plot_h
         body.append(line(left, yy, left + plot_w, yy, "#edf1f5"))
-        body.append(text(left - 12, yy + 4, y, "axis", "end"))
+        body.append(text(left - 12, yy + 4, f"{y}%", "axis", "end"))
 
     group_w = plot_w / len(buckets)
-    bar_w = group_w * 0.28
+    bar_w = group_w * 0.46
     colors = {"known": "#2f6fbb", "unknown": "#b8554b"}
     for i, (label, _) in enumerate(buckets):
         cx = left + group_w * (i + 0.5)
-        for j, group in enumerate(["known", "unknown"]):
+        total = counts["known"][label] + counts["unknown"][label]
+        bottom = top + plot_h
+        for group in ["unknown", "known"]:
             val = counts[group][label]
-            h = val / ymax * plot_h
-            x = cx + (j - 0.5) * bar_w * 1.25
-            body.append(rect(x - bar_w / 2, top + plot_h - h, bar_w, h, colors[group]))
-            body.append(text(x, top + plot_h - h - 6, val, "small", "middle"))
+            share = (val / total * 100) if total else 0
+            h = share / ymax * plot_h
+            body.append(rect(cx - bar_w / 2, bottom - h, bar_w, h, colors[group]))
+            if share >= 8:
+                body.append(text(cx, bottom - h / 2 + 4, f"{share:.0f}%", "small", "middle"))
+            bottom -= h
+        body.append(text(cx, top + plot_h - 100 / ymax * plot_h - 8, f"n={total}", "small", "middle"))
         body.append(text(cx, top + plot_h + 26, label, "axis", "middle"))
     body.append(text(left + plot_w / 2, height - 48, "Всего докладов/авторских участий у ученого", "axis", "middle"))
-    body.append(text(left - 54, top + plot_h / 2, "ученых", "small", "middle"))
+    body.append(rotated_text(left - 72, top + plot_h / 2, "доля ученых", cls="small"))
 
     legend_x, legend_y = 560, 110
     body.append(rect(legend_x - 16, legend_y - 24, 220, 78, "#ffffff", "#d8e0e8", 5, 0.94))

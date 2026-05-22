@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="980" height="600" viewBox="0 0 980 600">
 <style>text{font-family:Arial,'Liberation Sans',sans-serif;fill:#1f2933}.title{font-size:20px;font-weight:700}.sub{font-size:13px;fill:#52616b}.axis{font-size:13px}.small{font-size:12px}.label{font-size:11px}</style>
-<text x="32.0" y="32.0" class="title" text-anchor="start">Возраст первого выступления</text>
-<text x="32.0" y="54.0" class="sub" text-anchor="start">Только участники с подтвержденным годом рождения; цвет показывает охват площадок.</text>
+<text x="32.0" y="32.0" class="title" text-anchor="start">Возраст первого наблюдаемого выступления в корпусе</text>
+<text x="32.0" y="54.0" class="sub" text-anchor="start">Только участники с подтвержденным годом рождения; нисходящий тренд статистически неустойчив.</text>
 <rect x="82.0" y="78.0" width="800.0" height="410.0" fill="#fff" stroke="#cfd8e3" opacity="1.0"/>
 <line x1="82.0" y1="78.0" x2="82.0" y2="488.0" stroke="#edf1f5" stroke-width="1.0"/>
 <text x="82.0" y="512.0" class="axis" text-anchor="middle">2004</text>
