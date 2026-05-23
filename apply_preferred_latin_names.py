@@ -40,7 +40,7 @@ PREFERRED = {
     "PERS_6ae5c779": "Anastasia Fiveyskaya",     # Фивейская Анастасия Васильевна
     "PERS_72506535": "Anastasia Krylova",        # Крылова Анастасия Сергеевна
     "PERS_8516d1e4": "Marcis Gasuns",            # Гасунс Марцис Юрьевич (Mārcis Gasūns)
-    "PERS_8e117242": "Elena Yuditskaya",         # Е. А. Юдицкая (Елена Александровна, ORCID confirmed)
+    "PERS_8e117242": "Ekaterina Yuditskaya",         # Е. А. Юдицкая (Екатерина Алексеевна)
     "PERS_92868e4f": "Dmitry Zhutaev",           # Жутаев Дмитрий Игоревич
     "PERS_93e2effb": "Dmitry Komissarov",        # Комиссаров Дмитрий Алексеевич
     "PERS_9f398436": "Leonid Kulikov",           # Куликов Леонид Игоревич

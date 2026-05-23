@@ -46,16 +46,16 @@
     }
   ],
   "stats": {
-    "total_scholars": 226,
+    "total_scholars": 222,
     "total_presentations": 899,
     "total_events": 40,
     "years_covered": 20,
     "start_year": 2004,
     "end_year": 2026,
     "overlap_scholars": 39,
-    "zograf_only_scholars": 132,
-    "roerich_only_scholars": 55,
-    "person_rows": 226,
+    "zograf_only_scholars": 130,
+    "roerich_only_scholars": 53,
+    "person_rows": 222,
     "presentation_rows": 895,
     "event_rows": 40
   },
