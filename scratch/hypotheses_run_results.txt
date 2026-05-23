@@ -1,0 +1,55 @@
+--- H7: Fractional Counting ---
+Total org stats:
+  ИВ РАН: Simple=157.0, Fractional=155.000
+  ИВР РАН: Simple=5.0, Fractional=5.000
+  ИКВИА/ВШЭ: Simple=18.0, Fractional=16.000
+  СПбГУ: Simple=38.0, Fractional=38.000
+
+--- H8: Era Influence on Zograf Readings ---
+Era Newcomers:
+  Vasilkov Era (<=2024): 141/428 (32.9%)
+  Albedil-Ivanov Era (2025-2026): 30/116 (25.9%)
+  Newcomer Era Chi2: Chi2=1.808, p-value=0.1788
+Theme distributions L1:
+  art_archaeology: Vasilkov=18 (4.2%), Albedil=7 (6.1%)
+  ethnography: Vasilkov=20 (4.7%), Albedil=6 (5.3%)
+  history: Vasilkov=30 (7.0%), Albedil=13 (11.4%)
+  linguistics: Vasilkov=48 (11.3%), Albedil=13 (11.4%)
+  literature: Vasilkov=100 (23.5%), Albedil=19 (16.7%)
+  other: Vasilkov=21 (4.9%), Albedil=6 (5.3%)
+  pedagogy_applied: Vasilkov=0 (0.0%), Albedil=1 (0.9%)
+  philosophy: Vasilkov=89 (20.9%), Albedil=28 (24.6%)
+  religion: Vasilkov=93 (21.8%), Albedil=20 (17.5%)
+  tibetology: Vasilkov=7 (1.6%), Albedil=1 (0.9%)
+  L1 distribution Era Chi2: Chi2=10.275, p-value=0.3287
+Theme distributions L2:
+  classical: Vasilkov=154 (36.2%), Albedil=30 (26.3%)
+  colonial: Vasilkov=33 (7.7%), Albedil=15 (13.2%)
+  contemporary: Vasilkov=44 (10.3%), Albedil=9 (7.9%)
+  medieval: Vasilkov=97 (22.8%), Albedil=24 (21.1%)
+  modern: Vasilkov=41 (9.6%), Albedil=10 (8.8%)
+  unspecified: Vasilkov=35 (8.2%), Albedil=19 (16.7%)
+  vedic: Vasilkov=22 (5.2%), Albedil=7 (6.1%)
+  L2 distribution Era Chi2: Chi2=12.828, p-value=0.0459
+
+--- H9: Geographic Gravity & Cohort Survival ---
+Zograf (SPb) presentation counts by speaker city:
+  Regions/Foreign: 74 (13.6%)
+  Moscow: 232 (42.6%)
+  SPb: 238 (43.8%)
+Roerich (Moscow) presentation counts by speaker city:
+  Regions/Foreign: 68 (19.2%)
+  Moscow: 255 (71.8%)
+  SPb: 32 (9.0%)
+Speaker retention rate (participated in >= 2 different years):
+  Moscow: Speakers=116, Returning=69 (59.5%)
+  Regions/Foreign: Speakers=36, Returning=13 (36.1%)
+  SPb: Speakers=74, Returning=43 (58.1%)
+  Survival Chi2 (Metropolitan vs Regions): Chi2=5.495, p-value=0.0191
+
+--- H10: Serialization & Salami Slicing ---
+Serialization rates by core status:
+  Core (>=5 talks): 14/647 (2.2%)
+  Peripheral (<5 talks): 10/252 (4.0%)
+  Serialization Fisher Exact p-value: 0.1649
+  Spearman rho (Total talks vs Serialized talks): rho=0.223, p-value=0.0007

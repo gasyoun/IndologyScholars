@@ -1,0 +1,123 @@
+Denmark ===> Regions/Foreign
+Ulster University ===> Regions/Foreign
+Администрация Главы Республики Калмыкия, Элиста ===> Regions/Foreign
+ВШЭ ===> Moscow
+ВШЭ, Гентский университет ===> Moscow
+Великобритания ===> Regions/Foreign
+Вена ===> Regions/Foreign
+Вильнюс, Литва ===> Regions/Foreign
+Воронеж ===> Regions/Foreign
+Восточный ф-т СПбГУ ===> SPb
+Вриндаван ===> Regions/Foreign
+Вроцлав ===> Regions/Foreign
+ГАУГН ===> Regions/Foreign
+ГБУ «Замок Шереметьева», онлайн ===> Regions/Foreign
+ГИИ ===> Regions/Foreign
+ГИИ, НИУ ВШЭ, РГХПУ им. С.Г. Строганова, Москва ===> Moscow
+ГМВ ===> Regions/Foreign
+ГМВ, РГХПУ им. С.Г. Строганова, Москва ===> Moscow
+ГММ А.Н. Скрябина ===> Regions/Foreign
+ГММ А.Н. Скрябина, онлайн ===> Regions/Foreign
+Гамбург ===> Regions/Foreign
+Гамбург, Германия ===> Regions/Foreign
+Гент ===> Regions/Foreign
+Гент, Бельгия ===> Regions/Foreign
+Гент/Лувен-ля-Нёв ===> Regions/Foreign
+Государственный Эрмитаж, СПбГУ ===> SPb
+Дели ===> Regions/Foreign
+Екатеринбург ===> Regions/Foreign
+Ереван ===> Regions/Foreign
+ИВ НАН Украины ===> Regions/Foreign
+ИВ РАН ===> Moscow
+ИВ РАН, ИКВИА НИУ ВШЭ ===> Moscow
+ИВ РАН, ИКВИА НИУ ВШЭ, Москва ===> Moscow
+ИВ РАН, Москва ===> Moscow
+ИВ РАН; НИУ ВШЭ, Москва ===> Moscow
+ИВР РАН ===> SPb
+ИИЕТ РАН ===> Regions/Foreign
+ИКВИА НИУ ВШЭ ===> Moscow
+ИКВИА НИУ ВШЭ, ИМЛИ РАН ===> Moscow
+ИКВИА НИУ ВШЭ, Москва ===> Moscow
+ИМБТ СО РАН, Улан-Удэ ===> Regions/Foreign
+ИМЛИ ===> Moscow
+ИМЛИ РАН ===> Moscow
+ИМЛИ РАН, Москва ===> Moscow
+ИМЛИ РАН, онлайн ===> Moscow
+ИСАА ===> Moscow
+ИСАА МГУ ===> Moscow
+ИСАА МГУ, Москва ===> Moscow
+ИСАА МГУ, онлайн ===> Moscow
+ИСАА, Москва ===> Moscow
+ИФ РАН ===> Moscow
+ИФ РАН, Москва ===> Moscow
+ИЭА РАН ===> Moscow
+ИЯ РАН ===> Moscow
+ИЯз РАН, ИВ РАН ===> Moscow
+Ижевск ===> Regions/Foreign
+Ин-т этнологии и антропологии РАН ===> Moscow
+Институт Языкознания РАН ===> Moscow
+Институт востоковедения, Киев ===> Regions/Foreign
+Институт истории и этнологии им. Ч.Ч. Валиханова КН МОН РК, г. Алматы, Казахстан ===> Regions/Foreign
+Институт философии РАН ===> Moscow
+Институт экономики и управления АПК, КрасГАУ, онлайн ===> Regions/Foreign
+КНЦ РАН, Элиста ===> Regions/Foreign
+Казань ===> Regions/Foreign
+Калиниград ===> Regions/Foreign
+Калининград ===> Regions/Foreign
+Кембридж ===> Regions/Foreign
+Кембридж, Масс. ===> Regions/Foreign
+Киев — Луцк ===> Regions/Foreign
+Киото ===> Regions/Foreign
+Краснодар ===> Regions/Foreign
+Ленинградская обл. ===> SPb
+МАИ ===> Regions/Foreign
+МАЭ РАН ===> SPb
+МГППУ ===> Regions/Foreign
+МГТУ ===> Regions/Foreign
+МГУ ===> Moscow
+ММС, Москва ===> Moscow
+МРЦ ===> Regions/Foreign
+МЦР ===> Regions/Foreign
+Москва ===> Moscow
+Москва – Патмос ===> Moscow
+Москва/Патмос ===> Moscow
+НИ ===> Regions/Foreign
+НИУ ВШЭ, онлайн ===> Moscow
+НИУ РАНХиГС ===> Moscow
+Наталья Афонасьевна НИ ===> Regions/Foreign
+Новосибирск ===> Regions/Foreign
+Отдел Востока Государственного Эрмитажа, Санкт-Петербург ===> SPb
+Пенза ===> Regions/Foreign
+РГГУ ===> Moscow
+РГПУ им. А.И.Герцена, онлайн ===> SPb
+РГПУ, СПб ===> SPb
+РУДН ===> Moscow
+РУДН, Москва ===> Moscow
+Ростов-на-Дону ===> Regions/Foreign
+С.-Петербург ===> SPb
+СПб - Фронт-Ройал ===> SPb
+СПб ===> SPb
+СПб. ===> SPb
+СПбГУ ===> SPb
+СПбГУ, Восточный факультет ===> SPb
+СПбГУ, Санкт-Петербург ===> SPb
+СПбФ ИВ РАН ===> SPb
+СПбФ ИВРАН ===> SPb
+Санкт-Петербург - Фронт-Ройал ===> SPb
+Санкт-Петербург ===> SPb
+Тампере ===> Regions/Foreign
+Тель-Авив ===> Regions/Foreign
+УРАО, Нижний Новгород ===> Regions/Foreign
+Университет Ольстера ===> Regions/Foreign
+Университет культуры, СПБ ===> SPb
+ФГБОУ ВО РостГМУ ===> Regions/Foreign
+ЦИИ ИВ РАН ===> Moscow
+Школа исторических наук НИУ ВШЭ, Москва ===> Moscow
+Школа философии и культурологии НИУ ВШЭ, Москва ===> Moscow
+Школа философии и культурологии НИУ ВШЭ, Москва, Институт феноменологии ТГУ, Томск ===> Moscow
+Элиста ===> Regions/Foreign
+аспирант ОИВ ИВ РАН ===> Moscow
+кафедра истории искусств УФУ, Екатеринбург ===> Regions/Foreign
+независимый исследователь ===> Regions/Foreign
+независимый исследователь, Москва ===> Moscow
+ни ===> Regions/Foreign

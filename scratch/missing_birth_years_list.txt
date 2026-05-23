@@ -1,0 +1,86 @@
+Total scholars: 221
+Scholars missing birth year: 83
+
+  1. ID: PERS_05707a8e | Display Name: М.Б.Загорулько | Key: загорулько м б | Years: None-None
+  2. ID: PERS_6f89f9c1 | Display Name: Е. Р. Крючкова | Key: крючкова е р | Years: None-None
+  3. ID: PERS_5bbfea37 | Display Name: Т. Т. Скороходова | Key: скороходова т т | Years: None-None
+  4. ID: PERS_2c9b38ec | Display Name: С. В. Ватман | Key: ватман с в | Years: None-None
+  5. ID: PERS_7700f517 | Display Name: Д. О. Парамонов | Key: парамонов д о | Years: None-None
+  6. ID: PERS_2b7ca933 | Display Name: Е. В. Танонова | Key: танонова е в | Years: None-None
+  7. ID: PERS_30b54681 | Display Name: Е. С. Бушуев | Key: бушуев е с | Years: None-None
+  8. ID: PERS_142b5c2b | Display Name: Д. Н. Парамонов | Key: парамонов д н | Years: None-None
+  9. ID: PERS_3d4df70f | Display Name: Е. О. Акимушкина | Key: акимушкина е о | Years: None-None
+ 10. ID: PERS_4ebb20aa | Display Name: С. В. Кардинская | Key: кардинская с в | Years: None-None
+ 11. ID: PERS_0fd718a7 | Display Name: К. М. Воздиган | Key: воздиган к м | Years: None-None
+ 12. ID: PERS_7eb0dc30 | Display Name: Зимина Татьяна Александровна | Key: зимина т а | Years: None-None
+ 13. ID: PERS_ce100d3f | Display Name: Мария Шилинскене | Key: мария шилинскене | Years: None-None
+ 14. ID: PERS_26ce5ec1 | Display Name: Нина Будзишевска | Key: нина будзишевска | Years: None-None
+ 15. ID: PERS_180c5e5c | Display Name: А. В. Арапов | Key: арапов а в | Years: None-None
+ 16. ID: PERS_6b867946 | Display Name: Е. В. Смирнова | Key: смирнова е в | Years: None-None
+ 17. ID: PERS_34c0d384 | Display Name: М. Б. Павлова | Key: павлова м б | Years: None-None
+ 18. ID: PERS_26c3214a | Display Name: Christian Lindtner | Key: christian lindtner | Years: None-None
+ 19. ID: PERS_7542d270 | Display Name: Демченко Максим Борисович | Key: демченко м б | Years: None-None
+ 20. ID: PERS_3fd690ee | Display Name: Е. Л. Комиссарук | Key: комиссарук е л | Years: None-None
+ 21. ID: PERS_01aafd44 | Display Name: Сафина Наталья Алексеевна | Key: сафина н а | Years: None-None
+ 22. ID: PERS_35a30342 | Display Name: И. О. Негреев | Key: негреев и о | Years: None-None
+ 23. ID: PERS_2e00cb36 | Display Name: О. Н. Меренкова | Key: меренкова о н | Years: None-None
+ 24. ID: PERS_cac87738 | Display Name: Н. В. Гузеватая | Key: гузеватая н в | Years: None-None
+ 25. ID: PERS_42da4866 | Display Name: Г. Д. Стукалин | Key: стукалин г д | Years: None-None
+ 26. ID: PERS_a901d460 | Display Name: М. А. Фаградян | Key: фаградян м а | Years: None-None
+ 27. ID: PERS_23f54085 | Display Name: Э. И. Введенская | Key: введенская э и | Years: None-None
+ 28. ID: PERS_5331196d | Display Name: Ковалевская Анна Петровна | Key: ковалевская а п | Years: None-None
+ 29. ID: PERS_9366fe2c | Display Name: Крыштоп Людмила Эдуардовна | Key: крыштоп л э | Years: None-None
+ 30. ID: PERS_29607432 | Display Name: Лапшин Иван Евгеньевич | Key: лапшин и е | Years: None-None
+ 31. ID: PERS_856eb5c6 | Display Name: Vishnu Shukla | Key: vishnu shukla | Years: None-None
+ 32. ID: PERS_af811d47 | Display Name: Корнеева Татьяна Георгиевна | Key: корнеева т г | Years: None-None
+ 33. ID: PERS_a1484b38 | Display Name: Кавалевская А. П. | Key: кавалевская а п | Years: None-None
+ 34. ID: PERS_40f75cf9 | Display Name: Л.Г. Роман | Key: роман л г | Years: None-None
+ 35. ID: PERS_00c3b0cc | Display Name: М.Б. Щербак | Key: щербак м б | Years: None-None
+ 36. ID: PERS_e30ad8b7 | Display Name: Д.С. Гавриков | Key: гавриков д с | Years: None-None
+ 37. ID: PERS_07adc1e6 | Display Name: Лейтан Эдгар Зигфридович | Key: лейтан э з | Years: None-None
+ 38. ID: PERS_68e9019d | Display Name: Малютин Иван Иванович | Key: малютин и и | Years: None-None
+ 39. ID: PERS_900efc73 | Display Name: Зевацкий Тимофей Юрьевич | Key: зевацкий т ю | Years: None-None
+ 40. ID: PERS_f82b6a8e | Display Name: Сенина Наталья Викторовна | Key: сенина н в | Years: None-None
+ 41. ID: PERS_5f6689e8 | Display Name: Дмитриева Виктория Алексеевна | Key: дмитриева в а | Years: None-None
+ 42. ID: PERS_37bb2d43 | Display Name: Покатилов Сергей Андреевич | Key: покатилов с а | Years: None-None
+ 43. ID: PERS_8df81b6d | Display Name: Лужинская Полина Александровна | Key: лужинская п а | Years: None-None
+ 44. ID: PERS_f5a69b65 | Display Name: Кройцер Светлана Александровна | Key: кройцер с а | Years: None-None
+ 45. ID: PERS_37d557c2 | Display Name: Анисимова Дарья Дмитриевна | Key: анисимова д д | Years: None-None
+ 46. ID: PERS_92f41884 | Display Name: Касым Софья Васильевна | Key: касым с в | Years: None-None
+ 47. ID: PERS_94f33410 | Display Name: Застрожнова Евгения Григорьевна | Key: застрожнова е г | Years: None-None
+ 48. ID: PERS_7d6f456c | Display Name: Мотылёва Вера Леонидовна | Key: мотылёва в л | Years: None-None
+ 49. ID: PERS_a638a4b3 | Display Name: Федорова Наталья Леонидовна | Key: федорова н л | Years: None-None
+ 50. ID: PERS_fb73fb38 | Display Name: Кешарпу Екатерина Витальевна | Key: кешарпу е в | Years: None-None
+ 51. ID: PERS_58e18506 | Display Name: Соколова Ирина Александровна | Key: соколова и а | Years: None-None
+ 52. ID: PERS_23abae7d | Display Name: Пушкарева Юлия Георгиевна | Key: пушкарева ю г | Years: None-None
+ 53. ID: PERS_168a3a8b | Display Name: Усенко Иван Сергеевич | Key: усенко и с | Years: None-None
+ 54. ID: PERS_a0f3d86d | Display Name: Сергеева Варвара Алексеевна | Key: сергеева в а | Years: None-None
+ 55. ID: PERS_c2ffc606 | Display Name: Драчук Андрей Олегович | Key: драчук а о | Years: None-None
+ 56. ID: PERS_cb967ae4 | Display Name: Harjender Singh Chaudhary | Key: harjender singh chaudhary | Years: None-None
+ 57. ID: PERS_44440578 | Display Name: Грановская Хелена | Key: грановская хелена | Years: None-None
+ 58. ID: PERS_936e1165 | Display Name: Файбушевич Светлана Ивановна | Key: файбушевич с ф | Years: None-None
+ 59. ID: PERS_f1a308b7 | Display Name: Абинякин Владимир Александрович | Key: абинякин в а | Years: None-None
+ 60. ID: PERS_fc976255 | Display Name: Э.Н. Комаров | Key: комаров э н | Years: None-None
+ 61. ID: PERS_e1d622e5 | Display Name: С.Ф. Мажитов | Key: мажитов с ф | Years: None-None
+ 62. ID: PERS_ee3448c3 | Display Name: В.В. Деменова | Key: деменова в в | Years: None-None
+ 63. ID: PERS_de59a2bc | Display Name: Г.В. Шарыгин | Key: шарыгин г в | Years: None-None
+ 64. ID: PERS_ed83f502 | Display Name: Т.П. Селиванова | Key: селиванова т п | Years: None-None
+ 65. ID: PERS_526da44f | Display Name: Д.С. Шапошникова | Key: шапошникова д с | Years: None-None
+ 66. ID: PERS_fe03c926 | Display Name: И.А. Карышева | Key: карышева и а | Years: None-None
+ 67. ID: PERS_dfaf6803 | Display Name: Я.А. Борисов | Key: борисов я а | Years: None-None
+ 68. ID: PERS_2011b78d | Display Name: А.В. Бондарев | Key: бондарев а в | Years: None-None
+ 69. ID: PERS_ecdfe667 | Display Name: Е.О. Новосёлова | Key: новосёлова е о | Years: None-None
+ 70. ID: PERS_d4c2cc5e | Display Name: Т.В. Лучина | Key: лучина т в | Years: None-None
+ 71. ID: PERS_2095dc59 | Display Name: Е.Г. Шалахов | Key: шалахов е г | Years: None-None
+ 72. ID: PERS_3e38ff72 | Display Name: Д.А. Рожнова | Key: рожнова д а | Years: None-None
+ 73. ID: PERS_7efcddc6 | Display Name: Н.А. Брылёва | Key: брылёва н а | Years: None-None
+ 74. ID: PERS_a8983673 | Display Name: Н.Л. Вигель | Key: вигель н л | Years: None-None
+ 75. ID: PERS_f619aeed | Display Name: А.Д. Цендина | Key: цендина а д | Years: None-None
+ 76. ID: PERS_6a165aa7 | Display Name: К.В. Хазизова | Key: хазизова к в | Years: None-None
+ 77. ID: PERS_3195408b | Display Name: Д.Н. Ратушный | Key: ратушный д н | Years: None-None
+ 78. ID: PERS_147ab928 | Display Name: К.Д. Никольская | Key: никольская к д | Years: None-None
+ 79. ID: PERS_68270eaf | Display Name: Э.В. Галимова | Key: галимова э в | Years: None-None
+ 80. ID: PERS_2e2b9553 | Display Name: Д.Д. Наймушина | Key: наймушина д д | Years: None-None
+ 81. ID: PERS_9ddf9210 | Display Name: С.П. Нестеркин | Key: нестеркин с п | Years: None-None
+ 82. ID: PERS_88e5311f | Display Name: М.В. Босхомджиев | Key: босхомджиев м в | Years: None-None
+ 83. ID: PERS_f1f2471d | Display Name: М.М. Игнатова | Key: игнатова м м | Years: None-None

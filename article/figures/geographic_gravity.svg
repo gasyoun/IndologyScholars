@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1060" height="540" viewBox="0 0 1060 540">
+<style>
+text{font-family:Arial,'Liberation Sans',sans-serif;fill:#1f2933}.small{font-size:12px}.axis{font-size:13px}.label{font-size:12px}.title{font-size:20px;font-weight:700}.subtitle{font-size:13px;fill:#52616b}.tick{stroke:#c9d2dc;stroke-width:1}.grid{stroke:#edf1f5;stroke-width:1}</style>
+<text x="34.0" y="32.0" class="title" text-anchor="start">Географическое притяжение и возвращаемость участников</text>
+<text x="34.0" y="56.0" class="subtitle" text-anchor="start">Левая панель — доля докладов по городским группам; правая — доля ученых, вернувшихся хотя бы в другой год.</text>
+<text x="96.0" y="74.0" class="axis" text-anchor="start" font-weight="700">Доля докладов</text>
+<text x="293.0" y="102.0" class="small" text-anchor="middle">СПб</text>
+<text x="435.0" y="102.0" class="small" text-anchor="middle">Москва</text>
+<text x="577.0" y="102.0" class="small" text-anchor="middle">регионы/</text>
+<text x="577.0" y="115.0" class="small" text-anchor="middle">зарубежье</text>
+<text x="206.0" y="160.0" class="axis" text-anchor="end">Зографские</text>
+<rect x="222.0" y="118.0" width="140.0" height="74.0" rx="0" fill="rgb(128,167,213)" stroke="#ffffff" opacity="1.0"/>
+<text x="293.0" y="151.0" class="axis" text-anchor="middle" font-weight="700">43.8%</text>
+<text x="293.0" y="171.0" class="small" text-anchor="middle">n=238</text>
+<rect x="364.0" y="118.0" width="140.0" height="74.0" rx="0" fill="rgb(131,169,214)" stroke="#ffffff" opacity="1.0"/>
+<text x="435.0" y="151.0" class="axis" text-anchor="middle" font-weight="700">42.6%</text>
+<text x="435.0" y="171.0" class="small" text-anchor="middle">n=232</text>
+<rect x="506.0" y="118.0" width="140.0" height="74.0" rx="0" fill="rgb(206,222,239)" stroke="#ffffff" opacity="1.0"/>
+<text x="577.0" y="151.0" class="axis" text-anchor="middle" font-weight="700">13.6%</text>
+<text x="577.0" y="171.0" class="small" text-anchor="middle">n=74</text>
+<text x="206.0" y="236.0" class="axis" text-anchor="end">Рериховские</text>
+<rect x="222.0" y="194.0" width="140.0" height="74.0" rx="0" fill="rgb(218,230,242)" stroke="#ffffff" opacity="1.0"/>
+<text x="293.0" y="227.0" class="axis" text-anchor="middle" font-weight="700">9.0%</text>
+<text x="293.0" y="247.0" class="small" text-anchor="middle">n=32</text>
+<rect x="364.0" y="194.0" width="140.0" height="74.0" rx="0" fill="rgb(55,117,190)" stroke="#ffffff" opacity="1.0"/>
+<text x="435.0" y="227.0" class="axis" text-anchor="middle" font-weight="700">71.8%</text>
+<text x="435.0" y="247.0" class="small" text-anchor="middle">n=255</text>
+<rect x="506.0" y="194.0" width="140.0" height="74.0" rx="0" fill="rgb(191,211,234)" stroke="#ffffff" opacity="1.0"/>
+<text x="577.0" y="227.0" class="axis" text-anchor="middle" font-weight="700">19.2%</text>
+<text x="577.0" y="247.0" class="small" text-anchor="middle">n=68</text>
+<text x="650.0" y="74.0" class="axis" text-anchor="start" font-weight="700">Возвращаемость по городским группам</text>
+<rect x="650.0" y="118.0" width="310.0" height="260.0" rx="0" fill="#ffffff" stroke="#cfd8e3" opacity="1.0"/>
+<line x1="650.0" y1="378.0" x2="960.0" y2="378.0" stroke="#edf1f5" stroke-width="1"/>
+<text x="638.0" y="382.0" class="axis" text-anchor="end">0%</text>
+<line x1="650.0" y1="303.7" x2="960.0" y2="303.7" stroke="#edf1f5" stroke-width="1"/>
+<text x="638.0" y="307.7" class="axis" text-anchor="end">20%</text>
+<line x1="650.0" y1="229.4" x2="960.0" y2="229.4" stroke="#edf1f5" stroke-width="1"/>
+<text x="638.0" y="233.4" class="axis" text-anchor="end">40%</text>
+<line x1="650.0" y1="155.1" x2="960.0" y2="155.1" stroke="#edf1f5" stroke-width="1"/>
+<text x="638.0" y="159.1" class="axis" text-anchor="end">60%</text>
+<rect x="675.8" y="154.0" width="51.7" height="224.0" rx="0" fill="#2f6fbb" stroke="none" opacity="1.0"/>
+<text x="701.7" y="146.0" class="small" text-anchor="middle" font-weight="700">60.3%</text>
+<text x="701.7" y="400.0" class="small" text-anchor="middle">СПб</text>
+<text x="701.7" y="418.0" class="label" text-anchor="middle">n=73</text>
+<rect x="779.2" y="152.5" width="51.7" height="225.5" rx="0" fill="#b8554b" stroke="none" opacity="1.0"/>
+<text x="805.0" y="144.5" class="small" text-anchor="middle" font-weight="700">60.7%</text>
+<text x="805.0" y="400.0" class="small" text-anchor="middle">Москва</text>
+<text x="805.0" y="418.0" class="label" text-anchor="middle">n=112</text>
+<rect x="882.5" y="243.9" width="51.7" height="134.1" rx="0" fill="#708090" stroke="none" opacity="1.0"/>
+<text x="908.3" y="235.9" class="small" text-anchor="middle" font-weight="700">36.1%</text>
+<text x="908.3" y="400.0" class="small" text-anchor="middle">регионы/ зарубежье</text>
+<text x="908.3" y="418.0" class="label" text-anchor="middle">n=36</text>
+<text x="96.0" y="500.0" class="subtitle" text-anchor="start">Ключевой контраст: петербургская площадка почти паритетна для двух столиц, московская — преимущественно московская.</text>
+</svg>
