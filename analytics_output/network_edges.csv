@@ -237,7 +237,6 @@ person:PERS_12125da9,event:ER2012,person_event,2012,Roerich Readings,1
 person:PERS_12125da9,event:ER2017,person_event,2017,Roerich Readings,1
 person:PERS_12125da9,event:ER2020,person_event,2020,Roerich Readings,1
 person:PERS_12125da9,event:ER2025,person_event,2025,Roerich Readings,1
-person:PERS_142b5c2b,event:E2011,person_event,2011,Zograf Readings,1
 person:PERS_147ab928,event:ER2025,person_event,2025,Roerich Readings,1
 person:PERS_168a3a8b,event:E2026,person_event,2026,Zograf Readings,1
 person:PERS_180c5e5c,event:E2014,person_event,2014,Zograf Readings,1
@@ -580,6 +579,7 @@ person:PERS_7542d270,event:E2023,person_event,2023,Zograf Readings,1
 person:PERS_7542d270,event:E2025,person_event,2025,Zograf Readings,1
 person:PERS_7542d270,event:E2026,person_event,2026,Zograf Readings,1
 person:PERS_7700f517,event:E2010,person_event,2010,Zograf Readings,1
+person:PERS_7700f517,event:E2011,person_event,2011,Zograf Readings,1
 person:PERS_7d6f456c,event:E2026,person_event,2026,Zograf Readings,1
 person:PERS_7da0afff,event:ER2012,person_event,2012,Roerich Readings,1
 person:PERS_7da0afff,event:ER2018,person_event,2018,Roerich Readings,1
@@ -1839,11 +1839,6 @@ person:PERS_12125da9,person:PERS_f5b8b340,person_person_same_session,2007,Zograf
 person:PERS_12125da9,person:PERS_f8ab5755,person_person_same_session,2010,Zograf Readings,1
 person:PERS_12125da9,person:PERS_fb25c80f,person_person_same_session,2007,Zograf Readings,1
 person:PERS_12125da9,person:PERS_fc976255,person_person_same_session,2012,Roerich Readings,1
-person:PERS_142b5c2b,person:PERS_1a097e52,person_person_same_session,2011,Zograf Readings,1
-person:PERS_142b5c2b,person:PERS_260a598a,person_person_same_session,2011,Zograf Readings,1
-person:PERS_142b5c2b,person:PERS_30b54681,person_person_same_session,2011,Zograf Readings,1
-person:PERS_142b5c2b,person:PERS_3357f25b,person_person_same_session,2011,Zograf Readings,1
-person:PERS_142b5c2b,person:PERS_92f293f8,person_person_same_session,2011,Zograf Readings,1
 person:PERS_147ab928,person:PERS_6578b52d,person_person_same_session,2025,Roerich Readings,1
 person:PERS_147ab928,person:PERS_ced3d7b4,person_person_same_session,2025,Roerich Readings,1
 person:PERS_147ab928,person:PERS_d4c2cc5e,person_person_same_session,2025,Roerich Readings,1
@@ -1884,6 +1879,7 @@ person:PERS_1a097e52,person:PERS_56508328,person_person_same_session,2022,Zograf
 person:PERS_1a097e52,person:PERS_5bbfea37,person_person_same_session,2006,Zograf Readings,1
 person:PERS_1a097e52,person:PERS_5d34c947,person_person_same_session,2020,Zograf Readings,1
 person:PERS_1a097e52,person:PERS_69750b7c,person_person_same_session,2013,Zograf Readings,1
+person:PERS_1a097e52,person:PERS_7700f517,person_person_same_session,2011,Zograf Readings,1
 person:PERS_1a097e52,person:PERS_7eb0dc30,person_person_same_session,2013,Zograf Readings,1
 person:PERS_1a097e52,person:PERS_7f908d49,person_person_same_session,2013,Zograf Readings,1
 person:PERS_1a097e52,person:PERS_829c1de5,person_person_same_session,2013,Zograf Readings,1
@@ -2112,6 +2108,7 @@ person:PERS_260a598a,person:PERS_56508328,person_person_same_session,2007,Zograf
 person:PERS_260a598a,person:PERS_56508328,person_person_same_session,2021,Zograf Readings,1
 person:PERS_260a598a,person:PERS_5f6689e8,person_person_same_session,2025,Zograf Readings,1
 person:PERS_260a598a,person:PERS_7542d270,person_person_same_session,2018,Zograf Readings,1
+person:PERS_260a598a,person:PERS_7700f517,person_person_same_session,2011,Zograf Readings,1
 person:PERS_260a598a,person:PERS_8108c314,person_person_same_session,2019,Zograf Readings,1
 person:PERS_260a598a,person:PERS_8108c314,person_person_same_session,2020,Zograf Readings,1
 person:PERS_260a598a,person:PERS_8108c314,person_person_same_session,2022,Zograf Readings,1
@@ -2292,6 +2289,7 @@ person:PERS_3074a8e5,person:PERS_e96139bd,person_person_same_session,2020,Zograf
 person:PERS_3074a8e5,person:PERS_efc88709,person_person_same_session,2013,Zograf Readings,1
 person:PERS_3074a8e5,person:PERS_f074f69f,person_person_same_session,2013,Zograf Readings,1
 person:PERS_30b54681,person:PERS_3357f25b,person_person_same_session,2011,Zograf Readings,1
+person:PERS_30b54681,person:PERS_7700f517,person_person_same_session,2011,Zograf Readings,1
 person:PERS_30b54681,person:PERS_92f293f8,person_person_same_session,2011,Zograf Readings,1
 person:PERS_310b2911,person:PERS_3357f25b,person_person_same_session,2026,Zograf Readings,1
 person:PERS_310b2911,person:PERS_3e105f43,person_person_same_session,2026,Zograf Readings,1
@@ -2311,6 +2309,7 @@ person:PERS_3357f25b,person:PERS_69750b7c,person_person_same_session,2014,Zograf
 person:PERS_3357f25b,person:PERS_6b867946,person_person_same_session,2014,Zograf Readings,1
 person:PERS_3357f25b,person:PERS_7542d270,person_person_same_session,2018,Zograf Readings,1
 person:PERS_3357f25b,person:PERS_7542d270,person_person_same_session,2021,Zograf Readings,1
+person:PERS_3357f25b,person:PERS_7700f517,person_person_same_session,2011,Zograf Readings,1
 person:PERS_3357f25b,person:PERS_7eb0dc30,person_person_same_session,2013,Zograf Readings,1
 person:PERS_3357f25b,person:PERS_7eb0dc30,person_person_same_session,2014,Zograf Readings,1
 person:PERS_3357f25b,person:PERS_7f908d49,person_person_same_session,2013,Zograf Readings,1
@@ -3104,6 +3103,7 @@ person:PERS_7542d270,person:PERS_f5b8b340,person_person_same_session,2025,Zograf
 person:PERS_7542d270,person:PERS_f8ab5755,person_person_same_session,2023,Zograf Readings,1
 person:PERS_7542d270,person:PERS_f8ab5755,person_person_same_session,2025,Zograf Readings,1
 person:PERS_7542d270,person:PERS_f8ab5755,person_person_same_session,2026,Zograf Readings,1
+person:PERS_7700f517,person:PERS_92f293f8,person_person_same_session,2011,Zograf Readings,1
 person:PERS_7700f517,person:PERS_f8ab5755,person_person_same_session,2010,Zograf Readings,1
 person:PERS_7d6f456c,person:PERS_829c1de5,person_person_same_session,2026,Zograf Readings,1
 person:PERS_7d6f456c,person:PERS_92f41884,person_person_same_session,2026,Zograf Readings,1
@@ -3902,7 +3902,6 @@ person:PERS_12125da9,theme:unspecified,person_theme,2013,Zograf Readings,1
 person:PERS_12125da9,theme:unspecified,person_theme,2018,Zograf Readings,1
 person:PERS_12125da9,theme:unspecified,person_theme,2020,Zograf Readings,1
 person:PERS_12125da9,theme:unspecified,person_theme,2020,Roerich Readings,1
-person:PERS_142b5c2b,theme:linguistics_and_philology,person_theme,2011,Zograf Readings,1
 person:PERS_147ab928,theme:history_and_culture,person_theme,2025,Roerich Readings,1
 person:PERS_168a3a8b,theme:religion_and_philosophy,person_theme,2026,Zograf Readings,1
 person:PERS_180c5e5c,theme:religion_and_philosophy,person_theme,2014,Zograf Readings,1
@@ -4248,6 +4247,7 @@ person:PERS_7542d270,theme:literature_and_poetry,person_theme,2023,Zograf Readin
 person:PERS_7542d270,theme:literature_and_poetry,person_theme,2025,Zograf Readings,1
 person:PERS_7542d270,theme:unspecified,person_theme,2022,Zograf Readings,1
 person:PERS_7542d270,theme:unspecified,person_theme,2026,Zograf Readings,1
+person:PERS_7700f517,theme:linguistics_and_philology,person_theme,2011,Zograf Readings,1
 person:PERS_7700f517,theme:religion_and_philosophy,person_theme,2010,Zograf Readings,1
 person:PERS_7d6f456c,theme:unspecified,person_theme,2026,Zograf Readings,1
 person:PERS_7da0afff,theme:religion_and_philosophy,person_theme,2012,Roerich Readings,1

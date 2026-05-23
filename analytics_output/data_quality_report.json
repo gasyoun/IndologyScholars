@@ -7,16 +7,16 @@
     "generator": "generate_publication_pages.py"
   },
   "summary": {
-    "total_scholars": 221,
+    "total_scholars": 220,
     "total_presentations": 899,
     "total_events": 40,
     "years_covered": 20,
     "start_year": 2004,
     "end_year": 2026,
     "overlap_scholars": 38,
-    "zograf_only_scholars": 130,
+    "zograf_only_scholars": 129,
     "roerich_only_scholars": 53,
-    "person_rows": 221,
+    "person_rows": 220,
     "presentation_rows": 895,
     "event_rows": 40
   },
@@ -53,7 +53,7 @@
       "id": "duplicate_full_names",
       "label": "Duplicate full Russian names after normalization",
       "severity": "warning",
-      "count": 2,
+      "count": 3,
       "status": "review"
     },
     {
@@ -79,6 +79,10 @@
       },
       {
         "full_name_ru": "Кокова Юлия Георгиевна",
+        "people": 2
+      },
+      {
+        "full_name_ru": "Скороходова Татьяна Григорьевна",
         "people": 2
       }
     ],

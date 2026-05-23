@@ -94,6 +94,14 @@ def search_href(query):
     return f"../search.html?q={quote(clean_text(query))}"
 
 
+def series_participation_line(scholar, name_ru, label, count_key, first_key, last_key):
+    count = int(scholar.get(count_key) or 0)
+    years = describe_year_span(scholar.get(first_key), scholar.get(last_key)) if count else "нет докладов"
+    count_text = talks_count_label(count) if count else "0 докладов"
+    href = search_href((name_ru or "") + " " + label)
+    return f'<div class="series-line"><a href="{esc(href)}">{esc(label)}</a>: {esc(count_text)} · {esc(years)}</div>'
+
+
 def normalize_affiliation_link_label(aff):
     value = clean_text(aff).lower()
     if "ивр" in value or "восточных рукописей" in value:
@@ -155,7 +163,7 @@ def format_lifespan(scholar, lang="ru"):
     birth = scholar.get("birth_year")
     death = scholar.get("death_year")
     if birth and death:
-        return f" ({birth}-{death})"
+        return f" ({birth}–{death})"
     if birth:
         return f" (род. {birth})" if lang == "ru" else f" (b. {birth})"
     return ""
@@ -361,6 +369,10 @@ def render_profile(scholar, related, authority):
     ru_heading = f'{esc(name_ru)} <span class="life">{esc(life_ru)}</span>' if life_ru else esc(name_ru)
     en_heading = " ".join(part for part in [name_en, life_en] if part)
     profile_note_html = f'<p class="profile-note">{esc(profile_note)}</p>' if profile_note else ""
+    series_html = (
+        series_participation_line(scholar, name_ru, "Зографские чтения", "zograf_talks", "zograf_first", "zograf_last")
+        + series_participation_line(scholar, name_ru, "Рериховские чтения", "roerich_talks", "roerich_first", "roerich_last")
+    )
 
     related_cards = []
     for item in related:
@@ -417,7 +429,7 @@ def render_profile(scholar, related, authority):
             <article class="card"><strong>Доклады</strong><div class="metric">{esc(scholar.get("total_talks"))}</div><div class="meta">записи докладов</div></article>
             <article class="card"><strong>Активность</strong><div class="metric">{esc(describe_year_span(scholar.get("first_year"), scholar.get("last_year")))}</div><div class="meta">годы участия</div></article>
             <article class="card"><strong>Рубрика</strong><div class="metric"><a href="../{theme_path(theme_code)}">{esc(profile_label)}</a></div></article>
-            <article class="card"><strong>Площадки</strong><div class="meta"><a href="{esc(search_href((name_ru or '') + ' Зографские чтения'))}">Зографские чтения</a>: {esc(str(scholar.get("zograf_talks") or 0))} · <a href="{esc(search_href((name_ru or '') + ' Рериховские чтения'))}">Рериховские чтения</a>: {esc(str(scholar.get("roerich_talks") or 0))}</div></article>
+            <article class="card"><strong>Площадки</strong><div class="meta">{series_html}</div></article>
         </section>
 
         <h2>Аффилиации</h2>
@@ -444,6 +456,7 @@ def render_profile(scholar, related, authority):
         .profile-note { color: var(--soft); max-width: 860px; }
         .metric { font-size: 1.4rem; font-weight: 700; margin-top: 0.2rem; }
         .chip-row { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+        .series-line + .series-line { margin-top: 0.28rem; }
         .talk-meta-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 1rem; align-items: baseline; }
         .talk-meta-session { text-align: right; white-space: nowrap; }
     </style>
