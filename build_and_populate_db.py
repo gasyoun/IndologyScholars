@@ -568,6 +568,14 @@ BIOGRAPHICAL_DATA = {
     "танонова е в": ("Танонова Елена Викторовна", "Tanonova Elena Viktorovna", 1980, None),
     "застрожнова е г": ("Застрожнова Евгения Григорьевна", "Zastrozhnova Evgeniya Grigoryevna", 1985, None),
     "зевацкий т ю": ("Зевацкий Тимофей Юрьевич", "Zevatsky Timofey Yurievich", 2002, None),
+    "воздиган к м": ("Воздиган Ксения Михайловна", "Ksenia Vozdigan", 1984, None),
+    "цендина а д": ("Цендина Анна Дамдиновна", "Anna Tsendina", 1954, None),
+    "абинякин в а": ("Абинякин Владимир Александрович", "Vladimir Abinyakin", 1994, None),
+    "стукалин г д": ("Стукалин Глеб Дмитриевич", "Gleb Stukalin", 1992, None),
+    "рожнова д а": ("Рожнова Дарья Антоновна", "Daria Rozhnova", 2003, None),
+    "наймушина д д": ("Наймушина Дарья Дмитриевна", "Daria Naimushina", 2002, None),
+    "драчук а о": ("Драчук Андрей Олегович", "Andrey Drachuk", 1991, None),
+    "бушуев е с": ("Бушуев Евгений Сергеевич", "Evgeny Bushuev", 1988, None),
 }
 
 # Academic degrees, looked up from authoritative sources (institutional pages,
