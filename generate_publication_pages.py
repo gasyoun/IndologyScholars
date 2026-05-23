@@ -44,7 +44,7 @@ DB_PATH = "conferences.db"
 BUILD_DATE = dt.date.today().isoformat()
 DATA_SCHEMA_VERSION = "1.0.0"
 PIPELINE_VERSION = "2026-05-21"
-PUBLIC_DIRS = ["assets", "conferences", "themes", "cities", "institutions"]
+PUBLIC_DIRS = ["assets", "conferences", "themes", "meso", "cities", "institutions"]
 
 
 def ensure_dirs():
@@ -98,7 +98,7 @@ def generated_manifest_paths():
         "site_data.json",
         "sitemap.xml",
     ]
-    directories = ["analytics_output", "assets", "cities", "conferences", "institutions", "scholars", "themes"]
+    directories = ["analytics_output", "assets", "cities", "conferences", "institutions", "meso", "scholars", "themes"]
     paths = [Path(path) for path in roots]
     for dirname in directories:
         root = Path(dirname)
@@ -172,8 +172,11 @@ def series_slug(series):
     return "zograf" if "Zograf" in (series or "") else "roerich"
 
 
-def series_label(series):
-    return "Zograf Readings" if series_slug(series) == "zograf" else "Roerich Readings"
+def series_label(series, lang="en"):
+    is_zograf = series_slug(series) == "zograf"
+    if lang == "ru":
+        return "Зографские чтения" if is_zograf else "Рериховские чтения"
+    return "Zograf Readings" if is_zograf else "Roerich Readings"
 
 
 def conference_path(series, year):
@@ -182,6 +185,39 @@ def conference_path(series, year):
 
 def theme_path(code):
     return f"themes/{slugify(code, 'theme')}.html"
+
+
+def meso_path(code):
+    return f"meso/{slugify(code, 'meso')}.html"
+
+
+def ru_plural(number, one, few, many):
+    value = abs(int(number))
+    if 11 <= value % 100 <= 14:
+        return many
+    if value % 10 == 1:
+        return one
+    if 2 <= value % 10 <= 4:
+        return few
+    return many
+
+
+def talks_count_label(count):
+    return f"{count} {ru_plural(count, 'доклад', 'доклада', 'докладов')}"
+
+
+def presentation_records_label(count):
+    return talks_count_label(count)
+
+
+def is_suspicious_short_title(title):
+    value = clean_text(title)
+    words = re.findall(r"\w+", value, flags=re.UNICODE)
+    if not value:
+        return True
+    if value.endswith((" в", " и", " к", " о", " по", " для", ":", ",")):
+        return True
+    return len(words) <= 3
 
 
 def city_path(city):
@@ -213,6 +249,94 @@ def timeline_records(data):
     return records
 
 
+def load_csv_rows(path):
+    target = Path(path)
+    if not target.exists():
+        return []
+    with target.open("r", encoding="utf-8", newline="") as f:
+        return list(csv.DictReader(f))
+
+
+def load_meso_index():
+    items = []
+    for row in load_csv_rows("article/hypothesis_output/title_keyword_microseries.csv"):
+        code = row.get("microseries") or ""
+        if not code:
+            continue
+        items.append(
+            {
+                "code": code,
+                "label": row.get("label") or code,
+                "kind": "Мини-серия",
+                "count": int(row.get("count") or 0),
+                "zograf_count": int(row.get("zograf_count") or 0),
+                "roerich_count": int(row.get("roerich_count") or 0),
+                "top_terms": row.get("top_terms") or "",
+                "distribution": row.get("l1_distribution") or "",
+                "examples": row.get("examples") or "",
+            }
+        )
+    for row in load_csv_rows("article/hypothesis_output/title_keyword_linguistics_subfields.csv"):
+        approach = row.get("approach") or ""
+        if not approach:
+            continue
+        code = f"linguistics_{approach}"
+        items.append(
+            {
+                "code": code,
+                "label": f"Лингвистика: {row.get('label') or approach}",
+                "kind": "Подраздел лингвистики",
+                "count": int(row.get("count") or 0),
+                "zograf_count": int(row.get("zograf_count") or 0),
+                "roerich_count": int(row.get("roerich_count") or 0),
+                "top_terms": row.get("top_terms") or "",
+                "distribution": "L1: лингвистика",
+                "examples": row.get("examples") or "",
+            }
+        )
+    items.sort(key=lambda item: (-item["count"], item["kind"], item["label"]))
+    return items
+
+
+def load_meso_memberships():
+    memberships = defaultdict(list)
+    for row in load_csv_rows("article/hypothesis_output/title_keyword_microseries_titles.csv"):
+        code = row.get("microseries") or ""
+        pid = row.get("presentation_id") or ""
+        if code and pid:
+            memberships[code].append(pid)
+    for row in load_csv_rows("article/hypothesis_output/title_keyword_linguistics_subfield_titles.csv"):
+        approach = row.get("approach") or ""
+        pid = row.get("presentation_id") or ""
+        if approach and pid:
+            memberships[f"linguistics_{approach}"].append(pid)
+    return memberships
+
+
+def presentation_records_by_id(records):
+    grouped = {}
+    speakers = defaultdict(list)
+    speaker_slugs = defaultdict(list)
+    for record in records:
+        pid = record.get("presentation_id")
+        if not pid:
+            continue
+        if pid not in grouped:
+            grouped[pid] = dict(record)
+        speaker = record.get("speaker") or record.get("speaker_original")
+        if speaker and speaker not in speakers[pid]:
+            speakers[pid].append(speaker)
+        slug = record.get("speaker_slug")
+        if slug and slug not in speaker_slugs[pid]:
+            speaker_slugs[pid].append(slug)
+    for pid, record in grouped.items():
+        if speakers[pid]:
+            record["speaker"] = "; ".join(speakers[pid])
+        if len(speaker_slugs[pid]) != 1:
+            record["speaker_slug"] = None
+    return grouped
+
+
 def scholar_by_id(data):
     return {s["id"]: s for s in data.get("scholars", [])}
 
@@ -227,12 +351,14 @@ def talk_card(talk, depth=""):
         city_link = f' · <a href="{depth}{city_path(city)}">{esc(city)}</a>'
     theme = talk.get("theme") or {}
     theme_code = theme.get("code", "History")
+    anchor = clean_text(talk.get("presentation_id") or "")
+    anchor_attr = f' id="{esc(anchor)}"' if anchor else ""
     return f"""
-        <article class="talk">
+        <article class="talk"{anchor_attr}>
             <strong>{esc(talk.get("title"))}</strong>
             <div class="meta">
-                {scholar_link} · <a href="{depth}{conference_path(talk.get("series_key"), talk.get("year"))}">{esc(talk.get("series_label"))} {esc(talk.get("year"))}</a>
-                · <a href="{depth}{theme_path(theme_code)}">{esc(theme_label(theme_code))}</a>{city_link}
+                {scholar_link} · <a href="{depth}{conference_path(talk.get("series_key"), talk.get("year"))}">{esc(series_label(talk.get("series_key"), "ru"))} {esc(talk.get("year"))}</a>
+                · <a href="{depth}{theme_path(theme_code)}">{esc(theme_label(theme_code, "ru"))}</a>{city_link}
             </div>
         </article>
     """
@@ -571,7 +697,16 @@ def generate_search(data, records):
                 "type": "Presentation",
                 "title": talk.get("title"),
                 "url": conference_path(talk.get("series_key"), talk.get("year")),
-                "text": " ".join([talk.get("speaker") or "", talk.get("affiliation") or "", theme_label((talk.get("theme") or {}).get("code"))]),
+                "text": " ".join([talk.get("speaker") or "", talk.get("affiliation") or "", theme_label((talk.get("theme") or {}).get("code"), "ru")]),
+            }
+        )
+    for item in load_meso_index():
+        index.append(
+            {
+                "type": "Meso-level",
+                "title": item["label"],
+                "url": meso_path(item["code"]),
+                "text": " ".join([item.get("kind") or "", item.get("top_terms") or "", item.get("distribution") or "", item.get("examples") or ""]),
             }
         )
     write_text("search-index.json", json.dumps(index, ensure_ascii=False, separators=(",", ":")))
@@ -1549,38 +1684,38 @@ def generate_conference_pages(data, records):
     cards = []
     for (series, year), talks in sorted(grouped.items(), key=lambda item: (item[0][1], item[0][0]), reverse=True):
         path = conference_path(series, year)
-        title = f"{series_label(series)} {year}"
-        cards.append(f'<article class="card"><strong><a href="../{path}">{esc(title)}</a></strong><div class="meta">{len(talks)} presentation records</div></article>')
+        title = f"{series_label(series, 'ru')} {year}"
+        cards.append(f'<article class="card"><strong><a href="../{path}">{esc(title)}</a></strong><div class="meta">{presentation_records_label(len(talks))}</div></article>')
         body = f"""
         <header>
             <h1>{esc(title)}</h1>
-            <p>Static index of presentation records connected to {esc(title)}.</p>
+            <p>Список докладов, связанных с этой конференцией.</p>
         </header>
         <section class="list">
             {''.join(talk_card(t, '../') for t in talks)}
         </section>
         """
         structured = [
-            page_data(title, f"Presentation records for {title}.", path),
-            make_breadcrumbs([("Home", ""), ("Conferences", "conferences/"), (title, path)]),
+            page_data(title, f"Доклады конференции: {title}.", path),
+            make_breadcrumbs([("Главная", ""), ("Конференции", "conferences/"), (title, path)]),
         ]
-        write_text(path, page_shell(f"{title} | {SITE_NAME}", f"Presentation records for {title}.", path, body, structured))
+        write_text(path, page_shell(f"{title} | {SITE_NAME}", f"Доклады конференции: {title}.", path, body, structured))
 
     index_body = f"""
         <header>
-            <h1>Conference indexes</h1>
-            <p>Year-by-year static landing pages for the Zograf Readings and Roerich Readings.</p>
+            <h1>Конференции</h1>
+            <p>Погодовые страницы Зографских и Рериховских чтений.</p>
         </header>
         <section class="grid">{''.join(cards)}</section>
     """
     write_text(
         "conferences/index.html",
         page_shell(
-            f"Conference indexes | {SITE_NAME}",
-            "Static conference landing pages for Zograf Readings and Roerich Readings.",
+            f"Конференции | {SITE_NAME}",
+            "Погодовые страницы Зографских и Рериховских чтений.",
             "conferences/",
             index_body,
-            [page_data("Conference indexes", "Static conference landing pages.", "conferences/"), make_breadcrumbs([("Home", ""), ("Conferences", "conferences/")])],
+            [page_data("Конференции", "Погодовые страницы конференций.", "conferences/"), make_breadcrumbs([("Главная", ""), ("Конференции", "conferences/")])],
         ),
     )
 
@@ -1591,29 +1726,24 @@ def generate_theme_pages(data, records):
         grouped[(record.get("theme") or {}).get("code", "History")].append(record)
 
     cards = []
-    for code, talks in sorted(grouped.items(), key=lambda item: theme_label(item[0])):
+    for code, talks in sorted(grouped.items(), key=lambda item: theme_label(item[0], "ru")):
         path = theme_path(code)
-        title = theme_label(code)
-        ru_title = theme_label(code, "ru")
-        cards.append(f'<article class="card"><strong><a href="../{path}">{esc(title)}</a></strong><div class="meta">{esc(ru_title)} · {len(talks)} presentation records</div></article>')
+        title = theme_label(code, "ru")
+        cards.append(f'<article class="card"><strong><a href="../{path}">{esc(title)}</a></strong><div class="meta">{presentation_records_label(len(talks))}</div></article>')
         # Phase 5 caveat block: transparent classification disclaimer
         caveat_block = f"""
         <aside class="caveat-block" role="note" aria-label="Classification notice">
-            <strong>&#x1F4CB; Classification note</strong>
+            <strong>Примечание о классификации</strong>
             <p>
-                This theme is assigned based on the <em>title</em> of each presentation using a
-                keyword heuristic. It reflects how the talk was <em>labelled at this conference</em>,
-                not the scholar's complete research profile or lifetime specialisation.
-                A single researcher may appear across multiple themes. Multi-topic presentations
-                may be simplified or placed in the most prominent category.
-                See <a href="../methodology.html#theme-classification">Methodology &rsaquo; Thematic Classification</a>
-                for full details.
+                Рубрика назначается по <em>заголовку</em> доклада с помощью словарной эвристики.
+                Она показывает, как доклад размечен в рамках конференционного корпуса, а не полный
+                исследовательский профиль автора. Один исследователь может появляться в нескольких рубриках.
             </p>
         </aside>"""
         body = f"""
         <header>
             <h1>{esc(title)}</h1>
-            <p>{esc(ru_title)}. Presentations classified under this broad research theme.</p>
+            <p>Доклады, отнесенные к этой крупной исследовательской рубрике.</p>
         </header>
         {caveat_block}
         <section class="list">
@@ -1625,28 +1755,166 @@ def generate_theme_pages(data, records):
             path,
             page_shell(
                 f"{title} | {SITE_NAME}",
-                f"Presentation records and scholar links for the {title} theme.",
+                f"Доклады и авторы в рубрике: {title}.",
                 path,
                 body,
-                [page_data(title, f"Presentation records for {title}.", path), make_breadcrumbs([("Home", ""), ("Themes", "themes/"), (title, path)])],
+                [page_data(title, f"Доклады в рубрике: {title}.", path), make_breadcrumbs([("Главная", ""), ("Рубрики", "themes/"), (title, path)])],
             ),
         )
 
     index_body = f"""
         <header>
-            <h1>Research themes</h1>
-            <p>Broad thematic entry points into the archive.</p>
+            <h1>Исследовательские рубрики</h1>
+            <p>Крупные тематические входы в корпус докладов.</p>
         </header>
         <section class="grid">{''.join(cards)}</section>
+        <h2>Мезоуровни</h2>
+        <p>Поперечные тематические коридоры между крупными рубриками и отдельными докладами.</p>
+        <section class="grid">
+            <article class="card"><strong><a href="../meso/">Индексы мезоуровней</a></strong><div class="meta">Мини-серии, подразделы лингвистики и корпусные тематические контуры.</div></article>
+        </section>
     """
     write_text(
         "themes/index.html",
         page_shell(
-            f"Research themes | {SITE_NAME}",
-            "Thematic indexes for the Indology Scholars presentation archive.",
+            f"Исследовательские рубрики | {SITE_NAME}",
+            "Тематические индексы корпуса докладов.",
             "themes/",
             index_body,
-            [page_data("Research themes", "Thematic indexes for the archive.", "themes/"), make_breadcrumbs([("Home", ""), ("Themes", "themes/")])],
+            [page_data("Исследовательские рубрики", "Тематические индексы корпуса.", "themes/"), make_breadcrumbs([("Главная", ""), ("Рубрики", "themes/")])],
+        ),
+    )
+
+
+def redirect_html(title, canonical_path, target_path):
+    target_url = site_url(target_path)
+    target_href = "../" + target_path if "/" in canonical_path else target_path
+    return f"""<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>{esc(title)} | {esc(SITE_NAME)}</title>
+    <link rel="canonical" href="{esc(target_url)}">
+    <meta http-equiv="refresh" content="0; url={esc(target_href)}">
+</head>
+<body>
+    <p>Страница перенесена: <a href="{esc(target_href)}">{esc(title)}</a>.</p>
+</body>
+</html>
+"""
+
+
+def generate_legacy_theme_redirects():
+    redirects = {
+        "themes/academichistory.html": ("themes/history-and-culture.html", "История, этнография и общество"),
+        "themes/art.html": ("themes/art-and-material-culture.html", "Искусство и материальная культура"),
+        "themes/history.html": ("themes/history-and-culture.html", "История, этнография и общество"),
+        "themes/linguistics.html": ("themes/linguistics-and-philology.html", "Лингвистика и филология"),
+        "themes/philosophy.html": ("themes/religion-and-philosophy.html", "Религия и философия"),
+    }
+    for old_path, (target_path, title) in redirects.items():
+        write_text(old_path, redirect_html(title, old_path, target_path))
+
+
+def generate_meso_pages(data, records):
+    items = load_meso_index()
+    if not items:
+        return
+    memberships = load_meso_memberships()
+    records_by_id = presentation_records_by_id(records)
+
+    def example_links(talks, path, depth="", limit=3):
+        links = []
+        for talk in talks:
+            pid = clean_text(talk.get("presentation_id") or "")
+            title = clean_text(talk.get("title") or "")
+            if not pid or is_suspicious_short_title(title):
+                continue
+            links.append(f'<a href="{depth}{path}#{esc(pid)}">{esc(title)}</a>')
+            if len(links) >= limit:
+                break
+        return " · ".join(links)
+
+    cards = []
+    for item in items:
+        code = item["code"]
+        path = meso_path(code)
+        talks = [
+            records_by_id[pid]
+            for pid in dict.fromkeys(memberships.get(code, []))
+            if pid in records_by_id
+        ]
+        talks.sort(key=lambda rec: (int(rec.get("year") or 0), rec.get("series_label") or "", rec.get("title") or ""))
+        examples = example_links(talks, path, "../")
+        examples_html = f'<div class="meta">Примеры: {examples}</div>' if examples else ""
+        cards.append(
+            f'<article class="card"><strong><a href="../{path}">{esc(item["label"])}</a></strong>'
+            f'<div class="meta">{esc(item["kind"])} · {talks_count_label(len(talks))} · Зограф: {item["zograf_count"]} · Рерих: {item["roerich_count"]}</div>{examples_html}</article>'
+        )
+
+        stats = f"""
+        <section class="grid">
+            <article class="card"><strong>Доклады</strong><div class="metric">{len(talks)}</div></article>
+            <article class="card"><strong>Зографские чтения</strong><div class="metric">{esc(item["zograf_count"])}</div></article>
+            <article class="card"><strong>Рериховские чтения</strong><div class="metric">{esc(item["roerich_count"])}</div></article>
+        </section>
+        """
+        top_terms = f'<p><strong>Ключевые слова:</strong> {esc(item["top_terms"])}</p>' if item.get("top_terms") else ""
+        distribution = f'<p><strong>Распределение по крупным рубрикам:</strong> {esc(item["distribution"])}</p>' if item.get("distribution") else ""
+        page_examples = example_links(talks, "", "", 6)
+        examples_block = f"""
+        <section>
+            <h2>Кликабельные примеры</h2>
+            <p>{page_examples}</p>
+        </section>
+        """ if page_examples else ""
+        caveat = """
+        <aside class="caveat-block" role="note" aria-label="Meso-level notice">
+            <strong>Что такое мезоуровень</strong>
+            <p>Это исследовательский коридор между широкой рубрикой и отдельным докладом. Он строится по ключевым словам заголовков: один заголовок может принадлежать нескольким мини-сериям, поэтому списки не являются взаимоисключающими.</p>
+        </aside>
+        """
+        body = f"""
+        <header>
+            <h1>{esc(item["label"])}</h1>
+            <p>{esc(item["kind"])}. Список докладов, попавших в этот мезоуровень по словарю заголовков.</p>
+        </header>
+        {stats}
+        {top_terms}
+        {distribution}
+        {examples_block}
+        {caveat}
+        <section class="list">
+            {''.join(talk_card(t, '../') for t in talks)}
+        </section>
+        """
+        description = f"{item['label']}: {talks_count_label(len(talks))} в мезоуровневом индексе архива."
+        write_text(
+            path,
+            page_shell(
+                f"{item['label']} | {SITE_NAME}",
+                description,
+                path,
+                body,
+                [page_data(item["label"], description, path), make_breadcrumbs([("Home", ""), ("Meso-levels", "meso/"), (item["label"], path)])],
+            ),
+        )
+
+    index_body = f"""
+        <header>
+            <h1>Мезоуровни</h1>
+            <p>Кликабельные исследовательские коридоры: мини-серии, языковые области, корпусные контуры и подразделы лингвистики.</p>
+        </header>
+        <section class="grid">{''.join(cards)}</section>
+    """
+    write_text(
+        "meso/index.html",
+        page_shell(
+            f"Meso-level indexes | {SITE_NAME}",
+            "Cross-cutting meso-level topic indexes for the Indology Scholars archive.",
+            "meso/",
+            index_body,
+            [page_data("Meso-level indexes", "Cross-cutting topic indexes for the archive.", "meso/"), make_breadcrumbs([("Home", ""), ("Meso-levels", "meso/")])],
         ),
     )
 
@@ -1668,7 +1936,7 @@ def generate_city_pages(data, records, authority):
     cards = []
     for city, talks in sorted(grouped.items(), key=lambda item: (-len(item[1]), item[0])):
         path = city_path(city)
-        cards.append(f'<article class="card"><strong><a href="../{path}">{esc(city)}</a></strong><div class="meta">{len(talks)} presentation records</div></article>')
+        cards.append(f'<article class="card"><strong><a href="../{path}">{esc(city)}</a></strong><div class="meta">{presentation_records_label(len(talks))}</div></article>')
         city_desc = f"Доклады учёных и аффилиации, связанные с {city}. Архив Зографских и Рериховских чтений (2004–2025)."
         body = f"""
         <header>
@@ -1703,19 +1971,19 @@ def generate_city_pages(data, records, authority):
 
     index_body = f"""
         <header>
-            <h1>Geographic centers</h1>
-            <p>Static city pages for affiliation and mobility signals extracted from conference programs.</p>
+            <h1>Географические центры</h1>
+            <p>Страницы городов по аффилиациям и географическим сигналам из программ конференций.</p>
         </header>
         <section class="grid">{''.join(cards)}</section>
     """
     write_text(
         "cities/index.html",
         page_shell(
-            f"Geographic centers | {SITE_NAME}",
+            f"Географические центры | {SITE_NAME}",
             "Географические центры российской индологии: города, с которыми связаны учёные Зографских и Рериховских чтений (2004–2025).",
             "cities/",
             index_body,
-            [page_data("Geographic centers", "Географические центры российской индологии.", "cities/"), make_breadcrumbs([("Home", ""), ("Cities", "cities/")])],
+            [page_data("Географические центры", "Географические центры российской индологии.", "cities/"), make_breadcrumbs([("Главная", ""), ("Города", "cities/")])],
         ),
     )
 
@@ -1732,7 +2000,7 @@ def generate_institution_pages(data, records, authority):
     cards = []
     for institution, talks in sorted(grouped.items(), key=lambda item: (-len(item[1]), item[0])):
         path = institution_path(institution)
-        cards.append(f'<article class="card"><strong><a href="../{path}">{esc(institution)}</a></strong><div class="meta">{len(talks)} presentation records</div></article>')
+        cards.append(f'<article class="card"><strong><a href="../{path}">{esc(institution)}</a></strong><div class="meta">{presentation_records_label(len(talks))}</div></article>')
         inst_desc = f"Учёные и доклады, связанные с {institution}: архив участия в Зографских и Рериховских чтениях (2004–2025)."
         body = f"""
         <header>
@@ -1762,19 +2030,19 @@ def generate_institution_pages(data, records, authority):
 
     index_body = f"""
         <header>
-            <h1>Institutions</h1>
-            <p>Normalized institution pages for recurring affiliation clusters.</p>
+            <h1>Институции</h1>
+            <p>Нормализованные страницы организаций и устойчивых аффилиационных кластеров.</p>
         </header>
         <section class="grid">{''.join(cards)}</section>
     """
     write_text(
         "institutions/index.html",
         page_shell(
-            f"Institutions | {SITE_NAME}",
+            f"Институции | {SITE_NAME}",
             "Организации и научные учреждения российской индологии: институты, кафедры и университеты участников Зографских и Рериховских чтений (2004–2025).",
             "institutions/",
             index_body,
-            [page_data("Institutions", "Организации российской индологии.", "institutions/"), make_breadcrumbs([("Home", ""), ("Institutions", "institutions/")])],
+            [page_data("Институции", "Организации российской индологии.", "institutions/"), make_breadcrumbs([("Главная", ""), ("Институции", "institutions/")])],
         ),
     )
 
@@ -2068,7 +2336,7 @@ def generate_sitemap():
         "networks.html",
     ]
     html_paths.extend(str(p).replace("\\", "/") for p in Path("scholars").glob("*.html") if not is_legacy_redirect(p))
-    for dirname in ("conferences", "themes", "cities", "institutions"):
+    for dirname in ("conferences", "themes", "meso", "cities", "institutions"):
         html_paths.extend(str(p).replace("\\", "/") for p in Path(dirname).glob("*.html"))
     html_paths = sorted(set(html_paths), key=lambda p: (p.count("/"), p))
     urlset = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
@@ -2226,6 +2494,8 @@ def main():
     generate_english_landing(data)
     generate_conference_pages(data, records)
     generate_theme_pages(data, records)
+    generate_legacy_theme_redirects()
+    generate_meso_pages(data, records)
     theme_queue_size = generate_theme_review_queue(records)
     generate_city_pages(data, records, authority)
     generate_institution_pages(data, records, authority)

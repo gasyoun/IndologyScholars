@@ -389,6 +389,44 @@ def page_shell(title, description, canonical_path, body, structured_data=None, e
     structured = ""
     if structured_data:
         structured = f'\n    <script type="application/ld+json">\n{json_ld(structured_data)}\n    </script>'
+    if language == "en":
+        nav_items = [
+            ("Dashboard", "/IndologyScholars/"),
+            ("Scholars", "/IndologyScholars/scholars/"),
+            ("Conferences", "/IndologyScholars/conferences/"),
+            ("Themes", "/IndologyScholars/themes/"),
+            ("Meso-levels", "/IndologyScholars/meso/"),
+            ("Cities", "/IndologyScholars/cities/"),
+            ("Institutions", "/IndologyScholars/institutions/"),
+            ("Search", "/IndologyScholars/search.html"),
+            ("Data", "/IndologyScholars/download-data.html"),
+            ("Quality", "/IndologyScholars/data-quality.html"),
+            ("English", "/IndologyScholars/en.html"),
+            ("Cite", "/IndologyScholars/how-to-cite.html"),
+            ("Metrics", "/IndologyScholars/metrics-guide.html"),
+        ]
+    else:
+        nav_items = [
+            ("Панель", "/IndologyScholars/"),
+            ("Исследователи", "/IndologyScholars/scholars/"),
+            ("Конференции", "/IndologyScholars/conferences/"),
+            ("Рубрики", "/IndologyScholars/themes/"),
+            ("Мезоуровни", "/IndologyScholars/meso/"),
+            ("Города", "/IndologyScholars/cities/"),
+            ("Институции", "/IndologyScholars/institutions/"),
+            ("Поиск", "/IndologyScholars/search.html"),
+            ("Данные", "/IndologyScholars/download-data.html"),
+            ("Качество", "/IndologyScholars/data-quality.html"),
+            ("English", "/IndologyScholars/en.html"),
+            ("Цитирование", "/IndologyScholars/how-to-cite.html"),
+            ("Метрики", "/IndologyScholars/metrics-guide.html"),
+        ]
+    nav_html = "\n".join(f'            <a href="{esc(href)}">{esc(label)}</a>' for label, href in nav_items)
+    footer_text = (
+        f"© 2026 {esc(SITE_NAME)}. Generated from the normalized conference archive."
+        if language == "en"
+        else f"© 2026 {esc(SITE_NAME)}. Сгенерировано из нормализованного архива конференций."
+    )
     html = f"""<!DOCTYPE html>
 <html lang="{esc(language)}">
 <head>
@@ -485,6 +523,12 @@ def page_shell(title, description, canonical_path, body, structured_data=None, e
             background: var(--panel);
         }}
         .card strong {{ color: #fff; }}
+        .metric {{
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #fff;
+            margin-top: 0.35rem;
+        }}
         .meta {{
             color: var(--soft);
             font-size: 0.92rem;
@@ -541,21 +585,10 @@ def page_shell(title, description, canonical_path, body, structured_data=None, e
 <body>
     <main class="page">
         <nav class="top-nav" aria-label="Primary">
-            <a href="/IndologyScholars/">Dashboard</a>
-            <a href="/IndologyScholars/scholars/">Scholars</a>
-            <a href="/IndologyScholars/conferences/">Conferences</a>
-            <a href="/IndologyScholars/themes/">Themes</a>
-            <a href="/IndologyScholars/cities/">Cities</a>
-            <a href="/IndologyScholars/institutions/">Institutions</a>
-            <a href="/IndologyScholars/search.html">Search</a>
-            <a href="/IndologyScholars/download-data.html">Data</a>
-            <a href="/IndologyScholars/data-quality.html">Quality</a>
-            <a href="/IndologyScholars/en.html">English</a>
-            <a href="/IndologyScholars/how-to-cite.html">Cite</a>
-            <a href="/IndologyScholars/metrics-guide.html">Metrics</a>
+{nav_html}
         </nav>
 {body}
-        <div class="footer">© 2026 {esc(SITE_NAME)}. Generated from the normalized conference archive.</div>
+        <div class="footer">{footer_text}</div>
     </main>
 </body>
 </html>

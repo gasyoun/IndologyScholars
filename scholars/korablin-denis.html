@@ -25,8 +25,11 @@
         .life { color: var(--soft); font-size: 0.62em; font-weight: 500; margin-left: 0.4rem; }
         .degree { color: var(--soft); font-size: 0.95rem; font-weight: 600; margin: 0.15rem 0 0.5rem; }
         .degree a { font-weight: 400; font-size: 0.85em; }
+        .profile-note { color: var(--soft); max-width: 860px; }
         .metric { font-size: 1.4rem; font-weight: 700; margin-top: 0.2rem; }
         .chip-row { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+        .talk-meta-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 1rem; align-items: baseline; }
+        .talk-meta-session { text-align: right; white-space: nowrap; }
     </style>
 
     <script type="application/ld+json">
@@ -51,7 +54,6 @@
       ],
       "description": "Кораблин Денис Александрович: 4 докладов в архиве Зографских и Рериховских чтений, период активности 2021-2024, основной профиль: История, этнография и общество.",
       "knowsAbout": [
-        "History, Culture & Society",
         "История, этнография и общество"
       ],
       "affiliation": [
@@ -166,6 +168,12 @@
             background: var(--panel);
         }
         .card strong { color: #fff; }
+        .metric {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #fff;
+            margin-top: 0.35rem;
+        }
         .meta {
             color: var(--soft);
             font-size: 0.92rem;
@@ -222,94 +230,92 @@
 <body>
     <main class="page">
         <nav class="top-nav" aria-label="Primary">
-            <a href="/IndologyScholars/">Dashboard</a>
-            <a href="/IndologyScholars/scholars/">Scholars</a>
-            <a href="/IndologyScholars/conferences/">Conferences</a>
-            <a href="/IndologyScholars/themes/">Themes</a>
-            <a href="/IndologyScholars/cities/">Cities</a>
-            <a href="/IndologyScholars/institutions/">Institutions</a>
-            <a href="/IndologyScholars/search.html">Search</a>
-            <a href="/IndologyScholars/download-data.html">Data</a>
-            <a href="/IndologyScholars/data-quality.html">Quality</a>
+            <a href="/IndologyScholars/">Панель</a>
+            <a href="/IndologyScholars/scholars/">Исследователи</a>
+            <a href="/IndologyScholars/conferences/">Конференции</a>
+            <a href="/IndologyScholars/themes/">Рубрики</a>
+            <a href="/IndologyScholars/meso/">Мезоуровни</a>
+            <a href="/IndologyScholars/cities/">Города</a>
+            <a href="/IndologyScholars/institutions/">Институции</a>
+            <a href="/IndologyScholars/search.html">Поиск</a>
+            <a href="/IndologyScholars/download-data.html">Данные</a>
+            <a href="/IndologyScholars/data-quality.html">Качество</a>
             <a href="/IndologyScholars/en.html">English</a>
-            <a href="/IndologyScholars/how-to-cite.html">Cite</a>
-            <a href="/IndologyScholars/metrics-guide.html">Metrics</a>
+            <a href="/IndologyScholars/how-to-cite.html">Цитирование</a>
+            <a href="/IndologyScholars/metrics-guide.html">Метрики</a>
         </nav>
 
         <header>
-            <h1>Кораблин Денис Александрович<span class="life">(род. 1984)</span></h1>
-            <p>Korablin Denis Alexandrovich(b. 1984)</p>
+            <h1>Кораблин Денис Александрович <span class="life">(род. 1984)</span></h1>
+            <p>Korablin Denis Alexandrovich (b. 1984)</p>
             <p class="degree">кандидат философских наук, 2019 · <a href="https://www.dissercat.com/content/sinopsis-filosofskogo-puti-a-pyatigorskogo" target="_blank" rel="noopener">источник</a></p>
             <p>Кораблин Денис Александрович: 4 докладов в архиве Зографских и Рериховских чтений, период активности 2021-2024, основной профиль: История, этнография и общество.</p>
+
         </header>
 
         <section class="grid">
-            <article class="card"><strong>Talks</strong><div class="metric">4</div><div class="meta">Presentation records</div></article>
-            <article class="card"><strong>Activity</strong><div class="metric">2021-2024</div><div class="meta">Observed conference years</div></article>
-            <article class="card"><strong>Theme</strong><div class="metric"><a href="../themes/history-and-culture.html">History, Culture &amp; Society</a></div><div class="meta">История, этнография и общество</div></article>
-            <article class="card"><strong>Conference split</strong><div class="meta">Zograf:  · Roerich: 4</div></article>
+            <article class="card"><strong>Доклады</strong><div class="metric">4</div><div class="meta">записи докладов</div></article>
+            <article class="card"><strong>Активность</strong><div class="metric">2021-2024</div><div class="meta">годы участия</div></article>
+            <article class="card"><strong>Рубрика</strong><div class="metric"><a href="../themes/history-and-culture.html">История, этнография и общество</a></div></article>
+            <article class="card"><strong>Площадки</strong><div class="meta">Зографские чтения:  · Рериховские чтения: 4</div></article>
         </section>
 
-        <h2>Affiliations</h2>
+        <h2>Аффилиации</h2>
         <div class="chip-row"><a class="chip" href="../index.html?search=%D0%98%D0%92%20%D0%A0%D0%90%D0%9D">ИВ РАН</a></div>
 
-        <h2>Geographic Centers</h2>
+        <h2>Географические центры</h2>
         <div class="chip-row"><span class="meta">No records</span></div>
 
-        <h2>Status Tags</h2>
-        <div class="chip-row"><span class="meta">No special status tags.</span></div>
+        <h2>Статусы</h2>
+        <div class="chip-row"><span class="meta">Особые статусы не указаны.</span></div>
 
-        <h2>Presentations</h2>
+        <h2>Доклады</h2>
         <section class="list">
         <article class="talk">
             <strong>О письмах Ю.Н. Рериха из коллекции Д. Тарчина (Колумбийский университет, Нью-Йорк, США)</strong>
             <div class="meta">
-                <a href="../conferences/roerich-2024.html">Roerich Readings 2024</a>
-                · <a href="../themes/history-and-culture.html">History, Culture &amp; Society</a>
+                <a href="../conferences/roerich-2024.html">Рериховские чтения 2024</a>
+                · <a href="../themes/history-and-culture.html">История, этнография и общество</a>
             </div>
-            <div class="meta">2024-12-11 · Среда · 14.30 – 17.30</div>
-            <div class="meta">Вечернее заседание</div>
+            <div class="meta talk-meta-row"><span>2024-12-11 · Среда · 14.30 – 17.30</span><span class="talk-meta-session">Вечернее заседание</span></div>
 
         </article>
 
         <article class="talk">
             <strong>Журнал “Stepping stones” – гималайская культура, буддизм и философия перенниализма сквозь призму взглядов европейских исследователей</strong>
             <div class="meta">
-                <a href="../conferences/roerich-2023.html">Roerich Readings 2023</a>
-                · <a href="../themes/religion-and-philosophy.html">Religion &amp; Philosophy</a>
+                <a href="../conferences/roerich-2023.html">Рериховские чтения 2023</a>
+                · <a href="../themes/religion-and-philosophy.html">Религия и философия</a>
             </div>
-            <div class="meta">2023-12-13 · Среда · 14.00 – 16.00</div>
-            <div class="meta">Вечернее заседание</div>
+            <div class="meta talk-meta-row"><span>2023-12-13 · Среда · 14.00 – 16.00</span><span class="talk-meta-session">Вечернее заседание</span></div>
 
         </article>
 
         <article class="talk">
             <strong>Трактат Марко Паллиса, предостерегающий Тибет о последствиях Кали-юги (об атрибутировании и содержании тибетского ксилографа из Архива музея Рерихов (Филиал Государственного музея Востока))</strong>
             <div class="meta">
-                <a href="../conferences/roerich-2022.html">Roerich Readings 2022</a>
-                · <a href="../themes/history-and-culture.html">History, Culture &amp; Society</a>
+                <a href="../conferences/roerich-2022.html">Рериховские чтения 2022</a>
+                · <a href="../themes/history-and-culture.html">История, этнография и общество</a>
             </div>
-            <div class="meta">2022-12-07 · Среда · 11.00 – 14.00</div>
-            <div class="meta">Утреннее заседание</div>
+            <div class="meta talk-meta-row"><span>2022-12-07 · Среда · 11.00 – 14.00</span><span class="talk-meta-session">Утреннее заседание</span></div>
 
         </article>
 
         <article class="talk">
             <strong>Вклад Ю.Н. Рериха в формирование «транскультурного пространства» Калимпонга (1950-е гг. ХХ в.)</strong>
             <div class="meta">
-                <a href="../conferences/roerich-2021.html">Roerich Readings 2021</a>
-                · <a href="../themes/unspecified.html">Other / Unspecified</a>
+                <a href="../conferences/roerich-2021.html">Рериховские чтения 2021</a>
+                · <a href="../themes/unspecified.html">Разное / Не классифицировано</a>
             </div>
-            <div class="meta">2021-12-15 · Среда · 15.00 – 18.00</div>
-            <div class="meta">Вечернее заседание</div>
+            <div class="meta talk-meta-row"><span>2021-12-15 · Среда · 15.00 – 18.00</span><span class="talk-meta-session">Вечернее заседание</span></div>
 
         </article>
     </section>
 
-        <h2>Related Scholars</h2>
-        <section class="grid"><article class="card"><strong><a href="shustova-alla.html">Шустова Алла Михайловна</a></strong><div class="meta">12 talks · History, Culture &amp; Society</div></article><article class="card"><strong><a href="lyulina-anastasiya.html">Люлина Анастасия Геннадьевна</a></strong><div class="meta">9 talks · History, Culture &amp; Society</div></article><article class="card"><strong><a href="zorin-aleksei.html">Зорин Алексей Валерьевич</a></strong><div class="meta">7 talks · History, Culture &amp; Society</div></article><article class="card"><strong><a href="elizaveta-kuzina.html">Кузина Елизавета Олеговна</a></strong><div class="meta">7 talks · History, Culture &amp; Society</div></article><article class="card"><strong><a href="evgenia-renkovskaya.html">Ренковская Евгения Алексеевна</a></strong><div class="meta">5 talks · History, Culture &amp; Society</div></article><article class="card"><strong><a href="ivanov-vladimir.html">Иванов Владимир Павлович</a></strong><div class="meta">4 talks · History, Culture &amp; Society</div></article><article class="card"><strong><a href="komarova-irina.html">Комарова Ирина Нигматовна</a></strong><div class="meta">4 talks · History, Culture &amp; Society</div></article><article class="card"><strong><a href="rada-krapivina.html">Крапивина Раиса Николаевна</a></strong><div class="meta">4 talks · History, Culture &amp; Society</div></article></section>
+        <h2>Связанные авторы</h2>
+        <section class="grid"><article class="card"><strong><a href="victoria-vertogradova.html">Вертоградова Виктория Викторовна</a></strong><div class="meta">13 докладов · История, этнография и общество</div></article><article class="card"><strong><a href="shustova-alla.html">Шустова Алла Михайловна</a></strong><div class="meta">12 докладов · История, этнография и общество</div></article><article class="card"><strong><a href="drobyshev-yulii.html">Дробышев Юлий Игорьевич</a></strong><div class="meta">11 докладов · История, этнография и общество</div></article><article class="card"><strong><a href="alexander-babin.html">Бабин Александр Николаевич</a></strong><div class="meta">10 докладов · История, этнография и общество</div></article><article class="card"><strong><a href="ostrovskaya-elena.html">Островская Елена Петровна</a></strong><div class="meta">10 докладов · История, этнография и общество</div></article><article class="card"><strong><a href="lyulina-anastasiya.html">Люлина Анастасия Геннадьевна</a></strong><div class="meta">9 докладов · История, этнография и общество</div></article><article class="card"><strong><a href="ogneva-elena.html">Огнева Елена Дмитриевна</a></strong><div class="meta">9 докладов · История, этнография и общество</div></article><article class="card"><strong><a href="ermakova-tatyana.html">Ермакова Татьяна Викторовна</a></strong><div class="meta">8 докладов · История, этнография и общество</div></article></section>
 
-        <div class="footer">© 2026 Russian Indological Research Archive. Generated from the normalized conference archive.</div>
+        <div class="footer">© 2026 Russian Indological Research Archive. Сгенерировано из нормализованного архива конференций.</div>
     </main>
 </body>
 </html>

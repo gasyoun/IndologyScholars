@@ -1,64 +1,64 @@
 entity_type,entity_id,field_name,field_value,source_type,confidence,checked_at,title,l1_review_candidate,l1_confidence,l3_review_candidate,l3_confidence,notes
-presentation,PRES_04d1dbb4f8,theme.code,unspecified,baseline_remapped,0.0,2026-05-23,Предание в тексте и,unspecified,0.0,unspecified,,Mapped from old baseline
-presentation,PRES_09a1e1c8ac,theme.code,unspecified,baseline_remapped,0.0,2026-05-23,,unspecified,0.0,unspecified,,Mapped from old baseline
-presentation,PRES_0d145ad80b,theme.code,unspecified,baseline_remapped,0.0,2026-05-23,,unspecified,0.0,unspecified,,Mapped from old baseline
-presentation,PRES_0d145ad80b,theme.code,unspecified,baseline_remapped,0.0,2026-05-23,,unspecified,0.0,unspecified,,Mapped from old baseline
-presentation,PRES_1469802faf,theme.code,unspecified,baseline_remapped,0.0,2026-05-23,По следам Петербуржца в,unspecified,0.0,unspecified,,Mapped from old baseline
+presentation,PRES_04d1dbb4f8,theme.code,unspecified,heuristic,,2026-05-23,Предание в тексте и предание в камне: сюжет просветления Будды на рельефе Большой Ступы в Санчи,,,,,
+presentation,PRES_09a1e1c8ac,theme.code,history_and_culture,heuristic,,2026-05-23,Индийское паломничество в сравнительном аспекте,,,,,
+presentation,PRES_0d145ad80b,theme.code,unspecified,heuristic,,2026-05-23,Фарс Шанкхадхары «Латакамелака» и ее рукопись из Библиотеки им. Кешара (Катманду),,,,,
+presentation,PRES_0d145ad80b,theme.code,unspecified,heuristic,,2026-05-23,Фарс Шанкхадхары «Латакамелака» и ее рукопись из Библиотеки им. Кешара (Катманду),,,,,
+presentation,PRES_1469802faf,theme.code,unspecified,heuristic,,2026-05-23,По следам Петербуржца в Индии: путешествие князя Салтыкова,,,,,
 presentation,PRES_1cd8e6e44e,theme.code,religion_and_philosophy,baseline_remapped,1.0,2026-05-23,Дхармакирти о существовании,religion_and_philosophy,1.0,unspecified,,Mapped from old baseline
-presentation,PRES_429df46bef,theme.code,history_and_culture,baseline_remapped,1.0,2026-05-23,Зачем спорили хэшан,history_and_culture,1.0,tibetology,,Mapped from old baseline
-presentation,PRES_454ec814a4,theme.code,unspecified,baseline_remapped,0.0,2026-05-23,Вера Александровна Новикова,unspecified,0.0,unspecified,,Mapped from old baseline
-presentation,PRES_47c9b6e551,theme.code,unspecified,baseline_remapped,0.0,2026-05-23,«Они из секты Пифагора»:,unspecified,0.0,unspecified,,Mapped from old baseline
-presentation,PRES_49871ff2ee,theme.code,unspecified,baseline_remapped,0.0,2026-05-23,Александр,unspecified,0.0,unspecified,,Mapped from old baseline
-presentation,PRES_a23748a106,theme.code,religion_and_philosophy,baseline_remapped,1.0,2026-05-23,Теория познания в,religion_and_philosophy,1.0,unspecified,,Mapped from old baseline
-presentation,PRES_a468274027,theme.code,religion_and_philosophy,baseline_remapped,1.0,2026-05-23,Эпическая санкхья в,religion_and_philosophy,1.0,unspecified,,Mapped from old baseline
-presentation,PRES_a94e17b6dc,theme.code,unspecified,baseline_remapped,0.0,2026-05-23,Седукова Надежда Александровна,unspecified,0.0,unspecified,,Mapped from old baseline
-presentation,PRES_c6cbde7b3d,theme.code,unspecified,baseline_remapped,0.0,2026-05-23,Заметки о роли индийской,unspecified,0.0,unspecified,,Mapped from old baseline
-presentation,PRES_ca8800ec45,theme.code,history_and_culture,baseline_remapped,1.0,2026-05-23,Абхисамаяаланкара:,history_and_culture,1.0,tibetology,,Mapped from old baseline
-presentation,PRES_de83f64419,theme.code,unspecified,baseline_remapped,0.0,2026-05-23,«Шри Рамананда-чаритам»,unspecified,0.0,unspecified,,Mapped from old baseline
-presentation,PRES_f613b85148,theme.code,history_and_culture,baseline_remapped,1.0,2026-05-23,А.А. Сталь-Гольштейн,history_and_culture,1.0,unspecified,,Mapped from old baseline
-presentation,PRES_0191a9931d,theme.code,unspecified,baseline_remapped,0.0,2026-05-23,Сон Урмилы в современной индийской,unspecified,0.0,unspecified,,Mapped from old baseline
-presentation,PRES_05c3fd2ae3,theme.code,unspecified,baseline_remapped,0.0,2026-05-23,"""Башни с нишами"" в",unspecified,0.0,unspecified,,Mapped from old baseline
-presentation,PRES_0b9610a3e7,theme.code,unspecified,baseline_remapped,0.0,2026-05-23,Синтез сложных слов tatpuruṣa и,unspecified,0.0,unspecified,,Mapped from old baseline
-presentation,PRES_2739e10d32,theme.code,unspecified,baseline_remapped,0.0,2026-05-23,«Местный колорит» в,unspecified,0.0,unspecified,,Mapped from old baseline
+presentation,PRES_429df46bef,theme.code,history_and_culture,heuristic,,2026-05-23,Зачем спорили хэшан Махаяна и Камалашила?,,,,,
+presentation,PRES_454ec814a4,theme.code,unspecified,heuristic,,2026-05-23,Вера Александровна Новикова (1918-1972) и послевоенная бенгалистика в Ленинграде,,,,,
+presentation,PRES_47c9b6e551,theme.code,unspecified,heuristic,,2026-05-23,«Они из секты Пифагора»: представления об индуизме трех итальянских купцов второй половины XVI в.,,,,,
+presentation,PRES_49871ff2ee,theme.code,unspecified,heuristic,,2026-05-23,Александр Михайлович Мерварт: судьба ученого,,,,,
+presentation,PRES_a23748a106,theme.code,religion_and_philosophy,heuristic,,2026-05-23,Теория познания в мадхьямаке-сватантрике (по трактату Бхававивеки «Мадхьямака-хридая»),,,,,
+presentation,PRES_a468274027,theme.code,religion_and_philosophy,heuristic,,2026-05-23,Эпическая санкхья в беседе царя Джанаки и отшельницы Сулабхи (МБХ 12.308),,,,,
+presentation,PRES_a94e17b6dc,theme.code,unspecified,heuristic,,2026-05-23,"Востоковед Павел Яковлевич Петров (1814-1875), его библиотека и архив",,,,,
+presentation,PRES_c6cbde7b3d,theme.code,unspecified,heuristic,,2026-05-23,Заметки о роли индийской диаспоры в пропаганде языка и литературы хинди,,,,,
+presentation,PRES_ca8800ec45,theme.code,history_and_culture,heuristic,,2026-05-23,Абхисамаяаланкара: вводная часть,,,,,
+presentation,PRES_de83f64419,theme.code,unspecified,heuristic,,2026-05-23,«Шри Рамананда-чаритам» Рамбхадрачарьи как образец современной санскритской махакавьи,,,,,
+presentation,PRES_f613b85148,theme.code,history_and_culture,heuristic,,2026-05-23,А.А. Сталь-Гольштейн как участник научно-издательской серии «Bibliotheca Buddhica»,,,,,
+presentation,PRES_0191a9931d,theme.code,unspecified,heuristic,,2026-05-23,Сон Урмилы в современной индийской прозе,,,,,
+presentation,PRES_05c3fd2ae3,theme.code,unspecified,heuristic,,2026-05-23,«Башни с нишами» в индуизме. Об одном типе храмовых шикхар в архитектуре Чалукьев,,,,,
+presentation,PRES_0b9610a3e7,theme.code,unspecified,heuristic,,2026-05-23,Синтез сложных слов tatpuruṣa и karmadhāraya в грамматике Панини,,,,,
+presentation,PRES_2739e10d32,theme.code,unspecified,heuristic,,2026-05-23,«Местный колорит» в литературной традиции Ориссы,,,,,
 presentation,PRES_2ee12546b2,theme.code,literature_and_poetry,baseline_remapped,1.0,2026-05-23,Сита и Агни в «Рамаяне» Вальмики,literature_and_poetry,1.0,unspecified,,Mapped from old baseline
-presentation,PRES_62a2c637da,theme.code,literature_and_poetry,baseline_remapped,1.0,2026-05-23,Салман Рушди и русская,literature_and_poetry,1.0,unspecified,,Mapped from old baseline
-presentation,PRES_704c51dc8f,theme.code,unspecified,baseline_remapped,0.0,2026-05-23,Чему и как учит,unspecified,0.0,unspecified,,Mapped from old baseline
+presentation,PRES_62a2c637da,theme.code,literature_and_poetry,heuristic,,2026-05-23,Салман Рушди и русская литература: тайный роман?,,,,,
+presentation,PRES_704c51dc8f,theme.code,unspecified,heuristic,,2026-05-23,Чему и как учит Панчатантра,,,,,
 presentation,PRES_717723198b,theme.code,linguistics_and_philology,baseline_remapped,0.85,2026-05-23,Kumāra: этимология и мифология,linguistics_and_philology,0.85,unspecified,,Mapped from old baseline
-presentation,PRES_753eef11a6,theme.code,unspecified,baseline_remapped,0.0,2026-05-23,Перевод в практике,unspecified,0.0,unspecified,,Mapped from old baseline
-presentation,PRES_7d7ea74779,theme.code,linguistics_and_philology,baseline_remapped,1.0,2026-05-23,Южноандаманские языки: к,linguistics_and_philology,1.0,unspecified,,Mapped from old baseline
-presentation,PRES_89d287993e,theme.code,unspecified,baseline_remapped,0.0,2026-05-23,Средневековая,unspecified,0.0,unspecified,,Mapped from old baseline
-presentation,PRES_9ea6f5bc67,theme.code,linguistics_and_philology,baseline_remapped,1.0,2026-05-23,Лексика языка куллуи: этимологии,linguistics_and_philology,1.0,unspecified,,Mapped from old baseline
-presentation,PRES_a386a029c9,theme.code,linguistics_and_philology,baseline_remapped,1.0,2026-05-23,Метод кодировки чисел в трудах,linguistics_and_philology,1.0,unspecified,,Mapped from old baseline
-presentation,PRES_aa0065628d,theme.code,history_and_culture,baseline_remapped,1.0,2026-05-23,Паришишты как исторический,history_and_culture,1.0,unspecified,,Mapped from old baseline
-presentation,PRES_cc5564b317,theme.code,unspecified,baseline_remapped,0.0,2026-05-23,Пословицы и поговорки,unspecified,0.0,unspecified,,Mapped from old baseline
-presentation,PRES_f012dba963,theme.code,linguistics_and_philology,baseline_remapped,1.0,2026-05-23,Имперфект в древнеиндийском,linguistics_and_philology,1.0,unspecified,,Mapped from old baseline
-presentation,PRES_0a815e1eea,theme.code,religion_and_philosophy,baseline_remapped,1.0,2026-05-23,Идеи йогачары в трактате Асанги,religion_and_philosophy,1.0,unspecified,,Mapped from old baseline
-presentation,PRES_38f205e4bd,theme.code,literature_and_poetry,baseline_remapped,1.0,2026-05-23,«Сказание о Лиле» в «Йога-,literature_and_poetry,1.0,unspecified,,Mapped from old baseline
-presentation,PRES_397e3963d9,theme.code,unspecified,baseline_remapped,0.0,2026-05-23,Вклад Абхинавагупты в развитие,unspecified,0.0,unspecified,,Mapped from old baseline
-presentation,PRES_449a8a5d83,theme.code,unspecified,baseline_remapped,0.0,2026-05-23,Структура ниданы,unspecified,0.0,unspecified,,Mapped from old baseline
-presentation,PRES_4e2973826e,theme.code,religion_and_philosophy,baseline_remapped,1.0,2026-05-23,Индийская философия в свете,religion_and_philosophy,1.0,unspecified,,Mapped from old baseline
-presentation,PRES_5efd5cf3d6,theme.code,unspecified,baseline_remapped,0.0,2026-05-23,Коннотативные особенности,unspecified,0.0,unspecified,,Mapped from old baseline
-presentation,PRES_707967d832,theme.code,unspecified,baseline_remapped,0.0,2026-05-23,Особая священная,unspecified,0.0,unspecified,,Mapped from old baseline
-presentation,PRES_8278d320e8,theme.code,religion_and_philosophy,baseline_remapped,1.0,2026-05-23,Интерпретация идей Упанишад в,religion_and_philosophy,1.0,unspecified,,Mapped from old baseline
-presentation,PRES_ac9683df6e,theme.code,unspecified,baseline_remapped,0.0,2026-05-23,Уроки Герхарда Оберхаммера. По,unspecified,0.0,unspecified,,Mapped from old baseline
-presentation,PRES_ae940b9946,theme.code,religion_and_philosophy,baseline_remapped,1.0,2026-05-23,Прамана-вада «Таттва-сандарбхи» Дживы,religion_and_philosophy,1.0,unspecified,,Mapped from old baseline
-presentation,PRES_aea5eb08fe,theme.code,religion_and_philosophy,baseline_remapped,1.0,2026-05-23,Можно ли считать мадхьямаку,religion_and_philosophy,1.0,unspecified,,Mapped from old baseline
-presentation,PRES_d1ede4663f,theme.code,religion_and_philosophy,baseline_remapped,1.0,2026-05-23,Традиция толкования упанишад:,religion_and_philosophy,1.0,unspecified,,Mapped from old baseline
-presentation,PRES_f20b1ace74,theme.code,religion_and_philosophy,baseline_remapped,1.0,2026-05-23,"Санньяса и Брахмалока: смерть,",religion_and_philosophy,1.0,unspecified,,Mapped from old baseline
-presentation,PRES_0b8a983777,theme.code,unspecified,baseline_remapped,0.0,2026-05-23,Окна в иной мир: изобразительные,unspecified,0.0,unspecified,,Mapped from old baseline
+presentation,PRES_753eef11a6,theme.code,unspecified,heuristic,,2026-05-23,Перевод в практике преподавания хинди в средней школе,,,,,
+presentation,PRES_7d7ea74779,theme.code,linguistics_and_philology,heuristic,,2026-05-23,Южноандаманские языки: к вопросу о возможностях внешнего сравнения,,,,,
+presentation,PRES_89d287993e,theme.code,unspecified,heuristic,,2026-05-23,"Средневековая фольклорная формула и литературное клише: образ, мотив",,,,,
+presentation,PRES_9ea6f5bc67,theme.code,linguistics_and_philology,heuristic,,2026-05-23,Лексика языка куллуи: этимологии 2026 года,,,,,
+presentation,PRES_a386a029c9,theme.code,linguistics_and_philology,heuristic,,2026-05-23,Метод кодировки чисел в трудах индийского математика Арьябхаты,,,,,
+presentation,PRES_aa0065628d,theme.code,history_and_culture,heuristic,,2026-05-23,Паришишты как исторический источник: проблемы датировки и классификации поздневедийской ритуальной литературы,,,,,
+presentation,PRES_cc5564b317,theme.code,unspecified,heuristic,,2026-05-23,Пословицы и поговорки Индии и России как аспект межкультурной коммуникации (проектная деятельность на уроках языка хинди),,,,,
+presentation,PRES_f012dba963,theme.code,linguistics_and_philology,heuristic,,2026-05-23,Имперфект в древнеиндийском эпосе,,,,,
+presentation,PRES_0a815e1eea,theme.code,religion_and_philosophy,heuristic,,2026-05-23,Идеи йогачары в трактате Асанги «Абхидхармасамуччая» (первая глава),,,,,
+presentation,PRES_38f205e4bd,theme.code,literature_and_poetry,heuristic,,2026-05-23,«Сказание о Лиле» в «Йога-васиштхе»,,,,,
+presentation,PRES_397e3963d9,theme.code,unspecified,heuristic,,2026-05-23,Вклад Абхинавагупты в развитие шиваитской доктрины философского монизма в отличной от адвайта-веданты парадигме,,,,,
+presentation,PRES_449a8a5d83,theme.code,unspecified,heuristic,,2026-05-23,Структура ниданы из «Панчавимшатика-праджняпарамиты» в аспекте ритуальной практики,,,,,
+presentation,PRES_4e2973826e,theme.code,religion_and_philosophy,heuristic,,2026-05-23,Индийская философия в свете компаративного подхода Поля Массон-Урселя,,,,,
+presentation,PRES_5efd5cf3d6,theme.code,unspecified,heuristic,,2026-05-23,Коннотативные особенности йогической лексики Виджнянабхикшу (на примере комментария к 1.1 «Pātañjalayogaśāstram»),,,,,
+presentation,PRES_707967d832,theme.code,unspecified,heuristic,,2026-05-23,"«Особая священная игра» Гулабрао Махараджа как игровая модель индуистской сотериологии: космология, философия и бхакти",,,,,
+presentation,PRES_8278d320e8,theme.code,religion_and_philosophy,heuristic,,2026-05-23,Интерпретация идей Упанишад в философском наследии Р. Тагора: религиозная онтология,,,,,
+presentation,PRES_ac9683df6e,theme.code,unspecified,heuristic,,2026-05-23,Уроки Герхарда Оберхаммера. По следам перевода книги «Структуры йоговской медитации»,,,,,
+presentation,PRES_ae940b9946,theme.code,religion_and_philosophy,heuristic,,2026-05-23,Прамана-вада «Таттва-сандарбхи» Дживы Госвами в оптике неклассической эпистемологии науки,,,,,
+presentation,PRES_aea5eb08fe,theme.code,religion_and_philosophy,heuristic,,2026-05-23,Можно ли считать мадхьямаку нигилизмом?,,,,,
+presentation,PRES_d1ede4663f,theme.code,religion_and_philosophy,heuristic,,2026-05-23,"Традиция толкования упанишад: контекст, философское значение и интерпретация ключевой фразы «tat tvam asi» («Ты есть то»)",,,,,
+presentation,PRES_f20b1ace74,theme.code,religion_and_philosophy,heuristic,,2026-05-23,"Санньяса и Брахмалока: смерть, социальная или физическая, как опосредующий этап пути к освобождению в адвайта-веданте",,,,,
+presentation,PRES_0b8a983777,theme.code,unspecified,heuristic,,2026-05-23,Окна в иной мир: изобразительные тексты и линия жизни индийской художницы-парси Катаюн Саклат (1938-2026): антропологический взгляд,,,,,
 presentation,PRES_0bf7d4caad,theme.code,history_and_culture,baseline_remapped,1.0,2026-05-23,Адиваси. Загадочное племя тода,history_and_culture,1.0,unspecified,,Mapped from old baseline
-presentation,PRES_1be3cfc48b,theme.code,history_and_culture,baseline_remapped,1.0,2026-05-23,К истории,history_and_culture,1.0,unspecified,,Mapped from old baseline
-presentation,PRES_6b88ca7841,theme.code,religion_and_philosophy,baseline_remapped,0.85,2026-05-23,Тело агхори как «живой текст»:,religion_and_philosophy,0.85,unspecified,,Mapped from old baseline
-presentation,PRES_6e4151c4c6,theme.code,religion_and_philosophy,baseline_remapped,0.85,2026-05-23,Миф о Потопе и тыкве у племен,religion_and_philosophy,0.85,unspecified,,Mapped from old baseline
-presentation,PRES_9970e6d559,theme.code,unspecified,baseline_remapped,0.0,2026-05-23,,unspecified,0.0,unspecified,,Mapped from old baseline
-presentation,PRES_9970e6d559,theme.code,unspecified,baseline_remapped,0.0,2026-05-23,,unspecified,0.0,unspecified,,Mapped from old baseline
-presentation,PRES_a21ffcc50d,theme.code,unspecified,baseline_remapped,0.0,2026-05-23,"Jati, gotra and marriage system in Haryana: a",unspecified,0.0,unspecified,,Mapped from old baseline
-presentation,PRES_bf93ca6932,theme.code,unspecified,baseline_remapped,0.0,2026-05-23,Непальский вариант,unspecified,0.0,unspecified,,Mapped from old baseline
-presentation,PRES_c6ba86e6a2,theme.code,religion_and_philosophy,baseline_remapped,1.0,2026-05-23,"Яйцо, курица и Тримурти:",religion_and_philosophy,1.0,unspecified,,Mapped from old baseline
-presentation,PRES_c9e5f9602f,theme.code,religion_and_philosophy,baseline_remapped,1.0,2026-05-23,Ведийский ритуал Праваргья,religion_and_philosophy,1.0,unspecified,,Mapped from old baseline
-presentation,PRES_d6d1aa17d4,theme.code,unspecified,baseline_remapped,0.0,2026-05-23,"Огонь, вода и память:",unspecified,0.0,unspecified,,Mapped from old baseline
-presentation,PRES_ec92e3cbe5,theme.code,unspecified,baseline_remapped,0.0,2026-05-23,Златоликие образы,unspecified,0.0,unspecified,,Mapped from old baseline
-presentation,PRES_f31d73160b,theme.code,linguistics_and_philology,baseline_remapped,0.85,2026-05-23,Голод в Бенгалии 1943,linguistics_and_philology,0.85,unspecified,,Mapped from old baseline
+presentation,PRES_1be3cfc48b,theme.code,history_and_culture,heuristic,,2026-05-23,К истории поступления индийских памятников в Эрмитаж: новые открытия,,,,,
+presentation,PRES_6b88ca7841,theme.code,religion_and_philosophy,heuristic,,2026-05-23,Тело агхори как «живой текст»: визуальность и перформанс в производстве религиозного авторитета,,,,,
+presentation,PRES_6e4151c4c6,theme.code,religion_and_philosophy,heuristic,,2026-05-23,Миф о Потопе и тыкве у племен западной Индии,,,,,
+presentation,PRES_9970e6d559,theme.code,unspecified,heuristic,,2026-05-23,Об одном диафильме В. Чатопадаева из коллекции МАЭ РАН,,,,,
+presentation,PRES_9970e6d559,theme.code,unspecified,heuristic,,2026-05-23,Об одном диафильме В. Чатопадаева из коллекции МАЭ РАН,,,,,
+presentation,PRES_a21ffcc50d,theme.code,unspecified,heuristic,,2026-05-23,"Jati, gotra and marriage system in Haryana: a change in perspective",,,,,
+presentation,PRES_bf93ca6932,theme.code,unspecified,heuristic,,2026-05-23,Непальский вариант Гаруды,,,,,
+presentation,PRES_c6ba86e6a2,theme.code,religion_and_philosophy,heuristic,,2026-05-23,"Яйцо, курица и Тримурти: миф о Шакти в фольклоре мадига",,,,,
+presentation,PRES_c9e5f9602f,theme.code,religion_and_philosophy,heuristic,,2026-05-23,Ведийский ритуал Праваргья (pravargya): текстовая традиция и ритуальная практика,,,,,
+presentation,PRES_d6d1aa17d4,theme.code,unspecified,heuristic,,2026-05-23,"Огонь, вода и память: погребальные практики сикхов в мультикультурной среде",,,,,
+presentation,PRES_ec92e3cbe5,theme.code,unspecified,heuristic,,2026-05-23,Златоликие образы Дипанкары Будды и традиция проведения фестиваля Самьяк маха дана в Патане,,,,,
+presentation,PRES_f31d73160b,theme.code,linguistics_and_philology,heuristic,,2026-05-23,Голод в Бенгалии 1943 года и его отражение в творчестве индийских художников,,,,,
 presentation,PRES_0f4f24f569,theme.code,history_and_culture,baseline_remapped,1.0,2026-05-23,Проблемы изучения традиционного индийского текста «Абхисамая-аланкара» (на тибетском языке),history_and_culture,1.0,tibetology,,Mapped from old baseline
 presentation,PRES_2e4095c747,theme.code,religion_and_philosophy,baseline_remapped,1.0,2026-05-23,Наука абхидхармы в буддийской ментальной традиции средневековой Индии,religion_and_philosophy,1.0,unspecified,,Mapped from old baseline
 presentation,PRES_5ba570d69d,theme.code,history_and_culture,baseline_remapped,1.0,2026-05-23,Метафора зеркала в «Бхаванакраме» Камалашилы,history_and_culture,1.0,tibetology,,Mapped from old baseline
@@ -72,7 +72,7 @@ presentation,PRES_b8c7056b10,theme.code,linguistics_and_philology,baseline_remap
 presentation,PRES_c3dcf66fa9,theme.code,religion_and_philosophy,baseline_remapped,0.85,2026-05-23,Учение санкхьи в «Брихадараньяка-упанишаде»,religion_and_philosophy,0.85,unspecified,,Mapped from old baseline
 presentation,PRES_cac95e2161,theme.code,unspecified,baseline_remapped,0.0,2026-05-23,В защиту Вишну Шипивишты: «Аз есьм Шипивишта!» (РВ 7.100.6),unspecified,0.0,unspecified,,Mapped from old baseline
 presentation,PRES_e84196d92a,theme.code,unspecified,baseline_remapped,0.0,2026-05-23,К интерпретации Ригведы: śiśnadevāḥ,unspecified,0.0,unspecified,,Mapped from old baseline
-presentation,PRES_fc83b6c79d,theme.code,unspecified,baseline_remapped,0.0,2026-05-23,Возвращаясь к третьей книге Махабхараты: новый взгляд,unspecified,0.0,unspecified,,Mapped from old baseline
+presentation,PRES_fc83b6c79d,theme.code,literature_and_poetry,baseline_remapped,0.0,2026-05-23,Возвращаясь к третьей книге Махабхараты: новый взгляд,unspecified,0.0,unspecified,,Mapped from old baseline
 presentation,PRES_060a3a404c,theme.code,literature_and_poetry,baseline_remapped,1.0,2026-05-23,Социально-политический контекст романов Даймонд Шамшера Рана,literature_and_poetry,1.0,unspecified,,Mapped from old baseline
 presentation,PRES_40d116e031,theme.code,religion_and_philosophy,baseline_remapped,1.0,2026-05-23,"Отражение концепции ""нисходящего времени"" (descending time) в Катха Упанишаде",religion_and_philosophy,1.0,unspecified,,Mapped from old baseline
 presentation,PRES_493f0d6ac7,theme.code,unspecified,baseline_remapped,0.0,2026-05-23,Восхождение Урмилы в поэме Майтхилишарана Гупты «Сакет»,unspecified,0.0,unspecified,,Mapped from old baseline
@@ -218,7 +218,7 @@ presentation,PRES_86f816e5ce,theme.code,unspecified,baseline_remapped,0.0,2026-0
 presentation,PRES_a98bc8f604,theme.code,unspecified,baseline_remapped,0.0,2026-05-23,Брахман,unspecified,0.0,unspecified,,Mapped from old baseline
 presentation,PRES_b95e53cecd,theme.code,unspecified,baseline_remapped,0.0,2026-05-23,,unspecified,0.0,unspecified,,Mapped from old baseline
 presentation,PRES_cf2f760dcd,theme.code,unspecified,baseline_remapped,0.0,2026-05-23,К,unspecified,0.0,unspecified,,Mapped from old baseline
-presentation,PRES_e8af614558,theme.code,unspecified,baseline_remapped,0.0,2026-05-23,,unspecified,0.0,unspecified,,Mapped from old baseline
+presentation,PRES_e8af614558,theme.code,literature_and_poetry,heuristic,,2026-05-23,Фольклор европейских рома (цыган) и мифы индийских племен,,,,,
 presentation,PRES_04b4bf6926,theme.code,unspecified,baseline_remapped,0.0,2026-05-23,,unspecified,0.0,unspecified,,Mapped from old baseline
 presentation,PRES_2a4fa4606d,theme.code,unspecified,baseline_remapped,0.0,2026-05-23,,unspecified,0.0,unspecified,,Mapped from old baseline
 presentation,PRES_2c0be37fa8,theme.code,unspecified,baseline_remapped,0.0,2026-05-23,Проблема,unspecified,0.0,unspecified,,Mapped from old baseline
@@ -414,7 +414,7 @@ presentation,PRES_273faaf1c4,theme.code,art_and_material_culture,baseline_remapp
 presentation,PRES_4c303a7d1a,theme.code,history_and_culture,baseline_remapped,1.0,2026-05-23,Антропоморфная образность «игры знания»: телесная метафора и метафора путешествия,history_and_culture,1.0,unspecified,,Mapped from old baseline
 presentation,PRES_c0d93ccddb,theme.code,history_and_culture,baseline_remapped,1.0,2026-05-23,Ю.Н. Рерих о кочевниках Тибета,history_and_culture,1.0,tibetology,,Mapped from old baseline
 presentation,PRES_4222cc5294,theme.code,unspecified,baseline_remapped,0.0,2026-05-23,Проблемы атомизма по «Вимшике» Васубандху и «Аламбана-парикше» Дигнаги,unspecified,0.0,unspecified,,Mapped from old baseline
-presentation,PRES_492441fb51,theme.code,literature_and_poetry,baseline_remapped,1.0,2026-05-23,Небывальщины и парадоксы в древне- индийской поэзии,literature_and_poetry,1.0,unspecified,,Mapped from old baseline
+presentation,PRES_492441fb51,theme.code,literature_and_poetry,heuristic,,2026-05-23,Небывальщины и парадоксы в древнеиндийской поэзии,,,,,
 presentation,PRES_5e3f146897,theme.code,literature_and_poetry,baseline_remapped,1.0,2026-05-23,Небывальщины и парадоксы в средневековой североиндийской поэзии,literature_and_poetry,1.0,unspecified,,Mapped from old baseline
 presentation,PRES_69020aec6c,theme.code,religion_and_philosophy,baseline_remapped,1.0,2026-05-23,"К анализу стиха Ригведа 1.120.11, или Предварительные заметки о ведийском автомобиле",religion_and_philosophy,1.0,unspecified,,Mapped from old baseline
 presentation,PRES_75e95131c2,theme.code,linguistics_and_philology,baseline_remapped,1.0,2026-05-23,Санскритская грамматика и мирская мудрость,linguistics_and_philology,1.0,unspecified,,Mapped from old baseline
@@ -713,7 +713,7 @@ presentation,PRES_01c8c172a9,theme.code,linguistics_and_philology,baseline_remap
 presentation,PRES_04dccf8d10,theme.code,unspecified,baseline_remapped,0.0,2026-05-23,Представление о Брахмане в ранней вишишта-адвайте,unspecified,0.0,unspecified,,Mapped from old baseline
 presentation,PRES_3195691394,theme.code,linguistics_and_philology,baseline_remapped,0.85,2026-05-23,Элементы культурного синтеза в бенгальской поэзии XVII века,linguistics_and_philology,0.85,unspecified,,Mapped from old baseline
 presentation,PRES_3666aae128,theme.code,linguistics_and_philology,baseline_remapped,1.0,2026-05-23,«Открытие Индии» сквозь призму традиционного текста: опыт мыслителей Бенгальского Возрождения,linguistics_and_philology,1.0,unspecified,,Mapped from old baseline
-presentation,PRES_3aa6b03a07,theme.code,unspecified,baseline_remapped,0.0,2026-05-23,Герасим Лебедев и британская элита колониальной Калькутты: момент разрыва,unspecified,0.0,unspecified,,Mapped from old baseline
+presentation,PRES_3aa6b03a07,theme.code,history_and_culture,baseline_remapped,0.0,2026-05-23,Герасим Лебедев и британская элита колониальной Калькутты: момент разрыва,unspecified,0.0,unspecified,,Mapped from old baseline
 presentation,PRES_57ae9add27,theme.code,linguistics_and_philology,baseline_remapped,0.85,2026-05-23,Реальное и ирреальное в «„Новой поэзии“ хинди»,linguistics_and_philology,0.85,unspecified,,Mapped from old baseline
 presentation,PRES_6a7d4db7b5,theme.code,religion_and_philosophy,baseline_remapped,1.0,2026-05-23,Читта и бодхичитта. Раздумья о переводе некоторых буддийских терминов,religion_and_philosophy,1.0,unspecified,,Mapped from old baseline
 presentation,PRES_6ef9ae63f8,theme.code,religion_and_philosophy,baseline_remapped,1.0,2026-05-23,Айодхья через 20 лет после конфликта: о современных проявлениях индуистского фундаментализма (наблюдения и немного размышлений),religion_and_philosophy,1.0,unspecified,,Mapped from old baseline
@@ -761,7 +761,7 @@ presentation,PRES_347180ce4e,theme.code,unspecified,baseline_remapped,0.0,2026-0
 presentation,PRES_d7ffc90dec,theme.code,unspecified,heuristic,,2026-05-23,Индия и индийцы в автобиографической книге В. С. Найпола «The Writer's People»,,,,,
 presentation,PRES_ea42f7e02c,theme.code,unspecified,baseline_remapped,0.0,2026-05-23,Загадки поэмы Джаяси «Падмават»,unspecified,0.0,unspecified,,Mapped from old baseline
 presentation,PRES_485b7b3478,theme.code,unspecified,baseline_remapped,0.0,2026-05-23,Осел/бык в индоиранской картине мира,unspecified,0.0,unspecified,,Mapped from old baseline
-presentation,PRES_9389ab2ec7,theme.code,unspecified,heuristic,,2026-05-23,Неварский «повествовательный свиток» в собрании МАЭ РАН (коллекция И. П. Минаева). Предварительное сообщение,,,,,
+presentation,PRES_9389ab2ec7,theme.code,art_and_material_culture,heuristic,,2026-05-23,Неварский «повествовательный свиток» в собрании МАЭ РАН (коллекция И. П. Минаева). Предварительное сообщение,,,,,
 presentation,PRES_b48f6f5ffd,theme.code,unspecified,heuristic,,2026-05-23,Символические фигуры «Ригведы» (на примере гимна «К Речи»),,,,,
 presentation,PRES_df7078b604,theme.code,unspecified,baseline_remapped,0.0,2026-05-23,Чудесный сосуд Манимехалей: попытка интерпретации,unspecified,0.0,unspecified,,Mapped from old baseline
 presentation,PRES_20e82a1bf4,theme.code,unspecified,baseline_remapped,0.0,2026-05-23,«Юный» как представитель измененного состояния сознания,unspecified,0.0,unspecified,,Mapped from old baseline
@@ -821,7 +821,7 @@ presentation,PRES_b9333b3423,theme.code,literature_and_poetry,baseline_remapped,
 presentation,PRES_eaf7163393,theme.code,literature_and_poetry,baseline_remapped,1.0,2026-05-23,Рабиндранат Тагор: уровни поэтического высказывания,literature_and_poetry,1.0,unspecified,,Mapped from old baseline
 presentation,PRES_6b5321239f,theme.code,unspecified,baseline_remapped,0.0,2026-05-23,Концепт svadharma в кастовой идеологии,unspecified,0.0,unspecified,,Mapped from old baseline
 presentation,PRES_9d6bafd765,theme.code,literature_and_poetry,baseline_remapped,0.8,2026-05-23,Мифологии северных мунда как источник для реконструкции сюжета создания человека у населения евразийских степей в эпоху бронзы,literature_and_poetry,0.8,unspecified,,Mapped from old baseline
-presentation,PRES_c511412335,theme.code,unspecified,baseline_remapped,0.0,2026-05-23,Герасим Лебедев и британская элита колониальной Калькутты,unspecified,0.0,unspecified,,Mapped from old baseline
+presentation,PRES_c511412335,theme.code,history_and_culture,baseline_remapped,0.0,2026-05-23,Герасим Лебедев и британская элита колониальной Калькутты,unspecified,0.0,unspecified,,Mapped from old baseline
 presentation,PRES_dd87112472,theme.code,religion_and_philosophy,baseline_remapped,1.0,2026-05-23,Половозрастная стратификация общества в ведийских текстах,religion_and_philosophy,1.0,unspecified,,Mapped from old baseline
 presentation,PRES_f73706499b,theme.code,unspecified,baseline_remapped,0.0,2026-05-23,"«Юные» в окружении царя Раджасинхи II—го (XVII век, Шри Ланка)",unspecified,0.0,unspecified,,Mapped from old baseline
 presentation,PRES_66b3645128,theme.code,unspecified,baseline_remapped,0.0,2026-05-23,О первых христианских миссионерах в Индии,unspecified,0.0,unspecified,,Mapped from old baseline
@@ -863,9 +863,9 @@ presentation,PRES_a40d40eed0,theme.code,religion_and_philosophy,baseline_remappe
 presentation,PRES_a45633543d,theme.code,literature_and_poetry,baseline_remapped,1.0,2026-05-23,Дидактические шатаки в литературе телугу (К характеристике жанровых особенностей),literature_and_poetry,1.0,unspecified,,Mapped from old baseline
 presentation,PRES_c190e58dae,theme.code,linguistics_and_philology,baseline_remapped,0.85,2026-05-23,Язык как источник аргументации (на примере рассуждений о самбандхе),linguistics_and_philology,0.85,unspecified,,Mapped from old baseline
 presentation,PRES_37a471ecf5,theme.code,unspecified,baseline_remapped,0.0,2026-05-23,К проблеме древнеиндийской хронологии,unspecified,0.0,unspecified,,Mapped from old baseline
-presentation,PRES_6066f65be0,theme.code,unspecified,baseline_remapped,0.0,2026-05-23,Технические приспособления для рубрикации корней в,unspecified,0.0,unspecified,,Mapped from old baseline
+presentation,PRES_6066f65be0,theme.code,unspecified,heuristic,,2026-05-23,Технические приспособления для рубрикации корней в «Дхатупати» Панини,,,,,
 presentation,PRES_748beb327e,theme.code,religion_and_philosophy,baseline_remapped,1.0,2026-05-23,Место «Девибхагавата-пураны» в процессе эволюции шактизма,religion_and_philosophy,1.0,unspecified,,Mapped from old baseline
-presentation,PRES_8a6912982a,theme.code,history_and_culture,baseline_remapped,1.0,2026-05-23,О соотношении санскритского и тибетского текстов «Гимна,history_and_culture,1.0,tibetology,,Mapped from old baseline
+presentation,PRES_8a6912982a,theme.code,history_and_culture,heuristic,,2026-05-23,О соотношении санскритского и тибетского текстов «Гимна Превосходящему богов» Шанкарасвамина,,,,,
 presentation,PRES_960adc4efb,theme.code,unspecified,baseline_remapped,0.0,2026-05-23,Вытеснение согласного во избежание возникновения тяжелой группы трех шумных согласных в индоиранском,unspecified,0.0,unspecified,,Mapped from old baseline
 presentation,PRES_b1d123ee06,theme.code,literature_and_poetry,baseline_remapped,1.0,2026-05-23,Тема деревни в «Саттасаи»,literature_and_poetry,1.0,unspecified,,Mapped from old baseline
 presentation,PRES_dfef1a443f,theme.code,unspecified,baseline_remapped,0.0,2026-05-23,Представления об обществе и власти в «Бхагавата-пуране»,unspecified,0.0,unspecified,,Mapped from old baseline

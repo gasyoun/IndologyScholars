@@ -227,6 +227,12 @@
             background: var(--panel);
         }
         .card strong { color: #fff; }
+        .metric {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #fff;
+            margin-top: 0.35rem;
+        }
         .meta {
             color: var(--soft);
             font-size: 0.92rem;
@@ -283,18 +289,19 @@
 <body>
     <main class="page">
         <nav class="top-nav" aria-label="Primary">
-            <a href="/IndologyScholars/">Dashboard</a>
-            <a href="/IndologyScholars/scholars/">Scholars</a>
-            <a href="/IndologyScholars/conferences/">Conferences</a>
-            <a href="/IndologyScholars/themes/">Themes</a>
-            <a href="/IndologyScholars/cities/">Cities</a>
-            <a href="/IndologyScholars/institutions/">Institutions</a>
-            <a href="/IndologyScholars/search.html">Search</a>
-            <a href="/IndologyScholars/download-data.html">Data</a>
-            <a href="/IndologyScholars/data-quality.html">Quality</a>
+            <a href="/IndologyScholars/">Панель</a>
+            <a href="/IndologyScholars/scholars/">Исследователи</a>
+            <a href="/IndologyScholars/conferences/">Конференции</a>
+            <a href="/IndologyScholars/themes/">Рубрики</a>
+            <a href="/IndologyScholars/meso/">Мезоуровни</a>
+            <a href="/IndologyScholars/cities/">Города</a>
+            <a href="/IndologyScholars/institutions/">Институции</a>
+            <a href="/IndologyScholars/search.html">Поиск</a>
+            <a href="/IndologyScholars/download-data.html">Данные</a>
+            <a href="/IndologyScholars/data-quality.html">Качество</a>
             <a href="/IndologyScholars/en.html">English</a>
-            <a href="/IndologyScholars/how-to-cite.html">Cite</a>
-            <a href="/IndologyScholars/metrics-guide.html">Metrics</a>
+            <a href="/IndologyScholars/how-to-cite.html">Цитирование</a>
+            <a href="/IndologyScholars/metrics-guide.html">Метрики</a>
         </nav>
 
         <header>
@@ -323,7 +330,7 @@
             <article class="card">
                 <strong><a href="search-index.json">Static search index</a></strong>
                 <div class="meta">Compact JSON index for generated scholar and presentation pages.</div>
-                <div class="meta">399.4 KB</div>
+                <div class="meta">444.1 KB</div>
             </article>
 
             <article class="card">
@@ -365,7 +372,7 @@
             <article class="card">
                 <strong><a href="analytics_output/field_provenance_themes.csv">Theme provenance</a></strong>
                 <div class="meta">Field-level provenance for generated presentation theme labels.</div>
-                <div class="meta">243.1 KB</div>
+                <div class="meta">244.5 KB</div>
             </article>
 
             <article class="card">
@@ -383,7 +390,7 @@
             <article class="card">
                 <strong><a href="analytics_output/publication_file_manifest.csv">Publication file manifest</a></strong>
                 <div class="meta">Generated file list with byte sizes and SHA-256 checksums for reproducible release checks.</div>
-                <div class="meta">62.7 KB</div>
+                <div class="meta">64.4 KB</div>
             </article>
 
             <article class="card">
@@ -408,7 +415,7 @@
             <p><strong>Build Date:</strong> 2026-05-23</p>
         </div>
 
-        <div class="footer">© 2026 Russian Indological Research Archive. Generated from the normalized conference archive.</div>
+        <div class="footer">© 2026 Russian Indological Research Archive. Сгенерировано из нормализованного архива конференций.</div>
     </main>
 </body>
 </html>

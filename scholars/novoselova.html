@@ -25,8 +25,11 @@
         .life { color: var(--soft); font-size: 0.62em; font-weight: 500; margin-left: 0.4rem; }
         .degree { color: var(--soft); font-size: 0.95rem; font-weight: 600; margin: 0.15rem 0 0.5rem; }
         .degree a { font-weight: 400; font-size: 0.85em; }
+        .profile-note { color: var(--soft); max-width: 860px; }
         .metric { font-size: 1.4rem; font-weight: 700; margin-top: 0.2rem; }
         .chip-row { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+        .talk-meta-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 1rem; align-items: baseline; }
+        .talk-meta-session { text-align: right; white-space: nowrap; }
     </style>
 
     <script type="application/ld+json">
@@ -51,7 +54,6 @@
       ],
       "description": "Е. О. Новосёлова: 1 докладов в архиве Зографских и Рериховских чтений, период активности 2023, основной профиль: Разное / Не классифицировано.",
       "knowsAbout": [
-        "Other / Unspecified",
         "Разное / Не классифицировано"
       ],
       "affiliation": [
@@ -161,6 +163,12 @@
             background: var(--panel);
         }
         .card strong { color: #fff; }
+        .metric {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #fff;
+            margin-top: 0.35rem;
+        }
         .meta {
             color: var(--soft);
             font-size: 0.92rem;
@@ -217,61 +225,62 @@
 <body>
     <main class="page">
         <nav class="top-nav" aria-label="Primary">
-            <a href="/IndologyScholars/">Dashboard</a>
-            <a href="/IndologyScholars/scholars/">Scholars</a>
-            <a href="/IndologyScholars/conferences/">Conferences</a>
-            <a href="/IndologyScholars/themes/">Themes</a>
-            <a href="/IndologyScholars/cities/">Cities</a>
-            <a href="/IndologyScholars/institutions/">Institutions</a>
-            <a href="/IndologyScholars/search.html">Search</a>
-            <a href="/IndologyScholars/download-data.html">Data</a>
-            <a href="/IndologyScholars/data-quality.html">Quality</a>
+            <a href="/IndologyScholars/">Панель</a>
+            <a href="/IndologyScholars/scholars/">Исследователи</a>
+            <a href="/IndologyScholars/conferences/">Конференции</a>
+            <a href="/IndologyScholars/themes/">Рубрики</a>
+            <a href="/IndologyScholars/meso/">Мезоуровни</a>
+            <a href="/IndologyScholars/cities/">Города</a>
+            <a href="/IndologyScholars/institutions/">Институции</a>
+            <a href="/IndologyScholars/search.html">Поиск</a>
+            <a href="/IndologyScholars/download-data.html">Данные</a>
+            <a href="/IndologyScholars/data-quality.html">Качество</a>
             <a href="/IndologyScholars/en.html">English</a>
-            <a href="/IndologyScholars/how-to-cite.html">Cite</a>
-            <a href="/IndologyScholars/metrics-guide.html">Metrics</a>
+            <a href="/IndologyScholars/how-to-cite.html">Цитирование</a>
+            <a href="/IndologyScholars/metrics-guide.html">Метрики</a>
         </nav>
 
         <header>
-            <h1>Е. О. Новосёлова<span class="life"></span></h1>
+            <h1>Е. О. Новосёлова</h1>
             <p>Е. О. Новосёлова</p>
 
             <p>Е. О. Новосёлова: 1 докладов в архиве Зографских и Рериховских чтений, период активности 2023, основной профиль: Разное / Не классифицировано.</p>
+
         </header>
 
         <section class="grid">
-            <article class="card"><strong>Talks</strong><div class="metric">1</div><div class="meta">Presentation records</div></article>
-            <article class="card"><strong>Activity</strong><div class="metric">2023</div><div class="meta">Observed conference years</div></article>
-            <article class="card"><strong>Theme</strong><div class="metric"><a href="../themes/unspecified.html">Other / Unspecified</a></div><div class="meta">Разное / Не классифицировано</div></article>
-            <article class="card"><strong>Conference split</strong><div class="meta">Zograf:  · Roerich: 1</div></article>
+            <article class="card"><strong>Доклады</strong><div class="metric">1</div><div class="meta">записи докладов</div></article>
+            <article class="card"><strong>Активность</strong><div class="metric">2023</div><div class="meta">годы участия</div></article>
+            <article class="card"><strong>Рубрика</strong><div class="metric"><a href="../themes/unspecified.html">Разное / Не классифицировано</a></div></article>
+            <article class="card"><strong>Площадки</strong><div class="meta">Зографские чтения:  · Рериховские чтения: 1</div></article>
         </section>
 
-        <h2>Affiliations</h2>
+        <h2>Аффилиации</h2>
         <div class="chip-row"><a class="chip" href="../index.html?search=%D0%98%D0%92%20%D0%A0%D0%90%D0%9D">ИВ РАН</a></div>
 
-        <h2>Geographic Centers</h2>
+        <h2>Географические центры</h2>
         <div class="chip-row"><span class="meta">No records</span></div>
 
-        <h2>Status Tags</h2>
-        <div class="chip-row"><span class="meta">No special status tags.</span></div>
+        <h2>Статусы</h2>
+        <div class="chip-row"><span class="meta">Особые статусы не указаны.</span></div>
 
-        <h2>Presentations</h2>
+        <h2>Доклады</h2>
         <section class="list">
         <article class="talk">
             <strong>Исследования древнеиндийских текстов как ключевое направление в ранней японской буддологии</strong>
             <div class="meta">
-                <a href="../conferences/roerich-2023.html">Roerich Readings 2023</a>
-                · <a href="../themes/unspecified.html">Other / Unspecified</a>
+                <a href="../conferences/roerich-2023.html">Рериховские чтения 2023</a>
+                · <a href="../themes/unspecified.html">Разное / Не классифицировано</a>
             </div>
-            <div class="meta">2023-12-13 · Среда · 11.00 – 14.00</div>
-            <div class="meta">Утреннее заседание</div>
+            <div class="meta talk-meta-row"><span>2023-12-13 · Среда · 11.00 – 14.00</span><span class="talk-meta-session">Утреннее заседание</span></div>
 
         </article>
     </section>
 
-        <h2>Related Scholars</h2>
-        <section class="grid"><article class="card"><strong><a href="svetlana-ryzhakova.html">Рыжакова Светлана Игоревна</a></strong><div class="meta">19 talks · Other / Unspecified</div></article><article class="card"><strong><a href="victoria-vertogradova.html">Вертоградова Виктория Викторовна</a></strong><div class="meta">13 talks · Other / Unspecified</div></article><article class="card"><strong><a href="natalia-lidova.html">Лидова Наталья Ростиславовна</a></strong><div class="meta">13 talks · Other / Unspecified</div></article><article class="card"><strong><a href="vasilkov-yaroslav.html">Васильков Ярослав Владимирович</a></strong><div class="meta">12 talks · Other / Unspecified</div></article><article class="card"><strong><a href="vyrshchikov-evgenii.html">Вырщиков Евгений Геннадьевич</a></strong><div class="meta">12 talks · Other / Unspecified</div></article><article class="card"><strong><a href="pskhu-ruzana.html">Псху Рузана Владимировна</a></strong><div class="meta">12 talks · Other / Unspecified</div></article><article class="card"><strong><a href="tyulina-elena.html">Тюлина Елена Владимировна</a></strong><div class="meta">12 talks · Other / Unspecified</div></article><article class="card"><strong><a href="yulia-alikhanova.html">Алиханова Юлия Марковна</a></strong><div class="meta">11 talks · Other / Unspecified</div></article></section>
+        <h2>Связанные авторы</h2>
+        <section class="grid"><article class="card"><strong><a href="alexey-vigasin.html">Вигасин Алексей Алексеевич</a></strong><div class="meta">5 докладов · Разное / Не классифицировано</div></article><article class="card"><strong><a href="zimina.html">Т. А. Зимина</a></strong><div class="meta">5 докладов · Разное / Не классифицировано</div></article><article class="card"><strong><a href="zhukova-lyubov.html">Жукова Любовь Евгеньевна</a></strong><div class="meta">3 доклада · Разное / Не классифицировано</div></article><article class="card"><strong><a href="kryukova-viktoriya.html">Крюкова Виктория Юрьевна</a></strong><div class="meta">3 доклада · Разное / Не классифицировано</div></article><article class="card"><strong><a href="soboleva-elena.html">Соболева Елена Станиславовна</a></strong><div class="meta">3 доклада · Разное / Не классифицировано</div></article><article class="card"><strong><a href="uspenskaya-elena.html">Успенская Елена Николаевна</a></strong><div class="meta">3 доклада · Разное / Не классифицировано</div></article><article class="card"><strong><a href="kurochkin-aleksandr.html">Курочкин Александр Юрьевич</a></strong><div class="meta">2 доклада · Разное / Не классифицировано</div></article><article class="card"><strong><a href="lekareva-eva.html">Лекарева Ева Павловна</a></strong><div class="meta">2 доклада · Разное / Не классифицировано</div></article></section>
 
-        <div class="footer">© 2026 Russian Indological Research Archive. Generated from the normalized conference archive.</div>
+        <div class="footer">© 2026 Russian Indological Research Archive. Сгенерировано из нормализованного архива конференций.</div>
     </main>
 </body>
 </html>

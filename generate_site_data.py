@@ -4,6 +4,7 @@ import datetime
 import re
 
 from publication_helpers import assign_unique_slugs, load_authority_overrides
+from title_normalization import THEME_OVERRIDES_BY_PRESENTATION_ID, canonical_title
 
 DB_PATH = "conferences.db"
 OUTPUT_FILE = "site_data.json"
@@ -172,12 +173,14 @@ def classify_gender(full_name_ru, display_name):
 import csv
 
 def load_theme_mapping():
-    mapping = {}
+    mapping = {"by_title": {}, "by_id": {}}
     try:
         with open("analytics_output/theme_codes_final_v2.csv", encoding="utf-8") as f:
             for row in csv.DictReader(f):
                 key = (str(row["year"]).strip(), str(row["series"]).strip(), str(row["title"]).strip())
-                mapping[key] = row["l1"]
+                mapping["by_title"][key] = row["l1"]
+                if row.get("presentation_id"):
+                    mapping["by_id"][row["presentation_id"]] = row["l1"]
     except FileNotFoundError:
         pass
     return mapping
@@ -225,9 +228,20 @@ def get_theme_meta(code):
     res["code"] = code
     return res
 
-def classify_theme(year, series, title):
-    key = (str(year).strip(), str(series).strip(), str(title).strip())
-    code = _THEME_MAPPING.get(key, "unspecified")
+def classify_theme(year, series, title, presentation_id=None, fallback_title=None):
+    code = THEME_OVERRIDES_BY_PRESENTATION_ID.get(str(presentation_id or ""))
+    if not code:
+        code = _THEME_MAPPING.get("by_id", {}).get(str(presentation_id or ""))
+    if not code:
+        candidates = [title]
+        if fallback_title and fallback_title != title:
+            candidates.append(fallback_title)
+        for candidate in candidates:
+            key = (str(year).strip(), str(series).strip(), str(candidate).strip())
+            code = _THEME_MAPPING.get("by_title", {}).get(key)
+            if code:
+                break
+    code = code or "unspecified"
     return get_theme_meta(code)
 
 def main():
@@ -413,11 +427,12 @@ def main():
         for t in talks_raw:
             pres_id, title, year, series, affiliation, is_online, calendar_date, session_title, time_text, sess_id = t
             
-            # Clean title (strip 'онлайн')
-            cleaned_title = clean_title(title)
+            # Clean title (strip 'онлайн') and apply source-verified title repairs.
+            source_title = clean_title(title)
+            cleaned_title = canonical_title(pres_id, source_title)
             
             # Classify theme
-            theme = classify_theme(year, series, cleaned_title)
+            theme = classify_theme(year, series, cleaned_title, pres_id, source_title)
             t_code = theme["code"]
             theme_counts[t_code] = theme_counts.get(t_code, 0) + 1
             
@@ -475,7 +490,8 @@ def main():
         thematic_breadth = "Specialized"
         
         if theme_counts:
-            sorted_themes = sorted(theme_counts.items(), key=lambda x: (-x[1], x[0]))
+            dominant_pool = {k: v for k, v in theme_counts.items() if k != "unspecified"} or theme_counts
+            sorted_themes = sorted(dominant_pool.items(), key=lambda x: (-x[1], x[0]))
             dominant_theme = sorted_themes[0][0]
             if len(theme_counts) > 1:
                 thematic_breadth = "Interdisciplinary"
@@ -572,11 +588,12 @@ def main():
         is_last = (order_idx == len(s_list) - 1)
         
         series_key = "Zograf" if "Zograf" in series else "Roerich"
-        # Clean title
-        cleaned_title = clean_title(title)
+        # Clean title and apply source-verified title repairs.
+        source_title = clean_title(title)
+        cleaned_title = canonical_title(pres_id, source_title)
         
         # Classify theme
-        theme = classify_theme(year_val, series, cleaned_title)
+        theme = classify_theme(year_val, series, cleaned_title, pres_id, source_title)
         
         # Gumilyov scale
         g_key = (str(year_val).strip(), str(series).strip(), cleaned_title)

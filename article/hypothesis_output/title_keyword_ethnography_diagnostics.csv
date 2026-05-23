@@ -1,0 +1,15 @@
+scope,l1,count,share_pct
+strict_l1_all,ALL,31,100.0
+strict_l1_all,ethnography,31,100.0
+zograf_friday_all,ALL,126,100.0
+zograf_friday_all,religion,32,25.4
+zograf_friday_all,literature,25,19.84
+zograf_friday_all,art_archaeology,18,14.29
+zograf_friday_all,ethnography,17,13.49
+zograf_friday_all,history,11,8.73
+zograf_friday_all,linguistics,10,7.94
+zograf_friday_all,philosophy,9,7.14
+zograf_friday_all,other,3,2.38
+zograf_friday_all,tibetology,1,0.79
+zograf_friday_strict_ethnography,ALL,17,100.0
+zograf_friday_strict_ethnography,ethnography,17,100.0

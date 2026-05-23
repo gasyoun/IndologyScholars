@@ -25,8 +25,11 @@
         .life { color: var(--soft); font-size: 0.62em; font-weight: 500; margin-left: 0.4rem; }
         .degree { color: var(--soft); font-size: 0.95rem; font-weight: 600; margin: 0.15rem 0 0.5rem; }
         .degree a { font-weight: 400; font-size: 0.85em; }
+        .profile-note { color: var(--soft); max-width: 860px; }
         .metric { font-size: 1.4rem; font-weight: 700; margin-top: 0.2rem; }
         .chip-row { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+        .talk-meta-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 1rem; align-items: baseline; }
+        .talk-meta-session { text-align: right; white-space: nowrap; }
     </style>
 
     <script type="application/ld+json">
@@ -51,7 +54,6 @@
       ],
       "description": "Куликов Леонид Игоревич: 7 докладов в архиве Зографских и Рериховских чтений, период активности 2018-2026, основной профиль: Религия и философия.",
       "knowsAbout": [
-        "Religion & Philosophy",
         "Религия и философия"
       ],
       "affiliation": [
@@ -182,6 +184,12 @@
             background: var(--panel);
         }
         .card strong { color: #fff; }
+        .metric {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #fff;
+            margin-top: 0.35rem;
+        }
         .meta {
             color: var(--soft);
             font-size: 0.92rem;
@@ -238,127 +246,122 @@
 <body>
     <main class="page">
         <nav class="top-nav" aria-label="Primary">
-            <a href="/IndologyScholars/">Dashboard</a>
-            <a href="/IndologyScholars/scholars/">Scholars</a>
-            <a href="/IndologyScholars/conferences/">Conferences</a>
-            <a href="/IndologyScholars/themes/">Themes</a>
-            <a href="/IndologyScholars/cities/">Cities</a>
-            <a href="/IndologyScholars/institutions/">Institutions</a>
-            <a href="/IndologyScholars/search.html">Search</a>
-            <a href="/IndologyScholars/download-data.html">Data</a>
-            <a href="/IndologyScholars/data-quality.html">Quality</a>
+            <a href="/IndologyScholars/">Панель</a>
+            <a href="/IndologyScholars/scholars/">Исследователи</a>
+            <a href="/IndologyScholars/conferences/">Конференции</a>
+            <a href="/IndologyScholars/themes/">Рубрики</a>
+            <a href="/IndologyScholars/meso/">Мезоуровни</a>
+            <a href="/IndologyScholars/cities/">Города</a>
+            <a href="/IndologyScholars/institutions/">Институции</a>
+            <a href="/IndologyScholars/search.html">Поиск</a>
+            <a href="/IndologyScholars/download-data.html">Данные</a>
+            <a href="/IndologyScholars/data-quality.html">Качество</a>
             <a href="/IndologyScholars/en.html">English</a>
-            <a href="/IndologyScholars/how-to-cite.html">Cite</a>
-            <a href="/IndologyScholars/metrics-guide.html">Metrics</a>
+            <a href="/IndologyScholars/how-to-cite.html">Цитирование</a>
+            <a href="/IndologyScholars/metrics-guide.html">Метрики</a>
         </nav>
 
         <header>
-            <h1>Куликов Леонид Игоревич<span class="life">(род. 1964)</span></h1>
-            <p>Kulikov Leonid Igorevich(b. 1964)</p>
+            <h1>Куликов Леонид Игоревич <span class="life">(род. 1964)</span></h1>
+            <p>Kulikov Leonid Igorevich (b. 1964)</p>
             <p class="degree">кандидат филологических наук; PhD (Leiden), 2001 · <a href="https://ru.wikipedia.org/wiki/Куликов,_Леонид_Игоревич" target="_blank" rel="noopener">источник</a></p>
             <p>Куликов Леонид Игоревич: 7 докладов в архиве Зографских и Рериховских чтений, период активности 2018-2026, основной профиль: Религия и философия.</p>
+
         </header>
 
         <section class="grid">
-            <article class="card"><strong>Talks</strong><div class="metric">7</div><div class="meta">Presentation records</div></article>
-            <article class="card"><strong>Activity</strong><div class="metric">2018-2026</div><div class="meta">Observed conference years</div></article>
-            <article class="card"><strong>Theme</strong><div class="metric"><a href="../themes/religion-and-philosophy.html">Religion &amp; Philosophy</a></div><div class="meta">Религия и философия</div></article>
-            <article class="card"><strong>Conference split</strong><div class="meta">Zograf: 4 · Roerich: 3</div></article>
+            <article class="card"><strong>Доклады</strong><div class="metric">7</div><div class="meta">записи докладов</div></article>
+            <article class="card"><strong>Активность</strong><div class="metric">2018-2026</div><div class="meta">годы участия</div></article>
+            <article class="card"><strong>Рубрика</strong><div class="metric"><a href="../themes/religion-and-philosophy.html">Религия и философия</a></div></article>
+            <article class="card"><strong>Площадки</strong><div class="meta">Зографские чтения: 4 · Рериховские чтения: 3</div></article>
         </section>
 
-        <h2>Affiliations</h2>
+        <h2>Аффилиации</h2>
         <div class="chip-row"><a class="chip" href="../index.html?search=%D0%93%D0%B5%D0%BD%D1%82%2C%20%D0%91%D0%B5%D0%BB%D1%8C%D0%B3%D0%B8%D1%8F">Гент, Бельгия</a><a class="chip" href="../index.html?search=%D0%93%D0%B5%D0%BD%D1%82/%D0%9B%D1%83%D0%B2%D0%B5%D0%BD-%D0%BB%D1%8F-%D0%9D%D1%91%D0%B2">Гент/Лувен-ля-Нёв</a><a class="chip" href="../index.html?search=%D0%93%D0%B5%D0%BD%D1%82">Гент</a><a class="chip" href="../index.html?search=%D0%92%D0%A8%D0%AD%2C%20%D0%93%D0%B5%D0%BD%D1%82%D1%81%D0%BA%D0%B8%D0%B9%20%D1%83%D0%BD%D0%B8%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D1%82%D0%B5%D1%82">ВШЭ, Гентский университет</a><a class="chip" href="../index.html?search=%D0%9D%D0%98%D0%A3%20%D0%92%D0%A8%D0%AD%2C%20%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD">НИУ ВШЭ, онлайн</a></div>
 
-        <h2>Geographic Centers</h2>
+        <h2>Географические центры</h2>
         <div class="chip-row"><span class="meta">No records</span></div>
 
-        <h2>Status Tags</h2>
-        <div class="chip-row"><span class="meta">No special status tags.</span></div>
+        <h2>Статусы</h2>
+        <div class="chip-row"><span class="meta">Особые статусы не указаны.</span></div>
 
-        <h2>Presentations</h2>
+        <h2>Доклады</h2>
         <section class="list">
         <article class="talk">
             <strong>Kumāra: этимология и мифология</strong>
             <div class="meta">
-                <a href="../conferences/zograf-2026.html">Zograf Readings 2026</a>
-                · <a href="../themes/linguistics-and-philology.html">Linguistics &amp; Philology</a>
+                <a href="../conferences/zograf-2026.html">Зографские чтения 2026</a>
+                · <a href="../themes/linguistics-and-philology.html">Лингвистика и филология</a>
             </div>
-            <div class="meta">2026-05-27 · Среда · 11:00 – 14:00</div>
-            <div class="meta">Утреннее заседание</div>
+            <div class="meta talk-meta-row"><span>2026-05-27 · Среда · 11:00 – 14:00</span><span class="talk-meta-session">Утреннее заседание</span></div>
 
         </article>
 
         <article class="talk">
             <strong>Ведийский гапакс batá- и частица bata / vata: семантика, контекст, этимология</strong>
             <div class="meta">
-                <a href="../conferences/zograf-2025.html">Zograf Readings 2025</a>
-                · <a href="../themes/linguistics-and-philology.html">Linguistics &amp; Philology</a>
+                <a href="../conferences/zograf-2025.html">Зографские чтения 2025</a>
+                · <a href="../themes/linguistics-and-philology.html">Лингвистика и филология</a>
             </div>
-            <div class="meta">2025-05-21 · Среда · 11:00 – 14:00</div>
-            <div class="meta">Утреннее заседание</div>
+            <div class="meta talk-meta-row"><span>2025-05-21 · Среда · 11:00 – 14:00</span><span class="talk-meta-session">Утреннее заседание</span></div>
             <div class="meta"><a href="https://www.youtube.com/watch?v=kWqQ5gOmRtE" rel="noopener" target="_blank">▶ YouTube</a></div>
         </article>
 
         <article class="talk">
             <strong>Обсценная брань и её следы в РВ 10.10: возможна ли реконструкция текста?</strong>
             <div class="meta">
-                <a href="../conferences/roerich-2023.html">Roerich Readings 2023</a>
-                · <a href="../themes/unspecified.html">Other / Unspecified</a>
+                <a href="../conferences/roerich-2023.html">Рериховские чтения 2023</a>
+                · <a href="../themes/unspecified.html">Разное / Не классифицировано</a>
             </div>
-            <div class="meta">2023-12-11 · Понедельник · 15.00 – 18.00</div>
-            <div class="meta">Вечернее заседание</div>
+            <div class="meta talk-meta-row"><span>2023-12-11 · Понедельник · 15.00 – 18.00</span><span class="talk-meta-session">Вечернее заседание</span></div>
 
         </article>
 
         <article class="talk">
             <strong>Ведийское vrā́- «барышня»</strong>
             <div class="meta">
-                <a href="../conferences/zograf-2022.html">Zograf Readings 2022</a>
-                · <a href="../themes/unspecified.html">Other / Unspecified</a>
+                <a href="../conferences/zograf-2022.html">Зографские чтения 2022</a>
+                · <a href="../themes/unspecified.html">Разное / Не классифицировано</a>
             </div>
-            <div class="meta">2022-05-19 · Четверг · 11.00 – 14.00</div>
-            <div class="meta">Утреннее заседание</div>
+            <div class="meta talk-meta-row"><span>2022-05-19 · Четверг · 11.00 – 14.00</span><span class="talk-meta-session">Утреннее заседание</span></div>
 
         </article>
 
         <article class="talk">
             <strong>Пятнистый охотничий зверь индоевропейцев и «Атхарваведа» 19.49.4 (заметки об индоиранском бестиарии)</strong>
             <div class="meta">
-                <a href="../conferences/roerich-2021.html">Roerich Readings 2021</a>
-                · <a href="../themes/religion-and-philosophy.html">Religion &amp; Philosophy</a>
+                <a href="../conferences/roerich-2021.html">Рериховские чтения 2021</a>
+                · <a href="../themes/religion-and-philosophy.html">Религия и философия</a>
             </div>
-            <div class="meta">2021-12-15 · Среда · 15.00 – 18.00</div>
-            <div class="meta">Вечернее заседание</div>
+            <div class="meta talk-meta-row"><span>2021-12-15 · Среда · 15.00 – 18.00</span><span class="talk-meta-session">Вечернее заседание</span></div>
 
         </article>
 
         <article class="talk">
             <strong>К анализу стиха Ригведа 1.120.11, или Предварительные заметки о ведийском автомобиле</strong>
             <div class="meta">
-                <a href="../conferences/roerich-2020.html">Roerich Readings 2020</a>
-                · <a href="../themes/religion-and-philosophy.html">Religion &amp; Philosophy</a>
+                <a href="../conferences/roerich-2020.html">Рериховские чтения 2020</a>
+                · <a href="../themes/religion-and-philosophy.html">Религия и философия</a>
             </div>
-            <div class="meta">2020-12-15 · Вторник · 14.00 – 17.00</div>
-            <div class="meta">Вечернее заседание</div>
+            <div class="meta talk-meta-row"><span>2020-12-15 · Вторник · 14.00 – 17.00</span><span class="talk-meta-session">Вечернее заседание</span></div>
 
         </article>
 
         <article class="talk">
             <strong>От демонической к человеческой сексуальности? Индо-иранский миф о первобытном инцесте Ями и Ямы и его индоевропейские корни</strong>
             <div class="meta">
-                <a href="../conferences/zograf-2018.html">Zograf Readings 2018</a>
-                · <a href="../themes/religion-and-philosophy.html">Religion &amp; Philosophy</a>
+                <a href="../conferences/zograf-2018.html">Зографские чтения 2018</a>
+                · <a href="../themes/religion-and-philosophy.html">Религия и философия</a>
             </div>
-            <div class="meta">2018-05-15 · Вторник · 10:00 – 13:30</div>
-            <div class="meta">Утреннее заседание</div>
+            <div class="meta talk-meta-row"><span>2018-05-15 · Вторник · 10:00 – 13:30</span><span class="talk-meta-session">Утреннее заседание</span></div>
 
         </article>
     </section>
 
-        <h2>Related Scholars</h2>
-        <section class="grid"><article class="card"><strong><a href="sofia-tsvetkova.html">Цветкова Светлана Олеговна</a></strong><div class="meta">22 talks · Religion &amp; Philosophy</div></article><article class="card"><strong><a href="victoria-lysenko.html">Лысенко Виктория Георгиевна</a></strong><div class="meta">16 talks · Religion &amp; Philosophy</div></article><article class="card"><strong><a href="natalia-korneeva.html">Корнеева Наталья Афанасьевна</a></strong><div class="meta">15 talks · Religion &amp; Philosophy</div></article><article class="card"><strong><a href="areg-mekhakyan.html">Мехакян Арег Гайкович</a></strong><div class="meta">15 talks · Religion &amp; Philosophy</div></article><article class="card"><strong><a href="olga-vecherina.html">Вечерина Ольга Павловна</a></strong><div class="meta">13 talks · Religion &amp; Philosophy</div></article><article class="card"><strong><a href="paribok-andrei.html">Парибок Андрей Всеволодович</a></strong><div class="meta">13 talks · Religion &amp; Philosophy</div></article><article class="card"><strong><a href="ignatev-andrei.html">Игнатьев Андрей Александрович</a></strong><div class="meta">12 talks · Religion &amp; Philosophy</div></article><article class="card"><strong><a href="desnitskaya-evgeniya.html">Десницкая Евгения Алексеевна</a></strong><div class="meta">11 talks · Religion &amp; Philosophy</div></article></section>
+        <h2>Связанные авторы</h2>
+        <section class="grid"><article class="card"><strong><a href="sofia-tsvetkova.html">Цветкова Светлана Олеговна</a></strong><div class="meta">22 доклада · Религия и философия</div></article><article class="card"><strong><a href="victoria-lysenko.html">Лысенко Виктория Георгиевна</a></strong><div class="meta">16 докладов · Религия и философия</div></article><article class="card"><strong><a href="natalia-korneeva.html">Корнеева Наталья Афанасьевна</a></strong><div class="meta">15 докладов · Религия и философия</div></article><article class="card"><strong><a href="areg-mekhakyan.html">Мехакян Арег Гайкович</a></strong><div class="meta">15 докладов · Религия и философия</div></article><article class="card"><strong><a href="olga-vecherina.html">Вечерина Ольга Павловна</a></strong><div class="meta">13 докладов · Религия и философия</div></article><article class="card"><strong><a href="paribok-andrei.html">Парибок Андрей Всеволодович</a></strong><div class="meta">13 докладов · Религия и философия</div></article><article class="card"><strong><a href="ignatev-andrei.html">Игнатьев Андрей Александрович</a></strong><div class="meta">12 докладов · Религия и философия</div></article><article class="card"><strong><a href="pskhu-ruzana.html">Псху Рузана Владимировна</a></strong><div class="meta">12 докладов · Религия и философия</div></article></section>
 
-        <div class="footer">© 2026 Russian Indological Research Archive. Generated from the normalized conference archive.</div>
+        <div class="footer">© 2026 Russian Indological Research Archive. Сгенерировано из нормализованного архива конференций.</div>
     </main>
 </body>
 </html>

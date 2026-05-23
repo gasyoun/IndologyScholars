@@ -25,8 +25,11 @@
         .life { color: var(--soft); font-size: 0.62em; font-weight: 500; margin-left: 0.4rem; }
         .degree { color: var(--soft); font-size: 0.95rem; font-weight: 600; margin: 0.15rem 0 0.5rem; }
         .degree a { font-weight: 400; font-size: 0.85em; }
+        .profile-note { color: var(--soft); max-width: 860px; }
         .metric { font-size: 1.4rem; font-weight: 700; margin-top: 0.2rem; }
         .chip-row { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+        .talk-meta-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 1rem; align-items: baseline; }
+        .talk-meta-session { text-align: right; white-space: nowrap; }
     </style>
 
     <script type="application/ld+json">
@@ -51,7 +54,6 @@
       ],
       "description": "М. В. Босхомджиев: 1 докладов в архиве Зографских и Рериховских чтений, период активности 2025, основной профиль: История, этнография и общество.",
       "knowsAbout": [
-        "History, Culture & Society",
         "История, этнография и общество"
       ],
       "affiliation": [
@@ -161,6 +163,12 @@
             background: var(--panel);
         }
         .card strong { color: #fff; }
+        .metric {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #fff;
+            margin-top: 0.35rem;
+        }
         .meta {
             color: var(--soft);
             font-size: 0.92rem;
@@ -217,61 +225,62 @@
 <body>
     <main class="page">
         <nav class="top-nav" aria-label="Primary">
-            <a href="/IndologyScholars/">Dashboard</a>
-            <a href="/IndologyScholars/scholars/">Scholars</a>
-            <a href="/IndologyScholars/conferences/">Conferences</a>
-            <a href="/IndologyScholars/themes/">Themes</a>
-            <a href="/IndologyScholars/cities/">Cities</a>
-            <a href="/IndologyScholars/institutions/">Institutions</a>
-            <a href="/IndologyScholars/search.html">Search</a>
-            <a href="/IndologyScholars/download-data.html">Data</a>
-            <a href="/IndologyScholars/data-quality.html">Quality</a>
+            <a href="/IndologyScholars/">Панель</a>
+            <a href="/IndologyScholars/scholars/">Исследователи</a>
+            <a href="/IndologyScholars/conferences/">Конференции</a>
+            <a href="/IndologyScholars/themes/">Рубрики</a>
+            <a href="/IndologyScholars/meso/">Мезоуровни</a>
+            <a href="/IndologyScholars/cities/">Города</a>
+            <a href="/IndologyScholars/institutions/">Институции</a>
+            <a href="/IndologyScholars/search.html">Поиск</a>
+            <a href="/IndologyScholars/download-data.html">Данные</a>
+            <a href="/IndologyScholars/data-quality.html">Качество</a>
             <a href="/IndologyScholars/en.html">English</a>
-            <a href="/IndologyScholars/how-to-cite.html">Cite</a>
-            <a href="/IndologyScholars/metrics-guide.html">Metrics</a>
+            <a href="/IndologyScholars/how-to-cite.html">Цитирование</a>
+            <a href="/IndologyScholars/metrics-guide.html">Метрики</a>
         </nav>
 
         <header>
-            <h1>М. В. Босхомджиев<span class="life"></span></h1>
+            <h1>М. В. Босхомджиев</h1>
             <p>М. В. Босхомджиев</p>
 
             <p>М. В. Босхомджиев: 1 докладов в архиве Зографских и Рериховских чтений, период активности 2025, основной профиль: История, этнография и общество.</p>
+
         </header>
 
         <section class="grid">
-            <article class="card"><strong>Talks</strong><div class="metric">1</div><div class="meta">Presentation records</div></article>
-            <article class="card"><strong>Activity</strong><div class="metric">2025</div><div class="meta">Observed conference years</div></article>
-            <article class="card"><strong>Theme</strong><div class="metric"><a href="../themes/history-and-culture.html">History, Culture &amp; Society</a></div><div class="meta">История, этнография и общество</div></article>
-            <article class="card"><strong>Conference split</strong><div class="meta">Zograf:  · Roerich: 1</div></article>
+            <article class="card"><strong>Доклады</strong><div class="metric">1</div><div class="meta">записи докладов</div></article>
+            <article class="card"><strong>Активность</strong><div class="metric">2025</div><div class="meta">годы участия</div></article>
+            <article class="card"><strong>Рубрика</strong><div class="metric"><a href="../themes/history-and-culture.html">История, этнография и общество</a></div></article>
+            <article class="card"><strong>Площадки</strong><div class="meta">Зографские чтения:  · Рериховские чтения: 1</div></article>
         </section>
 
-        <h2>Affiliations</h2>
+        <h2>Аффилиации</h2>
         <div class="chip-row"><a class="chip" href="../index.html?search=%D0%9A%D0%9D%D0%A6%20%D0%A0%D0%90%D0%9D%2C%20%D0%AD%D0%BB%D0%B8%D1%81%D1%82%D0%B0">КНЦ РАН, Элиста</a></div>
 
-        <h2>Geographic Centers</h2>
+        <h2>Географические центры</h2>
         <div class="chip-row"><a class="chip" href="../cities/elista.html">Элиста</a></div>
 
-        <h2>Status Tags</h2>
-        <div class="chip-row"><span class="meta">No special status tags.</span></div>
+        <h2>Статусы</h2>
+        <div class="chip-row"><span class="meta">Особые статусы не указаны.</span></div>
 
-        <h2>Presentations</h2>
+        <h2>Доклады</h2>
         <section class="list">
         <article class="talk">
             <strong>Из истории фиксации традиционного сказителя хобуксарких ойратов Аримпиля (1923–1994)</strong>
             <div class="meta">
-                <a href="../conferences/roerich-2025.html">Roerich Readings 2025</a>
-                · <a href="../themes/history-and-culture.html">History, Culture &amp; Society</a> · <a href="../cities/elista.html">Элиста</a>
+                <a href="../conferences/roerich-2025.html">Рериховские чтения 2025</a>
+                · <a href="../themes/history-and-culture.html">История, этнография и общество</a> · <a href="../cities/elista.html">Элиста</a>
             </div>
-            <div class="meta">2025-12-10 · Среда · 15.00 – 18.30</div>
-            <div class="meta">Вечернее заседание</div>
+            <div class="meta talk-meta-row"><span>2025-12-10 · Среда · 15.00 – 18.30</span><span class="talk-meta-session">Вечернее заседание</span></div>
 
         </article>
     </section>
 
-        <h2>Related Scholars</h2>
-        <section class="grid"><article class="card"><strong><a href="shustova-alla.html">Шустова Алла Михайловна</a></strong><div class="meta">12 talks · History, Culture &amp; Society</div></article><article class="card"><strong><a href="lyulina-anastasiya.html">Люлина Анастасия Геннадьевна</a></strong><div class="meta">9 talks · History, Culture &amp; Society</div></article><article class="card"><strong><a href="zorin-aleksei.html">Зорин Алексей Валерьевич</a></strong><div class="meta">7 talks · History, Culture &amp; Society</div></article><article class="card"><strong><a href="elizaveta-kuzina.html">Кузина Елизавета Олеговна</a></strong><div class="meta">7 talks · History, Culture &amp; Society</div></article><article class="card"><strong><a href="evgenia-renkovskaya.html">Ренковская Евгения Алексеевна</a></strong><div class="meta">5 talks · History, Culture &amp; Society</div></article><article class="card"><strong><a href="ivanov-vladimir.html">Иванов Владимир Павлович</a></strong><div class="meta">4 talks · History, Culture &amp; Society</div></article><article class="card"><strong><a href="komarova-irina.html">Комарова Ирина Нигматовна</a></strong><div class="meta">4 talks · History, Culture &amp; Society</div></article><article class="card"><strong><a href="korablin-denis.html">Кораблин Денис Александрович</a></strong><div class="meta">4 talks · History, Culture &amp; Society</div></article></section>
+        <h2>Связанные авторы</h2>
+        <section class="grid"><article class="card"><strong><a href="victoria-vertogradova.html">Вертоградова Виктория Викторовна</a></strong><div class="meta">13 докладов · История, этнография и общество</div></article><article class="card"><strong><a href="shustova-alla.html">Шустова Алла Михайловна</a></strong><div class="meta">12 докладов · История, этнография и общество</div></article><article class="card"><strong><a href="drobyshev-yulii.html">Дробышев Юлий Игорьевич</a></strong><div class="meta">11 докладов · История, этнография и общество</div></article><article class="card"><strong><a href="alexander-babin.html">Бабин Александр Николаевич</a></strong><div class="meta">10 докладов · История, этнография и общество</div></article><article class="card"><strong><a href="ostrovskaya-elena.html">Островская Елена Петровна</a></strong><div class="meta">10 докладов · История, этнография и общество</div></article><article class="card"><strong><a href="lyulina-anastasiya.html">Люлина Анастасия Геннадьевна</a></strong><div class="meta">9 докладов · История, этнография и общество</div></article><article class="card"><strong><a href="ogneva-elena.html">Огнева Елена Дмитриевна</a></strong><div class="meta">9 докладов · История, этнография и общество</div></article><article class="card"><strong><a href="ermakova-tatyana.html">Ермакова Татьяна Викторовна</a></strong><div class="meta">8 докладов · История, этнография и общество</div></article></section>
 
-        <div class="footer">© 2026 Russian Indological Research Archive. Generated from the normalized conference archive.</div>
+        <div class="footer">© 2026 Russian Indological Research Archive. Сгенерировано из нормализованного архива конференций.</div>
     </main>
 </body>
 </html>

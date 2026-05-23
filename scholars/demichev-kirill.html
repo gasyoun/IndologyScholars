@@ -25,8 +25,11 @@
         .life { color: var(--soft); font-size: 0.62em; font-weight: 500; margin-left: 0.4rem; }
         .degree { color: var(--soft); font-size: 0.95rem; font-weight: 600; margin: 0.15rem 0 0.5rem; }
         .degree a { font-weight: 400; font-size: 0.85em; }
+        .profile-note { color: var(--soft); max-width: 860px; }
         .metric { font-size: 1.4rem; font-weight: 700; margin-top: 0.2rem; }
         .chip-row { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+        .talk-meta-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 1rem; align-items: baseline; }
+        .talk-meta-session { text-align: right; white-space: nowrap; }
     </style>
 
     <script type="application/ld+json">
@@ -51,7 +54,6 @@
       ],
       "description": "Демичев Кирилл Андреевич: 2 докладов в архиве Зографских и Рериховских чтений, период активности 2012-2018, основной профиль: Религия и философия.",
       "knowsAbout": [
-        "Religion & Philosophy",
         "Религия и философия"
       ],
       "affiliation": [
@@ -166,6 +168,12 @@
             background: var(--panel);
         }
         .card strong { color: #fff; }
+        .metric {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #fff;
+            margin-top: 0.35rem;
+        }
         .meta {
             color: var(--soft);
             font-size: 0.92rem;
@@ -222,72 +230,72 @@
 <body>
     <main class="page">
         <nav class="top-nav" aria-label="Primary">
-            <a href="/IndologyScholars/">Dashboard</a>
-            <a href="/IndologyScholars/scholars/">Scholars</a>
-            <a href="/IndologyScholars/conferences/">Conferences</a>
-            <a href="/IndologyScholars/themes/">Themes</a>
-            <a href="/IndologyScholars/cities/">Cities</a>
-            <a href="/IndologyScholars/institutions/">Institutions</a>
-            <a href="/IndologyScholars/search.html">Search</a>
-            <a href="/IndologyScholars/download-data.html">Data</a>
-            <a href="/IndologyScholars/data-quality.html">Quality</a>
+            <a href="/IndologyScholars/">Панель</a>
+            <a href="/IndologyScholars/scholars/">Исследователи</a>
+            <a href="/IndologyScholars/conferences/">Конференции</a>
+            <a href="/IndologyScholars/themes/">Рубрики</a>
+            <a href="/IndologyScholars/meso/">Мезоуровни</a>
+            <a href="/IndologyScholars/cities/">Города</a>
+            <a href="/IndologyScholars/institutions/">Институции</a>
+            <a href="/IndologyScholars/search.html">Поиск</a>
+            <a href="/IndologyScholars/download-data.html">Данные</a>
+            <a href="/IndologyScholars/data-quality.html">Качество</a>
             <a href="/IndologyScholars/en.html">English</a>
-            <a href="/IndologyScholars/how-to-cite.html">Cite</a>
-            <a href="/IndologyScholars/metrics-guide.html">Metrics</a>
+            <a href="/IndologyScholars/how-to-cite.html">Цитирование</a>
+            <a href="/IndologyScholars/metrics-guide.html">Метрики</a>
         </nav>
 
         <header>
-            <h1>Демичев Кирилл Андреевич<span class="life">(род. 1989)</span></h1>
-            <p>Demichev Kirill Anderson(b. 1989)</p>
+            <h1>Демичев Кирилл Андреевич <span class="life">(род. 1989)</span></h1>
+            <p>Demichev Kirill Anderson (b. 1989)</p>
 
             <p>Демичев Кирилл Андреевич: 2 докладов в архиве Зографских и Рериховских чтений, период активности 2012-2018, основной профиль: Религия и философия.</p>
+
         </header>
 
         <section class="grid">
-            <article class="card"><strong>Talks</strong><div class="metric">2</div><div class="meta">Presentation records</div></article>
-            <article class="card"><strong>Activity</strong><div class="metric">2012-2018</div><div class="meta">Observed conference years</div></article>
-            <article class="card"><strong>Theme</strong><div class="metric"><a href="../themes/religion-and-philosophy.html">Religion &amp; Philosophy</a></div><div class="meta">Религия и философия</div></article>
-            <article class="card"><strong>Conference split</strong><div class="meta">Zograf:  · Roerich: 2</div></article>
+            <article class="card"><strong>Доклады</strong><div class="metric">2</div><div class="meta">записи докладов</div></article>
+            <article class="card"><strong>Активность</strong><div class="metric">2012-2018</div><div class="meta">годы участия</div></article>
+            <article class="card"><strong>Рубрика</strong><div class="metric"><a href="../themes/religion-and-philosophy.html">Религия и философия</a></div></article>
+            <article class="card"><strong>Площадки</strong><div class="meta">Зографские чтения:  · Рериховские чтения: 2</div></article>
         </section>
 
-        <h2>Affiliations</h2>
+        <h2>Аффилиации</h2>
         <div class="chip-row"><a class="chip" href="../index.html?search=%D0%A3%D0%A0%D0%90%D0%9E%2C%20%D0%9D%D0%B8%D0%B6%D0%BD%D0%B8%D0%B9%20%D0%9D%D0%BE%D0%B2%D0%B3%D0%BE%D1%80%D0%BE%D0%B4">УРАО, Нижний Новгород</a><a class="chip" href="../index.html?search=%D0%9D%D0%98%D0%A3%20%D0%A0%D0%90%D0%9D%D0%A5%D0%B8%D0%93%D0%A1">НИУ РАНХиГС</a></div>
 
-        <h2>Geographic Centers</h2>
+        <h2>Географические центры</h2>
         <div class="chip-row"><a class="chip" href="../cities/nizhnii-novgorod.html">Нижний Новгород</a></div>
 
-        <h2>Status Tags</h2>
-        <div class="chip-row"><span class="chip">Independent researcher</span></div>
+        <h2>Статусы</h2>
+        <div class="chip-row"><span class="chip">независимый исследователь</span></div>
 
-        <h2>Presentations</h2>
+        <h2>Доклады</h2>
         <section class="list">
         <article class="talk">
             <strong>Текст в контексте: образ идеального сикхского правителя в кодексе Прем Сумараг в позднесредневековых панджабских реалиях</strong>
             <div class="meta">
-                <a href="../conferences/roerich-2018.html">Roerich Readings 2018</a>
-                · <a href="../themes/religion-and-philosophy.html">Religion &amp; Philosophy</a>
+                <a href="../conferences/roerich-2018.html">Рериховские чтения 2018</a>
+                · <a href="../themes/religion-and-philosophy.html">Религия и философия</a>
             </div>
-            <div class="meta">2018-12-09 · Воскресенье · Не указано</div>
-            <div class="meta">Утреннее заседание</div>
+            <div class="meta talk-meta-row"><span>2018-12-09 · Воскресенье · Не указано</span><span class="talk-meta-session">Утреннее заседание</span></div>
 
         </article>
 
         <article class="talk">
             <strong>К проблеме складывания сикхского двора и придворной культуры при последних шести гуру</strong>
             <div class="meta">
-                <a href="../conferences/roerich-2012.html">Roerich Readings 2012</a>
-                · <a href="../themes/religion-and-philosophy.html">Religion &amp; Philosophy</a> · <a href="../cities/nizhnii-novgorod.html">Нижний Новгород</a>
+                <a href="../conferences/roerich-2012.html">Рериховские чтения 2012</a>
+                · <a href="../themes/religion-and-philosophy.html">Религия и философия</a> · <a href="../cities/nizhnii-novgorod.html">Нижний Новгород</a>
             </div>
-            <div class="meta">2012-12-09 · Воскресенье · Не указано</div>
-            <div class="meta">Вечернее заседание</div>
+            <div class="meta talk-meta-row"><span>2012-12-09 · Воскресенье · Не указано</span><span class="talk-meta-session">Вечернее заседание</span></div>
 
         </article>
     </section>
 
-        <h2>Related Scholars</h2>
-        <section class="grid"><article class="card"><strong><a href="sofia-tsvetkova.html">Цветкова Светлана Олеговна</a></strong><div class="meta">22 talks · Religion &amp; Philosophy</div></article><article class="card"><strong><a href="victoria-lysenko.html">Лысенко Виктория Георгиевна</a></strong><div class="meta">16 talks · Religion &amp; Philosophy</div></article><article class="card"><strong><a href="natalia-korneeva.html">Корнеева Наталья Афанасьевна</a></strong><div class="meta">15 talks · Religion &amp; Philosophy</div></article><article class="card"><strong><a href="areg-mekhakyan.html">Мехакян Арег Гайкович</a></strong><div class="meta">15 talks · Religion &amp; Philosophy</div></article><article class="card"><strong><a href="olga-vecherina.html">Вечерина Ольга Павловна</a></strong><div class="meta">13 talks · Religion &amp; Philosophy</div></article><article class="card"><strong><a href="paribok-andrei.html">Парибок Андрей Всеволодович</a></strong><div class="meta">13 talks · Religion &amp; Philosophy</div></article><article class="card"><strong><a href="ignatev-andrei.html">Игнатьев Андрей Александрович</a></strong><div class="meta">12 talks · Religion &amp; Philosophy</div></article><article class="card"><strong><a href="desnitskaya-evgeniya.html">Десницкая Евгения Алексеевна</a></strong><div class="meta">11 talks · Religion &amp; Philosophy</div></article></section>
+        <h2>Связанные авторы</h2>
+        <section class="grid"><article class="card"><strong><a href="sofia-tsvetkova.html">Цветкова Светлана Олеговна</a></strong><div class="meta">22 доклада · Религия и философия</div></article><article class="card"><strong><a href="victoria-lysenko.html">Лысенко Виктория Георгиевна</a></strong><div class="meta">16 докладов · Религия и философия</div></article><article class="card"><strong><a href="natalia-korneeva.html">Корнеева Наталья Афанасьевна</a></strong><div class="meta">15 докладов · Религия и философия</div></article><article class="card"><strong><a href="areg-mekhakyan.html">Мехакян Арег Гайкович</a></strong><div class="meta">15 докладов · Религия и философия</div></article><article class="card"><strong><a href="olga-vecherina.html">Вечерина Ольга Павловна</a></strong><div class="meta">13 докладов · Религия и философия</div></article><article class="card"><strong><a href="paribok-andrei.html">Парибок Андрей Всеволодович</a></strong><div class="meta">13 докладов · Религия и философия</div></article><article class="card"><strong><a href="ignatev-andrei.html">Игнатьев Андрей Александрович</a></strong><div class="meta">12 докладов · Религия и философия</div></article><article class="card"><strong><a href="pskhu-ruzana.html">Псху Рузана Владимировна</a></strong><div class="meta">12 докладов · Религия и философия</div></article></section>
 
-        <div class="footer">© 2026 Russian Indological Research Archive. Generated from the normalized conference archive.</div>
+        <div class="footer">© 2026 Russian Indological Research Archive. Сгенерировано из нормализованного архива конференций.</div>
     </main>
 </body>
 </html>

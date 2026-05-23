@@ -28,10 +28,37 @@ LEGACY_REDIRECTS_PATH = Path("legacy_redirects.json")
 SLUG_REDIRECTS_PATH = Path("slug_redirects.json")
 BUILD_DATE = dt.date.today().isoformat()
 
+SCHOLAR_PROFILE_OVERRIDES = {
+    "PERS_829c1de5": {
+        "label": "Сравнительная мифология и эпос",
+        "theme_code": "literature_and_poetry",
+        "note": "Эпический и сравнительно-мифологический контур: «Махабхарата», паломничество, фольклорные мотивы и межкультурные параллели.",
+    }
+}
+
 
 def conference_path(series, year):
     key = "zograf" if "Zograf" in (series or "") else "roerich"
     return f"conferences/{key}-{year}.html"
+
+
+def series_label(series):
+    return "Зографские чтения" if "Zograf" in (series or "") else "Рериховские чтения"
+
+
+def ru_plural(number, one, few, many):
+    value = abs(int(number))
+    if 11 <= value % 100 <= 14:
+        return many
+    if value % 10 == 1:
+        return one
+    if 2 <= value % 10 <= 4:
+        return few
+    return many
+
+
+def talks_count_label(count):
+    return f"{count} {ru_plural(count, 'доклад', 'доклада', 'докладов')}"
 
 
 def city_path(city):
@@ -89,11 +116,19 @@ def format_degree(scholar):
     return f'<p class="degree">{text}</p>'
 
 
+def scholar_profile_meta(scholar):
+    override = SCHOLAR_PROFILE_OVERRIDES.get(scholar.get("id"))
+    if override:
+        return override["label"], override.get("theme_code") or scholar.get("dominant_theme") or "History", override.get("note", "")
+    theme_code = scholar.get("dominant_theme") or "History"
+    return theme_label(theme_code, "ru"), theme_code, ""
+
+
 def scholar_description(scholar):
     name = scholar.get("full_name_ru") or scholar.get("name")
     total = scholar.get("total_talks", 0)
     years = describe_year_span(scholar.get("first_year"), scholar.get("last_year"))
-    theme = theme_label(scholar.get("dominant_theme"), "ru")
+    theme, _, _ = scholar_profile_meta(scholar)
     return f"{name}: {total} докладов в архиве Зографских и Рериховских чтений, период активности {years}, основной профиль: {theme}."
 
 
@@ -140,15 +175,19 @@ def talk_card(talk):
             for v in videos
         )
         video_html = f'<div class="meta">{links}</div>'
+    talk_time = f'{esc(talk.get("date"))} · {esc((talk.get("day_of_week") or {}).get("ru"))} · {esc(talk.get("time_interval"))}'
+    raw_session = clean_text(talk.get("session_title") or "")
+    if raw_session.strip(" .").lower() in {"", "перерыв"}:
+        raw_session = "Секция не указана"
+    session = esc(raw_session)
     return f"""
         <article class="talk">
             <strong>{esc(talk.get("title"))}</strong>
             <div class="meta">
-                <a href="../{conference_path(talk.get("series"), talk.get("year"))}">{esc(talk.get("series"))} {esc(talk.get("year"))}</a>
-                · <a href="../{theme_path(theme_code)}">{esc(theme_label(theme_code))}</a>{city_html}
+                <a href="../{conference_path(talk.get("series"), talk.get("year"))}">{esc(series_label(talk.get("series")))} {esc(talk.get("year"))}</a>
+                · <a href="../{theme_path(theme_code)}">{esc(theme_label(theme_code, "ru"))}</a>{city_html}
             </div>
-            <div class="meta">{esc(talk.get("date"))} · {esc((talk.get("day_of_week") or {}).get("ru"))} · {esc(talk.get("time_interval"))}</div>
-            <div class="meta">{esc(talk.get("session_title") or "Секция не указана")}</div>
+            <div class="meta talk-meta-row"><span>{talk_time}</span><span class="talk-meta-session">{session}</span></div>
             {video_html}
         </article>
     """
@@ -177,6 +216,7 @@ def profile_structured_data(scholar, authority):
     path = f"scholars/{scholar['url_slug']}.html"
     name_ru = scholar.get("full_name_ru") or scholar.get("name")
     name_en = scholar.get("full_name_en") or scholar.get("name")
+    profile_label, _, _ = scholar_profile_meta(scholar)
     same_as = []
     person_authority = (authority.get("persons") or {}).get(scholar["id"], {})
     
@@ -194,7 +234,7 @@ def profile_structured_data(scholar, authority):
         "name": name_en or name_ru,
         "alternateName": [value for value in [name_ru, name_en, scholar.get("name"), scholar.get("original_fullname")] if value],
         "description": scholar_description(scholar),
-        "knowsAbout": [theme_label(scholar.get("dominant_theme")), theme_label(scholar.get("dominant_theme"), "ru")],
+        "knowsAbout": [profile_label],
         "affiliation": [{"@type": "Organization", "name": aff} for aff in unique_affiliations(scholar, limit=8)],
     }
     if scholar.get("birth_year"):
@@ -247,20 +287,25 @@ def render_profile(scholar, related, authority):
     name_en = scholar.get("full_name_en") or scholar.get("name")
     description = scholar_description(scholar)
     path = f"scholars/{scholar['url_slug']}.html"
-    theme_code = scholar.get("dominant_theme") or "History"
+    profile_label, theme_code, profile_note = scholar_profile_meta(scholar)
     cities = unique_cities(scholar)
     affiliations = unique_affiliations(scholar)
+    life_ru = format_lifespan(scholar, "ru").strip()
+    life_en = format_lifespan(scholar, "en").strip()
+    ru_heading = f'{esc(name_ru)} <span class="life">{esc(life_ru)}</span>' if life_ru else esc(name_ru)
+    en_heading = " ".join(part for part in [name_en, life_en] if part)
+    profile_note_html = f'<p class="profile-note">{esc(profile_note)}</p>' if profile_note else ""
 
     related_html = "".join(
-        f'<article class="card"><strong><a href="{item["url_slug"]}.html">{esc(item.get("full_name_ru") or item.get("name"))}</a></strong><div class="meta">{esc(item.get("total_talks"))} talks · {esc(theme_label(item.get("dominant_theme")))}</div></article>'
+        f'<article class="card"><strong><a href="{item["url_slug"]}.html">{esc(item.get("full_name_ru") or item.get("name"))}</a></strong><div class="meta">{esc(talks_count_label(item.get("total_talks") or 0))} · {esc(scholar_profile_meta(item)[0])}</div></article>'
         for item in related
-    ) or '<p class="meta">No related scholars found in this generated index.</p>'
+    ) or '<p class="meta">Связанные авторы в этом индексе не найдены.</p>'
 
     status = []
     if scholar.get("is_student"):
-        status.append("Student / postgraduate")
+        status.append("студент / аспирант")
     if scholar.get("is_independent"):
-        status.append("Independent researcher")
+        status.append("независимый исследователь")
 
     person_authority = (authority.get("persons") or {}).get(scholar["id"], {})
 
@@ -291,32 +336,33 @@ def render_profile(scholar, related, authority):
 
     body = f"""
         <header>
-            <h1>{esc(name_ru)}<span class="life">{esc(format_lifespan(scholar, "ru"))}</span></h1>
-            <p>{esc(name_en)}{esc(format_lifespan(scholar, "en"))}</p>
+            <h1>{ru_heading}</h1>
+            <p>{esc(en_heading)}</p>
             {format_degree(scholar)}
             <p>{esc(description)}</p>
+            {profile_note_html}
         </header>
 
         <section class="grid">
-            <article class="card"><strong>Talks</strong><div class="metric">{esc(scholar.get("total_talks"))}</div><div class="meta">Presentation records</div></article>
-            <article class="card"><strong>Activity</strong><div class="metric">{esc(describe_year_span(scholar.get("first_year"), scholar.get("last_year")))}</div><div class="meta">Observed conference years</div></article>
-            <article class="card"><strong>Theme</strong><div class="metric"><a href="../{theme_path(theme_code)}">{esc(theme_label(theme_code))}</a></div><div class="meta">{esc(theme_label(theme_code, "ru"))}</div></article>
-            <article class="card"><strong>Conference split</strong><div class="meta">Zograf: {esc(scholar.get("zograf_talks"))} · Roerich: {esc(scholar.get("roerich_talks"))}</div></article>
+            <article class="card"><strong>Доклады</strong><div class="metric">{esc(scholar.get("total_talks"))}</div><div class="meta">записи докладов</div></article>
+            <article class="card"><strong>Активность</strong><div class="metric">{esc(describe_year_span(scholar.get("first_year"), scholar.get("last_year")))}</div><div class="meta">годы участия</div></article>
+            <article class="card"><strong>Рубрика</strong><div class="metric"><a href="../{theme_path(theme_code)}">{esc(profile_label)}</a></div></article>
+            <article class="card"><strong>Площадки</strong><div class="meta">Зографские чтения: {esc(scholar.get("zograf_talks"))} · Рериховские чтения: {esc(scholar.get("roerich_talks"))}</div></article>
         </section>
 
-        <h2>Affiliations</h2>
+        <h2>Аффилиации</h2>
         <div class="chip-row">{chip_links(affiliations, dashboard_search_href)}</div>
 
-        <h2>Geographic Centers</h2>
+        <h2>Географические центры</h2>
         <div class="chip-row">{chip_links(cities, lambda city: '../' + city_path(city))}</div>
 
-        <h2>Status Tags</h2>
-        <div class="chip-row">{''.join(f'<span class="chip">{esc(item)}</span>' for item in status) or '<span class="meta">No special status tags.</span>'}</div>{external_links_html}
+        <h2>Статусы</h2>
+        <div class="chip-row">{''.join(f'<span class="chip">{esc(item)}</span>' for item in status) or '<span class="meta">Особые статусы не указаны.</span>'}</div>{external_links_html}
 
-        <h2>Presentations</h2>
+        <h2>Доклады</h2>
         <section class="list">{''.join(talk_card(talk) for talk in scholar.get("talks", []))}</section>
 
-        <h2>Related Scholars</h2>
+        <h2>Связанные авторы</h2>
         <section class="grid">{related_html}</section>
     """
 
@@ -325,8 +371,11 @@ def render_profile(scholar, related, authority):
         .life { color: var(--soft); font-size: 0.62em; font-weight: 500; margin-left: 0.4rem; }
         .degree { color: var(--soft); font-size: 0.95rem; font-weight: 600; margin: 0.15rem 0 0.5rem; }
         .degree a { font-weight: 400; font-size: 0.85em; }
+        .profile-note { color: var(--soft); max-width: 860px; }
         .metric { font-size: 1.4rem; font-weight: 700; margin-top: 0.2rem; }
         .chip-row { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+        .talk-meta-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 1rem; align-items: baseline; }
+        .talk-meta-session { text-align: right; white-space: nowrap; }
     </style>
     """
     return page_shell(
@@ -346,12 +395,12 @@ def render_scholars_index(scholars):
         years = describe_year_span(scholar.get("first_year"), scholar.get("last_year"))
         cards.append(
             f'<article class="card"><strong><a href="{scholar["url_slug"]}.html">{esc(name)}</a></strong>'
-            f'<div class="meta">{esc(scholar.get("total_talks"))} talks · {esc(years)} · {esc(theme_label(scholar.get("dominant_theme")))}</div></article>'
+            f'<div class="meta">{esc(talks_count_label(scholar.get("total_talks") or 0))} · {esc(years)} · {esc(scholar_profile_meta(scholar)[0])}</div></article>'
         )
     body = f"""
         <header>
-            <h1>Scholar Profiles</h1>
-            <p>Static index of generated scholar profile pages for the Indology Scholars archive.</p>
+            <h1>Профили исследователей</h1>
+            <p>Статический указатель сгенерированных профилей исследователей.</p>
         </header>
         <section class="grid">{''.join(cards)}</section>
     """
@@ -359,8 +408,8 @@ def render_scholars_index(scholars):
         {
             "@context": "https://schema.org",
             "@type": "CollectionPage",
-            "name": "Scholar Profiles",
-            "description": "Static index of generated scholar profile pages.",
+            "name": "Профили исследователей",
+            "description": "Статический указатель сгенерированных профилей исследователей.",
             "url": site_url("scholars/"),
             "dateModified": BUILD_DATE,
         },
@@ -368,14 +417,14 @@ def render_scholars_index(scholars):
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
             "itemListElement": [
-                {"@type": "ListItem", "position": 1, "name": "Home", "item": SITE_URL},
-                {"@type": "ListItem", "position": 2, "name": "Scholars", "item": site_url("scholars/")},
+                {"@type": "ListItem", "position": 1, "name": "Главная", "item": SITE_URL},
+                {"@type": "ListItem", "position": 2, "name": "Исследователи", "item": site_url("scholars/")},
             ],
         },
     ]
     return page_shell(
-        f"Scholar Profiles | {SITE_NAME}",
-        "Static index of generated scholar profile pages for the Indology Scholars archive.",
+        f"Профили исследователей | {SITE_NAME}",
+        "Статический указатель сгенерированных профилей исследователей.",
         "scholars/",
         body,
         structured,
