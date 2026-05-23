@@ -1,11 +1,11 @@
 key,value
-H1_overlap_observed,39
-H1_overlap_expected_mean,103.62
-H1_overlap_expected_sd,3.52
-H1_z,-18.342
+H1_overlap_observed,38
+H1_overlap_expected_mean,103.29
+H1_overlap_expected_sd,3.56
+H1_z,-18.352
 H1_p_one_sided_low,4.999750012499375e-05
-H2_logrank_chi2,0.001
-H2_logrank_p,0.9744625015530429
+H2_logrank_chi2,0.005
+H2_logrank_p,0.9456893569556108
 H2_median_span_zograf,8
 H2_median_span_roerich,7
 H4_zograf_cityonly_pct,94.7

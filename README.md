@@ -215,7 +215,7 @@ To compile, process, and deploy the entire platform from scratch, run the script
 
 ## 🤖 6. Automated Semi-Annual Deployment Workflow
 
-The project is configured with a automated **GitHub Actions** workflow (`.github/workflows/rebuild_and_deploy.yml`) scheduled to execute twice a year on critical academic boundary dates:
+The project is configured with an automated **GitHub Actions** workflow (`.github/workflows/rebuild_and_deploy.yml`) scheduled to execute twice a year on critical academic boundary dates:
 
 *   **June 20 (00:00 UTC):** Immediately following the completion of the spring **Zograf Readings** in St. Petersburg.
 *   **December 20 (00:00 UTC):** Immediately following the completion of the winter **Roerich Readings** in Moscow.
@@ -228,7 +228,30 @@ The project is configured with a automated **GitHub Actions** workflow (`.github
 
 ---
 
-## 📈 7. Core Database Statistics
+## 📄 7. Scientific Manuscript & Hypotheses (v0.4)
+
+The project research findings are compiled in the main academic manuscript: **`article/ppv_draft.md`** (v0.4). The paper analyzes the structural parameters, institutional alignment, and sociological fragmentation of the Russian Indological community. Formatted outputs are compiled as [ppv_draft.html](file:///c:/Users/user/Documents/GitHub/IndologyScholars/article/ppv_draft.html) and [ppv_draft.docx](file:///c:/Users/user/Documents/GitHub/IndologyScholars/article/ppv_draft.docx).
+
+The study formulates and tests 10 key research hypotheses (H1–H10) grouped across several analytical dimensions:
+
+### Thematic & Chronological Structures
+*   **H1 (Thematic Entropy):** *Confirmed.* Moscow's Roerich Readings have a significantly narrower thematic spectrum (lower Shannon entropy by L1 discipline) compared to St. Petersburg's Zograf Readings, indicating a more localized, traditional scope.
+*   **H2 (Daily Thematic Differentiation):** *Confirmed.* Individual days of the Zograf Readings display high thematic specificity (measured via cosine distance of daily thematic vectors), proving structured daily scheduling.
+*   **H8 (Organizational Era Shift - Zograf):** *Confirmed.* Compares the Vasilkov era ($\le 2024$) with the Albedil-Ivanov era ($2025–2026$) of the Zograf Readings. A statistically significant chronological L2 shift ($p = 0.0459$) is observed: classic themes dropped from 36.2% to 26.3%, while chronologically unspecified topics rose from 8.2% to 16.7%.
+
+### Gatekeeping & Participation Dynamics
+*   **H3 & H4 (Gatekeeping Consistency & Applied Themes):** *Refined.* Hypothesized that Zograf 2026 exclusion criteria selectively filtered applied/metascientific topics. Aggregate program statistics show near-identical rates of applied papers between conferences, suggesting that exclusions operate on a personal/selective basis rather than a systematic thematic filter.
+*   **H5 (Institutional Monopoly - Eternal Five):** *Confirmed.* A cohort of five prolific scholars at the Moscow department (Vertogradova, Tyulina, Vyrshchikov, Shustova, Drobyshev) occupies a disproportionate share of presentation slots, reducing opportunities for younger entrants.
+*   **H6 (Online Expansion Decay):** *Confirmed.* The transition to online/hybrid formats (2020+) temporarily expanded participation, but by 2024–2025, participation contracted back to the core metropolitan network, with online options primarily serving established scholars remotely.
+*   **H10 (Talk Serialization / "Salami Slicing"):** *Refined.* Core cohort and peripheral presenters exhibit no statistically significant difference in talk serialization rates ($p = 0.1649$). However, serialization correlates positively with a scholar's total lifetime presentations ($\rho = 0.223$, $p = 0.0007$), marking it as an individual career strategy.
+
+### Geographic Gravity & Institutional Counts
+*   **H7 (Institutional Fractional Counting):** *Validated.* Proves that the single-author rate exceeds 99% across the 20-year corpus, meaning simple and fractional institutional counts result in negligible ranking differences.
+*   **H9 (Geographic Gravity & Regional Survival):** *Confirmed.* St. Petersburg's Zograf Readings demonstrate balanced geographic representation (43.8% SPb vs 42.6% Moscow), while Moscow's Roerich Readings are inward-oriented (only 9.0% SPb participants). Furthermore, regional scholars (outside Moscow/SPb) suffer from significantly lower return rates (cohort survival) compared to metropolitan counterparts (36.1% vs ~59%, $p = 0.0191$).
+
+---
+
+## 📈 8. Core Database Statistics
 
 *   **Unique Indologists Deduplicated:** 226 scholars
 *   **Total Presentations Parsed:** 899 talks (across 895 unique titles)

@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import csv
 import math
+import re
 import sqlite3
 from collections import Counter, defaultdict
 from dataclasses import dataclass
@@ -12,6 +13,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 DB_PATH = ROOT / "conferences.db"
 ANALYTICS = ROOT / "analytics_output"
+HYP = ROOT / "article" / "hypothesis_output"
 OUT = ROOT / "article" / "figures"
 
 
@@ -66,6 +68,61 @@ L2_ORDER = [
     "unspecified",
 ]
 
+CITY_TOKENS = {
+    "москва",
+    "санкт-петербург",
+    "санкт петербург",
+    "спб",
+    "с.-петербург",
+    "петербург",
+    "калининград",
+    "новосибирск",
+    "казань",
+    "екатеринбург",
+    "владивосток",
+    "уфа",
+    "томск",
+    "элиста",
+    "улан-удэ",
+    "ялта",
+    "нижний новгород",
+    "пермь",
+    "воронеж",
+    "ростов-на-дону",
+    "красноярск",
+    "иркутск",
+    "пенза",
+    "дели",
+    "тель-авив",
+}
+
+INST_TOKENS = [
+    "ран",
+    "университет",
+    "институт",
+    "ивр",
+    "ив ",
+    "маэ",
+    "музей",
+    "рггу",
+    "вшэ",
+    "спбгу",
+    "мгу",
+    "рудн",
+    "кафедр",
+    "академи",
+    "центр",
+    "library",
+    "university",
+    "institute",
+    "museum",
+    "лаборатор",
+    "школа",
+    "семинар",
+    "фонд",
+    "общество",
+]
+
 
 def svg(width: int, height: int, body: list[str]) -> str:
     return (
@@ -117,6 +174,31 @@ def circle(x, y, r, fill, stroke="#ffffff", width=1.2, opacity=0.88) -> str:
         f'<circle cx="{x:.1f}" cy="{y:.1f}" r="{r:.1f}" fill="{fill}" '
         f'stroke="{stroke}" stroke-width="{width}" opacity="{opacity}"/>'
     )
+
+
+def load_csv_rows(path: Path) -> list[dict[str, str]]:
+    with path.open("r", encoding="utf-8", newline="") as f:
+        return list(csv.DictReader(f))
+
+
+def norm_affiliation(value: str) -> str:
+    return re.sub(r"\s+", " ", (value or "").strip()).lower()
+
+
+def is_city_only_affiliation(value: str) -> bool:
+    n = norm_affiliation(value)
+    if not n:
+        return True
+    core = n
+    for city in CITY_TOKENS:
+        core = re.sub(rf"[ ,(]+{re.escape(city)}[ ,)]*$", "", core).strip(" ,()")
+    if not core or core in CITY_TOKENS:
+        return True
+    if any(token in n for token in INST_TOKENS):
+        return False
+    if len(n) <= 18 and "," not in n and " " not in n:
+        return True
+    return False
 
 
 def short_name(name: str) -> str:
@@ -520,13 +602,273 @@ def figure_birth_year_coverage(person_series: dict[str, dict[str, PersonSeries]]
     return counts
 
 
+def figure_closedness_forest() -> list[dict[str, str]]:
+    rows = load_csv_rows(HYP / "appendix_g_diff_ci.csv")
+    order = ["Ядро ≥5, п.п.", "Удержание, п.п.", "Разовые, п.п.", "Джини"]
+    rows = sorted(rows, key=lambda row: order.index(row["metric"]) if row["metric"] in order else 99)
+
+    width, height = 980, 430
+    left, top, plot_w = 230, 96, 600
+    row_gap = 58
+    x_min, x_max = -25, 25
+
+    def sx(value: float) -> float:
+        return left + (value - x_min) / (x_max - x_min) * plot_w
+
+    body = [
+        text(34, 32, "Различия метрик закрытости: Рерих минус Зограф", "title"),
+        text(
+            34,
+            56,
+            "Точки — оценка различия, линии — bootstrap 95% CI; пересечение нуля означает описательный, но не строгий эффект.",
+            "subtitle",
+        ),
+        rect(left, top - 34, plot_w, 270, "#ffffff", "#cfd8e3"),
+    ]
+
+    for tick in [-20, -10, 0, 10, 20]:
+        x = sx(tick)
+        body.append(line(x, top - 34, x, top + 236, "#d6dde6" if tick == 0 else "#edf1f5", 1.4 if tick == 0 else 1))
+        body.append(text(x, top + 258, tick, "axis", "middle"))
+    body.append(text(left + plot_w / 2, top + 294, "Разница, процентные пункты; для Джини показано значение ×100", "axis", "middle"))
+
+    for i, row in enumerate(rows):
+        metric = row["metric"]
+        y = top + i * row_gap
+        scale = 100 if metric == "Джини" else 1
+        point = float(row["diff"]) * scale
+        ci_low = float(row["ci_low"]) * scale
+        ci_high = float(row["ci_high"]) * scale
+        label = "Джини ×100" if metric == "Джини" else metric.replace(", п.п.", "")
+        body.append(text(left - 18, y + 4, label, "axis", "end", weight="700" if i == 0 else None))
+        body.append(line(sx(ci_low), y, sx(ci_high), y, "#657482", 3))
+        body.append(line(sx(ci_low), y - 6, sx(ci_low), y + 6, "#657482", 1.6))
+        body.append(line(sx(ci_high), y - 6, sx(ci_high), y + 6, "#657482", 1.6))
+        color = "#b8554b" if point > 0 else "#2f6fbb"
+        body.append(circle(sx(point), y, 6.5, color))
+        body.append(text(left + plot_w + 18, y + 4, f"{point:+.1f} [{ci_low:+.1f}; {ci_high:+.1f}]", "small"))
+        body.append(text(left + plot_w + 18, y + 22, f"p_boot={float(row['p_boot']):.3f}", "label"))
+
+    body.append(text(34, height - 22, "Чтение: положительные значения означают большую величину метрики у Рериха; отрицательные — у Зографа.", "subtitle"))
+    (OUT / "closedness_forest.svg").write_text(svg(width, height, body), encoding="utf-8")
+    return rows
+
+
+def figure_geographic_gravity() -> tuple[list[dict[str, str]], list[dict[str, str]]]:
+    dist_rows = load_csv_rows(HYP / "geographic_presentation_distribution.csv")
+    retention_rows = load_csv_rows(HYP / "geographic_speaker_retention.csv")
+
+    width, height = 1060, 540
+    body = [
+        text(34, 32, "Географическое притяжение и возвращаемость участников", "title"),
+        text(34, 56, "Левая панель — доля докладов по городским группам; правая — доля ученых, вернувшихся хотя бы в другой год.", "subtitle"),
+    ]
+
+    city_order = [
+        ("SPb", "СПб"),
+        ("Moscow", "Москва"),
+        ("Regions/Foreign", "регионы/\nзарубежье"),
+    ]
+    left, top = 96, 118
+    cell_w, cell_h = 142, 76
+    max_share = 75.0
+
+    def heat_color(share: float) -> str:
+        t = min(1, share / max_share)
+        r0, g0, b0 = (241, 246, 250)
+        r1, g1, b1 = (47, 111, 187)
+        return f"rgb({round(r0 + (r1 - r0) * t)},{round(g0 + (g1 - g0) * t)},{round(b0 + (b1 - b0) * t)})"
+
+    body.append(text(left, top - 44, "Доля докладов", "axis", weight="700"))
+    for j, (_, label_value) in enumerate(city_order):
+        x = left + 126 + j * cell_w + cell_w / 2
+        for k, part in enumerate(label_value.split("\n")):
+            body.append(text(x, top - 16 + k * 13, part, "small", "middle"))
+
+    matrix = {}
+    for row in dist_rows:
+        matrix[row["city"]] = row
+    for i, (series_label, pct_key, count_key) in enumerate(
+        [("Зографские", "zograf_pct", "zograf_talks"), ("Рериховские", "roerich_pct", "roerich_talks")]
+    ):
+        y = top + i * cell_h
+        body.append(text(left + 110, y + cell_h / 2 + 4, series_label, "axis", "end"))
+        for j, (city_key, _) in enumerate(city_order):
+            row = matrix.get(city_key, {})
+            share = float(row.get(pct_key, 0) or 0)
+            talks = int(row.get(count_key, 0) or 0)
+            x = left + 126 + j * cell_w
+            body.append(rect(x, y, cell_w - 2, cell_h - 2, heat_color(share), "#ffffff"))
+            body.append(text(x + cell_w / 2, y + 33, f"{share:.1f}%", "axis", "middle", weight="700"))
+            body.append(text(x + cell_w / 2, y + 53, f"n={talks}", "small", "middle"))
+
+    bar_left, bar_top, bar_w, bar_h = 650, 118, 310, 260
+    body.append(text(bar_left, bar_top - 44, "Возвращаемость по городским группам", "axis", weight="700"))
+    body.append(rect(bar_left, bar_top, bar_w, bar_h, "#ffffff", "#cfd8e3"))
+    for yv in [0, 20, 40, 60]:
+        yy = bar_top + bar_h - yv / 70 * bar_h
+        body.append(line(bar_left, yy, bar_left + bar_w, yy, "#edf1f5"))
+        body.append(text(bar_left - 12, yy + 4, f"{yv}%", "axis", "end"))
+    bar_colors = {"Moscow": "#b8554b", "SPb": "#2f6fbb", "Regions/Foreign": "#708090"}
+    group_w = bar_w / len(city_order)
+    retention_by_city = {row["city"]: row for row in retention_rows}
+    for i, (city_key, label_value) in enumerate(city_order):
+        row = retention_by_city.get(city_key, {})
+        value = float(row.get("retention_pct", 0) or 0)
+        total = int(row.get("total_speakers", 0) or 0)
+        h = value / 70 * bar_h
+        x = bar_left + group_w * i + group_w * 0.25
+        body.append(rect(x, bar_top + bar_h - h, group_w * 0.5, h, bar_colors[city_key]))
+        body.append(text(x + group_w * 0.25, bar_top + bar_h - h - 8, f"{value:.1f}%", "small", "middle", weight="700"))
+        body.append(text(x + group_w * 0.25, bar_top + bar_h + 22, label_value.replace("\n", " "), "small", "middle"))
+        body.append(text(x + group_w * 0.25, bar_top + bar_h + 40, f"n={total}", "label", "middle"))
+
+    body.append(text(96, height - 40, "Ключевой контраст: петербургская площадка почти паритетна для двух столиц, московская — преимущественно московская.", "subtitle"))
+    (OUT / "geographic_gravity.svg").write_text(svg(width, height, body), encoding="utf-8")
+    return dist_rows, retention_rows
+
+
+def figure_affiliation_transparency() -> dict[str, list[dict[str, float]]]:
+    con = sqlite3.connect(DB_PATH)
+    rows = con.execute(
+        """
+        select es.series_name_en, e.year, pp.affiliation_text_raw
+        from presentation_person pp
+        join presentation pr using(presentation_id)
+        join session s using(session_id)
+        join event_day_venue edv using(event_day_venue_id)
+        join event_day ed using(event_day_id)
+        join event e using(event_id)
+        join event_series es using(event_series_id)
+        """
+    ).fetchall()
+
+    by_series_year: dict[str, dict[int, dict[str, int]]] = defaultdict(lambda: defaultdict(lambda: {"city": 0, "total": 0}))
+    for series_name, year, aff in rows:
+        series = series_short(series_name)
+        by_series_year[series][int(year)]["total"] += 1
+        if is_city_only_affiliation(aff or ""):
+            by_series_year[series][int(year)]["city"] += 1
+
+    summary: dict[str, list[dict[str, float]]] = {}
+    for series, years in by_series_year.items():
+        summary[series] = []
+        for year in sorted(years):
+            total = years[year]["total"]
+            city = years[year]["city"]
+            summary[series].append({"year": year, "city": city, "total": total, "pct": 100 * city / total if total else 0.0})
+
+    width, height = 980, 500
+    left, top, plot_w, plot_h = 92, 96, 760, 300
+    xmin, xmax = 2004, 2026
+
+    def sx(year: float) -> float:
+        return left + (year - xmin) / (xmax - xmin) * plot_w
+
+    def sy(value: float) -> float:
+        return top + plot_h - value / 100 * plot_h
+
+    body = [
+        text(34, 32, "Прозрачность аффилиаций: город вместо учреждения", "title"),
+        text(34, 56, "Доля авторских участий, где в программе указан только город или пустая аффилиация.", "subtitle"),
+        rect(left, top, plot_w, plot_h, "#ffffff", "#cfd8e3"),
+    ]
+    for yv in [0, 25, 50, 75, 100]:
+        yy = sy(yv)
+        body.append(line(left, yy, left + plot_w, yy, "#edf1f5"))
+        body.append(text(left - 12, yy + 4, f"{yv}%", "axis", "end"))
+    for year in range(xmin, xmax + 1, 2):
+        x = sx(year)
+        body.append(line(x, top, x, top + plot_h, "#f3f6f9"))
+        body.append(text(x, top + plot_h + 22, year, "axis", "middle"))
+
+    colors = {"Zograf": "#2f6fbb", "Roerich": "#b8554b"}
+    labels = {"Zograf": "Зографские", "Roerich": "Рериховские"}
+    for series in ["Zograf", "Roerich"]:
+        prev = None
+        for row in summary.get(series, []):
+            x = sx(row["year"])
+            y = sy(row["pct"])
+            if prev is not None:
+                body.append(line(prev[0], prev[1], x, y, colors[series], 2.2))
+            body.append(circle(x, y, 4.6, colors[series]))
+            prev = (x, y)
+
+    legend_x, legend_y = 710, 118
+    body.append(rect(legend_x - 18, legend_y - 24, 206, 78, "#ffffff", "#d8e0e8", 5, 0.94))
+    for i, series in enumerate(["Zograf", "Roerich"]):
+        y = legend_y + i * 28
+        body.append(line(legend_x, y, legend_x + 28, y, colors[series], 2.2))
+        body.append(circle(legend_x + 14, y, 4.6, colors[series]))
+        pooled_city = sum(row["city"] for row in summary.get(series, []))
+        pooled_total = sum(row["total"] for row in summary.get(series, []))
+        pooled = 100 * pooled_city / pooled_total if pooled_total else 0.0
+        body.append(text(legend_x + 40, y + 4, f"{labels[series]}: {pooled:.1f}%", "small"))
+
+    body.append(text(34, height - 26, "График поддерживает источниковедческий тезис: разрыв создается форматом программы, а не обязательно биографией участников.", "subtitle"))
+    (OUT / "affiliation_transparency.svg").write_text(svg(width, height, body), encoding="utf-8")
+    return summary
+
+
+def figure_zograf_era_l2() -> list[dict[str, str]]:
+    rows = load_csv_rows(HYP / "era_themes_l2.csv")
+    rows = sorted(rows, key=lambda row: L2_ORDER.index(row["theme_l2"]) if row["theme_l2"] in L2_ORDER else 99)
+
+    width, height = 980, 500
+    left, top, plot_w, plot_h = 92, 96, 760, 300
+    ymax = 40
+    body = [
+        text(34, 32, "Зографские чтения до и после 2025 г.: хронологический профиль", "title"),
+        text(34, 56, "Сравнение эры Василькова (до 2024) и эры Альбедиль — Иванова (2025–2026) по периодам L2.", "subtitle"),
+        rect(left, top, plot_w, plot_h, "#ffffff", "#cfd8e3"),
+    ]
+    for yv in [0, 10, 20, 30, 40]:
+        yy = top + plot_h - yv / ymax * plot_h
+        body.append(line(left, yy, left + plot_w, yy, "#edf1f5"))
+        body.append(text(left - 12, yy + 4, f"{yv}%", "axis", "end"))
+
+    colors = {"vasilkov_pct": "#2f6fbb", "albedil_pct": "#d49a3a"}
+    group_w = plot_w / len(rows)
+    bar_w = group_w * 0.32
+    for i, row in enumerate(rows):
+        cx = left + group_w * (i + 0.5)
+        for j, key in enumerate(["vasilkov_pct", "albedil_pct"]):
+            value = float(row[key])
+            h = value / ymax * plot_h
+            x = cx + (j - 0.5) * bar_w * 1.25
+            body.append(rect(x - bar_w / 2, top + plot_h - h, bar_w, h, colors[key]))
+            if row["theme_l2"] in {"classical", "unspecified"}:
+                body.append(text(x, top + plot_h - h - 7, f"{value:.1f}", "label", "middle"))
+        body.append(text(cx, top + plot_h + 24, L2_RU.get(row["theme_l2"], row["theme_l2"]), "axis", "middle"))
+
+    legend_x, legend_y = 650, 118
+    body.append(rect(legend_x - 18, legend_y - 24, 252, 78, "#ffffff", "#d8e0e8", 5, 0.94))
+    body.append(rect(legend_x, legend_y - 10, 24, 14, colors["vasilkov_pct"]))
+    body.append(text(legend_x + 34, legend_y + 2, "до 2025", "small"))
+    body.append(rect(legend_x, legend_y + 20, 24, 14, colors["albedil_pct"]))
+    body.append(text(legend_x + 34, legend_y + 32, "2025–2026", "small"))
+    body.append(text(34, height - 28, "Главное изменение: снижение классического периода и рост тем без жесткой хронологической привязки.", "subtitle"))
+    (OUT / "zograf_era_l2_shift.svg").write_text(svg(width, height, body), encoding="utf-8")
+    return rows
+
+
 def write_notes(
     cross_counts: dict[str, int],
     dynamics: dict[str, list[dict[str, float]]],
     birth_counts: dict[str, Counter[str]],
+    closedness_rows: list[dict[str, str]],
+    geography: tuple[list[dict[str, str]], list[dict[str, str]]],
+    affiliation_summary: dict[str, list[dict[str, float]]],
+    era_l2_rows: list[dict[str, str]],
 ) -> None:
     z2020 = next(r for r in dynamics["Zograf"] if r["year"] == 2020)
     z2021 = next(r for r in dynamics["Zograf"] if r["year"] == 2021)
+    dist_rows, retention_rows = geography
+    pooled_affiliation = {
+        series: 100 * sum(row["city"] for row in rows) / sum(row["total"] for row in rows)
+        for series, rows in affiliation_summary.items()
+        if sum(row["total"] for row in rows)
+    }
     lines = [
         "# Figure Notes",
         "",
@@ -548,6 +890,35 @@ def write_notes(
         f"- Known birth year bucket counts: {dict(birth_counts['known'])}.",
         f"- Unknown birth year bucket counts: {dict(birth_counts['unknown'])}.",
         "",
+        "## Closedness Forest",
+        "",
+        *[
+            f"- {row['metric']}: diff={row['diff']}, 95% CI [{row['ci_low']}, {row['ci_high']}], p_boot={row['p_boot']}."
+            for row in closedness_rows
+        ],
+        "",
+        "## Geographic Gravity",
+        "",
+        *[
+            f"- {row['city']}: Zograf {row['zograf_pct']}% ({row['zograf_talks']} talks), Roerich {row['roerich_pct']}% ({row['roerich_talks']} talks)."
+            for row in dist_rows
+        ],
+        *[
+            f"- Retention {row['city']}: {row['retention_pct']}% ({row['returning_speakers']}/{row['total_speakers']})."
+            for row in retention_rows
+        ],
+        "",
+        "## Affiliation Transparency",
+        "",
+        f"- Pooled city-only / empty rate: Zograf {pooled_affiliation.get('Zograf', 0.0):.1f}%, Roerich {pooled_affiliation.get('Roerich', 0.0):.1f}%.",
+        "",
+        "## Zograf Era L2 Shift",
+        "",
+        *[
+            f"- {row['theme_l2']}: before 2025 {row['vasilkov_pct']}%, 2025-2026 {row['albedil_pct']}%."
+            for row in era_l2_rows
+        ],
+        "",
     ]
     (OUT / "figure_notes.md").write_text("\n".join(lines), encoding="utf-8")
 
@@ -559,7 +930,11 @@ def main() -> None:
     dynamics = figure_participant_dynamics(person_series)
     figure_theme_heatmap()
     birth_counts = figure_birth_year_coverage(person_series)
-    write_notes(cross_counts, dynamics, birth_counts)
+    closedness_rows = figure_closedness_forest()
+    geography = figure_geographic_gravity()
+    affiliation_summary = figure_affiliation_transparency()
+    era_l2_rows = figure_zograf_era_l2()
+    write_notes(cross_counts, dynamics, birth_counts, closedness_rows, geography, affiliation_summary, era_l2_rows)
     print(f"Wrote figures to {OUT}")
 
 

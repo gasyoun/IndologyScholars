@@ -4,6 +4,7 @@ PERS_f074f69f,20,0,0.0,yes
 PERS_11da326d,20,0,0.0,yes
 PERS_d98da899,19,0,0.0,yes
 PERS_12125da9,16,0,0.0,yes
+PERS_f2fef030,15,0,0.0,yes
 PERS_40862f5e,15,1,6.7,yes
 PERS_1fa7cc0c,14,1,7.1,yes
 PERS_e1dd6b3e,13,0,0.0,yes
@@ -21,14 +22,13 @@ PERS_56508328,11,0,0.0,yes
 PERS_da862dde,11,0,0.0,yes
 PERS_9a855a7b,10,1,10.0,yes
 PERS_c48611e0,10,0,0.0,yes
+PERS_8e117242,10,0,0.0,yes
 PERS_41d6aa73,10,0,0.0,yes
 PERS_92868e4f,10,1,10.0,yes
 PERS_05d56645,10,0,0.0,yes
 PERS_5ed752d9,9,1,11.1,yes
 PERS_260a598a,9,0,0.0,yes
 PERS_2fd442aa,9,0,0.0,yes
-PERS_8e117242,9,0,0.0,yes
-PERS_f2fef030,9,0,0.0,yes
 PERS_3357f25b,9,0,0.0,yes
 PERS_5d324297,9,0,0.0,yes
 PERS_a0264ac5,9,1,11.1,yes
@@ -42,6 +42,7 @@ PERS_fb25c80f,8,0,0.0,yes
 PERS_db046be0,7,0,0.0,yes
 PERS_72506535,7,0,0.0,yes
 PERS_c5677a3f,7,0,0.0,yes
+PERS_23215083,7,0,0.0,yes
 PERS_9f398436,7,1,14.3,yes
 PERS_0e0a154e,7,1,14.3,yes
 PERS_1c6fcce5,7,0,0.0,yes
@@ -49,12 +50,10 @@ PERS_cfb92c5f,7,0,0.0,yes
 PERS_50d73711,7,0,0.0,yes
 PERS_efc88709,6,0,0.0,yes
 PERS_8516d1e4,6,0,0.0,yes
-PERS_df6e2007,6,0,0.0,yes
 PERS_d2559ba1,6,0,0.0,yes
 PERS_f8ab5755,6,1,16.7,yes
 PERS_ebb6d156,6,0,0.0,yes
 PERS_287fe378,6,0,0.0,yes
-PERS_23215083,6,0,0.0,yes
 PERS_bc97fb65,6,0,0.0,yes
 PERS_a84aedaa,6,0,0.0,yes
 PERS_f19cd8a1,6,0,0.0,yes
@@ -62,6 +61,7 @@ PERS_9ad66151,6,0,0.0,yes
 PERS_93e2effb,5,0,0.0,yes
 PERS_0665f215,5,0,0.0,yes
 PERS_22d87263,5,0,0.0,yes
+PERS_088c4df7,5,1,20.0,yes
 PERS_0c451d76,5,0,0.0,yes
 PERS_dd7de77e,5,0,0.0,yes
 PERS_f5b8b340,5,2,40.0,yes
@@ -76,7 +76,6 @@ PERS_3c202afd,4,0,0.0,no
 PERS_8108c314,4,0,0.0,no
 PERS_06ee047f,4,0,0.0,no
 PERS_554c138a,4,0,0.0,no
-PERS_088c4df7,4,0,0.0,no
 PERS_6e211759,4,0,0.0,no
 PERS_3c7d41ac,4,0,0.0,no
 PERS_db0a826b,4,0,0.0,no
@@ -103,6 +102,7 @@ PERS_0fd718a7,3,0,0.0,no
 PERS_3d3b302d,3,0,0.0,no
 PERS_50c46233,2,0,0.0,no
 PERS_8df81b6d,2,0,0.0,no
+PERS_10547db9,2,0,0.0,no
 PERS_587b08ec,2,0,0.0,no
 PERS_2c40b9b1,2,0,0.0,no
 PERS_b76851a7,2,0,0.0,no
@@ -128,7 +128,6 @@ PERS_2e00cb36,1,0,0.0,no
 PERS_a0f3d86d,1,0,0.0,no
 PERS_936e1165,1,0,0.0,no
 PERS_bd77e495,1,0,0.0,no
-PERS_35ac9c82,1,0,0.0,no
 PERS_e96139bd,1,0,0.0,no
 PERS_92f41884,1,0,0.0,no
 PERS_ce100d3f,1,0,0.0,no
@@ -136,7 +135,6 @@ PERS_f1a308b7,1,1,100.0,no
 PERS_fc976255,1,0,0.0,no
 PERS_9bf51055,1,0,0.0,no
 PERS_3d4df70f,1,0,0.0,no
-PERS_d3cb634e,1,1,100.0,no
 PERS_ee3448c3,1,0,0.0,no
 PERS_9366fe2c,1,0,0.0,no
 PERS_6b867946,1,0,0.0,no
@@ -148,7 +146,6 @@ PERS_856eb5c6,1,0,0.0,no
 PERS_88e5311f,1,0,0.0,no
 PERS_ecdfe667,1,0,0.0,no
 PERS_e1d622e5,1,0,0.0,no
-PERS_04c4d444,1,0,0.0,no
 PERS_5bbfea37,1,0,0.0,no
 PERS_180c5e5c,1,0,0.0,no
 PERS_e4aab278,1,0,0.0,no
@@ -192,7 +189,6 @@ PERS_07adc1e6,1,0,0.0,no
 PERS_29607432,1,0,0.0,no
 PERS_c2ffc606,1,0,0.0,no
 PERS_168a3a8b,1,0,0.0,no
-PERS_b024f2dd,1,0,0.0,no
 PERS_7efcddc6,1,0,0.0,no
 PERS_4ebb20aa,1,0,0.0,no
 PERS_6f89f9c1,1,0,0.0,no
@@ -202,7 +198,6 @@ PERS_f82b6a8e,1,0,0.0,no
 PERS_1130c736,1,0,0.0,no
 PERS_a901d460,1,0,0.0,no
 PERS_147ab928,1,0,0.0,no
-PERS_10547db9,1,0,0.0,no
 PERS_58e18506,1,0,0.0,no
 PERS_23abae7d,1,0,0.0,no
 PERS_05707a8e,1,0,0.0,no

@@ -51,7 +51,6 @@ text{font-family:Arial,'Liberation Sans',sans-serif;fill:#1f2933}.small{font-siz
 <circle cx="297.5" cy="533.8" r="7.8" fill="#2f6fbb" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
 <circle cx="350.4" cy="574.9" r="7.8" fill="#2f6fbb" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
 <circle cx="138.9" cy="410.6" r="7.8" fill="#b8554b" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
-<circle cx="138.9" cy="410.6" r="7.8" fill="#b8554b" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
 <circle cx="244.6" cy="492.8" r="7.8" fill="#657482" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
 <circle cx="244.6" cy="451.7" r="8.0" fill="#657482" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
 <circle cx="191.8" cy="410.6" r="8.0" fill="#b8554b" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
@@ -61,11 +60,10 @@ text{font-family:Arial,'Liberation Sans',sans-serif;fill:#1f2933}.small{font-siz
 <circle cx="297.5" cy="492.8" r="8.0" fill="#657482" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
 <circle cx="138.9" cy="328.5" r="8.3" fill="#b8554b" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
 <circle cx="297.5" cy="410.6" r="8.6" fill="#657482" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
-<circle cx="244.6" cy="369.5" r="8.6" fill="#b8554b" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
 <circle cx="138.9" cy="287.4" r="8.6" fill="#b8554b" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
-<circle cx="191.8" cy="328.5" r="8.6" fill="#b8554b" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
 <circle cx="297.5" cy="369.5" r="8.8" fill="#657482" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
 <circle cx="191.8" cy="287.4" r="8.8" fill="#b8554b" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
+<circle cx="244.6" cy="328.5" r="8.8" fill="#b8554b" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
 <circle cx="191.8" cy="287.4" r="8.8" fill="#b8554b" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
 <circle cx="350.4" cy="369.5" r="9.0" fill="#657482" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
 <circle cx="138.9" cy="123.1" r="9.4" fill="#b8554b" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
@@ -73,6 +71,7 @@ text{font-family:Arial,'Liberation Sans',sans-serif;fill:#1f2933}.small{font-siz
 <circle cx="403.2" cy="328.5" r="9.4" fill="#657482" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
 <circle cx="456.1" cy="328.5" r="9.6" fill="#657482" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
 <circle cx="614.8" cy="410.6" r="9.8" fill="#2f6fbb" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
+<circle cx="244.6" cy="123.1" r="9.8" fill="#b8554b" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
 <circle cx="720.5" cy="451.7" r="10.0" fill="#2f6fbb" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
 <circle cx="879.1" cy="451.7" r="10.5" fill="#2f6fbb" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
 <circle cx="509.0" cy="123.1" r="10.7" fill="#657482" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
@@ -93,5 +92,5 @@ text{font-family:Arial,'Liberation Sans',sans-serif;fill:#1f2933}.small{font-siz
 <text x="701.0" y="124.0" class="small" text-anchor="start">сбалансированные</text>
 <circle cx="685.0" cy="146.0" r="6.5" fill="#b8554b" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
 <text x="701.0" y="150.0" class="small" text-anchor="start">Рерих-ориентированные</text>
-<text x="34.0" y="686.0" class="subtitle" text-anchor="start">Итог: 18 сбалансированных, 12 рерих-ориентированных, 9 зограф-ориентированных.</text>
+<text x="34.0" y="686.0" class="subtitle" text-anchor="start">Итог: 18 сбалансированных, 11 рерих-ориентированных, 9 зограф-ориентированных.</text>
 </svg>

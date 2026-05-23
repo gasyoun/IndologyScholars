@@ -48,7 +48,7 @@ Execute in sequence to rebuild the entire platform from scratch:
 ```bash
 python build_and_populate_db.py        # Compile schema, ingest HTML, deduplicate persons
 python generate_analytics.py           # Compute statistics, export CSVs to analytics_output/
-python generate_site_data.json           # Serialize SQL entries into JS payload
+python generate_site_data.py           # Serialize SQL entries into JS payload
 python generate_scholars_pages.py      # Generate 226 static profile pages
 python -m http.server 8000             # Launch local server at http://localhost:8000
 ```
@@ -106,6 +106,7 @@ python import_seo_handoff.py           # Import SEO analytics back into database
 |------|---------|
 | `.github/workflows/` | GitHub Actions: `rebuild_and_deploy.yml` (scheduled 2×/year: June 20, Dec 20 UTC); `validate_publication.yml` |
 | `analytics_output/` | Generated CSV reports & `data_quality_report.json` |
+| `article/` | Scientific manuscript (`ppv_draft.md`), figures, appendices, and hypothesis-testing code (`work_ppv_hypotheses.py`) |
 | `assets/` | CSS, JS libraries, theme files |
 | `cities/` | Generated city profile pages (10+ static HTML files) |
 | `conferences/` | Conference metadata or landing pages |
