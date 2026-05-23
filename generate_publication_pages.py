@@ -451,11 +451,12 @@ def load_meso_index():
         if not approach:
             continue
         code = f"linguistics_{approach}"
+        label = row.get("label") or approach
         items.append(
             {
                 "code": code,
-                "label": f"Лингвистика: {row.get('label') or approach}",
-                "kind": "Подраздел лингвистики",
+                "label": label[:1].upper() + label[1:],
+                "kind": "Подраздел зонтичной рубрики «Лингвистика и филология»",
                 "count": int(row.get("count") or 0),
                 "zograf_count": int(row.get("zograf_count") or 0),
                 "roerich_count": int(row.get("roerich_count") or 0),

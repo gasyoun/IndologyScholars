@@ -255,8 +255,8 @@
     },
     {
       "path": "cities/elista.html",
-      "size_bytes": 14164,
-      "sha256": "0c7b7b716e700fe34ad2361fb05194e5575034d7b5f4ef4fb42fb392c75d9c0c"
+      "size_bytes": 14140,
+      "sha256": "7d977b99fdb0eb972cd98605858f40a5e5ff4c88034753e5db6f77f92cfdffa4"
     },
     {
       "path": "cities/index.html",
@@ -270,13 +270,13 @@
     },
     {
       "path": "cities/krasnodar.html",
-      "size_bytes": 16054,
-      "sha256": "583d53f00000469545dfdc69fee2eedba7a2f6b35fd7bba3aea3bfbc89d74ddd"
+      "size_bytes": 16030,
+      "sha256": "79953751123af13d6e11824c3d8a31a50262bdcf8295228c75b782da543353ef"
     },
     {
       "path": "cities/moskva.html",
-      "size_bytes": 189158,
-      "sha256": "2687a3cffdbfd79f56f28907f0e3d294d9b866bce556c36bdb12d886ada83400"
+      "size_bytes": 189110,
+      "sha256": "ee09491971dced3d248b776f50876649f09aaf1fc9728ad9d2bc5ea8106c46b4"
     },
     {
       "path": "cities/nizhnii-novgorod.html",
@@ -290,13 +290,13 @@
     },
     {
       "path": "cities/penza.html",
-      "size_bytes": 19289,
-      "sha256": "ba9e72d23feefb3895d8adec91aee50ec16f10617c4bda5c46e004567428035f"
+      "size_bytes": 19265,
+      "sha256": "ba3dc8a81c77334aa64eb0e380197f946b556cf2a0d9a809a2d09d2575b9ed21"
     },
     {
       "path": "cities/sankt-peterburg.html",
-      "size_bytes": 192431,
-      "sha256": "24d83e36a0de5a3e469145383973878189969342ba57e5c6d98a33c4890d29bd"
+      "size_bytes": 192383,
+      "sha256": "4fc4264ae1e666e520079e56c6db66751c038e790c9f13224261b0165767c0eb"
     },
     {
       "path": "cities/ulan-ude.html",
@@ -320,63 +320,63 @@
     },
     {
       "path": "conferences/roerich-2012.html",
-      "size_bytes": 32264,
-      "sha256": "66f66d02bd1d9e766705d5e2548b0cdf0c00e3fce9db90a961c210ae1b027521"
+      "size_bytes": 32240,
+      "sha256": "dfb5e5c8c9bfb64dea936c8b1cf2313b28b1459f44492a874054f32677a6feea"
     },
     {
       "path": "conferences/roerich-2015.html",
-      "size_bytes": 31199,
-      "sha256": "3c2a54f4ef739160979ef2aa9dcb29d4171a82197746d138e355124232a8dbf9"
+      "size_bytes": 31151,
+      "sha256": "a0e3e161d4c29f08503e23fb4d236bfbcf0c1059ac75ead118d4ad47b31575f6"
     },
     {
       "path": "conferences/roerich-2016.html",
-      "size_bytes": 32044,
-      "sha256": "d3b9f6d8fc4763ef3a31b98cbf5d3a2969ff0bb2854b0fbff427c3b7b612d31e"
+      "size_bytes": 31996,
+      "sha256": "b8fc4d57b39c24a0b573e110d83ddd9471349b3c2b96f118272e1b5a375d7e43"
     },
     {
       "path": "conferences/roerich-2017.html",
-      "size_bytes": 34591,
-      "sha256": "3b354b571e78ea0a680f263fd7e094a501133125eda2fafe2046512985500fea"
+      "size_bytes": 34543,
+      "sha256": "2ae5edb1806fc315875f138009302096b398c85255c41ec07ecf83e260d6e78e"
     },
     {
       "path": "conferences/roerich-2018.html",
-      "size_bytes": 34298,
-      "sha256": "903bb9b14575f7168933418f3322c5d4e2647308379e578f4d48b38df241e772"
+      "size_bytes": 34274,
+      "sha256": "15749bf6cb9e36ea1d5bb0dc54001fe791ed5d8bc80c3ec9103ff68cf727ca7b"
     },
     {
       "path": "conferences/roerich-2019.html",
-      "size_bytes": 31235,
-      "sha256": "2453bb568dc83a9823a2d0ed4a1bb2b13aa6c4a87452cd2ad94a7b07d203e328"
+      "size_bytes": 31211,
+      "sha256": "55d4b7bf1613f4437aaf8adf23a7f9122e978ae54678327d06a725987106c758"
     },
     {
       "path": "conferences/roerich-2020.html",
-      "size_bytes": 32305,
-      "sha256": "82931d103c2f2627944faf20eefa6919f0b8d16fe186ffef4780f60dda4b32ce"
+      "size_bytes": 32281,
+      "sha256": "1b30c6d5e01e1a52de962b0fe0722365dbdc9df8e7034e9b125b524569b63dca"
     },
     {
       "path": "conferences/roerich-2021.html",
-      "size_bytes": 32208,
-      "sha256": "eec2238f41c913017ee116a9421857d141ec2982623beb315408c8c863711e8a"
+      "size_bytes": 32160,
+      "sha256": "6f011f6cd9619484aa040b0b660a79bb84502c1934d384a8376ae7020c3480de"
     },
     {
       "path": "conferences/roerich-2022.html",
-      "size_bytes": 29678,
-      "sha256": "d67bbbe28d3b58d15586bdea6cee60d72baf649fd443262deb30885b793c2936"
+      "size_bytes": 29630,
+      "sha256": "7ce31108c113121e7333fca925f31e8e007c5e82767d041a5fec134c17f6d4d9"
     },
     {
       "path": "conferences/roerich-2023.html",
-      "size_bytes": 22206,
-      "sha256": "90deaf40c316d4cfe9c7d4803229bf3991df3c15cc83171fff5046882afc3f82"
+      "size_bytes": 22158,
+      "sha256": "0cf275483cc33d13bc51645e77dd763f7b1c6d5a041a9862dafa0b731e409f62"
     },
     {
       "path": "conferences/roerich-2024.html",
-      "size_bytes": 31150,
-      "sha256": "4d63ec3770da148e352f05dd2127869ab50499547b30d73ff06cf3cc0195272f"
+      "size_bytes": 31126,
+      "sha256": "cba5d8a17f4d2b7e21eca08937cdc7bffd41b33c8fddf07849e61c37a0d0bce2"
     },
     {
       "path": "conferences/roerich-2025.html",
-      "size_bytes": 38195,
-      "sha256": "4a08e18752f4c4e091c50ad8047b8b72b31b9ff0c4f43fd350b3bd4c45f078cf"
+      "size_bytes": 38147,
+      "sha256": "081a516ffd6af45a2b28675f01923d12132368811de6f2c58d16a1de82a4e965"
     },
     {
       "path": "conferences/zograf-2004.html",
@@ -385,13 +385,13 @@
     },
     {
       "path": "conferences/zograf-2006.html",
-      "size_bytes": 29043,
-      "sha256": "385e5f062146636ee00a0b00b7600788e7124ba3dcaacecdfdf405bbae5ea0a4"
+      "size_bytes": 28995,
+      "sha256": "ed96f9f4d256ae7ad658635a310fb48416dd4cd181f9598cc2ced4837280a0af"
     },
     {
       "path": "conferences/zograf-2007.html",
-      "size_bytes": 27906,
-      "sha256": "028623776c43ad786b56c46819fa907b60fbce3cf7d078bfc1d0bcd2531c9a4d"
+      "size_bytes": 27858,
+      "sha256": "fecdd0a14fb73af805204cf7b488156ccc83fdd47d08edb8f2ad2229c08087c5"
     },
     {
       "path": "conferences/zograf-2010.html",
@@ -400,53 +400,53 @@
     },
     {
       "path": "conferences/zograf-2011.html",
-      "size_bytes": 31503,
-      "sha256": "e167ee07d768f39b1a934524a7eed563178134fa2bdf3b92e6733c45fb6814cd"
+      "size_bytes": 31479,
+      "sha256": "d4d8a3e43d7c4f9cc1a68bf40b9d1b930b804f6ae89c83427ecf3aa3f9b3da3a"
     },
     {
       "path": "conferences/zograf-2012.html",
-      "size_bytes": 32311,
-      "sha256": "3cfbf4285b482c8d9b4d7da93656807b0d3f6461ffb29c7c94c958e32196487a"
+      "size_bytes": 32287,
+      "sha256": "cc824dcda1721501b313c1ef043a98744e72b5a97772bdd1b94a7b6b537d4632"
     },
     {
       "path": "conferences/zograf-2013.html",
-      "size_bytes": 32037,
-      "sha256": "bdfb65f0f0a7db1f22f9ddc67d212c7d28a8cdf2e360bea1fef644b3f949ae35"
+      "size_bytes": 31989,
+      "sha256": "f5e01d45b3b3e79424c92489417b73df8a00a5d8108d313e74abdf60ff5bbafc"
     },
     {
       "path": "conferences/zograf-2014.html",
-      "size_bytes": 37423,
-      "sha256": "dce7f5c5b5c951f3924ebe7dd11fe522bf88653de38c243753dafe4423a5ff4f"
+      "size_bytes": 37399,
+      "sha256": "632171988a302cf5da00266ac6d64990d615fd110687356be34c3823c232ae19"
     },
     {
       "path": "conferences/zograf-2018.html",
-      "size_bytes": 40624,
-      "sha256": "08574c5670be3165ce75f261162fd2ac21445360d5cdcc8a9a3fc0bf5346d618"
+      "size_bytes": 40600,
+      "sha256": "c954800905fe086d34d380b885ddae03fbcace32267a7aba5046954d8ed087a1"
     },
     {
       "path": "conferences/zograf-2019.html",
-      "size_bytes": 43992,
-      "sha256": "66a99ce04560fb382fa3e46a81d6259c372e5a056a9ffc6de6612d190861567b"
+      "size_bytes": 43944,
+      "sha256": "59bfdb72324b1536e0c7d7240e657d2bc68edacff4cf7cba69c5b9e5fb9112a3"
     },
     {
       "path": "conferences/zograf-2020.html",
-      "size_bytes": 43389,
-      "sha256": "ce16aa4955c985eea9a749feea441b6c8ac4c277f0bd3f67b29468ed11bd4496"
+      "size_bytes": 43341,
+      "sha256": "29c7f70022d542161b18b62b7c6158d3350b9f1fff84e920194b1d32ec346f32"
     },
     {
       "path": "conferences/zograf-2021.html",
-      "size_bytes": 42922,
-      "sha256": "12b3866a6669d6280c6a62052a37fff66eeee81e742297c3b5e4e0c1a667ba70"
+      "size_bytes": 42874,
+      "sha256": "5e35021f92084fae1aa9a31faae0d6b6e84ec4300437eddbc63f24146d93e3eb"
     },
     {
       "path": "conferences/zograf-2022.html",
-      "size_bytes": 32669,
-      "sha256": "42a10bcdbca846fe74a0c5a4c0dd5602080d270d96329567e512fa3212d5c824"
+      "size_bytes": 32645,
+      "sha256": "51bcbe59a53ec68c2b21427071e68b3e3956c06822bf6402c6efe49023555706"
     },
     {
       "path": "conferences/zograf-2023.html",
-      "size_bytes": 27238,
-      "sha256": "e0f2effb6f9280dcf9adaf45700a9a148f20aef35ef3a3a85f67a16702ead7b6"
+      "size_bytes": 27214,
+      "sha256": "1d19a40a46d0271a3da1b6671e07b443ae592248c427f943edeb26f3b73ffdb1"
     },
     {
       "path": "conferences/zograf-2024.html",
@@ -455,13 +455,13 @@
     },
     {
       "path": "conferences/zograf-2025.html",
-      "size_bytes": 51757,
-      "sha256": "9dfa7ef4d393f14ae2e87a0dc1986959992af54713e1f95b8ce254f656c69fc0"
+      "size_bytes": 51709,
+      "sha256": "578a0014da10310b31d625d5ad29493821c142a88eca22ca49619fd786b73520"
     },
     {
       "path": "conferences/zograf-2026.html",
-      "size_bytes": 53255,
-      "sha256": "556ac0a6238378b1bacff76758723fa72b0303d8e73aae83008a7c347274bfed"
+      "size_bytes": 53207,
+      "sha256": "1b8ee6da62250002e77f89d1b2040656f1243a1b300afc7b781260214f9bf7a8"
     },
     {
       "path": "data-quality.html",
@@ -515,8 +515,8 @@
     },
     {
       "path": "institutions/iv-ran.html",
-      "size_bytes": 120335,
-      "sha256": "f7b006599fbb5a1561a36343d1a31760bf12cd23b2969dd97a6c94a5a2212c10"
+      "size_bytes": 120287,
+      "sha256": "9b6be3cdf57b19a5dca601a9931460652a1f46a0b1905eb18f29ccf584cec917"
     },
     {
       "path": "institutions/ivr-ran.html",
@@ -530,28 +530,28 @@
     },
     {
       "path": "institutions/mgu.html",
-      "size_bytes": 37907,
-      "sha256": "512eb9a5c286c30abc1049479783a1ca15c280f9a137eb46df334a77261e7f9f"
+      "size_bytes": 37883,
+      "sha256": "97d6d90bee06483c9d629987502d7beb2dcef96824b7ebe8beafdb7ff268122a"
     },
     {
       "path": "institutions/nezavisimye-issledovateli.html",
-      "size_bytes": 12660,
-      "sha256": "6b9f4e0648e47b60540cca65677636c374e10f2d16621a318d274255053b36ac"
+      "size_bytes": 12636,
+      "sha256": "0ce804b50e68f508ca83b86215a7c58abd65d5ec638e367df796f2f68f43dc88"
     },
     {
       "path": "institutions/niu-vshe.html",
-      "size_bytes": 23589,
-      "sha256": "80599f050de895ee61037c529710c1c35fa1292b892f7287d1fa96c6fbf350c8"
+      "size_bytes": 23541,
+      "sha256": "05527bd08a7c62efae8de82b110b2272c3b399dbf098b75375c73a4d85080aea"
     },
     {
       "path": "institutions/rggu.html",
-      "size_bytes": 14029,
-      "sha256": "c9ec364f0b8d40613e90d8402c3c3d50e7b420ea1d703fa09a610579b5f2a301"
+      "size_bytes": 14005,
+      "sha256": "279b65f11653941bc93c70fd0e36717f4045c567cb7376b172924894755117b6"
     },
     {
       "path": "institutions/spbgu.html",
-      "size_bytes": 40749,
-      "sha256": "fca559e00da0b793e71109390016f2d419f1938af86a1d9da216a598e09ed922"
+      "size_bytes": 40725,
+      "sha256": "8f9a4cad6267908cd79741b311f109022ddc10c4ca313c3ddd4444b77d4f412f"
     },
     {
       "path": "known-limitations.html",
@@ -560,48 +560,48 @@
     },
     {
       "path": "meso/bengal-bhakti-modernity.html",
-      "size_bytes": 43341,
-      "sha256": "e1426b076884d41ca06930bda625b67c5e59cf03eeea542a36a307ad83428f15"
+      "size_bytes": 43293,
+      "sha256": "dfe839f0b3b7261ca3eb54ca81751e3070fdaf92184646bb765e10b906a9db4c"
     },
     {
       "path": "meso/china-mongolia-inner-asia.html",
-      "size_bytes": 36634,
-      "sha256": "029ef37c88678a428823b869e5f5a9132716106b0e4cc220944936546f953993"
+      "size_bytes": 36586,
+      "sha256": "f646a9ec290285b0f9ff9ca61997a8925823c57bee9250468d54b2f080241b48"
     },
     {
       "path": "meso/dravidology-south-india.html",
-      "size_bytes": 50701,
-      "sha256": "86e2987d916f5e64d4617dc07ca0b5c0a6ce5f9e971b993afe04bd83ccad986b"
+      "size_bytes": 50677,
+      "sha256": "d0c8fdcf021e3414768dab171a18100159ba7040af0b533bc52acc7733bd8e80"
     },
     {
       "path": "meso/ethnography-performance.html",
-      "size_bytes": 87754,
-      "sha256": "cf9db599ea3f8276b02b44826a3d610105df79087d6675000f50a15706e3d589"
+      "size_bytes": 87706,
+      "sha256": "f4c6a2c4e3bf4b949e364516be24ccb69166e546b7838e86b68796fed6fc3a34"
     },
     {
       "path": "meso/hindi-urdu-new-indo-aryan.html",
-      "size_bytes": 27425,
-      "sha256": "5da2f2bd490a4150cabc3edafc7389774946d6862f312b21faf2c5e8d8431e1a"
+      "size_bytes": 27377,
+      "sha256": "4cf0ea4051e087dbd6d90f4e03170c9bbae5da1e7ae5c7922cf584eb13369962"
     },
     {
       "path": "meso/index.html",
-      "size_bytes": 21121,
-      "sha256": "2fe418fe5823d1b8deb95a9dffa57be2adc69ecff211b121260629278565c3b3"
+      "size_bytes": 21193,
+      "sha256": "7f95c6c70822832740c4b02a583af2085ce0c26f0a171268ffc07c30c905179c"
     },
     {
       "path": "meso/linguistics-language-system.html",
-      "size_bytes": 72738,
-      "sha256": "1b662645d0206278024650190d18e377c07e0d9344e12715b4bd47b8ebd61199"
+      "size_bytes": 72414,
+      "sha256": "b6af62a587a90bbd8c973984bf7c78713cb47c6ae6a470a48af4a1651a0ee977"
     },
     {
       "path": "meso/linguistics-text-philology.html",
-      "size_bytes": 28604,
-      "sha256": "467711cbe54b79a83ed3e7cccfef397426270cdf1d4cc61da047f777318ccd1a"
+      "size_bytes": 28280,
+      "sha256": "52cc4a42a3244979a6227bea96a969ad2e007f17598d693370ebe260c9927a26"
     },
     {
       "path": "meso/museum-collections.html",
-      "size_bytes": 45948,
-      "sha256": "6d885b0fcc57fababdf0132f7c5bfcfe350b701878e278f43b82516d58d5689f"
+      "size_bytes": 45924,
+      "sha256": "2dbfd1c47f0a6f350c771f6ff5814f18c74695e71f82dcddaa7eceb503968e05"
     },
     {
       "path": "meso/nepal-newar-kathmandu.html",
@@ -610,28 +610,28 @@
     },
     {
       "path": "meso/pali-early-buddhism.html",
-      "size_bytes": 39311,
-      "sha256": "850c29e8a55e2ef79fe7f7443aa79e3e11d94f5425282b7f965a4ef8dfb3cb7e"
+      "size_bytes": 39263,
+      "sha256": "c1ac9bc02540361c70cbcb6e3e004e4c0f6220f978a1102c6459330cf1c7dc88"
     },
     {
       "path": "meso/roerich-studies.html",
-      "size_bytes": 34457,
-      "sha256": "61875473813fdba213a53e2530c9f15ec3b3c35da72218f5b13256da63e1518f"
+      "size_bytes": 34433,
+      "sha256": "5b0e28a4c63c62618bac39ccf3706c18b93d0fbd66552409719d94beff914ba2"
     },
     {
       "path": "meso/sanskrit-grammar-panini.html",
-      "size_bytes": 31252,
-      "sha256": "ca5afae197205348726ffd4f0a2530873f5e89fe2c7c7d6955d147495aaad303"
+      "size_bytes": 31204,
+      "sha256": "779612f4ab62c7fce19e37e2264dbbe6b400f66923cdf4fe06ca9ff25e5c92ca"
     },
     {
       "path": "meso/tibetology-himalaya.html",
-      "size_bytes": 43698,
-      "sha256": "126e20d20eac9c0a40a3860d0f0adfba7facf36d432cccce7ccdf340c2c2a538"
+      "size_bytes": 43650,
+      "sha256": "28174b1a333bad5cc6e3f2d02bbb93bdb304851977fd48bc75fb149d06e6cd9d"
     },
     {
       "path": "meso/vedic-studies.html",
-      "size_bytes": 33416,
-      "sha256": "74d62b179654139e01952dc3dfe85835afa1d5359bfdb7b7aca52789d38219bb"
+      "size_bytes": 33368,
+      "sha256": "8213ae26b0b1ffb0f526f55490fe97c7c342f8bbb4e2061c59b56785767a578c"
     },
     {
       "path": "methodology.html",
@@ -3225,8 +3225,8 @@
     },
     {
       "path": "search-index.json",
-      "size_bytes": 643334,
-      "sha256": "16286d3651dc362c5e60ddb139752355905d7b52b948189b487d05bfe70db3d0"
+      "size_bytes": 643406,
+      "sha256": "698fc0e312875a5229ed855f1557686f8a4116bc7117ffe7f41d500fc31948db"
     },
     {
       "path": "search.html",
@@ -3280,8 +3280,8 @@
     },
     {
       "path": "themes/linguistics-and-philology.html",
-      "size_bytes": 93882,
-      "sha256": "e48cbaa2dd490e6874991b9c66bd722a4ff96874590384cc5c5fb195d129ca2c"
+      "size_bytes": 93834,
+      "sha256": "a20871c292ea7a9c5ff266c1b7f6338a3dbc3e42661532a5dd05169f78f5722d"
     },
     {
       "path": "themes/linguistics.html",

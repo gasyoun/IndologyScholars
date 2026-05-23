@@ -39,15 +39,15 @@ text{font-family:Arial,'Liberation Sans',sans-serif;fill:#1f2933}.small{font-siz
 <rect x="345.1" y="300.8" width="27.5" height="3.8" rx="0" fill="#aeb8c4" stroke="none" opacity="1.0"/>
 <rect x="345.1" y="277.8" width="27.5" height="23.0" rx="0" fill="#2f6fbb" stroke="none" opacity="1.0"/>
 <circle cx="358.8" cy="236.4" r="3.5" fill="#8a4f7d" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
-<rect x="385.5" y="266.3" width="27.5" height="53.7" rx="0" fill="#7aa6d8" stroke="none" opacity="1.0"/>
-<rect x="385.5" y="258.7" width="27.5" height="7.7" rx="0" fill="#aeb8c4" stroke="none" opacity="1.0"/>
+<rect x="385.5" y="270.2" width="27.5" height="49.8" rx="0" fill="#7aa6d8" stroke="none" opacity="1.0"/>
+<rect x="385.5" y="258.7" width="27.5" height="11.5" rx="0" fill="#aeb8c4" stroke="none" opacity="1.0"/>
 <rect x="385.5" y="208.8" width="27.5" height="49.8" rx="0" fill="#2f6fbb" stroke="none" opacity="1.0"/>
-<line x1="358.8" y1="236.4" x2="399.3" y2="209.0" stroke="#8a4f7d" stroke-width="2.2"/>
-<circle cx="399.3" cy="209.0" r="3.5" fill="#8a4f7d" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
+<line x1="358.8" y1="236.4" x2="399.3" y2="216.9" stroke="#8a4f7d" stroke-width="2.2"/>
+<circle cx="399.3" cy="216.9" r="3.5" fill="#8a4f7d" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
 <rect x="425.9" y="277.8" width="27.5" height="42.2" rx="0" fill="#7aa6d8" stroke="none" opacity="1.0"/>
 <rect x="425.9" y="270.2" width="27.5" height="7.7" rx="0" fill="#aeb8c4" stroke="none" opacity="1.0"/>
 <rect x="425.9" y="205.0" width="27.5" height="65.2" rx="0" fill="#2f6fbb" stroke="none" opacity="1.0"/>
-<line x1="399.3" y1="209.0" x2="439.7" y2="235.7" stroke="#8a4f7d" stroke-width="2.2"/>
+<line x1="399.3" y1="216.9" x2="439.7" y2="235.7" stroke="#8a4f7d" stroke-width="2.2"/>
 <circle cx="439.7" cy="235.7" r="3.5" fill="#8a4f7d" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
 <rect x="466.4" y="289.3" width="27.5" height="30.7" rx="0" fill="#7aa6d8" stroke="none" opacity="1.0"/>
 <rect x="466.4" y="281.7" width="27.5" height="7.7" rx="0" fill="#aeb8c4" stroke="none" opacity="1.0"/>
