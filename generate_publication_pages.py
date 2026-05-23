@@ -191,6 +191,176 @@ def meso_path(code):
     return f"meso/{slugify(code, 'meso')}.html"
 
 
+L1_DISTRIBUTION_LINKS = {
+    "история": ("theme", "history_and_culture"),
+    "этнография": ("theme", "history_and_culture"),
+    "религия": ("theme", "religion_and_philosophy"),
+    "философия": ("theme", "religion_and_philosophy"),
+    "литература": ("theme", "literature_and_poetry"),
+    "лингвистика": ("theme", "linguistics_and_philology"),
+    "искусство и археология": ("theme", "art_and_material_culture"),
+    "тибетология": ("meso", "tibetology_himalaya"),
+    "прочее": ("theme", "unspecified"),
+}
+
+
+def search_path(query, depth=""):
+    return f"{depth}search.html?q={quote(clean_text(query), safe='')}"
+
+
+def linked_l1_target(label):
+    return L1_DISTRIBUTION_LINKS.get(clean_text(label).lower())
+
+
+def linked_target_href(target, depth=""):
+    if not target:
+        return None
+    kind, code = target
+    if kind == "theme":
+        return f"{depth}{theme_path(code)}"
+    if kind == "meso":
+        return f"{depth}{meso_path(code)}"
+    return None
+
+
+def distribution_entries(distribution):
+    entries = []
+    for raw_part in str(distribution or "").split(";"):
+        part = clean_text(raw_part)
+        if not part:
+            continue
+        if part.lower().startswith("l1:"):
+            label = clean_text(part.split(":", 1)[1])
+            if label:
+                entries.append((label, ""))
+            continue
+        if ":" in part:
+            label, count = part.rsplit(":", 1)
+            entries.append((clean_text(label), clean_text(count)))
+        else:
+            entries.append((part, ""))
+    return entries
+
+
+def format_distribution_links(distribution, depth=""):
+    links = []
+    for label, count in distribution_entries(distribution):
+        target = linked_l1_target(label)
+        href = linked_target_href(target, depth)
+        text = f"{label}: {count}" if count else label
+        if href:
+            links.append(f'<a class="chip" href="{esc(href)}">{esc(text)}</a>')
+        else:
+            links.append(f'<span class="chip">{esc(text)}</span>')
+    return "".join(links)
+
+
+def format_keyword_links(terms, depth=""):
+    links = []
+    for raw_term in str(terms or "").split(","):
+        term = clean_text(raw_term)
+        if not term:
+            continue
+        links.append(f'<a class="chip" href="{esc(search_path(term, depth))}">{esc(term)}</a>')
+    return "".join(links)
+
+
+def talk_deep_link(talk, depth=""):
+    pid = clean_text(talk.get("presentation_id") or "")
+    href = f"{depth}{conference_path(talk.get('series_key'), talk.get('year'))}"
+    if pid:
+        href = f"{href}#{pid}"
+    return href
+
+
+def chip_section(title, links):
+    if not links:
+        return ""
+    return f"""
+        <section class="link-block">
+            <strong>{esc(title)}</strong>
+            <div class="chip-list">{''.join(links)}</div>
+        </section>
+    """
+
+
+def facet_theme_links(talks, depth="", limit=10):
+    counts = defaultdict(int)
+    for talk in talks:
+        code = (talk.get("theme") or {}).get("code") or "unspecified"
+        counts[code] += 1
+    return [
+        f'<a class="chip" href="{depth}{theme_path(code)}">{esc(theme_label(code, "ru"))} · {talks_count_label(count)}</a>'
+        for code, count in sorted(counts.items(), key=lambda item: (-item[1], theme_label(item[0], "ru")))[:limit]
+    ]
+
+
+def facet_conference_links(talks, depth="", limit=10):
+    counts = defaultdict(int)
+    for talk in talks:
+        key = (talk.get("series_key"), talk.get("year"))
+        counts[key] += 1
+    return [
+        f'<a class="chip" href="{depth}{conference_path(series, year)}">{esc(series_label(series, "ru"))} {esc(year)} · {talks_count_label(count)}</a>'
+        for (series, year), count in sorted(counts.items(), key=lambda item: (-(int(item[0][1]) if item[0][1] else 0), item[0][0]))[:limit]
+    ]
+
+
+def facet_city_links(talks, depth="", limit=10):
+    counts = defaultdict(int)
+    for talk in talks:
+        city = (talk.get("geography") or {}).get("ru")
+        if city and city not in ("Не указана", "Not specified"):
+            counts[city] += 1
+    return [
+        f'<a class="chip" href="{depth}{city_path(city)}">{esc(city)} · {talks_count_label(count)}</a>'
+        for city, count in sorted(counts.items(), key=lambda item: (-item[1], item[0]))[:limit]
+    ]
+
+
+def facet_institution_links(talks, depth="", limit=10):
+    counts = defaultdict(int)
+    for talk in talks:
+        institution = normalize_affiliation(talk.get("affiliation"))
+        if institution:
+            counts[institution] += 1
+    return [
+        f'<a class="chip" href="{depth}{institution_path(institution)}">{esc(institution)} · {talks_count_label(count)}</a>'
+        for institution, count in sorted(counts.items(), key=lambda item: (-item[1], item[0]))[:limit]
+    ]
+
+
+def facet_scholar_links(talks, depth="", limit=12):
+    seen_names = {}
+    counts = defaultdict(int)
+    for talk in talks:
+        slug = talk.get("speaker_slug")
+        name = talk.get("speaker") or talk.get("speaker_original")
+        if not slug or not name:
+            continue
+        counts[slug] += 1
+        seen_names.setdefault(slug, name)
+    return [
+        f'<a class="chip" href="{profile_href(slug, depth)}">{esc(seen_names[slug])} · {talks_count_label(count)}</a>'
+        for slug, count in sorted(counts.items(), key=lambda item: (-item[1], seen_names.get(item[0], "")))[:limit]
+    ]
+
+
+def facet_meso_links(talks, memberships, meso_items_by_code, depth="", limit=12):
+    talk_ids = {clean_text(talk.get("presentation_id") or "") for talk in talks}
+    talk_ids.discard("")
+    links = []
+    for code, pids in memberships.items():
+        count = len(talk_ids.intersection(pids))
+        item = meso_items_by_code.get(code)
+        if count and item:
+            links.append((item["label"], code, count))
+    return [
+        f'<a class="chip" href="{depth}{meso_path(code)}">{esc(label)} · {talks_count_label(count)}</a>'
+        for label, code, count in sorted(links, key=lambda item: (-item[2], item[0]))[:limit]
+    ]
+
+
 def ru_plural(number, one, few, many):
     value = abs(int(number))
     if 11 <= value % 100 <= 14:
@@ -353,9 +523,10 @@ def talk_card(talk, depth=""):
     theme_code = theme.get("code", "History")
     anchor = clean_text(talk.get("presentation_id") or "")
     anchor_attr = f' id="{esc(anchor)}"' if anchor else ""
+    title_href = talk_deep_link(talk, depth)
     return f"""
         <article class="talk"{anchor_attr}>
-            <strong>{esc(talk.get("title"))}</strong>
+            <strong><a href="{esc(title_href)}">{esc(talk.get("title"))}</a></strong>
             <div class="meta">
                 {scholar_link} · <a href="{depth}{conference_path(talk.get("series_key"), talk.get("year"))}">{esc(series_label(talk.get("series_key"), "ru"))} {esc(talk.get("year"))}</a>
                 · <a href="{depth}{theme_path(theme_code)}">{esc(theme_label(theme_code, "ru"))}</a>{city_link}
@@ -692,12 +863,24 @@ def generate_search(data, records):
             }
         )
     for talk in records:
+        pid = clean_text(talk.get("presentation_id") or "")
+        talk_url = conference_path(talk.get("series_key"), talk.get("year"))
+        if pid:
+            talk_url = f"{talk_url}#{pid}"
         index.append(
             {
                 "type": "Presentation",
                 "title": talk.get("title"),
-                "url": conference_path(talk.get("series_key"), talk.get("year")),
-                "text": " ".join([talk.get("speaker") or "", talk.get("affiliation") or "", theme_label((talk.get("theme") or {}).get("code"), "ru")]),
+                "url": talk_url,
+                "text": " ".join([
+                    talk.get("title") or "",
+                    talk.get("speaker") or "",
+                    talk.get("affiliation") or "",
+                    theme_label((talk.get("theme") or {}).get("code"), "ru"),
+                    series_label(talk.get("series_key"), "ru"),
+                    str(talk.get("year") or ""),
+                    (talk.get("geography") or {}).get("ru") or "",
+                ]),
             }
         )
     for item in load_meso_index():
@@ -713,15 +896,16 @@ def generate_search(data, records):
 
     body = """
         <header>
-            <h1>Search the archive</h1>
-            <p>Search scholar names, presentation titles, affiliations, cities, and themes across the generated static pages.</p>
+            <h1>Поиск по архиву</h1>
+            <p>Поиск по авторам, названиям докладов, организациям, городам, рубрикам и мезоуровням.</p>
         </header>
-        <input class="search-box" id="q" type="search" placeholder="Type a name, topic, city, or institution" autofocus>
+        <input class="search-box" id="q" type="search" placeholder="Введите имя, тему, город или организацию" autofocus>
         <section id="results" class="list" style="margin-top:1rem;"></section>
         <script>
         const results = document.getElementById('results');
         const input = document.getElementById('q');
         let docs = [];
+        const typeLabels = {'Scholar':'Автор', 'Presentation':'Доклад', 'Meso-level':'Мезоуровень'};
         const initialQuery = new URLSearchParams(location.search).get('q') || '';
         input.value = initialQuery;
         fetch('search-index.json').then(r => r.json()).then(data => { docs = data; render(input.value); });
@@ -733,7 +917,7 @@ def generate_search(data, records):
         function render(query) {
             const q = query.trim().toLowerCase();
             const items = docs.map(d => ({...d, score: score(d, q)})).filter(d => q ? d.score > 0 : d.type === 'Scholar').sort((a,b) => b.score - a.score || a.title.localeCompare(b.title)).slice(0, 50);
-            results.innerHTML = items.map(d => `<article class="card"><strong><a href="${d.url}">${escapeHtml(d.title || '')}</a></strong><div class="meta">${d.type}</div></article>`).join('');
+            results.innerHTML = items.map(d => `<article class="card"><strong><a href="${d.url}">${escapeHtml(d.title || '')}</a></strong><div class="meta">${typeLabels[d.type] || d.type}</div></article>`).join('');
         }
         function escapeHtml(value) {
             return String(value).replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
@@ -744,11 +928,11 @@ def generate_search(data, records):
     write_text(
         "search.html",
         page_shell(
-            "Search the Indology Scholars archive",
-            "Search scholar profiles, presentations, affiliations, cities, and thematic groups in the Indology Scholars archive.",
+            "Поиск по архиву",
+            "Поиск по авторам, докладам, организациям, городам, рубрикам и мезоуровням.",
             "search.html",
             body,
-            page_data("Search the Indology Scholars archive", "Static search across generated archive pages.", "search.html", "SearchResultsPage"),
+            page_data("Поиск по архиву", "Статический поиск по страницам архива.", "search.html", "SearchResultsPage"),
         ),
     )
 
@@ -1681,16 +1865,44 @@ def generate_conference_pages(data, records):
     for record in records:
         grouped[(record["series_key"], record["year"])].append(record)
 
+    memberships = load_meso_memberships()
+    meso_items_by_code = {item["code"]: item for item in load_meso_index()}
+    years_by_series = defaultdict(list)
+    for series, year in grouped:
+        years_by_series[series].append(int(year))
+    for series in years_by_series:
+        years_by_series[series] = sorted(set(years_by_series[series]))
+
     cards = []
     for (series, year), talks in sorted(grouped.items(), key=lambda item: (item[0][1], item[0][0]), reverse=True):
         path = conference_path(series, year)
         title = f"{series_label(series, 'ru')} {year}"
         cards.append(f'<article class="card"><strong><a href="../{path}">{esc(title)}</a></strong><div class="meta">{presentation_records_label(len(talks))}</div></article>')
+        series_years = years_by_series.get(series, [])
+        current_index = series_years.index(int(year)) if int(year) in series_years else -1
+        prev_link = ""
+        next_link = ""
+        if current_index > 0:
+            prev_year = series_years[current_index - 1]
+            prev_link = f'<a class="chip" href="../{conference_path(series, prev_year)}">← {esc(series_label(series, "ru"))} {prev_year}</a>'
+        if 0 <= current_index < len(series_years) - 1:
+            next_year = series_years[current_index + 1]
+            next_link = f'<a class="chip" href="../{conference_path(series, next_year)}">{esc(series_label(series, "ru"))} {next_year} →</a>'
+        nav_links = "".join(link for link in (prev_link, next_link) if link)
+        navigation = chip_section("Соседние конференции", [nav_links] if nav_links else [])
+        facets = "".join([
+            chip_section("Рубрики конференции", facet_theme_links(talks, "../", 12)),
+            chip_section("Мезоуровни конференции", facet_meso_links(talks, memberships, meso_items_by_code, "../", 12)),
+            chip_section("Города конференции", facet_city_links(talks, "../", 10)),
+            chip_section("Институции конференции", facet_institution_links(talks, "../", 10)),
+        ])
         body = f"""
         <header>
             <h1>{esc(title)}</h1>
             <p>Список докладов, связанных с этой конференцией.</p>
         </header>
+        {navigation}
+        {facets}
         <section class="list">
             {''.join(talk_card(t, '../') for t in talks)}
         </section>
@@ -1706,6 +1918,15 @@ def generate_conference_pages(data, records):
             <h1>Конференции</h1>
             <p>Погодовые страницы Зографских и Рериховских чтений.</p>
         </header>
+        <section class="link-block">
+            <strong>Быстрые входы</strong>
+            <div class="chip-list">
+                <a class="chip" href="../search.html?q=%D0%97%D0%BE%D0%B3%D1%80%D0%B0%D1%84%D1%81%D0%BA%D0%B8%D0%B5%20%D1%87%D1%82%D0%B5%D0%BD%D0%B8%D1%8F">Зографские чтения</a>
+                <a class="chip" href="../search.html?q=%D0%A0%D0%B5%D1%80%D0%B8%D1%85%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B5%20%D1%87%D1%82%D0%B5%D0%BD%D0%B8%D1%8F">Рериховские чтения</a>
+                <a class="chip" href="../search.html?q=2020">2020-е</a>
+                <a class="chip" href="../search.html?q=2010">2010-е</a>
+            </div>
+        </section>
         <section class="grid">{''.join(cards)}</section>
     """
     write_text(
@@ -1725,6 +1946,16 @@ def generate_theme_pages(data, records):
     for record in records:
         grouped[(record.get("theme") or {}).get("code", "History")].append(record)
 
+    related_meso_by_theme = defaultdict(list)
+    for item in load_meso_index():
+        seen_codes = set()
+        for label, _count in distribution_entries(item.get("distribution")):
+            target = linked_l1_target(label)
+            if not target or target[0] != "theme" or target[1] in seen_codes:
+                continue
+            seen_codes.add(target[1])
+            related_meso_by_theme[target[1]].append(item)
+
     cards = []
     for code, talks in sorted(grouped.items(), key=lambda item: theme_label(item[0], "ru")):
         path = theme_path(code)
@@ -1740,12 +1971,23 @@ def generate_theme_pages(data, records):
                 исследовательский профиль автора. Один исследователь может появляться в нескольких рубриках.
             </p>
         </aside>"""
+        related_meso_links = "".join(
+            f'<a class="chip" href="../{meso_path(item["code"])}">{esc(item["label"])} · {talks_count_label(item["count"])}</a>'
+            for item in sorted(related_meso_by_theme.get(code, []), key=lambda item: (-item["count"], item["label"]))[:16]
+        )
+        related_meso_block = f"""
+        <section>
+            <h2>Связанные мезоуровни</h2>
+            <div class="chip-list">{related_meso_links}</div>
+        </section>
+        """ if related_meso_links else ""
         body = f"""
         <header>
             <h1>{esc(title)}</h1>
             <p>Доклады, отнесенные к этой крупной исследовательской рубрике.</p>
         </header>
         {caveat_block}
+        {related_meso_block}
         <section class="list">
             {''.join(talk_card(t, '../') for t in talks[:250])}
         </section>
@@ -1859,8 +2101,10 @@ def generate_meso_pages(data, records):
             <article class="card"><strong>Рериховские чтения</strong><div class="metric">{esc(item["roerich_count"])}</div></article>
         </section>
         """
-        top_terms = f'<p><strong>Ключевые слова:</strong> {esc(item["top_terms"])}</p>' if item.get("top_terms") else ""
-        distribution = f'<p><strong>Распределение по крупным рубрикам:</strong> {esc(item["distribution"])}</p>' if item.get("distribution") else ""
+        top_terms_links = format_keyword_links(item.get("top_terms"), "../")
+        top_terms = f'<div class="link-block"><strong>Ключевые слова:</strong><div class="chip-list">{top_terms_links}</div></div>' if top_terms_links else ""
+        distribution_links = format_distribution_links(item.get("distribution"), "../")
+        distribution = f'<div class="link-block"><strong>Распределение по крупным рубрикам:</strong><div class="chip-list">{distribution_links}</div></div>' if distribution_links else ""
         page_examples = example_links(talks, "", "", 6)
         examples_block = f"""
         <section>

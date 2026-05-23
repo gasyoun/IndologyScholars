@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Search the Indology Scholars archive</title>
-    <meta name="description" content="Search scholar profiles, presentations, affiliations, cities, and thematic groups in the Indology Scholars archive.">
+    <title>Поиск по архиву</title>
+    <meta name="description" content="Поиск по авторам, докладам, организациям, городам, рубрикам и мезоуровням.">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://gasyoun.github.io/IndologyScholars/search.html">
     <link rel="alternate" hreflang="ru" href="https://gasyoun.github.io/IndologyScholars/search.html">
@@ -13,20 +13,20 @@
     <meta name="theme-color" content="#0a0e1a">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://gasyoun.github.io/IndologyScholars/search.html">
-    <meta property="og:title" content="Search the Indology Scholars archive">
-    <meta property="og:description" content="Search scholar profiles, presentations, affiliations, cities, and thematic groups in the Indology Scholars archive.">
+    <meta property="og:title" content="Поиск по архиву">
+    <meta property="og:description" content="Поиск по авторам, докладам, организациям, городам, рубрикам и мезоуровням.">
     <meta property="og:image" content="https://gasyoun.github.io/IndologyScholars/assets/og-image.png">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Search the Indology Scholars archive">
-    <meta name="twitter:description" content="Search scholar profiles, presentations, affiliations, cities, and thematic groups in the Indology Scholars archive.">
+    <meta name="twitter:title" content="Поиск по архиву">
+    <meta name="twitter:description" content="Поиск по авторам, докладам, организациям, городам, рубрикам и мезоуровням.">
     <meta name="twitter:image" content="https://gasyoun.github.io/IndologyScholars/assets/og-image.png">
 
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "SearchResultsPage",
-  "name": "Search the Indology Scholars archive",
-  "description": "Static search across generated archive pages.",
+  "name": "Поиск по архиву",
+  "description": "Статический поиск по страницам архива.",
   "url": "https://gasyoun.github.io/IndologyScholars/search.html",
   "isPartOf": {
     "@type": "WebSite",
@@ -120,6 +120,20 @@
             font-size: 0.92rem;
             margin-top: 0.3rem;
         }
+        .link-block {
+            max-width: 900px;
+            margin: 1rem 0;
+        }
+        .link-block > strong {
+            color: #fff;
+            display: block;
+            margin-bottom: 0.45rem;
+        }
+        .chip-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.45rem;
+        }
         .list {
             display: grid;
             gap: 0.75rem;
@@ -187,15 +201,16 @@
         </nav>
 
         <header>
-            <h1>Search the archive</h1>
-            <p>Search scholar names, presentation titles, affiliations, cities, and themes across the generated static pages.</p>
+            <h1>Поиск по архиву</h1>
+            <p>Поиск по авторам, названиям докладов, организациям, городам, рубрикам и мезоуровням.</p>
         </header>
-        <input class="search-box" id="q" type="search" placeholder="Type a name, topic, city, or institution" autofocus>
+        <input class="search-box" id="q" type="search" placeholder="Введите имя, тему, город или организацию" autofocus>
         <section id="results" class="list" style="margin-top:1rem;"></section>
         <script>
         const results = document.getElementById('results');
         const input = document.getElementById('q');
         let docs = [];
+        const typeLabels = {'Scholar':'Автор', 'Presentation':'Доклад', 'Meso-level':'Мезоуровень'};
         const initialQuery = new URLSearchParams(location.search).get('q') || '';
         input.value = initialQuery;
         fetch('search-index.json').then(r => r.json()).then(data => { docs = data; render(input.value); });
@@ -207,7 +222,7 @@
         function render(query) {
             const q = query.trim().toLowerCase();
             const items = docs.map(d => ({...d, score: score(d, q)})).filter(d => q ? d.score > 0 : d.type === 'Scholar').sort((a,b) => b.score - a.score || a.title.localeCompare(b.title)).slice(0, 50);
-            results.innerHTML = items.map(d => `<article class="card"><strong><a href="${d.url}">${escapeHtml(d.title || '')}</a></strong><div class="meta">${d.type}</div></article>`).join('');
+            results.innerHTML = items.map(d => `<article class="card"><strong><a href="${d.url}">${escapeHtml(d.title || '')}</a></strong><div class="meta">${typeLabels[d.type] || d.type}</div></article>`).join('');
         }
         function escapeHtml(value) {
             return String(value).replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
