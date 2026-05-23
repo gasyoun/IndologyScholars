@@ -53,8 +53,8 @@
       "id": "duplicate_full_names",
       "label": "Duplicate full Russian names after normalization",
       "severity": "warning",
-      "count": 0,
-      "status": "pass"
+      "count": 2,
+      "status": "review"
     },
     {
       "id": "latin_initials",
@@ -70,6 +70,16 @@
         "presentation_id": "PRES_117aeb7260",
         "scholar": "Б. В. Загуменнов",
         "title": "Тема уточняется"
+      }
+    ],
+    "duplicate_full_names": [
+      {
+        "full_name_ru": "Кавалевская Анна Петровна",
+        "people": 2
+      },
+      {
+        "full_name_ru": "Кокова Юлия Георгиевна",
+        "people": 2
       }
     ],
     "latin_initials": [

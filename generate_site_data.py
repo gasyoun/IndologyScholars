@@ -3,7 +3,7 @@ import json
 import datetime
 import re
 
-from publication_helpers import assign_unique_slugs, load_authority_overrides
+from publication_helpers import assign_unique_slugs, load_authority_overrides, normalize_time_interval
 from title_normalization import THEME_OVERRIDES_BY_PRESENTATION_ID, canonical_title
 
 DB_PATH = "conferences.db"
@@ -477,7 +477,7 @@ def main():
                 "date": calendar_date,
                 "day_of_week": day_of_week,
                 "session_title": session_title,
-                "time_interval": time_text or "Не указано",
+                "time_interval": normalize_time_interval(time_text, "Не указано"),
                 "is_first_talk": is_first,
                 "is_last_talk": is_last,
                 "order_in_session": order_idx + 1,
@@ -622,7 +622,7 @@ def main():
             "date": calendar_date,
             "day_of_week": day_of_week,
             "session": session_title,
-            "time_interval": time_text or "Не указано",
+            "time_interval": normalize_time_interval(time_text, "Не указано"),
             "is_first_talk": is_first,
             "is_last_talk": is_last,
             "order_in_session": order_idx + 1,

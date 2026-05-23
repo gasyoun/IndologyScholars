@@ -12,6 +12,7 @@ from publication_helpers import (
     describe_year_span,
     esc,
     load_site_data,
+    normalize_time_interval,
     page_shell,
     site_url,
     slugify,
@@ -34,6 +35,22 @@ SCHOLAR_PROFILE_OVERRIDES = {
         "theme_code": "literature_and_poetry",
         "note": "Эпический и сравнительно-мифологический контур: «Махабхарата», паломничество, фольклорные мотивы и межкультурные параллели.",
     }
+}
+
+
+CITY_LINK_ALIASES = {
+    "спб": "Санкт-Петербург",
+    "санкт-петербург": "Санкт-Петербург",
+    "москва": "Москва",
+    "пенза": "Пенза",
+    "казань": "Казань",
+    "краснодар": "Краснодар",
+    "новосибирск": "Новосибирск",
+    "улан-удэ": "Улан-Удэ",
+    "элиста": "Элиста",
+    "вильнюс": "Вильнюс",
+    "дели": "Дели",
+    "нижний новгород": "Нижний Новгород",
 }
 
 
@@ -65,8 +82,51 @@ def city_path(city):
     return f"cities/{slugify(city, 'city')}.html"
 
 
+def institution_path(name):
+    return f"institutions/{slugify(name, 'institution')}.html"
+
+
 def dashboard_search_href(query):
     return f"../index.html?search={quote(clean_text(query))}"
+
+
+def search_href(query):
+    return f"../search.html?q={quote(clean_text(query))}"
+
+
+def normalize_affiliation_link_label(aff):
+    value = clean_text(aff).lower()
+    if "ивр" in value or "восточных рукописей" in value:
+        return "ИВР РАН"
+    if "ив ран" in value or "востоковедения ран" in value:
+        return "ИВ РАН"
+    if "спбгу" in value or "петербургский" in value:
+        return "СПбГУ"
+    if "мгу" in value or "ломоносова" in value:
+        return "МГУ"
+    if "вшэ" in value or "высшая школа" in value:
+        return "НИУ ВШЭ"
+    if "рггу" in value or "гуманитарный" in value:
+        return "РГГУ"
+    if "маэ" in value or "кунсткамер" in value:
+        return "МАЭ РАН"
+    if "эрмитаж" in value:
+        return "Государственный Эрмитаж"
+    if "институт философии" in value or "иф ран" in value:
+        return "ИФ РАН"
+    if "независим" in value or "independent" in value:
+        return "Независимые исследователи"
+    return None
+
+
+def affiliation_href(value):
+    institution = normalize_affiliation_link_label(value)
+    if institution:
+        return "../" + institution_path(institution)
+    city = CITY_LINK_ALIASES.get(clean_text(value).lower())
+    if city:
+        return "../" + city_path(city)
+    return dashboard_search_href(value)
 
 
 def load_authority_ids():
@@ -175,14 +235,20 @@ def talk_card(talk):
             for v in videos
         )
         video_html = f'<div class="meta">{links}</div>'
-    talk_time = f'{esc(talk.get("date"))} · {esc((talk.get("day_of_week") or {}).get("ru"))} · {esc(talk.get("time_interval"))}'
+    time_interval = normalize_time_interval(talk.get("time_interval"), "Не указано")
+    talk_time = f'{esc(talk.get("date"))} · {esc((talk.get("day_of_week") or {}).get("ru"))} · {esc(time_interval)}'
     raw_session = clean_text(talk.get("session_title") or "")
     if raw_session.strip(" .").lower() in {"", "перерыв"}:
         raw_session = "Секция не указана"
     session = esc(raw_session)
+    pid = clean_text(talk.get("presentation_id") or "")
+    anchor_attr = f' id="{esc(pid)}"' if pid else ""
+    title_href = f'../{conference_path(talk.get("series"), talk.get("year"))}'
+    if pid:
+        title_href = f"{title_href}#{pid}"
     return f"""
-        <article class="talk">
-            <strong>{esc(talk.get("title"))}</strong>
+        <article class="talk"{anchor_attr}>
+            <strong><a href="{esc(title_href)}">{esc(talk.get("title"))}</a></strong>
             <div class="meta">
                 <a href="../{conference_path(talk.get("series"), talk.get("year"))}">{esc(series_label(talk.get("series")))} {esc(talk.get("year"))}</a>
                 · <a href="../{theme_path(theme_code)}">{esc(theme_label(theme_code, "ru"))}</a>{city_html}
@@ -296,10 +362,14 @@ def render_profile(scholar, related, authority):
     en_heading = " ".join(part for part in [name_en, life_en] if part)
     profile_note_html = f'<p class="profile-note">{esc(profile_note)}</p>' if profile_note else ""
 
-    related_html = "".join(
-        f'<article class="card"><strong><a href="{item["url_slug"]}.html">{esc(item.get("full_name_ru") or item.get("name"))}</a></strong><div class="meta">{esc(talks_count_label(item.get("total_talks") or 0))} · {esc(scholar_profile_meta(item)[0])}</div></article>'
-        for item in related
-    ) or '<p class="meta">Связанные авторы в этом индексе не найдены.</p>'
+    related_cards = []
+    for item in related:
+        item_profile_label, item_theme_code, _ = scholar_profile_meta(item)
+        related_cards.append(
+            f'<article class="card"><strong><a href="{item["url_slug"]}.html">{esc(item.get("full_name_ru") or item.get("name"))}</a></strong>'
+            f'<div class="meta">{esc(talks_count_label(item.get("total_talks") or 0))} · <a href="../{theme_path(item_theme_code)}">{esc(item_profile_label)}</a></div></article>'
+        )
+    related_html = "".join(related_cards) or '<p class="meta">Связанные авторы в этом индексе не найдены.</p>'
 
     status = []
     if scholar.get("is_student"):
@@ -347,11 +417,11 @@ def render_profile(scholar, related, authority):
             <article class="card"><strong>Доклады</strong><div class="metric">{esc(scholar.get("total_talks"))}</div><div class="meta">записи докладов</div></article>
             <article class="card"><strong>Активность</strong><div class="metric">{esc(describe_year_span(scholar.get("first_year"), scholar.get("last_year")))}</div><div class="meta">годы участия</div></article>
             <article class="card"><strong>Рубрика</strong><div class="metric"><a href="../{theme_path(theme_code)}">{esc(profile_label)}</a></div></article>
-            <article class="card"><strong>Площадки</strong><div class="meta">Зографские чтения: {esc(scholar.get("zograf_talks"))} · Рериховские чтения: {esc(scholar.get("roerich_talks"))}</div></article>
+            <article class="card"><strong>Площадки</strong><div class="meta"><a href="{esc(search_href((name_ru or '') + ' Зографские чтения'))}">Зографские чтения</a>: {esc(str(scholar.get("zograf_talks") or 0))} · <a href="{esc(search_href((name_ru or '') + ' Рериховские чтения'))}">Рериховские чтения</a>: {esc(str(scholar.get("roerich_talks") or 0))}</div></article>
         </section>
 
         <h2>Аффилиации</h2>
-        <div class="chip-row">{chip_links(affiliations, dashboard_search_href)}</div>
+        <div class="chip-row">{chip_links(affiliations, affiliation_href)}</div>
 
         <h2>Географические центры</h2>
         <div class="chip-row">{chip_links(cities, lambda city: '../' + city_path(city))}</div>
@@ -393,9 +463,10 @@ def render_scholars_index(scholars):
     for scholar in sorted(scholars, key=lambda item: item.get("full_name_ru") or item.get("name")):
         name = scholar.get("full_name_ru") or scholar.get("name")
         years = describe_year_span(scholar.get("first_year"), scholar.get("last_year"))
+        profile_label, theme_code, _ = scholar_profile_meta(scholar)
         cards.append(
             f'<article class="card"><strong><a href="{scholar["url_slug"]}.html">{esc(name)}</a></strong>'
-            f'<div class="meta">{esc(talks_count_label(scholar.get("total_talks") or 0))} · {esc(years)} · {esc(scholar_profile_meta(scholar)[0])}</div></article>'
+            f'<div class="meta">{esc(talks_count_label(scholar.get("total_talks") or 0))} · {esc(years)} · <a href="../{theme_path(theme_code)}">{esc(profile_label)}</a></div></article>'
         )
     body = f"""
         <header>

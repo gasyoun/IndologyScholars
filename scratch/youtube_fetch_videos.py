@@ -21,6 +21,8 @@ from pathlib import Path
 import requests
 from dotenv import load_dotenv
 
+from publication_helpers import normalize_time_interval
+
 try:
     sys.stdout.reconfigure(encoding="utf-8")
     sys.stderr.reconfigure(encoding="utf-8")
@@ -57,7 +59,7 @@ def fetch_playlist(playlist_id):
             video_id = content.get("videoId") or snippet.get("resourceId", {}).get("videoId")
             yield {
                 "video_id": video_id,
-                "video_title": snippet.get("title", ""),
+                "video_title": normalize_time_interval(snippet.get("title", "")),
                 "position": snippet.get("position"),
                 "published_at": content.get("videoPublishedAt") or snippet.get("publishedAt", ""),
             }

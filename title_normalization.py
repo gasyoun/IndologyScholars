@@ -97,4 +97,5 @@ def canonical_title(presentation_id: str | None, title: str | None) -> str:
     cleaned = TITLE_OVERRIDES_BY_PRESENTATION_ID.get(str(presentation_id or ""), title or "")
     cleaned = repair_random_hyphenation(cleaned)
     cleaned = re.sub(r"\s+", " ", cleaned)
+    cleaned = re.sub(r"\s*\*+\s*$", "", cleaned)
     return cleaned.strip()

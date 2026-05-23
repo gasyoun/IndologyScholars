@@ -33,6 +33,20 @@ def clean_text(value):
     return re.sub(r"\s+", " ", str(value or "")).strip()
 
 
+def normalize_time_interval(value, fallback=""):
+    text = clean_text(value)
+    if not text:
+        return fallback
+
+    def time_repl(match):
+        hour = int(match.group(1))
+        return f"{hour:02d}:{match.group(2)}"
+
+    text = re.sub(r"(?<!\d)([01]?\d|2[0-3])\.(\d{2})(?!\d)", time_repl, text)
+    text = re.sub(r"(\b\d{1,2}:\d{2})\s*[-–—]\s*(\d{1,2}:\d{2}\b)", r"\1 – \2", text)
+    return text
+
+
 def esc(value):
     return html.escape(clean_text(value), quote=True)
 

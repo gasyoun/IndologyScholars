@@ -180,6 +180,20 @@
             font-size: 0.92rem;
             margin-top: 0.3rem;
         }
+        .link-block {
+            max-width: 900px;
+            margin: 1rem 0;
+        }
+        .link-block > strong {
+            color: #fff;
+            display: block;
+            margin-bottom: 0.45rem;
+        }
+        .chip-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.45rem;
+        }
         .list {
             display: grid;
             gap: 0.75rem;
@@ -258,11 +272,11 @@
             <article class="card"><strong>Доклады</strong><div class="metric">10</div><div class="meta">записи докладов</div></article>
             <article class="card"><strong>Активность</strong><div class="metric">2006-2019</div><div class="meta">годы участия</div></article>
             <article class="card"><strong>Рубрика</strong><div class="metric"><a href="../themes/literature-and-poetry.html">Литература и поэзия</a></div></article>
-            <article class="card"><strong>Площадки</strong><div class="meta">Зографские чтения: 2 · Рериховские чтения: 8</div></article>
+            <article class="card"><strong>Площадки</strong><div class="meta"><a href="../search.html?q=%D0%96%D1%83%D1%82%D0%B0%D0%B5%D0%B2%20%D0%94%D0%B0%D1%80%20%D0%98%D0%B3%D0%BE%D1%80%D0%B5%D0%B2%D0%B8%D1%87%20%D0%97%D0%BE%D0%B3%D1%80%D0%B0%D1%84%D1%81%D0%BA%D0%B8%D0%B5%20%D1%87%D1%82%D0%B5%D0%BD%D0%B8%D1%8F">Зографские чтения</a>: 2 · <a href="../search.html?q=%D0%96%D1%83%D1%82%D0%B0%D0%B5%D0%B2%20%D0%94%D0%B0%D1%80%20%D0%98%D0%B3%D0%BE%D1%80%D0%B5%D0%B2%D0%B8%D1%87%20%D0%A0%D0%B5%D1%80%D0%B8%D1%85%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B5%20%D1%87%D1%82%D0%B5%D0%BD%D0%B8%D1%8F">Рериховские чтения</a>: 8</div></article>
         </section>
 
         <h2>Аффилиации</h2>
-        <div class="chip-row"><a class="chip" href="../index.html?search=%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0">Москва</a><a class="chip" href="../index.html?search=%D0%98%D0%92%20%D0%A0%D0%90%D0%9D">ИВ РАН</a></div>
+        <div class="chip-row"><a class="chip" href="../cities/moskva.html">Москва</a><a class="chip" href="../institutions/iv-ran.html">ИВ РАН</a></div>
 
         <h2>Географические центры</h2>
         <div class="chip-row"><a class="chip" href="../cities/moskva.html">Москва</a></div>
@@ -272,8 +286,8 @@
 
         <h2>Доклады</h2>
         <section class="list">
-        <article class="talk">
-            <strong>К вопросу о дхарани и Дхаранипитаке</strong>
+        <article class="talk" id="PRES_c0a5930788">
+            <strong><a href="../conferences/roerich-2019.html#PRES_c0a5930788">К вопросу о дхарани и Дхаранипитаке</a></strong>
             <div class="meta">
                 <a href="../conferences/roerich-2019.html">Рериховские чтения 2019</a>
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a>
@@ -282,8 +296,8 @@
 
         </article>
 
-        <article class="talk">
-            <strong>«Ратнавали» Нагарджуны и «Дашабхумика-сутра»: явные и неявные связи</strong>
+        <article class="talk" id="PRES_10d033beaa">
+            <strong><a href="../conferences/roerich-2018.html#PRES_10d033beaa">«Ратнавали» Нагарджуны и «Дашабхумика-сутра»: явные и неявные связи</a></strong>
             <div class="meta">
                 <a href="../conferences/roerich-2018.html">Рериховские чтения 2018</a>
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a>
@@ -292,8 +306,8 @@
 
         </article>
 
-        <article class="talk">
-            <strong>Сюжет о Будде в ранних буддийских сакральных текстах</strong>
+        <article class="talk" id="PRES_7a25d6758f">
+            <strong><a href="../conferences/roerich-2017.html#PRES_7a25d6758f">Сюжет о Будде в ранних буддийских сакральных текстах</a></strong>
             <div class="meta">
                 <a href="../conferences/roerich-2017.html">Рериховские чтения 2017</a>
                 · <a href="../themes/literature-and-poetry.html">Литература и поэзия</a>
@@ -302,8 +316,8 @@
 
         </article>
 
-        <article class="talk">
-            <strong>Ритуальный текст из «Махавасту»</strong>
+        <article class="talk" id="PRES_5b6f4c9c6a">
+            <strong><a href="../conferences/roerich-2017.html#PRES_5b6f4c9c6a">Ритуальный текст из «Махавасту»</a></strong>
             <div class="meta">
                 <a href="../conferences/roerich-2017.html">Рериховские чтения 2017</a>
                 · <a href="../themes/religion-and-philosophy.html">Религия и философия</a>
@@ -312,8 +326,8 @@
 
         </article>
 
-        <article class="talk">
-            <strong>Механизмы интертекста в раннебуддийской текстовой традиции</strong>
+        <article class="talk" id="PRES_bbed1796bb">
+            <strong><a href="../conferences/roerich-2016.html#PRES_bbed1796bb">Механизмы интертекста в раннебуддийской текстовой традиции</a></strong>
             <div class="meta">
                 <a href="../conferences/roerich-2016.html">Рериховские чтения 2016</a>
                 · <a href="../themes/religion-and-philosophy.html">Религия и философия</a>
@@ -322,8 +336,8 @@
 
         </article>
 
-        <article class="talk">
-            <strong>Ритуальный текст о структуре вселенной (опыт литературного перевода)</strong>
+        <article class="talk" id="PRES_d97538f124">
+            <strong><a href="../conferences/roerich-2016.html#PRES_d97538f124">Ритуальный текст о структуре вселенной (опыт литературного перевода)</a></strong>
             <div class="meta">
                 <a href="../conferences/roerich-2016.html">Рериховские чтения 2016</a>
                 · <a href="../themes/literature-and-poetry.html">Литература и поэзия</a>
@@ -332,8 +346,8 @@
 
         </article>
 
-        <article class="talk">
-            <strong>Неизвестный иллюстрированный манускрипт из Непала из собрания кабинета Ю.Н. Рериха Института востоковедения РАН</strong>
+        <article class="talk" id="PRES_fa1f4db445">
+            <strong><a href="../conferences/roerich-2015.html#PRES_fa1f4db445">Неизвестный иллюстрированный манускрипт из Непала из собрания кабинета Ю.Н. Рериха Института востоковедения РАН</a></strong>
             <div class="meta">
                 <a href="../conferences/roerich-2015.html">Рериховские чтения 2015</a>
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a>
@@ -342,8 +356,8 @@
 
         </article>
 
-        <article class="talk">
-            <strong>Элементы игровой поэтики в махаянском описании ступеней бодхисаттвы в текстах «Большой Праджняпарамиты»</strong>
+        <article class="talk" id="PRES_cf87ec3bf9">
+            <strong><a href="../conferences/roerich-2012.html#PRES_cf87ec3bf9">Элементы игровой поэтики в махаянском описании ступеней бодхисаттвы в текстах «Большой Праджняпарамиты»</a></strong>
             <div class="meta">
                 <a href="../conferences/roerich-2012.html">Рериховские чтения 2012</a>
                 · <a href="../themes/literature-and-poetry.html">Литература и поэзия</a>
@@ -352,29 +366,29 @@
 
         </article>
 
-        <article class="talk">
-            <strong>«Археология» раннебуддийского доктринального текста на примере главы о буддхакшетрах («полях Будд») из Махавасту</strong>
+        <article class="talk" id="PRES_e04db7cf0d">
+            <strong><a href="../conferences/zograf-2010.html#PRES_e04db7cf0d">«Археология» раннебуддийского доктринального текста на примере главы о буддхакшетрах («полях Будд») из Махавасту</a></strong>
             <div class="meta">
                 <a href="../conferences/zograf-2010.html">Зографские чтения 2010</a>
                 · <a href="../themes/history-and-culture.html">История, этнография и общество</a> · <a href="../cities/moskva.html">Москва</a>
             </div>
-            <div class="meta talk-meta-row"><span>2010-05-17 · Понедельник · 11:00–18:00</span><span class="talk-meta-session">Научное заседание</span></div>
+            <div class="meta talk-meta-row"><span>2010-05-17 · Понедельник · 11:00 – 18:00</span><span class="talk-meta-session">Научное заседание</span></div>
 
         </article>
 
-        <article class="talk">
-            <strong>Механизмы передачи сакрального текста в школах раннего буддизма (К постановке проблемы)</strong>
+        <article class="talk" id="PRES_bdb9ecf419">
+            <strong><a href="../conferences/zograf-2006.html#PRES_bdb9ecf419">Механизмы передачи сакрального текста в школах раннего буддизма (К постановке проблемы)</a></strong>
             <div class="meta">
                 <a href="../conferences/zograf-2006.html">Зографские чтения 2006</a>
                 · <a href="../themes/religion-and-philosophy.html">Религия и философия</a> · <a href="../cities/moskva.html">Москва</a>
             </div>
-            <div class="meta talk-meta-row"><span>2006-05-17 · Среда · 11:00–18:00</span><span class="talk-meta-session">Научное заседание</span></div>
+            <div class="meta talk-meta-row"><span>2006-05-17 · Среда · 11:00 – 18:00</span><span class="talk-meta-session">Научное заседание</span></div>
 
         </article>
     </section>
 
         <h2>Связанные авторы</h2>
-        <section class="grid"><article class="card"><strong><a href="natalia-alexandrova.html">Александрова Наталия Владимировна</a></strong><div class="meta">20 докладов · Литература и поэзия</div></article><article class="card"><strong><a href="svetlana-ryzhakova.html">Рыжакова Светлана Игоревна</a></strong><div class="meta">19 докладов · Лингвистика и филология</div></article><article class="card"><strong><a href="victoria-lysenko.html">Лысенко Виктория Георгиевна</a></strong><div class="meta">16 докладов · Религия и философия</div></article><article class="card"><strong><a href="natalia-korneeva.html">Корнеева Наталья Афанасьевна</a></strong><div class="meta">15 докладов · Религия и философия</div></article><article class="card"><strong><a href="areg-mekhakyan.html">Мехакян Арег Гайкович</a></strong><div class="meta">15 докладов · Религия и философия</div></article><article class="card"><strong><a href="alexander-dubyansky.html">Дубянский Александр Михайлович</a></strong><div class="meta">14 докладов · Литература и поэзия</div></article><article class="card"><strong><a href="victoria-vertogradova.html">Вертоградова Виктория Викторовна</a></strong><div class="meta">13 докладов · История, этнография и общество</div></article><article class="card"><strong><a href="olga-vecherina.html">Вечерина Ольга Павловна</a></strong><div class="meta">13 докладов · Религия и философия</div></article></section>
+        <section class="grid"><article class="card"><strong><a href="natalia-alexandrova.html">Александрова Наталия Владимировна</a></strong><div class="meta">20 докладов · <a href="../themes/literature-and-poetry.html">Литература и поэзия</a></div></article><article class="card"><strong><a href="svetlana-ryzhakova.html">Рыжакова Светлана Игоревна</a></strong><div class="meta">19 докладов · <a href="../themes/linguistics-and-philology.html">Лингвистика и филология</a></div></article><article class="card"><strong><a href="victoria-lysenko.html">Лысенко Виктория Георгиевна</a></strong><div class="meta">16 докладов · <a href="../themes/religion-and-philosophy.html">Религия и философия</a></div></article><article class="card"><strong><a href="natalia-korneeva.html">Корнеева Наталья Афанасьевна</a></strong><div class="meta">15 докладов · <a href="../themes/religion-and-philosophy.html">Религия и философия</a></div></article><article class="card"><strong><a href="areg-mekhakyan.html">Мехакян Арег Гайкович</a></strong><div class="meta">15 докладов · <a href="../themes/religion-and-philosophy.html">Религия и философия</a></div></article><article class="card"><strong><a href="alexander-dubyansky.html">Дубянский Александр Михайлович</a></strong><div class="meta">14 докладов · <a href="../themes/literature-and-poetry.html">Литература и поэзия</a></div></article><article class="card"><strong><a href="victoria-vertogradova.html">Вертоградова Виктория Викторовна</a></strong><div class="meta">13 докладов · <a href="../themes/history-and-culture.html">История, этнография и общество</a></div></article><article class="card"><strong><a href="olga-vecherina.html">Вечерина Ольга Павловна</a></strong><div class="meta">13 докладов · <a href="../themes/religion-and-philosophy.html">Религия и философия</a></div></article></section>
 
         <div class="footer">© 2026 Russian Indological Research Archive. Сгенерировано из нормализованного архива конференций.</div>
     </main>

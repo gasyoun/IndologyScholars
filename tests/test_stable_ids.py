@@ -16,6 +16,7 @@ def load_module(name, path):
 
 
 build = load_module("build_and_populate_db_under_test", "build_and_populate_db.py")
+publication_helpers = load_module("publication_helpers_under_test", "publication_helpers.py")
 compare_manifests = load_module("compare_id_manifests_under_test", "scratch/compare_id_manifests.py")
 export_manifest = load_module("export_presentation_id_manifest_under_test", "scratch/export_presentation_id_manifest.py")
 
@@ -24,6 +25,16 @@ class StableIdTests(unittest.TestCase):
     def test_canonical_id_text_normalizes_spacing_case_and_nbsp(self):
         self.assertEqual(build.canonical_id_text("  PRES\u00a0Title \n With   Space  "), "pres title with space")
         self.assertEqual(export_manifest.canonical_text("  PRES\u00a0Title \n With   Space  "), "pres title with space")
+
+    def test_time_interval_uses_colons_and_spaced_en_dash(self):
+        self.assertEqual(
+            publication_helpers.normalize_time_interval("15.00 – 18.30"),
+            "15:00 – 18:30",
+        )
+        self.assertEqual(
+            publication_helpers.normalize_time_interval("10:00—12:30"),
+            "10:00 – 12:30",
+        )
 
     def test_stable_hash_is_deterministic_and_normalized(self):
         first = build.stable_hash("Zograf", 2026, "  Test\u00a0Title  ", length=12)

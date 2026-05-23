@@ -43,6 +43,8 @@ import sys
 from collections import defaultdict
 from pathlib import Path
 
+from publication_helpers import normalize_time_interval
+
 try:
     sys.stdout.reconfigure(encoding="utf-8")
     sys.stderr.reconfigure(encoding="utf-8")
@@ -168,14 +170,15 @@ def main():
     counts = {"auto": 0, "needs_review": 0, "skip": 0}
     all_presentations = presentations
     for v in videos:
+        video_title = normalize_time_interval(v.get("video_title", ""))
         # Noise filter — short-circuit before any fuzzy matching
-        noise, reason = is_noise_title(v.get("video_title", ""))
+        noise, reason = is_noise_title(video_title)
         if noise:
             counts["skip"] += 1
             out_rows.append({
                 "video_id": v["video_id"],
                 "video_url": v["video_url"],
-                "video_title": v["video_title"],
+                "video_title": video_title,
                 "year": v.get("year", ""),
                 "title_hint": "",
                 "speaker_hint": f"(auto-skipped: {reason})",
@@ -191,12 +194,12 @@ def main():
         # Pass 1: nominal year
         match, ratio = (None, 0.0)
         if primary_year is not None:
-            match, ratio = best_match(v["video_title"], by_year.get(primary_year, []))
+            match, ratio = best_match(video_title, by_year.get(primary_year, []))
 
         # Pass 2: cross-year fallback if nominal year didn't produce a confident hit
         used_year = primary_year
         if ratio < AUTO_THRESHOLD:
-            xmatch, xratio = best_match(v["video_title"], all_presentations)
+            xmatch, xratio = best_match(video_title, all_presentations)
             if xratio > ratio:
                 match, ratio = xmatch, xratio
                 used_year = (xmatch or {}).get("year") if xmatch else primary_year
@@ -206,7 +209,7 @@ def main():
         out_rows.append({
             "video_id": v["video_id"],
             "video_url": v["video_url"],
-            "video_title": v["video_title"],
+            "video_title": video_title,
             "year": str(used_year) if used_year is not None else "",
             "title_hint": (match or {}).get("title", ""),
             "speaker_hint": (match or {}).get("speakers", ""),
