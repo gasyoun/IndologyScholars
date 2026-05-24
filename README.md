@@ -45,10 +45,11 @@ Computes cross-conference affinity indices and cohort overlapping:
 ### Phase 4: Static Profile Generation (`generate_scholars_pages.py`)
 Compiles **220 canonical scholar profile pages** under `scholars/` (e.g., [scholars/PERS_f074f69f.html](file:///c:/Users/user/Documents/GitHub/IndologyScholars/scholars/PERS_f074f69f.html)). Each file is a standalone, SEO-optimized glassmorphic card showcasing the scholar's complete historical presentation chronology, institutional changes, regional mobility tracks, and thematic profiles.
 
-### Phase 5: Client-Side Web Portal & Interactive Charts (`index.html`)
-A state-of-the-art Single Page Application built on vanilla CSS and JS:
+### Phase 5: Client-Side Web Portal & Interactive Charts (`index.html` & `networks.html`)
+A state-of-the-art Single Page Application suite built on vanilla CSS and JS:
 *   **Bilingual Translation Core:** Automatically launches in Russian by default (retaining zero English in UI text). A toggle in the top navigation swaps the entire application state (metrics cards, charts, legend, titles, table headers, DDL documentation) to English in real-time.
 *   **Cross-filtering & City Tags:** Allows users to click on any affiliation or city tag to instantly search, filter, and paginate the master database.
+*   **Interactive Network Graph Engine (`networks.html`):** A dedicated, state-of-the-art interactive visualization dashboard powered by **Vis.js**. It maps all 220 scholars as nodes and their collaborations/co-presences as edges, featuring interactive zooming, panning, physics stabilization, live search, and four layout presets: *Collaborations*, *Ecosystem*, *Co-presence*, and *Attendance*, with a side profile detail drawer.
 
 ---
 
@@ -167,6 +168,11 @@ The IndologyScholars platform enables deep historical and sociological analysis 
 *   **Objective:** Audit the demographic health and gender balance of the Russian Indological community.
 *   **Method:** A policymaker clicks on the **«Статистический анализ»** (Statistical Insights) tab.
 *   **Result:** The platform renders the demographic bar chart showing age splits (*Young*, *Mid-career*, *Senior*, *Eminent Elders*) alongside the gender representation progress bar. This visualizes whether the field is successfully attracting young postgraduate researchers (under 35) or if it relies primarily on senior scholars.
+
+### Use Case G: Collaboration Networks and Academic Bridging
+*   **Objective:** Map and analyze the structural co-authorship networks, session copresence, and institutional bridging between scholars across Moscow and St. Petersburg forums.
+*   **Method:** A researcher opens the **«Interactive Network Map»** ([networks.html](file:///c:/Users/user/Documents/GitHub/IndologyScholars/networks.html)) and toggles the layout preset to **«Ecosystem»** or search-filters by **«ИВ РАН»**.
+*   **Result:** The interface displays the live physics-simulated network graph of the community. In the **«Collaborations»** mode, it exposes tight clusters of co-authors, while the **«Ecosystem»** mode visualizes the dense institutional connections and "bridging" scholars (like the 38 overlapping cohort participants) who actively tie Moscow's Roerich Readings to St. Petersburg's Zograf Readings, revealing the structural pathways of intellectual flow.
 
 ---
 
