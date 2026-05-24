@@ -6,6 +6,25 @@
 
 ---
 
+## [1.8.0] — 2026-05-24
+
+### Добавлено
+
+*   **Опция 4: Сплошное демографическое обновление рукописи:**
+    *   Спектр возраста и биографий расширен до 100% покрытия: решено **0 отсутствующих дат рождения** среди всех 220 ученых архива.
+    *   В рукопись статьи [ppv_draft.md](file:///c:/Users/user/Documents/GitHub/IndologyScholars/article/ppv_draft.md) интегрирован сплошной демографический анализ, опровергнувший селективное завышение старения (реальная медиана Зографа-2025 составила **47.5 лет** вместо 55).
+    *   Статистически доказано омоложение входа новых исследователей на сплошном массиве когорты ($\rho = -0.19$, $p = 0.0048$; Краскел-Уоллис $p = 0.0199$).
+    *   Переписана и дополнена таблица Приложения А (38 ученых перекрестного ядра) и методологическая сноска 2.
+    *   Скомпилированы обновленные форматы рукописи [ppv_draft.html](file:///c:/Users/user/Documents/GitHub/IndologyScholars/article/ppv_draft.html) и [ppv_draft.docx](file:///c:/Users/user/Documents/GitHub/IndologyScholars/article/ppv_draft.docx).
+
+*   **Опция 3: Интерактивная визуализация сетей связей (Vis.js UX Upgrade):**
+    *   Создан JSON-компилятор [generate_network_json.py](file:///c:/Users/user/Documents/GitHub/IndologyScholars/generate_network_json.py) для упаковки CSV-экспортов сети (266 узлов, 4704 ребер) в компактный [network_data.json](file:///c:/Users/user/Documents/GitHub/IndologyScholars/analytics_output/network_data.json).
+    *   Разработан премиальный интерактивный интерфейс [networks.html](file:///c:/Users/user/Documents/GitHub/IndologyScholars/networks.html) на базе Vis.js с быстрыми пресетами (Коллаборации, Экосистема, Соприсутствие, Участие), динамической фильтрацией связей/узлов, мгновенным поиском ученых, интерактивным сайдбаром деталей со ссылками на профили.
+    *   Устаревший Canvas-рендер на главной [index.html](file:///c:/Users/user/Documents/GitHub/IndologyScholars/index.html) полностью переведен на Vis.js, добавлена двуязычная локализация и адаптивный тизер с прямой ссылкой на полную интерактивную сеть.
+    *   Интегрирован предохранитель в сборочный пайплайн [generate_publication_pages.py](file:///c:/Users/user/Documents/GitHub/IndologyScholars/generate_publication_pages.py), предотвращающий автоматическую перезапись `networks.html` стандартным шаблоном.
+
+---
+
 ## [1.7.2] — 2026-05-24
 
 ### Исправлено
