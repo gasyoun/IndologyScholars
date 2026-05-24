@@ -190,6 +190,8 @@
             <a href="/IndologyScholars/conferences/">Конференции</a>
             <a href="/IndologyScholars/themes/">Рубрики</a>
             <a href="/IndologyScholars/meso/">Мезоуровни</a>
+            <a href="/IndologyScholars/gumilyov/">Гумилев</a>
+            <a href="/IndologyScholars/videos/">Видео</a>
             <a href="/IndologyScholars/cities/">Города</a>
             <a href="/IndologyScholars/institutions/">Институции</a>
             <a href="/IndologyScholars/search.html">Поиск</a>
@@ -210,7 +212,7 @@
         const results = document.getElementById('results');
         const input = document.getElementById('q');
         let docs = [];
-        const typeLabels = {'Scholar':'Автор', 'Presentation':'Доклад', 'Meso-level':'Мезоуровень'};
+        const typeLabels = {'Scholar':'Автор', 'Presentation':'Доклад', 'Meso-level':'Мезоуровень', 'Gumilyov':'Гумилев', 'Video':'Видео'};
         const initialQuery = new URLSearchParams(location.search).get('q') || '';
         input.value = initialQuery;
         fetch('search-index.json').then(r => r.json()).then(data => { docs = data; render(input.value); });

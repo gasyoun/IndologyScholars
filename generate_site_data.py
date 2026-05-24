@@ -196,6 +196,15 @@ def load_gumilyov_mapping():
         pass
     return mapping
 
+
+def gumilyov_level_for(year, series, title, source_title=None, raw_title=None):
+    series_id = "1" if "Zograf" in str(series or "") else "2"
+    for candidate in (raw_title, title, source_title):
+        key = (str(year).strip(), series_id, str(candidate or "").strip())
+        if key in _GUMILYOV_MAPPING:
+            return int(_GUMILYOV_MAPPING[key])
+    return 2
+
 def load_tags_mapping():
     mapping = {}
     try:
@@ -437,8 +446,7 @@ def main():
             theme_counts[t_code] = theme_counts.get(t_code, 0) + 1
             
             # Gumilyov scale
-            g_key = (str(year).strip(), str(series).strip(), cleaned_title)
-            g_scale = int(_GUMILYOV_MAPPING.get(g_key, 2)) # Default to 2 (Regional)
+            g_scale = gumilyov_level_for(year, series, cleaned_title, source_title, title)
             
             # Day of the week calculation
             day_of_week = get_day_of_week(calendar_date)
@@ -596,8 +604,7 @@ def main():
         theme = classify_theme(year_val, series, cleaned_title, pres_id, source_title)
         
         # Gumilyov scale
-        g_key = (str(year_val).strip(), str(series).strip(), cleaned_title)
-        g_scale = int(_GUMILYOV_MAPPING.get(g_key, 2))
+        g_scale = gumilyov_level_for(year_val, series, cleaned_title, source_title, title)
 
         p_tags = _TAGS_MAPPING.get(str(pres_id), [])
 
@@ -626,7 +633,8 @@ def main():
             "is_first_talk": is_first,
             "is_last_talk": is_last,
             "order_in_session": order_idx + 1,
-            "total_in_session": len(s_list)
+            "total_in_session": len(s_list),
+            "videos": videos_by_pres.get(pres_id, [])
         })
 
     # 3. Calculate year-by-year statistics for charts

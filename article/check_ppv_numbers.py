@@ -212,6 +212,7 @@ def stale_candidates(article_text: str) -> list[dict[str, object]]:
         "0.487": "0.510",
     }
     allowed_contexts = (
+        "061.3:94(540)",
         "| 2016 |",
     )
     findings = []

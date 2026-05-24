@@ -49,6 +49,7 @@ Compiles **220 canonical scholar profile pages** under `scholars/` (e.g., [schol
 A state-of-the-art Single Page Application suite built on vanilla CSS and JS:
 *   **Bilingual Translation Core:** Automatically launches in Russian by default (retaining zero English in UI text). A toggle in the top navigation swaps the entire application state (metrics cards, charts, legend, titles, table headers, DDL documentation) to English in real-time.
 *   **Cross-filtering & City Tags:** Allows users to click on any affiliation or city tag to instantly search, filter, and paginate the master database.
+*   **Video and Generalization Scale Pages:** `videos/` exposes the full YouTube inventory and presentation mappings; `gumilyov/` exposes the micro/regional/global classification of presentation titles. Both are integrated into talk cards on conference, city, institution, theme, and meso-level pages.
 *   **Interactive Network Graph Engine (`networks.html`):** A dedicated, state-of-the-art interactive visualization dashboard powered by **Vis.js**. It maps all 220 scholars as nodes and their collaborations/co-presences as edges, featuring interactive zooming, panning, physics stabilization, live search, and four layout presets: *Collaborations*, *Ecosystem*, *Co-presence*, and *Attendance*, with a side profile detail drawer.
 
 ---
@@ -147,7 +148,7 @@ The IndologyScholars platform enables deep historical and sociological analysis 
 ### Use Case B: Geographic Mobility & Regional Network Mapping
 *   **Objective:** Identify the regional distribution of scholars presenting Indological research and locate regional academic hubs (outside Moscow/St. Petersburg).
 *   **Method:** A historian wants to see the role of regional institutes (e.g., Krasnodar or Penza). On the dashboard, they expand any detail card and click on the **«Краснодар»** city tag.
-*   **Result:** The search engine instantly captures the tag, filtering all 220 scholars to show only those affiliated with Krasnodar institutions. By studying their presentation topics and years active, the researcher maps the growth of regional Buddhist and Sanskrit research clusters.
+*   **Result:** The search engine instantly captures the tag, filtering all 220 scholars by the city signal recorded in their affiliation string. This helps map regional Buddhist and Sanskrit research clusters without assuming that a city label necessarily means employment at a local university; peripheral records often preserve only a city or a non-university affiliation.
 
 ### Use Case C: Tracking Academic Migration & Institutional Shifts
 *   **Objective:** Trace how scholars transition between academic organizations over their careers.

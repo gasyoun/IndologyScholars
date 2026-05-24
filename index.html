@@ -1820,6 +1820,15 @@ CREATE TABLE presentation_person (
                         </div>`;
                     }
 
+                    let videoHtml = '';
+                    if (talk.videos && talk.videos.length > 0) {
+                        const links = talk.videos.map((video, idx) => {
+                            const label = talk.videos.length === 1 ? 'YouTube' : `YouTube ${idx + 1}`;
+                            return `<a href="${video.url}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();" style="color: var(--accent-primary); border-bottom: 1px dashed rgba(139,92,246,0.4);">${label}</a>`;
+                        }).join(' · ');
+                        videoHtml = `<div class="talk-meta" style="margin-top: 0.35rem; font-size: 0.78rem; color: var(--text-muted);">▶ <strong>${currentLang === 'ru' ? 'Видео' : 'Video'}</strong>: ${links}</div>`;
+                    }
+
                     return `
                         <div class="talk-item">
                             <div class="talk-title">
@@ -1844,6 +1853,8 @@ CREATE TABLE presentation_person (
                                 <span style="margin-left: 1.5rem;">💬 <strong>${t.session}</strong>: ${talk.session_title}</span>
                                 ${cityHtml}
                             </div>
+                            ${videoHtml}
+                            ${tagsHtml}
                         </div>
                     `;
                 }).join('');

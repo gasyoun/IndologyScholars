@@ -44,7 +44,7 @@ DB_PATH = "conferences.db"
 BUILD_DATE = dt.date.today().isoformat()
 DATA_SCHEMA_VERSION = "1.0.0"
 PIPELINE_VERSION = "2026-05-21"
-PUBLIC_DIRS = ["assets", "conferences", "themes", "meso", "cities", "institutions"]
+PUBLIC_DIRS = ["assets", "conferences", "themes", "meso", "gumilyov", "videos", "cities", "institutions"]
 
 
 def ensure_dirs():
@@ -98,7 +98,7 @@ def generated_manifest_paths():
         "site_data.json",
         "sitemap.xml",
     ]
-    directories = ["analytics_output", "assets", "cities", "conferences", "institutions", "meso", "scholars", "themes"]
+    directories = ["analytics_output", "assets", "cities", "conferences", "gumilyov", "institutions", "meso", "scholars", "themes", "videos"]
     paths = [Path(path) for path in roots]
     for dirname in directories:
         root = Path(dirname)
@@ -189,6 +189,47 @@ def theme_path(code):
 
 def meso_path(code):
     return f"meso/{slugify(code, 'meso')}.html"
+
+
+def gumilyov_path(level):
+    return f"gumilyov/level-{int(level)}.html"
+
+
+def videos_year_path(year):
+    return f"videos/year-{int(year)}.html"
+
+
+GUMILYOV_LEVELS = {
+    1: {
+        "ru": "Микроуровень",
+        "en": "Micro level",
+        "short_ru": "Микро",
+        "short_en": "Micro",
+        "description": "Доклады, сосредоточенные на конкретном тексте, авторе, памятнике, термине или локальном кейсе.",
+    },
+    2: {
+        "ru": "Региональный уровень",
+        "en": "Regional level",
+        "short_ru": "Региональный",
+        "short_en": "Regional",
+        "description": "Доклады, связывающие материал с историко-культурной областью, традицией, школой, регионом или эпохой.",
+    },
+    3: {
+        "ru": "Глобальный уровень",
+        "en": "Global level",
+        "short_ru": "Глобальный",
+        "short_en": "Global",
+        "description": "Доклады, формулирующие широкие сравнительные, цивилизационные, методологические или межрегиональные обобщения.",
+    },
+}
+
+
+def gumilyov_meta(level):
+    try:
+        level_int = int(level)
+    except (TypeError, ValueError):
+        level_int = 2
+    return level_int, GUMILYOV_LEVELS.get(level_int, GUMILYOV_LEVELS[2])
 
 
 L1_DISTRIBUTION_LINKS = {
@@ -358,6 +399,23 @@ def facet_meso_links(talks, memberships, meso_items_by_code, depth="", limit=12)
     return [
         f'<a class="chip" href="{depth}{meso_path(code)}">{esc(label)} · {talks_count_label(count)}</a>'
         for label, code, count in sorted(links, key=lambda item: (-item[2], item[0]))[:limit]
+    ]
+
+
+def facet_gumilyov_links(talks, depth="", limit=3):
+    counts = defaultdict(int)
+    seen = set()
+    for talk in talks:
+        pid = clean_text(talk.get("presentation_id") or "")
+        if pid:
+            if pid in seen:
+                continue
+            seen.add(pid)
+        level, meta = gumilyov_meta(talk.get("gumilyov_scale"))
+        counts[level] += 1
+    return [
+        f'<a class="chip" href="{depth}{gumilyov_path(level)}">L{level} {esc(GUMILYOV_LEVELS[level]["short_ru"])} · {talks_count_label(count)}</a>'
+        for level, count in sorted(counts.items())[:limit]
     ]
 
 
@@ -550,13 +608,25 @@ def talk_card(talk, depth=""):
     anchor = clean_text(talk.get("presentation_id") or "")
     anchor_attr = f' id="{esc(anchor)}"' if anchor else ""
     title_href = talk_deep_link(talk, depth)
+    g_level, g_meta = gumilyov_meta(talk.get("gumilyov_scale"))
+    gumilyov_link = f'<a href="{depth}{gumilyov_path(g_level)}">L{g_level} {esc(g_meta["short_ru"])}</a>'
+    videos = talk.get("videos") or []
+    video_html = ""
+    if videos:
+        links = []
+        for idx, video in enumerate(videos, start=1):
+            label = "YouTube" if len(videos) == 1 else f"YouTube {idx}"
+            links.append(f'<a href="{esc(video.get("url"))}">{esc(label)}</a>')
+        video_html = f'<div class="meta">Видео: {" · ".join(links)}</div>'
     return f"""
         <article class="talk"{anchor_attr}>
             <strong><a href="{esc(title_href)}">{esc(talk.get("title"))}</a></strong>
             <div class="meta">
                 {scholar_link} · <a href="{depth}{conference_path(talk.get("series_key"), talk.get("year"))}">{esc(series_label(talk.get("series_key"), "ru"))} {esc(talk.get("year"))}</a>
-                · <a href="{depth}{theme_path(theme_code)}">{esc(theme_label(theme_code, "ru"))}</a>{city_link}
+                · <a href="{depth}{theme_path(theme_code)}">{esc(theme_label(theme_code, "ru"))}</a>
+                · {gumilyov_link}{city_link}
             </div>
+            {video_html}
         </article>
     """
 
@@ -903,10 +973,30 @@ def generate_search(data, records):
                     talk.get("speaker") or "",
                     talk.get("affiliation") or "",
                     theme_label((talk.get("theme") or {}).get("code"), "ru"),
+                    GUMILYOV_LEVELS[gumilyov_meta(talk.get("gumilyov_scale"))[0]]["ru"],
                     series_label(talk.get("series_key"), "ru"),
                     str(talk.get("year") or ""),
                     (talk.get("geography") or {}).get("ru") or "",
                 ]),
+            }
+        )
+    for level, meta in GUMILYOV_LEVELS.items():
+        index.append(
+            {
+                "type": "Gumilyov",
+                "title": f"L{level} {meta['ru']}",
+                "url": gumilyov_path(level),
+                "text": " ".join([meta["ru"], meta["en"], meta["short_ru"], meta["description"]]),
+            }
+        )
+    for row in load_youtube_rows():
+        year = clean_text(row.get("year") or "")
+        index.append(
+            {
+                "type": "Video",
+                "title": row.get("video_title") or row.get("video_url"),
+                "url": videos_year_path(year) if year else "videos/",
+                "text": " ".join([row.get("playlist_label") or "", row.get("video_title") or "", row.get("video_url") or "", year]),
             }
         )
     for item in load_meso_index():
@@ -931,7 +1021,7 @@ def generate_search(data, records):
         const results = document.getElementById('results');
         const input = document.getElementById('q');
         let docs = [];
-        const typeLabels = {'Scholar':'Автор', 'Presentation':'Доклад', 'Meso-level':'Мезоуровень'};
+        const typeLabels = {'Scholar':'Автор', 'Presentation':'Доклад', 'Meso-level':'Мезоуровень', 'Gumilyov':'Гумилев', 'Video':'Видео'};
         const initialQuery = new URLSearchParams(location.search).get('q') || '';
         input.value = initialQuery;
         fetch('search-index.json').then(r => r.json()).then(data => { docs = data; render(input.value); });
@@ -976,6 +1066,9 @@ def generate_download_page(data):
         ("Biographical provenance", "analytics_output/field_provenance_biographical.csv", "Field-level provenance for curated person names and life dates."),
         ("Authority provenance", "analytics_output/field_provenance_authority.csv", "Field-level provenance for external identifiers and organization authority records."),
         ("Theme provenance", "analytics_output/field_provenance_themes.csv", "Field-level provenance for generated presentation theme labels."),
+        ("Gumilyov scale", "analytics_output/gumilyov_scale.csv", "Presentation-level scale of generalization used by the Gumilyov navigation pages."),
+        ("YouTube video list", "analytics_output/youtube_video_list.csv", "Full list of YouTube videos collected from the Zograf Readings playlists."),
+        ("YouTube mapping", "analytics_output/video_presentation_mapping.csv", "Video-to-presentation matching status, including exact matches and review candidates."),
         ("Network nodes", "analytics_output/network_nodes.csv", "Typed person, event, organization, and theme nodes for downstream network analysis."),
         ("Network edges", "analytics_output/network_edges.csv", "Weighted edges with explicit relation types for participation, affiliation, theme, and co-presence analysis."),
         ("Publication file manifest", "analytics_output/publication_file_manifest.csv", "Generated file list with byte sizes and SHA-256 checksums for reproducible release checks."),
@@ -1857,6 +1950,8 @@ def generate_english_landing(data):
             <article class="card"><strong><a href="scholars/">Scholar Profiles</a></strong><div class="meta">Canonical generated pages with presentations, affiliations, themes, and related scholars.</div></article>
             <article class="card"><strong><a href="conferences/">Conference Indexes</a></strong><div class="meta">Year-by-year Zograf Readings and Roerich Readings pages.</div></article>
             <article class="card"><strong><a href="search.html">Search</a></strong><div class="meta">Static search across people, talks, cities, institutions, and themes.</div></article>
+            <article class="card"><strong><a href="gumilyov/">Gumilyov Scale</a></strong><div class="meta">Presentation-level scale of generalization: micro, regional, and global.</div></article>
+            <article class="card"><strong><a href="videos/">YouTube Videos</a></strong><div class="meta">Full playlist inventory and mapped presentation recordings.</div></article>
             <article class="card"><strong><a href="networks.html">Networks</a></strong><div class="meta">Participation and co-presence networks.</div></article>
             <article class="card"><strong><a href="download-data.html">Download Data</a></strong><div class="meta">SQLite, generated JSON/JS payloads, citation metadata, and analytics exports.</div></article>
             <article class="card"><strong><a href="methodology.html">Methodology</a></strong><div class="meta">Pipeline, source material, normalization, and generated outputs.</div></article>
@@ -1882,6 +1977,201 @@ def generate_english_landing(data):
             structured,
             extra_head=f'\n    <link rel="alternate" hreflang="ru" href="{site_url("")}">\n    <link rel="alternate" hreflang="en" href="{site_url("en.html")}">',
             language="en",
+        ),
+    )
+
+
+def generate_gumilyov_pages(data, records):
+    records_by_id = presentation_records_by_id(records)
+    unique_records = list(records_by_id.values())
+    grouped = defaultdict(list)
+    for talk in unique_records:
+        level, _meta = gumilyov_meta(talk.get("gumilyov_scale"))
+        grouped[level].append(talk)
+    for talks in grouped.values():
+        talks.sort(key=lambda rec: (int(rec.get("year") or 0), rec.get("series_key") or "", rec.get("title") or ""))
+
+    cards = []
+    for level in sorted(GUMILYOV_LEVELS):
+        meta = GUMILYOV_LEVELS[level]
+        count = len(grouped.get(level, []))
+        cards.append(
+            f"""
+            <article class="card">
+                <strong><a href="../{gumilyov_path(level)}">L{level} {esc(meta["ru"])}</a></strong>
+                <div class="metric">{count}</div>
+                <div class="meta">{esc(meta["description"])}</div>
+            </article>
+            """
+        )
+
+        body = f"""
+        <header>
+            <h1>L{level} {esc(meta["ru"])}</h1>
+            <p>{esc(meta["description"])}</p>
+        </header>
+        <aside class="caveat-block" role="note" aria-label="Gumilyov classification notice">
+            <strong>Примечание о классификации</strong>
+            <p>Уровень Гумилева назначается по заголовку доклада и используется как навигационный масштаб обобщения. Он не заменяет тематическую рубрику L1 и не является оценкой качества доклада.</p>
+        </aside>
+        <section class="list">
+            {''.join(talk_card(t, '../') for t in grouped.get(level, []))}
+        </section>
+        """
+        write_text(
+            gumilyov_path(level),
+            page_shell(
+                f"L{level} {meta['ru']} | {SITE_NAME}",
+                meta["description"],
+                gumilyov_path(level),
+                body,
+                [page_data(f"L{level} {meta['ru']}", meta["description"], gumilyov_path(level)), make_breadcrumbs([("Главная", ""), ("Гумилев", "gumilyov/"), (f"L{level}", gumilyov_path(level))])],
+            ),
+        )
+
+    index_body = f"""
+        <header>
+            <h1>Классификация по уровню обобщения</h1>
+            <p>Навигационный масштаб доклада по мотивам уровней обобщения Л. Н. Гумилева: от конкретного кейса к региональной традиции и широкому сравнительному уровню.</p>
+        </header>
+        <section class="grid">{''.join(cards)}</section>
+        <section class="link-block">
+            <strong>Данные</strong>
+            <div class="chip-list">
+                <a class="chip" href="../analytics_output/gumilyov_scale.csv">gumilyov_scale.csv</a>
+                <a class="chip" href="../analytics_output/gumilyov_video_comparison.csv">video comparison</a>
+            </div>
+        </section>
+    """
+    write_text(
+        "gumilyov/index.html",
+        page_shell(
+            f"Классификация Гумилева | {SITE_NAME}",
+            "Классификация докладов по уровню обобщения: микро, региональный и глобальный уровни.",
+            "gumilyov/",
+            index_body,
+            [page_data("Классификация Гумилева", "Классификация докладов по уровню обобщения.", "gumilyov/"), make_breadcrumbs([("Главная", ""), ("Гумилев", "gumilyov/")])],
+        ),
+    )
+
+
+def load_youtube_rows():
+    return load_csv_rows("analytics_output/youtube_video_list.csv")
+
+
+def load_video_mapping_rows():
+    rows = {}
+    for row in load_csv_rows("analytics_output/video_presentation_mapping.csv"):
+        video_id = clean_text(row.get("video_id") or "")
+        if video_id:
+            rows[video_id] = row
+    return rows
+
+
+def generate_video_pages(data, records):
+    videos = load_youtube_rows()
+    mapping = load_video_mapping_rows()
+    records_by_id = presentation_records_by_id(records)
+    records_by_video_id = defaultdict(list)
+    for talk in records_by_id.values():
+        for video in talk.get("videos") or []:
+            url = video.get("url") or ""
+            match = re.search(r"(?:v=|youtu\.be/)([A-Za-z0-9_-]+)", url)
+            if match:
+                records_by_video_id[match.group(1)].append(talk)
+
+    def video_card(row, depth="../"):
+        video_id = clean_text(row.get("video_id") or "")
+        mapped_records = records_by_video_id.get(video_id, [])
+        mapping_row = mapping.get(video_id, {})
+        status = mapping_row.get("status") or ("auto" if mapped_records else "unmapped")
+        status_label = {
+            "auto": "сопоставлено с докладом",
+            "manual": "сопоставлено вручную",
+            "needs_review": "требует проверки",
+            "skip": "служебная/сессионная запись",
+            "unmapped": "не сопоставлено",
+        }.get(status, status)
+        talk_links = []
+        for talk in mapped_records:
+            talk_links.append(f'<a href="{esc(talk_deep_link(talk, depth))}">{esc(talk.get("title"))}</a>')
+        talk_html = f'<div class="meta">Доклад: {" · ".join(talk_links)}</div>' if talk_links else ""
+        return f"""
+            <article class="card">
+                <strong><a href="{esc(row.get("video_url"))}">{esc(row.get("video_title"))}</a></strong>
+                <div class="meta">{esc(row.get("playlist_label"))} · позиция {esc(row.get("position"))} · {esc(status_label)}</div>
+                {talk_html}
+            </article>
+        """
+
+    by_year = defaultdict(list)
+    for row in videos:
+        year = clean_text(row.get("year") or "")
+        if year:
+            by_year[year].append(row)
+
+    matched = len(records_by_video_id)
+    needs_review = sum(1 for row in mapping.values() if row.get("status") == "needs_review")
+    skipped = sum(1 for row in mapping.values() if row.get("status") == "skip")
+    year_cards = []
+    for year, rows in sorted(by_year.items()):
+        year_cards.append(
+            f'<article class="card"><strong><a href="../{videos_year_path(year)}">YouTube {esc(year)}</a></strong><div class="metric">{len(rows)}</div><div class="meta">видеозаписей в плейлистах</div></article>'
+        )
+        body = f"""
+        <header>
+            <h1>YouTube {esc(year)}</h1>
+            <p>Видеозаписи, загруженные в соответствующий плейлистовый год. Часть плейлистов содержит записи более ранних сессий, что сохранено в исходной метке плейлиста.</p>
+        </header>
+        <section class="list">
+            {''.join(video_card(row, '../') for row in rows)}
+        </section>
+        """
+        write_text(
+            videos_year_path(year),
+            page_shell(
+                f"YouTube {year} | {SITE_NAME}",
+                f"Видеозаписи YouTube по плейлистовому году {year}.",
+                videos_year_path(year),
+                body,
+                [page_data(f"YouTube {year}", f"Видеозаписи YouTube по плейлистовому году {year}.", videos_year_path(year)), make_breadcrumbs([("Главная", ""), ("Видео", "videos/"), (year, videos_year_path(year))])],
+            ),
+        )
+
+    index_body = f"""
+        <header>
+            <h1>YouTube-видеозаписи</h1>
+            <p>Полный список видеозаписей из YouTube-плейлистов Зографских чтений и проверенные сопоставления с докладами корпуса.</p>
+        </header>
+        <section class="grid">
+            <article class="card"><strong>Всего видео</strong><div class="metric">{len(videos)}</div></article>
+            <article class="card"><strong>Сопоставлено с докладами</strong><div class="metric">{matched}</div></article>
+            <article class="card"><strong>Требует проверки</strong><div class="metric">{needs_review}</div></article>
+            <article class="card"><strong>Сессионные/служебные записи</strong><div class="metric">{skipped}</div></article>
+        </section>
+        <h2>По годам плейлистов</h2>
+        <section class="grid">{''.join(year_cards)}</section>
+        <section class="link-block">
+            <strong>CSV-выгрузки</strong>
+            <div class="chip-list">
+                <a class="chip" href="../analytics_output/youtube_video_list.csv">youtube_video_list.csv</a>
+                <a class="chip" href="../analytics_output/video_presentation_mapping.csv">video_presentation_mapping.csv</a>
+                <a class="chip" href="../analytics_output/youtube_playlist_summary.csv">youtube_playlist_summary.csv</a>
+            </div>
+        </section>
+        <h2>Полный список</h2>
+        <section class="list">
+            {''.join(video_card(row, '../') for row in videos)}
+        </section>
+    """
+    write_text(
+        "videos/index.html",
+        page_shell(
+            f"Видеозаписи | {SITE_NAME}",
+            "Полный список YouTube-видеозаписей и сопоставлений с докладами.",
+            "videos/",
+            index_body,
+            [page_data("Видеозаписи", "Полный список YouTube-видеозаписей и сопоставлений с докладами.", "videos/"), make_breadcrumbs([("Главная", ""), ("Видео", "videos/")])],
         ),
     )
 
@@ -1918,6 +2208,7 @@ def generate_conference_pages(data, records):
         navigation = chip_section("Соседние конференции", [nav_links] if nav_links else [])
         facets = "".join([
             chip_section("Рубрики конференции", facet_theme_links(talks, "../", 12)),
+            chip_section("Уровни Гумилева", facet_gumilyov_links(talks, "../", 3)),
             chip_section("Мезоуровни конференции", facet_meso_links(talks, memberships, meso_items_by_code, "../", 12)),
             chip_section("Города конференции", facet_city_links(talks, "../", 10)),
             chip_section("Институции конференции", facet_institution_links(talks, "../", 10)),
@@ -2007,6 +2298,7 @@ def generate_theme_pages(data, records):
             <div class="chip-list">{related_meso_links}</div>
         </section>
         """ if related_meso_links else ""
+        gumilyov_block = chip_section("Уровни Гумилева", facet_gumilyov_links(talks, "../", 3))
         body = f"""
         <header>
             <h1>{esc(title)}</h1>
@@ -2014,6 +2306,7 @@ def generate_theme_pages(data, records):
         </header>
         {caveat_block}
         {related_meso_block}
+        {gumilyov_block}
         <section class="list">
             {''.join(talk_card(t, '../') for t in talks[:250])}
         </section>
@@ -2161,6 +2454,7 @@ def generate_meso_pages(data, records):
         {stats}
         {top_terms}
         {distribution}
+        {chip_section("Уровни Гумилева", facet_gumilyov_links(talks, "../", 3))}
         {related_meso_block}
         {examples_block}
         {caveat}
@@ -2223,6 +2517,7 @@ def generate_city_pages(data, records, authority):
         facets = "".join([
             chip_section("Ведущие авторы", facet_scholar_links(talks, "../", 14)),
             chip_section("Рубрики города", facet_theme_links(talks, "../", 12)),
+            chip_section("Уровни Гумилева", facet_gumilyov_links(talks, "../", 3)),
             chip_section("Институции города", facet_institution_links(talks, "../", 12)),
             chip_section("Связанные мезоуровни", facet_meso_links(talks, memberships, meso_items_by_code, "../", 12)),
             chip_section("Конференции", facet_conference_links(talks, "../", 12)),
@@ -2297,6 +2592,7 @@ def generate_institution_pages(data, records, authority):
         facets = "".join([
             chip_section("Ведущие авторы", facet_scholar_links(talks, "../", 14)),
             chip_section("Рубрики институции", facet_theme_links(talks, "../", 12)),
+            chip_section("Уровни Гумилева", facet_gumilyov_links(talks, "../", 3)),
             chip_section("Города", facet_city_links(talks, "../", 10)),
             chip_section("Связанные мезоуровни", facet_meso_links(talks, memberships, meso_items_by_code, "../", 12)),
             chip_section("Конференции", facet_conference_links(talks, "../", 12)),
@@ -2573,7 +2869,7 @@ def generate_sitemap():
         "networks.html",
     ]
     html_paths.extend(str(p).replace("\\", "/") for p in Path("scholars").glob("*.html") if not is_legacy_redirect(p))
-    for dirname in ("conferences", "themes", "meso", "cities", "institutions"):
+    for dirname in ("conferences", "themes", "meso", "gumilyov", "videos", "cities", "institutions"):
         html_paths.extend(str(p).replace("\\", "/") for p in Path(dirname).glob("*.html"))
     html_paths = sorted(set(html_paths), key=lambda p: (p.count("/"), p))
     urlset = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
@@ -2761,6 +3057,8 @@ def main():
     generate_data_quality_page(data, authority_stats)
     generate_404_page()
     generate_english_landing(data)
+    generate_gumilyov_pages(data, records)
+    generate_video_pages(data, records)
     generate_conference_pages(data, records)
     generate_theme_pages(data, records)
     generate_legacy_theme_redirects()
