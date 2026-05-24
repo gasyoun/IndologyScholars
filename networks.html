@@ -3,283 +3,1315 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Network Exports | Russian Indological Research Archive</title>
-    <meta name="description" content="How to interpret the participation network CSV exports in the Indology Scholars archive.">
+    <title>Интерактивная карта связей | Архив российской индологии</title>
+    <meta name="description" content="Интерактивная визуализация сетей сотрудничества, аффилиаций и тематической структуры в отечественной индологии.">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://gasyoun.github.io/IndologyScholars/networks.html">
-    <link rel="alternate" hreflang="ru" href="https://gasyoun.github.io/IndologyScholars/networks.html">
-    <link rel="alternate" hreflang="x-default" href="https://gasyoun.github.io/IndologyScholars/networks.html">
     <link rel="icon" href="/IndologyScholars/assets/favicon.svg" type="image/svg+xml">
     <meta name="theme-color" content="#0a0e1a">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://gasyoun.github.io/IndologyScholars/networks.html">
-    <meta property="og:title" content="Network Exports | Russian Indological Research Archive">
-    <meta property="og:description" content="How to interpret the participation network CSV exports in the Indology Scholars archive.">
-    <meta property="og:image" content="https://gasyoun.github.io/IndologyScholars/assets/og-image.png">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Network Exports | Russian Indological Research Archive">
-    <meta name="twitter:description" content="How to interpret the participation network CSV exports in the Indology Scholars archive.">
-    <meta name="twitter:image" content="https://gasyoun.github.io/IndologyScholars/assets/og-image.png">
+    
+    <!-- Google Fonts & Vis.js -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
 
-    <script type="application/ld+json">
-[
-  {
-    "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    "name": "Network Exports",
-    "description": "How to interpret the participation network CSV exports in the Indology Scholars archive.",
-    "url": "https://gasyoun.github.io/IndologyScholars/networks.html",
-    "isPartOf": {
-      "@type": "WebSite",
-      "name": "Russian Indological Research Archive",
-      "url": "https://gasyoun.github.io/IndologyScholars/"
-    },
-    "dateModified": "2026-05-23"
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://gasyoun.github.io/IndologyScholars/"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Network Exports",
-        "item": "https://gasyoun.github.io/IndologyScholars/networks.html"
-      }
-    ]
-  }
-]
-    </script>
     <style>
         :root {
             color-scheme: dark;
-            --bg: #0a0e1a;
-            --panel: rgba(17,24,44,0.76);
-            --panel-strong: rgba(22,33,61,0.92);
-            --border: rgba(255,255,255,0.1);
+            --bg: #030712;
+            --bg-glass: rgba(10, 15, 30, 0.7);
+            --panel: rgba(17, 24, 39, 0.85);
+            --panel-strong: rgba(31, 41, 55, 0.95);
+            --border: rgba(255, 255, 255, 0.08);
+            --border-hover: rgba(255, 255, 255, 0.16);
             --text: #f3f4f6;
-            --muted: #a8b0bf;
-            --soft: #7d8797;
+            --muted: #9ca3af;
+            --soft: #6b7280;
             --accent: #8b5cf6;
+            --accent-glow: rgba(139, 92, 246, 0.4);
             --accent2: #ec4899;
+            --cyan: #06b6d4;
+            --orange: #f97316;
         }
-        * { box-sizing: border-box; }
+
+        * {
+            box-sizing: border-box;
+            scrollbar-width: thin;
+            scrollbar-color: var(--border) transparent;
+        }
+
         body {
             margin: 0;
-            font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
             background: var(--bg);
             color: var(--text);
-            line-height: 1.6;
-        }
-        a { color: #c4b5fd; text-decoration: none; }
-        a:hover { color: #f0abfc; }
-        .page {
-            max-width: 1160px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-        .top-nav {
+            line-height: 1.5;
+            overflow: hidden; /* Canvas controls page scrolling */
+            height: 100vh;
             display: flex;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-            margin-bottom: 2rem;
+            flex-direction: column;
         }
-        .top-nav a, .chip {
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            background: rgba(255,255,255,0.04);
-            padding: 0.45rem 0.7rem;
-            color: var(--muted);
-            display: inline-flex;
+
+        /* Top Navigation Header */
+        .top-navbar {
+            display: flex;
             align-items: center;
-            gap: 0.35rem;
-        }
-        header {
+            justify-content: space-between;
+            padding: 0.75rem 1.5rem;
+            background: var(--bg-glass);
             border-bottom: 1px solid var(--border);
-            padding-bottom: 1.5rem;
-            margin-bottom: 1.75rem;
+            backdrop-filter: blur(12px);
+            z-index: 100;
         }
-        h1 {
-            font-size: clamp(2rem, 5vw, 3.4rem);
-            line-height: 1.05;
-            margin: 0 0 0.75rem;
-            letter-spacing: 0;
-        }
-        h2 {
-            font-size: 1.45rem;
-            margin: 2rem 0 1rem;
-            letter-spacing: 0;
-        }
-        p { color: var(--muted); max-width: 820px; }
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 1rem;
-        }
-        .card {
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 1rem;
-            background: var(--panel);
-        }
-        .card strong { color: #fff; }
-        .metric {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: #fff;
-            margin-top: 0.35rem;
-        }
-        .meta {
-            color: var(--soft);
-            font-size: 0.92rem;
-            margin-top: 0.3rem;
-        }
-        .link-block {
-            max-width: 900px;
-            margin: 1rem 0;
-        }
-        .link-block > strong {
-            color: #fff;
-            display: block;
-            margin-bottom: 0.45rem;
-        }
-        .chip-list {
+
+        .navbar-brand {
             display: flex;
-            flex-wrap: wrap;
-            gap: 0.45rem;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #fff;
         }
-        .list {
-            display: grid;
-            gap: 0.75rem;
+
+        .navbar-brand span {
+            background: linear-gradient(135deg, var(--cyan), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
-        .talk {
-            border-left: 3px solid var(--accent);
-            background: rgba(255,255,255,0.035);
-            padding: 0.8rem 1rem;
-            border-radius: 0 8px 8px 0;
+
+        .nav-links {
+            display: flex;
+            gap: 0.5rem;
+            overflow-x: auto;
+            max-width: 70%;
+            padding-bottom: 0.2rem;
         }
-        .footer {
-            color: var(--soft);
-            margin-top: 3rem;
-            border-top: 1px solid var(--border);
-            padding-top: 1rem;
-            font-size: 0.9rem;
-        }
-        .search-box {
-            width: 100%;
-            max-width: 720px;
-            padding: 0.8rem 1rem;
-            border-radius: 8px;
-            border: 1px solid var(--border);
-            background: var(--panel-strong);
-            color: var(--text);
-            font-size: 1rem;
-        }
-        .caveat-block {
-            border: 1px solid rgba(139,92,246,0.35);
-            border-left: 4px solid var(--accent);
-            border-radius: 8px;
-            background: rgba(139,92,246,0.07);
-            padding: 0.9rem 1.1rem;
-            margin: 1.25rem 0 1.75rem;
-            max-width: 820px;
-        }
-        .caveat-block strong {
-            color: #c4b5fd;
-            display: block;
-            margin-bottom: 0.35rem;
-        }
-        .caveat-block p {
-            font-size: 0.93rem;
-            margin: 0;
+
+        .nav-links a {
             color: var(--muted);
+            text-decoration: none;
+            font-size: 0.88rem;
+            padding: 0.4rem 0.75rem;
+            border-radius: 6px;
+            border: 1px solid transparent;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+
+        .nav-links a:hover {
+            color: #fff;
+            background: rgba(255, 255, 255, 0.04);
+            border-color: var(--border);
+        }
+
+        .nav-links a.active {
+            color: #fff;
+            background: rgba(139, 92, 246, 0.15);
+            border-color: rgba(139, 92, 246, 0.3);
+        }
+
+        /* Main Layout */
+        .app-container {
+            display: flex;
+            flex: 1;
+            position: relative;
+            height: calc(100vh - 57px);
+            overflow: hidden;
+        }
+
+        /* Sidebar Container */
+        .sidebar {
+            width: 380px;
+            background: var(--panel);
+            border-right: 1px solid var(--border);
+            backdrop-filter: blur(16px);
+            display: flex;
+            flex-direction: column;
+            z-index: 50;
+            transition: transform 0.3s ease;
+            box-shadow: 10px 0 30px rgba(0,0,0,0.5);
+        }
+
+        .sidebar-header {
+            padding: 1.25rem 1.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .sidebar-header h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.4rem;
+            margin: 0 0 0.25rem;
+            font-weight: 600;
+        }
+
+        .sidebar-header p {
+            font-size: 0.85rem;
+            color: var(--muted);
+            margin: 0;
+        }
+
+        .sidebar-scrollable {
+            flex: 1;
+            overflow-y: auto;
+            padding: 1.25rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        /* Search input styling */
+        .search-container {
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid var(--border);
+            color: #fff;
+            padding: 0.75rem 1rem 0.75rem 2.25rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px var(--accent-glow);
+            background: rgba(255,255,255,0.05);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 0.75rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--soft);
+            pointer-events: none;
+            width: 14px;
+            height: 14px;
+        }
+
+        /* Filter Section Titles */
+        .section-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--cyan);
+            margin: 0 0 0.75rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .section-title span.count {
+            text-transform: none;
+            font-size: 0.75rem;
+            color: var(--soft);
+            font-family: 'Inter', sans-serif;
+            font-weight: normal;
+        }
+
+        /* Preset Buttons */
+        .preset-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.5rem;
+        }
+
+        .btn-preset {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid var(--border);
+            color: var(--text);
+            padding: 0.5rem 0.75rem;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .btn-preset:hover {
+            background: rgba(255,255,255,0.08);
+            border-color: var(--border-hover);
+        }
+
+        .btn-preset.active {
+            background: rgba(6, 182, 212, 0.15);
+            border-color: var(--cyan);
+            color: #fff;
+        }
+
+        /* Toggle Switches */
+        .filter-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .toggle-label {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 0.88rem;
+            color: var(--muted);
+            cursor: pointer;
+            padding: 0.35rem 0;
+            transition: color 0.2s;
+        }
+
+        .toggle-label:hover {
+            color: #fff;
+        }
+
+        .toggle-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .toggle-color-pill {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        /* Custom Switch */
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 36px;
+            height: 20px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255,255,255,0.1);
+            transition: .3s;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 12px;
+            width: 12px;
+            left: 3px;
+            bottom: 3px;
+            background-color: #fff;
+            transition: .3s;
+            border-radius: 50%;
+        }
+
+        input:checked + .slider {
+            background-color: var(--accent);
+            border-color: var(--accent);
+        }
+
+        input:focus + .slider {
+            box-shadow: 0 0 1px var(--accent);
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(16px);
+        }
+
+        /* Network Canvas Area */
+        .canvas-container {
+            flex: 1;
+            position: relative;
+            background: #02040a;
+        }
+
+        #network-canvas {
+            width: 100%;
+            height: 100%;
+            outline: none;
+        }
+
+        /* Dynamic Overlay Controls */
+        .canvas-toolbar {
+            position: absolute;
+            bottom: 1.5rem;
+            left: 1.5rem;
+            display: flex;
+            gap: 0.5rem;
+            z-index: 10;
+        }
+
+        .toolbar-btn {
+            background: var(--panel-strong);
+            border: 1px solid var(--border);
+            color: #fff;
+            width: 38px;
+            height: 38px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+
+        .toolbar-btn:hover {
+            background: rgba(255,255,255,0.08);
+            border-color: var(--border-hover);
+            transform: translateY(-2px);
+        }
+
+        .toolbar-btn svg {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+        }
+
+        /* Legend Panel */
+        .legend-overlay {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: var(--panel);
+            border: 1px solid var(--border);
+            backdrop-filter: blur(12px);
+            padding: 0.85rem 1.1rem;
+            border-radius: 10px;
+            font-size: 0.8rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+            pointer-events: none;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+            z-index: 10;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--muted);
+        }
+
+        /* Selected Node Detail Panel */
+        .detail-panel {
+            position: absolute;
+            bottom: 1.5rem;
+            right: 1.5rem;
+            width: 320px;
+            background: var(--panel-strong);
+            border: 1px solid var(--border);
+            backdrop-filter: blur(20px);
+            border-radius: 12px;
+            padding: 1.25rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+            transform: translateY(20px);
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            z-index: 20;
+        }
+
+        .detail-panel.active {
+            transform: translateY(0);
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .detail-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 0.75rem;
+        }
+
+        .detail-type {
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 0.15rem 0.45rem;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .detail-type.person { background: rgba(6, 182, 212, 0.15); color: var(--cyan); }
+        .detail-type.event { background: rgba(249, 115, 22, 0.15); color: var(--orange); }
+        .detail-type.organization { background: rgba(139, 92, 246, 0.15); color: var(--accent); }
+        .detail-type.theme { background: rgba(236, 72, 153, 0.15); color: var(--accent2); }
+
+        .btn-close-detail {
+            background: transparent;
+            border: none;
+            color: var(--soft);
+            cursor: pointer;
+            padding: 0;
+            font-size: 1.1rem;
+            transition: color 0.2s;
+        }
+
+        .btn-close-detail:hover { color: #fff; }
+
+        .detail-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin: 0 0 0.5rem;
+            color: #fff;
+        }
+
+        .detail-body {
+            font-size: 0.88rem;
+            color: var(--muted);
+        }
+
+        .detail-stat {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.35rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+        }
+
+        .detail-stat span:first-child { color: var(--soft); }
+        .detail-stat span:last-child { color: #fff; font-weight: 500; }
+
+        /* Loading Spinner */
+        .loading-overlay {
+            position: absolute;
+            inset: 0;
+            background: #02040a;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 200;
+            transition: opacity 0.5s ease;
+        }
+
+        .spinner {
+            width: 48px;
+            height: 48px;
+            border: 4px solid var(--border);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 1rem;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .loading-text {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.1rem;
+            color: #fff;
+            font-weight: 500;
+        }
+
+        .loading-progress {
+            font-size: 0.85rem;
+            color: var(--muted);
+            margin-top: 0.25rem;
+        }
+
+        /* Mobile Sidebar toggle button */
+        .sidebar-toggle {
+            display: none;
+        }
+
+        @media (max-width: 868px) {
+            body { overflow: auto; }
+            .app-container {
+                flex-direction: column-reverse;
+                height: auto;
+                overflow: visible;
+            }
+            .sidebar {
+                width: 100%;
+                height: auto;
+                border-right: none;
+                border-top: 1px solid var(--border);
+            }
+            .canvas-container {
+                height: 60vh;
+                position: relative;
+            }
+            .detail-panel {
+                width: calc(100% - 3rem);
+                left: 1.5rem;
+                bottom: 1.5rem;
+            }
+            .nav-links {
+                max-width: 60%;
+            }
         }
     </style>
 </head>
 <body>
-    <main class="page">
-        <nav class="top-nav" aria-label="Primary">
+    <!-- Top Navbar -->
+    <nav class="top-navbar">
+        <a href="/IndologyScholars/" class="navbar-brand">
+            <svg style="width:20px;height:20px;fill:var(--cyan)" viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A2,2 0 0,1 14,6A2,2 0 0,1 12,8A2,2 0 0,1 10,6A2,2 0 0,1 12,4M12,18c-2.67,0 -8,1.34 -8,4v-2c0,-2.66 5.33,-4 8,-4c2.67,0 8,1.34 8,4v2C20,19.34 14.67,18 12,18Z"/></svg>
+            <span>IndologyScholars</span>
+        </a>
+        <div class="nav-links">
             <a href="/IndologyScholars/">Панель</a>
             <a href="/IndologyScholars/scholars/">Исследователи</a>
             <a href="/IndologyScholars/conferences/">Конференции</a>
             <a href="/IndologyScholars/themes/">Рубрики</a>
             <a href="/IndologyScholars/meso/">Мезоуровни</a>
-            <a href="/IndologyScholars/cities/">Города</a>
-            <a href="/IndologyScholars/institutions/">Институции</a>
             <a href="/IndologyScholars/search.html">Поиск</a>
+            <a href="/IndologyScholars/networks.html" class="active">Сеть</a>
             <a href="/IndologyScholars/download-data.html">Данные</a>
-            <a href="/IndologyScholars/data-quality.html">Качество</a>
-            <a href="/IndologyScholars/en.html">English</a>
-            <a href="/IndologyScholars/how-to-cite.html">Цитирование</a>
-            <a href="/IndologyScholars/metrics-guide.html">Метрики</a>
-        </nav>
+        </div>
+    </nav>
 
-        <header>
-            <h1>Network Exports</h1>
-            <p>Typed network files for studying participation, affiliation, thematic proximity, and conference co-presence.</p>
-        </header>
-        <section class="grid">
-            <article class="card">
-                <strong>Nodes</strong>
-                <div class="meta"><a href="analytics_output/network_nodes.csv">analytics_output/network_nodes.csv</a></div>
-                <p>Contains person, event, organization, and theme nodes. The `weight` column counts observed participation or assignment frequency within the generated archive.</p>
-            </article>
-            <article class="card">
-                <strong>Edges</strong>
-                <div class="meta"><a href="analytics_output/network_edges.csv">analytics_output/network_edges.csv</a></div>
-                <p>Contains weighted relations with `source`, `target`, `edge_type`, `year`, `series`, and `weight` columns.</p>
-            </article>
-        </section>
-        <h2>Edge Types</h2>
-        <section class="list">
-            <article class="card">
-                <strong>person_event</strong>
-                <p>A scholar is attached to a conference event through one or more presentation records.</p>
-            </article>
-            <article class="card">
-                <strong>person_organization</strong>
-                <p>A scholar is linked to a normalized affiliation observed in a conference program. This is historical participation metadata, not a permanent employment claim.</p>
-            </article>
-            <article class="card">
-                <strong>person_theme</strong>
-                <p>A scholar is linked to a broad generated theme inferred from presentation titles.</p>
-            </article>
-            <article class="card">
-                <strong>organization_theme</strong>
-                <p>A normalized organization is linked to a broad theme through presentations by affiliated scholars. This summarizes observed conference-program context, not the institution's complete scholarly profile.</p>
-            </article>
-            <article class="card">
-                <strong>person_person_copresentation</strong>
-                <p>Two scholars appear on the same presentation record.</p>
-            </article>
-            <article class="card">
-                <strong>person_person_same_session</strong>
-                <p>Two scholars appear in the same conference session. This is a co-presence relation and should not be interpreted as collaboration by itself.</p>
-            </article>
-        </section>
-        <h2>Interpretation Notes</h2>
-        <section class="list">
-            <article class="card">
-                <strong>Participation Network</strong>
-                <p>The export models observed conference participation. It is not a citation network, publication network, institutional ranking, or comprehensive institutional history.</p>
-            </article>
-            <article class="card">
-                <strong>Stable Identifiers</strong>
-                <p>Edges use stable local IDs from the current database build. Presentation-level stability can be audited through <a href="analytics_output/presentation_id_manifest.csv">presentation_id_manifest.csv</a>.</p>
-            </article>
-            <article class="card">
-                <strong>Reusable Package</strong>
-                <p>The network CSV schemas are declared in <a href="datapackage.json">datapackage.json</a> and listed on the <a href="download-data.html">download page</a>.</p>
-            </article>
-        </section>
+    <!-- Main Container -->
+    <div class="app-container">
+        <!-- Sidebar Controls -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h1>Академическая сеть</h1>
+                <p>Интерактивная карта коллабораций, институциональной принадлежности и тематических связей индологов.</p>
+            </div>
+            
+            <div class="sidebar-scrollable">
+                <!-- Search Scholar -->
+                <div class="search-container">
+                    <svg class="search-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                    <input type="text" id="search-input" class="search-input" placeholder="Поиск по имени ученого...">
+                </div>
 
-        <div class="footer">© 2026 Russian Indological Research Archive. Сгенерировано из нормализованного архива конференций.</div>
-    </main>
+                <!-- Presets -->
+                <div>
+                    <h3 class="section-title">Быстрые режимы</h3>
+                    <div class="preset-grid">
+                        <button class="btn-preset active" data-preset="collab">Коллаборации</button>
+                        <button class="btn-preset" data-preset="ecosystem">Экосистема</button>
+                        <button class="btn-preset" data-preset="events">Участие</button>
+                        <button class="btn-preset" data-preset="copresence">Соприсутствие</button>
+                    </div>
+                </div>
+
+                <!-- Node Filters -->
+                <div>
+                    <h3 class="section-title">Типы узлов <span class="count" id="node-count">0 активных</span></h3>
+                    <div class="filter-list">
+                        <label class="toggle-label">
+                            <span class="toggle-wrapper">
+                                <span class="toggle-color-pill" style="background-color: var(--cyan)"></span>
+                                Ученые (Scholars)
+                            </span>
+                            <span class="switch">
+                                <input type="checkbox" id="node-person" checked>
+                                <span class="slider"></span>
+                            </span>
+                        </label>
+                        <label class="toggle-label">
+                            <span class="toggle-wrapper">
+                                <span class="toggle-color-pill" style="background-color: var(--orange)"></span>
+                                События (Events)
+                            </span>
+                            <span class="switch">
+                                <input type="checkbox" id="node-event" checked>
+                                <span class="slider"></span>
+                            </span>
+                        </label>
+                        <label class="toggle-label">
+                            <span class="toggle-wrapper">
+                                <span class="toggle-color-pill" style="background-color: var(--accent)"></span>
+                                Институции (Orgs)
+                            </span>
+                            <span class="switch">
+                                <input type="checkbox" id="node-organization" checked>
+                                <span class="slider"></span>
+                            </span>
+                        </label>
+                        <label class="toggle-label">
+                            <span class="toggle-wrapper">
+                                <span class="toggle-color-pill" style="background-color: var(--accent2)"></span>
+                                Рубрики (Themes)
+                            </span>
+                            <span class="switch">
+                                <input type="checkbox" id="node-theme" checked>
+                                <span class="slider"></span>
+                            </span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Edge Filters -->
+                <div>
+                    <h3 class="section-title">Типы связей <span class="count" id="edge-count">0 активных</span></h3>
+                    <div class="filter-list">
+                        <label class="toggle-label" title="Совместные доклады соавторов">
+                            <span>Совместные доклады</span>
+                            <span class="switch">
+                                <input type="checkbox" id="edge-person_person_copresentation" checked>
+                                <span class="slider"></span>
+                            </span>
+                        </label>
+                        <label class="toggle-label" title="Связь ученого с конференцией">
+                            <span>Участие в чтениях</span>
+                            <span class="switch">
+                                <input type="checkbox" id="edge-person_event" checked>
+                                <span class="slider"></span>
+                            </span>
+                        </label>
+                        <label class="toggle-label" title="Связь ученого с аффилиацией">
+                            <span>Аффилиации ученых</span>
+                            <span class="switch">
+                                <input type="checkbox" id="edge-person_organization" checked>
+                                <span class="slider"></span>
+                            </span>
+                        </label>
+                        <label class="toggle-label" title="Связь ученого с научной рубрикой">
+                            <span>Темы докладов</span>
+                            <span class="switch">
+                                <input type="checkbox" id="edge-person_theme" checked>
+                                <span class="slider"></span>
+                            </span>
+                        </label>
+                        <label class="toggle-label" title="Связь институции с рубрикой докладов">
+                            <span>Тематика институций</span>
+                            <span class="switch">
+                                <input type="checkbox" id="edge-organization_theme">
+                                <span class="slider"></span>
+                            </span>
+                        </label>
+                        <label class="toggle-label" title="Нахождение ученых в одной секции (очень высокая плотность!)">
+                            <span>Соприсутствие в секции</span>
+                            <span class="switch">
+                                <input type="checkbox" id="edge-person_person_same_session">
+                                <span class="slider"></span>
+                            </span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Physics Settings -->
+                <div>
+                    <h3 class="section-title">Физика графа</h3>
+                    <div class="filter-list">
+                        <label class="toggle-label">
+                            <span>Включить симуляцию</span>
+                            <span class="switch">
+                                <input type="checkbox" id="toggle-physics" checked>
+                                <span class="slider"></span>
+                            </span>
+                        </label>
+                        <button class="btn-preset" id="btn-stop-physics" style="grid-column: span 2; margin-top: 0.5rem; width: 100%;">Заморозить раскладку</button>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Canvas Area -->
+        <main class="canvas-container">
+            <!-- Loading Overlay -->
+            <div class="loading-overlay" id="loading-overlay">
+                <div class="spinner"></div>
+                <div class="loading-text">Загрузка структуры архива...</div>
+                <div class="loading-progress" id="loading-progress">Чтение network_data.json...</div>
+            </div>
+
+            <!-- Vis Network Canvas -->
+            <div id="network-canvas"></div>
+
+            <!-- Legend Overlay -->
+            <div class="legend-overlay">
+                <div class="legend-item">
+                    <span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--cyan)"></span>
+                    <span>Ученый</span>
+                </div>
+                <div class="legend-item">
+                    <span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--orange)"></span>
+                    <span>Конференция</span>
+                </div>
+                <div class="legend-item">
+                    <span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--accent)"></span>
+                    <span>Институция</span>
+                </div>
+                <div class="legend-item">
+                    <span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--accent2)"></span>
+                    <span>Рубрика</span>
+                </div>
+            </div>
+
+            <!-- Graph Canvas Toolbar -->
+            <div class="canvas-toolbar">
+                <button class="toolbar-btn" id="btn-zoom-in" title="Приблизить">
+                    <svg viewBox="0 0 24 24"><path d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z"/></svg>
+                </button>
+                <button class="toolbar-btn" id="btn-zoom-out" title="Отдалить">
+                    <svg viewBox="0 0 24 24"><path d="M19,13H5V11H19V13Z"/></svg>
+                </button>
+                <button class="toolbar-btn" id="btn-fit" title="Показать весь граф">
+                    <svg viewBox="0 0 24 24"><path d="M4,4H8V6H6V8H4V4M20,4V8H18V6H16V4H20M4,20V16H6V18H8V20H4M20,20H16V18H18V16H20V20Z"/></svg>
+                </button>
+            </div>
+
+            <!-- Detail Box Overlay -->
+            <div class="detail-panel" id="detail-panel">
+                <div class="detail-header">
+                    <span class="detail-type person" id="detail-type-pill">Ученый</span>
+                    <button class="btn-close-detail" id="btn-close-detail" aria-label="Close details">×</button>
+                </div>
+                <h2 class="detail-title" id="detail-title">Имя исследователя</h2>
+                <div class="detail-body" id="detail-body">
+                    <!-- Dynamic details inside -->
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Frontend Interactive Script -->
+    <script>
+        // Store raw state
+        let rawNodes = [];
+        let rawEdges = [];
+        let networkInstance = null;
+        let nodesDataset = null;
+        let edgesDataset = null;
+
+        // Visual design configuration
+        const nodeStyles = {
+            person: {
+                color: { background: '#083344', border: '#06b6d4', highlight: { background: '#0e7490', border: '#22d3ee' }, hover: { background: '#0891b2', border: '#22d3ee' } },
+                shape: 'dot',
+                font: { color: '#f3f4f6', face: 'Inter', size: 12, strokeWidth: 2, strokeColor: '#030712' }
+            },
+            event: {
+                color: { background: '#431407', border: '#f97316', highlight: { background: '#7c2d12', border: '#fdba74' }, hover: { background: '#9a3412', border: '#fdba74' } },
+                shape: 'diamond',
+                font: { color: '#f3f4f6', face: 'Inter', size: 13, strokeWidth: 2, strokeColor: '#030712', bold: true }
+            },
+            organization: {
+                color: { background: '#2e1065', border: '#8b5cf6', highlight: { background: '#4c1d95', border: '#c4b5fd' }, hover: { background: '#5b21b6', border: '#c4b5fd' } },
+                shape: 'dot',
+                font: { color: '#e5e7eb', face: 'Inter', size: 11, strokeWidth: 2, strokeColor: '#030712' }
+            },
+            theme: {
+                color: { background: '#50072b', border: '#ec4899', highlight: { background: '#831843', border: '#fbcfe8' }, hover: { background: '#9d174d', border: '#fbcfe8' } },
+                shape: 'square',
+                font: { color: '#e5e7eb', face: 'Inter', size: 11, strokeWidth: 2, strokeColor: '#030712' }
+            }
+        };
+
+        const edgeStyles = {
+            person_person_copresentation: { color: { color: '#22d3ee', opacity: 0.7, highlight: '#22d3ee' }, width: 2.5, dashes: false },
+            person_event: { color: { color: '#3b82f6', opacity: 0.4, highlight: '#3b82f6' }, width: 1.2, dashes: false },
+            person_organization: { color: { color: '#a78bfa', opacity: 0.35, highlight: '#a78bfa' }, width: 1, dashes: [3, 3] },
+            person_theme: { color: { color: '#f472b6', opacity: 0.35, highlight: '#f472b6' }, width: 1, dashes: [1, 3] },
+            organization_theme: { color: { color: '#e879f9', opacity: 0.25, highlight: '#e879f9' }, width: 1, dashes: [4, 4] },
+            person_person_same_session: { color: { color: '#4b5563', opacity: 0.08, highlight: '#9ca3af' }, width: 0.6, dashes: false }
+        };
+
+        // Presets mapping
+        const presets = {
+            collab: {
+                nodes: { person: true, event: false, organization: false, theme: false },
+                edges: { person_person_copresentation: true, person_event: false, person_organization: false, person_theme: false, organization_theme: false, person_person_same_session: false }
+            },
+            ecosystem: {
+                nodes: { person: true, event: true, organization: true, theme: true },
+                edges: { person_person_copresentation: true, person_event: true, person_organization: true, person_theme: true, organization_theme: false, person_person_same_session: false }
+            },
+            events: {
+                nodes: { person: true, event: true, organization: false, theme: false },
+                edges: { person_person_copresentation: false, person_event: true, person_organization: false, person_theme: false, organization_theme: false, person_person_same_session: false }
+            },
+            copresence: {
+                nodes: { person: true, event: false, organization: false, theme: false },
+                edges: { person_person_copresentation: true, person_event: false, person_organization: false, person_theme: false, organization_theme: false, person_person_same_session: true }
+            }
+        };
+
+        // Load data on startup
+        document.addEventListener('DOMContentLoaded', () => {
+            fetchData();
+            setupControls();
+        });
+
+        async function fetchData() {
+            const overlay = document.getElementById('loading-overlay');
+            const progress = document.getElementById('loading-progress');
+            
+            try {
+                // Fetch JSON data
+                progress.innerText = 'Запрос файла network_data.json...';
+                const response = await fetch('analytics_output/network_data.json');
+                if (!response.ok) {
+                    throw new Error('Relative path load failed, trying absolute path...');
+                }
+                const data = await response.json();
+                
+                rawNodes = data.nodes;
+                rawEdges = data.edges;
+                
+                progress.innerText = `Загружено: ${rawNodes.length} узлов, ${rawEdges.length} связей. Инициализация холста...`;
+                initializeNetwork();
+                
+            } catch (err) {
+                console.warn(err);
+                try {
+                    // Try fallback path
+                    progress.innerText = 'Попытка загрузки через абсолютный путь...';
+                    const response = await fetch('/IndologyScholars/analytics_output/network_data.json');
+                    const data = await response.json();
+                    
+                    rawNodes = data.nodes;
+                    rawEdges = data.edges;
+                    
+                    initializeNetwork();
+                } catch (fallbackErr) {
+                    progress.innerHTML = `<span style="color:var(--accent2)">Ошибка загрузки сетевых данных! Проверьте, собран ли файл JSON.</span>`;
+                    console.error('Fatal network load error:', fallbackErr);
+                }
+            }
+        }
+
+        // Initialize Vis Network
+        function initializeNetwork() {
+            const container = document.getElementById('network-canvas');
+            
+            // Setup datasets
+            nodesDataset = new vis.DataSet([]);
+            edgesDataset = new vis.DataSet([]);
+            
+            const data = {
+                nodes: nodesDataset,
+                edges: edgesDataset
+            };
+            
+            const options = {
+                nodes: {
+                    borderWidth: 1.5,
+                    shadow: { enabled: true, color: 'rgba(0,0,0,0.5)', size: 4, x: 2, y: 2 },
+                    scaling: {
+                        min: 8,
+                        max: 42
+                    }
+                },
+                edges: {
+                    smooth: {
+                        type: 'continuous',
+                        forceDirection: 'none',
+                        roundness: 0.5
+                    },
+                    shadow: { enabled: false }
+                },
+                interaction: {
+                    hover: true,
+                    tooltipDelay: 200,
+                    hideEdgesOnDrag: true,
+                    hideEdgesOnZoom: true,
+                    navigationButtons: false
+                },
+                physics: {
+                    solver: 'forceAtlas2Based',
+                    forceAtlas2Based: {
+                        gravitationalConstant: -180,
+                        centralGravity: 0.008,
+                        springLength: 140,
+                        springConstant: 0.07,
+                        damping: 0.4,
+                        avoidOverlap: 0.95
+                    },
+                    stabilization: {
+                        enabled: true,
+                        iterations: 150,
+                        updateInterval: 25
+                    }
+                }
+            };
+            
+            networkInstance = new vis.Network(container, data, options);
+            
+            // Events
+            networkInstance.on('stabilizationProgress', function(params) {
+                const percent = Math.round((params.iterations / params.total) * 100);
+                document.getElementById('loading-progress').innerText = `Раскладка графа: ${percent}% (итерация ${params.iterations}/${params.total})`;
+            });
+
+            networkInstance.on('stabilizationIterationsDone', function() {
+                document.getElementById('loading-overlay').style.opacity = 0;
+                setTimeout(() => {
+                    document.getElementById('loading-overlay').style.display = 'none';
+                }, 500);
+                
+                // Freeze physics after settling to save client battery/CPU
+                if (document.getElementById('toggle-physics').checked) {
+                    networkInstance.setOptions({ physics: { enabled: true } });
+                } else {
+                    networkInstance.setOptions({ physics: { enabled: false } });
+                }
+            });
+            
+            networkInstance.on('click', handleNodeClick);
+            
+            // Initial filter run (apply collab preset)
+            applyPreset('collab');
+        }
+
+        // Apply filters dynamically
+        function updateFilters() {
+            if (!nodesDataset) return;
+            
+            // Get current input values
+            const searchQuery = document.getElementById('search-input').value.toLowerCase().trim();
+            
+            const nodeToggles = {
+                person: document.getElementById('node-person').checked,
+                event: document.getElementById('node-event').checked,
+                organization: document.getElementById('node-organization').checked,
+                theme: document.getElementById('node-theme').checked
+            };
+            
+            const edgeToggles = {
+                person_person_copresentation: document.getElementById('edge-person_person_copresentation').checked,
+                person_event: document.getElementById('edge-person_event').checked,
+                person_organization: document.getElementById('edge-person_organization').checked,
+                person_theme: document.getElementById('edge-person_theme').checked,
+                organization_theme: document.getElementById('edge-organization_theme').checked,
+                person_person_same_session: document.getElementById('edge-person_person_same_session').checked
+            };
+            
+            // 1. Filter Nodes
+            const activeNodes = [];
+            const activeNodeIds = new Set();
+            
+            rawNodes.forEach(node => {
+                const matchesType = nodeToggles[node.type];
+                
+                // If searching, enforce search criteria on label
+                let matchesSearch = true;
+                if (searchQuery && node.type === 'person') {
+                    matchesSearch = node.label.toLowerCase().includes(searchQuery);
+                } else if (searchQuery) {
+                    matchesSearch = false; // Fade out other types when searching for scholars
+                }
+                
+                if (matchesType && matchesSearch) {
+                    // Enrich node with style mapping
+                    const style = nodeStyles[node.type];
+                    
+                    // Dynamic scaling based on node weight
+                    let scaleSize = 10;
+                    if (node.type === 'person') {
+                        scaleSize = 10 + Math.sqrt(node.weight) * 4;
+                    } else if (node.type === 'event') {
+                        scaleSize = 12 + Math.sqrt(node.weight) * 3;
+                    } else if (node.type === 'organization') {
+                        scaleSize = 10 + Math.sqrt(node.weight) * 1.5;
+                    } else if (node.type === 'theme') {
+                        scaleSize = 12 + Math.sqrt(node.weight) * 1.2;
+                    }
+                    
+                    activeNodes.push({
+                        id: node.id,
+                        label: node.label,
+                        type: node.type,
+                        value: node.weight,
+                        size: scaleSize,
+                        color: style.color,
+                        shape: style.shape,
+                        font: style.font,
+                        title: `${node.label} (${node.type === 'person' ? 'Докладов' : 'Частота'}: ${node.weight})`
+                    });
+                    
+                    activeNodeIds.add(node.id);
+                }
+            });
+            
+            // 2. Filter Edges
+            const activeEdges = [];
+            rawEdges.forEach(edge => {
+                const matchesType = edgeToggles[edge.type];
+                const sourceActive = activeNodeIds.has(edge.source);
+                const targetActive = activeNodeIds.has(edge.target);
+                
+                if (matchesType && sourceActive && targetActive) {
+                    const style = edgeStyles[edge.type];
+                    activeEdges.push({
+                        from: edge.source,
+                        to: edge.target,
+                        type: edge.type,
+                        value: edge.weight,
+                        color: style.color,
+                        width: style.width,
+                        dashes: style.dashes,
+                        hoverWidth: style.width + 1.5,
+                        selectionWidth: style.width + 2
+                    });
+                }
+            });
+            
+            // 3. Update Dataset
+            nodesDataset.clear();
+            nodesDataset.add(activeNodes);
+            
+            edgesDataset.clear();
+            edgesDataset.add(activeEdges);
+            
+            // Update counts
+            document.getElementById('node-count').innerText = `${activeNodes.length} активных`;
+            document.getElementById('edge-count').innerText = `${activeEdges.length} активных`;
+        }
+
+        // Apply visual layout presets
+        function applyPreset(presetKey) {
+            const preset = presets[presetKey];
+            if (!preset) return;
+            
+            // Update Toggles in UI
+            Object.keys(preset.nodes).forEach(key => {
+                const el = document.getElementById(`node-${key}`);
+                if (el) el.checked = preset.nodes[key];
+            });
+            
+            Object.keys(preset.edges).forEach(key => {
+                const el = document.getElementById(`edge-${key}`);
+                if (el) el.checked = preset.edges[key];
+            });
+            
+            // Highlight active button
+            document.querySelectorAll('.btn-preset[data-preset]').forEach(btn => {
+                if (btn.getAttribute('data-preset') === presetKey) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+            
+            updateFilters();
+            
+            // Let the graph fit to display everything nicely
+            setTimeout(() => {
+                if (networkInstance) {
+                    networkInstance.fit({ animation: { duration: 1000, easingFunction: 'easeInOutQuad' } });
+                }
+            }, 100);
+        }
+
+        // Handle Click Events
+        function handleNodeClick(params) {
+            const detailPanel = document.getElementById('detail-panel');
+            const titleEl = document.getElementById('detail-title');
+            const typePill = document.getElementById('detail-type-pill');
+            const bodyEl = document.getElementById('detail-body');
+            
+            if (params.nodes.length > 0) {
+                const nodeId = params.nodes[0];
+                const node = nodesDataset.get(nodeId);
+                
+                if (!node) return;
+                
+                // Show Panel
+                detailPanel.classList.add('active');
+                titleEl.innerText = node.label;
+                
+                // Setup type pill
+                typePill.className = `detail-type ${node.type}`;
+                const typeLabels = { person: 'Ученый', event: 'Событие', organization: 'Институция', theme: 'Научная рубрика' };
+                typePill.innerText = typeLabels[node.type] || node.type;
+                
+                // Find all connected nodes
+                const connectedEdges = edgesDataset.get({
+                    filter: function(edge) {
+                        return edge.from === nodeId || edge.to === nodeId;
+                    }
+                });
+                
+                // Group connections
+                let connListHtml = '';
+                
+                if (node.type === 'person') {
+                    const collabPeople = [];
+                    const orgs = [];
+                    const themes = [];
+                    const events = [];
+                    
+                    connectedEdges.forEach(edge => {
+                        const targetId = edge.from === nodeId ? edge.to : edge.from;
+                        const targetNode = nodesDataset.get(targetId);
+                        
+                        if (targetNode) {
+                            if (edge.type === 'person_person_copresentation') {
+                                collabPeople.push(targetNode.label);
+                            } else if (edge.type === 'person_organization') {
+                                orgs.push(targetNode.label);
+                            } else if (edge.type === 'person_theme') {
+                                themes.push(targetNode.label);
+                            } else if (edge.type === 'person_event') {
+                                events.push(targetNode.label);
+                            }
+                        }
+                    });
+                    
+                    connListHtml = `
+                        <div class="detail-stat"><span>Докладов всего:</span><span>${node.value}</span></div>
+                        ${orgs.length ? `<div class="detail-stat"><span>Институция:</span><span>${orgs[0]}</span></div>` : ''}
+                        
+                        <h4 style="margin:0.75rem 0 0.25rem; font-size:0.82rem; text-transform:uppercase; color:var(--cyan)">Выступления (${events.length}):</h4>
+                        <div style="font-size:0.8rem; max-height:80px; overflow-y:auto; padding-right:0.25rem; color:var(--muted)">
+                            ${events.length ? events.join(', ') : 'нет данных'}
+                        </div>
+
+                        <h4 style="margin:0.75rem 0 0.25rem; font-size:0.82rem; text-transform:uppercase; color:var(--accent2)">Темы исследований:</h4>
+                        <div style="font-size:0.8rem; color:var(--muted)">
+                            ${themes.length ? themes.join(', ') : 'не указаны'}
+                        </div>
+
+                        <h4 style="margin:0.75rem 0 0.25rem; font-size:0.82rem; text-transform:uppercase; color:var(--orange)">Соавторы в архиве (${collabPeople.length}):</h4>
+                        <div style="font-size:0.8rem; max-height:80px; overflow-y:auto; padding-right:0.25rem; color:var(--muted)">
+                            ${collabPeople.length ? collabPeople.join(', ') : 'нет соавторов докладов'}
+                        </div>
+                        
+                        <div style="margin-top:1rem; text-align:center;">
+                            <a href="/IndologyScholars/scholars/${node.id.replace('person:', '')}.html" class="btn-preset" style="display:inline-block; padding: 0.4rem 0.8rem; font-size:0.8rem;" target="_blank">Открыть профиль ↗</a>
+                        </div>
+                    `;
+                } else if (node.type === 'event') {
+                    const attendees = [];
+                    connectedEdges.forEach(edge => {
+                        const targetId = edge.from === nodeId ? edge.to : edge.from;
+                        const targetNode = nodesDataset.get(targetId);
+                        if (targetNode && edge.type === 'person_event') {
+                            attendees.push(targetNode.label);
+                        }
+                    });
+                    
+                    connListHtml = `
+                        <div class="detail-stat"><span>Участников докладов:</span><span>${node.value}</span></div>
+                        <h4 style="margin:0.75rem 0 0.25rem; font-size:0.82rem; text-transform:uppercase; color:var(--cyan)">Список докладчиков (${attendees.length}):</h4>
+                        <div style="font-size:0.8rem; max-height:160px; overflow-y:auto; padding-right:0.25rem; color:var(--muted)">
+                            ${attendees.join(', ')}
+                        </div>
+                    `;
+                } else if (node.type === 'organization') {
+                    const scholars = [];
+                    connectedEdges.forEach(edge => {
+                        const targetId = edge.from === nodeId ? edge.to : edge.from;
+                        const targetNode = nodesDataset.get(targetId);
+                        if (targetNode && edge.type === 'person_organization') {
+                            scholars.push(targetNode.label);
+                        }
+                    });
+                    
+                    connListHtml = `
+                        <div class="detail-stat"><span>Интегрированных ученых:</span><span>${node.value}</span></div>
+                        <h4 style="margin:0.75rem 0 0.25rem; font-size:0.82rem; text-transform:uppercase; color:var(--cyan)">Связанные ученые (${scholars.length}):</h4>
+                        <div style="font-size:0.8rem; max-height:160px; overflow-y:auto; padding-right:0.25rem; color:var(--muted)">
+                            ${scholars.join(', ')}
+                        </div>
+                    `;
+                } else if (node.type === 'theme') {
+                    const scholars = [];
+                    connectedEdges.forEach(edge => {
+                        const targetId = edge.from === nodeId ? edge.to : edge.from;
+                        const targetNode = nodesDataset.get(targetId);
+                        if (targetNode && edge.type === 'person_theme') {
+                            scholars.push(targetNode.label);
+                        }
+                    });
+                    
+                    connListHtml = `
+                        <div class="detail-stat"><span>Связанных докладов:</span><span>${node.value}</span></div>
+                        <h4 style="margin:0.75rem 0 0.25rem; font-size:0.82rem; text-transform:uppercase; color:var(--accent2)">Ученые в рубрике (${scholars.length}):</h4>
+                        <div style="font-size:0.8rem; max-height:160px; overflow-y:auto; padding-right:0.25rem; color:var(--muted)">
+                            ${scholars.join(', ')}
+                        </div>
+                    `;
+                }
+                
+                bodyEl.innerHTML = connListHtml;
+                
+            } else {
+                // Hide panel if clicking on canvas background
+                detailPanel.classList.remove('active');
+            }
+        }
+
+        // Setup DOM event listeners
+        function setupControls() {
+            // Preset clicks
+            document.querySelectorAll('.btn-preset[data-preset]').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const key = e.target.getAttribute('data-preset');
+                    applyPreset(key);
+                });
+            });
+            
+            // Filter switch toggles
+            const inputs = document.querySelectorAll('.filter-list input[type="checkbox"]');
+            inputs.forEach(input => {
+                input.addEventListener('change', updateFilters);
+            });
+            
+            // Search field keyup
+            const search = document.getElementById('search-input');
+            search.addEventListener('input', updateFilters);
+            
+            // Physics toggling
+            const physicsToggle = document.getElementById('toggle-physics');
+            physicsToggle.addEventListener('change', (e) => {
+                if (networkInstance) {
+                    networkInstance.setOptions({ physics: { enabled: e.target.checked } });
+                }
+            });
+            
+            const stopPhysicsBtn = document.getElementById('btn-stop-physics');
+            stopPhysicsBtn.addEventListener('click', () => {
+                if (networkInstance) {
+                    networkInstance.setOptions({ physics: { enabled: false } });
+                    physicsToggle.checked = false;
+                }
+            });
+            
+            // Close details button
+            document.getElementById('btn-close-detail').addEventListener('click', () => {
+                document.getElementById('detail-panel').classList.remove('active');
+            });
+            
+            // Toolbar actions
+            document.getElementById('btn-zoom-in').addEventListener('click', () => {
+                if (networkInstance) {
+                    const scale = networkInstance.getScale();
+                    networkInstance.moveTo({ scale: scale * 1.25, animation: true });
+                }
+            });
+            
+            document.getElementById('btn-zoom-out').addEventListener('click', () => {
+                if (networkInstance) {
+                    const scale = networkInstance.getScale();
+                    networkInstance.moveTo({ scale: scale * 0.8, animation: true });
+                }
+            });
+            
+            document.getElementById('btn-fit').addEventListener('click', () => {
+                if (networkInstance) {
+                    networkInstance.fit({ animation: { duration: 800, easingFunction: 'easeInOutQuad' } });
+                }
+            });
+        }
+    </script>
 </body>
 </html>

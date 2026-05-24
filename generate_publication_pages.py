@@ -2536,70 +2536,7 @@ def generate_publication_docs(data):
         </section>
             """,
         ),
-        "networks.html": (
-            "Network Exports",
-            "How to interpret the participation network CSV exports in the Indology Scholars archive.",
-            """
-        <header>
-            <h1>Network Exports</h1>
-            <p>Typed network files for studying participation, affiliation, thematic proximity, and conference co-presence.</p>
-        </header>
-        <section class="grid">
-            <article class="card">
-                <strong>Nodes</strong>
-                <div class="meta"><a href="analytics_output/network_nodes.csv">analytics_output/network_nodes.csv</a></div>
-                <p>Contains person, event, organization, and theme nodes. The `weight` column counts observed participation or assignment frequency within the generated archive.</p>
-            </article>
-            <article class="card">
-                <strong>Edges</strong>
-                <div class="meta"><a href="analytics_output/network_edges.csv">analytics_output/network_edges.csv</a></div>
-                <p>Contains weighted relations with `source`, `target`, `edge_type`, `year`, `series`, and `weight` columns.</p>
-            </article>
-        </section>
-        <h2>Edge Types</h2>
-        <section class="list">
-            <article class="card">
-                <strong>person_event</strong>
-                <p>A scholar is attached to a conference event through one or more presentation records.</p>
-            </article>
-            <article class="card">
-                <strong>person_organization</strong>
-                <p>A scholar is linked to a normalized affiliation observed in a conference program. This is historical participation metadata, not a permanent employment claim.</p>
-            </article>
-            <article class="card">
-                <strong>person_theme</strong>
-                <p>A scholar is linked to a broad generated theme inferred from presentation titles.</p>
-            </article>
-            <article class="card">
-                <strong>organization_theme</strong>
-                <p>A normalized organization is linked to a broad theme through presentations by affiliated scholars. This summarizes observed conference-program context, not the institution's complete scholarly profile.</p>
-            </article>
-            <article class="card">
-                <strong>person_person_copresentation</strong>
-                <p>Two scholars appear on the same presentation record.</p>
-            </article>
-            <article class="card">
-                <strong>person_person_same_session</strong>
-                <p>Two scholars appear in the same conference session. This is a co-presence relation and should not be interpreted as collaboration by itself.</p>
-            </article>
-        </section>
-        <h2>Interpretation Notes</h2>
-        <section class="list">
-            <article class="card">
-                <strong>Participation Network</strong>
-                <p>The export models observed conference participation. It is not a citation network, publication network, institutional ranking, or comprehensive institutional history.</p>
-            </article>
-            <article class="card">
-                <strong>Stable Identifiers</strong>
-                <p>Edges use stable local IDs from the current database build. Presentation-level stability can be audited through <a href="analytics_output/presentation_id_manifest.csv">presentation_id_manifest.csv</a>.</p>
-            </article>
-            <article class="card">
-                <strong>Reusable Package</strong>
-                <p>The network CSV schemas are declared in <a href="datapackage.json">datapackage.json</a> and listed on the <a href="download-data.html">download page</a>.</p>
-            </article>
-        </section>
-            """,
-        ),
+
     }
     for path, (title, desc, body) in docs.items():
         write_text(
@@ -2704,9 +2641,10 @@ def patch_index_stats(data):
     summary = data.get("summary", {})
     total_scholars = summary.get("total_scholars", 0)
     total_presentations = summary.get("total_presentations", 0)
+    unique_presentations = summary.get("unique_presentations", total_presentations)
     start_year = summary.get("start_year", 2004)
     end_year = summary.get("end_year", 2025)
-    years_count = end_year - start_year + 1
+    years_count = summary.get("years_covered") or (end_year - start_year + 1)
     overlap = summary.get("overlap_scholars", 0)
     youtube_total = youtube_video_total()
 
@@ -2734,9 +2672,40 @@ def patch_index_stats(data):
     if youtube_total:
         html = replace_stat(html, "stat-youtube-count", youtube_total)
 
+    talks_ru_desc = f"{total_presentations} участий в {unique_presentations} уникальных докладах"
+    talks_en_desc = f"{total_presentations} participations across {unique_presentations} unique talks"
+    html = re.sub(
+        r'(<div class="stat-label" id="stat-talks-label">)[^<]+(</div>)',
+        r'\g<1>Авторские участия\g<2>',
+        html,
+        count=1,
+    )
+    html = re.sub(
+        r'(<div class="stat-desc" id="stat-talks-desc">)[^<]+(</div>)',
+        rf'\g<1>{talks_ru_desc}\g<2>',
+        html,
+        count=1,
+    )
+    html = html.replace('statTalks: "Доклады и презентации"', 'statTalks: "Авторские участия"')
+    html = html.replace('statTalksDesc: "Извлечено из кэша программ конференций"', f'statTalksDesc: "{talks_ru_desc}"')
+    html = html.replace('statTalks: "Presentations & Talks"', 'statTalks: "Author Participations"')
+    html = html.replace('statTalksDesc: "Parsed from program HTML caches"', f'statTalksDesc: "{talks_en_desc}"')
+
     html = re.sub(
         r'(<div class="stat-desc" id="stat-years-desc">)Период с \d+ по \d+ годы(</div>)',
         rf'\g<1>Период с {start_year} по {end_year} годы\g<2>',
+        html,
+        count=1,
+    )
+    html = re.sub(
+        r'(statYearsDesc:\s*")Период с \d+ по \d+ годы(")',
+        rf'\g<1>Период с {start_year} по {end_year} годы\g<2>',
+        html,
+        count=1,
+    )
+    html = re.sub(
+        r'(statYearsDesc:\s*")Covering \d+ through \d+(")',
+        rf'\g<1>Covering {start_year} through {end_year}\g<2>',
         html,
         count=1,
     )

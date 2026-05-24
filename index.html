@@ -829,11 +829,11 @@
             </div>
             <div class="stat-card" id="card-talks">
                 <div class="stat-num gradient-text" id="stat-talks-count">899</div>
-                <div class="stat-label" id="stat-talks-label">Доклады и презентации</div>
-                <div class="stat-desc" id="stat-talks-desc">Извлечено из кэша программ конференций</div>
+                <div class="stat-label" id="stat-talks-label">Авторские участия</div>
+                <div class="stat-desc" id="stat-talks-desc">899 участий в 895 уникальных докладах</div>
             </div>
             <div class="stat-card" id="card-years">
-                <div class="stat-num gradient-text" id="stat-years-count">23</div>
+                <div class="stat-num gradient-text" id="stat-years-count">20</div>
                 <div class="stat-label" id="stat-years-label">Года исследований</div>
                 <div class="stat-desc" id="stat-years-desc">Период с 2004 по 2026 годы</div>
             </div>
@@ -987,13 +987,18 @@
                 <div class="chart-card" style="grid-column: span 2;">
                     <h3 class="chart-title" id="chart-network-title">Интерактивный граф научных связей (Коллаборации по секциям)</h3>
                     <div id="chart-network-container" style="height: 480px; position: relative; background: rgba(10, 14, 26, 0.45); border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.05);">
-                        <canvas id="canvas-network" style="width: 100%; height: 100%; display: block; cursor: grab;"></canvas>
-                        <div id="network-tooltip" style="position: absolute; display: none; background: rgba(17, 24, 44, 0.95); border: 1px solid rgba(139, 92, 246, 0.5); padding: 0.75rem 1rem; border-radius: 8px; font-size: 0.85rem; color: #ffffff; pointer-events: none; backdrop-filter: blur(10px); box-shadow: 0 10px 25px rgba(0,0,0,0.3); z-index: 100; transition: opacity 0.15s ease;"></div>
+                        <div id="canvas-network" style="width: 100%; height: 100%;"></div>
                         <!-- Control buttons for network -->
                         <div style="position: absolute; bottom: 1rem; right: 1rem; display: flex; gap: 0.5rem; z-index: 99;">
                             <button onclick="resetNetworkPhysics()" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.1); color: #ffffff; padding: 0.4rem 0.8rem; border-radius: 4px; font-size: 0.8rem; cursor: pointer; backdrop-filter: blur(5px); transition: 0.2s;" id="net-reset-btn">Сбросить</button>
                             <button onclick="toggleNetworkPhysics()" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.1); color: #ffffff; padding: 0.4rem 0.8rem; border-radius: 4px; font-size: 0.8rem; cursor: pointer; backdrop-filter: blur(5px); transition: 0.2s;" id="net-pause-btn">Пауза</button>
                         </div>
+                    </div>
+                    <div style="margin-top: 1rem; padding: 0.75rem 1rem; background: rgba(139, 92, 246, 0.05); border-left: 3px solid var(--accent-primary); border-radius: 0 8px 8px 0; font-size: 0.9rem; color: var(--text-secondary); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+                        <span id="network-teaser-text">💡 Полномасштабная сеть содержит все институции, секции, темы и сплошные перекрестные связи с поиском и детальной фильтрацией.</span>
+                        <a href="networks.html" style="color: var(--accent-primary); font-weight: 600; text-decoration: none; border-bottom: 1.5px solid transparent; transition: 0.2s; white-space: nowrap;" onmouseover="this.style.borderColor='var(--accent-primary)'" onmouseout="this.style.borderColor='transparent'">
+                            <span id="network-teaser-link">Открыть полную сеть ↗</span>
+                        </a>
                     </div>
                 </div>
 
@@ -1206,10 +1211,10 @@ CREATE TABLE presentation_person (
                 subHeading: "Интерактивный архив более чем 20-летней истории Зографских чтений (2004–2026 гг.) и Рериховских чтений (2007–2025 гг.) в России.",
                 statScholars: "Уникальные ученые",
                 statScholarsDesc: "Дедуплицированные индологи и докладчики",
-                statTalks: "Доклады и презентации",
-                statTalksDesc: "Извлечено из кэша программ конференций",
+                statTalks: "Авторские участия",
+                statTalksDesc: "899 участий в 895 уникальных докладах",
                 statYears: "Года исследований",
-                statYearsDesc: "Период с 2004 по 2025 годы",
+                statYearsDesc: "Период с 2004 по 2026 годы",
                 statOverlap: "Ядро индологов",
                 statOverlapDesc: "Ученые, участвовавшие в обеих конференциях",
                 tabScholars: "Каталог востоковедов",
@@ -1277,6 +1282,8 @@ CREATE TABLE presentation_person (
                 searchTalksPlaceholder: "Поиск в названиях докладов...",
                 chartInstTitle: "Рейтинг научно-исследовательских центров",
                 chartWordsTitle: "Тематическое облако тегов (N-Gram Analysis)",
+                networkTeaserText: "💡 Полномасштабная сеть содержит все институции, секции, темы и сплошные перекрестные связи с поиском и детальной фильтрацией.",
+                networkTeaserLink: "Открыть полную сеть ↗",
                 thAffil: "Аффилиация",
                 thScholars: "Ученые",
                 thTalks: "Доклады"
@@ -1286,10 +1293,10 @@ CREATE TABLE presentation_person (
                 subHeading: "Interactive archive of last 20+ years of the Zograf Readings (2004–2026) and Roerich Readings (2007–2025) from Russia.",
                 statScholars: "Unique Scholars",
                 statScholarsDesc: "Deduplicated indologists & speakers",
-                statTalks: "Presentations & Talks",
-                statTalksDesc: "Parsed from program HTML caches",
+                statTalks: "Author Participations",
+                statTalksDesc: "899 participations across 895 unique talks",
                 statYears: "Historical Years",
-                statYearsDesc: "Covering 2004 through 2025",
+                statYearsDesc: "Covering 2004 through 2026",
                 statOverlap: "Core Overlap Cohort",
                 statOverlapDesc: "Scholars active in both forums",
                 tabScholars: "Scholars Directory",
@@ -1357,6 +1364,8 @@ CREATE TABLE presentation_person (
                 netResumeBtn: "Resume",
                 chartInstTitle: "Academic and Research Institutions Leaderboard",
                 chartWordsTitle: "Thematic Tag Cloud (N-Gram Analysis)",
+                networkTeaserText: "💡 The full-scale network contains all institutions, sessions, themes, and cross-copresence relations with search and detailed filtering.",
+                networkTeaserLink: "Open Full Network ↗",
                 thAffil: "Affiliation",
                 thScholars: "Scholars",
                 thTalks: "Talks"
@@ -1458,6 +1467,10 @@ CREATE TABLE presentation_person (
                 document.getElementById('net-pause-btn').textContent = isNetPhysicsRunning ? t.netPauseBtn : t.netResumeBtn;
                 document.getElementById('chart-inst-title').textContent = t.chartInstTitle;
                 document.getElementById('chart-words-title').textContent = t.chartWordsTitle;
+                const teaserTextEl = document.getElementById('network-teaser-text');
+                if (teaserTextEl) teaserTextEl.textContent = t.networkTeaserText;
+                const teaserLinkEl = document.getElementById('network-teaser-link');
+                if (teaserLinkEl) teaserLinkEl.textContent = t.networkTeaserLink;
                 document.querySelectorAll('#inst-table th')[0].textContent = t.thAffil;
                 document.querySelectorAll('#inst-table th')[1].textContent = t.thScholars;
                 document.querySelectorAll('#inst-table th')[2].textContent = t.thTalks;
@@ -1494,6 +1507,10 @@ CREATE TABLE presentation_person (
                 document.getElementById('net-pause-btn').textContent = isNetPhysicsRunning ? t.netPauseBtn : t.netResumeBtn;
                 document.getElementById('chart-inst-title').textContent = t.chartInstTitle;
                 document.getElementById('chart-words-title').textContent = t.chartWordsTitle;
+                const teaserTextEl = document.getElementById('network-teaser-text');
+                if (teaserTextEl) teaserTextEl.textContent = t.networkTeaserText;
+                const teaserLinkEl = document.getElementById('network-teaser-link');
+                if (teaserLinkEl) teaserLinkEl.textContent = t.networkTeaserLink;
                 document.querySelectorAll('#inst-table th')[0].textContent = t.thAffil;
                 document.querySelectorAll('#inst-table th')[1].textContent = t.thScholars;
                 document.querySelectorAll('#inst-table th')[2].textContent = t.thTalks;
@@ -2599,285 +2616,28 @@ CREATE TABLE presentation_person (
         // ==========================================
         // Interactive Collaboration Graph (Network)
         // ==========================================
-        let netNodes = [];
-        let netLinks = [];
+        let networkInstance = null;
+        let nodesDataset = null;
+        let edgesDataset = null;
         let isNetPhysicsRunning = true;
-        let netAnimationId = null;
-        let netHoveredNode = null;
-        let netDraggedNode = null;
-        let netMouseX = 0;
-        let netMouseY = 0;
-        let netIsInitialized = false;
 
         function initNetwork() {
+            if (networkInstance) return;
+            const container = document.getElementById('chart-network-container');
+            if (!container) return;
+
+            // Replace the old canvas with a div for vis.js if it exists
             const canvas = document.getElementById('canvas-network');
-            if (!canvas) return;
-
-            const rect = canvas.parentNode.getBoundingClientRect();
-            const width = rect.width || 700;
-            const height = rect.height || 480;
-
-            // Setup canvas high-DPI scaling
-            const dpr = window.devicePixelRatio || 1;
-            canvas.width = width * dpr;
-            canvas.height = height * dpr;
-            canvas.style.width = width + 'px';
-            canvas.style.height = height + 'px';
-
-            if (netIsInitialized) return;
+            if (canvas) {
+                const newDiv = document.createElement('div');
+                newDiv.id = 'canvas-network';
+                newDiv.style.width = '100%';
+                newDiv.style.height = '100%';
+                canvas.parentNode.replaceChild(newDiv, canvas);
+            }
 
             const data = CONFERENCE_DATA.network;
             if (!data) return;
-
-            // 1. Initialize nodes with force physics variables
-            netNodes = data.nodes.map((n, i) => {
-                const angle = (i / data.nodes.length) * Math.PI * 2;
-                const radius = Math.min(width, height) * 0.32;
-                return {
-                    ...n,
-                    x: width / 2 + Math.cos(angle) * radius + (Math.random() - 0.5) * 60,
-                    y: height / 2 + Math.sin(angle) * radius + (Math.random() - 0.5) * 60,
-                    vx: 0,
-                    vy: 0,
-                    r: Math.max(6, Math.min(18, 4 + Math.sqrt(n.talks) * 2.5))
-                };
-            });
-
-            // 2. Initialize links mapping references
-            const nodeMap = {};
-            netNodes.forEach(n => { nodeMap[n.id] = n; });
-
-            netLinks = data.links.map(l => {
-                return {
-                    source: nodeMap[l.source],
-                    target: nodeMap[l.target],
-                    weight: l.weight
-                };
-            }).filter(l => l.source && l.target);
-
-            // 3. Set up event listeners
-            canvas.addEventListener('mousemove', handleNetMouseMove);
-            canvas.addEventListener('mousedown', handleNetMouseDown);
-            window.addEventListener('mouseup', handleNetMouseUp);
-            canvas.addEventListener('click', handleNetClick);
-            canvas.addEventListener('mouseleave', handleNetMouseLeave);
-
-            netIsInitialized = true;
-        }
-
-        function handleNetMouseMove(e) {
-            const canvas = e.currentTarget;
-            const rect = canvas.getBoundingClientRect();
-            netMouseX = e.clientX - rect.left;
-            netMouseY = e.clientY - rect.top;
-
-            if (netDraggedNode) return;
-
-            // Find hovered node
-            let found = null;
-            let minDist = Infinity;
-            for (let i = 0; i < netNodes.length; i++) {
-                const n = netNodes[i];
-                const dx = n.x - netMouseX;
-                const dy = n.y - netMouseY;
-                const dist = Math.sqrt(dx * dx + dy * dy);
-                if (dist < n.r + 6) {
-                    if (dist < minDist) {
-                        minDist = dist;
-                        found = n;
-                    }
-                }
-            }
-
-            netHoveredNode = found;
-            canvas.style.cursor = found ? 'grab' : 'default';
-
-            // Manage tooltip display
-            const tooltip = document.getElementById('network-tooltip');
-            if (tooltip) {
-                if (found) {
-                    const t = TRANSLATIONS[currentLang];
-                    const originalScholar = CONFERENCE_DATA.scholars.find(s => s.id === found.id);
-                    const seriesLabel = found.series === 'Both' ? 
-                        (currentLang === 'ru' ? 'Обе конференции' : 'Both forums') : 
-                        (found.series === 'Zograf' ? (currentLang === 'ru' ? 'Зографские чт.' : 'Zograf Readings') : (currentLang === 'ru' ? 'Рериховские чт.' : 'Roerich Readings'));
-                    
-                    tooltip.innerHTML = `
-                        <div style="font-weight:700; font-family:var(--font-display); font-size:0.95rem; margin-bottom:0.25rem; color:#ffffff;">${found.name}</div>
-                        <div style="font-size:0.75rem; color:var(--text-secondary); margin-bottom:0.4rem;">${seriesLabel}</div>
-                        <div style="display:flex; justify-content:space-between; gap:1.5rem; font-size:0.8rem;">
-                            <span style="color:var(--text-muted);">${currentLang === 'ru' ? 'Всего докладов:' : 'Total Talks:'}</span>
-                            <span style="font-weight:600; color:var(--accent-secondary); font-family:var(--font-mono);">${found.talks}</span>
-                        </div>
-                        <div style="display:flex; justify-content:space-between; gap:1.5rem; font-size:0.8rem; margin-top:0.15rem;">
-                            <span style="color:var(--text-muted);">${currentLang === 'ru' ? 'Направление:' : 'Theme:'}</span>
-                            <span style="font-weight:600; color:#10b981;">${translateThemeCode(found.theme)}</span>
-                        </div>
-                        <div style="font-size:0.7rem; color:var(--text-muted); margin-top:0.6rem; border-top:1px solid rgba(255,255,255,0.06); padding-top:0.4rem; font-style:italic;">
-                            ${currentLang === 'ru' ? 'Кликните для перехода в профиль' : 'Click to view catalog profile'}
-                        </div>
-                    `;
-                    tooltip.style.left = Math.min(rect.width - 240, netMouseX + 15) + 'px';
-                    tooltip.style.top = Math.min(rect.height - 130, netMouseY + 15) + 'px';
-                    tooltip.style.display = 'block';
-                    tooltip.style.opacity = '1';
-                } else {
-                    tooltip.style.display = 'none';
-                    tooltip.style.opacity = '0';
-                }
-            }
-        }
-
-        function handleNetMouseDown(e) {
-            if (netHoveredNode) {
-                netDraggedNode = netHoveredNode;
-                document.getElementById('canvas-network').style.cursor = 'grabbing';
-            }
-        }
-
-        function handleNetMouseUp(e) {
-            if (netDraggedNode) {
-                netDraggedNode = null;
-                const canvas = document.getElementById('canvas-network');
-                if (canvas) canvas.style.cursor = netHoveredNode ? 'grab' : 'default';
-            }
-        }
-
-        function handleNetClick(e) {
-            if (netHoveredNode) {
-                // Navigate to directory and set search filter to the clicked scholar!
-                switchTab('scholars');
-                setDashboardSearch(netHoveredNode.name);
-                
-                // Hide tooltip
-                const tooltip = document.getElementById('network-tooltip');
-                if (tooltip) {
-                    tooltip.style.display = 'none';
-                    tooltip.style.opacity = '0';
-                }
-            }
-        }
-
-        function handleNetMouseLeave(e) {
-            netHoveredNode = null;
-            const tooltip = document.getElementById('network-tooltip');
-            if (tooltip) {
-                tooltip.style.display = 'none';
-                tooltip.style.opacity = '0';
-            }
-        }
-
-        function startNetworkGraph() {
-            initNetwork();
-            if (!netAnimationId) {
-                netAnimationId = requestAnimationFrame(networkTick);
-            }
-        }
-
-        function stopNetworkGraph() {
-            if (netAnimationId) {
-                cancelAnimationFrame(netAnimationId);
-                netAnimationId = null;
-            }
-        }
-
-        function networkTick() {
-            updateNetworkPhysics();
-            drawNetwork();
-            netAnimationId = requestAnimationFrame(networkTick);
-        }
-
-        function updateNetworkPhysics() {
-            if (!isNetPhysicsRunning && !netDraggedNode) return;
-
-            const canvas = document.getElementById('canvas-network');
-            if (!canvas) return;
-            const width = canvas.width / (window.devicePixelRatio || 1);
-            const height = canvas.height / (window.devicePixelRatio || 1);
-            const centerX = width / 2;
-            const centerY = height / 2;
-
-            const kRepel = 240;
-            const kAttract = 0.055;
-            const friction = 0.86;
-            const gravity = 0.025;
-            const linkDistance = 85;
-
-            // 1. Repulsion between all pairs
-            for (let i = 0; i < netNodes.length; i++) {
-                const nodeA = netNodes[i];
-                for (let j = i + 1; j < netNodes.length; j++) {
-                    const nodeB = netNodes[j];
-                    const dx = nodeB.x - nodeA.x;
-                    const dy = nodeB.y - nodeA.y;
-                    const distSq = dx * dx + dy * dy + 0.1;
-                    const dist = Math.sqrt(distSq);
-                    if (dist < 320) {
-                        const force = (kRepel * (nodeA.r + nodeB.r)) / distSq;
-                        const fx = (dx / dist) * force;
-                        const fy = (dy / dist) * force;
-
-                        nodeA.vx -= fx;
-                        nodeA.vy -= fy;
-                        nodeB.vx += fx;
-                        nodeB.vy += fy;
-                    }
-                }
-            }
-
-            // 2. Attraction along connected links
-            for (let i = 0; i < netLinks.length; i++) {
-                const link = netLinks[i];
-                const dx = link.target.x - link.source.x;
-                const dy = link.target.y - link.source.y;
-                const dist = Math.sqrt(dx * dx + dy * dy) || 0.1;
-                const force = kAttract * (dist - linkDistance) * Math.sqrt(link.weight);
-                const fx = (dx / dist) * force;
-                const fy = (dy / dist) * force;
-
-                link.source.vx += fx;
-                link.source.vy += fy;
-                link.target.vx -= fx;
-                link.target.vy -= fy;
-            }
-
-            // 3. Gravity center pull and velocity updates
-            for (let i = 0; i < netNodes.length; i++) {
-                const n = netNodes[i];
-
-                if (n === netDraggedNode) {
-                    n.x = netMouseX;
-                    n.y = netMouseY;
-                    n.vx = 0;
-                    n.vy = 0;
-                    continue;
-                }
-
-                n.vx += (centerX - n.x) * gravity;
-                n.vy += (centerY - n.y) * gravity;
-
-                n.vx *= friction;
-                n.vy *= friction;
-
-                n.x += n.vx;
-                n.y += n.vy;
-
-                n.x = Math.max(n.r + 5, Math.min(width - n.r - 5, n.x));
-                n.y = Math.max(n.r + 5, Math.min(height - n.r - 5, n.y));
-            }
-        }
-
-        function drawNetwork() {
-            const canvas = document.getElementById('canvas-network');
-            if (!canvas) return;
-            const ctx = canvas.getContext('2d');
-            const dpr = window.devicePixelRatio || 1;
-            const width = canvas.width / dpr;
-            const height = canvas.height / dpr;
-
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.save();
-            ctx.scale(dpr, dpr);
 
             const THEME_COLORS = {
                 AcademicHistory: '#8b5cf6', // Violet
@@ -2887,99 +2647,116 @@ CREATE TABLE presentation_person (
                 History: '#f59e0b'          // Orange
             };
 
-            let isHighlightMode = netHoveredNode !== null;
-            let connectedNodeIds = new Set();
-            if (isHighlightMode) {
-                connectedNodeIds.add(netHoveredNode.id);
-                netLinks.forEach(l => {
-                    if (l.source.id === netHoveredNode.id) connectedNodeIds.add(l.target.id);
-                    if (l.target.id === netHoveredNode.id) connectedNodeIds.add(l.source.id);
-                });
-            }
+            const nodes = data.nodes.map(n => {
+                const color = THEME_COLORS[n.theme] || THEME_COLORS.History;
+                const scaleSize = 8 + Math.sqrt(n.talks) * 3;
+                return {
+                    id: n.id,
+                    label: n.name,
+                    size: scaleSize,
+                    color: {
+                        background: color,
+                        border: 'rgba(255, 255, 255, 0.35)',
+                        highlight: { background: color, border: '#ffffff' },
+                        hover: { background: color, border: '#ffffff' }
+                    },
+                    shape: 'dot',
+                    font: { color: '#f3f4f6', face: 'Inter', size: 10, strokeWidth: 2, strokeColor: '#0a0e1a' },
+                    title: `${n.name} (${currentLang === 'ru' ? 'Докладов' : 'Talks'}: ${n.talks})`
+                };
+            });
 
-            // 1. Draw Links
-            for (let i = 0; i < netLinks.length; i++) {
-                const link = netLinks[i];
-                let isHighlighted = false;
-                if (isHighlightMode) {
-                    if (link.source.id === netHoveredNode.id || link.target.id === netHoveredNode.id) {
-                        isHighlighted = true;
+            const edges = data.links.map(l => {
+                return {
+                    from: l.source,
+                    to: l.target,
+                    value: l.weight,
+                    color: { color: 'rgba(255, 255, 255, 0.12)', opacity: 0.2, highlight: 'rgba(139, 92, 246, 0.75)' },
+                    width: 1 + l.weight * 0.5
+                };
+            });
+
+            nodesDataset = new vis.DataSet(nodes);
+            edgesDataset = new vis.DataSet(edges);
+
+            const visData = {
+                nodes: nodesDataset,
+                edges: edgesDataset
+            };
+
+            const options = {
+                nodes: {
+                    borderWidth: 1.5,
+                    shadow: { enabled: true, color: 'rgba(0,0,0,0.5)', size: 4, x: 2, y: 2 }
+                },
+                edges: {
+                    smooth: { type: 'continuous', roundness: 0.5 },
+                    shadow: { enabled: false }
+                },
+                interaction: {
+                    hover: true,
+                    tooltipDelay: 150,
+                    hideEdgesOnDrag: true,
+                    hideEdgesOnZoom: true
+                },
+                physics: {
+                    solver: 'forceAtlas2Based',
+                    forceAtlas2Based: {
+                        gravitationalConstant: -120,
+                        centralGravity: 0.015,
+                        springLength: 120,
+                        springConstant: 0.05,
+                        damping: 0.4,
+                        avoidOverlap: 0.95
+                    },
+                    stabilization: {
+                        enabled: true,
+                        iterations: 120,
+                        updateInterval: 25
                     }
                 }
+            };
 
-                let opacity = isHighlightMode ? (isHighlighted ? 0.65 : 0.02) : 0.15;
-                let thickness = Math.min(5, 1 + link.weight * 0.75);
+            networkInstance = new vis.Network(document.getElementById('canvas-network'), visData, options);
 
-                ctx.beginPath();
-                ctx.moveTo(link.source.x, link.source.y);
-                ctx.lineTo(link.target.x, link.target.y);
-                ctx.strokeStyle = isHighlighted ? 'rgba(139, 92, 246, ' + opacity + ')' : 'rgba(255, 255, 255, ' + opacity + ')';
-                ctx.lineWidth = thickness;
-                ctx.stroke();
-            }
-
-            // 2. Draw Nodes
-            for (let i = 0; i < netNodes.length; i++) {
-                const n = netNodes[i];
-                const color = THEME_COLORS[n.theme] || THEME_COLORS.History;
-
-                let isNodeHighlighted = !isHighlightMode || connectedNodeIds.has(n.id);
-                let opacity = isNodeHighlighted ? 1.0 : 0.18;
-
-                ctx.beginPath();
-                ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
-
-                if (n === netHoveredNode) {
-                    ctx.shadowColor = color;
-                    ctx.shadowBlur = 18;
-                } else {
-                    ctx.shadowBlur = 0;
+            // Add navigation on click!
+            networkInstance.on('click', function(params) {
+                if (params.nodes.length > 0) {
+                    const nodeId = params.nodes[0];
+                    const node = nodesDataset.get(nodeId);
+                    if (node) {
+                        switchTab('scholars');
+                        setDashboardSearch(node.label);
+                    }
                 }
-
-                ctx.fillStyle = hexToRGBA(color, opacity);
-                ctx.fill();
-
-                ctx.strokeStyle = hexToRGBA('#ffffff', opacity * 0.35);
-                ctx.lineWidth = 1.5;
-                ctx.stroke();
-
-                if (n === netHoveredNode || (n.talks >= 5 && isNodeHighlighted)) {
-                    ctx.shadowBlur = 0;
-                    ctx.fillStyle = hexToRGBA('#ffffff', opacity * 0.95);
-                    ctx.font = n === netHoveredNode ? 'bold 11px var(--font-sans)' : '9px var(--font-sans)';
-                    ctx.textAlign = 'center';
-                    ctx.fillText(n.name, n.x, n.y - n.r - 6);
-                }
-            }
-
-            ctx.restore();
+            });
         }
 
-        function hexToRGBA(hex, alpha) {
-            const r = parseInt(hex.slice(1, 3), 16);
-            const g = parseInt(hex.slice(3, 5), 16);
-            const b = parseInt(hex.slice(5, 7), 16);
-            return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+        function startNetworkGraph() {
+            initNetwork();
+            if (networkInstance) {
+                networkInstance.setOptions({ physics: { enabled: isNetPhysicsRunning } });
+            }
+        }
+
+        function stopNetworkGraph() {
+            if (networkInstance) {
+                networkInstance.setOptions({ physics: { enabled: false } });
+            }
         }
 
         function resetNetworkPhysics() {
-            const canvas = document.getElementById('canvas-network');
-            if (!canvas) return;
-            const width = canvas.width / (window.devicePixelRatio || 1);
-            const height = canvas.height / (window.devicePixelRatio || 1);
-
-            netNodes.forEach((n, i) => {
-                const angle = (i / netNodes.length) * Math.PI * 2;
-                const radius = Math.min(width, height) * 0.32;
-                n.x = width / 2 + Math.cos(angle) * radius + (Math.random() - 0.5) * 60;
-                n.y = height / 2 + Math.sin(angle) * radius + (Math.random() - 0.5) * 60;
-                n.vx = 0;
-                n.vy = 0;
-            });
+            if (networkInstance) {
+                networkInstance.physics.stabilize();
+                networkInstance.fit({ animation: { duration: 600 } });
+            }
         }
 
         function toggleNetworkPhysics() {
             isNetPhysicsRunning = !isNetPhysicsRunning;
+            if (networkInstance) {
+                networkInstance.setOptions({ physics: { enabled: isNetPhysicsRunning } });
+            }
             const t = TRANSLATIONS[currentLang];
             document.getElementById('net-pause-btn').textContent = isNetPhysicsRunning ? t.netPauseBtn : t.netResumeBtn;
         }
