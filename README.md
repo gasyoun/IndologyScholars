@@ -50,6 +50,7 @@ A state-of-the-art Single Page Application suite built on vanilla CSS and JS:
 *   **Bilingual Translation Core:** Automatically launches in Russian by default (retaining zero English in UI text). A toggle in the top navigation swaps the entire application state (metrics cards, charts, legend, titles, table headers, DDL documentation) to English in real-time.
 *   **Cross-filtering & City Tags:** Allows users to click on any affiliation or city tag to instantly search, filter, and paginate the master database.
 *   **Video and Generalization Scale Pages:** `videos/` exposes the full YouTube inventory and presentation mappings; `gumilyov/` exposes the micro/regional/global classification of presentation titles. Both are integrated into talk cards on conference, city, institution, theme, and meso-level pages.
+*   **Named Text Pages & Linkable Title Search:** `topics/ramayana.html` gathers Ramayana presentations by year and title; the dashboard title query is preserved in its URL (`?talks=рамаяны`) and exposes the matching presentations rather than only author rows.
 *   **Interactive Network Graph Engine (`networks.html`):** A dedicated, state-of-the-art interactive visualization dashboard powered by **Vis.js**. It maps all 220 scholars as nodes and their collaborations/co-presences as edges, featuring interactive zooming, panning, physics stabilization, live search, and four layout presets: *Collaborations*, *Ecosystem*, *Co-presence*, and *Attendance*, with a side profile detail drawer.
 
 ---

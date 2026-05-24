@@ -121,7 +121,7 @@
         p { color: var(--muted); max-width: 820px; }
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
             gap: 1rem;
         }
         .card {
@@ -211,9 +211,11 @@
             <a href="/IndologyScholars/scholars/">Scholars</a>
             <a href="/IndologyScholars/conferences/">Conferences</a>
             <a href="/IndologyScholars/themes/">Themes</a>
+            <a href="/IndologyScholars/topics/">Named texts</a>
             <a href="/IndologyScholars/meso/">Meso-levels</a>
             <a href="/IndologyScholars/gumilyov/">Gumilyov</a>
             <a href="/IndologyScholars/videos/">Videos</a>
+            <a href="/IndologyScholars/findings/">Findings</a>
             <a href="/IndologyScholars/cities/">Cities</a>
             <a href="/IndologyScholars/institutions/">Institutions</a>
             <a href="/IndologyScholars/search.html">Search</a>
@@ -235,6 +237,8 @@
         </section>
         <h2>Explore</h2>
         <section class="grid">
+            <article class="card"><strong><a href="findings/">Main Findings</a></strong><div class="meta">Interpretive layer from the latest article: overlap, themes, micro-cases, videos, and source caveats.</div></article>
+            <article class="card"><strong><a href="topics/">Named Texts</a></strong><div class="meta">Stable topic pages for presentations mentioning the Ramayana and Mahabharata.</div></article>
             <article class="card"><strong><a href="scholars/">Scholar Profiles</a></strong><div class="meta">Canonical generated pages with presentations, affiliations, themes, and related scholars.</div></article>
             <article class="card"><strong><a href="conferences/">Conference Indexes</a></strong><div class="meta">Year-by-year Zograf Readings and Roerich Readings pages.</div></article>
             <article class="card"><strong><a href="search.html">Search</a></strong><div class="meta">Static search across people, talks, cities, institutions, and themes.</div></article>

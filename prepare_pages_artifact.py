@@ -36,9 +36,11 @@ PUBLIC_DIRS = [
     "scholars",
     "conferences",
     "themes",
+    "topics",
     "meso",
     "gumilyov",
     "videos",
+    "findings",
     "cities",
     "institutions",
 ]

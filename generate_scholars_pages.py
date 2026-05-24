@@ -300,6 +300,16 @@ GENERIC_TAGS = {
     "форма",
 }
 
+PUBLIC_KEYWORD_LABELS = {
+    "рамаян": "Рамаяна",
+    "махабхарат": "Махабхарата",
+    "южная_индия": "Южная Индия",
+}
+
+
+def public_keyword_label(keyword):
+    return PUBLIC_KEYWORD_LABELS.get(clean_text(keyword).lower(), keyword)
+
 
 def talk_meso_codes(talk, meso_by_presentation):
     pid = clean_text(talk.get("presentation_id") or "")
@@ -316,7 +326,7 @@ def linked_meso_chip(code, meso_items, prefix="../", class_name="mini-chip"):
 
 
 def linked_keyword_chip(keyword, class_name="mini-chip"):
-    return f'<a class="{class_name}" href="{esc(search_href(keyword))}">{esc(keyword)}</a>'
+    return f'<a class="{class_name}" href="{esc(search_href(keyword))}">{esc(public_keyword_label(keyword))}</a>'
 
 
 def clean_tags(talk):
@@ -507,7 +517,8 @@ def scholar_context_block(scholar, meso_by_presentation, meso_items):
         )
     keyword_links = []
     for keyword, count in sorted(keyword_counts.items(), key=lambda item: (-item[1], item[0]))[:10]:
-        label = f"{keyword} · {count}" if count > 1 else keyword
+        display_keyword = public_keyword_label(keyword)
+        label = f"{display_keyword} · {count}" if count > 1 else display_keyword
         keyword_links.append(f'<a class="chip" href="{esc(search_href(keyword))}">{esc(label)}</a>')
 
     rows = []

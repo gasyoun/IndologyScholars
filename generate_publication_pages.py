@@ -44,7 +44,7 @@ DB_PATH = "conferences.db"
 BUILD_DATE = dt.date.today().isoformat()
 DATA_SCHEMA_VERSION = "1.0.0"
 PIPELINE_VERSION = "2026-05-21"
-PUBLIC_DIRS = ["assets", "conferences", "themes", "meso", "gumilyov", "videos", "cities", "institutions"]
+PUBLIC_DIRS = ["assets", "conferences", "themes", "topics", "meso", "gumilyov", "videos", "findings", "cities", "institutions"]
 
 
 def ensure_dirs():
@@ -98,7 +98,7 @@ def generated_manifest_paths():
         "site_data.json",
         "sitemap.xml",
     ]
-    directories = ["analytics_output", "assets", "cities", "conferences", "gumilyov", "institutions", "meso", "scholars", "themes", "videos"]
+    directories = ["analytics_output", "assets", "cities", "conferences", "findings", "gumilyov", "institutions", "meso", "scholars", "themes", "topics", "videos"]
     paths = [Path(path) for path in roots]
     for dirname in directories:
         root = Path(dirname)
@@ -187,6 +187,10 @@ def theme_path(code):
     return f"themes/{slugify(code, 'theme')}.html"
 
 
+def topic_path(code):
+    return f"topics/{slugify(code, 'topic')}.html"
+
+
 def meso_path(code):
     return f"meso/{slugify(code, 'meso')}.html"
 
@@ -220,6 +224,21 @@ GUMILYOV_LEVELS = {
         "short_ru": "Глобальный",
         "short_en": "Global",
         "description": "Доклады, формулирующие широкие сравнительные, цивилизационные, методологические или межрегиональные обобщения.",
+    },
+}
+
+NAMED_TOPICS = {
+    "ramayana": {
+        "title": "Рамаяна",
+        "pattern": r"\bрамаян[а-яё]*\b",
+        "description": "Доклады, в названиях которых упомянуты «Рамаяна» или связанные с ней версии и интерпретации.",
+        "aliases": ("рамаяна", "рамаяны", "рамаяне", "рамаян"),
+    },
+    "mahabharata": {
+        "title": "Махабхарата",
+        "pattern": r"\bмахабхарат[а-яё]*\b",
+        "description": "Доклады, в названиях которых упомянуты «Махабхарата» или связанные с ней сюжеты.",
+        "aliases": ("махабхарата", "махабхараты", "махабхарате", "махабхарат"),
     },
 }
 
@@ -297,12 +316,19 @@ def format_distribution_links(distribution, depth=""):
 
 
 def format_keyword_links(terms, depth=""):
+    public_labels = {
+        "рамаян": "Рамаяна",
+        "махабхарат": "Махабхарата",
+        "индия": "Индия",
+        "южная_индия": "Южная Индия",
+    }
     links = []
     for raw_term in str(terms or "").split(","):
         term = clean_text(raw_term)
         if not term:
             continue
-        links.append(f'<a class="chip" href="{esc(search_path(term, depth))}">{esc(term)}</a>')
+        label = public_labels.get(term.lower(), term)
+        links.append(f'<a class="chip" href="{esc(search_path(term, depth))}">{esc(label)}</a>')
     return "".join(links)
 
 
@@ -958,7 +984,7 @@ def generate_search(data, records):
                 ),
             }
         )
-    for talk in records:
+    for talk in presentation_records_by_id(records).values():
         pid = clean_text(talk.get("presentation_id") or "")
         talk_url = conference_path(talk.get("series_key"), talk.get("year"))
         if pid:
@@ -968,6 +994,7 @@ def generate_search(data, records):
                 "type": "Presentation",
                 "title": talk.get("title"),
                 "url": talk_url,
+                "meta": f"{series_label(talk.get('series_key'), 'ru')} · {talk.get('year')} · {talk.get('speaker') or ''}",
                 "text": " ".join([
                     talk.get("title") or "",
                     talk.get("speaker") or "",
@@ -978,6 +1005,16 @@ def generate_search(data, records):
                     str(talk.get("year") or ""),
                     (talk.get("geography") or {}).get("ru") or "",
                 ]),
+            }
+        )
+    for code, topic in NAMED_TOPICS.items():
+        index.append(
+            {
+                "type": "Topic",
+                "title": topic["title"],
+                "url": topic_path(code),
+                "meta": "Именной сюжет",
+                "text": " ".join([topic["description"], *topic["aliases"]]),
             }
         )
     for level, meta in GUMILYOV_LEVELS.items():
@@ -1008,6 +1045,23 @@ def generate_search(data, records):
                 "text": " ".join([item.get("kind") or "", item.get("top_terms") or "", item.get("distribution") or "", item.get("examples") or ""]),
             }
         )
+    index.append(
+        {
+            "type": "Finding",
+            "title": "Главные выводы статьи",
+            "url": "findings/",
+            "text": " ".join(
+                [
+                    "пересечение 38 вместо 104",
+                    "микрокейс G1 G2 G3 Гумилев",
+                    "видеозаписи YouTube",
+                    "тематическая асимметрия Зографские Рериховские",
+                    "городские метки аффилиации источник",
+                    "слабая межплощадочная проницаемость",
+                ]
+            ),
+        }
+    )
     write_text("search-index.json", json.dumps(index, ensure_ascii=False, separators=(",", ":")))
 
     body = """
@@ -1021,19 +1075,24 @@ def generate_search(data, records):
         const results = document.getElementById('results');
         const input = document.getElementById('q');
         let docs = [];
-        const typeLabels = {'Scholar':'Автор', 'Presentation':'Доклад', 'Meso-level':'Мезоуровень', 'Gumilyov':'Гумилев', 'Video':'Видео'};
+        const typeLabels = {'Scholar':'Автор', 'Presentation':'Доклад', 'Topic':'Сюжет', 'Meso-level':'Мезоуровень', 'Gumilyov':'Гумилев', 'Video':'Видео', 'Finding':'Вывод'};
         const initialQuery = new URLSearchParams(location.search).get('q') || '';
         input.value = initialQuery;
         fetch('search-index.json').then(r => r.json()).then(data => { docs = data; render(input.value); });
+        function searchableToken(token) {
+            if (/^рамаян[а-яё]*$/i.test(token)) return 'рамаян';
+            if (/^махабхарат[а-яё]*$/i.test(token)) return 'махабхарат';
+            return token;
+        }
         function score(doc, query) {
             if (!query) return 0;
             const hay = `${doc.title} ${doc.text}`.toLowerCase();
-            return query.split(/\\s+/).filter(Boolean).reduce((sum, token) => sum + (hay.includes(token) ? 1 : 0), 0);
+            return query.split(/\\s+/).filter(Boolean).map(searchableToken).reduce((sum, token) => sum + (hay.includes(token) ? 1 : 0), 0);
         }
         function render(query) {
             const q = query.trim().toLowerCase();
             const items = docs.map(d => ({...d, score: score(d, q)})).filter(d => q ? d.score > 0 : d.type === 'Scholar').sort((a,b) => b.score - a.score || a.title.localeCompare(b.title)).slice(0, 50);
-            results.innerHTML = items.map(d => `<article class="card"><strong><a href="${d.url}">${escapeHtml(d.title || '')}</a></strong><div class="meta">${typeLabels[d.type] || d.type}</div></article>`).join('');
+            results.innerHTML = items.map(d => `<article class="card"><strong><a href="${d.url}">${escapeHtml(d.title || '')}</a></strong><div class="meta">${escapeHtml(d.meta || typeLabels[d.type] || d.type)}</div></article>`).join('');
         }
         function escapeHtml(value) {
             return String(value).replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
@@ -1947,6 +2006,8 @@ def generate_english_landing(data):
         </section>
         <h2>Explore</h2>
         <section class="grid">
+            <article class="card"><strong><a href="findings/">Main Findings</a></strong><div class="meta">Interpretive layer from the latest article: overlap, themes, micro-cases, videos, and source caveats.</div></article>
+            <article class="card"><strong><a href="topics/">Named Texts</a></strong><div class="meta">Stable topic pages for presentations mentioning the Ramayana and Mahabharata.</div></article>
             <article class="card"><strong><a href="scholars/">Scholar Profiles</a></strong><div class="meta">Canonical generated pages with presentations, affiliations, themes, and related scholars.</div></article>
             <article class="card"><strong><a href="conferences/">Conference Indexes</a></strong><div class="meta">Year-by-year Zograf Readings and Roerich Readings pages.</div></article>
             <article class="card"><strong><a href="search.html">Search</a></strong><div class="meta">Static search across people, talks, cities, institutions, and themes.</div></article>
@@ -1977,6 +2038,129 @@ def generate_english_landing(data):
             structured,
             extra_head=f'\n    <link rel="alternate" hreflang="ru" href="{site_url("")}">\n    <link rel="alternate" hreflang="en" href="{site_url("en.html")}">',
             language="en",
+        ),
+    )
+
+
+def generate_findings_page(data, records):
+    summary = data.get("summary", {})
+    records_by_id = presentation_records_by_id(records)
+    unique_records = list(records_by_id.values())
+    gumilyov_counts = defaultdict(int)
+    for talk in unique_records:
+        level, _meta = gumilyov_meta(talk.get("gumilyov_scale"))
+        gumilyov_counts[level] += 1
+
+    total_scholars = summary.get("total_scholars", 220)
+    unique_presentations = summary.get("unique_presentations", summary.get("presentation_rows", 895))
+    author_participations = summary.get("author_participations", summary.get("total_presentations", 899))
+    overlap = summary.get("overlap_scholars", 38)
+    video_presentations = sum(1 for talk in unique_records if talk.get("videos"))
+    video_author_cards = sum(1 for talk in records if talk.get("videos"))
+    youtube_rows = len(load_youtube_rows()) or 178
+
+    cards = [
+        (
+            "Слабое пересечение площадок",
+            f"{overlap} / около 104",
+            "На обеих площадках выступали 38 ученых, тогда как перестановочная модель при той же индивидуальной активности ожидает около 104. Это главный количественный результат: поле связано, но межплощадочная проницаемость намного ниже простого ожидания.",
+        ),
+        (
+            "Две разные публичные среды",
+            "167 / 91",
+            "Зографские чтения шире по кругу участников, Рериховские компактнее и плотнее по ядру. Это не доказательство скрытого фильтра, а описание публично наблюдаемой структуры программ.",
+        ),
+        (
+            "Тематическая асимметрия",
+            "74% / 56%",
+            "В Рериховских чтениях классический и средневековый материал занимает около 74% докладов, в Зографских - около 56%. Различие видно не только социально, но и тематически.",
+        ),
+        (
+            "Городская метка не равна месту работы",
+            "94.7% / 13.0%",
+            "В Зографских программах почти всегда опубликован город вместо учреждения, в Рериховских такой режим редок. Поэтому городской фильтр показывает публичную репрезентацию, а не автоматически занятость участника.",
+        ),
+        (
+            "Микрокейс как нормальный жанр",
+            f"{gumilyov_counts.get(1, 852)} / {unique_presentations}",
+            "Шкала Гумилева показывает, что большинство докладов строится вокруг отдельного текста, автора, термина или локального сюжета. Широкие G3-обобщения крайне редки и чаще связаны со старшим или уже авторитетным голосом.",
+        ),
+        (
+            "Видео - слой проверки, не вся выборка",
+            f"{video_presentations} доклада",
+            f"В базе есть прямые видеоссылки для {video_presentations} уникальных докладов ({video_author_cards} авторских карточек) при {youtube_rows} строках YouTube-инвентаря. Видео полезно для проверки конкретных выступлений, но не заменяет полный корпус программ.",
+        ),
+    ]
+    card_html = []
+    for title, metric, text in cards:
+        card_html.append(
+            f"""
+            <article class="card">
+                <strong>{esc(title)}</strong>
+                <div class="metric">{esc(metric)}</div>
+                <div class="meta">{esc(text)}</div>
+            </article>
+            """
+        )
+
+    body = f"""
+        <header>
+            <h1>Главные выводы статьи</h1>
+            <p>Эта страница переводит последнюю версию статьи из режима доказательства в режим чтения сайта: что означают базовые числа архива и куда на сайте идти, чтобы проверить каждый вывод.</p>
+        </header>
+        <section class="grid">
+            {''.join(card_html)}
+        </section>
+
+        <h2>Как читать эти числа</h2>
+        <section class="list">
+            <article class="talk">
+                <strong>Не превращать компактность в обвинение</strong>
+                <div class="meta">Программы показывают публичный итог отбора, но не заявки, отказы и внутренние решения. Поэтому статья говорит о наблюдаемой компактности, возвращаемости и проницаемости, а не о доказанной закрытости.</div>
+            </article>
+            <article class="talk">
+                <strong>Не читать город как биографию</strong>
+                <div class="meta">Зографский формат часто дает город, а не учреждение. Региональный или периферийный маркер - начало вопроса о траектории участника, а не готовый ответ о его месте работы.</div>
+            </article>
+            <article class="talk">
+                <strong>Не считать микрокейс слабостью</strong>
+                <div class="meta">Для филологической, текстологической и историко-религиоведческой работы микрокейс часто является основной формой надежной аргументации. Неожиданность не в его наличии, а в почти полном отсутствии публичного жанра больших синтезов.</div>
+            </article>
+        </section>
+
+        <h2>Проверить на сайте</h2>
+        <section class="link-block">
+            <strong>Входы в данные</strong>
+            <div class="chip-list">
+                <a class="chip" href="../gumilyov/">Шкала Гумилева</a>
+                <a class="chip" href="../videos/">Видеоархив</a>
+                <a class="chip" href="../conferences/">Годы и программы</a>
+                <a class="chip" href="../themes/">Тематические рубрики</a>
+                <a class="chip" href="../search.html">Поиск по докладам</a>
+                <a class="chip" href="../download-data.html">CSV, JSON, SQLite</a>
+            </div>
+        </section>
+
+        <h2>Что считать следующими гипотезами</h2>
+        <section class="grid">
+            <article class="card"><strong>Authority-слой для городов</strong><div class="meta">Связать городские метки программ с реальными биографическими и институциональными траекториями, чтобы проверить, где региональность является местом работы, а где - режимом публикации.</div></article>
+            <article class="card"><strong>Публикационная конверсия</strong><div class="meta">Проверить, какие доклады стали статьями, сборниками или устойчивыми исследовательскими сериями. Это отделит конференционную видимость от долговременного научного следа.</div></article>
+            <article class="card"><strong>Статусный жанр G3</strong><div class="meta">Редкие широкие обобщения стоит анализировать как статусный жанр: в корпусе G3 появляется главным образом у старших или уже авторитетных участников.</div></article>
+        </section>
+
+        <aside class="caveat-block" role="note" aria-label="Scope note">
+            <strong>Объем корпуса</strong>
+            <p>Текущий синхронизированный корпус: {esc(total_scholars)} ученых, {esc(unique_presentations)} уникальных докладов, {esc(author_participations)} авторских участий. Программа Зографских чтений 2026 г. учитывается как предварительная.</p>
+        </aside>
+    """
+    write_text(
+        "findings/index.html",
+        page_shell(
+            f"Главные выводы статьи | {SITE_NAME}",
+            "Интерпретационный слой последней статьи: пересечение площадок, тематическая асимметрия, микрокейсы, видео и источниковедческие оговорки.",
+            "findings/",
+            body,
+            [page_data("Главные выводы статьи", "Интерпретационный слой последней статьи.", "findings/"), make_breadcrumbs([("Главная", ""), ("Выводы", "findings/")])],
         ),
     )
 
@@ -2375,6 +2559,77 @@ def generate_legacy_theme_redirects():
     }
     for old_path, (target_path, title) in redirects.items():
         write_text(old_path, redirect_html(title, old_path, target_path))
+
+
+def generate_topic_pages(records):
+    records_by_id = presentation_records_by_id(records)
+    unique_records = list(records_by_id.values())
+    cards = []
+    for code, topic in NAMED_TOPICS.items():
+        pattern = re.compile(topic["pattern"], flags=re.IGNORECASE)
+        talks = [talk for talk in unique_records if pattern.search(clean_text(talk.get("title") or ""))]
+        talks.sort(key=lambda talk: (int(talk.get("year") or 0), talk.get("series_key") or "", talk.get("title") or ""))
+        zograf_count = sum(1 for talk in talks if series_slug(talk.get("series_key")) == "zograf")
+        roerich_count = len(talks) - zograf_count
+        first_year = talks[0].get("year") if talks else ""
+        last_year = talks[-1].get("year") if talks else ""
+        year_span = str(first_year) if first_year == last_year else f"{first_year}-{last_year}"
+        path = topic_path(code)
+        cards.append(
+            f'<article class="card"><strong><a href="../{path}">{esc(topic["title"])}</a></strong>'
+            f'<div class="metric">{len(talks)}</div>'
+            f'<div class="meta">{esc(year_span)} · Зограф: {zograf_count} · Рерих: {roerich_count}</div></article>'
+        )
+        body = f"""
+        <header>
+            <h1>{esc(topic["title"])}</h1>
+            <p>{esc(topic["description"])}</p>
+        </header>
+        <section class="grid">
+            <article class="card"><strong>Доклады</strong><div class="metric">{len(talks)}</div><div class="meta">Уникальные записи программ</div></article>
+            <article class="card"><strong>Период</strong><div class="metric">{esc(year_span)}</div><div class="meta">Годы упоминаний в заголовках</div></article>
+            <article class="card"><strong>Зографские чтения</strong><div class="metric">{zograf_count}</div></article>
+            <article class="card"><strong>Рериховские чтения</strong><div class="metric">{roerich_count}</div></article>
+        </section>
+        {chip_section("Уровни Гумилева", facet_gumilyov_links(talks, "../", 3))}
+        {chip_section("Рубрики", facet_theme_links(talks, "../", 12))}
+        {chip_section("Авторы", facet_scholar_links(talks, "../", 16))}
+        <aside class="caveat-block" role="note" aria-label="Topic index notice">
+            <strong>Принцип включения</strong>
+            <p>В список включены доклады, в нормализованном публичном заголовке которых встречается основа имени текста. Он показывает явные упоминания в программе, а не все возможные доклады по сюжету.</p>
+        </aside>
+        <h2>Доклады по годам</h2>
+        <section class="list">
+            {''.join(talk_card(talk, '../') for talk in talks)}
+        </section>
+        """
+        write_text(
+            path,
+            page_shell(
+                f"{topic['title']} | {SITE_NAME}",
+                f"{topic['title']}: доклады по годам и авторам в программах Зографских и Рериховских чтений.",
+                path,
+                body,
+                [page_data(topic["title"], topic["description"], path), make_breadcrumbs([("Главная", ""), ("Сюжеты", "topics/"), (topic["title"], path)])],
+            ),
+        )
+    body = f"""
+        <header>
+            <h1>Именные сюжеты и тексты</h1>
+            <p>Устойчивые страницы для произведений и текстовых корпусов, явно названных в заголовках докладов.</p>
+        </header>
+        <section class="grid">{''.join(cards)}</section>
+    """
+    write_text(
+        "topics/index.html",
+        page_shell(
+            f"Именные сюжеты и тексты | {SITE_NAME}",
+            "Устойчивые страницы именованных текстов в корпусе докладов.",
+            "topics/",
+            body,
+            [page_data("Именные сюжеты и тексты", "Устойчивые страницы именованных текстов.", "topics/"), make_breadcrumbs([("Главная", ""), ("Сюжеты", "topics/")])],
+        ),
+    )
 
 
 def generate_meso_pages(data, records):
@@ -2869,7 +3124,7 @@ def generate_sitemap():
         "networks.html",
     ]
     html_paths.extend(str(p).replace("\\", "/") for p in Path("scholars").glob("*.html") if not is_legacy_redirect(p))
-    for dirname in ("conferences", "themes", "meso", "gumilyov", "videos", "cities", "institutions"):
+    for dirname in ("conferences", "themes", "topics", "meso", "gumilyov", "videos", "findings", "cities", "institutions"):
         html_paths.extend(str(p).replace("\\", "/") for p in Path(dirname).glob("*.html"))
     html_paths = sorted(set(html_paths), key=lambda p: (p.count("/"), p))
     urlset = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
@@ -3057,11 +3312,13 @@ def main():
     generate_data_quality_page(data, authority_stats)
     generate_404_page()
     generate_english_landing(data)
+    generate_findings_page(data, records)
     generate_gumilyov_pages(data, records)
     generate_video_pages(data, records)
     generate_conference_pages(data, records)
     generate_theme_pages(data, records)
     generate_legacy_theme_redirects()
+    generate_topic_pages(records)
     generate_meso_pages(data, records)
     theme_queue_size = generate_theme_review_queue(records)
     generate_city_pages(data, records, authority)

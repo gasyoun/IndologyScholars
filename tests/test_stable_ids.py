@@ -17,6 +17,7 @@ def load_module(name, path):
 
 build = load_module("build_and_populate_db_under_test", "build_and_populate_db.py")
 publication_helpers = load_module("publication_helpers_under_test", "publication_helpers.py")
+title_normalization = load_module("title_normalization_under_test", "title_normalization.py")
 compare_manifests = load_module("compare_id_manifests_under_test", "scratch/compare_id_manifests.py")
 export_manifest = load_module("export_presentation_id_manifest_under_test", "scratch/export_presentation_id_manifest.py")
 
@@ -50,6 +51,18 @@ class StableIdTests(unittest.TestCase):
         self.assertRegex(presentation_id, r"^PRES_[0-9a-f]{10}$")
         self.assertRegex(zograf_session_id, r"^SESS_[0-9a-f]{10}$")
         self.assertRegex(roerich_session_id, r"^SESS_R_[0-9a-f]{10}$")
+
+    def test_public_title_normalization_capitalizes_named_texts(self):
+        self.assertEqual(
+            title_normalization.canonical_title(None, "версия «рамаяны» и история индии"),
+            "версия «Рамаяны» и история Индии",
+        )
+
+    def test_public_title_override_removes_collapsed_2023_program_tail(self):
+        self.assertEqual(
+            title_normalization.canonical_title("PRES_956381eb58", "ignored source tail"),
+            "Анализ аморальных поступков в «Абхидхармакоше» Васубандху",
+        )
 
     def test_compare_manifests_reports_clean_unchanged_rebuild(self):
         before = [

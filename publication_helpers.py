@@ -409,9 +409,11 @@ def page_shell(title, description, canonical_path, body, structured_data=None, e
             ("Scholars", "/IndologyScholars/scholars/"),
             ("Conferences", "/IndologyScholars/conferences/"),
             ("Themes", "/IndologyScholars/themes/"),
+            ("Named texts", "/IndologyScholars/topics/"),
             ("Meso-levels", "/IndologyScholars/meso/"),
             ("Gumilyov", "/IndologyScholars/gumilyov/"),
             ("Videos", "/IndologyScholars/videos/"),
+            ("Findings", "/IndologyScholars/findings/"),
             ("Cities", "/IndologyScholars/cities/"),
             ("Institutions", "/IndologyScholars/institutions/"),
             ("Search", "/IndologyScholars/search.html"),
@@ -427,9 +429,11 @@ def page_shell(title, description, canonical_path, body, structured_data=None, e
             ("Исследователи", "/IndologyScholars/scholars/"),
             ("Конференции", "/IndologyScholars/conferences/"),
             ("Рубрики", "/IndologyScholars/themes/"),
+            ("Сюжеты", "/IndologyScholars/topics/"),
             ("Мезоуровни", "/IndologyScholars/meso/"),
             ("Гумилев", "/IndologyScholars/gumilyov/"),
             ("Видео", "/IndologyScholars/videos/"),
+            ("Выводы", "/IndologyScholars/findings/"),
             ("Города", "/IndologyScholars/cities/"),
             ("Институции", "/IndologyScholars/institutions/"),
             ("Поиск", "/IndologyScholars/search.html"),
@@ -531,7 +535,7 @@ def page_shell(title, description, canonical_path, body, structured_data=None, e
         p {{ color: var(--muted); max-width: 820px; }}
         .grid {{
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
             gap: 1rem;
         }}
         .card {{

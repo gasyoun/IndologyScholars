@@ -12,6 +12,9 @@ TITLE_OVERRIDES_BY_PRESENTATION_ID = {
     # Zograf Readings 2022, source HTML wrapped the title into a separate line.
     "PRES_e8af614558": "Фольклор европейских рома (цыган) и мифы индийских племен",
 
+    # Zograf Readings 2023, cached program collapsed following talks into one title.
+    "PRES_956381eb58": "Анализ аморальных поступков в «Абхидхармакоше» Васубандху",
+
     # Zograf Readings 2026, source PDF line wraps truncated many parsed titles.
     "PRES_0d145ad80b": "Фарс Шанкхадхары «Латакамелака» и ее рукопись из Библиотеки им. Кешара (Катманду)",
     "PRES_04d1dbb4f8": "Предание в тексте и предание в камне: сюжет просветления Будды на рельефе Большой Ступы в Санчи",
@@ -86,16 +89,47 @@ HYPHEN_JOIN_RE = re.compile(
     flags=re.IGNORECASE,
 )
 
+PROPER_NAME_FORMS = {
+    "рамаяна": "Рамаяна",
+    "рамаяны": "Рамаяны",
+    "рамаяне": "Рамаяне",
+    "рамаяну": "Рамаяну",
+    "рамаяной": "Рамаяной",
+    "рамаяною": "Рамаяною",
+    "рамаян": "Рамаян",
+    "махабхарата": "Махабхарата",
+    "махабхараты": "Махабхараты",
+    "махабхарате": "Махабхарате",
+    "махабхарату": "Махабхарату",
+    "махабхаратой": "Махабхаратой",
+    "махабхарат": "Махабхарат",
+    "индия": "Индия",
+    "индии": "Индии",
+    "индию": "Индию",
+    "индией": "Индией",
+    "индиею": "Индиею",
+}
+PROPER_NAME_RE = re.compile(
+    r"\b(" + "|".join(sorted(PROPER_NAME_FORMS, key=len, reverse=True)) + r")\b",
+    flags=re.IGNORECASE,
+)
+
 
 def repair_random_hyphenation(title: str) -> str:
     """Join OCR/PDF line-break hyphenation in common Russian compounds."""
     return HYPHEN_JOIN_RE.sub(lambda match: f"{match.group(1)}{match.group(2)}", title or "")
 
 
+def normalize_proper_name_casing(title: str) -> str:
+    """Capitalise proper names that may arrive lower-cased in program text."""
+    return PROPER_NAME_RE.sub(lambda match: PROPER_NAME_FORMS[match.group(0).lower()], title or "")
+
+
 def canonical_title(presentation_id: str | None, title: str | None) -> str:
     """Return source-verified title override plus light typography cleanup."""
     cleaned = TITLE_OVERRIDES_BY_PRESENTATION_ID.get(str(presentation_id or ""), title or "")
     cleaned = repair_random_hyphenation(cleaned)
+    cleaned = normalize_proper_name_casing(cleaned)
     cleaned = re.sub(r"\s+", " ", cleaned)
     cleaned = re.sub(r"\s*\*+\s*$", "", cleaned)
     return cleaned.strip()

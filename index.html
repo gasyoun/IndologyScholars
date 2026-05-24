@@ -12,7 +12,7 @@
     <link rel="icon" href="/IndologyScholars/assets/favicon.svg" type="image/svg+xml">
     <link rel="manifest" href="/IndologyScholars/site.webmanifest">
     <meta name="theme-color" content="#0a0e1a">
-    <link rel="preload" href="site_data.json" as="fetch" crossorigin>
+    <link rel="preload" href="site_data.json?v=1.8.1" as="fetch" crossorigin>
     <meta name="keywords" content="Индология, Зографские чтения, Рериховские чтения, наука, востоковедение, ИВР РАН, ИВ РАН, МГУ, СПбГУ, статистика, научные доклады">
     <meta name="author" content="Dr. Mārcis Gasūns">
 
@@ -340,6 +340,92 @@
             background: rgba(139, 92, 246, 0.12);
         }
 
+        .findings-strip {
+            margin: 0 auto 2.75rem auto;
+        }
+
+        .findings-header {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: flex-end;
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .findings-eyebrow {
+            color: #c4b5fd;
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            margin-bottom: 0.45rem;
+        }
+
+        .findings-title {
+            font-size: 1.75rem;
+            letter-spacing: 0;
+        }
+
+        .findings-lead {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            max-width: 760px;
+            margin: 0;
+        }
+
+        .findings-cta {
+            color: #ffffff;
+            text-decoration: none;
+            border: 1px solid rgba(139, 92, 246, 0.45);
+            background: rgba(139, 92, 246, 0.14);
+            border-radius: 8px;
+            padding: 0.72rem 0.95rem;
+            font-weight: 700;
+            white-space: nowrap;
+            transition: var(--transition);
+        }
+
+        .findings-cta:hover {
+            border-color: var(--accent-secondary);
+            background: rgba(236, 72, 153, 0.16);
+        }
+
+        .findings-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+            gap: 1rem;
+        }
+
+        .insight-card {
+            background: rgba(17, 24, 44, 0.58);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.15rem;
+        }
+
+        .insight-metric {
+            color: #ffffff;
+            font-family: var(--font-display);
+            font-size: 1.65rem;
+            font-weight: 800;
+            line-height: 1.05;
+            margin-bottom: 0.45rem;
+        }
+
+        .insight-title {
+            color: var(--text-primary);
+            font-weight: 700;
+            margin-bottom: 0.35rem;
+        }
+
+        .insight-text {
+            color: var(--text-secondary);
+            line-height: 1.55;
+            font-size: 0.93rem;
+        }
+
         /* Sections content styling */
         .dashboard-section {
             display: none;
@@ -554,6 +640,82 @@
             font-size: 0.8rem;
             color: var(--text-secondary);
             margin-top: 0.25rem;
+        }
+
+        .query-results {
+            margin-bottom: 1.5rem;
+            padding: 1.25rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+        }
+
+        .query-results-header {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 0.75rem 1rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .query-results-header h3 {
+            font-size: 1.2rem;
+            letter-spacing: 0;
+            margin: 0;
+        }
+
+        .query-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .query-link {
+            display: inline-flex;
+            color: #c4b5fd;
+            border: 1px solid rgba(139, 92, 246, 0.38);
+            border-radius: 8px;
+            padding: 0.42rem 0.65rem;
+            text-decoration: none;
+            font-size: 0.88rem;
+        }
+
+        .query-summary {
+            color: var(--text-secondary);
+            margin: 0 0 0.9rem;
+        }
+
+        .query-talks {
+            display: grid;
+            gap: 0.7rem;
+        }
+
+        .query-talk {
+            display: grid;
+            grid-template-columns: 68px minmax(0, 1fr);
+            gap: 1rem;
+            padding: 0.8rem 0;
+            border-top: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .query-year {
+            color: #c4b5fd;
+            font-family: var(--font-display);
+            font-size: 1.05rem;
+            font-weight: 700;
+        }
+
+        .query-title {
+            color: #ffffff;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .query-meta {
+            color: var(--text-secondary);
+            font-size: 0.84rem;
+            margin-top: 0.24rem;
         }
 
         /* Pagination bar */
@@ -850,9 +1012,13 @@
         </section>
 
         <nav class="publication-links" aria-label="Static archive pages">
+            <a href="findings/">Выводы статьи</a>
             <a href="scholars/">Профили</a>
             <a href="conferences/">Конференции</a>
             <a href="themes/">Темы</a>
+            <a href="topics/">Сюжеты</a>
+            <a href="gumilyov/">Гумилев</a>
+            <a href="videos/">Видео</a>
             <a href="cities/">Города</a>
             <a href="institutions/">Институции</a>
             <a href="search.html">Поиск</a>
@@ -863,6 +1029,39 @@
             <a href="en.html">English</a>
             <a href="how-to-cite.html">Цитирование</a>
         </nav>
+
+        <section class="findings-strip" aria-labelledby="findings-heading">
+            <div class="findings-header">
+                <div>
+                    <div class="findings-eyebrow" id="findings-eyebrow">Из последней статьи</div>
+                    <h2 class="findings-title" id="findings-heading">Не только список докладов: что показывает архив</h2>
+                    <p class="findings-lead" id="findings-lead">Две конференции образуют связанные, но удивительно слабо пересекающиеся среды; их различают тематические акценты и общий жанр точного микрокейса.</p>
+                </div>
+                <a class="findings-cta" id="findings-cta" href="findings/">Читать выводы</a>
+            </div>
+            <div class="findings-grid">
+                <article class="insight-card">
+                    <div class="insight-metric">38 / ~104</div>
+                    <div class="insight-title" id="insight-overlap-title">Пересечение ниже ожидания</div>
+                    <div class="insight-text" id="insight-overlap-text">Только 38 ученых выступали на обеих площадках при модельном ожидании около 104.</div>
+                </article>
+                <article class="insight-card">
+                    <div class="insight-metric">74% / 56%</div>
+                    <div class="insight-title" id="insight-theme-title">Разные тематические оптики</div>
+                    <div class="insight-text" id="insight-theme-text">Классико-средневековые темы заметнее в Рериховских чтениях, чем в Зографских.</div>
+                </article>
+                <article class="insight-card">
+                    <div class="insight-metric">852 / 895</div>
+                    <div class="insight-title" id="insight-micro-title">Микрокейс является нормой</div>
+                    <div class="insight-text" id="insight-micro-text">Шкала Гумилева показывает доминирование докладов о конкретном тексте, авторе или источнике.</div>
+                </article>
+                <article class="insight-card">
+                    <div class="insight-metric">82</div>
+                    <div class="insight-title" id="insight-video-title">Видео как проверяемый слой</div>
+                    <div class="insight-text" id="insight-video-text">Прямые видеоссылки привязаны к 82 докладам, но этот слой не репрезентирует весь корпус.</div>
+                </article>
+            </div>
+        </section>
 
         <!-- Dynamic Control Center Buttons -->
         <nav class="controls" id="dashboard-controls">
@@ -907,6 +1106,18 @@
                     <option value="name-desc" id="opt-name-desc">Сортировать по алфавиту (Я-А)</option>
                 </select>
             </div>
+
+            <section class="query-results" id="talk-query-results" hidden aria-live="polite">
+                <div class="query-results-header">
+                    <h3 id="talk-query-heading"></h3>
+                    <div class="query-actions">
+                        <a class="query-link" id="talk-query-permalink" href=""></a>
+                        <a class="query-link" id="talk-query-topic-link" href="topics/ramayana.html" hidden></a>
+                    </div>
+                </div>
+                <p class="query-summary" id="talk-query-summary"></p>
+                <div class="query-talks" id="talk-query-list"></div>
+            </section>
 
             <div class="table-container">
                 <table id="scholars-table">
@@ -1200,7 +1411,7 @@ CREATE TABLE presentation_person (
     <!-- Main Dynamic Application Script with Bilingual Localization (RU / EN) -->
     <script>
         // Kick off data fetch immediately (preload tag in <head> ensures it starts even earlier)
-        const _dataPromise = fetch('site_data.json').then(r => r.json());
+        const _dataPromise = fetch('site_data.json?v=1.8.1').then(r => r.json());
 
         // Language state
         let currentLang = 'ru';
@@ -1217,6 +1428,22 @@ CREATE TABLE presentation_person (
                 statYearsDesc: "Период с 2004 по 2026 годы",
                 statOverlap: "Ядро индологов",
                 statOverlapDesc: "Ученые, участвовавшие в обеих конференциях",
+                findingsEyebrow: "Из последней статьи",
+                findingsHeading: "Не только список докладов: что показывает архив",
+                findingsLead: "Две конференции образуют связанные, но удивительно слабо пересекающиеся среды; их различают тематические акценты и общий жанр точного микрокейса.",
+                findingsCta: "Читать выводы",
+                insightOverlapTitle: "Пересечение ниже ожидания",
+                insightOverlapText: "Только 38 ученых выступали на обеих площадках при модельном ожидании около 104.",
+                insightThemeTitle: "Разные тематические оптики",
+                insightThemeText: "Классико-средневековые темы заметнее в Рериховских чтениях, чем в Зографских.",
+                insightMicroTitle: "Микрокейс является нормой",
+                insightMicroText: "Шкала Гумилева показывает доминирование докладов о конкретном тексте, авторе или источнике.",
+                insightVideoTitle: "Видео как проверяемый слой",
+                insightVideoText: "Прямые видеоссылки привязаны к 82 докладам, но этот слой не репрезентирует весь корпус.",
+                queryResultsTitle: "Доклады по запросу «{query}»",
+                queryResultsSummary: "Найдено уникальных докладов: {count}. Ниже показаны годы, площадки и авторы явных совпадений в названиях.",
+                queryPermalink: "Ссылка на выборку",
+                queryTopicLink: "Страница сюжета «Рамаяна»",
                 tabScholars: "Каталог востоковедов",
                 tabTimeline: "Хронология докладов",
                 tabCharts: "Статистический анализ",
@@ -1299,6 +1526,22 @@ CREATE TABLE presentation_person (
                 statYearsDesc: "Covering 2004 through 2026",
                 statOverlap: "Core Overlap Cohort",
                 statOverlapDesc: "Scholars active in both forums",
+                findingsEyebrow: "From the latest article",
+                findingsHeading: "Beyond a list of talks: what the archive reveals",
+                findingsLead: "The two conference series form connected but unexpectedly weakly overlapping environments, differentiated by thematic emphasis and a shared preference for precise micro-cases.",
+                findingsCta: "Read findings",
+                insightOverlapTitle: "Overlap is below expectation",
+                insightOverlapText: "Only 38 scholars spoke at both venues, compared with a model expectation of about 104.",
+                insightThemeTitle: "Different thematic perspectives",
+                insightThemeText: "Classical and medieval topics are markedly more prominent at the Roerich Readings than at the Zograf Readings.",
+                insightMicroTitle: "The micro-case is the norm",
+                insightMicroText: "The Gumilyov scale shows the dominance of talks on a specific text, author, or source.",
+                insightVideoTitle: "Video as a verification layer",
+                insightVideoText: "Direct video links are attached to 82 talks, but this layer is not representative of the full corpus.",
+                queryResultsTitle: "Talks matching \"{query}\"",
+                queryResultsSummary: "Unique matching talks: {count}. Years, venues, and authors of explicit title matches are listed below.",
+                queryPermalink: "Permalink to selection",
+                queryTopicLink: "Ramayana topic page",
                 tabScholars: "Scholars Directory",
                 tabTimeline: "Conferences Timeline",
                 tabCharts: "Statistical Insights",
@@ -1415,6 +1658,18 @@ CREATE TABLE presentation_person (
             document.getElementById('stat-years-desc').textContent = t.statYearsDesc;
             document.getElementById('stat-overlap-label').textContent = t.statOverlap;
             document.getElementById('stat-overlap-desc').textContent = t.statOverlapDesc;
+            document.getElementById('findings-eyebrow').textContent = t.findingsEyebrow;
+            document.getElementById('findings-heading').textContent = t.findingsHeading;
+            document.getElementById('findings-lead').textContent = t.findingsLead;
+            document.getElementById('findings-cta').textContent = t.findingsCta;
+            document.getElementById('insight-overlap-title').textContent = t.insightOverlapTitle;
+            document.getElementById('insight-overlap-text').textContent = t.insightOverlapText;
+            document.getElementById('insight-theme-title').textContent = t.insightThemeTitle;
+            document.getElementById('insight-theme-text').textContent = t.insightThemeText;
+            document.getElementById('insight-micro-title').textContent = t.insightMicroTitle;
+            document.getElementById('insight-micro-text').textContent = t.insightMicroText;
+            document.getElementById('insight-video-title').textContent = t.insightVideoTitle;
+            document.getElementById('insight-video-text').textContent = t.insightVideoText;
 
             // Navigation
             document.getElementById('tab-scholars').textContent = t.tabScholars;
@@ -1457,6 +1712,7 @@ CREATE TABLE presentation_person (
             // Re-render dynamic content
             updateSummaryStats();
             renderScholarsTable();
+            renderMatchingTalks(document.getElementById('talks-search').value.trim());
             initTimeline();
             if (document.getElementById('sec-charts').classList.contains('active')) {
                 document.getElementById('chart-geo-title').textContent = t.chartGeoTitle;
@@ -1584,6 +1840,121 @@ CREATE TABLE presentation_person (
             handleFilterChange();
         }
 
+        function escapeHtml(value) {
+            return String(value || '').replace(/[&<>"']/g, ch => ({
+                '&': '&amp;',
+                '<': '&lt;',
+                '>': '&gt;',
+                '"': '&quot;',
+                "'": '&#39;'
+            }[ch]));
+        }
+
+        function normalizedTalkToken(token) {
+            if (/^рамаян[а-яё]*$/i.test(token)) return 'рамаян';
+            if (/^махабхарат[а-яё]*$/i.test(token)) return 'махабхарат';
+            return token.toLowerCase();
+        }
+
+        function publicTagLabel(tag) {
+            const labels = {
+                'рамаян': 'Рамаяна',
+                'махабхарат': 'Махабхарата',
+                'индия': 'Индия',
+                'южная_индия': 'Южная Индия'
+            };
+            return labels[String(tag || '').toLowerCase()] || tag;
+        }
+
+        function talkQueryTokens(query) {
+            return query.toLowerCase().trim().split(/\s+/).filter(Boolean).map(normalizedTalkToken);
+        }
+
+        function titleMatchesTalkQuery(title, query) {
+            const titleValue = String(title || '').toLowerCase();
+            const tokens = talkQueryTokens(query);
+            return tokens.length > 0 && tokens.every(token => titleValue.includes(token));
+        }
+
+        function namedTopicForQuery(query) {
+            const tokens = talkQueryTokens(query);
+            if (tokens.includes('рамаян')) return { href: 'topics/ramayana.html', ru: 'Страница сюжета «Рамаяна»', en: 'Ramayana topic page' };
+            if (tokens.includes('махабхарат')) return { href: 'topics/mahabharata.html', ru: 'Страница сюжета «Махабхарата»', en: 'Mahabharata topic page' };
+            return null;
+        }
+
+        function talkPageHref(talk) {
+            const prefix = talk.series && talk.series.includes('Zograf') ? 'zograf' : 'roerich';
+            const anchor = talk.presentation_id ? `#${encodeURIComponent(talk.presentation_id)}` : '';
+            return `conferences/${prefix}-${talk.year}.html${anchor}`;
+        }
+
+        function matchingTalks(query) {
+            const matches = new Map();
+            CONFERENCE_DATA.scholars.forEach(scholar => {
+                (scholar.talks || []).forEach(talk => {
+                    if (!titleMatchesTalkQuery(talk.title, query)) return;
+                    if (!matches.has(talk.presentation_id)) {
+                        matches.set(talk.presentation_id, { talk, authors: [] });
+                    }
+                    const name = currentLang === 'ru' ? scholar.full_name_ru : scholar.full_name_en;
+                    if (name && !matches.get(talk.presentation_id).authors.includes(name)) {
+                        matches.get(talk.presentation_id).authors.push(name);
+                    }
+                });
+            });
+            return [...matches.values()].sort((left, right) => right.talk.year - left.talk.year || left.talk.title.localeCompare(right.talk.title, currentLang === 'ru' ? 'ru' : 'en'));
+        }
+
+        function syncDashboardUrl() {
+            const url = new URL(window.location.href);
+            const query = document.getElementById('scholars-search').value.trim();
+            const talksQuery = document.getElementById('talks-search').value.trim();
+            const series = document.getElementById('filter-series').value;
+            const sort = document.getElementById('filter-sort').value;
+            query ? url.searchParams.set('search', query) : url.searchParams.delete('search');
+            talksQuery ? url.searchParams.set('talks', talksQuery) : url.searchParams.delete('talks');
+            series !== 'all' ? url.searchParams.set('series', series) : url.searchParams.delete('series');
+            sort !== 'talks-desc' ? url.searchParams.set('sort', sort) : url.searchParams.delete('sort');
+            history.replaceState(null, '', `${url.pathname}${url.search}${url.hash}`);
+            return url;
+        }
+
+        function renderMatchingTalks(query) {
+            const panel = document.getElementById('talk-query-results');
+            if (!query) {
+                panel.hidden = true;
+                return;
+            }
+            const t = TRANSLATIONS[currentLang];
+            const matches = matchingTalks(query);
+            const url = new URL(window.location.href);
+            const topic = namedTopicForQuery(query);
+            document.getElementById('talk-query-heading').textContent = t.queryResultsTitle.replace('{query}', query);
+            document.getElementById('talk-query-summary').textContent = t.queryResultsSummary.replace('{count}', matches.length);
+            const permalink = document.getElementById('talk-query-permalink');
+            permalink.href = url.toString();
+            permalink.textContent = t.queryPermalink;
+            const topicLink = document.getElementById('talk-query-topic-link');
+            topicLink.hidden = !topic;
+            if (topic) {
+                topicLink.href = topic.href;
+                topicLink.textContent = currentLang === 'ru' ? topic.ru : topic.en;
+            }
+            document.getElementById('talk-query-list').innerHTML = matches.map(item => {
+                const talk = item.talk;
+                const series = talk.series.includes('Zograf') ? t.zografReadingsLabel : t.roerichReadingsLabel;
+                return `<article class="query-talk">
+                    <div class="query-year">${escapeHtml(talk.year)}</div>
+                    <div>
+                        <a class="query-title" href="${talkPageHref(talk)}">${escapeHtml(talk.title)}</a>
+                        <div class="query-meta">${escapeHtml(series)} · ${escapeHtml(item.authors.join('; '))}</div>
+                    </div>
+                </article>`;
+            }).join('');
+            panel.hidden = false;
+        }
+
         // Translate theme code dynamically
         function translateThemeCode(code) {
             const themes = {
@@ -1619,7 +1990,7 @@ CREATE TABLE presentation_person (
                 
                 let matchesTalksSearch = true;
                 if (talksSearchVal) {
-                    matchesTalksSearch = (s.sessions || s.talks).some(talk => talk.title.toLowerCase().includes(talksSearchVal));
+                    matchesTalksSearch = (s.sessions || s.talks).some(talk => titleMatchesTalkQuery(talk.title, talksSearchVal));
                 }
                 
                 let matchesSeries = true;
@@ -1650,6 +2021,8 @@ CREATE TABLE presentation_person (
             }
 
             currentPage = 1;
+            syncDashboardUrl();
+            renderMatchingTalks(talksSearchVal);
             renderScholarsTable();
         }
 
@@ -1816,7 +2189,7 @@ CREATE TABLE presentation_person (
                     let tagsHtml = '';
                     if (talk.tags && talk.tags.length > 0) {
                         tagsHtml = `<div style="margin-top: 0.5rem; display: flex; flex-wrap: wrap; gap: 0.25rem;">
-                            ${talk.tags.map(tag => `<span style="font-size: 0.65rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 0.1rem 0.4rem; border-radius: 4px; color: var(--text-secondary);">#${tag}</span>`).join('')}
+                            ${talk.tags.map(tag => `<span style="font-size: 0.65rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 0.1rem 0.4rem; border-radius: 4px; color: var(--text-secondary);">#${publicTagLabel(tag)}</span>`).join('')}
                         </div>`;
                     }
 
@@ -2817,9 +3190,18 @@ CREATE TABLE presentation_person (
             // Check for search parameter in URL
             const urlParams = new URLSearchParams(window.location.search);
             const searchQuery = urlParams.get('search');
-            if (searchQuery) {
-                setDashboardSearch(decodeURIComponent(searchQuery));
+            const talksQuery = urlParams.get('talks');
+            const seriesQuery = urlParams.get('series');
+            const sortQuery = urlParams.get('sort');
+            if (searchQuery) document.getElementById('scholars-search').value = searchQuery;
+            if (talksQuery) document.getElementById('talks-search').value = talksQuery;
+            if (seriesQuery && [...document.getElementById('filter-series').options].some(option => option.value === seriesQuery)) {
+                document.getElementById('filter-series').value = seriesQuery;
             }
+            if (sortQuery && [...document.getElementById('filter-sort').options].some(option => option.value === sortQuery)) {
+                document.getElementById('filter-sort').value = sortQuery;
+            }
+            if (searchQuery || talksQuery || seriesQuery || sortQuery) handleFilterChange();
         });
     </script>
 </body>

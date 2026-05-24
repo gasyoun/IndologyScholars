@@ -234,6 +234,9 @@ def main():
         "scholars/index.html",
         "conferences/index.html",
         "themes/index.html",
+        "topics/index.html",
+        "topics/ramayana.html",
+        "topics/mahabharata.html",
         "cities/index.html",
         "institutions/index.html",
         "methodology.html",
@@ -249,7 +252,7 @@ def main():
 
     if Path("sitemap.xml").exists():
         sitemap = read("sitemap.xml")
-        for page in ["", "en.html", "search.html", "download-data.html", "data-quality.html", "scholars/", "conferences/", "themes/", "cities/", "institutions/", "metrics-guide.html", "networks.html"]:
+        for page in ["", "en.html", "search.html", "download-data.html", "data-quality.html", "scholars/", "conferences/", "themes/", "topics/", "topics/ramayana.html", "topics/mahabharata.html", "cities/", "institutions/", "metrics-guide.html", "networks.html"]:
             expected = "https://gasyoun.github.io/IndologyScholars/" + page
             if expected not in sitemap:
                 fail(errors, f"sitemap.xml missing {expected}")

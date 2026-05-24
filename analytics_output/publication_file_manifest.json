@@ -6,12 +6,12 @@
     "pipeline_version": "2026-05-21",
     "generator": "generate_publication_pages.py"
   },
-  "file_count": 669,
+  "file_count": 673,
   "files": [
     {
       "path": "404.html",
-      "size_bytes": 9083,
-      "sha256": "0682e5b9a557c53a7c709d4bfcfa8a1edcb628e39a8bcda16fa6c412bf46ca39"
+      "size_bytes": 9226,
+      "sha256": "c9ff24d616b12ed2f249a143801a6a331954d3d5070013b60edc067c875a5bde"
     },
     {
       "path": "CITATION.cff",
@@ -70,8 +70,8 @@
     },
     {
       "path": "analytics_output/field_provenance_themes.csv",
-      "size_bytes": 249510,
-      "sha256": "38ba31488cd4d678ff357008b931fff713234dab3ecb596fa6a07221415cf34c"
+      "size_bytes": 248337,
+      "sha256": "359d8ca1b8fd4332b9c84a1ac46632ca8534ab4ae2cbe39cddd9cfd586ad4c09"
     },
     {
       "path": "analytics_output/gumilyov_scale.csv",
@@ -205,8 +205,8 @@
     },
     {
       "path": "analytics_output/theme_review_queue.csv",
-      "size_bytes": 218844,
-      "sha256": "dddee7ec1dc980bf46815df3718e4e5f54d13846921e16481fd4d3eb1f04fb70"
+      "size_bytes": 217671,
+      "sha256": "e9a4947ec9a149848ec24c356966d3cad3d7e2d2449df4c92e76ebc72e3d0508"
     },
     {
       "path": "analytics_output/total_indologists.csv",
@@ -255,223 +255,223 @@
     },
     {
       "path": "cities/deli.html",
-      "size_bytes": 11223,
-      "sha256": "747cb8fa79e7b174071ad15d4bbbff1e769a5006e05bd5f173b8521895f21795"
+      "size_bytes": 11366,
+      "sha256": "0d75a486f7d243556cd91a7d4bef2a0203f80b4927fb06193174ef7d111b632a"
     },
     {
       "path": "cities/elista.html",
-      "size_bytes": 14819,
-      "sha256": "62dd745313d6c704f8ee783128399c82816ac42a5204b54b48ea2d66a963b72d"
+      "size_bytes": 14962,
+      "sha256": "d202cad88e02543bd3acbc2ce7155c59c2f3cf98779732cd58820da199f50e3b"
     },
     {
       "path": "cities/index.html",
-      "size_bytes": 10622,
-      "sha256": "a8ad74059f25b91831f4c59d88f3f055ec4796adcc6899022b47b05539290816"
+      "size_bytes": 10765,
+      "sha256": "34de4cb053b0a3188a1a89e2bcd9dc2ed2698f0d8795088bedba7415892af0af"
     },
     {
       "path": "cities/kazan.html",
-      "size_bytes": 17231,
-      "sha256": "ab8d8b1d2835926c78e5fb1d23b80bb0afbcd9d9a2dbc063e2a82ff939c4f536"
+      "size_bytes": 17374,
+      "sha256": "b87cc8f40674f14774952f647a9c4bdb3725786896b6d1e31d8b658488a07201"
     },
     {
       "path": "cities/krasnodar.html",
-      "size_bytes": 17257,
-      "sha256": "367e0df27007981cab973f41101c37a17fb2a52cb438a3c293a335f7e2fb4ba2"
+      "size_bytes": 17400,
+      "sha256": "685a99683d55caf81a14bb876f2c68df1fb72ba3e1ad0fdd218aeffece10aabf"
     },
     {
       "path": "cities/moskva.html",
-      "size_bytes": 212567,
-      "sha256": "284e3575b9ed4495b7caf2901b1794e537240eda56d1f7e37c51ebf1b2e14ffa"
+      "size_bytes": 212710,
+      "sha256": "fd6b4d18e1a3804e9773d595c5b8700e034a27ea5afd236f55f2cff13e118a72"
     },
     {
       "path": "cities/nizhnii-novgorod.html",
-      "size_bytes": 11761,
-      "sha256": "70835f40e858625afd798faf8cb0a739a5197608f10d86280603d7e273b99729"
+      "size_bytes": 11904,
+      "sha256": "90c94aa6a1ca71fa887f275a3a452237f73d75f8d7921a00fa3c4a73de28fe07"
     },
     {
       "path": "cities/novosibirsk.html",
-      "size_bytes": 13666,
-      "sha256": "cf91bcdb3cda8b7a87c43117bdac112d93c435a52cc60147bb2ef74c584a8222"
+      "size_bytes": 13809,
+      "sha256": "fc9caa73d9e8ddb55dfc76dff3e4f196642b53722c0838249dc340e3b4bf56ad"
     },
     {
       "path": "cities/penza.html",
-      "size_bytes": 20709,
-      "sha256": "89d1d0d222108c35949582616e0968b174ea896f1ef49689995933dbb1769d32"
+      "size_bytes": 20852,
+      "sha256": "45607a97d53058b66e04810d883b02869f5490034e8d0fd8d3e00541660b81ba"
     },
     {
       "path": "cities/sankt-peterburg.html",
-      "size_bytes": 215720,
-      "sha256": "12acc5fa819e0e85406ff2cfcf361a8829d14000a48bae070da783bbbf5b4e14"
+      "size_bytes": 214690,
+      "sha256": "4b34c32db19ec70f1b115461f7c91e628670cead9681e797be71c466cfba1a97"
     },
     {
       "path": "cities/ulan-ude.html",
-      "size_bytes": 11490,
-      "sha256": "ff9e447bd62abbe239b1392992fd11a11088fded0143574cf2bb8a38b36d94cb"
+      "size_bytes": 11633,
+      "sha256": "67f0af7293853bdb9fb6a6502c2400cb7b0fe8c14b862ea4603a941f7025259e"
     },
     {
       "path": "cities/vilnyus.html",
-      "size_bytes": 11406,
-      "sha256": "145f45dde0998d253edb0628515bf1f00e7b8f107dcd0adb52cb21ad758245e3"
+      "size_bytes": 11549,
+      "sha256": "22b245f37e6504d634e3e569e26a06d5d647be4eab2c42412792314db43f0480"
     },
     {
       "path": "conferences/index.html",
-      "size_bytes": 14541,
-      "sha256": "048371c16ee9f2814a5b8c52c750ae2e2905b9a8802809b79c2c8358cc6f8f6f"
+      "size_bytes": 14684,
+      "sha256": "6a65743b1b0de2df7ec4094b79b4b17a2928a790ae3bdd304c126f82c9a0bef9"
     },
     {
       "path": "conferences/roerich-2010.html",
-      "size_bytes": 10368,
-      "sha256": "049b749f65011d49a842914bb1091ab9091e054af5d5581ddef0c26005cd1ae9"
+      "size_bytes": 10511,
+      "sha256": "662b40dbedfaa11fd3e19f19176a3dc554ee031210a515e49e11c547b10b931f"
     },
     {
       "path": "conferences/roerich-2012.html",
-      "size_bytes": 34830,
-      "sha256": "06e61de673e296c498fdb1434ffe73d4e76591dd03b1713c45bd325ce5699761"
+      "size_bytes": 34973,
+      "sha256": "f759a1c9157a5ed04d2e822941faa62c127d3cfd9e85d56cf8a0e055031bb0e2"
     },
     {
       "path": "conferences/roerich-2015.html",
-      "size_bytes": 33773,
-      "sha256": "1d8e9f9edf6d329cadfb1fb854fa490587e61e62a50bf42d21b8eacfa074d83e"
+      "size_bytes": 33916,
+      "sha256": "42d6cbbedd01dff1ff2f399c2cb2d4d3a3a5d828ba048e16bcd0a6908a0ffaf9"
     },
     {
       "path": "conferences/roerich-2016.html",
-      "size_bytes": 34670,
-      "sha256": "088f18a5115dedb3035ce408eb64fe8bf54f39ba568b55a6f5a4ac3392f66131"
+      "size_bytes": 34813,
+      "sha256": "7457d4ff1fd2ff33b430f7a2bdab0e0bef3d68e25a083b8195655aa312abf9ac"
     },
     {
       "path": "conferences/roerich-2017.html",
-      "size_bytes": 37512,
-      "sha256": "1ea565a1fdc54e529de30b389ea1f2a06878c88bb9c4d264df0ee8ba1baa3fef"
+      "size_bytes": 37655,
+      "sha256": "033017e9b973a9a64ce0e54d2fd6d75a2fb012d4728965e9b3e25995d8a52c64"
     },
     {
       "path": "conferences/roerich-2018.html",
-      "size_bytes": 37059,
-      "sha256": "00bf1355d24cf0a9ca4ec4bb120e69213ab884d0051f37206fba2b6ad8d5fd1a"
+      "size_bytes": 37202,
+      "sha256": "1288de4f193ff846a6cd10866684f1e8c996639be487fcb39e0aec5d7f1510e6"
     },
     {
       "path": "conferences/roerich-2019.html",
-      "size_bytes": 33779,
-      "sha256": "e0716f56b0adff6be43502fad61d1f997294c54620494b2ada80c6ffa7382455"
+      "size_bytes": 33922,
+      "sha256": "84b0a12fcf9c9dba66c4905a31607ed96817c3f90d5ad673bed5980f026daa5a"
     },
     {
       "path": "conferences/roerich-2020.html",
-      "size_bytes": 34952,
-      "sha256": "d9b1aab886766f686e9561b933d24a09722c4d187e4fd26009837c5017a37ea2"
+      "size_bytes": 35095,
+      "sha256": "8a69ca772a7143752965aba60fe6cb92743aa1c8d429d264eb1222daa6a97291"
     },
     {
       "path": "conferences/roerich-2021.html",
-      "size_bytes": 34839,
-      "sha256": "a4b0c4ea884f878d7676d2cb76034e4cf502101924132e69fa7efcaf33550fdd"
+      "size_bytes": 34982,
+      "sha256": "c1090d1d4bdd673ddc4ce1700b11360ff4f545b5af1530dae4e636a9f523bdb4"
     },
     {
       "path": "conferences/roerich-2022.html",
-      "size_bytes": 31906,
-      "sha256": "c403f5ce892c6e45efd6eaaffa683ae21d142888d1ac8027335585d4e864086e"
+      "size_bytes": 32049,
+      "sha256": "9565356b99a3b5ba4b286be318229da1b790c941be1ff6a41bd29cac76d2639b"
     },
     {
       "path": "conferences/roerich-2023.html",
-      "size_bytes": 23777,
-      "sha256": "eaf60f350036cdeef2efb9e812434419a4e781876dec0ff2aea82de9547cdac7"
+      "size_bytes": 23920,
+      "sha256": "3de56cd463c4cb4c751908b5b3e722586f9055e1b3eadde410de88be6b4ddb3c"
     },
     {
       "path": "conferences/roerich-2024.html",
-      "size_bytes": 33748,
-      "sha256": "e78a600f2fad5cf105686394a28245528b7bc16b866aac5876ea154720b902d2"
+      "size_bytes": 33891,
+      "sha256": "8a8563a4132e4b7bba330eb3e2e0697b85b5105bc03082fc6529e012b9abda9d"
     },
     {
       "path": "conferences/roerich-2025.html",
-      "size_bytes": 41395,
-      "sha256": "7af90e2f9036f06f2df68141f562fd622dbff4abd1a0a4b2b95c98015b9c161c"
+      "size_bytes": 41538,
+      "sha256": "80d23fad70276a0c3062faab7f6b701395d6280b99745f5f94f4b1824cf91bdb"
     },
     {
       "path": "conferences/zograf-2004.html",
-      "size_bytes": 19156,
-      "sha256": "5377eee9f648f15664df89f5c2a30371717e8c7f928bb9cd29dc892af4acb305"
+      "size_bytes": 19299,
+      "sha256": "f6c87b958e6c66585274516870107a513e2f7ec53c84cd179ecefcc6568594f2"
     },
     {
       "path": "conferences/zograf-2006.html",
-      "size_bytes": 31299,
-      "sha256": "9553cf19a25530a2a8d9b4887abbd996a0327861a1be4125821cf6c13443ef6a"
+      "size_bytes": 31442,
+      "sha256": "de0421dcfdb355ec17a64b9808a2bd9438f88a703f578d59145bf269b4c5d4a8"
     },
     {
       "path": "conferences/zograf-2007.html",
-      "size_bytes": 30026,
-      "sha256": "e9850d7ceb186b5e6e12eb060bcfc9e0134f7ecc0b9a81ee1dfda9fc7dbc8ecf"
+      "size_bytes": 30169,
+      "sha256": "af61d0b0f23e32981200c59de4bbb91c752db5c72da88d2fef2a261d6a90825b"
     },
     {
       "path": "conferences/zograf-2010.html",
-      "size_bytes": 19013,
-      "sha256": "c72aa54a8db550d8bb6d844b7dbc59a1914feb80d8a27e8d1885f6987e89de23"
+      "size_bytes": 19156,
+      "sha256": "84114813436b014cefd169ff468cf9d7df585a9e16f79c32dd0b43a9b2e31aa5"
     },
     {
       "path": "conferences/zograf-2011.html",
-      "size_bytes": 34077,
-      "sha256": "519a14fa01551221a14a74116dcca88db9fcca63af0c2439e44f7a6fd8895d30"
+      "size_bytes": 34220,
+      "sha256": "511039b7a9f54b231b05a99dd97fd569f54229605fbd82ec794b116bb3fef062"
     },
     {
       "path": "conferences/zograf-2012.html",
-      "size_bytes": 34851,
-      "sha256": "73185984191faa01bda1b841787f775d44577d7034f348a9f75f7efdbada6102"
+      "size_bytes": 34994,
+      "sha256": "08bd89db6db6f9db796acc13610663bdb6e5525ff3ef718e3f4585fa1e036cf0"
     },
     {
       "path": "conferences/zograf-2013.html",
-      "size_bytes": 34611,
-      "sha256": "0b07dc422b41c3e7855004aaaf46be6116ee8c17065153783aeef5df9bf7fd2f"
+      "size_bytes": 34754,
+      "sha256": "3075a37ab81406e18d63a193ba2daccb0befa18742b9fcc987f17e8621a87490"
     },
     {
       "path": "conferences/zograf-2014.html",
-      "size_bytes": 40706,
-      "sha256": "87b5f5170682f9bf71af10c5749bc84cc6d29e5dc6729d1edc5584b82e3ae0a8"
+      "size_bytes": 40849,
+      "sha256": "d49254c7633bde43f7fd60ea5b2db9d2c822d13deb7953dfb9b5644d718c1eaf"
     },
     {
       "path": "conferences/zograf-2018.html",
-      "size_bytes": 44162,
-      "sha256": "0e4772f5bc0bc44584ec4e167305e2929f67c097b7473f6e07c701d7c0a84362"
+      "size_bytes": 44305,
+      "sha256": "d5c2e516be0842f2adbce87b99012175ebe78b2bba9fe27772c5567041e8945c"
     },
     {
       "path": "conferences/zograf-2019.html",
-      "size_bytes": 49021,
-      "sha256": "3a619ff82eb1e812bd60805dc3109f2c1edbea2c9e05344657a41c77ec8c4853"
+      "size_bytes": 49164,
+      "sha256": "68d4dc2afc4ce60a7bb8828aa72560fb0b460c0d708f0730b809544749983275"
     },
     {
       "path": "conferences/zograf-2020.html",
-      "size_bytes": 51616,
-      "sha256": "fc6f51082446cc265ec417cf7cc3793e997cb0cf5be71db52a0f92618ab307b2"
+      "size_bytes": 51759,
+      "sha256": "05989baadde17bf1fb49953dc3903e708b010c40cd5efe2fcc1ec21b14ba0bd0"
     },
     {
       "path": "conferences/zograf-2021.html",
-      "size_bytes": 46878,
-      "sha256": "d04d1b4ccc5456f2068f0873a09a38e60a272b40a9f70ad2bf1a0167664c941b"
+      "size_bytes": 47021,
+      "sha256": "ccb4b38cf8954d4fc452790703b273e15952e4f80093d51b8fa64b14b5bbf31e"
     },
     {
       "path": "conferences/zograf-2022.html",
-      "size_bytes": 36125,
-      "sha256": "f6d0204082832c00800aa66259242087611071f30c5ae039caf1c50d15cde657"
+      "size_bytes": 36268,
+      "sha256": "b5cc2c490c1e140b763269ae7111e5c126a30b9fb89cb73d092c01a5d4e4febd"
     },
     {
       "path": "conferences/zograf-2023.html",
-      "size_bytes": 28614,
-      "sha256": "5afa9281350160f6d63961cf3c01ee7ab2be1e57b4b1f3482380aaef218c7753"
+      "size_bytes": 27584,
+      "sha256": "a43fc05d227a3d9c18d96eee3504c2a5f8c23f28875d27501d00c77f659cdca3"
     },
     {
       "path": "conferences/zograf-2024.html",
-      "size_bytes": 13275,
-      "sha256": "179eb01b66cdc11616d3a4c8c66ce9496ac269efa0b97f1af8686efdd3eefff7"
+      "size_bytes": 13418,
+      "sha256": "c8190268b9cf901afa875251ff7e4b64bd50aee1d7047ca8dd2dd960a4f099ee"
     },
     {
       "path": "conferences/zograf-2025.html",
-      "size_bytes": 60074,
-      "sha256": "2e6cb9911ad158a1f9b8eeff142f8f67a8259158ed309a4fde2a59beeb777bfd"
+      "size_bytes": 60217,
+      "sha256": "6ae2cd5d344cd22198a381e020c906b73ff0193feedc385398d2230120fcfba1"
     },
     {
       "path": "conferences/zograf-2026.html",
-      "size_bytes": 58247,
-      "sha256": "69844235718cc1be08c8459f87db4ceab3bbc50f8b9df92bb366ad854bf7b9e3"
+      "size_bytes": 58390,
+      "sha256": "5c4651c9e94bd2f975f5b251575a644c0d6ab24430471742cc4ff587aec3abf5"
     },
     {
       "path": "data-quality.html",
-      "size_bytes": 12997,
-      "sha256": "7a87f109e889d542eb611c0784750696c2eb83ad26e5850485641f45e0dbed92"
+      "size_bytes": 13140,
+      "sha256": "b37dc03bc77ed0f5f335e8834b4e908452d02d33c05233798eba044e99e70705"
     },
     {
       "path": "data_dictionary.md",
@@ -485,188 +485,193 @@
     },
     {
       "path": "download-data.html",
-      "size_bytes": 20850,
-      "sha256": "f7460bd7f5c5878dabecf87b4137ee710b6cc42bf0caf3820191334a282bce8f"
+      "size_bytes": 20993,
+      "sha256": "ee1703b91c035f1375be766eeb0f1bf1b6db6f3cb936e3d1e84e8417f1855183"
     },
     {
       "path": "en.html",
-      "size_bytes": 10744,
-      "sha256": "349d4cd497e36801ce6b7850c4093d1f02e74e80f8943dc6b2998ba7cd8ee3cb"
+      "size_bytes": 11302,
+      "sha256": "1d2325b91ff84fd68514e261fc42b938b50752ec5b4f50b073d38d753feaf593"
+    },
+    {
+      "path": "findings/index.html",
+      "size_bytes": 17586,
+      "sha256": "7c50a18727c407652a54bfd27b640e2cfd956a92deb714162601acd1f0096b6d"
     },
     {
       "path": "gumilyov/index.html",
-      "size_bytes": 10722,
-      "sha256": "0d31cb3e6d81ed42244e8474d30c30c5bf94dde640cd05260cbc91c82800032e"
+      "size_bytes": 10865,
+      "sha256": "034f7a2c054d15a8e96c5d2e415601d2d36ac160cf464ef5161469bd4705095f"
     },
     {
       "path": "gumilyov/level-1.html",
-      "size_bytes": 659520,
-      "sha256": "7864f0eca494b05dc92f387ca7a67ae345e3f260d3a2143deb90835db7e9b128"
+      "size_bytes": 658490,
+      "sha256": "f4b35601352632f4106a75315236c60da7bbe5646d9d225820a61239140e75a5"
     },
     {
       "path": "gumilyov/level-2.html",
-      "size_bytes": 37233,
-      "sha256": "30fb218df24e5ef4d39818a6884875cba10be48d2ef290f86f8c6fda2ae4dbec"
+      "size_bytes": 37376,
+      "sha256": "f0b9a682fde7024135560555f0f2d9e4013ae5cf20325be0592bf3ddbdbae3fd"
     },
     {
       "path": "gumilyov/level-3.html",
-      "size_bytes": 14672,
-      "sha256": "a5589d5f1449f5c27f0a6ea25c88171280e0e0c9a80502761ea9fe06a66ec7d0"
+      "size_bytes": 14815,
+      "sha256": "ee3d970575147699b7096d98359da45b06eb427de895369f7846406613387f00"
     },
     {
       "path": "how-to-cite.html",
-      "size_bytes": 9645,
-      "sha256": "252f091984bc75dfbc5d666cf6cacfe9fe6e44d2e7abdfc384f5fe8acd7e7e08"
+      "size_bytes": 9788,
+      "sha256": "1b21dda6ec8d9bfd75ebceb52416daecbc9112db67151b54df1a99242234315c"
     },
     {
       "path": "index.html",
-      "size_bytes": 140630,
-      "sha256": "8eaf0d594f094835d0b88909b01b600599dd8503c2498c2ae7673aae26a715bd"
+      "size_bytes": 160290,
+      "sha256": "100487d29603c75a49260cd473b49050a434ed7d9c738b8daa6a18f597b06320"
     },
     {
       "path": "institutions/gosudarstvennyi-ermitazh.html",
-      "size_bytes": 12383,
-      "sha256": "db0beadcbea110fa2fc243aa0ab23cbcd4858f9655c9e223ba73edc1114f38ff"
+      "size_bytes": 12526,
+      "sha256": "7b519f31db2104bfcdaceb901d7085dbe08a2da6d4ff5b54f99ed7efb79e2423"
     },
     {
       "path": "institutions/if-ran.html",
-      "size_bytes": 22255,
-      "sha256": "521574af5ffb827a0f2ce55c05542e95f433c9d79095cb7d29cee0dc21a9a4bf"
+      "size_bytes": 22398,
+      "sha256": "38f632319934450d9cb2e9ae18ce24dec548f12f69c37b2ef6f2c5d28eace000"
     },
     {
       "path": "institutions/index.html",
-      "size_bytes": 10606,
-      "sha256": "2237f09239ae844ad9bf8c6f85284d0d2704f9a993a9e6450861a41206777e36"
+      "size_bytes": 10749,
+      "sha256": "0ea1da9aa74a0aff54d9eb6933dfeba0a1f1b6a2e519e8217cd28983cf05a6fa"
     },
     {
       "path": "institutions/iv-ran.html",
-      "size_bytes": 132507,
-      "sha256": "d77333c7ec780f953a3b9913679b19258f82477bae49522f10de2c6cabb3de90"
+      "size_bytes": 132650,
+      "sha256": "2a891110453519bc3cbae903fa78bd1c3b9138aa06e75b531311551509384f83"
     },
     {
       "path": "institutions/ivr-ran.html",
-      "size_bytes": 11429,
-      "sha256": "a354fa929a7a8b904952d4e33ae3dc39d3c4a3e327f0a7c77426ee2f9b104118"
+      "size_bytes": 11572,
+      "sha256": "d210afd1966da4b30ec7267c2e06cf8cd647bdc9dc5b712cc2b65da4ac782139"
     },
     {
       "path": "institutions/mae-ran.html",
-      "size_bytes": 12881,
-      "sha256": "1eb4eaa1bf61fddfbed0464ec022eae12e7da43c714deecdfed305eb1c778594"
+      "size_bytes": 13024,
+      "sha256": "2539e9044019fcf9dfa8344d52c50222079fbab329bda34966ad95e6df8860ca"
     },
     {
       "path": "institutions/mgu.html",
-      "size_bytes": 40884,
-      "sha256": "825769827d021de516610bbc6ae7d714988a324774be2c241ab636c63da28632"
+      "size_bytes": 41027,
+      "sha256": "11a55d7aad146931c4f00306837d4a2f745858fb0ed1afcbed00ba9062fd4822"
     },
     {
       "path": "institutions/nezavisimye-issledovateli.html",
-      "size_bytes": 13157,
-      "sha256": "dc6e124f7891d5c3e20fbca065a851d88ccd48576fb71b1c3a3836e372a1518c"
+      "size_bytes": 13300,
+      "sha256": "e728a5d1a35e6d00fe3cce4a1f3567aa2d9f01b7232cdec12c35d9d51968f793"
     },
     {
       "path": "institutions/niu-vshe.html",
-      "size_bytes": 25228,
-      "sha256": "407eaea8b657307e0fc26ab8e2c864e74c0904db03a0ca94959281ed9bffb0ae"
+      "size_bytes": 25371,
+      "sha256": "b04640eba84c1066a5d8bc75d68b8c6421360ba9dd525179be13b67844ac7dff"
     },
     {
       "path": "institutions/rggu.html",
-      "size_bytes": 14672,
-      "sha256": "34aefa1bcf2055213acf38a3631c3a198683553721dd24259fdbb6294b23cd04"
+      "size_bytes": 14815,
+      "sha256": "7d0ef8a6e2c2b3a4cd3ecb896f8180f5674c3176e1d4db0afc988f6f5a3da391"
     },
     {
       "path": "institutions/spbgu.html",
-      "size_bytes": 43988,
-      "sha256": "2030b036c17546960bf21521f2ecb0d75f6d1305baaa8794d698403b8f3b5828"
+      "size_bytes": 44131,
+      "sha256": "074023234fe82c132797715a48558c89725089c818454e4f7209586b9e781e63"
     },
     {
       "path": "known-limitations.html",
-      "size_bytes": 10903,
-      "sha256": "fe4702dfc6742aa0b80fddec5bebc3ad67ccedc2ab7feb27ea0e5554bec6df91"
+      "size_bytes": 11046,
+      "sha256": "f51f3d3657a824a7e29e5c69635afcd1bd881417a09b72a14350aedc665e1939"
     },
     {
       "path": "meso/bengal-bhakti-modernity.html",
-      "size_bytes": 47000,
-      "sha256": "14bf822ef197649281472a916030588d1108ae8fb002f4795199416d46ef2664"
+      "size_bytes": 45970,
+      "sha256": "b5af73bc0f9c66ebfe3b9de597032b5f025f9aeab8d767181ce6f6e8ba908af4"
     },
     {
       "path": "meso/china-mongolia-inner-asia.html",
-      "size_bytes": 39454,
-      "sha256": "4c99a1293647fd0c0b186fa5be706b5add43116cd77652713c206a0c8e0b19c1"
+      "size_bytes": 39597,
+      "sha256": "f91106dcf1eb3ccf8b333d20c8f33d81d2541e631dd070f679cc7fd697af4706"
     },
     {
       "path": "meso/dravidology-south-india.html",
-      "size_bytes": 55344,
-      "sha256": "eaf37e9599f52ece56ba12e6f0cb4952bbafe3ee2452a521be20145fe1116174"
+      "size_bytes": 54314,
+      "sha256": "b66e35f9ed35ce306fa31f51ee87d8fe5a7ed7bcddcdd74ea08789c352723aae"
     },
     {
       "path": "meso/ethnography-performance.html",
-      "size_bytes": 96396,
-      "sha256": "d341def8fc075fa8d8294ed1f0f581d02aee4451ca125b8b4a2d7ccb50702de3"
+      "size_bytes": 96539,
+      "sha256": "dcad43107e2a8659785d240afbc6035b175e1a419b4f85f81f586bbc71a1d675"
     },
     {
       "path": "meso/hindi-urdu-new-indo-aryan.html",
-      "size_bytes": 29482,
-      "sha256": "e8a3e53f4ea7c6a24866de1e07e759398bd1b3de0358ae3dd96252450abbd902"
+      "size_bytes": 29625,
+      "sha256": "e924a14711157af7b14dde4e0a0ba94d3ece0a3043beb5cc8690ff82635eae09"
     },
     {
       "path": "meso/index.html",
-      "size_bytes": 21325,
-      "sha256": "ce9badb630b4047f99fc276bd12af5f3102f8072baeabd41a18adb52a1f44930"
+      "size_bytes": 21468,
+      "sha256": "91f34bd6c890696bbc2f5c603b064da9dcd0609992c65eeba63fcc877a8cbbc3"
     },
     {
       "path": "meso/linguistics-language-system.html",
-      "size_bytes": 80581,
-      "sha256": "36c8f5b86df80b7792ecc0e19ff90cf87d103a23807e6162ccfcd4c89feb0522"
+      "size_bytes": 80724,
+      "sha256": "23998c3defdc2714c14867208e4fb15aafafd06143dc827385dc61dfd6374850"
     },
     {
       "path": "meso/linguistics-text-philology.html",
-      "size_bytes": 30571,
-      "sha256": "5042e97e4edb5bd61b40ae2780eb12203f3c23bfbc9cf3f830071ba62ee79105"
+      "size_bytes": 30714,
+      "sha256": "198d62f4eb08565f75975f1ebbfe124c94c45a89634fab5acdbc2b505f56c4a9"
     },
     {
       "path": "meso/museum-collections.html",
-      "size_bytes": 49733,
-      "sha256": "1e0ae0aa948cbca5aea3ca2142f758d2405a4a4c858de69f54a3d1ae28fd5984"
+      "size_bytes": 49876,
+      "sha256": "4c32b25d3abd56f2ecdb02a906cbe9c761d313d696e2630e38c0a87c2ceb9a04"
     },
     {
       "path": "meso/nepal-newar-kathmandu.html",
-      "size_bytes": 35511,
-      "sha256": "867b3b93f1d22220c561a2faf14d6965bc82e48be102a24e2fdcdd252ff82f20"
+      "size_bytes": 35654,
+      "sha256": "4cbda19c5e228817f14f1d6c15730d8b19106e13b7b4c2356e087ce3913513ab"
     },
     {
       "path": "meso/pali-early-buddhism.html",
-      "size_bytes": 42496,
-      "sha256": "82d27c0cd4a99885efe409ee57f6ebc345191923cb12884f9bb5e44bf6cb2ac9"
+      "size_bytes": 42639,
+      "sha256": "8027f34653a2ba20d0c513faeafed05986d21361aa7dd9fb4334d3bc7f6b0db5"
     },
     {
       "path": "meso/roerich-studies.html",
-      "size_bytes": 37002,
-      "sha256": "a6b246d7d9afb2954281c4c5342c30535572110581eafb04bff06ddbc1abce1f"
+      "size_bytes": 37145,
+      "sha256": "6aa13bb0c77f83e3cb6cc8179a61d7796b37cad138d57e10017d777ce1bd6528"
     },
     {
       "path": "meso/sanskrit-grammar-panini.html",
-      "size_bytes": 33904,
-      "sha256": "24df69692a9ee343b3cbc274861540130b7143be1c9a8cf6dd23bd312c0bd89f"
+      "size_bytes": 34047,
+      "sha256": "ba9636f68f996711b99236396099939c9882fdd9ae4067dfa28c5e1198fa4e67"
     },
     {
       "path": "meso/tibetology-himalaya.html",
-      "size_bytes": 47823,
-      "sha256": "abf4455976ee957b46eea62cc93df069af39a23ce149218b35d4ab02442bf343"
+      "size_bytes": 47966,
+      "sha256": "86f1d06ee6b3cb7506c374c7fd44514aae9a0a2a9c1f48945d03ace9432a6e47"
     },
     {
       "path": "meso/vedic-studies.html",
-      "size_bytes": 36306,
-      "sha256": "dcad2034bf9ce15db4e7310f15743e72011d062154aa2c47b201a299067f659d"
+      "size_bytes": 36449,
+      "sha256": "55fe304e3464af0ce099dc5542dc461c2081d1bc4469b29ceb09f58744f74364"
     },
     {
       "path": "methodology.html",
-      "size_bytes": 10854,
-      "sha256": "b551b586f2a3f4136318a402d56b8372e4f1235c1641a3e621edeeec078ccdd5"
+      "size_bytes": 10997,
+      "sha256": "0095b135b49fc2d2f8c7055e76d06b321cb81085b8c739514cf13815577c291c"
     },
     {
       "path": "metrics-guide.html",
-      "size_bytes": 11025,
-      "sha256": "4021db5d4b21f49e31fcc7f914a2a4c05ea18f47549d05dfd4793ca22f6c1d51"
+      "size_bytes": 11168,
+      "sha256": "8e08d3578d48c3e5463e14071feae212706150e523d141a3e56773a4d8117ec9"
     },
     {
       "path": "networks.html",
@@ -1780,18 +1785,18 @@
     },
     {
       "path": "scholars/abinyakin-vladimir.html",
-      "size_bytes": 19802,
-      "sha256": "eb98e2699990efd8a9f3650e2156ae0782b545d1dd058383855db51c20a03d87"
+      "size_bytes": 20134,
+      "sha256": "6c0d4d9f7ba13ef3eb2e7df57fb733e4462cb04c6823399006adab8d3b500b02"
     },
     {
       "path": "scholars/akimushkina-ekaterina.html",
-      "size_bytes": 19953,
-      "sha256": "a8881115430b1940be23b0416631ea5bdb4c1c1512295fd183bd6d95cdd41a52"
+      "size_bytes": 20228,
+      "sha256": "f3857cbecebde690c99201d4a67619b4bdefb7f997290da417fa2a08ad35cc1c"
     },
     {
       "path": "scholars/albedil-margarita.html",
-      "size_bytes": 34102,
-      "sha256": "cdc011895f47e0c7373c6193297c6cabab3d18b791337ddb1cb3dada961912da"
+      "size_bytes": 34420,
+      "sha256": "10cbee87260756a530d3c735eacb563d4fbf2e35499612e6fc5f91b7aa5e7ee7"
     },
     {
       "path": "scholars/albedil.html",
@@ -1805,23 +1810,23 @@
     },
     {
       "path": "scholars/aleshina-irina.html",
-      "size_bytes": 19017,
-      "sha256": "8d1150ba4af71eb50ceab18d51c5d29e48d6db56d9e6df20d0a0b529122dcab4"
+      "size_bytes": 19276,
+      "sha256": "4507be653d2d85fa8ff6e975c1221d8851139b9e8671aef6a79fcc056aadf3cd"
     },
     {
       "path": "scholars/alexander-babin.html",
-      "size_bytes": 36770,
-      "sha256": "3b714687426b7fe1842d836c337673fa5ea101ea046f5229f41855b9c7755f76"
+      "size_bytes": 37057,
+      "sha256": "6e877b46d8cefafb8f9764272c06987c06c9e67baa3e165342ba80e9c3b365b8"
     },
     {
       "path": "scholars/alexander-dubyansky.html",
-      "size_bytes": 40326,
-      "sha256": "b81de204569f53687eb17522a137ae1bc7a7dd4a760f0a0a84199f8643fef8b8"
+      "size_bytes": 40589,
+      "sha256": "8cb0a0756681a20a0280ffbfe6d5254d4521d9f6ba4920ae2335cff4f23ea3f2"
     },
     {
       "path": "scholars/alexey-vigasin.html",
-      "size_bytes": 26294,
-      "sha256": "df6e8c257935d26611c4399869d0923b14fa01bd43a0321c1df46e6bb17b3fcd"
+      "size_bytes": 26553,
+      "sha256": "85653472538cfd8510c9dad2afe6c44e1993dd06b5bf4f6310684d4898717a40"
     },
     {
       "path": "scholars/alikhanova.html",
@@ -1830,43 +1835,43 @@
     },
     {
       "path": "scholars/anastasia-fiveyskaya.html",
-      "size_bytes": 22797,
-      "sha256": "494ea6ee4133857ec0ff49c0c47ab281528edb238dd46847a6ded1b4b2c97493"
+      "size_bytes": 23072,
+      "sha256": "df1e1299f1f9ba7d8eb7bcef122181ffa59823b5734ac12731a17e4bdcd86c55"
     },
     {
       "path": "scholars/anastasia-guriya.html",
-      "size_bytes": 30676,
-      "sha256": "fe7778b38cfa05cdfed6b4c960611ef1615395f50dd9ec26d09dc69830941515"
+      "size_bytes": 30927,
+      "sha256": "eccb4faaa674f568947f009c5c0ea1136eb4ce285825f5bc09baf6b48f7323df"
     },
     {
       "path": "scholars/anastasia-krylova.html",
-      "size_bytes": 32436,
-      "sha256": "aaab4efb9848c89dea97519e1e909d08f83bc9bd4392cb41cc3e67ca1e0e5ed6"
+      "size_bytes": 32711,
+      "sha256": "61210dbbf85e56f955c40bef082e8850a847c3f031afbd7063efce44389d0079"
     },
     {
       "path": "scholars/anastasia-lozhkina.html",
-      "size_bytes": 28289,
-      "sha256": "e68cf7d0ef1ac477f818bfe7842cfd5eb7f1d08bfe41710ff5a6175c94c816fa"
+      "size_bytes": 28564,
+      "sha256": "b94b7fa8d65dd8f9f715d2ae45019eea355320da36c324d596052055f7c7d79a"
     },
     {
       "path": "scholars/anisimova-darya.html",
-      "size_bytes": 22389,
-      "sha256": "7dc363d767576875cd2a85244858e428b7c2072cae054d85fd6922727b3dc613"
+      "size_bytes": 22664,
+      "sha256": "bdc6be3b635a2821b73cdcfc94cd645a547ba16d17eba851c64ddf707aa84ede"
     },
     {
       "path": "scholars/anna-smirnitskaya.html",
-      "size_bytes": 30855,
-      "sha256": "626b4173165e4fcc86d7caeda13a21c5efb26e0d8df19ce8010ac6f8401a3e54"
+      "size_bytes": 31111,
+      "sha256": "fb5d58c7fd43321ce7b9d5d2abaac4c66edf627d61871654f71156b8b51fd44b"
     },
     {
       "path": "scholars/arapov-aleksandr.html",
-      "size_bytes": 19379,
-      "sha256": "2ad62d322b471756bec0e390ac4dd6719cc451f5f984e71dea672554248bb9cb"
+      "size_bytes": 19654,
+      "sha256": "96611291c181c7df96e5da26b2e509bfe4232d2ad25245d978462c4bd1b66c0b"
     },
     {
       "path": "scholars/areg-mekhakyan.html",
-      "size_bytes": 41636,
-      "sha256": "6fb405deaa3021f70c783f9e52dcb2c828a01793cf549efc686aa9f6dadb3712"
+      "size_bytes": 41901,
+      "sha256": "5277257c29c55acfbfad474b0cecdfacc5d473bf19ccf66b3923c99420078ebc"
     },
     {
       "path": "scholars/atmanova-8c4df7.html",
@@ -1875,8 +1880,8 @@
     },
     {
       "path": "scholars/atmanova-yuliya.html",
-      "size_bytes": 26136,
-      "sha256": "8c90f2b6fc21e5c478a8519836b5b565fc67a030bd87ecde2f9c1ff0906d2b26"
+      "size_bytes": 26395,
+      "sha256": "60cfa687440be305cfcb5ababf486321e4ca37ae7ef5148b5224fb3888610aa9"
     },
     {
       "path": "scholars/babin.html",
@@ -1885,13 +1890,13 @@
     },
     {
       "path": "scholars/belimova-vlada.html",
-      "size_bytes": 19256,
-      "sha256": "1494809a3d9224c7816cc810e8e5aa7350391e7f8396298c0246aa0a95cc9dd6"
+      "size_bytes": 19531,
+      "sha256": "af76c60e18dcf04c3ea472158167249868cb540848afb838962bd9950894904b"
     },
     {
       "path": "scholars/belov-vladimir.html",
-      "size_bytes": 19588,
-      "sha256": "ac313740d0ebb6630904c8fb8bd8478d58d35adfbf98afe28dbd2e0a575489ec"
+      "size_bytes": 19863,
+      "sha256": "fe4adb28ed5b432a0586fa3d5d46716244a9f6dba254dc6a53af2ae66e3b2ca4"
     },
     {
       "path": "scholars/belov.html",
@@ -1900,13 +1905,13 @@
     },
     {
       "path": "scholars/berezkin-yurii.html",
-      "size_bytes": 22509,
-      "sha256": "8a5fbe423f849666854ed7a106ff3b03378f87458c72c0b740c5fd7d82f726ea"
+      "size_bytes": 22795,
+      "sha256": "35de20a28362fa2cb49ef57d988d07998455ee2541f4f9ab0f5c78189834efd7"
     },
     {
       "path": "scholars/beshchuk-yuliya.html",
-      "size_bytes": 20376,
-      "sha256": "da12daf151b6a3b36c839a15f5af2b43eed3ac383ee707419b1b91f03a6f75f4"
+      "size_bytes": 20651,
+      "sha256": "17fe20345fe51e70b4bcdc40d62e0b1ed24597dbb0f95dd72b17d1bb4d1b7ae9"
     },
     {
       "path": "scholars/beshchuk.html",
@@ -1915,8 +1920,8 @@
     },
     {
       "path": "scholars/bitinaite-elena.html",
-      "size_bytes": 25063,
-      "sha256": "67615cc4d8febb8570e8753784deaf4cbb417936a21280f992eb546ea6814647"
+      "size_bytes": 25403,
+      "sha256": "c2fe68b713fbf61b74d929027ef6dfe2bec75de51b33469c3815d4e5482685da"
     },
     {
       "path": "scholars/bitinaite.html",
@@ -1925,13 +1930,13 @@
     },
     {
       "path": "scholars/blinderman-radkha.html",
-      "size_bytes": 23866,
-      "sha256": "7b0d6afd3cad09548aabb267900175bd3896895bb629f9824c91b89a2247fb70"
+      "size_bytes": 24141,
+      "sha256": "a2df35d92e078ba90c212e56fc9144a2dbc8ca129f7f5023d84827375662227f"
     },
     {
       "path": "scholars/bogolyubov-mikhail.html",
-      "size_bytes": 20353,
-      "sha256": "0bbcbf2774b6d9a699c09cee01079a8ade340a816785801781ad03a7782dc5b8"
+      "size_bytes": 20612,
+      "sha256": "f1c8782425844723619171a0c59a927c3c46478709b2129cda949e00af9e0c99"
     },
     {
       "path": "scholars/bogolyubov.html",
@@ -1940,23 +1945,23 @@
     },
     {
       "path": "scholars/bondarev-aleksei.html",
-      "size_bytes": 19995,
-      "sha256": "7cdd995ee7638dcaeca0337bef466ce988576bf06a6f13fefc496d41eb5a6303"
+      "size_bytes": 20270,
+      "sha256": "d082c260ce745d828babd5f50f2884bbac6f2e401bd7e2a629a8a9d4f50f21e8"
     },
     {
       "path": "scholars/borisov-yakov.html",
-      "size_bytes": 19640,
-      "sha256": "76cc2731d139dab8ca745feec6338ba855ac5f80e5ceb4e16a7982ea1a0a7462"
+      "size_bytes": 20234,
+      "sha256": "a7a39f109ccc5ad34ee44bad2e2a1712905a427626afc1ca17105896ae1482d7"
     },
     {
       "path": "scholars/boskhomdzhiev-mergen.html",
-      "size_bytes": 20976,
-      "sha256": "a530c24ccdf5a8adfe15446ce932fb84f6c6433d498d9dae2196335bbbdc79cd"
+      "size_bytes": 21251,
+      "sha256": "4389a1116c306c8d6339622b919d96ca524ce0003f810fe8942f1bf3a34649b2"
     },
     {
       "path": "scholars/brosalina-elena.html",
-      "size_bytes": 26762,
-      "sha256": "72a8a621a447fa7ff2bc62b94d8c315c5537fa9eb2e7e4f923525d5075c56ffd"
+      "size_bytes": 27093,
+      "sha256": "c1b5aab82a435720bf24d292930a0cd65390d1f916016da8b63c47c8d97fb591"
     },
     {
       "path": "scholars/brosalina.html",
@@ -1965,93 +1970,93 @@
     },
     {
       "path": "scholars/bryleva-natalya.html",
-      "size_bytes": 20549,
-      "sha256": "7b8f5a03be7d3acda4955f6e379fb520cb9fdbf0cc74b8c08d8c6745fb1a584d"
+      "size_bytes": 20824,
+      "sha256": "9ea0c1086d566c03cfcd195407f199239ce45103f3606213c67b5b27e2fe5104"
     },
     {
       "path": "scholars/burmistrov-sergei.html",
-      "size_bytes": 31475,
-      "sha256": "885912abc66ad9096b4e07094737ba543c447c8fd599445b59dfcfa6170946e6"
+      "size_bytes": 31796,
+      "sha256": "9fd5bfbb6f4866d7a742d2ce084c69e3318867f0a48780462e3f1e2103246c67"
     },
     {
       "path": "scholars/bushuev-evgenii.html",
-      "size_bytes": 19447,
-      "sha256": "59e9efdcc930a7f8ce1071b3b02728fba326f6d0a19bcfeb7f6d43a819fb5986"
+      "size_bytes": 19758,
+      "sha256": "18f9715fa9121638d5d1b9504d077dddfa0cdeab638441a45b1b74a216084f6a"
     },
     {
       "path": "scholars/chelnokova-anna.html",
-      "size_bytes": 25682,
-      "sha256": "4539cd77572464049113f0555009558d56d1e64a3442d6cd98befccd78222f83"
+      "size_bytes": 25995,
+      "sha256": "704a694549bee064996db19c725a8b75841e49df75863c8ef2604a8bdfdb1668"
     },
     {
       "path": "scholars/chernavin-georgii.html",
-      "size_bytes": 20095,
-      "sha256": "128ff391ebcb309c46aeec630a5306508bdac27b3e0258cdc494e328b2da070b"
+      "size_bytes": 20370,
+      "sha256": "6a7ee3cc44ee77f7fa7eabdb5e4590fbf18f5c84d9d44676cc631a6167a25c80"
     },
     {
       "path": "scholars/daria-vorobyeva.html",
-      "size_bytes": 34915,
-      "sha256": "39560ea6c4f9ad873d0a828eaf2f3685865c88c55e1c2ad3e18a395ae1c7a559"
+      "size_bytes": 35014,
+      "sha256": "9982413e9dd1afa8f82096c999eee5e2452beed960f4d51f7ef2c2a37744f12f"
     },
     {
       "path": "scholars/demchenko-maksim.html",
-      "size_bytes": 29788,
-      "sha256": "0d8be5e2dbad2e066fa8fe01ff1d9a4b798ba97af24fc1cf45d6977e983e0378"
+      "size_bytes": 30052,
+      "sha256": "87e4735d4e6315098b567b98563e8474fb5b391393f8fea936bcd20552653b49"
     },
     {
       "path": "scholars/demenova-viktoriya.html",
-      "size_bytes": 20484,
-      "sha256": "a0009efca1e872ef0c3bb6e78716a8ddb4358fd7c061d8398f083e0ebbaf5745"
+      "size_bytes": 21361,
+      "sha256": "4c691ec24dac95de19a589e9be47e57eb07bdc1a3d8704b9d790e8e3b68b9a0b"
     },
     {
       "path": "scholars/demichev-kirill.html",
-      "size_bytes": 21600,
-      "sha256": "2044b63176872eff4abf2250ee86d520bf40243bb51cf6ad4eae47fce8143182"
+      "size_bytes": 21847,
+      "sha256": "da9a180fd5c159e7dbfe66cbd4e81014ddf4e6b670bee9bfe4fc2a8456d11f69"
     },
     {
       "path": "scholars/desnitskaya-evgeniya.html",
-      "size_bytes": 35211,
-      "sha256": "6b8650bb4e12b15c7815115583a6aad0c3c063a3ec088b1308edb91875fd18fe"
+      "size_bytes": 35486,
+      "sha256": "3edcaad65c9dbae0ee0d1ebce3a307334c48cee9cd63ba9f04e84e7ceb20fb76"
     },
     {
       "path": "scholars/dmitrieva-viktoriya.html",
-      "size_bytes": 19493,
-      "sha256": "b34ebe399b47c99a072224a59994eb72b82d910dfc56df8140625fcb5dda7d71"
+      "size_bytes": 19740,
+      "sha256": "cd85a4795347b305f30b94588b1a5b10225dcd12a11c124702618431a9d6949b"
     },
     {
       "path": "scholars/dmitry-komissarov.html",
-      "size_bytes": 28007,
-      "sha256": "31b29fdf0cf183cf8ae0daa44839727f0ef2ffcb823b24c45c7a5c21967d3272"
+      "size_bytes": 28282,
+      "sha256": "6250d2d4044cfe94d05b0a0135cf27cbdd9ee86c8d1155e992a6e1bbd2134d21"
     },
     {
       "path": "scholars/dmitry-zhutaev.html",
-      "size_bytes": 33997,
-      "sha256": "1d39f235c28bb850091e467d0f8f454563b60caca8b2a8dc080ebeba2b681136"
+      "size_bytes": 34244,
+      "sha256": "8922f3821e405120a0b34ebcfe29602dc30863582e7ec27d78c268ddcec3314c"
     },
     {
       "path": "scholars/donchenko-sergei.html",
-      "size_bytes": 24929,
-      "sha256": "4ed8b91b7bc5b6c125bff5626a90af38f5d6ea3fa72851509bfcfc7ec21fb941"
+      "size_bytes": 25204,
+      "sha256": "d9c58b010e93233082e3d3ea0a3c35f4fd3c44c155507f02d7e618eb94f63d18"
     },
     {
       "path": "scholars/drachuk-andrei.html",
-      "size_bytes": 19353,
-      "sha256": "d9ebdcedddd80ee9c236b6ee8cc46cc0db40cbe03c9951224fcb29ca4b610d29"
+      "size_bytes": 19628,
+      "sha256": "53f93aa64bbc4f189986bd3a79067262650edeac4d31d91cefd73bf9cffeff3d"
     },
     {
       "path": "scholars/drobyshev-yulii.html",
-      "size_bytes": 35918,
-      "sha256": "37b23e46cfe1816628d148d5b57a7cd275f079a876b20d2fe514ecde3ad6429d"
+      "size_bytes": 36193,
+      "sha256": "82cac23f4270da606cbc80c4549ad4f758786fbe42ef28dae5c9e5c166dc64ed"
     },
     {
       "path": "scholars/druzhinin-vladimir.html",
-      "size_bytes": 22121,
-      "sha256": "04bc98b4ed71c2b8591100a64bec57393cae01a5c0621ee1d0908d7dc0ecd190"
+      "size_bytes": 22393,
+      "sha256": "ee2bf8dd4fa7931849fd0355805e0f5fe927fd9e2599e49cb31700c88e5c17eb"
     },
     {
       "path": "scholars/dubyanskaya-tatyana.html",
-      "size_bytes": 24522,
-      "sha256": "dc44077bd26229cc166052f9401f4faaa62720f1748ae310d5e7da4ae789769d"
+      "size_bytes": 24781,
+      "sha256": "c6b93909543de38dcc7238fceaf2a19cad12765f6099756b23e12dd97c5b3206"
     },
     {
       "path": "scholars/dubyanskaya.html",
@@ -2065,13 +2070,13 @@
     },
     {
       "path": "scholars/egorova-mariya.html",
-      "size_bytes": 22185,
-      "sha256": "e572d9283e39b324fd55a60cd4ee77ed569634019cc484a861ce280dddcdfeba"
+      "size_bytes": 22506,
+      "sha256": "2c86b8c317f6f23d27a7a8975ed75874a710633854a3a49bb589ad4cd067cdcf"
     },
     {
       "path": "scholars/ekaterina-yuditskaya.html",
-      "size_bytes": 34614,
-      "sha256": "348313a72ac2ae338c62b1fee6eb1ed639f04233511099342dff18fb81f1805c"
+      "size_bytes": 34873,
+      "sha256": "9657fe72ae33d3530e25794a5fa217bcacc2f088363b95b91b277235637ae89a"
     },
     {
       "path": "scholars/elena-yuditskaya.html",
@@ -2080,8 +2085,8 @@
     },
     {
       "path": "scholars/elikhina-yuliya.html",
-      "size_bytes": 26342,
-      "sha256": "3fe63227a3cfb32e155453c6b597f20d856bc5dadb99c9477215a6117ce3ab82"
+      "size_bytes": 26617,
+      "sha256": "b2dc7328a98be2cc3feff7ab3d912e93b0ec99a19d15c08a43ee03792f6e2eca"
     },
     {
       "path": "scholars/elikhina.html",
@@ -2090,13 +2095,13 @@
     },
     {
       "path": "scholars/elizaveta-kuzina.html",
-      "size_bytes": 29294,
-      "sha256": "a4998310f9167183ec88a302282b382f41a3eea2abd02a3f9d9af620774f4b99"
+      "size_bytes": 29553,
+      "sha256": "d897cd6a40862bf704bafb867efa97cc2c0933f7cf35f043c19300d65ea1a36e"
     },
     {
       "path": "scholars/erchenkov-oleg.html",
-      "size_bytes": 24935,
-      "sha256": "a8b8bcfa0ceb0c9808cc6776e6dd087b27d46336bfc212ae0b6d5da31036cf22"
+      "size_bytes": 25256,
+      "sha256": "17661af9c11bc39362bf6e4af8203615f304fb82faf857f0f2f5bd4dc3175165"
     },
     {
       "path": "scholars/erchenkov.html",
@@ -2105,28 +2110,28 @@
     },
     {
       "path": "scholars/ermakova-tatyana.html",
-      "size_bytes": 31291,
-      "sha256": "cba19a44012b230471201de58de06a80706e4ae7e60f39152c515e539342c031"
+      "size_bytes": 31610,
+      "sha256": "254490ed89e744054a60d305ed0776fa175587b57fb716ee0712641a241c4123"
     },
     {
       "path": "scholars/evgenia-renkovskaya.html",
-      "size_bytes": 28172,
-      "sha256": "26ea1dde815ae5fc402581859b560e963b5c3bfb97b558ac1d3fafd9c0e9336d"
+      "size_bytes": 28447,
+      "sha256": "d4b8dd2ba5f9d5cb6d54b8c003988a5138b2d5fd9c350e5e220d35f13cad6e43"
     },
     {
       "path": "scholars/evgeny-ulansky.html",
-      "size_bytes": 30218,
-      "sha256": "109b6d364dda23cc0b58a29a8d4a7f8f6755949b20a6f3b7387e2b588668184f"
+      "size_bytes": 30499,
+      "sha256": "fa5f95b99c39b5d02059f3271313ef6d50d6ca71a1089885fe21fb028003f9b9"
     },
     {
       "path": "scholars/fagradyan-marina.html",
-      "size_bytes": 21168,
-      "sha256": "fdfcd94e7216d4ebadf46f2d12f0edab401453fbd84f7a15f89456c1c5df2141"
+      "size_bytes": 21443,
+      "sha256": "493ba1e191e2119d6ad975963f712193b54636d84ff51ef1f47704ae7f438a3c"
     },
     {
       "path": "scholars/fedorova-natalya.html",
-      "size_bytes": 19898,
-      "sha256": "7116013c1be05a47c9db4386039d13f8dec17a1d76f4624ceda366051651d808"
+      "size_bytes": 20148,
+      "sha256": "68ca5ce50b9ead3df5744ccfc038eb4262bcaf412f16af751003edd804e59a3c"
     },
     {
       "path": "scholars/fiveiskaya-anastasiya.html",
@@ -2135,13 +2140,13 @@
     },
     {
       "path": "scholars/fomin-maksim.html",
-      "size_bytes": 25563,
-      "sha256": "f494f5996208ca8894b7417a721a63bed936970e6f58b37eb52fa9e8b4aa2a1f"
+      "size_bytes": 25838,
+      "sha256": "106f67a7d49cb6cc5cf3187c40662b68897237831a6d5e2f6d48e2e20caf3919"
     },
     {
       "path": "scholars/galimova-elmira.html",
-      "size_bytes": 20085,
-      "sha256": "8862ac2a0ac3d89d2f8381d1c6e4f46012e258425e2a3dc47f196bc65643fb17"
+      "size_bytes": 20332,
+      "sha256": "d0d4a3e5290780a52f1616b73dcb959f7668aa936e7d855c0e7f4e134eb67fa2"
     },
     {
       "path": "scholars/gasuns.html",
@@ -2150,13 +2155,13 @@
     },
     {
       "path": "scholars/gavrikov-denis.html",
-      "size_bytes": 18208,
-      "sha256": "7a41f873fe92b84b186027b86e4887a0bbe10484383bb49f8c1136af7098b664"
+      "size_bytes": 18483,
+      "sha256": "8d43558b5f95ded78b3550f2615bf16cda5f97c296bbb5a80d417ac4d3cce620"
     },
     {
       "path": "scholars/gladkova-anna.html",
-      "size_bytes": 21365,
-      "sha256": "2256c587693ab8c60ea938acdae7d5449aa8549bf2b0055060708cd2f56f3fb3"
+      "size_bytes": 21640,
+      "sha256": "ba2e8f865878502c6f18142a4c5b306fe66708fe68f5c09c8960db91de6088ba"
     },
     {
       "path": "scholars/gordiichuk.html",
@@ -2165,8 +2170,8 @@
     },
     {
       "path": "scholars/granovskaya-khelena.html",
-      "size_bytes": 19782,
-      "sha256": "898d6b023b0ba3bb6c06b3330bc7c79280d76f779d22b2865f6e9f45d7471594"
+      "size_bytes": 20057,
+      "sha256": "faddcf5fbc2bb2ad88a876af181e6f00f263c8c863fe2062cc4bba4c5588c531"
     },
     {
       "path": "scholars/guriya-anastasiya.html",
@@ -2175,38 +2180,38 @@
     },
     {
       "path": "scholars/gurov-nikita.html",
-      "size_bytes": 22630,
-      "sha256": "61d958756b2b29e0cab6ca577f5622abb225f426141ee7f8e47b53c35182d165"
+      "size_bytes": 22889,
+      "sha256": "cc2e31e901fbf1880ca77d134502f0be7353160374e756820cc78710488224a2"
     },
     {
       "path": "scholars/guzevataya-natalya.html",
-      "size_bytes": 19508,
-      "sha256": "40f59dee5a822cece7090defe3b395bea29589e0dc4422ad32d2541b779383fb"
+      "size_bytes": 19783,
+      "sha256": "34280c0c7bdeaf9a579d3fa1a8fac9040218b874f3c86d050befb8faf5ba8656"
     },
     {
       "path": "scholars/ignatev-andrei.html",
-      "size_bytes": 33618,
-      "sha256": "0c46417ff5e57e2473cc2db6ae21a45d084661db5cb14996693e228bbea026b7"
+      "size_bytes": 33895,
+      "sha256": "2820e0cbc6665c08312a2b644bd4732d899619283e4f85b1996301dacdb27f88"
     },
     {
       "path": "scholars/ignatova-mariya.html",
-      "size_bytes": 20701,
-      "sha256": "dd9349184cdfc9846559b213d1990fecc3bca264593725f5d1f4d0dac9f12306"
+      "size_bytes": 20976,
+      "sha256": "b14fc057c617a394363c988281c06b998e3664cda616732060c9455c293e38dc"
     },
     {
       "path": "scholars/index.html",
-      "size_bytes": 70980,
-      "sha256": "9d8973cdb4af1b303660ae19021edf1973ea16bff91d012335a15e90310ff434"
+      "size_bytes": 71235,
+      "sha256": "1ddf149585f11ff41bd7b7d63b3d76cbd6b506cf97dd342f432a13cc71d98de7"
     },
     {
       "path": "scholars/itkin-ilya.html",
-      "size_bytes": 20069,
-      "sha256": "a633f01f22c3370c8c848abde3f19621448a1119ca8d04e8c172ea62885a0551"
+      "size_bytes": 20344,
+      "sha256": "03370b47252a83a0151b57f3a19f4c99447795e3dbe1998e2939ccd9841a565e"
     },
     {
       "path": "scholars/ivanov-vladimir.html",
-      "size_bytes": 23203,
-      "sha256": "1ec7adffd6fc165a6b0cdfb67490897a3ad4e4eecf212641756816f77c669dac"
+      "size_bytes": 23478,
+      "sha256": "8cafa62c810f41cb1a7c0d874b7ffc550ed4793310de1096de234dd25420969b"
     },
     {
       "path": "scholars/kanaeva.html",
@@ -2215,48 +2220,48 @@
     },
     {
       "path": "scholars/kardinskaya-svetlana.html",
-      "size_bytes": 19832,
-      "sha256": "69e9073be302ef7a8038c846a37062f175a17de9195308ac2e29d58640317bdd"
+      "size_bytes": 20091,
+      "sha256": "3b202960c4dfe64cf435e4948294a309f7f3ebe9d019170ac3e43a82b7634693"
     },
     {
       "path": "scholars/karysheva-irina.html",
-      "size_bytes": 20138,
-      "sha256": "383e775fd163b7eae13b84bb0a9cbd358ecfc4544fef6fb676b8317a65d035e7"
+      "size_bytes": 20397,
+      "sha256": "1d53d9a3be6403b5b493e16b9e83ad4629584b5a836216e23ad8f4c00d88324a"
     },
     {
       "path": "scholars/kasym-sofya.html",
-      "size_bytes": 18664,
-      "sha256": "fa9b4b4ba9ae1d11c90212e7a7d215746338c079faf656545a18c9d0362cd385"
+      "size_bytes": 18939,
+      "sha256": "5491a39020ca6718e2796da117e047109043dbacc50a471d4c69fa5c40d985d3"
     },
     {
       "path": "scholars/kavalevskaya-anna-1984-2.html",
-      "size_bytes": 20610,
-      "sha256": "7c6a79549e56469dbea5f1d639d77ca2d76d090d9d75b3ecc0ea2deb8b789e12"
+      "size_bytes": 20920,
+      "sha256": "2276a6b990d0168df1f9af971f277832dc7e88778906b8f13693cdc51eb876f8"
     },
     {
       "path": "scholars/kavalevskaya-anna-1984.html",
-      "size_bytes": 19651,
-      "sha256": "f27aaab7bcb0bb5092c6d16ce03ab379805f41dd9af94823264447250b09ce52"
+      "size_bytes": 19910,
+      "sha256": "d4d85d16e56f8cd4914ca1a35dbad8a25a873721e92bf0df0c7ed66f4ab866e5"
     },
     {
       "path": "scholars/kesharpu-ekaterina.html",
-      "size_bytes": 18499,
-      "sha256": "2dd34ab73bb332ea3193257d446d87339641e92acf18ccebe46554de64e53362"
+      "size_bytes": 18774,
+      "sha256": "abb8467d41cb0d21c4bc6512aa977477cc391e802c4c8c539041cfa9fd82c5f2"
     },
     {
       "path": "scholars/khardzhender-singkh.html",
-      "size_bytes": 18093,
-      "sha256": "30e5207eca1ab9d9602515ddcc404fb5982f60fde97ba6031c887f5354f78e18"
+      "size_bytes": 18368,
+      "sha256": "6a6fb3797eb0a94a79aae1f30585154f8db6fcc8dbd457dffb79869d96035522"
     },
     {
       "path": "scholars/khazizova-kseniya.html",
-      "size_bytes": 20622,
-      "sha256": "5862304d1c43b8bbc0bd3640fbf93d85039ab4877abeca7fb9ce29decbeef1b5"
+      "size_bytes": 20897,
+      "sha256": "8a329c85990706dc9af53e46a7dcd7fec193baa455fa3982d882fa59cda9b9c3"
     },
     {
       "path": "scholars/khmurkin-georgii.html",
-      "size_bytes": 25854,
-      "sha256": "9368686cc908501b1ed6031b4e1f1196bb43b3e97c65dda1adfe2b2d5ee0a8c8"
+      "size_bytes": 26113,
+      "sha256": "001ca47ca39dafd5d19dfa7a4c55779dfc5de4fff40e1b24340bbe67089f6465"
     },
     {
       "path": "scholars/khmurkin.html",
@@ -2265,13 +2270,13 @@
     },
     {
       "path": "scholars/khrushcheva-polina.html",
-      "size_bytes": 26714,
-      "sha256": "b5ad4a51bdf61f608c290100ad5d43a36f8c15c6602711b08d3be50cb3656779"
+      "size_bytes": 27177,
+      "sha256": "81f85d74fe58642446e758689ee7aa86dc6b34aa141492fde0ec3c367f2a4a44"
     },
     {
       "path": "scholars/kitinov-baatr.html",
-      "size_bytes": 31794,
-      "sha256": "6fca4d4dc805a30afc27cc5f36d92bb499dec29b98c596dde5af10beb9d01fc8"
+      "size_bytes": 32053,
+      "sha256": "da32942c621d84152239f60fd264b5a16cb82c72ea114ca3ca862fd3a7b77849"
     },
     {
       "path": "scholars/kitinov.html",
@@ -2280,13 +2285,13 @@
     },
     {
       "path": "scholars/klebanov-andrei.html",
-      "size_bytes": 21156,
-      "sha256": "829534e1909440554e2cb69f7ef36e4b0a42b48da4d9ce4032b5981f96091449"
+      "size_bytes": 21431,
+      "sha256": "13b73ecdf7759625a3fbc957720837938cbd5e0e406531007c644f92e1fcbdf2"
     },
     {
       "path": "scholars/kogan-anton.html",
-      "size_bytes": 25762,
-      "sha256": "9b86d3309dd1186e21008c2ca5749a637ecae18795dff5b78309f7047bc748c4"
+      "size_bytes": 26021,
+      "sha256": "da6977a1dc5511f3541dd82a61f0c5dca64d9af30694c45ea0367bdfa2d55f59"
     },
     {
       "path": "scholars/kogan.html",
@@ -2295,13 +2300,13 @@
     },
     {
       "path": "scholars/kokova-yuliya-1955-2.html",
-      "size_bytes": 19709,
-      "sha256": "f36b6a73aa1ba082a173c0e2618c9673afea711250553de4bdf8ad1a8b37f7db"
+      "size_bytes": 19984,
+      "sha256": "2786fd022263ef7338386b3075a34cbb38d94fbc3a9c56e12ca509cdb53f4473"
     },
     {
       "path": "scholars/kokova-yuliya-1955.html",
-      "size_bytes": 23548,
-      "sha256": "9b7ad0966c36eedf422dc1311de52cb9d996234ec5c6eaa69569d808a10baf9a"
+      "size_bytes": 23826,
+      "sha256": "baf4c71682bc0562f2150442a32a08f259d9a5aa70c8a5d1db748d8a55b5cf0b"
     },
     {
       "path": "scholars/kokova.html",
@@ -2310,13 +2315,13 @@
     },
     {
       "path": "scholars/komarov-erik.html",
-      "size_bytes": 19484,
-      "sha256": "9d781f8b353fdfde46eaf115eb3a26f4c9304be1042d792768c06fe5018f033f"
+      "size_bytes": 19835,
+      "sha256": "345185a8ae9162675c6817179deefc701b2ee328dba1dc739890e5b5d51a9792"
     },
     {
       "path": "scholars/komarova-irina.html",
-      "size_bytes": 27298,
-      "sha256": "8bb64553a3eea52b82a2dc4a441278aef2741fd3c3be6081ce24c9d5e7f799d6"
+      "size_bytes": 27557,
+      "sha256": "f01d8a067ad999dace4045eee74d962b8d0183161cbe08a607864762e2d04992"
     },
     {
       "path": "scholars/komarova.html",
@@ -2330,13 +2335,13 @@
     },
     {
       "path": "scholars/komissaruk-ekaterina.html",
-      "size_bytes": 20733,
-      "sha256": "a5d5af76b3d3bb0c79b43365c381c55217680d378e5e2df6bbc0405de1b4e95b"
+      "size_bytes": 20982,
+      "sha256": "ae347a2d317f0012bb39049ff72ebfb7c64bd5f99165f149c19711240a7f7a4f"
     },
     {
       "path": "scholars/korablin-denis.html",
-      "size_bytes": 27826,
-      "sha256": "495615440128d605ee74acbcda0080514ee20494b4e5377f768bee71d0ef1287"
+      "size_bytes": 28101,
+      "sha256": "e420af9b7be4bfd7196bb1c833c89f880f81ba8936a1130c1339601a52d7ff3f"
     },
     {
       "path": "scholars/korablin.html",
@@ -2345,8 +2350,8 @@
     },
     {
       "path": "scholars/korneev-gennadii.html",
-      "size_bytes": 20381,
-      "sha256": "121c29d655390a6489bbfcf6aa01fc7a60647f8a61d18d72238e8d91dbac0606"
+      "size_bytes": 20656,
+      "sha256": "0565ff1ad12193d9ae1a0ea85c90a5aa328488acc4cf699631f89242bd08b4a7"
     },
     {
       "path": "scholars/korneeva-natalya.html",
@@ -2355,13 +2360,13 @@
     },
     {
       "path": "scholars/korneeva-tatyana.html",
-      "size_bytes": 19141,
-      "sha256": "19eb3e5e0247cec05f96c98bc0a7cfaa699e6cd7deb38013f594ff502f722631"
+      "size_bytes": 19816,
+      "sha256": "62e798e1277c007a5847d8a443f9a5c0f9606ddd900c408c6e89ed6b0d7f3048"
     },
     {
       "path": "scholars/korobov-vladimir.html",
-      "size_bytes": 19201,
-      "sha256": "9e4cc1c67c3434a849e27a70a2787be8472689b4c807d5a39eb820a711a30bfe"
+      "size_bytes": 19476,
+      "sha256": "2c83a48d39ca0107f41da1ad3a412882c46882d3d9acdce10d95a6873b45b03d"
     },
     {
       "path": "scholars/korobov.html",
@@ -2370,8 +2375,8 @@
     },
     {
       "path": "scholars/korovina-evgeniya.html",
-      "size_bytes": 26194,
-      "sha256": "fd2fae13f45426c7d1fd701b90759f3d5009e4e3461124156c6dea19ba238ffc"
+      "size_bytes": 26469,
+      "sha256": "76b5f7c3579a844a92b8bdbd7bbc97d52284e455757a7864a1614e62b2ded57c"
     },
     {
       "path": "scholars/korovina.html",
@@ -2380,8 +2385,8 @@
     },
     {
       "path": "scholars/kostina-ekaterina.html",
-      "size_bytes": 27480,
-      "sha256": "ae327226443f4111923d69c343f367b7b5718ca2cf9b5cb36154fbce02d4e6d5"
+      "size_bytes": 27828,
+      "sha256": "694bda2ae7d047ac946dceb008d117946682f2eec0816c7669a1e8227057a3bf"
     },
     {
       "path": "scholars/kostina.html",
@@ -2390,8 +2395,8 @@
     },
     {
       "path": "scholars/kotin-igor.html",
-      "size_bytes": 25593,
-      "sha256": "c7b363a9077bb649d6047236b7744c68457023d5227b357a1e301f3c9ee70daa"
+      "size_bytes": 25944,
+      "sha256": "6796db1fb490df981a7e3053ff0e14fb8d49e7bb2ffe15623cfde9d84a2c2f51"
     },
     {
       "path": "scholars/krapivina-rada.html",
@@ -2400,8 +2405,8 @@
     },
     {
       "path": "scholars/krasnodembskaya-nina.html",
-      "size_bytes": 30656,
-      "sha256": "7217e96eb7cd0f2f21829890f11980fdd284f78d18ab288d28195b184e440f61"
+      "size_bytes": 31091,
+      "sha256": "0c41a7f336f792f8a9491ac7835a0d934070d09410d888d12359a147f0b088c4"
     },
     {
       "path": "scholars/krasnodembskaya.html",
@@ -2410,13 +2415,13 @@
     },
     {
       "path": "scholars/kristian-lindtner.html",
-      "size_bytes": 17803,
-      "sha256": "31c0a232cb68f938628a0e0ef77e45df9ff1e2ca87810b9860f307484785ea0d"
+      "size_bytes": 18078,
+      "sha256": "1fd93db8c21af757a5db9c86e290ae8fd2be4ab9404852fc15fe8501283e2ec3"
     },
     {
       "path": "scholars/kroitser-svetlana.html",
-      "size_bytes": 20741,
-      "sha256": "b476de91adc0fe78ee719b84d0e6a5547087dc4a41d6b6130ebb79e6f84f4f9d"
+      "size_bytes": 20988,
+      "sha256": "62c3cd0f5dae3ce41acde4784f32ed5c306603ea1a376e40f5fd382ff4dce35e"
     },
     {
       "path": "scholars/krylova.html",
@@ -2425,18 +2430,18 @@
     },
     {
       "path": "scholars/kryshtop-lyudmila.html",
-      "size_bytes": 19538,
-      "sha256": "f0c2f57b084cc20e5427c4f27c33c8a3e406311b8af6ae203328a52f4f16f9ae"
+      "size_bytes": 19813,
+      "sha256": "5d258bb8f3edb2aade7bfc7a7937e0974982606895cd6b265a5daa6aee47d560"
     },
     {
       "path": "scholars/kryuchkova-evgeniya.html",
-      "size_bytes": 19169,
-      "sha256": "e035e29e5f242d70e8b151865771f90929dcaeeffd4e6fe54a28a6e84dc6b0f7"
+      "size_bytes": 19444,
+      "sha256": "8e2050f2b595ba5658897027e15bd7bff346c323e21fc6c999f83b7c01cac83f"
     },
     {
       "path": "scholars/kryukova-viktoriya.html",
-      "size_bytes": 22743,
-      "sha256": "40792b2eeec18399639accce579156b86e4e8396c327d36c1df3e541be5b1080"
+      "size_bytes": 23018,
+      "sha256": "75c85741b507ed9446037753066e1bd82417723aeb129da0636b8454c62e1255"
     },
     {
       "path": "scholars/kulikov.html",
@@ -2450,8 +2455,8 @@
     },
     {
       "path": "scholars/kurochkin-aleksandr.html",
-      "size_bytes": 21638,
-      "sha256": "90b65c3506048cbe35242c72d504d032c554d2709eb515a4f18b534c63169723"
+      "size_bytes": 21925,
+      "sha256": "90eeb7a581b232070ee237531485ba9132cd2498803e3fa387a2688e82386dc2"
     },
     {
       "path": "scholars/kuzina.html",
@@ -2460,23 +2465,23 @@
     },
     {
       "path": "scholars/lapshin-ivan.html",
-      "size_bytes": 19360,
-      "sha256": "d83cfa09ea4653bd27e36f5bd955ac079183e98cf6aaa058e9a6aae381335689"
+      "size_bytes": 19635,
+      "sha256": "b3251b74619efd144b6558f6897d1dc8538b54fb0af1c8ba56e0bc3af61692d3"
     },
     {
       "path": "scholars/leitan-edgar.html",
-      "size_bytes": 19407,
-      "sha256": "b9e8437536f4da18e61ea17ed06a35a174ff6c510439460220de7fad5373d281"
+      "size_bytes": 19682,
+      "sha256": "81ab0d829c9c786ea7a6641f94d983697d564040a127176491fad5307553fae7"
     },
     {
       "path": "scholars/lekareva-eva.html",
-      "size_bytes": 21969,
-      "sha256": "e9f1b8aea0655652b5bff8d6348952024183cc2ba163b04f83f240ac8a69494d"
+      "size_bytes": 22244,
+      "sha256": "12f232fe11d068229da5346e055b072a3c35ea4ee88279cbca5afe475be43acd"
     },
     {
       "path": "scholars/lelyukhin-dmitrii.html",
-      "size_bytes": 28246,
-      "sha256": "65a1590a5ce729e0c0038ecc83f265f415c7cb240b88b59785b3ec71da5916c0"
+      "size_bytes": 28521,
+      "sha256": "fb0e3f1fa432238508dc8b338a2ad7a3d89fb839f4ce5143e74cc71915e9f599"
     },
     {
       "path": "scholars/lelyukhin.html",
@@ -2485,23 +2490,23 @@
     },
     {
       "path": "scholars/lemeshkina-kseniya.html",
-      "size_bytes": 23740,
-      "sha256": "4026d624053aa03c46a86b10259f478e93f9e7c475b99e7b4aad9bdf95778414"
+      "size_bytes": 24018,
+      "sha256": "670dfbbd1a099893a4acae235ad1e119d7c28916d80857769c2ffb4e33f8a825"
     },
     {
       "path": "scholars/leonid-kulikov.html",
-      "size_bytes": 31810,
-      "sha256": "8f2782b8891697a6f6c745651f045975cbc0dcf58b260d80d4cb2210d2299c38"
+      "size_bytes": 32065,
+      "sha256": "b00afda6fffe9fa129609da8dde2f5100ea1c9a20df315d3aaff01dde36a3b90"
     },
     {
       "path": "scholars/leonov-mikhail.html",
-      "size_bytes": 21880,
-      "sha256": "46f9506189a5160fda4897a6ef32f71047e186fbf8f1a7fd4d1898efe2b31344"
+      "size_bytes": 22139,
+      "sha256": "2ce19b90710fc523e021eae7a4f4928015c3ce6fa1d11b7b8e2e30b3fa60d798"
     },
     {
       "path": "scholars/lepekhova-elena.html",
-      "size_bytes": 27385,
-      "sha256": "b97a02132b677c243a87eeb2d007c98a0441e862e187a5fb8c86aa75fd3add7c"
+      "size_bytes": 27644,
+      "sha256": "7eab76fb6f1d6191cc9411b56e280a6f89aca4521a2fbf25cb3d4cf373691873"
     },
     {
       "path": "scholars/lepekhova.html",
@@ -2510,8 +2515,8 @@
     },
     {
       "path": "scholars/lev-titlin.html",
-      "size_bytes": 28949,
-      "sha256": "6257c30607083a316d8b29be14f6dc65f9d2376bb77ee92cc33935d28fa80533"
+      "size_bytes": 29224,
+      "sha256": "a5d157a1863fc4daf655d6031bd6a055fee139b630764b760a2be9d0af033407"
     },
     {
       "path": "scholars/lidova-natalya.html",
@@ -2520,8 +2525,8 @@
     },
     {
       "path": "scholars/lobanov-sergei.html",
-      "size_bytes": 25196,
-      "sha256": "d2d4aca0536f7f5cd0914b416b3d4796ac49b86af18542f8763ae918363819a2"
+      "size_bytes": 25471,
+      "sha256": "344f8037a2bf6d6effbc1bd385f395afe431c1bce3dc1d29b8d660ddd85fa417"
     },
     {
       "path": "scholars/lozhkina-anastasiya.html",
@@ -2530,13 +2535,13 @@
     },
     {
       "path": "scholars/luchina-tatyana.html",
-      "size_bytes": 20871,
-      "sha256": "ee11559791e890a7231966a3eb61f5ce855ad8043352bfa47e81d524b5bfa1b9"
+      "size_bytes": 21146,
+      "sha256": "b7bebfdb07125267b243f772c29325a6d230b1e3e5a068dc6048ff79a55cd42f"
     },
     {
       "path": "scholars/luzhinskaya-polina.html",
-      "size_bytes": 21898,
-      "sha256": "5f866794157e8fae4678d3e1023c539eaf49dca58f32df83b9cfdb1487d669a7"
+      "size_bytes": 22173,
+      "sha256": "367ca7c6d60eb000a9ff35f5a70eddeb39e15c29e37bced5b9826b7fec63287d"
     },
     {
       "path": "scholars/lysenko-viktoriya.html",
@@ -2545,43 +2550,43 @@
     },
     {
       "path": "scholars/lyulina-anastasiya.html",
-      "size_bytes": 35151,
-      "sha256": "e62126b777b7476251135203f8dc79c64531e88a06fff438118fe58e73a944d9"
+      "size_bytes": 35410,
+      "sha256": "53dbfd64bade90f42f2fb3d8019ec42ea7f0a1cd05ab0c1ed29650733df1d691"
     },
     {
       "path": "scholars/malyutin-ivan.html",
-      "size_bytes": 20897,
-      "sha256": "2060de1cb0219ce0d4161060436faa7dba1195061a86800b621b866c0fdd775f"
+      "size_bytes": 21445,
+      "sha256": "1f851f75ecc350d93f5e0526f44ff96e457249c2b6237dad3964f49bfa58529f"
     },
     {
       "path": "scholars/marcis-gasuns.html",
-      "size_bytes": 30065,
-      "sha256": "3b36e83ff4259927c5bb5cc6fcca2087831e9f737a4d5dbc22f6c6fce00ba901"
+      "size_bytes": 30340,
+      "sha256": "91687a3ff59b45f4efe52cd8ec7b677a6d5039e4b8406274ee9c15041289599a"
     },
     {
       "path": "scholars/maretina-kseniya.html",
-      "size_bytes": 21662,
-      "sha256": "129d71cdf53e0e98f3c29bceefb2f09a2e8e2ea0751a66b03db212a46311c61a"
+      "size_bytes": 21937,
+      "sha256": "ed7c65b300a2afde582301eb1424f592d4c4c179c9ee99fde8fc34af115f45f0"
     },
     {
       "path": "scholars/mariya-shilinskene.html",
-      "size_bytes": 17732,
-      "sha256": "9507f57f6109179253f3eba084649ba6fd1928f8458a908bfead8c7bd7961712"
+      "size_bytes": 18007,
+      "sha256": "7154ba2e5ea8ecd3bd8e45516c1b0f784476317ac2b5b94554ce1ef15efa1da4"
     },
     {
       "path": "scholars/mazhitov-sattar.html",
-      "size_bytes": 20407,
-      "sha256": "8a8dee2041878234a71376b75668defaa1d8325a26821d6e86ad332e99ec3323"
+      "size_bytes": 20682,
+      "sha256": "8599fc322a9245c40d45d0def0e1eb2302fddb20008b388a770a33daaa9c16e2"
     },
     {
       "path": "scholars/mazurina-valentina.html",
-      "size_bytes": 24656,
-      "sha256": "eb149ac1a0e20ff19a882ad0f90dbfd9d014532a57468fc2aa7688157162e873"
+      "size_bytes": 25056,
+      "sha256": "9e3a72dc7aaacc62a86e2c43f2f1f79dadd0b2a8a0fd022066d6065a869aab33"
     },
     {
       "path": "scholars/meitarchiyan-margarita.html",
-      "size_bytes": 22350,
-      "sha256": "f4511d865c009d70ec80768fc9c3c9f394961265cc4d84a03cd5d4b49b6da523"
+      "size_bytes": 22609,
+      "sha256": "528a6238d93f5831078ec1058d8bb4d52cb593e27863617c736a9104ade4671d"
     },
     {
       "path": "scholars/mekhakyan-fef030.html",
@@ -2590,118 +2595,118 @@
     },
     {
       "path": "scholars/merenkova-olga.html",
-      "size_bytes": 20273,
-      "sha256": "ad3796cf6ec13053379d1d3fcd24c4fab6e9880accda4fb5da543fdd5f6ac1c1"
+      "size_bytes": 20834,
+      "sha256": "a0d315db35b38fd28f9e716a331c65a759fec4448ced4cecdbb062adc5e211e7"
     },
     {
       "path": "scholars/minaeva-mariya.html",
-      "size_bytes": 23178,
-      "sha256": "6b8bc5fd2f62142c17a30dd93d1f6e847ecd0334d30a86729cdc5b01f2ba2c4a"
+      "size_bytes": 23518,
+      "sha256": "f7fc336e68445151f604aac80d9e1549388c1c1981a678709bafdb506313fee0"
     },
     {
       "path": "scholars/mitruev-bembya.html",
-      "size_bytes": 21038,
-      "sha256": "6a8cbf634270a3e274529e64466dea6b064cd6b319d7f548e5c74ad2d03867de"
+      "size_bytes": 21916,
+      "sha256": "4010ad37569ff3b6b14ae85cd6bc2e9f9711596cd09c74d3dfa21bf671b77d57"
     },
     {
       "path": "scholars/molina-anna.html",
-      "size_bytes": 22377,
-      "sha256": "454a526bd6f902ab842a71936a697f9e768f8d90e51d8ef4b417c306d6aed3f1"
+      "size_bytes": 22652,
+      "sha256": "c2be6e95925bcdc24be7c183205aa25181775322a0f45602ab268789f1c4232a"
     },
     {
       "path": "scholars/motyleva-vera.html",
-      "size_bytes": 18690,
-      "sha256": "4629d782c8dfaaefe942e41c77c6d99eb5e7cd1351f1c859db2932b97bd5ae13"
+      "size_bytes": 18965,
+      "sha256": "75aa3fac5eab15f024573b79af8c62078bb4deca3f9bb4d1af73a382decfc42e"
     },
     {
       "path": "scholars/mrachkovskaya-arina.html",
-      "size_bytes": 20357,
-      "sha256": "173f7281a023005f46c43c05f715923e7980bcbfa6cd3eec13647b89c5ba9383"
+      "size_bytes": 20632,
+      "sha256": "ba4856952659ad2f84648e267b784a1cf96084f1ab273fcd094e1047e27db6be"
     },
     {
       "path": "scholars/naimushina-darya.html",
-      "size_bytes": 20296,
-      "sha256": "0dd6ccfdb0843d2ba9c90b724db29bffce8612f9bd51db49155bd1dce611c8f4"
+      "size_bytes": 20571,
+      "sha256": "ca424a9950278264808b6baae4aee6c8c0aa0c5533c6c14c711373fddfcb6af5"
     },
     {
       "path": "scholars/natalia-alexandrova.html",
-      "size_bytes": 48407,
-      "sha256": "9c9b603d56e754c3b58088df27e9a72fb507c675d23ed0fb6e2e829ade1bc4fa"
+      "size_bytes": 48660,
+      "sha256": "8ce809f98c232415f9bf5c5d6cf910384d695b39085e91471ff1b802a20e1a82"
     },
     {
       "path": "scholars/natalia-kanaeva.html",
-      "size_bytes": 27252,
-      "sha256": "5f15cd29af4759c6b02047c9cfa35fab9c7ca2e095f114206786c9bd8a165e24"
+      "size_bytes": 27499,
+      "sha256": "df6905c35017c8a238a4223b0c2024e679be0c70aca8218d440b9c8a9aa20e89"
     },
     {
       "path": "scholars/natalia-korneeva.html",
-      "size_bytes": 42682,
-      "sha256": "d029319b23238da244bc61292662ba86005e644ac8d6ed566163e4b24fb478e8"
+      "size_bytes": 42957,
+      "sha256": "f3b083411131321fff705d09858b8234361f19d3634035f6fc67b3610a624d0c"
     },
     {
       "path": "scholars/natalia-lidova.html",
-      "size_bytes": 39098,
-      "sha256": "6841dc6d5b0b393d070329009d38a998fcc55400cbfba90b0cadaeda8bce08a6"
+      "size_bytes": 39351,
+      "sha256": "f4d1f2149fa6789b82df2911d5342a5e3d2102cb933cdd2c9e4a6de31f266326"
     },
     {
       "path": "scholars/negreev-ivan.html",
-      "size_bytes": 19261,
-      "sha256": "68f6f62e4d33b0881edd1c2de99c0e2b94fdc26549958ef1483082590a98f307"
+      "size_bytes": 19508,
+      "sha256": "e9c925eb21cf53235e54ad5863e64bc1e2dda0f9e537bda206a42c3220652f81"
     },
     {
       "path": "scholars/nemchinov-viktor.html",
-      "size_bytes": 21660,
-      "sha256": "6d16db17217a8213ff02aeb079536a980b51fdd20c931dd26328e152355c1368"
+      "size_bytes": 21935,
+      "sha256": "a25f0fb2ea8983ae5fa8653baa6c4807d9d37c6ea4a1bbb6120cd8cd223f8854"
     },
     {
       "path": "scholars/nesterkin-sergei.html",
-      "size_bytes": 19510,
-      "sha256": "22ed5c0de47d7aab4464c1a90582a0ecdd6ee5817cae2dfe00d5edf363c1b2ee"
+      "size_bytes": 19785,
+      "sha256": "df81cd8fe02c5e2f6480f6f63fd186401af1d05d4dd3f16c6f922c4a3cb10a81"
     },
     {
       "path": "scholars/neveleva-svetlana.html",
-      "size_bytes": 21482,
-      "sha256": "a29349c7a18d4ca3f160e55bd03eb431d4bc83250808ac92fa20356a0d132bd4"
+      "size_bytes": 21761,
+      "sha256": "c0668cb3d4d7617e1baaf2ce4f58c81b51d6ca8e81659de085e4c77611314896"
     },
     {
       "path": "scholars/nikolai-gordiichuk.html",
-      "size_bytes": 32780,
-      "sha256": "8f71525e41f39feddb194cceef681e6dc8b8ac4b30e0f08279e865fdd067b93b"
+      "size_bytes": 33055,
+      "sha256": "e1fce81c75286a95538d7fb9e8e110497f13836b32b29246c618f43f34e798c6"
     },
     {
       "path": "scholars/nikolskaya-kseniya.html",
-      "size_bytes": 20975,
-      "sha256": "c8cd9626b8379108d9c85bc867d3b6f4b11f9a8fc262b7832dd9378d91317858"
+      "size_bytes": 21250,
+      "sha256": "2b75643b6a12fe02f51b79ab92d30eed2aca54d14614ea5351de88d232298349"
     },
     {
       "path": "scholars/nina-budzishevska.html",
-      "size_bytes": 17733,
-      "sha256": "c53f67326071e50dd5d3531bd5724d077805ec8fb25d8410529ddb45dd7feb1a"
+      "size_bytes": 18008,
+      "sha256": "d80e0bea586af6833e66230625fa8444ac4114333007ffdd13866fb47ff89074"
     },
     {
       "path": "scholars/novoselova-evgeniya.html",
-      "size_bytes": 18979,
-      "sha256": "ffdd22a3b29c21e1c632d4716d088bd26af6aae1e5db000eb7560d63ef23c1b4"
+      "size_bytes": 19238,
+      "sha256": "9f41971c18685c99884e74e182dea22d944e3fdafb1b5900f98fdb84ea5da95d"
     },
     {
       "path": "scholars/ofertas-stanislav.html",
-      "size_bytes": 31684,
-      "sha256": "56afde57d4a7e34c85bc547644bee308933b9f389b4afd6e5cdbe0af84388d54"
+      "size_bytes": 31943,
+      "sha256": "63b0f559b9404803e8dafd9cf34bb98d4c313f0710ab4233095ca0f0a39d9b64"
     },
     {
       "path": "scholars/ogneva-elena.html",
-      "size_bytes": 35763,
-      "sha256": "a0659733541788b7a07f610efe4b27ea850ef198aa4d88876acf1a3eb9668b95"
+      "size_bytes": 36050,
+      "sha256": "2c98fcf2e43ab93b4d5e70c91f9f8b8cbd879236c89c93a6f41a685c4586c40c"
     },
     {
       "path": "scholars/olga-vecherina.html",
-      "size_bytes": 38252,
-      "sha256": "07393e81ef362ff1be3018a4a61646c0990f7bca35e1048b951bf7216d8edccc"
+      "size_bytes": 38499,
+      "sha256": "726d0a37c75dd557ea487cd9951c380b06c20c4a7a8c0751018a76bdc9956c37"
     },
     {
       "path": "scholars/oranskaya-tatyana.html",
-      "size_bytes": 29109,
-      "sha256": "d2f64feda2e81a02e4550c1e59579319b22b5e2165e7ac54a56722c468bf6362"
+      "size_bytes": 29502,
+      "sha256": "737dd587aa1f9a4c0d16042e760278f975cdc8b4d53846548e214ec2ebbc05b7"
     },
     {
       "path": "scholars/oranskaya.html",
@@ -2710,13 +2715,13 @@
     },
     {
       "path": "scholars/ostrovskaya-elena.html",
-      "size_bytes": 35516,
-      "sha256": "4d39cb918c2caa0364ca33a7d68a042c0a273afd1d4db3906fe7d45f12fff4fc"
+      "size_bytes": 34650,
+      "sha256": "14705fc6cfc925fa2b1d3769f5d9a72404dfa15ede6906fd77826846b815de21"
     },
     {
       "path": "scholars/pakhomov-sergei.html",
-      "size_bytes": 31218,
-      "sha256": "30ee7648a617a8474f3e6ffde53a7e3332430dfc06bd360a2bdd76afd0dbcab4"
+      "size_bytes": 31493,
+      "sha256": "af606603d895d8a0cb363ed01219d3a20d02da959552b045c31a24da932e8013"
     },
     {
       "path": "scholars/pakhomov.html",
@@ -2725,43 +2730,43 @@
     },
     {
       "path": "scholars/pakhomova-aleksandra.html",
-      "size_bytes": 22666,
-      "sha256": "a4ac2ad64b3fff885082e04934797587b3d26e894f58b14802fab099f7c3d14d"
+      "size_bytes": 22913,
+      "sha256": "41c617b88a9f0b7471e1a249e3ede16836a8e4f31ef9a4ad7c33b340486a3065"
     },
     {
       "path": "scholars/paramonov-denis.html",
-      "size_bytes": 22411,
-      "sha256": "f6e62d04680f239e8a03e97372cca3154818e960698222c8254c8eddf45f8d5b"
+      "size_bytes": 22732,
+      "sha256": "654e7304dd3b866bde1d4d4a3814771689585036a11e2f8170994f117567f995"
     },
     {
       "path": "scholars/paribok-andrei.html",
-      "size_bytes": 36589,
-      "sha256": "4f13832f695faa7ee91490f1b963e219440cfdfeee512e44579da9cc319827ed"
+      "size_bytes": 36860,
+      "sha256": "a7d908169e5d58d5b4bc9d9d3c56a869c335fba0032f6807fdbdacaa2bd1056c"
     },
     {
       "path": "scholars/pavlova-mariya.html",
-      "size_bytes": 19718,
-      "sha256": "39de6cd3912b82c691080931bc269dd841cadbde868bf5ef01d9ac0ba575d64c"
+      "size_bytes": 20123,
+      "sha256": "60bad255fba4cce4968c82db517905318fb85349032c43249d9d3ba7751c10d6"
     },
     {
       "path": "scholars/pokatilov-sergei.html",
-      "size_bytes": 19668,
-      "sha256": "3c72293892dda6c2fb11baa441cc0609d2cadc60cf4e19cef0f14decf02bc730"
+      "size_bytes": 19943,
+      "sha256": "818661925b72ff0c3a411f0dee099b365c35a1f3dd923b81557ba7fb323ed962"
     },
     {
       "path": "scholars/pskhu-ruzana.html",
-      "size_bytes": 33376,
-      "sha256": "8c13b96f4e4bc0e873942eedc4412b91467a2cb0138db2155edcc7943d9d099e"
+      "size_bytes": 33795,
+      "sha256": "063842e6a711eb6f188b639a0e003aa5b234fd1c2bf1e4072fb224667505ce4e"
     },
     {
       "path": "scholars/rada-krapivina.html",
-      "size_bytes": 25104,
-      "sha256": "6df3cb17a76d6a3b600978989b6c0991d08b1d14bea8f8633bc468c5302f18a4"
+      "size_bytes": 25379,
+      "sha256": "a347b26c22188e94b7fd730d9cb9a0c6b8919fe7da1acbdd6cb3ae1b59f1aca0"
     },
     {
       "path": "scholars/ratushnyi-danila.html",
-      "size_bytes": 19829,
-      "sha256": "ce7bed41e15a5b8881ee83daa8661966abf67e6afd9562e62a5a413ac787b189"
+      "size_bytes": 20104,
+      "sha256": "241ed5fc1b7c822a97cf4b893e8c88d902817bd6df65705edba712597238f2e4"
     },
     {
       "path": "scholars/renkovskaya.html",
@@ -2770,8 +2775,8 @@
     },
     {
       "path": "scholars/rodionov-mikhail.html",
-      "size_bytes": 19381,
-      "sha256": "801f3f1cacb8226cfd4ea2830d4d084141d185ff294810b1d15432e1405a902c"
+      "size_bytes": 19674,
+      "sha256": "4d9af54d82c649659c2ecb1b2d97b3614aca7b4ccbc7db5a595f0978d24150d5"
     },
     {
       "path": "scholars/rodionov.html",
@@ -2780,13 +2785,13 @@
     },
     {
       "path": "scholars/roman-liliya.html",
-      "size_bytes": 18102,
-      "sha256": "5fafc716bdf69b3442ec4d0c2d977ec14181bb94dd1c6c6acd8b61dbf92a7216"
+      "size_bytes": 18377,
+      "sha256": "6f1011b3496fd914008b21283572756e1c361f3d0433de1ef9857ca89423ddcb"
     },
     {
       "path": "scholars/rozhnova-darya.html",
-      "size_bytes": 19446,
-      "sha256": "10585262093fbc639abaabd4edb1ffed2f8a99b38cf6b5a7cc9b0f42b2c41023"
+      "size_bytes": 19705,
+      "sha256": "6120c77d0a86a87987bd555562329789438736536d56d88aab550aade7458677"
     },
     {
       "path": "scholars/rusanov-215083.html",
@@ -2795,8 +2800,8 @@
     },
     {
       "path": "scholars/rusanov-maksim.html",
-      "size_bytes": 27615,
-      "sha256": "1dfc713f0742bf8c06dbe72ff5ace9bdbd7b7b51a2bbdce0e709b014ea28b86b"
+      "size_bytes": 27906,
+      "sha256": "1735a5bd1ceab595fee4ebeef462f4e9548ee9a699660323d830d6c47be3a421"
     },
     {
       "path": "scholars/rusanov.html",
@@ -2805,8 +2810,8 @@
     },
     {
       "path": "scholars/rybakova-anna.html",
-      "size_bytes": 28728,
-      "sha256": "14e35ad9626402f9af35ce24761b08ad26e9ce1ee0254be80b6041d93bad25ea"
+      "size_bytes": 29003,
+      "sha256": "79531b7bf9e24df24da4455a84e758acc0006a3ef5501fb4f96c734f01e61b7e"
     },
     {
       "path": "scholars/ryzhakova-svetlana.html",
@@ -2815,8 +2820,8 @@
     },
     {
       "path": "scholars/sabirova-rimma.html",
-      "size_bytes": 27987,
-      "sha256": "1a91d6820b69c71c81a9db990939dbf394d216ea3b6008b70ec5085e0ab91495"
+      "size_bytes": 28314,
+      "sha256": "e0c786fe9c656bd01fc97d767b2ade8ddc069678777ff24b2818f28a0d95357c"
     },
     {
       "path": "scholars/sabirova.html",
@@ -2825,63 +2830,63 @@
     },
     {
       "path": "scholars/safina-natalya.html",
-      "size_bytes": 23018,
-      "sha256": "5d71df1188ccc3dee9e53c970961d672582aa34c9a3cdea6c17173f7473669b3"
+      "size_bytes": 23251,
+      "sha256": "afc510ce9ac009120ea427e0d30fc768ead6a21c348ee7cc77f921f7b3b819bc"
     },
     {
       "path": "scholars/selivanova-tamara.html",
-      "size_bytes": 20346,
-      "sha256": "0c21b602cf26d7b23e64b07d52713485eeaa1236ff71a4bd1a536fbc64c49859"
+      "size_bytes": 20593,
+      "sha256": "77f0cf49183c62c17d92610252676b273be38b4b98ad17d5938bd757cb55a8e1"
     },
     {
       "path": "scholars/senina-natalya.html",
-      "size_bytes": 19207,
-      "sha256": "64cb2fe8a0a13e6eaa63c673645d1b64e066c277cc40dce4afce55440beccfaf"
+      "size_bytes": 19482,
+      "sha256": "8a2b1cff46df45e77c2cadd02453cd3bd91f2f267824aa95e70d9fe8b4023fc3"
     },
     {
       "path": "scholars/serebryanyi-sergei.html",
-      "size_bytes": 19345,
-      "sha256": "b6e479a8f7ad08e967d30b6959b03179e4c3e3d648f351cfdd0edd71bb879db7"
+      "size_bytes": 19933,
+      "sha256": "272c7b3a340f9bac37d5b86aef6c9cf7db07968177e9813fc4af97e5f6bc86b0"
     },
     {
       "path": "scholars/sergeeva-varvara.html",
-      "size_bytes": 19504,
-      "sha256": "e346474206022f3259812306901fa4ed3ecac7c898bab9a3a6839e8a72600b8a"
+      "size_bytes": 19779,
+      "sha256": "50d78443ca3126483c8d7d4dba2a870c9f5c245b9dae49e35e6dfe9070e3f1d5"
     },
     {
       "path": "scholars/sergey-kullanda.html",
-      "size_bytes": 23152,
-      "sha256": "7c67cfb5e7830d399f8fec8b58e671f7de5db0d622f541cb004875a7851f74a8"
+      "size_bytes": 23411,
+      "sha256": "5f72f9b6d475823d6bfae0e04add5312d03714ec120c7c5726cb3cd4707a9019"
     },
     {
       "path": "scholars/sergey-tavastsherna.html",
-      "size_bytes": 47488,
-      "sha256": "8f3c29e6465ee36b52de307ade421d7dad4acb5c605b99965b515b100a7b263a"
+      "size_bytes": 47747,
+      "sha256": "ef2012ccf36cae6b45a148524c57bc7227684c6d482eba5dea09bdb7d9594c96"
     },
     {
       "path": "scholars/shalakhov-evgenii.html",
-      "size_bytes": 20149,
-      "sha256": "26426182643af26fbb451a6fb53c3c9b8f5efa4c0efa58b57b94ff223117d3ac"
+      "size_bytes": 20424,
+      "sha256": "d031945de8755ea56283f0345507555999606358339e29a8b4bf1efbbe5fd244"
     },
     {
       "path": "scholars/shaposhnikova-darya.html",
-      "size_bytes": 19869,
-      "sha256": "2d3a16b275d048eb155b6740cdc49ecb59281cc270c376f7178f23f9518191d2"
+      "size_bytes": 20124,
+      "sha256": "0a46a7dcd5f0bfdac010af1236323eb77da03f71f055a64ec3ac7060257641fb"
     },
     {
       "path": "scholars/sharapova-aleksandra.html",
-      "size_bytes": 18820,
-      "sha256": "276c9f0bd23d5c630618f93939e857b57d8c9d9b82c695bc191d2e7ce14886a3"
+      "size_bytes": 19095,
+      "sha256": "856bb9f63446b50d3d869530ff45a4d6ca27c142632c9e9673cca7062f375271"
     },
     {
       "path": "scholars/sharygin-gleb.html",
-      "size_bytes": 19673,
-      "sha256": "1c13ed619df6ad6f61ec8a3367b3a3980b3533494ddb273a089be00078e7f276"
+      "size_bytes": 19932,
+      "sha256": "1ee7a4f08a6dca35fb049b4992cd72689723865c8375daf342e7fc6641f2b166"
     },
     {
       "path": "scholars/shcherbak-mariya.html",
-      "size_bytes": 19030,
-      "sha256": "87a3b0485f940e1dd767a4b57455a13ddbcfda10f5aaa2ecd3569c5b781b685f"
+      "size_bytes": 19305,
+      "sha256": "fd41bfe278c99295357ee98a68b7925178b65ecf3c4c905920cf788977724131"
     },
     {
       "path": "scholars/shokhin-vladimir.html",
@@ -2890,8 +2895,8 @@
     },
     {
       "path": "scholars/shomakhmadov-safarali.html",
-      "size_bytes": 28371,
-      "sha256": "8895053f55a819484038cd63be9b631d7cda675ec8d205b44e4cdaf4159d010c"
+      "size_bytes": 28646,
+      "sha256": "f7e9099a796f857c7c62c379b6086619d925b1276603854f55ad310c4fb8f503"
     },
     {
       "path": "scholars/shomakhmadov.html",
@@ -2900,8 +2905,8 @@
     },
     {
       "path": "scholars/shrestkha-krishna.html",
-      "size_bytes": 32292,
-      "sha256": "16a02fdd284d020bec89ae820945814047af259770649fd23cd52d2fd17ab4a4"
+      "size_bytes": 32551,
+      "sha256": "fc607f44370797c33d19859952b050cf3ed5be76841b5e774c8a123abebc6df2"
     },
     {
       "path": "scholars/shrestkha.html",
@@ -2910,23 +2915,23 @@
     },
     {
       "path": "scholars/shustova-alla.html",
-      "size_bytes": 37489,
-      "sha256": "62435c7df93aad3e3abe839a01d9ae0e45da0b26703962d607241d1c7be6c251"
+      "size_bytes": 37748,
+      "sha256": "02e2788b9e8f0fe53fa1acd7522aeaff19b0552d82ccc08b0e05502d01beaea4"
     },
     {
       "path": "scholars/skorokhodova-tatyana-1970-2.html",
-      "size_bytes": 20117,
-      "sha256": "85685d34659b0e54eb272e53df56e351ec461e68190ff47efaeaf004f86e951a"
+      "size_bytes": 20468,
+      "sha256": "15cfbb87c9729f04cbd03c06c7a2b97d2f91c5a6e96821cff7323b61092280ab"
     },
     {
       "path": "scholars/skorokhodova-tatyana-1970.html",
-      "size_bytes": 33957,
-      "sha256": "7e901da38a70f1ff7c1cd09bd1bea991c9a23d88c860684c27daa6f4ae0d13f5"
+      "size_bytes": 34278,
+      "sha256": "2b31850464f3b43cd3dfee1f6a8676418118f761f62e4edcc10dbf2fae89debd"
     },
     {
       "path": "scholars/slinko-elena.html",
-      "size_bytes": 19391,
-      "sha256": "b8d1d4236273b773d8ef77f8faa440a3eaa26e6898913e2b281751b457d91526"
+      "size_bytes": 19666,
+      "sha256": "07a586c37a7d108ef178c9913109d1451c27b75c7b19adf94c44759496535ddb"
     },
     {
       "path": "scholars/slinko.html",
@@ -2940,38 +2945,38 @@
     },
     {
       "path": "scholars/smirnova-ekaterina.html",
-      "size_bytes": 19487,
-      "sha256": "1536ac41c6d3fb93a7ad5a40098a9ade5fc8a56a4d0ce47d75ee2e431b8ae4e4"
+      "size_bytes": 19762,
+      "sha256": "47327c4bf2aa3e3b9300ae1bf7824baa0d61bd043917ce1cafe25a1968015182"
     },
     {
       "path": "scholars/soboleva-diana.html",
-      "size_bytes": 23284,
-      "sha256": "af13bd584d93ed111a0e800480ca0cae8393763ce988d8167237b175c142851b"
+      "size_bytes": 23658,
+      "sha256": "dd319250d3f09403d02759f9166d41f2af29a287e4cca826ca5da59ded119331"
     },
     {
       "path": "scholars/soboleva-elena.html",
-      "size_bytes": 23278,
-      "sha256": "be770f0e3a88d5965f56b0ace090cd29201dfb81926607be4f2fb9a84a9710cd"
+      "size_bytes": 23835,
+      "sha256": "3ff8af888449d3cc8d669fddf97fac9f584c55715b6bf96808046d456f9b5bc9"
     },
     {
       "path": "scholars/sofia-tsvetkova.html",
-      "size_bytes": 47994,
-      "sha256": "794cdb99b2922e97b777cb188c07fcf085e5d994c1d5c0be2d13cba410eaa4ec"
+      "size_bytes": 48253,
+      "sha256": "1f66d72485deef1825bbdfefea77490b131fba7c2452cf00889664885e80d326"
     },
     {
       "path": "scholars/sokolova-irina.html",
-      "size_bytes": 20360,
-      "sha256": "0de3c6717b084d60b47e206722ae0281fcbe2566a9075a71f9edf5e3f5951f94"
+      "size_bytes": 20635,
+      "sha256": "fe4f3817fcfd82874d88de06042fa4f4f0f08bbc3988f5f11cd531f2bf1eee0b"
     },
     {
       "path": "scholars/stolyarova-ekaterina.html",
-      "size_bytes": 26233,
-      "sha256": "41bb591027d7d199b599687d579cf8f7a82e84728f525f571467d060406650a5"
+      "size_bytes": 26530,
+      "sha256": "57dfee008d1d4f70feb9c78ca9c11e6a14bfd53eaedd54082094914aa8f3cd22"
     },
     {
       "path": "scholars/strelkov-andrei.html",
-      "size_bytes": 19734,
-      "sha256": "d2a832295fa357c571b666947d74011b42a320808a9126cdf35e134b4500fab9"
+      "size_bytes": 20009,
+      "sha256": "1536518ed33116a367cd1e6eb702701f69b39ab71c0527fc810a687cd89f212b"
     },
     {
       "path": "scholars/strelkov.html",
@@ -2980,33 +2985,33 @@
     },
     {
       "path": "scholars/strelkova-gyuzel.html",
-      "size_bytes": 22154,
-      "sha256": "778471f36c4bc55d3279961d91c1eae0c11af412216be912693859c142f09652"
+      "size_bytes": 22429,
+      "sha256": "8b88f64ef9e9cc561209e2e4f525a592742e390f2b3ad3e4841081cfa186e277"
     },
     {
       "path": "scholars/streltsova-liliya.html",
-      "size_bytes": 26830,
-      "sha256": "d44af1267f112a56557cd0d1ec289b558c3d0efb9f8ad282d66ffe1c367333ff"
+      "size_bytes": 27116,
+      "sha256": "4253a5ea27c43cb9b3e17ea82d5445fa8bf5d2a9194af7572d63e01c92d505f7"
     },
     {
       "path": "scholars/stukalin-gleb.html",
-      "size_bytes": 20039,
-      "sha256": "3d61982e2a9c345b9e03deb24edb5cade302fb5740e24b72e253a5b9658ffc0b"
+      "size_bytes": 20321,
+      "sha256": "b8d4cb283ef287680e968f9a2ebf3fa6573a526f8492efc30583fbf05bef22a6"
     },
     {
       "path": "scholars/svetlana-ryzhakova.html",
-      "size_bytes": 48378,
-      "sha256": "3388704b53f9fa4129fc89c30b067a4e2b0c6516fcde278b796c6341e467a77c"
+      "size_bytes": 48653,
+      "sha256": "50856bfa30dbf5b50a2810d97467c86cdbdf82a5a265a388220565b60675dd20"
     },
     {
       "path": "scholars/svetlana.html",
-      "size_bytes": 20262,
-      "sha256": "889461ae8035d9eadaf98ae77abfcd40277db527dc4d7e8d52083112375a24e9"
+      "size_bytes": 20537,
+      "sha256": "8d1bdfe9965a68ab2f7b724f7fcb033433247e525cb158fd6cab64150fb79793"
     },
     {
       "path": "scholars/tanonova-elena.html",
-      "size_bytes": 20048,
-      "sha256": "1aa501a61075de3baeebf70fcf8d7195cd543f7f1f5325d6bd6703f1c3853e72"
+      "size_bytes": 20334,
+      "sha256": "65f8569c16f655ab6f4508c40bed2f1acb17c481a9fc08c7b67edcf4e52ff708"
     },
     {
       "path": "scholars/tavastsherna-sergei.html",
@@ -3015,8 +3020,8 @@
     },
     {
       "path": "scholars/terentev-andrei.html",
-      "size_bytes": 22767,
-      "sha256": "14d88799422ff5140039934ce2af3c15c10e62e7bfd847be008565be80e2cd1a"
+      "size_bytes": 23042,
+      "sha256": "6aa27928f5342a81d20f04985c99afbb15eda9ab0bbfd11804a069f218c027f4"
     },
     {
       "path": "scholars/terentev.html",
@@ -3025,8 +3030,8 @@
     },
     {
       "path": "scholars/tishin-vladimir.html",
-      "size_bytes": 22111,
-      "sha256": "79bca8a267b725892de8ad29c1132dc2317609e49e406081f917d22bfc10970d"
+      "size_bytes": 22358,
+      "sha256": "60907105d4ec554a4358c10293a5b5a2de7edad68630900f977241fa6e0e03aa"
     },
     {
       "path": "scholars/titlin.html",
@@ -3035,13 +3040,13 @@
     },
     {
       "path": "scholars/tolchelnikov-ivan.html",
-      "size_bytes": 21387,
-      "sha256": "550fa085e5292960676dd32f7c999f8dea83ce66bce22a8a2021d5d6402e3ff0"
+      "size_bytes": 21662,
+      "sha256": "4606052ddd0520654c121b7ce1ed7d4608338bb3cb2f72ba37c58d3090963844"
     },
     {
       "path": "scholars/tsendina-anna.html",
-      "size_bytes": 21135,
-      "sha256": "58f0601d774e700ecc8cf3b861cce97628392678f97e9462cc9112e14f2eaac2"
+      "size_bytes": 21410,
+      "sha256": "0a92e8761b86b1014e4d73d3238d7fa4492c36bdc34b11d560a98cae6bdc5bb6"
     },
     {
       "path": "scholars/tsvetkova-sofya.html",
@@ -3050,13 +3055,13 @@
     },
     {
       "path": "scholars/tyulina-elena.html",
-      "size_bytes": 35889,
-      "sha256": "bceb18897ad96bf3a622699403916f52ac471f13411d70631c0f16d297ade129"
+      "size_bytes": 36148,
+      "sha256": "9e77c3235af17b83f48a7c4a44aeb81cd0bfc97ca964b66976c56b76a1deac8b"
     },
     {
       "path": "scholars/uimina-yuliya.html",
-      "size_bytes": 21011,
-      "sha256": "6ffe0333c6fb40b235192b8c3864db75c9e309932d58b9fda39d3fc042ee61e2"
+      "size_bytes": 21286,
+      "sha256": "2d8393ad645cb099d5818bc0750fb108b6f3e13e8c78df168d7541a7ba2c93bb"
     },
     {
       "path": "scholars/ulanskii-evgenii.html",
@@ -3065,13 +3070,13 @@
     },
     {
       "path": "scholars/usenko-ivan.html",
-      "size_bytes": 18538,
-      "sha256": "8bf0fdbf8ae7c18186ce1abd3b920b6fd9b04d9fc570e7fc9b14328d0db03c83"
+      "size_bytes": 18813,
+      "sha256": "b30e2ab06b92c697ce6e2a8bf959b7317ed00cb7c91652976ec3854f33cfecf5"
     },
     {
       "path": "scholars/uspenskaya-elena.html",
-      "size_bytes": 23435,
-      "sha256": "6d6184fc1795616288120c008d1a9cfe8a349e665a945d5a7244c4e723112f9e"
+      "size_bytes": 23698,
+      "sha256": "6ed2a1f0d1d36483b1512dcec59260fa1e2ac4172e9a2bbd2c27227f50a5c510"
     },
     {
       "path": "scholars/uspenskaya.html",
@@ -3085,8 +3090,8 @@
     },
     {
       "path": "scholars/vasilev-aleksei.html",
-      "size_bytes": 24975,
-      "sha256": "36f8f8b12d2c95a226309dd5d0db962d10148ad3ded0d7cdd7abbeb0b292a387"
+      "size_bytes": 25234,
+      "sha256": "ac465d48ec1d18bc14fc212d54d9e38c1704939daa0b812adcd2ebe01e06acaa"
     },
     {
       "path": "scholars/vasilev.html",
@@ -3095,13 +3100,13 @@
     },
     {
       "path": "scholars/vasilkov-yaroslav.html",
-      "size_bytes": 37729,
-      "sha256": "762c9d511881368202b694c88a1b2c94a0a96f6d08196a87531b5f4c87ad6707"
+      "size_bytes": 38055,
+      "sha256": "e157674f80f0ab7f6fce2fd0791187de27cd001571b7ac5882028807234520db"
     },
     {
       "path": "scholars/vatman-semen.html",
-      "size_bytes": 20777,
-      "sha256": "6bbb4f29291c206e503c757b280fd083aa8479407724a2e26f16972b73be03e2"
+      "size_bytes": 21052,
+      "sha256": "dda214e72f85a877ebd557a63e911ab372c49cea89dff942504dda694d005d21"
     },
     {
       "path": "scholars/vecherina-olga.html",
@@ -3115,13 +3120,13 @@
     },
     {
       "path": "scholars/victoria-lysenko.html",
-      "size_bytes": 41179,
-      "sha256": "b003d86bcb871284164a1dde366c2fc2d6dab8c3002d9ad4a4ca9bb3758d75ea"
+      "size_bytes": 41454,
+      "sha256": "522ac576f62f51ab09b1162950ec5e4e0bd6b09299c648fcf55dfdf79a386c04"
     },
     {
       "path": "scholars/victoria-vertogradova.html",
-      "size_bytes": 38144,
-      "sha256": "4fe6f6039bc682db4207ada2d761c6071fbced9cd0ff14c59552ff5cdd5f7801"
+      "size_bytes": 38376,
+      "sha256": "38a1b90e88a3cc74bd8320aaf06667eab8bbe2aae56109553f10ce1324efe5df"
     },
     {
       "path": "scholars/vigasin-aleksei.html",
@@ -3130,28 +3135,28 @@
     },
     {
       "path": "scholars/vigel-narine.html",
-      "size_bytes": 19008,
-      "sha256": "05b367a5f5281787874ab5307b9c96ea6d85128445d115a8e3539c91a823415f"
+      "size_bytes": 19267,
+      "sha256": "b6ad453974f846c815942005b4a1da23692619b79cff5d002ae160c883989c08"
     },
     {
       "path": "scholars/vishnu-shukla.html",
-      "size_bytes": 18163,
-      "sha256": "6f06656c2f86a11831192fb114b1fbb226c39aae99669e87846e8f79dd84bb5c"
+      "size_bytes": 18438,
+      "sha256": "f4cbd1e9e28b17bca5de294681e4deeeed73ff7b41aa559083a943975ec86ea3"
     },
     {
       "path": "scholars/vladimir-shokhin.html",
-      "size_bytes": 27052,
-      "sha256": "5bf7dee5ae4b4fa6dd48a23fdb013e333e4527836c53c12a332c8785793d57b5"
+      "size_bytes": 27327,
+      "sha256": "943fecb0af4eeb7faef28d17fdd18089b208ae0dfed25dd6b8f436ca1fb69a3f"
     },
     {
       "path": "scholars/vladimir.html",
-      "size_bytes": 19805,
-      "sha256": "d3b821f2f7be5b65695ad889e0f0d944c07164d6b499d0c8afc242fe14d3be77"
+      "size_bytes": 20064,
+      "sha256": "f570639287d77f7281e60c7606dfe40d6c5e6dd1d3c79803902d2c0eab3f5f81"
     },
     {
       "path": "scholars/voloshina-oksana.html",
-      "size_bytes": 32393,
-      "sha256": "3bc95f790067b114d44907e4b9d7b4c8e586dbf798242484d4d873a4fd3f8311"
+      "size_bytes": 32710,
+      "sha256": "008609406e8fb66641fdfecfc91aab89f7e789ca5c0b9d71a94ced97bf44411e"
     },
     {
       "path": "scholars/voloshina.html",
@@ -3165,28 +3170,28 @@
     },
     {
       "path": "scholars/vozchikov-dmitrii.html",
-      "size_bytes": 18313,
-      "sha256": "d23ea89e3ef12c8993591e30816f2b4b8a1b09f7b068eaaee3addbe96d2097b2"
+      "size_bytes": 18588,
+      "sha256": "61c0f65d5af682f05493c94da903205952376c6defeb6e7922d410a1eb8130c9"
     },
     {
       "path": "scholars/vozdigan-kseniya.html",
-      "size_bytes": 24415,
-      "sha256": "a18abd371363b753e050adca63dd31be01f622d17b990f616393598da62e05c2"
+      "size_bytes": 24728,
+      "sha256": "a51f2210ddefda4f6fdc580bb03ce1be218d00ad9202b4785d0d191005c85c08"
     },
     {
       "path": "scholars/vvedenskaya-elvira.html",
-      "size_bytes": 21409,
-      "sha256": "1e3e852b33105d5202ddd7e499266af2979a6ff26c8d9060e9c37e4a1f3d2da0"
+      "size_bytes": 21668,
+      "sha256": "9d2badd81e3182adcb6e94419805c96f773bd2f3f8b9ec7510c71dd07ff70d86"
     },
     {
       "path": "scholars/vyrshchikov-evgenii.html",
-      "size_bytes": 37704,
-      "sha256": "5ef79bc2a13895bdcc4b9abef7c36ecd96a59991b04cd0882076df19e584fb6b"
+      "size_bytes": 37963,
+      "sha256": "a432ad67ce02465db92741bdd9d6ce75341ddff5cc8e3330b706fa643ed3b1b8"
     },
     {
       "path": "scholars/yakovleva-mariya.html",
-      "size_bytes": 23325,
-      "sha256": "7d630fd1c17aaac85f3454c48a1c6d093e0ade7e483f7816a4148d8b4a5c75fe"
+      "size_bytes": 23764,
+      "sha256": "a613bbd9a7116d2c6ed077cd8496d2fb9358623beb76daf819b4b22d8e2b9873"
     },
     {
       "path": "scholars/yuditskaya-117242.html",
@@ -3195,13 +3200,13 @@
     },
     {
       "path": "scholars/yulia-alikhanova.html",
-      "size_bytes": 34088,
-      "sha256": "e2b7ff550e334deb9c44d0d85560039649c6d5a7a397c1fe608434da615f96b6"
+      "size_bytes": 34273,
+      "sha256": "c59f2b410e2238ecbdec0a42aea7087d1f852cc77ff0cf10f0a22f1df428a506"
     },
     {
       "path": "scholars/zagorulko-andrei.html",
-      "size_bytes": 19791,
-      "sha256": "c5639a4a1b701b6380b3adab7c6600c36f3c25d066c27a1d5f11cfd717a067ee"
+      "size_bytes": 20066,
+      "sha256": "9a429ac315d5dacc8e70c0217f8a44852cde6a59f642aeb60e89343a249ffc5e"
     },
     {
       "path": "scholars/zagumennov-547db9.html",
@@ -3210,28 +3215,28 @@
     },
     {
       "path": "scholars/zagumennov-boris.html",
-      "size_bytes": 20721,
-      "sha256": "50692091478eb3d2ef4afe5baa476876ad62a9b7dfd6ba82ce5073b38eb3a0ee"
+      "size_bytes": 20996,
+      "sha256": "8ce1ddb842b96663391b4f3d584ff8b589f6c4f3fc0ade468c0e42390d0e3fd8"
     },
     {
       "path": "scholars/zastrozhnova-evgeniya.html",
-      "size_bytes": 19250,
-      "sha256": "fa0684bbd8c78309948e899150b462043ac5dadc6aa60e85295a3bf0b68f722a"
+      "size_bytes": 19525,
+      "sha256": "a68d35bbb16ab2b4a29960078a106a66384499d3d3c6a4d12addd2978134ca44"
     },
     {
       "path": "scholars/zevatskii-timofei.html",
-      "size_bytes": 19252,
-      "sha256": "b9731a1eeefcbe5cf94473acd8545ec8f816a122c0db2290ddf227ad1d8bcc42"
+      "size_bytes": 19499,
+      "sha256": "d630023668c8318b05e260b7429bf3882deb040fe017a92a55ef8bdf16d15144"
     },
     {
       "path": "scholars/zheleznova-natalya.html",
-      "size_bytes": 18999,
-      "sha256": "533518a84e6e35b94b04116a3e935d515cb3c184b72f10c83670f393ce6ff38e"
+      "size_bytes": 19258,
+      "sha256": "dc51bdc6027b7f07c6c751ce439a81d17222c6c442dc8ad358d91abc0669c536"
     },
     {
       "path": "scholars/zhukova-lyubov.html",
-      "size_bytes": 24179,
-      "sha256": "cab42c7de53911ae167db6c97b96a1139fbe16838f5d888a713a0d2dd22ffb10"
+      "size_bytes": 24483,
+      "sha256": "5907e95d7cd89214cb08bc800e6a29868c46217001836048978a168c7b9ddbbc"
     },
     {
       "path": "scholars/zhutaev-dmitrii.html",
@@ -3240,23 +3245,23 @@
     },
     {
       "path": "scholars/zimina-tatyana.html",
-      "size_bytes": 27074,
-      "sha256": "05371060a2dedbeb26555a6be307e76b1a70c0aa670b0f0622a498be2ea3fb9e"
+      "size_bytes": 27349,
+      "sha256": "8d353904a3a1a5b84eadce76165101e2b85b16e746696bf7f082158df440eba1"
     },
     {
       "path": "scholars/zorin-aleksei.html",
-      "size_bytes": 31720,
-      "sha256": "27b7df7c71e391e4e1bf0d0939c4b14943ee7797ae1d06a3f6630d2d046a0ff0"
+      "size_bytes": 31995,
+      "sha256": "94b19b0367e77209e9ed1d8f60e25a3fdc79d42bb735dfa9371b8ed25196635f"
     },
     {
       "path": "search-index.json",
-      "size_bytes": 744263,
-      "sha256": "086192cd32feda1c5e827093c50baebd19955f1f4b3ec47a5412afe4aa88f1d8"
+      "size_bytes": 811258,
+      "sha256": "0d118a5aaa92383441068cd6b1014c5bb5585b6d4bbe8a177d411e6e943c103e"
     },
     {
       "path": "search.html",
-      "size_bytes": 9922,
-      "sha256": "b40ddbcd2a35a8fd9df664f932edec767dbf6465cb4a0f3822d90e9fb1fd37e8"
+      "size_bytes": 10408,
+      "sha256": "01304e26894c9c712da5b75af8da17b3ecd68ff5bc8be0b186590acbacc598b0"
     },
     {
       "path": "site.webmanifest",
@@ -3265,13 +3270,13 @@
     },
     {
       "path": "site_data.json",
-      "size_bytes": 1973198,
-      "sha256": "82afba9fc54f866de1ba586211e4a3e14e4cd433d1b9ffab8c7f7751ead950b8"
+      "size_bytes": 1970840,
+      "sha256": "527c9d452062cf192fbe76c4e5f7d6cb63051024757a1bfeb050755f9e2ba2dd"
     },
     {
       "path": "sitemap.xml",
-      "size_bytes": 47956,
-      "sha256": "adb39b954c762a999f465597ffac5745094fa6e87de7d8aaf254e9fe79ba31a9"
+      "size_bytes": 48499,
+      "sha256": "7cb7143f1cb70c9598d6eee7f64d52b834e3899f4b0c8e7408d51f5695b46fa4"
     },
     {
       "path": "themes/academichistory.html",
@@ -3280,8 +3285,8 @@
     },
     {
       "path": "themes/art-and-material-culture.html",
-      "size_bytes": 24171,
-      "sha256": "b1ee908ce6f0e3a6066d0ce8cd202be0bae6e1fb612ccf56eb6d4a9f2c365835"
+      "size_bytes": 24314,
+      "sha256": "4f06826c4366122a090d0d5beb93b36ef74de9c1d38bdd21572da7aa35049bd4"
     },
     {
       "path": "themes/art.html",
@@ -3290,8 +3295,8 @@
     },
     {
       "path": "themes/history-and-culture.html",
-      "size_bytes": 88627,
-      "sha256": "6379e57399ca0ad20ba83ee61d20737673b1b871944f247156ed6108d996d6f9"
+      "size_bytes": 88770,
+      "sha256": "a6ff8b63829c315875cae580d1048538877f6a5cd2ba889e0bceb200e64b202e"
     },
     {
       "path": "themes/history.html",
@@ -3300,13 +3305,13 @@
     },
     {
       "path": "themes/index.html",
-      "size_bytes": 10215,
-      "sha256": "4e5af9b53b5671cee42540f9f848f59fa720ea9e38f01fd1330f753162a2a74c"
+      "size_bytes": 10358,
+      "sha256": "7857a0f2fe4557d5f018f45a28c031c54abb3f8d365d05909c05b6a229860c1d"
     },
     {
       "path": "themes/linguistics-and-philology.html",
-      "size_bytes": 109100,
-      "sha256": "99661b8de6cf455fed85c3d37ad0d9a522cf1df8bbde7791897e438af01fb064"
+      "size_bytes": 109243,
+      "sha256": "34c56603f4db925697772c1b7e11e5aefcbb4f8497d30c602735ef421adb9877"
     },
     {
       "path": "themes/linguistics.html",
@@ -3315,8 +3320,8 @@
     },
     {
       "path": "themes/literature-and-poetry.html",
-      "size_bytes": 102926,
-      "sha256": "3ed8d3b0945ab1a47bf853232b17b516b30586e9643c37ad292c3f7ce9bb0f47"
+      "size_bytes": 101896,
+      "sha256": "b38996f8d0b3766a1ce7f1d32215668cf2272487ffcde2b508fa5ea3d4dc0f94"
     },
     {
       "path": "themes/philosophy.html",
@@ -3325,33 +3330,48 @@
     },
     {
       "path": "themes/religion-and-philosophy.html",
-      "size_bytes": 178470,
-      "sha256": "0cbb23f3c26376fa708fed5dccf56c5f2dadff7be36112d28a1e001962d5ae87"
+      "size_bytes": 178613,
+      "sha256": "ae5dd9815c4564a80e4245f0a2ccb93fc0a4c6a6fa0beb8325290522fb3b13c9"
     },
     {
       "path": "themes/unspecified.html",
-      "size_bytes": 194791,
-      "sha256": "f039bed93a2ffadc05852e91a85be8c7fdf63e81118a3c6b04d12ee59199c65e"
+      "size_bytes": 194934,
+      "sha256": "d6ef536324a4ca04da1834935e87eec5a0f4ba2c68e0b62f3cc8b1c5481697cd"
+    },
+    {
+      "path": "topics/index.html",
+      "size_bytes": 9289,
+      "sha256": "fde72bb8f045ca36842a9439ae0a71d26cd86c13e6194868288c7595cf752bfb"
+    },
+    {
+      "path": "topics/mahabharata.html",
+      "size_bytes": 15498,
+      "sha256": "87a8834115f79772b8eed7b81b2bd37cc232a48ecb755c9133126e0b8fb1c723"
+    },
+    {
+      "path": "topics/ramayana.html",
+      "size_bytes": 23442,
+      "sha256": "02505db99011d76ab44ac699e7efcface46e55fc67519ad95eb36c594b873ef7"
     },
     {
       "path": "videos/index.html",
-      "size_bytes": 108648,
-      "sha256": "19d7ad5f8ed74abc2573a1d5b5f1f99b227d3f7401ff1b4747c5795836451282"
+      "size_bytes": 108791,
+      "sha256": "6342f80526a8f081cce4cf386e1f939a160fb87de8adad031f6afd3eaf856c71"
     },
     {
       "path": "videos/year-2023.html",
-      "size_bytes": 54409,
-      "sha256": "41df9f3387e058e40d40317b4f5cc82e35dd2cacb3dc79a5af266a3293d09972"
+      "size_bytes": 54552,
+      "sha256": "ca41f5b0c831bc0e19ec988ce69f766d6d277ce2a028e6693366dce380a1f322"
     },
     {
       "path": "videos/year-2024.html",
-      "size_bytes": 32088,
-      "sha256": "971b85d4a1799b8bae451179a3039f08e957ddfaacda02410a00682cd85a3cc0"
+      "size_bytes": 32231,
+      "sha256": "46fc5988890732ac8349a2f6b493313a51797c2d0dfb850e023443835dd32cd7"
     },
     {
       "path": "videos/year-2025.html",
-      "size_bytes": 33360,
-      "sha256": "66f462395f307362a3a8a76c19656003b98d0f88134ea051f4108d3da28c3b9c"
+      "size_bytes": 33503,
+      "sha256": "d9e173d2bd1d909cab184da41e40dbb0d4b0ecfc0feeb320c49b9fa31c1f6ced"
     }
   ]
 }
