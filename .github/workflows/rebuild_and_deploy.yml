@@ -60,6 +60,7 @@ jobs:
       - name: Serialize Data Structure for Dashboard
         run: |
           python generate_site_data.py
+          python generate_network_json.py
 
       - name: Generate Static Pages for Individual Scholars
         run: |

@@ -1186,7 +1186,7 @@
                         </div>
                         
                         <div style="margin-top:1rem; text-align:center;">
-                            <a href="/IndologyScholars/scholars/${node.id.replace('person:', '')}.html" class="btn-preset" style="display:inline-block; padding: 0.4rem 0.8rem; font-size:0.8rem;" target="_blank">Открыть профиль ↗</a>
+                            <a href="/IndologyScholars/scholars/${node.slug || node.id.replace('person:', '')}.html" class="btn-preset" style="display:inline-block; padding: 0.4rem 0.8rem; font-size:0.8rem;" target="_blank">Открыть профиль ↗</a>
                         </div>
                     `;
                 } else if (node.type === 'event') {

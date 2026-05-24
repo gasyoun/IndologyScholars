@@ -1717,7 +1717,7 @@ CREATE TABLE presentation_person (
                 row.innerHTML = `
                     <td>
                         <div style="font-weight: 600; color: #ffffff;">
-                            <a href="scholars/${s.id}.html" style="color: #ffffff; text-decoration: none; border-bottom: 1px dashed rgba(255,255,255,0.4); transition: var(--transition);" onmouseover="this.style.color='var(--accent-primary)'; this.style.borderColor='var(--accent-primary)'" onmouseout="this.style.color='#ffffff'; this.style.borderColor='rgba(255,255,255,0.4)'" onclick="event.stopPropagation();">
+                            <a href="scholars/${s.url_slug}.html" style="color: #ffffff; text-decoration: none; border-bottom: 1px dashed rgba(255,255,255,0.4); transition: var(--transition);" onmouseover="this.style.color='var(--accent-primary)'; this.style.borderColor='var(--accent-primary)'" onmouseout="this.style.color='#ffffff'; this.style.borderColor='rgba(255,255,255,0.4)'" onclick="event.stopPropagation();">
                                 ${displayName}
                             </a>
                             <span style="color: var(--text-secondary); font-weight: 400; font-size: 0.85rem; margin-left: 0.4rem;">${lifeYears}</span>

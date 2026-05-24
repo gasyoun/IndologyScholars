@@ -110,8 +110,8 @@
     },
     {
       "path": "analytics_output/network_data.json",
-      "size_bytes": 1059438,
-      "sha256": "8ee668dee39d516ff083f1011afb2dc313a847ec51fe80d9947194529830c710"
+      "size_bytes": 1068066,
+      "sha256": "c7d7aabab17dcc03b803a3bea2f9b1442333e7d284303e756d56e3327ec73d52"
     },
     {
       "path": "analytics_output/network_edges.csv",
@@ -486,7 +486,7 @@
     {
       "path": "download-data.html",
       "size_bytes": 18817,
-      "sha256": "ad4bd1847b1a5604ab63ef4e18ef9e9e5c3a842982f5356ec82d4bd305d421cc"
+      "sha256": "9c2598436be8b12348d0892a4bc7844e0319ce62bed699f93f491b3237d56ded"
     },
     {
       "path": "en.html",
@@ -500,8 +500,8 @@
     },
     {
       "path": "index.html",
-      "size_bytes": 139739,
-      "sha256": "5d2b9cd597674ce09a60c78c3c0cfffba41b9dcb3489d596d4b4135dffbd7a83"
+      "size_bytes": 139745,
+      "sha256": "4c050aa916f64ac29ee69139f4aa8e4da99ac9cf29beb08b934b3822aba6dbbf"
     },
     {
       "path": "institutions/gosudarstvennyi-ermitazh.html",
@@ -650,8 +650,8 @@
     },
     {
       "path": "networks.html",
-      "size_bytes": 54743,
-      "sha256": "b01cc7e1d0afac6a5e188fe6664f16959e58555c9dd9db6d37da900ef0bad874"
+      "size_bytes": 54756,
+      "sha256": "ad1e23da4d95f7a4659a02337c8e7d506e9080c63026e62e5eaecb61d0af4ac6"
     },
     {
       "path": "robots.txt",
