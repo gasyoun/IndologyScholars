@@ -1,90 +1,110 @@
-# HANDOFF: IndologyScholars Article (v0.4)
+# HANDOFF: IndologyScholars
 
-**Last Updated:** 2026-05-23  
-**Session:** Implementation of Hypotheses H7–H10, conclusion updates, and sociological synthesis of Russian Indology.  
-**Status:** Main manuscript `article/ppv_draft.md` is updated to v0.4, fully checked, and exported to HTML and DOCX formats. All changes are committed and pushed to GitHub.
-
----
-
-## 📋 Current Article Status
-
-**File:** `article/ppv_draft.md`  
-**Version:** v0.4 (post-hypotheses H7–H10 integration + conclusion updates)  
-**Size:** ~157 KB (including all appendices and code listings)  
-**Target Journal:** ППВ (Письменные памятники Востока); fallback: Восток (Oriens)  
-
-### Recent Corrections & Additions (Session 2026-05-23)
-
-1. **Integrated New Subsections for H7–H10:**
-   - **H7 (Institutional Fractional Counting):** Section 6 updated with `### 6.1. Метод подсчета: простое и фракционное институциональное участие`. Quantified that fractional counting causes negligible change in rankings due to >99% single-author rate (ИВ РАН: 160 vs 158.00; СПбГУ: 38 vs 38.00; НИУ ВШЭ: 18 vs 16.00).
-   - **H8 (Era Shift on Zograf Readings):** Section 8 updated with `### 8.4. Влияние смены оргкомитета на тематический дрейф и приток новых участников (Зографские чтения)`. Compares Vasilkov era ($\le 2024$) with Albedil-Ivanov era ($2025–2026$). Documented a statistically significant chronological shift in L2 periods ($p = 0.0459$), with classic themes dropping (36.2% to 26.3%) and chronologically unspecified ones rising (8.2% to 16.7%).
-   - **H9 (Geographic Gravity & Regional Survival):** Section 6 updated with `### 6.2. Географическое притяжение и когортная выживаемость региональных исследователей`. Highlighted SPb's паритетность (43.8% SPb vs 42.6% Moscow) vs Moscow's inward orientation (only 9.0% SPb at Roerich). Documented that regional retention is significantly lower than metropolitan (36.1% vs ~59%, $p = 0.0191$).
-   - **H10 (Talk Serialization / Salami Slicing):** Section 4 updated with `### 4.5. Сериализация докладов и «salami slicing»`. No significant difference in serialization rate between core and periphery (2.2% vs 4.0%, $p = 0.1649$). However, a weak but significant correlation exists between total presentations and absolute serialized papers ($\rho = 0.223$, $p = 0.0007$), suggesting serialization is an individual long-term style.
-
-2. **Updated Conclusion (Section 10):**
-   - The conclusion list has been expanded to **11 points** to fully summarize the findings of H7–H10.
-   - Added a detailed sociological synthesis paragraph wrapping up the findings into a cohesive description of the clannish, fragmented, and competitive structure of the Indology landscape.
-
-3. **Compiled Draft Deliverables:**
-   - Generated [ppv_draft.html](file:///c:/Users/user/Documents/GitHub/IndologyScholars/article/ppv_draft.html) and [ppv_draft.docx](file:///c:/Users/user/Documents/GitHub/IndologyScholars/article/ppv_draft.docx) directly from the markdown draft using pandoc.
-
-4. **Pipeline Rebuild:**
-   - Ran `build_and_populate_db.py`, `generate_analytics.py`, `generate_site_data.py`, `generate_scholars_pages.py`, `validate_publication.py`, and `generate_publication_pages.py`. All databases, static HTML profiles, and analytics files are up-to-date and pushed.
+**Last Updated:** 2026-05-24
+**Status:** Repo clean, everything committed. Pipeline healthy. Manuscript at **v0.7**.
+**Target journal:** ППВ (Письменные памятники Востока); fallback: Восток (Oriens).
+**Main goal (author-selected):** ⟶ **Track C — get v0.7 submission-ready.** Data-depth (Track A, genealogy) runs after/in parallel; identity conflicts are deferred debt.
 
 ---
 
-## 🗺️ Roadmap for Future Phases
+## 📊 Current State of Truth
 
-The next phases of the IndologyScholars project are organized into three key tracks:
+| Metric | Value |
+|---|---|
+| Unique scholars (deduplicated) | **220** (0 missing birth years) |
+| Unique talks / author participations | **895 / 899** |
+| Cross-conference core cohort | **38** |
+| Zograf-only / Roerich-only | 129 / 53 |
+| Timeline | 2004–2026 (Zograf 2004–2026, Roerich 2007–2025) |
+| Scholars with recorded degree | **31 / 220** (cohort not yet fully covered) |
+| Manuscript | `article/ppv_draft.md` v0.7 — 10 sections + appendices А/Б/В/**Г** |
+| Manuscript builds | HTML + DOCX (no print-ready **PDF** yet) |
+| Network viz | Vis.js live on `index.html` + `networks.html` (266 nodes, 4704 edges) |
+
+**Appendix Г (statistical proof) headline results:**
+- **H1 — positive win.** Degree-preserving permutation null: observed cross-series overlap 39 vs expected ~104 (z≈−18.3, p<0.0001). "Two largely separate communities" is now *proven*, not hedged.
+- **H2 — retraction.** Kaplan-Meier survival: log-rank p≈0.97. The old claim that Roerich debutants "выступают дольше" is **not** supported; §4.3 softened.
+- **H3.** Bootstrap CIs all include 0 → "descriptive only" hedge confirmed.
+- **H4.** City-only affiliation a venue-format artifact (CMH OR≈157), not precarization.
+
+---
+
+## ✅ Done This Session (2026-05-24, review pass)
+
+1. **Reviewed the whole project**; reconciled doc drift (this file was stuck at v0.4 while README/CHANGELOG were at v0.7 / v1.8.0).
+2. **Deterministic-ID debt closed.** `presentation_id` was already deterministic (`stable_presentation_id()`, commit `235a5d7`); the live theme-code join in `generate_site_data.py` / `generate_publication_pages.py` already uses the **natural key `(year, series, title)`**. Only the vestigial `presentation_id` column in the frozen theme CSVs was stale. Re-keyed it: `theme_codes_final.csv`, `theme_codes_final_v2.csv`, `article/supplementary_theme_codes.csv` now all show **895/895** id overlap with `conferences.db` (was 0/895). Utility: `scratch/rekey_theme_codes.py` (re-runnable after any rebuild).
+   - **Rule going forward:** the canonical join key for any external CSV is `(year, series, title)`, never `presentation_id`.
+
+---
+
+## 🗺️ Roadmap (Future Development)
 
 ```mermaid
 graph TD
-    A[Phase 5: Analytical Depth] --> A1[Degrees & Alma Mater Extraction]
-    A --> A2[Teacher-Student Genealogy Graph]
-    A --> A3[Historical Sborniki/Proceedings Review]
-    
-    B[Phase 6: Visual & Interface Upgrade] --> B1[Interactive Network Map on Portal]
-    B --> B2[Dynamic Filtering & Search Upgrades]
-    
-    C[Phase 7: Pre-publication & Submission] --> C1[Biographical Audits for 127 Scholars]
-    C --> C2[Final Proofreading & PDF Rendering]
-    C --> C3[Journal Submission to PPV]
+    A[Track A: Genealogy & Data Depth] --> A1["A1 ★ Teacher–student genealogy graph (38-cohort)"]
+    A --> A2[A2 Complete degrees: 189 null, cohort-first]
+    A --> A3[A3 Sborniki oral→print analysis]
+    B[Track B: Data Integrity] --> B1[B1 Identity conflicts — DEFERRED debt]
+    B --> B2["B2 ✓ Deterministic IDs + theme re-key (DONE)"]
+    B --> B3[B3 Fix benign V008 'Online' FK]
+    C[★ Track C: Pre-publication — LEADING] --> C1[C1 Print-ready PDF via Pandoc/LaTeX]
+    C --> C2[C2 References/footnotes to PPV style]
+    C --> C3[C3 Cover letter + submission to PPV]
+    D[Track D: Portal/UX] --> D1[D1 Genealogy preset on networks.html]
+    D --> D2[D2 Theme/period filter controls on directory]
 ```
 
-### Track A: Analytical Depth & Genealogy (Data Expansion)
-1. **Degrees & Alma Mater Extraction (High Priority):**
-   - **Goal:** Differentiate the "Leningrad school" and "Moscow school" hierarchies by extracting PhD (канд. наук) and DSc (докт. наук) degrees, alongside undergraduate university (SPbGU vs ISAA MGU).
-   - **Method:** Target the core 37 overlap scholars first, query RINC (eLIBRARY) and RSL (Russian State Library) dissertation databases, and integrate this metadata into `person` table.
-2. **Teacher-Student Lineage Networks (High Priority):**
-   - **Goal:** Formalize teaching lineages (e.g., Paribok → Desnitskaya/Kuzina; Vasilkov → ...; Lysenko → Kuzina) to draw an explicit pedigree graph.
-   - **Method:** Identify advisor/advisee relationships from dissertation abstracts and direct scholar profiles, then render a directed genealogy graph.
-3. **Historical Sborniki (Proceedings) Analysis (Medium Priority):**
-   - **Goal:** Trace the correspondence between conference talks and published articles in the official sborniki (Zograf and Roerich proceedings). Check if the same gatekeeping patterns repeat in printed collections.
+### Track A — Genealogy & Data Depth  *(priority data track; follows / parallels submission)*
 
-### Track B: Web Interface & Portal Upgrades (UX)
-1. **Interactive Network Visualization (Medium Priority):**
-   - **Goal:** Embed an interactive, client-side network visualization (using Sigma.js or Vis.js) on the portal (`index.html`) so users can explore the clusters and bridging nodes directly.
-2. **Enhanced Cross-Filtering:**
-   - Add filter controls for dominant themes and historical periods on the main scholar directory.
+1. **A1 ★ Teacher–student genealogy graph (TOP PRIORITY).**
+   - **Goal:** Formalize advisor→advisee lineages for the 38-cohort (e.g. Paribok → …, Vasilkov → …, Lysenko → Kuzina) into a directed pedigree graph.
+   - **Method:** Mine dissertation abstracts / автореферат scientific-advisor fields, ISTINA, RSL; author verifies each edge. Store as a new lineage table (`advisor_person_id → advisee_person_id`, with degree/year/source_url).
+   - **Render:** add a **"Genealogy" preset** to the existing Vis.js `networks.html` (directed edges) — ties to Track D1.
+2. **A2 Complete degrees.** 189/220 still null; even the 38-cohort is incomplete (only 31 total). Prioritize cohort, then most-prolific scholars; resolve the ~12 earlier not-found (Лелюхин, Смирнитская, Гордийчук, Мехакян, Кузина, Уланский, Юдицкая, plus likely-aspirants). Columns (`degree`/`degree_year`/`degree_source_url`) already wired into `person` + profile pages.
+3. **A3 Sborniki (proceedings) vs oral talks.** Compare announced talks against published proceedings articles — test whether gatekeeping repeats in print. New data-collection effort.
 
-### Track C: Pre-publication & Formatting (Submission)
-1. **Resolve 127 Missing Birth Years (High Priority):**
-   - **Goal:** Research the remaining 127 birth years manually using academic directories, memorial pages, and RINC profiles (avoiding OpenAlex proxy which proved systematically incorrect for Soviet-era generations).
-2. **Final Article Formatting (High Priority):**
-   - Re-verify all references, footnotes, and citation tables in [ppv_draft.md](file:///c:/Users/user/Documents/GitHub/IndologyScholars/article/ppv_draft.md) to match the target journal's (ППВ) exact rules.
-   - Prepare the final print-ready PDF using a custom LaTeX template or pandoc.
+### Track B — Data Integrity
+
+1. **B1 — DEFERRED (known debt, see below).** 3 identity conflicts need the author's expert call; do not block submission.
+2. **B2 ✓ DONE** — deterministic IDs confirmed + theme CSVs re-keyed (see above).
+3. **B3 Benign FK** — venue `V008` "Online" has `organization_id='unspecified'` with no matching row. Add an "Online / unspecified" organization in `build_and_populate_db.py`.
 
 ---
 
-## 📁 Updated File Structure Reference
+## ⚠️ Known Debt (deferred, do not block Track C)
 
-| Path | Purpose | Status |
-|------|---------|--------|
-| `article/ppv_draft.md` | Main manuscript (v0.4, 10 sections + 3 appendices) | ✅ Current |
-| `article/ppv_draft.html` | Compiled HTML manuscript | ✅ Generated & Tracked |
-| `article/ppv_draft.docx` | Compiled MS Word manuscript | ✅ Generated & Tracked |
-| `article/work_ppv_hypotheses.py` | Python script to compute H7-H10 statistical tests | ✅ Current |
-| `article/hypothesis_output/` | Directory containing all CSV results of H7-H10 | ✅ Updated & Committed |
+- **D1. Three unresolved identity conflicts** — author to resolve later, then re-run the pipeline:
+  - **Минаева** — `BIOGRAPHICAL_DATA` has "Мария Дмитриевна" vs program "Маргарита Денисовна" (same person? two people?).
+  - **Мехакян** — possible duplicate: "Арег Гайкович" (А. Г.) vs "А. А. Мехакян".
+  - **Уланский** — patronymic Андреевич (DB) vs Александрович (program).
+- **D2. Degrees coverage** — only 31/220 filled; the 38-cohort itself is incomplete (Track A2).
+- **D3. Benign FK** — `V008` "Online" → `organization_id='unspecified'` (Track B3).
+
+### Track C — Pre-publication & Submission
+
+1. **C1 Print-ready PDF.** Only HTML/DOCX exist. Build PDF via Pandoc + LaTeX template matching ППВ layout.
+2. **C2 References & footnotes** to ППВ style; finalize bibliography and citation tables.
+3. **C3 Submission package** — cover letter, suggested reviewers, final send to ППВ (fallback Восток/Oriens).
+
+### Track D — Portal / UX (mostly complete)
+
+1. **D1 Genealogy preset** on `networks.html` (consumes A1 data).
+2. **D2 Theme/period filter controls** on the main scholar directory.
+
+---
+
+## 📁 Key Files
+
+| Path | Purpose |
+|------|---------|
+| `article/ppv_draft.md` | Main manuscript (v0.7, 10 §§ + appendices А/Б/В/Г) |
+| `article/ppv_draft.{html,docx}` | Compiled builds (PDF still TODO — C1) |
+| `article/work_appendix_g.py` | Appendix Г statistical tests (null model, KM, bootstrap, CMH) |
+| `article/work_ppv_hypotheses.py` | H7–H10 tests |
+| `article/hypothesis_output/` | All CSV results |
+| `analytics_output/theme_codes_final_v2.csv` | **Live** LLM theme codes, natural-keyed (year/series/title) |
+| `scratch/rekey_theme_codes.py` | Re-key vestigial presentation_id column after rebuilds |
+| `networks.html` / `generate_network_json.py` | Vis.js network viz + its JSON compiler |
 
 ---
 
