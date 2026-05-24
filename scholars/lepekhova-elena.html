@@ -29,6 +29,12 @@
         .metric { font-size: 1.4rem; font-weight: 700; margin-top: 0.2rem; }
         .chip-row { display: flex; flex-wrap: wrap; gap: 0.5rem; }
         .series-line + .series-line { margin-top: 0.28rem; }
+        .context-block { display: grid; gap: 0.95rem; margin-bottom: 1.4rem; }
+        .context-block strong { display: block; margin-bottom: 0.45rem; }
+        .mini-chip { display: inline-block; margin: 0.18rem 0.25rem 0.18rem 0; padding: 0.18rem 0.45rem; border: 1px solid rgba(148,163,184,0.32); border-radius: 999px; font-size: 0.82rem; }
+        .context-label { color: var(--soft); font-weight: 650; margin-right: 0.25rem; }
+        .talk-context { margin-top: 0.45rem; line-height: 1.8; }
+        .related-reasons { margin-top: 0.45rem; font-size: 0.86rem; }
         .talk-meta-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 1rem; align-items: baseline; }
         .talk-meta-session { text-align: right; white-space: nowrap; }
     </style>
@@ -41,7 +47,7 @@
     "name": "Лепехова Елена Сергеевна | Russian Indological Research Archive",
     "description": "Лепехова Елена Сергеевна: 6 докладов в архиве Зографских и Рериховских чтений, период активности 2012-2020, основной профиль: Литература и поэзия.",
     "url": "https://gasyoun.github.io/IndologyScholars/scholars/lepekhova-elena.html",
-    "dateModified": "2026-05-23",
+    "dateModified": "2026-05-24",
     "mainEntity": {
       "@type": "Person",
       "@id": "https://gasyoun.github.io/IndologyScholars/scholars/lepekhova-elena.html#person",
@@ -265,20 +271,25 @@
         </header>
 
         <section class="grid">
-            <article class="card"><strong>Доклады</strong><div class="metric">6</div><div class="meta">записи докладов</div></article>
+            <article class="card"><strong>Доклады</strong><div class="metric">6</div><div class="meta">записей в архиве</div></article>
             <article class="card"><strong>Активность</strong><div class="metric">2012-2020</div><div class="meta">годы участия</div></article>
             <article class="card"><strong>Рубрика</strong><div class="metric"><a href="../themes/literature-and-poetry.html">Литература и поэзия</a></div></article>
-            <article class="card"><strong>Площадки</strong><div class="meta"><div class="series-line"><a href="../search.html?q=%D0%9B%D0%B5%D0%BF%D0%B5%D1%85%D0%BE%D0%B2%D0%B0%20%D0%95%D0%BB%D0%B5%D0%BD%D0%B0%20%D0%A1%D0%B5%D1%80%D0%B3%D0%B5%D0%B5%D0%B2%D0%BD%D0%B0%20%D0%97%D0%BE%D0%B3%D1%80%D0%B0%D1%84%D1%81%D0%BA%D0%B8%D0%B5%20%D1%87%D1%82%D0%B5%D0%BD%D0%B8%D1%8F">Зографские чтения</a>: 0 докладов · нет докладов</div><div class="series-line"><a href="../search.html?q=%D0%9B%D0%B5%D0%BF%D0%B5%D1%85%D0%BE%D0%B2%D0%B0%20%D0%95%D0%BB%D0%B5%D0%BD%D0%B0%20%D0%A1%D0%B5%D1%80%D0%B3%D0%B5%D0%B5%D0%B2%D0%BD%D0%B0%20%D0%A0%D0%B5%D1%80%D0%B8%D1%85%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B5%20%D1%87%D1%82%D0%B5%D0%BD%D0%B8%D1%8F">Рериховские чтения</a>: 6 докладов · 2012-2020</div></div></article>
+            <article class="card"><strong>Площадки</strong><div class="meta"><div class="series-line"><a href="../search.html?q=%D0%9B%D0%B5%D0%BF%D0%B5%D1%85%D0%BE%D0%B2%D0%B0%20%D0%95%D0%BB%D0%B5%D0%BD%D0%B0%20%D0%A1%D0%B5%D1%80%D0%B3%D0%B5%D0%B5%D0%B2%D0%BD%D0%B0%20%D0%97%D0%BE%D0%B3%D1%80%D0%B0%D1%84%D1%81%D0%BA%D0%B8%D0%B5%20%D1%87%D1%82%D0%B5%D0%BD%D0%B8%D1%8F">Зографские чтения</a>: не участвовал</div><div class="series-line"><a href="../search.html?q=%D0%9B%D0%B5%D0%BF%D0%B5%D1%85%D0%BE%D0%B2%D0%B0%20%D0%95%D0%BB%D0%B5%D0%BD%D0%B0%20%D0%A1%D0%B5%D1%80%D0%B3%D0%B5%D0%B5%D0%B2%D0%BD%D0%B0%20%D0%A0%D0%B5%D1%80%D0%B8%D1%85%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B5%20%D1%87%D1%82%D0%B5%D0%BD%D0%B8%D1%8F">Рериховские чтения</a>: 6 докладов · 2012-2020</div></div></article>
         </section>
 
         <h2>Аффилиации</h2>
         <div class="chip-row"><a class="chip" href="../institutions/iv-ran.html">ИВ РАН</a></div>
 
         <h2>Географические центры</h2>
-        <div class="chip-row"><span class="meta">No records</span></div>
+        <div class="chip-row"><span class="meta">Нет данных</span></div>
 
         <h2>Статусы</h2>
         <div class="chip-row"><span class="meta">Особые статусы не указаны.</span></div>
+
+
+        <h2>Мезоуровни и ключевые контуры</h2>
+        <section class="context-block"><div><strong>Мезоуровни</strong><div class="chip-row"><a class="chip" href="../meso/ethnography-performance.html">Этнография, ритуал и перформанс · 1 доклад</a></div></div><div><strong>Ключевые слова</strong><div class="chip-row"><a class="chip" href="../search.html?q=%D1%8F%D0%BF%D0%BE%D0%BD%D0%B8%D1%8F">япония · 3</a><a class="chip" href="../search.html?q=%D1%8F%D0%BF%D0%BE%D0%BD%D1%81%D0%BA%D0%B8%D0%B9">японский · 3</a><a class="chip" href="../search.html?q=%D0%BE%D0%B1%D1%80%D0%B0%D0%B7">образ · 2</a><a class="chip" href="../search.html?q=%D0%B1%D1%83%D0%B4%D0%B4%D0%B0">будда</a><a class="chip" href="../search.html?q=%D0%B1%D1%83%D0%B4%D0%B4%D0%B8%D0%B7%D0%BC">буддизм</a><a class="chip" href="../search.html?q=%D0%B4%D0%B2%D0%BE%D1%80">двор</a><a class="chip" href="../search.html?q=%D0%B4%D0%BE%D0%BA%D1%82%D1%80%D0%B8%D0%BD%D0%B0">доктрина</a><a class="chip" href="../search.html?q=%D0%B4%D1%85%D0%B0%D1%80%D0%BC%D0%B0">дхарма</a><a class="chip" href="../search.html?q=%D0%BE%D0%B1%D1%80%D0%B0%D1%89%D0%B5%D0%BD%D0%B8%D0%B5">обращение</a><a class="chip" href="../search.html?q=%D0%BF%D0%BE%D1%8F%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5">появление</a></div></div></section>
+
 
         <h2>Доклады</h2>
         <section class="list">
@@ -289,6 +300,7 @@
                 · <a href="../themes/history-and-culture.html">История, этнография и общество</a>
             </div>
             <div class="meta talk-meta-row"><span>2020-12-14 · Понедельник · 15:00 – 18:00</span><span class="talk-meta-session">Вечернее заседание</span></div>
+            <div class="meta talk-context"><span class="context-label">Ключевые слова:</span> <a class="mini-chip" href="../search.html?q=%D0%BF%D0%BE%D1%8F%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5">появление</a><a class="mini-chip" href="../search.html?q=%D1%85%D1%80%D0%B0%D0%BC%D0%BE%D0%B2%D1%8B%D0%B9">храмовый</a><a class="mini-chip" href="../search.html?q=%D1%8F%D0%BF%D0%BE%D0%BD%D0%B8%D1%8F">япония</a></div>
 
         </article>
 
@@ -299,6 +311,7 @@
                 · <a href="../themes/literature-and-poetry.html">Литература и поэзия</a>
             </div>
             <div class="meta talk-meta-row"><span>2019-12-09 · Понедельник · Не указано</span><span class="talk-meta-session">Утреннее заседание</span></div>
+            <div class="meta talk-context"><span class="context-label">Ключевые слова:</span> <a class="mini-chip" href="../search.html?q=%D1%8F%D0%BF%D0%BE%D0%BD%D1%81%D0%BA%D0%B8%D0%B9">японский</a><a class="mini-chip" href="../search.html?q=%D0%B1%D1%83%D0%B4%D0%B4%D0%B8%D0%B7%D0%BC">буддизм</a><a class="mini-chip" href="../search.html?q=%D0%BE%D0%B1%D1%80%D0%B0%D0%B7">образ</a></div>
 
         </article>
 
@@ -309,6 +322,7 @@
                 · <a href="../themes/religion-and-philosophy.html">Религия и философия</a>
             </div>
             <div class="meta talk-meta-row"><span>2018-12-09 · Воскресенье · Не указано</span><span class="talk-meta-session">Утреннее заседание</span></div>
+            <div class="meta talk-context"><span class="context-label">Ключевые слова:</span> <a class="mini-chip" href="../search.html?q=%D0%BE%D0%B1%D1%80%D0%B0%D1%89%D0%B5%D0%BD%D0%B8%D0%B5">обращение</a><a class="mini-chip" href="../search.html?q=%D0%B4%D0%B2%D0%BE%D1%80">двор</a><a class="mini-chip" href="../search.html?q=%D1%8F%D0%BF%D0%BE%D0%BD%D0%B8%D1%8F">япония</a></div>
 
         </article>
 
@@ -319,6 +333,7 @@
                 · <a href="../themes/literature-and-poetry.html">Литература и поэзия</a>
             </div>
             <div class="meta talk-meta-row"><span>2016-12-09 · Пятница · Не указано</span><span class="talk-meta-session">Вечернее заседание</span></div>
+            <div class="meta talk-context"><span class="context-label">Срезы:</span> <a class="mini-chip" href="../meso/ethnography-performance.html">Этнография, ритуал и перформанс</a> <span class="context-label">Ключевые слова:</span> <a class="mini-chip" href="../search.html?q=%D1%8F%D0%BF%D0%BE%D0%BD%D1%81%D0%BA%D0%B8%D0%B9">японский</a><a class="mini-chip" href="../search.html?q=%D1%80%D0%B8%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9">ритуальный</a><a class="mini-chip" href="../search.html?q=%D0%BE%D0%B1%D1%80%D0%B0%D0%B7">образ</a></div>
 
         </article>
 
@@ -329,6 +344,7 @@
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a>
             </div>
             <div class="meta talk-meta-row"><span>2015-12-09 · Среда · Не указано</span><span class="talk-meta-session">Вечернее заседание</span></div>
+            <div class="meta talk-context"><span class="context-label">Ключевые слова:</span> <a class="mini-chip" href="../search.html?q=%D1%8F%D0%BF%D0%BE%D0%BD%D0%B8%D1%8F">япония</a><a class="mini-chip" href="../search.html?q=%D1%81%D1%83%D1%82%D1%80%D0%B0">сутра</a><a class="mini-chip" href="../search.html?q=%D0%B1%D1%83%D0%B4%D0%B4%D0%B0">будда</a></div>
 
         </article>
 
@@ -339,12 +355,13 @@
                 · <a href="../themes/religion-and-philosophy.html">Религия и философия</a>
             </div>
             <div class="meta talk-meta-row"><span>2012-12-09 · Воскресенье · Не указано</span><span class="talk-meta-session">Утреннее заседание</span></div>
+            <div class="meta talk-context"><span class="context-label">Ключевые слова:</span> <a class="mini-chip" href="../search.html?q=%D0%B4%D0%BE%D0%BA%D1%82%D1%80%D0%B8%D0%BD%D0%B0">доктрина</a><a class="mini-chip" href="../search.html?q=%D1%8F%D0%BF%D0%BE%D0%BD%D1%81%D0%BA%D0%B8%D0%B9">японский</a><a class="mini-chip" href="../search.html?q=%D0%B4%D1%85%D0%B0%D1%80%D0%BC%D0%B0">дхарма</a></div>
 
         </article>
     </section>
 
         <h2>Связанные авторы</h2>
-        <section class="grid"><article class="card"><strong><a href="natalia-alexandrova.html">Александрова Наталия Владимировна</a></strong><div class="meta">20 докладов · <a href="../themes/literature-and-poetry.html">Литература и поэзия</a></div></article><article class="card"><strong><a href="alexander-dubyansky.html">Дубянский Александр Михайлович</a></strong><div class="meta">14 докладов · <a href="../themes/literature-and-poetry.html">Литература и поэзия</a></div></article><article class="card"><strong><a href="natalia-lidova.html">Лидова Наталья Ростиславовна</a></strong><div class="meta">13 докладов · <a href="../themes/literature-and-poetry.html">Литература и поэзия</a></div></article><article class="card"><strong><a href="vasilkov-yaroslav.html">Васильков Ярослав Владимирович</a></strong><div class="meta">12 докладов · <a href="../themes/literature-and-poetry.html">Сравнительная мифология и эпос</a></div></article><article class="card"><strong><a href="dmitry-zhutaev.html">Жутаев Дар Игоревич</a></strong><div class="meta">10 докладов · <a href="../themes/literature-and-poetry.html">Литература и поэзия</a></div></article><article class="card"><strong><a href="nikolai-gordiichuk.html">Гордийчук Николай Валентинович</a></strong><div class="meta">9 докладов · <a href="../themes/literature-and-poetry.html">Литература и поэзия</a></div></article><article class="card"><strong><a href="anastasia-guriya.html">Гурия Анастасия Георгиевна</a></strong><div class="meta">8 докладов · <a href="../themes/literature-and-poetry.html">Литература и поэзия</a></div></article><article class="card"><strong><a href="demchenko-maksim.html">Демченко Максим Борисович</a></strong><div class="meta">8 докладов · <a href="../themes/literature-and-poetry.html">Литература и поэзия</a></div></article></section>
+        <section class="grid"><article class="card"><strong><a href="victoria-vertogradova.html">Вертоградова Виктория Викторовна</a></strong><div class="meta">13 докладов · <a href="../themes/history-and-culture.html">История, этнография и общество</a></div><div class="meta related-reasons">общие мезоуровни: Этнография, ритуал и перформанс; та же площадка/год: Рериховские чтения 2012, Рериховские чтения 2015; общая рубрика: История, этнография и общество, Литература и поэзия</div></article><article class="card"><strong><a href="shrestkha-krishna.html">Шрестха Кришна Пракаш</a></strong><div class="meta">9 докладов · <a href="../themes/religion-and-philosophy.html">Религия и философия</a></div><div class="meta related-reasons">общие мезоуровни: Этнография, ритуал и перформанс; общие ключевые слова: появление; та же площадка/год: Рериховские чтения 2012, Рериховские чтения 2015</div></article><article class="card"><strong><a href="sofia-tsvetkova.html">Цветкова Светлана Олеговна</a></strong><div class="meta">22 доклада · <a href="../themes/religion-and-philosophy.html">Религия и философия</a></div><div class="meta related-reasons">общие мезоуровни: Этнография, ритуал и перформанс; та же площадка/год: Рериховские чтения 2012, Рериховские чтения 2015; общая рубрика: Литература и поэзия, Религия и философия</div></article><article class="card"><strong><a href="tyulina-elena.html">Тюлина Елена Владимировна</a></strong><div class="meta">12 докладов · <a href="../themes/religion-and-philosophy.html">Религия и философия</a></div><div class="meta related-reasons">общие мезоуровни: Этнография, ритуал и перформанс; та же площадка/год: Рериховские чтения 2012, Рериховские чтения 2015; общая рубрика: История, этнография и общество, Религия и философия</div></article><article class="card"><strong><a href="dmitry-zhutaev.html">Жутаев Дар Игоревич</a></strong><div class="meta">10 докладов · <a href="../themes/literature-and-poetry.html">Литература и поэзия</a></div><div class="meta related-reasons">общие мезоуровни: Этнография, ритуал и перформанс; общие ключевые слова: ритуальный; та же площадка/год: Рериховские чтения 2012, Рериховские чтения 2015</div></article><article class="card"><strong><a href="natalia-alexandrova.html">Александрова Наталия Владимировна</a></strong><div class="meta">20 докладов · <a href="../themes/literature-and-poetry.html">Литература и поэзия</a></div><div class="meta related-reasons">общие ключевые слова: образ, обращение; та же площадка/год: Рериховские чтения 2012, Рериховские чтения 2015; общая рубрика: История, этнография и общество, Литература и поэзия</div></article><article class="card"><strong><a href="areg-mekhakyan.html">Мехакян Арег Гайкович</a></strong><div class="meta">15 докладов · <a href="../themes/religion-and-philosophy.html">Религия и философия</a></div><div class="meta related-reasons">общие мезоуровни: Этнография, ритуал и перформанс; та же площадка/год: Рериховские чтения 2012, Рериховские чтения 2015; общая рубрика: Религия и философия</div></article><article class="card"><strong><a href="alexander-dubyansky.html">Дубянский Александр Михайлович</a></strong><div class="meta">14 докладов · <a href="../themes/literature-and-poetry.html">Литература и поэзия</a></div><div class="meta related-reasons">общие мезоуровни: Этнография, ритуал и перформанс; общие ключевые слова: образ; та же площадка/год: Рериховские чтения 2012, Рериховские чтения 2015</div></article></section>
 
         <div class="footer">© 2026 Russian Indological Research Archive. Сгенерировано из нормализованного архива конференций.</div>
     </main>

@@ -29,6 +29,12 @@
         .metric { font-size: 1.4rem; font-weight: 700; margin-top: 0.2rem; }
         .chip-row { display: flex; flex-wrap: wrap; gap: 0.5rem; }
         .series-line + .series-line { margin-top: 0.28rem; }
+        .context-block { display: grid; gap: 0.95rem; margin-bottom: 1.4rem; }
+        .context-block strong { display: block; margin-bottom: 0.45rem; }
+        .mini-chip { display: inline-block; margin: 0.18rem 0.25rem 0.18rem 0; padding: 0.18rem 0.45rem; border: 1px solid rgba(148,163,184,0.32); border-radius: 999px; font-size: 0.82rem; }
+        .context-label { color: var(--soft); font-weight: 650; margin-right: 0.25rem; }
+        .talk-context { margin-top: 0.45rem; line-height: 1.8; }
+        .related-reasons { margin-top: 0.45rem; font-size: 0.86rem; }
         .talk-meta-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 1rem; align-items: baseline; }
         .talk-meta-session { text-align: right; white-space: nowrap; }
     </style>
@@ -41,7 +47,7 @@
     "name": "Огнева Елена Дмитриевна | Russian Indological Research Archive",
     "description": "Огнева Елена Дмитриевна: 9 докладов в архиве Зографских и Рериховских чтений, период активности 2012-2022, основной профиль: История, этнография и общество.",
     "url": "https://gasyoun.github.io/IndologyScholars/scholars/ogneva-elena.html",
-    "dateModified": "2026-05-23",
+    "dateModified": "2026-05-24",
     "mainEntity": {
       "@type": "Person",
       "@id": "https://gasyoun.github.io/IndologyScholars/scholars/ogneva-elena.html#person",
@@ -277,7 +283,7 @@
         </header>
 
         <section class="grid">
-            <article class="card"><strong>Доклады</strong><div class="metric">9</div><div class="meta">записи докладов</div></article>
+            <article class="card"><strong>Доклады</strong><div class="metric">9</div><div class="meta">записей в архиве</div></article>
             <article class="card"><strong>Активность</strong><div class="metric">2012-2022</div><div class="meta">годы участия</div></article>
             <article class="card"><strong>Рубрика</strong><div class="metric"><a href="../themes/history-and-culture.html">История, этнография и общество</a></div></article>
             <article class="card"><strong>Площадки</strong><div class="meta"><div class="series-line"><a href="../search.html?q=%D0%9E%D0%B3%D0%BD%D0%B5%D0%B2%D0%B0%20%D0%95%D0%BB%D0%B5%D0%BD%D0%B0%20%D0%94%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B5%D0%B2%D0%BD%D0%B0%20%D0%97%D0%BE%D0%B3%D1%80%D0%B0%D1%84%D1%81%D0%BA%D0%B8%D0%B5%20%D1%87%D1%82%D0%B5%D0%BD%D0%B8%D1%8F">Зографские чтения</a>: 1 доклад · 2012</div><div class="series-line"><a href="../search.html?q=%D0%9E%D0%B3%D0%BD%D0%B5%D0%B2%D0%B0%20%D0%95%D0%BB%D0%B5%D0%BD%D0%B0%20%D0%94%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B5%D0%B2%D0%BD%D0%B0%20%D0%A0%D0%B5%D1%80%D0%B8%D1%85%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B5%20%D1%87%D1%82%D0%B5%D0%BD%D0%B8%D1%8F">Рериховские чтения</a>: 8 докладов · 2012-2022</div></div></article>
@@ -287,10 +293,15 @@
         <div class="chip-row"><a class="chip" href="../index.html?search=%D0%9A%D0%B8%D0%B5%D0%B2%20%E2%80%94%20%D0%9B%D1%83%D1%86%D0%BA">Киев — Луцк</a><a class="chip" href="../index.html?search=%D0%98%D0%BD%D1%81%D1%82%D0%B8%D1%82%D1%83%D1%82%20%D0%B2%D0%BE%D1%81%D1%82%D0%BE%D0%BA%D0%BE%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D1%8F%2C%20%D0%9A%D0%B8%D0%B5%D0%B2">Институт востоковедения, Киев</a><a class="chip" href="../index.html?search=%D0%98%D0%92%20%D0%9D%D0%90%D0%9D%20%D0%A3%D0%BA%D1%80%D0%B0%D0%B8%D0%BD%D1%8B">ИВ НАН Украины</a></div>
 
         <h2>Географические центры</h2>
-        <div class="chip-row"><span class="meta">No records</span></div>
+        <div class="chip-row"><span class="meta">Нет данных</span></div>
 
         <h2>Статусы</h2>
         <div class="chip-row"><span class="meta">Особые статусы не указаны.</span></div>
+
+
+        <h2>Мезоуровни и ключевые контуры</h2>
+        <section class="context-block"><div><strong>Мезоуровни</strong><div class="chip-row"><a class="chip" href="../meso/museum-collections.html">Музейные собрания и коллекции · 7 докладов</a><a class="chip" href="../meso/roerich-studies.html">Рериховедение и Кабинет Ю. Н. Рериха · 6 докладов</a><a class="chip" href="../meso/tibetology-himalaya.html">Тибетология / гималайский контур · 6 докладов</a><a class="chip" href="../meso/china-mongolia-inner-asia.html">Китай, Монголия и Центральная Азия · 1 доклад</a></div></div><div><strong>Ключевые слова</strong><div class="chip-row"><a class="chip" href="../search.html?q=%D1%82%D0%B0%D0%BD%D0%BA">танк · 4</a><a class="chip" href="../search.html?q=%D0%BA%D0%B0%D0%B1%D0%B8%D0%BD%D0%B5%D1%82">кабинет · 3</a><a class="chip" href="../search.html?q=%D0%B0%D0%B2%D0%B0%D0%BB%D0%BE%D0%BA%D0%B8%D1%82%D0%B5%D1%88%D0%B2%D0%B0%D1%80%D0%B0">авалокитешвара · 2</a><a class="chip" href="../search.html?q=%D0%B0%D1%80%D1%85%D0%B0%D1%82">архат</a><a class="chip" href="../search.html?q=%D0%B1%D0%B5%D0%BB%D1%8B%D0%B9">белый</a><a class="chip" href="../search.html?q=%D0%B1%D0%BE%D0%B3">бог</a><a class="chip" href="../search.html?q=%D0%B1%D0%BE%D0%B4%D1%85%D0%B8%D1%81%D0%B0%D1%82%D1%82%D0%B2%D0%B0">бодхисаттва</a><a class="chip" href="../search.html?q=%D0%B2%D1%81%D0%B0%D0%B4%D0%BD%D0%B8%D0%BA">всадник</a><a class="chip" href="../search.html?q=%D0%B4%D0%B5%D0%BD%D1%8C">день</a><a class="chip" href="../search.html?q=%D0%BA%D0%B0%D1%88%D0%BC%D0%B8%D1%80">кашмир</a></div></div></section>
+
 
         <h2>Доклады</h2>
         <section class="list">
@@ -301,6 +312,7 @@
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a>
             </div>
             <div class="meta talk-meta-row"><span>2022-12-07 · Среда · 11:00 – 14:00</span><span class="talk-meta-session">Утреннее заседание</span></div>
+            <div class="meta talk-context"><span class="context-label">Срезы:</span> <a class="mini-chip" href="../meso/roerich-studies.html">Рериховедение и Кабинет Ю. Н. Рериха</a> <span class="context-label">Ключевые слова:</span> <a class="mini-chip" href="../search.html?q=%D0%B4%D0%B5%D0%BD%D1%8C">день</a><a class="mini-chip" href="../search.html?q=%D1%80%D0%BE%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5">рождение</a><a class="mini-chip" href="../search.html?q=%D0%BF%D0%BE%D0%B8%D1%81%D0%BA">поиск</a></div>
 
         </article>
 
@@ -311,6 +323,7 @@
                 · <a href="../themes/literature-and-poetry.html">Литература и поэзия</a>
             </div>
             <div class="meta talk-meta-row"><span>2021-12-13 · Понедельник · 10:30 – 14:00</span><span class="talk-meta-session">Утреннее заседание</span></div>
+            <div class="meta talk-context"><span class="context-label">Срезы:</span> <a class="mini-chip" href="../meso/museum-collections.html">Музейные собрания и коллекции</a><a class="mini-chip" href="../meso/roerich-studies.html">Рериховедение и Кабинет Ю. Н. Рериха</a> <span class="context-label">Ключевые слова:</span> <a class="mini-chip" href="../search.html?q=%D0%B0%D0%B2%D0%B0%D0%BB%D0%BE%D0%BA%D0%B8%D1%82%D0%B5%D1%88%D0%B2%D0%B0%D1%80%D0%B0">авалокитешвара</a><a class="mini-chip" href="../search.html?q=%D0%B1%D0%BE%D0%B4%D1%85%D0%B8%D1%81%D0%B0%D1%82%D1%82%D0%B2%D0%B0">бодхисаттва</a><a class="mini-chip" href="../search.html?q=%D0%BA%D0%B0%D0%B1%D0%B8%D0%BD%D0%B5%D1%82">кабинет</a></div>
 
         </article>
 
@@ -321,6 +334,7 @@
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a>
             </div>
             <div class="meta talk-meta-row"><span>2020-12-14 · Понедельник · 10:00 – 14:00</span><span class="talk-meta-session">Утреннее заседание</span></div>
+            <div class="meta talk-context"><span class="context-label">Ключевые слова:</span> <a class="mini-chip" href="../search.html?q=%D0%BF%D0%BE%D0%B4%D0%BD%D0%BE%D1%88%D0%B5%D0%BD%D0%B8%D0%B5">подношение</a><a class="mini-chip" href="../search.html?q=%D0%B1%D0%BE%D0%B3">бог</a></div>
 
         </article>
 
@@ -331,6 +345,7 @@
                 · <a href="../themes/history-and-culture.html">История, этнография и общество</a>
             </div>
             <div class="meta talk-meta-row"><span>2018-12-09 · Воскресенье · 11:00 – 18:00</span><span class="talk-meta-session">Научное заседание</span></div>
+            <div class="meta talk-context"><span class="context-label">Срезы:</span> <a class="mini-chip" href="../meso/museum-collections.html">Музейные собрания и коллекции</a><a class="mini-chip" href="../meso/roerich-studies.html">Рериховедение и Кабинет Ю. Н. Рериха</a><a class="mini-chip" href="../meso/tibetology-himalaya.html">Тибетология / гималайский контур</a> <span class="context-label">Ключевые слова:</span> <a class="mini-chip" href="../search.html?q=%D0%B0%D0%B2%D0%B0%D0%BB%D0%BE%D0%BA%D0%B8%D1%82%D0%B5%D1%88%D0%B2%D0%B0%D1%80%D0%B0">авалокитешвара</a><a class="mini-chip" href="../search.html?q=%D1%82%D0%B0%D0%BD%D0%BA">танк</a><a class="mini-chip" href="../search.html?q=%D0%BA%D0%B0%D0%B1%D0%B8%D0%BD%D0%B5%D1%82">кабинет</a></div>
 
         </article>
 
@@ -341,6 +356,7 @@
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a>
             </div>
             <div class="meta talk-meta-row"><span>2017-12-09 · Суббота · 11:00 – 18:00</span><span class="talk-meta-session">Научное заседание</span></div>
+            <div class="meta talk-context"><span class="context-label">Срезы:</span> <a class="mini-chip" href="../meso/museum-collections.html">Музейные собрания и коллекции</a><a class="mini-chip" href="../meso/roerich-studies.html">Рериховедение и Кабинет Ю. Н. Рериха</a><a class="mini-chip" href="../meso/tibetology-himalaya.html">Тибетология / гималайский контур</a> <span class="context-label">Ключевые слова:</span> <a class="mini-chip" href="../search.html?q=%D1%82%D0%B0%D0%BD%D0%BA">танк</a><a class="mini-chip" href="../search.html?q=%D0%BA%D0%B0%D1%88%D0%BC%D0%B8%D1%80">кашмир</a><a class="mini-chip" href="../search.html?q=%D0%B0%D1%80%D1%85%D0%B0%D1%82">архат</a></div>
 
         </article>
 
@@ -351,6 +367,7 @@
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a>
             </div>
             <div class="meta talk-meta-row"><span>2016-12-09 · Пятница · 11:00 – 18:00</span><span class="talk-meta-session">Научное заседание</span></div>
+            <div class="meta talk-context"><span class="context-label">Срезы:</span> <a class="mini-chip" href="../meso/museum-collections.html">Музейные собрания и коллекции</a><a class="mini-chip" href="../meso/roerich-studies.html">Рериховедение и Кабинет Ю. Н. Рериха</a><a class="mini-chip" href="../meso/tibetology-himalaya.html">Тибетология / гималайский контур</a> <span class="context-label">Ключевые слова:</span> <a class="mini-chip" href="../search.html?q=%D0%B2%D1%81%D0%B0%D0%B4%D0%BD%D0%B8%D0%BA">всадник</a><a class="mini-chip" href="../search.html?q=%D1%82%D0%B0%D0%BD%D0%BA">танк</a><a class="mini-chip" href="../search.html?q=%D0%BA%D0%B0%D0%B1%D0%B8%D0%BD%D0%B5%D1%82">кабинет</a></div>
 
         </article>
 
@@ -361,6 +378,7 @@
                 · <a href="../themes/history-and-culture.html">История, этнография и общество</a>
             </div>
             <div class="meta talk-meta-row"><span>2015-12-09 · Среда · Не указано</span><span class="talk-meta-session">Вечернее заседание</span></div>
+            <div class="meta talk-context"><span class="context-label">Срезы:</span> <a class="mini-chip" href="../meso/museum-collections.html">Музейные собрания и коллекции</a><a class="mini-chip" href="../meso/roerich-studies.html">Рериховедение и Кабинет Ю. Н. Рериха</a><a class="mini-chip" href="../meso/tibetology-himalaya.html">Тибетология / гималайский контур</a> <span class="context-label">Ключевые слова:</span> <a class="mini-chip" href="../search.html?q=%D1%81%D1%82%D0%B0%D1%80%D0%B5%D1%86">старец</a><a class="mini-chip" href="../search.html?q=%D0%B1%D0%B5%D0%BB%D1%8B%D0%B9">белый</a><a class="mini-chip" href="../search.html?q=%D1%8E%D1%80%D0%B8%D0%B9">юрий</a></div>
 
         </article>
 
@@ -371,6 +389,7 @@
                 · <a href="../themes/history-and-culture.html">История, этнография и общество</a>
             </div>
             <div class="meta talk-meta-row"><span>2012-05-16 · Среда · 11:00 – 18:00</span><span class="talk-meta-session">Научное заседание</span></div>
+            <div class="meta talk-context"><span class="context-label">Срезы:</span> <a class="mini-chip" href="../meso/museum-collections.html">Музейные собрания и коллекции</a><a class="mini-chip" href="../meso/tibetology-himalaya.html">Тибетология / гималайский контур</a> <span class="context-label">Ключевые слова:</span> <a class="mini-chip" href="../search.html?q=%D0%BD%D0%B0%D0%B9%D1%82%D0%B8">найти</a><a class="mini-chip" href="../search.html?q=%D1%80%D1%83%D0%BA%D0%BE%D0%BF%D0%B8%D1%81%D1%8C">рукопись</a><a class="mini-chip" href="../search.html?q=%D1%82%D0%B8%D0%B1%D0%B5%D1%82%D1%81%D0%BA%D0%B8%D0%B9">тибетский</a></div>
 
         </article>
 
@@ -381,12 +400,13 @@
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a>
             </div>
             <div class="meta talk-meta-row"><span>2012-12-09 · Воскресенье · 11:00 – 18:00</span><span class="talk-meta-session">Научное заседание</span></div>
+            <div class="meta talk-context"><span class="context-label">Срезы:</span> <a class="mini-chip" href="../meso/china-mongolia-inner-asia.html">Китай, Монголия и Центральная Азия</a><a class="mini-chip" href="../meso/museum-collections.html">Музейные собрания и коллекции</a><a class="mini-chip" href="../meso/tibetology-himalaya.html">Тибетология / гималайский контур</a> <span class="context-label">Ключевые слова:</span> <a class="mini-chip" href="../search.html?q=%D0%BC%D1%83%D0%B7%D0%B5%D0%B9">музей</a><a class="mini-chip" href="../search.html?q=%D1%82%D0%B0%D0%BD%D0%BA">танк</a><a class="mini-chip" href="../search.html?q=%D0%BA%D0%B8%D1%82%D0%B0%D0%B9%D1%81%D0%BA%D0%B8%D0%B9">китайский</a></div>
 
         </article>
     </section>
 
         <h2>Связанные авторы</h2>
-        <section class="grid"><article class="card"><strong><a href="victoria-vertogradova.html">Вертоградова Виктория Викторовна</a></strong><div class="meta">13 докладов · <a href="../themes/history-and-culture.html">История, этнография и общество</a></div></article><article class="card"><strong><a href="shustova-alla.html">Шустова Алла Михайловна</a></strong><div class="meta">12 докладов · <a href="../themes/history-and-culture.html">История, этнография и общество</a></div></article><article class="card"><strong><a href="drobyshev-yulii.html">Дробышев Юлий Игорьевич</a></strong><div class="meta">11 докладов · <a href="../themes/history-and-culture.html">История, этнография и общество</a></div></article><article class="card"><strong><a href="alexander-babin.html">Бабин Александр Николаевич</a></strong><div class="meta">10 докладов · <a href="../themes/history-and-culture.html">История, этнография и общество</a></div></article><article class="card"><strong><a href="ostrovskaya-elena.html">Островская Елена Петровна</a></strong><div class="meta">10 докладов · <a href="../themes/history-and-culture.html">История, этнография и общество</a></div></article><article class="card"><strong><a href="lyulina-anastasiya.html">Люлина Анастасия Геннадьевна</a></strong><div class="meta">9 докладов · <a href="../themes/history-and-culture.html">История, этнография и общество</a></div></article><article class="card"><strong><a href="ermakova-tatyana.html">Ермакова Татьяна Викторовна</a></strong><div class="meta">8 докладов · <a href="../themes/history-and-culture.html">История, этнография и общество</a></div></article><article class="card"><strong><a href="zorin-aleksei.html">Зорин Алексей Валерьевич</a></strong><div class="meta">7 докладов · <a href="../themes/history-and-culture.html">История, этнография и общество</a></div></article></section>
+        <section class="grid"><article class="card"><strong><a href="shustova-alla.html">Шустова Алла Михайловна</a></strong><div class="meta">12 докладов · <a href="../themes/history-and-culture.html">История, этнография и общество</a></div><div class="meta related-reasons">общие мезоуровни: Китай, Монголия и Центральная Азия, Рериховедение и Кабинет Ю. Н. Рериха; общие ключевые слова: тибетский, юрий; та же площадка/год: Рериховские чтения 2012, Рериховские чтения 2015</div></article><article class="card"><strong><a href="drobyshev-yulii.html">Дробышев Юлий Игорьевич</a></strong><div class="meta">11 докладов · <a href="../themes/history-and-culture.html">История, этнография и общество</a></div><div class="meta related-reasons">общие мезоуровни: Китай, Монголия и Центральная Азия, Рериховедение и Кабинет Ю. Н. Рериха; та же площадка/год: Рериховские чтения 2015, Рериховские чтения 2016; общая рубрика: История, этнография и общество</div></article><article class="card"><strong><a href="natalia-alexandrova.html">Александрова Наталия Владимировна</a></strong><div class="meta">20 докладов · <a href="../themes/literature-and-poetry.html">Литература и поэзия</a></div><div class="meta related-reasons">общие мезоуровни: Китай, Монголия и Центральная Азия; общие ключевые слова: всадник, китайский, подношение; та же площадка/год: Рериховские чтения 2012, Рериховские чтения 2015</div></article><article class="card"><strong><a href="lyulina-anastasiya.html">Люлина Анастасия Геннадьевна</a></strong><div class="meta">9 докладов · <a href="../themes/history-and-culture.html">История, этнография и общество</a></div><div class="meta related-reasons">общие мезоуровни: Китай, Монголия и Центральная Азия, Музейные собрания и коллекции; общие ключевые слова: китайский; та же площадка/год: Рериховские чтения 2017, Рериховские чтения 2018</div></article><article class="card"><strong><a href="dmitry-zhutaev.html">Жутаев Дар Игоревич</a></strong><div class="meta">10 докладов · <a href="../themes/literature-and-poetry.html">Литература и поэзия</a></div><div class="meta related-reasons">общие мезоуровни: Музейные собрания и коллекции, Рериховедение и Кабинет Ю. Н. Рериха; общие ключевые слова: кабинет; та же площадка/год: Рериховские чтения 2012, Рериховские чтения 2015</div></article><article class="card"><strong><a href="kitinov-baatr.html">Китинов Баатр Учаевич</a></strong><div class="meta">9 докладов · <a href="../themes/religion-and-philosophy.html">Религия и философия</a></div><div class="meta related-reasons">общие мезоуровни: Китай, Монголия и Центральная Азия, Тибетология / гималайский контур; та же площадка/год: Рериховские чтения 2016, Рериховские чтения 2017; общая рубрика: История, этнография и общество, Литература и поэзия</div></article><article class="card"><strong><a href="sofia-tsvetkova.html">Цветкова Светлана Олеговна</a></strong><div class="meta">22 доклада · <a href="../themes/religion-and-philosophy.html">Религия и философия</a></div><div class="meta related-reasons">та же площадка/год: Зографские чтения 2012, Рериховские чтения 2012; общая рубрика: Литература и поэзия</div></article><article class="card"><strong><a href="elikhina-yuliya.html">Елихина Юлия Игоревна</a></strong><div class="meta">4 доклада · <a href="../themes/history-and-culture.html">История, этнография и общество</a></div><div class="meta related-reasons">общие мезоуровни: Музейные собрания и коллекции, Рериховедение и Кабинет Ю. Н. Рериха; общие ключевые слова: белый, музей, старец; та же площадка/год: Рериховские чтения 2012, Рериховские чтения 2020</div></article></section>
 
         <div class="footer">© 2026 Russian Indological Research Archive. Сгенерировано из нормализованного архива конференций.</div>
     </main>

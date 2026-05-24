@@ -29,6 +29,12 @@
         .metric { font-size: 1.4rem; font-weight: 700; margin-top: 0.2rem; }
         .chip-row { display: flex; flex-wrap: wrap; gap: 0.5rem; }
         .series-line + .series-line { margin-top: 0.28rem; }
+        .context-block { display: grid; gap: 0.95rem; margin-bottom: 1.4rem; }
+        .context-block strong { display: block; margin-bottom: 0.45rem; }
+        .mini-chip { display: inline-block; margin: 0.18rem 0.25rem 0.18rem 0; padding: 0.18rem 0.45rem; border: 1px solid rgba(148,163,184,0.32); border-radius: 999px; font-size: 0.82rem; }
+        .context-label { color: var(--soft); font-weight: 650; margin-right: 0.25rem; }
+        .talk-context { margin-top: 0.45rem; line-height: 1.8; }
+        .related-reasons { margin-top: 0.45rem; font-size: 0.86rem; }
         .talk-meta-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 1rem; align-items: baseline; }
         .talk-meta-session { text-align: right; white-space: nowrap; }
     </style>
@@ -41,7 +47,7 @@
     "name": "Тюлина Елена Владимировна | Russian Indological Research Archive",
     "description": "Тюлина Елена Владимировна: 12 докладов в архиве Зографских и Рериховских чтений, период активности 2012-2025, основной профиль: Религия и философия.",
     "url": "https://gasyoun.github.io/IndologyScholars/scholars/tyulina-elena.html",
-    "dateModified": "2026-05-23",
+    "dateModified": "2026-05-24",
     "mainEntity": {
       "@type": "Person",
       "@id": "https://gasyoun.github.io/IndologyScholars/scholars/tyulina-elena.html#person",
@@ -269,10 +275,10 @@
         </header>
 
         <section class="grid">
-            <article class="card"><strong>Доклады</strong><div class="metric">12</div><div class="meta">записи докладов</div></article>
+            <article class="card"><strong>Доклады</strong><div class="metric">12</div><div class="meta">записей в архиве</div></article>
             <article class="card"><strong>Активность</strong><div class="metric">2012-2025</div><div class="meta">годы участия</div></article>
             <article class="card"><strong>Рубрика</strong><div class="metric"><a href="../themes/religion-and-philosophy.html">Религия и философия</a></div></article>
-            <article class="card"><strong>Площадки</strong><div class="meta"><div class="series-line"><a href="../search.html?q=%D0%A2%D1%8E%D0%BB%D0%B8%D0%BD%D0%B0%20%D0%95%D0%BB%D0%B5%D0%BD%D0%B0%20%D0%92%D0%BB%D0%B0%D0%B4%D0%B8%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%BD%D0%B0%20%D0%97%D0%BE%D0%B3%D1%80%D0%B0%D1%84%D1%81%D0%BA%D0%B8%D0%B5%20%D1%87%D1%82%D0%B5%D0%BD%D0%B8%D1%8F">Зографские чтения</a>: 0 докладов · нет докладов</div><div class="series-line"><a href="../search.html?q=%D0%A2%D1%8E%D0%BB%D0%B8%D0%BD%D0%B0%20%D0%95%D0%BB%D0%B5%D0%BD%D0%B0%20%D0%92%D0%BB%D0%B0%D0%B4%D0%B8%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%BD%D0%B0%20%D0%A0%D0%B5%D1%80%D0%B8%D1%85%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B5%20%D1%87%D1%82%D0%B5%D0%BD%D0%B8%D1%8F">Рериховские чтения</a>: 12 докладов · 2012-2025</div></div></article>
+            <article class="card"><strong>Площадки</strong><div class="meta"><div class="series-line"><a href="../search.html?q=%D0%A2%D1%8E%D0%BB%D0%B8%D0%BD%D0%B0%20%D0%95%D0%BB%D0%B5%D0%BD%D0%B0%20%D0%92%D0%BB%D0%B0%D0%B4%D0%B8%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%BD%D0%B0%20%D0%97%D0%BE%D0%B3%D1%80%D0%B0%D1%84%D1%81%D0%BA%D0%B8%D0%B5%20%D1%87%D1%82%D0%B5%D0%BD%D0%B8%D1%8F">Зографские чтения</a>: не участвовал</div><div class="series-line"><a href="../search.html?q=%D0%A2%D1%8E%D0%BB%D0%B8%D0%BD%D0%B0%20%D0%95%D0%BB%D0%B5%D0%BD%D0%B0%20%D0%92%D0%BB%D0%B0%D0%B4%D0%B8%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%BD%D0%B0%20%D0%A0%D0%B5%D1%80%D0%B8%D1%85%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B5%20%D1%87%D1%82%D0%B5%D0%BD%D0%B8%D1%8F">Рериховские чтения</a>: 12 докладов · 2012-2025</div></div></article>
         </section>
 
         <h2>Аффилиации</h2>
@@ -284,6 +290,11 @@
         <h2>Статусы</h2>
         <div class="chip-row"><span class="meta">Особые статусы не указаны.</span></div>
 
+
+        <h2>Мезоуровни и ключевые контуры</h2>
+        <section class="context-block"><div><strong>Мезоуровни</strong><div class="chip-row"><a class="chip" href="../meso/ethnography-performance.html">Этнография, ритуал и перформанс · 3 доклада</a></div></div><div><strong>Ключевые слова</strong><div class="chip-row"><a class="chip" href="../search.html?q=%D0%B2%D0%B0%D1%81%D1%82%D1%83%D0%B2%D0%B8%D0%B4%D1%8C%D0%B5">вастувидье · 4</a><a class="chip" href="../search.html?q=%D0%BF%D1%80%D0%B5%D0%B4%D1%81%D1%82%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5">представление · 3</a><a class="chip" href="../search.html?q=%D1%82%D1%80%D0%B0%D0%BA%D1%82%D0%B0%D1%82">трактат · 3</a><a class="chip" href="../search.html?q=%D0%B0%D0%B4%D1%85%D0%B8%D0%B2%D0%B0%D1%81%D0%B0%D0%BD%D0%B0">адхивасана · 2</a><a class="chip" href="../search.html?q=%D0%B2%D1%80%D0%B5%D0%BC%D1%8F">время · 2</a><a class="chip" href="../search.html?q=%D0%BD%D0%B0%D1%80%D0%B0%D1%81%D0%B8%D0%BD%D1%85">нарасинх · 2</a><a class="chip" href="../search.html?q=%D0%BF%D1%83%D1%80%D0%B0%D0%BD">пуран · 2</a><a class="chip" href="../search.html?q=%D1%81%D1%82%D1%80%D0%BE%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D1%81%D1%82%D0%B2%D0%BE">строительство · 2</a><a class="chip" href="../search.html?q=%D0%B2%D0%BE%D0%B4%D0%B0">вода</a><a class="chip" href="../search.html?q=%D0%B2%D1%81%D0%B5%D0%BB%D0%B5%D0%BD%D0%BD%D0%B0%D1%8F">вселенная</a></div></div></section>
+
+
         <h2>Доклады</h2>
         <section class="list">
         <article class="talk" id="PRES_f40d5bacac">
@@ -293,6 +304,7 @@
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a> · <a href="../cities/moskva.html">Москва</a>
             </div>
             <div class="meta talk-meta-row"><span>2025-12-09 · Вторник · 11:00 – 14:00</span><span class="talk-meta-session">Утреннее заседание</span></div>
+            <div class="meta talk-context"><span class="context-label">Ключевые слова:</span> <a class="mini-chip" href="../search.html?q=%D0%BF%D1%80%D0%B5%D0%B4%D0%BC%D0%B5%D1%82">предмет</a><a class="mini-chip" href="../search.html?q=%D1%81%D0%B2%D1%8F%D1%89%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9">священный</a><a class="mini-chip" href="../search.html?q=%D0%BF%D1%80%D0%B5%D0%B4%D1%81%D1%82%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5">представление</a></div>
 
         </article>
 
@@ -303,6 +315,7 @@
                 · <a href="../themes/art-and-material-culture.html">Искусство и материальная культура</a>
             </div>
             <div class="meta talk-meta-row"><span>2024-12-10 · Вторник · 11:00 – 13:30</span><span class="talk-meta-session">Утреннее заседание</span></div>
+            <div class="meta talk-context"><span class="context-label">Срезы:</span> <a class="mini-chip" href="../meso/ethnography-performance.html">Этнография, ритуал и перформанс</a> <span class="context-label">Ключевые слова:</span> <a class="mini-chip" href="../search.html?q=%D0%B6%D0%B8%D0%B7%D0%BD%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9">жизненный</a><a class="mini-chip" href="../search.html?q=%D1%86%D0%B8%D0%BA%D0%BB">цикл</a><a class="mini-chip" href="../search.html?q=%D1%81%D0%BA%D1%83%D0%BB%D1%8C%D0%BF%D1%82%D1%83%D1%80%D0%B0">скульптура</a></div>
 
         </article>
 
@@ -313,6 +326,7 @@
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a>
             </div>
             <div class="meta talk-meta-row"><span>2023-12-11 · Понедельник · 11:00 – 14:00</span><span class="talk-meta-session">Утреннее заседание</span></div>
+            <div class="meta talk-context"><span class="context-label">Ключевые слова:</span> <a class="mini-chip" href="../search.html?q=%D0%B2%D1%80%D0%B5%D0%BC%D1%8F">время</a><a class="mini-chip" href="../search.html?q=%D0%BF%D1%80%D0%B5%D0%B4%D1%81%D1%82%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5">представление</a><a class="mini-chip" href="../search.html?q=%D0%BF%D1%83%D1%80%D0%B0%D0%BD">пуран</a></div>
 
         </article>
 
@@ -323,6 +337,7 @@
                 · <a href="../themes/religion-and-philosophy.html">Религия и философия</a>
             </div>
             <div class="meta talk-meta-row"><span>2022-12-08 · Четверг · 11:00 – 14:00</span><span class="talk-meta-session">Утреннее заседание</span></div>
+            <div class="meta talk-context"><span class="context-label">Ключевые слова:</span> <a class="mini-chip" href="../search.html?q=%D0%B3%D0%B0%D1%80%D1%83%D0%B4%D0%B0">гаруда</a><a class="mini-chip" href="../search.html?q=%D0%BF%D1%80%D0%BE%D1%81%D1%82%D1%80%D0%B0%D0%BD%D1%81%D1%82%D0%B2%D0%BE">пространство</a><a class="mini-chip" href="../search.html?q=%D0%B2%D1%80%D0%B5%D0%BC%D1%8F">время</a></div>
 
         </article>
 
@@ -333,6 +348,7 @@
                 · <a href="../themes/history-and-culture.html">История, этнография и общество</a>
             </div>
             <div class="meta talk-meta-row"><span>2021-12-14 · Вторник · 14:00 – 17:00</span><span class="talk-meta-session">Вечернее заседание</span></div>
+            <div class="meta talk-context"><span class="context-label">Ключевые слова:</span> <a class="mini-chip" href="../search.html?q=%D1%82%D0%B2%D0%BE%D1%80%D0%B5%D0%BD%D0%B8%D0%B5">творение</a><a class="mini-chip" href="../search.html?q=%D0%B2%D1%81%D0%B5%D0%BB%D0%B5%D0%BD%D0%BD%D0%B0%D1%8F">вселенная</a><a class="mini-chip" href="../search.html?q=%D0%BF%D1%80%D0%B5%D0%B4%D1%81%D1%82%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5">представление</a></div>
 
         </article>
 
@@ -343,6 +359,7 @@
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a>
             </div>
             <div class="meta talk-meta-row"><span>2020-12-15 · Вторник · 10:00 – 13:00</span><span class="talk-meta-session">Утреннее заседание</span></div>
+            <div class="meta talk-context"><span class="context-label">Ключевые слова:</span> <a class="mini-chip" href="../search.html?q=%D0%B2%D0%B0%D1%81%D1%82%D1%83%D0%B2%D0%B8%D0%B4%D1%8C%D0%B5">вастувидье</a><a class="mini-chip" href="../search.html?q=%D0%BF%D1%83%D1%80%D0%B0%D0%BD">пуран</a><a class="mini-chip" href="../search.html?q=%D0%BA%D1%83%D0%BB%D1%8C%D1%82%D1%83%D1%80%D0%B0">культура</a></div>
 
         </article>
 
@@ -353,6 +370,7 @@
                 · <a href="../themes/religion-and-philosophy.html">Религия и философия</a>
             </div>
             <div class="meta talk-meta-row"><span>2019-12-09 · Понедельник · Не указано</span><span class="talk-meta-session">Утреннее заседание</span></div>
+            <div class="meta talk-context"><span class="context-label">Срезы:</span> <a class="mini-chip" href="../meso/ethnography-performance.html">Этнография, ритуал и перформанс</a> <span class="context-label">Ключевые слова:</span> <a class="mini-chip" href="../search.html?q=%D0%B0%D0%B4%D1%85%D0%B8%D0%B2%D0%B0%D1%81%D0%B0%D0%BD%D0%B0">адхивасана</a><a class="mini-chip" href="../search.html?q=%D0%B3%D0%BE%D1%80%D0%BE%D0%B4">город</a><a class="mini-chip" href="../search.html?q=%D1%84%D0%BE%D1%80%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">формирование</a></div>
 
         </article>
 
@@ -363,6 +381,7 @@
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a>
             </div>
             <div class="meta talk-meta-row"><span>2018-12-09 · Воскресенье · Не указано</span><span class="talk-meta-session">Утреннее заседание</span></div>
+            <div class="meta talk-context"><span class="context-label">Ключевые слова:</span> <a class="mini-chip" href="../search.html?q=%D0%B2%D0%BE%D0%B4%D0%B0">вода</a><a class="mini-chip" href="../search.html?q=%D0%B2%D0%B0%D1%81%D1%82%D1%83%D0%B2%D0%B8%D0%B4%D1%8C%D0%B5">вастувидье</a><a class="mini-chip" href="../search.html?q=%D1%82%D1%80%D0%B0%D0%BA%D1%82%D0%B0%D1%82">трактат</a></div>
 
         </article>
 
@@ -373,6 +392,7 @@
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a>
             </div>
             <div class="meta talk-meta-row"><span>2017-12-09 · Суббота · Не указано</span><span class="talk-meta-session">Утреннее заседание</span></div>
+            <div class="meta talk-context"><span class="context-label">Ключевые слова:</span> <a class="mini-chip" href="../search.html?q=%D0%BD%D0%B0%D1%80%D0%B0%D1%81%D0%B8%D0%BD%D1%85">нарасинх</a><a class="mini-chip" href="../search.html?q=%D0%B2%D0%B0%D1%81%D1%82%D1%83%D0%B2%D0%B8%D0%B4%D1%8C%D0%B5">вастувидье</a><a class="mini-chip" href="../search.html?q=%D1%82%D1%80%D0%B0%D0%BA%D1%82%D0%B0%D1%82">трактат</a></div>
 
         </article>
 
@@ -383,6 +403,7 @@
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a>
             </div>
             <div class="meta talk-meta-row"><span>2016-12-09 · Пятница · Не указано</span><span class="talk-meta-session">Утреннее заседание</span></div>
+            <div class="meta talk-context"><span class="context-label">Ключевые слова:</span> <a class="mini-chip" href="../search.html?q=%D0%BD%D0%B0%D1%80%D0%B0%D1%81%D0%B8%D0%BD%D1%85">нарасинх</a><a class="mini-chip" href="../search.html?q=%D0%B2%D0%B0%D1%81%D1%82%D1%83%D0%B2%D0%B8%D0%B4%D1%8C%D0%B5">вастувидье</a><a class="mini-chip" href="../search.html?q=%D1%82%D1%80%D0%B0%D0%BA%D1%82%D0%B0%D1%82">трактат</a></div>
 
         </article>
 
@@ -393,6 +414,7 @@
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a>
             </div>
             <div class="meta talk-meta-row"><span>2015-12-09 · Среда · Не указано</span><span class="talk-meta-session">Вечернее заседание</span></div>
+            <div class="meta talk-context"><span class="context-label">Срезы:</span> <a class="mini-chip" href="../meso/ethnography-performance.html">Этнография, ритуал и перформанс</a> <span class="context-label">Ключевые слова:</span> <a class="mini-chip" href="../search.html?q=%D1%81%D1%82%D0%B0%D1%82%D1%83%D1%8F">статуя</a><a class="mini-chip" href="../search.html?q=%D1%81%D1%82%D1%80%D0%BE%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D1%81%D1%82%D0%B2%D0%BE">строительство</a><a class="mini-chip" href="../search.html?q=%D0%B0%D0%B4%D1%85%D0%B8%D0%B2%D0%B0%D1%81%D0%B0%D0%BD%D0%B0">адхивасана</a></div>
 
         </article>
 
@@ -403,12 +425,13 @@
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a>
             </div>
             <div class="meta talk-meta-row"><span>2012-12-09 · Воскресенье · Не указано</span><span class="talk-meta-session">Вечернее заседание</span></div>
+            <div class="meta talk-context"><span class="context-label">Ключевые слова:</span> <a class="mini-chip" href="../search.html?q=%D1%81%D1%82%D1%80%D0%BE%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D1%81%D1%82%D0%B2%D0%BE">строительство</a><a class="mini-chip" href="../search.html?q=%D0%B7%D0%BE%D0%B4%D1%87%D0%B5%D1%81%D1%82%D0%B2%D0%BE">зодчество</a><a class="mini-chip" href="../search.html?q=%D0%BD%D0%B0%D1%83%D0%BA%D0%B0">наука</a></div>
 
         </article>
     </section>
 
         <h2>Связанные авторы</h2>
-        <section class="grid"><article class="card"><strong><a href="sofia-tsvetkova.html">Цветкова Светлана Олеговна</a></strong><div class="meta">22 доклада · <a href="../themes/religion-and-philosophy.html">Религия и философия</a></div></article><article class="card"><strong><a href="natalia-alexandrova.html">Александрова Наталия Владимировна</a></strong><div class="meta">20 докладов · <a href="../themes/literature-and-poetry.html">Литература и поэзия</a></div></article><article class="card"><strong><a href="svetlana-ryzhakova.html">Рыжакова Светлана Игоревна</a></strong><div class="meta">19 докладов · <a href="../themes/linguistics-and-philology.html">Лингвистика и филология</a></div></article><article class="card"><strong><a href="victoria-lysenko.html">Лысенко Виктория Георгиевна</a></strong><div class="meta">16 докладов · <a href="../themes/religion-and-philosophy.html">Религия и философия</a></div></article><article class="card"><strong><a href="natalia-korneeva.html">Корнеева Наталья Афанасьевна</a></strong><div class="meta">15 докладов · <a href="../themes/religion-and-philosophy.html">Религия и философия</a></div></article><article class="card"><strong><a href="areg-mekhakyan.html">Мехакян Арег Гайкович</a></strong><div class="meta">15 докладов · <a href="../themes/religion-and-philosophy.html">Религия и философия</a></div></article><article class="card"><strong><a href="alexander-dubyansky.html">Дубянский Александр Михайлович</a></strong><div class="meta">14 докладов · <a href="../themes/literature-and-poetry.html">Литература и поэзия</a></div></article><article class="card"><strong><a href="victoria-vertogradova.html">Вертоградова Виктория Викторовна</a></strong><div class="meta">13 докладов · <a href="../themes/history-and-culture.html">История, этнография и общество</a></div></article></section>
+        <section class="grid"><article class="card"><strong><a href="victoria-vertogradova.html">Вертоградова Виктория Викторовна</a></strong><div class="meta">13 докладов · <a href="../themes/history-and-culture.html">История, этнография и общество</a></div><div class="meta related-reasons">общие мезоуровни: Этнография, ритуал и перформанс; та же площадка/год: Рериховские чтения 2012, Рериховские чтения 2015; общая рубрика: Искусство и материальная культура, История, этнография и общество</div></article><article class="card"><strong><a href="vyrshchikov-evgenii.html">Вырщиков Евгений Геннадьевич</a></strong><div class="meta">12 докладов · <a href="../themes/linguistics-and-philology.html">Лингвистика и филология</a></div><div class="meta related-reasons">общие ключевые слова: город, представление; та же площадка/год: Рериховские чтения 2012, Рериховские чтения 2015; общая рубрика: История, этнография и общество, Религия и философия</div></article><article class="card"><strong><a href="drobyshev-yulii.html">Дробышев Юлий Игорьевич</a></strong><div class="meta">11 докладов · <a href="../themes/history-and-culture.html">История, этнография и общество</a></div><div class="meta related-reasons">общие мезоуровни: Этнография, ритуал и перформанс; та же площадка/год: Рериховские чтения 2015, Рериховские чтения 2016; общая рубрика: История, этнография и общество, Религия и философия</div></article><article class="card"><strong><a href="sofia-tsvetkova.html">Цветкова Светлана Олеговна</a></strong><div class="meta">22 доклада · <a href="../themes/religion-and-philosophy.html">Религия и философия</a></div><div class="meta related-reasons">общие мезоуровни: Этнография, ритуал и перформанс; та же площадка/год: Рериховские чтения 2012, Рериховские чтения 2015; общая рубрика: Искусство и материальная культура, Религия и философия</div></article><article class="card"><strong><a href="areg-mekhakyan.html">Мехакян Арег Гайкович</a></strong><div class="meta">15 докладов · <a href="../themes/religion-and-philosophy.html">Религия и философия</a></div><div class="meta related-reasons">общие мезоуровни: Этнография, ритуал и перформанс; та же площадка/год: Рериховские чтения 2012, Рериховские чтения 2015; общая рубрика: Религия и философия</div></article><article class="card"><strong><a href="shustova-alla.html">Шустова Алла Михайловна</a></strong><div class="meta">12 докладов · <a href="../themes/history-and-culture.html">История, этнография и общество</a></div><div class="meta related-reasons">та же площадка/год: Рериховские чтения 2012, Рериховские чтения 2015; общая рубрика: История, этнография и общество, Религия и философия; общий центр: Москва</div></article><article class="card"><strong><a href="sergey-tavastsherna.html">Тавастшерна Сергей Сергеевич</a></strong><div class="meta">20 докладов · <a href="../themes/linguistics-and-philology.html">Лингвистика и филология</a></div><div class="meta related-reasons">общие ключевые слова: вода, время; та же площадка/год: Рериховские чтения 2012, Рериховские чтения 2015; общая рубрика: Религия и философия</div></article><article class="card"><strong><a href="natalia-alexandrova.html">Александрова Наталия Владимировна</a></strong><div class="meta">20 докладов · <a href="../themes/literature-and-poetry.html">Литература и поэзия</a></div><div class="meta related-reasons">та же площадка/год: Рериховские чтения 2012, Рериховские чтения 2015; общая рубрика: Искусство и материальная культура, История, этнография и общество; общий центр: Москва</div></article></section>
 
         <div class="footer">© 2026 Russian Indological Research Archive. Сгенерировано из нормализованного архива конференций.</div>
     </main>

@@ -86,6 +86,21 @@ def series_counts(con: sqlite3.Connection, where_sql: str = "") -> dict[str, dic
     return out
 
 
+def person_count_stats(values: list[int]) -> dict[str, float]:
+    one_timers = sum(1 for value in values if value == 1)
+    core = sum(1 for value in values if value >= 5)
+    return {
+        "unique_scholars": len(values),
+        "author_participations": sum(values),
+        "one_talk_share_pct": pct(one_timers, len(values)),
+        "core_share_pct": pct(core, len(values)),
+        "retention_pct": pct(len(values) - one_timers, len(values)),
+        "gini": round(gini(values), 3),
+        "median_talks": sorted(values)[len(values) // 2] if values else 0,
+        "max_talks": max(values) if values else 0,
+    }
+
+
 def build_snapshot() -> dict[str, object]:
     con = sqlite3.connect(DB)
     all_series = series_counts(con)
@@ -93,6 +108,12 @@ def build_snapshot() -> dict[str, object]:
         con,
         "where es.series_name_en='Zograf Readings' and e.year <= 2025",
     )["Zograf"]
+    combined_values = [
+        row[0]
+        for row in con.execute(
+            "select count(*) from presentation_person group by person_id"
+        ).fetchall()
+    ]
 
     people_by_series = {
         "Zograf": {
@@ -157,6 +178,7 @@ def build_snapshot() -> dict[str, object]:
             "zograf_only": len(people_by_series["Zograf"] - people_by_series["Roerich"]),
             "roerich_only": len(people_by_series["Roerich"] - people_by_series["Zograf"]),
         },
+        "combined_activity": person_count_stats(combined_values),
         "series": all_series,
         "zograf_until_2025": z_until_2025,
         "zograf_2026": {
@@ -170,26 +192,35 @@ def build_snapshot() -> dict[str, object]:
 
 def stale_candidates(article_text: str) -> list[dict[str, object]]:
     replacements = {
-        "226": "221",
-        "171": "168",
+        "226": "220",
+        "171": "167",
         "94": "91",
         "39": "38",
         "30.9": "31.9",
-        "23.4": "23.8",
-        "46.2": "44.6",
+        "23.4": "24.0",
+        "46.2": "43.7",
         "39.4": "38.5",
-        "53.8": "55.4",
+        "53.8": "56.3",
         "60.6": "61.5",
-        "152": "149",
-        "25.0": "25.5",
-        "42.8": "40.9",
-        "57.2": "59.1",
+        "152": "148",
+        "25.0": "25.7",
+        "42.8": "39.9",
+        "57.2": "60.1",
+        "0.450": "0.444",
+        "0.459": "0.470",
+        "0.465": "0.461",
+        "0.487": "0.510",
     }
+    allowed_contexts = (
+        "| 2016 |",
+    )
     findings = []
     lines = article_text.splitlines()
     for line_no, line in enumerate(lines, start=1):
+        if any(context in line for context in allowed_contexts):
+            continue
         for old, new in replacements.items():
-            if re.search(rf"(?<![\d.]){re.escape(old)}(?![\d.])", line):
+            if re.search(rf"(?<![\d.,]){re.escape(old)}(?![\d.,])", line):
                 findings.append({"line": line_no, "old": old, "suggested": new, "text": line.strip()})
     return findings
 
@@ -202,6 +233,7 @@ def write_outputs(snapshot: dict[str, object], findings: list[dict[str, object]]
     )
 
     total = snapshot["total"]
+    combined = snapshot["combined_activity"]
     series = snapshot["series"]
     z2025 = snapshot["zograf_until_2025"]
     z2026 = snapshot["zograf_2026"]
@@ -219,6 +251,11 @@ def write_outputs(snapshot: dict[str, object], findings: list[dict[str, object]]
         f"5. Cross-cohort scholars: {total['cross_cohort']}.",
         f"6. Zograf-only scholars: {total['zograf_only']}.",
         f"7. Roerich-only scholars: {total['roerich_only']}.",
+        f"8. Combined one-talk share: {combined['one_talk_share_pct']}%.",
+        f"9. Combined core share >=5: {combined['core_share_pct']}%.",
+        f"10. Combined retention: {combined['retention_pct']}%.",
+        f"11. Combined Gini: {combined['gini']}.",
+        f"12. Combined max talks per scholar: {combined['max_talks']}.",
         "",
         "## Series Counts",
         "",

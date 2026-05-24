@@ -42,10 +42,10 @@ text{font-family:Arial,'Liberation Sans',sans-serif;fill:#1f2933}.small{font-siz
 <text x="701.7" y="146.0" class="small" text-anchor="middle" font-weight="700">60.3%</text>
 <text x="701.7" y="400.0" class="small" text-anchor="middle">СПб</text>
 <text x="701.7" y="418.0" class="label" text-anchor="middle">n=73</text>
-<rect x="779.2" y="152.5" width="51.7" height="225.5" rx="0" fill="#b8554b" stroke="none" opacity="1.0"/>
-<text x="805.0" y="144.5" class="small" text-anchor="middle" font-weight="700">60.7%</text>
+<rect x="779.2" y="147.0" width="51.7" height="231.0" rx="0" fill="#b8554b" stroke="none" opacity="1.0"/>
+<text x="805.0" y="139.0" class="small" text-anchor="middle" font-weight="700">62.2%</text>
 <text x="805.0" y="400.0" class="small" text-anchor="middle">Москва</text>
-<text x="805.0" y="418.0" class="label" text-anchor="middle">n=112</text>
+<text x="805.0" y="418.0" class="label" text-anchor="middle">n=111</text>
 <rect x="882.5" y="243.9" width="51.7" height="134.1" rx="0" fill="#708090" stroke="none" opacity="1.0"/>
 <text x="908.3" y="235.9" class="small" text-anchor="middle" font-weight="700">36.1%</text>
 <text x="908.3" y="400.0" class="small" text-anchor="middle">регионы/ зарубежье</text>

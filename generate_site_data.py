@@ -824,10 +824,13 @@ def main():
 
     # Summary values are used by the dashboard, publication pages, and validation.
     total_presentations = sum(len(year_data["Zograf"]) + len(year_data["Roerich"]) for year_data in timeline.values())
+    unique_presentations = conn.execute("SELECT COUNT(*) FROM presentation").fetchone()[0]
     stat_years = [row["year"] for row in stats]
     summary = {
         "total_scholars": len(scholars),
         "total_presentations": total_presentations,
+        "unique_presentations": unique_presentations,
+        "author_participations": total_presentations,
         "total_events": sum(1 for _ in conn.execute("SELECT 1 FROM event")),
         "years_covered": len(stat_years),
         "start_year": min(stat_years) if stat_years else None,

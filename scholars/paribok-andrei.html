@@ -29,6 +29,12 @@
         .metric { font-size: 1.4rem; font-weight: 700; margin-top: 0.2rem; }
         .chip-row { display: flex; flex-wrap: wrap; gap: 0.5rem; }
         .series-line + .series-line { margin-top: 0.28rem; }
+        .context-block { display: grid; gap: 0.95rem; margin-bottom: 1.4rem; }
+        .context-block strong { display: block; margin-bottom: 0.45rem; }
+        .mini-chip { display: inline-block; margin: 0.18rem 0.25rem 0.18rem 0; padding: 0.18rem 0.45rem; border: 1px solid rgba(148,163,184,0.32); border-radius: 999px; font-size: 0.82rem; }
+        .context-label { color: var(--soft); font-weight: 650; margin-right: 0.25rem; }
+        .talk-context { margin-top: 0.45rem; line-height: 1.8; }
+        .related-reasons { margin-top: 0.45rem; font-size: 0.86rem; }
         .talk-meta-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 1rem; align-items: baseline; }
         .talk-meta-session { text-align: right; white-space: nowrap; }
     </style>
@@ -41,7 +47,7 @@
     "name": "Парибок Андрей Всеволодович | Russian Indological Research Archive",
     "description": "Парибок Андрей Всеволодович: 13 докладов в архиве Зографских и Рериховских чтений, период активности 2006-2026, основной профиль: Религия и философия.",
     "url": "https://gasyoun.github.io/IndologyScholars/scholars/paribok-andrei.html",
-    "dateModified": "2026-05-23",
+    "dateModified": "2026-05-24",
     "mainEntity": {
       "@type": "Person",
       "@id": "https://gasyoun.github.io/IndologyScholars/scholars/paribok-andrei.html#person",
@@ -277,10 +283,10 @@
         </header>
 
         <section class="grid">
-            <article class="card"><strong>Доклады</strong><div class="metric">13</div><div class="meta">записи докладов</div></article>
+            <article class="card"><strong>Доклады</strong><div class="metric">13</div><div class="meta">записей в архиве</div></article>
             <article class="card"><strong>Активность</strong><div class="metric">2006-2026</div><div class="meta">годы участия</div></article>
             <article class="card"><strong>Рубрика</strong><div class="metric"><a href="../themes/religion-and-philosophy.html">Религия и философия</a></div></article>
-            <article class="card"><strong>Площадки</strong><div class="meta"><div class="series-line"><a href="../search.html?q=%D0%9F%D0%B0%D1%80%D0%B8%D0%B1%D0%BE%D0%BA%20%D0%90%D0%BD%D0%B4%D1%80%D0%B5%D0%B9%20%D0%92%D1%81%D0%B5%D0%B2%D0%BE%D0%BB%D0%BE%D0%B4%D0%BE%D0%B2%D0%B8%D1%87%20%D0%97%D0%BE%D0%B3%D1%80%D0%B0%D1%84%D1%81%D0%BA%D0%B8%D0%B5%20%D1%87%D1%82%D0%B5%D0%BD%D0%B8%D1%8F">Зографские чтения</a>: 13 докладов · 2006-2026</div><div class="series-line"><a href="../search.html?q=%D0%9F%D0%B0%D1%80%D0%B8%D0%B1%D0%BE%D0%BA%20%D0%90%D0%BD%D0%B4%D1%80%D0%B5%D0%B9%20%D0%92%D1%81%D0%B5%D0%B2%D0%BE%D0%BB%D0%BE%D0%B4%D0%BE%D0%B2%D0%B8%D1%87%20%D0%A0%D0%B5%D1%80%D0%B8%D1%85%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B5%20%D1%87%D1%82%D0%B5%D0%BD%D0%B8%D1%8F">Рериховские чтения</a>: 0 докладов · нет докладов</div></div></article>
+            <article class="card"><strong>Площадки</strong><div class="meta"><div class="series-line"><a href="../search.html?q=%D0%9F%D0%B0%D1%80%D0%B8%D0%B1%D0%BE%D0%BA%20%D0%90%D0%BD%D0%B4%D1%80%D0%B5%D0%B9%20%D0%92%D1%81%D0%B5%D0%B2%D0%BE%D0%BB%D0%BE%D0%B4%D0%BE%D0%B2%D0%B8%D1%87%20%D0%97%D0%BE%D0%B3%D1%80%D0%B0%D1%84%D1%81%D0%BA%D0%B8%D0%B5%20%D1%87%D1%82%D0%B5%D0%BD%D0%B8%D1%8F">Зографские чтения</a>: 13 докладов · 2006-2026</div><div class="series-line"><a href="../search.html?q=%D0%9F%D0%B0%D1%80%D0%B8%D0%B1%D0%BE%D0%BA%20%D0%90%D0%BD%D0%B4%D1%80%D0%B5%D0%B9%20%D0%92%D1%81%D0%B5%D0%B2%D0%BE%D0%BB%D0%BE%D0%B4%D0%BE%D0%B2%D0%B8%D1%87%20%D0%A0%D0%B5%D1%80%D0%B8%D1%85%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B5%20%D1%87%D1%82%D0%B5%D0%BD%D0%B8%D1%8F">Рериховские чтения</a>: не участвовал</div></div></article>
         </section>
 
         <h2>Аффилиации</h2>
@@ -292,6 +298,11 @@
         <h2>Статусы</h2>
         <div class="chip-row"><span class="meta">Особые статусы не указаны.</span></div>
 
+
+        <h2>Мезоуровни и ключевые контуры</h2>
+        <section class="context-block"><div><strong>Мезоуровни</strong><div class="chip-row"><a class="chip" href="../meso/pali-early-buddhism.html">Пали и ранний буддизм · 1 доклад</a><a class="chip" href="../meso/linguistics-language-system.html">Языковедческий анализ · 1 доклад</a></div></div><div><strong>Ключевые слова</strong><div class="chip-row"><a class="chip" href="../search.html?q=%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%B7%D0%B8%D1%86%D0%B8%D1%8F">композиция · 2</a><a class="chip" href="../search.html?q=%D0%B1%D1%83%D0%B4%D0%B4%D0%B8%D0%B9%D1%81%D0%BA%D0%B8%D0%B9">буддийский</a><a class="chip" href="../search.html?q=%D0%B2%D0%BB%D0%B0%D0%B4%D0%B8%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B8%D1%87">владимирович</a><a class="chip" href="../search.html?q=%D0%B3%D1%80%D1%83%D0%BF%D0%BF%D0%B0">группа</a><a class="chip" href="../search.html?q=%D0%B9%D0%BE%D0%B3%D0%B0">йога</a><a class="chip" href="../search.html?q=%D0%BA%D0%BB%D0%B0%D1%81%D1%81%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D1%8F">классификация</a><a class="chip" href="../search.html?q=%D0%BD%D1%8C%D1%8F%D1%82%D1%8C">ньять</a><a class="chip" href="../search.html?q=%D0%BE%D0%B1%D0%B5%D1%80%D1%85%D0%B0%D0%BC%D0%BC%D0%B5%D1%80">оберхаммер</a><a class="chip" href="../search.html?q=%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C">область</a><a class="chip" href="../search.html?q=%D0%BF%D0%B8%D1%81%D1%8C%D0%BC%D0%BE">письмо</a></div></div></section>
+
+
         <h2>Доклады</h2>
         <section class="list">
         <article class="talk" id="PRES_ac9683df6e">
@@ -301,6 +312,7 @@
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a> · <a href="../cities/moskva.html">Москва</a>
             </div>
             <div class="meta talk-meta-row"><span>2026-05-28 · Четверг · 11:00 – 13:00</span><span class="talk-meta-session">Утреннее заседание</span></div>
+            <div class="meta talk-context"><span class="context-label">Ключевые слова:</span> <a class="mini-chip" href="../search.html?q=%D0%BE%D0%B1%D0%B5%D1%80%D1%85%D0%B0%D0%BC%D0%BC%D0%B5%D1%80">оберхаммер</a></div>
 
         </article>
 
@@ -311,6 +323,7 @@
                 · <a href="../themes/religion-and-philosophy.html">Религия и философия</a> · <a href="../cities/moskva.html">Москва</a>
             </div>
             <div class="meta talk-meta-row"><span>2025-05-22 · Четверг · 11:00 – 13:00</span><span class="talk-meta-session">Утреннее заседание</span></div>
+            <div class="meta talk-context"><span class="context-label">Ключевые слова:</span> <a class="mini-chip" href="../search.html?q=%D1%82%D1%80%D0%B0%D0%BD%D1%81%D1%86%D0%B5%D0%BD%D0%B4%D0%B5%D0%BD%D1%82%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9">трансцендентальный</a><a class="mini-chip" href="../search.html?q=%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C">область</a><a class="mini-chip" href="../search.html?q=%D0%B9%D0%BE%D0%B3%D0%B0">йога</a></div>
 
         </article>
 
@@ -321,6 +334,7 @@
                 · <a href="../themes/religion-and-philosophy.html">Религия и философия</a> · <a href="../cities/moskva.html">Москва</a>
             </div>
             <div class="meta talk-meta-row"><span>2023-05-25 · Четверг · 11:00 – 13:00</span><span class="talk-meta-session">Утреннее заседание</span></div>
+            <div class="meta talk-context"><span class="context-label">Ключевые слова:</span> <a class="mini-chip" href="../search.html?q=%D1%84%D0%B8%D0%BB%D0%BE%D1%81%D0%BE%D1%84%D0%B8%D1%8F">философия</a><a class="mini-chip" href="../search.html?q=%D0%B2%D0%BB%D0%B0%D0%B4%D0%B8%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B8%D1%87">владимирович</a></div>
 
         </article>
 
@@ -332,6 +346,7 @@
             </div>
             <div class="meta talk-meta-row"><span>2022-05-18 · Среда · 13:00 – 15:00</span><span class="talk-meta-session">Утреннее заседание</span></div>
 
+
         </article>
 
         <article class="talk" id="PRES_e218a2fb4b">
@@ -341,6 +356,7 @@
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a> · <a href="../cities/sankt-peterburg.html">Санкт-Петербург</a>
             </div>
             <div class="meta talk-meta-row"><span>2021-05-19 · Среда · 10:30 – 13:00</span><span class="talk-meta-session">Утреннее заседание</span></div>
+            <div class="meta talk-context"><span class="context-label">Срезы:</span> <a class="mini-chip" href="../meso/pali-early-buddhism.html">Пали и ранний буддизм</a> <span class="context-label">Ключевые слова:</span> <a class="mini-chip" href="../search.html?q=%D0%B3%D1%80%D1%83%D0%BF%D0%BF%D0%B0">группа</a><a class="mini-chip" href="../search.html?q=%D0%BF%D1%80%D0%B8%D1%91%D0%BC">приём</a><a class="mini-chip" href="../search.html?q=%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%B7%D0%B8%D1%86%D0%B8%D1%8F">композиция</a></div>
 
         </article>
 
@@ -351,6 +367,7 @@
                 · <a href="../themes/religion-and-philosophy.html">Религия и философия</a> · <a href="../cities/sankt-peterburg.html">Санкт-Петербург</a>
             </div>
             <div class="meta talk-meta-row"><span>2020-05-12 · Вторник · 11:30 – 14:00</span><span class="talk-meta-session">Утреннее заседание</span></div>
+            <div class="meta talk-context"><span class="context-label">Ключевые слова:</span> <a class="mini-chip" href="../search.html?q=%D1%81%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5">сравнение</a><a class="mini-chip" href="../search.html?q=%D1%84%D0%B8%D0%BB%D0%BE%D1%81%D0%BE%D1%84%D1%81%D0%BA%D0%B8%D0%B9">философский</a></div>
             <div class="meta"><a href="https://www.youtube.com/watch?v=g_k-enVyhGw" rel="noopener" target="_blank">▶ YouTube</a></div>
         </article>
 
@@ -361,6 +378,7 @@
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a> · <a href="../cities/sankt-peterburg.html">Санкт-Петербург</a>
             </div>
             <div class="meta talk-meta-row"><span>2018-05-16 · Среда · 11:00 – 14:00</span><span class="talk-meta-session">Утреннее заседание</span></div>
+            <div class="meta talk-context"><span class="context-label">Ключевые слова:</span> <a class="mini-chip" href="../search.html?q=%D0%BD%D1%8C%D1%8F%D1%82%D1%8C">ньять</a><a class="mini-chip" href="../search.html?q=%D1%81%D1%83%D1%82%D1%80%D0%B0">сутра</a></div>
 
         </article>
 
@@ -371,6 +389,7 @@
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a> · <a href="../cities/sankt-peterburg.html">Санкт-Петербург</a>
             </div>
             <div class="meta talk-meta-row"><span>2014-05-15 · Четверг · 11:00 – 18:00</span><span class="talk-meta-session">Научное заседание</span></div>
+            <div class="meta talk-context"><span class="context-label">Ключевые слова:</span> <a class="mini-chip" href="../search.html?q=%D0%BA%D0%BB%D0%B0%D1%81%D1%81%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D1%8F">классификация</a></div>
 
         </article>
 
@@ -381,6 +400,7 @@
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a> · <a href="../cities/sankt-peterburg.html">Санкт-Петербург</a>
             </div>
             <div class="meta talk-meta-row"><span>2013-05-15 · Среда · 14:00 – 15:00</span><span class="talk-meta-session">Секция не указана</span></div>
+            <div class="meta talk-context"><span class="context-label">Ключевые слова:</span> <a class="mini-chip" href="../search.html?q=%D1%80%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D1%8C">рациональность</a><a class="mini-chip" href="../search.html?q=%D1%81%D1%85%D0%B5%D0%BC%D0%B0">схема</a></div>
 
         </article>
 
@@ -391,6 +411,7 @@
                 · <a href="../themes/religion-and-philosophy.html">Религия и философия</a> · <a href="../cities/sankt-peterburg.html">Санкт-Петербург</a>
             </div>
             <div class="meta talk-meta-row"><span>2012-05-17 · Четверг · 11:00 – 18:00</span><span class="talk-meta-session">Научное заседание</span></div>
+            <div class="meta talk-context"><span class="context-label">Ключевые слова:</span> <a class="mini-chip" href="../search.html?q=%D0%B1%D1%83%D0%B4%D0%B4%D0%B8%D0%B9%D1%81%D0%BA%D0%B8%D0%B9">буддийский</a></div>
 
         </article>
 
@@ -401,6 +422,7 @@
                 · <a href="../themes/religion-and-philosophy.html">Религия и философия</a> · <a href="../cities/sankt-peterburg.html">Санкт-Петербург</a>
             </div>
             <div class="meta talk-meta-row"><span>2011-05-25 · Среда · 11:00 – 18:00</span><span class="talk-meta-session">Научное заседание</span></div>
+            <div class="meta talk-context"><span class="context-label">Ключевые слова:</span> <a class="mini-chip" href="../search.html?q=%D1%82%D0%B0%D0%BD%D1%82%D1%80%D0%B0">тантра</a></div>
 
         </article>
 
@@ -411,6 +433,7 @@
                 · <a href="../themes/linguistics-and-philology.html">Лингвистика и филология</a> · <a href="../cities/sankt-peterburg.html">Санкт-Петербург</a>
             </div>
             <div class="meta talk-meta-row"><span>2007-05-23 · Среда · 11:00 – 18:00</span><span class="talk-meta-session">Научное заседание</span></div>
+            <div class="meta talk-context"><span class="context-label">Срезы:</span> <a class="mini-chip" href="../meso/linguistics-language-system.html">Языковедческий анализ</a> <span class="context-label">Ключевые слова:</span> <a class="mini-chip" href="../search.html?q=%D0%BF%D0%B8%D1%81%D1%8C%D0%BC%D0%BE">письмо</a><a class="mini-chip" href="../search.html?q=%D1%81%D0%B0%D0%BD%D1%81%D0%BA%D1%80%D0%B8%D1%82%D1%81%D0%BA%D0%B8%D0%B9">санскритский</a></div>
 
         </article>
 
@@ -421,12 +444,13 @@
                 · <a href="../themes/religion-and-philosophy.html">Религия и философия</a> · <a href="../cities/sankt-peterburg.html">Санкт-Петербург</a>
             </div>
             <div class="meta talk-meta-row"><span>2006-05-17 · Среда · 11:00 – 18:00</span><span class="talk-meta-session">Научное заседание</span></div>
+            <div class="meta talk-context"><span class="context-label">Ключевые слова:</span> <a class="mini-chip" href="../search.html?q=%D1%81%D0%BE%D0%B4%D0%B5%D1%80%D0%B6%D0%B0%D0%BD%D0%B8%D0%B5">содержание</a><a class="mini-chip" href="../search.html?q=%D1%87%D0%B0%D1%81%D1%82%D1%8C">часть</a><a class="mini-chip" href="../search.html?q=%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%B7%D0%B8%D1%86%D0%B8%D1%8F">композиция</a></div>
 
         </article>
     </section>
 
         <h2>Связанные авторы</h2>
-        <section class="grid"><article class="card"><strong><a href="sofia-tsvetkova.html">Цветкова Светлана Олеговна</a></strong><div class="meta">22 доклада · <a href="../themes/religion-and-philosophy.html">Религия и философия</a></div></article><article class="card"><strong><a href="natalia-alexandrova.html">Александрова Наталия Владимировна</a></strong><div class="meta">20 докладов · <a href="../themes/literature-and-poetry.html">Литература и поэзия</a></div></article><article class="card"><strong><a href="sergey-tavastsherna.html">Тавастшерна Сергей Сергеевич</a></strong><div class="meta">20 докладов · <a href="../themes/linguistics-and-philology.html">Лингвистика и филология</a></div></article><article class="card"><strong><a href="svetlana-ryzhakova.html">Рыжакова Светлана Игоревна</a></strong><div class="meta">19 докладов · <a href="../themes/linguistics-and-philology.html">Лингвистика и филология</a></div></article><article class="card"><strong><a href="victoria-lysenko.html">Лысенко Виктория Георгиевна</a></strong><div class="meta">16 докладов · <a href="../themes/religion-and-philosophy.html">Религия и философия</a></div></article><article class="card"><strong><a href="natalia-korneeva.html">Корнеева Наталья Афанасьевна</a></strong><div class="meta">15 докладов · <a href="../themes/religion-and-philosophy.html">Религия и философия</a></div></article><article class="card"><strong><a href="areg-mekhakyan.html">Мехакян Арег Гайкович</a></strong><div class="meta">15 докладов · <a href="../themes/religion-and-philosophy.html">Религия и философия</a></div></article><article class="card"><strong><a href="alexander-dubyansky.html">Дубянский Александр Михайлович</a></strong><div class="meta">14 докладов · <a href="../themes/literature-and-poetry.html">Литература и поэзия</a></div></article></section>
+        <section class="grid"><article class="card"><strong><a href="pskhu-ruzana.html">Псху Рузана Владимировна</a></strong><div class="meta">12 докладов · <a href="../themes/religion-and-philosophy.html">Религия и философия</a></div><div class="meta related-reasons">общие мезоуровни: Языковедческий анализ; общие ключевые слова: оберхаммер, сутра, философия; та же площадка/год: Зографские чтения 2007, Зографские чтения 2012</div></article><article class="card"><strong><a href="sergey-tavastsherna.html">Тавастшерна Сергей Сергеевич</a></strong><div class="meta">20 докладов · <a href="../themes/linguistics-and-philology.html">Лингвистика и филология</a></div><div class="meta related-reasons">общие мезоуровни: Пали и ранний буддизм, Языковедческий анализ; общие ключевые слова: классификация, санскритский, тантра; та же площадка/год: Зографские чтения 2006, Зографские чтения 2013</div></article><article class="card"><strong><a href="svetlana-ryzhakova.html">Рыжакова Светлана Игоревна</a></strong><div class="meta">19 докладов · <a href="../themes/linguistics-and-philology.html">Лингвистика и филология</a></div><div class="meta related-reasons">общие ключевые слова: область; та же площадка/год: Зографские чтения 2006, Зографские чтения 2007; общая рубрика: Лингвистика и филология, Религия и философия</div></article><article class="card"><strong><a href="desnitskaya-evgeniya.html">Десницкая Евгения Алексеевна</a></strong><div class="meta">11 докладов · <a href="../themes/religion-and-philosophy.html">Религия и философия</a></div><div class="meta related-reasons">общие мезоуровни: Языковедческий анализ; та же площадка/год: Зографские чтения 2006, Зографские чтения 2007; общая рубрика: Лингвистика и филология, Религия и философия</div></article><article class="card"><strong><a href="victoria-lysenko.html">Лысенко Виктория Георгиевна</a></strong><div class="meta">16 докладов · <a href="../themes/religion-and-philosophy.html">Религия и философия</a></div><div class="meta related-reasons">общие мезоуровни: Языковедческий анализ; общие ключевые слова: философия; та же площадка/год: Зографские чтения 2007, Зографские чтения 2011</div></article><article class="card"><strong><a href="natalia-korneeva.html">Корнеева Наталья Афанасьевна</a></strong><div class="meta">15 докладов · <a href="../themes/religion-and-philosophy.html">Религия и философия</a></div><div class="meta related-reasons">общие мезоуровни: Языковедческий анализ; общие ключевые слова: композиция, приём; та же площадка/год: Зографские чтения 2011, Зографские чтения 2012</div></article><article class="card"><strong><a href="vasilkov-yaroslav.html">Васильков Ярослав Владимирович</a></strong><div class="meta">12 докладов · <a href="../themes/literature-and-poetry.html">Сравнительная мифология и эпос</a></div><div class="meta related-reasons">та же площадка/год: Зографские чтения 2006, Зографские чтения 2007; общий центр: Санкт-Петербург</div></article><article class="card"><strong><a href="sofia-tsvetkova.html">Цветкова Светлана Олеговна</a></strong><div class="meta">22 доклада · <a href="../themes/religion-and-philosophy.html">Религия и философия</a></div><div class="meta related-reasons">общие ключевые слова: классификация; та же площадка/год: Зографские чтения 2007, Зографские чтения 2011; общая рубрика: Лингвистика и филология, Религия и философия</div></article></section>
 
         <div class="footer">© 2026 Russian Indological Research Archive. Сгенерировано из нормализованного архива конференций.</div>
     </main>

@@ -29,6 +29,12 @@
         .metric { font-size: 1.4rem; font-weight: 700; margin-top: 0.2rem; }
         .chip-row { display: flex; flex-wrap: wrap; gap: 0.5rem; }
         .series-line + .series-line { margin-top: 0.28rem; }
+        .context-block { display: grid; gap: 0.95rem; margin-bottom: 1.4rem; }
+        .context-block strong { display: block; margin-bottom: 0.45rem; }
+        .mini-chip { display: inline-block; margin: 0.18rem 0.25rem 0.18rem 0; padding: 0.18rem 0.45rem; border: 1px solid rgba(148,163,184,0.32); border-radius: 999px; font-size: 0.82rem; }
+        .context-label { color: var(--soft); font-weight: 650; margin-right: 0.25rem; }
+        .talk-context { margin-top: 0.45rem; line-height: 1.8; }
+        .related-reasons { margin-top: 0.45rem; font-size: 0.86rem; }
         .talk-meta-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 1rem; align-items: baseline; }
         .talk-meta-session { text-align: right; white-space: nowrap; }
     </style>
@@ -41,7 +47,7 @@
     "name": "Скороходова Татьяна Григорьевна | Russian Indological Research Archive",
     "description": "Скороходова Татьяна Григорьевна: 9 докладов в архиве Зографских и Рериховских чтений, период активности 2011-2026, основной профиль: Религия и философия.",
     "url": "https://gasyoun.github.io/IndologyScholars/scholars/skorokhodova-tatyana-1970.html",
-    "dateModified": "2026-05-23",
+    "dateModified": "2026-05-24",
     "mainEntity": {
       "@type": "Person",
       "@id": "https://gasyoun.github.io/IndologyScholars/scholars/skorokhodova-tatyana-1970.html#person",
@@ -265,10 +271,10 @@
         </header>
 
         <section class="grid">
-            <article class="card"><strong>Доклады</strong><div class="metric">9</div><div class="meta">записи докладов</div></article>
+            <article class="card"><strong>Доклады</strong><div class="metric">9</div><div class="meta">записей в архиве</div></article>
             <article class="card"><strong>Активность</strong><div class="metric">2011-2026</div><div class="meta">годы участия</div></article>
             <article class="card"><strong>Рубрика</strong><div class="metric"><a href="../themes/religion-and-philosophy.html">Религия и философия</a></div></article>
-            <article class="card"><strong>Площадки</strong><div class="meta"><div class="series-line"><a href="../search.html?q=%D0%A1%D0%BA%D0%BE%D1%80%D0%BE%D1%85%D0%BE%D0%B4%D0%BE%D0%B2%D0%B0%20%D0%A2%D0%B0%D1%82%D1%8C%D1%8F%D0%BD%D0%B0%20%D0%93%D1%80%D0%B8%D0%B3%D0%BE%D1%80%D1%8C%D0%B5%D0%B2%D0%BD%D0%B0%20%D0%97%D0%BE%D0%B3%D1%80%D0%B0%D1%84%D1%81%D0%BA%D0%B8%D0%B5%20%D1%87%D1%82%D0%B5%D0%BD%D0%B8%D1%8F">Зографские чтения</a>: 9 докладов · 2011-2026</div><div class="series-line"><a href="../search.html?q=%D0%A1%D0%BA%D0%BE%D1%80%D0%BE%D1%85%D0%BE%D0%B4%D0%BE%D0%B2%D0%B0%20%D0%A2%D0%B0%D1%82%D1%8C%D1%8F%D0%BD%D0%B0%20%D0%93%D1%80%D0%B8%D0%B3%D0%BE%D1%80%D1%8C%D0%B5%D0%B2%D0%BD%D0%B0%20%D0%A0%D0%B5%D1%80%D0%B8%D1%85%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B5%20%D1%87%D1%82%D0%B5%D0%BD%D0%B8%D1%8F">Рериховские чтения</a>: 0 докладов · нет докладов</div></div></article>
+            <article class="card"><strong>Площадки</strong><div class="meta"><div class="series-line"><a href="../search.html?q=%D0%A1%D0%BA%D0%BE%D1%80%D0%BE%D1%85%D0%BE%D0%B4%D0%BE%D0%B2%D0%B0%20%D0%A2%D0%B0%D1%82%D1%8C%D1%8F%D0%BD%D0%B0%20%D0%93%D1%80%D0%B8%D0%B3%D0%BE%D1%80%D1%8C%D0%B5%D0%B2%D0%BD%D0%B0%20%D0%97%D0%BE%D0%B3%D1%80%D0%B0%D1%84%D1%81%D0%BA%D0%B8%D0%B5%20%D1%87%D1%82%D0%B5%D0%BD%D0%B8%D1%8F">Зографские чтения</a>: 9 докладов · 2011-2026</div><div class="series-line"><a href="../search.html?q=%D0%A1%D0%BA%D0%BE%D1%80%D0%BE%D1%85%D0%BE%D0%B4%D0%BE%D0%B2%D0%B0%20%D0%A2%D0%B0%D1%82%D1%8C%D1%8F%D0%BD%D0%B0%20%D0%93%D1%80%D0%B8%D0%B3%D0%BE%D1%80%D1%8C%D0%B5%D0%B2%D0%BD%D0%B0%20%D0%A0%D0%B5%D1%80%D0%B8%D1%85%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B5%20%D1%87%D1%82%D0%B5%D0%BD%D0%B8%D1%8F">Рериховские чтения</a>: не участвовал</div></div></article>
         </section>
 
         <h2>Аффилиации</h2>
@@ -280,6 +286,11 @@
         <h2>Статусы</h2>
         <div class="chip-row"><span class="meta">Особые статусы не указаны.</span></div>
 
+
+        <h2>Мезоуровни и ключевые контуры</h2>
+        <section class="context-block"><div><strong>Мезоуровни</strong><div class="chip-row"><a class="chip" href="../meso/bengal-bhakti-modernity.html">Бенгалия, бхакти и современность · 8 докладов</a><a class="chip" href="../meso/linguistics-text-philology.html">Филология текста · 1 доклад</a></div></div><div><strong>Ключевые слова</strong><div class="chip-row"><a class="chip" href="../search.html?q=%D0%B4%D1%80%D1%83%D0%B3%D0%BE%D0%B9">другой · 2</a><a class="chip" href="../search.html?q=%D1%80%D0%B0%D0%B1%D0%B8%D0%BD%D0%B4%D1%80%D0%B0%D0%BD%D0%B0%D1%82">рабиндранат · 2</a><a class="chip" href="../search.html?q=%D1%84%D0%B8%D0%BB%D0%BE%D1%81%D0%BE%D1%84%D1%81%D1%82%D0%B2%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">философствование · 2</a><a class="chip" href="../search.html?q=%D0%B1%D0%B5%D0%BD%D0%B3%D0%B0%D0%BB%D0%B8%D1%8F">бенгалия</a><a class="chip" href="../search.html?q=%D0%B2%D0%B8%D0%B2%D0%B5%D0%BA%D0%B0%D0%BD%D0%B0%D0%BD%D0%B4%D0%B0">вивекананда</a><a class="chip" href="../search.html?q=%D0%B2%D0%BE%D0%B7%D1%80%D0%BE%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5">возрождение</a><a class="chip" href="../search.html?q=%D0%B3%D0%BB%D0%B0%D0%B7">глаз</a><a class="chip" href="../search.html?q=%D0%B8%D0%B4%D0%B5%D1%8F">идея</a><a class="chip" href="../search.html?q=%D0%B8%D0%BD%D0%B4%D1%83%D0%B8%D0%B7%D0%BC">индуизм</a><a class="chip" href="../search.html?q=%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%BF%D1%80%D0%B5%D1%82%D0%B0%D1%86%D0%B8%D1%8F">интерпретация</a></div></div></section>
+
+
         <h2>Доклады</h2>
         <section class="list">
         <article class="talk" id="PRES_8278d320e8">
@@ -289,6 +300,7 @@
                 · <a href="../themes/religion-and-philosophy.html">Религия и философия</a> · <a href="../cities/penza.html">Пенза</a>
             </div>
             <div class="meta talk-meta-row"><span>2026-05-28 · Четверг · 14:00 – 16:00</span><span class="talk-meta-session">Вечернее заседание</span></div>
+            <div class="meta talk-context"><span class="context-label">Срезы:</span> <a class="mini-chip" href="../meso/bengal-bhakti-modernity.html">Бенгалия, бхакти и современность</a> <span class="context-label">Ключевые слова:</span> <a class="mini-chip" href="../search.html?q=%D1%83%D0%BF%D0%B0%D0%BD%D0%B8%D1%88%D0%B0%D0%B4">упанишад</a><a class="mini-chip" href="../search.html?q=%D0%B8%D0%B4%D0%B5%D1%8F">идея</a><a class="mini-chip" href="../search.html?q=%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%BF%D1%80%D0%B5%D1%82%D0%B0%D1%86%D0%B8%D1%8F">интерпретация</a></div>
             <div class="meta"><a href="https://www.youtube.com/watch?v=AF6_VJh5erU" rel="noopener" target="_blank">▶ YouTube</a></div>
         </article>
 
@@ -299,6 +311,7 @@
                 · <a href="../themes/religion-and-philosophy.html">Религия и философия</a> · <a href="../cities/penza.html">Пенза</a>
             </div>
             <div class="meta talk-meta-row"><span>2025-05-22 · Четверг · 17:30 – 19:30</span><span class="talk-meta-session">Вечернее заседание</span></div>
+            <div class="meta talk-context"><span class="context-label">Срезы:</span> <a class="mini-chip" href="../meso/bengal-bhakti-modernity.html">Бенгалия, бхакти и современность</a> <span class="context-label">Ключевые слова:</span> <a class="mini-chip" href="../search.html?q=%D1%84%D0%B8%D0%BB%D0%BE%D1%81%D0%BE%D1%84%D1%81%D1%82%D0%B2%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">философствование</a><a class="mini-chip" href="../search.html?q=%D1%81%D0%B0%D0%B4%D1%85%D0%B0%D0%BD%D0%B0">садхана</a><a class="mini-chip" href="../search.html?q=%D0%B4%D1%80%D1%83%D0%B3%D0%BE%D0%B9">другой</a></div>
 
         </article>
 
@@ -309,6 +322,7 @@
                 · <a href="../themes/religion-and-philosophy.html">Религия и философия</a> · <a href="../cities/penza.html">Пенза</a>
             </div>
             <div class="meta talk-meta-row"><span>2021-05-20 · Четверг · 14:30 – 17:30</span><span class="talk-meta-session">Вечернее заседание</span></div>
+            <div class="meta talk-context"><span class="context-label">Срезы:</span> <a class="mini-chip" href="../meso/bengal-bhakti-modernity.html">Бенгалия, бхакти и современность</a> <span class="context-label">Ключевые слова:</span> <a class="mini-chip" href="../search.html?q=%D1%81%D0%BE%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9">социальный</a><a class="mini-chip" href="../search.html?q=%D1%80%D0%B0%D0%B1%D0%B8%D0%BD%D0%B4%D1%80%D0%B0%D0%BD%D0%B0%D1%82">рабиндранат</a><a class="mini-chip" href="../search.html?q=%D0%BF%D0%BE%D0%BD%D0%B8%D0%BC%D0%B0%D0%BD%D0%B8%D0%B5">понимание</a></div>
 
         </article>
 
@@ -319,6 +333,7 @@
                 · <a href="../themes/religion-and-philosophy.html">Религия и философия</a> · <a href="../cities/penza.html">Пенза</a>
             </div>
             <div class="meta talk-meta-row"><span>2019-05-16 · Четверг · 14:00 – 16:30</span><span class="talk-meta-session">Вечернее заседание</span></div>
+            <div class="meta talk-context"><span class="context-label">Срезы:</span> <a class="mini-chip" href="../meso/bengal-bhakti-modernity.html">Бенгалия, бхакти и современность</a> <span class="context-label">Ключевые слова:</span> <a class="mini-chip" href="../search.html?q=%D1%84%D0%B8%D0%BB%D0%BE%D1%81%D0%BE%D1%84%D1%81%D1%82%D0%B2%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">философствование</a><a class="mini-chip" href="../search.html?q=%D1%80%D0%B5%D0%BB%D0%B8%D0%B3%D0%B8%D1%8F">религия</a><a class="mini-chip" href="../search.html?q=%D1%80%D0%B0%D0%B1%D0%B8%D0%BD%D0%B4%D1%80%D0%B0%D0%BD%D0%B0%D1%82">рабиндранат</a></div>
             <div class="meta"><a href="https://www.youtube.com/watch?v=26QDJdLX9og" rel="noopener" target="_blank">▶ YouTube</a></div>
         </article>
 
@@ -329,6 +344,7 @@
                 · <a href="../themes/religion-and-philosophy.html">Религия и философия</a> · <a href="../cities/penza.html">Пенза</a>
             </div>
             <div class="meta talk-meta-row"><span>2018-05-16 · Среда · 15:00 – 18:00</span><span class="talk-meta-session">Вечернее заседание</span></div>
+            <div class="meta talk-context"><span class="context-label">Ключевые слова:</span> <a class="mini-chip" href="../search.html?q=%D1%81%D0%B2%D0%B0%D0%BC%D0%B8">свами</a><a class="mini-chip" href="../search.html?q=%D0%B3%D0%BB%D0%B0%D0%B7">глаз</a><a class="mini-chip" href="../search.html?q=%D0%B2%D0%B8%D0%B2%D0%B5%D0%BA%D0%B0%D0%BD%D0%B0%D0%BD%D0%B4%D0%B0">вивекананда</a></div>
 
         </article>
 
@@ -339,6 +355,7 @@
                 · <a href="../themes/linguistics-and-philology.html">Лингвистика и филология</a> · <a href="../cities/penza.html">Пенза</a>
             </div>
             <div class="meta talk-meta-row"><span>2014-05-16 · Пятница · 11:00 – 18:00</span><span class="talk-meta-session">Научное заседание</span></div>
+            <div class="meta talk-context"><span class="context-label">Срезы:</span> <a class="mini-chip" href="../meso/bengal-bhakti-modernity.html">Бенгалия, бхакти и современность</a> <span class="context-label">Ключевые слова:</span> <a class="mini-chip" href="../search.html?q=%D1%84%D0%B5%D0%BD%D0%BE%D0%BC%D0%B5%D0%BD">феномен</a><a class="mini-chip" href="../search.html?q=%D0%B1%D0%B5%D0%BD%D0%B3%D0%B0%D0%BB%D0%B8%D1%8F">бенгалия</a><a class="mini-chip" href="../search.html?q=%D1%84%D0%BE%D1%80%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">формирование</a></div>
 
         </article>
 
@@ -349,6 +366,7 @@
                 · <a href="../themes/linguistics-and-philology.html">Лингвистика и филология</a> · <a href="../cities/penza.html">Пенза</a>
             </div>
             <div class="meta talk-meta-row"><span>2013-05-15 · Среда · 14:00 – 15:00</span><span class="talk-meta-session">Секция не указана</span></div>
+            <div class="meta talk-context"><span class="context-label">Срезы:</span> <a class="mini-chip" href="../meso/bengal-bhakti-modernity.html">Бенгалия, бхакти и современность</a><a class="mini-chip" href="../meso/linguistics-text-philology.html">Филология текста</a> <span class="context-label">Ключевые слова:</span> <a class="mini-chip" href="../search.html?q=%D0%BE%D1%82%D0%BA%D1%80%D1%8B%D1%82%D0%B8%D0%B5">открытие</a><a class="mini-chip" href="../search.html?q=%D0%BC%D1%8B%D1%81%D0%BB%D0%B8%D1%82%D0%B5%D0%BB%D1%8C">мыслитель</a><a class="mini-chip" href="../search.html?q=%D1%81%D0%BA%D0%B2%D0%BE%D0%B7%D1%8C">сквозь</a></div>
 
         </article>
 
@@ -359,6 +377,7 @@
                 · <a href="../themes/linguistics-and-philology.html">Лингвистика и филология</a> · <a href="../cities/penza.html">Пенза</a>
             </div>
             <div class="meta talk-meta-row"><span>2012-05-17 · Четверг · 11:00 – 18:00</span><span class="talk-meta-session">Научное заседание</span></div>
+            <div class="meta talk-context"><span class="context-label">Срезы:</span> <a class="mini-chip" href="../meso/bengal-bhakti-modernity.html">Бенгалия, бхакти и современность</a> <span class="context-label">Ключевые слова:</span> <a class="mini-chip" href="../search.html?q=%D1%80%D0%B5%D0%BD%D0%B5%D1%81%D1%81%D0%B0%D0%BD%D1%81">ренессанс</a><a class="mini-chip" href="../search.html?q=%D1%80%D0%B5%D0%BB%D0%B8%D0%B3%D0%B8%D0%BE%D0%B7%D0%BD%D0%BE">религиозно</a><a class="mini-chip" href="../search.html?q=%D0%B8%D0%BD%D0%B4%D1%83%D0%B8%D0%B7%D0%BC">индуизм</a></div>
 
         </article>
 
@@ -369,12 +388,13 @@
                 · <a href="../themes/linguistics-and-philology.html">Лингвистика и филология</a> · <a href="../cities/penza.html">Пенза</a>
             </div>
             <div class="meta talk-meta-row"><span>2011-05-25 · Среда · 11:00 – 18:00</span><span class="talk-meta-session">Научное заседание</span></div>
+            <div class="meta talk-context"><span class="context-label">Срезы:</span> <a class="mini-chip" href="../meso/bengal-bhakti-modernity.html">Бенгалия, бхакти и современность</a> <span class="context-label">Ключевые слова:</span> <a class="mini-chip" href="../search.html?q=%D1%81%D0%BE%D0%BF%D0%BE%D1%81%D1%82%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5">сопоставление</a><a class="mini-chip" href="../search.html?q=%D0%B4%D1%80%D1%83%D0%B3%D0%BE%D0%B9">другой</a><a class="mini-chip" href="../search.html?q=%D0%B2%D0%BE%D0%B7%D1%80%D0%BE%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5">возрождение</a></div>
 
         </article>
     </section>
 
         <h2>Связанные авторы</h2>
-        <section class="grid"><article class="card"><strong><a href="sofia-tsvetkova.html">Цветкова Светлана Олеговна</a></strong><div class="meta">22 доклада · <a href="../themes/religion-and-philosophy.html">Религия и философия</a></div></article><article class="card"><strong><a href="victoria-lysenko.html">Лысенко Виктория Георгиевна</a></strong><div class="meta">16 докладов · <a href="../themes/religion-and-philosophy.html">Религия и философия</a></div></article><article class="card"><strong><a href="natalia-korneeva.html">Корнеева Наталья Афанасьевна</a></strong><div class="meta">15 докладов · <a href="../themes/religion-and-philosophy.html">Религия и философия</a></div></article><article class="card"><strong><a href="areg-mekhakyan.html">Мехакян Арег Гайкович</a></strong><div class="meta">15 докладов · <a href="../themes/religion-and-philosophy.html">Религия и философия</a></div></article><article class="card"><strong><a href="olga-vecherina.html">Вечерина Ольга Павловна</a></strong><div class="meta">13 докладов · <a href="../themes/religion-and-philosophy.html">Религия и философия</a></div></article><article class="card"><strong><a href="paribok-andrei.html">Парибок Андрей Всеволодович</a></strong><div class="meta">13 докладов · <a href="../themes/religion-and-philosophy.html">Религия и философия</a></div></article><article class="card"><strong><a href="ignatev-andrei.html">Игнатьев Андрей Александрович</a></strong><div class="meta">12 докладов · <a href="../themes/religion-and-philosophy.html">Религия и философия</a></div></article><article class="card"><strong><a href="pskhu-ruzana.html">Псху Рузана Владимировна</a></strong><div class="meta">12 докладов · <a href="../themes/religion-and-philosophy.html">Религия и философия</a></div></article></section>
+        <section class="grid"><article class="card"><strong><a href="svetlana-ryzhakova.html">Рыжакова Светлана Игоревна</a></strong><div class="meta">19 докладов · <a href="../themes/linguistics-and-philology.html">Лингвистика и филология</a></div><div class="meta related-reasons">общие мезоуровни: Бенгалия, бхакти и современность; общие ключевые слова: возрождение, социальный, феномен; та же площадка/год: Зографские чтения 2011, Зографские чтения 2012</div></article><article class="card"><strong><a href="albedil-margarita.html">Альбедиль Маргарита Федоровна</a></strong><div class="meta">10 докладов · <a href="../themes/religion-and-philosophy.html">Религия и философия</a></div><div class="meta related-reasons">общие ключевые слова: индуизм, интерпретация; та же площадка/год: Зографские чтения 2011, Зографские чтения 2012; общая рубрика: Лингвистика и филология, Религия и философия</div></article><article class="card"><strong><a href="sergey-tavastsherna.html">Тавастшерна Сергей Сергеевич</a></strong><div class="meta">20 докладов · <a href="../themes/linguistics-and-philology.html">Лингвистика и филология</a></div><div class="meta related-reasons">общие мезоуровни: Филология текста; общие ключевые слова: понимание; та же площадка/год: Зографские чтения 2013, Зографские чтения 2014</div></article><article class="card"><strong><a href="natalia-korneeva.html">Корнеева Наталья Афанасьевна</a></strong><div class="meta">15 докладов · <a href="../themes/religion-and-philosophy.html">Религия и философия</a></div><div class="meta related-reasons">общие мезоуровни: Бенгалия, бхакти и современность; та же площадка/год: Зографские чтения 2011, Зографские чтения 2012; общая рубрика: Лингвистика и филология, Религия и философия</div></article><article class="card"><strong><a href="natalia-alexandrova.html">Александрова Наталия Владимировна</a></strong><div class="meta">20 докладов · <a href="../themes/literature-and-poetry.html">Литература и поэзия</a></div><div class="meta related-reasons">общие мезоуровни: Филология текста; та же площадка/год: Зографские чтения 2013, Зографские чтения 2014; общая рубрика: Религия и философия</div></article><article class="card"><strong><a href="vasilkov-yaroslav.html">Васильков Ярослав Владимирович</a></strong><div class="meta">12 докладов · <a href="../themes/literature-and-poetry.html">Сравнительная мифология и эпос</a></div><div class="meta related-reasons">та же площадка/год: Зографские чтения 2011, Зографские чтения 2012</div></article><article class="card"><strong><a href="pskhu-ruzana.html">Псху Рузана Владимировна</a></strong><div class="meta">12 докладов · <a href="../themes/religion-and-philosophy.html">Религия и философия</a></div><div class="meta related-reasons">общие ключевые слова: религиозно; та же площадка/год: Зографские чтения 2012, Зографские чтения 2013; общая рубрика: Религия и философия</div></article><article class="card"><strong><a href="sofia-tsvetkova.html">Цветкова Светлана Олеговна</a></strong><div class="meta">22 доклада · <a href="../themes/religion-and-philosophy.html">Религия и философия</a></div><div class="meta related-reasons">та же площадка/год: Зографские чтения 2011, Зографские чтения 2012; общая рубрика: Лингвистика и филология, Религия и философия</div></article></section>
 
         <div class="footer">© 2026 Russian Indological Research Archive. Сгенерировано из нормализованного архива конференций.</div>
     </main>

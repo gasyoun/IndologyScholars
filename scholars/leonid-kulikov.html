@@ -29,6 +29,12 @@
         .metric { font-size: 1.4rem; font-weight: 700; margin-top: 0.2rem; }
         .chip-row { display: flex; flex-wrap: wrap; gap: 0.5rem; }
         .series-line + .series-line { margin-top: 0.28rem; }
+        .context-block { display: grid; gap: 0.95rem; margin-bottom: 1.4rem; }
+        .context-block strong { display: block; margin-bottom: 0.45rem; }
+        .mini-chip { display: inline-block; margin: 0.18rem 0.25rem 0.18rem 0; padding: 0.18rem 0.45rem; border: 1px solid rgba(148,163,184,0.32); border-radius: 999px; font-size: 0.82rem; }
+        .context-label { color: var(--soft); font-weight: 650; margin-right: 0.25rem; }
+        .talk-context { margin-top: 0.45rem; line-height: 1.8; }
+        .related-reasons { margin-top: 0.45rem; font-size: 0.86rem; }
         .talk-meta-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 1rem; align-items: baseline; }
         .talk-meta-session { text-align: right; white-space: nowrap; }
     </style>
@@ -41,7 +47,7 @@
     "name": "Куликов Леонид Игоревич | Russian Indological Research Archive",
     "description": "Куликов Леонид Игоревич: 7 докладов в архиве Зографских и Рериховских чтений, период активности 2018-2026, основной профиль: Религия и философия.",
     "url": "https://gasyoun.github.io/IndologyScholars/scholars/leonid-kulikov.html",
-    "dateModified": "2026-05-23",
+    "dateModified": "2026-05-24",
     "mainEntity": {
       "@type": "Person",
       "@id": "https://gasyoun.github.io/IndologyScholars/scholars/leonid-kulikov.html#person",
@@ -285,7 +291,7 @@
         </header>
 
         <section class="grid">
-            <article class="card"><strong>Доклады</strong><div class="metric">7</div><div class="meta">записи докладов</div></article>
+            <article class="card"><strong>Доклады</strong><div class="metric">7</div><div class="meta">записей в архиве</div></article>
             <article class="card"><strong>Активность</strong><div class="metric">2018-2026</div><div class="meta">годы участия</div></article>
             <article class="card"><strong>Рубрика</strong><div class="metric"><a href="../themes/religion-and-philosophy.html">Религия и философия</a></div></article>
             <article class="card"><strong>Площадки</strong><div class="meta"><div class="series-line"><a href="../search.html?q=%D0%9A%D1%83%D0%BB%D0%B8%D0%BA%D0%BE%D0%B2%20%D0%9B%D0%B5%D0%BE%D0%BD%D0%B8%D0%B4%20%D0%98%D0%B3%D0%BE%D1%80%D0%B5%D0%B2%D0%B8%D1%87%20%D0%97%D0%BE%D0%B3%D1%80%D0%B0%D1%84%D1%81%D0%BA%D0%B8%D0%B5%20%D1%87%D1%82%D0%B5%D0%BD%D0%B8%D1%8F">Зографские чтения</a>: 4 доклада · 2018-2026</div><div class="series-line"><a href="../search.html?q=%D0%9A%D1%83%D0%BB%D0%B8%D0%BA%D0%BE%D0%B2%20%D0%9B%D0%B5%D0%BE%D0%BD%D0%B8%D0%B4%20%D0%98%D0%B3%D0%BE%D1%80%D0%B5%D0%B2%D0%B8%D1%87%20%D0%A0%D0%B5%D1%80%D0%B8%D1%85%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B5%20%D1%87%D1%82%D0%B5%D0%BD%D0%B8%D1%8F">Рериховские чтения</a>: 3 доклада · 2020-2023</div></div></article>
@@ -295,10 +301,15 @@
         <div class="chip-row"><a class="chip" href="../index.html?search=%D0%93%D0%B5%D0%BD%D1%82%2C%20%D0%91%D0%B5%D0%BB%D1%8C%D0%B3%D0%B8%D1%8F">Гент, Бельгия</a><a class="chip" href="../index.html?search=%D0%93%D0%B5%D0%BD%D1%82/%D0%9B%D1%83%D0%B2%D0%B5%D0%BD-%D0%BB%D1%8F-%D0%9D%D1%91%D0%B2">Гент/Лувен-ля-Нёв</a><a class="chip" href="../index.html?search=%D0%93%D0%B5%D0%BD%D1%82">Гент</a><a class="chip" href="../institutions/niu-vshe.html">ВШЭ, Гентский университет</a><a class="chip" href="../institutions/niu-vshe.html">НИУ ВШЭ, онлайн</a></div>
 
         <h2>Географические центры</h2>
-        <div class="chip-row"><span class="meta">No records</span></div>
+        <div class="chip-row"><span class="meta">Нет данных</span></div>
 
         <h2>Статусы</h2>
         <div class="chip-row"><span class="meta">Особые статусы не указаны.</span></div>
+
+
+        <h2>Мезоуровни и ключевые контуры</h2>
+        <section class="context-block"><div><strong>Мезоуровни</strong><div class="chip-row"><a class="chip" href="../meso/vedic-studies.html">Ведийские исследования · 4 доклада</a><a class="chip" href="../meso/linguistics-language-system.html">Языковедческий анализ · 4 доклада</a><a class="chip" href="../meso/linguistics-text-philology.html">Филология текста · 1 доклад</a></div></div><div><strong>Ключевые слова</strong><div class="chip-row"><a class="chip" href="../search.html?q=%D0%B2%D0%B5%D0%B4%D0%B8%D0%B9%D1%81%D0%BA%D0%B8%D0%B9">ведийский · 2</a><a class="chip" href="../search.html?q=%D0%B7%D0%B0%D0%BC%D0%B5%D1%82%D0%BA%D0%B0">заметка · 2</a><a class="chip" href="../search.html?q=%D1%8D%D1%82%D0%B8%D0%BC%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F">этимология · 2</a><a class="chip" href="../search.html?q=%D0%B0%D1%82%D1%85%D0%B0%D1%80%D0%B2%D0%B0%D0%B2%D0%B5%D0%B4">атхарвавед</a><a class="chip" href="../search.html?q=%D0%B2%D0%BE%D0%B7%D0%BC%D0%BE%D0%B6%D0%BD%D1%8B%D0%B9">возможный</a><a class="chip" href="../search.html?q=%D0%B8%D0%BD%D0%B4%D0%BE%D0%B5%D0%B2%D1%80%D0%BE%D0%BF%D0%B5%D0%B9%D1%81%D0%BA%D0%B8%D0%B9">индоевропейский</a><a class="chip" href="../search.html?q=%D0%B8%D0%BD%D0%B4%D0%BE%D0%B8%D1%80%D0%B0%D0%BD%D1%81%D0%BA%D0%B8%D0%B9">индоиранский</a><a class="chip" href="../search.html?q=%D0%BA%D0%BE%D1%80%D0%B5%D0%BD%D1%8C">корень</a><a class="chip" href="../search.html?q=%D0%BC%D0%B8%D1%84%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F">мифология</a><a class="chip" href="../search.html?q=%D0%BF%D1%80%D0%B5%D0%B4%D0%B2%D0%B0%D1%80%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9">предварительный</a></div></div></section>
+
 
         <h2>Доклады</h2>
         <section class="list">
@@ -309,6 +320,7 @@
                 · <a href="../themes/linguistics-and-philology.html">Лингвистика и филология</a>
             </div>
             <div class="meta talk-meta-row"><span>2026-05-27 · Среда · 11:00 – 14:00</span><span class="talk-meta-session">Утреннее заседание</span></div>
+            <div class="meta talk-context"><span class="context-label">Ключевые слова:</span> <a class="mini-chip" href="../search.html?q=%D0%BC%D0%B8%D1%84%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F">мифология</a><a class="mini-chip" href="../search.html?q=%D1%8D%D1%82%D0%B8%D0%BC%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F">этимология</a></div>
 
         </article>
 
@@ -319,6 +331,7 @@
                 · <a href="../themes/linguistics-and-philology.html">Лингвистика и филология</a>
             </div>
             <div class="meta talk-meta-row"><span>2025-05-21 · Среда · 11:00 – 14:00</span><span class="talk-meta-session">Утреннее заседание</span></div>
+            <div class="meta talk-context"><span class="context-label">Срезы:</span> <a class="mini-chip" href="../meso/vedic-studies.html">Ведийские исследования</a><a class="mini-chip" href="../meso/linguistics-language-system.html">Языковедческий анализ</a> <span class="context-label">Ключевые слова:</span> <a class="mini-chip" href="../search.html?q=%D1%8D%D1%82%D0%B8%D0%BC%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F">этимология</a><a class="mini-chip" href="../search.html?q=%D1%81%D0%B5%D0%BC%D0%B0%D0%BD%D1%82%D0%B8%D0%BA%D0%B0">семантика</a><a class="mini-chip" href="../search.html?q=%D0%B2%D0%B5%D0%B4%D0%B8%D0%B9%D1%81%D0%BA%D0%B8%D0%B9">ведийский</a></div>
             <div class="meta"><a href="https://www.youtube.com/watch?v=kWqQ5gOmRtE" rel="noopener" target="_blank">▶ YouTube</a></div>
         </article>
 
@@ -329,6 +342,7 @@
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a>
             </div>
             <div class="meta talk-meta-row"><span>2023-12-11 · Понедельник · 15:00 – 18:00</span><span class="talk-meta-session">Вечернее заседание</span></div>
+            <div class="meta talk-context"><span class="context-label">Срезы:</span> <a class="mini-chip" href="../meso/linguistics-text-philology.html">Филология текста</a> <span class="context-label">Ключевые слова:</span> <a class="mini-chip" href="../search.html?q=%D0%B2%D0%BE%D0%B7%D0%BC%D0%BE%D0%B6%D0%BD%D1%8B%D0%B9">возможный</a><a class="mini-chip" href="../search.html?q=%D1%81%D0%BB%D0%B5%D0%B4">след</a><a class="mini-chip" href="../search.html?q=%D1%80%D0%B5%D0%BA%D0%BE%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BA%D1%86%D0%B8%D1%8F">реконструкция</a></div>
 
         </article>
 
@@ -339,6 +353,7 @@
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a>
             </div>
             <div class="meta talk-meta-row"><span>2022-05-19 · Четверг · 11:00 – 14:00</span><span class="talk-meta-session">Утреннее заседание</span></div>
+            <div class="meta talk-context"><span class="context-label">Срезы:</span> <a class="mini-chip" href="../meso/vedic-studies.html">Ведийские исследования</a><a class="mini-chip" href="../meso/linguistics-language-system.html">Языковедческий анализ</a> <span class="context-label">Ключевые слова:</span> <a class="mini-chip" href="../search.html?q=%D0%B2%D0%B5%D0%B4%D0%B8%D0%B9%D1%81%D0%BA%D0%B8%D0%B9">ведийский</a></div>
 
         </article>
 
@@ -349,6 +364,7 @@
                 · <a href="../themes/religion-and-philosophy.html">Религия и философия</a>
             </div>
             <div class="meta talk-meta-row"><span>2021-12-15 · Среда · 15:00 – 18:00</span><span class="talk-meta-session">Вечернее заседание</span></div>
+            <div class="meta talk-context"><span class="context-label">Срезы:</span> <a class="mini-chip" href="../meso/vedic-studies.html">Ведийские исследования</a><a class="mini-chip" href="../meso/linguistics-language-system.html">Языковедческий анализ</a> <span class="context-label">Ключевые слова:</span> <a class="mini-chip" href="../search.html?q=%D0%B0%D1%82%D1%85%D0%B0%D1%80%D0%B2%D0%B0%D0%B2%D0%B5%D0%B4">атхарвавед</a><a class="mini-chip" href="../search.html?q=%D0%B8%D0%BD%D0%B4%D0%BE%D0%B8%D1%80%D0%B0%D0%BD%D1%81%D0%BA%D0%B8%D0%B9">индоиранский</a><a class="mini-chip" href="../search.html?q=%D0%B7%D0%B0%D0%BC%D0%B5%D1%82%D0%BA%D0%B0">заметка</a></div>
 
         </article>
 
@@ -359,6 +375,7 @@
                 · <a href="../themes/religion-and-philosophy.html">Религия и философия</a>
             </div>
             <div class="meta talk-meta-row"><span>2020-12-15 · Вторник · 14:00 – 17:00</span><span class="talk-meta-session">Вечернее заседание</span></div>
+            <div class="meta talk-context"><span class="context-label">Срезы:</span> <a class="mini-chip" href="../meso/vedic-studies.html">Ведийские исследования</a><a class="mini-chip" href="../meso/linguistics-language-system.html">Языковедческий анализ</a> <span class="context-label">Ключевые слова:</span> <a class="mini-chip" href="../search.html?q=%D0%BF%D1%80%D0%B5%D0%B4%D0%B2%D0%B0%D1%80%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9">предварительный</a><a class="mini-chip" href="../search.html?q=%D1%81%D1%82%D0%B8%D1%85">стих</a><a class="mini-chip" href="../search.html?q=%D0%B7%D0%B0%D0%BC%D0%B5%D1%82%D0%BA%D0%B0">заметка</a></div>
 
         </article>
 
@@ -369,12 +386,13 @@
                 · <a href="../themes/religion-and-philosophy.html">Религия и философия</a>
             </div>
             <div class="meta talk-meta-row"><span>2018-05-15 · Вторник · 10:00 – 13:30</span><span class="talk-meta-session">Утреннее заседание</span></div>
+            <div class="meta talk-context"><span class="context-label">Ключевые слова:</span> <a class="mini-chip" href="../search.html?q=%D1%87%D0%B5%D0%BB%D0%BE%D0%B2%D0%B5%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9">человеческий</a><a class="mini-chip" href="../search.html?q=%D0%BA%D0%BE%D1%80%D0%B5%D0%BD%D1%8C">корень</a><a class="mini-chip" href="../search.html?q=%D0%B8%D0%BD%D0%B4%D0%BE%D0%B5%D0%B2%D1%80%D0%BE%D0%BF%D0%B5%D0%B9%D1%81%D0%BA%D0%B8%D0%B9">индоевропейский</a></div>
 
         </article>
     </section>
 
         <h2>Связанные авторы</h2>
-        <section class="grid"><article class="card"><strong><a href="sofia-tsvetkova.html">Цветкова Светлана Олеговна</a></strong><div class="meta">22 доклада · <a href="../themes/religion-and-philosophy.html">Религия и философия</a></div></article><article class="card"><strong><a href="victoria-lysenko.html">Лысенко Виктория Георгиевна</a></strong><div class="meta">16 докладов · <a href="../themes/religion-and-philosophy.html">Религия и философия</a></div></article><article class="card"><strong><a href="natalia-korneeva.html">Корнеева Наталья Афанасьевна</a></strong><div class="meta">15 докладов · <a href="../themes/religion-and-philosophy.html">Религия и философия</a></div></article><article class="card"><strong><a href="areg-mekhakyan.html">Мехакян Арег Гайкович</a></strong><div class="meta">15 докладов · <a href="../themes/religion-and-philosophy.html">Религия и философия</a></div></article><article class="card"><strong><a href="olga-vecherina.html">Вечерина Ольга Павловна</a></strong><div class="meta">13 докладов · <a href="../themes/religion-and-philosophy.html">Религия и философия</a></div></article><article class="card"><strong><a href="paribok-andrei.html">Парибок Андрей Всеволодович</a></strong><div class="meta">13 докладов · <a href="../themes/religion-and-philosophy.html">Религия и философия</a></div></article><article class="card"><strong><a href="ignatev-andrei.html">Игнатьев Андрей Александрович</a></strong><div class="meta">12 докладов · <a href="../themes/religion-and-philosophy.html">Религия и философия</a></div></article><article class="card"><strong><a href="pskhu-ruzana.html">Псху Рузана Владимировна</a></strong><div class="meta">12 докладов · <a href="../themes/religion-and-philosophy.html">Религия и философия</a></div></article></section>
+        <section class="grid"><article class="card"><strong><a href="sergey-tavastsherna.html">Тавастшерна Сергей Сергеевич</a></strong><div class="meta">20 докладов · <a href="../themes/linguistics-and-philology.html">Лингвистика и филология</a></div><div class="meta related-reasons">общие мезоуровни: Ведийские исследования, Филология текста; общие ключевые слова: атхарвавед, стих, этимология; та же площадка/год: Зографские чтения 2018, Зографские чтения 2025</div></article><article class="card"><strong><a href="victoria-vertogradova.html">Вертоградова Виктория Викторовна</a></strong><div class="meta">13 докладов · <a href="../themes/history-and-culture.html">История, этнография и общество</a></div><div class="meta related-reasons">общие мезоуровни: Ведийские исследования, Филология текста; общие ключевые слова: реконструкция; та же площадка/год: Рериховские чтения 2020, Рериховские чтения 2021</div></article><article class="card"><strong><a href="natalia-korneeva.html">Корнеева Наталья Афанасьевна</a></strong><div class="meta">15 докладов · <a href="../themes/religion-and-philosophy.html">Религия и философия</a></div><div class="meta related-reasons">общие мезоуровни: Ведийские исследования, Языковедческий анализ; общие ключевые слова: ведийский; та же площадка/год: Зографские чтения 2022, Зографские чтения 2025</div></article><article class="card"><strong><a href="natalia-alexandrova.html">Александрова Наталия Владимировна</a></strong><div class="meta">20 докладов · <a href="../themes/literature-and-poetry.html">Литература и поэзия</a></div><div class="meta related-reasons">общие мезоуровни: Филология текста; общие ключевые слова: возможный, реконструкция, след; та же площадка/год: Зографские чтения 2018, Зографские чтения 2025</div></article><article class="card"><strong><a href="lyulina-anastasiya.html">Люлина Анастасия Геннадьевна</a></strong><div class="meta">9 докладов · <a href="../themes/history-and-culture.html">История, этнография и общество</a></div><div class="meta related-reasons">общие мезоуровни: Филология текста, Языковедческий анализ; общие ключевые слова: семантика, этимология; та же площадка/год: Рериховские чтения 2020, Рериховские чтения 2021</div></article><article class="card"><strong><a href="anastasia-krylova.html">Крылова Анастасия Сергеевна</a></strong><div class="meta">7 докладов · <a href="../themes/linguistics-and-philology.html">Лингвистика и филология</a></div><div class="meta related-reasons">общие мезоуровни: Филология текста, Языковедческий анализ; общие ключевые слова: этимология; та же площадка/год: Зографские чтения 2025, Зографские чтения 2026</div></article><article class="card"><strong><a href="desnitskaya-evgeniya.html">Десницкая Евгения Алексеевна</a></strong><div class="meta">11 докладов · <a href="../themes/religion-and-philosophy.html">Религия и философия</a></div><div class="meta related-reasons">общие мезоуровни: Ведийские исследования, Языковедческий анализ; та же площадка/год: Зографские чтения 2018, Зографские чтения 2022; общая рубрика: Лингвистика и филология, Религия и философия</div></article><article class="card"><strong><a href="voloshina-oksana.html">Волошина Оксана Анатольевна</a></strong><div class="meta">8 докладов · <a href="../themes/linguistics-and-philology.html">Лингвистика и филология</a></div><div class="meta related-reasons">общие мезоуровни: Ведийские исследования, Языковедческий анализ; та же площадка/год: Зографские чтения 2018, Зографские чтения 2022; общая рубрика: Лингвистика и филология, Религия и философия</div></article></section>
 
         <div class="footer">© 2026 Russian Indological Research Archive. Сгенерировано из нормализованного архива конференций.</div>
     </main>

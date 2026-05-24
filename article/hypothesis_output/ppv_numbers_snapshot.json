@@ -1,23 +1,33 @@
 {
   "total": {
-    "unique_scholars": 221,
-    "person_table_rows": 221,
+    "unique_scholars": 220,
+    "person_table_rows": 220,
     "presentations": 895,
     "author_participations": 899,
-    "known_birth_years": 110,
+    "known_birth_years": 220,
     "cross_cohort": 38,
-    "zograf_only": 130,
+    "zograf_only": 129,
     "roerich_only": 53
+  },
+  "combined_activity": {
+    "unique_scholars": 220,
+    "author_participations": 899,
+    "one_talk_share_pct": 42.7,
+    "core_share_pct": 32.3,
+    "retention_pct": 57.3,
+    "gini": 0.51,
+    "median_talks": 2,
+    "max_talks": 22
   },
   "series": {
     "Zograf": {
-      "unique_scholars": 168,
+      "unique_scholars": 167,
       "presentations": 540,
       "author_participations": 544,
-      "one_talk_share_pct": 44.6,
-      "core_share_pct": 23.8,
-      "retention_pct": 55.4,
-      "gini": 0.462,
+      "one_talk_share_pct": 43.7,
+      "core_share_pct": 24.0,
+      "retention_pct": 56.3,
+      "gini": 0.461,
       "median_talks": 2,
       "max_talks": 15
     },
@@ -34,13 +44,13 @@
     }
   },
   "zograf_until_2025": {
-    "unique_scholars": 149,
+    "unique_scholars": 148,
     "presentations": 482,
     "author_participations": 484,
-    "one_talk_share_pct": 40.9,
-    "core_share_pct": 25.5,
-    "retention_pct": 59.1,
-    "gini": 0.446,
+    "one_talk_share_pct": 39.9,
+    "core_share_pct": 25.7,
+    "retention_pct": 60.1,
+    "gini": 0.444,
     "median_talks": 2,
     "max_talks": 14
   },

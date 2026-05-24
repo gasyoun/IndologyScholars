@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "generated": "2026-05-23",
+  "generated": "2026-05-24",
   "build": {
     "source": "IndologyScholars",
     "pipeline_version": "2026-05-21",
@@ -9,6 +9,8 @@
   "summary": {
     "total_scholars": 220,
     "total_presentations": 899,
+    "unique_presentations": 895,
+    "author_participations": 899,
     "total_events": 40,
     "years_covered": 20,
     "start_year": 2004,

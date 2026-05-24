@@ -1,3 +1,4 @@
+import csv
 import datetime as dt
 import json
 from collections import defaultdict
@@ -94,12 +95,66 @@ def search_href(query):
     return f"../search.html?q={quote(clean_text(query))}"
 
 
+def load_csv_rows(path):
+    source = Path(path)
+    if not source.exists():
+        return []
+    with source.open("r", encoding="utf-8-sig", newline="") as handle:
+        return list(csv.DictReader(handle))
+
+
+def meso_path(code):
+    return f"meso/{slugify(code, 'meso')}.html"
+
+
+def title_case_ru(label):
+    label = clean_text(label)
+    return label[:1].upper() + label[1:] if label else ""
+
+
+def load_meso_context():
+    meso_items = {}
+    meso_by_presentation = defaultdict(list)
+
+    for row in load_csv_rows("article/hypothesis_output/title_keyword_microseries.csv"):
+        code = clean_text(row.get("microseries") or "")
+        if code:
+            meso_items[code] = {
+                "label": clean_text(row.get("label") or code),
+                "kind": "Мини-серия",
+            }
+
+    for row in load_csv_rows("article/hypothesis_output/title_keyword_linguistics_subfields.csv"):
+        approach = clean_text(row.get("approach") or "")
+        if approach:
+            code = f"linguistics_{approach}"
+            meso_items[code] = {
+                "label": title_case_ru(row.get("label") or approach),
+                "kind": "Подраздел рубрики «Лингвистика и филология»",
+            }
+
+    for row in load_csv_rows("article/hypothesis_output/title_keyword_microseries_titles.csv"):
+        code = clean_text(row.get("microseries") or "")
+        pid = clean_text(row.get("presentation_id") or "")
+        if code and pid:
+            meso_by_presentation[pid].append(code)
+
+    for row in load_csv_rows("article/hypothesis_output/title_keyword_linguistics_subfield_titles.csv"):
+        approach = clean_text(row.get("approach") or "")
+        pid = clean_text(row.get("presentation_id") or "")
+        if approach and pid:
+            meso_by_presentation[pid].append(f"linguistics_{approach}")
+
+    return meso_items, meso_by_presentation
+
+
 def series_participation_line(scholar, name_ru, label, count_key, first_key, last_key):
     count = int(scholar.get(count_key) or 0)
-    years = describe_year_span(scholar.get(first_key), scholar.get(last_key)) if count else "нет докладов"
-    count_text = talks_count_label(count) if count else "0 докладов"
     href = search_href((name_ru or "") + " " + label)
-    return f'<div class="series-line"><a href="{esc(href)}">{esc(label)}</a>: {esc(count_text)} · {esc(years)}</div>'
+    if not count:
+        return f'<div class="series-line"><a href="{esc(href)}">{esc(label)}</a>: не участвовал</div>'
+    years = describe_year_span(scholar.get(first_key), scholar.get(last_key))
+    return f'<div class="series-line"><a href="{esc(href)}">{esc(label)}</a>: {esc(talks_count_label(count))} · {esc(years)}</div>'
 
 
 def normalize_affiliation_link_label(aff):
@@ -197,7 +252,7 @@ def scholar_description(scholar):
     total = scholar.get("total_talks", 0)
     years = describe_year_span(scholar.get("first_year"), scholar.get("last_year"))
     theme, _, _ = scholar_profile_meta(scholar)
-    return f"{name}: {total} докладов в архиве Зографских и Рериховских чтений, период активности {years}, основной профиль: {theme}."
+    return f"{name}: {talks_count_label(total)} в архиве Зографских и Рериховских чтений, период активности {years}, основной профиль: {theme}."
 
 
 def unique_affiliations(scholar, limit=16):
@@ -224,11 +279,168 @@ def unique_cities(scholar):
 
 def chip_links(items, href_factory, class_name="chip"):
     if not items:
-        return '<span class="meta">No records</span>'
+        return '<span class="meta">Нет данных</span>'
     return "".join(f'<a class="{class_name}" href="{href_factory(item)}">{esc(item)}</a>' for item in items)
 
 
-def talk_card(talk):
+GENERIC_TAGS = {
+    "индия",
+    "индийский",
+    "древний",
+    "средневековый",
+    "современный",
+    "текст",
+    "литература",
+    "москва",
+    "новый",
+    "петербург",
+    "санкт",
+    "старый",
+    "тема",
+    "форма",
+}
+
+
+def talk_meso_codes(talk, meso_by_presentation):
+    pid = clean_text(talk.get("presentation_id") or "")
+    return list(dict.fromkeys(meso_by_presentation.get(pid, [])))
+
+
+def meso_label(code, meso_items):
+    return (meso_items.get(code) or {}).get("label") or code.replace("_", " ")
+
+
+def linked_meso_chip(code, meso_items, prefix="../", class_name="mini-chip"):
+    href = prefix + meso_path(code)
+    return f'<a class="{class_name}" href="{esc(href)}">{esc(meso_label(code, meso_items))}</a>'
+
+
+def linked_keyword_chip(keyword, class_name="mini-chip"):
+    return f'<a class="{class_name}" href="{esc(search_href(keyword))}">{esc(keyword)}</a>'
+
+
+def clean_tags(talk):
+    values = []
+    seen = set()
+    for tag in talk.get("tags") or []:
+        value = clean_text(tag).lower()
+        if len(value) < 3 or value in GENERIC_TAGS or value in seen:
+            continue
+        seen.add(value)
+        values.append(value)
+    return values
+
+
+def scholar_context(scholar, meso_by_presentation):
+    meso = set()
+    tags = set()
+    themes = set()
+    cities = set(unique_cities(scholar))
+    conference_years = set()
+    for talk in scholar.get("talks", []):
+        meso.update(talk_meso_codes(talk, meso_by_presentation))
+        tags.update(clean_tags(talk))
+        theme_code = (talk.get("theme") or {}).get("code")
+        if theme_code and theme_code != "unspecified":
+            themes.add(theme_code)
+        year = talk.get("year")
+        series = series_label(talk.get("series"))
+        if year and series:
+            conference_years.add(f"{series} {year}")
+    return {
+        "meso": meso,
+        "tags": tags,
+        "themes": themes,
+        "cities": cities,
+        "conference_years": conference_years,
+    }
+
+
+def relation_reasons(base_context, candidate_context, meso_items, limit=3):
+    reasons = []
+    common_meso = sorted(
+        base_context["meso"] & candidate_context["meso"],
+        key=lambda code: meso_label(code, meso_items),
+    )
+    if common_meso:
+        labels = ", ".join(meso_label(code, meso_items) for code in common_meso[:2])
+        reasons.append(f"общие мезоуровни: {labels}")
+
+    common_tags = sorted(base_context["tags"] & candidate_context["tags"])
+    if common_tags:
+        reasons.append(f"общие ключевые слова: {', '.join(common_tags[:3])}")
+
+    common_conferences = sorted(base_context["conference_years"] & candidate_context["conference_years"])
+    if common_conferences:
+        reasons.append(f"та же площадка/год: {', '.join(common_conferences[:2])}")
+
+    common_themes = sorted(base_context["themes"] & candidate_context["themes"])
+    if common_themes:
+        reasons.append(f"общая рубрика: {', '.join(theme_label(code, 'ru') for code in common_themes[:2])}")
+
+    common_cities = sorted(base_context["cities"] & candidate_context["cities"])
+    if common_cities:
+        reasons.append(f"общий центр: {', '.join(common_cities[:2])}")
+
+    return reasons[:limit]
+
+
+def related_scholars(scholar, scholars, meso_by_presentation, meso_items):
+    base_context = scholar_context(scholar, meso_by_presentation)
+    scored = []
+    for candidate in scholars:
+        if candidate["id"] == scholar["id"]:
+            continue
+        candidate_context = scholar_context(candidate, meso_by_presentation)
+        common_meso = base_context["meso"] & candidate_context["meso"]
+        common_tags = base_context["tags"] & candidate_context["tags"]
+        common_themes = base_context["themes"] & candidate_context["themes"]
+        common_cities = base_context["cities"] & candidate_context["cities"]
+        common_conferences = base_context["conference_years"] & candidate_context["conference_years"]
+        score = (
+            len(common_meso) * 10
+            + len(common_conferences) * 5
+            + len(common_tags) * 3
+            + len(common_themes) * 2
+            + len(common_cities)
+        )
+        if score <= 0:
+            continue
+        scored.append(
+            {
+                "scholar": candidate,
+                "score": score,
+                "reasons": relation_reasons(base_context, candidate_context, meso_items),
+            }
+        )
+    scored.sort(
+        key=lambda item: (
+            -item["score"],
+            -(item["scholar"].get("total_talks") or 0),
+            item["scholar"].get("full_name_ru") or item["scholar"].get("name"),
+        )
+    )
+    return scored[:8]
+
+
+def talk_context_html(talk, meso_by_presentation, meso_items):
+    meso_codes = talk_meso_codes(talk, meso_by_presentation)
+    tags = clean_tags(talk)
+    parts = []
+    if meso_codes:
+        meso_links = "".join(linked_meso_chip(code, meso_items) for code in meso_codes[:4])
+        parts.append(f'<span class="context-label">Срезы:</span> {meso_links}')
+    if tags:
+        tag_links = "".join(linked_keyword_chip(tag) for tag in tags[:4])
+        parts.append(f'<span class="context-label">Ключевые слова:</span> {tag_links}')
+    if not parts:
+        return ""
+    return f'<div class="meta talk-context">{" ".join(parts)}</div>'
+
+
+def talk_card(talk, meso_by_presentation=None, meso_items=None):
+    meso_by_presentation = meso_by_presentation or {}
+    meso_items = meso_items or {}
     theme = talk.get("theme") or {}
     theme_code = theme.get("code", "History")
     city = (talk.get("geography") or {}).get("ru")
@@ -262,28 +474,63 @@ def talk_card(talk):
                 · <a href="../{theme_path(theme_code)}">{esc(theme_label(theme_code, "ru"))}</a>{city_html}
             </div>
             <div class="meta talk-meta-row"><span>{talk_time}</span><span class="talk-meta-session">{session}</span></div>
+            {talk_context_html(talk, meso_by_presentation, meso_items)}
             {video_html}
         </article>
     """
 
 
-def related_scholars(scholar, scholars_by_theme, scholars_by_city):
-    candidate_ids = []
-    theme = scholar.get("dominant_theme")
-    if theme:
-        candidate_ids.extend(scholars_by_theme.get(theme, []))
-    for city in unique_cities(scholar):
-        candidate_ids.extend(scholars_by_city.get(city, []))
+def scholar_meso_counts(scholar, meso_by_presentation):
+    counts = defaultdict(int)
+    for talk in scholar.get("talks", []):
+        for code in talk_meso_codes(talk, meso_by_presentation):
+            counts[code] += 1
+    return counts
 
-    seen = set()
-    related = []
-    for candidate in candidate_ids:
-        if candidate["id"] == scholar["id"] or candidate["id"] in seen:
-            continue
-        seen.add(candidate["id"])
-        related.append(candidate)
-    related.sort(key=lambda item: (-item.get("total_talks", 0), item.get("full_name_ru") or item.get("name")))
-    return related[:8]
+
+def scholar_keyword_counts(scholar):
+    counts = defaultdict(int)
+    for talk in scholar.get("talks", []):
+        for tag in clean_tags(talk):
+            counts[tag] += 1
+    return counts
+
+
+def scholar_context_block(scholar, meso_by_presentation, meso_items):
+    meso_counts = scholar_meso_counts(scholar, meso_by_presentation)
+    keyword_counts = scholar_keyword_counts(scholar)
+    meso_links = []
+    for code, count in sorted(meso_counts.items(), key=lambda item: (-item[1], meso_label(item[0], meso_items)))[:8]:
+        href = "../" + meso_path(code)
+        meso_links.append(
+            f'<a class="chip" href="{esc(href)}">{esc(meso_label(code, meso_items))} · {esc(talks_count_label(count))}</a>'
+        )
+    keyword_links = []
+    for keyword, count in sorted(keyword_counts.items(), key=lambda item: (-item[1], item[0]))[:10]:
+        label = f"{keyword} · {count}" if count > 1 else keyword
+        keyword_links.append(f'<a class="chip" href="{esc(search_href(keyword))}">{esc(label)}</a>')
+
+    rows = []
+    if meso_links:
+        rows.append(f'<div><strong>Мезоуровни</strong><div class="chip-row">{"".join(meso_links)}</div></div>')
+    if keyword_links:
+        rows.append(f'<div><strong>Ключевые слова</strong><div class="chip-row">{"".join(keyword_links)}</div></div>')
+    if not rows:
+        rows.append('<p class="meta">Для этого профиля пока нет устойчивых мезоуровней или ключевых контуров.</p>')
+    return f"""
+        <h2>Мезоуровни и ключевые контуры</h2>
+        <section class="context-block">{''.join(rows)}</section>
+    """
+
+
+def archive_records_label(count):
+    return f"{ru_plural(count, 'запись', 'записи', 'записей')} в архиве"
+
+
+def activity_label(scholar):
+    first_year = scholar.get("first_year")
+    last_year = scholar.get("last_year")
+    return "год участия" if first_year and first_year == last_year else "годы участия"
 
 
 def profile_structured_data(scholar, authority):
@@ -356,7 +603,7 @@ def build_indexes(scholars):
     return by_theme, by_city
 
 
-def render_profile(scholar, related, authority):
+def render_profile(scholar, related, authority, meso_by_presentation, meso_items):
     name_ru = scholar.get("full_name_ru") or scholar.get("name")
     name_en = scholar.get("full_name_en") or scholar.get("name")
     description = scholar_description(scholar)
@@ -375,11 +622,16 @@ def render_profile(scholar, related, authority):
     )
 
     related_cards = []
-    for item in related:
+    for relation in related:
+        item = relation["scholar"]
         item_profile_label, item_theme_code, _ = scholar_profile_meta(item)
+        reason_html = ""
+        if relation.get("reasons"):
+            reason_html = f'<div class="meta related-reasons">{esc("; ".join(relation["reasons"]))}</div>'
         related_cards.append(
             f'<article class="card"><strong><a href="{item["url_slug"]}.html">{esc(item.get("full_name_ru") or item.get("name"))}</a></strong>'
-            f'<div class="meta">{esc(talks_count_label(item.get("total_talks") or 0))} · <a href="../{theme_path(item_theme_code)}">{esc(item_profile_label)}</a></div></article>'
+            f'<div class="meta">{esc(talks_count_label(item.get("total_talks") or 0))} · <a href="../{theme_path(item_theme_code)}">{esc(item_profile_label)}</a></div>'
+            f'{reason_html}</article>'
         )
     related_html = "".join(related_cards) or '<p class="meta">Связанные авторы в этом индексе не найдены.</p>'
 
@@ -426,8 +678,8 @@ def render_profile(scholar, related, authority):
         </header>
 
         <section class="grid">
-            <article class="card"><strong>Доклады</strong><div class="metric">{esc(scholar.get("total_talks"))}</div><div class="meta">записи докладов</div></article>
-            <article class="card"><strong>Активность</strong><div class="metric">{esc(describe_year_span(scholar.get("first_year"), scholar.get("last_year")))}</div><div class="meta">годы участия</div></article>
+            <article class="card"><strong>Доклады</strong><div class="metric">{esc(scholar.get("total_talks"))}</div><div class="meta">{esc(archive_records_label(scholar.get("total_talks") or 0))}</div></article>
+            <article class="card"><strong>Активность</strong><div class="metric">{esc(describe_year_span(scholar.get("first_year"), scholar.get("last_year")))}</div><div class="meta">{esc(activity_label(scholar))}</div></article>
             <article class="card"><strong>Рубрика</strong><div class="metric"><a href="../{theme_path(theme_code)}">{esc(profile_label)}</a></div></article>
             <article class="card"><strong>Площадки</strong><div class="meta">{series_html}</div></article>
         </section>
@@ -441,8 +693,10 @@ def render_profile(scholar, related, authority):
         <h2>Статусы</h2>
         <div class="chip-row">{''.join(f'<span class="chip">{esc(item)}</span>' for item in status) or '<span class="meta">Особые статусы не указаны.</span>'}</div>{external_links_html}
 
+        {scholar_context_block(scholar, meso_by_presentation, meso_items)}
+
         <h2>Доклады</h2>
-        <section class="list">{''.join(talk_card(talk) for talk in scholar.get("talks", []))}</section>
+        <section class="list">{''.join(talk_card(talk, meso_by_presentation, meso_items) for talk in scholar.get("talks", []))}</section>
 
         <h2>Связанные авторы</h2>
         <section class="grid">{related_html}</section>
@@ -457,6 +711,12 @@ def render_profile(scholar, related, authority):
         .metric { font-size: 1.4rem; font-weight: 700; margin-top: 0.2rem; }
         .chip-row { display: flex; flex-wrap: wrap; gap: 0.5rem; }
         .series-line + .series-line { margin-top: 0.28rem; }
+        .context-block { display: grid; gap: 0.95rem; margin-bottom: 1.4rem; }
+        .context-block strong { display: block; margin-bottom: 0.45rem; }
+        .mini-chip { display: inline-block; margin: 0.18rem 0.25rem 0.18rem 0; padding: 0.18rem 0.45rem; border: 1px solid rgba(148,163,184,0.32); border-radius: 999px; font-size: 0.82rem; }
+        .context-label { color: var(--soft); font-weight: 650; margin-right: 0.25rem; }
+        .talk-context { margin-top: 0.45rem; line-height: 1.8; }
+        .related-reasons { margin-top: 0.45rem; font-size: 0.86rem; }
         .talk-meta-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 1rem; align-items: baseline; }
         .talk-meta-session { text-align: right; white-space: nowrap; }
     </style>
@@ -545,7 +805,7 @@ def main():
     OUTPUT_DIR.mkdir(exist_ok=True)
     data = load_site_data("site_data.json")
     scholars = data.get("scholars", [])
-    by_theme, by_city = build_indexes(scholars)
+    meso_items, meso_by_presentation = load_meso_context()
     authority = load_authority_ids()
     legacy_redirects = load_legacy_redirects()
     slug_redirects = load_slug_redirects()
@@ -556,8 +816,8 @@ def main():
     for scholar in scholars:
         slug = scholar["url_slug"]
         generated_slugs.add(slug)
-        related = related_scholars(scholar, by_theme, by_city)
-        html = render_profile(scholar, related, authority)
+        related = related_scholars(scholar, scholars, meso_by_presentation, meso_items)
+        html = render_profile(scholar, related, authority, meso_by_presentation, meso_items)
         canonical_filename = f"{slug}.html"
         (OUTPUT_DIR / canonical_filename).write_text(html, encoding="utf-8", newline="\n")
         written_files.add(canonical_filename)
