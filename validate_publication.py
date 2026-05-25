@@ -208,6 +208,9 @@ def main():
     for needle in ['rel="canonical"', 'og:image', 'twitter:image', 'application/ld+json', 'id="inst-table"', 'publication-links']:
         if needle not in index_html:
             fail(errors, f"index.html missing {needle}")
+    for needle in ['rel="manifest"', 'apple-touch-icon', 'assets/pwa.js']:
+        if needle not in index_html:
+            fail(errors, f"index.html missing PWA integration {needle}")
     talks_ru_desc = f"{summary.get('total_presentations', 0)} участий в {summary.get('unique_presentations', 0)} уникальных докладах"
     talks_en_desc = f"{summary.get('total_presentations', 0)} participations across {summary.get('unique_presentations', 0)} unique talks"
     if index_html.count(talks_ru_desc) < 2 or talks_en_desc not in index_html:
@@ -218,6 +221,9 @@ def main():
     required = [
         "sitemap.xml",
         "robots.txt",
+        "site.webmanifest",
+        "offline.html",
+        "service-worker.js",
         "404.html",
         "en.html",
         "search.html",
@@ -248,6 +254,10 @@ def main():
         "analytics_output/publication_file_manifest.json",
         "assets/og-image.png",
         "assets/favicon.svg",
+        "assets/icon-192.png",
+        "assets/icon-512.png",
+        "assets/apple-touch-icon.png",
+        "assets/pwa.js",
         "scholars/index.html",
         "conferences/index.html",
         "presentations/index.html",
@@ -270,6 +280,24 @@ def main():
     for path in required:
         if not Path(path).exists():
             fail(errors, f"Missing generated publication asset: {path}")
+
+    if Path("site.webmanifest").exists():
+        app_manifest = json.loads(read("site.webmanifest"))
+        icon_sizes = {icon.get("sizes") for icon in app_manifest.get("icons", [])}
+        if app_manifest.get("display") != "standalone" or app_manifest.get("scope") != "/IndologyScholars/":
+            fail(errors, "site.webmanifest missing installable application scope or display mode")
+        if not {"192x192", "512x512"}.issubset(icon_sizes):
+            fail(errors, "site.webmanifest missing PNG installation icons")
+
+    if Path("assets/pwa.js").exists():
+        pwa_script = read("assets/pwa.js")
+        if "navigator.serviceWorker" not in pwa_script or ".register(" not in pwa_script:
+            fail(errors, "assets/pwa.js does not register the service worker")
+    if Path("service-worker.js").exists():
+        service_worker = read("service-worker.js")
+        for needle in ["offline.html", "site_data.json", "search-index.json"]:
+            if needle not in service_worker:
+                fail(errors, f"service-worker.js missing cached application resource {needle}")
 
     if Path("analytics_output/expanded_classification_deepseek.csv").exists():
         classified = load_csv("analytics_output/expanded_classification_deepseek.csv")

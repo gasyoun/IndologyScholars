@@ -602,7 +602,12 @@ def page_shell(title, description, canonical_path, body, structured_data=None, e
     <link rel="alternate" hreflang="{esc(language)}" href="{canonical}">
     <link rel="alternate" hreflang="x-default" href="{canonical}">
     <link rel="icon" href="/IndologyScholars/assets/favicon.svg" type="image/svg+xml">
+    <link rel="manifest" href="/IndologyScholars/site.webmanifest">
+    <link rel="apple-touch-icon" href="/IndologyScholars/assets/apple-touch-icon.png">
     <meta name="theme-color" content="#101513">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="IndologyScholars">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta property="og:type" content="website">
     <meta property="og:url" content="{canonical}">
     <meta property="og:title" content="{title_html}">
@@ -612,6 +617,7 @@ def page_shell(title, description, canonical_path, body, structured_data=None, e
     <meta name="twitter:title" content="{title_html}">
     <meta name="twitter:description" content="{desc_html}">
     <meta name="twitter:image" content="{OG_IMAGE_URL}">
+    <script defer src="/IndologyScholars/assets/pwa.js"></script>
     {extra_head}{structured}
     <style>
         :root {{

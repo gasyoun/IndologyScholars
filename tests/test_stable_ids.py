@@ -82,6 +82,12 @@ class StableIdTests(unittest.TestCase):
         self.assertEqual(tokens, ["матричета", "тохарский", "перевод", "комментарий"])
         self.assertFalse(any(re.search(r"[a-z]", token, flags=re.IGNORECASE) for token in tokens))
 
+    def test_page_shell_includes_mobile_install_metadata(self):
+        html = publication_helpers.page_shell("Title", "Description", "test.html", "<p>Body</p>")
+        self.assertIn('rel="manifest"', html)
+        self.assertIn('apple-touch-icon.png', html)
+        self.assertIn('assets/pwa.js', html)
+
     def test_leading_institution_is_public_metadata_not_title_text(self):
         title, affiliation = metadata_normalization.split_leading_affiliation(
             "(СПбГУ). Древнеиндийские диалекты в ранних фонетических трактатах"

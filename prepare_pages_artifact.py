@@ -14,6 +14,8 @@ PUBLIC_PATHS = [
     "sitemap.xml",
     "robots.txt",
     "site.webmanifest",
+    "offline.html",
+    "service-worker.js",
     "CITATION.cff",
     "datapackage.json",
     "data_dictionary.md",

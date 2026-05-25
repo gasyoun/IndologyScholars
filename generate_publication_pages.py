@@ -100,9 +100,11 @@ def generated_manifest_paths():
         "classification-criteria.html",
         "metrics-guide.html",
         "networks.html",
+        "offline.html",
         "robots.txt",
         "search.html",
         "search-index.json",
+        "service-worker.js",
         "site.webmanifest",
         "site_data.json",
         "sitemap.xml",
@@ -133,7 +135,7 @@ def generate_publication_file_manifest():
     Path("analytics_output").mkdir(exist_ok=True)
     csv_path = Path("analytics_output/publication_file_manifest.csv")
     with open(csv_path, "w", encoding="utf-8", newline="") as f:
-        writer = csv.DictWriter(f, fieldnames=["path", "size_bytes", "sha256"])
+        writer = csv.DictWriter(f, fieldnames=["path", "size_bytes", "sha256"], lineterminator="\n")
         writer.writeheader()
         writer.writerows(rows)
 
@@ -1025,11 +1027,18 @@ Sitemap: {site_url('sitemap.xml')}
     manifest = {
         "name": SITE_NAME,
         "short_name": "IndologyScholars",
+        "id": "/IndologyScholars/",
         "start_url": "/IndologyScholars/",
+        "scope": "/IndologyScholars/",
+        "lang": "ru",
         "display": "standalone",
         "background_color": "#0a0e1a",
         "theme_color": "#0a0e1a",
-        "icons": [{"src": "/IndologyScholars/assets/favicon.svg", "sizes": "any", "type": "image/svg+xml"}],
+        "icons": [
+            {"src": "/IndologyScholars/assets/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable"},
+            {"src": "/IndologyScholars/assets/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable"},
+            {"src": "/IndologyScholars/assets/favicon.svg", "sizes": "any", "type": "image/svg+xml"},
+        ],
     }
     write_text("site.webmanifest", json.dumps(manifest, ensure_ascii=False, indent=2))
 
@@ -1040,7 +1049,58 @@ Sitemap: {site_url('sitemap.xml')}
 </svg>
 """
     write_text("assets/favicon.svg", favicon)
+    write_app_icon("assets/icon-192.png", 192)
+    write_app_icon("assets/icon-512.png", 512)
+    write_app_icon("assets/apple-touch-icon.png", 180)
     write_og_image("assets/og-image.png")
+
+
+def write_app_icon(path, size):
+    background = (10, 14, 26)
+    lavender = (196, 181, 253)
+    pink = (236, 72, 153)
+    line_width = max(2, round(size * 4 / 64))
+    accent_width = max(2, round(size * 3 / 64))
+
+    def scale(value):
+        return round(size * value / 64)
+
+    def near(value, target, width):
+        return abs(value - target) <= width / 2
+
+    rows = []
+    for y in range(size):
+        row = bytearray([0])
+        for x in range(size):
+            color = background
+            book_outline = (
+                (scale(22) <= x <= scale(42) and (near(y, scale(18), line_width) or near(y, scale(38), line_width)))
+                or (scale(18) <= y <= scale(38) and (near(x, scale(22), line_width) or near(x, scale(42), line_width)))
+                or (scale(18) <= x <= scale(46) and near(y, scale(38), line_width))
+                or (scale(14) <= x <= scale(50) and near(y, scale(44), line_width))
+            )
+            accent = (
+                (scale(25) <= x <= scale(39) and near(y, scale(25), accent_width))
+                or (scale(25) <= x <= scale(35) and near(y, scale(31), accent_width))
+            )
+            if book_outline:
+                color = lavender
+            if accent:
+                color = pink
+            row.extend(color)
+        rows.append(bytes(row))
+    raw = b"".join(rows)
+
+    def chunk(kind, data):
+        return struct.pack(">I", len(data)) + kind + data + struct.pack(">I", zlib.crc32(kind + data) & 0xFFFFFFFF)
+
+    png = (
+        b"\x89PNG\r\n\x1a\n"
+        + chunk(b"IHDR", struct.pack(">IIBBBBB", size, size, 8, 2, 0, 0, 0))
+        + chunk(b"IDAT", zlib.compress(raw, 9))
+        + chunk(b"IEND", b"")
+    )
+    Path(path).write_bytes(png)
 
 
 def write_og_image(path):
