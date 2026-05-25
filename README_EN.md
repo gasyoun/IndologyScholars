@@ -15,12 +15,12 @@ The published collection as of 25 May 2026 contains:
 
 | Measure | Value |
 | --- | ---: |
-| Speaker profiles | 286 |
+| Speaker profiles | 285 |
 | Unique talks | 1350 |
 | Author participations | 1377 |
 | Programme years | 22, from 2004 to 2026 |
 | Speakers found at both series | 41 |
-| Zograf Readings only | 180 |
+| Zograf Readings only | 179 |
 | Roerich Readings only | 65 |
 
 The archive covers the Zograf Readings for 2004-2026 and the Roerich Readings

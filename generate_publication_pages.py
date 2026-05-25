@@ -21,9 +21,11 @@ except Exception:
 from classification_overrides import CLASSIFICATION_OVERRIDES, MESO_LABELS
 from publication_helpers import (
     AUTHOR_NAME,
+    assign_public_ids,
     build_presentation_slug_map,
     GENERATION_COHORTS,
     OG_IMAGE_PATH,
+    PUBLIC_ID_CSS,
     SITE_NAME,
     SITE_NAME_RU,
     SITE_URL,
@@ -3342,6 +3344,19 @@ def presentation_detail_body(talk, depth="../"):
 
 def generate_presentation_pages(records):
     unique_records = list(presentation_records_by_id(records).values())
+    public_ids = assign_public_ids(
+        "presentations",
+        unique_records,
+        "presentation_id",
+        lambda talk: (
+            int(talk.get("year") or 0),
+            clean_text(talk.get("date") or ""),
+            clean_text(talk.get("series_key") or talk.get("series") or ""),
+            int(talk.get("order_in_session") or 0),
+            clean_text(talk.get("title") or "").casefold(),
+            clean_text(talk.get("presentation_id") or ""),
+        ),
+    )
     unique_records.sort(key=lambda talk: (-int(talk.get("year") or 0), talk.get("title") or ""))
     year_counts = defaultdict(int)
     cards = []
@@ -3361,7 +3376,8 @@ def generate_presentation_pages(records):
         write_text(path, page_shell(f"{title} | {SITE_NAME}", f"Доклад: {title}.", path, body, structured))
         written_files.add(Path(path).name)
         cards.append(
-            f'<article class="talk"><strong><a href="../{path}">{esc(title)}</a></strong>'
+            f'<article class="talk"><div class="entry-head"><strong><a href="../{path}">{esc(title)}</a></strong>'
+            f'<span class="public-id">ID {esc(public_ids.get(pid))}</span></div>'
             f'<div class="meta">{esc(series_label(talk.get("series_key"), "ru"))} {esc(talk.get("year"))} · {scholar_links_html(talk, "../")}</div></article>'
         )
     year_links = [
@@ -3384,6 +3400,7 @@ def generate_presentation_pages(records):
             "presentations/",
             index_body,
             [page_data("Доклады", "Постоянные страницы докладов.", "presentations/"), make_breadcrumbs([("Главная", ""), ("Доклады", "presentations/")])],
+            extra_head=PUBLIC_ID_CSS,
         ),
     )
     for html_path in Path("presentations").glob("*.html"):

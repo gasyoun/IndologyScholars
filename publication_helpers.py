@@ -12,6 +12,13 @@ SITE_NAME_RU = "Российский индологический научный
 AUTHOR_NAME = "Dr. Mārcis Gasūns"
 OG_IMAGE_PATH = "assets/og-image.png"
 OG_IMAGE_URL = SITE_URL + OG_IMAGE_PATH
+PUBLIC_IDS_PATH = Path("public_ids.json")
+PUBLIC_ID_CSS = """
+    <style>
+        .entry-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 0.75rem; }
+        .public-id { flex: none; color: var(--soft); font-size: 0.82rem; font-weight: 600; white-space: nowrap; }
+    </style>
+"""
 
 GENERATION_COHORTS = [
     {"code": "pre-1940", "start": None, "end": 1939, "ru": "Предшественники (до 1940)", "en": "Predecessors (before 1940)"},
@@ -112,6 +119,51 @@ def build_presentation_slug_map(records, id_key="presentation_id", title_key="ti
         mapping[pid] = candidate
         used.add(candidate)
     return mapping
+
+
+def assign_public_ids(kind, records, id_key, initial_sort_key, path=PUBLIC_IDS_PATH):
+    """Assign compact public IDs once, while retaining retired assignments."""
+    target = Path(path)
+    if target.exists():
+        payload = json.loads(target.read_text(encoding="utf-8"))
+    else:
+        payload = {
+            "description": (
+                "Compact public identifiers assigned once to stable internal records. "
+                "Existing assignments are retained when the site is rebuilt."
+            ),
+            "scholars": {},
+            "presentations": {},
+        }
+
+    assignments = payload.setdefault(kind, {})
+    values = list(assignments.values())
+    if any(not isinstance(value, int) or value < 1 for value in values):
+        raise ValueError(f"Invalid public ID assignment in {target} for {kind}")
+    if len(values) != len(set(values)):
+        raise ValueError(f"Duplicate public ID assignment in {target} for {kind}")
+
+    next_id = max(values, default=0) + 1
+    changed = not target.exists()
+    for record in sorted(records, key=initial_sort_key):
+        internal_id = clean_text(record.get(id_key) or "")
+        if internal_id and internal_id not in assignments:
+            assignments[internal_id] = next_id
+            next_id += 1
+            changed = True
+
+    if changed:
+        target.write_text(
+            json.dumps(payload, ensure_ascii=False, indent=2) + "\n",
+            encoding="utf-8",
+            newline="\n",
+        )
+
+    return {
+        internal_id: assignments[internal_id]
+        for internal_id in (clean_text(record.get(id_key) or "") for record in records)
+        if internal_id in assignments
+    }
 
 
 PATRONYMIC_SUFFIXES = ("вич", "вна", "чна", "чич", "инична", "ична")

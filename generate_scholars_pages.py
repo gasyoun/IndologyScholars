@@ -8,7 +8,9 @@ from urllib.parse import quote
 from classification_overrides import CLASSIFICATION_OVERRIDES, MESO_LABELS
 from publication_helpers import (
     AUTHOR_NAME,
+    assign_public_ids,
     build_presentation_slug_map,
+    PUBLIC_ID_CSS,
     SITE_NAME,
     SITE_URL,
     clean_text,
@@ -806,14 +808,16 @@ def render_profile(scholar, related, authority, meso_by_presentation, meso_items
     )
 
 
-def render_scholars_index(scholars):
+def render_scholars_index(scholars, public_ids):
     cards = []
     for scholar in sorted(scholars, key=lambda item: item.get("full_name_ru") or item.get("name")):
         name = scholar.get("full_name_ru") or scholar.get("name")
         years = describe_year_span(scholar.get("first_year"), scholar.get("last_year"))
         profile_label, theme_code, _ = scholar_profile_meta(scholar)
+        public_id = public_ids.get(scholar.get("id"))
         cards.append(
-            f'<article class="card"><strong><a href="{scholar["url_slug"]}.html">{esc(name)}</a></strong>'
+            f'<article class="card"><div class="entry-head"><strong><a href="{scholar["url_slug"]}.html">{esc(name)}</a></strong>'
+            f'<span class="public-id">ID {esc(public_id)}</span></div>'
             f'<div class="meta">{esc(talks_count_label(scholar.get("total_talks") or 0))} · {esc(years)} · <a href="../{theme_path(theme_code)}">{esc(profile_label)}</a></div></article>'
         )
     body = f"""
@@ -847,6 +851,7 @@ def render_scholars_index(scholars):
         "scholars/",
         body,
         structured,
+        extra_head=PUBLIC_ID_CSS,
     )
 
 
@@ -880,6 +885,15 @@ def main():
     OUTPUT_DIR.mkdir(exist_ok=True)
     data = load_site_data("site_data.json")
     scholars = data.get("scholars", [])
+    public_ids = assign_public_ids(
+        "scholars",
+        scholars,
+        "id",
+        lambda item: (
+            clean_text(item.get("full_name_ru") or item.get("name")).casefold(),
+            clean_text(item.get("id")),
+        ),
+    )
     initialize_presentation_slugs(scholars)
     meso_items, meso_by_presentation = load_meso_context()
     authority = load_authority_ids()
@@ -932,7 +946,7 @@ def main():
         if stale.name not in written_files:
             stale.unlink()
 
-    (OUTPUT_DIR / "index.html").write_text(render_scholars_index(scholars), encoding="utf-8", newline="\n")
+    (OUTPUT_DIR / "index.html").write_text(render_scholars_index(scholars, public_ids), encoding="utf-8", newline="\n")
 
     print(
         f"Successfully generated {len(generated_slugs)} canonical scholar profile pages "

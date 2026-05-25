@@ -1,5 +1,6 @@
 import importlib.util
 import sys
+import tempfile
 import unittest
 from pathlib import Path
 
@@ -225,6 +226,30 @@ class StableIdTests(unittest.TestCase):
         self.assertEqual(publication_helpers.generation_cohort(1943)["code"], "1940s")
         self.assertEqual(publication_helpers.generation_cohort(2003)["code"], "2000s")
 
+    def test_public_ids_are_preserved_when_an_older_record_is_added_later(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            path = Path(tmpdir) / "public_ids.json"
+            current = [{"presentation_id": "PRES_2006", "year": 2006}]
+            assigned = publication_helpers.assign_public_ids(
+                "presentations",
+                current,
+                "presentation_id",
+                lambda item: item["year"],
+                path=path,
+            )
+            expanded = [{"presentation_id": "PRES_2004", "year": 2004}, *current]
+            rebuilt = publication_helpers.assign_public_ids(
+                "presentations",
+                expanded,
+                "presentation_id",
+                lambda item: item["year"],
+                path=path,
+            )
+
+        self.assertEqual(assigned["PRES_2006"], 1)
+        self.assertEqual(rebuilt["PRES_2006"], 1)
+        self.assertEqual(rebuilt["PRES_2004"], 2)
+
     def test_verified_biographical_variants_share_a_person_key(self):
         self.assertEqual(
             build.canonical_person_key(
@@ -251,6 +276,13 @@ class StableIdTests(unittest.TestCase):
                 "\u0411\u0443\u0440\u043c\u0438\u0441\u0442\u0440\u043e\u0432 "
                 "\u0421\u0435\u0440\u0433\u0435\u0439 "
                 "\u041b\u0435\u043e\u043d\u0438\u0434\u043e\u0432\u0438\u0447"
+            ),
+        )
+        self.assertEqual(
+            build.canonical_person_key("\u041e. \u0412. \u0412\u0435\u0447\u0435\u0440\u0438\u043d\u0430"),
+            build.canonical_person_key(
+                "\u0412\u0435\u0447\u0435\u0440\u0438\u043d\u0430 "
+                "\u041e\u043b\u044c\u0433\u0430 \u041f\u0430\u0432\u043b\u043e\u0432\u043d\u0430"
             ),
         )
 

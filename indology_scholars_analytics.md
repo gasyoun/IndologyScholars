@@ -5,9 +5,9 @@
 
 ## 1. High-Level Executive Summary
 
-- **Total Unique Scholars Identified**: 286
+- **Total Unique Scholars Identified**: 285
 - **Total Historical Presentations/Talks**: 1377
-- **Scholars in Zograf Readings only**: 180
+- **Scholars in Zograf Readings only**: 179
 - **Scholars in Roerich Readings only**: 65
 - **Scholars Active in BOTH Conferences (Overlapping Cohort)**: 41
 
@@ -26,8 +26,8 @@ These scholars are active in both major Petersburg (Zograf) and Moscow (Roerich)
 | Васильков Ярослав Владимирович | 20 | 19 | 1 | 2004–2026 |
 | Мехакян Арег Гайкович | 20 | 5 | 15 | 2007–2025 |
 | В. В. Вертоградова | 17 | 1 | 16 | 2006–2024 |
+| Вечерина Ольга Павловна | 16 | 9 | 7 | 2014–2023 |
 | Лидова Наталья Ростиславовна | 16 | 8 | 8 | 2008–2026 |
-| Вечерина Ольга Павловна | 15 | 8 | 7 | 2014–2023 |
 | Д. И. Жутаев | 15 | 3 | 12 | 2006–2019 |
 | Ю. М. Алиханова | 15 | 7 | 8 | 2004–2019 |
 | Воробьева Дарья Николаевна | 14 | 5 | 9 | 2013–2025 |
@@ -98,7 +98,7 @@ The complete structured lists have been generated and exported to the `analytics
 ## 6. Демографический тренд: возраст участников на день конференции
 
 > Возраст = год начала конференции − год рождения участника (погрешность ≤1 год).
-> Год рождения известен для **221** из 286 учёных (65 отсутствуют, см. `missing_birth_years.md`).
+> Год рождения известен для **221** из 285 учёных (64 отсутствуют, см. `missing_birth_years.md`).
 
 ### Зографские чтения (май, Санкт-Петербург)
 
@@ -115,7 +115,7 @@ The complete structured lists have been generated and exported to the `analytics
 | 2013 | 2013-05-15 | 33 | 48.8 | 45 | 36.5–61.0 | 27–82 |
 | 2014 | 2014-05-14 | 36 | 47.8 | 44.5 | 36.2–60.8 | 27–75 |
 | 2015 | 2015-05-25 | 37 | 48.4 | 46 | 37.0–61.0 | 23–84 |
-| 2016 | 2016-05-11 | 34 | 47.3 | 44.0 | 33.5–63.2 | 22–85 |
+| 2016 | 2016-05-11 | 35 | 47.6 | 44 | 34.0–63.0 | 22–85 |
 | 2017 | 2017-05-16 | 38 | 47.2 | 45.5 | 34.2–55.0 | 25–86 |
 | 2018 | 2018-05-15 | 43 | 49.4 | 48 | 36.0–63.0 | 26–87 |
 | 2019 | 2019-05-14 | 49 | 46.5 | 45 | 34.0–52.0 | 22–88 |
@@ -152,7 +152,7 @@ The complete structured lists have been generated and exported to the `analytics
 
 We analyze the structure of Russian Indological conferences through the lens of participation networks. Unlike traditional bibliometric networks (which map who cites whom), our networks map **co-presence and shared scholarly context**. They help identify institutional centers of gravity, disciplinary clustering, and bridge scholars between the Zograf and Roerich readings.
 
-**Nodes Generated:** 340
+**Nodes Generated:** 339
 
 **Edges Generated:** 8510
 
