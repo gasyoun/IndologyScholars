@@ -60438,12 +60438,73 @@
       "source": "person:PERS_0ca995ac",
       "target": "theme:unspecified",
       "type": "person_theme",
+<<<<<<< HEAD
+      "year": 2016,
+=======
+      "year": 2016,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_0da9b0dd",
+      "target": "theme:religion_and_philosophy",
+      "type": "person_theme",
+      "year": 2016,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_0e0a154e",
+      "target": "theme:religion_and_philosophy",
+      "type": "person_theme",
+      "year": 2012,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_0e0a154e",
+      "target": "theme:religion_and_philosophy",
+      "type": "person_theme",
       "year": 2016,
       "series": "Roerich Readings",
       "weight": 1.0
     },
     {
       "source": "person:PERS_0e0a154e",
+      "target": "theme:religion_and_philosophy",
+      "type": "person_theme",
+      "year": 2017,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_0e0a154e",
+      "target": "theme:religion_and_philosophy",
+      "type": "person_theme",
+      "year": 2018,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_0e0a154e",
+      "target": "theme:religion_and_philosophy",
+      "type": "person_theme",
+      "year": 2020,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_0e0a154e",
+      "target": "theme:religion_and_philosophy",
+      "type": "person_theme",
+      "year": 2022,
+>>>>>>> 1e3f43c5387afdb98965181bd6ecefca4003c264
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_0e0a154e",
+<<<<<<< HEAD
       "target": "theme:religion_and_philosophy",
       "type": "person_theme",
       "year": 2012,
@@ -60492,6 +60553,8 @@
     },
     {
       "source": "person:PERS_0e0a154e",
+=======
+>>>>>>> 1e3f43c5387afdb98965181bd6ecefca4003c264
       "target": "theme:unspecified",
       "type": "person_theme",
       "year": 2021,
@@ -69236,6 +69299,7 @@
     },
     {
       "source": "person:PERS_e31ca12d",
+<<<<<<< HEAD
       "target": "theme:religion_and_philosophy",
       "type": "person_theme",
       "year": 2016,
@@ -69244,6 +69308,8 @@
     },
     {
       "source": "person:PERS_e31ca12d",
+=======
+>>>>>>> 1e3f43c5387afdb98965181bd6ecefca4003c264
       "target": "theme:religion_and_philosophy",
       "type": "person_theme",
       "year": 2017,
