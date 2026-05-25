@@ -1061,25 +1061,25 @@
                 </div>
                 <a class="findings-cta" id="findings-cta" href="findings/">Читать выводы</a>
             </div>
-            <p class="findings-corpus-note" id="findings-corpus-note">Показатели статьи рассчитаны для аналитического подкорпуса 220 ученых / 895 уникальных докладов / 899 участий. Текущий расширенный каталог (289 / 1350 / 1377) требует повторного расчета гипотез.</p>
+            <p class="findings-corpus-note" id="findings-corpus-note">Статья и сайт синхронизированы с расширенным корпусом: 289 ученых / 1350 уникальных докладов / 1377 авторских участий. Шкала обобщения повторно проверена для всех докладов.</p>
             <div class="findings-grid">
                 <article class="insight-card">
-                    <div class="insight-metric">38 / ~104</div>
+                    <div class="insight-metric" id="insight-overlap-metric">40 / 128.3</div>
                     <div class="insight-title" id="insight-overlap-title">Пересечение ниже ожидания</div>
-                    <div class="insight-text" id="insight-overlap-text">Только 38 ученых выступали на обеих площадках при модельном ожидании около 104.</div>
+                    <div class="insight-text" id="insight-overlap-text">Только 40 ученых выступали на обеих площадках при модельном ожидании 128.3.</div>
                 </article>
                 <article class="insight-card">
-                    <div class="insight-metric">74% / 56%</div>
+                    <div class="insight-metric" id="insight-theme-metric">75.0% / 55.5%</div>
                     <div class="insight-title" id="insight-theme-title">Разные тематические оптики</div>
                     <div class="insight-text" id="insight-theme-text">Классико-средневековые темы заметнее в Рериховских чтениях, чем в Зографских.</div>
                 </article>
                 <article class="insight-card">
-                    <div class="insight-metric">852 / 895</div>
+                    <div class="insight-metric" id="insight-micro-metric">1155 / 1350</div>
                     <div class="insight-title" id="insight-micro-title">Микрокейс является нормой</div>
-                    <div class="insight-text" id="insight-micro-text">Шкала Гумилева показывает доминирование докладов о конкретном тексте, авторе или источнике.</div>
+                    <div class="insight-text" id="insight-micro-text">После полного аудита шкала Гумилева показывает доминирование докладов о конкретном тексте, авторе или источнике.</div>
                 </article>
                 <article class="insight-card">
-                    <div class="insight-metric">82</div>
+                    <div class="insight-metric" id="insight-video-metric">82</div>
                     <div class="insight-title" id="insight-video-title">Видео как проверяемый слой</div>
                     <div class="insight-text" id="insight-video-text">Прямые видеоссылки привязаны к 82 докладам, но этот слой не репрезентирует весь корпус.</div>
                 </article>
@@ -1457,14 +1457,14 @@ CREATE TABLE presentation_person (
                 findingsEyebrow: "Из последней статьи",
                 findingsHeading: "Не только список докладов: что показывает архив",
                 findingsLead: "Две конференции образуют связанные, но удивительно слабо пересекающиеся среды; их различают тематические акценты и общий жанр точного микрокейса.",
-                findingsCorpusNote: "Показатели статьи рассчитаны для аналитического подкорпуса 220 ученых / 895 уникальных докладов / 899 участий. Текущий расширенный каталог (289 / 1350 / 1377) требует повторного расчета гипотез.",
+                findingsCorpusNote: "Статья и сайт синхронизированы с расширенным корпусом: 289 ученых / 1350 уникальных докладов / 1377 авторских участий. Шкала обобщения повторно проверена для всех докладов.",
                 findingsCta: "Читать выводы",
                 insightOverlapTitle: "Пересечение ниже ожидания",
-                insightOverlapText: "Только 38 ученых выступали на обеих площадках при модельном ожидании около 104.",
+                insightOverlapText: "Только 40 ученых выступали на обеих площадках при модельном ожидании 128.3.",
                 insightThemeTitle: "Разные тематические оптики",
                 insightThemeText: "Классико-средневековые темы заметнее в Рериховских чтениях, чем в Зографских.",
                 insightMicroTitle: "Микрокейс является нормой",
-                insightMicroText: "Шкала Гумилева показывает доминирование докладов о конкретном тексте, авторе или источнике.",
+                insightMicroText: "После полного аудита шкала Гумилева показывает доминирование докладов о конкретном тексте, авторе или источнике.",
                 insightVideoTitle: "Видео как проверяемый слой",
                 insightVideoText: "Прямые видеоссылки привязаны к 82 докладам, но этот слой не репрезентирует весь корпус.",
                 queryResultsTitle: "Доклады по запросу «{query}»",
@@ -1560,14 +1560,14 @@ CREATE TABLE presentation_person (
                 findingsEyebrow: "From the latest article",
                 findingsHeading: "Beyond a list of talks: what the archive reveals",
                 findingsLead: "The two conference series form connected but unexpectedly weakly overlapping environments, differentiated by thematic emphasis and a shared preference for precise micro-cases.",
-                findingsCorpusNote: "The article metrics were calculated for its analytical subcorpus of 220 scholars / 895 unique talks / 899 participations. The expanded catalogue (289 / 1350 / 1377) requires renewed hypothesis testing.",
+                findingsCorpusNote: "The article and site are synchronized to the expanded corpus: 289 scholars / 1,350 unique talks / 1,377 author participations. Argument scale was re-audited across all presentations.",
                 findingsCta: "Read findings",
                 insightOverlapTitle: "Overlap is below expectation",
-                insightOverlapText: "Only 38 scholars spoke at both venues, compared with a model expectation of about 104.",
+                insightOverlapText: "Only 40 scholars spoke at both venues, compared with a model expectation of 128.3.",
                 insightThemeTitle: "Different thematic perspectives",
                 insightThemeText: "Classical and medieval topics are markedly more prominent at the Roerich Readings than at the Zograf Readings.",
                 insightMicroTitle: "The micro-case is the norm",
-                insightMicroText: "The Gumilyov scale shows the dominance of talks on a specific text, author, or source.",
+                insightMicroText: "After a full audit, the Gumilyov scale shows the dominance of talks on a specific text, author, or source.",
                 insightVideoTitle: "Video as a verification layer",
                 insightVideoText: "Direct video links are attached to 82 talks, but this layer is not representative of the full corpus.",
                 queryResultsTitle: "Talks matching \"{query}\"",
@@ -2186,10 +2186,13 @@ CREATE TABLE presentation_person (
                     const themeBadgeHtml = `<span class="badge badge-theme theme-${talkThemeCode}" style="font-size: 0.7rem; text-transform: none; margin-left: 0.5rem; font-weight: 600;">${talkThemeName}</span>`;
 
                     // Gumilyov scale badge
-                    const gScale = talk.gumilyov_scale || 2;
+                    const gScale = Number.isInteger(talk.gumilyov_scale) ? talk.gumilyov_scale : 0;
                     let gScaleName = "";
                     let gScaleColor = "";
-                    if (gScale === 1) {
+                    if (gScale === 0) {
+                        gScaleName = currentLang === 'ru' ? 'Не размечен' : 'Unclassified';
+                        gScaleColor = '#6b7280'; // gray
+                    } else if (gScale === 1) {
                         gScaleName = currentLang === 'ru' ? 'Микро' : 'Micro';
                         gScaleColor = '#4b5563'; // gray
                     } else if (gScale === 2) {

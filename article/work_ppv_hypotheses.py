@@ -117,6 +117,9 @@ def theme_lookup(theme_rows: list[dict[str, str]]) -> dict[tuple[str, int, str],
 
 def db_presentation_themes(con: sqlite3.Connection, theme_rows: list[dict[str, str]]) -> dict[str, dict[str, str]]:
     lookup = theme_lookup(theme_rows)
+    lookup_by_id = {
+        row["presentation_id"]: row for row in theme_rows if row.get("presentation_id")
+    }
     out = {}
     for pres_id, title, series_name, year in con.execute(
         """
@@ -130,7 +133,7 @@ def db_presentation_themes(con: sqlite3.Connection, theme_rows: list[dict[str, s
         """
     ):
         series = "Zograf" if "Zograf" in series_name else "Roerich"
-        row = lookup.get((series, int(year), norm_title(title or "")))
+        row = lookup_by_id.get(pres_id) or lookup.get((series, int(year), norm_title(title or "")))
         if row:
             out[pres_id] = row
     return out
@@ -1013,6 +1016,9 @@ def hypothesis_era_influence(con: sqlite3.Connection, theme_rows: list[dict[str,
     z_presentations = []
     
     lookup = theme_lookup(theme_rows)
+    lookup_by_id = {
+        row["presentation_id"]: row for row in theme_rows if row.get("presentation_id")
+    }
     
     for p_id, year, title, pers_id in con.execute("""
         select pr.presentation_id, e.year, pr.title, pp.person_id
@@ -1026,7 +1032,7 @@ def hypothesis_era_influence(con: sqlite3.Connection, theme_rows: list[dict[str,
         where es.series_name_en = 'Zograf Readings'
     """):
         z_speaker_years[pers_id].append(year)
-        coded_row = lookup.get(("Zograf", year, norm_title(title or "")))
+        coded_row = lookup_by_id.get(p_id) or lookup.get(("Zograf", year, norm_title(title or "")))
         z_presentations.append({
             "presentation_id": p_id,
             "year": year,
@@ -1330,6 +1336,18 @@ def hypothesis_talk_serialization(con: sqlite3.Connection) -> tuple[list[dict[st
 
 
 def write_markdown_summary(stats: dict[str, object]) -> None:
+    try:
+        h8_l2_significant = float(stats.get("h8_l2_p", 1.0)) < 0.05
+    except (TypeError, ValueError):
+        h8_l2_significant = False
+    h8_conclusion = (
+        "- Вывод: при смене оргкомитета не выявлено статистически значимого изменения "
+        "притока новичков, дисциплинарного профиля или распределения периодов L2; "
+        "сопоставление двух последних программ пока остается описательным."
+        if not h8_l2_significant
+        else "- Вывод: при сходном притоке новичков выявлен статистически значимый "
+        "сдвиг по периодам L2; его следует проверять по мере накопления следующих программ."
+    )
     lines = [
         "# Отработка новых гипотез",
         "",
@@ -1394,7 +1412,7 @@ def write_markdown_summary(stats: dict[str, object]) -> None:
         f"- Доля новичков (newcomer rate): эра Василькова (<=2024) — {stats.get('h8_vasilkov_newcomers_pct', 0.0)}% ({stats.get('h8_vasilkov_newcomers', 0)}/{stats.get('h8_vasilkov_speakers', 0)}), эра Альбедиль-Иванова (2025-2026) — {stats.get('h8_albedil_newcomers_pct', 0.0)}% ({stats.get('h8_albedil_newcomers', 0)}/{stats.get('h8_albedil_speakers', 0)}). Тест хи-квадрат: p={stats.get('h8_newcomer_p', 'н/д')}.",
         f"- Тематический дрейф L1 (дисциплины): тест хи-квадрат p={stats.get('h8_l1_p', 'н/д')}.",
         f"- Тематический дрейф L2 (хронологические периоды): тест хи-квадрат p={stats.get('h8_l2_p', 'н/д')}.",
-        "- Вывод: смена оргкомитета не привела к статистически значимому изменению притока новичков или распределения научных дисциплин. Однако наблюдается статистически значимый сдвиг в хронологических периодах (L2, p < 0.05), выражающийся в снижении доли классических тем (с 36.2% до 26.3%) и росте неопределенных/неуказанных периодов (с 8.2% до 16.7%).",
+        h8_conclusion,
         "- См. `era_newcomers.csv`, `era_themes_l1.csv`, `era_themes_l2.csv`.",
         "",
         "## H9. Географическое притяжение и когортная выживаемость",
@@ -1403,7 +1421,7 @@ def write_markdown_summary(stats: dict[str, object]) -> None:
         f"  - Зографские чтения (СПб): СПб — {stats.get('h9_zograf_spb_pct', 0.0)}%, Москва — {stats.get('h9_zograf_moscow_pct', 0.0)}%, Регионы/Ино — {stats.get('h9_zograf_regions_pct', 0.0)}%",
         f"  - Рериховские чтения (Москва): СПб — {stats.get('h9_roerich_spb_pct', 0.0)}%, Москва — {stats.get('h9_roerich_moscow_pct', 0.0)}%, Регионы/Ино — {stats.get('h9_roerich_regions_pct', 0.0)}%",
         f"- Выживаемость (доля участников с выступлением в >= 2 годах): Москва — {stats.get('h9_retention_moscow_pct', 0.0)}%, СПб — {stats.get('h9_retention_spb_pct', 0.0)}%, Регионы/Ино — {stats.get('h9_retention_regions_pct', 0.0)}%. Тест хи-квадрат (столица vs регионы): p={stats.get('h9_survival_p', 'н/д')}.",
-        f"- Вывод: центры притяжения сильно поляризованы. Москва гораздо менее охотно посещает СПб ({stats.get('h9_roerich_spb_pct', 0.0)}% докладов в Москве из СПб), хотя питерские чтения привлекают {stats.get('h9_zograf_moscow_pct', 0.0)}% московских докладов. Выживаемость региональных авторов значимо ниже ({stats.get('h9_retention_regions_pct', 0.0)}% против {stats.get('h9_retention_moscow_pct', 0.0)}% у московских и {stats.get('h9_retention_spb_pct', 0.0)}% у петербургских участников, p={stats.get('h9_survival_p', 'н/д')}), что подтверждает периферийный характер регионального участия.",
+        f"- Вывод: географические центры притяжения сильно поляризованы. Петербургские доклады реже появляются на московской площадке ({stats.get('h9_roerich_spb_pct', 0.0)}%), тогда как Зографские чтения привлекают {stats.get('h9_zograf_moscow_pct', 0.0)}% московских докладов. Наблюдаемая возвращаемость участников, обозначенных региональными городами, ниже ({stats.get('h9_retention_regions_pct', 0.0)}% против {stats.get('h9_retention_moscow_pct', 0.0)}% у московских и {stats.get('h9_retention_spb_pct', 0.0)}% у петербургских участников, p={stats.get('h9_survival_p', 'н/д')}), но город программы не устанавливает их институциональную занятость.",
         "- См. `geographic_presentation_distribution.csv`, `geographic_speaker_retention.csv`.",
         "",
         "## H10. Сериализация докладов",

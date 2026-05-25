@@ -1,0 +1,1351 @@
+presentation_id,year,series,title,meso_codes,proposed_meso,source,confidence
+PRES_2a08c0cb86,2004,Zograf Readings,Актуальные проблемы изучения «Бхагавадгиты»,bhakti_vaishnava,,deepseek,0.8
+PRES_3dfb43981f,2004,Zograf Readings,«Ум и знание» - тибетский учебник по теории познания,tibetology_himalaya,,deepseek,0.9
+PRES_3faf9b7b24,2004,Zograf Readings,Сюжет о Трите: этноисторическая основа,,,deepseek,0.8
+PRES_440de90864,2004,Zograf Readings,Миф об Агастье в средневековой литературе телугу,dravidology_south_india,,deepseek,0.9
+PRES_4dc8f2c386,2004,Zograf Readings,Об астрологической герменевтике в медицинских текстах (Аюрведа),yoga_ayurveda,,deepseek,0.9
+PRES_5461e391b0,2004,Zograf Readings,Сюжет «Повести о Насикете» Садала Мишры в контексте истории прозы хинди,hindi_urdu_new_indo_aryan,,deepseek,0.9
+PRES_5ec00edd5f,2004,Zograf Readings,Литературные реминисценции в «Гаудавахо» Вакпатираджи,,,deepseek,0.8
+PRES_630760bcac,2004,Zograf Readings,Психология акта самопожертвования в изображении драматургов 7-го века,,,deepseek,0.8
+PRES_646225a03b,2004,Zograf Readings,Опровержение атомизма в трактате Васубандху Виджняптиматратасиддхи («Доказательство единственности сознания»),buddhist_studies,,deepseek,0.9
+PRES_6c8531953d,2004,Zograf Readings,Концепция спхоты в «Спхотасиддхи» Манданамишры,sanskrit_grammar_panini,,deepseek,0.9
+PRES_6e17572f1f,2004,Zograf Readings,Проблема классификации индуистских тантрических школ,,,deepseek_strict_scale_audit,0.9
+PRES_6e5928cac8,2004,Zograf Readings,Богини и деревья желаний в индуизме Центральных Гималаев,himalaya,,deepseek,0.9
+PRES_764a73ce7c,2004,Zograf Readings,Проблема интерпретации специальной санскритской терминологии: термин адхьякша в индийской традиции,sanskrit_grammar_panini,,deepseek,0.9
+PRES_7f70e3b9a4,2004,Zograf Readings,Шанкара как критик категорий вайшешики,philosophy_epistemology,,deepseek,0.9
+PRES_8a6d651579,2004,Zograf Readings,О жанре вьяйога в санскритской теории драмы,literary_studies,,deepseek,0.9
+PRES_8ee46835ab,2004,Zograf Readings,Мокша в Бхагавата-пуране,bhakti_vaishnava,,deepseek,0.9
+PRES_92c5268a51,2004,Zograf Readings,Фигура царя и представления о времени в «Махабхарате»,epic_ramayana_mahabharata,,deepseek_strict_scale_audit,0.9
+PRES_97ad954200,2004,Zograf Readings,Лук (оружие),,,deepseek,0.8
+PRES_98a6bea15e,2004,Zograf Readings,О 58 синонимах «речи» в «Нигханту»,etymology,,deepseek,0.9
+PRES_9e203d9b3f,2004,Zograf Readings,О взаимоотношении религиозных конфессий в средневековом Тамилнаде,dravidology_south_india,,deepseek_strict_scale_audit,0.9
+PRES_a535b2a757,2004,Zograf Readings,Замечания по формальной стороне Рикпратишакхьи,sanskrit_grammar_panini,,deepseek,0.9
+PRES_a8e1a30833,2004,Zograf Readings,"Перевод Г.С.Лебедевым поэмы Бхарат Чондро Рая «Биддешундор» (по рукописи, хранящейся в РГИА). Предварительное сообщение",bengal|translation_reception,,deepseek,0.9
+PRES_ba501c2543,2004,Zograf Readings,Эротика в Ригведе: мужское и женское начало,vedic_studies,,deepseek,0.9
+PRES_c567f22f17,2004,Zograf Readings,Лексика эпизода и его значение (на материале завершающих книг «Махабхараты»),epic_ramayana_mahabharata,,deepseek,0.9
+PRES_ceb3b3ba00,2004,Zograf Readings,Деви-гита из Девибхагавата-пураны,bhakti_vaishnava,,deepseek,0.9
+PRES_d2281e2acf,2004,Zograf Readings,О «священной географии» в творчестве Тирунянасамбандара (шиваитский поэтический комплекс «Деварам»),dravidology_south_india,,deepseek,0.9
+PRES_e793d570a3,2004,Zograf Readings,Буддизм в творчестве Джаяшанкара Прасада,modern_literature,,deepseek,0.9
+PRES_ec5840a950,2004,Zograf Readings,Еще раз о слове ātman в Ригведе,vedic_studies,,deepseek,0.9
+PRES_117aeb7260,2006,Zograf Readings,Тема уточняется,,,deepseek,0.5
+PRES_2048f4153d,2006,Zograf Readings,Модели христианского и индо-буддийского времени в современной литературе,comparative_analysis,,deepseek_strict_scale_audit,0.9
+PRES_20910e0f90,2006,Zograf Readings,Санскритское upa-śru-: «слышать» или «вслушиваться»? Об одном древнеиндийском способе гадания,vedic_studies,,deepseek,0.9
+PRES_37a471ecf5,2006,Zograf Readings,К проблеме древнеиндийской хронологии,,,deepseek_strict_scale_audit,0.9
+PRES_409770d89b,2006,Zograf Readings,Интерпретация идей Упанишад у Раммохона Роя и Дебендронатха Тагора,bengal|translation_reception,,deepseek,0.9
+PRES_41b4c6fe83,2006,Zograf Readings,Комментарий к комментарию (Г.С.Лебедев и культурная жизнь Калькутты в 1790-х годах),bengal|colonial_encounters,,deepseek,0.9
+PRES_457408b87a,2006,Zograf Readings,Бхартрихари и Дхармакирти о возможности рефлексивного акта познания,philosophy_epistemology,,deepseek,0.9
+PRES_49eb37c334,2006,Zograf Readings,Орфоэпическая практика и древнеиндийская фонетика,sanskrit_grammar_panini,,deepseek,0.9
+PRES_594bd8ec61,2006,Zograf Readings,Некоторые наблюдения над царской титулатурой индо-греков. 4. С.-,epic_ramayana_mahabharata,,deepseek,0.9
+PRES_5b0c00b805,2006,Zograf Readings,Технические приспособления для рубрикации корней в «Дхатупатхе» Панини,sanskrit_grammar_panini,,deepseek,0.9
+PRES_60da65c55e,2006,Zograf Readings,Безымянный герой (о романах Хазарипрасада Двиведи),modern_literature,,deepseek,0.9
+PRES_748beb327e,2006,Zograf Readings,Место «Девибхагавата-пураны» в процессе эволюции шактизма,vedic_studies,,deepseek,0.9
+PRES_74c89353ef,2006,Zograf Readings,Царь − установитель дхармы. Практический аспект идеологической концепции,,,deepseek,0.9
+PRES_77b298a44b,2006,Zograf Readings,Изображение и текст: древнеиндийские рельефы и буддийские вербальные тексты,visual_material_culture,,deepseek,0.9
+PRES_80ebdc8f23,2006,Zograf Readings,Символика и способы почитания богини Тары в индуизме (с демонстрацией видеоматериалов),ritual_studies,,deepseek,0.9
+PRES_933f4317bd,2006,Zograf Readings,Об особенностях самосознания представителей «низких каст» в современных условиях,modern_society_politics,,deepseek,0.9
+PRES_960adc4efb,2006,Zograf Readings,Вытеснение согласного во избежание возникновения тяжелой группы трех шумных согласных в индоиранском,etymology,,deepseek,0.9
+PRES_aa8c66a571,2006,Zograf Readings,«Ādau vāda āsīt»: о переводах Библии на санскрит. В программе возможны изменения и дополнения,translation_reception,,deepseek,0.9
+PRES_aaee698889,2006,Zograf Readings,Жизнеописание праведного царя Ашоки в индийских и тайских источниках,buddhist_studies,,deepseek,0.9
+PRES_ac20c3981b,2006,Zograf Readings,Индийские философские тексты: композиция как часть содержания,philosophy_epistemology,,deepseek,0.9
+PRES_b1d123ee06,2006,Zograf Readings,Тема деревни в «Саттасаи»,literary_studies,,deepseek,0.9
+PRES_bb69fb252f,2006,Zograf Readings,О соотношении санскритского и тибетского текстов «Гимна Превосходящему богов» Шанкарасвамина,tibetology_himalaya,,deepseek,0.9
+PRES_bdb9ecf419,2006,Zograf Readings,Механизмы передачи сакрального текста в школах раннего буддизма (К постановке проблемы),buddhist_studies,,deepseek,0.9
+PRES_d5cc6c0374,2006,Zograf Readings,К вопросу о сюжетных и стилистических истоках ранних приключенческих романов на хинди,modern_literature,,deepseek,0.9
+PRES_dfef1a443f,2006,Zograf Readings,Представления об обществе и власти в «Бхагавата-пуране»,epic_ramayana_mahabharata,,deepseek,0.9
+PRES_f771f5827d,2006,Zograf Readings,Завершающие строфы «Махабхараты»: лексика и семантика,epic_ramayana_mahabharata,,deepseek,0.9
+PRES_fa7c38b2f3,2006,Zograf Readings,«Энциклопедия Абхидхармы» Васубандху как произведение санскритской литературы,buddhist_studies,,deepseek,0.9
+PRES_fcd64d09ac,2006,Zograf Readings,Отряхивающийся ныряльщик: о специфическом фольклорном мотиве в эпических и пуранических версиях «Сказания о Вепре» (Varāha-kathā),epic_ramayana_mahabharata,,deepseek,0.9
+PRES_10c2c66c17,2007,Zograf Readings,Древнеиндийские диалекты в ранних фонетических трактатах,sanskrit_grammar_panini,,deepseek,0.9
+PRES_183a38da3a,2007,Zograf Readings,Некоторые проблемы становления вишишта-адвайты. 14.00. Там же,,,deepseek,0.8
+PRES_198427c45a,2007,Zograf Readings,«Гимн Таре» Сарваджнямитры и его тибетские переводы,tibetology_himalaya|buddhist_studies,,deepseek,0.9
+PRES_1be5fd6c7a,2007,Zograf Readings,«Мадхан-кам» – народная драма Северной Бенгалии (с демонстрацией видеоматериалов),bengal,,deepseek,0.9
+PRES_2b5692727a,2007,Zograf Readings,«Рассказ о рани Кетаки» Инш-алла Хана в контексте развития ранней прозы на хинди и урду,hindi_urdu_new_indo_aryan,,deepseek,0.9
+PRES_3fd8e2489c,2007,Zograf Readings,Кинематографический текст в современной индийской культуре,modern_society_politics,,deepseek_strict_scale_audit,0.9
+PRES_43e4e4e60d,2007,Zograf Readings,Плач в составе древней махакавьи,,,deepseek,0.9
+PRES_4bb24c3c11,2007,Zograf Readings,К вопросу о статусе «естественного описания» в индийской поэтике,,,deepseek,0.9
+PRES_55fff640ca,2007,Zograf Readings,К вопросу о средствах передвижения в Ригведе,vedic_studies,,deepseek,0.9
+PRES_57ccd5c672,2007,Zograf Readings,Дидактические шатаки в литературе телугу (К характеристике жанровых особенностей). 3. Т. Г .Скороходова (Пенза). Интерпретация традиционного индийского текста либеральными мыслителями Бенгальского Возрождения,dravidology_south_india,,deepseek,0.9
+PRES_632589d9f1,2007,Zograf Readings,От смерти к новому рождению. Учение о промежуточном существовании в «Абхидхармакоше» Васубандху,buddhist_studies,,deepseek,0.9
+PRES_649f8342d7,2007,Zograf Readings,Сезонный и суточный циклы в санскритской драме (структура санскритской драмы),,,deepseek,0.9
+PRES_65a7d6e51a,2007,Zograf Readings,Философ Нагарджуна – персонаж пракритского романа «Лилаваи»,buddhist_studies,,deepseek,0.9
+PRES_693b5d83a6,2007,Zograf Readings,Индийские памятники героям в сравнительном освещении (К вопросу о материальном соответствии поэтической формуле «непреходящая слава»),comparative_analysis,,deepseek_strict_scale_audit,0.9
+PRES_7e16512005,2007,Zograf Readings,О быках и людях (Образ «Стада» в скотоводческом эпосе Южной Индии),dravidology_south_india,,deepseek,0.9
+PRES_7f36ed5c1e,2007,Zograf Readings,Джьотиша и Аюрведа: астрологическая семантика в классической индийской медицине. 14.00. Там же,yoga_ayurveda,,deepseek,0.9
+PRES_8c102cb0c2,2007,Zograf Readings,Теоретические аспекты учения тантрической школы кула (согласно «Куларнава-тантре»),,,deepseek,0.9
+PRES_8e0d2df4b1,2007,Zograf Readings,Миф о Махишасурамардани в Девибхагавата- и Калика-пуранах,epic_ramayana_mahabharata,,deepseek,0.9
+PRES_932ae951cd,2007,Zograf Readings,Санскритское письмо как последовательная фонетическая транскрипция,,,deepseek,0.8
+PRES_9ade78ff58,2007,Zograf Readings,«Очерки Цейлона и Индии» И. П. Минаева как источник по изучению культурной истории Индии,colonial_encounters|travel_history,,deepseek,0.9
+PRES_a3301e22aa,2007,Zograf Readings,Образ Чайтаньи в традиционных бенгальских текстах,bengal|bhakti_vaishnava,,deepseek,0.9
+PRES_a40d40eed0,2007,Zograf Readings,Лингвофилософское в «Пара-тримшика-виварана» Абхинавагупты,philosophy_epistemology,,deepseek,0.9
+PRES_a7d32d94a9,2007,Zograf Readings,Типология храмовых сооружений в текстах пуран и «Брихатсамхите»,,,deepseek_strict_scale_audit,0.9
+PRES_c190e58dae,2007,Zograf Readings,Язык как источник аргументации (на примере рассуждений о самбандхе),philosophy_epistemology,,deepseek,0.8
+PRES_c2c6d7f2b6,2007,Zograf Readings,К вопросу об эндогамии касты,,,deepseek,0.7
+PRES_c5943e6066,2007,Zograf Readings,Описания военной техники в индийском сочинении XI века «Шри Калачакра тантра раджа». 14.00. Там же,,,deepseek,0.9
+PRES_cb85e06342,2007,Zograf Readings,В чем непосредственность непосредственного восприятия в буддийской эпистемологии?,buddhist_studies|philosophy_epistemology,,deepseek,0.9
+PRES_e564be93e3,2007,Zograf Readings,«Великие» и «малые» в надписях Ашоки,manuscripts_epigraphy,,deepseek,0.9
+PRES_f24e720def,2007,Zograf Readings,(Москва). Тема марудам в старой тамильской поэзии,dravidology_south_india,,deepseek,0.9
+PRES_0404e32168,2008,Zograf Readings,«Сахар в молоке»: Ауто-представления об «индийском» и «персидском» в современной религиозной культуре парсов,,,deepseek,0.8
+PRES_0c496dfec3,2008,Zograf Readings,Об эволюции образа Рудры-Шивы в священных текстах шрути,vedic_studies,,deepseek_strict_scale_audit,0.9
+PRES_13fafa99b6,2008,Zograf Readings,Махатмья «Бхагаватапураны»,bhakti_vaishnava,,deepseek,0.9
+PRES_293775e85d,2008,Zograf Readings,О происхождении культурных архаизмов в позднем слое содержания «Махабхараты» (на примере темы воинских братств),epic_ramayana_mahabharata,,deepseek,0.9
+PRES_59dba9b943,2008,Zograf Readings,Истоки формулы сат-чит-ананда в Упанишадах,vedic_studies,,deepseek,0.9
+PRES_5e317967c2,2008,Zograf Readings,Udāharaņa в «Вакьяпадии»,sanskrit_grammar_panini,,deepseek,0.9
+PRES_6da6054f73,2008,Zograf Readings,Атманепада в санскрите и в грамматиках,sanskrit_grammar_panini,,deepseek,0.9
+PRES_7a09ad99d1,2008,Zograf Readings,Атхарваведа-паришишта XIXb: к вопросу о происхождении ритуалов Натьяшастры,vedic_studies|ritual_studies,,deepseek,0.9
+PRES_7af57f160f,2008,Zograf Readings,Образ птицы в масочном театре сингалов (Шри Ланка),ethnography_performance,,deepseek,0.85
+PRES_844f6b86ea,2008,Zograf Readings,Образы фантастических животных в средневековой архитектуре Индии,visual_material_culture,,deepseek_strict_scale_audit,0.9
+PRES_8b2df737b9,2008,Zograf Readings,Ордалия весами: проблемы интерпретации результатов взвешивания,ritual_studies,,deepseek,0.85
+PRES_93c2e24013,2008,Zograf Readings,"«О Неодолимая Богиня, поклонение да будет тебе!» (О ритуальной части Калика-пураны) 14.00. Детский центр МАЭ РАН",ritual_studies,,deepseek,0.9
+PRES_9b61667329,2008,Zograf Readings,Что стоит за стилями у Дандина?,literary_studies,,deepseek,0.85
+PRES_9d84234785,2008,Zograf Readings,Терминология и грамматика в «Энциклопедии Абхидхармы» Васубандху,buddhist_studies,,deepseek,0.9
+PRES_9e65f5de1e,2008,Zograf Readings,«Другая Савитри»: Сказание о Савитри в «Андхрамахабхарате»,epic_ramayana_mahabharata,,deepseek,0.9
+PRES_9ffe685fd2,2008,Zograf Readings,Аспекты влияния религиозно-философских доктрин на творчество Кабира. Закрытие конференции,bhakti_vaishnava,,deepseek,0.85
+PRES_a9e0852a8d,2008,Zograf Readings,Традиция в интерпретации мыслителей Бенгальского Возрождения,bengal|colonial_encounters,,deepseek_strict_scale_audit,0.9
+PRES_b3e877cd66,2008,Zograf Readings,О зооморфной символике в протоиндийских текстах,,proto_indian,deepseek,0.8
+PRES_c05d6f805a,2008,Zograf Readings,Так что же такое карма? 14.00. СПбГУ: Восточный факультет. Ауд. 75,,,deepseek_strict_scale_audit,0.9
+PRES_c23e6409da,2008,Zograf Readings,О языке и стиле эпических риши,epic_ramayana_mahabharata,,deepseek,0.85
+PRES_cac5d44443,2008,Zograf Readings,О символике ладьи в «Ригведе». 14.30. Зеленый зал ИВР РАН,vedic_studies,,deepseek,0.9
+PRES_d5a74ed7f6,2008,Zograf Readings,Народный театр «джатра» и его роль в формировании новой бенгальской литературы,bengal|ethnography_performance,,deepseek_strict_scale_audit,0.9
+PRES_e4b6786e6b,2008,Zograf Readings,Как сравнивать индийскую и западную эпистемологию? Опыт создания методологии компаративного исследования,comparative_analysis|philosophy_epistemology,,deepseek_strict_scale_audit,0.9
+PRES_fea1defc8d,2008,Zograf Readings,Множество жизней поэмы Тулси Даса (некоторые аспекты современного бытования «Рамачаритаманасы»),translation_reception,,deepseek,0.85
+PRES_ff28a9ff47,2008,Zograf Readings,Концепт Ишвары в «Бхагавадгите»,,,deepseek,0.85
+PRES_08257e3ccf,2008,Roerich Readings,Альтернативные социальные классификации в палийском каноне,pali_early_buddhism,,deepseek,0.85
+PRES_08e8316d53,2008,Roerich Readings,Кыргызы в Центральной Азии (9 век),china_mongolia_inner_asia,,deepseek,0.8
+PRES_0fe8007200,2008,Roerich Readings,К вопросу о самоназваниях школы махасангхиков-локоттаравадинов,buddhist_studies,,deepseek,0.9
+PRES_3374abc140,2008,Roerich Readings,Двойная мандала в тибетском трактате «Вайдурья-карпо»,tibetology_himalaya|buddhist_studies,,deepseek,0.9
+PRES_415fb1eb4c,2008,Roerich Readings,Степные кочевники – иранцы II тыс. до н. э. – I тыс. н. э. и их языки,,,deepseek_strict_scale_audit,0.9
+PRES_448f6392bc,2008,Roerich Readings,Строительный ритуал и его роль в текстах вастувидьи (по материалам пуран),ritual_studies,,deepseek,0.9
+PRES_506157c4da,2008,Roerich Readings,Тема времени в буддийских преданиях о Варанаси,buddhist_studies,,deepseek,0.9
+PRES_54fab21323,2008,Roerich Readings,Теистические установки в классической йоге и «Шветашватара-упанишаде»,philosophy_epistemology,,deepseek,0.9
+PRES_73205188c4,2008,Roerich Readings,«Очищение от терниев» в «Артхашастре» и дхармашастрах,,,deepseek,0.9
+PRES_925074e2a5,2008,Roerich Readings,Агамы как источник философии радикальной Адвайты,philosophy_epistemology,,deepseek,0.9
+PRES_a7fa4ac110,2008,Roerich Readings,Н.К. Рерих с семьей в Синцзяне в 1926 г,expeditions|history_of_indology,,deepseek,0.9
+PRES_b97d25a759,2008,Roerich Readings,Мандалы Ваджрачхедики в коллекции Одесского Музея Западного и Восточного Искусства,buddhist_studies|museum_collections,,deepseek,0.9
+PRES_c305a62ca7,2008,Roerich Readings,Институт гутхи в древнем и средневековом Непале,nepal_newar_kathmandu,,deepseek_strict_scale_audit,0.9
+PRES_e3afc7dbb4,2008,Roerich Readings,Трава дарбха и самбодхи Будды,buddhist_studies,,deepseek,0.9
+PRES_e9159cba78,2008,Roerich Readings,К проблеме «тривадрумского цикла»,,,deepseek,0.8
+PRES_eabb2c0db9,2008,Roerich Readings,Ордалии в дхармашастрах,,,deepseek,0.9
+PRES_f0655c51e6,2008,Roerich Readings,Гоштхи (гутхи) в надписях Личчхавов,nepal_newar_kathmandu|manuscripts_epigraphy,,deepseek,0.9
+PRES_f15fea41e4,2008,Roerich Readings,Текст – персонаж в древней махакавье,literary_studies,,deepseek,0.9
+PRES_f60e19e1b7,2008,Roerich Readings,О некоторых принципах тамильской поэтики по антологии «Наджиней»,dravidology_south_india,,deepseek,0.9
+PRES_ff0d548615,2008,Roerich Readings,Что стоит за стилем у Дандина?,literary_studies,,deepseek,0.9
+PRES_1a48b15a55,2009,Zograf Readings,"Южный поход личчхавов 14.00. Зеленый зал СПбФ ИВ РАН (Дворцовая наб., 18)",nepal_newar_kathmandu,,deepseek,0.9
+PRES_22c7444e36,2009,Zograf Readings,Символические модели Абсолютного Сознания в религиозно-мистической философии Кашмирского шиваизма. Некоторые методологические вопросы,philosophy_epistemology,,deepseek_strict_scale_audit,0.9
+PRES_2cb004016e,2009,Zograf Readings,"Посвящение в знание мудрости в Гухьясамаджатантре (на основе Abhishekanirukti) 14.30. СПбГУ, ВОСТОЧНЫЙ ФАКУЛЬТЕТ. Ауд. 175",buddhist_studies,,deepseek,0.9
+PRES_422410f9af,2009,Zograf Readings,Происхождение атомизма: лингвистическая гипотеза,comparative_analysis,,deepseek_strict_scale_audit,0.9
+PRES_523a56fd5b,2009,Zograf Readings,Концепция Ишвары в классической йоге и в Кашмирском шиваизме,comparative_analysis,,deepseek_strict_scale_audit,0.9
+PRES_5579f7916f,2009,Zograf Readings,Сказание об Индейском царстве» как источник представлений об Индии в древней Руси,translation_reception,,deepseek,0.9
+PRES_5b4245709b,2009,Zograf Readings,«Коровьи войны» (на материале скотоводческого эпоса народов Центральной Индии и Декана),comparative_analysis,,deepseek,0.8
+PRES_6213023bf5,2009,Zograf Readings,Сат-чит-ананда как мост между христианством и индуизмом,comparative_analysis,,deepseek_strict_scale_audit,0.9
+PRES_6e5ecd56b8,2009,Zograf Readings,К вопросу о классификации храмовых сооружений в Вишнудхармоттара-пуране,vaishnava,,deepseek,0.9
+PRES_7323c9c9b1,2009,Zograf Readings,Еще раз о сюжете эпической «Шакунталы»,epic_ramayana_mahabharata,,deepseek,0.9
+PRES_7efa09f3b2,2009,Zograf Readings,"Сказители, музыканты и танцоры. К вопросу о происхождении и кастовой дхарме так называемых катхаков Раджастхана",ethnography_performance,,deepseek,0.8
+PRES_86c16283af,2009,Zograf Readings,Ранневишнуитская Веданта,vaishnava,,deepseek_strict_scale_audit,0.9
+PRES_9550fd0f6b,2009,Zograf Readings,Индийский текст индийской диаспоры,modern_society_politics,,deepseek_strict_scale_audit,0.8
+PRES_9627d4dfc0,2009,Zograf Readings,"Восток, Запад и русский перевод",translation_reception,,deepseek_strict_scale_audit,0.9
+PRES_96f8e44e84,2009,Zograf Readings,"Абхидхарма и абхивиная: взгляд со стороны двух раннебуддийских традиций 14.30. МАЭ (Университетская наб., 3), ДЕТСКИЙ ЦЕНТР",buddhist_studies,,deepseek_strict_scale_audit,0.9
+PRES_9b2118961f,2009,Zograf Readings,Иконографические типы бронзовых образов Натараджи: их сложение и проблемы классификации,visual_material_culture,,deepseek,0.9
+PRES_9bda829b36,2009,Zograf Readings,Ведийское samudra-: к вопросу о широких водных пространствах в текстах самхит,vedic_studies,,deepseek,0.9
+PRES_9e464b8281,2009,Zograf Readings,"Книга о побоище палицами (Махабхарата, XVI)",epic_ramayana_mahabharata,,deepseek,0.9
+PRES_a05b916ad8,2009,Zograf Readings,Ордалия освященной водой (kosha),ritual_studies,,deepseek,0.9
+PRES_a5cd9e04c7,2009,Zograf Readings,Язык богини Кали: проблемы интерпретации,,,deepseek,0.8
+PRES_aa2399a11e,2009,Zograf Readings,Паломничество в Калика-пуране,,,deepseek,0.9
+PRES_ad9e0be839,2009,Zograf Readings,Махишасурамардини и девы-воительницы,visual_material_culture,,deepseek,0.8
+PRES_b3dcf19ef2,2009,Zograf Readings,Индоевропейская формула «храни мужей и скот» в ведийских и постведийских текстах,vedic_studies,,deepseek,0.9
+PRES_beb45aac0a,2009,Zograf Readings,«Рамаяна» Криттибаса Оджхи в культуре Бенгалии XV-XVI веков,bengal|epic_ramayana_mahabharata,,deepseek,0.9
+PRES_c1761df1ca,2009,Zograf Readings,Древний тибетский сборник текстов по культам Махакалы и Вишну из рукописной коллекции ИВР РАН,tibetology_himalaya|manuscripts_epigraphy,,deepseek,0.9
+PRES_d7d30097a4,2009,Zograf Readings,Терминология суфийской проповеди в «Падмават» Малика Мухаммада Джаяси,literary_studies,,deepseek,0.9
+PRES_e0b8b1bdd4,2009,Zograf Readings,Новые открытия на Гонур-тепе. Предварительное сообщение,,,deepseek,0.8
+PRES_e2499adc9f,2009,Zograf Readings,Проблема соотношения этики и знания в йоге и индуистской тантре,yoga_ayurveda|philosophy_epistemology,,deepseek_strict_scale_audit,0.9
+PRES_e62ebf0bd0,2009,Zograf Readings,К определению термина «джатака» в палийском каноне,pali_early_buddhism,,deepseek,0.9
+PRES_e85f779ed9,2009,Zograf Readings,Уровень смысла в текстах шастр: концепты или понятия?,philosophy_epistemology,,deepseek_strict_scale_audit,0.9
+PRES_f5b1c223f2,2009,Zograf Readings,Особенности интерпретации традиционных текстов мыслителями Бенгальского Возрождения,bengal|colonial_encounters,,deepseek_strict_scale_audit,0.9
+PRES_2ec1e17cb0,2009,Roerich Readings,Буддийские святыни в «Записках» Сюань-Цзана: построение текста,buddhist_studies|travel_history,,deepseek,0.9
+PRES_3ec7076b0a,2009,Roerich Readings,"Соотношение «чистая земля» – «нечистая земля», «чистый народ – «нечистый народ» по материалам «Манусмрити» и «Артхашастры» Каутильи",vedic_studies,,deepseek,0.9
+PRES_405fb6e1fc,2009,Roerich Readings,"Миф, пространство, время у алтайских народов",ethnography_performance,,deepseek_strict_scale_audit,0.9
+PRES_4fc95cdd1b,2009,Roerich Readings,Махабхарата и шастры в ранней индийской эпиграфике,epic_ramayana_mahabharata|manuscripts_epigraphy,,deepseek,0.9
+PRES_51d2d7154d,2009,Roerich Readings,Тибетская джатака о Маллике как исток образа бхавачакры,tibetology_himalaya|buddhist_studies,,deepseek,0.9
+PRES_53b81c004f,2009,Roerich Readings,Письмо в культуре от Бактрии до Индии по материалам многоязычных надписей 3 в. до н. э. – 5 в. н. э. (К проблеме социоскрипторики),manuscripts_epigraphy|colonial_encounters,,deepseek_strict_scale_audit,0.9
+PRES_5889e63ab3,2009,Roerich Readings,Фисаматы из Ольвийского декрета в честь Протогена,,,deepseek,0.9
+PRES_64abe774d2,2009,Roerich Readings,Ордалия раскаленной монетой: шастрический текст и «свидетельства» испытаний,ritual_studies,,deepseek,0.9
+PRES_6d5c58b0b0,2009,Roerich Readings,Пространство и его описание в строительных трактатах пуран,vedic_studies,,deepseek,0.9
+PRES_6dadb0e4d7,2009,Roerich Readings,Этимология (нирукта) в качестве герменевтической науки в кашмирском шиваизме,philosophy_epistemology,,deepseek,0.9
+PRES_6f1e98755f,2009,Roerich Readings,«Абхисамаяланкара»: от первых трех глав к четвертой. Сознание творит реальность,buddhist_studies,,deepseek,0.9
+PRES_77d4fd8170,2009,Roerich Readings,К интерпретации термина намарупа в тхеравадинской комментаторской литературе,pali_early_buddhism,,deepseek,0.9
+PRES_96f005355d,2009,Roerich Readings,Махабхарата в тамильской поэзии,epic_ramayana_mahabharata|dravidology_south_india,,deepseek,0.9
+PRES_9cec165a1d,2009,Roerich Readings,О ритуале помазания царя на царство в «Яджнявалкья-смрити»,ritual_studies,,deepseek,0.9
+PRES_a38177a26d,2009,Roerich Readings,Место и значение «Бхактамара-стотры» в джайнской традиции,jain_studies,,deepseek,0.9
+PRES_d991c450bc,2009,Roerich Readings,Зеркало. Конец иллюзии. (Из истории одной концепции в кашмирском шиваизме),,kashmiri_shaivism,deepseek,0.85
+PRES_dc9fbd292b,2009,Roerich Readings,Востоковед Ю.Н. Рерих: начало пути в науке,history_of_indology|roerich_studies,,deepseek,0.9
+PRES_dcfff95b9e,2009,Roerich Readings,"Сравнительный анализ описаний буддийских монахинь в тибетской, китайской и японской агиографической литературе",buddhist_studies|comparative_analysis,,deepseek_strict_scale_audit,0.9
+PRES_df7b4cf816,2009,Roerich Readings,Некоторые историко-культурные аспекты символики национального флага Непала (V – XXI вв.),nepal_newar_kathmandu,,deepseek,0.85
+PRES_f457799a1b,2009,Roerich Readings,Об одной возможной буддийской параллели к новозаветному пассажу МФ 5.19,buddhist_studies|comparative_analysis,,deepseek,0.85
+PRES_0139c59bb9,2010,Zograf Readings,Концепция совершенного человека в творчестве народных певцов – баулов,bengal|ethnography_performance,,deepseek,0.85
+PRES_09706e2e82,2010,Zograf Readings,"Ум, психика или сознание (о переводе буддийских терминов «читта» и «виджняна»)",buddhist_studies|translation_reception,,deepseek,0.9
+PRES_0e0cf8bb17,2010,Zograf Readings,Санскритские квантитативные стихотворные размеры: реконструкция чтения,metrics|prosody,,deepseek,0.9
+PRES_15b019aa75,2010,Zograf Readings,Неизвестный речевой феномен у сингалов Шри Ланки,dravidology_south_india,,deepseek,0.85
+PRES_1c0edf1c85,2010,Zograf Readings,Миф о Ветале и Бхайраве в «Калика-пуране»,epic_ramayana_mahabharata,,deepseek,0.9
+PRES_1cd65d2e59,2010,Zograf Readings,Современная джатра: возвращение к истокам,ethnography_performance,,deepseek,0.85
+PRES_1e77ef9490,2010,Zograf Readings,Индийский эпос «Дхола-Мару» и «Сказка о царе Салтане» А.С.Пушкина,comparative_analysis,,deepseek,0.85
+PRES_3bd08e341f,2010,Zograf Readings,Сюжет о воплощении Вишну в фольклорном тексте телугу (Матсьяватарам),dravidology_south_india,,deepseek,0.9
+PRES_53f8bd860a,2010,Zograf Readings,«Рагхуванша» Калидасы глазами тамилиста,dravidology_south_india,,deepseek,0.9
+PRES_54a32921dc,2010,Zograf Readings,Сравнительный анализ генезиса рефлексии в индийской и европейской философских традициях: визуальные и лингвистические детерминанты,comparative_analysis|philosophy_epistemology,,deepseek_strict_scale_audit,0.9
+PRES_627e94e1ab,2010,Zograf Readings,Тексты по культу Вишну-Нарасимхи в тибетском свитке XIII века,tibetology_himalaya|visual_material_culture,,deepseek,0.9
+PRES_6a263265ac,2010,Zograf Readings,Ордалия раскаленной монетой (taptamàşa): текст и реальность,ritual_studies,,deepseek,0.9
+PRES_78a007f5fb,2010,Zograf Readings,О древнеиндийской практике обучения ведийскому тексту,vedic_studies,,deepseek,0.9
+PRES_7e41374eb0,2010,Zograf Readings,Сюжет о побоище палицами в «Маусалапарве» и в «Джатаке о Гхата-пандите» 15.00. Там же,epic_ramayana_mahabharata,,deepseek,0.9
+PRES_90b364f351,2010,Zograf Readings,Текст «индийской диаспоры» в поэзии Далджита Награ,modern_literature,,deepseek,0.9
+PRES_99bd862130,2010,Zograf Readings,Семантика глагольного корня muc- и проблематика духовного освобождения в ведийских упанишадах,vedic_studies,,deepseek,0.9
+PRES_a80206461e,2010,Zograf Readings,Типовой мотив-ситуация в Махабхарате,epic_ramayana_mahabharata,,deepseek_strict_scale_audit,0.9
+PRES_a80b13caa7,2010,Zograf Readings,Mārgī/deśī: о двух способах интерпретации индийского танца. В программе возможны изменения,visual_material_culture,,deepseek,0.8
+PRES_a873570c30,2010,Zograf Readings,Потенциальное и актуальное в буддийском учении о восприятии,buddhist_studies,,deepseek,0.9
+PRES_d01c9d783a,2010,Zograf Readings,Значение и функции ритуала Пангху у племени ратхва,ethnography_performance,,deepseek,0.9
+PRES_d49c9ef5f0,2010,Zograf Readings,Проблема уникальности природы человеческой души в философской системе Ямуначарьи,philosophy_epistemology,,deepseek,0.9
+PRES_e04db7cf0d,2010,Zograf Readings,«Археология» раннебуддийского доктринального текста на примере главы о буддхакшетрах («полях Будд») из Махавасту,buddhist_studies,,deepseek,0.9
+PRES_e1b0ef7cfb,2010,Zograf Readings,"Дискуссия о четырех блаженствах: об одной стратегии для интерпретации истинной природы реальности в посвящении Хеваджра-тантры 15.00. СПбГУ, ВОСТОЧНЫЙ ФАКУЛЬТЕТ. Ауд. 175",buddhist_studies,,deepseek,0.9
+PRES_f7c2f21e54,2010,Zograf Readings,Концепция игры в индийской традиции (кридаяника в «Натьяшастре»),philosophy_epistemology,,deepseek_strict_scale_audit,0.9
+PRES_f94674cd5c,2010,Zograf Readings,Царица в дворцовом парке 14.00. Там же,,,deepseek,0.7
+PRES_fbd84f6b96,2010,Zograf Readings,Язык богини Кали. Я.В. Васильков. Эпические герои и боги (в «Махабхарате» и не только),epic_ramayana_mahabharata,,deepseek,0.8
+PRES_080e848a5a,2010,Roerich Readings,Скифские слова в Авесте,etymology,,deepseek,0.8
+PRES_0c60ccad75,2010,Roerich Readings,Новое о Герасиме Лебедеве,colonial_encounters,,deepseek,0.9
+PRES_2e725b44b8,2010,Roerich Readings,Сцены приема гостя в древней махакавье,literary_studies,,deepseek,0.9
+PRES_32d7da4752,2010,Roerich Readings,Восприятие и телесность в буддизме и в современных когнитивных концепциях «отелесненного ума» (embodied mind),buddhist_studies,,deepseek_strict_scale_audit,0.9
+PRES_3edd502801,2010,Roerich Readings,К пониманию термина buddha в южнобуддийской традиции,buddhist_studies,,deepseek,0.9
+PRES_3f0b9488ec,2010,Roerich Readings,"Обозначение пространства, мер и чисел в трактатах по строительству из пуран",,architecture_purana,deepseek,0.8
+PRES_4370a58a1d,2010,Roerich Readings,Археология раннебуддийского доктринального текста на примере текста о буддхакшетрах из «Махавасту»,buddhist_studies,,deepseek,0.9
+PRES_4b0c3f7190,2010,Roerich Readings,Чему учили люди дасью? (по материалам ранних ведийских текстов),vedic_studies,,deepseek,0.9
+PRES_4b995fc30a,2010,Roerich Readings,Место и значение хронологии и генеалогии в санскритских текстах,sanskrit_grammar_panini,,deepseek_strict_scale_audit,0.9
+PRES_4d8a99c131,2010,Roerich Readings,Царские наложницы в санскритских и античных источниках,comparative_analysis,,deepseek,0.8
+PRES_4f8af0d986,2010,Roerich Readings,«Саттрия: опыт создания классического танца в современном Ассаме»,assam,,deepseek,0.9
+PRES_50a29145a7,2010,Roerich Readings,Традиции веротерпимости и универсализма в древней и средневековой Индии,,,deepseek_strict_scale_audit,0.9
+PRES_54207a1735,2010,Roerich Readings,«Казаклык как социальное явление»,,,deepseek,0.6
+PRES_58b20ea2d8,2010,Roerich Readings,(Великобритания). Сюжеты религиозного обращения в палийской и средневековой ирландской литературе. Нарративная традиция,comparative_analysis,,deepseek,0.8
+PRES_8b7b0bd5f3,2010,Roerich Readings,К вопросу о символике горы Мэру,cosmology,,deepseek,0.8
+PRES_93f67f4d24,2010,Roerich Readings,Обет и культ jakkha-ja в Каче,buddhist_studies,,deepseek,0.8
+PRES_96ae1b26ae,2010,Roerich Readings,Отражение оппозиции «свой – чужой» в традиционных представлениях о землепользовании кочевников Центральной Азии,china_mongolia_inner_asia,,deepseek_strict_scale_audit,0.9
+PRES_a3fc81f164,2010,Roerich Readings,Ю.Н. Рерих: монография «Тибетская живопись»,roerich_studies|tibetology_himalaya,,deepseek,0.9
+PRES_a4b8fa4547,2010,Roerich Readings,Прием почетного гостя-атитхи в санскритской текстовой традиции (по дхармасутре Апастамбы),ritual_studies,,deepseek,0.9
+PRES_a775399ae0,2010,Roerich Readings,Рерихи во внутренней Монголии в 1935 г,roerich_studies|china_mongolia_inner_asia,,deepseek,0.9
+PRES_b65c83f7a3,2010,Roerich Readings,Несколько индийских слов в передаче античных авторов,etymology,,deepseek,0.8
+PRES_c02c773749,2010,Roerich Readings,(Киев). Композиционные особенности намтара «12 деяний Будды Шакьямуни» в тибетской традиции (тангки житийной серии музеев Украины),tibetology_himalaya|museum_collections,,deepseek,0.9
+PRES_c3f9d9861b,2010,Roerich Readings,Дарды и страна дардов в «Раджатарангини» Калханы,himalaya,,deepseek,0.8
+PRES_c4f67633f5,2010,Roerich Readings,Кто говорит? Толкование источника речи в некоторых индуистских тантрах,philosophy_epistemology,,deepseek,0.8
+PRES_e290493a42,2010,Roerich Readings,Ситуация ухода героя в классической тамильской поэзии,dravidology_south_india,,deepseek,0.8
+PRES_e90c15b88c,2010,Roerich Readings,Образ дакини в Японии,buddhist_studies,,deepseek,0.8
+PRES_e9f41a40c8,2010,Roerich Readings,Проблема сновидения и «ошибочные действия» в натаке Бхасы «Свапнавасавадатта»,literary_studies,,deepseek,0.9
+PRES_ea0097faa8,2010,Roerich Readings,Китайские переводы Лалитавистары как источник по истории текста,translation_reception|buddhist_studies,,deepseek,0.85
+PRES_eda7195a4d,2010,Roerich Readings,Непал: от конфессионального компромисса до секуляризма (Некоторые штрихи истории духовной культуры),nepal_newar_kathmandu,,deepseek_strict_scale_audit,0.9
+PRES_fca193c4c1,2010,Roerich Readings,Философское приложение шикши в кашмирском шиваизме,philosophy_epistemology,,deepseek,0.85
+PRES_fe7f9d9625,2010,Roerich Readings,Юрий Николаевич Рерих — исследователь тибетского языка,tibetology_himalaya|history_of_indology,,deepseek,0.9
+PRES_0b727f138c,2011,Zograf Readings,Словесные фигуры и принцип «непрямого высказывания» (вакрокти) в средневековой поэтике,literary_studies,,deepseek,0.85
+PRES_216606ed4c,2011,Zograf Readings,Интерпретация учения об аватарах Вишну в «Девибхагавата-пуране»,vaishnava,,deepseek,0.85
+PRES_36278778ba,2011,Zograf Readings,Мифологии северных мунда как источник для реконструкции сюжета создания человека у населения евразийских степей в эпоху бронзы C,comparative_analysis,,deepseek_strict_scale_audit,0.9
+PRES_37530fdf34,2011,Zograf Readings,Тема весны в старой тамильской поэзии,dravidology_south_india,,deepseek,0.85
+PRES_37ec1a3fd3,2011,Zograf Readings,О композиции вступительных глав «Сказания о Шакунтале»,literary_studies,,deepseek,0.9
+PRES_4f6dd44b06,2011,Zograf Readings,«Будда из пригорода» Ханифа Курейши: иммигрантский текст индо-британской литературы,modern_literature|english_literature,,deepseek,0.9
+PRES_5291787a3f,2011,Zograf Readings,Прием почетного гостя-атитхи по материалам древнеиндийских ритуальных текстов,ritual_studies,,deepseek,0.85
+PRES_5816bc342a,2011,Zograf Readings,Интерпретация символов ‘ом’ и ‘сиддхам’ в мангала-шлоках санскритских рукописей,manuscripts_epigraphy,,deepseek,0.85
+PRES_59bc8c1ec8,2011,Zograf Readings,Индия в поэзии йафиитов (Южная Аравия),comparative_analysis,,deepseek,0.8
+PRES_5b9c7fa5b6,2011,Zograf Readings,Санскритизация и философские проблемы языковой политики,modern_society_politics,,deepseek_strict_scale_audit,0.9
+PRES_5b9d992a66,2011,Zograf Readings,Некоторые аспекты полемического дискурса в индийских религиозно-философских традициях,philosophy_epistemology,,deepseek_strict_scale_audit,0.9
+PRES_5deb828215,2011,Zograf Readings,Существует ли психофизическая проблема (mind-body problem) в буддизме?,buddhist_studies|philosophy_epistemology,,deepseek_strict_scale_audit,0.9
+PRES_61eb101383,2011,Zograf Readings,Поэтические жанры индийской литературы в тибетском буддийском каноне,tibetology_himalaya|buddhist_studies,,deepseek,0.85
+PRES_66b3645128,2011,Zograf Readings,О первых христианских миссионерах в Индии,colonial_encounters,,deepseek,0.85
+PRES_6b5321239f,2011,Zograf Readings,Концепт svadharma в кастовой идеологии,,,deepseek,0.9
+PRES_77ba89aeed,2011,Zograf Readings,Буддизм и юнгианство,buddhist_studies,,deepseek_strict_scale_audit,0.9
+PRES_7a0616cdc7,2011,Zograf Readings,Метафора в «Махабхарате»,epic_ramayana_mahabharata,,deepseek,0.9
+PRES_81e4f6fe0b,2011,Zograf Readings,Об изучении четвертой главы «Абхисамая-аланкары»,buddhist_studies,,deepseek,0.9
+PRES_9cc7f0b54c,2011,Zograf Readings,Samarasa и svasamvedya в абхишека-патале Хеваджра-тантры согласно Муктавалихеваджрапаньджике Ратнакарашанти,buddhist_studies,,deepseek,0.9
+PRES_9ec34b2c0f,2011,Zograf Readings,Строфы о бодхичитте во второй главе Гухьясамаджа тантры,buddhist_studies,,deepseek,0.9
+PRES_9f66f4e714,2011,Zograf Readings,Энергийный прагматизм в тамильской культуре,dravidology_south_india,,deepseek_strict_scale_audit,0.9
+PRES_b9333b3423,2011,Zograf Readings,«Ярость» Рушди,modern_literature,,deepseek,0.9
+PRES_c511412335,2011,Zograf Readings,Герасим Лебедев и британская элита колониальной Калькутты,colonial_encounters,,deepseek,0.9
+PRES_cb03ffd1cc,2011,Zograf Readings,Половозрастная стратификация общества в ведийских текстах,vedic_studies,,deepseek_strict_scale_audit,0.9
+PRES_d1ddc8c000,2011,Zograf Readings,Следуя воле звезд: Индийская астрология и практика предсказаний стихийных бедствий,,,deepseek_strict_scale_audit,0.9
+PRES_d8c8a0e9b4,2011,Zograf Readings,Драупади в Зале собрания (роль бога Дхармы),epic_ramayana_mahabharata,,deepseek,0.9
+PRES_df563ac2ff,2011,Zograf Readings,Проблема энергии в тантре,,,deepseek_strict_scale_audit,0.9
+PRES_e2d0ac8c94,2011,Zograf Readings,Категории описания священной речи в «Ригведапратишакхье»,vedic_studies,,deepseek,0.9
+PRES_e7d3ba524e,2011,Zograf Readings,RāmāyaNa’s Commentary Tradition in the Untouchable Rāmnāmī Community,epic_ramayana_mahabharata,,deepseek,0.9
+PRES_eaf7163393,2011,Zograf Readings,Рабиндранат Тагор: уровни поэтического высказывания,bengal,,deepseek,0.9
+PRES_ef02ed3c8e,2011,Zograf Readings,Саттрия: рождение нового индийского классического танца в Ассаме Лаборатория «Театрика» (Москва – С.-Петербург). Видеоматериал по традиции чхоу,assam,,deepseek,0.9
+PRES_f73706499b,2011,Zograf Readings,"«Юные» в окружении царя Раджасинхи II—го (XVII век, Шри Ланка)",,,deepseek,0.9
+PRES_fb8b7f76bc,2011,Zograf Readings,Другой в традиции индуизма и философии Бенгальского Возрождения: Опыт сопоставления,bengal,,deepseek_strict_scale_audit,0.9
+PRES_fe38d39938,2011,Zograf Readings,Глава о надзирателе за архивом в «Артхашастре» Каутильи в контексте информации надписей времени Гуптов,,,deepseek,0.9
+PRES_0aedd41026,2012,Zograf Readings,Непосредственное восприятие как знание из слов по материалам «Веданта-парибхаши» Дхармараджи,philosophy_epistemology,,deepseek,0.9
+PRES_1a19c546ea,2012,Zograf Readings,«Третье измерение» в непальской поэзии,nepal_newar_kathmandu,,deepseek_strict_scale_audit,0.9
+PRES_20d92e0dfe,2012,Zograf Readings,Эволюция жанра шахрашуб в контексте взаимодействия персоязычной литературы и литературы урду,comparative_analysis|hindi_urdu_new_indo_aryan,,deepseek_strict_scale_audit,0.9
+PRES_20e82a1bf4,2012,Zograf Readings,«Юный» как представитель измененного состояния сознания,,,deepseek,0.7
+PRES_347180ce4e,2012,Zograf Readings,«Кадамбари» в современном мире,translation_reception,,deepseek,0.8
+PRES_34da19dc14,2012,Zograf Readings,Агамический текст как способ самоопределения ведической традиции (на примере «Шива сутры») 15.00. Там же,vedic_studies|philosophy_epistemology,,deepseek,0.85
+PRES_44b7051738,2012,Zograf Readings,Формула «бхукти — мукти» и сотериологический антиномизм индуистской тантры,philosophy_epistemology,,deepseek_strict_scale_audit,0.9
+PRES_4557455166,2012,Zograf Readings,Версия мифа о Вритре в «Девибхагаватапуране»,epic_ramayana_mahabharata,,deepseek,0.9
+PRES_485b7b3478,2012,Zograf Readings,Осел/бык в индоиранской картине мира,comparative_analysis,,deepseek_strict_scale_audit,0.9
+PRES_4acd5d51b5,2012,Zograf Readings,Эволюция буддистского учения о не-«я»: две концепции анатмавады,buddhist_studies|pali_early_buddhism,,deepseek_strict_scale_audit,0.9
+PRES_5bd9be8d40,2012,Zograf Readings,Еще раз о теме разлуки в тамильской поэзии,dravidology_south_india,,deepseek,0.8
+PRES_5f83d7a499,2012,Zograf Readings,Текст по культу Ваджрапани и восьми царей нагов в свитке XIII века Дх-178 из собрания ИВР РАН,buddhist_studies|manuscripts_epigraphy,,deepseek,0.9
+PRES_627da820b6,2012,Zograf Readings,Дискуссия о значении термина анангу в тамильской литературе,dravidology_south_india,,deepseek,0.85
+PRES_63aa865de4,2012,Zograf Readings,Практики движения праны в текстах кашмирских авторов,philosophy_epistemology,,deepseek,0.85
+PRES_77f698acd5,2012,Zograf Readings,«Рамаяна» в драме Бхавабхути «Последние деяния Рамы»,epic_ramayana_mahabharata,,deepseek,0.9
+PRES_8bd27d8f20,2012,Zograf Readings,Две парадигмы монизма в интерпретации «Бхагавадгиты»: Шанкара и Рамануджа,philosophy_epistemology,,deepseek_strict_scale_audit,0.9
+PRES_92e44ac148,2012,Zograf Readings,"О взаимовлиянии индуизма и буддизма в религии непальцев (легенды, иконография, личные наблюдения)",nepal_newar_kathmandu|buddhist_studies,,deepseek_strict_scale_audit,0.9
+PRES_9389ab2ec7,2012,Zograf Readings,Неварский «повествовательный свиток» в собрании МАЭ РАН (коллекция И. П. Минаева). Предварительное сообщение,nepal_newar_kathmandu|museum_collections,,deepseek,0.9
+PRES_972d4079b1,2012,Zograf Readings,Г. Оберхаммер и его принципы изучения религиозно-философских текстов школы вишишта-адвайта-веданты,history_of_indology|philosophy_epistemology,,deepseek,0.85
+PRES_9991e8b1ef,2012,Zograf Readings,Особенности календарной обрядности у раджпутов C,life_cycle_rituals,,deepseek,0.85
+PRES_a72801a7e5,2012,Zograf Readings,Образ индуизма в религиозно-философской мысли Бенгальского Ренессанса,bengal|bengal_bhakti_modernity,,deepseek_strict_scale_audit,0.9
+PRES_b27303708f,2012,Zograf Readings,Особенности композиции «Апастамба-дхармасутры»,sanskrit_grammar_panini,,deepseek,0.9
+PRES_b48f6f5ffd,2012,Zograf Readings,Символические фигуры «Ригведы» (на примере гимна «К Речи»),vedic_studies,,deepseek,0.9
+PRES_bafd1e3979,2012,Zograf Readings,Живая традиция ритуальных росписей Питхоро в Гуджарате: полевые данные 2012 г,fieldwork|visual_material_culture,,deepseek,0.95
+PRES_c753d8108f,2012,Zograf Readings,"«Бенгальский стиль» в индийском танце: традиционное, креативное, политическое измерения В программе возможны изменения и дополнения Приглашаются все желающие",bengal,,deepseek_strict_scale_audit,0.9
+PRES_ca1df3941d,2012,Zograf Readings,Дхарма и буддология. Актуальные проблемы,buddhist_studies,,deepseek_strict_scale_audit,0.9
+PRES_d7d08bc77f,2012,Zograf Readings,Матрики вне буддийских текстов,buddhist_studies,,deepseek,0.9
+PRES_d7ffc90dec,2012,Zograf Readings,Индия и индийцы в автобиографической книге В. С. Найпола «The Writer's People»,modern_literature,,deepseek,0.9
+PRES_dbced805b6,2012,Zograf Readings,Заметки о структуре расположения скульптурных изображений в храмовых комплексах согласно «Агни-пуране»,manuscripts_epigraphy,,deepseek,0.9
+PRES_df7078b604,2012,Zograf Readings,Чудесный сосуд Манимехалей: попытка интерпретации,buddhist_studies,,deepseek,0.9
+PRES_e5cc1bbb1d,2012,Zograf Readings,"Ян Потоцкий и тибетская рукопись, найденная в Калмыкии",tibetology_himalaya|expeditions,,deepseek,0.9
+PRES_ea42f7e02c,2012,Zograf Readings,Загадки поэмы Джаяси «Падмават»,hindi_urdu_new_indo_aryan,,deepseek,0.9
+PRES_fe7edab64d,2012,Zograf Readings,Об употреблении слова ātman в «Ригведе»,vedic_studies,,deepseek,0.9
+PRES_05a25bcc84,2012,Roerich Readings,Непосредственное восприятие через слово. По «Веданта-парибхаше» Дхармараджи,philosophy_epistemology,,deepseek,0.9
+PRES_1abd6d361e,2012,Roerich Readings,Рерихи в Пекине в 1934—1935 гг,roerich_studies|expeditions,,deepseek,0.9
+PRES_1e1cbc95e7,2012,Roerich Readings,Бог и человек в поэзии Тагора. От «Иша-упанишады» до «Писем о России»,bengal|bengal_bhakti_modernity,,deepseek_strict_scale_audit,0.9
+PRES_235b11e4e7,2012,Roerich Readings,Летописный текст и феномен «изображение» в буддийской традиции Тибета,tibetology_himalaya,,deepseek_strict_scale_audit,0.9
+PRES_2545b7a0c5,2012,Roerich Readings,Танцовщица и покровитель: начни и расик восточных областей Индии. Контексты взаимоотношений,bengal,,deepseek_strict_scale_audit,0.85
+PRES_3c0208406b,2012,Roerich Readings,Актуализация информативной основы средневекового текста Центральной Азии в современном мире (на примере «Тарих-и Рашиди» Мирзы Хайдара Дуглата»),china_mongolia_inner_asia,,deepseek_strict_scale_audit,0.9
+PRES_3ddacc6fb6,2012,Roerich Readings,Песенная техника проповеди Миры Баи: подступы к исследованию,bhakti_vaishnava,,deepseek,0.9
+PRES_3fe0ca1850,2012,Roerich Readings,Сновидение в древнеиндийских философских текстах,,,deepseek,0.9
+PRES_42588a671c,2012,Roerich Readings,Ю. Рерих о роли буддизма в культурном единстве Азии,roerich_studies|buddhist_studies,,deepseek_strict_scale_audit,0.9
+PRES_517c404931,2012,Roerich Readings,Описание Индии в средневековых ирландских источниках,travel_history,,deepseek,0.9
+PRES_56a96b450d,2012,Roerich Readings,Ю.Н. Рерих — выдающийся лингвист-тибетолог,roerich_studies|tibetology_himalaya,,deepseek,0.9
+PRES_5d4f4cf4a8,2012,Roerich Readings,Смех в традиции древнеиндийского театра (по материалам Натьяшастры),ethnography_performance,,deepseek,0.9
+PRES_5e071eae59,2012,Roerich Readings,Снатака в древнеиндийском ритуале и тексте,ritual_studies,,deepseek,0.9
+PRES_60805ae896,2012,Roerich Readings,Дом-музей семьи Рерихов в Улан-Баторе,roerich_studies|museum_collections,,deepseek,0.9
+PRES_6436980fe8,2012,Roerich Readings,Śradīḥ púraḥ: ранневедийский текст и ритуал,vedic_studies|ritual_studies,,deepseek,0.9
+PRES_65f28e41f2,2012,Roerich Readings,О значении пал. sutta (p.p. от supati «спать») в медитации осознанности (сатипаттхана),pali_early_buddhism,,deepseek,0.9
+PRES_74936e5d59,2012,Roerich Readings,К этимологии ведийского sarámā,etymology,,deepseek,0.9
+PRES_74d662c14f,2012,Roerich Readings,К проблеме возрастных категорий у древних тюрков VI—X вв,,,deepseek,0.85
+PRES_7fbd6a22e3,2012,Roerich Readings,Теория преемственности Дхармы в доктрине «сангоку маппо» в японском буддизме,buddhist_studies,,deepseek,0.9
+PRES_80c3a05563,2012,Roerich Readings,О формульности индийских дарственных надписей,manuscripts_epigraphy,,deepseek_strict_scale_audit,0.9
+PRES_82dc5a4985,2012,Roerich Readings,Сакральная «геология» в системе знаний вастувидьи (науки о строительстве и зодчестве) в пуранах,cosmology,,deepseek,0.9
+PRES_9294929f41,2012,Roerich Readings,Мотив caṅkrama в буддийском нарративе и изображении,buddhist_studies|visual_material_culture,,deepseek,0.9
+PRES_a5c792ee0e,2012,Roerich Readings,Сакральная защита пространства долины Катманду,nepal_newar_kathmandu,,deepseek,0.9
+PRES_a6e4236018,2012,Roerich Readings,Еще раз о субъекте: «Ишварапратьябхиджня-вимаршини» Абхинавагупты,philosophy_epistemology,,deepseek,0.9
+PRES_c417664ebc,2012,Roerich Readings,Символизм десяти воплощений Вишну во внутренней Калачакра-тантре,buddhist_studies,,deepseek,0.9
+PRES_ce1f190968,2012,Roerich Readings,Природопользование в тангутском государстве Си Ся,,,deepseek,0.85
+PRES_cf863a87de,2012,Roerich Readings,Намтар Будды Шакьямуни в тибетской и китайской (пекинской) традициях (танки из коллекций Одесского и Киевского музеев Украины),tibetology_himalaya|museum_collections,,deepseek,0.9
+PRES_cf87ec3bf9,2012,Roerich Readings,Элементы игровой поэтики в махаянском описании ступеней бодхисаттвы в текстах «Большой Праджняпарамиты»,buddhist_studies,,deepseek,0.9
+PRES_cf88b0bf9e,2012,Roerich Readings,К проблеме складывания сикхского двора и придворной культуры при последних шести гуру,colonial_encounters|sikh_studies,sikh_studies,deepseek_strict_scale_audit,0.9
+PRES_d7d410a274,2012,Roerich Readings,У истоков Праджняпарамиты (стихотворное ядро традиции),buddhist_studies,,deepseek,0.9
+PRES_e17d554abc,2012,Roerich Readings,Традиционный индийский комментарий как источник по изучению синтаксиса древнеиндийских языков,sanskrit_grammar_panini,,deepseek,0.85
+PRES_ea5d4b869f,2012,Roerich Readings,О тамильском поэтическом жанре каламбахам,dravidology_south_india,,deepseek,0.9
+PRES_f31283e9b4,2012,Roerich Readings,Рамаяна в драме Бхавабхути «Последние приключения Рамы»,epic_ramayana_mahabharata,,deepseek,0.9
+PRES_fc155b3a33,2012,Roerich Readings,Представления об Арьяварте в санскритских источниках в исторической перспективе,,,deepseek_strict_scale_audit,0.9
+PRES_fc5fc5500b,2012,Roerich Readings,12-летний животный цикл. К вопросу об истоках,cosmology,,deepseek_strict_scale_audit,0.85
+PRES_01c8c172a9,2013,Zograf Readings,О символическом языке вещей,,,deepseek_strict_scale_audit,0.8
+PRES_02fe7e79a6,2013,Zograf Readings,Cittamātra и проблема наблюдателя в Madhyānta-vibhāga,buddhist_studies|philosophy_epistemology,,deepseek,0.9
+PRES_04dccf8d10,2013,Zograf Readings,Представление о Брахмане в ранней вишишта-адвайте,philosophy_epistemology,,deepseek,0.9
+PRES_0dca1ac371,2013,Zograf Readings,Старинные португальские частушки в этнографическом контексте Южной Азии,ethnography_performance,,deepseek,0.85
+PRES_10003ca025,2013,Zograf Readings,Современное искусство адиваси: некоторые особенности музейной репрезентации в Индии и Европе 15.00. Там же,museum_collections,,deepseek,0.85
+PRES_1177dbea6f,2013,Zograf Readings,Работа Р. Х. Ленца в западноевропейских хранилищах восточных рукописей,history_of_indology,,deepseek,0.85
+PRES_3195691394,2013,Zograf Readings,Элементы культурного синтеза в бенгальской поэзии XVII века,bengal,,deepseek,0.85
+PRES_3666aae128,2013,Zograf Readings,«Открытие Индии» сквозь призму традиционного текста: опыт мыслителей Бенгальского Возрождения,bengal|colonial_encounters,,deepseek_strict_scale_audit,0.9
+PRES_3aa6b03a07,2013,Zograf Readings,Герасим Лебедев и британская элита колониальной Калькутты: момент разрыва,colonial_encounters,,deepseek,0.85
+PRES_57ae9add27,2013,Zograf Readings,Реальное и ирреальное в «„Новой поэзии“ хинди»,modern_literature,,deepseek,0.85
+PRES_6a7d4db7b5,2013,Zograf Readings,Читта и бодхичитта. Раздумья о переводе некоторых буддийских терминов,buddhist_studies,,deepseek,0.85
+PRES_6ef9ae63f8,2013,Zograf Readings,Айодхья через 20 лет после конфликта: о современных проявлениях индуистского фундаментализма (наблюдения и немного размышлений),modern_society_politics,,deepseek,0.85
+PRES_7905a089ac,2013,Zograf Readings,История Агададатты в романе Сангхадасы «Странствия Васудевы»,jain_studies,,deepseek,0.9
+PRES_85aa1ef84a,2013,Zograf Readings,Индологический миф: к вопросу о происхождении термина «индуизм»,history_of_indology,,deepseek_strict_scale_audit,0.9
+PRES_85c4d90172,2013,Zograf Readings,Жемчужный остров в «Девибхагавата-пуране»,,,deepseek,0.9
+PRES_8d5c85c734,2013,Zograf Readings,Образ Кришны в поэзии Миры Баи,bhakti_vaishnava,,deepseek,0.9
+PRES_8f2b093d02,2013,Zograf Readings,Страсти и бесстрастие Бхартирихари,,,deepseek,0.9
+PRES_9484337e22,2013,Zograf Readings,Концепт «майя» у Шанкары и Абхинавагупты: сходство и различие,philosophy_epistemology,,deepseek_strict_scale_audit,0.9
+PRES_9f51b09a94,2013,Zograf Readings,Проблема языка в веданте и европейском романтизме,comparative_analysis,,deepseek_strict_scale_audit,0.9
+PRES_aa8cf0310f,2013,Zograf Readings,Классификация наук в традиционной индийской культуре,,,deepseek_strict_scale_audit,0.9
+PRES_ae5459f5c7,2013,Zograf Readings,Буддийские рукописи в Индийском фонде ИВР РАН,buddhist_studies|manuscripts_epigraphy,,deepseek,0.9
+PRES_b2df564f10,2013,Zograf Readings,"Материальные атрибуты (лук, стрелы, топорик) как этнические символы автохтонов Шри Ланки",,,deepseek,0.85
+PRES_b8b0e64461,2013,Zograf Readings,О формульности надписей на санскрите,manuscripts_epigraphy,,deepseek,0.9
+PRES_ba46b7c452,2013,Zograf Readings,Современные баулы: от деревни до концертного зала,bengal,,deepseek,0.9
+PRES_c247636d94,2013,Zograf Readings,Причастие-герундий в хинди и бенгальском языке,hindi_urdu_new_indo_aryan|bengal,,deepseek,0.9
+PRES_ca34a85370,2013,Zograf Readings,Образ Махендры/Махинды в записках китайских паломников,buddhist_studies,,deepseek,0.9
+PRES_cf01dc9625,2013,Zograf Readings,"Садханы Харихарихаривахана-Авалокитешвары (Авалокитешвары, восседающего на Вишну, гаруде и льве) из тибетского буддийского канона C",buddhist_studies|tibetology_himalaya,,deepseek,0.9
+PRES_d01b9376c0,2013,Zograf Readings,"«Песни якшей», игры людей: о социальных, культурных и художественных особенностях якшаганы Карнатаки В программе возможны изменения и дополнения",ethnography_performance,,deepseek,0.9
+PRES_d6fac606b5,2013,Zograf Readings,Эпитеты Будды в тексте «Аджатасена-вьякараны»,buddhist_studies,,deepseek,0.9
+PRES_d9c413501e,2013,Zograf Readings,Восьмиугольные понятийные схемы в индийской рациональности,,,deepseek_strict_scale_audit,0.9
+PRES_e9bb5a759b,2013,Zograf Readings,"Варна – это фонема, буква, звук или …?",sanskrit_grammar_panini,,deepseek,0.9
+PRES_eaf0add041,2013,Zograf Readings,Образ Локешвара в календарном обряде непальцев,nepal_newar_kathmandu,,deepseek,0.9
+PRES_f3223273ab,2013,Zograf Readings,Тамильские женские божества в средневековой литературе,dravidology_south_india,,deepseek,0.9
+PRES_f978f939da,2013,Zograf Readings,О звуковом составе ведийского текста,vedic_studies,,deepseek,0.9
+PRES_05159a33dc,2013,Roerich Readings,Символизм санскритского алфавита (али-кали) в Калачакра-тантре,buddhist_studies,,deepseek,0.9
+PRES_0a18330aed,2013,Roerich Readings,Две поэмы на тему разлуки из тамильского сборника Паттуппатту: Муллейппатту и Недунальвадей. Опыт сравнения,dravidology_south_india,,deepseek,0.9
+PRES_5280e823e7,2013,Roerich Readings,Специфика восприятия и интерпретации моголами древнеиндийской эпической литературы,colonial_encounters,,deepseek,0.8
+PRES_532d58897a,2013,Roerich Readings,Концепция maryādā в непальских надписях,nepal_newar_kathmandu|manuscripts_epigraphy,,deepseek,0.9
+PRES_5e3a0ceae6,2013,Roerich Readings,"Варна – фон, фонема, звукотип",,,deepseek,0.8
+PRES_6b57da6939,2013,Roerich Readings,Миф о Нараде из пуран: проблема интерпретации понятия майя в древнеиндийской текстовой традиции,epic_ramayana_mahabharata,,deepseek,0.9
+PRES_6b6b57012a,2013,Roerich Readings,Магическое воздействие на погоду в культуре кочевников Центральной Азии,china_mongolia_inner_asia,,deepseek,0.8
+PRES_70ac445270,2013,Roerich Readings,Особенности соотношения «лексема – понятие» в санскритских и палийских источниках,sanskrit_grammar_panini,,deepseek,0.8
+PRES_79c5e6b21a,2013,Roerich Readings,Дворцовый парк в индийской литературе V – VI вв,,,deepseek,0.9
+PRES_7e8cd0a528,2013,Roerich Readings,Открытие буддийской надписи брахми (II в. до н. э.) в Центральной Индии: к истокам традиции именования ранних буддийских школ,buddhist_studies|manuscripts_epigraphy,,deepseek,0.9
+PRES_845344a97a,2013,Roerich Readings,"Индийская монета, найденная при раскопках Тилля-тепе",,,deepseek,0.9
+PRES_96ea28da78,2013,Roerich Readings,Представления об уме в джайнской дигамбарской традиции (к прояснению терминов),jain_studies,,deepseek,0.9
+PRES_9af2d5e005,2013,Roerich Readings,Спор Абхинавагупты и Утпаладевы с буддистами в первой части «Ишварапратьябхиджня-вимаршини»,philosophy_epistemology,,deepseek,0.9
+PRES_a667a3743e,2013,Roerich Readings,"Образ карлика в иконографической программе индийского храма (Аджанта, Эллора, Аурангабад) V – X вв",visual_material_culture,,deepseek,0.9
+PRES_a98cfd66e4,2013,Roerich Readings,Manas/mana и dhamma в понимании первого изречения «Дхаммапады»,pali_early_buddhism,,deepseek,0.9
+PRES_af8ac6f8df,2013,Roerich Readings,Множественность будд и сотериология махасангхиков,buddhist_studies,,deepseek,0.9
+PRES_aff25e6347,2013,Roerich Readings,Символы в обозначении пространства и чисел и их истолкование (по текстам вастувидьи из пуран),cosmology,,deepseek,0.9
+PRES_bc5e88c7e6,2013,Roerich Readings,Исторические исследования Ю.Н. Рериха в Ладакхе,tibetology_himalaya|expeditions,,deepseek,0.9
+PRES_e9e215c9f0,2013,Roerich Readings,Буддийские сутры в переводах раннекитайской традиции,buddhist_studies|translation_reception,,deepseek,0.9
+PRES_f5881d70cf,2013,Roerich Readings,Вратьи в контексте ритуала приема почетного гостя (atithi),ritual_studies|vedic_studies,,deepseek,0.9
+PRES_f8ceba92a2,2013,Roerich Readings,Концепция «пратитья-самутпада» в раннебуддийской литературе (по материалам палийского канона),buddhist_studies|pali_early_buddhism,,deepseek,0.9
+PRES_09ea1d8846,2014,Zograf Readings,Абхидхармакоша: проблема авторства,buddhist_studies,,deepseek,0.9
+PRES_149689b11e,2014,Zograf Readings,What is Ahi Budhnya: some remarks on the Serpent of the Deep as in the Rigveda and elsewhere,vedic_studies,,deepseek,0.9
+PRES_1ec138c017,2014,Zograf Readings,Концепция аватар Вишну в поэме Магхи «Шишупалавадха»,epic_ramayana_mahabharata|vaishnava,,deepseek,0.9
+PRES_222fd16a0c,2014,Zograf Readings,Хити/дхара — «неиссякаемый источник»: Иконография и функции (по материалам Непала),nepal_newar_kathmandu|visual_material_culture,,deepseek,0.9
+PRES_25a34c0006,2014,Zograf Readings,Тангутские ксилографы письмом ‘сиддхам’ из собрания ИВР РАН,manuscripts_epigraphy|buddhist_studies,,deepseek,0.9
+PRES_25c542e83e,2014,Zograf Readings,Религия как инструмент внутренней политики Индии,modern_society_politics,,deepseek_strict_scale_audit,0.9
+PRES_28cd96d910,2014,Zograf Readings,Форма смыслового глагола в модальных конструкциях возможности/способности в хинди,hindi_urdu_new_indo_aryan,,deepseek,0.9
+PRES_2d1d6b8cb7,2014,Zograf Readings,Неварский «повествовательный свиток» на темы «Лалитавистары»: «одомашнивание» классической буддийской сутры 15.00. Там же,nepal_newar_kathmandu|buddhist_studies|visual_material_culture,,deepseek,0.9
+PRES_2f9d65e45b,2014,Zograf Readings,"The ideal man in the Mahābhārata. The consciousness of the ""budhyamāna"" on one's way to salvation",epic_ramayana_mahabharata,,deepseek,0.9
+PRES_38f0bf3fa1,2014,Zograf Readings,Южноиндийские божества: некоторые аспекты гендерных взаимоотношений,dravidology_south_india,,deepseek_strict_scale_audit,0.9
+PRES_3eb2ccd62e,2014,Zograf Readings,"Мандала-классификация нечестных трансакций в ответ на упрек (Ангуттара-никая. Аттаканипата, Ассаколанкасутта)",buddhist_studies|pali_early_buddhism,,deepseek,0.9
+PRES_446d1622e0,2014,Zograf Readings,Психология Бога в кашмирском шиваизме и у Якоба Беме,philosophy_epistemology,,deepseek_strict_scale_audit,0.9
+PRES_51ca649214,2014,Zograf Readings,Брахманы намбудири: некоторые особенности традиции передачи ведийских текстов,vedic_studies|ethnography_performance,,deepseek,0.9
+PRES_667fb09140,2014,Zograf Readings,Община парсов в мультикультурном Бомбее (по произведениям Рохинтона Мистри),colonial_encounters|modern_society_politics,,deepseek,0.9
+PRES_67151ae69e,2014,Zograf Readings,Грамматика Панини и механизм кодирования ведийского текста,sanskrit_grammar_panini|vedic_studies,,deepseek,0.9
+PRES_6fd8f32d77,2014,Zograf Readings,И. П. Минаев как собиратель рукописей,history_of_indology|manuscripts_epigraphy,,deepseek,0.9
+PRES_71c7cc1a09,2014,Zograf Readings,"Спхота, джати, пашьянти и пратибха в «Вакьяпадии» — к проблеме разграничения терминов",philosophy_epistemology|sanskrit_grammar_panini,,deepseek,0.9
+PRES_7393356a70,2014,Zograf Readings,Ранние китайские версии биографии Будды: сюжет подношения рисовой каши,buddhist_studies,,deepseek,0.9
+PRES_7e6c76b7c4,2014,Zograf Readings,Древнеиндийская риторика и традиция санскритского театра (Тригата в «Натьяшастре»),sanskrit_grammar_panini,,deepseek,0.85
+PRES_7eec57e19f,2014,Zograf Readings,Духи умерших в представлениях и обрядовой жизни веддов Шри Ланки,ethnography_performance,,deepseek,0.9
+PRES_83fa564d73,2014,Zograf Readings,Традиционная классификация санскритских стихотворных размеров,prosody,,deepseek,0.9
+PRES_8c55a738df,2014,Zograf Readings,О стереотипизации адиваси в популярной культуре Индии,modern_society_politics,,deepseek,0.85
+PRES_9857501571,2014,Zograf Readings,«Лирическая героиня» Миры Баи,bhakti_vaishnava,,deepseek,0.9
+PRES_9c47837d30,2014,Zograf Readings,Концепция «марьяда» в непальских надписях,nepal_newar_kathmandu|manuscripts_epigraphy,,deepseek,0.9
+PRES_aa4df50cf0,2014,Zograf Readings,Древние южноазиатско-африканские связи (по данным фольклора и мифологии),comparative_analysis,,deepseek_strict_scale_audit,0.9
+PRES_adefba4b15,2014,Zograf Readings,Феномен Рамакришны Парамахамсы и формирование неоиндуизма в Бенгалии XIX века,bengal|bengal_bhakti_modernity,,deepseek_strict_scale_audit,0.9
+PRES_b0ead2dd43,2014,Zograf Readings,"Одержимость, служение и лицедейство. Традиции Bhoota-kolam и Theyyam Тулунаду",ethnography_performance,,deepseek,0.9
+PRES_b6bc9faa10,2014,Zograf Readings,Значение творчества Тирумулара для формирования изобразительного канона Шивы Натараджи в Чидамбараме,visual_material_culture,,deepseek,0.85
+PRES_b9b432befc,2014,Zograf Readings,Животный мир пословиц и поговорок хинди,hindi_urdu_new_indo_aryan,,deepseek,0.9
+PRES_ba306768d9,2014,Zograf Readings,Гимн-падигам как основная форма поэзии тамильских шиваитов,dravidology_south_india,,deepseek,0.85
+PRES_d1d4be71f7,2014,Zograf Readings,К реконструкции ритуальной семантики дравидского kāvaṭi,dravidology_south_india,,deepseek,0.85
+PRES_d45862604d,2014,Zograf Readings,В деревне Ампития (Шри Ланка) через 100 лет после Людмилы Мерварт,expeditions,,deepseek,0.9
+PRES_d53f641345,2014,Zograf Readings,"О гимне Авалокитешваре, приписываемом тибетскому царю Сонгцэн-гампо",tibetology_himalaya,,deepseek,0.9
+PRES_db18841de6,2014,Zograf Readings,«Апофатический» подход в буддийской теории восприятия,buddhist_studies,,deepseek,0.85
+PRES_dff8128e31,2014,Zograf Readings,«Стотра-ратна» Ямуны: философия vis-à-vis поэзия,vaishnava,,deepseek,0.85
+PRES_f0c510e9df,2014,Zograf Readings,К вопросу о письменной фиксации Ригведы 15.00. Там же,vedic_studies,,deepseek,0.9
+PRES_fef7c3afd6,2014,Zograf Readings,Версия «Рамаяны» в «Махабхагавата-пуране»,epic_ramayana_mahabharata,,deepseek,0.9
+PRES_00dba5f22c,2015,Zograf Readings,Что мы пьём? (анализ питья с позиций тибетской мадхьямаки и «многомировой» концепции Эверетта-Менского),tibetology_himalaya,,deepseek,0.8
+PRES_0b6b8afcb2,2015,Zograf Readings,Атомистический подход в буддизме,buddhist_studies,,deepseek,0.9
+PRES_0cfab3c29b,2015,Zograf Readings,Расширение и распространение: о некоторых особенностях употребления глагольного корня bṛh в «Ригведе»,vedic_studies,,deepseek,0.95
+PRES_14160d038b,2015,Zograf Readings,Далитская автобиография как специфический жанр,modern_literature,,deepseek,0.9
+PRES_15ddb2e3bf,2015,Zograf Readings,Из миссионерской истории Индии: Франциск Ксавье,colonial_encounters,,deepseek,0.9
+PRES_195d6fc0bc,2015,Zograf Readings,Образная система в отшельнической поэзии раннего буддизма,buddhist_studies,,deepseek,0.9
+PRES_1b1e7ee72c,2015,Zograf Readings,Чудо Полоннарувы,,,deepseek,0.8
+PRES_1f1bea1183,2015,Zograf Readings,Рассказы о мастерстве в древнеиндийской городской литературе,,,deepseek,0.9
+PRES_20a3d34c80,2015,Zograf Readings,Проблемы перевода «Шрибхашьи» Рамануджи,vaishnava,,deepseek,0.9
+PRES_20f5fa7819,2015,Zograf Readings,Язык и внеязыковая действительность в «Вакьяпадии» Бхартрихари,philosophy_epistemology,,deepseek,0.9
+PRES_2715b98469,2015,Zograf Readings,Индийская тема в автобиографической книге В. С. Найпола «A Writer's People: Ways of Looking and Feeling»,modern_literature,,deepseek,0.9
+PRES_2aa82261d1,2015,Zograf Readings,Научно-фантастические рассказы Хумаюна Ахмеда,modern_literature,,deepseek,0.9
+PRES_2fba1f0162,2015,Zograf Readings,Брахмаракшас: от древности к современности,,,deepseek_strict_scale_audit,0.85
+PRES_36924ac394,2015,Zograf Readings,О значении термина «саутрантика» в «Абхидхармакоше» Васубандху,buddhist_studies,,deepseek,0.9
+PRES_3759903dc9,2015,Zograf Readings,Фрагмент дискуссии о пудгале в «Катхаваттху» I.1: пудгала и скандхи,buddhist_studies,,deepseek,0.9
+PRES_3df80915c1,2015,Zograf Readings,Лунные созвездия (nakṣatras) и традиция имянаречения в Древней Индии H. Urbańska. Concept of maya in Darśana Mala of Narayana Guru,vedic_studies,,deepseek,0.9
+PRES_3e050c97df,2015,Zograf Readings,Коллекция индийских рукописей рукописного фонда библиотеки СПбГУ,manuscripts_epigraphy,,deepseek,0.9
+PRES_3e5e8e70ba,2015,Zograf Readings,Обращение к участникам конференции,,,deepseek,0.9
+PRES_4306e74d40,2015,Zograf Readings,О возможности генетической связи между индийским и месопотамским мифами о потопе,comparative_analysis,,deepseek_strict_scale_audit,0.9
+PRES_48fe6a6077,2015,Zograf Readings,«Семь познающих» (saptapramātāraḥ) в рекогнитивном самопознании (pratyabhijñā) у Абхинавагупты,philosophy_epistemology,,deepseek,0.9
+PRES_4bc7a6fa32,2015,Zograf Readings,К этимологии термина ‘вьякарана’ в буддийских источниках,etymology|buddhist_studies,,deepseek,0.9
+PRES_525929e7ed,2015,Zograf Readings,Киннары в скульптуре и литературе Индии,visual_material_culture,,deepseek,0.85
+PRES_53522f63c1,2015,Zograf Readings,Концепты брахманистского философского дискурса и их связь с женским принципом народного индуизма,philosophy_epistemology,,deepseek_strict_scale_audit,0.9
+PRES_56a4aaf53a,2015,Zograf Readings,О некоторых особенностях в композиции Абхидхармасамуччаи,buddhist_studies,,deepseek,0.9
+PRES_5771f5a6b7,2015,Zograf Readings,«Тируттондар тирувандади» Намби Андара Намби (Роль редактора в формировании канонического списка бхактов-наянаров),bhakti_vaishnava|bengal,,deepseek,0.9
+PRES_5bb9175b5b,2015,Zograf Readings,Трансформации сюжетов о просветлении и первой проповеди Будды в свете ранних китайских переводов сутр (II—III вв.),buddhist_studies|translation_reception,,deepseek,0.9
+PRES_617b761321,2015,Zograf Readings,Народный стиль речи в «Бхрамара-гите» Сурдаса,bhakti_vaishnava,,deepseek,0.9
+PRES_761cbc2fa1,2015,Zograf Readings,Ведды глазами сингалов: в прошлом и настоящем,,,deepseek,0.85
+PRES_7a4c10b9d8,2015,Zograf Readings,Вклад В. С. Воробьева-Десятовского (1927—1956) в развитие российско-индийских культурных связей,history_of_indology,,deepseek,0.9
+PRES_82ae7abc5a,2015,Zograf Readings,Старая сказка на новый лад: Девдас в индийском кинематографе 21 века,modern_literature,,deepseek,0.9
+PRES_891e3870db,2015,Zograf Readings,Бонкимчондро Чоттопаддхай и генезис неоиндуизма в Бенгалии,bengal|bengal_bhakti_modernity,,deepseek_strict_scale_audit,0.9
+PRES_899ee181a5,2015,Zograf Readings,Роман «Кадамбари» и его современное продолжение,translation_reception,,deepseek,0.9
+PRES_89a87b7d2e,2015,Zograf Readings,Ад и его обитатели,,,deepseek_strict_scale_audit,0.9
+PRES_8ac58078e5,2015,Zograf Readings,Метафора и полисемия в интерпретации буддийских тантр,buddhist_studies,,deepseek,0.9
+PRES_8c5c002838,2015,Zograf Readings,Образ Кришны в Махабхагавата-пуране,bhakti_vaishnava|epic_ramayana_mahabharata,,deepseek,0.9
+PRES_9a274b4cf8,2015,Zograf Readings,Первопечатная христианская книга в Индии (XVI—XVII вв.),colonial_encounters,,deepseek,0.9
+PRES_9b99780d43,2015,Zograf Readings,"Манипури и Манипур: о танцах, искусстве и политике",visual_material_culture,,deepseek,0.85
+PRES_addb4753ec,2015,Zograf Readings,Сказание о Ратнакалике (в составе поэмы «Лор и Чандрани»),,,deepseek,0.9
+PRES_c1f611081b,2015,Zograf Readings,Система образов поэзии кавья на примере лирических стихов из антологии Видьякары «Субхашитаратнакоша»,literary_studies,,deepseek,0.9
+PRES_d430246a1f,2015,Zograf Readings,Эпос «Катама Раджу Катха» — основные особенности сюжета,epic_ramayana_mahabharata,,deepseek,0.9
+PRES_df75470655,2015,Zograf Readings,Несколько штрихов к «Сказанию о Нале»,epic_ramayana_mahabharata,,deepseek,0.9
+PRES_e152e08e66,2015,Zograf Readings,О некоторых особенностях росписей осакотхи (штат Орисса),visual_material_culture,,deepseek,0.85
+PRES_eb575eaa4d,2015,Zograf Readings,Был ли Яма пессимистом? Значение частицы gha и ее индоевропейские параллели (К интерпретации стиха Ригведа 10.10.10) И. А. Тоноян-Беляев. Анализ содержания и стиля текста «Васту-сутра-упанишад»: некоторые интересные особенности,vedic_studies,,deepseek,0.9
+PRES_efa8567f64,2015,Zograf Readings,"Вновь найденный ксилограф с санскритским алфавитом в трех графических вариантах, привезенный Д. Мессершмидтом из Сибири в 1727 г",manuscripts_epigraphy|expeditions,,deepseek,0.85
+PRES_fa41b47935,2015,Zograf Readings,Легенда о поэте-ребёнке. Самбандар: миф и реальность,bhakti_vaishnava,,deepseek,0.85
+PRES_05e39adcc0,2015,Roerich Readings,Воспоминание как основание для тождества «Я» в «Ишварапратьябхиджня-вимаршини» Абхинавагупты,philosophy_epistemology,,deepseek,0.9
+PRES_08ba18875c,2015,Roerich Readings,Дидактика и символика в тибетской литературе (на примере «Песни о роге яка» из собрания «сто тысяч песен Миларепы»),tibetology_himalaya,,deepseek,0.85
+PRES_0d8900f50f,2015,Roerich Readings,Будда Вайрочана и космология «Аватамсака- сутры» в Японии,buddhist_studies|cosmology,,deepseek_strict_scale_audit,0.9
+PRES_179e86e003,2015,Roerich Readings,Тема царской охоты (на материале письменных памятников Индии и Ирландии),comparative_analysis,,deepseek_strict_scale_audit,0.9
+PRES_3115290bfc,2015,Roerich Readings,Проблемы интерпретации концепции восьми опровержений в «Катхаватху»,pali_early_buddhism,,deepseek,0.9
+PRES_35cd50282e,2015,Roerich Readings,От Индии до Кара-тепе: к типологии древнеиндийского эпиграфического текста,manuscripts_epigraphy|comparative_analysis,,deepseek_strict_scale_audit,0.9
+PRES_3d773ae410,2015,Roerich Readings,Социально-философские концепции Калачакратантры с некоторыми параллелями в Кашмирском Шиваизме,buddhist_studies|philosophy_epistemology,,deepseek_strict_scale_audit,0.9
+PRES_5e2b4790e6,2015,Roerich Readings,О брахманических этимологиях,etymology,,deepseek,0.9
+PRES_683bba7031,2015,Roerich Readings,Язык жреца – язык поэта. О сакральности речи в древнейших формах санскритской драмы,sanskrit_grammar_panini,,deepseek,0.85
+PRES_6f09bca977,2015,Roerich Readings,Изменение межкастовых взаимоотношений в домусульманском Кашмире,modern_society_politics,,deepseek_strict_scale_audit,0.9
+PRES_8311e474f5,2015,Roerich Readings,"Белый Старец. Танка из коллекции Кабинета Юрия Рериха (ИВ РАН, Москва)",tibetology_himalaya|museum_collections,,deepseek,0.85
+PRES_87b3256f20,2015,Roerich Readings,Интерпретация рельефа с изображением Дурги с музыкальными инструментами из буддийского пещерного храма Аурангабада,visual_material_culture,,deepseek,0.85
+PRES_8a501640a4,2015,Roerich Readings,Наги как персонажи непальских легенд,nepal_newar_kathmandu,,deepseek,0.85
+PRES_8cf371186b,2015,Roerich Readings,Тюркский каган и сасанидский шаханшах: к вопросу об идеологических заимствованиях древних тюрков у иранцев,comparative_analysis,,deepseek_strict_scale_audit,0.9
+PRES_91225c7c40,2015,Roerich Readings,Образ Сомы в ведийской и эпической традиции,vedic_studies|epic_ramayana_mahabharata,,deepseek_strict_scale_audit,0.9
+PRES_92046749c3,2015,Roerich Readings,Проблемы датировки трактата Бхамахи и пути ее решения,sanskrit_grammar_panini,,deepseek,0.9
+PRES_9344fa57ea,2015,Roerich Readings,Стиль кавья в двух описаниях спящего гарема – в «Рамаяне» и в «Жизни Будды» Ашвагхоши,epic_ramayana_mahabharata|comparative_analysis,,deepseek,0.9
+PRES_9a58e03451,2015,Roerich Readings,Об индийских названиях нуля,etymology,,deepseek,0.9
+PRES_a662f456a2,2015,Roerich Readings,Могольская концепция богоизбранности и светоносности и ее визуальное воплощение,visual_material_culture,,deepseek,0.8
+PRES_a6bcd565b0,2015,Roerich Readings,Юрий Рерих и буддийский храм в Санкт- Петербурге,history_of_indology|buddhist_studies,,deepseek,0.9
+PRES_b0e2c5bfd8,2015,Roerich Readings,О термине татхагата в палийском каноне,pali_early_buddhism,,deepseek,0.9
+PRES_b67b7540fa,2015,Roerich Readings,Индийские гана в зеркале китайских гуа,comparative_analysis,,deepseek,0.8
+PRES_c1a79dc5fe,2015,Roerich Readings,«Торговцы» или «богачи»? К истории племенного подразделения байат,,,deepseek,0.8
+PRES_c245e46b6e,2015,Roerich Readings,Сакральная география Бодхгаи и текстовая традиция,buddhist_studies,,deepseek,0.9
+PRES_d0c16fc4c0,2015,Roerich Readings,Проповедь Кабира: некоторые особенности языка и стиля,bhakti_vaishnava,,deepseek,0.9
+PRES_e284c84ae6,2015,Roerich Readings,Санскритизация перформанса: преобразования традиций Bhūta-kolam (Тулунаду) и Chhau (Орисса),ethnography_performance,,deepseek_strict_scale_audit,0.9
+PRES_e5272eecdd,2015,Roerich Readings,Обряд освящения статуи (адхивасана) и его роль в текстах по строительству (вастувидье) в пуранах,ritual_studies,,deepseek,0.9
+PRES_e6c1d002d9,2015,Roerich Readings,Рождение героя или сакрального персонажа в индийской повествовательной традиции (к интерпретации композиции «Сон Майи»),epic_ramayana_mahabharata,,deepseek,0.9
+PRES_e7f53e7c10,2015,Roerich Readings,Образ потока в тамильской поэзии,dravidology_south_india,,deepseek,0.9
+PRES_ec1abc9fd1,2015,Roerich Readings,Пути песенных текстов – переводы и примеры метафонии,translation_reception,,deepseek,0.8
+PRES_fa1f4db445,2015,Roerich Readings,Неизвестный иллюстрированный манускрипт из Непала из собрания кабинета Ю.Н. Рериха Института востоковедения РАН,manuscripts_epigraphy|nepal_newar_kathmandu,,deepseek,0.9
+PRES_0068d49980,2016,Zograf Readings,Моравская миссия в Ладакхе. «Тибетское» христианство и вклад моравских братьев в развитие языка ладакхи,tibetology_himalaya|expeditions,,deepseek,0.9
+PRES_10a4d70166,2016,Zograf Readings,"Ведийские истоки перспективизма Бхартрихари С. Л. Бурмистров. Пауль Дойссен (1845—1919): веданта, европейская философия и философская компаративистика",philosophy_epistemology|comparative_analysis,,deepseek_strict_scale_audit,0.9
+PRES_11bae7431c,2016,Zograf Readings,Образ «распутницы» в пракритской лирике,,,deepseek,0.9
+PRES_146783a25e,2016,Zograf Readings,Герасим Лебедев как этномузыколог: Лондонский концерт,history_of_indology,,deepseek,0.9
+PRES_18af79d949,2016,Zograf Readings,"Научная ценность труда И.П.Минаева «Буддизм.Исследования и материалы» (СПб.,1887)",history_of_indology,,deepseek,0.9
+PRES_19d3632a7e,2016,Zograf Readings,Искусство мастеров-потуа: новые сюжеты в традиционном исполнении,visual_material_culture,,deepseek,0.85
+PRES_2a0e1b2cbb,2016,Zograf Readings,К вопросу об индоевропейских параллелях ведийским vrātya,vedic_studies,,deepseek,0.9
+PRES_362845173d,2016,Zograf Readings,Некоторые особенности неварского буддизма и его влияние на религиозную жизнь Непала,nepal_newar_kathmandu|buddhist_studies,,deepseek_strict_scale_audit,0.9
+PRES_367c4f966a,2016,Zograf Readings,О роли и функции диалогических поэм буддийского канона,buddhist_studies,,deepseek,0.9
+PRES_3aae77ecaf,2016,Zograf Readings,Христианская книга Индийского субконтинента XVI—XIX вв,colonial_encounters,,deepseek_strict_scale_audit,0.9
+PRES_3d94fe9cb2,2016,Zograf Readings,Основные идеи религиозной герменевтики Г. Оберхаммера в аспекте изучения вишишта-адвайта-веданты,philosophy_epistemology,,deepseek,0.9
+PRES_3f0186a62b,2016,Zograf Readings,Катхпутли: народные марионетки Раджастхана,visual_material_culture,,deepseek,0.9
+PRES_417cd90017,2016,Zograf Readings,И снова о переводах Р. Тагора,translation_reception,,deepseek,0.85
+PRES_41f97da7ea,2016,Zograf Readings,"О сборнике садхан, переведенном Б. И. Панкратовым в 1930-е гг. в Пекине",buddhist_studies,,deepseek,0.9
+PRES_49299cbe89,2016,Zograf Readings,Bhavāi Гуджарата: о культурном смысле и социальных функциях традиционного театра,ethnography_performance,,deepseek,0.9
+PRES_505b9c3a7b,2016,Zograf Readings,Понимание высшей истины (парамартха) у Чже Цонкапы,buddhist_studies|tibetology_himalaya,,deepseek,0.9
+PRES_606634cdb3,2016,Zograf Readings,"У сингальских мастеров по дереву (Шри Ланка, осень 2014 г.)",fieldwork,,deepseek,0.9
+PRES_609d5b9f72,2016,Zograf Readings,Репрезентация образа адиваси в популярном индийском кинематографе,modern_society_politics,,deepseek,0.85
+PRES_625c10aa1b,2016,Zograf Readings,Об основаниях интерпретации терминов «dharma» и «saṃskāra» в контексте «Абхидхармасамуччаи»,buddhist_studies,,deepseek,0.9
+PRES_707faba145,2016,Zograf Readings,Чайтанья и его учение в североиндийской литературе XVII в. (на примере «Бхактамалы» Госвами Набхадаса),bhakti_vaishnava,,deepseek,0.9
+PRES_71ed8e82c3,2016,Zograf Readings,Формирование иконографии и ритуала бхактотсава в тамильском шайва-бхакти (от «Тируттондаттохей» Сундарара до «Махотсававидхи» Агхорашивы),ritual_studies,,deepseek,0.9
+PRES_72191f65f9,2016,Zograf Readings,Из миссионерской истории Индии: Роберто де Нобили,colonial_encounters,,deepseek,0.9
+PRES_74cd40949e,2016,Zograf Readings,Понятие фундаментальности в индологии,history_of_indology,,deepseek_strict_scale_audit,0.9
+PRES_74f987e071,2016,Zograf Readings,"Словарь «Амаракоша» как отражение индийской картины мира 15.00. ИВР РАН, Зеленый зал",sanskrit_grammar_panini,,deepseek_strict_scale_audit,0.9
+PRES_788a7544aa,2016,Zograf Readings,«Бхрамара-гита» Сурдаса: к характеристике стиля,bhakti_vaishnava,,deepseek,0.9
+PRES_7acc74ab82,2016,Zograf Readings,Письменности языков мунда,new_indo_aryan_languages,,deepseek_strict_scale_audit,0.9
+PRES_7c33afdee0,2016,Zograf Readings,«Век Кроноса» и «Сатья-юга»: два вида «первобытного коммунизма» и античных теорий социогенеза,comparative_analysis,,deepseek_strict_scale_audit,0.9
+PRES_988254dd64,2016,Zograf Readings,Атиратра Агничаяна: замещение жертвенных животных в ритуалах,vedic_studies|ritual_studies,,deepseek,0.9
+PRES_98b2929335,2016,Zograf Readings,Южноиндийский театр теней «толпава кутху»: традиция и современность,ethnography_performance|dravidology_south_india,,deepseek_strict_scale_audit,0.9
+PRES_99df250203,2016,Zograf Readings,Этнографические группы веддов (история и современность),,,deepseek_strict_scale_audit,0.9
+PRES_9a9e878cfe,2016,Zograf Readings,Человек и судьба (в пословицах хинди),hindi_urdu_new_indo_aryan,,deepseek_strict_scale_audit,0.9
+PRES_a0347d2f8e,2016,Zograf Readings,«Рамаяна» Далджита Награ — новый текст индийской диаспоры,epic_ramayana_mahabharata|translation_reception,,deepseek,0.9
+PRES_a4f7b5c51d,2016,Zograf Readings,Проблема квалия в свете буддийской философии,buddhist_studies|philosophy_epistemology,,deepseek_strict_scale_audit,0.9
+PRES_afb804b1d8,2016,Zograf Readings,"Метафизика, мифология, повседневная жизнь: гендерный ракурс южноиндийской традиции",dravidology_south_india,,deepseek_strict_scale_audit,0.9
+PRES_ba7098c9bc,2016,Zograf Readings,К интерпретации ведийского понятия krátu-,vedic_studies|etymology,,deepseek,0.9
+PRES_bb48ba0772,2016,Zograf Readings,Историографический обзор философско-поэтического наследия Ведантачарьи (Веданта Дешики),history_of_indology,,deepseek_strict_scale_audit,0.9
+PRES_bb59843713,2016,Zograf Readings,Морализаторство как феномен мысли и культуры Бенгальского Возрождения,bengal|bengal_bhakti_modernity,,deepseek_strict_scale_audit,0.9
+PRES_becc032ebd,2016,Zograf Readings,Критика Шанкарой доктрины спхотавады,philosophy_epistemology,,deepseek,0.9
+PRES_c3842d17d8,2016,Zograf Readings,Чудеса и проповеди в лесу Урувильва. Первые последователи Будды по китайской версии биографии Будды (III в.),buddhist_studies|pali_early_buddhism,,deepseek,0.9
+PRES_d0a593aaa8,2016,Zograf Readings,Проблемы текстологии «Шатакатраям» Бхартрихари (на примере «Шрингарашатаки»),manuscripts_epigraphy,,deepseek,0.9
+PRES_de86e2a6e2,2016,Zograf Readings,Мотив дохады в древних жизнеописаниях Будды,buddhist_studies|pali_early_buddhism,,deepseek,0.9
+PRES_f522ab2214,2016,Zograf Readings,Предсказания об исчезновении Дхармы как фактор зарождения традиционной историографии буддизма,buddhist_studies,,deepseek_strict_scale_audit,0.9
+PRES_03402280ff,2016,Roerich Readings,К проблеме взаимодействия буддизма и воинской культуры у ойратов,buddhist_studies|china_mongolia_inner_asia,,deepseek_strict_scale_audit,0.9
+PRES_03e4f6f86b,2016,Roerich Readings,Из воспоминаний о детстве на Онеге,,,deepseek,0.9
+PRES_0bb0a01234,2016,Roerich Readings,Особенности художественной структуры тамильской антологии «Калиттохей» (на примере песни 92),dravidology_south_india,,deepseek,0.9
+PRES_168720e32a,2016,Roerich Readings,Символический язык буддизма ваджраяны на примере «Калачакра Тантры»,buddhist_studies,,deepseek,0.9
+PRES_2ae3c0414e,2016,Roerich Readings,Классификационные списки (матики) в раннем буддизме,buddhist_studies,,deepseek_strict_scale_audit,0.9
+PRES_3a8edf51a0,2016,Roerich Readings,Мотив dad-u dām в могольском монаршем портрете: к вопросу о генезисе и семантике,visual_material_culture,,deepseek,0.9
+PRES_3c97651b93,2016,Roerich Readings,Всадник Шамбалы (танка из собрания Мемориального кабинета Ю.Н. Рериха ИВ РАН),tibetology_himalaya|museum_collections,,deepseek,0.9
+PRES_3da4b2c217,2016,Roerich Readings,Бхаджаны-проповеди Миры Баи: к вопросу о стилистике жанра,bhakti_vaishnava,,deepseek,0.9
+PRES_47c3348c64,2016,Roerich Readings,Образ Рахулы в японских ритуальных текстах косики,buddhist_studies,,deepseek,0.9
+PRES_4be1348822,2016,Roerich Readings,Рерих и проблема истории тохар,history_of_indology,,deepseek_strict_scale_audit,0.9
+PRES_5553ddc3b0,2016,Roerich Readings,Власть как дар Неба,,,deepseek_strict_scale_audit,0.9
+PRES_583cc5402f,2016,Roerich Readings,Винадхара и Ардханаришвара – проблема переходной иконографии Шивы,visual_material_culture,,deepseek,0.9
+PRES_5a19c2a8d0,2016,Roerich Readings,Европейская феноменология и буддизм в свете спора представителей кашмирской школы Пратьябхиджня с буддистами,philosophy_epistemology,,deepseek_strict_scale_audit,0.9
+PRES_5e73ba89b7,2016,Roerich Readings,Санскара «посвящение в ученики» (упанаяна): её место и значение в ряду других санскар и в древней разработке стратификации индийского общества,ritual_studies,,deepseek_strict_scale_audit,0.9
+PRES_661914709f,2016,Roerich Readings,Прогулки по городу с Хануманом (один эпизод из «Рамаяны» и его параллели в Артхашастре Каутильи и в палийском каноне),epic_ramayana_mahabharata,,deepseek,0.9
+PRES_6b4df0d231,2016,Roerich Readings,"Восхождение на Кайласу. История шайва-бхактов Сундарара и Черамана Перумаля, рассказанная в «Перияпуранам» Секкижара и на фреске храма Брихадишвары в Танджоре",bhakti_vaishnava,,deepseek,0.9
+PRES_77c95981ae,2016,Roerich Readings,Миф о сожжении Трипуры на перекрестках ведийской и эпической традиции,vedic_studies|epic_ramayana_mahabharata,,deepseek_strict_scale_audit,0.9
+PRES_877b168c0c,2016,Roerich Readings,Карма и связанные термины во 2-й патале Калачакра-тантры,buddhist_studies,,deepseek,0.9
+PRES_90144b87a9,2016,Roerich Readings,О происхождении некоторых ашрамных практик в произведениях Калидасы,,,deepseek,0.9
+PRES_a0af113263,2016,Roerich Readings,Китайские переводы ранних буддийских сутр: возможности реконструкции истории индийского текста,buddhist_studies|translation_reception,,deepseek_strict_scale_audit,0.9
+PRES_a66ce250fa,2016,Roerich Readings,Ритуал poṣadha в буддийских монастырях кушанского Термеза I – IV в. н. э. (реконструкция),buddhist_studies|ritual_studies,,deepseek,0.9
+PRES_aa48b528e8,2016,Roerich Readings,Некоторые аспекты взаимопроникновения индуизма и буддизма в контексте непальских легенд и религиозной практики,nepal_newar_kathmandu,,deepseek_strict_scale_audit,0.9
+PRES_bbed1796bb,2016,Roerich Readings,Механизмы интертекста в раннебуддийской текстовой традиции,buddhist_studies,,deepseek,0.9
+PRES_bc71d23355,2016,Roerich Readings,Диалект амдо – нетоновый диалект тибетского языка,tibetology_himalaya,,deepseek,0.9
+PRES_d358667395,2016,Roerich Readings,Образ мира в индийской настольной игре jñãna-caupãr,board_games,,deepseek,0.9
+PRES_d3a1014be2,2016,Roerich Readings,Чувство времени (венок сонетов),,,deepseek,0.8
+PRES_d952c65e18,2016,Roerich Readings,Литературный канон и инновации в поэме Джаянкондара «Парани о войне в Калинге»,dravidology_south_india,,deepseek,0.9
+PRES_d97538f124,2016,Roerich Readings,Ритуальный текст о структуре вселенной (опыт литературного перевода),cosmology,,deepseek,0.9
+PRES_da2e8e521f,2016,Roerich Readings,Опровержение существования субъекта в полемике с вайшешиками по вопросу о существовании субъекта в «Пудгалавинишчае» Васубандху,buddhist_studies,,deepseek,0.9
+PRES_e4714d395f,2016,Roerich Readings,Культ Нарасинхи в трактатах по вастувидье в пуранах,vaishnava,,deepseek,0.9
+PRES_e7b0ae48ad,2016,Roerich Readings,Пушкин на языке непали,nepal_newar_kathmandu,,deepseek,0.9
+PRES_efa644ebfa,2016,Roerich Readings,Еретики локаятики и ортодокс Каутса,,,deepseek,0.8
+PRES_f0240ba1c9,2016,Roerich Readings,Особенности жанра парибхаша на примере сутр Апастамбы,sanskrit_grammar_panini,,deepseek,0.9
+PRES_00c3fc1661,2017,Zograf Readings,Вопрос о божественности Будды в «Катхаваттху» 21.5—21.6,buddhist_studies|pali_early_buddhism,,deepseek,0.9
+PRES_0928c0dd29,2017,Zograf Readings,«Диалоги об индусской философии» Кришномохана Банерджи: история мысли в интерпретации индийского христианина,colonial_encounters|bengal,,deepseek,0.9
+PRES_0ebfa0f118,2017,Zograf Readings,Плач матери Будды по мертвому сыну: об одном эпизоде из легенды о просветлении,buddhist_studies,,deepseek,0.9
+PRES_19c807a65f,2017,Zograf Readings,Философское учение Веданта Дешики в системе вишишта-адвайта-веданты,vaishnava,,deepseek,0.9
+PRES_1aaabe5423,2017,Zograf Readings,Специфика бенгальских анекдотов,bengal,,deepseek,0.9
+PRES_205565b3d7,2017,Zograf Readings,"К вопросу о периодизации истории индийской философии 15.00. Русская христианская гуманитарная академия (наб. р. Фонтанки, д. 15). 5-й этаж, Актовый зал",history_of_indology,,deepseek_strict_scale_audit,0.9
+PRES_3ce89a6762,2017,Zograf Readings,Брак с божеством как форма медиации в неварском обществе,nepal_newar_kathmandu,,deepseek,0.9
+PRES_3e55ce15ac,2017,Zograf Readings,Особенности культа лингама в традиции вирашайвов,,,deepseek,0.9
+PRES_45c0547868,2017,Zograf Readings,О методах описания санскритских классических стихотворных размеров,metrics|prosody,,deepseek,0.9
+PRES_47078a3292,2017,Zograf Readings,Фольклорные элементы в сказании о Ратне (XVII век),epic_ramayana_mahabharata,,deepseek,0.9
+PRES_4884ab035e,2017,Zograf Readings,Карибский текст индийской диаспоры,modern_literature,,deepseek,0.85
+PRES_491dee99e0,2017,Zograf Readings,Классификация видов духовного освобождения в индуистской тантре,philosophy_epistemology,,deepseek_strict_scale_audit,0.9
+PRES_536a630888,2017,Zograf Readings,Тамильские родственники в общедравидийском контексте: семантика и типология,dravidology_south_india,,deepseek_strict_scale_audit,0.9
+PRES_56ba477abf,2017,Zograf Readings,Борьба за собственный язык в Ладакхе,himalaya|tibetology_himalaya,,deepseek,0.9
+PRES_575e445638,2017,Zograf Readings,Жанр послания в религиозной поэзии,literary_studies,,deepseek_strict_scale_audit,0.9
+PRES_6521310efe,2017,Zograf Readings,В начале странствий. Эпизод абхинишкрамана в «Сутре о благом явлении царевича»,buddhist_studies,,deepseek,0.9
+PRES_6564eeace5,2017,Zograf Readings,Критика буддизма в «Ишвара-пратьябхиджня-вимаршини» Абхинавагупты,philosophy_epistemology,,deepseek,0.9
+PRES_6623706082,2017,Zograf Readings,Майя в учениях новых индийских гуру — иллюзия или реальность,modern_society_politics,,deepseek_strict_scale_audit,0.9
+PRES_6808a220bb,2017,Zograf Readings,"Мифология «Йогини-тантры» 15.00. ИВР РАН, Зеленый зал",,,deepseek,0.85
+PRES_6954835b7d,2017,Zograf Readings,Индийские божества судьбы и их индоевропейские параллели,comparative_analysis,,deepseek_strict_scale_audit,0.95
+PRES_6b31c6dfea,2017,Zograf Readings,«Костыль факира»: атрибуция и некоторые вопросы бытования,museum_collections,,deepseek,0.85
+PRES_6e1915099b,2017,Zograf Readings,Особенности празднования Холи в Раджастхане (по материалам полевых исследований),ethnography_performance,,deepseek,0.9
+PRES_6e57a8cfb1,2017,Zograf Readings,Размышления по поводу двух древнегреческих сосудов (XVI — VII вв. до н. э.),,,deepseek,0.8
+PRES_73e8c6e787,2017,Zograf Readings,"«Мудрость незапятнанная, окруженная свитой...». О структуре определения термина «abhidharma» в «Абхидхармакошабхашье» Васубандху",buddhist_studies,,deepseek,0.9
+PRES_7495ae17bb,2017,Zograf Readings,Как Кришна с Горакхой силой мерялись: Столкновение разных мистических течений в творчестве Малика Мухаммада Джаяси,bhakti_vaishnava,,deepseek,0.85
+PRES_787c7a7fe6,2017,Zograf Readings,Тальварная рукоять и ее символика 15.00. МАЭ (Кунсткамера) РАН. Конференц-зал (Детский центр),visual_material_culture,,deepseek,0.85
+PRES_79b076d481,2017,Zograf Readings,К вопросу о лексике индивидуального субъективного начала в ведийском языке,vedic_studies,,deepseek,0.9
+PRES_7dc7b85b87,2017,Zograf Readings,Христианская книга на индийских языках XVI — XVII вв.: ретроспективный библиографический указатель,colonial_encounters,,deepseek,0.85
+PRES_85a6141248,2017,Zograf Readings,Писатели хинди нового поколения: Кто они и зачем пришли в литературу,modern_literature,,deepseek_strict_scale_audit,0.9
+PRES_98436ca474,2017,Zograf Readings,Дифференциация веддов (взгляд извне и изнутри),expeditions,,deepseek,0.8
+PRES_a03dded834,2017,Zograf Readings,Культура повседневности британского чиновничества в Индии и Непале (по наблюдениям И. П. Минаева),colonial_encounters|travel_history,,deepseek,0.85
+PRES_a0726a7b77,2017,Zograf Readings,История Капилавасту в поэме Ашвагхоши «Саундарананда»,epic_ramayana_mahabharata|buddhist_studies,,deepseek,0.9
+PRES_aeb8d4bed8,2017,Zograf Readings,Критика целей дефиниций (лакшана) в «Кхандана-кханда-кхадья» Шри Харши (на примере дефиниции восприятия),philosophy_epistemology,,deepseek,0.9
+PRES_b153547ebf,2017,Zograf Readings,Буддийская феноменология бессамостности (Опыт анализа концептов Я и «просто-я» Чже Цонкапы),buddhist_studies|philosophy_epistemology,,deepseek,0.85
+PRES_b2127f6e87,2017,Zograf Readings,Диалоги в ранних Упанишадах: от агона к риторике,vedic_studies,,deepseek_strict_scale_audit,0.95
+PRES_b29b6d6f36,2017,Zograf Readings,Метафора сосуда в непальском буддизме,buddhist_studies|nepal_newar_kathmandu,,deepseek,0.85
+PRES_b88ce66786,2017,Zograf Readings,Индийская схема рациональности и некоторые ее приложения к индийской философии,philosophy_epistemology,,editorial_scale_adjudication_after_deepseek,0.9
+PRES_c0492c73f2,2017,Zograf Readings,Sattriya Ассама: о преобразовании ритуального представления бхакатов в еще один «классический танцевальный стиль» Индии,assam|ethnography_performance,,deepseek,0.85
+PRES_c47dbe060a,2017,Zograf Readings,"Ритуалы начала и прекращения изучения Вед (upākaraṇa, utsarga)",vedic_studies|ritual_studies,,deepseek,0.9
+PRES_e15e0cc931,2017,Zograf Readings,Живопись и графика из собрания И. П. Минаева (МАЭ РАН): опыт классификации,museum_collections|expeditions,,deepseek,0.85
+PRES_f4fcdf4f99,2017,Zograf Readings,Образ бога Рудры в Шатарудрии в сравнении с германо-скандинавским богом Одином,comparative_analysis,,deepseek,0.8
+PRES_fd1c7dd152,2017,Zograf Readings,«Народная веданта» в произведениях Шричандры (XVI в.),bhakti_vaishnava,,deepseek,0.85
+PRES_fe20d5625c,2017,Zograf Readings,Поэзия Кабира и раджастханский фольклор,bhakti_vaishnava,,deepseek,0.85
+PRES_0ab3c85533,2017,Roerich Readings,Легенда о рыбаке (на ирландском языке),,,deepseek,0.9
+PRES_0bc6ffc772,2017,Roerich Readings,Становление культа Рудры-Шивы по древнеиндийским священным текстам традиции шрути: от мифологемы к философскому принципу,vedic_studies,,deepseek_strict_scale_audit,0.95
+PRES_0e4533e715,2017,Roerich Readings,Содержание первой главы Шрикалачакра-тантры согласно ее комментарию,buddhist_studies|tibetology_himalaya,,deepseek,0.9
+PRES_0e88c0544b,2017,Roerich Readings,Синтаксические конструкции с ti и -bhāva в языке пали,pali_early_buddhism,,deepseek,0.9
+PRES_149d1014af,2017,Roerich Readings,Вопрос о дардском элементе в дотибетском населении Ладакха и Балтистана как лингвистическая проблема,tibetology_himalaya,,deepseek,0.8
+PRES_150fd1b901,2017,Roerich Readings,"Анкхья-нат: обряд и драма средневекового Ассама, и их возрождение сегодня",assam|ethnography_performance,,deepseek,0.85
+PRES_22c3c585a3,2017,Roerich Readings,К вопросу о могольском изобразительном «мультилингвизме» и культурной экстравертности,colonial_encounters,,deepseek,0.8
+PRES_2bdddbacaf,2017,Roerich Readings,Поэма «Десять песен»: перевод и чтение на тамильском языке,dravidology_south_india,,deepseek,0.9
+PRES_32246c7904,2017,Roerich Readings,Полемика о субъекте между буддистами и ньяя-вайшешиками в «Таттвасанграхе» Шантаракшиты,buddhist_studies|philosophy_epistemology,,deepseek,0.9
+PRES_36a14e8fd3,2017,Roerich Readings,Об интерпретационном коде ранневедийской литературы (вед. śatabhuji),vedic_studies,,deepseek,0.9
+PRES_3a9030ea71,2017,Roerich Readings,Первые известные изображения раг. Тексты и контекст,visual_material_culture,,deepseek,0.8
+PRES_3d081ec308,2017,Roerich Readings,Тамильская баллада «Сказание о Кусалаване» (kucalavaṉ katai): особенности трактовки фрагмента «Рамаяны»,dravidology_south_india|epic_ramayana_mahabharata,,deepseek,0.9
+PRES_3ea3a39e80,2017,Roerich Readings,Из поэзии на диалектах,,,deepseek,0.7
+PRES_3f2a8362cc,2017,Roerich Readings,О поздней версии Калачакра-тантры,buddhist_studies,,deepseek,0.9
+PRES_5b6f4c9c6a,2017,Roerich Readings,Ритуальный текст из «Махавасту»,buddhist_studies,,deepseek,0.9
+PRES_5dc09294c1,2017,Roerich Readings,Тибетский институт чой-йон (наставник-покровитель) в китайских источниках 17–18 вв,tibetology_himalaya|china_mongolia_inner_asia,,deepseek,0.9
+PRES_6c4f1eceba,2017,Roerich Readings,Семантика изображений птицы на каменных изваяниях степей Евразии,,,deepseek,0.7
+PRES_7501330de7,2017,Roerich Readings,Тибетский идиом области Амдо в наши дни: между диалектом и языком,tibetology_himalaya,,deepseek,0.9
+PRES_75cecc8a6d,2017,Roerich Readings,Некоторые типичные моменты появления сонма божеств в Непале,nepal_newar_kathmandu,,deepseek,0.8
+PRES_762c65297f,2017,Roerich Readings,Проблемы методологии при интертекстуальном анализе палийских и санскритских текстов,buddhist_studies|comparative_analysis,,deepseek_strict_scale_audit,0.9
+PRES_7a25d6758f,2017,Roerich Readings,Сюжет о Будде в ранних буддийских сакральных текстах,buddhist_studies,,deepseek,0.9
+PRES_7d0bba92cc,2017,Roerich Readings,Переводы стихов на язык непали,nepal_newar_kathmandu,,deepseek,0.8
+PRES_82a1a1029b,2017,Roerich Readings,Культ Нарасинхи в трактатах по вастувидье в пуранах,vaishnava,,deepseek,0.9
+PRES_869eb3560b,2017,Roerich Readings,Война в контексте истории буддистов-ойратов,buddhist_studies|china_mongolia_inner_asia,,deepseek,0.8
+PRES_86b13c26c6,2017,Roerich Readings,Ю.Н. Рерих и монгольский язык,history_of_indology,,deepseek,0.9
+PRES_93091ebf3a,2017,Roerich Readings,Почему Дигнага называет определение восприятия Васубандху асара (лишенным сути)? Медленное чтение «Прамана-самуччая-вритти» (1.13–16) Дигнаги,buddhist_studies|philosophy_epistemology,,deepseek,0.9
+PRES_9f49dca92d,2017,Roerich Readings,Смена мотивировок в средневековом тексте: две «Рамаяны»,epic_ramayana_mahabharata,,deepseek,0.9
+PRES_a56bd4d9d1,2017,Roerich Readings,Из санскритской поэзии,,,deepseek,0.7
+PRES_a81b81e251,2017,Roerich Readings,Использование вторичного текста (цитирование) как средство ведения дискуссии в «Вопросе о субъекте (пудгале)» в «Катхаваттху 1.1»,pali_early_buddhism,,deepseek,0.9
+PRES_aab18847b3,2017,Roerich Readings,Ю.Н. Рерих о лхасском диалекте тибетского языка,tibetology_himalaya,,deepseek,0.9
+PRES_af70362099,2017,Roerich Readings,К выходу Антологии индо-ирландских текстов,comparative_analysis,,deepseek,0.8
+PRES_bc48c6cda3,2017,Roerich Readings,Место и роль Сундарара в структуре шиваитского канона «Панниру Тирумурей»,ritual_studies,,deepseek,0.9
+PRES_c892e395b5,2017,Roerich Readings,"Изображение Канакавасты, архата из Кашмира: часть полиптиха или отдельная танка? (Танка из собрания Кабинета Ю.Н. Рериха, ИВ РАН, Москва)",museum_collections,,deepseek,0.9
+PRES_cdb16edba1,2017,Roerich Readings,Теория и практика заимствований санскритской литературной традиции,sanskrit_grammar_panini,,deepseek_strict_scale_audit,0.95
+PRES_cf0485137b,2017,Roerich Readings,Ученичество как сюжет раннебуддийской литературы,pali_early_buddhism,,deepseek,0.9
+PRES_d6c029beed,2017,Roerich Readings,Дивьядхвани и девадундубхи – иконографические мотивы божественной музыки в джайнской скульптуре Эллоры,jain_studies,,deepseek,0.9
+PRES_d76b9f1f7f,2017,Roerich Readings,Изменение роли яджаманы в шраута-ритуалах: традиция и современность,ritual_studies,,deepseek_strict_scale_audit,0.9
+PRES_e70f3480fc,2017,Roerich Readings,Риторический вопрос и его функция в индийской средневековой поэзии бхакти,bhakti_vaishnava,,deepseek,0.9
+PRES_009b94d14c,2018,Zograf Readings,Путешествие И. П. Минаева в Непал: обстоятельства и результаты,expeditions|nepal_newar_kathmandu,,deepseek,0.9
+PRES_044e408c57,2018,Zograf Readings,«Мысленный эксперимент» Васубандху,buddhist_studies,,deepseek,0.9
+PRES_0966cfd52f,2018,Zograf Readings,«Чариягити» и Тагор,bengal,,deepseek,0.8
+PRES_0a6cf1a42f,2018,Zograf Readings,«Тирумурейканда-пуранам» Умапати Шивачарьи как завершающее звено в формировании тамильского шиваитского канона,dravidology_south_india,,deepseek,0.9
+PRES_15d00bc825,2018,Zograf Readings,Иконография и функции непальских дхара/хити,nepal_newar_kathmandu,,deepseek,0.9
+PRES_19e19e8a9a,2018,Zograf Readings,История индийской философии глазами Свами Вивекананды: опыт реконструкции,modern_society_politics,,deepseek_strict_scale_audit,0.9
+PRES_1bd2292421,2018,Zograf Readings,Обучение Бодхисаттвы в «Лалитавистаре»,buddhist_studies,,deepseek,0.9
+PRES_1f28ca6ef7,2018,Zograf Readings,Тамильская пьеса о Карне,dravidology_south_india,,deepseek,0.9
+PRES_21eaadbba6,2018,Zograf Readings,"Источники сознания, компоненты познавательного акта и учение о трех мирах в Абхидхарма-самуччае Асанги",buddhist_studies,,deepseek,0.9
+PRES_2310631e31,2018,Zograf Readings,От демонической к человеческой сексуальности? Индо-иранский миф о первобытном инцесте Ями и Ямы и его индоевропейские корни,comparative_analysis,,deepseek_strict_scale_audit,0.95
+PRES_297e814b9e,2018,Zograf Readings,Индийские истоки тибетской историографии буддизма,tibetology_himalaya|buddhist_studies,,deepseek_strict_scale_audit,0.95
+PRES_2b4a64bbcc,2018,Zograf Readings,Женские образы древнеиндийского эпоса и позднейшего фольклора на фоне норм дхармашастры,epic_ramayana_mahabharata,,deepseek_strict_scale_audit,0.95
+PRES_340def002b,2018,Zograf Readings,Ведды в современном укладе жизни Шри Ланки,,,deepseek,0.9
+PRES_348d80f3dc,2018,Zograf Readings,Вьявахара как универсум установления достоверности знания в индийской эпистемологии и логике (праманаваде),philosophy_epistemology,,deepseek_strict_scale_audit,0.95
+PRES_3cc35591bb,2018,Zograf Readings,Образ Индии в словацкой литературе XIX в,nineteenth_century,,deepseek_strict_scale_audit,0.95
+PRES_479a84ae50,2018,Zograf Readings,«Функциональный подход» в «Вакьяпадии» и артхакрия в философии Дхармакирти,philosophy_epistemology,,deepseek,0.9
+PRES_49ed2e04fd,2018,Zograf Readings,Учение д-ра Маханамбраты Брахмачари как квинтэссенция идей бенгальского ренессанса и его влияние на Томаса Мертона,bengal_bhakti_modernity,,deepseek_strict_scale_audit,0.95
+PRES_52ffc50fbc,2018,Zograf Readings,Роль мифов о творении мира в индийской философии,cosmology,,deepseek_strict_scale_audit,0.95
+PRES_5b141fa75a,2018,Zograf Readings,Борьба за собственный язык в Ладакхе (на материале полевых исследований),himalaya,,deepseek,0.9
+PRES_5ba19b0d60,2018,Zograf Readings,Формулы и заимствования в средневековой лирике бхакти,bhakti_vaishnava,,deepseek_strict_scale_audit,0.95
+PRES_5e774d78f6,2018,Zograf Readings,Образ жизни в шри-вишнуизме: самашраяна (панчасамскара) и ее основания,vaishnava,,deepseek,0.9
+PRES_6068a2f698,2018,Zograf Readings,Mārganātyam. Театральная практика и теория «Натьяшастры» сегодня,ethnography_performance,,deepseek,0.85
+PRES_63cc937793,2018,Zograf Readings,Музыкальные инструменты в руках богов. К вопросу об иконографических атрибутах в искусстве Индии V—Х вв,visual_material_culture,,deepseek_strict_scale_audit,0.95
+PRES_702b845b3f,2018,Zograf Readings,Два новых сборника «индийских текстов» Далджита Награ,modern_literature,,deepseek,0.9
+PRES_7a7018c850,2018,Zograf Readings,101 синоним воды в ведийском словаре «Нигханту»,vedic_studies,,deepseek,0.9
+PRES_7c19b4a74c,2018,Zograf Readings,"Будда Дипанкара, идущий по дороге. Сюжеты пророчества в ранней буддийской литературе",buddhist_studies,,deepseek_strict_scale_audit,0.95
+PRES_7d9d4fa5de,2018,Zograf Readings,Семантика терминологии родства в малых дравидийских языках: когнитивные аспекты,dravidology_south_india,,deepseek_strict_scale_audit,0.9
+PRES_826add0121,2018,Zograf Readings,О джатакаставе как разновидности буддийского гимна,buddhist_studies,,deepseek,0.9
+PRES_87dcd1a2eb,2018,Zograf Readings,«Экологический» роман Махуа Маджи,modern_literature,,deepseek,0.9
+PRES_89479d5fc5,2018,Zograf Readings,Кришна исполняет зикр: следы влияния бхакти на суфизм братства Чиштийя,bhakti_vaishnava,,deepseek,0.85
+PRES_8d99375954,2018,Zograf Readings,Сравнительный анализ образов сакрального в тамильских храмовых мифах и в сказах П. П. Бажова,comparative_analysis,,deepseek_strict_scale_audit,0.85
+PRES_94531fde5d,2018,Zograf Readings,Индо-иранская сабля-шамшир из собрания МАЭ,museum_collections,,deepseek,0.9
+PRES_98cc0d1f3a,2018,Zograf Readings,Меч-посох из собрания МАЭ,museum_collections,,deepseek,0.9
+PRES_a61c28b64e,2018,Zograf Readings,Культ Рудры-Кхандобы в исследованиях Г. Д. Зонтхаймера и его индоевропейские параллели,comparative_analysis,,deepseek_strict_scale_audit,0.8
+PRES_a71b76d799,2018,Zograf Readings,Концепция причинности в текстах «Абхидхамма-питаки»,pali_early_buddhism,,deepseek,0.9
+PRES_abbf471fc4,2018,Zograf Readings,Кумаонский Голудев: локальный вариант индуизма,himalaya,,deepseek,0.85
+PRES_be70d581cd,2018,Zograf Readings,Тантра в учении Ошо,,,deepseek,0.85
+PRES_c3fe9419cc,2018,Zograf Readings,Раджа Рави Варма: художник и основатель «Рави Варма Пресс»,visual_material_culture,,deepseek,0.9
+PRES_c78df41b2d,2018,Zograf Readings,О названиях пчелы в ведийском языке,vedic_studies|etymology,,deepseek,0.9
+PRES_cfb0f88c96,2018,Zograf Readings,Родство по крови и родство по духу: М. К. Ганди о мотивах отказа Арджуны от сражения,modern_society_politics,,deepseek,0.85
+PRES_d4233f0cbe,2018,Zograf Readings,Современные интерпретации санскритской «Рамаяны» в кино,epic_ramayana_mahabharata|translation_reception,,deepseek,0.85
+PRES_d78288c37d,2018,Zograf Readings,Мантра и сутра как форма построения ведийских текстов,vedic_studies,,deepseek_strict_scale_audit,0.9
+PRES_d9b790f37d,2018,Zograf Readings,"Содержательное обоснование порядка в перечне прамей (Ньяя-сутра, Ньяя-бхашья)",philosophy_epistemology,,deepseek,0.9
+PRES_d9f00bda70,2018,Zograf Readings,Оговорка как композиционный прием в санскритской драме,literary_studies,,deepseek,0.9
+PRES_de921762ec,2018,Zograf Readings,Опись Л. А. Мерварт коллекции № 3015 в собрании МАЭ РАН как образец музейного документа,museum_collections|history_of_indology,,deepseek,0.9
+PRES_f0885a4f14,2018,Zograf Readings,Индуистская тантрическая телеология,,,deepseek_strict_scale_audit,0.85
+PRES_0285ee0cb7,2018,Roerich Readings,Традиция «Лалитавистары» и ее истоки. Новые наблюдения,buddhist_studies,,deepseek_strict_scale_audit,0.9
+PRES_0461ef8135,2018,Roerich Readings,К вопросу об обработке первоисточника в литературной санскритской джатаке,buddhist_studies,,deepseek,0.85
+PRES_07124e17dc,2018,Roerich Readings,Еще раз о буквальном переводе третьей версии «Калачакра-тантры» Буддийского канона,buddhist_studies|translation_reception,,deepseek,0.9
+PRES_0ad046733d,2018,Roerich Readings,Семантика глагольного корня bhram и его дериватов на материале древнеиндийского эпоса и поэзии,sanskrit_grammar_panini|epic_ramayana_mahabharata,,deepseek,0.9
+PRES_0bcd9a42ef,2018,Roerich Readings,Идеал sajjana в литературе гуптской эпохи,literary_studies,,deepseek,0.9
+PRES_10d033beaa,2018,Roerich Readings,«Ратнавали» Нагарджуны и «Дашабхумика-сутра»: явные и неявные связи,buddhist_studies,,deepseek,0.9
+PRES_26341e4a7b,2018,Roerich Readings,«Видимый» и «невидимый» мир в теоретико-культурном дискурсе Древней Индии,philosophy_epistemology,,deepseek_strict_scale_audit,0.85
+PRES_390fabcbab,2018,Roerich Readings,Тибетский принцип чой-йон и его значение для тибето-цинских отношений,tibetology_himalaya|china_mongolia_inner_asia,,deepseek_strict_scale_audit,0.9
+PRES_3f663f57ec,2018,Roerich Readings,Вода и водоемы в трактатах по вастувидье в пуранах,vedic_studies,,deepseek,0.9
+PRES_43bdc7ab3f,2018,Roerich Readings,Индийские нумерационные системы. По материалам трактата Махавирачарьи «Собрание основных положений науки о вычислениях» (сер. IX в.),,indian_mathematics,deepseek,0.9
+PRES_454d44aaed,2018,Roerich Readings,Еще раз к вопросу о сандаловой статуе Будды,buddhist_studies,,deepseek,0.9
+PRES_4afd142d6d,2018,Roerich Readings,Божества и образы триграмм китайской «Книги Перемен» на свитке из коллекции Рерихов в Государственном Музее Востока,visual_material_culture|roerich_studies,,deepseek,0.9
+PRES_4b9af3479e,2018,Roerich Readings,Дискуссия между буддистами и санкхьяиками о существовании и природе атмана в разделе «Атмапарикша» «Таттвасанграхи» Шанатаракшиты,buddhist_studies|philosophy_epistemology,,deepseek,0.9
+PRES_587468d32d,2018,Roerich Readings,Текст в контексте: образ идеального сикхского правителя в кодексе Прем Сумараг в позднесредневековых панджабских реалиях,modern_society_politics,,deepseek,0.9
+PRES_59d889fde6,2018,Roerich Readings,Обращение к буддийским сутрам «неясного» происхождения при императорском дворе в Японии в VIII в,buddhist_studies,,deepseek,0.9
+PRES_5a50ff4176,2018,Roerich Readings,«Апастамба-яджна-парибхашасутра» (Āpastamba-yajña-paribhāṣāsūtra): проблемы перевода,vedic_studies|sanskrit_grammar_panini,,deepseek,0.9
+PRES_5b31649829,2018,Roerich Readings,Тантрическая традиция в искусстве индийского модернизма,visual_material_culture,,deepseek_strict_scale_audit,0.85
+PRES_6329aa3fb2,2018,Roerich Readings,Чидамбарам и его дикшитары в зеркале «Панниру тирумурей»,dravidology_south_india,,deepseek,0.9
+PRES_690401765d,2018,Roerich Readings,Деепричастия пассивного залога в языке пали?,pali_early_buddhism,,deepseek,0.9
+PRES_73997bde8a,2018,Roerich Readings,"Поталака – местопребывание Авалокитешвары и один из его образов в тибетской традиции. (Танка из собрания Кабинета Ю.Н. Рериха, ИВ РАН, Москва)",tibetology_himalaya|buddhist_studies,,deepseek,0.9
+PRES_8ccd58e4ca,2018,Roerich Readings,Нетибетская лексика в тибетских диалектах Балтистана и Каргила: попытка этимологической классификации,tibetology_himalaya,,deepseek,0.9
+PRES_9991b02531,2018,Roerich Readings,Путешествие «Тысячи и одной ночи» в Ирландию,comparative_analysis|translation_reception,,deepseek,0.9
+PRES_9aff1006ae,2018,Roerich Readings,"Вратьи и чакравартины: образ Миродержца в Древней Индии в палийских, санскритских и ведийских источниках",vedic_studies|pali_early_buddhism,,deepseek,0.9
+PRES_9e7c42bb8a,2018,Roerich Readings,Богиня с гхантой и гхатом. Дурга (?) в иконографической программе буддийского храма Аурангабада,visual_material_culture,,deepseek,0.9
+PRES_9ecbe3104e,2018,Roerich Readings,Имперская идея или этнический стереотип? Концепт «монгол» в первой половине XIII в,china_mongolia_inner_asia,,deepseek_strict_scale_audit,0.9
+PRES_9fe3408640,2018,Roerich Readings,Брахмадева и его комментарий к «Дравья-санграха-вритти» в контексте джайнской текстовой традиции,jain_studies,,deepseek,0.9
+PRES_a0f09ba677,2018,Roerich Readings,Тема «мадаль» (обряд самоистязания) в тамильской поэзии,dravidology_south_india,,deepseek,0.9
+PRES_b8048f3ae8,2018,Roerich Readings,"Вопрос о соотношении субъекта-пудгалы, дискретности мышления-читты и устойчивости характеристик личности в тексте «Катхаваттху» (фрагмент 1.1.193-1.1.196)",pali_early_buddhism,,deepseek,0.9
+PRES_c1939d2e87,2018,Roerich Readings,"Майтхуна, слияние лотоса и ваджры, или о некоторых особенностях символического языка сандхья-бхаша буддизма ваджраяны",buddhist_studies,,deepseek,0.9
+PRES_d476549bbe,2018,Roerich Readings,Образ Йусуфа в могольской живописи: к вопросу атрибуции,visual_material_culture,,deepseek,0.9
+PRES_d648392ad9,2018,Roerich Readings,Несколько слов о «я» и Адвайте в свете узнавания себя как предельного обладающего в толкованиях Абхинавагупты на «Ишварапратьябхиджня-карике» Утпаладевы,philosophy_epistemology,,deepseek,0.9
+PRES_dbe72b28f9,2018,Roerich Readings,Ирония: «риторическая фигура» в Североиндийской поэзии бхакти,bhakti_vaishnava,,deepseek,0.9
+PRES_e63e2c0069,2018,Roerich Readings,Живопись и графика Гималайского региона в коллекции И.П.Минаева (МАЭ РАН): некоторые аспекты атрибуции и интерпретации,museum_collections|himalaya,,deepseek,0.9
+PRES_eb1a5f1b93,2018,Roerich Readings,Буддийская миссия Н.К. Рериха в Лхасу,expeditions|tibetology_himalaya,,deepseek,0.9
+PRES_edcf9f8de0,2018,Roerich Readings,Некоторые аспекты культа живой богини Кумари в Непале,nepal_newar_kathmandu,,deepseek,0.9
+PRES_fcdae5394d,2018,Roerich Readings,Этнокультурные особенности «Тибетско-русско-английского словаря с санскритскими параллелями» Ю.Н. Рериха,tibetology_himalaya|history_of_indology,,deepseek,0.9
+PRES_0666b2366b,2019,Zograf Readings,«Религия Человека»: свобода и традиция в философствовании Рабиндраната Тагора,bengal|modern_society_politics,,deepseek_strict_scale_audit,0.85
+PRES_08c41efd17,2019,Zograf Readings,Почитание Индры в Непале: живая архаика,nepal_newar_kathmandu,,deepseek,0.9
+PRES_0dc5fad3ac,2019,Zograf Readings,Этико-интуитивистский подход М.К. Ганди к пониманию традиционных текстов,modern_society_politics,,deepseek,0.9
+PRES_0ecee86019,2019,Zograf Readings,И. П. Минаев и Дж. Л. Киплинг: коллекции и письма,history_of_indology|colonial_encounters,,deepseek,0.9
+PRES_127e5ca611,2019,Zograf Readings,Мифология танца и образ Индры в джайнизме,jain_studies,,deepseek,0.9
+PRES_18122d132e,2019,Zograf Readings,«Сумеречный язык» в поэзии тамильских сиддхов,dravidology_south_india,,deepseek,0.9
+PRES_251dbeeac8,2019,Zograf Readings,Санскритские очки европейской лингвистики XIX века,history_of_indology,,deepseek,0.9
+PRES_2cf93e8bf4,2019,Zograf Readings,Эстетика религиозной драмы: теория и практика драмы в контексте бенгальского вайшнавизма,bengal_bhakti_modernity|bhakti_vaishnava,,deepseek_strict_scale_audit,0.9
+PRES_2f78b4f0f2,2019,Zograf Readings,"Отношение к женщине в эпосе (на примере «Рамаяны» Вальмики, «Адбхута Рамаяны» и «Адхьятма Рамаяны»)",epic_ramayana_mahabharata,,deepseek,0.9
+PRES_32ded99bdf,2019,Zograf Readings,О предмете индийской философии,,,deepseek_strict_scale_audit,0.9
+PRES_4171c394cc,2019,Zograf Readings,«Зачин» в североиндийской поэзии бхакти,bhakti_vaishnava,,deepseek,0.85
+PRES_41f77d4442,2019,Zograf Readings,«Гадья» Рамануджи: венец или крест исследователя философии вишишта-адвайты?,,,deepseek,0.85
+PRES_4468815627,2019,Zograf Readings,Атхарваведа 1.2. (Шаунака): дополнение к переводам,vedic_studies,,deepseek,0.9
+PRES_49cd2d08bb,2019,Zograf Readings,Элементы шаманских практик в воинских традициях Индии,,,deepseek_strict_scale_audit,0.85
+PRES_4d86ceb847,2019,Zograf Readings,Понимание искусства в учении Ошо,,,deepseek,0.85
+PRES_4eabd67999,2019,Zograf Readings,Структура «Чарья-гити»,,,deepseek,0.85
+PRES_52c5571365,2019,Zograf Readings,Способы сокрытия мантр в тантрических текстах,,,deepseek,0.85
+PRES_576ca11358,2019,Zograf Readings,«Возрожденные» ведийские ритуалы: яджна на Асси гхат и в школе девочек «Панини Канья Махавидьялая» в Варанаси,vedic_studies|ritual_studies,,deepseek,0.9
+PRES_5868b82012,2019,Zograf Readings,Индийские и тибетские лингвистические штудии Д. Г. Мессершмидта,history_of_indology|tibetology_himalaya,,deepseek,0.9
+PRES_5dbf69741d,2019,Zograf Readings,Трансформации культурной идентичности парсов Бомбея,modern_society_politics,,deepseek_strict_scale_audit,0.9
+PRES_5e65d5094d,2019,Zograf Readings,Двести лет санскритской лексикографии (1819‒2019),history_of_indology,,deepseek_strict_scale_audit,0.9
+PRES_5e8363f0d9,2019,Zograf Readings,Парибхаша — интерпретационные правила грамматики Панини,sanskrit_grammar_panini,,deepseek,0.9
+PRES_5fd431f2b3,2019,Zograf Readings,Каталоги знаков хараппской письменности: материалы к сравнению,,,deepseek,0.85
+PRES_65b2f8a154,2019,Zograf Readings,Кукольный театр Западной Бенгалии,bengal|ethnography_performance,,deepseek,0.9
+PRES_6732ab26f0,2019,Zograf Readings,Ритуалы жизненного цикла у народности лимбу,life_cycle_rituals|himalaya,,deepseek,0.9
+PRES_67a9994f38,2019,Zograf Readings,«Унмада нирукта». «Безумная этимология»: об особенностях мистической герменевтики тантры (на примере интерпретации первой мангала-шлоки «Тантралоки»),,,deepseek,0.85
+PRES_68422ddbdf,2019,Zograf Readings,Семантика терминологии родства в языке брахуи в общедравидийском контексте,dravidology_south_india,,deepseek,0.9
+PRES_6916d4ad70,2019,Zograf Readings,Четыре народа в «Йогини-тантре»,,,deepseek,0.85
+PRES_69a8bd7229,2019,Zograf Readings,Основные сюжеты и персонажи индийского театра теней,visual_material_culture,,deepseek_strict_scale_audit,0.85
+PRES_6afe58ed13,2019,Zograf Readings,"Серайкела, Майюрбхандж, Пурулиа: феномен чхау на плато Чхота Нагпур (Восточная Индия)",ethnography_performance,,deepseek_strict_scale_audit,0.9
+PRES_6f2867c6e7,2019,Zograf Readings,Современные баулы: мистики или артисты,bengal,,deepseek,0.85
+PRES_7d5c21c3e8,2019,Zograf Readings,Боги «из разряда синих» в предании о дарении чаши в «Лалитавистаре»,buddhist_studies,,deepseek,0.9
+PRES_83479bd0dd,2019,Zograf Readings,Ритуальная жизнь делийского даргаха,,,deepseek,0.85
+PRES_8c7d8555e5,2019,Zograf Readings,Реминисценции мифа Вала в припамирском регионе,comparative_analysis,,deepseek,0.8
+PRES_9631572f2e,2019,Zograf Readings,Речь во сне и грезы наяву в классической санскритской драме,literary_studies,,deepseek,0.85
+PRES_a8118f87c2,2019,Zograf Readings,Функции вождя в традиционном обществе веддов в прошлом и настоящем,,,deepseek,0.85
+PRES_b3d5e8155e,2019,Zograf Readings,Поэзия народов мунда,,,deepseek_strict_scale_audit,0.85
+PRES_b41cabe811,2019,Zograf Readings,Британское колониальное чиновничество в литературном наследии Дж. Оруэлла,colonial_encounters|english_literature,,deepseek,0.85
+PRES_b663d501fd,2019,Zograf Readings,Понятие manas в Ригведе,vedic_studies,,deepseek,0.9
+PRES_b95533a2eb,2019,Zograf Readings,"Народные песни о Хардоле, принце Орччхи",,,deepseek,0.85
+PRES_c1ad2a3387,2019,Zograf Readings,Категория санграха в буддийском философском дискурсе,buddhist_studies|philosophy_epistemology,,deepseek,0.9
+PRES_c416cbbb2d,2019,Zograf Readings,Конь без всадника и дерево джамбу: к интерпретации рельефа на восточных воротах Большой Ступы в Санчи,manuscripts_epigraphy,,deepseek,0.85
+PRES_d09e98a1d7,2019,Zograf Readings,О некоторых специфических жестах в бытовом этикете сингалов,,,deepseek,0.85
+PRES_da7ffa3cba,2019,Zograf Readings,Атман как синоним дравьи в «Вакьяпадии» (ВП 3.2.1),sanskrit_grammar_panini,,deepseek,0.9
+PRES_e1d74ec461,2019,Zograf Readings,Прием лейтмотива в классической индийской поэзии,literary_studies,,deepseek_strict_scale_audit,0.9
+PRES_e7a6d5efa9,2019,Zograf Readings,Понятие nirodha в истории буддийской философии,buddhist_studies,,deepseek_strict_scale_audit,0.9
+PRES_edf0bd4014,2019,Zograf Readings,Понятие блаженства (ананды) в индуистском тантризме,,,deepseek,0.9
+PRES_f38580f0b7,2019,Zograf Readings,«Махабхарата» и мотив «заточенных в пещере»,epic_ramayana_mahabharata,,deepseek,0.9
+PRES_f72bae1c5e,2019,Zograf Readings,Индийские языки и нарративы на Маврикии: Рама-катха и поэзия на бходжпури,comparative_analysis,,deepseek_strict_scale_audit,0.9
+PRES_fb613d9f3f,2019,Zograf Readings,Социовозрастная инициация и монашеское посвящение в неварском буддизме,nepal_newar_kathmandu|ritual_studies,,deepseek,0.9
+PRES_ff3d302713,2019,Zograf Readings,Роль Умапати Шивачарьи в формировании окончательной редакции канона шайва-сиддханты,,,deepseek,0.9
+PRES_01ee046380,2019,Roerich Readings,Сюжетные схемы санскритских джатак Харибхатты (IV–V в.),buddhist_studies,,deepseek,0.9
+PRES_02f8421750,2019,Roerich Readings,О двух подходах к одному тексту «Калачакра-тантры»,buddhist_studies,,deepseek,0.9
+PRES_0f8aeee7b2,2019,Roerich Readings,Музыкальные колонны Южной Индии,dravidology_south_india,,deepseek,0.9
+PRES_11e2a3c771,2019,Roerich Readings,Обряд адхивасана («вселение») и его роль в формировании образов храма и города,ritual_studies,,deepseek,0.9
+PRES_12417b5ae3,2019,Roerich Readings,Опыт передачи эпической шлоки в русской переводческой традиции,translation_reception,,deepseek,0.9
+PRES_1343fa2056,2019,Roerich Readings,Роль представителя династии Тхакури (Тхакуджуджу) в ритуальной передаче власти в Непале,nepal_newar_kathmandu,,deepseek,0.9
+PRES_17e399955c,2019,Roerich Readings,Место «Беседы о субъекте-пудгале» в структуре палийского канона и в истории буддийской философии,pali_early_buddhism,,deepseek_strict_scale_audit,0.9
+PRES_1d811c4689,2019,Roerich Readings,Ю.Н. Рерих и история индологии в России,history_of_indology|roerich_studies,,deepseek_strict_scale_audit,0.9
+PRES_220562c90f,2019,Roerich Readings,Феномен недосказанной речи ардхокти в санскритской драме,,,deepseek,0.9
+PRES_3e056063d9,2019,Roerich Readings,Sarvajña-bhāṣā — всеведущий и синкретический язык Калачакра-тантры,buddhist_studies,,deepseek,0.9
+PRES_40c79b3a10,2019,Roerich Readings,"О стихах, приписываемых Бхартрихари",,,deepseek,0.9
+PRES_42c1647dee,2019,Roerich Readings,Как уложить пять формул в одну строфу? «Архивирующие» возможности санскрита в математических сочинениях средневековой Индии,,,deepseek,0.9
+PRES_4da8793f25,2019,Roerich Readings,Сюжет встречи с Дипанкарой: функциональная роль в текстовой традиции и возможные генетические связи,buddhist_studies,,deepseek,0.9
+PRES_6274f89872,2019,Roerich Readings,Вербальный панегирик индийского монаршего портрета эпохи Моголов. 9.12.19,colonial_encounters,,deepseek,0.9
+PRES_62dd4b0700,2019,Roerich Readings,Тибето-китайские параллели в наименованиях и титулах регентов на примере текста декрета Далай-ламы V о назначении Сангье Гьяцо дэсридом (1679 г.),tibetology_himalaya|china_mongolia_inner_asia,,deepseek,0.9
+PRES_77c1b8528e,2019,Roerich Readings,«Парамаартхасара» Абхинавагупты: руководство по обретению «сингулярности» или свидетельство о невозможности бытия Бога (Бытия/Бога),,,deepseek,0.9
+PRES_787d114bd2,2019,Roerich Readings,«Цветомыслие» в Древней Индии (вербальный текст и стенопись),visual_material_culture,,deepseek,0.85
+PRES_795fb84e75,2019,Roerich Readings,Кабир о бхакти,bhakti_vaishnava,,deepseek,0.9
+PRES_8402d54487,2019,Roerich Readings,Дайва-арадхана Тулунаду (Южная Индия): сценарий и воплощение,dravidology_south_india,,deepseek,0.85
+PRES_913d0cd9c3,2019,Roerich Readings,К вопросу о замещениях (pratinidhi) при проведении шраута-ритуалов,ritual_studies,,deepseek,0.9
+PRES_914c6126f3,2019,Roerich Readings,Старый парк Пушпакарандаки (одна из загадок «Глиняной повозки»),literary_studies,,deepseek,0.85
+PRES_b3fefc9375,2019,Roerich Readings,Восхваление табака в поэме «Пухейилей видутуду» тамильского поэта Сини Саккарей Пулавара,dravidology_south_india,,deepseek,0.85
+PRES_bda473a7a5,2019,Roerich Readings,"Семь сокровищ чакравартина и их пространственная локализация (палийский канон, «Артхашастра»)",buddhist_studies,,deepseek,0.85
+PRES_c0a5930788,2019,Roerich Readings,К вопросу о дхарани и Дхаранипитаке,buddhist_studies,,deepseek,0.85
+PRES_ce31fa073d,2019,Roerich Readings,Образ Ганеши в японском буддизме,buddhist_studies,,deepseek,0.85
+PRES_df9726f3c8,2019,Roerich Readings,Рай Амитабхи в традиции школы ньигма,tibetology_himalaya,,deepseek,0.85
+PRES_e09ac364ea,2019,Roerich Readings,Фронтальное и трёхчетвертное изображение лица в западно-индийской миниатюре XII–XV вв,visual_material_culture,,deepseek,0.85
+PRES_e19a817c80,2019,Roerich Readings,«Унмей вилаккам» как источник по иконологии Шивы Натараджи,dravidology_south_india,,deepseek,0.85
+PRES_e41ac61c54,2019,Roerich Readings,Поэтические формы средневекового тамильского бхакти,bhakti_vaishnava,,deepseek_strict_scale_audit,0.9
+PRES_e64009085a,2019,Roerich Readings,Возможности понимания и написания термина «санскрит»,,,deepseek,0.8
+PRES_f86793d7d0,2019,Roerich Readings,Монгольские ритуалы в русских летописях,china_mongolia_inner_asia,,deepseek,0.85
+PRES_f9cfeb6efc,2019,Roerich Readings,«Белые шапки»: интерпретации и эндемичность религиозного символа в начале XVIII в,china_mongolia_inner_asia,,deepseek,0.85
+PRES_074b8a684c,2020,Zograf Readings,Буддизм пудгалавады: к постановке вопроса о субъекте-пудгале,buddhist_studies,,deepseek,0.85
+PRES_0805f65a3c,2020,Zograf Readings,Дискурсивные слова в языке хинди,hindi_urdu_new_indo_aryan,,deepseek,0.85
+PRES_200e0161a7,2020,Zograf Readings,Трактовка состояний удрученности и умопомешательства в буддийских экзегетических источниках,buddhist_studies,,deepseek,0.85
+PRES_227fc50d83,2020,Zograf Readings,Ритуалы божественной старости в неварском буддизме,nepal_newar_kathmandu|ritual_studies,,deepseek,0.9
+PRES_2825d66667,2020,Zograf Readings,История Ситы и Рамы глазами современных индийских поэтов-мистиков и ее релевантность для современного индийского общества,modern_society_politics|epic_ramayana_mahabharata,,deepseek_strict_scale_audit,0.9
+PRES_31f4f272dd,2020,Zograf Readings,Терминология родства в гондванских языках,dravidology_south_india,,deepseek,0.9
+PRES_373b5afd66,2020,Zograf Readings,«Мини-Бхагавадгита» в четвертой «книге» «Рамаяны» Вальмики,epic_ramayana_mahabharata,,deepseek,0.95
+PRES_3dae1c5d38,2020,Zograf Readings,К вопросу об определении понятия apratiṣṭhita-nirvāṇa,buddhist_studies,,deepseek,0.9
+PRES_3e16a82f3c,2020,Zograf Readings,Абхидхарма как когнитивная стратегия,buddhist_studies,,deepseek_strict_scale_audit,0.9
+PRES_427e9e7559,2020,Zograf Readings,М. К. Ганди — неортодоксальный „ортодокс“,modern_society_politics,,deepseek,0.9
+PRES_4593027f55,2020,Zograf Readings,"О толковании первой строфы «Аштанга-хридаи» средневековыми комментаторами (на примере Арунадатты, Хемадри и Инду)",yoga_ayurveda,,deepseek,0.9
+PRES_492286eaea,2020,Zograf Readings,Очаги обнаружения санскритских рукописей на территории Тибета,tibetology_himalaya|manuscripts_epigraphy,,deepseek,0.9
+PRES_49cbcdc1b0,2020,Zograf Readings,Санскритские наречия в трудах бенгальских грамматистов (Дживы Госвамина и Баларамы Панчананы),bengal|sanskrit_grammar_panini,,deepseek,0.9
+PRES_4d1ebe16f0,2020,Zograf Readings,Тханки в собрании И. П. Минаева (МАЭ РАН),museum_collections|tibetology_himalaya,,deepseek,0.95
+PRES_5221bd081a,2020,Zograf Readings,К (посмертному) изданию полного перевода (В. С. Семенцова) «Гитабхашьи» Рамануджи на русском языке,vaishnava|translation_reception,,deepseek,0.9
+PRES_595e914a21,2020,Zograf Readings,Интерпретация кровавых событий раздела Индии и Пакистана в романе Кхушванта Сингха «Поезд в Пакистан»,modern_literature|modern_society_politics,,deepseek,0.9
+PRES_59888a0019,2020,Zograf Readings,Онлайн-корпус текстов на языках южных мунда: задачи и специфика,fieldwork,,deepseek,0.9
+PRES_5c43b881ec,2020,Zograf Readings,Фоносемантическая структура ведийского текста (на примере гимна Ригведы I.7),vedic_studies,,deepseek,0.95
+PRES_6c55861922,2020,Zograf Readings,О телесном и духовном бессмертии в индуистском тантризме,ritual_studies,,deepseek_strict_scale_audit,0.9
+PRES_6dd65d8a45,2020,Zograf Readings,Индийский мифологический сериал как средство идеологической пропаганды,modern_society_politics,,deepseek,0.9
+PRES_767c9cdbe9,2020,Zograf Readings,Тело бхакта и тело Шивы: о проблемах телесности в тамильском шайва-бхакти,bhakti_vaishnava|dravidology_south_india,,deepseek,0.9
+PRES_8d5bea6a53,2020,Zograf Readings,Д. Д. Руднев как радетель пополнения коллекций МАЭ РАН,museum_collections|history_of_indology,,deepseek,0.95
+PRES_920d574dbd,2020,Zograf Readings,Танцы с сосудами и вокруг. Гарба Гуджарата и сходные обряды и представления Южной Азии,ethnography_performance,,deepseek_strict_scale_audit,0.9
+PRES_936504e955,2020,Zograf Readings,Традиции и ритуалы почитания манускриптов в писаниях шайва,ritual_studies|manuscripts_epigraphy,,deepseek,0.9
+PRES_9a160371a2,2020,Zograf Readings,Параллельный санскритско-русский корпус,sanskrit_grammar_panini,corpus_linguistics,deepseek,0.85
+PRES_9a4fc39037,2020,Zograf Readings,Инклюзивизм как концептуальное средство для изучения индийской культуры,comparative_analysis,,deepseek_strict_scale_audit,0.9
+PRES_9bd1af42a2,2020,Zograf Readings,Разрази его гром! Метеорологические явления в песенном фольклоре на диалектах хинди Центральной Индии,ethnography_performance|hindi_urdu_new_indo_aryan,,deepseek,0.9
+PRES_9f9afead1c,2020,Zograf Readings,О некоторых особенностях языка «Калачакра-тантры»,buddhist_studies|tibetology_himalaya,,deepseek,0.85
+PRES_9fecb411f8,2020,Zograf Readings,Великая галлюцинация сознания по «Вимшике» Васубандху,buddhist_studies|philosophy_epistemology,,deepseek,0.9
+PRES_aafda61458,2020,Zograf Readings,Техническая терминология тантрийской йоги в «Виджняна Бхайрава тантре»,yoga_ayurveda|ritual_studies,,deepseek,0.9
+PRES_c1a46eb8bc,2020,Zograf Readings,О философской и религиозной значимости некоторых текстов Веданта Дешики,vaishnava|philosophy_epistemology,,deepseek,0.85
+PRES_c21cf157cd,2020,Zograf Readings,О сравнениях в индийской философской литературе,comparative_analysis|philosophy_epistemology,,deepseek_strict_scale_audit,0.9
+PRES_cfe957f4c0,2020,Zograf Readings,Об особенностях традиционной пищи веддов,ethnography_performance,,deepseek,0.9
+PRES_d50f809e09,2020,Zograf Readings,Понятие религиозного инклюзивизма у П. Хакера,comparative_analysis,,deepseek,0.85
+PRES_d8833f6520,2020,Zograf Readings,Work of Patañjali on Yoga Philosophy and Sanskrit Vyākaraṇa,yoga_ayurveda|sanskrit_grammar_panini,,deepseek,0.9
+PRES_d91cd4e689,2020,Zograf Readings,Эстетика комического в поэме «Kaliṅkattupparaṇi»,dravidology_south_india|literary_studies,,deepseek,0.9
+PRES_e342a2d01d,2020,Zograf Readings,«Индийская „игра знания“: один эпизод культурного трансфера»,translation_reception|colonial_encounters,,deepseek,0.85
+PRES_e3fe863ea8,2020,Zograf Readings,Текущие переводческие проекты Фонда «Сохраним Тибет!» и изд-ва «Нартанг»,tibetology_himalaya|translation_reception,,deepseek,0.9
+PRES_f4003453cd,2020,Zograf Readings,Индия в воспоминаниях востоковеда В. А. Иванова,history_of_indology|colonial_encounters,,deepseek,0.9
+PRES_f4b07bef1a,2020,Zograf Readings,Еще раз к вопросу о теме нейдаль в тамильской поэзии,dravidology_south_india|literary_studies,,deepseek,0.85
+PRES_f58d301aed,2020,Zograf Readings,Абсолютная встреча как феномен трансцендентальной герменевтики Г. Оберхаммера,philosophy_epistemology,,deepseek,0.85
+PRES_f8d76687c8,2020,Zograf Readings,Пример использования парибхаш при прочтении сутр Панини,sanskrit_grammar_panini,,deepseek,0.9
+PRES_fb18f5b018,2020,Zograf Readings,Так называемый парадокс беллетристики и подсказки от компаративной онтологии,comparative_analysis|philosophy_epistemology,,deepseek_strict_scale_audit,0.9
+PRES_ffeeb0bec0,2020,Zograf Readings,Г. Оберхаммер и проблема исследования когнитивного потенциала религиозного опыта,history_of_indology,,deepseek,0.8
+PRES_15b5fbdc83,2020,Roerich Readings,Что отличает индийскую эпистемическую культуру от западной?,comparative_analysis,,deepseek_strict_scale_audit,0.9
+PRES_215f0bcf2e,2020,Roerich Readings,"«Во отдаленном краю границы пребывающий, исповедая веру манджушринову»: о буддийском дискурсе в калмыцкой политике императора Юнчжэна (1723–1735)",china_mongolia_inner_asia|buddhist_studies,,deepseek_strict_scale_audit,0.9
+PRES_23ce849cd3,2020,Roerich Readings,Некоторые особенности текстов по вастувидье в пуранах и их интерпретация в современной массовой культуре,ritual_studies,,deepseek,0.8
+PRES_273faaf1c4,2020,Roerich Readings,"Шива Саптасварамурти из Пареля. Иконография, интерпретации, параллели",visual_material_culture,,deepseek,0.85
+PRES_2bb37e704c,2020,Roerich Readings,Интерпретация датировки появления буддизма в Японии в традиционных источниках и храмовых хрониках энги,buddhist_studies,,deepseek,0.8
+PRES_33bcacf231,2020,Roerich Readings,Смена парадигмы? Числовые «коды» в структуре индийских математических сочинений древности и средневековья,,,deepseek_strict_scale_audit,0.9
+PRES_37b0efbebb,2020,Roerich Readings,Поэтический цикл Кабилара о князе Пари,literary_studies,,deepseek,0.9
+PRES_4222cc5294,2020,Roerich Readings,Проблемы атомизма по «Вимшике» Васубандху и «Аламбана-парикше» Дигнаги,philosophy_epistemology|buddhist_studies,,deepseek,0.85
+PRES_492441fb51,2020,Roerich Readings,Небывальщины и парадоксы в древнеиндийской поэзии,literary_studies,,deepseek_strict_scale_audit,0.9
+PRES_4c303a7d1a,2020,Roerich Readings,Антропоморфная образность «игры знания»: телесная метафора и метафора путешествия,philosophy_epistemology,,deepseek,0.8
+PRES_52e54251ce,2020,Roerich Readings,Опыт применения интертекстуального подхода при изучении санскритских и палийских памятников,comparative_analysis,,deepseek_strict_scale_audit,0.9
+PRES_54c018c9f5,2020,Roerich Readings,Некоторые особенности праздника семи неварских селений юго-западной части Долины Катманду,nepal_newar_kathmandu|ethnography_performance,,deepseek,0.9
+PRES_5927c1b975,2020,Roerich Readings,О некоторых основных понятиях пратьябхиджни,philosophy_epistemology,,deepseek,0.85
+PRES_5e3f146897,2020,Roerich Readings,Небывальщины и парадоксы в средневековой североиндийской поэзии,literary_studies,,deepseek_strict_scale_audit,0.9
+PRES_69020aec6c,2020,Roerich Readings,"К анализу стиха Ригведа 1.120.11, или Предварительные заметки о ведийском автомобиле",vedic_studies,,deepseek,0.85
+PRES_705d6f4e9c,2020,Roerich Readings,Мотивный анализ сюжета «Джатаки о павлине» Харибхатты (IV–V вв. н.э.),literary_studies|buddhist_studies,,deepseek,0.9
+PRES_75e95131c2,2020,Roerich Readings,Санскритская грамматика и мирская мудрость,sanskrit_grammar_panini,,deepseek,0.85
+PRES_838219a1ee,2020,Roerich Readings,Способы изображения животных в литературной санскритской джатаке,literary_studies,,deepseek_strict_scale_audit,0.9
+PRES_8c8a78a7c6,2020,Roerich Readings,Модели мотивации понятий «муж» и «жена» в дравидийских языках,dravidology_south_india,,deepseek_strict_scale_audit,0.9
+PRES_977099cdb8,2020,Roerich Readings,"Происхождение китайского иероглифа 佛 «фо» (Будда, буддизм)",buddhist_studies,,deepseek,0.9
+PRES_a939d396b8,2020,Roerich Readings,Некоторые тангка из собрания Ю.Н. Рериха. Новые исследования,tibetology_himalaya|museum_collections,,deepseek,0.9
+PRES_a95408ba26,2020,Roerich Readings,Феномен речевого сбоя как средство художественной выразительности в структуре классической санскритской драмы,literary_studies,,deepseek,0.9
+PRES_bdc2b8783d,2020,Roerich Readings,Санскрит и индийская философия в творчестве композитора А.Н. Скрябина,history_of_indology,,deepseek,0.85
+PRES_c0d93ccddb,2020,Roerich Readings,Ю.Н. Рерих о кочевниках Тибета,tibetology_himalaya|expeditions,,deepseek,0.9
+PRES_c29a39d88c,2020,Roerich Readings,Кангдзей: «Подношения гневным божеcтвам»,tibetology_himalaya|buddhist_studies,,deepseek,0.9
+PRES_c70b31e5b3,2020,Roerich Readings,Роль «Тируттондар тирувандади» Намби Андар Намби в формировании шиваитского канона,buddhist_studies,,deepseek,0.85
+PRES_d0e5bdbfaa,2020,Roerich Readings,Отражение монгольских имперских идей в тибетской историографии. LX РЕРИХОВСКИЕ ЧТЕНИЯ,tibetology_himalaya|china_mongolia_inner_asia,,deepseek_strict_scale_audit,0.9
+PRES_d84550d538,2020,Roerich Readings,Ṛddhi и священные следы прошлого: чудо в картине мира буддиста-паломника,buddhist_studies,,deepseek,0.9
+PRES_fac07beb0f,2020,Roerich Readings,"Загадка эдуки – монумента опрокинутого мира (эпиграфика, эпос, пураны)",epic_ramayana_mahabharata|manuscripts_epigraphy,,deepseek,0.85
+PRES_ffd2c4b14a,2020,Roerich Readings,Две тханки из собрания И.П. Минаева (МАЭ РАН) и традиция странствующих рассказчиков (лама манипа) в Гималайском регионе,tibetology_himalaya|museum_collections,,deepseek,0.9
+PRES_044aea7c88,2021,Zograf Readings,«Давай поженимся»: Свадебные ритуалы в неварском буддизме,nepal_newar_kathmandu|ritual_studies,,deepseek,0.9
+PRES_125338df77,2021,Zograf Readings,Ведийский санскрит и индийская философия в творчестве композитора А. Н. Скрябина,history_of_indology,,deepseek,0.85
+PRES_125f1bf29e,2021,Zograf Readings,Пушп-Ватика: Цветущий сад поэзии,literary_studies,,deepseek,0.9
+PRES_179141844a,2021,Zograf Readings,Ведийский ритуал Ваджапея: древняя традиция и современная практика,vedic_studies|ritual_studies,,deepseek_strict_scale_audit,0.9
+PRES_19697f2e5f,2021,Zograf Readings,Место «Компендиума Абхидхармы» Асанги в философии буддизма махаяны,buddhist_studies|philosophy_epistemology,,deepseek,0.9
+PRES_1c31562518,2021,Zograf Readings,Г*. (Санкт-Петербург). Семья Рудневых как собиратели коллекций для МАЭ РАН,museum_collections|history_of_indology,,deepseek,0.9
+PRES_2630391302,2021,Zograf Readings,Высмеивание пороков врачей в санскритской литературе (на примере «Кали-видамбханам» Нилакантхи Дикшиты),literary_studies,,deepseek,0.9
+PRES_27d5db2ff5,2021,Zograf Readings,Санскритский перевод одного тибетского текста,tibetology_himalaya|translation_reception,,deepseek,0.9
+PRES_27da90a665,2021,Zograf Readings,Неопознанные индоевропейские мотивы в санскритском эпосе,epic_ramayana_mahabharata|comparative_analysis,,deepseek_strict_scale_audit,0.9
+PRES_2b0af07002,2021,Zograf Readings,Проблемы датировки «Нандикешваракашики»,sanskrit_grammar_panini,,deepseek,0.9
+PRES_2b593f9763,2021,Zograf Readings,Конструкция odanam pacyate и ее анализ в традиции Панини,sanskrit_grammar_panini,,deepseek,0.9
+PRES_2cd66465a6,2021,Zograf Readings,Интерпретация канонической типологии архатов в буддийских экзегетических источниках,buddhist_studies,,deepseek,0.9
+PRES_377c745d79,2021,Zograf Readings,Архетип двойничества в романе С. Рушди «Ярость»: этнографический субстрат,modern_literature,,deepseek,0.8
+PRES_46601a7245,2021,Zograf Readings,Некоторые структурные особенности пролога классической санскритской драмы»,literary_studies,,deepseek,0.9
+PRES_582d56f69a,2021,Zograf Readings,О двух родственных джатакаставах в «Лалитавистаре» и «Раштрапалапариприччха-сутре»,buddhist_studies,,deepseek,0.9
+PRES_5ec82e96d1,2021,Zograf Readings,Голубые лотосы санскритской лексикографии,etymology,,deepseek,0.8
+PRES_64d8c34063,2021,Zograf Readings,О «новых» теориях действия в грамматических трудах Нагеши Бхатты,sanskrit_grammar_panini,,deepseek,0.9
+PRES_6ce494c40a,2021,Zograf Readings,Раса как сок поэзии,literary_studies,,deepseek,0.8
+PRES_6d9f21c9ed,2021,Zograf Readings,Кофейная Одиссея Индии,colonial_encounters,,deepseek_strict_scale_audit,0.9
+PRES_77dd8038e0,2021,Zograf Readings,Традиция «Лалитавистары»: возможные истоки,buddhist_studies,,deepseek,0.9
+PRES_7a34c63764,2021,Zograf Readings,Инклюзивизм в индийской культуре и его ведийские истоки,vedic_studies,,deepseek_strict_scale_audit,0.8
+PRES_7e999e3350,2021,Zograf Readings,Понимание истории Индии в социальной философии Рабиндраната Тагора,modern_society_politics,,deepseek,0.8
+PRES_806f7942d2,2021,Zograf Readings,Неприzнанный zнак: вопрос о модернизации бенгальского алфавита в современном медиапространстве,bengal,,deepseek,0.8
+PRES_840e0c180a,2021,Zograf Readings,Истоки учения о Шри в вишишта-адвайта веданте,vaishnava,,deepseek,0.9
+PRES_8bf8e5c670,2021,Zograf Readings,Удвоение знаков в протоиндийской письменности,manuscripts_epigraphy,,deepseek,0.9
+PRES_8da2a8ffea,2021,Zograf Readings,Проблемы понимания санскритской метрики,metrics,,deepseek,0.9
+PRES_90cb7911e1,2021,Zograf Readings,Сотериологическая доктрина Шри-вайшнавизма в трактате Пиллея Локачарьи «Мумукшупади»,vaishnava,,deepseek,0.9
+PRES_9736d3f1aa,2021,Zograf Readings,Камень-трава или плод из города Синтры: история одного индийского фитонима,etymology,,deepseek,0.9
+PRES_978d279dac,2021,Zograf Readings,Две формы атомизма в буддизме,buddhist_studies,,deepseek,0.9
+PRES_a330500b58,2021,Zograf Readings,Характерные черты и особенности индийского мифологического сериала (на материале сериалов на сюжет «Рамаяны»),epic_ramayana_mahabharata|visual_material_culture,,deepseek,0.9
+PRES_af42ca8e9f,2021,Zograf Readings,Мифы об Индии: 2400 лет «фейковой индологии»,history_of_indology,,deepseek_strict_scale_audit,0.9
+PRES_af4d11c92c,2021,Zograf Readings,Искусство протеста. Политический театр в Индии: истоки и развитие,modern_society_politics|ethnography_performance,,deepseek_strict_scale_audit,0.8
+PRES_b04952c128,2021,Zograf Readings,Народно-разговорная речь и приемы ее стилизации в поэзии североиндийского бхакти,bhakti_vaishnava|hindi_urdu_new_indo_aryan,,deepseek,0.9
+PRES_ba86fb0e21,2021,Zograf Readings,"Ранние священные тексты на соранг-сомпенг как ключ к истории создания культа «Матар Баном» у племени сора (южные мунда, Орисса)",fieldwork|ethnography_performance,,deepseek,0.85
+PRES_bb6d189bea,2021,Zograf Readings,Палийская и санскритские версии сюжетов о самопожертвовании бодхисатвы-зайца,pali_early_buddhism|comparative_analysis,,deepseek,0.9
+PRES_c2b2c25a8c,2021,Zograf Readings,«К истолкованию мифа о Махишамардани» в научном наследии М.И. Тубянского,history_of_indology,,deepseek,0.85
+PRES_d59e7f7256,2021,Zograf Readings,Индологический материал в рабочих записках Д. Г. Мессершмидта по востоковедению (Collectanea Messerschmidtiana),history_of_indology|expeditions,,deepseek,0.9
+PRES_e07744764c,2021,Zograf Readings,«Йога-сутры» Патанджали в арабском переводе ал-Бируни,translation_reception|yoga_ayurveda,,deepseek,0.9
+PRES_e218a2fb4b,2021,Zograf Readings,Приемы композиции групп текстов в палийской «Типитаке»,pali_early_buddhism,,deepseek,0.85
+PRES_e657e5f36b,2021,Zograf Readings,Интеллектуальная история модернизма: Стелла Крамриш и индийский авангард,twentieth_century|history_of_indology,,deepseek_strict_scale_audit,0.9
+PRES_e8343f7c65,2021,Zograf Readings,Миниатюры рагамала в отечественных собраниях,visual_material_culture|museum_collections,,deepseek,0.9
+PRES_e968b3b7a0,2021,Zograf Readings,Шива-бхакти и Шива-йога в тамильском шайва-бхакти,bhakti_vaishnava|dravidology_south_india,,deepseek,0.9
+PRES_efa6368f8b,2021,Zograf Readings,Трактовка панинийского термина savarṇa комментаторами парибхаш,sanskrit_grammar_panini,,deepseek,0.9
+PRES_f1d3968b9f,2021,Zograf Readings,Опыт построения словаря-тезауруса древнеиндийской лингвистической терминологии (на материале грамматики Панини),sanskrit_grammar_panini,,deepseek_strict_scale_audit,0.9
+PRES_face965a12,2021,Zograf Readings,Полемика с мимансаками об атмане в «Таттвасанграхе» Шантаракшиты,philosophy_epistemology,,deepseek,0.9
+PRES_faf88dfc43,2021,Zograf Readings,Санскритский фрагмент «Артхавинишчая-сутры» из Сериндийского фонда ИВР РАН,pali_early_buddhism|manuscripts_epigraphy,,deepseek,0.9
+PRES_ff09f8aee5,2021,Zograf Readings,Миф о Гхоре и Богине в Йогини-тантре,,,deepseek,0.85
+PRES_03eb8bb5cb,2021,Roerich Readings,Был ли Панчашихка Материалистом?,pali_early_buddhism,,deepseek,0.85
+PRES_147c940250,2021,Roerich Readings,О манерах театральной игры: категория вритти в «Натьяшастре»,ethnography_performance,,deepseek,0.9
+PRES_19f9c5b8ab,2021,Roerich Readings,"Зеркало, конец иллюзии. Или как удовлетворить тайно влюбленную, касающуюся кувшинами грудей отражения возлюбленного. Учение об отражении в 3-й главе «Тантра-алоки» Абхинавагупты",philosophy_epistemology,,deepseek,0.9
+PRES_213b0b1de9,2021,Roerich Readings,Пятнистый охотничий зверь индоевропейцев и «Атхарваведа» 19.49.4 (заметки об индоиранском бестиарии),vedic_studies,,deepseek,0.85
+PRES_27b1d377eb,2021,Roerich Readings,Особенности топонимов Западного края Китая（西域): лингвокультурный аспект,china_mongolia_inner_asia,,deepseek,0.8
+PRES_30d2bc26a5,2021,Roerich Readings,О роли змея (nāga) в вайшнавском культе раннего периода индуизма,vaishnava,,deepseek,0.85
+PRES_3c42887649,2021,Roerich Readings,Жизнь и реалии Кумаона в народных песнях-ньоли,himalaya,,deepseek,0.85
+PRES_3eda18e9e8,2021,Roerich Readings,Визуальная поэзия или поэтический рисунок Рабиндраната Тагора: традиция каллиграфии и фигуры-лампы,bengal,,deepseek,0.85
+PRES_4a38078432,2021,Roerich Readings,Панчатантра как шастра и как тантра,comparative_analysis,,deepseek,0.8
+PRES_5092113c15,2021,Roerich Readings,«Культурологический поворот» в исследованиях Ю.Н. Рериха и Л.Н. Гумилёва,history_of_indology,,deepseek_strict_scale_audit,0.9
+PRES_5cc77e65a5,2021,Roerich Readings,Магические средства ведения войны на монголо-тибетском фронте,china_mongolia_inner_asia,,deepseek,0.8
+PRES_633cf7004a,2021,Roerich Readings,"Волосы Будды: паломнический и житийный нарратив, изобразительная традиция",buddhist_studies,,deepseek,0.85
+PRES_646140769f,2021,Roerich Readings,"Эпитет, образ, мотив в средневековой поэзии бхакти",bhakti_vaishnava,,deepseek,0.85
+PRES_68f68e8947,2021,Roerich Readings,Прагматика перечней в эпиграфическом тексте (к открытию надписей брахми III–II вв. до н.э. в Центральной Индии),manuscripts_epigraphy,,deepseek,0.9
+PRES_69e4c50d4d,2021,Roerich Readings,"(НИ, Москва). Сура (surā) в ведийских ритуалах Ваджапея и Саутрамани",vedic_studies,,deepseek,0.9
+PRES_71a1ef7771,2021,Roerich Readings,Особенности представлений о творении вселенной и ее истории в пуранах,cosmology,,deepseek_strict_scale_audit,0.8
+PRES_74f0b9dbb8,2021,Roerich Readings,Любовные и религиозные мотивы в средневековой тамильской поэме «Тирукковейар» Маниккавасахара,dravidology_south_india,,deepseek,0.85
+PRES_7921400a74,2021,Roerich Readings,Зороастрийский культ огня и ритуалы парсов Индии,,,deepseek,0.8
+PRES_79e743c4be,2021,Roerich Readings,Танец суфийских дервишейволчков ритуала «сама» и сакральный «танец вихря» (fr. dance vertige) «Мистерии» А.Н. Скрябина,comparative_analysis,,deepseek,0.8
+PRES_94db424895,2021,Roerich Readings,Вклад Ю.Н. Рериха в формирование «транскультурного пространства» Калимпонга (1950-е гг. ХХ в.),history_of_indology,,deepseek,0.85
+PRES_965ca3fc2b,2021,Roerich Readings,Предварительные замечания к проблеме речевого сбоя в древнеиндийской теории драмы,philosophy_epistemology,,deepseek,0.8
+PRES_9d2b60c41e,2021,Roerich Readings,Вклад Ю.Н. Рериха в развитие тибетского языкознания,tibetology_himalaya,,deepseek,0.85
+PRES_9dae5c811e,2021,Roerich Readings,Захват джунгарами Тибета в 1717 г,tibetology_himalaya,,deepseek,0.9
+PRES_a12fd2f1ff,2021,Roerich Readings,Астрологические манускрипты на танкри из коллекции Кхубрама Кхушдиля (Химачал-Прадеш): особенности текстов и датировка,tibetology_himalaya|manuscripts_epigraphy,,deepseek,0.9
+PRES_a525a168ab,2021,Roerich Readings,Эволюция струнного музыкального инструмента вины на материале скульптуры пещерных храмов южной Индии (I–X вв.),visual_material_culture,,deepseek,0.9
+PRES_a8e1d07658,2021,Roerich Readings,"Скифский язык, топонимы Скифии и Центральной Азии, индоевропейские языки: культурные заимствования из Индии и культур древнего Понта Эвксинского",comparative_analysis,,deepseek_strict_scale_audit,0.9
+PRES_a9dfccbed8,2021,Roerich Readings,Индийское царство и индийские диковины в средневековых ирландских рукописях XV в. «Романа об Александре»,manuscripts_epigraphy|translation_reception,,deepseek,0.9
+PRES_b0a4a6a4a5,2021,Roerich Readings,О буддологии в тексте Abhisamayālaṅkāra (тиб. Mngon rtogs rgyan),buddhist_studies|tibetology_himalaya,,deepseek,0.9
+PRES_c193a1cc2e,2021,Roerich Readings,Мотивационные доминанты как «система ожидания» в санскритском и палийском повествовании,comparative_analysis,,deepseek_strict_scale_audit,0.8
+PRES_d1d14a99b1,2021,Roerich Readings,«История Тирумулара»: биография бхакта и биография сиддха,bhakti_vaishnava,,deepseek,0.9
+PRES_d8f0fef90a,2021,Roerich Readings,Образы бодхисаттвы Авалокитешвары в коллекции Кабинета Рериха: Авалокитешвара – податель прозрения,tibetology_himalaya|visual_material_culture,,deepseek,0.9
+PRES_d94f99723b,2021,Roerich Readings,Ю.М. Парфионович: штрихи жизненного пути. Парфионович – продолжатель исследований Ю.Н. Рериха в области тибетологии. Совместная деятельность Ю.М. Парфионовича и В. С. Дылыковой по изучению и переводу «Калачакра-тантры». И.В. Григорьев. Ю.М. Парфионович и будущее отечественной буддологии,history_of_indology|tibetology_himalaya,,deepseek,0.9
+PRES_e2a4694725,2021,Roerich Readings,Начало гирлянды. Первые известные серии миниатюр рагамала,visual_material_culture,,deepseek,0.9
+PRES_049685d093,2022,Zograf Readings,К авестийско-ведийским параллелям о собаке,comparative_analysis|vedic_studies,,deepseek,0.9
+PRES_0fd010e2b6,2022,Zograf Readings,Интерпретация фахверковой архитектуры Индии,,,deepseek,0.8
+PRES_147249ddf0,2022,Zograf Readings,Формирование понятия пустоты в ранней махаяне,buddhist_studies,,deepseek_strict_scale_audit,0.8
+PRES_191e751374,2022,Zograf Readings,Теоморфные образы варн санскрита в контексте индуистской тантры,philosophy_epistemology,,deepseek,0.9
+PRES_1cfabd5347,2022,Zograf Readings,"Рамаитская поэзия Айодхьи XIX-XX вв.: образы, смыслы и подходы к переводу на русский язык",modern_literature,,deepseek,0.9
+PRES_21a2609dd4,2022,Zograf Readings,Коммуникативный дискурс трактата «Таттвасанграха»,buddhist_studies|philosophy_epistemology,,deepseek,0.9
+PRES_22b3b0e3af,2022,Zograf Readings,"Сура vs. сома в жертвоприношении Саутрамани: мифы, ритуальные действия, мантры",vedic_studies|ritual_studies,,deepseek,0.9
+PRES_301c0a7a9a,2022,Zograf Readings,К пониманию бхаваны в пурва-мимансе,philosophy_epistemology,,deepseek,0.9
+PRES_319b5e277b,2022,Zograf Readings,Вклад Ю.В. Кнорозова в исследование протоиндийских текстов. К 100-летию со дня рождения,history_of_indology,,deepseek,0.9
+PRES_39efe13b3a,2022,Zograf Readings,Неатрибутированный санскритский фрагмент SI 3480 из Сериндийского фонда ИВР РАН,manuscripts_epigraphy,,deepseek,0.9
+PRES_3b39eca1f6,2022,Zograf Readings,"Брахман в ""Абхидхармакошабхашье"" Васубандху",buddhist_studies,,deepseek,0.9
+PRES_3c7edb493f,2022,Zograf Readings,"Ведийское vrā́- «барышня» (?): Этимология, семантика, контекст.",etymology,,deepseek,0.9
+PRES_45d2980f2a,2022,Zograf Readings,«Барахмах» Нанака и дискуссия о реформе сикхского календаря,sikh_studies,sikh_studies,deepseek,0.8
+PRES_4f0e5d2559,2022,Zograf Readings,"Мангала: поэзия, ритуал или йогическая практика?",ritual_studies|yoga_ayurveda,,deepseek,0.8
+PRES_4f574144dd,2022,Zograf Readings,Живое древо религий М. К. Ганди.,modern_society_politics,,deepseek_strict_scale_audit,0.9
+PRES_513cbc0421,2022,Zograf Readings,"«Глупец», «Незнакомец», «Человек-эпоха»: три ипостаси князя Мышкина в индийском кинематографе",comparative_analysis,,deepseek,0.8
+PRES_51d1870035,2022,Zograf Readings,Фольклор европейских рома (цыган) и мифы индийских племен,comparative_analysis,,deepseek_strict_scale_audit,0.8
+PRES_677299afaa,2022,Zograf Readings,Правило lopa в грамматике Панини,sanskrit_grammar_panini,,deepseek,0.9
+PRES_695444f2df,2022,Zograf Readings,Enjambement в поэзии Бхартрихари,metrics|prosody,,deepseek,0.9
+PRES_6c80b6dbcb,2022,Zograf Readings,Особенности тантрического аскетизма,ritual_studies,,deepseek_strict_scale_audit,0.8
+PRES_725bb30238,2022,Zograf Readings,Вивекананда и его учителя: преемственность религиозно-философских взглядов,,,deepseek,0.8
+PRES_742bbb6f8d,2022,Zograf Readings,«Бахиранга-парибхаша»: последнее слово за Нагоджибхаттой или Бронкхорстом?,,,deepseek,0.8
+PRES_766fc36baf,2022,Zograf Readings,Многообразие форм Шивы на примере коллекции Государственного музея истории религии,museum_collections,,deepseek,0.9
+PRES_7ea08762c7,2022,Zograf Readings,Буддизм и война: исторический обзор,buddhist_studies,,deepseek_strict_scale_audit,0.9
+PRES_7ea4b748be,2022,Zograf Readings,О сюжетах по джатаке Махаджанака в сингальской коллекции МАЭ,manuscripts_epigraphy|buddhist_studies,,deepseek,0.9
+PRES_7f831a6dff,2022,Zograf Readings,Загадка саммелана-янтры в «Куньджитангхриставе» Умапати Шивачарьи,ritual_studies,,deepseek,0.8
+PRES_92609683a4,2022,Zograf Readings,"""Нисхождение в образе рыбы"": сказание фольклорной традиции пастухов-голла",ethnography_performance,,deepseek,0.8
+PRES_a0892f70d1,2022,Zograf Readings,Отличительные особенности и характерные черты индийских мифологических сериалов на сюжет,visual_material_culture,,deepseek_strict_scale_audit,0.8
+PRES_a48c051ad5,2022,Zograf Readings,Буддийский Ренессанс в Южной Азии конец XIX – сер. XX века: история и перспективы,buddhist_studies|modern_society_politics,,deepseek_strict_scale_audit,0.9
+PRES_aa72a4b214,2022,Zograf Readings,История Индии в философской интерпретации Свами Вивекананды.,history_of_indology,,deepseek_strict_scale_audit,0.85
+PRES_aef1a6caa8,2022,Zograf Readings,Комментарий к коренной мантре Ваджракилаи,buddhist_studies|tibetology_himalaya,,deepseek,0.9
+PRES_b0e971446f,2022,Zograf Readings,Проблема зла и концепция лилавады в кашмирском шиваизме,philosophy_epistemology,,deepseek_strict_scale_audit,0.9
+PRES_b11890b0ab,2022,Zograf Readings,Новый роман Салмана Рушди «Кишот» и его индийская составляющая,modern_literature|comparative_analysis,,deepseek,0.9
+PRES_b24d46274c,2022,Zograf Readings,"""Бхагавата мела натакам"": театр и ритуал в деревне Мелаттур (Тамилнад)",ethnography_performance|dravidology_south_india,,deepseek,0.9
+PRES_b5b4220732,2022,Zograf Readings,Образ птицы чатаки в поэзии бенгальских вайшнавов (на примере Рупы Госвамина),bhakti_vaishnava|bengal,,deepseek,0.9
+PRES_b5e87eb0bb,2022,Zograf Readings,Смысл и понимание войны в средневековой Южной Индии (поэма Джаянкондара «Парани о войне в Калинге»),dravidology_south_india,,deepseek_strict_scale_audit,0.8
+PRES_bda295c85a,2022,Zograf Readings,Западная философия и восточная медитация в учении Ошо Раджниша.,modern_society_politics,,deepseek_strict_scale_audit,0.9
+PRES_c6ce1e5635,2022,Zograf Readings,Женщины-гуру в текстах индуистского тантризма,ritual_studies,,deepseek_strict_scale_audit,0.9
+PRES_c8a43354fb,2022,Zograf Readings,"Диалектологическое исследование языка куллуи (< химачали): задачи, методика, результаты",hindi_urdu_new_indo_aryan|fieldwork,,deepseek,0.9
+PRES_ca45861a41,2022,Zograf Readings,Мотив царской процессии в жизнеописаниях Будды,buddhist_studies,,deepseek,0.9
+PRES_cb7f41abaa,2022,Zograf Readings,"Вьякарана: не наука о языке, а методология синтеза речи (философский подход)",sanskrit_grammar_panini|philosophy_epistemology,,deepseek_strict_scale_audit,0.9
+PRES_d241de8c69,2022,Zograf Readings,"К анализу устройства «Шрибхашья» Рамануджи: содержание, композиция, стиль",philosophy_epistemology|bhakti_vaishnava,,deepseek,0.9
+PRES_dae45dd193,2022,Zograf Readings,Ритуальный комплекс похоронных обрядов в неварском буддизме,nepal_newar_kathmandu|buddhist_studies|life_cycle_rituals,,deepseek,0.9
+PRES_e3b0743d31,2022,Zograf Readings,Томас Рис-Дэвидс как основатель Pali Text Society,history_of_indology|pali_early_buddhism,,deepseek,0.9
+PRES_e535f6d646,2022,Zograf Readings,Этапы развития тамильского языкового пуризма,dravidology_south_india,,deepseek_strict_scale_audit,0.9
+PRES_f71b65d4d2,2022,Zograf Readings,Кришнаитские коды проповеди северо-индийского бхакти,bhakti_vaishnava,,deepseek_strict_scale_audit,0.9
+PRES_fb1f237dc7,2022,Zograf Readings,Чайтья в трех версиях «Лалитавистары»: взаимодействие текста и паломнической традиции,buddhist_studies|manuscripts_epigraphy,,deepseek,0.9
+PRES_19464a9a79,2022,Roerich Readings,Связка текст-смысл-мышление в «Артхашастре» Каутильи: уникальность и стандартность,philosophy_epistemology,,deepseek,0.9
+PRES_224b938159,2022,Roerich Readings,Учение о цвете Ксенократа Сикионского и теория цвето-культурной компетенции чхави Древней Индии,philosophy_epistemology|visual_material_culture,,deepseek_strict_scale_audit,0.9
+PRES_231441bfe0,2022,Roerich Readings,Некоторые особенности культа Белого старца в Сиккиме. (доклад онлайн),tibetology_himalaya,,deepseek,0.9
+PRES_27a371b83b,2022,Roerich Readings,О предельном предмете в «Парамартхасаре» Абхинавагупты,philosophy_epistemology,,deepseek,0.9
+PRES_3713c953c3,2022,Roerich Readings,Этимологическая классификация лексики в индийской и европейской грамматической традиции на примере языка куллуи,etymology|comparative_analysis,,deepseek_strict_scale_audit,0.9
+PRES_40bcedce59,2022,Roerich Readings,К вопросу о русском переводе «Мимансакапарикальпита-атма-парикши» «Таттва-санграхи» Шантаракшиты с комментарием Камалашилы «Панджика»,buddhist_studies|translation_reception,,deepseek,0.9
+PRES_5528877ed4,2022,Roerich Readings,Композиция «Апастамба-шраутасутры»: базовые ритуалы (prakṛti) и их модификации (vikṛti),vedic_studies|ritual_studies,,deepseek,0.9
+PRES_6639f5e148,2022,Roerich Readings,К реконструкции языковых контактов в области Шангшунг в дотибетскую эпоху,tibetology_himalaya,,deepseek,0.85
+PRES_6c278c000a,2022,Roerich Readings,Несколько замечаний о введении и первой части «Тирумантирама»,dravidology_south_india,,deepseek,0.9
+PRES_6db1d38cf2,2022,Roerich Readings,"Трактат Марко Паллиса, предостерегающий Тибет о последствиях Кали-юги (об атрибутировании и содержании тибетского ксилографа из Архива музея Рерихов (Филиал Государственного музея Востока))",tibetology_himalaya|expeditions,,deepseek,0.9
+PRES_73ff9d211a,2022,Roerich Readings,Тригата в «Натьяшастре»: религиозное и символическое значение,ritual_studies,,deepseek,0.9
+PRES_787181142c,2022,Roerich Readings,Сообщение о смерти Чингис-хана в русских летописях,china_mongolia_inner_asia,,deepseek,0.9
+PRES_88384d600b,2022,Roerich Readings,Представления о времени и пространстве в «Прета-канде» «Гаруда-пураны»,vedic_studies,,deepseek,0.9
+PRES_8bce4f930d,2022,Roerich Readings,Дарджилингский период в научной карьере Ю.Н. Рериха,history_of_indology|expeditions,,deepseek,0.9
+PRES_8ca083b138,2022,Roerich Readings,Памятные даты – стимул к новым поискам: 150 лет со дня рождения Павла Риттера и 120 лет со дня рождения Юрия Рериха. (доклад онлайн),history_of_indology,,deepseek,0.85
+PRES_b7e8bb27cc,2022,Roerich Readings,«Жизнь Будды» Ашвагхоши и Серебряный век русской культуры,translation_reception|comparative_analysis,,deepseek_strict_scale_audit,0.9
+PRES_bab6fc9b5c,2022,Roerich Readings,Немногие сведения о Нилакантхадикшитеграмматисте,sanskrit_grammar_panini,,deepseek,0.9
+PRES_beed481e92,2022,Roerich Readings,Недосказанность/прерванность речи в классической санскритской драме,literary_studies,,deepseek_strict_scale_audit,0.9
+PRES_c4a37b0299,2022,Roerich Readings,Священные зороастрийские тексты и переписка парсийских жрецов с зороастрийскими жрецами Ирана,,,deepseek,0.85
+PRES_c7dde9eafd,2022,Roerich Readings,Лексикализация дезидератива в классическом санскрите,sanskrit_grammar_panini,,deepseek,0.9
+PRES_cc6f3afab6,2022,Roerich Readings,«Стела монастыря Шакья 释迦院碑» 1257 г. в Монголии – изучение и анализ текста,china_mongolia_inner_asia|buddhist_studies,,deepseek,0.9
+PRES_d8ca534401,2022,Roerich Readings,Рецепция тантрического текста в совеременной культуре: случай Аллена Гинзберга,translation_reception,,deepseek,0.9
+PRES_e6909d6386,2022,Roerich Readings,Философия и практики самоповреждающего поведения в тамильском бхакти (доклад онлайн),dravidology_south_india|bhakti_vaishnava,,deepseek,0.9
+PRES_ea72ffeb6f,2022,Roerich Readings,Стилистика Амаравати и поэтика «Лалитавистары»,buddhist_studies|visual_material_culture,,deepseek,0.85
+PRES_f0ebf6d248,2022,Roerich Readings,Проявление чувств в лирике кришнаитского бхакти XVI в,bhakti_vaishnava,,deepseek,0.9
+PRES_f6fa058fc3,2022,Roerich Readings,Полисемия в области терминологии родства – дравидийские и индоарийские языки,dravidology_south_india|new_indo_aryan_languages,,deepseek_strict_scale_audit,0.9
+PRES_0727154099,2023,Zograf Readings,Проблема интерпретации действия в комментарии Шанкары на Бхагавадгиту,philosophy_epistemology,,deepseek,0.9
+PRES_0bdad1d393,2023,Zograf Readings,«Юга-пурана» как исторический источник,,,deepseek,0.85
+PRES_131430ee4f,2023,Zograf Readings,Об особенностях индийской философии на основе южноазиатской схемы рациональности,comparative_analysis,,editorial_scale_adjudication_after_deepseek,0.9
+PRES_1575c77bb8,2023,Zograf Readings,О возможности передачи санскритских стихотворных размеров в русских переводах,translation_reception|metrics,,deepseek,0.85
+PRES_15d3fb6de7,2023,Zograf Readings,Склонность к конфликтам в образе Махакашьяпы в буддийских канонических текстах,buddhist_studies|pali_early_buddhism,,deepseek,0.9
+PRES_20e3bfece1,2023,Zograf Readings,Female-Mystic in Medieval Tamil Literature and Early Sufism: Structural Similarity of Images,comparative_analysis|dravidology_south_india,,deepseek_strict_scale_audit,0.9
+PRES_3d52efd485,2023,Zograf Readings,"В поисках современного подхода к прозе Премчанда.Коровина Евгения Владимировна, Ренковская Евгения Алексеевна (Москва). Экспедиция к памятникам протоиндийской цивилизации на территории Индии",expeditions,,deepseek,0.9
+PRES_42ff807ebd,2023,Zograf Readings,Переоценка различных методологических подходов по исследованию индийской философии: по следам книги В. Адлури и Д. Багчи «The Nay Science: A History of German Indology»,history_of_indology,,deepseek_strict_scale_audit,0.9
+PRES_4542369695,2023,Zograf Readings,Политик читает и пересказывает эпос. «Рамаяна» и «Махабхарата» в переложении Чакраварти Раджагопалачари,epic_ramayana_mahabharata|translation_reception,,deepseek,0.9
+PRES_483a3d2f7e,2023,Zograf Readings,Значения и функционирование лексемы ye в бенгальском языке,bengal,,deepseek,0.9
+PRES_4a75bb4440,2023,Zograf Readings,Мотивы «Сказания о Джаландхаре в «Падма-пуране»,epic_ramayana_mahabharata,,deepseek,0.9
+PRES_4a837e8e68,2023,Zograf Readings,К вопросу об истинности в пурва-мимансе,philosophy_epistemology,,deepseek,0.9
+PRES_4d66fa9608,2023,Zograf Readings,Найти нормативную этику в традиционных текстах: сверхзадача и её решение мыслителями Бенгальского Возрождения.,bengal|philosophy_epistemology,,deepseek_strict_scale_audit,0.9
+PRES_4de09c27d6,2023,Zograf Readings,О не-волшебной помощнице в сказках парья: вариант фольклорного мотива,ethnography_performance,,deepseek,0.85
+PRES_4e2a407a20,2023,Zograf Readings,Поздний Р.Тагор и «Бхагавадгита»: переосмысляя концепцию о долге,bengal|translation_reception,,deepseek,0.9
+PRES_5b690db8b2,2023,Zograf Readings,"Скульптура Нритья Шивы из храма Мандапешвара в Мумбаи. Стиль, иконография, аналогии",visual_material_culture,,deepseek,0.9
+PRES_611497ab1e,2023,Zograf Readings,Почему Брахман наделен природой звука (шабда-таттва)?,philosophy_epistemology,,deepseek,0.9
+PRES_62b9cf0c5b,2023,Zograf Readings,Мантры в ведийских шраута-ритуалах.,vedic_studies|ritual_studies,,deepseek,0.95
+PRES_6685d6b52f,2023,Zograf Readings,Этнографические сборы В.И. Липского на Цейлоне в начале XX в,expeditions|colonial_encounters,,deepseek,0.9
+PRES_6d2052f1ad,2023,Zograf Readings,Россия и русские в произведениях Салмана Рушди,modern_literature,,deepseek,0.85
+PRES_70f93c1aa2,2023,Zograf Readings,Кукольный театр Западной Бенгалии,ethnography_performance|bengal,,deepseek,0.9
+PRES_7315ee9c52,2023,Zograf Readings,Средний залог в санскрите. К семантике категории,sanskrit_grammar_panini,,deepseek,0.9
+PRES_8190df6ab4,2023,Zograf Readings,«Моя мать и твоя мать – какая родня?» Об обозначениях братьев и сестер и возможностях прадравидийской реконструкции,dravidology_south_india,,deepseek_strict_scale_audit,0.9
+PRES_878ec9446a,2023,Zograf Readings,"Падаяни, мудиетту, тиятту: ритуальные исполнительские традиции центральной Кералы",ethnography_performance,,deepseek,0.9
+PRES_895dc581dc,2023,Zograf Readings,"«… Есть некая рыба, которая чюдовидна имать»: возможные истоки и неочевидные связи одного композитного существа индийской миниатюры",visual_material_culture,,deepseek,0.85
+PRES_95a2a59a3a,2023,Zograf Readings,Сотериологический ракурс «йогического суицида» (utkrānti) в традиционной индуистской йоге и тантре,yoga_ayurveda,,deepseek,0.9
+PRES_9d14455fc4,2023,Zograf Readings,"«Брахма-стути» из «Бхушунди Рамаяны»: текстология, смыслы, параллели",epic_ramayana_mahabharata|bhakti_vaishnava,,deepseek,0.9
+PRES_a09f55af64,2023,Zograf Readings,Надписи на медных предметах протоиндийской письменностью,manuscripts_epigraphy,,deepseek,0.9
+PRES_a9e54b9746,2023,Zograf Readings,Вспомнить все: ганджифа и забытая карточная игра «Сидаста» из коллекции А.М. и Л.А. Мервартов,board_games|museum_collections,,deepseek,0.9
+PRES_abbc19de8a,2023,Zograf Readings,Типология индийских аскетов по санскритским источникам,,,deepseek_strict_scale_audit,0.9
+PRES_ac330becc1,2023,Zograf Readings,Трудности в изучении философского наследия Дигнаги: опыт переводчика и историка философии,buddhist_studies|philosophy_epistemology,,deepseek,0.9
+PRES_ae89d9faef,2023,Zograf Readings,Тема угона скота (veṭci) в древнетамильской поэзии и литературной теории,dravidology_south_india,,deepseek,0.9
+PRES_b0fb034cf5,2023,Zograf Readings,Древнеиндийская ономастика в «Вишнусахасранаме»,epic_ramayana_mahabharata,,deepseek,0.9
+PRES_bbe113082f,2023,Zograf Readings,Анализ аморальных поступков в «Абхидхармакоше» Васубандху,buddhist_studies|philosophy_epistemology,,deepseek,0.9
+PRES_bfeac6bacd,2023,Zograf Readings,Дворец небесный и дворец земной: две схожие главы «Лалитавистары» и их функциональная роль в общей композиции текста,buddhist_studies,,deepseek,0.9
+PRES_c68bb62502,2023,Zograf Readings,Проповедь Личного Безличного Бога в учении Свами Вивекананды,modern_society_politics,,deepseek,0.85
+PRES_c9fadcf6f0,2023,Zograf Readings,Коллекция тамильских рукописей М.С. Андреева из Индийского фонда ИВР РАН,manuscripts_epigraphy|dravidology_south_india,,deepseek,0.9
+PRES_ca363493ba,2023,Zograf Readings,Драма как категория и жанр в древнеиндийской поэтике,literary_studies,,deepseek_strict_scale_audit,0.9
+PRES_d87a94d8a6,2023,Zograf Readings,Философская компаративистика В. Хальбфасса,comparative_analysis|history_of_indology,,deepseek_strict_scale_audit,0.9
+PRES_da92f2fc5d,2023,Zograf Readings,Научные связи Ф.И.Щербатского с британскими востоковедами в 1930-е гг,history_of_indology|colonial_encounters,,deepseek,0.9
+PRES_efa28cdcf3,2023,Zograf Readings,Антропология индийской куклы: контексты и ракурсы,visual_material_culture|ethnography_performance,,deepseek_strict_scale_audit,0.8
+PRES_f7d6abee1f,2023,Zograf Readings,Коллекция № ВХ ЭФЗК 495 для МАЭ (состав и значение),museum_collections,,deepseek,0.9
+PRES_fac9d854a7,2023,Zograf Readings,Ритуальный комплекс родильных обрядов в неварском буддизме,nepal_newar_kathmandu|ritual_studies|life_cycle_rituals,,deepseek,0.9
+PRES_1654668dbb,2023,Roerich Readings,Словослияние в куллуи как способ словообразования,new_indo_aryan_languages,,deepseek,0.9
+PRES_259ddc64ac,2023,Roerich Readings,Обсценная брань и её следы в РВ 10.10: возможна ли реконструкция текста?,vedic_studies,,deepseek,0.9
+PRES_3b994db7ef,2023,Roerich Readings,Исследования древнеиндийских текстов как ключевое направление в ранней японской буддологии,buddhist_studies|history_of_indology,,deepseek_strict_scale_audit,0.8
+PRES_46cb67fd05,2023,Roerich Readings,Тексты праджняпарамиты в ойратской религиозной культуре и законоположениях,buddhist_studies|china_mongolia_inner_asia,,deepseek,0.9
+PRES_481f966cc6,2023,Roerich Readings,"Karaṇīya-mettasutta – «Любовь всеобъемлющая», как императив, освобождающий от страданий сансары",pali_early_buddhism,,deepseek,0.9
+PRES_48997b3d72,2023,Roerich Readings,Культ корзины в Древней Индии и смена религиозной парадигмы,ritual_studies,,deepseek_strict_scale_audit,0.8
+PRES_52333b1258,2023,Roerich Readings,Надписи на колонне Гелиодора,manuscripts_epigraphy,,deepseek,0.9
+PRES_8190c6779b,2023,Roerich Readings,Отражение монгольских имперских идей в средневековых вьетнамских источниках,china_mongolia_inner_asia,,deepseek,0.9
+PRES_87b3b9e9f4,2023,Roerich Readings,Несколько замечаний о Брахмане и сущем,philosophy_epistemology,,deepseek,0.85
+PRES_89e97978bb,2023,Roerich Readings,Ритуал приема почетного гостя при жертвоприношениях сомы,vedic_studies|ritual_studies,,deepseek,0.9
+PRES_8f4eeac42e,2023,Roerich Readings,Улан-Баторский период в научной карьере Ю.Н. Рериха. 1926-1927 годы,history_of_indology|expeditions,,deepseek,0.9
+PRES_b1ae58819e,2023,Roerich Readings,Представление о годе в концепции времени пуран,cosmology,,deepseek,0.85
+PRES_b35fa99329,2023,Roerich Readings,О понятии «вкус» (rasa) в древнеиндийской традиции,literary_studies,,deepseek,0.85
+PRES_b57a66fc22,2023,Roerich Readings,"Журнал “Stepping stones” – гималайская культура, буддизм и философия перенниализма сквозь призму взглядов европейских исследователей",tibetology_himalaya|buddhist_studies,,deepseek_strict_scale_audit,0.8
+PRES_be1bdeb599,2023,Roerich Readings,«Не одне грандиозныя прелести Гималаев»: итоги путешествия И. П. Минаева в Кумаон (1875),expeditions|himalaya,,deepseek,0.9
+PRES_e6073c947c,2023,Roerich Readings,Этимология и семантика цветообозначения «красный» в китайской культуре,etymology,,deepseek,0.9
+PRES_edcdc9e33a,2023,Roerich Readings,Социоскрипторная ситуация в Древней Индии,,,deepseek_strict_scale_audit,0.8
+PRES_095045ced7,2024,Zograf Readings,От эпического предания до буддийского сказания и обратно: история Шьямы,epic_ramayana_mahabharata|buddhist_studies,,deepseek,0.9
+PRES_0ee4f09fc9,2024,Zograf Readings,Четыре вида непосредственного восприятия в «Капле логики» Дхармакирти,buddhist_studies|philosophy_epistemology,,deepseek,0.9
+PRES_128cecab0d,2024,Zograf Readings,Мадхупарка при жертвоприношениях сомы в ритуале Атитхьешти (ātithyeṣṭi),ritual_studies,,expert_override_after_deepseek,0.9
+PRES_16bca7ecfe,2024,Zograf Readings,Бодхисаттва — стрелок из лука. Буддийский сюжет и его аналоги,buddhist_studies|comparative_analysis,,deepseek,0.9
+PRES_21a5a08676,2024,Zograf Readings,Воссоздавая историю древней Индии: исследовательский опыт Раджендролала Митро,history_of_indology,,deepseek,0.9
+PRES_2a660819f9,2024,Zograf Readings,Онтология и сотериология «Ананда-сутр» П.Р. Саркара,,,deepseek,0.9
+PRES_2b2a1fc14b,2024,Zograf Readings,Сравнительный анализ космологических представлений на полях вишнуитской и джайнской «джняна чаупады» (игры знания) XVIII — XIX вв,comparative_analysis|vaishnava|jain|cosmology|board_games|eighteenth_century|nineteenth_century,,expert_override_after_deepseek,0.8
+PRES_2e44fd3b07,2024,Zograf Readings,Гадание о суженом по зеркалу в «Махабхарате»: индоиранский и индоевропейский фон,epic_ramayana_mahabharata|comparative_analysis,,deepseek_strict_scale_audit,0.8
+PRES_2fcaeeff79,2024,Zograf Readings,Несколько этимологий арготических слов среднеазиатских цыган на фоне дискуссий последнего полувека об истории цыган,etymology,,deepseek,0.9
+PRES_33433905b0,2024,Zograf Readings,Образы тигра и рыбы в бенгальской фразеологии,bengal,,deepseek,0.9
+PRES_347181c549,2024,Zograf Readings,В.В. Верещагин и И.П. Минаев: русские путешественники в Гималаях,history_of_indology|travel_history|himalaya|nineteenth_century,,expert_override_after_deepseek,0.9
+PRES_36658fe404,2024,Zograf Readings,Переписка О.Н. Бетлингка по поводу Петербургских словарей и судьба лексикографа,history_of_indology,,deepseek,0.9
+PRES_38140938e5,2024,Zograf Readings,О терминологии ‘воды’ в космогонических гимнах Ригведы,vedic_studies,,deepseek,0.9
+PRES_4204d1cf31,2024,Zograf Readings,Суфизм в Индии: истоки и течения,,,deepseek_strict_scale_audit,0.8
+PRES_4df4b11b2d,2024,Zograf Readings,“Чорджапод”: история и перспективы исследования,tibetology_himalaya,,deepseek,0.9
+PRES_56fc72bc0c,2024,Zograf Readings,Телеологический аргумент в пользу существования Бога в учении Свами Вивекананды,,,deepseek,0.9
+PRES_5d7e0395b2,2024,Zograf Readings,Стадии пути к освобождению по «Найшкармья-сиддхи» (I.52) Сурешвары,vedic_studies,,deepseek,0.9
+PRES_6024934b6c,2024,Zograf Readings,Монистический теизм (адвайта-ишваравада) Абхинавагупты в сопоставлении с ишваравадой адвайты Шанкары на материале их комментариев к «Бхагавадгите».,philosophy_epistemology,,deepseek_strict_scale_audit,0.8
+PRES_6b13d39224,2024,Zograf Readings,Интерпретация эвтаназии в буддийской картине мира,buddhist_studies,,deepseek_strict_scale_audit,0.8
+PRES_6f76cd7bf3,2024,Zograf Readings,Поведенческие стереотипы сикхов,,,deepseek_strict_scale_audit,0.8
+PRES_8410b1d47f,2024,Zograf Readings,Обоснование невозможности чувственного познания в «Прасаннападе» Чандракирти,buddhist_studies,,deepseek,0.9
+PRES_8778dfa9e3,2024,Zograf Readings,"""Махабхарата"" как текст культурной памяти",epic_ramayana_mahabharata,,deepseek_strict_scale_audit,0.8
+PRES_8906b4fcc3,2024,Zograf Readings,Российская экспедиция в Ассам 1911-1912 гг,history_of_indology|expeditions|assam|twentieth_century,,expert_override_after_deepseek,0.9
+PRES_8ef9132d46,2024,Zograf Readings,Обряд панчамакара в каулических тантрах,ritual_studies,,deepseek,0.9
+PRES_91ce32f17e,2024,Zograf Readings,Парадигмальное мышление брахманов. Связь философских универсалий и варно-кастовой системы в Индии,philosophy_epistemology,,deepseek_strict_scale_audit,0.8
+PRES_92abfea9fd,2024,Zograf Readings,Вредные существа и животные в авестийской и ведической традиции,vedic_studies,,deepseek_strict_scale_audit,0.8
+PRES_963b9bd836,2024,Zograf Readings,Как лучше представить западному читателю историю индийской философии: размышление по поводу книги В. Эльтшингера и И. Ратье «Что такое индийская философия?»,history_of_indology,,deepseek_strict_scale_audit,0.8
+PRES_99759d2e3f,2024,Zograf Readings,Три системы бенгальского стихосложения,metrics|prosody|literary_studies|bengal,,expert_override_after_deepseek,0.9
+PRES_9a54ac1874,2024,Zograf Readings,Преображение богини Кали: точка зрения «Маханирвана-тантры»,ritual_studies,,deepseek,0.9
+PRES_a39bbb97f1,2024,Zograf Readings,Образ времени в поэзии Бхартрихари,literary_studies,,deepseek,0.9
+PRES_a4e21c2702,2024,Zograf Readings,«Город победы» Рушди — ответ «Рамаяне» самого скандального автора 20 столетия,modern_literature|english_literature|twentieth_century,,expert_override_after_deepseek,0.85
+PRES_a610f81125,2024,Zograf Readings,Женские голоса в каввали: гендер и традиции,ethnography_performance,,deepseek_strict_scale_audit,0.8
+PRES_a9d6b301a2,2024,Zograf Readings,Локальные варианты Дурга Пуджи в Колкате,bengal,,deepseek,0.9
+PRES_b02d534334,2024,Zograf Readings,Абхисамаяланкара как предмет буддийского образования,buddhist_studies,,deepseek,0.85
+PRES_b481edbec8,2024,Zograf Readings,Индийские корреспонденты Е.Е. Обермиллера,history_of_indology,,deepseek,0.9
+PRES_b4cf247d81,2024,Zograf Readings,Рассказы для детей об аватарах Вишну,vaishnava,,deepseek,0.85
+PRES_b5032da194,2024,Zograf Readings,'Айодхья Махатмья'. Средневековый путеводитель по Айодхье и его топонимы на современной карте города,travel_history,,deepseek,0.9
+PRES_c755795a7d,2024,Zograf Readings,Непальский монастырь Копан: встреча Востока и Запада,nepal_newar_kathmandu|buddhist_studies,,deepseek,0.85
+PRES_c8253960c0,2024,Zograf Readings,Проблема сознания в философии адвайта-веданты Сурешвары.,philosophy_epistemology,,deepseek,0.9
+PRES_c9709587be,2024,Zograf Readings,"Бхеру-джи и мать Кали в деревенском Раджастхане: мифы, культ, фольклор",ethnography_performance,,deepseek,0.85
+PRES_ccb5812059,2024,Zograf Readings,«Тень» Ситы и «призрак» Елены: две истории о похищенных жёнах,comparative_analysis|epic_ramayana_mahabharata,,deepseek_strict_scale_audit,0.8
+PRES_d75ff8846e,2024,Zograf Readings,Пенпавакутху: новая форма театра плоских фигур Кералы,ethnography_performance,,deepseek,0.9
+PRES_ea2d7c759c,2024,Zograf Readings,Был ли Бхартрихари сторонником шабда-адвайты?,philosophy_epistemology,,deepseek,0.9
+PRES_ebac2cd6d5,2024,Zograf Readings,Джайнские пещерные храмы Махараштры в контексте развития скальной архитектуры Индии,jain_studies|manuscripts_epigraphy,,deepseek_strict_scale_audit,0.8
+PRES_ec0380288a,2024,Zograf Readings,"Поэтическое представление о духовном и мирском благе в гимнах наянаров (сборник ""Деварам"")",bhakti_vaishnava,,deepseek,0.9
+PRES_edb6f3ab45,2024,Zograf Readings,Новые индоарийские этимологии лексики языка куллуи,etymology|new_indo_aryan_languages|himalaya|fieldwork,,expert_override_after_deepseek,0.9
+PRES_f18f8d1465,2024,Zograf Readings,Модели интерпретации телесности в хатха-йоге,yoga_ayurveda,,deepseek_strict_scale_audit,0.8
+PRES_f30b06bf41,2024,Zograf Readings,"Литература хинди как предмет школьной программы в Индии: история куррикулума, ценности и цели обучения",modern_society_politics,,deepseek_strict_scale_audit,0.8
+PRES_f7005c0259,2024,Zograf Readings,Бодхисаттва в образе пишачи: следы комической традиции в описании аскезы Гаутамы,buddhist_studies,,deepseek,0.9
+PRES_f7cb0da910,2024,Zograf Readings,Ритуальные предметы и украшения в контексте обрядов жизненного цикла неваров,ethnography_performance|nepal_newar_kathmandu|life_cycle_rituals,,expert_override_after_deepseek,0.9
+PRES_ff586f57a2,2024,Zograf Readings,"Развертка, свертка и смысл в индийской философии",philosophy_epistemology,,deepseek_strict_scale_audit,0.9
+PRES_04be156989,2024,Roerich Readings,Принципы построения верениц древнеиндийских имён в «Вишнусахасранаме» («Махабхарата» XII.135),epic_ramayana_mahabharata,,deepseek,0.9
+PRES_05234eac69,2024,Roerich Readings,Похищение и возвращение жён в древнеиндийском эпосе и параллели в древнегреческих сюжетах,comparative_analysis|epic_ramayana_mahabharata,,deepseek_strict_scale_audit,0.95
+PRES_1e29140cc1,2024,Roerich Readings,Планиметрические модели тела человека в санскритских трактатах по искусству и в стенописи Аджанты,visual_material_culture,,deepseek_strict_scale_audit,0.9
+PRES_28cd0cf2d2,2024,Roerich Readings,Ирония в пьесе Ватсараджи «Киратарджуния» (XII в.),,,deepseek,0.9
+PRES_2d53080efa,2024,Roerich Readings,Некоторые тхангка из коллекции Ю.Н. Рериха (Новые исследования),tibetology_himalaya|museum_collections,,deepseek,0.9
+PRES_3262a00942,2024,Roerich Readings,Ю.Н. Рерих о происхождении монгольской письменности,history_of_indology,,deepseek,0.9
+PRES_3fc20c5385,2024,Roerich Readings,"Культ корзины у гондов, джайнская икона аягапатта и буддийский алтарь: еще раз о смене религиозной парадигмы в Древней Индии",jain_studies|buddhist_studies,,deepseek_strict_scale_audit,0.9
+PRES_423a77f362,2024,Roerich Readings,Этимология и семантика цветообозначения «черный» в культуре Китая,etymology,,deepseek,0.9
+PRES_48742ecace,2024,Roerich Readings,Индийские классификации: принципы различения поэтических украшений (аланкар),literary_studies,,deepseek_strict_scale_audit,0.9
+PRES_55975781a7,2024,Roerich Readings,К проблеме происхождения варны кшатриев: культ воинской элиты в индоарийской традиции (по данным археологии и петроглифики),vedic_studies,,deepseek_strict_scale_audit,0.9
+PRES_7522e9718b,2024,Roerich Readings,Многообразие культурных традиций и влияний в средневековой Индии: от династий до социальных изменений,,,deepseek_strict_scale_audit,0.9
+PRES_7582592a44,2024,Roerich Readings,Новый поворот традиции шраута: Сагничит Трисахасра Атиратра Сомаяга 2024 в Западной Бенгалии,vedic_studies|bengal,,deepseek,0.9
+PRES_89de2df795,2024,Roerich Readings,О нарративной символике бронзовой фигурки танцующего Бала-Кришны,visual_material_culture,,deepseek,0.9
+PRES_956af043cd,2024,Roerich Readings,Посох Чанакьи,,,deepseek,0.8
+PRES_959566c64e,2024,Roerich Readings,Обряды «жизненного цикла» скульптуры по материалам пуран,ritual_studies|life_cycle_rituals,,deepseek_strict_scale_audit,0.9
+PRES_9c0c80bea0,2024,Roerich Readings,"Традиционные индийские классификации: образцовые, удобные, проблематичные",,,deepseek_strict_scale_audit,0.9
+PRES_9c6f0c2111,2024,Roerich Readings,Буддизм в Восточном Туркестане,buddhist_studies|china_mongolia_inner_asia,,deepseek_strict_scale_audit,0.9
+PRES_9f90298801,2024,Roerich Readings,Тема леса в поэтических антологиях Бхартрихари и Видьякары,literary_studies,,deepseek,0.9
+PRES_a07fb33bc9,2024,Roerich Readings,"О письмах Ю.Н. Рериха из коллекции Д. Тарчина (Колумбийский университет, Нью-Йорк, США)",history_of_indology|expeditions,,deepseek,0.9
+PRES_a67d45cc5a,2024,Roerich Readings,К идентификации тантрических изображений Ямантаки в монастыре Юнъань-сы 永安寺 провинции Шаньси 山西省,tibetology_himalaya|visual_material_culture,,deepseek,0.9
+PRES_adef2d4283,2024,Roerich Readings,Ведантийско-буддийский полемический диалог в «Брахмасутрабхашье»,philosophy_epistemology,,deepseek,0.9
+PRES_b1d3b787fd,2024,Roerich Readings,Феномен в jalacārin в архитектуре храмов Карнатаки древних и средних веков,visual_material_culture,,deepseek,0.85
+PRES_bf18beecbb,2024,Roerich Readings,Вступительное слово от организаторов конференции,,,deepseek,0.9
+PRES_c1b909cf1c,2024,Roerich Readings,Сюжет «обращения братьев Кашьяпов» в «Сутре о благом явлении царевича»: неожиданные повороты,buddhist_studies,,deepseek,0.9
+PRES_d00e030c23,2024,Roerich Readings,"Кушанская этимология, поздние бактро-скифские царства и интересные элементы индо-парфянской нумизматики",etymology,,deepseek,0.85
+PRES_e58c748f7f,2024,Roerich Readings,Синкретизм буддизма и шаманизма Тувы в живописи Шоя Чурука,tibetology_himalaya,,deepseek,0.9
+PRES_e7ec05b05b,2024,Roerich Readings,Угроза монгольских вторжений в Японию глазами Нитирэна,buddhist_studies,,deepseek,0.9
+PRES_e87021cd4c,2024,Roerich Readings,Микушевич как переводчик санскритской поэзии,translation_reception,,deepseek,0.9
+PRES_e9936009ee,2024,Roerich Readings,Покаяние (prāyaścitta) и наказание (daṇḍa) в дхармасутрах,vedic_studies,,deepseek,0.9
+PRES_fc8c9f814c,2024,Roerich Readings,«Наука поэзии» (Кавьяшастра) в трудах ранних аланкариков,literary_studies,,deepseek,0.9
+PRES_ff4471c987,2024,Roerich Readings,Морфология деревянной храмовой архитектуры Химачал-Прадеша (Индия),himalaya,,deepseek,0.9
+PRES_060a3a404c,2025,Zograf Readings,Социально-политический контекст романов Даймонд Шамшера Рана,modern_society_politics|nepal_newar_kathmandu,,deepseek,0.9
+PRES_08bb9a5fc1,2025,Zograf Readings,Роль и значение школы крама в структуре философии кашмирского шиваизма,philosophy_epistemology,,deepseek_strict_scale_audit,0.9
+PRES_0cf40964d4,2025,Zograf Readings,Экспедиция Психо-Неврологического института в Индию в 1913,expeditions|colonial_encounters,,deepseek,0.9
+PRES_0f4f24f569,2025,Zograf Readings,Проблемы изучения традиционного индийского текста «Абхисамая-аланкара» (на тибетском языке),buddhist_studies|tibetology_himalaya,,deepseek,0.9
+PRES_2e4095c747,2025,Zograf Readings,Наука абхидхармы в буддийской ментальной традиции средневековой Индии,buddhist_studies,,deepseek_strict_scale_audit,0.9
+PRES_33e14c7e3c,2025,Zograf Readings,Инородные предметы в ушах Благословенного: к слову об одной редкой иконографической схеме в буддийском искусстве,buddhist_studies|visual_material_culture,,deepseek,0.9
+PRES_355e93f896,2025,Zograf Readings,Женщины и сатьяграха: взгляд М. К. Ганди,modern_society_politics,,deepseek,0.9
+PRES_369aad67c8,2025,Zograf Readings,Будда Дипанкара и традиция его почитания в Долине Катманду,buddhist_studies|nepal_newar_kathmandu,,deepseek,0.9
+PRES_3790f9fa6c,2025,Zograf Readings,Kaṇita Caturam 108: тамильский числовой квадрат из храма Натараджи в Чидамбараме,dravidology_south_india,,deepseek,0.9
+PRES_388115cd35,2025,Zograf Readings,Внешние и внутренние связи индийского фольклора по данным каталога Ю.Е. Березкина и Е.Н. Дувакина,comparative_analysis,,deepseek_strict_scale_audit,0.9
+PRES_395c2002cd,2025,Zograf Readings,Бенгальский стихотворный размер пояр и его разновидности,bengal|prosody,,deepseek,0.9
+PRES_3bb427ea8d,2025,Zograf Readings,Ауробиндо Гхош: между разумом и мистической интуицией,modern_society_politics,,deepseek,0.9
+PRES_40d116e031,2025,Zograf Readings,"Отражение концепции ""нисходящего времени"" (descending time) в Катха Упанишаде",vedic_studies,,deepseek,0.9
+PRES_42b4edcfe9,2025,Zograf Readings,Индийские истоки и источники философствования Р. Тагора: «Садхана» как опыт объяснения Своего Другому,bengal|translation_reception,,deepseek,0.9
+PRES_493f0d6ac7,2025,Zograf Readings,Восхождение Урмилы в поэме Майтхилишарана Гупты «Сакет»,modern_literature,,deepseek,0.9
+PRES_4ed8d23e80,2025,Zograf Readings,Синтез глагольной словоформы в грамматике Панини,sanskrit_grammar_panini,,deepseek,0.95
+PRES_512debece5,2025,Zograf Readings,"Павакутху Кералы: артисты и основные сюжеты, мифо-ритуальные истоки исполнительских традиций",ethnography_performance,,deepseek,0.85
+PRES_5ba570d69d,2025,Zograf Readings,Метафора зеркала в «Бхаванакраме» Камалашилы,buddhist_studies,,deepseek,0.9
+PRES_5eff45b043,2025,Zograf Readings,О семантических переходах с участием терминов родства в старотамильском языке,dravidology_south_india,,deepseek,0.9
+PRES_5fad4e3b63,2025,Zograf Readings,Образ вишаканья в художественной культуре древней и средневековой Индии,visual_material_culture,,deepseek,0.85
+PRES_6a8a61bed8,2025,Zograf Readings,Према Рамаяна и Шри Ситарама-чаритра-дарпана как примеры Рамаян XX века в контексте современной литературы на бходжпури и майтхили,modern_literature|epic_ramayana_mahabharata,,deepseek_strict_scale_audit,0.9
+PRES_6c0ed74411,2025,Zograf Readings,Анализ переводов М. Зощенко на хинди и на бенгали с помощью метрик readability,translation_reception,,deepseek,0.9
+PRES_756e3c2fad,2025,Zograf Readings,«Третий поворот колеса дхармы» и его первые брахманистские оппоненты,buddhist_studies,,deepseek,0.85
+PRES_79183a8b2a,2025,Zograf Readings,Сесил Бендалл как публикатор буддийских письменных памятников,history_of_indology,,deepseek,0.9
+PRES_7dd0a5eda6,2025,Zograf Readings,Миф о Потопе и тыкве у дравидийских племен: к вопросу об истории контактов дравидов и мунда,dravidology_south_india,,deepseek_strict_scale_audit,0.9
+PRES_8433ffdf15,2025,Zograf Readings,Опровержение позиции вайшешики Дигнагой,buddhist_studies,,deepseek,0.9
+PRES_84de88fb0f,2025,Zograf Readings,От демоницы к мстительнице: Переосмысление образа ведьмы в современном индийском кинематографе,visual_material_culture,,deepseek,0.85
+PRES_866ba06e54,2025,Zograf Readings,Рождение концепции иконографии Шивы Натараджи в скульптуре пещерных храмов Южной Индии,visual_material_culture,,deepseek,0.9
+PRES_8c979b88c9,2025,Zograf Readings,О «Yogavārttika» Виджнянабхикшу: Ansatz,yoga_ayurveda,,deepseek,0.85
+PRES_96863ca3fa,2025,Zograf Readings,Арьядэва и Чандракирти о концепции anātma,buddhist_studies,,deepseek,0.9
+PRES_99242da6ca,2025,Zograf Readings,Метафора воды как сюжетообразующий прием романа Абрахама Вергезе «Завет воды»,modern_literature,,deepseek,0.9
+PRES_a23657cfb0,2025,Zograf Readings,"Начальный сюжет в житийной литературе раннего буддизма, его вариативность и смысловое наполнение",buddhist_studies,,deepseek,0.85
+PRES_a286529cf8,2025,Zograf Readings,Формульное выражение yāvatī yānasya bhūmis в буддийских канонических текстах,buddhist_studies,,deepseek,0.9
+PRES_aac636d1e0,2025,Zograf Readings,«Наишкармья-сиддхи» (I. 52) Сурешвары как структура для реконструкции учения Шанкары об освобождении,,advaita_vedanta,deepseek,0.85
+PRES_acd4becabb,2025,Zograf Readings,Скрытое / явное: представления о знании у племенных народов Южной Карнатаки,ethnography_performance,,deepseek,0.9
+PRES_ae142d5803,2025,Zograf Readings,Сикхи в диаспоре: ритуалы детства,ethnography_performance|modern_society_politics,,deepseek,0.85
+PRES_ae8474fa94,2025,Zograf Readings,Самбхары в обряде установления жертвенных огней (agnyādheya),vedic_studies|ritual_studies,,deepseek,0.95
+PRES_b5cfc79e4e,2025,Zograf Readings,Комментарии Б. Н. Пандита на «Шивасутры»: новый взгляд на коренной текст трики,philosophy_epistemology,trika,deepseek,0.9
+PRES_b8c7056b10,2025,Zograf Readings,Пещера дивов в сказке на языке парья,literary_studies,,deepseek,0.85
+PRES_bb1c4eafea,2025,Zograf Readings,Особенности толкования Нового Завета в учении Свами Вивекананды,translation_reception,,deepseek,0.85
+PRES_c02d591918,2025,Zograf Readings,Проблемы реконструкции системы йоги Патанджали на основе переводов «корневого» текста «Йога-сутр» и толкования Бходжи («Rājamārtaṇḍa»),philosophy_epistemology|yoga_ayurveda,,deepseek,0.9
+PRES_c3dcf66fa9,2025,Zograf Readings,Учение санкхьи в «Брихадараньяка-упанишаде»,vedic_studies|philosophy_epistemology,,deepseek,0.9
+PRES_cac95e2161,2025,Zograf Readings,В защиту Вишну Шипивишты: «Аз есьм Шипивишта!» (РВ 7.100.6),vedic_studies|vaishnava,,deepseek,0.95
+PRES_d430ebee9d,2025,Zograf Readings,Что такое тантра? К вопросу об определении тантры/тантризма в современной тантрологии,philosophy_epistemology,,deepseek_strict_scale_audit,0.9
+PRES_da938d5fcc,2025,Zograf Readings,Проблема индианизации колониальной армии на страницах индийской прессы в 1910-х — 1940-х годах,colonial_encounters|modern_society_politics,,deepseek,0.85
+PRES_da95cc9832,2025,Zograf Readings,Новые древнеиндийские праформы на материале этимологий лексики языка куллуи,etymology|new_indo_aryan_languages,,deepseek,0.9
+PRES_dbb04a69cb,2025,Zograf Readings,О понятиях «канон» и «классика» в контексте древнеиндийской литературы,literary_studies,,deepseek_strict_scale_audit,0.9
+PRES_dd20529d15,2025,Zograf Readings,Тантрические парадигмы в игровых системах Востока: сравнительный анализ “Джняна чаупады” и “Салам намшак” сквозь призму индуистской и буддийской тантры,board_games|comparative_analysis,,deepseek_strict_scale_audit,0.95
+PRES_dd23be0efa,2025,Zograf Readings,Квази-трансцендентальные разоблачение объектных областей индрий в буддийской йоге,buddhist_studies|philosophy_epistemology,,deepseek,0.9
+PRES_e84196d92a,2025,Zograf Readings,К интерпретации Ригведы: śiśnadevāḥ,vedic_studies,,deepseek,0.95
+PRES_ea35d438ad,2025,Zograf Readings,Еще раз о структуре Чарьягити,literary_studies|metrics,,deepseek,0.9
+PRES_ee218642a8,2025,Zograf Readings,Проблемы интерпретации традиционного текста в произведениях индийских художников конца XIX – начала XX века,visual_material_culture,,deepseek,0.85
+PRES_f0fc87fb3a,2025,Zograf Readings,"Ведийский гапакс batá- и частица bata / vata: семантика, контекст, этимология",vedic_studies|etymology,,deepseek,0.95
+PRES_f876cc0069,2025,Zograf Readings,Интерпретация теизма «Бхагавадгиты» Шанкарой и Абхинавагуптой (на материале их комментариев к «Бхагавадгите),philosophy_epistemology|bhakti_vaishnava,,deepseek,0.9
+PRES_f8fe82ebd9,2025,Zograf Readings,Непальский Маччхендранатх: ритуально-мифологический контекст,nepal_newar_kathmandu,,deepseek,0.9
+PRES_fc83b6c79d,2025,Zograf Readings,Возвращаясь к третьей книге Махабхараты: новый взгляд,epic_ramayana_mahabharata,,deepseek,0.9
+PRES_0e52f9db93,2025,Roerich Readings,Об этимологии слова «мангус»,etymology,,deepseek,0.9
+PRES_241822b4c1,2025,Roerich Readings,Очеловечивание божеств в пьесе Ватсараджи «Самудраматхана» (XII вв.),literary_studies,,deepseek,0.9
+PRES_2819d33fcb,2025,Roerich Readings,Индийские шастры с точки зрения современной методологии познания,philosophy_epistemology,,deepseek_strict_scale_audit,0.9
+PRES_34e2d06ad5,2025,Roerich Readings,Из истории фиксации традиционного сказителя хобуксарких ойратов Аримпиля (1923–1994),expeditions,,deepseek,0.9
+PRES_40bc52e0ca,2025,Roerich Readings,Анаттавада «палийского Будды» в её философских и сотериологических координатах,pali_early_buddhism,,deepseek,0.9
+PRES_465a702715,2025,Roerich Readings,Вклад Ю.Н. Рериха в историю российских экспедиций в Центральную Азию. К 100-летию начала Центрально-Азиатской экспедиции Н.К. Рериха,history_of_indology|expeditions,,deepseek,0.9
+PRES_473de19d13,2025,Roerich Readings,Эволюция архитектуры джайнских пещерных храмов Махараштры в контексте скального зодчества Индии,jain_studies,,deepseek_strict_scale_audit,0.9
+PRES_4cc2a9fead,2025,Roerich Readings,Отношения между государством Корё и Тибетом в эпоху Юань (конец XIII – начало XIV вв.),china_mongolia_inner_asia|tibetology_himalaya,,deepseek,0.9
+PRES_4d672ef0e1,2025,Roerich Readings,Небесные боги в картине мира буддийской агиографии: признаки эволюции («Лалитавистара»),buddhist_studies,,deepseek,0.9
+PRES_577de0cdf5,2025,Roerich Readings,Чанпинская битва 260 г. до н.э.: когда встречаются источники и археология,china_mongolia_inner_asia,,deepseek,0.9
+PRES_5c44ffa32f,2025,Roerich Readings,Исторические и историографические особенности монгольской летописи начала XVIII в.: Гомбоджаб. «Течение Ганга»,china_mongolia_inner_asia,,deepseek,0.9
+PRES_5c9e286081,2025,Roerich Readings,Индийская философия сознания через призму цивилизационной демаркации «Восток-Запад»,philosophy_epistemology|comparative_analysis,,deepseek_strict_scale_audit,0.85
+PRES_5e05166d55,2025,Roerich Readings,Почему у монаха-дигамбара рог на голове? Попытка интерпретации одной строфы из философского диспута в прахасане «Латакамелака»,jain_studies,,deepseek,0.9
+PRES_5f755d36b3,2025,Roerich Readings,Треугольник Паскаля или Пингалы?,prosody|metrics,,deepseek,0.9
+PRES_679dbfd494,2025,Roerich Readings,Выкуп невесты (śulka) в Древней Индии: шастрическая и эпическая традиции,epic_ramayana_mahabharata,,deepseek,0.9
+PRES_68e31769e1,2025,Roerich Readings,Роль языка в познании абсолютного согласно школе Гелук,tibetology_himalaya|buddhist_studies,,deepseek,0.9
+PRES_818e4652db,2025,Roerich Readings,Этнорелигиозная картина уйгуров по китайским источникам XIV-XIX вв,china_mongolia_inner_asia,,deepseek_strict_scale_audit,0.9
+PRES_8ef4ffe2db,2025,Roerich Readings,Исторические идеи просветительства Ахамади Дониша в культурном коде Таджикистана,,,deepseek,0.9
+PRES_94509af724,2025,Roerich Readings,Проблема бхакти в «Ожерельи Величаний Шивы» — «Шивастотравали» (Śivastotrāvalī) Утпаладевы,bhakti_vaishnava,,deepseek,0.9
+PRES_970ff8c51f,2025,Roerich Readings,Зачем в санскрите три прошедших времени?,sanskrit_grammar_panini,,deepseek,0.9
+PRES_9bacebbe98,2025,Roerich Readings,Аланкара как аспект стилистики текста,literary_studies,,deepseek,0.8
+PRES_a86c239aaf,2025,Roerich Readings,Роль персоязычных версий индийских текстов в формировании средневековой тюркоязычной литературы Южного Кавказа (на примере памятника «Калила и Димна»),comparative_analysis|translation_reception,,deepseek_strict_scale_audit,0.9
+PRES_a903b2de1b,2025,Roerich Readings,Метафорический дискурс «Бхаванакрамы» Камалашилы,buddhist_studies,,deepseek,0.9
+PRES_aa9ddea8aa,2025,Roerich Readings,О теории просодии в «Натьяшастре»,prosody|metrics,,deepseek,0.9
+PRES_b2fd39a1b2,2025,Roerich Readings,Священные огни в шраута-ритуалах,ritual_studies|vedic_studies,,deepseek,0.9
+PRES_b9413943b6,2025,Roerich Readings,Яджня Ригведы и «другая яджня» палийского канона,vedic_studies|pali_early_buddhism,,deepseek,0.9
+PRES_ba19c21295,2025,Roerich Readings,Metta–Karaṇīya – Любовь как этический императив в раннебуддийской сотериологии на материале Метта сутты и Тевиджджа сутты Палийского канона,pali_early_buddhism,,deepseek,0.9
+PRES_c1e254fba2,2025,Roerich Readings,Сита и Агни в «Рамаяне» Вальмики,epic_ramayana_mahabharata,,deepseek,0.9
+PRES_c9f0424f49,2025,Roerich Readings,Список тамильских каст у Бартоломеуса Цигенбальга: книжная традиция vs историческая реальность,colonial_encounters|dravidology_south_india,,deepseek,0.9
+PRES_d6c59acf5e,2025,Roerich Readings,Описание Центральной Азии в «Хождении в пять индийских царств»,travel_history|china_mongolia_inner_asia,,deepseek,0.9
+PRES_d767707d9d,2025,Roerich Readings,Этапы сложения имперской идеологии у средневековых монголов,china_mongolia_inner_asia,,deepseek_strict_scale_audit,0.9
+PRES_de1aae4943,2025,Roerich Readings,Значение иконографии Будды Мучилинды в культуре и искусстве Кхмерской империи XII–XIII вв,buddhist_studies|visual_material_culture,,deepseek,0.9
+PRES_e4ffdf5e0f,2025,Roerich Readings,К вопросу о переводе буддийского термина бодхи (菩提) на китайский язык,buddhist_studies|translation_reception,,deepseek,0.9
+PRES_e8321634be,2025,Roerich Readings,Калмаки в литературе и искусстве могольской Индии,visual_material_culture,,deepseek,0.85
+PRES_ea27687ed5,2025,Roerich Readings,Рецепция Маджджхима-никаи в рукописях Э. Гуссерля,buddhist_studies|translation_reception,,deepseek,0.9
+PRES_f40d5bacac,2025,Roerich Readings,Представления пуран о священном тексте как культовом предмете,,,deepseek,0.8
+PRES_fad14d11c0,2025,Roerich Readings,Prasādapratibhodbhava (Śatapañcāśatka) Матричеты: тохарский перевод и комментарий,buddhist_studies|manuscripts_epigraphy,,deepseek,0.9
+PRES_fe3dba0fe0,2025,Roerich Readings,Образ Деви с младенцем Шивой в контексте развития иконографии Богини-Матери в скульптуре Бенгалии,bengal|visual_material_culture,,deepseek,0.9
+PRES_055b23183b,2026,Zograf Readings,Абхисамаяаланкара: вводная часть,buddhist_studies,,deepseek,0.9
+PRES_0b6581f9ff,2026,Zograf Readings,Синтез сложных слов tatpuruṣa и karmadhāraya в грамматике Панини,sanskrit_grammar_panini,,deepseek,0.95
+PRES_0b6e4e4519,2026,Zograf Readings,Прамана-вада «Таттва-сандарбхи» Дживы Госвами в оптике неклассической эпистемологии науки,bhakti_vaishnava|philosophy_epistemology,,deepseek,0.9
+PRES_0bf7d4caad,2026,Zograf Readings,Адиваси. Загадочное племя тода,,,deepseek,0.85
+PRES_0ccccd2f0f,2026,Zograf Readings,Тело агхори как «живой текст»: визуальность и перформанс в производстве религиозного авторитета,ethnography_performance,,deepseek,0.9
+PRES_0ec718e125,2026,Zograf Readings,Теория познания в мадхьямаке-сватантрике (по трактату Бхававивеки «Мадхьямака-хридая»),buddhist_studies|philosophy_epistemology,,deepseek,0.9
+PRES_1637f642c2,2026,Zograf Readings,Южноандаманские языки: к вопросу о возможностях внешнего сравнения,,,deepseek,0.85
+PRES_16c469b6c2,2026,Zograf Readings,Непальский вариант Гаруды,nepal_newar_kathmandu,,deepseek,0.85
+PRES_1c157737ea,2026,Zograf Readings,"Jati, gotra and marriage system in Haryana: a change in perspective",modern_society_politics,,deepseek_strict_scale_audit,0.9
+PRES_1cd8e6e44e,2026,Zograf Readings,Дхармакирти о существовании,buddhist_studies|philosophy_epistemology,,deepseek,0.9
+PRES_2026748a9a,2026,Zograf Readings,Индийская философия в свете компаративного подхода Поля Массон-Урселя,comparative_analysis|history_of_indology,,deepseek_strict_scale_audit,0.8
+PRES_215ed69350,2026,Zograf Readings,Салман Рушди и русская литература: тайный роман?,comparative_analysis,,deepseek,0.85
+PRES_23a87e494f,2026,Zograf Readings,Фарс Шанкхадхары «Латакамелака» и ее рукопись из Библиотеки им. Кешара (Катманду),manuscripts_epigraphy,,deepseek,0.9
+PRES_266f877d3f,2026,Zograf Readings,Перевод в практике преподавания хинди в средней школе,hindi_urdu_new_indo_aryan,,deepseek,0.9
+PRES_2af0d9ba1e,2026,Zograf Readings,Ведийский ритуал Праваргья (pravargya): текстовая традиция и ритуальная практика,vedic_studies|ritual_studies,,deepseek,0.9
+PRES_2af47bc093,2026,Zograf Readings,Вклад Абхинавагупты в развитие шиваитской доктрины философского монизма в отличной от адвайта- веданты парадигме,,,deepseek,0.85
+PRES_2d9228675d,2026,Zograf Readings,Миф о Потопе и тыкве у племен западной Индии,,,deepseek,0.8
+PRES_2ee12546b2,2026,Zograf Readings,Сита и Агни в «Рамаяне» Вальмики,epic_ramayana_mahabharata,,deepseek,0.9
+PRES_314bc5bec5,2026,Zograf Readings,Интерпретация идей Упанишад в философском наследии Р. Тагора: религиозная онтология,bengal_bhakti_modernity,,deepseek,0.85
+PRES_32b950f0fe,2026,Zograf Readings,"Средневековая фольклорная формула и литературное клише: образ, мотив",,,deepseek,0.8
+PRES_3f4d3d50e9,2026,Zograf Readings,Уроки Герхарда Оберхаммера. По следам перевода книги «Структуры йоговской медитации»,history_of_indology,,deepseek,0.9
+PRES_40d669e631,2026,Zograf Readings,Александр Михайлович Мерварт: судьба ученого,history_of_indology,,deepseek,0.9
+PRES_4125041435,2026,Zograf Readings,"Огонь, вода и память: погребальные практики сикхов в мультикультурной среде",life_cycle_rituals,,deepseek,0.9
+PRES_422bda6a2b,2026,Zograf Readings,"Востоковед Павел Яковлевич Петров (1814–1875), его библиотека и архив",history_of_indology,,deepseek,0.9
+PRES_43b3dacf96,2026,Zograf Readings,"Санньяса и Брахмалока: смерть, социальная или физическая, как опосредующий этап пути к освобождению в адвайта-веданте",philosophy_epistemology,,deepseek,0.9
+PRES_45a22e8318,2026,Zograf Readings,Коннотативные особенности йогической лексики Виджнянабхикшу (на примере комментария к 1.1 «Pātañjalayogaśāstram»),yoga_ayurveda,,deepseek,0.9
+PRES_4f410bea98,2026,Zograf Readings,Сон Урмилы в современной индийской прозе,modern_literature,,deepseek,0.9
+PRES_5112b0355f,2026,Zograf Readings,"""Башни с нишами"" в индуизме. Об одном типе храмовых шикхар в архитектуре Чалукьев",visual_material_culture,,deepseek,0.9
+PRES_51a9cb36b9,2026,Zograf Readings,Зачем спорили хэшан Махаяна и Камалашила?,buddhist_studies,,deepseek,0.9
+PRES_5327ab9216,2026,Zograf Readings,Вера Александровна Новикова (1918-1972) и послевоенная бенгалистика в Ленинграде,bengal|history_of_indology,,deepseek,0.9
+PRES_589e161411,2026,Zograf Readings,К истории поступления индийских памятников в Эрмитаж: новые открытия,museum_collections,,deepseek,0.9
+PRES_6912669e4d,2026,Zograf Readings,"Особая священная игра» Гулабрао Махараджа как игровая модель индуистской сотериологии: космология, философия и бхакти",board_games|bhakti_vaishnava,,deepseek,0.9
+PRES_6a2b1904a8,2026,Zograf Readings,«Местный колорит» в литературной традиции Ориссы,literary_studies,,deepseek,0.9
+PRES_6d7c21fb70,2026,Zograf Readings,«Шри Рамананда-чаритам» Рамбхадрачарьи как образец современной санскритской махакавьи,sanskrit_grammar_panini,,deepseek,0.9
+PRES_6e8842a256,2026,Zograf Readings,"Традиция толкования упанишад: контекст, философское значение и интерпретация ключевой фразы «tat tvam asi» («Ты есть то»)",philosophy_epistemology,,deepseek,0.9
+PRES_702d8347a7,2026,Zograf Readings,Об одном диафильме В. Чатопадаева из коллекции МАЭ РАН,museum_collections,,deepseek,0.9
+PRES_717723198b,2026,Zograf Readings,Kumāra: этимология и мифология,etymology,,deepseek,0.9
+PRES_8a20127ede,2026,Zograf Readings,Индийское паломничество в сравнительном аспекте,comparative_analysis,,deepseek_strict_scale_audit,0.9
+PRES_8aa850a4e6,2026,Zograf Readings,Предание в тексте и предание в камне: сюжет просветления Будды на рельефе Большой Ступы в Санчи,epic_ramayana_mahabharata,,deepseek,0.9
+PRES_939dd4f1e1,2026,Zograf Readings,Структура ниданы из «Панчавимшатика-праджняпарамиты» в аспекте ритуальной практики,buddhist_studies,,deepseek,0.9
+PRES_952dc38711,2026,Zograf Readings,Чему и как учит Панчатантра,,,deepseek,0.9
+PRES_987fd62e14,2026,Zograf Readings,А.А. Сталь-Гольштейн как участник научно-издательской серии «Bibliotheca Buddhica»,history_of_indology,,deepseek,0.9
+PRES_a1bf82cfc8,2026,Zograf Readings,Златоликие образы Дипанкары Будды и традиция проведения фестиваля Самьяк маха дана в Патане. Шишова-Маретина Ксения Александровна (Санкт-Петербург). Архетип опасной женственности в индуизме,tibetology_himalaya|ritual_studies,,deepseek,0.8
+PRES_a20db0593f,2026,Zograf Readings,Паришишты как исторический источник: проблемы датировки и классификации поздневедийской ритуальной литературы,vedic_studies|ritual_studies,,deepseek_strict_scale_audit,0.9
+PRES_a28cfd6115,2026,Zograf Readings,Окна в иной мир: изобразительные тексты и линия жизни индийской художницы-парси Катаюн Саклат (1938- 2026): антропологический взгляд,visual_material_culture,,deepseek,0.9
+PRES_a58cb0ccf6,2026,Zograf Readings,Метод кодировки чисел в трудах индийского математика Арьябхаты,,,deepseek,0.9
+PRES_b130fb70d2,2026,Zograf Readings,Эпическая санкхья в беседе царя Джанаки и отшельницы Сулабхи (МБХ 12.308),epic_ramayana_mahabharata,,deepseek,0.9
+PRES_b2cbcb90c5,2026,Zograf Readings,Лексика языка куллуи: этимологии 2026 года,new_indo_aryan_languages,,deepseek,0.9
+PRES_b73c531378,2026,Zograf Readings,Идеи йогачары в трактате Асанги «Абхидхармасамуччая» (первая глава),buddhist_studies,,deepseek,0.9
+PRES_bc3de7e23c,2026,Zograf Readings,"Яйцо, курица и Тримурти: миф о Шакти в фольклоре мадига",ethnography_performance,,deepseek,0.85
+PRES_c922a3c1aa,2026,Zograf Readings,Имперфект в древнеиндийском эпосе,,,deepseek,0.9
+PRES_d51a127759,2026,Zograf Readings,«Они из секты Пифагора»: представления об индуизме трех итальянских купцов второй половины XVI в.,colonial_encounters,,deepseek,0.9
+PRES_e0f3741a4a,2026,Zograf Readings,По следам Петербуржца в Индии: путешествие князя Салтыкова,travel_history,,deepseek,0.9
+PRES_f261db19db,2026,Zograf Readings,Заметки о роли индийской диаспоры в пропаганде языка и литературы хинди,modern_society_politics,,deepseek_strict_scale_audit,0.9
+PRES_f8dfe74eae,2026,Zograf Readings,Голод в Бенгалии 1943 года и его отражение в творчестве индийских художников,bengal|visual_material_culture,,deepseek,0.9
+PRES_f9adb6ffd3,2026,Zograf Readings,Можно ли считать мадхьямаку нигилизмом?,buddhist_studies,,deepseek_strict_scale_audit,0.85
+PRES_fa188bec9a,2026,Zograf Readings,«Сказание о Лиле» в «Йога- васиштхе»,,,deepseek,0.9
+PRES_fb340723de,2026,Zograf Readings,Пословицы и поговорки Индии и России как аспект межкультурной коммуникации (проектная деятельность на уроках языка хинди),comparative_analysis,,deepseek,0.85

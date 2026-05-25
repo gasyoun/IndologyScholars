@@ -23,7 +23,6 @@ ROOT = Path(__file__).resolve().parents[1]
 DB = ROOT / "conferences.db"
 ARTICLES = [
     ROOT / "article" / "ppv_submission_article.md",
-    ROOT / "article" / "ppv_draft.md",
 ]
 OUT = ROOT / "article" / "hypothesis_output"
 
@@ -196,27 +195,24 @@ def build_snapshot() -> dict[str, object]:
 def stale_candidates(article_path: Path, article_text: str, snapshot: dict[str, object]) -> list[dict[str, object]]:
     total = snapshot["total"]
     series = snapshot["series"]
-    replacements = {
-        "220": str(total["unique_scholars"]),
-        "895": str(total["presentations"]),
-        "899": str(total["author_participations"]),
-        "167": str(series["Zograf"]["unique_scholars"]),
-        "540": str(series["Zograf"]["presentations"]),
-        "544": str(series["Zograf"]["author_participations"]),
-        "129": str(total["zograf_only"]),
-    }
-    allowed_contexts = (
-        "061.3:94(540)",
-        "| 2016 |",
-    )
+    replacements = [
+        (r"\b220 (?:уникальн\w* )?учен", str(total["unique_scholars"]), "ученые"),
+        (r"\b895 (?:уникальн\w* )?доклад", str(total["presentations"]), "доклады"),
+        (r"\b899 авторск", str(total["author_participations"]), "авторские участия"),
+        (r"\b220 scholars\b", str(total["unique_scholars"]), "scholars"),
+        (r"\b895 presentations\b", str(total["presentations"]), "presentations"),
+        (r"\b899 author participations\b", str(total["author_participations"]), "author participations"),
+        (r"\b38 (?:учен|общ)", str(total["cross_cohort"]), "перекрестная когорта"),
+        (r"\b852 из 895\b", "", "старая шкала G"),
+        (r"\b540 доклад", str(series["Zograf"]["presentations"]), "доклады Зографа"),
+        (r"\b355 доклад", str(series["Roerich"]["presentations"]), "доклады Рериха"),
+    ]
     findings = []
     lines = article_text.splitlines()
     for line_no, line in enumerate(lines, start=1):
-        if any(context in line for context in allowed_contexts):
-            continue
-        for old, new in replacements.items():
-            if re.search(rf"(?<![\d.,]){re.escape(old)}(?![\d.,])", line):
-                findings.append({"line": line_no, "old": old, "suggested": new, "text": line.strip()})
+        for pattern, new, label in replacements:
+            if re.search(pattern, line, flags=re.IGNORECASE):
+                findings.append({"line": line_no, "old": label, "suggested": new, "text": line.strip()})
                 findings[-1]["file"] = article_path.name
     return findings
 

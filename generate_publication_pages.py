@@ -7,7 +7,7 @@ import sqlite3
 import struct
 import sys
 import zlib
-from collections import defaultdict
+from collections import Counter, defaultdict
 from functools import lru_cache
 from pathlib import Path
 from urllib.parse import quote
@@ -216,6 +216,13 @@ def videos_year_path(year):
 
 
 GUMILYOV_LEVELS = {
+    0: {
+        "ru": "Ожидает разметки",
+        "en": "Awaiting classification",
+        "short_ru": "Не размечен",
+        "short_en": "Unclassified",
+        "description": "Доклады, добавленные в корпус после последнего завершенного классификационного прохода.",
+    },
     1: {
         "ru": "Микроуровень",
         "en": "Micro level",
@@ -259,8 +266,8 @@ def gumilyov_meta(level):
     try:
         level_int = int(level)
     except (TypeError, ValueError):
-        level_int = 2
-    return level_int, GUMILYOV_LEVELS.get(level_int, GUMILYOV_LEVELS[2])
+        level_int = 0
+    return level_int, GUMILYOV_LEVELS.get(level_int, GUMILYOV_LEVELS[0])
 
 
 L1_DISTRIBUTION_LINKS = {
@@ -576,6 +583,16 @@ def load_meso_index():
                     "examples": "",
                 }
             )
+    pid_series = {
+        row.get("presentation_id", ""): row.get("series", "")
+        for row in load_csv_rows("analytics_output/meso_codes_deepseek.csv")
+    }
+    memberships = load_meso_memberships()
+    for item in items:
+        pids = set(memberships.get(item["code"], []))
+        item["count"] = len(pids)
+        item["zograf_count"] = sum(1 for pid in pids if "Zograf" in pid_series.get(pid, ""))
+        item["roerich_count"] = sum(1 for pid in pids if "Roerich" in pid_series.get(pid, ""))
     items.sort(key=lambda item: (-item["count"], item["kind"], item["label"]))
     return items
 
@@ -592,6 +609,11 @@ def load_meso_memberships():
         pid = row.get("presentation_id") or ""
         if approach and pid:
             memberships[f"linguistics_{approach}"].append(pid)
+    for row in load_csv_rows("analytics_output/meso_codes_deepseek.csv"):
+        pid = row.get("presentation_id") or ""
+        for code in (row.get("meso_codes") or "").split("|"):
+            if code and pid and pid not in memberships[code]:
+                memberships[code].append(pid)
     reviewed_ids = set(CLASSIFICATION_OVERRIDES)
     for code in list(memberships):
         memberships[code] = [pid for pid in memberships[code] if pid not in reviewed_ids]
@@ -2144,32 +2166,60 @@ def generate_findings_page(data, records):
     video_presentations = sum(1 for talk in unique_records if talk.get("videos"))
     video_author_cards = sum(1 for talk in records if talk.get("videos"))
     youtube_rows = len(load_youtube_rows()) or 178
+    classification_path = Path("article/hypothesis_output/expanded_classification_summary.json")
+    classification = json.loads(classification_path.read_text(encoding="utf-8")) if classification_path.exists() else {}
+    scale = classification.get("gumilyov_scale", {})
+    g1_count = int(scale.get("1", 0) or 0)
+    g3_count = int(scale.get("3", 0) or 0)
+    number_path = Path("article/hypothesis_output/ppv_numbers_snapshot.json")
+    number_snapshot = json.loads(number_path.read_text(encoding="utf-8")) if number_path.exists() else {}
+    number_series = number_snapshot.get("series", {})
+    zograf_scholars = int(number_series.get("Zograf", {}).get("unique_scholars", 0) or 0)
+    roerich_scholars = int(number_series.get("Roerich", {}).get("unique_scholars", 0) or 0)
+    appendix = {
+        row.get("key", ""): row.get("value", "")
+        for row in load_csv_rows("article/hypothesis_output/appendix_g_summary.csv")
+    }
+    overlap = int(float(appendix.get("H1_overlap_observed", summary.get("overlap_scholars", 0)) or 0))
+    expected_overlap = float(appendix.get("H1_overlap_expected_mean", 0) or 0)
+    z_city_only = appendix.get("H4_zograf_cityonly_pct", "")
+    r_city_only = appendix.get("H4_roerich_cityonly_pct", "")
+    classified_rows = load_csv_rows("analytics_output/expanded_classification_deepseek.csv")
+    period_by_series = defaultdict(Counter)
+    for row in classified_rows:
+        period_by_series[row.get("series", "")][row.get("period_l2", "")] += 1
+    z_periods = period_by_series["Zograf Readings"]
+    r_periods = period_by_series["Roerich Readings"]
+    z_period_total = sum(z_periods.values()) or 1
+    r_period_total = sum(r_periods.values()) or 1
+    z_classical_medieval = round(100 * (z_periods["classical"] + z_periods["medieval"]) / z_period_total, 1)
+    r_classical_medieval = round(100 * (r_periods["classical"] + r_periods["medieval"]) / r_period_total, 1)
 
     cards = [
         (
             "Слабое пересечение площадок",
-            "38 / около 104",
-            "На обеих площадках выступали 38 ученых, тогда как перестановочная модель при той же индивидуальной активности ожидает около 104. Это главный количественный результат: поле связано, но межплощадочная проницаемость намного ниже простого ожидания.",
+            f"{overlap} / {expected_overlap:.1f}",
+            f"На обеих площадках выступали {overlap} ученых, тогда как перестановочная модель при той же индивидуальной активности ожидает {expected_overlap:.1f}. Это главный количественный результат: поле связано, но межплощадочная проницаемость намного ниже простого ожидания.",
         ),
         (
             "Две разные публичные среды",
-            "167 / 91",
+            f"{zograf_scholars} / {roerich_scholars}",
             "Зографские чтения шире по кругу участников, Рериховские компактнее и плотнее по ядру. Это не доказательство скрытого фильтра, а описание публично наблюдаемой структуры программ.",
         ),
         (
             "Тематическая асимметрия",
-            "74% / 56%",
-            "В Рериховских чтениях классический и средневековый материал занимает около 74% докладов, в Зографских - около 56%. Различие видно не только социально, но и тематически.",
+            f"{r_classical_medieval}% / {z_classical_medieval}%",
+            f"В Рериховских чтениях классический и средневековый материал занимает {r_classical_medieval}% докладов, в Зографских - {z_classical_medieval}%. Различие видно не только социально, но и тематически.",
         ),
         (
             "Городская метка не равна месту работы",
-            "94.7% / 13.0%",
-            "В Зографских программах почти всегда опубликован город вместо учреждения, в Рериховских такой режим редок. Поэтому городской фильтр показывает публичную репрезентацию, а не автоматически занятость участника.",
+            f"{z_city_only}% / {r_city_only}%",
+            "В Зографских программах город вместо учреждения опубликован значительно чаще, чем в Рериховских. Поэтому городской фильтр показывает публичную репрезентацию, а не автоматически занятость участника.",
         ),
         (
             "Микрокейс как нормальный жанр",
-            "852 / 895",
-            "Шкала Гумилева показывает, что большинство докладов строится вокруг отдельного текста, автора, термина или локального сюжета. Широкие G3-обобщения крайне редки и чаще связаны со старшим или уже авторитетным голосом.",
+            f"{g1_count} / {unique_presentations}",
+            f"После полного DeepSeek-аудита шкала Гумилева показывает доминирование докладов об отдельном тексте, авторе, термине или локальном сюжете. Глобальных G3-заголовков осталось {g3_count}; их связь со старшим поколением не подтвердилась.",
         ),
         (
             "Видео - слой проверки, не вся выборка",
@@ -2195,8 +2245,8 @@ def generate_findings_page(data, records):
             <p>Эта страница переводит последнюю версию статьи из режима доказательства в режим чтения сайта: что означают базовые числа архива и куда на сайте идти, чтобы проверить каждый вывод.</p>
         </header>
         <aside class="caveat-block" role="note" aria-label="Article corpus pause">
-            <strong>Редакционная пауза</strong>
-            <p>Показатели статьи ниже рассчитаны для аналитического подкорпуса: 220 ученых, 895 уникальных докладов и 899 авторских участий. Расширенный каталог сайта уже содержит {esc(total_scholars)} ученых, {esc(unique_presentations)} уникальных докладов и {esc(author_participations)} участий; перенос гипотез на него требует повторного расчета.</p>
+            <strong>Корпус и статья пересчитаны</strong>
+            <p>Показатели статьи рассчитаны для текущего расширенного каталога: {esc(total_scholars)} ученых, {esc(unique_presentations)} уникальных докладов и {esc(author_participations)} авторских участий. Классификация масштаба аргумента выполнена по всем докладам и повторно проверена для предварительных L2/L3.</p>
         </aside>
         <section class="grid">
             {''.join(card_html)}
@@ -2236,12 +2286,12 @@ def generate_findings_page(data, records):
         <section class="grid">
             <article class="card"><strong>Authority-слой для городов</strong><div class="meta">Связать городские метки программ с реальными биографическими и институциональными траекториями, чтобы проверить, где региональность является местом работы, а где - режимом публикации.</div></article>
             <article class="card"><strong>Публикационная конверсия</strong><div class="meta">Проверить, какие доклады стали статьями, сборниками или устойчивыми исследовательскими сериями. Это отделит конференционную видимость от долговременного научного следа.</div></article>
-            <article class="card"><strong>Статусный жанр G3</strong><div class="meta">Редкие широкие обобщения стоит анализировать как статусный жанр: в корпусе G3 появляется главным образом у старших или уже авторитетных участников.</div></article>
+            <article class="card"><strong>Возрастная гипотеза G3</strong><div class="meta">Проверка расширенного корпуса не подтвердила преимущественно старший возраст авторов широких обобщений. Этот отрицательный результат важен для будущего пополнения authority-слоя.</div></article>
         </section>
 
         <aside class="caveat-block" role="note" aria-label="Scope note">
             <strong>Объем расширенного каталога</strong>
-            <p>Текущий каталог сайта: {esc(total_scholars)} ученых, {esc(unique_presentations)} уникальных докладов, {esc(author_participations)} авторских участий. Программа Зографских чтений 2026 г. учитывается как предварительная; численные гипотезы статьи пока не объявляются пересчитанными на этом массиве.</p>
+            <p>Текущий каталог сайта и численные гипотезы статьи используют одну расширенную базу: {esc(total_scholars)} ученых, {esc(unique_presentations)} уникальных докладов, {esc(author_participations)} авторских участий. Программа Зографских чтений 2026 г. учитывается как предварительная.</p>
         </aside>
     """
     write_text(
@@ -2351,6 +2401,8 @@ def generate_gumilyov_pages(data, records):
 
     cards = []
     for level in sorted(GUMILYOV_LEVELS):
+        if level == 0 and not grouped.get(level):
+            continue
         meta = GUMILYOV_LEVELS[level]
         count = len(grouped.get(level, []))
         cards.append(
@@ -2370,7 +2422,7 @@ def generate_gumilyov_pages(data, records):
         </header>
         <aside class="caveat-block" role="note" aria-label="Gumilyov classification notice">
             <strong>Примечание о классификации</strong>
-            <p>Уровень Гумилева обозначает масштаб аргумента, а не географию или язык материала. Проверенные экспертные решения заменяют исходную автоматическую разметку: частный ритуал, экспедиция, текст или языковой кейс остаются L1 даже при упоминании региона или традиции. Уровень не является оценкой качества доклада.</p>
+            <p>Уровень Гумилева обозначает масштаб аргумента, а не географию или язык материала. Полный расширенный корпус прошел DeepSeek-разметку и отдельный строгий аудит предварительных L2/L3; частный ритуал, экспедиция, текст или языковой кейс остаются L1 даже при упоминании региона или традиции. Уровень не является оценкой качества доклада.</p>
             <div class="chip-list"><a class="chip" href="../classification-criteria.html">Обновленные критерии</a></div>
         </aside>
         <section class="list">
@@ -2396,7 +2448,7 @@ def generate_gumilyov_pages(data, records):
         <section class="grid">{''.join(cards)}</section>
         <aside class="caveat-block" role="note" aria-label="Expert classification notice">
             <strong>Как читать уровни</strong>
-            <p>Географическое название, этноним или сопоставление двух объектов сами по себе не превращают доклад в региональное или макроисторическое обобщение. Для восьми проверенных случаев применена экспертная корректировка с явной аргументацией.</p>
+            <p>Географическое название, этноним или сопоставление двух объектов сами по себе не превращают доклад в региональное или макроисторическое обобщение. Все 1350 докладов классифицированы заново; предварительные L2/L3 проверены вторым запросом, а редакционная проверка уточнила два оставшихся макрослучая.</p>
             <div class="chip-list"><a class="chip" href="../classification-criteria.html">Критерии и проверенные кейсы</a></div>
         </aside>
         <section class="link-block">
@@ -2722,7 +2774,7 @@ def generate_classification_criteria_page(records):
     body = f"""
         <header>
             <h1>Критерии классификации докладов</h1>
-            <p>Обновленная схема отделяет дисциплинарную принадлежность, тематические мезоуровни, масштаб аргументации и формат участия. Она введена по экспертной проверке частных докладов программы 2024 г.</p>
+            <p>Обновленная схема отделяет дисциплинарную принадлежность, тематические мезоуровни, масштаб аргументации и формат участия. Частные поправки к программе 2024 г. стали общими правилами, после чего по ним повторно размечен весь расширенный корпус.</p>
         </header>
         <section class="grid">
             <article class="card"><strong>Рубрика</strong><div class="meta">Основная дисциплина вопроса: этнография, история индологии, религиоведение, лингвистика, литература и другие крупные входы.</div></article>
@@ -2742,6 +2794,7 @@ def generate_classification_criteria_page(records):
             <article class="talk"><strong>L1 Микроуровень</strong><p>Конкретный текст, предмет, ритуал, слово, экспедиция, авторское сопоставление или ограниченный тип артефактов. Упоминание региона, народа, языка или двух сравниваемых традиций не повышает уровень автоматически.</p></article>
             <article class="talk"><strong>L2 Региональный уровень</strong><p>Аргумент должен описывать устойчивую конфигурацию традиции, ареала, школы, исторической среды или нескольких серий объектов, а не только локализовать материал.</p></article>
             <article class="talk"><strong>L3 Синтетический уровень</strong><p>Требуется заявленное широкое сравнительное, цивилизационное или методологическое обобщение, выходящее за один корпус и одну региональную конфигурацию.</p></article>
+            <article class="talk"><strong>Полный аудит DeepSeek</strong><p>Все 1350 уникальных докладов получили тематические коды, мезоуровни и L1-L3 по контролируемым перечням. Все предварительные L2/L3 были отправлены на отдельную строгую перепроверку; 81 повышенный уровень понижен, а два G3 затем редакционно отнесены к G2. Необработанная запись не получает L2 по умолчанию.</p></article>
         </section>
         <h2>Выводы из экспертных поправок</h2>
         <section class="list">
@@ -2749,12 +2802,13 @@ def generate_classification_criteria_page(records):
             <article class="talk"><strong>Сравнение не равно макросинтезу</strong><p>Сравнение вариантов одной игры знания или одного литературного ответа остается микрокейсом, если вывод ограничен этими объектами.</p></article>
             <article class="talk"><strong>Рубрика и мезоуровень не конкурируют</strong><p>Доклад имеет одну основную дисциплинарную рубрику и одновременно несколько тематических маршрутов поиска.</p></article>
             <article class="talk"><strong>История индологии выделяется отдельно</strong><p>Экспедиции, путешественники и история научного освоения материала не должны исчезать в общем остаточном классе.</p></article>
+            <article class="talk"><strong>Мезоуровней достаточно при контролируемом расширении</strong><p>Полный проход наполнил сквозные контуры буддизма, философии, ведийских исследований, эпосов, рукописей и рецепции; повторившееся предложение «Сикхские исследования» добавлено как новый мезоуровень, а единичные предложения оставлены в аудиторской выгрузке.</p></article>
         </section>
         <h2>Проверенная выборка</h2>
         <section class="list">{''.join(reviewed_cards)}</section>
         <section class="link-block">
             <strong>Машиночитаемый журнал решений</strong>
-            <div class="chip-list"><a class="chip" href="analytics_output/classification_overrides.csv">classification_overrides.csv</a></div>
+            <div class="chip-list"><a class="chip" href="analytics_output/classification_overrides.csv">classification_overrides.csv</a><a class="chip" href="analytics_output/expanded_classification_deepseek.csv">expanded_classification_deepseek.csv</a><a class="chip" href="analytics_output/expanded_gumilyov_elevated_audit.csv">expanded_gumilyov_elevated_audit.csv</a></div>
         </section>
     """
     write_text(
@@ -3636,6 +3690,27 @@ def patch_index_stats(data):
     recorded_presentations = sum(
         1 for talk in presentation_records_by_id(timeline_records(data)).values() if talk.get("videos")
     )
+    classification_path = Path("article/hypothesis_output/expanded_classification_summary.json")
+    classification = json.loads(classification_path.read_text(encoding="utf-8")) if classification_path.exists() else {}
+    scale = classification.get("gumilyov_scale", {})
+    g1_count = int(scale.get("1", 0) or 0)
+    appendix = {
+        row.get("key", ""): row.get("value", "")
+        for row in load_csv_rows("article/hypothesis_output/appendix_g_summary.csv")
+    }
+    expected_overlap = float(appendix.get("H1_overlap_expected_mean", 0) or 0)
+    classified_rows = load_csv_rows("analytics_output/expanded_classification_deepseek.csv")
+    periods = defaultdict(Counter)
+    for row in classified_rows:
+        periods[row.get("series", "")][row.get("period_l2", "")] += 1
+    z_period_total = sum(periods["Zograf Readings"].values()) or 1
+    r_period_total = sum(periods["Roerich Readings"].values()) or 1
+    z_classical_medieval = round(
+        100 * (periods["Zograf Readings"]["classical"] + periods["Zograf Readings"]["medieval"]) / z_period_total, 1
+    )
+    r_classical_medieval = round(
+        100 * (periods["Roerich Readings"]["classical"] + periods["Roerich Readings"]["medieval"]) / r_period_total, 1
+    )
 
     conn = sqlite3.connect(DB_PATH)
     series_max = dict(conn.execute("SELECT event_series_id, MAX(year) FROM event GROUP BY event_series_id").fetchall())
@@ -3663,14 +3738,14 @@ def patch_index_stats(data):
     talks_ru_desc = f"{total_presentations} участий в {unique_presentations} уникальных докладах"
     talks_en_desc = f"{total_presentations} participations across {unique_presentations} unique talks"
     corpus_pause_ru = (
-        "Показатели статьи рассчитаны для аналитического подкорпуса 220 ученых / "
-        f"895 уникальных докладов / 899 участий. Текущий расширенный каталог ({total_scholars} / "
-        f"{unique_presentations} / {total_presentations}) требует повторного расчета гипотез."
+        f"Статья и сайт синхронизированы с расширенным корпусом: {total_scholars} ученых / "
+        f"{unique_presentations} уникальных докладов / {total_presentations} авторских участий. "
+        "Шкала обобщения повторно проверена для всех докладов."
     )
     corpus_pause_en = (
-        "The article metrics were calculated for its analytical subcorpus of 220 scholars / "
-        f"895 unique talks / 899 participations. The expanded catalogue ({total_scholars} / "
-        f"{unique_presentations} / {total_presentations}) requires renewed hypothesis testing."
+        f"The article and site are synchronized to the expanded corpus: {total_scholars} scholars / "
+        f"{unique_presentations:,} unique talks / {total_presentations:,} author participations. "
+        "Argument scale was re-audited across all presentations."
     )
     html = re.sub(
         r'(<div class="stat-label" id="stat-talks-label">)[^<]+(</div>)',
@@ -3720,6 +3795,29 @@ def patch_index_stats(data):
         count=1,
         flags=re.DOTALL,
     )
+    insight_values = {
+        "insight-overlap-metric": f"{overlap} / {expected_overlap:.1f}",
+        "insight-theme-metric": f"{r_classical_medieval}% / {z_classical_medieval}%",
+        "insight-micro-metric": f"{g1_count} / {unique_presentations}",
+        "insight-video-metric": str(recorded_presentations),
+    }
+    for metric_id, value in insight_values.items():
+        html = re.sub(
+            rf'(<div class="insight-metric" id="{metric_id}">)[^<]+(</div>)',
+            rf'\g<1>{value}\g<2>',
+            html,
+            count=1,
+        )
+    overlap_text_ru = f"Только {overlap} ученых выступали на обеих площадках при модельном ожидании {expected_overlap:.1f}."
+    overlap_text_en = f"Only {overlap} scholars spoke at both venues, compared with a model expectation of {expected_overlap:.1f}."
+    micro_text_ru = "После полного аудита шкала Гумилева показывает доминирование докладов о конкретном тексте, авторе или источнике."
+    micro_text_en = "After a full audit, the Gumilyov scale shows the dominance of talks on a specific text, author, or source."
+    html = re.sub(r'(<div class="insight-text" id="insight-overlap-text">)[^<]+(</div>)', rf'\g<1>{overlap_text_ru}\g<2>', html, count=1)
+    html = re.sub(r'(<div class="insight-text" id="insight-micro-text">)[^<]+(</div>)', rf'\g<1>{micro_text_ru}\g<2>', html, count=1)
+    html = re.sub(r'(ru:\s*\{.*?insightOverlapText:\s*")[^"]*(")', rf'\g<1>{overlap_text_ru}\g<2>', html, count=1, flags=re.DOTALL)
+    html = re.sub(r'(ru:\s*\{.*?insightMicroText:\s*")[^"]*(")', rf'\g<1>{micro_text_ru}\g<2>', html, count=1, flags=re.DOTALL)
+    html = re.sub(r'(en:\s*\{.*?insightOverlapText:\s*")[^"]*(")', rf'\g<1>{overlap_text_en}\g<2>', html, count=1, flags=re.DOTALL)
+    html = re.sub(r'(en:\s*\{.*?insightMicroText:\s*")[^"]*(")', rf'\g<1>{micro_text_en}\g<2>', html, count=1, flags=re.DOTALL)
     html = re.sub(
         r'(<div class="stat-label" id="stat-youtube-label">)[^<]+(</div>)',
         r'\g<1>Доклады с видео\g<2>',

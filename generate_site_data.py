@@ -190,12 +190,14 @@ def load_theme_mapping():
     return mapping
 
 def load_gumilyov_mapping():
-    mapping = {}
+    mapping = {"by_id": {}, "by_key": {}}
     try:
         with open("analytics_output/gumilyov_scale.csv", encoding="utf-8") as f:
             for row in csv.DictReader(f):
                 key = (str(row["year"]).strip(), str(row["series_id"]).strip(), str(row["title"]).strip())
-                mapping[key] = row["gumilyov_level"]
+                mapping["by_key"][key] = row["gumilyov_level"]
+                if row.get("presentation_id"):
+                    mapping["by_id"][row["presentation_id"]] = row["gumilyov_level"]
     except FileNotFoundError:
         pass
     return mapping
@@ -205,12 +207,14 @@ def gumilyov_level_for(year, series, title, presentation_id=None, source_title=N
     manual = CLASSIFICATION_OVERRIDES.get(str(presentation_id or ""), {})
     if manual.get("gumilyov_level"):
         return int(manual["gumilyov_level"])
+    if presentation_id and str(presentation_id) in _GUMILYOV_MAPPING["by_id"]:
+        return int(_GUMILYOV_MAPPING["by_id"][str(presentation_id)])
     series_id = "1" if "Zograf" in str(series or "") else "2"
     for candidate in (raw_title, title, source_title):
         key = (str(year).strip(), series_id, str(candidate or "").strip())
-        if key in _GUMILYOV_MAPPING:
-            return int(_GUMILYOV_MAPPING[key])
-    return 2
+        if key in _GUMILYOV_MAPPING["by_key"]:
+            return int(_GUMILYOV_MAPPING["by_key"][key])
+    return None
 
 def load_tags_mapping():
     mapping = {}

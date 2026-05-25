@@ -1,95 +1,132 @@
 approach,label,presentation_id,year,series,l1,l2,title,language_score,philology_score
-language_system,языковедческий анализ,PRES_960adc4efb,2006,Zograf Readings,linguistics,vedic,Вытеснение согласного во избежание возникновения тяжелой группы трех шумных согласных в индоиранском,0,0
-language_system,языковедческий анализ,PRES_20910e0f90,2006,Zograf Readings,linguistics,vedic,Санскритское upa-śru-: «слышать» или «вслушиваться»? Об одном древнеиндийском способе гадания,0,0
-language_system,языковедческий анализ,PRES_932ae951cd,2007,Zograf Readings,linguistics,classical,Санскритское письмо как последовательная фонетическая транскрипция,2,0
+language_system,языковедческий анализ,PRES_ec5840a950,2004,Zograf Readings,linguistics,vedic,Еще раз о слове ātman в Ригведе,1,0
+language_system,языковедческий анализ,PRES_a535b2a757,2004,Zograf Readings,linguistics,vedic,Замечания по формальной стороне Рикпратишакхьи,0,0
+language_system,языковедческий анализ,PRES_98a6bea15e,2004,Zograf Readings,linguistics,vedic,О 58 синонимах «речи» в «Нигханту»,0,0
+language_system,языковедческий анализ,PRES_960adc4efb,2006,Zograf Readings,linguistics,unspecified,Вытеснение согласного во избежание возникновения тяжелой группы трех шумных согласных в индоиранском,0,0
+language_system,языковедческий анализ,PRES_49eb37c334,2006,Zograf Readings,linguistics,classical,Орфоэпическая практика и древнеиндийская фонетика,0,0
+language_system,языковедческий анализ,PRES_5b0c00b805,2006,Zograf Readings,linguistics,classical,Технические приспособления для рубрикации корней в «Дхатупатхе» Панини,2,0
+language_system,языковедческий анализ,PRES_10c2c66c17,2007,Zograf Readings,linguistics,classical,Древнеиндийские диалекты в ранних фонетических трактатах,4,0
+language_system,языковедческий анализ,PRES_932ae951cd,2007,Zograf Readings,linguistics,unspecified,Санскритское письмо как последовательная фонетическая транскрипция,2,0
+language_system,языковедческий анализ,PRES_5e317967c2,2008,Zograf Readings,linguistics,classical,Udāharaņa в «Вакьяпадии»,0,0
+language_system,языковедческий анализ,PRES_6da6054f73,2008,Zograf Readings,linguistics,classical,Атманепада в санскрите и в грамматиках,2,0
+language_system,языковедческий анализ,PRES_b65c83f7a3,2010,Roerich Readings,linguistics,classical,Несколько индийских слов в передаче античных авторов,1,0
+language_system,языковедческий анализ,PRES_080e848a5a,2010,Roerich Readings,linguistics,classical,Скифские слова в Авесте,1,0
+language_system,языковедческий анализ,PRES_fe7f9d9625,2010,Roerich Readings,linguistics,modern,Юрий Николаевич Рерих — исследователь тибетского языка,1,0
+language_system,языковедческий анализ,PRES_15b019aa75,2010,Zograf Readings,linguistics,modern,Неизвестный речевой феномен у сингалов Шри Ланки,0,0
+language_system,языковедческий анализ,PRES_e2d0ac8c94,2011,Zograf Readings,linguistics,vedic,Категории описания священной речи в «Ригведапратишакхье»,0,0
 language_system,языковедческий анализ,PRES_5b9c7fa5b6,2011,Zograf Readings,linguistics,modern,Санскритизация и философские проблемы языковой политики,0,0
 language_system,языковедческий анализ,PRES_74936e5d59,2012,Roerich Readings,linguistics,vedic,К этимологии ведийского sarámā,3,0
-language_system,языковедческий анализ,PRES_65f28e41f2,2012,Roerich Readings,linguistics,classical,О значении пал. sutta (p.p. от supati «спать») в медитации осознанности (сатипаттхана),0,0
 language_system,языковедческий анализ,PRES_e17d554abc,2012,Roerich Readings,linguistics,classical,Традиционный индийский комментарий как источник по изучению синтаксиса древнеиндийских языков,4,3
 language_system,языковедческий анализ,PRES_56a96b450d,2012,Roerich Readings,linguistics,modern,Ю.Н. Рерих — выдающийся лингвист-тибетолог,0,0
-language_system,языковедческий анализ,PRES_485b7b3478,2012,Zograf Readings,linguistics,vedic,Осел/бык в индоиранской картине мира,0,0
-language_system,языковедческий анализ,PRES_b27303708f,2012,Zograf Readings,linguistics,classical,Особенности композиции «Апастамба-дхармасутры»,0,0
+language_system,языковедческий анализ,PRES_5e3a0ceae6,2013,Roerich Readings,linguistics,unspecified,"Варна – фон, фонема, звукотип",3,0
+language_system,языковедческий анализ,PRES_70ac445270,2013,Roerich Readings,linguistics,unspecified,Особенности соотношения «лексема – понятие» в санскритских и палийских источниках,0,0
 language_system,языковедческий анализ,PRES_e9bb5a759b,2013,Zograf Readings,linguistics,classical,"Варна – это фонема, буква, звук или …?",4,0
 language_system,языковедческий анализ,PRES_c247636d94,2013,Zograf Readings,linguistics,modern,Причастие-герундий в хинди и бенгальском языке,1,0
-language_system,языковедческий анализ,PRES_67151ae69e,2014,Zograf Readings,linguistics,vedic,Грамматика Панини и механизм кодирования ведийского текста,4,3
+language_system,языковедческий анализ,PRES_67151ae69e,2014,Zograf Readings,linguistics,classical,Грамматика Панини и механизм кодирования ведийского текста,4,3
 language_system,языковедческий анализ,PRES_b9b432befc,2014,Zograf Readings,linguistics,modern,Животный мир пословиц и поговорок хинди,0,0
-language_system,языковедческий анализ,PRES_71c7cc1a09,2014,Zograf Readings,linguistics,classical,"Спхота, джати, пашьянти и пратибха в «Вакьяпадии» — к проблеме разграничения терминов",1,0
+language_system,языковедческий анализ,PRES_f0c510e9df,2014,Zograf Readings,linguistics,vedic,К вопросу о письменной фиксации Ригведы 15.00. Там же,0,0
+language_system,языковедческий анализ,PRES_83fa564d73,2014,Zograf Readings,linguistics,classical,Традиционная классификация санскритских стихотворных размеров,0,0
 language_system,языковедческий анализ,PRES_28cd96d910,2014,Zograf Readings,linguistics,modern,Форма смыслового глагола в модальных конструкциях возможности/способности в хинди,2,0
 language_system,языковедческий анализ,PRES_b67b7540fa,2015,Roerich Readings,linguistics,classical,Индийские гана в зеркале китайских гуа,0,0
-language_system,языковедческий анализ,PRES_5e2b4790e6,2015,Roerich Readings,linguistics,vedic,О брахманических этимологиях,3,0
+language_system,языковедческий анализ,PRES_5e2b4790e6,2015,Roerich Readings,linguistics,classical,О брахманических этимологиях,3,0
 language_system,языковедческий анализ,PRES_9a58e03451,2015,Roerich Readings,linguistics,classical,Об индийских названиях нуля,0,0
-language_system,языковедческий анализ,PRES_683bba7031,2015,Roerich Readings,linguistics,classical,Язык жреца – язык поэта. О сакральности речи в древнейших формах санскритской драмы,2,0
-language_system,языковедческий анализ,PRES_bc71d23355,2016,Roerich Readings,linguistics,contemporary,Диалект амдо – нетоновый диалект тибетского языка,4,0
-language_system,языковедческий анализ,PRES_149d1014af,2017,Roerich Readings,linguistics,classical,Вопрос о дардском элементе в дотибетском населении Ладакха и Балтистана как лингвистическая проблема,0,0
+language_system,языковедческий анализ,PRES_4bc7a6fa32,2015,Zograf Readings,linguistics,classical,К этимологии термина ‘вьякарана’ в буддийских источниках,4,0
+language_system,языковедческий анализ,PRES_0cfab3c29b,2015,Zograf Readings,linguistics,vedic,Расширение и распространение: о некоторых особенностях употребления глагольного корня bṛh в «Ригведе»,1,0
+language_system,языковедческий анализ,PRES_bc71d23355,2016,Roerich Readings,linguistics,unspecified,Диалект амдо – нетоновый диалект тибетского языка,4,0
+language_system,языковедческий анализ,PRES_f0240ba1c9,2016,Roerich Readings,linguistics,classical,Особенности жанра парибхаша на примере сутр Апастамбы,1,1
+language_system,языковедческий анализ,PRES_2a0e1b2cbb,2016,Zograf Readings,linguistics,vedic,К вопросу об индоевропейских параллелях ведийским vrātya,0,0
+language_system,языковедческий анализ,PRES_ba7098c9bc,2016,Zograf Readings,linguistics,vedic,К интерпретации ведийского понятия krátu-,0,0
+language_system,языковедческий анализ,PRES_7acc74ab82,2016,Zograf Readings,linguistics,unspecified,Письменности языков мунда,2,0
+language_system,языковедческий анализ,PRES_74f987e071,2016,Zograf Readings,linguistics,classical,"Словарь «Амаракоша» как отражение индийской картины мира 15.00. ИВР РАН, Зеленый зал",1,0
+language_system,языковедческий анализ,PRES_149d1014af,2017,Roerich Readings,linguistics,medieval,Вопрос о дардском элементе в дотибетском населении Ладакха и Балтистана как лингвистическая проблема,0,0
 language_system,языковедческий анализ,PRES_36a14e8fd3,2017,Roerich Readings,linguistics,vedic,Об интерпретационном коде ранневедийской литературы (вед. śatabhuji),0,0
 language_system,языковедческий анализ,PRES_0e88c0544b,2017,Roerich Readings,linguistics,classical,Синтаксические конструкции с ti и -bhāva в языке пали,3,0
 language_system,языковедческий анализ,PRES_7501330de7,2017,Roerich Readings,linguistics,contemporary,Тибетский идиом области Амдо в наши дни: между диалектом и языком,4,0
 language_system,языковедческий анализ,PRES_86b13c26c6,2017,Roerich Readings,linguistics,modern,Ю.Н. Рерих и монгольский язык,1,0
 language_system,языковедческий анализ,PRES_aab18847b3,2017,Roerich Readings,linguistics,modern,Ю.Н. Рерих о лхасском диалекте тибетского языка,4,0
+language_system,языковедческий анализ,PRES_56ba477abf,2017,Zograf Readings,linguistics,contemporary,Борьба за собственный язык в Ладакхе,1,0
+language_system,языковедческий анализ,PRES_79b076d481,2017,Zograf Readings,linguistics,vedic,К вопросу о лексике индивидуального субъективного начала в ведийском языке,4,0
+language_system,языковедческий анализ,PRES_45c0547868,2017,Zograf Readings,linguistics,classical,О методах описания санскритских классических стихотворных размеров,0,0
+language_system,языковедческий анализ,PRES_536a630888,2017,Zograf Readings,linguistics,classical,Тамильские родственники в общедравидийском контексте: семантика и типология,3,2
 language_system,языковедческий анализ,PRES_690401765d,2018,Roerich Readings,linguistics,classical,Деепричастия пассивного залога в языке пали?,4,0
-language_system,языковедческий анализ,PRES_8ccd58e4ca,2018,Roerich Readings,linguistics,contemporary,Нетибетская лексика в тибетских диалектах Балтистана и Каргила: попытка этимологической классификации,4,0
+language_system,языковедческий анализ,PRES_8ccd58e4ca,2018,Roerich Readings,linguistics,modern,Нетибетская лексика в тибетских диалектах Балтистана и Каргила: попытка этимологической классификации,4,0
 language_system,языковедческий анализ,PRES_0ad046733d,2018,Roerich Readings,linguistics,classical,Семантика глагольного корня bhram и его дериватов на материале древнеиндийского эпоса и поэзии,4,0
 language_system,языковедческий анализ,PRES_fcdae5394d,2018,Roerich Readings,linguistics,modern,Этнокультурные особенности «Тибетско-русско-английского словаря с санскритскими параллелями» Ю.Н. Рериха,1,0
 language_system,языковедческий анализ,PRES_7a7018c850,2018,Zograf Readings,linguistics,vedic,101 синоним воды в ведийском словаре «Нигханту»,1,0
 language_system,языковедческий анализ,PRES_5b141fa75a,2018,Zograf Readings,linguistics,contemporary,Борьба за собственный язык в Ладакхе (на материале полевых исследований),1,0
+language_system,языковедческий анализ,PRES_c78df41b2d,2018,Zograf Readings,linguistics,vedic,О названиях пчелы в ведийском языке,1,0
 language_system,языковедческий анализ,PRES_7d9d4fa5de,2018,Zograf Readings,linguistics,contemporary,Семантика терминологии родства в малых дравидийских языках: когнитивные аспекты,6,0
 language_system,языковедческий анализ,PRES_e64009085a,2019,Roerich Readings,linguistics,unspecified,Возможности понимания и написания термина «санскрит»,1,0
-language_system,языковедческий анализ,PRES_42c1647dee,2019,Roerich Readings,linguistics,medieval,Как уложить пять формул в одну строфу? «Архивирующие» возможности санскрита в математических сочинениях средневековой Индии,0,0
 language_system,языковедческий анализ,PRES_5e65d5094d,2019,Zograf Readings,linguistics,colonial,Двести лет санскритской лексикографии (1819‒2019),3,0
 language_system,языковедческий анализ,PRES_5868b82012,2019,Zograf Readings,linguistics,colonial,Индийские и тибетские лингвистические штудии Д. Г. Мессершмидта,0,0
 language_system,языковедческий анализ,PRES_5fd431f2b3,2019,Zograf Readings,linguistics,unspecified,Каталоги знаков хараппской письменности: материалы к сравнению,2,0
 language_system,языковедческий анализ,PRES_5e8363f0d9,2019,Zograf Readings,linguistics,classical,Парибхаша — интерпретационные правила грамматики Панини,5,0
 language_system,языковедческий анализ,PRES_251dbeeac8,2019,Zograf Readings,linguistics,colonial,Санскритские очки европейской лингвистики XIX века,0,0
 language_system,языковедческий анализ,PRES_68422ddbdf,2019,Zograf Readings,linguistics,unspecified,Семантика терминологии родства в языке брахуи в общедравидийском контексте,6,2
-language_system,языковедческий анализ,PRES_69020aec6c,2020,Roerich Readings,linguistics,vedic,"К анализу стиха Ригведа 1.120.11, или Предварительные заметки о ведийском автомобиле",0,0
 language_system,языковедческий анализ,PRES_8c8a78a7c6,2020,Roerich Readings,linguistics,unspecified,Модели мотивации понятий «муж» и «жена» в дравидийских языках,1,0
-language_system,языковедческий анализ,PRES_977099cdb8,2020,Roerich Readings,linguistics,classical,"Происхождение китайского иероглифа 佛 «фо» (Будда, буддизм)",0,0
+language_system,языковедческий анализ,PRES_977099cdb8,2020,Roerich Readings,linguistics,unspecified,"Происхождение китайского иероглифа 佛 «фо» (Будда, буддизм)",0,0
 language_system,языковедческий анализ,PRES_75e95131c2,2020,Roerich Readings,linguistics,classical,Санскритская грамматика и мирская мудрость,3,0
 language_system,языковедческий анализ,PRES_0805f65a3c,2020,Zograf Readings,linguistics,modern,Дискурсивные слова в языке хинди,2,0
 language_system,языковедческий анализ,PRES_9f9afead1c,2020,Zograf Readings,linguistics,classical,О некоторых особенностях языка «Калачакра-тантры»,1,0
-language_system,языковедческий анализ,PRES_9a160371a2,2020,Zograf Readings,linguistics,contemporary,Параллельный санскритско-русский корпус,1,0
+language_system,языковедческий анализ,PRES_9a160371a2,2020,Zograf Readings,linguistics,unspecified,Параллельный санскритско-русский корпус,1,0
 language_system,языковедческий анализ,PRES_49cbcdc1b0,2020,Zograf Readings,linguistics,medieval,Санскритские наречия в трудах бенгальских грамматистов (Дживы Госвамина и Баларамы Панчананы),2,0
+language_system,языковедческий анализ,PRES_31f4f272dd,2020,Zograf Readings,linguistics,unspecified,Терминология родства в гондванских языках,3,0
 language_system,языковедческий анализ,PRES_9d2b60c41e,2021,Roerich Readings,linguistics,modern,Вклад Ю.Н. Рериха в развитие тибетского языкознания,0,0
-language_system,языковедческий анализ,PRES_27b1d377eb,2021,Roerich Readings,linguistics,unspecified,Особенности топонимов Западного края Китая（西域): лингвокультурный аспект,1,0
+language_system,языковедческий анализ,PRES_27b1d377eb,2021,Roerich Readings,linguistics,medieval,Особенности топонимов Западного края Китая（西域): лингвокультурный аспект,1,0
 language_system,языковедческий анализ,PRES_213b0b1de9,2021,Roerich Readings,linguistics,vedic,Пятнистый охотничий зверь индоевропейцев и «Атхарваведа» 19.49.4 (заметки об индоиранском бестиарии),0,0
+language_system,языковедческий анализ,PRES_a8e1d07658,2021,Roerich Readings,linguistics,unspecified,"Скифский язык, топонимы Скифии и Центральной Азии, индоевропейские языки: культурные заимствования из Индии и культур древнего Понта Эвксинского",2,0
 language_system,языковедческий анализ,PRES_5ec82e96d1,2021,Zograf Readings,linguistics,classical,Голубые лотосы санскритской лексикографии,3,0
-language_system,языковедческий анализ,PRES_9736d3f1aa,2021,Zograf Readings,linguistics,unspecified,Камень-трава или плод из города Синтры: история одного индийского фитонима,0,0
+language_system,языковедческий анализ,PRES_9736d3f1aa,2021,Zograf Readings,linguistics,classical,Камень-трава или плод из города Синтры: история одного индийского фитонима,0,0
 language_system,языковедческий анализ,PRES_2b593f9763,2021,Zograf Readings,linguistics,classical,Конструкция odanam pacyate и ее анализ в традиции Панини,1,0
 language_system,языковедческий анализ,PRES_806f7942d2,2021,Zograf Readings,linguistics,contemporary,Неприzнанный zнак: вопрос о модернизации бенгальского алфавита в современном медиапространстве,1,0
 language_system,языковедческий анализ,PRES_64d8c34063,2021,Zograf Readings,linguistics,classical,О «новых» теориях действия в грамматических трудах Нагеши Бхатты,2,0
 language_system,языковедческий анализ,PRES_f1d3968b9f,2021,Zograf Readings,linguistics,classical,Опыт построения словаря-тезауруса древнеиндийской лингвистической терминологии (на материале грамматики Панини),5,0
 language_system,языковедческий анализ,PRES_efa6368f8b,2021,Zograf Readings,linguistics,classical,Трактовка панинийского термина savarṇa комментаторами парибхаш,2,0
-language_system,языковедческий анализ,PRES_8bf8e5c670,2021,Zograf Readings,linguistics,unspecified,Удвоение знаков в протоиндийской письменности,2,0
+language_system,языковедческий анализ,PRES_8bf8e5c670,2021,Zograf Readings,linguistics,classical,Удвоение знаков в протоиндийской письменности,2,0
 language_system,языковедческий анализ,PRES_c7dde9eafd,2022,Roerich Readings,linguistics,classical,Лексикализация дезидератива в классическом санскрите,3,0
 language_system,языковедческий анализ,PRES_bab6fc9b5c,2022,Roerich Readings,linguistics,classical,Немногие сведения о Нилакантхадикшитеграмматисте,2,0
 language_system,языковедческий анализ,PRES_f6fa058fc3,2022,Roerich Readings,linguistics,unspecified,Полисемия в области терминологии родства – дравидийские и индоарийские языки,3,0
 language_system,языковедческий анализ,PRES_3713c953c3,2022,Roerich Readings,linguistics,unspecified,Этимологическая классификация лексики в индийской и европейской грамматической традиции на примере языка куллуи,4,0
+language_system,языковедческий анализ,PRES_3c7edb493f,2022,Zograf Readings,linguistics,vedic,"Ведийское vrā́- «барышня» (?): Этимология, семантика, контекст.",4,2
+language_system,языковедческий анализ,PRES_c8a43354fb,2022,Zograf Readings,linguistics,contemporary,"Диалектологическое исследование языка куллуи (< химачали): задачи, методика, результаты",3,0
+language_system,языковедческий анализ,PRES_677299afaa,2022,Zograf Readings,linguistics,classical,Правило lopa в грамматике Панини,4,0
+language_system,языковедческий анализ,PRES_e535f6d646,2022,Zograf Readings,linguistics,modern,Этапы развития тамильского языкового пуризма,0,0
 language_system,языковедческий анализ,PRES_1654668dbb,2023,Roerich Readings,linguistics,modern,Словослияние в куллуи как способ словообразования,3,0
-language_system,языковедческий анализ,PRES_e6073c947c,2023,Roerich Readings,linguistics,classical,Этимология и семантика цветообозначения «красный» в китайской культуре,4,0
+language_system,языковедческий анализ,PRES_e6073c947c,2023,Roerich Readings,linguistics,unspecified,Этимология и семантика цветообозначения «красный» в китайской культуре,4,0
+language_system,языковедческий анализ,PRES_b0fb034cf5,2023,Zograf Readings,linguistics,classical,Древнеиндийская ономастика в «Вишнусахасранаме»,0,0
+language_system,языковедческий анализ,PRES_483a3d2f7e,2023,Zograf Readings,linguistics,modern,Значения и функционирование лексемы ye в бенгальском языке,1,0
+language_system,языковедческий анализ,PRES_7315ee9c52,2023,Zograf Readings,linguistics,classical,Средний залог в санскрите. К семантике категории,4,0
 language_system,языковедческий анализ,PRES_423a77f362,2024,Roerich Readings,linguistics,unspecified,Этимология и семантика цветообозначения «черный» в культуре Китая,4,0
+language_system,языковедческий анализ,PRES_2fcaeeff79,2024,Zograf Readings,linguistics,modern,Несколько этимологий арготических слов среднеазиатских цыган на фоне дискуссий последнего полувека об истории цыган,4,0
+language_system,языковедческий анализ,PRES_edb6f3ab45,2024,Zograf Readings,linguistics,contemporary,Новые индоарийские этимологии лексики языка куллуи,5,0
+language_system,языковедческий анализ,PRES_33433905b0,2024,Zograf Readings,linguistics,modern,Образы тигра и рыбы в бенгальской фразеологии,0,0
 language_system,языковедческий анализ,PRES_970ff8c51f,2025,Roerich Readings,linguistics,classical,Зачем в санскрите три прошедших времени?,0,0
 language_system,языковедческий анализ,PRES_0e52f9db93,2025,Roerich Readings,linguistics,unspecified,Об этимологии слова «мангус»,4,0
 language_system,языковедческий анализ,PRES_5f755d36b3,2025,Roerich Readings,linguistics,classical,Треугольник Паскаля или Пингалы?,0,0
 language_system,языковедческий анализ,PRES_f0fc87fb3a,2025,Zograf Readings,linguistics,vedic,"Ведийский гапакс batá- и частица bata / vata: семантика, контекст, этимология",4,2
-language_system,языковедческий анализ,PRES_e84196d92a,2025,Zograf Readings,linguistics,vedic,К интерпретации Ригведы: śiśnadevāḥ,0,0
-language_system,языковедческий анализ,PRES_da95cc9832,2025,Zograf Readings,linguistics,modern,Новые древнеиндийские праформы на материале этимологий лексики языка куллуи,6,0
+language_system,языковедческий анализ,PRES_da95cc9832,2025,Zograf Readings,linguistics,unspecified,Новые древнеиндийские праформы на материале этимологий лексики языка куллуи,6,0
 language_system,языковедческий анализ,PRES_5eff45b043,2025,Zograf Readings,linguistics,classical,О семантических переходах с участием терминов родства в старотамильском языке,3,0
 language_system,языковедческий анализ,PRES_4ed8d23e80,2025,Zograf Readings,linguistics,classical,Синтез глагольной словоформы в грамматике Панини,4,0
-text_philology,филология текста,PRES_2b5692727a,2007,Zograf Readings,linguistics,modern,«Рассказ о рани Кетаки» Инш-алла Хана в контексте развития ранней прозы на хинди и урду,0,2
-text_philology,филология текста,PRES_a3301e22aa,2007,Zograf Readings,linguistics,modern,Образ Чайтаньи в традиционных бенгальских текстах,0,3
-text_philology,филология текста,PRES_3666aae128,2013,Zograf Readings,linguistics,modern,«Открытие Индии» сквозь призму традиционного текста: опыт мыслителей Бенгальского Возрождения,0,3
+language_system,языковедческий анализ,PRES_717723198b,2026,Zograf Readings,linguistics,vedic,Kumāra: этимология и мифология,3,0
+language_system,языковедческий анализ,PRES_c922a3c1aa,2026,Zograf Readings,linguistics,classical,Имперфект в древнеиндийском эпосе,0,0
+language_system,языковедческий анализ,PRES_45a22e8318,2026,Zograf Readings,linguistics,classical,Коннотативные особенности йогической лексики Виджнянабхикшу (на примере комментария к 1.1 «Pātañjalayogaśāstram»),3,3
+language_system,языковедческий анализ,PRES_b2cbcb90c5,2026,Zograf Readings,linguistics,modern,Лексика языка куллуи: этимологии 2026 года,5,0
+language_system,языковедческий анализ,PRES_fb340723de,2026,Zograf Readings,linguistics,contemporary,Пословицы и поговорки Индии и России как аспект межкультурной коммуникации (проектная деятельность на уроках языка хинди),1,0
+language_system,языковедческий анализ,PRES_0b6581f9ff,2026,Zograf Readings,linguistics,classical,Синтез сложных слов tatpuruṣa и karmadhāraya в грамматике Панини,5,0
+language_system,языковедческий анализ,PRES_1637f642c2,2026,Zograf Readings,linguistics,contemporary,Южноандаманские языки: к вопросу о возможностях внешнего сравнения,1,0
+text_philology,филология текста,PRES_9bda829b36,2009,Zograf Readings,linguistics,vedic,Ведийское samudra-: к вопросу о широких водных пространствах в текстах самхит,0,3
+text_philology,филология текста,PRES_b3dcf19ef2,2009,Zograf Readings,linguistics,vedic,Индоевропейская формула «храни мужей и скот» в ведийских и постведийских текстах,0,3
+text_philology,филология текста,PRES_78a007f5fb,2010,Zograf Readings,linguistics,vedic,О древнеиндийской практике обучения ведийскому тексту,0,3
+text_philology,филология текста,PRES_0e0cf8bb17,2010,Zograf Readings,linguistics,classical,Санскритские квантитативные стихотворные размеры: реконструкция чтения,0,3
+text_philology,филология текста,PRES_f978f939da,2013,Zograf Readings,linguistics,vedic,О звуковом составе ведийского текста,0,3
 text_philology,филология текста,PRES_b8b0e64461,2013,Zograf Readings,linguistics,classical,О формульности надписей на санскрите,0,3
-text_philology,филология текста,PRES_35cd50282e,2015,Roerich Readings,linguistics,classical,От Индии до Кара-тепе: к типологии древнеиндийского эпиграфического текста,0,4
-text_philology,филология текста,PRES_a0af113263,2016,Roerich Readings,linguistics,classical,Китайские переводы ранних буддийских сутр: возможности реконструкции истории индийского текста,0,6
+text_philology,филология текста,PRES_eb575eaa4d,2015,Zograf Readings,linguistics,vedic,Был ли Яма пессимистом? Значение частицы gha и ее индоевропейские параллели (К интерпретации стиха Ригведа 10.10.10) И. А. Тоноян-Беляев. Анализ содержания и стиля текста «Васту-сутра-упанишад»: некоторые интересные особенности,0,3
 text_philology,филология текста,PRES_762c65297f,2017,Roerich Readings,linguistics,classical,Проблемы методологии при интертекстуальном анализе палийских и санскритских текстов,0,3
-text_philology,филология текста,PRES_4468815627,2019,Zograf Readings,linguistics,vedic,Атхарваведа 1.2. (Шаунака): дополнение к переводам,0,3
-text_philology,филология текста,PRES_2cf93e8bf4,2019,Zograf Readings,linguistics,modern,Эстетика религиозной драмы: теория и практика драмы в контексте бенгальского вайшнавизма,0,2
+text_philology,филология текста,PRES_d78288c37d,2018,Zograf Readings,linguistics,vedic,Мантра и сутра как форма построения ведийских текстов,1,4
 text_philology,филология текста,PRES_59888a0019,2020,Zograf Readings,linguistics,contemporary,Онлайн-корпус текстов на языках южных мунда: задачи и специфика,1,3
 text_philology,филология текста,PRES_f8d76687c8,2020,Zograf Readings,linguistics,classical,Пример использования парибхаш при прочтении сутр Панини,2,4
-text_philology,филология текста,PRES_68f68e8947,2021,Roerich Readings,linguistics,classical,Прагматика перечней в эпиграфическом тексте (к открытию надписей брахми III–II вв. до н.э. в Центральной Индии),0,5
-text_philology,филология текста,PRES_2b0af07002,2021,Zograf Readings,linguistics,classical,Проблемы датировки «Нандикешваракашики»,0,1
-text_philology,филология текста,PRES_faf88dfc43,2021,Zograf Readings,linguistics,classical,Санскритский фрагмент «Артхавинишчая-сутры» из Сериндийского фонда ИВР РАН,0,3
-text_philology,филология текста,PRES_6639f5e148,2022,Roerich Readings,linguistics,unspecified,К реконструкции языковых контактов в области Шангшунг в дотибетскую эпоху,0,3
+text_philology,филология текста,PRES_5c43b881ec,2020,Zograf Readings,linguistics,vedic,Фоносемантическая структура ведийского текста (на примере гимна Ригведы I.7),0,3
+text_philology,филология текста,PRES_27d5db2ff5,2021,Zograf Readings,linguistics,unspecified,Санскритский перевод одного тибетского текста,0,4
+text_philology,филология текста,PRES_6639f5e148,2022,Roerich Readings,linguistics,medieval,К реконструкции языковых контактов в области Шангшунг в дотибетскую эпоху,0,3
 text_philology,филология текста,PRES_259ddc64ac,2023,Roerich Readings,linguistics,vedic,Обсценная брань и её следы в РВ 10.10: возможна ли реконструкция текста?,0,4
-text_philology,филология текста,PRES_e4ffdf5e0f,2025,Roerich Readings,linguistics,medieval,К вопросу о переводе буддийского термина бодхи (菩提) на китайский язык,2,3
-text_philology,филология текста,PRES_6c0ed74411,2025,Zograf Readings,linguistics,modern,Анализ переводов М. Зощенко на хинди и на бенгали с помощью метрик readability,0,3
+text_philology,филология текста,PRES_8190df6ab4,2023,Zograf Readings,linguistics,unspecified,«Моя мать и твоя мать – какая родня?» Об обозначениях братьев и сестер и возможностях прадравидийской реконструкции,0,3

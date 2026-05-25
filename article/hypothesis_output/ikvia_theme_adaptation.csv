@@ -1,9 +1,9 @@
 person_id,display_name,zograf_talks,roerich_talks,zograf_l1,roerich_l1,same_top_l1,l1_cosine_similarity
-PERS_41d6aa73,Воробьева Дарья Николаевна,2,8,art_archaeology:2,art_archaeology:8,yes,1.0
+PERS_41d6aa73,Воробьева Дарья Николаевна,5,9,art_archaeology:5,art_archaeology:9,yes,1.0
 PERS_efc88709,Канаева Наталия Алексеевна,3,3,philosophy:3,philosophy:3,yes,1.0
-PERS_ced3d7b4,Молина Анна Вениаминовна,1,2,literature:1,literature:2,yes,1.0
-PERS_f074f69f,Александрова Наталия Владимировна,7,11,religion:6; art_archaeology:1,religion:9; linguistics:1; art_archaeology:1,yes,0.992
-PERS_05d56645,Бабин Александр Николаевич,3,6,art_archaeology:3,art_archaeology:4; history:1; tibetology:1,yes,0.943
-PERS_93e2effb,Комиссаров Дмитрий Алексеевич,3,1,religion:2; literature:1,religion:1,yes,0.894
-PERS_9f398436,Куликов Леонид Игоревич,3,3,religion:1; literature:1; linguistics:1,linguistics:3,no,0.577
-PERS_4fff9d16,Минаева Маргарита Денисовна,0,2,,literature:2,no,
+PERS_4fff9d16,Минаева Маргарита Денисовна,1,2,literature:1,literature:2,yes,1.0
+PERS_ced3d7b4,Молина Анна Вениаминовна,2,2,literature:2,literature:2,yes,1.0
+PERS_f074f69f,Александрова Наталия Владимировна,12,15,religion:10; literature:1; art_archaeology:1,religion:12; literature:2; art_archaeology:1,yes,0.998
+PERS_9f398436,Куликов Леонид Игоревич,5,3,linguistics:4; literature:1,linguistics:2; literature:1,yes,0.976
+PERS_05d56645,Бабин Александр Николаевич,6,6,art_archaeology:4; religion:1; history:1,art_archaeology:5; history:1,yes,0.971
+PERS_93e2effb,Комиссаров Дмитрий Алексеевич,9,1,religion:7; literature:2,religion:1,yes,0.962

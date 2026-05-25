@@ -1,0 +1,18 @@
+Presentations: 1350; already valid: 1335; to classify: 15
+[1/1] accepted 15/15; cumulative 1350
+Valid classifications: 1350/1350; failed batches: 0
+Token usage: {'prompt_tokens': 2216, 'completion_tokens': 2009, 'total_tokens': 4225, 'prompt_cache_hit_tokens': 1152, 'prompt_cache_miss_tokens': 1064}
+Elevated-scale audit: 270 preliminary L2/L3; to audit: 270
+Audited elevated rows: 20/270
+Audited elevated rows: 40/270
+Audited elevated rows: 60/270
+Audited elevated rows: 80/270
+Audited elevated rows: 100/270
+Audited elevated rows: 120/270
+Audited elevated rows: 140/270
+Audited elevated rows: 159/270
+Audited elevated rows: 179/270
+Audited elevated rows: 199/270
+Audited elevated rows: 219/270
+Audited elevated rows: 239/270
+Audited elevated rows: 249/270

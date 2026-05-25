@@ -22,7 +22,6 @@ Zograf Readings,панини,2,8,0.46,1.81,1.2192,1.695,late
 Zograf Readings,возрождение,6,1,1.38,0.23,-1.4962,-1.652,early
 Zograf Readings,лебедев,5,0,1.15,0.0,-2.4276,-1.644,early
 Zograf Readings,происхождение,5,0,1.15,0.0,-2.4276,-1.644,early
-Zograf Readings,спбгу,5,0,1.15,0.0,-2.4276,-1.644,early
 Zograf Readings,ганди,0,5,0.0,1.13,2.391,1.619,late
 Zograf Readings,мантра,0,5,0.0,1.13,2.391,1.619,late
 Zograf Readings,родство,0,5,0.0,1.13,2.391,1.619,late
@@ -40,6 +39,7 @@ Zograf Readings,изменение,4,0,0.92,0.0,-2.2247,-1.492,early
 Zograf Readings,китайский,4,0,0.92,0.0,-2.2247,-1.492,early
 Zograf Readings,реальность,4,0,0.92,0.0,-2.2247,-1.492,early
 Zograf Readings,символика,4,0,0.92,0.0,-2.2247,-1.492,early
+Zograf Readings,спбгу,4,0,0.92,0.0,-2.2247,-1.492,early
 Zograf Readings,эволюция,4,0,0.92,0.0,-2.2247,-1.492,early
 Zograf Readings,куллуи,0,4,0.0,0.9,2.1881,1.468,late
 Zograf Readings,тантризм,0,4,0.0,0.9,2.1881,1.468,late
@@ -596,7 +596,6 @@ Roerich Readings,древний,8,10,3.49,4.12,0.1585,0.344,late
 Roerich Readings,средневековый,8,10,3.49,4.12,0.1585,0.344,late
 Roerich Readings,комментарий,2,3,0.87,1.23,0.2809,0.339,late
 Roerich Readings,культурный,2,3,0.87,1.23,0.2809,0.339,late
-Roerich Readings,москва,2,3,0.87,1.23,0.2809,0.339,late
 Roerich Readings,область,2,3,0.87,1.23,0.2809,0.339,late
 Roerich Readings,обряд,2,3,0.87,1.23,0.2809,0.339,late
 Roerich Readings,понятие,2,3,0.87,1.23,0.2809,0.339,late
@@ -622,6 +621,7 @@ Roerich Readings,классический,3,3,1.31,1.23,-0.06,-0.079,early
 Roerich Readings,слово,3,3,1.31,1.23,-0.06,-0.079,early
 Roerich Readings,зеркало,2,2,0.87,0.82,-0.0597,-0.067,early
 Roerich Readings,между,2,2,0.87,0.82,-0.0597,-0.067,early
+Roerich Readings,москва,2,2,0.87,0.82,-0.0597,-0.067,early
 Roerich Readings,реконструкция,2,2,0.87,0.82,-0.0597,-0.067,early
 Roerich Readings,речь,2,2,0.87,0.82,-0.0597,-0.067,early
 Roerich Readings,цикл,2,2,0.87,0.82,-0.0597,-0.067,early

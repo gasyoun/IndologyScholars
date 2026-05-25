@@ -18,6 +18,11 @@ def read(path):
     return Path(path).read_text(encoding="utf-8")
 
 
+def load_csv(path):
+    with Path(path).open("r", encoding="utf-8", newline="") as handle:
+        return list(csv.DictReader(handle))
+
+
 AUTHORITY_ID_FIELDS = {
     "orcid",
     "wikidata",
@@ -205,8 +210,8 @@ def main():
     talks_en_desc = f"{summary.get('total_presentations', 0)} participations across {summary.get('unique_presentations', 0)} unique talks"
     if index_html.count(talks_ru_desc) < 2 or talks_en_desc not in index_html:
         fail(errors, "index.html static and localized presentation counts are not synchronized with site_data summary")
-    if "Показатели статьи рассчитаны для аналитического подкорпуса" not in index_html:
-        fail(errors, "index.html missing the article-versus-expanded-catalogue scope notice")
+    if "Статья и сайт синхронизированы с расширенным корпусом" not in index_html:
+        fail(errors, "index.html missing the synchronized expanded-corpus notice")
 
     required = [
         "sitemap.xml",
@@ -231,6 +236,9 @@ def main():
         "analytics_output/field_provenance_biographical.csv",
         "analytics_output/field_provenance_authority.csv",
         "analytics_output/field_provenance_themes.csv",
+        "analytics_output/expanded_classification_deepseek.csv",
+        "analytics_output/expanded_gumilyov_elevated_audit.csv",
+        "analytics_output/meso_codes_deepseek.csv",
         "curation/verified_affiliation_spans.csv",
         "analytics_output/network_nodes.csv",
         "analytics_output/network_edges.csv",
@@ -260,6 +268,15 @@ def main():
     for path in required:
         if not Path(path).exists():
             fail(errors, f"Missing generated publication asset: {path}")
+
+    if Path("analytics_output/expanded_classification_deepseek.csv").exists():
+        classified = load_csv("analytics_output/expanded_classification_deepseek.csv")
+        presentation_total = int(summary.get("unique_presentations", 0))
+        if len(classified) != presentation_total:
+            fail(errors, "expanded DeepSeek classification is not complete for all unique presentations")
+        invalid_levels = [row for row in classified if row.get("gumilyov_level") not in {"1", "2", "3"}]
+        if invalid_levels:
+            fail(errors, "expanded DeepSeek classification contains an invalid Gumilyov level")
 
     if Path("sitemap.xml").exists():
         sitemap = read("sitemap.xml")

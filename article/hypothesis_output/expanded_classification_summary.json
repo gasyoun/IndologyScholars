@@ -1,0 +1,107 @@
+{
+  "prompt_version": "expanded-corpus-v1-2026-05-25",
+  "presentations": 1350,
+  "gumilyov_scale": {
+    "1": 1155,
+    "2": 185,
+    "3": 10
+  },
+  "gumilyov_by_series": {
+    "Zograf Readings": {
+      "1": 754,
+      "2": 116,
+      "3": 8
+    },
+    "Roerich Readings": {
+      "1": 401,
+      "2": 69,
+      "3": 2
+    }
+  },
+  "themes_by_series": {
+    "Zograf Readings": {
+      "philosophy": 189,
+      "literature": 195,
+      "religion": 205,
+      "linguistics": 87,
+      "history": 94,
+      "other": 8,
+      "art_archaeology": 46,
+      "ethnography": 49,
+      "tibetology": 3,
+      "pedagogy_applied": 2
+    },
+    "Roerich Readings": {
+      "history": 91,
+      "religion": 144,
+      "philosophy": 49,
+      "art_archaeology": 42,
+      "literature": 89,
+      "ethnography": 8,
+      "linguistics": 44,
+      "tibetology": 1,
+      "other": 4
+    }
+  },
+  "meso_counts": {
+    "buddhist_studies": 214,
+    "philosophy_epistemology": 107,
+    "vedic_studies": 79,
+    "comparative_analysis": 71,
+    "tibetology_himalaya": 69,
+    "epic_ramayana_mahabharata": 69,
+    "dravidology_south_india": 62,
+    "history_of_indology": 62,
+    "visual_material_culture": 59,
+    "ritual_studies": 53,
+    "bengal": 47,
+    "bhakti_vaishnava": 45,
+    "sanskrit_grammar_panini": 44,
+    "ethnography_performance": 44,
+    "literary_studies": 43,
+    "nepal_newar_kathmandu": 40,
+    "translation_reception": 39,
+    "manuscripts_epigraphy": 39,
+    "modern_society_politics": 35,
+    "colonial_encounters": 33,
+    "pali_early_buddhism": 31,
+    "china_mongolia_inner_asia": 28,
+    "museum_collections": 27,
+    "modern_literature": 26,
+    "expeditions": 24,
+    "etymology": 23,
+    "vaishnava": 18,
+    "yoga_ayurveda": 13,
+    "hindi_urdu_new_indo_aryan": 13,
+    "himalaya": 12,
+    "jain_studies": 10,
+    "cosmology": 10,
+    "roerich_studies": 9,
+    "metrics": 9,
+    "travel_history": 8,
+    "prosody": 8,
+    "bengal_bhakti_modernity": 8,
+    "life_cycle_rituals": 7,
+    "fieldwork": 6,
+    "new_indo_aryan_languages": 6,
+    "assam": 5,
+    "board_games": 5,
+    "english_literature": 3,
+    "nineteenth_century": 3,
+    "twentieth_century": 3,
+    "sikh_studies": 2,
+    "jain": 1,
+    "eighteenth_century": 1
+  },
+  "proposed_meso_counts": {
+    "sikh_studies": 2,
+    "proto_indian": 1,
+    "kashmiri_shaivism": 1,
+    "architecture_purana": 1,
+    "indian_mathematics": 1,
+    "corpus_linguistics": 1,
+    "advaita_vedanta": 1,
+    "trika": 1
+  },
+  "manual_overrides_applied": 8
+}
