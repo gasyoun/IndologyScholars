@@ -12,7 +12,7 @@
     <link rel="icon" href="/IndologyScholars/assets/favicon.svg" type="image/svg+xml">
     <link rel="manifest" href="/IndologyScholars/site.webmanifest">
     <meta name="theme-color" content="#0a0e1a">
-    <link rel="preload" href="site_data.json?v=1.8.1" as="fetch" crossorigin>
+    <link rel="preload" href="site_data.json?v=1.8.3" as="fetch" crossorigin>
     <meta name="keywords" content="Индология, Зографские чтения, Рериховские чтения, наука, востоковедение, ИВР РАН, ИВ РАН, МГУ, СПбГУ, статистика, научные доклады">
     <meta name="author" content="Dr. Mārcis Gasūns">
 
@@ -985,22 +985,22 @@
         <!-- Stats Dashboard Grid -->
         <section class="stats-grid" id="stats-dashboard">
             <div class="stat-card" id="card-scholars">
-                <div class="stat-num gradient-text" id="stat-scholars-count">220</div>
+                <div class="stat-num gradient-text" id="stat-scholars-count">289</div>
                 <div class="stat-label" id="stat-scholars-label">Уникальные ученые</div>
                 <div class="stat-desc" id="stat-scholars-desc">Дедуплицированные индологи и докладчики</div>
             </div>
             <div class="stat-card" id="card-talks">
-                <div class="stat-num gradient-text" id="stat-talks-count">899</div>
+                <div class="stat-num gradient-text" id="stat-talks-count">1377</div>
                 <div class="stat-label" id="stat-talks-label">Авторские участия</div>
-                <div class="stat-desc" id="stat-talks-desc">899 участий в 895 уникальных докладах</div>
+                <div class="stat-desc" id="stat-talks-desc">1377 участий в 1350 уникальных докладах</div>
             </div>
             <div class="stat-card" id="card-years">
-                <div class="stat-num gradient-text" id="stat-years-count">20</div>
+                <div class="stat-num gradient-text" id="stat-years-count">22</div>
                 <div class="stat-label" id="stat-years-label">Года исследований</div>
                 <div class="stat-desc" id="stat-years-desc">Период с 2004 по 2026 годы</div>
             </div>
             <div class="stat-card" id="card-overlap">
-                <div class="stat-num gradient-text" id="stat-overlap-count">38</div>
+                <div class="stat-num gradient-text" id="stat-overlap-count">40</div>
                 <div class="stat-label" id="stat-overlap-label">Ядро индологов</div>
                 <div class="stat-desc" id="stat-overlap-desc">Ученые, участвовавшие в обеих конференциях</div>
             </div>
@@ -1017,6 +1017,7 @@
             <a href="conferences/">Конференции</a>
             <a href="themes/">Темы</a>
             <a href="topics/">Сюжеты</a>
+            <a href="generations/">Поколения</a>
             <a href="gumilyov/">Гумилев</a>
             <a href="videos/">Видео</a>
             <a href="cities/">Города</a>
@@ -1174,9 +1175,10 @@
                     </div>
                 </div>
 
-                <!-- Scholar Age Distribution Chart -->
+                <!-- Scholar Generation Distribution Chart -->
                 <div class="chart-card">
-                    <h3 class="chart-title" id="chart-age-title">Демография: Возрастной состав исследователей (по году рождения)</h3>
+                    <h3 class="chart-title" id="chart-age-title">Поколения исследователей по году рождения</h3>
+                    <a class="query-link" id="generations-page-link" href="generations/">Поименный список поколений</a>
                     <div id="chart-age" style="height: 350px;">
                         <svg id="svg-age" width="100%" height="100%" viewBox="0 0 700 350" style="background: rgba(10, 14, 26, 0.4); border-radius: 8px;">
                             <!-- Dynamic SVG chart -->
@@ -1411,7 +1413,7 @@ CREATE TABLE presentation_person (
     <!-- Main Dynamic Application Script with Bilingual Localization (RU / EN) -->
     <script>
         // Kick off data fetch immediately (preload tag in <head> ensures it starts even earlier)
-        const _dataPromise = fetch('site_data.json?v=1.8.1').then(r => r.json());
+        const _dataPromise = fetch('site_data.json?v=1.8.3').then(r => r.json());
 
         // Language state
         let currentLang = 'ru';
@@ -1500,7 +1502,8 @@ CREATE TABLE presentation_person (
                 timeLabel: "Интервал",
                 chartGeoTitle: "Географическое представительство: Научные доклады по городам",
                 geoNoData: "Географические данные не указаны",
-                chartAgeTitle: "Демография: Возрастной состав исследователей (по году рождения)",
+                chartAgeTitle: "Поколения исследователей по году рождения",
+                generationsPageLink: "Поименный список поколений",
                 chartGenderTitle: "Гендерное представительство научного сообщества",
                 chartNetworkTitle: "Интерактивный граф научных связей (Коллаборации по секциям)",
                 netResetBtn: "Сбросить",
@@ -1599,7 +1602,8 @@ CREATE TABLE presentation_person (
                 timeLabel: "Interval",
                 chartGeoTitle: "Geographical Representation: Papers by Cities",
                 geoNoData: "Geographical data not specified",
-                chartAgeTitle: "Demographics: Scholar Age Distribution (by birth year)",
+                chartAgeTitle: "Scholar generations by birth decade",
+                generationsPageLink: "Named generation list",
                 chartGenderTitle: "Gender Representation in Indology Scholarship",
                 chartNetworkTitle: "Interactive Academic Collaboration Graph (Session Co-occurrence)",
                 netResetBtn: "Reset",
@@ -1670,6 +1674,7 @@ CREATE TABLE presentation_person (
             document.getElementById('insight-micro-text').textContent = t.insightMicroText;
             document.getElementById('insight-video-title').textContent = t.insightVideoTitle;
             document.getElementById('insight-video-text').textContent = t.insightVideoText;
+            document.getElementById('generations-page-link').textContent = t.generationsPageLink;
 
             // Navigation
             document.getElementById('tab-scholars').textContent = t.tabScholars;
@@ -2760,39 +2765,29 @@ CREATE TABLE presentation_person (
             });
         }
 
-        // Draw Interactive SVG Demographics (Age Group) Chart
+        // Draw birth-cohort generations rather than inferred career-age status.
         function renderAgeChart() {
             const svg = document.getElementById('svg-age');
             if (!svg) return;
             svg.innerHTML = '';
 
             const t = TRANSLATIONS[currentLang];
-            const ageStats = CONFERENCE_DATA.age_stats || { young: 0, mid_career: 0, senior: 0, elders: 0 };
-            
-            const ageLabels = {
-                young: { ru: "Молодые ученые (<35)", en: "Young Scholars (<35)" },
-                mid_career: { ru: "Средний возраст (35-50)", en: "Mid-Career (35-50)" },
-                senior: { ru: "Старшие ученые (50-70)", en: "Senior Scholars (50-70)" },
-                elders: { ru: "Почетные ученые (70+)", en: "Eminent Elders (70+)" }
-            };
-
-            const data = [
-                { key: "young", count: ageStats.young, label: ageLabels.young[currentLang] },
-                { key: "mid_career", count: ageStats.mid_career, label: ageLabels.mid_career[currentLang] },
-                { key: "senior", count: ageStats.senior, label: ageLabels.senior[currentLang] },
-                { key: "elders", count: ageStats.elders, label: ageLabels.elders[currentLang] }
-            ];
+            const data = (CONFERENCE_DATA.generation_stats || []).map(cohort => ({
+                key: cohort.code,
+                count: cohort.count,
+                label: currentLang === 'ru' ? cohort.label_ru : cohort.label_en
+            }));
 
             const width = 700;
             const height = 350;
-            const paddingLeft = 180;
+            const paddingLeft = 245;
             const paddingRight = 60;
-            const paddingTop = 50;
+            const paddingTop = 20;
             const paddingBottom = 40;
 
             const maxCount = Math.max(...data.map(d => d.count)) || 1;
-            const barHeight = 28;
-            const gap = 20;
+            const barHeight = 22;
+            const gap = 14;
 
             data.forEach((d, idx) => {
                 const y = paddingTop + idx * (barHeight + gap);

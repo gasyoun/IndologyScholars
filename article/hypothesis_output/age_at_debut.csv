@@ -1,73 +1,74 @@
 person_id,display_name,birth_year,first_year,age_at_debut,first_series,series_attended,total,zograf,roerich
-PERS_003adcfe,Псху Рузана Владимировна,1976,2007,31,Zograf,zograf_only,12,12,0
+PERS_003adcfe,Псху Рузана Владимировна,1976,2007,31,Zograf,zograf_only,19,19,0
 PERS_00c3b0cc,М.Б. Щербак,1998,2022,24,Zograf,zograf_only,1,1,0
-PERS_01aafd44,Сафина Наталья Алексеевна,1985,2018,33,Zograf,zograf_only,3,3,0
-PERS_05707a8e,М.Б.Загорулько,1965,2004,39,Zograf,zograf_only,1,1,0
-PERS_05d56645,Бабин Александр Николаевич,1990,2017,27,Roerich,both,10,4,6
+PERS_01aafd44,Сафина Наталья Алексеевна,1985,2016,31,Zograf,zograf_only,5,5,0
+PERS_05d56645,Бабин Александр Николаевич,1990,2017,27,Roerich,both,12,6,6
 PERS_0665f215,Шохин Владимир Кириллович,1951,2020,69,Zograf,both,5,3,2
 PERS_06ee047f,Ю. И. Елихина,1964,2012,48,Roerich,roerich_only,4,0,4
 PERS_07adc1e6,Лейтан Эдгар Зигфридович,1969,2023,54,Zograf,zograf_only,1,1,0
-PERS_088c4df7,Ю.Г. Атманова,1985,2015,30,Roerich,roerich_only,5,0,5
-PERS_0a2e5f24,В.В. Тишин,1984,2012,28,Roerich,roerich_only,2,0,2
-PERS_0c451d76,Лобанов Сергей Владимирович,1979,2012,33,Zograf,zograf_only,5,5,0
+PERS_088c4df7,Ю.Г. Атманова,1985,2013,28,Roerich,roerich_only,6,0,6
+PERS_0a2e5f24,В.В. Тишин,1984,2010,26,Roerich,roerich_only,3,0,3
+PERS_0c451d76,Лобанов Сергей Владимирович,1979,2012,33,Zograf,zograf_only,10,10,0
 PERS_0e0a154e,Титлин Лев Игоревич,1986,2012,26,Zograf,both,7,3,4
-PERS_0fd718a7,К. М. Воздиган,1984,2012,28,Zograf,zograf_only,3,3,0
-PERS_10547db9,Б. В. Загуменнов,1947,2006,59,Zograf,zograf_only,2,2,0
+PERS_0fd718a7,К. М. Воздиган,1984,2010,26,Zograf,zograf_only,6,6,0
+PERS_10547db9,Б. В. Загуменнов,1947,2006,59,Zograf,zograf_only,5,5,0
 PERS_1130c736,Серебряный Сергей Дмитриевич,1946,2020,74,Zograf,zograf_only,1,1,0
-PERS_11da326d,Тавастшерна Сергей Сергеевич,1969,2006,37,Zograf,both,20,8,12
-PERS_12125da9,Лысенко Виктория Георгиевна,1953,2004,51,Zograf,both,16,12,4
+PERS_11da326d,Тавастшерна Сергей Сергеевич,1969,2004,35,Zograf,both,29,17,12
+PERS_12125da9,Лысенко Виктория Георгиевна,1953,2004,51,Zograf,both,25,19,6
 PERS_147ab928,К.Д. Никольская,1976,2025,49,Roerich,roerich_only,1,0,1
 PERS_168a3a8b,Усенко Иван Сергеевич,2006,2026,20,Zograf,zograf_only,1,1,0
 PERS_180c5e5c,А. В. Арапов,1970,2014,44,Zograf,zograf_only,1,1,0
 PERS_18fcab2a,Блиндерман Радха Тимуровна,1990,2020,30,Zograf,zograf_only,2,2,0
-PERS_1a097e52,Парибок Андрей Всеволодович,1952,2006,54,Zograf,zograf_only,13,13,0
+PERS_1a097e52,Парибок Андрей Всеволодович,1952,2006,54,Zograf,zograf_only,17,17,0
 PERS_1c6fcce5,Кузина Елизавета Олеговна,1991,2016,25,Roerich,both,7,2,5
-PERS_1fa7cc0c,Дубянский Александр Михайлович,1941,2004,63,Zograf,both,14,7,7
+PERS_1fa7cc0c,Дубянский Александр Михайлович,1941,2004,63,Zograf,both,21,10,11
 PERS_2011b78d,А.В. Бондарев,1982,2021,39,Roerich,roerich_only,1,0,1
 PERS_2095dc59,Е.Г. Шалахов,1982,2024,42,Roerich,roerich_only,1,0,1
-PERS_22d87263,Костина Екатерина Александровна,1977,2013,36,Zograf,zograf_only,5,5,0
-PERS_23215083,М. Н. Русанов,1966,2004,38,Zograf,zograf_only,7,7,0
-PERS_23abae7d,Пушкарева Юлия Георгиевна,1955,2026,71,Zograf,zograf_only,1,1,0
+PERS_22d87263,Костина Екатерина Александровна,1977,2013,36,Zograf,zograf_only,7,7,0
+PERS_23215083,М. Н. Русанов,1966,2004,38,Zograf,zograf_only,10,10,0
 PERS_23f54085,Э. И. Введенская,1991,2019,28,Zograf,zograf_only,1,1,0
-PERS_260a598a,Пахомов Сергей Владимирович,1968,2007,39,Zograf,zograf_only,9,9,0
-PERS_26c3214a,Christian Lindtner,1953,2014,61,Zograf,zograf_only,1,1,0
+PERS_260a598a,Пахомов Сергей Владимирович,1968,2007,39,Zograf,zograf_only,15,15,0
 PERS_26ce5ec1,Нина Будзишевска,1985,2014,29,Zograf,zograf_only,1,1,0
-PERS_28317057,Т. А. Дубянская,1984,2004,20,Zograf,zograf_only,3,3,0
-PERS_287fe378,Рыбакова Анна Геннадьевна,1985,2019,34,Zograf,zograf_only,6,6,0
+PERS_28317057,Дубянская Татьяна Александровна,1984,2004,20,Zograf,zograf_only,5,5,0
+PERS_287fe378,Рыбакова Анна Геннадьевна,1985,2016,31,Zograf,zograf_only,10,10,0
 PERS_29607432,Лапшин Иван Евгеньевич,1988,2020,32,Zograf,zograf_only,1,1,0
-PERS_2a2e5602,Коровина Евгения Владимировна,1988,2019,31,Zograf,zograf_only,4,4,0
-PERS_2b7ca933,Е. В. Танонова,1980,2011,31,Zograf,zograf_only,1,1,0
-PERS_2c40b9b1,Н. В. Гуров,1936,2006,70,Zograf,zograf_only,2,2,0
+PERS_2a2e5602,Коровина Евгения Владимировна,1988,2019,31,Zograf,zograf_only,5,5,0
+PERS_2b7ca933,Танонова Елена Викторовна,1980,2011,31,Zograf,zograf_only,2,2,0
+PERS_2c40b9b1,Н. В. Гуров,1936,2004,68,Zograf,zograf_only,5,5,0
 PERS_2c9b38ec,С. В. Ватман,1959,2007,48,Zograf,zograf_only,1,1,0
-PERS_2e00cb36,О. Н. Меренкова,1985,2018,33,Zograf,zograf_only,1,1,0
+PERS_2e00cb36,Меренкова Ольга Николаевна,1985,2018,33,Zograf,zograf_only,2,2,0
 PERS_2e2b9553,Д.Д. Наймушина,2002,2025,23,Roerich,roerich_only,1,0,1
-PERS_2fd442aa,С. Ч. Офертас,1977,2015,38,Roerich,roerich_only,9,0,9
-PERS_3074a8e5,Терентьев Андрей Анатольевич,1948,2013,65,Zograf,zograf_only,2,2,0
-PERS_30b54681,Е. С. Бушуев,1988,2011,23,Zograf,zograf_only,1,1,0
-PERS_310b2911,Толчельников Иван Евгеньевич,2003,2025,22,Zograf,zograf_only,2,2,0
+PERS_2f26a47a,Т.Я.Елизаренкова,1929,2004,75,Zograf,zograf_only,1,1,0
+PERS_2fd442aa,С. Ч. Офертас,1977,2008,31,Roerich,roerich_only,14,0,14
+PERS_3009a9e0,А. И. Коган,1975,2010,35,Roerich,roerich_only,4,0,4
+PERS_3074a8e5,Терентьев Андрей Анатольевич,1948,2013,65,Zograf,zograf_only,5,5,0
+PERS_30b54681,Е. С. Бушуев,1988,2009,21,Zograf,zograf_only,3,3,0
+PERS_310b2911,Толчельников Иван Евгеньевич,2003,2024,21,Zograf,zograf_only,3,3,0
 PERS_3195408b,Д.Н. Ратушный,2005,2025,20,Roerich,roerich_only,1,0,1
-PERS_3357f25b,Скороходова Татьяна Григорьевна,1970,2011,41,Zograf,zograf_only,9,9,0
-PERS_34c0d384,М. Б. Павлова,1987,2014,27,Zograf,zograf_only,1,1,0
-PERS_35a30342,И. О. Негреев,1982,2018,36,Zograf,zograf_only,1,1,0
+PERS_3357f25b,Скороходова Татьяна Григорьевна,1970,2006,36,Zograf,zograf_only,18,18,0
+PERS_34c0d384,М. Б. Павлова,1987,2014,27,Zograf,zograf_only,2,2,0
+PERS_35a30342,И. О. Негреев,1982,2016,34,Zograf,zograf_only,3,3,0
 PERS_35c57654,Егорова Мария Александровна,1983,2025,42,Zograf,zograf_only,2,2,0
-PERS_36dabb79,А. Г. Гурия,1988,2007,19,Zograf,both,8,1,7
-PERS_37bb2d43,Покатилов Сергей Андреевич,1999,2025,26,Zograf,zograf_only,1,1,0
+PERS_36c30cf9,М.Б.Загорулько,1965,2004,39,Zograf,zograf_only,1,1,0
+PERS_36dabb79,А. Г. Гурия,1988,2007,19,Zograf,both,10,1,9
+PERS_37bb2d43,Покатилов Сергей Андреевич,1999,2024,25,Zograf,zograf_only,2,2,0
 PERS_37d557c2,Анисимова Дарья Дмитриевна,1997,2025,28,Zograf,zograf_only,2,2,0
-PERS_38c5f03f,Н.А. Железнова,1971,2018,47,Roerich,roerich_only,1,0,1
-PERS_3b196639,Гордийчук Николай Валентинович,1982,2016,34,Roerich,both,9,4,5
-PERS_3c202afd,Крапивина Раиса Николаевна,1953,2011,58,Zograf,both,4,3,1
-PERS_3c7d41ac,М.С. Фомин,1976,2012,36,Roerich,roerich_only,4,0,4
+PERS_37f98454,В. И. Рудой,1940,2006,66,Zograf,zograf_only,2,2,0
+PERS_38c5f03f,Н.А. Железнова,1971,2009,38,Roerich,roerich_only,4,0,4
+PERS_3b196639,Гордийчук Николай Валентинович,1982,2016,34,Roerich,both,10,5,5
+PERS_3c202afd,Крапивина Раиса Николаевна,1953,2004,51,Zograf,both,7,5,2
+PERS_3c7d41ac,М.С. Фомин,1976,2010,34,Roerich,roerich_only,6,0,6
 PERS_3d22e8d4,А. М. Стрелков,1965,2007,42,Zograf,zograf_only,1,1,0
 PERS_3d3b302d,Соболева Дарья Валерьевна,1989,2007,18,Zograf,zograf_only,3,3,0
 PERS_3d4df70f,Е. О. Акимушкина,1979,2012,33,Zograf,zograf_only,1,1,0
-PERS_3e105f43,Игнатьев Андрей Александрович,1974,2004,30,Zograf,zograf_only,12,12,0
+PERS_3e105f43,Игнатьев Андрей Александрович,1974,2004,30,Zograf,zograf_only,18,18,0
 PERS_3e38ff72,Д.А. Рожнова,2003,2024,21,Roerich,roerich_only,1,0,1
-PERS_3fd690ee,Е. Л. Комиссарук,1986,2018,32,Zograf,zograf_only,1,1,0
-PERS_40375fef,А.К. Васильев,1978,2012,34,Roerich,roerich_only,3,0,3
-PERS_40862f5e,Корнеева Наталья Афанасьевна,1972,2010,38,Zograf,both,15,10,5
-PERS_40f75cf9,Л.Г. Роман,1994,2022,28,Zograf,zograf_only,1,1,0
-PERS_41d6aa73,Воробьева Дарья Николаевна,1982,2015,33,Roerich,both,10,2,8
-PERS_42da4866,Г. Д. Стукалин,1992,2019,27,Zograf,zograf_only,1,1,0
+PERS_3fd690ee,Е. Л. Комиссарук,1986,2016,30,Zograf,zograf_only,3,3,0
+PERS_40375fef,А.К. Васильев,1978,2012,34,Roerich,roerich_only,4,0,4
+PERS_40862f5e,Корнеева Наталья Афанасьевна,1972,2008,36,Zograf,both,29,15,14
+PERS_40f75cf9,Роман Лилия Геннадьевна,1994,2022,28,Zograf,zograf_only,2,2,0
+PERS_41d6aa73,Воробьева Дарья Николаевна,1982,2013,31,Roerich,both,14,5,9
+PERS_42da4866,Г. Д. Стукалин,1992,2017,25,Zograf,zograf_only,2,2,0
 PERS_44440578,Грановская Хелена,1990,2026,36,Zograf,zograf_only,1,1,0
 PERS_45a76880,Д. А. Кораблин,1984,2021,37,Roerich,roerich_only,4,0,4
 PERS_467d4dbb,Клебанов А. А.,1982,2021,39,Zograf,zograf_only,1,1,0
@@ -75,147 +76,144 @@ PERS_47ad46f1,М. А. Родионов,1946,2011,65,Zograf,zograf_only,1,1,0
 PERS_4a0de87e,Белимова Влада Сергеевна,1984,2026,42,Zograf,zograf_only,1,1,0
 PERS_4ebb20aa,С. В. Кардинская,1968,2012,44,Zograf,zograf_only,1,1,0
 PERS_4fff9d16,Минаева Маргарита Денисовна,1999,2024,25,Roerich,both,3,1,2
-PERS_50c46233,Маретина Ксения Александровна,1982,2012,30,Zograf,zograf_only,2,2,0
-PERS_50d73711,Смирнитская Анна Александровна,1978,2018,40,Zograf,both,7,5,2
+PERS_50c46233,Маретина Ксения Александровна,1982,2012,30,Zograf,zograf_only,4,4,0
+PERS_50d73711,Смирнитская Анна Александровна,1978,2017,39,Zograf,both,9,7,2
 PERS_51524b11,Гладкова Анна Геннадьевна,1991,2025,34,Zograf,zograf_only,1,1,0
 PERS_51e0a171,А.А. Алешина,1984,2016,32,Roerich,roerich_only,1,0,1
-PERS_5228da95,В. В. Вертоградова,1933,2006,73,Zograf,both,13,1,12
+PERS_5228da95,В. В. Вертоградова,1933,2006,73,Zograf,both,17,1,16
 PERS_526da44f,Д.С. Шапошникова,1993,2015,22,Roerich,roerich_only,1,0,1
 PERS_52d3f72c,М.Б. Мейтарчиян,1960,2021,61,Roerich,roerich_only,2,0,2
-PERS_5331196d,Ковалевская Анна Петровна,1984,2020,36,Zograf,zograf_only,1,1,0
 PERS_554c138a,Г. Г. Хмуркин,1983,2015,32,Roerich,roerich_only,4,0,4
-PERS_56508328,Десницкая Евгения Алексеевна,1978,2006,28,Zograf,zograf_only,11,11,0
-PERS_587b08ec,М.В. Леонов,1977,2019,42,Roerich,roerich_only,2,0,2
-PERS_58b39545,Ренковская Евгения Алексеевна,1991,2020,29,Zograf,both,5,4,1
+PERS_56508328,Десницкая Евгения Алексеевна,1978,2006,28,Zograf,zograf_only,16,16,0
+PERS_587b08ec,Леонов Максим Владимирович,1977,2019,42,Roerich,both,4,2,2
+PERS_58b39545,Ренковская Евгения Алексеевна,1991,2019,28,Zograf,both,8,6,2
 PERS_58e18506,Соколова Ирина Александровна,1986,2026,40,Zograf,zograf_only,1,1,0
-PERS_5bbfea37,Т. Т. Скороходова,1970,2006,36,Zograf,zograf_only,1,1,0
-PERS_5d324297,К. П. Шрестха,1937,2012,75,Roerich,roerich_only,9,0,9
-PERS_5d34c947,Волошина Оксана Анатольевна,1974,2014,40,Zograf,zograf_only,8,8,0
-PERS_5e2a5a5c,Столярова Екатерина Владимировна,1972,2018,46,Zograf,zograf_only,4,4,0
-PERS_5ed752d9,Б. У. Китинов,1966,2016,50,Roerich,roerich_only,9,0,9
+PERS_5d34c947,Волошина Оксана Анатольевна,1974,2014,40,Zograf,zograf_only,9,9,0
+PERS_5e2a5a5c,Столярова Екатерина Владимировна,1972,2016,44,Zograf,zograf_only,7,7,0
+PERS_5ed752d9,Б. У. Китинов,1966,2016,50,Roerich,roerich_only,10,0,10
 PERS_5f6689e8,Дмитриева Виктория Алексеевна,1973,2025,52,Zograf,zograf_only,1,1,0
 PERS_5f6fa17b,А. М. Пахомова,1992,2021,29,Roerich,roerich_only,2,0,2
-PERS_61202bf3,Ю. М. Алиханова,1936,2004,68,Zograf,both,11,5,6
+PERS_61202bf3,Ю. М. Алиханова,1936,2004,68,Zograf,both,15,7,8
 PERS_61de659d,Белов Владимир Николаевич,1960,2020,60,Zograf,zograf_only,1,1,0
-PERS_6441d568,Соболева Елена Станиславовна,1956,2020,64,Zograf,zograf_only,3,3,0
-PERS_6578b52d,Е. В. Тюлина,1966,2012,46,Roerich,roerich_only,12,0,12
+PERS_6441d568,Соболева Елена Станиславовна,1956,2013,57,Zograf,zograf_only,8,8,0
+PERS_6578b52d,Е. В. Тюлина,1966,2008,42,Roerich,roerich_only,16,0,16
 PERS_68270eaf,Э.В. Галимова,1978,2025,47,Roerich,roerich_only,1,0,1
-PERS_68e9019d,Малютин Иван Иванович,1995,2023,28,Zograf,zograf_only,1,1,0
-PERS_69750b7c,В. Н. Мазурина,1946,2013,67,Zograf,zograf_only,3,3,0
+PERS_68e9019d,Малютин Иван Иванович,1995,2023,28,Zograf,zograf_only,2,2,0
+PERS_69750b7c,В. Н. Мазурина,1946,2012,66,Zograf,zograf_only,4,4,0
 PERS_6a165aa7,К.В. Хазизова,1982,2025,43,Roerich,roerich_only,1,0,1
-PERS_6ae5c779,Фивейская А. В.,1993,2020,27,Roerich,both,2,1,1
+PERS_6ae5c779,Фивейская А. В.,1993,2020,27,Roerich,both,3,2,1
 PERS_6b867946,Е. В. Смирнова,1980,2014,34,Zograf,zograf_only,1,1,0
-PERS_6e211759,Иванов Владимир Павлович,1949,2012,63,Zograf,zograf_only,4,4,0
+PERS_6e211759,Иванов Владимир Павлович,1949,2012,63,Zograf,both,6,5,1
 PERS_6f89f9c1,Е. Р. Крючкова,1948,2006,58,Zograf,zograf_only,1,1,0
-PERS_72506535,Крылова Анастасия Сергеевна,1985,2020,35,Zograf,both,7,4,3
-PERS_7542d270,Демченко Максим Борисович,1985,2018,33,Zograf,zograf_only,8,8,0
+PERS_72506535,Крылова Анастасия Сергеевна,1985,2019,34,Zograf,both,10,7,3
+PERS_7542d270,Демченко Максим Борисович,1985,2017,32,Zograf,zograf_only,10,10,0
 PERS_7700f517,Д. О. Парамонов,1975,2010,35,Zograf,zograf_only,2,2,0
 PERS_7d6f456c,Мотылёва Вера Леонидовна,1965,2026,61,Zograf,zograf_only,1,1,0
 PERS_7da0afff,К.А. Демичев,1989,2012,23,Roerich,roerich_only,2,0,2
-PERS_7eb0dc30,Зимина Татьяна Александровна,1968,2013,45,Zograf,zograf_only,5,5,0
+PERS_7eb0dc30,Зимина Татьяна Александровна,1968,2013,45,Zograf,zograf_only,8,8,0
 PERS_7efcddc6,Н.А. Брылёва,1981,2024,43,Roerich,roerich_only,1,0,1
-PERS_7f908d49,Стрельцова Лилия Александровна,1986,2012,26,Zograf,zograf_only,4,4,0
-PERS_8108c314,Ерченков Олег Николаевич,1971,2012,41,Zograf,zograf_only,4,4,0
-PERS_829c1de5,Васильков Ярослав Владимирович,1943,2006,63,Zograf,zograf_only,12,12,0
-PERS_8516d1e4,Гасунс Марцис Юрьевич,1983,2006,23,Zograf,both,6,4,2
-PERS_856eb5c6,Vishnu Shukla,1991,2020,29,Zograf,zograf_only,1,1,0
+PERS_7f908d49,Стрельцова Лилия Александровна,1986,2012,26,Zograf,zograf_only,6,6,0
+PERS_8108c314,Ерченков Олег Николаевич,1971,2009,38,Zograf,zograf_only,5,5,0
+PERS_829c1de5,Васильков Ярослав Владимирович,1943,2004,61,Zograf,both,20,19,1
+PERS_8516d1e4,Гасунс Марцис Юрьевич,1983,2006,23,Zograf,both,8,6,2
 PERS_874cbfb7,Шарапова А. В.,1992,2021,29,Zograf,zograf_only,1,1,0
 PERS_88e5311f,М.В. Босхомджиев,1991,2025,34,Roerich,roerich_only,1,0,1
-PERS_8df3730a,Донченко Сергей Сергеевич,1985,2013,28,Zograf,zograf_only,3,3,0
+PERS_8a8c5d8b,В. М. Шелкович,1949,2006,57,Zograf,zograf_only,1,1,0
+PERS_8df3730a,Донченко Сергей Сергеевич,1985,2010,25,Zograf,zograf_only,8,8,0
 PERS_8df81b6d,Лужинская Полина Александровна,2002,2025,23,Zograf,zograf_only,2,2,0
-PERS_8e117242,Е. А. Юдицкая,1987,2012,25,Roerich,both,10,3,7
+PERS_8e117242,Е. А. Юдицкая,1987,2010,23,Roerich,both,12,3,9
 PERS_900efc73,Зевацкий Тимофей Юрьевич,2002,2025,23,Zograf,zograf_only,1,1,0
-PERS_91b473b1,Челнокова Анна Витальевна,1971,2011,40,Zograf,zograf_only,5,5,0
-PERS_92868e4f,Д. И. Жутаев,1969,2006,37,Zograf,both,10,2,8
-PERS_92f293f8,П. В. Хрущева,1985,2011,26,Zograf,zograf_only,5,5,0
+PERS_91b473b1,Челнокова Анна Витальевна,1971,2008,37,Zograf,zograf_only,10,10,0
+PERS_92868e4f,Д. И. Жутаев,1969,2006,37,Zograf,both,15,3,12
+PERS_92f293f8,П. В. Хрущева,1985,2011,26,Zograf,zograf_only,7,7,0
 PERS_92f41884,Касым Софья Васильевна,1980,2026,46,Zograf,zograf_only,1,1,0
 PERS_9366fe2c,Крыштоп Людмила Эдуардовна,1988,2020,32,Zograf,zograf_only,1,1,0
 PERS_936e1165,Файбушевич Светлана Ивановна,1980,2026,46,Zograf,zograf_only,1,1,0
-PERS_9374fd12,Е. Г. Вырщиков,1978,2012,34,Roerich,roerich_only,12,0,12
-PERS_93e2effb,Комиссаров Дмитрий Алексеевич,1977,2018,41,Zograf,both,5,4,1
+PERS_9374fd12,Е. Г. Вырщиков,1978,2008,30,Roerich,roerich_only,16,0,16
+PERS_93e2effb,Комиссаров Дмитрий Алексеевич,1977,2016,39,Zograf,both,10,9,1
 PERS_94aa5d0a,Г.И. Чернавин,1987,2025,38,Roerich,roerich_only,1,0,1
 PERS_94f33410,Застрожнова Евгения Григорьевна,1985,2026,41,Zograf,zograf_only,1,1,0
-PERS_96b8b195,М. Н. Боголюбов,1918,2006,88,Zograf,zograf_only,1,1,0
-PERS_9a855a7b,Альбедиль Маргарита Федоровна,1946,2011,65,Zograf,zograf_only,10,10,0
-PERS_9ad66151,Д. Н. Лелюхин,1956,2004,48,Zograf,both,6,5,1
-PERS_9bf51055,В. М. Шелкович,1949,2006,57,Zograf,zograf_only,1,1,0
+PERS_96b8b195,М. Н. Боголюбов,1918,2004,86,Zograf,zograf_only,2,2,0
+PERS_9a855a7b,Альбедиль Маргарита Федоровна,1946,2004,58,Zograf,zograf_only,19,19,0
+PERS_9ad66151,Д. Н. Лелюхин,1956,2004,48,Zograf,both,11,6,5
 PERS_9ddf9210,С.П. Нестеркин,1965,2025,60,Roerich,roerich_only,1,0,1
-PERS_9e9c9566,Лекарева Ева Павловна,1999,2025,26,Zograf,zograf_only,2,2,0
-PERS_9f398436,Куликов Леонид Игоревич,1964,2018,54,Zograf,both,7,4,3
-PERS_a0264ac5,Бурмистров Сергей Леонидович,1970,2013,43,Zograf,zograf_only,9,9,0
+PERS_9e9c9566,Лекарева Ева Павловна,1999,2023,24,Zograf,zograf_only,4,4,0
+PERS_9f398436,Куликов Леонид Игоревич,1964,2015,51,Zograf,both,8,5,3
+PERS_a0264ac5,Бурмистров Сергей Леонидович,1970,2018,48,Zograf,zograf_only,9,9,0
 PERS_a0f3d86d,Сергеева Варвара Алексеевна,2006,2026,20,Zograf,zograf_only,1,1,0
-PERS_a1484b38,Кавалевская А. П.,1984,2021,37,Zograf,zograf_only,1,1,0
+PERS_a1484b38,Ковалевская Анна Петровна,1984,2020,36,Zograf,zograf_only,2,2,0
 PERS_a638a4b3,Федорова Наталья Леонидовна,1982,2026,44,Zograf,zograf_only,1,1,0
-PERS_a84aedaa,Шомахмадов Сафарали Хайбуллоевич,1976,2011,35,Zograf,zograf_only,6,6,0
+PERS_a84aedaa,Шомахмадов Сафарали Хайбуллоевич,1976,2009,33,Zograf,zograf_only,8,8,0
 PERS_a8983673,Н.Л. Вигель,1967,2024,57,Roerich,roerich_only,1,0,1
-PERS_a901d460,М. А. Фаградян,1994,2019,25,Zograf,zograf_only,1,1,0
-PERS_aebd34a2,А. И. Коган,1975,2017,42,Roerich,roerich_only,3,0,3
+PERS_a901d460,М. А. Фаградян,1994,2016,22,Zograf,zograf_only,2,2,0
 PERS_af811d47,Корнеева Татьяна Георгиевна,1988,2020,32,Zograf,zograf_only,1,1,0
 PERS_b2c121e9,Е. Н. Успенская,1957,2006,49,Zograf,zograf_only,3,3,0
 PERS_b5dd77b1,А.В. Мрачковская,2003,2025,22,Roerich,roerich_only,1,0,1
-PERS_b62a9567,А. Ю. Курочкин,1968,2018,50,Zograf,zograf_only,2,2,0
+PERS_b62a9567,А. Ю. Курочкин,1968,2017,49,Zograf,zograf_only,5,5,0
 PERS_b76851a7,Митруев Б. Л.,1977,2021,44,Zograf,zograf_only,2,2,0
 PERS_b881461b,Яковлева Мария Николаевна,1989,2019,30,Zograf,zograf_only,3,3,0
-PERS_ba81468a,Ю. Г. Кокова,1955,2006,51,Zograf,zograf_only,3,3,0
-PERS_bc97fb65,Краснодембская Нина Георгиевна,1939,2011,72,Zograf,zograf_only,6,6,0
+PERS_b8bade8d,К. П. Шрестха,1937,2008,71,Roerich,roerich_only,12,0,12
+PERS_ba81468a,Ю. Г. Кокова,1955,2004,49,Zograf,zograf_only,8,8,0
+PERS_bc97fb65,Краснодембская Нина Георгиевна,1939,2008,69,Zograf,zograf_only,14,14,0
 PERS_bcaec2d8,Дружинин Владимир Юрьевич,1986,2020,34,Zograf,zograf_only,3,3,0
 PERS_bd77e495,Г.Б. Корнеев,1988,2025,37,Roerich,roerich_only,1,0,1
 PERS_bdaaf440,Е.В.Слинько,1972,2004,32,Zograf,zograf_only,1,1,0
-PERS_bf91d4b8,Ю. А. Уймина,1988,2018,30,Zograf,zograf_only,2,2,0
+PERS_bf91d4b8,Ю. А. Уймина,1988,2017,29,Zograf,zograf_only,4,4,0
 PERS_c2ffc606,Драчук Андрей Олегович,1991,2026,35,Zograf,zograf_only,1,1,0
 PERS_c31236d2,Ю. Е. Березкин,1946,2011,65,Zograf,zograf_only,2,2,0
-PERS_c48611e0,Островская Елена Петровна,1950,2007,57,Zograf,zograf_only,10,10,0
-PERS_c52dfaa0,Цветкова Светлана Олеговна,1978,2007,29,Zograf,both,22,10,12
-PERS_c5677a3f,А. В. Зорин,1978,2006,28,Zograf,zograf_only,7,7,0
+PERS_c48611e0,Островская Елена Петровна,1950,2006,56,Zograf,zograf_only,16,16,0
+PERS_c52dfaa0,Цветкова Светлана Олеговна,1978,2007,29,Zograf,both,27,15,12
+PERS_c5677a3f,А. В. Зорин,1978,2006,28,Zograf,zograf_only,12,12,0
 PERS_c582889e,И.Б. Иткин,1973,2025,52,Roerich,roerich_only,1,0,1
 PERS_c6bbcef3,Битинайте Елена Алексеевна,1985,2018,33,Zograf,zograf_only,5,5,0
 PERS_cac87738,Н. В. Гузеватая,1997,2019,22,Zograf,zograf_only,1,1,0
-PERS_cb52ebc2,Лемешкина Ксения Вячеславовна,1985,2020,35,Zograf,zograf_only,3,3,0
-PERS_cb967ae4,Harjender Singh Chaudhary,1970,2026,56,Zograf,zograf_only,1,1,0
+PERS_cb52ebc2,Лемешкина Ксения Вячеславовна,1985,2020,35,Zograf,zograf_only,4,4,0
 PERS_cca8f93d,В.М. Немчинов,1953,2024,71,Roerich,roerich_only,2,0,2
-PERS_cdbd7a15,C. В. Кулланда,1954,2011,57,Zograf,both,2,1,1
+PERS_cdbd7a15,С.В. Кулланда,1954,2008,54,Roerich,roerich_only,4,0,4
 PERS_ce100d3f,Мария Шилинскене,1982,2014,32,Zograf,zograf_only,1,1,0
-PERS_ced3d7b4,Молина Анна Вениаминовна,1999,2024,25,Roerich,both,3,1,2
+PERS_ced3d7b4,Молина Анна Вениаминовна,1999,2024,25,Roerich,both,4,2,2
 PERS_cfb92c5f,Уланский Евгений Александрович,1981,2019,38,Zograf,both,7,4,3
 PERS_d01427ca,Бещук Юлия Владимировна,1971,2026,55,Zograf,zograf_only,1,1,0
-PERS_d218805b,В. Ю. Крюкова,1968,2012,44,Zograf,zograf_only,3,3,0
-PERS_d2559ba1,Е. С. Лепехова,1978,2012,34,Roerich,roerich_only,6,0,6
+PERS_d218805b,В. Ю. Крюкова,1968,2009,41,Zograf,zograf_only,5,5,0
+PERS_d2559ba1,Е. С. Лепехова,1978,2009,31,Roerich,roerich_only,8,0,8
 PERS_d4c2cc5e,Т.В. Лучина,1998,2024,26,Roerich,roerich_only,2,0,2
-PERS_d98da899,Рыжакова Светлана Игоревна,1970,2004,34,Zograf,both,19,15,4
-PERS_da862dde,Ю. И. Дробышев,1966,2015,49,Roerich,roerich_only,11,0,11
+PERS_d98da899,Рыжакова Светлана Игоревна,1970,2004,34,Zograf,both,26,21,5
+PERS_da862dde,Ю. И. Дробышев,1966,2008,42,Roerich,roerich_only,15,0,15
 PERS_db046be0,Сабирова Римма Наилевна,1979,2018,39,Zograf,zograf_only,7,7,0
-PERS_db0a826b,И.Н. Комарова,1932,2012,80,Roerich,roerich_only,4,0,4
-PERS_dd7de77e,Е. К. Бросалина,1931,2006,75,Zograf,zograf_only,5,5,0
-PERS_de59a2bc,Г.В. Шарыгин,1987,2012,25,Roerich,roerich_only,1,0,1
+PERS_db0a826b,И. Н. Комарова,1932,2010,78,Roerich,roerich_only,5,0,5
+PERS_dd7de77e,Е. К. Бросалина,1931,2004,73,Zograf,zograf_only,11,11,0
+PERS_de59a2bc,Г.В. Шарыгин,1987,2010,23,Roerich,roerich_only,2,0,2
 PERS_dfaf6803,Я.А. Борисов,1993,2016,23,Roerich,roerich_only,1,0,1
 PERS_e1d622e5,С.Ф. Мажитов,1964,2012,48,Roerich,roerich_only,1,0,1
-PERS_e1dd6b3e,Лидова Наталья Ростиславовна,1954,2010,56,Zograf,both,13,6,7
+PERS_e1dd6b3e,Лидова Наталья Ростиславовна,1954,2008,54,Zograf,both,16,8,8
 PERS_e30ad8b7,Д.С. Гавриков,1985,2022,37,Zograf,zograf_only,1,1,0
-PERS_e31ca12d,Вечерина Ольга Павловна,1960,2014,54,Zograf,both,13,6,7
+PERS_e31ca12d,Вечерина Ольга Павловна,1960,2014,54,Zograf,both,15,8,7
 PERS_e4aab278,Возчиков Дмитрий Викторович,1989,2026,37,Zograf,zograf_only,1,1,0
-PERS_e5a5ac24,С. Л. Невелева,1928,2006,78,Zograf,zograf_only,2,2,0
-PERS_e72d4c09,Е. Д. Огнева,1944,2012,68,Roerich,both,9,1,8
-PERS_e9545a0b,А. М. Шустова,1964,2012,48,Roerich,roerich_only,12,0,12
+PERS_e5a5ac24,С. Л. Невелева,1928,2004,76,Zograf,zograf_only,6,6,0
+PERS_e72d4c09,Е. Д. Огнева,1944,2008,64,Roerich,both,13,1,12
+PERS_e8396809,Vishnu Shukla,1991,2020,29,Zograf,zograf_only,1,1,0
+PERS_e9545a0b,А. М. Шустова,1964,2009,45,Roerich,roerich_only,15,0,15
 PERS_e96139bd,Коробов Владимир Борисович,1957,2020,63,Zograf,zograf_only,1,1,0
 PERS_ea44fd14,А. Г. Люлина,1987,2017,30,Roerich,roerich_only,9,0,9
-PERS_ebb6d156,А. В. Ложкина,1992,2015,23,Roerich,both,6,1,5
+PERS_ebb6d156,А. В.  Ложкина,1992,2013,21,Roerich,both,9,3,6
 PERS_ecdfe667,Е.О. Новосёлова,1997,2023,26,Roerich,roerich_only,1,0,1
 PERS_ed83f502,Т.П. Селиванова,1955,2015,60,Roerich,roerich_only,1,0,1
 PERS_ee3448c3,В.В. Деменова,1977,2012,35,Roerich,roerich_only,1,0,1
 PERS_efc88709,Канаева Наталия Алексеевна,1953,2013,60,Zograf,both,6,3,3
-PERS_f074f69f,Александрова Наталия Владимировна,1965,2012,47,Roerich,both,20,9,11
-PERS_f19cd8a1,Котин Игорь Юрьевич,1968,2011,43,Zograf,zograf_only,6,6,0
+PERS_f074f69f,Александрова Наталия Владимировна,1965,2008,43,Roerich,both,27,12,15
+PERS_f19cd8a1,Котин Игорь Юрьевич,1968,2009,41,Zograf,zograf_only,11,11,0
 PERS_f1a308b7,Абинякин Владимир Александрович,1994,2026,32,Zograf,zograf_only,1,1,0
 PERS_f1f2471d,М.М. Игнатова,2000,2025,25,Roerich,roerich_only,1,0,1
-PERS_f2fef030,Мехакян Арег Гайкович,1978,2007,29,Zograf,both,15,3,12
-PERS_f56c5a7e,Жукова Любовь Евгеньевна,1999,2022,23,Zograf,zograf_only,3,3,0
+PERS_f2fef030,Мехакян Арег Гайкович,1978,2007,29,Zograf,both,20,5,15
+PERS_f3cf67c6,Harjender Singh Chaudhary,1970,2026,56,Zograf,zograf_only,1,1,0
+PERS_f56c5a7e,Жукова Любовь Евгеньевна,1999,2022,23,Zograf,zograf_only,4,4,0
 PERS_f5a69b65,Кройцер Светлана Александровна,1986,2025,39,Zograf,zograf_only,1,1,0
-PERS_f5b8b340,Вигасин Алексей Алексеевич,1946,2006,60,Zograf,both,5,3,2
+PERS_f5b8b340,Вигасин Алексей Алексеевич,1946,2006,60,Zograf,both,7,3,4
 PERS_f619aeed,А.Д. Цендина,1954,2025,71,Roerich,roerich_only,1,0,1
 PERS_f82b6a8e,Сенина Наталья Викторовна,1984,2025,41,Zograf,zograf_only,1,1,0
-PERS_f8ab5755,Оранская Татьяна Иосифовна,1950,2010,60,Zograf,zograf_only,6,6,0
-PERS_f940c5b3,Г. В. Стрелкова,1958,2004,46,Zograf,zograf_only,3,3,0
-PERS_fb25c80f,Ермакова Татьяна Викторовна,1952,2007,55,Zograf,zograf_only,8,8,0
+PERS_f8ab5755,Оранская Татьяна Иосифовна,1950,2010,60,Zograf,zograf_only,7,7,0
+PERS_f940c5b3,Г. В. Стрелкова,1958,2004,46,Zograf,zograf_only,5,5,0
+PERS_fb25c80f,Ермакова Татьяна Викторовна,1952,2007,55,Zograf,zograf_only,15,15,0
 PERS_fb73fb38,Кешарпу Екатерина Витальевна,1993,2026,33,Zograf,zograf_only,1,1,0
-PERS_fc976255,Э.Н. Комаров,1927,2012,85,Roerich,roerich_only,1,0,1
+PERS_fc976255,Э.Н. Комаров,1927,2010,83,Roerich,roerich_only,2,0,2
 PERS_fe03c926,И.А. Карышева,1981,2015,34,Roerich,roerich_only,1,0,1

@@ -21,7 +21,10 @@ sys.stderr.reconfigure(encoding="utf-8")
 
 ROOT = Path(__file__).resolve().parents[1]
 DB = ROOT / "conferences.db"
-ARTICLE = ROOT / "article" / "ppv_draft.md"
+ARTICLES = [
+    ROOT / "article" / "ppv_submission_article.md",
+    ROOT / "article" / "ppv_draft.md",
+]
 OUT = ROOT / "article" / "hypothesis_output"
 
 
@@ -190,26 +193,17 @@ def build_snapshot() -> dict[str, object]:
     return snapshot
 
 
-def stale_candidates(article_text: str) -> list[dict[str, object]]:
+def stale_candidates(article_path: Path, article_text: str, snapshot: dict[str, object]) -> list[dict[str, object]]:
+    total = snapshot["total"]
+    series = snapshot["series"]
     replacements = {
-        "226": "220",
-        "171": "167",
-        "94": "91",
-        "39": "38",
-        "30.9": "31.9",
-        "23.4": "24.0",
-        "46.2": "43.7",
-        "39.4": "38.5",
-        "53.8": "56.3",
-        "60.6": "61.5",
-        "152": "148",
-        "25.0": "25.7",
-        "42.8": "39.9",
-        "57.2": "60.1",
-        "0.450": "0.444",
-        "0.459": "0.470",
-        "0.465": "0.461",
-        "0.487": "0.510",
+        "220": str(total["unique_scholars"]),
+        "895": str(total["presentations"]),
+        "899": str(total["author_participations"]),
+        "167": str(series["Zograf"]["unique_scholars"]),
+        "540": str(series["Zograf"]["presentations"]),
+        "544": str(series["Zograf"]["author_participations"]),
+        "129": str(total["zograf_only"]),
     }
     allowed_contexts = (
         "061.3:94(540)",
@@ -223,6 +217,7 @@ def stale_candidates(article_text: str) -> list[dict[str, object]]:
         for old, new in replacements.items():
             if re.search(rf"(?<![\d.,]){re.escape(old)}(?![\d.,])", line):
                 findings.append({"line": line_no, "old": old, "suggested": new, "text": line.strip()})
+                findings[-1]["file"] = article_path.name
     return findings
 
 
@@ -284,7 +279,7 @@ def write_outputs(snapshot: dict[str, object], findings: list[dict[str, object]]
     if findings:
         for item in findings:
             lines.append(
-                f"- Line {item['line']}: `{item['old']}` -> `{item['suggested']}`? {item['text']}"
+                f"- {item['file']}, line {item['line']}: `{item['old']}` -> `{item['suggested']}`? {item['text']}"
             )
     else:
         lines.append("- No candidate stale mentions found.")
@@ -294,8 +289,12 @@ def write_outputs(snapshot: dict[str, object], findings: list[dict[str, object]]
 
 def main() -> None:
     snapshot = build_snapshot()
-    article_text = ARTICLE.read_text(encoding="utf-8")
-    findings = stale_candidates(article_text)
+    findings = []
+    for article_path in ARTICLES:
+        if article_path.exists():
+            findings.extend(
+                stale_candidates(article_path, article_path.read_text(encoding="utf-8"), snapshot)
+            )
     write_outputs(snapshot, findings)
     print(f"Wrote {OUT / 'ppv_numbers_snapshot.md'}")
     print(f"Wrote {OUT / 'ppv_numbers_snapshot.json'}")

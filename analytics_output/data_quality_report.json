@@ -1,25 +1,25 @@
 {
   "schema_version": "1.0.0",
-  "generated": "2026-05-24",
+  "generated": "2026-05-25",
   "build": {
     "source": "IndologyScholars",
-    "pipeline_version": "2026-05-21",
+    "pipeline_version": "2026-05-24",
     "generator": "generate_publication_pages.py"
   },
   "summary": {
-    "total_scholars": 220,
-    "total_presentations": 899,
-    "unique_presentations": 895,
-    "author_participations": 899,
+    "total_scholars": 289,
+    "total_presentations": 1377,
+    "unique_presentations": 1350,
+    "author_participations": 1377,
     "total_events": 40,
-    "years_covered": 20,
+    "years_covered": 22,
     "start_year": 2004,
     "end_year": 2026,
-    "overlap_scholars": 38,
-    "zograf_only_scholars": 129,
-    "roerich_only_scholars": 53,
-    "person_rows": 220,
-    "presentation_rows": 895,
+    "overlap_scholars": 40,
+    "zograf_only_scholars": 183,
+    "roerich_only_scholars": 66,
+    "person_rows": 289,
+    "presentation_rows": 1350,
     "event_rows": 40
   },
   "checks": [
@@ -55,8 +55,8 @@
       "id": "duplicate_full_names",
       "label": "Duplicate full Russian names after normalization",
       "severity": "warning",
-      "count": 3,
-      "status": "review"
+      "count": 0,
+      "status": "pass"
     },
     {
       "id": "latin_initials",
@@ -74,26 +74,12 @@
         "title": "Тема уточняется"
       }
     ],
-    "duplicate_full_names": [
-      {
-        "full_name_ru": "Кавалевская Анна Петровна",
-        "people": 2
-      },
-      {
-        "full_name_ru": "Кокова Юлия Георгиевна",
-        "people": 2
-      },
-      {
-        "full_name_ru": "Скороходова Татьяна Григорьевна",
-        "people": 2
-      }
-    ],
     "latin_initials": [
       {
-        "person_id": "PERS_cdbd7a15",
-        "display_name": "C. В. Кулланда",
-        "full_name_ru": "Кулланда Сергей Всеволодович",
-        "normalized_key": "кулланда с в"
+        "person_id": "PERS_f2a6e31a",
+        "display_name": "A. Х. Шoмaxмадов",
+        "full_name_ru": null,
+        "normalized_key": "шoмaxмадов а х"
       }
     ]
   }

@@ -46,6 +46,7 @@ CITY_LINK_ALIASES = {
     "пенза": "Пенза",
     "казань": "Казань",
     "краснодар": "Краснодар",
+    "обнинск": "Обнинск",
     "новосибирск": "Новосибирск",
     "улан-удэ": "Улан-Удэ",
     "элиста": "Элиста",
@@ -631,6 +632,19 @@ def render_profile(scholar, related, authority, meso_by_presentation, meso_items
         series_participation_line(scholar, name_ru, "Зографские чтения", "zograf_talks", "zograf_first", "zograf_last")
         + series_participation_line(scholar, name_ru, "Рериховские чтения", "roerich_talks", "roerich_first", "roerich_last")
     )
+    generation_html = ""
+    if scholar.get("generation_code"):
+        generation_html = (
+            f'<article class="card"><strong>Поколение</strong>'
+            f'<div class="metric"><a href="../generations/#{esc(scholar["generation_code"])}">{esc(scholar.get("generation_label_ru"))}</a></div>'
+            f'<div class="meta">Когорта по году рождения</div></article>'
+        )
+    else:
+        generation_html = (
+            '<article class="card"><strong>Поколение</strong>'
+            '<div class="metric"><a href="../generations/#unknown">Год рождения не установлен</a></div>'
+            '<div class="meta">Требуется биографическая верификация</div></article>'
+        )
 
     related_cards = []
     for relation in related:
@@ -693,6 +707,7 @@ def render_profile(scholar, related, authority, meso_by_presentation, meso_items
             <article class="card"><strong>Активность</strong><div class="metric">{esc(describe_year_span(scholar.get("first_year"), scholar.get("last_year")))}</div><div class="meta">{esc(activity_label(scholar))}</div></article>
             <article class="card"><strong>Рубрика</strong><div class="metric"><a href="../{theme_path(theme_code)}">{esc(profile_label)}</a></div></article>
             <article class="card"><strong>Площадки</strong><div class="meta">{series_html}</div></article>
+            {generation_html}
         </section>
 
         <h2>Аффилиации</h2>

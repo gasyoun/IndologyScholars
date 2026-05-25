@@ -7,78 +7,78 @@
 <text x="582.0" y="50.0" class="axis" text-anchor="end">0</text>
 <text x="260.0" y="50.0" class="axis" text-anchor="start" font-weight="700">Рерих</text>
 <text x="920.0" y="50.0" class="axis" text-anchor="end" font-weight="700">Зограф</text>
-<line x1="590.0" y1="82.0" x2="418.1" y2="82.0" stroke="#b8554b" stroke-width="8"/>
-<text x="408.1" y="86.0" class="axis" text-anchor="end" font-weight="700">храм</text>
-<text x="938.0" y="86.0" class="label" text-anchor="start">3 / 8</text>
-<line x1="590.0" y1="106.0" x2="412.2" y2="106.0" stroke="#b8554b" stroke-width="8"/>
-<text x="402.2" y="110.0" class="axis" text-anchor="end" font-weight="700">монгольский</text>
-<text x="938.0" y="110.0" class="label" text-anchor="start">0 / 7</text>
-<line x1="590.0" y1="130.0" x2="404.4" y2="130.0" stroke="#b8554b" stroke-width="8"/>
-<text x="394.4" y="134.0" class="axis" text-anchor="end" font-weight="700">ИВ РАН</text>
-<text x="938.0" y="134.0" class="label" text-anchor="start">0 / 8</text>
-<line x1="590.0" y1="154.0" x2="403.1" y2="154.0" stroke="#b8554b" stroke-width="8"/>
-<text x="393.1" y="158.0" class="axis" text-anchor="end" font-weight="700">средневековый</text>
-<text x="938.0" y="158.0" class="label" text-anchor="start">8 / 14</text>
-<line x1="590.0" y1="178.0" x2="399.4" y2="178.0" stroke="#b8554b" stroke-width="8"/>
-<text x="389.4" y="182.0" class="axis" text-anchor="end" font-weight="700">китайский</text>
-<text x="938.0" y="182.0" class="label" text-anchor="start">2 / 8</text>
-<line x1="590.0" y1="202.0" x2="397.3" y2="202.0" stroke="#b8554b" stroke-width="8"/>
-<text x="387.3" y="206.0" class="axis" text-anchor="end" font-weight="700">Рерих</text>
-<text x="938.0" y="206.0" class="label" text-anchor="start">0 / 9</text>
-<line x1="590.0" y1="226.0" x2="385.2" y2="226.0" stroke="#b8554b" stroke-width="8"/>
-<text x="375.2" y="230.0" class="axis" text-anchor="end" font-weight="700">пураны</text>
-<text x="938.0" y="230.0" class="label" text-anchor="start">0 / 11</text>
-<line x1="590.0" y1="250.0" x2="384.1" y2="250.0" stroke="#b8554b" stroke-width="8"/>
-<text x="374.1" y="254.0" class="axis" text-anchor="end" font-weight="700">культ</text>
-<text x="938.0" y="254.0" class="label" text-anchor="start">3 / 10</text>
-<line x1="590.0" y1="274.0" x2="383.9" y2="274.0" stroke="#b8554b" stroke-width="8"/>
-<text x="373.9" y="278.0" class="axis" text-anchor="end" font-weight="700">изображение</text>
-<text x="938.0" y="278.0" class="label" text-anchor="start">2 / 9</text>
-<line x1="590.0" y1="298.0" x2="355.5" y2="298.0" stroke="#b8554b" stroke-width="8"/>
-<text x="345.5" y="302.0" class="axis" text-anchor="end" font-weight="700">древний</text>
-<text x="938.0" y="302.0" class="label" text-anchor="start">4 / 13</text>
-<line x1="590.0" y1="322.0" x2="345.4" y2="322.0" stroke="#b8554b" stroke-width="8"/>
-<text x="335.4" y="326.0" class="axis" text-anchor="end" font-weight="700">Юрий Рерих</text>
-<text x="938.0" y="326.0" class="label" text-anchor="start">0 / 21</text>
-<line x1="590.0" y1="346.0" x2="323.4" y2="346.0" stroke="#b8554b" stroke-width="8"/>
-<text x="313.4" y="350.0" class="axis" text-anchor="end" font-weight="700">пали</text>
-<text x="938.0" y="350.0" class="label" text-anchor="start">2 / 14</text>
-<line x1="590.0" y1="370.0" x2="770.2" y2="370.0" stroke="#2f6fbb" stroke-width="8"/>
-<text x="780.2" y="374.0" class="axis" text-anchor="start" font-weight="700">миф</text>
-<text x="938.0" y="374.0" class="label" text-anchor="start">14 / 1</text>
-<line x1="590.0" y1="394.0" x2="769.9" y2="394.0" stroke="#2f6fbb" stroke-width="8"/>
-<text x="779.9" y="398.0" class="axis" text-anchor="start" font-weight="700">современный</text>
-<text x="938.0" y="398.0" class="label" text-anchor="start">18 / 3</text>
-<line x1="590.0" y1="418.0" x2="764.7" y2="418.0" stroke="#2f6fbb" stroke-width="8"/>
-<text x="774.7" y="422.0" class="axis" text-anchor="start" font-weight="700">бенгальский</text>
-<text x="938.0" y="422.0" class="label" text-anchor="start">15 / 0</text>
-<line x1="590.0" y1="442.0" x2="762.8" y2="442.0" stroke="#2f6fbb" stroke-width="8"/>
-<text x="772.8" y="446.0" class="axis" text-anchor="start" font-weight="700">учение</text>
-<text x="938.0" y="446.0" class="label" text-anchor="start">15 / 2</text>
-<line x1="590.0" y1="466.0" x2="756.2" y2="466.0" stroke="#2f6fbb" stroke-width="8"/>
-<text x="766.2" y="470.0" class="axis" text-anchor="start" font-weight="700">хинди</text>
-<text x="938.0" y="470.0" class="label" text-anchor="start">13 / 0</text>
-<line x1="590.0" y1="490.0" x2="745.4" y2="490.0" stroke="#2f6fbb" stroke-width="8"/>
-<text x="755.4" y="494.0" class="axis" text-anchor="start">роман</text>
-<text x="938.0" y="494.0" class="label" text-anchor="start">11 / 1</text>
-<line x1="590.0" y1="514.0" x2="734.5" y2="514.0" stroke="#2f6fbb" stroke-width="8"/>
-<text x="744.5" y="518.0" class="axis" text-anchor="start">Панини</text>
-<text x="938.0" y="518.0" class="label" text-anchor="start">9 / 0</text>
-<line x1="590.0" y1="538.0" x2="727.7" y2="538.0" stroke="#2f6fbb" stroke-width="8"/>
-<text x="737.7" y="542.0" class="axis" text-anchor="start">индуистский</text>
-<text x="938.0" y="542.0" class="label" text-anchor="start">8 / 0</text>
-<line x1="590.0" y1="562.0" x2="720.0" y2="562.0" stroke="#2f6fbb" stroke-width="8"/>
-<text x="730.0" y="566.0" class="axis" text-anchor="start">Шанкара</text>
-<text x="938.0" y="566.0" class="label" text-anchor="start">7 / 0</text>
-<line x1="590.0" y1="586.0" x2="715.7" y2="586.0" stroke="#2f6fbb" stroke-width="8"/>
-<text x="725.7" y="590.0" class="axis" text-anchor="start">Индия</text>
-<text x="938.0" y="590.0" class="label" text-anchor="start">79 / 40</text>
-<line x1="590.0" y1="610.0" x2="711.3" y2="610.0" stroke="#2f6fbb" stroke-width="8"/>
-<text x="721.3" y="614.0" class="axis" text-anchor="start">гимн</text>
-<text x="938.0" y="614.0" class="label" text-anchor="start">6 / 0</text>
-<line x1="590.0" y1="634.0" x2="711.3" y2="634.0" stroke="#2f6fbb" stroke-width="8"/>
-<text x="721.3" y="638.0" class="axis" text-anchor="start">фольклор</text>
-<text x="938.0" y="638.0" class="label" text-anchor="start">6 / 0</text>
+<line x1="590.0" y1="82.0" x2="390.8" y2="82.0" stroke="#b8554b" stroke-width="8"/>
+<text x="380.8" y="86.0" class="axis" text-anchor="end" font-weight="700">храм</text>
+<text x="938.0" y="86.0" class="label" text-anchor="start">4 / 9</text>
+<line x1="590.0" y1="106.0" x2="383.1" y2="106.0" stroke="#b8554b" stroke-width="8"/>
+<text x="373.1" y="110.0" class="axis" text-anchor="end" font-weight="700">пространство</text>
+<text x="938.0" y="110.0" class="label" text-anchor="start">1 / 7</text>
+<line x1="590.0" y1="130.0" x2="374.3" y2="130.0" stroke="#b8554b" stroke-width="8"/>
+<text x="364.3" y="134.0" class="axis" text-anchor="end" font-weight="700">изображение</text>
+<text x="938.0" y="134.0" class="label" text-anchor="start">3 / 9</text>
+<line x1="590.0" y1="154.0" x2="364.0" y2="154.0" stroke="#b8554b" stroke-width="8"/>
+<text x="354.0" y="158.0" class="axis" text-anchor="end" font-weight="700">Рерих</text>
+<text x="938.0" y="158.0" class="label" text-anchor="start">0 / 13</text>
+<line x1="590.0" y1="178.0" x2="357.1" y2="178.0" stroke="#b8554b" stroke-width="8"/>
+<text x="347.1" y="182.0" class="axis" text-anchor="end" font-weight="700">Тибет</text>
+<text x="938.0" y="182.0" class="label" text-anchor="start">17 / 22</text>
+<line x1="590.0" y1="202.0" x2="356.3" y2="202.0" stroke="#b8554b" stroke-width="8"/>
+<text x="346.3" y="206.0" class="axis" text-anchor="end" font-weight="700">средневековый</text>
+<text x="938.0" y="206.0" class="label" text-anchor="start">12 / 18</text>
+<line x1="590.0" y1="226.0" x2="355.9" y2="226.0" stroke="#b8554b" stroke-width="8"/>
+<text x="345.9" y="230.0" class="axis" text-anchor="end" font-weight="700">китайский</text>
+<text x="938.0" y="230.0" class="label" text-anchor="start">4 / 11</text>
+<line x1="590.0" y1="250.0" x2="321.5" y2="250.0" stroke="#b8554b" stroke-width="8"/>
+<text x="311.5" y="254.0" class="axis" text-anchor="end" font-weight="700">Юрий Рерих</text>
+<text x="938.0" y="254.0" class="label" text-anchor="start">0 / 26</text>
+<line x1="590.0" y1="274.0" x2="318.2" y2="274.0" stroke="#b8554b" stroke-width="8"/>
+<text x="308.2" y="278.0" class="axis" text-anchor="end" font-weight="700">древний</text>
+<text x="938.0" y="278.0" class="label" text-anchor="start">9 / 18</text>
+<line x1="590.0" y1="298.0" x2="311.4" y2="298.0" stroke="#b8554b" stroke-width="8"/>
+<text x="301.4" y="302.0" class="axis" text-anchor="end" font-weight="700">традиция</text>
+<text x="938.0" y="302.0" class="label" text-anchor="start">36 / 40</text>
+<line x1="590.0" y1="322.0" x2="294.8" y2="322.0" stroke="#b8554b" stroke-width="8"/>
+<text x="284.8" y="326.0" class="axis" text-anchor="end" font-weight="700">пураны</text>
+<text x="938.0" y="326.0" class="label" text-anchor="start">1 / 16</text>
+<line x1="590.0" y1="346.0" x2="261.6" y2="346.0" stroke="#b8554b" stroke-width="8"/>
+<text x="251.6" y="350.0" class="axis" text-anchor="end" font-weight="700">пали</text>
+<text x="938.0" y="350.0" class="label" text-anchor="start">3 / 18</text>
+<line x1="590.0" y1="370.0" x2="780.6" y2="370.0" stroke="#2f6fbb" stroke-width="8"/>
+<text x="790.6" y="374.0" class="axis" text-anchor="start" font-weight="700">бенгальский</text>
+<text x="938.0" y="374.0" class="label" text-anchor="start">24 / 0</text>
+<line x1="590.0" y1="394.0" x2="773.3" y2="394.0" stroke="#2f6fbb" stroke-width="8"/>
+<text x="783.3" y="398.0" class="axis" text-anchor="start" font-weight="700">философия</text>
+<text x="938.0" y="398.0" class="label" text-anchor="start">43 / 11</text>
+<line x1="590.0" y1="418.0" x2="768.3" y2="418.0" stroke="#2f6fbb" stroke-width="8"/>
+<text x="778.3" y="422.0" class="axis" text-anchor="start" font-weight="700">Индия</text>
+<text x="938.0" y="422.0" class="label" text-anchor="start">130 / 51</text>
+<line x1="590.0" y1="442.0" x2="768.3" y2="442.0" stroke="#2f6fbb" stroke-width="8"/>
+<text x="778.3" y="446.0" class="axis" text-anchor="start" font-weight="700">учение</text>
+<text x="938.0" y="446.0" class="label" text-anchor="start">19 / 2</text>
+<line x1="590.0" y1="466.0" x2="756.4" y2="466.0" stroke="#2f6fbb" stroke-width="8"/>
+<text x="766.4" y="470.0" class="axis" text-anchor="start" font-weight="700">хинди</text>
+<text x="938.0" y="470.0" class="label" text-anchor="start">16 / 0</text>
+<line x1="590.0" y1="490.0" x2="756.1" y2="490.0" stroke="#2f6fbb" stroke-width="8"/>
+<text x="766.1" y="494.0" class="axis" text-anchor="start" font-weight="700">миф</text>
+<text x="938.0" y="494.0" class="label" text-anchor="start">20 / 3</text>
+<line x1="590.0" y1="514.0" x2="745.8" y2="514.0" stroke="#2f6fbb" stroke-width="8"/>
+<text x="755.8" y="518.0" class="axis" text-anchor="start">современный</text>
+<text x="938.0" y="518.0" class="label" text-anchor="start">24 / 5</text>
+<line x1="590.0" y1="538.0" x2="742.4" y2="538.0" stroke="#2f6fbb" stroke-width="8"/>
+<text x="752.4" y="542.0" class="axis" text-anchor="start">индуистский</text>
+<text x="938.0" y="542.0" class="label" text-anchor="start">13 / 1</text>
+<line x1="590.0" y1="562.0" x2="734.3" y2="562.0" stroke="#2f6fbb" stroke-width="8"/>
+<text x="744.3" y="566.0" class="axis" text-anchor="start">книга</text>
+<text x="938.0" y="566.0" class="label" text-anchor="start">12 / 1</text>
+<line x1="590.0" y1="586.0" x2="734.3" y2="586.0" stroke="#2f6fbb" stroke-width="8"/>
+<text x="744.3" y="590.0" class="axis" text-anchor="start">роман</text>
+<text x="938.0" y="590.0" class="label" text-anchor="start">12 / 1</text>
+<line x1="590.0" y1="610.0" x2="728.8" y2="610.0" stroke="#2f6fbb" stroke-width="8"/>
+<text x="738.8" y="614.0" class="axis" text-anchor="start">Панини</text>
+<text x="938.0" y="614.0" class="label" text-anchor="start">10 / 0</text>
+<line x1="590.0" y1="634.0" x2="725.6" y2="634.0" stroke="#2f6fbb" stroke-width="8"/>
+<text x="735.6" y="638.0" class="axis" text-anchor="start">сказание</text>
+<text x="938.0" y="638.0" class="label" text-anchor="start">11 / 1</text>
 <text x="938.0" y="50.0" class="label" text-anchor="start">df Z/R</text>
 <text x="34.0" y="738.0" class="sub" text-anchor="start">Показаны термины с наибольшим абсолютным z-score; generic academic words удалены.</text>
 </svg>

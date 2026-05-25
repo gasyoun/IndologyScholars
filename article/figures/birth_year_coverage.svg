@@ -14,25 +14,28 @@ text{font-family:Arial,'Liberation Sans',sans-serif;fill:#1f2933}.small{font-siz
 <text x="98.0" y="173.5" class="axis" text-anchor="end">75%</text>
 <line x1="110.0" y1="92.0" x2="750.0" y2="92.0" stroke="#edf1f5" stroke-width="1"/>
 <text x="98.0" y="96.0" class="axis" text-anchor="end">100%</text>
-<rect x="153.2" y="402.0" width="73.6" height="0.0" rx="0" fill="#b8554b" stroke="none" opacity="1.0"/>
-<rect x="153.2" y="92.0" width="73.6" height="310.0" rx="0" fill="#2f6fbb" stroke="none" opacity="1.0"/>
-<text x="190.0" y="251.0" class="small" text-anchor="middle">100%</text>
-<text x="190.0" y="84.0" class="small" text-anchor="middle">n=94</text>
+<rect x="153.2" y="266.8" width="73.6" height="135.2" rx="0" fill="#b8554b" stroke="none" opacity="1.0"/>
+<text x="190.0" y="338.4" class="small" text-anchor="middle">44%</text>
+<rect x="153.2" y="92.0" width="73.6" height="174.8" rx="0" fill="#2f6fbb" stroke="none" opacity="1.0"/>
+<text x="190.0" y="183.4" class="small" text-anchor="middle">56%</text>
+<text x="190.0" y="84.0" class="small" text-anchor="middle">n=133</text>
 <text x="190.0" y="428.0" class="axis" text-anchor="middle">1</text>
-<rect x="313.2" y="402.0" width="73.6" height="0.0" rx="0" fill="#b8554b" stroke="none" opacity="1.0"/>
-<rect x="313.2" y="92.0" width="73.6" height="310.0" rx="0" fill="#2f6fbb" stroke="none" opacity="1.0"/>
-<text x="350.0" y="251.0" class="small" text-anchor="middle">100%</text>
-<text x="350.0" y="84.0" class="small" text-anchor="middle">n=25</text>
+<rect x="313.2" y="350.3" width="73.6" height="51.7" rx="0" fill="#b8554b" stroke="none" opacity="1.0"/>
+<text x="350.0" y="380.2" class="small" text-anchor="middle">17%</text>
+<rect x="313.2" y="92.0" width="73.6" height="258.3" rx="0" fill="#2f6fbb" stroke="none" opacity="1.0"/>
+<text x="350.0" y="225.2" class="small" text-anchor="middle">83%</text>
+<text x="350.0" y="84.0" class="small" text-anchor="middle">n=30</text>
 <text x="350.0" y="428.0" class="axis" text-anchor="middle">2</text>
-<rect x="473.2" y="402.0" width="73.6" height="0.0" rx="0" fill="#b8554b" stroke="none" opacity="1.0"/>
-<rect x="473.2" y="92.0" width="73.6" height="310.0" rx="0" fill="#2f6fbb" stroke="none" opacity="1.0"/>
-<text x="510.0" y="251.0" class="small" text-anchor="middle">100%</text>
-<text x="510.0" y="84.0" class="small" text-anchor="middle">n=30</text>
+<rect x="473.2" y="343.9" width="73.6" height="58.1" rx="0" fill="#b8554b" stroke="none" opacity="1.0"/>
+<text x="510.0" y="376.9" class="small" text-anchor="middle">19%</text>
+<rect x="473.2" y="92.0" width="73.6" height="251.9" rx="0" fill="#2f6fbb" stroke="none" opacity="1.0"/>
+<text x="510.0" y="221.9" class="small" text-anchor="middle">81%</text>
+<text x="510.0" y="84.0" class="small" text-anchor="middle">n=32</text>
 <text x="510.0" y="428.0" class="axis" text-anchor="middle">3–4</text>
-<rect x="633.2" y="402.0" width="73.6" height="0.0" rx="0" fill="#b8554b" stroke="none" opacity="1.0"/>
-<rect x="633.2" y="92.0" width="73.6" height="310.0" rx="0" fill="#2f6fbb" stroke="none" opacity="1.0"/>
-<text x="670.0" y="251.0" class="small" text-anchor="middle">100%</text>
-<text x="670.0" y="84.0" class="small" text-anchor="middle">n=71</text>
+<rect x="633.2" y="395.4" width="73.6" height="6.6" rx="0" fill="#b8554b" stroke="none" opacity="1.0"/>
+<rect x="633.2" y="92.0" width="73.6" height="303.4" rx="0" fill="#2f6fbb" stroke="none" opacity="1.0"/>
+<text x="670.0" y="247.7" class="small" text-anchor="middle">98%</text>
+<text x="670.0" y="84.0" class="small" text-anchor="middle">n=94</text>
 <text x="670.0" y="428.0" class="axis" text-anchor="middle">5+</text>
 <text x="430.0" y="472.0" class="axis" text-anchor="middle">Всего докладов/авторских участий у ученого</text>
 <text x="38.0" y="247.0" class="small" text-anchor="middle" transform="rotate(-90 38.0 247.0)">доля ученых</text>

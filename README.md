@@ -3,7 +3,7 @@
 > [!NOTE]
 > This repository houses a premier digital humanities research platform and automated data pipeline integrating two decades of historical program archives from Russia's two preeminent Indological conferences: the **Zograf Readings** (St. Petersburg, IOM RAS / SPbSU, since 2004) and the **Roerich Readings** (Moscow, IAS RAS, since 2007).
 
-The project features a complete modular ETL pipeline in Python that extracts, normalizes, and matches Cyrillic scholar names, resolves lifespans and historical affiliations, compiles a referentially-sound SQLite database, exports scientific datasets (CSV), and compiles a high-fidelity glassmorphic dark-mode web portal featuring 220 canonical scholar profile records, five interactive SVG analytics charts, and real-time bilingual (Russian/English) state toggles.
+The project features a modular ETL pipeline in Python that extracts, normalizes, and matches Cyrillic scholar names, resolves verified lifespans and historical affiliations, compiles a referentially-sound SQLite database, exports scientific datasets (CSV), and builds a bilingual web portal featuring 289 canonical scholar profile records and interactive analytics.
 
 ---
 
@@ -23,7 +23,7 @@ graph TD
     E -->|Analytical Overview| H[indology_scholars_analytics.md]
     F -->|Unified JS Payload| I[site_data.json]
     I -->|Client-side rendering| J[index.html Web Portal]
-    K -->|220 Canonical Profile Pages| L[scholars/*.html]
+    K -->|289 Canonical Profile Pages| L[scholars/*.html]
     L -->|Bidirectional Links| J
 ```
 
@@ -43,7 +43,7 @@ Computes cross-conference affinity indices and cohort overlapping:
 *   Generates targeted scientific CSV tables inside `analytics_output/` and outputs the Markdown overview [indology_scholars_analytics.md](file:///c:/Users/user/Documents/GitHub/IndologyScholars/indology_scholars_analytics.md).
 
 ### Phase 4: Static Profile Generation (`generate_scholars_pages.py`)
-Compiles **220 canonical scholar profile pages** under `scholars/` (e.g., [scholars/PERS_f074f69f.html](file:///c:/Users/user/Documents/GitHub/IndologyScholars/scholars/PERS_f074f69f.html)). Each file is a standalone, SEO-optimized glassmorphic card showcasing the scholar's complete historical presentation chronology, institutional changes, regional mobility tracks, and thematic profiles.
+Compiles **289 canonical scholar profile pages** under `scholars/`. Each page exposes the scholar's presentation chronology, recorded affiliations and cities, thematic links, and birth-decade cohort when the birth year has been verified.
 
 ### Phase 5: Client-Side Web Portal & Interactive Charts (`index.html` & `networks.html`)
 A state-of-the-art Single Page Application suite built on vanilla CSS and JS:
@@ -51,7 +51,7 @@ A state-of-the-art Single Page Application suite built on vanilla CSS and JS:
 *   **Cross-filtering & City Tags:** Allows users to click on any affiliation or city tag to instantly search, filter, and paginate the master database.
 *   **Video and Generalization Scale Pages:** `videos/` exposes the full YouTube inventory and presentation mappings; `gumilyov/` exposes the micro/regional/global classification of presentation titles. Both are integrated into talk cards on conference, city, institution, theme, and meso-level pages.
 *   **Named Text Pages & Linkable Title Search:** `topics/ramayana.html` gathers Ramayana presentations by year and title; the dashboard title query is preserved in its URL (`?talks=рамаяны`) and exposes the matching presentations rather than only author rows.
-*   **Interactive Network Graph Engine (`networks.html`):** A dedicated, state-of-the-art interactive visualization dashboard powered by **Vis.js**. It maps all 220 scholars as nodes and their collaborations/co-presences as edges, featuring interactive zooming, panning, physics stabilization, live search, and four layout presets: *Collaborations*, *Ecosystem*, *Co-presence*, and *Attendance*, with a side profile detail drawer.
+*   **Generations and Network Views:** `generations/` lists verified birth-decade cohorts from the Vasilkov cohort to the Tolchelnikov cohort and separates records lacking a verified birth year; `networks.html` maps all 289 scholars as nodes with collaboration and co-presence links.
 
 ---
 
@@ -149,12 +149,12 @@ The IndologyScholars platform enables deep historical and sociological analysis 
 ### Use Case B: Geographic Mobility & Regional Network Mapping
 *   **Objective:** Identify the regional distribution of scholars presenting Indological research and locate regional academic hubs (outside Moscow/St. Petersburg).
 *   **Method:** A historian wants to see the role of regional institutes (e.g., Krasnodar or Penza). On the dashboard, they expand any detail card and click on the **«Краснодар»** city tag.
-*   **Result:** The search engine instantly captures the tag, filtering all 220 scholars by the city signal recorded in their affiliation string. This helps map regional Buddhist and Sanskrit research clusters without assuming that a city label necessarily means employment at a local university; peripheral records often preserve only a city or a non-university affiliation.
+*   **Result:** The search engine filters all 289 scholars by the city signal recorded in their affiliation string. This helps map regional research clusters without assuming that a city label means employment at a local university; the restored Obninsk entries, for example, expose Marcis Gasuns's 2023 and 2024 Zograf talks.
 
 ### Use Case C: Tracking Academic Migration & Institutional Shifts
 *   **Objective:** Trace how scholars transition between academic organizations over their careers.
 *   **Method:** In the expanded scholar row, the **«Careers & Analytics»** card detects whether a researcher has changed affiliations. If they have, it renders an active institutional path: e.g., `ИВ РАН → РГГУ → ИКВИА НИУ ВШЭ`.
-*   **Result:** Clicking on any of these institutional links instantly queries the database, listing all other scholars active in that institution, allowing researchers to study academic hiring, migration waves, and departmental alignment over a 20-year period.
+*   **Result:** Clicking on any of these institutional links queries the database, listing other scholars recorded with that institution across 22 observed programme years.
 
 ### Use Case D: Interdisciplinary Profile & Thematic Shifts Analysis
 *   **Objective:** Evaluate if scholars adhere strictly to a single sub-field or if their research represents interdisciplinary coverage.
@@ -164,12 +164,12 @@ The IndologyScholars platform enables deep historical and sociological analysis 
 ### Use Case E: Isolating Regional Cohorts & Conference Affinity
 *   **Objective:** Isolate St. Petersburg-only or Moscow-only academic groups to analyze institutional affinity or regional isolation.
 *   **Method:** A user selects **«Никогда не выступали на Рериховских чт.»** (Never active at Roerich Readings) in the advanced series filter.
-*   **Result:** The directory filters out the Moscow cohort, isolating the 129 St. Petersburg-centric scholars who only present at the Zograf Readings. This allows sociologists of science to study localized academic groups, local traditions, and the communication gap between key regional forums.
+*   **Result:** The directory isolates the 183 scholars observed only at the Zograf Readings and the 66 observed only at the Roerich Readings.
 
-### Use Case F: High-Performance Demographics & Gender Analysis
-*   **Objective:** Audit the demographic health and gender balance of the Russian Indological community.
-*   **Method:** A policymaker clicks on the **«Статистический анализ»** (Statistical Insights) tab.
-*   **Result:** The platform renders the demographic bar chart showing age splits (*Young*, *Mid-career*, *Senior*, *Eminent Elders*) alongside the gender representation progress bar. This visualizes whether the field is successfully attracting young postgraduate researchers (under 35) or if it relies primarily on senior scholars.
+### Use Case F: Named Generational Cohorts
+*   **Objective:** Replace an opaque average age with an inspectable distribution of participants by generation.
+*   **Method:** Open `generations/` from the dashboard.
+*   **Result:** The portal lists birth-decade cohorts anchored by Yaroslav Vasilkov (1940s) and Ivan Tolchelnikov (2000s); participants without a verified birth year are shown separately rather than assigned speculatively.
 
 ### Use Case G: Collaboration Networks and Academic Bridging
 *   **Objective:** Map and analyze the structural co-authorship networks, session copresence, and institutional bridging between scholars across Moscow and St. Petersburg forums.
@@ -209,7 +209,7 @@ To compile, process, and deploy the entire platform from scratch, run the script
     ```bash
     python generate_site_data.py
     ```
-4.  **Compile Static Profile Pages:** Generates the 220 individual SEO-optimized scholar profile HTML pages:
+4.  **Compile Static Profile Pages:** Generates the 289 individual scholar profile HTML pages:
     ```bash
     python generate_scholars_pages.py
     ```
@@ -240,6 +240,8 @@ The project is configured with an automated **GitHub Actions** workflow (`.githu
 
 The project research findings are compiled in the main academic manuscript: **`article/ppv_draft.md`** (v0.7). The paper analyzes the structural parameters, institutional alignment, and sociological fragmentation of the Russian Indological community. Formatted outputs are compiled as [ppv_draft.html](file:///c:/Users/user/Documents/GitHub/IndologyScholars/article/ppv_draft.html) and [ppv_draft.docx](file:///c:/Users/user/Documents/GitHub/IndologyScholars/article/ppv_draft.docx).
 
+**Revision status (2026-05-24):** official-programme recovery expanded the live corpus to 289 scholars, 1350 unique presentations, and 1377 author participations. The manuscript's legacy thematic and Gumilyov-scale claims remain a preserved previous snapshot until the enlarged corpus is re-coded; it is not ready for submission in its current numeric form.
+
 The study formulates and tests 10 key research hypotheses (H1–H10) grouped across several analytical dimensions:
 
 ### Thematic & Chronological Structures
@@ -254,20 +256,20 @@ The study formulates and tests 10 key research hypotheses (H1–H10) grouped acr
 *   **H10 (Talk Serialization / "Salami Slicing"):** *Refined.* Core cohort and peripheral presenters exhibit no statistically significant difference in talk serialization rates ($p = 0.1649$). However, serialization correlates positively with a scholar's total lifetime presentations ($\rho = 0.223$, $p = 0.0007$), marking it as an individual career strategy.
 
 ### Geographic Gravity & Institutional Counts
-*   **H7 (Institutional Fractional Counting):** *Validated.* Proves that the single-author rate exceeds 99% across the 20-year corpus, meaning simple and fractional institutional counts result in negligible ranking differences.
+*   **H7 (Institutional Fractional Counting):** Previously evaluated on the smaller coded snapshot; requires confirmation across the expanded 22-programme-year corpus.
 *   **H9 (Geographic Gravity & Regional Survival):** *Confirmed.* St. Petersburg's Zograf Readings demonstrate balanced geographic representation (43.8% SPb vs 42.6% Moscow), while Moscow's Roerich Readings are inward-oriented (only 9.0% SPb participants). Furthermore, regional scholars (outside Moscow/SPb) suffer from significantly lower return rates (cohort survival) compared to metropolitan counterparts (36.1% vs ~59%, $p = 0.0191$).
 
 ---
 
 ## 📈 8. Core Database Statistics
 
-*   **Unique Indologists Deduplicated:** 220 scholars
-*   **Total Presentations Parsed:** 899 author participations (across 895 unique talks)
+*   **Unique Indologists Deduplicated:** 289 scholars
+*   **Total Presentations Parsed:** 1377 author participations (across 1350 unique talks)
 *   **Historical Timeline Covered:** 2004 – 2026
 *   **Zograf Readings (St. Petersburg):** 2004 – 2026
 *   **Roerich Readings (Moscow):** 2007 – 2025
 *   **Cross-Conference Core Cohort (Overlap):** 38 scholars active in both forums
-*   **St. Petersburg-Centric Cohort (Zograf-only):** 129 scholars
+*   **Zograf-only Cohort:** 183 scholars
 *   **Moscow-Centric Cohort (Roerich-only):** 53 scholars
 *   **Verification Status:** **`PASSED`** (referential keys and identity constraints fully validated)
 

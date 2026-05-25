@@ -1,62 +1,62 @@
 {
   "total": {
-    "unique_scholars": 220,
-    "person_table_rows": 220,
-    "presentations": 895,
-    "author_participations": 899,
-    "known_birth_years": 220,
-    "cross_cohort": 38,
-    "zograf_only": 129,
-    "roerich_only": 53
+    "unique_scholars": 289,
+    "person_table_rows": 289,
+    "presentations": 1350,
+    "author_participations": 1377,
+    "known_birth_years": 218,
+    "cross_cohort": 40,
+    "zograf_only": 183,
+    "roerich_only": 66
   },
   "combined_activity": {
-    "unique_scholars": 220,
-    "author_participations": 899,
-    "one_talk_share_pct": 42.7,
-    "core_share_pct": 32.3,
-    "retention_pct": 57.3,
-    "gini": 0.51,
+    "unique_scholars": 289,
+    "author_participations": 1377,
+    "one_talk_share_pct": 46.0,
+    "core_share_pct": 32.5,
+    "retention_pct": 54.0,
+    "gini": 0.564,
     "median_talks": 2,
-    "max_talks": 22
+    "max_talks": 29
   },
   "series": {
     "Zograf": {
-      "unique_scholars": 167,
-      "presentations": 540,
-      "author_participations": 544,
-      "one_talk_share_pct": 43.7,
-      "core_share_pct": 24.0,
-      "retention_pct": 56.3,
-      "gini": 0.461,
+      "unique_scholars": 223,
+      "presentations": 878,
+      "author_participations": 900,
+      "one_talk_share_pct": 46.2,
+      "core_share_pct": 30.9,
+      "retention_pct": 53.8,
+      "gini": 0.533,
       "median_talks": 2,
-      "max_talks": 15
+      "max_talks": 21
     },
     "Roerich": {
-      "unique_scholars": 91,
-      "presentations": 355,
-      "author_participations": 355,
-      "one_talk_share_pct": 38.5,
-      "core_share_pct": 31.9,
-      "retention_pct": 61.5,
-      "gini": 0.47,
+      "unique_scholars": 106,
+      "presentations": 472,
+      "author_participations": 477,
+      "one_talk_share_pct": 35.8,
+      "core_share_pct": 33.0,
+      "retention_pct": 64.2,
+      "gini": 0.503,
       "median_talks": 2,
-      "max_talks": 12
+      "max_talks": 16
     }
   },
   "zograf_until_2025": {
-    "unique_scholars": 148,
-    "presentations": 482,
-    "author_participations": 484,
-    "one_talk_share_pct": 39.9,
-    "core_share_pct": 25.7,
-    "retention_pct": 60.1,
-    "gini": 0.444,
+    "unique_scholars": 204,
+    "presentations": 820,
+    "author_participations": 839,
+    "one_talk_share_pct": 43.1,
+    "core_share_pct": 31.9,
+    "retention_pct": 56.9,
+    "gini": 0.522,
     "median_talks": 2,
-    "max_talks": 14
+    "max_talks": 20
   },
   "zograf_2026": {
     "presentations": 58,
-    "unique_scholars": 60,
-    "author_participations": 60
+    "unique_scholars": 61,
+    "author_participations": 61
   }
 }

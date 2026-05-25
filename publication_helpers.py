@@ -11,6 +11,27 @@ AUTHOR_NAME = "Dr. Mārcis Gasūns"
 OG_IMAGE_PATH = "assets/og-image.png"
 OG_IMAGE_URL = SITE_URL + OG_IMAGE_PATH
 
+GENERATION_COHORTS = [
+    {"code": "pre-1940", "start": None, "end": 1939, "ru": "Предшественники (до 1940)", "en": "Predecessors (before 1940)"},
+    {"code": "1940s", "start": 1940, "end": 1949, "ru": "Когорта Василькова (1940-е)", "en": "Vasilkov cohort (1940s)"},
+    {"code": "1950s", "start": 1950, "end": 1959, "ru": "Поколение 1950-х", "en": "1950s cohort"},
+    {"code": "1960s", "start": 1960, "end": 1969, "ru": "Поколение 1960-х", "en": "1960s cohort"},
+    {"code": "1970s", "start": 1970, "end": 1979, "ru": "Поколение 1970-х", "en": "1970s cohort"},
+    {"code": "1980s", "start": 1980, "end": 1989, "ru": "Поколение 1980-х", "en": "1980s cohort"},
+    {"code": "1990s", "start": 1990, "end": 1999, "ru": "Поколение 1990-х", "en": "1990s cohort"},
+    {"code": "2000s", "start": 2000, "end": None, "ru": "Когорта Толчельникова (2000-е)", "en": "Tolchelnikov cohort (2000s)"},
+]
+
+
+def generation_cohort(birth_year):
+    if birth_year is None:
+        return None
+    year = int(birth_year)
+    for cohort in GENERATION_COHORTS:
+        if (cohort["start"] is None or year >= cohort["start"]) and (cohort["end"] is None or year <= cohort["end"]):
+            return cohort
+    return None
+
 THEME_LABELS = {
     "history_and_culture": ("История, этнография и общество", "History, Culture & Society"),
     "religion_and_philosophy": ("Религия и философия", "Religion & Philosophy"),
@@ -410,6 +431,7 @@ def page_shell(title, description, canonical_path, body, structured_data=None, e
             ("Conferences", "/IndologyScholars/conferences/"),
             ("Themes", "/IndologyScholars/themes/"),
             ("Named texts", "/IndologyScholars/topics/"),
+            ("Generations", "/IndologyScholars/generations/"),
             ("Meso-levels", "/IndologyScholars/meso/"),
             ("Gumilyov", "/IndologyScholars/gumilyov/"),
             ("Videos", "/IndologyScholars/videos/"),
@@ -430,6 +452,7 @@ def page_shell(title, description, canonical_path, body, structured_data=None, e
             ("Конференции", "/IndologyScholars/conferences/"),
             ("Рубрики", "/IndologyScholars/themes/"),
             ("Сюжеты", "/IndologyScholars/topics/"),
+            ("Поколения", "/IndologyScholars/generations/"),
             ("Мезоуровни", "/IndologyScholars/meso/"),
             ("Гумилев", "/IndologyScholars/gumilyov/"),
             ("Видео", "/IndologyScholars/videos/"),

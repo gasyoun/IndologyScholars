@@ -19,6 +19,7 @@ except Exception:
 
 from publication_helpers import (
     AUTHOR_NAME,
+    GENERATION_COHORTS,
     OG_IMAGE_PATH,
     SITE_NAME,
     SITE_NAME_RU,
@@ -43,8 +44,8 @@ from publication_helpers import (
 DB_PATH = "conferences.db"
 BUILD_DATE = dt.date.today().isoformat()
 DATA_SCHEMA_VERSION = "1.0.0"
-PIPELINE_VERSION = "2026-05-21"
-PUBLIC_DIRS = ["assets", "conferences", "themes", "topics", "meso", "gumilyov", "videos", "findings", "cities", "institutions"]
+PIPELINE_VERSION = "2026-05-24"
+PUBLIC_DIRS = ["assets", "conferences", "themes", "topics", "generations", "meso", "gumilyov", "videos", "findings", "cities", "institutions"]
 
 
 def ensure_dirs():
@@ -98,7 +99,7 @@ def generated_manifest_paths():
         "site_data.json",
         "sitemap.xml",
     ]
-    directories = ["analytics_output", "assets", "cities", "conferences", "findings", "gumilyov", "institutions", "meso", "scholars", "themes", "topics", "videos"]
+    directories = ["analytics_output", "assets", "cities", "conferences", "findings", "generations", "gumilyov", "institutions", "meso", "scholars", "themes", "topics", "videos"]
     paths = [Path(path) for path in roots]
     for dirname in directories:
         root = Path(dirname)
@@ -189,6 +190,10 @@ def theme_path(code):
 
 def topic_path(code):
     return f"topics/{slugify(code, 'topic')}.html"
+
+
+def generations_path():
+    return "generations/"
 
 
 def meso_path(code):
@@ -1017,6 +1022,15 @@ def generate_search(data, records):
                 "text": " ".join([topic["description"], *topic["aliases"]]),
             }
         )
+    index.append(
+        {
+            "type": "Generation",
+            "title": "Поколения индологов",
+            "url": generations_path(),
+            "meta": "Когорты по году рождения",
+            "text": "Васильков Толчельников поколения возраст год рождения старшее младшее когорта",
+        }
+    )
     for level, meta in GUMILYOV_LEVELS.items():
         index.append(
             {
@@ -1075,7 +1089,7 @@ def generate_search(data, records):
         const results = document.getElementById('results');
         const input = document.getElementById('q');
         let docs = [];
-        const typeLabels = {'Scholar':'Автор', 'Presentation':'Доклад', 'Topic':'Сюжет', 'Meso-level':'Мезоуровень', 'Gumilyov':'Гумилев', 'Video':'Видео', 'Finding':'Вывод'};
+        const typeLabels = {'Scholar':'Автор', 'Presentation':'Доклад', 'Topic':'Сюжет', 'Generation':'Поколения', 'Meso-level':'Мезоуровень', 'Gumilyov':'Гумилев', 'Video':'Видео', 'Finding':'Вывод'};
         const initialQuery = new URLSearchParams(location.search).get('q') || '';
         input.value = initialQuery;
         fetch('search-index.json').then(r => r.json()).then(data => { docs = data; render(input.value); });
@@ -2008,6 +2022,7 @@ def generate_english_landing(data):
         <section class="grid">
             <article class="card"><strong><a href="findings/">Main Findings</a></strong><div class="meta">Interpretive layer from the latest article: overlap, themes, micro-cases, videos, and source caveats.</div></article>
             <article class="card"><strong><a href="topics/">Named Texts</a></strong><div class="meta">Stable topic pages for presentations mentioning the Ramayana and Mahabharata.</div></article>
+            <article class="card"><strong><a href="generations/">Generations</a></strong><div class="meta">Named birth cohorts from the Vasilkov generation to the Tolchelnikov generation.</div></article>
             <article class="card"><strong><a href="scholars/">Scholar Profiles</a></strong><div class="meta">Canonical generated pages with presentations, affiliations, themes, and related scholars.</div></article>
             <article class="card"><strong><a href="conferences/">Conference Indexes</a></strong><div class="meta">Year-by-year Zograf Readings and Roerich Readings pages.</div></article>
             <article class="card"><strong><a href="search.html">Search</a></strong><div class="meta">Static search across people, talks, cities, institutions, and themes.</div></article>
@@ -2133,6 +2148,7 @@ def generate_findings_page(data, records):
             <strong>Входы в данные</strong>
             <div class="chip-list">
                 <a class="chip" href="../gumilyov/">Шкала Гумилева</a>
+                <a class="chip" href="../generations/">Поколения</a>
                 <a class="chip" href="../videos/">Видеоархив</a>
                 <a class="chip" href="../conferences/">Годы и программы</a>
                 <a class="chip" href="../themes/">Тематические рубрики</a>
@@ -2161,6 +2177,89 @@ def generate_findings_page(data, records):
             "findings/",
             body,
             [page_data("Главные выводы статьи", "Интерпретационный слой последней статьи.", "findings/"), make_breadcrumbs([("Главная", ""), ("Выводы", "findings/")])],
+        ),
+    )
+
+
+def generate_generations_page(data):
+    scholars = data.get("scholars", [])
+    grouped = defaultdict(list)
+    for scholar in scholars:
+        grouped[scholar.get("generation_code")].append(scholar)
+
+    def scholar_name(scholar):
+        return scholar.get("full_name_ru") or scholar.get("name") or ""
+
+    def person_card(scholar):
+        birth = scholar.get("birth_year")
+        death = scholar.get("death_year")
+        if birth:
+            lifespan = f"{birth}-{death}" if death else f"род. {birth}"
+        else:
+            lifespan = "год рождения не установлен"
+        return (
+            f'<article class="card"><strong><a href="../{profile_href(scholar.get("url_slug"))}">{esc(scholar_name(scholar))}</a></strong>'
+            f'<div class="meta">{esc(lifespan)} · {talks_count_label(scholar.get("total_talks") or 0)} · '
+            f'{esc(describe_year_span(scholar.get("first_year"), scholar.get("last_year")))}</div></article>'
+        )
+
+    summary_cards = []
+    sections = []
+    for cohort in GENERATION_COHORTS:
+        members = sorted(grouped.get(cohort["code"], []), key=lambda item: (int(item.get("birth_year") or 0), scholar_name(item)))
+        talks = sum(int(item.get("total_talks") or 0) for item in members)
+        summary_cards.append(
+            f'<article class="card"><strong><a href="#{esc(cohort["code"])}">{esc(cohort["ru"])}</a></strong>'
+            f'<div class="metric">{len(members)}</div><div class="meta">{talks_count_label(talks)} в авторских профилях</div></article>'
+        )
+        sections.append(
+            f'<section id="{esc(cohort["code"])}"><h2>{esc(cohort["ru"])}</h2>'
+            f'<div class="grid">{"".join(person_card(scholar) for scholar in members)}</div></section>'
+        )
+    unknown_members = sorted(grouped.get(None, []), key=scholar_name)
+    if unknown_members:
+        unknown_talks = sum(int(item.get("total_talks") or 0) for item in unknown_members)
+        summary_cards.append(
+            '<article class="card"><strong><a href="#unknown">Год рождения не установлен</a></strong>'
+            f'<div class="metric">{len(unknown_members)}</div><div class="meta">{talks_count_label(unknown_talks)} в авторских профилях</div></article>'
+        )
+        sections.append(
+            '<section id="unknown"><h2>Год рождения не установлен</h2>'
+            '<p>Эти реальные участники восстановлены из программ, но не распределены по поколениям без проверенного биографического источника.</p>'
+            f'<div class="grid">{"".join(person_card(scholar) for scholar in unknown_members)}</div></section>'
+        )
+    known_count = sum(1 for scholar in scholars if scholar.get("birth_year"))
+
+    vasilkov = next((item for item in scholars if "Васильков" in scholar_name(item)), None)
+    tolchelnikov = next((item for item in scholars if "Толчельников" in scholar_name(item)), None)
+    anchors = []
+    for scholar, label in ((vasilkov, "Старший ориентир"), (tolchelnikov, "Младший ориентир")):
+        if scholar:
+            anchors.append(
+                f'<a class="chip" href="../{profile_href(scholar.get("url_slug"))}">{esc(label)}: {esc(scholar_name(scholar))} ({esc(scholar.get("birth_year"))})</a>'
+            )
+
+    body = f"""
+        <header>
+            <h1>Поколения индологов</h1>
+            <p>Поименное распределение участников программ по десятилетиям рождения. Васильков задает видимый старший ориентир действующего круга, Толчельников - младший; более ранние участники сохранены как предшественники.</p>
+        </header>
+        <aside class="caveat-block" role="note" aria-label="Generation method">
+            <strong>Что означает «поколение»</strong>
+            <p>Это демографические когорты, а не реконструкция научных школ, отношений учитель-ученик или статуса. Год рождения известен для {known_count} из {len(scholars)} участников текущего корпуса; участники без проверенной даты перечислены отдельно, без искусственного отнесения к поколению.</p>
+            <div class="chip-list">{''.join(anchors)}</div>
+        </aside>
+        <section class="grid">{''.join(summary_cards)}</section>
+        {''.join(sections)}
+    """
+    write_text(
+        "generations/index.html",
+        page_shell(
+            f"Поколения индологов | {SITE_NAME}",
+            "Поименное распределение участников программ по поколениям рождения от старшей к младшей когорте.",
+            generations_path(),
+            body,
+            [page_data("Поколения индологов", "Демографические когорты участников программ.", generations_path()), make_breadcrumbs([("Главная", ""), ("Поколения", generations_path())])],
         ),
     )
 
@@ -2374,10 +2473,15 @@ def generate_conference_pages(data, records):
         years_by_series[series] = sorted(set(years_by_series[series]))
 
     cards = []
-    for (series, year), talks in sorted(grouped.items(), key=lambda item: (item[0][1], item[0][0]), reverse=True):
+    for (series, year), participation_records in sorted(grouped.items(), key=lambda item: (item[0][1], item[0][0]), reverse=True):
+        talks = list(presentation_records_by_id(participation_records).values())
         path = conference_path(series, year)
         title = f"{series_label(series, 'ru')} {year}"
-        cards.append(f'<article class="card"><strong><a href="../{path}">{esc(title)}</a></strong><div class="meta">{presentation_records_label(len(talks))}</div></article>')
+        source_updated = clean_text(talks[0].get("program_last_updated") if talks else "")
+        source_update_label = ""
+        if source_updated:
+            source_update_label = f' · источник обновлен {esc(dt.datetime.strptime(source_updated, "%Y-%m-%d").strftime("%d.%m.%Y"))}'
+        cards.append(f'<article class="card"><strong><a href="../{path}">{esc(title)}</a></strong><div class="meta">{presentation_records_label(len(talks))}{source_update_label}</div></article>')
         series_years = years_by_series.get(series, [])
         current_index = series_years.index(int(year)) if int(year) in series_years else -1
         prev_link = ""
@@ -2397,11 +2501,26 @@ def generate_conference_pages(data, records):
             chip_section("Города конференции", facet_city_links(talks, "../", 10)),
             chip_section("Институции конференции", facet_institution_links(talks, "../", 10)),
         ])
+        source_url = clean_text(talks[0].get("source_url") if talks else "")
+        source_note = ""
+        if source_url:
+            modified_text = (
+                f' · Последнее обновление источника: {dt.datetime.strptime(source_updated, "%Y-%m-%d").strftime("%d.%m.%Y")}'
+                if source_updated
+                else ""
+            )
+            source_note = f"""
+        <aside class="caveat-block" role="note" aria-label="Source metadata">
+            <strong>Источник программы</strong>
+            <p><a href="{esc(source_url)}">Оригинальная страница программы</a>{modified_text}. Дата обновления приводится только тогда, когда она указана на странице источника.</p>
+        </aside>
+        """
         body = f"""
         <header>
             <h1>{esc(title)}</h1>
             <p>Список докладов, связанных с этой конференцией.</p>
         </header>
+        {source_note}
         {navigation}
         {facets}
         <section class="list">
@@ -2749,6 +2868,8 @@ def generate_meso_pages(data, records):
 
 
 def generate_city_pages(data, records, authority):
+    summary = data.get("summary", {})
+    coverage = f'{summary.get("start_year")}-{summary.get("end_year")}'
     grouped = defaultdict(list)
     for record in records:
         city = (record.get("geography") or {}).get("ru")
@@ -2768,7 +2889,7 @@ def generate_city_pages(data, records, authority):
     for city, talks in sorted(grouped.items(), key=lambda item: (-len(item[1]), item[0])):
         path = city_path(city)
         cards.append(f'<article class="card"><strong><a href="../{path}">{esc(city)}</a></strong><div class="meta">{presentation_records_label(len(talks))}</div></article>')
-        city_desc = f"Доклады учёных и аффилиации, связанные с {city}. Архив Зографских и Рериховских чтений (2004–2025)."
+        city_desc = f"Доклады учёных и аффилиации: город - {city}. Архив Зографских и Рериховских чтений ({coverage})."
         facets = "".join([
             chip_section("Ведущие авторы", facet_scholar_links(talks, "../", 14)),
             chip_section("Рубрики города", facet_theme_links(talks, "../", 12)),
@@ -2820,7 +2941,7 @@ def generate_city_pages(data, records, authority):
         "cities/index.html",
         page_shell(
             f"Географические центры | {SITE_NAME}",
-            "Географические центры российской индологии: города, с которыми связаны учёные Зографских и Рериховских чтений (2004–2025).",
+            f"Географические центры российской индологии: города, с которыми связаны учёные Зографских и Рериховских чтений ({coverage}).",
             "cities/",
             index_body,
             [page_data("Географические центры", "Географические центры российской индологии.", "cities/"), make_breadcrumbs([("Главная", ""), ("Города", "cities/")])],
@@ -2829,6 +2950,8 @@ def generate_city_pages(data, records, authority):
 
 
 def generate_institution_pages(data, records, authority):
+    summary = data.get("summary", {})
+    coverage = f'{summary.get("start_year")}-{summary.get("end_year")}'
     grouped = defaultdict(list)
     for record in records:
         institution = normalize_affiliation(record.get("affiliation"))
@@ -2843,7 +2966,7 @@ def generate_institution_pages(data, records, authority):
     for institution, talks in sorted(grouped.items(), key=lambda item: (-len(item[1]), item[0])):
         path = institution_path(institution)
         cards.append(f'<article class="card"><strong><a href="../{path}">{esc(institution)}</a></strong><div class="meta">{presentation_records_label(len(talks))}</div></article>')
-        inst_desc = f"Учёные и доклады, связанные с {institution}: архив участия в Зографских и Рериховских чтениях (2004–2025)."
+        inst_desc = f"Учёные и доклады: учреждение - {institution}. Архив участия в Зографских и Рериховских чтениях ({coverage})."
         facets = "".join([
             chip_section("Ведущие авторы", facet_scholar_links(talks, "../", 14)),
             chip_section("Рубрики институции", facet_theme_links(talks, "../", 12)),
@@ -2890,7 +3013,7 @@ def generate_institution_pages(data, records, authority):
         "institutions/index.html",
         page_shell(
             f"Институции | {SITE_NAME}",
-            "Организации и научные учреждения российской индологии: институты, кафедры и университеты участников Зографских и Рериховских чтений (2004–2025).",
+            f"Организации и научные учреждения российской индологии: институты, кафедры и университеты участников Зографских и Рериховских чтений ({coverage}).",
             "institutions/",
             index_body,
             [page_data("Институции", "Организации российской индологии.", "institutions/"), make_breadcrumbs([("Главная", ""), ("Институции", "institutions/")])],
@@ -3124,7 +3247,7 @@ def generate_sitemap():
         "networks.html",
     ]
     html_paths.extend(str(p).replace("\\", "/") for p in Path("scholars").glob("*.html") if not is_legacy_redirect(p))
-    for dirname in ("conferences", "themes", "topics", "meso", "gumilyov", "videos", "findings", "cities", "institutions"):
+    for dirname in ("conferences", "themes", "topics", "generations", "meso", "gumilyov", "videos", "findings", "cities", "institutions"):
         html_paths.extend(str(p).replace("\\", "/") for p in Path(dirname).glob("*.html"))
     html_paths = sorted(set(html_paths), key=lambda p: (p.count("/"), p))
     urlset = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
@@ -3313,6 +3436,7 @@ def main():
     generate_404_page()
     generate_english_landing(data)
     generate_findings_page(data, records)
+    generate_generations_page(data)
     generate_gumilyov_pages(data, records)
     generate_video_pages(data, records)
     generate_conference_pages(data, records)

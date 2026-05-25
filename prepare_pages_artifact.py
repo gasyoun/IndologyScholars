@@ -37,6 +37,7 @@ PUBLIC_DIRS = [
     "conferences",
     "themes",
     "topics",
+    "generations",
     "meso",
     "gumilyov",
     "videos",

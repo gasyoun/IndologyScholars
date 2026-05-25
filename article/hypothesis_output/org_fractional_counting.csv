@@ -7,18 +7,18 @@ organization,year,series,simple_count,fractional_count
 ИВ РАН,2018,Roerich,16.0,16.0
 ИВ РАН,2019,Roerich,15.0,15.0
 ИВ РАН,2020,Roerich,13.0,13.0
-ИВ РАН,2021,Roerich,14.0,13.5
-ИВ РАН,2022,Roerich,15.0,15.0
+ИВ РАН,2021,Roerich,15.0,13.25
+ИВ РАН,2022,Roerich,16.0,15.0
 ИВ РАН,2023,Roerich,11.0,11.0
-ИВ РАН,2024,Roerich,12.0,11.5
-ИВ РАН,2025,Roerich,13.0,12.0
+ИВ РАН,2024,Roerich,13.0,12.0
+ИВ РАН,2025,Roerich,14.0,12.25
 ИВР РАН,2007,Zograf,1.0,1.0
 ИВР РАН,2021,Roerich,1.0,1.0
 ИКВИА/ВШЭ,2020,Roerich,2.0,2.0
 ИКВИА/ВШЭ,2021,Roerich,2.0,2.0
 ИКВИА/ВШЭ,2023,Roerich,2.0,2.0
 ИКВИА/ВШЭ,2024,Roerich,3.0,2.0
-ИКВИА/ВШЭ,2025,Roerich,9.0,8.0
+ИКВИА/ВШЭ,2025,Roerich,10.0,7.75
 СПбГУ,2007,Zograf,6.0,6.0
 СПбГУ,2012,Roerich,2.0,2.0
 СПбГУ,2015,Roerich,3.0,3.0
@@ -29,6 +29,6 @@ organization,year,series,simple_count,fractional_count
 СПбГУ,2020,Roerich,3.0,3.0
 СПбГУ,2021,Roerich,2.0,2.0
 СПбГУ,2022,Roerich,3.0,3.0
-СПбГУ,2022,Zograf,4.0,4.0
+СПбГУ,2022,Zograf,5.0,5.0
 СПбГУ,2024,Roerich,3.0,3.0
 СПбГУ,2025,Roerich,2.0,2.0

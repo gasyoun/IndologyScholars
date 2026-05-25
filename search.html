@@ -33,7 +33,7 @@
     "name": "Russian Indological Research Archive",
     "url": "https://gasyoun.github.io/IndologyScholars/"
   },
-  "dateModified": "2026-05-24"
+  "dateModified": "2026-05-25"
 }
     </script>
     <style>
@@ -190,6 +190,7 @@
             <a href="/IndologyScholars/conferences/">Конференции</a>
             <a href="/IndologyScholars/themes/">Рубрики</a>
             <a href="/IndologyScholars/topics/">Сюжеты</a>
+            <a href="/IndologyScholars/generations/">Поколения</a>
             <a href="/IndologyScholars/meso/">Мезоуровни</a>
             <a href="/IndologyScholars/gumilyov/">Гумилев</a>
             <a href="/IndologyScholars/videos/">Видео</a>
@@ -214,7 +215,7 @@
         const results = document.getElementById('results');
         const input = document.getElementById('q');
         let docs = [];
-        const typeLabels = {'Scholar':'Автор', 'Presentation':'Доклад', 'Topic':'Сюжет', 'Meso-level':'Мезоуровень', 'Gumilyov':'Гумилев', 'Video':'Видео', 'Finding':'Вывод'};
+        const typeLabels = {'Scholar':'Автор', 'Presentation':'Доклад', 'Topic':'Сюжет', 'Generation':'Поколения', 'Meso-level':'Мезоуровень', 'Gumilyov':'Гумилев', 'Video':'Видео', 'Finding':'Вывод'};
         const initialQuery = new URLSearchParams(location.search).get('q') || '';
         input.value = initialQuery;
         fetch('search-index.json').then(r => r.json()).then(data => { docs = data; render(input.value); });

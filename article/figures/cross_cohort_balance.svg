@@ -39,52 +39,54 @@ text{font-family:Arial,'Liberation Sans',sans-serif;fill:#1f2933}.small{font-siz
 <line x1="86.0" y1="616.0" x2="773.4" y2="82.0" stroke="#7f8c99" stroke-width="1.4" stroke-dasharray="6 5"/>
 <text x="509.0" y="670.0" class="axis" text-anchor="middle">Докладов на Зографских чтениях</text>
 <text x="24.0" y="349.0" class="axis" text-anchor="middle" transform="rotate(-90 24.0 349.0)">Докладов на Рериховских чтениях</text>
-<circle cx="138.9" cy="574.9" r="6.3" fill="#657482" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
-<circle cx="138.9" cy="574.9" r="6.3" fill="#657482" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
 <circle cx="138.9" cy="533.8" r="6.7" fill="#b8554b" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
-<circle cx="138.9" cy="533.8" r="6.7" fill="#b8554b" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
-<circle cx="244.6" cy="574.9" r="7.1" fill="#2f6fbb" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
+<circle cx="191.8" cy="574.9" r="6.7" fill="#2f6fbb" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
+<circle cx="191.8" cy="533.8" r="7.1" fill="#657482" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
+<circle cx="191.8" cy="533.8" r="7.1" fill="#657482" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
 <circle cx="244.6" cy="533.8" r="7.4" fill="#657482" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
-<circle cx="297.5" cy="574.9" r="7.4" fill="#2f6fbb" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
-<circle cx="297.5" cy="574.9" r="7.4" fill="#2f6fbb" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
-<circle cx="244.6" cy="533.8" r="7.4" fill="#657482" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
-<circle cx="297.5" cy="533.8" r="7.8" fill="#2f6fbb" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
 <circle cx="350.4" cy="574.9" r="7.8" fill="#2f6fbb" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
-<circle cx="138.9" cy="410.6" r="7.8" fill="#b8554b" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
 <circle cx="244.6" cy="492.8" r="7.8" fill="#657482" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
 <circle cx="244.6" cy="451.7" r="8.0" fill="#657482" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
 <circle cx="191.8" cy="410.6" r="8.0" fill="#b8554b" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
 <circle cx="350.4" cy="533.8" r="8.0" fill="#2f6fbb" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
 <circle cx="297.5" cy="492.8" r="8.0" fill="#657482" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
-<circle cx="297.5" cy="492.8" r="8.0" fill="#657482" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
-<circle cx="297.5" cy="492.8" r="8.0" fill="#657482" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
-<circle cx="138.9" cy="328.5" r="8.3" fill="#b8554b" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
-<circle cx="297.5" cy="410.6" r="8.6" fill="#657482" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
-<circle cx="138.9" cy="287.4" r="8.6" fill="#b8554b" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
-<circle cx="297.5" cy="369.5" r="8.8" fill="#657482" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
-<circle cx="191.8" cy="287.4" r="8.8" fill="#b8554b" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
-<circle cx="244.6" cy="328.5" r="8.8" fill="#b8554b" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
-<circle cx="191.8" cy="287.4" r="8.8" fill="#b8554b" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
-<circle cx="350.4" cy="369.5" r="9.0" fill="#657482" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
+<circle cx="244.6" cy="451.7" r="8.0" fill="#657482" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
+<circle cx="403.2" cy="533.8" r="8.3" fill="#2f6fbb" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
+<circle cx="403.2" cy="533.8" r="8.3" fill="#2f6fbb" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
+<circle cx="350.4" cy="492.8" r="8.3" fill="#657482" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
+<circle cx="456.1" cy="533.8" r="8.6" fill="#2f6fbb" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
+<circle cx="244.6" cy="369.5" r="8.6" fill="#b8554b" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
+<circle cx="138.9" cy="246.3" r="8.8" fill="#b8554b" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
+<circle cx="350.4" cy="410.6" r="8.8" fill="#657482" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
+<circle cx="456.1" cy="492.8" r="8.8" fill="#2f6fbb" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
+<circle cx="561.9" cy="574.9" r="8.8" fill="#2f6fbb" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
+<circle cx="403.2" cy="410.6" r="9.0" fill="#657482" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
+<circle cx="403.2" cy="369.5" r="9.2" fill="#657482" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
+<circle cx="244.6" cy="246.3" r="9.2" fill="#b8554b" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
 <circle cx="138.9" cy="123.1" r="9.4" fill="#b8554b" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
-<circle cx="403.2" cy="328.5" r="9.4" fill="#657482" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
-<circle cx="403.2" cy="328.5" r="9.4" fill="#657482" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
-<circle cx="456.1" cy="328.5" r="9.6" fill="#657482" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
-<circle cx="614.8" cy="410.6" r="9.8" fill="#2f6fbb" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
+<circle cx="350.4" cy="246.3" r="9.6" fill="#657482" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
+<circle cx="456.1" cy="287.4" r="9.8" fill="#657482" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
 <circle cx="244.6" cy="123.1" r="9.8" fill="#b8554b" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
-<circle cx="720.5" cy="451.7" r="10.0" fill="#2f6fbb" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
-<circle cx="879.1" cy="451.7" r="10.5" fill="#2f6fbb" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
-<circle cx="509.0" cy="123.1" r="10.7" fill="#657482" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
-<circle cx="561.9" cy="164.2" r="10.7" fill="#657482" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
-<circle cx="614.8" cy="123.1" r="11.0" fill="#657482" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
-<text x="126.9" y="111.1" class="label" text-anchor="end">В. В. Вертоградова</text>
-<text x="889.1" y="443.7" class="label" text-anchor="start">Рыжакова С. И.</text>
-<text x="730.5" y="443.7" class="label" text-anchor="start">Лысенко В. Г.</text>
-<text x="604.8" y="111.1" class="label" text-anchor="end">Цветкова С. О.</text>
-<text x="551.9" y="152.2" class="label" text-anchor="end">Александрова Н. В.</text>
-<text x="499.0" y="111.1" class="label" text-anchor="end">Тавастшерна С. С.</text>
-<text x="446.1" y="346.5" class="label" text-anchor="end">Дубянский А. М.</text>
-<text x="624.8" y="428.6" class="label" text-anchor="start">Корнеева Н. А.</text>
+<circle cx="509.0" cy="328.5" r="9.8" fill="#657482" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
+<circle cx="509.0" cy="287.4" r="10.0" fill="#657482" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
+<circle cx="138.9" cy="-41.2" r="10.2" fill="#b8554b" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
+<circle cx="1090.6" cy="574.9" r="10.7" fill="#2f6fbb" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
+<circle cx="350.4" cy="-0.2" r="10.7" fill="#b8554b" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
+<circle cx="614.8" cy="164.2" r="10.8" fill="#657482" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
+<circle cx="1090.6" cy="369.5" r="11.4" fill="#2f6fbb" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
+<circle cx="1196.4" cy="410.6" r="11.6" fill="#2f6fbb" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
+<circle cx="879.1" cy="123.1" r="11.7" fill="#657482" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
+<circle cx="720.5" cy="-0.2" r="11.7" fill="#657482" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
+<circle cx="984.9" cy="123.1" r="12.0" fill="#657482" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
+<circle cx="879.1" cy="40.9" r="12.0" fill="#657482" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
+<text x="126.9" y="-53.2" class="label" text-anchor="end">В. В. Вертоградова</text>
+<text x="1206.4" y="402.6" class="label" text-anchor="start">Рыжакова С. И.</text>
+<text x="1100.6" y="361.5" class="label" text-anchor="start">Лысенко В. Г.</text>
+<text x="869.1" y="111.1" class="label" text-anchor="end">Цветкова С. О.</text>
+<text x="710.5" y="-12.2" class="label" text-anchor="end">Александрова Н. В.</text>
+<text x="974.9" y="111.1" class="label" text-anchor="end">Тавастшерна С. С.</text>
+<text x="604.8" y="182.2" class="label" text-anchor="end">Дубянский А. М.</text>
+<text x="889.1" y="58.9" class="label" text-anchor="start">Корнеева Н. А.</text>
 <rect x="669.0" y="72.0" width="252.0" height="100.0" rx="5" fill="#ffffff" stroke="#d8e0e8" opacity="0.94"/>
 <circle cx="685.0" cy="94.0" r="6.5" fill="#2f6fbb" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
 <text x="701.0" y="98.0" class="small" text-anchor="start">Зограф-ориентированные</text>
@@ -92,5 +94,5 @@ text{font-family:Arial,'Liberation Sans',sans-serif;fill:#1f2933}.small{font-siz
 <text x="701.0" y="124.0" class="small" text-anchor="start">сбалансированные</text>
 <circle cx="685.0" cy="146.0" r="6.5" fill="#b8554b" stroke="#ffffff" stroke-width="1.2" opacity="0.88"/>
 <text x="701.0" y="150.0" class="small" text-anchor="start">Рерих-ориентированные</text>
-<text x="34.0" y="686.0" class="subtitle" text-anchor="start">Итог: 18 сбалансированных, 11 рерих-ориентированных, 9 зограф-ориентированных.</text>
+<text x="34.0" y="686.0" class="subtitle" text-anchor="start">Итог: 20 сбалансированных, 9 рерих-ориентированных, 11 зограф-ориентированных.</text>
 </svg>

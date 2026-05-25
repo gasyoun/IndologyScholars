@@ -2,50 +2,50 @@
 <style>text{font-family:Arial,'Liberation Sans',sans-serif;fill:#1f2933}.title{font-size:20px;font-weight:700}.sub{font-size:13px;fill:#52616b}.axis{font-size:13px}.small{font-size:12px}.label{font-size:11px}</style>
 <text x="32.0" y="30.0" class="title" text-anchor="start">Событийная центральность участников</text>
 <text x="32.0" y="52.0" class="sub" text-anchor="start">Betweenness в графе, где ребро означает участие в одном и том же годовом событии.</text>
-<text x="238.0" y="93.0" class="small" text-anchor="end">Цветкова С. О.</text>
+<text x="238.0" y="93.0" class="small" text-anchor="end">Тавастшерна С. С.</text>
 <rect x="250.0" y="76.0" width="650.0" height="18.0" fill="#7b5ea7" stroke="none" opacity="1.0"/>
-<text x="908.0" y="90.0" class="label" text-anchor="start">0.041511</text>
-<text x="238.0" y="121.0" class="small" text-anchor="end">Тавастшерна С. С.</text>
-<rect x="250.0" y="104.0" width="633.1" height="18.0" fill="#7b5ea7" stroke="none" opacity="1.0"/>
-<text x="891.1" y="118.0" class="label" text-anchor="start">0.040433</text>
-<text x="238.0" y="149.0" class="small" text-anchor="end">Рыжакова С. И.</text>
-<rect x="250.0" y="132.0" width="540.1" height="18.0" fill="#7b5ea7" stroke="none" opacity="1.0"/>
-<text x="798.1" y="146.0" class="label" text-anchor="start">0.034491</text>
-<text x="238.0" y="177.0" class="small" text-anchor="end">Александрова Н. В.</text>
-<rect x="250.0" y="160.0" width="530.8" height="18.0" fill="#7b5ea7" stroke="none" opacity="1.0"/>
-<text x="788.8" y="174.0" class="label" text-anchor="start">0.0339</text>
-<text x="238.0" y="205.0" class="small" text-anchor="end">Лысенко В. Г.</text>
-<rect x="250.0" y="188.0" width="488.5" height="18.0" fill="#7b5ea7" stroke="none" opacity="1.0"/>
-<text x="746.5" y="202.0" class="label" text-anchor="start">0.031196</text>
-<text x="238.0" y="233.0" class="small" text-anchor="end">Корнеева Н. А.</text>
-<rect x="250.0" y="216.0" width="478.5" height="18.0" fill="#7b5ea7" stroke="none" opacity="1.0"/>
-<text x="736.5" y="230.0" class="label" text-anchor="start">0.03056</text>
+<text x="908.0" y="90.0" class="label" text-anchor="start">0.048061</text>
+<text x="238.0" y="121.0" class="small" text-anchor="end">Корнеева Н. А.</text>
+<rect x="250.0" y="104.0" width="566.6" height="18.0" fill="#7b5ea7" stroke="none" opacity="1.0"/>
+<text x="824.6" y="118.0" class="label" text-anchor="start">0.041893</text>
+<text x="238.0" y="149.0" class="small" text-anchor="end">Цветкова С. О.</text>
+<rect x="250.0" y="132.0" width="518.4" height="18.0" fill="#7b5ea7" stroke="none" opacity="1.0"/>
+<text x="776.4" y="146.0" class="label" text-anchor="start">0.038333</text>
+<text x="238.0" y="177.0" class="small" text-anchor="end">Лысенко В. Г.</text>
+<rect x="250.0" y="160.0" width="494.3" height="18.0" fill="#7b5ea7" stroke="none" opacity="1.0"/>
+<text x="752.3" y="174.0" class="label" text-anchor="start">0.036547</text>
+<text x="238.0" y="205.0" class="small" text-anchor="end">Александрова Н. В.</text>
+<rect x="250.0" y="188.0" width="448.9" height="18.0" fill="#7b5ea7" stroke="none" opacity="1.0"/>
+<text x="706.9" y="202.0" class="label" text-anchor="start">0.033189</text>
+<text x="238.0" y="233.0" class="small" text-anchor="end">Рыжакова С. И.</text>
+<rect x="250.0" y="216.0" width="443.9" height="18.0" fill="#7b5ea7" stroke="none" opacity="1.0"/>
+<text x="701.9" y="230.0" class="label" text-anchor="start">0.032823</text>
 <text x="238.0" y="261.0" class="small" text-anchor="end">Лидова Н. Р.</text>
-<rect x="250.0" y="244.0" width="438.5" height="18.0" fill="#7b5ea7" stroke="none" opacity="1.0"/>
-<text x="696.5" y="258.0" class="label" text-anchor="start">0.028001</text>
-<text x="238.0" y="289.0" class="small" text-anchor="end">Парибок А. В.</text>
-<rect x="250.0" y="272.0" width="246.6" height="18.0" fill="#2f6fbb" stroke="none" opacity="1.0"/>
-<text x="504.6" y="286.0" class="label" text-anchor="start">0.015747</text>
-<text x="238.0" y="317.0" class="small" text-anchor="end">Мехакян А. Г.</text>
-<rect x="250.0" y="300.0" width="243.6" height="18.0" fill="#7b5ea7" stroke="none" opacity="1.0"/>
-<text x="501.6" y="314.0" class="label" text-anchor="start">0.015556</text>
-<text x="238.0" y="345.0" class="small" text-anchor="end">Дубянский А. М.</text>
-<rect x="250.0" y="328.0" width="235.0" height="18.0" fill="#7b5ea7" stroke="none" opacity="1.0"/>
-<text x="493.0" y="342.0" class="label" text-anchor="start">0.01501</text>
-<text x="238.0" y="373.0" class="small" text-anchor="end">Десницкая Е. А.</text>
-<rect x="250.0" y="356.0" width="214.1" height="18.0" fill="#2f6fbb" stroke="none" opacity="1.0"/>
-<text x="472.1" y="370.0" class="label" text-anchor="start">0.01367</text>
+<rect x="250.0" y="244.0" width="312.0" height="18.0" fill="#7b5ea7" stroke="none" opacity="1.0"/>
+<text x="570.0" y="258.0" class="label" text-anchor="start">0.023068</text>
+<text x="238.0" y="289.0" class="small" text-anchor="end">Васильков Я. В.</text>
+<rect x="250.0" y="272.0" width="302.9" height="18.0" fill="#7b5ea7" stroke="none" opacity="1.0"/>
+<text x="560.9" y="286.0" class="label" text-anchor="start">0.022399</text>
+<text x="238.0" y="317.0" class="small" text-anchor="end">Дубянский А. М.</text>
+<rect x="250.0" y="300.0" width="238.2" height="18.0" fill="#7b5ea7" stroke="none" opacity="1.0"/>
+<text x="496.2" y="314.0" class="label" text-anchor="start">0.017616</text>
+<text x="238.0" y="345.0" class="small" text-anchor="end">Альбедиль М. Ф.</text>
+<rect x="250.0" y="328.0" width="201.5" height="18.0" fill="#2f6fbb" stroke="none" opacity="1.0"/>
+<text x="459.5" y="342.0" class="label" text-anchor="start">0.014899</text>
+<text x="238.0" y="373.0" class="small" text-anchor="end">Мехакян А. Г.</text>
+<rect x="250.0" y="356.0" width="198.3" height="18.0" fill="#7b5ea7" stroke="none" opacity="1.0"/>
+<text x="456.3" y="370.0" class="label" text-anchor="start">0.014662</text>
 <text x="238.0" y="401.0" class="small" text-anchor="end">Игнатьев А. А.</text>
-<rect x="250.0" y="384.0" width="212.8" height="18.0" fill="#2f6fbb" stroke="none" opacity="1.0"/>
-<text x="470.8" y="398.0" class="label" text-anchor="start">0.013587</text>
-<text x="238.0" y="429.0" class="small" text-anchor="end">Васильков Я. В.</text>
-<rect x="250.0" y="412.0" width="197.9" height="18.0" fill="#2f6fbb" stroke="none" opacity="1.0"/>
-<text x="455.9" y="426.0" class="label" text-anchor="start">0.012641</text>
-<text x="238.0" y="457.0" class="small" text-anchor="end">Шохин В. К.</text>
-<rect x="250.0" y="440.0" width="192.1" height="18.0" fill="#7b5ea7" stroke="none" opacity="1.0"/>
-<text x="450.1" y="454.0" class="label" text-anchor="start">0.012266</text>
-<text x="238.0" y="485.0" class="small" text-anchor="end">Воробьева Д. Н.</text>
-<rect x="250.0" y="468.0" width="174.6" height="18.0" fill="#7b5ea7" stroke="none" opacity="1.0"/>
-<text x="432.6" y="482.0" class="label" text-anchor="start">0.011152</text>
+<rect x="250.0" y="384.0" width="193.0" height="18.0" fill="#2f6fbb" stroke="none" opacity="1.0"/>
+<text x="451.0" y="398.0" class="label" text-anchor="start">0.014274</text>
+<text x="238.0" y="429.0" class="small" text-anchor="end">Парибок А. В.</text>
+<rect x="250.0" y="412.0" width="170.8" height="18.0" fill="#2f6fbb" stroke="none" opacity="1.0"/>
+<text x="428.8" y="426.0" class="label" text-anchor="start">0.012629</text>
+<text x="238.0" y="457.0" class="small" text-anchor="end">Воробьева Д. Н.</text>
+<rect x="250.0" y="440.0" width="169.2" height="18.0" fill="#7b5ea7" stroke="none" opacity="1.0"/>
+<text x="427.2" y="454.0" class="label" text-anchor="start">0.012508</text>
+<text x="238.0" y="485.0" class="small" text-anchor="end">Скороходова Т. Г.</text>
+<rect x="250.0" y="468.0" width="166.3" height="18.0" fill="#2f6fbb" stroke="none" opacity="1.0"/>
+<text x="424.3" y="482.0" class="label" text-anchor="start">0.012296</text>
 <text x="250.0" y="588.0" class="sub" text-anchor="start">Цвет: обе площадки / только Зограф / только Рерих</text>
 </svg>

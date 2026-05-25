@@ -50,6 +50,7 @@ class SmartHTMLParser(HTMLParser):
 def normalize_person_name(name):
     name = name.strip().replace('\xa0', ' ').replace('\u200b', '')
     name = re.sub(r'\bC(?=\.)', 'С', name)
+    name = re.sub(r'\bA(?=\.)', 'А', name)
     # Strip trailing punctuation
     name = re.sub(r'[\.,;\s]+$', '', name)
     
@@ -204,6 +205,7 @@ def init_db(conn):
         online_platform TEXT,
         program_post_id TEXT,
         source_url TEXT NOT NULL,
+        program_last_updated TEXT,
         notes TEXT,
         FOREIGN KEY(event_series_id) REFERENCES event_series(event_series_id)
     )""")
@@ -339,8 +341,8 @@ def populate_seeded_data(conn):
     events = extract_csv_from_md(MD_PATH, "Events.csv")
     for r in events:
         is_online_val = 1 if r['is_online'].lower() == 'true' else 0
-        cursor.execute("INSERT INTO event VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
-                       (r['event_id'], 1, int(r['ordinal_int']), r['ordinal_roman'], int(r['year']), r['theme_ru'], None, r['start_date'], r['end_date'], r['format'], is_online_val, r['online_platform'], r['program_post_id'], r['source_url'], r['notes']))
+        cursor.execute("INSERT INTO event VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+                       (r['event_id'], 1, int(r['ordinal_int']), r['ordinal_roman'], int(r['year']), r['theme_ru'], None, r['start_date'], r['end_date'], r['format'], is_online_val, r['online_platform'], r['program_post_id'], r['source_url'], extract_program_last_updated(int(r['year']), "zograf"), r['notes']))
                        
     days = extract_csv_from_md(MD_PATH, "EventDays.csv")
     for r in days:
@@ -612,7 +614,6 @@ BIOGRAPHICAL_DATA = {
     "босхомджиев м в": ("Босхомджиев Мерген Владимирович", "Mergen Boskhomdzhiev", 1991, None),
     "игнатова м м": ("Игнатова Мария Михайловна", "Mariya Ignatova", 2000, None),
     "касым с в": ("Касым Софья Васильевна", "Sofya Kasym", 1980, None),
-    "пушкарева ю г": ("Кокова Юлия Георгиевна", "Kokova Yulia Georgievna", 1955, 2025),
     "мотылёва в л": ("Мотылёва Вера Леонидовна", "Vera Motyleva", 1965, None),
     "файбушевич с ф": ("Файбушевич Светлана Ивановна", "Svetlana Faybushevich", 1980, None),
     "щербак м б": ("Щербак Мария Борисовна", "Maria Shcherbak", 1998, None),
@@ -707,6 +708,16 @@ BIOGRAPHICAL_DATA.update({
     "котин и ю": ("Котин Игорь Юрьевич", "Kotin Igor Yurievich", 1968, None),
 })
 
+
+def canonical_person_key(name):
+    """Fold only biographically verified name variants into one person key."""
+    norm_key = normalize_person_name(name)
+    bio = BIOGRAPHICAL_DATA.get(norm_key)
+    if bio:
+        return normalize_person_name(bio[0])
+    return norm_key
+
+
 persons_cache = {} # normalized_key -> person_id
 person_id_overrides = None
 
@@ -742,13 +753,14 @@ def _apply_degree(cursor, pid, deg):
 
 def get_or_create_person(conn, name, source_url):
     cursor = conn.cursor()
-    norm_key = normalize_person_name(name)
+    source_norm_key = normalize_person_name(name)
+    norm_key = canonical_person_key(name)
 
     fn_ru, fn_en, by, dy = None, None, None, None
-    bio = BIOGRAPHICAL_DATA.get(norm_key)
+    bio = BIOGRAPHICAL_DATA.get(norm_key) or BIOGRAPHICAL_DATA.get(source_norm_key)
     if bio:
         fn_ru, fn_en, by, dy = bio
-    deg = DEGREE_DATA.get(norm_key)
+    deg = DEGREE_DATA.get(norm_key) or DEGREE_DATA.get(source_norm_key)
 
     # Check cache first
     if norm_key in persons_cache:
@@ -823,9 +835,34 @@ def clean_title(title):
     title = title.strip()
     title = re.sub(r'\s*\(\s*онлайн\s*\)\s*', '', title, flags=re.IGNORECASE)
     title = re.sub(r'\s*\(\s*zoom\s*\)\s*', '', title, flags=re.IGNORECASE)
+    title = re.sub(
+        r'\s+\d{1,2}[:\.]\d{2}\s*[—–-]\s*\d{1,2}[:\.]\d{2}\.?\s*перерыв.*$',
+        '',
+        title,
+        flags=re.IGNORECASE,
+    )
+    title = re.sub(r'\s+\d{1,2}[:\.]\d{2}\s*[—–-]\s*\d{1,2}[:\.]\d{2}\s*$', '', title)
     if title.endswith('.'):
         title = title[:-1]
     return title.strip()
+
+
+def extract_program_last_updated(year, conference="zograf"):
+    """Extract the source-page modification date when the programme exposes one."""
+    html_path = os.path.join(CACHE_DIR, f"{conference}_{year}.html")
+    if not os.path.exists(html_path):
+        return None
+    with open(html_path, "r", encoding="utf-8") as handle:
+        html = handle.read()
+    match = re.search(
+        r"Последнее\s+обновление\s*\(\s*(\d{1,2})\.(\d{1,2})\.(\d{4})\s*\)",
+        html,
+        flags=re.IGNORECASE,
+    )
+    if not match:
+        return None
+    day, month, source_year = match.groups()
+    return f"{int(source_year):04d}-{int(month):02d}-{int(day):02d}"
 
 # Preprocess line helper to remove leading time
 def preprocess_line(line):
@@ -939,6 +976,249 @@ TALK_REGEX_TWO_AFFIL = re.compile(
     r'([А-ЯЁA-Z][а-яёa-z\-]+(?:\s+[А-ЯЁA-Z][а-яёa-z\-]+){1,3})\s*\(([^)]+)\)\.\s*(.+)$'
 )
 
+INITIAL_AUTHOR = (
+    r'(?:(?:[А-ЯЁA-Z]\.\s*){1,2}[А-ЯЁA-Z][а-яёa-z\-]+|'
+    r'[А-ЯЁA-Z][а-яёa-z\-]+\s*(?:[А-ЯЁA-Z]\.?\s*){1,2})'
+)
+
+TALK_REGEX_INITIALS_AFFIL = re.compile(
+    rf'^({INITIAL_AUTHOR})\s*\(([^)]+)\)\.?\s*(.+)$'
+)
+
+TALK_REGEX_TWO_AFFIL_INITIALS = re.compile(
+    rf'^({INITIAL_AUTHOR})\s*\(([^)]+)\)\s*,?\s*'
+    rf'({INITIAL_AUTHOR})\s*\(([^)]+)\)\.?\s*(.+)$'
+)
+
+TALK_REGEX_COAUTHORS_INITIALS = re.compile(
+    rf'^({INITIAL_AUTHOR}(?:\s*,\s*{INITIAL_AUTHOR})+)\s*\(([^)]+)\)\.?\s*(.+)$'
+)
+
+TALK_REGEX_COAUTHORS_NO_AFFIL = re.compile(
+    rf'^({INITIAL_AUTHOR}(?:\s*,\s*{INITIAL_AUTHOR})+)\.\s*(.+)$'
+)
+
+TALK_REGEX_NO_AFFIL = re.compile(
+    r'^((?:[А-ЯЁA-Z]\.\s*){1,2}[А-ЯЁA-Z][а-яёa-z\-]+|'
+    r'[А-ЯЁA-Z][а-яёa-z\-]+\s*(?:[А-ЯЁA-Z]\.\s*){1,2})\.\s*(.+)$'
+)
+
+TALK_REGEX_ACADEMIC_NO_AFFIL = re.compile(
+    r'^(?:Акад|Проф)\.\s*((?:[А-ЯЁA-Z]\.\s*){1,2}[А-ЯЁA-Z][а-яёa-z\-]+)\.\s*(.+)$',
+    flags=re.IGNORECASE,
+)
+
+TALK_REGEX_LATIN_COAUTHORS = re.compile(
+    r'^\[?([A-Z][A-Za-z\-]+(?:\s+[A-Z][A-Za-z\-]+)+)\]?\s*,\s*'
+    r'([A-Z][A-Za-z\-]+(?:\s+[A-Z][A-Za-z\-]+)+)\s*\(([^)]+)\)\.?\s*(.+)$'
+)
+
+PACKED_AUTHOR_SIGNATURE = re.compile(
+    r'(?:[А-ЯЁ][а-яё\-]+(?:\s+[А-ЯЁ][а-яё\-]+){1,2}|'
+    r'[А-ЯЁ][а-яё\-]+\s*(?:[А-ЯЁ]\.\s*){1,2}|'
+    r'(?:[А-ЯЁ]\.\s*){1,2}[А-ЯЁ][а-яё\-]+)\s*\([^)]+\)\.?\s*'
+)
+
+PACKED_INITIAL_AUTHOR_SIGNATURE = re.compile(
+    rf'({INITIAL_AUTHOR}(?:\s*,\s*{INITIAL_AUTHOR})*)\s*\(([^)]+)\)\.?\s*'
+)
+
+LATIN_SPEAKER_ALIASES = {
+    "Olga Vecherina": "О. П. Вечерина",
+    "Ruzana Pskhu": "Р. В. Псху",
+}
+
+
+def split_packed_zograf_lines(lines):
+    """Separate multiple programme entries collapsed into a single HTML paragraph."""
+    expanded = []
+    latin_marker = re.compile(r'\[?Olga Vecherina\]?\s*,\s*Ruzana Pskhu\s*\(')
+    for line in lines:
+        cleaned = preprocess_line(line)
+        if TALK_REGEX_TWO_AFFIL.match(cleaned):
+            expanded.append(line)
+            continue
+
+        boundaries = []
+        for match in PACKED_AUTHOR_SIGNATURE.finditer(line):
+            position = match.start()
+            if position <= 0:
+                continue
+            prefix = line[:position].rstrip()
+            # Some titles contain capitalized names followed by parentheses.
+            # A collapsed next entry begins after a finished preceding title.
+            if prefix and prefix[-1] in ".!?":
+                boundaries.append(position)
+        for match in PACKED_INITIAL_AUTHOR_SIGNATURE.finditer(line):
+            position = match.start()
+            if position <= 0:
+                continue
+            if line[:position].rstrip().endswith(","):
+                continue
+            affiliation = match.group(2).lower()
+            if re.search(
+                r'москв|спб|петербург|обнинск|казан|пенза|краснодар|новосибирск|'
+                r'вильнюс|гамбург|маврики|гент|онлайн',
+                affiliation,
+            ):
+                boundaries.append(position)
+        latin_match = latin_marker.search(line)
+        if latin_match and latin_match.start() > 0:
+            boundaries.append(latin_match.start())
+        if not boundaries:
+            expanded.append(line)
+            continue
+        previous = 0
+        for position in sorted(set(boundaries)):
+            fragment = line[previous:position].strip()
+            if fragment:
+                expanded.append(fragment)
+            previous = position
+        fragment = line[previous:].strip()
+        if fragment:
+            expanded.append(fragment)
+    return expanded
+
+
+def parse_zograf_talk_line(line):
+    """Return parsed speakers and title for one candidate programme entry."""
+    cleaned_line = preprocess_line(line)
+    m_two = TALK_REGEX_TWO_AFFIL.match(cleaned_line)
+    if m_two:
+        return [
+            (m_two.group(1).strip(), m_two.group(2).strip()),
+            (m_two.group(3).strip(), m_two.group(4).strip()),
+        ], clean_title(m_two.group(5))
+
+    m_two_initials = TALK_REGEX_TWO_AFFIL_INITIALS.match(cleaned_line)
+    if m_two_initials:
+        return [
+            (m_two_initials.group(1).strip(), m_two_initials.group(2).strip()),
+            (m_two_initials.group(3).strip(), m_two_initials.group(4).strip()),
+        ], clean_title(m_two_initials.group(5))
+
+    m_co = TALK_REGEX_COAUTHORS.match(cleaned_line)
+    if m_co:
+        names = split_coauthor_names(m_co.group(1))
+        affil = m_co.group(2).strip()
+        return [(name, affil) for name in names], clean_title(m_co.group(3))
+
+    m_co_initials = TALK_REGEX_COAUTHORS_INITIALS.match(cleaned_line)
+    if m_co_initials:
+        names = split_coauthor_names(m_co_initials.group(1))
+        affil = m_co_initials.group(2).strip()
+        return [(name, affil) for name in names], clean_title(m_co_initials.group(3))
+
+    m_co_no_affil = TALK_REGEX_COAUTHORS_NO_AFFIL.match(cleaned_line)
+    if m_co_no_affil:
+        names = split_coauthor_names(m_co_no_affil.group(1))
+        return [(name, "Не указана") for name in names], clean_title(m_co_no_affil.group(2))
+
+    m_single = TALK_REGEX.match(cleaned_line)
+    if m_single:
+        return [(m_single.group(1).strip(), m_single.group(2).strip())], clean_title(m_single.group(3))
+
+    m_initials = TALK_REGEX_INITIALS_AFFIL.match(cleaned_line)
+    if m_initials:
+        return [(m_initials.group(1).strip(), m_initials.group(2).strip())], clean_title(m_initials.group(3))
+
+    m_latin = TALK_REGEX_LATIN_COAUTHORS.match(cleaned_line)
+    if m_latin:
+        return [
+            (LATIN_SPEAKER_ALIASES.get(m_latin.group(1).strip(), m_latin.group(1).strip()), m_latin.group(3).strip()),
+            (LATIN_SPEAKER_ALIASES.get(m_latin.group(2).strip(), m_latin.group(2).strip()), m_latin.group(3).strip()),
+        ], clean_title(m_latin.group(4))
+
+    m_academic = TALK_REGEX_ACADEMIC_NO_AFFIL.match(cleaned_line)
+    if m_academic:
+        return [(m_academic.group(1).strip(), "Не указана")], clean_title(m_academic.group(2))
+
+    m_no_affil = TALK_REGEX_NO_AFFIL.match(cleaned_line)
+    if m_no_affil:
+        return [(m_no_affil.group(1).strip(), "Не указана")], clean_title(m_no_affil.group(2))
+
+    return None
+
+
+def is_zograf_structure_line(line, year):
+    """Identify lines that end a wrapped talk entry rather than extend its title."""
+    value = preprocess_line(line)
+    lower = value.lower()
+    if not value:
+        return True
+    if re.search(r'\d{1,2}\s*[—–-]\s*\d{1,2}\s*мая', lower):
+        return True
+    if "мая" in lower and (str(year) in lower or len(value) < 65 or re.match(r'^\d{1,2}\s+мая', lower)):
+        return True
+    if re.search(r'\d{1,2}[:\.]\d{2}\s*[-—–]\s*\d{1,2}[:\.]\d{2}', value):
+        return True
+    if re.match(r'^\d{1,2}[:\.]\d{2}(?:\.|\s|$)', value):
+        return True
+    return lower.startswith((
+        "\u0443\u0442\u0440\u0435\u043d\u043d\u0435\u0435 \u0437\u0430\u0441\u0435\u0434\u0430\u043d\u0438\u0435",
+        "\u0434\u043d\u0435\u0432\u043d\u043e\u0435 \u0437\u0430\u0441\u0435\u0434\u0430\u043d\u0438\u0435",
+        "\u0432\u0435\u0447\u0435\u0440\u043d\u0435\u0435 \u0437\u0430\u0441\u0435\u0434\u0430\u043d\u0438\u0435",
+        "перерыв", "открытие", "приветств", "выступления", "предс.",
+        "председатель", "подведение итогов", "заключительное",
+        "день ", "понедельник", "вторник", "среда", "четверг", "пятница",
+        "институт ", "восточный факультет", "конференция проводится",
+        "последнее обновление", "« пред.", "след.", "вернуться",
+    ))
+
+
+def has_nonparticipant_affiliation(speakers_with_affil):
+    """Catch title fragments such as a scholar's lifespan parsed as an affiliation."""
+    for _speaker, affiliation in speakers_with_affil:
+        if re.search(r'\b(?:1[0-9]{3}|20[0-9]{2})\s*[—–-]\s*(?:1[0-9]{3}|20[0-9]{2})\b', affiliation):
+            return True
+    return False
+
+
+def coalesce_zograf_talk_lines(lines, year):
+    """Join title wraps and detached-title layouts into one logical talk line."""
+    repaired = []
+    idx = 0
+    while idx < len(lines):
+        line = lines[idx]
+        if (
+            re.fullmatch(r'(?:[А-ЯЁA-Z]\.\s*){1,2}', line)
+            and idx + 1 < len(lines)
+        ):
+            repaired.append(f"{line} {lines[idx + 1]}".strip())
+            idx += 2
+            continue
+        repaired.append(line)
+        idx += 1
+    expanded = split_packed_zograf_lines(repaired)
+    merged = []
+    pending = None
+    for idx, line in enumerate(expanded):
+        candidate = parse_zograf_talk_line(line)
+        next_line = expanded[idx + 1] if idx + 1 < len(expanded) else None
+        next_is_title_text = (
+            next_line is not None
+            and parse_zograf_talk_line(next_line) is None
+            and not is_zograf_structure_line(next_line, year)
+        )
+        starts_talk = candidate is not None and not has_nonparticipant_affiliation(candidate[0])
+        if starts_talk and not candidate[1] and pending is not None and not next_is_title_text:
+            starts_talk = False
+
+        if starts_talk:
+            if pending is not None:
+                merged.append(pending)
+            pending = line
+        elif pending is not None and not is_zograf_structure_line(line, year):
+            pending = f"{pending} {line}".strip()
+        else:
+            if pending is not None:
+                merged.append(pending)
+                pending = None
+            merged.append(line)
+    if pending is not None:
+        merged.append(pending)
+    return merged
+
 
 def read_program_text(year, conference="zograf"):
     """Read program text from cached .html or .pdf, return normalized text with newlines.
@@ -993,7 +1273,7 @@ def populate_zograf_talks(conn):
         if text is None:
             continue
 
-        lines = [line.strip() for line in text.split('\n') if line.strip()]
+        lines = coalesce_zograf_talk_lines([line.strip() for line in text.split('\n') if line.strip()], year)
         
         day_number = 0
         current_day_id = None
@@ -1003,6 +1283,10 @@ def populate_zograf_talks(conn):
         session_order = 0
         
         for line in lines:
+            # The 2014 source page appends an unrelated public lecture after
+            # the Zograf programme itself; do not ingest it as a conference talk.
+            if year == 2014 and "состоится доклад профессора Х. Линдтнера" in line:
+                break
             # 1. Detect Day break in Zograf
             # Heuristics: date lines with month "мая"
             if "мая" in line and (str(year) in line or len(line) < 60) and not TALK_REGEX.match(preprocess_line(line)):
@@ -1045,27 +1329,11 @@ def populate_zograf_talks(conn):
             speakers_with_affil = []  # list of (speaker_raw, affil_raw)
             title_raw = None
 
-            m_two = TALK_REGEX_TWO_AFFIL.match(cleaned_line)
-            if m_two:
-                speakers_with_affil = [
-                    (m_two.group(1).strip(), m_two.group(2).strip()),
-                    (m_two.group(3).strip(), m_two.group(4).strip()),
-                ]
-                title_raw = clean_title(m_two.group(5))
-            else:
-                m_co = TALK_REGEX_COAUTHORS.match(cleaned_line)
-                if m_co:
-                    names = split_coauthor_names(m_co.group(1))
-                    affil = m_co.group(2).strip()
-                    speakers_with_affil = [(n, affil) for n in names]
-                    title_raw = clean_title(m_co.group(3))
-                else:
-                    m_single = TALK_REGEX.match(cleaned_line)
-                    if m_single:
-                        speakers_with_affil = [(m_single.group(1).strip(), m_single.group(2).strip())]
-                        title_raw = clean_title(m_single.group(3))
+            candidate = parse_zograf_talk_line(line)
+            if candidate:
+                speakers_with_affil, title_raw = candidate
 
-            if speakers_with_affil and title_raw is not None:
+            if speakers_with_affil and title_raw:
                 # Handle edge cases where speaker is listed but no session has been defined yet
                 if not current_session_id:
                     if not current_edv_id:
@@ -1147,8 +1415,8 @@ def populate_roerich_talks(conn):
         roman = ROMAN_MAP.get(year, "unspecified")
         
         # Insert Event
-        cursor.execute("INSERT OR IGNORE INTO event VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
-                       (event_id, 2, year - 1960, roman, year, theme, None, start_date, end_date, "in_person", 0, None, None, f"https://ancient.ivran.ru/novosti?year={year}", None))
+        cursor.execute("INSERT OR IGNORE INTO event VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+                       (event_id, 2, year - 1960, roman, year, theme, None, start_date, end_date, "in_person", 0, None, None, f"https://ancient.ivran.ru/novosti?year={year}", extract_program_last_updated(year, "roerich"), None))
         
         day_number = 0
         current_day_id = None
@@ -1209,12 +1477,11 @@ def populate_roerich_talks(conn):
                 conn.commit()
                 
             # 3. Detect Presentation
-            cleaned_line = preprocess_line(line)
-            match = TALK_REGEX.match(cleaned_line)
-            if match:
-                speaker_raw = match.group(1).strip()
-                affil_raw = match.group(2).strip()
-                title_raw = clean_title(match.group(3))
+            candidate = parse_zograf_talk_line(line)
+            if candidate:
+                speakers_with_affil, title_raw = candidate
+                if not title_raw:
+                    continue
                 
                 # If we see a talk but no day was defined yet, let's create a default day 1
                 if not current_day_id:
@@ -1237,17 +1504,16 @@ def populate_roerich_talks(conn):
                                    (current_session_id, current_edv_id, "Научное заседание", "panel", "11:00", "18:00", "11:00–18:00", None, f"https://ancient.ivran.ru/novosti?year={year}", "Default", None))
                 
                 # Insert presentation
-                pres_id = stable_presentation_id("roerich", year, title_raw, speaker_raw, session_order)
+                pres_id = stable_presentation_id("roerich", year, title_raw, speakers_with_affil[0][0], session_order)
                 is_online_val = 1 if 'онлайн' in line.lower() else 0
                 cursor.execute("INSERT INTO presentation VALUES (?,?,?,?,?,?,?,?,?,?,?)",
                                (pres_id, current_session_id, title_raw, None, "ru", None, is_online_val, None, f"https://ancient.ivran.ru/novosti?year={year}", line, None))
                 
-                # Get/Create Speaker
-                person_id = get_or_create_person(conn, speaker_raw, f"https://ancient.ivran.ru/novosti?year={year}")
-                
-                # Map Speaker
-                cursor.execute("INSERT INTO presentation_person VALUES (?,?,?,?,?,?,?,?)",
-                               (pres_id, person_id, "speaker", 1, affil_raw, None, f"https://ancient.ivran.ru/novosti?year={year}", None))
+                for order_idx, (speaker_raw, affil_raw) in enumerate(speakers_with_affil, start=1):
+                    person_id = get_or_create_person(conn, speaker_raw, f"https://ancient.ivran.ru/novosti?year={year}")
+                    role = "speaker" if order_idx == 1 else "coauthor"
+                    cursor.execute("INSERT INTO presentation_person VALUES (?,?,?,?,?,?,?,?)",
+                                   (pres_id, person_id, role, order_idx, affil_raw, None, f"https://ancient.ivran.ru/novosti?year={year}", None))
                 conn.commit()
 
 def verify_db(conn):
@@ -1425,7 +1691,7 @@ def main():
     print("Populating seeded database tables from zograf-roerich-db.md...")
     populate_seeded_data(conn)
 
-    print("Populating parsed Zograf Reading talks (2004-2025)...")
+    print("Populating parsed Zograf Reading talks (2004-2026)...")
     populate_zograf_talks(conn)
 
     print("Populating parsed Roerich Reading talks (2007-2025)...")

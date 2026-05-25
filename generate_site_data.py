@@ -3,13 +3,13 @@ import json
 import datetime
 import re
 
-from publication_helpers import assign_unique_slugs, load_authority_overrides, normalize_time_interval
+from publication_helpers import GENERATION_COHORTS, assign_unique_slugs, generation_cohort, load_authority_overrides, normalize_time_interval
 from title_normalization import THEME_OVERRIDES_BY_PRESENTATION_ID, canonical_title
 
 DB_PATH = "conferences.db"
 OUTPUT_FILE = "site_data.json"
 DATA_SCHEMA_VERSION = "1.0.0"
-PIPELINE_VERSION = "2026-05-21"
+PIPELINE_VERSION = "2026-05-24"
 
 def format_to_initials(name):
     name = name.strip()
@@ -99,6 +99,7 @@ def extract_geography(affiliation_text):
         ("улан-удэ", "Улан-Удэ", "Ulan-Ude"),
         ("казань", "Казань", "Kazan"),
         ("пенза", "Пенза", "Penza"),
+        ("обнинск", "Обнинск", "Obninsk"),
         ("элиста", "Элиста", "Elista"),
         ("копенгаген", "Копенгаген", "Copenhagen"),
         ("copenhagen", "Копенгаген", "Copenhagen"),
@@ -504,6 +505,7 @@ def main():
             if len(theme_counts) > 1:
                 thematic_breadth = "Interdisciplinary"
             
+        cohort = generation_cohort(meta["birth_year"])
         scholars.append({
             "id": pid,
             "name": meta["std_name"],
@@ -511,6 +513,9 @@ def main():
             "full_name_ru": meta["full_name_ru"] or meta["std_name"],
             "full_name_en": meta["full_name_en"] or meta["std_name"],
             "birth_year": meta["birth_year"],
+            "generation_code": cohort["code"] if cohort else None,
+            "generation_label_ru": cohort["ru"] if cohort else None,
+            "generation_label_en": cohort["en"] if cohort else None,
             "death_year": meta["death_year"],
             "degree": meta.get("degree"),
             "degree_year": meta.get("degree_year"),
@@ -556,7 +561,9 @@ def main():
             s.session_title,
             ed.calendar_date,
             s.time_text_raw,
-            s.session_id
+            s.session_id,
+            e.program_last_updated,
+            e.source_url
         FROM presentation pr
         JOIN presentation_person pp ON pp.presentation_id = pr.presentation_id
         JOIN person p ON p.person_id = pp.person_id
@@ -572,7 +579,7 @@ def main():
     
     timeline = {}
     for r in timeline_raw:
-        pres_id, year_val, series, pid, affiliation, title, is_online, venue_name, day_label, session_title, calendar_date, time_text, sess_id = r
+        pres_id, year_val, series, pid, affiliation, title, is_online, venue_name, day_label, session_title, calendar_date, time_text, sess_id, program_last_updated, source_url = r
         year = str(year_val)
         meta = person_meta[pid]
         
@@ -630,6 +637,8 @@ def main():
             "day_of_week": day_of_week,
             "session": session_title,
             "time_interval": normalize_time_interval(time_text, "Не указано"),
+            "program_last_updated": program_last_updated,
+            "source_url": source_url,
             "is_first_talk": is_first,
             "is_last_talk": is_last,
             "order_in_session": order_idx + 1,
@@ -669,6 +678,7 @@ def main():
         "Новосибирск": {"lat": 55.0084, "lon": 82.9357},
         "Улан-Удэ": {"lat": 51.8344, "lon": 107.5845},
         "Пенза": {"lat": 53.1959, "lon": 45.0183},
+        "Обнинск": {"lat": 55.1120, "lon": 36.5865},
         "Нижний Новгород": {"lat": 56.3269, "lon": 44.0059},
         "Томск": {"lat": 56.4977, "lon": 84.9744},
         "Элиста": {"lat": 46.3078, "lon": 44.2558},
@@ -742,6 +752,24 @@ def main():
                     age_groups["elders"] += 1
             except Exception:
                 pass
+
+    generation_stats = [
+        {
+            "code": cohort["code"],
+            "label_ru": cohort["ru"],
+            "label_en": cohort["en"],
+            "count": sum(1 for item in scholars if item.get("generation_code") == cohort["code"]),
+        }
+        for cohort in GENERATION_COHORTS
+    ]
+    unknown_generation_count = sum(1 for item in scholars if not item.get("generation_code"))
+    if unknown_generation_count:
+        generation_stats.append({
+            "code": "unknown",
+            "label_ru": "Год рождения не установлен",
+            "label_en": "Birth year not established",
+            "count": unknown_generation_count,
+        })
 
     # Extract co-occurrence collaboration network
     network_nodes = []
@@ -864,6 +892,7 @@ def main():
         "geography_stats": geography_stats,
         "gender_stats": gender_stats,
         "age_stats": age_groups,
+        "generation_stats": generation_stats,
         "institutions_stats": institutions_stats,
         "word_cloud": word_cloud,
         "network": {
