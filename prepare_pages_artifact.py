@@ -26,6 +26,7 @@ PUBLIC_PATHS = [
     "known-limitations.html",
     "how-to-cite.html",
     "metrics-guide.html",
+    "classification-criteria.html",
     "networks.html",
     "indology_scholars_analytics.md",
 ]
@@ -35,6 +36,7 @@ PUBLIC_DIRS = [
     "analytics_output",
     "scholars",
     "conferences",
+    "presentations",
     "themes",
     "topics",
     "generations",
@@ -44,6 +46,7 @@ PUBLIC_DIRS = [
     "findings",
     "cities",
     "institutions",
+    "curation",
 ]
 
 

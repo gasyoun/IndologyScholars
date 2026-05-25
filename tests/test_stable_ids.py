@@ -17,7 +17,9 @@ def load_module(name, path):
 
 build = load_module("build_and_populate_db_under_test", "build_and_populate_db.py")
 publication_helpers = load_module("publication_helpers_under_test", "publication_helpers.py")
+metadata_normalization = load_module("metadata_normalization_under_test", "metadata_normalization.py")
 title_normalization = load_module("title_normalization_under_test", "title_normalization.py")
+classification_overrides = load_module("classification_overrides_under_test", "classification_overrides.py")
 compare_manifests = load_module("compare_id_manifests_under_test", "scratch/compare_id_manifests.py")
 export_manifest = load_module("export_presentation_id_manifest_under_test", "scratch/export_presentation_id_manifest.py")
 
@@ -63,6 +65,60 @@ class StableIdTests(unittest.TestCase):
             title_normalization.canonical_title("PRES_956381eb58", "ignored source tail"),
             "Анализ аморальных поступков в «Абхидхармакоше» Васубандху",
         )
+
+    def test_public_title_moves_online_suffix_out_of_title(self):
+        self.assertEqual(
+            title_normalization.canonical_title(None, "Ритуальные предметы. Онлайн"),
+            "Ритуальные предметы",
+        )
+
+    def test_leading_institution_is_public_metadata_not_title_text(self):
+        title, affiliation = metadata_normalization.split_leading_affiliation(
+            "(СПбГУ). Древнеиндийские диалекты в ранних фонетических трактатах"
+        )
+        self.assertEqual(title, "Древнеиндийские диалекты в ранних фонетических трактатах")
+        self.assertEqual(affiliation, "СПбГУ")
+        self.assertEqual(title_normalization.canonical_title(None, "(СПбГУ). Тема доклада"), "Тема доклада")
+
+    def test_city_markers_are_not_public_institutional_affiliations(self):
+        self.assertIsNone(metadata_normalization.canonical_reported_affiliation("СПб"))
+        self.assertIsNone(metadata_normalization.canonical_reported_affiliation("Санкт-Петербург"))
+        self.assertEqual(
+            metadata_normalization.canonical_reported_affiliation("СПбГУ, Восточный факультет"),
+            "СПбГУ, Восточный факультет",
+        )
+
+    def test_verified_affiliation_span_does_not_extend_past_its_end(self):
+        spans = {
+            "PERS_test": [
+                {
+                    "affiliation_ru": "СПбГУ, Восточный факультет",
+                    "start_year": "2018",
+                    "end_year": "2022",
+                    "source_url": "",
+                    "note": "",
+                }
+            ]
+        }
+        within = metadata_normalization.public_affiliation("PERS_test", 2022, "СПб", None, spans)
+        after = metadata_normalization.public_affiliation("PERS_test", 2024, "СПб", None, spans)
+        self.assertEqual(within["display"], "СПбГУ, Восточный факультет")
+        self.assertIsNone(after["display"])
+
+    def test_dhatupatha_title_has_editorially_normalized_public_form(self):
+        self.assertIn(
+            "Дхатупатхе",
+            title_normalization.canonical_title(
+                "PRES_5b0c00b805",
+                "Технические приспособления для рубрикации корней в «Дхатупати» Панини",
+            ),
+        )
+
+    def test_expert_corrections_separate_theme_and_argument_scale(self):
+        reviewed = classification_overrides.CLASSIFICATION_OVERRIDES["PRES_edb6f3ab45"]
+        self.assertEqual(reviewed["theme_code"], "linguistics")
+        self.assertEqual(reviewed["gumilyov_level"], 1)
+        self.assertIn("etymology", reviewed["meso_codes"])
 
     def test_packed_zograf_line_separates_obninsk_talk(self):
         line = (

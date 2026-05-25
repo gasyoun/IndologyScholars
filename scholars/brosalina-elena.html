@@ -63,20 +63,7 @@
       "knowsAbout": [
         "Литература и поэзия"
       ],
-      "affiliation": [
-        {
-          "@type": "Organization",
-          "name": "Не указана"
-        },
-        {
-          "@type": "Organization",
-          "name": "СПб"
-        },
-        {
-          "@type": "Organization",
-          "name": "Санкт-Петербург"
-        }
-      ],
+      "affiliation": [],
       "birthDate": "1931",
       "deathDate": "2020"
     }
@@ -215,6 +202,28 @@
             padding: 0.8rem 1rem;
             border-radius: 0 8px 8px 0;
         }
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            border-radius: 8px;
+            padding: 0.18rem 0.45rem;
+            margin-left: 0.45rem;
+            border: 1px solid var(--border);
+            color: var(--muted);
+            font-size: 0.82rem;
+            font-weight: 600;
+            vertical-align: middle;
+        }
+        .badge-online {
+            border-color: rgba(52, 211, 153, 0.4);
+            color: #6ee7b7;
+            background: rgba(16, 185, 129, 0.1);
+        }
+        .badge-video {
+            border-color: rgba(251, 191, 36, 0.44);
+            color: #fde68a;
+            background: rgba(217, 119, 6, 0.13);
+        }
         .footer {
             color: var(--soft);
             margin-top: 3rem;
@@ -264,6 +273,8 @@
             <a href="/IndologyScholars/generations/">Поколения</a>
             <a href="/IndologyScholars/meso/">Мезоуровни</a>
             <a href="/IndologyScholars/gumilyov/">Гумилев</a>
+            <a href="/IndologyScholars/classification-criteria.html">Критерии</a>
+            <a href="/IndologyScholars/presentations/">Доклады</a>
             <a href="/IndologyScholars/videos/">Видео</a>
             <a href="/IndologyScholars/findings/">Выводы</a>
             <a href="/IndologyScholars/cities/">Города</a>
@@ -293,7 +304,8 @@
         </section>
 
         <h2>Аффилиации</h2>
-        <div class="chip-row"><a class="chip" href="../index.html?search=%D0%9D%D0%B5%20%D1%83%D0%BA%D0%B0%D0%B7%D0%B0%D0%BD%D0%B0">Не указана</a><a class="chip" href="../cities/sankt-peterburg.html">СПб</a><a class="chip" href="../cities/sankt-peterburg.html">Санкт-Петербург</a></div>
+        <div class="chip-row"><span class="meta">Нет данных</span></div>
+
 
         <h2>Географические центры</h2>
         <div class="chip-row"><a class="chip" href="../cities/sankt-peterburg.html">Санкт-Петербург</a></div>
@@ -309,7 +321,7 @@
         <h2>Доклады</h2>
         <section class="list">
         <article class="talk" id="PRES_4eabd67999">
-            <strong><a href="../conferences/zograf-2019.html#PRES_4eabd67999">Структура «Чарья-гити»</a></strong>
+            <strong><a href="../presentations/PRES_4eabd67999.html">Структура «Чарья-гити»</a></strong>
             <div class="meta">
                 <a href="../conferences/zograf-2019.html">Зографские чтения 2019</a>
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a> · <a href="../cities/sankt-peterburg.html">Санкт-Петербург</a>
@@ -320,7 +332,7 @@
         </article>
 
         <article class="talk" id="PRES_0966cfd52f">
-            <strong><a href="../conferences/zograf-2018.html#PRES_0966cfd52f">«Чариягити» и Тагор</a></strong>
+            <strong><a href="../presentations/PRES_0966cfd52f.html">«Чариягити» и Тагор</a></strong>
             <div class="meta">
                 <a href="../conferences/zograf-2018.html">Зографские чтения 2018</a>
                 · <a href="../themes/literature-and-poetry.html">Литература и поэзия</a> · <a href="../cities/sankt-peterburg.html">Санкт-Петербург</a>
@@ -331,7 +343,7 @@
         </article>
 
         <article class="talk" id="PRES_47078a3292">
-            <strong><a href="../conferences/zograf-2017.html#PRES_47078a3292">Фольклорные элементы в сказании о Ратне (XVII век)</a></strong>
+            <strong><a href="../presentations/PRES_47078a3292.html">Фольклорные элементы в сказании о Ратне (XVII век)</a></strong>
             <div class="meta">
                 <a href="../conferences/zograf-2017.html">Зографские чтения 2017</a>
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a>
@@ -342,7 +354,7 @@
         </article>
 
         <article class="talk" id="PRES_417cd90017">
-            <strong><a href="../conferences/zograf-2016.html#PRES_417cd90017">И снова о переводах Р. Тагора</a></strong>
+            <strong><a href="../presentations/PRES_417cd90017.html">И снова о переводах Р. Тагора</a></strong>
             <div class="meta">
                 <a href="../conferences/zograf-2016.html">Зографские чтения 2016</a>
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a>
@@ -353,7 +365,7 @@
         </article>
 
         <article class="talk" id="PRES_addb4753ec">
-            <strong><a href="../conferences/zograf-2015.html#PRES_addb4753ec">Сказание о Ратнакалике (в составе поэмы «Лор и Чандрани»)</a></strong>
+            <strong><a href="../presentations/PRES_addb4753ec.html">Сказание о Ратнакалике (в составе поэмы «Лор и Чандрани»)</a></strong>
             <div class="meta">
                 <a href="../conferences/zograf-2015.html">Зографские чтения 2015</a>
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a>
@@ -364,7 +376,7 @@
         </article>
 
         <article class="talk" id="PRES_3195691394">
-            <strong><a href="../conferences/zograf-2013.html#PRES_3195691394">Элементы культурного синтеза в бенгальской поэзии XVII века</a></strong>
+            <strong><a href="../presentations/PRES_3195691394.html">Элементы культурного синтеза в бенгальской поэзии XVII века</a></strong>
             <div class="meta">
                 <a href="../conferences/zograf-2013.html">Зографские чтения 2013</a>
                 · <a href="../themes/linguistics-and-philology.html">Лингвистика и филология</a> · <a href="../cities/sankt-peterburg.html">Санкт-Петербург</a>
@@ -375,7 +387,7 @@
         </article>
 
         <article class="talk" id="PRES_eaf7163393">
-            <strong><a href="../conferences/zograf-2011.html#PRES_eaf7163393">Рабиндранат Тагор: уровни поэтического высказывания</a></strong>
+            <strong><a href="../presentations/PRES_eaf7163393.html">Рабиндранат Тагор: уровни поэтического высказывания</a></strong>
             <div class="meta">
                 <a href="../conferences/zograf-2011.html">Зографские чтения 2011</a>
                 · <a href="../themes/literature-and-poetry.html">Литература и поэзия</a> · <a href="../cities/sankt-peterburg.html">Санкт-Петербург</a>
@@ -386,7 +398,7 @@
         </article>
 
         <article class="talk" id="PRES_1cd65d2e59">
-            <strong><a href="../conferences/zograf-2010.html#PRES_1cd65d2e59">Современная джатра: возвращение к истокам</a></strong>
+            <strong><a href="../presentations/PRES_1cd65d2e59.html">Современная джатра: возвращение к истокам</a></strong>
             <div class="meta">
                 <a href="../conferences/zograf-2010.html">Зографские чтения 2010</a>
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a>
@@ -397,7 +409,7 @@
         </article>
 
         <article class="talk" id="PRES_d5a74ed7f6">
-            <strong><a href="../conferences/zograf-2008.html#PRES_d5a74ed7f6">Народный театр «джатра» и его роль в формировании новой бенгальской литературы</a></strong>
+            <strong><a href="../presentations/PRES_d5a74ed7f6.html">Народный театр «джатра» и его роль в формировании новой бенгальской литературы</a></strong>
             <div class="meta">
                 <a href="../conferences/zograf-2008.html">Зографские чтения 2008</a>
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a>
@@ -408,7 +420,7 @@
         </article>
 
         <article class="talk" id="PRES_41b4c6fe83">
-            <strong><a href="../conferences/zograf-2006.html#PRES_41b4c6fe83">Комментарий к комментарию (Г.С.Лебедев и культурная жизнь Калькутты в 1790-х годах)</a></strong>
+            <strong><a href="../presentations/PRES_41b4c6fe83.html">Комментарий к комментарию (Г.С.Лебедев и культурная жизнь Калькутты в 1790-х годах)</a></strong>
             <div class="meta">
                 <a href="../conferences/zograf-2006.html">Зографские чтения 2006</a>
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a> · <a href="../cities/sankt-peterburg.html">Санкт-Петербург</a>
@@ -419,7 +431,7 @@
         </article>
 
         <article class="talk" id="PRES_a8e1a30833">
-            <strong><a href="../conferences/zograf-2004.html#PRES_a8e1a30833">Перевод Г.С.Лебедевым поэмы Бхарат Чондро Рая «Биддешундор» (по рукописи, хранящейся в РГИА). Предварительное сообщение</a></strong>
+            <strong><a href="../presentations/PRES_a8e1a30833.html">Перевод Г.С.Лебедевым поэмы Бхарат Чондро Рая «Биддешундор» (по рукописи, хранящейся в РГИА). Предварительное сообщение</a></strong>
             <div class="meta">
                 <a href="../conferences/zograf-2004.html">Зографские чтения 2004</a>
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a>
@@ -431,7 +443,7 @@
     </section>
 
         <h2>Связанные авторы</h2>
-        <section class="grid"><article class="card"><strong><a href="svetlana-ryzhakova.html">Рыжакова Светлана Игоревна</a></strong><div class="meta">26 докладов · <a href="../themes/linguistics-and-philology.html">Лингвистика и филология</a></div><div class="meta related-reasons">общие мезоуровни: Бенгалия, бхакти и современность, Этнография, ритуал и перформанс; та же площадка/год: Зографские чтения 2004, Зографские чтения 2006; общая рубрика: Лингвистика и филология</div></article><article class="card"><strong><a href="vasilkov-yaroslav.html">Васильков Ярослав Владимирович</a></strong><div class="meta">20 докладов · <a href="../themes/literature-and-poetry.html">Сравнительная мифология и эпос</a></div><div class="meta related-reasons">общие мезоуровни: Музейные собрания и коллекции, Этнография, ритуал и перформанс; общие ключевые слова: лебедев; та же площадка/год: Зографские чтения 2004, Зографские чтения 2006</div></article><article class="card"><strong><a href="sergey-tavastsherna.html">Тавастшерна Сергей Сергеевич</a></strong><div class="meta">29 докладов · <a href="../themes/linguistics-and-philology.html">Лингвистика и филология</a></div><div class="meta related-reasons">общие мезоуровни: Музейные собрания и коллекции; общие ключевые слова: комментарий; та же площадка/год: Зографские чтения 2004, Зографские чтения 2006</div></article><article class="card"><strong><a href="ignatev-andrei.html">Игнатьев Андрей Александрович</a></strong><div class="meta">18 докладов · <a href="../themes/religion-and-philosophy.html">Религия и философия</a></div><div class="meta related-reasons">общие мезоуровни: Музейные собрания и коллекции, Этнография, ритуал и перформанс; та же площадка/год: Зографские чтения 2004, Зографские чтения 2006; общая рубрика: Литература и поэзия</div></article><article class="card"><strong><a href="vidunas.html">В. Видунас</a></strong><div class="meta">15 докладов · <a href="../themes/unspecified.html">Разное / Не классифицировано</a></div><div class="meta related-reasons">общие мезоуровни: Музейные собрания и коллекции; та же площадка/год: Зографские чтения 2004, Зографские чтения 2006</div></article><article class="card"><strong><a href="albedil-margarita.html">Альбедиль Маргарита Федоровна</a></strong><div class="meta">19 докладов · <a href="../themes/religion-and-philosophy.html">Религия и философия</a></div><div class="meta related-reasons">общие мезоуровни: Этнография, ритуал и перформанс; та же площадка/год: Зографские чтения 2004, Зографские чтения 2008; общая рубрика: Лингвистика и филология</div></article><article class="card"><strong><a href="krasnodembskaya-nina.html">Краснодембская Нина Георгиевна</a></strong><div class="meta">14 докладов · <a href="../themes/history-and-culture.html">История, этнография и общество</a></div><div class="meta related-reasons">общие мезоуровни: Музейные собрания и коллекции, Этнография, ритуал и перформанс; та же площадка/год: Зографские чтения 2008, Зографские чтения 2010; общий центр: Санкт-Петербург</div></article><article class="card"><strong><a href="skorokhodova-tatyana.html">Скороходова Татьяна Григорьевна</a></strong><div class="meta">18 докладов · <a href="../themes/linguistics-and-philology.html">Лингвистика и филология</a></div><div class="meta related-reasons">общие мезоуровни: Бенгалия, бхакти и современность; та же площадка/год: Зографские чтения 2006, Зографские чтения 2008; общая рубрика: Лингвистика и филология, Литература и поэзия</div></article></section>
+        <section class="grid"><article class="card"><strong><a href="svetlana-ryzhakova.html">Рыжакова Светлана Игоревна</a></strong><div class="meta">26 докладов · <a href="../themes/linguistics-and-philology.html">Лингвистика и филология</a></div><div class="meta related-reasons">общие мезоуровни: Бенгалия, бхакти и современность, Этнография, ритуал и перформанс; та же площадка/год: Зографские чтения 2004, Зографские чтения 2006; общая рубрика: Лингвистика и филология</div></article><article class="card"><strong><a href="vasilkov-yaroslav.html">Васильков Ярослав Владимирович</a></strong><div class="meta">20 докладов · <a href="../themes/literature-and-poetry.html">Сравнительная мифология и эпос</a></div><div class="meta related-reasons">общие мезоуровни: Музейные собрания и коллекции, Этнография, ритуал и перформанс; общие ключевые слова: лебедев; та же площадка/год: Зографские чтения 2004, Зографские чтения 2006</div></article><article class="card"><strong><a href="sergey-tavastsherna.html">Тавастшерна Сергей Сергеевич</a></strong><div class="meta">29 докладов · <a href="../themes/linguistics-and-philology.html">Лингвистика и филология</a></div><div class="meta related-reasons">общие мезоуровни: Музейные собрания и коллекции; общие ключевые слова: комментарий; та же площадка/год: Зографские чтения 2004, Зографские чтения 2006</div></article><article class="card"><strong><a href="ignatev-andrei.html">Игнатьев Андрей Александрович</a></strong><div class="meta">18 докладов · <a href="../themes/religion-and-philosophy.html">Религия и философия</a></div><div class="meta related-reasons">общие мезоуровни: Музейные собрания и коллекции, Этнография, ритуал и перформанс; та же площадка/год: Зографские чтения 2004, Зографские чтения 2006; общая рубрика: Литература и поэзия</div></article><article class="card"><strong><a href="vidunas.html">В. Видунас</a></strong><div class="meta">15 докладов · <a href="../themes/unspecified.html">Разное / Не классифицировано</a></div><div class="meta related-reasons">общие мезоуровни: Музейные собрания и коллекции; та же площадка/год: Зографские чтения 2004, Зографские чтения 2006</div></article><article class="card"><strong><a href="albedil-margarita.html">Альбедиль Маргарита Федоровна</a></strong><div class="meta">19 докладов · <a href="../themes/religion-and-philosophy.html">Религия и философия</a></div><div class="meta related-reasons">общие мезоуровни: Этнография, ритуал и перформанс; та же площадка/год: Зографские чтения 2004, Зографские чтения 2008; общая рубрика: Лингвистика и филология</div></article><article class="card"><strong><a href="krasnodembskaya-nina.html">Краснодембская Нина Георгиевна</a></strong><div class="meta">14 докладов · <a href="../themes/academic-history.html">История индологии</a></div><div class="meta related-reasons">общие мезоуровни: Музейные собрания и коллекции, Этнография, ритуал и перформанс; та же площадка/год: Зографские чтения 2008, Зографские чтения 2010; общий центр: Санкт-Петербург</div></article><article class="card"><strong><a href="skorokhodova-tatyana.html">Скороходова Татьяна Григорьевна</a></strong><div class="meta">18 докладов · <a href="../themes/linguistics-and-philology.html">Лингвистика и филология</a></div><div class="meta related-reasons">общие мезоуровни: Бенгалия, бхакти и современность; та же площадка/год: Зографские чтения 2006, Зографские чтения 2008; общая рубрика: Лингвистика и филология, Литература и поэзия</div></article></section>
 
         <div class="footer">© 2026 Russian Indological Research Archive. Сгенерировано из нормализованного архива конференций.</div>
     </main>

@@ -201,6 +201,12 @@ def main():
     for needle in ['rel="canonical"', 'og:image', 'twitter:image', 'application/ld+json', 'id="inst-table"', 'publication-links']:
         if needle not in index_html:
             fail(errors, f"index.html missing {needle}")
+    talks_ru_desc = f"{summary.get('total_presentations', 0)} участий в {summary.get('unique_presentations', 0)} уникальных докладах"
+    talks_en_desc = f"{summary.get('total_presentations', 0)} participations across {summary.get('unique_presentations', 0)} unique talks"
+    if index_html.count(talks_ru_desc) < 2 or talks_en_desc not in index_html:
+        fail(errors, "index.html static and localized presentation counts are not synchronized with site_data summary")
+    if "Показатели статьи рассчитаны для аналитического подкорпуса" not in index_html:
+        fail(errors, "index.html missing the article-versus-expanded-catalogue scope notice")
 
     required = [
         "sitemap.xml",
@@ -225,6 +231,7 @@ def main():
         "analytics_output/field_provenance_biographical.csv",
         "analytics_output/field_provenance_authority.csv",
         "analytics_output/field_provenance_themes.csv",
+        "curation/verified_affiliation_spans.csv",
         "analytics_output/network_nodes.csv",
         "analytics_output/network_edges.csv",
         "analytics_output/publication_file_manifest.csv",
@@ -233,6 +240,7 @@ def main():
         "assets/favicon.svg",
         "scholars/index.html",
         "conferences/index.html",
+        "presentations/index.html",
         "themes/index.html",
         "topics/index.html",
         "topics/ramayana.html",
@@ -245,7 +253,9 @@ def main():
         "known-limitations.html",
         "how-to-cite.html",
         "metrics-guide.html",
+        "classification-criteria.html",
         "networks.html",
+        "videos/index.html",
     ]
     for path in required:
         if not Path(path).exists():
@@ -253,7 +263,7 @@ def main():
 
     if Path("sitemap.xml").exists():
         sitemap = read("sitemap.xml")
-        for page in ["", "en.html", "search.html", "download-data.html", "data-quality.html", "scholars/", "conferences/", "themes/", "topics/", "topics/ramayana.html", "topics/mahabharata.html", "generations/", "cities/", "institutions/", "metrics-guide.html", "networks.html"]:
+        for page in ["", "en.html", "search.html", "download-data.html", "data-quality.html", "scholars/", "conferences/", "presentations/", "themes/", "topics/", "topics/ramayana.html", "topics/mahabharata.html", "generations/", "cities/", "institutions/", "metrics-guide.html", "classification-criteria.html", "networks.html", "videos/"]:
             expected = "https://gasyoun.github.io/IndologyScholars/" + page
             if expected not in sitemap:
                 fail(errors, f"sitemap.xml missing {expected}")
@@ -274,6 +284,24 @@ def main():
         content = read("search-index.json")
         if len(re.findall(r'"type":"Scholar"', content)) != len(scholars):
             fail(errors, "search-index.json scholar count does not match site_data.json")
+        if '"type":"Video"' not in content:
+            fail(errors, "search-index.json should retain the standalone video catalogue entries")
+
+    tavastsherna = next((s for s in scholars if s.get("id") == "PERS_11da326d"), None)
+    if tavastsherna and tavastsherna.get("all_affiliations") != ["СПбГУ, Восточный факультет"]:
+        fail(errors, "Tavastsherna public affiliations should collapse to the verified SPbU faculty trajectory")
+    timeline_talks = [
+        talk
+        for years in data.get("timeline", {}).values()
+        for talks in years.values()
+        for talk in talks
+    ]
+    dialect_talk = next((talk for talk in timeline_talks if talk.get("presentation_id") == "PRES_10c2c66c17"), None)
+    if dialect_talk and str(dialect_talk.get("title") or "").startswith("(СПбГУ)"):
+        fail(errors, "Institutional parenthetical leaked into the public dialect presentation title")
+    dhatu_talk = next((talk for talk in timeline_talks if talk.get("presentation_id") == "PRES_5b0c00b805"), None)
+    if dhatu_talk and "Дхатупатхе" not in str(dhatu_talk.get("title") or ""):
+        fail(errors, "Dhatupatha public title has not been editorially normalized")
 
     if Path("404.html").exists():
         not_found = read("404.html")
@@ -302,6 +330,7 @@ def main():
             "field-provenance-biographical",
             "field-provenance-authority",
             "field-provenance-themes",
+            "verified-affiliation-spans",
             "network-nodes",
             "network-edges",
             "publication-file-manifest",

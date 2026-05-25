@@ -66,10 +66,6 @@
       "affiliation": [
         {
           "@type": "Organization",
-          "name": "Не указана"
-        },
-        {
-          "@type": "Organization",
           "name": "ИВ РАН"
         }
       ],
@@ -211,6 +207,28 @@
             padding: 0.8rem 1rem;
             border-radius: 0 8px 8px 0;
         }
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            border-radius: 8px;
+            padding: 0.18rem 0.45rem;
+            margin-left: 0.45rem;
+            border: 1px solid var(--border);
+            color: var(--muted);
+            font-size: 0.82rem;
+            font-weight: 600;
+            vertical-align: middle;
+        }
+        .badge-online {
+            border-color: rgba(52, 211, 153, 0.4);
+            color: #6ee7b7;
+            background: rgba(16, 185, 129, 0.1);
+        }
+        .badge-video {
+            border-color: rgba(251, 191, 36, 0.44);
+            color: #fde68a;
+            background: rgba(217, 119, 6, 0.13);
+        }
         .footer {
             color: var(--soft);
             margin-top: 3rem;
@@ -260,6 +278,8 @@
             <a href="/IndologyScholars/generations/">Поколения</a>
             <a href="/IndologyScholars/meso/">Мезоуровни</a>
             <a href="/IndologyScholars/gumilyov/">Гумилев</a>
+            <a href="/IndologyScholars/classification-criteria.html">Критерии</a>
+            <a href="/IndologyScholars/presentations/">Доклады</a>
             <a href="/IndologyScholars/videos/">Видео</a>
             <a href="/IndologyScholars/findings/">Выводы</a>
             <a href="/IndologyScholars/cities/">Города</a>
@@ -289,7 +309,8 @@
         </section>
 
         <h2>Аффилиации</h2>
-        <div class="chip-row"><a class="chip" href="../index.html?search=%D0%9D%D0%B5%20%D1%83%D0%BA%D0%B0%D0%B7%D0%B0%D0%BD%D0%B0">Не указана</a><a class="chip" href="../institutions/iv-ran.html">ИВ РАН</a></div>
+        <div class="chip-row"><a class="chip" href="../institutions/iv-ran.html">ИВ РАН</a></div>
+
 
         <h2>Географические центры</h2>
         <div class="chip-row"><span class="meta">Нет данных</span></div>
@@ -305,7 +326,7 @@
         <h2>Доклады</h2>
         <section class="list">
         <article class="talk" id="PRES_54c018c9f5">
-            <strong><a href="../conferences/roerich-2020.html#PRES_54c018c9f5">Некоторые особенности праздника семи неварских селений юго-западной части Долины Катманду</a></strong>
+            <strong><a href="../presentations/PRES_54c018c9f5.html">Некоторые особенности праздника семи неварских селений юго-западной части Долины Катманду</a></strong>
             <div class="meta">
                 <a href="../conferences/roerich-2020.html">Рериховские чтения 2020</a>
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a>
@@ -316,7 +337,7 @@
         </article>
 
         <article class="talk" id="PRES_1343fa2056">
-            <strong><a href="../conferences/roerich-2019.html#PRES_1343fa2056">Роль представителя династии Тхакури (Тхакуджуджу) в ритуальной передаче власти в Непале</a></strong>
+            <strong><a href="../presentations/PRES_1343fa2056.html">Роль представителя династии Тхакури (Тхакуджуджу) в ритуальной передаче власти в Непале</a></strong>
             <div class="meta">
                 <a href="../conferences/roerich-2019.html">Рериховские чтения 2019</a>
                 · <a href="../themes/religion-and-philosophy.html">Религия и философия</a>
@@ -327,7 +348,7 @@
         </article>
 
         <article class="talk" id="PRES_edcf9f8de0">
-            <strong><a href="../conferences/roerich-2018.html#PRES_edcf9f8de0">Некоторые аспекты культа живой богини Кумари в Непале</a></strong>
+            <strong><a href="../presentations/PRES_edcf9f8de0.html">Некоторые аспекты культа живой богини Кумари в Непале</a></strong>
             <div class="meta">
                 <a href="../conferences/roerich-2018.html">Рериховские чтения 2018</a>
                 · <a href="../themes/religion-and-philosophy.html">Религия и философия</a>
@@ -338,7 +359,7 @@
         </article>
 
         <article class="talk" id="PRES_75cecc8a6d">
-            <strong><a href="../conferences/roerich-2017.html#PRES_75cecc8a6d">Некоторые типичные моменты появления сонма божеств в Непале</a></strong>
+            <strong><a href="../presentations/PRES_75cecc8a6d.html">Некоторые типичные моменты появления сонма божеств в Непале</a></strong>
             <div class="meta">
                 <a href="../conferences/roerich-2017.html">Рериховские чтения 2017</a>
                 · <a href="../themes/religion-and-philosophy.html">Религия и философия</a>
@@ -349,7 +370,7 @@
         </article>
 
         <article class="talk" id="PRES_7d0bba92cc">
-            <strong><a href="../conferences/roerich-2017.html#PRES_7d0bba92cc">Переводы стихов на язык непали</a></strong>
+            <strong><a href="../presentations/PRES_7d0bba92cc.html">Переводы стихов на язык непали</a></strong>
             <div class="meta">
                 <a href="../conferences/roerich-2017.html">Рериховские чтения 2017</a>
                 · <a href="../themes/linguistics-and-philology.html">Лингвистика и филология</a>
@@ -360,7 +381,7 @@
         </article>
 
         <article class="talk" id="PRES_aa48b528e8">
-            <strong><a href="../conferences/roerich-2016.html#PRES_aa48b528e8">Некоторые аспекты взаимопроникновения индуизма и буддизма в контексте непальских легенд и религиозной практики</a></strong>
+            <strong><a href="../presentations/PRES_aa48b528e8.html">Некоторые аспекты взаимопроникновения индуизма и буддизма в контексте непальских легенд и религиозной практики</a></strong>
             <div class="meta">
                 <a href="../conferences/roerich-2016.html">Рериховские чтения 2016</a>
                 · <a href="../themes/religion-and-philosophy.html">Религия и философия</a>
@@ -371,7 +392,7 @@
         </article>
 
         <article class="talk" id="PRES_e7b0ae48ad">
-            <strong><a href="../conferences/roerich-2016.html#PRES_e7b0ae48ad">Пушкин на языке непали</a></strong>
+            <strong><a href="../presentations/PRES_e7b0ae48ad.html">Пушкин на языке непали</a></strong>
             <div class="meta">
                 <a href="../conferences/roerich-2016.html">Рериховские чтения 2016</a>
                 · <a href="../themes/linguistics-and-philology.html">Лингвистика и филология</a>
@@ -382,7 +403,7 @@
         </article>
 
         <article class="talk" id="PRES_8a501640a4">
-            <strong><a href="../conferences/roerich-2015.html#PRES_8a501640a4">Наги как персонажи непальских легенд</a></strong>
+            <strong><a href="../presentations/PRES_8a501640a4.html">Наги как персонажи непальских легенд</a></strong>
             <div class="meta">
                 <a href="../conferences/roerich-2015.html">Рериховские чтения 2015</a>
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a>
@@ -393,7 +414,7 @@
         </article>
 
         <article class="talk" id="PRES_a5c792ee0e">
-            <strong><a href="../conferences/roerich-2012.html#PRES_a5c792ee0e">Сакральная защита пространства долины Катманду</a></strong>
+            <strong><a href="../presentations/PRES_a5c792ee0e.html">Сакральная защита пространства долины Катманду</a></strong>
             <div class="meta">
                 <a href="../conferences/roerich-2012.html">Рериховские чтения 2012</a>
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a>
@@ -404,7 +425,7 @@
         </article>
 
         <article class="talk" id="PRES_eda7195a4d">
-            <strong><a href="../conferences/roerich-2010.html#PRES_eda7195a4d">Непал: от конфессионального компромисса до секуляризма (Некоторые штрихи истории духовной культуры)</a></strong>
+            <strong><a href="../presentations/PRES_eda7195a4d.html">Непал: от конфессионального компромисса до секуляризма (Некоторые штрихи истории духовной культуры)</a></strong>
             <div class="meta">
                 <a href="../conferences/roerich-2010.html">Рериховские чтения 2010</a>
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a>
@@ -415,7 +436,7 @@
         </article>
 
         <article class="talk" id="PRES_df7b4cf816">
-            <strong><a href="../conferences/roerich-2009.html#PRES_df7b4cf816">Некоторые историко-культурные аспекты символики национального флага Непала (V – XXI вв.)</a></strong>
+            <strong><a href="../presentations/PRES_df7b4cf816.html">Некоторые историко-культурные аспекты символики национального флага Непала (V – XXI вв.)</a></strong>
             <div class="meta">
                 <a href="../conferences/roerich-2009.html">Рериховские чтения 2009</a>
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a>
@@ -426,7 +447,7 @@
         </article>
 
         <article class="talk" id="PRES_c305a62ca7">
-            <strong><a href="../conferences/roerich-2008.html#PRES_c305a62ca7">Институт гутхи в древнем и средневековом Непале</a></strong>
+            <strong><a href="../presentations/PRES_c305a62ca7.html">Институт гутхи в древнем и средневековом Непале</a></strong>
             <div class="meta">
                 <a href="../conferences/roerich-2008.html">Рериховские чтения 2008</a>
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a>

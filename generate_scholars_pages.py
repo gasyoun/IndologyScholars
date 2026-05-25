@@ -5,6 +5,7 @@ from collections import defaultdict
 from pathlib import Path
 from urllib.parse import quote
 
+from classification_overrides import CLASSIFICATION_OVERRIDES, MESO_LABELS
 from publication_helpers import (
     AUTHOR_NAME,
     SITE_NAME,
@@ -145,6 +146,11 @@ def load_meso_context():
         pid = clean_text(row.get("presentation_id") or "")
         if approach and pid:
             meso_by_presentation[pid].append(f"linguistics_{approach}")
+
+    for code, label in MESO_LABELS.items():
+        meso_items.setdefault(code, {"label": label, "kind": "Экспертный мезоуровень"})
+    for pid, review in CLASSIFICATION_OVERRIDES.items():
+        meso_by_presentation[pid] = list(review.get("meso_codes", []))
 
     return meso_items, meso_by_presentation
 
@@ -465,7 +471,7 @@ def talk_card(talk, meso_by_presentation=None, meso_items=None):
             f'<a href="{esc(v["url"])}" rel="noopener" target="_blank">▶ YouTube</a>'
             for v in videos
         )
-        video_html = f'<div class="meta">{links}</div>'
+        video_html = f'<div class="meta">Сохранившаяся запись: {links}</div>'
     time_interval = normalize_time_interval(talk.get("time_interval"), "Не указано")
     talk_time = f'{esc(talk.get("date"))} · {esc((talk.get("day_of_week") or {}).get("ru"))} · {esc(time_interval)}'
     raw_session = clean_text(talk.get("session_title") or "")
@@ -474,12 +480,12 @@ def talk_card(talk, meso_by_presentation=None, meso_items=None):
     session = esc(raw_session)
     pid = clean_text(talk.get("presentation_id") or "")
     anchor_attr = f' id="{esc(pid)}"' if pid else ""
-    title_href = f'../{conference_path(talk.get("series"), talk.get("year"))}'
-    if pid:
-        title_href = f"{title_href}#{pid}"
+    title_href = f"../presentations/{pid}.html" if pid else f'../{conference_path(talk.get("series"), talk.get("year"))}'
+    online_badge = '<span class="badge badge-online">Онлайн</span>' if talk.get("is_online") else ""
+    video_badge = '<span class="badge badge-video">Видео</span>' if videos else ""
     return f"""
         <article class="talk"{anchor_attr}>
-            <strong><a href="{esc(title_href)}">{esc(talk.get("title"))}</a></strong>
+            <strong><a href="{esc(title_href)}">{esc(talk.get("title"))}</a></strong>{online_badge}{video_badge}
             <div class="meta">
                 <a href="../{conference_path(talk.get("series"), talk.get("year"))}">{esc(series_label(talk.get("series")))} {esc(talk.get("year"))}</a>
                 · <a href="../{theme_path(theme_code)}">{esc(theme_label(theme_code, "ru"))}</a>{city_html}
@@ -623,6 +629,9 @@ def render_profile(scholar, related, authority, meso_by_presentation, meso_items
     profile_label, theme_code, profile_note = scholar_profile_meta(scholar)
     cities = unique_cities(scholar)
     affiliations = unique_affiliations(scholar)
+    affiliation_notes = "".join(
+        f'<p class="meta">{esc(note)}</p>' for note in scholar.get("affiliation_notes") or []
+    )
     life_ru = format_lifespan(scholar, "ru").strip()
     life_en = format_lifespan(scholar, "en").strip()
     ru_heading = f'{esc(name_ru)} <span class="life">{esc(life_ru)}</span>' if life_ru else esc(name_ru)
@@ -712,6 +721,7 @@ def render_profile(scholar, related, authority, meso_by_presentation, meso_items
 
         <h2>Аффилиации</h2>
         <div class="chip-row">{chip_links(affiliations, affiliation_href)}</div>
+        {affiliation_notes}
 
         <h2>Географические центры</h2>
         <div class="chip-row">{chip_links(cities, lambda city: '../' + city_path(city))}</div>

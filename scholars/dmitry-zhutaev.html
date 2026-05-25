@@ -66,14 +66,6 @@
       "affiliation": [
         {
           "@type": "Organization",
-          "name": "Москва"
-        },
-        {
-          "@type": "Organization",
-          "name": "Не указана"
-        },
-        {
-          "@type": "Organization",
           "name": "ИВ РАН"
         }
       ],
@@ -215,6 +207,28 @@
             padding: 0.8rem 1rem;
             border-radius: 0 8px 8px 0;
         }
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            border-radius: 8px;
+            padding: 0.18rem 0.45rem;
+            margin-left: 0.45rem;
+            border: 1px solid var(--border);
+            color: var(--muted);
+            font-size: 0.82rem;
+            font-weight: 600;
+            vertical-align: middle;
+        }
+        .badge-online {
+            border-color: rgba(52, 211, 153, 0.4);
+            color: #6ee7b7;
+            background: rgba(16, 185, 129, 0.1);
+        }
+        .badge-video {
+            border-color: rgba(251, 191, 36, 0.44);
+            color: #fde68a;
+            background: rgba(217, 119, 6, 0.13);
+        }
         .footer {
             color: var(--soft);
             margin-top: 3rem;
@@ -264,6 +278,8 @@
             <a href="/IndologyScholars/generations/">Поколения</a>
             <a href="/IndologyScholars/meso/">Мезоуровни</a>
             <a href="/IndologyScholars/gumilyov/">Гумилев</a>
+            <a href="/IndologyScholars/classification-criteria.html">Критерии</a>
+            <a href="/IndologyScholars/presentations/">Доклады</a>
             <a href="/IndologyScholars/videos/">Видео</a>
             <a href="/IndologyScholars/findings/">Выводы</a>
             <a href="/IndologyScholars/cities/">Города</a>
@@ -293,7 +309,8 @@
         </section>
 
         <h2>Аффилиации</h2>
-        <div class="chip-row"><a class="chip" href="../cities/moskva.html">Москва</a><a class="chip" href="../index.html?search=%D0%9D%D0%B5%20%D1%83%D0%BA%D0%B0%D0%B7%D0%B0%D0%BD%D0%B0">Не указана</a><a class="chip" href="../institutions/iv-ran.html">ИВ РАН</a></div>
+        <div class="chip-row"><a class="chip" href="../institutions/iv-ran.html">ИВ РАН</a></div>
+
 
         <h2>Географические центры</h2>
         <div class="chip-row"><a class="chip" href="../cities/moskva.html">Москва</a></div>
@@ -309,7 +326,7 @@
         <h2>Доклады</h2>
         <section class="list">
         <article class="talk" id="PRES_c0a5930788">
-            <strong><a href="../conferences/roerich-2019.html#PRES_c0a5930788">К вопросу о дхарани и Дхаранипитаке</a></strong>
+            <strong><a href="../presentations/PRES_c0a5930788.html">К вопросу о дхарани и Дхаранипитаке</a></strong>
             <div class="meta">
                 <a href="../conferences/roerich-2019.html">Рериховские чтения 2019</a>
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a>
@@ -320,7 +337,7 @@
         </article>
 
         <article class="talk" id="PRES_10d033beaa">
-            <strong><a href="../conferences/roerich-2018.html#PRES_10d033beaa">«Ратнавали» Нагарджуны и «Дашабхумика-сутра»: явные и неявные связи</a></strong>
+            <strong><a href="../presentations/PRES_10d033beaa.html">«Ратнавали» Нагарджуны и «Дашабхумика-сутра»: явные и неявные связи</a></strong>
             <div class="meta">
                 <a href="../conferences/roerich-2018.html">Рериховские чтения 2018</a>
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a>
@@ -331,7 +348,7 @@
         </article>
 
         <article class="talk" id="PRES_7a25d6758f">
-            <strong><a href="../conferences/roerich-2017.html#PRES_7a25d6758f">Сюжет о Будде в ранних буддийских сакральных текстах</a></strong>
+            <strong><a href="../presentations/PRES_7a25d6758f.html">Сюжет о Будде в ранних буддийских сакральных текстах</a></strong>
             <div class="meta">
                 <a href="../conferences/roerich-2017.html">Рериховские чтения 2017</a>
                 · <a href="../themes/literature-and-poetry.html">Литература и поэзия</a>
@@ -342,7 +359,7 @@
         </article>
 
         <article class="talk" id="PRES_5b6f4c9c6a">
-            <strong><a href="../conferences/roerich-2017.html#PRES_5b6f4c9c6a">Ритуальный текст из «Махавасту»</a></strong>
+            <strong><a href="../presentations/PRES_5b6f4c9c6a.html">Ритуальный текст из «Махавасту»</a></strong>
             <div class="meta">
                 <a href="../conferences/roerich-2017.html">Рериховские чтения 2017</a>
                 · <a href="../themes/religion-and-philosophy.html">Религия и философия</a>
@@ -353,7 +370,7 @@
         </article>
 
         <article class="talk" id="PRES_bbed1796bb">
-            <strong><a href="../conferences/roerich-2016.html#PRES_bbed1796bb">Механизмы интертекста в раннебуддийской текстовой традиции</a></strong>
+            <strong><a href="../presentations/PRES_bbed1796bb.html">Механизмы интертекста в раннебуддийской текстовой традиции</a></strong>
             <div class="meta">
                 <a href="../conferences/roerich-2016.html">Рериховские чтения 2016</a>
                 · <a href="../themes/religion-and-philosophy.html">Религия и философия</a>
@@ -364,7 +381,7 @@
         </article>
 
         <article class="talk" id="PRES_d97538f124">
-            <strong><a href="../conferences/roerich-2016.html#PRES_d97538f124">Ритуальный текст о структуре вселенной (опыт литературного перевода)</a></strong>
+            <strong><a href="../presentations/PRES_d97538f124.html">Ритуальный текст о структуре вселенной (опыт литературного перевода)</a></strong>
             <div class="meta">
                 <a href="../conferences/roerich-2016.html">Рериховские чтения 2016</a>
                 · <a href="../themes/literature-and-poetry.html">Литература и поэзия</a>
@@ -375,7 +392,7 @@
         </article>
 
         <article class="talk" id="PRES_fa1f4db445">
-            <strong><a href="../conferences/roerich-2015.html#PRES_fa1f4db445">Неизвестный иллюстрированный манускрипт из Непала из собрания кабинета Ю.Н. Рериха Института востоковедения РАН</a></strong>
+            <strong><a href="../presentations/PRES_fa1f4db445.html">Неизвестный иллюстрированный манускрипт из Непала из собрания кабинета Ю.Н. Рериха Института востоковедения РАН</a></strong>
             <div class="meta">
                 <a href="../conferences/roerich-2015.html">Рериховские чтения 2015</a>
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a>
@@ -386,7 +403,7 @@
         </article>
 
         <article class="talk" id="PRES_af8ac6f8df">
-            <strong><a href="../conferences/roerich-2013.html#PRES_af8ac6f8df">Множественность будд и сотериология махасангхиков</a></strong>
+            <strong><a href="../presentations/PRES_af8ac6f8df.html">Множественность будд и сотериология махасангхиков</a></strong>
             <div class="meta">
                 <a href="../conferences/roerich-2013.html">Рериховские чтения 2013</a>
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a>
@@ -397,7 +414,7 @@
         </article>
 
         <article class="talk" id="PRES_cf87ec3bf9">
-            <strong><a href="../conferences/roerich-2012.html#PRES_cf87ec3bf9">Элементы игровой поэтики в махаянском описании ступеней бодхисаттвы в текстах «Большой Праджняпарамиты»</a></strong>
+            <strong><a href="../presentations/PRES_cf87ec3bf9.html">Элементы игровой поэтики в махаянском описании ступеней бодхисаттвы в текстах «Большой Праджняпарамиты»</a></strong>
             <div class="meta">
                 <a href="../conferences/roerich-2012.html">Рериховские чтения 2012</a>
                 · <a href="../themes/literature-and-poetry.html">Литература и поэзия</a>
@@ -408,7 +425,7 @@
         </article>
 
         <article class="talk" id="PRES_e04db7cf0d">
-            <strong><a href="../conferences/zograf-2010.html#PRES_e04db7cf0d">«Археология» раннебуддийского доктринального текста на примере главы о буддхакшетрах («полях Будд») из Махавасту</a></strong>
+            <strong><a href="../presentations/PRES_e04db7cf0d.html">«Археология» раннебуддийского доктринального текста на примере главы о буддхакшетрах («полях Будд») из Махавасту</a></strong>
             <div class="meta">
                 <a href="../conferences/zograf-2010.html">Зографские чтения 2010</a>
                 · <a href="../themes/history-and-culture.html">История, этнография и общество</a> · <a href="../cities/moskva.html">Москва</a>
@@ -419,7 +436,7 @@
         </article>
 
         <article class="talk" id="PRES_4370a58a1d">
-            <strong><a href="../conferences/roerich-2010.html#PRES_4370a58a1d">Археология раннебуддийского доктринального текста на примере текста о буддхакшетрах из «Махавасту»</a></strong>
+            <strong><a href="../presentations/PRES_4370a58a1d.html">Археология раннебуддийского доктринального текста на примере текста о буддхакшетрах из «Махавасту»</a></strong>
             <div class="meta">
                 <a href="../conferences/roerich-2010.html">Рериховские чтения 2010</a>
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a>
@@ -430,7 +447,7 @@
         </article>
 
         <article class="talk" id="PRES_96f8e44e84">
-            <strong><a href="../conferences/zograf-2009.html#PRES_96f8e44e84">Абхидхарма и абхивиная: взгляд со стороны двух раннебуддийских традиций 14.30. МАЭ (Университетская наб., 3), ДЕТСКИЙ ЦЕНТР</a></strong>
+            <strong><a href="../presentations/PRES_96f8e44e84.html">Абхидхарма и абхивиная: взгляд со стороны двух раннебуддийских традиций 14.30. МАЭ (Университетская наб., 3), ДЕТСКИЙ ЦЕНТР</a></strong>
             <div class="meta">
                 <a href="../conferences/zograf-2009.html">Зографские чтения 2009</a>
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a>
@@ -441,7 +458,7 @@
         </article>
 
         <article class="talk" id="PRES_f457799a1b">
-            <strong><a href="../conferences/roerich-2009.html#PRES_f457799a1b">Об одной возможной буддийской параллели к новозаветному пассажу МФ 5.19</a></strong>
+            <strong><a href="../presentations/PRES_f457799a1b.html">Об одной возможной буддийской параллели к новозаветному пассажу МФ 5.19</a></strong>
             <div class="meta">
                 <a href="../conferences/roerich-2009.html">Рериховские чтения 2009</a>
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a>
@@ -452,7 +469,7 @@
         </article>
 
         <article class="talk" id="PRES_0fe8007200">
-            <strong><a href="../conferences/roerich-2008.html#PRES_0fe8007200">К вопросу о самоназваниях школы махасангхиков-локоттаравадинов</a></strong>
+            <strong><a href="../presentations/PRES_0fe8007200.html">К вопросу о самоназваниях школы махасангхиков-локоттаравадинов</a></strong>
             <div class="meta">
                 <a href="../conferences/roerich-2008.html">Рериховские чтения 2008</a>
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a>
@@ -463,7 +480,7 @@
         </article>
 
         <article class="talk" id="PRES_bdb9ecf419">
-            <strong><a href="../conferences/zograf-2006.html#PRES_bdb9ecf419">Механизмы передачи сакрального текста в школах раннего буддизма (К постановке проблемы)</a></strong>
+            <strong><a href="../presentations/PRES_bdb9ecf419.html">Механизмы передачи сакрального текста в школах раннего буддизма (К постановке проблемы)</a></strong>
             <div class="meta">
                 <a href="../conferences/zograf-2006.html">Зографские чтения 2006</a>
                 · <a href="../themes/religion-and-philosophy.html">Религия и философия</a> · <a href="../cities/moskva.html">Москва</a>

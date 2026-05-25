@@ -185,6 +185,28 @@
             padding: 0.8rem 1rem;
             border-radius: 0 8px 8px 0;
         }
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            border-radius: 8px;
+            padding: 0.18rem 0.45rem;
+            margin-left: 0.45rem;
+            border: 1px solid var(--border);
+            color: var(--muted);
+            font-size: 0.82rem;
+            font-weight: 600;
+            vertical-align: middle;
+        }
+        .badge-online {
+            border-color: rgba(52, 211, 153, 0.4);
+            color: #6ee7b7;
+            background: rgba(16, 185, 129, 0.1);
+        }
+        .badge-video {
+            border-color: rgba(251, 191, 36, 0.44);
+            color: #fde68a;
+            background: rgba(217, 119, 6, 0.13);
+        }
         .footer {
             color: var(--soft);
             margin-top: 3rem;
@@ -234,6 +256,8 @@
             <a href="/IndologyScholars/generations/">Поколения</a>
             <a href="/IndologyScholars/meso/">Мезоуровни</a>
             <a href="/IndologyScholars/gumilyov/">Гумилев</a>
+            <a href="/IndologyScholars/classification-criteria.html">Критерии</a>
+            <a href="/IndologyScholars/presentations/">Доклады</a>
             <a href="/IndologyScholars/videos/">Видео</a>
             <a href="/IndologyScholars/findings/">Выводы</a>
             <a href="/IndologyScholars/cities/">Города</a>
@@ -253,422 +277,727 @@
 
         <section class="link-block">
             <strong>Ведущие авторы</strong>
-            <div class="chip-list"><a class="chip" href="../scholars/sofia-tsvetkova.html">С. О. Цветкова · 14 докладов</a><a class="chip" href="../scholars/sergey-tavastsherna.html">С. С. Тавастшерна · 13 докладов</a><a class="chip" href="../scholars/elikhina-yuliya.html">Ю. И. Елихина · 3 доклада</a><a class="chip" href="../scholars/soboleva-diana.html">Д. В. Соболева · 2 доклада</a><a class="chip" href="../scholars/paribok-andrei.html">А. В. Парибок · 1 доклад</a><a class="chip" href="../scholars/chelnokova-anna.html">А. В. Челнокова · 1 доклад</a><a class="chip" href="../scholars/desnitskaya-evgeniya.html">Е. А. Десницкая · 1 доклад</a><a class="chip" href="../scholars/kostina-ekaterina.html">Е. А. Костина · 1 доклад</a><a class="chip" href="../scholars/gurov-nikita.html">Н. В. Гуров · 1 доклад</a><a class="chip" href="../scholars/pakhomov-sergei.html">С. В. Пахомов · 1 доклад</a><a class="chip" href="../scholars/selivanova-tamara.html">Т. П. Селиванова · 1 доклад</a></div>
+            <div class="chip-list"><a class="chip" href="../scholars/sergey-tavastsherna.html">С. С. Тавастшерна · 29 докладов</a><a class="chip" href="../scholars/sofia-tsvetkova.html">С. О. Цветкова · 14 докладов</a><a class="chip" href="../scholars/elikhina-yuliya.html">Ю. И. Елихина · 3 доклада</a><a class="chip" href="../scholars/soboleva-diana.html">Д. В. Соболева · 2 доклада</a><a class="chip" href="../scholars/paribok-andrei.html">А. В. Парибок · 1 доклад</a><a class="chip" href="../scholars/chelnokova-anna.html">А. В. Челнокова · 1 доклад</a><a class="chip" href="../scholars/desnitskaya-evgeniya.html">Е. А. Десницкая · 1 доклад</a><a class="chip" href="../scholars/kostina-ekaterina.html">Е. А. Костина · 1 доклад</a><a class="chip" href="../scholars/gurov-nikita.html">Н. В. Гуров · 1 доклад</a><a class="chip" href="../scholars/pakhomov-sergei.html">С. В. Пахомов · 1 доклад</a><a class="chip" href="../scholars/selivanova-tamara.html">Т. П. Селиванова · 1 доклад</a></div>
         </section>
 
         <section class="link-block">
             <strong>Рубрики институции</strong>
-            <div class="chip-list"><a class="chip" href="../themes/unspecified.html">Разное / Не классифицировано · 15 докладов</a><a class="chip" href="../themes/linguistics-and-philology.html">Лингвистика и филология · 11 докладов</a><a class="chip" href="../themes/literature-and-poetry.html">Литература и поэзия · 6 докладов</a><a class="chip" href="../themes/religion-and-philosophy.html">Религия и философия · 5 докладов</a><a class="chip" href="../themes/art-and-material-culture.html">Искусство и материальная культура · 1 доклад</a><a class="chip" href="../themes/history-and-culture.html">История, этнография и общество · 1 доклад</a></div>
+            <div class="chip-list"><a class="chip" href="../themes/unspecified.html">Разное / Не классифицировано · 27 докладов</a><a class="chip" href="../themes/linguistics-and-philology.html">Лингвистика и филология · 13 докладов</a><a class="chip" href="../themes/religion-and-philosophy.html">Религия и философия · 7 докладов</a><a class="chip" href="../themes/literature-and-poetry.html">Литература и поэзия · 6 докладов</a><a class="chip" href="../themes/art-and-material-culture.html">Искусство и материальная культура · 1 доклад</a><a class="chip" href="../themes/history-and-culture.html">История, этнография и общество · 1 доклад</a></div>
         </section>
 
         <section class="link-block">
             <strong>Уровни Гумилева</strong>
-            <div class="chip-list"><a class="chip" href="../gumilyov/level-1.html">L1 Микро · 32 доклада</a><a class="chip" href="../gumilyov/level-2.html">L2 Региональный · 7 докладов</a></div>
+            <div class="chip-list"><a class="chip" href="../gumilyov/level-1.html">L1 Микро · 38 докладов</a><a class="chip" href="../gumilyov/level-2.html">L2 Региональный · 17 докладов</a></div>
         </section>
 
         <section class="link-block">
             <strong>Города</strong>
-            <div class="chip-list"><a class="chip" href="../cities/sankt-peterburg.html">Санкт-Петербург · 39 докладов</a></div>
+            <div class="chip-list"><a class="chip" href="../cities/sankt-peterburg.html">Санкт-Петербург · 55 докладов</a></div>
         </section>
 
         <section class="link-block">
             <strong>Связанные мезоуровни</strong>
-            <div class="chip-list"><a class="chip" href="../meso/linguistics-language-system.html">Языковедческий анализ · 7 докладов</a><a class="chip" href="../meso/dravidology-south-india.html">Дравидология / южноиндийский контур · 2 доклада</a><a class="chip" href="../meso/museum-collections.html">Музейные собрания и коллекции · 2 доклада</a><a class="chip" href="../meso/pali-early-buddhism.html">Пали и ранний буддизм · 2 доклада</a><a class="chip" href="../meso/roerich-studies.html">Рериховедение и Кабинет Ю. Н. Рериха · 2 доклада</a><a class="chip" href="../meso/ethnography-performance.html">Этнография, ритуал и перформанс · 2 доклада</a><a class="chip" href="../meso/bengal-bhakti-modernity.html">Бенгалия, бхакти и современность · 1 доклад</a><a class="chip" href="../meso/vedic-studies.html">Ведийские исследования · 1 доклад</a><a class="chip" href="../meso/sanskrit-grammar-panini.html">Санскритская грамматика / Панини · 1 доклад</a></div>
+            <div class="chip-list"><a class="chip" href="../meso/linguistics-language-system.html">Языковедческий анализ · 8 докладов</a><a class="chip" href="../meso/vedic-studies.html">Ведийские исследования · 3 доклада</a><a class="chip" href="../meso/museum-collections.html">Музейные собрания и коллекции · 3 доклада</a><a class="chip" href="../meso/pali-early-buddhism.html">Пали и ранний буддизм · 3 доклада</a><a class="chip" href="../meso/dravidology-south-india.html">Дравидология / южноиндийский контур · 2 доклада</a><a class="chip" href="../meso/roerich-studies.html">Рериховедение и Кабинет Ю. Н. Рериха · 2 доклада</a><a class="chip" href="../meso/sanskrit-grammar-panini.html">Санскритская грамматика / Панини · 2 доклада</a><a class="chip" href="../meso/ethnography-performance.html">Этнография, ритуал и перформанс · 2 доклада</a><a class="chip" href="../meso/bengal-bhakti-modernity.html">Бенгалия, бхакти и современность · 1 доклад</a><a class="chip" href="../meso/linguistics-text-philology.html">Филология текста · 1 доклад</a></div>
         </section>
 
         <section class="link-block">
             <strong>Конференции</strong>
-            <div class="chip-list"><a class="chip" href="../conferences/roerich-2025.html">Рериховские чтения 2025 · 2 доклада</a><a class="chip" href="../conferences/roerich-2024.html">Рериховские чтения 2024 · 3 доклада</a><a class="chip" href="../conferences/roerich-2022.html">Рериховские чтения 2022 · 3 доклада</a><a class="chip" href="../conferences/zograf-2022.html">Зографские чтения 2022 · 5 докладов</a><a class="chip" href="../conferences/roerich-2021.html">Рериховские чтения 2021 · 2 доклада</a><a class="chip" href="../conferences/roerich-2020.html">Рериховские чтения 2020 · 3 доклада</a><a class="chip" href="../conferences/roerich-2019.html">Рериховские чтения 2019 · 2 доклада</a><a class="chip" href="../conferences/roerich-2018.html">Рериховские чтения 2018 · 2 доклада</a><a class="chip" href="../conferences/roerich-2017.html">Рериховские чтения 2017 · 4 доклада</a><a class="chip" href="../conferences/roerich-2016.html">Рериховские чтения 2016 · 2 доклада</a><a class="chip" href="../conferences/roerich-2015.html">Рериховские чтения 2015 · 3 доклада</a><a class="chip" href="../conferences/roerich-2012.html">Рериховские чтения 2012 · 2 доклада</a></div>
+            <div class="chip-list"><a class="chip" href="../conferences/zograf-2026.html">Зографские чтения 2026 · 1 доклад</a><a class="chip" href="../conferences/roerich-2025.html">Рериховские чтения 2025 · 2 доклада</a><a class="chip" href="../conferences/zograf-2025.html">Зографские чтения 2025 · 1 доклад</a><a class="chip" href="../conferences/roerich-2024.html">Рериховские чтения 2024 · 3 доклада</a><a class="chip" href="../conferences/roerich-2022.html">Рериховские чтения 2022 · 3 доклада</a><a class="chip" href="../conferences/zograf-2022.html">Зографские чтения 2022 · 5 докладов</a><a class="chip" href="../conferences/roerich-2021.html">Рериховские чтения 2021 · 2 доклада</a><a class="chip" href="../conferences/zograf-2021.html">Зографские чтения 2021 · 1 доклад</a><a class="chip" href="../conferences/roerich-2020.html">Рериховские чтения 2020 · 3 доклада</a><a class="chip" href="../conferences/roerich-2019.html">Рериховские чтения 2019 · 2 доклада</a><a class="chip" href="../conferences/zograf-2019.html">Зографские чтения 2019 · 1 доклад</a><a class="chip" href="../conferences/roerich-2018.html">Рериховские чтения 2018 · 2 доклада</a></div>
         </section>
 
         <section class="list">
+        <article class="talk" id="PRES_952dc38711">
+            <strong><a href="../presentations/PRES_952dc38711.html">Чему и как учит Панчатантра</a></strong>
+            <div class="meta">
+                <a href="../scholars/sergey-tavastsherna.html">С. С. Тавастшерна</a> · <a href="../conferences/zograf-2026.html">Зографские чтения 2026</a>
+                · <a href="../themes/unspecified.html">Разное / Не классифицировано</a>
+                · <a href="../gumilyov/level-2.html">L2 Региональный</a> · <a href="../cities/sankt-peterburg.html">Санкт-Петербург</a>
+            </div>
+
+
+        </article>
+
+        <article class="talk" id="PRES_cac95e2161">
+            <strong><a href="../presentations/PRES_cac95e2161.html">В защиту Вишну Шипивишты: «Аз есьм Шипивишта!» (РВ 7.100.6)</a></strong><span class="badge badge-video">Видео</span>
+            <div class="meta">
+                <a href="../scholars/sergey-tavastsherna.html">С. С. Тавастшерна</a> · <a href="../conferences/zograf-2025.html">Зографские чтения 2025</a>
+                · <a href="../themes/unspecified.html">Разное / Не классифицировано</a>
+                · <a href="../gumilyov/level-1.html">L1 Микро</a> · <a href="../cities/sankt-peterburg.html">Санкт-Петербург</a>
+            </div>
+
+            <div class="meta">Сохранившаяся запись: <a href="https://www.youtube.com/watch?v=KLefVWmwwI4">YouTube</a></div>
+        </article>
+
         <article class="talk" id="PRES_970ff8c51f">
-            <strong><a href="../conferences/roerich-2025.html#PRES_970ff8c51f">Зачем в санскрите три прошедших времени?</a></strong>
+            <strong><a href="../presentations/PRES_970ff8c51f.html">Зачем в санскрите три прошедших времени?</a></strong>
             <div class="meta">
                 <a href="../scholars/sergey-tavastsherna.html">С. С. Тавастшерна</a> · <a href="../conferences/roerich-2025.html">Рериховские чтения 2025</a>
                 · <a href="../themes/linguistics-and-philology.html">Лингвистика и филология</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a> · <a href="../cities/sankt-peterburg.html">Санкт-Петербург</a>
             </div>
 
+        <section class="link-block">
+            <strong>Мезоуровни</strong>
+            <div class="chip-list"><a class="chip" href="../meso/linguistics-language-system.html">Языковедческий анализ</a></div>
+        </section>
+
+
         </article>
 
         <article class="talk" id="PRES_9bacebbe98">
-            <strong><a href="../conferences/roerich-2025.html#PRES_9bacebbe98">Аланкара как аспект стилистики текста</a></strong>
+            <strong><a href="../presentations/PRES_9bacebbe98.html">Аланкара как аспект стилистики текста</a></strong>
             <div class="meta">
                 <a href="../scholars/sofia-tsvetkova.html">С. О. Цветкова</a> · <a href="../conferences/roerich-2025.html">Рериховские чтения 2025</a>
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a> · <a href="../cities/sankt-peterburg.html">Санкт-Петербург</a>
             </div>
 
+
         </article>
 
         <article class="talk" id="PRES_48742ecace">
-            <strong><a href="../conferences/roerich-2024.html#PRES_48742ecace">Индийские классификации: принципы различения поэтических украшений (аланкар)</a></strong>
+            <strong><a href="../presentations/PRES_48742ecace.html">Индийские классификации: принципы различения поэтических украшений (аланкар)</a></strong>
             <div class="meta">
                 <a href="../scholars/sofia-tsvetkova.html">С. О. Цветкова</a> · <a href="../conferences/roerich-2024.html">Рериховские чтения 2024</a>
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a> · <a href="../cities/sankt-peterburg.html">Санкт-Петербург</a>
             </div>
 
+
         </article>
 
         <article class="talk" id="PRES_9c0c80bea0">
-            <strong><a href="../conferences/roerich-2024.html#PRES_9c0c80bea0">Традиционные индийские классификации: образцовые, удобные, проблематичные</a></strong>
+            <strong><a href="../presentations/PRES_9c0c80bea0.html">Традиционные индийские классификации: образцовые, удобные, проблематичные</a></strong>
             <div class="meta">
                 <a href="../scholars/sergey-tavastsherna.html">С. С. Тавастшерна</a> · <a href="../conferences/roerich-2024.html">Рериховские чтения 2024</a>
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a> · <a href="../cities/sankt-peterburg.html">Санкт-Петербург</a>
             </div>
 
+
         </article>
 
         <article class="talk" id="PRES_2d53080efa">
-            <strong><a href="../conferences/roerich-2024.html#PRES_2d53080efa">Некоторые тхангка из коллекции Ю.Н. Рериха (Новые исследования)</a></strong>
+            <strong><a href="../presentations/PRES_2d53080efa.html">Некоторые тхангка из коллекции Ю.Н. Рериха (Новые исследования)</a></strong>
             <div class="meta">
                 <a href="../scholars/elikhina-yuliya.html">Ю. И. Елихина</a> · <a href="../conferences/roerich-2024.html">Рериховские чтения 2024</a>
                 · <a href="../themes/history-and-culture.html">История, этнография и общество</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a> · <a href="../cities/sankt-peterburg.html">Санкт-Петербург</a>
             </div>
 
+        <section class="link-block">
+            <strong>Мезоуровни</strong>
+            <div class="chip-list"><a class="chip" href="../meso/museum-collections.html">Музейные собрания и коллекции</a><a class="chip" href="../meso/roerich-studies.html">Рериховедение и Кабинет Ю. Н. Рериха</a></div>
+        </section>
+
+
         </article>
 
         <article class="talk" id="PRES_695444f2df">
-            <strong><a href="../conferences/zograf-2022.html#PRES_695444f2df">Enjambement в поэзии Бхартрихари</a></strong>
+            <strong><a href="../presentations/PRES_695444f2df.html">Enjambement в поэзии Бхартрихари</a></strong>
             <div class="meta">
                 <a href="../scholars/sergey-tavastsherna.html">С. С. Тавастшерна</a> · <a href="../conferences/zograf-2022.html">Зографские чтения 2022</a>
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a>
                 · <a href="../gumilyov/level-2.html">L2 Региональный</a> · <a href="../cities/sankt-peterburg.html">Санкт-Петербург</a>
             </div>
 
+
         </article>
 
         <article class="talk" id="PRES_513cbc0421">
-            <strong><a href="../conferences/zograf-2022.html#PRES_513cbc0421">«Глупец», «Незнакомец», «Человек-эпоха»: три ипостаси князя Мышкина в индийском кинематографе</a></strong>
+            <strong><a href="../presentations/PRES_513cbc0421.html">«Глупец», «Незнакомец», «Человек-эпоха»: три ипостаси князя Мышкина в индийском кинематографе</a></strong>
             <div class="meta">
                 <a href="../scholars/kostina-ekaterina.html">Е. А. Костина</a> · <a href="../conferences/zograf-2022.html">Зографские чтения 2022</a>
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a>
                 · <a href="../gumilyov/level-2.html">L2 Региональный</a> · <a href="../cities/sankt-peterburg.html">Санкт-Петербург</a>
             </div>
 
+
         </article>
 
         <article class="talk" id="PRES_b11890b0ab">
-            <strong><a href="../conferences/zograf-2022.html#PRES_b11890b0ab">Новый роман Салмана Рушди «Кишот» и его индийская составляющая</a></strong>
+            <strong><a href="../presentations/PRES_b11890b0ab.html">Новый роман Салмана Рушди «Кишот» и его индийская составляющая</a></strong>
             <div class="meta">
                 <a href="../scholars/chelnokova-anna.html">А. В. Челнокова</a> · <a href="../conferences/zograf-2022.html">Зографские чтения 2022</a>
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a>
                 · <a href="../gumilyov/level-2.html">L2 Региональный</a> · <a href="../cities/sankt-peterburg.html">Санкт-Петербург</a>
             </div>
 
+
         </article>
 
         <article class="talk" id="PRES_f71b65d4d2">
-            <strong><a href="../conferences/zograf-2022.html#PRES_f71b65d4d2">Кришнаитские коды проповеди северо-индийского бхакти</a></strong>
+            <strong><a href="../presentations/PRES_f71b65d4d2.html">Кришнаитские коды проповеди северо-индийского бхакти</a></strong>
             <div class="meta">
                 <a href="../scholars/sofia-tsvetkova.html">С. О. Цветкова</a> · <a href="../conferences/zograf-2022.html">Зографские чтения 2022</a>
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a>
                 · <a href="../gumilyov/level-2.html">L2 Региональный</a> · <a href="../cities/sankt-peterburg.html">Санкт-Петербург</a>
             </div>
 
+
         </article>
 
         <article class="talk" id="PRES_92609683a4">
-            <strong><a href="../conferences/zograf-2022.html#PRES_92609683a4">&quot;Нисхождение в образе рыбы&quot;: сказание фольклорной традиции пастухов-голла</a></strong>
+            <strong><a href="../presentations/PRES_92609683a4.html">&quot;Нисхождение в образе рыбы&quot;: сказание фольклорной традиции пастухов-голла</a></strong>
             <div class="meta">
                 <a href="../scholars/soboleva-diana.html">Д. В. Соболева</a> · <a href="../conferences/zograf-2022.html">Зографские чтения 2022</a>
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a>
                 · <a href="../gumilyov/level-2.html">L2 Региональный</a> · <a href="../cities/sankt-peterburg.html">Санкт-Петербург</a>
             </div>
 
+        <section class="link-block">
+            <strong>Мезоуровни</strong>
+            <div class="chip-list"><a class="chip" href="../meso/ethnography-performance.html">Этнография, ритуал и перформанс</a></div>
+        </section>
+
+
         </article>
 
         <article class="talk" id="PRES_231441bfe0">
-            <strong><a href="../conferences/roerich-2022.html#PRES_231441bfe0">Некоторые особенности культа Белого старца в Сиккиме. (доклад онлайн)</a></strong>
+            <strong><a href="../presentations/PRES_231441bfe0.html">Некоторые особенности культа Белого старца в Сиккиме. (доклад онлайн)</a></strong><span class="badge badge-online">Онлайн</span>
             <div class="meta">
                 <a href="../scholars/elikhina-yuliya.html">Ю. И. Елихина</a> · <a href="../conferences/roerich-2022.html">Рериховские чтения 2022</a>
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a> · <a href="../cities/sankt-peterburg.html">Санкт-Петербург</a>
             </div>
 
+
         </article>
 
         <article class="talk" id="PRES_c7dde9eafd">
-            <strong><a href="../conferences/roerich-2022.html#PRES_c7dde9eafd">Лексикализация дезидератива в классическом санскрите</a></strong>
+            <strong><a href="../presentations/PRES_c7dde9eafd.html">Лексикализация дезидератива в классическом санскрите</a></strong>
             <div class="meta">
                 <a href="../scholars/sergey-tavastsherna.html">С. С. Тавастшерна</a> · <a href="../conferences/roerich-2022.html">Рериховские чтения 2022</a>
                 · <a href="../themes/linguistics-and-philology.html">Лингвистика и филология</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a> · <a href="../cities/sankt-peterburg.html">Санкт-Петербург</a>
             </div>
 
+        <section class="link-block">
+            <strong>Мезоуровни</strong>
+            <div class="chip-list"><a class="chip" href="../meso/linguistics-language-system.html">Языковедческий анализ</a></div>
+        </section>
+
+
         </article>
 
         <article class="talk" id="PRES_f0ebf6d248">
-            <strong><a href="../conferences/roerich-2022.html#PRES_f0ebf6d248">Проявление чувств в лирике кришнаитского бхакти XVI в</a></strong>
+            <strong><a href="../presentations/PRES_f0ebf6d248.html">Проявление чувств в лирике кришнаитского бхакти XVI в</a></strong>
             <div class="meta">
                 <a href="../scholars/sofia-tsvetkova.html">С. О. Цветкова</a> · <a href="../conferences/roerich-2022.html">Рериховские чтения 2022</a>
                 · <a href="../themes/religion-and-philosophy.html">Религия и философия</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a> · <a href="../cities/sankt-peterburg.html">Санкт-Петербург</a>
             </div>
 
+
+        </article>
+
+        <article class="talk" id="PRES_8da2a8ffea">
+            <strong><a href="../presentations/PRES_8da2a8ffea.html">Проблемы понимания санскритской метрики</a></strong>
+            <div class="meta">
+                <a href="../scholars/sergey-tavastsherna.html">С. С. Тавастшерна</a> · <a href="../conferences/zograf-2021.html">Зографские чтения 2021</a>
+                · <a href="../themes/linguistics-and-philology.html">Лингвистика и филология</a>
+                · <a href="../gumilyov/level-1.html">L1 Микро</a> · <a href="../cities/sankt-peterburg.html">Санкт-Петербург</a>
+            </div>
+
+
         </article>
 
         <article class="talk" id="PRES_4a38078432">
-            <strong><a href="../conferences/roerich-2021.html#PRES_4a38078432">Панчатантра как шастра и как тантра</a></strong>
+            <strong><a href="../presentations/PRES_4a38078432.html">Панчатантра как шастра и как тантра</a></strong>
             <div class="meta">
                 <a href="../scholars/sergey-tavastsherna.html">С. С. Тавастшерна</a> · <a href="../conferences/roerich-2021.html">Рериховские чтения 2021</a>
                 · <a href="../themes/literature-and-poetry.html">Литература и поэзия</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a> · <a href="../cities/sankt-peterburg.html">Санкт-Петербург</a>
             </div>
 
+
         </article>
 
         <article class="talk" id="PRES_646140769f">
-            <strong><a href="../conferences/roerich-2021.html#PRES_646140769f">Эпитет, образ, мотив в средневековой поэзии бхакти</a></strong>
+            <strong><a href="../presentations/PRES_646140769f.html">Эпитет, образ, мотив в средневековой поэзии бхакти</a></strong>
             <div class="meta">
                 <a href="../scholars/sofia-tsvetkova.html">С. О. Цветкова</a> · <a href="../conferences/roerich-2021.html">Рериховские чтения 2021</a>
                 · <a href="../themes/literature-and-poetry.html">Литература и поэзия</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a> · <a href="../cities/sankt-peterburg.html">Санкт-Петербург</a>
             </div>
 
+
         </article>
 
         <article class="talk" id="PRES_a939d396b8">
-            <strong><a href="../conferences/roerich-2020.html#PRES_a939d396b8">Некоторые тангка из собрания Ю.Н. Рериха. Новые исследования</a></strong>
+            <strong><a href="../presentations/PRES_a939d396b8.html">Некоторые тангка из собрания Ю.Н. Рериха. Новые исследования</a></strong>
             <div class="meta">
                 <a href="../scholars/elikhina-yuliya.html">Ю. И. Елихина</a> · <a href="../conferences/roerich-2020.html">Рериховские чтения 2020</a>
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a> · <a href="../cities/sankt-peterburg.html">Санкт-Петербург</a>
             </div>
 
+        <section class="link-block">
+            <strong>Мезоуровни</strong>
+            <div class="chip-list"><a class="chip" href="../meso/museum-collections.html">Музейные собрания и коллекции</a><a class="chip" href="../meso/roerich-studies.html">Рериховедение и Кабинет Ю. Н. Рериха</a></div>
+        </section>
+
+
         </article>
 
         <article class="talk" id="PRES_492441fb51">
-            <strong><a href="../conferences/roerich-2020.html#PRES_492441fb51">Небывальщины и парадоксы в древнеиндийской поэзии</a></strong>
+            <strong><a href="../presentations/PRES_492441fb51.html">Небывальщины и парадоксы в древнеиндийской поэзии</a></strong>
             <div class="meta">
                 <a href="../scholars/sergey-tavastsherna.html">С. С. Тавастшерна</a> · <a href="../conferences/roerich-2020.html">Рериховские чтения 2020</a>
                 · <a href="../themes/literature-and-poetry.html">Литература и поэзия</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a> · <a href="../cities/sankt-peterburg.html">Санкт-Петербург</a>
             </div>
 
+
         </article>
 
         <article class="talk" id="PRES_5e3f146897">
-            <strong><a href="../conferences/roerich-2020.html#PRES_5e3f146897">Небывальщины и парадоксы в средневековой североиндийской поэзии</a></strong>
+            <strong><a href="../presentations/PRES_5e3f146897.html">Небывальщины и парадоксы в средневековой североиндийской поэзии</a></strong>
             <div class="meta">
                 <a href="../scholars/sofia-tsvetkova.html">С. О. Цветкова</a> · <a href="../conferences/roerich-2020.html">Рериховские чтения 2020</a>
                 · <a href="../themes/literature-and-poetry.html">Литература и поэзия</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a> · <a href="../cities/sankt-peterburg.html">Санкт-Петербург</a>
             </div>
 
+
+        </article>
+
+        <article class="talk" id="PRES_4468815627">
+            <strong><a href="../presentations/PRES_4468815627.html">Атхарваведа 1.2. (Шаунака): дополнение к переводам</a></strong><span class="badge badge-video">Видео</span>
+            <div class="meta">
+                <a href="../scholars/sergey-tavastsherna.html">С. С. Тавастшерна</a> · <a href="../conferences/zograf-2019.html">Зографские чтения 2019</a>
+                · <a href="../themes/religion-and-philosophy.html">Религия и философия</a>
+                · <a href="../gumilyov/level-1.html">L1 Микро</a> · <a href="../cities/sankt-peterburg.html">Санкт-Петербург</a>
+            </div>
+
+        <section class="link-block">
+            <strong>Мезоуровни</strong>
+            <div class="chip-list"><a class="chip" href="../meso/vedic-studies.html">Ведийские исследования</a><a class="chip" href="../meso/linguistics-text-philology.html">Филология текста</a></div>
+        </section>
+
+            <div class="meta">Сохранившаяся запись: <a href="https://www.youtube.com/watch?v=rKrSz-Zo5yQ">YouTube</a></div>
         </article>
 
         <article class="talk" id="PRES_40c79b3a10">
-            <strong><a href="../conferences/roerich-2019.html#PRES_40c79b3a10">О стихах, приписываемых Бхартрихари</a></strong>
+            <strong><a href="../presentations/PRES_40c79b3a10.html">О стихах, приписываемых Бхартрихари</a></strong>
             <div class="meta">
                 <a href="../scholars/sergey-tavastsherna.html">С. С. Тавастшерна</a> · <a href="../conferences/roerich-2019.html">Рериховские чтения 2019</a>
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a> · <a href="../cities/sankt-peterburg.html">Санкт-Петербург</a>
             </div>
 
+
         </article>
 
         <article class="talk" id="PRES_795fb84e75">
-            <strong><a href="../conferences/roerich-2019.html#PRES_795fb84e75">Кабир о бхакти</a></strong>
+            <strong><a href="../presentations/PRES_795fb84e75.html">Кабир о бхакти</a></strong>
             <div class="meta">
                 <a href="../scholars/sofia-tsvetkova.html">С. О. Цветкова</a> · <a href="../conferences/roerich-2019.html">Рериховские чтения 2019</a>
                 · <a href="../themes/religion-and-philosophy.html">Религия и философия</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a> · <a href="../cities/sankt-peterburg.html">Санкт-Петербург</a>
             </div>
 
+
+        </article>
+
+        <article class="talk" id="PRES_7a7018c850">
+            <strong><a href="../presentations/PRES_7a7018c850.html">101 синоним воды в ведийском словаре «Нигханту»</a></strong>
+            <div class="meta">
+                <a href="../scholars/sergey-tavastsherna.html">С. С. Тавастшерна</a> · <a href="../conferences/zograf-2018.html">Зографские чтения 2018</a>
+                · <a href="../themes/religion-and-philosophy.html">Религия и философия</a>
+                · <a href="../gumilyov/level-1.html">L1 Микро</a> · <a href="../cities/sankt-peterburg.html">Санкт-Петербург</a>
+            </div>
+
+        <section class="link-block">
+            <strong>Мезоуровни</strong>
+            <div class="chip-list"><a class="chip" href="../meso/vedic-studies.html">Ведийские исследования</a><a class="chip" href="../meso/linguistics-language-system.html">Языковедческий анализ</a></div>
+        </section>
+
+
         </article>
 
         <article class="talk" id="PRES_690401765d">
-            <strong><a href="../conferences/roerich-2018.html#PRES_690401765d">Деепричастия пассивного залога в языке пали?</a></strong>
+            <strong><a href="../presentations/PRES_690401765d.html">Деепричастия пассивного залога в языке пали?</a></strong>
             <div class="meta">
                 <a href="../scholars/sergey-tavastsherna.html">С. С. Тавастшерна</a> · <a href="../conferences/roerich-2018.html">Рериховские чтения 2018</a>
                 · <a href="../themes/linguistics-and-philology.html">Лингвистика и филология</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a> · <a href="../cities/sankt-peterburg.html">Санкт-Петербург</a>
             </div>
 
+        <section class="link-block">
+            <strong>Мезоуровни</strong>
+            <div class="chip-list"><a class="chip" href="../meso/pali-early-buddhism.html">Пали и ранний буддизм</a><a class="chip" href="../meso/linguistics-language-system.html">Языковедческий анализ</a></div>
+        </section>
+
+
         </article>
 
         <article class="talk" id="PRES_dbe72b28f9">
-            <strong><a href="../conferences/roerich-2018.html#PRES_dbe72b28f9">Ирония: «риторическая фигура» в Североиндийской поэзии бхакти</a></strong>
+            <strong><a href="../presentations/PRES_dbe72b28f9.html">Ирония: «риторическая фигура» в Североиндийской поэзии бхакти</a></strong>
             <div class="meta">
                 <a href="../scholars/sofia-tsvetkova.html">С. О. Цветкова</a> · <a href="../conferences/roerich-2018.html">Рериховские чтения 2018</a>
                 · <a href="../themes/religion-and-philosophy.html">Религия и философия</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a> · <a href="../cities/sankt-peterburg.html">Санкт-Петербург</a>
             </div>
 
+
+        </article>
+
+        <article class="talk" id="PRES_45c0547868">
+            <strong><a href="../presentations/PRES_45c0547868.html">О методах описания санскритских классических стихотворных размеров</a></strong>
+            <div class="meta">
+                <a href="../scholars/sergey-tavastsherna.html">С. С. Тавастшерна</a> · <a href="../conferences/zograf-2017.html">Зографские чтения 2017</a>
+                · <a href="../themes/unspecified.html">Разное / Не классифицировано</a>
+                · <a href="../gumilyov/level-2.html">L2 Региональный</a> · <a href="../cities/sankt-peterburg.html">Санкт-Петербург</a>
+            </div>
+
+
         </article>
 
         <article class="talk" id="PRES_0e88c0544b">
-            <strong><a href="../conferences/roerich-2017.html#PRES_0e88c0544b">Синтаксические конструкции с ti и -bhāva в языке пали</a></strong>
+            <strong><a href="../presentations/PRES_0e88c0544b.html">Синтаксические конструкции с ti и -bhāva в языке пали</a></strong>
             <div class="meta">
                 <a href="../scholars/sergey-tavastsherna.html">С. С. Тавастшерна</a> · <a href="../conferences/roerich-2017.html">Рериховские чтения 2017</a>
                 · <a href="../themes/linguistics-and-philology.html">Лингвистика и филология</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a> · <a href="../cities/sankt-peterburg.html">Санкт-Петербург</a>
             </div>
 
+        <section class="link-block">
+            <strong>Мезоуровни</strong>
+            <div class="chip-list"><a class="chip" href="../meso/pali-early-buddhism.html">Пали и ранний буддизм</a><a class="chip" href="../meso/linguistics-language-system.html">Языковедческий анализ</a></div>
+        </section>
+
+
         </article>
 
         <article class="talk" id="PRES_3ea3a39e80">
-            <strong><a href="../conferences/roerich-2017.html#PRES_3ea3a39e80">Из поэзии на диалектах</a></strong>
+            <strong><a href="../presentations/PRES_3ea3a39e80.html">Из поэзии на диалектах</a></strong>
             <div class="meta">
                 <a href="../scholars/sofia-tsvetkova.html">С. О. Цветкова</a> · <a href="../conferences/roerich-2017.html">Рериховские чтения 2017</a>
                 · <a href="../themes/linguistics-and-philology.html">Лингвистика и филология</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a> · <a href="../cities/sankt-peterburg.html">Санкт-Петербург</a>
             </div>
 
+
         </article>
 
         <article class="talk" id="PRES_a56bd4d9d1">
-            <strong><a href="../conferences/roerich-2017.html#PRES_a56bd4d9d1">Из санскритской поэзии</a></strong>
+            <strong><a href="../presentations/PRES_a56bd4d9d1.html">Из санскритской поэзии</a></strong>
             <div class="meta">
                 <a href="../scholars/sergey-tavastsherna.html">С. С. Тавастшерна</a> · <a href="../conferences/roerich-2017.html">Рериховские чтения 2017</a>
                 · <a href="../themes/linguistics-and-philology.html">Лингвистика и филология</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a> · <a href="../cities/sankt-peterburg.html">Санкт-Петербург</a>
             </div>
 
+
         </article>
 
         <article class="talk" id="PRES_e70f3480fc">
-            <strong><a href="../conferences/roerich-2017.html#PRES_e70f3480fc">Риторический вопрос и его функция в индийской средневековой поэзии бхакти</a></strong>
+            <strong><a href="../presentations/PRES_e70f3480fc.html">Риторический вопрос и его функция в индийской средневековой поэзии бхакти</a></strong>
             <div class="meta">
                 <a href="../scholars/sofia-tsvetkova.html">С. О. Цветкова</a> · <a href="../conferences/roerich-2017.html">Рериховские чтения 2017</a>
                 · <a href="../themes/religion-and-philosophy.html">Религия и философия</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a> · <a href="../cities/sankt-peterburg.html">Санкт-Петербург</a>
             </div>
 
+
+        </article>
+
+        <article class="talk" id="PRES_d0a593aaa8">
+            <strong><a href="../presentations/PRES_d0a593aaa8.html">Проблемы текстологии «Шатакатраям» Бхартрихари (на примере «Шрингарашатаки»)</a></strong>
+            <div class="meta">
+                <a href="../scholars/sergey-tavastsherna.html">С. С. Тавастшерна</a> · <a href="../conferences/zograf-2016.html">Зографские чтения 2016</a>
+                · <a href="../themes/unspecified.html">Разное / Не классифицировано</a>
+                · <a href="../gumilyov/level-2.html">L2 Региональный</a> · <a href="../cities/sankt-peterburg.html">Санкт-Петербург</a>
+            </div>
+
+
         </article>
 
         <article class="talk" id="PRES_3da4b2c217">
-            <strong><a href="../conferences/roerich-2016.html#PRES_3da4b2c217">Бхаджаны-проповеди Миры Баи: к вопросу о стилистике жанра</a></strong>
+            <strong><a href="../presentations/PRES_3da4b2c217.html">Бхаджаны-проповеди Миры Баи: к вопросу о стилистике жанра</a></strong>
             <div class="meta">
                 <a href="../scholars/sofia-tsvetkova.html">С. О. Цветкова</a> · <a href="../conferences/roerich-2016.html">Рериховские чтения 2016</a>
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a> · <a href="../cities/sankt-peterburg.html">Санкт-Петербург</a>
             </div>
 
+
         </article>
 
         <article class="talk" id="PRES_efa644ebfa">
-            <strong><a href="../conferences/roerich-2016.html#PRES_efa644ebfa">Еретики локаятики и ортодокс Каутса</a></strong>
+            <strong><a href="../presentations/PRES_efa644ebfa.html">Еретики локаятики и ортодокс Каутса</a></strong>
             <div class="meta">
                 <a href="../scholars/sergey-tavastsherna.html">С. С. Тавастшерна</a> · <a href="../conferences/roerich-2016.html">Рериховские чтения 2016</a>
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a> · <a href="../cities/sankt-peterburg.html">Санкт-Петербург</a>
             </div>
 
+
+        </article>
+
+        <article class="talk" id="PRES_3e050c97df">
+            <strong><a href="../presentations/PRES_3e050c97df.html">Коллекция индийских рукописей рукописного фонда библиотеки СПбГУ</a></strong>
+            <div class="meta">
+                <a href="../scholars/sergey-tavastsherna.html">С. С. Тавастшерна</a> · <a href="../conferences/zograf-2015.html">Зографские чтения 2015</a>
+                · <a href="../themes/unspecified.html">Разное / Не классифицировано</a>
+                · <a href="../gumilyov/level-2.html">L2 Региональный</a> · <a href="../cities/sankt-peterburg.html">Санкт-Петербург</a>
+            </div>
+
+        <section class="link-block">
+            <strong>Мезоуровни</strong>
+            <div class="chip-list"><a class="chip" href="../meso/museum-collections.html">Музейные собрания и коллекции</a></div>
+        </section>
+
+
         </article>
 
         <article class="talk" id="PRES_5e2b4790e6">
-            <strong><a href="../conferences/roerich-2015.html#PRES_5e2b4790e6">О брахманических этимологиях</a></strong>
+            <strong><a href="../presentations/PRES_5e2b4790e6.html">О брахманических этимологиях</a></strong>
             <div class="meta">
                 <a href="../scholars/sergey-tavastsherna.html">С. С. Тавастшерна</a> · <a href="../conferences/roerich-2015.html">Рериховские чтения 2015</a>
                 · <a href="../themes/linguistics-and-philology.html">Лингвистика и филология</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a> · <a href="../cities/sankt-peterburg.html">Санкт-Петербург</a>
             </div>
 
+        <section class="link-block">
+            <strong>Мезоуровни</strong>
+            <div class="chip-list"><a class="chip" href="../meso/vedic-studies.html">Ведийские исследования</a><a class="chip" href="../meso/linguistics-language-system.html">Языковедческий анализ</a></div>
+        </section>
+
+
         </article>
 
         <article class="talk" id="PRES_6f09bca977">
-            <strong><a href="../conferences/roerich-2015.html#PRES_6f09bca977">Изменение межкастовых взаимоотношений в домусульманском Кашмире</a></strong>
+            <strong><a href="../presentations/PRES_6f09bca977.html">Изменение межкастовых взаимоотношений в домусульманском Кашмире</a></strong>
             <div class="meta">
                 <a href="../scholars/selivanova-tamara.html">Т. П. Селиванова</a> · <a href="../conferences/roerich-2015.html">Рериховские чтения 2015</a>
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a>
                 · <a href="../gumilyov/level-2.html">L2 Региональный</a> · <a href="../cities/sankt-peterburg.html">Санкт-Петербург</a>
             </div>
 
+        <section class="link-block">
+            <strong>Мезоуровни</strong>
+            <div class="chip-list"><a class="chip" href="../meso/ethnography-performance.html">Этнография, ритуал и перформанс</a></div>
+        </section>
+
+
         </article>
 
         <article class="talk" id="PRES_d0c16fc4c0">
-            <strong><a href="../conferences/roerich-2015.html#PRES_d0c16fc4c0">Проповедь Кабира: некоторые особенности языка и стиля</a></strong>
+            <strong><a href="../presentations/PRES_d0c16fc4c0.html">Проповедь Кабира: некоторые особенности языка и стиля</a></strong>
             <div class="meta">
                 <a href="../scholars/sofia-tsvetkova.html">С. О. Цветкова</a> · <a href="../conferences/roerich-2015.html">Рериховские чтения 2015</a>
                 · <a href="../themes/linguistics-and-philology.html">Лингвистика и филология</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a> · <a href="../cities/sankt-peterburg.html">Санкт-Петербург</a>
             </div>
 
+
+        </article>
+
+        <article class="talk" id="PRES_83fa564d73">
+            <strong><a href="../presentations/PRES_83fa564d73.html">Традиционная классификация санскритских стихотворных размеров</a></strong>
+            <div class="meta">
+                <a href="../scholars/sergey-tavastsherna.html">С. С. Тавастшерна</a> · <a href="../conferences/zograf-2014.html">Зографские чтения 2014</a>
+                · <a href="../themes/linguistics-and-philology.html">Лингвистика и филология</a>
+                · <a href="../gumilyov/level-1.html">L1 Микро</a> · <a href="../cities/sankt-peterburg.html">Санкт-Петербург</a>
+            </div>
+
+
+        </article>
+
+        <article class="talk" id="PRES_8f2b093d02">
+            <strong><a href="../presentations/PRES_8f2b093d02.html">Страсти и бесстрастие Бхартирихари</a></strong>
+            <div class="meta">
+                <a href="../scholars/sergey-tavastsherna.html">С. С. Тавастшерна</a> · <a href="../conferences/zograf-2013.html">Зографские чтения 2013</a>
+                · <a href="../themes/unspecified.html">Разное / Не классифицировано</a>
+                · <a href="../gumilyov/level-1.html">L1 Микро</a> · <a href="../cities/sankt-peterburg.html">Санкт-Петербург</a>
+            </div>
+
+
         </article>
 
         <article class="talk" id="PRES_3ddacc6fb6">
-            <strong><a href="../conferences/roerich-2012.html#PRES_3ddacc6fb6">Песенная техника проповеди Миры Баи: подступы к исследованию</a></strong>
+            <strong><a href="../presentations/PRES_3ddacc6fb6.html">Песенная техника проповеди Миры Баи: подступы к исследованию</a></strong>
             <div class="meta">
                 <a href="../scholars/sofia-tsvetkova.html">С. О. Цветкова</a> · <a href="../conferences/roerich-2012.html">Рериховские чтения 2012</a>
                 · <a href="../themes/art-and-material-culture.html">Искусство и материальная культура</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a> · <a href="../cities/sankt-peterburg.html">Санкт-Петербург</a>
             </div>
 
+
         </article>
 
         <article class="talk" id="PRES_e17d554abc">
-            <strong><a href="../conferences/roerich-2012.html#PRES_e17d554abc">Традиционный индийский комментарий как источник по изучению синтаксиса древнеиндийских языков</a></strong>
+            <strong><a href="../presentations/PRES_e17d554abc.html">Традиционный индийский комментарий как источник по изучению синтаксиса древнеиндийских языков</a></strong>
             <div class="meta">
                 <a href="../scholars/sergey-tavastsherna.html">С. С. Тавастшерна</a> · <a href="../conferences/roerich-2012.html">Рериховские чтения 2012</a>
                 · <a href="../themes/linguistics-and-philology.html">Лингвистика и филология</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a> · <a href="../cities/sankt-peterburg.html">Санкт-Петербург</a>
             </div>
 
+        <section class="link-block">
+            <strong>Мезоуровни</strong>
+            <div class="chip-list"><a class="chip" href="../meso/sanskrit-grammar-panini.html">Санскритская грамматика / Панини</a><a class="chip" href="../meso/linguistics-language-system.html">Языковедческий анализ</a></div>
+        </section>
+
+
+        </article>
+
+        <article class="talk" id="PRES_0e0cf8bb17">
+            <strong><a href="../presentations/PRES_0e0cf8bb17.html">Санскритские квантитативные стихотворные размеры: реконструкция чтения</a></strong>
+            <div class="meta">
+                <a href="../scholars/sergey-tavastsherna.html">С. С. Тавастшерна</a> · <a href="../conferences/zograf-2010.html">Зографские чтения 2010</a>
+                · <a href="../themes/unspecified.html">Разное / Не классифицировано</a>
+                · <a href="../gumilyov/level-2.html">L2 Региональный</a> · <a href="../cities/sankt-peterburg.html">Санкт-Петербург</a>
+            </div>
+
+
+        </article>
+
+        <article class="talk" id="PRES_e62ebf0bd0">
+            <strong><a href="../presentations/PRES_e62ebf0bd0.html">К определению термина «джатака» в палийском каноне</a></strong>
+            <div class="meta">
+                <a href="../scholars/sergey-tavastsherna.html">С. С. Тавастшерна</a> · <a href="../conferences/zograf-2009.html">Зографские чтения 2009</a>
+                · <a href="../themes/unspecified.html">Разное / Не классифицировано</a>
+                · <a href="../gumilyov/level-2.html">L2 Региональный</a> · <a href="../cities/sankt-peterburg.html">Санкт-Петербург</a>
+            </div>
+
+        <section class="link-block">
+            <strong>Мезоуровни</strong>
+            <div class="chip-list"><a class="chip" href="../meso/pali-early-buddhism.html">Пали и ранний буддизм</a></div>
+        </section>
+
+
+        </article>
+
+        <article class="talk" id="PRES_6da6054f73">
+            <strong><a href="../presentations/PRES_6da6054f73.html">Атманепада в санскрите и в грамматиках</a></strong>
+            <div class="meta">
+                <a href="../scholars/sergey-tavastsherna.html">С. С. Тавастшерна</a> · <a href="../conferences/zograf-2008.html">Зографские чтения 2008</a>
+                · <a href="../themes/unspecified.html">Разное / Не классифицировано</a>
+                · <a href="../gumilyov/level-2.html">L2 Региональный</a> · <a href="../cities/sankt-peterburg.html">Санкт-Петербург</a>
+            </div>
+
+        <section class="link-block">
+            <strong>Мезоуровни</strong>
+            <div class="chip-list"><a class="chip" href="../meso/sanskrit-grammar-panini.html">Санскритская грамматика / Панини</a></div>
+        </section>
+
+
+        </article>
+
+        <article class="talk" id="PRES_10c2c66c17">
+            <strong><a href="../presentations/PRES_10c2c66c17.html">Древнеиндийские диалекты в ранних фонетических трактатах</a></strong>
+            <div class="meta">
+                <a href="../scholars/sergey-tavastsherna.html">С. С. Тавастшерна</a> · <a href="../conferences/zograf-2007.html">Зографские чтения 2007</a>
+                · <a href="../themes/unspecified.html">Разное / Не классифицировано</a>
+                · <a href="../gumilyov/level-2.html">L2 Региональный</a> · <a href="../cities/sankt-peterburg.html">Санкт-Петербург</a>
+            </div>
+
+
         </article>
 
         <article class="talk" id="PRES_4bb24c3c11">
-            <strong><a href="../conferences/zograf-2007.html#PRES_4bb24c3c11">К вопросу о статусе «естественного описания» в индийской поэтике</a></strong>
+            <strong><a href="../presentations/PRES_4bb24c3c11.html">К вопросу о статусе «естественного описания» в индийской поэтике</a></strong>
             <div class="meta">
                 <a href="../scholars/sofia-tsvetkova.html">С. О. Цветкова</a> · <a href="../conferences/zograf-2007.html">Зографские чтения 2007</a>
                 · <a href="../themes/literature-and-poetry.html">Литература и поэзия</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a> · <a href="../cities/sankt-peterburg.html">Санкт-Петербург</a>
             </div>
 
+
         </article>
 
         <article class="talk" id="PRES_932ae951cd">
-            <strong><a href="../conferences/zograf-2007.html#PRES_932ae951cd">Санскритское письмо как последовательная фонетическая транскрипция</a></strong>
+            <strong><a href="../presentations/PRES_932ae951cd.html">Санскритское письмо как последовательная фонетическая транскрипция</a></strong>
             <div class="meta">
                 <a href="../scholars/paribok-andrei.html">А. В. Парибок</a> · <a href="../conferences/zograf-2007.html">Зографские чтения 2007</a>
                 · <a href="../themes/linguistics-and-philology.html">Лингвистика и филология</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a> · <a href="../cities/sankt-peterburg.html">Санкт-Петербург</a>
             </div>
 
+        <section class="link-block">
+            <strong>Мезоуровни</strong>
+            <div class="chip-list"><a class="chip" href="../meso/linguistics-language-system.html">Языковедческий анализ</a></div>
+        </section>
+
+
         </article>
 
         <article class="talk" id="PRES_7e16512005">
-            <strong><a href="../conferences/zograf-2007.html#PRES_7e16512005">О быках и людях (Образ «Стада» в скотоводческом эпосе Южной Индии)</a></strong>
+            <strong><a href="../presentations/PRES_7e16512005.html">О быках и людях (Образ «Стада» в скотоводческом эпосе Южной Индии)</a></strong>
             <div class="meta">
                 <a href="../scholars/gurov-nikita.html">Н. В. Гуров</a> · <a href="../conferences/zograf-2007.html">Зографские чтения 2007</a>
                 · <a href="../themes/literature-and-poetry.html">Литература и поэзия</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a> · <a href="../cities/sankt-peterburg.html">Санкт-Петербург</a>
             </div>
 
+        <section class="link-block">
+            <strong>Мезоуровни</strong>
+            <div class="chip-list"><a class="chip" href="../meso/dravidology-south-india.html">Дравидология / южноиндийский контур</a></div>
+        </section>
+
+
         </article>
 
         <article class="talk" id="PRES_57ccd5c672">
-            <strong><a href="../conferences/zograf-2007.html#PRES_57ccd5c672">Дидактические шатаки в литературе телугу (К характеристике жанровых особенностей). 3. Т. Г .Скороходова (Пенза). Интерпретация традиционного индийского текста либеральными мыслителями Бенгальского Возрождения</a></strong>
+            <strong><a href="../presentations/PRES_57ccd5c672.html">Дидактические шатаки в литературе телугу (К характеристике жанровых особенностей). 3. Т. Г .Скороходова (Пенза). Интерпретация традиционного индийского текста либеральными мыслителями Бенгальского Возрождения</a></strong>
             <div class="meta">
                 <a href="../scholars/soboleva-diana.html">Д. В. Соболева</a> · <a href="../conferences/zograf-2007.html">Зографские чтения 2007</a>
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a>
                 · <a href="../gumilyov/level-2.html">L2 Региональный</a> · <a href="../cities/sankt-peterburg.html">Санкт-Петербург</a>
             </div>
 
+        <section class="link-block">
+            <strong>Мезоуровни</strong>
+            <div class="chip-list"><a class="chip" href="../meso/bengal-bhakti-modernity.html">Бенгалия, бхакти и современность</a><a class="chip" href="../meso/dravidology-south-india.html">Дравидология / южноиндийский контур</a></div>
+        </section>
+
+
         </article>
 
         <article class="talk" id="PRES_8c102cb0c2">
-            <strong><a href="../conferences/zograf-2007.html#PRES_8c102cb0c2">Теоретические аспекты учения тантрической школы кула (согласно «Куларнава-тантре»)</a></strong>
+            <strong><a href="../presentations/PRES_8c102cb0c2.html">Теоретические аспекты учения тантрической школы кула (согласно «Куларнава-тантре»)</a></strong>
             <div class="meta">
                 <a href="../scholars/pakhomov-sergei.html">С. В. Пахомов</a> · <a href="../conferences/zograf-2007.html">Зографские чтения 2007</a>
                 · <a href="../themes/religion-and-philosophy.html">Религия и философия</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a> · <a href="../cities/sankt-peterburg.html">Санкт-Петербург</a>
             </div>
 
+
         </article>
 
         <article class="talk" id="PRES_c190e58dae">
-            <strong><a href="../conferences/zograf-2007.html#PRES_c190e58dae">Язык как источник аргументации (на примере рассуждений о самбандхе)</a></strong>
+            <strong><a href="../presentations/PRES_c190e58dae.html">Язык как источник аргументации (на примере рассуждений о самбандхе)</a></strong>
             <div class="meta">
                 <a href="../scholars/desnitskaya-evgeniya.html">Е. А. Десницкая</a> · <a href="../conferences/zograf-2007.html">Зографские чтения 2007</a>
                 · <a href="../themes/linguistics-and-philology.html">Лингвистика и филология</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a> · <a href="../cities/sankt-peterburg.html">Санкт-Петербург</a>
             </div>
+
+
+        </article>
+
+        <article class="talk" id="PRES_aa8c66a571">
+            <strong><a href="../presentations/PRES_aa8c66a571.html">«Ādau vāda āsīt»: о переводах Библии на санскрит. В программе возможны изменения и дополнения</a></strong>
+            <div class="meta">
+                <a href="../scholars/sergey-tavastsherna.html">С. С. Тавастшерна</a> · <a href="../conferences/zograf-2006.html">Зографские чтения 2006</a>
+                · <a href="../themes/unspecified.html">Разное / Не классифицировано</a>
+                · <a href="../gumilyov/level-2.html">L2 Региональный</a> · <a href="../cities/sankt-peterburg.html">Санкт-Петербург</a>
+            </div>
+
+
+        </article>
+
+        <article class="talk" id="PRES_98a6bea15e">
+            <strong><a href="../presentations/PRES_98a6bea15e.html">О 58 синонимах «речи» в «Нигханту»</a></strong>
+            <div class="meta">
+                <a href="../scholars/sergey-tavastsherna.html">С. С. Тавастшерна</a> · <a href="../conferences/zograf-2004.html">Зографские чтения 2004</a>
+                · <a href="../themes/unspecified.html">Разное / Не классифицировано</a>
+                · <a href="../gumilyov/level-2.html">L2 Региональный</a> · <a href="../cities/sankt-peterburg.html">Санкт-Петербург</a>
+            </div>
+
 
         </article>
     </section>

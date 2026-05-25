@@ -63,24 +63,7 @@
       "knowsAbout": [
         "Лингвистика и филология"
       ],
-      "affiliation": [
-        {
-          "@type": "Organization",
-          "name": "Москва"
-        },
-        {
-          "@type": "Organization",
-          "name": "Краснодар"
-        },
-        {
-          "@type": "Organization",
-          "name": "Обнинск"
-        },
-        {
-          "@type": "Organization",
-          "name": "НИ"
-        }
-      ],
+      "affiliation": [],
       "birthDate": "1983",
       "sameAs": [
         "https://orcid.org/0000-0003-2415-4676",
@@ -222,6 +205,28 @@
             padding: 0.8rem 1rem;
             border-radius: 0 8px 8px 0;
         }
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            border-radius: 8px;
+            padding: 0.18rem 0.45rem;
+            margin-left: 0.45rem;
+            border: 1px solid var(--border);
+            color: var(--muted);
+            font-size: 0.82rem;
+            font-weight: 600;
+            vertical-align: middle;
+        }
+        .badge-online {
+            border-color: rgba(52, 211, 153, 0.4);
+            color: #6ee7b7;
+            background: rgba(16, 185, 129, 0.1);
+        }
+        .badge-video {
+            border-color: rgba(251, 191, 36, 0.44);
+            color: #fde68a;
+            background: rgba(217, 119, 6, 0.13);
+        }
         .footer {
             color: var(--soft);
             margin-top: 3rem;
@@ -271,6 +276,8 @@
             <a href="/IndologyScholars/generations/">Поколения</a>
             <a href="/IndologyScholars/meso/">Мезоуровни</a>
             <a href="/IndologyScholars/gumilyov/">Гумилев</a>
+            <a href="/IndologyScholars/classification-criteria.html">Критерии</a>
+            <a href="/IndologyScholars/presentations/">Доклады</a>
             <a href="/IndologyScholars/videos/">Видео</a>
             <a href="/IndologyScholars/findings/">Выводы</a>
             <a href="/IndologyScholars/cities/">Города</a>
@@ -300,7 +307,8 @@
         </section>
 
         <h2>Аффилиации</h2>
-        <div class="chip-row"><a class="chip" href="../cities/moskva.html">Москва</a><a class="chip" href="../cities/krasnodar.html">Краснодар</a><a class="chip" href="../cities/obninsk.html">Обнинск</a><a class="chip" href="../index.html?search=%D0%9D%D0%98">НИ</a></div>
+        <div class="chip-row"><span class="meta">Нет данных</span></div>
+
 
         <h2>Географические центры</h2>
         <div class="chip-row"><a class="chip" href="../cities/obninsk.html">Обнинск</a><a class="chip" href="../cities/krasnodar.html">Краснодар</a><a class="chip" href="../cities/moskva.html">Москва</a></div>
@@ -318,7 +326,7 @@
         <h2>Доклады</h2>
         <section class="list">
         <article class="talk" id="PRES_36658fe404">
-            <strong><a href="../conferences/zograf-2024.html#PRES_36658fe404">Переписка О.Н. Бетлингка по поводу Петербургских словарей и судьба лексикографа</a></strong>
+            <strong><a href="../presentations/PRES_36658fe404.html">Переписка О.Н. Бетлингка по поводу Петербургских словарей и судьба лексикографа</a></strong>
             <div class="meta">
                 <a href="../conferences/zograf-2024.html">Зографские чтения 2024</a>
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a> · <a href="../cities/obninsk.html">Обнинск</a>
@@ -329,7 +337,7 @@
         </article>
 
         <article class="talk" id="PRES_04be156989">
-            <strong><a href="../conferences/roerich-2024.html#PRES_04be156989">Принципы построения верениц древнеиндийских имён в «Вишнусахасранаме» («Махабхарата» XII.135)</a></strong>
+            <strong><a href="../presentations/PRES_04be156989.html">Принципы построения верениц древнеиндийских имён в «Вишнусахасранаме» («Махабхарата» XII.135)</a></strong>
             <div class="meta">
                 <a href="../conferences/roerich-2024.html">Рериховские чтения 2024</a>
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a>
@@ -340,7 +348,7 @@
         </article>
 
         <article class="talk" id="PRES_b0fb034cf5">
-            <strong><a href="../conferences/zograf-2023.html#PRES_b0fb034cf5">Древнеиндийская ономастика в «Вишнусахасранаме»</a></strong>
+            <strong><a href="../presentations/PRES_b0fb034cf5.html">Древнеиндийская ономастика в «Вишнусахасранаме»</a></strong>
             <div class="meta">
                 <a href="../conferences/zograf-2023.html">Зографские чтения 2023</a>
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a> · <a href="../cities/obninsk.html">Обнинск</a>
@@ -351,29 +359,29 @@
         </article>
 
         <article class="talk" id="PRES_5ec82e96d1">
-            <strong><a href="../conferences/zograf-2021.html#PRES_5ec82e96d1">Голубые лотосы санскритской лексикографии</a></strong>
+            <strong><a href="../presentations/PRES_5ec82e96d1.html">Голубые лотосы санскритской лексикографии</a></strong><span class="badge badge-video">Видео</span>
             <div class="meta">
                 <a href="../conferences/zograf-2021.html">Зографские чтения 2021</a>
                 · <a href="../themes/linguistics-and-philology.html">Лингвистика и филология</a> · <a href="../cities/krasnodar.html">Краснодар</a>
             </div>
             <div class="meta talk-meta-row"><span>2021-05-21 · Пятница · 11:00 – 14:00</span><span class="talk-meta-session">Утреннее заседание</span></div>
             <div class="meta talk-context"><span class="context-label">Срезы:</span> <a class="mini-chip" href="../meso/sanskrit-grammar-panini.html">Санскритская грамматика / Панини</a><a class="mini-chip" href="../meso/linguistics-language-system.html">Языковедческий анализ</a></div>
-            <div class="meta"><a href="https://www.youtube.com/watch?v=1LYgxkrB2gU" rel="noopener" target="_blank">▶ YouTube</a></div>
+            <div class="meta">Сохранившаяся запись: <a href="https://www.youtube.com/watch?v=1LYgxkrB2gU" rel="noopener" target="_blank">▶ YouTube</a></div>
         </article>
 
         <article class="talk" id="PRES_9a160371a2">
-            <strong><a href="../conferences/zograf-2020.html#PRES_9a160371a2">Параллельный санскритско-русский корпус</a></strong>
+            <strong><a href="../presentations/PRES_9a160371a2.html">Параллельный санскритско-русский корпус</a></strong><span class="badge badge-video">Видео</span>
             <div class="meta">
                 <a href="../conferences/zograf-2020.html">Зографские чтения 2020</a>
                 · <a href="../themes/linguistics-and-philology.html">Лингвистика и филология</a> · <a href="../cities/krasnodar.html">Краснодар</a>
             </div>
             <div class="meta talk-meta-row"><span>2020-05-12 · Вторник · 11:30 – 14:00</span><span class="talk-meta-session">Утреннее заседание</span></div>
             <div class="meta talk-context"><span class="context-label">Срезы:</span> <a class="mini-chip" href="../meso/linguistics-language-system.html">Языковедческий анализ</a> <span class="context-label">Ключевые слова:</span> <a class="mini-chip" href="../search.html?q=%D0%BA%D0%BE%D1%80%D0%BF%D1%83%D1%81">корпус</a><a class="mini-chip" href="../search.html?q=%D1%80%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9">русский</a></div>
-            <div class="meta"><a href="https://www.youtube.com/watch?v=JECHNCYFkFE" rel="noopener" target="_blank">▶ YouTube</a></div>
+            <div class="meta">Сохранившаяся запись: <a href="https://www.youtube.com/watch?v=JECHNCYFkFE" rel="noopener" target="_blank">▶ YouTube</a></div>
         </article>
 
         <article class="talk" id="PRES_5e65d5094d">
-            <strong><a href="../conferences/zograf-2019.html#PRES_5e65d5094d">Двести лет санскритской лексикографии (1819‒2019)</a></strong>
+            <strong><a href="../presentations/PRES_5e65d5094d.html">Двести лет санскритской лексикографии (1819‒2019)</a></strong>
             <div class="meta">
                 <a href="../conferences/zograf-2019.html">Зографские чтения 2019</a>
                 · <a href="../themes/linguistics-and-philology.html">Лингвистика и филология</a> · <a href="../cities/krasnodar.html">Краснодар</a>
@@ -384,7 +392,7 @@
         </article>
 
         <article class="talk" id="PRES_e64009085a">
-            <strong><a href="../conferences/roerich-2019.html#PRES_e64009085a">Возможности понимания и написания термина «санскрит»</a></strong>
+            <strong><a href="../presentations/PRES_e64009085a.html">Возможности понимания и написания термина «санскрит»</a></strong>
             <div class="meta">
                 <a href="../conferences/roerich-2019.html">Рериховские чтения 2019</a>
                 · <a href="../themes/linguistics-and-philology.html">Лингвистика и филология</a>
@@ -395,7 +403,7 @@
         </article>
 
         <article class="talk" id="PRES_5b0c00b805">
-            <strong><a href="../conferences/zograf-2006.html#PRES_5b0c00b805">Технические приспособления для рубрикации корней в «Дхатупати» Панини</a></strong>
+            <strong><a href="../presentations/PRES_5b0c00b805.html">Технические приспособления для рубрикации корней в «Дхатупатхе» Панини</a></strong>
             <div class="meta">
                 <a href="../conferences/zograf-2006.html">Зографские чтения 2006</a>
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a> · <a href="../cities/moskva.html">Москва</a>

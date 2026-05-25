@@ -12,7 +12,7 @@
     <link rel="icon" href="/IndologyScholars/assets/favicon.svg" type="image/svg+xml">
     <link rel="manifest" href="/IndologyScholars/site.webmanifest">
     <meta name="theme-color" content="#0a0e1a">
-    <link rel="preload" href="site_data.json?v=1.8.3" as="fetch" crossorigin>
+    <link rel="preload" href="site_data.json?v=1.8.5" as="fetch" crossorigin>
     <meta name="keywords" content="Индология, Зографские чтения, Рериховские чтения, наука, востоковедение, ИВР РАН, ИВ РАН, МГУ, СПбГУ, статистика, научные доклады">
     <meta name="author" content="Dr. Mārcis Gasūns">
 
@@ -375,6 +375,17 @@
             margin: 0;
         }
 
+        .findings-corpus-note {
+            border: 1px solid rgba(251, 191, 36, 0.32);
+            background: rgba(217, 119, 6, 0.1);
+            color: #fde68a;
+            border-radius: 8px;
+            padding: 0.72rem 0.9rem;
+            margin: 0 0 1rem;
+            max-width: 100%;
+            font-size: 0.9rem;
+        }
+
         .findings-cta {
             color: #ffffff;
             text-decoration: none;
@@ -594,6 +605,14 @@
             background: rgba(16, 185, 129, 0.15);
             border: 1px solid rgba(16, 185, 129, 0.4);
             color: #34d399;
+            font-size: 0.7rem;
+            margin-left: 0.5rem;
+        }
+
+        .badge-video {
+            background: rgba(217, 119, 6, 0.15);
+            border: 1px solid rgba(251, 191, 36, 0.44);
+            color: #fde68a;
             font-size: 0.7rem;
             margin-left: 0.5rem;
         }
@@ -1005,9 +1024,9 @@
                 <div class="stat-desc" id="stat-overlap-desc">Ученые, участвовавшие в обеих конференциях</div>
             </div>
             <div class="stat-card" id="card-youtube">
-                <div class="stat-num gradient-text" id="stat-youtube-count">178</div>
-                <div class="stat-label" id="stat-youtube-label">Видеозаписи</div>
-                <div class="stat-desc" id="stat-youtube-desc">Зографские чтения 2023–2025 на YouTube</div>
+                <div class="stat-num gradient-text" id="stat-youtube-count">82</div>
+                <div class="stat-label" id="stat-youtube-label">Доклады с видео</div>
+                <div class="stat-desc" id="stat-youtube-desc">Сохранившиеся записи, привязанные к докладам</div>
             </div>
         </section>
 
@@ -1015,10 +1034,12 @@
             <a href="findings/">Выводы статьи</a>
             <a href="scholars/">Профили</a>
             <a href="conferences/">Конференции</a>
+            <a href="presentations/">Доклады</a>
             <a href="themes/">Темы</a>
             <a href="topics/">Сюжеты</a>
             <a href="generations/">Поколения</a>
             <a href="gumilyov/">Гумилев</a>
+            <a href="classification-criteria.html">Критерии</a>
             <a href="videos/">Видео</a>
             <a href="cities/">Города</a>
             <a href="institutions/">Институции</a>
@@ -1040,6 +1061,7 @@
                 </div>
                 <a class="findings-cta" id="findings-cta" href="findings/">Читать выводы</a>
             </div>
+            <p class="findings-corpus-note" id="findings-corpus-note">Показатели статьи рассчитаны для аналитического подкорпуса 220 ученых / 895 уникальных докладов / 899 участий. Текущий расширенный каталог (289 / 1350 / 1377) требует повторного расчета гипотез.</p>
             <div class="findings-grid">
                 <article class="insight-card">
                     <div class="insight-metric">38 / ~104</div>
@@ -1413,7 +1435,7 @@ CREATE TABLE presentation_person (
     <!-- Main Dynamic Application Script with Bilingual Localization (RU / EN) -->
     <script>
         // Kick off data fetch immediately (preload tag in <head> ensures it starts even earlier)
-        const _dataPromise = fetch('site_data.json?v=1.8.3').then(r => r.json());
+        const _dataPromise = fetch('site_data.json?v=1.8.5').then(r => r.json());
 
         // Language state
         let currentLang = 'ru';
@@ -1425,14 +1447,17 @@ CREATE TABLE presentation_person (
                 statScholars: "Уникальные ученые",
                 statScholarsDesc: "Дедуплицированные индологи и докладчики",
                 statTalks: "Авторские участия",
-                statTalksDesc: "899 участий в 895 уникальных докладах",
+                statTalksDesc: "1377 участий в 1350 уникальных докладах",
                 statYears: "Года исследований",
                 statYearsDesc: "Период с 2004 по 2026 годы",
                 statOverlap: "Ядро индологов",
                 statOverlapDesc: "Ученые, участвовавшие в обеих конференциях",
+                statYoutube: "Доклады с видео",
+                statYoutubeDesc: "Сохранившиеся записи, привязанные к докладам",
                 findingsEyebrow: "Из последней статьи",
                 findingsHeading: "Не только список докладов: что показывает архив",
                 findingsLead: "Две конференции образуют связанные, но удивительно слабо пересекающиеся среды; их различают тематические акценты и общий жанр точного микрокейса.",
+                findingsCorpusNote: "Показатели статьи рассчитаны для аналитического подкорпуса 220 ученых / 895 уникальных докладов / 899 участий. Текущий расширенный каталог (289 / 1350 / 1377) требует повторного расчета гипотез.",
                 findingsCta: "Читать выводы",
                 insightOverlapTitle: "Пересечение ниже ожидания",
                 insightOverlapText: "Только 38 ученых выступали на обеих площадках при модельном ожидании около 104.",
@@ -1488,6 +1513,7 @@ CREATE TABLE presentation_person (
                 dbTitle: "Реляционная схема базы данных (conferences.db)",
                 dbDesc: "Нормализованная база данных SQLite использует строгие ссылочные связи для сопоставления площадок, дат, залов заседаний, сессий, докладчиков и тем научных сообщений.",
                 onlineBadge: "Zoom / Онлайн",
+                videoBadge: "Видео",
                 zografReadingsLabel: "Зографские чтения",
                 roerichReadingsLabel: "Рериховские чтения",
                 footerCopyright: "© 2026 Российский индологический научный архив, д-р Марцис Гасунс. Все права защищены.",
@@ -1524,14 +1550,17 @@ CREATE TABLE presentation_person (
                 statScholars: "Unique Scholars",
                 statScholarsDesc: "Deduplicated indologists & speakers",
                 statTalks: "Author Participations",
-                statTalksDesc: "899 participations across 895 unique talks",
+                statTalksDesc: "1377 participations across 1350 unique talks",
                 statYears: "Historical Years",
                 statYearsDesc: "Covering 2004 through 2026",
                 statOverlap: "Core Overlap Cohort",
                 statOverlapDesc: "Scholars active in both forums",
+                statYoutube: "Talks with Video",
+                statYoutubeDesc: "Surviving recordings attached to talks",
                 findingsEyebrow: "From the latest article",
                 findingsHeading: "Beyond a list of talks: what the archive reveals",
                 findingsLead: "The two conference series form connected but unexpectedly weakly overlapping environments, differentiated by thematic emphasis and a shared preference for precise micro-cases.",
+                findingsCorpusNote: "The article metrics were calculated for its analytical subcorpus of 220 scholars / 895 unique talks / 899 participations. The expanded catalogue (289 / 1350 / 1377) requires renewed hypothesis testing.",
                 findingsCta: "Read findings",
                 insightOverlapTitle: "Overlap is below expectation",
                 insightOverlapText: "Only 38 scholars spoke at both venues, compared with a model expectation of about 104.",
@@ -1588,6 +1617,7 @@ CREATE TABLE presentation_person (
                 dbTitle: "Relational Database Schema (conferences.db)",
                 dbDesc: "The underlying normalized SQLite database utilizes a robust, referentially-sound DDL mapping venues, events, day schedules, sessions, presenters, and talks.",
                 onlineBadge: "Zoom / Online",
+                videoBadge: "Video",
                 zografReadingsLabel: "Zograf Readings",
                 roerichReadingsLabel: "Roerich Readings",
                 footerCopyright: "© 2026 Russian Indological Research Archive, Dr. Mārcis Gasūns. All rights reserved.",
@@ -1662,9 +1692,12 @@ CREATE TABLE presentation_person (
             document.getElementById('stat-years-desc').textContent = t.statYearsDesc;
             document.getElementById('stat-overlap-label').textContent = t.statOverlap;
             document.getElementById('stat-overlap-desc').textContent = t.statOverlapDesc;
+            document.getElementById('stat-youtube-label').textContent = t.statYoutube;
+            document.getElementById('stat-youtube-desc').textContent = t.statYoutubeDesc;
             document.getElementById('findings-eyebrow').textContent = t.findingsEyebrow;
             document.getElementById('findings-heading').textContent = t.findingsHeading;
             document.getElementById('findings-lead').textContent = t.findingsLead;
+            document.getElementById('findings-corpus-note').textContent = t.findingsCorpusNote;
             document.getElementById('findings-cta').textContent = t.findingsCta;
             document.getElementById('insight-overlap-title').textContent = t.insightOverlapTitle;
             document.getElementById('insight-overlap-text').textContent = t.insightOverlapText;
@@ -1889,9 +1922,9 @@ CREATE TABLE presentation_person (
         }
 
         function talkPageHref(talk) {
+            if (talk.presentation_id) return `presentations/${encodeURIComponent(talk.presentation_id)}.html`;
             const prefix = talk.series && talk.series.includes('Zograf') ? 'zograf' : 'roerich';
-            const anchor = talk.presentation_id ? `#${encodeURIComponent(talk.presentation_id)}` : '';
-            return `conferences/${prefix}-${talk.year}.html${anchor}`;
+            return `conferences/${prefix}-${talk.year}.html`;
         }
 
         function matchingTalks(query) {
@@ -1953,7 +1986,7 @@ CREATE TABLE presentation_person (
                     <div class="query-year">${escapeHtml(talk.year)}</div>
                     <div>
                         <a class="query-title" href="${talkPageHref(talk)}">${escapeHtml(talk.title)}</a>
-                        <div class="query-meta">${escapeHtml(series)} · ${escapeHtml(item.authors.join('; '))}</div>
+                        <div class="query-meta">${escapeHtml(series)} · ${escapeHtml(item.authors.join('; '))}${talk.is_online ? ` · <span class="badge badge-online">${escapeHtml(t.onlineBadge)}</span>` : ''}${talk.videos && talk.videos.length ? ` · <span class="badge badge-video">${escapeHtml(t.videoBadge)}</span>` : ''}</div>
                     </div>
                 </article>`;
             }).join('');
@@ -2206,24 +2239,27 @@ CREATE TABLE presentation_person (
                         }).join(' · ');
                         videoHtml = `<div class="talk-meta" style="margin-top: 0.35rem; font-size: 0.78rem; color: var(--text-muted);">▶ <strong>${currentLang === 'ru' ? 'Видео' : 'Video'}</strong>: ${links}</div>`;
                     }
+                    const affiliationHtml = talk.affiliation ? `
+                                <span style="margin-left: 1rem;">
+                                    🏢 ${currentLang === 'ru' ? 'Аффилиация' : 'Affiliation'}:
+                                    <em style="color: var(--accent-secondary); cursor: pointer; border-bottom: 1px dashed rgba(236,72,153,0.4);" onclick="event.stopPropagation(); setDashboardSearch('${talk.affiliation.replace(/'/g, "\\'")}')">
+                                        ${translateAffiliation(talk.affiliation)}
+                                    </em>
+                                </span>` : '';
 
                     return `
                         <div class="talk-item">
                             <div class="talk-title">
                                 «${displayTitle}» 
                                 ${talk.is_online ? `<span class="badge badge-online">${t.onlineBadge}</span>` : ''}
+                                ${talk.videos && talk.videos.length ? `<span class="badge badge-video">${t.videoBadge}</span>` : ''}
                                 ${orderPillHtml}
                                 ${themeBadgeHtml}
                                 ${gumilyovBadgeHtml}
                             </div>
                             <div class="talk-meta" style="margin-top: 0.5rem;">
                                 <span>🏛️ ${currentLang === 'ru' ? 'Выступление на' : 'Presented at'} <strong>${translatedSeries}</strong> (${talk.year})</span>
-                                <span style="margin-left: 1rem;">
-                                    🏢 ${currentLang === 'ru' ? 'Аффилиация' : 'Affiliation'}: 
-                                    <em style="color: var(--accent-secondary); cursor: pointer; border-bottom: 1px dashed rgba(236,72,153,0.4);" onclick="event.stopPropagation(); setDashboardSearch('${talk.affiliation.replace(/'/g, "\\'")}')">
-                                        ${translateAffiliation(talk.affiliation)}
-                                    </em>
-                                </span>
+                                ${affiliationHtml}
                             </div>
                             <div class="talk-meta" style="margin-top: 0.25rem; font-size: 0.78rem; color: var(--text-muted);">
                                 <span>📅 <strong>${t.day}</strong>: ${dayName}</span>
@@ -2366,8 +2402,9 @@ CREATE TABLE presentation_person (
                                                 </div>
                                                 <div class="timeline-talk-speaker">
                                                     <strong>${talk.speaker}</strong> 
-                                                    <span class="badge badge-zograf" style="font-size: 0.7rem;">${translateAffiliation(talk.affiliation)}</span>
+                                                    ${talk.affiliation ? `<span class="badge badge-zograf" style="font-size: 0.7rem;">${translateAffiliation(talk.affiliation)}</span>` : ''}
                                                     ${talk.is_online ? `<span class="badge badge-online">${t.onlineBadge}</span>` : ''}
+                                                    ${talk.videos && talk.videos.length ? `<span class="badge badge-video">${t.videoBadge}</span>` : ''}
                                                     ${presenterBadges}
                                                 </div>
                                                 <div class="timeline-talk-meta" style="margin-top: 0.75rem;">
@@ -2412,8 +2449,9 @@ CREATE TABLE presentation_person (
                                                 </div>
                                                 <div class="timeline-talk-speaker">
                                                     <strong>${talk.speaker}</strong> 
-                                                    <span class="badge badge-roerich" style="font-size: 0.7rem;">${translateAffiliation(talk.affiliation)}</span>
+                                                    ${talk.affiliation ? `<span class="badge badge-roerich" style="font-size: 0.7rem;">${translateAffiliation(talk.affiliation)}</span>` : ''}
                                                     ${talk.is_online ? `<span class="badge badge-online">${t.onlineBadge}</span>` : ''}
+                                                    ${talk.videos && talk.videos.length ? `<span class="badge badge-video">${t.videoBadge}</span>` : ''}
                                                     ${presenterBadges}
                                                 </div>
                                                 <div class="timeline-talk-meta" style="margin-top: 0.75rem;">

@@ -66,15 +66,7 @@
       "affiliation": [
         {
           "@type": "Organization",
-          "name": "Москва"
-        },
-        {
-          "@type": "Organization",
           "name": "ИСАА МГУ"
-        },
-        {
-          "@type": "Organization",
-          "name": "независимый исследователь, Москва"
         }
       ],
       "birthDate": "1981"
@@ -214,6 +206,28 @@
             padding: 0.8rem 1rem;
             border-radius: 0 8px 8px 0;
         }
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            border-radius: 8px;
+            padding: 0.18rem 0.45rem;
+            margin-left: 0.45rem;
+            border: 1px solid var(--border);
+            color: var(--muted);
+            font-size: 0.82rem;
+            font-weight: 600;
+            vertical-align: middle;
+        }
+        .badge-online {
+            border-color: rgba(52, 211, 153, 0.4);
+            color: #6ee7b7;
+            background: rgba(16, 185, 129, 0.1);
+        }
+        .badge-video {
+            border-color: rgba(251, 191, 36, 0.44);
+            color: #fde68a;
+            background: rgba(217, 119, 6, 0.13);
+        }
         .footer {
             color: var(--soft);
             margin-top: 3rem;
@@ -263,6 +277,8 @@
             <a href="/IndologyScholars/generations/">Поколения</a>
             <a href="/IndologyScholars/meso/">Мезоуровни</a>
             <a href="/IndologyScholars/gumilyov/">Гумилев</a>
+            <a href="/IndologyScholars/classification-criteria.html">Критерии</a>
+            <a href="/IndologyScholars/presentations/">Доклады</a>
             <a href="/IndologyScholars/videos/">Видео</a>
             <a href="/IndologyScholars/findings/">Выводы</a>
             <a href="/IndologyScholars/cities/">Города</a>
@@ -292,7 +308,8 @@
         </section>
 
         <h2>Аффилиации</h2>
-        <div class="chip-row"><a class="chip" href="../cities/moskva.html">Москва</a><a class="chip" href="../institutions/mgu.html">ИСАА МГУ</a><a class="chip" href="../institutions/nezavisimye-issledovateli.html">независимый исследователь, Москва</a></div>
+        <div class="chip-row"><a class="chip" href="../institutions/mgu.html">ИСАА МГУ</a></div>
+
 
         <h2>Географические центры</h2>
         <div class="chip-row"><a class="chip" href="../cities/moskva.html">Москва</a></div>
@@ -308,7 +325,7 @@
         <h2>Доклады</h2>
         <section class="list">
         <article class="talk" id="PRES_5f755d36b3">
-            <strong><a href="../conferences/roerich-2025.html#PRES_5f755d36b3">Треугольник Паскаля или Пингалы?</a></strong>
+            <strong><a href="../presentations/PRES_5f755d36b3.html">Треугольник Паскаля или Пингалы?</a></strong>
             <div class="meta">
                 <a href="../conferences/roerich-2025.html">Рериховские чтения 2025</a>
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a> · <a href="../cities/moskva.html">Москва</a>
@@ -319,7 +336,7 @@
         </article>
 
         <article class="talk" id="PRES_742bbb6f8d">
-            <strong><a href="../conferences/zograf-2022.html#PRES_742bbb6f8d">«Бахиранга-парибхаша»: последнее слово за Нагоджибхаттой или Бронкхорстом?</a></strong>
+            <strong><a href="../presentations/PRES_742bbb6f8d.html">«Бахиранга-парибхаша»: последнее слово за Нагоджибхаттой или Бронкхорстом?</a></strong>
             <div class="meta">
                 <a href="../conferences/zograf-2022.html">Зографские чтения 2022</a>
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a> · <a href="../cities/moskva.html">Москва</a>
@@ -330,7 +347,7 @@
         </article>
 
         <article class="talk" id="PRES_bab6fc9b5c">
-            <strong><a href="../conferences/roerich-2022.html#PRES_bab6fc9b5c">Немногие сведения о Нилакантхадикшитеграмматисте</a></strong>
+            <strong><a href="../presentations/PRES_bab6fc9b5c.html">Немногие сведения о Нилакантхадикшитеграмматисте</a></strong>
             <div class="meta">
                 <a href="../conferences/roerich-2022.html">Рериховские чтения 2022</a>
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a>
@@ -341,7 +358,7 @@
         </article>
 
         <article class="talk" id="PRES_efa6368f8b">
-            <strong><a href="../conferences/zograf-2021.html#PRES_efa6368f8b">Трактовка панинийского термина savarṇa комментаторами парибхаш</a></strong>
+            <strong><a href="../presentations/PRES_efa6368f8b.html">Трактовка панинийского термина savarṇa комментаторами парибхаш</a></strong>
             <div class="meta">
                 <a href="../conferences/zograf-2021.html">Зографские чтения 2021</a>
                 · <a href="../themes/linguistics-and-philology.html">Лингвистика и филология</a> · <a href="../cities/moskva.html">Москва</a>
@@ -352,18 +369,18 @@
         </article>
 
         <article class="talk" id="PRES_f8d76687c8">
-            <strong><a href="../conferences/zograf-2020.html#PRES_f8d76687c8">Пример использования парибхаш при прочтении сутр Панини</a></strong>
+            <strong><a href="../presentations/PRES_f8d76687c8.html">Пример использования парибхаш при прочтении сутр Панини</a></strong><span class="badge badge-video">Видео</span>
             <div class="meta">
                 <a href="../conferences/zograf-2020.html">Зографские чтения 2020</a>
                 · <a href="../themes/linguistics-and-philology.html">Лингвистика и филология</a> · <a href="../cities/moskva.html">Москва</a>
             </div>
             <div class="meta talk-meta-row"><span>2020-05-14 · Четверг · 11:00 – 14:00</span><span class="talk-meta-session">Утреннее заседание</span></div>
             <div class="meta talk-context"><span class="context-label">Срезы:</span> <a class="mini-chip" href="../meso/sanskrit-grammar-panini.html">Санскритская грамматика / Панини</a><a class="mini-chip" href="../meso/linguistics-text-philology.html">Филология текста</a></div>
-            <div class="meta"><a href="https://www.youtube.com/watch?v=_eEFdrzltmY" rel="noopener" target="_blank">▶ YouTube</a></div>
+            <div class="meta">Сохранившаяся запись: <a href="https://www.youtube.com/watch?v=_eEFdrzltmY" rel="noopener" target="_blank">▶ YouTube</a></div>
         </article>
 
         <article class="talk" id="PRES_75e95131c2">
-            <strong><a href="../conferences/roerich-2020.html#PRES_75e95131c2">Санскритская грамматика и мирская мудрость</a></strong>
+            <strong><a href="../presentations/PRES_75e95131c2.html">Санскритская грамматика и мирская мудрость</a></strong>
             <div class="meta">
                 <a href="../conferences/roerich-2020.html">Рериховские чтения 2020</a>
                 · <a href="../themes/linguistics-and-philology.html">Лингвистика и филология</a>
@@ -374,14 +391,14 @@
         </article>
 
         <article class="talk" id="PRES_5e8363f0d9">
-            <strong><a href="../conferences/zograf-2019.html#PRES_5e8363f0d9">Парибхаша — интерпретационные правила грамматики Панини</a></strong>
+            <strong><a href="../presentations/PRES_5e8363f0d9.html">Парибхаша — интерпретационные правила грамматики Панини</a></strong><span class="badge badge-video">Видео</span>
             <div class="meta">
                 <a href="../conferences/zograf-2019.html">Зографские чтения 2019</a>
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a> · <a href="../cities/moskva.html">Москва</a>
             </div>
             <div class="meta talk-meta-row"><span>2019-05-14 · Вторник · 10:30 – 14:00</span><span class="talk-meta-session">Утреннее заседание</span></div>
             <div class="meta talk-context"><span class="context-label">Срезы:</span> <a class="mini-chip" href="../meso/sanskrit-grammar-panini.html">Санскритская грамматика / Панини</a><a class="mini-chip" href="../meso/linguistics-language-system.html">Языковедческий анализ</a></div>
-            <div class="meta"><a href="https://www.youtube.com/watch?v=ZZNTgPua1tY" rel="noopener" target="_blank">▶ YouTube</a></div>
+            <div class="meta">Сохранившаяся запись: <a href="https://www.youtube.com/watch?v=ZZNTgPua1tY" rel="noopener" target="_blank">▶ YouTube</a></div>
         </article>
     </section>
 

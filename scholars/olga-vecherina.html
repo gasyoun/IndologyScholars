@@ -63,28 +63,7 @@
       "knowsAbout": [
         "Религия и философия"
       ],
-      "affiliation": [
-        {
-          "@type": "Organization",
-          "name": "Москва"
-        },
-        {
-          "@type": "Organization",
-          "name": "Не указана"
-        },
-        {
-          "@type": "Organization",
-          "name": "Moscow, RUDN-University"
-        },
-        {
-          "@type": "Organization",
-          "name": "МГППУ"
-        },
-        {
-          "@type": "Organization",
-          "name": "РУДН"
-        }
-      ],
+      "affiliation": [],
       "birthDate": "1960",
       "deathDate": "2023",
       "hasCredential": {
@@ -227,6 +206,28 @@
             padding: 0.8rem 1rem;
             border-radius: 0 8px 8px 0;
         }
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            border-radius: 8px;
+            padding: 0.18rem 0.45rem;
+            margin-left: 0.45rem;
+            border: 1px solid var(--border);
+            color: var(--muted);
+            font-size: 0.82rem;
+            font-weight: 600;
+            vertical-align: middle;
+        }
+        .badge-online {
+            border-color: rgba(52, 211, 153, 0.4);
+            color: #6ee7b7;
+            background: rgba(16, 185, 129, 0.1);
+        }
+        .badge-video {
+            border-color: rgba(251, 191, 36, 0.44);
+            color: #fde68a;
+            background: rgba(217, 119, 6, 0.13);
+        }
         .footer {
             color: var(--soft);
             margin-top: 3rem;
@@ -276,6 +277,8 @@
             <a href="/IndologyScholars/generations/">Поколения</a>
             <a href="/IndologyScholars/meso/">Мезоуровни</a>
             <a href="/IndologyScholars/gumilyov/">Гумилев</a>
+            <a href="/IndologyScholars/classification-criteria.html">Критерии</a>
+            <a href="/IndologyScholars/presentations/">Доклады</a>
             <a href="/IndologyScholars/videos/">Видео</a>
             <a href="/IndologyScholars/findings/">Выводы</a>
             <a href="/IndologyScholars/cities/">Города</a>
@@ -305,7 +308,8 @@
         </section>
 
         <h2>Аффилиации</h2>
-        <div class="chip-row"><a class="chip" href="../cities/moskva.html">Москва</a><a class="chip" href="../index.html?search=%D0%9D%D0%B5%20%D1%83%D0%BA%D0%B0%D0%B7%D0%B0%D0%BD%D0%B0">Не указана</a><a class="chip" href="../index.html?search=Moscow%2C%20RUDN-University">Moscow, RUDN-University</a><a class="chip" href="../index.html?search=%D0%9C%D0%93%D0%9F%D0%9F%D0%A3">МГППУ</a><a class="chip" href="../index.html?search=%D0%A0%D0%A3%D0%94%D0%9D">РУДН</a></div>
+        <div class="chip-row"><span class="meta">Нет данных</span></div>
+
 
         <h2>Географические центры</h2>
         <div class="chip-row"><a class="chip" href="../cities/moskva.html">Москва</a></div>
@@ -321,7 +325,7 @@
         <h2>Доклады</h2>
         <section class="list">
         <article class="talk" id="PRES_20e3bfece1">
-            <strong><a href="../conferences/zograf-2023.html#PRES_20e3bfece1">Female-Mystic in Medieval Tamil Literature and Early Sufism: Structural Similarity of Images</a></strong>
+            <strong><a href="../presentations/PRES_20e3bfece1.html">Female-Mystic in Medieval Tamil Literature and Early Sufism: Structural Similarity of Images</a></strong><span class="badge badge-online">Онлайн</span>
             <div class="meta">
                 <a href="../conferences/zograf-2023.html">Зографские чтения 2023</a>
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a>
@@ -332,7 +336,7 @@
         </article>
 
         <article class="talk" id="PRES_7f831a6dff">
-            <strong><a href="../conferences/zograf-2022.html#PRES_7f831a6dff">Загадка саммелана-янтры в «Куньджитангхриставе» Умапати Шивачарьи</a></strong>
+            <strong><a href="../presentations/PRES_7f831a6dff.html">Загадка саммелана-янтры в «Куньджитангхриставе» Умапати Шивачарьи</a></strong>
             <div class="meta">
                 <a href="../conferences/zograf-2022.html">Зографские чтения 2022</a>
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a> · <a href="../cities/moskva.html">Москва</a>
@@ -343,7 +347,7 @@
         </article>
 
         <article class="talk" id="PRES_e6909d6386">
-            <strong><a href="../conferences/roerich-2022.html#PRES_e6909d6386">Философия и практики самоповреждающего поведения в тамильском бхакти (доклад онлайн)</a></strong>
+            <strong><a href="../presentations/PRES_e6909d6386.html">Философия и практики самоповреждающего поведения в тамильском бхакти (доклад онлайн)</a></strong><span class="badge badge-online">Онлайн</span>
             <div class="meta">
                 <a href="../conferences/roerich-2022.html">Рериховские чтения 2022</a>
                 · <a href="../themes/religion-and-philosophy.html">Религия и философия</a>
@@ -354,7 +358,7 @@
         </article>
 
         <article class="talk" id="PRES_e968b3b7a0">
-            <strong><a href="../conferences/zograf-2021.html#PRES_e968b3b7a0">Шива-бхакти и Шива-йога в тамильском шайва-бхакти</a></strong>
+            <strong><a href="../presentations/PRES_e968b3b7a0.html">Шива-бхакти и Шива-йога в тамильском шайва-бхакти</a></strong>
             <div class="meta">
                 <a href="../conferences/zograf-2021.html">Зографские чтения 2021</a>
                 · <a href="../themes/religion-and-philosophy.html">Религия и философия</a> · <a href="../cities/moskva.html">Москва</a>
@@ -365,7 +369,7 @@
         </article>
 
         <article class="talk" id="PRES_d1d14a99b1">
-            <strong><a href="../conferences/roerich-2021.html#PRES_d1d14a99b1">«История Тирумулара»: биография бхакта и биография сиддха</a></strong>
+            <strong><a href="../presentations/PRES_d1d14a99b1.html">«История Тирумулара»: биография бхакта и биография сиддха</a></strong>
             <div class="meta">
                 <a href="../conferences/roerich-2021.html">Рериховские чтения 2021</a>
                 · <a href="../themes/history-and-culture.html">История, этнография и общество</a>
@@ -376,18 +380,18 @@
         </article>
 
         <article class="talk" id="PRES_767c9cdbe9">
-            <strong><a href="../conferences/zograf-2020.html#PRES_767c9cdbe9">Тело бхакта и тело Шивы: о проблемах телесности в тамильском шайва-бхакти</a></strong>
+            <strong><a href="../presentations/PRES_767c9cdbe9.html">Тело бхакта и тело Шивы: о проблемах телесности в тамильском шайва-бхакти</a></strong><span class="badge badge-video">Видео</span>
             <div class="meta">
                 <a href="../conferences/zograf-2020.html">Зографские чтения 2020</a>
                 · <a href="../themes/religion-and-philosophy.html">Религия и философия</a> · <a href="../cities/moskva.html">Москва</a>
             </div>
             <div class="meta talk-meta-row"><span>2020-05-12 · Вторник · 11:30 – 14:00</span><span class="talk-meta-session">Утреннее заседание</span></div>
             <div class="meta talk-context"><span class="context-label">Срезы:</span> <a class="mini-chip" href="../meso/dravidology-south-india.html">Дравидология / южноиндийский контур</a></div>
-            <div class="meta"><a href="https://www.youtube.com/watch?v=P9iOwncHqBg" rel="noopener" target="_blank">▶ YouTube</a></div>
+            <div class="meta">Сохранившаяся запись: <a href="https://www.youtube.com/watch?v=P9iOwncHqBg" rel="noopener" target="_blank">▶ YouTube</a></div>
         </article>
 
         <article class="talk" id="PRES_c70b31e5b3">
-            <strong><a href="../conferences/roerich-2020.html#PRES_c70b31e5b3">Роль «Тируттондар тирувандади» Намби Андар Намби в формировании шиваитского канона</a></strong>
+            <strong><a href="../presentations/PRES_c70b31e5b3.html">Роль «Тируттондар тирувандади» Намби Андар Намби в формировании шиваитского канона</a></strong>
             <div class="meta">
                 <a href="../conferences/roerich-2020.html">Рериховские чтения 2020</a>
                 · <a href="../themes/religion-and-philosophy.html">Религия и философия</a>
@@ -398,7 +402,7 @@
         </article>
 
         <article class="talk" id="PRES_ff3d302713">
-            <strong><a href="../conferences/zograf-2019.html#PRES_ff3d302713">Роль Умапати Шивачарьи в формировании окончательной редакции канона шайва-сиддханты</a></strong>
+            <strong><a href="../presentations/PRES_ff3d302713.html">Роль Умапати Шивачарьи в формировании окончательной редакции канона шайва-сиддханты</a></strong>
             <div class="meta">
                 <a href="../conferences/zograf-2019.html">Зографские чтения 2019</a>
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a> · <a href="../cities/moskva.html">Москва</a>
@@ -409,7 +413,7 @@
         </article>
 
         <article class="talk" id="PRES_e19a817c80">
-            <strong><a href="../conferences/roerich-2019.html#PRES_e19a817c80">«Унмей вилаккам» как источник по иконологии Шивы Натараджи</a></strong>
+            <strong><a href="../presentations/PRES_e19a817c80.html">«Унмей вилаккам» как источник по иконологии Шивы Натараджи</a></strong>
             <div class="meta">
                 <a href="../conferences/roerich-2019.html">Рериховские чтения 2019</a>
                 · <a href="../themes/history-and-culture.html">История, этнография и общество</a>
@@ -420,7 +424,7 @@
         </article>
 
         <article class="talk" id="PRES_0a6cf1a42f">
-            <strong><a href="../conferences/zograf-2018.html#PRES_0a6cf1a42f">«Тирумурейканда-пуранам» Умапати Шивачарьи как завершающее звено в формировании тамильского шиваитского канона</a></strong>
+            <strong><a href="../presentations/PRES_0a6cf1a42f.html">«Тирумурейканда-пуранам» Умапати Шивачарьи как завершающее звено в формировании тамильского шиваитского канона</a></strong>
             <div class="meta">
                 <a href="../conferences/zograf-2018.html">Зографские чтения 2018</a>
                 · <a href="../themes/religion-and-philosophy.html">Религия и философия</a> · <a href="../cities/moskva.html">Москва</a>
@@ -431,7 +435,7 @@
         </article>
 
         <article class="talk" id="PRES_6329aa3fb2">
-            <strong><a href="../conferences/roerich-2018.html#PRES_6329aa3fb2">Чидамбарам и его дикшитары в зеркале «Панниру тирумурей»</a></strong>
+            <strong><a href="../presentations/PRES_6329aa3fb2.html">Чидамбарам и его дикшитары в зеркале «Панниру тирумурей»</a></strong>
             <div class="meta">
                 <a href="../conferences/roerich-2018.html">Рериховские чтения 2018</a>
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a>
@@ -442,7 +446,7 @@
         </article>
 
         <article class="talk" id="PRES_bc48c6cda3">
-            <strong><a href="../conferences/roerich-2017.html#PRES_bc48c6cda3">Место и роль Сундарара в структуре шиваитского канона «Панниру Тирумурей»</a></strong>
+            <strong><a href="../presentations/PRES_bc48c6cda3.html">Место и роль Сундарара в структуре шиваитского канона «Панниру Тирумурей»</a></strong>
             <div class="meta">
                 <a href="../conferences/roerich-2017.html">Рериховские чтения 2017</a>
                 · <a href="../themes/religion-and-philosophy.html">Религия и философия</a>
@@ -453,7 +457,7 @@
         </article>
 
         <article class="talk" id="PRES_6b4df0d231">
-            <strong><a href="../conferences/roerich-2016.html#PRES_6b4df0d231">Восхождение на Кайласу. История шайва-бхактов Сундарара и Черамана Перумаля, рассказанная в «Перияпуранам» Секкижара и на фреске храма Брихадишвары в Танджоре</a></strong>
+            <strong><a href="../presentations/PRES_6b4df0d231.html">Восхождение на Кайласу. История шайва-бхактов Сундарара и Черамана Перумаля, рассказанная в «Перияпуранам» Секкижара и на фреске храма Брихадишвары в Танджоре</a></strong>
             <div class="meta">
                 <a href="../conferences/roerich-2016.html">Рериховские чтения 2016</a>
                 · <a href="../themes/history-and-culture.html">История, этнография и общество</a>
@@ -464,7 +468,7 @@
         </article>
 
         <article class="talk" id="PRES_5771f5a6b7">
-            <strong><a href="../conferences/zograf-2015.html#PRES_5771f5a6b7">«Тируттондар тирувандади» Намби Андара Намби (Роль редактора в формировании канонического списка бхактов-наянаров)</a></strong>
+            <strong><a href="../presentations/PRES_5771f5a6b7.html">«Тируттондар тирувандади» Намби Андара Намби (Роль редактора в формировании канонического списка бхактов-наянаров)</a></strong>
             <div class="meta">
                 <a href="../conferences/zograf-2015.html">Зографские чтения 2015</a>
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a>
@@ -475,7 +479,7 @@
         </article>
 
         <article class="talk" id="PRES_b6bc9faa10">
-            <strong><a href="../conferences/zograf-2014.html#PRES_b6bc9faa10">Значение творчества Тирумулара для формирования изобразительного канона Шивы Натараджи в Чидамбараме</a></strong>
+            <strong><a href="../presentations/PRES_b6bc9faa10.html">Значение творчества Тирумулара для формирования изобразительного канона Шивы Натараджи в Чидамбараме</a></strong>
             <div class="meta">
                 <a href="../conferences/zograf-2014.html">Зографские чтения 2014</a>
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a> · <a href="../cities/moskva.html">Москва</a>

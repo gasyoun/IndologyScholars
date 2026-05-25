@@ -4,7 +4,7 @@
   "generated": "2026-05-25",
   "build": {
     "source": "IndologyScholars",
-    "pipeline_version": "2026-05-24",
+    "pipeline_version": "2026-05-25",
     "generator": "generate_publication_pages.py"
   },
   "name": "indology-scholars",
@@ -223,6 +223,13 @@
       "format": "csv",
       "mediatype": "text/csv",
       "description": "Field-level provenance for generated presentation theme labels and review candidates."
+    },
+    {
+      "name": "verified-affiliation-spans",
+      "path": "curation/verified_affiliation_spans.csv",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "description": "Dated source-backed institutional trajectories used for public affiliation normalization."
     },
     {
       "name": "network-nodes",

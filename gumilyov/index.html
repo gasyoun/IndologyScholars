@@ -164,6 +164,28 @@
             padding: 0.8rem 1rem;
             border-radius: 0 8px 8px 0;
         }
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            border-radius: 8px;
+            padding: 0.18rem 0.45rem;
+            margin-left: 0.45rem;
+            border: 1px solid var(--border);
+            color: var(--muted);
+            font-size: 0.82rem;
+            font-weight: 600;
+            vertical-align: middle;
+        }
+        .badge-online {
+            border-color: rgba(52, 211, 153, 0.4);
+            color: #6ee7b7;
+            background: rgba(16, 185, 129, 0.1);
+        }
+        .badge-video {
+            border-color: rgba(251, 191, 36, 0.44);
+            color: #fde68a;
+            background: rgba(217, 119, 6, 0.13);
+        }
         .footer {
             color: var(--soft);
             margin-top: 3rem;
@@ -213,6 +235,8 @@
             <a href="/IndologyScholars/generations/">Поколения</a>
             <a href="/IndologyScholars/meso/">Мезоуровни</a>
             <a href="/IndologyScholars/gumilyov/">Гумилев</a>
+            <a href="/IndologyScholars/classification-criteria.html">Критерии</a>
+            <a href="/IndologyScholars/presentations/">Доклады</a>
             <a href="/IndologyScholars/videos/">Видео</a>
             <a href="/IndologyScholars/findings/">Выводы</a>
             <a href="/IndologyScholars/cities/">Города</a>
@@ -232,13 +256,13 @@
         <section class="grid">
             <article class="card">
                 <strong><a href="../gumilyov/level-1.html">L1 Микроуровень</a></strong>
-                <div class="metric">739</div>
+                <div class="metric">747</div>
                 <div class="meta">Доклады, сосредоточенные на конкретном тексте, авторе, памятнике, термине или локальном кейсе.</div>
             </article>
 
             <article class="card">
                 <strong><a href="../gumilyov/level-2.html">L2 Региональный уровень</a></strong>
-                <div class="metric">606</div>
+                <div class="metric">598</div>
                 <div class="meta">Доклады, связывающие материал с историко-культурной областью, традицией, школой, регионом или эпохой.</div>
             </article>
 
@@ -248,10 +272,16 @@
                 <div class="meta">Доклады, формулирующие широкие сравнительные, цивилизационные, методологические или межрегиональные обобщения.</div>
             </article>
             </section>
+        <aside class="caveat-block" role="note" aria-label="Expert classification notice">
+            <strong>Как читать уровни</strong>
+            <p>Географическое название, этноним или сопоставление двух объектов сами по себе не превращают доклад в региональное или макроисторическое обобщение. Для восьми проверенных случаев применена экспертная корректировка с явной аргументацией.</p>
+            <div class="chip-list"><a class="chip" href="../classification-criteria.html">Критерии и проверенные кейсы</a></div>
+        </aside>
         <section class="link-block">
             <strong>Данные</strong>
             <div class="chip-list">
                 <a class="chip" href="../analytics_output/gumilyov_scale.csv">gumilyov_scale.csv</a>
+                <a class="chip" href="../analytics_output/classification_overrides.csv">classification_overrides.csv</a>
                 <a class="chip" href="../analytics_output/gumilyov_video_comparison.csv">video comparison</a>
             </div>
         </section>

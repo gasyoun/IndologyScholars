@@ -63,12 +63,7 @@
       "knowsAbout": [
         "Разное / Не классифицировано"
       ],
-      "affiliation": [
-        {
-          "@type": "Organization",
-          "name": "Москва"
-        }
-      ],
+      "affiliation": [],
       "birthDate": "1988"
     }
   },
@@ -206,6 +201,28 @@
             padding: 0.8rem 1rem;
             border-radius: 0 8px 8px 0;
         }
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            border-radius: 8px;
+            padding: 0.18rem 0.45rem;
+            margin-left: 0.45rem;
+            border: 1px solid var(--border);
+            color: var(--muted);
+            font-size: 0.82rem;
+            font-weight: 600;
+            vertical-align: middle;
+        }
+        .badge-online {
+            border-color: rgba(52, 211, 153, 0.4);
+            color: #6ee7b7;
+            background: rgba(16, 185, 129, 0.1);
+        }
+        .badge-video {
+            border-color: rgba(251, 191, 36, 0.44);
+            color: #fde68a;
+            background: rgba(217, 119, 6, 0.13);
+        }
         .footer {
             color: var(--soft);
             margin-top: 3rem;
@@ -255,6 +272,8 @@
             <a href="/IndologyScholars/generations/">Поколения</a>
             <a href="/IndologyScholars/meso/">Мезоуровни</a>
             <a href="/IndologyScholars/gumilyov/">Гумилев</a>
+            <a href="/IndologyScholars/classification-criteria.html">Критерии</a>
+            <a href="/IndologyScholars/presentations/">Доклады</a>
             <a href="/IndologyScholars/videos/">Видео</a>
             <a href="/IndologyScholars/findings/">Выводы</a>
             <a href="/IndologyScholars/cities/">Города</a>
@@ -284,7 +303,8 @@
         </section>
 
         <h2>Аффилиации</h2>
-        <div class="chip-row"><a class="chip" href="../cities/moskva.html">Москва</a></div>
+        <div class="chip-row"><span class="meta">Нет данных</span></div>
+
 
         <h2>Географические центры</h2>
         <div class="chip-row"><a class="chip" href="../cities/moskva.html">Москва</a></div>
@@ -300,14 +320,14 @@
         <h2>Доклады</h2>
         <section class="list">
         <article class="talk" id="PRES_ffeeb0bec0">
-            <strong><a href="../conferences/zograf-2020.html#PRES_ffeeb0bec0">Г. Оберхаммер и проблема исследования когнитивного потенциала религиозного опыта</a></strong>
+            <strong><a href="../presentations/PRES_ffeeb0bec0.html">Г. Оберхаммер и проблема исследования когнитивного потенциала религиозного опыта</a></strong><span class="badge badge-video">Видео</span>
             <div class="meta">
                 <a href="../conferences/zograf-2020.html">Зографские чтения 2020</a>
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a> · <a href="../cities/moskva.html">Москва</a>
             </div>
             <div class="meta talk-meta-row"><span>2020-05-13 · Среда · 11:00 – 13:30</span><span class="talk-meta-session">Утреннее заседание</span></div>
 
-            <div class="meta"><a href="https://www.youtube.com/watch?v=BSgUPZ3eZns" rel="noopener" target="_blank">▶ YouTube</a></div>
+            <div class="meta">Сохранившаяся запись: <a href="https://www.youtube.com/watch?v=BSgUPZ3eZns" rel="noopener" target="_blank">▶ YouTube</a></div>
         </article>
     </section>
 

@@ -63,16 +63,7 @@
       "knowsAbout": [
         "Разное / Не классифицировано"
       ],
-      "affiliation": [
-        {
-          "@type": "Organization",
-          "name": "Не указана"
-        },
-        {
-          "@type": "Organization",
-          "name": "Москва"
-        }
-      ],
+      "affiliation": [],
       "birthDate": "1982"
     }
   },
@@ -210,6 +201,28 @@
             padding: 0.8rem 1rem;
             border-radius: 0 8px 8px 0;
         }
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            border-radius: 8px;
+            padding: 0.18rem 0.45rem;
+            margin-left: 0.45rem;
+            border: 1px solid var(--border);
+            color: var(--muted);
+            font-size: 0.82rem;
+            font-weight: 600;
+            vertical-align: middle;
+        }
+        .badge-online {
+            border-color: rgba(52, 211, 153, 0.4);
+            color: #6ee7b7;
+            background: rgba(16, 185, 129, 0.1);
+        }
+        .badge-video {
+            border-color: rgba(251, 191, 36, 0.44);
+            color: #fde68a;
+            background: rgba(217, 119, 6, 0.13);
+        }
         .footer {
             color: var(--soft);
             margin-top: 3rem;
@@ -259,6 +272,8 @@
             <a href="/IndologyScholars/generations/">Поколения</a>
             <a href="/IndologyScholars/meso/">Мезоуровни</a>
             <a href="/IndologyScholars/gumilyov/">Гумилев</a>
+            <a href="/IndologyScholars/classification-criteria.html">Критерии</a>
+            <a href="/IndologyScholars/presentations/">Доклады</a>
             <a href="/IndologyScholars/videos/">Видео</a>
             <a href="/IndologyScholars/findings/">Выводы</a>
             <a href="/IndologyScholars/cities/">Города</a>
@@ -288,7 +303,8 @@
         </section>
 
         <h2>Аффилиации</h2>
-        <div class="chip-row"><a class="chip" href="../index.html?search=%D0%9D%D0%B5%20%D1%83%D0%BA%D0%B0%D0%B7%D0%B0%D0%BD%D0%B0">Не указана</a><a class="chip" href="../cities/moskva.html">Москва</a></div>
+        <div class="chip-row"><span class="meta">Нет данных</span></div>
+
 
         <h2>Географические центры</h2>
         <div class="chip-row"><a class="chip" href="../cities/moskva.html">Москва</a></div>
@@ -304,7 +320,7 @@
         <h2>Доклады</h2>
         <section class="list">
         <article class="talk" id="PRES_a61c28b64e">
-            <strong><a href="../conferences/zograf-2018.html#PRES_a61c28b64e">Культ Рудры-Кхандобы в исследованиях Г. Д. Зонтхаймера и его индоевропейские параллели</a></strong>
+            <strong><a href="../presentations/PRES_a61c28b64e.html">Культ Рудры-Кхандобы в исследованиях Г. Д. Зонтхаймера и его индоевропейские параллели</a></strong>
             <div class="meta">
                 <a href="../conferences/zograf-2018.html">Зографские чтения 2018</a>
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a> · <a href="../cities/moskva.html">Москва</a>
@@ -315,7 +331,7 @@
         </article>
 
         <article class="talk" id="PRES_f4fcdf4f99">
-            <strong><a href="../conferences/zograf-2017.html#PRES_f4fcdf4f99">Образ бога Рудры в Шатарудрии в сравнении с германо-скандинавским богом Одином</a></strong>
+            <strong><a href="../presentations/PRES_f4fcdf4f99.html">Образ бога Рудры в Шатарудрии в сравнении с германо-скандинавским богом Одином</a></strong>
             <div class="meta">
                 <a href="../conferences/zograf-2017.html">Зографские чтения 2017</a>
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a>
@@ -326,7 +342,7 @@
         </article>
 
         <article class="talk" id="PRES_2a0e1b2cbb">
-            <strong><a href="../conferences/zograf-2016.html#PRES_2a0e1b2cbb">К вопросу об индоевропейских параллелях ведийским vrātya</a></strong>
+            <strong><a href="../presentations/PRES_2a0e1b2cbb.html">К вопросу об индоевропейских параллелях ведийским vrātya</a></strong>
             <div class="meta">
                 <a href="../conferences/zograf-2016.html">Зографские чтения 2016</a>
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a>

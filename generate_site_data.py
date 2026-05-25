@@ -3,13 +3,15 @@ import json
 import datetime
 import re
 
+from classification_overrides import CLASSIFICATION_OVERRIDES, THEME_LABEL_OVERRIDES
+from metadata_normalization import load_verified_affiliation_spans, public_affiliation, split_leading_affiliation
 from publication_helpers import GENERATION_COHORTS, assign_unique_slugs, generation_cohort, load_authority_overrides, normalize_time_interval
-from title_normalization import THEME_OVERRIDES_BY_PRESENTATION_ID, canonical_title
+from title_normalization import THEME_OVERRIDES_BY_PRESENTATION_ID, TITLE_EDITORIAL_NOTES_BY_PRESENTATION_ID, canonical_title
 
 DB_PATH = "conferences.db"
 OUTPUT_FILE = "site_data.json"
 DATA_SCHEMA_VERSION = "1.0.0"
-PIPELINE_VERSION = "2026-05-24"
+PIPELINE_VERSION = "2026-05-25"
 
 def format_to_initials(name):
     name = name.strip()
@@ -128,6 +130,7 @@ def clean_title(title):
     cleaned = re.sub(r'\s*[\(\[][оО]н[-]?лайн[\)\]]\s*', ' ', title)
     cleaned = re.sub(r'\s*[\(\[][oO]nline[\)\]]\s*', ' ', cleaned)
     cleaned = re.sub(r'\s*[\(\[][zZ]oom[\)\]]\s*', ' ', cleaned)
+    cleaned = re.sub(r'\s*[\.\,;:]?\s*(?:онлайн|online|zoom)\.?\s*$', '', cleaned, flags=re.IGNORECASE)
     # Remove multiple spaces and strip
     cleaned = re.sub(r'\s+', ' ', cleaned)
     return cleaned.strip()
@@ -198,7 +201,10 @@ def load_gumilyov_mapping():
     return mapping
 
 
-def gumilyov_level_for(year, series, title, source_title=None, raw_title=None):
+def gumilyov_level_for(year, series, title, presentation_id=None, source_title=None, raw_title=None):
+    manual = CLASSIFICATION_OVERRIDES.get(str(presentation_id or ""), {})
+    if manual.get("gumilyov_level"):
+        return int(manual["gumilyov_level"])
     series_id = "1" if "Zograf" in str(series or "") else "2"
     for candidate in (raw_title, title, source_title):
         key = (str(year).strip(), series_id, str(candidate or "").strip())
@@ -232,6 +238,7 @@ def get_theme_meta(code):
         "art_and_material_culture": {"ru": "Искусство и материальная культура", "en": "Art & Material Culture"},
         "unspecified": {"ru": "Разное / Не классифицировано", "en": "Other / Unspecified"}
     }
+    meta.update({code: {"ru": labels[0], "en": labels[1]} for code, labels in THEME_LABEL_OVERRIDES.items()})
     res = meta.get(code)
     if not res:
         res = {"ru": str(code), "en": str(code)}
@@ -239,7 +246,8 @@ def get_theme_meta(code):
     return res
 
 def classify_theme(year, series, title, presentation_id=None, fallback_title=None):
-    code = THEME_OVERRIDES_BY_PRESENTATION_ID.get(str(presentation_id or ""))
+    manual = CLASSIFICATION_OVERRIDES.get(str(presentation_id or ""), {})
+    code = manual.get("theme_code") or THEME_OVERRIDES_BY_PRESENTATION_ID.get(str(presentation_id or ""))
     if not code:
         code = _THEME_MAPPING.get("by_id", {}).get(str(presentation_id or ""))
     if not code:
@@ -257,6 +265,7 @@ def classify_theme(year, series, title, presentation_id=None, fallback_title=Non
 def main():
     conn = sqlite3.connect(DB_PATH)
     cursor = conn.cursor()
+    verified_affiliation_spans = load_verified_affiliation_spans()
     
     # Pre-fetch session order mapping
     cursor.execute("""
@@ -437,9 +446,14 @@ def main():
         for t in talks_raw:
             pres_id, title, year, series, affiliation, is_online, calendar_date, session_title, time_text, sess_id = t
             
-            # Clean title (strip 'онлайн') and apply source-verified title repairs.
+            # Clean public titles while retaining embedded source metadata separately.
             source_title = clean_title(title)
-            cleaned_title = canonical_title(pres_id, source_title)
+            public_source_title, embedded_affiliation = split_leading_affiliation(source_title)
+            cleaned_title = canonical_title(pres_id, public_source_title)
+            affiliation_meta = public_affiliation(
+                pid, year, affiliation, embedded_affiliation, verified_affiliation_spans
+            )
+            displayed_affiliation = affiliation_meta["display"]
             
             # Classify theme
             theme = classify_theme(year, series, cleaned_title, pres_id, source_title)
@@ -447,13 +461,13 @@ def main():
             theme_counts[t_code] = theme_counts.get(t_code, 0) + 1
             
             # Gumilyov scale
-            g_scale = gumilyov_level_for(year, series, cleaned_title, source_title, title)
+            g_scale = gumilyov_level_for(year, series, cleaned_title, pres_id, source_title, title)
             
             # Day of the week calculation
             day_of_week = get_day_of_week(calendar_date)
             
             # Geography extraction
-            geo = extract_geography(affiliation)
+            geo = extract_geography(displayed_affiliation or affiliation)
             if geo["ru"] != "Не указана":
                 gkey = geo["ru"]
                 if gkey not in geo_counts:
@@ -471,17 +485,26 @@ def main():
             is_last = (order_idx == len(s_list) - 1)
             
             p_tags = _TAGS_MAPPING.get(str(pres_id), [])
+            manual_classification = CLASSIFICATION_OVERRIDES.get(str(pres_id), {})
             
             talks.append({
                 "presentation_id": pres_id,
                 "title": cleaned_title,
+                "title_editorial_note": TITLE_EDITORIAL_NOTES_BY_PRESENTATION_ID.get(str(pres_id)),
                 "year": year,
                 "series": series,
-                "affiliation": affiliation,
+                "affiliation": displayed_affiliation,
+                "affiliation_reported": affiliation,
+                "affiliation_basis": affiliation_meta["basis"],
+                "affiliation_source_url": affiliation_meta["source_url"],
+                "affiliation_note": affiliation_meta["note"],
                 "geography": geo,
                 "theme": theme,
                 "gumilyov_scale": g_scale,
                 "tags": p_tags,
+                "meso_codes": manual_classification.get("meso_codes", []),
+                "classification_reason": manual_classification.get("reason"),
+                "classification_reviewed": bool(manual_classification),
                 "is_online": bool(is_online),
                 "date": calendar_date,
                 "day_of_week": day_of_week,
@@ -506,6 +529,8 @@ def main():
                 thematic_breadth = "Interdisciplinary"
             
         cohort = generation_cohort(meta["birth_year"])
+        public_affiliations = list(dict.fromkeys(t["affiliation"] for t in talks if t.get("affiliation")))
+        affiliation_notes = list(dict.fromkeys(t["affiliation_note"] for t in talks if t.get("affiliation_note")))
         scholars.append({
             "id": pid,
             "name": meta["std_name"],
@@ -534,8 +559,9 @@ def main():
             "last_year": r[7],
             "is_student": meta["is_student"],
             "is_independent": meta["is_independent"],
-            "has_changed_affiliations": meta["has_changed_affiliations"],
-            "all_affiliations": meta["all_affiliations"],
+            "has_changed_affiliations": len(public_affiliations) > 1,
+            "all_affiliations": public_affiliations,
+            "affiliation_notes": affiliation_notes,
             "talks": talks
         })
         
@@ -589,9 +615,6 @@ def main():
         # Day of the week
         day_of_week = get_day_of_week(calendar_date)
         
-        # Geography extraction
-        geo = extract_geography(affiliation)
-        
         # Order in session
         s_list = session_pres_map.get(sess_id, [pres_id])
         try:
@@ -603,17 +626,24 @@ def main():
         is_last = (order_idx == len(s_list) - 1)
         
         series_key = "Zograf" if "Zograf" in series else "Roerich"
-        # Clean title and apply source-verified title repairs.
+        # Clean public titles while retaining embedded source metadata separately.
         source_title = clean_title(title)
-        cleaned_title = canonical_title(pres_id, source_title)
+        public_source_title, embedded_affiliation = split_leading_affiliation(source_title)
+        cleaned_title = canonical_title(pres_id, public_source_title)
+        affiliation_meta = public_affiliation(
+            pid, year_val, affiliation, embedded_affiliation, verified_affiliation_spans
+        )
+        displayed_affiliation = affiliation_meta["display"]
+        geo = extract_geography(displayed_affiliation or affiliation)
         
         # Classify theme
         theme = classify_theme(year_val, series, cleaned_title, pres_id, source_title)
         
         # Gumilyov scale
-        g_scale = gumilyov_level_for(year_val, series, cleaned_title, source_title, title)
+        g_scale = gumilyov_level_for(year_val, series, cleaned_title, pres_id, source_title, title)
 
         p_tags = _TAGS_MAPPING.get(str(pres_id), [])
+        manual_classification = CLASSIFICATION_OVERRIDES.get(str(pres_id), {})
 
         series_key = "Zograf" if "Zograf" in series else "Roerich"
         timeline[year][series_key].append({
@@ -624,12 +654,20 @@ def main():
             "speaker_slug": slug_by_id.get(pid),
             "is_student": meta["is_student"],
             "is_independent": meta["is_independent"],
-            "affiliation": affiliation,
+            "affiliation": displayed_affiliation,
+            "affiliation_reported": affiliation,
+            "affiliation_basis": affiliation_meta["basis"],
+            "affiliation_source_url": affiliation_meta["source_url"],
+            "affiliation_note": affiliation_meta["note"],
             "geography": geo,
             "title": cleaned_title,
+            "title_editorial_note": TITLE_EDITORIAL_NOTES_BY_PRESENTATION_ID.get(str(pres_id)),
             "theme": theme,
             "gumilyov_scale": g_scale,
             "tags": p_tags,
+            "meso_codes": manual_classification.get("meso_codes", []),
+            "classification_reason": manual_classification.get("reason"),
+            "classification_reviewed": bool(manual_classification),
             "is_online": bool(is_online),
             "venue": venue_name,
             "day": day_label,

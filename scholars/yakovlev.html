@@ -63,12 +63,7 @@
       "knowsAbout": [
         "Разное / Не классифицировано"
       ],
-      "affiliation": [
-        {
-          "@type": "Organization",
-          "name": "Не указана"
-        }
-      ]
+      "affiliation": []
     }
   },
   {
@@ -205,6 +200,28 @@
             padding: 0.8rem 1rem;
             border-radius: 0 8px 8px 0;
         }
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            border-radius: 8px;
+            padding: 0.18rem 0.45rem;
+            margin-left: 0.45rem;
+            border: 1px solid var(--border);
+            color: var(--muted);
+            font-size: 0.82rem;
+            font-weight: 600;
+            vertical-align: middle;
+        }
+        .badge-online {
+            border-color: rgba(52, 211, 153, 0.4);
+            color: #6ee7b7;
+            background: rgba(16, 185, 129, 0.1);
+        }
+        .badge-video {
+            border-color: rgba(251, 191, 36, 0.44);
+            color: #fde68a;
+            background: rgba(217, 119, 6, 0.13);
+        }
         .footer {
             color: var(--soft);
             margin-top: 3rem;
@@ -254,6 +271,8 @@
             <a href="/IndologyScholars/generations/">Поколения</a>
             <a href="/IndologyScholars/meso/">Мезоуровни</a>
             <a href="/IndologyScholars/gumilyov/">Гумилев</a>
+            <a href="/IndologyScholars/classification-criteria.html">Критерии</a>
+            <a href="/IndologyScholars/presentations/">Доклады</a>
             <a href="/IndologyScholars/videos/">Видео</a>
             <a href="/IndologyScholars/findings/">Выводы</a>
             <a href="/IndologyScholars/cities/">Города</a>
@@ -283,7 +302,8 @@
         </section>
 
         <h2>Аффилиации</h2>
-        <div class="chip-row"><a class="chip" href="../index.html?search=%D0%9D%D0%B5%20%D1%83%D0%BA%D0%B0%D0%B7%D0%B0%D0%BD%D0%B0">Не указана</a></div>
+        <div class="chip-row"><span class="meta">Нет данных</span></div>
+
 
         <h2>Географические центры</h2>
         <div class="chip-row"><span class="meta">Нет данных</span></div>
@@ -299,7 +319,7 @@
         <h2>Доклады</h2>
         <section class="list">
         <article class="talk" id="PRES_4afd142d6d">
-            <strong><a href="../conferences/roerich-2018.html#PRES_4afd142d6d">Божества и образы триграмм китайской «Книги Перемен» на свитке из коллекции Рерихов в Государственном Музее Востока</a></strong>
+            <strong><a href="../presentations/PRES_4afd142d6d.html">Божества и образы триграмм китайской «Книги Перемен» на свитке из коллекции Рерихов в Государственном Музее Востока</a></strong>
             <div class="meta">
                 <a href="../conferences/roerich-2018.html">Рериховские чтения 2018</a>
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a>
@@ -310,7 +330,7 @@
         </article>
 
         <article class="talk" id="PRES_0e4533e715">
-            <strong><a href="../conferences/roerich-2017.html#PRES_0e4533e715">Содержание первой главы Шрикалачакра-тантры согласно ее комментарию</a></strong>
+            <strong><a href="../presentations/PRES_0e4533e715.html">Содержание первой главы Шрикалачакра-тантры согласно ее комментарию</a></strong>
             <div class="meta">
                 <a href="../conferences/roerich-2017.html">Рериховские чтения 2017</a>
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a>
@@ -321,7 +341,7 @@
         </article>
 
         <article class="talk" id="PRES_877b168c0c">
-            <strong><a href="../conferences/roerich-2016.html#PRES_877b168c0c">Карма и связанные термины во 2-й патале Калачакра-тантры</a></strong>
+            <strong><a href="../presentations/PRES_877b168c0c.html">Карма и связанные термины во 2-й патале Калачакра-тантры</a></strong>
             <div class="meta">
                 <a href="../conferences/roerich-2016.html">Рериховские чтения 2016</a>
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a>
@@ -332,7 +352,7 @@
         </article>
 
         <article class="talk" id="PRES_03e4f6f86b">
-            <strong><a href="../conferences/roerich-2016.html#PRES_03e4f6f86b">Из воспоминаний о детстве на Онеге</a></strong>
+            <strong><a href="../presentations/PRES_03e4f6f86b.html">Из воспоминаний о детстве на Онеге</a></strong>
             <div class="meta">
                 <a href="../conferences/roerich-2016.html">Рериховские чтения 2016</a>
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a>
@@ -343,7 +363,7 @@
         </article>
 
         <article class="talk" id="PRES_ec1abc9fd1">
-            <strong><a href="../conferences/roerich-2015.html#PRES_ec1abc9fd1">Пути песенных текстов – переводы и примеры метафонии</a></strong>
+            <strong><a href="../presentations/PRES_ec1abc9fd1.html">Пути песенных текстов – переводы и примеры метафонии</a></strong>
             <div class="meta">
                 <a href="../conferences/roerich-2015.html">Рериховские чтения 2015</a>
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a>
@@ -354,7 +374,7 @@
         </article>
 
         <article class="talk" id="PRES_fc5fc5500b">
-            <strong><a href="../conferences/roerich-2012.html#PRES_fc5fc5500b">12-летний животный цикл. К вопросу об истоках</a></strong>
+            <strong><a href="../presentations/PRES_fc5fc5500b.html">12-летний животный цикл. К вопросу об истоках</a></strong>
             <div class="meta">
                 <a href="../conferences/roerich-2012.html">Рериховские чтения 2012</a>
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a>
@@ -365,7 +385,7 @@
         </article>
 
         <article class="talk" id="PRES_405fb6e1fc">
-            <strong><a href="../conferences/roerich-2009.html#PRES_405fb6e1fc">Миф, пространство, время у алтайских народов</a></strong>
+            <strong><a href="../presentations/PRES_405fb6e1fc.html">Миф, пространство, время у алтайских народов</a></strong>
             <div class="meta">
                 <a href="../conferences/roerich-2009.html">Рериховские чтения 2009</a>
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a>
@@ -376,7 +396,7 @@
         </article>
 
         <article class="talk" id="PRES_3374abc140">
-            <strong><a href="../conferences/roerich-2008.html#PRES_3374abc140">Двойная мандала в тибетском трактате «Вайдурья-карпо»</a></strong>
+            <strong><a href="../presentations/PRES_3374abc140.html">Двойная мандала в тибетском трактате «Вайдурья-карпо»</a></strong>
             <div class="meta">
                 <a href="../conferences/roerich-2008.html">Рериховские чтения 2008</a>
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a>

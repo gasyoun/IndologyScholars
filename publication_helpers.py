@@ -3,6 +3,7 @@ import json
 import re
 from pathlib import Path
 
+from classification_overrides import THEME_LABEL_OVERRIDES
 
 SITE_URL = "https://gasyoun.github.io/IndologyScholars/"
 SITE_NAME = "Russian Indological Research Archive"
@@ -40,6 +41,7 @@ THEME_LABELS = {
     "art_and_material_culture": ("Искусство и материальная культура", "Art & Material Culture"),
     "unspecified": ("Разное / Не классифицировано", "Other / Unspecified"),
 }
+THEME_LABELS.update(THEME_LABEL_OVERRIDES)
 
 CYRILLIC_TO_LATIN = {
     "а": "a", "б": "b", "в": "v", "г": "g", "д": "d", "е": "e", "ё": "e",
@@ -434,6 +436,8 @@ def page_shell(title, description, canonical_path, body, structured_data=None, e
             ("Generations", "/IndologyScholars/generations/"),
             ("Meso-levels", "/IndologyScholars/meso/"),
             ("Gumilyov", "/IndologyScholars/gumilyov/"),
+            ("Criteria", "/IndologyScholars/classification-criteria.html"),
+            ("Papers", "/IndologyScholars/presentations/"),
             ("Videos", "/IndologyScholars/videos/"),
             ("Findings", "/IndologyScholars/findings/"),
             ("Cities", "/IndologyScholars/cities/"),
@@ -455,6 +459,8 @@ def page_shell(title, description, canonical_path, body, structured_data=None, e
             ("Поколения", "/IndologyScholars/generations/"),
             ("Мезоуровни", "/IndologyScholars/meso/"),
             ("Гумилев", "/IndologyScholars/gumilyov/"),
+            ("Критерии", "/IndologyScholars/classification-criteria.html"),
+            ("Доклады", "/IndologyScholars/presentations/"),
             ("Видео", "/IndologyScholars/videos/"),
             ("Выводы", "/IndologyScholars/findings/"),
             ("Города", "/IndologyScholars/cities/"),
@@ -602,6 +608,28 @@ def page_shell(title, description, canonical_path, body, structured_data=None, e
             background: rgba(255,255,255,0.035);
             padding: 0.8rem 1rem;
             border-radius: 0 8px 8px 0;
+        }}
+        .badge {{
+            display: inline-flex;
+            align-items: center;
+            border-radius: 8px;
+            padding: 0.18rem 0.45rem;
+            margin-left: 0.45rem;
+            border: 1px solid var(--border);
+            color: var(--muted);
+            font-size: 0.82rem;
+            font-weight: 600;
+            vertical-align: middle;
+        }}
+        .badge-online {{
+            border-color: rgba(52, 211, 153, 0.4);
+            color: #6ee7b7;
+            background: rgba(16, 185, 129, 0.1);
+        }}
+        .badge-video {{
+            border-color: rgba(251, 191, 36, 0.44);
+            color: #fde68a;
+            background: rgba(217, 119, 6, 0.13);
         }}
         .footer {{
             color: var(--soft);

@@ -66,14 +66,6 @@
       "affiliation": [
         {
           "@type": "Organization",
-          "name": "Не указана"
-        },
-        {
-          "@type": "Organization",
-          "name": "СПб"
-        },
-        {
-          "@type": "Organization",
           "name": "СПбГУ"
         }
       ],
@@ -215,6 +207,28 @@
             padding: 0.8rem 1rem;
             border-radius: 0 8px 8px 0;
         }
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            border-radius: 8px;
+            padding: 0.18rem 0.45rem;
+            margin-left: 0.45rem;
+            border: 1px solid var(--border);
+            color: var(--muted);
+            font-size: 0.82rem;
+            font-weight: 600;
+            vertical-align: middle;
+        }
+        .badge-online {
+            border-color: rgba(52, 211, 153, 0.4);
+            color: #6ee7b7;
+            background: rgba(16, 185, 129, 0.1);
+        }
+        .badge-video {
+            border-color: rgba(251, 191, 36, 0.44);
+            color: #fde68a;
+            background: rgba(217, 119, 6, 0.13);
+        }
         .footer {
             color: var(--soft);
             margin-top: 3rem;
@@ -264,6 +278,8 @@
             <a href="/IndologyScholars/generations/">Поколения</a>
             <a href="/IndologyScholars/meso/">Мезоуровни</a>
             <a href="/IndologyScholars/gumilyov/">Гумилев</a>
+            <a href="/IndologyScholars/classification-criteria.html">Критерии</a>
+            <a href="/IndologyScholars/presentations/">Доклады</a>
             <a href="/IndologyScholars/videos/">Видео</a>
             <a href="/IndologyScholars/findings/">Выводы</a>
             <a href="/IndologyScholars/cities/">Города</a>
@@ -293,7 +309,8 @@
         </section>
 
         <h2>Аффилиации</h2>
-        <div class="chip-row"><a class="chip" href="../index.html?search=%D0%9D%D0%B5%20%D1%83%D0%BA%D0%B0%D0%B7%D0%B0%D0%BD%D0%B0">Не указана</a><a class="chip" href="../cities/sankt-peterburg.html">СПб</a><a class="chip" href="../institutions/spbgu.html">СПбГУ</a></div>
+        <div class="chip-row"><a class="chip" href="../institutions/spbgu.html">СПбГУ</a></div>
+
 
         <h2>Географические центры</h2>
         <div class="chip-row"><a class="chip" href="../cities/sankt-peterburg.html">Санкт-Петербург</a></div>
@@ -309,7 +326,7 @@
         <h2>Доклады</h2>
         <section class="list">
         <article class="talk" id="PRES_5b4245709b">
-            <strong><a href="../conferences/zograf-2009.html#PRES_5b4245709b">«Коровьи войны» (на материале скотоводческого эпоса народов Центральной Индии и Декана)</a></strong>
+            <strong><a href="../presentations/PRES_5b4245709b.html">«Коровьи войны» (на материале скотоводческого эпоса народов Центральной Индии и Декана)</a></strong>
             <div class="meta">
                 <a href="../conferences/zograf-2009.html">Зографские чтения 2009</a>
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a>
@@ -320,7 +337,7 @@
         </article>
 
         <article class="talk" id="PRES_9e65f5de1e">
-            <strong><a href="../conferences/zograf-2008.html#PRES_9e65f5de1e">«Другая Савитри»: Сказание о Савитри в «Андхрамахабхарате»</a></strong>
+            <strong><a href="../presentations/PRES_9e65f5de1e.html">«Другая Савитри»: Сказание о Савитри в «Андхрамахабхарате»</a></strong>
             <div class="meta">
                 <a href="../conferences/zograf-2008.html">Зографские чтения 2008</a>
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a>
@@ -331,7 +348,7 @@
         </article>
 
         <article class="talk" id="PRES_7e16512005">
-            <strong><a href="../conferences/zograf-2007.html#PRES_7e16512005">О быках и людях (Образ «Стада» в скотоводческом эпосе Южной Индии)</a></strong>
+            <strong><a href="../presentations/PRES_7e16512005.html">О быках и людях (Образ «Стада» в скотоводческом эпосе Южной Индии)</a></strong>
             <div class="meta">
                 <a href="../conferences/zograf-2007.html">Зографские чтения 2007</a>
                 · <a href="../themes/literature-and-poetry.html">Литература и поэзия</a> · <a href="../cities/sankt-peterburg.html">Санкт-Петербург</a>
@@ -342,7 +359,7 @@
         </article>
 
         <article class="talk" id="PRES_20910e0f90">
-            <strong><a href="../conferences/zograf-2006.html#PRES_20910e0f90">Санскритское upa-śru-: «слышать» или «вслушиваться»? Об одном древнеиндийском способе гадания</a></strong>
+            <strong><a href="../presentations/PRES_20910e0f90.html">Санскритское upa-śru-: «слышать» или «вслушиваться»? Об одном древнеиндийском способе гадания</a></strong>
             <div class="meta">
                 <a href="../conferences/zograf-2006.html">Зографские чтения 2006</a>
                 · <a href="../themes/linguistics-and-philology.html">Лингвистика и филология</a> · <a href="../cities/sankt-peterburg.html">Санкт-Петербург</a>
@@ -353,7 +370,7 @@
         </article>
 
         <article class="talk" id="PRES_440de90864">
-            <strong><a href="../conferences/zograf-2004.html#PRES_440de90864">Миф об Агастье в средневековой литературе телугу</a></strong>
+            <strong><a href="../presentations/PRES_440de90864.html">Миф об Агастье в средневековой литературе телугу</a></strong>
             <div class="meta">
                 <a href="../conferences/zograf-2004.html">Зографские чтения 2004</a>
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a>

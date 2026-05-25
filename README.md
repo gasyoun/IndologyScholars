@@ -49,7 +49,7 @@ Compiles **289 canonical scholar profile pages** under `scholars/`. Each page ex
 A state-of-the-art Single Page Application suite built on vanilla CSS and JS:
 *   **Bilingual Translation Core:** Automatically launches in Russian by default (retaining zero English in UI text). A toggle in the top navigation swaps the entire application state (metrics cards, charts, legend, titles, table headers, DDL documentation) to English in real-time.
 *   **Cross-filtering & City Tags:** Allows users to click on any affiliation or city tag to instantly search, filter, and paginate the master database.
-*   **Video and Generalization Scale Pages:** `videos/` exposes the full YouTube inventory and presentation mappings; `gumilyov/` exposes the micro/regional/global classification of presentation titles. Both are integrated into talk cards on conference, city, institution, theme, and meso-level pages.
+*   **Video and Generalization Scale Pages:** `videos/` exposes the full YouTube inventory and presentation mappings, while mapped presentations carry a `Video` badge; `gumilyov/` exposes the micro/regional/global classification of presentation titles. Both are integrated into talk cards on conference, city, institution, theme, and meso-level pages.
 *   **Named Text Pages & Linkable Title Search:** `topics/ramayana.html` gathers Ramayana presentations by year and title; the dashboard title query is preserved in its URL (`?talks=рамаяны`) and exposes the matching presentations rather than only author rows.
 *   **Generations and Network Views:** `generations/` lists verified birth-decade cohorts from the Vasilkov cohort to the Tolchelnikov cohort and separates records lacking a verified birth year; `networks.html` maps all 289 scholars as nodes with collaboration and co-presence links.
 
@@ -153,7 +153,7 @@ The IndologyScholars platform enables deep historical and sociological analysis 
 
 ### Use Case C: Tracking Academic Migration & Institutional Shifts
 *   **Objective:** Trace how scholars transition between academic organizations over their careers.
-*   **Method:** In the expanded scholar row, the **«Careers & Analytics»** card detects whether a researcher has changed affiliations. If they have, it renders an active institutional path: e.g., `ИВ РАН → РГГУ → ИКВИА НИУ ВШЭ`.
+*   **Method:** In the expanded scholar row, the affiliation history displays institutional records only. City markers such as `СПб` remain geographic evidence, while a verified institutional trajectory fills gaps only within its documented dated interval.
 *   **Result:** Clicking on any of these institutional links queries the database, listing other scholars recorded with that institution across 22 observed programme years.
 
 ### Use Case D: Interdisciplinary Profile & Thematic Shifts Analysis

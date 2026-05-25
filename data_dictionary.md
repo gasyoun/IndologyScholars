@@ -1,8 +1,8 @@
 # IndologyScholars Data Dictionary
 
-Date: 2026-05-22  
+Date: 2026-05-25  
 Dataset schema version: 1.0.0  
-Pipeline version: 2026-05-21
+Pipeline version: 2026-05-25
 
 This dictionary describes the reusable data outputs produced by the IndologyScholars build pipeline. The canonical machine-readable resource list is `datapackage.json`; this document adds interpretation notes, stable-ID policy, and column semantics for high-value CSV/JSON outputs.
 
@@ -18,6 +18,7 @@ This dictionary describes the reusable data outputs produced by the IndologyScho
 | `analytics_output/data_quality_report.json` | JSON | `generate_publication_pages.py` | Machine-readable quality checks and review samples. |
 | `analytics_output/publication_file_manifest.csv` | CSV | `generate_publication_pages.py` | Generated file manifest with byte sizes and SHA-256 checksums. |
 | `analytics_output/publication_file_manifest.json` | JSON | `generate_publication_pages.py` | JSON version of the generated file manifest with build metadata. |
+| `curation/verified_affiliation_spans.csv` | CSV | manual curation / `generate_site_data.py` | Source-backed dated institutional trajectories used for public display without rewriting source strings. |
 
 ## 2. Stable Identifier Policy
 
@@ -65,6 +66,7 @@ Provenance sidecars document where curated or derived fields came from and how c
 | `analytics_output/field_provenance_biographical.csv` | Person names, display names, birth/death years, and profile fields. |
 | `analytics_output/field_provenance_authority.csv` | External authority identifiers and organization/place authority data. |
 | `analytics_output/field_provenance_themes.csv` | Generated presentation theme labels and theme review candidates. |
+| `curation/verified_affiliation_spans.csv` | Verified institutional intervals; city-only programme markers remain geography rather than affiliation. |
 
 Common columns:
 
@@ -164,6 +166,8 @@ These are participation networks, not citation networks or comprehensive publica
 | `analytics_output/youtube_playlist_summary.csv` | Summary counts for YouTube playlist sources. |
 | `analytics_output/video_presentation_mapping.csv` | Mapping between video records and presentation records. |
 
+Mapped video records remain searchable in the video catalogue and also set the public `Видео` status on the associated presentation page and card.
+
 ## 7. Theme Coding Outputs
 
 | Path | Meaning |
@@ -193,6 +197,7 @@ Theme labels are navigational aids derived primarily from presentation titles. T
 | `index.html` | Main dashboard. |
 | `scholars/*.html` | Generated scholar profiles. |
 | `conferences/*.html` | Conference event pages. |
+| `presentations/*.html` | Permanent pages for individual presentation records, including classification and video status. |
 | `themes/*.html` | Theme landing pages. |
 | `cities/*.html` | City/geography pages. |
 | `institutions/*.html` | Institution pages. |
@@ -204,6 +209,8 @@ Theme labels are navigational aids derived primarily from presentation titles. T
 | `how-to-cite.html` | Citation guidance. |
 | `metrics-guide.html` | Metric interpretation guide. |
 | `networks.html` | Network export interpretation guide. |
+| `classification-criteria.html` | Public criteria for themes, meso-levels, argument scale, and metadata normalization. |
+| `videos/*.html` | Standalone recording catalogue retained alongside presentation-level `Видео` badges. |
 
 ## 10. Reuse Guidance
 

@@ -66,18 +66,6 @@
       "affiliation": [
         {
           "@type": "Organization",
-          "name": "Москва"
-        },
-        {
-          "@type": "Organization",
-          "name": "Не указана"
-        },
-        {
-          "@type": "Organization",
-          "name": "ИСАА"
-        },
-        {
-          "@type": "Organization",
           "name": "ИСАА МГУ"
         }
       ],
@@ -222,6 +210,28 @@
             padding: 0.8rem 1rem;
             border-radius: 0 8px 8px 0;
         }
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            border-radius: 8px;
+            padding: 0.18rem 0.45rem;
+            margin-left: 0.45rem;
+            border: 1px solid var(--border);
+            color: var(--muted);
+            font-size: 0.82rem;
+            font-weight: 600;
+            vertical-align: middle;
+        }
+        .badge-online {
+            border-color: rgba(52, 211, 153, 0.4);
+            color: #6ee7b7;
+            background: rgba(16, 185, 129, 0.1);
+        }
+        .badge-video {
+            border-color: rgba(251, 191, 36, 0.44);
+            color: #fde68a;
+            background: rgba(217, 119, 6, 0.13);
+        }
         .footer {
             color: var(--soft);
             margin-top: 3rem;
@@ -271,6 +281,8 @@
             <a href="/IndologyScholars/generations/">Поколения</a>
             <a href="/IndologyScholars/meso/">Мезоуровни</a>
             <a href="/IndologyScholars/gumilyov/">Гумилев</a>
+            <a href="/IndologyScholars/classification-criteria.html">Критерии</a>
+            <a href="/IndologyScholars/presentations/">Доклады</a>
             <a href="/IndologyScholars/videos/">Видео</a>
             <a href="/IndologyScholars/findings/">Выводы</a>
             <a href="/IndologyScholars/cities/">Города</a>
@@ -300,7 +312,8 @@
         </section>
 
         <h2>Аффилиации</h2>
-        <div class="chip-row"><a class="chip" href="../cities/moskva.html">Москва</a><a class="chip" href="../index.html?search=%D0%9D%D0%B5%20%D1%83%D0%BA%D0%B0%D0%B7%D0%B0%D0%BD%D0%B0">Не указана</a><a class="chip" href="../index.html?search=%D0%98%D0%A1%D0%90%D0%90">ИСАА</a><a class="chip" href="../institutions/mgu.html">ИСАА МГУ</a></div>
+        <div class="chip-row"><a class="chip" href="../institutions/mgu.html">ИСАА МГУ</a></div>
+
 
         <h2>Географические центры</h2>
         <div class="chip-row"><a class="chip" href="../cities/moskva.html">Москва</a></div>
@@ -316,18 +329,18 @@
         <h2>Доклады</h2>
         <section class="list">
         <article class="talk" id="PRES_e84196d92a">
-            <strong><a href="../conferences/zograf-2025.html#PRES_e84196d92a">К интерпретации Ригведы: śiśnadevāḥ</a></strong>
+            <strong><a href="../presentations/PRES_e84196d92a.html">К интерпретации Ригведы: śiśnadevāḥ</a></strong><span class="badge badge-online">Онлайн</span><span class="badge badge-video">Видео</span>
             <div class="meta">
                 <a href="../conferences/zograf-2025.html">Зографские чтения 2025</a>
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a> · <a href="../cities/moskva.html">Москва</a>
             </div>
             <div class="meta talk-meta-row"><span>2025-05-20 · Вторник · 15:00 – 18:00</span><span class="talk-meta-session">Вечернее заседание</span></div>
             <div class="meta talk-context"><span class="context-label">Срезы:</span> <a class="mini-chip" href="../meso/vedic-studies.html">Ведийские исследования</a><a class="mini-chip" href="../meso/linguistics-language-system.html">Языковедческий анализ</a> <span class="context-label">Ключевые слова:</span> <a class="mini-chip" href="../search.html?q=%D1%80%D0%B8%D0%B3%D0%B2%D0%B5%D0%B4%D0%B0">ригведа</a><a class="mini-chip" href="../search.html?q=%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%BF%D1%80%D0%B5%D1%82%D0%B0%D1%86%D0%B8%D1%8F">интерпретация</a></div>
-            <div class="meta"><a href="https://www.youtube.com/watch?v=SCEaOZy7bR4" rel="noopener" target="_blank">▶ YouTube</a></div>
+            <div class="meta">Сохранившаяся запись: <a href="https://www.youtube.com/watch?v=SCEaOZy7bR4" rel="noopener" target="_blank">▶ YouTube</a></div>
         </article>
 
         <article class="talk" id="PRES_956af043cd">
-            <strong><a href="../conferences/roerich-2024.html#PRES_956af043cd">Посох Чанакьи</a></strong>
+            <strong><a href="../presentations/PRES_956af043cd.html">Посох Чанакьи</a></strong>
             <div class="meta">
                 <a href="../conferences/roerich-2024.html">Рериховские чтения 2024</a>
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a>
@@ -338,7 +351,7 @@
         </article>
 
         <article class="talk" id="PRES_52333b1258">
-            <strong><a href="../conferences/roerich-2023.html#PRES_52333b1258">Надписи на колонне Гелиодора</a></strong>
+            <strong><a href="../presentations/PRES_52333b1258.html">Надписи на колонне Гелиодора</a></strong>
             <div class="meta">
                 <a href="../conferences/roerich-2023.html">Рериховские чтения 2023</a>
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a>
@@ -349,7 +362,7 @@
         </article>
 
         <article class="talk" id="PRES_845344a97a">
-            <strong><a href="../conferences/roerich-2013.html#PRES_845344a97a">Индийская монета, найденная при раскопках Тилля-тепе</a></strong>
+            <strong><a href="../presentations/PRES_845344a97a.html">Индийская монета, найденная при раскопках Тилля-тепе</a></strong>
             <div class="meta">
                 <a href="../conferences/roerich-2013.html">Рериховские чтения 2013</a>
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a>
@@ -360,7 +373,7 @@
         </article>
 
         <article class="talk" id="PRES_b65c83f7a3">
-            <strong><a href="../conferences/roerich-2010.html#PRES_b65c83f7a3">Несколько индийских слов в передаче античных авторов</a></strong>
+            <strong><a href="../presentations/PRES_b65c83f7a3.html">Несколько индийских слов в передаче античных авторов</a></strong>
             <div class="meta">
                 <a href="../conferences/roerich-2010.html">Рериховские чтения 2010</a>
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a>
@@ -371,7 +384,7 @@
         </article>
 
         <article class="talk" id="PRES_e564be93e3">
-            <strong><a href="../conferences/zograf-2007.html#PRES_e564be93e3">«Великие» и «малые» в надписях Ашоки</a></strong>
+            <strong><a href="../presentations/PRES_e564be93e3.html">«Великие» и «малые» в надписях Ашоки</a></strong>
             <div class="meta">
                 <a href="../conferences/zograf-2007.html">Зографские чтения 2007</a>
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a> · <a href="../cities/moskva.html">Москва</a>
@@ -382,7 +395,7 @@
         </article>
 
         <article class="talk" id="PRES_37a471ecf5">
-            <strong><a href="../conferences/zograf-2006.html#PRES_37a471ecf5">К проблеме древнеиндийской хронологии</a></strong>
+            <strong><a href="../presentations/PRES_37a471ecf5.html">К проблеме древнеиндийской хронологии</a></strong>
             <div class="meta">
                 <a href="../conferences/zograf-2006.html">Зографские чтения 2006</a>
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a> · <a href="../cities/moskva.html">Москва</a>

@@ -164,6 +164,28 @@
             padding: 0.8rem 1rem;
             border-radius: 0 8px 8px 0;
         }
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            border-radius: 8px;
+            padding: 0.18rem 0.45rem;
+            margin-left: 0.45rem;
+            border: 1px solid var(--border);
+            color: var(--muted);
+            font-size: 0.82rem;
+            font-weight: 600;
+            vertical-align: middle;
+        }
+        .badge-online {
+            border-color: rgba(52, 211, 153, 0.4);
+            color: #6ee7b7;
+            background: rgba(16, 185, 129, 0.1);
+        }
+        .badge-video {
+            border-color: rgba(251, 191, 36, 0.44);
+            color: #fde68a;
+            background: rgba(217, 119, 6, 0.13);
+        }
         .footer {
             color: var(--soft);
             margin-top: 3rem;
@@ -213,6 +235,8 @@
             <a href="/IndologyScholars/generations/">Поколения</a>
             <a href="/IndologyScholars/meso/">Мезоуровни</a>
             <a href="/IndologyScholars/gumilyov/">Гумилев</a>
+            <a href="/IndologyScholars/classification-criteria.html">Критерии</a>
+            <a href="/IndologyScholars/presentations/">Доклады</a>
             <a href="/IndologyScholars/videos/">Видео</a>
             <a href="/IndologyScholars/findings/">Выводы</a>
             <a href="/IndologyScholars/cities/">Города</a>
@@ -229,11 +253,15 @@
             <h1>Главные выводы статьи</h1>
             <p>Эта страница переводит последнюю версию статьи из режима доказательства в режим чтения сайта: что означают базовые числа архива и куда на сайте идти, чтобы проверить каждый вывод.</p>
         </header>
+        <aside class="caveat-block" role="note" aria-label="Article corpus pause">
+            <strong>Редакционная пауза</strong>
+            <p>Показатели статьи ниже рассчитаны для аналитического подкорпуса: 220 ученых, 895 уникальных докладов и 899 авторских участий. Расширенный каталог сайта уже содержит 289 ученых, 1350 уникальных докладов и 1377 участий; перенос гипотез на него требует повторного расчета.</p>
+        </aside>
         <section class="grid">
 
             <article class="card">
                 <strong>Слабое пересечение площадок</strong>
-                <div class="metric">40 / около 104</div>
+                <div class="metric">38 / около 104</div>
                 <div class="meta">На обеих площадках выступали 38 ученых, тогда как перестановочная модель при той же индивидуальной активности ожидает около 104. Это главный количественный результат: поле связано, но межплощадочная проницаемость намного ниже простого ожидания.</div>
             </article>
 
@@ -257,7 +285,7 @@
 
             <article class="card">
                 <strong>Микрокейс как нормальный жанр</strong>
-                <div class="metric">739 / 1350</div>
+                <div class="metric">852 / 895</div>
                 <div class="meta">Шкала Гумилева показывает, что большинство докладов строится вокруг отдельного текста, автора, термина или локального сюжета. Широкие G3-обобщения крайне редки и чаще связаны со старшим или уже авторитетным голосом.</div>
             </article>
 
@@ -307,8 +335,8 @@
         </section>
 
         <aside class="caveat-block" role="note" aria-label="Scope note">
-            <strong>Объем корпуса</strong>
-            <p>Текущий синхронизированный корпус: 289 ученых, 1350 уникальных докладов, 1377 авторских участий. Программа Зографских чтений 2026 г. учитывается как предварительная.</p>
+            <strong>Объем расширенного каталога</strong>
+            <p>Текущий каталог сайта: 289 ученых, 1350 уникальных докладов, 1377 авторских участий. Программа Зографских чтений 2026 г. учитывается как предварительная; численные гипотезы статьи пока не объявляются пересчитанными на этом массиве.</p>
         </aside>
 
         <div class="footer">© 2026 Russian Indological Research Archive. Сгенерировано из нормализованного архива конференций.</div>

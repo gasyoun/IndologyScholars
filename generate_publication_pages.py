@@ -8,6 +8,7 @@ import struct
 import sys
 import zlib
 from collections import defaultdict
+from functools import lru_cache
 from pathlib import Path
 from urllib.parse import quote
 
@@ -17,6 +18,7 @@ try:
 except Exception:
     pass
 
+from classification_overrides import CLASSIFICATION_OVERRIDES, MESO_LABELS
 from publication_helpers import (
     AUTHOR_NAME,
     GENERATION_COHORTS,
@@ -44,8 +46,8 @@ from publication_helpers import (
 DB_PATH = "conferences.db"
 BUILD_DATE = dt.date.today().isoformat()
 DATA_SCHEMA_VERSION = "1.0.0"
-PIPELINE_VERSION = "2026-05-24"
-PUBLIC_DIRS = ["assets", "conferences", "themes", "topics", "generations", "meso", "gumilyov", "videos", "findings", "cities", "institutions"]
+PIPELINE_VERSION = "2026-05-25"
+PUBLIC_DIRS = ["assets", "conferences", "presentations", "themes", "topics", "generations", "meso", "gumilyov", "videos", "findings", "cities", "institutions"]
 
 
 def ensure_dirs():
@@ -90,6 +92,7 @@ def generated_manifest_paths():
         "index.html",
         "known-limitations.html",
         "methodology.html",
+        "classification-criteria.html",
         "metrics-guide.html",
         "networks.html",
         "robots.txt",
@@ -99,7 +102,7 @@ def generated_manifest_paths():
         "site_data.json",
         "sitemap.xml",
     ]
-    directories = ["analytics_output", "assets", "cities", "conferences", "findings", "generations", "gumilyov", "institutions", "meso", "scholars", "themes", "topics", "videos"]
+    directories = ["analytics_output", "assets", "cities", "conferences", "presentations", "findings", "generations", "gumilyov", "institutions", "meso", "scholars", "themes", "topics", "videos", "curation"]
     paths = [Path(path) for path in roots]
     for dirname in directories:
         root = Path(dirname)
@@ -182,6 +185,10 @@ def series_label(series, lang="en"):
 
 def conference_path(series, year):
     return f"conferences/{series_slug(series)}-{year}.html"
+
+
+def presentation_path(presentation_id):
+    return f"presentations/{clean_text(presentation_id)}.html"
 
 
 def theme_path(code):
@@ -339,10 +346,9 @@ def format_keyword_links(terms, depth=""):
 
 def talk_deep_link(talk, depth=""):
     pid = clean_text(talk.get("presentation_id") or "")
-    href = f"{depth}{conference_path(talk.get('series_key'), talk.get('year'))}"
     if pid:
-        href = f"{href}#{pid}"
-    return href
+        return f"{depth}{presentation_path(pid)}"
+    return f"{depth}{conference_path(talk.get('series_key'), talk.get('year'))}"
 
 
 def chip_section(title, links):
@@ -554,6 +560,22 @@ def load_meso_index():
                 "examples": row.get("examples") or "",
             }
         )
+    known = {item["code"] for item in items}
+    for code, label in MESO_LABELS.items():
+        if code not in known:
+            items.append(
+                {
+                    "code": code,
+                    "label": label,
+                    "kind": "Экспертный мезоуровень",
+                    "count": 0,
+                    "zograf_count": 0,
+                    "roerich_count": 0,
+                    "top_terms": "",
+                    "distribution": "",
+                    "examples": "",
+                }
+            )
     items.sort(key=lambda item: (-item["count"], item["kind"], item["label"]))
     return items
 
@@ -570,7 +592,29 @@ def load_meso_memberships():
         pid = row.get("presentation_id") or ""
         if approach and pid:
             memberships[f"linguistics_{approach}"].append(pid)
+    reviewed_ids = set(CLASSIFICATION_OVERRIDES)
+    for code in list(memberships):
+        memberships[code] = [pid for pid in memberships[code] if pid not in reviewed_ids]
+    for pid, review in CLASSIFICATION_OVERRIDES.items():
+        for code in review.get("meso_codes", []):
+            if pid not in memberships[code]:
+                memberships[code].append(pid)
     return memberships
+
+
+def attach_meso_codes(records):
+    by_presentation = defaultdict(list)
+    for code, pids in load_meso_memberships().items():
+        for pid in pids:
+            by_presentation[pid].append(code)
+    for record in records:
+        pid = clean_text(record.get("presentation_id") or "")
+        record["meso_codes"] = list(dict.fromkeys(by_presentation.get(pid, [])))
+
+
+@lru_cache(maxsize=1)
+def meso_items_by_code():
+    return {item["code"]: item for item in load_meso_index()}
 
 
 def presentation_records_by_id(records):
@@ -641,22 +685,32 @@ def talk_card(talk, depth=""):
     title_href = talk_deep_link(talk, depth)
     g_level, g_meta = gumilyov_meta(talk.get("gumilyov_scale"))
     gumilyov_link = f'<a href="{depth}{gumilyov_path(g_level)}">L{g_level} {esc(g_meta["short_ru"])}</a>'
+    online_badge = '<span class="badge badge-online">Онлайн</span>' if talk.get("is_online") else ""
+    items = meso_items_by_code()
+    meso_links = [
+        f'<a class="chip" href="{depth}{meso_path(code)}">{esc(items[code]["label"])}</a>'
+        for code in talk.get("meso_codes", [])
+        if code in items
+    ]
+    meso_html = chip_section("Мезоуровни", meso_links)
     videos = talk.get("videos") or []
+    video_badge = '<span class="badge badge-video">Видео</span>' if videos else ""
     video_html = ""
     if videos:
         links = []
         for idx, video in enumerate(videos, start=1):
             label = "YouTube" if len(videos) == 1 else f"YouTube {idx}"
             links.append(f'<a href="{esc(video.get("url"))}">{esc(label)}</a>')
-        video_html = f'<div class="meta">Видео: {" · ".join(links)}</div>'
+        video_html = f'<div class="meta">Сохранившаяся запись: {" · ".join(links)}</div>'
     return f"""
         <article class="talk"{anchor_attr}>
-            <strong><a href="{esc(title_href)}">{esc(talk.get("title"))}</a></strong>
+            <strong><a href="{esc(title_href)}">{esc(talk.get("title"))}</a></strong>{online_badge}{video_badge}
             <div class="meta">
                 {scholar_link} · <a href="{depth}{conference_path(talk.get("series_key"), talk.get("year"))}">{esc(series_label(talk.get("series_key"), "ru"))} {esc(talk.get("year"))}</a>
                 · <a href="{depth}{theme_path(theme_code)}">{esc(theme_label(theme_code, "ru"))}</a>
                 · {gumilyov_link}{city_link}
             </div>
+            {meso_html}
             {video_html}
         </article>
     """
@@ -851,6 +905,13 @@ keywords:
                 "description": "Field-level provenance for generated presentation theme labels and review candidates.",
             },
             {
+                "name": "verified-affiliation-spans",
+                "path": "curation/verified_affiliation_spans.csv",
+                "format": "csv",
+                "mediatype": "text/csv",
+                "description": "Dated source-backed institutional trajectories used for public affiliation normalization.",
+            },
+            {
                 "name": "network-nodes",
                 "path": "analytics_output/network_nodes.csv",
                 "format": "csv",
@@ -991,15 +1052,18 @@ def generate_search(data, records):
         )
     for talk in presentation_records_by_id(records).values():
         pid = clean_text(talk.get("presentation_id") or "")
-        talk_url = conference_path(talk.get("series_key"), talk.get("year"))
-        if pid:
-            talk_url = f"{talk_url}#{pid}"
+        talk_url = presentation_path(pid) if pid else conference_path(talk.get("series_key"), talk.get("year"))
+        video_status = "Видео" if talk.get("videos") else ""
         index.append(
             {
                 "type": "Presentation",
                 "title": talk.get("title"),
                 "url": talk_url,
-                "meta": f"{series_label(talk.get('series_key'), 'ru')} · {talk.get('year')} · {talk.get('speaker') or ''}",
+                "meta": " · ".join(filter(None, [
+                    f"{series_label(talk.get('series_key'), 'ru')} {talk.get('year')}",
+                    talk.get("speaker") or "",
+                    video_status,
+                ])),
                 "text": " ".join([
                     talk.get("title") or "",
                     talk.get("speaker") or "",
@@ -1009,6 +1073,7 @@ def generate_search(data, records):
                     series_label(talk.get("series_key"), "ru"),
                     str(talk.get("year") or ""),
                     (talk.get("geography") or {}).get("ru") or "",
+                    video_status,
                 ]),
             }
         )
@@ -1029,6 +1094,15 @@ def generate_search(data, records):
             "url": generations_path(),
             "meta": "Когорты по году рождения",
             "text": "Васильков Толчельников поколения возраст год рождения старшее младшее когорта",
+        }
+    )
+    index.append(
+        {
+            "type": "Method",
+            "title": "Критерии классификации докладов",
+            "url": "classification-criteria.html",
+            "meta": "Рубрики, мезоуровни и L1-L3",
+            "text": "классификация рубрика мезоуровень Гумилев L1 L2 L3 микроуровень масштаб аргументации",
         }
     )
     for level, meta in GUMILYOV_LEVELS.items():
@@ -1140,8 +1214,10 @@ def generate_download_page(data):
         ("Authority provenance", "analytics_output/field_provenance_authority.csv", "Field-level provenance for external identifiers and organization authority records."),
         ("Theme provenance", "analytics_output/field_provenance_themes.csv", "Field-level provenance for generated presentation theme labels."),
         ("Gumilyov scale", "analytics_output/gumilyov_scale.csv", "Presentation-level scale of generalization used by the Gumilyov navigation pages."),
-        ("YouTube video list", "analytics_output/youtube_video_list.csv", "Full list of YouTube videos collected from the Zograf Readings playlists."),
-        ("YouTube mapping", "analytics_output/video_presentation_mapping.csv", "Video-to-presentation matching status, including exact matches and review candidates."),
+        ("Expert classification decisions", "analytics_output/classification_overrides.csv", "Reviewed revisions to themes, meso-levels, and Gumilyov argument levels, with a rationale for each affected presentation."),
+        ("Verified affiliation spans", "curation/verified_affiliation_spans.csv", "Dated, source-backed institutional trajectories used only within their verified intervals."),
+        ("YouTube video list", "analytics_output/youtube_video_list.csv", "Source inventory of collected recordings; public discovery is attached to presentation records."),
+        ("YouTube mapping", "analytics_output/video_presentation_mapping.csv", "Video-to-presentation matching status used to display recording availability on presentations."),
         ("Network nodes", "analytics_output/network_nodes.csv", "Typed person, event, organization, and theme nodes for downstream network analysis."),
         ("Network edges", "analytics_output/network_edges.csv", "Weighted edges with explicit relation types for participation, affiliation, theme, and co-presence analysis."),
         ("Publication file manifest", "analytics_output/publication_file_manifest.csv", "Generated file list with byte sizes and SHA-256 checksums for reproducible release checks."),
@@ -2027,7 +2103,7 @@ def generate_english_landing(data):
             <article class="card"><strong><a href="conferences/">Conference Indexes</a></strong><div class="meta">Year-by-year Zograf Readings and Roerich Readings pages.</div></article>
             <article class="card"><strong><a href="search.html">Search</a></strong><div class="meta">Static search across people, talks, cities, institutions, and themes.</div></article>
             <article class="card"><strong><a href="gumilyov/">Gumilyov Scale</a></strong><div class="meta">Presentation-level scale of generalization: micro, regional, and global.</div></article>
-            <article class="card"><strong><a href="videos/">YouTube Videos</a></strong><div class="meta">Full playlist inventory and mapped presentation recordings.</div></article>
+            <article class="card"><strong><a href="videos/">YouTube Videos</a></strong><div class="meta">Full playlist inventory and mapped presentation recordings; mapped talks also carry a Video badge.</div></article>
             <article class="card"><strong><a href="networks.html">Networks</a></strong><div class="meta">Participation and co-presence networks.</div></article>
             <article class="card"><strong><a href="download-data.html">Download Data</a></strong><div class="meta">SQLite, generated JSON/JS payloads, citation metadata, and analytics exports.</div></article>
             <article class="card"><strong><a href="methodology.html">Methodology</a></strong><div class="meta">Pipeline, source material, normalization, and generated outputs.</div></article>
@@ -2061,15 +2137,10 @@ def generate_findings_page(data, records):
     summary = data.get("summary", {})
     records_by_id = presentation_records_by_id(records)
     unique_records = list(records_by_id.values())
-    gumilyov_counts = defaultdict(int)
-    for talk in unique_records:
-        level, _meta = gumilyov_meta(talk.get("gumilyov_scale"))
-        gumilyov_counts[level] += 1
 
     total_scholars = summary.get("total_scholars", 220)
     unique_presentations = summary.get("unique_presentations", summary.get("presentation_rows", 895))
     author_participations = summary.get("author_participations", summary.get("total_presentations", 899))
-    overlap = summary.get("overlap_scholars", 38)
     video_presentations = sum(1 for talk in unique_records if talk.get("videos"))
     video_author_cards = sum(1 for talk in records if talk.get("videos"))
     youtube_rows = len(load_youtube_rows()) or 178
@@ -2077,7 +2148,7 @@ def generate_findings_page(data, records):
     cards = [
         (
             "Слабое пересечение площадок",
-            f"{overlap} / около 104",
+            "38 / около 104",
             "На обеих площадках выступали 38 ученых, тогда как перестановочная модель при той же индивидуальной активности ожидает около 104. Это главный количественный результат: поле связано, но межплощадочная проницаемость намного ниже простого ожидания.",
         ),
         (
@@ -2097,7 +2168,7 @@ def generate_findings_page(data, records):
         ),
         (
             "Микрокейс как нормальный жанр",
-            f"{gumilyov_counts.get(1, 852)} / {unique_presentations}",
+            "852 / 895",
             "Шкала Гумилева показывает, что большинство докладов строится вокруг отдельного текста, автора, термина или локального сюжета. Широкие G3-обобщения крайне редки и чаще связаны со старшим или уже авторитетным голосом.",
         ),
         (
@@ -2123,6 +2194,10 @@ def generate_findings_page(data, records):
             <h1>Главные выводы статьи</h1>
             <p>Эта страница переводит последнюю версию статьи из режима доказательства в режим чтения сайта: что означают базовые числа архива и куда на сайте идти, чтобы проверить каждый вывод.</p>
         </header>
+        <aside class="caveat-block" role="note" aria-label="Article corpus pause">
+            <strong>Редакционная пауза</strong>
+            <p>Показатели статьи ниже рассчитаны для аналитического подкорпуса: 220 ученых, 895 уникальных докладов и 899 авторских участий. Расширенный каталог сайта уже содержит {esc(total_scholars)} ученых, {esc(unique_presentations)} уникальных докладов и {esc(author_participations)} участий; перенос гипотез на него требует повторного расчета.</p>
+        </aside>
         <section class="grid">
             {''.join(card_html)}
         </section>
@@ -2165,8 +2240,8 @@ def generate_findings_page(data, records):
         </section>
 
         <aside class="caveat-block" role="note" aria-label="Scope note">
-            <strong>Объем корпуса</strong>
-            <p>Текущий синхронизированный корпус: {esc(total_scholars)} ученых, {esc(unique_presentations)} уникальных докладов, {esc(author_participations)} авторских участий. Программа Зографских чтений 2026 г. учитывается как предварительная.</p>
+            <strong>Объем расширенного каталога</strong>
+            <p>Текущий каталог сайта: {esc(total_scholars)} ученых, {esc(unique_presentations)} уникальных докладов, {esc(author_participations)} авторских участий. Программа Зографских чтений 2026 г. учитывается как предварительная; численные гипотезы статьи пока не объявляются пересчитанными на этом массиве.</p>
         </aside>
     """
     write_text(
@@ -2295,7 +2370,8 @@ def generate_gumilyov_pages(data, records):
         </header>
         <aside class="caveat-block" role="note" aria-label="Gumilyov classification notice">
             <strong>Примечание о классификации</strong>
-            <p>Уровень Гумилева назначается по заголовку доклада и используется как навигационный масштаб обобщения. Он не заменяет тематическую рубрику L1 и не является оценкой качества доклада.</p>
+            <p>Уровень Гумилева обозначает масштаб аргумента, а не географию или язык материала. Проверенные экспертные решения заменяют исходную автоматическую разметку: частный ритуал, экспедиция, текст или языковой кейс остаются L1 даже при упоминании региона или традиции. Уровень не является оценкой качества доклада.</p>
+            <div class="chip-list"><a class="chip" href="../classification-criteria.html">Обновленные критерии</a></div>
         </aside>
         <section class="list">
             {''.join(talk_card(t, '../') for t in grouped.get(level, []))}
@@ -2318,10 +2394,16 @@ def generate_gumilyov_pages(data, records):
             <p>Навигационный масштаб доклада по мотивам уровней обобщения Л. Н. Гумилева: от конкретного кейса к региональной традиции и широкому сравнительному уровню.</p>
         </header>
         <section class="grid">{''.join(cards)}</section>
+        <aside class="caveat-block" role="note" aria-label="Expert classification notice">
+            <strong>Как читать уровни</strong>
+            <p>Географическое название, этноним или сопоставление двух объектов сами по себе не превращают доклад в региональное или макроисторическое обобщение. Для восьми проверенных случаев применена экспертная корректировка с явной аргументацией.</p>
+            <div class="chip-list"><a class="chip" href="../classification-criteria.html">Критерии и проверенные кейсы</a></div>
+        </aside>
         <section class="link-block">
             <strong>Данные</strong>
             <div class="chip-list">
                 <a class="chip" href="../analytics_output/gumilyov_scale.csv">gumilyov_scale.csv</a>
+                <a class="chip" href="../analytics_output/classification_overrides.csv">classification_overrides.csv</a>
                 <a class="chip" href="../analytics_output/gumilyov_video_comparison.csv">video comparison</a>
             </div>
         </section>
@@ -2455,6 +2537,234 @@ def generate_video_pages(data, records):
             "videos/",
             index_body,
             [page_data("Видеозаписи", "Полный список YouTube-видеозаписей и сопоставлений с докладами.", "videos/"), make_breadcrumbs([("Главная", ""), ("Видео", "videos/")])],
+        ),
+    )
+
+
+def presentation_detail_body(talk, depth="../"):
+    pid = clean_text(talk.get("presentation_id") or "")
+    theme = talk.get("theme") or {}
+    theme_code = theme.get("code") or "unspecified"
+    g_level, g_meta = gumilyov_meta(talk.get("gumilyov_scale"))
+    online_badge = '<span class="badge badge-online">Онлайн</span>' if talk.get("is_online") else ""
+    videos = talk.get("videos") or []
+    video_badge = '<span class="badge badge-video">Видео</span>' if videos else ""
+    meso_items = meso_items_by_code()
+    meso_links = [
+        f'<a class="chip" href="{depth}{meso_path(code)}">{esc(meso_items[code]["label"])}</a>'
+        for code in talk.get("meso_codes", [])
+        if code in meso_items
+    ]
+    conference_href = f'{depth}{conference_path(talk.get("series_key"), talk.get("year"))}#{pid}'
+    city = (talk.get("geography") or {}).get("ru")
+    city_html = (
+        f'<a class="chip" href="{depth}{city_path(city)}">{esc(city)}</a>'
+        if city and city not in ("Не указана", "Not specified")
+        else ""
+    )
+    source_url = clean_text(talk.get("source_url") or "")
+    source_updated = clean_text(talk.get("program_last_updated") or "")
+    source_html = ""
+    if source_url:
+        update = ""
+        if source_updated:
+            update = " · последнее обновление: " + dt.datetime.strptime(source_updated, "%Y-%m-%d").strftime("%d.%m.%Y")
+        source_html = f'<p><a href="{esc(source_url)}">Официальная программа</a>{esc(update)}</p>'
+    review = CLASSIFICATION_OVERRIDES.get(pid)
+    rationale = ""
+    if review:
+        rationale = f"""
+        <aside class="caveat-block" role="note" aria-label="Expert classification">
+            <strong>Экспертно проверенная классификация</strong>
+            <p>{esc(review["reason"])}</p>
+        </aside>
+        """
+    video_links = [
+        f'<a class="chip" href="{esc(video.get("url"))}">YouTube</a>'
+        for video in videos
+    ]
+    title_note = clean_text(talk.get("title_editorial_note") or "")
+    title_note_html = ""
+    if title_note:
+        title_note_html = f"""
+        <aside class="caveat-block" role="note" aria-label="Title normalization">
+            <strong>Редакционная нормализация названия</strong>
+            <p>{esc(title_note)}</p>
+        </aside>
+        """
+    affiliation = clean_text(talk.get("affiliation") or "")
+    affiliation_html = ""
+    if affiliation:
+        affiliation_html = (
+            f'<article class="card"><strong>Аффилиация</strong><div class="meta">{esc(affiliation)}</div></article>'
+        )
+    affiliation_note = clean_text(talk.get("affiliation_note") or "")
+    affiliation_note_html = ""
+    if affiliation_note:
+        affiliation_note_html = f"""
+        <aside class="caveat-block" role="note" aria-label="Affiliation provenance">
+            <strong>Основание аффилиации</strong>
+            <p>{esc(affiliation_note)}</p>
+        </aside>
+        """
+    return f"""
+        <header>
+            <h1>{esc(talk.get("title"))}</h1>{online_badge}{video_badge}
+            <p>{scholar_links_html(talk, depth)} · <a href="{conference_href}">{esc(series_label(talk.get("series_key"), "ru"))} {esc(talk.get("year"))}</a></p>
+        </header>
+        <section class="grid">
+            <article class="card"><strong>Рубрика</strong><div class="meta"><a href="{depth}{theme_path(theme_code)}">{esc(theme_label(theme_code, "ru"))}</a></div></article>
+            <article class="card"><strong>Уровень аргументации</strong><div class="meta"><a href="{depth}{gumilyov_path(g_level)}">L{g_level} {esc(g_meta["ru"])}</a></div></article>
+            <article class="card"><strong>Идентификатор</strong><div class="meta">{esc(pid)}</div></article>
+            <article class="card"><strong>Формат</strong><div class="meta">{"Онлайн" if talk.get("is_online") else "Очное / не обозначено как онлайн"}</div></article>
+            {affiliation_html}
+            <article class="card"><strong>Видеозапись</strong><div class="meta">{"Есть сохранившаяся запись" if videos else "Не привязана"}</div></article>
+        </section>
+        {title_note_html}
+        {affiliation_note_html}
+        {rationale}
+        {chip_section("Мезоуровни", meso_links)}
+        {chip_section("Город в программе", [city_html] if city_html else [])}
+        {chip_section("Сохранившаяся видеозапись", video_links)}
+        <section class="link-block">
+            <strong>Источник</strong>
+            {source_html or "<p>Ссылка на исходную страницу программы не сохранена.</p>"}
+        </section>
+        <section class="link-block">
+            <strong>Как читается классификация</strong>
+            <div class="chip-list"><a class="chip" href="../classification-criteria.html">Критерии рубрик, мезоуровней и L1-L3</a></div>
+        </section>
+    """
+
+
+def generate_presentation_pages(records):
+    unique_records = list(presentation_records_by_id(records).values())
+    unique_records.sort(key=lambda talk: (-int(talk.get("year") or 0), talk.get("title") or ""))
+    year_counts = defaultdict(int)
+    cards = []
+    for talk in unique_records:
+        pid = clean_text(talk.get("presentation_id") or "")
+        if not pid:
+            continue
+        year_counts[int(talk.get("year") or 0)] += 1
+        path = presentation_path(pid)
+        title = clean_text(talk.get("title") or "Доклад")
+        body = presentation_detail_body(talk)
+        structured = [
+            page_data(title, f"Доклад: {title}.", path, page_type="ScholarlyArticle"),
+            make_breadcrumbs([("Главная", ""), ("Доклады", "presentations/"), (title, path)]),
+        ]
+        write_text(path, page_shell(f"{title} | {SITE_NAME}", f"Доклад: {title}.", path, body, structured))
+        cards.append(
+            f'<article class="talk"><strong><a href="../{path}">{esc(title)}</a></strong>'
+            f'<div class="meta">{esc(series_label(talk.get("series_key"), "ru"))} {esc(talk.get("year"))} · {scholar_links_html(talk, "../")}</div></article>'
+        )
+    year_links = [
+        f'<a class="chip" href="../conferences/">{esc(year)} · {talks_count_label(count)}</a>'
+        for year, count in sorted(year_counts.items(), reverse=True)
+    ]
+    index_body = f"""
+        <header>
+            <h1>Доклады</h1>
+            <p>Постоянные страницы уникальных записей программ. Каждый доклад имеет собственный адрес, авторов, рубрику, масштаб аргументации и доступные мезоуровни.</p>
+        </header>
+        {chip_section("Покрытие по годам", year_links)}
+        <section class="list">{''.join(cards)}</section>
+    """
+    write_text(
+        "presentations/index.html",
+        page_shell(
+            f"Доклады | {SITE_NAME}",
+            "Постоянные страницы докладов Зографских и Рериховских чтений.",
+            "presentations/",
+            index_body,
+            [page_data("Доклады", "Постоянные страницы докладов.", "presentations/"), make_breadcrumbs([("Главная", ""), ("Доклады", "presentations/")])],
+        ),
+    )
+
+
+def generate_classification_criteria_page(records):
+    records_by_id = presentation_records_by_id(records)
+    ledger_rows = []
+    reviewed_cards = []
+    for pid, review in CLASSIFICATION_OVERRIDES.items():
+        talk = records_by_id.get(pid)
+        if not talk:
+            continue
+        path = presentation_path(pid)
+        theme_code = review["theme_code"]
+        meso_labels = [meso_items_by_code()[code]["label"] for code in review["meso_codes"] if code in meso_items_by_code()]
+        reviewed_cards.append(
+            f"""
+            <article class="talk">
+                <strong><a href="{esc(path)}">{esc(talk.get("title"))}</a></strong>
+                <div class="meta">{esc(theme_label(theme_code, "ru"))} · L{esc(review["gumilyov_level"])} Микро · {esc("; ".join(meso_labels))}</div>
+                <p>{esc(review["reason"])}</p>
+            </article>
+            """
+        )
+        ledger_rows.append(
+            {
+                "presentation_id": pid,
+                "title": talk.get("title") or "",
+                "theme_code": theme_code,
+                "theme_label_ru": theme_label(theme_code, "ru"),
+                "gumilyov_level": review["gumilyov_level"],
+                "meso_codes": "|".join(review["meso_codes"]),
+                "meso_labels_ru": "|".join(meso_labels),
+                "reason": review["reason"],
+            }
+        )
+    with open("analytics_output/classification_overrides.csv", "w", encoding="utf-8", newline="") as handle:
+        writer = csv.DictWriter(handle, fieldnames=list(ledger_rows[0].keys()))
+        writer.writeheader()
+        writer.writerows(ledger_rows)
+    body = f"""
+        <header>
+            <h1>Критерии классификации докладов</h1>
+            <p>Обновленная схема отделяет дисциплинарную принадлежность, тематические мезоуровни, масштаб аргументации и формат участия. Она введена по экспертной проверке частных докладов программы 2024 г.</p>
+        </header>
+        <section class="grid">
+            <article class="card"><strong>Рубрика</strong><div class="meta">Основная дисциплина вопроса: этнография, история индологии, религиоведение, лингвистика, литература и другие крупные входы.</div></article>
+            <article class="card"><strong>Мезоуровни</strong><div class="meta">Несколько пересекающихся указателей: ритуалистика, этимологии, Гималаи, метрика, космология, эпохи и т. д.</div></article>
+            <article class="card"><strong>L1-L3</strong><div class="meta">Масштаб вывода, а не территория предмета: конкретный объект; традиция/региональная конфигурация; широкое обобщение.</div></article>
+            <article class="card"><strong>Формат</strong><div class="meta">Онлайн и видео являются метаданными участия и доступности, но не входят в название или тематическую рубрику.</div></article>
+        </section>
+        <h2>Правила нормализации метаданных</h2>
+        <section class="list">
+            <article class="talk"><strong>Институция отделяется от географии</strong><p>Городская помета в программе, включая «СПб» или «Санкт-Петербург», используется как географический сигнал и не публикуется как аффилиация. Аффилиацией считается названное учреждение.</p></article>
+            <article class="talk"><strong>Подтвержденная траектория имеет временные границы</strong><p>Если источник подтверждает одну институцию на интервале участия, она может заполнить пропуски и городские пометы только в пределах этого интервала. После даты окончания запись не переносится автоматически на новые выступления.</p></article>
+            <article class="talk"><strong>Метаданные не входят в название</strong><p>Начальная скобочная помета, распознанная как учреждение, например «(СПбГУ).», переносится в поле аффилиации для любого доклада. Содержательные скобки в заголовках не удаляются.</p></article>
+            <article class="talk"><strong>Видео является также состоянием доклада</strong><p>Сохранившаяся и сопоставленная запись отмечается плашкой на карточке доклада и его странице; отдельный каталог видео сохраняется как обзор исходных записей и сопоставлений.</p></article>
+        </section>
+        <h2>Правила аргументационного масштаба</h2>
+        <section class="list">
+            <article class="talk"><strong>L1 Микроуровень</strong><p>Конкретный текст, предмет, ритуал, слово, экспедиция, авторское сопоставление или ограниченный тип артефактов. Упоминание региона, народа, языка или двух сравниваемых традиций не повышает уровень автоматически.</p></article>
+            <article class="talk"><strong>L2 Региональный уровень</strong><p>Аргумент должен описывать устойчивую конфигурацию традиции, ареала, школы, исторической среды или нескольких серий объектов, а не только локализовать материал.</p></article>
+            <article class="talk"><strong>L3 Синтетический уровень</strong><p>Требуется заявленное широкое сравнительное, цивилизационное или методологическое обобщение, выходящее за один корпус и одну региональную конфигурацию.</p></article>
+        </section>
+        <h2>Выводы из экспертных поправок</h2>
+        <section class="list">
+            <article class="talk"><strong>География не равна масштабу</strong><p>Невары, Ассам, Гималаи, Бенгалия или язык куллуи обозначают материал исследования; без обобщающего тезиса это L1.</p></article>
+            <article class="talk"><strong>Сравнение не равно макросинтезу</strong><p>Сравнение вариантов одной игры знания или одного литературного ответа остается микрокейсом, если вывод ограничен этими объектами.</p></article>
+            <article class="talk"><strong>Рубрика и мезоуровень не конкурируют</strong><p>Доклад имеет одну основную дисциплинарную рубрику и одновременно несколько тематических маршрутов поиска.</p></article>
+            <article class="talk"><strong>История индологии выделяется отдельно</strong><p>Экспедиции, путешественники и история научного освоения материала не должны исчезать в общем остаточном классе.</p></article>
+        </section>
+        <h2>Проверенная выборка</h2>
+        <section class="list">{''.join(reviewed_cards)}</section>
+        <section class="link-block">
+            <strong>Машиночитаемый журнал решений</strong>
+            <div class="chip-list"><a class="chip" href="analytics_output/classification_overrides.csv">classification_overrides.csv</a></div>
+        </section>
+    """
+    write_text(
+        "classification-criteria.html",
+        page_shell(
+            f"Критерии классификации | {SITE_NAME}",
+            "Обновленные критерии рубрик, мезоуровней и масштаба аргументации докладов.",
+            "classification-criteria.html",
+            body,
+            [page_data("Критерии классификации", "Обновленные критерии классификации докладов.", "classification-criteria.html"), make_breadcrumbs([("Главная", ""), ("Критерии классификации", "classification-criteria.html")])],
         ),
     )
 
@@ -2781,11 +3091,13 @@ def generate_meso_pages(data, records):
             if pid in records_by_id
         ]
         talks.sort(key=lambda rec: (int(rec.get("year") or 0), rec.get("series_label") or "", rec.get("title") or ""))
+        zograf_count = sum(1 for talk in talks if talk.get("series_key") == "Zograf")
+        roerich_count = sum(1 for talk in talks if talk.get("series_key") == "Roerich")
         examples = example_links(talks, path, "../")
         examples_html = f'<div class="meta">Примеры: {examples}</div>' if examples else ""
         cards.append(
             f'<article class="card"><strong><a href="../{path}">{esc(item["label"])}</a></strong>'
-            f'<div class="meta">{esc(item["kind"])} · {talks_count_label(len(talks))} · Зограф: {item["zograf_count"]} · Рерих: {item["roerich_count"]}</div>{examples_html}</article>'
+            f'<div class="meta">{esc(item["kind"])} · {talks_count_label(len(talks))} · Зограф: {zograf_count} · Рерих: {roerich_count}</div>{examples_html}</article>'
         )
 
         zograf_href = search_path(f'{item["label"]} Зографские чтения', "../")
@@ -3048,7 +3360,7 @@ def generate_publication_docs(data):
             </article>
             <article class="card">
                 <strong>Normalized Affiliations</strong>
-                <p>Raw affiliation strings listed in the programs are cleaned and mapped to canonical organization entities (e.g. "СПбГУ", "ИВР РАН") to track institutional participation trajectories.</p>
+                <p>Program strings are retained as provenance. City-only labels remain geographic signals, while institutional affiliations are published only when explicitly stated or supported by a dated, verified trajectory.</p>
             </article>
             <article class="card">
                 <strong>Broad Theme Labels</strong>
@@ -3125,7 +3437,7 @@ def generate_publication_docs(data):
             </article>
             <article class="card">
                 <strong>Historical and Temporary Affiliations</strong>
-                <p>Affiliations represent the institutional connection reported by the scholar at the time of the conference. They do not capture permanent employment history, retirements, or multiple simultaneous affiliations.</p>
+                <p>A city in a program is not treated as employment. An institutional label is shown only when stated in the program or supplied by a source-backed dated span; it is never carried beyond that span without new evidence.</p>
             </article>
             <article class="card">
                 <strong>Broad Theme Classification</strong>
@@ -3244,10 +3556,11 @@ def generate_sitemap():
         "known-limitations.html",
         "how-to-cite.html",
         "metrics-guide.html",
+        "classification-criteria.html",
         "networks.html",
     ]
     html_paths.extend(str(p).replace("\\", "/") for p in Path("scholars").glob("*.html") if not is_legacy_redirect(p))
-    for dirname in ("conferences", "themes", "topics", "generations", "meso", "gumilyov", "videos", "findings", "cities", "institutions"):
+    for dirname in ("conferences", "presentations", "themes", "topics", "generations", "meso", "gumilyov", "videos", "findings", "cities", "institutions"):
         html_paths.extend(str(p).replace("\\", "/") for p in Path(dirname).glob("*.html"))
     html_paths = sorted(set(html_paths), key=lambda p: (p.count("/"), p))
     urlset = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
@@ -3320,7 +3633,9 @@ def patch_index_stats(data):
     end_year = summary.get("end_year", 2025)
     years_count = summary.get("years_covered") or (end_year - start_year + 1)
     overlap = summary.get("overlap_scholars", 0)
-    youtube_total = youtube_video_total()
+    recorded_presentations = sum(
+        1 for talk in presentation_records_by_id(timeline_records(data)).values() if talk.get("videos")
+    )
 
     conn = sqlite3.connect(DB_PATH)
     series_max = dict(conn.execute("SELECT event_series_id, MAX(year) FROM event GROUP BY event_series_id").fetchall())
@@ -3343,11 +3658,20 @@ def patch_index_stats(data):
     html = replace_stat(html, "stat-talks-count", total_presentations)
     html = replace_stat(html, "stat-years-count", years_count)
     html = replace_stat(html, "stat-overlap-count", overlap)
-    if youtube_total:
-        html = replace_stat(html, "stat-youtube-count", youtube_total)
+    html = replace_stat(html, "stat-youtube-count", recorded_presentations)
 
     talks_ru_desc = f"{total_presentations} участий в {unique_presentations} уникальных докладах"
     talks_en_desc = f"{total_presentations} participations across {unique_presentations} unique talks"
+    corpus_pause_ru = (
+        "Показатели статьи рассчитаны для аналитического подкорпуса 220 ученых / "
+        f"895 уникальных докладов / 899 участий. Текущий расширенный каталог ({total_scholars} / "
+        f"{unique_presentations} / {total_presentations}) требует повторного расчета гипотез."
+    )
+    corpus_pause_en = (
+        "The article metrics were calculated for its analytical subcorpus of 220 scholars / "
+        f"895 unique talks / 899 participations. The expanded catalogue ({total_scholars} / "
+        f"{unique_presentations} / {total_presentations}) requires renewed hypothesis testing."
+    )
     html = re.sub(
         r'(<div class="stat-label" id="stat-talks-label">)[^<]+(</div>)',
         r'\g<1>Авторские участия\g<2>',
@@ -3361,9 +3685,57 @@ def patch_index_stats(data):
         count=1,
     )
     html = html.replace('statTalks: "Доклады и презентации"', 'statTalks: "Авторские участия"')
-    html = html.replace('statTalksDesc: "Извлечено из кэша программ конференций"', f'statTalksDesc: "{talks_ru_desc}"')
+    html = re.sub(
+        r'(ru:\s*\{.*?statTalksDesc:\s*")[^"]*(")',
+        rf'\g<1>{talks_ru_desc}\g<2>',
+        html,
+        count=1,
+        flags=re.DOTALL,
+    )
     html = html.replace('statTalks: "Presentations & Talks"', 'statTalks: "Author Participations"')
-    html = html.replace('statTalksDesc: "Parsed from program HTML caches"', f'statTalksDesc: "{talks_en_desc}"')
+    html = re.sub(
+        r'(en:\s*\{.*?statTalksDesc:\s*")[^"]*(")',
+        rf'\g<1>{talks_en_desc}\g<2>',
+        html,
+        count=1,
+        flags=re.DOTALL,
+    )
+    html = re.sub(
+        r'(<p class="findings-corpus-note" id="findings-corpus-note">)[^<]+(</p>)',
+        rf'\g<1>{corpus_pause_ru}\g<2>',
+        html,
+        count=1,
+    )
+    html = re.sub(
+        r'(ru:\s*\{.*?findingsCorpusNote:\s*")[^"]*(")',
+        rf'\g<1>{corpus_pause_ru}\g<2>',
+        html,
+        count=1,
+        flags=re.DOTALL,
+    )
+    html = re.sub(
+        r'(en:\s*\{.*?findingsCorpusNote:\s*")[^"]*(")',
+        rf'\g<1>{corpus_pause_en}\g<2>',
+        html,
+        count=1,
+        flags=re.DOTALL,
+    )
+    html = re.sub(
+        r'(<div class="stat-label" id="stat-youtube-label">)[^<]+(</div>)',
+        r'\g<1>Доклады с видео\g<2>',
+        html,
+        count=1,
+    )
+    html = re.sub(
+        r'(<div class="stat-desc" id="stat-youtube-desc">)[^<]+(</div>)',
+        r'\g<1>Сохранившиеся записи, привязанные к докладам\g<2>',
+        html,
+        count=1,
+    )
+    html = html.replace('statYoutube: "Видеозаписи"', 'statYoutube: "Доклады с видео"')
+    html = html.replace('statYoutubeDesc: "Зографские чтения 2023–2025 на YouTube"', 'statYoutubeDesc: "Сохранившиеся записи, привязанные к докладам"')
+    html = html.replace('statYoutube: "Video Recordings"', 'statYoutube: "Talks with Recordings"')
+    html = html.replace('statYoutubeDesc: "Zograf Readings 2023–2025 on YouTube"', 'statYoutubeDesc: "Surviving recordings attached to talks"')
 
     html = re.sub(
         r'(<div class="stat-desc" id="stat-years-desc">)Период с \d+ по \d+ годы(</div>)',
@@ -3415,7 +3787,7 @@ def patch_index_stats(data):
     print(
         f"Patched index.html: scholars={total_scholars}, presentations={total_presentations}, "
         f"years={start_year}–{end_year} ({years_count}), overlap={overlap}, "
-        f"Zograf {zograf_end}, Roerich {roerich_end}, youtube={youtube_total or 'n/a'}"
+        f"Zograf {zograf_end}, Roerich {roerich_end}, recorded_presentations={recorded_presentations}"
     )
 
 
@@ -3425,6 +3797,7 @@ def main():
     authority = load_authority_overrides()
     data = load_site_data("site_data.json")
     records = timeline_records(data)
+    attach_meso_codes(records)
     data.setdefault("summary", {}).update(fetch_db_summary())
 
     generate_home_assets(data)
@@ -3437,8 +3810,10 @@ def main():
     generate_english_landing(data)
     generate_findings_page(data, records)
     generate_generations_page(data)
+    generate_classification_criteria_page(records)
     generate_gumilyov_pages(data, records)
     generate_video_pages(data, records)
+    generate_presentation_pages(records)
     generate_conference_pages(data, records)
     generate_theme_pages(data, records)
     generate_legacy_theme_redirects()

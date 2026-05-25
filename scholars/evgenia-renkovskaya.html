@@ -66,10 +66,6 @@
       "affiliation": [
         {
           "@type": "Organization",
-          "name": "Москва"
-        },
-        {
-          "@type": "Organization",
           "name": "ИЯз РАН, ИВ РАН"
         }
       ],
@@ -210,6 +206,28 @@
             padding: 0.8rem 1rem;
             border-radius: 0 8px 8px 0;
         }
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            border-radius: 8px;
+            padding: 0.18rem 0.45rem;
+            margin-left: 0.45rem;
+            border: 1px solid var(--border);
+            color: var(--muted);
+            font-size: 0.82rem;
+            font-weight: 600;
+            vertical-align: middle;
+        }
+        .badge-online {
+            border-color: rgba(52, 211, 153, 0.4);
+            color: #6ee7b7;
+            background: rgba(16, 185, 129, 0.1);
+        }
+        .badge-video {
+            border-color: rgba(251, 191, 36, 0.44);
+            color: #fde68a;
+            background: rgba(217, 119, 6, 0.13);
+        }
         .footer {
             color: var(--soft);
             margin-top: 3rem;
@@ -259,6 +277,8 @@
             <a href="/IndologyScholars/generations/">Поколения</a>
             <a href="/IndologyScholars/meso/">Мезоуровни</a>
             <a href="/IndologyScholars/gumilyov/">Гумилев</a>
+            <a href="/IndologyScholars/classification-criteria.html">Критерии</a>
+            <a href="/IndologyScholars/presentations/">Доклады</a>
             <a href="/IndologyScholars/videos/">Видео</a>
             <a href="/IndologyScholars/findings/">Выводы</a>
             <a href="/IndologyScholars/cities/">Города</a>
@@ -288,7 +308,8 @@
         </section>
 
         <h2>Аффилиации</h2>
-        <div class="chip-row"><a class="chip" href="../cities/moskva.html">Москва</a><a class="chip" href="../institutions/iv-ran.html">ИЯз РАН, ИВ РАН</a></div>
+        <div class="chip-row"><a class="chip" href="../institutions/iv-ran.html">ИЯз РАН, ИВ РАН</a></div>
+
 
         <h2>Географические центры</h2>
         <div class="chip-row"><a class="chip" href="../cities/moskva.html">Москва</a></div>
@@ -304,7 +325,7 @@
         <h2>Доклады</h2>
         <section class="list">
         <article class="talk" id="PRES_2d9228675d">
-            <strong><a href="../conferences/zograf-2026.html#PRES_2d9228675d">Миф о Потопе и тыкве у племен западной Индии</a></strong>
+            <strong><a href="../presentations/PRES_2d9228675d.html">Миф о Потопе и тыкве у племен западной Индии</a></strong><span class="badge badge-online">Онлайн</span>
             <div class="meta">
                 <a href="../conferences/zograf-2026.html">Зографские чтения 2026</a>
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a> · <a href="../cities/moskva.html">Москва</a>
@@ -315,7 +336,7 @@
         </article>
 
         <article class="talk" id="PRES_7dd0a5eda6">
-            <strong><a href="../conferences/zograf-2025.html#PRES_7dd0a5eda6">Миф о Потопе и тыкве у дравидийских племен: к вопросу об истории контактов дравидов и мунда</a></strong>
+            <strong><a href="../presentations/PRES_7dd0a5eda6.html">Миф о Потопе и тыкве у дравидийских племен: к вопросу об истории контактов дравидов и мунда</a></strong>
             <div class="meta">
                 <a href="../conferences/zograf-2025.html">Зографские чтения 2025</a>
                 · <a href="../themes/history-and-culture.html">История, этнография и общество</a> · <a href="../cities/moskva.html">Москва</a>
@@ -326,7 +347,7 @@
         </article>
 
         <article class="talk" id="PRES_c8a43354fb">
-            <strong><a href="../conferences/zograf-2022.html#PRES_c8a43354fb">Диалектологическое исследование языка куллуи (&lt; химачали): задачи, методика, результаты</a></strong>
+            <strong><a href="../presentations/PRES_c8a43354fb.html">Диалектологическое исследование языка куллуи (&lt; химачали): задачи, методика, результаты</a></strong>
             <div class="meta">
                 <a href="../conferences/zograf-2022.html">Зографские чтения 2022</a>
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a> · <a href="../cities/moskva.html">Москва</a>
@@ -337,7 +358,7 @@
         </article>
 
         <article class="talk" id="PRES_ba86fb0e21">
-            <strong><a href="../conferences/zograf-2021.html#PRES_ba86fb0e21">Ранние священные тексты на соранг-сомпенг как ключ к истории создания культа «Матар Баном» у племени сора (южные мунда, Орисса)</a></strong>
+            <strong><a href="../presentations/PRES_ba86fb0e21.html">Ранние священные тексты на соранг-сомпенг как ключ к истории создания культа «Матар Баном» у племени сора (южные мунда, Орисса)</a></strong>
             <div class="meta">
                 <a href="../conferences/zograf-2021.html">Зографские чтения 2021</a>
                 · <a href="../themes/history-and-culture.html">История, этнография и общество</a> · <a href="../cities/moskva.html">Москва</a>
@@ -348,7 +369,7 @@
         </article>
 
         <article class="talk" id="PRES_a12fd2f1ff">
-            <strong><a href="../conferences/roerich-2021.html#PRES_a12fd2f1ff">Астрологические манускрипты на танкри из коллекции Кхубрама Кхушдиля (Химачал-Прадеш): особенности текстов и датировка</a></strong>
+            <strong><a href="../presentations/PRES_a12fd2f1ff.html">Астрологические манускрипты на танкри из коллекции Кхубрама Кхушдиля (Химачал-Прадеш): особенности текстов и датировка</a></strong>
             <div class="meta">
                 <a href="../conferences/roerich-2021.html">Рериховские чтения 2021</a>
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a>
@@ -359,7 +380,7 @@
         </article>
 
         <article class="talk" id="PRES_3c42887649">
-            <strong><a href="../conferences/roerich-2021.html#PRES_3c42887649">Жизнь и реалии Кумаона в народных песнях-ньоли</a></strong>
+            <strong><a href="../presentations/PRES_3c42887649.html">Жизнь и реалии Кумаона в народных песнях-ньоли</a></strong>
             <div class="meta">
                 <a href="../conferences/roerich-2021.html">Рериховские чтения 2021</a>
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a>
@@ -370,18 +391,18 @@
         </article>
 
         <article class="talk" id="PRES_59888a0019">
-            <strong><a href="../conferences/zograf-2020.html#PRES_59888a0019">Онлайн-корпус текстов на языках южных мунда: задачи и специфика</a></strong>
+            <strong><a href="../presentations/PRES_59888a0019.html">Онлайн-корпус текстов на языках южных мунда: задачи и специфика</a></strong><span class="badge badge-online">Онлайн</span><span class="badge badge-video">Видео</span>
             <div class="meta">
                 <a href="../conferences/zograf-2020.html">Зографские чтения 2020</a>
                 · <a href="../themes/linguistics-and-philology.html">Лингвистика и филология</a> · <a href="../cities/moskva.html">Москва</a>
             </div>
             <div class="meta talk-meta-row"><span>2020-05-14 · Четверг · 11:00 – 14:00</span><span class="talk-meta-session">Утреннее заседание</span></div>
             <div class="meta talk-context"><span class="context-label">Срезы:</span> <a class="mini-chip" href="../meso/linguistics-text-philology.html">Филология текста</a></div>
-            <div class="meta"><a href="https://www.youtube.com/watch?v=6ODttidAwgI" rel="noopener" target="_blank">▶ YouTube</a></div>
+            <div class="meta">Сохранившаяся запись: <a href="https://www.youtube.com/watch?v=6ODttidAwgI" rel="noopener" target="_blank">▶ YouTube</a></div>
         </article>
 
         <article class="talk" id="PRES_b3d5e8155e">
-            <strong><a href="../conferences/zograf-2019.html#PRES_b3d5e8155e">Поэзия народов мунда</a></strong>
+            <strong><a href="../presentations/PRES_b3d5e8155e.html">Поэзия народов мунда</a></strong>
             <div class="meta">
                 <a href="../conferences/zograf-2019.html">Зографские чтения 2019</a>
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a> · <a href="../cities/moskva.html">Москва</a>
@@ -393,7 +414,7 @@
     </section>
 
         <h2>Связанные авторы</h2>
-        <section class="grid"><article class="card"><strong><a href="anastasia-krylova.html">Крылова Анастасия Сергеевна</a></strong><div class="meta">10 докладов · <a href="../themes/linguistics-and-philology.html">Лингвистика и филология</a></div><div class="meta related-reasons">общие мезоуровни: Музейные собрания и коллекции, Новые индоарийские языки: хинди, урду, бенгали; та же площадка/год: Зографские чтения 2019, Зографские чтения 2020; общая рубрика: История, этнография и общество, Лингвистика и филология</div></article><article class="card"><strong><a href="svetlana-ryzhakova.html">Рыжакова Светлана Игоревна</a></strong><div class="meta">26 докладов · <a href="../themes/linguistics-and-philology.html">Лингвистика и филология</a></div><div class="meta related-reasons">общие мезоуровни: Дравидология / южноиндийский контур, Этнография, ритуал и перформанс; общие ключевые слова: орисса; та же площадка/год: Зографские чтения 2019, Зографские чтения 2020</div></article><article class="card"><strong><a href="natalia-korneeva.html">Корнеева Наталья Афанасьевна</a></strong><div class="meta">29 докладов · <a href="../themes/religion-and-philosophy.html">Религия и философия</a></div><div class="meta related-reasons">общие мезоуровни: Дравидология / южноиндийский контур, Этнография, ритуал и перформанс; та же площадка/год: Зографские чтения 2019, Зографские чтения 2021; общая рубрика: Лингвистика и филология</div></article><article class="card"><strong><a href="sergey-tavastsherna.html">Тавастшерна Сергей Сергеевич</a></strong><div class="meta">29 докладов · <a href="../themes/linguistics-and-philology.html">Лингвистика и филология</a></div><div class="meta related-reasons">общие мезоуровни: Музейные собрания и коллекции, Филология текста; та же площадка/год: Зографские чтения 2019, Зографские чтения 2021; общая рубрика: Лингвистика и филология</div></article><article class="card"><strong><a href="vasilkov-yaroslav.html">Васильков Ярослав Владимирович</a></strong><div class="meta">20 докладов · <a href="../themes/literature-and-poetry.html">Сравнительная мифология и эпос</a></div><div class="meta related-reasons">общие мезоуровни: Музейные собрания и коллекции, Этнография, ритуал и перформанс; та же площадка/год: Зографские чтения 2019, Зографские чтения 2021; общая рубрика: История, этнография и общество</div></article><article class="card"><strong><a href="albedil-margarita.html">Альбедиль Маргарита Федоровна</a></strong><div class="meta">19 докладов · <a href="../themes/religion-and-philosophy.html">Религия и философия</a></div><div class="meta related-reasons">общие мезоуровни: Дравидология / южноиндийский контур, Этнография, ритуал и перформанс; та же площадка/год: Зографские чтения 2019, Зографские чтения 2021; общая рубрика: Лингвистика и филология</div></article><article class="card"><strong><a href="shomakhmadov-safarali.html">Шомахмадов Сафарали Хайбуллоевич</a></strong><div class="meta">8 докладов · <a href="../themes/linguistics-and-philology.html">Лингвистика и филология</a></div><div class="meta related-reasons">общие мезоуровни: Музейные собрания и коллекции, Филология текста; та же площадка/год: Зографские чтения 2021, Зографские чтения 2022; общая рубрика: Лингвистика и филология</div></article><article class="card"><strong><a href="soboleva-elena.html">Соболева Елена Станиславовна</a></strong><div class="meta">8 докладов · <a href="../themes/unspecified.html">Разное / Не классифицировано</a></div><div class="meta related-reasons">общие мезоуровни: Музейные собрания и коллекции, Этнография, ритуал и перформанс; та же площадка/год: Зографские чтения 2020, Зографские чтения 2021</div></article></section>
+        <section class="grid"><article class="card"><strong><a href="anastasia-krylova.html">Крылова Анастасия Сергеевна</a></strong><div class="meta">10 докладов · <a href="../themes/linguistics-and-philology.html">Лингвистика и филология</a></div><div class="meta related-reasons">общие мезоуровни: Музейные собрания и коллекции, Новые индоарийские языки: хинди, урду, бенгали; та же площадка/год: Зографские чтения 2019, Зографские чтения 2020; общая рубрика: История, этнография и общество, Лингвистика и филология</div></article><article class="card"><strong><a href="svetlana-ryzhakova.html">Рыжакова Светлана Игоревна</a></strong><div class="meta">26 докладов · <a href="../themes/linguistics-and-philology.html">Лингвистика и филология</a></div><div class="meta related-reasons">общие мезоуровни: Дравидология / южноиндийский контур, Этнография, ритуал и перформанс; общие ключевые слова: орисса; та же площадка/год: Зографские чтения 2019, Зографские чтения 2020</div></article><article class="card"><strong><a href="natalia-korneeva.html">Корнеева Наталья Афанасьевна</a></strong><div class="meta">29 докладов · <a href="../themes/religion-and-philosophy.html">Религия и философия</a></div><div class="meta related-reasons">общие мезоуровни: Дравидология / южноиндийский контур, Этнография, ритуал и перформанс; та же площадка/год: Зографские чтения 2019, Зографские чтения 2021; общая рубрика: Лингвистика и филология</div></article><article class="card"><strong><a href="sergey-tavastsherna.html">Тавастшерна Сергей Сергеевич</a></strong><div class="meta">29 докладов · <a href="../themes/linguistics-and-philology.html">Лингвистика и филология</a></div><div class="meta related-reasons">общие мезоуровни: Музейные собрания и коллекции, Филология текста; та же площадка/год: Зографские чтения 2019, Зографские чтения 2021; общая рубрика: Лингвистика и филология</div></article><article class="card"><strong><a href="vasilkov-yaroslav.html">Васильков Ярослав Владимирович</a></strong><div class="meta">20 докладов · <a href="../themes/literature-and-poetry.html">Сравнительная мифология и эпос</a></div><div class="meta related-reasons">общие мезоуровни: Музейные собрания и коллекции, Этнография, ритуал и перформанс; та же площадка/год: Зографские чтения 2019, Зографские чтения 2021; общая рубрика: История, этнография и общество</div></article><article class="card"><strong><a href="albedil-margarita.html">Альбедиль Маргарита Федоровна</a></strong><div class="meta">19 докладов · <a href="../themes/religion-and-philosophy.html">Религия и философия</a></div><div class="meta related-reasons">общие мезоуровни: Дравидология / южноиндийский контур, Этнография, ритуал и перформанс; та же площадка/год: Зографские чтения 2019, Зографские чтения 2021; общая рубрика: Лингвистика и филология</div></article><article class="card"><strong><a href="shomakhmadov-safarali.html">Шомахмадов Сафарали Хайбуллоевич</a></strong><div class="meta">8 докладов · <a href="../themes/linguistics-and-philology.html">Лингвистика и филология</a></div><div class="meta related-reasons">общие мезоуровни: Музейные собрания и коллекции, Филология текста; та же площадка/год: Зографские чтения 2021, Зографские чтения 2022; общая рубрика: Лингвистика и филология</div></article><article class="card"><strong><a href="soboleva-elena.html">Соболева Елена Станиславовна</a></strong><div class="meta">8 докладов · <a href="../themes/academic-history.html">История индологии</a></div><div class="meta related-reasons">общие мезоуровни: Музейные собрания и коллекции, Этнография, ритуал и перформанс; та же площадка/год: Зографские чтения 2020, Зографские чтения 2021</div></article></section>
 
         <div class="footer">© 2026 Russian Indological Research Archive. Сгенерировано из нормализованного архива конференций.</div>
     </main>

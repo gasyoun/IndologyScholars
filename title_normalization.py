@@ -3,11 +3,14 @@ from __future__ import annotations
 
 import re
 
+from metadata_normalization import split_leading_affiliation
+
 
 TITLE_OVERRIDES_BY_PRESENTATION_ID = {
     # Zograf Readings 2006, source HTML line breaks inside titles.
     "PRES_8a6912982a": "О соотношении санскритского и тибетского текстов «Гимна Превосходящему богов» Шанкарасвамина",
-    "PRES_6066f65be0": "Технические приспособления для рубрикации корней в «Дхатупати» Панини",
+    "PRES_6066f65be0": "Технические приспособления для рубрикации корней в «Дхатупатхе» Панини",
+    "PRES_5b0c00b805": "Технические приспособления для рубрикации корней в «Дхатупатхе» Панини",
 
     # Zograf Readings 2022, source HTML wrapped the title into a separate line.
     "PRES_e8af614558": "Фольклор европейских рома (цыган) и мифы индийских племен",
@@ -72,6 +75,13 @@ TITLE_OVERRIDES_BY_PRESENTATION_ID = {
     "PRES_9970e6d559": "Об одном диафильме В. Чатопадаева из коллекции МАЭ РАН",
 }
 
+TITLE_EDITORIAL_NOTES_BY_PRESENTATION_ID = {
+    "PRES_5b0c00b805": (
+        "В официальной программе 2006 г. напечатано «Дхатупати»; "
+        "публичное название нормализовано по санскритскому Dhātupāṭha / धातुपाठ."
+    ),
+}
+
 
 THEME_OVERRIDES_BY_PRESENTATION_ID = {
     # Vasilkov: keep the profile and per-talk cards out of the fallback bucket.
@@ -128,8 +138,10 @@ def normalize_proper_name_casing(title: str) -> str:
 def canonical_title(presentation_id: str | None, title: str | None) -> str:
     """Return source-verified title override plus light typography cleanup."""
     cleaned = TITLE_OVERRIDES_BY_PRESENTATION_ID.get(str(presentation_id or ""), title or "")
+    cleaned, _embedded_affiliation = split_leading_affiliation(cleaned)
     cleaned = repair_random_hyphenation(cleaned)
     cleaned = normalize_proper_name_casing(cleaned)
     cleaned = re.sub(r"\s+", " ", cleaned)
     cleaned = re.sub(r"\s*\*+\s*$", "", cleaned)
+    cleaned = re.sub(r"\s*[\.\,;:]?\s*(?:онлайн|online|zoom)\.?\s*$", "", cleaned, flags=re.IGNORECASE)
     return cleaned.strip()
