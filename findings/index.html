@@ -308,44 +308,57 @@
             <strong>Корпус и статья пересчитаны</strong>
             <p>Показатели статьи рассчитаны для текущего расширенного каталога: 286 ученых, 1350 уникальных докладов и 1377 авторских участий. Классификация масштаба аргумента выполнена по всем докладам и повторно проверена для предварительных L2/L3.</p>
         </aside>
+
+        <style>
+            .finding-card {
+                display: flex;
+                flex-direction: column;
+                min-height: 100%;
+            }
+            .viz-stack {
+                display: grid;
+                gap: 0.58rem;
+                margin-top: 0.85rem;
+            }
+            .viz-label {
+                display: flex;
+                justify-content: space-between;
+                gap: 0.75rem;
+                color: var(--muted);
+                font-size: 0.84rem;
+            }
+            .viz-label b {
+                color: #fff;
+                white-space: nowrap;
+            }
+            .viz-track {
+                height: 0.55rem;
+                overflow: hidden;
+                border-radius: 999px;
+                background: rgba(255,255,255,0.08);
+            }
+            .viz-track span {
+                display: block;
+                height: 100%;
+                border-radius: inherit;
+                background: linear-gradient(90deg, var(--accent), var(--accent2));
+            }
+            .viz-note {
+                color: var(--soft);
+                font-size: 0.8rem;
+                line-height: 1.45;
+                margin-top: 0.55rem;
+            }
+        </style>
+
+        <h2>Сначала после сверки чисел</h2>
         <section class="grid">
+            <article class="card finding-card"><strong>H8. Смена оргкомитета: значимого сдвига нет</strong><div class="metric">p=0.7603</div><div class="meta">После сверки H8 можно показывать как отрицательный или осторожный результат: приток новичков, L1 и L2 не меняются статистически значимо.</div><div class="viz-stack"><div class="viz-row"><div class="viz-label"><span>Новички до 2024</span><b>24.9% (194/780)</b></div><div class="viz-track" aria-hidden="true"><span style="width:83.0%"></span></div></div><div class="viz-row"><div class="viz-label"><span>Новички 2025-2026</span><b>23.1% (27/117)</b></div><div class="viz-track" aria-hidden="true"><span style="width:77.0%"></span></div></div></div><div class="viz-note">p новичков=0.7603; p L1=0.8463; p L2=0.2619.</div></article><article class="card finding-card"><strong>H10. Сериализация редка и не сильнее у ядра</strong><div class="metric">2.6% / 5.7%</div><div class="meta">Сильная версия о том, что ядро чаще дробит темы на серии, не поддержана: относительная доля выше у периферии, хотя абсолютное число серий растет с общей активностью.</div><div class="viz-stack"><div class="viz-row"><div class="viz-label"><span>Ядро &gt;=5 докладов</span><b>2.6%</b></div><div class="viz-track" aria-hidden="true"><span style="width:43.3%"></span></div></div><div class="viz-row"><div class="viz-label"><span>Периферия &lt;5 докладов</span><b>5.7%</b></div><div class="viz-track" aria-hidden="true"><span style="width:95.0%"></span></div></div></div><div class="viz-note">Fisher p=0.0153; Spearman rho=0.276.</div></article>
+        </section>
 
-            <article class="card">
-                <strong>Слабое пересечение площадок</strong>
-                <div class="metric">40 / 128.3</div>
-                <div class="meta">На обеих площадках выступали 40 ученых, тогда как перестановочная модель при той же индивидуальной активности ожидает 128.3. Это главный количественный результат: поле связано, но межплощадочная проницаемость намного ниже простого ожидания.</div>
-            </article>
-
-            <article class="card">
-                <strong>Две разные публичные среды</strong>
-                <div class="metric">223 / 106</div>
-                <div class="meta">Зографские чтения шире по кругу участников, Рериховские компактнее и плотнее по ядру. Это не доказательство скрытого фильтра, а описание публично наблюдаемой структуры программ.</div>
-            </article>
-
-            <article class="card">
-                <strong>Тематическая асимметрия</strong>
-                <div class="metric">75.0% / 55.5%</div>
-                <div class="meta">В Рериховских чтениях классический и средневековый материал занимает 75.0% докладов, в Зографских - 55.5%. Различие видно не только социально, но и тематически.</div>
-            </article>
-
-            <article class="card">
-                <strong>Городская метка не равна месту работы</strong>
-                <div class="metric">71.0% / 9.6%</div>
-                <div class="meta">В Зографских программах город вместо учреждения опубликован значительно чаще, чем в Рериховских. Поэтому городской фильтр показывает публичную репрезентацию, а не автоматически занятость участника.</div>
-            </article>
-
-            <article class="card">
-                <strong>Микрокейс как нормальный жанр</strong>
-                <div class="metric">1155 / 1350</div>
-                <div class="meta">После полного DeepSeek-аудита шкала Гумилева показывает доминирование докладов об отдельном тексте, авторе, термине или локальном сюжете. Глобальных G3-заголовков осталось 10; их связь со старшим поколением не подтвердилась.</div>
-            </article>
-
-            <article class="card">
-                <strong>Видео - слой проверки, не вся выборка</strong>
-                <div class="metric">82 доклада</div>
-                <div class="meta">В базе есть прямые видеоссылки для 82 уникальных докладов (85 авторских карточек) при 178 строках YouTube-инвентаря. Видео полезно для проверки конкретных выступлений, но не заменяет полный корпус программ.</div>
-            </article>
-
+        <h2>Остальные 9 визуальных гипотез</h2>
+        <section class="grid">
+            <article class="card finding-card"><strong>1. Слабое пересечение площадок</strong><div class="metric">41 / 128.4</div><div class="meta">Наблюдаемое пересечение намного ниже нулевой модели при сохранении индивидуальной активности.</div><div class="viz-stack"><div class="viz-row"><div class="viz-label"><span>Наблюдаемое</span><b>41</b></div><div class="viz-track" aria-hidden="true"><span style="width:31.9%"></span></div></div><div class="viz-row"><div class="viz-label"><span>Ожидание модели</span><b>128.4</b></div><div class="viz-track" aria-hidden="true"><span style="width:100.0%"></span></div></div></div></article><article class="card finding-card"><strong>2. Компактность без обвинения</strong><div class="metric">54.3% / 64.2%</div><div class="meta">Возвращаемость и доля ядра визуализируемы, но bootstrap-различия между площадками не исключают ноль.</div><div class="viz-stack"><div class="viz-row"><div class="viz-label"><span>Зограф: удержание</span><b>54.3%</b></div><div class="viz-track" aria-hidden="true"><span style="width:77.6%"></span></div></div><div class="viz-row"><div class="viz-label"><span>Рерих: удержание</span><b>64.2%</b></div><div class="viz-track" aria-hidden="true"><span style="width:91.6%"></span></div></div><div class="viz-row"><div class="viz-label"><span>Зограф: ядро &gt;=5</span><b>31.2%</b></div><div class="viz-track" aria-hidden="true"><span style="width:69.4%"></span></div></div><div class="viz-row"><div class="viz-label"><span>Рерих: ядро &gt;=5</span><b>33.0%</b></div><div class="viz-track" aria-hidden="true"><span style="width:73.4%"></span></div></div></div><div class="viz-note">Разовые участники: Зограф 45.7%, Рерих 35.8%.</div></article><article class="card finding-card"><strong>3. Тематическая асимметрия</strong><div class="metric">75.0% / 55.5%</div><div class="meta">Классический и средневековый материал занимает большую долю в Рериховских чтениях, чем в Зографских.</div><div class="viz-stack"><div class="viz-row"><div class="viz-label"><span>Рерих: classic+medieval</span><b>75.0%</b></div><div class="viz-track" aria-hidden="true"><span style="width:93.8%"></span></div></div><div class="viz-row"><div class="viz-label"><span>Зограф: classic+medieval</span><b>55.5%</b></div><div class="viz-track" aria-hidden="true"><span style="width:69.4%"></span></div></div></div></article><article class="card finding-card"><strong>4. Городская метка не равна месту работы</strong><div class="metric">71.0% / 9.6%</div><div class="meta">Зографские программы гораздо чаще публикуют город вместо учреждения, поэтому город нужен как режим публичной репрезентации, а не как готовая аффилиация.</div><div class="viz-stack"><div class="viz-row"><div class="viz-label"><span>Зограф: только город</span><b>71.0%</b></div><div class="viz-track" aria-hidden="true"><span style="width:94.7%"></span></div></div><div class="viz-row"><div class="viz-label"><span>Рерих: только город</span><b>9.6%</b></div><div class="viz-track" aria-hidden="true"><span style="width:12.8%"></span></div></div></div></article><article class="card finding-card"><strong>5. География и возвращаемость</strong><div class="metric">31.7%</div><div class="meta">Региональная метка связана с более низкой наблюдаемой возвращаемостью; сами площадки при этом тянут разные городские профили.</div><div class="viz-stack"><div class="viz-row"><div class="viz-label"><span>Зограф: Москва</span><b>30.8%</b></div><div class="viz-track" aria-hidden="true"><span style="width:51.3%"></span></div></div><div class="viz-row"><div class="viz-label"><span>Рерих: Москва</span><b>54.5%</b></div><div class="viz-track" aria-hidden="true"><span style="width:90.8%"></span></div></div><div class="viz-row"><div class="viz-label"><span>Зограф: СПб</span><b>32.2%</b></div><div class="viz-track" aria-hidden="true"><span style="width:53.7%"></span></div></div><div class="viz-row"><div class="viz-label"><span>Рерих: СПб</span><b>6.9%</b></div><div class="viz-track" aria-hidden="true"><span style="width:11.5%"></span></div></div><div class="viz-row"><div class="viz-label"><span>Регионы/ино: удержание</span><b>31.7%</b></div><div class="viz-track" aria-hidden="true"><span style="width:45.3%"></span></div></div></div><div class="viz-note">Для сравнения: Москва 63.1%, СПб 64.6%.</div></article><article class="card finding-card"><strong>6. Микрокейс как основной жанр</strong><div class="metric">1155 / 1350</div><div class="meta">Шкала Гумилева хорошо ложится на сайт: подавляющее большинство заголовков работает на микроуровне, а глобальных G3 очень мало.</div><div class="viz-stack"><div class="viz-row"><div class="viz-label"><span>G1 микро</span><b>1155</b></div><div class="viz-track" aria-hidden="true"><span style="width:85.6%"></span></div></div><div class="viz-row"><div class="viz-label"><span>G2 регион/традиция</span><b>185</b></div><div class="viz-track" aria-hidden="true"><span style="width:13.7%"></span></div></div><div class="viz-row"><div class="viz-label"><span>G3 глобально</span><b>10</b></div><div class="viz-track" aria-hidden="true"><span style="width:0.7%"></span></div></div></div></article><article class="card finding-card"><strong>7. Видео как проверочный слой</strong><div class="metric">82 / 178</div><div class="meta">Видео можно показывать рядом с докладами, но оно остается неполным слоем проверки, а не самостоятельной выборкой для выводов.</div><div class="viz-stack"><div class="viz-row"><div class="viz-label"><span>Привязано к докладам</span><b>82</b></div><div class="viz-track" aria-hidden="true"><span style="width:46.1%"></span></div></div><div class="viz-row"><div class="viz-label"><span>auto mapping</span><b>89</b></div><div class="viz-track" aria-hidden="true"><span style="width:50.0%"></span></div></div><div class="viz-row"><div class="viz-label"><span>needs review</span><b>65</b></div><div class="viz-track" aria-hidden="true"><span style="width:36.5%"></span></div></div></div><div class="viz-note">Авторских карточек с видео: 85; skip: 24.</div></article><article class="card finding-card"><strong>8. Онлайн-2020 как форматный шок</strong><div class="metric">44 / 44</div><div class="meta">Онлайн-режим лучше визуализировать как метаданные формата участия: сильный пик 2020 г. не превращается сам по себе в доказанную новую когорту.</div><div class="viz-stack"><div class="viz-row"><div class="viz-label"><span>Зограф 2020 онлайн</span><b>100.0%</b></div><div class="viz-track" aria-hidden="true"><span style="width:100.0%"></span></div></div><div class="viz-row"><div class="viz-label"><span>Зограф 2025 онлайн</span><b>26.8%</b></div><div class="viz-track" aria-hidden="true"><span style="width:26.8%"></span></div></div><div class="viz-row"><div class="viz-label"><span>Зограф 2026 онлайн</span><b>1.7%</b></div><div class="viz-track" aria-hidden="true"><span style="width:1.7%"></span></div></div></div><div class="viz-note">Повторяющихся онлайн-участников после 2020: 3.</div></article><article class="card finding-card"><strong>9. Мосты видны лучше через сессии</strong><div class="metric">41 человек</div><div class="meta">Сессионный граф позволяет показать не только общую перекрестную когорту, но и посредников, которых обычная сумма выступлений сглаживает.</div><div class="viz-stack"><div class="viz-row"><div class="viz-label"><span>ИВ РАН</span><b>12</b></div><div class="viz-track" aria-hidden="true"><span style="width:29.3%"></span></div></div><div class="viz-row"><div class="viz-label"><span>ИКВИА/ВШЭ</span><b>8</b></div><div class="viz-track" aria-hidden="true"><span style="width:19.5%"></span></div></div><div class="viz-row"><div class="viz-label"><span>ИСАА МГУ</span><b>8</b></div><div class="viz-track" aria-hidden="true"><span style="width:19.5%"></span></div></div></div><div class="viz-note">Топ сессионных посредников: Рыжакова Светлана Игоревна, Лысенко Виктория Георгиевна, Цветкова Светлана Олеговна. Институциональные группы: ИВ РАН=12; ИКВИА/ВШЭ=8; ИСАА МГУ=8.</div></article>
         </section>
 
         <h2>Как читать эти числа</h2>
@@ -378,11 +391,11 @@
             </div>
         </section>
 
-        <h2>Что считать следующими гипотезами</h2>
+        <h2>Что пока держать в очереди проверки</h2>
         <section class="grid">
-            <article class="card"><strong>Authority-слой для городов</strong><div class="meta">Связать городские метки программ с реальными биографическими и институциональными траекториями, чтобы проверить, где региональность является местом работы, а где - режимом публикации.</div></article>
-            <article class="card"><strong>Публикационная конверсия</strong><div class="meta">Проверить, какие доклады стали статьями, сборниками или устойчивыми исследовательскими сериями. Это отделит конференционную видимость от долговременного научного следа.</div></article>
-            <article class="card"><strong>Возрастная гипотеза G3</strong><div class="meta">Проверка расширенного корпуса не подтвердила преимущественно старший возраст авторов широких обобщений. Этот отрицательный результат важен для будущего пополнения authority-слоя.</div></article>
+            <article class="card"><strong>Публикационная конверсия</strong><div class="meta">Пока не выносить как вывод: в БД есть PDF-источники, но нужен слой сопоставления доклада с публикацией, сборником или устойчивой серией.</div></article>
+            <article class="card"><strong>Authority-слой для городов</strong><div class="meta">Городские метки уже можно визуализировать как публичную репрезентацию, но проверка реального места работы требует биографических и институциональных authority-записей.</div></article>
+            <article class="card"><strong>Возрастная гипотеза G3</strong><div class="meta">Расширенный корпус не подтвердил старший возраст авторов широких обобщений; этот результат лучше держать как отрицательный контроль, а не как центральную визуальную гипотезу.</div></article>
         </section>
 
         <aside class="caveat-block" role="note" aria-label="Scope note">

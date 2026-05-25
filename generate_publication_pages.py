@@ -2395,6 +2395,265 @@ def generate_findings_page(data, records):
             """
         )
 
+    def as_float(value, default=0.0):
+        try:
+            return float(str(value).strip().replace(",", "."))
+        except (TypeError, ValueError):
+            return default
+
+    def as_int(value, default=0):
+        try:
+            return int(float(str(value).strip().replace(",", ".")))
+        except (TypeError, ValueError):
+            return default
+
+    workup_path = Path("article/hypothesis_output/hypothesis_workup.md")
+    workup_text = workup_path.read_text(encoding="utf-8") if workup_path.exists() else ""
+
+    def extract_float(pattern, default):
+        match = re.search(pattern, workup_text, flags=re.DOTALL)
+        return as_float(match.group(1), default) if match else default
+
+    h8_newcomer_match = re.search(
+        r"newcomer rate\).*?([0-9.]+)% \(([^)]+)\).*?([0-9.]+)% \(([^)]+)\).*?p=([0-9.]+)",
+        workup_text,
+        flags=re.DOTALL,
+    )
+    if h8_newcomer_match:
+        h8_old_rate = as_float(h8_newcomer_match.group(1), 24.9)
+        h8_old_n = h8_newcomer_match.group(2)
+        h8_new_rate = as_float(h8_newcomer_match.group(3), 23.1)
+        h8_new_n = h8_newcomer_match.group(4)
+        h8_newcomer_p = as_float(h8_newcomer_match.group(5), 0.7603)
+    else:
+        h8_old_rate, h8_old_n = 24.9, "194/780"
+        h8_new_rate, h8_new_n = 23.1, "27/117"
+        h8_newcomer_p = 0.7603
+    h8_l1_p = extract_float(r"Тематический дрейф L1 .*?p=([0-9.]+)", 0.8463)
+    h8_l2_p = extract_float(r"Тематический дрейф L2 .*?p=([0-9.]+)", 0.2619)
+
+    h10_core_rate = extract_float(r"ядра.*?: ([0-9.]+)%", 2.6)
+    h10_periphery_rate = extract_float(r"периферии.*?: ([0-9.]+)%", 5.7)
+    h10_fisher_p = extract_float(r"Фишера.*?: p=([0-9.]+)", 0.0153)
+    h10_rho = extract_float(r"rho=([0-9.]+)", 0.276)
+
+    metrics_ci = load_csv_rows("article/hypothesis_output/appendix_g_metrics_ci.csv")
+    z_once = as_float(metrics_ci[0].get("point"), 45.7) if len(metrics_ci) > 0 else 45.7
+    z_retention = as_float(metrics_ci[1].get("point"), 54.3) if len(metrics_ci) > 1 else 54.3
+    z_core = as_float(metrics_ci[2].get("point"), 31.2) if len(metrics_ci) > 2 else 31.2
+    r_once = as_float(metrics_ci[4].get("point"), 35.8) if len(metrics_ci) > 4 else 35.8
+    r_retention = as_float(metrics_ci[5].get("point"), 64.2) if len(metrics_ci) > 5 else 64.2
+    r_core = as_float(metrics_ci[6].get("point"), 33.0) if len(metrics_ci) > 6 else 33.0
+
+    geo_distribution = {
+        row.get("city", ""): row
+        for row in load_csv_rows("article/hypothesis_output/geographic_presentation_distribution.csv")
+    }
+    geo_retention = {
+        row.get("city", ""): row
+        for row in load_csv_rows("article/hypothesis_output/geographic_speaker_retention.csv")
+    }
+    z_spb = as_float(geo_distribution.get("SPb", {}).get("zograf_pct"), 32.2)
+    z_moscow = as_float(geo_distribution.get("Moscow", {}).get("zograf_pct"), 30.8)
+    r_spb = as_float(geo_distribution.get("SPb", {}).get("roerich_pct"), 6.9)
+    r_moscow = as_float(geo_distribution.get("Moscow", {}).get("roerich_pct"), 54.5)
+    regions_retention = as_float(geo_retention.get("Regions/Foreign", {}).get("retention_pct"), 31.7)
+    moscow_retention = as_float(geo_retention.get("Moscow", {}).get("retention_pct"), 63.1)
+    spb_retention = as_float(geo_retention.get("SPb", {}).get("retention_pct"), 64.6)
+
+    video_status = {
+        row.get("status", ""): as_int(row.get("videos"), 0)
+        for row in load_csv_rows("article/hypothesis_output/video_mapping_status.csv")
+    }
+    online_rows = load_csv_rows("analytics_output/online_share_by_year.csv")
+    online_by_event = {row.get("event_id", ""): row for row in online_rows}
+    z2020_online = as_int(online_by_event.get("E2020", {}).get("n_online"), 44)
+    z2020_total = z2020_online + as_int(online_by_event.get("E2020", {}).get("n_offline"), 0)
+    z2020_share = as_float(online_by_event.get("E2020", {}).get("online_share_pct"), 100.0)
+    z2025_share = as_float(online_by_event.get("E2025", {}).get("online_share_pct"), 26.8)
+    z2026_share = as_float(online_by_event.get("E2026", {}).get("online_share_pct"), 1.7)
+    online_repeaters = len(load_csv_rows("analytics_output/online_repeaters_2020_plus.csv"))
+
+    session_bridges = load_csv_rows("article/hypothesis_output/network_bridges_session.csv")
+    top_session_names = ", ".join(row.get("display_name", "") for row in session_bridges[:3])
+    institution_bridges = load_csv_rows("article/hypothesis_output/institution_bridge_summary.csv")[:3]
+    top_institution_text = "; ".join(f"{row.get('affiliation_group')}={row.get('cross_cohort_people')}" for row in institution_bridges)
+
+    def bar_row(label, value, max_value=100.0, value_label=None, note=""):
+        numeric = as_float(value, 0.0)
+        maximum = max(as_float(max_value, 100.0), 0.001)
+        width = max(0.0, min(100.0, 100.0 * numeric / maximum))
+        if value_label is None:
+            value_label = f"{numeric:.1f}"
+        note_html = f'<div class="viz-note">{esc(note)}</div>' if note else ""
+        return (
+            '<div class="viz-row">'
+            f'<div class="viz-label"><span>{esc(label)}</span><b>{esc(value_label)}</b></div>'
+            f'<div class="viz-track" aria-hidden="true"><span style="width:{width:.1f}%"></span></div>'
+            f"{note_html}</div>"
+        )
+
+    def finding_card(title, metric, text, visual="", note=""):
+        visual_html = f'<div class="viz-stack">{visual}</div>' if visual else ""
+        note_html = f'<div class="viz-note">{esc(note)}</div>' if note else ""
+        return (
+            '<article class="card finding-card">'
+            f'<strong>{esc(title)}</strong>'
+            f'<div class="metric">{esc(metric)}</div>'
+            f'<div class="meta">{esc(text)}</div>'
+            f'{visual_html}{note_html}'
+            '</article>'
+        )
+
+    checked_cards = [
+        finding_card(
+            "H8. Смена оргкомитета: значимого сдвига нет",
+            f"p={h8_newcomer_p:.4f}",
+            "После сверки H8 можно показывать как отрицательный или осторожный результат: приток новичков, L1 и L2 не меняются статистически значимо.",
+            bar_row("Новички до 2024", h8_old_rate, 30, f"{h8_old_rate:.1f}% ({h8_old_n})")
+            + bar_row("Новички 2025-2026", h8_new_rate, 30, f"{h8_new_rate:.1f}% ({h8_new_n})"),
+            f"p новичков={h8_newcomer_p:.4f}; p L1={h8_l1_p:.4f}; p L2={h8_l2_p:.4f}.",
+        ),
+        finding_card(
+            "H10. Сериализация редка и не сильнее у ядра",
+            f"{h10_core_rate:.1f}% / {h10_periphery_rate:.1f}%",
+            "Сильная версия о том, что ядро чаще дробит темы на серии, не поддержана: относительная доля выше у периферии, хотя абсолютное число серий растет с общей активностью.",
+            bar_row("Ядро >=5 докладов", h10_core_rate, 6, f"{h10_core_rate:.1f}%")
+            + bar_row("Периферия <5 докладов", h10_periphery_rate, 6, f"{h10_periphery_rate:.1f}%"),
+            f"Fisher p={h10_fisher_p:.4f}; Spearman rho={h10_rho:.3f}.",
+        ),
+    ]
+
+    hypothesis_cards = [
+        finding_card(
+            "1. Слабое пересечение площадок",
+            f"{overlap} / {expected_overlap:.1f}",
+            "Наблюдаемое пересечение намного ниже нулевой модели при сохранении индивидуальной активности.",
+            bar_row("Наблюдаемое", overlap, expected_overlap, str(overlap))
+            + bar_row("Ожидание модели", expected_overlap, expected_overlap, f"{expected_overlap:.1f}"),
+        ),
+        finding_card(
+            "2. Компактность без обвинения",
+            f"{z_retention:.1f}% / {r_retention:.1f}%",
+            "Возвращаемость и доля ядра визуализируемы, но bootstrap-различия между площадками не исключают ноль.",
+            bar_row("Зограф: удержание", z_retention, 70, f"{z_retention:.1f}%")
+            + bar_row("Рерих: удержание", r_retention, 70, f"{r_retention:.1f}%")
+            + bar_row("Зограф: ядро >=5", z_core, 45, f"{z_core:.1f}%")
+            + bar_row("Рерих: ядро >=5", r_core, 45, f"{r_core:.1f}%"),
+            f"Разовые участники: Зограф {z_once:.1f}%, Рерих {r_once:.1f}%.",
+        ),
+        finding_card(
+            "3. Тематическая асимметрия",
+            f"{r_classical_medieval}% / {z_classical_medieval}%",
+            "Классический и средневековый материал занимает большую долю в Рериховских чтениях, чем в Зографских.",
+            bar_row("Рерих: classic+medieval", r_classical_medieval, 80, f"{r_classical_medieval:.1f}%")
+            + bar_row("Зограф: classic+medieval", z_classical_medieval, 80, f"{z_classical_medieval:.1f}%"),
+        ),
+        finding_card(
+            "4. Городская метка не равна месту работы",
+            f"{z_city_only}% / {r_city_only}%",
+            "Зографские программы гораздо чаще публикуют город вместо учреждения, поэтому город нужен как режим публичной репрезентации, а не как готовая аффилиация.",
+            bar_row("Зограф: только город", z_city_only, 75, f"{as_float(z_city_only):.1f}%")
+            + bar_row("Рерих: только город", r_city_only, 75, f"{as_float(r_city_only):.1f}%"),
+        ),
+        finding_card(
+            "5. География и возвращаемость",
+            f"{regions_retention:.1f}%",
+            "Региональная метка связана с более низкой наблюдаемой возвращаемостью; сами площадки при этом тянут разные городские профили.",
+            bar_row("Зограф: Москва", z_moscow, 60, f"{z_moscow:.1f}%")
+            + bar_row("Рерих: Москва", r_moscow, 60, f"{r_moscow:.1f}%")
+            + bar_row("Зограф: СПб", z_spb, 60, f"{z_spb:.1f}%")
+            + bar_row("Рерих: СПб", r_spb, 60, f"{r_spb:.1f}%")
+            + bar_row("Регионы/ино: удержание", regions_retention, 70, f"{regions_retention:.1f}%"),
+            f"Для сравнения: Москва {moscow_retention:.1f}%, СПб {spb_retention:.1f}%.",
+        ),
+        finding_card(
+            "6. Микрокейс как основной жанр",
+            f"{g1_count} / {unique_presentations}",
+            "Шкала Гумилева хорошо ложится на сайт: подавляющее большинство заголовков работает на микроуровне, а глобальных G3 очень мало.",
+            bar_row("G1 микро", g1_count, unique_presentations, str(g1_count))
+            + bar_row("G2 регион/традиция", scale.get("2", 0), unique_presentations, str(scale.get("2", 0)))
+            + bar_row("G3 глобально", g3_count, unique_presentations, str(g3_count)),
+        ),
+        finding_card(
+            "7. Видео как проверочный слой",
+            f"{video_presentations} / {youtube_rows}",
+            "Видео можно показывать рядом с докладами, но оно остается неполным слоем проверки, а не самостоятельной выборкой для выводов.",
+            bar_row("Привязано к докладам", video_presentations, youtube_rows, str(video_presentations))
+            + bar_row("auto mapping", video_status.get("auto", 0), youtube_rows, str(video_status.get("auto", 0)))
+            + bar_row("needs review", video_status.get("needs_review", 0), youtube_rows, str(video_status.get("needs_review", 0))),
+            f"Авторских карточек с видео: {video_author_cards}; skip: {video_status.get('skip', 0)}.",
+        ),
+        finding_card(
+            "8. Онлайн-2020 как форматный шок",
+            f"{z2020_online} / {z2020_total}",
+            "Онлайн-режим лучше визуализировать как метаданные формата участия: сильный пик 2020 г. не превращается сам по себе в доказанную новую когорту.",
+            bar_row("Зограф 2020 онлайн", z2020_share, 100, f"{z2020_share:.1f}%")
+            + bar_row("Зограф 2025 онлайн", z2025_share, 100, f"{z2025_share:.1f}%")
+            + bar_row("Зограф 2026 онлайн", z2026_share, 100, f"{z2026_share:.1f}%"),
+            f"Повторяющихся онлайн-участников после 2020: {online_repeaters}.",
+        ),
+        finding_card(
+            "9. Мосты видны лучше через сессии",
+            f"{overlap} человек",
+            "Сессионный граф позволяет показать не только общую перекрестную когорту, но и посредников, которых обычная сумма выступлений сглаживает.",
+            "".join(
+                bar_row(
+                    row.get("affiliation_group", ""),
+                    row.get("cross_cohort_people", 0),
+                    max(overlap, 1),
+                    str(row.get("cross_cohort_people", 0)),
+                )
+                for row in institution_bridges
+            ),
+            f"Топ сессионных посредников: {top_session_names}. Институциональные группы: {top_institution_text}.",
+        ),
+    ]
+
+    findings_style = """
+        <style>
+            .finding-card {
+                display: flex;
+                flex-direction: column;
+                min-height: 100%;
+            }
+            .viz-stack {
+                display: grid;
+                gap: 0.58rem;
+                margin-top: 0.85rem;
+            }
+            .viz-label {
+                display: flex;
+                justify-content: space-between;
+                gap: 0.75rem;
+                color: var(--muted);
+                font-size: 0.84rem;
+            }
+            .viz-label b {
+                color: #fff;
+                white-space: nowrap;
+            }
+            .viz-track {
+                height: 0.55rem;
+                overflow: hidden;
+                border-radius: 999px;
+                background: rgba(255,255,255,0.08);
+            }
+            .viz-track span {
+                display: block;
+                height: 100%;
+                border-radius: inherit;
+                background: linear-gradient(90deg, var(--accent), var(--accent2));
+            }
+            .viz-note {
+                color: var(--soft);
+                font-size: 0.8rem;
+                line-height: 1.45;
+                margin-top: 0.55rem;
+            }
+        </style>
+    """
+
     body = f"""
         <header>
             <h1>Главные выводы статьи</h1>
@@ -2404,8 +2663,15 @@ def generate_findings_page(data, records):
             <strong>Корпус и статья пересчитаны</strong>
             <p>Показатели статьи рассчитаны для текущего расширенного каталога: {esc(total_scholars)} ученых, {esc(unique_presentations)} уникальных докладов и {esc(author_participations)} авторских участий. Классификация масштаба аргумента выполнена по всем докладам и повторно проверена для предварительных L2/L3.</p>
         </aside>
+        {findings_style}
+        <h2>Сначала после сверки чисел</h2>
         <section class="grid">
-            {''.join(card_html)}
+            {''.join(checked_cards)}
+        </section>
+
+        <h2>Остальные 9 визуальных гипотез</h2>
+        <section class="grid">
+            {''.join(hypothesis_cards)}
         </section>
 
         <h2>Как читать эти числа</h2>
@@ -2438,11 +2704,11 @@ def generate_findings_page(data, records):
             </div>
         </section>
 
-        <h2>Что считать следующими гипотезами</h2>
+        <h2>Что пока держать в очереди проверки</h2>
         <section class="grid">
-            <article class="card"><strong>Authority-слой для городов</strong><div class="meta">Связать городские метки программ с реальными биографическими и институциональными траекториями, чтобы проверить, где региональность является местом работы, а где - режимом публикации.</div></article>
-            <article class="card"><strong>Публикационная конверсия</strong><div class="meta">Проверить, какие доклады стали статьями, сборниками или устойчивыми исследовательскими сериями. Это отделит конференционную видимость от долговременного научного следа.</div></article>
-            <article class="card"><strong>Возрастная гипотеза G3</strong><div class="meta">Проверка расширенного корпуса не подтвердила преимущественно старший возраст авторов широких обобщений. Этот отрицательный результат важен для будущего пополнения authority-слоя.</div></article>
+            <article class="card"><strong>Публикационная конверсия</strong><div class="meta">Пока не выносить как вывод: в БД есть PDF-источники, но нужен слой сопоставления доклада с публикацией, сборником или устойчивой серией.</div></article>
+            <article class="card"><strong>Authority-слой для городов</strong><div class="meta">Городские метки уже можно визуализировать как публичную репрезентацию, но проверка реального места работы требует биографических и институциональных authority-записей.</div></article>
+            <article class="card"><strong>Возрастная гипотеза G3</strong><div class="meta">Расширенный корпус не подтвердил старший возраст авторов широких обобщений; этот результат лучше держать как отрицательный контроль, а не как центральную визуальную гипотезу.</div></article>
         </section>
 
         <aside class="caveat-block" role="note" aria-label="Scope note">

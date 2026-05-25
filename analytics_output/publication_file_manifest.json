@@ -675,8 +675,8 @@
     },
     {
       "path": "findings/index.html",
-      "size_bytes": 21310,
-      "sha256": "d2c56580e660982e84015dee7d22bbd64af605e1b07839dc15a23d09262f5d61"
+      "size_bytes": 30597,
+      "sha256": "4521ddf7bbadfaec2a90cdf1f69458c89212da703bfd6b8e178ad9191fdfa7c7"
     },
     {
       "path": "generations/index.html",
@@ -711,7 +711,7 @@
     {
       "path": "index.html",
       "size_bytes": 175391,
-      "sha256": "287bc7c242cb85f2c478d07091479fb2caa9a1f21f61069a2a51b45b2fbfdeb9"
+      "sha256": "ccac53946ee9241869bc034678c51f37cf7e8846acaa42fa40e13ff75b253a42"
     },
     {
       "path": "institutions/gosudarstvennyi-ermitazh.html",
