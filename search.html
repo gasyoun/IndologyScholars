@@ -214,6 +214,7 @@
             <a href="/IndologyScholars/topics/">Сюжеты</a>
             <a href="/IndologyScholars/generations/">Поколения</a>
             <a href="/IndologyScholars/meso/">Мезоуровни</a>
+            <a href="/IndologyScholars/keywords/">Ключевые слова</a>
             <a href="/IndologyScholars/gumilyov/">Гумилев</a>
             <a href="/IndologyScholars/classification-criteria.html">Критерии</a>
             <a href="/IndologyScholars/presentations/">Доклады</a>
@@ -239,7 +240,7 @@
         const results = document.getElementById('results');
         const input = document.getElementById('q');
         let docs = [];
-        const typeLabels = {'Scholar':'Автор', 'Presentation':'Доклад', 'Topic':'Сюжет', 'Generation':'Поколения', 'Meso-level':'Мезоуровень', 'Gumilyov':'Гумилев', 'Video':'Видео', 'Finding':'Вывод'};
+        const typeLabels = {'Scholar':'Автор', 'Presentation':'Доклад', 'Topic':'Сюжет', 'Generation':'Поколения', 'Meso-level':'Мезоуровень', 'Keyword':'Ключевые слова', 'Gumilyov':'Гумилев', 'Video':'Видео', 'Finding':'Вывод'};
         const initialQuery = new URLSearchParams(location.search).get('q') || '';
         input.value = initialQuery;
         fetch('search-index.json').then(r => r.json()).then(data => { docs = data; render(input.value); });

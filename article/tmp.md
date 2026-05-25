@@ -260,3 +260,47 @@ PRES_7f70e3b9a4 - дурное название для страницы докл
 3) не может быть
 https://gasyoun.github.io/IndologyScholars/meso/
 с 1 докладом. Пересчитать все доклады, посмотреть какие уровни разумно выделить дополнительно. Дополнить те категории, которые лысые
+
+
+
+1)
+https://gasyoun.github.io/IndologyScholars/generations/
+Год рождения не установлен - их чересчур много?
+В неопознанных есть А. Крылова, хотя в опознанных давно есть https://gasyoun.github.io/IndologyScholars/scholars/anastasia-krylova.html
+можно ли утсранить таких приведений? То есть найти пару и слить вместе.
+
+Л. Бурмистров
+https://gasyoun.github.io/IndologyScholars/scholars/burmistrov-sergei.html
+
+и таких много
+
+2)
+Наличие страницы или упомнания на википедии - как признак авторитета, отдельно отметить обратной ссылкой Wikipedia.
+
+А. М. Самозванцев - почему нигде не искал? https://ru.wikipedia.org/wiki/%D0%A1%D0%B0%D0%BC%D0%BE%D0%B7%D0%B2%D0%B0%D0%BD%D1%86%D0%B5%D0%B2,_%D0%90%D0%BD%D0%B4%D1%80%D0%B5%D0%B9_%D0%9C%D0%B8%D1%85%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D0%B8%D1%87
+
+В. Г. Эрман
+https://ru.wikipedia.org/wiki/%D0%AD%D1%80%D0%BC%D0%B0%D0%BD,_%D0%92%D0%BB%D0%B0%D0%B4%D0%B8%D0%BC%D0%B8%D1%80_%D0%93%D0%B0%D0%BD%D1%81%D0%BE%D0%B2%D0%B8%D1%87
+
+В. Кулланда
+https://ru.wikipedia.org/wiki/%D0%9A%D1%83%D0%BB%D0%BB%D0%B0%D0%BD%D0%B4%D0%B0,_%D0%A1%D0%B5%D1%80%D0%B3%D0%B5%D0%B9_%D0%92%D1%81%D0%B5%D0%B2%D0%BE%D0%BB%D0%BE%D0%B4%D0%BE%D0%B2%D0%B8%D1%87
+
+И. Ф. Попова
+https://ru.wikipedia.org/wiki/%D0%9F%D0%BE%D0%BF%D0%BE%D0%B2%D0%B0,_%D0%98%D1%80%D0%B8%D0%BD%D0%B0_%D0%A4%D1%91%D0%B4%D0%BE%D1%80%D0%BE%D0%B2%D0%BD%D0%B0
+
+Невелева, Светлана Леонидовна
+https://ru.wikipedia.org/wiki/%D0%9D%D0%B5%D0%B2%D0%B5%D0%BB%D0%B5%D0%B2%D0%B0,_%D0%A1%D0%B2%D0%B5%D1%82%D0%BB%D0%B0%D0%BD%D0%B0_%D0%9B%D0%B5%D0%BE%D0%BD%D0%B8%D0%B4%D0%BE%D0%B2%D0%BD%D0%B0
+https://gasyoun.github.io/IndologyScholars/scholars/neveleva-svetlana.html
+
+3)
+https://gasyoun.github.io/IndologyScholars/scholars/azarkina.html
+Аффилиации
+Нет данных
+Географические центры
+Нет данных
+
+СПбГУ, Санкт-Петербург, добавить ссылку VK на https://vk.com/m.azarkina
+
+4)
+https://gasyoun.github.io/IndologyScholars/generations/
+писать статистику сколько штук после заголовков, типа Поколение 1960-х (26)

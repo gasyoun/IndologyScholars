@@ -1,6 +1,7 @@
 import html
 import json
 import re
+from collections import Counter
 from pathlib import Path
 
 from classification_overrides import THEME_LABEL_OVERRIDES
@@ -80,6 +81,37 @@ def slugify(value, fallback="item"):
     text = re.sub(r"[^a-z0-9]+", "-", text)
     text = re.sub(r"-+", "-", text).strip("-")
     return text or fallback
+
+
+def build_presentation_slug_map(records, id_key="presentation_id", title_key="title", max_length=96):
+    """Build stable title-based slugs for presentation pages."""
+    bases = {}
+    for record in records:
+        pid = clean_text(record.get(id_key) or "")
+        if not pid or pid in bases:
+            continue
+        fallback = pid.lower().replace("_", "-")
+        base = slugify(record.get(title_key) or "", fallback=fallback)
+        if len(base) > max_length:
+            base = base[:max_length].strip("-") or fallback
+        bases[pid] = base
+
+    counts = Counter(bases.values())
+    used = set()
+    mapping = {}
+    for pid in sorted(bases, key=lambda key: (bases[key], key)):
+        base = bases[pid]
+        suffix = pid.replace("PRES_", "").lower()[-6:] or "talk"
+        candidate = base if counts[base] == 1 else f"{base}-{suffix}"
+        if len(candidate) > max_length + 7:
+            candidate = f"{base[:max_length].strip('-')}-{suffix}"
+        dedupe = 2
+        while candidate in used:
+            candidate = f"{base}-{suffix}-{dedupe}"
+            dedupe += 1
+        mapping[pid] = candidate
+        used.add(candidate)
+    return mapping
 
 
 PATRONYMIC_SUFFIXES = ("вич", "вна", "чна", "чич", "инична", "ична")
@@ -435,6 +467,7 @@ def page_shell(title, description, canonical_path, body, structured_data=None, e
             ("Named texts", "/IndologyScholars/topics/"),
             ("Generations", "/IndologyScholars/generations/"),
             ("Meso-levels", "/IndologyScholars/meso/"),
+            ("Keywords", "/IndologyScholars/keywords/"),
             ("Gumilyov", "/IndologyScholars/gumilyov/"),
             ("Criteria", "/IndologyScholars/classification-criteria.html"),
             ("Papers", "/IndologyScholars/presentations/"),
@@ -458,6 +491,7 @@ def page_shell(title, description, canonical_path, body, structured_data=None, e
             ("Сюжеты", "/IndologyScholars/topics/"),
             ("Поколения", "/IndologyScholars/generations/"),
             ("Мезоуровни", "/IndologyScholars/meso/"),
+            ("Ключевые слова", "/IndologyScholars/keywords/"),
             ("Гумилев", "/IndologyScholars/gumilyov/"),
             ("Критерии", "/IndologyScholars/classification-criteria.html"),
             ("Доклады", "/IndologyScholars/presentations/"),

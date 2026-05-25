@@ -8,6 +8,7 @@ from urllib.parse import quote
 from classification_overrides import CLASSIFICATION_OVERRIDES, MESO_LABELS
 from publication_helpers import (
     AUTHOR_NAME,
+    build_presentation_slug_map,
     SITE_NAME,
     SITE_URL,
     clean_text,
@@ -30,6 +31,8 @@ AUTHORITY_PATH = Path("authority_ids.json")
 LEGACY_REDIRECTS_PATH = Path("legacy_redirects.json")
 SLUG_REDIRECTS_PATH = Path("slug_redirects.json")
 BUILD_DATE = dt.date.today().isoformat()
+PRESENTATION_SLUG_BY_ID = {}
+MIN_PUBLIC_MESO_PRESENTATIONS = 2
 
 SCHOLAR_PROFILE_OVERRIDES = {
     "PERS_829c1de5": {
@@ -109,6 +112,20 @@ def meso_path(code):
     return f"meso/{slugify(code, 'meso')}.html"
 
 
+def initialize_presentation_slugs(scholars):
+    global PRESENTATION_SLUG_BY_ID
+    talks = []
+    for scholar in scholars:
+        talks.extend(scholar.get("talks") or [])
+    PRESENTATION_SLUG_BY_ID = build_presentation_slug_map(talks)
+
+
+def presentation_path(presentation_id):
+    pid = clean_text(presentation_id)
+    slug = PRESENTATION_SLUG_BY_ID.get(pid) or pid
+    return f"presentations/{slug}.html"
+
+
 def title_case_ru(label):
     label = clean_text(label)
     return label[:1].upper() + label[1:] if label else ""
@@ -147,10 +164,30 @@ def load_meso_context():
         if approach and pid:
             meso_by_presentation[pid].append(f"linguistics_{approach}")
 
+    for row in load_csv_rows("analytics_output/meso_codes_deepseek.csv"):
+        pid = clean_text(row.get("presentation_id") or "")
+        for code in (row.get("meso_codes") or "").split("|"):
+            code = clean_text(code)
+            if code and pid and code not in meso_by_presentation[pid]:
+                meso_by_presentation[pid].append(code)
+
     for code, label in MESO_LABELS.items():
         meso_items.setdefault(code, {"label": label, "kind": "Экспертный мезоуровень"})
     for pid, review in CLASSIFICATION_OVERRIDES.items():
         meso_by_presentation[pid] = list(review.get("meso_codes", []))
+
+    code_members = defaultdict(set)
+    for pid, codes in meso_by_presentation.items():
+        for code in codes:
+            code_members[code].add(pid)
+    public_codes = {
+        code
+        for code, pids in code_members.items()
+        if len(pids) >= MIN_PUBLIC_MESO_PRESENTATIONS
+    }
+    meso_items = {code: item for code, item in meso_items.items() if code in public_codes}
+    for pid, codes in list(meso_by_presentation.items()):
+        meso_by_presentation[pid] = [code for code in codes if code in public_codes]
 
     return meso_items, meso_by_presentation
 
@@ -480,7 +517,7 @@ def talk_card(talk, meso_by_presentation=None, meso_items=None):
     session = esc(raw_session)
     pid = clean_text(talk.get("presentation_id") or "")
     anchor_attr = f' id="{esc(pid)}"' if pid else ""
-    title_href = f"../presentations/{pid}.html" if pid else f'../{conference_path(talk.get("series"), talk.get("year"))}'
+    title_href = f"../{presentation_path(pid)}" if pid else f'../{conference_path(talk.get("series"), talk.get("year"))}'
     online_badge = '<span class="badge badge-online">Онлайн</span>' if talk.get("is_online") else ""
     video_badge = '<span class="badge badge-video">Видео</span>' if videos else ""
     return f"""
@@ -841,6 +878,7 @@ def main():
     OUTPUT_DIR.mkdir(exist_ok=True)
     data = load_site_data("site_data.json")
     scholars = data.get("scholars", [])
+    initialize_presentation_slugs(scholars)
     meso_items, meso_by_presentation = load_meso_context()
     authority = load_authority_ids()
     legacy_redirects = load_legacy_redirects()

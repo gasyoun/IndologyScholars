@@ -21,6 +21,7 @@ except Exception:
 from classification_overrides import CLASSIFICATION_OVERRIDES, MESO_LABELS
 from publication_helpers import (
     AUTHOR_NAME,
+    build_presentation_slug_map,
     GENERATION_COHORTS,
     OG_IMAGE_PATH,
     SITE_NAME,
@@ -47,7 +48,9 @@ DB_PATH = "conferences.db"
 BUILD_DATE = dt.date.today().isoformat()
 DATA_SCHEMA_VERSION = "1.0.0"
 PIPELINE_VERSION = "2026-05-25"
-PUBLIC_DIRS = ["assets", "conferences", "presentations", "themes", "topics", "generations", "meso", "gumilyov", "videos", "findings", "cities", "institutions"]
+PUBLIC_DIRS = ["assets", "conferences", "presentations", "themes", "topics", "generations", "meso", "gumilyov", "videos", "findings", "cities", "institutions", "keywords"]
+PRESENTATION_SLUG_BY_ID = {}
+MIN_PUBLIC_MESO_PRESENTATIONS = 2
 
 
 def ensure_dirs():
@@ -102,7 +105,7 @@ def generated_manifest_paths():
         "site_data.json",
         "sitemap.xml",
     ]
-    directories = ["analytics_output", "assets", "cities", "conferences", "presentations", "findings", "generations", "gumilyov", "institutions", "meso", "scholars", "themes", "topics", "videos", "curation"]
+    directories = ["analytics_output", "assets", "cities", "conferences", "presentations", "findings", "generations", "gumilyov", "institutions", "keywords", "meso", "scholars", "themes", "topics", "videos", "curation"]
     paths = [Path(path) for path in roots]
     for dirname in directories:
         root = Path(dirname)
@@ -187,8 +190,17 @@ def conference_path(series, year):
     return f"conferences/{series_slug(series)}-{year}.html"
 
 
-def presentation_path(presentation_id):
-    return f"presentations/{clean_text(presentation_id)}.html"
+def initialize_presentation_slugs(records):
+    global PRESENTATION_SLUG_BY_ID
+    PRESENTATION_SLUG_BY_ID = build_presentation_slug_map(records)
+
+
+def presentation_path(presentation_id, title=None):
+    pid = clean_text(presentation_id)
+    slug = PRESENTATION_SLUG_BY_ID.get(pid)
+    if not slug and title:
+        slug = slugify(title, pid.lower().replace("_", "-") or "presentation")
+    return f"presentations/{slug or pid}.html"
 
 
 def theme_path(code):
@@ -334,19 +346,25 @@ def format_distribution_links(distribution, depth=""):
     return "".join(links)
 
 
+PUBLIC_KEYWORD_LABELS = {
+    "рамаян": "Рамаяна",
+    "махабхарат": "Махабхарата",
+    "индия": "Индия",
+    "южная_индия": "Южная Индия",
+}
+
+
+def public_keyword_label(keyword):
+    return PUBLIC_KEYWORD_LABELS.get(clean_text(keyword).lower(), keyword)
+
+
 def format_keyword_links(terms, depth=""):
-    public_labels = {
-        "рамаян": "Рамаяна",
-        "махабхарат": "Махабхарата",
-        "индия": "Индия",
-        "южная_индия": "Южная Индия",
-    }
     links = []
     for raw_term in str(terms or "").split(","):
         term = clean_text(raw_term)
         if not term:
             continue
-        label = public_labels.get(term.lower(), term)
+        label = public_keyword_label(term)
         links.append(f'<a class="chip" href="{esc(search_path(term, depth))}">{esc(label)}</a>')
     return "".join(links)
 
@@ -593,6 +611,7 @@ def load_meso_index():
         item["count"] = len(pids)
         item["zograf_count"] = sum(1 for pid in pids if "Zograf" in pid_series.get(pid, ""))
         item["roerich_count"] = sum(1 for pid in pids if "Roerich" in pid_series.get(pid, ""))
+    items = [item for item in items if int(item.get("count") or 0) >= MIN_PUBLIC_MESO_PRESENTATIONS]
     items.sort(key=lambda item: (-item["count"], item["kind"], item["label"]))
     return items
 
@@ -1127,6 +1146,15 @@ def generate_search(data, records):
             "text": "классификация рубрика мезоуровень Гумилев L1 L2 L3 микроуровень масштаб аргументации",
         }
     )
+    index.append(
+        {
+            "type": "Keyword",
+            "title": "Ключевые слова",
+            "url": "keywords/",
+            "meta": "Статистика ключевых слов",
+            "text": "ключевые слова статистика заголовки докладов частотность термины",
+        }
+    )
     for level, meta in GUMILYOV_LEVELS.items():
         index.append(
             {
@@ -1185,7 +1213,7 @@ def generate_search(data, records):
         const results = document.getElementById('results');
         const input = document.getElementById('q');
         let docs = [];
-        const typeLabels = {'Scholar':'Автор', 'Presentation':'Доклад', 'Topic':'Сюжет', 'Generation':'Поколения', 'Meso-level':'Мезоуровень', 'Gumilyov':'Гумилев', 'Video':'Видео', 'Finding':'Вывод'};
+        const typeLabels = {'Scholar':'Автор', 'Presentation':'Доклад', 'Topic':'Сюжет', 'Generation':'Поколения', 'Meso-level':'Мезоуровень', 'Keyword':'Ключевые слова', 'Gumilyov':'Гумилев', 'Video':'Видео', 'Finding':'Вывод'};
         const initialQuery = new URLSearchParams(location.search).get('q') || '';
         input.value = initialQuery;
         fetch('search-index.json').then(r => r.json()).then(data => { docs = data; render(input.value); });
@@ -1222,6 +1250,84 @@ def generate_search(data, records):
     )
 
 
+def generate_keyword_stats_page(records):
+    records_by_id = presentation_records_by_id(records)
+    counts = Counter()
+    series_counts = defaultdict(Counter)
+    examples = defaultdict(list)
+
+    for talk in records_by_id.values():
+        pid = clean_text(talk.get("presentation_id") or "")
+        for raw_tag in talk.get("tags") or []:
+            tag = clean_text(raw_tag).lower()
+            if len(tag) < 3:
+                continue
+            counts[tag] += 1
+            series_counts[tag][talk.get("series_key") or talk.get("series") or ""] += 1
+            if len(examples[tag]) < 4:
+                examples[tag].append(pid)
+
+    rows = []
+    for tag, count in counts.most_common():
+        zograf_count = series_counts[tag].get("Zograf", 0) + series_counts[tag].get("Zograf Readings", 0)
+        roerich_count = series_counts[tag].get("Roerich", 0) + series_counts[tag].get("Roerich Readings", 0)
+        example_links = []
+        for pid in examples[tag]:
+            talk = records_by_id.get(pid)
+            if talk:
+                example_links.append(f'<a href="../{presentation_path(pid)}">{esc(talk.get("title"))}</a>')
+        rows.append(
+            {
+                "keyword": tag,
+                "presentations": count,
+                "zograf": zograf_count,
+                "roerich": roerich_count,
+                "examples": " | ".join(clean_text((records_by_id.get(pid) or {}).get("title") or "") for pid in examples[tag]),
+                "html": (
+                    f'<article class="talk"><strong><a href="{esc(search_path(tag, "../"))}">{esc(public_keyword_label(tag))}</a></strong>'
+                    f'<div class="meta">{talks_count_label(count)} · Зограф: {zograf_count} · Рерих: {roerich_count}</div>'
+                    f'<div class="meta">{" · ".join(example_links)}</div></article>'
+                ),
+            }
+        )
+
+    with open("analytics_output/keyword_stats.csv", "w", encoding="utf-8", newline="") as handle:
+        writer = csv.DictWriter(handle, fieldnames=["keyword", "presentations", "zograf", "roerich", "examples"])
+        writer.writeheader()
+        writer.writerows({key: row[key] for key in writer.fieldnames} for row in rows)
+
+    top_links = [
+        f'<a class="chip" href="{esc(search_path(row["keyword"], "../"))}">{esc(public_keyword_label(row["keyword"]))} · {row["presentations"]}</a>'
+        for row in rows[:30]
+    ]
+    body = f"""
+        <header>
+            <h1>Ключевые слова</h1>
+            <p>Сводная статистика ключевых слов, пересчитанных по нормализованным заголовкам докладов.</p>
+        </header>
+        <section class="grid">
+            <article class="card"><strong>Ключевые слова</strong><div class="metric">{len(rows)}</div></article>
+            <article class="card"><strong>Доклады с ключевыми словами</strong><div class="metric">{sum(1 for talk in records_by_id.values() if talk.get("tags"))}</div></article>
+        </section>
+        {chip_section("Частотные слова", top_links)}
+        <section class="list">{''.join(row["html"] for row in rows)}</section>
+        <section class="link-block">
+            <strong>CSV</strong>
+            <div class="chip-list"><a class="chip" href="../analytics_output/keyword_stats.csv">keyword_stats.csv</a></div>
+        </section>
+    """
+    write_text(
+        "keywords/index.html",
+        page_shell(
+            f"Ключевые слова | {SITE_NAME}",
+            "Сводная статистика ключевых слов докладов.",
+            "keywords/",
+            body,
+            [page_data("Ключевые слова", "Сводная статистика ключевых слов докладов.", "keywords/"), make_breadcrumbs([("Главная", ""), ("Ключевые слова", "keywords/")])],
+        ),
+    )
+
+
 def generate_download_page(data):
     summary = data.get("summary", {})
     resources = [
@@ -1232,6 +1338,7 @@ def generate_download_page(data):
         ("Frictionless datapackage", "datapackage.json", "Dataset metadata, resource list, license, and source notes."),
         ("Data dictionary", "data_dictionary.md", "Human-readable field guide for reusable CSV, JSON, SQLite, and generated publication outputs."),
         ("Data quality report", "analytics_output/data_quality_report.json", "Machine-readable quality checks and review samples."),
+        ("Keyword statistics", "analytics_output/keyword_stats.csv", "Per-keyword presentation counts and example titles."),
         ("Biographical provenance", "analytics_output/field_provenance_biographical.csv", "Field-level provenance for curated person names and life dates."),
         ("Authority provenance", "analytics_output/field_provenance_authority.csv", "Field-level provenance for external identifiers and organization authority records."),
         ("Theme provenance", "analytics_output/field_provenance_themes.csv", "Field-level provenance for generated presentation theme labels."),
@@ -2694,19 +2801,21 @@ def generate_presentation_pages(records):
     unique_records.sort(key=lambda talk: (-int(talk.get("year") or 0), talk.get("title") or ""))
     year_counts = defaultdict(int)
     cards = []
+    written_files = {"index.html"}
     for talk in unique_records:
         pid = clean_text(talk.get("presentation_id") or "")
         if not pid:
             continue
         year_counts[int(talk.get("year") or 0)] += 1
-        path = presentation_path(pid)
         title = clean_text(talk.get("title") or "Доклад")
+        path = presentation_path(pid, title)
         body = presentation_detail_body(talk)
         structured = [
             page_data(title, f"Доклад: {title}.", path, page_type="ScholarlyArticle"),
             make_breadcrumbs([("Главная", ""), ("Доклады", "presentations/"), (title, path)]),
         ]
         write_text(path, page_shell(f"{title} | {SITE_NAME}", f"Доклад: {title}.", path, body, structured))
+        written_files.add(Path(path).name)
         cards.append(
             f'<article class="talk"><strong><a href="../{path}">{esc(title)}</a></strong>'
             f'<div class="meta">{esc(series_label(talk.get("series_key"), "ru"))} {esc(talk.get("year"))} · {scholar_links_html(talk, "../")}</div></article>'
@@ -2733,6 +2842,9 @@ def generate_presentation_pages(records):
             [page_data("Доклады", "Постоянные страницы докладов.", "presentations/"), make_breadcrumbs([("Главная", ""), ("Доклады", "presentations/")])],
         ),
     )
+    for html_path in Path("presentations").glob("*.html"):
+        if html_path.name not in written_files:
+            html_path.unlink()
 
 
 def generate_classification_criteria_page(records):
@@ -3136,9 +3248,11 @@ def generate_meso_pages(data, records):
         return " · ".join(links)
 
     cards = []
+    written_files = {"index.html"}
     for item in items:
         code = item["code"]
         path = meso_path(code)
+        written_files.add(Path(path).name)
         talks = [
             records_by_id[pid]
             for pid in dict.fromkeys(memberships.get(code, []))
@@ -3231,6 +3345,9 @@ def generate_meso_pages(data, records):
             [page_data("Meso-level indexes", "Cross-cutting topic indexes for the archive.", "meso/"), make_breadcrumbs([("Home", ""), ("Meso-levels", "meso/")])],
         ),
     )
+    for stale in Path("meso").glob("*.html"):
+        if stale.name not in written_files:
+            stale.unlink()
 
 
 def generate_city_pages(data, records, authority):
@@ -3614,8 +3731,12 @@ def generate_sitemap():
         "networks.html",
     ]
     html_paths.extend(str(p).replace("\\", "/") for p in Path("scholars").glob("*.html") if not is_legacy_redirect(p))
-    for dirname in ("conferences", "presentations", "themes", "topics", "generations", "meso", "gumilyov", "videos", "findings", "cities", "institutions"):
-        html_paths.extend(str(p).replace("\\", "/") for p in Path(dirname).glob("*.html"))
+    for dirname in ("conferences", "presentations", "themes", "topics", "generations", "meso", "gumilyov", "videos", "findings", "cities", "institutions", "keywords"):
+        html_paths.extend(
+            str(p).replace("\\", "/")
+            for p in Path(dirname).glob("*.html")
+            if not (dirname == "presentations" and p.name.startswith("PRES_"))
+        )
     html_paths = sorted(set(html_paths), key=lambda p: (p.count("/"), p))
     urlset = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     for path in html_paths:
@@ -3896,10 +4017,12 @@ def main():
     data = load_site_data("site_data.json")
     records = timeline_records(data)
     attach_meso_codes(records)
+    initialize_presentation_slugs(records)
     data.setdefault("summary", {}).update(fetch_db_summary())
 
     generate_home_assets(data)
     generate_search(data, records)
+    generate_keyword_stats_page(records)
     authority_stats = generate_authority_coverage(data, authority)
     generate_provenance_sidecars(data, authority, records)
     generate_download_page(data)

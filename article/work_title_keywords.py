@@ -20,6 +20,7 @@ Outputs:
   article/hypothesis_output/title_keyword_nodes.csv
   article/hypothesis_output/title_keyword_cooccurrence_edges.csv
   article/hypothesis_output/title_keyword_report.md
+  analytics_output/presentation_tags.csv
   article/figures/title_keyword_contrast.svg
   article/figures/title_keyword_period_trend.svg
 """
@@ -1365,6 +1366,13 @@ def main() -> None:
         }
         for row in rows
     ]
+    presentation_tag_rows = [
+        {
+            "presentation_id": row["presentation_id"],
+            "tags": "|".join(row["tokens"]),
+        }
+        for row in rows
+    ]
     term_rows = term_frequencies(rows)
     bigram_rows = bigram_frequencies(rows)
     contrast_rows = contrast_terms(rows)
@@ -1377,6 +1385,7 @@ def main() -> None:
     node_rows, edge_rows = cooccurrence(rows)
 
     write_csv(OUT / "title_keyword_tokens.csv", token_rows)
+    write_csv(ANALYTICS / "presentation_tags.csv", presentation_tag_rows)
     write_csv(OUT / "title_keyword_terms.csv", term_rows)
     write_csv(OUT / "title_keyword_bigrams.csv", bigram_rows)
     write_csv(OUT / "title_keyword_contrasts.csv", contrast_rows)

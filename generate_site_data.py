@@ -203,6 +203,24 @@ def load_gumilyov_mapping():
     return mapping
 
 
+def load_meso_mapping():
+    mapping = {}
+    try:
+        with open("analytics_output/meso_codes_deepseek.csv", encoding="utf-8") as f:
+            for row in csv.DictReader(f):
+                pid = str(row.get("presentation_id") or "").strip()
+                codes = [
+                    code.strip()
+                    for code in str(row.get("meso_codes") or "").split("|")
+                    if code.strip()
+                ]
+                if pid and codes:
+                    mapping[pid] = list(dict.fromkeys(codes))
+    except FileNotFoundError:
+        pass
+    return mapping
+
+
 def gumilyov_level_for(year, series, title, presentation_id=None, source_title=None, raw_title=None):
     manual = CLASSIFICATION_OVERRIDES.get(str(presentation_id or ""), {})
     if manual.get("gumilyov_level"):
@@ -216,13 +234,35 @@ def gumilyov_level_for(year, series, title, presentation_id=None, source_title=N
             return int(_GUMILYOV_MAPPING["by_key"][key])
     return None
 
+
+def meso_codes_for(presentation_id):
+    manual = CLASSIFICATION_OVERRIDES.get(str(presentation_id or ""), {})
+    if "meso_codes" in manual:
+        return list(manual.get("meso_codes") or [])
+    return list(_MESO_MAPPING.get(str(presentation_id or ""), []))
+
+
 def load_tags_mapping():
     mapping = {}
+    try:
+        with open("article/hypothesis_output/title_keyword_tokens.csv", encoding="utf-8-sig") as f:
+            for row in csv.DictReader(f):
+                pid = str(row.get("presentation_id") or "").strip()
+                tokens = [
+                    token.strip()
+                    for token in str(row.get("tokens") or row.get("unique_tokens") or "").split("|")
+                    if token.strip()
+                ]
+                if pid and tokens:
+                    mapping[pid] = list(dict.fromkeys(tokens))
+    except FileNotFoundError:
+        pass
     try:
         with open("analytics_output/presentation_tags.csv", encoding="utf-8") as f:
             for row in csv.DictReader(f):
                 tags = row["tags"].split("|") if row["tags"] else []
-                mapping[row["presentation_id"]] = tags
+                if row["presentation_id"] not in mapping or not mapping[row["presentation_id"]]:
+                    mapping[row["presentation_id"]] = tags
     except FileNotFoundError:
         pass
     return mapping
@@ -230,6 +270,7 @@ def load_tags_mapping():
 # Pre-load the mappings once globally
 _THEME_MAPPING = load_theme_mapping()
 _GUMILYOV_MAPPING = load_gumilyov_mapping()
+_MESO_MAPPING = load_meso_mapping()
 _TAGS_MAPPING = load_tags_mapping()
 
 def get_theme_meta(code):
@@ -506,7 +547,7 @@ def main():
                 "theme": theme,
                 "gumilyov_scale": g_scale,
                 "tags": p_tags,
-                "meso_codes": manual_classification.get("meso_codes", []),
+                "meso_codes": meso_codes_for(pres_id),
                 "classification_reason": manual_classification.get("reason"),
                 "classification_reviewed": bool(manual_classification),
                 "is_online": bool(is_online),
@@ -669,7 +710,7 @@ def main():
             "theme": theme,
             "gumilyov_scale": g_scale,
             "tags": p_tags,
-            "meso_codes": manual_classification.get("meso_codes", []),
+            "meso_codes": meso_codes_for(pres_id),
             "classification_reason": manual_classification.get("reason"),
             "classification_reviewed": bool(manual_classification),
             "is_online": bool(is_online),
