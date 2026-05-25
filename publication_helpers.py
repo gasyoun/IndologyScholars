@@ -265,6 +265,23 @@ def _google_scholar_url(value):
     return None
 
 
+def _wikipedia_url(value):
+    s = str(value or "").strip()
+    if re.match(r"^https?://[a-z-]+\.wikipedia\.org/wiki/.+", s):
+        return s
+    return None
+
+
+def _vk_url(value):
+    s = str(value or "").strip()
+    if s.startswith("https://vk.com/") or s.startswith("http://vk.com/"):
+        return s
+    s = s.lstrip("@")
+    if re.match(r"^[A-Za-z0-9_.]+$", s):
+        return f"https://vk.com/{s}"
+    return None
+
+
 def _scopus_url(value):
     s = str(value or "").strip()
     s = re.sub(r"^https?://www\.scopus\.com/authid/detail\.uri\?authorId=", "", s)
@@ -313,6 +330,8 @@ def clean_person_urls(person_authority):
     add_valid("viaf", "viaf", _viaf_url)
     add_valid("openalex", "openalex", _openalex_url)
     add_valid("google_scholar", "google_scholar", _google_scholar_url)
+    add_valid("wikipedia", "wikipedia", _wikipedia_url)
+    add_valid("vk", "vk", _vk_url)
     add_valid("scopus_author_id", "scopus_author_id", _scopus_url)
     add_valid("researcher_id", "researcher_id", _researcher_id_url)
     add_valid("rinc_author_id", "rinc_author_id", _rinc_url)

@@ -212,6 +212,24 @@ class StableIdTests(unittest.TestCase):
             ),
         )
 
+    def test_curated_person_aliases_share_a_person_key(self):
+        self.assertEqual(
+            build.canonical_person_key("\u0410. \u041a\u0440\u044b\u043b\u043e\u0432\u0430"),
+            build.canonical_person_key(
+                "\u041a\u0440\u044b\u043b\u043e\u0432\u0430 "
+                "\u0410\u043d\u0430\u0441\u0442\u0430\u0441\u0438\u044f "
+                "\u0421\u0435\u0440\u0433\u0435\u0435\u0432\u043d\u0430"
+            ),
+        )
+        self.assertEqual(
+            build.canonical_person_key("\u041b. \u0411\u0443\u0440\u043c\u0438\u0441\u0442\u0440\u043e\u0432"),
+            build.canonical_person_key(
+                "\u0411\u0443\u0440\u043c\u0438\u0441\u0442\u0440\u043e\u0432 "
+                "\u0421\u0435\u0440\u0433\u0435\u0439 "
+                "\u041b\u0435\u043e\u043d\u0438\u0434\u043e\u0432\u0438\u0447"
+            ),
+        )
+
     def test_compare_manifests_reports_clean_unchanged_rebuild(self):
         before = [
             {

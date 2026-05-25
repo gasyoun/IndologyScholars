@@ -18,6 +18,7 @@ MD_PATH = "zograf-roerich-db.md"
 DB_PATH = "conferences.db"
 CACHE_DIR = "html_cache"
 PERSON_ID_MAP_PATH = "person_ids.json"
+PERSON_ALIAS_PATH = "curation/person_aliases.csv"
 
 # Smart HTML Parser to extract text with block level newlines
 from html.parser import HTMLParser
@@ -676,6 +677,10 @@ DEGREE_DATA = {
     "канаева н а": ("доктор философских наук", "2021", "https://www.hse.ru/staff/nkanaeva/"),
     "ложкина а в": ("кандидат философских наук", "2020", "https://iphras.ru/lozhkina.htm"),
     "вигасин а а": ("доктор исторических наук", "1995", "https://ru.wikipedia.org/wiki/Вигасин,_Алексей_Алексеевич"),
+    "самозванцев а м": ("доктор исторических наук", "1989", "https://ru.wikipedia.org/wiki/Самозванцев,_Андрей_Михайлович"),
+    "эрман в г": ("доктор филологических наук", "", "https://ru.wikipedia.org/wiki/Эрман,_Владимир_Гансович"),
+    "попова и ф": ("доктор исторических наук", "2000", "https://ru.wikipedia.org/wiki/Попова,_Ирина_Фёдоровна"),
+    "невелева с л": ("доктор филологических наук", "1993", "https://ru.wikipedia.org/wiki/Невелева,_Светлана_Леонидовна"),
     "комиссаров д а": ("кандидат филологических наук", "2012", "https://www.hse.ru/org/persons/209813167/"),
     "шохин в к": ("доктор философских наук", "", "https://iphras.ru/shokhin.htm"),
     "renkovskaya е а": ("кандидат филологических наук", "2021", "https://istina.msu.ru/profile/Zumrutanka/"),
@@ -706,12 +711,20 @@ BIOGRAPHICAL_DATA.update({
     "огнева е д": ("Огнева Елена Дмитриевна", "Ogneva Elena Dmitrievna", 1944, None),
     "шохин в к": ("Шохин Владимир Кириллович", "Shokhin Vladimir Kirillovich", 1951, None),
     "котин и ю": ("Котин Игорь Юрьевич", "Kotin Igor Yurievich", 1968, None),
+    "самозванцев а м": ("Самозванцев Андрей Михайлович", "Samozvantsev Andrey Mikhailovich", 1949, 2009),
+    "эрман в г": ("Эрман Владимир Гансович", "Erman Vladimir Gansovich", 1928, 2017),
+    "попова и ф": ("Попова Ирина Фёдоровна", "Popova Irina Fyodorovna", 1961, None),
+    "невелева с л": ("Невелева Светлана Леонидовна", "Neveleva Svetlana Leonidovna", 1937, None),
 })
 
 
 def canonical_person_key(name):
     """Fold only biographically verified name variants into one person key."""
     norm_key = normalize_person_name(name)
+    alias_target = load_person_aliases().get(norm_key)
+    if alias_target:
+        bio = BIOGRAPHICAL_DATA.get(alias_target)
+        return normalize_person_name(bio[0]) if bio else alias_target
     bio = BIOGRAPHICAL_DATA.get(norm_key)
     if bio:
         return normalize_person_name(bio[0])
@@ -720,6 +733,7 @@ def canonical_person_key(name):
 
 persons_cache = {} # normalized_key -> person_id
 person_id_overrides = None
+person_aliases = None
 
 
 def load_person_id_overrides():
@@ -734,6 +748,29 @@ def load_person_id_overrides():
     else:
         person_id_overrides = {}
     return person_id_overrides
+
+
+def load_person_aliases():
+    """Load curated source-name variants that should collapse into a canonical person."""
+    global person_aliases
+    if person_aliases is not None:
+        return person_aliases
+
+    accepted = {"accepted", "confirmed", "manual", "high"}
+    person_aliases = {}
+    if not os.path.exists(PERSON_ALIAS_PATH):
+        return person_aliases
+
+    with open(PERSON_ALIAS_PATH, "r", encoding="utf-8-sig", newline="") as f:
+        for row in csv.DictReader(f):
+            status = (row.get("status") or "").strip().lower()
+            if status not in accepted:
+                continue
+            alias = normalize_person_name(row.get("alias_name") or "")
+            target = normalize_person_name(row.get("target_name") or "")
+            if alias and target and alias != target:
+                person_aliases[alias] = target
+    return person_aliases
 
 
 def person_id_for_key(norm_key):

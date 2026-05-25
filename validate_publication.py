@@ -29,6 +29,8 @@ AUTHORITY_ID_FIELDS = {
     "viaf",
     "openalex",
     "google_scholar",
+    "wikipedia",
+    "vk",
     "official_url",
     "url",
     "scopus_author_id",

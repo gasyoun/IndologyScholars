@@ -74,20 +74,54 @@
     "PERS_9f398436": {
       "preferred_latin_name": "Leonid Kulikov"
     },
+    "PERS_aa964a12": {
+      "wikipedia": "https://ru.wikipedia.org/wiki/Самозванцев,_Андрей_Михайлович",
+      "confidence": "manual",
+      "source": "ru.wikipedia.org",
+      "checked_at": "2026-05-25"
+    },
+    "PERS_b4cdbfb8": {
+      "wikipedia": "https://ru.wikipedia.org/wiki/Эрман,_Владимир_Гансович",
+      "confidence": "manual",
+      "source": "ru.wikipedia.org",
+      "checked_at": "2026-05-25"
+    },
     "PERS_c52dfaa0": {
       "preferred_latin_name": "Sofia Tsvetkova"
     },
     "PERS_cdbd7a15": {
-      "preferred_latin_name": "Sergey Kullanda"
+      "preferred_latin_name": "Sergey Kullanda",
+      "wikipedia": "https://ru.wikipedia.org/wiki/Кулланда,_Сергей_Всеволодович",
+      "confidence": "manual",
+      "source": "ru.wikipedia.org",
+      "checked_at": "2026-05-25"
     },
     "PERS_cfb92c5f": {
       "preferred_latin_name": "Evgeny Ulansky"
     },
+    "PERS_d3c5382c": {
+      "wikipedia": "https://ru.wikipedia.org/wiki/Попова,_Ирина_Фёдоровна",
+      "confidence": "manual",
+      "source": "ru.wikipedia.org",
+      "checked_at": "2026-05-25"
+    },
     "PERS_d98da899": {
       "preferred_latin_name": "Svetlana Ryzhakova"
     },
+    "PERS_ddb70dc9": {
+      "vk": "https://vk.com/m.azarkina",
+      "confidence": "manual",
+      "source": "vk.com",
+      "checked_at": "2026-05-25"
+    },
     "PERS_e1dd6b3e": {
       "preferred_latin_name": "Natalia Lidova"
+    },
+    "PERS_e5a5ac24": {
+      "wikipedia": "https://ru.wikipedia.org/wiki/Невелева,_Светлана_Леонидовна",
+      "confidence": "manual",
+      "source": "ru.wikipedia.org",
+      "checked_at": "2026-05-25"
     },
     "PERS_e31ca12d": {
       "preferred_latin_name": "Olga Vecherina"

@@ -19,6 +19,8 @@
             "viaf": { "type": "string", "pattern": "^(https://viaf\\.org/viaf/)?\\d+/?$" },
             "openalex": { "type": "string", "pattern": "^(https://openalex\\.org/)?A\\d+$" },
             "google_scholar": { "type": "string", "pattern": "^(https://scholar\\.google\\.com/citations\\?user=)?[A-Za-z0-9_-]+$" },
+            "wikipedia": { "type": "string", "pattern": "^https?://[a-z-]+\\.wikipedia\\.org/wiki/.+" },
+            "vk": { "type": "string", "pattern": "^(https?://vk\\.com/)?[A-Za-z0-9_.]+$" },
             "scopus_author_id": { "type": "string", "pattern": "^(https://www\\.scopus\\.com/authid/detail\\.uri\\?authorId=)?\\d+$" },
             "researcher_id": { "type": "string", "pattern": "^(https://www\\.webofscience\\.com/wos/author/record/)?([A-Z]{1,3}-\\d{4}-\\d{4}|[A-Z0-9-]+)$" },
             "rinc_author_id": { "type": "string", "pattern": "^(https://www\\.elibrary\\.ru/author_profile\\.asp\\?id=)?\\d+$" },

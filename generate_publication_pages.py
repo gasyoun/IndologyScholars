@@ -1621,8 +1621,10 @@ def generate_authority_coverage(data, authority):
     total_wikidata = 0
     total_viaf = 0
     total_openalex = 0
+    total_wikipedia = 0
     total_rinc = 0
     total_google_scholar = 0
+    total_vk = 0
     total_official_url = 0
 
     for s in scholars:
@@ -1639,11 +1641,13 @@ def generate_authority_coverage(data, authority):
         has_wikidata = 1 if "wikidata" in urls_dict else 0
         has_viaf = 1 if "viaf" in urls_dict else 0
         has_openalex = 1 if "openalex" in urls_dict else 0
+        has_wikipedia = 1 if "wikipedia" in urls_dict else 0
         has_rinc = 1 if "rinc_author_id" in urls_dict else 0
         has_google = 1 if "google_scholar" in urls_dict else 0
+        has_vk = 1 if "vk" in urls_dict else 0
         has_official = 1 if "official_url" in urls_dict else 0
 
-        has_any = 1 if (has_orcid or has_wikidata or has_viaf or has_openalex or has_rinc or has_google or has_official) else 0
+        has_any = 1 if (has_orcid or has_wikidata or has_viaf or has_openalex or has_wikipedia or has_rinc or has_google or has_vk or has_official) else 0
 
         confidence = person_auth.get("confidence", "")
         checked_at = person_auth.get("checked_at", "")
@@ -1654,8 +1658,10 @@ def generate_authority_coverage(data, authority):
         total_wikidata += has_wikidata
         total_viaf += has_viaf
         total_openalex += has_openalex
+        total_wikipedia += has_wikipedia
         total_rinc += has_rinc
         total_google_scholar += has_google
+        total_vk += has_vk
         total_official_url += has_official
 
         talks = s.get("total_talks", 0)
@@ -1670,8 +1676,10 @@ def generate_authority_coverage(data, authority):
             "has_wikidata": has_wikidata,
             "has_viaf": has_viaf,
             "has_openalex": has_openalex,
+            "has_wikipedia": has_wikipedia,
             "has_rinc": has_rinc,
             "has_google_scholar": has_google,
+            "has_vk": has_vk,
             "has_official_url": has_official,
             "has_any_external_id": has_any,
             "authority_confidence": confidence,
@@ -1720,6 +1728,7 @@ def generate_authority_coverage(data, authority):
                 f"https://openalex.org/authors?search={quote(pref_latin)}"
                 if pref_latin else ""
             )
+            wikipedia_search_url = f"https://ru.wikipedia.org/w/index.php?search={quote(fullname_ru or dname)}"
             review_queue.append({
                 "priority_rank": priority,
                 "person_id": pid,
@@ -1730,6 +1739,7 @@ def generate_authority_coverage(data, authority):
                 "suggested_query": suggested_query,
                 "rinc_search_url": rinc_search_url,
                 "openalex_search_url": openalex_search_url,
+                "wikipedia_search_url": wikipedia_search_url,
                 "review_status": "todo"
             })
 
@@ -1740,8 +1750,8 @@ def generate_authority_coverage(data, authority):
     with open("analytics_output/authority_coverage.csv", "w", encoding="utf-8", newline="") as f:
         fieldnames = [
             "person_id", "display_name", "full_name_ru", "preferred_latin_name", "total_talks",
-            "has_orcid", "has_wikidata", "has_viaf", "has_openalex", "has_rinc", "has_google_scholar",
-            "has_official_url", "has_any_external_id", "authority_confidence", "checked_at"
+            "has_orcid", "has_wikidata", "has_viaf", "has_openalex", "has_wikipedia", "has_rinc", "has_google_scholar",
+            "has_vk", "has_official_url", "has_any_external_id", "authority_confidence", "checked_at"
         ]
         writer = csv.DictWriter(f, fieldnames=fieldnames)
         writer.writeheader()
@@ -1752,7 +1762,7 @@ def generate_authority_coverage(data, authority):
         fieldnames = [
             "priority_rank", "person_id", "display_name", "full_name_ru", "total_talks",
             "reason", "suggested_query", "rinc_search_url", "openalex_search_url",
-            "review_status"
+            "wikipedia_search_url", "review_status"
         ]
         writer = csv.DictWriter(f, fieldnames=fieldnames)
         writer.writeheader()
@@ -1766,8 +1776,10 @@ def generate_authority_coverage(data, authority):
         "total_wikidata": total_wikidata,
         "total_viaf": total_viaf,
         "total_openalex": total_openalex,
+        "total_wikipedia": total_wikipedia,
         "total_rinc": total_rinc,
         "total_google_scholar": total_google_scholar,
+        "total_vk": total_vk,
         "total_official_url": total_official_url,
         "queue_size": len(review_queue)
     }
@@ -2073,8 +2085,10 @@ def generate_data_quality_page(data, authority_stats):
     orcid_pct = round(authority_stats["total_orcid"] * 100 / t, 1)
     viaf_pct = round(authority_stats["total_viaf"] * 100 / t, 1)
     openalex_pct = round(authority_stats["total_openalex"] * 100 / t, 1)
+    wikipedia_pct = round(authority_stats["total_wikipedia"] * 100 / t, 1)
     rinc_pct = round(authority_stats["total_rinc"] * 100 / t, 1)
     google_pct = round(authority_stats["total_google_scholar"] * 100 / t, 1)
+    vk_pct = round(authority_stats["total_vk"] * 100 / t, 1)
     official_pct = round(authority_stats["total_official_url"] * 100 / t, 1)
     overall_pct = round(authority_stats["scholars_with_any"] * 100 / t, 1)
 
@@ -2090,8 +2104,10 @@ def generate_data_quality_page(data, authority_stats):
                 ORCID: {authority_stats["total_orcid"]} ({orcid_pct}%) &middot;
                 VIAF: {authority_stats["total_viaf"]} ({viaf_pct}%) &middot;
                 OpenAlex: {authority_stats["total_openalex"]} ({openalex_pct}%) &middot;
+                Wikipedia: {authority_stats["total_wikipedia"]} ({wikipedia_pct}%) &middot;
                 РИНЦ/eLIBRARY: {authority_stats["total_rinc"]} ({rinc_pct}%) &middot;
                 Google Scholar: {authority_stats["total_google_scholar"]} ({google_pct}%) &middot;
+                VK: {authority_stats["total_vk"]} ({vk_pct}%) &middot;
                 Official URL: {authority_stats["total_official_url"]} ({official_pct}%)
                 <br>
                 <strong>Overall Coverage:</strong> {authority_stats["scholars_with_any"]} of {authority_stats["total_scholars"]} scholars mapped ({overall_pct}%)
@@ -2132,6 +2148,30 @@ def generate_data_quality_page(data, authority_stats):
         </article>
         """
     )
+
+    audit_links = [
+        ("Identity alias candidates", "analytics_output/identity_alias_candidates.csv"),
+        ("Birth-year gap audit", "analytics_output/birth_year_gap_audit.csv"),
+        ("Wikipedia authority candidates", "analytics_output/wikipedia_authority_candidates.csv"),
+    ]
+    existing_audits = [
+        f'<a href="{esc(path)}">{esc(label)}</a>'
+        for label, path in audit_links
+        if Path(path).exists()
+    ]
+    if existing_audits:
+        rows.append(
+            f"""
+            <article class="card" style="grid-column: span 2;">
+                <strong>Trend audit scripts</strong>
+                <div class="meta" style="margin-top: 0.5rem; line-height: 1.8;">
+                    {' &middot; '.join(existing_audits)}
+                    <br>
+                    These queues are generated by curation scripts and expose recurring identity, birth-year, and Wikipedia-authority gaps.
+                </div>
+            </article>
+            """
+        )
 
     for check in report["checks"]:
         rows.append(
@@ -2445,7 +2485,7 @@ def generate_generations_page(data):
             f'<div class="metric">{len(members)}</div><div class="meta">{talks_count_label(talks)} в авторских профилях</div></article>'
         )
         sections.append(
-            f'<section id="{esc(cohort["code"])}"><h2>{esc(cohort["ru"])}</h2>'
+            f'<section id="{esc(cohort["code"])}"><h2>{esc(cohort["ru"])} ({len(members)})</h2>'
             f'<div class="grid">{"".join(person_card(scholar) for scholar in members)}</div></section>'
         )
     unknown_members = sorted(grouped.get(None, []), key=scholar_name)
@@ -2456,7 +2496,7 @@ def generate_generations_page(data):
             f'<div class="metric">{len(unknown_members)}</div><div class="meta">{talks_count_label(unknown_talks)} в авторских профилях</div></article>'
         )
         sections.append(
-            '<section id="unknown"><h2>Год рождения не установлен</h2>'
+            f'<section id="unknown"><h2>Год рождения не установлен ({len(unknown_members)})</h2>'
             '<p>Эти реальные участники восстановлены из программ, но не распределены по поколениям без проверенного биографического источника.</p>'
             f'<div class="grid">{"".join(person_card(scholar) for scholar in unknown_members)}</div></section>'
         )

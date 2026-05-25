@@ -598,7 +598,7 @@ def profile_structured_data(scholar, authority):
     
     if is_public_authority_record(person_authority):
         urls_dict = clean_person_urls(person_authority)
-        for key in ("orcid", "wikidata", "viaf", "openalex", "google_scholar", "official_url", "scopus_author_id", "researcher_id", "rinc_author_id"):
+        for key in ("orcid", "wikidata", "viaf", "openalex", "wikipedia", "google_scholar", "official_url", "vk", "scopus_author_id", "researcher_id", "rinc_author_id"):
             val = urls_dict.get(key)
             if val:
                 same_as.append(val)
@@ -724,8 +724,10 @@ def render_profile(scholar, related, authority, meso_by_presentation, meso_items
                 "wikidata": "Wikidata",
                 "viaf": "VIAF",
                 "openalex": "OpenAlex",
+                "wikipedia": "Wikipedia",
                 "google_scholar": "Google Scholar",
                 "official_url": "Official profile",
+                "vk": "VK",
                 "scopus_author_id": "Scopus",
                 "researcher_id": "ResearcherID",
                 "rinc_author_id": "РИНЦ / eLIBRARY"

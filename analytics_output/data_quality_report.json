@@ -7,7 +7,7 @@
     "generator": "generate_publication_pages.py"
   },
   "summary": {
-    "total_scholars": 289,
+    "total_scholars": 286,
     "total_presentations": 1377,
     "unique_presentations": 1350,
     "author_participations": 1377,
@@ -15,10 +15,10 @@
     "years_covered": 22,
     "start_year": 2004,
     "end_year": 2026,
-    "overlap_scholars": 40,
-    "zograf_only_scholars": 183,
-    "roerich_only_scholars": 66,
-    "person_rows": 289,
+    "overlap_scholars": 41,
+    "zograf_only_scholars": 180,
+    "roerich_only_scholars": 65,
+    "person_rows": 286,
     "presentation_rows": 1350,
     "event_rows": 40
   },

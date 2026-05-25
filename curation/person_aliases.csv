@@ -1,0 +1,4 @@
+alias_name,target_name,status,confidence,source,note
+"А. Крылова","Крылова Анастасия Сергеевна",accepted,high,manual-identity-audit,"Single-initial programme form; exact surname and first initial match the existing full profile."
+"Л. Бурмистров","Бурмистров Сергей Леонидович",accepted,manual,manual-identity-audit,"Programme form uses the patronymic initial only; merge is curated, not automatic."
+"В. Кулланда","Кулланда Сергей Всеволодович",accepted,manual,manual-identity-audit,"Programme form uses the patronymic initial only; merge is curated, not automatic."
