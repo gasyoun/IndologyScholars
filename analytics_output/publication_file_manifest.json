@@ -170,8 +170,8 @@
     },
     {
       "path": "analytics_output/id_stability_audit.json",
-      "size_bytes": 962,
-      "sha256": "d6180d8a97f1e7b66aa7111992e756d211efee16251fa0b7fabbbbf571adbbdb"
+      "size_bytes": 971,
+      "sha256": "d071b7a4e01100196f2b2cee8c110f5cdf63dc35f359d79269d55b3d7ed3b148"
     },
     {
       "path": "analytics_output/id_stability_changed_ids.csv",
@@ -666,7 +666,7 @@
     {
       "path": "download-data.html",
       "size_bytes": 25964,
-      "sha256": "3a510b6443aa46c6508be82375bd14eb6e5f0e07a718be5c99b2df3c7a914181"
+      "sha256": "ea39e97766c494e5011a86b49b593c9b149fad42c32bcf88682839b7582c37fb"
     },
     {
       "path": "en.html",
