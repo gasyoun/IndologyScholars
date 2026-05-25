@@ -44,6 +44,7 @@ dependencies in `requirements.txt`.
 python -m pip install -r requirements.txt
 python build_and_populate_db.py
 python generate_analytics.py
+python article/work_title_keywords.py
 python generate_site_data.py
 python generate_network_json.py
 python generate_scholars_pages.py
@@ -71,11 +72,14 @@ flowchart TD
     A["html_cache/ and curated inputs"] --> B["build_and_populate_db.py"]
     B --> C["conferences.db"]
     C --> D["generate_analytics.py"]
-    C --> E["generate_site_data.py"]
+    C --> N["article/work_title_keywords.py"]
+    D --> N
+    N --> E["generate_site_data.py"]
     E --> F["generate_network_json.py"]
     C --> G["generate_scholars_pages.py"]
     C --> H["generate_publication_pages.py"]
     D --> I["analytics_output/ and indology_scholars_analytics.md"]
+    N --> O["presentation_tags.csv and lexical exports"]
     E --> J["site_data.json"]
     F --> K["network data"]
     G --> L["scholars/"]

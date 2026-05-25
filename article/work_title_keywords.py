@@ -517,7 +517,9 @@ PERIODS = [
     ("2023-2026", 2023, 2026),
 ]
 
-TOKEN_RE = re.compile(r"[а-яёa-z][а-яёa-z_-]{2,}", re.IGNORECASE)
+# Public keyword facets use Russian-language descriptors. This avoids
+# splitting diacritic Latin/Sanskrit text names into misleading fragments.
+TOKEN_RE = re.compile(r"[а-яё][а-яё_-]{2,}", re.IGNORECASE)
 MORPH = pymorphy3.MorphAnalyzer()
 
 

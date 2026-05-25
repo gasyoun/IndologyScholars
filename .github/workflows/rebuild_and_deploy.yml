@@ -53,6 +53,7 @@ jobs:
       - name: Generate Comparative Statistical Reports & CSVs
         run: |
           python generate_analytics.py
+          python article/work_title_keywords.py
 
       - name: Serialize Data Structure for Dashboard
         run: |
@@ -78,6 +79,7 @@ jobs:
           
           # Add only changed datasets, database, caching, and static pages
           git add html_cache/*.html conferences.db site_data.json public_ids.json analytics_output/*.csv analytics_output/*.json indology_scholars_analytics.md scholars/*.html
+          git add article/hypothesis_output/*.csv article/hypothesis_output/*.md article/figures/*.svg
           git add assets/*.png assets/*.svg conferences/*.html presentations/*.html generations/*.html themes/*.html cities/*.html institutions/*.html
           git add sitemap.xml robots.txt site.webmanifest search.html search-index.json CITATION.cff datapackage.json data_dictionary.md
           git add 404.html en.html download-data.html data-quality.html methodology.html data-sources.html known-limitations.html how-to-cite.html metrics-guide.html networks.html

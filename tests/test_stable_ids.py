@@ -1,4 +1,5 @@
 import importlib.util
+import re
 import sys
 import tempfile
 import unittest
@@ -23,6 +24,7 @@ title_normalization = load_module("title_normalization_under_test", "title_norma
 classification_overrides = load_module("classification_overrides_under_test", "classification_overrides.py")
 compare_manifests = load_module("compare_id_manifests_under_test", "scratch/compare_id_manifests.py")
 export_manifest = load_module("export_presentation_id_manifest_under_test", "scratch/export_presentation_id_manifest.py")
+title_keywords = load_module("work_title_keywords_under_test", "article/work_title_keywords.py")
 
 
 class StableIdTests(unittest.TestCase):
@@ -72,6 +74,13 @@ class StableIdTests(unittest.TestCase):
             title_normalization.canonical_title(None, "Ритуальные предметы. Онлайн"),
             "Ритуальные предметы",
         )
+
+    def test_public_keywords_do_not_fragment_diacritic_latin_titles(self):
+        tokens = title_keywords.tokenize(
+            "Prasādapratibhodbhava (Śatapañcāśatka) Матричеты: тохарский перевод и комментарий"
+        )
+        self.assertEqual(tokens, ["матричета", "тохарский", "перевод", "комментарий"])
+        self.assertFalse(any(re.search(r"[a-z]", token, flags=re.IGNORECASE) for token in tokens))
 
     def test_leading_institution_is_public_metadata_not_title_text(self):
         title, affiliation = metadata_normalization.split_leading_affiliation(
