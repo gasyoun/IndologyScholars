@@ -324,5 +324,64 @@ C:\Users\user\Documents\GitHub\IndologyScholars
 Проверенная выборка или Проверочная выборка (с которой сверяются)?
 
 
+C:\Users\user\Documents\GitHub\IndologyScholars
+
+1)
+© 2026 Российский индологический научный архив, д-р Марцис Гасунс
+-->
+© 2026 Российский индологический научный архив, к.ф.н. М.Ю. Гасунс (Обнинск)
+
+2)
+https://gasyoun.github.io/IndologyScholars/scholars/
+в правом верхнем углу добавить условный ID - при этом ID не меняется, присваивается один раз
+
+3)
+https://gasyoun.github.io/IndologyScholars/presentations/
+в правом верхнем углу добавить условный ID - при этом ID не меняется, присваивается один раз, самые старые доклады - 1 ID
+
+4)
+везде, где на https://gasyoun.github.io/IndologyScholars/generations/ внизу Инициал вместо инициалов - слить с карточкой учененого с полными инициалами
+
+О. В. Вечерина
+опечатка, это на самом деле
+О. П. Вечерина 
+
+
+
+5)
+Prasādapratibhodbhava (Śatapañcāśatka) Матричеты: тохарский перевод и комментарий
+Рериховские чтения 2025 · Литература и поэзия · Санкт-Петербург
+2025-12-08 · Понедельник · 11:00 – 14:15
+Утреннее заседание
+Срезы: Буддийские традицииРукописи и эпиграфика Ключевые слова: prasdapratibhodbhavaatapaatka
+
+для ключевых слов опасно дробить латиницу Prasādapratibhodbhava (Śatapañcāśatka), надежнее брать тут и везде слова кириллицей, особо те, что написаны с заглавной
+
+и этот доклад виден и у https://gasyoun.github.io/IndologyScholars/scholars/lundysheva.html и у https://gasyoun.github.io/IndologyScholars/scholars/itkin-ilya.html чего быть не может
+
+
 
 На Android, iPhone и оффлайн работает?
+
+
+заменить 
+https://gasyoun.github.io/IndologyScholars/scholars
+на
+https://gasyoun.github.io/IndologyScholars/s
+
+
+заменить
+https://gasyoun.github.io/IndologyScholars/presentations
+на
+https://gasyoun.github.io/IndologyScholars/p
+
+Из
+Архив
+Поиск
+Исследователи
+Доклады
+Конференции
+Рубрики
+Данные
+убрать Данные из верхнего меню в Еще
+а вместо него поставить Поколения
