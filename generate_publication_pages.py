@@ -1207,10 +1207,13 @@ def generate_search(data, records):
             <h1>Поиск по архиву</h1>
             <p>Поиск по авторам, названиям докладов, организациям, городам, рубрикам и мезоуровням.</p>
         </header>
-        <input class="search-box" id="q" type="search" placeholder="Введите имя, тему, город или организацию" autofocus>
-        <section id="results" class="list" style="margin-top:1rem;"></section>
+        <label class="field-label" for="q">Поисковый запрос</label>
+        <input class="search-box" id="q" type="search" placeholder="Имя, тема, город или организация" autofocus>
+        <p class="meta" id="result-summary" aria-live="polite"></p>
+        <section id="results" class="list" aria-label="Результаты поиска"></section>
         <script>
         const results = document.getElementById('results');
+        const summary = document.getElementById('result-summary');
         const input = document.getElementById('q');
         let docs = [];
         const typeLabels = {'Scholar':'Автор', 'Presentation':'Доклад', 'Topic':'Сюжет', 'Generation':'Поколения', 'Meso-level':'Мезоуровень', 'Keyword':'Ключевые слова', 'Gumilyov':'Гумилев', 'Video':'Видео', 'Finding':'Вывод'};
@@ -1230,12 +1233,18 @@ def generate_search(data, records):
         function render(query) {
             const q = query.trim().toLowerCase();
             const items = docs.map(d => ({...d, score: score(d, q)})).filter(d => q ? d.score > 0 : d.type === 'Scholar').sort((a,b) => b.score - a.score || a.title.localeCompare(b.title)).slice(0, 50);
+            summary.textContent = q ? `Найдено результатов: ${items.length}` : `Показаны первые ${items.length} профилей`;
             results.innerHTML = items.map(d => `<article class="card"><strong><a href="${d.url}">${escapeHtml(d.title || '')}</a></strong><div class="meta">${escapeHtml(d.meta || typeLabels[d.type] || d.type)}</div></article>`).join('');
         }
         function escapeHtml(value) {
             return String(value).replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
         }
-        input.addEventListener('input', () => render(input.value));
+        input.addEventListener('input', () => {
+            const url = new URL(location.href);
+            input.value.trim() ? url.searchParams.set('q', input.value.trim()) : url.searchParams.delete('q');
+            history.replaceState(null, '', `${url.pathname}${url.search}${url.hash}`);
+            render(input.value);
+        });
         </script>
     """
     write_text(
@@ -3983,14 +3992,12 @@ def patch_index_stats(data):
     talks_ru_desc = f"{total_presentations} участий в {unique_presentations} уникальных докладах"
     talks_en_desc = f"{total_presentations} participations across {unique_presentations} unique talks"
     corpus_pause_ru = (
-        f"Статья и сайт синхронизированы с расширенным корпусом: {total_scholars} ученых / "
-        f"{unique_presentations} уникальных докладов / {total_presentations} авторских участий. "
-        "Шкала обобщения повторно проверена для всех докладов."
+        f"В корпусе: {total_scholars} ученых, {unique_presentations} уникальных докладов "
+        f"и {total_presentations} авторских участий."
     )
     corpus_pause_en = (
-        f"The article and site are synchronized to the expanded corpus: {total_scholars} scholars / "
-        f"{unique_presentations:,} unique talks / {total_presentations:,} author participations. "
-        "Argument scale was re-audited across all presentations."
+        f"The corpus includes {total_scholars} scholars, {unique_presentations:,} unique talks, "
+        f"and {total_presentations:,} author participations."
     )
     html = re.sub(
         r'(<div class="stat-label" id="stat-talks-label">)[^<]+(</div>)',
@@ -4053,10 +4060,10 @@ def patch_index_stats(data):
             html,
             count=1,
         )
-    overlap_text_ru = f"Только {overlap} ученых выступали на обеих площадках при модельном ожидании {expected_overlap:.1f}."
+    overlap_text_ru = f"{overlap} ученый выступал на обеих площадках при модельном ожидании {expected_overlap:.1f}."
     overlap_text_en = f"Only {overlap} scholars spoke at both venues, compared with a model expectation of {expected_overlap:.1f}."
-    micro_text_ru = "После полного аудита шкала Гумилева показывает доминирование докладов о конкретном тексте, авторе или источнике."
-    micro_text_en = "After a full audit, the Gumilyov scale shows the dominance of talks on a specific text, author, or source."
+    micro_text_ru = "В разметке преобладают доклады о конкретном тексте, авторе или источнике."
+    micro_text_en = "The coding is dominated by talks on a specific text, author, or source."
     html = re.sub(r'(<div class="insight-text" id="insight-overlap-text">)[^<]+(</div>)', rf'\g<1>{overlap_text_ru}\g<2>', html, count=1)
     html = re.sub(r'(<div class="insight-text" id="insight-micro-text">)[^<]+(</div>)', rf'\g<1>{micro_text_ru}\g<2>', html, count=1)
     html = re.sub(r'(ru:\s*\{.*?insightOverlapText:\s*")[^"]*(")', rf'\g<1>{overlap_text_ru}\g<2>', html, count=1, flags=re.DOTALL)
@@ -4071,7 +4078,7 @@ def patch_index_stats(data):
     )
     html = re.sub(
         r'(<div class="stat-desc" id="stat-youtube-desc">)[^<]+(</div>)',
-        r'\g<1>Сохранившиеся записи, привязанные к докладам\g<2>',
+        r'\g<1>Записи, привязанные к докладам\g<2>',
         html,
         count=1,
     )

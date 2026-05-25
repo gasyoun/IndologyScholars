@@ -64,22 +64,22 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
     
-    <!-- Modern Premium Design Styling -->
+    <!-- Archive workspace styling -->
     <style>
         :root {
-            --bg-primary: #0a0e1a;
-            --bg-secondary: #11182c;
-            --bg-card: rgba(17, 24, 44, 0.65);
-            --bg-card-hover: rgba(22, 33, 61, 0.85);
-            --border-color: rgba(255, 255, 255, 0.08);
-            --border-hover: rgba(139, 92, 246, 0.4);
-            --text-primary: #f3f4f6;
-            --text-secondary: #9ca3af;
-            --text-muted: #6b7280;
-            --accent-primary: #8b5cf6;
-            --accent-secondary: #ec4899;
-            --accent-gradient: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%);
-            --accent-glow: rgba(139, 92, 246, 0.15);
+            --bg-primary: #101513;
+            --bg-secondary: #141b18;
+            --bg-card: #171e1b;
+            --bg-card-hover: #1c2521;
+            --border-color: #2b3631;
+            --border-hover: #4f9b82;
+            --text-primary: #e7ece8;
+            --text-secondary: #b3beb7;
+            --text-muted: #87938c;
+            --accent-primary: #62ae92;
+            --accent-secondary: #c59a56;
+            --accent-gradient: linear-gradient(135deg, #62ae92 0%, #8fc4ad 100%);
+            --accent-glow: rgba(98, 174, 146, 0.12);
             --font-display: 'Outfit', sans-serif;
             --font-sans: 'Inter', sans-serif;
             --font-mono: 'Fira Code', monospace;
@@ -98,17 +98,13 @@
             margin: 0;
             padding: 0;
             overflow-x: hidden;
-            background-image: 
-                radial-gradient(circle at 10% 20%, rgba(139, 92, 246, 0.08) 0%, transparent 40%),
-                radial-gradient(circle at 90% 80%, rgba(236, 72, 153, 0.06) 0%, transparent 40%);
-            background-attachment: fixed;
         }
 
         /* Typography & Layout */
         h1, h2, h3, h4, h5, h6 {
             font-family: var(--font-display);
             font-weight: 700;
-            letter-spacing: -0.02em;
+            letter-spacing: 0;
             margin: 0 0 0.5rem 0;
         }
 
@@ -977,157 +973,507 @@
             font-size: 1.5rem;
             margin-bottom: 1rem;
         }
+
+        /* Quiet, task-first archive workspace */
+        header {
+            padding: 1.65rem 0 1.4rem;
+            text-align: left;
+            background: var(--bg-secondary);
+            backdrop-filter: none;
+        }
+
+        .header-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+
+        .header-copy {
+            max-width: 900px;
+        }
+
+        .header-glow {
+            display: none;
+        }
+
+        header h1 {
+            font-size: 2.15rem;
+            line-height: 1.2;
+            margin-bottom: 0.45rem;
+        }
+
+        header p {
+            font-size: 1rem;
+            font-weight: 400;
+            margin: 0;
+            max-width: 760px;
+        }
+
+        .lang-switch-container {
+            position: static;
+            display: flex;
+            gap: 0.5rem;
+            flex-shrink: 0;
+        }
+
+        .lang-switch-btn {
+            background: transparent;
+            border-color: var(--border-color);
+            padding: 0.52rem 0.75rem;
+            border-radius: 6px;
+            font-family: var(--font-sans);
+            font-size: 0.9rem;
+            font-weight: 500;
+            box-shadow: none;
+            backdrop-filter: none;
+        }
+
+        .lang-switch-btn:hover {
+            border-color: var(--accent-primary);
+            background: rgba(98, 174, 146, 0.08);
+            box-shadow: none;
+            transform: none;
+        }
+
+        .container {
+            padding-top: 1.25rem;
+        }
+
+        .publication-links {
+            justify-content: flex-start;
+            align-items: center;
+            gap: 0.45rem;
+            margin: 0 auto 1.2rem;
+        }
+
+        .publication-links a,
+        .more-links summary {
+            background: transparent;
+            border-color: var(--border-color);
+            border-radius: 6px;
+            color: var(--text-secondary);
+            padding: 0.48rem 0.68rem;
+            font-size: 0.9rem;
+        }
+
+        .publication-links a:hover,
+        .more-links summary:hover {
+            color: var(--text-primary);
+            border-color: var(--accent-primary);
+            background: rgba(98, 174, 146, 0.08);
+        }
+
+        .more-links {
+            position: relative;
+        }
+
+        .more-links summary {
+            display: inline-flex;
+            list-style: none;
+            border: 1px solid var(--border-color);
+            cursor: pointer;
+        }
+
+        .more-links summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .more-links-menu {
+            position: absolute;
+            top: calc(100% + 0.4rem);
+            left: 0;
+            z-index: 20;
+            width: min(420px, calc(100vw - 3rem));
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            padding: 0.65rem;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background: var(--bg-secondary);
+            box-shadow: 0 10px 26px rgba(0, 0, 0, 0.28);
+        }
+
+        .controls {
+            justify-content: flex-start;
+            gap: 0.25rem;
+            margin: 0 0 1rem;
+            padding: 0.25rem;
+            max-width: none;
+            width: fit-content;
+            background: var(--bg-card);
+            border-radius: 8px;
+            backdrop-filter: none;
+        }
+
+        .tab-btn {
+            padding: 0.58rem 0.8rem;
+            border-radius: 6px;
+            font-family: var(--font-sans);
+        }
+
+        .tab-btn.active {
+            background: #284438;
+            color: var(--text-primary);
+            box-shadow: none;
+        }
+
+        .filter-bar {
+            display: grid;
+            grid-template-columns: minmax(210px, 1.15fr) minmax(210px, 1.15fr) minmax(180px, 0.8fr) minmax(190px, 0.85fr);
+            align-items: end;
+            gap: 0.75rem;
+            border-radius: 8px;
+            padding: 0.85rem;
+            margin-bottom: 1rem;
+        }
+
+        .filter-field {
+            min-width: 0;
+        }
+
+        .filter-label {
+            display: block;
+            margin: 0 0 0.32rem;
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .search-wrapper {
+            min-width: 0;
+        }
+
+        .search-input,
+        .select-filter {
+            background: var(--bg-primary);
+        }
+
+        .select-filter {
+            display: block;
+            width: 100%;
+            padding: 0.75rem 0.6rem;
+        }
+
+        .table-container {
+            border-radius: 8px;
+            box-shadow: none;
+            backdrop-filter: none;
+        }
+
+        th {
+            background: var(--bg-secondary);
+            padding: 0.8rem 0.9rem;
+            font-size: 0.85rem;
+        }
+
+        td {
+            padding: 0.8rem 0.9rem;
+        }
+
+        .stats-grid {
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 0.65rem;
+            margin: 2.75rem auto 2rem;
+        }
+
+        .stat-card {
+            padding: 0.9rem;
+            border-radius: 8px;
+            box-shadow: none;
+            backdrop-filter: none;
+        }
+
+        .stat-card::before {
+            display: none;
+        }
+
+        .stat-card:hover {
+            transform: none;
+            box-shadow: none;
+        }
+
+        .stat-num {
+            color: var(--accent-primary);
+            font-size: 2rem;
+            letter-spacing: 0;
+        }
+
+        .gradient-text {
+            background: none;
+            -webkit-text-fill-color: currentColor;
+        }
+
+        .stat-label {
+            font-size: 0.92rem;
+        }
+
+        .badge-zograf {
+            background: rgba(98, 174, 146, 0.12);
+            border-color: rgba(98, 174, 146, 0.4);
+            color: #8dc9b2;
+        }
+
+        .badge-roerich {
+            background: rgba(197, 154, 86, 0.12);
+            border-color: rgba(197, 154, 86, 0.4);
+            color: #ddb879;
+        }
+
+        .badge-both {
+            background: #202923;
+            border-color: #415249;
+            color: #c5d0c9;
+        }
+
+        .findings-strip {
+            margin-top: 1rem;
+        }
+
+        .insight-card {
+            background: var(--bg-card);
+        }
+
+        :focus-visible {
+            outline: 2px solid var(--accent-primary);
+            outline-offset: 2px;
+        }
+
+        @media (max-width: 980px) {
+            .filter-bar {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 720px) {
+            .header-inner {
+                padding: 0 1rem;
+                display: block;
+            }
+
+            header h1 {
+                font-size: 1.7rem;
+            }
+
+            header p {
+                font-size: 0.92rem;
+                margin-bottom: 1rem;
+            }
+
+            .lang-switch-container {
+                justify-content: flex-start;
+            }
+
+            .container {
+                padding: 1rem;
+            }
+
+            .publication-links {
+                gap: 0.35rem;
+            }
+
+            .publication-links a,
+            .more-links summary {
+                padding: 0.42rem 0.58rem;
+            }
+
+            .controls {
+                max-width: 100%;
+                width: 100%;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+
+            .filter-bar {
+                grid-template-columns: 1fr;
+                padding: 0.75rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                margin-top: 2rem;
+            }
+
+            .stat-desc {
+                display: none;
+            }
+
+            .table-container {
+                overflow: visible;
+            }
+
+            #scholars-table,
+            #scholars-table tbody {
+                display: block;
+            }
+
+            #scholars-table thead {
+                display: none;
+            }
+
+            #scholars-table tr:not(.scholar-row-detail) {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 0.65rem 0.8rem;
+                padding: 0.9rem;
+                border-bottom: 1px solid var(--border-color);
+            }
+
+            #scholars-table tr:not(.scholar-row-detail) td {
+                display: block;
+                min-width: 0;
+                padding: 0;
+                border: 0;
+            }
+
+            #scholars-table tr:not(.scholar-row-detail) td:first-child,
+            #scholars-table tr:not(.scholar-row-detail) td:last-child {
+                grid-column: 1 / -1;
+            }
+
+            #scholars-table tr:not(.scholar-row-detail) td[data-label]::before {
+                content: attr(data-label);
+                display: block;
+                margin-bottom: 0.18rem;
+                color: var(--text-muted);
+                font-size: 0.72rem;
+                font-weight: 600;
+                text-transform: uppercase;
+            }
+
+            .scholar-row-detail td {
+                display: block;
+                padding: 0;
+            }
+
+            #scholars-table .scholar-row-detail[style*="table-row"] {
+                display: block !important;
+            }
+
+            .detail-wrapper {
+                padding: 1rem;
+            }
+
+            .analytics-grid {
+                display: block;
+                margin-bottom: 0;
+            }
+
+            .chart-card {
+                padding: 1rem;
+                margin-bottom: 0.75rem;
+            }
+
+            .pagination-bar {
+                gap: 0.5rem;
+                font-size: 0.84rem;
+            }
+
+            .page-btn {
+                padding: 0.48rem 0.62rem;
+            }
+        }
     </style>
 </head>
 <body>
 
-    <!-- Premium Controls Container -->
-    <div class="lang-switch-container" style="display: flex; gap: 1rem;">
-        <button class="lang-switch-btn" id="export-md-btn" onclick="exportToMarkdown()" style="background: rgba(139, 92, 246, 0.15); border-color: rgba(139, 92, 246, 0.4);">
-            <span style="font-size: 1rem;">⬇️</span> Markdown
-        </button>
-        <button class="lang-switch-btn" id="lang-switch-btn" onclick="toggleLanguage()">
-            <span style="font-size: 1rem;">🌐</span> RU / EN
-        </button>
-    </div>
-
-    <!-- Header Hero Section -->
     <header>
-        <div class="header-glow"></div>
-        <h1 id="main-heading">Российская индологическая наука</h1>
-        <p id="sub-heading">Единый интерактивный архив и статистическая панель научных докладов конференций «Зографские чтения» (2004–2026 гг.) и «Рериховских чтений» (2007–2025 гг.).</p>
+        <div class="header-inner">
+            <div class="header-copy">
+                <h1 id="main-heading">Архив Зографских и Рериховских чтений</h1>
+                <p id="sub-heading">Докладчики, доклады и связи российской индологии, 2004–2026.</p>
+            </div>
+            <div class="lang-switch-container" aria-label="Служебные действия">
+                <button class="lang-switch-btn" id="export-md-btn" onclick="exportToMarkdown()" title="Экспортировать выборку в Markdown">Экспорт</button>
+                <button class="lang-switch-btn" id="lang-switch-btn" onclick="toggleLanguage()" title="Switch language">EN</button>
+            </div>
+        </div>
     </header>
 
     <!-- Main Container -->
     <div class="container">
         
-        <!-- Stats Dashboard Grid -->
-        <section class="stats-grid" id="stats-dashboard">
-            <div class="stat-card" id="card-scholars">
-                <div class="stat-num gradient-text" id="stat-scholars-count">286</div>
-                <div class="stat-label" id="stat-scholars-label">Уникальные ученые</div>
-                <div class="stat-desc" id="stat-scholars-desc">Дедуплицированные индологи и докладчики</div>
-            </div>
-            <div class="stat-card" id="card-talks">
-                <div class="stat-num gradient-text" id="stat-talks-count">1377</div>
-                <div class="stat-label" id="stat-talks-label">Авторские участия</div>
-                <div class="stat-desc" id="stat-talks-desc">1377 участий в 1350 уникальных докладах</div>
-            </div>
-            <div class="stat-card" id="card-years">
-                <div class="stat-num gradient-text" id="stat-years-count">22</div>
-                <div class="stat-label" id="stat-years-label">Года исследований</div>
-                <div class="stat-desc" id="stat-years-desc">Период с 2004 по 2026 годы</div>
-            </div>
-            <div class="stat-card" id="card-overlap">
-                <div class="stat-num gradient-text" id="stat-overlap-count">41</div>
-                <div class="stat-label" id="stat-overlap-label">Ядро индологов</div>
-                <div class="stat-desc" id="stat-overlap-desc">Ученые, участвовавшие в обеих конференциях</div>
-            </div>
-            <div class="stat-card" id="card-youtube">
-                <div class="stat-num gradient-text" id="stat-youtube-count">82</div>
-                <div class="stat-label" id="stat-youtube-label">Доклады с видео</div>
-                <div class="stat-desc" id="stat-youtube-desc">Сохранившиеся записи, привязанные к докладам</div>
-            </div>
-        </section>
-
-        <nav class="publication-links" aria-label="Static archive pages">
-            <a href="findings/">Выводы статьи</a>
-            <a href="scholars/">Профили</a>
-            <a href="conferences/">Конференции</a>
-            <a href="presentations/">Доклады</a>
-            <a href="themes/">Темы</a>
-            <a href="topics/">Сюжеты</a>
-            <a href="generations/">Поколения</a>
-            <a href="gumilyov/">Гумилев</a>
-            <a href="classification-criteria.html">Критерии</a>
-            <a href="videos/">Видео</a>
-            <a href="cities/">Города</a>
-            <a href="institutions/">Институции</a>
-            <a href="search.html">Поиск</a>
-            <a href="download-data.html">Данные</a>
-            <a href="data-quality.html">Качество</a>
-            <a href="methodology.html">Методология</a>
-            <a href="networks.html">Сети</a>
-            <a href="en.html">English</a>
-            <a href="how-to-cite.html">Цитирование</a>
+        <nav class="publication-links" aria-label="Разделы архива">
+            <a href="search.html" data-ru="Поиск" data-en="Search">Поиск</a>
+            <a href="scholars/" data-ru="Профили" data-en="Scholars">Профили</a>
+            <a href="presentations/" data-ru="Доклады" data-en="Papers">Доклады</a>
+            <a href="conferences/" data-ru="Конференции" data-en="Conferences">Конференции</a>
+            <a href="themes/" data-ru="Темы" data-en="Themes">Темы</a>
+            <a href="download-data.html" data-ru="Данные" data-en="Data">Данные</a>
+            <details class="more-links">
+                <summary data-ru="Еще" data-en="More">Еще</summary>
+                <div class="more-links-menu">
+                    <a href="findings/" data-ru="Выводы" data-en="Findings">Выводы</a>
+                    <a href="topics/" data-ru="Сюжеты" data-en="Named texts">Сюжеты</a>
+                    <a href="generations/" data-ru="Поколения" data-en="Generations">Поколения</a>
+                    <a href="gumilyov/" data-ru="Гумилев" data-en="Gumilyov">Гумилев</a>
+                    <a href="classification-criteria.html" data-ru="Критерии" data-en="Criteria">Критерии</a>
+                    <a href="videos/" data-ru="Видео" data-en="Videos">Видео</a>
+                    <a href="cities/" data-ru="Города" data-en="Cities">Города</a>
+                    <a href="institutions/" data-ru="Институции" data-en="Institutions">Институции</a>
+                    <a href="data-quality.html" data-ru="Качество" data-en="Quality">Качество</a>
+                    <a href="methodology.html" data-ru="Методология" data-en="Methodology">Методология</a>
+                    <a href="networks.html" data-ru="Сети" data-en="Networks">Сети</a>
+                    <a href="how-to-cite.html" data-ru="Цитирование" data-en="Cite">Цитирование</a>
+                    <a href="en.html">English</a>
+                </div>
+            </details>
         </nav>
 
-        <section class="findings-strip" aria-labelledby="findings-heading">
-            <div class="findings-header">
-                <div>
-                    <div class="findings-eyebrow" id="findings-eyebrow">Из последней статьи</div>
-                    <h2 class="findings-title" id="findings-heading">Не только список докладов: что показывает архив</h2>
-                    <p class="findings-lead" id="findings-lead">Две конференции образуют связанные, но удивительно слабо пересекающиеся среды; их различают тематические акценты и общий жанр точного микрокейса.</p>
-                </div>
-                <a class="findings-cta" id="findings-cta" href="findings/">Читать выводы</a>
-            </div>
-            <p class="findings-corpus-note" id="findings-corpus-note">Статья и сайт синхронизированы с расширенным корпусом: 286 ученых / 1350 уникальных докладов / 1377 авторских участий. Шкала обобщения повторно проверена для всех докладов.</p>
-            <div class="findings-grid">
-                <article class="insight-card">
-                    <div class="insight-metric" id="insight-overlap-metric">41 / 128.3</div>
-                    <div class="insight-title" id="insight-overlap-title">Пересечение ниже ожидания</div>
-                    <div class="insight-text" id="insight-overlap-text">Только 41 ученых выступали на обеих площадках при модельном ожидании 128.3.</div>
-                </article>
-                <article class="insight-card">
-                    <div class="insight-metric" id="insight-theme-metric">75.0% / 55.5%</div>
-                    <div class="insight-title" id="insight-theme-title">Разные тематические оптики</div>
-                    <div class="insight-text" id="insight-theme-text">Классико-средневековые темы заметнее в Рериховских чтениях, чем в Зографских.</div>
-                </article>
-                <article class="insight-card">
-                    <div class="insight-metric" id="insight-micro-metric">1155 / 1350</div>
-                    <div class="insight-title" id="insight-micro-title">Микрокейс является нормой</div>
-                    <div class="insight-text" id="insight-micro-text">После полного аудита шкала Гумилева показывает доминирование докладов о конкретном тексте, авторе или источнике.</div>
-                </article>
-                <article class="insight-card">
-                    <div class="insight-metric" id="insight-video-metric">82</div>
-                    <div class="insight-title" id="insight-video-title">Видео как проверяемый слой</div>
-                    <div class="insight-text" id="insight-video-text">Прямые видеоссылки привязаны к 82 докладам, но этот слой не репрезентирует весь корпус.</div>
-                </article>
-            </div>
-        </section>
-
-        <!-- Dynamic Control Center Buttons -->
-        <nav class="controls" id="dashboard-controls">
-            <button class="tab-btn active" id="tab-scholars" onclick="switchTab('scholars')">Каталог востоковедов</button>
-            <button class="tab-btn" id="tab-timeline" onclick="switchTab('timeline')">Хронология докладов</button>
-            <button class="tab-btn" id="tab-charts" onclick="switchTab('charts')">Статистический анализ</button>
-            <button class="tab-btn" id="tab-schema" onclick="switchTab('schema')">Архитектура БД</button>
+        <nav class="controls" id="dashboard-controls" role="tablist" aria-label="Представление архива">
+            <button class="tab-btn active" id="tab-scholars" role="tab" aria-selected="true" aria-controls="sec-scholars" tabindex="0" onclick="switchTab('scholars')">Каталог</button>
+            <button class="tab-btn" id="tab-timeline" role="tab" aria-selected="false" aria-controls="sec-timeline" tabindex="-1" onclick="switchTab('timeline')">Хронология</button>
+            <button class="tab-btn" id="tab-charts" role="tab" aria-selected="false" aria-controls="sec-charts" tabindex="-1" onclick="switchTab('charts')">Аналитика</button>
         </nav>
 
         <!-- Tab 1: Scholars Directory -->
-        <section class="dashboard-section active" id="sec-scholars">
+        <section class="dashboard-section active" id="sec-scholars" role="tabpanel" aria-labelledby="tab-scholars">
             <div class="filter-bar" id="scholars-filters">
-                <div class="search-wrapper">
-                    <!-- Search Icon SVG -->
-                    <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                    </svg>
-                    <input type="text" class="search-input" id="scholars-search" placeholder="Поиск ученых по фамилии, имени, отчеству..." oninput="handleFilterChange()">
+                <div class="filter-field">
+                    <label class="filter-label" id="label-scholars-search" for="scholars-search">Докладчик</label>
+                    <div class="search-wrapper">
+                        <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                        </svg>
+                        <input type="search" class="search-input" id="scholars-search" placeholder="Имя, организация, город" oninput="handleFilterChange()">
+                    </div>
                 </div>
 
-                <div class="search-wrapper" style="flex: 1;">
-                    <!-- Document Search Icon SVG -->
-                    <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                    </svg>
-                    <input type="text" class="search-input" id="talks-search" placeholder="Поиск в названиях докладов..." oninput="handleFilterChange()">
+                <div class="filter-field">
+                    <label class="filter-label" id="label-talks-search" for="talks-search">Название доклада</label>
+                    <div class="search-wrapper">
+                        <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg>
+                        <input type="search" class="search-input" id="talks-search" placeholder="Тема или слово в заглавии" oninput="handleFilterChange()">
+                    </div>
                 </div>
-                
-                <select class="select-filter" id="filter-series" onchange="handleFilterChange()">
-                    <option value="all" id="opt-all">Все конференции</option>
-                    <option value="zograf" id="opt-zograf">Зографские чтения (Санкт-Петербург)</option>
-                    <option value="roerich" id="opt-roerich">Рериховские чтения (Москва)</option>
-                    <option value="both" id="opt-both">Обе конференции (Общий актив)</option>
-                    <option value="never-zograf" id="opt-never-zograf">Никогда не выступали на Зографских чт.</option>
-                    <option value="never-roerich" id="opt-never-roerich">Никогда не выступали на Рериховских чт.</option>
-                </select>
 
-                <select class="select-filter" id="filter-sort" onchange="handleFilterChange()">
-                    <option value="talks-desc" id="opt-talks-desc">Сортировать по докладам (по убыванию)</option>
-                    <option value="talks-asc" id="opt-talks-asc">Сортировать по докладам (по возрастанию)</option>
-                    <option value="name-asc" id="opt-name-asc">Сортировать по алфавиту (А-Я)</option>
-                    <option value="name-desc" id="opt-name-desc">Сортировать по алфавиту (Я-А)</option>
-                </select>
+                <div class="filter-field">
+                    <label class="filter-label" id="label-series" for="filter-series">Площадка</label>
+                    <select class="select-filter" id="filter-series" onchange="handleFilterChange()">
+                        <option value="all" id="opt-all">Все конференции</option>
+                        <option value="zograf" id="opt-zograf">Зографские чтения (Санкт-Петербург)</option>
+                        <option value="roerich" id="opt-roerich">Рериховские чтения (Москва)</option>
+                        <option value="both" id="opt-both">Обе конференции (Общий актив)</option>
+                        <option value="never-zograf" id="opt-never-zograf">Никогда не выступали на Зографских чт.</option>
+                        <option value="never-roerich" id="opt-never-roerich">Никогда не выступали на Рериховских чт.</option>
+                    </select>
+                </div>
+
+                <div class="filter-field">
+                    <label class="filter-label" id="label-sort" for="filter-sort">Сортировка</label>
+                    <select class="select-filter" id="filter-sort" onchange="handleFilterChange()">
+                        <option value="talks-desc" id="opt-talks-desc">По числу докладов, убывание</option>
+                        <option value="talks-asc" id="opt-talks-asc">По числу докладов, возрастание</option>
+                        <option value="name-asc" id="opt-name-asc">По алфавиту (А-Я)</option>
+                        <option value="name-desc" id="opt-name-desc">По алфавиту (Я-А)</option>
+                    </select>
+                </div>
             </div>
 
             <section class="query-results" id="talk-query-results" hidden aria-live="polite">
@@ -1167,14 +1513,14 @@
         </section>
 
         <!-- Tab 2: Conferences Timeline -->
-        <section class="dashboard-section" id="sec-timeline">
+        <section class="dashboard-section" id="sec-timeline" role="tabpanel" aria-labelledby="tab-timeline" hidden>
             <div class="timeline-container" id="timeline-accordion">
                 <!-- Dynamically generated accordion cards by year -->
             </div>
         </section>
 
         <!-- Tab 3: Statistical Insights -->
-        <section class="dashboard-section" id="sec-charts">
+        <section class="dashboard-section" id="sec-charts" role="tabpanel" aria-labelledby="tab-charts" hidden>
             <div class="analytics-grid">
                 
                 <!-- Annual Growth Chart -->
@@ -1278,7 +1624,7 @@
         </section>
 
         <!-- Tab 4: Database Architecture -->
-        <section class="dashboard-section" id="sec-schema">
+        <section class="dashboard-section" id="sec-schema" hidden>
             <div class="schema-card">
                 <h3 class="chart-title" style="margin-bottom: 0.5rem;" id="db-title">Реляционная схема базы данных (conferences.db)</h3>
                 <p style="color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 0.95rem;" id="db-desc">Нормализованная база данных SQLite использует строгие ссылочные связи для сопоставления площадок, дат, залов заседаний, сессий, докладчиков и тем научных сообщений.</p>
@@ -1425,6 +1771,68 @@ CREATE TABLE presentation_person (
             </div>
         </section>
 
+        <section class="stats-grid" id="stats-dashboard" aria-label="Состав архива">
+            <div class="stat-card" id="card-scholars">
+                <div class="stat-num gradient-text" id="stat-scholars-count">286</div>
+                <div class="stat-label" id="stat-scholars-label">Уникальные ученые</div>
+                <div class="stat-desc" id="stat-scholars-desc">Дедуплицированные индологи и докладчики</div>
+            </div>
+            <div class="stat-card" id="card-talks">
+                <div class="stat-num gradient-text" id="stat-talks-count">1377</div>
+                <div class="stat-label" id="stat-talks-label">Авторские участия</div>
+                <div class="stat-desc" id="stat-talks-desc">1377 участий в 1350 уникальных докладах</div>
+            </div>
+            <div class="stat-card" id="card-years">
+                <div class="stat-num gradient-text" id="stat-years-count">22</div>
+                <div class="stat-label" id="stat-years-label">Годы корпуса</div>
+                <div class="stat-desc" id="stat-years-desc">Период с 2004 по 2026 годы</div>
+            </div>
+            <div class="stat-card" id="card-overlap">
+                <div class="stat-num gradient-text" id="stat-overlap-count">41</div>
+                <div class="stat-label" id="stat-overlap-label">Обе площадки</div>
+                <div class="stat-desc" id="stat-overlap-desc">Ученые, участвовавшие в обеих конференциях</div>
+            </div>
+            <div class="stat-card" id="card-youtube">
+                <div class="stat-num gradient-text" id="stat-youtube-count">82</div>
+                <div class="stat-label" id="stat-youtube-label">Доклады с видео</div>
+                <div class="stat-desc" id="stat-youtube-desc">Записи, привязанные к докладам</div>
+            </div>
+        </section>
+
+        <section class="findings-strip" aria-labelledby="findings-heading">
+            <div class="findings-header">
+                <div>
+                    <div class="findings-eyebrow" id="findings-eyebrow">Аналитические наблюдения</div>
+                    <h2 class="findings-title" id="findings-heading">Что показывает корпус конференций</h2>
+                    <p class="findings-lead" id="findings-lead">Две площадки связаны общими участниками, но сохраняют различимые тематические акценты и формы научного разговора.</p>
+                </div>
+                <a class="findings-cta" id="findings-cta" href="findings/">Смотреть выводы</a>
+            </div>
+            <p class="findings-corpus-note" id="findings-corpus-note">В корпусе: 286 ученых, 1350 уникальных докладов и 1377 авторских участий.</p>
+            <div class="findings-grid">
+                <article class="insight-card">
+                    <div class="insight-metric" id="insight-overlap-metric">41 / 128.3</div>
+                    <div class="insight-title" id="insight-overlap-title">Пересечение ниже ожидания</div>
+                    <div class="insight-text" id="insight-overlap-text">41 ученый выступал на обеих площадках при модельном ожидании 128.3.</div>
+                </article>
+                <article class="insight-card">
+                    <div class="insight-metric" id="insight-theme-metric">75.0% / 55.5%</div>
+                    <div class="insight-title" id="insight-theme-title">Разные тематические оптики</div>
+                    <div class="insight-text" id="insight-theme-text">Классико-средневековые темы заметнее в Рериховских чтениях, чем в Зографских.</div>
+                </article>
+                <article class="insight-card">
+                    <div class="insight-metric" id="insight-micro-metric">1155 / 1350</div>
+                    <div class="insight-title" id="insight-micro-title">Микрокейс является нормой</div>
+                    <div class="insight-text" id="insight-micro-text">В разметке преобладают доклады о конкретном тексте, авторе или источнике.</div>
+                </article>
+                <article class="insight-card">
+                    <div class="insight-metric" id="insight-video-metric">82</div>
+                    <div class="insight-title" id="insight-video-title">Видео как проверяемый слой</div>
+                    <div class="insight-text" id="insight-video-text">Прямые видеоссылки привязаны к 82 докладам; этот слой охватывает лишь часть корпуса.</div>
+                </article>
+            </div>
+        </section>
+
     </div>
 
     <!-- Footer Section -->
@@ -1442,50 +1850,54 @@ CREATE TABLE presentation_person (
 
         const TRANSLATIONS = {
             ru: {
-                mainHeading: "Российская индологическая наука",
-                subHeading: "Интерактивный архив более чем 20-летней истории Зографских чтений (2004–2026 гг.) и Рериховских чтений (2007–2025 гг.) в России.",
+                mainHeading: "Архив Зографских и Рериховских чтений",
+                subHeading: "Докладчики, доклады и связи российской индологии, 2004–2026.",
                 statScholars: "Уникальные ученые",
                 statScholarsDesc: "Дедуплицированные индологи и докладчики",
                 statTalks: "Авторские участия",
                 statTalksDesc: "1377 участий в 1350 уникальных докладах",
-                statYears: "Года исследований",
+                statYears: "Годы корпуса",
                 statYearsDesc: "Период с 2004 по 2026 годы",
-                statOverlap: "Ядро индологов",
+                statOverlap: "Обе площадки",
                 statOverlapDesc: "Ученые, участвовавшие в обеих конференциях",
                 statYoutube: "Доклады с видео",
-                statYoutubeDesc: "Сохранившиеся записи, привязанные к докладам",
-                findingsEyebrow: "Из последней статьи",
-                findingsHeading: "Не только список докладов: что показывает архив",
-                findingsLead: "Две конференции образуют связанные, но удивительно слабо пересекающиеся среды; их различают тематические акценты и общий жанр точного микрокейса.",
-                findingsCorpusNote: "Статья и сайт синхронизированы с расширенным корпусом: 286 ученых / 1350 уникальных докладов / 1377 авторских участий. Шкала обобщения повторно проверена для всех докладов.",
-                findingsCta: "Читать выводы",
+                statYoutubeDesc: "Записи, привязанные к докладам",
+                findingsEyebrow: "Аналитические наблюдения",
+                findingsHeading: "Что показывает корпус конференций",
+                findingsLead: "Две площадки связаны общими участниками, но сохраняют различимые тематические акценты и формы научного разговора.",
+                findingsCorpusNote: "В корпусе: 286 ученых, 1350 уникальных докладов и 1377 авторских участий.",
+                findingsCta: "Смотреть выводы",
                 insightOverlapTitle: "Пересечение ниже ожидания",
-                insightOverlapText: "Только 41 ученых выступали на обеих площадках при модельном ожидании 128.3.",
+                insightOverlapText: "41 ученый выступал на обеих площадках при модельном ожидании 128.3.",
                 insightThemeTitle: "Разные тематические оптики",
                 insightThemeText: "Классико-средневековые темы заметнее в Рериховских чтениях, чем в Зографских.",
                 insightMicroTitle: "Микрокейс является нормой",
-                insightMicroText: "После полного аудита шкала Гумилева показывает доминирование докладов о конкретном тексте, авторе или источнике.",
+                insightMicroText: "В разметке преобладают доклады о конкретном тексте, авторе или источнике.",
                 insightVideoTitle: "Видео как проверяемый слой",
-                insightVideoText: "Прямые видеоссылки привязаны к 82 докладам, но этот слой не репрезентирует весь корпус.",
+                insightVideoText: "Прямые видеоссылки привязаны к 82 докладам; этот слой охватывает лишь часть корпуса.",
                 queryResultsTitle: "Доклады по запросу «{query}»",
                 queryResultsSummary: "Найдено уникальных докладов: {count}. Ниже показаны годы, площадки и авторы явных совпадений в названиях.",
                 queryPermalink: "Ссылка на выборку",
                 queryTopicLink: "Страница сюжета «Рамаяна»",
-                tabScholars: "Каталог востоковедов",
-                tabTimeline: "Хронология докладов",
-                tabCharts: "Статистический анализ",
+                tabScholars: "Каталог",
+                tabTimeline: "Хронология",
+                tabCharts: "Аналитика",
                 tabSchema: "Архитектура БД",
-                searchPlaceholder: "Поиск ученых по фамилии, имени, отчеству...",
+                labelScholarSearch: "Докладчик",
+                labelTalkSearch: "Название доклада",
+                labelSeries: "Площадка",
+                labelSort: "Сортировка",
+                searchPlaceholder: "Имя, организация, город",
                 filterAll: "Все конференции",
                 filterZograf: "Зографские чтения (Санкт-Петербург)",
                 filterRoerich: "Рериховские чтения (Москва)",
                 filterBoth: "Обе конференции (Общий актив)",
                 filterNeverZograf: "Никогда не выступали на Зографских чт.",
                 filterNeverRoerich: "Никогда не выступали на Рериховских чт.",
-                sortTalksDesc: "Сортировать по докладам (по убыванию)",
-                sortTalksAsc: "Сортировать по докладам (по возрастанию)",
-                sortNameAsc: "Сортировать по алфавиту (А-Я)",
-                sortNameDesc: "Сортировать по алфавиту (Я-А)",
+                sortTalksDesc: "По числу докладов, убывание",
+                sortTalksAsc: "По числу докладов, возрастание",
+                sortNameAsc: "По алфавиту (А-Я)",
+                sortNameDesc: "По алфавиту (Я-А)",
                 colName: "ФИО ученого / Докладчика",
                 colTotal: "Всего докладов",
                 colZograf: "Зографские",
@@ -1535,7 +1947,7 @@ CREATE TABLE presentation_person (
                 netResetBtn: "Сбросить",
                 netPauseBtn: "Пауза",
                 netResumeBtn: "Запуск",
-                searchTalksPlaceholder: "Поиск в названиях докладов...",
+                searchTalksPlaceholder: "Тема или слово в заглавии",
                 chartInstTitle: "Рейтинг научно-исследовательских центров",
                 chartWordsTitle: "Тематическое облако тегов (N-Gram Analysis)",
                 networkTeaserText: "💡 Полномасштабная сеть содержит все институции, секции, темы и сплошные перекрестные связи с поиском и детальной фильтрацией.",
@@ -1545,51 +1957,55 @@ CREATE TABLE presentation_person (
                 thTalks: "Доклады"
             },
             en: {
-                mainHeading: "Russian Indological Scholarship",
-                subHeading: "Interactive archive of last 20+ years of the Zograf Readings (2004–2026) and Roerich Readings (2007–2025) from Russia.",
+                mainHeading: "Archive of the Zograf and Roerich Readings",
+                subHeading: "Speakers, talks, and connections in Russian Indology, 2004-2026.",
                 statScholars: "Unique Scholars",
                 statScholarsDesc: "Deduplicated indologists & speakers",
                 statTalks: "Author Participations",
                 statTalksDesc: "1377 participations across 1350 unique talks",
-                statYears: "Historical Years",
+                statYears: "Corpus Years",
                 statYearsDesc: "Covering 2004 through 2026",
-                statOverlap: "Core Overlap Cohort",
+                statOverlap: "Both Venues",
                 statOverlapDesc: "Scholars active in both forums",
                 statYoutube: "Talks with Video",
-                statYoutubeDesc: "Surviving recordings attached to talks",
-                findingsEyebrow: "From the latest article",
-                findingsHeading: "Beyond a list of talks: what the archive reveals",
-                findingsLead: "The two conference series form connected but unexpectedly weakly overlapping environments, differentiated by thematic emphasis and a shared preference for precise micro-cases.",
-                findingsCorpusNote: "The article and site are synchronized to the expanded corpus: 286 scholars / 1,350 unique talks / 1,377 author participations. Argument scale was re-audited across all presentations.",
-                findingsCta: "Read findings",
+                statYoutubeDesc: "Recordings attached to talks",
+                findingsEyebrow: "Analytical observations",
+                findingsHeading: "What the conference corpus shows",
+                findingsLead: "The two venues share participants while retaining distinguishable thematic emphases and forms of scholarly discussion.",
+                findingsCorpusNote: "The corpus includes 286 scholars, 1,350 unique talks, and 1,377 author participations.",
+                findingsCta: "View findings",
                 insightOverlapTitle: "Overlap is below expectation",
                 insightOverlapText: "Only 41 scholars spoke at both venues, compared with a model expectation of 128.3.",
                 insightThemeTitle: "Different thematic perspectives",
                 insightThemeText: "Classical and medieval topics are markedly more prominent at the Roerich Readings than at the Zograf Readings.",
                 insightMicroTitle: "The micro-case is the norm",
-                insightMicroText: "After a full audit, the Gumilyov scale shows the dominance of talks on a specific text, author, or source.",
+                insightMicroText: "The coding is dominated by talks on a specific text, author, or source.",
                 insightVideoTitle: "Video as a verification layer",
-                insightVideoText: "Direct video links are attached to 82 talks, but this layer is not representative of the full corpus.",
+                insightVideoText: "Direct video links are attached to 82 talks; this layer covers only part of the corpus.",
                 queryResultsTitle: "Talks matching \"{query}\"",
                 queryResultsSummary: "Unique matching talks: {count}. Years, venues, and authors of explicit title matches are listed below.",
                 queryPermalink: "Permalink to selection",
                 queryTopicLink: "Ramayana topic page",
-                tabScholars: "Scholars Directory",
-                tabTimeline: "Conferences Timeline",
-                tabCharts: "Statistical Insights",
+                tabScholars: "Directory",
+                tabTimeline: "Timeline",
+                tabCharts: "Analytics",
                 tabSchema: "Database Architecture",
-                searchPlaceholder: "Search scholars by display name or initials...",
-                searchTalksPlaceholder: "Search in presentation titles...",
+                labelScholarSearch: "Speaker",
+                labelTalkSearch: "Talk title",
+                labelSeries: "Venue",
+                labelSort: "Sort",
+                searchPlaceholder: "Name, institution, or city",
+                searchTalksPlaceholder: "Topic or word in title",
                 filterAll: "All Conferences",
                 filterZograf: "Zograf Readings (St. Petersburg)",
                 filterRoerich: "Roerich Readings (Moscow)",
                 filterBoth: "Both (Overlapping Cohort)",
                 filterNeverZograf: "Never active at Zograf Readings",
                 filterNeverRoerich: "Never active at Roerich Readings",
-                sortTalksDesc: "Sort by Talks (High to Low)",
-                sortTalksAsc: "Sort by Talks (Low to High)",
-                sortNameAsc: "Sort by Name (A-Z)",
-                sortNameDesc: "Sort by Name (Z-A)",
+                sortTalksDesc: "Talk count, descending",
+                sortTalksAsc: "Talk count, ascending",
+                sortNameAsc: "Name (A-Z)",
+                sortNameDesc: "Name (Z-A)",
                 colName: "Scholar Display Name",
                 colTotal: "Total Talks",
                 colZograf: "Zograf Talks",
@@ -1676,12 +2092,16 @@ CREATE TABLE presentation_person (
             currentLang = currentLang === 'ru' ? 'en' : 'ru';
             
             // Update button label
-            document.getElementById('lang-switch-btn').innerHTML = `<span style="font-size: 1rem;">🌐</span> ${currentLang === 'ru' ? 'RU / EN' : 'EN / RU'}`;
+            document.getElementById('lang-switch-btn').textContent = currentLang === 'ru' ? 'EN' : 'RU';
+            document.getElementById('export-md-btn').textContent = currentLang === 'ru' ? 'Экспорт' : 'Export';
             
             // Translate static elements
             const t = TRANSLATIONS[currentLang];
             document.getElementById('main-heading').textContent = t.mainHeading;
             document.getElementById('sub-heading').textContent = t.subHeading;
+            document.querySelectorAll('.publication-links [data-ru][data-en]').forEach(element => {
+                element.textContent = element.dataset[currentLang];
+            });
             
             // Metrics
             document.getElementById('stat-scholars-label').textContent = t.statScholars;
@@ -1713,9 +2133,12 @@ CREATE TABLE presentation_person (
             document.getElementById('tab-scholars').textContent = t.tabScholars;
             document.getElementById('tab-timeline').textContent = t.tabTimeline;
             document.getElementById('tab-charts').textContent = t.tabCharts;
-            document.getElementById('tab-schema').textContent = t.tabSchema;
 
             // Search placeholder
+            document.getElementById('label-scholars-search').textContent = t.labelScholarSearch;
+            document.getElementById('label-talks-search').textContent = t.labelTalkSearch;
+            document.getElementById('label-series').textContent = t.labelSeries;
+            document.getElementById('label-sort').textContent = t.labelSort;
             document.getElementById('scholars-search').placeholder = t.searchPlaceholder;
             const talksSearch = document.getElementById('talks-search');
             if (talksSearch) talksSearch.placeholder = t.searchTalksPlaceholder;
@@ -1780,15 +2203,20 @@ CREATE TABLE presentation_person (
 
         // Tab switcher
         function switchTab(tabId) {
-            // Update tabs active state
-            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-            const activeBtn = document.getElementById('tab-' + tabId);
-            if (activeBtn) activeBtn.classList.add('active');
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                const selected = btn.id === 'tab-' + tabId;
+                btn.classList.toggle('active', selected);
+                btn.setAttribute('aria-selected', String(selected));
+                btn.tabIndex = selected ? 0 : -1;
+            });
 
-            // Update sections active state
-            document.querySelectorAll('.dashboard-section').forEach(sec => sec.classList.remove('active'));
+            document.querySelectorAll('.dashboard-section').forEach(sec => {
+                const selected = sec.id === 'sec-' + tabId;
+                sec.classList.toggle('active', selected);
+                sec.hidden = !selected;
+            });
             const activeSec = document.getElementById('sec-' + tabId);
-            if (activeSec) activeSec.classList.add('active');
+            if (!activeSec) return;
             
             // Re-render SVG charts when switching to statistical insights tab
             if (tabId === 'charts') {
@@ -1820,6 +2248,20 @@ CREATE TABLE presentation_person (
                 stopNetworkGraph();
             }
         }
+
+        document.getElementById('dashboard-controls').addEventListener('keydown', event => {
+            const tabs = [...document.querySelectorAll('#dashboard-controls .tab-btn')];
+            const current = tabs.indexOf(document.activeElement);
+            if (current < 0 || !['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
+            event.preventDefault();
+            let next = current;
+            if (event.key === 'ArrowRight') next = (current + 1) % tabs.length;
+            if (event.key === 'ArrowLeft') next = (current - 1 + tabs.length) % tabs.length;
+            if (event.key === 'Home') next = 0;
+            if (event.key === 'End') next = tabs.length - 1;
+            tabs[next].focus();
+            tabs[next].click();
+        });
 
         // Accordion year toggler
         function toggleYear(yearId) {
@@ -2126,7 +2568,7 @@ CREATE TABLE presentation_person (
                 }
                 
                 row.innerHTML = `
-                    <td>
+                    <td class="scholar-primary">
                         <div style="font-weight: 600; color: #ffffff;">
                             <a href="scholars/${s.url_slug}.html" style="color: #ffffff; text-decoration: none; border-bottom: 1px dashed rgba(255,255,255,0.4); transition: var(--transition);" onmouseover="this.style.color='var(--accent-primary)'; this.style.borderColor='var(--accent-primary)'" onmouseout="this.style.color='#ffffff'; this.style.borderColor='rgba(255,255,255,0.4)'" onclick="event.stopPropagation();">
                                 ${displayName}
@@ -2135,10 +2577,10 @@ CREATE TABLE presentation_person (
                         </div>
                         <span class="badge ${badgeClass}" style="margin-top: 0.25rem;">${badgeLabel}</span>
                     </td>
-                    <td style="font-weight: 700; color: var(--accent-primary); font-size: 1.1rem;">${s.total_talks}</td>
-                    <td>${s.zograf_talks}</td>
-                    <td>${s.roerich_talks}</td>
-                    <td style="font-family: var(--font-display); font-weight: 500;">${s.first_year === s.last_year ? s.first_year : s.first_year + '–' + s.last_year}</td>
+                    <td data-label="${t.colTotal}" style="font-weight: 700; color: var(--accent-primary); font-size: 1.1rem;">${s.total_talks}</td>
+                    <td data-label="${t.colZograf}">${s.zograf_talks}</td>
+                    <td data-label="${t.colRoerich}">${s.roerich_talks}</td>
+                    <td data-label="${t.colYears}" style="font-family: var(--font-display); font-weight: 500;">${s.first_year === s.last_year ? s.first_year : s.first_year + '–' + s.last_year}</td>
                 `;
                 tbody.appendChild(row);
 

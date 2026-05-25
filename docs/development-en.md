@@ -112,6 +112,7 @@ runs the full build and validation, and deploys GitHub Pages on 20 June and
 | [../data_dictionary.md](../data_dictionary.md) | Public data schema and field provenance. |
 | [classification-audit-en.md](classification-audit-en.md) | Audit of argument-scale coding. |
 | [rinc-review-en.md](rinc-review-en.md) | Manual review of RINC/eLIBRARY profiles. |
+| [ux-ui-audit.md](ux-ui-audit.md) | Interface audit and prioritized improvements to the user workflow (in Russian). |
 | [archive/README.md](https://github.com/gasyoun/IndologyScholars/blob/main/archive/README.md) | Index of historical plans, snapshots, and handoff files. |
 | [archive/plans/architecture.md](https://github.com/gasyoun/IndologyScholars/blob/main/archive/plans/architecture.md) | Historical architecture plan. |
 | [archive/plans/architecture_implementation_plan.md](https://github.com/gasyoun/IndologyScholars/blob/main/archive/plans/architecture_implementation_plan.md) | Record of implemented architecture hardening. |

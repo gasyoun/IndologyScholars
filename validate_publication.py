@@ -212,8 +212,8 @@ def main():
     talks_en_desc = f"{summary.get('total_presentations', 0)} participations across {summary.get('unique_presentations', 0)} unique talks"
     if index_html.count(talks_ru_desc) < 2 or talks_en_desc not in index_html:
         fail(errors, "index.html static and localized presentation counts are not synchronized with site_data summary")
-    if "Статья и сайт синхронизированы с расширенным корпусом" not in index_html:
-        fail(errors, "index.html missing the synchronized expanded-corpus notice")
+    if "В корпусе:" not in index_html:
+        fail(errors, "index.html missing the public corpus summary")
 
     required = [
         "sitemap.xml",

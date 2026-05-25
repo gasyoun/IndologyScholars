@@ -479,23 +479,26 @@ def page_shell(title, description, canonical_path, body, structured_data=None, e
         structured = f'\n    <script type="application/ld+json">\n{json_ld(structured_data)}\n    </script>'
     if language == "en":
         nav_items = [
-            ("Dashboard", "/IndologyScholars/"),
+            ("Archive", "/IndologyScholars/"),
+            ("Search", "/IndologyScholars/search.html"),
             ("Scholars", "/IndologyScholars/scholars/"),
+            ("Papers", "/IndologyScholars/presentations/"),
             ("Conferences", "/IndologyScholars/conferences/"),
             ("Themes", "/IndologyScholars/themes/"),
+            ("Data", "/IndologyScholars/download-data.html"),
+        ]
+        more_label = "More"
+        more_nav_items = [
+            ("Findings", "/IndologyScholars/findings/"),
             ("Named texts", "/IndologyScholars/topics/"),
             ("Generations", "/IndologyScholars/generations/"),
             ("Meso-levels", "/IndologyScholars/meso/"),
             ("Keywords", "/IndologyScholars/keywords/"),
             ("Gumilyov", "/IndologyScholars/gumilyov/"),
             ("Criteria", "/IndologyScholars/classification-criteria.html"),
-            ("Papers", "/IndologyScholars/presentations/"),
             ("Videos", "/IndologyScholars/videos/"),
-            ("Findings", "/IndologyScholars/findings/"),
             ("Cities", "/IndologyScholars/cities/"),
             ("Institutions", "/IndologyScholars/institutions/"),
-            ("Search", "/IndologyScholars/search.html"),
-            ("Data", "/IndologyScholars/download-data.html"),
             ("Quality", "/IndologyScholars/data-quality.html"),
             ("English", "/IndologyScholars/en.html"),
             ("Cite", "/IndologyScholars/how-to-cite.html"),
@@ -503,29 +506,33 @@ def page_shell(title, description, canonical_path, body, structured_data=None, e
         ]
     else:
         nav_items = [
-            ("Панель", "/IndologyScholars/"),
+            ("Архив", "/IndologyScholars/"),
+            ("Поиск", "/IndologyScholars/search.html"),
             ("Исследователи", "/IndologyScholars/scholars/"),
+            ("Доклады", "/IndologyScholars/presentations/"),
             ("Конференции", "/IndologyScholars/conferences/"),
             ("Рубрики", "/IndologyScholars/themes/"),
+            ("Данные", "/IndologyScholars/download-data.html"),
+        ]
+        more_label = "Еще"
+        more_nav_items = [
+            ("Выводы", "/IndologyScholars/findings/"),
             ("Сюжеты", "/IndologyScholars/topics/"),
             ("Поколения", "/IndologyScholars/generations/"),
             ("Мезоуровни", "/IndologyScholars/meso/"),
             ("Ключевые слова", "/IndologyScholars/keywords/"),
             ("Гумилев", "/IndologyScholars/gumilyov/"),
             ("Критерии", "/IndologyScholars/classification-criteria.html"),
-            ("Доклады", "/IndologyScholars/presentations/"),
             ("Видео", "/IndologyScholars/videos/"),
-            ("Выводы", "/IndologyScholars/findings/"),
             ("Города", "/IndologyScholars/cities/"),
             ("Институции", "/IndologyScholars/institutions/"),
-            ("Поиск", "/IndologyScholars/search.html"),
-            ("Данные", "/IndologyScholars/download-data.html"),
             ("Качество", "/IndologyScholars/data-quality.html"),
             ("English", "/IndologyScholars/en.html"),
             ("Цитирование", "/IndologyScholars/how-to-cite.html"),
             ("Метрики", "/IndologyScholars/metrics-guide.html"),
         ]
     nav_html = "\n".join(f'            <a href="{esc(href)}">{esc(label)}</a>' for label, href in nav_items)
+    more_nav_html = "\n".join(f'                    <a href="{esc(href)}">{esc(label)}</a>' for label, href in more_nav_items)
     footer_text = (
         f"© 2026 {esc(SITE_NAME)}. Generated from the normalized conference archive."
         if language == "en"
@@ -543,7 +550,7 @@ def page_shell(title, description, canonical_path, body, structured_data=None, e
     <link rel="alternate" hreflang="{esc(language)}" href="{canonical}">
     <link rel="alternate" hreflang="x-default" href="{canonical}">
     <link rel="icon" href="/IndologyScholars/assets/favicon.svg" type="image/svg+xml">
-    <meta name="theme-color" content="#0a0e1a">
+    <meta name="theme-color" content="#101513">
     <meta property="og:type" content="website">
     <meta property="og:url" content="{canonical}">
     <meta property="og:title" content="{title_html}">
@@ -557,15 +564,15 @@ def page_shell(title, description, canonical_path, body, structured_data=None, e
     <style>
         :root {{
             color-scheme: dark;
-            --bg: #0a0e1a;
-            --panel: rgba(17,24,44,0.76);
-            --panel-strong: rgba(22,33,61,0.92);
-            --border: rgba(255,255,255,0.1);
-            --text: #f3f4f6;
-            --muted: #a8b0bf;
-            --soft: #7d8797;
-            --accent: #8b5cf6;
-            --accent2: #ec4899;
+            --bg: #101513;
+            --panel: #171e1b;
+            --panel-strong: #1c2521;
+            --border: #2b3631;
+            --text: #e7ece8;
+            --muted: #b3beb7;
+            --soft: #87938c;
+            --accent: #62ae92;
+            --accent2: #c59a56;
         }}
         * {{ box-sizing: border-box; }}
         body {{
@@ -575,28 +582,55 @@ def page_shell(title, description, canonical_path, body, structured_data=None, e
             color: var(--text);
             line-height: 1.6;
         }}
-        a {{ color: #c4b5fd; text-decoration: none; }}
-        a:hover {{ color: #f0abfc; }}
+        a {{ color: #82c6ad; text-decoration: none; }}
+        a:hover {{ color: #addac8; }}
         .page {{
             max-width: 1160px;
             margin: 0 auto;
-            padding: 2rem;
+            padding: 1.25rem 2rem 2rem;
         }}
         .top-nav {{
             display: flex;
             flex-wrap: wrap;
-            gap: 0.75rem;
-            margin-bottom: 2rem;
+            gap: 0.45rem;
+            align-items: center;
+            margin-bottom: 1.4rem;
         }}
         .top-nav a, .chip {{
             border: 1px solid var(--border);
             border-radius: 8px;
-            background: rgba(255,255,255,0.04);
-            padding: 0.45rem 0.7rem;
+            background: transparent;
+            padding: 0.43rem 0.68rem;
             color: var(--muted);
             display: inline-flex;
             align-items: center;
             gap: 0.35rem;
+        }}
+        .more-nav {{ position: relative; }}
+        .more-nav summary {{
+            list-style: none;
+            cursor: pointer;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 0.43rem 0.68rem;
+            color: var(--muted);
+        }}
+        .more-nav summary::-webkit-details-marker {{ display: none; }}
+        .more-nav summary:hover {{ color: var(--text); border-color: var(--accent); }}
+        .more-menu {{
+            position: absolute;
+            top: calc(100% + 0.4rem);
+            left: 0;
+            z-index: 10;
+            width: min(420px, calc(100vw - 3rem));
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            padding: 0.65rem;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            background: var(--panel-strong);
+            box-shadow: 0 10px 26px rgba(0,0,0,0.28);
         }}
         header {{
             border-bottom: 1px solid var(--border);
@@ -604,8 +638,8 @@ def page_shell(title, description, canonical_path, body, structured_data=None, e
             margin-bottom: 1.75rem;
         }}
         h1 {{
-            font-size: clamp(2rem, 5vw, 3.4rem);
-            line-height: 1.05;
+            font-size: clamp(1.8rem, 3vw, 2.5rem);
+            line-height: 1.15;
             margin: 0 0 0.75rem;
             letter-spacing: 0;
         }}
@@ -701,17 +735,24 @@ def page_shell(title, description, canonical_path, body, structured_data=None, e
             color: var(--text);
             font-size: 1rem;
         }}
+        .field-label {{
+            display: block;
+            margin: 0 0 0.38rem;
+            color: var(--muted);
+            font-size: 0.85rem;
+            font-weight: 600;
+        }}
         .caveat-block {{
-            border: 1px solid rgba(139,92,246,0.35);
+            border: 1px solid rgba(98,174,146,0.35);
             border-left: 4px solid var(--accent);
             border-radius: 8px;
-            background: rgba(139,92,246,0.07);
+            background: rgba(98,174,146,0.07);
             padding: 0.9rem 1.1rem;
             margin: 1.25rem 0 1.75rem;
             max-width: 820px;
         }}
         .caveat-block strong {{
-            color: #c4b5fd;
+            color: #8dc9b2;
             display: block;
             margin-bottom: 0.35rem;
         }}
@@ -720,12 +761,29 @@ def page_shell(title, description, canonical_path, body, structured_data=None, e
             margin: 0;
             color: var(--muted);
         }}
+        :focus-visible {{
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }}
+        @media (max-width: 640px) {{
+            .page {{ padding: 1rem; }}
+            .top-nav {{ gap: 0.35rem; margin-bottom: 1.15rem; }}
+            .top-nav a, .chip, .more-nav summary {{ padding: 0.38rem 0.55rem; font-size: 0.9rem; }}
+            header {{ padding-bottom: 1rem; margin-bottom: 1.2rem; }}
+            h1 {{ font-size: 1.65rem; }}
+        }}
     </style>
 </head>
 <body>
     <main class="page">
         <nav class="top-nav" aria-label="Primary">
 {nav_html}
+            <details class="more-nav">
+                <summary>{esc(more_label)}</summary>
+                <div class="more-menu">
+{more_nav_html}
+                </div>
+            </details>
         </nav>
 {body}
         <div class="footer">{footer_text}</div>
