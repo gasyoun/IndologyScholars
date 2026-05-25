@@ -2,7 +2,7 @@
 
 Generated: 2026-05-21  
 Target repository: `C:\Users\user\Documents\GitHub\IndologyScholars`  
-Primary roadmap: `sciguide.md`
+Primary roadmap: `../plans/sciguide.md`
 
 Use this file as a Gemini Flash handoff. The task is to turn the SciGuide-inspired roadmap into a conservative first implementation sprint for `IndologyScholars`.
 
@@ -28,7 +28,7 @@ The project is a generated static site and dataset about Russian Indological con
   - `generate_analytics.py`
   - `validate_publication.py`
   - `analytics_output/data_quality_report.json`
-  - `sciguide.md`
+  - `../plans/sciguide.md`
 
 ---
 
@@ -36,7 +36,7 @@ The project is a generated static site and dataset about Russian Indological con
 
 1. Do not copy or paraphrase long passages from SciGuide. Use original wording and cite SciGuide links only as references.
 2. Do not add bibliometric rankings of people. This archive measures participation in a conference corpus, not scholarly quality.
-3. Do not use OpenAlex to estimate birth years. This method has already been tested and rejected in `HANDOFF.md`.
+3. Do not use OpenAlex to estimate birth years. This method has already been tested and rejected in `../session/HANDOFF.md`.
 4. Do not automate scraping of eLIBRARY/RINC. Treat RINC as a manual review workflow or official data-source workflow only.
 5. Do not hand-edit generated pages such as `methodology.html`, `data-sources.html`, `known-limitations.html`, `how-to-cite.html`, `download-data.html`, `themes/*.html`, `cities/*.html`, or `institutions/*.html` unless explicitly asked. Update `generate_publication_pages.py` and regenerate.
 6. Do not break existing JSON-LD, sitemap, search index, or validation.
@@ -278,7 +278,7 @@ Keep these for later phases:
 
 ## Suggested Implementation Order
 
-1. Read `sciguide.md`.
+1. Read `../plans/sciguide.md`.
 2. Inspect:
    - `generate_publication_pages.py`
    - `generate_scholars_pages.py`

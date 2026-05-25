@@ -5,8 +5,8 @@ Status: historical planning document; implementation has since advanced.
 Scope: architecture hardening for stable identifiers, provenance, schema versions, authority data, and reproducible generated outputs.
 
 > For current build and contribution guidance, see
-> [docs/development-en.md](docs/development-en.md) or
-> [docs/development.md](docs/development.md). Current publication counts are
+> [docs/development-en.md](../../docs/development-en.md) or
+> [docs/development.md](../../docs/development.md). Current publication counts are
 > taken from `site_data.json`, not from this dated plan.
 
 ## 1. Purpose

@@ -6,8 +6,8 @@ Goal: implement architecture hardening in reviewable steps, starting with ID sta
 
 > This is a dated implementation record. For current build instructions and
 > publication-state figures, see
-> [docs/development-en.md](docs/development-en.md) or
-> [docs/development.md](docs/development.md).
+> [docs/development-en.md](../../docs/development-en.md) or
+> [docs/development.md](../../docs/development.md).
 
 ## 0. Implementation Status
 

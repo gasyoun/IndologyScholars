@@ -20,6 +20,7 @@ PUBLIC_PATHS = [
     "conferences.db",
     "LICENSE",
     "README.md",
+    "README_EN.md",
     "README_RU.md",
     "methodology.html",
     "data-sources.html",
@@ -47,6 +48,7 @@ PUBLIC_DIRS = [
     "cities",
     "institutions",
     "curation",
+    "docs",
 ]
 
 

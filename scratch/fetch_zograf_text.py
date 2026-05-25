@@ -1,5 +1,6 @@
 import urllib.request
 from html.parser import HTMLParser
+from pathlib import Path
 
 class MyHTMLParser(HTMLParser):
     def __init__(self):
@@ -25,8 +26,10 @@ try:
         parser = MyHTMLParser()
         parser.feed(html)
         text = "".join(parser.text_parts)
-        with open('zograf_2025_text.txt', 'w', encoding='utf-8') as f:
+        output = Path("archive/scratch/zograf_2025_text.txt")
+        output.parent.mkdir(parents=True, exist_ok=True)
+        with open(output, 'w', encoding='utf-8') as f:
             f.write(text)
-        print("Success! Wrote text to zograf_2025_text.txt")
+        print(f"Success! Wrote text to {output}")
 except Exception as e:
     print(f"Error: {e}")

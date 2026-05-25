@@ -1,5 +1,5 @@
-import os
 from html.parser import HTMLParser
+from pathlib import Path
 
 class SmartHTMLParser(HTMLParser):
     def __init__(self):
@@ -33,8 +33,10 @@ parser.feed(html)
 text = parser.get_text()
 lines = [line.strip() for line in text.split('\n') if line.strip()]
 
-with open("debug_lines.txt", "w", encoding="utf-8") as f:
+output = Path("archive/scratch/debug_lines.txt")
+output.parent.mkdir(parents=True, exist_ok=True)
+with open(output, "w", encoding="utf-8") as f:
     f.write("First 300 lines of smart-parsed text:\n")
     for i, line in enumerate(lines[:300]):
         f.write(f"{i+1}: {line}\n")
-print(f"Done writing to debug_lines.txt! Total lines: {len(lines)}")
+print(f"Done writing to {output}! Total lines: {len(lines)}")

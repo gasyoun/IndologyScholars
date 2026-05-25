@@ -1,9 +1,10 @@
 import sqlite3
 import re
 import datetime
+from pathlib import Path
 
 DB_PATH = "conferences.db"
-OUTPUT_REPORT = "indologists_scholarly_analysis.md"
+OUTPUT_REPORT = Path("archive/reports/indologists_scholarly_analysis.md")
 
 def format_to_initials(name):
     name = name.strip()
@@ -308,7 +309,8 @@ def main():
         report.append(f"| **{std}** | {name} | {count} |")
     report.append("| ... | ... | ... |")
 
-    # Write report
+    # This report is a legacy analysis snapshot, kept outside current docs.
+    OUTPUT_REPORT.parent.mkdir(parents=True, exist_ok=True)
     with open(OUTPUT_REPORT, "w", encoding="utf-8") as f:
         f.write("\n".join(report))
         

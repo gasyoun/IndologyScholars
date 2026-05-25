@@ -11,7 +11,7 @@ user-facing project page.
 The source for figures published on the site is the `summary` object in
 `site_data.json`. As of 25 May 2026 it reports 286 speaker profiles,
 1350 unique talks, 1377 author participations, and 40 events across 22
-programme years (2004-2026). Forty-one speakers occur in both series, 180
+programme years (2004-2026). 41 speakers occur in both series, 180
 occur only in the Zograf Readings, and 65 only in the Roerich Readings.
 
 Historical manuscripts, reports, and change logs may preserve older snapshots
@@ -112,9 +112,10 @@ runs the full build and validation, and deploys GitHub Pages on 20 June and
 | [../data_dictionary.md](../data_dictionary.md) | Public data schema and field provenance. |
 | [classification-audit-en.md](classification-audit-en.md) | Audit of argument-scale coding. |
 | [rinc-review-en.md](rinc-review-en.md) | Manual review of RINC/eLIBRARY profiles. |
-| [../architecture.md](../architecture.md) | Historical architecture plan. |
-| [../architecture_implementation_plan.md](../architecture_implementation_plan.md) | Record of implemented architecture hardening. |
+| [archive/README.md](https://github.com/gasyoun/IndologyScholars/blob/main/archive/README.md) | Index of historical plans, snapshots, and handoff files. |
+| [archive/plans/architecture.md](https://github.com/gasyoun/IndologyScholars/blob/main/archive/plans/architecture.md) | Historical architecture plan. |
+| [archive/plans/architecture_implementation_plan.md](https://github.com/gasyoun/IndologyScholars/blob/main/archive/plans/architecture_implementation_plan.md) | Record of implemented architecture hardening. |
 
-The files `CHANGELOG.md`, `HANDOFF.md`, `.ai_state.md`, and materials under
-`article/` are logs or research snapshots; read their figures in the context
-of their stated date.
+`CHANGELOG.md` and materials under `article/` are logs or research snapshots;
+read their figures in the context of their stated date. Working documents
+removed from the current documentation surface are retained under `archive/`.

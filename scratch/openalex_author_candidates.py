@@ -11,7 +11,7 @@ candidates.  Results are written to:
 
     analytics_output/openalex_author_candidates.csv
 
-IMPORTANT CONSTRAINTS (per sciguide.md):
+IMPORTANT CONSTRAINTS (per archive/plans/sciguide.md):
 - No automatic merge of IDs into authority_ids.json.
 - No birth-year estimation from first publication year.
 - Each candidate must be manually validated before being added.

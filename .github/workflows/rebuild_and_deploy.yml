@@ -8,10 +8,7 @@ on:
     branches:
       - main
     paths-ignore:
-      - 'README.md'
-      - 'README_RU.md'
       - 'CHANGELOG.md'
-      - 'ai_state.json'
   workflow_dispatch: {} # Allows manual one-click execution from GitHub UI
 
 permissions:

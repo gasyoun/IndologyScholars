@@ -6,6 +6,7 @@
 | Разработка и сборка / Development and build | [development.md](development.md) | [development-en.md](development-en.md) |
 | Аудит классификации / Classification audit | [classification-audit.md](classification-audit.md) | [classification-audit-en.md](classification-audit-en.md) |
 | Проверка РИНЦ / RINC review | [rinc-review.md](rinc-review.md) | [rinc-review-en.md](rinc-review-en.md) |
+| Исторические материалы / Historical materials | [archive/README.md](https://github.com/gasyoun/IndologyScholars/blob/main/archive/README.md) | [archive/README.md](https://github.com/gasyoun/IndologyScholars/blob/main/archive/README.md) |
 
 Общий технический справочник полей хранится в
 [data_dictionary.md](../data_dictionary.md); имена полей и допустимые значения

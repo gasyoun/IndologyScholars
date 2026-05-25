@@ -1,6 +1,6 @@
 Next SEO moves:
 
-Status: dated working notes. Current build instructions and publication counts are maintained in [docs/development-en.md](docs/development-en.md).
+Status: dated working notes. Current build instructions and publication counts are maintained in [docs/development-en.md](../../docs/development-en.md).
 
 SEO-D step 3 — Person JSON-LD upgrade on scholar pages: add givenName/familyName split, gender, knowsAbout from dominant_theme, affiliation linked by @id to the new institution pages. Highest-leverage block once Phase 2a identity reconciliation populates sameAs
 SEO-C — Yandex-specific robots.txt (Clean-param, Host), hreflang annotations on landing pages, per-page RU-tuned <meta name="description"> + keywords
