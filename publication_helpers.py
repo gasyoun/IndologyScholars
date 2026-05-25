@@ -533,17 +533,17 @@ def page_shell(title, description, canonical_path, body, structured_data=None, e
         nav_items = [
             ("Archive", "/IndologyScholars/"),
             ("Search", "/IndologyScholars/search.html"),
-            ("Scholars", "/IndologyScholars/scholars/"),
-            ("Papers", "/IndologyScholars/presentations/"),
+            ("Scholars", "/IndologyScholars/s/"),
+            ("Papers", "/IndologyScholars/p/"),
             ("Conferences", "/IndologyScholars/conferences/"),
             ("Themes", "/IndologyScholars/themes/"),
-            ("Data", "/IndologyScholars/download-data.html"),
+            ("Generations", "/IndologyScholars/generations/"),
         ]
         more_label = "More"
         more_nav_items = [
             ("Findings", "/IndologyScholars/findings/"),
             ("Named texts", "/IndologyScholars/topics/"),
-            ("Generations", "/IndologyScholars/generations/"),
+            ("Data", "/IndologyScholars/download-data.html"),
             ("Meso-levels", "/IndologyScholars/meso/"),
             ("Keywords", "/IndologyScholars/keywords/"),
             ("Gumilyov", "/IndologyScholars/gumilyov/"),
@@ -560,17 +560,17 @@ def page_shell(title, description, canonical_path, body, structured_data=None, e
         nav_items = [
             ("Архив", "/IndologyScholars/"),
             ("Поиск", "/IndologyScholars/search.html"),
-            ("Исследователи", "/IndologyScholars/scholars/"),
-            ("Доклады", "/IndologyScholars/presentations/"),
+            ("Исследователи", "/IndologyScholars/s/"),
+            ("Доклады", "/IndologyScholars/p/"),
             ("Конференции", "/IndologyScholars/conferences/"),
             ("Рубрики", "/IndologyScholars/themes/"),
-            ("Данные", "/IndologyScholars/download-data.html"),
+            ("Поколения", "/IndologyScholars/generations/"),
         ]
         more_label = "Еще"
         more_nav_items = [
             ("Выводы", "/IndologyScholars/findings/"),
             ("Сюжеты", "/IndologyScholars/topics/"),
-            ("Поколения", "/IndologyScholars/generations/"),
+            ("Данные", "/IndologyScholars/download-data.html"),
             ("Мезоуровни", "/IndologyScholars/meso/"),
             ("Ключевые слова", "/IndologyScholars/keywords/"),
             ("Гумилев", "/IndologyScholars/gumilyov/"),

@@ -160,21 +160,21 @@ def main():
 
     scholar_pages = []
     redirect_pages = []
-    for page in Path("scholars").glob("PERS_*.html"):
+    for page in Path("s").glob("PERS_*.html"):
         html = read(page)
         if "data-legacy-redirect" in html:
             redirect_pages.append((page, html))
         else:
             scholar_pages.append((page, html))
 
-    canonical_re = re.compile(r'<link rel="canonical" href="https://gasyoun\.github\.io/IndologyScholars/scholars/([^"]+)\.html"')
+    canonical_re = re.compile(r'<link rel="canonical" href="https://gasyoun\.github\.io/IndologyScholars/s/([^"]+)\.html"')
     slug_to_target = {}
     for page, html in redirect_pages:
         match = canonical_re.search(html)
         if match:
             slug_to_target[page.stem] = match.group(1)
 
-    slug_pages = {p.stem for p in Path("scholars").glob("*.html") if not p.name.startswith("PERS_") and p.name != "index.html"}
+    slug_pages = {p.stem for p in Path("s").glob("*.html") if not p.name.startswith("PERS_") and p.name != "index.html"}
 
     page_ids = {p.stem for p, _ in scholar_pages}
     valid_ids = set(page_ids)
@@ -258,9 +258,9 @@ def main():
         "assets/icon-512.png",
         "assets/apple-touch-icon.png",
         "assets/pwa.js",
-        "scholars/index.html",
+        "s/index.html",
         "conferences/index.html",
-        "presentations/index.html",
+        "p/index.html",
         "themes/index.html",
         "topics/index.html",
         "topics/ramayana.html",
@@ -281,6 +281,22 @@ def main():
         if not Path(path).exists():
             fail(errors, f"Missing generated publication asset: {path}")
 
+    published_html = [Path(path) for path in required if path.endswith(".html") and Path(path).exists()]
+    for dirname in ("s", "p", "conferences", "themes", "topics", "generations", "meso", "gumilyov", "videos", "findings", "cities", "institutions", "keywords"):
+        published_html.extend(Path(dirname).glob("*.html"))
+    for page in set(published_html):
+        html = read(page)
+        if "/IndologyScholars/scholars/" in html or "/IndologyScholars/presentations/" in html:
+            fail(errors, f"{page} still links to a removed absolute route")
+        if re.search(r'href="(?:\.\./)?(?:scholars|presentations)/', html):
+            fail(errors, f"{page} still links to a removed relative route")
+
+    if Path("p/index.html").exists():
+        if Path("p/index.html").stat().st_size > 150000:
+            fail(errors, "p/index.html should stay paginated and below 150 KB")
+        if not Path("p/page-2.html").exists():
+            fail(errors, "p/index.html is missing paginated continuation")
+
     if Path("site.webmanifest").exists():
         app_manifest = json.loads(read("site.webmanifest"))
         icon_sizes = {icon.get("sizes") for icon in app_manifest.get("icons", [])}
@@ -295,7 +311,7 @@ def main():
             fail(errors, "assets/pwa.js does not register the service worker")
     if Path("service-worker.js").exists():
         service_worker = read("service-worker.js")
-        for needle in ["offline.html", "site_data.json", "search-index.json"]:
+        for needle in ["offline.html", "site_data.json", "search-index.json", "`${BASE}s/`", "`${BASE}p/`"]:
             if needle not in service_worker:
                 fail(errors, f"service-worker.js missing cached application resource {needle}")
 
@@ -310,20 +326,25 @@ def main():
 
     if Path("sitemap.xml").exists():
         sitemap = read("sitemap.xml")
-        for page in ["", "en.html", "search.html", "download-data.html", "data-quality.html", "scholars/", "conferences/", "presentations/", "themes/", "topics/", "topics/ramayana.html", "topics/mahabharata.html", "generations/", "cities/", "institutions/", "metrics-guide.html", "classification-criteria.html", "networks.html", "videos/"]:
+        for page in ["", "en.html", "search.html", "download-data.html", "data-quality.html", "s/", "conferences/", "p/", "themes/", "topics/", "topics/ramayana.html", "topics/mahabharata.html", "generations/", "cities/", "institutions/", "metrics-guide.html", "classification-criteria.html", "networks.html", "videos/"]:
             expected = "https://gasyoun.github.io/IndologyScholars/" + page
             if expected not in sitemap:
                 fail(errors, f"sitemap.xml missing {expected}")
         if "https://gasyoun.github.io/IndologyScholars/404.html" in sitemap:
             fail(errors, "sitemap.xml should not include 404.html")
+        if "<lastmod>" in sitemap or "<priority>" in sitemap:
+            fail(errors, "sitemap.xml should not claim synthetic modification dates or priorities")
+        for old_prefix in ("scholars/", "presentations/"):
+            if f"https://gasyoun.github.io/IndologyScholars/{old_prefix}" in sitemap:
+                fail(errors, f"sitemap.xml should not include removed route {old_prefix}")
         for page, _ in redirect_pages:
-            expected = f"https://gasyoun.github.io/IndologyScholars/scholars/{page.name}"
+            expected = f"https://gasyoun.github.io/IndologyScholars/s/{page.name}"
             if expected in sitemap:
                 fail(errors, f"sitemap.xml should not include legacy redirect {expected}")
         sample_profiles = sorted(scholar_ids)[:5]
         for scholar_id in sample_profiles:
             slug = slug_to_target.get(scholar_id, scholar_id)
-            expected = f"https://gasyoun.github.io/IndologyScholars/scholars/{slug}.html"
+            expected = f"https://gasyoun.github.io/IndologyScholars/s/{slug}.html"
             if expected not in sitemap:
                 fail(errors, f"sitemap.xml missing {expected}")
 
@@ -333,6 +354,12 @@ def main():
             fail(errors, "search-index.json scholar count does not match site_data.json")
         if '"type":"Video"' not in content:
             fail(errors, "search-index.json should retain the standalone video catalogue entries")
+        if '"url":"scholars/' in content or '"url":"presentations/' in content:
+            fail(errors, "search-index.json still exposes removed public routes")
+
+    for removed_dir in ("scholars", "presentations"):
+        if Path(removed_dir).exists():
+            fail(errors, f"Removed public route directory still exists: {removed_dir}/")
 
     tavastsherna = next((s for s in scholars if s.get("id") == "PERS_11da326d"), None)
     if tavastsherna and tavastsherna.get("all_affiliations") != ["СПбГУ, Восточный факультет"]:

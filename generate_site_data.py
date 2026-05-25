@@ -5,7 +5,7 @@ import re
 
 from classification_overrides import CLASSIFICATION_OVERRIDES, THEME_LABEL_OVERRIDES
 from metadata_normalization import load_verified_affiliation_spans, public_affiliation, split_leading_affiliation
-from publication_helpers import GENERATION_COHORTS, assign_unique_slugs, generation_cohort, load_authority_overrides, normalize_time_interval
+from publication_helpers import GENERATION_COHORTS, assign_unique_slugs, build_presentation_slug_map, generation_cohort, load_authority_overrides, normalize_time_interval
 from title_normalization import THEME_OVERRIDES_BY_PRESENTATION_ID, TITLE_EDITORIAL_NOTES_BY_PRESENTATION_ID, canonical_title
 
 DB_PATH = "conferences.db"
@@ -752,6 +752,20 @@ def main():
             "total_in_session": len(s_list),
             "videos": videos_by_pres.get(pres_id, [])
         })
+
+    presentation_slugs = build_presentation_slug_map(
+        talk
+        for year_data in timeline.values()
+        for series_talks in year_data.values()
+        for talk in series_talks
+    )
+    for scholar in scholars:
+        for talk in scholar["talks"]:
+            talk["public_path"] = f"p/{presentation_slugs[talk['presentation_id']]}.html"
+    for year_data in timeline.values():
+        for series_talks in year_data.values():
+            for talk in series_talks:
+                talk["public_path"] = f"p/{presentation_slugs[talk['presentation_id']]}.html"
 
     # 3. Calculate year-by-year statistics for charts
     cursor.execute("""

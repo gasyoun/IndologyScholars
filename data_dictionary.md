@@ -200,9 +200,9 @@ Theme labels are navigational aids derived primarily from presentation titles. T
 | Path | Purpose |
 | --- | --- |
 | `index.html` | Main dashboard. |
-| `scholars/*.html` | Generated scholar profiles. |
+| `s/*.html` | Generated scholar profiles. |
 | `conferences/*.html` | Conference event pages. |
-| `presentations/*.html` | Permanent pages for individual presentation records, including classification and video status. |
+| `p/*.html` | Permanent pages for individual presentation records, including classification and video status. |
 | `themes/*.html` | Theme landing pages. |
 | `cities/*.html` | City/geography pages. |
 | `institutions/*.html` | Institution pages. |

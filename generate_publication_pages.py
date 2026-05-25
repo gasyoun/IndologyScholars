@@ -50,9 +50,11 @@ DB_PATH = "conferences.db"
 BUILD_DATE = dt.date.today().isoformat()
 DATA_SCHEMA_VERSION = "1.0.0"
 PIPELINE_VERSION = "2026-05-25"
-PUBLIC_DIRS = ["assets", "conferences", "presentations", "themes", "topics", "generations", "meso", "gumilyov", "videos", "findings", "cities", "institutions", "keywords"]
+PUBLIC_DIRS = ["assets", "conferences", "p", "themes", "topics", "generations", "meso", "gumilyov", "videos", "findings", "cities", "institutions", "keywords"]
 PRESENTATION_SLUG_BY_ID = {}
 MIN_PUBLIC_MESO_PRESENTATIONS = 2
+PRESENTATIONS_PER_PAGE = 120
+SEO_TITLE_BRAND = "Индологический архив"
 
 
 def ensure_dirs():
@@ -109,7 +111,7 @@ def generated_manifest_paths():
         "site_data.json",
         "sitemap.xml",
     ]
-    directories = ["analytics_output", "assets", "cities", "conferences", "presentations", "findings", "generations", "gumilyov", "institutions", "keywords", "meso", "scholars", "themes", "topics", "videos", "curation"]
+    directories = ["analytics_output", "assets", "cities", "conferences", "p", "findings", "generations", "gumilyov", "institutions", "keywords", "meso", "s", "themes", "topics", "videos", "curation"]
     paths = [Path(path) for path in roots]
     for dirname in directories:
         root = Path(dirname)
@@ -204,7 +206,7 @@ def presentation_path(presentation_id, title=None):
     slug = PRESENTATION_SLUG_BY_ID.get(pid)
     if not slug and title:
         slug = slugify(title, pid.lower().replace("_", "-") or "presentation")
-    return f"presentations/{slug or pid}.html"
+    return f"p/{slug or pid}.html"
 
 
 def theme_path(code):
@@ -523,7 +525,7 @@ def institution_path(name):
 
 
 def profile_href(slug, depth=""):
-    return f"{depth}scholars/{slug}.html"
+    return f"{depth}s/{slug}.html"
 
 
 def dashboard_search_href(query, depth=""):
@@ -1141,7 +1143,7 @@ def generate_search(data, records):
             {
                 "type": "Scholar",
                 "title": scholar.get("full_name_ru") or scholar.get("name"),
-                "url": f"scholars/{scholar['url_slug']}.html",
+                "url": f"s/{scholar['url_slug']}.html",
                 "text": " ".join(
                     [
                         scholar.get("full_name_en") or "",
@@ -2293,7 +2295,7 @@ def generate_404_page():
         </header>
         <section class="list">
             <article class="card"><strong><a href="/IndologyScholars/search.html">Search the archive</a></strong><div class="meta">Scholar profiles, talks, cities, institutions, and themes.</div></article>
-            <article class="card"><strong><a href="/IndologyScholars/scholars/">Browse scholars</a></strong><div class="meta">Canonical generated profile index.</div></article>
+            <article class="card"><strong><a href="/IndologyScholars/s/">Browse scholars</a></strong><div class="meta">Canonical generated profile index.</div></article>
             <article class="card"><strong><a href="/IndologyScholars/">Dashboard</a></strong><div class="meta">Interactive overview and filters.</div></article>
         </section>
         <script>
@@ -2339,7 +2341,7 @@ def generate_english_landing(data):
             <article class="card"><strong><a href="findings/">Main Findings</a></strong><div class="meta">Interpretive layer from the latest article: overlap, themes, micro-cases, videos, and source caveats.</div></article>
             <article class="card"><strong><a href="topics/">Named Texts</a></strong><div class="meta">Stable topic pages for presentations mentioning the Ramayana and Mahabharata.</div></article>
             <article class="card"><strong><a href="generations/">Generations</a></strong><div class="meta">Named birth cohorts from the Vasilkov generation to the Tolchelnikov generation.</div></article>
-            <article class="card"><strong><a href="scholars/">Scholar Profiles</a></strong><div class="meta">Canonical generated pages with presentations, affiliations, themes, and related scholars.</div></article>
+            <article class="card"><strong><a href="s/">Scholar Profiles</a></strong><div class="meta">Canonical generated pages with presentations, affiliations, themes, and related scholars.</div></article>
             <article class="card"><strong><a href="conferences/">Conference Indexes</a></strong><div class="meta">Year-by-year Zograf Readings and Roerich Readings pages.</div></article>
             <article class="card"><strong><a href="search.html">Search</a></strong><div class="meta">Static search across people, talks, cities, institutions, and themes.</div></article>
             <article class="card"><strong><a href="gumilyov/">Gumilyov Scale</a></strong><div class="meta">Presentation-level scale of generalization: micro, regional, and global.</div></article>
@@ -3402,6 +3404,16 @@ def presentation_detail_body(talk, depth="../"):
     """
 
 
+def presentation_seo_title(title, public_id):
+    prefix = f"ID {public_id}: "
+    suffix = f" | {SEO_TITLE_BRAND}"
+    available = 65 - len(prefix) - len(suffix)
+    compact = clean_text(title)
+    if len(compact) > available:
+        compact = compact[: max(1, available - 3)].rsplit(" ", 1)[0] + "..."
+    return f"{prefix}{compact}{suffix}"
+
+
 def generate_presentation_pages(records):
     unique_records = list(presentation_records_by_id(records).values())
     public_ids = assign_public_ids(
@@ -3425,45 +3437,63 @@ def generate_presentation_pages(records):
         pid = clean_text(talk.get("presentation_id") or "")
         if not pid:
             continue
+        public_id = public_ids.get(pid)
         year_counts[int(talk.get("year") or 0)] += 1
         title = clean_text(talk.get("title") or "Доклад")
         path = presentation_path(pid, title)
+        seo_description = f"ID {public_id}. Доклад: {title}. {series_label(talk.get('series_key'), 'ru')} {talk.get('year')}."
         body = presentation_detail_body(talk)
         structured = [
-            page_data(title, f"Доклад: {title}.", path, page_type="ScholarlyArticle"),
-            make_breadcrumbs([("Главная", ""), ("Доклады", "presentations/"), (title, path)]),
+            page_data(title, seo_description, path, page_type="ScholarlyArticle"),
+            make_breadcrumbs([("Главная", ""), ("Доклады", "p/"), (title, path)]),
         ]
-        write_text(path, page_shell(f"{title} | {SITE_NAME}", f"Доклад: {title}.", path, body, structured))
+        write_text(path, page_shell(presentation_seo_title(title, public_id), seo_description, path, body, structured))
         written_files.add(Path(path).name)
         cards.append(
-            f'<article class="talk"><div class="entry-head"><strong><a href="../{path}">{esc(title)}</a></strong>'
-            f'<span class="public-id">ID {esc(public_ids.get(pid))}</span></div>'
+            f'<article class="talk"><div class="entry-head"><strong><a href="{esc(Path(path).name)}">{esc(title)}</a></strong>'
+            f'<span class="public-id">ID {esc(public_id)}</span></div>'
             f'<div class="meta">{esc(series_label(talk.get("series_key"), "ru"))} {esc(talk.get("year"))} · {scholar_links_html(talk, "../")}</div></article>'
         )
     year_links = [
         f'<a class="chip" href="../conferences/">{esc(year)} · {talks_count_label(count)}</a>'
         for year, count in sorted(year_counts.items(), reverse=True)
     ]
-    index_body = f"""
-        <header>
-            <h1>Доклады</h1>
-            <p>Постоянные страницы уникальных записей программ. Каждый доклад имеет собственный адрес, авторов, рубрику, масштаб аргументации и доступные мезоуровни.</p>
-        </header>
-        {chip_section("Покрытие по годам", year_links)}
-        <section class="list">{''.join(cards)}</section>
-    """
-    write_text(
-        "presentations/index.html",
-        page_shell(
-            f"Доклады | {SITE_NAME}",
-            "Постоянные страницы докладов Зографских и Рериховских чтений.",
-            "presentations/",
-            index_body,
-            [page_data("Доклады", "Постоянные страницы докладов.", "presentations/"), make_breadcrumbs([("Главная", ""), ("Доклады", "presentations/")])],
-            extra_head=PUBLIC_ID_CSS,
-        ),
-    )
-    for html_path in Path("presentations").glob("*.html"):
+    page_count = max(1, (len(cards) + PRESENTATIONS_PER_PAGE - 1) // PRESENTATIONS_PER_PAGE)
+    for page_number in range(1, page_count + 1):
+        start = (page_number - 1) * PRESENTATIONS_PER_PAGE
+        page_cards = cards[start : start + PRESENTATIONS_PER_PAGE]
+        canonical_path = "p/" if page_number == 1 else f"p/page-{page_number}.html"
+        written_files.add(Path(canonical_path).name if page_number > 1 else "index.html")
+        pagination = "".join(
+            (
+                f'<span class="chip" aria-current="page">{number}</span>'
+                if number == page_number
+                else f'<a class="chip" href="{"./" if number == 1 else f"page-{number}.html"}">{number}</a>'
+            )
+            for number in range(1, page_count + 1)
+        )
+        index_body = f"""
+            <header>
+                <h1>Доклады</h1>
+                <p>Постоянные страницы уникальных записей программ. Каждый доклад имеет собственный адрес, авторов, рубрику, масштаб аргументации и доступные мезоуровни.</p>
+            </header>
+            {chip_section("Покрытие по годам", year_links) if page_number == 1 else ""}
+            <nav class="chip-list" aria-label="Страницы докладов">{pagination}</nav>
+            <section class="list">{''.join(page_cards)}</section>
+        """
+        page_label = "Доклады" if page_number == 1 else f"Доклады, страница {page_number}"
+        write_text(
+            canonical_path + ("index.html" if page_number == 1 else ""),
+            page_shell(
+                f"{page_label} | {SEO_TITLE_BRAND}",
+                "Постоянные страницы докладов Зографских и Рериховских чтений.",
+                canonical_path,
+                index_body,
+                [page_data(page_label, "Постоянные страницы докладов.", canonical_path), make_breadcrumbs([("Главная", ""), ("Доклады", "p/")])],
+                extra_head=PUBLIC_ID_CSS,
+            ),
+        )
+    for html_path in Path("p").glob("*.html"):
         if html_path.name not in written_files:
             html_path.unlink()
 
@@ -3839,10 +3869,12 @@ def redirect_html(title, canonical_path, target_path):
 <head>
     <meta charset="utf-8">
     <title>{esc(title)} | {esc(SITE_NAME)}</title>
+    <meta name="description" content="Страница перенесена в актуальную рубрику архива.">
+    <meta name="robots" content="noindex, follow">
     <link rel="canonical" href="{esc(target_url)}">
     <meta http-equiv="refresh" content="0; url={esc(target_href)}">
 </head>
-<body>
+<body data-legacy-redirect="true">
     <p>Страница перенесена: <a href="{esc(target_href)}">{esc(title)}</a>.</p>
 </body>
 </html>
@@ -4151,8 +4183,10 @@ def generate_institution_pages(data, records, authority):
     orgs_auth = authority.get("organizations") or {}
 
     cards = []
+    written_files = {"index.html"}
     for institution, talks in sorted(grouped.items(), key=lambda item: (-len(item[1]), item[0])):
         path = institution_path(institution)
+        written_files.add(Path(path).name)
         cards.append(f'<article class="card"><strong><a href="../{path}">{esc(institution)}</a></strong><div class="meta">{presentation_records_label(len(talks))}</div></article>')
         inst_desc = f"Учёные и доклады: учреждение - {institution}. Архив участия в Зографских и Рериховских чтениях ({coverage})."
         facets = "".join([
@@ -4207,6 +4241,9 @@ def generate_institution_pages(data, records, authority):
             [page_data("Институции", "Организации российской индологии.", "institutions/"), make_breadcrumbs([("Главная", ""), ("Институции", "institutions/")])],
         ),
     )
+    for stale in Path("institutions").glob("*.html"):
+        if stale.name not in written_files:
+            stale.unlink()
 
 
 def generate_publication_docs(data):
@@ -4435,12 +4472,12 @@ def generate_sitemap():
         "classification-criteria.html",
         "networks.html",
     ]
-    html_paths.extend(str(p).replace("\\", "/") for p in Path("scholars").glob("*.html") if not is_legacy_redirect(p))
-    for dirname in ("conferences", "presentations", "themes", "topics", "generations", "meso", "gumilyov", "videos", "findings", "cities", "institutions", "keywords"):
+    html_paths.extend(str(p).replace("\\", "/") for p in Path("s").glob("*.html") if not is_legacy_redirect(p))
+    for dirname in ("conferences", "p", "themes", "topics", "generations", "meso", "gumilyov", "videos", "findings", "cities", "institutions", "keywords"):
         html_paths.extend(
             str(p).replace("\\", "/")
             for p in Path(dirname).glob("*.html")
-            if not (dirname == "presentations" and p.name.startswith("PRES_"))
+            if not is_legacy_redirect(p)
         )
     html_paths = sorted(set(html_paths), key=lambda p: (p.count("/"), p))
     urlset = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
@@ -4451,8 +4488,7 @@ def generate_sitemap():
             loc = site_url(path[:-10])
         else:
             loc = site_url(path)
-        priority = "1.0" if path == "index.html" else ("0.8" if path.startswith("scholars/") else "0.7")
-        urlset.append(f"  <url><loc>{esc(loc)}</loc><lastmod>{BUILD_DATE}</lastmod><priority>{priority}</priority></url>")
+        urlset.append(f"  <url><loc>{esc(loc)}</loc></url>")
     urlset.append("</urlset>")
     write_text("sitemap.xml", "\n".join(urlset) + "\n")
 

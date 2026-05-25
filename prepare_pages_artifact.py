@@ -37,9 +37,9 @@ PUBLIC_PATHS = [
 PUBLIC_DIRS = [
     "assets",
     "analytics_output",
-    "scholars",
+    "s",
     "conferences",
-    "presentations",
+    "p",
     "themes",
     "topics",
     "generations",

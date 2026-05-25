@@ -1404,17 +1404,17 @@
         
         <nav class="publication-links" aria-label="Разделы архива">
             <a href="search.html" data-ru="Поиск" data-en="Search">Поиск</a>
-            <a href="scholars/" data-ru="Профили" data-en="Scholars">Профили</a>
-            <a href="presentations/" data-ru="Доклады" data-en="Papers">Доклады</a>
+            <a href="s/" data-ru="Исследователи" data-en="Scholars">Исследователи</a>
+            <a href="p/" data-ru="Доклады" data-en="Papers">Доклады</a>
             <a href="conferences/" data-ru="Конференции" data-en="Conferences">Конференции</a>
-            <a href="themes/" data-ru="Темы" data-en="Themes">Темы</a>
-            <a href="download-data.html" data-ru="Данные" data-en="Data">Данные</a>
+            <a href="themes/" data-ru="Рубрики" data-en="Themes">Рубрики</a>
+            <a href="generations/" data-ru="Поколения" data-en="Generations">Поколения</a>
             <details class="more-links">
                 <summary data-ru="Еще" data-en="More">Еще</summary>
                 <div class="more-links-menu">
                     <a href="findings/" data-ru="Выводы" data-en="Findings">Выводы</a>
                     <a href="topics/" data-ru="Сюжеты" data-en="Named texts">Сюжеты</a>
-                    <a href="generations/" data-ru="Поколения" data-en="Generations">Поколения</a>
+                    <a href="download-data.html" data-ru="Данные" data-en="Data">Данные</a>
                     <a href="gumilyov/" data-ru="Гумилев" data-en="Gumilyov">Гумилев</a>
                     <a href="classification-criteria.html" data-ru="Критерии" data-en="Criteria">Критерии</a>
                     <a href="videos/" data-ru="Видео" data-en="Videos">Видео</a>
@@ -2369,7 +2369,7 @@ CREATE TABLE presentation_person (
         }
 
         function talkPageHref(talk) {
-            if (talk.presentation_id) return `presentations/${encodeURIComponent(talk.presentation_id)}.html`;
+            if (talk.public_path) return talk.public_path;
             const prefix = talk.series && talk.series.includes('Zograf') ? 'zograf' : 'roerich';
             return `conferences/${prefix}-${talk.year}.html`;
         }
@@ -2575,7 +2575,7 @@ CREATE TABLE presentation_person (
                 row.innerHTML = `
                     <td class="scholar-primary">
                         <div style="font-weight: 600; color: #ffffff;">
-                            <a href="scholars/${s.url_slug}.html" style="color: #ffffff; text-decoration: none; border-bottom: 1px dashed rgba(255,255,255,0.4); transition: var(--transition);" onmouseover="this.style.color='var(--accent-primary)'; this.style.borderColor='var(--accent-primary)'" onmouseout="this.style.color='#ffffff'; this.style.borderColor='rgba(255,255,255,0.4)'" onclick="event.stopPropagation();">
+                            <a href="s/${s.url_slug}.html" style="color: #ffffff; text-decoration: none; border-bottom: 1px dashed rgba(255,255,255,0.4); transition: var(--transition);" onmouseover="this.style.color='var(--accent-primary)'; this.style.borderColor='var(--accent-primary)'" onmouseout="this.style.color='#ffffff'; this.style.borderColor='rgba(255,255,255,0.4)'" onclick="event.stopPropagation();">
                                 ${displayName}
                             </a>
                             <span style="color: var(--text-secondary); font-weight: 400; font-size: 0.85rem; margin-left: 0.4rem;">${lifeYears}</span>

@@ -31,7 +31,7 @@
 
 Производные артефакты не правятся вручную: `conferences.db`,
 `site_data.json`, `search-index.json`, `analytics_output/`, каталоги
-`scholars/`, `presentations/`, `conferences/`, `themes/`, `cities/`,
+`s/`, `p/`, `conferences/`, `themes/`, `cities/`,
 `institutions/`, `generations/` и собранные информационные HTML-страницы.
 Изменение их содержания выполняется в источнике или генераторе, после чего
 артефакты пересобираются.
@@ -83,7 +83,7 @@ flowchart TD
     N --> O["presentation_tags.csv и лексические выгрузки"]
     E --> J["site_data.json"]
     F --> K["сетевые данные"]
-    G --> L["scholars/"]
+    G --> L["s/"]
     H --> M["публичные HTML-страницы и поисковый индекс"]
 ```
 

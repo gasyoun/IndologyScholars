@@ -30,7 +30,7 @@ Editable inputs and curation rules:
 | `analytics_output/classification_overrides.csv` | Editorial decisions for public classification examples. |
 
 Do not manually edit derived artifacts: `conferences.db`, `site_data.json`,
-`search-index.json`, `analytics_output/`, the `scholars/`, `presentations/`,
+`search-index.json`, `analytics_output/`, the `s/`, `p/`,
 `conferences/`, `themes/`, `cities/`, `institutions/`, and `generations/`
 directories, or generated informational HTML pages. Make a change in its
 source or generator and rebuild the artifacts.
@@ -82,7 +82,7 @@ flowchart TD
     N --> O["presentation_tags.csv and lexical exports"]
     E --> J["site_data.json"]
     F --> K["network data"]
-    G --> L["scholars/"]
+    G --> L["s/"]
     H --> M["public HTML pages and search index"]
 ```
 

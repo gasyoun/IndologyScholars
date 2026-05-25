@@ -573,13 +573,13 @@
         </a>
         <div class="nav-links">
             <a href="/IndologyScholars/">Панель</a>
-            <a href="/IndologyScholars/scholars/">Исследователи</a>
+            <a href="/IndologyScholars/s/">Исследователи</a>
             <a href="/IndologyScholars/conferences/">Конференции</a>
             <a href="/IndologyScholars/themes/">Рубрики</a>
             <a href="/IndologyScholars/meso/">Мезоуровни</a>
             <a href="/IndologyScholars/search.html">Поиск</a>
             <a href="/IndologyScholars/networks.html" class="active">Сеть</a>
-            <a href="/IndologyScholars/download-data.html">Данные</a>
+            <a href="/IndologyScholars/generations/">Поколения</a>
         </div>
     </nav>
 
@@ -1186,7 +1186,7 @@
                         </div>
                         
                         <div style="margin-top:1rem; text-align:center;">
-                            <a href="/IndologyScholars/scholars/${node.slug || node.id.replace('person:', '')}.html" class="btn-preset" style="display:inline-block; padding: 0.4rem 0.8rem; font-size:0.8rem;" target="_blank">Открыть профиль ↗</a>
+                            <a href="/IndologyScholars/s/${node.slug || node.id.replace('person:', '')}.html" class="btn-preset" style="display:inline-block; padding: 0.4rem 0.8rem; font-size:0.8rem;" target="_blank">Открыть профиль ↗</a>
                         </div>
                     `;
                 } else if (node.type === 'event') {

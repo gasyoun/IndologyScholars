@@ -88,6 +88,14 @@ class StableIdTests(unittest.TestCase):
         self.assertIn('apple-touch-icon.png', html)
         self.assertIn('assets/pwa.js', html)
 
+    def test_page_shell_uses_short_public_routes_and_generations_primary_nav(self):
+        html = publication_helpers.page_shell("Title", "Description", "test.html", "<p>Body</p>")
+        self.assertIn('/IndologyScholars/s/', html)
+        self.assertIn('/IndologyScholars/p/', html)
+        self.assertIn('>Поколения</a>', html)
+        self.assertNotIn('/IndologyScholars/scholars/', html)
+        self.assertNotIn('/IndologyScholars/presentations/', html)
+
     def test_leading_institution_is_public_metadata_not_title_text(self):
         title, affiliation = metadata_normalization.split_leading_affiliation(
             "(СПбГУ). Древнеиндийские диалекты в ранних фонетических трактатах"

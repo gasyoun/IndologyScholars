@@ -28,7 +28,7 @@ from publication_helpers import (
 )
 
 
-OUTPUT_DIR = Path("scholars")
+OUTPUT_DIR = Path("s")
 AUTHORITY_PATH = Path("authority_ids.json")
 LEGACY_REDIRECTS_PATH = Path("legacy_redirects.json")
 SLUG_REDIRECTS_PATH = Path("slug_redirects.json")
@@ -125,7 +125,7 @@ def initialize_presentation_slugs(scholars):
 def presentation_path(presentation_id):
     pid = clean_text(presentation_id)
     slug = PRESENTATION_SLUG_BY_ID.get(pid) or pid
-    return f"presentations/{slug}.html"
+    return f"p/{slug}.html"
 
 
 def title_case_ru(label):
@@ -591,7 +591,7 @@ def activity_label(scholar):
 
 
 def profile_structured_data(scholar, authority):
-    path = f"scholars/{scholar['url_slug']}.html"
+    path = f"s/{scholar['url_slug']}.html"
     name_ru = scholar.get("full_name_ru") or scholar.get("name")
     name_en = scholar.get("full_name_en") or scholar.get("name")
     profile_label, _, _ = scholar_profile_meta(scholar)
@@ -642,7 +642,7 @@ def profile_structured_data(scholar, authority):
             "@type": "BreadcrumbList",
             "itemListElement": [
                 {"@type": "ListItem", "position": 1, "name": "Home", "item": SITE_URL},
-                {"@type": "ListItem", "position": 2, "name": "Scholars", "item": site_url("scholars/")},
+                {"@type": "ListItem", "position": 2, "name": "Scholars", "item": site_url("s/")},
                 {"@type": "ListItem", "position": 3, "name": name_ru, "item": site_url(path)},
             ],
         },
@@ -664,7 +664,7 @@ def render_profile(scholar, related, authority, meso_by_presentation, meso_items
     name_ru = scholar.get("full_name_ru") or scholar.get("name")
     name_en = scholar.get("full_name_en") or scholar.get("name")
     description = scholar_description(scholar)
-    path = f"scholars/{scholar['url_slug']}.html"
+    path = f"s/{scholar['url_slug']}.html"
     profile_label, theme_code, profile_note = scholar_profile_meta(scholar)
     cities = unique_cities(scholar)
     affiliations = unique_affiliations(scholar)
@@ -833,7 +833,7 @@ def render_scholars_index(scholars, public_ids):
             "@type": "CollectionPage",
             "name": "Профили исследователей",
             "description": "Статический указатель сгенерированных профилей исследователей.",
-            "url": site_url("scholars/"),
+            "url": site_url("s/"),
             "dateModified": BUILD_DATE,
         },
         {
@@ -841,14 +841,14 @@ def render_scholars_index(scholars, public_ids):
             "@type": "BreadcrumbList",
             "itemListElement": [
                 {"@type": "ListItem", "position": 1, "name": "Главная", "item": SITE_URL},
-                {"@type": "ListItem", "position": 2, "name": "Исследователи", "item": site_url("scholars/")},
+                {"@type": "ListItem", "position": 2, "name": "Исследователи", "item": site_url("s/")},
             ],
         },
     ]
     return page_shell(
         f"Профили исследователей | {SITE_NAME}",
         "Статический указатель сгенерированных профилей исследователей.",
-        "scholars/",
+        "s/",
         body,
         structured,
         extra_head=PUBLIC_ID_CSS,
@@ -858,7 +858,7 @@ def render_scholars_index(scholars, public_ids):
 def render_legacy_redirect(legacy_id, target_scholar):
     target_slug = target_scholar["url_slug"]
     target_href = f"{target_slug}.html"
-    target_url = site_url(f"scholars/{target_slug}.html")
+    target_url = site_url(f"s/{target_slug}.html")
     name = target_scholar.get("full_name_ru") or target_scholar.get("name")
     title = f"{clean_text(name)} moved | {SITE_NAME}"
     description = f"Legacy profile URL for {clean_text(name)}. The canonical profile is {target_url}."
