@@ -20,8 +20,8 @@
     },
     {
       "path": "analytics_output/age_cohort_trend.csv",
-      "size_bytes": 2331,
-      "sha256": "2cfa2dbe78b0b635c3dc12238eb37137d9b33ecc20590cd9fdc6832e66701edb"
+      "size_bytes": 2333,
+      "sha256": "b01cff28e7a2d728181954479e4dcddbad2a4a0c065a152d567803c4c0166266"
     },
     {
       "path": "analytics_output/authority_coverage.csv",
@@ -210,13 +210,13 @@
     },
     {
       "path": "analytics_output/network_edges.csv",
-      "size_bytes": 745421,
-      "sha256": "babe2cb1d88fa76714b237030e53682f58ba9cb7bbb93484f75ea8bc167a25e0"
+      "size_bytes": 754140,
+      "sha256": "bd15dbe1e7f6a65595fe740e9d0c7a81b8a872e0c3c63d96b2b374e7d40a07ef"
     },
     {
       "path": "analytics_output/network_nodes.csv",
-      "size_bytes": 29208,
-      "sha256": "111bfc0e4febd23afdcbe76fe5d900461c2e277cd30446dcacf255df822b2852"
+      "size_bytes": 29085,
+      "sha256": "028224782fea2718c8802ce4b53f6f81e21504459c75e02d73e30a4c6b831901"
     },
     {
       "path": "analytics_output/newcomer_rate_by_year.csv",
@@ -260,8 +260,8 @@
     },
     {
       "path": "analytics_output/roerich_only_indologists.csv",
-      "size_bytes": 3401,
-      "sha256": "526bc66aa9aef54e7f8b2da2082f8b4242805337a7ae5ab0a3d514dc2b991f2f"
+      "size_bytes": 3350,
+      "sha256": "d81f0cbe6f73eca9cb453f21dd3810c6c63d0f32883d439b623de57b33bffa72"
     },
     {
       "path": "analytics_output/theme_codes_baseline.csv",
@@ -305,8 +305,8 @@
     },
     {
       "path": "analytics_output/total_indologists.csv",
-      "size_bytes": 21585,
-      "sha256": "74273aad2c2f5810e8f7e7bffbde8d82d8d75fdb6a938a47309be48977248683"
+      "size_bytes": 21414,
+      "sha256": "3af3e2791c58d1c2118bd0014697cabb71f62916da3064341eee1ae249c92e8f"
     },
     {
       "path": "analytics_output/video_presentation_mapping.csv",
@@ -340,8 +340,8 @@
     },
     {
       "path": "analytics_output/zograf_only_indologists.csv",
-      "size_bytes": 11667,
-      "sha256": "d8cc405183660cdd0e9ace33a5b4e1ae98ecdb1352d971626c8b14d9ff915cf4"
+      "size_bytes": 11521,
+      "sha256": "185e1aa794ab3d23732348faff75aa541c0cc50025fbe797db9eda0959a2249f"
     },
     {
       "path": "assets/favicon.svg",
@@ -420,8 +420,8 @@
     },
     {
       "path": "classification-criteria.html",
-      "size_bytes": 24731,
-      "sha256": "fb1fbc64093212fd7b040c57e83198cb8435d06f3419a90b38eeea2baebe3bef"
+      "size_bytes": 41295,
+      "sha256": "743e01627f0dfcdab3cf9a06e7d91fa6d59de4bb2fbc5fc48be021a0273ecc00"
     },
     {
       "path": "conferences/index.html",
@@ -620,8 +620,8 @@
     },
     {
       "path": "curation/__pycache__/audit_person_identity.cpython-314.pyc",
-      "size_bytes": 14443,
-      "sha256": "b3b4b4ee1ef415c132bc28704165578dcdf8228fe977121e0c46badc5541df2c"
+      "size_bytes": 14529,
+      "sha256": "e8201bf2e23ffc7043468992d33c19c0095b8edf231b4d6b16fa05f534478e81"
     },
     {
       "path": "curation/__pycache__/audit_wikipedia_authority.cpython-314.pyc",
@@ -655,8 +655,8 @@
     },
     {
       "path": "data_dictionary.md",
-      "size_bytes": 13335,
-      "sha256": "4a2755f155756d3608d350b4ed37b717ebcd610751c928e9424c28d8afbd5866"
+      "size_bytes": 13746,
+      "sha256": "47a70f41cf708f62794bf73b17614c8f30c6464a0170497a08db0c9893695079"
     },
     {
       "path": "datapackage.json",
@@ -665,8 +665,8 @@
     },
     {
       "path": "download-data.html",
-      "size_bytes": 24067,
-      "sha256": "f88e819a74f857174f0b61d2c11b989197edf324b49b564c359794df3b1ec4c3"
+      "size_bytes": 24105,
+      "sha256": "0f0ed143b4024ee0f6d163080c11dffe0f31eec76c5be7c0ff858a1974a3a3b3"
     },
     {
       "path": "en.html",
@@ -1025,8 +1025,8 @@
     },
     {
       "path": "methodology.html",
-      "size_bytes": 12033,
-      "sha256": "423de52b3aecc664f3dc23e8405b3852f147a8206288fd2fdf4c9b51db4cbf87"
+      "size_bytes": 12085,
+      "sha256": "009aa95332bb783ddbd90fbf3c45d278cdb594019592d3a4f21dc19eba3d49a3"
     },
     {
       "path": "metrics-guide.html",
@@ -1040,8 +1040,8 @@
     },
     {
       "path": "presentations/101-sinonim-vody-v-vediiskom-slovare-nigkhantu.html",
-      "size_bytes": 13321,
-      "sha256": "941c689bc38da85d94b8340ca00099a97540abe7cb559b7c5f6de9ca9e5876e9"
+      "size_bytes": 13563,
+      "sha256": "7a20b9b868a49f9b573f1e2f64634f31fba054388e8bc0d40fc0e2b6febf2704"
     },
     {
       "path": "presentations/12-letnii-zhivotnyi-tsikl-k-voprosu-ob-istokakh.html",
@@ -1220,8 +1220,8 @@
     },
     {
       "path": "presentations/atkharvaveda-1-2-shaunaka-dopolnenie-k-perevodam.html",
-      "size_bytes": 13573,
-      "sha256": "cf71cf107eb7ab851fb852c66ce8e0f6e785a79f2b26c1d4b90778a4798ac33e"
+      "size_bytes": 13815,
+      "sha256": "1047985f28738a32c67404c97472452f0fcb8396016756318f224cac3b8fc294"
     },
     {
       "path": "presentations/atkharvaveda-parishishta-xixb-k-voprosu-o-proiskhozhdenii-ritualov-natyashastry.html",
@@ -1235,8 +1235,8 @@
     },
     {
       "path": "presentations/atmanepada-v-sanskrite-i-v-grammatikakh.html",
-      "size_bytes": 13112,
-      "sha256": "913e93494901943ca66cf57791cf8dffbe41caf9c985df2fab1df09e3bdb3e2a"
+      "size_bytes": 13354,
+      "sha256": "be955612f1ccca21a9a5cfaec05f4177e7a7020117fde9591ba5bdb155716302"
     },
     {
       "path": "presentations/atomisticheskii-podkhod-v-buddizme.html",
@@ -1520,8 +1520,8 @@
     },
     {
       "path": "presentations/chemu-i-kak-uchit-panchatantra.html",
-      "size_bytes": 12455,
-      "sha256": "d9be464aa086785a6604b967d1f0568eb86039aba7e2deab61d498dee1a16da8"
+      "size_bytes": 12697,
+      "sha256": "cf24887b05494d105695b593a15fc3d20fcd52a118a2c2fc4b2073279047cb65"
     },
     {
       "path": "presentations/chemu-uchili-lyudi-dasyu-po-materialam-rannikh-vediiskikh-tekstov.html",
@@ -1630,8 +1630,8 @@
     },
     {
       "path": "presentations/dau-v-da-s-t-o-perevodakh-biblii-na-sanskrit-v-programme-vozmozhny-izmeneniya-i-dopolneniya.html",
-      "size_bytes": 14249,
-      "sha256": "7966fdf1d42e1a636ca7618576b9b961036aa809402de07bb91b37f486382039"
+      "size_bytes": 14491,
+      "sha256": "63662d13f8ece0b0a3c26530f8abcf34b709506349ff702f0496c18f20cdea76"
     },
     {
       "path": "presentations/davai-pozhenimsya-svadebnye-ritualy-v-nevarskom-buddizme.html",
@@ -2750,8 +2750,8 @@
     },
     {
       "path": "presentations/k-opredeleniyu-termina-dzhataka-v-paliiskom-kanone.html",
-      "size_bytes": 13318,
-      "sha256": "643a3b12bc2feda4f0562efb7f6acc8a02dde08f4c0e92218f1ea6bb463b5989"
+      "size_bytes": 13560,
+      "sha256": "1b2c0f8201abd6fe3b73fd3fff08554f6543be86fcf2bdcfbd78e8ef177e4726"
     },
     {
       "path": "presentations/k-ponimaniyu-bkhavany-v-purva-mimanse.html",
@@ -4215,8 +4215,8 @@
     },
     {
       "path": "presentations/o-metodakh-opisaniya-sanskritskikh-klassicheskikh-stikhotvornykh-razmerov.html",
-      "size_bytes": 13878,
-      "sha256": "48cdd0be1aed3a10747bd25e1ab9a9e32716c9eb722ac5a12a26b2a324bee5a6"
+      "size_bytes": 14120,
+      "sha256": "ab4e6c157501386f751a5a2372bb70435a48dd75e32800f32763afe8878452a3"
     },
     {
       "path": "presentations/o-narrativnoi-simvolike-bronzovoi-figurki-tantsuyushchego-bala-krishny.html",
@@ -5560,8 +5560,8 @@
     },
     {
       "path": "presentations/problemy-ponimaniya-sanskritskoi-metriki.html",
-      "size_bytes": 13030,
-      "sha256": "5975bf4a142fa7bf7c0c5171f6a4b549d59be24e80b6a12e3403d41a4928a856"
+      "size_bytes": 13272,
+      "sha256": "dfa096d82c00d987a7e797a23ced8ddcc10352d1e60c57eabbadc488e4b1030d"
     },
     {
       "path": "presentations/problemy-rekonstruktsii-sistemy-iogi-patandzhali-na-osnove-perevodov-kornevogo-teksta-ioga-sutr.html",
@@ -5570,8 +5570,8 @@
     },
     {
       "path": "presentations/problemy-tekstologii-shatakatrayam-bkhartrikhari-na-primere-shringarashataki.html",
-      "size_bytes": 13975,
-      "sha256": "bc2ca89086c4b5a80d0213ac16a8e8d2fcc65311ab6e7e6be8456e044059054d"
+      "size_bytes": 14217,
+      "sha256": "c082f611963c01414d64a9e11df1f04be13db8eb368cd39feb923f3f3947daaf"
     },
     {
       "path": "presentations/progulki-po-gorodu-s-khanumanom-odin-epizod-iz-ramayany-i-ego-paralleli-v-artkhashastre-kautili.html",
@@ -6020,8 +6020,8 @@
     },
     {
       "path": "presentations/sanskritskie-kvantitativnye-stikhotvornye-razmery-rekonstruktsiya-chteniya.html",
-      "size_bytes": 13953,
-      "sha256": "763eca7eeab9f35fba5dff57164f47612ef1fe8c367485d1dc0d63685b7896ff"
+      "size_bytes": 14195,
+      "sha256": "a34e9416db3468fcf352bb4b374397c2c7f728d8ad9c10b1819632b22f8ef59b"
     },
     {
       "path": "presentations/sanskritskie-narechiya-v-trudakh-bengalskikh-grammatistov-dzhivy-gosvamina-i-balaramy-panchanany.html",
@@ -6520,8 +6520,8 @@
     },
     {
       "path": "presentations/strasti-i-besstrastie-bkhartirikhari.html",
-      "size_bytes": 12696,
-      "sha256": "fdf7ea9e1304f5f492a813161ae248c1fd8e587973e544d11e95957b5b918d08"
+      "size_bytes": 12938,
+      "sha256": "4f2b5327909addcbde57c081d70a771ce8b5bf7a1d17985b750842039105b80f"
     },
     {
       "path": "presentations/strofy-o-bodkhichitte-vo-vtoroi-glave-gukhyasamadzha-tantry.html",
@@ -6925,8 +6925,8 @@
     },
     {
       "path": "presentations/traditsionnaya-klassifikatsiya-sanskritskikh-stikhotvornykh-razmerov.html",
-      "size_bytes": 13760,
-      "sha256": "291cbc85a7605a7c44b3e5fd32abaec07d77eb9a9ce407de98738ba157a7639f"
+      "size_bytes": 14002,
+      "sha256": "67ed9a894efe6665e01c35ce0eb27d6c47614e7195813d43c755d43d10f2ce87"
     },
     {
       "path": "presentations/traditsionnye-indiiskie-klassifikatsii-obraztsovye-udobnye-problematichnye.html",
@@ -7150,8 +7150,8 @@
     },
     {
       "path": "presentations/v-zashchitu-vishnu-shipivishty-az-esm-shipivishta-rv-7-100-6.html",
-      "size_bytes": 13823,
-      "sha256": "5476c1e89434aed62afb7dfbd077c2b0f1a5f9b1b82754216b35a9a94de7c961"
+      "size_bytes": 14065,
+      "sha256": "38a8c4c23337b265c604f954368a0b00bb3cec1190624fc9256ef7afa74cc6fe"
     },
     {
       "path": "presentations/varna-eto-fonema-bukva-zvuk-ili.html",
@@ -10525,8 +10525,8 @@
     },
     {
       "path": "scholars/sergey-tavastsherna.html",
-      "size_bytes": 68985,
-      "sha256": "ae614d759b98369d2a6147b1ff6bc4607855e47fc3c528ee04a990c421027833"
+      "size_bytes": 69223,
+      "sha256": "ed94f276c5d64c0963ff5c6833341935f7a992695f38e05be1f2de4d5839f908"
     },
     {
       "path": "scholars/shalakhov-evgenii.html",
@@ -10995,8 +10995,8 @@
     },
     {
       "path": "search-index.json",
-      "size_bytes": 1184767,
-      "sha256": "66702499b848b3f0bd864799b449f073505e3525fda27878b32bbaea595153b2"
+      "size_bytes": 1184819,
+      "sha256": "b5454b107642219d2886b4b16036a8426b307ac30bbb9df50238e298f3557695"
     },
     {
       "path": "search.html",
@@ -11010,8 +11010,8 @@
     },
     {
       "path": "site_data.json",
-      "size_bytes": 4068523,
-      "sha256": "f9556d97c973172987f2ded31d6b00b707bec96cf1d29f7545466081f6a34537"
+      "size_bytes": 4075761,
+      "sha256": "812f8577223ef7f873d871c204b7af6a806cefc0f60629807206784209f1e445"
     },
     {
       "path": "sitemap.xml",

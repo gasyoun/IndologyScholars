@@ -5,11 +5,11 @@
 
 ## 1. High-Level Executive Summary
 
-- **Total Unique Scholars Identified**: 289
+- **Total Unique Scholars Identified**: 286
 - **Total Historical Presentations/Talks**: 1377
-- **Scholars in Zograf Readings only**: 183
-- **Scholars in Roerich Readings only**: 66
-- **Scholars Active in BOTH Conferences (Overlapping Cohort)**: 40
+- **Scholars in Zograf Readings only**: 180
+- **Scholars in Roerich Readings only**: 65
+- **Scholars Active in BOTH Conferences (Overlapping Cohort)**: 41
 
 ## 2. Overlapping Cohort (The Core of Russian Indology)
 These scholars are active in both major Petersburg (Zograf) and Moscow (Roerich) forums, representing the intellectual bridge of the community:
@@ -35,10 +35,10 @@ These scholars are active in both major Petersburg (Zograf) and Moscow (Roerich)
 | Бабин Александр Николаевич | 12 | 6 | 6 | 2017–2025 |
 | Е. А. Юдицкая | 12 | 3 | 9 | 2010–2022 |
 | Д. Н. Лелюхин | 11 | 6 | 5 | 2004–2014 |
+| Крылова Анастасия Сергеевна | 11 | 8 | 3 | 2016–2026 |
 | А. Г. Гурия | 10 | 1 | 9 | 2007–2024 |
 | Гордийчук Николай Валентинович | 10 | 5 | 5 | 2016–2023 |
 | Комиссаров Дмитрий Алексеевич | 10 | 9 | 1 | 2016–2026 |
-| Крылова Анастасия Сергеевна | 10 | 7 | 3 | 2019–2026 |
 | А. В.  Ложкина | 9 | 3 | 6 | 2013–2019 |
 | Смирнитская Анна Александровна | 9 | 7 | 2 | 2017–2025 |
 | Гасунс Марцис Юрьевич | 8 | 6 | 2 | 2006–2024 |
@@ -98,24 +98,24 @@ The complete structured lists have been generated and exported to the `analytics
 ## 6. Демографический тренд: возраст участников на день конференции
 
 > Возраст = год начала конференции − год рождения участника (погрешность ≤1 год).
-> Год рождения известен для **218** из 289 учёных (71 отсутствуют, см. `missing_birth_years.md`).
+> Год рождения известен для **221** из 286 учёных (65 отсутствуют, см. `missing_birth_years.md`).
 
 ### Зографские чтения (май, Санкт-Петербург)
 
 | Год | Дата | N | Ср. возраст | Медиана | P25–P75 | Мин–Макс |
 | :---: | :--- | :---: | :---: | :---: | :--- | :--- |
-| 2004 | 2004-05-24 | 21 | 52.4 | 51 | 36.5–68.0 | 20–86 |
-| 2006 | 2006-05-15 | 27 | 50.9 | 51 | 36.0–63.0 | 22–88 |
+| 2004 | 2004-05-24 | 22 | 53.1 | 51.0 | 37.2–68.0 | 20–86 |
+| 2006 | 2006-05-15 | 27 | 50.6 | 51 | 36.0–63.0 | 22–88 |
 | 2007 | 2007-05-23 | 25 | 43.6 | 41 | 29.0–56.0 | 18–71 |
-| 2008 | 2008-05-26 | 22 | 52.6 | 54.5 | 36.8–68.2 | 30–80 |
-| 2009 | 2009-05-27 | 25 | 45.9 | 40 | 34.0–56.5 | 21–81 |
-| 2010 | 2010-05-17 | 23 | 49.1 | 42 | 35.0–64.0 | 22–82 |
-| 2011 | 2011-05-23 | 29 | 51.4 | 54 | 36.5–65.0 | 23–83 |
+| 2008 | 2008-05-26 | 22 | 52.2 | 54.5 | 36.8–68.2 | 30–77 |
+| 2009 | 2009-05-27 | 25 | 45.5 | 40 | 34.0–56.5 | 21–73 |
+| 2010 | 2010-05-17 | 23 | 48.7 | 42 | 35.0–64.0 | 22–79 |
+| 2011 | 2011-05-23 | 30 | 51.3 | 54.5 | 36.8–65.0 | 23–80 |
 | 2012 | 2012-05-16 | 30 | 47.8 | 44.0 | 33.8–65.2 | 26–76 |
-| 2013 | 2013-05-15 | 32 | 48.9 | 45.0 | 36.2–61.0 | 27–82 |
+| 2013 | 2013-05-15 | 33 | 48.8 | 45 | 36.5–61.0 | 27–82 |
 | 2014 | 2014-05-14 | 36 | 47.8 | 44.5 | 36.2–60.8 | 27–75 |
-| 2015 | 2015-05-25 | 36 | 48.2 | 45.5 | 37.0–61.5 | 23–84 |
-| 2016 | 2016-05-11 | 33 | 47.8 | 44 | 35.5–63.5 | 22–85 |
+| 2015 | 2015-05-25 | 37 | 48.4 | 46 | 37.0–61.0 | 23–84 |
+| 2016 | 2016-05-11 | 34 | 47.3 | 44.0 | 33.5–63.2 | 22–85 |
 | 2017 | 2017-05-16 | 38 | 47.2 | 45.5 | 34.2–55.0 | 25–86 |
 | 2018 | 2018-05-15 | 43 | 49.4 | 48 | 36.0–63.0 | 26–87 |
 | 2019 | 2019-05-14 | 49 | 46.5 | 45 | 34.0–52.0 | 22–88 |
@@ -131,8 +131,8 @@ The complete structured lists have been generated and exported to the `analytics
 
 | Год | Дата | N | Ср. возраст | Медиана | P25–P75 | Мин–Макс |
 | :---: | :--- | :---: | :---: | :---: | :--- | :--- |
-| 2008 | 2008-12-09 | 16 | 48.0 | 42.5 | 32.2–66.2 | 20–75 |
-| 2009 | 2009-12-09 | 17 | 48.1 | 44 | 34.5–60.5 | 31–76 |
+| 2008 | 2008-12-09 | 17 | 48.6 | 43 | 33.5–65.5 | 20–75 |
+| 2009 | 2009-12-09 | 18 | 48.7 | 44.5 | 35.8–61.2 | 31–76 |
 | 2010 | 2010-12-09 | 30 | 47.6 | 44.0 | 32.8–64.5 | 22–83 |
 | 2012 | 2012-12-09 | 33 | 48.3 | 46 | 34.0–58.5 | 23–85 |
 | 2013 | 2013-12-09 | 21 | 46.6 | 44 | 35.0–58.5 | 21–80 |
@@ -152,8 +152,8 @@ The complete structured lists have been generated and exported to the `analytics
 
 We analyze the structure of Russian Indological conferences through the lens of participation networks. Unlike traditional bibliometric networks (which map who cites whom), our networks map **co-presence and shared scholarly context**. They help identify institutional centers of gravity, disciplinary clustering, and bridge scholars between the Zograf and Roerich readings.
 
-**Nodes Generated:** 343
+**Nodes Generated:** 340
 
-**Edges Generated:** 8518
+**Edges Generated:** 8510
 
 The network is exported into standard edge list and node list CSV formats (`network_nodes.csv` and `network_edges.csv`) for use in external graphing tools like Gephi or Cytoscape.

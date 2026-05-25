@@ -76,8 +76,9 @@ def public_affiliation(
     """Return a public institution while retaining the programme observation.
 
     Location-only markers and omissions are not institutional affiliations.
-    A verified span may supply a more precise institution only within its
-    explicitly stated dates; an open end denotes currently verified status.
+    A verified span may supply a more precise institution within its explicitly
+    stated dates. If the span has no recorded end, later city-only or missing
+    entries retain that institution as an explicitly tentative continuation.
     """
     raw = compact_text(programme_value)
     observed = embedded_affiliation or canonical_reported_affiliation(raw)
@@ -90,12 +91,41 @@ def public_affiliation(
             matched = candidate
             break
     if matched:
+        verified_display = compact_text(matched.get("affiliation_ru"))
+        if observed and (
+            observed.lower() not in verified_display.lower()
+            and verified_display.lower() not in observed.lower()
+        ):
+            return {
+                "display": observed,
+                "basis": "programme",
+                "reported": raw or None,
+                "source_url": None,
+                "note": None,
+            }
+        start = int(matched["start_year"]) if matched.get("start_year") else None
+        tentative_continuation = bool(
+            not observed
+            and not compact_text(matched.get("end_year"))
+            and value_year is not None
+            and start is not None
+            and value_year > start
+        )
+        display = verified_display
+        note = compact_text(matched.get("note"))
+        if tentative_continuation:
+            display = f"{display} (?)"
+            inference_note = (
+                "Продолжение прежней аффилиации предполагается до появления "
+                "свидетельства о смене; в программе этого года учреждение не названо."
+            )
+            note = f"{note} {inference_note}".strip()
         return {
-            "display": compact_text(matched.get("affiliation_ru")),
-            "basis": "verified_span",
+            "display": display,
+            "basis": "inferred_continuation" if tentative_continuation else "verified_span",
             "reported": raw or None,
             "source_url": compact_text(matched.get("source_url")) or None,
-            "note": compact_text(matched.get("note")) or None,
+            "note": note or None,
         }
     return {
         "display": observed,

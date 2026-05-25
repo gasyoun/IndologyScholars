@@ -4,6 +4,11 @@ Date: 2026-05-21
 Based on: `architecture.md`  
 Goal: implement architecture hardening in reviewable steps, starting with ID stability and moving toward provenance, schema versions, authority workflows, and safer generated outputs.
 
+> This is a dated implementation record. For current build instructions and
+> publication-state figures, see
+> [docs/development-en.md](docs/development-en.md) or
+> [docs/development.md](docs/development.md).
+
 ## 0. Implementation Status
 
 Implemented on 2026-05-21:

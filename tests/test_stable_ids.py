@@ -105,6 +105,30 @@ class StableIdTests(unittest.TestCase):
         self.assertEqual(within["display"], "СПбГУ, Восточный факультет")
         self.assertIsNone(after["display"])
 
+    def test_open_verified_affiliation_continues_tentatively_when_programme_is_silent(self):
+        spans = {
+            "PERS_test": [
+                {
+                    "affiliation_ru": "СПбГУ, Восточный факультет",
+                    "start_year": "2018",
+                    "end_year": "",
+                    "source_url": "https://example.org/profile",
+                    "note": "Подтвержденная исходная аффилиация.",
+                }
+            ]
+        }
+        initial = metadata_normalization.public_affiliation("PERS_test", 2018, "СПб", None, spans)
+        continued = metadata_normalization.public_affiliation("PERS_test", 2024, "СПб", None, spans)
+        explicit = metadata_normalization.public_affiliation("PERS_test", 2024, "СПбГУ", None, spans)
+        changed = metadata_normalization.public_affiliation("PERS_test", 2024, "ИВ РАН", None, spans)
+        self.assertEqual(initial["display"], "СПбГУ, Восточный факультет")
+        self.assertEqual(continued["display"], "СПбГУ, Восточный факультет (?)")
+        self.assertEqual(continued["basis"], "inferred_continuation")
+        self.assertIn("предполагается", continued["note"])
+        self.assertEqual(explicit["display"], "СПбГУ, Восточный факультет")
+        self.assertEqual(changed["display"], "ИВ РАН")
+        self.assertEqual(changed["basis"], "programme")
+
     def test_dhatupatha_title_has_editorially_normalized_public_form(self):
         self.assertIn(
             "Дхатупатхе",

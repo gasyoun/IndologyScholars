@@ -123,6 +123,30 @@ def extract_geography(affiliation_text):
             
     return {"ru": "Не указана", "en": "Not specified"}
 
+
+def aggregate_public_affiliations(talks):
+    """Collapse tentative and confirmed appearances of the same institution."""
+    by_institution = {}
+    suffix = " (?)"
+    for talk in talks:
+        affiliation = str(talk.get("affiliation") or "").strip()
+        if not affiliation:
+            continue
+        base = affiliation[:-len(suffix)] if affiliation.endswith(suffix) else affiliation
+        current = by_institution.get(base)
+        if current is None or (current.endswith(suffix) and not affiliation.endswith(suffix)):
+            by_institution[base] = affiliation
+    return list(by_institution.values())
+
+
+def aggregate_affiliation_notes(talks):
+    notes = list(dict.fromkeys(t["affiliation_note"] for t in talks if t.get("affiliation_note")))
+    return [
+        note for note in notes
+        if not any(other != note and other.startswith(note) for other in notes)
+    ]
+
+
 def clean_title(title):
     if not title:
         return ""
@@ -574,8 +598,8 @@ def main():
                 thematic_breadth = "Interdisciplinary"
             
         cohort = generation_cohort(meta["birth_year"])
-        public_affiliations = list(dict.fromkeys(t["affiliation"] for t in talks if t.get("affiliation")))
-        affiliation_notes = list(dict.fromkeys(t["affiliation_note"] for t in talks if t.get("affiliation_note")))
+        public_affiliations = aggregate_public_affiliations(talks)
+        affiliation_notes = aggregate_affiliation_notes(talks)
         scholars.append({
             "id": pid,
             "name": meta["std_name"],

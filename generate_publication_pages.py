@@ -1344,7 +1344,7 @@ def generate_download_page(data):
         ("Theme provenance", "analytics_output/field_provenance_themes.csv", "Field-level provenance for generated presentation theme labels."),
         ("Gumilyov scale", "analytics_output/gumilyov_scale.csv", "Presentation-level scale of generalization used by the Gumilyov navigation pages."),
         ("Expert classification decisions", "analytics_output/classification_overrides.csv", "Reviewed revisions to themes, meso-levels, and Gumilyov argument levels, with a rationale for each affected presentation."),
-        ("Verified affiliation spans", "curation/verified_affiliation_spans.csv", "Dated, source-backed institutional trajectories used only within their verified intervals."),
+        ("Verified affiliation spans", "curation/verified_affiliation_spans.csv", "Dated, source-backed institutional trajectories; tentative open continuations into later gaps are marked (?)."),
         ("YouTube video list", "analytics_output/youtube_video_list.csv", "Source inventory of collected recordings; public discovery is attached to presentation records."),
         ("YouTube mapping", "analytics_output/video_presentation_mapping.csv", "Video-to-presentation matching status used to display recording availability on presentations."),
         ("Network nodes", "analytics_output/network_nodes.csv", "Typed person, event, organization, and theme nodes for downstream network analysis."),
@@ -2887,8 +2887,80 @@ def generate_presentation_pages(records):
             html_path.unlink()
 
 
+ARGUMENT_SCALE_EXAMPLE_IDS = {
+    1: [
+        "PRES_2a08c0cb86",
+        "PRES_10c2c66c17",
+        "PRES_0b727f138c",
+        "PRES_09ea1d8846",
+        "PRES_0068d49980",
+    ],
+    2: [
+        "PRES_9e203d9b3f",
+        "PRES_2048f4153d",
+        "PRES_3fd8e2489c",
+        "PRES_844f6b86ea",
+        "PRES_22c7444e36",
+    ],
+    3: [
+        "PRES_e4b6786e6b",
+        "PRES_54a32921dc",
+        "PRES_aa4df50cf0",
+        "PRES_74cd40949e",
+        "PRES_15b5fbdc83",
+    ],
+}
+
+EXPERT_REVIEW_EXAMPLE_IDS = [
+    "PRES_6e17572f1f",
+    "PRES_37a471ecf5",
+    "PRES_a7d32d94a9",
+    "PRES_0c496dfec3",
+    "PRES_422410f9af",
+]
+
+
 def generate_classification_criteria_page(records):
     records_by_id = presentation_records_by_id(records)
+    classification_rows = {
+        row["presentation_id"]: row
+        for row in load_csv_rows("analytics_output/expanded_classification_deepseek.csv")
+        if row.get("presentation_id")
+    }
+    audit_rows = {
+        row["presentation_id"]: row
+        for row in load_csv_rows("analytics_output/expanded_gumilyov_elevated_audit.csv")
+        if row.get("presentation_id")
+    }
+
+    def example_cards(presentation_ids, audited=False):
+        cards = []
+        for pid in presentation_ids:
+            talk = records_by_id.get(pid)
+            if not talk:
+                continue
+            if audited:
+                row = audit_rows.get(pid, {})
+                decision = f'L{row.get("preliminary_level", "?")} -> L{row.get("audited_level", "?")} после перепроверки'
+            else:
+                row = classification_rows.get(pid, {})
+                decision = f'L{row.get("gumilyov_level", talk.get("gumilyov_scale", "?"))}'
+            cards.append(
+                f"""
+                <article class="talk">
+                    <strong><a href="{esc(presentation_path(pid))}">{esc(talk.get("title"))}</a></strong>
+                    <div class="meta">{esc(series_label(talk.get("series_key"), "ru"))} {esc(talk.get("year"))} · {scholar_links_html(talk)} · {esc(decision)}</div>
+                    <p>{esc(row.get("rationale") or "")}</p>
+                </article>
+                """
+            )
+        return "".join(cards)
+
+    scale_examples = {
+        level: example_cards(presentation_ids)
+        for level, presentation_ids in ARGUMENT_SCALE_EXAMPLE_IDS.items()
+    }
+    expert_review_examples = example_cards(EXPERT_REVIEW_EXAMPLE_IDS, audited=True)
     ledger_rows = []
     reviewed_cards = []
     for pid, review in CLASSIFICATION_OVERRIDES.items():
@@ -2937,17 +3009,26 @@ def generate_classification_criteria_page(records):
         <h2>Правила нормализации метаданных</h2>
         <section class="list">
             <article class="talk"><strong>Институция отделяется от географии</strong><p>Городская помета в программе, включая «СПб» или «Санкт-Петербург», используется как географический сигнал и не публикуется как аффилиация. Аффилиацией считается названное учреждение.</p></article>
-            <article class="talk"><strong>Подтвержденная траектория имеет временные границы</strong><p>Если источник подтверждает одну институцию на интервале участия, она может заполнить пропуски и городские пометы только в пределах этого интервала. После даты окончания запись не переносится автоматически на новые выступления.</p></article>
+            <article class="talk"><strong>Открытая траектория продолжается до контрсвидетельства</strong><p>Если институция подтверждена и не зафиксированы окончание работы или новая аффилиация, она может заполнять последующие пропуски и городские пометы как предположение, явно отмеченное знаком «(?)». Явная конечная дата или свидетельство о смене прекращают такой перенос.</p></article>
             <article class="talk"><strong>Метаданные не входят в название</strong><p>Начальная скобочная помета, распознанная как учреждение, например «(СПбГУ).», переносится в поле аффилиации для любого доклада. Содержательные скобки в заголовках не удаляются.</p></article>
             <article class="talk"><strong>Видео является также состоянием доклада</strong><p>Сохранившаяся и сопоставленная запись отмечается плашкой на карточке доклада и его странице; отдельный каталог видео сохраняется как обзор исходных записей и сопоставлений.</p></article>
         </section>
         <h2>Правила аргументационного масштаба</h2>
         <section class="list">
             <article class="talk"><strong>L1 Микроуровень</strong><p>Конкретный текст, предмет, ритуал, слово, экспедиция, авторское сопоставление или ограниченный тип артефактов. Упоминание региона, народа, языка или двух сравниваемых традиций не повышает уровень автоматически.</p></article>
-            <article class="talk"><strong>L2 Региональный уровень</strong><p>Аргумент должен описывать устойчивую конфигурацию традиции, ареала, школы, исторической среды или нескольких серий объектов, а не только локализовать материал.</p></article>
-            <article class="talk"><strong>L3 Синтетический уровень</strong><p>Требуется заявленное широкое сравнительное, цивилизационное или методологическое обобщение, выходящее за один корпус и одну региональную конфигурацию.</p></article>
-            <article class="talk"><strong>Полный аудит DeepSeek</strong><p>Все 1350 уникальных докладов получили тематические коды, мезоуровни и L1-L3 по контролируемым перечням. Все предварительные L2/L3 были отправлены на отдельную строгую перепроверку; 81 повышенный уровень понижен, а два G3 затем редакционно отнесены к G2. Необработанная запись не получает L2 по умолчанию.</p></article>
         </section>
+        <h3>Примеры L1: разные годы и докладчики</h3>
+        <section class="list">{scale_examples[1]}</section>
+        <section class="list">
+            <article class="talk"><strong>L2 Региональный уровень</strong><p>Аргумент должен описывать устойчивую конфигурацию традиции, ареала, школы, исторической среды или нескольких серий объектов, а не только локализовать материал.</p></article>
+        </section>
+        <h3>Примеры L2: разные годы и докладчики</h3>
+        <section class="list">{scale_examples[2]}</section>
+        <section class="list">
+            <article class="talk"><strong>L3 Синтетический уровень</strong><p>Требуется заявленное широкое сравнительное, цивилизационное или методологическое обобщение, выходящее за один корпус и одну региональную конфигурацию.</p></article>
+        </section>
+        <h3>Примеры L3: разные годы и докладчики</h3>
+        <section class="list">{scale_examples[3]}</section>
         <h2>Выводы из экспертных поправок</h2>
         <section class="list">
             <article class="talk"><strong>География не равна масштабу</strong><p>Невары, Ассам, Гималаи, Бенгалия или язык куллуи обозначают материал исследования; без обобщающего тезиса это L1.</p></article>
@@ -2956,11 +3037,14 @@ def generate_classification_criteria_page(records):
             <article class="talk"><strong>История индологии выделяется отдельно</strong><p>Экспедиции, путешественники и история научного освоения материала не должны исчезать в общем остаточном классе.</p></article>
             <article class="talk"><strong>Мезоуровней достаточно при контролируемом расширении</strong><p>Полный проход наполнил сквозные контуры буддизма, философии, ведийских исследований, эпосов, рукописей и рецепции; повторившееся предложение «Сикхские исследования» добавлено как новый мезоуровень, а единичные предложения оставлены в аудиторской выгрузке.</p></article>
         </section>
-        <h2>Проверенная выборка</h2>
+        <h3>Пять решений перепроверки: разные годы и докладчики</h3>
+        <section class="list">{expert_review_examples}</section>
+        <h2>Проверочная выборка</h2>
+        <p>Эти вручную разобранные случаи служат контрольным набором для проверки применения рубрик, мезоуровней и масштаба аргументации.</p>
         <section class="list">{''.join(reviewed_cards)}</section>
         <section class="link-block">
             <strong>Машиночитаемый журнал решений</strong>
-            <div class="chip-list"><a class="chip" href="analytics_output/classification_overrides.csv">classification_overrides.csv</a><a class="chip" href="analytics_output/expanded_classification_deepseek.csv">expanded_classification_deepseek.csv</a><a class="chip" href="analytics_output/expanded_gumilyov_elevated_audit.csv">expanded_gumilyov_elevated_audit.csv</a></div>
+            <div class="chip-list"><a class="chip" href="analytics_output/classification_overrides.csv">classification_overrides.csv</a></div>
         </section>
     """
     write_text(
@@ -3571,7 +3655,7 @@ def generate_publication_docs(data):
             </article>
             <article class="card">
                 <strong>Normalized Affiliations</strong>
-                <p>Program strings are retained as provenance. City-only labels remain geographic signals, while institutional affiliations are published only when explicitly stated or supported by a dated, verified trajectory.</p>
+                <p>Program strings are retained as provenance. City-only labels remain geographic signals; an institutional affiliation is published when explicitly stated or supported by a dated, verified trajectory, with tentative open continuations into later gaps marked (?).</p>
             </article>
             <article class="card">
                 <strong>Broad Theme Labels</strong>

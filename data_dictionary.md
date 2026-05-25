@@ -1,5 +1,7 @@
 # IndologyScholars Data Dictionary
 
+[Documentation index](docs/README.md) | [Development guide](docs/development-en.md) | [Русская техническая документация](docs/development.md)
+
 Date: 2026-05-25  
 Dataset schema version: 1.0.0  
 Pipeline version: 2026-05-25
@@ -18,7 +20,7 @@ This dictionary describes the reusable data outputs produced by the IndologyScho
 | `analytics_output/data_quality_report.json` | JSON | `generate_publication_pages.py` | Machine-readable quality checks and review samples. |
 | `analytics_output/publication_file_manifest.csv` | CSV | `generate_publication_pages.py` | Generated file manifest with byte sizes and SHA-256 checksums. |
 | `analytics_output/publication_file_manifest.json` | JSON | `generate_publication_pages.py` | JSON version of the generated file manifest with build metadata. |
-| `curation/verified_affiliation_spans.csv` | CSV | manual curation / `generate_site_data.py` | Source-backed dated institutional trajectories used for public display without rewriting source strings. |
+| `curation/verified_affiliation_spans.csv` | CSV | manual curation / `generate_site_data.py` | Source-backed dated institutional trajectories; open continuations inferred into later programme gaps are visibly marked `(?)`. |
 
 ## 2. Stable Identifier Policy
 
@@ -66,7 +68,7 @@ Provenance sidecars document where curated or derived fields came from and how c
 | `analytics_output/field_provenance_biographical.csv` | Person names, display names, birth/death years, and profile fields. |
 | `analytics_output/field_provenance_authority.csv` | External authority identifiers and organization/place authority data. |
 | `analytics_output/field_provenance_themes.csv` | Generated presentation theme labels and theme review candidates. |
-| `curation/verified_affiliation_spans.csv` | Verified institutional intervals; city-only programme markers remain geography rather than affiliation. |
+| `curation/verified_affiliation_spans.csv` | Verified institutional trajectories; city-only programme markers remain geography, while an open trajectory continued beyond its starting evidence is marked `(?)` until contradicted. |
 
 Common columns:
 
@@ -177,6 +179,9 @@ Mapped video records remain searchable in the video catalogue and also set the p
 | `analytics_output/theme_codes_final.csv` | Final selected theme coding. |
 | `analytics_output/theme_codes_uncertain.csv` | Theme records requiring review. |
 | `analytics_output/theme_review_queue.csv` | Generated review queue for uncertain or low-confidence theme classifications. |
+
+The complete `L1`-`L3` classification pass and strict review of preliminary
+elevated levels are documented in `docs/classification-audit.md`.
 
 Theme labels are navigational aids derived primarily from presentation titles. They should not be treated as a fine-grained content-analysis taxonomy without review.
 

@@ -1,5 +1,10 @@
 # HANDOFF: IndologyScholars
 
+> Historical session handoff retained for audit context. It is not the current
+> data or development guide. See [docs/development-en.md](docs/development-en.md)
+> or [docs/development.md](docs/development.md) for maintained instructions and
+> current publication-state figures.
+
 **Last Updated:** 2026-05-24
 **Status:** Repo clean, everything committed. Pipeline healthy. Manuscript at **v0.7**.
 **Target journal:** ППВ (Письменные памятники Востока); fallback: Восток (Oriens).
