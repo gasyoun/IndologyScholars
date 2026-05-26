@@ -1,5 +1,5 @@
 {
-  "generated": "2026-05-25",
+  "generated": "2026-05-26",
   "summary": {
     "before_rows": 1350,
     "after_rows": 1350,
@@ -10,10 +10,10 @@
     "added_presentation_ids": 0,
     "before_unique_stable_keys": 1350,
     "after_unique_stable_keys": 1350,
-    "common_stable_keys": 1350,
-    "missing_stable_keys_after": 0,
-    "new_stable_keys_after": 0,
-    "unchanged_ids_for_same_stable_key": 1350,
+    "common_stable_keys": 1337,
+    "missing_stable_keys_after": 13,
+    "new_stable_keys_after": 13,
+    "unchanged_ids_for_same_stable_key": 1337,
     "changed_ids_for_same_stable_key": 0,
     "before_duplicate_presentation_ids": 0,
     "after_duplicate_presentation_ids": 0,
@@ -22,7 +22,243 @@
   },
   "changed_ids_for_same_stable_key_records": [],
   "changed_ids_for_same_stable_key_sample": [],
-  "missing_stable_keys_after_sample": [],
-  "new_stable_keys_after_sample": [],
+  "missing_stable_keys_after_sample": [
+    {
+      "presentation_id": "PRES_c753d8108f",
+      "stable_key_candidate": "17fd8e7c5ba78e56",
+      "year": "2012",
+      "series": "Zograf Readings",
+      "title": "«Бенгальский стиль» в индийском танце: традиционное, креативное, политическое измерения В программе возможны изменения и дополнения Приглашаются все желающие",
+      "first_speaker": "И. Рыжакова",
+      "source_url": "https://www.orientalstudies.ru/rus/index.php?Itemid=48&id=3036&option=com_content&task=view"
+    },
+    {
+      "presentation_id": "PRES_52c5571365",
+      "stable_key_candidate": "20a7f7ff7191ac48",
+      "year": "2019",
+      "series": "Zograf Readings",
+      "title": "Способы сокрытия мантр в тантрических текстах",
+      "first_speaker": "А. Ковалевская",
+      "source_url": "https://www.orientalstudies.ru/rus/index.php?Itemid=48&id=10154&option=com_content&task=view"
+    },
+    {
+      "presentation_id": "PRES_707faba145",
+      "stable_key_candidate": "3a6a426cd39ebdc8",
+      "year": "2016",
+      "series": "Zograf Readings",
+      "title": "Чайтанья и его учение в североиндийской литературе XVII в. (на примере «Бхактамалы» Госвами Набхадаса)",
+      "first_speaker": "М. Демченко",
+      "source_url": "https://www.orientalstudies.ru/rus/index.php?Itemid=48&id=4789&option=com_content&task=view"
+    },
+    {
+      "presentation_id": "PRES_0ecee86019",
+      "stable_key_candidate": "3f2bc77ae20e17b8",
+      "year": "2019",
+      "series": "Zograf Readings",
+      "title": "И. П. Минаев и Дж. Л. Киплинг: коллекции и письма",
+      "first_speaker": "А. Бабин",
+      "source_url": "https://www.orientalstudies.ru/rus/index.php?Itemid=48&id=10154&option=com_content&task=view"
+    },
+    {
+      "presentation_id": "PRES_ec0380288a",
+      "stable_key_candidate": "49935b0977ae0a7f",
+      "year": "2024",
+      "series": "Zograf Readings",
+      "title": "Поэтическое представление о духовном и мирском благе в гимнах наянаров (сборник \"Деварам\")",
+      "first_speaker": "Павлова М.",
+      "source_url": "https://www.orientalstudies.ru/rus/index.php?Itemid=48&id=14999&option=com_content&task=view"
+    },
+    {
+      "presentation_id": "PRES_89479d5fc5",
+      "stable_key_candidate": "5bc5dd5d5e81aae6",
+      "year": "2018",
+      "series": "Zograf Readings",
+      "title": "Кришна исполняет зикр: следы влияния бхакти на суфизм братства Чиштийя",
+      "first_speaker": "Г. Стукалин",
+      "source_url": "https://www.orientalstudies.ru/rus/index.php?Itemid=48&id=7591&option=com_content&task=view"
+    },
+    {
+      "presentation_id": "PRES_625c10aa1b",
+      "stable_key_candidate": "67230b0ff6aa19a9",
+      "year": "2016",
+      "series": "Zograf Readings",
+      "title": "Об основаниях интерпретации терминов  «dharma» и «saṃskāra» в контексте «Абхидхармасамуччаи»",
+      "first_speaker": "В. Коробов",
+      "source_url": "https://www.orientalstudies.ru/rus/index.php?Itemid=48&id=4789&option=com_content&task=view"
+    },
+    {
+      "presentation_id": "PRES_02fe7e79a6",
+      "stable_key_candidate": "82cc804d4e01f033",
+      "year": "2013",
+      "series": "Zograf Readings",
+      "title": "Cittamātra и проблема наблюдателя в Madhyānta-vibhāga",
+      "first_speaker": "В. Коробов",
+      "source_url": "https://www.orientalstudies.ru/rus/index.php?Itemid=48&id=3296&option=com_content&task=view"
+    },
+    {
+      "presentation_id": "PRES_56a4aaf53a",
+      "stable_key_candidate": "858bed74ea32c0f7",
+      "year": "2015",
+      "series": "Zograf Readings",
+      "title": "О некоторых особенностях в композиции Абхидхармасамуччаи",
+      "first_speaker": "В. Коробов",
+      "source_url": "https://www.orientalstudies.ru/rus/index.php?Itemid=48&id=4023&option=com_content&task=view"
+    },
+    {
+      "presentation_id": "PRES_2b2a1fc14b",
+      "stable_key_candidate": "9e856fb797b034f6",
+      "year": "2024",
+      "series": "Zograf Readings",
+      "title": "Сравнительный анализ космологических представлений на полях вишнуитской и джайнской «джняна чаупады» (игры знания) XVIII — XIX вв",
+      "first_speaker": "Лужинская П.",
+      "source_url": "https://www.orientalstudies.ru/rus/index.php?Itemid=48&id=14999&option=com_content&task=view"
+    },
+    {
+      "presentation_id": "PRES_844f6b86ea",
+      "stable_key_candidate": "b79d5d90289c8c47",
+      "year": "2008",
+      "series": "Zograf Readings",
+      "title": "Образы фантастических животных в средневековой архитектуре Индии",
+      "first_speaker": "И.Урнова",
+      "source_url": "https://www.orientalstudies.ru/rus/index.php?Itemid=48&id=2074&option=com_content&task=view"
+    },
+    {
+      "presentation_id": "PRES_7e41374eb0",
+      "stable_key_candidate": "bedeeec73c4b9140",
+      "year": "2010",
+      "series": "Zograf Readings",
+      "title": "Сюжет о побоище палицами в «Маусалапарве» и в «Джатаке о Гхата-пандите» 15.00. Там же",
+      "first_speaker": "К. Маретина",
+      "source_url": "https://www.orientalstudies.ru/rus/index.php?Itemid=48&id=2609&option=com_content&task=view"
+    },
+    {
+      "presentation_id": "PRES_9ec34b2c0f",
+      "stable_key_candidate": "e6f0f1160c95c83c",
+      "year": "2011",
+      "series": "Zograf Readings",
+      "title": "Строфы о бодхичитте во второй главе Гухьясамаджа тантры",
+      "first_speaker": "В. Коробов",
+      "source_url": "https://www.orientalstudies.ru/rus/index.php?Itemid=48&id=2846&option=com_content&task=view"
+    }
+  ],
+  "new_stable_keys_after_sample": [
+    {
+      "presentation_id": "PRES_c753d8108f",
+      "stable_key_candidate": "0473864ea7704caa",
+      "year": "2012",
+      "series": "Zograf Readings",
+      "title": "«Бенгальский стиль» в индийском танце: традиционное, креативное, политическое измерения В программе возможны изменения и дополнения Приглашаются все желающие",
+      "first_speaker": "Рыжакова Светлана Игоревна",
+      "source_url": "https://www.orientalstudies.ru/rus/index.php?Itemid=48&id=3036&option=com_content&task=view"
+    },
+    {
+      "presentation_id": "PRES_625c10aa1b",
+      "stable_key_candidate": "06a50e39bcf78768",
+      "year": "2016",
+      "series": "Zograf Readings",
+      "title": "Об основаниях интерпретации терминов  «dharma» и «saṃskāra» в контексте «Абхидхармасамуччаи»",
+      "first_speaker": "Коробов Владимир Борисович",
+      "source_url": "https://www.orientalstudies.ru/rus/index.php?Itemid=48&id=4789&option=com_content&task=view"
+    },
+    {
+      "presentation_id": "PRES_2b2a1fc14b",
+      "stable_key_candidate": "125337ed35779db2",
+      "year": "2024",
+      "series": "Zograf Readings",
+      "title": "Сравнительный анализ космологических представлений на полях вишнуитской и джайнской «джняна чаупады» (игры знания) XVIII — XIX вв",
+      "first_speaker": "Лужинская Полина Александровна",
+      "source_url": "https://www.orientalstudies.ru/rus/index.php?Itemid=48&id=14999&option=com_content&task=view"
+    },
+    {
+      "presentation_id": "PRES_9ec34b2c0f",
+      "stable_key_candidate": "35f8f38e35e7983c",
+      "year": "2011",
+      "series": "Zograf Readings",
+      "title": "Строфы о бодхичитте во второй главе Гухьясамаджа тантры",
+      "first_speaker": "Коробов Владимир Борисович",
+      "source_url": "https://www.orientalstudies.ru/rus/index.php?Itemid=48&id=2846&option=com_content&task=view"
+    },
+    {
+      "presentation_id": "PRES_844f6b86ea",
+      "stable_key_candidate": "4a8cb867c478fc2c",
+      "year": "2008",
+      "series": "Zograf Readings",
+      "title": "Образы фантастических животных в средневековой архитектуре Индии",
+      "first_speaker": "И.А.Урнова",
+      "source_url": "https://www.orientalstudies.ru/rus/index.php?Itemid=48&id=2074&option=com_content&task=view"
+    },
+    {
+      "presentation_id": "PRES_02fe7e79a6",
+      "stable_key_candidate": "4bc6802ff9db4192",
+      "year": "2013",
+      "series": "Zograf Readings",
+      "title": "Cittamātra и проблема наблюдателя в Madhyānta-vibhāga",
+      "first_speaker": "Коробов Владимир Борисович",
+      "source_url": "https://www.orientalstudies.ru/rus/index.php?Itemid=48&id=3296&option=com_content&task=view"
+    },
+    {
+      "presentation_id": "PRES_707faba145",
+      "stable_key_candidate": "4c2e5f7b8ee7cf16",
+      "year": "2016",
+      "series": "Zograf Readings",
+      "title": "Чайтанья и его учение в североиндийской литературе XVII в. (на примере «Бхактамалы» Госвами Набхадаса)",
+      "first_speaker": "Демченко Максим Борисович",
+      "source_url": "https://www.orientalstudies.ru/rus/index.php?Itemid=48&id=4789&option=com_content&task=view"
+    },
+    {
+      "presentation_id": "PRES_ec0380288a",
+      "stable_key_candidate": "5c15a2115b210a37",
+      "year": "2024",
+      "series": "Zograf Readings",
+      "title": "Поэтическое представление о духовном и мирском благе в гимнах наянаров (сборник \"Деварам\")",
+      "first_speaker": "Павлова Мария Борисовна",
+      "source_url": "https://www.orientalstudies.ru/rus/index.php?Itemid=48&id=14999&option=com_content&task=view"
+    },
+    {
+      "presentation_id": "PRES_56a4aaf53a",
+      "stable_key_candidate": "5c8d83fe5c5f4149",
+      "year": "2015",
+      "series": "Zograf Readings",
+      "title": "О некоторых особенностях в композиции Абхидхармасамуччаи",
+      "first_speaker": "Коробов Владимир Борисович",
+      "source_url": "https://www.orientalstudies.ru/rus/index.php?Itemid=48&id=4023&option=com_content&task=view"
+    },
+    {
+      "presentation_id": "PRES_52c5571365",
+      "stable_key_candidate": "8bcd1bd5b7e244b9",
+      "year": "2019",
+      "series": "Zograf Readings",
+      "title": "Способы сокрытия мантр в тантрических текстах",
+      "first_speaker": "Кавалевская Анна Петровна",
+      "source_url": "https://www.orientalstudies.ru/rus/index.php?Itemid=48&id=10154&option=com_content&task=view"
+    },
+    {
+      "presentation_id": "PRES_7e41374eb0",
+      "stable_key_candidate": "ec298f1daff75f3f",
+      "year": "2010",
+      "series": "Zograf Readings",
+      "title": "Сюжет о побоище палицами в «Маусалапарве» и в «Джатаке о Гхата-пандите» 15.00. Там же",
+      "first_speaker": "Маретина Ксения Александровна",
+      "source_url": "https://www.orientalstudies.ru/rus/index.php?Itemid=48&id=2609&option=com_content&task=view"
+    },
+    {
+      "presentation_id": "PRES_0ecee86019",
+      "stable_key_candidate": "ec54eb4b824ef683",
+      "year": "2019",
+      "series": "Zograf Readings",
+      "title": "И. П. Минаев и Дж. Л. Киплинг: коллекции и письма",
+      "first_speaker": "Бабин Александр Николаевич",
+      "source_url": "https://www.orientalstudies.ru/rus/index.php?Itemid=48&id=10154&option=com_content&task=view"
+    },
+    {
+      "presentation_id": "PRES_89479d5fc5",
+      "stable_key_candidate": "ffb01b669ed04d96",
+      "year": "2018",
+      "series": "Zograf Readings",
+      "title": "Кришна исполняет зикр: следы влияния бхакти на суфизм братства Чиштийя",
+      "first_speaker": "Стукалин Глеб Дмитриевич",
+      "source_url": "https://www.orientalstudies.ru/rus/index.php?Itemid=48&id=7591&option=com_content&task=view"
+    }
+  ],
   "duplicate_stable_key_samples": []
 }
