@@ -4,6 +4,7 @@ import os
 import statistics
 import datetime
 from collections import defaultdict
+from dataclasses import dataclass
 
 from generate_site_data import classify_theme, clean_title
 
@@ -43,24 +44,32 @@ def node_id(node_type, local_id):
     return f"{node_type}:{local_id}"
 
 
-def add_edge(edges, source, target, edge_type, year=None, series=None, weight=1):
+@dataclass
+class EdgeAttributes:
+    edge_type: str
+    year: str = None
+    series: str = None
+    weight: int = 1
+
+
+def add_edge(edges, source, target, attrs: EdgeAttributes):
     if not source or not target or source == target:
         return
     # Person-person edges are undirected in this export; keep a stable order.
-    if edge_type.startswith("person_person") and source > target:
+    if attrs.edge_type.startswith("person_person") and source > target:
         source, target = target, source
-    key = (source, target, edge_type, year or "", series or "")
+    key = (source, target, attrs.edge_type, attrs.year or "", attrs.series or "")
     current = edges.get(key)
     if current:
-        current["weight"] += weight
+        current["weight"] += attrs.weight
     else:
         edges[key] = {
             "source": source,
             "target": target,
-            "edge_type": edge_type,
-            "year": year or "",
-            "series": series or "",
-            "weight": weight,
+            "edge_type": attrs.edge_type,
+            "year": attrs.year or "",
+            "series": attrs.series or "",
+            "weight": attrs.weight,
         }
 
 
@@ -119,7 +128,7 @@ def generate_network_exports(cursor):
                 "weight": 0,
             }
         nodes[event_node]["weight"] += 1
-        add_edge(edges, person_node, event_node, "person_event", row["year"], row["series_name_en"])
+        add_edge(edges, person_node, event_node, EdgeAttributes("person_event", row["year"], row["series_name_en"]))
 
         org = normalize_affiliation(row["affiliation_text_raw"])
         org_node = None
@@ -134,7 +143,7 @@ def generate_network_exports(cursor):
                     "weight": 0,
                 }
             nodes[org_node]["weight"] += 1
-            add_edge(edges, person_node, org_node, "person_organization", row["year"], row["series_name_en"])
+            add_edge(edges, person_node, org_node, EdgeAttributes("person_organization", row["year"], row["series_name_en"]))
 
         theme = classify_theme(row["year"], row["series_name_en"], clean_title(row["title"] or "")).get("code") or "History"
         theme_node = node_id("theme", theme)
@@ -147,9 +156,9 @@ def generate_network_exports(cursor):
                 "weight": 0,
             }
         nodes[theme_node]["weight"] += 1
-        add_edge(edges, person_node, theme_node, "person_theme", row["year"], row["series_name_en"])
+        add_edge(edges, person_node, theme_node, EdgeAttributes("person_theme", row["year"], row["series_name_en"]))
         if org_node:
-            add_edge(edges, org_node, theme_node, "organization_theme", row["year"], row["series_name_en"])
+            add_edge(edges, org_node, theme_node, EdgeAttributes("organization_theme", row["year"], row["series_name_en"]))
 
         presentations[row["presentation_id"]].append((person_node, row))
         sessions[row["session_id"]].append((person_node, row))
@@ -161,7 +170,7 @@ def generate_network_exports(cursor):
         sample = members[0][1]
         for i, source in enumerate(people):
             for target in people[i + 1:]:
-                add_edge(edges, source, target, "person_person_copresentation", sample["year"], sample["series_name_en"])
+                add_edge(edges, source, target, EdgeAttributes("person_person_copresentation", sample["year"], sample["series_name_en"]))
 
     for members in sessions.values():
         people = sorted({person for person, _ in members})
@@ -170,7 +179,7 @@ def generate_network_exports(cursor):
         sample = members[0][1]
         for i, source in enumerate(people):
             for target in people[i + 1:]:
-                add_edge(edges, source, target, "person_person_same_session", sample["year"], sample["series_name_en"])
+                add_edge(edges, source, target, EdgeAttributes("person_person_same_session", sample["year"], sample["series_name_en"]))
 
     with open(os.path.join(OUTPUT_DIR, "network_nodes.csv"), "w", encoding="utf-8", newline="") as f:
         fieldnames = ["node_id", "node_type", "label", "local_id", "weight"]
