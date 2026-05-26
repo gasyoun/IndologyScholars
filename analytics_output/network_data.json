@@ -417,6 +417,22 @@
       "weight": 2.0
     },
     {
+      "id": "person:PERS_675f37f0",
+      "type": "person",
+      "label": "А. Бабин",
+      "local_id": "PERS_675f37f0",
+      "slug": "babin",
+      "weight": 1.0
+    },
+    {
+      "id": "person:PERS_9f159bcf",
+      "type": "person",
+      "label": "А. Ковалевская",
+      "local_id": "PERS_9f159bcf",
+      "slug": "kovalevskaya",
+      "weight": 1.0
+    },
+    {
       "id": "person:PERS_c1cc76b9",
       "type": "person",
       "label": "А. Я. Таран",
@@ -542,7 +558,7 @@
       "label": "Бабин Александр Николаевич",
       "local_id": "PERS_05d56645",
       "slug": "alexander-babin",
-      "weight": 13.0
+      "weight": 12.0
     },
     {
       "id": "person:PERS_4a0de87e",
@@ -663,6 +679,14 @@
       "local_id": "PERS_c58aa839",
       "slug": "vidunas",
       "weight": 15.0
+    },
+    {
+      "id": "person:PERS_f8e06692",
+      "type": "person",
+      "label": "В. Коробов",
+      "local_id": "PERS_f8e06692",
+      "slug": "korobov",
+      "weight": 4.0
     },
     {
       "id": "person:PERS_3b190078",
@@ -817,6 +841,14 @@
       "weight": 16.0
     },
     {
+      "id": "person:PERS_5af1c05a",
+      "type": "person",
+      "label": "Г. Стукалин",
+      "local_id": "PERS_5af1c05a",
+      "slug": "stukalin",
+      "weight": 1.0
+    },
+    {
       "id": "person:PERS_5d52a475",
       "type": "person",
       "label": "Г.С. Шарыгин",
@@ -934,7 +966,7 @@
       "label": "Демченко Максим Борисович",
       "local_id": "PERS_7542d270",
       "slug": "demchenko-maksim",
-      "weight": 11.0
+      "weight": 10.0
     },
     {
       "id": "person:PERS_85a048b8",
@@ -1177,6 +1209,14 @@
       "weight": 12.0
     },
     {
+      "id": "person:PERS_ac7e1d48",
+      "type": "person",
+      "label": "И. Рыжакова",
+      "local_id": "PERS_ac7e1d48",
+      "slug": "ryzhakova",
+      "weight": 1.0
+    },
+    {
       "id": "person:PERS_a4c4c35e",
       "type": "person",
       "label": "И. В. Калинина",
@@ -1189,8 +1229,16 @@
       "type": "person",
       "label": "И.А.Урнова",
       "local_id": "PERS_c5aeda15",
-      "slug": "urnova",
-      "weight": 2.0
+      "slug": "urnova-aeda15",
+      "weight": 1.0
+    },
+    {
+      "id": "person:PERS_7853fddb",
+      "type": "person",
+      "label": "И.Урнова",
+      "local_id": "PERS_7853fddb",
+      "slug": "urnova-53fddb",
+      "weight": 1.0
     },
     {
       "id": "person:PERS_6e211759",
@@ -1241,12 +1289,20 @@
       "weight": 1.0
     },
     {
+      "id": "person:PERS_300654cc",
+      "type": "person",
+      "label": "К. Маретина",
+      "local_id": "PERS_300654cc",
+      "slug": "maretina",
+      "weight": 1.0
+    },
+    {
       "id": "person:PERS_a1484b38",
       "type": "person",
       "label": "Кавалевская Анна Петровна",
       "local_id": "PERS_a1484b38",
       "slug": "kavalevskaya-anna",
-      "weight": 3.0
+      "weight": 2.0
     },
     {
       "id": "person:PERS_37c15317",
@@ -1406,7 +1462,7 @@
       "label": "Коробов Владимир Борисович",
       "local_id": "PERS_e96139bd",
       "slug": "korobov-vladimir",
-      "weight": 5.0
+      "weight": 1.0
     },
     {
       "id": "person:PERS_2a2e5602",
@@ -1449,12 +1505,20 @@
       "weight": 7.0
     },
     {
+      "id": "person:PERS_f55cf2d5",
+      "type": "person",
+      "label": "Краснодембская Н",
+      "local_id": "PERS_f55cf2d5",
+      "slug": "krasnodembskaya",
+      "weight": 1.0
+    },
+    {
       "id": "person:PERS_bc97fb65",
       "type": "person",
       "label": "Краснодембская Нина Георгиевна",
       "local_id": "PERS_bc97fb65",
       "slug": "krasnodembskaya-nina",
-      "weight": 15.0
+      "weight": 14.0
     },
     {
       "id": "person:PERS_f5a69b65",
@@ -1609,12 +1673,20 @@
       "weight": 9.0
     },
     {
+      "id": "person:PERS_5e6bef63",
+      "type": "person",
+      "label": "Лужинская П.",
+      "local_id": "PERS_5e6bef63",
+      "slug": "luzhinskaya",
+      "weight": 1.0
+    },
+    {
       "id": "person:PERS_8df81b6d",
       "type": "person",
       "label": "Лужинская Полина Александровна",
       "local_id": "PERS_8df81b6d",
       "slug": "luzhinskaya-polina",
-      "weight": 3.0
+      "weight": 2.0
     },
     {
       "id": "person:PERS_d4c2cc5e",
@@ -1654,6 +1726,14 @@
       "label": "М. А. Азаркина",
       "local_id": "PERS_ddb70dc9",
       "slug": "azarkina",
+      "weight": 1.0
+    },
+    {
+      "id": "person:PERS_ba7b23ae",
+      "type": "person",
+      "label": "М. Демченко",
+      "local_id": "PERS_ba7b23ae",
+      "slug": "demchenko",
       "weight": 1.0
     },
     {
@@ -1726,7 +1806,7 @@
       "label": "Маретина Ксения Александровна",
       "local_id": "PERS_50c46233",
       "slug": "maretina-kseniya",
-      "weight": 5.0
+      "weight": 4.0
     },
     {
       "id": "person:PERS_ce100d3f",
@@ -1921,12 +2001,20 @@
       "weight": 14.0
     },
     {
+      "id": "person:PERS_56e6d363",
+      "type": "person",
+      "label": "Павлова М.",
+      "local_id": "PERS_56e6d363",
+      "slug": "pavlova",
+      "weight": 1.0
+    },
+    {
       "id": "person:PERS_34c0d384",
       "type": "person",
       "label": "Павлова Мария Борисовна",
       "local_id": "PERS_34c0d384",
       "slug": "pavlova-mariya",
-      "weight": 3.0
+      "weight": 2.0
     },
     {
       "id": "person:PERS_7700f517",
@@ -2070,7 +2158,7 @@
       "label": "Рыжакова Светлана Игоревна",
       "local_id": "PERS_d98da899",
       "slug": "svetlana-ryzhakova",
-      "weight": 27.0
+      "weight": 26.0
     },
     {
       "id": "person:PERS_72d46eb6",
@@ -2254,7 +2342,7 @@
       "label": "Стукалин Глеб Дмитриевич",
       "local_id": "PERS_42da4866",
       "slug": "stukalin-gleb",
-      "weight": 3.0
+      "weight": 2.0
     },
     {
       "id": "person:PERS_11da326d",
@@ -3887,14 +3975,6 @@
       "target": "event:E2017",
       "type": "person_event",
       "year": 2017,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_05d56645",
-      "target": "event:E2019",
-      "type": "person_event",
-      "year": 2019,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -5947,6 +6027,14 @@
       "weight": 1.0
     },
     {
+      "source": "person:PERS_300654cc",
+      "target": "event:E2010",
+      "type": "person_event",
+      "year": 2010,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
       "source": "person:PERS_3009a9e0",
       "target": "event:ER2010",
       "type": "person_event",
@@ -6239,14 +6327,6 @@
       "target": "event:E2015",
       "type": "person_event",
       "year": 2015,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_34c0d384",
-      "target": "event:E2024",
-      "type": "person_event",
-      "year": 2024,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -7356,14 +7436,6 @@
     },
     {
       "source": "person:PERS_42da4866",
-      "target": "event:E2018",
-      "type": "person_event",
-      "year": 2018,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_42da4866",
       "target": "event:E2019",
       "type": "person_event",
       "year": 2019,
@@ -7480,14 +7552,6 @@
       "type": "person_event",
       "year": 2025,
       "series": "Roerich Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_50c46233",
-      "target": "event:E2010",
-      "type": "person_event",
-      "year": 2010,
-      "series": "Zograf Readings",
       "weight": 1.0
     },
     {
@@ -7923,6 +7987,14 @@
       "weight": 1.0
     },
     {
+      "source": "person:PERS_56e6d363",
+      "target": "event:E2024",
+      "type": "person_event",
+      "year": 2024,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
       "source": "person:PERS_57082cac",
       "target": "event:ER2025",
       "type": "person_event",
@@ -8023,6 +8095,14 @@
       "target": "event:E2026",
       "type": "person_event",
       "year": 2026,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_5af1c05a",
+      "target": "event:E2018",
+      "type": "person_event",
+      "year": 2018,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -8167,6 +8247,14 @@
       "target": "event:E2025",
       "type": "person_event",
       "year": 2025,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_5e6bef63",
+      "target": "event:E2024",
+      "type": "person_event",
+      "year": 2024,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -8595,6 +8683,14 @@
       "weight": 1.0
     },
     {
+      "source": "person:PERS_675f37f0",
+      "target": "event:E2019",
+      "type": "person_event",
+      "year": 2019,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
       "source": "person:PERS_68270eaf",
       "target": "event:ER2025",
       "type": "person_event",
@@ -8852,14 +8948,6 @@
     },
     {
       "source": "person:PERS_7542d270",
-      "target": "event:E2016",
-      "type": "person_event",
-      "year": 2016,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_7542d270",
       "target": "event:E2017",
       "type": "person_event",
       "year": 2017,
@@ -8951,6 +9039,14 @@
       "target": "event:E2011",
       "type": "person_event",
       "year": 2011,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_7853fddb",
+      "target": "event:E2008",
+      "type": "person_event",
+      "year": 2008,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -9503,14 +9599,6 @@
       "target": "event:E2025",
       "type": "person_event",
       "year": 2025,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_8df81b6d",
-      "target": "event:E2024",
-      "type": "person_event",
-      "year": 2024,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -10443,6 +10531,14 @@
       "weight": 1.0
     },
     {
+      "source": "person:PERS_9f159bcf",
+      "target": "event:E2019",
+      "type": "person_event",
+      "year": 2019,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
       "source": "person:PERS_9f398436",
       "target": "event:E2015",
       "type": "person_event",
@@ -10596,14 +10692,6 @@
     },
     {
       "source": "person:PERS_a1484b38",
-      "target": "event:E2019",
-      "type": "person_event",
-      "year": 2019,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_a1484b38",
       "target": "event:E2020",
       "type": "person_event",
       "year": 2020,
@@ -10736,6 +10824,14 @@
       "type": "person_event",
       "year": 2009,
       "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_ac7e1d48",
+      "target": "event:E2012",
+      "type": "person_event",
+      "year": 2012,
+      "series": "Zograf Readings",
       "weight": 1.0
     },
     {
@@ -10979,6 +11075,14 @@
       "weight": 1.0
     },
     {
+      "source": "person:PERS_ba7b23ae",
+      "target": "event:E2016",
+      "type": "person_event",
+      "year": 2016,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
       "source": "person:PERS_ba81468a",
       "target": "event:E2004",
       "type": "person_event",
@@ -11135,14 +11239,6 @@
       "target": "event:E2020",
       "type": "person_event",
       "year": 2020,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_bc97fb65",
-      "target": "event:E2021",
-      "type": "person_event",
-      "year": 2021,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -11868,14 +11964,6 @@
     },
     {
       "source": "person:PERS_c5aeda15",
-      "target": "event:E2008",
-      "type": "person_event",
-      "year": 2008,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_c5aeda15",
       "target": "event:E2009",
       "type": "person_event",
       "year": 2009,
@@ -12351,14 +12439,6 @@
       "target": "event:E2011",
       "type": "person_event",
       "year": 2011,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_d98da899",
-      "target": "event:E2012",
-      "type": "person_event",
-      "year": 2012,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -13428,38 +13508,6 @@
     },
     {
       "source": "person:PERS_e96139bd",
-      "target": "event:E2011",
-      "type": "person_event",
-      "year": 2011,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_e96139bd",
-      "target": "event:E2013",
-      "type": "person_event",
-      "year": 2013,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_e96139bd",
-      "target": "event:E2015",
-      "type": "person_event",
-      "year": 2015,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_e96139bd",
-      "target": "event:E2016",
-      "type": "person_event",
-      "year": 2016,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_e96139bd",
       "target": "event:E2020",
       "type": "person_event",
       "year": 2020,
@@ -14187,6 +14235,14 @@
       "weight": 1.0
     },
     {
+      "source": "person:PERS_f55cf2d5",
+      "target": "event:E2021",
+      "type": "person_event",
+      "year": 2021,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
       "source": "person:PERS_f56c5a7e",
       "target": "event:E2022",
       "type": "person_event",
@@ -14375,6 +14431,38 @@
       "target": "event:E2026",
       "type": "person_event",
       "year": 2026,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_f8e06692",
+      "target": "event:E2011",
+      "type": "person_event",
+      "year": 2011,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_f8e06692",
+      "target": "event:E2013",
+      "type": "person_event",
+      "year": 2013,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_f8e06692",
+      "target": "event:E2015",
+      "type": "person_event",
+      "year": 2015,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_f8e06692",
+      "target": "event:E2016",
+      "type": "person_event",
+      "year": 2016,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -16870,14 +16958,6 @@
       "source": "person:PERS_6441d568",
       "target": "person:PERS_bc97fb65",
       "type": "person_person_copresentation",
-      "year": 2021,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_6441d568",
-      "target": "person:PERS_bc97fb65",
-      "type": "person_person_copresentation",
       "year": 2022,
       "series": "Zograf Readings",
       "weight": 1.0
@@ -16895,6 +16975,14 @@
       "target": "person:PERS_f19cd8a1",
       "type": "person_person_copresentation",
       "year": 2026,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_6441d568",
+      "target": "person:PERS_f55cf2d5",
+      "type": "person_person_copresentation",
+      "year": 2021,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -17766,14 +17854,6 @@
       "source": "person:PERS_003adcfe",
       "target": "person:PERS_7542d270",
       "type": "person_person_same_session",
-      "year": 2016,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_003adcfe",
-      "target": "person:PERS_7542d270",
-      "type": "person_person_same_session",
       "year": 2017,
       "series": "Zograf Readings",
       "weight": 1.0
@@ -17964,6 +18044,14 @@
     },
     {
       "source": "person:PERS_003adcfe",
+      "target": "person:PERS_9f159bcf",
+      "type": "person_person_same_session",
+      "year": 2019,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_003adcfe",
       "target": "person:PERS_a0264ac5",
       "type": "person_person_same_session",
       "year": 2013,
@@ -18004,14 +18092,6 @@
     },
     {
       "source": "person:PERS_003adcfe",
-      "target": "person:PERS_a1484b38",
-      "type": "person_person_same_session",
-      "year": 2019,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_003adcfe",
       "target": "person:PERS_a84aedaa",
       "type": "person_person_same_session",
       "year": 2013,
@@ -18023,6 +18103,14 @@
       "target": "person:PERS_b76851a7",
       "type": "person_person_same_session",
       "year": 2022,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_003adcfe",
+      "target": "person:PERS_ba7b23ae",
+      "type": "person_person_same_session",
+      "year": 2016,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -18238,30 +18326,6 @@
       "source": "person:PERS_003adcfe",
       "target": "person:PERS_e96139bd",
       "type": "person_person_same_session",
-      "year": 2013,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_003adcfe",
-      "target": "person:PERS_e96139bd",
-      "type": "person_person_same_session",
-      "year": 2015,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_003adcfe",
-      "target": "person:PERS_e96139bd",
-      "type": "person_person_same_session",
-      "year": 2016,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_003adcfe",
-      "target": "person:PERS_e96139bd",
-      "type": "person_person_same_session",
       "year": 2020,
       "series": "Zograf Readings",
       "weight": 1.0
@@ -18375,6 +18439,30 @@
       "target": "person:PERS_f8ab5755",
       "type": "person_person_same_session",
       "year": 2010,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_003adcfe",
+      "target": "person:PERS_f8e06692",
+      "type": "person_person_same_session",
+      "year": 2013,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_003adcfe",
+      "target": "person:PERS_f8e06692",
+      "type": "person_person_same_session",
+      "year": 2015,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_003adcfe",
+      "target": "person:PERS_f8e06692",
+      "type": "person_person_same_session",
+      "year": 2016,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -18620,14 +18708,6 @@
     },
     {
       "source": "person:PERS_01aafd44",
-      "target": "person:PERS_42da4866",
-      "type": "person_person_same_session",
-      "year": 2018,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_01aafd44",
       "target": "person:PERS_50d73711",
       "type": "person_person_same_session",
       "year": 2018,
@@ -18668,6 +18748,14 @@
     },
     {
       "source": "person:PERS_01aafd44",
+      "target": "person:PERS_5af1c05a",
+      "type": "person_person_same_session",
+      "year": 2018,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_01aafd44",
       "target": "person:PERS_5d34c947",
       "type": "person_person_same_session",
       "year": 2016,
@@ -18679,14 +18767,6 @@
       "target": "person:PERS_61de659d",
       "type": "person_person_same_session",
       "year": 2020,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_01aafd44",
-      "target": "person:PERS_7542d270",
-      "type": "person_person_same_session",
-      "year": 2016,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -18727,6 +18807,14 @@
       "target": "person:PERS_a0264ac5",
       "type": "person_person_same_session",
       "year": 2020,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_01aafd44",
+      "target": "person:PERS_ba7b23ae",
+      "type": "person_person_same_session",
+      "year": 2016,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -18806,14 +18894,6 @@
       "source": "person:PERS_01aafd44",
       "target": "person:PERS_e96139bd",
       "type": "person_person_same_session",
-      "year": 2016,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_01aafd44",
-      "target": "person:PERS_e96139bd",
-      "type": "person_person_same_session",
       "year": 2020,
       "series": "Zograf Readings",
       "weight": 1.0
@@ -18823,6 +18903,14 @@
       "target": "person:PERS_f19cd8a1",
       "type": "person_person_same_session",
       "year": 2018,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_01aafd44",
+      "target": "person:PERS_f8e06692",
+      "type": "person_person_same_session",
+      "year": 2016,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -19020,14 +19108,6 @@
     },
     {
       "source": "person:PERS_05d56645",
-      "target": "person:PERS_23f54085",
-      "type": "person_person_same_session",
-      "year": 2019,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_05d56645",
       "target": "person:PERS_28317057",
       "type": "person_person_same_session",
       "year": 2023,
@@ -19079,14 +19159,6 @@
       "target": "person:PERS_287fe378",
       "type": "person_person_same_session",
       "year": 2025,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_05d56645",
-      "target": "person:PERS_2a2e5602",
-      "type": "person_person_same_session",
-      "year": 2019,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -19150,14 +19222,6 @@
       "source": "person:PERS_05d56645",
       "target": "person:PERS_40862f5e",
       "type": "person_person_same_session",
-      "year": 2019,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_05d56645",
-      "target": "person:PERS_40862f5e",
-      "type": "person_person_same_session",
       "year": 2025,
       "series": "Zograf Readings",
       "weight": 1.0
@@ -19212,14 +19276,6 @@
     },
     {
       "source": "person:PERS_05d56645",
-      "target": "person:PERS_42da4866",
-      "type": "person_person_same_session",
-      "year": 2019,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_05d56645",
       "target": "person:PERS_50c46233",
       "type": "person_person_same_session",
       "year": 2017,
@@ -19248,14 +19304,6 @@
       "type": "person_person_same_session",
       "year": 2019,
       "series": "Roerich Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_05d56645",
-      "target": "person:PERS_5e2a5a5c",
-      "type": "person_person_same_session",
-      "year": 2019,
-      "series": "Zograf Readings",
       "weight": 1.0
     },
     {
@@ -19366,14 +19414,6 @@
       "source": "person:PERS_05d56645",
       "target": "person:PERS_7eb0dc30",
       "type": "person_person_same_session",
-      "year": 2019,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_05d56645",
-      "target": "person:PERS_7eb0dc30",
-      "type": "person_person_same_session",
       "year": 2020,
       "series": "Zograf Readings",
       "weight": 1.0
@@ -19414,14 +19454,6 @@
       "source": "person:PERS_05d56645",
       "target": "person:PERS_9a855a7b",
       "type": "person_person_same_session",
-      "year": 2019,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_05d56645",
-      "target": "person:PERS_9a855a7b",
-      "type": "person_person_same_session",
       "year": 2021,
       "series": "Zograf Readings",
       "weight": 1.0
@@ -19444,14 +19476,6 @@
     },
     {
       "source": "person:PERS_05d56645",
-      "target": "person:PERS_a901d460",
-      "type": "person_person_same_session",
-      "year": 2019,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_05d56645",
       "target": "person:PERS_af811d47",
       "type": "person_person_same_session",
       "year": 2020,
@@ -19468,22 +19492,6 @@
     },
     {
       "source": "person:PERS_05d56645",
-      "target": "person:PERS_b62a9567",
-      "type": "person_person_same_session",
-      "year": 2019,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_05d56645",
-      "target": "person:PERS_b881461b",
-      "type": "person_person_same_session",
-      "year": 2019,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_05d56645",
       "target": "person:PERS_bc97fb65",
       "type": "person_person_same_session",
       "year": 2017,
@@ -19494,23 +19502,7 @@
       "source": "person:PERS_05d56645",
       "target": "person:PERS_bc97fb65",
       "type": "person_person_same_session",
-      "year": 2019,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_05d56645",
-      "target": "person:PERS_bc97fb65",
-      "type": "person_person_same_session",
       "year": 2020,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_05d56645",
-      "target": "person:PERS_bc97fb65",
-      "type": "person_person_same_session",
-      "year": 2021,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -19551,14 +19543,6 @@
       "target": "person:PERS_d98da899",
       "type": "person_person_same_session",
       "year": 2017,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_05d56645",
-      "target": "person:PERS_d98da899",
-      "type": "person_person_same_session",
-      "year": 2019,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -19692,17 +19676,17 @@
     },
     {
       "source": "person:PERS_05d56645",
-      "target": "person:PERS_f7c7adc7",
+      "target": "person:PERS_f55cf2d5",
       "type": "person_person_same_session",
-      "year": 2017,
+      "year": 2021,
       "series": "Zograf Readings",
       "weight": 1.0
     },
     {
       "source": "person:PERS_05d56645",
-      "target": "person:PERS_f8ab5755",
+      "target": "person:PERS_f7c7adc7",
       "type": "person_person_same_session",
-      "year": 2019,
+      "year": 2017,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -20604,14 +20588,6 @@
     },
     {
       "source": "person:PERS_0900c3c4",
-      "target": "person:PERS_e96139bd",
-      "type": "person_person_same_session",
-      "year": 2013,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_0900c3c4",
       "target": "person:PERS_efc88709",
       "type": "person_person_same_session",
       "year": 2013,
@@ -20621,6 +20597,14 @@
     {
       "source": "person:PERS_0900c3c4",
       "target": "person:PERS_f074f69f",
+      "type": "person_person_same_session",
+      "year": 2013,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_0900c3c4",
+      "target": "person:PERS_f8e06692",
       "type": "person_person_same_session",
       "year": 2013,
       "series": "Zograf Readings",
@@ -21286,14 +21270,6 @@
       "source": "person:PERS_0c451d76",
       "target": "person:PERS_7542d270",
       "type": "person_person_same_session",
-      "year": 2016,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_0c451d76",
-      "target": "person:PERS_7542d270",
-      "type": "person_person_same_session",
       "year": 2017,
       "series": "Zograf Readings",
       "weight": 1.0
@@ -21452,6 +21428,14 @@
     },
     {
       "source": "person:PERS_0c451d76",
+      "target": "person:PERS_ba7b23ae",
+      "type": "person_person_same_session",
+      "year": 2016,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_0c451d76",
       "target": "person:PERS_bc97fb65",
       "type": "person_person_same_session",
       "year": 2013,
@@ -21580,30 +21564,6 @@
     },
     {
       "source": "person:PERS_0c451d76",
-      "target": "person:PERS_e96139bd",
-      "type": "person_person_same_session",
-      "year": 2013,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_0c451d76",
-      "target": "person:PERS_e96139bd",
-      "type": "person_person_same_session",
-      "year": 2015,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_0c451d76",
-      "target": "person:PERS_e96139bd",
-      "type": "person_person_same_session",
-      "year": 2016,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_0c451d76",
       "target": "person:PERS_ebb6d156",
       "type": "person_person_same_session",
       "year": 2015,
@@ -21671,6 +21631,30 @@
       "target": "person:PERS_f82b6a8e",
       "type": "person_person_same_session",
       "year": 2025,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_0c451d76",
+      "target": "person:PERS_f8e06692",
+      "type": "person_person_same_session",
+      "year": 2013,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_0c451d76",
+      "target": "person:PERS_f8e06692",
+      "type": "person_person_same_session",
+      "year": 2015,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_0c451d76",
+      "target": "person:PERS_f8e06692",
+      "type": "person_person_same_session",
+      "year": 2016,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -22404,6 +22388,14 @@
     },
     {
       "source": "person:PERS_0fd718a7",
+      "target": "person:PERS_300654cc",
+      "type": "person_person_same_session",
+      "year": 2010,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_0fd718a7",
       "target": "person:PERS_3074a8e5",
       "type": "person_person_same_session",
       "year": 2013,
@@ -22455,14 +22447,6 @@
       "target": "person:PERS_41d6aa73",
       "type": "person_person_same_session",
       "year": 2015,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_0fd718a7",
-      "target": "person:PERS_50c46233",
-      "type": "person_person_same_session",
-      "year": 2010,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -22684,6 +22668,14 @@
     },
     {
       "source": "person:PERS_0fd718a7",
+      "target": "person:PERS_ac7e1d48",
+      "type": "person_person_same_session",
+      "year": 2012,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_0fd718a7",
       "target": "person:PERS_ba81468a",
       "type": "person_person_same_session",
       "year": 2014,
@@ -22782,14 +22774,6 @@
       "source": "person:PERS_0fd718a7",
       "target": "person:PERS_d98da899",
       "type": "person_person_same_session",
-      "year": 2012,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_0fd718a7",
-      "target": "person:PERS_d98da899",
-      "type": "person_person_same_session",
       "year": 2013,
       "series": "Zograf Readings",
       "weight": 1.0
@@ -22844,14 +22828,6 @@
     },
     {
       "source": "person:PERS_0fd718a7",
-      "target": "person:PERS_e96139bd",
-      "type": "person_person_same_session",
-      "year": 2013,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_0fd718a7",
       "target": "person:PERS_efc88709",
       "type": "person_person_same_session",
       "year": 2013,
@@ -22879,6 +22855,14 @@
       "target": "person:PERS_f7c7adc7",
       "type": "person_person_same_session",
       "year": 2015,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_0fd718a7",
+      "target": "person:PERS_f8e06692",
+      "type": "person_person_same_session",
+      "year": 2013,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -23918,14 +23902,6 @@
       "source": "person:PERS_11da326d",
       "target": "person:PERS_7542d270",
       "type": "person_person_same_session",
-      "year": 2016,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_11da326d",
-      "target": "person:PERS_7542d270",
-      "type": "person_person_same_session",
       "year": 2021,
       "series": "Zograf Readings",
       "weight": 1.0
@@ -24288,6 +24264,14 @@
       "type": "person_person_same_session",
       "year": 2018,
       "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_11da326d",
+      "target": "person:PERS_ba7b23ae",
+      "type": "person_person_same_session",
+      "year": 2016,
+      "series": "Zograf Readings",
       "weight": 1.0
     },
     {
@@ -24780,14 +24764,6 @@
     },
     {
       "source": "person:PERS_11da326d",
-      "target": "person:PERS_e96139bd",
-      "type": "person_person_same_session",
-      "year": 2016,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_11da326d",
       "target": "person:PERS_ebb6d156",
       "type": "person_person_same_session",
       "year": 2015,
@@ -24951,6 +24927,14 @@
       "target": "person:PERS_f8ab5755",
       "type": "person_person_same_session",
       "year": 2025,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_11da326d",
+      "target": "person:PERS_f8e06692",
+      "type": "person_person_same_session",
+      "year": 2016,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -25590,14 +25574,6 @@
       "source": "person:PERS_12125da9",
       "target": "person:PERS_7542d270",
       "type": "person_person_same_session",
-      "year": 2016,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_12125da9",
-      "target": "person:PERS_7542d270",
-      "type": "person_person_same_session",
       "year": 2017,
       "series": "Zograf Readings",
       "weight": 1.0
@@ -25812,6 +25788,14 @@
     },
     {
       "source": "person:PERS_12125da9",
+      "target": "person:PERS_9f159bcf",
+      "type": "person_person_same_session",
+      "year": 2019,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_12125da9",
       "target": "person:PERS_9f398436",
       "type": "person_person_same_session",
       "year": 2020,
@@ -25847,14 +25831,6 @@
       "target": "person:PERS_a0264ac5",
       "type": "person_person_same_session",
       "year": 2023,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_12125da9",
-      "target": "person:PERS_a1484b38",
-      "type": "person_person_same_session",
-      "year": 2019,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -25904,6 +25880,14 @@
       "type": "person_person_same_session",
       "year": 2017,
       "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_12125da9",
+      "target": "person:PERS_ba7b23ae",
+      "type": "person_person_same_session",
+      "year": 2016,
+      "series": "Zograf Readings",
       "weight": 1.0
     },
     {
@@ -26292,30 +26276,6 @@
     },
     {
       "source": "person:PERS_12125da9",
-      "target": "person:PERS_e96139bd",
-      "type": "person_person_same_session",
-      "year": 2013,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_12125da9",
-      "target": "person:PERS_e96139bd",
-      "type": "person_person_same_session",
-      "year": 2015,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_12125da9",
-      "target": "person:PERS_e96139bd",
-      "type": "person_person_same_session",
-      "year": 2016,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_12125da9",
       "target": "person:PERS_ebb6d156",
       "type": "person_person_same_session",
       "year": 2015,
@@ -26431,6 +26391,30 @@
       "target": "person:PERS_f8ab5755",
       "type": "person_person_same_session",
       "year": 2010,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_12125da9",
+      "target": "person:PERS_f8e06692",
+      "type": "person_person_same_session",
+      "year": 2013,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_12125da9",
+      "target": "person:PERS_f8e06692",
+      "type": "person_person_same_session",
+      "year": 2015,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_12125da9",
+      "target": "person:PERS_f8e06692",
+      "type": "person_person_same_session",
+      "year": 2016,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -27214,14 +27198,6 @@
       "source": "person:PERS_1a097e52",
       "target": "person:PERS_7542d270",
       "type": "person_person_same_session",
-      "year": 2016,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_1a097e52",
-      "target": "person:PERS_7542d270",
-      "type": "person_person_same_session",
       "year": 2017,
       "series": "Zograf Readings",
       "weight": 1.0
@@ -27468,6 +27444,14 @@
     },
     {
       "source": "person:PERS_1a097e52",
+      "target": "person:PERS_ba7b23ae",
+      "type": "person_person_same_session",
+      "year": 2016,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_1a097e52",
       "target": "person:PERS_ba81468a",
       "type": "person_person_same_session",
       "year": 2009,
@@ -27660,22 +27644,6 @@
     },
     {
       "source": "person:PERS_1a097e52",
-      "target": "person:PERS_e96139bd",
-      "type": "person_person_same_session",
-      "year": 2013,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_1a097e52",
-      "target": "person:PERS_e96139bd",
-      "type": "person_person_same_session",
-      "year": 2016,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_1a097e52",
       "target": "person:PERS_ebb6d156",
       "type": "person_person_same_session",
       "year": 2018,
@@ -27759,6 +27727,22 @@
       "target": "person:PERS_f82b6a8e",
       "type": "person_person_same_session",
       "year": 2025,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_1a097e52",
+      "target": "person:PERS_f8e06692",
+      "type": "person_person_same_session",
+      "year": 2013,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_1a097e52",
+      "target": "person:PERS_f8e06692",
+      "type": "person_person_same_session",
+      "year": 2016,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -27964,14 +27948,6 @@
     },
     {
       "source": "person:PERS_1c6fcce5",
-      "target": "person:PERS_bc97fb65",
-      "type": "person_person_same_session",
-      "year": 2021,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_1c6fcce5",
       "target": "person:PERS_c52dfaa0",
       "type": "person_person_same_session",
       "year": 2016,
@@ -28040,6 +28016,14 @@
       "type": "person_person_same_session",
       "year": 2021,
       "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_1c6fcce5",
+      "target": "person:PERS_f55cf2d5",
+      "type": "person_person_same_session",
+      "year": 2021,
+      "series": "Zograf Readings",
       "weight": 1.0
     },
     {
@@ -29748,14 +29732,6 @@
     },
     {
       "source": "person:PERS_22d87263",
-      "target": "person:PERS_e96139bd",
-      "type": "person_person_same_session",
-      "year": 2013,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_22d87263",
       "target": "person:PERS_efc88709",
       "type": "person_person_same_session",
       "year": 2013,
@@ -29815,6 +29791,14 @@
       "target": "person:PERS_f8ab5755",
       "type": "person_person_same_session",
       "year": 2020,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_22d87263",
+      "target": "person:PERS_f8e06692",
+      "type": "person_person_same_session",
+      "year": 2013,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -29988,14 +29972,6 @@
     },
     {
       "source": "person:PERS_23215083",
-      "target": "person:PERS_7542d270",
-      "type": "person_person_same_session",
-      "year": 2016,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_23215083",
       "target": "person:PERS_829c1de5",
       "type": "person_person_same_session",
       "year": 2018,
@@ -30119,6 +30095,14 @@
       "target": "person:PERS_b4cdbfb8",
       "type": "person_person_same_session",
       "year": 2004,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_23215083",
+      "target": "person:PERS_ba7b23ae",
+      "type": "person_person_same_session",
+      "year": 2016,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -30396,14 +30380,6 @@
     },
     {
       "source": "person:PERS_23215083",
-      "target": "person:PERS_e96139bd",
-      "type": "person_person_same_session",
-      "year": 2016,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_23215083",
       "target": "person:PERS_ebb6d156",
       "type": "person_person_same_session",
       "year": 2017,
@@ -30463,6 +30439,14 @@
       "target": "person:PERS_f5b8b340",
       "type": "person_person_same_session",
       "year": 2007,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_23215083",
+      "target": "person:PERS_f8e06692",
+      "type": "person_person_same_session",
+      "year": 2016,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -30573,6 +30557,14 @@
     {
       "source": "person:PERS_23f54085",
       "target": "person:PERS_5e2a5a5c",
+      "type": "person_person_same_session",
+      "year": 2019,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_23f54085",
+      "target": "person:PERS_675f37f0",
       "type": "person_person_same_session",
       "year": 2019,
       "series": "Zograf Readings",
@@ -31100,6 +31092,14 @@
     },
     {
       "source": "person:PERS_260a598a",
+      "target": "person:PERS_9f159bcf",
+      "type": "person_person_same_session",
+      "year": 2019,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_260a598a",
       "target": "person:PERS_a0264ac5",
       "type": "person_person_same_session",
       "year": 2013,
@@ -31127,14 +31127,6 @@
       "target": "person:PERS_a0264ac5",
       "type": "person_person_same_session",
       "year": 2023,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_260a598a",
-      "target": "person:PERS_a1484b38",
-      "type": "person_person_same_session",
-      "year": 2019,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -31324,14 +31316,6 @@
     },
     {
       "source": "person:PERS_260a598a",
-      "target": "person:PERS_e96139bd",
-      "type": "person_person_same_session",
-      "year": 2013,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_260a598a",
       "target": "person:PERS_ebb6d156",
       "type": "person_person_same_session",
       "year": 2018,
@@ -31439,6 +31423,14 @@
       "target": "person:PERS_f8ab5755",
       "type": "person_person_same_session",
       "year": 2010,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_260a598a",
+      "target": "person:PERS_f8e06692",
+      "type": "person_person_same_session",
+      "year": 2013,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -32142,14 +32134,6 @@
       "source": "person:PERS_287fe378",
       "target": "person:PERS_bc97fb65",
       "type": "person_person_same_session",
-      "year": 2021,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_287fe378",
-      "target": "person:PERS_bc97fb65",
-      "type": "person_person_same_session",
       "year": 2022,
       "series": "Zograf Readings",
       "weight": 1.0
@@ -32255,6 +32239,14 @@
       "target": "person:PERS_f3cf67c6",
       "type": "person_person_same_session",
       "year": 2026,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_287fe378",
+      "target": "person:PERS_f55cf2d5",
+      "type": "person_person_same_session",
+      "year": 2021,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -32423,6 +32415,14 @@
       "target": "person:PERS_6441d568",
       "type": "person_person_same_session",
       "year": 2025,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_2a2e5602",
+      "target": "person:PERS_675f37f0",
+      "type": "person_person_same_session",
+      "year": 2019,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -32724,7 +32724,7 @@
     },
     {
       "source": "person:PERS_2b7ca933",
-      "target": "person:PERS_e96139bd",
+      "target": "person:PERS_f8e06692",
       "type": "person_person_same_session",
       "year": 2011,
       "series": "Zograf Readings",
@@ -32815,6 +32815,14 @@
       "target": "person:PERS_6f89f9c1",
       "type": "person_person_same_session",
       "year": 2006,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_2c40b9b1",
+      "target": "person:PERS_7853fddb",
+      "type": "person_person_same_session",
+      "year": 2008,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -32935,14 +32943,6 @@
       "target": "person:PERS_c0d95426",
       "type": "person_person_same_session",
       "year": 2007,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_2c40b9b1",
-      "target": "person:PERS_c5aeda15",
-      "type": "person_person_same_session",
-      "year": 2008,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -33787,6 +33787,46 @@
       "weight": 1.0
     },
     {
+      "source": "person:PERS_300654cc",
+      "target": "person:PERS_40862f5e",
+      "type": "person_person_same_session",
+      "year": 2010,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_300654cc",
+      "target": "person:PERS_9a855a7b",
+      "type": "person_person_same_session",
+      "year": 2010,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_300654cc",
+      "target": "person:PERS_bc97fb65",
+      "type": "person_person_same_session",
+      "year": 2010,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_300654cc",
+      "target": "person:PERS_d98da899",
+      "type": "person_person_same_session",
+      "year": 2010,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_300654cc",
+      "target": "person:PERS_e1dd6b3e",
+      "type": "person_person_same_session",
+      "year": 2010,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
       "source": "person:PERS_3009a9e0",
       "target": "person:PERS_36dabb79",
       "type": "person_person_same_session",
@@ -34020,14 +34060,6 @@
     },
     {
       "source": "person:PERS_3074a8e5",
-      "target": "person:PERS_7542d270",
-      "type": "person_person_same_session",
-      "year": 2016,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_3074a8e5",
       "target": "person:PERS_7eb0dc30",
       "type": "person_person_same_session",
       "year": 2013,
@@ -34172,6 +34204,14 @@
     },
     {
       "source": "person:PERS_3074a8e5",
+      "target": "person:PERS_ba7b23ae",
+      "type": "person_person_same_session",
+      "year": 2016,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_3074a8e5",
       "target": "person:PERS_bc97fb65",
       "type": "person_person_same_session",
       "year": 2013,
@@ -34302,30 +34342,6 @@
       "source": "person:PERS_3074a8e5",
       "target": "person:PERS_e96139bd",
       "type": "person_person_same_session",
-      "year": 2013,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_3074a8e5",
-      "target": "person:PERS_e96139bd",
-      "type": "person_person_same_session",
-      "year": 2015,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_3074a8e5",
-      "target": "person:PERS_e96139bd",
-      "type": "person_person_same_session",
-      "year": 2016,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_3074a8e5",
-      "target": "person:PERS_e96139bd",
-      "type": "person_person_same_session",
       "year": 2020,
       "series": "Zograf Readings",
       "weight": 1.0
@@ -34359,6 +34375,30 @@
       "target": "person:PERS_f074f69f",
       "type": "person_person_same_session",
       "year": 2022,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_3074a8e5",
+      "target": "person:PERS_f8e06692",
+      "type": "person_person_same_session",
+      "year": 2013,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_3074a8e5",
+      "target": "person:PERS_f8e06692",
+      "type": "person_person_same_session",
+      "year": 2015,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_3074a8e5",
+      "target": "person:PERS_f8e06692",
+      "type": "person_person_same_session",
+      "year": 2016,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -35492,14 +35532,6 @@
     },
     {
       "source": "person:PERS_3357f25b",
-      "target": "person:PERS_e96139bd",
-      "type": "person_person_same_session",
-      "year": 2013,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_3357f25b",
       "target": "person:PERS_ebb6d156",
       "type": "person_person_same_session",
       "year": 2018,
@@ -35612,6 +35644,14 @@
     },
     {
       "source": "person:PERS_3357f25b",
+      "target": "person:PERS_f8e06692",
+      "type": "person_person_same_session",
+      "year": 2013,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_3357f25b",
       "target": "person:PERS_f940c5b3",
       "type": "person_person_same_session",
       "year": 2006,
@@ -35716,22 +35756,6 @@
     },
     {
       "source": "person:PERS_34c0d384",
-      "target": "person:PERS_829c1de5",
-      "type": "person_person_same_session",
-      "year": 2024,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_34c0d384",
-      "target": "person:PERS_8516d1e4",
-      "type": "person_person_same_session",
-      "year": 2024,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_34c0d384",
       "target": "person:PERS_9a855a7b",
       "type": "person_person_same_session",
       "year": 2014,
@@ -35796,22 +35820,6 @@
     },
     {
       "source": "person:PERS_34c0d384",
-      "target": "person:PERS_ced3d7b4",
-      "type": "person_person_same_session",
-      "year": 2024,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_34c0d384",
-      "target": "person:PERS_d218805b",
-      "type": "person_person_same_session",
-      "year": 2024,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_34c0d384",
       "target": "person:PERS_d98da899",
       "type": "person_person_same_session",
       "year": 2014,
@@ -35839,14 +35847,6 @@
       "target": "person:PERS_f19cd8a1",
       "type": "person_person_same_session",
       "year": 2014,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_34c0d384",
-      "target": "person:PERS_fb25c80f",
-      "type": "person_person_same_session",
-      "year": 2024,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -35908,14 +35908,6 @@
     },
     {
       "source": "person:PERS_35a30342",
-      "target": "person:PERS_7542d270",
-      "type": "person_person_same_session",
-      "year": 2016,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_35a30342",
       "target": "person:PERS_7eb0dc30",
       "type": "person_person_same_session",
       "year": 2018,
@@ -35959,6 +35951,14 @@
       "target": "person:PERS_b62a9567",
       "type": "person_person_same_session",
       "year": 2018,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_35a30342",
+      "target": "person:PERS_ba7b23ae",
+      "type": "person_person_same_session",
+      "year": 2016,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -36028,14 +36028,6 @@
     },
     {
       "source": "person:PERS_35a30342",
-      "target": "person:PERS_e96139bd",
-      "type": "person_person_same_session",
-      "year": 2016,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_35a30342",
       "target": "person:PERS_ebb6d156",
       "type": "person_person_same_session",
       "year": 2017,
@@ -36047,6 +36039,14 @@
       "target": "person:PERS_f074f69f",
       "type": "person_person_same_session",
       "year": 2017,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_35a30342",
+      "target": "person:PERS_f8e06692",
+      "type": "person_person_same_session",
+      "year": 2016,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -36692,6 +36692,14 @@
     },
     {
       "source": "person:PERS_37c15317",
+      "target": "person:PERS_5e6bef63",
+      "type": "person_person_same_session",
+      "year": 2024,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_37c15317",
       "target": "person:PERS_7f908d49",
       "type": "person_person_same_session",
       "year": 2024,
@@ -36701,14 +36709,6 @@
     {
       "source": "person:PERS_37c15317",
       "target": "person:PERS_8df3730a",
-      "type": "person_person_same_session",
-      "year": 2024,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_37c15317",
-      "target": "person:PERS_8df81b6d",
       "type": "person_person_same_session",
       "year": 2024,
       "series": "Zograf Readings",
@@ -37788,14 +37788,6 @@
     },
     {
       "source": "person:PERS_3c202afd",
-      "target": "person:PERS_e96139bd",
-      "type": "person_person_same_session",
-      "year": 2011,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_3c202afd",
       "target": "person:PERS_ea44fd14",
       "type": "person_person_same_session",
       "year": 2021,
@@ -37824,6 +37816,14 @@
       "type": "person_person_same_session",
       "year": 2009,
       "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_3c202afd",
+      "target": "person:PERS_f8e06692",
+      "type": "person_person_same_session",
+      "year": 2011,
+      "series": "Zograf Readings",
       "weight": 1.0
     },
     {
@@ -38364,6 +38364,14 @@
     },
     {
       "source": "person:PERS_3e105f43",
+      "target": "person:PERS_7853fddb",
+      "type": "person_person_same_session",
+      "year": 2008,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_3e105f43",
       "target": "person:PERS_800ac07e",
       "type": "person_person_same_session",
       "year": 2010,
@@ -38836,14 +38844,6 @@
     },
     {
       "source": "person:PERS_3e105f43",
-      "target": "person:PERS_c5aeda15",
-      "type": "person_person_same_session",
-      "year": 2008,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_3e105f43",
       "target": "person:PERS_ce100d3f",
       "type": "person_person_same_session",
       "year": 2014,
@@ -38980,14 +38980,6 @@
     },
     {
       "source": "person:PERS_3e105f43",
-      "target": "person:PERS_e96139bd",
-      "type": "person_person_same_session",
-      "year": 2011,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_3e105f43",
       "target": "person:PERS_ebb6d156",
       "type": "person_person_same_session",
       "year": 2017,
@@ -39055,6 +39047,14 @@
       "target": "person:PERS_f5b8b340",
       "type": "person_person_same_session",
       "year": 2006,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_3e105f43",
+      "target": "person:PERS_f8e06692",
+      "type": "person_person_same_session",
+      "year": 2011,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -39252,14 +39252,6 @@
     },
     {
       "source": "person:PERS_3fd690ee",
-      "target": "person:PERS_42da4866",
-      "type": "person_person_same_session",
-      "year": 2018,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_3fd690ee",
       "target": "person:PERS_50d73711",
       "type": "person_person_same_session",
       "year": 2017,
@@ -39269,6 +39261,14 @@
     {
       "source": "person:PERS_3fd690ee",
       "target": "person:PERS_50d73711",
+      "type": "person_person_same_session",
+      "year": 2018,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_3fd690ee",
+      "target": "person:PERS_5af1c05a",
       "type": "person_person_same_session",
       "year": 2018,
       "series": "Zograf Readings",
@@ -39558,14 +39558,6 @@
       "source": "person:PERS_40862f5e",
       "target": "person:PERS_50c46233",
       "type": "person_person_same_session",
-      "year": 2010,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_40862f5e",
-      "target": "person:PERS_50c46233",
-      "type": "person_person_same_session",
       "year": 2024,
       "series": "Zograf Readings",
       "weight": 1.0
@@ -39748,6 +39740,14 @@
     },
     {
       "source": "person:PERS_40862f5e",
+      "target": "person:PERS_675f37f0",
+      "type": "person_person_same_session",
+      "year": 2019,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_40862f5e",
       "target": "person:PERS_69750b7c",
       "type": "person_person_same_session",
       "year": 2014,
@@ -39791,6 +39791,14 @@
       "target": "person:PERS_7542d270",
       "type": "person_person_same_session",
       "year": 2024,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_40862f5e",
+      "target": "person:PERS_7853fddb",
+      "type": "person_person_same_session",
+      "year": 2008,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -40327,14 +40335,6 @@
       "target": "person:PERS_c58aa839",
       "type": "person_person_same_session",
       "year": 2012,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_40862f5e",
-      "target": "person:PERS_c5aeda15",
-      "type": "person_person_same_session",
-      "year": 2008,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -41244,15 +41244,15 @@
     },
     {
       "source": "person:PERS_42da4866",
-      "target": "person:PERS_50d73711",
+      "target": "person:PERS_5e2a5a5c",
       "type": "person_person_same_session",
-      "year": 2018,
+      "year": 2019,
       "series": "Zograf Readings",
       "weight": 1.0
     },
     {
       "source": "person:PERS_42da4866",
-      "target": "person:PERS_5e2a5a5c",
+      "target": "person:PERS_675f37f0",
       "type": "person_person_same_session",
       "year": 2019,
       "series": "Zograf Readings",
@@ -41316,14 +41316,6 @@
     },
     {
       "source": "person:PERS_42da4866",
-      "target": "person:PERS_ba81468a",
-      "type": "person_person_same_session",
-      "year": 2018,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_42da4866",
       "target": "person:PERS_bc97fb65",
       "type": "person_person_same_session",
       "year": 2019,
@@ -41351,22 +41343,6 @@
       "target": "person:PERS_d98da899",
       "type": "person_person_same_session",
       "year": 2019,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_42da4866",
-      "target": "person:PERS_db046be0",
-      "type": "person_person_same_session",
-      "year": 2018,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_42da4866",
-      "target": "person:PERS_f19cd8a1",
-      "type": "person_person_same_session",
-      "year": 2018,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -41758,14 +41734,6 @@
       "source": "person:PERS_50c46233",
       "target": "person:PERS_9a855a7b",
       "type": "person_person_same_session",
-      "year": 2010,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_50c46233",
-      "target": "person:PERS_9a855a7b",
-      "type": "person_person_same_session",
       "year": 2017,
       "series": "Zograf Readings",
       "weight": 1.0
@@ -41788,6 +41756,14 @@
     },
     {
       "source": "person:PERS_50c46233",
+      "target": "person:PERS_ac7e1d48",
+      "type": "person_person_same_session",
+      "year": 2012,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_50c46233",
       "target": "person:PERS_b62a9567",
       "type": "person_person_same_session",
       "year": 2017,
@@ -41798,14 +41774,6 @@
       "source": "person:PERS_50c46233",
       "target": "person:PERS_bc97fb65",
       "type": "person_person_same_session",
-      "year": 2010,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_50c46233",
-      "target": "person:PERS_bc97fb65",
-      "type": "person_person_same_session",
       "year": 2012,
       "series": "Zograf Readings",
       "weight": 1.0
@@ -41815,22 +41783,6 @@
       "target": "person:PERS_bc97fb65",
       "type": "person_person_same_session",
       "year": 2017,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_50c46233",
-      "target": "person:PERS_d98da899",
-      "type": "person_person_same_session",
-      "year": 2010,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_50c46233",
-      "target": "person:PERS_d98da899",
-      "type": "person_person_same_session",
-      "year": 2012,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -41847,14 +41799,6 @@
       "target": "person:PERS_dd7de77e",
       "type": "person_person_same_session",
       "year": 2017,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_50c46233",
-      "target": "person:PERS_e1dd6b3e",
-      "type": "person_person_same_session",
-      "year": 2010,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -41887,6 +41831,14 @@
       "target": "person:PERS_58b39545",
       "type": "person_person_same_session",
       "year": 2019,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_50d73711",
+      "target": "person:PERS_5af1c05a",
+      "type": "person_person_same_session",
+      "year": 2018,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -42942,14 +42894,6 @@
       "source": "person:PERS_56508328",
       "target": "person:PERS_7542d270",
       "type": "person_person_same_session",
-      "year": 2016,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_56508328",
-      "target": "person:PERS_7542d270",
-      "type": "person_person_same_session",
       "year": 2017,
       "series": "Zograf Readings",
       "weight": 1.0
@@ -43092,6 +43036,14 @@
     },
     {
       "source": "person:PERS_56508328",
+      "target": "person:PERS_9f159bcf",
+      "type": "person_person_same_session",
+      "year": 2019,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_56508328",
       "target": "person:PERS_a0264ac5",
       "type": "person_person_same_session",
       "year": 2019,
@@ -43132,17 +43084,17 @@
     },
     {
       "source": "person:PERS_56508328",
-      "target": "person:PERS_a1484b38",
+      "target": "person:PERS_b76851a7",
       "type": "person_person_same_session",
-      "year": 2019,
+      "year": 2022,
       "series": "Zograf Readings",
       "weight": 1.0
     },
     {
       "source": "person:PERS_56508328",
-      "target": "person:PERS_b76851a7",
+      "target": "person:PERS_ba7b23ae",
       "type": "person_person_same_session",
-      "year": 2022,
+      "year": 2016,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -43302,22 +43254,6 @@
       "source": "person:PERS_56508328",
       "target": "person:PERS_e96139bd",
       "type": "person_person_same_session",
-      "year": 2015,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_56508328",
-      "target": "person:PERS_e96139bd",
-      "type": "person_person_same_session",
-      "year": 2016,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_56508328",
-      "target": "person:PERS_e96139bd",
-      "type": "person_person_same_session",
       "year": 2020,
       "series": "Zograf Readings",
       "weight": 1.0
@@ -43388,6 +43324,22 @@
     },
     {
       "source": "person:PERS_56508328",
+      "target": "person:PERS_f8e06692",
+      "type": "person_person_same_session",
+      "year": 2015,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_56508328",
+      "target": "person:PERS_f8e06692",
+      "type": "person_person_same_session",
+      "year": 2016,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_56508328",
       "target": "person:PERS_f940c5b3",
       "type": "person_person_same_session",
       "year": 2006,
@@ -43415,6 +43367,46 @@
       "target": "person:PERS_fc2af3f1",
       "type": "person_person_same_session",
       "year": 2017,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_56e6d363",
+      "target": "person:PERS_829c1de5",
+      "type": "person_person_same_session",
+      "year": 2024,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_56e6d363",
+      "target": "person:PERS_8516d1e4",
+      "type": "person_person_same_session",
+      "year": 2024,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_56e6d363",
+      "target": "person:PERS_ced3d7b4",
+      "type": "person_person_same_session",
+      "year": 2024,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_56e6d363",
+      "target": "person:PERS_d218805b",
+      "type": "person_person_same_session",
+      "year": 2024,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_56e6d363",
+      "target": "person:PERS_fb25c80f",
+      "type": "person_person_same_session",
+      "year": 2024,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -43891,6 +43883,30 @@
       "weight": 1.0
     },
     {
+      "source": "person:PERS_5af1c05a",
+      "target": "person:PERS_ba81468a",
+      "type": "person_person_same_session",
+      "year": 2018,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_5af1c05a",
+      "target": "person:PERS_db046be0",
+      "type": "person_person_same_session",
+      "year": 2018,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_5af1c05a",
+      "target": "person:PERS_f19cd8a1",
+      "type": "person_person_same_session",
+      "year": 2018,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
       "source": "person:PERS_5d34c947",
       "target": "person:PERS_69750b7c",
       "type": "person_person_same_session",
@@ -43927,14 +43943,6 @@
       "target": "person:PERS_72506535",
       "type": "person_person_same_session",
       "year": 2025,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_5d34c947",
-      "target": "person:PERS_7542d270",
-      "type": "person_person_same_session",
-      "year": 2016,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -44148,6 +44156,14 @@
     },
     {
       "source": "person:PERS_5d34c947",
+      "target": "person:PERS_ba7b23ae",
+      "type": "person_person_same_session",
+      "year": 2016,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_5d34c947",
       "target": "person:PERS_ba81468a",
       "type": "person_person_same_session",
       "year": 2014,
@@ -44348,14 +44364,6 @@
     },
     {
       "source": "person:PERS_5d34c947",
-      "target": "person:PERS_e96139bd",
-      "type": "person_person_same_session",
-      "year": 2016,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_5d34c947",
       "target": "person:PERS_f074f69f",
       "type": "person_person_same_session",
       "year": 2018,
@@ -44375,6 +44383,14 @@
       "target": "person:PERS_f19cd8a1",
       "type": "person_person_same_session",
       "year": 2014,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_5d34c947",
+      "target": "person:PERS_f8e06692",
+      "type": "person_person_same_session",
+      "year": 2016,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -44479,6 +44495,14 @@
       "target": "person:PERS_6441d568",
       "type": "person_person_same_session",
       "year": 2024,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_5e2a5a5c",
+      "target": "person:PERS_675f37f0",
+      "type": "person_person_same_session",
+      "year": 2019,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -44687,6 +44711,38 @@
       "target": "person:PERS_f8ab5755",
       "type": "person_person_same_session",
       "year": 2019,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_5e6bef63",
+      "target": "person:PERS_7f908d49",
+      "type": "person_person_same_session",
+      "year": 2024,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_5e6bef63",
+      "target": "person:PERS_8df3730a",
+      "type": "person_person_same_session",
+      "year": 2024,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_5e6bef63",
+      "target": "person:PERS_91b473b1",
+      "type": "person_person_same_session",
+      "year": 2024,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_5e6bef63",
+      "target": "person:PERS_9e9c9566",
+      "type": "person_person_same_session",
+      "year": 2024,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -45614,14 +45670,6 @@
       "source": "person:PERS_6441d568",
       "target": "person:PERS_bc97fb65",
       "type": "person_person_same_session",
-      "year": 2021,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_6441d568",
-      "target": "person:PERS_bc97fb65",
-      "type": "person_person_same_session",
       "year": 2022,
       "series": "Zograf Readings",
       "weight": 1.0
@@ -45764,14 +45812,6 @@
     },
     {
       "source": "person:PERS_6441d568",
-      "target": "person:PERS_e96139bd",
-      "type": "person_person_same_session",
-      "year": 2013,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_6441d568",
       "target": "person:PERS_efc88709",
       "type": "person_person_same_session",
       "year": 2013,
@@ -45799,6 +45839,22 @@
       "target": "person:PERS_f1a308b7",
       "type": "person_person_same_session",
       "year": 2026,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_6441d568",
+      "target": "person:PERS_f55cf2d5",
+      "type": "person_person_same_session",
+      "year": 2021,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_6441d568",
+      "target": "person:PERS_f8e06692",
+      "type": "person_person_same_session",
+      "year": 2013,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -46171,6 +46227,70 @@
       "weight": 1.0
     },
     {
+      "source": "person:PERS_675f37f0",
+      "target": "person:PERS_7eb0dc30",
+      "type": "person_person_same_session",
+      "year": 2019,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_675f37f0",
+      "target": "person:PERS_9a855a7b",
+      "type": "person_person_same_session",
+      "year": 2019,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_675f37f0",
+      "target": "person:PERS_a901d460",
+      "type": "person_person_same_session",
+      "year": 2019,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_675f37f0",
+      "target": "person:PERS_b62a9567",
+      "type": "person_person_same_session",
+      "year": 2019,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_675f37f0",
+      "target": "person:PERS_b881461b",
+      "type": "person_person_same_session",
+      "year": 2019,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_675f37f0",
+      "target": "person:PERS_bc97fb65",
+      "type": "person_person_same_session",
+      "year": 2019,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_675f37f0",
+      "target": "person:PERS_d98da899",
+      "type": "person_person_same_session",
+      "year": 2019,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_675f37f0",
+      "target": "person:PERS_f8ab5755",
+      "type": "person_person_same_session",
+      "year": 2019,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
       "source": "person:PERS_68270eaf",
       "target": "person:PERS_9374fd12",
       "type": "person_person_same_session",
@@ -46380,6 +46500,14 @@
     },
     {
       "source": "person:PERS_69750b7c",
+      "target": "person:PERS_ac7e1d48",
+      "type": "person_person_same_session",
+      "year": 2012,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_69750b7c",
       "target": "person:PERS_b62a9567",
       "type": "person_person_same_session",
       "year": 2018,
@@ -46462,14 +46590,6 @@
       "source": "person:PERS_69750b7c",
       "target": "person:PERS_d98da899",
       "type": "person_person_same_session",
-      "year": 2012,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_69750b7c",
-      "target": "person:PERS_d98da899",
-      "type": "person_person_same_session",
       "year": 2013,
       "series": "Zograf Readings",
       "weight": 1.0
@@ -46516,14 +46636,6 @@
     },
     {
       "source": "person:PERS_69750b7c",
-      "target": "person:PERS_e96139bd",
-      "type": "person_person_same_session",
-      "year": 2013,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_69750b7c",
       "target": "person:PERS_efc88709",
       "type": "person_person_same_session",
       "year": 2013,
@@ -46543,6 +46655,14 @@
       "target": "person:PERS_f19cd8a1",
       "type": "person_person_same_session",
       "year": 2014,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_69750b7c",
+      "target": "person:PERS_f8e06692",
+      "type": "person_person_same_session",
+      "year": 2013,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -47430,23 +47550,7 @@
       "source": "person:PERS_7542d270",
       "target": "person:PERS_92f293f8",
       "type": "person_person_same_session",
-      "year": 2016,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_7542d270",
-      "target": "person:PERS_92f293f8",
-      "type": "person_person_same_session",
       "year": 2018,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_7542d270",
-      "target": "person:PERS_93e2effb",
-      "type": "person_person_same_session",
-      "year": 2016,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -47516,14 +47620,6 @@
     },
     {
       "source": "person:PERS_7542d270",
-      "target": "person:PERS_c48611e0",
-      "type": "person_person_same_session",
-      "year": 2016,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_7542d270",
       "target": "person:PERS_c52dfaa0",
       "type": "person_person_same_session",
       "year": 2019,
@@ -47543,22 +47639,6 @@
       "target": "person:PERS_c52dfaa0",
       "type": "person_person_same_session",
       "year": 2022,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_7542d270",
-      "target": "person:PERS_c5677a3f",
-      "type": "person_person_same_session",
-      "year": 2016,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_7542d270",
-      "target": "person:PERS_c58aa839",
-      "type": "person_person_same_session",
-      "year": 2016,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -47612,14 +47692,6 @@
     },
     {
       "source": "person:PERS_7542d270",
-      "target": "person:PERS_dd17649f",
-      "type": "person_person_same_session",
-      "year": 2016,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_7542d270",
       "target": "person:PERS_dd7de77e",
       "type": "person_person_same_session",
       "year": 2019,
@@ -47644,25 +47716,9 @@
     },
     {
       "source": "person:PERS_7542d270",
-      "target": "person:PERS_e31ca12d",
-      "type": "person_person_same_session",
-      "year": 2016,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_7542d270",
       "target": "person:PERS_e8396809",
       "type": "person_person_same_session",
       "year": 2020,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_7542d270",
-      "target": "person:PERS_e96139bd",
-      "type": "person_person_same_session",
-      "year": 2016,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -47756,22 +47812,6 @@
     },
     {
       "source": "person:PERS_7542d270",
-      "target": "person:PERS_fa58484d",
-      "type": "person_person_same_session",
-      "year": 2016,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_7542d270",
-      "target": "person:PERS_fb25c80f",
-      "type": "person_person_same_session",
-      "year": 2016,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_7542d270",
       "target": "person:PERS_fc2af3f1",
       "type": "person_person_same_session",
       "year": 2017,
@@ -47815,6 +47855,54 @@
       "target": "person:PERS_f8ab5755",
       "type": "person_person_same_session",
       "year": 2010,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_7853fddb",
+      "target": "person:PERS_829c1de5",
+      "type": "person_person_same_session",
+      "year": 2008,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_7853fddb",
+      "target": "person:PERS_9a855a7b",
+      "type": "person_person_same_session",
+      "year": 2008,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_7853fddb",
+      "target": "person:PERS_ba81468a",
+      "type": "person_person_same_session",
+      "year": 2008,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_7853fddb",
+      "target": "person:PERS_bc97fb65",
+      "type": "person_person_same_session",
+      "year": 2008,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_7853fddb",
+      "target": "person:PERS_d98da899",
+      "type": "person_person_same_session",
+      "year": 2008,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_7853fddb",
+      "target": "person:PERS_e5a5ac24",
+      "type": "person_person_same_session",
+      "year": 2008,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -48396,14 +48484,6 @@
     },
     {
       "source": "person:PERS_7eb0dc30",
-      "target": "person:PERS_e96139bd",
-      "type": "person_person_same_session",
-      "year": 2013,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_7eb0dc30",
       "target": "person:PERS_efc88709",
       "type": "person_person_same_session",
       "year": 2013,
@@ -48447,6 +48527,14 @@
       "target": "person:PERS_f8ab5755",
       "type": "person_person_same_session",
       "year": 2019,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_7eb0dc30",
+      "target": "person:PERS_f8e06692",
+      "type": "person_person_same_session",
+      "year": 2013,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -48517,14 +48605,6 @@
     {
       "source": "person:PERS_7f908d49",
       "target": "person:PERS_8df3730a",
-      "type": "person_person_same_session",
-      "year": 2024,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_7f908d49",
-      "target": "person:PERS_8df81b6d",
       "type": "person_person_same_session",
       "year": 2024,
       "series": "Zograf Readings",
@@ -48724,14 +48804,6 @@
     },
     {
       "source": "person:PERS_7f908d49",
-      "target": "person:PERS_e96139bd",
-      "type": "person_person_same_session",
-      "year": 2013,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_7f908d49",
       "target": "person:PERS_efc88709",
       "type": "person_person_same_session",
       "year": 2013,
@@ -48759,6 +48831,14 @@
       "target": "person:PERS_f19cd8a1",
       "type": "person_person_same_session",
       "year": 2015,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_7f908d49",
+      "target": "person:PERS_f8e06692",
+      "type": "person_person_same_session",
+      "year": 2013,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -48860,6 +48940,14 @@
     },
     {
       "source": "person:PERS_8108c314",
+      "target": "person:PERS_9f159bcf",
+      "type": "person_person_same_session",
+      "year": 2019,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_8108c314",
       "target": "person:PERS_a0264ac5",
       "type": "person_person_same_session",
       "year": 2019,
@@ -48871,14 +48959,6 @@
       "target": "person:PERS_a0264ac5",
       "type": "person_person_same_session",
       "year": 2022,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_8108c314",
-      "target": "person:PERS_a1484b38",
-      "type": "person_person_same_session",
-      "year": 2019,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -49550,14 +49630,6 @@
       "source": "person:PERS_829c1de5",
       "target": "person:PERS_c5aeda15",
       "type": "person_person_same_session",
-      "year": 2008,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_829c1de5",
-      "target": "person:PERS_c5aeda15",
-      "type": "person_person_same_session",
       "year": 2009,
       "series": "Zograf Readings",
       "weight": 1.0
@@ -49764,14 +49836,6 @@
     },
     {
       "source": "person:PERS_829c1de5",
-      "target": "person:PERS_e96139bd",
-      "type": "person_person_same_session",
-      "year": 2013,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_829c1de5",
       "target": "person:PERS_efc88709",
       "type": "person_person_same_session",
       "year": 2013,
@@ -49863,6 +49927,14 @@
       "target": "person:PERS_f8ab5755",
       "type": "person_person_same_session",
       "year": 2025,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_829c1de5",
+      "target": "person:PERS_f8e06692",
+      "type": "person_person_same_session",
+      "year": 2013,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -50300,14 +50372,6 @@
     },
     {
       "source": "person:PERS_8df3730a",
-      "target": "person:PERS_8df81b6d",
-      "type": "person_person_same_session",
-      "year": 2024,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_8df3730a",
       "target": "person:PERS_91b473b1",
       "type": "person_person_same_session",
       "year": 2013,
@@ -50540,14 +50604,6 @@
     },
     {
       "source": "person:PERS_8df3730a",
-      "target": "person:PERS_e96139bd",
-      "type": "person_person_same_session",
-      "year": 2013,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_8df3730a",
       "target": "person:PERS_efc88709",
       "type": "person_person_same_session",
       "year": 2013,
@@ -50588,6 +50644,14 @@
     },
     {
       "source": "person:PERS_8df3730a",
+      "target": "person:PERS_f8e06692",
+      "type": "person_person_same_session",
+      "year": 2013,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_8df3730a",
       "target": "person:PERS_f940c5b3",
       "type": "person_person_same_session",
       "year": 2015,
@@ -50599,22 +50663,6 @@
       "target": "person:PERS_fb25c80f",
       "type": "person_person_same_session",
       "year": 2013,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_8df81b6d",
-      "target": "person:PERS_91b473b1",
-      "type": "person_person_same_session",
-      "year": 2024,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_8df81b6d",
-      "target": "person:PERS_9e9c9566",
-      "type": "person_person_same_session",
-      "year": 2024,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -51236,14 +51284,6 @@
     },
     {
       "source": "person:PERS_91b473b1",
-      "target": "person:PERS_e96139bd",
-      "type": "person_person_same_session",
-      "year": 2013,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_91b473b1",
       "target": "person:PERS_efc88709",
       "type": "person_person_same_session",
       "year": 2013,
@@ -51295,6 +51335,14 @@
       "target": "person:PERS_f8ab5755",
       "type": "person_person_same_session",
       "year": 2023,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_91b473b1",
+      "target": "person:PERS_f8e06692",
+      "type": "person_person_same_session",
+      "year": 2013,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -51796,6 +51844,14 @@
     },
     {
       "source": "person:PERS_92f293f8",
+      "target": "person:PERS_ba7b23ae",
+      "type": "person_person_same_session",
+      "year": 2016,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_92f293f8",
       "target": "person:PERS_bc97fb65",
       "type": "person_person_same_session",
       "year": 2013,
@@ -51924,30 +51980,6 @@
     },
     {
       "source": "person:PERS_92f293f8",
-      "target": "person:PERS_e96139bd",
-      "type": "person_person_same_session",
-      "year": 2013,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_92f293f8",
-      "target": "person:PERS_e96139bd",
-      "type": "person_person_same_session",
-      "year": 2015,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_92f293f8",
-      "target": "person:PERS_e96139bd",
-      "type": "person_person_same_session",
-      "year": 2016,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_92f293f8",
       "target": "person:PERS_ebb6d156",
       "type": "person_person_same_session",
       "year": 2015,
@@ -51983,6 +52015,30 @@
       "target": "person:PERS_f074f69f",
       "type": "person_person_same_session",
       "year": 2013,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_92f293f8",
+      "target": "person:PERS_f8e06692",
+      "type": "person_person_same_session",
+      "year": 2013,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_92f293f8",
+      "target": "person:PERS_f8e06692",
+      "type": "person_person_same_session",
+      "year": 2015,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_92f293f8",
+      "target": "person:PERS_f8e06692",
+      "type": "person_person_same_session",
+      "year": 2016,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -52364,6 +52420,14 @@
     },
     {
       "source": "person:PERS_93e2effb",
+      "target": "person:PERS_ba7b23ae",
+      "type": "person_person_same_session",
+      "year": 2016,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_93e2effb",
       "target": "person:PERS_bcaec2d8",
       "type": "person_person_same_session",
       "year": 2022,
@@ -52500,14 +52564,6 @@
     },
     {
       "source": "person:PERS_93e2effb",
-      "target": "person:PERS_e96139bd",
-      "type": "person_person_same_session",
-      "year": 2016,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_93e2effb",
       "target": "person:PERS_ebb6d156",
       "type": "person_person_same_session",
       "year": 2017,
@@ -52599,6 +52655,14 @@
       "target": "person:PERS_f8ab5755",
       "type": "person_person_same_session",
       "year": 2026,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_93e2effb",
+      "target": "person:PERS_f8e06692",
+      "type": "person_person_same_session",
+      "year": 2016,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -53006,14 +53070,6 @@
       "source": "person:PERS_9a855a7b",
       "target": "person:PERS_bc97fb65",
       "type": "person_person_same_session",
-      "year": 2021,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_9a855a7b",
-      "target": "person:PERS_bc97fb65",
-      "type": "person_person_same_session",
       "year": 2022,
       "series": "Zograf Readings",
       "weight": 1.0
@@ -53087,14 +53143,6 @@
       "target": "person:PERS_c58aa839",
       "type": "person_person_same_session",
       "year": 2004,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_9a855a7b",
-      "target": "person:PERS_c5aeda15",
-      "type": "person_person_same_session",
-      "year": 2008,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -53284,14 +53332,6 @@
     },
     {
       "source": "person:PERS_9a855a7b",
-      "target": "person:PERS_e96139bd",
-      "type": "person_person_same_session",
-      "year": 2013,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_9a855a7b",
       "target": "person:PERS_efc88709",
       "type": "person_person_same_session",
       "year": 2013,
@@ -53324,6 +53364,14 @@
     },
     {
       "source": "person:PERS_9a855a7b",
+      "target": "person:PERS_f55cf2d5",
+      "type": "person_person_same_session",
+      "year": 2021,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_9a855a7b",
       "target": "person:PERS_f7c7adc7",
       "type": "person_person_same_session",
       "year": 2015,
@@ -53351,6 +53399,14 @@
       "target": "person:PERS_f8ab5755",
       "type": "person_person_same_session",
       "year": 2019,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_9a855a7b",
+      "target": "person:PERS_f8e06692",
+      "type": "person_person_same_session",
+      "year": 2013,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -53620,14 +53676,6 @@
     },
     {
       "source": "person:PERS_9ad66151",
-      "target": "person:PERS_e96139bd",
-      "type": "person_person_same_session",
-      "year": 2013,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_9ad66151",
       "target": "person:PERS_ebb6d156",
       "type": "person_person_same_session",
       "year": 2013,
@@ -53716,6 +53764,14 @@
     },
     {
       "source": "person:PERS_9ad66151",
+      "target": "person:PERS_f8e06692",
+      "type": "person_person_same_session",
+      "year": 2013,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_9ad66151",
       "target": "person:PERS_fb25c80f",
       "type": "person_person_same_session",
       "year": 2013,
@@ -53783,6 +53839,54 @@
       "target": "person:PERS_fb25c80f",
       "type": "person_person_same_session",
       "year": 2026,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_9f159bcf",
+      "target": "person:PERS_a0264ac5",
+      "type": "person_person_same_session",
+      "year": 2019,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_9f159bcf",
+      "target": "person:PERS_bf91d4b8",
+      "type": "person_person_same_session",
+      "year": 2019,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_9f159bcf",
+      "target": "person:PERS_c48611e0",
+      "type": "person_person_same_session",
+      "year": 2019,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_9f159bcf",
+      "target": "person:PERS_c6bbcef3",
+      "type": "person_person_same_session",
+      "year": 2019,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_9f159bcf",
+      "target": "person:PERS_db046be0",
+      "type": "person_person_same_session",
+      "year": 2019,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_9f159bcf",
+      "target": "person:PERS_e31ca12d",
+      "type": "person_person_same_session",
+      "year": 2019,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -53943,14 +54047,6 @@
       "target": "person:PERS_fb25c80f",
       "type": "person_person_same_session",
       "year": 2018,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_a0264ac5",
-      "target": "person:PERS_a1484b38",
-      "type": "person_person_same_session",
-      "year": 2019,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -54118,14 +54214,6 @@
       "source": "person:PERS_a0264ac5",
       "target": "person:PERS_e96139bd",
       "type": "person_person_same_session",
-      "year": 2013,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_a0264ac5",
-      "target": "person:PERS_e96139bd",
-      "type": "person_person_same_session",
       "year": 2020,
       "series": "Zograf Readings",
       "weight": 1.0
@@ -54188,6 +54276,14 @@
     },
     {
       "source": "person:PERS_a0264ac5",
+      "target": "person:PERS_f8e06692",
+      "type": "person_person_same_session",
+      "year": 2013,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_a0264ac5",
       "target": "person:PERS_fb25c80f",
       "type": "person_person_same_session",
       "year": 2013,
@@ -54220,49 +54316,9 @@
     },
     {
       "source": "person:PERS_a1484b38",
-      "target": "person:PERS_bf91d4b8",
-      "type": "person_person_same_session",
-      "year": 2019,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_a1484b38",
-      "target": "person:PERS_c48611e0",
-      "type": "person_person_same_session",
-      "year": 2019,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_a1484b38",
-      "target": "person:PERS_c6bbcef3",
-      "type": "person_person_same_session",
-      "year": 2019,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_a1484b38",
       "target": "person:PERS_cfb92c5f",
       "type": "person_person_same_session",
       "year": 2021,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_a1484b38",
-      "target": "person:PERS_db046be0",
-      "type": "person_person_same_session",
-      "year": 2019,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_a1484b38",
-      "target": "person:PERS_e31ca12d",
-      "type": "person_person_same_session",
-      "year": 2019,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -54516,22 +54572,6 @@
     },
     {
       "source": "person:PERS_a84aedaa",
-      "target": "person:PERS_e96139bd",
-      "type": "person_person_same_session",
-      "year": 2011,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_a84aedaa",
-      "target": "person:PERS_e96139bd",
-      "type": "person_person_same_session",
-      "year": 2013,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_a84aedaa",
       "target": "person:PERS_efc88709",
       "type": "person_person_same_session",
       "year": 2013,
@@ -54567,6 +54607,22 @@
       "target": "person:PERS_f2fef030",
       "type": "person_person_same_session",
       "year": 2009,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_a84aedaa",
+      "target": "person:PERS_f8e06692",
+      "type": "person_person_same_session",
+      "year": 2011,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_a84aedaa",
+      "target": "person:PERS_f8e06692",
+      "type": "person_person_same_session",
+      "year": 2013,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -54672,6 +54728,14 @@
       "type": "person_person_same_session",
       "year": 2009,
       "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_ac7e1d48",
+      "target": "person:PERS_bc97fb65",
+      "type": "person_person_same_session",
+      "year": 2012,
+      "series": "Zograf Readings",
       "weight": 1.0
     },
     {
@@ -55243,6 +55307,70 @@
       "weight": 1.0
     },
     {
+      "source": "person:PERS_ba7b23ae",
+      "target": "person:PERS_c48611e0",
+      "type": "person_person_same_session",
+      "year": 2016,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_ba7b23ae",
+      "target": "person:PERS_c5677a3f",
+      "type": "person_person_same_session",
+      "year": 2016,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_ba7b23ae",
+      "target": "person:PERS_c58aa839",
+      "type": "person_person_same_session",
+      "year": 2016,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_ba7b23ae",
+      "target": "person:PERS_dd17649f",
+      "type": "person_person_same_session",
+      "year": 2016,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_ba7b23ae",
+      "target": "person:PERS_e31ca12d",
+      "type": "person_person_same_session",
+      "year": 2016,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_ba7b23ae",
+      "target": "person:PERS_f8e06692",
+      "type": "person_person_same_session",
+      "year": 2016,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_ba7b23ae",
+      "target": "person:PERS_fa58484d",
+      "type": "person_person_same_session",
+      "year": 2016,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_ba7b23ae",
+      "target": "person:PERS_fb25c80f",
+      "type": "person_person_same_session",
+      "year": 2016,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
       "source": "person:PERS_ba81468a",
       "target": "person:PERS_bc97fb65",
       "type": "person_person_same_session",
@@ -55327,14 +55455,6 @@
       "target": "person:PERS_c58aa839",
       "type": "person_person_same_session",
       "year": 2006,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_ba81468a",
-      "target": "person:PERS_c5aeda15",
-      "type": "person_person_same_session",
-      "year": 2008,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -55508,14 +55628,6 @@
     },
     {
       "source": "person:PERS_bc97fb65",
-      "target": "person:PERS_c5aeda15",
-      "type": "person_person_same_session",
-      "year": 2008,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_bc97fb65",
       "target": "person:PERS_cb52ebc2",
       "type": "person_person_same_session",
       "year": 2020,
@@ -55551,14 +55663,6 @@
       "target": "person:PERS_d98da899",
       "type": "person_person_same_session",
       "year": 2010,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_bc97fb65",
-      "target": "person:PERS_d98da899",
-      "type": "person_person_same_session",
-      "year": 2012,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -55607,14 +55711,6 @@
       "target": "person:PERS_d98da899",
       "type": "person_person_same_session",
       "year": 2020,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_bc97fb65",
-      "target": "person:PERS_d98da899",
-      "type": "person_person_same_session",
-      "year": 2021,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -55676,14 +55772,6 @@
     },
     {
       "source": "person:PERS_bc97fb65",
-      "target": "person:PERS_e96139bd",
-      "type": "person_person_same_session",
-      "year": 2013,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_bc97fb65",
       "target": "person:PERS_efc88709",
       "type": "person_person_same_session",
       "year": 2013,
@@ -55727,6 +55815,14 @@
       "target": "person:PERS_f8ab5755",
       "type": "person_person_same_session",
       "year": 2019,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_bc97fb65",
+      "target": "person:PERS_f8e06692",
+      "type": "person_person_same_session",
+      "year": 2013,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -56294,22 +56390,6 @@
       "source": "person:PERS_c48611e0",
       "target": "person:PERS_e96139bd",
       "type": "person_person_same_session",
-      "year": 2013,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_c48611e0",
-      "target": "person:PERS_e96139bd",
-      "type": "person_person_same_session",
-      "year": 2016,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_c48611e0",
-      "target": "person:PERS_e96139bd",
-      "type": "person_person_same_session",
       "year": 2020,
       "series": "Zograf Readings",
       "weight": 1.0
@@ -56431,6 +56511,22 @@
       "target": "person:PERS_f5b8b340",
       "type": "person_person_same_session",
       "year": 2007,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_c48611e0",
+      "target": "person:PERS_f8e06692",
+      "type": "person_person_same_session",
+      "year": 2013,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_c48611e0",
+      "target": "person:PERS_f8e06692",
+      "type": "person_person_same_session",
+      "year": 2016,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -56732,14 +56828,6 @@
     },
     {
       "source": "person:PERS_c52dfaa0",
-      "target": "person:PERS_e96139bd",
-      "type": "person_person_same_session",
-      "year": 2013,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_c52dfaa0",
       "target": "person:PERS_ebb6d156",
       "type": "person_person_same_session",
       "year": 2015,
@@ -56871,6 +56959,14 @@
       "target": "person:PERS_f5b8b340",
       "type": "person_person_same_session",
       "year": 2007,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_c52dfaa0",
+      "target": "person:PERS_f8e06692",
+      "type": "person_person_same_session",
+      "year": 2013,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -57092,30 +57188,6 @@
     },
     {
       "source": "person:PERS_c5677a3f",
-      "target": "person:PERS_e96139bd",
-      "type": "person_person_same_session",
-      "year": 2011,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_c5677a3f",
-      "target": "person:PERS_e96139bd",
-      "type": "person_person_same_session",
-      "year": 2013,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_c5677a3f",
-      "target": "person:PERS_e96139bd",
-      "type": "person_person_same_session",
-      "year": 2016,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_c5677a3f",
       "target": "person:PERS_efc88709",
       "type": "person_person_same_session",
       "year": 2013,
@@ -57175,6 +57247,30 @@
       "target": "person:PERS_f5b8b340",
       "type": "person_person_same_session",
       "year": 2007,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_c5677a3f",
+      "target": "person:PERS_f8e06692",
+      "type": "person_person_same_session",
+      "year": 2011,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_c5677a3f",
+      "target": "person:PERS_f8e06692",
+      "type": "person_person_same_session",
+      "year": 2013,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_c5677a3f",
+      "target": "person:PERS_f8e06692",
+      "type": "person_person_same_session",
+      "year": 2016,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -57348,14 +57444,6 @@
     },
     {
       "source": "person:PERS_c58aa839",
-      "target": "person:PERS_e96139bd",
-      "type": "person_person_same_session",
-      "year": 2016,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_c58aa839",
       "target": "person:PERS_f074f69f",
       "type": "person_person_same_session",
       "year": 2014,
@@ -57420,6 +57508,14 @@
     },
     {
       "source": "person:PERS_c58aa839",
+      "target": "person:PERS_f8e06692",
+      "type": "person_person_same_session",
+      "year": 2016,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_c58aa839",
       "target": "person:PERS_fa58484d",
       "type": "person_person_same_session",
       "year": 2016,
@@ -57478,23 +57574,7 @@
       "source": "person:PERS_c5aeda15",
       "target": "person:PERS_d98da899",
       "type": "person_person_same_session",
-      "year": 2008,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_c5aeda15",
-      "target": "person:PERS_d98da899",
-      "type": "person_person_same_session",
       "year": 2009,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_c5aeda15",
-      "target": "person:PERS_e5a5ac24",
-      "type": "person_person_same_session",
-      "year": 2008,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -57604,7 +57684,7 @@
     },
     {
       "source": "person:PERS_c9e43db7",
-      "target": "person:PERS_e96139bd",
+      "target": "person:PERS_ebb6d156",
       "type": "person_person_same_session",
       "year": 2015,
       "series": "Zograf Readings",
@@ -57612,7 +57692,7 @@
     },
     {
       "source": "person:PERS_c9e43db7",
-      "target": "person:PERS_ebb6d156",
+      "target": "person:PERS_f8e06692",
       "type": "person_person_same_session",
       "year": 2015,
       "series": "Zograf Readings",
@@ -58332,14 +58412,6 @@
     },
     {
       "source": "person:PERS_d98da899",
-      "target": "person:PERS_e96139bd",
-      "type": "person_person_same_session",
-      "year": 2013,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_d98da899",
       "target": "person:PERS_efc88709",
       "type": "person_person_same_session",
       "year": 2013,
@@ -58396,6 +58468,14 @@
     },
     {
       "source": "person:PERS_d98da899",
+      "target": "person:PERS_f55cf2d5",
+      "type": "person_person_same_session",
+      "year": 2021,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_d98da899",
       "target": "person:PERS_f7c7adc7",
       "type": "person_person_same_session",
       "year": 2017,
@@ -58407,6 +58487,14 @@
       "target": "person:PERS_f8ab5755",
       "type": "person_person_same_session",
       "year": 2019,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_d98da899",
+      "target": "person:PERS_f8e06692",
+      "type": "person_person_same_session",
+      "year": 2013,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -58732,7 +58820,7 @@
     },
     {
       "source": "person:PERS_dd17649f",
-      "target": "person:PERS_e96139bd",
+      "target": "person:PERS_f8e06692",
       "type": "person_person_same_session",
       "year": 2016,
       "series": "Zograf Readings",
@@ -58759,14 +58847,6 @@
       "target": "person:PERS_e8f935aa",
       "type": "person_person_same_session",
       "year": 2015,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_dd7de77e",
-      "target": "person:PERS_e96139bd",
-      "type": "person_person_same_session",
-      "year": 2013,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -58831,6 +58911,14 @@
       "target": "person:PERS_f8ab5755",
       "type": "person_person_same_session",
       "year": 2010,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_dd7de77e",
+      "target": "person:PERS_f8e06692",
+      "type": "person_person_same_session",
+      "year": 2013,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -59068,14 +59156,6 @@
     },
     {
       "source": "person:PERS_e31ca12d",
-      "target": "person:PERS_e96139bd",
-      "type": "person_person_same_session",
-      "year": 2016,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_e31ca12d",
       "target": "person:PERS_efc88709",
       "type": "person_person_same_session",
       "year": 2021,
@@ -59124,6 +59204,14 @@
     },
     {
       "source": "person:PERS_e31ca12d",
+      "target": "person:PERS_f8e06692",
+      "type": "person_person_same_session",
+      "year": 2016,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_e31ca12d",
       "target": "person:PERS_fa58484d",
       "type": "person_person_same_session",
       "year": 2016,
@@ -59156,14 +59244,6 @@
     },
     {
       "source": "person:PERS_e5a5ac24",
-      "target": "person:PERS_e96139bd",
-      "type": "person_person_same_session",
-      "year": 2011,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_e5a5ac24",
       "target": "person:PERS_f2fef030",
       "type": "person_person_same_session",
       "year": 2009,
@@ -59175,6 +59255,14 @@
       "target": "person:PERS_f5b8b340",
       "type": "person_person_same_session",
       "year": 2006,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_e5a5ac24",
+      "target": "person:PERS_f8e06692",
+      "type": "person_person_same_session",
+      "year": 2011,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -59339,54 +59427,6 @@
       "weight": 1.0
     },
     {
-      "source": "person:PERS_e96139bd",
-      "target": "person:PERS_ebb6d156",
-      "type": "person_person_same_session",
-      "year": 2015,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_e96139bd",
-      "target": "person:PERS_efc88709",
-      "type": "person_person_same_session",
-      "year": 2013,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_e96139bd",
-      "target": "person:PERS_f074f69f",
-      "type": "person_person_same_session",
-      "year": 2013,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_e96139bd",
-      "target": "person:PERS_fa58484d",
-      "type": "person_person_same_session",
-      "year": 2016,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_e96139bd",
-      "target": "person:PERS_fb25c80f",
-      "type": "person_person_same_session",
-      "year": 2013,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_e96139bd",
-      "target": "person:PERS_fb25c80f",
-      "type": "person_person_same_session",
-      "year": 2016,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
       "source": "person:PERS_ea44fd14",
       "target": "person:PERS_ecdfe667",
       "type": "person_person_same_session",
@@ -59460,6 +59500,14 @@
     },
     {
       "source": "person:PERS_ebb6d156",
+      "target": "person:PERS_f8e06692",
+      "type": "person_person_same_session",
+      "year": 2015,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_ebb6d156",
       "target": "person:PERS_fb25c80f",
       "type": "person_person_same_session",
       "year": 2017,
@@ -59495,6 +59543,14 @@
       "target": "person:PERS_f82b6a8e",
       "type": "person_person_same_session",
       "year": 2025,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_efc88709",
+      "target": "person:PERS_f8e06692",
+      "type": "person_person_same_session",
+      "year": 2013,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -59551,6 +59607,14 @@
       "target": "person:PERS_f8ab5755",
       "type": "person_person_same_session",
       "year": 2026,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_f074f69f",
+      "target": "person:PERS_f8e06692",
+      "type": "person_person_same_session",
+      "year": 2013,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -59719,6 +59783,30 @@
       "target": "person:PERS_f940c5b3",
       "type": "person_person_same_session",
       "year": 2024,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_f8e06692",
+      "target": "person:PERS_fa58484d",
+      "type": "person_person_same_session",
+      "year": 2016,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_f8e06692",
+      "target": "person:PERS_fb25c80f",
+      "type": "person_person_same_session",
+      "year": 2013,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_f8e06692",
+      "target": "person:PERS_fb25c80f",
+      "type": "person_person_same_session",
+      "year": 2016,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -60015,14 +60103,6 @@
       "target": "theme:art_and_material_culture",
       "type": "person_theme",
       "year": 2023,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_05d56645",
-      "target": "theme:history_and_culture",
-      "type": "person_theme",
-      "year": 2019,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -62027,6 +62107,14 @@
       "weight": 1.0
     },
     {
+      "source": "person:PERS_300654cc",
+      "target": "theme:literature_and_poetry",
+      "type": "person_theme",
+      "year": 2010,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
       "source": "person:PERS_3009a9e0",
       "target": "theme:history_and_culture",
       "type": "person_theme",
@@ -62319,14 +62407,6 @@
       "target": "theme:literature_and_poetry",
       "type": "person_theme",
       "year": 2015,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_34c0d384",
-      "target": "theme:literature_and_poetry",
-      "type": "person_theme",
-      "year": 2024,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -63438,14 +63518,6 @@
       "source": "person:PERS_42da4866",
       "target": "theme:religion_and_philosophy",
       "type": "person_theme",
-      "year": 2018,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_42da4866",
-      "target": "theme:religion_and_philosophy",
-      "type": "person_theme",
       "year": 2019,
       "series": "Zograf Readings",
       "weight": 1.0
@@ -63575,14 +63647,6 @@
       "target": "theme:history_and_culture",
       "type": "person_theme",
       "year": 2017,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_50c46233",
-      "target": "theme:literature_and_poetry",
-      "type": "person_theme",
-      "year": 2010,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -64011,6 +64075,14 @@
       "weight": 1.0
     },
     {
+      "source": "person:PERS_56e6d363",
+      "target": "theme:literature_and_poetry",
+      "type": "person_theme",
+      "year": 2024,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
       "source": "person:PERS_57082cac",
       "target": "theme:history_and_culture",
       "type": "person_theme",
@@ -64119,6 +64191,14 @@
       "target": "theme:linguistics_and_philology",
       "type": "person_theme",
       "year": 2026,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_5af1c05a",
+      "target": "theme:religion_and_philosophy",
+      "type": "person_theme",
+      "year": 2018,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -64263,6 +64343,14 @@
       "target": "theme:history_and_culture",
       "type": "person_theme",
       "year": 2025,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_5e6bef63",
+      "target": "theme:religion_and_philosophy",
+      "type": "person_theme",
+      "year": 2024,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -64691,6 +64779,14 @@
       "weight": 1.0
     },
     {
+      "source": "person:PERS_675f37f0",
+      "target": "theme:history_and_culture",
+      "type": "person_theme",
+      "year": 2019,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
       "source": "person:PERS_68270eaf",
       "target": "theme:art_and_material_culture",
       "type": "person_theme",
@@ -65014,14 +65110,6 @@
       "source": "person:PERS_7542d270",
       "target": "theme:religion_and_philosophy",
       "type": "person_theme",
-      "year": 2016,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_7542d270",
-      "target": "theme:religion_and_philosophy",
-      "type": "person_theme",
       "year": 2017,
       "series": "Zograf Readings",
       "weight": 1.0
@@ -65047,6 +65135,14 @@
       "target": "theme:religion_and_philosophy",
       "type": "person_theme",
       "year": 2010,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_7853fddb",
+      "target": "theme:art_and_material_culture",
+      "type": "person_theme",
+      "year": 2008,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -65599,14 +65695,6 @@
       "target": "theme:religion_and_philosophy",
       "type": "person_theme",
       "year": 2010,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_8df81b6d",
-      "target": "theme:religion_and_philosophy",
-      "type": "person_theme",
-      "year": 2024,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -66547,6 +66635,14 @@
       "weight": 1.0
     },
     {
+      "source": "person:PERS_9f159bcf",
+      "target": "theme:religion_and_philosophy",
+      "type": "person_theme",
+      "year": 2019,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
       "source": "person:PERS_9f398436",
       "target": "theme:linguistics_and_philology",
       "type": "person_theme",
@@ -66702,14 +66798,6 @@
       "source": "person:PERS_a1484b38",
       "target": "theme:religion_and_philosophy",
       "type": "person_theme",
-      "year": 2019,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_a1484b38",
-      "target": "theme:religion_and_philosophy",
-      "type": "person_theme",
       "year": 2020,
       "series": "Zograf Readings",
       "weight": 1.0
@@ -66840,6 +66928,14 @@
       "type": "person_theme",
       "year": 2009,
       "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_ac7e1d48",
+      "target": "theme:art_and_material_culture",
+      "type": "person_theme",
+      "year": 2012,
+      "series": "Zograf Readings",
       "weight": 1.0
     },
     {
@@ -67099,6 +67195,14 @@
       "weight": 1.0
     },
     {
+      "source": "person:PERS_ba7b23ae",
+      "target": "theme:religion_and_philosophy",
+      "type": "person_theme",
+      "year": 2016,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
       "source": "person:PERS_ba81468a",
       "target": "theme:history_and_culture",
       "type": "person_theme",
@@ -67239,14 +67343,6 @@
       "target": "theme:history_and_culture",
       "type": "person_theme",
       "year": 2020,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_bc97fb65",
-      "target": "theme:history_and_culture",
-      "type": "person_theme",
-      "year": 2021,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -67990,14 +68086,6 @@
       "source": "person:PERS_c5aeda15",
       "target": "theme:art_and_material_culture",
       "type": "person_theme",
-      "year": 2008,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_c5aeda15",
-      "target": "theme:art_and_material_culture",
-      "type": "person_theme",
       "year": 2009,
       "series": "Zograf Readings",
       "weight": 1.0
@@ -68439,14 +68527,6 @@
       "target": "theme:art_and_material_culture",
       "type": "person_theme",
       "year": 2011,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_d98da899",
-      "target": "theme:art_and_material_culture",
-      "type": "person_theme",
-      "year": 2012,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -69550,38 +69630,6 @@
       "source": "person:PERS_e96139bd",
       "target": "theme:religion_and_philosophy",
       "type": "person_theme",
-      "year": 2011,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_e96139bd",
-      "target": "theme:religion_and_philosophy",
-      "type": "person_theme",
-      "year": 2013,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_e96139bd",
-      "target": "theme:religion_and_philosophy",
-      "type": "person_theme",
-      "year": 2015,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_e96139bd",
-      "target": "theme:religion_and_philosophy",
-      "type": "person_theme",
-      "year": 2016,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_e96139bd",
-      "target": "theme:religion_and_philosophy",
-      "type": "person_theme",
       "year": 2020,
       "series": "Zograf Readings",
       "weight": 1.0
@@ -70307,6 +70355,14 @@
       "weight": 1.0
     },
     {
+      "source": "person:PERS_f55cf2d5",
+      "target": "theme:history_and_culture",
+      "type": "person_theme",
+      "year": 2021,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
       "source": "person:PERS_f56c5a7e",
       "target": "theme:religion_and_philosophy",
       "type": "person_theme",
@@ -70495,6 +70551,38 @@
       "target": "theme:literature_and_poetry",
       "type": "person_theme",
       "year": 2026,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_f8e06692",
+      "target": "theme:religion_and_philosophy",
+      "type": "person_theme",
+      "year": 2011,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_f8e06692",
+      "target": "theme:religion_and_philosophy",
+      "type": "person_theme",
+      "year": 2013,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_f8e06692",
+      "target": "theme:religion_and_philosophy",
+      "type": "person_theme",
+      "year": 2015,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_f8e06692",
+      "target": "theme:religion_and_philosophy",
+      "type": "person_theme",
+      "year": 2016,
       "series": "Zograf Readings",
       "weight": 1.0
     },
