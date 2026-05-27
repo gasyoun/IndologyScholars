@@ -293,13 +293,17 @@
             <p>Поиск по авторам, названиям докладов, организациям, городам, рубрикам и мезоуровням.</p>
         </header>
         <label class="field-label" for="q">Поисковый запрос</label>
-        <input class="search-box" id="q" type="search" placeholder="Имя, тема, город или организация" autofocus>
+        <div style="display: flex; gap: 0.5rem; max-width: 720px; align-items: center; margin-bottom: 0.5rem;">
+            <input class="search-box" id="q" type="search" placeholder="Имя, тема, город или организация" autofocus style="flex: 1; max-width: none;">
+            <button id="share-btn" type="button" style="border: 1px solid var(--border); background: var(--panel-strong); color: var(--text); border-radius: 8px; padding: 0.8rem 1rem; cursor: pointer; font-size: 0.95rem; white-space: nowrap;">Скопировать ссылку</button>
+        </div>
         <p class="meta" id="result-summary" aria-live="polite"></p>
         <section id="results" class="list" aria-label="Результаты поиска"></section>
         <script>
         const results = document.getElementById('results');
         const summary = document.getElementById('result-summary');
         const input = document.getElementById('q');
+        const shareBtn = document.getElementById('share-btn');
         let docs = [];
         const typeLabels = {'Scholar':'Автор', 'Presentation':'Доклад', 'Topic':'Сюжет', 'Generation':'Поколения', 'Meso-level':'Мезоуровень', 'Keyword':'Ключевые слова', 'Gumilyov':'Гумилев', 'Video':'Видео', 'Finding':'Вывод'};
         const initialQuery = new URLSearchParams(location.search).get('q') || '';
@@ -329,6 +333,22 @@
             input.value.trim() ? url.searchParams.set('q', input.value.trim()) : url.searchParams.delete('q');
             history.replaceState(null, '', `${url.pathname}${url.search}${url.hash}`);
             render(input.value);
+        });
+        shareBtn.addEventListener('click', () => {
+            const url = new URL(location.href);
+            const queryVal = input.value.trim();
+            queryVal ? url.searchParams.set('q', queryVal) : url.searchParams.delete('q');
+            navigator.clipboard.writeText(url.href).then(() => {
+                const originalText = shareBtn.textContent;
+                shareBtn.textContent = 'Ссылка скопирована!';
+                shareBtn.style.borderColor = 'var(--accent)';
+                setTimeout(() => {
+                    shareBtn.textContent = originalText;
+                    shareBtn.style.borderColor = 'var(--border)';
+                }, 2000);
+            }).catch(err => {
+                console.error('Could not copy text: ', err);
+            });
         });
         </script>
 
