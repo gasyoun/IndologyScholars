@@ -49,9 +49,9 @@ organization:РГГУ,organization,РГГУ,РГГУ,4
 organization:СПбГУ,organization,СПбГУ,СПбГУ,39
 person:PERS_d6ade703,person,Kozhevnikova Margarita Nikolaevna,PERS_d6ade703,1
 person:PERS_800ac07e,person,А. А. Нейвирт,PERS_800ac07e,2
-person:PERS_3ccc9bd7,person,А. Солька,PERS_3ccc9bd7,2
 person:PERS_c1cc76b9,person,А. Я. Таран,PERS_c1cc76b9,1
 person:PERS_b9a0e40c,person,А.В. Осокин,PERS_b9a0e40c,1
+person:PERS_3ccc9bd7,person,А.Солька,PERS_3ccc9bd7,2
 person:PERS_410c5a08,person,А.Хомиченкене,PERS_410c5a08,1
 person:PERS_f1a308b7,person,Абинякин Владимир Александрович,PERS_f1a308b7,1
 person:PERS_3d4df70f,person,Акимушкина Екатерина Олеговна,PERS_3d4df70f,1
@@ -62,6 +62,7 @@ person:PERS_9a855a7b,person,Альбедиль Маргарита Федоров
 person:PERS_37d557c2,person,Анисимова Дарья Дмитриевна,PERS_37d557c2,2
 person:PERS_180c5e5c,person,Арапов Александр Владиленович,PERS_180c5e5c,1
 person:PERS_088c4df7,person,Атманова Юлия Георгиевна,PERS_088c4df7,6
+person:PERS_10547db9,person,Б. В. Загуменнов,PERS_10547db9,6
 person:PERS_05d56645,person,Бабин Александр Николаевич,PERS_05d56645,13
 person:PERS_bff5de3e,person,Бейнорюс Аудрюс,PERS_bff5de3e,4
 person:PERS_4a0de87e,person,Белимова Влада Сергеевна,PERS_4a0de87e,1
@@ -135,13 +136,12 @@ person:PERS_38c5f03f,person,Железнова Наталья Анатольев
 person:PERS_f56c5a7e,person,Жукова Любовь Евгеньевна,PERS_f56c5a7e,4
 person:PERS_92868e4f,person,Жутаев Дар Игоревич,PERS_92868e4f,15
 person:PERS_36c30cf9,person,Загорулько Андрей Владиславович,PERS_36c30cf9,1
-person:PERS_10547db9,person,Загуменнов Борис Иванович,PERS_10547db9,6
 person:PERS_94f33410,person,Застрожнова Евгения Григорьевна,PERS_94f33410,1
 person:PERS_900efc73,person,Зевацкий Тимофей Юрьевич,PERS_900efc73,1
 person:PERS_7eb0dc30,person,Зимина Татьяна Александровна,PERS_7eb0dc30,8
 person:PERS_c5677a3f,person,Зорин Алексей Валерьевич,PERS_c5677a3f,12
 person:PERS_a4c4c35e,person,И. В. Калинина,PERS_a4c4c35e,1
-person:PERS_c5aeda15,person,И.А.Урнова,PERS_c5aeda15,2
+person:PERS_c5aeda15,person,И.Урнова,PERS_c5aeda15,2
 person:PERS_6e211759,person,Иванов Владимир Павлович,PERS_6e211759,6
 person:PERS_f1f2471d,person,Игнатова Мария Михайловна,PERS_f1f2471d,1
 person:PERS_3e105f43,person,Игнатьев Андрей Александрович,PERS_3e105f43,18
@@ -213,7 +213,7 @@ person:PERS_ce100d3f,person,Мария Шилинскене,PERS_ce100d3f,1
 person:PERS_52d3f72c,person,Мейтарчиян Маргарита Борисовна,PERS_52d3f72c,2
 person:PERS_2e00cb36,person,Меренкова Ольга Николаевна,PERS_2e00cb36,2
 person:PERS_f2fef030,person,Мехакян Арег Гайкович,PERS_f2fef030,20
-person:PERS_4fff9d16,person,Минаева Мария Дмитриевна,PERS_4fff9d16,3
+person:PERS_4fff9d16,person,Минаева Маргарита Денисовна,PERS_4fff9d16,3
 person:PERS_b76851a7,person,Митруев Бембя Леонидович,PERS_b76851a7,2
 person:PERS_ced3d7b4,person,Молина Анна Валерьевна,PERS_ced3d7b4,4
 person:PERS_7d6f456c,person,Мотылёва Вера Леонидовна,PERS_7d6f456c,1

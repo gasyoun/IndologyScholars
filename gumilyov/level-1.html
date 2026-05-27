@@ -27,6 +27,7 @@
     <meta name="twitter:image" content="https://gasyoun.github.io/IndologyScholars/assets/og-image.png">
     <script defer src="/IndologyScholars/assets/pwa.js"></script>
 
+
     <script type="application/ld+json">
 [
   {
@@ -68,248 +69,63 @@
   }
 ]
     </script>
-    <style>
-        :root {
-            color-scheme: dark;
-            --bg: #101513;
-            --panel: #171e1b;
-            --panel-strong: #1c2521;
-            --border: #2b3631;
-            --text: #e7ece8;
-            --muted: #b3beb7;
-            --soft: #87938c;
-            --accent: #62ae92;
-            --accent2: #c59a56;
-        }
-        * { box-sizing: border-box; }
-        body {
-            margin: 0;
-            font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
-        }
-        a { color: #82c6ad; text-decoration: none; }
-        a:hover { color: #addac8; }
-        .page {
-            max-width: 1160px;
-            margin: 0 auto;
-            padding: 1.25rem 2rem 2rem;
-        }
-        .top-nav {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.45rem;
-            align-items: center;
-            margin-bottom: 1.4rem;
-        }
-        .top-nav a, .chip {
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            background: transparent;
-            padding: 0.43rem 0.68rem;
-            color: var(--muted);
-            display: inline-flex;
-            align-items: center;
-            gap: 0.35rem;
-        }
-        .more-nav { position: relative; }
-        .more-nav summary {
-            list-style: none;
-            cursor: pointer;
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 0.43rem 0.68rem;
-            color: var(--muted);
-        }
-        .more-nav summary::-webkit-details-marker { display: none; }
-        .more-nav summary:hover { color: var(--text); border-color: var(--accent); }
-        .more-menu {
-            position: absolute;
-            top: calc(100% + 0.4rem);
-            left: 0;
-            z-index: 10;
-            width: min(420px, calc(100vw - 3rem));
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.4rem;
-            padding: 0.65rem;
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            background: var(--panel-strong);
-            box-shadow: 0 10px 26px rgba(0,0,0,0.28);
-        }
-        header {
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 1.5rem;
-            margin-bottom: 1.75rem;
-        }
-        h1 {
-            font-size: clamp(1.8rem, 3vw, 2.5rem);
-            line-height: 1.15;
-            margin: 0 0 0.75rem;
-            letter-spacing: 0;
-        }
-        h2 {
-            font-size: 1.45rem;
-            margin: 2rem 0 1rem;
-            letter-spacing: 0;
-        }
-        p { color: var(--muted); max-width: 820px; }
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
-            gap: 1rem;
-        }
-        .card {
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 1rem;
-            background: var(--panel);
-        }
-        .card strong { color: #fff; }
-        .metric {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: #fff;
-            margin-top: 0.35rem;
-        }
-        .meta {
-            color: var(--soft);
-            font-size: 0.92rem;
-            margin-top: 0.3rem;
-        }
-        .link-block {
-            max-width: 900px;
-            margin: 1rem 0;
-        }
-        .link-block > strong {
-            color: #fff;
-            display: block;
-            margin-bottom: 0.45rem;
-        }
-        .chip-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.45rem;
-        }
-        .list {
-            display: grid;
-            gap: 0.75rem;
-        }
-        .talk {
-            border-left: 3px solid var(--accent);
-            background: rgba(255,255,255,0.035);
-            padding: 0.8rem 1rem;
-            border-radius: 0 8px 8px 0;
-        }
-        .badge {
-            display: inline-flex;
-            align-items: center;
-            border-radius: 8px;
-            padding: 0.18rem 0.45rem;
-            margin-left: 0.45rem;
-            border: 1px solid var(--border);
-            color: var(--muted);
-            font-size: 0.82rem;
-            font-weight: 600;
-            vertical-align: middle;
-        }
-        .badge-online {
-            border-color: rgba(52, 211, 153, 0.4);
-            color: #6ee7b7;
-            background: rgba(16, 185, 129, 0.1);
-        }
-        .badge-video {
-            border-color: rgba(251, 191, 36, 0.44);
-            color: #fde68a;
-            background: rgba(217, 119, 6, 0.13);
-        }
-        .footer {
-            color: var(--soft);
-            margin-top: 3rem;
-            border-top: 1px solid var(--border);
-            padding-top: 1rem;
-            font-size: 0.9rem;
-        }
-        .search-box {
-            width: 100%;
-            max-width: 720px;
-            padding: 0.8rem 1rem;
-            border-radius: 8px;
-            border: 1px solid var(--border);
-            background: var(--panel-strong);
-            color: var(--text);
-            font-size: 1rem;
-        }
-        .field-label {
-            display: block;
-            margin: 0 0 0.38rem;
-            color: var(--muted);
-            font-size: 0.85rem;
-            font-weight: 600;
-        }
-        .caveat-block {
-            border: 1px solid rgba(98,174,146,0.35);
-            border-left: 4px solid var(--accent);
-            border-radius: 8px;
-            background: rgba(98,174,146,0.07);
-            padding: 0.9rem 1.1rem;
-            margin: 1.25rem 0 1.75rem;
-            max-width: 820px;
-        }
-        .caveat-block strong {
-            color: #8dc9b2;
-            display: block;
-            margin-bottom: 0.35rem;
-        }
-        .caveat-block p {
-            font-size: 0.93rem;
-            margin: 0;
-            color: var(--muted);
-        }
-        :focus-visible {
-            outline: 2px solid var(--accent);
-            outline-offset: 2px;
-        }
-        @media (max-width: 640px) {
-            .page { padding: 1rem; }
-            .top-nav { gap: 0.35rem; margin-bottom: 1.15rem; }
-            .top-nav a, .chip, .more-nav summary { padding: 0.38rem 0.55rem; font-size: 0.9rem; }
-            header { padding-bottom: 1rem; margin-bottom: 1.2rem; }
-            h1 { font-size: 1.65rem; }
-        }
-    </style>
+
+    <link rel="stylesheet" href="/IndologyScholars/assets/styles.css">
 </head>
 <body>
     <main class="page">
         <nav class="top-nav" aria-label="Primary">
+
             <a href="/IndologyScholars/">Архив</a>
+
             <a href="/IndologyScholars/search.html">Поиск</a>
+
             <a href="/IndologyScholars/s/">Исследователи</a>
+
             <a href="/IndologyScholars/p/">Доклады</a>
+
             <a href="/IndologyScholars/conferences/">Конференции</a>
+
             <a href="/IndologyScholars/themes/">Рубрики</a>
+
             <a href="/IndologyScholars/generations/">Поколения</a>
+
             <details class="more-nav">
                 <summary>Еще</summary>
                 <div class="more-menu">
+
                     <a href="/IndologyScholars/findings/">Выводы</a>
+
                     <a href="/IndologyScholars/topics/">Сюжеты</a>
+
                     <a href="/IndologyScholars/download-data.html">Данные</a>
+
                     <a href="/IndologyScholars/meso/">Мезоуровни</a>
+
                     <a href="/IndologyScholars/keywords/">Ключевые слова</a>
+
                     <a href="/IndologyScholars/gumilyov/">Гумилев</a>
+
                     <a href="/IndologyScholars/classification-criteria.html">Критерии</a>
+
                     <a href="/IndologyScholars/videos/">Видео</a>
+
                     <a href="/IndologyScholars/cities/">Города</a>
+
                     <a href="/IndologyScholars/institutions/">Институции</a>
+
                     <a href="/IndologyScholars/collaboration/">Коллаборация</a>
+
                     <a href="/IndologyScholars/nlp/">NLP-анализ</a>
+
                     <a href="/IndologyScholars/data-quality.html">Качество</a>
+
                     <a href="/IndologyScholars/en.html">English</a>
+
                     <a href="/IndologyScholars/how-to-cite.html">Цитирование</a>
+
                     <a href="/IndologyScholars/metrics-guide.html">Метрики</a>
+
                 </div>
             </details>
         </nav>
@@ -424,7 +240,7 @@
         <article class="talk" id="PRES_a535b2a757">
             <strong><a href="../p/zamechaniya-po-formalnoi-storone-rikpratishakkhi.html">Замечания по формальной стороне Рикпратишакхьи</a></strong>
             <div class="meta">
-                <a href="../s/vidunas-vitis.html">В. Видунас</a> · <a href="../conferences/zograf-2004.html">Зографские чтения 2004</a>
+                <a href="../s/vidunas-vitis.html">В. Витис</a> · <a href="../conferences/zograf-2004.html">Зографские чтения 2004</a>
                 · <a href="../themes/linguistics-and-philology.html">Лингвистика и филология</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a> · <a href="../cities/vilnyus.html">Вильнюс</a>
             </div>
@@ -472,7 +288,7 @@
         <article class="talk" id="PRES_5ec00edd5f">
             <strong><a href="../p/literaturnye-reministsentsii-v-gaudavakho-vakpatiradzhi.html">Литературные реминисценции в «Гаудавахо» Вакпатираджи</a></strong>
             <div class="meta">
-                <a href="../s/rusanov-maksim.html">М. Н. Русанов</a> · <a href="../conferences/zograf-2004.html">Зографские чтения 2004</a>
+                <a href="../s/rusanov-maksim.html">М. А. Русанов</a> · <a href="../conferences/zograf-2004.html">Зографские чтения 2004</a>
                 · <a href="../themes/literature-and-poetry.html">Литература и поэзия</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a> · <a href="../cities/moskva.html">Москва</a>
             </div>
@@ -542,7 +358,7 @@
         <article class="talk" id="PRES_d2281e2acf">
             <strong><a href="../p/o-svyashchennoi-geografii-v-tvorchestve-tirunyanasambandara-shivaitskii-poeticheskii-kompleks-de.html">О «священной географии» в творчестве Тирунянасамбандара (шиваитский поэтический комплекс «Деварам»)</a></strong>
             <div class="meta">
-                <a href="../s/zagorulko-andrei.html">М. Б. Загорулько</a> · <a href="../conferences/zograf-2004.html">Зографские чтения 2004</a>
+                <a href="../s/zagorulko-andrei.html">А. В. Загорулько</a> · <a href="../conferences/zograf-2004.html">Зографские чтения 2004</a>
                 · <a href="../themes/religion-and-philosophy.html">Религия и философия</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a> · <a href="../cities/moskva.html">Москва</a>
             </div>
@@ -574,7 +390,7 @@
         <article class="talk" id="PRES_4dc8f2c386">
             <strong><a href="../p/ob-astrologicheskoi-germenevtike-v-meditsinskikh-tekstakh-ayurveda.html">Об астрологической герменевтике в медицинских текстах (Аюрведа)</a></strong>
             <div class="meta">
-                <a href="../s/beinoryus-audryus.html">А. Бейнорюс</a> · <a href="../conferences/zograf-2004.html">Зографские чтения 2004</a>
+                <a href="../s/beinoryus-audryus.html">Б. Аудрюс</a> · <a href="../conferences/zograf-2004.html">Зографские чтения 2004</a>
                 · <a href="../themes/religion-and-philosophy.html">Религия и философия</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a> · <a href="../cities/vilnyus.html">Вильнюс</a>
             </div>
@@ -590,7 +406,7 @@
         <article class="talk" id="PRES_646225a03b">
             <strong><a href="../p/oproverzhenie-atomizma-v-traktate-vasubandkhu-vidzhnyaptimatratasiddkhi-dokazatelstvo-edinstvenn.html">Опровержение атомизма в трактате Васубандху Виджняптиматратасиддхи («Доказательство единственности сознания»)</a></strong>
             <div class="meta">
-                <a href="../s/khomutinnikova.html">Н. В. Хомутинникова</a> · <a href="../conferences/zograf-2004.html">Зографские чтения 2004</a>
+                <a href="../s/n-v-khomutinnikova.html">Н. В. Хомутинникова</a> · <a href="../conferences/zograf-2004.html">Зографские чтения 2004</a>
                 · <a href="../themes/religion-and-philosophy.html">Религия и философия</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a>
             </div>
@@ -687,7 +503,7 @@
         <article class="talk" id="PRES_92c5268a51">
             <strong><a href="../p/figura-tsarya-i-predstavleniya-o-vremeni-v-makhabkharate.html">Фигура царя и представления о времени в «Махабхарате»</a></strong>
             <div class="meta">
-                <a href="../s/petrova.html">М. И. Петрова</a> · <a href="../conferences/zograf-2004.html">Зографские чтения 2004</a>
+                <a href="../s/m-i-petrova.html">М. И. Петрова</a> · <a href="../conferences/zograf-2004.html">Зографские чтения 2004</a>
                 · <a href="../themes/literature-and-poetry.html">Литература и поэзия</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a>
             </div>
@@ -719,7 +535,7 @@
         <article class="talk" id="PRES_ba501c2543">
             <strong><a href="../p/erotika-v-rigvede-muzhskoe-i-zhenskoe-nachalo.html">Эротика в Ригведе: мужское и женское начало</a></strong>
             <div class="meta">
-                <a href="../s/khomichenkene.html">А. Хомиченкене</a> · <a href="../conferences/zograf-2004.html">Зографские чтения 2004</a>
+                <a href="../s/a-khomichenkene.html">А. Хомиченкене</a> · <a href="../conferences/zograf-2004.html">Зографские чтения 2004</a>
                 · <a href="../themes/literature-and-poetry.html">Литература и поэзия</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a>
             </div>
@@ -1018,7 +834,7 @@
         <article class="talk" id="PRES_49eb37c334">
             <strong><a href="../p/orfoepicheskaya-praktika-i-drevneindiiskaya-fonetika.html">Орфоэпическая практика и древнеиндийская фонетика</a></strong>
             <div class="meta">
-                <a href="../s/vidunas-vitis.html">В. Видунас</a> · <a href="../conferences/zograf-2006.html">Зографские чтения 2006</a>
+                <a href="../s/vidunas-vitis.html">В. Витис</a> · <a href="../conferences/zograf-2006.html">Зографские чтения 2006</a>
                 · <a href="../themes/linguistics-and-philology.html">Лингвистика и филология</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a> · <a href="../cities/vilnyus.html">Вильнюс</a>
             </div>
@@ -1098,7 +914,7 @@
         <article class="talk" id="PRES_b1d123ee06">
             <strong><a href="../p/tema-derevni-v-sattasai.html">Тема деревни в «Саттасаи»</a></strong>
             <div class="meta">
-                <a href="../s/rusanov-maksim.html">М. Н. Русанов</a> · <a href="../conferences/zograf-2006.html">Зографские чтения 2006</a>
+                <a href="../s/rusanov-maksim.html">М. А. Русанов</a> · <a href="../conferences/zograf-2006.html">Зографские чтения 2006</a>
                 · <a href="../themes/literature-and-poetry.html">Литература и поэзия</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a> · <a href="../cities/moskva.html">Москва</a>
             </div>
@@ -1114,7 +930,7 @@
         <article class="talk" id="PRES_117aeb7260">
             <strong><a href="../p/tema-utochnyaetsya.html">Тема уточняется</a></strong>
             <div class="meta">
-                <a href="../s/zagumennov-boris.html">Б. В. Загуменнов</a> · <a href="../conferences/zograf-2006.html">Зографские чтения 2006</a>
+                <a href="../s/zagumennov.html">Б. В. Загуменнов</a> · <a href="../conferences/zograf-2006.html">Зографские чтения 2006</a>
                 · <a href="../themes/unspecified.html">Разное / Не классифицировано</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a> · <a href="../cities/sankt-peterburg.html">Санкт-Петербург</a>
             </div>
@@ -1264,7 +1080,7 @@
         <article class="talk" id="PRES_7f36ed5c1e">
             <strong><a href="../p/dzhotisha-i-ayurveda-astrologicheskaya-semantika-v-klassicheskoi-indiiskoi-meditsine.html">Джьотиша и Аюрведа: астрологическая семантика в классической индийской медицине</a></strong>
             <div class="meta">
-                <a href="../s/beinoryus-audryus.html">А. Бейнорюс</a> · <a href="../conferences/zograf-2007.html">Зографские чтения 2007</a>
+                <a href="../s/beinoryus-audryus.html">Б. Аудрюс</a> · <a href="../conferences/zograf-2007.html">Зографские чтения 2007</a>
                 · <a href="../themes/religion-and-philosophy.html">Религия и философия</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a> · <a href="../cities/vilnyus.html">Вильнюс</a>
             </div>
@@ -1312,7 +1128,7 @@
         <article class="talk" id="PRES_55fff640ca">
             <strong><a href="../p/k-voprosu-o-sredstvakh-peredvizheniya-v-rigvede.html">К вопросу о средствах передвижения в Ригведе</a></strong>
             <div class="meta">
-                <a href="../s/vidunas-vitis.html">В. Видунас</a> · <a href="../conferences/zograf-2007.html">Зографские чтения 2007</a>
+                <a href="../s/vidunas-vitis.html">В. Витис</a> · <a href="../conferences/zograf-2007.html">Зографские чтения 2007</a>
                 · <a href="../themes/history-and-culture.html">История, этнография и общество</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a> · <a href="../cities/vilnyus.html">Вильнюс</a>
             </div>
@@ -1511,7 +1327,7 @@
         <article class="talk" id="PRES_a7d32d94a9">
             <strong><a href="../p/tipologiya-khramovykh-sooruzhenii-v-tekstakh-puran-i-brikhatsamkhite.html">Типология храмовых сооружений в текстах пуран и «Брихатсамхите»</a></strong>
             <div class="meta">
-                <a href="../s/yaskunas-valdas.html">В. Яскунас</a> · <a href="../conferences/zograf-2007.html">Зографские чтения 2007</a>
+                <a href="../s/yaskunas-valdas.html">Я. Валдас</a> · <a href="../conferences/zograf-2007.html">Зографские чтения 2007</a>
                 · <a href="../themes/art-and-material-culture.html">Искусство и материальная культура</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a> · <a href="../cities/vilnyus.html">Вильнюс</a>
             </div>
@@ -1522,7 +1338,7 @@
         <article class="talk" id="PRES_65a7d6e51a">
             <strong><a href="../p/filosof-nagardzhuna-personazh-prakritskogo-romana-lilavai.html">Философ Нагарджуна – персонаж пракритского романа «Лилаваи»</a></strong>
             <div class="meta">
-                <a href="../s/rusanov-maksim.html">М. Н. Русанов</a> · <a href="../conferences/zograf-2007.html">Зографские чтения 2007</a>
+                <a href="../s/rusanov-maksim.html">М. А. Русанов</a> · <a href="../conferences/zograf-2007.html">Зографские чтения 2007</a>
                 · <a href="../themes/literature-and-poetry.html">Литература и поэзия</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a> · <a href="../cities/moskva.html">Москва</a>
             </div>
@@ -1934,7 +1750,7 @@
         <article class="talk" id="PRES_59dba9b943">
             <strong><a href="../p/istoki-formuly-sat-chit-ananda-v-upanishadakh.html">Истоки формулы сат-чит-ананда в Упанишадах</a></strong>
             <div class="meta">
-                <a href="../s/predtechenskaya.html">Ю. В. Предтеченская</a> · <a href="../conferences/zograf-2008.html">Зографские чтения 2008</a>
+                <a href="../s/yu-v-predtechenskaya.html">Ю. В. Предтеченская</a> · <a href="../conferences/zograf-2008.html">Зографские чтения 2008</a>
                 · <a href="../themes/religion-and-philosophy.html">Религия и философия</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a>
             </div>
@@ -1950,7 +1766,7 @@
         <article class="talk" id="PRES_ff28a9ff47">
             <strong><a href="../p/kontsept-ishvary-v-bkhagavadgite.html">Концепт Ишвары в «Бхагавадгите»</a></strong>
             <div class="meta">
-                <a href="../s/anikeeva.html">Е. Н. Аникеева</a> · <a href="../conferences/zograf-2008.html">Зографские чтения 2008</a>
+                <a href="../s/e-n-anikeeva.html">Е. Н. Аникеева</a> · <a href="../conferences/zograf-2008.html">Зографские чтения 2008</a>
                 · <a href="../themes/religion-and-philosophy.html">Религия и философия</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a>
             </div>
@@ -2020,7 +1836,7 @@
         <article class="talk" id="PRES_cac5d44443">
             <strong><a href="../p/o-simvolike-ladi-v-rigvede.html">О символике ладьи в «Ригведе»</a></strong>
             <div class="meta">
-                <a href="../s/vidunas-vitis.html">В. Видунас</a> · <a href="../conferences/zograf-2008.html">Зографские чтения 2008</a>
+                <a href="../s/vidunas-vitis.html">В. Витис</a> · <a href="../conferences/zograf-2008.html">Зографские чтения 2008</a>
                 · <a href="../themes/religion-and-philosophy.html">Религия и философия</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a>
             </div>
@@ -2100,7 +1916,7 @@
         <article class="talk" id="PRES_c05d6f805a">
             <strong><a href="../p/tak-chto-zhe-takoe-karma.html">Так что же такое карма?</a></strong>
             <div class="meta">
-                <a href="../s/zagumennov-boris.html">Б. В. Загуменнов</a> · <a href="../conferences/zograf-2008.html">Зографские чтения 2008</a>
+                <a href="../s/zagumennov.html">Б. В. Загуменнов</a> · <a href="../conferences/zograf-2008.html">Зографские чтения 2008</a>
                 · <a href="../themes/religion-and-philosophy.html">Религия и философия</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a>
             </div>
@@ -2202,7 +2018,7 @@
         <article class="talk" id="PRES_77d4fd8170">
             <strong><a href="../p/k-interpretatsii-termina-namarupa-v-tkheravadinskoi-kommentatorskoi-literature.html">К интерпретации термина намарупа в тхеравадинской комментаторской литературе</a></strong>
             <div class="meta">
-                <a href="../s/sharygin-gleb.html">Г. С. Шарыгин</a> · <a href="../conferences/roerich-2009.html">Рериховские чтения 2009</a>
+                <a href="../s/sharygin-gleb.html">Г. В. Шарыгин</a> · <a href="../conferences/roerich-2009.html">Рериховские чтения 2009</a>
                 · <a href="../themes/religion-and-philosophy.html">Религия и философия</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a>
             </div>
@@ -2266,7 +2082,7 @@
         <article class="talk" id="PRES_df7b4cf816">
             <strong><a href="../p/nekotorye-istoriko-kulturnye-aspekty-simvoliki-natsionalnogo-flaga-nepala-v-xxi-vv.html">Некоторые историко-культурные аспекты символики национального флага Непала (V – XXI вв.)</a></strong>
             <div class="meta">
-                <a href="../s/shrestkha-krishna.html">К. П. Шрестха</a> · <a href="../conferences/roerich-2009.html">Рериховские чтения 2009</a>
+                <a href="../s/shrestkha-krishna.html">Шрестха Кришна Пракаш</a> · <a href="../conferences/roerich-2009.html">Рериховские чтения 2009</a>
                 · <a href="../themes/history-and-culture.html">История, этнография и общество</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a>
             </div>
@@ -2437,7 +2253,7 @@
         <article class="talk" id="PRES_9bda829b36">
             <strong><a href="../p/vediiskoe-samudra-k-voprosu-o-shirokikh-vodnykh-prostranstvakh-v-tekstakh-samkhit.html">Ведийское samudra-: к вопросу о широких водных пространствах в текстах самхит</a></strong>
             <div class="meta">
-                <a href="../s/vidunas-vitis.html">В. Видунас</a> · <a href="../conferences/zograf-2009.html">Зографские чтения 2009</a>
+                <a href="../s/vidunas-vitis.html">В. Витис</a> · <a href="../conferences/zograf-2009.html">Зографские чтения 2009</a>
                 · <a href="../themes/linguistics-and-philology.html">Лингвистика и филология</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a>
             </div>
@@ -2485,7 +2301,7 @@
         <article class="talk" id="PRES_9b2118961f">
             <strong><a href="../p/ikonograficheskie-tipy-bronzovykh-obrazov-nataradzhi-ikh-slozhenie-i-problemy-klassifikatsii.html">Иконографические типы бронзовых образов Натараджи: их сложение и проблемы классификации</a></strong>
             <div class="meta">
-                <a href="../s/urnova.html">И. А. Урнова</a> · <a href="../conferences/zograf-2009.html">Зографские чтения 2009</a>
+                <a href="../s/i-urnova.html">И. Урнова</a> · <a href="../conferences/zograf-2009.html">Зографские чтения 2009</a>
                 · <a href="../themes/art-and-material-culture.html">Искусство и материальная культура</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a>
             </div>
@@ -2533,7 +2349,7 @@
         <article class="talk" id="PRES_6e5ecd56b8">
             <strong><a href="../p/k-voprosu-o-klassifikatsii-khramovykh-sooruzhenii-v-vishnudkharmottara-purane.html">К вопросу о классификации храмовых сооружений в Вишнудхармоттара-пуране</a></strong>
             <div class="meta">
-                <a href="../s/yaskunas-valdas.html">В. Яскунас</a> · <a href="../conferences/zograf-2009.html">Зографские чтения 2009</a>
+                <a href="../s/yaskunas-valdas.html">Я. Валдас</a> · <a href="../conferences/zograf-2009.html">Зографские чтения 2009</a>
                 · <a href="../themes/art-and-material-culture.html">Искусство и материальная культура</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a>
             </div>
@@ -2833,7 +2649,7 @@
         <article class="talk" id="PRES_c3f9d9861b">
             <strong><a href="../p/dardy-i-strana-dardov-v-radzhatarangini-kalkhany.html">Дарды и страна дардов в «Раджатарангини» Калханы</a></strong>
             <div class="meta">
-                <a href="../s/kogan-anton.html">А. И. Коган</a> · <a href="../conferences/roerich-2010.html">Рериховские чтения 2010</a>
+                <a href="../s/kogan-anton.html">Коган Антон Ильич</a> · <a href="../conferences/roerich-2010.html">Рериховские чтения 2010</a>
                 · <a href="../themes/history-and-culture.html">История, этнография и общество</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a>
             </div>
@@ -2865,7 +2681,7 @@
         <article class="talk" id="PRES_3edd502801">
             <strong><a href="../p/k-ponimaniyu-termina-buddha-v-yuzhnobuddiiskoi-traditsii.html">К пониманию термина buddha в южнобуддийской традиции</a></strong>
             <div class="meta">
-                <a href="../s/sharygin-gleb.html">Г. С. Шарыгин</a> · <a href="../conferences/roerich-2010.html">Рериховские чтения 2010</a>
+                <a href="../s/sharygin-gleb.html">Г. В. Шарыгин</a> · <a href="../conferences/roerich-2010.html">Рериховские чтения 2010</a>
                 · <a href="../themes/religion-and-philosophy.html">Религия и философия</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a>
             </div>
@@ -3324,7 +3140,7 @@
         <article class="talk" id="PRES_78a007f5fb">
             <strong><a href="../p/o-drevneindiiskoi-praktike-obucheniya-vediiskomu-tekstu.html">О древнеиндийской практике обучения ведийскому тексту</a></strong>
             <div class="meta">
-                <a href="../s/vidunas-vitis.html">В. Видунас</a> · <a href="../conferences/zograf-2010.html">Зографские чтения 2010</a>
+                <a href="../s/vidunas-vitis.html">В. Витис</a> · <a href="../conferences/zograf-2010.html">Зографские чтения 2010</a>
                 · <a href="../themes/linguistics-and-philology.html">Лингвистика и филология</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a> · <a href="../cities/vilnyus.html">Вильнюс</a>
             </div>
@@ -3516,7 +3332,7 @@
         <article class="talk" id="PRES_09706e2e82">
             <strong><a href="../p/um-psikhika-ili-soznanie-o-perevode-buddiiskikh-terminov-chitta-i-vidzhnyana.html">Ум, психика или сознание (о переводе буддийских терминов «читта» и «виджняна»)</a></strong>
             <div class="meta">
-                <a href="../s/zagumennov-boris.html">Б. В. Загуменнов</a> · <a href="../conferences/zograf-2010.html">Зографские чтения 2010</a>
+                <a href="../s/zagumennov.html">Б. В. Загуменнов</a> · <a href="../conferences/zograf-2010.html">Зографские чтения 2010</a>
                 · <a href="../themes/religion-and-philosophy.html">Религия и философия</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a>
             </div>
@@ -3725,7 +3541,7 @@
         <article class="talk" id="PRES_e2d0ac8c94">
             <strong><a href="../p/kategorii-opisaniya-svyashchennoi-rechi-v-rigvedapratishakkhe.html">Категории описания священной речи в «Ригведапратишакхье»</a></strong>
             <div class="meta">
-                <a href="../s/vidunas-vitis.html">В. Видунас</a> · <a href="../conferences/zograf-2011.html">Зографские чтения 2011</a>
+                <a href="../s/vidunas-vitis.html">В. Витис</a> · <a href="../conferences/zograf-2011.html">Зографские чтения 2011</a>
                 · <a href="../themes/linguistics-and-philology.html">Лингвистика и филология</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a> · <a href="../cities/vilnyus.html">Вильнюс</a>
             </div>
@@ -3928,7 +3744,7 @@
         <article class="talk" id="PRES_d1ddc8c000">
             <strong><a href="../p/sleduya-vole-zvezd-indiiskaya-astrologiya-i-praktika-predskazanii-stikhiinykh-bedstvii.html">Следуя воле звезд: Индийская астрология и практика предсказаний стихийных бедствий</a></strong>
             <div class="meta">
-                <a href="../s/beinoryus-audryus.html">А. Бейнорюс</a> · <a href="../conferences/zograf-2011.html">Зографские чтения 2011</a>
+                <a href="../s/beinoryus-audryus.html">Б. Аудрюс</a> · <a href="../conferences/zograf-2011.html">Зографские чтения 2011</a>
                 · <a href="../themes/religion-and-philosophy.html">Религия и философия</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a> · <a href="../cities/vilnyus.html">Вильнюс</a>
             </div>
@@ -4206,7 +4022,7 @@
         <article class="talk" id="PRES_65f28e41f2">
             <strong><a href="../p/o-znachenii-pal-sutta-p-p-ot-supati-spat-v-meditatsii-osoznannosti-satipattkhana.html">О значении пал. sutta (p.p. от supati «спать») в медитации осознанности (сатипаттхана)</a></strong>
             <div class="meta">
-                <a href="../s/sharygin-gleb.html">Г. С. Шарыгин</a> · <a href="../conferences/roerich-2012.html">Рериховские чтения 2012</a>
+                <a href="../s/sharygin-gleb.html">Г. В. Шарыгин</a> · <a href="../conferences/roerich-2012.html">Рериховские чтения 2012</a>
                 · <a href="../themes/religion-and-philosophy.html">Религия и философия</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a>
             </div>
@@ -4329,7 +4145,7 @@
         <article class="talk" id="PRES_a5c792ee0e">
             <strong><a href="../p/sakralnaya-zashchita-prostranstva-doliny-katmandu.html">Сакральная защита пространства долины Катманду</a></strong>
             <div class="meta">
-                <a href="../s/shrestkha-krishna.html">К. П. Шрестха</a> · <a href="../conferences/roerich-2012.html">Рериховские чтения 2012</a>
+                <a href="../s/shrestkha-krishna.html">Шрестха Кришна Пракаш</a> · <a href="../conferences/roerich-2012.html">Рериховские чтения 2012</a>
                 · <a href="../themes/religion-and-philosophy.html">Религия и философия</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a>
             </div>
@@ -4655,7 +4471,7 @@
         <article class="talk" id="PRES_ca1df3941d">
             <strong><a href="../p/dkharma-i-buddologiya-aktualnye-problemy.html">Дхарма и буддология. Актуальные проблемы</a></strong>
             <div class="meta">
-                <a href="../s/zagumennov-boris.html">Б. В. Загуменнов</a> · <a href="../conferences/zograf-2012.html">Зографские чтения 2012</a>
+                <a href="../s/zagumennov.html">Б. В. Загуменнов</a> · <a href="../conferences/zograf-2012.html">Зографские чтения 2012</a>
                 · <a href="../themes/religion-and-philosophy.html">Религия и философия</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a> · <a href="../cities/sankt-peterburg.html">Санкт-Петербург</a>
             </div>
@@ -4719,7 +4535,7 @@
         <article class="talk" id="PRES_dbced805b6">
             <strong><a href="../p/zametki-o-strukture-raspolozheniya-skulpturnykh-izobrazhenii-v-khramovykh-kompleksakh-soglasno-a.html">Заметки о структуре расположения скульптурных изображений в храмовых комплексах согласно «Агни-пуране»</a></strong>
             <div class="meta">
-                <a href="../s/yaskunas-valdas.html">В. Яскунас</a> · <a href="../conferences/zograf-2012.html">Зографские чтения 2012</a>
+                <a href="../s/yaskunas-valdas.html">Я. Валдас</a> · <a href="../conferences/zograf-2012.html">Зографские чтения 2012</a>
                 · <a href="../themes/art-and-material-culture.html">Искусство и материальная культура</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a> · <a href="../cities/vilnyus.html">Вильнюс</a>
             </div>
@@ -4799,7 +4615,7 @@
         <article class="talk" id="PRES_fe7edab64d">
             <strong><a href="../p/ob-upotreblenii-slova-tman-v-rigvede.html">Об употреблении слова ātman в «Ригведе»</a></strong>
             <div class="meta">
-                <a href="../s/vidunas-vitis.html">В. Видунас</a> · <a href="../conferences/zograf-2012.html">Зографские чтения 2012</a>
+                <a href="../s/vidunas-vitis.html">В. Витис</a> · <a href="../conferences/zograf-2012.html">Зографские чтения 2012</a>
                 · <a href="../themes/religion-and-philosophy.html">Религия и философия</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a> · <a href="../cities/vilnyus.html">Вильнюс</a>
             </div>
@@ -5408,7 +5224,7 @@
         <article class="talk" id="PRES_7905a089ac">
             <strong><a href="../p/istoriya-agadadatty-v-romane-sangkhadasy-stranstviya-vasudevy.html">История Агададатты в романе Сангхадасы «Странствия Васудевы»</a></strong>
             <div class="meta">
-                <a href="../s/rusanov-maksim.html">М. Н. Русанов</a> · <a href="../conferences/zograf-2013.html">Зографские чтения 2013</a>
+                <a href="../s/rusanov-maksim.html">М. А. Русанов</a> · <a href="../conferences/zograf-2013.html">Зографские чтения 2013</a>
                 · <a href="../themes/literature-and-poetry.html">Литература и поэзия</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a> · <a href="../cities/moskva.html">Москва</a>
             </div>
@@ -5435,7 +5251,7 @@
         <article class="talk" id="PRES_f978f939da">
             <strong><a href="../p/o-zvukovom-sostave-vediiskogo-teksta.html">О звуковом составе ведийского текста</a></strong>
             <div class="meta">
-                <a href="../s/vidunas-vitis.html">В. Видунас</a> · <a href="../conferences/zograf-2013.html">Зографские чтения 2013</a>
+                <a href="../s/vidunas-vitis.html">В. Витис</a> · <a href="../conferences/zograf-2013.html">Зографские чтения 2013</a>
                 · <a href="../themes/linguistics-and-philology.html">Лингвистика и филология</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a> · <a href="../cities/vilnyus.html">Вильнюс</a>
             </div>
@@ -5985,7 +5801,7 @@
         <article class="talk" id="PRES_f0c510e9df">
             <strong><a href="../p/k-voprosu-o-pismennoi-fiksatsii-rigvedy.html">К вопросу о письменной фиксации Ригведы</a></strong>
             <div class="meta">
-                <a href="../s/vidunas-vitis.html">В. Видунас</a> · <a href="../conferences/zograf-2014.html">Зографские чтения 2014</a>
+                <a href="../s/vidunas-vitis.html">В. Витис</a> · <a href="../conferences/zograf-2014.html">Зографские чтения 2014</a>
                 · <a href="../themes/linguistics-and-philology.html">Лингвистика и филология</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a> · <a href="../cities/vilnyus.html">Вильнюс</a>
             </div>
@@ -6033,7 +5849,7 @@
         <article class="talk" id="PRES_1ec138c017">
             <strong><a href="../p/kontseptsiya-avatar-vishnu-v-poeme-magkhi-shishupalavadkha.html">Концепция аватар Вишну в поэме Магхи «Шишупалавадха»</a></strong>
             <div class="meta">
-                <a href="../s/rusanov-maksim.html">М. Н. Русанов</a> · <a href="../conferences/zograf-2014.html">Зографские чтения 2014</a>
+                <a href="../s/rusanov-maksim.html">М. А. Русанов</a> · <a href="../conferences/zograf-2014.html">Зографские чтения 2014</a>
                 · <a href="../themes/literature-and-poetry.html">Литература и поэзия</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a> · <a href="../cities/moskva.html">Москва</a>
             </div>
@@ -6353,7 +6169,7 @@
         <article class="talk" id="PRES_8a501640a4">
             <strong><a href="../p/nagi-kak-personazhi-nepalskikh-legend.html">Наги как персонажи непальских легенд</a></strong>
             <div class="meta">
-                <a href="../s/shrestkha-krishna.html">К. П. Шрестха</a> · <a href="../conferences/roerich-2015.html">Рериховские чтения 2015</a>
+                <a href="../s/shrestkha-krishna.html">Шрестха Кришна Пракаш</a> · <a href="../conferences/roerich-2015.html">Рериховские чтения 2015</a>
                 · <a href="../themes/literature-and-poetry.html">Литература и поэзия</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a>
             </div>
@@ -6855,7 +6671,7 @@
         <article class="talk" id="PRES_3df80915c1">
             <strong><a href="../p/lunnye-sozvezdiya-nak-atras-i-traditsiya-imyanarecheniya-v-drevnei-indii-h-urba-ska-concept-of-m.html">Лунные созвездия (nakṣatras) и традиция имянаречения в Древней Индии H. Urbańska. Concept of maya in Darśana Mala of Narayana Guru</a></strong>
             <div class="meta">
-                <a href="../s/beinoryus-audryus.html">А. Бейнорюс</a> · <a href="../conferences/zograf-2015.html">Зографские чтения 2015</a>
+                <a href="../s/beinoryus-audryus.html">Б. Аудрюс</a> · <a href="../conferences/zograf-2015.html">Зографские чтения 2015</a>
                 · <a href="../themes/religion-and-philosophy.html">Религия и философия</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a>
             </div>
@@ -6887,7 +6703,7 @@
         <article class="talk" id="PRES_8ac58078e5">
             <strong><a href="../p/metafora-i-polisemiya-v-interpretatsii-buddiiskikh-tantr.html">Метафора и полисемия в интерпретации буддийских тантр</a></strong>
             <div class="meta">
-                <a href="../s/bushuev.html">Е. А. Бушуев</a> · <a href="../conferences/zograf-2015.html">Зографские чтения 2015</a>
+                <a href="../s/a-bushuev.html">Е. А. Бушуев</a> · <a href="../conferences/zograf-2015.html">Зографские чтения 2015</a>
                 · <a href="../themes/religion-and-philosophy.html">Религия и философия</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a>
             </div>
@@ -7090,7 +6906,7 @@
         <article class="talk" id="PRES_1f1bea1183">
             <strong><a href="../p/rasskazy-o-masterstve-v-drevneindiiskoi-gorodskoi-literature.html">Рассказы о мастерстве в древнеиндийской городской литературе</a></strong>
             <div class="meta">
-                <a href="../s/rusanov-maksim.html">М. Н. Русанов</a> · <a href="../conferences/zograf-2015.html">Зографские чтения 2015</a>
+                <a href="../s/rusanov-maksim.html">М. А. Русанов</a> · <a href="../conferences/zograf-2015.html">Зографские чтения 2015</a>
                 · <a href="../themes/literature-and-poetry.html">Литература и поэзия</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a>
             </div>
@@ -7101,7 +6917,7 @@
         <article class="talk" id="PRES_0cfab3c29b">
             <strong><a href="../p/rasshirenie-i-rasprostranenie-o-nekotorykh-osobennostyakh-upotrebleniya-glagolnogo-kornya-b-h-v.html">Расширение и распространение: о некоторых особенностях употребления глагольного корня bṛh в «Ригведе»</a></strong>
             <div class="meta">
-                <a href="../s/vidunas-vitis.html">В. Видунас</a> · <a href="../conferences/zograf-2015.html">Зографские чтения 2015</a>
+                <a href="../s/vidunas-vitis.html">В. Витис</a> · <a href="../conferences/zograf-2015.html">Зографские чтения 2015</a>
                 · <a href="../themes/linguistics-and-philology.html">Лингвистика и филология</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a>
             </div>
@@ -7567,7 +7383,7 @@
         <article class="talk" id="PRES_e7b0ae48ad">
             <strong><a href="../p/pushkin-na-yazyke-nepali.html">Пушкин на языке непали</a></strong>
             <div class="meta">
-                <a href="../s/shrestkha-krishna.html">К. П. Шрестха</a> · <a href="../conferences/roerich-2016.html">Рериховские чтения 2016</a>
+                <a href="../s/shrestkha-krishna.html">Шрестха Кришна Пракаш</a> · <a href="../conferences/roerich-2016.html">Рериховские чтения 2016</a>
                 · <a href="../themes/literature-and-poetry.html">Литература и поэзия</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a>
             </div>
@@ -7818,7 +7634,7 @@
         <article class="talk" id="PRES_ba7098c9bc">
             <strong><a href="../p/k-interpretatsii-vediiskogo-ponyatiya-kra-tu.html">К интерпретации ведийского понятия krátu-</a></strong>
             <div class="meta">
-                <a href="../s/vidunas-vitis.html">В. Видунас</a> · <a href="../conferences/zograf-2016.html">Зографские чтения 2016</a>
+                <a href="../s/vidunas-vitis.html">В. Витис</a> · <a href="../conferences/zograf-2016.html">Зографские чтения 2016</a>
                 · <a href="../themes/linguistics-and-philology.html">Лингвистика и филология</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a>
             </div>
@@ -7962,7 +7778,7 @@
         <article class="talk" id="PRES_11bae7431c">
             <strong><a href="../p/obraz-rasputnitsy-v-prakritskoi-lirike.html">Образ «распутницы» в пракритской лирике</a></strong>
             <div class="meta">
-                <a href="../s/rusanov-maksim.html">М. Н. Русанов</a> · <a href="../conferences/zograf-2016.html">Зографские чтения 2016</a>
+                <a href="../s/rusanov-maksim.html">М. А. Русанов</a> · <a href="../conferences/zograf-2016.html">Зографские чтения 2016</a>
                 · <a href="../themes/literature-and-poetry.html">Литература и поэзия</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a>
             </div>
@@ -8197,7 +8013,7 @@
         <article class="talk" id="PRES_149d1014af">
             <strong><a href="../p/vopros-o-dardskom-elemente-v-dotibetskom-naselenii-ladakkha-i-baltistana-kak-lingvisticheskaya-p.html">Вопрос о дардском элементе в дотибетском населении Ладакха и Балтистана как лингвистическая проблема</a></strong>
             <div class="meta">
-                <a href="../s/kogan-anton.html">А. И. Коган</a> · <a href="../conferences/roerich-2017.html">Рериховские чтения 2017</a>
+                <a href="../s/kogan-anton.html">Коган Антон Ильич</a> · <a href="../conferences/roerich-2017.html">Рериховские чтения 2017</a>
                 · <a href="../themes/linguistics-and-philology.html">Лингвистика и филология</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a>
             </div>
@@ -8358,7 +8174,7 @@
         <article class="talk" id="PRES_75cecc8a6d">
             <strong><a href="../p/nekotorye-tipichnye-momenty-poyavleniya-sonma-bozhestv-v-nepale.html">Некоторые типичные моменты появления сонма божеств в Непале</a></strong>
             <div class="meta">
-                <a href="../s/shrestkha-krishna.html">К. П. Шрестха</a> · <a href="../conferences/roerich-2017.html">Рериховские чтения 2017</a>
+                <a href="../s/shrestkha-krishna.html">Шрестха Кришна Пракаш</a> · <a href="../conferences/roerich-2017.html">Рериховские чтения 2017</a>
                 · <a href="../themes/religion-and-philosophy.html">Религия и философия</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a>
             </div>
@@ -8422,7 +8238,7 @@
         <article class="talk" id="PRES_7d0bba92cc">
             <strong><a href="../p/perevody-stikhov-na-yazyk-nepali.html">Переводы стихов на язык непали</a></strong>
             <div class="meta">
-                <a href="../s/shrestkha-krishna.html">К. П. Шрестха</a> · <a href="../conferences/roerich-2017.html">Рериховские чтения 2017</a>
+                <a href="../s/shrestkha-krishna.html">Шрестха Кришна Пракаш</a> · <a href="../conferences/roerich-2017.html">Рериховские чтения 2017</a>
                 · <a href="../themes/literature-and-poetry.html">Литература и поэзия</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a>
             </div>
@@ -8801,7 +8617,7 @@
         <article class="talk" id="PRES_b153547ebf">
             <strong><a href="../p/buddiiskaya-fenomenologiya-bessamostnosti-opyt-analiza-kontseptov-ya-i-prosto-ya-chzhe-tsonkapy.html">Буддийская феноменология бессамостности (Опыт анализа концептов Я и «просто-я» Чже Цонкапы)</a></strong>
             <div class="meta">
-                <a href="../s/kozhevnikova-margarita.html">М. Н. Кожевникова</a> · <a href="../conferences/zograf-2017.html">Зографские чтения 2017</a>
+                <a href="../s/kozhevnikova-margarita.html">Kozhevnikova Margarita Nikolaevna</a> · <a href="../conferences/zograf-2017.html">Зографские чтения 2017</a>
                 · <a href="../themes/religion-and-philosophy.html">Религия и философия</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a>
             </div>
@@ -8881,7 +8697,7 @@
         <article class="talk" id="PRES_a0726a7b77">
             <strong><a href="../p/istoriya-kapilavastu-v-poeme-ashvagkhoshi-saundarananda.html">История Капилавасту в поэме Ашвагхоши «Саундарананда»</a></strong>
             <div class="meta">
-                <a href="../s/rusanov-maksim.html">М. Н. Русанов</a> · <a href="../conferences/zograf-2017.html">Зографские чтения 2017</a>
+                <a href="../s/rusanov-maksim.html">М. А. Русанов</a> · <a href="../conferences/zograf-2017.html">Зографские чтения 2017</a>
                 · <a href="../themes/literature-and-poetry.html">Литература и поэзия</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a>
             </div>
@@ -8897,7 +8713,7 @@
         <article class="talk" id="PRES_79b076d481">
             <strong><a href="../p/k-voprosu-o-leksike-individualnogo-subektivnogo-nachala-v-vediiskom-yazyke.html">К вопросу о лексике индивидуального субъективного начала в ведийском языке</a></strong>
             <div class="meta">
-                <a href="../s/vidunas-vitis.html">В. Видунас</a> · <a href="../conferences/zograf-2017.html">Зографские чтения 2017</a>
+                <a href="../s/vidunas-vitis.html">В. Витис</a> · <a href="../conferences/zograf-2017.html">Зографские чтения 2017</a>
                 · <a href="../themes/linguistics-and-philology.html">Лингвистика и филология</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a>
             </div>
@@ -9570,7 +9386,7 @@
         <article class="talk" id="PRES_edcf9f8de0">
             <strong><a href="../p/nekotorye-aspekty-kulta-zhivoi-bogini-kumari-v-nepale.html">Некоторые аспекты культа живой богини Кумари в Непале</a></strong>
             <div class="meta">
-                <a href="../s/shrestkha-krishna.html">К. П. Шрестха</a> · <a href="../conferences/roerich-2018.html">Рериховские чтения 2018</a>
+                <a href="../s/shrestkha-krishna.html">Шрестха Кришна Пракаш</a> · <a href="../conferences/roerich-2018.html">Рериховские чтения 2018</a>
                 · <a href="../themes/religion-and-philosophy.html">Религия и философия</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a>
             </div>
@@ -9602,7 +9418,7 @@
         <article class="talk" id="PRES_8ccd58e4ca">
             <strong><a href="../p/netibetskaya-leksika-v-tibetskikh-dialektakh-baltistana-i-kargila-popytka-etimologicheskoi-klass.html">Нетибетская лексика в тибетских диалектах Балтистана и Каргила: попытка этимологической классификации</a></strong>
             <div class="meta">
-                <a href="../s/kogan-anton.html">А. И. Коган</a> · <a href="../conferences/roerich-2018.html">Рериховские чтения 2018</a>
+                <a href="../s/kogan-anton.html">Коган Антон Ильич</a> · <a href="../conferences/roerich-2018.html">Рериховские чтения 2018</a>
                 · <a href="../themes/linguistics-and-philology.html">Лингвистика и филология</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a>
             </div>
@@ -10141,7 +9957,7 @@
         <article class="talk" id="PRES_c78df41b2d">
             <strong><a href="../p/o-nazvaniyakh-pchely-v-vediiskom-yazyke.html">О названиях пчелы в ведийском языке</a></strong>
             <div class="meta">
-                <a href="../s/vidunas-vitis.html">В. Видунас</a> · <a href="../conferences/zograf-2018.html">Зографские чтения 2018</a>
+                <a href="../s/vidunas-vitis.html">В. Витис</a> · <a href="../conferences/zograf-2018.html">Зографские чтения 2018</a>
                 · <a href="../themes/linguistics-and-philology.html">Лингвистика и филология</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a> · <a href="../cities/vilnyus.html">Вильнюс</a>
             </div>
@@ -10173,7 +9989,7 @@
         <article class="talk" id="PRES_1bd2292421">
             <strong><a href="../p/obuchenie-bodkhisattvy-v-lalitavistare.html">Обучение Бодхисаттвы в «Лалитавистаре»</a></strong>
             <div class="meta">
-                <a href="../s/rusanov-maksim.html">М. Н. Русанов</a> · <a href="../conferences/zograf-2018.html">Зографские чтения 2018</a>
+                <a href="../s/rusanov-maksim.html">М. А. Русанов</a> · <a href="../conferences/zograf-2018.html">Зографские чтения 2018</a>
                 · <a href="../themes/religion-and-philosophy.html">Религия и философия</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a> · <a href="../cities/moskva.html">Москва</a>
             </div>
@@ -10697,7 +10513,7 @@
         <article class="talk" id="PRES_1343fa2056">
             <strong><a href="../p/rol-predstavitelya-dinastii-tkhakuri-tkhakudzhudzhu-v-ritualnoi-peredache-vlasti-v-nepale.html">Роль представителя династии Тхакури (Тхакуджуджу) в ритуальной передаче власти в Непале</a></strong>
             <div class="meta">
-                <a href="../s/shrestkha-krishna.html">К. П. Шрестха</a> · <a href="../conferences/roerich-2019.html">Рериховские чтения 2019</a>
+                <a href="../s/shrestkha-krishna.html">Шрестха Кришна Пракаш</a> · <a href="../conferences/roerich-2019.html">Рериховские чтения 2019</a>
                 · <a href="../themes/history-and-culture.html">История, этнография и общество</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a>
             </div>
@@ -10959,7 +10775,7 @@
         <article class="talk" id="PRES_7d5c21c3e8">
             <strong><a href="../p/bogi-iz-razryada-sinikh-v-predanii-o-darenii-chashi-v-lalitavistare.html">Боги «из разряда синих» в предании о дарении чаши в «Лалитавистаре»</a></strong>
             <div class="meta">
-                <a href="../s/rusanov-maksim.html">М. Н. Русанов</a> · <a href="../conferences/zograf-2019.html">Зографские чтения 2019</a>
+                <a href="../s/rusanov-maksim.html">М. А. Русанов</a> · <a href="../conferences/zograf-2019.html">Зографские чтения 2019</a>
                 · <a href="../themes/religion-and-philosophy.html">Религия и философия</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a> · <a href="../cities/moskva.html">Москва</a>
             </div>
@@ -11184,7 +11000,7 @@
         <article class="talk" id="PRES_b663d501fd">
             <strong><a href="../p/ponyatie-manas-v-rigvede.html">Понятие manas в Ригведе</a></strong>
             <div class="meta">
-                <a href="../s/vidunas-vitis.html">В. Видунас</a> · <a href="../conferences/zograf-2019.html">Зографские чтения 2019</a>
+                <a href="../s/vidunas-vitis.html">В. Витис</a> · <a href="../conferences/zograf-2019.html">Зографские чтения 2019</a>
                 · <a href="../themes/religion-and-philosophy.html">Религия и философия</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a> · <a href="../cities/vilnyus.html">Вильнюс</a>
             </div>
@@ -11430,7 +11246,7 @@
         <article class="talk" id="PRES_52c5571365">
             <strong><a href="../p/sposoby-sokrytiya-mantr-v-tantricheskikh-tekstakh.html">Способы сокрытия мантр в тантрических текстах</a></strong>
             <div class="meta">
-                <a href="../s/kavalevskaya-anna.html">А. П. Ковалевская</a> · <a href="../conferences/zograf-2019.html">Зографские чтения 2019</a>
+                <a href="../s/kavalevskaya-anna.html">А. П. Кавалевская</a> · <a href="../conferences/zograf-2019.html">Зографские чтения 2019</a>
                 · <a href="../themes/religion-and-philosophy.html">Религия и философия</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a>
             </div>
@@ -11650,7 +11466,7 @@
         <article class="talk" id="PRES_54c018c9f5">
             <strong><a href="../p/nekotorye-osobennosti-prazdnika-semi-nevarskikh-selenii-yugo-zapadnoi-chasti-doliny-katmandu.html">Некоторые особенности праздника семи неварских селений юго-западной части Долины Катманду</a></strong>
             <div class="meta">
-                <a href="../s/shrestkha-krishna.html">К. П. Шрестха</a> · <a href="../conferences/roerich-2020.html">Рериховские чтения 2020</a>
+                <a href="../s/shrestkha-krishna.html">Шрестха Кришна Пракаш</a> · <a href="../conferences/roerich-2020.html">Рериховские чтения 2020</a>
                 · <a href="../themes/history-and-culture.html">История, этнография и общество</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a>
             </div>
@@ -11890,7 +11706,7 @@
         <article class="talk" id="PRES_d8833f6520">
             <strong><a href="../p/work-of-pata-jali-on-yoga-philosophy-and-sanskrit-vy-kara-a.html">Work of Patañjali on Yoga Philosophy and Sanskrit Vyākaraṇa</a></strong><span class="badge badge-video">Видео</span>
             <div class="meta">
-                <a href="../s/vishnu-shukla.html">V. Shukla</a> · <a href="../conferences/zograf-2020.html">Зографские чтения 2020</a>
+                <a href="../s/vishnu-shukla.html">В. Шукла</a> · <a href="../conferences/zograf-2020.html">Зографские чтения 2020</a>
                 · <a href="../themes/religion-and-philosophy.html">Религия и философия</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a> · <a href="../cities/sankt-peterburg.html">Санкт-Петербург</a>
             </div>
@@ -12402,7 +12218,7 @@
         <article class="talk" id="PRES_936504e955">
             <strong><a href="../p/traditsii-i-ritualy-pochitaniya-manuskriptov-v-pisaniyakh-shaiva.html">Традиции и ритуалы почитания манускриптов в писаниях шайва</a></strong><span class="badge badge-video">Видео</span>
             <div class="meta">
-                <a href="../s/kavalevskaya-anna.html">А. П. Ковалевская</a> · <a href="../conferences/zograf-2020.html">Зографские чтения 2020</a>
+                <a href="../s/kavalevskaya-anna.html">А. П. Кавалевская</a> · <a href="../conferences/zograf-2020.html">Зографские чтения 2020</a>
                 · <a href="../themes/religion-and-philosophy.html">Религия и философия</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a>
             </div>
@@ -13453,7 +13269,7 @@
         <article class="talk" id="PRES_2b0af07002">
             <strong><a href="../p/problemy-datirovki-nandikeshvarakashiki.html">Проблемы датировки «Нандикешваракашики»</a></strong>
             <div class="meta">
-                <a href="../s/kavalevskaya-anna.html">А. П. Ковалевская</a> · <a href="../conferences/zograf-2021.html">Зографские чтения 2021</a>
+                <a href="../s/kavalevskaya-anna.html">А. П. Кавалевская</a> · <a href="../conferences/zograf-2021.html">Зографские чтения 2021</a>
                 · <a href="../themes/literature-and-poetry.html">Литература и поэзия</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a>
             </div>
@@ -13709,7 +13525,7 @@
         <article class="talk" id="PRES_6639f5e148">
             <strong><a href="../p/k-rekonstruktsii-yazykovykh-kontaktov-v-oblasti-shangshung-v-dotibetskuyu-epokhu.html">К реконструкции языковых контактов в области Шангшунг в дотибетскую эпоху</a></strong>
             <div class="meta">
-                <a href="../s/kogan-anton.html">А. И. Коган</a> · <a href="../conferences/roerich-2022.html">Рериховские чтения 2022</a>
+                <a href="../s/kogan-anton.html">Коган Антон Ильич</a> · <a href="../conferences/roerich-2022.html">Рериховские чтения 2022</a>
                 · <a href="../themes/linguistics-and-philology.html">Лингвистика и филология</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a>
             </div>
@@ -14766,7 +14582,7 @@
         <article class="talk" id="PRES_0bdad1d393">
             <strong><a href="../p/yuga-purana-kak-istoricheskii-istochnik.html">«Юга-пурана» как исторический источник</a></strong><span class="badge badge-online">Онлайн</span>
             <div class="meta">
-                <a href="../s/denisenko.html">В. Л. Денисенко</a> · <a href="../conferences/zograf-2023.html">Зографские чтения 2023</a>
+                <a href="../s/denisenko-valeriya.html">В. Л. Денисенко</a> · <a href="../conferences/zograf-2023.html">Зографские чтения 2023</a>
                 · <a href="../themes/history-and-culture.html">История, этнография и общество</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a> · <a href="../cities/novosibirsk.html">Новосибирск</a>
             </div>
@@ -15348,7 +15164,7 @@
         <article class="talk" id="PRES_28cd0cf2d2">
             <strong><a href="../p/ironiya-v-pese-vatsaradzhi-kiratardzhuniya-xii-v.html">Ирония в пьесе Ватсараджи «Киратарджуния» (XII в.)</a></strong>
             <div class="meta">
-                <a href="../s/minaeva-mariya.html">М. Д. Минаева</a> · <a href="../conferences/roerich-2024.html">Рериховские чтения 2024</a>
+                <a href="../s/minaeva-margarita.html">М. Д. Минаева</a> · <a href="../conferences/roerich-2024.html">Рериховские чтения 2024</a>
                 · <a href="../themes/literature-and-poetry.html">Литература и поэзия</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a>
             </div>
@@ -15359,7 +15175,7 @@
         <article class="talk" id="PRES_a67d45cc5a">
             <strong><a href="../p/k-identifikatsii-tantricheskikh-izobrazhenii-yamantaki-v-monastyre-yunan-sy-provintsii-shansi.html">К идентификации тантрических изображений Ямантаки в монастыре Юнъань-сы 永安寺 провинции Шаньси 山西省</a></strong><span class="badge badge-online">Онлайн</span>
             <div class="meta">
-                <a href="../s/bryleva-natalya.html">Н. А. Брылёва</a>; <a href="../s/osokin.html">А. В. Осокин</a> · <a href="../conferences/roerich-2024.html">Рериховские чтения 2024</a>
+                <a href="../s/bryleva-natalya.html">Н. А. Брылёва</a>; <a href="../s/a-v-osokin.html">А. В. Осокин</a> · <a href="../conferences/roerich-2024.html">Рериховские чтения 2024</a>
                 · <a href="../themes/art-and-material-culture.html">Искусство и материальная культура</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a>
             </div>
@@ -15375,7 +15191,7 @@
         <article class="talk" id="PRES_d00e030c23">
             <strong><a href="../p/kushanskaya-etimologiya-pozdnie-baktro-skifskie-tsarstva-i-interesnye-elementy-indo-parfyanskoi.html">Кушанская этимология, поздние бактро-скифские царства и интересные элементы индо-парфянской нумизматики</a></strong>
             <div class="meta">
-                <a href="../s/solka.html">А. Солька</a> · <a href="../conferences/roerich-2024.html">Рериховские чтения 2024</a>
+                <a href="../s/a-solka.html">А. Солька</a> · <a href="../conferences/roerich-2024.html">Рериховские чтения 2024</a>
                 · <a href="../themes/history-and-culture.html">История, этнография и общество</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a>
             </div>
@@ -15930,7 +15746,7 @@
         <article class="talk" id="PRES_33433905b0">
             <strong><a href="../p/obrazy-tigra-i-ryby-v-bengalskoi-frazeologii.html">Образы тигра и рыбы в бенгальской фразеологии</a></strong>
             <div class="meta">
-                <a href="../s/kalina.html">А. Э. Калина</a> · <a href="../conferences/zograf-2024.html">Зографские чтения 2024</a>
+                <a href="../s/kalina-a-e.html">А. Э. Калина</a> · <a href="../conferences/zograf-2024.html">Зографские чтения 2024</a>
                 · <a href="../themes/linguistics-and-philology.html">Лингвистика и филология</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a> · <a href="../cities/moskva.html">Москва</a>
             </div>
@@ -15962,7 +15778,7 @@
         <article class="talk" id="PRES_2a660819f9">
             <strong><a href="../p/ontologiya-i-soteriologiya-ananda-sutr-p-r-sarkara.html">Онтология и сотериология «Ананда-сутр» П.Р. Саркара</a></strong>
             <div class="meta">
-                <a href="../s/stepin.html">А. А. Степин</a> · <a href="../conferences/zograf-2024.html">Зографские чтения 2024</a>
+                <a href="../s/stepin-a-a.html">А. А. Степин</a> · <a href="../conferences/zograf-2024.html">Зографские чтения 2024</a>
                 · <a href="../themes/religion-and-philosophy.html">Религия и философия</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a> · <a href="../cities/sankt-peterburg.html">Санкт-Петербург</a>
             </div>
@@ -16053,7 +15869,7 @@
         <article class="talk" id="PRES_c8253960c0">
             <strong><a href="../p/problema-soznaniya-v-filosofii-advaita-vedanty-sureshvary.html">Проблема сознания в философии адвайта-веданты Сурешвары.</a></strong><span class="badge badge-online">Онлайн</span>
             <div class="meta">
-                <a href="../s/kravtsova.html">Е. Р. Кравцова</a> · <a href="../conferences/zograf-2024.html">Зографские чтения 2024</a>
+                <a href="../s/kravtsova-e-r.html">Е. Р. Кравцова</a> · <a href="../conferences/zograf-2024.html">Зографские чтения 2024</a>
                 · <a href="../themes/religion-and-philosophy.html">Религия и философия</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a> · <a href="../cities/moskva.html">Москва</a>
             </div>
@@ -16384,7 +16200,7 @@
         <article class="talk" id="PRES_5c44ffa32f">
             <strong><a href="../p/istoricheskie-i-istoriograficheskie-osobennosti-mongolskoi-letopisi-nachala-xviii-v-gombodzhab-t.html">Исторические и историографические особенности монгольской летописи начала XVIII в.: Гомбоджаб. «Течение Ганга»</a></strong>
             <div class="meta">
-                <a href="../s/tsendina-anna.html">А. Д. Цендина</a>; <a href="../s/ovchinnikova.html">М. А. Овчинникова</a> · <a href="../conferences/roerich-2025.html">Рериховские чтения 2025</a>
+                <a href="../s/tsendina-anna.html">А. Д. Цендина</a>; <a href="../s/m-a-ovchinnikova.html">М. А. Овчинникова</a> · <a href="../conferences/roerich-2025.html">Рериховские чтения 2025</a>
                 · <a href="../themes/history-and-culture.html">История, этнография и общество</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a> · <a href="../cities/moskva.html">Москва</a>
             </div>
@@ -16555,7 +16371,7 @@
         <article class="talk" id="PRES_241822b4c1">
             <strong><a href="../p/ochelovechivanie-bozhestv-v-pese-vatsaradzhi-samudramatkhana-xii-vv.html">Очеловечивание божеств в пьесе Ватсараджи «Самудраматхана» (XII вв.)</a></strong>
             <div class="meta">
-                <a href="../s/minaeva-mariya.html">М. Д. Минаева</a> · <a href="../conferences/roerich-2025.html">Рериховские чтения 2025</a>
+                <a href="../s/minaeva-margarita.html">М. Д. Минаева</a> · <a href="../conferences/roerich-2025.html">Рериховские чтения 2025</a>
                 · <a href="../themes/literature-and-poetry.html">Литература и поэзия</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a> · <a href="../cities/moskva.html">Москва</a>
             </div>
@@ -17703,7 +17519,7 @@
         <article class="talk" id="PRES_422bda6a2b">
             <strong><a href="../p/vostokoved-pavel-yakovlevich-petrov-1814-1875-ego-biblioteka-i-arkhiv.html">Востоковед Павел Яковлевич Петров (1814–1875), его библиотека и архив</a></strong>
             <div class="meta">
-                <a href="../s/motyleva-vera.html">В. Л. Мотылёва</a>; <a href="../s/sedukova.html">Н. А. Седукова</a> · <a href="../conferences/zograf-2026.html">Зографские чтения 2026</a>
+                <a href="../s/motyleva-vera.html">В. Л. Мотылёва</a>; <a href="../s/sedukova-nadezhda.html">Н. А. Седукова</a> · <a href="../conferences/zograf-2026.html">Зографские чтения 2026</a>
                 · <a href="../themes/history-and-culture.html">История, этнография и общество</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a> · <a href="../cities/moskva.html">Москва</a>
             </div>
@@ -18242,7 +18058,7 @@
         <article class="talk" id="PRES_6e8842a256">
             <strong><a href="../p/traditsiya-tolkovaniya-upanishad-kontekst-filosofskoe-znachenie-i-interpretatsiya-klyuchevoi-fra.html">Традиция толкования упанишад: контекст, философское значение и интерпретация ключевой фразы «tat tvam asi» («Ты есть то»)</a></strong>
             <div class="meta">
-                <a href="../s/pushkareva.html">Ю. Г. Пушкарева</a> · <a href="../conferences/zograf-2026.html">Зографские чтения 2026</a>
+                <a href="../s/pushkareva-yuliya.html">Ю. Г. Пушкарева</a> · <a href="../conferences/zograf-2026.html">Зографские чтения 2026</a>
                 · <a href="../themes/religion-and-philosophy.html">Религия и философия</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a> · <a href="../cities/moskva.html">Москва</a>
             </div>
@@ -18274,7 +18090,7 @@
         <article class="talk" id="PRES_23a87e494f">
             <strong><a href="../p/fars-shankkhadkhary-latakamelaka-i-ee-rukopis-iz-biblioteki-im-keshara-katmandu.html">Фарс Шанкхадхары «Латакамелака» и ее рукопись из Библиотеки им. Кешара (Катманду)</a></strong>
             <div class="meta">
-                <a href="../s/dmitry-komissarov.html">Д. А. Комиссаров</a>; <a href="../s/minaeva-mariya.html">М. Д. Минаева</a> · <a href="../conferences/zograf-2026.html">Зографские чтения 2026</a>
+                <a href="../s/dmitry-komissarov.html">Д. А. Комиссаров</a>; <a href="../s/minaeva-margarita.html">М. Д. Минаева</a> · <a href="../conferences/zograf-2026.html">Зографские чтения 2026</a>
                 · <a href="../themes/literature-and-poetry.html">Литература и поэзия</a>
                 · <a href="../gumilyov/level-1.html">L1 Микро</a> · <a href="../cities/moskva.html">Москва</a>
             </div>

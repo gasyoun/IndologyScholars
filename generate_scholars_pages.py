@@ -4,6 +4,7 @@ import json
 from collections import defaultdict
 from pathlib import Path
 from urllib.parse import quote
+import jinja2
 
 from classification_overrides import CLASSIFICATION_OVERRIDES, MESO_LABELS
 from publication_helpers import (
@@ -26,6 +27,8 @@ from publication_helpers import (
     clean_person_urls,
     is_public_authority_record,
 )
+
+_JINJA_ENV = jinja2.Environment(loader=jinja2.FileSystemLoader("templates"))
 
 
 OUTPUT_DIR = Path("s")
@@ -668,19 +671,22 @@ def render_profile(scholar, related, authority, meso_by_presentation, meso_items
     profile_label, theme_code, profile_note = scholar_profile_meta(scholar)
     cities = unique_cities(scholar)
     affiliations = unique_affiliations(scholar)
+    
     affiliation_notes = "".join(
         f'<p class="meta">{esc(note)}</p>' for note in scholar.get("affiliation_notes") or []
     )
+    
     life_ru = format_lifespan(scholar, "ru").strip()
     life_en = format_lifespan(scholar, "en").strip()
     ru_heading = f'{esc(name_ru)} <span class="life">{esc(life_ru)}</span>' if life_ru else esc(name_ru)
     en_heading = " ".join(part for part in [name_en, life_en] if part)
     profile_note_html = f'<p class="profile-note">{esc(profile_note)}</p>' if profile_note else ""
+    
     series_html = (
         series_participation_line(scholar, name_ru, "Зографские чтения", "zograf_talks", "zograf_first", "zograf_last")
         + series_participation_line(scholar, name_ru, "Рериховские чтения", "roerich_talks", "roerich_first", "roerich_last")
     )
-    generation_html = ""
+    
     if scholar.get("generation_code"):
         generation_html = (
             f'<article class="card"><strong>Поколение</strong>'
@@ -716,11 +722,10 @@ def render_profile(scholar, related, authority, meso_by_presentation, meso_items
 
     person_authority = (authority.get("persons") or {}).get(scholar["id"], {})
 
-    external_links_html = ""
+    external_links = []
     if is_public_authority_record(person_authority):
         urls_dict = clean_person_urls(person_authority)
         if urls_dict:
-            links = []
             labels = {
                 "orcid": "ORCID",
                 "wikidata": "Wikidata",
@@ -738,67 +743,40 @@ def render_profile(scholar, related, authority, meso_by_presentation, meso_items
             for key, label in labels.items():
                 url = urls_dict.get(key)
                 if url:
-                    links.append(f'<a class="chip" href="{esc(url)}" target="_blank" rel="noopener">{esc(label)}</a>')
-            if links:
-                external_links_html = f"""
-        <h2>External Identifiers</h2>
-        <div class="chip-row">{''.join(links)}</div>"""
+                    external_links.append(f'<a class="chip" href="{esc(url)}" target="_blank" rel="noopener">{esc(label)}</a>')
 
-    body = f"""
-        <header>
-            <h1>{ru_heading}</h1>
-            <p>{esc(en_heading)}</p>
-            {format_degree(scholar)}
-            <p>{esc(description)}</p>
-            {profile_note_html}
-        </header>
+    talk_cards = [
+        talk_card(talk, meso_by_presentation, meso_items)
+        for talk in scholar.get("talks", [])
+    ]
 
-        <section class="grid">
-            <article class="card"><strong>Доклады</strong><div class="metric">{esc(scholar.get("total_talks"))}</div><div class="meta">{esc(archive_records_label(scholar.get("total_talks") or 0))}</div></article>
-            <article class="card"><strong>Активность</strong><div class="metric">{esc(describe_year_span(scholar.get("first_year"), scholar.get("last_year")))}</div><div class="meta">{esc(activity_label(scholar))}</div></article>
-            <article class="card"><strong>Рубрика</strong><div class="metric"><a href="../{theme_path(theme_code)}">{esc(profile_label)}</a></div></article>
-            <article class="card"><strong>Площадки</strong><div class="meta">{series_html}</div></article>
-            {generation_html}
-        </section>
+    template = _JINJA_ENV.get_template("scholar_detail.html")
+    body = template.render(
+        scholar=scholar,
+        ru_heading=ru_heading,
+        en_heading=en_heading,
+        format_degree_html=format_degree(scholar),
+        description=description,
+        profile_note_html=profile_note_html,
+        total_talks=scholar.get("total_talks"),
+        archive_records_label=archive_records_label(scholar.get("total_talks") or 0),
+        activity_span=describe_year_span(scholar.get("first_year"), scholar.get("last_year")),
+        activity_label=activity_label(scholar),
+        theme_path=theme_path(theme_code),
+        profile_label=profile_label,
+        series_html=series_html,
+        generation_html=generation_html,
+        affiliation_chips=chip_links(affiliations, affiliation_href),
+        affiliation_notes=affiliation_notes,
+        city_chips=chip_links(cities, lambda city: '../' + city_path(city)),
+        status=status,
+        external_links=external_links,
+        context_block=scholar_context_block(scholar, meso_by_presentation, meso_items),
+        talk_cards=talk_cards,
+        related_html=related_html
+    )
 
-        <h2>Аффилиации</h2>
-        <div class="chip-row">{chip_links(affiliations, affiliation_href)}</div>
-        {affiliation_notes}
-
-        <h2>Географические центры</h2>
-        <div class="chip-row">{chip_links(cities, lambda city: '../' + city_path(city))}</div>
-
-        <h2>Статусы</h2>
-        <div class="chip-row">{''.join(f'<span class="chip">{esc(item)}</span>' for item in status) or '<span class="meta">Особые статусы не указаны.</span>'}</div>{external_links_html}
-
-        {scholar_context_block(scholar, meso_by_presentation, meso_items)}
-
-        <h2>Доклады</h2>
-        <section class="list">{''.join(talk_card(talk, meso_by_presentation, meso_items) for talk in scholar.get("talks", []))}</section>
-
-        <h2>Связанные авторы</h2>
-        <section class="grid">{related_html}</section>
-    """
-
-    extra_css = """
-    <style>
-        .life { color: var(--soft); font-size: 0.62em; font-weight: 500; margin-left: 0.4rem; }
-        .degree { color: var(--soft); font-size: 0.95rem; font-weight: 600; margin: 0.15rem 0 0.5rem; }
-        .degree a { font-weight: 400; font-size: 0.85em; }
-        .profile-note { color: var(--soft); max-width: 860px; }
-        .metric { font-size: 1.4rem; font-weight: 700; margin-top: 0.2rem; }
-        .chip-row { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-        .series-line + .series-line { margin-top: 0.28rem; }
-        .context-block { display: grid; gap: 0.95rem; margin-bottom: 1.4rem; }
-        .context-block strong { display: block; margin-bottom: 0.45rem; }
-        .mini-chip { display: inline-block; margin: 0.18rem 0.25rem 0.18rem 0; padding: 0.18rem 0.45rem; border: 1px solid rgba(148,163,184,0.32); border-radius: 999px; font-size: 0.82rem; }
-        .context-label { color: var(--soft); font-weight: 650; margin-right: 0.25rem; }
-        .talk-context { margin-top: 0.45rem; line-height: 1.8; }
-        .related-reasons { margin-top: 0.45rem; font-size: 0.86rem; }
-        .talk-meta-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 1rem; align-items: baseline; }
-        .talk-meta-session { text-align: right; white-space: nowrap; }
-    </style>
-    """
+    extra_css = ""
     return page_shell(
         f"{name_ru} | {SITE_NAME}",
         description,
@@ -807,6 +785,7 @@ def render_profile(scholar, related, authority, meso_by_presentation, meso_items
         profile_structured_data(scholar, authority),
         extra_head=extra_css,
     )
+
 
 
 def render_scholars_index(scholars, public_ids):
@@ -904,21 +883,31 @@ def main():
 
     written_files = {"index.html"}
     generated_slugs = set()
-    for scholar in scholars:
+
+    from concurrent.futures import ThreadPoolExecutor
+
+    def process_scholar(scholar):
         slug = scholar["url_slug"]
-        generated_slugs.add(slug)
         related = related_scholars(scholar, scholars, meso_by_presentation, meso_items)
         html = render_profile(scholar, related, authority, meso_by_presentation, meso_items)
         canonical_filename = f"{slug}.html"
         (OUTPUT_DIR / canonical_filename).write_text(html, encoding="utf-8", newline="\n")
-        written_files.add(canonical_filename)
 
-        # Redirect from the legacy PERS_<hash>.html path to the new slug-based canonical.
         pers_filename = f"{scholar['id']}.html"
+        pers_written = None
         if pers_filename != canonical_filename:
             redirect_html = render_legacy_redirect(scholar["id"], scholar)
             (OUTPUT_DIR / pers_filename).write_text(redirect_html, encoding="utf-8", newline="\n")
-            written_files.add(pers_filename)
+            pers_written = pers_filename
+        return slug, canonical_filename, pers_written
+
+    with ThreadPoolExecutor() as executor:
+        results = executor.map(process_scholar, scholars)
+        for slug, canonical_filename, pers_written in results:
+            generated_slugs.add(slug)
+            written_files.add(canonical_filename)
+            if pers_written:
+                written_files.add(pers_written)
 
     for legacy_id, target_id in legacy_redirects.items():
         target_scholar = scholars_by_id.get(target_id)

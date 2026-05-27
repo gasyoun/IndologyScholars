@@ -928,6 +928,43 @@ def main():
             "weight": w
         })
 
+
+    # Extract co-occurrence collaboration network
+    network_nodes = []
+    for s in scholars:
+        series = "Both"
+        if s["zograf_talks"] > 0 and s["roerich_talks"] == 0:
+            series = "Zograf"
+        elif s["roerich_talks"] > 0 and s["zograf_talks"] == 0:
+            series = "Roerich"
+            
+        network_nodes.append({
+            "id": s["id"],
+            "slug": s["url_slug"],
+            "name": s["name"],
+            "talks": s["total_talks"],
+            "theme": s["dominant_theme"] or "History",
+            "series": series
+        })
+
+    cursor.execute("""
+        SELECT pp1.person_id, pp2.person_id, COUNT(DISTINCT p1.session_id) as weight
+        FROM presentation_person pp1
+        JOIN presentation p1 ON pp1.presentation_id = p1.presentation_id
+        JOIN presentation p2 ON p1.session_id = p2.session_id AND p1.presentation_id != p2.presentation_id
+        JOIN presentation_person pp2 ON p2.presentation_id = pp2.presentation_id
+        WHERE pp1.person_id < pp2.person_id
+        GROUP BY pp1.person_id, pp2.person_id
+    """)
+    links_raw = cursor.fetchall()
+    network_links = []
+    for p1, p2, w in links_raw:
+        network_links.append({
+            "source": p1,
+            "target": p2,
+            "weight": w
+        })
+
     # 5. Affiliations Leaderboard
     def normalize_affiliation(aff):
         if not aff: return None
@@ -1025,7 +1062,46 @@ def main():
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         json.dump(site_data, f, ensure_ascii=False, separators=(",", ":"))
 
-    print(f"Successfully generated JSON data payload in {OUTPUT_FILE} with full temporal, position order, and student/independent academic metadata!")
+    # Generate optimized chunks for performance
+    scholars_summary = []
+    for s in scholars:
+        s_copy = dict(s)
+        s_copy.pop("talks", None)
+        scholars_summary.append(s_copy)
+
+    site_data_summary = {
+        "schema_version": DATA_SCHEMA_VERSION,
+        "generated": datetime.date.today().isoformat(),
+        "build": site_data["build"],
+        "summary": summary,
+        "stats": stats,
+        "geography_stats": geography_stats,
+        "gender_stats": gender_stats,
+        "age_stats": age_groups,
+        "generation_stats": generation_stats,
+        "institutions_stats": institutions_stats,
+        "word_cloud": word_cloud,
+        "scholars": scholars_summary
+    }
+
+    with open("site_data_summary.json", "w", encoding="utf-8") as f:
+        json.dump(site_data_summary, f, ensure_ascii=False, separators=(",", ":"))
+
+    with open("site_data_scholars.json", "w", encoding="utf-8") as f:
+        json.dump(scholars, f, ensure_ascii=False, separators=(",", ":"))
+
+    with open("site_data_timeline.json", "w", encoding="utf-8") as f:
+        json.dump(timeline, f, ensure_ascii=False, separators=(",", ":"))
+
+    # Write separate timeline files per year
+    for year, year_data in timeline.items():
+        with open(f"site_data_timeline_{year}.json", "w", encoding="utf-8") as f:
+            json.dump(year_data, f, ensure_ascii=False, separators=(",", ":"))
+
+    with open("site_data_network.json", "w", encoding="utf-8") as f:
+        json.dump(site_data["network"], f, ensure_ascii=False, separators=(",", ":"))
+
+    print(f"Successfully generated JSON data payload in {OUTPUT_FILE} and optimized split chunks!")
     conn.close()
 
 if __name__ == "__main__":

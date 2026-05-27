@@ -117,6 +117,13 @@
             font-weight: 500;
             margin-top: 0.25rem;
         }
+        .roman-numeral {
+            color: var(--accent);
+            font-weight: 700;
+            font-family: Georgia, "Times New Roman", serif;
+            margin-left: 0.3rem;
+            font-size: 0.82rem;
+        }
         .title {
             font-weight: 700;
             line-height: 1.35;
@@ -265,6 +272,29 @@
             return `conferences/${slug}-${year}.html`;
         }
 
+        const ROMAN_NUMERALS = {
+            'harappa_indus': 'I',
+            'rigveda': 'II',
+            'vedic_period': 'III',
+            'upanishads': 'IV',
+            'panini': 'V',
+            'early_buddhism': 'VI',
+            'pali_canon': 'VII',
+            'ashoka_maurya': 'VIII',
+            'sangam': 'IX',
+            'classical_sanskrit': 'X',
+            'tamil_bhakti': 'XI',
+            'chola': 'XII',
+            'chaitanya': 'XIII',
+            'mughal': 'XIV',
+            'colonial_india': 'XV',
+            'vivekananda': 'XVI',
+            'tagore': 'XVII',
+            'gandhi': 'XVIII',
+            'roerich': 'XIX',
+            'independence_modern': 'XX'
+        };
+
         function render() {
             const events = buildEvents();
             const recordIds = new Set(events.map(event => event.record.presentation_id));
@@ -283,10 +313,12 @@
                     `<a href="#" data-search="${escapeHtml(place.label_ru)}" style="text-decoration: underline; text-decoration-style: dotted; color: var(--muted);">${escapeHtml(place.label_ru)}</a>`
                 ).join(', ');
                 const tags = (record.meso_codes || []).slice(0, 4).map(renderTag).join(' ');
+                const roman = ROMAN_NUMERALS[time.id] || '';
+                const romanHtml = roman ? ` <span class="roman-numeral">(${roman})</span>` : '';
                 return `<article class="event">
                     <div>
                         <div class="date">${escapeHtml(formatYearRange(time))}</div>
-                        <div class="time-label">${escapeHtml(time.label_ru)}</div>
+                        <div class="time-label">${escapeHtml(time.label_ru)}${romanHtml}</div>
                     </div>
                     <div style="position: relative;">
                         <div style="position: absolute; top: 0; right: 0; font-size: 0.76rem; color: var(--muted); opacity: 0.8; text-align: right; line-height: 1.3;">

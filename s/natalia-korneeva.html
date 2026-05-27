@@ -27,23 +27,6 @@
     <meta name="twitter:image" content="https://gasyoun.github.io/IndologyScholars/assets/og-image.png">
     <script defer src="/IndologyScholars/assets/pwa.js"></script>
 
-    <style>
-        .life { color: var(--soft); font-size: 0.62em; font-weight: 500; margin-left: 0.4rem; }
-        .degree { color: var(--soft); font-size: 0.95rem; font-weight: 600; margin: 0.15rem 0 0.5rem; }
-        .degree a { font-weight: 400; font-size: 0.85em; }
-        .profile-note { color: var(--soft); max-width: 860px; }
-        .metric { font-size: 1.4rem; font-weight: 700; margin-top: 0.2rem; }
-        .chip-row { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-        .series-line + .series-line { margin-top: 0.28rem; }
-        .context-block { display: grid; gap: 0.95rem; margin-bottom: 1.4rem; }
-        .context-block strong { display: block; margin-bottom: 0.45rem; }
-        .mini-chip { display: inline-block; margin: 0.18rem 0.25rem 0.18rem 0; padding: 0.18rem 0.45rem; border: 1px solid rgba(148,163,184,0.32); border-radius: 999px; font-size: 0.82rem; }
-        .context-label { color: var(--soft); font-weight: 650; margin-right: 0.25rem; }
-        .talk-context { margin-top: 0.45rem; line-height: 1.8; }
-        .related-reasons { margin-top: 0.45rem; font-size: 0.86rem; }
-        .talk-meta-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 1rem; align-items: baseline; }
-        .talk-meta-session { text-align: right; white-space: nowrap; }
-    </style>
 
     <script type="application/ld+json">
 [
@@ -103,285 +86,107 @@
   }
 ]
     </script>
-    <style>
-        :root {
-            color-scheme: dark;
-            --bg: #101513;
-            --panel: #171e1b;
-            --panel-strong: #1c2521;
-            --border: #2b3631;
-            --text: #e7ece8;
-            --muted: #b3beb7;
-            --soft: #87938c;
-            --accent: #62ae92;
-            --accent2: #c59a56;
-        }
-        * { box-sizing: border-box; }
-        body {
-            margin: 0;
-            font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
-        }
-        a { color: #82c6ad; text-decoration: none; }
-        a:hover { color: #addac8; }
-        .page {
-            max-width: 1160px;
-            margin: 0 auto;
-            padding: 1.25rem 2rem 2rem;
-        }
-        .top-nav {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.45rem;
-            align-items: center;
-            margin-bottom: 1.4rem;
-        }
-        .top-nav a, .chip {
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            background: transparent;
-            padding: 0.43rem 0.68rem;
-            color: var(--muted);
-            display: inline-flex;
-            align-items: center;
-            gap: 0.35rem;
-        }
-        .more-nav { position: relative; }
-        .more-nav summary {
-            list-style: none;
-            cursor: pointer;
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 0.43rem 0.68rem;
-            color: var(--muted);
-        }
-        .more-nav summary::-webkit-details-marker { display: none; }
-        .more-nav summary:hover { color: var(--text); border-color: var(--accent); }
-        .more-menu {
-            position: absolute;
-            top: calc(100% + 0.4rem);
-            left: 0;
-            z-index: 10;
-            width: min(420px, calc(100vw - 3rem));
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.4rem;
-            padding: 0.65rem;
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            background: var(--panel-strong);
-            box-shadow: 0 10px 26px rgba(0,0,0,0.28);
-        }
-        header {
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 1.5rem;
-            margin-bottom: 1.75rem;
-        }
-        h1 {
-            font-size: clamp(1.8rem, 3vw, 2.5rem);
-            line-height: 1.15;
-            margin: 0 0 0.75rem;
-            letter-spacing: 0;
-        }
-        h2 {
-            font-size: 1.45rem;
-            margin: 2rem 0 1rem;
-            letter-spacing: 0;
-        }
-        p { color: var(--muted); max-width: 820px; }
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
-            gap: 1rem;
-        }
-        .card {
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 1rem;
-            background: var(--panel);
-        }
-        .card strong { color: #fff; }
-        .metric {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: #fff;
-            margin-top: 0.35rem;
-        }
-        .meta {
-            color: var(--soft);
-            font-size: 0.92rem;
-            margin-top: 0.3rem;
-        }
-        .link-block {
-            max-width: 900px;
-            margin: 1rem 0;
-        }
-        .link-block > strong {
-            color: #fff;
-            display: block;
-            margin-bottom: 0.45rem;
-        }
-        .chip-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.45rem;
-        }
-        .list {
-            display: grid;
-            gap: 0.75rem;
-        }
-        .talk {
-            border-left: 3px solid var(--accent);
-            background: rgba(255,255,255,0.035);
-            padding: 0.8rem 1rem;
-            border-radius: 0 8px 8px 0;
-        }
-        .badge {
-            display: inline-flex;
-            align-items: center;
-            border-radius: 8px;
-            padding: 0.18rem 0.45rem;
-            margin-left: 0.45rem;
-            border: 1px solid var(--border);
-            color: var(--muted);
-            font-size: 0.82rem;
-            font-weight: 600;
-            vertical-align: middle;
-        }
-        .badge-online {
-            border-color: rgba(52, 211, 153, 0.4);
-            color: #6ee7b7;
-            background: rgba(16, 185, 129, 0.1);
-        }
-        .badge-video {
-            border-color: rgba(251, 191, 36, 0.44);
-            color: #fde68a;
-            background: rgba(217, 119, 6, 0.13);
-        }
-        .footer {
-            color: var(--soft);
-            margin-top: 3rem;
-            border-top: 1px solid var(--border);
-            padding-top: 1rem;
-            font-size: 0.9rem;
-        }
-        .search-box {
-            width: 100%;
-            max-width: 720px;
-            padding: 0.8rem 1rem;
-            border-radius: 8px;
-            border: 1px solid var(--border);
-            background: var(--panel-strong);
-            color: var(--text);
-            font-size: 1rem;
-        }
-        .field-label {
-            display: block;
-            margin: 0 0 0.38rem;
-            color: var(--muted);
-            font-size: 0.85rem;
-            font-weight: 600;
-        }
-        .caveat-block {
-            border: 1px solid rgba(98,174,146,0.35);
-            border-left: 4px solid var(--accent);
-            border-radius: 8px;
-            background: rgba(98,174,146,0.07);
-            padding: 0.9rem 1.1rem;
-            margin: 1.25rem 0 1.75rem;
-            max-width: 820px;
-        }
-        .caveat-block strong {
-            color: #8dc9b2;
-            display: block;
-            margin-bottom: 0.35rem;
-        }
-        .caveat-block p {
-            font-size: 0.93rem;
-            margin: 0;
-            color: var(--muted);
-        }
-        :focus-visible {
-            outline: 2px solid var(--accent);
-            outline-offset: 2px;
-        }
-        @media (max-width: 640px) {
-            .page { padding: 1rem; }
-            .top-nav { gap: 0.35rem; margin-bottom: 1.15rem; }
-            .top-nav a, .chip, .more-nav summary { padding: 0.38rem 0.55rem; font-size: 0.9rem; }
-            header { padding-bottom: 1rem; margin-bottom: 1.2rem; }
-            h1 { font-size: 1.65rem; }
-        }
-    </style>
+
+    <link rel="stylesheet" href="/IndologyScholars/assets/styles.css">
 </head>
 <body>
     <main class="page">
         <nav class="top-nav" aria-label="Primary">
+
             <a href="/IndologyScholars/">Архив</a>
+
             <a href="/IndologyScholars/search.html">Поиск</a>
+
             <a href="/IndologyScholars/s/">Исследователи</a>
+
             <a href="/IndologyScholars/p/">Доклады</a>
+
             <a href="/IndologyScholars/conferences/">Конференции</a>
+
             <a href="/IndologyScholars/themes/">Рубрики</a>
+
             <a href="/IndologyScholars/generations/">Поколения</a>
+
             <details class="more-nav">
                 <summary>Еще</summary>
                 <div class="more-menu">
+
                     <a href="/IndologyScholars/findings/">Выводы</a>
+
                     <a href="/IndologyScholars/topics/">Сюжеты</a>
+
                     <a href="/IndologyScholars/download-data.html">Данные</a>
+
                     <a href="/IndologyScholars/meso/">Мезоуровни</a>
+
                     <a href="/IndologyScholars/keywords/">Ключевые слова</a>
+
                     <a href="/IndologyScholars/gumilyov/">Гумилев</a>
+
                     <a href="/IndologyScholars/classification-criteria.html">Критерии</a>
+
                     <a href="/IndologyScholars/videos/">Видео</a>
+
                     <a href="/IndologyScholars/cities/">Города</a>
+
                     <a href="/IndologyScholars/institutions/">Институции</a>
+
                     <a href="/IndologyScholars/collaboration/">Коллаборация</a>
+
                     <a href="/IndologyScholars/nlp/">NLP-анализ</a>
+
                     <a href="/IndologyScholars/data-quality.html">Качество</a>
+
                     <a href="/IndologyScholars/en.html">English</a>
+
                     <a href="/IndologyScholars/how-to-cite.html">Цитирование</a>
+
                     <a href="/IndologyScholars/metrics-guide.html">Метрики</a>
+
                 </div>
             </details>
         </nav>
-
         <header>
-            <h1>Корнеева Наталья Афанасьевна <span class="life">(род. 1972)</span></h1>
-            <p>Korneeva Natalia Afanasyevna (b. 1972)</p>
-            <p class="degree">кандидат исторических наук · <a href="https://www.dissercat.com/content/istochnikovedcheskii-analiz-vishnu-smriti-problemy-khronologii-i-perevoda" target="_blank" rel="noopener">источник</a></p>
-            <p>Корнеева Наталья Афанасьевна: 29 докладов в архиве Зографских и Рериховских чтений, период активности 2008-2026, основной профиль: Религия и философия.</p>
+    <h1>Корнеева Наталья Афанасьевна <span class="life">(род. 1972)</span></h1>
+    <p>Korneeva Natalia Afanasyevna (b. 1972)</p>
+    <p class="degree">кандидат исторических наук · <a href="https://www.dissercat.com/content/istochnikovedcheskii-analiz-vishnu-smriti-problemy-khronologii-i-perevoda" target="_blank" rel="noopener">источник</a></p>
+    <p>Корнеева Наталья Афанасьевна: 29 докладов в архиве Зографских и Рериховских чтений, период активности 2008-2026, основной профиль: Религия и философия.</p>
 
-        </header>
+</header>
 
-        <section class="grid">
-            <article class="card"><strong>Доклады</strong><div class="metric">29</div><div class="meta">записей в архиве</div></article>
-            <article class="card"><strong>Активность</strong><div class="metric">2008-2026</div><div class="meta">годы участия</div></article>
-            <article class="card"><strong>Рубрика</strong><div class="metric"><a href="../themes/religion-and-philosophy.html">Религия и философия</a></div></article>
-            <article class="card"><strong>Площадки</strong><div class="meta"><div class="series-line"><a href="../search.html?q=%D0%9A%D0%BE%D1%80%D0%BD%D0%B5%D0%B5%D0%B2%D0%B0%20%D0%9D%D0%B0%D1%82%D0%B0%D0%BB%D1%8C%D1%8F%20%D0%90%D1%84%D0%B0%D0%BD%D0%B0%D1%81%D1%8C%D0%B5%D0%B2%D0%BD%D0%B0%20%D0%97%D0%BE%D0%B3%D1%80%D0%B0%D1%84%D1%81%D0%BA%D0%B8%D0%B5%20%D1%87%D1%82%D0%B5%D0%BD%D0%B8%D1%8F">Зографские чтения</a>: 15 докладов · 2008-2026</div><div class="series-line"><a href="../search.html?q=%D0%9A%D0%BE%D1%80%D0%BD%D0%B5%D0%B5%D0%B2%D0%B0%20%D0%9D%D0%B0%D1%82%D0%B0%D0%BB%D1%8C%D1%8F%20%D0%90%D1%84%D0%B0%D0%BD%D0%B0%D1%81%D1%8C%D0%B5%D0%B2%D0%BD%D0%B0%20%D0%A0%D0%B5%D1%80%D0%B8%D1%85%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B5%20%D1%87%D1%82%D0%B5%D0%BD%D0%B8%D1%8F">Рериховские чтения</a>: 14 докладов · 2008-2025</div></div></article>
-            <article class="card"><strong>Поколение</strong><div class="metric"><a href="../generations/#1970s">Поколение 1970-х</a></div><div class="meta">Когорта по году рождения</div></article>
-        </section>
+<section class="grid">
+    <article class="card"><strong>Доклады</strong><div class="metric">29</div><div class="meta">записей в архиве</div></article>
+    <article class="card"><strong>Активность</strong><div class="metric">2008-2026</div><div class="meta">годы участия</div></article>
+    <article class="card"><strong>Рубрика</strong><div class="metric"><a href="../themes/religion-and-philosophy.html">Религия и философия</a></div></article>
+    <article class="card"><strong>Площадки</strong><div class="meta"><div class="series-line"><a href="../search.html?q=%D0%9A%D0%BE%D1%80%D0%BD%D0%B5%D0%B5%D0%B2%D0%B0%20%D0%9D%D0%B0%D1%82%D0%B0%D0%BB%D1%8C%D1%8F%20%D0%90%D1%84%D0%B0%D0%BD%D0%B0%D1%81%D1%8C%D0%B5%D0%B2%D0%BD%D0%B0%20%D0%97%D0%BE%D0%B3%D1%80%D0%B0%D1%84%D1%81%D0%BA%D0%B8%D0%B5%20%D1%87%D1%82%D0%B5%D0%BD%D0%B8%D1%8F">Зографские чтения</a>: 15 докладов · 2008-2026</div><div class="series-line"><a href="../search.html?q=%D0%9A%D0%BE%D1%80%D0%BD%D0%B5%D0%B5%D0%B2%D0%B0%20%D0%9D%D0%B0%D1%82%D0%B0%D0%BB%D1%8C%D1%8F%20%D0%90%D1%84%D0%B0%D0%BD%D0%B0%D1%81%D1%8C%D0%B5%D0%B2%D0%BD%D0%B0%20%D0%A0%D0%B5%D1%80%D0%B8%D1%85%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B5%20%D1%87%D1%82%D0%B5%D0%BD%D0%B8%D1%8F">Рериховские чтения</a>: 14 докладов · 2008-2025</div></div></article>
+    <article class="card"><strong>Поколение</strong><div class="metric"><a href="../generations/#1970s">Поколение 1970-х</a></div><div class="meta">Когорта по году рождения</div></article>
+</section>
 
-        <h2>Аффилиации</h2>
-        <div class="chip-row"><span class="meta">Нет данных</span></div>
+<h2>Аффилиации</h2>
+<div class="chip-row"><span class="meta">Нет данных</span></div>
 
 
-        <h2>Географические центры</h2>
-        <div class="chip-row"><a class="chip" href="../cities/moskva.html">Москва</a></div>
+<h2>Географические центры</h2>
+<div class="chip-row"><a class="chip" href="../cities/moskva.html">Москва</a></div>
 
-        <h2>Статусы</h2>
-        <div class="chip-row"><span class="chip">независимый исследователь</span></div>
+<h2>Статусы</h2>
+<div class="chip-row">
+
+    <span class="chip">независимый исследователь</span>
+
+</div>
+
+
 
 
         <h2>Мезоуровни и ключевые контуры</h2>
         <section class="context-block"><div><strong>Мезоуровни</strong><div class="chip-row"><a class="chip" href="../meso/ritual-studies.html">Ритуалистика · 22 доклада</a><a class="chip" href="../meso/ethnography-performance.html">Этнография, ритуал и перформанс · 18 докладов</a><a class="chip" href="../meso/vedic-studies.html">Ведийские исследования · 16 докладов</a><a class="chip" href="../meso/sanskrit-grammar-panini.html">Санскритская грамматика / Панини · 4 доклада</a><a class="chip" href="../meso/bengal.html">Бенгалия · 1 доклад</a><a class="chip" href="../meso/bengal-bhakti-modernity.html">Бенгалия, бхакти и современность · 1 доклад</a><a class="chip" href="../meso/dravidology-south-india.html">Дравидология / южноиндийский контур · 1 доклад</a><a class="chip" href="../meso/linguistics-language-system.html">Языковедческий анализ · 1 доклад</a></div></div><div><strong>Ключевые слова</strong><div class="chip-row"><a class="chip" href="../search.html?q=%D1%80%D0%B8%D1%82%D1%83%D0%B0%D0%BB">ритуал · 11</a><a class="chip" href="../search.html?q=%D0%B2%D0%B5%D0%B4%D0%B8%D0%B9%D1%81%D0%BA%D0%B8%D0%B9">ведийский · 6</a><a class="chip" href="../search.html?q=%D1%82%D1%80%D0%B0%D0%B4%D0%B8%D1%86%D0%B8%D1%8F">традиция · 6</a><a class="chip" href="../search.html?q=%D0%BE%D1%80%D0%B4%D0%B0%D0%BB%D0%B8%D1%8F">ордалия · 5</a><a class="chip" href="../search.html?q=%D0%BF%D0%BE%D1%87%D0%B5%D1%82%D0%BD%D1%8B%D0%B9">почетный · 4</a><a class="chip" href="../search.html?q=%D0%BF%D1%80%D0%B8%D0%B5%D0%BC">прием · 4</a><a class="chip" href="../search.html?q=%D1%88%D1%80%D0%B0%D1%83%D1%82%D0%B0-%D1%80%D0%B8%D1%82%D1%83%D0%B0%D0%BB">шраута-ритуал · 4</a><a class="chip" href="../search.html?q=%D0%B6%D0%B5%D1%80%D1%82%D0%B2%D0%BE%D0%BF%D1%80%D0%B8%D0%BD%D0%BE%D1%88%D0%B5%D0%BD%D0%B8%D0%B5">жертвоприношение · 3</a><a class="chip" href="../search.html?q=%D1%80%D0%B8%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9">ритуальный · 3</a><a class="chip" href="../search.html?q=%D0%B0%D0%BF%D0%B0%D1%81%D1%82%D0%B0%D0%BC%D0%B1">апастамб · 2</a></div></div></section>
 
 
-        <h2>Доклады</h2>
-        <section class="list">
+<h2>Доклады</h2>
+<section class="list">
+
+
         <article class="talk" id="PRES_2af0d9ba1e">
             <strong><a href="../p/vediiskii-ritual-pravargya-pravargya-tekstovaya-traditsiya-i-ritualnaya-praktika.html">Ведийский ритуал Праваргья (pravargya): текстовая традиция и ритуальная практика</a></strong>
             <div class="meta">
@@ -392,6 +197,8 @@
             <div class="meta talk-context"><span class="context-label">Срезы:</span> <a class="mini-chip" href="../meso/ethnography-performance.html">Этнография, ритуал и перформанс</a><a class="mini-chip" href="../meso/vedic-studies.html">Ведийские исследования</a><a class="mini-chip" href="../meso/ritual-studies.html">Ритуалистика</a> <span class="context-label">Ключевые слова:</span> <a class="mini-chip" href="../search.html?q=%D0%B2%D0%B5%D0%B4%D0%B8%D0%B9%D1%81%D0%BA%D0%B8%D0%B9">ведийский</a><a class="mini-chip" href="../search.html?q=%D1%80%D0%B8%D1%82%D1%83%D0%B0%D0%BB">ритуал</a><a class="mini-chip" href="../search.html?q=%D0%BF%D1%80%D0%B0%D0%B2%D0%B0%D1%80%D0%B3%D0%B8%D0%B5">праваргие</a><a class="mini-chip" href="../search.html?q=%D1%82%D0%B5%D0%BA%D1%81%D1%82%D0%BE%D0%B2%D1%8B%D0%B9">текстовый</a></div>
 
         </article>
+
+
 
         <article class="talk" id="PRES_ae8474fa94">
             <strong><a href="../p/sambkhary-v-obryade-ustanovleniya-zhertvennykh-ognei-agny-dheya.html">Самбхары в обряде установления жертвенных огней (agnyādheya)</a></strong>
@@ -404,6 +211,8 @@
 
         </article>
 
+
+
         <article class="talk" id="PRES_b2fd39a1b2">
             <strong><a href="../p/svyashchennye-ogni-v-shrauta-ritualakh.html">Священные огни в шраута-ритуалах</a></strong>
             <div class="meta">
@@ -414,6 +223,8 @@
             <div class="meta talk-context"><span class="context-label">Срезы:</span> <a class="mini-chip" href="../meso/ethnography-performance.html">Этнография, ритуал и перформанс</a><a class="mini-chip" href="../meso/ritual-studies.html">Ритуалистика</a><a class="mini-chip" href="../meso/vedic-studies.html">Ведийские исследования</a> <span class="context-label">Ключевые слова:</span> <a class="mini-chip" href="../search.html?q=%D1%81%D0%B2%D1%8F%D1%89%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9">священный</a><a class="mini-chip" href="../search.html?q=%D0%BE%D0%B3%D0%BE%D0%BD%D1%8C">огонь</a><a class="mini-chip" href="../search.html?q=%D1%88%D1%80%D0%B0%D1%83%D1%82%D0%B0-%D1%80%D0%B8%D1%82%D1%83%D0%B0%D0%BB">шраута-ритуал</a></div>
 
         </article>
+
+
 
         <article class="talk" id="PRES_128cecab0d">
             <strong><a href="../p/madkhuparka-pri-zhertvoprinosheniyakh-somy-v-rituale-atitkheshti-tithye-i.html">Мадхупарка при жертвоприношениях сомы в ритуале Атитхьешти (ātithyeṣṭi)</a></strong>
@@ -426,6 +237,8 @@
 
         </article>
 
+
+
         <article class="talk" id="PRES_7582592a44">
             <strong><a href="../p/novyi-povorot-traditsii-shrauta-sagnichit-trisakhasra-atiratra-somayaga-2024-v-zapadnoi-bengalii.html">Новый поворот традиции шраута: Сагничит Трисахасра Атиратра Сомаяга 2024 в Западной Бенгалии</a></strong>
             <div class="meta">
@@ -436,6 +249,8 @@
             <div class="meta talk-context"><span class="context-label">Срезы:</span> <a class="mini-chip" href="../meso/bengal-bhakti-modernity.html">Бенгалия, бхакти и современность</a><a class="mini-chip" href="../meso/vedic-studies.html">Ведийские исследования</a><a class="mini-chip" href="../meso/bengal.html">Бенгалия</a> <span class="context-label">Ключевые слова:</span> <a class="mini-chip" href="../search.html?q=%D0%BF%D0%BE%D0%B2%D0%BE%D1%80%D0%BE%D1%82">поворот</a><a class="mini-chip" href="../search.html?q=%D1%82%D1%80%D0%B0%D0%B4%D0%B8%D1%86%D0%B8%D1%8F">традиция</a><a class="mini-chip" href="../search.html?q=%D1%88%D1%80%D0%B0%D1%83%D1%82">шраут</a><a class="mini-chip" href="../search.html?q=%D1%81%D0%B0%D0%B3%D0%BD%D0%B8%D1%87%D0%B8%D1%82%D1%8C">сагничить</a></div>
 
         </article>
+
+
 
         <article class="talk" id="PRES_62b9cf0c5b">
             <strong><a href="../p/mantry-v-vediiskikh-shrauta-ritualakh.html">Мантры в ведийских шраута-ритуалах.</a></strong><span class="badge badge-online">Онлайн</span>
@@ -448,6 +263,8 @@
 
         </article>
 
+
+
         <article class="talk" id="PRES_89e97978bb">
             <strong><a href="../p/ritual-priema-pochetnogo-gostya-pri-zhertvoprinosheniyakh-somy.html">Ритуал приема почетного гостя при жертвоприношениях сомы</a></strong>
             <div class="meta">
@@ -458,6 +275,8 @@
             <div class="meta talk-context"><span class="context-label">Срезы:</span> <a class="mini-chip" href="../meso/ethnography-performance.html">Этнография, ритуал и перформанс</a><a class="mini-chip" href="../meso/vedic-studies.html">Ведийские исследования</a><a class="mini-chip" href="../meso/ritual-studies.html">Ритуалистика</a> <span class="context-label">Ключевые слова:</span> <a class="mini-chip" href="../search.html?q=%D1%80%D0%B8%D1%82%D1%83%D0%B0%D0%BB">ритуал</a><a class="mini-chip" href="../search.html?q=%D0%BF%D1%80%D0%B8%D0%B5%D0%BC">прием</a><a class="mini-chip" href="../search.html?q=%D0%BF%D0%BE%D1%87%D0%B5%D1%82%D0%BD%D1%8B%D0%B9">почетный</a><a class="mini-chip" href="../search.html?q=%D0%B3%D0%BE%D1%81%D1%82%D1%8C">гость</a></div>
 
         </article>
+
+
 
         <article class="talk" id="PRES_22b3b0e3af">
             <strong><a href="../p/sura-vs-soma-v-zhertvoprinoshenii-sautramani-mify-ritualnye-deistviya-mantry.html">Сура vs. сома в жертвоприношении Саутрамани: мифы, ритуальные действия, мантры</a></strong>
@@ -470,6 +289,8 @@
 
         </article>
 
+
+
         <article class="talk" id="PRES_5528877ed4">
             <strong><a href="../p/kompozitsiya-apastamba-shrautasutry-bazovye-ritualy-prak-ti-i-ikh-modifikatsii-vik-ti.html">Композиция «Апастамба-шраутасутры»: базовые ритуалы (prakṛti) и их модификации (vikṛti)</a></strong>
             <div class="meta">
@@ -480,6 +301,8 @@
             <div class="meta talk-context"><span class="context-label">Срезы:</span> <a class="mini-chip" href="../meso/ethnography-performance.html">Этнография, ритуал и перформанс</a><a class="mini-chip" href="../meso/vedic-studies.html">Ведийские исследования</a><a class="mini-chip" href="../meso/ritual-studies.html">Ритуалистика</a> <span class="context-label">Ключевые слова:</span> <a class="mini-chip" href="../search.html?q=%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%B7%D0%B8%D1%86%D0%B8%D1%8F">композиция</a><a class="mini-chip" href="../search.html?q=%D0%B0%D0%BF%D0%B0%D1%81%D1%82%D0%B0%D0%BC%D0%B1-%D1%88%D1%80%D0%B0%D1%83%D1%82%D0%B0%D1%81%D1%83%D1%82%D1%80%D0%B0">апастамб-шраутасутра</a><a class="mini-chip" href="../search.html?q=%D0%B1%D0%B0%D0%B7%D0%BE%D0%B2%D1%8B%D0%B9">базовый</a><a class="mini-chip" href="../search.html?q=%D1%80%D0%B8%D1%82%D1%83%D0%B0%D0%BB">ритуал</a></div>
 
         </article>
+
+
 
         <article class="talk" id="PRES_179141844a">
             <strong><a href="../p/vediiskii-ritual-vadzhapeya-drevnyaya-traditsiya-i-sovremennaya-praktika.html">Ведийский ритуал Ваджапея: древняя традиция и современная практика</a></strong>
@@ -492,6 +315,8 @@
 
         </article>
 
+
+
         <article class="talk" id="PRES_69e4c50d4d">
             <strong><a href="../p/ni-moskva-sura-sur-v-vediiskikh-ritualakh-vadzhapeya-i-sautramani.html">(НИ, Москва). Сура (surā) в ведийских ритуалах Ваджапея и Саутрамани</a></strong>
             <div class="meta">
@@ -502,6 +327,8 @@
             <div class="meta talk-context"><span class="context-label">Срезы:</span> <a class="mini-chip" href="../meso/ethnography-performance.html">Этнография, ритуал и перформанс</a><a class="mini-chip" href="../meso/vedic-studies.html">Ведийские исследования</a> <span class="context-label">Ключевые слова:</span> <a class="mini-chip" href="../search.html?q=%D1%81%D1%83%D1%80%D0%B0">сура</a><a class="mini-chip" href="../search.html?q=%D0%B2%D0%B5%D0%B4%D0%B8%D0%B9%D1%81%D0%BA%D0%B8%D0%B9">ведийский</a><a class="mini-chip" href="../search.html?q=%D1%80%D0%B8%D1%82%D1%83%D0%B0%D0%BB">ритуал</a><a class="mini-chip" href="../search.html?q=%D0%B2%D0%B0%D0%B4%D0%B6%D0%B0%D0%BF%D0%B5%D1%8F">ваджапея</a></div>
 
         </article>
+
+
 
         <article class="talk" id="PRES_576ca11358">
             <strong><a href="../p/vozrozhdennye-vediiskie-ritualy-yadzhna-na-assi-gkhat-i-v-shkole-devochek-panini-kanya-makhavidy.html">«Возрожденные» ведийские ритуалы: яджна на Асси гхат и в школе девочек «Панини Канья Махавидьялая» в Варанаси</a></strong>
@@ -514,6 +341,8 @@
 
         </article>
 
+
+
         <article class="talk" id="PRES_913d0cd9c3">
             <strong><a href="../p/k-voprosu-o-zameshcheniyakh-pratinidhi-pri-provedenii-shrauta-ritualov.html">К вопросу о замещениях (pratinidhi) при проведении шраута-ритуалов</a></strong>
             <div class="meta">
@@ -524,6 +353,8 @@
             <div class="meta talk-context"><span class="context-label">Срезы:</span> <a class="mini-chip" href="../meso/ethnography-performance.html">Этнография, ритуал и перформанс</a><a class="mini-chip" href="../meso/ritual-studies.html">Ритуалистика</a> <span class="context-label">Ключевые слова:</span> <a class="mini-chip" href="../search.html?q=%D0%B7%D0%B0%D0%BC%D0%B5%D1%89%D0%B5%D0%BD%D0%B8%D0%B5">замещение</a><a class="mini-chip" href="../search.html?q=%D0%BF%D1%80%D0%BE%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5">проведение</a><a class="mini-chip" href="../search.html?q=%D1%88%D1%80%D0%B0%D1%83%D1%82%D0%B0-%D1%80%D0%B8%D1%82%D1%83%D0%B0%D0%BB">шраута-ритуал</a></div>
 
         </article>
+
+
 
         <article class="talk" id="PRES_5a50ff4176">
             <strong><a href="../p/apastamba-yadzhna-paribkhashasutra-pastamba-yaj-a-paribh-s-tra-problemy-perevoda.html">«Апастамба-яджна-парибхашасутра» (Āpastamba-yajña-paribhāṣāsūtra): проблемы перевода</a></strong>
@@ -536,6 +367,8 @@
 
         </article>
 
+
+
         <article class="talk" id="PRES_c47dbe060a">
             <strong><a href="../p/ritualy-nachala-i-prekrashcheniya-izucheniya-ved-up-kara-a-utsarga.html">Ритуалы начала и прекращения изучения Вед (upākaraṇa, utsarga)</a></strong>
             <div class="meta">
@@ -546,6 +379,8 @@
             <div class="meta talk-context"><span class="context-label">Срезы:</span> <a class="mini-chip" href="../meso/ethnography-performance.html">Этнография, ритуал и перформанс</a><a class="mini-chip" href="../meso/vedic-studies.html">Ведийские исследования</a><a class="mini-chip" href="../meso/ritual-studies.html">Ритуалистика</a> <span class="context-label">Ключевые слова:</span> <a class="mini-chip" href="../search.html?q=%D1%80%D0%B8%D1%82%D1%83%D0%B0%D0%BB">ритуал</a><a class="mini-chip" href="../search.html?q=%D0%BD%D0%B0%D1%87%D0%B0%D0%BB%D0%BE">начало</a><a class="mini-chip" href="../search.html?q=%D0%BF%D1%80%D0%B5%D0%BA%D1%80%D0%B0%D1%89%D0%B5%D0%BD%D0%B8%D0%B5">прекращение</a><a class="mini-chip" href="../search.html?q=%D0%B2%D0%B5%D0%B4%D0%B0">веда</a></div>
 
         </article>
+
+
 
         <article class="talk" id="PRES_d76b9f1f7f">
             <strong><a href="../p/izmenenie-roli-yadzhamany-v-shrauta-ritualakh-traditsiya-i-sovremennost.html">Изменение роли яджаманы в шраута-ритуалах: традиция и современность</a></strong>
@@ -558,6 +393,8 @@
 
         </article>
 
+
+
         <article class="talk" id="PRES_988254dd64">
             <strong><a href="../p/atiratra-agnichayana-zameshchenie-zhertvennykh-zhivotnykh-v-ritualakh.html">Атиратра Агничаяна: замещение жертвенных животных в ритуалах</a></strong>
             <div class="meta">
@@ -568,6 +405,8 @@
             <div class="meta talk-context"><span class="context-label">Срезы:</span> <a class="mini-chip" href="../meso/ethnography-performance.html">Этнография, ритуал и перформанс</a><a class="mini-chip" href="../meso/vedic-studies.html">Ведийские исследования</a><a class="mini-chip" href="../meso/ritual-studies.html">Ритуалистика</a> <span class="context-label">Ключевые слова:</span> <a class="mini-chip" href="../search.html?q=%D0%B0%D1%82%D0%B8%D1%80%D0%B0%D1%82%D1%80">атиратр</a><a class="mini-chip" href="../search.html?q=%D0%B0%D0%B3%D0%BD%D0%B8%D1%87%D0%B0%D1%8F%D1%82%D1%8C">агничаять</a><a class="mini-chip" href="../search.html?q=%D0%B7%D0%B0%D0%BC%D0%B5%D1%89%D0%B5%D0%BD%D0%B8%D0%B5">замещение</a><a class="mini-chip" href="../search.html?q=%D0%B6%D0%B5%D1%80%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9">жертвенный</a></div>
 
         </article>
+
+
 
         <article class="talk" id="PRES_f0240ba1c9">
             <strong><a href="../p/osobennosti-zhanra-paribkhasha-na-primere-sutr-apastamby.html">Особенности жанра парибхаша на примере сутр Апастамбы</a></strong>
@@ -580,6 +419,8 @@
 
         </article>
 
+
+
         <article class="talk" id="PRES_51ca649214">
             <strong><a href="../p/brakhmany-nambudiri-nekotorye-osobennosti-traditsii-peredachi-vediiskikh-tekstov.html">Брахманы намбудири: некоторые особенности традиции передачи ведийских текстов</a></strong>
             <div class="meta">
@@ -590,6 +431,8 @@
             <div class="meta talk-context"><span class="context-label">Срезы:</span> <a class="mini-chip" href="../meso/dravidology-south-india.html">Дравидология / южноиндийский контур</a><a class="mini-chip" href="../meso/vedic-studies.html">Ведийские исследования</a><a class="mini-chip" href="../meso/ethnography-performance.html">Этнография, ритуал и перформанс</a> <span class="context-label">Ключевые слова:</span> <a class="mini-chip" href="../search.html?q=%D0%B1%D1%80%D0%B0%D1%85%D0%BC%D0%B0%D0%BD">брахман</a><a class="mini-chip" href="../search.html?q=%D0%BD%D0%B0%D0%BC%D0%B1%D1%83%D0%B4%D0%B8%D1%80%D1%8F">намбудиря</a><a class="mini-chip" href="../search.html?q=%D1%82%D1%80%D0%B0%D0%B4%D0%B8%D1%86%D0%B8%D1%8F">традиция</a><a class="mini-chip" href="../search.html?q=%D0%BF%D0%B5%D1%80%D0%B5%D0%B4%D0%B0%D1%87%D0%B0">передача</a></div>
 
         </article>
+
+
 
         <article class="talk" id="PRES_f5881d70cf">
             <strong><a href="../p/vrati-v-kontekste-rituala-priema-pochetnogo-gostya-atithi.html">Вратьи в контексте ритуала приема почетного гостя (atithi)</a></strong>
@@ -602,6 +445,8 @@
 
         </article>
 
+
+
         <article class="talk" id="PRES_b27303708f">
             <strong><a href="../p/osobennosti-kompozitsii-apastamba-dkharmasutry.html">Особенности композиции «Апастамба-дхармасутры»</a></strong>
             <div class="meta">
@@ -612,6 +457,8 @@
             <div class="meta talk-context"><span class="context-label">Срезы:</span> <a class="mini-chip" href="../meso/sanskrit-grammar-panini.html">Санскритская грамматика / Панини</a> <span class="context-label">Ключевые слова:</span> <a class="mini-chip" href="../search.html?q=%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%B7%D0%B8%D1%86%D0%B8%D1%8F">композиция</a><a class="mini-chip" href="../search.html?q=%D0%B0%D0%BF%D0%B0%D1%81%D1%82%D0%B0%D0%BC%D0%B1-%D0%B4%D1%85%D0%B0%D1%80%D0%BC%D0%B0%D1%81%D1%83%D1%82%D1%80%D0%B0">апастамб-дхармасутра</a></div>
 
         </article>
+
+
 
         <article class="talk" id="PRES_5e071eae59">
             <strong><a href="../p/snataka-v-drevneindiiskom-rituale-i-tekste.html">Снатака в древнеиндийском ритуале и тексте</a></strong>
@@ -624,6 +471,8 @@
 
         </article>
 
+
+
         <article class="talk" id="PRES_5291787a3f">
             <strong><a href="../p/priem-pochetnogo-gostya-atitkhi-po-materialam-drevneindiiskikh-ritualnykh-tekstov.html">Прием почетного гостя-атитхи по материалам древнеиндийских ритуальных текстов</a></strong>
             <div class="meta">
@@ -634,6 +483,8 @@
             <div class="meta talk-context"><span class="context-label">Срезы:</span> <a class="mini-chip" href="../meso/ethnography-performance.html">Этнография, ритуал и перформанс</a><a class="mini-chip" href="../meso/ritual-studies.html">Ритуалистика</a> <span class="context-label">Ключевые слова:</span> <a class="mini-chip" href="../search.html?q=%D0%BF%D1%80%D0%B8%D0%B5%D0%BC">прием</a><a class="mini-chip" href="../search.html?q=%D0%BF%D0%BE%D1%87%D0%B5%D1%82%D0%BD%D1%8B%D0%B9">почетный</a><a class="mini-chip" href="../search.html?q=%D0%B3%D0%BE%D1%81%D1%82%D1%8C-%D0%B0%D1%82%D0%B8%D1%82%D1%85%D0%B8">гость-атитхи</a><a class="mini-chip" href="../search.html?q=%D0%B4%D1%80%D0%B5%D0%B2%D0%BD%D0%B5%D0%B8%D0%BD%D0%B4%D0%B8%D0%B9%D1%81%D0%BA%D0%B8%D0%B9">древнеиндийский</a></div>
 
         </article>
+
+
 
         <article class="talk" id="PRES_6a263265ac">
             <strong><a href="../p/ordaliya-raskalennoi-monetoi-taptam-a-tekst-i-realnost.html">Ордалия раскаленной монетой (taptamàşa): текст и реальность</a></strong>
@@ -646,6 +497,8 @@
 
         </article>
 
+
+
         <article class="talk" id="PRES_a4b8fa4547">
             <strong><a href="../p/priem-pochetnogo-gostya-atitkhi-v-sanskritskoi-tekstovoi-traditsii-po-dkharmasutre-apastamby.html">Прием почетного гостя-атитхи в санскритской текстовой традиции (по дхармасутре Апастамбы)</a></strong>
             <div class="meta">
@@ -656,6 +509,8 @@
             <div class="meta talk-context"><span class="context-label">Срезы:</span> <a class="mini-chip" href="../meso/ritual-studies.html">Ритуалистика</a> <span class="context-label">Ключевые слова:</span> <a class="mini-chip" href="../search.html?q=%D0%BF%D1%80%D0%B8%D0%B5%D0%BC">прием</a><a class="mini-chip" href="../search.html?q=%D0%BF%D0%BE%D1%87%D0%B5%D1%82%D0%BD%D1%8B%D0%B9">почетный</a><a class="mini-chip" href="../search.html?q=%D0%B3%D0%BE%D1%81%D1%82%D1%8C-%D0%B0%D1%82%D0%B8%D1%82%D1%85%D0%B8">гость-атитхи</a><a class="mini-chip" href="../search.html?q=%D1%81%D0%B0%D0%BD%D1%81%D0%BA%D1%80%D0%B8%D1%82">санскрит</a></div>
 
         </article>
+
+
 
         <article class="talk" id="PRES_a05b916ad8">
             <strong><a href="../p/ordaliya-osvyashchennoi-vodoi-kosha.html">Ордалия освященной водой (kosha)</a></strong>
@@ -668,6 +523,8 @@
 
         </article>
 
+
+
         <article class="talk" id="PRES_64abe774d2">
             <strong><a href="../p/ordaliya-raskalennoi-monetoi-shastricheskii-tekst-i-svidetelstva-ispytanii.html">Ордалия раскаленной монетой: шастрический текст и «свидетельства» испытаний</a></strong>
             <div class="meta">
@@ -678,6 +535,8 @@
             <div class="meta talk-context"><span class="context-label">Срезы:</span> <a class="mini-chip" href="../meso/ritual-studies.html">Ритуалистика</a> <span class="context-label">Ключевые слова:</span> <a class="mini-chip" href="../search.html?q=%D0%BE%D1%80%D0%B4%D0%B0%D0%BB%D0%B8%D1%8F">ордалия</a><a class="mini-chip" href="../search.html?q=%D1%80%D0%B0%D1%81%D0%BA%D0%B0%D0%BB%D0%B8%D1%82%D1%8C">раскалить</a><a class="mini-chip" href="../search.html?q=%D0%BC%D0%BE%D0%BD%D0%B5%D1%82%D0%B0">монета</a><a class="mini-chip" href="../search.html?q=%D1%88%D0%B0%D1%81%D1%82%D1%80%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9">шастрический</a></div>
 
         </article>
+
+
 
         <article class="talk" id="PRES_8b2df737b9">
             <strong><a href="../p/ordaliya-vesami-problemy-interpretatsii-rezultatov-vzveshivaniya.html">Ордалия весами: проблемы интерпретации результатов взвешивания</a></strong>
@@ -690,6 +549,8 @@
 
         </article>
 
+
+
         <article class="talk" id="PRES_eabb2c0db9">
             <strong><a href="../p/ordalii-v-dkharmashastrakh.html">Ордалии в дхармашастрах</a></strong>
             <div class="meta">
@@ -700,11 +561,14 @@
             <div class="meta talk-context"><span class="context-label">Ключевые слова:</span> <a class="mini-chip" href="../search.html?q=%D0%BE%D1%80%D0%B4%D0%B0%D0%BB%D0%B8%D1%8F">ордалия</a><a class="mini-chip" href="../search.html?q=%D0%B4%D1%85%D0%B0%D1%80%D0%BC%D0%B0%D1%88%D0%B0%D1%81%D1%82%D1%80">дхармашастр</a></div>
 
         </article>
-    </section>
 
-        <h2>Связанные авторы</h2>
-        <section class="grid"><article class="card"><strong><a href="svetlana-ryzhakova.html">Рыжакова Светлана Игоревна</a></strong><div class="meta">27 докладов · <a href="../themes/history-and-culture.html">История, этнография и общество</a></div><div class="meta related-reasons">общие мезоуровни: Бенгалия, Бенгалия, бхакти и современность; общие ключевые слова: бенгалия, изменение, контекст; та же площадка/год: Зографские чтения 2008, Зографские чтения 2009</div></article><article class="card"><strong><a href="sergey-tavastsherna.html">Тавастшерна Сергей Сергеевич</a></strong><div class="meta">29 докладов · <a href="../themes/linguistics-and-philology.html">Лингвистика и филология</a></div><div class="meta related-reasons">общие мезоуровни: Ведийские исследования, Санскритская грамматика / Панини; общие ключевые слова: ведийский, вода, древнеиндийский; та же площадка/год: Зографские чтения 2008, Зографские чтения 2009</div></article><article class="card"><strong><a href="natalia-lidova.html">Лидова Наталья Ростиславовна</a></strong><div class="meta">16 докладов · <a href="../themes/literature-and-poetry.html">Литература и поэзия</a></div><div class="meta related-reasons">общие мезоуровни: Ведийские исследования, Ритуалистика; общие ключевые слова: вода, древнеиндийский, жанр; та же площадка/год: Зографские чтения 2008, Зографские чтения 2010</div></article><article class="card"><strong><a href="natalia-alexandrova.html">Александрова Наталия Владимировна</a></strong><div class="meta">27 докладов · <a href="../themes/religion-and-philosophy.html">Религия и философия</a></div><div class="meta related-reasons">общие ключевые слова: варанася, композиция, начало; та же площадка/год: Зографские чтения 2014, Зографские чтения 2017; общая рубрика: Религия и философия</div></article><article class="card"><strong><a href="areg-mekhakyan.html">Мехакян Арег Гайкович</a></strong><div class="meta">20 докладов · <a href="../themes/religion-and-philosophy.html">Религия и философия</a></div><div class="meta related-reasons">общие мезоуровни: Ведийские исследования, Этнография, ритуал и перформанс; общие ключевые слова: ведийский, древнеиндийский, ритуал; та же площадка/год: Зографские чтения 2008, Зографские чтения 2009</div></article><article class="card"><strong><a href="victoria-vertogradova.html">Вертоградова Виктория Викторовна</a></strong><div class="meta">17 докладов · <a href="../themes/history-and-culture.html">История, этнография и общество</a></div><div class="meta related-reasons">общие мезоуровни: Ведийские исследования, Ритуалистика; общие ключевые слова: веда, ведийский, древнеиндийский; та же площадка/год: Рериховские чтения 2008, Рериховские чтения 2009</div></article><article class="card"><strong><a href="vyrshchikov-evgenii.html">Вырщиков Евгений Геннадьевич</a></strong><div class="meta">16 докладов · <a href="../themes/religion-and-philosophy.html">Религия и философия</a></div><div class="meta related-reasons">общие мезоуровни: Ведийские исследования, Ритуалистика; общие ключевые слова: ведийский, вратья, санскрит; та же площадка/год: Рериховские чтения 2008, Рериховские чтения 2009</div></article><article class="card"><strong><a href="desnitskaya-evgeniya.html">Десницкая Евгения Алексеевна</a></strong><div class="meta">16 докладов · <a href="../themes/religion-and-philosophy.html">Религия и философия</a></div><div class="meta related-reasons">общие мезоуровни: Ведийские исследования, Ритуалистика; общие ключевые слова: брахман, ведийский, практика; та же площадка/год: Зографские чтения 2008, Зографские чтения 2014</div></article></section>
 
+</section>
+
+<h2>Связанные авторы</h2>
+<section class="grid">
+    <article class="card"><strong><a href="svetlana-ryzhakova.html">Рыжакова Светлана Игоревна</a></strong><div class="meta">27 докладов · <a href="../themes/history-and-culture.html">История, этнография и общество</a></div><div class="meta related-reasons">общие мезоуровни: Бенгалия, Бенгалия, бхакти и современность; общие ключевые слова: бенгалия, изменение, контекст; та же площадка/год: Зографские чтения 2008, Зографские чтения 2009</div></article><article class="card"><strong><a href="sergey-tavastsherna.html">Тавастшерна Сергей Сергеевич</a></strong><div class="meta">29 докладов · <a href="../themes/linguistics-and-philology.html">Лингвистика и филология</a></div><div class="meta related-reasons">общие мезоуровни: Ведийские исследования, Санскритская грамматика / Панини; общие ключевые слова: ведийский, вода, древнеиндийский; та же площадка/год: Зографские чтения 2008, Зографские чтения 2009</div></article><article class="card"><strong><a href="natalia-lidova.html">Лидова Наталья Ростиславовна</a></strong><div class="meta">16 докладов · <a href="../themes/literature-and-poetry.html">Литература и поэзия</a></div><div class="meta related-reasons">общие мезоуровни: Ведийские исследования, Ритуалистика; общие ключевые слова: вода, древнеиндийский, жанр; та же площадка/год: Зографские чтения 2008, Зографские чтения 2010</div></article><article class="card"><strong><a href="natalia-alexandrova.html">Александрова Наталия Владимировна</a></strong><div class="meta">27 докладов · <a href="../themes/religion-and-philosophy.html">Религия и философия</a></div><div class="meta related-reasons">общие ключевые слова: варанася, композиция, начало; та же площадка/год: Зографские чтения 2014, Зографские чтения 2017; общая рубрика: Религия и философия</div></article><article class="card"><strong><a href="areg-mekhakyan.html">Мехакян Арег Гайкович</a></strong><div class="meta">20 докладов · <a href="../themes/religion-and-philosophy.html">Религия и философия</a></div><div class="meta related-reasons">общие мезоуровни: Ведийские исследования, Этнография, ритуал и перформанс; общие ключевые слова: ведийский, древнеиндийский, ритуал; та же площадка/год: Зографские чтения 2008, Зографские чтения 2009</div></article><article class="card"><strong><a href="victoria-vertogradova.html">Вертоградова Виктория Викторовна</a></strong><div class="meta">17 докладов · <a href="../themes/history-and-culture.html">История, этнография и общество</a></div><div class="meta related-reasons">общие мезоуровни: Ведийские исследования, Ритуалистика; общие ключевые слова: веда, ведийский, древнеиндийский; та же площадка/год: Рериховские чтения 2008, Рериховские чтения 2009</div></article><article class="card"><strong><a href="vyrshchikov-evgenii.html">Вырщиков Евгений Геннадьевич</a></strong><div class="meta">16 докладов · <a href="../themes/religion-and-philosophy.html">Религия и философия</a></div><div class="meta related-reasons">общие мезоуровни: Ведийские исследования, Ритуалистика; общие ключевые слова: ведийский, вратья, санскрит; та же площадка/год: Рериховские чтения 2008, Рериховские чтения 2009</div></article><article class="card"><strong><a href="desnitskaya-evgeniya.html">Десницкая Евгения Алексеевна</a></strong><div class="meta">16 докладов · <a href="../themes/religion-and-philosophy.html">Религия и философия</a></div><div class="meta related-reasons">общие мезоуровни: Ведийские исследования, Ритуалистика; общие ключевые слова: брахман, ведийский, практика; та же площадка/год: Зографские чтения 2008, Зографские чтения 2014</div></article>
+</section>
         <div class="footer">© 2026 Russian Indological Research Archive. Сгенерировано из нормализованного архива конференций.</div>
     </main>
 </body>

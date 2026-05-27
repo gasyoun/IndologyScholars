@@ -27,10 +27,6 @@
     <meta name="twitter:image" content="https://gasyoun.github.io/IndologyScholars/assets/og-image.png">
     <script defer src="/IndologyScholars/assets/pwa.js"></script>
 
-    <style>
-        .entry-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 0.75rem; }
-        .public-id { flex: none; color: var(--soft); font-size: 0.82rem; font-weight: 600; white-space: nowrap; }
-    </style>
 
     <script type="application/ld+json">
 [
@@ -67,248 +63,63 @@
   }
 ]
     </script>
-    <style>
-        :root {
-            color-scheme: dark;
-            --bg: #101513;
-            --panel: #171e1b;
-            --panel-strong: #1c2521;
-            --border: #2b3631;
-            --text: #e7ece8;
-            --muted: #b3beb7;
-            --soft: #87938c;
-            --accent: #62ae92;
-            --accent2: #c59a56;
-        }
-        * { box-sizing: border-box; }
-        body {
-            margin: 0;
-            font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
-        }
-        a { color: #82c6ad; text-decoration: none; }
-        a:hover { color: #addac8; }
-        .page {
-            max-width: 1160px;
-            margin: 0 auto;
-            padding: 1.25rem 2rem 2rem;
-        }
-        .top-nav {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.45rem;
-            align-items: center;
-            margin-bottom: 1.4rem;
-        }
-        .top-nav a, .chip {
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            background: transparent;
-            padding: 0.43rem 0.68rem;
-            color: var(--muted);
-            display: inline-flex;
-            align-items: center;
-            gap: 0.35rem;
-        }
-        .more-nav { position: relative; }
-        .more-nav summary {
-            list-style: none;
-            cursor: pointer;
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 0.43rem 0.68rem;
-            color: var(--muted);
-        }
-        .more-nav summary::-webkit-details-marker { display: none; }
-        .more-nav summary:hover { color: var(--text); border-color: var(--accent); }
-        .more-menu {
-            position: absolute;
-            top: calc(100% + 0.4rem);
-            left: 0;
-            z-index: 10;
-            width: min(420px, calc(100vw - 3rem));
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.4rem;
-            padding: 0.65rem;
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            background: var(--panel-strong);
-            box-shadow: 0 10px 26px rgba(0,0,0,0.28);
-        }
-        header {
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 1.5rem;
-            margin-bottom: 1.75rem;
-        }
-        h1 {
-            font-size: clamp(1.8rem, 3vw, 2.5rem);
-            line-height: 1.15;
-            margin: 0 0 0.75rem;
-            letter-spacing: 0;
-        }
-        h2 {
-            font-size: 1.45rem;
-            margin: 2rem 0 1rem;
-            letter-spacing: 0;
-        }
-        p { color: var(--muted); max-width: 820px; }
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
-            gap: 1rem;
-        }
-        .card {
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 1rem;
-            background: var(--panel);
-        }
-        .card strong { color: #fff; }
-        .metric {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: #fff;
-            margin-top: 0.35rem;
-        }
-        .meta {
-            color: var(--soft);
-            font-size: 0.92rem;
-            margin-top: 0.3rem;
-        }
-        .link-block {
-            max-width: 900px;
-            margin: 1rem 0;
-        }
-        .link-block > strong {
-            color: #fff;
-            display: block;
-            margin-bottom: 0.45rem;
-        }
-        .chip-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.45rem;
-        }
-        .list {
-            display: grid;
-            gap: 0.75rem;
-        }
-        .talk {
-            border-left: 3px solid var(--accent);
-            background: rgba(255,255,255,0.035);
-            padding: 0.8rem 1rem;
-            border-radius: 0 8px 8px 0;
-        }
-        .badge {
-            display: inline-flex;
-            align-items: center;
-            border-radius: 8px;
-            padding: 0.18rem 0.45rem;
-            margin-left: 0.45rem;
-            border: 1px solid var(--border);
-            color: var(--muted);
-            font-size: 0.82rem;
-            font-weight: 600;
-            vertical-align: middle;
-        }
-        .badge-online {
-            border-color: rgba(52, 211, 153, 0.4);
-            color: #6ee7b7;
-            background: rgba(16, 185, 129, 0.1);
-        }
-        .badge-video {
-            border-color: rgba(251, 191, 36, 0.44);
-            color: #fde68a;
-            background: rgba(217, 119, 6, 0.13);
-        }
-        .footer {
-            color: var(--soft);
-            margin-top: 3rem;
-            border-top: 1px solid var(--border);
-            padding-top: 1rem;
-            font-size: 0.9rem;
-        }
-        .search-box {
-            width: 100%;
-            max-width: 720px;
-            padding: 0.8rem 1rem;
-            border-radius: 8px;
-            border: 1px solid var(--border);
-            background: var(--panel-strong);
-            color: var(--text);
-            font-size: 1rem;
-        }
-        .field-label {
-            display: block;
-            margin: 0 0 0.38rem;
-            color: var(--muted);
-            font-size: 0.85rem;
-            font-weight: 600;
-        }
-        .caveat-block {
-            border: 1px solid rgba(98,174,146,0.35);
-            border-left: 4px solid var(--accent);
-            border-radius: 8px;
-            background: rgba(98,174,146,0.07);
-            padding: 0.9rem 1.1rem;
-            margin: 1.25rem 0 1.75rem;
-            max-width: 820px;
-        }
-        .caveat-block strong {
-            color: #8dc9b2;
-            display: block;
-            margin-bottom: 0.35rem;
-        }
-        .caveat-block p {
-            font-size: 0.93rem;
-            margin: 0;
-            color: var(--muted);
-        }
-        :focus-visible {
-            outline: 2px solid var(--accent);
-            outline-offset: 2px;
-        }
-        @media (max-width: 640px) {
-            .page { padding: 1rem; }
-            .top-nav { gap: 0.35rem; margin-bottom: 1.15rem; }
-            .top-nav a, .chip, .more-nav summary { padding: 0.38rem 0.55rem; font-size: 0.9rem; }
-            header { padding-bottom: 1rem; margin-bottom: 1.2rem; }
-            h1 { font-size: 1.65rem; }
-        }
-    </style>
+
+    <link rel="stylesheet" href="/IndologyScholars/assets/styles.css">
 </head>
 <body>
     <main class="page">
         <nav class="top-nav" aria-label="Primary">
+
             <a href="/IndologyScholars/">Архив</a>
+
             <a href="/IndologyScholars/search.html">Поиск</a>
+
             <a href="/IndologyScholars/s/">Исследователи</a>
+
             <a href="/IndologyScholars/p/">Доклады</a>
+
             <a href="/IndologyScholars/conferences/">Конференции</a>
+
             <a href="/IndologyScholars/themes/">Рубрики</a>
+
             <a href="/IndologyScholars/generations/">Поколения</a>
+
             <details class="more-nav">
                 <summary>Еще</summary>
                 <div class="more-menu">
+
                     <a href="/IndologyScholars/findings/">Выводы</a>
+
                     <a href="/IndologyScholars/topics/">Сюжеты</a>
+
                     <a href="/IndologyScholars/download-data.html">Данные</a>
+
                     <a href="/IndologyScholars/meso/">Мезоуровни</a>
+
                     <a href="/IndologyScholars/keywords/">Ключевые слова</a>
+
                     <a href="/IndologyScholars/gumilyov/">Гумилев</a>
+
                     <a href="/IndologyScholars/classification-criteria.html">Критерии</a>
+
                     <a href="/IndologyScholars/videos/">Видео</a>
+
                     <a href="/IndologyScholars/cities/">Города</a>
+
                     <a href="/IndologyScholars/institutions/">Институции</a>
+
                     <a href="/IndologyScholars/collaboration/">Коллаборация</a>
+
                     <a href="/IndologyScholars/nlp/">NLP-анализ</a>
+
                     <a href="/IndologyScholars/data-quality.html">Качество</a>
+
                     <a href="/IndologyScholars/en.html">English</a>
+
                     <a href="/IndologyScholars/how-to-cite.html">Цитирование</a>
+
                     <a href="/IndologyScholars/metrics-guide.html">Метрики</a>
+
                 </div>
             </details>
         </nav>
@@ -319,7 +130,7 @@
             </header>
 
             <nav class="chip-list" aria-label="Страницы докладов"><a class="chip" href="./">1</a><a class="chip" href="page-2.html">2</a><a class="chip" href="page-3.html">3</a><a class="chip" href="page-4.html">4</a><a class="chip" href="page-5.html">5</a><a class="chip" href="page-6.html">6</a><a class="chip" href="page-7.html">7</a><a class="chip" href="page-8.html">8</a><a class="chip" href="page-9.html">9</a><a class="chip" href="page-10.html">10</a><a class="chip" href="page-11.html">11</a><span class="chip" aria-current="page">12</span></nav>
-            <section class="list"><article class="talk"><div class="entry-head"><strong><a href="tema-utochnyaetsya.html">Тема уточняется</a></strong><span class="public-id">ID 47</span></div><div class="meta">Зографские чтения 2006 · <a href="../s/zagumennov-boris.html">Б. В. Загуменнов</a></div></article><article class="talk"><div class="entry-head"><strong><a href="tekhnicheskie-prisposobleniya-dlya-rubrikatsii-kornei-v-dkhatupatkhe-panini.html">Технические приспособления для рубрикации корней в «Дхатупатхе» Панини</a></strong><span class="public-id">ID 31</span></div><div class="meta">Зографские чтения 2006 · <a href="../s/marcis-gasuns.html">М. Ю. Гасунс</a></div></article><article class="talk"><div class="entry-head"><strong><a href="tsar-ustanovitel-dkharmy-prakticheskii-aspekt-ideologicheskoi-kontseptsii.html">Царь − установитель дхармы. Практический аспект идеологической концепции</a></strong><span class="public-id">ID 41</span></div><div class="meta">Зографские чтения 2006 · <a href="../s/lelyukhin-dmitrii.html">Д. Н. Лелюхин</a></div></article><article class="talk"><div class="entry-head"><strong><a href="um-i-znanie-tibetskii-uchebnik-po-teorii-poznaniya.html">«Ум и знание» - тибетский учебник по теории познания</a></strong><span class="public-id">ID 11</span></div><div class="meta">Зографские чтения 2004 · <a href="../s/rada-krapivina.html">Р. Н. Крапивина</a></div></article><article class="talk"><div class="entry-head"><strong><a href="aktualnye-problemy-izucheniya-bkhagavadgity.html">Актуальные проблемы изучения «Бхагавадгиты»</a></strong><span class="public-id">ID 1</span></div><div class="meta">Зографские чтения 2004 · <a href="../s/vasilkov-yaroslav.html">Я. В. Васильков</a></div></article><article class="talk"><div class="entry-head"><strong><a href="bogini-i-derevya-zhelanii-v-induizme-tsentralnykh-gimalaev.html">Богини и деревья желаний в индуизме Центральных Гималаев</a></strong><span class="public-id">ID 15</span></div><div class="meta">Зографские чтения 2004 · <a href="../s/svetlana-ryzhakova.html">С. И. Рыжакова</a></div></article><article class="talk"><div class="entry-head"><strong><a href="buddizm-v-tvorchestve-dzhayashankara-prasada.html">Буддизм в творчестве Джаяшанкара Прасада</a></strong><span class="public-id">ID 23</span></div><div class="meta">Зографские чтения 2004 · <a href="../s/strelkova-gyuzel.html">Г. В. Стрелкова</a></div></article><article class="talk"><div class="entry-head"><strong><a href="devi-gita-iz-devibkhagavata-purany.html">Деви-гита из Девибхагавата-пураны</a></strong><span class="public-id">ID 9</span></div><div class="meta">Зографские чтения 2004 · <a href="../s/ignatev-andrei.html">А. А. Игнатьев</a></div></article><article class="talk"><div class="entry-head"><strong><a href="eshche-raz-o-slove-tman-v-rigvede.html">Еще раз о слове ātman в Ригведе</a></strong><span class="public-id">ID 10</span></div><div class="meta">Зографские чтения 2004 · <a href="../s/elizarenkova-tatyana.html">Т. Я. Елизаренкова</a></div></article><article class="talk"><div class="entry-head"><strong><a href="zamechaniya-po-formalnoi-storone-rikpratishakkhi.html">Замечания по формальной стороне Рикпратишакхьи</a></strong><span class="public-id">ID 6</span></div><div class="meta">Зографские чтения 2004 · <a href="../s/vidunas-vitis.html">В. Видунас</a></div></article><article class="talk"><div class="entry-head"><strong><a href="kontseptsiya-spkhoty-v-spkhotasiddkhi-mandanamishry.html">Концепция спхоты в «Спхотасиддхи» Манданамишры</a></strong><span class="public-id">ID 21</span></div><div class="meta">Зографские чтения 2004 · <a href="../s/slinko-elena.html">Е. В. Слинько</a></div></article><article class="talk"><div class="entry-head"><strong><a href="leksika-epizoda-i-ego-znachenie-na-materiale-zavershayushchikh-knig-makhabkharaty.html">Лексика эпизода и его значение (на материале завершающих книг «Махабхараты»)</a></strong><span class="public-id">ID 8</span></div><div class="meta">Зографские чтения 2004 · <a href="../s/neveleva-svetlana.html">С. Л. Невелева</a></div></article><article class="talk"><div class="entry-head"><strong><a href="literaturnye-reministsentsii-v-gaudavakho-vakpatiradzhi.html">Литературные реминисценции в «Гаудавахо» Вакпатираджи</a></strong><span class="public-id">ID 16</span></div><div class="meta">Зографские чтения 2004 · <a href="../s/rusanov-maksim.html">М. Н. Русанов</a></div></article><article class="talk"><div class="entry-head"><strong><a href="luk-oruzhie.html">Лук (оружие)</a></strong><span class="public-id">ID 5</span></div><div class="meta">Зографские чтения 2004 · <a href="../s/bogolyubov-mikhail.html">М. Н. Боголюбов</a></div></article><article class="talk"><div class="entry-head"><strong><a href="mif-ob-agaste-v-srednevekovoi-literature-telugu.html">Миф об Агастье в средневековой литературе телугу</a></strong><span class="public-id">ID 12</span></div><div class="meta">Зографские чтения 2004 · <a href="../s/gurov-nikita.html">Н. В. Гуров</a></div></article><article class="talk"><div class="entry-head"><strong><a href="moksha-v-bkhagavata-purane.html">Мокша в Бхагавата-пуране</a></strong><span class="public-id">ID 3</span></div><div class="meta">Зографские чтения 2004 · <a href="../s/kokova-yuliya.html">Ю. Г. Кокова</a></div></article><article class="talk"><div class="entry-head"><strong><a href="o-58-sinonimakh-rechi-v-nigkhantu.html">О 58 синонимах «речи» в «Нигханту»</a></strong><span class="public-id">ID 28</span></div><div class="meta">Зографские чтения 2004 · <a href="../s/sergey-tavastsherna.html">С. С. Тавастшерна</a></div></article><article class="talk"><div class="entry-head"><strong><a href="o-svyashchennoi-geografii-v-tvorchestve-tirunyanasambandara-shivaitskii-poeticheskii-kompleks-de.html">О «священной географии» в творчестве Тирунянасамбандара (шиваитский поэтический комплекс «Деварам»)</a></strong><span class="public-id">ID 22</span></div><div class="meta">Зографские чтения 2004 · <a href="../s/zagorulko-andrei.html">М. Б. Загорулько</a></div></article><article class="talk"><div class="entry-head"><strong><a href="o-vzaimootnoshenii-religioznykh-konfessii-v-srednevekovom-tamilnade.html">О взаимоотношении религиозных конфессий в средневековом Тамилнаде</a></strong><span class="public-id">ID 17</span></div><div class="meta">Зографские чтения 2004 · <a href="../s/alexander-dubyansky.html">А. М. Дубянский</a></div></article><article class="talk"><div class="entry-head"><strong><a href="o-zhanre-vyaioga-v-sanskritskoi-teorii-dramy.html">О жанре вьяйога в санскритской теории драмы</a></strong><span class="public-id">ID 27</span></div><div class="meta">Зографские чтения 2004 · <a href="../s/erman-vladimir.html">В. Г. Эрман</a></div></article><article class="talk"><div class="entry-head"><strong><a href="ob-astrologicheskoi-germenevtike-v-meditsinskikh-tekstakh-ayurveda.html">Об астрологической герменевтике в медицинских текстах (Аюрведа)</a></strong><span class="public-id">ID 13</span></div><div class="meta">Зографские чтения 2004 · <a href="../s/beinoryus-audryus.html">А. Бейнорюс</a></div></article><article class="talk"><div class="entry-head"><strong><a href="oproverzhenie-atomizma-v-traktate-vasubandkhu-vidzhnyaptimatratasiddkhi-dokazatelstvo-edinstvenn.html">Опровержение атомизма в трактате Васубандху Виджняптиматратасиддхи («Доказательство единственности сознания»)</a></strong><span class="public-id">ID 19</span></div><div class="meta">Зографские чтения 2004 · <a href="../s/khomutinnikova.html">Н. В. Хомутинникова</a></div></article><article class="talk"><div class="entry-head"><strong><a href="perevod-g-s-lebedevym-poemy-bkharat-chondro-raya-biddeshundor-po-rukopisi-khranyashcheisya-v-rgi.html">Перевод Г.С.Лебедевым поэмы Бхарат Чондро Рая «Биддешундор» (по рукописи, хранящейся в РГИА). Предварительное сообщение</a></strong><span class="public-id">ID 20</span></div><div class="meta">Зографские чтения 2004 · <a href="../s/brosalina-elena.html">Е. К. Бросалина</a>; <a href="../s/sladkov-andrei.html">А. Л. Сладков</a></div></article><article class="talk"><div class="entry-head"><strong><a href="problema-interpretatsii-spetsialnoi-sanskritskoi-terminologii-termin-adkhyaksha-v-indiiskoi-trad.html">Проблема интерпретации специальной санскритской терминологии: термин адхьякша в индийской традиции</a></strong><span class="public-id">ID 25</span></div><div class="meta">Зографские чтения 2004 · <a href="../s/lelyukhin-dmitrii.html">Д. Н. Лелюхин</a></div></article><article class="talk"><div class="entry-head"><strong><a href="problema-klassifikatsii-induistskikh-tantricheskikh-shkol.html">Проблема классификации индуистских тантрических школ</a></strong><span class="public-id">ID 24</span></div><div class="meta">Зографские чтения 2004 · <a href="../s/pakhomov-sergei.html">С. В. Пахомов</a></div></article><article class="talk"><div class="entry-head"><strong><a href="psikhologiya-akta-samopozhertvovaniya-v-izobrazhenii-dramaturgov-7-go-veka.html">Психология акта самопожертвования в изображении драматургов 7-го века</a></strong><span class="public-id">ID 18</span></div><div class="meta">Зографские чтения 2004 · <a href="../s/yulia-alikhanova.html">Ю. М. Алиханова</a></div></article><article class="talk"><div class="entry-head"><strong><a href="syuzhet-povesti-o-nasikete-sadala-mishry-v-kontekste-istorii-prozy-khindi.html">Сюжет «Повести о Насикете» Садала Мишры в контексте истории прозы хинди</a></strong><span class="public-id">ID 14</span></div><div class="meta">Зографские чтения 2004 · <a href="../s/dubyanskaya-tatyana.html">Т. А. Дубянская</a></div></article><article class="talk"><div class="entry-head"><strong><a href="syuzhet-o-trite-etnoistoricheskaya-osnova.html">Сюжет о Трите: этноисторическая основа</a></strong><span class="public-id">ID 2</span></div><div class="meta">Зографские чтения 2004 · <a href="../s/albedil-margarita.html">М. Ф. Альбедиль</a></div></article><article class="talk"><div class="entry-head"><strong><a href="figura-tsarya-i-predstavleniya-o-vremeni-v-makhabkharate.html">Фигура царя и представления о времени в «Махабхарате»</a></strong><span class="public-id">ID 4</span></div><div class="meta">Зографские чтения 2004 · <a href="../s/petrova.html">М. И. Петрова</a></div></article><article class="talk"><div class="entry-head"><strong><a href="shankara-kak-kritik-kategorii-vaisheshiki.html">Шанкара как критик категорий вайшешики</a></strong><span class="public-id">ID 26</span></div><div class="meta">Зографские чтения 2004 · <a href="../s/victoria-lysenko.html">В. Г. Лысенко</a></div></article><article class="talk"><div class="entry-head"><strong><a href="erotika-v-rigvede-muzhskoe-i-zhenskoe-nachalo.html">Эротика в Ригведе: мужское и женское начало</a></strong><span class="public-id">ID 7</span></div><div class="meta">Зографские чтения 2004 · <a href="../s/khomichenkene.html">А. Хомиченкене</a></div></article></section>
+            <section class="list"><article class="talk"><div class="entry-head"><strong><a href="tema-utochnyaetsya.html">Тема уточняется</a></strong><span class="public-id">ID 47</span></div><div class="meta">Зографские чтения 2006 · <a href="../s/zagumennov.html">Б. В. Загуменнов</a></div></article><article class="talk"><div class="entry-head"><strong><a href="tekhnicheskie-prisposobleniya-dlya-rubrikatsii-kornei-v-dkhatupatkhe-panini.html">Технические приспособления для рубрикации корней в «Дхатупатхе» Панини</a></strong><span class="public-id">ID 31</span></div><div class="meta">Зографские чтения 2006 · <a href="../s/marcis-gasuns.html">М. Ю. Гасунс</a></div></article><article class="talk"><div class="entry-head"><strong><a href="tsar-ustanovitel-dkharmy-prakticheskii-aspekt-ideologicheskoi-kontseptsii.html">Царь − установитель дхармы. Практический аспект идеологической концепции</a></strong><span class="public-id">ID 41</span></div><div class="meta">Зографские чтения 2006 · <a href="../s/lelyukhin-dmitrii.html">Д. Н. Лелюхин</a></div></article><article class="talk"><div class="entry-head"><strong><a href="um-i-znanie-tibetskii-uchebnik-po-teorii-poznaniya.html">«Ум и знание» - тибетский учебник по теории познания</a></strong><span class="public-id">ID 11</span></div><div class="meta">Зографские чтения 2004 · <a href="../s/rada-krapivina.html">Р. Н. Крапивина</a></div></article><article class="talk"><div class="entry-head"><strong><a href="aktualnye-problemy-izucheniya-bkhagavadgity.html">Актуальные проблемы изучения «Бхагавадгиты»</a></strong><span class="public-id">ID 1</span></div><div class="meta">Зографские чтения 2004 · <a href="../s/vasilkov-yaroslav.html">Я. В. Васильков</a></div></article><article class="talk"><div class="entry-head"><strong><a href="bogini-i-derevya-zhelanii-v-induizme-tsentralnykh-gimalaev.html">Богини и деревья желаний в индуизме Центральных Гималаев</a></strong><span class="public-id">ID 15</span></div><div class="meta">Зографские чтения 2004 · <a href="../s/svetlana-ryzhakova.html">С. И. Рыжакова</a></div></article><article class="talk"><div class="entry-head"><strong><a href="buddizm-v-tvorchestve-dzhayashankara-prasada.html">Буддизм в творчестве Джаяшанкара Прасада</a></strong><span class="public-id">ID 23</span></div><div class="meta">Зографские чтения 2004 · <a href="../s/strelkova-gyuzel.html">Г. В. Стрелкова</a></div></article><article class="talk"><div class="entry-head"><strong><a href="devi-gita-iz-devibkhagavata-purany.html">Деви-гита из Девибхагавата-пураны</a></strong><span class="public-id">ID 9</span></div><div class="meta">Зографские чтения 2004 · <a href="../s/ignatev-andrei.html">А. А. Игнатьев</a></div></article><article class="talk"><div class="entry-head"><strong><a href="eshche-raz-o-slove-tman-v-rigvede.html">Еще раз о слове ātman в Ригведе</a></strong><span class="public-id">ID 10</span></div><div class="meta">Зографские чтения 2004 · <a href="../s/elizarenkova-tatyana.html">Т. Я. Елизаренкова</a></div></article><article class="talk"><div class="entry-head"><strong><a href="zamechaniya-po-formalnoi-storone-rikpratishakkhi.html">Замечания по формальной стороне Рикпратишакхьи</a></strong><span class="public-id">ID 6</span></div><div class="meta">Зографские чтения 2004 · <a href="../s/vidunas-vitis.html">В. Витис</a></div></article><article class="talk"><div class="entry-head"><strong><a href="kontseptsiya-spkhoty-v-spkhotasiddkhi-mandanamishry.html">Концепция спхоты в «Спхотасиддхи» Манданамишры</a></strong><span class="public-id">ID 21</span></div><div class="meta">Зографские чтения 2004 · <a href="../s/slinko-elena.html">Е. В. Слинько</a></div></article><article class="talk"><div class="entry-head"><strong><a href="leksika-epizoda-i-ego-znachenie-na-materiale-zavershayushchikh-knig-makhabkharaty.html">Лексика эпизода и его значение (на материале завершающих книг «Махабхараты»)</a></strong><span class="public-id">ID 8</span></div><div class="meta">Зографские чтения 2004 · <a href="../s/neveleva-svetlana.html">С. Л. Невелева</a></div></article><article class="talk"><div class="entry-head"><strong><a href="literaturnye-reministsentsii-v-gaudavakho-vakpatiradzhi.html">Литературные реминисценции в «Гаудавахо» Вакпатираджи</a></strong><span class="public-id">ID 16</span></div><div class="meta">Зографские чтения 2004 · <a href="../s/rusanov-maksim.html">М. А. Русанов</a></div></article><article class="talk"><div class="entry-head"><strong><a href="luk-oruzhie.html">Лук (оружие)</a></strong><span class="public-id">ID 5</span></div><div class="meta">Зографские чтения 2004 · <a href="../s/bogolyubov-mikhail.html">М. Н. Боголюбов</a></div></article><article class="talk"><div class="entry-head"><strong><a href="mif-ob-agaste-v-srednevekovoi-literature-telugu.html">Миф об Агастье в средневековой литературе телугу</a></strong><span class="public-id">ID 12</span></div><div class="meta">Зографские чтения 2004 · <a href="../s/gurov-nikita.html">Н. В. Гуров</a></div></article><article class="talk"><div class="entry-head"><strong><a href="moksha-v-bkhagavata-purane.html">Мокша в Бхагавата-пуране</a></strong><span class="public-id">ID 3</span></div><div class="meta">Зографские чтения 2004 · <a href="../s/kokova-yuliya.html">Ю. Г. Кокова</a></div></article><article class="talk"><div class="entry-head"><strong><a href="o-58-sinonimakh-rechi-v-nigkhantu.html">О 58 синонимах «речи» в «Нигханту»</a></strong><span class="public-id">ID 28</span></div><div class="meta">Зографские чтения 2004 · <a href="../s/sergey-tavastsherna.html">С. С. Тавастшерна</a></div></article><article class="talk"><div class="entry-head"><strong><a href="o-svyashchennoi-geografii-v-tvorchestve-tirunyanasambandara-shivaitskii-poeticheskii-kompleks-de.html">О «священной географии» в творчестве Тирунянасамбандара (шиваитский поэтический комплекс «Деварам»)</a></strong><span class="public-id">ID 22</span></div><div class="meta">Зографские чтения 2004 · <a href="../s/zagorulko-andrei.html">А. В. Загорулько</a></div></article><article class="talk"><div class="entry-head"><strong><a href="o-vzaimootnoshenii-religioznykh-konfessii-v-srednevekovom-tamilnade.html">О взаимоотношении религиозных конфессий в средневековом Тамилнаде</a></strong><span class="public-id">ID 17</span></div><div class="meta">Зографские чтения 2004 · <a href="../s/alexander-dubyansky.html">А. М. Дубянский</a></div></article><article class="talk"><div class="entry-head"><strong><a href="o-zhanre-vyaioga-v-sanskritskoi-teorii-dramy.html">О жанре вьяйога в санскритской теории драмы</a></strong><span class="public-id">ID 27</span></div><div class="meta">Зографские чтения 2004 · <a href="../s/erman-vladimir.html">В. Г. Эрман</a></div></article><article class="talk"><div class="entry-head"><strong><a href="ob-astrologicheskoi-germenevtike-v-meditsinskikh-tekstakh-ayurveda.html">Об астрологической герменевтике в медицинских текстах (Аюрведа)</a></strong><span class="public-id">ID 13</span></div><div class="meta">Зографские чтения 2004 · <a href="../s/beinoryus-audryus.html">Б. Аудрюс</a></div></article><article class="talk"><div class="entry-head"><strong><a href="oproverzhenie-atomizma-v-traktate-vasubandkhu-vidzhnyaptimatratasiddkhi-dokazatelstvo-edinstvenn.html">Опровержение атомизма в трактате Васубандху Виджняптиматратасиддхи («Доказательство единственности сознания»)</a></strong><span class="public-id">ID 19</span></div><div class="meta">Зографские чтения 2004 · <a href="../s/n-v-khomutinnikova.html">Н. В. Хомутинникова</a></div></article><article class="talk"><div class="entry-head"><strong><a href="perevod-g-s-lebedevym-poemy-bkharat-chondro-raya-biddeshundor-po-rukopisi-khranyashcheisya-v-rgi.html">Перевод Г.С.Лебедевым поэмы Бхарат Чондро Рая «Биддешундор» (по рукописи, хранящейся в РГИА). Предварительное сообщение</a></strong><span class="public-id">ID 20</span></div><div class="meta">Зографские чтения 2004 · <a href="../s/brosalina-elena.html">Е. К. Бросалина</a>; <a href="../s/sladkov-andrei.html">А. Л. Сладков</a></div></article><article class="talk"><div class="entry-head"><strong><a href="problema-interpretatsii-spetsialnoi-sanskritskoi-terminologii-termin-adkhyaksha-v-indiiskoi-trad.html">Проблема интерпретации специальной санскритской терминологии: термин адхьякша в индийской традиции</a></strong><span class="public-id">ID 25</span></div><div class="meta">Зографские чтения 2004 · <a href="../s/lelyukhin-dmitrii.html">Д. Н. Лелюхин</a></div></article><article class="talk"><div class="entry-head"><strong><a href="problema-klassifikatsii-induistskikh-tantricheskikh-shkol.html">Проблема классификации индуистских тантрических школ</a></strong><span class="public-id">ID 24</span></div><div class="meta">Зографские чтения 2004 · <a href="../s/pakhomov-sergei.html">С. В. Пахомов</a></div></article><article class="talk"><div class="entry-head"><strong><a href="psikhologiya-akta-samopozhertvovaniya-v-izobrazhenii-dramaturgov-7-go-veka.html">Психология акта самопожертвования в изображении драматургов 7-го века</a></strong><span class="public-id">ID 18</span></div><div class="meta">Зографские чтения 2004 · <a href="../s/yulia-alikhanova.html">Ю. М. Алиханова</a></div></article><article class="talk"><div class="entry-head"><strong><a href="syuzhet-povesti-o-nasikete-sadala-mishry-v-kontekste-istorii-prozy-khindi.html">Сюжет «Повести о Насикете» Садала Мишры в контексте истории прозы хинди</a></strong><span class="public-id">ID 14</span></div><div class="meta">Зографские чтения 2004 · <a href="../s/dubyanskaya-tatyana.html">Т. А. Дубянская</a></div></article><article class="talk"><div class="entry-head"><strong><a href="syuzhet-o-trite-etnoistoricheskaya-osnova.html">Сюжет о Трите: этноисторическая основа</a></strong><span class="public-id">ID 2</span></div><div class="meta">Зографские чтения 2004 · <a href="../s/albedil-margarita.html">М. Ф. Альбедиль</a></div></article><article class="talk"><div class="entry-head"><strong><a href="figura-tsarya-i-predstavleniya-o-vremeni-v-makhabkharate.html">Фигура царя и представления о времени в «Махабхарате»</a></strong><span class="public-id">ID 4</span></div><div class="meta">Зографские чтения 2004 · <a href="../s/m-i-petrova.html">М. И. Петрова</a></div></article><article class="talk"><div class="entry-head"><strong><a href="shankara-kak-kritik-kategorii-vaisheshiki.html">Шанкара как критик категорий вайшешики</a></strong><span class="public-id">ID 26</span></div><div class="meta">Зографские чтения 2004 · <a href="../s/victoria-lysenko.html">В. Г. Лысенко</a></div></article><article class="talk"><div class="entry-head"><strong><a href="erotika-v-rigvede-muzhskoe-i-zhenskoe-nachalo.html">Эротика в Ригведе: мужское и женское начало</a></strong><span class="public-id">ID 7</span></div><div class="meta">Зографские чтения 2004 · <a href="../s/a-khomichenkene.html">А. Хомиченкене</a></div></article></section>
 
         <div class="footer">© 2026 Russian Indological Research Archive. Сгенерировано из нормализованного архива конференций.</div>
     </main>

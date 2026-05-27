@@ -524,37 +524,45 @@
             updateUrl();
             render();
         });
-        let playInterval = null;
+        let playTimeout = null;
         const playBtn = document.getElementById('play-btn');
 
+        function playNext() {
+            let val = Number(els.slider.value);
+            const max = Number(els.slider.max);
+            const min = Number(els.slider.min);
+            if (val >= max) {
+                val = min;
+            } else {
+                val += 25;
+            }
+            els.slider.value = val;
+            state.centerYear = val;
+            render();
+
+            const count = dateFilteredRecords().length;
+            const delay = count === 0 ? 200 : 1200;
+            playTimeout = setTimeout(playNext, delay);
+        }
+
         function togglePlay() {
-            if (playInterval) {
-                clearInterval(playInterval);
-                playInterval = null;
+            if (playTimeout) {
+                clearTimeout(playTimeout);
+                playTimeout = null;
                 playBtn.textContent = '▶';
             } else {
                 playBtn.textContent = '⏸';
-                playInterval = setInterval(() => {
-                    let val = Number(els.slider.value);
-                    const max = Number(els.slider.max);
-                    const min = Number(els.slider.min);
-                    if (val >= max) {
-                        val = min;
-                    } else {
-                        val += 25;
-                    }
-                    els.slider.value = val;
-                    state.centerYear = val;
-                    render();
-                }, 1200);
+                const count = dateFilteredRecords().length;
+                const delay = count === 0 ? 200 : 1200;
+                playTimeout = setTimeout(playNext, delay);
             }
         }
         playBtn.addEventListener('click', togglePlay);
 
         els.slider.addEventListener('input', event => {
-            if (playInterval) {
-                clearInterval(playInterval);
-                playInterval = null;
+            if (playTimeout) {
+                clearTimeout(playTimeout);
+                playTimeout = null;
                 playBtn.textContent = '▶';
             }
             state.centerYear = Number(event.target.value);

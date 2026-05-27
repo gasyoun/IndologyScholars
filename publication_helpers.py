@@ -3,6 +3,7 @@ import json
 import re
 from collections import Counter
 from pathlib import Path
+import jinja2
 
 from classification_overrides import THEME_LABEL_OVERRIDES
 
@@ -13,12 +14,7 @@ AUTHOR_NAME = "Dr. Mārcis Gasūns"
 OG_IMAGE_PATH = "assets/og-image.png"
 OG_IMAGE_URL = SITE_URL + OG_IMAGE_PATH
 PUBLIC_IDS_PATH = Path("public_ids.json")
-PUBLIC_ID_CSS = """
-    <style>
-        .entry-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 0.75rem; }
-        .public-id { flex: none; color: var(--soft); font-size: 0.82rem; font-weight: 600; white-space: nowrap; }
-    </style>
-"""
+PUBLIC_ID_CSS = ""
 
 GENERATION_COHORTS = [
     {"code": "pre-1940", "start": None, "end": 1939, "ru": "Предшественники (до 1940)", "en": "Predecessors (before 1940)"},
@@ -522,14 +518,21 @@ def trim_description(text, limit=155):
     return text[: limit - 1].rsplit(" ", 1)[0] + "…"
 
 
+_JINJA_ENV = jinja2.Environment(loader=jinja2.FileSystemLoader("templates"))
+_BASE_TEMPLATE = None
+
 def page_shell(title, description, canonical_path, body, structured_data=None, extra_head="", robots="index, follow", language="ru"):
+    global _BASE_TEMPLATE
+    if _BASE_TEMPLATE is None:
+        try:
+            _BASE_TEMPLATE = _JINJA_ENV.get_template("base.html")
+        except Exception:
+            env = jinja2.Environment(loader=jinja2.FileSystemLoader(str(Path(__file__).parent / "templates")))
+            _BASE_TEMPLATE = env.get_template("base.html")
+            
     canonical = site_url(canonical_path)
-    title_html = esc(title)
     desc = trim_description(description)
-    desc_html = esc(desc)
-    structured = ""
-    if structured_data:
-        structured = f'\n    <script type="application/ld+json">\n{json_ld(structured_data)}\n    </script>'
+    
     if language == "en":
         nav_items = [
             ("Archive", "/IndologyScholars/"),
@@ -588,270 +591,30 @@ def page_shell(title, description, canonical_path, body, structured_data=None, e
             ("Цитирование", "/IndologyScholars/how-to-cite.html"),
             ("Метрики", "/IndologyScholars/metrics-guide.html"),
         ]
-    nav_html = "\n".join(f'            <a href="{esc(href)}">{esc(label)}</a>' for label, href in nav_items)
-    more_nav_html = "\n".join(f'                    <a href="{esc(href)}">{esc(label)}</a>' for label, href in more_nav_items)
+        
     footer_text = (
-        f"© 2026 {esc(SITE_NAME)}. Generated from the normalized conference archive."
+        f"© 2026 {SITE_NAME}. Generated from the normalized conference archive."
         if language == "en"
-        else f"© 2026 {esc(SITE_NAME)}. Сгенерировано из нормализованного архива конференций."
+        else f"© 2026 {SITE_NAME}. Сгенерировано из нормализованного архива конференций."
     )
-    html = f"""<!DOCTYPE html>
-<html lang="{esc(language)}">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{title_html}</title>
-    <meta name="description" content="{desc_html}">
-    <meta name="robots" content="{esc(robots)}">
-    <link rel="canonical" href="{canonical}">
-    <link rel="alternate" hreflang="{esc(language)}" href="{canonical}">
-    <link rel="alternate" hreflang="x-default" href="{canonical}">
-    <link rel="icon" href="/IndologyScholars/assets/favicon.svg" type="image/svg+xml">
-    <link rel="manifest" href="/IndologyScholars/site.webmanifest">
-    <link rel="apple-touch-icon" href="/IndologyScholars/assets/apple-touch-icon.png">
-    <meta name="theme-color" content="#101513">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-title" content="IndologyScholars">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="{canonical}">
-    <meta property="og:title" content="{title_html}">
-    <meta property="og:description" content="{desc_html}">
-    <meta property="og:image" content="{OG_IMAGE_URL}">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="{title_html}">
-    <meta name="twitter:description" content="{desc_html}">
-    <meta name="twitter:image" content="{OG_IMAGE_URL}">
-    <script defer src="/IndologyScholars/assets/pwa.js"></script>
-    {extra_head}{structured}
-    <style>
-        :root {{
-            color-scheme: dark;
-            --bg: #101513;
-            --panel: #171e1b;
-            --panel-strong: #1c2521;
-            --border: #2b3631;
-            --text: #e7ece8;
-            --muted: #b3beb7;
-            --soft: #87938c;
-            --accent: #62ae92;
-            --accent2: #c59a56;
-        }}
-        * {{ box-sizing: border-box; }}
-        body {{
-            margin: 0;
-            font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
-        }}
-        a {{ color: #82c6ad; text-decoration: none; }}
-        a:hover {{ color: #addac8; }}
-        .page {{
-            max-width: 1160px;
-            margin: 0 auto;
-            padding: 1.25rem 2rem 2rem;
-        }}
-        .top-nav {{
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.45rem;
-            align-items: center;
-            margin-bottom: 1.4rem;
-        }}
-        .top-nav a, .chip {{
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            background: transparent;
-            padding: 0.43rem 0.68rem;
-            color: var(--muted);
-            display: inline-flex;
-            align-items: center;
-            gap: 0.35rem;
-        }}
-        .more-nav {{ position: relative; }}
-        .more-nav summary {{
-            list-style: none;
-            cursor: pointer;
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 0.43rem 0.68rem;
-            color: var(--muted);
-        }}
-        .more-nav summary::-webkit-details-marker {{ display: none; }}
-        .more-nav summary:hover {{ color: var(--text); border-color: var(--accent); }}
-        .more-menu {{
-            position: absolute;
-            top: calc(100% + 0.4rem);
-            left: 0;
-            z-index: 10;
-            width: min(420px, calc(100vw - 3rem));
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.4rem;
-            padding: 0.65rem;
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            background: var(--panel-strong);
-            box-shadow: 0 10px 26px rgba(0,0,0,0.28);
-        }}
-        header {{
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 1.5rem;
-            margin-bottom: 1.75rem;
-        }}
-        h1 {{
-            font-size: clamp(1.8rem, 3vw, 2.5rem);
-            line-height: 1.15;
-            margin: 0 0 0.75rem;
-            letter-spacing: 0;
-        }}
-        h2 {{
-            font-size: 1.45rem;
-            margin: 2rem 0 1rem;
-            letter-spacing: 0;
-        }}
-        p {{ color: var(--muted); max-width: 820px; }}
-        .grid {{
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
-            gap: 1rem;
-        }}
-        .card {{
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 1rem;
-            background: var(--panel);
-        }}
-        .card strong {{ color: #fff; }}
-        .metric {{
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: #fff;
-            margin-top: 0.35rem;
-        }}
-        .meta {{
-            color: var(--soft);
-            font-size: 0.92rem;
-            margin-top: 0.3rem;
-        }}
-        .link-block {{
-            max-width: 900px;
-            margin: 1rem 0;
-        }}
-        .link-block > strong {{
-            color: #fff;
-            display: block;
-            margin-bottom: 0.45rem;
-        }}
-        .chip-list {{
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.45rem;
-        }}
-        .list {{
-            display: grid;
-            gap: 0.75rem;
-        }}
-        .talk {{
-            border-left: 3px solid var(--accent);
-            background: rgba(255,255,255,0.035);
-            padding: 0.8rem 1rem;
-            border-radius: 0 8px 8px 0;
-        }}
-        .badge {{
-            display: inline-flex;
-            align-items: center;
-            border-radius: 8px;
-            padding: 0.18rem 0.45rem;
-            margin-left: 0.45rem;
-            border: 1px solid var(--border);
-            color: var(--muted);
-            font-size: 0.82rem;
-            font-weight: 600;
-            vertical-align: middle;
-        }}
-        .badge-online {{
-            border-color: rgba(52, 211, 153, 0.4);
-            color: #6ee7b7;
-            background: rgba(16, 185, 129, 0.1);
-        }}
-        .badge-video {{
-            border-color: rgba(251, 191, 36, 0.44);
-            color: #fde68a;
-            background: rgba(217, 119, 6, 0.13);
-        }}
-        .footer {{
-            color: var(--soft);
-            margin-top: 3rem;
-            border-top: 1px solid var(--border);
-            padding-top: 1rem;
-            font-size: 0.9rem;
-        }}
-        .search-box {{
-            width: 100%;
-            max-width: 720px;
-            padding: 0.8rem 1rem;
-            border-radius: 8px;
-            border: 1px solid var(--border);
-            background: var(--panel-strong);
-            color: var(--text);
-            font-size: 1rem;
-        }}
-        .field-label {{
-            display: block;
-            margin: 0 0 0.38rem;
-            color: var(--muted);
-            font-size: 0.85rem;
-            font-weight: 600;
-        }}
-        .caveat-block {{
-            border: 1px solid rgba(98,174,146,0.35);
-            border-left: 4px solid var(--accent);
-            border-radius: 8px;
-            background: rgba(98,174,146,0.07);
-            padding: 0.9rem 1.1rem;
-            margin: 1.25rem 0 1.75rem;
-            max-width: 820px;
-        }}
-        .caveat-block strong {{
-            color: #8dc9b2;
-            display: block;
-            margin-bottom: 0.35rem;
-        }}
-        .caveat-block p {{
-            font-size: 0.93rem;
-            margin: 0;
-            color: var(--muted);
-        }}
-        :focus-visible {{
-            outline: 2px solid var(--accent);
-            outline-offset: 2px;
-        }}
-        @media (max-width: 640px) {{
-            .page {{ padding: 1rem; }}
-            .top-nav {{ gap: 0.35rem; margin-bottom: 1.15rem; }}
-            .top-nav a, .chip, .more-nav summary {{ padding: 0.38rem 0.55rem; font-size: 0.9rem; }}
-            header {{ padding-bottom: 1rem; margin-bottom: 1.2rem; }}
-            h1 {{ font-size: 1.65rem; }}
-        }}
-    </style>
-</head>
-<body>
-    <main class="page">
-        <nav class="top-nav" aria-label="Primary">
-{nav_html}
-            <details class="more-nav">
-                <summary>{esc(more_label)}</summary>
-                <div class="more-menu">
-{more_nav_html}
-                </div>
-            </details>
-        </nav>
-{body}
-        <div class="footer">{footer_text}</div>
-    </main>
-</body>
-</html>
-"""
+    
+    structured_data_json = ""
+    if structured_data:
+        structured_data_json = json_ld(structured_data)
+        
+    html = _BASE_TEMPLATE.render(
+        language=language,
+        title=title,
+        description=desc,
+        robots=robots,
+        canonical=canonical,
+        og_image_url=OG_IMAGE_URL,
+        extra_head=extra_head,
+        structured_data_json=structured_data_json,
+        nav_items=nav_items,
+        more_label=more_label,
+        more_nav_items=more_nav_items,
+        body=body,
+        footer_text=footer_text
+    )
     return "\n".join(line.rstrip() for line in html.splitlines()) + "\n"

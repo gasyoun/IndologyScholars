@@ -4,3 +4,4 @@ pypdf
 jsonschema
 scikit-learn
 pymorphy3
+jinja2

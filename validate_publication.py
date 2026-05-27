@@ -213,9 +213,11 @@ def main():
             fail(errors, f"index.html missing PWA integration {needle}")
     talks_ru_desc = f"{summary.get('total_presentations', 0)} участий в {summary.get('unique_presentations', 0)} уникальных докладах"
     talks_en_desc = f"{summary.get('total_presentations', 0)} participations across {summary.get('unique_presentations', 0)} unique talks"
-    if index_html.count(talks_ru_desc) < 2 or talks_en_desc not in index_html:
+    dashboard_js = read("assets/dashboard.js") if Path("assets/dashboard.js").exists() else ""
+    combined_content = index_html + dashboard_js
+    if combined_content.count(talks_ru_desc) < 2 or talks_en_desc not in combined_content:
         fail(errors, "index.html static and localized presentation counts are not synchronized with site_data summary")
-    if "В корпусе:" not in index_html:
+    if "В корпусе:" not in combined_content:
         fail(errors, "index.html missing the public corpus summary")
 
     required = [

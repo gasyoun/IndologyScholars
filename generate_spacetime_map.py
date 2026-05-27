@@ -1010,37 +1010,45 @@ HTML = """<!DOCTYPE html>
             updateUrl();
             render();
         });
-        let playInterval = null;
+        let playTimeout = null;
         const playBtn = document.getElementById('play-btn');
 
+        function playNext() {
+            let val = Number(els.slider.value);
+            const max = Number(els.slider.max);
+            const min = Number(els.slider.min);
+            if (val >= max) {
+                val = min;
+            } else {
+                val += 25;
+            }
+            els.slider.value = val;
+            state.centerYear = val;
+            render();
+
+            const count = dateFilteredRecords().length;
+            const delay = count === 0 ? 200 : 1200;
+            playTimeout = setTimeout(playNext, delay);
+        }
+
         function togglePlay() {
-            if (playInterval) {
-                clearInterval(playInterval);
-                playInterval = null;
+            if (playTimeout) {
+                clearTimeout(playTimeout);
+                playTimeout = null;
                 playBtn.textContent = '▶';
             } else {
                 playBtn.textContent = '⏸';
-                playInterval = setInterval(() => {
-                    let val = Number(els.slider.value);
-                    const max = Number(els.slider.max);
-                    const min = Number(els.slider.min);
-                    if (val >= max) {
-                        val = min;
-                    } else {
-                        val += 25;
-                    }
-                    els.slider.value = val;
-                    state.centerYear = val;
-                    render();
-                }, 1200);
+                const count = dateFilteredRecords().length;
+                const delay = count === 0 ? 200 : 1200;
+                playTimeout = setTimeout(playNext, delay);
             }
         }
         playBtn.addEventListener('click', togglePlay);
 
         els.slider.addEventListener('input', event => {
-            if (playInterval) {
-                clearInterval(playInterval);
-                playInterval = null;
+            if (playTimeout) {
+                clearTimeout(playTimeout);
+                playTimeout = null;
                 playBtn.textContent = '▶';
             }
             state.centerYear = Number(event.target.value);
@@ -1213,6 +1221,13 @@ TIMELINE_HTML = """<!DOCTYPE html>
             font-weight: 500;
             margin-top: 0.25rem;
         }
+        .roman-numeral {
+            color: var(--accent);
+            font-weight: 700;
+            font-family: Georgia, "Times New Roman", serif;
+            margin-left: 0.3rem;
+            font-size: 0.82rem;
+        }
         .title {
             font-weight: 700;
             line-height: 1.35;
@@ -1361,6 +1376,29 @@ TIMELINE_HTML = """<!DOCTYPE html>
             return `conferences/${slug}-${year}.html`;
         }
 
+        const ROMAN_NUMERALS = {
+            'harappa_indus': 'I',
+            'rigveda': 'II',
+            'vedic_period': 'III',
+            'upanishads': 'IV',
+            'panini': 'V',
+            'early_buddhism': 'VI',
+            'pali_canon': 'VII',
+            'ashoka_maurya': 'VIII',
+            'sangam': 'IX',
+            'classical_sanskrit': 'X',
+            'tamil_bhakti': 'XI',
+            'chola': 'XII',
+            'chaitanya': 'XIII',
+            'mughal': 'XIV',
+            'colonial_india': 'XV',
+            'vivekananda': 'XVI',
+            'tagore': 'XVII',
+            'gandhi': 'XVIII',
+            'roerich': 'XIX',
+            'independence_modern': 'XX'
+        };
+
         function render() {
             const events = buildEvents();
             const recordIds = new Set(events.map(event => event.record.presentation_id));
@@ -1379,10 +1417,12 @@ TIMELINE_HTML = """<!DOCTYPE html>
                     `<a href="#" data-search="${escapeHtml(place.label_ru)}" style="text-decoration: underline; text-decoration-style: dotted; color: var(--muted);">${escapeHtml(place.label_ru)}</a>`
                 ).join(', ');
                 const tags = (record.meso_codes || []).slice(0, 4).map(renderTag).join(' ');
+                const roman = ROMAN_NUMERALS[time.id] || '';
+                const romanHtml = roman ? ` <span class="roman-numeral">(${roman})</span>` : '';
                 return `<article class="event">
                     <div>
                         <div class="date">${escapeHtml(formatYearRange(time))}</div>
-                        <div class="time-label">${escapeHtml(time.label_ru)}</div>
+                        <div class="time-label">${escapeHtml(time.label_ru)}${romanHtml}</div>
                     </div>
                     <div style="position: relative;">
                         <div style="position: absolute; top: 0; right: 0; font-size: 0.76rem; color: var(--muted); opacity: 0.8; text-align: right; line-height: 1.3;">
