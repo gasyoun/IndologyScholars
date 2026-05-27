@@ -12,7 +12,7 @@
     
     <!-- Google Fonts & Vis.js -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <script defer src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
 
     <style>
         :root {
@@ -790,6 +790,8 @@
         let networkInstance = null;
         let nodesDataset = null;
         let edgesDataset = null;
+        let loadingComplete = false;
+        let lastActiveEdgeCount = 0;
 
         // Visual design configuration
         const nodeStyles = {
@@ -844,6 +846,33 @@
             }
         };
 
+        function setLoadingProgress(message) {
+            const progress = document.getElementById('loading-progress');
+            if (progress) progress.innerText = message;
+        }
+
+        function finishLoadingOverlay() {
+            if (loadingComplete) return;
+            loadingComplete = true;
+            const overlay = document.getElementById('loading-overlay');
+            if (!overlay) return;
+            overlay.style.opacity = 0;
+            setTimeout(() => {
+                overlay.style.display = 'none';
+            }, 250);
+        }
+
+        function completeInitialLayout() {
+            setLoadingProgress(`Показано: ${nodesDataset ? nodesDataset.length : 0} узлов, ${edgesDataset ? edgesDataset.length : 0} связей.`);
+            if (networkInstance) {
+                networkInstance.fit({ animation: { duration: 500, easingFunction: 'easeInOutQuad' } });
+                if (!document.getElementById('toggle-physics').checked) {
+                    networkInstance.setOptions({ physics: { enabled: false } });
+                }
+            }
+            finishLoadingOverlay();
+        }
+
         // Load data on startup
         document.addEventListener('DOMContentLoaded', () => {
             fetchData();
@@ -856,7 +885,7 @@
             
             try {
                 // Fetch JSON data
-                progress.innerText = 'Запрос файла network_data.json...';
+                setLoadingProgress('Запрос файла network_data.json...');
                 const response = await fetch('analytics_output/network_data.json');
                 if (!response.ok) {
                     throw new Error('Relative path load failed, trying absolute path...');
@@ -866,14 +895,14 @@
                 rawNodes = data.nodes;
                 rawEdges = data.edges;
                 
-                progress.innerText = `Загружено: ${rawNodes.length} узлов, ${rawEdges.length} связей. Инициализация холста...`;
+                setLoadingProgress(`Загружено: ${rawNodes.length} узлов, ${rawEdges.length} связей. Инициализация холста...`);
                 initializeNetwork();
                 
             } catch (err) {
                 console.warn(err);
                 try {
                     // Try fallback path
-                    progress.innerText = 'Попытка загрузки через абсолютный путь...';
+                    setLoadingProgress('Попытка загрузки через абсолютный путь...');
                     const response = await fetch('/IndologyScholars/analytics_output/network_data.json');
                     const data = await response.json();
                     
@@ -891,6 +920,10 @@
         // Initialize Vis Network
         function initializeNetwork() {
             const container = document.getElementById('network-canvas');
+            if (typeof vis === 'undefined') {
+                setLoadingProgress('Не удалось загрузить библиотеку сетевого графа.');
+                return;
+            }
             
             // Setup datasets
             nodesDataset = new vis.DataSet([]);
@@ -902,6 +935,9 @@
             };
             
             const options = {
+                layout: {
+                    improvedLayout: false
+                },
                 nodes: {
                     borderWidth: 1.5,
                     shadow: { enabled: true, color: 'rgba(0,0,0,0.5)', size: 4, x: 2, y: 2 },
@@ -911,11 +947,7 @@
                     }
                 },
                 edges: {
-                    smooth: {
-                        type: 'continuous',
-                        forceDirection: 'none',
-                        roundness: 0.5
-                    },
+                    smooth: false,
                     shadow: { enabled: false }
                 },
                 interaction: {
@@ -937,8 +969,9 @@
                     },
                     stabilization: {
                         enabled: true,
-                        iterations: 150,
-                        updateInterval: 25
+                        iterations: 60,
+                        updateInterval: 10,
+                        fit: true
                     }
                 }
             };
@@ -948,27 +981,20 @@
             // Events
             networkInstance.on('stabilizationProgress', function(params) {
                 const percent = Math.round((params.iterations / params.total) * 100);
-                document.getElementById('loading-progress').innerText = `Раскладка графа: ${percent}% (итерация ${params.iterations}/${params.total})`;
+                setLoadingProgress(`Раскладка графа: ${percent}% (итерация ${params.iterations}/${params.total})`);
             });
 
-            networkInstance.on('stabilizationIterationsDone', function() {
-                document.getElementById('loading-overlay').style.opacity = 0;
-                setTimeout(() => {
-                    document.getElementById('loading-overlay').style.display = 'none';
-                }, 500);
-                
-                // Freeze physics after settling to save client battery/CPU
-                if (document.getElementById('toggle-physics').checked) {
-                    networkInstance.setOptions({ physics: { enabled: true } });
-                } else {
-                    networkInstance.setOptions({ physics: { enabled: false } });
-                }
-            });
+            networkInstance.once('stabilizationIterationsDone', completeInitialLayout);
             
             networkInstance.on('click', handleNodeClick);
             
             // Initial filter run (apply collab preset)
             applyPreset('collab');
+            setLoadingProgress(`Показано: ${nodesDataset.length} узлов, ${edgesDataset.length} связей. Быстрая раскладка...`);
+            requestAnimationFrame(() => {
+                networkInstance.stabilize(lastActiveEdgeCount > 1500 ? 25 : 60);
+                setTimeout(completeInitialLayout, lastActiveEdgeCount > 1500 ? 900 : 1400);
+            });
         }
 
         // Apply filters dynamically
@@ -1070,6 +1096,7 @@
             
             edgesDataset.clear();
             edgesDataset.add(activeEdges);
+            lastActiveEdgeCount = activeEdges.length;
             
             // Update counts
             document.getElementById('node-count').innerText = `${activeNodes.length} активных`;

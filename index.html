@@ -16,6 +16,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="IndologyScholars">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <script defer src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
     <script defer src="/IndologyScholars/assets/pwa.js"></script>
     <link rel="preload" href="site_data.json?v=1.8.5" as="fetch" crossorigin>
     <meta name="keywords" content="Индология, Зографские чтения, Рериховские чтения, наука, востоковедение, ИВР РАН, ИВ РАН, МГУ, СПбГУ, статистика, научные доклады">
@@ -3505,6 +3506,28 @@ CREATE TABLE presentation_person (
 
             const data = CONFERENCE_DATA.network;
             if (!data) return;
+            if (typeof vis === 'undefined') {
+                const target = document.getElementById('canvas-network');
+                if (target) {
+                    target.innerHTML = `<div style="height:100%;display:grid;place-items:center;color:var(--text-secondary);font-size:0.95rem;">Не удалось загрузить библиотеку сетевого графа</div>`;
+                }
+                return;
+            }
+
+            const repeatedLinks = data.links.filter(l => l.weight >= 2);
+            const linksSource = repeatedLinks.length >= 50 ? repeatedLinks : data.links;
+            const linkedIds = new Set();
+            linksSource.forEach(l => {
+                linkedIds.add(l.source);
+                linkedIds.add(l.target);
+            });
+            const topNodeIds = new Set(
+                [...data.nodes]
+                    .sort((a, b) => b.talks - a.talks)
+                    .slice(0, 40)
+                    .map(n => n.id)
+            );
+            const nodeIds = new Set([...linkedIds, ...topNodeIds]);
 
             const THEME_COLORS = {
                 AcademicHistory: '#8b5cf6', // Violet
@@ -3514,7 +3537,7 @@ CREATE TABLE presentation_person (
                 History: '#f59e0b'          // Orange
             };
 
-            const nodes = data.nodes.map(n => {
+            const nodes = data.nodes.filter(n => nodeIds.has(n.id)).map(n => {
                 const color = THEME_COLORS[n.theme] || THEME_COLORS.History;
                 const scaleSize = 8 + Math.sqrt(n.talks) * 3;
                 return {
@@ -3533,7 +3556,7 @@ CREATE TABLE presentation_person (
                 };
             });
 
-            const edges = data.links.map(l => {
+            const edges = linksSource.filter(l => nodeIds.has(l.source) && nodeIds.has(l.target)).map(l => {
                 return {
                     from: l.source,
                     to: l.target,
@@ -3552,12 +3575,15 @@ CREATE TABLE presentation_person (
             };
 
             const options = {
+                layout: {
+                    improvedLayout: false
+                },
                 nodes: {
                     borderWidth: 1.5,
                     shadow: { enabled: true, color: 'rgba(0,0,0,0.5)', size: 4, x: 2, y: 2 }
                 },
                 edges: {
-                    smooth: { type: 'continuous', roundness: 0.5 },
+                    smooth: false,
                     shadow: { enabled: false }
                 },
                 interaction: {
@@ -3578,13 +3604,30 @@ CREATE TABLE presentation_person (
                     },
                     stabilization: {
                         enabled: true,
-                        iterations: 120,
-                        updateInterval: 25
+                        iterations: 50,
+                        updateInterval: 10,
+                        fit: true
                     }
                 }
             };
 
             networkInstance = new vis.Network(document.getElementById('canvas-network'), visData, options);
+            networkInstance.once('stabilizationIterationsDone', function() {
+                networkInstance.setOptions({ physics: { enabled: false } });
+                isNetPhysicsRunning = false;
+                const t = TRANSLATIONS[currentLang];
+                const pauseBtn = document.getElementById('net-pause-btn');
+                if (pauseBtn) pauseBtn.textContent = t.netResumeBtn;
+            });
+            setTimeout(() => {
+                if (networkInstance && isNetPhysicsRunning) {
+                    networkInstance.setOptions({ physics: { enabled: false } });
+                    isNetPhysicsRunning = false;
+                    const t = TRANSLATIONS[currentLang];
+                    const pauseBtn = document.getElementById('net-pause-btn');
+                    if (pauseBtn) pauseBtn.textContent = t.netResumeBtn;
+                }
+            }, 1600);
 
             // Add navigation on click!
             networkInstance.on('click', function(params) {
