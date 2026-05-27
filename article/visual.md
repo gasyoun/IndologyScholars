@@ -1,33 +1,162 @@
-Статус 2026-05-21: основные публикационные рисунки из этого плана уже сгенерированы
-в `article/figures/` скриптом `article/make_ppv_figures.py` и вставлены в
-`article/ppv_draft.md`. Проверки гипотез вынесены в `article/ppv_critique_and_tests.md`.
-Фактическая нумерация в статье идет по порядку появления: Рис. 1 — динамика состава,
-Рис. 2 — покрытие годом рождения, Рис. 3 — возраст первого выступления, Рис. 4 —
-тематическая матрица, Рис. 5 — перекрестная когорта, Рис. 6 — сессионные сетевые
-посредники. Radar chart из первоначального списка пока не вставлен: матрица L1 × L2
-несет больше аргумента.
+# Visualisation roadmap — IndologyScholars
 
-Что нового дают загруженные файлы
-Три вещи, которых не было видно из README:
-Число учёных и докладов выросло. README заявлял 213/732, черновик фиксирует 226/895 — значит, база обновлялась после деплоя. Программа XLVII Зографских чтений 2026 г. включена неполностью (в README её ещё не было). Это важно для воспроизводимости: в статье и на сайте сейчас разные данные - теперь унифицировано?
-Центральный аргумент статьи — не просопография, а «декларация против факта». Раздел 5 разбирает конкретный случай: новая формулировка оргкомитета о «профильных академических учреждениях» не подтверждается из самой же программы (68% участников дают только город- сколько Москвы, сколько Петербурга и сколько всех остальных городов вместе взятых?). Это полемический тезис, которого в README нет вообще — и именно он определяет, куда должны смотреть гипотезы и визуализации.
-Приложение А даёт имена. 39 учёных перекрёстной когорты теперь известны с асимметрией распределения (Рыжакова 15:4, Вертоградова 1:12). Это позволяет формализовать то, что в разделе 9 описано словами.
+Updated: 2026-05-28. Scope: publication figures, public site interactives, and internal
+curation/data-quality views.
 
-Новые гипотезы, которые напрашиваются из данных
-Гипотезы, прямо тестируемые из имеющихся данных
-Г1. Бимодальность ориентации перекрёстной когорты. Раздел 9 описывает «петербургско-» и «московскиориентированных» участников, но не формализует. Индекс баланса (Зограф − Рерих)/(Зограф + Рерих) для каждого из 39 даст значение от −1 до +1. Если распределение бимодально — две «орбиты» реальны; если унимодально вокруг нуля — большинство участников действительно «амбассадоры» обеих площадок. Из Приложения А это считается немедленно: Вертоградова = −0.85, Рыжакова = +0.58.
-Г2. Онлайн-дебютанты 2020 г. показали аномально низкий retention. 2020 г. дал 39.1% новых участников — рекорд «среднего» периода. Но 2021 г. — обвал снова до 11.1%. Гипотеза: дебютанты 2020 г. вернулись значительно реже, чем дебютанты 2018–2019 гг. при сопоставимом масштабе конференции. Это напрямую проверяется cohort retention rate из базы: взять дебютантов каждого из годов 2018, 2019, 2020 и посмотреть, сколько из них выступили хотя бы ещё раз.
-Г3. Провал 2022–2023 структурно обусловлен, а не общесистемен. У Зографа в 2023 г. только 14 докладов (минимум за всё время наблюдения) - надо проверить 14, так мало никогда не было, скорее глюк при выкладке программы, Зограф не бывает меньше четыре дней с утра до вечера, тогда как у Рериха — 17. Гипотеза: сжатие Зографа объясняется сменой руководства и организационным переходным периодом (Васильков → Альбедиль/Иванов, упомянуто в § 1), а не геополитическим давлением, иначе Рерих просел бы симметрично. Косвенная проверка: если в 2025–2026 гг. Зограф восстановился (56 → 60 докладов) быстрее Рериха, это согласуется с объяснением «организационного шока», а не «внешнего давления». Поэтому сперва нужно исправить данные, тогда гипотеза скорее всего окажется избыточной или потребует кардинального пересмотра.
-Г4. ИКВИА НИУ ВШЭ как новый структурный мост. В тексте это упомянуто в § 6 как наблюдение. Гипотеза: ИКВИА уже стал вторым по значимости источником перекрёстных участников после ИВ РАН/СПбГУ. Из Приложения А это считается: Александрова (ИКВИА/ИВ), Комиссаров (ИКВИА), Минаева (ИКВИА), Молина (ИКВИА) — 4 из 39 из одного института для когорты, сформировавшейся преимущественно в 2018–2026 гг. Отдельный вопрос: являются ли участники ИКВИА тематически «мостовыми» (читают одинаковое на обеих площадках) или адаптируют программу? Нет, программу под Питер московские ИКВИА не адаптируют.
-Г5. Тематическая дивергенция после 2022 г. Вертоградова жива, но отошла от прямого руководства?, судя по Приложению А, была определяющей фигурой Рериховских чтений (1 Зограф против 12 Рерих). Гипотеза: именно её влияние удерживало Рериховские чтения на профиле «история + искусство + классический/средневековый период»; после 2022 г. тематическое распределение Рериховских чтений начало сдвигаться. Проверяется разбивкой L1 × L2 по годам ≤2022 vs ≥2023 для Рерихских докладов - или просто совпадение, можно ли проверить?
-Гипотезы о методологии и данных
-Г6. Прирост участников без аффилиации не случаен — это прекаризация, а не небрежность программ. Статья указывает (§ 5.3), что 68% участников XLVII Зографских чтений дают только город. Гипотеза: эта доля росла с 2004 г. и особенно ускорилась после 2018 г. Если это так — перед нами структурная тенденция академического рынка труда, а не просто особенность формата публикуемой программы. Проверяется из базы: по годам считать долю affiliation_text_raw = NULL / city_only. Да, это важная гипотеза. Город часто указывается, если указан только город, когда нет академической аффилиации. В разные годы был разный стандарт оформления программ. Но если свободных художников становилось сильно много, то, для того, чтобы они, безаффилиатные, сильно не выделялись на общем фоне, переставали писать аффилиации и для тех, у кого они были.
-Г7. Когорта с неизвестными г.р. (127 из 226) систематически смещена в сторону разовых участников. Статья признаёт ограничение в §2.3: г.р. известен только для 99. Гипотеза: те 127, у кого г.р. неизвестен, — это преимущественно разовые участники (выступили 1–2 раза), тогда как ядро (≥5 докладов) покрыто г.р. значительно полнее. Если гипотеза верна, медианный возраст по имеющимся данным систематически занижает возраст «периферии» и завышает возраст «ядра» — и реальная возрастная пирамида может оказаться ещё более экстремальной.
+## Decisions locked 2026-05-27/28
 
-Визуализации
-Из контекста статьи нужны не «дашборд-графики», а 3–4 публикационных рисунка, напрямую несущих аргумент. Вот приоритетный список - точнее нужны и те и другие, но в приоритете графики для публикации с сильными аргументами:
-Рис. 1 — Scatter plot перекрёстной когорты (Г1). Ось X — докладов на Зографе, ось Y — на Рерихе, 39 точек. Диагональ = идеальный баланс. Точки выше — «московские», ниже — «петербургские». Размер точки = общий стаж (число лет). Цвет = институт. Это самый сильный единственный рисунок, который нужен разделу 9 — без него описание Вертоградовой (1:12) и Рыжаковой (15:4) остаётся голым текстом.
-Рис. 2 — Dual-axis chart динамики состава (Г2, Г3). По годам: бары = число участников (разные цвета — новые vs. «ядро» vs. прочие повторные), линия = доля дебютантов (правая ось). Две панели (Зограф / Рерих) или один совмещённый с маркерами событий (смена руководства 2025, COVID 2020, уход Вертоградовой в тень 2022). Это прямой визуальный аргумент для раздела 4 и 7.
-Рис. 3 — Heatmap L1 × L2, два варианта рядом. Матрица 9×7 (дисциплины × периоды) для каждой серии, нормированная по строке. Показывает, что «средневековое религиоведение» — центр тяжести Рериха, «классическая философия» — Зографа. Это то, чего в тексте много слов, но без картинки трудно воспринять разом.
-Рис. 4 — Radar chart тематических профилей. Стандартный «отпечаток» двух серий по 8 дисциплинам L1, два полигона на одном графике. Легко читается, хорошо вписывается в журнальный формат, визуально резюмирует раздел 8.1 в один взгляд.
-Если нужно — могу построить любой из этих рисунков прямо сейчас из данных, которые есть в приложениях.
+- Primary next use case: strengthen the ППВ article first, then add a differentiated
+  public-site layer.
+- First public target page: `findings/`.
+- `findings/` visuals should ship one after another rather than as a single large bundle:
+  cross-cohort orbit, affiliation opacity timeline, video heatmap, then keyword/meso
+  alluvial.
+- Exploratory L2/meso visualisations may go public if they carry a visible caveat.
+- New public visualisations should be bilingual from the start.
+- City-only programme rows should use the stronger frame: **affiliation opacity**.
+- `needs_review` video mappings may be public as explicit uncertainty.
+- New JS dependencies are acceptable for Sankey/alluvial charts when they improve the
+  result, but must be vendored locally for static reliability.
+
+## Current state
+
+The first publication wave is already generated by `article/make_ppv_figures.py`, with
+source notes in `article/figures/figure_notes.md` and submission exports in
+`article/figures_submission/`.
+
+Already available as article/static figures:
+
+- participant dynamics and newcomer rate;
+- birth-year coverage and age at debut;
+- L1 x L2 thematic heatmap;
+- cross-cohort balance;
+- null-model overlap and retention;
+- session-level network bridges;
+- geographic gravity;
+- closedness forest;
+- affiliation transparency;
+- Zograf era L2 shift;
+- title-keyword contrasts and period trends.
+
+Already available on the public site:
+
+- dashboard charts for annual growth, cohort distribution, geography, generations,
+  gender, institutions, word cloud, and a compact Vis.js network;
+- full `networks.html` Vis.js graph with presets, filters, search, and node details;
+- `spacetime.html` / `spacetime-timeline.html` Leaflet and timeline views;
+- `findings/index.html` visual hypothesis cards;
+- city, institution, theme, meso, Gumilyov, video, and keyword landing pages;
+- downloadable network, classification, video, provenance, and quality CSV/JSON files.
+
+## Roadmap principles
+
+- Keep publication figures argument-bearing. Do not add decorative charts to the ППВ
+  article before submission unless an editor or reviewer needs them.
+- Treat generated HTML/CSV/JSON as derived. Implement durable visualisations in the
+  generator or source data, then rebuild.
+- Keep city markers separate from verified affiliations. A city-only programme line is
+  evidence of affiliation opacity, not proof of employment.
+- Publish L2/meso/authority visualisations only with visible confidence/provenance notes
+  until the relevant review queue is cleared.
+- Prefer one strong interactive page per argument over many disconnected charts.
+- Ship public interactives bilingually. Russian-only prototypes are acceptable only as
+  private sketches.
+- New visualization dependencies are acceptable for Sankey/alluvial work, but the static
+  build must remain reproducible, dependencies should be vendored under the project, and
+  the no-JS/downloadable data path should stay clear.
+
+## What can still be added
+
+### Now: before ППВ submission
+
+1. **Figure-set gate.** Freeze the submission figure list and captions; only update numbers
+   after `conferences.db` is rebuilt and `article/check_ppv_numbers.py` passes.
+2. **Figure index for review.** Add a small generated index linking each article figure to
+   its CSV inputs, notes, and submission JPG. This is documentation, not a new public
+   argument.
+3. **ППВ supplement candidates.** Prepare 1-2 optional figures that can be used only if
+   the editor or a reviewer asks to expand the visual apparatus: affiliation opacity by
+   year, and cross-cohort orbit scatter.
+4. **Radar chart stays parked.** The older radar idea remains optional, but the L1 x L2
+   heatmap carries the thematic argument more cleanly.
+
+### First public sequence: `findings/`
+
+1. **Bilingual findings shell.** Make the new findings visualisation module RU/EN from
+   the start, including legends, caveats, labels, metric tooltips, and data links.
+2. **Interactive cross-cohort orbit scatter.** X = Zograf talks, Y = Roerich talks,
+   diagonal = balanced participation, color = institution/trajectory, size = active span,
+   click = scholar profile. This turns the static cross-cohort figure into the clearest
+   public entry point for the "two forums / bridge cohort" argument.
+3. **Affiliation opacity timeline.** Year x series view of verified institution,
+   city-only, empty/unknown, and tentative `(?)` affiliation states. This directly supports
+   the "declaration vs programme evidence" argument and should link to provenance CSVs.
+4. **Exploratory L2/meso caveat block.** Allow L2/meso charts on `findings/`, but mark
+   them as classification-under-review and link to provenance/review queues.
+5. **Video coverage heatmap.** Year x series x theme coverage with mapping status
+   (`auto`, `needs_review`, `skip`) and links to the video catalogue. Publish
+   `needs_review` as uncertainty rather than hiding it; keep the whole layer framed as
+   verification/access evidence, not as a representative sample.
+6. **Keyword/topic evolution.** Interactive bump/alluvial chart for title keyword clusters,
+   meso codes, and period trends, using the existing `title_keyword_*` outputs. Vendor the
+   alluvial/Sankey dependency locally instead of loading it from a CDN.
+
+### Next public surfaces
+
+7. **Temporal network slider.** Add year/era controls to `networks.html`: same-session vs
+   co-presentation vs institution/theme edges, with density warnings for large historical
+   session blocks.
+8. **Geographic gravity map + flow.** Combine SPb/Moscow/regions distribution with
+   retention rates and conference series filters. This can extend `spacetime.html` after
+   the `findings/` version proves the argument.
+
+### Next/Later: deeper site and curation views
+
+9. **Institution-theme alluvial.** Show how IV RAN, SPbGU, ISAA MSU, IKVIA/HSE, RGGU, and
+   other centers connect to themes across eras. This should use fractional counting only
+   where multi-affiliations matter.
+10. **Scholar profile mini-visuals.** Add compact per-scholar timelines: active years,
+   series balance, themes, city/affiliation trajectory, and video availability.
+11. **Data-quality dashboard.** Visualize birth-year missingness, authority coverage,
+   RINC/OpenAlex queues, L2 confidence, ID stability, source coverage, and rebuild drift.
+12. **Spacetime uncertainty layer.** Add confidence, date range, and region ambiguity to
+    the map/timeline, so speculative historical geography is visibly different from
+    explicit programme metadata.
+
+### Later: data-dependent research visualisations
+
+13. **Publication conversion funnel.** Talk -> proceedings/PDF -> article/book chapter ->
+    external identifier/citation. Blocked until proceedings/PDF contents are parsed and
+    matched to individual presentations.
+14. **Genealogy and mentorship graph.** Teacher-student ties, dissertation lineage, and
+    institutional trajectories. This is the stated top track, but it needs curated relation
+    data before public visualization.
+15. **External reception network.** OpenAlex/RINC/citation reuse around conference talks
+    and scholars. Useful later, but only after API/legal constraints and matching quality
+    are settled.
+16. **Cross-corpus comparison.** Extend beyond Zograf/Roerich to other Indology venues and
+    compare forum ecology at the corpus level.
+
+## Recommended implementation plan
+
+1. Finish the ППВ figure gate: rebuild data, verify numbers, freeze captions, and keep
+   optional supplement candidates separate from the submission core.
+2. Define a stable data contract for one visualization at a time in `analytics_output/`
+   or `article/hypothesis_output/`.
+3. Prototype `findings/` visuals as static SVG/PNG first when the claim is analytical;
+   prototype as HTML first when the main value is exploration or filtering.
+4. Promote the winning prototype into `generate_publication_pages.py` and supporting JS/CSS
+   assets, with RU/EN copy and caveats in the same change.
+5. Use a dedicated visualization library for Sankey/alluvial if it materially improves the
+   result; vendor it locally, document the dependency, and keep CSV/JSON inputs
+   downloadable.
+6. Rebuild generated artifacts, then run the publication/site gates relevant to the files
+   touched.
+7. Add captions, caveats, and source links so each chart is citeable and falsifiable.
+
+## Sequence settled 2026-05-28
+
+After the ППВ gate, implement `findings/` visuals in order: cross-cohort orbit,
+affiliation opacity timeline, video heatmap, keyword/meso alluvial. Public video coverage
+may include `needs_review` mappings as uncertainty. Any Sankey/alluvial dependency should
+be vendored locally for static reliability.

@@ -31,6 +31,8 @@
 
 - [Главный каталог](https://gasyoun.github.io/IndologyScholars/) с поиском по
   именам, докладам, городам и институциям.
+- [Интерактивные визуализации](https://gasyoun.github.io/IndologyScholars/findings/visualisations.html) —
+  визуальный дашборд с стабильными ID: пересечение когорт Зограф × Рерих, траектории аффилиаций и тепловые карты.
 - [Конференции](https://gasyoun.github.io/IndologyScholars/conferences/) с
   переходом к отдельным годам и программам.
 - [Тематические подборки](https://gasyoun.github.io/IndologyScholars/themes/)

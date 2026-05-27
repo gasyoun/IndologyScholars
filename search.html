@@ -40,7 +40,7 @@
     "name": "Russian Indological Research Archive",
     "url": "https://gasyoun.github.io/IndologyScholars/"
   },
-  "dateModified": "2026-05-27"
+  "dateModified": "2026-05-28"
 }
     </script>
 
@@ -69,6 +69,8 @@
                 <div class="more-menu">
 
                     <a href="/IndologyScholars/findings/">Выводы</a>
+
+                    <a href="/IndologyScholars/findings/visualisations.html">Визуализации</a>
 
                     <a href="/IndologyScholars/topics/">Сюжеты</a>
 
@@ -117,30 +119,10 @@
         const summary = document.getElementById('result-summary');
         const input = document.getElementById('q');
         let docs = [];
-        let indexLoaded = false;
         const typeLabels = {'Scholar':'Автор', 'Presentation':'Доклад', 'Topic':'Сюжет', 'Generation':'Поколения', 'Meso-level':'Мезоуровень', 'Keyword':'Ключевые слова', 'Gumilyov':'Гумилев', 'Video':'Видео', 'Finding':'Вывод'};
         const initialQuery = new URLSearchParams(location.search).get('q') || '';
         input.value = initialQuery;
-
-        function loadIndex(onComplete) {
-            if (indexLoaded) {
-                if (onComplete) onComplete();
-                return;
-            }
-            summary.textContent = "Загрузка поискового индекса...";
-            fetch('search-index.json')
-                .then(r => r.json())
-                .then(data => {
-                    docs = data;
-                    indexLoaded = true;
-                    if (onComplete) onComplete();
-                })
-                .catch(err => {
-                    summary.textContent = "Ошибка при загрузке индекса.";
-                    console.error(err);
-                });
-        }
-
+        fetch('search-index.json').then(r => r.json()).then(data => { docs = data; render(input.value); });
         function searchableToken(token) {
             if (/^рамаян[а-яё]*$/i.test(token)) return 'рамаян';
             if (/^махабхарат[а-яё]*$/i.test(token)) return 'махабхарат';
@@ -152,7 +134,6 @@
             return query.split(/\s+/).filter(Boolean).map(searchableToken).reduce((sum, token) => sum + (hay.includes(token) ? 1 : 0), 0);
         }
         function render(query) {
-            if (!indexLoaded) return;
             const q = query.trim().toLowerCase();
             const items = docs.map(d => ({...d, score: score(d, q)})).filter(d => q ? d.score > 0 : d.type === 'Scholar').sort((a,b) => b.score - a.score || a.title.localeCompare(b.title)).slice(0, 50);
             summary.textContent = q ? `Найдено результатов: ${items.length}` : `Показаны первые ${items.length} профилей`;
@@ -161,30 +142,11 @@
         function escapeHtml(value) {
             return String(value).replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
         }
-
-        // Trigger loading if there is an initial query, otherwise load when user interacts with search box
-        if (initialQuery) {
-            loadIndex(() => render(initialQuery));
-        } else {
-            summary.textContent = "Начните вводить запрос для поиска...";
-            const triggerLoad = () => {
-                loadIndex(() => render(input.value));
-                input.removeEventListener('focus', triggerLoad);
-                input.removeEventListener('click', triggerLoad);
-                input.removeEventListener('input', triggerLoad);
-            };
-            input.addEventListener('focus', triggerLoad);
-            input.addEventListener('click', triggerLoad);
-            input.addEventListener('input', triggerLoad);
-        }
-
         input.addEventListener('input', () => {
             const url = new URL(location.href);
             input.value.trim() ? url.searchParams.set('q', input.value.trim()) : url.searchParams.delete('q');
             history.replaceState(null, '', `${url.pathname}${url.search}${url.hash}`);
-            if (indexLoaded) {
-                render(input.value);
-            }
+            render(input.value);
         });
         </script>
 

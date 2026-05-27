@@ -31,6 +31,8 @@ published programme.
 
 - The [main catalogue](https://gasyoun.github.io/IndologyScholars/) with
   searches by name, talk, city, and institution.
+- [Interactive Visualizations](https://gasyoun.github.io/IndologyScholars/findings/visualisations.html) —
+  visual dashboard with stable IDs: Zograf × Roerich cohort overlaps, affiliation opacity timelines, and heatmaps.
 - [Conference pages](https://gasyoun.github.io/IndologyScholars/conferences/)
   leading to individual years and programmes.
 - [Thematic collections](https://gasyoun.github.io/IndologyScholars/themes/)

@@ -2553,28 +2553,65 @@ def generate_findings_page(data, records):
     institution_bridges = load_csv_rows("article/hypothesis_output/institution_bridge_summary.csv")[:3]
     top_institution_text = "; ".join(f"{row.get('affiliation_group')}={row.get('cross_cohort_people')}" for row in institution_bridges)
 
-    def bar_row(label, value, max_value=100.0, value_label=None, note=""):
+    bridges_data = []
+    scholar_slug_by_id = {s.get("id"): s.get("url_slug") for s in data.get("scholars", [])}
+    scholar_aff_by_id = {}
+    for s in data.get("scholars", []):
+        affs = s.get("all_affiliations") or []
+        scholar_aff_by_id[s.get("id")] = affs[0] if affs else "Не указана"
+
+    for row in load_csv_rows("article/hypothesis_output/network_bridges.csv"):
+        pid = row.get("person_id")
+        if not pid:
+            continue
+        z_talks = int(row.get("zograf") or 0)
+        r_talks = int(row.get("roerich") or 0)
+        total = int(row.get("total_participations") or 0)
+        betweenness = float(row.get("betweenness") or 0.0)
+        balance = float(row.get("balance") or 0.0)
+        slug = scholar_slug_by_id.get(pid, pid)
+        display_name = row.get("display_name")
+        group = row.get("series_attended")
+        aff = scholar_aff_by_id.get(pid, "Не указана")
+        bridges_data.append({
+            "id": pid,
+            "name": display_name,
+            "slug": slug,
+            "z": z_talks,
+            "r": r_talks,
+            "total": total,
+            "b": betweenness,
+            "bal": balance,
+            "g": group,
+            "aff": aff
+        })
+
+    def bar_row(label_ru, label_en, value, max_value=100.0, value_label=None, note_ru="", note_en=""):
         numeric = as_float(value, 0.0)
         maximum = max(as_float(max_value, 100.0), 0.001)
         width = max(0.0, min(100.0, 100.0 * numeric / maximum))
         if value_label is None:
             value_label = f"{numeric:.1f}"
-        note_html = f'<div class="viz-note">{esc(note)}</div>' if note else ""
+        note_html = ""
+        if note_ru or note_en:
+            note_html = f'<div class="viz-note bilingual-text" data-ru="{esc(note_ru)}" data-en="{esc(note_en)}">{esc(note_ru)}</div>'
         return (
             '<div class="viz-row">'
-            f'<div class="viz-label"><span>{esc(label)}</span><b>{esc(value_label)}</b></div>'
+            f'<div class="viz-label"><span class="bilingual-text" data-ru="{esc(label_ru)}" data-en="{esc(label_en)}">{esc(label_ru)}</span><b>{esc(value_label)}</b></div>'
             f'<div class="viz-track" aria-hidden="true"><span style="width:{width:.1f}%"></span></div>'
             f"{note_html}</div>"
         )
 
-    def finding_card(title, metric, text, visual="", note=""):
+    def finding_card(title_ru, title_en, metric, text_ru, text_en, visual="", note_ru="", note_en=""):
         visual_html = f'<div class="viz-stack">{visual}</div>' if visual else ""
-        note_html = f'<div class="viz-note">{esc(note)}</div>' if note else ""
+        note_html = ""
+        if note_ru or note_en:
+            note_html = f'<div class="viz-note bilingual-text" data-ru="{esc(note_ru)}" data-en="{esc(note_en)}">{esc(note_ru)}</div>'
         return (
             '<article class="card finding-card">'
-            f'<strong>{esc(title)}</strong>'
+            f'<strong class="bilingual-text" data-ru="{esc(title_ru)}" data-en="{esc(title_en)}">{esc(title_ru)}</strong>'
             f'<div class="metric">{esc(metric)}</div>'
-            f'<div class="meta">{esc(text)}</div>'
+            f'<div class="meta bilingual-text" data-ru="{esc(text_ru)}" data-en="{esc(text_en)}">{esc(text_ru)}</div>'
             f'{visual_html}{note_html}'
             '</article>'
         )
@@ -2652,109 +2689,141 @@ def generate_findings_page(data, records):
     checked_cards = [
         finding_card(
             "H8. Смена оргкомитета: значимого сдвига нет",
+            "H8. Organizing Committee Change: No Significant Shift",
             f"p={h8_newcomer_p:.4f}",
             "После сверки H8 можно показывать как отрицательный или осторожный результат: приток новичков, L1 и L2 не меняются статистически значимо.",
-            bar_row("Новички до 2024", h8_old_rate, 30, f"{h8_old_rate:.1f}% ({h8_old_n})")
-            + bar_row("Новички 2025-2026", h8_new_rate, 30, f"{h8_new_rate:.1f}% ({h8_new_n})"),
+            "Following H8 verification, this can be shown as a negative or cautious result: the influx of newcomers, L1, and L2 do not change with statistical significance.",
+            bar_row("Новички до 2024", "Newcomers before 2024", h8_old_rate, 30, f"{h8_old_rate:.1f}% ({h8_old_n})")
+            + bar_row("Новички 2025-2026", "Newcomers 2025-2026", h8_new_rate, 30, f"{h8_new_rate:.1f}% ({h8_new_n})"),
             f"p новичков={h8_newcomer_p:.4f}; p L1={h8_l1_p:.4f}; p L2={h8_l2_p:.4f}.",
+            f"p newcomers={h8_newcomer_p:.4f}; p L1={h8_l1_p:.4f}; p L2={h8_l2_p:.4f}."
         ),
         finding_card(
             "H10. Сериализация редка и не сильнее у ядра",
+            "H10. Serialization is Rare and Not Stronger at the Core",
             f"{h10_core_rate:.1f}% / {h10_periphery_rate:.1f}%",
             "Сильная версия о том, что ядро чаще дробит темы на серии, не поддержана: относительная доля выше у периферии, хотя абсолютное число серий растет с общей активностью.",
-            bar_row("Ядро >=5 докладов", h10_core_rate, 6, f"{h10_core_rate:.1f}%")
-            + bar_row("Периферия <5 докладов", h10_periphery_rate, 6, f"{h10_periphery_rate:.1f}%"),
+            "The strong version that the core splits topics into series more often is not supported: the relative share is higher in the periphery, although the absolute number of series grows with general activity.",
+            bar_row("Ядро >=5 докладов", "Core >=5 presentations", h10_core_rate, 6, f"{h10_core_rate:.1f}%")
+            + bar_row("Периферия <5 докладов", "Periphery <5 presentations", h10_periphery_rate, 6, f"{h10_periphery_rate:.1f}%"),
             f"Fisher p={h10_fisher_p:.4f}; Spearman rho={h10_rho:.3f}.",
+            f"Fisher p={h10_fisher_p:.4f}; Spearman rho={h10_rho:.3f}."
         ),
         finding_card(
             "H7+H9. Соавторство и возвращаемость авторов",
+            "H7+H9. Co-authorship and Author Retention",
             f"SPb: {spb_collab_rate}% / Москва: {moscow_collab_rate}%",
             "Соавторы в мегаполисах возвращаются чаще соло-участников. Региональные же соавторы остаются изолированными.",
-            bar_row("СПб: соавторы (коллаб)", spb_collab_rate, 100, f"{spb_collab_rate}% (N={spb_collab_n})")
-            + bar_row("СПб: соло-авторы", spb_solo_rate, 100, f"{spb_solo_rate}% (N={spb_solo_n})")
-            + bar_row("Москва: соавторы (коллаб)", moscow_collab_rate, 100, f"{moscow_collab_rate}% (N={moscow_collab_n})")
-            + bar_row("Москва: соло-авторы", moscow_solo_rate, 100, f"{moscow_solo_rate}% (N={moscow_solo_n})")
-            + bar_row("Регионы: соавторы (коллаб)", regions_collab_rate, 100, f"{regions_collab_rate}% (N={regions_collab_n})")
-            + bar_row("Регионы: соло-авторы", regions_solo_rate, 100, f"{regions_solo_rate}% (N={regions_solo_n})"),
+            "Co-authors in metropolitan areas return more often than solo participants. Regional co-authors remain isolated.",
+            bar_row("СПб: соавторы (коллаб)", "SPb: co-authors (collab)", spb_collab_rate, 100, f"{spb_collab_rate}% (N={spb_collab_n})")
+            + bar_row("СПб: соло-авторы", "SPb: solo authors", spb_solo_rate, 100, f"{spb_solo_rate}% (N={spb_solo_n})")
+            + bar_row("Москва: соавторы (коллаб)", "Moscow: co-authors (collab)", moscow_collab_rate, 100, f"{moscow_collab_rate}% (N={moscow_collab_n})")
+            + bar_row("Москва: соло-авторы", "Moscow: solo authors", moscow_solo_rate, 100, f"{moscow_solo_rate}% (N={moscow_solo_n})")
+            + bar_row("Регионы: соавторы (коллаб)", "Regions: co-authors (collab)", regions_collab_rate, 100, f"{regions_collab_rate}% (N={regions_collab_n})")
+            + bar_row("Регионы: соло-авторы", "Regions: solo authors", regions_solo_rate, 100, f"{regions_solo_rate}% (N={regions_solo_n})"),
             "Соавторство крайне редко (27/1350 докладов) и сосредоточено в СПб (16.7% авторов) и Москве (12.8% авторов).",
+            "Co-authorship is extremely rare (27/1350 presentations) and concentrated in SPb (16.7% of authors) and Moscow (12.8% of authors)."
         ),
     ]
 
     hypothesis_cards = [
         finding_card(
             "1. Слабое пересечение площадок",
+            "1. Weak Overlap Between Venues",
             f"{overlap} / {expected_overlap:.1f}",
             "Наблюдаемое пересечение намного ниже нулевой модели при сохранении индивидуальной активности.",
-            bar_row("Наблюдаемое", overlap, expected_overlap, str(overlap))
-            + bar_row("Ожидание модели", expected_overlap, expected_overlap, f"{expected_overlap:.1f}"),
+            "The observed overlap is significantly lower than the null model while retaining individual activity.",
+            bar_row("Наблюдаемое", "Observed", overlap, expected_overlap, str(overlap))
+            + bar_row("Ожидание модели", "Model Expectation", expected_overlap, expected_overlap, f"{expected_overlap:.1f}"),
         ),
         finding_card(
             "2. Компактность без обвинения",
+            "2. Compactness Without Blame",
             f"{z_retention:.1f}% / {r_retention:.1f}%",
             "Возвращаемость и доля ядра визуализируемы, но bootstrap-различия между площадками не исключают ноль.",
-            bar_row("Зограф: удержание", z_retention, 70, f"{z_retention:.1f}%")
-            + bar_row("Рерих: удержание", r_retention, 70, f"{r_retention:.1f}%")
-            + bar_row("Зограф: ядро >=5", z_core, 45, f"{z_core:.1f}%")
-            + bar_row("Рерих: ядро >=5", r_core, 45, f"{r_core:.1f}%"),
+            "Retention and core share are visualizable, but bootstrap differences between venues do not exclude zero.",
+            bar_row("Зограф: удержание", "Zograf: retention", z_retention, 70, f"{z_retention:.1f}%")
+            + bar_row("Рерих: удержание", "Roerich: retention", r_retention, 70, f"{r_retention:.1f}%")
+            + bar_row("Зограф: ядро >=5", "Zograf: core >=5", z_core, 45, f"{z_core:.1f}%")
+            + bar_row("Рерих: ядро >=5", "Roerich: core >=5", r_core, 45, f"{r_core:.1f}%"),
             f"Разовые участники: Зограф {z_once:.1f}%, Рерих {r_once:.1f}%.",
+            f"One-time participants: Zograf {z_once:.1f}%, Roerich {r_once:.1f}%.",
         ),
         finding_card(
             "3. Тематическая асимметрия",
+            "3. Thematic Asymmetry",
             f"{r_classical_medieval}% / {z_classical_medieval}%",
             "Классический и средневековый материал занимает большую долю в Рериховских чтениях, чем в Зографских.",
-            bar_row("Рерих: classic+medieval", r_classical_medieval, 80, f"{r_classical_medieval:.1f}%")
-            + bar_row("Зограф: classic+medieval", z_classical_medieval, 80, f"{z_classical_medieval:.1f}%"),
+            "Classical and medieval topics account for a larger share in Roerich Readings compared to Zograf Readings.",
+            bar_row("Рерих: classic+medieval", "Roerich: classic+medieval", r_classical_medieval, 80, f"{r_classical_medieval:.1f}%")
+            + bar_row("Зограф: classic+medieval", "Zograf: classic+medieval", z_classical_medieval, 80, f"{z_classical_medieval:.1f}%"),
         ),
         finding_card(
             "4. Городская метка не равна месту работы",
+            "4. City Label is Not Employment",
             f"{z_city_only}% / {r_city_only}%",
             "Зографские программы гораздо чаще публикуют город вместо учреждения, поэтому город нужен как режим публичной репрезентации, а не как готовая аффилиация.",
-            bar_row("Зограф: только город", z_city_only, 75, f"{as_float(z_city_only):.1f}%")
-            + bar_row("Рерих: только город", r_city_only, 75, f"{as_float(r_city_only):.1f}%"),
+            "Zograf programs publish the city instead of institution much more often, hence the city serves as public representation, not employment.",
+            bar_row("Зограф: только город", "Zograf: city-only", z_city_only, 75, f"{as_float(z_city_only):.1f}%")
+            + bar_row("Рерих: только город", "Roerich: city-only", r_city_only, 75, f"{as_float(r_city_only):.1f}%"),
         ),
         finding_card(
             "5. География и возвращаемость",
+            "5. Geography and Retention",
             f"{regions_retention:.1f}%",
             "Региональная метка связана с более низкой наблюдаемой возвращаемостью; сами площадки при этом тянут разные городские профили.",
-            bar_row("Зограф: Москва", z_moscow, 60, f"{z_moscow:.1f}%")
-            + bar_row("Рерих: Москва", r_moscow, 60, f"{r_moscow:.1f}%")
-            + bar_row("Зограф: СПб", z_spb, 60, f"{z_spb:.1f}%")
-            + bar_row("Рерих: СПб", r_spb, 60, f"{r_spb:.1f}%")
-            + bar_row("Регионы/ино: удержание", regions_retention, 70, f"{regions_retention:.1f}%"),
+            "Regional labels correlate with lower observed retention; the venues themselves attract distinct geographical profiles.",
+            bar_row("Зограф: Москва", "Zograf: Moscow", z_moscow, 60, f"{z_moscow:.1f}%")
+            + bar_row("Рерих: Москва", "Roerich: Moscow", r_moscow, 60, f"{r_moscow:.1f}%")
+            + bar_row("Зограф: СПб", "Zograf: SPb", z_spb, 60, f"{z_spb:.1f}%")
+            + bar_row("Рерих: СПб", "Roerich: SPb", r_spb, 60, f"{r_spb:.1f}%")
+            + bar_row("Регионы/ино: удержание", "Regions/intl: retention", regions_retention, 70, f"{regions_retention:.1f}%"),
             f"Для сравнения: Москва {moscow_retention:.1f}%, СПб {spb_retention:.1f}%.",
+            f"For comparison: Moscow {moscow_retention:.1f}%, SPb {spb_retention:.1f}%.",
         ),
         finding_card(
             "6. Микрокейс как основной жанр",
+            "6. Micro-Case as the Primary Genre",
             f"{g1_count} / {unique_presentations}",
             "Шкала Гумилева хорошо ложится на сайт: подавляющее большинство заголовков работает на микроуровне, а глобальных G3 очень мало.",
-            bar_row("G1 микро", g1_count, unique_presentations, str(g1_count))
-            + bar_row("G2 регион/традиция", scale.get("2", 0), unique_presentations, str(scale.get("2", 0)))
-            + bar_row("G3 глобально", g3_count, unique_presentations, str(g3_count)),
+            "The Gumilyov scale fits the site well: the vast majority of titles represent the micro-level, with very few global G3 cases.",
+            bar_row("G1 микро", "G1 micro", g1_count, unique_presentations, str(g1_count))
+            + bar_row("G2 регион/традиция", "G2 regional/tradition", scale.get("2", 0), unique_presentations, str(scale.get("2", 0)))
+            + bar_row("G3 глобально", "G3 global", g3_count, unique_presentations, str(g3_count)),
         ),
         finding_card(
             "7. Видео как проверочный слой",
+            "7. Video as a Verification Layer",
             f"{video_presentations} / {youtube_rows}",
             "Видео можно показывать рядом с докладами, но оно остается неполным слоем проверки, а не самостоятельной выборкой для выводов.",
-            bar_row("Привязано к докладам", video_presentations, youtube_rows, str(video_presentations))
-            + bar_row("auto mapping", video_status.get("auto", 0), youtube_rows, str(video_status.get("auto", 0)))
-            + bar_row("needs review", video_status.get("needs_review", 0), youtube_rows, str(video_status.get("needs_review", 0))),
+            "Video can be displayed alongside papers, but remains an incomplete verification layer, not a self-sufficient sample.",
+            bar_row("Привязано к докладам", "Linked to presentations", video_presentations, youtube_rows, str(video_presentations))
+            + bar_row("auto mapping", "auto mapping", video_status.get("auto", 0), youtube_rows, str(video_status.get("auto", 0)))
+            + bar_row("needs review", "needs review", video_status.get("needs_review", 0), youtube_rows, str(video_status.get("needs_review", 0))),
             f"Авторских карточек с видео: {video_author_cards}; skip: {video_status.get('skip', 0)}.",
+            f"Author cards with video: {video_author_cards}; skip: {video_status.get('skip', 0)}.",
         ),
         finding_card(
             "8. Онлайн-2020 как форматный шок",
+            "8. Online-2020 as a Format Shock",
             f"{z2020_online} / {z2020_total}",
             "Онлайн-режим лучше визуализировать как метаданные формата участия: сильный пик 2020 г. не превращается сам по себе в доказанную новую когорту.",
-            bar_row("Зограф 2020 онлайн", z2020_share, 100, f"{z2020_share:.1f}%")
-            + bar_row("Зограф 2025 онлайн", z2025_share, 100, f"{z2025_share:.1f}%")
-            + bar_row("Зограф 2026 онлайн", z2026_share, 100, f"{z2026_share:.1f}%"),
+            "Online format is best visualized as participation metadata: the sharp 2020 peak does not automatically signal a new cohort.",
+            bar_row("Зограф 2020 онлайн", "Zograf 2020 online", z2020_share, 100, f"{z2020_share:.1f}%")
+            + bar_row("Зограф 2025 онлайн", "Zograf 2025 online", z2025_share, 100, f"{z2025_share:.1f}%")
+            + bar_row("Зограф 2026 онлайн", "Zograf 2026 online", z2026_share, 100, f"{z2026_share:.1f}%"),
             f"Повторяющихся онлайн-участников после 2020: {online_repeaters}.",
+            f"Repeating online participants after 2020: {online_repeaters}.",
         ),
         finding_card(
             "9. Мосты видны лучше через сессии",
+            "9. Bridges Are More Visible Via Sessions",
             f"{overlap} человек",
             "Сессионный граф позволяет показать не только общую перекрестную когорту, но и посредников, которых обычная сумма выступлений сглаживает.",
+            "The session graph reveals the bridge cohort and specific intermediaries that simple participation totals smooth out.",
             "".join(
                 bar_row(
+                    row.get("affiliation_group", ""),
                     row.get("affiliation_group", ""),
                     row.get("cross_cohort_people", 0),
                     max(overlap, 1),
@@ -2763,11 +2832,31 @@ def generate_findings_page(data, records):
                 for row in institution_bridges
             ),
             f"Топ сессионных посредников: {top_session_names}. Институциональные группы: {top_institution_text}.",
+            f"Top session intermediaries: {top_session_names}. Institutional groups: {top_institution_text}.",
         ),
     ]
 
     findings_style = """
         <style>
+            .lang-toggle-container {
+                display: flex;
+                justify-content: flex-end;
+                margin-bottom: 1.2rem;
+            }
+            #lang-toggle-btn {
+                background: rgba(255, 255, 255, 0.08);
+                color: #fff;
+                border: 1px solid rgba(255, 255, 255, 0.15);
+                padding: 0.4rem 0.9rem;
+                border-radius: 6px;
+                cursor: pointer;
+                font-size: 0.88rem;
+                transition: all 0.2s ease;
+            }
+            #lang-toggle-btn:hover {
+                background: var(--accent);
+                border-color: var(--accent);
+            }
             .finding-card {
                 display: flex;
                 flex-direction: column;
@@ -2807,71 +2896,404 @@ def generate_findings_page(data, records):
                 line-height: 1.45;
                 margin-top: 0.55rem;
             }
+            .orbit-scatter-card {
+                grid-column: 1 / -1;
+                background: rgba(255, 255, 255, 0.02);
+                border: 1px solid rgba(255, 255, 255, 0.06);
+                border-radius: 12px;
+                padding: 1.5rem;
+                margin-bottom: 2rem;
+            }
+            .scatter-grid-line {
+                stroke: rgba(255, 255, 255, 0.05);
+                stroke-dasharray: 2 2;
+            }
+            .scatter-diagonal {
+                stroke: var(--accent2);
+                stroke-dasharray: 4 4;
+                stroke-width: 1.5;
+                opacity: 0.6;
+            }
+            .scatter-axis {
+                stroke: rgba(255, 255, 255, 0.2);
+            }
+            .scatter-axis-label {
+                fill: var(--muted);
+                font-size: 11px;
+                font-weight: 500;
+            }
+            .scatter-dot {
+                cursor: pointer;
+                transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), r 0.2s;
+            }
+            .scatter-dot:hover {
+                transform: scale(1.3);
+                stroke: #fff;
+                stroke-width: 1.5px;
+            }
+            .legend-container {
+                display: flex;
+                gap: 1.5rem;
+                margin-top: 1rem;
+                flex-wrap: wrap;
+            }
+            .legend-item {
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+                font-size: 0.85rem;
+                color: var(--muted);
+            }
+            .legend-color {
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+            }
+            #scatter-tooltip {
+                position: absolute;
+                background: rgba(18, 18, 24, 0.95);
+                border: 1px solid rgba(255, 255, 255, 0.15);
+                border-radius: 8px;
+                padding: 0.8rem 1rem;
+                font-size: 0.85rem;
+                color: #fff;
+                pointer-events: none;
+                opacity: 0;
+                transition: opacity 0.15s ease;
+                z-index: 1000;
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+                backdrop-filter: blur(4px);
+                max-width: 280px;
+                line-height: 1.4;
+            }
         </style>
     """
 
+    serialized_bridges = json.dumps(bridges_data, ensure_ascii=False)
+
     body = f"""
+        <div class="lang-toggle-container">
+            <button id="lang-toggle-btn" onclick="toggleLanguage()">English</button>
+        </div>
+
         <header>
-            <h1>Главные выводы статьи</h1>
-            <p>Эта страница переводит последнюю версию статьи из режима доказательства в режим чтения сайта: что означают базовые числа архива и куда на сайте идти, чтобы проверить каждый вывод.</p>
+            <h1 class="bilingual-text" data-ru="Главные выводы статьи" data-en="Key Findings of the Article">Главные выводы статьи</h1>
+            <p class="bilingual-text" data-ru="Эта страница переводит последнюю версию статьи из режима доказательства в режим чтения сайта: что означают базовые числа архива и куда на сайте идти, чтобы проверить каждый вывод." data-en="This page translates the latest version of the article from proof mode to site reading mode: what the basic numbers of the archive mean and where to go on the site to verify each conclusion.">Эта страница переводит последнюю версию статьи из режима доказательства в режим чтения сайта: что означают базовые числа архива и куда на сайте идти, чтобы проверить каждый вывод.</p>
         </header>
+
         <aside class="caveat-block" role="note" aria-label="Article corpus pause">
-            <strong>Корпус и статья пересчитаны</strong>
-            <p>Показатели статьи рассчитаны для текущего расширенного каталога: {esc(total_scholars)} ученых, {esc(unique_presentations)} уникальных докладов и {esc(author_participations)} авторских участий. Классификация масштаба аргумента выполнена по всем докладам и повторно проверена для предварительных L2/L3.</p>
+            <strong class="bilingual-text" data-ru="Корпус и статья пересчитаны" data-en="Corpus & Article Recalculated">Корпус и статья пересчитаны</strong>
+            <p class="bilingual-text" data-ru="Показатели статьи рассчитаны для текущего расширенного каталога: {esc(total_scholars)} ученых, {esc(unique_presentations)} уникальных докладов и {esc(author_participations)} авторских участий. Классификация масштаба аргумента выполнена по всем докладам и повторно проверена для предварительных L2/L3." data-en="Article metrics are computed for the current expanded catalog: {esc(total_scholars)} scholars, {esc(unique_presentations)} unique presentations, and {esc(author_participations)} author participations. Argument scale classification is applied to all papers and re-verified for preliminary L2/L3.">Показатели статьи рассчитаны для текущего расширенного каталога: {esc(total_scholars)} ученых, {esc(unique_presentations)} уникальных докладов и {esc(author_participations)} авторских участий. Классификация масштаба аргумента выполнена по всем докладам и повторно проверена для предварительных L2/L3.</p>
         </aside>
+
         {findings_style}
-        <h2>Сначала после сверки чисел</h2>
+
+        <!-- Interactive Cross-Cohort Orbit Scatter Plot -->
+        <section class="orbit-scatter-card">
+            <h2 class="bilingual-text" data-ru="Орбита перекрёстной когорты (Зограф × Рерих)" data-en="Cross-Cohort Orbit Scatter (Zograf × Roerich)">Орбита перекрёстной когорты (Зограф × Рерих)</h2>
+            <p class="bilingual-text" style="color:var(--muted); font-size:0.9rem;" data-ru="Каждая точка представляет исследователя. Смещение от пунктирной диагонали показывает баланс его активности между двумя площадками. Масштабируйте/наведите мышь для деталей, нажмите для перехода в профиль." data-en="Each dot represents a researcher. The offset from the dashed diagonal indicates their activity balance between the two venues. Hover for details, click to visit their profile.">Каждая точка представляет исследователя. Смещение от пунктирной диагонали показывает баланс его активности между двумя площадками. Масштабируйте/наведите мышь для деталей, нажмите для перехода в профиль.</p>
+            
+            <div id="scatter-chart-wrapper" style="position:relative; width:100%; overflow:hidden;">
+                <!-- Responsive SVG Plot -->
+                <svg id="scatter-svg" viewBox="0 0 800 480" style="width:100%; height:auto; background:rgba(0,0,0,0.15); border-radius:8px;"></svg>
+                <div id="scatter-tooltip"></div>
+            </div>
+
+            <div class="legend-container">
+                <div class="legend-item">
+                    <span class="legend-color" style="background:#ff7b00;"></span>
+                    <span class="bilingual-text" data-ru="Участвовал в обоих (Мост)" data-en="Attended both (Bridge)">Участвовал в обоих (Мост)</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-color" style="background:#2b82c9;"></span>
+                    <span class="bilingual-text" data-ru="Только Зографские чтения" data-en="Zograf Readings only">Только Зографские чтения</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-color" style="background:#b83280;"></span>
+                    <span class="bilingual-text" data-ru="Только Рериховские чтения" data-en="Roerich Readings only">Только Рериховские чтения</span>
+                </div>
+            </div>
+
+            <aside class="caveat-block" role="note" style="margin-top: 1.2rem; border-left: 3px solid var(--accent2); background: rgba(255,255,255,0.01);">
+                <strong class="bilingual-text" data-ru="Источниковедческая оговорка" data-en="Source Caveat">Источниковедческая оговорка</strong>
+                <p class="bilingual-text" data-ru="Этот график показывает распределение докладов исключительно на основе официально опубликованных программ. Наблюдаемый баланс является медийным фактом программы, а не полной академической биографией." data-en="This scatter plot depicts the distribution of presentations solely based on officially published program metadata. The observed balance is a structural fact of the programs, not a complete scholarly biography.">Этот график показывает распределение докладов исключительно на основе официально опубликованных программ. Наблюдаемый баланс является медийным фактом программы, а не полной академической биографией.</p>
+            </aside>
+        </section>
+
+        <h2 class="bilingual-text" data-ru="Сначала после сверки чисел" data-en="First, After Number Verification">Сначала после сверки чисел</h2>
         <section class="grid">
             {''.join(checked_cards)}
         </section>
 
-        <h2>Остальные 9 визуальных гипотез</h2>
+        <h2 class="bilingual-text" data-ru="Остальные 9 визуальных гипотез" data-en="The Other 9 Visual Hypotheses">Остальные 9 визуальных гипотез</h2>
         <section class="grid">
             {''.join(hypothesis_cards)}
         </section>
 
-        <h2>Как читать эти числа</h2>
+        <h2 class="bilingual-text" data-ru="Как читать эти числа" data-en="How to Read These Numbers">Как читать эти числа</h2>
         <section class="list">
             <article class="talk">
-                <strong>Не превращать компактность в обвинение</strong>
-                <div class="meta">Программы показывают публичный итог отбора, но не заявки, отказы и внутренние решения. Поэтому статья говорит о наблюдаемой компактности, возвращаемости и проницаемости, а не о доказанной закрытости.</div>
+                <strong class="bilingual-text" data-ru="Не превращать компактность в обвинение" data-en="Do Not Turn Compactness Into Blame">Не превращать компактность в обвинение</strong>
+                <div class="meta bilingual-text" data-ru="Программы показывают публичный итог отбора, но не заявки, отказы и внутренние решения. Поэтому статья говорит о наблюдаемой компактности, возвращаемости и проницаемости, а не о доказанной закрытости." data-en="Programs show the public outcome of selection, not applications, rejections, or internal decisions. Therefore, the article refers to observed compactness, retention, and permeability, rather than proven exclusiveness.">Программы показывают публичный итог отбора, но не заявки, отказы и внутренние решения. Поэтому статья говорит о наблюдаемой компактности, возвращаемости и проницаемости, а не о доказанной закрытости.</div>
             </article>
             <article class="talk">
-                <strong>Не читать город как биографию</strong>
-                <div class="meta">Зографский формат часто дает город, а не учреждение. Региональный или периферийный маркер - начало вопроса о траектории участника, а не готовый ответ о его месте работы.</div>
+                <strong class="bilingual-text" data-ru="Не читать город как биографию" data-en="Do Not Read City as Biography">Не читать город как биографию</strong>
+                <div class="meta bilingual-text" data-ru="Зографский формат часто дает город, а не учреждение. Региональный или периферийный маркер - начало вопроса о траектории участника, а не готовый ответ о его месте работы." data-en="The Zograf format frequently cites the city rather than the institution. A regional or peripheral marker is the beginning of a question about a participant's trajectory, not a ready answer about their employment.">Не читать город как биографию</div>
             </article>
             <article class="talk">
-                <strong>Не считать микрокейс слабостью</strong>
-                <div class="meta">Для филологической, текстологической и историко-религиоведческой работы микрокейс часто является основной формой надежной аргументации. Неожиданность не в его наличии, а в почти полном отсутствии публичного жанра больших синтезов.</div>
+                <strong class="bilingual-text" data-ru="Не считать микрокейс слабостью" data-en="Do Not Deem Micro-Case a Weakness">Не считать микрокейс слабостью</strong>
+                <div class="meta bilingual-text" data-ru="Для филологической, текстологической и историко-религиоведческой работы микрокейс часто является основной формой надежной аргументации. Неожиданность не в его наличии, а в почти полном отсутствии публичного жанра больших синтезов." data-en="For philological, textual, and historical-religious research, a micro-case is often the primary form of sound argument. The surprise is not its presence, but the near-total absence of a public genre of broad syntheses.">Для филологической, текстологической и историко-религиоведческой работы микрокейс часто является основной формой надежной аргументации. Неожиданность не в его наличии, а в почти полном отсутствии публичного жанра больших синтезов.</div>
             </article>
         </section>
 
-        <h2>Проверить на сайте</h2>
+        <h2 class="bilingual-text" data-ru="Проверить на сайте" data-en="Verify on the Site">Проверить на сайте</h2>
         <section class="link-block">
-            <strong>Входы в данные</strong>
+            <strong class="bilingual-text" data-ru="Входы в данные" data-en="Data Gateways">Входы в данные</strong>
             <div class="chip-list">
-                <a class="chip" href="../gumilyov/">Шкала Гумилева</a>
-                <a class="chip" href="../generations/">Поколения</a>
-                <a class="chip" href="../videos/">Видеоархив</a>
-                <a class="chip" href="../conferences/">Годы и программы</a>
-                <a class="chip" href="../themes/">Тематические рубрики</a>
-                <a class="chip" href="../search.html">Поиск по докладам</a>
-                <a class="chip" href="../download-data.html">CSV, JSON, SQLite</a>
+                <a class="chip bilingual-text" href="../findings/visualisations.html" data-ru="Интерактивные визуализации" data-en="Interactive Visualizations">Интерактивные визуализации</a>
+                <a class="chip bilingual-text" href="../gumilyov/" data-ru="Шкала Гумилева" data-en="Gumilyov Scale">Шкала Гумилева</a>
+                <a class="chip bilingual-text" href="../generations/" data-ru="Поколения" data-en="Generations">Поколения</a>
+                <a class="chip bilingual-text" href="../videos/" data-ru="Видеоархив" data-en="Video Archive">Видеоархив</a>
+                <a class="chip bilingual-text" href="../conferences/" data-ru="Годы и программы" data-en="Years & Programs">Годы и программы</a>
+                <a class="chip bilingual-text" href="../themes/" data-ru="Тематические рубрики" data-en="Themes">Тематические рубрики</a>
+                <a class="chip bilingual-text" href="../search.html" data-ru="Поиск по докладам" data-en="Search Papers">Поиск по докладам</a>
+                <a class="chip bilingual-text" href="../download-data.html" data-ru="CSV, JSON, SQLite" data-en="CSV, JSON, SQLite">CSV, JSON, SQLite</a>
             </div>
         </section>
 
-        <h2>Что пока держать в очереди проверки</h2>
+        <h2 class="bilingual-text" data-ru="Что пока держать в очереди проверки" data-en="What to Keep in the Verification Queue for Now">Что пока держать в очереди проверки</h2>
         <section class="grid">
-            <article class="card"><strong>Публикационная конверсия</strong><div class="meta">Пока не выносить как вывод: в БД есть PDF-источники, но нужен слой сопоставления доклада с публикацией, сборником или устойчивой серией.</div></article>
-            <article class="card"><strong>Authority-слой для городов</strong><div class="meta">Городские метки уже можно визуализировать как публичную репрезентацию, но проверка реального места работы требует биографических и институциональных authority-записей.</div></article>
-            <article class="card"><strong>Возрастная гипотеза G3</strong><div class="meta">Расширенный корпус не подтвердил старший возраст авторов широких обобщений; этот результат лучше держать как отрицательный контроль, а не как центральную визуальную гипотезу.</div></article>
+            <article class="card">
+                <strong class="bilingual-text" data-ru="Публикационная конверсия" data-en="Publication Conversion">Публикационная конверсия</strong>
+                <div class="meta bilingual-text" data-ru="Пока не выносить как вывод: в БД есть PDF-источники, но нужен слой сопоставления доклада с публикацией, сборником или устойчивой серией." data-en="Do not frame as a firm finding yet: the database has PDF sources, but we need a layer linking presentations to papers, proceedings, or stable series.">Пока не выносить как вывод: в БД есть PDF-источники, но нужен слой сопоставления доклада с публикацией, сборником или устойчивой серией.</div>
+            </article>
+            <article class="card">
+                <strong class="bilingual-text" data-ru="Authority-слой для городов" data-en="Authority Layer for Cities">Authority-слой для городов</strong>
+                <div class="meta bilingual-text" data-ru="Городские метки уже можно визуализировать как публичную репрезентацию, но проверка реального места работы требует биографических и институциональных authority-записей." data-en="City labels can already be visualized as public representation, but verifying actual employment requires biographical and institutional authority records.">Городские метки уже можно визуализировать как публичную репрезентацию, но проверка реального места работы требует биографических и институциональных authority-записей.</div>
+            </article>
+            <article class="card">
+                <strong class="bilingual-text" data-ru="Возрастная гипотеза G3" data-en="Age Hypothesis G3">Возрастная гипотеза G3</strong>
+                <div class="meta bilingual-text" data-ru="Расширенный корпус не подтвердил старший возраст авторов широких обобщений; этот результат лучше держать как отрицательный контроль, а не как центральную визуальную гипотезу." data-en="The expanded corpus did not confirm the older age of authors of broad generalizations; this outcome is best kept as a negative control rather than a central visual hypothesis.">Расширенный корпус не подтвердил старший возраст авторов широких обобщений; этот результат лучше держать как отрицательный контроль, а не как центральную визуальную гипотезу.</div>
+            </article>
         </section>
 
         <aside class="caveat-block" role="note" aria-label="Scope note">
-            <strong>Объем расширенного каталога</strong>
-            <p>Текущий каталог сайта и численные гипотезы статьи используют одну расширенную базу: {esc(total_scholars)} ученых, {esc(unique_presentations)} уникальных докладов, {esc(author_participations)} авторских участий. Программа Зографских чтений 2026 г. учитывается как предварительная.</p>
+            <strong class="bilingual-text" data-ru="Объем расширенного каталога" data-en="Expanded Catalog Volume">Объем расширенного каталога</strong>
+            <p class="bilingual-text" data-ru="Текущий каталог сайта и численные гипотезы статьи используют одну расширенную базу: {esc(total_scholars)} ученых, {esc(unique_presentations)} уникальных докладов, {esc(author_participations)} авторских участий. Программа Зографских чтений 2026 г. учитывается как предварительная." data-en="The current site catalog and numerical hypotheses use the same expanded database: {esc(total_scholars)} scholars, {esc(unique_presentations)} unique presentations, {esc(author_participations)} author participations. The 2026 Zograf Readings program is included as preliminary.">Текущий каталог сайта и численные гипотезы статьи используют одну расширенную базу: {esc(total_scholars)} ученых, {esc(unique_presentations)} уникальных докладов, {esc(author_participations)} авторских участий. Программа Зографских чтений 2026 г. учитывается как предварительная.</p>
         </aside>
+
+        <!-- Dynamic Inline JS for Orbit Scatter Plot and Language Toggling placeholder -->
     """
+    
+    scatter_js = """
+        <script>
+            const BRIDGES_DATA = """ + serialized_bridges + """;
+
+            function getJitter(id, seed) {
+                let hash = 0;
+                const str = id + seed;
+                for (let i = 0; i < str.length; i++) {
+                    hash = str.charCodeAt(i) + ((hash << 5) - hash);
+                }
+                return ((Math.abs(hash) % 100) / 100) - 0.5; // [-0.5, 0.5]
+            }
+
+            let currentLang = localStorage.getItem('findings-lang') || 'ru';
+
+            function toggleLanguage() {
+                currentLang = currentLang === 'ru' ? 'en' : 'ru';
+                setLanguage(currentLang);
+            }
+
+            function setLanguage(lang) {
+                document.querySelectorAll('.bilingual-text').forEach(el => {
+                    const text = el.getAttribute('data-' + lang);
+                    if (text) {
+                        el.innerHTML = text;
+                    }
+                });
+                const btn = document.getElementById('lang-toggle-btn');
+                if (btn) {
+                    btn.innerText = lang === 'ru' ? 'English' : 'Русский';
+                }
+                localStorage.setItem('findings-lang', lang);
+                drawScatter();
+            }
+
+            function drawScatter() {
+                const svg = document.getElementById('scatter-svg');
+                if (!svg) return;
+                svg.innerHTML = '';
+
+                const width = 800;
+                const height = 480;
+                const padding = { top: 40, right: 40, bottom: 50, left: 60 };
+
+                // Find limits
+                let maxZ = 20;
+                let maxR = 20;
+
+                const xScale = (val) => padding.left + (val / maxZ) * (width - padding.left - padding.right);
+                const yScale = (val) => height - padding.bottom - (val / maxR) * (height - padding.top - padding.bottom);
+
+                // Add gridlines
+                for (let i = 0; i <= maxZ; i += 2) {
+                    const x = xScale(i);
+                    const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+                    line.setAttribute('x1', x);
+                    line.setAttribute('y1', padding.top);
+                    line.setAttribute('x2', x);
+                    line.setAttribute('y2', height - padding.bottom);
+                    line.setAttribute('class', 'scatter-grid-line');
+                    svg.appendChild(line);
+
+                    const label = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+                    label.setAttribute('x', x);
+                    label.setAttribute('y', height - padding.bottom + 20);
+                    label.setAttribute('text-anchor', 'middle');
+                    label.setAttribute('fill', 'var(--muted)');
+                    label.setAttribute('font-size', '11px');
+                    label.textContent = i;
+                    svg.appendChild(label);
+                }
+
+                for (let i = 0; i <= maxR; i += 2) {
+                    const y = yScale(i);
+                    const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+                    line.setAttribute('x1', padding.left);
+                    line.setAttribute('y1', y);
+                    line.setAttribute('x2', width - padding.right);
+                    line.setAttribute('y2', y);
+                    line.setAttribute('class', 'scatter-grid-line');
+                    svg.appendChild(line);
+
+                    const label = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+                    label.setAttribute('x', padding.left - 15);
+                    label.setAttribute('y', y + 4);
+                    label.setAttribute('text-anchor', 'end');
+                    label.setAttribute('fill', 'var(--muted)');
+                    label.setAttribute('font-size', '11px');
+                    label.textContent = i;
+                    svg.appendChild(label);
+                }
+
+                // Add diagonal reference line
+                const diag = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+                diag.setAttribute('x1', xScale(0));
+                diag.setAttribute('y1', yScale(0));
+                diag.setAttribute('x2', xScale(Math.min(maxZ, maxR)));
+                diag.setAttribute('y2', yScale(Math.min(maxZ, maxR)));
+                diag.setAttribute('class', 'scatter-diagonal');
+                svg.appendChild(diag);
+
+                // Add Axes
+                const xAxis = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+                xAxis.setAttribute('x1', padding.left);
+                xAxis.setAttribute('y1', height - padding.bottom);
+                xAxis.setAttribute('x2', width - padding.right);
+                xAxis.setAttribute('y2', height - padding.bottom);
+                xAxis.setAttribute('class', 'scatter-axis');
+                svg.appendChild(xAxis);
+
+                const yAxis = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+                yAxis.setAttribute('x1', padding.left);
+                yAxis.setAttribute('y1', padding.top);
+                yAxis.setAttribute('x2', padding.left);
+                yAxis.setAttribute('y2', height - padding.bottom);
+                yAxis.setAttribute('class', 'scatter-axis');
+                svg.appendChild(yAxis);
+
+                // Axis Labels
+                const xLabel = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+                xLabel.setAttribute('x', padding.left + (width - padding.left - padding.right) / 2);
+                xLabel.setAttribute('y', height - padding.bottom + 42);
+                xLabel.setAttribute('text-anchor', 'middle');
+                xLabel.setAttribute('fill', '#fff');
+                xLabel.setAttribute('font-size', '12px');
+                xLabel.textContent = currentLang === 'ru' ? 'Докладов на Зографских чтениях' : 'Presentations at Zograf Readings';
+                svg.appendChild(xLabel);
+
+                const yLabel = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+                yLabel.setAttribute('x', 20);
+                yLabel.setAttribute('y', padding.top + (height - padding.top - padding.bottom) / 2);
+                yLabel.setAttribute('text-anchor', 'middle');
+                yLabel.setAttribute('fill', '#fff');
+                yLabel.setAttribute('font-size', '12px');
+                yLabel.setAttribute('transform', 'rotate(-90, 20, ' + (padding.top + (height - padding.top - padding.bottom) / 2) + ')');
+                yLabel.textContent = currentLang === 'ru' ? 'Докладов на Рериховских чтениях' : 'Presentations at Roerich Readings';
+                svg.appendChild(yLabel);
+
+                // Draw Dots
+                const tooltip = document.getElementById('scatter-tooltip');
+
+                BRIDGES_DATA.forEach(d => {
+                    const jX = getJitter(d.id, 'X') * 0.42;
+                    const jY = getJitter(d.id, 'Y') * 0.42;
+
+                    const cx = xScale(d.z + jX);
+                    const cy = yScale(d.r + jY);
+
+                    // Radius based on total presentations
+                    const r = 4 + Math.sqrt(d.total) * 1.5;
+
+                    // Color based on group
+                    let color = '#ff7b00'; // both
+                    if (d.g === 'zograf_only') color = '#2b82c9';
+                    else if (d.g === 'roerich_only') color = '#b83280';
+
+                    const dot = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+                    dot.setAttribute('cx', cx);
+                    dot.setAttribute('cy', cy);
+                    dot.setAttribute('r', r);
+                    dot.setAttribute('fill', color);
+                    dot.setAttribute('opacity', '0.75');
+                    dot.setAttribute('class', 'scatter-dot');
+
+                    dot.addEventListener('mouseenter', (e) => {
+                        dot.setAttribute('opacity', '1.0');
+                        tooltip.style.opacity = '1';
+                        
+                        const titleZ = currentLang === 'ru' ? 'Зограф' : 'Zograf';
+                        const titleR = currentLang === 'ru' ? 'Рерих' : 'Roerich';
+                        const labelAff = currentLang === 'ru' ? 'Аффилиация' : 'Affiliation';
+                        const labelClick = currentLang === 'ru' ? 'Нажмите для перехода к профилю' : 'Click to view profile';
+
+                        tooltip.innerHTML = 
+                            '<strong style="color:var(--accent2); font-size: 0.95rem;">' + d.name + '</strong><br>' +
+                            '<span style="font-size:0.8rem; color:var(--muted);">' + labelAff + ': ' + d.aff + '</span><br>' +
+                            '<span style="display:inline-block; margin-top:5px; font-weight:bold;">' + titleZ + ': ' + d.z + ' · ' + titleR + ': ' + d.r + '</span><br>' +
+                            '<small style="color:var(--accent); display:block; margin-top: 5px;">' + labelClick + '</small>';
+                    });
+
+                    dot.addEventListener('mousemove', (e) => {
+                        const rect = svg.getBoundingClientRect();
+                        const tooltipRect = tooltip.getBoundingClientRect();
+                        // Position relative to scatter container
+                        const x = e.clientX - rect.left + 15;
+                        const y = e.clientY - rect.top - tooltipRect.height - 10;
+                        tooltip.style.left = x + 'px';
+                        tooltip.style.top = y + 'px';
+                    });
+
+                    dot.addEventListener('mouseleave', () => {
+                        dot.setAttribute('opacity', '0.75');
+                        tooltip.style.opacity = '0';
+                    });
+
+                    dot.addEventListener('click', () => {
+                        window.location.href = '../s/' + d.slug + '.html';
+                    });
+
+                    svg.appendChild(dot);
+                });
+            }
+
+            document.addEventListener('DOMContentLoaded', () => {
+                setLanguage(currentLang);
+            });
+        </script>
+    """
+    body = body + scatter_js
     write_text(
         "findings/index.html",
         page_shell(
@@ -2880,6 +3302,517 @@ def generate_findings_page(data, records):
             "findings/",
             body,
             [page_data("Главные выводы статьи", "Интерпретационный слой последней статьи.", "findings/"), make_breadcrumbs([("Главная", ""), ("Выводы", "findings/")])],
+        ),
+    )
+
+
+
+def generate_visualisations_page(data, records):
+    records_by_id = presentation_records_by_id(records)
+    unique_records = list(records_by_id.values())
+    summary = data.get("summary", {})
+    total_scholars = summary.get("total_scholars", 220)
+    unique_presentations = summary.get("unique_presentations", 895)
+    author_participations = summary.get("author_participations", 899)
+
+    bridges_data = []
+    scholar_slug_by_id = {s.get("id"): s.get("url_slug") for s in data.get("scholars", [])}
+    scholar_aff_by_id = {}
+    for s in data.get("scholars", []):
+        affs = s.get("all_affiliations") or []
+        scholar_aff_by_id[s.get("id")] = affs[0] if affs else "Не указана"
+
+    for row in load_csv_rows("article/hypothesis_output/network_bridges.csv"):
+        pid = row.get("person_id")
+        if not pid:
+            continue
+        z_talks = int(row.get("zograf") or 0)
+        r_talks = int(row.get("roerich") or 0)
+        total = int(row.get("total_participations") or 0)
+        betweenness = float(row.get("betweenness") or 0.0)
+        balance = float(row.get("balance") or 0.0)
+        slug = scholar_slug_by_id.get(pid, pid)
+        display_name = row.get("display_name")
+        group = row.get("series_attended")
+        aff = scholar_aff_by_id.get(pid, "Не указана")
+        bridges_data.append({
+            "id": pid,
+            "name": display_name,
+            "slug": slug,
+            "z": z_talks,
+            "r": r_talks,
+            "total": total,
+            "b": betweenness,
+            "bal": balance,
+            "g": group,
+            "aff": aff
+        })
+
+    serialized_bridges = json.dumps(bridges_data, ensure_ascii=False)
+
+    findings_style = """
+        <style>
+            .lang-toggle-container {
+                display: flex;
+                justify-content: flex-end;
+                margin-bottom: 1.2rem;
+            }
+            #lang-toggle-btn {
+                background: rgba(255, 255, 255, 0.08);
+                color: #fff;
+                border: 1px solid rgba(255, 255, 255, 0.15);
+                padding: 0.4rem 0.9rem;
+                border-radius: 6px;
+                cursor: pointer;
+                font-size: 0.88rem;
+                transition: all 0.2s ease;
+            }
+            #lang-toggle-btn:hover {
+                background: var(--accent);
+                border-color: var(--accent);
+            }
+            .viz-showcase-section {
+                margin-bottom: 3.5rem;
+                background: rgba(255, 255, 255, 0.02);
+                border: 1px solid rgba(255, 255, 255, 0.06);
+                border-radius: 12px;
+                padding: 2rem;
+            }
+            .viz-showcase-section h2 {
+                margin-top: 0;
+                display: flex;
+                align-items: center;
+                gap: 0.8rem;
+            }
+            .viz-id-badge {
+                font-family: monospace;
+                font-size: 0.82rem;
+                background: var(--accent);
+                color: #fff;
+                padding: 0.2rem 0.5rem;
+                border-radius: 4px;
+            }
+            .scatter-grid-line {
+                stroke: rgba(255, 255, 255, 0.05);
+                stroke-dasharray: 2 2;
+            }
+            .scatter-diagonal {
+                stroke: var(--accent2);
+                stroke-dasharray: 4 4;
+                stroke-width: 1.5;
+                opacity: 0.6;
+            }
+            .scatter-axis {
+                stroke: rgba(255, 255, 255, 0.2);
+            }
+            .scatter-dot {
+                cursor: pointer;
+                transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), r 0.2s;
+            }
+            .scatter-dot:hover {
+                transform: scale(1.3);
+                stroke: #fff;
+                stroke-width: 1.5px;
+            }
+            .legend-container {
+                display: flex;
+                gap: 1.5rem;
+                margin-top: 1rem;
+                flex-wrap: wrap;
+            }
+            .legend-item {
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+                font-size: 0.85rem;
+                color: var(--muted);
+            }
+            .legend-color {
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+            }
+            #scatter-tooltip {
+                position: absolute;
+                background: rgba(18, 18, 24, 0.95);
+                border: 1px solid rgba(255, 255, 255, 0.15);
+                border-radius: 8px;
+                padding: 0.8rem 1rem;
+                font-size: 0.85rem;
+                color: #fff;
+                pointer-events: none;
+                opacity: 0;
+                transition: opacity 0.15s ease;
+                z-index: 1000;
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+                backdrop-filter: blur(4px);
+                max-width: 280px;
+                line-height: 1.4;
+            }
+            .viz-toc {
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+                margin-bottom: 2.5rem;
+                background: rgba(255, 255, 255, 0.01);
+                border: 1px solid rgba(255, 255, 255, 0.03);
+                border-radius: 8px;
+                padding: 1rem;
+            }
+            .viz-toc-item {
+                display: flex;
+                align-items: center;
+                gap: 0.8rem;
+                text-decoration: none;
+                color: var(--text);
+                font-size: 0.95rem;
+                transition: color 0.2s ease;
+            }
+            .viz-toc-item:hover {
+                color: var(--accent);
+            }
+            .viz-toc-item span {
+                font-family: monospace;
+                font-size: 0.8rem;
+                color: var(--muted);
+            }
+            .placeholder-viz {
+                background: rgba(0, 0, 0, 0.3);
+                border: 1px dashed rgba(255, 255, 255, 0.15);
+                border-radius: 8px;
+                padding: 3rem 1.5rem;
+                text-align: center;
+                color: var(--muted);
+                font-size: 0.92rem;
+                margin-top: 1rem;
+            }
+        </style>
+    """
+
+    body = f"""
+        <div class="lang-toggle-container">
+            <button id="lang-toggle-btn" onclick="toggleLanguage()">English</button>
+        </div>
+
+        <header>
+            <h1 class="bilingual-text" data-ru="Интерактивный атлас визуализаций" data-en="Interactive Visualisation Atlas">Интерактивный атлас визуализаций</h1>
+            <p class="bilingual-text" data-ru="Единый каталог всех интерактивных аналитических визуализаций индологического архива с постоянными идентификаторами (ID)." data-en="A single unified catalog of all interactive analytical visualisations of the Indology Archive, equiped with stable identifiers (IDs).">Единый каталог всех интерактивных аналитических визуализаций индологического архива с постоянными идентификаторами (ID).</p>
+        </header>
+
+        <section class="viz-toc">
+            <strong class="bilingual-text" data-ru="Содержание атласа" data-en="Atlas Table of Contents">Содержание атласа</strong>
+            <a href="#VIS_001_orbit_scatter" class="viz-toc-item">
+                <span>VIS_001</span>
+                <b class="bilingual-text" data-ru="Орбита перекрёстной когорты (Зограф × Рерих)" data-en="Cross-Cohort Orbit Scatter (Zograf × Roerich)">Орбита перекрёстной когорты (Зограф × Рерих)</b>
+                <span class="badge badge-online bilingual-text" data-ru="Активна" data-en="Active">Активна</span>
+            </a>
+            <a href="#VIS_002_affiliation_opacity" class="viz-toc-item">
+                <span>VIS_002</span>
+                <b class="bilingual-text" data-ru="Таймлайн аффилиационной непрозрачности" data-en="Affiliation Opacity Timeline">Таймлайн аффилиационной непрозрачности</b>
+                <span class="badge bilingual-text" style="background:rgba(255,255,255,0.05); color:var(--muted);" data-ru="В планах" data-en="Planned">В планах</span>
+            </a>
+            <a href="#VIS_003_video_heatmap" class="viz-toc-item">
+                <span>VIS_003</span>
+                <b class="bilingual-text" data-ru="Тепловая карта видео-покрытия" data-en="Video Coverage Heatmap">Тепловая карта видео-покрытия</b>
+                <span class="badge bilingual-text" style="background:rgba(255,255,255,0.05); color:var(--muted);" data-ru="В планах" data-en="Planned">В планах</span>
+            </a>
+            <a href="#VIS_004_keyword_alluvial" class="viz-toc-item">
+                <span>VIS_004</span>
+                <b class="bilingual-text" data-ru="Эволюция ключевых слов и мезоуровней" data-en="Keyword/Meso Alluvial Flow">Эволюция ключевых слов и мезоуровней</b>
+                <span class="badge bilingual-text" style="background:rgba(255,255,255,0.05); color:var(--muted);" data-ru="В планах" data-en="Planned">В планах</span>
+            </a>
+        </section>
+
+        {findings_style}
+
+        <!-- VIS_001_orbit_scatter -->
+        <section class="viz-showcase-section" id="VIS_001_orbit_scatter">
+            <h2>
+                <span class="viz-id-badge">VIS_001</span>
+                <span class="bilingual-text" data-ru="Орбита перекрёстной когорты" data-en="Cross-Cohort Orbit Scatter">Орбита перекрёстной когорты</span>
+            </h2>
+            <p class="bilingual-text" style="color:var(--muted); font-size:0.9rem;" data-ru="Каждая точка представляет исследователя. Смещение от пунктирной диагонали показывает баланс его активности между двумя площадками. Наведите мышь для деталей, нажмите для перехода в профиль." data-en="Each dot represents a researcher. The offset from the dashed diagonal indicates their activity balance between the two venues. Hover for details, click to visit their profile.">Каждая точка представляет исследователя. Смещение от пунктирной диагонали показывает баланс его активности между двумя площадками. Наведите мышь для деталей, нажмите для перехода в профиль.</p>
+            
+            <div id="scatter-chart-wrapper" style="position:relative; width:100%; overflow:hidden;">
+                <svg id="scatter-svg" viewBox="0 0 800 480" style="width:100%; height:auto; background:rgba(0,0,0,0.15); border-radius:8px;"></svg>
+                <div id="scatter-tooltip"></div>
+            </div>
+
+            <div class="legend-container">
+                <div class="legend-item">
+                    <span class="legend-color" style="background:#ff7b00;"></span>
+                    <span class="bilingual-text" data-ru="Участвовал в обоих (Мост)" data-en="Attended both (Bridge)">Участвовал в обоих (Мост)</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-color" style="background:#2b82c9;"></span>
+                    <span class="bilingual-text" data-ru="Только Зографские чтения" data-en="Zograf Readings only">Только Зографские чтения</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-color" style="background:#b83280;"></span>
+                    <span class="bilingual-text" data-ru="Только Рериховские чтения" data-en="Roerich Readings only">Только Рериховские чтения</span>
+                </div>
+            </div>
+            
+            <aside class="caveat-block" role="note" style="margin-top: 1.2rem; border-left: 3px solid var(--accent2); background: rgba(255,255,255,0.01);">
+                <strong class="bilingual-text" data-ru="Источниковедческая оговорка" data-en="Source Caveat">Источниковедческая оговорка</strong>
+                <p class="bilingual-text" data-ru="Этот график показывает распределение докладов исключительно на основе официально опубликованных программ. Наблюдаемый баланс является медийным фактом программы, а не полной академической биографией." data-en="This scatter plot depicts the distribution of presentations solely based on officially published program metadata. The observed balance is a structural fact of the programs, not a complete scholarly biography.">Этот график показывает распределение докладов исключительно на основе официально опубликованных программ. Наблюдаемый баланс является медийным фактом программы, а не полной академической биографией.</p>
+            </aside>
+        </section>
+
+        <!-- VIS_002_affiliation_opacity -->
+        <section class="viz-showcase-section" id="VIS_002_affiliation_opacity">
+            <h2>
+                <span class="viz-id-badge">VIS_002</span>
+                <span class="bilingual-text" data-ru="Таймлайн аффилиационной непрозрачности" data-en="Affiliation Opacity Timeline">Таймлайн аффилиационной непрозрачности</span>
+            </h2>
+            <p class="bilingual-text" style="color:var(--muted); font-size:0.9rem;" data-ru="Хронологическая визуализация соотношения верифицированных институтов, только городов и неизвестных траекторий участников конференций по годам." data-en="A chronological visualisation of the ratio between verified institutes, city-only tags, and unknown participant affiliations across conference years.">Хронологическая визуализация соотношения верифицированных институтов, только городов и неизвестных траекторий участников конференций по годам.</p>
+            <div class="placeholder-viz">
+                <span class="bilingual-text" data-ru="[ Интерактивный таймлайн в процессе разработки ]" data-en="[ Interactive timeline currently in development ]">[ Интерактивный таймлайн в процессе разработки ]</span>
+            </div>
+        </section>
+
+        <!-- VIS_003_video_heatmap -->
+        <section class="viz-showcase-section" id="VIS_003_video_heatmap">
+            <h2>
+                <span class="viz-id-badge">VIS_003</span>
+                <span class="bilingual-text" data-ru="Тепловая карта видео-покрытия" data-en="Video Coverage Heatmap">Тепловая карта видео-покрытия</span>
+            </h2>
+            <p class="bilingual-text" style="color:var(--muted); font-size:0.9rem;" data-ru="Интерактивная карта распределения сохраненного видеоконтента по годам, сериям докладов и тематическим рубрикам." data-en="An interactive heatmap displaying the distribution of preserved video coverage across years, conference series, and thematic groups.">Интерактивная карта распределения сохраненного видеоконтента по годам, сериям докладов и тематическим рубрикам.</p>
+            <div class="placeholder-viz">
+                <span class="bilingual-text" data-ru="[ Тепловая карта покрытия в процессе разработки ]" data-en="[ Heatmap coverage visualization currently in development ]">[ Тепловая карта покрытия в процессе разработки ]</span>
+            </div>
+        </section>
+
+        <!-- VIS_004_keyword_alluvial -->
+        <section class="viz-showcase-section" id="VIS_004_keyword_alluvial">
+            <h2>
+                <span class="viz-id-badge">VIS_004</span>
+                <span class="bilingual-text" data-ru="Эволюция ключевых слов и мезоуровней" data-en="Keyword/Meso Alluvial Flow">Эволюция ключевых слов и мезоуровней</span>
+            </h2>
+            <p class="bilingual-text" style="color:var(--muted); font-size:0.9rem;" data-ru="Динамическая потоковая визуализация (Alluvial / Sankey) дрейфа терминов, подтем и тематических кластеров по историческим периодам." data-en="A dynamic flow visualization (Alluvial / Sankey) showing the drift of terminological clusters and meso-level concepts across historical eras.">Динамическая потоковая визуализация (Alluvial / Sankey) дрейфа терминов, подтем и тематических кластеров по историческим периодам.</p>
+            <div class="placeholder-viz">
+                <span class="bilingual-text" data-ru="[ Аллювиальная диаграмма потоков в процессе разработки ]" data-en="[ Alluvial flow diagram currently in development ]">[ Аллювиальная диаграмма потоков в процессе разработки ]</span>
+            </div>
+        </section>
+    """
+
+    scatter_js = """
+        <script>
+            const BRIDGES_DATA = """ + serialized_bridges + """;
+
+            function getJitter(id, seed) {
+                let hash = 0;
+                const str = id + seed;
+                for (let i = 0; i < str.length; i++) {
+                    hash = str.charCodeAt(i) + ((hash << 5) - hash);
+                }
+                return ((Math.abs(hash) % 100) / 100) - 0.5; // [-0.5, 0.5]
+            }
+
+            let currentLang = localStorage.getItem('findings-lang') || 'ru';
+
+            function toggleLanguage() {
+                currentLang = currentLang === 'ru' ? 'en' : 'ru';
+                setLanguage(currentLang);
+            }
+
+            function setLanguage(lang) {
+                document.querySelectorAll('.bilingual-text').forEach(el => {
+                    const text = el.getAttribute('data-' + lang);
+                    if (text) {
+                        el.innerHTML = text;
+                    }
+                });
+                const btn = document.getElementById('lang-toggle-btn');
+                if (btn) {
+                    btn.innerText = lang === 'ru' ? 'English' : 'Русский';
+                }
+                localStorage.setItem('findings-lang', lang);
+                drawScatter();
+            }
+
+            function drawScatter() {
+                const svg = document.getElementById('scatter-svg');
+                if (!svg) return;
+                svg.innerHTML = '';
+
+                const width = 800;
+                const height = 480;
+                const padding = { top: 40, right: 40, bottom: 50, left: 60 };
+
+                // Find limits
+                let maxZ = 20;
+                let maxR = 20;
+
+                const xScale = (val) => padding.left + (val / maxZ) * (width - padding.left - padding.right);
+                const yScale = (val) => height - padding.bottom - (val / maxR) * (height - padding.top - padding.bottom);
+
+                // Add gridlines
+                for (let i = 0; i <= maxZ; i += 2) {
+                    const x = xScale(i);
+                    const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+                    line.setAttribute('x1', x);
+                    line.setAttribute('y1', padding.top);
+                    line.setAttribute('x2', x);
+                    line.setAttribute('y2', height - padding.bottom);
+                    line.setAttribute('class', 'scatter-grid-line');
+                    svg.appendChild(line);
+
+                    const label = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+                    label.setAttribute('x', x);
+                    label.setAttribute('y', height - padding.bottom + 20);
+                    label.setAttribute('text-anchor', 'middle');
+                    label.setAttribute('fill', 'var(--muted)');
+                    label.setAttribute('font-size', '11px');
+                    label.textContent = i;
+                    svg.appendChild(label);
+                }
+
+                for (let i = 0; i <= maxR; i += 2) {
+                    const y = yScale(i);
+                    const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+                    line.setAttribute('x1', padding.left);
+                    line.setAttribute('y1', y);
+                    line.setAttribute('x2', width - padding.right);
+                    line.setAttribute('y2', y);
+                    line.setAttribute('class', 'scatter-grid-line');
+                    svg.appendChild(line);
+
+                    const label = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+                    label.setAttribute('x', padding.left - 15);
+                    label.setAttribute('y', y + 4);
+                    label.setAttribute('text-anchor', 'end');
+                    label.setAttribute('fill', 'var(--muted)');
+                    label.setAttribute('font-size', '11px');
+                    label.textContent = i;
+                    svg.appendChild(label);
+                }
+
+                // Add diagonal reference line
+                const diag = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+                diag.setAttribute('x1', xScale(0));
+                diag.setAttribute('y1', yScale(0));
+                diag.setAttribute('x2', xScale(Math.min(maxZ, maxR)));
+                diag.setAttribute('y2', yScale(Math.min(maxZ, maxR)));
+                diag.setAttribute('class', 'scatter-diagonal');
+                svg.appendChild(diag);
+
+                // Add Axes
+                const xAxis = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+                xAxis.setAttribute('x1', padding.left);
+                xAxis.setAttribute('y1', height - padding.bottom);
+                xAxis.setAttribute('x2', width - padding.right);
+                xAxis.setAttribute('y2', height - padding.bottom);
+                xAxis.setAttribute('class', 'scatter-axis');
+                svg.appendChild(xAxis);
+
+                const yAxis = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+                yAxis.setAttribute('x1', padding.left);
+                yAxis.setAttribute('y1', padding.top);
+                yAxis.setAttribute('x2', padding.left);
+                yAxis.setAttribute('y2', height - padding.bottom);
+                yAxis.setAttribute('class', 'scatter-axis');
+                svg.appendChild(yAxis);
+
+                // Axis Labels
+                const xLabel = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+                xLabel.setAttribute('x', padding.left + (width - padding.left - padding.right) / 2);
+                xLabel.setAttribute('y', height - padding.bottom + 42);
+                xLabel.setAttribute('text-anchor', 'middle');
+                xLabel.setAttribute('fill', '#fff');
+                xLabel.setAttribute('font-size', '12px');
+                xLabel.textContent = currentLang === 'ru' ? 'Докладов на Зографских чтениях' : 'Presentations at Zograf Readings';
+                svg.appendChild(xLabel);
+
+                const yLabel = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+                yLabel.setAttribute('x', 20);
+                yLabel.setAttribute('y', padding.top + (height - padding.top - padding.bottom) / 2);
+                yLabel.setAttribute('text-anchor', 'middle');
+                yLabel.setAttribute('fill', '#fff');
+                yLabel.setAttribute('font-size', '12px');
+                yLabel.setAttribute('transform', 'rotate(-90, 20, ' + (padding.top + (height - padding.top - padding.bottom) / 2) + ')');
+                yLabel.textContent = currentLang === 'ru' ? 'Докладов на Рериховских чтениях' : 'Presentations at Roerich Readings';
+                svg.appendChild(yLabel);
+
+                // Draw Dots
+                const tooltip = document.getElementById('scatter-tooltip');
+
+                BRIDGES_DATA.forEach(d => {
+                    const jX = getJitter(d.id, 'X') * 0.42;
+                    const jY = getJitter(d.id, 'Y') * 0.42;
+
+                    const cx = xScale(d.z + jX);
+                    const cy = yScale(d.r + jY);
+
+                    // Radius based on total presentations
+                    const r = 4 + Math.sqrt(d.total) * 1.5;
+
+                    // Color based on group
+                    let color = '#ff7b00'; // both
+                    if (d.g === 'zograf_only') color = '#2b82c9';
+                    else if (d.g === 'roerich_only') color = '#b83280';
+
+                    const dot = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+                    dot.setAttribute('cx', cx);
+                    dot.setAttribute('cy', cy);
+                    dot.setAttribute('r', r);
+                    dot.setAttribute('fill', color);
+                    dot.setAttribute('opacity', '0.75');
+                    dot.setAttribute('class', 'scatter-dot');
+
+                    dot.addEventListener('mouseenter', (e) => {
+                        dot.setAttribute('opacity', '1.0');
+                        tooltip.style.opacity = '1';
+                        
+                        const titleZ = currentLang === 'ru' ? 'Зограф' : 'Zograf';
+                        const titleR = currentLang === 'ru' ? 'Рерих' : 'Roerich';
+                        const labelAff = currentLang === 'ru' ? 'Аффилиация' : 'Affiliation';
+                        const labelClick = currentLang === 'ru' ? 'Нажмите для перехода к профилю' : 'Click to view profile';
+
+                        tooltip.innerHTML = 
+                            '<strong style="color:var(--accent2); font-size: 0.95rem;">' + d.name + '</strong><br>' +
+                            '<span style="font-size:0.8rem; color:var(--muted);">' + labelAff + ': ' + d.aff + '</span><br>' +
+                            '<span style="display:inline-block; margin-top:5px; font-weight:bold;">' + titleZ + ': ' + d.z + ' · ' + titleR + ': ' + d.r + '</span><br>' +
+                            '<small style="color:var(--accent); display:block; margin-top: 5px;">' + labelClick + '</small>';
+                    });
+
+                    dot.addEventListener('mousemove', (e) => {
+                        const rect = svg.getBoundingClientRect();
+                        const tooltipRect = tooltip.getBoundingClientRect();
+                        // Position relative to scatter container
+                        const x = e.clientX - rect.left + 15;
+                        const y = e.clientY - rect.top - tooltipRect.height - 10;
+                        tooltip.style.left = x + 'px';
+                        tooltip.style.top = y + 'px';
+                    });
+
+                    dot.addEventListener('mouseleave', () => {
+                        dot.setAttribute('opacity', '0.75');
+                        tooltip.style.opacity = '0';
+                    });
+
+                    dot.addEventListener('click', () => {
+                        window.location.href = '../s/' + d.slug + '.html';
+                    });
+
+                    svg.appendChild(dot);
+                });
+            }
+
+            document.addEventListener('DOMContentLoaded', () => {
+                setLanguage(currentLang);
+            });
+        </script>
+    """
+    body = body + scatter_js
+    write_text(
+        "findings/visualisations.html",
+        page_shell(
+            f"Интерактивный атлас визуализаций | {SITE_NAME}",
+            "Единый каталог всех интерактивных аналитических визуализаций индологического архива с постоянными идентификаторами (ID).",
+            "findings/visualisations.html",
+            body,
+            [page_data("Интерактивный атлас визуализаций", "Единый каталог всех интерактивных аналитических визуализаций с ID.", "findings/visualisations.html"), make_breadcrumbs([("Главная", ""), ("Атлас визуализаций", "findings/visualisations.html")])],
         ),
     )
 
@@ -6676,6 +7609,7 @@ def main():
     generate_404_page()
     generate_english_landing(data)
     generate_findings_page(data, records)
+    generate_visualisations_page(data, records)
     generate_generations_page(data)
     generate_collaboration_page(data)
     generate_nlp_page(data, records)

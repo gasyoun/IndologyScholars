@@ -7,6 +7,7 @@
 | Аудит классификации / Classification audit | [classification-audit.md](classification-audit.md) | [classification-audit-en.md](classification-audit-en.md) |
 | Проверка РИНЦ / RINC review | [rinc-review.md](rinc-review.md) | [rinc-review-en.md](rinc-review-en.md) |
 | Аудит интерфейса / Interface audit | [ux-ui-audit.md](ux-ui-audit.md) | [ux-ui-audit.md](ux-ui-audit.md) |
+| Визуализации / Visualizations | [visualisations.md](visualisations.md) | [visualisations.md](visualisations.md) |
 | Исторические материалы / Historical materials | [archive/README.md](https://github.com/gasyoun/IndologyScholars/blob/main/archive/README.md) | [archive/README.md](https://github.com/gasyoun/IndologyScholars/blob/main/archive/README.md) |
 
 Общий технический справочник полей хранится в

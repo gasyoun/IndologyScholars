@@ -546,6 +546,7 @@ def page_shell(title, description, canonical_path, body, structured_data=None, e
         more_label = "More"
         more_nav_items = [
             ("Findings", "/IndologyScholars/findings/"),
+            ("Visualizations", "/IndologyScholars/findings/visualisations.html"),
             ("Named texts", "/IndologyScholars/topics/"),
             ("Data", "/IndologyScholars/download-data.html"),
             ("Meso-levels", "/IndologyScholars/meso/"),
@@ -575,6 +576,7 @@ def page_shell(title, description, canonical_path, body, structured_data=None, e
         more_label = "Еще"
         more_nav_items = [
             ("Выводы", "/IndologyScholars/findings/"),
+            ("Визуализации", "/IndologyScholars/findings/visualisations.html"),
             ("Сюжеты", "/IndologyScholars/topics/"),
             ("Данные", "/IndologyScholars/download-data.html"),
             ("Мезоуровни", "/IndologyScholars/meso/"),
