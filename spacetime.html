@@ -243,7 +243,10 @@
                     <select id="meso-filter"><option value="">Все мезоуровни</option></select>
                 </label>
                 <label>Историческая дата
-                    <input type="range" id="time-slider" min="-3000" max="2100" value="-500" step="25">
+                    <div style="display: flex; gap: 0.5rem; align-items: center; margin-bottom: 0.25rem;">
+                        <input type="range" id="time-slider" min="-3000" max="2100" value="-500" step="25" style="flex: 1; margin: 0;">
+                        <button id="play-btn" type="button" style="border: 1px solid var(--border); background: #0b1513; color: var(--text); border-radius: 6px; padding: 0.35rem 0.6rem; cursor: pointer; font-size: 0.8rem; min-width: 44px; display: inline-flex; justify-content: center; align-items: center;">▶</button>
+                    </div>
                     <div class="yearline"><span>Окно: ±250 лет</span><span class="date-count">в окне даты: <strong id="date-count">0</strong></span><strong id="year-label">500 до н. э.</strong></div>
                 </label>
                 <div class="stats">
@@ -358,10 +361,9 @@
         function recordMatches(record) {
             if (!matchesSearchAndMeso(record)) return false;
             if (state.mode === 'time') {
-                if (!record.times.length || !record.places.length) return false;
                 return matchesActiveTime(record);
             }
-            return record.places.length > 0;
+            return true;
         }
 
         function nearestTime(records) {
@@ -436,7 +438,8 @@
 
         function renderMarkers(records) {
             markerLayer.clearLayers();
-            const places = aggregatePlaces(records);
+            const mappable = records.filter(record => record.places && record.places.length > 0);
+            const places = aggregatePlaces(mappable);
             places.forEach(place => {
                 const radius = Math.max(7, Math.min(26, 6 + Math.sqrt(place.records.length) * 3.2));
                 const marker = L.circleMarker([place.lat, place.lon], {
@@ -521,7 +524,39 @@
             updateUrl();
             render();
         });
+        let playInterval = null;
+        const playBtn = document.getElementById('play-btn');
+
+        function togglePlay() {
+            if (playInterval) {
+                clearInterval(playInterval);
+                playInterval = null;
+                playBtn.textContent = '▶';
+            } else {
+                playBtn.textContent = '⏸';
+                playInterval = setInterval(() => {
+                    let val = Number(els.slider.value);
+                    const max = Number(els.slider.max);
+                    const min = Number(els.slider.min);
+                    if (val >= max) {
+                        val = min;
+                    } else {
+                        val += 25;
+                    }
+                    els.slider.value = val;
+                    state.centerYear = val;
+                    render();
+                }, 1200);
+            }
+        }
+        playBtn.addEventListener('click', togglePlay);
+
         els.slider.addEventListener('input', event => {
+            if (playInterval) {
+                clearInterval(playInterval);
+                playInterval = null;
+                playBtn.textContent = '▶';
+            }
             state.centerYear = Number(event.target.value);
             render();
         });
