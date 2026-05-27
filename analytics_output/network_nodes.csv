@@ -26,7 +26,7 @@ event:E2012,event,Zograf Readings 2012,E2012,33
 event:E2013,event,Zograf Readings 2013,E2013,36
 event:E2014,event,Zograf Readings 2014,E2014,37
 event:E2015,event,Zograf Readings 2015,E2015,46
-event:E2016,event,Zograf Readings 2016,E2016,43
+event:E2016,event,Zograf Readings 2016,E2016,44
 event:E2017,event,Zograf Readings 2017,E2017,44
 event:E2018,event,Zograf Readings 2018,E2018,47
 event:E2019,event,Zograf Readings 2019,E2019,53
@@ -76,7 +76,7 @@ person:PERS_dfaf6803,person,Борисов Яков Александрович,P
 person:PERS_88e5311f,person,Босхомджиев Мерген Владимирович,PERS_88e5311f,1
 person:PERS_dd7de77e,person,Бросалина Елена Кирилловна,PERS_dd7de77e,11
 person:PERS_7efcddc6,person,Брылёва Наталья Анатольевна,PERS_7efcddc6,1
-person:PERS_a0264ac5,person,Бурмистров Сергей Леонидович,PERS_a0264ac5,10
+person:PERS_a0264ac5,person,Бурмистров Сергей Леонидович,PERS_a0264ac5,11
 person:PERS_30b54681,person,Бушуев Евгений Сергеевич,PERS_30b54681,3
 person:PERS_f7c7adc7,person,В. В. Донских,PERS_f7c7adc7,3
 person:PERS_325e94f3,person,В. В. Котин,PERS_325e94f3,1
@@ -321,5 +321,5 @@ theme:art_and_material_culture,theme,art_and_material_culture,art_and_material_c
 theme:history_and_culture,theme,history_and_culture,history_and_culture,259
 theme:linguistics_and_philology,theme,linguistics_and_philology,linguistics_and_philology,125
 theme:literature_and_poetry,theme,literature_and_poetry,literature_and_poetry,284
-theme:religion_and_philosophy,theme,religion_and_philosophy,religion_and_philosophy,574
-theme:unspecified,theme,unspecified,unspecified,43
+theme:religion_and_philosophy,theme,religion_and_philosophy,religion_and_philosophy,573
+theme:unspecified,theme,unspecified,unspecified,45

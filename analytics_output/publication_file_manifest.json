@@ -6,7 +6,7 @@
     "pipeline_version": "2026-05-25",
     "generator": "generate_publication_pages.py"
   },
-  "file_count": 2225,
+  "file_count": 2229,
   "files": [
     {
       "path": "404.html",
@@ -20,28 +20,28 @@
     },
     {
       "path": "analytics_output/age_cohort_trend.csv",
-      "size_bytes": 2325,
-      "sha256": "ff6552d1b483faad7f856b4dfc2d989e4f1a6994295da939c49488a4df12cfc5"
+      "size_bytes": 2327,
+      "sha256": "6ed1d7177c03349148cf3fd07954f5679ff31c807123dd56f34bc71153a2e52c"
     },
     {
       "path": "analytics_output/authority_coverage.csv",
       "size_bytes": 30984,
-      "sha256": "5039fc42e2c2e1de09a6dccc76152e7e1d870b17a73e99f450ffcc3866ab1e54"
+      "sha256": "a2bc77302d2fe528ff313f156ccebda54ee0600324b833ec45e5768d2852d653"
     },
     {
       "path": "analytics_output/authority_review_queue.csv",
       "size_bytes": 165631,
-      "sha256": "097afcf15e56693980afac36a61aec429ecd7a088c4fd3f3e68c3bcf14313ef7"
+      "sha256": "81832fd32930a57452337177f1926c0384a4768069bcc1dcea1576c1f1fd8d24"
     },
     {
       "path": "analytics_output/birth_year_gap_audit.csv",
-      "size_bytes": 5905,
-      "sha256": "a5b735427ed7f5b223865ed447bd3a0e3c1c5c4f9e724a15769dd75979aa1fb2"
+      "size_bytes": 5971,
+      "sha256": "419f485a84d01999a5cb7e3f57f0dbb2544c0651498f67e4b9096c9953b81ff9"
     },
     {
       "path": "analytics_output/birth_year_proxy_estimates.csv",
-      "size_bytes": 456,
-      "sha256": "01271f8f393d526a2c0de2a36afc6665b16986fa048ffc24275aa23ce66a4867"
+      "size_bytes": 460,
+      "sha256": "232bc0fc11114d9d4a69e0c6a05d30c705d09cebc7ef39b5ddd051a1b5f278bb"
     },
     {
       "path": "analytics_output/classification_overrides.csv",
@@ -50,28 +50,28 @@
     },
     {
       "path": "analytics_output/closedness_metrics.csv",
-      "size_bytes": 281,
-      "sha256": "0d9927533f0dd7d8f2e2c954be5e6938d25acf9ba26403de94ea3b88d3686163"
+      "size_bytes": 285,
+      "sha256": "dda653f87071d06123ec6fd77628c6a35419628de3aa1da5b1a4fd27da23ecf0"
     },
     {
       "path": "analytics_output/cohort_survival.csv",
-      "size_bytes": 4897,
-      "sha256": "3b350e9dc8f9f5cba5f66c6b1d1fccda31269560a58c3eb837293ea31c2bbbde"
+      "size_bytes": 5096,
+      "sha256": "719030a80a38c2e3bb91f27303aeaa8932ace65843c352ab7274217bea1bf519"
     },
     {
       "path": "analytics_output/data_quality_report.json",
       "size_bytes": 1909,
-      "sha256": "ef13c4cd637d3e0e520801a9e0dfc4689ae581415c2247e794741426be8e1302"
+      "sha256": "290d334fd69ae7f67f7aaf33f3b98f5540ca2628cc3a4a3da9104f7874481ffe"
     },
     {
       "path": "analytics_output/debut_timing.csv",
-      "size_bytes": 14037,
-      "sha256": "612f84abbc641c9d402da5b440b91a7df82ab1cbf86597b2fe521240a61ffa19"
+      "size_bytes": 14264,
+      "sha256": "e703528304a181bc1dd018d2ac1374fee5fea420f0958dda19abb032635cf362"
     },
     {
       "path": "analytics_output/debut_timing.svg",
-      "size_bytes": 16716,
-      "sha256": "3595c086f343e162231a0c80df8be9cc00423a3e6c4a4006add489cf40b52614"
+      "size_bytes": 16870,
+      "sha256": "7013150fb705f96a9eacdf5e9273abbe3423243515169f1107e6cab9f188faab"
     },
     {
       "path": "analytics_output/expanded_classification_audit_v2.err",
@@ -80,43 +80,43 @@
     },
     {
       "path": "analytics_output/expanded_classification_audit_v2.log",
-      "size_bytes": 732,
-      "sha256": "35845f972defacf2db5fa5d3da5b3937d353db5a6386f48352eb5606ff8c910e"
+      "size_bytes": 751,
+      "sha256": "70f677d8f2fe4d30c8914ae7f4b1d925852d50581c4955343eb67da954be25e2"
     },
     {
       "path": "analytics_output/expanded_classification_deepseek.csv",
-      "size_bytes": 744502,
-      "sha256": "201365f917ed9ceda095d3d897c0e34fc28a94a0374bdd6e353c072c07b526bb"
+      "size_bytes": 745868,
+      "sha256": "2fe6a30ec44b727e2fbe39ae119e2fcffdb82edcd751bb161dc7178653ed8f50"
     },
     {
       "path": "analytics_output/expanded_classification_deepseek_work.csv",
-      "size_bytes": 697273,
-      "sha256": "179d27a204418d6c51614d3acead5b58f98176ff56cb4fef43569edb878aaa62"
+      "size_bytes": 699016,
+      "sha256": "9774c011e027dfcc7bfba44fdfc773cdfad3eb9bdc8ee4e7bc495d9c4c68a824"
     },
     {
       "path": "analytics_output/expanded_classification_run.err",
-      "size_bytes": 737,
-      "sha256": "2aa07e6a6a16e99330769ed1d4da6ca7d100d9bac1c277992e9b709f31103773"
+      "size_bytes": 750,
+      "sha256": "2130c1241b3e3ec66f65ca2b733c519be78cfba3d201fba95d7bfebca719ead4"
     },
     {
       "path": "analytics_output/expanded_classification_run.log",
-      "size_bytes": 95,
-      "sha256": "3c4fcee5e130847b7f46fee5584ed8a9455caca3044fefa69cc9e9e5d884aa73"
+      "size_bytes": 97,
+      "sha256": "bad355acf011df7dd31d56ccd4614694ec152a8e0d4b3afa721264d4d23a4375"
     },
     {
       "path": "analytics_output/expanded_classification_run_2.err",
-      "size_bytes": 55,
-      "sha256": "55b48f60166522fac13f139422e0835919c2de3aad1cce36afa531261ac2ecb6"
+      "size_bytes": 56,
+      "sha256": "0ed414b894848090716dcfb1e011eae3f1ad5d8aec7ee009e080a51f032fb443"
     },
     {
       "path": "analytics_output/expanded_classification_run_2.log",
-      "size_bytes": 2850,
-      "sha256": "cda00f0c665162099c82836fd95056c163d4f5969f30eff270b0245fe3cb4bac"
+      "size_bytes": 2919,
+      "sha256": "903e8f0b858a10bf25a4ce3b19d62e66ae8bbd35c2d006501fedac96969246d5"
     },
     {
       "path": "analytics_output/expanded_classification_run_audit.err",
-      "size_bytes": 1260,
-      "sha256": "97ed4308b3f9767fe263a58d1f7d114c98a41c91979066585f64fa39f86b4bec"
+      "size_bytes": 1272,
+      "sha256": "569d9a6320a2db57176f0a9b476acfaa8645382aa4a70870152bc61626ef4de1"
     },
     {
       "path": "analytics_output/expanded_classification_run_audit.log",
@@ -125,18 +125,18 @@
     },
     {
       "path": "analytics_output/expanded_classification_run_audit_2.err",
-      "size_bytes": 256,
-      "sha256": "5b821fa00ac8f727725f3e2ff804c3d911ed10ceda287bf5a15066d50fd56ed6"
+      "size_bytes": 260,
+      "sha256": "aefb7f2627a2f1cbebf3aa4b3358e88dc438e2ba093dd44d4ca37dead3803dbc"
     },
     {
       "path": "analytics_output/expanded_classification_run_audit_2.log",
-      "size_bytes": 759,
-      "sha256": "0cc37bc5d0eb26452bde376030617bb40a37c0b02ca2d99e3a19014433059f50"
+      "size_bytes": 777,
+      "sha256": "56423e3bc6ab13eadb148f753aeaf86012d2f4917838d2780427b321dc4f32d0"
     },
     {
       "path": "analytics_output/expanded_gumilyov_elevated_audit.csv",
-      "size_bytes": 93287,
-      "sha256": "5080193c71cbecc42956db937148c8997384598baff5beb55e14b9b96e22ff7c"
+      "size_bytes": 92990,
+      "sha256": "fb7b4771f3c0b345d717912fe3696b02347a6491546b345643491d2245d384de"
     },
     {
       "path": "analytics_output/field_provenance_authority.csv",
@@ -150,38 +150,38 @@
     },
     {
       "path": "analytics_output/field_provenance_themes.csv",
-      "size_bytes": 541239,
-      "sha256": "e69d037e199ec5faf4f34fbb51aa461f5ab2405c8880d1c700cbe0b0a42cfafe"
+      "size_bytes": 540710,
+      "sha256": "a135fe237d5b6f18a6e8a04e13fdad2117ec452c456e0b6ed9da6bb4af3cf257"
     },
     {
       "path": "analytics_output/gumilyov_scale.csv",
-      "size_bytes": 423165,
-      "sha256": "73d86c929aae9f1251c7b19bcb3f85bb581d55e7ebb256351fb47fab7211f931"
+      "size_bytes": 424472,
+      "sha256": "29ce51f4dccf9364e71c77fae44119f3fc510e1efd7c2488b2671916573d2e65"
     },
     {
       "path": "analytics_output/gumilyov_scale_trends.csv",
-      "size_bytes": 1377,
-      "sha256": "3d92f1784bda925d6572e124fdc8fffc7dde2c3da0670784be2b0406779352aa"
+      "size_bytes": 1400,
+      "sha256": "416917702b52ece1eb9be5fa37321183dc03a94b5a1c03d4d13e5d6090460322"
     },
     {
       "path": "analytics_output/gumilyov_video_comparison.csv",
-      "size_bytes": 27314,
-      "sha256": "5fe4271a8e491f2576e9ffe8ca56e1184341f92ab9bef796a61f0aabef3994fd"
+      "size_bytes": 27404,
+      "sha256": "2d9f84ce828c9af805d0731a3b259b5495ecef52da42f3b2366dc4d8149103e2"
     },
     {
       "path": "analytics_output/id_migration_presentation.csv",
-      "size_bytes": 215822,
-      "sha256": "170e710864c7eba0ab8fdf1b333241fb83c29121388d2b576f6ddf0a7ea24c6c"
+      "size_bytes": 216718,
+      "sha256": "c335f19ca4a0edf4962f2314a9f86e323d107273923dcdc45d4153eb1f1104e7"
     },
     {
       "path": "analytics_output/id_migration_presentation.json",
-      "size_bytes": 431995,
-      "sha256": "a8b7785290b006d5bec41a9c2cc35b81a54efda2b5ffb9cdef5ce5cc41ecc1f8"
+      "size_bytes": 440979,
+      "sha256": "ab93bf02befb4ecda1f3db64b9e7e2cfe40b6cac996749efd361af930bdfd451"
     },
     {
       "path": "analytics_output/id_stability_audit.json",
-      "size_bytes": 944,
-      "sha256": "40cf131bc2d038cdb3ee7848992cc6f151b0d2e7225954ffa89bafdb0e5e3f84"
+      "size_bytes": 971,
+      "sha256": "c1fe89877e76ec7083254d4488ddb69241ca4f6fa4da831841effd68871fd234"
     },
     {
       "path": "analytics_output/id_stability_changed_ids.csv",
@@ -190,83 +190,83 @@
     },
     {
       "path": "analytics_output/identity_alias_candidates.csv",
-      "size_bytes": 1861,
-      "sha256": "1b0f69b67d72cf2892f24b1e7e71b805f56d39da1562fb96dbb1b06dbcab9a88"
+      "size_bytes": 1871,
+      "sha256": "6867ec5d4db97990d2e12bc12587045f7e6fc8ccb9bb78a81a95a648750a2981"
     },
     {
       "path": "analytics_output/identity_trend_summary.json",
-      "size_bytes": 271,
-      "sha256": "d0c82fea8293f1ab70dbe8888ec358d7aa48692260d4d0cdfcbf09cd6ff5e724"
+      "size_bytes": 280,
+      "sha256": "631a15e2d5e74129e76044b6bd8406dba20aa244022a5d4735e42bad94430380"
     },
     {
       "path": "analytics_output/keyword_clusters.md",
-      "size_bytes": 2946,
-      "sha256": "1ad3c2ea3dde99d003aa5fb29a29a962a6394f7b9ac17e29379cc10f2f830d33"
+      "size_bytes": 2968,
+      "sha256": "ba1f93c4cfda446e6736ceab1ec7492f127a5b907de8ac4bcf3a1c6084af2eca"
     },
     {
       "path": "analytics_output/keyword_stats.csv",
-      "size_bytes": 853896,
-      "sha256": "69a0adc3c4ba8cd6ca01f7dedc12bb7b920b22cd93a65962d88c516d835763d4"
+      "size_bytes": 853062,
+      "sha256": "d1a80f47e813c4a624ef317ff5c01df0c22c787c159a3c6fc23577354b97eb09"
     },
     {
       "path": "analytics_output/meso_codes_deepseek.csv",
-      "size_bytes": 276008,
-      "sha256": "58fd1b4797a8146f215dde931989f89b348b3adb98f176efff21ec363941cf3f"
+      "size_bytes": 277400,
+      "sha256": "91abc34def367ec114eed6fd8efef17113bf4931c32aa5107a3453fada80b95e"
     },
     {
       "path": "analytics_output/network_data.json",
-      "size_bytes": 1837613,
-      "sha256": "879ed13e471b7a44556817af5e2bf80e9d181058ba62f04403e582f2d1af824b"
+      "size_bytes": 1913518,
+      "sha256": "c85dcd3255e34baf561c5a3d8d588ee4e30e24fc5443a0d356279208d1ac4819"
     },
     {
       "path": "analytics_output/network_edges.csv",
-      "size_bytes": 754140,
-      "sha256": "3b242f45ea371c2d3dfa43b4edf56b7916812c440ccc6aa0535d1772311dd361"
+      "size_bytes": 756320,
+      "sha256": "c5d4ad636311f5c7c4d984fcdc1c007e7514ec40580d472650b4de2823bc1bfc"
     },
     {
       "path": "analytics_output/network_nodes.csv",
       "size_bytes": 28197,
-      "sha256": "9fe26166f01dbbf58ed76083c6289971116c242cd4c9af638d7291abdce780c7"
+      "sha256": "151e96dbdd1d9bd82712f6b8aed2952f895cde39e1e959f4c4f8dfac7c7362c1"
     },
     {
       "path": "analytics_output/newcomer_rate_by_year.csv",
-      "size_bytes": 723,
-      "sha256": "16a898d48b143a3f7cdf4d11d65cea25e682e6cde9916a46a0b43bd2950942d5"
+      "size_bytes": 754,
+      "sha256": "385a9b9e8aee97cc6e1473bda63344c195eaad61efef7387b29fa2be71ec6cd3"
     },
     {
       "path": "analytics_output/no_affiliation_history.md",
-      "size_bytes": 11831,
-      "sha256": "e61d5e029f1062ea2a37bf5a2ba189ddd857f5a2bdbdc608b815d5f3b6f752c2"
+      "size_bytes": 11973,
+      "sha256": "e5a5907d3e926fe99ca0b686c5b193f45ac45e5c1fcefa462bc50727154324e3"
     },
     {
       "path": "analytics_output/online_repeaters_2020_plus.csv",
-      "size_bytes": 285,
-      "sha256": "13b31076534001a5ca7f37335d3bee2f51903485906693964bb01189d1bcd8da"
+      "size_bytes": 289,
+      "sha256": "c7ba1364fc8afc36acc059631d27cb3f05c151ecc264c110f7192948500bd938"
     },
     {
       "path": "analytics_output/online_share_by_year.csv",
-      "size_bytes": 1358,
-      "sha256": "2b1ab67ac80448cf171671d25aa83316890b01f7ec82dea07a234e5b767a02d3"
+      "size_bytes": 1389,
+      "sha256": "dc1cef88f69306dc88a0379dda9160612616767a2913e83612848e739e261a7b"
     },
     {
       "path": "analytics_output/openalex_author_candidates.csv",
-      "size_bytes": 63901,
-      "sha256": "e00d524a872c3c48bdbcd90d594d4c31fa60f2dbeeeb7589ab9469e76acd1ffe"
+      "size_bytes": 64269,
+      "sha256": "dd47e6424285929cfb0654f532620d95d0c64eec08dc5e462dae8e44a5e335be"
     },
     {
       "path": "analytics_output/presentation_id_manifest.csv",
-      "size_bytes": 534688,
-      "sha256": "55fbac7b5fb814ee57f66dd585c6594785cac25cf82ea31f8395a58cf94c06a1"
+      "size_bytes": 539104,
+      "sha256": "5213ca3b1939ba78007a9d31f88e9a47f3472b56e0b6d1deff80b666f6343789"
     },
     {
       "path": "analytics_output/presentation_tags.csv",
-      "size_bytes": 159553,
-      "sha256": "d494c53f6e05a1574451a901aee9d2d89ec6728ed078b12ddf30162c84b6c79b"
+      "size_bytes": 159549,
+      "sha256": "8be3e3ccea065cffcbf15f2ee78c5f41fc3cbb5776350885e4e91ec05d757adf"
     },
     {
       "path": "analytics_output/rinc_lookup_queue.csv",
-      "size_bytes": 41523,
-      "sha256": "965efa074634725c96dfbdd4a2ff40045b71c0a652fda752ce43e8c7ca112ab7"
+      "size_bytes": 41750,
+      "sha256": "8dc56ee62b96d380265144da39226632df9e699fcdbdd84b32452461b0164ce3"
     },
     {
       "path": "analytics_output/roerich_only_indologists.csv",
@@ -275,68 +275,68 @@
     },
     {
       "path": "analytics_output/spacetime_index.json",
-      "size_bytes": 1068936,
-      "sha256": "2d81e893b5f49c777b19f234dff6986936827fa91f8ae4d9f0fa4275b37163b6"
+      "size_bytes": 1069303,
+      "sha256": "27e7f08f3dd086cdeef9d1a685a70df742e6150b1f74b32b0bfabcc1ac9adee3"
     },
     {
       "path": "analytics_output/spacetime_unmatched.csv",
-      "size_bytes": 305758,
-      "sha256": "6cdc0ef3ea75df6bc7ada2676c1143e39cbc4b79873101da529f2c202260d80f"
+      "size_bytes": 307180,
+      "sha256": "57431e13b4cf9288e2d01d1cbc641fcdd7586cb2e2016f10cde6ae2983ea6db3"
     },
     {
       "path": "analytics_output/theme_codes_baseline.csv",
-      "size_bytes": 187064,
-      "sha256": "5137a2c98e5ca8dcdf622b9a926aa078bc33c9ad1f09d2c5976a92d2e3a8c7c2"
+      "size_bytes": 187960,
+      "sha256": "d56fb118383c57e4cc3b1e51be8b7f514670820166a0e2bd3bf58b023c201bd8"
     },
     {
       "path": "analytics_output/theme_codes_final.csv",
-      "size_bytes": 490415,
-      "sha256": "6e38b23df29fdc158a2c374b84f34ebff0a190664d8d708256b45e7999e5c865"
+      "size_bytes": 491766,
+      "sha256": "1f351ea4d1ae0c5cad5a2fead9ea7e5d1d2ad4622173c8bfa63ddb45cc2766a8"
     },
     {
       "path": "analytics_output/theme_codes_final_v2.csv",
-      "size_bytes": 507284,
-      "sha256": "57eacbef0e228f66c701a96f20a0deefff0baf3819b57d1e86883b641a4e8201"
+      "size_bytes": 508635,
+      "sha256": "74d2508dcc7d2b1514868d1559a69f7506c4868e73f5920ec33e64063002224c"
     },
     {
       "path": "analytics_output/theme_codes_llm.csv",
-      "size_bytes": 289307,
-      "sha256": "8727ffbf8b33d5916ed69637e9e261639cb4d1e074a2dc4de1df3b35cfaa4bdb"
+      "size_bytes": 290168,
+      "sha256": "d903baaf0f023493a85a08f17ed09a18c7daffae844df3a1439e2546fb417aca"
     },
     {
       "path": "analytics_output/theme_codes_llm_v2.csv",
-      "size_bytes": 292872,
-      "sha256": "deca287c9b5b2c6c071f986b1f45c67323f895a4abade96d18507d7226654662"
+      "size_bytes": 293670,
+      "sha256": "b0096175b6c3ef87d440ff2ba64e5873738822cd1415676c0ac140d15149f9df"
     },
     {
       "path": "analytics_output/theme_codes_uncertain.csv",
-      "size_bytes": 4148,
-      "sha256": "8e5e7998b097b8d78196ece1e9d11ad5bbfef2f56eeb051c196a09a5b34ff3da"
+      "size_bytes": 4175,
+      "sha256": "ac3d04b89a0f9636b861c1eb27bc46b871d633e799af368f1611058251ace953"
     },
     {
       "path": "analytics_output/theme_codes_uncertain_v2.csv",
-      "size_bytes": 75749,
-      "sha256": "7a93233659bdb4cf21e7a179705008b0a7523089738073878b5277e8cc3d206c"
+      "size_bytes": 76079,
+      "sha256": "fb19e801c3a5f381448f9b6d3db454676243cb942d90861f8cca6dba32b0b336"
     },
     {
       "path": "analytics_output/theme_review_queue.csv",
-      "size_bytes": 11359,
-      "sha256": "3bb43665c39c632162e625cca28bcbaebb6c60aa29aae182899120eed7c04f68"
+      "size_bytes": 11735,
+      "sha256": "7e37215044161ff58f261340bcf7eb704c87140bb896dfafe62f14581266857a"
     },
     {
       "path": "analytics_output/total_indologists.csv",
       "size_bytes": 20446,
-      "sha256": "e7fc39bc19129785ab945bef5ec132ef582a9e7dc8890c2515507a14104af427"
+      "sha256": "6dd0f613fc001e2570d33d57ff71998d098489b35309b8d581f22ada8b4bf5a9"
     },
     {
       "path": "analytics_output/video_presentation_mapping.csv",
-      "size_bytes": 65754,
-      "sha256": "49f786ace20af6440cac8161122b8cc6e98f2cff73057e2072a9ba87a7a34e79"
+      "size_bytes": 65933,
+      "sha256": "afb8858863081808ab671a31ce8df8fe0f8b9e4af59cdc26d7ac0bb640e1dec3"
     },
     {
       "path": "analytics_output/wikipedia_authority_candidates.csv",
-      "size_bytes": 389929,
-      "sha256": "415008db1e3eaa4c650818fc496a690e29f06d7d658ea5223abbe2f7e744c74f"
+      "size_bytes": 390625,
+      "sha256": "25405724be1aeeac65762811def0a350c9621ef1010f3b69048a00c16cda88a7"
     },
     {
       "path": "analytics_output/youtube_playlist_summary.csv",
@@ -345,28 +345,28 @@
     },
     {
       "path": "analytics_output/youtube_video_list.csv",
-      "size_bytes": 53228,
-      "sha256": "55cbdb65cbc45ea1198fdffa9460518e1b1fcefbb100434845a755dd6615298b"
+      "size_bytes": 53407,
+      "sha256": "1449a7bbd9edf2ea595e5b4f6bb6e357d4461d91ae5b8dcea1d3eda36ee786b0"
     },
     {
       "path": "analytics_output/zograf_2026_affiliation_audit.csv",
-      "size_bytes": 14953,
-      "sha256": "6ab850d5a7c508b2d247a357c0eef3eb48d7c9100a88f977c080325f5317d758"
+      "size_bytes": 15014,
+      "sha256": "804aae06baaac8b52d6ce2a11d4798a2a912e7eb316da4e253f494406b11edc1"
     },
     {
       "path": "analytics_output/zograf_2026_no_affiliation.md",
-      "size_bytes": 8090,
-      "sha256": "38f8056e715d0f7bc91c053c3ba452c2917351e58282ffa2a698d0b09c912fba"
+      "size_bytes": 8168,
+      "sha256": "d4855e4fe0c51ad088596bc948b2b2a54b6dfa79c5f9ab17931784347f2976b6"
     },
     {
       "path": "analytics_output/zograf_only_indologists.csv",
       "size_bytes": 10779,
-      "sha256": "c3df9869da3e8b912be11da484aa1118b8592442fa6ad2777570c9ba48e36249"
+      "sha256": "4f9344c516a71d99fff1acc7b24351bc43e042b4fd812265863727d28657a2de"
     },
     {
       "path": "assets/apple-touch-icon.png",
-      "size_bytes": 504,
-      "sha256": "a1fb5304347845691e37c239dacb08bed5b644264684b49aa84ae6c329009b3f"
+      "size_bytes": 503,
+      "sha256": "739dc722180ae02ca6190d21e2c509707ea167fb7af4a69edc0433a7244380f1"
     },
     {
       "path": "assets/favicon.svg",
@@ -381,17 +381,17 @@
     {
       "path": "assets/icon-512.png",
       "size_bytes": 2254,
-      "sha256": "227dd6d238cdb6655b457bfbf9d569d45f044e702b5d6596eaad5b48d970d464"
+      "sha256": "8acdd32445b30a95a580b845899c719ba09c3227d91d9f2833b3d032cbb5c877"
     },
     {
       "path": "assets/nlp_data.js",
-      "size_bytes": 421591,
-      "sha256": "bf54c3e885b5bd9020765e97eb665d744cd9b4101e4539608378099a5594b028"
+      "size_bytes": 421840,
+      "sha256": "470372eee677aaeb28fc1ffeccca3d84d3083e4c9f07d73b0c5c546e0ea9cddd"
     },
     {
       "path": "assets/og-image.png",
-      "size_bytes": 98739,
-      "sha256": "d0978411641648385404165e37422a5635689831fd00f34f527be3ab5eddecc3"
+      "size_bytes": 98726,
+      "sha256": "8060348074349368f7565a41f153af337c9eabbd1e075fbba1ec9946ff082825"
     },
     {
       "path": "assets/pwa.js",
@@ -411,7 +411,7 @@
     {
       "path": "cities/index.html",
       "size_bytes": 26652,
-      "sha256": "5bf4b2540c5d569f97b1f1eea9efc8b4aac637d5086c5ff87e957a2accab272e"
+      "sha256": "45ac86092ae90f973dcaebcf6846ee02e878126ba4c27703aa3c2587a0009722"
     },
     {
       "path": "cities/kazan.html",
@@ -450,8 +450,8 @@
     },
     {
       "path": "cities/sankt-peterburg.html",
-      "size_bytes": 300903,
-      "sha256": "844ce2d0bbb3f52ec0316220bac734342f799d6093a205755a284489c539197d"
+      "size_bytes": 300965,
+      "sha256": "b8b8bed60ece84e80dd09adb9ef80349e87bea90893f46bd8dd089c17e56f282"
     },
     {
       "path": "cities/ulan-ude.html",
@@ -471,7 +471,7 @@
     {
       "path": "conferences/index.html",
       "size_bytes": 20349,
-      "sha256": "7f45c769adb1567a4a1843360ffb7c673fb894792a77335ec948beb22c0f2149"
+      "sha256": "6323616c32e80fb3ccd34c70682218fbd8f90f4825201edec6a4a2c747c71a37"
     },
     {
       "path": "conferences/roerich-2008.html",
@@ -610,8 +610,8 @@
     },
     {
       "path": "conferences/zograf-2016.html",
-      "size_bytes": 61055,
-      "sha256": "e8aa6855678967af75ffe7daaf837259856df2a81e0a3d2553808b1786ca1387"
+      "size_bytes": 61833,
+      "sha256": "06beaa6c7cafbf609418ff346e0cef10f2d8e6c116994cb24fb0acc3d9189e19"
     },
     {
       "path": "conferences/zograf-2017.html",
@@ -664,6 +664,16 @@
       "sha256": "a40e53b41bcd1d85fd567fa1f1cd713b558ed23efeb9627592fe1af7161fe683"
     },
     {
+      "path": "curation/__pycache__/audit_person_identity.cpython-314.pyc",
+      "size_bytes": 14529,
+      "sha256": "e8201bf2e23ffc7043468992d33c19c0095b8edf231b4d6b16fa05f534478e81"
+    },
+    {
+      "path": "curation/__pycache__/audit_wikipedia_authority.cpython-314.pyc",
+      "size_bytes": 12688,
+      "sha256": "238943959eeebec7dba7c1e4054c330609a302ec988f686a19c652da9f91c69b"
+    },
+    {
       "path": "curation/audit_person_identity.py",
       "size_bytes": 9276,
       "sha256": "38b66ec365fc0c1d106112d875896a2654a812b8326e7145cad02ff2f918aed4"
@@ -695,43 +705,48 @@
     },
     {
       "path": "data_dictionary.md",
-      "size_bytes": 13527,
-      "sha256": "fd866432cfc55fa6be06a155446d2d16be5547f414fe41876fafbd0b82396e13"
+      "size_bytes": 13726,
+      "sha256": "9876a25549241a7b761f70f4aafe61d32beeda488f36123e9fd3a90ff38134a4"
     },
     {
       "path": "datapackage.json",
       "size_bytes": 8614,
-      "sha256": "6e1defb53e945b73aeb19da671ec5b8a624ac09c4a8aa2ba629fe30ba96582e2"
+      "sha256": "0e115e2a18026923ff06c54f23795c66abb614b763d2bb27fb6f53388b8ec466"
     },
     {
       "path": "download-data.html",
-      "size_bytes": 26548,
-      "sha256": "c6517623ca59c72d240111ee6a419946d0b8dc2ef8f43381f1bb6c61dce0fc67"
+      "size_bytes": 26549,
+      "sha256": "7cbff860ffe7599ea756d1c43cbebd6fc39b521dfb770bc0ddb1265fd7e34f58"
     },
     {
       "path": "en.html",
       "size_bytes": 14944,
-      "sha256": "c6acc0c4b6df2ed5acf76e7bc1090d7338b4d14212993e216aeaa2cdd1913c9e"
+      "sha256": "37438b2b56fe143a687339d2d9f91e259589267db5a2f621b314d786a1666996"
     },
     {
       "path": "findings/index.html",
       "size_bytes": 33062,
-      "sha256": "2d0d4a618d2f4c131839c4dd6d2e1ec7dfd2819d56b94f7b46e0dacbc28f676c"
+      "sha256": "9df26637224fa85b6b10d0c07a3ab2da931b929f5a47a8592fd886216b19bbed"
     },
     {
       "path": "generations/index.html",
       "size_bytes": 103379,
-      "sha256": "19ef831e85676bbee9139a9b31196b5d69a2cd5cb90978e840e9b0715e06589d"
+      "sha256": "28559cd00de81b25a40c0d3ffee1d35f371dbc81af47646bc7db6d9690e38fa4"
     },
     {
       "path": "gumilyov/index.html",
       "size_bytes": 67279,
-      "sha256": "57971ad1780367e49fcac951a3cf34df9fde9c42eff219267c0008a4fe5ea770"
+      "sha256": "53899eeedb340b2686d205e3b5bbdfadb77672ba437893de1f933a3998400584"
+    },
+    {
+      "path": "gumilyov/level-0.html",
+      "size_bytes": 15835,
+      "sha256": "bf68acd00553508197e218c7c6a12a48ffc98019a194b62cae155d38ce6a4b05"
     },
     {
       "path": "gumilyov/level-1.html",
-      "size_bytes": 1242525,
-      "sha256": "c5b100c495c9bf3381a456b495cde215d602d2f9b71e66e361561a0e809a98cb"
+      "size_bytes": 1243299,
+      "sha256": "f7e7616b37ffbd63c12c55688c4b7f6a927b0ae749cabd16e02bf95895bbf5f9"
     },
     {
       "path": "gumilyov/level-2.html",
@@ -751,7 +766,7 @@
     {
       "path": "index.html",
       "size_bytes": 177904,
-      "sha256": "fc50e8eee5bcc0a560ccd295330372a4e520555f46ad5a82298962605d1169f3"
+      "sha256": "e154e731ab044ba8c6fa7da280f09ef09e0447c6335b73d4ab9ab0e18b25361e"
     },
     {
       "path": "institutions/if-ran.html",
@@ -800,8 +815,8 @@
     },
     {
       "path": "keywords/index.html",
-      "size_bytes": 2075870,
-      "sha256": "8bd88eaaf6bc97eaa17f01bd936d0d4c59925f26ee842262601c9776f77f99f4"
+      "size_bytes": 2074608,
+      "sha256": "7c1a4a1c74fa1c944d670337919b0695edfdcb815639b924f91c1468d9f10d20"
     },
     {
       "path": "known-limitations.html",
@@ -850,8 +865,8 @@
     },
     {
       "path": "meso/comparative-analysis.html",
-      "size_bytes": 99032,
-      "sha256": "38936d6d926b65429f660e088b5ffebaac5b44f3701ac1f53deed836d006c478"
+      "size_bytes": 98764,
+      "sha256": "189eff2ef0c5ba220440c2161e94cdf6362214895e933cf8f50358b8ba7256f9"
     },
     {
       "path": "meso/cosmology.html",
@@ -985,8 +1000,8 @@
     },
     {
       "path": "meso/philosophy-epistemology.html",
-      "size_bytes": 135943,
-      "sha256": "fb25421bdbb1981ab48f59eb6fbb73add3177f79ef2d7f37853d23a99f2a0b0e"
+      "size_bytes": 135608,
+      "sha256": "e50c78395bc003d849c1b80d3143dbb8504b7e4149edb48c28744399cc4c8715"
     },
     {
       "path": "meso/prosody.html",
@@ -1040,8 +1055,8 @@
     },
     {
       "path": "meso/vedic-studies.html",
-      "size_bytes": 111904,
-      "sha256": "7e31e85125866fe4753a02ef192cd43a3071f6f5568f699cafac36494f6a3c2c"
+      "size_bytes": 111569,
+      "sha256": "a2856169d31c8d413ba2db089f8f93f8a698a27d13c75c52433c78627cbacc44"
     },
     {
       "path": "meso/visual-material-culture.html",
@@ -2336,7 +2351,7 @@
     {
       "path": "p/index.html",
       "size_bytes": 71301,
-      "sha256": "acd7b136761b24228c4ecd69604301841bc41062f20c48d5fb1ea22f4e1a1209"
+      "sha256": "7bc4d7ea57f3c91866f1aaf8874586b7e92e310338b4fdc1f6228f8c0b6f1dc2"
     },
     {
       "path": "p/indiiskaya-filosofiya-soznaniya-cherez-prizmu-tsivilizatsionnoi-demarkatsii-vostok-zapad.html",
@@ -5060,18 +5075,18 @@
     },
     {
       "path": "p/page-10.html",
-      "size_bytes": 66832,
-      "sha256": "0b0d2a33367570a77b59df330eccd937c8ce99b0a876240d60448791d12158a5"
+      "size_bytes": 66850,
+      "sha256": "05d8da8fa86df3ca6d5bd414092e318f71e06eae95a817d795135b6520851c0b"
     },
     {
       "path": "p/page-11.html",
-      "size_bytes": 67309,
-      "sha256": "bbc5e127d4db59f84140887d58c814fed47e577795cd8c5386d7ed5a5a8895dc"
+      "size_bytes": 67517,
+      "sha256": "018a6cbf9b1d166f182150a4f6184f7cf4b6b1f7bbe9e843718858efd3084f05"
     },
     {
       "path": "p/page-12.html",
-      "size_bytes": 26174,
-      "sha256": "db230f112236db3620947ae008003db143d573899d58adee948a4a0c26dc5e46"
+      "size_bytes": 26491,
+      "sha256": "64e59f1843f05457c1dad88f39c93351699acede4c581b7ee5ee58e29261ce4f"
     },
     {
       "path": "p/page-2.html",
@@ -5100,18 +5115,18 @@
     },
     {
       "path": "p/page-7.html",
-      "size_bytes": 68014,
-      "sha256": "4cef0990acb25409edd511b047e3720f5a857b661283f99094abe0a2a8999695"
+      "size_bytes": 67731,
+      "sha256": "49fab2376204e66f57e5a5b6edc0009fe2a540b737052b5fa60f72cf4f6425b3"
     },
     {
       "path": "p/page-8.html",
-      "size_bytes": 67991,
-      "sha256": "f2dec22decae25a4b267d7effc1a86b963a89e798898b9bc4b2fea3c870b265f"
+      "size_bytes": 67953,
+      "sha256": "3f1021d0918f4996be8516d3c93b5d413729c3fd72127eedab0db3ad25c3a46b"
     },
     {
       "path": "p/page-9.html",
-      "size_bytes": 67360,
-      "sha256": "d03a05507855a40a113447ddc6f381f06e141d1e854e7d7561733ed4b96d395e"
+      "size_bytes": 67416,
+      "sha256": "c75026d0c291511f386300a055e7b415e58d123dd1dc0ec5c3d7f02b799922ca"
     },
     {
       "path": "p/paliiskaya-i-sanskritskie-versii-syuzhetov-o-samopozhertvovanii-bodkhisatvy-zaitsa.html",
@@ -5157,6 +5172,11 @@
       "path": "p/parishishty-kak-istoricheskii-istochnik-problemy-datirovki-i-klassifikatsii-pozdnevediiskoi-ritu.html",
       "size_bytes": 16437,
       "sha256": "590e7327410732709e384b5b93243a95924f1e237490ce9806e8746f3a3a5a57"
+    },
+    {
+      "path": "p/paul-doissen-1845-1919-vedanta-evropeiskaya-filosofiya-i-filosofskaya-komparativistika.html",
+      "size_bytes": 15856,
+      "sha256": "ab39dea0d2cc3ad6c7cdc4139bd5eb00efdb30f1b7f29141719d22bbdc7e8bb7"
     },
     {
       "path": "p/pavakutkhu-keraly-artisty-i-osnovnye-syuzhety-mifo-ritualnye-istoki-ispolnitelskikh-traditsii.html",
@@ -7269,9 +7289,9 @@
       "sha256": "34decb4c50cd37dab30c6afc61862fe7f067527939ac98d24be4960ffe38c5dd"
     },
     {
-      "path": "p/vediiskie-istoki-perspektivizma-bkhartrikhari-s-l-burmistrov-paul-doissen-1845-1919-vedanta-evro.html",
-      "size_bytes": 16425,
-      "sha256": "a28761ee9e4d74de4d9f59041688cb1c6c9260ea86c73135f2d09a6ff5de55b3"
+      "path": "p/vediiskie-istoki-perspektivizma-bkhartrikhari.html",
+      "size_bytes": 14927,
+      "sha256": "ba5c1bc028b60072d97fa3ac418dec986e1166414920cb2516d0fe6991dbb53f"
     },
     {
       "path": "p/vediiskii-gapaks-bat-i-chastitsa-bata-vata-semantika-kontekst-etimologiya.html",
@@ -9305,8 +9325,8 @@
     },
     {
       "path": "s/anastasia-krylova.html",
-      "size_bytes": 45757,
-      "sha256": "e02d556e9de611808b80052793f4dcbd260a10c0dd13d5def25edd6cc1f8e069"
+      "size_bytes": 45733,
+      "sha256": "bd9e9cae5b650c587adce69b332a72f0dde4ac25e0264d368a0192a05cd63c65"
     },
     {
       "path": "s/anastasia-lozhkina.html",
@@ -9371,7 +9391,7 @@
     {
       "path": "s/belimova-vlada.html",
       "size_bytes": 24761,
-      "sha256": "35b6babab3b5ff11b4e179d4716b8e3a1f42498355bd3b1eac03b8b0c70f98a6"
+      "sha256": "c5ac73430b89cc5cef34b360cfe462e781a713d0fb71e67d76e02f7c30d23981"
     },
     {
       "path": "s/belov-vladimir.html",
@@ -9455,8 +9475,8 @@
     },
     {
       "path": "s/burmistrov-sergei.html",
-      "size_bytes": 41177,
-      "sha256": "1717354fcc398791f7ca4158f7a2e7eb885dec596e5a350eff5562ec510b520b"
+      "size_bytes": 42817,
+      "sha256": "cebdcacafba8c3c5dd81d7bb9751c485a538eb92f2a966c3a580b0544433f8d8"
     },
     {
       "path": "s/bushuev-evgenii.html",
@@ -9490,8 +9510,8 @@
     },
     {
       "path": "s/demchenko-maksim.html",
-      "size_bytes": 44154,
-      "sha256": "fb2456752a4918446b09a2836c13638ec0c7c35ab8b8cf3bbcc82d79ca1fb7c7"
+      "size_bytes": 44148,
+      "sha256": "2262edc865a95956942e6cff877bd4f6dd6546560804765e3b97f29f234b7e81"
     },
     {
       "path": "s/demchenko.html",
@@ -9511,17 +9531,17 @@
     {
       "path": "s/denisenko.html",
       "size_bytes": 23252,
-      "sha256": "302591681119ca720a51072c1448efb80e0532b0876a1556a2cb9d65825b0771"
+      "sha256": "b240382382d83ee405c6f4c6ab6cb8549bf85f41ea572e2254b3819054f8e0c9"
     },
     {
       "path": "s/desnitskaya-evgeniya.html",
-      "size_bytes": 51234,
-      "sha256": "df0679d6fcbfc990b7442c594b7cdabd4ded6da90eb0357f9e66e3aa372a6070"
+      "size_bytes": 50821,
+      "sha256": "6da7beed1c6b5a7ec416ec99e5e6359b627006394faf1f05ecc63f1981441d89"
     },
     {
       "path": "s/dmitrieva-viktoriya.html",
       "size_bytes": 24732,
-      "sha256": "301ec46c0bc2ac2be8c11e196abf97cf823c894960b9a382afd52f8da70db5a1"
+      "sha256": "d5838c4cb4ec8b2ffa8df72738a7b36784ab9b20aa6f109cc54c077c56513241"
     },
     {
       "path": "s/dmitry-komissarov.html",
@@ -9741,7 +9761,7 @@
     {
       "path": "s/index.html",
       "size_bytes": 106055,
-      "sha256": "bc696ecd504afebb76a6fde9f4a96bbd916efbe5488df369ad08dff658fb213c"
+      "sha256": "3b04a3df88d250cc34da5f7b1f202f9b7f171741fe1e0fb61f53eb5b1b583c0f"
     },
     {
       "path": "s/itkin-ilya.html",
@@ -9751,7 +9771,7 @@
     {
       "path": "s/ivanov-vladimir.html",
       "size_bytes": 34549,
-      "sha256": "295810f616e52920cf674296940707291da8c30b9dd2d4108b926c7877b3df53"
+      "sha256": "d6c0ec272c833e96643c703dfde7cdd61bcb7d3ae537d530893d9936f46c99b3"
     },
     {
       "path": "s/kalina.html",
@@ -9826,7 +9846,7 @@
     {
       "path": "s/khomutinnikova.html",
       "size_bytes": 24681,
-      "sha256": "a828b90e0159e4b156c5a3404e0a0062f5d98a93461f64f0a0898cba2879f2ac"
+      "sha256": "fe785fcc6022254c4037f0ed91f25af9cb8eb76ca8085fe667afb4921f1ff86d"
     },
     {
       "path": "s/khrushcheva-polina.html",
@@ -9921,7 +9941,7 @@
     {
       "path": "s/korobov-vladimir.html",
       "size_bytes": 31743,
-      "sha256": "7087c96dcb23cd4ec785d1f89b28c860a332671c7560330d165ef27fa7e14d6e"
+      "sha256": "715c86999a23d3828dd3e21bf242804c8a266f4fc89dd6b0b2e38876454c14b4"
     },
     {
       "path": "s/korobov.html",
@@ -9966,7 +9986,7 @@
     {
       "path": "s/kozhevnikova-margarita.html",
       "size_bytes": 24794,
-      "sha256": "5e941c8b84dcb1d90bf25cb9dec9614ccb1eb8b305b6ddd0e834f5caacbca6fe"
+      "sha256": "fff37fc4e45fc3ca501fc78260d6a6c0a20f34bc5e2d09ba606758e63450321f"
     },
     {
       "path": "s/krapivina-rada.html",
@@ -9986,7 +10006,7 @@
     {
       "path": "s/kravtsova.html",
       "size_bytes": 23894,
-      "sha256": "72698a9de01402c8662d1927008d02b5fbc60a580dcdb3de1e40a4056698bff8"
+      "sha256": "ff2278ee9770992d503461bc973153b9018d32ec75d238dfeb0090f727a9c804"
     },
     {
       "path": "s/kroitser-svetlana.html",
@@ -10046,7 +10066,7 @@
     {
       "path": "s/lapshin-ivan.html",
       "size_bytes": 24115,
-      "sha256": "460598fadedddb337ede85a8a9dbc29ac53de3b389a9ab927108fcdde7b1c0df"
+      "sha256": "93ef048f6123e22cb2a5393e7d2a1d2743cd05d3fb5251d350d7e5ac2ba757c2"
     },
     {
       "path": "s/leitan-edgar.html",
@@ -10105,8 +10125,8 @@
     },
     {
       "path": "s/lobanov-sergei.html",
-      "size_bytes": 41297,
-      "sha256": "7f2d1050d3075e6628fb2a68558df57f5e9c824cdd67d0ba87cc11179038ff8e"
+      "size_bytes": 41281,
+      "sha256": "7c328d4ead7ee851ae036186d06ec80b5f25d0a4f9fdf4778cc1915798ad4534"
     },
     {
       "path": "s/lozhkina-anastasiya.html",
@@ -10296,7 +10316,7 @@
     {
       "path": "s/novoselova-evgeniya.html",
       "size_bytes": 25284,
-      "sha256": "d60ddc050143e2ac8f7699fdf0df311734edd5e90f8eeef50782a602f4e9b83d"
+      "sha256": "6fc5a381f22db509bb99716f59cca7883276b48696cce4c34e334f89b7d03827"
     },
     {
       "path": "s/ofertas-stanislav.html",
@@ -10355,13 +10375,13 @@
     },
     {
       "path": "s/paramonov-denis.html",
-      "size_bytes": 28204,
-      "sha256": "71b65d07f1180d72386c02fc5f08a94570a33464b5092334711cf8fed0c2325e"
+      "size_bytes": 28180,
+      "sha256": "a8cead10adfd35f8dceea4253f4e5337f1fd25912cf54ae7149f3ef09afc590f"
     },
     {
       "path": "s/paribok-andrei.html",
       "size_bytes": 51616,
-      "sha256": "d2301785c7aabad3f5f5f6fcfa2be1585b5077c329def849424d4154125a2188"
+      "sha256": "04eadb62ea11b6294010f2a47f4816b86779056c70a0fce9fc59eed60b270092"
     },
     {
       "path": "s/pavlova-mariya.html",
@@ -10395,8 +10415,8 @@
     },
     {
       "path": "s/pskhu-ruzana.html",
-      "size_bytes": 54032,
-      "sha256": "b0ebb816ef842773a358a85cfb7c2af93669e93792242370f544406108213aa0"
+      "size_bytes": 54030,
+      "sha256": "e3f65e1b6aef4ca541097d8cf259d3fb76d83bdbc16ca76bcdf9a8af516cadac"
     },
     {
       "path": "s/pushkareva.html",
@@ -10406,7 +10426,7 @@
     {
       "path": "s/rada-krapivina.html",
       "size_bytes": 35728,
-      "sha256": "6e820afaf5878a73a3644450d504dd97bf8232f937787335e5ee674a2f6cbb1d"
+      "sha256": "cfb1b42de425e098dac93daf5cd226090b8ea5eccb26a0e319a57a73607bea07"
     },
     {
       "path": "s/ramdkhari.html",
@@ -10436,7 +10456,7 @@
     {
       "path": "s/roman-liliya.html",
       "size_bytes": 25683,
-      "sha256": "1d7e42388c0bc449af5f31cb1edcc9843de8b67d19523a512ba0ccb9d6f2945b"
+      "sha256": "462e215ab408b838319d845a7c0b24c0a31135eff2d5aa9ff829d2fbf561d21b"
     },
     {
       "path": "s/rozhnova-darya.html",
@@ -10490,8 +10510,8 @@
     },
     {
       "path": "s/safina-natalya.html",
-      "size_bytes": 32475,
-      "sha256": "8ea34fc07bcd883bdad29b1e270de3c782cac6a66f41df92cb9aa78de68f6340"
+      "size_bytes": 32479,
+      "sha256": "dcf91d118c86edb0032381660190682069a6c883291a07183a908007b23a80f0"
     },
     {
       "path": "s/samozvantsev-andrei.html",
@@ -10526,7 +10546,7 @@
     {
       "path": "s/sergeeva-varvara.html",
       "size_bytes": 24502,
-      "sha256": "74c4bf5bcfb3130c4f6c077d5dc7e54309a18c1382b03f2a62e283c8a4eca177"
+      "sha256": "80bfb6cbd9c89f8c590fee3c54e6da20c9b5c1726a541cf861b5bcc0ecd10559"
     },
     {
       "path": "s/sergey-kullanda.html",
@@ -10561,7 +10581,7 @@
     {
       "path": "s/shcherbak-mariya.html",
       "size_bytes": 24936,
-      "sha256": "0a0d4794de1de1a31d1439f52b08f51af54d647c33a826523e47f1c5b1a556e7"
+      "sha256": "0f843b726fbd73946822f2f28e73b326382a19ea25c41d41d047e10868c8db3c"
     },
     {
       "path": "s/sheremetev.html",
@@ -10700,8 +10720,8 @@
     },
     {
       "path": "s/svetlov-roman.html",
-      "size_bytes": 24583,
-      "sha256": "365c9c24317fda0014354a725580d679dff0b2ebc7e67f8bbe7bf2c47fc4ea9a"
+      "size_bytes": 24569,
+      "sha256": "b18dddba3a51dcb139f1ae32c408d2514e515db8547d473407830fc526055e35"
     },
     {
       "path": "s/tanonova-elena.html",
@@ -10741,7 +10761,7 @@
     {
       "path": "s/tolchelnikov-ivan.html",
       "size_bytes": 29343,
-      "sha256": "1e4ef72092e0fc1da14750df14e0b13fab016ad3b01abc1b3b336ada576bae6f"
+      "sha256": "882614e0d5388f76b18758c1841b8d6b17c0b46a0f30034acd6ab16046847b9b"
     },
     {
       "path": "s/tsendina-anna.html",
@@ -10871,7 +10891,7 @@
     {
       "path": "s/vladimir-shokhin.html",
       "size_bytes": 33666,
-      "sha256": "232b76b1cbe925f5598bee95a086cd73d6abbc6572c840e2ce2cba3ff33f983f"
+      "sha256": "a1a8dff30ef7100f303c4fe9a555fbf747eb2eebd38549ad15144124be1d9c82"
     },
     {
       "path": "s/vladimir.html",
@@ -10880,8 +10900,8 @@
     },
     {
       "path": "s/voloshina-oksana.html",
-      "size_bytes": 41099,
-      "sha256": "7700c6d80e05afe90610c241f870f4419884f799bcdb32c5f06fc307881825d5"
+      "size_bytes": 41075,
+      "sha256": "d7ae2878488c9036915e4f376d7f13af7a10c1c7c56bc34fecede149b679cec9"
     },
     {
       "path": "s/voloshina.html",
@@ -10990,8 +11010,8 @@
     },
     {
       "path": "search-index.json",
-      "size_bytes": 1159747,
-      "sha256": "14bd875b1e430facd4c3a2bb59d23c1935748c6e22d1ea752f06e80e14f66af8"
+      "size_bytes": 1160037,
+      "sha256": "d252a72cda704e53b882c3708250c371b91d3f15852ca29703fa603eb36dc74e"
     },
     {
       "path": "search.html",
@@ -11010,13 +11030,13 @@
     },
     {
       "path": "site_data.json",
-      "size_bytes": 4294360,
-      "sha256": "362ef59b78e0df5dcb0068e3e6b5bc7ced31f934ec8ad257f61e5d485c4c4c47"
+      "size_bytes": 4296553,
+      "sha256": "e0c9878ddfe5bddc61d176b37fb36c57170af99a9b34d40cb84e5bc5f09431e0"
     },
     {
       "path": "sitemap.xml",
-      "size_bytes": 228212,
-      "sha256": "42786d62cc6cecf53d561125a81749f8bbb1ef6002a9ac7dbe834395d3200308"
+      "size_bytes": 228411,
+      "sha256": "882dd7c717cbaab60302a935b4857d27d738956c2015fc4a5bda126b177c3264"
     },
     {
       "path": "themes/academic-history.html",
@@ -11056,7 +11076,7 @@
     {
       "path": "themes/index.html",
       "size_bytes": 24746,
-      "sha256": "70c9cdd8d5beb857884eabc5c9f53f6c5a8108776cc36ef04d158a0ef24f7542"
+      "sha256": "cf006d18280f5dad0b63734898a66a3e4626fdc364f60f320c836899647cbd2e"
     },
     {
       "path": "themes/linguistics-and-philology.html",
@@ -11086,7 +11106,7 @@
     {
       "path": "themes/religion-and-philosophy.html",
       "size_bytes": 288349,
-      "sha256": "e8a4048222f2b32648596f3e813feb5ad9bc8d013eb6f52b6cd3f5c2ca9d4257"
+      "sha256": "16a22867c67304c1920d79335466667a2e3968bf64286720d22fa8f939857172"
     },
     {
       "path": "themes/religious-studies.html",
@@ -11095,8 +11115,8 @@
     },
     {
       "path": "themes/unspecified.html",
-      "size_bytes": 24558,
-      "sha256": "febc8032a04b93a39619d4f83c53ed392e48808e51cf6f4a23d215ddf68affc1"
+      "size_bytes": 26694,
+      "sha256": "a20323ee31c874ff455bf2b6cc6ee8782fa6eaf4c22e3dc01b7efc491d74c8dd"
     },
     {
       "path": "topics/index.html",

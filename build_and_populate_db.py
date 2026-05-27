@@ -1101,6 +1101,9 @@ def split_packed_zograf_lines(lines):
             position = match.start()
             if position <= 0:
                 continue
+            matched_str = match.group(0)
+            if re.search(r'\b(?:1[0-9]{3}|20[0-9]{2})\s*[—–-]\s*(?:1[0-9]{3}|20[0-9]{2})\b', matched_str):
+                continue
             prefix = line[:position].rstrip()
             # Some titles contain capitalized names followed by parentheses.
             # A collapsed next entry begins after a finished preceding title.
@@ -1289,6 +1292,14 @@ def read_program_text(year, conference="zograf"):
     if os.path.exists(html_path):
         with open(html_path, 'r', encoding='utf-8') as f:
             html = f.read()
+        if year == 2016 and conference == "zograf":
+            # Fix missing parenthetical city affiliation for Burmistrov in 2016 to enable correct splitting
+            import re
+            html = re.sub(
+                r'(С\.\s*&nbsp;\s*Л\.\s*&nbsp;\s*Бурмистров)\.(\s*</(?:em|i)>\s*</strong>\s*Пауль)',
+                r'\1 (СПб).\2',
+                html
+            )
         parser = SmartHTMLParser()
         parser.feed(html)
         return parser.get_text()
