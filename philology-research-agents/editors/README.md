@@ -13,6 +13,7 @@
 | Profile · Профиль | Journal · Журнал | Status |
 |---|---|---|
 | `ppv.md` | ППВ «Письменные памятники Востока» (ИВР РАН) · *Written Monuments of the Orient* | ✅ ready · готов |
+| `iij.md` | *Indo-Iranian Journal* (Brill, Leiden) | ✅ ready; house-style specifics marked **[verify]** · готов; специфика стиля помечена **[verify]** |
 
 ## How to add a journal · Как добавить журнал
 
