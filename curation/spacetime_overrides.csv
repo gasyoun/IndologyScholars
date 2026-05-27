@@ -1,0 +1,3 @@
+presentation_id,place_id,place_label_ru,place_label_en,lat,lon,place_scope,time_id,time_label_ru,time_label_en,start_year,end_year,confidence,source_url,notes
+# p/primer-rigveda.html,vedic_northwest,,,,,textual_region,rigveda,Ригведа,Rigveda,-1700,-1200,manual,,Уточнение поверх автоматического правила
+# p/primer-panini.html,gandhara_taxila,,,,,textual_region,panini,Панини,Panini,-550,-450,manual,,Уточнение поверх автоматического правила
