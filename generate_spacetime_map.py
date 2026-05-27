@@ -1335,7 +1335,7 @@ TIMELINE_HTML = """<!DOCTYPE html>
                 els.timeline.innerHTML = '<div class="empty">Нет датированных событий для выбранного фильтра.</div>';
                 return;
             }
-            els.timeline.innerHTML = events.map(({ record, time }) => {
+            els.timeline.innerHTML = events.map(({ record, time }, idx) => {
                 const href = record.public_path ? `<a href="${escapeHtml(record.public_path)}">${escapeHtml(record.title)}</a>` : escapeHtml(record.title);
                 const speakerHtml = `<a href="s/${escapeHtml(record.scholar_slug)}.html" style="text-decoration: underline; text-decoration-color: var(--accent);">${escapeHtml(record.speaker)}</a>`;
                 const confHref = conferenceUrl(record.series, record.conference_year);
@@ -1349,8 +1349,11 @@ TIMELINE_HTML = """<!DOCTYPE html>
                         <div class="date">${escapeHtml(formatYearRange(time))}</div>
                         <div class="time-label">${escapeHtml(time.label_ru)}</div>
                     </div>
-                    <div>
-                        <div class="title">${href}</div>
+                    <div style="position: relative;">
+                        <div style="position: absolute; top: 0; right: 0; font-size: 0.76rem; color: var(--muted); opacity: 0.8; text-align: right; line-height: 1.3;">
+                            #${idx + 1} <span style="opacity: 0.55; font-family: monospace; font-size: 0.72rem; margin-left: 0.35rem;">${escapeHtml(record.presentation_id)}</span>
+                        </div>
+                        <div class="title" style="padding-right: 145px;">${href}</div>
                         <div class="meta">${speakerHtml} · ${confHtml}${places ? '<br>' + places : ''}</div>
                         ${tags}
                     </div>
