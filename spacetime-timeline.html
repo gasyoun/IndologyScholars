@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Историческая хронология | Архив российской индологии</title>
+    <meta name="description" content="Длинная хронология исторических датировок докладов архива IndologyScholars.">
+    <link rel="canonical" href="https://gasyoun.github.io/IndologyScholars/spacetime-timeline.html">
+    <link rel="icon" href="/IndologyScholars/assets/favicon.svg" type="image/svg+xml">
+    <style>
+        :root {
+            color-scheme: dark;
+            --bg: #07110f;
+            --panel: #101b18;
+            --border: rgba(255,255,255,0.12);
+            --text: #eef5f1;
+            --muted: #a9b8b1;
+            --accent: #4fb494;
+            --gold: #d6ad67;
+            --blue: #74a7ff;
+        }
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background: var(--bg);
+            color: var(--text);
+            font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        }
+        a { color: inherit; }
+        .shell {
+            width: min(1120px, calc(100% - 2rem));
+            margin: 0 auto;
+        }
+        header {
+            padding: 1.4rem 0 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .topline {
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+        .back {
+            display: inline-block;
+            color: var(--muted);
+            font-size: 0.84rem;
+            text-decoration: none;
+            margin-bottom: 0.45rem;
+        }
+        h1 {
+            font-size: clamp(1.45rem, 2.8vw, 2.2rem);
+            line-height: 1.15;
+            margin: 0;
+            letter-spacing: 0;
+        }
+        .summary {
+            color: var(--muted);
+            font-size: 0.9rem;
+            text-align: right;
+            line-height: 1.45;
+            min-width: 180px;
+        }
+        .summary strong {
+            display: block;
+            color: var(--accent);
+            font-size: 1.35rem;
+        }
+        .controls {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(220px, 310px);
+            gap: 0.75rem;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            background: rgba(7, 17, 15, 0.96);
+            backdrop-filter: blur(10px);
+            z-index: 2;
+            border-bottom: 1px solid var(--border);
+        }
+        label {
+            display: grid;
+            gap: 0.35rem;
+            color: var(--muted);
+            font-size: 0.74rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+        select, input[type="search"] {
+            width: 100%;
+            border: 1px solid var(--border);
+            background: #0b1513;
+            color: var(--text);
+            border-radius: 6px;
+            padding: 0.58rem 0.65rem;
+            font: inherit;
+        }
+        .timeline {
+            padding: 0.4rem 0 3rem;
+        }
+        .event {
+            display: grid;
+            grid-template-columns: minmax(132px, 190px) minmax(0, 1fr);
+            gap: 1rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.09);
+        }
+        .date {
+            color: var(--gold);
+            font-weight: 700;
+            line-height: 1.35;
+        }
+        .time-label {
+            color: #ead2a8;
+            font-size: 0.82rem;
+            font-weight: 500;
+            margin-top: 0.25rem;
+        }
+        .title {
+            font-weight: 700;
+            line-height: 1.35;
+        }
+        .title a {
+            text-decoration: none;
+            border-bottom: 1px solid rgba(255,255,255,0.16);
+        }
+        .meta {
+            margin-top: 0.35rem;
+            color: var(--muted);
+            font-size: 0.84rem;
+            line-height: 1.45;
+        }
+        .tag {
+            display: inline-block;
+            margin: 0.35rem 0.25rem 0 0;
+            padding: 0.1rem 0.35rem;
+            border-radius: 4px;
+            background: rgba(79, 180, 148, 0.14);
+            color: #a7f0d6;
+            font-size: 0.74rem;
+            text-decoration: none;
+        }
+        .tag:hover {
+            background: rgba(79, 180, 148, 0.26);
+            color: var(--text);
+        }
+        .empty {
+            color: var(--muted);
+            padding: 1.3rem 0;
+        }
+        @media (max-width: 720px) {
+            .topline { display: block; }
+            .summary { text-align: left; margin-top: 1rem; }
+            .controls { grid-template-columns: 1fr; position: static; }
+            .event { grid-template-columns: 1fr; gap: 0.35rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="shell topline">
+            <div>
+                <a class="back" href="spacetime.html">&larr; карта и таймлапс</a>
+                <h1>Историческая хронология</h1>
+            </div>
+            <div class="summary"><strong id="event-count">0</strong><span id="record-count">датированных событий</span></div>
+        </div>
+    </header>
+    <section class="shell controls">
+        <label>Поиск
+            <input type="search" id="search" placeholder="Хараппа, Панини, Ригведа...">
+        </label>
+        <label>Мезоуровень
+            <select id="meso-filter"><option value="">Все мезоуровни</option></select>
+        </label>
+    </section>
+    <main class="shell timeline" id="timeline"></main>
+
+    <script>
+        const state = {
+            data: null,
+            search: '',
+            meso: new URLSearchParams(location.search).get('meso') || ''
+        };
+
+        const els = {
+            search: document.getElementById('search'),
+            meso: document.getElementById('meso-filter'),
+            timeline: document.getElementById('timeline'),
+            eventCount: document.getElementById('event-count'),
+            recordCount: document.getElementById('record-count')
+        };
+
+        function escapeHtml(value) {
+            return String(value || '').replace(/[&<>"']/g, char => ({
+                '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+            }[char]));
+        }
+
+        function formatYear(year) {
+            if (year < 0) return `${Math.abs(year)} до н. э.`;
+            if (year === 0) return 'рубеж эр';
+            return `${year} н. э.`;
+        }
+
+        function formatYearRange(time) {
+            const start = Number(time.start_year ?? time.center_year);
+            const end = Number(time.end_year ?? time.center_year);
+            if (start === end) return formatYear(start);
+            return `${formatYear(start)} - ${formatYear(end)}`;
+        }
+
+        function mesoLabel(code) {
+            return String(code || '').replaceAll('_', ' ');
+        }
+
+        function renderTag(code) {
+            return `<a class="tag" href="${location.pathname}?meso=${encodeURIComponent(code)}" data-meso="${escapeHtml(code)}">${escapeHtml(mesoLabel(code))}</a>`;
+        }
+
+        function recordText(record) {
+            return [
+                record.title,
+                record.speaker,
+                record.series,
+                record.theme_ru,
+                ...(record.meso_codes || []),
+                ...(record.places || []).map(p => `${p.label_ru} ${p.label_en}`),
+                ...(record.times || []).map(t => `${t.label_ru} ${t.label_en}`)
+            ].join(' ').toLowerCase();
+        }
+
+        function recordMatches(record) {
+            if (state.meso && !(record.meso_codes || []).includes(state.meso)) return false;
+            if (state.search && !recordText(record).includes(state.search.toLowerCase())) return false;
+            return (record.times || []).length > 0;
+        }
+
+        function buildEvents() {
+            const events = [];
+            (state.data.records || []).filter(recordMatches).forEach(record => {
+                (record.times || []).forEach(time => events.push({ record, time }));
+            });
+            return events.sort((a, b) => {
+                const aStart = Number(a.time.start_year ?? a.time.center_year);
+                const bStart = Number(b.time.start_year ?? b.time.center_year);
+                return aStart - bStart || a.time.center_year - b.time.center_year || a.record.title.localeCompare(b.record.title, 'ru');
+            });
+        }
+
+        function renderMesoOptions() {
+            const counts = state.data.summary.meso_counts || {};
+            Object.entries(counts).forEach(([code, count]) => {
+                const option = document.createElement('option');
+                option.value = code;
+                option.textContent = `${mesoLabel(code)} (${count})`;
+                els.meso.appendChild(option);
+            });
+            els.meso.value = state.meso;
+        }
+
+        function render() {
+            const events = buildEvents();
+            const recordIds = new Set(events.map(event => event.record.presentation_id));
+            els.eventCount.textContent = events.length;
+            els.recordCount.textContent = `${recordIds.size} докладов`;
+            if (!events.length) {
+                els.timeline.innerHTML = '<div class="empty">Нет датированных событий для выбранного фильтра.</div>';
+                return;
+            }
+            els.timeline.innerHTML = events.map(({ record, time }) => {
+                const href = record.public_path ? `<a href="${escapeHtml(record.public_path)}">${escapeHtml(record.title)}</a>` : escapeHtml(record.title);
+                const places = (record.places || []).map(place => place.label_ru).join(', ');
+                const tags = (record.meso_codes || []).slice(0, 4).map(renderTag).join(' ');
+                return `<article class="event">
+                    <div>
+                        <div class="date">${escapeHtml(formatYearRange(time))}</div>
+                        <div class="time-label">${escapeHtml(time.label_ru)}</div>
+                    </div>
+                    <div>
+                        <div class="title">${href}</div>
+                        <div class="meta">${escapeHtml(record.speaker)} · ${record.conference_year || ''} · ${escapeHtml(record.series || '')}${places ? '<br>' + escapeHtml(places) : ''}</div>
+                        ${tags}
+                    </div>
+                </article>`;
+            }).join('');
+        }
+
+        function updateUrl() {
+            const params = new URLSearchParams(location.search);
+            if (state.meso) params.set('meso', state.meso); else params.delete('meso');
+            history.replaceState(null, '', `${location.pathname}${params.toString() ? '?' + params.toString() : ''}`);
+        }
+
+        els.search.addEventListener('input', event => {
+            state.search = event.target.value.trim();
+            render();
+        });
+        els.meso.addEventListener('change', event => {
+            state.meso = event.target.value;
+            updateUrl();
+            render();
+        });
+        els.timeline.addEventListener('click', event => {
+            const tag = event.target.closest('[data-meso]');
+            if (!tag) return;
+            event.preventDefault();
+            state.meso = tag.dataset.meso;
+            els.meso.value = state.meso;
+            updateUrl();
+            render();
+        });
+
+        fetch('analytics_output/spacetime_index.json')
+            .then(response => response.json())
+            .then(data => {
+                state.data = data;
+                renderMesoOptions();
+                render();
+            })
+            .catch(error => {
+                els.timeline.innerHTML = `<div class="empty">Не удалось загрузить analytics_output/spacetime_index.json: ${escapeHtml(error.message)}</div>`;
+            });
+    </script>
+</body>
+</html>

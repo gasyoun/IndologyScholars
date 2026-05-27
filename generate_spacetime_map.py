@@ -12,6 +12,9 @@ OVERRIDES_PATH = ROOT / "curation" / "spacetime_overrides.csv"
 OUTPUT_JSON_PATH = ROOT / "analytics_output" / "spacetime_index.json"
 OUTPUT_UNMATCHED_PATH = ROOT / "analytics_output" / "spacetime_unmatched.csv"
 OUTPUT_HTML_PATH = ROOT / "spacetime.html"
+OUTPUT_TIMELINE_HTML_PATH = ROOT / "spacetime-timeline.html"
+TIMELAPSE_MIN_YEAR = -3000
+TIMELAPSE_MAX_YEAR = 2100
 
 
 @dataclass(frozen=True)
@@ -88,6 +91,9 @@ PLACE_RULES = [
     PlaceRule("gandhara_taxila", "Гандхара / Таксила", "Gandhara / Taxila", 33.7463, 72.8397, "historical_region", 0.78, (
         r"\bгандхар", r"\bgandhara", r"\bтаксил", r"\btaxila", r"\bпанини", r"\bpāṇini", r"\bpanini",
     )),
+    PlaceRule("harappa_indus", "Хараппа / долина Инда", "Harappa / Indus Valley", 30.6305, 72.8676, "archaeological_site", 0.8, (
+        r"\bхарапп", r"\bharapp", r"\bпротоинд", r"\bproto-?ind", r"\bиндск\w*\s+цивилизац", r"\bindus\s+(valley|civilization|script|texts?)",
+    )),
     PlaceRule("vedic_northwest", "Ведийский северо-запад", "Vedic North-West India", 30.9000, 75.8500, "historical_region", 0.72, (
         r"\bригвед", r"\brigveda", r"\bрв\b", r"\bведийск", r"\bvedic",
     )),
@@ -129,6 +135,9 @@ PLACE_RULES = [
 PLACE_RULE_BY_ID = {rule.id: rule for rule in PLACE_RULES}
 
 TIME_RULES = [
+    TimeRule("harappa_indus", "Хараппа / хараппская цивилизация, III тыс. - XVII-XVI вв. до н. э.", "Harappa / Indus Valley, 3rd millennium-17th/16th c. BCE", -2300, -3000, -1600, 0.74, (
+        r"\bхарапп", r"\bharapp", r"\bпротоинд", r"\bproto-?ind", r"\bиндск\w*\s+цивилизац", r"\bindus\s+(valley|civilization|script|texts?)",
+    ), "harappa_indus"),
     TimeRule("rigveda", "Ригведа, условно XV в. до н. э.", "Rigveda, conventionally 15th c. BCE", -1500, -1700, -1200, 0.72, (
         r"\bригвед", r"\brigveda", r"\bрв\b",
     ), "vedic_northwest"),
@@ -442,14 +451,15 @@ def build_summary(records: list[dict]) -> dict:
             meso_counts[code] = meso_counts.get(code, 0) + 1
 
     timed = [record for record in records if record["times"]]
-    centers = [time["center_year"] for record in timed for time in record["times"]]
+    time_starts = [time.get("start_year", time["center_year"]) for record in timed for time in record["times"]]
+    time_ends = [time.get("end_year", time["center_year"]) for record in timed for time in record["times"]]
     return {
         "total_records": len(records),
         "mappable_records": sum(1 for record in records if record["places"]),
         "timed_records": len(timed),
         "spacetime_records": sum(1 for record in records if record["places"] and record["times"]),
-        "time_min": min(centers) if centers else None,
-        "time_max": max(centers) if centers else None,
+        "time_min": min([TIMELAPSE_MIN_YEAR, *time_starts]),
+        "time_max": max([TIMELAPSE_MAX_YEAR, *time_ends]),
         "meso_counts": dict(sorted(meso_counts.items(), key=lambda item: (-item[1], item[0]))),
     }
 
@@ -562,18 +572,21 @@ HTML = """<!DOCTYPE html>
         }
         .mode {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(3, 1fr);
             border: 1px solid var(--border);
             border-radius: 7px;
             overflow: hidden;
         }
-        .mode button {
+        .mode button,
+        .mode a {
             border: 0;
             color: var(--muted);
             background: #0b1513;
             padding: 0.55rem;
             cursor: pointer;
             font: inherit;
+            text-align: center;
+            text-decoration: none;
         }
         .mode button.active {
             background: rgba(79, 180, 148, 0.22);
@@ -604,10 +617,12 @@ HTML = """<!DOCTYPE html>
             justify-content: space-between;
             gap: 0.75rem;
             align-items: center;
+            flex-wrap: wrap;
             color: var(--muted);
             font-size: 0.82rem;
         }
         .yearline strong { color: var(--gold); font-size: 1rem; }
+        .date-count strong { font-size: 0.95rem; }
         .results {
             min-height: 0;
             overflow: auto;
@@ -628,6 +643,29 @@ HTML = """<!DOCTYPE html>
             font-size: 0.78rem;
             line-height: 1.45;
         }
+        .hint {
+            border: 1px solid rgba(214, 173, 103, 0.35);
+            border-radius: 7px;
+            background: rgba(214, 173, 103, 0.1);
+            padding: 0.75rem;
+            color: #ead2a8;
+            line-height: 1.45;
+        }
+        .hint strong {
+            display: block;
+            color: var(--text);
+            margin-bottom: 0.25rem;
+        }
+        .hint button {
+            margin-top: 0.55rem;
+            border: 1px solid rgba(214, 173, 103, 0.55);
+            border-radius: 6px;
+            background: rgba(214, 173, 103, 0.16);
+            color: var(--text);
+            padding: 0.35rem 0.55rem;
+            font: inherit;
+            cursor: pointer;
+        }
         .tag {
             display: inline-block;
             margin: 0.25rem 0.25rem 0 0;
@@ -636,6 +674,12 @@ HTML = """<!DOCTYPE html>
             background: rgba(79, 180, 148, 0.14);
             color: #a7f0d6;
             font-size: 0.72rem;
+            text-decoration: none;
+            border-bottom: 0;
+        }
+        .tag:hover {
+            background: rgba(79, 180, 148, 0.26);
+            color: var(--text);
         }
         #map {
             height: 100vh;
@@ -676,6 +720,7 @@ HTML = """<!DOCTYPE html>
                 <div class="mode" aria-label="Режим">
                     <button type="button" id="mode-map" class="active">Карта</button>
                     <button type="button" id="mode-time">Таймлапс</button>
+                    <a href="spacetime-timeline.html">Хроника</a>
                 </div>
                 <label>Поиск
                     <input type="search" id="search" placeholder="Ригведа, Панини, Тамилнад...">
@@ -684,8 +729,8 @@ HTML = """<!DOCTYPE html>
                     <select id="meso-filter"><option value="">Все мезоуровни</option></select>
                 </label>
                 <label>Историческая дата
-                    <input type="range" id="time-slider" min="-1700" max="2026" value="-500" step="25">
-                    <div class="yearline"><span>Окно: ±250 лет</span><strong id="year-label">500 до н. э.</strong></div>
+                    <input type="range" id="time-slider" min="-3000" max="2100" value="-500" step="25">
+                    <div class="yearline"><span>Окно: ±250 лет</span><span class="date-count">в окне даты: <strong id="date-count">0</strong></span><strong id="year-label">500 до н. э.</strong></div>
                 </label>
                 <div class="stats">
                     <div class="stat"><strong id="stat-records">0</strong><span>докладов</span></div>
@@ -722,6 +767,7 @@ HTML = """<!DOCTYPE html>
             meso: document.getElementById('meso-filter'),
             slider: document.getElementById('time-slider'),
             year: document.getElementById('year-label'),
+            dateCount: document.getElementById('date-count'),
             results: document.getElementById('results'),
             statRecords: document.getElementById('stat-records'),
             statPlaces: document.getElementById('stat-places'),
@@ -742,6 +788,25 @@ HTML = """<!DOCTYPE html>
             return `${year} н. э.`;
         }
 
+        function formatYearRange(time) {
+            const start = Number(time.start_year ?? time.center_year);
+            const end = Number(time.end_year ?? time.center_year);
+            if (start === end) return formatYear(start);
+            return `${formatYear(start)} - ${formatYear(end)}`;
+        }
+
+        function mesoLabel(code) {
+            return String(code || '').replaceAll('_', ' ');
+        }
+
+        function mesoHref(code) {
+            return `${location.pathname}?meso=${encodeURIComponent(code)}`;
+        }
+
+        function renderTag(code) {
+            return `<a class="tag" href="${mesoHref(code)}" data-meso="${escapeHtml(code)}">${escapeHtml(mesoLabel(code))}</a>`;
+        }
+
         function recordText(record) {
             return [
                 record.title,
@@ -754,18 +819,80 @@ HTML = """<!DOCTYPE html>
             ].join(' ').toLowerCase();
         }
 
-        function recordMatches(record) {
+        function matchesSearchAndMeso(record) {
             if (state.meso && !(record.meso_codes || []).includes(state.meso)) return false;
             if (state.search && !recordText(record).includes(state.search.toLowerCase())) return false;
+            return true;
+        }
+
+        function timeOverlapsWindow(time) {
+            const start = Number(time.start_year ?? time.center_year);
+            const end = Number(time.end_year ?? time.center_year);
+            return start <= state.centerYear + state.window && end >= state.centerYear - state.window;
+        }
+
+        function matchesActiveTime(record) {
+            return (record.times || []).some(timeOverlapsWindow);
+        }
+
+        function timeMatchesSearch(time) {
+            const query = state.search.toLowerCase();
+            if (!query) return false;
+            return `${time.id} ${time.label_ru} ${time.label_en}`.toLowerCase().includes(query);
+        }
+
+        function recordMatches(record) {
+            if (!matchesSearchAndMeso(record)) return false;
             if (state.mode === 'time') {
                 if (!record.times.length || !record.places.length) return false;
-                return record.times.some(time => Math.abs(time.center_year - state.centerYear) <= state.window);
+                return matchesActiveTime(record);
             }
             return record.places.length > 0;
         }
 
+        function nearestTime(records) {
+            let best = null;
+            records.forEach(record => {
+                (record.times || []).forEach(time => {
+                    const start = Number(time.start_year ?? time.center_year);
+                    const end = Number(time.end_year ?? time.center_year);
+                    const distance = state.centerYear < start ? start - state.centerYear : state.centerYear > end ? state.centerYear - end : 0;
+                    const searchRank = timeMatchesSearch(time) ? 0 : 1;
+                    if (!best || searchRank < best.searchRank || (searchRank === best.searchRank && distance < best.distance)) {
+                        best = { ...time, distance, searchRank };
+                    }
+                });
+            });
+            return best;
+        }
+
+        function timeHints(records) {
+            const rows = [];
+            const seen = new Set();
+            records.forEach(record => {
+                (record.times || []).forEach(time => {
+                    const key = `${time.id}:${time.start_year}:${time.end_year}`;
+                    if (seen.has(key)) return;
+                    seen.add(key);
+                    const start = Number(time.start_year ?? time.center_year);
+                    const end = Number(time.end_year ?? time.center_year);
+                    const distance = state.centerYear < start ? start - state.centerYear : state.centerYear > end ? state.centerYear - end : 0;
+                    rows.push({ time, distance, searchRank: timeMatchesSearch(time) ? 0 : 1 });
+                });
+            });
+            return rows
+                .sort((a, b) => a.searchRank - b.searchRank || a.distance - b.distance || a.time.center_year - b.time.center_year)
+                .slice(0, 3)
+                .map(row => `${escapeHtml(row.time.label_ru)} (${escapeHtml(formatYearRange(row.time))})`)
+                .join('; ');
+        }
+
         function filteredRecords() {
             return (state.data.records || []).filter(recordMatches);
+        }
+
+        function dateFilteredRecords() {
+            return (state.data.records || []).filter(record => matchesSearchAndMeso(record) && record.times.length && matchesActiveTime(record));
         }
 
         function aggregatePlaces(records) {
@@ -823,13 +950,35 @@ HTML = """<!DOCTYPE html>
         function renderResults(records) {
             els.statRecords.textContent = records.length;
             els.statTime.textContent = records.filter(record => record.times.length).length;
+            if (!records.length) {
+                els.results.innerHTML = renderEmptyState();
+                return;
+            }
             els.results.innerHTML = records.slice(0, 80).map(record => {
                 const href = record.public_path ? `<a href="${escapeHtml(record.public_path)}">${escapeHtml(record.title)}</a>` : escapeHtml(record.title);
                 const places = record.places.map(p => p.label_ru).join(', ');
                 const times = record.times.map(t => t.label_ru).join(', ');
-                const meso = (record.meso_codes || []).slice(0, 3).map(code => `<span class="tag">${escapeHtml(code.replaceAll('_', ' '))}</span>`).join('');
+                const meso = (record.meso_codes || []).slice(0, 3).map(renderTag).join(' ');
                 return `<div class="item">${href}<div class="meta">${escapeHtml(record.speaker)} · ${record.conference_year || ''} · ${escapeHtml(record.series || '')}<br>${escapeHtml(places)}${times ? '<br>' + escapeHtml(times) : ''}</div>${meso}</div>`;
-            }).join('') || '<div class="item"><div class="meta">Нет докладов для выбранного фильтра.</div></div>';
+            }).join('');
+        }
+
+        function renderEmptyState() {
+            const scoped = (state.data.records || []).filter(matchesSearchAndMeso);
+            if (state.mode === 'time' && scoped.length) {
+                const candidates = scoped.filter(record => record.times.length && record.places.length);
+                if (candidates.length) {
+                    const nearest = nearestTime(candidates);
+                    const hints = timeHints(candidates);
+                    const jump = nearest ? `<button type="button" data-jump-year="${nearest.center_year}">Показать ${escapeHtml(formatYear(nearest.center_year))}</button>` : '';
+                    return `<div class="item hint"><strong>Найдено ${scoped.length} по поиску и тегам, но выбранная историческая дата отсекает их.</strong> Таймлапс показывает доклады, чья датировка пересекается с окном ±${state.window} лет вокруг бегунка. Ближайшие датировки: ${hints || 'нет датировок'}. ${jump}</div>`;
+                }
+                return `<div class="item hint"><strong>Найдено ${scoped.length}, но для таймлапса им не хватает даты или точки на карте.</strong> Карта и таймлапс используют только записи, где есть и историческая датировка, и географическая привязка. Все датированные записи можно смотреть в отдельной хронике.</div>`;
+            }
+            if (scoped.length) {
+                return `<div class="item hint"><strong>Найдено ${scoped.length}, но на карте их некуда поставить.</strong> У этих докладов пока нет географической привязки. Попробуйте отдельную хронику или другой мезоуровень.</div>`;
+            }
+            return '<div class="item"><div class="meta">Нет докладов для выбранного фильтра.</div></div>';
         }
 
         function render() {
@@ -837,6 +986,7 @@ HTML = """<!DOCTYPE html>
             els.modeMap.classList.toggle('active', state.mode === 'map');
             els.modeTime.classList.toggle('active', state.mode === 'time');
             const records = filteredRecords();
+            els.dateCount.textContent = dateFilteredRecords().length;
             renderMarkers(records);
             renderResults(records);
         }
@@ -869,13 +1019,30 @@ HTML = """<!DOCTYPE html>
             state.mode = 'time';
             render();
         });
+        els.results.addEventListener('click', event => {
+            const tag = event.target.closest('[data-meso]');
+            if (tag) {
+                event.preventDefault();
+                state.meso = tag.dataset.meso;
+                els.meso.value = state.meso;
+                updateUrl();
+                render();
+                return;
+            }
+            const jump = event.target.closest('[data-jump-year]');
+            if (jump) {
+                state.centerYear = Number(jump.dataset.jumpYear);
+                els.slider.value = state.centerYear;
+                render();
+            }
+        });
 
         fetch('analytics_output/spacetime_index.json')
             .then(response => response.json())
             .then(data => {
                 state.data = data;
-                const min = data.summary.time_min ?? -1700;
-                const max = data.summary.time_max ?? 2026;
+                const min = data.summary.time_min ?? -3000;
+                const max = data.summary.time_max ?? 2100;
                 els.slider.min = Math.floor(min / 25) * 25;
                 els.slider.max = Math.ceil(max / 25) * 25;
                 state.centerYear = Math.max(Number(els.slider.min), Math.min(-500, Number(els.slider.max)));
@@ -892,8 +1059,342 @@ HTML = """<!DOCTYPE html>
 """
 
 
+TIMELINE_HTML = """<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Историческая хронология | Архив российской индологии</title>
+    <meta name="description" content="Длинная хронология исторических датировок докладов архива IndologyScholars.">
+    <link rel="canonical" href="https://gasyoun.github.io/IndologyScholars/spacetime-timeline.html">
+    <link rel="icon" href="/IndologyScholars/assets/favicon.svg" type="image/svg+xml">
+    <style>
+        :root {
+            color-scheme: dark;
+            --bg: #07110f;
+            --panel: #101b18;
+            --border: rgba(255,255,255,0.12);
+            --text: #eef5f1;
+            --muted: #a9b8b1;
+            --accent: #4fb494;
+            --gold: #d6ad67;
+            --blue: #74a7ff;
+        }
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background: var(--bg);
+            color: var(--text);
+            font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        }
+        a { color: inherit; }
+        .shell {
+            width: min(1120px, calc(100% - 2rem));
+            margin: 0 auto;
+        }
+        header {
+            padding: 1.4rem 0 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .topline {
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+        .back {
+            display: inline-block;
+            color: var(--muted);
+            font-size: 0.84rem;
+            text-decoration: none;
+            margin-bottom: 0.45rem;
+        }
+        h1 {
+            font-size: clamp(1.45rem, 2.8vw, 2.2rem);
+            line-height: 1.15;
+            margin: 0;
+            letter-spacing: 0;
+        }
+        .summary {
+            color: var(--muted);
+            font-size: 0.9rem;
+            text-align: right;
+            line-height: 1.45;
+            min-width: 180px;
+        }
+        .summary strong {
+            display: block;
+            color: var(--accent);
+            font-size: 1.35rem;
+        }
+        .controls {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(220px, 310px);
+            gap: 0.75rem;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            background: rgba(7, 17, 15, 0.96);
+            backdrop-filter: blur(10px);
+            z-index: 2;
+            border-bottom: 1px solid var(--border);
+        }
+        label {
+            display: grid;
+            gap: 0.35rem;
+            color: var(--muted);
+            font-size: 0.74rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+        select, input[type="search"] {
+            width: 100%;
+            border: 1px solid var(--border);
+            background: #0b1513;
+            color: var(--text);
+            border-radius: 6px;
+            padding: 0.58rem 0.65rem;
+            font: inherit;
+        }
+        .timeline {
+            padding: 0.4rem 0 3rem;
+        }
+        .event {
+            display: grid;
+            grid-template-columns: minmax(132px, 190px) minmax(0, 1fr);
+            gap: 1rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.09);
+        }
+        .date {
+            color: var(--gold);
+            font-weight: 700;
+            line-height: 1.35;
+        }
+        .time-label {
+            color: #ead2a8;
+            font-size: 0.82rem;
+            font-weight: 500;
+            margin-top: 0.25rem;
+        }
+        .title {
+            font-weight: 700;
+            line-height: 1.35;
+        }
+        .title a {
+            text-decoration: none;
+            border-bottom: 1px solid rgba(255,255,255,0.16);
+        }
+        .meta {
+            margin-top: 0.35rem;
+            color: var(--muted);
+            font-size: 0.84rem;
+            line-height: 1.45;
+        }
+        .tag {
+            display: inline-block;
+            margin: 0.35rem 0.25rem 0 0;
+            padding: 0.1rem 0.35rem;
+            border-radius: 4px;
+            background: rgba(79, 180, 148, 0.14);
+            color: #a7f0d6;
+            font-size: 0.74rem;
+            text-decoration: none;
+        }
+        .tag:hover {
+            background: rgba(79, 180, 148, 0.26);
+            color: var(--text);
+        }
+        .empty {
+            color: var(--muted);
+            padding: 1.3rem 0;
+        }
+        @media (max-width: 720px) {
+            .topline { display: block; }
+            .summary { text-align: left; margin-top: 1rem; }
+            .controls { grid-template-columns: 1fr; position: static; }
+            .event { grid-template-columns: 1fr; gap: 0.35rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="shell topline">
+            <div>
+                <a class="back" href="spacetime.html">&larr; карта и таймлапс</a>
+                <h1>Историческая хронология</h1>
+            </div>
+            <div class="summary"><strong id="event-count">0</strong><span id="record-count">датированных событий</span></div>
+        </div>
+    </header>
+    <section class="shell controls">
+        <label>Поиск
+            <input type="search" id="search" placeholder="Хараппа, Панини, Ригведа...">
+        </label>
+        <label>Мезоуровень
+            <select id="meso-filter"><option value="">Все мезоуровни</option></select>
+        </label>
+    </section>
+    <main class="shell timeline" id="timeline"></main>
+
+    <script>
+        const state = {
+            data: null,
+            search: '',
+            meso: new URLSearchParams(location.search).get('meso') || ''
+        };
+
+        const els = {
+            search: document.getElementById('search'),
+            meso: document.getElementById('meso-filter'),
+            timeline: document.getElementById('timeline'),
+            eventCount: document.getElementById('event-count'),
+            recordCount: document.getElementById('record-count')
+        };
+
+        function escapeHtml(value) {
+            return String(value || '').replace(/[&<>"']/g, char => ({
+                '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+            }[char]));
+        }
+
+        function formatYear(year) {
+            if (year < 0) return `${Math.abs(year)} до н. э.`;
+            if (year === 0) return 'рубеж эр';
+            return `${year} н. э.`;
+        }
+
+        function formatYearRange(time) {
+            const start = Number(time.start_year ?? time.center_year);
+            const end = Number(time.end_year ?? time.center_year);
+            if (start === end) return formatYear(start);
+            return `${formatYear(start)} - ${formatYear(end)}`;
+        }
+
+        function mesoLabel(code) {
+            return String(code || '').replaceAll('_', ' ');
+        }
+
+        function renderTag(code) {
+            return `<a class="tag" href="${location.pathname}?meso=${encodeURIComponent(code)}" data-meso="${escapeHtml(code)}">${escapeHtml(mesoLabel(code))}</a>`;
+        }
+
+        function recordText(record) {
+            return [
+                record.title,
+                record.speaker,
+                record.series,
+                record.theme_ru,
+                ...(record.meso_codes || []),
+                ...(record.places || []).map(p => `${p.label_ru} ${p.label_en}`),
+                ...(record.times || []).map(t => `${t.label_ru} ${t.label_en}`)
+            ].join(' ').toLowerCase();
+        }
+
+        function recordMatches(record) {
+            if (state.meso && !(record.meso_codes || []).includes(state.meso)) return false;
+            if (state.search && !recordText(record).includes(state.search.toLowerCase())) return false;
+            return (record.times || []).length > 0;
+        }
+
+        function buildEvents() {
+            const events = [];
+            (state.data.records || []).filter(recordMatches).forEach(record => {
+                (record.times || []).forEach(time => events.push({ record, time }));
+            });
+            return events.sort((a, b) => {
+                const aStart = Number(a.time.start_year ?? a.time.center_year);
+                const bStart = Number(b.time.start_year ?? b.time.center_year);
+                return aStart - bStart || a.time.center_year - b.time.center_year || a.record.title.localeCompare(b.record.title, 'ru');
+            });
+        }
+
+        function renderMesoOptions() {
+            const counts = state.data.summary.meso_counts || {};
+            Object.entries(counts).forEach(([code, count]) => {
+                const option = document.createElement('option');
+                option.value = code;
+                option.textContent = `${mesoLabel(code)} (${count})`;
+                els.meso.appendChild(option);
+            });
+            els.meso.value = state.meso;
+        }
+
+        function render() {
+            const events = buildEvents();
+            const recordIds = new Set(events.map(event => event.record.presentation_id));
+            els.eventCount.textContent = events.length;
+            els.recordCount.textContent = `${recordIds.size} докладов`;
+            if (!events.length) {
+                els.timeline.innerHTML = '<div class="empty">Нет датированных событий для выбранного фильтра.</div>';
+                return;
+            }
+            els.timeline.innerHTML = events.map(({ record, time }) => {
+                const href = record.public_path ? `<a href="${escapeHtml(record.public_path)}">${escapeHtml(record.title)}</a>` : escapeHtml(record.title);
+                const places = (record.places || []).map(place => place.label_ru).join(', ');
+                const tags = (record.meso_codes || []).slice(0, 4).map(renderTag).join(' ');
+                return `<article class="event">
+                    <div>
+                        <div class="date">${escapeHtml(formatYearRange(time))}</div>
+                        <div class="time-label">${escapeHtml(time.label_ru)}</div>
+                    </div>
+                    <div>
+                        <div class="title">${href}</div>
+                        <div class="meta">${escapeHtml(record.speaker)} · ${record.conference_year || ''} · ${escapeHtml(record.series || '')}${places ? '<br>' + escapeHtml(places) : ''}</div>
+                        ${tags}
+                    </div>
+                </article>`;
+            }).join('');
+        }
+
+        function updateUrl() {
+            const params = new URLSearchParams(location.search);
+            if (state.meso) params.set('meso', state.meso); else params.delete('meso');
+            history.replaceState(null, '', `${location.pathname}${params.toString() ? '?' + params.toString() : ''}`);
+        }
+
+        els.search.addEventListener('input', event => {
+            state.search = event.target.value.trim();
+            render();
+        });
+        els.meso.addEventListener('change', event => {
+            state.meso = event.target.value;
+            updateUrl();
+            render();
+        });
+        els.timeline.addEventListener('click', event => {
+            const tag = event.target.closest('[data-meso]');
+            if (!tag) return;
+            event.preventDefault();
+            state.meso = tag.dataset.meso;
+            els.meso.value = state.meso;
+            updateUrl();
+            render();
+        });
+
+        fetch('analytics_output/spacetime_index.json')
+            .then(response => response.json())
+            .then(data => {
+                state.data = data;
+                renderMesoOptions();
+                render();
+            })
+            .catch(error => {
+                els.timeline.innerHTML = `<div class="empty">Не удалось загрузить analytics_output/spacetime_index.json: ${escapeHtml(error.message)}</div>`;
+            });
+    </script>
+</body>
+</html>
+"""
+
+
 def write_html() -> None:
     OUTPUT_HTML_PATH.write_text(HTML, encoding="utf-8")
+
+
+def write_timeline_html() -> None:
+    OUTPUT_TIMELINE_HTML_PATH.write_text(TIMELINE_HTML, encoding="utf-8")
 
 
 def main() -> None:
@@ -903,6 +1404,7 @@ def main() -> None:
     write_json(records)
     write_unmatched(records)
     write_html()
+    write_timeline_html()
 
     summary = build_summary(records)
     print(
@@ -914,6 +1416,7 @@ def main() -> None:
     print(f"Wrote {OUTPUT_JSON_PATH.relative_to(ROOT)}")
     print(f"Wrote {OUTPUT_UNMATCHED_PATH.relative_to(ROOT)}")
     print(f"Wrote {OUTPUT_HTML_PATH.relative_to(ROOT)}")
+    print(f"Wrote {OUTPUT_TIMELINE_HTML_PATH.relative_to(ROOT)}")
 
 
 if __name__ == "__main__":
