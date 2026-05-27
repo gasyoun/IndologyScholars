@@ -37,8 +37,15 @@ source or generator and rebuild the artifacts.
 
 ## Build
 
-Requirements: Python 3.11 or a compatible Python 3 release, plus the
-dependencies in `requirements.txt`.
+Requirements: Python 3.11 or a compatible Python 3 release, plus the dependencies in `requirements.txt`.
+
+If `make` is available, you can perform the full build, validation, and packaging in a single command:
+
+```bash
+make all
+```
+
+Otherwise, execute the sequential build steps manually:
 
 ```bash
 python -m pip install -r requirements.txt
@@ -50,7 +57,7 @@ python generate_network_json.py
 python generate_scholars_pages.py
 python generate_publication_pages.py
 python validate_publication.py
-python -m unittest tests.test_stable_ids
+python -m pytest
 ```
 
 To inspect the generated site locally from the repository root:

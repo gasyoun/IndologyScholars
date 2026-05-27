@@ -38,8 +38,15 @@
 
 ## Сборка
 
-Требования: Python 3.11 либо совместимая версия Python 3 и зависимости из
-`requirements.txt`.
+Требования: Python 3.11 либо совместимая версия Python 3 и зависимости из `requirements.txt`.
+
+Если у вас установлен `make`, вы можете выполнить полную сборку, валидацию и упаковку одной командой:
+
+```bash
+make all
+```
+
+Иначе выполните последовательные шаги сборки вручную:
 
 ```bash
 python -m pip install -r requirements.txt
@@ -51,7 +58,7 @@ python generate_network_json.py
 python generate_scholars_pages.py
 python generate_publication_pages.py
 python validate_publication.py
-python -m unittest tests.test_stable_ids
+python -m pytest
 ```
 
 Для проверки сайта локально из корня репозитория:

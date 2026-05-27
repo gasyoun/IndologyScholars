@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="{{ language }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title | e }}</title>
+    <meta name="description" content="{{ description | e }}">
+    <meta name="robots" content="{{ robots | e }}">
+    <link rel="canonical" href="{{ canonical }}">
+    <link rel="alternate" hreflang="{{ language | e }}" href="{{ canonical }}">
+    <link rel="alternate" hreflang="x-default" href="{{ canonical }}">
+    <link rel="icon" href="/IndologyScholars/assets/favicon.svg" type="image/svg+xml">
+    <link rel="manifest" href="/IndologyScholars/site.webmanifest">
+    <link rel="apple-touch-icon" href="/IndologyScholars/assets/apple-touch-icon.png">
+    <meta name="theme-color" content="#101513">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="IndologyScholars">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ canonical }}">
+    <meta property="og:title" content="{{ title | e }}">
+    <meta property="og:description" content="{{ description | e }}">
+    <meta property="og:image" content="{{ og_image_url }}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ title | e }}">
+    <meta name="twitter:description" content="{{ description | e }}">
+    <meta name="twitter:image" content="{{ og_image_url }}">
+    <script defer src="/IndologyScholars/assets/pwa.js"></script>
+    {{ extra_head | safe }}
+    {% if structured_data_json %}
+    <script type="application/ld+json">
+{{ structured_data_json | safe }}
+    </script>
+    {% endif %}
+    <link rel="stylesheet" href="/IndologyScholars/assets/styles.css">
+</head>
+<body>
+    <main class="page">
+        <nav class="top-nav" aria-label="Primary">
+            {% for label, href in nav_items %}
+            <a href="{{ href | e }}">{{ label | e }}</a>
+            {% endfor %}
+            <details class="more-nav">
+                <summary>{{ more_label | e }}</summary>
+                <div class="more-menu">
+                    {% for label, href in more_nav_items %}
+                    <a href="{{ href | e }}">{{ label | e }}</a>
+                    {% endfor %}
+                </div>
+            </details>
+        </nav>
+        {{ body | safe }}
+        <div class="footer">{{ footer_text | e }}</div>
+    </main>
+</body>
+</html>

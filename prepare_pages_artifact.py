@@ -1,4 +1,5 @@
 import shutil
+import re
 from pathlib import Path
 
 
@@ -12,6 +13,10 @@ PUBLIC_PATHS = [
     "download-data.html",
     "data-quality.html",
     "sitemap.xml",
+    "sitemap_static.xml",
+    "sitemap_scholars.xml",
+    "sitemap_publications.xml",
+    "sitemap_taxonomy.xml",
     "robots.txt",
     "site.webmanifest",
     "offline.html",
@@ -73,6 +78,67 @@ def copy_dir(src, dest_root):
     shutil.copytree(source, destination)
 
 
+def minify_html(content):
+    # Remove HTML comments (except IE conditional comments)
+    content = re.sub(r'<!--(?!\[if).*?-->', '', content, flags=re.DOTALL)
+    # Remove whitespace between tags where safe
+    content = re.sub(r'>\s+<', '><', content)
+    # Collapse multiple whitespaces
+    content = re.sub(r'\s+', ' ', content)
+    return content.strip()
+
+
+def minify_css(content):
+    # Remove comments
+    content = re.sub(r'/\*(.*?)\*/', '', content, flags=re.DOTALL)
+    # Remove space around delimiters
+    content = re.sub(r'\s*([\{\}:;,])\s*', r'\1', content)
+    # Collapse multiple whitespaces
+    content = re.sub(r'\s+', ' ', content)
+    return content.strip()
+
+
+def minify_js(content):
+    # Very simple safe JS minification
+    # Remove comments
+    content = re.sub(r'//.*?\n', '\n', content)
+    content = re.sub(r'/\*(.*?)\*/', '', content, flags=re.DOTALL)
+    # Collapse multiple spaces
+    content = re.sub(r'\s+', ' ', content)
+    return content.strip()
+
+
+def minify_site(dest_root):
+    print("Running production minification pass...")
+    html_count = 0
+    css_count = 0
+    js_count = 0
+    for p in Path(dest_root).rglob("*"):
+        if p.is_file():
+            if p.suffix == ".html":
+                try:
+                    text = p.read_text(encoding="utf-8")
+                    p.write_text(minify_html(text), encoding="utf-8")
+                    html_count += 1
+                except Exception as e:
+                    print(f"Error minifying HTML {p}: {e}")
+            elif p.suffix == ".css":
+                try:
+                    text = p.read_text(encoding="utf-8")
+                    p.write_text(minify_css(text), encoding="utf-8")
+                    css_count += 1
+                except Exception as e:
+                    print(f"Error minifying CSS {p}: {e}")
+            elif p.suffix == ".js":
+                try:
+                    text = p.read_text(encoding="utf-8")
+                    p.write_text(minify_js(text), encoding="utf-8")
+                    js_count += 1
+                except Exception as e:
+                    print(f"Error minifying JS {p}: {e}")
+    print(f"Minified {html_count} HTML, {css_count} CSS, and {js_count} JS files.")
+
+
 def main():
     dest = Path("_site")
     if dest.exists():
@@ -83,6 +149,8 @@ def main():
         copy_path(path, dest)
     for path in PUBLIC_DIRS:
         copy_dir(path, dest)
+
+    minify_site(dest)
 
     print(f"Prepared GitHub Pages artifact at {dest.resolve()}")
 

@@ -13,4 +13,4 @@ Three rules matter before making automated changes:
    tentative with `(?)`, and an unvalidated classification is not published as
    `L2`.
 3. Before publication, run `python validate_publication.py` and
-   `python -m unittest tests.test_stable_ids`.
+   `python -m pytest`.

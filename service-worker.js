@@ -1,4 +1,4 @@
-const CACHE_VERSION = "2026-05-25-pwa-v2";
+const CACHE_VERSION = "2026-05-27-pwa-v3";
 const CACHE_PREFIX = "indology-scholars-";
 const CORE_CACHE = `${CACHE_PREFIX}core-${CACHE_VERSION}`;
 const RUNTIME_CACHE = `${CACHE_PREFIX}runtime-${CACHE_VERSION}`;
@@ -10,7 +10,6 @@ const CORE_URLS = [
     `${BASE}en.html`,
     `${BASE}offline.html`,
     `${BASE}search.html`,
-    `${BASE}site_data.json`,
     `${BASE}search-index.json`,
     `${BASE}s/`,
     `${BASE}p/`,

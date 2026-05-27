@@ -1,0 +1,56 @@
+<header>
+    <h1>{{ ru_heading | safe }}</h1>
+    <p>{{ en_heading | e }}</p>
+    {{ format_degree_html | safe }}
+    <p>{{ description | e }}</p>
+    {% if profile_note_html %}
+    {{ profile_note_html | safe }}
+    {% endif %}
+</header>
+
+<section class="grid">
+    <article class="card"><strong>Доклады</strong><div class="metric">{{ total_talks }}</div><div class="meta">{{ archive_records_label | e }}</div></article>
+    <article class="card"><strong>Активность</strong><div class="metric">{{ activity_span | e }}</div><div class="meta">{{ activity_label | e }}</div></article>
+    <article class="card"><strong>Рубрика</strong><div class="metric"><a href="../{{ theme_path }}">{{ profile_label | e }}</a></div></article>
+    <article class="card"><strong>Площадки</strong><div class="meta">{{ series_html | safe }}</div></article>
+    {{ generation_html | safe }}
+</section>
+
+<h2>Аффилиации</h2>
+<div class="chip-row">{{ affiliation_chips | safe }}</div>
+{{ affiliation_notes | safe }}
+
+<h2>Географические центры</h2>
+<div class="chip-row">{{ city_chips | safe }}</div>
+
+<h2>Статусы</h2>
+<div class="chip-row">
+    {% for s in status %}
+    <span class="chip">{{ s | e }}</span>
+    {% else %}
+    <span class="meta">Особые статусы не указаны.</span>
+    {% endfor %}
+</div>
+
+{% if external_links %}
+<h2>External Identifiers</h2>
+<div class="chip-row">
+    {% for link in external_links %}
+    {{ link | safe }}
+    {% endfor %}
+</div>
+{% endif %}
+
+{{ context_block | safe }}
+
+<h2>Доклады</h2>
+<section class="list">
+    {% for card in talk_cards %}
+    {{ card | safe }}
+    {% endfor %}
+</section>
+
+<h2>Связанные авторы</h2>
+<section class="grid">
+    {{ related_html | safe }}
+</section>

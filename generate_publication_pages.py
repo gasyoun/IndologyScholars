@@ -7,6 +7,7 @@ import sqlite3
 import struct
 import sys
 import zlib
+import jinja2
 from collections import Counter, defaultdict
 from functools import lru_cache
 from pathlib import Path
@@ -51,6 +52,7 @@ BUILD_DATE = dt.date.today().isoformat()
 DATA_SCHEMA_VERSION = "1.0.0"
 PIPELINE_VERSION = "2026-05-25"
 PUBLIC_DIRS = ["assets", "conferences", "p", "themes", "topics", "generations", "meso", "gumilyov", "videos", "findings", "cities", "institutions", "keywords"]
+_JINJA_ENV = jinja2.Environment(loader=jinja2.FileSystemLoader("templates"))
 PRESENTATION_SLUG_BY_ID = {}
 MIN_PUBLIC_MESO_PRESENTATIONS = 2
 PRESENTATIONS_PER_PAGE = 120
@@ -4666,95 +4668,66 @@ def presentation_detail_body(talk, depth="../"):
     theme = talk.get("theme") or {}
     theme_code = theme.get("code") or "unspecified"
     g_level, g_meta = gumilyov_meta(talk.get("gumilyov_scale"))
-    online_badge = '<span class="badge badge-online">Онлайн</span>' if talk.get("is_online") else ""
     videos = talk.get("videos") or []
-    video_badge = '<span class="badge badge-video">Видео</span>' if videos else ""
+    
     meso_items = meso_items_by_code()
     meso_links = [
         f'<a class="chip" href="{depth}{meso_path(code)}">{esc(meso_items[code]["label"])}</a>'
         for code in talk.get("meso_codes", [])
         if code in meso_items
     ]
+    
     conference_href = f'{depth}{conference_path(talk.get("series_key"), talk.get("year"))}#{pid}'
+    
     city = (talk.get("geography") or {}).get("ru")
     city_html = (
         f'<a class="chip" href="{depth}{city_path(city)}">{esc(city)}</a>'
         if city and city not in ("Не указана", "Not specified")
         else ""
     )
+    
     source_url = clean_text(talk.get("source_url") or "")
     source_updated = clean_text(talk.get("program_last_updated") or "")
-    source_html = ""
-    if source_url:
-        update = ""
-        if source_updated:
-            update = " · последнее обновление: " + dt.datetime.strptime(source_updated, "%Y-%m-%d").strftime("%d.%m.%Y")
-        source_html = f'<p><a href="{esc(source_url)}">Официальная программа</a>{esc(update)}</p>'
+    source_updated_text = ""
+    if source_url and source_updated:
+        source_updated_text = " · последнее обновление: " + dt.datetime.strptime(source_updated, "%Y-%m-%d").strftime("%d.%m.%Y")
+        
     review = CLASSIFICATION_OVERRIDES.get(pid)
-    rationale = ""
-    if review:
-        rationale = f"""
-        <aside class="caveat-block" role="note" aria-label="Expert classification">
-            <strong>Экспертно проверенная классификация</strong>
-            <p>{esc(review["reason"])}</p>
-        </aside>
-        """
+    review_reason = review["reason"] if review else ""
+    
     video_links = [
         f'<a class="chip" href="{esc(video.get("url"))}">YouTube</a>'
         for video in videos
     ]
+    
     title_note = clean_text(talk.get("title_editorial_note") or "")
-    title_note_html = ""
-    if title_note:
-        title_note_html = f"""
-        <aside class="caveat-block" role="note" aria-label="Title normalization">
-            <strong>Редакционная нормализация названия</strong>
-            <p>{esc(title_note)}</p>
-        </aside>
-        """
     affiliation = clean_text(talk.get("affiliation") or "")
-    affiliation_html = ""
-    if affiliation:
-        affiliation_html = (
-            f'<article class="card"><strong>Аффилиация</strong><div class="meta">{esc(affiliation)}</div></article>'
-        )
     affiliation_note = clean_text(talk.get("affiliation_note") or "")
-    affiliation_note_html = ""
-    if affiliation_note:
-        affiliation_note_html = f"""
-        <aside class="caveat-block" role="note" aria-label="Affiliation provenance">
-            <strong>Основание аффилиации</strong>
-            <p>{esc(affiliation_note)}</p>
-        </aside>
-        """
-    return f"""
-        <header>
-            <h1>{esc(talk.get("title"))}</h1>{online_badge}{video_badge}
-            <p>{scholar_links_html(talk, depth)} · <a href="{conference_href}">{esc(series_label(talk.get("series_key"), "ru"))} {esc(talk.get("year"))}</a></p>
-        </header>
-        <section class="grid">
-            <article class="card"><strong>Рубрика</strong><div class="meta"><a href="{depth}{theme_path(theme_code)}">{esc(theme_label(theme_code, "ru"))}</a></div></article>
-            <article class="card"><strong>Уровень аргументации</strong><div class="meta"><a href="{depth}{gumilyov_path(g_level)}">L{g_level} {esc(g_meta["ru"])}</a></div></article>
-            <article class="card"><strong>Идентификатор</strong><div class="meta">{esc(pid)}</div></article>
-            <article class="card"><strong>Формат</strong><div class="meta">{"Онлайн" if talk.get("is_online") else "Очное / не обозначено как онлайн"}</div></article>
-            {affiliation_html}
-            <article class="card"><strong>Видеозапись</strong><div class="meta">{"Есть сохранившаяся запись" if videos else "Не привязана"}</div></article>
-        </section>
-        {title_note_html}
-        {affiliation_note_html}
-        {rationale}
-        {chip_section("Мезоуровни", meso_links)}
-        {chip_section("Город в программе", [city_html] if city_html else [])}
-        {chip_section("Сохранившаяся видеозапись", video_links)}
-        <section class="link-block">
-            <strong>Источник</strong>
-            {source_html or "<p>Ссылка на исходную страницу программы не сохранена.</p>"}
-        </section>
-        <section class="link-block">
-            <strong>Как читается классификация</strong>
-            <div class="chip-list"><a class="chip" href="../classification-criteria.html">Критерии рубрик, мезоуровней и L1-L3</a></div>
-        </section>
-    """
+    
+    template = _JINJA_ENV.get_template("presentation_detail.html")
+    return template.render(
+        talk=talk,
+        depth=depth,
+        pid=pid,
+        theme_path=theme_path(theme_code),
+        theme_label=theme_label(theme_code, "ru"),
+        g_level=g_level,
+        g_meta_ru=g_meta["ru"],
+        videos=videos,
+        meso_links=meso_links,
+        conference_href=conference_href,
+        series_label=series_label(talk.get("series_key"), "ru"),
+        city_html=city_html,
+        source_url=source_url,
+        source_updated_text=source_updated_text,
+        review_reason=review_reason,
+        video_links=video_links,
+        title_note=title_note,
+        affiliation=affiliation,
+        affiliation_note=affiliation_note,
+        scholar_links_html=scholar_links_html(talk, depth)
+    )
+
 
 
 def presentation_seo_title(title, public_id):
@@ -4786,12 +4759,15 @@ def generate_presentation_pages(records):
     year_counts = defaultdict(int)
     cards = []
     written_files = {"index.html"}
-    for talk in unique_records:
+
+    from concurrent.futures import ThreadPoolExecutor
+
+    def process_talk(talk):
         pid = clean_text(talk.get("presentation_id") or "")
         if not pid:
-            continue
+            return None
         public_id = public_ids.get(pid)
-        year_counts[int(talk.get("year") or 0)] += 1
+        year = int(talk.get("year") or 0)
         title = clean_text(talk.get("title") or "Доклад")
         path = presentation_path(pid, title)
         seo_description = f"ID {public_id}. Доклад: {title}. {series_label(talk.get('series_key'), 'ru')} {talk.get('year')}."
@@ -4801,12 +4777,24 @@ def generate_presentation_pages(records):
             make_breadcrumbs([("Главная", ""), ("Доклады", "p/"), (title, path)]),
         ]
         write_text(path, page_shell(presentation_seo_title(title, public_id), seo_description, path, body, structured))
-        written_files.add(Path(path).name)
-        cards.append(
+        
+        card_html = (
             f'<article class="talk"><div class="entry-head"><strong><a href="{esc(Path(path).name)}">{esc(title)}</a></strong>'
             f'<span class="public-id">ID {esc(public_id)}</span></div>'
             f'<div class="meta">{esc(series_label(talk.get("series_key"), "ru"))} {esc(talk.get("year"))} · {scholar_links_html(talk, "../")}</div></article>'
         )
+        return year, Path(path).name, card_html
+
+    with ThreadPoolExecutor() as executor:
+        results = executor.map(process_talk, unique_records)
+        for res in results:
+            if res is None:
+                continue
+            year, filename, card_html = res
+            year_counts[year] += 1
+            written_files.add(filename)
+            cards.append(card_html)
+
     year_links = [
         f'<a class="chip" href="../conferences/">{esc(year)} · {talks_count_label(count)}</a>'
         for year, count in sorted(year_counts.items(), reverse=True)
@@ -6302,7 +6290,7 @@ def is_legacy_redirect(path):
 
 
 def generate_sitemap():
-    html_paths = [
+    static_paths = [
         "index.html",
         "en.html",
         "search.html",
@@ -6316,25 +6304,66 @@ def generate_sitemap():
         "classification-criteria.html",
         "networks.html",
     ]
-    html_paths.extend(str(p).replace("\\", "/") for p in Path("s").glob("*.html") if not is_legacy_redirect(p))
-    for dirname in ("conferences", "p", "themes", "topics", "generations", "meso", "gumilyov", "videos", "findings", "cities", "institutions", "keywords"):
-        html_paths.extend(
+    static_paths = sorted(set(static_paths))
+
+    scholars_paths = sorted(
+        str(p).replace("\\", "/")
+        for p in Path("s").glob("*.html")
+        if not is_legacy_redirect(p)
+    )
+
+    publications_paths = sorted(
+        str(p).replace("\\", "/")
+        for p in Path("p").glob("*.html")
+        if not is_legacy_redirect(p)
+    )
+
+    taxonomy_paths = []
+    for dirname in ("conferences", "themes", "topics", "generations", "meso", "gumilyov", "videos", "findings", "cities", "institutions", "keywords"):
+        taxonomy_paths.extend(
             str(p).replace("\\", "/")
             for p in Path(dirname).glob("*.html")
             if not is_legacy_redirect(p)
         )
-    html_paths = sorted(set(html_paths), key=lambda p: (p.count("/"), p))
-    urlset = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
-    for path in html_paths:
-        if path == "index.html":
-            loc = site_url("")
-        elif path.endswith("/index.html"):
-            loc = site_url(path[:-10])
-        else:
-            loc = site_url(path)
-        urlset.append(f"  <url><loc>{esc(loc)}</loc></url>")
-    urlset.append("</urlset>")
-    write_text("sitemap.xml", "\n".join(urlset) + "\n")
+    taxonomy_paths = sorted(set(taxonomy_paths), key=lambda p: (p.count("/"), p))
+
+    def write_sub_sitemap(filename, paths):
+        urlset = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
+        for path in paths:
+            if path == "index.html":
+                loc = site_url("")
+            elif path.endswith("/index.html"):
+                loc = site_url(path[:-10])
+            else:
+                loc = site_url(path)
+            urlset.append(f"  <url><loc>{esc(loc)}</loc></url>")
+        urlset.append("</urlset>")
+        write_text(filename, "\n".join(urlset) + "\n")
+
+    # Write sub-sitemaps
+    write_sub_sitemap("sitemap_static.xml", static_paths)
+    write_sub_sitemap("sitemap_scholars.xml", scholars_paths)
+    write_sub_sitemap("sitemap_publications.xml", publications_paths)
+    write_sub_sitemap("sitemap_taxonomy.xml", taxonomy_paths)
+
+    # Write index sitemap
+    sitemaps = [
+        "sitemap_static.xml",
+        "sitemap_scholars.xml",
+        "sitemap_publications.xml",
+        "sitemap_taxonomy.xml",
+    ]
+    index_xml = [
+        '<?xml version="1.0" encoding="UTF-8"?>',
+        '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
+    ]
+    for sm in sitemaps:
+        loc = site_url(sm)
+        index_xml.append("  <sitemap>")
+        index_xml.append(f"    <loc>{esc(loc)}</loc>")
+        index_xml.append("  </sitemap>")
+    index_xml.append("</sitemapindex>")
+    write_text("sitemap.xml", "\n".join(index_xml) + "\n")
 
 
 def ensure_authority_file():
@@ -6426,6 +6455,8 @@ def patch_index_stats(data):
 
     path = Path("index.html")
     html = path.read_text(encoding="utf-8")
+    js_path = Path("assets/dashboard.js")
+    js_content = js_path.read_text(encoding="utf-8") if js_path.exists() else ""
 
     def replace_stat(text, stat_id, value):
         return re.sub(
@@ -6464,6 +6495,14 @@ def patch_index_stats(data):
         count=1,
     )
     html = html.replace('statTalks: "Доклады и презентации"', 'statTalks: "Авторские участия"')
+    if js_path.exists():
+        js_content = re.sub(
+            r'(ru:\s*\{.*?statTalksDesc:\s*")[^"]*(")',
+            rf'\g<1>{talks_ru_desc}\g<2>',
+            js_content,
+            count=1,
+            flags=re.DOTALL,
+        )
     html = re.sub(
         r'(ru:\s*\{.*?statTalksDesc:\s*")[^"]*(")',
         rf'\g<1>{talks_ru_desc}\g<2>',
@@ -6472,6 +6511,14 @@ def patch_index_stats(data):
         flags=re.DOTALL,
     )
     html = html.replace('statTalks: "Presentations & Talks"', 'statTalks: "Author Participations"')
+    if js_path.exists():
+        js_content = re.sub(
+            r'(en:\s*\{.*?statTalksDesc:\s*")[^"]*(")',
+            rf'\g<1>{talks_en_desc}\g<2>',
+            js_content,
+            count=1,
+            flags=re.DOTALL,
+        )
     html = re.sub(
         r'(en:\s*\{.*?statTalksDesc:\s*")[^"]*(")',
         rf'\g<1>{talks_en_desc}\g<2>',
@@ -6485,6 +6532,14 @@ def patch_index_stats(data):
         html,
         count=1,
     )
+    if js_path.exists():
+        js_content = re.sub(
+            r'(ru:\s*\{.*?findingsCorpusNote:\s*")[^"]*(")',
+            rf'\g<1>{corpus_pause_ru}\g<2>',
+            js_content,
+            count=1,
+            flags=re.DOTALL,
+        )
     html = re.sub(
         r'(ru:\s*\{.*?findingsCorpusNote:\s*")[^"]*(")',
         rf'\g<1>{corpus_pause_ru}\g<2>',
@@ -6492,6 +6547,14 @@ def patch_index_stats(data):
         count=1,
         flags=re.DOTALL,
     )
+    if js_path.exists():
+        js_content = re.sub(
+            r'(en:\s*\{.*?findingsCorpusNote:\s*")[^"]*(")',
+            rf'\g<1>{corpus_pause_en}\g<2>',
+            js_content,
+            count=1,
+            flags=re.DOTALL,
+        )
     html = re.sub(
         r'(en:\s*\{.*?findingsCorpusNote:\s*")[^"]*(")',
         rf'\g<1>{corpus_pause_en}\g<2>',

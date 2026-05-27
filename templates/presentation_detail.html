@@ -1,0 +1,79 @@
+<header>
+    <h1>{{ talk.title | e }}</h1>{% if talk.is_online %}<span class="badge badge-online">Онлайн</span>{% endif %}{% if videos %}<span class="badge badge-video">Видео</span>{% endif %}
+    <p>{{ scholar_links_html | safe }} · <a href="{{ conference_href }}">{{ series_label | e }} {{ talk.year }}</a></p>
+</header>
+<section class="grid">
+    <article class="card"><strong>Рубрика</strong><div class="meta"><a href="{{ depth }}{{ theme_path }}">{{ theme_label | e }}</a></div></article>
+    <article class="card"><strong>Уровень аргументации</strong><div class="meta"><a href="{{ depth }}{{ gumilyov_path }}">L{{ g_level }} {{ g_meta_ru | e }}</a></div></article>
+    <article class="card"><strong>Идентификатор</strong><div class="meta">{{ pid | e }}</div></article>
+    <article class="card"><strong>Формат</strong><div class="meta">{% if talk.is_online %}Онлайн{% else %}Очное / не обозначено как онлайн{% endif %}</div></article>
+    {% if affiliation %}
+    <article class="card"><strong>Аффилиация</strong><div class="meta">{{ affiliation | e }}</div></article>
+    {% endif %}
+    <article class="card"><strong>Видеозапись</strong><div class="meta">{% if videos %}Есть сохранившаяся запись{% else %}Не привязана{% endif %}</div></article>
+</section>
+
+{% if title_note %}
+<aside class="caveat-block" role="note" aria-label="Title normalization">
+    <strong>Редакционная нормализация названия</strong>
+    <p>{{ title_note | e }}</p>
+</aside>
+{% endif %}
+
+{% if affiliation_note %}
+<aside class="caveat-block" role="note" aria-label="Affiliation provenance">
+    <strong>Основание аффилиации</strong>
+    <p>{{ affiliation_note | e }}</p>
+</aside>
+{% endif %}
+
+{% if review_reason %}
+<aside class="caveat-block" role="note" aria-label="Expert classification">
+    <strong>Экспертно проверенная классификация</strong>
+    <p>{{ review_reason | e }}</p>
+</aside>
+{% endif %}
+
+{% if meso_links %}
+<section class="chip-section">
+    <strong>Мезоуровни</strong>
+    <div class="chip-list">
+        {% for link in meso_links %}
+        {{ link | safe }}
+        {% endfor %}
+    </div>
+</section>
+{% endif %}
+
+{% if city_html %}
+<section class="chip-section">
+    <strong>Город в программе</strong>
+    <div class="chip-list">
+        {{ city_html | safe }}
+    </div>
+</section>
+{% endif %}
+
+{% if video_links %}
+<section class="chip-section">
+    <strong>Сохранившаяся видеозапись</strong>
+    <div class="chip-list">
+        {% for link in video_links %}
+        {{ link | safe }}
+        {% endfor %}
+    </div>
+</section>
+{% endif %}
+
+<section class="link-block">
+    <strong>Источник</strong>
+    {% if source_url %}
+    <p><a href="{{ source_url | e }}">Официальная программа</a>{{ source_updated_text | e }}</p>
+    {% else %}
+    <p>Ссылка на исходную страницу программы не сохранена.</p>
+    {% endif %}
+</section>
+<section class="link-block">
+    <strong>Как читается классификация</strong>
+    <div class="chip-list"><a class="chip" href="../classification-criteria.html">Критерии рубрик, мезоуровней и L1-L3</a></div>
+</section>
