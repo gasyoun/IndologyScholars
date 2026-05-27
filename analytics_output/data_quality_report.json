@@ -1,13 +1,13 @@
 {
   "schema_version": "1.0.0",
-  "generated": "2026-05-26",
+  "generated": "2026-05-27",
   "build": {
     "source": "IndologyScholars",
     "pipeline_version": "2026-05-25",
     "generator": "generate_publication_pages.py"
   },
   "summary": {
-    "total_scholars": 285,
+    "total_scholars": 270,
     "total_presentations": 1377,
     "unique_presentations": 1350,
     "author_participations": 1377,
@@ -16,9 +16,9 @@
     "start_year": 2004,
     "end_year": 2026,
     "overlap_scholars": 41,
-    "zograf_only_scholars": 179,
-    "roerich_only_scholars": 65,
-    "person_rows": 285,
+    "zograf_only_scholars": 165,
+    "roerich_only_scholars": 64,
+    "person_rows": 270,
     "presentation_rows": 1350,
     "event_rows": 40
   },
@@ -62,8 +62,8 @@
       "id": "latin_initials",
       "label": "Mixed Latin initials in Cyrillic names",
       "severity": "info",
-      "count": 1,
-      "status": "review"
+      "count": 0,
+      "status": "pass"
     }
   ],
   "samples": {
@@ -72,14 +72,6 @@
         "presentation_id": "PRES_117aeb7260",
         "scholar": "Б. В. Загуменнов",
         "title": "Тема уточняется"
-      }
-    ],
-    "latin_initials": [
-      {
-        "person_id": "PERS_f2a6e31a",
-        "display_name": "A. Х. Шoмaxмадов",
-        "full_name_ru": null,
-        "normalized_key": "шoмaxмадов а х"
       }
     ]
   }

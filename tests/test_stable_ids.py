@@ -74,6 +74,14 @@ class StableIdTests(unittest.TestCase):
             title_normalization.canonical_title(None, "Ритуальные предметы. Онлайн"),
             "Ритуальные предметы",
         )
+        self.assertEqual(
+            title_normalization.canonical_title(None, "О символике ладьи в «Ригведе». 14.30. Зеленый зал ИВР РАН"),
+            "О символике ладьи в «Ригведе»",
+        )
+        self.assertEqual(
+            title_normalization.canonical_title(None, "Неварский «повествовательный свиток» на темы «Лалитавистары»: «одомашнивание» классической буддийской сутры 15.00. Там же"),
+            "Неварский «повествовательный свиток» на темы «Лалитавистары»: «одомашнивание» классической буддийской сутры",
+        )
 
     def test_public_keywords_do_not_fragment_diacritic_latin_titles(self):
         tokens = title_keywords.tokenize(

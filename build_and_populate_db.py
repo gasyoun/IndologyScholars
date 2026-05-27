@@ -715,6 +715,26 @@ BIOGRAPHICAL_DATA.update({
     "эрман в г": ("Эрман Владимир Гансович", "Erman Vladimir Gansovich", 1928, 2017),
     "попова и ф": ("Попова Ирина Фёдоровна", "Popova Irina Fyodorovna", 1961, None),
     "невелева с л": ("Невелева Светлана Леонидовна", "Neveleva Svetlana Leonidovna", 1937, None),
+
+    # Verified birth dates and typo/alias overrides for the Russian Indological Research Archive
+    "видунас в": ("Видунас Витис", "Vytis Vidunas", 1960, None),
+    "бейнорюс а": ("Бейнорюс Аудрюс", "Audrius Beinorius", 1964, None),
+    "яскунас в": ("Яскунас Валдас", "Valdas Jaskunas", 1973, None),
+    "светлов р в": ("Светлов Роман Викторович", "Svetlov Roman Viktorovich", 1963, None),
+    "кожевникова м н": ("Kozhevnikova Margarita Nikolaevna", "Kozhevnikova Margarita Nikolaevna", 1961, None),
+    "яковлев в м": ("Яковлев Виктор Михайлович", "Yakovlev Viktor Mikhailovich", 1941, 2022),
+    "хохлов а н": ("Хохлов Александр Николаевич", "Khokhlov Alexander Nikolaevich", 1929, 2015),
+    "дылыкова в с": ("Дылыкова Вилена Санджиевна", "Dylykova Vilena Sandzhievna", 1938, None),
+    "коробов в": ("Коробов Владимир Борисович", "Korobov Vladimir Borisovich", 1957, None),
+    "коробов владимир борисович": ("Коробов Владимир Борисович", "Korobov Vladimir Borisovich", 1957, None),
+    "пахомов с а": ("Пахомов Сергей Владимирович", "Pakhomov Sergey Vladimirovich", 1968, None),
+    "загумённов б и": ("Загуменнов Борис Иванович", "Zagumennov Boris Ivanovich", 1947, None),
+    "шoмaxмадов а х": ("Шомахмадов Сафарали Хайбуллоевич", "Shomakhmadov Safarali Khaibulloevich", 1976, None),
+    "шомахмадов а х": ("Шомахмадов Сафарали Хайбуллоевич", "Shomakhmadov Safarali Khaibulloevich", 1976, None),
+    "шарыгин г с": ("Шарыгин Глеб Витальевич", "Gleb Sharygin", 1987, None),
+    "краснодембская н": ("Краснодембская Нина Георгиевна", "Krasnodembskaya Nina Georgievna", 1939, 2024),
+    "лундышева о в": ("Лундышева Ольга Владимировна", "Lundysheva Olga Vladimirovna", 1982, None),
+    "сладков а л": ("Сладков Андрей Леонидович", "Sladkov Andrey Leonidovich", 1976, None),
 })
 
 

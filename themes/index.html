@@ -40,7 +40,7 @@
       "name": "Russian Indological Research Archive",
       "url": "https://gasyoun.github.io/IndologyScholars/"
     },
-    "dateModified": "2026-05-26"
+    "dateModified": "2026-05-27"
   },
   {
     "@context": "https://schema.org",
@@ -298,6 +298,8 @@
                     <a href="/IndologyScholars/videos/">Видео</a>
                     <a href="/IndologyScholars/cities/">Города</a>
                     <a href="/IndologyScholars/institutions/">Институции</a>
+                    <a href="/IndologyScholars/collaboration/">Коллаборация</a>
+                    <a href="/IndologyScholars/nlp/">NLP-анализ</a>
                     <a href="/IndologyScholars/data-quality.html">Качество</a>
                     <a href="/IndologyScholars/en.html">English</a>
                     <a href="/IndologyScholars/how-to-cite.html">Цитирование</a>
@@ -310,6 +312,198 @@
             <h1>Исследовательские рубрики</h1>
             <p>Крупные тематические входы в корпус докладов.</p>
         </header>
+
+        <style>
+            .network-section {
+                background: rgba(23, 30, 27, 0.6);
+                border: 1px solid var(--border);
+                border-radius: 12px;
+                padding: 1.5rem;
+                margin: 2rem 0;
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+            }
+            .network-title {
+                font-size: 1.4rem;
+                color: var(--accent);
+                margin-top: 0;
+                margin-bottom: 1.2rem;
+                font-weight: 700;
+            }
+            .network-grid {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            @media (min-width: 900px) {
+                .network-grid {
+                    grid-template-columns: 1.6fr 1fr;
+                }
+            }
+            .network-svg {
+                width: 100%;
+                max-width: 600px;
+                height: auto;
+                display: block;
+                margin: 0 auto;
+                background: rgba(16, 21, 19, 0.6);
+                border: 1px solid var(--border);
+                border-radius: 8px;
+                padding: 1rem;
+            }
+            .edge-line {
+                transition: stroke-opacity 0.25s, stroke-width 0.25s;
+            }
+            .network-edge:hover .edge-line {
+                stroke-opacity: 0.95;
+                stroke: var(--accent2) !important;
+            }
+            .node-circle {
+                transition: transform 0.2s, fill-opacity 0.2s;
+                cursor: pointer;
+            }
+            .network-node:hover .node-circle {
+                transform: scale(1.05);
+                fill: rgba(98, 174, 146, 0.3);
+            }
+            .stats-sidebar {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .stats-card {
+                background: rgba(28, 37, 33, 0.4);
+                border: 1px solid var(--border);
+                border-radius: 8px;
+                padding: 1.2rem;
+            }
+            .stats-header {
+                font-weight: 600;
+                color: var(--accent2);
+                margin-bottom: 0.6rem;
+                font-size: 1.05rem;
+                display: flex;
+                align-items: center;
+                gap: 0.4rem;
+            }
+            .stats-text {
+                font-size: 0.88rem;
+                line-height: 1.45;
+                margin: 0 0 0.75rem 0;
+                color: var(--muted);
+            }
+            .stats-badge {
+                background: rgba(0,0,0,0.2);
+                border-radius: 6px;
+                padding: 0.75rem;
+                border-left: 3px solid var(--accent);
+                font-size: 0.82rem;
+                color: var(--text);
+                font-family: monospace;
+            }
+        </style>
+
+        <section class="network-section">
+            <h2 class="network-title">🕸️ Междисциплинарные мосты и тематическая изоляция</h2>
+            <p style="margin-top:0; margin-bottom:1.5rem; font-size:0.95rem; color:var(--muted);">
+                Сетевой граф совместного распределения тем в карьерах ученых. Узлы представляют пять крупных рубрик (размер зависит от числа докладов), а ребра отображают число «ученых-мостов», сделавших доклады в обеих рубриках.
+            </p>
+            <div class="network-grid">
+                <div class="heatmap-container">
+                    <svg viewBox="0 0 600 400" class="network-svg" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Edges (drawn first to sit behind nodes) -->
+
+
+                        <!-- Nodes -->
+
+            <g class="network-node" transform="translate(300, 70)" title="Лингвистика и филология: 132 докл.">
+                <circle r="26.5" fill="rgba(98, 174, 146, 0.15)" stroke="var(--accent)" stroke-width="2.5" class="node-circle"></circle>
+                <text x="0" y="-2" fill="#fff" font-weight="bold" font-size="9.5" text-anchor="middle" pointer-events="none">
+                    Лингвистика
+                </text>
+                <text x="0" y="8" fill="#fff" font-weight="bold" font-size="9.5" text-anchor="middle" pointer-events="none">филология</text>
+                <text x="0" y="19" fill="var(--soft)" font-size="8.5" text-anchor="middle" pointer-events="none">
+                    N=132
+                </text>
+            </g>
+
+
+            <g class="network-node" transform="translate(470, 180)" title="Литература и поэзия: 290 докл.">
+                <circle r="31.9" fill="rgba(98, 174, 146, 0.15)" stroke="var(--accent)" stroke-width="2.5" class="node-circle"></circle>
+                <text x="0" y="-2" fill="#fff" font-weight="bold" font-size="9.5" text-anchor="middle" pointer-events="none">
+                    Литература
+                </text>
+                <text x="0" y="8" fill="#fff" font-weight="bold" font-size="9.5" text-anchor="middle" pointer-events="none">поэзия</text>
+                <text x="0" y="19" fill="var(--soft)" font-size="8.5" text-anchor="middle" pointer-events="none">
+                    N=290
+                </text>
+            </g>
+
+
+            <g class="network-node" transform="translate(400, 320)" title="История и общество: 255 докл.">
+                <circle r="30.7" fill="rgba(98, 174, 146, 0.15)" stroke="var(--accent)" stroke-width="2.5" class="node-circle"></circle>
+                <text x="0" y="-2" fill="#fff" font-weight="bold" font-size="9.5" text-anchor="middle" pointer-events="none">
+                    История
+                </text>
+                <text x="0" y="8" fill="#fff" font-weight="bold" font-size="9.5" text-anchor="middle" pointer-events="none">общество</text>
+                <text x="0" y="19" fill="var(--soft)" font-size="8.5" text-anchor="middle" pointer-events="none">
+                    N=255
+                </text>
+            </g>
+
+
+            <g class="network-node" transform="translate(200, 320)" title="Искусство и культура: 92 докл.">
+                <circle r="25.1" fill="rgba(98, 174, 146, 0.15)" stroke="var(--accent)" stroke-width="2.5" class="node-circle"></circle>
+                <text x="0" y="-2" fill="#fff" font-weight="bold" font-size="9.5" text-anchor="middle" pointer-events="none">
+                    Искусство
+                </text>
+                <text x="0" y="8" fill="#fff" font-weight="bold" font-size="9.5" text-anchor="middle" pointer-events="none">культура</text>
+                <text x="0" y="19" fill="var(--soft)" font-size="8.5" text-anchor="middle" pointer-events="none">
+                    N=92
+                </text>
+            </g>
+
+
+            <g class="network-node" transform="translate(130, 180)" title="Религия и философия: 587 докл.">
+                <circle r="42.0" fill="rgba(98, 174, 146, 0.15)" stroke="var(--accent)" stroke-width="2.5" class="node-circle"></circle>
+                <text x="0" y="-2" fill="#fff" font-weight="bold" font-size="9.5" text-anchor="middle" pointer-events="none">
+                    Религия
+                </text>
+                <text x="0" y="8" fill="#fff" font-weight="bold" font-size="9.5" text-anchor="middle" pointer-events="none">философия</text>
+                <text x="0" y="19" fill="var(--soft)" font-size="8.5" text-anchor="middle" pointer-events="none">
+                    N=587
+                </text>
+            </g>
+
+                    </svg>
+                </div>
+                <div class="stats-sidebar">
+                    <div class="stats-card">
+                        <div class="stats-header">🌉 Междисциплинарный мост: Искусство и культура</div>
+                        <p class="stats-text">
+                            <strong>Подтверждено:</strong> Рубрика <em>Искусство и культура</em> выступает главным связующим звеном. Она имеет высокую ко-оккурентность как с <em>Историей</em> (31 общий ученый), так и с <em>Религией и философией</em> (21 общий ученый).
+                        </p>
+                        <div class="stats-badge">
+                            Плотность мостов:<br>
+                            Искусство &harr; История: 31<br>
+                            Искусство &harr; Религия: 21
+                        </div>
+                    </div>
+                    <div class="stats-card">
+                        <div class="stats-header">🏰 Тематический замок: Лингвистика и филология</div>
+                        <p class="stats-text">
+                            <strong>Подтверждено:</strong> Классическое ядро (грамматика, фонетика, ведийская герменевтика) остается изолированным силосом. Оно практически не соприкасается с современной <em>Историей и обществом</em> (всего 7 общих авторов).
+                        </p>
+                        <div class="stats-badge" style="border-left-color: var(--accent2);">
+                            Изолированные силосы:<br>
+                            Лингвистика &harr; История: 7<br>
+                            Лингвистика &harr; Культура: 10
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section class="grid"><article class="card"><strong><a href="../themes/art-and-material-culture.html">Искусство и материальная культура</a></strong><div class="meta">92 доклада</div></article><article class="card"><strong><a href="../themes/academic-history.html">История индологии</a></strong><div class="meta">3 доклада</div></article><article class="card"><strong><a href="../themes/history-and-culture.html">История, этнография и общество</a></strong><div class="meta">255 докладов</div></article><article class="card"><strong><a href="../themes/linguistics.html">Лингвистика</a></strong><div class="meta">1 доклад</div></article><article class="card"><strong><a href="../themes/linguistics-and-philology.html">Лингвистика и филология</a></strong><div class="meta">132 доклада</div></article><article class="card"><strong><a href="../themes/literature.html">Литература</a></strong><div class="meta">2 доклада</div></article><article class="card"><strong><a href="../themes/literature-and-poetry.html">Литература и поэзия</a></strong><div class="meta">290 докладов</div></article><article class="card"><strong><a href="../themes/unspecified.html">Разное / Не классифицировано</a></strong><div class="meta">12 докладов</div></article><article class="card"><strong><a href="../themes/religious-studies.html">Религиоведение</a></strong><div class="meta">1 доклад</div></article><article class="card"><strong><a href="../themes/religion-and-philosophy.html">Религия и философия</a></strong><div class="meta">587 докладов</div></article><article class="card"><strong><a href="../themes/ethnography.html">Этнография</a></strong><div class="meta">2 доклада</div></article></section>
         <h2>Мезоуровни</h2>
         <p>Поперечные тематические коридоры между крупными рубриками и отдельными докладами.</p>

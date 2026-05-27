@@ -8,50 +8,50 @@
 <text x="260.0" y="50.0" class="axis" text-anchor="start" font-weight="700">2004-2017</text>
 <text x="920.0" y="50.0" class="axis" text-anchor="end" font-weight="700">2018-2026</text>
 <line x1="590.0" y1="82.0" x2="386.9" y2="82.0" stroke="#b8554b" stroke-width="8"/>
-<text x="376.9" y="86.0" class="axis" text-anchor="end">возрождение</text>
+<text x="376.9" y="86.0" class="axis" text-anchor="end">символика</text>
 <text x="938.0" y="86.0" class="label" text-anchor="start">7 / 1</text>
-<line x1="590.0" y1="106.0" x2="382.8" y2="106.0" stroke="#b8554b" stroke-width="8"/>
-<text x="372.8" y="110.0" class="axis" text-anchor="end">зал</text>
-<text x="938.0" y="110.0" class="label" text-anchor="start">7 / 0</text>
-<line x1="590.0" y1="130.0" x2="381.4" y2="130.0" stroke="#b8554b" stroke-width="8"/>
-<text x="371.4" y="134.0" class="axis" text-anchor="end">концепция</text>
-<text x="938.0" y="134.0" class="label" text-anchor="start">16 / 7</text>
-<line x1="590.0" y1="154.0" x2="376.7" y2="154.0" stroke="#b8554b" stroke-width="8"/>
-<text x="366.7" y="158.0" class="axis" text-anchor="end">описание</text>
-<text x="938.0" y="158.0" class="label" text-anchor="start">9 / 2</text>
+<line x1="590.0" y1="106.0" x2="386.9" y2="106.0" stroke="#b8554b" stroke-width="8"/>
+<text x="376.9" y="110.0" class="axis" text-anchor="end">Шри-Ланка</text>
+<text x="938.0" y="110.0" class="label" text-anchor="start">7 / 1</text>
+<line x1="590.0" y1="130.0" x2="386.9" y2="130.0" stroke="#b8554b" stroke-width="8"/>
+<text x="376.9" y="134.0" class="axis" text-anchor="end">возрождение</text>
+<text x="938.0" y="134.0" class="label" text-anchor="start">7 / 1</text>
+<line x1="590.0" y1="154.0" x2="381.4" y2="154.0" stroke="#b8554b" stroke-width="8"/>
+<text x="371.4" y="158.0" class="axis" text-anchor="end">концепция</text>
+<text x="938.0" y="158.0" class="label" text-anchor="start">16 / 7</text>
 <line x1="590.0" y1="178.0" x2="376.7" y2="178.0" stroke="#b8554b" stroke-width="8"/>
-<text x="366.7" y="182.0" class="axis" text-anchor="end">кашмирский</text>
+<text x="366.7" y="182.0" class="axis" text-anchor="end">стиль</text>
 <text x="938.0" y="182.0" class="label" text-anchor="start">9 / 2</text>
-<line x1="590.0" y1="202.0" x2="369.2" y2="202.0" stroke="#b8554b" stroke-width="8"/>
-<text x="359.2" y="206.0" class="axis" text-anchor="end" font-weight="700">царь</text>
-<text x="938.0" y="206.0" class="label" text-anchor="start">8 / 1</text>
-<line x1="590.0" y1="226.0" x2="369.2" y2="226.0" stroke="#b8554b" stroke-width="8"/>
-<text x="359.2" y="230.0" class="axis" text-anchor="end" font-weight="700">жанр</text>
-<text x="938.0" y="230.0" class="label" text-anchor="start">8 / 1</text>
-<line x1="590.0" y1="250.0" x2="363.3" y2="250.0" stroke="#b8554b" stroke-width="8"/>
-<text x="353.3" y="254.0" class="axis" text-anchor="end" font-weight="700">там</text>
-<text x="938.0" y="254.0" class="label" text-anchor="start">9 / 0</text>
-<line x1="590.0" y1="274.0" x2="358.7" y2="274.0" stroke="#b8554b" stroke-width="8"/>
-<text x="348.7" y="278.0" class="axis" text-anchor="end" font-weight="700">стиль</text>
-<text x="938.0" y="278.0" class="label" text-anchor="start">10 / 2</text>
+<line x1="590.0" y1="202.0" x2="376.7" y2="202.0" stroke="#b8554b" stroke-width="8"/>
+<text x="366.7" y="206.0" class="axis" text-anchor="end">описание</text>
+<text x="938.0" y="206.0" class="label" text-anchor="start">9 / 2</text>
+<line x1="590.0" y1="226.0" x2="376.7" y2="226.0" stroke="#b8554b" stroke-width="8"/>
+<text x="366.7" y="230.0" class="axis" text-anchor="end">кашмирский</text>
+<text x="938.0" y="230.0" class="label" text-anchor="start">9 / 2</text>
+<line x1="590.0" y1="250.0" x2="369.2" y2="250.0" stroke="#b8554b" stroke-width="8"/>
+<text x="359.2" y="254.0" class="axis" text-anchor="end" font-weight="700">царь</text>
+<text x="938.0" y="254.0" class="label" text-anchor="start">8 / 1</text>
+<line x1="590.0" y1="274.0" x2="369.2" y2="274.0" stroke="#b8554b" stroke-width="8"/>
+<text x="359.2" y="278.0" class="axis" text-anchor="end" font-weight="700">жанр</text>
+<text x="938.0" y="278.0" class="label" text-anchor="start">8 / 1</text>
 <line x1="590.0" y1="298.0" x2="353.3" y2="298.0" stroke="#b8554b" stroke-width="8"/>
 <text x="343.3" y="302.0" class="axis" text-anchor="end" font-weight="700">восприятие</text>
 <text x="938.0" y="302.0" class="label" text-anchor="start">9 / 1</text>
 <line x1="590.0" y1="322.0" x2="310.7" y2="322.0" stroke="#b8554b" stroke-width="8"/>
 <text x="300.7" y="326.0" class="axis" text-anchor="end" font-weight="700">термин</text>
 <text x="938.0" y="326.0" class="label" text-anchor="start">16 / 4</text>
-<line x1="590.0" y1="346.0" x2="301.1" y2="346.0" stroke="#b8554b" stroke-width="8"/>
-<text x="291.1" y="350.0" class="axis" text-anchor="end" font-weight="700">текст</text>
-<text x="938.0" y="350.0" class="label" text-anchor="start">68 / 44</text>
+<line x1="590.0" y1="346.0" x2="299.5" y2="346.0" stroke="#b8554b" stroke-width="8"/>
+<text x="289.5" y="350.0" class="axis" text-anchor="end" font-weight="700">текст</text>
+<text x="938.0" y="350.0" class="label" text-anchor="start">67 / 43</text>
 <line x1="590.0" y1="370.0" x2="869.0" y2="370.0" stroke="#2f6fbb" stroke-width="8"/>
 <text x="879.0" y="374.0" class="axis" text-anchor="start" font-weight="700">бхакти</text>
 <text x="938.0" y="374.0" class="label" text-anchor="start">1 / 13</text>
 <line x1="590.0" y1="394.0" x2="849.5" y2="394.0" stroke="#2f6fbb" stroke-width="8"/>
 <text x="859.5" y="398.0" class="axis" text-anchor="start" font-weight="700">философия</text>
 <text x="938.0" y="398.0" class="label" text-anchor="start">18 / 36</text>
-<line x1="590.0" y1="418.0" x2="827.5" y2="418.0" stroke="#2f6fbb" stroke-width="8"/>
-<text x="837.5" y="422.0" class="axis" text-anchor="start" font-weight="700">русский</text>
-<text x="938.0" y="422.0" class="label" text-anchor="start">2 / 11</text>
+<line x1="590.0" y1="418.0" x2="845.9" y2="418.0" stroke="#2f6fbb" stroke-width="8"/>
+<text x="855.9" y="422.0" class="axis" text-anchor="start" font-weight="700">русский</text>
+<text x="938.0" y="422.0" class="label" text-anchor="start">1 / 11</text>
 <line x1="590.0" y1="442.0" x2="807.0" y2="442.0" stroke="#2f6fbb" stroke-width="8"/>
 <text x="817.0" y="446.0" class="axis" text-anchor="start">коллекция</text>
 <text x="938.0" y="446.0" class="label" text-anchor="start">6 / 16</text>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Web GIS: Academic Migration & Presenter Flow Map</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <style>
+        :root {
+            --bg: #0f1412;
+            --panel: #161f1c;
+            --border: #283731;
+            --text: #e2e9e5;
+            --accent: #5db093;
+        }
+        body, html {
+            margin: 0; padding: 0; height: 100%;
+            background: var(--bg);
+            color: var(--text);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+        #map {
+            height: calc(100% - 60px);
+            width: 100%;
+        }
+        #header {
+            height: 60px;
+            background: var(--panel);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 1.5rem;
+        }
+        h1 {
+            font-size: 1.25rem;
+            margin: 0;
+            color: #fff;
+            font-weight: 600;
+        }
+        .meta {
+            font-size: 0.85rem;
+            color: #8fa098;
+        }
+        .leaflet-popup-content-wrapper {
+            background: var(--panel) !important;
+            color: var(--text) !important;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+        }
+        .leaflet-popup-tip {
+            background: var(--panel) !important;
+            border: 1px solid var(--border);
+        }
+        .popup-title {
+            font-weight: 700;
+            font-size: 1rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 0.3rem;
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+        .popup-item {
+            font-size: 0.82rem;
+            margin: 0.25rem 0;
+            line-height: 1.4;
+        }
+        .popup-badge {
+            display: inline-block;
+            padding: 0.1rem 0.3rem;
+            border-radius: 4px;
+            font-size: 0.72rem;
+            background: rgba(93,176,147,0.18);
+            color: var(--accent);
+            margin-right: 0.3rem;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <h1>Russian Indological Archive: Scholar Flow Map (Web GIS)</h1>
+        <div class="meta">Visualizing geographical academic migration to Zograf (SPb) & Roerich (Msk) Readings</div>
+    </div>
+    <div id="map"></div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        // Initialize Map in premium Dark mode (using CartoDB Dark Matter tiles)
+        const map = L.map('map').setView([55.0, 45.0], 4);
+        
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
+            subdomains: 'abcd',
+            maxZoom: 20
+        }).addTo(map);
+
+        // Core data payload compiled dynamically from SQLite database
+        const flows = [{"origin": "Санкт-Петербург", "origin_coords": [59.9343, 30.3351], "destination": "Москва", "destination_coords": [55.7558, 37.6173], "count": 328, "details": [{"title": "Чему и как учит Панчатантра", "speaker": "С. С. Тавастшерна", "year": 2026, "series": "Рериховские чтения"}, {"title": "В защиту Вишну Шипивишты: «Аз есьм Шипивишта!» (РВ 7.100.6)", "speaker": "С. С. Тавастшерна", "year": 2025, "series": "Рериховские чтения"}, {"title": "Зачем в санскрите три прошедших времени?", "speaker": "С. С. Тавастшерна", "year": 2025, "series": "Рериховские чтения"}, {"title": "Традиционные индийские классификации: образцовые, удобные, проблематичные", "speaker": "С. С. Тавастшерна", "year": 2024, "series": "Рериховские чтения"}, {"title": "Enjambement в поэзии Бхартрихари", "speaker": "С. С. Тавастшерна", "year": 2022, "series": "Рериховские чтения"}]}, {"origin": "Вильнюс", "origin_coords": [54.6872, 25.2797], "destination": "Москва", "destination_coords": [55.7558, 37.6173], "count": 20, "details": [{"title": "Понятие manas в Ригведе", "speaker": "В. Видунас", "year": 2019, "series": "Рериховские чтения"}, {"title": "О названиях пчелы в ведийском языке", "speaker": "В. Видунас", "year": 2018, "series": "Рериховские чтения"}, {"title": "К вопросу о письменной фиксации Ригведы 15.00. Там же", "speaker": "В. Видунас", "year": 2014, "series": "Рериховские чтения"}, {"title": "О звуковом составе ведийского текста", "speaker": "В. Видунас", "year": 2013, "series": "Рериховские чтения"}, {"title": "Об употреблении слова ātman в «Ригведе»", "speaker": "В. Видунас", "year": 2012, "series": "Рериховские чтения"}]}, {"origin": "Обнинск", "origin_coords": [55.0968, 36.6103], "destination": "Москва", "destination_coords": [55.7558, 37.6173], "count": 2, "details": [{"title": "Переписка О.Н. Бетлингка по поводу Петербургских словарей и судьба лексикографа", "speaker": "М. Ю. Гасунс", "year": 2024, "series": "Рериховские чтения"}, {"title": "Древнеиндийская ономастика в «Вишнусахасранаме»", "speaker": "М. Ю. Гасунс", "year": 2023, "series": "Рериховские чтения"}]}, {"origin": "Краснодар", "origin_coords": [45.0355, 38.9753], "destination": "Москва", "destination_coords": [55.7558, 37.6173], "count": 7, "details": [{"title": "Голубые лотосы санскритской лексикографии", "speaker": "М. Ю. Гасунс", "year": 2021, "series": "Рериховские чтения"}, {"title": "Параллельный санскритско-русский корпус", "speaker": "М. Ю. Гасунс", "year": 2020, "series": "Рериховские чтения"}, {"title": "Двести лет санскритской лексикографии (1819‒2019)", "speaker": "М. Ю. Гасунс", "year": 2019, "series": "Рериховские чтения"}, {"title": "Женщины и сатьяграха: взгляд М. К. Ганди", "speaker": "Е. А. Битинайте", "year": 2025, "series": "Рериховские чтения"}, {"title": "Живое древо религий М. К. Ганди.", "speaker": "Е. А. Битинайте", "year": 2022, "series": "Рериховские чтения"}]}, {"origin": "Казань", "origin_coords": [55.8304, 49.0661], "destination": "Москва", "destination_coords": [55.7558, 37.6173], "count": 7, "details": [{"title": "Сон Урмилы в современной индийской прозе", "speaker": "Р. Н. Сабирова", "year": 2026, "series": "Рериховские чтения"}, {"title": "Восхождение Урмилы в поэме Майтхилишарана Гупты «Сакет»", "speaker": "Р. Н. Сабирова", "year": 2025, "series": "Рериховские чтения"}, {"title": "Отличительные особенности и характерные черты индийских мифологических сериалов на сюжет", "speaker": "Р. Н. Сабирова", "year": 2022, "series": "Рериховские чтения"}, {"title": "Характерные черты и особенности индийского мифологического сериала (на материале сериалов на сюжет «Рамаяны»)", "speaker": "Р. Н. Сабирова", "year": 2021, "series": "Рериховские чтения"}, {"title": "Индийский мифологический сериал как средство идеологической пропаганды", "speaker": "Р. Н. Сабирова", "year": 2020, "series": "Рериховские чтения"}]}, {"origin": "Новосибирск", "origin_coords": [55.0084, 82.9357], "destination": "Москва", "destination_coords": [55.7558, 37.6173], "count": 4, "details": [{"title": "Образ птицы чатаки в поэзии бенгальских вайшнавов (на примере Рупы Госвамина)", "speaker": "В. Ю. Дружинин", "year": 2022, "series": "Рериховские чтения"}, {"title": "Высмеивание пороков врачей в санскритской литературе (на примере «Кали-видамбханам» Нилакантхи Дикшиты)", "speaker": "В. Ю. Дружинин", "year": 2021, "series": "Рериховские чтения"}, {"title": "О толковании первой строфы «Аштанга-хридаи» средневековыми комментаторами (на примере Арунадатты, Хемадри и Инду)", "speaker": "В. Ю. Дружинин", "year": 2020, "series": "Рериховские чтения"}, {"title": "«Юга-пурана» как исторический источник", "speaker": "В. Л. Денисенко", "year": 2023, "series": "Рериховские чтения"}]}, {"origin": "Элиста", "origin_coords": [46.3078, 44.2558], "destination": "Москва", "destination_coords": [55.7558, 37.6173], "count": 4, "details": [{"title": "Комментарий к коренной мантре Ваджракилаи", "speaker": "Б. Л. Митруев", "year": 2022, "series": "Рериховские чтения"}, {"title": "Санскритский перевод одного тибетского текста", "speaker": "Б. Л. Митруев", "year": 2021, "series": "Рериховские чтения"}, {"title": "Об этимологии слова «мангус»", "speaker": "Г. Б. Корнеев", "year": 2025, "series": "Рериховские чтения"}, {"title": "Из истории фиксации традиционного сказителя хобуксарких ойратов Аримпиля (1923–1994)", "speaker": "М. В. Босхомджиев", "year": 2025, "series": "Рериховские чтения"}]}, {"origin": "Дели", "origin_coords": [28.6139, 77.209], "destination": "Москва", "destination_coords": [55.7558, 37.6173], "count": 1, "details": [{"title": "Jati, gotra and marriage system in Haryana: a change in perspective", "speaker": "Harjender Singh Chaudhary", "year": 2026, "series": "Рериховские чтения"}]}, {"origin": "Улан-Удэ", "origin_coords": [51.8292, 107.6063], "destination": "Москва", "destination_coords": [55.7558, 37.6173], "count": 1, "details": [{"title": "Роль языка в познании абсолютного согласно школе Гелук", "speaker": "С. П. Нестеркин", "year": 2025, "series": "Рериховские чтения"}]}];
+        const nodes = [{"city": "Москва", "coords": [55.7558, 37.6173], "presenter_count": 194, "talk_count": 697}, {"city": "Санкт-Петербург", "coords": [59.9343, 30.3351], "presenter_count": 82, "talk_count": 328}, {"city": "Вильнюс", "coords": [54.6872, 25.2797], "presenter_count": 6, "talk_count": 20}, {"city": "Обнинск", "coords": [55.0968, 36.6103], "presenter_count": 1, "talk_count": 2}, {"city": "Краснодар", "coords": [45.0355, 38.9753], "presenter_count": 2, "talk_count": 7}, {"city": "Казань", "coords": [55.8304, 49.0661], "presenter_count": 1, "talk_count": 7}, {"city": "Новосибирск", "coords": [55.0084, 82.9357], "presenter_count": 2, "talk_count": 4}, {"city": "Элиста", "coords": [46.3078, 44.2558], "presenter_count": 3, "talk_count": 4}, {"city": "Дели", "coords": [28.6139, 77.209], "presenter_count": 1, "talk_count": 1}, {"city": "Улан-Удэ", "coords": [51.8292, 107.6063], "presenter_count": 1, "talk_count": 1}];
+
+        // Draw animated curved canvas paths representing travel flow
+        const canvasRenderer = L.canvas({ padding: 0.5 }).addTo(map);
+
+        // Function to draw curved arcs between cities
+        function drawCurve(startLatlng, endLatlng, count, label) {
+            const points = [];
+            const startPoint = map.latLngToContainerPoint(startLatlng);
+            const endPoint = map.latLngToContainerPoint(endLatlng);
+            
+            // Calculate a control point to create a nice bezier arc curve
+            const midX = (startPoint.x + endPoint.x) / 2;
+            const midY = (startPoint.y + endPoint.y) / 2;
+            const len = Math.sqrt(Math.pow(endPoint.x - startPoint.x, 2) + Math.pow(endPoint.y - startPoint.y, 2));
+            
+            // Offset the curve perpendicular to the line path
+            const offsetX = -1 * (endPoint.y - startPoint.y) * 0.15;
+            const offsetY = (endPoint.x - startPoint.x) * 0.15;
+            const controlPoint = L.point(midX + offsetX, midY + offsetY);
+            
+            // Calculate curve points
+            for (let t = 0; t <= 1; t += 0.05) {
+                const x = Math.pow(1 - t, 2) * startPoint.x + 2 * (1 - t) * t * controlPoint.x + Math.pow(t, 2) * endPoint.x;
+                const y = Math.pow(1 - t, 2) * startPoint.y + 2 * (1 - t) * t * controlPoint.y + Math.pow(t, 2) * endPoint.y;
+                points.push(map.containerPointToLatLng(L.point(x, y)));
+            }
+
+            const weight = Math.min(2 + count * 0.5, 8);
+            const polyline = L.polyline(points, {
+                color: '#5db093',
+                weight: weight,
+                opacity: 0.5,
+                lineCap: 'round',
+                renderer: canvasRenderer
+            }).addTo(map);
+            
+            return polyline;
+        }
+
+        // Draw flows
+        flows.forEach(flow => {
+            const curve = drawCurve(L.latLng(flow.origin_coords), L.latLng(flow.destination_coords), flow.count, flow.origin);
+            
+            // Generate popups listing presentations along this path
+            let popupContent = `<div class="popup-title">Flow: ${flow.origin} ➔ ${flow.destination}</div>`;
+            popupContent += `<div class="popup-item"><strong>Total Presentations:</strong> ${flow.count}</div>`;
+            flow.details.forEach(talk => {
+                popupContent += `<div class="popup-item">
+                    <span class="popup-badge">${talk.year}</span>
+                    <strong>${talk.speaker}</strong>: "${talk.title}" (${talk.series})
+                </div>`;
+            });
+            
+            curve.bindPopup(popupContent);
+        });
+
+        // Draw nodes (city circles)
+        nodes.forEach(node => {
+            const size = Math.min(6 + node.talk_count * 0.8, 22);
+            const circle = L.circleMarker(node.coords, {
+                radius: size,
+                color: '#c59a56',
+                fillColor: '#c59a56',
+                fillOpacity: 0.65,
+                weight: 2
+            }).addTo(map);
+
+            let popupContent = `<div class="popup-title">${node.city}</div>`;
+            popupContent += `<div class="popup-item"><strong>Presenters:</strong> ${node.presenter_count}</div>`;
+            popupContent += `<div class="popup-item"><strong>Total Presentations:</strong> ${node.talk_count}</div>`;
+            circle.bindPopup(popupContent);
+        });
+    </script>
+</body>
+</html>

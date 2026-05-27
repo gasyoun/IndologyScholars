@@ -387,6 +387,7 @@ def clean_person_urls(person_authority):
     add_valid("scopus_author_id", "scopus_author_id", _scopus_url)
     add_valid("researcher_id", "researcher_id", _researcher_id_url)
     add_valid("rinc_author_id", "rinc_author_id", _rinc_url)
+    add_valid("samskrtam_ru", "samskrtam_ru", _official_url)
 
     # url or official_url
     url_val = person_authority.get("official_url") or person_authority.get("url")
@@ -551,6 +552,8 @@ def page_shell(title, description, canonical_path, body, structured_data=None, e
             ("Videos", "/IndologyScholars/videos/"),
             ("Cities", "/IndologyScholars/cities/"),
             ("Institutions", "/IndologyScholars/institutions/"),
+            ("Collaboration", "/IndologyScholars/collaboration/"),
+            ("NLP Analysis", "/IndologyScholars/nlp/"),
             ("Quality", "/IndologyScholars/data-quality.html"),
             ("English", "/IndologyScholars/en.html"),
             ("Cite", "/IndologyScholars/how-to-cite.html"),
@@ -578,6 +581,8 @@ def page_shell(title, description, canonical_path, body, structured_data=None, e
             ("Видео", "/IndologyScholars/videos/"),
             ("Города", "/IndologyScholars/cities/"),
             ("Институции", "/IndologyScholars/institutions/"),
+            ("Коллаборация", "/IndologyScholars/collaboration/"),
+            ("NLP-анализ", "/IndologyScholars/nlp/"),
             ("Качество", "/IndologyScholars/data-quality.html"),
             ("English", "/IndologyScholars/en.html"),
             ("Цитирование", "/IndologyScholars/how-to-cite.html"),

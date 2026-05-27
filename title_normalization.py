@@ -144,4 +144,6 @@ def canonical_title(presentation_id: str | None, title: str | None) -> str:
     cleaned = re.sub(r"\s+", " ", cleaned)
     cleaned = re.sub(r"\s*\*+\s*$", "", cleaned)
     cleaned = re.sub(r"\s*[\.\,;:]?\s*(?:онлайн|online|zoom)\.?\s*$", "", cleaned, flags=re.IGNORECASE)
+    # Clean up trailing times (e.g. 15.00, 14.30) and following location/context text
+    cleaned = re.sub(r"\s*[\.,;:-]?\s*\b\d{1,2}[\.:]\d{2}\b.*$", "", cleaned)
     return cleaned.strip()

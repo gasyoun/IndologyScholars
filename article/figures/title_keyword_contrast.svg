@@ -74,11 +74,11 @@
 <text x="744.3" y="590.0" class="axis" text-anchor="start">роман</text>
 <text x="938.0" y="590.0" class="label" text-anchor="start">12 / 1</text>
 <line x1="590.0" y1="610.0" x2="728.8" y2="610.0" stroke="#2f6fbb" stroke-width="8"/>
-<text x="738.8" y="614.0" class="axis" text-anchor="start">ИВР РАН</text>
+<text x="738.8" y="614.0" class="axis" text-anchor="start">Панини</text>
 <text x="938.0" y="614.0" class="label" text-anchor="start">10 / 0</text>
-<line x1="590.0" y1="634.0" x2="728.8" y2="634.0" stroke="#2f6fbb" stroke-width="8"/>
-<text x="738.8" y="638.0" class="axis" text-anchor="start">Панини</text>
-<text x="938.0" y="638.0" class="label" text-anchor="start">10 / 0</text>
+<line x1="590.0" y1="634.0" x2="725.6" y2="634.0" stroke="#2f6fbb" stroke-width="8"/>
+<text x="735.6" y="638.0" class="axis" text-anchor="start">сказание</text>
+<text x="938.0" y="638.0" class="label" text-anchor="start">11 / 1</text>
 <text x="938.0" y="50.0" class="label" text-anchor="start">df Z/R</text>
 <text x="34.0" y="738.0" class="sub" text-anchor="start">Показаны термины с наибольшим абсолютным z-score; generic academic words удалены.</text>
 </svg>

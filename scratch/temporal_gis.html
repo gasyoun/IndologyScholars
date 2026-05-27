@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Temporal GIS: Indology Center of Gravity Trajectory</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <style>
+        :root {
+            --bg: #0f1412;
+            --panel: #161f1c;
+            --border: #283731;
+            --text: #e2e9e5;
+            --accent: #5db093;
+        }
+        body, html {
+            margin: 0; padding: 0; height: 100%;
+            background: var(--bg);
+            color: var(--text);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+        #map {
+            height: calc(100% - 100px);
+            width: 100%;
+        }
+        #header {
+            height: 50px;
+            background: var(--panel);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 1.5rem;
+        }
+        #controls {
+            height: 50px;
+            background: var(--panel);
+            border-top: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 0 1.5rem;
+        }
+        h1 {
+            font-size: 1.15rem;
+            margin: 0;
+            color: #fff;
+            font-weight: 600;
+        }
+        .slider-container {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            flex-grow: 1;
+        }
+        input[type="range"] {
+            flex-grow: 1;
+            accent-color: var(--accent);
+        }
+        .year-indicator {
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--accent);
+            min-width: 60px;
+        }
+        .leaflet-popup-content-wrapper {
+            background: var(--panel) !important;
+            color: var(--text) !important;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+        }
+        .leaflet-popup-tip {
+            background: var(--panel) !important;
+        }
+        .popup-title {
+            font-weight: 700;
+            font-size: 1rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 0.3rem;
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+        .popup-item {
+            font-size: 0.82rem;
+            margin: 0.25rem 0;
+        }
+        .stat-badge {
+            display: inline-block;
+            padding: 0.1rem 0.3rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            background: rgba(255,255,255,0.08);
+            margin-right: 0.3rem;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <h1>Indological Center of Gravity Shift (2004–2026)</h1>
+        <div style="font-size: 0.85rem; color: #8fa098;">Temporal geographical mean of all presentations</div>
+    </div>
+    <div id="map"></div>
+    <div id="controls">
+        <div class="slider-container">
+            <span style="font-size: 0.85rem; font-weight: 600;">TIMELINE:</span>
+            <input type="range" id="time-slider" min="0" max="21" value="0">
+            <span class="year-indicator" id="year-indicator">2004</span>
+        </div>
+        <div id="barycenter-info" style="font-size: 0.85rem; min-width: 320px; text-align: right;"></div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        const map = L.map('map').setView([57.5, 34.0], 6);
+        
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
+            subdomains: 'abcd',
+            maxZoom: 20
+        }).addTo(map);
+
+        const sortedYears = [2004, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026];
+        const barycenters = {"2004": {"coords": [55.91282307692308, 35.15903846153846], "total_talks": 13, "spb_talks": 1, "msk_talks": 10, "other_talks": 2}, "2006": {"coords": [58.3471296296296, 32.57526296296297], "total_talks": 27, "spb_talks": 17, "msk_talks": 9, "other_talks": 1}, "2007": {"coords": [57.59050399999999, 32.14782800000001], "total_talks": 25, "spb_talks": 12, "msk_talks": 9, "other_talks": 4}, "2008": {"coords": [59.9343, 30.3351], "total_talks": 1, "spb_talks": 1, "msk_talks": 0, "other_talks": 0}, "2009": {"coords": [59.9343, 30.3351], "total_talks": 1, "spb_talks": 1, "msk_talks": 0, "other_talks": 0}, "2010": {"coords": [56.03851818181818, 35.833681818181816], "total_talks": 11, "spb_talks": 1, "msk_talks": 9, "other_talks": 1}, "2011": {"coords": [58.05787241379308, 31.64668620689656], "total_talks": 29, "spb_talks": 17, "msk_talks": 8, "other_talks": 4}, "2012": {"coords": [58.13156896551721, 32.4975551724138], "total_talks": 29, "spb_talks": 17, "msk_talks": 10, "other_talks": 2}, "2013": {"coords": [58.56173124999996, 31.839687500000007], "total_talks": 32, "spb_talks": 22, "msk_talks": 8, "other_talks": 2}, "2014": {"coords": [58.28234516129028, 32.75602903225807], "total_talks": 31, "spb_talks": 19, "msk_talks": 11, "other_talks": 1}, "2015": {"coords": [59.93429999999999, 30.3351], "total_talks": 5, "spb_talks": 5, "msk_talks": 0, "other_talks": 0}, "2016": {"coords": [59.9343, 30.3351], "total_talks": 3, "spb_talks": 3, "msk_talks": 0, "other_talks": 0}, "2017": {"coords": [59.93429999999999, 30.3351], "total_talks": 5, "spb_talks": 5, "msk_talks": 0, "other_talks": 0}, "2018": {"coords": [58.01239090909086, 33.624990909090904], "total_talks": 44, "spb_talks": 24, "msk_talks": 18, "other_talks": 2}, "2019": {"coords": [57.377662499999936, 34.01426666666668], "total_talks": 48, "spb_talks": 24, "msk_talks": 20, "other_talks": 4}, "2020": {"coords": [56.79607173913039, 35.95095652173914], "total_talks": 46, "spb_talks": 17, "msk_talks": 24, "other_talks": 5}, "2021": {"coords": [56.9640644444444, 36.14361333333333], "total_talks": 45, "spb_talks": 18, "msk_talks": 23, "other_talks": 4}, "2022": {"coords": [57.497912499999956, 35.173731249999996], "total_talks": 48, "spb_talks": 25, "msk_talks": 19, "other_talks": 4}, "2023": {"coords": [57.541135897435865, 35.579197435897434], "total_talks": 39, "spb_talks": 17, "msk_talks": 20, "other_talks": 2}, "2024": {"coords": [57.793196226415034, 34.025899999999986], "total_talks": 53, "spb_talks": 26, "msk_talks": 26, "other_talks": 1}, "2025": {"coords": [56.788759139784865, 36.222940860215004], "total_talks": 93, "spb_talks": 31, "msk_talks": 57, "other_talks": 5}, "2026": {"coords": [57.16298545454539, 35.23521818181818], "total_talks": 55, "spb_talks": 25, "msk_talks": 28, "other_talks": 2}};
+        
+        // Define Static Venue Anchors
+        const spbMarker = L.circleMarker([59.9343, 30.3351], {
+            radius: 8, color: '#2563eb', fillColor: '#2563eb', fillOpacity: 0.6
+        }).addTo(map).bindPopup('<strong>Санкт-Петербург (Зографские чтения)</strong>');
+
+        const mskMarker = L.circleMarker([55.7558, 37.6173], {
+            radius: 8, color: '#dc2626', fillColor: '#dc2626', fillOpacity: 0.6
+        }).addTo(map).bindPopup('<strong>Москва (Рериховские чтения)</strong>');
+
+        // Draw static baseline path representing the historical trajectory line
+        const pathCoords = sortedYears.map(y => barycenters[y].coords);
+        const trajectoryPath = L.polyline(pathCoords, {
+            color: '#c59a56',
+            weight: 3,
+            opacity: 0.35,
+            dashArray: '5, 10'
+        }).addTo(map);
+
+        // Highlight Active Year Barycenter Circle
+        let activeBarycenterMarker = L.circleMarker(barycenters[sortedYears[0]].coords, {
+            radius: 12,
+            color: '#5db093',
+            fillColor: '#5db093',
+            fillOpacity: 0.8,
+            weight: 3
+        }).addTo(map);
+
+        // Function to update visualization for selected year
+        function updateYear(index) {
+            const year = sortedYears[index];
+            const data = barycenters[year];
+            
+            document.getElementById('year-indicator').innerText = year;
+            
+            // Move marker to active barycenter coordinate
+            activeBarycenterMarker.setLatLng(data.coords);
+            
+            // Build details panel
+            const infoText = `<strong>Presentations:</strong> ${data.total_talks} (<span style="color: #60a5fa;">SPb: ${data.spb_talks}</span> / <span style="color: #f87171;">Msk: ${data.msk_talks}</span> / Other: ${data.other_talks})`;
+            document.getElementById('barycenter-info').innerHTML = infoText;
+
+            // Update popup
+            const popupContent = `
+                <div class="popup-title">Center of Gravity: ${year}</div>
+                <div class="popup-item"><strong>Coordinates:</strong> ${data.coords[0].toFixed(4)}°N, ${data.coords[1].toFixed(4)}°E</div>
+                <div class="popup-item"><strong>Total Papers:</strong> ${data.total_talks}</div>
+                <div class="popup-item">
+                    <span class="stat-badge" style="color: #93c5fd;">SPb: ${data.spb_talks}</span>
+                    <span class="stat-badge" style="color: #fca5a5;">Msk: ${data.msk_talks}</span>
+                    <span class="stat-badge">Other: ${data.other_talks}</span>
+                </div>
+            `;
+            activeBarycenterMarker.bindPopup(popupContent).openPopup();
+        }
+
+        // Slider handler
+        const slider = document.getElementById('time-slider');
+        slider.addEventListener('input', (e) => {
+            updateYear(e.target.value);
+        });
+
+        // Initialize with first year
+        updateYear(0);
+    </script>
+</body>
+</html>

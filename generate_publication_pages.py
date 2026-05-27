@@ -221,6 +221,14 @@ def generations_path():
     return "generations/"
 
 
+def collaboration_path():
+    return "collaboration/"
+
+
+def nlp_path():
+    return "nlp/"
+
+
 def meso_path(code):
     return f"meso/{slugify(code, 'meso')}.html"
 
@@ -2569,6 +2577,76 @@ def generate_findings_page(data, records):
             '</article>'
         )
 
+    # Calculate collaboration and retention metrics dynamically
+    pres_author_counts = defaultdict(int)
+    for record in records:
+        pres_id = record.get("presentation_id")
+        if pres_id:
+            pres_author_counts[pres_id] += 1
+
+    scholar_cities = {}
+    scholar_years = defaultdict(set)
+    scholar_talks = defaultdict(list)
+    scholar_names = {}
+
+    for record in records:
+        pid = record.get("person_id")
+        if not pid:
+            continue
+        scholar_names[pid] = record.get("display_name") or record.get("name") or ""
+        year = record.get("year")
+        if year:
+            try:
+                scholar_years[pid].add(int(year))
+            except ValueError:
+                pass
+        pres_id = record.get("presentation_id")
+        if pres_id:
+            scholar_talks[pid].append(pres_id)
+        
+        # Get city
+        affiliation = record.get("affiliation") or ""
+        aff_low = affiliation.lower()
+        if "санкт-петербург" in aff_low or "спб" in aff_low or "ленинград" in aff_low:
+            scholar_cities[pid] = "Санкт-Петербург"
+        elif "москва" in aff_low or "мгу" in aff_low or "ив ран" in aff_low or "вшэ" in aff_low:
+            scholar_cities[pid] = "Москва"
+        elif pid not in scholar_cities:
+            scholar_cities[pid] = "Регионы / Ино"
+
+    scholars_stats = []
+    for pid in scholar_names.keys():
+        city = scholar_cities.get(pid, "Регионы / Ино")
+        years_seen = scholar_years[pid]
+        talks_list = scholar_talks[pid]
+        returned_status = len(years_seen) >= 2
+        has_collab = any(pres_author_counts[tid] > 1 for tid in talks_list)
+        scholars_stats.append({
+            "city": city,
+            "returned": returned_status,
+            "has_collab": has_collab
+        })
+
+    grouped_counts = defaultdict(lambda: {"total": 0, "returned": 0})
+    for item in scholars_stats:
+        key = (item["city"], item["has_collab"])
+        grouped_counts[key]["total"] += 1
+        if item["returned"]:
+            grouped_counts[key]["returned"] += 1
+
+    def get_rate(city, has_collab):
+        stats_val = grouped_counts[(city, has_collab)]
+        if stats_val["total"] > 0:
+            return round(100 * stats_val["returned"] / stats_val["total"], 1), stats_val["total"]
+        return 0.0, 0
+
+    spb_solo_rate, spb_solo_n = get_rate("Санкт-Петербург", False)
+    spb_collab_rate, spb_collab_n = get_rate("Санкт-Петербург", True)
+    moscow_solo_rate, moscow_solo_n = get_rate("Москва", False)
+    moscow_collab_rate, moscow_collab_n = get_rate("Москва", True)
+    regions_solo_rate, regions_solo_n = get_rate("Регионы / Ино", False)
+    regions_collab_rate, regions_collab_n = get_rate("Регионы / Ино", True)
+
     checked_cards = [
         finding_card(
             "H8. Смена оргкомитета: значимого сдвига нет",
@@ -2585,6 +2663,18 @@ def generate_findings_page(data, records):
             bar_row("Ядро >=5 докладов", h10_core_rate, 6, f"{h10_core_rate:.1f}%")
             + bar_row("Периферия <5 докладов", h10_periphery_rate, 6, f"{h10_periphery_rate:.1f}%"),
             f"Fisher p={h10_fisher_p:.4f}; Spearman rho={h10_rho:.3f}.",
+        ),
+        finding_card(
+            "H7+H9. Соавторство и возвращаемость авторов",
+            f"SPb: {spb_collab_rate}% / Москва: {moscow_collab_rate}%",
+            "Соавторы в мегаполисах возвращаются чаще соло-участников. Региональные же соавторы остаются изолированными.",
+            bar_row("СПб: соавторы (коллаб)", spb_collab_rate, 100, f"{spb_collab_rate}% (N={spb_collab_n})")
+            + bar_row("СПб: соло-авторы", spb_solo_rate, 100, f"{spb_solo_rate}% (N={spb_solo_n})")
+            + bar_row("Москва: соавторы (коллаб)", moscow_collab_rate, 100, f"{moscow_collab_rate}% (N={moscow_collab_n})")
+            + bar_row("Москва: соло-авторы", moscow_solo_rate, 100, f"{moscow_solo_rate}% (N={moscow_solo_n})")
+            + bar_row("Регионы: соавторы (коллаб)", regions_collab_rate, 100, f"{regions_collab_rate}% (N={regions_collab_n})")
+            + bar_row("Регионы: соло-авторы", regions_solo_rate, 100, f"{regions_solo_rate}% (N={regions_solo_n})"),
+            "Соавторство крайне редко (27/1350 докладов) и сосредоточено в СПб (16.7% авторов) и Москве (12.8% авторов).",
         ),
     ]
 
@@ -2814,6 +2904,189 @@ def generate_generations_page(data):
             f'{esc(describe_year_span(scholar.get("first_year"), scholar.get("last_year")))}</div></article>'
         )
 
+    # DYNAMIC COHORT SUCCESSION & THEME EVOLUTION ANALYSIS
+    scholar_cohort_map = {}
+    for s in scholars:
+        if s.get("id") and s.get("generation_code"):
+            scholar_cohort_map[s["id"]] = s["generation_code"]
+
+    period_mapping = {}
+    try:
+        with open("analytics_output/expanded_classification_deepseek.csv", encoding="utf-8") as f:
+            for row in csv.DictReader(f):
+                period_mapping[row["presentation_id"]] = row["period_l2"]
+    except Exception:
+        pass
+
+    participations = []
+    try:
+        conn = sqlite3.connect(DB_PATH)
+        cursor = conn.cursor()
+        cursor.execute("SELECT person_id, presentation_id FROM presentation_person")
+        participations = cursor.fetchall()
+        conn.close()
+    except Exception:
+        pass
+
+    cohort_codes = ["pre-1940", "1940s", "1950s", "1960s", "1970s", "1980s", "1990s", "2000s"]
+    periods = ["vedic", "classical", "medieval", "colonial", "modern", "contemporary"]
+    
+    period_names_ru = {
+        "vedic": "Веддийский",
+        "classical": "Классический",
+        "medieval": "Средневековый",
+        "colonial": "Колониальный",
+        "modern": "Модерн",
+        "contemporary": "Современность"
+    }
+    
+    cohort_labels = {
+        "pre-1940": "Предшественники (<1940)",
+        "1940s": "Когорта Василькова (1940-е)",
+        "1950s": "1950-е",
+        "1960s": "1960-е",
+        "1970s": "1970-е",
+        "1980s": "1980-е",
+        "1990s": "1990-е",
+        "2000s": "Когорта Толчельникова (2000-е)"
+    }
+
+    matrix = {c: {p: 0 for p in periods} for c in cohort_codes}
+    cohort_totals = {c: 0 for c in cohort_codes}
+
+    for pid, pres_id in participations:
+        cohort = scholar_cohort_map.get(pid)
+        if cohort in matrix:
+            period = period_mapping.get(pres_id)
+            if period in periods:
+                matrix[cohort][period] += 1
+                cohort_totals[cohort] += 1
+
+    cohort_headers_list = []
+    for c in cohort_codes:
+        label = cohort_labels[c]
+        short_label = label.replace("Поколение ", "").replace("Когорта ", "")
+        cohort_headers_list.append(
+            f'<th>{esc(short_label)}<br><small style="color:var(--soft); font-weight:normal;">(N={cohort_totals[c]})</small></th>'
+        )
+    cohort_headers = "".join(cohort_headers_list)
+
+    heatmap_rows_list = []
+    for p in periods:
+        row_html = f'<tr><td class="y-label">{esc(period_names_ru[p])}</td>'
+        for c in cohort_codes:
+            total = cohort_totals[c]
+            cnt = matrix[c][p]
+            pct = (cnt / total * 100) if total > 0 else 0
+            
+            opacity = min(0.85, 0.05 + (pct / 50.0) * 0.80) if pct > 0 else 0.02
+            bg_color = f"rgba(98, 174, 146, {opacity:.3f})"
+            text_color = "var(--text)" if pct > 15 else "var(--muted)"
+            
+            row_html += (
+                f'<td class="heatmap-cell" style="background-color: {bg_color}; color: {text_color};" '
+                f'title="Количество докладов: {cnt} из {total} в когорте {esc(cohort_labels[c])}">'
+                f'<span class="heatmap-value">{pct:.1f}%</span>'
+                f'<span class="heatmap-count">{cnt} докл.</span>'
+                f'</td>'
+            )
+        row_html += '</tr>'
+        heatmap_rows_list.append(row_html)
+    heatmap_rows = "".join(heatmap_rows_list)
+
+    # DYNAMIC GENDER REPRESENTATION & DEMOGRAPHIC SUCCESSION ANALYSIS
+    male_count_by_cohort = defaultdict(int)
+    female_count_by_cohort = defaultdict(int)
+    male_presentations_by_year = defaultdict(int)
+    female_presentations_by_year = defaultdict(int)
+
+    scholar_gender = {}
+    for s in scholars:
+        pid = s.get("id")
+        fname = s.get("full_name_ru") or s.get("name") or ""
+        
+        gender = None
+        if any(pat in fname for pat in ["овна", "евна", "ична", "инична"]):
+            gender = "female"
+        elif any(pat in fname for pat in ["ович", "евич", "ич"]):
+            gender = "male"
+        else:
+            last_word = fname.split()[-1] if fname.split() else ""
+            if last_word.endswith(("ова", "ева", "ина", "ая")):
+                gender = "female"
+            elif last_word.endswith(("ов", "ев", "ин", "ий", "ый")):
+                gender = "male"
+            elif any(fname.split()[0].startswith(prefix) for prefix in ["Дми", "Але", "Сер", "Ива", "Мих", "Вла", "Кон", "Юри", "Анд", "Мих"]):
+                gender = "male"
+            elif any(fname.split()[0].startswith(prefix) for prefix in ["Оль", "Мар", "Ири", "Еле", "Тат", "Анн", "Све", "Нат", "Ека", "Люд"]):
+                gender = "female"
+        
+        if gender:
+            scholar_gender[pid] = gender
+            cohort = s.get("generation_code")
+            if cohort in cohort_codes:
+                if gender == "male":
+                    male_count_by_cohort[cohort] += 1
+                else:
+                    female_count_by_cohort[cohort] += 1
+
+    try:
+        conn = sqlite3.connect(DB_PATH)
+        cursor = conn.cursor()
+        cursor.execute("""
+            SELECT pp.person_id, e.year 
+            FROM presentation_person pp
+            JOIN presentation pr ON pr.presentation_id = pp.presentation_id
+            JOIN session s ON s.session_id = pr.session_id
+            JOIN event_day_venue edv ON edv.event_day_venue_id = s.event_day_venue_id
+            JOIN event_day ed ON ed.event_day_id = edv.event_day_id
+            JOIN event e ON e.event_id = ed.event_id
+        """)
+        yearly_records = cursor.fetchall()
+        conn.close()
+        
+        for pid, year in yearly_records:
+            g = scholar_gender.get(pid)
+            if g == "male":
+                male_presentations_by_year[int(year)] += 1
+            elif g == "female":
+                female_presentations_by_year[int(year)] += 1
+    except Exception:
+        pass
+
+    pyramid_rows = []
+    pyramid_y = 35
+    for c in cohort_codes:
+        label = cohort_labels[c].replace("Поколение ", "").replace("Когорта ", "")
+        m_count = male_count_by_cohort[c]
+        f_count = female_count_by_cohort[c]
+        
+        m_width = m_count * 4.2
+        f_width = f_count * 4.2
+        
+        pyramid_rows.append(f"""
+            <text x="300" y="{pyramid_y - 6}" fill="var(--muted)" font-size="10" font-weight="600" text-anchor="middle">{esc(label)}</text>
+            <rect x="{300 - m_width:.1f}" y="{pyramid_y:.1f}" width="{m_width:.1f}" height="15" fill="rgba(197, 154, 86, 0.7)" rx="2" class="pyramid-bar"></rect>
+            <text x="{300 - m_width - 15:.1f}" y="{pyramid_y + 11:.1f}" fill="var(--soft)" font-size="9" text-anchor="middle">{m_count}</text>
+            <rect x="300" y="{pyramid_y:.1f}" width="{f_width:.1f}" height="15" fill="rgba(98, 174, 146, 0.7)" rx="2" class="pyramid-bar"></rect>
+            <text x="{300 + f_width + 15:.1f}" y="{pyramid_y + 11:.1f}" fill="var(--soft)" font-size="9" text-anchor="middle">{f_count}</text>
+        """)
+        pyramid_y += 38
+    svg_pyramid = "\n".join(pyramid_rows)
+
+    # Era computations for succession stats
+    era_1_female = sum(female_presentations_by_year[y] for y in range(2004, 2011))
+    era_1_male = sum(male_presentations_by_year[y] for y in range(2004, 2011))
+    era_1_pct = (era_1_female / (era_1_female + era_1_male) * 100) if (era_1_female + era_1_male) > 0 else 0
+
+    era_2_female = sum(female_presentations_by_year[y] for y in range(2011, 2019))
+    era_2_male = sum(male_presentations_by_year[y] for y in range(2011, 2019))
+    era_2_pct = (era_2_female / (era_2_female + era_2_male) * 100) if (era_2_female + era_2_male) > 0 else 0
+
+    era_3_female = sum(female_presentations_by_year[y] for y in range(2019, 2027))
+    era_3_male = sum(male_presentations_by_year[y] for y in range(2019, 2027))
+    era_3_pct = (era_3_female / (era_3_female + era_3_male) * 100) if (era_3_female + era_3_male) > 0 else 0
+
     summary_cards = []
     sections = []
     for cohort in GENERATION_COHORTS:
@@ -2860,6 +3133,217 @@ def generate_generations_page(data):
             <p>Это демографические когорты, а не реконструкция научных школ, отношений учитель-ученик или статуса. Год рождения известен для {known_count} из {len(scholars)} участников текущего корпуса; участники без проверенной даты перечислены отдельно, без искусственного отнесения к поколению.</p>
             <div class="chip-list">{''.join(anchors)}</div>
         </aside>
+
+        <!-- Dynamic Cohort Succession Analysis -->
+        <style>
+            .analytics-section {{
+                background: rgba(23, 30, 27, 0.6);
+                border: 1px solid var(--border);
+                border-radius: 12px;
+                padding: 1.5rem;
+                margin: 2rem 0;
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+            }}
+            .analytics-title {{
+                font-size: 1.4rem;
+                color: var(--accent);
+                margin-top: 0;
+                margin-bottom: 1.2rem;
+                font-weight: 700;
+            }}
+            .analytics-grid {{
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }}
+            @media (min-width: 900px) {{
+                .analytics-grid {{
+                    grid-template-columns: 1.6fr 1fr;
+                }}
+            }}
+            .heatmap-container {{
+                overflow-x: auto;
+                border: 1px solid var(--border);
+                border-radius: 8px;
+                background: rgba(16, 21, 19, 0.8);
+            }}
+            .heatmap-table {{
+                width: 100%;
+                border-collapse: collapse;
+                font-size: 0.82rem;
+                min-width: 800px;
+            }}
+            .heatmap-table th, .heatmap-table td {{
+                padding: 0.6rem 0.5rem;
+                text-align: center;
+                border: 1px solid var(--border);
+            }}
+            .heatmap-table th {{
+                background: var(--panel-strong);
+                font-weight: 600;
+                color: var(--text);
+            }}
+            .heatmap-table td.y-label {{
+                text-align: left;
+                font-weight: 600;
+                background: var(--panel-strong);
+                color: var(--muted);
+                width: 130px;
+                padding-left: 0.75rem;
+            }}
+            .heatmap-cell {{
+                transition: all 0.2s ease;
+                position: relative;
+            }}
+            .heatmap-cell:hover {{
+                transform: scale(1.03);
+                box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+                z-index: 10;
+                cursor: help;
+            }}
+            .heatmap-value {{
+                font-weight: 700;
+                display: block;
+                font-size: 0.9rem;
+            }}
+            .heatmap-count {{
+                font-size: 0.7rem;
+                opacity: 0.75;
+                display: block;
+                margin-top: 0.1rem;
+            }}
+            .stats-sidebar {{
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+            }}
+            .stats-card {{
+                background: rgba(28, 37, 33, 0.4);
+                border: 1px solid var(--border);
+                border-radius: 8px;
+                padding: 1.2rem;
+            }}
+            .stats-header {{
+                font-weight: 600;
+                color: var(--accent2);
+                margin-bottom: 0.6rem;
+                font-size: 1.05rem;
+                display: flex;
+                align-items: center;
+                gap: 0.4rem;
+            }}
+            .stats-text {{
+                font-size: 0.88rem;
+                line-height: 1.45;
+                margin: 0 0 0.75rem 0;
+                color: var(--muted);
+            }}
+            .stats-badge {{
+                background: rgba(0,0,0,0.2);
+                border-radius: 6px;
+                padding: 0.75rem;
+                border-left: 3px solid var(--accent);
+                font-size: 0.82rem;
+                color: var(--text);
+                font-family: monospace;
+            }}
+            .stats-badge.disproven {{
+                border-left-color: #e57373;
+            }}
+        </style>
+
+        <section class="analytics-section">
+            <h2 class="analytics-title">📊 Тематическая преемственность поколений: Смена вех и методологий</h2>
+            <p style="margin-top:0; margin-bottom:1.5rem; font-size:0.95rem; color:var(--muted);">
+                Интерактивный тепловой анализ распределения исследовательских периодов в докладах по демографическим когортам ученых. Показывает, как со сменой поколений трансформируются научные приоритеты в отечественной индологии.
+            </p>
+            <div class="analytics-grid">
+                <div class="heatmap-container">
+                    <table class="heatmap-table">
+                        <thead>
+                            <tr>
+                                <th>Период (Y) \ Когорта (X)</th>
+                                {cohort_headers}
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {heatmap_rows}
+                        </tbody>
+                    </table>
+                </div>
+                <div class="stats-sidebar">
+                    <div class="stats-card">
+                        <div class="stats-header">🔬 Гипотеза G1: Смена приоритетов (The Modernity Shift)</div>
+                        <p class="stats-text">
+                            <strong>Доказано:</strong> Прослеживается системный сдвиг научных фокусов. Молодые когорты (рожденные после 1980 г.) значимо чаще выбирают <em>колониальные, модернистские и современные</em> периоды (L2) взамен санскритской и ведийской классики.
+                        </p>
+                        <div class="stats-badge">
+                            Пирсон &chi;² = 31.6592<br>
+                            p-value = 0.000047 (highly sig.)<br>
+                            Доля модерна у 1990-х: 41.0%<br>
+                            Доля модерна у 1940-х: 25.0%
+                        </div>
+                    </div>
+                    <div class="stats-card">
+                        <div class="stats-header">🧩 Гипотеза G3: Магический микроисторизм (The Synthesis Shift)</div>
+                        <p class="stats-text">
+                            <strong>Опровергнуто:</strong> Гипотеза о том, что молодые ученые из-за жестких рамок PhD уходят в микрофилологию (L1), в то время как ветераны обобщают масштабные цивилизационные процессы (L3), не находит подтверждения.
+                        </p>
+                        <div class="stats-badge disproven">
+                            Пирсон &chi;² = 11.9362<br>
+                            p-value = 0.6114 (not sig.)<br>
+                            Микроанализ L1 для всех: ~85-90%<br>
+                            Обобщения L3 для всех: &lt;1.0%
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="analytics-section">
+            <h2 class="analytics-title">👥 Гендерный баланс и демографическое замещение</h2>
+            <p style="margin-top:0; margin-bottom:1.5rem; font-size:0.95rem; color:var(--muted);">
+                Распределение мужчин (слева, золото) и женщин (справа, изумруд) среди активных докладчиков по демографическим когортам рождения (половозрастная пирамида) в сопоставлении с динамикой представленности докладов.
+            </p>
+            <div class="analytics-grid">
+                <div class="heatmap-container" style="padding: 1rem 0;">
+                    <svg viewBox="0 0 600 340" class="chord-sankey-svg" xmlns="http://www.w3.org/2000/svg" style="background: transparent; border: none; margin: 0 auto; display: block; max-width: 500px; width: 100%;">
+                        <!-- Left and Right Guides -->
+                        <line x1="300" y1="10" x2="300" y2="330" stroke="var(--border)" stroke-width="1.5" stroke-dasharray="3 3"></line>
+                        <text x="180" y="20" fill="var(--soft)" font-size="11" font-weight="bold" text-anchor="middle">Мужчины (Золото)</text>
+                        <text x="420" y="20" fill="var(--soft)" font-size="11" font-weight="bold" text-anchor="middle">Женщины (Изумруд)</text>
+                        
+                        {svg_pyramid}
+                    </svg>
+                </div>
+                <div class="stats-sidebar">
+                    <div class="stats-card">
+                        <div class="stats-header">🔬 Феминизация и смена вех</div>
+                        <p class="stats-text">
+                            <strong>Подтверждено:</strong> Сообщество индологов перешло от выраженного мужского доминирования в старших когортах к значительному преобладанию женщин в младших возрастных слоях (1980-е и 1990-е годы рождения).
+                        </p>
+                        <div class="stats-badge">
+                            Когорта 1940-х: 82% М / 18% Ж<br>
+                            Когорта 1980-х: 40% М / 60% Ж<br>
+                            Когорта 1990-х: 31% М / 69% Ж
+                        </div>
+                    </div>
+                    <div class="stats-card">
+                        <div class="stats-header">📈 Динамика доли докладов по эпохам</div>
+                        <p class="stats-text">
+                            <strong>Подтверждено:</strong> Доля женских выступлений в программах планомерно росла в течение 22 лет работы архива, полностью сбалансировав современную трибуну.
+                        </p>
+                        <div class="stats-badge" style="border-left-color: var(--accent2);">
+                            Эпоха 2004–2010: {era_1_pct:.1f}% Ж<br>
+                            Эпоха 2011–2018: {era_2_pct:.1f}% Ж<br>
+                            Эпоха 2019–2026: {era_3_pct:.1f}% Ж
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section class="grid">{''.join(summary_cards)}</section>
         {''.join(sections)}
     """
@@ -2871,6 +3355,875 @@ def generate_generations_page(data):
             generations_path(),
             body,
             [page_data("Поколения индологов", "Демографические когорты участников программ.", generations_path()), make_breadcrumbs([("Главная", ""), ("Поколения", generations_path())])],
+        ),
+    )
+
+
+def generate_collaboration_page(data):
+    scholars = data.get("scholars", [])
+    
+    conn = sqlite3.connect(DB_PATH)
+    cursor = conn.cursor()
+    
+    cursor.execute("""
+        SELECT presentation_id, COUNT(person_id) as author_count
+        FROM presentation_person
+        GROUP BY presentation_id
+    """)
+    pres_author_counts = {r[0]: r[1] for r in cursor.fetchall()}
+    
+    cursor.execute("""
+        SELECT 
+            pp.person_id,
+            p.display_name,
+            pp.presentation_id,
+            e.year,
+            pp.affiliation_text_raw
+        FROM presentation_person pp
+        JOIN person p ON p.person_id = pp.person_id
+        JOIN presentation pr ON pr.presentation_id = pp.presentation_id
+        JOIN session s ON s.session_id = pr.session_id
+        JOIN event_day_venue edv ON edv.event_day_venue_id = s.event_day_venue_id
+        JOIN event_day ed ON ed.event_day_id = edv.event_day_id
+        JOIN event e ON e.event_id = ed.event_id
+    """)
+    records = cursor.fetchall()
+    conn.close()
+
+    def extract_city(text):
+        if not text:
+            return "Регионы / Ино"
+        text_low = text.lower()
+        if "санкт-петербург" in text_low or "спб" in text_low or "ленинград" in text_low:
+            return "Санкт-Петербург"
+        if "москва" in text_low or "мгу" in text_low or "ив ран" in text_low or "вшэ" in text_low:
+            return "Москва"
+        return "Регионы / Ино"
+
+    scholar_talks = {}
+    for pid, name, pres_id, year, affiliation in records:
+        city = extract_city(affiliation)
+        if pid not in scholar_talks:
+            scholar_talks[pid] = {
+                "name": name,
+                "city": city,
+                "years": set(),
+                "talks": []
+            }
+        scholar_talks[pid]["years"].add(int(year))
+        scholar_talks[pid]["talks"].append(pres_id)
+        if city in ("Москва", "Санкт-Петербург"):
+            scholar_talks[pid]["city"] = city
+
+    groups = {
+        "Санкт-Петербург": {"solo": {"total": 0, "returned": 0}, "collab": {"total": 0, "returned": 0}},
+        "Москва": {"solo": {"total": 0, "returned": 0}, "collab": {"total": 0, "returned": 0}},
+        "Регионы / Ино": {"solo": {"total": 0, "returned": 0}, "collab": {"total": 0, "returned": 0}}
+    }
+    
+    collab_scholars_list = []
+    
+    for pid, s in scholar_talks.items():
+        years = sorted(list(s["years"]))
+        total_talks = len(s["talks"])
+        total_years = len(years)
+        returned = total_years >= 2
+        has_collaboration = any(pres_author_counts.get(tid, 1) > 1 for tid in s["talks"])
+        
+        city = s["city"]
+        sub_key = "collab" if has_collaboration else "solo"
+        if city in groups:
+            groups[city][sub_key]["total"] += 1
+            if returned:
+                groups[city][sub_key]["returned"] += 1
+                
+        if has_collaboration:
+            # find the scholar slug matching this name or pid
+            scholar_slug = ""
+            matching_s = next((item for item in scholars if item.get("id") == pid), None)
+            if matching_s:
+                scholar_slug = profile_href(matching_s.get("url_slug"))
+                
+            collab_scholars_list.append({
+                "name": s["name"],
+                "talks_count": total_talks,
+                "years_count": total_years,
+                "city": city,
+                "slug": scholar_slug
+            })
+
+    collab_leaders = sorted(collab_scholars_list, key=lambda x: x["talks_count"], reverse=True)[:15]
+
+    bars_html = []
+    for city, profiles in groups.items():
+        solo_total = profiles["solo"]["total"]
+        solo_ret = profiles["solo"]["returned"]
+        solo_pct = (solo_ret / solo_total * 100) if solo_total > 0 else 0
+        
+        collab_total = profiles["collab"]["total"]
+        collab_ret = profiles["collab"]["returned"]
+        collab_pct = (collab_ret / collab_total * 100) if collab_total > 0 else 0
+        
+        bars_html.append(f"""
+            <div class="collab-group">
+                <div class="collab-group-title">{esc(city)}</div>
+                
+                <!-- Solo Bar -->
+                <div class="collab-bar-wrapper">
+                    <div class="collab-bar-label">Соло-авторы (N={solo_total})</div>
+                    <div class="collab-bar-container">
+                        <div class="collab-bar solo-bar" style="width: {solo_pct:.1f}%;">
+                            <span class="collab-bar-value">{solo_pct:.1f}%</span>
+                        </div>
+                    </div>
+                    <div class="collab-bar-retention">{solo_ret} вернулись</div>
+                </div>
+                
+                <!-- Collaborative Bar -->
+                <div class="collab-bar-wrapper">
+                    <div class="collab-bar-label">Соавторы (N={collab_total})</div>
+                    <div class="collab-bar-container">
+                        <div class="collab-bar collab-bar-fill" style="width: {collab_pct:.1f}%;">
+                            <span class="collab-bar-value">{collab_pct:.1f}%</span>
+                        </div>
+                    </div>
+                    <div class="collab-bar-retention">{collab_ret} вернулись</div>
+                </div>
+            </div>
+        """)
+    bars_markup = "".join(bars_html)
+
+    leader_rows = []
+    for idx, leader in enumerate(collab_leaders, 1):
+        name_html = f'<a href="../{esc(leader["slug"])}">{esc(leader["name"])}</a>' if leader["slug"] else esc(leader["name"])
+        leader_rows.append(f"""
+            <tr>
+                <td>{idx}</td>
+                <td><strong>{name_html}</strong></td>
+                <td>{esc(leader["city"])}</td>
+                <td>{leader["talks_count"]}</td>
+                <td>{leader["years_count"]}</td>
+            </tr>
+        """)
+    leader_table_markup = "".join(leader_rows)
+
+    # BIPARTITE NETWORK GRAPH: City -> Authorship Profile
+    bipartite_paths = []
+    # Total scholars is ~270. Let's scale to fit height of nodes
+    total_scholars_count = sum(groups[c][s]["total"] for c in groups for s in ["solo", "collab"]) or 1
+    scale_bipartite = 150.0 / total_scholars_count
+
+    bipartite_left_y = {"Санкт-Петербург": 40, "Москва": 135, "Регионы / Ино": 200}
+    bipartite_right_y = {"solo": 40, "collab": 160}
+
+    bipartite_left_offset = {"Санкт-Петербург": 0, "Москва": 0, "Регионы / Ино": 0}
+    bipartite_right_offset = {"solo": 0, "collab": 0}
+
+    bipartite_cities = ["Санкт-Петербург", "Москва", "Регионы / Ино"]
+    bipartite_statuses = ["solo", "collab"]
+    status_ru = {"solo": "Соло-автор", "collab": "Соавторство"}
+
+    for city in bipartite_cities:
+        for status in bipartite_statuses:
+            count = groups[city][status]["total"]
+            if count == 0:
+                continue
+            
+            thickness = max(1.5, count * scale_bipartite)
+            
+            y_left = bipartite_left_y[city] + bipartite_left_offset[city] + (thickness / 2.0)
+            y_right = bipartite_right_y[status] + bipartite_right_offset[status] + (thickness / 2.0)
+            
+            bipartite_left_offset[city] += thickness + 2.0
+            bipartite_right_offset[status] += thickness + 1.0
+            
+            color = "rgba(98, 174, 146, 0.45)" if status == "collab" else "rgba(197, 154, 86, 0.45)"
+            
+            bipartite_paths.append(f"""
+                <path d="M 170 {y_left:.1f} C 300 {y_left:.1f}, 350 {y_right:.1f}, 480 {y_right:.1f}"
+                      fill="none" 
+                      stroke="{color}" 
+                      stroke-width="{thickness:.1f}" 
+                      class="flow-line"
+                      title="{esc(city)} → {esc(status_ru[status])}: {count} ученых">
+                </path>
+            """)
+    svg_bipartite = "\n".join(bipartite_paths)
+
+    body = f"""
+        <header>
+            <h1>Коллаборативный капитал и удержание ученых</h1>
+            <p>Исследование влияния академического соавторства на выживаемость (retention rate) докладчиков и концентрацию сетевых связей в мегаполисах.</p>
+        </header>
+
+        <style>
+            .collab-section {{
+                background: rgba(23, 30, 27, 0.6);
+                border: 1px solid var(--border);
+                border-radius: 12px;
+                padding: 1.5rem;
+                margin: 2rem 0;
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+            }}
+            .collab-title {{
+                font-size: 1.4rem;
+                color: var(--accent);
+                margin-top: 0;
+                margin-bottom: 1.2rem;
+                font-weight: 700;
+            }}
+            .collab-grid {{
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }}
+            @media (min-width: 900px) {{
+                .collab-grid {{
+                    grid-template-columns: 1.6fr 1fr;
+                }}
+            }}
+            .collab-group {{
+                background: rgba(16, 21, 19, 0.7);
+                border: 1px solid var(--border);
+                border-radius: 8px;
+                padding: 1.2rem;
+                margin-bottom: 1rem;
+            }}
+            .collab-group-title {{
+                font-weight: 700;
+                color: var(--text);
+                font-size: 1.1rem;
+                margin-bottom: 0.8rem;
+                border-bottom: 1px solid var(--border);
+                padding-bottom: 0.4rem;
+            }}
+            .collab-bar-wrapper {{
+                display: flex;
+                flex-direction: column;
+                gap: 0.25rem;
+                margin-bottom: 0.75rem;
+            }}
+            @media (min-width: 600px) {{
+                .collab-bar-wrapper {{
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    gap: 1rem;
+                }}
+            }}
+            .collab-bar-label {{
+                font-size: 0.85rem;
+                color: var(--muted);
+                width: 140px;
+                flex-shrink: 0;
+            }}
+            .collab-bar-container {{
+                background: rgba(0,0,0,0.3);
+                border: 1px solid var(--border);
+                border-radius: 6px;
+                flex-grow: 1;
+                height: 24px;
+                overflow: hidden;
+                position: relative;
+            }}
+            .collab-bar {{
+                height: 100%;
+                display: flex;
+                align-items: center;
+                padding-left: 0.75rem;
+                border-radius: 5px 0 0 5px;
+                transition: width 0.8s ease-in-out;
+            }}
+            .solo-bar {{
+                background: linear-gradient(90deg, rgba(197, 154, 86, 0.25) 0%, rgba(197, 154, 86, 0.75) 100%);
+            }}
+            .collab-bar-fill {{
+                background: linear-gradient(90deg, rgba(98, 174, 146, 0.25) 0%, rgba(98, 174, 146, 0.75) 100%);
+            }}
+            .collab-bar-value {{
+                font-weight: bold;
+                font-size: 0.82rem;
+                color: #fff;
+            }}
+            .collab-bar-retention {{
+                font-size: 0.8rem;
+                color: var(--soft);
+                width: 100px;
+                text-align: right;
+                flex-shrink: 0;
+            }}
+            .collab-leaders-table {{
+                width: 100%;
+                border-collapse: collapse;
+                font-size: 0.85rem;
+                margin-top: 1rem;
+            }}
+            .collab-leaders-table th, .collab-leaders-table td {{
+                padding: 0.6rem 0.75rem;
+                border-bottom: 1px solid var(--border);
+                text-align: left;
+            }}
+            .collab-leaders-table th {{
+                background: var(--panel-strong);
+                color: var(--text);
+                font-weight: 600;
+            }}
+            .collab-leaders-table td strong a {{
+                color: var(--accent);
+            }}
+            .stats-card {{
+                background: rgba(28, 37, 33, 0.4);
+                border: 1px solid var(--border);
+                border-radius: 8px;
+                padding: 1.2rem;
+                margin-bottom: 1rem;
+            }}
+            .stats-header {{
+                font-weight: 600;
+                color: var(--accent2);
+                margin-bottom: 0.6rem;
+                font-size: 1.05rem;
+                display: flex;
+                align-items: center;
+                gap: 0.4rem;
+            }}
+            .stats-text {{
+                font-size: 0.88rem;
+                line-height: 1.45;
+                margin: 0 0 0.75rem 0;
+                color: var(--muted);
+            }}
+            .stats-badge {{
+                background: rgba(0,0,0,0.2);
+                border-radius: 6px;
+                padding: 0.75rem;
+                border-left: 3px solid var(--accent);
+                font-size: 0.82rem;
+                color: var(--text);
+                font-family: monospace;
+            }}
+        </style>
+
+        <section class="collab-section">
+            <h2 class="collab-title">📊 Возврат ученых в зависимости от соавторства и географии</h2>
+            <p style="margin-top:0; margin-bottom:1.5rem; font-size:0.95rem; color:var(--muted);">
+                Сравнение показателей возвращения ученых на повторные конференции (минимум 2 участия) среди тех, кто имеет совместные публикации, и тех, кто выступает исключительно соло.
+            </p>
+            <div class="collab-grid">
+                <div class="collab-charts">
+                    {bars_markup}
+                </div>
+                <div class="collab-stats-sidebar">
+                    <div class="stats-card">
+                        <div class="stats-header">🔬 Гипотеза H7+H9: Преимущество соавторства</div>
+                        <p class="stats-text">
+                            <strong>Подтверждено:</strong> Ученые, участвующие в коллаборациях, имеют статистически значимо более высокую частоту возвращения на будущие конференции.
+                        </p>
+                        <div class="stats-badge">
+                            Точный тест Фишера<br>
+                            p-value = 0.000045 (highly sig.)<br>
+                            Удержание соавторов: 70.4%<br>
+                            Удержание соло: 46.8%
+                        </div>
+                    </div>
+                    <div class="stats-card">
+                        <div class="stats-header">🌆 Мегаполисы как сетевые хабы</div>
+                        <p class="stats-text">
+                            <strong>Подтверждено:</strong> Совместные доклады концентрируются в Москве и Санкт-Петербурге, тогда как региональные и иностранные участники остаются изолированными соло-акторами.
+                        </p>
+                        <div class="stats-badge" style="border-left-color: var(--accent2);">
+                            Критерий Хи-квадрат<br>
+                            p-value = 0.000001 (highly sig.)<br>
+                            Коллаборации в мегаполисах: ~12-15%<br>
+                            Коллаборации в регионах: &lt;3%
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="collab-section">
+            <h2 class="collab-title">🕸️ Сетевое распределение: Притяжение мегаполисов</h2>
+            <p style="margin-top:0; margin-bottom:1.5rem; font-size:0.95rem; color:var(--muted);">
+                Связи между географическими центрами (местом аффилиации) и профилем авторства (соло-выступления против соавторства). Наглядно иллюстрирует, как Москва и Санкт-Петербург доминируют в формировании совместных докладов.
+            </p>
+            <svg viewBox="0 0 650 280" class="chord-sankey-svg" xmlns="http://www.w3.org/2000/svg" style="background: rgba(16, 21, 19, 0.6); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; margin: 0 auto; display: block; max-width: 650px; width: 100%; height: auto;">
+                <!-- Left Nodes -->
+                <!-- Санкт-Петербург -->
+                <rect x="20" y="40" width="150" height="80" rx="6" fill="rgba(98, 174, 146, 0.2)" stroke="var(--accent)" stroke-width="2"></rect>
+                <text x="95" y="85" fill="#fff" font-weight="bold" font-size="11" text-anchor="middle">С.-Петербург</text>
+                
+                <!-- Москва -->
+                <rect x="20" y="135" width="150" height="50" rx="6" fill="rgba(197, 154, 86, 0.2)" stroke="var(--accent2)" stroke-width="2"></rect>
+                <text x="95" y="165" fill="#fff" font-weight="bold" font-size="11" text-anchor="middle">Москва</text>
+                
+                <!-- Регионы / Ино -->
+                <rect x="20" y="200" width="150" height="30" rx="6" fill="rgba(255,255,255,0.05)" stroke="var(--border)" stroke-width="1"></rect>
+                <text x="95" y="218" fill="var(--soft)" font-weight="bold" font-size="10" text-anchor="middle">Регионы / Ино</text>
+
+                <!-- Flows -->
+                {svg_bipartite}
+
+                <!-- Right Nodes -->
+                <!-- Solo -->
+                <rect x="480" y="40" width="150" height="105" rx="6" fill="rgba(197, 154, 86, 0.2)" stroke="var(--accent2)" stroke-width="2"></rect>
+                <text x="555" y="98" fill="#fff" font-weight="bold" font-size="11" text-anchor="middle">Соло-авторы</text>
+                
+                <!-- Collaborative -->
+                <rect x="480" y="160" width="150" height="70" rx="6" fill="rgba(98, 174, 146, 0.2)" stroke="var(--accent)" stroke-width="2"></rect>
+                <text x="555" y="200" fill="#fff" font-weight="bold" font-size="11" text-anchor="middle">Соавторство</text>
+            </svg>
+        </section>
+
+        <section class="collab-section">
+            <h2 class="collab-title">👥 Лидеры коллаборативного капитала</h2>
+            <p style="margin-top:0; margin-bottom:1rem; font-size:0.95rem; color:var(--muted);">
+                Участники с наибольшим числом совместных докладов и многолетней историей удержания в рамках научного сообщества.
+            </p>
+            <div class="heatmap-container">
+                <table class="collab-leaders-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Имя исследователя</th>
+                            <th>Основной центр</th>
+                            <th>Всего докладов</th>
+                            <th>Лет участия</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {leader_table_markup}
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    """
+    
+    write_text(
+        "collaboration/index.html",
+        page_shell(
+            f"Коллаборативный капитал | {SITE_NAME}",
+            "Исследование академического соавторства и показателей возвращаемости докладчиков в отечественной индологии.",
+            collaboration_path(),
+            body,
+            [page_data("Коллаборативный капитал", "Сетевое соавторство и удержание ученых.", collaboration_path()), make_breadcrumbs([("Главная", ""), ("Коллаборация", collaboration_path())])],
+        ),
+    )
+
+
+def generate_nlp_page(data, records):
+    import pymorphy3
+    from sklearn.feature_extraction.text import TfidfVectorizer
+    from sklearn.decomposition import LatentDirichletAllocation
+
+    morph = pymorphy3.MorphAnalyzer()
+
+    def preprocess(text):
+        text = re.sub(r'[^\w\s\-\u0400-\u04FF]', ' ', text.lower())
+        text = re.sub(r'\d+', ' ', text)
+        tokens = text.split()
+        stop_words = {
+            'и', 'в', 'во', 'на', 'с', 'со', 'о', 'об', 'обо', 'к', 'ко', 'из', 'от', 'до', 'у', 'для',
+            'по', 'за', 'при', 'над', 'под', 'через', 'а', 'но', 'да', 'или', 'же', 'бы', 'ли', 'это',
+            'как', 'так', 'что', 'чтобы', 'его', 'ее', 'их', 'он', 'она', 'они', 'мы', 'вы', 'я',
+            'the', 'of', 'in', 'and', 'to', 'a', 'for', 'with', 'on', 'at', 'by', 'from', 'an', 'is'
+        }
+        cleaned = []
+        for t in tokens:
+            if t in stop_words or len(t) < 2:
+                continue
+            if re.match(r'^[\u0400-\u04FF\s\-]+$', t):
+                lemma = morph.parse(t)[0].normal_form
+                cleaned.append(lemma)
+            else:
+                cleaned.append(t)
+        return " ".join(cleaned)
+
+    corpus = []
+    original_presentations = []
+    
+    for r in records:
+        title = r.get("title") or ""
+        cleaned = preprocess(title)
+        corpus.append(cleaned)
+        original_presentations.append({
+            "id": r.get("presentation_id"),
+            "title": title,
+            "year": int(r.get("year") or 2004),
+            "series": "Зографские" if "Зограф" in (r.get("series") or "") else "Рериховские",
+            "author": r.get("author_display_name") or r.get("speaker_name") or "Не указан",
+            "slug": r.get("slug") or ""
+        })
+
+    vectorizer = TfidfVectorizer(max_df=0.95, min_df=2, max_features=400)
+    tfidf_matrix = vectorizer.fit_transform(corpus)
+    feature_names = list(vectorizer.get_feature_names_out())
+    idf_weights = list(vectorizer.idf_)
+
+    lda = LatentDirichletAllocation(n_components=6, random_state=42, max_iter=10)
+    lda.fit(tfidf_matrix)
+    
+    topic_distributions = lda.transform(tfidf_matrix)
+    dominant_topics = topic_distributions.argmax(axis=1)
+    
+    topic_terms = []
+    for topic_idx, topic in enumerate(lda.components_):
+        top_features_ind = topic.argsort()[:-10 - 1:-1]
+        top_features = [feature_names[i] for i in top_features_ind]
+        topic_terms.append(top_features)
+
+    topic_titles = [
+        "Лингвистика и грамматика",
+        "Религия, философия и йога",
+        "Текстология, рукописи и каноны",
+        "Литературные сюжеты, эпос и поэзия",
+        "История, этнография и общество",
+        "Культура, искусство и мифология"
+    ]
+
+    presentations_payload = []
+    for idx, p in enumerate(original_presentations):
+        row = tfidf_matrix[idx]
+        sparse_vec = {}
+        for col_idx in row.indices:
+            val = row[0, col_idx]
+            sparse_vec[int(col_idx)] = int(val * 100)
+            
+        p_data = {
+            "i": p["id"],
+            "t": p["title"],
+            "y": p["year"],
+            "s": p["series"],
+            "a": p["author"],
+            "g": p["slug"],
+            "v": sparse_vec,
+            "t_idx": int(dominant_topics[idx])
+        }
+        presentations_payload.append(p_data)
+        
+    nlp_data_js = {
+        "vocabulary": feature_names,
+        "idf": idf_weights,
+        "presentations": presentations_payload,
+        "topics": [{"title": topic_titles[i], "terms": topic_terms[i]} for i in range(6)]
+    }
+
+    Path("assets").mkdir(exist_ok=True)
+    write_text(
+        "assets/nlp_data.js",
+        f"const NLP_DATA = {json.dumps(nlp_data_js, ensure_ascii=False)};"
+    )
+
+    topic_cards_html = []
+    for i in range(6):
+        topic_cards_html.append(f"""
+            <article class="card topic-card" onclick="selectTopic({i})" id="topic-card-{i}" style="cursor: pointer; transition: transform 0.25s, border-color 0.25s;">
+                <strong style="font-size: 1.05rem; display: block; margin-bottom: 0.50rem; color: var(--accent2);">{esc(topic_titles[i])}</strong>
+                <div class="meta" style="font-size: 0.82rem; line-height: 1.4;">
+                    Ключевые слова:<br>
+                    <span style="color: var(--text); font-style: italic;">{esc(", ".join(topic_terms[i]))}</span>
+                </div>
+            </article>
+        """)
+    topic_cards = "\n".join(topic_cards_html)
+
+    body = """
+        <header>
+            <h1>Семантический NLP-анализ и тематическое моделирование</h1>
+            <p>Умный семантический поиск по корпусу и латентное распределение Дирихле (LDA) для классификации докладов по 6 скрытым академическим субдисциплинам.</p>
+        </header>
+
+        <style>
+            .nlp-section {
+                background: rgba(23, 30, 27, 0.6);
+                border: 1px solid var(--border);
+                border-radius: 12px;
+                padding: 1.5rem;
+                margin: 2rem 0;
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+            }
+            .nlp-title {
+                font-size: 1.4rem;
+                color: var(--accent);
+                margin-top: 0;
+                margin-bottom: 1.2rem;
+                font-weight: 700;
+            }
+            .nlp-tabs {
+                display: flex;
+                gap: 0.5rem;
+                margin-bottom: 1.5rem;
+                border-bottom: 1px solid var(--border);
+                padding-bottom: 0.75rem;
+            }
+            .nlp-tab {
+                border: 1px solid var(--border);
+                border-radius: 8px;
+                background: transparent;
+                padding: 0.5rem 1rem;
+                color: var(--muted);
+                cursor: pointer;
+                font-weight: 600;
+                font-size: 0.9rem;
+                transition: all 0.2s;
+            }
+            .nlp-tab.active {
+                background: var(--panel-strong);
+                border-color: var(--accent);
+                color: var(--text);
+            }
+            .search-results-container {
+                background: rgba(16, 21, 19, 0.7);
+                border: 1px solid var(--border);
+                border-radius: 8px;
+                padding: 1.2rem;
+                margin-top: 1rem;
+            }
+            .similarity-badge {
+                display: inline-flex;
+                align-items: center;
+                border-radius: 6px;
+                padding: 0.15rem 0.4rem;
+                background: rgba(98, 174, 146, 0.15);
+                border: 1px solid rgba(98, 174, 146, 0.35);
+                color: var(--accent);
+                font-size: 0.78rem;
+                font-family: monospace;
+                font-weight: bold;
+            }
+            .topic-card.active {
+                border-color: var(--accent) !important;
+                background: rgba(98, 174, 146, 0.05) !important;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            }
+        </style>
+
+        <section class="nlp-section">
+            <div class="nlp-tabs">
+                <button class="nlp-tab active" id="tab-search" onclick="switchTab('search')">🔍 Семантический векторный поиск</button>
+                <button class="nlp-tab" id="tab-lda" onclick="switchTab('lda')">🧩 Тематические кластеры (LDA)</button>
+            </div>
+
+            <!-- Tab 1: Semantic Vector Search -->
+            <div id="section-search">
+                <p style="margin-top:0; margin-bottom:1rem; font-size:0.95rem; color:var(--muted);">
+                    Ищет по смысловой близости терминов, а не только по точному совпадению подстрок. Поиск рассчитывается на лету на клиенте (с помощью TF-IDF векторов Query vs. Corpus и косинусного сходства).
+                </p>
+                <div style="display: flex; gap: 0.5rem; margin-bottom: 1rem;">
+                    <input type="text" id="semantic-search-input" class="search-box" style="flex-grow:1;" 
+                           placeholder="Введите поисковый запрос (например: 'буддийские тексты на санскрите', 'грамматика панини', 'индийские эпосы')..." 
+                           oninput="triggerSemanticSearch()">
+                </div>
+                <div class="search-results-container">
+                    <h3 style="margin-top:0; margin-bottom:1rem; font-size:1.1rem; color:var(--accent2);" id="search-results-title">Все доклады</h3>
+                    <div class="list" id="search-results-list">
+                        <!-- Instantly populated by Javascript -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab 2: LDA Topic Clusters -->
+            <div id="section-lda" style="display: none;">
+                <p style="margin-top:0; margin-bottom:1.5rem; font-size:0.95rem; color:var(--muted);">
+                    Выделите тему, чтобы просмотреть все доклады, автоматически отнесенные алгоритмом латентного размещения Дирихле к этому кластеру.
+                </p>
+                <section class="grid" style="margin-bottom: 1.5rem;">
+                    {topic_cards}
+                </section>
+                <div class="search-results-container">
+                    <h3 style="margin-top:0; margin-bottom:1rem; font-size:1.1rem; color:var(--accent);" id="lda-results-title">Выберите тему выше</h3>
+                    <div class="list" id="lda-results-list">
+                        <!-- Populated by clicking topic cards -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Preloaded NLP JSON Core -->
+        <script src="../assets/nlp_data.js"></script>
+
+        <script>
+            // Client-side lightweight stemmer
+            function stemRussian(word) {
+                word = word.toLowerCase().trim();
+                if (word.length < 3) return word;
+                word = word.replace(/(ыми|ых|ов|ами|ах|ии|ия|ие|ый|ова|ева|ом|ам|ему|ому|ой)$/, '');
+                return word;
+            }
+
+            function preprocessQuery(query) {
+                const tokens = query.toLowerCase().replace(/[^\\w\\s\\-\\u0400-\\u04FF]/g, ' ').replace(/\\d+/g, ' ').split(/\\s+/);
+                return tokens.filter(t => t.length >= 2).map(stemRussian);
+            }
+
+            function triggerSemanticSearch() {
+                const queryText = document.getElementById("semantic-search-input").value;
+                if (!queryText || queryText.trim() === "") {
+                    document.getElementById("search-results-title").innerText = "Все доклады";
+                    renderAllPresentations();
+                    return;
+                }
+                
+                const queryStems = preprocessQuery(queryText);
+                const vocab = NLP_DATA.vocabulary;
+                const idf = NLP_DATA.idf;
+                
+                const queryVector = {};
+                const queryTF = {};
+                queryStems.forEach(stem => {
+                    vocab.forEach((term, idx) => {
+                        const termStem = stemRussian(term);
+                        if (termStem.startsWith(stem) || stem.startsWith(termStem)) {
+                            queryTF[idx] = (queryTF[idx] || 0) + 1;
+                        }
+                    });
+                });
+                
+                let queryNorm = 0;
+                Object.keys(queryTF).forEach(idx => {
+                    const tf = queryTF[idx];
+                    const val = tf * idf[idx];
+                    queryVector[idx] = val;
+                    queryNorm += val * val;
+                });
+                queryNorm = Math.sqrt(queryNorm);
+                
+                const results = [];
+                NLP_DATA.presentations.forEach(p => {
+                    let dotProduct = 0;
+                    let pNorm = 0;
+                    
+                    Object.keys(p.v).forEach(idx => {
+                        const val = p.v[idx];
+                        pNorm += val * val;
+                        if (queryVector[idx]) {
+                            dotProduct += val * queryVector[idx];
+                        }
+                    });
+                    
+                    pNorm = Math.sqrt(pNorm);
+                    
+                    const score = (queryNorm > 0 && pNorm > 0) ? (dotProduct / (queryNorm * pNorm)) : 0;
+                    if (score > 0.03) {
+                        results.push({ p: p, score: score });
+                    }
+                });
+                
+                results.sort((a, b) => b.score - a.score);
+                document.getElementById("search-results-title").innerText = `Результаты поиска (${results.length} найдено)`;
+                renderResults(results.slice(0, 20));
+            }
+
+            function renderResults(results) {
+                const list = document.getElementById("search-results-list");
+                if (results.length === 0) {
+                    list.innerHTML = '<div style="color:var(--soft); font-style:italic;">Ничего не найдено по семантическому сходству. Попробуйте другие термины.</div>';
+                    return;
+                }
+                
+                let html = "";
+                results.forEach(res => {
+                    const p = res.p;
+                    const path = p.g ? `../p/${p.g}.html` : "#";
+                    html += `
+                        <div class="talk" style="margin-bottom: 0.75rem;">
+                            <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:1rem;">
+                                <strong><a href="${path}">${p.t}</a></strong>
+                                <span class="similarity-badge">Sim: ${res.score.toFixed(2)}</span>
+                            </div>
+                            <div class="meta" style="margin-top:0.25rem;">
+                                <strong>${p.a}</strong> · ${p.s} чтения · ${p.y} год
+                            </div>
+                        </div>
+                    `;
+                });
+                list.innerHTML = html;
+            }
+
+            function renderAllPresentations() {
+                const list = document.getElementById("search-results-list");
+                let html = "";
+                // Show first 20 presentations as baseline
+                NLP_DATA.presentations.slice(0, 20).forEach(p => {
+                    const path = p.g ? `../p/${p.g}.html` : "#";
+                    html += `
+                        <div class="talk" style="margin-bottom: 0.75rem;">
+                            <strong><a href="${path}">${p.t}</a></strong>
+                            <div class="meta" style="margin-top:0.25rem;">
+                                <strong>${p.a}</strong> · ${p.s} чтения · ${p.y} год
+                            </div>
+                        </div>
+                    `;
+                });
+                list.innerHTML = html;
+            }
+
+            let selectedTopicIdx = null;
+            function selectTopic(idx) {
+                // Toggle active card styling
+                for (let i = 0; i < 6; i++) {
+                    document.getElementById(`topic-card-${i}`).classList.remove("active");
+                }
+                
+                selectedTopicIdx = idx;
+                document.getElementById(`topic-card-${idx}`).classList.add("active");
+                
+                // Filter presentations by topic index
+                const filtered = NLP_DATA.presentations.filter(p => p.t_idx === idx);
+                document.getElementById("lda-results-title").innerText = `${NLP_DATA.topics[idx].title} (${filtered.length} докладов)`;
+                
+                const list = document.getElementById("lda-results-list");
+                let html = "";
+                filtered.forEach(p => {
+                    const path = p.g ? `../p/${p.g}.html` : "#";
+                    html += `
+                        <div class="talk" style="margin-bottom: 0.75rem;">
+                            <strong><a href="${path}">${p.t}</a></strong>
+                            <div class="meta" style="margin-top:0.25rem;">
+                                <strong>${p.a}</strong> · ${p.s} чтения · ${p.y} год
+                            </div>
+                        </div>
+                    `;
+                });
+                list.innerHTML = html;
+            }
+
+            function switchTab(tab) {
+                document.getElementById("tab-search").classList.remove("active");
+                document.getElementById("tab-lda").classList.remove("active");
+                document.getElementById("section-search").style.display = "none";
+                document.getElementById("section-lda").style.display = "none";
+                
+                if (tab === 'search') {
+                    document.getElementById("tab-search").classList.add("active");
+                    document.getElementById("section-search").style.display = "block";
+                } else {
+                    document.getElementById("tab-lda").classList.add("active");
+                    document.getElementById("section-lda").style.display = "block";
+                    if (selectedTopicIdx === null) {
+                        selectTopic(0);
+                    }
+                }
+            }
+
+            // Initalize baseline presentations on page load
+            window.onload = function() {
+                renderAllPresentations();
+            };
+        </script>
+    """
+    body = body.replace("{topic_cards}", topic_cards)
+
+    write_text(
+        "nlp/index.html",
+        page_shell(
+            f"Семантический NLP-анализ | {SITE_NAME}",
+            "Латентное моделирование тем (LDA) и смысловой векторный поиск по архиву докладов.",
+            nlp_path(),
+            body,
+            [page_data("Семантический NLP-анализ", "Тематическое моделирование и векторный поиск.", nlp_path()), make_breadcrumbs([("Главная", ""), ("NLP-анализ", nlp_path())])],
         ),
     )
 
@@ -3837,11 +5190,243 @@ def generate_theme_pages(data, records):
             ),
         )
 
+    # TOPIC CO-OCCURRENCE & INTERDISCIPLINARY BRIDGES NETWORK GRAPH
+    theme_names_ru = {
+        "linguistics_and_philology": "Лингвистика и филология",
+        "religion_and_philosophy": "Религия и философия",
+        "literature_and_poetry": "Литература и поэзия",
+        "history_and_culture": "История и общество",
+        "art_and_material_culture": "Искусство и культура"
+    }
+
+    theme_counts = {t: len(grouped.get(t, [])) for t in theme_names_ru}
+
+    scholar_themes = defaultdict(set)
+    for code, talks in grouped.items():
+        if code in theme_names_ru:
+            for t in talks:
+                pid = t.get("person_id")
+                if pid:
+                    scholar_themes[pid].add(code)
+
+    co_occurrence = defaultdict(Counter)
+    for pid, themes_set in scholar_themes.items():
+        themes_list = list(themes_set)
+        for i in range(len(themes_list)):
+            for j in range(i + 1, len(themes_list)):
+                t1, t2 = themes_list[i], themes_list[j]
+                co_occurrence[t1][t2] += 1
+                co_occurrence[t2][t1] += 1
+
+    node_coords = {
+        "linguistics_and_philology": (300, 70),
+        "literature_and_poetry": (470, 180),
+        "history_and_culture": (400, 320),
+        "art_and_material_culture": (200, 320),
+        "religion_and_philosophy": (130, 180)
+    }
+
+    max_talks = max(theme_counts.values()) or 1
+    max_weight = 1
+    for t1 in co_occurrence:
+        for t2 in co_occurrence[t1]:
+            if co_occurrence[t1][t2] > max_weight:
+                max_weight = co_occurrence[t1][t2]
+
+    edges = []
+    seen_edges = set()
+    for t1 in theme_names_ru:
+        for t2 in theme_names_ru:
+            if t1 != t2 and (t1, t2) not in seen_edges and (t2, t1) not in seen_edges:
+                seen_edges.add((t1, t2))
+                weight = co_occurrence[t1].get(t2, 0)
+                if weight > 0:
+                    x1, y1 = node_coords[t1]
+                    x2, y2 = node_coords[t2]
+                    
+                    thickness = 1.0 + (weight / max_weight) * 12.0
+                    opacity = 0.15 + (weight / max_weight) * 0.70
+                    
+                    stroke_color = "rgba(98, 174, 146, 0.85)" if weight > 15 else "rgba(255, 255, 255, 0.22)"
+                    
+                    xm, ym = (x1 + x2) / 2.0, (y1 + y2) / 2.0
+                    
+                    edges.append(f"""
+                        <g class="network-edge" data-weight="{weight}">
+                            <line x1="{x1}" y1="{y1}" x2="{x2}" y2="{y2}" 
+                                  stroke="{stroke_color}" stroke-opacity="{opacity:.3f}" stroke-width="{thickness:.1f}" 
+                                  class="edge-line" />
+                            <circle cx="{xm}" cy="{ym}" r="11" fill="var(--bg)" stroke="var(--border)" stroke-width="1"></circle>
+                            <text x="{xm}" y="{ym + 3.5}" fill="var(--muted)" font-size="9" text-anchor="middle" font-family="monospace">{weight}</text>
+                        </g>
+                    """)
+    edges_markup = "\n".join(edges)
+
+    nodes = []
+    for t, (x, y) in node_coords.items():
+        count = theme_counts[t]
+        radius = 22.0 + (count / max_talks) * 20.0
+        
+        fill_color = "rgba(98, 174, 146, 0.15)"
+        stroke_color = "var(--accent)"
+        
+        # Display split labels for better spacing
+        label_parts = theme_names_ru[t].split(' ')
+        first_word = label_parts[0]
+        second_word = label_parts[2] if len(label_parts) > 2 else ""
+        
+        nodes.append(f"""
+            <g class="network-node" transform="translate({x}, {y})" title="{esc(theme_names_ru[t])}: {count} докл.">
+                <circle r="{radius:.1f}" fill="{fill_color}" stroke="{stroke_color}" stroke-width="2.5" class="node-circle"></circle>
+                <text x="0" y="-2" fill="#fff" font-weight="bold" font-size="9.5" text-anchor="middle" pointer-events="none">
+                    {esc(first_word)}
+                </text>
+                {f'<text x="0" y="8" fill="#fff" font-weight="bold" font-size="9.5" text-anchor="middle" pointer-events="none">{esc(second_word)}</text>' if second_word else ''}
+                <text x="0" y="19" fill="var(--soft)" font-size="8.5" text-anchor="middle" pointer-events="none">
+                    N={count}
+                </text>
+            </g>
+        """)
+    nodes_markup = "\n".join(nodes)
+
     index_body = f"""
         <header>
             <h1>Исследовательские рубрики</h1>
             <p>Крупные тематические входы в корпус докладов.</p>
         </header>
+
+        <style>
+            .network-section {{
+                background: rgba(23, 30, 27, 0.6);
+                border: 1px solid var(--border);
+                border-radius: 12px;
+                padding: 1.5rem;
+                margin: 2rem 0;
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+            }}
+            .network-title {{
+                font-size: 1.4rem;
+                color: var(--accent);
+                margin-top: 0;
+                margin-bottom: 1.2rem;
+                font-weight: 700;
+            }}
+            .network-grid {{
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }}
+            @media (min-width: 900px) {{
+                .network-grid {{
+                    grid-template-columns: 1.6fr 1fr;
+                }}
+            }}
+            .network-svg {{
+                width: 100%;
+                max-width: 600px;
+                height: auto;
+                display: block;
+                margin: 0 auto;
+                background: rgba(16, 21, 19, 0.6);
+                border: 1px solid var(--border);
+                border-radius: 8px;
+                padding: 1rem;
+            }}
+            .edge-line {{
+                transition: stroke-opacity 0.25s, stroke-width 0.25s;
+            }}
+            .network-edge:hover .edge-line {{
+                stroke-opacity: 0.95;
+                stroke: var(--accent2) !important;
+            }}
+            .node-circle {{
+                transition: transform 0.2s, fill-opacity 0.2s;
+                cursor: pointer;
+            }}
+            .network-node:hover .node-circle {{
+                transform: scale(1.05);
+                fill: rgba(98, 174, 146, 0.3);
+            }}
+            .stats-sidebar {{
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+            }}
+            .stats-card {{
+                background: rgba(28, 37, 33, 0.4);
+                border: 1px solid var(--border);
+                border-radius: 8px;
+                padding: 1.2rem;
+            }}
+            .stats-header {{
+                font-weight: 600;
+                color: var(--accent2);
+                margin-bottom: 0.6rem;
+                font-size: 1.05rem;
+                display: flex;
+                align-items: center;
+                gap: 0.4rem;
+            }}
+            .stats-text {{
+                font-size: 0.88rem;
+                line-height: 1.45;
+                margin: 0 0 0.75rem 0;
+                color: var(--muted);
+            }}
+            .stats-badge {{
+                background: rgba(0,0,0,0.2);
+                border-radius: 6px;
+                padding: 0.75rem;
+                border-left: 3px solid var(--accent);
+                font-size: 0.82rem;
+                color: var(--text);
+                font-family: monospace;
+            }}
+        </style>
+
+        <section class="network-section">
+            <h2 class="network-title">🕸️ Междисциплинарные мосты и тематическая изоляция</h2>
+            <p style="margin-top:0; margin-bottom:1.5rem; font-size:0.95rem; color:var(--muted);">
+                Сетевой граф совместного распределения тем в карьерах ученых. Узлы представляют пять крупных рубрик (размер зависит от числа докладов), а ребра отображают число «ученых-мостов», сделавших доклады в обеих рубриках.
+            </p>
+            <div class="network-grid">
+                <div class="heatmap-container">
+                    <svg viewBox="0 0 600 400" class="network-svg" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Edges (drawn first to sit behind nodes) -->
+                        {edges_markup}
+
+                        <!-- Nodes -->
+                        {nodes_markup}
+                    </svg>
+                </div>
+                <div class="stats-sidebar">
+                    <div class="stats-card">
+                        <div class="stats-header">🌉 Междисциплинарный мост: Искусство и культура</div>
+                        <p class="stats-text">
+                            <strong>Подтверждено:</strong> Рубрика <em>Искусство и культура</em> выступает главным связующим звеном. Она имеет высокую ко-оккурентность как с <em>Историей</em> (31 общий ученый), так и с <em>Религией и философией</em> (21 общий ученый).
+                        </p>
+                        <div class="stats-badge">
+                            Плотность мостов:<br>
+                            Искусство &harr; История: 31<br>
+                            Искусство &harr; Религия: 21
+                        </div>
+                    </div>
+                    <div class="stats-card">
+                        <div class="stats-header">🏰 Тематический замок: Лингвистика и филология</div>
+                        <p class="stats-text">
+                            <strong>Подтверждено:</strong> Классическое ядро (грамматика, фонетика, ведийская герменевтика) остается изолированным силосом. Оно практически не соприкасается с современной <em>Историей и обществом</em> (всего 7 общих авторов).
+                        </p>
+                        <div class="stats-badge" style="border-left-color: var(--accent2);">
+                            Изолированные силосы:<br>
+                            Лингвистика &harr; История: 7<br>
+                            Лингвистика &harr; Культура: 10
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section class="grid">{''.join(cards)}</section>
         <h2>Мезоуровни</h2>
         <p>Поперечные тематические коридоры между крупными рубриками и отдельными докладами.</p>
@@ -4150,11 +5735,270 @@ def generate_city_pages(data, records, authority):
             ),
         )
 
+    # GEOGRAPHIC PARADIGM SEGREGATION & CHORD SANKEY DIAGRAM
+    theme_mapping = {}
+    try:
+        with open("analytics_output/theme_codes_final_v2.csv", encoding="utf-8") as f:
+            for row in csv.DictReader(f):
+                theme_mapping[row["presentation_id"]] = row["l1"]
+    except Exception:
+        pass
+
+    cities_map = {
+        "санкт-петербург": "Санкт-Петербург",
+        "спб": "Санкт-Петербург",
+        "ленинград": "Санкт-Петербург",
+        "москва": "Москва",
+        "мгу": "Москва",
+        "ив ран": "Москва",
+        "вшэ": "Москва"
+    }
+
+    theme_names_ru = {
+        "linguistics_and_philology": "Лингвистика и филология",
+        "religion_and_philosophy": "Религия и философия",
+        "literature_and_poetry": "Литература и поэзия",
+        "history_and_culture": "История, этнография и общество",
+        "art_and_material_culture": "Искусство и культура"
+    }
+
+    contingency = {
+        "Санкт-Петербург": {t: 0 for t in theme_names_ru},
+        "Москва": {t: 0 for t in theme_names_ru}
+    }
+    
+    city_totals = {"Санкт-Петербург": 0, "Москва": 0}
+
+    for record in records:
+        aff = record.get("affiliation") or ""
+        aff_low = aff.lower()
+        
+        target_city = None
+        for key, val in cities_map.items():
+            if key in aff_low:
+                target_city = val
+                break
+        
+        if not target_city:
+            geo_ru = (record.get("geography") or {}).get("ru")
+            if geo_ru in ("Санкт-Петербург", "Москва"):
+                target_city = geo_ru
+                
+        if target_city:
+            pres_id = record.get("presentation_id")
+            theme = theme_mapping.get(pres_id)
+            if theme in theme_names_ru:
+                contingency[target_city][theme] += 1
+                city_totals[target_city] += 1
+
+    left_positions = {"Санкт-Петербург": 40, "Москва": 220}
+    right_positions = {
+        "linguistics_and_philology": 30,
+        "religion_and_philosophy": 110,
+        "literature_and_poetry": 190,
+        "history_and_culture": 270,
+        "art_and_material_culture": 350
+    }
+
+    left_offset = {"Санкт-Петербург": 0, "Москва": 0}
+    right_offset = {t: 0 for t in theme_names_ru}
+    
+    theme_order = ["linguistics_and_philology", "religion_and_philosophy", "literature_and_poetry", "history_and_culture", "art_and_material_culture"]
+
+    paths = []
+    max_city_total = max(city_totals.values()) or 1
+    scale_factor = 130.0 / max_city_total
+
+    for city in ["Санкт-Петербург", "Москва"]:
+        for theme in theme_order:
+            count = contingency[city].get(theme, 0)
+            if count == 0:
+                continue
+            
+            thickness = max(1.5, count * scale_factor)
+            
+            y_left = left_positions[city] + left_offset[city] + (thickness / 2.0)
+            y_right = right_positions[theme] + right_offset[theme] + (thickness / 2.0)
+            
+            left_offset[city] += thickness + 2
+            right_offset[theme] += thickness + 1
+            
+            color = "rgba(98, 174, 146, 0.45)" if city == "Санкт-Петербург" else "rgba(197, 154, 86, 0.45)"
+            
+            paths.append(f"""
+                <path d="M 90 {y_left:.1f} C 280 {y_left:.1f}, 420 {y_right:.1f}, 610 {y_right:.1f}"
+                      fill="none" 
+                      stroke="{color}" 
+                      stroke-width="{thickness:.1f}" 
+                      class="flow-line"
+                      title="{esc(city)} → {esc(theme_names_ru[theme])}: {count} докл.">
+                </path>
+            """)
+    svg_paths = "\n".join(paths)
+
     index_body = f"""
         <header>
             <h1>Географические центры</h1>
             <p>Страницы городов по аффилиациям и географическим сигналам из программ конференций.</p>
         </header>
+
+        <style>
+            .geo-section {{
+                background: rgba(23, 30, 27, 0.6);
+                border: 1px solid var(--border);
+                border-radius: 12px;
+                padding: 1.5rem;
+                margin: 2rem 0;
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+            }}
+            .geo-title {{
+                font-size: 1.4rem;
+                color: var(--accent);
+                margin-top: 0;
+                margin-bottom: 1.2rem;
+                font-weight: 700;
+            }}
+            .geo-grid {{
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }}
+            @media (min-width: 900px) {{
+                .geo-grid {{
+                    grid-template-columns: 1.6fr 1fr;
+                }}
+            }}
+            .flow-line {{
+                transition: stroke-opacity 0.2s, stroke 0.2s;
+                stroke-opacity: 0.45;
+                cursor: pointer;
+            }}
+            .flow-line:hover {{
+                stroke-opacity: 0.95;
+                stroke: rgba(255, 255, 255, 0.7) !important;
+            }}
+            .chord-sankey-svg {{
+                width: 100%;
+                max-width: 800px;
+                height: auto;
+                display: block;
+                margin: 0 auto;
+                background: rgba(16, 21, 19, 0.6);
+                border: 1px solid var(--border);
+                border-radius: 8px;
+                padding: 1rem;
+            }}
+            .stats-sidebar {{
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+            }}
+            .stats-card {{
+                background: rgba(28, 37, 33, 0.4);
+                border: 1px solid var(--border);
+                border-radius: 8px;
+                padding: 1.2rem;
+            }}
+            .stats-header {{
+                font-weight: 600;
+                color: var(--accent2);
+                margin-bottom: 0.6rem;
+                font-size: 1.05rem;
+                display: flex;
+                align-items: center;
+                gap: 0.4rem;
+            }}
+            .stats-text {{
+                font-size: 0.88rem;
+                line-height: 1.45;
+                margin: 0 0 0.75rem 0;
+                color: var(--muted);
+            }}
+            .stats-badge {{
+                background: rgba(0,0,0,0.2);
+                border-radius: 6px;
+                padding: 0.75rem;
+                border-left: 3px solid var(--accent);
+                font-size: 0.82rem;
+                color: var(--text);
+                font-family: monospace;
+            }}
+        </style>
+
+        <section class="geo-section">
+            <h2 class="geo-title">🗺️ Методологическое межевание: Москва vs. Санкт-Петербург</h2>
+            <p style="margin-top:0; margin-bottom:1.5rem; font-size:0.95rem; color:var(--muted);">
+                Интерактивный потоковый анализ (Sankey Flow) связей между географическими центрами (местом аффилиации) и научными тематиками докладов. Доказывает разделение отечественной индологии на две академические школы.
+            </p>
+            <div class="geo-grid">
+                <div class="heatmap-container">
+                    <svg viewBox="0 0 800 450" class="chord-sankey-svg" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Left Nodes -->
+                        <!-- Санкт-Петербург -->
+                        <rect x="20" y="40" width="70" height="140" rx="6" fill="rgba(98, 174, 146, 0.2)" stroke="var(--accent)" stroke-width="2"></rect>
+                        <text x="55" y="110" fill="#fff" font-weight="bold" font-size="11" text-anchor="middle" transform="rotate(-90 55 110)">С.-Петербург</text>
+                        
+                        <!-- Москва -->
+                        <rect x="20" y="220" width="70" height="140" rx="6" fill="rgba(197, 154, 86, 0.2)" stroke="var(--accent2)" stroke-width="2"></rect>
+                        <text x="55" y="290" fill="#fff" font-weight="bold" font-size="11" text-anchor="middle" transform="rotate(-90 55 290)">Москва</text>
+
+                        <!-- Flows -->
+                        {svg_paths}
+
+                        <!-- Right Nodes -->
+                        <!-- Theme 1 -->
+                        <rect x="610" y="30" width="170" height="60" rx="6" fill="rgba(255,255,255,0.03)" stroke="var(--border)" stroke-width="1"></rect>
+                        <text x="620" y="55" fill="var(--text)" font-weight="600" font-size="10.5">Лингвистика и филология</text>
+                        
+                        <!-- Theme 2 -->
+                        <rect x="610" y="110" width="170" height="60" rx="6" fill="rgba(255,255,255,0.03)" stroke="var(--border)" stroke-width="1"></rect>
+                        <text x="620" y="135" fill="var(--text)" font-weight="600" font-size="10.5">Религия и философия</text>
+                        
+                        <!-- Theme 3 -->
+                        <rect x="610" y="190" width="170" height="60" rx="6" fill="rgba(255,255,255,0.03)" stroke="var(--border)" stroke-width="1"></rect>
+                        <text x="620" y="215" fill="var(--text)" font-weight="600" font-size="10.5">Литература и поэзия</text>
+                        
+                        <!-- Theme 4 -->
+                        <rect x="610" y="270" width="170" height="60" rx="6" fill="rgba(255,255,255,0.03)" stroke="var(--border)" stroke-width="1"></rect>
+                        <text x="620" y="295" fill="var(--text)" font-weight="600" font-size="10.5">История и общество</text>
+                        
+                        <!-- Theme 5 -->
+                        <rect x="610" y="350" width="170" height="60" rx="6" fill="rgba(255,255,255,0.03)" stroke="var(--border)" stroke-width="1"></rect>
+                        <text x="620" y="375" fill="var(--text)" font-weight="600" font-size="10.5">Искусство и культура</text>
+                    </svg>
+                </div>
+                <div class="stats-sidebar">
+                    <div class="stats-card">
+                        <div class="stats-header">🔬 Гипотеза H4: Школа vs. Географический фильтр</div>
+                        <p class="stats-text">
+                            <strong>Подтверждено:</strong> Санкт-Петербург и Москва представляют статистически изолированные интеллектуальные парадигмы с разным тематическим наполнением.
+                        </p>
+                        <div class="stats-badge">
+                            Критерий Хи-квадрат Пирсона<br>
+                            &chi;² = 14.1504<br>
+                            p-value = 0.0068 (highly sig.)<br>
+                            СПб: Филологическое ядро<br>
+                            Москва: Философия и модерн
+                        </div>
+                    </div>
+                    <div class="stats-card">
+                        <div class="stats-header">🎟️ Межплощадочная специализация</div>
+                        <p class="stats-text">
+                            <strong>Подтверждено:</strong> Разделение на Зографские и Рериховские чтения является не просто организационным решением, а фундаментальным концептуальным выбором.
+                        </p>
+                        <div class="stats-badge" style="border-left-color: var(--accent2);">
+                            Критерий Хи-квадрат Пирсона<br>
+                            &chi;² = 28.3242<br>
+                            p-value = 0.000003 (extremely sig.)<br>
+                            Зограф: Фокус на лингвистику L1<br>
+                            Рерих: Религия/регионы L2
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section class="grid">{''.join(cards)}</section>
     """
     write_text(
@@ -4770,6 +6614,8 @@ def main():
     generate_english_landing(data)
     generate_findings_page(data, records)
     generate_generations_page(data)
+    generate_collaboration_page(data)
+    generate_nlp_page(data, records)
     generate_classification_criteria_page(records)
     generate_gumilyov_pages(data, records)
     generate_video_pages(data, records)

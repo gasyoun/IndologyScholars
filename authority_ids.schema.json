@@ -24,6 +24,7 @@
             "scopus_author_id": { "type": "string", "pattern": "^(https://www\\.scopus\\.com/authid/detail\\.uri\\?authorId=)?\\d+$" },
             "researcher_id": { "type": "string", "pattern": "^(https://www\\.webofscience\\.com/wos/author/record/)?([A-Z]{1,3}-\\d{4}-\\d{4}|[A-Z0-9-]+)$" },
             "rinc_author_id": { "type": "string", "pattern": "^(https://www\\.elibrary\\.ru/author_profile\\.asp\\?id=)?\\d+$" },
+            "samskrtam_ru": { "type": "string", "pattern": "^https?://(www\\.)?samskrtam\\.ru/.*" },
             "url": { "type": "string", "pattern": "^https?://" },
             "official_url": { "type": "string", "pattern": "^https?://" },
             "confidence": { "type": "string", "enum": ["confirmed", "manual", "high", "candidate", "ambiguous", "todo", ""] },

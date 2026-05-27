@@ -12,7 +12,7 @@ def run():
         JOIN event_day_venue edv ON s.event_day_venue_id = edv.event_day_venue_id
         JOIN event_day ed ON edv.event_day_id = ed.event_day_id
         JOIN event e ON ed.event_id = e.event_id
-        WHERE p.person_id = 'PERS_6b867946'
+        WHERE p.display_name LIKE '%Шарыгин%'
     """)
     rows = cursor.fetchall()
     with open("scratch/check_db_sharygin_out.txt", "w", encoding="utf-8") as f:
