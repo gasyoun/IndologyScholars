@@ -1321,6 +1321,11 @@ TIMELINE_HTML = """<!DOCTYPE html>
             els.meso.value = state.meso;
         }
 
+        function conferenceUrl(series, year) {
+            const slug = String(series || '').toLowerCase().includes('roerich') ? 'roerich' : 'zograf';
+            return `conferences/${slug}-${year}.html`;
+        }
+
         function render() {
             const events = buildEvents();
             const recordIds = new Set(events.map(event => event.record.presentation_id));
@@ -1332,7 +1337,12 @@ TIMELINE_HTML = """<!DOCTYPE html>
             }
             els.timeline.innerHTML = events.map(({ record, time }) => {
                 const href = record.public_path ? `<a href="${escapeHtml(record.public_path)}">${escapeHtml(record.title)}</a>` : escapeHtml(record.title);
-                const places = (record.places || []).map(place => place.label_ru).join(', ');
+                const speakerHtml = `<a href="s/${escapeHtml(record.scholar_slug)}.html" style="text-decoration: underline; text-decoration-color: var(--accent);">${escapeHtml(record.speaker)}</a>`;
+                const confHref = conferenceUrl(record.series, record.conference_year);
+                const confHtml = `<a href="${escapeHtml(confHref)}" style="text-decoration: underline; text-decoration-color: var(--gold);">${escapeHtml(record.series || '')} ${record.conference_year || ''}</a>`;
+                const places = (record.places || []).map(place => 
+                    `<a href="#" data-search="${escapeHtml(place.label_ru)}" style="text-decoration: underline; text-decoration-style: dotted; color: var(--muted);">${escapeHtml(place.label_ru)}</a>`
+                ).join(', ');
                 const tags = (record.meso_codes || []).slice(0, 4).map(renderTag).join(' ');
                 return `<article class="event">
                     <div>
@@ -1341,7 +1351,7 @@ TIMELINE_HTML = """<!DOCTYPE html>
                     </div>
                     <div>
                         <div class="title">${href}</div>
-                        <div class="meta">${escapeHtml(record.speaker)} · ${record.conference_year || ''} · ${escapeHtml(record.series || '')}${places ? '<br>' + escapeHtml(places) : ''}</div>
+                        <div class="meta">${speakerHtml} · ${confHtml}${places ? '<br>' + places : ''}</div>
                         ${tags}
                     </div>
                 </article>`;
@@ -1365,12 +1375,22 @@ TIMELINE_HTML = """<!DOCTYPE html>
         });
         els.timeline.addEventListener('click', event => {
             const tag = event.target.closest('[data-meso]');
-            if (!tag) return;
-            event.preventDefault();
-            state.meso = tag.dataset.meso;
-            els.meso.value = state.meso;
-            updateUrl();
-            render();
+            if (tag) {
+                event.preventDefault();
+                state.meso = tag.dataset.meso;
+                els.meso.value = state.meso;
+                updateUrl();
+                render();
+                return;
+            }
+            const place = event.target.closest('[data-search]');
+            if (place) {
+                event.preventDefault();
+                state.search = place.dataset.search;
+                els.search.value = state.search;
+                render();
+                return;
+            }
         });
 
         fetch('analytics_output/spacetime_index.json')
