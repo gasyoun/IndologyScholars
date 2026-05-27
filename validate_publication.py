@@ -328,6 +328,12 @@ def main():
 
     if Path("sitemap.xml").exists():
         sitemap = read("sitemap.xml")
+        if "<sitemapindex" in sitemap:
+            # Recursively load sub-sitemaps mentioned in the sitemapindex
+            sub_sitemaps = re.findall(r"<loc>(https://gasyoun\.github\.io/IndologyScholars/(sitemap_[^<]+))</loc>", sitemap)
+            for _, filename in sub_sitemaps:
+                if Path(filename).exists():
+                    sitemap += "\n" + read(filename)
         for page in ["", "en.html", "search.html", "download-data.html", "data-quality.html", "s/", "conferences/", "p/", "themes/", "topics/", "topics/ramayana.html", "topics/mahabharata.html", "generations/", "cities/", "institutions/", "metrics-guide.html", "classification-criteria.html", "networks.html", "videos/"]:
             expected = "https://gasyoun.github.io/IndologyScholars/" + page
             if expected not in sitemap:

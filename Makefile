@@ -19,3 +19,7 @@ pages:
 
 validate:
 	python validate_publication.py
+
+clean:
+	python -c "import pathlib; [p.unlink() for p in pathlib.Path('.').glob('site_data_timeline_*.json')]; [p.unlink() for p in pathlib.Path('p').glob('*.html') if p.is_file()]; [p.unlink() for p in pathlib.Path('s').glob('*.html') if p.is_file()]; [p.unlink() for p in pathlib.Path('themes').glob('*.html') if p.name != 'index.html']"
+

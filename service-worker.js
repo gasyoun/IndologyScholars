@@ -11,6 +11,7 @@ const CORE_URLS = [
     `${BASE}offline.html`,
     `${BASE}search.html`,
     `${BASE}search-index.json`,
+    `${BASE}site_data.json`,
     `${BASE}s/`,
     `${BASE}p/`,
     `${BASE}generations/`,

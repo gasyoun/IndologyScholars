@@ -16,3 +16,8 @@ article/ppv_corr.md
 # Local ID audit scratch manifests
 scratch/ci_manifest_*.csv
 scratch/manifest_*.csv
+
+# Temporary check and fix scripts
+fix_*.py
+check_*.py
+
