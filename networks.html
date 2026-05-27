@@ -792,6 +792,10 @@
         let edgesDataset = null;
         let loadingComplete = false;
         let lastActiveEdgeCount = 0;
+        let activeDetailNodeId = null;
+        let rawNodeById = new Map();
+        let scholarByPersonId = null;
+        let siteDataPromise = null;
 
         // Visual design configuration
         const nodeStyles = {
@@ -873,6 +877,107 @@
             finishLoadingOverlay();
         }
 
+        function escapeHtml(value) {
+            return String(value || '').replace(/[&<>"']/g, char => ({
+                '&': '&amp;',
+                '<': '&lt;',
+                '>': '&gt;',
+                '"': '&quot;',
+                "'": '&#39;'
+            }[char]));
+        }
+
+        function getNodeValue(node) {
+            return node ? (node.value ?? node.weight ?? 0) : 0;
+        }
+
+        function getNodeById(nodeId) {
+            const rawNode = rawNodeById.get(nodeId);
+            const visibleNode = nodesDataset && nodesDataset.get(nodeId);
+            return rawNode && visibleNode ? { ...rawNode, ...visibleNode } : (visibleNode || rawNode);
+        }
+
+        function getNodeSlug(node) {
+            return node && node.type === 'person' && node.slug ? node.slug : null;
+        }
+
+        function getNodeHash(node) {
+            const slug = getNodeSlug(node);
+            if (slug) return `#person=${encodeURIComponent(slug)}`;
+            return `#node=${encodeURIComponent(node.id)}`;
+        }
+
+        function updateUrlForNode(node) {
+            const hash = getNodeHash(node);
+            if (window.location.hash !== hash) {
+                history.pushState(null, '', hash);
+            }
+        }
+
+        function getRawConnectedEdges(nodeId) {
+            return rawEdges
+                .filter(edge => edge.source === nodeId || edge.target === nodeId)
+                .map(edge => ({
+                    from: edge.source,
+                    to: edge.target,
+                    type: edge.type,
+                    value: edge.weight || 1,
+                    year: edge.year,
+                    series: edge.series
+                }));
+        }
+
+        function addWeightedItem(map, label, weight = 1) {
+            if (!label) return;
+            const current = map.get(label) || 0;
+            map.set(label, current + (Number(weight) || 1));
+        }
+
+        function formatWeightedList(map, limit = 40) {
+            const items = [...map.entries()]
+                .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0], 'ru'))
+                .slice(0, limit)
+                .map(([label, weight]) => weight > 1 ? `${escapeHtml(label)} <span style="color:var(--text); opacity:0.75">×${weight}</span>` : escapeHtml(label));
+            return items.join(', ');
+        }
+
+        function formatTalkList(talks) {
+            return talks.map(talk => {
+                const href = talk.public_path ? escapeHtml(talk.public_path) : '';
+                const title = escapeHtml(talk.title || '');
+                const meta = [talk.year, talk.series].filter(Boolean).join(', ');
+                const label = href ? `<a href="${href}" style="color:var(--text); text-decoration:none; border-bottom:1px solid rgba(255,255,255,0.14)">${title}</a>` : title;
+                return `<div style="margin-bottom:0.5rem;">${label}<div style="color:var(--muted); font-size:0.74rem;">${escapeHtml(meta)}</div></div>`;
+            }).join('');
+        }
+
+        function loadSiteData() {
+            if (scholarByPersonId) return Promise.resolve(scholarByPersonId);
+            if (!siteDataPromise) {
+                siteDataPromise = fetch('site_data.json?v=1.8.5')
+                    .then(response => {
+                        if (!response.ok) throw new Error(`site_data.json load failed: ${response.status}`);
+                        return response.json();
+                    })
+                    .then(data => {
+                        scholarByPersonId = new Map((data.scholars || []).map(scholar => [scholar.id, scholar]));
+                        return scholarByPersonId;
+                    })
+                    .catch(error => {
+                        console.warn('Could not load scholar talk details:', error);
+                        scholarByPersonId = new Map();
+                        return scholarByPersonId;
+                    });
+            }
+            return siteDataPromise;
+        }
+
+        async function getScholarForNode(node) {
+            if (!node || node.type !== 'person') return null;
+            const scholars = await loadSiteData();
+            return scholars.get(node.local_id || node.id.replace('person:', '')) || null;
+        }
+
         // Load data on startup
         document.addEventListener('DOMContentLoaded', () => {
             fetchData();
@@ -894,6 +999,7 @@
                 
                 rawNodes = data.nodes;
                 rawEdges = data.edges;
+                rawNodeById = new Map(rawNodes.map(node => [node.id, node]));
                 
                 setLoadingProgress(`Загружено: ${rawNodes.length} узлов, ${rawEdges.length} связей. Инициализация холста...`);
                 initializeNetwork();
@@ -908,6 +1014,7 @@
                     
                     rawNodes = data.nodes;
                     rawEdges = data.edges;
+                    rawNodeById = new Map(rawNodes.map(node => [node.id, node]));
                     
                     initializeNetwork();
                 } catch (fallbackErr) {
@@ -995,6 +1102,7 @@
                 networkInstance.stabilize(lastActiveEdgeCount > 1500 ? 25 : 60);
                 setTimeout(completeInitialLayout, lastActiveEdgeCount > 1500 ? 900 : 1400);
             });
+            setTimeout(openNodeFromUrl, 200);
         }
 
         // Apply filters dynamically
@@ -1138,89 +1246,144 @@
             }, 100);
         }
 
+        function findNodeFromUrl() {
+            const hash = window.location.hash.replace(/^#/, '');
+            if (!hash) return null;
+            const params = new URLSearchParams(hash);
+            const personSlug = params.get('person');
+            const explicitNode = params.get('node');
+
+            if (personSlug) {
+                const slug = decodeURIComponent(personSlug).toLowerCase();
+                return rawNodes.find(node => node.type === 'person' && String(node.slug || '').toLowerCase() === slug) || null;
+            }
+            if (explicitNode) {
+                return rawNodeById.get(decodeURIComponent(explicitNode)) || null;
+            }
+
+            const loose = decodeURIComponent(hash).toLowerCase();
+            return rawNodes.find(node =>
+                String(node.slug || '').toLowerCase() === loose ||
+                String(node.local_id || '').toLowerCase() === loose ||
+                String(node.id || '').toLowerCase() === loose
+            ) || null;
+        }
+
+        function ensureNodeIsVisible(node) {
+            if (!node) return;
+            const search = document.getElementById('search-input');
+            if (search && search.value) search.value = '';
+
+            const nodeToggle = document.getElementById(`node-${node.type}`);
+            if (nodeToggle && !nodeToggle.checked) nodeToggle.checked = true;
+            updateFilters();
+        }
+
+        function openNodeFromUrl() {
+            if (!networkInstance || !nodesDataset) return;
+            const node = findNodeFromUrl();
+            if (!node) return;
+            ensureNodeIsVisible(node);
+            networkInstance.selectNodes([node.id]);
+            networkInstance.focus(node.id, {
+                scale: 0.85,
+                animation: { duration: 650, easingFunction: 'easeInOutQuad' }
+            });
+            showNodeDetails(node.id, false);
+        }
+
         // Handle Click Events
         function handleNodeClick(params) {
+            if (params.nodes.length > 0) {
+                showNodeDetails(params.nodes[0], true);
+            } else {
+                document.getElementById('detail-panel').classList.remove('active');
+            }
+        }
+
+        async function showNodeDetails(nodeId, shouldUpdateUrl) {
             const detailPanel = document.getElementById('detail-panel');
             const titleEl = document.getElementById('detail-title');
             const typePill = document.getElementById('detail-type-pill');
             const bodyEl = document.getElementById('detail-body');
-            
-            if (params.nodes.length > 0) {
-                const nodeId = params.nodes[0];
-                const node = nodesDataset.get(nodeId);
-                
-                if (!node) return;
-                
-                // Show Panel
-                detailPanel.classList.add('active');
-                titleEl.innerText = node.label;
-                
-                // Setup type pill
-                typePill.className = `detail-type ${node.type}`;
-                const typeLabels = { person: 'Ученый', event: 'Событие', organization: 'Институция', theme: 'Научная рубрика' };
-                typePill.innerText = typeLabels[node.type] || node.type;
-                
-                // Find all connected nodes
-                const connectedEdges = edgesDataset.get({
-                    filter: function(edge) {
-                        return edge.from === nodeId || edge.to === nodeId;
+
+            const node = getNodeById(nodeId);
+            if (!node) return;
+
+            activeDetailNodeId = nodeId;
+            if (shouldUpdateUrl) updateUrlForNode(node);
+
+            detailPanel.classList.add('active');
+            titleEl.innerText = node.label;
+
+            typePill.className = `detail-type ${node.type}`;
+            const typeLabels = { person: 'Ученый', event: 'Событие', organization: 'Институция', theme: 'Научная рубрика' };
+            typePill.innerText = typeLabels[node.type] || node.type;
+            bodyEl.innerHTML = '<div style="font-size:0.85rem; color:var(--muted)">Загрузка связей...</div>';
+
+            const connectedEdges = getRawConnectedEdges(nodeId);
+            let connListHtml = '';
+
+            if (node.type === 'person') {
+                const collabPeople = new Map();
+                const orgs = new Map();
+                const themes = new Map();
+                const events = new Map();
+
+                connectedEdges.forEach(edge => {
+                    const targetId = edge.from === nodeId ? edge.to : edge.from;
+                    const targetNode = getNodeById(targetId);
+                    if (!targetNode) return;
+
+                    if (edge.type === 'person_person_copresentation') {
+                        addWeightedItem(collabPeople, targetNode.label, edge.value);
+                    } else if (edge.type === 'person_organization') {
+                        addWeightedItem(orgs, targetNode.label, edge.value);
+                    } else if (edge.type === 'person_theme') {
+                        addWeightedItem(themes, targetNode.label, edge.value);
+                    } else if (edge.type === 'person_event') {
+                        addWeightedItem(events, targetNode.label, edge.value);
                     }
                 });
-                
-                // Group connections
-                let connListHtml = '';
-                
-                if (node.type === 'person') {
-                    const collabPeople = [];
-                    const orgs = [];
-                    const themes = [];
-                    const events = [];
-                    
-                    connectedEdges.forEach(edge => {
-                        const targetId = edge.from === nodeId ? edge.to : edge.from;
-                        const targetNode = nodesDataset.get(targetId);
-                        
-                        if (targetNode) {
-                            if (edge.type === 'person_person_copresentation') {
-                                collabPeople.push(targetNode.label);
-                            } else if (edge.type === 'person_organization') {
-                                orgs.push(targetNode.label);
-                            } else if (edge.type === 'person_theme') {
-                                themes.push(targetNode.label);
-                            } else if (edge.type === 'person_event') {
-                                events.push(targetNode.label);
-                            }
-                        }
-                    });
-                    
-                    connListHtml = `
-                        <div class="detail-stat"><span>Докладов всего:</span><span>${node.value}</span></div>
-                        ${orgs.length ? `<div class="detail-stat"><span>Институция:</span><span>${orgs[0]}</span></div>` : ''}
-                        
-                        <h4 style="margin:0.75rem 0 0.25rem; font-size:0.82rem; text-transform:uppercase; color:var(--cyan)">Выступления (${events.length}):</h4>
-                        <div style="font-size:0.8rem; max-height:80px; overflow-y:auto; padding-right:0.25rem; color:var(--muted)">
-                            ${events.length ? events.join(', ') : 'нет данных'}
-                        </div>
 
-                        <h4 style="margin:0.75rem 0 0.25rem; font-size:0.82rem; text-transform:uppercase; color:var(--accent2)">Темы исследований:</h4>
-                        <div style="font-size:0.8rem; color:var(--muted)">
-                            ${themes.length ? themes.join(', ') : 'не указаны'}
-                        </div>
+                const scholar = await getScholarForNode(node);
+                if (activeDetailNodeId !== nodeId) return;
 
-                        <h4 style="margin:0.75rem 0 0.25rem; font-size:0.82rem; text-transform:uppercase; color:var(--orange)">Соавторы в архиве (${collabPeople.length}):</h4>
-                        <div style="font-size:0.8rem; max-height:80px; overflow-y:auto; padding-right:0.25rem; color:var(--muted)">
-                            ${collabPeople.length ? collabPeople.join(', ') : 'нет соавторов докладов'}
-                        </div>
-                        
-                        <div style="margin-top:1rem; text-align:center;">
-                            <a href="/IndologyScholars/s/${node.slug || node.id.replace('person:', '')}.html" class="btn-preset" style="display:inline-block; padding: 0.4rem 0.8rem; font-size:0.8rem;" target="_blank">Открыть профиль ↗</a>
-                        </div>
-                    `;
-                } else if (node.type === 'event') {
+                const talks = scholar && Array.isArray(scholar.talks) ? scholar.talks : [];
+                const totalTalks = scholar ? scholar.total_talks : getNodeValue(node);
+                const themeMap = new Map(themes);
+                if (talks.length) {
+                    talks.forEach(talk => addWeightedItem(themeMap, (talk.theme || {}).ru || (talk.theme || {}).code, 1));
+                }
+
+                connListHtml = `
+                    <div class="detail-stat"><span>Докладов всего:</span><span>${totalTalks}</span></div>
+                    ${orgs.size ? `<div class="detail-stat"><span>Институция:</span><span>${formatWeightedList(orgs, 3)}</span></div>` : ''}
+
+                    <h4 style="margin:0.75rem 0 0.25rem; font-size:0.82rem; text-transform:uppercase; color:var(--cyan)">Выступления (${talks.length || events.size}):</h4>
+                    <div style="font-size:0.8rem; max-height:150px; overflow-y:auto; padding-right:0.25rem; color:var(--muted)">
+                        ${talks.length ? formatTalkList(talks) : (events.size ? formatWeightedList(events) : 'нет данных')}
+                    </div>
+
+                    <h4 style="margin:0.75rem 0 0.25rem; font-size:0.82rem; text-transform:uppercase; color:var(--accent2)">Темы исследований:</h4>
+                    <div style="font-size:0.8rem; color:var(--muted)">
+                        ${themeMap.size ? formatWeightedList(themeMap) : 'не указаны'}
+                    </div>
+
+                    <h4 style="margin:0.75rem 0 0.25rem; font-size:0.82rem; text-transform:uppercase; color:var(--orange)">Соавторы в архиве (${collabPeople.size}):</h4>
+                    <div style="font-size:0.8rem; max-height:80px; overflow-y:auto; padding-right:0.25rem; color:var(--muted)">
+                        ${collabPeople.size ? formatWeightedList(collabPeople) : 'нет соавторов докладов'}
+                    </div>
+
+                    <div style="margin-top:1rem; text-align:center;">
+                        <a href="/IndologyScholars/s/${node.slug || node.id.replace('person:', '')}.html" class="btn-preset" style="display:inline-block; padding: 0.4rem 0.8rem; font-size:0.8rem;" target="_blank">Открыть профиль ↗</a>
+                    </div>
+                `;
+            } else if (node.type === 'event') {
                     const attendees = [];
                     connectedEdges.forEach(edge => {
                         const targetId = edge.from === nodeId ? edge.to : edge.from;
-                        const targetNode = nodesDataset.get(targetId);
+                        const targetNode = getNodeById(targetId);
                         if (targetNode && edge.type === 'person_event') {
                             attendees.push(targetNode.label);
                         }
@@ -1233,11 +1396,11 @@
                             ${attendees.join(', ')}
                         </div>
                     `;
-                } else if (node.type === 'organization') {
+            } else if (node.type === 'organization') {
                     const scholars = [];
                     connectedEdges.forEach(edge => {
                         const targetId = edge.from === nodeId ? edge.to : edge.from;
-                        const targetNode = nodesDataset.get(targetId);
+                        const targetNode = getNodeById(targetId);
                         if (targetNode && edge.type === 'person_organization') {
                             scholars.push(targetNode.label);
                         }
@@ -1250,11 +1413,11 @@
                             ${scholars.join(', ')}
                         </div>
                     `;
-                } else if (node.type === 'theme') {
+            } else if (node.type === 'theme') {
                     const scholars = [];
                     connectedEdges.forEach(edge => {
                         const targetId = edge.from === nodeId ? edge.to : edge.from;
-                        const targetNode = nodesDataset.get(targetId);
+                        const targetNode = getNodeById(targetId);
                         if (targetNode && edge.type === 'person_theme') {
                             scholars.push(targetNode.label);
                         }
@@ -1267,18 +1430,15 @@
                             ${scholars.join(', ')}
                         </div>
                     `;
-                }
-                
-                bodyEl.innerHTML = connListHtml;
-                
-            } else {
-                // Hide panel if clicking on canvas background
-                detailPanel.classList.remove('active');
             }
+
+            bodyEl.innerHTML = connListHtml;
         }
 
         // Setup DOM event listeners
         function setupControls() {
+            window.addEventListener('hashchange', openNodeFromUrl);
+
             // Preset clicks
             document.querySelectorAll('.btn-preset[data-preset]').forEach(btn => {
                 btn.addEventListener('click', (e) => {
