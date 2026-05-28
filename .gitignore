@@ -21,3 +21,7 @@ scratch/manifest_*.csv
 fix_*.py
 check_*.py
 
+
+# audit sidecars
+.contributing_old.md
+.contributing_audit.txt
