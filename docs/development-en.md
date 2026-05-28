@@ -9,10 +9,10 @@ user-facing project page.
 ## Current Published Snapshot
 
 The source for figures published on the site is the `summary` object in
-`site_data.json`. As of 25 May 2026 it reports 285 speaker profiles,
-1350 unique talks, 1377 author participations, and 40 events across 22
-programme years (2004-2026). 41 speakers occur in both series, 179
-occur only in the Zograf Readings, and 65 only in the Roerich Readings.
+`site_data.json`. As of 29 May 2026 it reports 270 speaker profiles,
+1351 unique talks, 1378 author participations, and 40 events across 22
+programme years (2004-2026). 41 speakers occur in both series, 165
+occur only in the Zograf Readings, and 64 only in the Roerich Readings.
 
 Historical manuscripts, reports, and change logs may preserve older snapshots
 and must not be substituted for the current `site_data.json` publication state.

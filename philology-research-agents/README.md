@@ -116,7 +116,11 @@ philology-research-agents/
 ├── editors/                  # one journal = one editor profile · один журнал = один профиль
 │   ├── README.md             # how to add a journal · как добавить журнал
 │   ├── ppv.md                # ППВ «Письменные памятники Востока» house style
-│   └── iij.md                # Indo-Iranian Journal (Brill) house style
+│   ├── iij.md                # Indo-Iranian Journal (Brill) house style
+│   ├── vdi.md                # ВДИ «Вестник древней истории» (ИВИ РАН) starter
+│   ├── vya.md                # ВЯ «Вопросы языкознания» (ИЯз РАН) starter
+│   ├── jaos.md               # Journal of the American Oriental Society starter
+│   └── olz.md                # Orientalistische Literaturzeitung (De Gruyter) starter
 ├── examples/
 │   └── example-arya-RU.md    # worked run of all 6 agents · прогон всех 6 агентов
 └── tools/

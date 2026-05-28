@@ -11,17 +11,17 @@ years, recorded affiliations, thematic categories, and available video records.
 
 ## Archive Coverage
 
-The published collection as of 25 May 2026 contains:
+The published collection as of 29 May 2026 contains:
 
 | Measure | Value |
 | --- | ---: |
-| Speaker profiles | 285 |
-| Unique talks | 1350 |
-| Author participations | 1377 |
+| Speaker profiles | 270 |
+| Unique talks | 1351 |
+| Author participations | 1378 |
 | Programme years | 22, from 2004 to 2026 |
 | Speakers found at both series | 41 |
-| Zograf Readings only | 179 |
-| Roerich Readings only | 65 |
+| Zograf Readings only | 165 |
+| Roerich Readings only | 64 |
 
 The archive covers the Zograf Readings for 2004-2026 and the Roerich Readings
 for 2007-2025. The 2026 Zograf programme is included as a preliminarily
