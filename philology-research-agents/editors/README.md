@@ -14,6 +14,10 @@
 |---|---|---|
 | `ppv.md` | ППВ «Письменные памятники Востока» (ИВР РАН) · *Written Monuments of the Orient* | ✅ ready · готов |
 | `iij.md` | *Indo-Iranian Journal* (Brill, Leiden) | ✅ ready; house-style specifics marked **[verify]** · готов; специфика стиля помечена **[verify]** |
+| `vdi.md` | ВДИ «Вестник древней истории» (ИВИ РАН, Наука) · *Journal of Ancient History* | 🟡 starter profile; specifics marked **[verify]** against ВДИ Author Instructions · стартовый профиль |
+| `vya.md` | ВЯ «Вопросы языкознания» (ИЯз РАН) · *Voprosy Jazykoznanija* | 🟡 starter profile; specifics marked **[verify]** · стартовый профиль |
+| `jaos.md` | *Journal of the American Oriental Society* (AOS) | 🟡 starter profile; specifics marked **[verify]** against the JAOS Style Sheet · стартовый профиль |
+| `olz.md` | *Orientalistische Literaturzeitung* (De Gruyter, Berlin) | 🟡 starter profile; review-journal-focused; specifics marked **[verify]** · стартовый профиль; рецензионный журнал |
 
 ## How to add a journal · Как добавить журнал
 
