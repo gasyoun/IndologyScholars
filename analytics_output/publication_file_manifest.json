@@ -745,8 +745,8 @@
     },
     {
       "path": "findings/visualisations.html",
-      "size_bytes": 129005,
-      "sha256": "49fcb56c2f7447cfa46fdb5ace8038c985d26666ef894bca0b0ed0f61148da55"
+      "size_bytes": 255299,
+      "sha256": "2cecb792b69f1d14d8ead0d3ea7808553d1a65602a8a27f8445659d14118fc33"
     },
     {
       "path": "generations/index.html",
