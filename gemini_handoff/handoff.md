@@ -179,3 +179,13 @@ run the relevant project gates mentioned in `ROADMAP.md`, especially:
 
 If generated artifacts are rebuilt, inspect the diff carefully because this repository has
 many generated files and a dirty working tree can be normal.
+
+## Future Exploration Ideas (VIS_005+)
+
+The following ideas have been proposed for future development. They fully align with the project's zero-dependency SVG/JS architecture and leverage the rich data available in `conferences.db` (270 scholars, 1378 presentations, 22 years):
+
+1. **Network Graph of Co-authorships and Intersections**: A node-link diagram mapping scholars (nodes) and their joint presentations or shared narrow sessions (edges) to visualize the formation of "academic schools" (e.g. St. Petersburg vs. Moscow).
+2. **Geospatial Bubble Map**: A map plotting the origin cities/countries of speakers based on parsed `affiliation_text_raw` to visualize the geographic footprint and expansion of the conferences over time.
+3. **Scholar Activity Forest (Ridge/Swarm Plot)**: A timeline tracking the top 30-50 most active scholars over the 22-year span, highlighting career longevity, "new generation" arrivals, and peak activity periods.
+4. **Thematic Hierarchy (Sunburst/Treemap)**: A multi-level hierarchical chart showing volume proportions from Series -> Theme -> Meso Level -> Specific Keywords.
+5. **Dynamic Keyword Bubble Cloud**: A physics-based or packed bubble chart of the most frequent keywords/themes extracted via DeepSeek, without strict hierarchical constraints.
