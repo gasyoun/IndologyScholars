@@ -3350,6 +3350,60 @@ def generate_visualisations_page(data, records):
 
     serialized_bridges = json.dumps(bridges_data, ensure_ascii=False)
 
+    # Fetch affiliation opacity statistics
+    from metadata_normalization import load_verified_affiliation_spans, public_affiliation, LOCATION_ONLY_RE
+    verified_spans = load_verified_affiliation_spans()
+    
+    opacity_stats = defaultdict(lambda: {
+        "zograf": {"verified": 0, "city_only": 0, "unknown": 0},
+        "roerich": {"verified": 0, "city_only": 0, "unknown": 0}
+    })
+    
+    try:
+        conn = sqlite3.connect(DB_PATH)
+        cursor = conn.cursor()
+        pp_rows = cursor.execute("""
+            SELECT pp.person_id, e.year, es.series_name_en, pp.affiliation_text_raw
+            FROM presentation_person pp
+            JOIN presentation pr ON pr.presentation_id = pp.presentation_id
+            JOIN session s ON s.session_id = pr.session_id
+            JOIN event_day_venue edv ON edv.event_day_venue_id = s.event_day_venue_id
+            JOIN event_day ed ON ed.event_day_id = edv.event_day_id
+            JOIN event e ON e.event_id = ed.event_id
+            JOIN event_series es ON es.event_series_id = e.event_series_id
+        """).fetchall()
+        
+        for pid, year, series_name_en, raw in pp_rows:
+            raw_clean = str(raw or "").strip()
+            series = "zograf" if "zograf" in series_name_en.lower() else "roerich"
+            
+            aff_meta = public_affiliation(pid, year, raw_clean, None, verified_spans)
+            basis = aff_meta.get("basis")
+            display = aff_meta.get("display")
+            
+            if basis in ("verified_span", "inferred_continuation"):
+                cat = "verified"
+            elif display and basis == "programme":
+                cat = "verified"
+            elif raw_clean and (LOCATION_ONLY_RE.match(raw_clean) or raw_clean.lower() in ("москва", "спб", "санкт-петербург", "пенза", "казань", "обнинск")):
+                cat = "city_only"
+            else:
+                cat = "unknown"
+                
+            opacity_stats[year][series][cat] += 1
+        conn.close()
+    except Exception as ex:
+        print(f"Error querying affiliation opacity: {ex}")
+        
+    opacity_data = []
+    for y in sorted(opacity_stats.keys()):
+        opacity_data.append({
+            "year": y,
+            "zograf": opacity_stats[y]["zograf"],
+            "roerich": opacity_stats[y]["roerich"]
+        })
+    serialized_opacity = json.dumps(opacity_data, ensure_ascii=False)
+
     findings_style = """
         <style>
             .lang-toggle-container {
@@ -3486,6 +3540,55 @@ def generate_visualisations_page(data, records):
                 font-size: 0.92rem;
                 margin-top: 1rem;
             }
+            .opacity-controls {
+                display: flex;
+                gap: 0.5rem;
+                margin-bottom: 1rem;
+                flex-wrap: wrap;
+            }
+            .opacity-toggle-btn {
+                background: rgba(255, 255, 255, 0.05);
+                color: var(--muted);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                padding: 0.35rem 0.8rem;
+                border-radius: 4px;
+                cursor: pointer;
+                font-size: 0.85rem;
+                transition: all 0.2s ease;
+            }
+            .opacity-toggle-btn.active {
+                background: var(--accent);
+                color: #fff;
+                border-color: var(--accent);
+            }
+            .opacity-toggle-btn:hover:not(.active) {
+                background: rgba(255, 255, 255, 0.1);
+                color: #fff;
+            }
+            #opacity-tooltip {
+                position: absolute;
+                background: rgba(18, 18, 24, 0.95);
+                border: 1px solid rgba(255, 255, 255, 0.15);
+                border-radius: 8px;
+                padding: 0.8rem 1rem;
+                font-size: 0.85rem;
+                color: #fff;
+                pointer-events: none;
+                opacity: 0;
+                transition: opacity 0.15s ease;
+                z-index: 1000;
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+                backdrop-filter: blur(4px);
+                max-width: 280px;
+                line-height: 1.4;
+            }
+            .opacity-bar {
+                cursor: pointer;
+                transition: opacity 0.2s;
+            }
+            .opacity-bar:hover {
+                opacity: 0.85;
+            }
         </style>
     """
 
@@ -3509,7 +3612,7 @@ def generate_visualisations_page(data, records):
             <a href="#VIS_002_affiliation_opacity" class="viz-toc-item">
                 <span>VIS_002</span>
                 <b class="bilingual-text" data-ru="Таймлайн аффилиационной непрозрачности" data-en="Affiliation Opacity Timeline">Таймлайн аффилиационной непрозрачности</b>
-                <span class="badge bilingual-text" style="background:rgba(255,255,255,0.05); color:var(--muted);" data-ru="В планах" data-en="Planned">В планах</span>
+                <span class="badge badge-online bilingual-text" data-ru="Активна" data-en="Active">Активна</span>
             </a>
             <a href="#VIS_003_video_heatmap" class="viz-toc-item">
                 <span>VIS_003</span>
@@ -3566,9 +3669,37 @@ def generate_visualisations_page(data, records):
                 <span class="bilingual-text" data-ru="Таймлайн аффилиационной непрозрачности" data-en="Affiliation Opacity Timeline">Таймлайн аффилиационной непрозрачности</span>
             </h2>
             <p class="bilingual-text" style="color:var(--muted); font-size:0.9rem;" data-ru="Хронологическая визуализация соотношения верифицированных институтов, только городов и неизвестных траекторий участников конференций по годам." data-en="A chronological visualisation of the ratio between verified institutes, city-only tags, and unknown participant affiliations across conference years.">Хронологическая визуализация соотношения верифицированных институтов, только городов и неизвестных траекторий участников конференций по годам.</p>
-            <div class="placeholder-viz">
-                <span class="bilingual-text" data-ru="[ Интерактивный таймлайн в процессе разработки ]" data-en="[ Interactive timeline currently in development ]">[ Интерактивный таймлайн в процессе разработки ]</span>
+            
+            <div class="opacity-controls">
+                <button class="opacity-toggle-btn active" onclick="switchOpacitySeries('combined')" data-ru="Совмещенный" data-en="Combined">Совмещенный</button>
+                <button class="opacity-toggle-btn" onclick="switchOpacitySeries('zograf')" data-ru="Зографские чтения" data-en="Zograf Readings">Зографские чтения</button>
+                <button class="opacity-toggle-btn" onclick="switchOpacitySeries('roerich')" data-ru="Рериховские чтения" data-en="Roerich Readings">Рериховские чтения</button>
             </div>
+
+            <div id="opacity-chart-wrapper" style="position:relative; width:100%; overflow:hidden;">
+                <svg id="opacity-svg" viewBox="0 0 800 380" style="width:100%; height:auto; background:rgba(0,0,0,0.15); border-radius:8px;"></svg>
+                <div id="opacity-tooltip"></div>
+            </div>
+
+            <div class="legend-container">
+                <div class="legend-item">
+                    <span class="legend-color" style="background:#10b981;"></span>
+                    <span class="bilingual-text" data-ru="Подтвержденный институт / Программа" data-en="Verified Institute / Program">Подтвержденный институт / Программа</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-color" style="background:#f59e0b;"></span>
+                    <span class="bilingual-text" data-ru="Только город (Аффилиационная непрозрачность)" data-en="City Only (Affiliation Opacity)">Только город (Аффилиационная непрозрачность)</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-color" style="background:#6b7280;"></span>
+                    <span class="bilingual-text" data-ru="Не указана / Неизвестно" data-en="Not Specified / Unknown">Не указана / Неизвестно</span>
+                </div>
+            </div>
+            
+            <aside class="caveat-block" role="note" style="margin-top: 1.2rem; border-left: 3px solid var(--accent); background: rgba(255,255,255,0.01);">
+                <strong class="bilingual-text" data-ru="Методологическая оговорка" data-en="Methodological Caveat">Методологическая оговорка</strong>
+                <p class="bilingual-text" data-ru="Этот график измеряет качество официальной документации конференций. Рост 'оранжевого' сектора указывает на периоды высокой аффилиационной непрозрачности (когда программы содержат исключительно название города без названия института)." data-en="This timeline measures the administrative documentation quality of the conference programs. Growth of the 'orange' sector highlights periods of high affiliation opacity (where programs explicitly report city location while hiding institutional ties).">Этот график измеряет качество официальной документации конференций. Рост 'оранжевого' сектора указывает на периоды высокой аффилиационной непрозрачности (когда программы содержат исключительно название города без названия института).</p>
+            </aside>
         </section>
 
         <!-- VIS_003_video_heatmap -->
@@ -3799,8 +3930,220 @@ def generate_visualisations_page(data, records):
                 });
             }
 
+            const OPACITY_DATA = """ + serialized_opacity + """;
+            let currentOpacitySeries = 'combined';
+
+            function switchOpacitySeries(series) {
+                currentOpacitySeries = series;
+                document.querySelectorAll('.opacity-toggle-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                const activeBtn = Array.from(document.querySelectorAll('.opacity-toggle-btn')).find(btn => {
+                    const onclickStr = btn.getAttribute('onclick') || '';
+                    return onclickStr.includes(series);
+                });
+                if (activeBtn) activeBtn.classList.add('active');
+                drawOpacityChart();
+            }
+
+            function drawOpacityChart() {
+                const svg = document.getElementById('opacity-svg');
+                if (!svg) return;
+                svg.innerHTML = '';
+
+                const width = 800;
+                const height = 380;
+                const padding = { top: 30, right: 40, bottom: 40, left: 55 };
+
+                const chartData = [];
+                OPACITY_DATA.forEach(d => {
+                    let verified = 0;
+                    let cityOnly = 0;
+                    let unknown = 0;
+
+                    if (currentOpacitySeries === 'combined' || currentOpacitySeries === 'zograf') {
+                        verified += d.zograf.verified;
+                        cityOnly += d.zograf.city_only;
+                        unknown += d.zograf.unknown;
+                    }
+                    if (currentOpacitySeries === 'combined' || currentOpacitySeries === 'roerich') {
+                        verified += d.roerich.verified;
+                        cityOnly += d.roerich.city_only;
+                        unknown += d.roerich.unknown;
+                    }
+
+                    const total = verified + cityOnly + unknown;
+                    if (total > 0) {
+                        chartData.push({
+                            year: d.year,
+                            verified: verified,
+                            cityOnly: cityOnly,
+                            unknown: unknown,
+                            total: total
+                        });
+                    }
+                });
+
+                if (chartData.length === 0) return;
+
+                const xScale = (index) => padding.left + (index / (chartData.length - 1)) * (width - padding.left - padding.right);
+                const yScale = (pct) => height - padding.bottom - (pct / 100) * (height - padding.top - padding.bottom);
+
+                const yTicks = [0, 25, 50, 75, 100];
+                yTicks.forEach(tick => {
+                    const y = yScale(tick);
+                    
+                    const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+                    line.setAttribute('x1', padding.left);
+                    line.setAttribute('y1', y);
+                    line.setAttribute('x2', width - padding.right);
+                    line.setAttribute('y2', y);
+                    line.setAttribute('class', 'scatter-grid-line');
+                    svg.appendChild(line);
+
+                    const label = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+                    label.setAttribute('x', padding.left - 10);
+                    label.setAttribute('y', y + 4);
+                    label.setAttribute('text-anchor', 'end');
+                    label.setAttribute('fill', 'var(--muted)');
+                    label.setAttribute('font-size', '11px');
+                    label.textContent = tick + '%';
+                    svg.appendChild(label);
+                });
+
+                const step = Math.ceil(chartData.length / 10);
+                chartData.forEach((d, idx) => {
+                    if (idx % step === 0 || idx === chartData.length - 1) {
+                        const x = xScale(idx);
+                        
+                        const label = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+                        label.setAttribute('x', x);
+                        label.setAttribute('y', height - padding.bottom + 20);
+                        label.setAttribute('text-anchor', 'middle');
+                        label.setAttribute('fill', 'var(--muted)');
+                        label.setAttribute('font-size', '11px');
+                        label.textContent = d.year;
+                        svg.appendChild(label);
+                    }
+                });
+
+                const barWidth = Math.max(12, Math.min(26, (width - padding.left - padding.right) / chartData.length - 8));
+                const tooltip = document.getElementById('opacity-tooltip');
+
+                chartData.forEach((d, idx) => {
+                    const x = xScale(idx) - barWidth / 2;
+                    
+                    const pVerified = (d.verified / d.total) * 100;
+                    const pCity = (d.cityOnly / d.total) * 100;
+                    const pUnknown = (d.unknown / d.total) * 100;
+
+                    const y1 = yScale(pVerified);
+                    const h1 = yScale(0) - y1;
+
+                    const y2 = yScale(pVerified + pCity);
+                    const h2 = y1 - y2;
+
+                    const y3 = yScale(100);
+                    const h3 = y2 - y3;
+
+                    const cVerified = '#10b981';
+                    const cCity = '#f59e0b';
+                    const cUnknown = '#6b7280';
+
+                    const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+                    g.setAttribute('class', 'opacity-bar');
+
+                    const drawRect = (y, h, color) => {
+                        if (h <= 0.1) return;
+                        const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+                        rect.setAttribute('x', x);
+                        rect.setAttribute('y', y);
+                        rect.setAttribute('width', barWidth);
+                        rect.setAttribute('height', h);
+                        rect.setAttribute('fill', color);
+                        g.appendChild(rect);
+                    };
+
+                    drawRect(y3, h3, cUnknown);
+                    drawRect(y2, h2, cCity);
+                    drawRect(y1, h1, cVerified);
+
+                    g.addEventListener('mouseenter', (e) => {
+                        tooltip.style.opacity = '1';
+                        
+                        const labelY = currentLang === 'ru' ? 'Год' : 'Year';
+                        const labelTot = currentLang === 'ru' ? 'Всего докладов' : 'Total presentations';
+                        const labelVer = currentLang === 'ru' ? 'Подтвержденные' : 'Verified';
+                        const labelCit = currentLang === 'ru' ? 'Только город' : 'City Only';
+                        const labelUnk = currentLang === 'ru' ? 'Неизвестно' : 'Unknown';
+
+                        tooltip.innerHTML = 
+                            '<strong style="color:var(--accent); font-size: 0.95rem;">' + labelY + ': ' + d.year + '</strong><br>' +
+                            '<span style="font-weight:bold; font-size:0.8rem; color:var(--muted);">' + labelTot + ': ' + d.total + '</span><hr style="border:0; border-top:1px solid rgba(255,255,255,0.1); margin:6px 0;">' +
+                            '<span style="color:#10b981; font-weight:bold;">● ' + labelVer + ': ' + d.verified + ' (' + pVerified.toFixed(1) + '%)</span><br>' +
+                            '<span style="color:#f59e0b; font-weight:bold;">● ' + labelCit + ': ' + d.cityOnly + ' (' + pCity.toFixed(1) + '%)</span><br>' +
+                            '<span style="color:#9ca3af; font-weight:bold;">● ' + labelUnk + ': ' + d.unknown + ' (' + pUnknown.toFixed(1) + '%)</span>';
+                    });
+
+                    g.addEventListener('mousemove', (e) => {
+                        const rect = svg.getBoundingClientRect();
+                        const tooltipRect = tooltip.getBoundingClientRect();
+                        const tooltipX = e.clientX - rect.left + 15;
+                        const tooltipY = e.clientY - rect.top - tooltipRect.height - 10;
+                        tooltip.style.left = tooltipX + 'px';
+                        tooltip.style.top = tooltipY + 'px';
+                    });
+
+                    g.addEventListener('mouseleave', () => {
+                        tooltip.style.opacity = '0';
+                    });
+
+                    svg.appendChild(g);
+                });
+
+                const xAxis = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+                xAxis.setAttribute('x1', padding.left);
+                xAxis.setAttribute('y1', height - padding.bottom);
+                xAxis.setAttribute('x2', width - padding.right);
+                xAxis.setAttribute('y2', height - padding.bottom);
+                xAxis.setAttribute('stroke', 'rgba(255,255,255,0.2)');
+                svg.appendChild(xAxis);
+
+                const yAxis = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+                yAxis.setAttribute('x1', padding.left);
+                yAxis.setAttribute('y1', padding.top);
+                yAxis.setAttribute('x2', padding.left);
+                yAxis.setAttribute('y2', height - padding.bottom);
+                yAxis.setAttribute('stroke', 'rgba(255,255,255,0.2)');
+                svg.appendChild(yAxis);
+            }
+
+            let currentLang = localStorage.getItem('findings-lang') || 'ru';
+
+            function toggleLanguage() {
+                currentLang = currentLang === 'ru' ? 'en' : 'ru';
+                setLanguage(currentLang);
+            }
+
+            function setLanguage(lang) {
+                document.querySelectorAll('.bilingual-text').forEach(el => {
+                    const text = el.getAttribute('data-' + lang);
+                    if (text) {
+                        el.innerHTML = text;
+                    }
+                });
+                const btn = document.getElementById('lang-toggle-btn');
+                if (btn) {
+                    btn.innerText = lang === 'ru' ? 'English' : 'Русский';
+                }
+                localStorage.setItem('findings-lang', lang);
+                drawScatter();
+                drawOpacityChart();
+            }
+
             document.addEventListener('DOMContentLoaded', () => {
                 setLanguage(currentLang);
+                switchOpacitySeries('combined');
             });
         </script>
     """
