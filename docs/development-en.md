@@ -28,6 +28,7 @@ Editable inputs and curation rules:
 | `curation/` | Verified corrections and dated affiliation trajectories. |
 | `authority_ids.json` | Verified external person identifiers. |
 | `analytics_output/classification_overrides.csv` | Editorial decisions for public classification examples. |
+| `curation/teacher_student.csv` | Curated advisor/student relationships (issue #9 genealogy track). Schema and editing rules: `curation/teacher_student_schema.md`. |
 
 Do not manually edit derived artifacts: `conferences.db`, `site_data.json`,
 `search-index.json`, `analytics_output/`, the `s/`, `p/`,
@@ -116,6 +117,34 @@ The `.github/workflows/rebuild_and_deploy.yml` workflow fetches new programmes,
 runs the full build and validation, and deploys GitHub Pages on 20 June and
 20 December at 00:00 UTC, as well as on manual dispatch.
 
+### Article numbers consistency
+
+`article/check_ppv_numbers.py` cross-checks every numeric claim in
+`article/ppv_submission_article.md` against the rebuilt `conferences.db` and
+`analytics_output/expanded_classification_deepseek.csv` (for G-scale counts).
+It uses phrase-based regular expressions per metric — totals, per-series,
+the Zograf-through-2025 censored block, Zograf 2026 preliminary, and G1/G2/G3
+— and exits non-zero on any drift, so the pre-submission gate fails until the
+article is synchronised. A current-state snapshot is written to
+`article/hypothesis_output/ppv_numbers_snapshot.{md,json}`.
+
+## Genealogy track
+
+The advisor/student layer (issue #9) is curated, not derived. The schema in
+`curation/teacher_student_schema.md` defines a twelve-column CSV format and an
+anti-fabrication rule: `status=verified` requires a non-empty `evidence_url`
+backing the specific tie. `pipeline/genealogy.py` is the read-side loader
+with row-level validation (required fields, enum vocabularies for
+`relationship_type` and `status`, self-loop rejection); it returns
+`Relationship` dataclasses and exposes `by_advisor` / `by_student` indexes.
+
+`article/work_lineage_candidates.py` produces heuristic suggestions in
+`analytics_output/lineage_candidates.csv` from co-authorship (≥2 joint
+presentations) and birth-year gap (≥15 years). These are starting points for
+human verification, never asserted facts. The loader is not yet wired into
+`site_data.json` or the profile pages — that wiring is a separate step kept
+out of the standard build sequence.
+
 ## Technical Documents
 
 | Document | Purpose |
@@ -127,6 +156,7 @@ runs the full build and validation, and deploys GitHub Pages on 20 June and
 | [archive/README.md](https://github.com/gasyoun/IndologyScholars/blob/main/archive/README.md) | Index of historical plans, snapshots, and handoff files. |
 | [archive/plans/architecture.md](https://github.com/gasyoun/IndologyScholars/blob/main/archive/plans/architecture.md) | Historical architecture plan. |
 | [archive/plans/architecture_implementation_plan.md](https://github.com/gasyoun/IndologyScholars/blob/main/archive/plans/architecture_implementation_plan.md) | Record of implemented architecture hardening. |
+| [../philology-research-agents/README.md](https://github.com/gasyoun/IndologyScholars/blob/main/philology-research-agents/README.md) | Portable six-agent evidence-lab prompt module for philology, linguistics, and Oriental studies, with journal-specific editor profiles (ППВ, IIJ, ВДИ, ВЯ, JAOS, OLZ) and a Haiku-based VAK *Perechen'* parser. Designed to be moved into its own repository. |
 
 `CHANGELOG.md` and materials under `article/` are logs or research snapshots;
 read their figures in the context of their stated date. Working documents
