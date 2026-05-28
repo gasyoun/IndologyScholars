@@ -3740,27 +3740,7 @@ def generate_visualisations_page(data, records):
                 return ((Math.abs(hash) % 100) / 100) - 0.5; // [-0.5, 0.5]
             }
 
-            let currentLang = localStorage.getItem('findings-lang') || 'ru';
 
-            function toggleLanguage() {
-                currentLang = currentLang === 'ru' ? 'en' : 'ru';
-                setLanguage(currentLang);
-            }
-
-            function setLanguage(lang) {
-                document.querySelectorAll('.bilingual-text').forEach(el => {
-                    const text = el.getAttribute('data-' + lang);
-                    if (text) {
-                        el.innerHTML = text;
-                    }
-                });
-                const btn = document.getElementById('lang-toggle-btn');
-                if (btn) {
-                    btn.innerText = lang === 'ru' ? 'English' : 'Русский';
-                }
-                localStorage.setItem('findings-lang', lang);
-                drawScatter();
-            }
 
             function drawScatter() {
                 const svg = document.getElementById('scatter-svg');
