@@ -177,7 +177,9 @@
                 stroke: var(--accent2) !important;
             }
             .node-circle {
-                transition: transform 0.2s, fill-opacity 0.2s;
+                transform-box: fill-box;
+                transform-origin: center;
+                transition: transform 0.15s ease-out, fill-opacity 0.2s;
                 cursor: pointer;
             }
             .network-node:hover .node-circle {
