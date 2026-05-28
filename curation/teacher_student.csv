@@ -1,0 +1,5 @@
+student_normalized_key,student_display_name,advisor_normalized_key,advisor_display_name,relationship_type,period_start,period_end,evidence_url,evidence_note,status,added_date,notes
+# Schema: curation/teacher_student_schema.md. Verified entries only (status=verified) are read for site rendering.
+# Heuristic suggestions live in analytics_output/lineage_candidates.csv and must be manually verified before being copied here.
+# Example row (commented; uncomment and replace with a real verified relationship to start populating this file):
+# александрова н в,Александрова Наталия Владимировна,вигасин а а,Вигасин Алексей Алексеевич,advisor,,1989,https://example.org/replace-with-real-source,REPLACE WITH REAL CITATION,candidate,2026-05-28,seed placeholder — do not publish until verified
