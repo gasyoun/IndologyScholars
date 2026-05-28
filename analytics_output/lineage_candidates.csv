@@ -1,0 +1,2 @@
+candidate_advisor_normalized_key,candidate_advisor_display_name,candidate_advisor_birth_year,candidate_student_normalized_key,candidate_student_display_name,candidate_student_birth_year,birth_year_delta,co_authored_count,first_co_authored_year,last_co_authored_year,evidence_summary,status
+краснодембская н г,Краснодембская Нина Георгиевна,1939,соболева е с,Соболева Елена Станиславовна,1956,17,5,2013,2024,"Co-authored 5 presentations (2013-2024), ΔAge = 17 years",candidate

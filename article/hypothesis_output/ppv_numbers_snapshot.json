@@ -1,23 +1,21 @@
 {
   "total": {
     "unique_scholars": 270,
-    "person_table_rows": 270,
     "presentations": 1351,
     "author_participations": 1378,
     "known_birth_years": 231,
     "cross_cohort": 41,
     "zograf_only": 165,
-    "roerich_only": 64
+    "roerich_only": 64,
+    "events": 40,
+    "program_years": 22
   },
+  "cross_cohort_pct": 15.2,
   "combined_activity": {
-    "unique_scholars": 270,
-    "author_participations": 1378,
     "one_talk_share_pct": 41.9,
     "core_share_pct": 35.9,
     "retention_pct": 58.1,
-    "gini": 0.554,
-    "median_talks": 2,
-    "max_talks": 29
+    "gini": 0.554
   },
   "series": {
     "Zograf": {
@@ -27,9 +25,7 @@
       "one_talk_share_pct": 41.3,
       "core_share_pct": 34.5,
       "retention_pct": 58.7,
-      "gini": 0.525,
-      "median_talks": 2,
-      "max_talks": 22
+      "gini": 0.525
     },
     "Roerich": {
       "unique_scholars": 105,
@@ -38,9 +34,7 @@
       "one_talk_share_pct": 35.2,
       "core_share_pct": 33.3,
       "retention_pct": 64.8,
-      "gini": 0.501,
-      "median_talks": 2,
-      "max_talks": 16
+      "gini": 0.501
     }
   },
   "zograf_until_2025": {
@@ -50,13 +44,41 @@
     "one_talk_share_pct": 36.9,
     "core_share_pct": 35.8,
     "retention_pct": 63.1,
-    "gini": 0.51,
-    "median_talks": 3,
-    "max_talks": 21
+    "gini": 0.51
   },
   "zograf_2026": {
     "presentations": 58,
     "unique_scholars": 61,
     "author_participations": 61
+  },
+  "g_levels": {
+    "1": 1156,
+    "2": 185,
+    "3": 10
+  },
+  "theme_counts": {
+    "Zograf": {
+      "philosophy": 190,
+      "literature": 195,
+      "religion": 205,
+      "linguistics": 87,
+      "history": 94,
+      "other": 8,
+      "art_archaeology": 46,
+      "ethnography": 49,
+      "tibetology": 3,
+      "pedagogy_applied": 2
+    },
+    "Roerich": {
+      "history": 91,
+      "religion": 144,
+      "philosophy": 49,
+      "art_archaeology": 42,
+      "literature": 89,
+      "ethnography": 8,
+      "linguistics": 44,
+      "tibetology": 1,
+      "other": 4
+    }
   }
 }
