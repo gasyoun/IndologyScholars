@@ -2924,10 +2924,12 @@ def generate_findings_page(data, records):
             }
             .scatter-dot {
                 cursor: pointer;
-                transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), r 0.2s;
+                transform-box: fill-box;
+                transform-origin: center;
+                transition: transform 0.15s ease-out;
             }
             .scatter-dot:hover {
-                transform: scale(1.3);
+                transform: scale(1.4);
                 stroke: #fff;
                 stroke-width: 1.5px;
             }
@@ -3668,10 +3670,12 @@ def generate_visualisations_page(data, records):
             }
             .scatter-dot {
                 cursor: pointer;
-                transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), r 0.2s;
+                transform-box: fill-box;
+                transform-origin: center;
+                transition: transform 0.15s ease-out;
             }
             .scatter-dot:hover {
-                transform: scale(1.3);
+                transform: scale(1.4);
                 stroke: #fff;
                 stroke-width: 1.5px;
             }
@@ -3799,6 +3803,136 @@ def generate_visualisations_page(data, records):
         </style>
     """
 
+    # ===================== EXTENDED GALLERY DATA (VIS_008 – VIS_015) =====================
+    def _gf(v, d=0.0):
+        try:
+            return float(v)
+        except (TypeError, ValueError):
+            return d
+
+    def _gi(v, d=0):
+        try:
+            return int(float(v))
+        except (TypeError, ValueError):
+            return d
+
+    def _series_key(name):
+        return "zograf" if "zograf" in (name or "").lower() else "roerich"
+
+    # VIS_008 — Demography ribbon (median age + p25–p75 band over time)
+    demography_data = []
+    for row in load_csv_rows("analytics_output/age_cohort_trend.csv"):
+        demography_data.append({
+            "series": _series_key(row.get("series")),
+            "year": _gi(row.get("year")),
+            "avg": _gf(row.get("avg_age")),
+            "median": _gf(row.get("median_age")),
+            "p25": _gf(row.get("p25_age")),
+            "p75": _gf(row.get("p75_age")),
+            "min": _gf(row.get("min_age")),
+            "max": _gf(row.get("max_age")),
+            "n": _gi(row.get("n_speakers_with_age")),
+        })
+    serialized_demography = json.dumps(demography_data, ensure_ascii=False)
+
+    # VIS_009 — Cohort survival curves
+    survival_map = {}
+    for row in load_csv_rows("analytics_output/cohort_survival.csv"):
+        key = (row.get("series"), row.get("debut_year"))
+        bucket = survival_map.setdefault(key, {
+            "series": _series_key(row.get("series")),
+            "debut": _gi(row.get("debut_year")),
+            "size": _gi(row.get("cohort_size")),
+            "points": [],
+        })
+        bucket["points"].append({"x": _gi(row.get("years_since_debut")), "y": _gf(row.get("survival_pct"))})
+    survival_data = [c for c in survival_map.values() if c["size"] >= 5]
+    for c in survival_data:
+        c["points"].sort(key=lambda p: p["x"])
+    survival_data.sort(key=lambda c: (c["series"], c["debut"]))
+    serialized_survival = json.dumps(survival_data, ensure_ascii=False)
+
+    # VIS_010 — Newcomer / renewal rate by year
+    newcomer_data = []
+    for row in load_csv_rows("analytics_output/newcomer_rate_by_year.csv"):
+        newcomer_data.append({
+            "series": _series_key(row.get("series")),
+            "year": _gi(row.get("year")),
+            "pct": _gf(row.get("newcomer_pct")),
+            "newcomers": _gi(row.get("newcomers")),
+            "total": _gi(row.get("total")),
+        })
+    serialized_newcomer = json.dumps(newcomer_data, ensure_ascii=False)
+
+    # VIS_011 — Theme treemap (L1 → L2)
+    tree_l1 = defaultdict(lambda: defaultdict(int))
+    for row in load_csv_rows("analytics_output/theme_codes_final_v2.csv"):
+        l1 = row.get("l1") or "unspecified"
+        l2 = row.get("l2") or "unspecified"
+        tree_l1[l1][l2] += 1
+    treemap_data = []
+    for l1, kids in tree_l1.items():
+        children = [{"name": k, "value": v} for k, v in sorted(kids.items(), key=lambda x: -x[1])]
+        treemap_data.append({"name": l1, "value": sum(kids.values()), "children": children})
+    treemap_data.sort(key=lambda x: -x["value"])
+    serialized_treemap = json.dumps(treemap_data, ensure_ascii=False)
+
+    # VIS_012 — Gumilyov scale streamgraph (pre-aggregated per year)
+    gumilyov_stream = []
+    for row in load_csv_rows("analytics_output/gumilyov_scale_trends.csv"):
+        gumilyov_stream.append({
+            "year": _gi(row.get("year")),
+            "l1": _gi(row.get("Level_1_Microhistory")),
+            "l2": _gi(row.get("Level_2_Regional")),
+            "l3": _gi(row.get("Level_3_Global")),
+        })
+    gumilyov_stream.sort(key=lambda r: r["year"])
+    serialized_gumilyov = json.dumps(gumilyov_stream, ensure_ascii=False)
+
+    # VIS_013 — Keyword diverging bars (Zograf vs Roerich), top by total
+    kw_rows = []
+    for row in load_csv_rows("analytics_output/keyword_stats.csv"):
+        kw_rows.append({
+            "kw": row.get("keyword"),
+            "total": _gi(row.get("presentations")),
+            "z": _gi(row.get("zograf")),
+            "r": _gi(row.get("roerich")),
+        })
+    kw_rows.sort(key=lambda x: -x["total"])
+    serialized_keyword_div = json.dumps(kw_rows[:22], ensure_ascii=False)
+
+    # VIS_014 — Closedness metric comparison
+    closedness = {}
+    for row in load_csv_rows("analytics_output/closedness_metrics.csv"):
+        closedness[(row.get("series") or "").lower()] = {
+            "one_talk": _gf(row.get("one_talk_wonder_pct")),
+            "core5": _gf(row.get("core_5plus_pct")),
+            "retention": _gf(row.get("retention_pct")),
+            "gini": _gf(row.get("gini_concentration")) * 100,
+            "n": _gi(row.get("n_scholars")),
+        }
+    serialized_closedness = json.dumps(closedness, ensure_ascii=False)
+
+    # VIS_015 — Online share by year
+    online_data = []
+    for row in load_csv_rows("analytics_output/online_share_by_year.csv"):
+        online_data.append({
+            "series": _series_key(row.get("series")),
+            "year": _gi(row.get("year")),
+            "pct": _gf(row.get("online_share_pct")),
+            "on": _gi(row.get("n_online")),
+            "off": _gi(row.get("n_offline")),
+        })
+    online_data.sort(key=lambda r: r["year"])
+    serialized_online = json.dumps(online_data, ensure_ascii=False)
+
+    tip_style = (
+        "position:absolute; background:rgba(18,18,24,0.95); border:1px solid rgba(255,255,255,0.15); "
+        "border-radius:8px; padding:0.7rem 0.9rem; font-size:0.82rem; color:#fff; pointer-events:none; "
+        "opacity:0; transition:opacity 0.15s ease; z-index:1000; box-shadow:0 4px 20px rgba(0,0,0,0.5); "
+        "backdrop-filter:blur(4px); max-width:300px; line-height:1.45;"
+    )
+
     body = f"""
         <div class="lang-toggle-container">
             <button id="lang-toggle-btn" onclick="toggleLanguage()">English</button>
@@ -3830,6 +3964,46 @@ def generate_visualisations_page(data, records):
                 <span>VIS_004</span>
                 <b class="bilingual-text" data-ru="Эволюция ключевых слов и мезоуровней" data-en="Keyword/Meso Alluvial Flow">Эволюция ключевых слов и мезоуровней</b>
                 <span class="badge bilingual-text" style="background:rgba(255,255,255,0.05); color:var(--muted);" data-ru="В планах" data-en="Planned">В планах</span>
+            </a>
+            <a href="#VIS_008_demography_ribbon" class="viz-toc-item">
+                <span>VIS_008</span>
+                <b class="bilingual-text" data-ru="Возрастная лента поля (медиана и квартили)" data-en="Field Age Ribbon (median &amp; quartiles)">Возрастная лента поля (медиана и квартили)</b>
+                <span class="badge badge-online bilingual-text" data-ru="Активна" data-en="Active">Активна</span>
+            </a>
+            <a href="#VIS_009_cohort_survival" class="viz-toc-item">
+                <span>VIS_009</span>
+                <b class="bilingual-text" data-ru="Кривые выживаемости когорт" data-en="Cohort Survival Curves">Кривые выживаемости когорт</b>
+                <span class="badge badge-online bilingual-text" data-ru="Активна" data-en="Active">Активна</span>
+            </a>
+            <a href="#VIS_010_newcomer_rate" class="viz-toc-item">
+                <span>VIS_010</span>
+                <b class="bilingual-text" data-ru="Темп обновления (доля новичков)" data-en="Renewal Rate (newcomer share)">Темп обновления (доля новичков)</b>
+                <span class="badge badge-online bilingual-text" data-ru="Активна" data-en="Active">Активна</span>
+            </a>
+            <a href="#VIS_011_theme_treemap" class="viz-toc-item">
+                <span>VIS_011</span>
+                <b class="bilingual-text" data-ru="Карта тем (L1 → L2, treemap)" data-en="Theme Treemap (L1 → L2)">Карта тем (L1 → L2, treemap)</b>
+                <span class="badge badge-online bilingual-text" data-ru="Активна" data-en="Active">Активна</span>
+            </a>
+            <a href="#VIS_012_gumilyov_stream" class="viz-toc-item">
+                <span>VIS_012</span>
+                <b class="bilingual-text" data-ru="Поток уровней обобщения (шкала Гумилёва)" data-en="Scale-of-Argument Streamgraph (Gumilyov)">Поток уровней обобщения (шкала Гумилёва)</b>
+                <span class="badge badge-online bilingual-text" data-ru="Активна" data-en="Active">Активна</span>
+            </a>
+            <a href="#VIS_013_keyword_diverging" class="viz-toc-item">
+                <span>VIS_013</span>
+                <b class="bilingual-text" data-ru="Ключевые слова: Зограф против Рериха" data-en="Keywords: Zograf vs Roerich">Ключевые слова: Зограф против Рериха</b>
+                <span class="badge badge-online bilingual-text" data-ru="Активна" data-en="Active">Активна</span>
+            </a>
+            <a href="#VIS_014_closedness" class="viz-toc-item">
+                <span>VIS_014</span>
+                <b class="bilingual-text" data-ru="Замкнутость сообществ (сравнение метрик)" data-en="Community Closedness (metric comparison)">Замкнутость сообществ (сравнение метрик)</b>
+                <span class="badge badge-online bilingual-text" data-ru="Активна" data-en="Active">Активна</span>
+            </a>
+            <a href="#VIS_015_online_share" class="viz-toc-item">
+                <span>VIS_015</span>
+                <b class="bilingual-text" data-ru="Сдвиг в онлайн (доля по годам)" data-en="The Online Shift (share by year)">Сдвиг в онлайн (доля по годам)</b>
+                <span class="badge badge-online bilingual-text" data-ru="Активна" data-en="Active">Активна</span>
             </a>
         </section>
 
@@ -3989,6 +4163,146 @@ def generate_visualisations_page(data, records):
                 <div id="alluvial-tooltip" style="position: absolute; background: rgba(18, 18, 24, 0.95); border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 8px; padding: 0.8rem 1rem; font-size: 0.85rem; color: #fff; pointer-events: none; opacity: 0; transition: opacity 0.15s ease; z-index: 1000; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); backdrop-filter: blur(4px);"></div>
             </div>
 
+        </section>
+
+        <hr style="border:0; border-top:1px solid rgba(255,255,255,0.08); margin:3rem 0 2rem;">
+        <h2 class="bilingual-text" style="font-size:1.4rem; color:var(--accent2);" data-ru="Расширенная галерея (демография, темы, сравнение, время)" data-en="Extended Gallery (demography, themes, comparison, time)">Расширенная галерея (демография, темы, сравнение, время)</h2>
+
+        <!-- VIS_008_demography_ribbon -->
+        <section class="viz-showcase-section" id="VIS_008_demography_ribbon">
+            <h2>
+                <span class="viz-id-badge">VIS_008</span>
+                <span class="bilingual-text" data-ru="Возрастная лента поля" data-en="Field Age Ribbon">Возрастная лента поля</span>
+            </h2>
+            <p class="bilingual-text" style="color:var(--muted); font-size:0.9rem;" data-ru="Медианный возраст докладчиков по годам с лентой межквартильного размаха (25–75 перцентиль). Показывает старение или омоложение каждого сообщества во времени." data-en="Median speaker age per year with an inter-quartile band (25th–75th percentile). Reveals the ageing or rejuvenation of each community over time.">Медианный возраст докладчиков по годам с лентой межквартильного размаха (25–75 перцентиль).</p>
+            <div id="demo-wrapper" style="position:relative; width:100%; overflow:hidden; margin-top:1.5rem;">
+                <svg id="demo-svg" viewBox="0 0 800 420" style="width:100%; height:auto; background:rgba(0,0,0,0.15); border-radius:8px;"></svg>
+                <div id="demo-tooltip" style="{tip_style}"></div>
+            </div>
+            <div class="legend-container">
+                <div class="legend-item"><span class="legend-color" style="background:#2b82c9;"></span><span class="bilingual-text" data-ru="Зографские чтения" data-en="Zograf Readings">Зографские чтения</span></div>
+                <div class="legend-item"><span class="legend-color" style="background:#b83280;"></span><span class="bilingual-text" data-ru="Рериховские чтения" data-en="Roerich Readings">Рериховские чтения</span></div>
+            </div>
+            <aside class="caveat-block" role="note" style="margin-top: 1.2rem; border-left: 3px solid var(--accent2); background: rgba(255,255,255,0.01);">
+                <strong class="bilingual-text" data-ru="Оговорка о покрытии" data-en="Coverage Caveat">Оговорка о покрытии</strong>
+                <p class="bilingual-text" data-ru="Возраст рассчитан только для докладчиков с известным годом рождения; ленты опираются на ту долю участников, для которой год рождения установлен." data-en="Age is computed only for speakers with a known birth year; the bands rest on the subset of participants whose birth year is established.">Возраст рассчитан только для докладчиков с известным годом рождения.</p>
+            </aside>
+        </section>
+
+        <!-- VIS_009_cohort_survival -->
+        <section class="viz-showcase-section" id="VIS_009_cohort_survival">
+            <h2>
+                <span class="viz-id-badge">VIS_009</span>
+                <span class="bilingual-text" data-ru="Кривые выживаемости когорт" data-en="Cohort Survival Curves">Кривые выживаемости когорт</span>
+            </h2>
+            <p class="bilingual-text" style="color:var(--muted); font-size:0.9rem;" data-ru="Каждая линия — когорта дебютантов одного года. По оси X — годы после первого доклада, по оси Y — доля когорты, всё ещё активной. Показаны только когорты от 5 человек." data-en="Each line is a cohort of scholars who debuted in the same year. X axis: years since first talk; Y axis: share of the cohort still active. Only cohorts of 5+ are shown.">Каждая линия — когорта дебютантов одного года; ось Y — доля когорты, всё ещё активной.</p>
+            <div id="survival-wrapper" style="position:relative; width:100%; overflow:hidden; margin-top:1.5rem;">
+                <svg id="survival-svg" viewBox="0 0 800 420" style="width:100%; height:auto; background:rgba(0,0,0,0.15); border-radius:8px;"></svg>
+                <div id="survival-tooltip" style="{tip_style}"></div>
+            </div>
+            <div class="legend-container">
+                <div class="legend-item"><span class="legend-color" style="background:#2b82c9;"></span><span class="bilingual-text" data-ru="Когорты Зографа" data-en="Zograf cohorts">Когорты Зографа</span></div>
+                <div class="legend-item"><span class="legend-color" style="background:#b83280;"></span><span class="bilingual-text" data-ru="Когорты Рериха" data-en="Roerich cohorts">Когорты Рериха</span></div>
+            </div>
+        </section>
+
+        <!-- VIS_010_newcomer_rate -->
+        <section class="viz-showcase-section" id="VIS_010_newcomer_rate">
+            <h2>
+                <span class="viz-id-badge">VIS_010</span>
+                <span class="bilingual-text" data-ru="Темп обновления" data-en="Renewal Rate">Темп обновления</span>
+            </h2>
+            <p class="bilingual-text" style="color:var(--muted); font-size:0.9rem;" data-ru="Доля докладчиков-новичков в каждом году (тех, кто ранее не выступал в данной серии). Высокие значения — приток новых людей, низкие — опора на постоянный круг." data-en="Share of first-time speakers each year (those who had not presented in that series before). High values signal an influx of new people; low values, reliance on a fixed core.">Доля докладчиков-новичков в каждом году по каждой серии.</p>
+            <div id="newcomer-wrapper" style="position:relative; width:100%; overflow:hidden; margin-top:1.5rem;">
+                <svg id="newcomer-svg" viewBox="0 0 800 380" style="width:100%; height:auto; background:rgba(0,0,0,0.15); border-radius:8px;"></svg>
+                <div id="newcomer-tooltip" style="{tip_style}"></div>
+            </div>
+            <div class="legend-container">
+                <div class="legend-item"><span class="legend-color" style="background:#2b82c9;"></span><span class="bilingual-text" data-ru="Зографские чтения" data-en="Zograf Readings">Зографские чтения</span></div>
+                <div class="legend-item"><span class="legend-color" style="background:#b83280;"></span><span class="bilingual-text" data-ru="Рериховские чтения" data-en="Roerich Readings">Рериховские чтения</span></div>
+            </div>
+        </section>
+
+        <!-- VIS_011_theme_treemap -->
+        <section class="viz-showcase-section" id="VIS_011_theme_treemap">
+            <h2>
+                <span class="viz-id-badge">VIS_011</span>
+                <span class="bilingual-text" data-ru="Карта тем (treemap)" data-en="Theme Treemap">Карта тем (treemap)</span>
+            </h2>
+            <p class="bilingual-text" style="color:var(--muted); font-size:0.9rem;" data-ru="Площадь блока пропорциональна числу докладов. Крупные блоки — дисциплинарные направления (L1), внутренние ячейки — поднаправления (L2). Наведите для точных значений." data-en="Block area is proportional to the number of presentations. Large blocks are disciplinary domains (L1); inner cells are sub-domains (L2). Hover for exact counts.">Площадь блока пропорциональна числу докладов: L1 — направления, L2 — поднаправления.</p>
+            <div id="treemap-wrapper" style="position:relative; width:100%; overflow:hidden; margin-top:1.5rem;">
+                <svg id="treemap-svg" viewBox="0 0 800 460" style="width:100%; height:auto; background:rgba(0,0,0,0.15); border-radius:8px;"></svg>
+                <div id="treemap-tooltip" style="{tip_style}"></div>
+            </div>
+        </section>
+
+        <!-- VIS_012_gumilyov_stream -->
+        <section class="viz-showcase-section" id="VIS_012_gumilyov_stream">
+            <h2>
+                <span class="viz-id-badge">VIS_012</span>
+                <span class="bilingual-text" data-ru="Поток уровней обобщения" data-en="Scale-of-Argument Streamgraph">Поток уровней обобщения</span>
+            </h2>
+            <p class="bilingual-text" style="color:var(--muted); font-size:0.9rem;" data-ru="Распределение докладов по шкале масштаба аргумента (Гумилёв): микроуровень (текст/кейс), региональный (традиция/эпоха), глобальный (цивилизационные обобщения) — по годам." data-en="Distribution of presentations along the scale-of-argument (Gumilyov): micro (single text/case), regional (tradition/era), global (civilisational generalisation) — over time.">Доклады по шкале масштаба аргумента (микро / региональный / глобальный) по годам.</p>
+            <div id="stream-wrapper" style="position:relative; width:100%; overflow:hidden; margin-top:1.5rem;">
+                <svg id="stream-svg" viewBox="0 0 800 380" style="width:100%; height:auto; background:rgba(0,0,0,0.15); border-radius:8px;"></svg>
+                <div id="stream-tooltip" style="{tip_style}"></div>
+            </div>
+            <div class="legend-container">
+                <div class="legend-item"><span class="legend-color" style="background:#6366f1;"></span><span class="bilingual-text" data-ru="Микроуровень" data-en="Micro level">Микроуровень</span></div>
+                <div class="legend-item"><span class="legend-color" style="background:#f59e0b;"></span><span class="bilingual-text" data-ru="Региональный" data-en="Regional">Региональный</span></div>
+                <div class="legend-item"><span class="legend-color" style="background:#ef4444;"></span><span class="bilingual-text" data-ru="Глобальный" data-en="Global">Глобальный</span></div>
+            </div>
+        </section>
+
+        <!-- VIS_013_keyword_diverging -->
+        <section class="viz-showcase-section" id="VIS_013_keyword_diverging">
+            <h2>
+                <span class="viz-id-badge">VIS_013</span>
+                <span class="bilingual-text" data-ru="Ключевые слова: Зограф против Рериха" data-en="Keywords: Zograf vs Roerich">Ключевые слова: Зограф против Рериха</span>
+            </h2>
+            <p class="bilingual-text" style="color:var(--muted); font-size:0.9rem;" data-ru="Топ-22 ключевых слова заголовков. Влево — частота в Зографских чтениях, вправо — в Рериховских. Контраст показывает, чем тематически различаются две площадки." data-en="Top 22 title keywords. Bars extend left for Zograf Readings, right for Roerich Readings. The contrast shows how the two venues differ thematically.">Топ-22 ключевых слова: влево — Зограф, вправо — Рерих.</p>
+            <div id="keyword-wrapper" style="position:relative; width:100%; overflow:hidden; margin-top:1.5rem;">
+                <svg id="keyword-svg" viewBox="0 0 800 560" style="width:100%; height:auto; background:rgba(0,0,0,0.15); border-radius:8px;"></svg>
+                <div id="keyword-tooltip" style="{tip_style}"></div>
+            </div>
+            <div class="legend-container">
+                <div class="legend-item"><span class="legend-color" style="background:#2b82c9;"></span><span class="bilingual-text" data-ru="Зографские чтения" data-en="Zograf Readings">Зографские чтения</span></div>
+                <div class="legend-item"><span class="legend-color" style="background:#b83280;"></span><span class="bilingual-text" data-ru="Рериховские чтения" data-en="Roerich Readings">Рериховские чтения</span></div>
+            </div>
+        </section>
+
+        <!-- VIS_014_closedness -->
+        <section class="viz-showcase-section" id="VIS_014_closedness">
+            <h2>
+                <span class="viz-id-badge">VIS_014</span>
+                <span class="bilingual-text" data-ru="Замкнутость сообществ" data-en="Community Closedness">Замкнутость сообществ</span>
+            </h2>
+            <p class="bilingual-text" style="color:var(--muted); font-size:0.9rem;" data-ru="Сравнение двух серий по четырём метрикам: доля «однодокладчиков», ядро (5+ докладов), удержание и концентрация (индекс Джини ×100). Чем выше удержание и ядро — тем плотнее постоянное сообщество." data-en="The two series compared on four metrics: one-talk-wonders, core (5+ talks), retention, and concentration (Gini ×100). Higher retention and core mean a denser standing community.">Четыре метрики замкнутости, Зограф против Рериха.</p>
+            <div id="closedness-wrapper" style="position:relative; width:100%; overflow:hidden; margin-top:1.5rem;">
+                <svg id="closedness-svg" viewBox="0 0 800 400" style="width:100%; height:auto; background:rgba(0,0,0,0.15); border-radius:8px;"></svg>
+                <div id="closedness-tooltip" style="{tip_style}"></div>
+            </div>
+            <div class="legend-container">
+                <div class="legend-item"><span class="legend-color" style="background:#2b82c9;"></span><span class="bilingual-text" data-ru="Зограф" data-en="Zograf">Зограф</span></div>
+                <div class="legend-item"><span class="legend-color" style="background:#b83280;"></span><span class="bilingual-text" data-ru="Рерих" data-en="Roerich">Рерих</span></div>
+            </div>
+        </section>
+
+        <!-- VIS_015_online_share -->
+        <section class="viz-showcase-section" id="VIS_015_online_share">
+            <h2>
+                <span class="viz-id-badge">VIS_015</span>
+                <span class="bilingual-text" data-ru="Сдвиг в онлайн" data-en="The Online Shift">Сдвиг в онлайн</span>
+            </h2>
+            <p class="bilingual-text" style="color:var(--muted); font-size:0.9rem;" data-ru="Доля онлайн-докладов по годам для каждой серии. Резкий рост около 2020 г. отражает пандемийный переход; пунктир отмечает 2020 год." data-en="Share of online presentations per year for each series. The sharp rise around 2020 reflects the pandemic shift; the dashed line marks 2020.">Доля онлайн-докладов по годам; пунктир — 2020 год.</p>
+            <div id="online-wrapper" style="position:relative; width:100%; overflow:hidden; margin-top:1.5rem;">
+                <svg id="online-svg" viewBox="0 0 800 360" style="width:100%; height:auto; background:rgba(0,0,0,0.15); border-radius:8px;"></svg>
+                <div id="online-tooltip" style="{tip_style}"></div>
+            </div>
+            <div class="legend-container">
+                <div class="legend-item"><span class="legend-color" style="background:#2b82c9;"></span><span class="bilingual-text" data-ru="Зографские чтения" data-en="Zograf Readings">Зографские чтения</span></div>
+                <div class="legend-item"><span class="legend-color" style="background:#b83280;"></span><span class="bilingual-text" data-ru="Рериховские чтения" data-en="Roerich Readings">Рериховские чтения</span></div>
+            </div>
         </section>
     """
 
@@ -4929,6 +5243,7 @@ def generate_visualisations_page(data, records):
                 drawHierarchy();
                 drawArc();
                 drawAlluvial();
+                if (typeof drawGallery === 'function') drawGallery();
             }
 
             document.addEventListener('DOMContentLoaded', () => {
@@ -4937,7 +5252,246 @@ def generate_visualisations_page(data, records):
             });
         </script>
     """
-    body = body + scatter_js
+
+    gallery_js = """
+        <script>
+            const DEMOGRAPHY_DATA = """ + serialized_demography + """;
+            const SURVIVAL_DATA = """ + serialized_survival + """;
+            const NEWCOMER_DATA = """ + serialized_newcomer + """;
+            const TREEMAP_DATA = """ + serialized_treemap + """;
+            const GUMILYOV_DATA = """ + serialized_gumilyov + """;
+            const KEYWORD_DIV_DATA = """ + serialized_keyword_div + """;
+            const CLOSEDNESS_DATA = """ + serialized_closedness + """;
+            const ONLINE_DATA = """ + serialized_online + """;
+
+            const SVGNS = 'http://www.w3.org/2000/svg';
+            function gEl(tag, attrs) { const e = document.createElementNS(SVGNS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); return e; }
+            function gText(x, y, s, anchor, size, fill) { const t = gEl('text', {x: x, y: y, 'text-anchor': anchor || 'middle', 'font-size': (size || 11) + 'px', fill: fill || 'var(--muted)'}); t.textContent = s; return t; }
+            function T(ru, en) { return (typeof currentLang !== 'undefined' && currentLang === 'en') ? en : ru; }
+            function seriesName(s) { return s === 'zograf' ? T('Зограф', 'Zograf') : T('Рерих', 'Roerich'); }
+            function bindTip(target, wrapId, tipId, htmlFn) {
+                const tip = document.getElementById(tipId); const wrap = document.getElementById(wrapId);
+                if (!tip || !wrap) return;
+                target.style.cursor = 'pointer';
+                target.addEventListener('mouseenter', () => { tip.style.opacity = '1'; tip.innerHTML = htmlFn(); });
+                target.addEventListener('mousemove', (e) => { const r = wrap.getBoundingClientRect(); tip.style.left = (e.clientX - r.left + 15) + 'px'; tip.style.top = (e.clientY - r.top - 10) + 'px'; });
+                target.addEventListener('mouseleave', () => { tip.style.opacity = '0'; });
+            }
+            const SERIES_COLORS = {zograf: '#2b82c9', roerich: '#b83280'};
+            const THEME_LABELS = {
+                religion_and_philosophy: {ru: 'Религия и философия', en: 'Religion & Philosophy', c: '#6366f1'},
+                literature_and_poetry: {ru: 'Литература и поэзия', en: 'Literature & Poetry', c: '#ec4899'},
+                history_and_culture: {ru: 'История и культура', en: 'History & Culture', c: '#f59e0b'},
+                linguistics_and_philology: {ru: 'Лингвистика и филология', en: 'Linguistics & Philology', c: '#10b981'},
+                art_and_material_culture: {ru: 'Искусство и матер. культура', en: 'Art & Material Culture', c: '#06b6d4'},
+                unspecified: {ru: 'Не указано', en: 'Unspecified', c: '#6b7280'}
+            };
+
+            // VIS_008 — Demography ribbon
+            function drawDemography() {
+                const svg = document.getElementById('demo-svg'); if (!svg) return; svg.innerHTML = '';
+                const W = 800, H = 420, pad = {t: 30, r: 30, b: 50, l: 50};
+                const years = [...new Set(DEMOGRAPHY_DATA.map(d => d.year))].sort((a, b) => a - b);
+                if (!years.length) return;
+                const aMin = 15, aMax = 90, span = years[years.length - 1] - years[0] || 1;
+                const xq = y => pad.l + (y - years[0]) / span * (W - pad.l - pad.r);
+                const yq = a => H - pad.b - (a - aMin) / (aMax - aMin) * (H - pad.t - pad.b);
+                for (let a = aMin; a <= aMax; a += 15) { const yy = yq(a); svg.appendChild(gEl('line', {x1: pad.l, y1: yy, x2: W - pad.r, y2: yy, stroke: 'rgba(255,255,255,0.06)'})); svg.appendChild(gText(pad.l - 10, yy + 4, a, 'end', 11)); }
+                years.forEach(y => { if (y % 4 === 0 || y === years[0]) svg.appendChild(gText(xq(y), H - pad.b + 20, y, 'middle', 10)); });
+                ['zograf', 'roerich'].forEach(s => {
+                    const ser = DEMOGRAPHY_DATA.filter(d => d.series === s).sort((a, b) => a.year - b.year);
+                    if (!ser.length) return;
+                    let pts = ser.map(d => xq(d.year) + ',' + yq(d.p75));
+                    for (let i = ser.length - 1; i >= 0; i--) pts.push(xq(ser[i].year) + ',' + yq(ser[i].p25));
+                    svg.appendChild(gEl('polygon', {points: pts.join(' '), fill: SERIES_COLORS[s], 'fill-opacity': 0.13, stroke: 'none'}));
+                    svg.appendChild(gEl('polyline', {points: ser.map(d => xq(d.year) + ',' + yq(d.median)).join(' '), fill: 'none', stroke: SERIES_COLORS[s], 'stroke-width': 2.5, 'stroke-opacity': 0.9}));
+                    ser.forEach(d => { const c = gEl('circle', {cx: xq(d.year), cy: yq(d.median), r: 4, fill: SERIES_COLORS[s]});
+                        bindTip(c, 'demo-wrapper', 'demo-tooltip', () => '<strong>' + seriesName(s) + ' · ' + d.year + '</strong><br>' + T('Медиана', 'Median') + ': ' + d.median.toFixed(1) + '<br>' + T('Среднее', 'Mean') + ': ' + d.avg.toFixed(1) + '<br>' + T('Квартили', 'Quartiles') + ': ' + d.p25.toFixed(0) + '–' + d.p75.toFixed(0) + '<br>' + T('Размах', 'Range') + ': ' + d.min.toFixed(0) + '–' + d.max.toFixed(0) + '<br>n = ' + d.n);
+                        svg.appendChild(c); });
+                });
+                svg.appendChild(gEl('line', {x1: pad.l, y1: H - pad.b, x2: W - pad.r, y2: H - pad.b, stroke: 'rgba(255,255,255,0.2)'}));
+                svg.appendChild(gEl('line', {x1: pad.l, y1: pad.t, x2: pad.l, y2: H - pad.b, stroke: 'rgba(255,255,255,0.2)'}));
+                svg.appendChild(gText(pad.l, pad.t - 12, T('Возраст, лет', 'Age, years'), 'start', 11));
+            }
+
+            // VIS_009 — Cohort survival
+            function drawSurvival() {
+                const svg = document.getElementById('survival-svg'); if (!svg) return; svg.innerHTML = '';
+                const W = 800, H = 420, pad = {t: 30, r: 30, b: 50, l: 50};
+                let xMax = 2; SURVIVAL_DATA.forEach(c => c.points.forEach(p => { if (p.x > xMax) xMax = p.x; }));
+                const xq = x => pad.l + x / xMax * (W - pad.l - pad.r);
+                const yq = v => H - pad.b - v / 100 * (H - pad.t - pad.b);
+                for (let v = 0; v <= 100; v += 25) { const yy = yq(v); svg.appendChild(gEl('line', {x1: pad.l, y1: yy, x2: W - pad.r, y2: yy, stroke: 'rgba(255,255,255,0.06)'})); svg.appendChild(gText(pad.l - 10, yy + 4, v + '%', 'end', 11)); }
+                for (let x = 0; x <= xMax; x += 2) svg.appendChild(gText(xq(x), H - pad.b + 20, x, 'middle', 10));
+                SURVIVAL_DATA.forEach(c => {
+                    svg.appendChild(gEl('polyline', {points: c.points.map(p => xq(p.x) + ',' + yq(p.y)).join(' '), fill: 'none', stroke: SERIES_COLORS[c.series], 'stroke-width': 1.4, 'stroke-opacity': 0.4}));
+                    c.points.forEach(p => { const dot = gEl('circle', {cx: xq(p.x), cy: yq(p.y), r: 3, fill: SERIES_COLORS[c.series], 'fill-opacity': 0.7});
+                        bindTip(dot, 'survival-wrapper', 'survival-tooltip', () => '<strong>' + seriesName(c.series) + ' · ' + T('дебют', 'debut') + ' ' + c.debut + '</strong><br>' + T('Размер когорты', 'Cohort size') + ': ' + c.size + '<br>' + T('Лет после дебюта', 'Years since debut') + ': ' + p.x + '<br>' + T('Активны', 'Active') + ': ' + p.y.toFixed(0) + '%');
+                        svg.appendChild(dot); });
+                });
+                svg.appendChild(gEl('line', {x1: pad.l, y1: H - pad.b, x2: W - pad.r, y2: H - pad.b, stroke: 'rgba(255,255,255,0.2)'}));
+                svg.appendChild(gEl('line', {x1: pad.l, y1: pad.t, x2: pad.l, y2: H - pad.b, stroke: 'rgba(255,255,255,0.2)'}));
+                svg.appendChild(gText(W / 2, H - 10, T('Лет после первого доклада', 'Years since first talk'), 'middle', 11));
+            }
+
+            // VIS_010 — Newcomer rate
+            function drawNewcomer() {
+                const svg = document.getElementById('newcomer-svg'); if (!svg) return; svg.innerHTML = '';
+                const W = 800, H = 380, pad = {t: 30, r: 30, b: 50, l: 50};
+                const years = [...new Set(NEWCOMER_DATA.map(d => d.year))].sort((a, b) => a - b);
+                if (!years.length) return;
+                const span = years[years.length - 1] - years[0] || 1;
+                const xq = y => pad.l + (y - years[0]) / span * (W - pad.l - pad.r);
+                const yq = v => H - pad.b - v / 100 * (H - pad.t - pad.b);
+                for (let v = 0; v <= 100; v += 25) { const yy = yq(v); svg.appendChild(gEl('line', {x1: pad.l, y1: yy, x2: W - pad.r, y2: yy, stroke: 'rgba(255,255,255,0.06)'})); svg.appendChild(gText(pad.l - 10, yy + 4, v + '%', 'end', 11)); }
+                years.forEach(y => { if (y % 2 === 0 || y === years[0]) svg.appendChild(gText(xq(y), H - pad.b + 20, y, 'middle', 10)); });
+                ['zograf', 'roerich'].forEach(s => {
+                    const ser = NEWCOMER_DATA.filter(d => d.series === s).sort((a, b) => a.year - b.year);
+                    if (!ser.length) return;
+                    svg.appendChild(gEl('polyline', {points: ser.map(d => xq(d.year) + ',' + yq(d.pct)).join(' '), fill: 'none', stroke: SERIES_COLORS[s], 'stroke-width': 2.5, 'stroke-opacity': 0.85}));
+                    ser.forEach(d => { const c = gEl('circle', {cx: xq(d.year), cy: yq(d.pct), r: 4, fill: SERIES_COLORS[s]});
+                        bindTip(c, 'newcomer-wrapper', 'newcomer-tooltip', () => '<strong>' + seriesName(s) + ' · ' + d.year + '</strong><br>' + T('Новички', 'Newcomers') + ': ' + d.newcomers + ' / ' + d.total + '<br>' + T('Доля', 'Share') + ': ' + d.pct.toFixed(1) + '%');
+                        svg.appendChild(c); });
+                });
+                svg.appendChild(gEl('line', {x1: pad.l, y1: H - pad.b, x2: W - pad.r, y2: H - pad.b, stroke: 'rgba(255,255,255,0.2)'}));
+                svg.appendChild(gEl('line', {x1: pad.l, y1: pad.t, x2: pad.l, y2: H - pad.b, stroke: 'rgba(255,255,255,0.2)'}));
+            }
+
+            // VIS_011 — Theme treemap (slice-and-dice, L1 → L2)
+            function drawTreemap() {
+                const svg = document.getElementById('treemap-svg'); if (!svg) return; svg.innerHTML = '';
+                const W = 800, H = 460, m = 10, headerH = 24;
+                const total = TREEMAP_DATA.reduce((s, d) => s + d.value, 0) || 1;
+                const innerW = W - 2 * m, innerH = H - 2 * m - headerH, top = m + headerH;
+                let x = m;
+                TREEMAP_DATA.forEach(l1 => {
+                    const colW = l1.value / total * innerW;
+                    const meta = THEME_LABELS[l1.name] || {ru: l1.name, en: l1.name, c: '#888'};
+                    if (colW > 64) { const lab = gText(x + colW / 2, m + 15, T(meta.ru, meta.en), 'middle', 11, meta.c); lab.setAttribute('font-weight', 'bold'); lab.style.pointerEvents = 'none'; svg.appendChild(lab); }
+                    let y = top;
+                    l1.children.forEach(ch => {
+                        const cellH = ch.value / l1.value * innerH;
+                        const rect = gEl('rect', {x: x + 1, y: y + 1, width: Math.max(0, colW - 2), height: Math.max(0, cellH - 2), fill: meta.c, 'fill-opacity': 0.82, rx: 2});
+                        bindTip(rect, 'treemap-wrapper', 'treemap-tooltip', () => '<strong>' + T(meta.ru, meta.en) + '</strong><br>L2: ' + ch.name + '<br>' + T('Докладов', 'Presentations') + ': ' + ch.value + ' (' + (ch.value / total * 100).toFixed(1) + '%)');
+                        svg.appendChild(rect);
+                        if (colW > 50 && cellH > 20) { const t = gText(x + 6, y + 15, ch.name, 'start', 10, 'rgba(255,255,255,0.92)'); t.style.pointerEvents = 'none'; svg.appendChild(t); }
+                        y += cellH;
+                    });
+                    x += colW;
+                });
+            }
+
+            // VIS_012 — Gumilyov streamgraph (stacked area)
+            function drawGumilyov() {
+                const svg = document.getElementById('stream-svg'); if (!svg) return; svg.innerHTML = '';
+                const W = 800, H = 380, pad = {t: 30, r: 30, b: 50, l: 50};
+                const D = GUMILYOV_DATA; if (!D.length) return;
+                const years = D.map(d => d.year);
+                const maxTot = Math.max(...D.map(d => d.l1 + d.l2 + d.l3)) || 1;
+                const span = years[years.length - 1] - years[0] || 1;
+                const xq = y => pad.l + (y - years[0]) / span * (W - pad.l - pad.r);
+                const yq = v => H - pad.b - v / maxTot * (H - pad.t - pad.b);
+                for (let f = 0; f <= 1.0001; f += 0.25) { const v = maxTot * f, yy = yq(v); svg.appendChild(gEl('line', {x1: pad.l, y1: yy, x2: W - pad.r, y2: yy, stroke: 'rgba(255,255,255,0.06)'})); svg.appendChild(gText(pad.l - 10, yy + 4, Math.round(v), 'end', 11)); }
+                years.forEach(y => { if (y % 4 === 0 || y === years[0]) svg.appendChild(gText(xq(y), H - pad.b + 20, y, 'middle', 10)); });
+                const cols = ['#6366f1', '#f59e0b', '#ef4444'], keys = ['l1', 'l2', 'l3'];
+                const lower = D.map(() => 0);
+                keys.forEach((k, ki) => {
+                    let up = [], down = [];
+                    D.forEach((d, i) => { const topv = lower[i] + d[k]; up.push(xq(d.year) + ',' + yq(topv)); lower[i] = topv; });
+                    for (let i = D.length - 1; i >= 0; i--) down.push(xq(D[i].year) + ',' + yq(lower[i] - D[i][k]));
+                    svg.appendChild(gEl('polygon', {points: up.concat(down).join(' '), fill: cols[ki], 'fill-opacity': 0.7, stroke: cols[ki], 'stroke-opacity': 0.9, 'stroke-width': 0.5}));
+                });
+                D.forEach((d, i) => {
+                    const x0 = i === 0 ? pad.l : (xq(D[i - 1].year) + xq(d.year)) / 2;
+                    const x1 = i === D.length - 1 ? (W - pad.r) : (xq(d.year) + xq(D[i + 1].year)) / 2;
+                    const r = gEl('rect', {x: x0, y: pad.t, width: Math.max(1, x1 - x0), height: H - pad.t - pad.b, fill: 'transparent'});
+                    const tot = d.l1 + d.l2 + d.l3 || 1;
+                    bindTip(r, 'stream-wrapper', 'stream-tooltip', () => '<strong>' + d.year + '</strong> · ' + T('всего', 'total') + ' ' + tot + '<br><span style="color:#6366f1">●</span> ' + T('Микро', 'Micro') + ': ' + d.l1 + ' (' + (d.l1 / tot * 100).toFixed(0) + '%)<br><span style="color:#f59e0b">●</span> ' + T('Региональный', 'Regional') + ': ' + d.l2 + ' (' + (d.l2 / tot * 100).toFixed(0) + '%)<br><span style="color:#ef4444">●</span> ' + T('Глобальный', 'Global') + ': ' + d.l3 + ' (' + (d.l3 / tot * 100).toFixed(0) + '%)');
+                    svg.appendChild(r);
+                });
+                svg.appendChild(gEl('line', {x1: pad.l, y1: H - pad.b, x2: W - pad.r, y2: H - pad.b, stroke: 'rgba(255,255,255,0.2)'}));
+                svg.appendChild(gEl('line', {x1: pad.l, y1: pad.t, x2: pad.l, y2: H - pad.b, stroke: 'rgba(255,255,255,0.2)'}));
+            }
+
+            // VIS_013 — Keyword diverging bars
+            function drawKeywordDiv() {
+                const svg = document.getElementById('keyword-svg'); if (!svg) return; svg.innerHTML = '';
+                const W = 800, H = 560, padT = 20, padB = 20;
+                const D = KEYWORD_DIV_DATA; if (!D.length) return;
+                const n = D.length, pitch = (H - padT - padB) / n;
+                const gapL = 346, gapR = 454, leftSpace = gapL - 22, rightSpace = (W - 22) - gapR;
+                const maxV = Math.max(...D.map(d => Math.max(d.z, d.r))) || 1;
+                const scale = Math.min(leftSpace, rightSpace) / maxV;
+                svg.appendChild(gEl('line', {x1: gapL, y1: padT, x2: gapL, y2: H - padB, stroke: 'rgba(255,255,255,0.12)'}));
+                svg.appendChild(gEl('line', {x1: gapR, y1: padT, x2: gapR, y2: H - padB, stroke: 'rgba(255,255,255,0.12)'}));
+                D.forEach((d, i) => {
+                    const yc = padT + i * pitch + pitch / 2, bh = Math.min(16, pitch * 0.62);
+                    const zw = d.z * scale, rw = d.r * scale;
+                    const tipFn = () => '<strong>' + d.kw + '</strong><br>' + T('Зограф', 'Zograf') + ': ' + d.z + '<br>' + T('Рерих', 'Roerich') + ': ' + d.r + '<br>' + T('Всего', 'Total') + ': ' + d.total;
+                    const zr = gEl('rect', {x: gapL - zw, y: yc - bh / 2, width: zw, height: bh, fill: '#2b82c9', rx: 2}); bindTip(zr, 'keyword-wrapper', 'keyword-tooltip', tipFn); svg.appendChild(zr);
+                    const rr = gEl('rect', {x: gapR, y: yc - bh / 2, width: rw, height: bh, fill: '#b83280', rx: 2}); bindTip(rr, 'keyword-wrapper', 'keyword-tooltip', tipFn); svg.appendChild(rr);
+                    const lab = gText((gapL + gapR) / 2, yc + 3, d.kw, 'middle', 10, 'rgba(255,255,255,0.9)'); lab.style.pointerEvents = 'none'; svg.appendChild(lab);
+                    if (zw > 16) { const zt = gText(gapL - zw - 4, yc + 3, d.z, 'end', 9, 'rgba(255,255,255,0.6)'); zt.style.pointerEvents = 'none'; svg.appendChild(zt); }
+                    if (rw > 16) { const rt = gText(gapR + rw + 4, yc + 3, d.r, 'start', 9, 'rgba(255,255,255,0.6)'); rt.style.pointerEvents = 'none'; svg.appendChild(rt); }
+                });
+            }
+
+            // VIS_014 — Closedness comparison
+            function drawClosedness() {
+                const svg = document.getElementById('closedness-svg'); if (!svg) return; svg.innerHTML = '';
+                const W = 800, H = 400, pad = {t: 40, r: 30, b: 60, l: 50};
+                const z = CLOSEDNESS_DATA.zograf, r = CLOSEDNESS_DATA.roerich; if (!z || !r) return;
+                const metrics = [['one_talk', T('Однодокладчики', 'One-talk %')], ['core5', T('Ядро 5+', 'Core 5+ %')], ['retention', T('Удержание', 'Retention %')], ['gini', T('Джини×100', 'Gini×100')]];
+                const yq = v => H - pad.b - v / 100 * (H - pad.t - pad.b);
+                for (let v = 0; v <= 100; v += 25) { const yy = yq(v); svg.appendChild(gEl('line', {x1: pad.l, y1: yy, x2: W - pad.r, y2: yy, stroke: 'rgba(255,255,255,0.06)'})); svg.appendChild(gText(pad.l - 10, yy + 4, v, 'end', 11)); }
+                const plotW = W - pad.l - pad.r, gw = plotW / metrics.length, bw = gw * 0.28;
+                metrics.forEach((mt, i) => {
+                    const cx = pad.l + gw * i + gw / 2;
+                    const zb = gEl('rect', {x: cx - bw - 3, y: yq(z[mt[0]]), width: bw, height: H - pad.b - yq(z[mt[0]]), fill: '#2b82c9', rx: 2});
+                    bindTip(zb, 'closedness-wrapper', 'closedness-tooltip', () => '<strong>' + T('Зограф', 'Zograf') + ' · ' + mt[1] + '</strong><br>' + z[mt[0]].toFixed(1)); svg.appendChild(zb);
+                    const rb = gEl('rect', {x: cx + 3, y: yq(r[mt[0]]), width: bw, height: H - pad.b - yq(r[mt[0]]), fill: '#b83280', rx: 2});
+                    bindTip(rb, 'closedness-wrapper', 'closedness-tooltip', () => '<strong>' + T('Рерих', 'Roerich') + ' · ' + mt[1] + '</strong><br>' + r[mt[0]].toFixed(1)); svg.appendChild(rb);
+                    svg.appendChild(gText(cx - bw / 2 - 3, yq(z[mt[0]]) - 5, z[mt[0]].toFixed(0), 'middle', 9, 'rgba(255,255,255,0.7)'));
+                    svg.appendChild(gText(cx + bw / 2 + 3, yq(r[mt[0]]) - 5, r[mt[0]].toFixed(0), 'middle', 9, 'rgba(255,255,255,0.7)'));
+                    svg.appendChild(gText(cx, H - pad.b + 22, mt[1], 'middle', 10, 'var(--muted)'));
+                });
+                svg.appendChild(gEl('line', {x1: pad.l, y1: H - pad.b, x2: W - pad.r, y2: H - pad.b, stroke: 'rgba(255,255,255,0.2)'}));
+            }
+
+            // VIS_015 — Online share
+            function drawOnline() {
+                const svg = document.getElementById('online-svg'); if (!svg) return; svg.innerHTML = '';
+                const W = 800, H = 360, pad = {t: 30, r: 30, b: 50, l: 50};
+                const D = ONLINE_DATA; if (!D.length) return;
+                const years = [...new Set(D.map(d => d.year))].sort((a, b) => a - b);
+                const span = years[years.length - 1] - years[0] || 1;
+                const xq = y => pad.l + (y - years[0]) / span * (W - pad.l - pad.r);
+                const yq = v => H - pad.b - v / 100 * (H - pad.t - pad.b);
+                for (let v = 0; v <= 100; v += 25) { const yy = yq(v); svg.appendChild(gEl('line', {x1: pad.l, y1: yy, x2: W - pad.r, y2: yy, stroke: 'rgba(255,255,255,0.06)'})); svg.appendChild(gText(pad.l - 10, yy + 4, v + '%', 'end', 11)); }
+                years.forEach(y => { if (y % 2 === 0 || y === years[0]) svg.appendChild(gText(xq(y), H - pad.b + 20, y, 'middle', 10)); });
+                if (years[0] <= 2020 && years[years.length - 1] >= 2020) { const xm = xq(2020); svg.appendChild(gEl('line', {x1: xm, y1: pad.t, x2: xm, y2: H - pad.b, stroke: '#f59e0b', 'stroke-dasharray': '4 4', 'stroke-opacity': 0.6})); svg.appendChild(gText(xm + 4, pad.t + 12, '2020', 'start', 10, '#f59e0b')); }
+                ['zograf', 'roerich'].forEach(s => {
+                    const ser = D.filter(d => d.series === s).sort((a, b) => a.year - b.year);
+                    if (!ser.length) return;
+                    let area = ser.map(d => xq(d.year) + ',' + yq(d.pct));
+                    area.push(xq(ser[ser.length - 1].year) + ',' + yq(0)); area.push(xq(ser[0].year) + ',' + yq(0));
+                    svg.appendChild(gEl('polygon', {points: area.join(' '), fill: SERIES_COLORS[s], 'fill-opacity': 0.1}));
+                    svg.appendChild(gEl('polyline', {points: ser.map(d => xq(d.year) + ',' + yq(d.pct)).join(' '), fill: 'none', stroke: SERIES_COLORS[s], 'stroke-width': 2.5}));
+                    ser.forEach(d => { const c = gEl('circle', {cx: xq(d.year), cy: yq(d.pct), r: 4, fill: SERIES_COLORS[s]});
+                        bindTip(c, 'online-wrapper', 'online-tooltip', () => '<strong>' + seriesName(s) + ' · ' + d.year + '</strong><br>' + T('Онлайн', 'Online') + ': ' + d.on + ' / ' + (d.on + d.off) + '<br>' + T('Доля', 'Share') + ': ' + d.pct.toFixed(1) + '%');
+                        svg.appendChild(c); });
+                });
+                svg.appendChild(gEl('line', {x1: pad.l, y1: H - pad.b, x2: W - pad.r, y2: H - pad.b, stroke: 'rgba(255,255,255,0.2)'}));
+                svg.appendChild(gEl('line', {x1: pad.l, y1: pad.t, x2: pad.l, y2: H - pad.b, stroke: 'rgba(255,255,255,0.2)'}));
+            }
+
+            function drawGallery() {
+                const fns = [drawDemography, drawSurvival, drawNewcomer, drawTreemap, drawGumilyov, drawKeywordDiv, drawClosedness, drawOnline];
+                fns.forEach(fn => { try { fn(); } catch (e) { console.error('gallery viz error', e); } });
+            }
+        </script>
+    """
+    body = body + scatter_js + gallery_js
     write_text(
         "findings/visualisations.html",
         page_shell(
@@ -7395,7 +7949,9 @@ def generate_theme_pages(data, records):
                 stroke: var(--accent2) !important;
             }}
             .node-circle {{
-                transition: transform 0.2s, fill-opacity 0.2s;
+                transform-box: fill-box;
+                transform-origin: center;
+                transition: transform 0.15s ease-out, fill-opacity 0.2s;
                 cursor: pointer;
             }}
             .network-node:hover .node-circle {{
