@@ -1,9 +1,10 @@
 ID: PERS_410c5a08 | Display Name: А.Хомиченкене | Key: хомиченкене а | Birth: None
 ID: PERS_ba537782 | Display Name: М.И.Петрова | Key: петрова м и | Birth: None
 ID: PERS_0a42bfb2 | Display Name: Н.В.Хомутинникова | Key: хомутинникова н в | Birth: None
+ID: PERS_10547db9 | Display Name: Б. В. Загуменнов | Key: загуменнов б в | Birth: None
 ID: PERS_d018b6eb | Display Name: Д. Валанчюнас | Key: валанчюнас д | Birth: None
 ID: PERS_929cab5a | Display Name: Ю.В. Предтеченская | Key: предтеченская ю в | Birth: None
-ID: PERS_c5aeda15 | Display Name: И.А.Урнова | Key: урнова и а | Birth: None
+ID: PERS_c5aeda15 | Display Name: И.Урнова | Key: урнова и а | Birth: None
 ID: PERS_5d38cbae | Display Name: Е.Н. Аникеева | Key: аникеева е н | Birth: None
 ID: PERS_800ac07e | Display Name: А. А. Нейвирт | Key: нейвирт а а | Birth: None
 ID: PERS_1955e9e8 | Display Name: К. Гаралите | Key: гаралите к | Birth: None
@@ -28,11 +29,12 @@ ID: PERS_bbd15f4f | Display Name: Степин А.А. | Key: степин а а 
 ID: PERS_79ed852e | Display Name: Евграфов  Д.А. | Key: евграфов д а | Birth: None
 ID: PERS_d17a6a92 | Display Name: Киняева А.В. | Key: киняева а в | Birth: None
 ID: PERS_37c15317 | Display Name: Калина А.Э. | Key: калина а э | Birth: None
+ID: PERS_4fff9d16 | Display Name: Минаева Маргарита Денисовна | Key: минаева м д | Birth: None
 ID: PERS_377db63e | Display Name: Седукова Надежда Александровна | Key: седукова н а | Birth: None
 ID: PERS_23abae7d | Display Name: Пушкарева Юлия Георгиевна | Key: пушкарева ю г | Birth: None
 ID: PERS_4831e64b | Display Name: Е. Анохина | Key: анохина е | Birth: None
 ID: PERS_752884a2 | Display Name: Ш. Макмахуна | Key: макмахуна ш | Birth: None
-ID: PERS_3ccc9bd7 | Display Name: А. Солька | Key: солька а | Birth: None
+ID: PERS_3ccc9bd7 | Display Name: А.Солька | Key: солька а | Birth: None
 ID: PERS_b9a0e40c | Display Name: А.В. Осокин | Key: осокин а в | Birth: None
 ID: PERS_48b3bec3 | Display Name: Ч. Санчай | Key: санчай ч | Birth: None
 ID: PERS_57082cac | Display Name: М.А. Овчинникова | Key: овчинникова м а | Birth: None

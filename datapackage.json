@@ -1,7 +1,7 @@
 {
   "profile": "data-package",
   "schema_version": "1.0.0",
-  "generated": "2026-05-28",
+  "generated": "2026-05-30",
   "build": {
     "source": "IndologyScholars",
     "pipeline_version": "2026-05-25",
@@ -11,7 +11,7 @@
   "title": "Russian Indological Research Archive",
   "description": "Normalized archive of Russian Indological conference presentations and scholar profiles.",
   "homepage": "https://gasyoun.github.io/IndologyScholars/",
-  "created": "2026-05-28",
+  "created": "2026-05-30",
   "licenses": [
     {
       "name": "Apache-2.0",
@@ -47,9 +47,9 @@
   ],
   "stats": {
     "total_scholars": 270,
-    "total_presentations": 1378,
-    "unique_presentations": 1351,
-    "author_participations": 1378,
+    "total_presentations": 1379,
+    "unique_presentations": 1352,
+    "author_participations": 1379,
     "total_events": 40,
     "years_covered": 22,
     "start_year": 2004,
@@ -58,7 +58,7 @@
     "zograf_only_scholars": 165,
     "roerich_only_scholars": 64,
     "person_rows": 270,
-    "presentation_rows": 1351,
+    "presentation_rows": 1352,
     "event_rows": 40
   },
   "resources": [

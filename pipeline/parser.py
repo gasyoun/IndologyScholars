@@ -20,6 +20,17 @@ def clean_title(title):
         flags=re.IGNORECASE,
     )
     title = re.sub(r'\s+\d{1,2}[:\.]\d{2}\s*[—–-]\s*\d{1,2}[:\.]\d{2}\s*$', '', title)
+    # Strip trailing programme scaffolding accidentally glued to a title:
+    # a clock time followed by a break notice, room number, or venue label.
+    title = re.sub(
+        r'\s*\d{1,2}[.:]\d{2}\.?\s*'
+        r'(?:там\s*же|перерыв|зел[её]ный\s+зал|детский\s+центр|конференц-зал|'
+        r'актовый\s+зал|восточный\s+факультет|русская\s+христианская|кунсткамера|'
+        r'спбгу|маэ|ивр\b|ауд\.|каб\.|наб\.).*$',
+        '',
+        title,
+        flags=re.IGNORECASE,
+    )
     if title.endswith('.'):
         title = title[:-1]
     return title.strip()
@@ -28,6 +39,9 @@ def clean_title(title):
 # Preprocess line helper to remove leading time
 def preprocess_line(line):
     line = line.strip()
+    # Strip a leading time RANGE first (e.g. "18:30-20:00", "14.00 – 15.00"),
+    # including when it is glued directly onto the speaker name with no space.
+    line = re.sub(r'^\s*\d{1,2}[\.:]\d{2}\s*[—–-]\s*\d{1,2}[\.:]\d{2}\s*\.?\s*', '', line)
     line = re.sub(r'^\s*\d{1,2}\s*[\.:]\s*\d{2}\s*\.?\s*', '', line)
     line = re.sub(r'^\s*\d{1,2}\s*\.\s*', '', line)
     return line.strip()
@@ -457,7 +471,11 @@ def populate_zograf_talks(conn):
                     current_session_id = None
             
             time_match = re.search(r'(\d{2}[:\.]\d{2})\s*[-—–]\s*(\d{2}[:\.]\d{2})', line)
-            if time_match and not TALK_REGEX.match(preprocess_line(line)):
+            # Only treat a timed line as a session header when it is NOT itself a
+            # talk. Using the full talk parser (not just TALK_REGEX) prevents talks
+            # without a parenthetical affiliation, or with a leading inline time
+            # range, from being mis-promoted into session titles.
+            if time_match and parse_zograf_talk_line(line) is None:
                 start_time, end_time = time_match.group(1), time_match.group(2)
                 sess_title = line.replace(time_match.group(0), '').strip()
                 if not sess_title:
@@ -576,7 +594,7 @@ def populate_roerich_talks(conn):
                 current_session_id = None
                 conn.commit()
                 
-            if ("заседание" in line.lower() or "открытие" in line.lower()) and ":" in line and not TALK_REGEX.match(preprocess_line(line)):
+            if ("заседание" in line.lower() or "открытие" in line.lower()) and ":" in line and parse_zograf_talk_line(line) is None:
                 parts = line.split(":", 1)
                 sess_title = parts[0].strip()
                 time_n_room = parts[1].strip()
