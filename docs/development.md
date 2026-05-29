@@ -9,10 +9,10 @@
 ## Актуальный публичный снимок
 
 Источник чисел для публикуемого сайта - объект `summary` в
-`site_data.json`. На 25 мая 2026 г. он содержит 285 профилей докладчиков,
-1350 уникальных докладов, 1377 авторских участий и 40 событий за 22
+`site_data.json`. На 29 мая 2026 г. он содержит 270 профилей докладчиков,
+1351 уникальный доклад, 1378 авторских участий и 40 событий за 22
 программных года (2004-2026). Участников обеих серий - 41, только
-Зографских чтений - 179, только Рериховских - 65.
+Зографских чтений - 165, только Рериховских - 64.
 
 Исторические рукописи, отчеты и журналы изменений могут фиксировать более
 ранние снимки и не должны использоваться вместо текущего `site_data.json`.
@@ -28,6 +28,7 @@
 | `curation/` | Проверенные исправления и датированные траектории аффилиаций. |
 | `authority_ids.json` | Проверенные внешние идентификаторы персон. |
 | `analytics_output/classification_overrides.csv` | Редакционные решения по публичным примерам классификации. |
+| `curation/teacher_student.csv` | Кураторские связи руководитель/ученик (issue #9, генеалогический трек). Схема и правила правок: `curation/teacher_student_schema.md`. |
 
 Производные артефакты не правятся вручную: `conferences.db`,
 `site_data.json`, `search-index.json`, `analytics_output/`, каталоги
@@ -118,6 +119,35 @@ Workflow `.github/workflows/rebuild_and_deploy.yml` выполняет загр�
 программ, полную сборку, валидацию и развертывание GitHub Pages по расписанию
 20 июня и 20 декабря в 00:00 UTC, а также по ручному запуску.
 
+### Сверка чисел статьи
+
+`article/check_ppv_numbers.py` сверяет все числа в
+`article/ppv_submission_article.md` с пересобранной `conferences.db` и
+`analytics_output/expanded_classification_deepseek.csv` (для G-шкалы).
+Используются phrase-based регулярные выражения по каждой метрике —
+агрегаты, серия-уровень, цензурированный блок «Зографские чтения по 2025 г.»,
+предварительная программа Зографских чтений 2026 г. и G1/G2/G3 — и
+ненулевой код возврата при любом расхождении; pre-submission gate блокируется
+до устранения расхождения. Снимок текущих чисел пишется в
+`article/hypothesis_output/ppv_numbers_snapshot.{md,json}`.
+
+## Генеалогический трек
+
+Слой «руководитель/ученик» (issue #9) — курируемый, не выводимый из данных.
+Схема в `curation/teacher_student_schema.md` задаёт CSV из двенадцати колонок
+и правило «не выдумывать»: `status=verified` требует непустого `evidence_url`,
+обосновывающего конкретную связь. `pipeline/genealogy.py` — загрузчик с
+построчной валидацией (обязательные поля, словари `relationship_type` и
+`status`, запрет self-loop); возвращает dataclasses `Relationship` и индексы
+`by_advisor` / `by_student`.
+
+`article/work_lineage_candidates.py` производит эвристические подсказки в
+`analytics_output/lineage_candidates.csv` по со-авторству (≥ 2 совместных
+докладов) и возрастному разрыву (≥ 15 лет). Это отправные точки для ручной
+проверки, не утверждения как факты. Загрузчик пока не подключён к
+`site_data.json` и страницам профилей — это отдельный шаг, специально
+оставленный вне стандартной последовательности сборки.
+
 ## Технические документы
 
 | Документ | Назначение |
@@ -129,6 +159,7 @@ Workflow `.github/workflows/rebuild_and_deploy.yml` выполняет загр�
 | [archive/README.md](https://github.com/gasyoun/IndologyScholars/blob/main/archive/README.md) | Указатель исторических планов, снимков и handoff-файлов. |
 | [archive/plans/architecture.md](https://github.com/gasyoun/IndologyScholars/blob/main/archive/plans/architecture.md) | Исторический архитектурный план. |
 | [archive/plans/architecture_implementation_plan.md](https://github.com/gasyoun/IndologyScholars/blob/main/archive/plans/architecture_implementation_plan.md) | Запись выполненного усиления архитектуры. |
+| [../philology-research-agents/README.md](https://github.com/gasyoun/IndologyScholars/blob/main/philology-research-agents/README.md) | Портативный модуль из шести агентов-промптов для филологии, языкознания и востоковедения, с журнальными профилями редакторов (ППВ, IIJ, ВДИ, ВЯ, JAOS, OLZ) и Haiku-промптом для парсинга Перечня ВАК. Спроектирован для выноса в отдельный репозиторий. |
 
 `CHANGELOG.md` и материалы `article/` служат журналом или исследовательскими
 снимками; содержащиеся в них числа нужно читать в контексте указанной даты.

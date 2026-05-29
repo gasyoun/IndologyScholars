@@ -2924,10 +2924,12 @@ def generate_findings_page(data, records):
             }
             .scatter-dot {
                 cursor: pointer;
-                transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), r 0.2s;
+                transform-box: fill-box;
+                transform-origin: center;
+                transition: transform 0.15s ease-out;
             }
             .scatter-dot:hover {
-                transform: scale(1.3);
+                transform: scale(1.4);
                 stroke: #fff;
                 stroke-width: 1.5px;
             }
@@ -3668,10 +3670,12 @@ def generate_visualisations_page(data, records):
             }
             .scatter-dot {
                 cursor: pointer;
-                transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), r 0.2s;
+                transform-box: fill-box;
+                transform-origin: center;
+                transition: transform 0.15s ease-out;
             }
             .scatter-dot:hover {
-                transform: scale(1.3);
+                transform: scale(1.4);
                 stroke: #fff;
                 stroke-width: 1.5px;
             }
@@ -7395,7 +7399,9 @@ def generate_theme_pages(data, records):
                 stroke: var(--accent2) !important;
             }}
             .node-circle {{
-                transition: transform 0.2s, fill-opacity 0.2s;
+                transform-box: fill-box;
+                transform-origin: center;
+                transition: transform 0.15s ease-out, fill-opacity 0.2s;
                 cursor: pointer;
             }}
             .network-node:hover .node-circle {{
