@@ -1,0 +1,31 @@
+
+#### analytics_output/expanded_classification_deepseek.csv
+COLS: ['presentation_id', 'year', 'series_id', 'series', 'raw_title', 'title', 'theme_l1', 'period_l2', 'material_l3', 'character_l4', 'gumilyov_level', 'meso_codes', 'proposed_meso', 'confidence', 'rationale', 'source', 'prompt_version', 'valid']
+ROW : ['PRES_2a08c0cb86', '2004', '1', 'Zograf Readings', 'Актуальные проблемы изучения «Бхагавадгиты»', 'Актуальные проблемы изучения «Бхагавадгиты»', 'philosophy', 'classical', 'text', 'fundamental', '1', 'bhakti_vaishnava', '', '0.8', 'Заголовок об изучении конкретного текста, уровень L1.', 'deepseek', 'expanded-corpus-v1-2026-05-25', 'yes']
+ROW : ['PRES_3dfb43981f', '2004', '1', 'Zograf Readings', '«Ум и знание» - тибетский учебник по теории познания', '«Ум и знание» - тибетский учебник по теории познания', 'philosophy', 'classical', 'text', 'fundamental', '1', 'tibetology_himalaya', '', '0.9', 'Конкретный тибетский учебник, уровень L1.', 'deepseek', 'expanded-corpus-v1-2026-05-25', 'yes']
+ROW : ['PRES_3faf9b7b24', '2004', '1', 'Zograf Readings', 'Сюжет о Трите:\xa0 этноисторическая основа', 'Сюжет о Трите: этноисторическая основа', 'literature', 'vedic', 'text', 'fundamental', '1', '', '', '0.8', 'Сюжет о Трите, конкретный мифологический сюжет, уровень L1.', 'deepseek', 'expanded-corpus-v1-2026-05-25', 'yes']
+ROWS(excl header): 1351
+
+#### analytics_output/meso_codes_deepseek.csv
+COLS: ['presentation_id', 'year', 'series', 'title', 'meso_codes', 'proposed_meso', 'source', 'confidence']
+ROW : ['PRES_2a08c0cb86', '2004', 'Zograf Readings', 'Актуальные проблемы изучения «Бхагавадгиты»', 'bhakti_vaishnava', '', 'deepseek', '0.8']
+ROW : ['PRES_3dfb43981f', '2004', 'Zograf Readings', '«Ум и знание» - тибетский учебник по теории познания', 'tibetology_himalaya', '', 'deepseek', '0.9']
+ROW : ['PRES_3faf9b7b24', '2004', 'Zograf Readings', 'Сюжет о Трите: этноисторическая основа', '', '', 'deepseek', '0.8']
+ROWS(excl header): 1351
+
+#### analytics_output/expanded_gumilyov_elevated_audit.csv
+COLS: ['presentation_id', 'preliminary_level', 'audited_level', 'confidence', 'rationale', 'prompt_version']
+ROW : ['PRES_6e17572f1f', '2', '1', '0.9', "Заголовок говорит о 'проблеме классификации' в рамках индуистских тантрических школ, что является внутренним вопросом одной традиции, а не обобщением всей традиции. Это методологическая или классификационная проблема внутри конкретного поля, а не широкое обобщение.", 'scale-audit-v2-2026-05-25']
+ROW : ['PRES_92c5268a51', '2', '1', '0.9', "Заголовок конкретизирует фигуру царя и представления о времени в одном тексте — 'Махабхарате'. Это анализ конкретного текста, а не обобщение по всей эпической традиции.", 'scale-audit-v2-2026-05-25']
+ROW : ['PRES_9e203d9b3f', '2', '2', '0.9', 'Заголовок обещает рассмотрение взаимоотношений религиозных конфессий в средневековом Тамилнаде, что является региональным процессом и обобщением уровня традиции. L2 подтвержден.', 'scale-audit-v2-2026-05-25']
+ROWS(excl header): 269
+
+#### analytics_output/presentation_id_manifest.csv
+COLS: ['presentation_id', 'series', 'year', 'event_id', 'session_id', 'title', 'first_speaker', 'all_speakers', 'source_url', 'source_snippet_hash', 'stable_key_candidate']
+ROW : ['PRES_3dfb43981f', 'Zograf Readings', '2004', 'E2004', 'SESS_1430a202e9', '«Ум и знание» - тибетский учебник по теории познания', 'Крапивина Раиса Николаевна', 'Крапивина Раиса Николаевна', 'https://www.orientalstudies.ru/rus/index.php?Itemid=48&id=80&option=com_content&task=view', 'a434eed36e78de92', '945d89aede0c153c']
+ROW : ['PRES_2a08c0cb86', 'Zograf Readings', '2004', 'E2004', 'SESS_d6624d51cf', 'Актуальные проблемы изучения «Бхагавадгиты»', 'Васильков Ярослав Владимирович', 'Васильков Ярослав Владимирович', 'https://www.orientalstudies.ru/rus/index.php?Itemid=48&id=80&option=com_content&task=view', '60259a88c0a9eb76', 'e66013bb8736db6d']
+ROW : ['PRES_6e5928cac8', 'Zograf Readings', '2004', 'E2004', 'SESS_056dca54cd', 'Богини и деревья желаний в индуизме Центральных Гималаев', 'Рыжакова Светлана Игоревна', 'Рыжакова Светлана Игоревна', 'https://www.orientalstudies.ru/rus/index.php?Itemid=48&id=80&option=com_content&task=view', '0ab24c1273b4904f', '8081324387d60e58']
+ROWS(excl header): 1352
+
+summary.unique_presentations=None total_presentations=None
+ERR co No module named 'classification_overrides'

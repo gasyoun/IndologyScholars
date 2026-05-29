@@ -1,0 +1,13 @@
+C:\Users\user\Documents\GitHub\IndologyScholars\generate_publication_pages.py:5984: SyntaxWarning: "\ " is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\ "? A raw string is also an option.
+  def generate_collaboration_page(data):
+Traceback (most recent call last):
+  File "C:\Users\user\Documents\GitHub\IndologyScholars\generate_publication_pages.py", line 9325, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\user\Documents\GitHub\IndologyScholars\generate_publication_pages.py", line 9305, in main
+    generate_classification_criteria_page(records)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\user\Documents\GitHub\IndologyScholars\generate_publication_pages.py", line 7567, in generate_classification_criteria_page
+    writer = csv.DictWriter(handle, fieldnames=list(ledger_rows[0].keys()))
+                                                    ~~~~~~~~~~~^^^
+IndexError: list index out of range

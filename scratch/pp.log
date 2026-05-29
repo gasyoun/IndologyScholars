@@ -1,0 +1,4 @@
+C:\Users\user\Documents\GitHub\IndologyScholars\generate_publication_pages.py:5984: SyntaxWarning: "\ " is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\ "? A raw string is also an option.
+  def generate_collaboration_page(data):
+Patched index.html: scholars=270, presentations=1379, years=2004–2026 (22), overlap=41, Zograf 2026, Roerich 2025, recorded_presentations=82
+Generated publication pages, sitemap, robots, search index, citation files, and preview assets. Theme review queue: 46 items. File manifest: 2239 files.

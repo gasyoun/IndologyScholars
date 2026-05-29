@@ -1,0 +1,3 @@
+Publication validation failed:
+- summary.total_presentations=1378 but DB presenter records=1379
+- presentation_id_manifest.csv has 1351 rows but DB presentation rows=1352

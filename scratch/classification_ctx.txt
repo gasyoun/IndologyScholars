@@ -1,0 +1,395 @@
+=== grep deepseek/expanded classification in .py ===
+  generate_publication_pages.py : deepseek
+  generate_scholars_pages.py : deepseek
+  validate_publication.py : deepseek
+  article\check_ppv_numbers.py : deepseek
+  article\work_expanded_classification_deepseek.py : deepseek
+  scratch\analyse_generational_paradigm.py : deepseek
+  scratch\dump_classification_ctx.py : deepseek
+  scratch\extract_viz_data.py : deepseek
+  scratch\gumilyov_scale_eval.py : deepseek
+  scratch\gumilyov_scale_final.py : deepseek
+  scratch\patch_visualisations.py : deepseek
+  scratch\patch_vis_006.py : deepseek
+  scratch\theme_coding_llm.py : deepseek
+  scratch\theme_coding_llm_v2.py : deepseek
+
+=== candidate classification data files ===
+  classification-criteria.html (37053 bytes)
+  analytics_output\classification_overrides.csv (0 bytes)
+  analytics_output\expanded_classification_audit_v2.err (0 bytes)
+  analytics_output\expanded_classification_audit_v2.log (751 bytes)
+  analytics_output\expanded_classification_deepseek.csv (745868 bytes)
+  analytics_output\expanded_classification_deepseek_work.csv (699016 bytes)
+  analytics_output\expanded_classification_run.err (750 bytes)
+  analytics_output\expanded_classification_run.log (97 bytes)
+  analytics_output\expanded_classification_run_2.err (56 bytes)
+  analytics_output\expanded_classification_run_2.log (2919 bytes)
+  analytics_output\expanded_classification_run_audit.err (1272 bytes)
+  analytics_output\expanded_classification_run_audit.log (0 bytes)
+  analytics_output\expanded_classification_run_audit_2.err (260 bytes)
+  analytics_output\expanded_classification_run_audit_2.log (777 bytes)
+  article\hypothesis_output\expanded_classification_summary.json (2616 bytes)
+  article\hypothesis_output\expanded_classification_summary.md (3849 bytes)
+  article\__pycache__\work_expanded_classification_deepseek.cpython-314.pyc (41181 bytes)
+  docs\classification-audit-en.md (2253 bytes)
+  docs\classification-audit.md (3533 bytes)
+  scratch\classification_ctx.txt (23692 bytes)
+  __pycache__\classification_overrides.cpython-314.pyc (7082 bytes)
+  analytics_output\expanded_classification_deepseek.csv (745868 bytes)
+  analytics_output\expanded_classification_deepseek_work.csv (699016 bytes)
+  analytics_output\meso_codes_deepseek.csv (277400 bytes)
+  article\__pycache__\work_expanded_classification_deepseek.cpython-314.pyc (41181 bytes)
+  analytics_output\expanded_classification_audit_v2.err (0 bytes)
+  analytics_output\expanded_classification_audit_v2.log (751 bytes)
+  analytics_output\expanded_classification_deepseek.csv (745868 bytes)
+  analytics_output\expanded_classification_deepseek_work.csv (699016 bytes)
+  analytics_output\expanded_classification_run.err (750 bytes)
+  analytics_output\expanded_classification_run.log (97 bytes)
+  analytics_output\expanded_classification_run_2.err (56 bytes)
+  analytics_output\expanded_classification_run_2.log (2919 bytes)
+  analytics_output\expanded_classification_run_audit.err (1272 bytes)
+  analytics_output\expanded_classification_run_audit.log (0 bytes)
+  analytics_output\expanded_classification_run_audit_2.err (260 bytes)
+  analytics_output\expanded_classification_run_audit_2.log (777 bytes)
+  analytics_output\expanded_gumilyov_elevated_audit.csv (92990 bytes)
+  article\hypothesis_output\expanded_classification_summary.json (2616 bytes)
+  article\hypothesis_output\expanded_classification_summary.md (3849 bytes)
+  article\__pycache__\work_expanded_classification_deepseek.cpython-314.pyc (41181 bytes)
+
+--- validate_publication.py around 249 ---
+  246:         "analytics_output/field_provenance_biographical.csv",
+  247:         "analytics_output/field_provenance_authority.csv",
+  248:         "analytics_output/field_provenance_themes.csv",
+  249:         "analytics_output/expanded_classification_deepseek.csv",
+  250:         "analytics_output/expanded_gumilyov_elevated_audit.csv",
+  251:         "analytics_output/meso_codes_deepseek.csv",
+  252:         "curation/verified_affiliation_spans.csv",
+  253:         "analytics_output/network_nodes.csv",
+  254:         "analytics_output/network_edges.csv",
+
+--- validate_publication.py around 250 ---
+  247:         "analytics_output/field_provenance_authority.csv",
+  248:         "analytics_output/field_provenance_themes.csv",
+  249:         "analytics_output/expanded_classification_deepseek.csv",
+  250:         "analytics_output/expanded_gumilyov_elevated_audit.csv",
+  251:         "analytics_output/meso_codes_deepseek.csv",
+  252:         "curation/verified_affiliation_spans.csv",
+  253:         "analytics_output/network_nodes.csv",
+  254:         "analytics_output/network_edges.csv",
+  255:         "analytics_output/publication_file_manifest.csv",
+
+--- validate_publication.py around 251 ---
+  248:         "analytics_output/field_provenance_themes.csv",
+  249:         "analytics_output/expanded_classification_deepseek.csv",
+  250:         "analytics_output/expanded_gumilyov_elevated_audit.csv",
+  251:         "analytics_output/meso_codes_deepseek.csv",
+  252:         "curation/verified_affiliation_spans.csv",
+  253:         "analytics_output/network_nodes.csv",
+  254:         "analytics_output/network_edges.csv",
+  255:         "analytics_output/publication_file_manifest.csv",
+  256:         "analytics_output/publication_file_manifest.json",
+
+--- validate_publication.py around 278 ---
+  275:         "known-limitations.html",
+  276:         "how-to-cite.html",
+  277:         "metrics-guide.html",
+  278:         "classification-criteria.html",
+  279:         "networks.html",
+  280:         "videos/index.html",
+  281:     ]
+  282:     for path in required:
+  283:         if not Path(path).exists():
+
+--- validate_publication.py around 320 ---
+  317:             if needle not in service_worker:
+  318:                 fail(errors, f"service-worker.js missing cached application resource {needle}")
+  319: 
+  320:     if Path("analytics_output/expanded_classification_deepseek.csv").exists():
+  321:         classified = load_csv("analytics_output/expanded_classification_deepseek.csv")
+  322:         presentation_total = int(summary.get("unique_presentations", 0))
+  323:         if len(classified) != presentation_total:
+  324:             fail(errors, "expanded DeepSeek classification is not complete for all unique presentations")
+  325:         invalid_levels = [row for row in classified if row.get("gumilyov_level") not in {"1", "2", "3"}]
+
+--- validate_publication.py around 321 ---
+  318:                 fail(errors, f"service-worker.js missing cached application resource {needle}")
+  319: 
+  320:     if Path("analytics_output/expanded_classification_deepseek.csv").exists():
+  321:         classified = load_csv("analytics_output/expanded_classification_deepseek.csv")
+  322:         presentation_total = int(summary.get("unique_presentations", 0))
+  323:         if len(classified) != presentation_total:
+  324:             fail(errors, "expanded DeepSeek classification is not complete for all unique presentations")
+  325:         invalid_levels = [row for row in classified if row.get("gumilyov_level") not in {"1", "2", "3"}]
+  326:         if invalid_levels:
+
+--- validate_publication.py around 324 ---
+  321:         classified = load_csv("analytics_output/expanded_classification_deepseek.csv")
+  322:         presentation_total = int(summary.get("unique_presentations", 0))
+  323:         if len(classified) != presentation_total:
+  324:             fail(errors, "expanded DeepSeek classification is not complete for all unique presentations")
+  325:         invalid_levels = [row for row in classified if row.get("gumilyov_level") not in {"1", "2", "3"}]
+  326:         if invalid_levels:
+  327:             fail(errors, "expanded DeepSeek classification contains an invalid Gumilyov level")
+  328: 
+  329:     if Path("sitemap.xml").exists():
+
+--- validate_publication.py around 327 ---
+  324:             fail(errors, "expanded DeepSeek classification is not complete for all unique presentations")
+  325:         invalid_levels = [row for row in classified if row.get("gumilyov_level") not in {"1", "2", "3"}]
+  326:         if invalid_levels:
+  327:             fail(errors, "expanded DeepSeek classification contains an invalid Gumilyov level")
+  328: 
+  329:     if Path("sitemap.xml").exists():
+  330:         sitemap = read("sitemap.xml")
+  331:         if "<sitemapindex" in sitemap:
+  332:             # Recursively load sub-sitemaps mentioned in the sitemapindex
+
+--- validate_publication.py around 337 ---
+  334:             for _, filename in sub_sitemaps:
+  335:                 if Path(filename).exists():
+  336:                     sitemap += "\n" + read(filename)
+  337:         for page in ["", "en.html", "search.html", "download-data.html", "data-quality.html", "s/", "conferences/", "p/", "themes/", "topics/", "topics/ramayana.html", "topics/mahabharata.html", "generations/", "cities/", "institutions/", "metrics-guide.html", "classification-criteria.html", "networks.html", "videos/"]:
+  338:             expected = "https://gasyoun.github.io/IndologyScholars/" + page
+  339:             if expected not in sitemap:
+  340:                 fail(errors, f"sitemap.xml missing {expected}")
+  341:         if "https://gasyoun.github.io/IndologyScholars/404.html" in sitemap:
+  342:             fail(errors, "sitemap.xml should not include 404.html")
+
+--- gen_pub_pages around 622 ---
+  618:                 }
+  619:             )
+  620:     pid_series = {
+  621:         row.get("presentation_id", ""): row.get("series", "")
+  622:         for row in load_csv_rows("analytics_output/meso_codes_deepseek.csv")
+  623:     }
+  624:     memberships = load_meso_memberships()
+  625:     for item in items:
+  626:         pids = set(memberships.get(item["code"], []))
+  627:         item["count"] = len(pids)
+  628:         item["zograf_count"] = sum(1 for pid in pids if "Zograf" in pid_series.get(pid, ""))
+  629:         item["roerich_count"] = sum(1 for pid in pids if "Roerich" in pid_series.get(pid, ""))
+
+--- gen_pub_pages around 647 ---
+  643:         approach = row.get("approach") or ""
+  644:         pid = row.get("presentation_id") or ""
+  645:         if approach and pid:
+  646:             memberships[f"linguistics_{approach}"].append(pid)
+  647:     for row in load_csv_rows("analytics_output/meso_codes_deepseek.csv"):
+  648:         pid = row.get("presentation_id") or ""
+  649:         for code in (row.get("meso_codes") or "").split("|"):
+  650:             if code and pid and pid not in memberships[code]:
+  651:                 memberships[code].append(pid)
+  652:     reviewed_ids = set(CLASSIFICATION_OVERRIDES)
+  653:     for code in list(memberships):
+  654:         memberships[code] = [pid for pid in memberships[code] if pid not in reviewed_ids]
+
+--- gen_pub_pages around 2399 ---
+ 2395:     author_participations = summary.get("author_participations", summary.get("total_presentations", 899))
+ 2396:     video_presentations = sum(1 for talk in unique_records if talk.get("videos"))
+ 2397:     video_author_cards = sum(1 for talk in records if talk.get("videos"))
+ 2398:     youtube_rows = len(load_youtube_rows()) or 178
+ 2399:     classification_path = Path("article/hypothesis_output/expanded_classification_summary.json")
+ 2400:     classification = json.loads(classification_path.read_text(encoding="utf-8")) if classification_path.exists() else {}
+ 2401:     scale = classification.get("gumilyov_scale", {})
+ 2402:     g1_count = int(scale.get("1", 0) or 0)
+ 2403:     g3_count = int(scale.get("3", 0) or 0)
+ 2404:     number_path = Path("article/hypothesis_output/ppv_numbers_snapshot.json")
+ 2405:     number_snapshot = json.loads(number_path.read_text(encoding="utf-8")) if number_path.exists() else {}
+ 2406:     number_series = number_snapshot.get("series", {})
+
+--- gen_pub_pages around 2417 ---
+ 2413:     overlap = int(float(appendix.get("H1_overlap_observed", summary.get("overlap_scholars", 0)) or 0))
+ 2414:     expected_overlap = float(appendix.get("H1_overlap_expected_mean", 0) or 0)
+ 2415:     z_city_only = appendix.get("H4_zograf_cityonly_pct", "")
+ 2416:     r_city_only = appendix.get("H4_roerich_cityonly_pct", "")
+ 2417:     classified_rows = load_csv_rows("analytics_output/expanded_classification_deepseek.csv")
+ 2418:     period_by_series = defaultdict(Counter)
+ 2419:     for row in classified_rows:
+ 2420:         period_by_series[row.get("series", "")][row.get("period_l2", "")] += 1
+ 2421:     z_periods = period_by_series["Zograf Readings"]
+ 2422:     r_periods = period_by_series["Roerich Readings"]
+ 2423:     z_period_total = sum(z_periods.values()) or 1
+ 2424:     r_period_total = sum(r_periods.values()) or 1
+
+--- gen_pub_pages around 2452 ---
+ 2448:         ),
+ 2449:         (
+ 2450:             "Микрокейс как нормальный жанр",
+ 2451:             f"{g1_count} / {unique_presentations}",
+ 2452:             f"После полного DeepSeek-аудита шкала Гумилева показывает доминирование докладов об отдельном тексте, авторе, термине или локальном сюжете. Глобальных G3-заголовков осталось {g3_count}; их связь со старшим поколением не подтвердилась.",
+ 2453:         ),
+ 2454:         (
+ 2455:             "Видео - слой проверки, не вся выборка",
+ 2456:             f"{video_presentations} доклада",
+ 2457:             f"В базе есть прямые видеоссылки для {video_presentations} уникальных докладов ({video_author_cards} авторских карточек) при {youtube_rows} строках YouTube-инвентаря. Видео полезно для проверки конкретных выступлений, но не заменяет полный корпус программ.",
+ 2458:         ),
+ 2459:     ]
+
+--- gen_pub_pages around 3445 ---
+ 3441:     alluvial_links = []
+ 3442:     try:
+ 3443:         period_theme_links = defaultdict(int)
+ 3444:         theme_meso_links = defaultdict(int)
+ 3445:         with open("analytics_output/expanded_classification_deepseek.csv", encoding="utf-8") as f:
+ 3446:             import csv
+ 3447:             reader = csv.DictReader(f)
+ 3448:             for row in reader:
+ 3449:                 period = row.get("period_l2")
+ 3450:                 theme = row.get("theme_l1")
+ 3451:                 meso = row.get("meso_codes") or row.get("proposed_meso")
+ 3452:                 
+
+--- gen_pub_pages around 3528 ---
+ 3524:     try:
+ 3525:         # Build tree: Series -> L1 Theme -> Meso
+ 3526:         tree = defaultdict(lambda: defaultdict(lambda: defaultdict(int)))
+ 3527:         
+ 3528:         with open("analytics_output/expanded_classification_deepseek.csv", encoding="utf-8") as f:
+ 3529:             reader = csv.DictReader(f)
+ 3530:             for row in reader:
+ 3531:                 series = row.get("series")
+ 3532:                 theme = row.get("theme_l1")
+ 3533:                 meso = row.get("meso_codes") or row.get("proposed_meso")
+ 3534:                 
+ 3535:                 if not series: series = "Unknown"
+
+--- gen_pub_pages around 5537 ---
+ 5533:             scholar_cohort_map[s["id"]] = s["generation_code"]
+ 5534: 
+ 5535:     period_mapping = {}
+ 5536:     try:
+ 5537:         with open("analytics_output/expanded_classification_deepseek.csv", encoding="utf-8") as f:
+ 5538:             for row in csv.DictReader(f):
+ 5539:                 period_mapping[row["presentation_id"]] = row["period_l2"]
+ 5540:     except Exception:
+ 5541:         pass
+ 5542: 
+ 5543:     participations = []
+ 5544:     try:
+
+--- gen_pub_pages around 7113 ---
+ 7109:             <p>{esc(meta["description"])}</p>
+ 7110:         </header>
+ 7111:         <aside class="caveat-block" role="note" aria-label="Gumilyov classification notice">
+ 7112:             <strong>Примечание о классификации</strong>
+ 7113:             <p>Уровень Гумилева обозначает масштаб аргумента, а не географию или язык материала. Полный расширенный корпус прошел DeepSeek-разметку и отдельный строгий аудит предварительных L2/L3; частный ритуал, экспедиция, текст или языковой кейс остаются L1 даже при упоминании региона или традиции. Уровень не является оценкой качества доклада.</p>
+ 7114:             <div class="chip-list"><a class="chip" href="../classification-criteria.html">Обновленные критерии</a></div>
+ 7115:         </aside>
+ 7116:         <section class="list">
+ 7117:             {''.join(talk_card(t, '../') for t in grouped.get(level, []))}
+ 7118:         </section>
+ 7119:         """
+ 7120:         write_text(
+
+--- gen_pub_pages around 7495 ---
+ 7491:     "PRES_422410f9af",
+ 7492: ]
+ 7493: 
+ 7494: 
+ 7495: def generate_classification_criteria_page(records):
+ 7496:     records_by_id = presentation_records_by_id(records)
+ 7497:     classification_rows = {
+ 7498:         row["presentation_id"]: row
+ 7499:         for row in load_csv_rows("analytics_output/expanded_classification_deepseek.csv")
+ 7500:         if row.get("presentation_id")
+ 7501:     }
+ 7502:     audit_rows = {
+
+--- gen_pub_pages around 7499 ---
+ 7495: def generate_classification_criteria_page(records):
+ 7496:     records_by_id = presentation_records_by_id(records)
+ 7497:     classification_rows = {
+ 7498:         row["presentation_id"]: row
+ 7499:         for row in load_csv_rows("analytics_output/expanded_classification_deepseek.csv")
+ 7500:         if row.get("presentation_id")
+ 7501:     }
+ 7502:     audit_rows = {
+ 7503:         row["presentation_id"]: row
+ 7504:         for row in load_csv_rows("analytics_output/expanded_gumilyov_elevated_audit.csv")
+ 7505:         if row.get("presentation_id")
+ 7506:     }
+
+--- gen_pub_pages around 7536 ---
+ 7532:         level: example_cards(presentation_ids)
+ 7533:         for level, presentation_ids in ARGUMENT_SCALE_EXAMPLE_IDS.items()
+ 7534:     }
+ 7535:     expert_review_examples = example_cards(EXPERT_REVIEW_EXAMPLE_IDS, audited=True)
+ 7536:     ledger_rows = []
+ 7537:     reviewed_cards = []
+ 7538:     for pid, review in CLASSIFICATION_OVERRIDES.items():
+ 7539:         talk = records_by_id.get(pid)
+ 7540:         if not talk:
+ 7541:             continue
+ 7542:         path = presentation_path(pid)
+ 7543:         theme_code = review["theme_code"]
+
+--- gen_pub_pages around 7554 ---
+ 7550:                 <p>{esc(review["reason"])}</p>
+ 7551:             </article>
+ 7552:             """
+ 7553:         )
+ 7554:         ledger_rows.append(
+ 7555:             {
+ 7556:                 "presentation_id": pid,
+ 7557:                 "title": talk.get("title") or "",
+ 7558:                 "theme_code": theme_code,
+ 7559:                 "theme_label_ru": theme_label(theme_code, "ru"),
+ 7560:                 "gumilyov_level": review["gumilyov_level"],
+ 7561:                 "meso_codes": "|".join(review["meso_codes"]),
+
+--- gen_pub_pages around 7567 ---
+ 7563:                 "reason": review["reason"],
+ 7564:             }
+ 7565:         )
+ 7566:     with open("analytics_output/classification_overrides.csv", "w", encoding="utf-8", newline="") as handle:
+ 7567:         writer = csv.DictWriter(handle, fieldnames=list(ledger_rows[0].keys()))
+ 7568:         writer.writeheader()
+ 7569:         writer.writerows(ledger_rows)
+ 7570:     body = f"""
+ 7571:         <header>
+ 7572:             <h1>Критерии классификации докладов</h1>
+ 7573:             <p>Обновленная схема отделяет дисциплинарную принадлежность, тематические мезоуровни, масштаб аргументации и формат участия. Частные поправки к программе 2024 г. стали общими правилами, после чего по ним повторно размечен весь расширенный корпус.</p>
+ 7574:         </header>
+
+--- gen_pub_pages around 7569 ---
+ 7565:         )
+ 7566:     with open("analytics_output/classification_overrides.csv", "w", encoding="utf-8", newline="") as handle:
+ 7567:         writer = csv.DictWriter(handle, fieldnames=list(ledger_rows[0].keys()))
+ 7568:         writer.writeheader()
+ 7569:         writer.writerows(ledger_rows)
+ 7570:     body = f"""
+ 7571:         <header>
+ 7572:             <h1>Критерии классификации докладов</h1>
+ 7573:             <p>Обновленная схема отделяет дисциплинарную принадлежность, тематические мезоуровни, масштаб аргументации и формат участия. Частные поправки к программе 2024 г. стали общими правилами, после чего по ним повторно размечен весь расширенный корпус.</p>
+ 7574:         </header>
+ 7575:         <section class="grid">
+ 7576:             <article class="card"><strong>Рубрика</strong><div class="meta">Основная дисциплина вопроса: этнография, история индологии, религиоведение, лингвистика, литература и другие крупные входы.</div></article>
+
+--- gen_pub_pages around 9050 ---
+ 9046:     overlap = summary.get("overlap_scholars", 0)
+ 9047:     recorded_presentations = sum(
+ 9048:         1 for talk in presentation_records_by_id(timeline_records(data)).values() if talk.get("videos")
+ 9049:     )
+ 9050:     classification_path = Path("article/hypothesis_output/expanded_classification_summary.json")
+ 9051:     classification = json.loads(classification_path.read_text(encoding="utf-8")) if classification_path.exists() else {}
+ 9052:     scale = classification.get("gumilyov_scale", {})
+ 9053:     g1_count = int(scale.get("1", 0) or 0)
+ 9054:     appendix = {
+ 9055:         row.get("key", ""): row.get("value", "")
+ 9056:         for row in load_csv_rows("article/hypothesis_output/appendix_g_summary.csv")
+ 9057:     }
+
+--- gen_pub_pages around 9059 ---
+ 9055:         row.get("key", ""): row.get("value", "")
+ 9056:         for row in load_csv_rows("article/hypothesis_output/appendix_g_summary.csv")
+ 9057:     }
+ 9058:     expected_overlap = float(appendix.get("H1_overlap_expected_mean", 0) or 0)
+ 9059:     classified_rows = load_csv_rows("analytics_output/expanded_classification_deepseek.csv")
+ 9060:     periods = defaultdict(Counter)
+ 9061:     for row in classified_rows:
+ 9062:         periods[row.get("series", "")][row.get("period_l2", "")] += 1
+ 9063:     z_period_total = sum(periods["Zograf Readings"].values()) or 1
+ 9064:     r_period_total = sum(periods["Roerich Readings"].values()) or 1
+ 9065:     z_classical_medieval = round(
+ 9066:         100 * (periods["Zograf Readings"]["classical"] + periods["Zograf Readings"]["medieval"]) / z_period_total, 1

@@ -1,0 +1,2 @@
+Wrote 1352 presentation manifest rows to analytics_output\presentation_id_manifest.csv
+Duplicate stable_key_candidate rows: 0

@@ -1,0 +1,11 @@
+TYPE A sessions still holding a talk-like title: 0
+
+Erchenkov 'кауладхарма' presentation rows: 1
+  PRES_e5697a4aaf | Кула и кауладхарма: центральная универсалия индуистского тантризма. | sess=SESS_b5c5912a6d
+
+Stepin 'Ананда-сутр' presentation + session title:
+  PRES_aec61fca00 | Онтология и сотериология «Ананда-сутр» П.Р. Саркара | session='Перерыв'
+
+presentation.title still ending in venue/'Там же' junk: 0
+
+Totals: presentations=1352 sessions=243 persons=270

@@ -1,0 +1,42 @@
+Opening Database connection to conferences.db
+Initializing Database tables...
+Populating seeded database tables from zograf-roerich-db.md...
+Populating parsed Zograf Reading talks (2004-2026)...
+Populating parsed Roerich Reading talks (2007-2025)...
+Ingesting YouTube video media from mapping CSV (if present)...
+  Video media: 89 inserted, 0 could not be matched against current DB, 89 skipped (status != auto/manual_confirmed)
+Verifying database integrity and statistics...
+
+--- DATABASE SUMMARY VERIFICATION ---
+Event Series count: 2
+Events per Series: [(1, 22), (2, 18)]
+Total Event Days: 130
+Total Unique Scholars/Persons: 270
+Total Presentations parsed: 1352
+
+Top 10 Speakers (Combined Zograf and Roerich):
+ - Корнеева Наталья Афанасьевна: 29 talks
+ - Тавастшерна Сергей Сергеевич: 29 talks
+ - Александрова Наталия Владимировна: 27 talks
+ - Рыжакова Светлана Игоревна: 27 talks
+ - Цветкова Светлана Олеговна: 27 talks
+ - Лысенко Виктория Георгиевна: 25 talks
+ - Дубянский Александр Михайлович: 21 talks
+ - Мехакян Арег Гайкович: 20 talks
+ - Васильков Ярослав Владимирович: 20 talks
+ - Альбедиль Маргарита Федоровна: 19 talks
+
+Total Overlapping Participants (attended BOTH Zograf and Roerich): 41
+Sample overlap speakers:
+ - Александрова Наталия Владимировна
+ - Алиханова Юлия Марковна
+ - Бабин Александр Николаевич
+ - Васильков Ярослав Владимирович
+ - Вертоградова Виктория Викторовна
+ - Вечерина Ольга Павловна
+ - Вигасин Алексей Алексеевич
+ - Воробьева Дарья Николаевна
+ - Гасунс Марцис Юрьевич
+ - Гордийчук Николай Валентинович
+
+Database building and populating pipeline successfully completed!
