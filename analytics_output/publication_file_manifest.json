@@ -6,7 +6,7 @@
     "pipeline_version": "2026-05-25",
     "generator": "generate_publication_pages.py"
   },
-  "file_count": 3867,
+  "file_count": 3869,
   "files": [
     {
       "path": "404.html",
@@ -402,6 +402,16 @@
       "path": "assets/icon-512.png",
       "size_bytes": 2254,
       "sha256": "8acdd32445b30a95a580b845899c719ba09c3227d91d9f2833b3d032cbb5c877"
+    },
+    {
+      "path": "assets/img/brokerage_scatter.png",
+      "size_bytes": 243807,
+      "sha256": "3fd5c3c8bd0d9a67dbdd00af08644980e99c7e5c805a2de882967b212d9f8476"
+    },
+    {
+      "path": "assets/img/network_degradation.png",
+      "size_bytes": 117897,
+      "sha256": "ec2edc55ab75db2c936a072da29376c5aaa89f522dd560e066495f20c9ec1b03"
     },
     {
       "path": "assets/index.css",
@@ -8896,7 +8906,7 @@
     {
       "path": "findings/visualisations.html",
       "size_bytes": 474906,
-      "sha256": "1ddb5337598e853d8d0b383c69044f422e7c8c0c86bcf468576a1fc0bd6d0781"
+      "sha256": "15c8232429ec82cb689fc918c1fb44c26441853aa06031f0441585c5577a0873"
     },
     {
       "path": "generations/index.html",
@@ -8940,8 +8950,8 @@
     },
     {
       "path": "index.html",
-      "size_bytes": 39433,
-      "sha256": "69c8ee7fe5cdf7d25d3a6421fe54c80c07ce15996e9f5d31306fb231bab9a96a"
+      "size_bytes": 39709,
+      "sha256": "ea0e035993a7eeeb37cc0549fac5dd60f27db8a5aaabe050d9f3b7a6d48f7890"
     },
     {
       "path": "institutions/if-ran.html",
