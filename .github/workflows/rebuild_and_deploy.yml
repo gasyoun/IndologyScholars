@@ -55,10 +55,11 @@ jobs:
           python generate_analytics.py
           python article/work_title_keywords.py
 
-      - name: Serialize Data Structure for Dashboard
+      - name: Generate JS Configs (if any remain)
         run: |
           python generate_site_data.py
           python generate_network_json.py
+          python generate_lod.py
 
       - name: Generate Static Pages for Individual Scholars
         run: |

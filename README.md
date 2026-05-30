@@ -32,7 +32,10 @@
 - [Главный каталог](https://gasyoun.github.io/IndologyScholars/) с поиском по
   именам, докладам, городам и институциям.
 - [Интерактивные визуализации](https://gasyoun.github.io/IndologyScholars/findings/visualisations.html) —
-  визуальный дашборд с стабильными ID: пересечение когорт Зограф × Рерих, траектории аффилиаций и тепловые карты.
+  визуальный дашборд: пересечение когорт Зограф × Рерих, траектории аффилиаций и тепловые карты.
+- [Пространственный анализ (GIS)](https://gasyoun.github.io/IndologyScholars/) — интерактивная картография на базе Leaflet, отображающая академическую географию докладов.
+- [Академические потоки (Sankey Diagram)](https://gasyoun.github.io/IndologyScholars/) — диаграмма Санкей для отслеживания маршрутов между поколениями, конференциями и темами.
+- [Linked Open Data (LOD) Граф](https://gasyoun.github.io/IndologyScholars/indology_knowledge_graph.ttl) — машиночитаемый RDF/Turtle граф знаний для семантического веба (Semantic Web), описывающий ученых (foaf:Person) и события (schema:Event).
 - [Конференции](https://gasyoun.github.io/IndologyScholars/conferences/) с
   переходом к отдельным годам и программам.
 - [Тематические подборки](https://gasyoun.github.io/IndologyScholars/themes/)

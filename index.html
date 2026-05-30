@@ -17,6 +17,11 @@
     <meta name="apple-mobile-web-app-title" content="IndologyScholars">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <script defer src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    
+    <!-- Leaflet.js for Maps -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
     <script defer src="/IndologyScholars/assets/pwa.js"></script>
     <link rel="preload" href="site_data.json?v=1.8.5" as="fetch" crossorigin>
     <meta name="keywords" content="Индология, Зографские чтения, Рериховские чтения, наука, востоковедение, ИВР РАН, ИВ РАН, МГУ, СПбГУ, статистика, научные доклады">
@@ -70,6 +75,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
     
+    <!-- UI Libraries: Chart.js, VanillaTilt, Fuse.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/chartjs-chart-sankey"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.min.js"></script>
+
     <!-- Archive workspace styling -->
     <link rel="stylesheet" href="/IndologyScholars/assets/index.css">
 </head>
@@ -135,6 +146,7 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                         </svg>
                         <input type="search" class="search-input" id="scholars-search" placeholder="Имя, организация, город" oninput="handleFilterChange()">
+                        <ul class="autocomplete-dropdown" id="scholars-autocomplete" hidden></ul>
                     </div>
                 </div>
 
@@ -145,6 +157,7 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                         </svg>
                         <input type="search" class="search-input" id="talks-search" placeholder="Тема или слово в заглавии" oninput="handleFilterChange()">
+                        <ul class="autocomplete-dropdown" id="talks-autocomplete" hidden></ul>
                     </div>
                 </div>
 
@@ -169,6 +182,21 @@
                         <option value="name-desc" id="opt-name-desc">По алфавиту (Я-А)</option>
                     </select>
                 </div>
+                
+                <div class="filter-field view-toggle">
+                    <label class="filter-label" id="label-view">Отображение</label>
+                    <div style="display: flex; gap: 0.5rem; align-items: center;">
+                        <button class="view-btn active" id="btn-view-table" onclick="toggleViewMode('table')" aria-label="Таблица" title="Табличный вид">
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"/></svg>
+                        </button>
+                        <button class="view-btn" id="btn-view-grid" onclick="toggleViewMode('grid')" aria-label="Сетка" title="Плиточный вид">
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M4 4h6v6H4zm10 0h6v6h-6zM4 14h6v6H4zm10 0h6v6h-6z"/></svg>
+                        </button>
+                        <button class="view-btn" id="export-md-btn" onclick="exportToMarkdown()" aria-label="Экспорт в Markdown" title="Экспорт списка" style="margin-left: 0.5rem; font-family: var(--font-display); font-size: 0.85rem; padding: 0.4rem 1rem;">
+                            Экспорт
+                        </button>
+                    </div>
+                </div>
             </div>
 
             <section class="query-results" id="talk-query-results" hidden aria-live="polite">
@@ -183,7 +211,7 @@
                 <div class="query-talks" id="talk-query-list"></div>
             </section>
 
-            <div class="table-container">
+            <div class="table-container" id="scholars-table-container">
                 <table id="scholars-table">
                     <thead>
                         <tr>
@@ -198,6 +226,10 @@
                         <!-- Dynamic Rows here -->
                     </tbody>
                 </table>
+            </div>
+            
+            <div class="scholars-grid-view" id="scholars-grid-container" hidden>
+                <!-- Dynamic Grid Cards here -->
             </div>
 
             <div class="pagination-bar" id="scholars-pagination">
@@ -222,9 +254,7 @@
                 <div class="chart-card">
                     <h3 class="chart-title" id="chart-annual-title">Динамика научных исследований: Объем докладов по годам (2004–2026 гг.)</h3>
                     <div id="chart-annual-growth" style="height: 350px;">
-                        <svg id="svg-growth" width="100%" height="100%" viewBox="0 0 700 350" style="background: rgba(10, 14, 26, 0.4); border-radius: 8px;">
-                            <!-- Dynamic SVG chart -->
-                        </svg>
+                        <canvas id="canvas-growth" style="width: 100%; height: 100%; background: rgba(10, 14, 26, 0.4); border-radius: 8px;"></canvas>
                     </div>
                 </div>
 
@@ -232,9 +262,15 @@
                 <div class="chart-card">
                     <h3 class="chart-title" id="chart-affinity-title">Научное сродство и географическое распределение кадров</h3>
                     <div id="chart-affinity" style="height: 350px;">
-                        <svg id="svg-affinity" width="100%" height="100%" viewBox="0 0 700 350" style="background: rgba(10, 14, 26, 0.4); border-radius: 8px;">
-                            <!-- Dynamic SVG chart -->
-                        </svg>
+                        <canvas id="canvas-affinity"></canvas>
+                    </div>
+                </div>
+
+                <!-- Academic Flows Sankey Chart -->
+                <div class="chart-card" style="grid-column: span 2;">
+                    <h3 class="chart-title" id="chart-sankey-title">Академические потоки: Поколения → Конференции → Темы</h3>
+                    <div id="chart-sankey" style="height: 400px; background: rgba(10, 14, 26, 0.4); border-radius: 8px;">
+                        <canvas id="canvas-sankey"></canvas>
                     </div>
                 </div>
 
@@ -243,9 +279,7 @@
                     <h3 class="chart-title" id="chart-age-title">Поколения исследователей по году рождения</h3>
                     <a class="query-link" id="generations-page-link" href="generations/">Поименный список поколений</a>
                     <div id="chart-age" style="height: 350px;">
-                        <svg id="svg-age" width="100%" height="100%" viewBox="0 0 700 350" style="background: rgba(10, 14, 26, 0.4); border-radius: 8px;">
-                            <!-- Dynamic SVG chart -->
-                        </svg>
+                        <canvas id="canvas-age" style="width: 100%; height: 100%; background: rgba(10, 14, 26, 0.4); border-radius: 8px;"></canvas>
                     </div>
                 </div>
 
@@ -253,9 +287,7 @@
                 <div class="chart-card">
                     <h3 class="chart-title" id="chart-gender-title">Гендерное представительство научного сообщества</h3>
                     <div id="chart-gender" style="height: 350px;">
-                        <svg id="svg-gender" width="100%" height="100%" viewBox="0 0 700 350" style="background: rgba(10, 14, 26, 0.4); border-radius: 8px;">
-                            <!-- Dynamic SVG chart -->
-                        </svg>
+                        <canvas id="canvas-gender" style="width: 100%; height: 100%; background: rgba(10, 14, 26, 0.4); border-radius: 8px;"></canvas>
                     </div>
                 </div>
 
@@ -282,9 +314,7 @@
                 <div class="chart-card" style="grid-column: span 2;">
                     <h3 class="chart-title" id="chart-geo-title">Географическое представительство: Научные доклады по городам</h3>
                     <div id="chart-geo" style="height: 350px;">
-                        <svg id="svg-geo" width="100%" height="100%" viewBox="0 0 700 350" style="background: rgba(10, 14, 26, 0.4); border-radius: 8px;">
-                            <!-- Dynamic SVG geographic chart -->
-                        </svg>
+                        <div id="map-geo" style="width: 100%; height: 100%; background: rgba(10, 14, 26, 0.4); border-radius: 8px; z-index: 1;"></div>
                     </div>
                 </div>
 
@@ -536,6 +566,6 @@ CREATE TABLE presentation_person (
     </footer>
 
     <!-- Main Dynamic Application Script with Bilingual Localization (RU / EN) -->
-    <script src="/IndologyScholars/assets/dashboard.js"></script>
+    <script type="module" src="/IndologyScholars/assets/js/main.js"></script>
 </body>
 </html>

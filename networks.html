@@ -706,6 +706,24 @@
                     </div>
                 </div>
 
+
+                <!-- Time Filter -->
+                <div>
+                    <h3 class="section-title">Временная шкала</h3>
+                    <div style="display: flex; gap: 0.5rem; margin-bottom: 0.5rem;">
+                        <input type="number" id="filter-year-start" class="search-input" placeholder="Год с (напр. 2010)" style="padding: 0.5rem; text-align: center;">
+                        <input type="number" id="filter-year-end" class="search-input" placeholder="Год по (напр. 2024)" style="padding: 0.5rem; text-align: center;">
+                    </div>
+                </div>
+
+                <!-- Network Analytics -->
+                <div>
+                    <h3 class="section-title">Аналитика сети</h3>
+                    <div class="filter-list" id="centrality-panel" style="font-size: 0.85rem; color: var(--muted); background: rgba(255,255,255,0.02); padding: 0.75rem; border-radius: 6px; border: 1px solid var(--border);">
+                        <em>Запустите фильтрацию для расчета метрик</em>
+                    </div>
+                </div>
+
                 <!-- Physics Settings -->
                 <div>
                     <h3 class="section-title">Физика графа</h3>
@@ -718,6 +736,9 @@
                             </span>
                         </label>
                         <button class="btn-preset" id="btn-stop-physics" style="grid-column: span 2; margin-top: 0.5rem; width: 100%;">Заморозить раскладку</button>
+
+                        <button class="btn-preset" id="btn-export-gexf" style="grid-column: span 2; margin-top: 0.5rem; width: 100%; border-color: var(--accent);">Экспорт (.gexf)</button>
+
                     </div>
                 </div>
             </div>
@@ -1175,14 +1196,31 @@
                 }
             });
             
-            // 2. Filter Edges
+            
+            // 2. Filter Edges & Calculate Centrality
             const activeEdges = [];
+            
+            // Read time filter
+            const yearStartStr = document.getElementById('filter-year-start').value;
+            const yearEndStr = document.getElementById('filter-year-end').value;
+            const yearStart = yearStartStr ? parseInt(yearStartStr) : 0;
+            const yearEnd = yearEndStr ? parseInt(yearEndStr) : 3000;
+            
+            // Centrality map: nodeId -> degree
+            const degreeMap = new Map();
+
             rawEdges.forEach(edge => {
                 const matchesType = edgeToggles[edge.type];
                 const sourceActive = activeNodeIds.has(edge.source);
                 const targetActive = activeNodeIds.has(edge.target);
                 
-                if (matchesType && sourceActive && targetActive) {
+                // Time filter check
+                let matchesTime = true;
+                if (edge.year && (edge.year < yearStart || edge.year > yearEnd)) {
+                    matchesTime = false;
+                }
+                
+                if (matchesType && sourceActive && targetActive && matchesTime) {
                     const style = edgeStyles[edge.type];
                     activeEdges.push({
                         from: edge.source,
@@ -1195,9 +1233,39 @@
                         hoverWidth: style.width + 1.5,
                         selectionWidth: style.width + 2
                     });
+                    
+                    // Add to degree centrality
+                    degreeMap.set(edge.source, (degreeMap.get(edge.source) || 0) + 1);
+                    degreeMap.set(edge.target, (degreeMap.get(edge.target) || 0) + 1);
                 }
             });
             
+            // After edges are filtered, we might want to hide nodes that now have 0 edges (isolated), unless they are the only node.
+            // But let's leave node hiding simple: if it's active by node filters, it stays.
+            
+            // Update Analytics UI
+            const centralityPanel = document.getElementById('centrality-panel');
+            if (centralityPanel) {
+                const topNodes = [...degreeMap.entries()]
+                    .map(([id, degree]) => ({ id, degree, node: rawNodeById.get(id) }))
+                    .filter(item => item.node && item.node.type === 'person')
+                    .sort((a, b) => b.degree - a.degree)
+                    .slice(0, 5);
+                
+                if (topNodes.length > 0) {
+                    let html = '<div style="margin-bottom:0.3rem; color:#fff;"><strong>Хабы (Degree Centrality):</strong></div>';
+                    topNodes.forEach((item, idx) => {
+                        html += `<div style="display:flex; justify-content:space-between; margin-bottom:0.2rem;">
+                            <span>${idx+1}. ${item.node.label}</span>
+                            <span style="color:var(--cyan); font-weight:bold;">${item.degree}</span>
+                        </div>`;
+                    });
+                    centralityPanel.innerHTML = html;
+                } else {
+                    centralityPanel.innerHTML = '<em>Нет данных для расчета</em>';
+                }
+            }
+
             // 3. Update Dataset
             nodesDataset.clear();
             nodesDataset.add(activeNodes);
@@ -1437,6 +1505,49 @@
 
         // Setup DOM event listeners
         function setupControls() {
+
+        // Time slider event listeners
+        document.getElementById('filter-year-start')?.addEventListener('input', () => { clearTimeout(window.filterTimer); window.filterTimer = setTimeout(updateFilters, 500); });
+        document.getElementById('filter-year-end')?.addEventListener('input', () => { clearTimeout(window.filterTimer); window.filterTimer = setTimeout(updateFilters, 500); });
+        
+        // GEXF Export Logic
+        document.getElementById('btn-export-gexf')?.addEventListener('click', () => {
+            if (!nodesDataset || !edgesDataset) return;
+            const nodes = nodesDataset.get();
+            const edges = edgesDataset.get();
+            
+            let xml = `<?xml version="1.0" encoding="UTF-8"?>\n`;
+            xml += `<gexf xmlns="http://www.gexf.net/1.2draft" version="1.2">\n`;
+            xml += `  <graph mode="static" defaultedgetype="undirected">\n`;
+            
+            xml += `    <nodes>\n`;
+            nodes.forEach(n => {
+                xml += `      <node id="${escapeHtml(n.id)}" label="${escapeHtml(n.label)}">\n`;
+                xml += `        <attvalues>\n`;
+                xml += `          <attvalue for="type" value="${escapeHtml(n.type)}"/>\n`;
+                xml += `        </attvalues>\n`;
+                xml += `      </node>\n`;
+            });
+            xml += `    </nodes>\n`;
+            
+            xml += `    <edges>\n`;
+            edges.forEach((e, i) => {
+                xml += `      <edge id="${i}" source="${escapeHtml(e.from)}" target="${escapeHtml(e.to)}" weight="${e.value || 1}" />\n`;
+            });
+            xml += `    </edges>\n`;
+            xml += `  </graph>\n</gexf>`;
+            
+            const blob = new Blob([xml], { type: 'text/xml;charset=utf-8' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `indology_network_${new Date().toISOString().slice(0,10)}.gexf`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        });
+
             window.addEventListener('hashchange', openNodeFromUrl);
 
             // Preset clicks

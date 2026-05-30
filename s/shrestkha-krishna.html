@@ -10,7 +10,7 @@
     <link rel="alternate" hreflang="ru" href="https://gasyoun.github.io/IndologyScholars/s/shrestkha-krishna.html">
     <link rel="alternate" hreflang="x-default" href="https://gasyoun.github.io/IndologyScholars/s/shrestkha-krishna.html">
     <link rel="icon" href="/IndologyScholars/assets/favicon.svg" type="image/svg+xml">
-    <link rel="manifest" href="/IndologyScholars/site.webmanifest">
+    <link rel="manifest" href="/IndologyScholars/site.webmanifest">\n    <link rel="alternate" type="application/rss+xml" title="RSS" href="/IndologyScholars/feed.xml">
     <link rel="apple-touch-icon" href="/IndologyScholars/assets/apple-touch-icon.png">
     <meta name="theme-color" content="#101513">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -20,11 +20,11 @@
     <meta property="og:url" content="https://gasyoun.github.io/IndologyScholars/s/shrestkha-krishna.html">
     <meta property="og:title" content="Шрестха Кришна Пракаш | Russian Indological Research Archive">
     <meta property="og:description" content="Шрестха Кришна Пракаш: 12 докладов в архиве Зографских и Рериховских чтений, период активности 2008-2020, основной профиль: История, этнография и общество.">
-    <meta property="og:image" content="https://gasyoun.github.io/IndologyScholars/assets/og-image.png">
+    <meta property="og:image" content="https://gasyoun.github.io/IndologyScholars/assets/og/scholar_shrestkha-krishna.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Шрестха Кришна Пракаш | Russian Indological Research Archive">
     <meta name="twitter:description" content="Шрестха Кришна Пракаш: 12 докладов в архиве Зографских и Рериховских чтений, период активности 2008-2020, основной профиль: История, этнография и общество.">
-    <meta name="twitter:image" content="https://gasyoun.github.io/IndologyScholars/assets/og-image.png">
+    <meta name="twitter:image" content="https://gasyoun.github.io/IndologyScholars/assets/og/scholar_shrestkha-krishna.png">
     <script defer src="/IndologyScholars/assets/pwa.js"></script>
 
 
@@ -150,13 +150,48 @@
                 </div>
             </details>
         </nav>
-        <header>
+        <header style="position: relative;">
+    <button class="btn-preset" onclick="openCitationModal()" style="position: absolute; right: 0; top: 0; background: rgba(255,255,255,0.05); border: 1px solid var(--border); color: #fff; padding: 0.5rem 1rem; border-radius: 6px; cursor: pointer;">
+        <svg style="width:16px; height:16px; fill:currentColor; vertical-align:-3px; margin-right:4px;" viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A2,2 0 0,1 14,6A2,2 0 0,1 12,8A2,2 0 0,1 10,6A2,2 0 0,1 12,4M12,18C9.33,18 4,19.34 4,22V24C4,21.34 9.33,20 12,20C14.67,20 20,21.34 20,24V22C20,19.34 14.67,18 12,18Z"/></svg>
+        Цитировать
+    </button>
     <h1>Шрестха Кришна Пракаш <span class="life">(1937–2021)</span></h1>
     <p>Shrestha Krishna Prakash (1937–2021)</p>
 
     <p>Шрестха Кришна Пракаш: 12 докладов в архиве Зографских и Рериховских чтений, период активности 2008-2020, основной профиль: История, этнография и общество.</p>
 
 </header>
+
+<!-- Citation Modal -->
+<div id="citation-modal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.8); z-index:9999; align-items:center; justify-content:center; padding: 1rem;">
+    <div style="background: var(--bg); border: 1px solid var(--border); padding: 2rem; border-radius: 12px; max-width: 600px; width: 100%; position: relative;">
+        <button onclick="closeCitationModal()" style="position:absolute; right:1rem; top:1rem; background:none; border:none; color:var(--muted); cursor:pointer; font-size:1.5rem;">×</button>
+        <h3 style="margin-top:0; font-family:'Outfit', sans-serif;">Цитирование профиля</h3>
+
+        <p style="color:var(--muted); font-size:0.85rem; margin-bottom:0.5rem;">ГОСТ Р 7.0.100-2018</p>
+        <div style="background: rgba(255,255,255,0.03); padding: 1rem; border-radius: 6px; font-size: 0.9rem; margin-bottom: 1rem; border: 1px solid rgba(255,255,255,0.05); user-select: all;">
+            Шрестха Кришна Пракаш // Архив российской индологии. — 2026. — URL: https://gasyoun.github.io/IndologyScholars/s/shrestkha-krishna.html (дата обращения: <span id="cit-date"></span>).
+        </div>
+
+        <p style="color:var(--muted); font-size:0.85rem; margin-bottom:0.5rem;">BibTeX (Zotero, LaTeX)</p>
+        <pre style="background: rgba(255,255,255,0.03); padding: 1rem; border-radius: 6px; font-size: 0.85rem; margin-bottom: 0; border: 1px solid rgba(255,255,255,0.05); overflow-x: auto; user-select: all; color: #a78bfa;">@misc{indology_scholar_shrestkha-krishna,
+  title = {Профиль исследователя: Шрестха Кришна Пракаш},
+  author = {Архив российской индологии},
+  url = {https://gasyoun.github.io/IndologyScholars/s/shrestkha-krishna.html},
+  year = {2026}
+}</pre>
+    </div>
+</div>
+
+<script>
+function openCitationModal() {
+    document.getElementById('citation-modal').style.display = 'flex';
+    document.getElementById('cit-date').innerText = new Date().toLocaleDateString('ru-RU');
+}
+function closeCitationModal() {
+    document.getElementById('citation-modal').style.display = 'none';
+}
+</script>
 
 <section class="grid">
     <article class="card"><strong>Доклады</strong><div class="metric">12</div><div class="meta">записей в архиве</div></article>

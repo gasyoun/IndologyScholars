@@ -1,4 +1,4 @@
-const CACHE_VERSION = "2026-05-27-pwa-v3";
+const CACHE_VERSION = "2026-05-30-pwa-v4";
 const CACHE_PREFIX = "indology-scholars-";
 const CORE_CACHE = `${CACHE_PREFIX}core-${CACHE_VERSION}`;
 const RUNTIME_CACHE = `${CACHE_PREFIX}runtime-${CACHE_VERSION}`;
@@ -98,7 +98,7 @@ self.addEventListener("fetch", (event) => {
         return;
     }
 
-    if (["style", "font"].includes(event.request.destination)) {
+    if (["style", "font", "script"].includes(event.request.destination)) {
         event.respondWith(cacheFirst(event.request));
     }
 });

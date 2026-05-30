@@ -1,4 +1,8 @@
-<header>
+<header style="position: relative;">
+    <button class="btn-preset" onclick="openCitationModal()" style="position: absolute; right: 0; top: 0; background: rgba(255,255,255,0.05); border: 1px solid var(--border); color: #fff; padding: 0.5rem 1rem; border-radius: 6px; cursor: pointer;">
+        <svg style="width:16px; height:16px; fill:currentColor; vertical-align:-3px; margin-right:4px;" viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A2,2 0 0,1 14,6A2,2 0 0,1 12,8A2,2 0 0,1 10,6A2,2 0 0,1 12,4M12,18C9.33,18 4,19.34 4,22V24C4,21.34 9.33,20 12,20C14.67,20 20,21.34 20,24V22C20,19.34 14.67,18 12,18Z"/></svg>
+        Цитировать
+    </button>
     <h1>{{ ru_heading | safe }}</h1>
     <p>{{ en_heading | e }}</p>
     {{ format_degree_html | safe }}
@@ -7,6 +11,37 @@
     {{ profile_note_html | safe }}
     {% endif %}
 </header>
+
+<!-- Citation Modal -->
+<div id="citation-modal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.8); z-index:9999; align-items:center; justify-content:center; padding: 1rem;">
+    <div style="background: var(--bg); border: 1px solid var(--border); padding: 2rem; border-radius: 12px; max-width: 600px; width: 100%; position: relative;">
+        <button onclick="closeCitationModal()" style="position:absolute; right:1rem; top:1rem; background:none; border:none; color:var(--muted); cursor:pointer; font-size:1.5rem;">×</button>
+        <h3 style="margin-top:0; font-family:'Outfit', sans-serif;">Цитирование профиля</h3>
+        
+        <p style="color:var(--muted); font-size:0.85rem; margin-bottom:0.5rem;">ГОСТ Р 7.0.100-2018</p>
+        <div style="background: rgba(255,255,255,0.03); padding: 1rem; border-radius: 6px; font-size: 0.9rem; margin-bottom: 1rem; border: 1px solid rgba(255,255,255,0.05); user-select: all;">
+            {{ scholar.full_name_ru or scholar.name }} // Архив российской индологии. — 2026. — URL: https://gasyoun.github.io/IndologyScholars/s/{{ scholar.url_slug }}.html (дата обращения: <span id="cit-date"></span>).
+        </div>
+        
+        <p style="color:var(--muted); font-size:0.85rem; margin-bottom:0.5rem;">BibTeX (Zotero, LaTeX)</p>
+        <pre style="background: rgba(255,255,255,0.03); padding: 1rem; border-radius: 6px; font-size: 0.85rem; margin-bottom: 0; border: 1px solid rgba(255,255,255,0.05); overflow-x: auto; user-select: all; color: #a78bfa;">@misc{indology_scholar_{{ scholar.url_slug }},
+  title = {Профиль исследователя: {{ scholar.full_name_ru or scholar.name }}},
+  author = {{ '{Архив российской индологии}' }},
+  url = {https://gasyoun.github.io/IndologyScholars/s/{{ scholar.url_slug }}.html},
+  year = {2026}
+}</pre>
+    </div>
+</div>
+
+<script>
+function openCitationModal() {
+    document.getElementById('citation-modal').style.display = 'flex';
+    document.getElementById('cit-date').innerText = new Date().toLocaleDateString('ru-RU');
+}
+function closeCitationModal() {
+    document.getElementById('citation-modal').style.display = 'none';
+}
+</script>
 
 <section class="grid">
     <article class="card"><strong>Доклады</strong><div class="metric">{{ total_talks }}</div><div class="meta">{{ archive_records_label | e }}</div></article>
