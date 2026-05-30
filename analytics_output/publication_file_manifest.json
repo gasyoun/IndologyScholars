@@ -385,8 +385,8 @@
     },
     {
       "path": "assets/data/hypotheses.json",
-      "size_bytes": 16863,
-      "sha256": "21c75fd406099d4e8c0d6de65a7a4ac524058a4eaf74157d217fd3b6b7f6f932"
+      "size_bytes": 30841,
+      "sha256": "81d9105f691c83c3af7c8789a67c8da97b2fe408e8c0769ebf8d12b837755187"
     },
     {
       "path": "assets/favicon.svg",
@@ -8891,7 +8891,7 @@
     {
       "path": "download-data.html",
       "size_bytes": 20489,
-      "sha256": "7be8223c34a8e712fe436f42800fae5f804c856354cac9151f2229c94108a781"
+      "sha256": "944901d85f8683bcc40ab42e22aec890f6f2543118880b453091c3fd48593558"
     },
     {
       "path": "en.html",
@@ -8906,7 +8906,7 @@
     {
       "path": "findings/visualisations.html",
       "size_bytes": 474903,
-      "sha256": "e6da05cf1e7114e075e2333d9ddd5a5dc9850fb0abc5d4cdf659c20c02aa6ebe"
+      "sha256": "22d58c9f8fb4dbdb3d13c2c40e0853f7c729a04147ad685ab54e1826d0c24e5a"
     },
     {
       "path": "generations/index.html",
@@ -19235,8 +19235,8 @@
     },
     {
       "path": "sitemap.xml",
-      "size_bytes": 676,
-      "sha256": "8f2c3ffbf4911d9146be4bf56080fd1fa878000fbb1c2bff7da6799dbef3c4fd"
+      "size_bytes": 540,
+      "sha256": "c7035604856c3c46c330834c06337e1f76a26651fb4b79f1d0dcfed310c3616c"
     },
     {
       "path": "themes/academic-history.html",

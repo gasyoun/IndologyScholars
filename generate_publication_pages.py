@@ -12085,7 +12085,7 @@ def generate_sitemap(data, records):
                 loc = site_url(path[:-10])
             else:
                 loc = site_url(path)
-            urlset.append(f"  <url>\n    <loc>{esc(loc)}</loc>\n    <lastmod>{today_iso}</lastmod>\n  </url>")
+            urlset.append(f"  <url>\n    <loc>{esc(loc)}</loc>\n  </url>")
         urlset.append("</urlset>")
         write_text(filename, "\n".join(urlset) + "\n")
 
@@ -12106,7 +12106,6 @@ def generate_sitemap(data, records):
         loc = site_url(sm)
         index_xml.append("  <sitemap>")
         index_xml.append(f"    <loc>{esc(loc)}</loc>")
-        index_xml.append(f"    <lastmod>{today_iso}</lastmod>")
         index_xml.append("  </sitemap>")
     index_xml.append("</sitemapindex>")
     write_text("sitemap.xml", "\n".join(index_xml) + "\n")

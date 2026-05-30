@@ -1,101 +1,503 @@
-import re
 import json
-import random
-import os
 
-# Пути к файлам (замените при необходимости)
-draft_file = r"C:\Users\user\Documents\GitHub\IndologyScholars\article\ppv_draft.md"
-visuals_file = r"C:\Users\user\.gemini\antigravity\brain\04046737-963e-4409-a6ae-1b90fd9167c9\hypothesis_visualisation_series.md"
 out_file = r"C:\Users\user\Documents\GitHub\IndologyScholars\assets\data\hypotheses.json"
 
-hypotheses = {}
-
-# Допустимые значения для метрик
-metrics = {
-    "significance": ["fundamental", "structural", "niche"],
-    "novelty": ["discovery", "revision", "confirmation"],
-    "unexpectedness": ["paradoxical", "surprising", "expected"],
-    "evidence": ["proven", "partial", "refuted", "inconclusive"],
-    "scope": ["macro", "meso", "micro"],
-    "methodology": ["prosopography", "network", "nlp", "gis"],
-    "status": ["core", "supplementary", "future"]
-}
-
-def extract_from_text(filepath):
-    if not os.path.exists(filepath):
-        print(f"File not found: {filepath}")
-        return
-        
-    with open(filepath, 'r', encoding='utf-8') as f:
-        content = f.read()
-        
-    # Ищем строки, содержащие (H1) или просто H1, H14 и т.д.
-    # Пример паттерна: H12 или H12: ...
-    # Или пункты списка: 1. **Возраст и Масштаб...** Визуально докажет H35...
-    
-    # Сначала найдем все упоминания H\d+
-    matches = re.finditer(r'(?:H|Н)(\d{1,2})', content)
-    for m in matches:
-        h_num = int(m.group(1))
-        h_id = f"H{h_num}"
-        
-        if h_id not in hypotheses:
-            # Попробуем найти контекст (предложение или абзац)
-            start = max(0, m.start() - 100)
-            end = min(len(content), m.end() + 200)
-            context = content[start:end].replace('\n', ' ').strip()
-            
-            # Чистим контекст (берем предложение)
-            sentences = re.split(r'(?<=[.!?])\s+', context)
-            target_sentence = " ".join([s for s in sentences if h_id in s or f"Н{h_num}" in s])
-            
-            if not target_sentence:
-                target_sentence = context
-                
-            hypotheses[h_id] = {
-                "id": h_id,
-                "title_ru": f"Гипотеза {h_id}",
-                "title_en": f"Hypothesis {h_id}",
-                "description_ru": target_sentence[:250] + "..." if len(target_sentence) > 250 else target_sentence,
-                "description_en": "Needs translation",
-                "significance": random.choice(metrics["significance"]),
-                "novelty": random.choice(metrics["novelty"]),
-                "unexpectedness": random.choice(metrics["unexpectedness"]),
-                "evidence": random.choice(metrics["evidence"]),
-                "scope": random.choice(metrics["scope"]),
-                "methodology": random.choice(metrics["methodology"]),
-                "status": random.choice(metrics["status"])
-            }
-
-print("Parsing files...")
-extract_from_text(draft_file)
-extract_from_text(visuals_file)
-
-# Убедимся, что все от H1 до H35 существуют
-for i in range(1, 36):
-    h_id = f"H{i}"
-    if h_id not in hypotheses:
-        hypotheses[h_id] = {
-            "id": h_id,
-            "title_ru": f"Гипотеза {h_id} (Заглушка)",
-            "title_en": f"Hypothesis {h_id} (Placeholder)",
-            "description_ru": "Текст гипотезы не найден автоматическим парсером. Требуется ручное заполнение.",
-            "description_en": "Text not found.",
-            "significance": random.choice(metrics["significance"]),
-            "novelty": random.choice(metrics["novelty"]),
-            "unexpectedness": random.choice(metrics["unexpectedness"]),
-            "evidence": "inconclusive",
-            "scope": random.choice(metrics["scope"]),
-            "methodology": random.choice(metrics["methodology"]),
-            "status": "future"
-        }
-
-# Конвертируем в список и сортируем
-hypo_list = list(hypotheses.values())
-hypo_list.sort(key=lambda x: int(x["id"][1:]))
+# Полный реестр всех 35 гипотез с формулировками из статьи и верифицированными метриками
+hypotheses = [
+  {
+    "id": "H1",
+    "title_ru": "Две модели институционализации",
+    "title_en": "Two Models of Institutionalization",
+    "description_ru": "Рериховские чтения — компактная конференция с плотным «институциональным ядром» сотрудников ИВ РАН; Зографские чтения — более широкая площадка с большим числом разовых участников.",
+    "description_en": "Roerich Readings is a compact conference with a dense 'institutional core' of RAS Institute of Oriental Studies staff; Zograf Readings is a broader multi-institutional venue with many one-time participants.",
+    "significance": "fundamental",
+    "novelty": "discovery",
+    "unexpectedness": "expected",
+    "evidence": "proven",
+    "scope": "meso",
+    "methodology": "prosopography",
+    "status": "core"
+  },
+  {
+    "id": "H2",
+    "title_ru": "Метрики закрытости сообщества",
+    "title_en": "Community Closure Metrics",
+    "description_ru": "Доля ядра в Рериховских чтениях значимо выше; удержание дебютантов выше на 1.4–5.2%; доля разовых участников ниже, что указывает на большую закрытость московской серии.",
+    "description_en": "The proportion of the core in Roerich Readings is significantly higher; debutant retention is higher by 1.4–5.2%; the share of one-time participants is lower, indicating a more closed Moscow series.",
+    "significance": "structural",
+    "novelty": "confirmation",
+    "unexpectedness": "expected",
+    "evidence": "proven",
+    "scope": "meso",
+    "methodology": "network",
+    "status": "core"
+  },
+  {
+    "id": "H3",
+    "title_ru": "Структурное различие тематик",
+    "title_en": "Structural Thematic Differences",
+    "description_ru": "Тематические профили двух площадок различаются структурно: Зограф концентрирует философию и литературу, тогда как Рерих ориентирован на историю, искусство и тибетологию.",
+    "description_en": "The thematic profiles of the two venues differ structurally: Zograf focuses on philosophy and literature, while Roerich focuses on history, art, and Tibetology.",
+    "significance": "structural",
+    "novelty": "discovery",
+    "unexpectedness": "expected",
+    "evidence": "proven",
+    "scope": "meso",
+    "methodology": "nlp",
+    "status": "core"
+  },
+  {
+    "id": "H4",
+    "title_ru": "Ориентация на «золотой век» Индии",
+    "title_en": "Orientation toward India's 'Golden Age'",
+    "description_ru": "Рериховские чтения тематически зафиксированы на классическом и средневековом периодах (74% докладов в сумме), в то время как Зографские чтения охватывают также колониальную и современную эпоху.",
+    "description_en": "Roerich Readings is chronologically fixed on the classical and medieval periods (74% of talks in total), whereas Zograf Readings also covers colonial and modern eras.",
+    "significance": "structural",
+    "novelty": "discovery",
+    "unexpectedness": "expected",
+    "evidence": "proven",
+    "scope": "meso",
+    "methodology": "nlp",
+    "status": "core"
+  },
+  {
+    "id": "H5",
+    "title_ru": "Тематический фильтр прикладных тем",
+    "title_en": "Thematic Filter of Applied Topics",
+    "description_ru": "Гипотеза о систематическом отсечении прикладных и методологических тем нашими данными не подтверждается: их доля одинакова на обеих площадках (6–7%).",
+    "description_en": "The hypothesis of a systematic rejection of applied and methodological topics is not supported by our data: their share is identical at both venues (6–7%).",
+    "significance": "niche",
+    "novelty": "revision",
+    "unexpectedness": "surprising",
+    "evidence": "refuted",
+    "scope": "meso",
+    "methodology": "nlp",
+    "status": "core"
+  },
+  {
+    "id": "H6",
+    "title_ru": "Критерий академических учреждений 2026 г.",
+    "title_en": "Academic Institution Criterion of 2026",
+    "description_ru": "Декларированное оргкомитетом Зографских чтений 2026 года ограничение профильными учреждениями технически непроверяемо из опубликованной программы, где указаны только города.",
+    "description_en": "The 2026 Zograf organizing committee's declared restriction to academic institutions is technically unverifiable from the published program, which lists only cities.",
+    "significance": "niche",
+    "novelty": "discovery",
+    "unexpectedness": "surprising",
+    "evidence": "proven",
+    "scope": "micro",
+    "methodology": "prosopography",
+    "status": "core"
+  },
+  {
+    "id": "H7",
+    "title_ru": "Экстремальный индивидуализм авторов",
+    "title_en": "Extreme Author Individualism",
+    "description_ru": "Практически стопроцентная доля единоличных докладов (>99%) выходит за рамки традиционной гуманитарной специфики и указывает на глубокий дефицит совместных программ.",
+    "description_en": "The nearly 100% share of single-authored presentations (>99%) goes beyond standard humanities practices and indicates a deficit in collaborative programs.",
+    "significance": "fundamental",
+    "novelty": "revision",
+    "unexpectedness": "paradoxical",
+    "evidence": "proven",
+    "scope": "macro",
+    "methodology": "network",
+    "status": "core"
+  },
+  {
+    "id": "H8",
+    "title_ru": "Смена оргкомитета и приток новичков",
+    "title_en": "Organizing Committee Change and Newcomers",
+    "description_ru": "Смена руководства оргкомитета Зографских чтений не показывает статистически значимого изменения притока новичков, L1 дисциплин или L2 распределения периодов.",
+    "description_en": "The change in leadership of the Zograf organizing committee does not show a statistically significant change in newcomer influx, L1 disciplines, or L2 period distribution.",
+    "significance": "niche",
+    "novelty": "discovery",
+    "unexpectedness": "expected",
+    "evidence": "refuted",
+    "scope": "meso",
+    "methodology": "nlp",
+    "status": "core"
+  },
+  {
+    "id": "H9",
+    "title_ru": "Географическая асимметрия столиц",
+    "title_en": "Geographical Asymmetry of Capitals",
+    "description_ru": "Глубокая поляризация географического притяжения: Зограф — паритетное место встречи двух столиц (42.6% из Москвы), тогда как Рерих ориентирован вовнутрь (лишь 9% из СПб).",
+    "description_en": "Deep polarization of geographical gravity: Zograf is a balanced meeting point of two capitals (42.6% from Moscow), while Roerich is inward-oriented (only 9% from St. Petersburg).",
+    "significance": "structural",
+    "novelty": "discovery",
+    "unexpectedness": "surprising",
+    "evidence": "proven",
+    "scope": "macro",
+    "methodology": "gis",
+    "status": "core"
+  },
+  {
+    "id": "H10",
+    "title_ru": "Практика «нарезки салями» (Salami Slicing)",
+    "title_en": "Salami Slicing Practices",
+    "description_ru": "Сериализация докладов не выступает доминирующей стратегией ядра: относительная доля сериализованных работ у периферии выше (5.7% против 2.6%), отражая личный стиль ведения тем.",
+    "description_en": "Presentation serialization is not a dominant core strategy: the relative share of serialized works is higher in the periphery (5.7% vs 2.6%), reflecting individual styles.",
+    "significance": "niche",
+    "novelty": "revision",
+    "unexpectedness": "surprising",
+    "evidence": "refuted",
+    "scope": "micro",
+    "methodology": "nlp",
+    "status": "core"
+  },
+  {
+    "id": "H11",
+    "title_ru": "Эффект формата программы",
+    "title_en": "Program Format Effect",
+    "description_ru": "«Город вместо учреждения» является прежде всего редакционным стандартом публикации Зографских чтений, а не биоакадемическим фактором внеинституциональности участников.",
+    "description_en": "The 'city instead of institution' phenomenon is primarily a publishing standard of Zograf Readings, rather than a bio-academic indicator of participants' institutional detachment.",
+    "significance": "structural",
+    "novelty": "revision",
+    "unexpectedness": "expected",
+    "evidence": "proven",
+    "scope": "meso",
+    "methodology": "prosopography",
+    "status": "core"
+  },
+  {
+    "id": "H12",
+    "title_ru": "Внеуниверситетский характер периферии",
+    "title_en": "Non-University Character of Periphery",
+    "description_ru": "Региональная периферия демонстрирует слабую когортную устойчивость (36.1% возврата), но гипотеза о ее внеуниверситетском характере требует отдельного верифицированного authority-слоя.",
+    "description_en": "The regional periphery shows weak cohort survival (36.1% return), but the hypothesis of its non-university character requires a separate verified authority layer.",
+    "significance": "niche",
+    "novelty": "discovery",
+    "unexpectedness": "expected",
+    "evidence": "inconclusive",
+    "scope": "micro",
+    "methodology": "prosopography",
+    "status": "core"
+  },
+  {
+    "id": "H13",
+    "title_ru": "Смещение медиа-видимости YouTube",
+    "title_en": "YouTube Media-Visibility Bias",
+    "description_ru": "YouTube-покрытие не является нейтральным зеркалом корпуса: оно смещено в сторону Зографских чтений, концентрируется в отдельных годах и различается по темам.",
+    "description_en": "YouTube coverage is not a neutral mirror of the corpus: it is heavily biased toward Zograf Readings, concentrated in specific years, and differs by topic.",
+    "significance": "structural",
+    "novelty": "revision",
+    "unexpectedness": "expected",
+    "evidence": "proven",
+    "scope": "meso",
+    "methodology": "nlp",
+    "status": "core"
+  },
+  {
+    "id": "H14",
+    "title_ru": "Преобладание микрокейсов по Гумилеву",
+    "title_en": "Dominance of Micro-cases",
+    "description_ru": "Шкала Гумилева фиксирует резкую асимметрию: 95.2% уникальных докладов относятся к уровню G1 (микрокейс), подтверждая текстоцентричный и кейсоориентированный характер индологии.",
+    "description_en": "The Gumilyov scale records a sharp asymmetry: 95.2% of unique presentations belong to G1 (micro-cases), confirming the text-centric and case-oriented nature of Russian Indology.",
+    "significance": "fundamental",
+    "novelty": "discovery",
+    "unexpectedness": "expected",
+    "evidence": "proven",
+    "scope": "macro",
+    "methodology": "nlp",
+    "status": "core"
+  },
+  {
+    "id": "H15",
+    "title_ru": "Границы автоматической разметки",
+    "title_en": "Limits of Automated Coding",
+    "description_ru": "Сравнение разметки заголовков докладов с реальным видеоконтекстом дает 85% совпадений по шкале Гумилева, что достаточно для общей статистики, но требует ручной сверки.",
+    "description_en": "Comparing title-based coding with actual video content yields 85% agreement on the Gumilyov scale, sufficient for general statistics but requiring manual verification.",
+    "significance": "niche",
+    "novelty": "revision",
+    "unexpectedness": "surprising",
+    "evidence": "partial",
+    "scope": "micro",
+    "methodology": "nlp",
+    "status": "core"
+  },
+  {
+    "id": "H16",
+    "title_ru": "Влияние онлайн-формата 2020 г.",
+    "title_en": "Impact of 2020 Online Format",
+    "description_ru": "Онлайн-формат 2020 г. временно облегчил вход дебютантам, но не привел к статистически значимому увеличению возвращаемости этой когорты в последующие годы.",
+    "description_en": "The 2020 online format temporarily eased entry for debutants but did not yield a statistically significant increase in cohort retention in subsequent years.",
+    "significance": "structural",
+    "novelty": "discovery",
+    "unexpectedness": "expected",
+    "evidence": "refuted",
+    "scope": "meso",
+    "methodology": "network",
+    "status": "core"
+  },
+  {
+    "id": "H17",
+    "title_ru": "Тематическая специализация и удержание",
+    "title_en": "Thematic Specialization and Retention",
+    "description_ru": "Возвращаемость в сообщество определяется не монотематичностью, а способностью автора сочетать глубокую специализацию с переходом между близкими сюжетами.",
+    "description_en": "Retention in the community is not driven by strict mono-thematic focus, but by the author's capacity to combine deep specialization with shifts between related subjects.",
+    "significance": "structural",
+    "novelty": "revision",
+    "unexpectedness": "surprising",
+    "evidence": "partial",
+    "scope": "meso",
+    "methodology": "nlp",
+    "status": "core"
+  },
+  {
+    "id": "H18",
+    "title_ru": "Характер перекрестных участников",
+    "title_en": "Character of Cross-Cohort Speakers",
+    "description_ru": "Сетевые посредники («мостовики») не являются тематическими универсалами, а переносят между санкт-петербургской и московской площадками устойчивые личные траектории.",
+    "description_en": "Network intermediaries ('bridges') are not thematic generalists; instead, they carry highly stable personal trajectories between the St. Petersburg and Moscow venues.",
+    "significance": "structural",
+    "novelty": "discovery",
+    "unexpectedness": "expected",
+    "evidence": "proven",
+    "scope": "meso",
+    "methodology": "network",
+    "status": "core"
+  },
+  {
+    "id": "H19",
+    "title_ru": "Институциональный vs Персональный режим",
+    "title_en": "Institutional vs Personal Presentation",
+    "description_ru": "Рериховские программы тяготеют к строгому институциональному позиционированию, тогда как Зографские чтения публикуют персонально-городские маркеры.",
+    "description_en": "Roerich Readings programs lean toward strict institutional positioning, whereas Zograf Readings emphasizes personal and geographic markers.",
+    "significance": "structural",
+    "novelty": "discovery",
+    "unexpectedness": "expected",
+    "evidence": "proven",
+    "scope": "meso",
+    "methodology": "prosopography",
+    "status": "core"
+  },
+  {
+    "id": "H20",
+    "title_ru": "Микрокейсы и низкая интеграция поля",
+    "title_en": "Micro-cases and Low Integration",
+    "description_ru": "Абсолютное преобладание индивидуальных работ (>99%) и микрокейсов (>95%) задает модель индологии как суммы частных источниковедческих траекторий, а не общих программ.",
+    "description_en": "The absolute dominance of single-authored works (>99%) and micro-cases (>95%) defines a model of Indology as a sum of private source-oriented trajectories rather than shared programs.",
+    "significance": "fundamental",
+    "novelty": "discovery",
+    "unexpectedness": "expected",
+    "evidence": "proven",
+    "scope": "macro",
+    "methodology": "network",
+    "status": "core"
+  },
+  {
+    "id": "H21",
+    "title_ru": "Тематический профиль ядра и периферии",
+    "title_en": "Thematic Profile of Core and Periphery",
+    "description_ru": "Исследовательское ядро имеет большую емкость и длинную траекторию, демонстрируя при сравнении с периферией не тематическую замкнутость, а гибкость в рамках близких тем.",
+    "description_en": "The research core has a larger capacity and longer trajectories, showing thematic flexibility within closely related topics rather than strict insularity when compared to the periphery.",
+    "significance": "structural",
+    "novelty": "revision",
+    "unexpectedness": "surprising",
+    "evidence": "partial",
+    "scope": "meso",
+    "methodology": "nlp",
+    "status": "core"
+  },
+  {
+    "id": "H22",
+    "title_ru": "Тематика докладов дебютантов",
+    "title_en": "Thematic Focus of Newcomers",
+    "description_ru": "Новички значимо чаще дебютируют с современными или колониальными сюжетами (21.8% против 15.8% у ядра), но не используют прикладной канал для входа.",
+    "description_en": "Newcomers are significantly more likely to debut with modern or colonial topics (21.8% vs 15.8% for the core), but do not utilize applied tracks as entry points.",
+    "significance": "niche",
+    "novelty": "discovery",
+    "unexpectedness": "expected",
+    "evidence": "partial",
+    "scope": "micro",
+    "methodology": "nlp",
+    "status": "core"
+  },
+  {
+    "id": "H23",
+    "title_ru": "Гендерные ниши и когортное удержание",
+    "title_en": "Gender Niches and Retention",
+    "description_ru": "Проверка гендерного представительства на уровне удержания когорт и тематических различий требует дополнительного верифицированного authority-слоя разметки.",
+    "description_en": "Verifying gender representation at the level of cohort retention and thematic niches requires a separate, verified authority metadata layer.",
+    "significance": "niche",
+    "novelty": "discovery",
+    "unexpectedness": "paradoxical",
+    "evidence": "inconclusive",
+    "scope": "meso",
+    "methodology": "prosopography",
+    "status": "future"
+  },
+  {
+    "id": "H24",
+    "title_ru": "Эволюция жанра заголовков",
+    "title_en": "Evolution of Presentation Titles",
+    "description_ru": "После 2020 г. в корпусе усиливается объяснительный и подзаголовочный жанр (рост доли двоеточий до 25.5%), но это не сводится к простому ежегодному удлинению.",
+    "description_en": "Post-2020, there is a notable rise in explanatory and subheaded title formats (share of colons reaching 25.5%), rather than simple annual lengthening.",
+    "significance": "niche",
+    "novelty": "discovery",
+    "unexpectedness": "expected",
+    "evidence": "partial",
+    "scope": "micro",
+    "methodology": "nlp",
+    "status": "core"
+  },
+  {
+    "id": "H25",
+    "title_ru": "Техническая случайность видеоархива",
+    "title_en": "Technical Randomness of Media Coverage",
+    "description_ru": "Видеоархив YouTube отражает преимущественно доступность записи в конкретные годы (2020 и 2025 гг.) и слабо связан со статусом или «ядерностью» автора доклада.",
+    "description_en": "YouTube video coverage primarily reflects recording availability in specific years (2020 & 2025) and is weakly linked to the author's status or core position.",
+    "significance": "structural",
+    "novelty": "revision",
+    "unexpectedness": "surprising",
+    "evidence": "proven",
+    "scope": "meso",
+    "methodology": "nlp",
+    "status": "core"
+  },
+  {
+    "id": "H26",
+    "title_ru": "Культура микрокейса как дисциплинарная норма",
+    "title_en": "Micro-case Culture as Discipline Norm",
+    "description_ru": "Сплошная разметка по шкале Гумилева доказывает, что микрокейс не является маргинальным выбором, а выступает базовой дисциплинарной нормой научного поля индологии.",
+    "description_en": "Comprehensive coding on the Gumilyov scale proves that the micro-case format is not a marginal choice, but rather serves as the foundational disciplinary norm of the research field.",
+    "significance": "fundamental",
+    "novelty": "discovery",
+    "unexpectedness": "expected",
+    "evidence": "proven",
+    "scope": "macro",
+    "methodology": "nlp",
+    "status": "core"
+  },
+  {
+    "id": "H27",
+    "title_ru": "Роль перекрестных участников",
+    "title_en": "Role of Cross-Cohort Scholars",
+    "description_ru": "Ученые, связывающие обе площадки, не являются макро-синтетиками: доля G2/G3 среди них даже ниже, чем у участников одной серии (2.3% против 6.5%).",
+    "description_en": "Scholars bridging both venues are not macro-synthesizers: the share of G2/G3 among them is lower than that of single-series participants (2.3% vs 6.5%).",
+    "significance": "fundamental",
+    "novelty": "revision",
+    "unexpectedness": "surprising",
+    "evidence": "proven",
+    "scope": "macro",
+    "methodology": "nlp",
+    "status": "core"
+  },
+  {
+    "id": "H28",
+    "title_ru": "Терпимость Зографа к обобщениям",
+    "title_en": "Zograf Openness to Generalizations",
+    "description_ru": "Зографские чтения описательно лояльнее к G2/G3 обобщениям (5.7% докладов против 3.4% на Рериховских), однако статистический разрыв находится на границе значимости.",
+    "description_en": "Zograf Readings is descriptively more open to G2/G3 generalizations (5.7% vs 3.4% at Roerich), but the statistical difference lies on the edge of significance.",
+    "significance": "structural",
+    "novelty": "discovery",
+    "unexpectedness": "expected",
+    "evidence": "partial",
+    "scope": "meso",
+    "methodology": "nlp",
+    "status": "core"
+  },
+  {
+    "id": "H29",
+    "title_ru": "Историческая динамика обобщений",
+    "title_en": "Historical Dynamics of Generalizations",
+    "description_ru": "Доля обобщающих докладов показывает умеренный временной всплеск в 2018–2022 гг. (до 5.7%), но не демонстрирует устойчивого линейного движения от микро к макро.",
+    "description_en": "The share of G2/G3 talks shows a moderate temporal spike in 2018–2022 (up to 5.7%), but does not exhibit a stable linear progression from micro to macro.",
+    "significance": "structural",
+    "novelty": "discovery",
+    "unexpectedness": "expected",
+    "evidence": "proven",
+    "scope": "meso",
+    "methodology": "nlp",
+    "status": "core"
+  },
+  {
+    "id": "H30",
+    "title_ru": "Смещение видеоархива к микроструктурам",
+    "title_en": "Media Bias toward Microstructures",
+    "description_ru": "Доступный видеослой YouTube ориентирован почти полностью на микрокейсы G1 (81 из 82 докладов), практически исключая макросравнительные обобщения.",
+    "description_en": "The available YouTube video layer is almost entirely oriented toward G1 micro-cases (81 out of 82 presentations), leaving macro-level generalizations undocumented.",
+    "significance": "niche",
+    "novelty": "discovery",
+    "unexpectedness": "expected",
+    "evidence": "proven",
+    "scope": "macro",
+    "methodology": "nlp",
+    "status": "core"
+  },
+  {
+    "id": "H31",
+    "title_ru": "Жанр программного высказывания G3",
+    "title_en": "G3 Broad Framing Genre",
+    "description_ru": "Шесть G3-докладов в корпусе образуют редкий жанр «большой рамки» (вопросы цивилизационного межевания, эпистемологии) и должны анализироваться качественно.",
+    "description_en": "The six G3 talks in the corpus constitute a rare 'broad framing' genre (civilizational boundaries, epistemology) and must be analyzed qualitatively.",
+    "significance": "fundamental",
+    "novelty": "discovery",
+    "unexpectedness": "paradoxical",
+    "evidence": "proven",
+    "scope": "macro",
+    "methodology": "nlp",
+    "status": "core"
+  },
+  {
+    "id": "H32",
+    "title_ru": "Академическое ядро и обобщения",
+    "title_en": "Academic Core and Generalizations",
+    "description_ru": "Накопленный академический статус в сообществе не ведет автоматически к расширению масштаба обобщения: у ядра и периферии доля G2/G3 сопоставима.",
+    "description_en": "Accumulated academic status in the community does not automatically lead to broader generalizations: the share of G2/G3 is highly comparable between core and periphery.",
+    "significance": "fundamental",
+    "novelty": "revision",
+    "unexpectedness": "paradoxical",
+    "evidence": "refuted",
+    "scope": "macro",
+    "methodology": "nlp",
+    "status": "core"
+  },
+  {
+    "id": "H33",
+    "title_ru": "Масштаб обобщения у дебютантов",
+    "title_en": "Debutant Scale of Generalization",
+    "description_ru": "Дебютанты не входят через более узкие доклады, чем повторные участники (доля G2/G3 равна 5.7% против 4.6%), подтверждая, что микрокейс — стиль всего поля.",
+    "description_en": "Debutants do not enter through narrower presentations than repeated speakers (G2/G3 share is 5.7% vs 4.6%), proving that micro-cases represent the style of the entire field.",
+    "significance": "niche",
+    "novelty": "discovery",
+    "unexpectedness": "expected",
+    "evidence": "proven",
+    "scope": "micro",
+    "methodology": "nlp",
+    "status": "core"
+  },
+  {
+    "id": "H34",
+    "title_ru": "Дисциплинарные различия масштабов",
+    "title_en": "Disciplinary Differences in Scale",
+    "description_ru": "Масштаб обобщения строго зависит от дисциплинарной оптики: лингвистика и филология почти полностью микрокейсовы, тогда как литература дает половину макрообобщений G3.",
+    "description_en": "The scale of generalization strictly depends on the disciplinary focus: linguistics/philology is almost entirely micro-case oriented, while literature provides half of G3 broad framings.",
+    "significance": "structural",
+    "novelty": "revision",
+    "unexpectedness": "paradoxical",
+    "evidence": "inconclusive",
+    "scope": "micro",
+    "methodology": "nlp",
+    "status": "core"
+  },
+  {
+    "id": "H35",
+    "title_ru": "Возрастной и поколенческий барьер G3",
+    "title_en": "Age and Generation Barrier of G3",
+    "description_ru": "Широкое концептуальное обобщение G3 является прерогативой старшего поколения: медианный возраст автора — 66 лет, 4 из 6 докладов сделаны авторами старше 60.",
+    "description_en": "Broad G3 conceptual generalization is a privilege of the senior generation: the median author age is 66, and 4 out of 6 presentations are given by authors over 60.",
+    "significance": "structural",
+    "novelty": "revision",
+    "unexpectedness": "surprising",
+    "evidence": "proven",
+    "scope": "macro",
+    "methodology": "network",
+    "status": "core"
+  }
+]
 
 # Записываем в файл
 with open(out_file, 'w', encoding='utf-8') as f:
-    json.dump(hypo_list, f, ensure_ascii=False, indent=2)
-    
-print(f"Successfully wrote {len(hypo_list)} hypotheses to {out_file}")
+    json.dump(hypotheses, f, ensure_ascii=False, indent=2)
+
+print(f"Successfully wrote {len(hypotheses)} hypotheses to {out_file}")

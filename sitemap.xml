@@ -2,18 +2,14 @@
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <sitemap>
     <loc>https://gasyoun.github.io/IndologyScholars/sitemap_static.xml</loc>
-    <lastmod>2026-05-30</lastmod>
   </sitemap>
   <sitemap>
     <loc>https://gasyoun.github.io/IndologyScholars/sitemap_scholars.xml</loc>
-    <lastmod>2026-05-30</lastmod>
   </sitemap>
   <sitemap>
     <loc>https://gasyoun.github.io/IndologyScholars/sitemap_publications.xml</loc>
-    <lastmod>2026-05-30</lastmod>
   </sitemap>
   <sitemap>
     <loc>https://gasyoun.github.io/IndologyScholars/sitemap_taxonomy.xml</loc>
-    <lastmod>2026-05-30</lastmod>
   </sitemap>
 </sitemapindex>
