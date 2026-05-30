@@ -151,6 +151,11 @@ export function renderGeoChart() {
                     direction: 'top',
                     className: 'geo-tooltip'
                 });
+                
+                circle.on('click', () => {
+                    if (window.switchTab) window.switchTab('scholars');
+                    if (window.setDashboardSearch) window.setDashboardSearch(d.ru);
+                });
             });
         }
 
@@ -171,15 +176,30 @@ export function renderAgeChart() {
                     }]
                 },
                 options: {
-                    indexAxis: 'y',
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: { legend: { display: false } },
-                    scales: {
-                        x: { ticks: { color: '#87938c' }, grid: { color: 'rgba(255,255,255,0.05)' } },
-                        y: { ticks: { color: '#87938c' }, grid: { display: false } }
-                    }
-                }
+            indexAxis: 'y',
+            responsive: true,
+            maintainAspectRatio: false,
+            onClick: (e, elements) => {
+                if (!elements.length) return;
+                const index = elements[0].index;
+                // data contains generation objects
+                const genData = (CONFERENCE_DATA.generation_stats || [])[index];
+                if (!genData) return;
+                
+                if (window.switchTab) window.switchTab('scholars');
+                // The search input matches by birth year indirectly if we type the generation label
+                // Let's type the generation code e.g. 'gen-z' or full name ru.
+                // Wait, search matches by 'all_affiliations' and 'name'.
+                // If we want generation filter, we don't have a drop-down for it yet. 
+                // We'll skip generation search for now, or just search by its exact label if it matches 'notes'.
+                // Or we can just console.log for now, since generation is hard to text-search.
+            },
+            plugins: { legend: { display: false } },
+            scales: {
+                x: { ticks: { color: '#87938c' }, grid: { color: 'rgba(255,255,255,0.05)' } },
+                y: { ticks: { color: '#87938c' }, grid: { display: false } }
+            }
+        }
             });
         }
 
@@ -401,6 +421,13 @@ export function renderLotkaChart() {
         options: {
             responsive: true,
             maintainAspectRatio: false,
+            onClick: (e, elements) => {
+                if (!elements.length) return;
+                const index = elements[0].index;
+                const value = window.myCharts['lotka'].data.labels[index];
+                if (window.switchTab) window.switchTab('scholars');
+                // Could filter by exact talks count, but we don't have a specific filter for that. We'll skip filtering for lotka or add a placeholder.
+            },
             plugins: {
                 legend: { display: false }
             },
@@ -478,6 +505,23 @@ export function renderTopicEvolutionChart() {
         options: {
             responsive: true,
             maintainAspectRatio: false,
+            onClick: (e, elements) => {
+                if (!elements.length) return;
+                const datasetIndex = elements[0].datasetIndex;
+                const index = elements[0].index;
+                
+                const themeName = window.myCharts['topic'].data.datasets[datasetIndex].label;
+                const year = window.myCharts['topic'].data.labels[index];
+                
+                if (window.switchTab) window.switchTab('scholars');
+                if (window.setTalksSearch) window.setTalksSearch(themeName);
+                
+                const yearSelect = document.getElementById('filter-year');
+                if (yearSelect && [...yearSelect.options].some(opt => opt.value === year)) {
+                    yearSelect.value = year;
+                }
+                if (window.handleFilterChange) window.handleFilterChange();
+            },
             plugins: {
                 legend: { position: 'bottom', labels: { color: '#e7ece8' } },
                 tooltip: { mode: 'index', intersect: false }

@@ -336,6 +336,18 @@ def main():
     cursor = conn.cursor()
     verified_affiliation_spans = load_verified_affiliation_spans()
     
+    # Load ORCID and Wikidata from data_assertion
+    cursor.execute("""
+        SELECT entity_id, attribute, value 
+        FROM data_assertion 
+        WHERE entity_type = 'person' AND attribute IN ('orcid', 'wikidata', 'elibrary')
+    """)
+    lod_assertions = {}
+    for eid, attr, val in cursor.fetchall():
+        if eid not in lod_assertions:
+            lod_assertions[eid] = {}
+        lod_assertions[eid][attr] = val
+
     # Pre-fetch session order mapping
     cursor.execute("""
         SELECT pr.presentation_id, pr.session_id
@@ -443,7 +455,10 @@ def main():
             "roerich_last": roerich_last,
             "degree": degree,
             "degree_year": degree_year,
-            "degree_source_url": degree_source_url
+            "degree_source_url": degree_source_url,
+            "orcid": lod_assertions.get(pid, {}).get("orcid"),
+            "wikidata": lod_assertions.get(pid, {}).get("wikidata"),
+            "elibrary": lod_assertions.get(pid, {}).get("elibrary")
         }
     
     # Load video media keyed by presentation_id (so each talk can render its YouTube link)
@@ -497,7 +512,8 @@ def main():
                 ed.calendar_date,
                 s.session_title,
                 s.time_text_raw,
-                s.session_id
+                s.session_id,
+                pr.source_url
             FROM presentation pr
             JOIN presentation_person pp ON pp.presentation_id = pr.presentation_id
             JOIN session s ON s.session_id = pr.session_id
@@ -513,7 +529,7 @@ def main():
         talks = []
         theme_counts = {}
         for t in talks_raw:
-            pres_id, title, year, series, affiliation, is_online, calendar_date, session_title, time_text, sess_id = t
+            pres_id, title, year, series, affiliation, is_online, calendar_date, session_title, time_text, sess_id, source_url = t
             
             # Clean public titles while retaining embedded source metadata separately.
             source_title = clean_title(title)
@@ -583,6 +599,7 @@ def main():
                 "is_last_talk": is_last,
                 "order_in_session": order_idx + 1,
                 "total_in_session": len(s_list),
+                "source_url": source_url,
                 "videos": videos_by_pres.get(pres_id, [])
             })
             
@@ -631,6 +648,9 @@ def main():
             "has_changed_affiliations": len(public_affiliations) > 1,
             "all_affiliations": public_affiliations,
             "affiliation_notes": affiliation_notes,
+            "orcid": meta.get("orcid"),
+            "wikidata": meta.get("wikidata"),
+            "elibrary": meta.get("elibrary"),
             "talks": talks
         })
         
@@ -948,21 +968,27 @@ def main():
         })
 
     cursor.execute("""
-        SELECT pp1.person_id, pp2.person_id, COUNT(DISTINCT p1.session_id) as weight
+        SELECT pp1.person_id, pp2.person_id, COUNT(DISTINCT p1.session_id) as weight, GROUP_CONCAT(e.year)
         FROM presentation_person pp1
         JOIN presentation p1 ON pp1.presentation_id = p1.presentation_id
         JOIN presentation p2 ON p1.session_id = p2.session_id AND p1.presentation_id != p2.presentation_id
+        JOIN session s ON p1.session_id = s.session_id
+        JOIN event_day_venue edv ON s.event_day_venue_id = edv.event_day_venue_id
+        JOIN event_day ed ON edv.event_day_id = ed.event_day_id
+        JOIN event e ON ed.event_id = e.event_id
         JOIN presentation_person pp2 ON p2.presentation_id = pp2.presentation_id
         WHERE pp1.person_id < pp2.person_id
         GROUP BY pp1.person_id, pp2.person_id
     """)
     links_raw = cursor.fetchall()
     network_links = []
-    for p1, p2, w in links_raw:
+    for p1, p2, w, years_str in links_raw:
+        years = list(set(int(y) for y in str(years_str).split(','))) if years_str else []
         network_links.append({
             "source": p1,
             "target": p2,
-            "weight": w
+            "weight": w,
+            "years": years
         })
 
     # 5. Affiliations Leaderboard

@@ -45,6 +45,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 state.currentLang = 'ru'; // set back so toggle swaps it correctly
                 toggleLanguage();
             }
+            window.toggleLanguage = toggleLanguage;
+            window.switchTab = switchTab;
+            window.exportToMarkdown = exportToMarkdown;
+            window.toggleViewMode = toggleViewMode;
+            window.changePage = changePage;
+            window.toggleYear = toggleYear;
+            window.setDashboardSearch = setDashboardSearch;
+            window.setTalksSearch = setTalksSearch;
+            window.handleFilterChange = handleFilterChange;
+            window.translateAffiliation = translateAffiliation;
+            window.resetNetworkPhysics = resetNetworkPhysics;
+            window.toggleNetworkPhysics = toggleNetworkPhysics;
             toggleViewMode(state.viewMode);
         });
 
@@ -364,6 +376,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="timeline-talk-meta" style="margin-top: 0.25rem; font-size: 0.78rem; color: var(--text-muted);">
                         <span>📅 <strong>${t.day}</strong>: ${dayName} (${talk.date || ''})</span>
                         <span>⏰ <strong>${t.timeLabel}</strong>: ${talk.time_interval}</span>
+                        ${talk.source_url ? `<span style="margin-left: 1rem;"><a href="${talk.source_url}" target="_blank" style="color:var(--accent-primary); text-decoration:none;">${state.currentLang === 'ru' ? 'Читать ↗' : 'Read ↗'}</a></span>` : ''}
                     </div>
                 </div>
             `;
@@ -446,6 +459,13 @@ document.addEventListener('DOMContentLoaded', () => {
         function setDashboardSearch(keyword) {
             const searchInput = document.getElementById('scholars-search');
             searchInput.value = keyword;
+            handleFilterChange();
+        }
+
+        // Click-to-filter helper for topics
+        function setTalksSearch(keyword) {
+            const searchInput = document.getElementById('talks-search');
+            if (searchInput) searchInput.value = keyword;
             handleFilterChange();
         }
 
@@ -968,6 +988,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                 <span style="margin-left: 1.5rem;">⏰ <strong>${t.timeLabel}</strong>: ${talk.time_interval}</span>
                                 <span style="margin-left: 1.5rem;">💬 <strong>${t.session}</strong>: ${talk.session_title}</span>
                                 ${cityHtml}
+                                ${talk.source_url ? `<span style="margin-left: 1.5rem;"><a href="${talk.source_url}" target="_blank" style="color:var(--accent-primary); text-decoration:none;">${state.currentLang === 'ru' ? 'Читать ↗' : 'Read ↗'}</a></span>` : ''}
                             </div>
                             ${videoHtml}
                             ${tagsHtml}
@@ -982,6 +1003,13 @@ document.addEventListener('DOMContentLoaded', () => {
                                 ${academicBadgesHtml}
                             </div>
                             ${affiliationHistoryHtml}
+                            
+                            <!-- LOD / Identifiers Badges -->
+                            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem; margin-bottom: 1rem;">
+                                ${s.orcid ? `<a href="https://orcid.org/${s.orcid}" target="_blank" class="badge" style="background:#a6ce39; color:#fff; text-decoration:none;"><i class="fab fa-orcid"></i> ORCID</a>` : ''}
+                                ${s.wikidata ? `<a href="https://www.wikidata.org/wiki/${s.wikidata}" target="_blank" class="badge" style="background:#339966; color:#fff; text-decoration:none;"><i class="fas fa-barcode"></i> Wikidata</a>` : ''}
+                                ${s.elibrary ? `<a href="https://elibrary.ru/author_profile.asp?id=${s.elibrary}" target="_blank" class="badge" style="background:#0055a6; color:#fff; text-decoration:none;"><i class="fas fa-book"></i> РИНЦ</a>` : ''}
+                            </div>
                             
                             <!-- Premium Careers & Analytics Panel -->
                             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-top: 0.5rem; margin-bottom: 1rem;">
@@ -1159,21 +1187,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            const repeatedLinks = data.links.filter(l => l.weight >= 2);
-            const linksSource = repeatedLinks.length >= 50 ? repeatedLinks : data.links;
-            const linkedIds = new Set();
-            linksSource.forEach(l => {
-                linkedIds.add(l.source);
-                linkedIds.add(l.target);
-            });
-            const topNodeIds = new Set(
-                [...data.nodes]
-                    .sort((a, b) => b.talks - a.talks)
-                    .slice(0, 40)
-                    .map(n => n.id)
-            );
-            const nodeIds = new Set([...linkedIds, ...topNodeIds]);
-
             const THEME_COLORS = {
                 AcademicHistory: '#8b5cf6', // Violet
                 Linguistics: '#3b82f6',     // Blue
@@ -1182,37 +1195,89 @@ document.addEventListener('DOMContentLoaded', () => {
                 History: '#f59e0b'          // Orange
             };
 
-            const nodes = data.nodes.filter(n => nodeIds.has(n.id)).map(n => {
-                const color = THEME_COLORS[n.theme] || THEME_COLORS.History;
-                const scaleSize = 8 + Math.sqrt(n.talks) * 3;
-                return {
-                    id: n.id,
-                    label: n.name,
-                    size: scaleSize,
-                    color: {
-                        background: color,
-                        border: 'rgba(255, 255, 255, 0.35)',
-                        highlight: { background: color, border: '#ffffff' },
-                        hover: { background: color, border: '#ffffff' }
-                    },
-                    shape: 'dot',
-                    font: { color: '#f3f4f6', face: 'Inter', size: 10, strokeWidth: 2, strokeColor: '#0a0e1a' },
-                    title: `${n.name} (${state.currentLang === 'ru' ? 'Докладов' : 'Talks'}: ${n.talks})`
-                };
-            });
+            function updateNetworkData(maxYear) {
+                let filteredLinks = data.links;
+                if (maxYear) {
+                    filteredLinks = data.links.map(l => {
+                        const validYears = (l.years || []).filter(y => y <= maxYear);
+                        return { ...l, weight: validYears.length };
+                    }).filter(l => l.weight > 0);
+                }
+                
+                const repeatedLinks = filteredLinks.filter(l => l.weight >= 2);
+                const linksSource = repeatedLinks.length >= 50 ? repeatedLinks : filteredLinks;
+                
+                const linkedIds = new Set();
+                linksSource.forEach(l => {
+                    linkedIds.add(l.source);
+                    linkedIds.add(l.target);
+                });
+                
+                const topNodeIds = new Set(
+                    [...data.nodes]
+                        .sort((a, b) => b.talks - a.talks)
+                        .slice(0, 40)
+                        .map(n => n.id)
+                );
+                const nodeIds = new Set([...linkedIds, ...topNodeIds]);
 
-            const edges = linksSource.filter(l => nodeIds.has(l.source) && nodeIds.has(l.target)).map(l => {
-                return {
-                    from: l.source,
-                    to: l.target,
-                    value: l.weight,
-                    color: { color: 'rgba(255, 255, 255, 0.12)', opacity: 0.2, highlight: 'rgba(139, 92, 246, 0.75)' },
-                    width: 1 + l.weight * 0.5
-                };
-            });
+                const nodes = data.nodes.filter(n => nodeIds.has(n.id)).map(n => {
+                    const color = THEME_COLORS[n.theme] || THEME_COLORS.History;
+                    const scaleSize = 8 + Math.sqrt(n.talks) * 3;
+                    return {
+                        id: n.id,
+                        label: n.name,
+                        size: scaleSize,
+                        color: {
+                            background: color,
+                            border: 'rgba(255, 255, 255, 0.35)',
+                            highlight: { background: color, border: '#ffffff' },
+                            hover: { background: color, border: '#ffffff' }
+                        },
+                        shape: 'dot',
+                        font: { color: '#f3f4f6', face: 'Inter', size: 10, strokeWidth: 2, strokeColor: '#0a0e1a' },
+                        title: `${n.name} (${state.currentLang === 'ru' ? 'Докладов' : 'Talks'}: ${n.talks})`
+                    };
+                });
 
-            nodesDataset = new vis.DataSet(nodes);
-            edgesDataset = new vis.DataSet(edges);
+                const edges = linksSource.filter(l => nodeIds.has(l.source) && nodeIds.has(l.target)).map(l => {
+                    return {
+                        from: l.source,
+                        to: l.target,
+                        value: l.weight,
+                        color: { color: 'rgba(255, 255, 255, 0.12)', opacity: 0.2, highlight: 'rgba(139, 92, 246, 0.75)' },
+                        width: 1 + l.weight * 0.5
+                    };
+                });
+
+                if (!nodesDataset) {
+                    nodesDataset = new vis.DataSet(nodes);
+                    edgesDataset = new vis.DataSet(edges);
+                } else {
+                    nodesDataset.clear();
+                    nodesDataset.add(nodes);
+                    edgesDataset.clear();
+                    edgesDataset.add(edges);
+                }
+            }
+            
+            // Initialize with all data
+            updateNetworkData(null);
+            
+            // Set up slider logic
+            const slider = document.getElementById('net-year-slider');
+            const sliderValue = document.getElementById('net-slider-value');
+            if (slider && sliderValue) {
+                slider.addEventListener('input', (e) => {
+                    sliderValue.textContent = e.target.value;
+                });
+                slider.addEventListener('change', (e) => {
+                    updateNetworkData(parseInt(e.target.value));
+                    if (isNetPhysicsRunning && networkInstance) {
+                        networkInstance.physics.stabilize();
+                    }
+                });
+            }
 
             const visData = {
                 nodes: nodesDataset,
