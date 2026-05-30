@@ -5375,7 +5375,11 @@ def generate_visualisations_page(data, records):
                 <span class="bilingual-text" data-ru="Эволюция ключевых слов и мезоуровней" data-en="Keyword/Meso Alluvial Flow">Эволюция ключевых слов и мезоуровней</span>
             </h2>
             <p class="bilingual-text" style="color:var(--muted); font-size:0.9rem;" data-ru="Динамическая потоковая визуализация (Alluvial / Sankey) дрейфа терминов, подтем и тематических кластеров по историческим периодам." data-en="A dynamic flow visualization (Alluvial / Sankey) showing the drift of terminological clusters and meso-level concepts across historical eras.">Динамическая потоковая визуализация (Alluvial / Sankey) дрейфа терминов, подтем и тематических кластеров по историческим периодам.</p>
-            
+            <div id="alluvial-wrapper" style="position:relative; width:100%; overflow:hidden;">
+                <svg id="alluvial-svg" viewBox="0 0 800 500" style="width:100%; height:auto; background:rgba(0,0,0,0.15); border-radius:8px;"></svg>
+                <div id="alluvial-tooltip" style="position: absolute; background: rgba(18, 18, 24, 0.95); border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 8px; padding: 0.8rem 1rem; font-size: 0.85rem; color: #fff; pointer-events: none; opacity: 0; transition: opacity 0.15s ease; z-index: 1000; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); backdrop-filter: blur(4px);"></div>
+            </div>
+        </section>
 
         <!-- VIS_005_scholar_forest -->
         <section class="viz-showcase-section" id="VIS_005_scholar_forest">
@@ -5384,6 +5388,11 @@ def generate_visualisations_page(data, records):
                 <span class="bilingual-text" data-ru="«Лес» активности исследователей" data-en="Scholar Activity Forest">«Лес» активности исследователей</span>
             </h2>
             <p class="bilingual-text" style="color:var(--muted); font-size:0.9rem;" data-ru="Жизненный цикл академических карьер топ-40 самых активных докладчиков за всю историю конференций." data-en="The academic lifecycle of the top 40 most active speakers across the history of the conferences.">Жизненный цикл академических карьер топ-40 самых активных докладчиков за всю историю конференций.</p>
+            <div id="forest-wrapper" style="position:relative; width:100%; overflow:hidden; margin-top:2rem;">
+                <svg id="forest-svg" viewBox="0 0 800 800" style="width:100%; height:auto; background:rgba(0,0,0,0.15); border-radius:8px;"></svg>
+                <div id="forest-tooltip" style="position: absolute; background: rgba(18, 18, 24, 0.95); border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 8px; padding: 0.8rem 1rem; font-size: 0.85rem; color: #fff; pointer-events: none; opacity: 0; transition: opacity 0.15s ease; z-index: 1000; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); backdrop-filter: blur(4px);"></div>
+            </div>
+        </section>
 
         <!-- VIS_006_thematic_hierarchy -->
         <section class="viz-showcase-section" id="VIS_006_thematic_hierarchy">
@@ -5392,6 +5401,11 @@ def generate_visualisations_page(data, records):
                 <span class="bilingual-text" data-ru="Иерархия тематических направлений" data-en="Thematic Hierarchy (Icicle Chart)">Иерархия тематических направлений</span>
             </h2>
             <p class="bilingual-text" style="color:var(--muted); font-size:0.9rem;" data-ru="Детальное распределение объема докладов по сериям чтений, основным темам и узким мезо-кластерам. Чем шире блок, тем больше докладов в этой теме." data-en="A detailed breakdown of presentation volume across conference series, main themes, and narrow meso-clusters. The wider the block, the more presentations belong to that theme.">Детальное распределение объема докладов по сериям чтений, основным темам и узким мезо-кластерам. Чем шире блок, тем больше докладов в этой теме.</p>
+            <div id="hierarchy-wrapper" style="position:relative; width:100%; overflow:hidden; margin-top:2rem;">
+                <svg id="hierarchy-svg" viewBox="0 0 800 400" style="width:100%; height:auto; background:rgba(0,0,0,0.15); border-radius:8px;"></svg>
+                <div id="hierarchy-tooltip" style="position: absolute; background: rgba(18, 18, 24, 0.95); border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 8px; padding: 0.8rem 1rem; font-size: 0.85rem; color: #fff; pointer-events: none; opacity: 0; transition: opacity 0.15s ease; z-index: 1000; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); backdrop-filter: blur(4px);"></div>
+            </div>
+        </section>
 
         <!-- VIS_007_network_arc -->
         <section class="viz-showcase-section" id="VIS_007_network_arc">
@@ -5404,25 +5418,6 @@ def generate_visualisations_page(data, records):
                 <svg id="arc-svg" viewBox="0 0 1000 600" style="width:100%; height:auto; background:rgba(0,0,0,0.15); border-radius:8px;"></svg>
                 <div id="arc-tooltip" style="position: absolute; background: rgba(18, 18, 24, 0.95); border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 8px; padding: 0.8rem 1rem; font-size: 0.85rem; color: #fff; pointer-events: none; opacity: 0; transition: opacity 0.15s ease; z-index: 1000; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); backdrop-filter: blur(4px);"></div>
             </div>
-        </section>
-
-            <div id="hierarchy-wrapper" style="position:relative; width:100%; overflow:hidden; margin-top:2rem;">
-                <svg id="hierarchy-svg" viewBox="0 0 800 400" style="width:100%; height:auto; background:rgba(0,0,0,0.15); border-radius:8px;"></svg>
-                <div id="hierarchy-tooltip" style="position: absolute; background: rgba(18, 18, 24, 0.95); border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 8px; padding: 0.8rem 1rem; font-size: 0.85rem; color: #fff; pointer-events: none; opacity: 0; transition: opacity 0.15s ease; z-index: 1000; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); backdrop-filter: blur(4px);"></div>
-            </div>
-        </section>
-
-            <div id="forest-wrapper" style="position:relative; width:100%; overflow:hidden; margin-top:2rem;">
-                <svg id="forest-svg" viewBox="0 0 800 800" style="width:100%; height:auto; background:rgba(0,0,0,0.15); border-radius:8px;"></svg>
-                <div id="forest-tooltip" style="position: absolute; background: rgba(18, 18, 24, 0.95); border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 8px; padding: 0.8rem 1rem; font-size: 0.85rem; color: #fff; pointer-events: none; opacity: 0; transition: opacity 0.15s ease; z-index: 1000; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); backdrop-filter: blur(4px);"></div>
-            </div>
-        </section>
-
-            <div id="alluvial-wrapper" style="position:relative; width:100%; overflow:hidden;">
-                <svg id="alluvial-svg" viewBox="0 0 800 500" style="width:100%; height:auto; background:rgba(0,0,0,0.15); border-radius:8px;"></svg>
-                <div id="alluvial-tooltip" style="position: absolute; background: rgba(18, 18, 24, 0.95); border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 8px; padding: 0.8rem 1rem; font-size: 0.85rem; color: #fff; pointer-events: none; opacity: 0; transition: opacity 0.15s ease; z-index: 1000; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); backdrop-filter: blur(4px);"></div>
-            </div>
-
         </section>
 
 
