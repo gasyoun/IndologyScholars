@@ -120,6 +120,7 @@ def generated_manifest_paths():
         "classification-criteria.html",
         "metrics-guide.html",
         "networks.html",
+        "docs.html",
         "offline.html",
         "robots.txt",
         "search.html",
@@ -11438,65 +11439,402 @@ def generate_institution_pages(data, records, authority):
 
 def generate_publication_docs(data):
     docs = {
+        "docs.html": (
+            "Портал научной документации",
+            "Единый портал научной и технической документации архива индологических исследований.",
+            """
+        <header>
+            <h1 class="bilingual-text" data-ru="Портал документации" data-en="Documentation Hub">Портал документации</h1>
+            <p class="bilingual-text" data-ru="Полное руководство по методологии, источникам, качеству данных и академической репликации" data-en="Comprehensive guide to methodology, sources, data quality, and academic replication">Полное руководство по методологии, источникам, качеству данных и академической репликации</p>
+        </header>
+
+        <section class="grid">
+            <article class="card">
+                <strong><a href="methodology.html" class="bilingual-text" data-ru="📐 Методология" data-en="📐 Methodology">📐 Методология</a></strong>
+                <p class="bilingual-text" data-ru="Описания конвейера цифровых гуманитарных наук, правил дедупликации имен, аффилиаций и тематического моделирования докладов." data-en="Detailed explanations of the Digital Humanities pipeline, name disambiguation, affiliations mapping, and thematic categorization.">Описания конвейера цифровых гуманитарных наук, правил дедупликации имен, аффилиаций и тематического моделирования докладов.</p>
+            </article>
+
+            <article class="card">
+                <strong><a href="hypotheses.html" class="bilingual-text" data-ru="🔬 Реестр гипотез" data-en="🔬 Hypotheses Registry">🔬 Реестр гипотез</a></strong>
+                <p class="bilingual-text" data-ru="Интерактивный каталог из 35 научных гипотез российской индологии с многомерными фильтрами по 7 наукометрическим шкалам." data-en="Interactive registry of 35 research hypotheses across Russian Indology with multi-dimensional filters on 7 academic scales.">Интерактивный каталог из 35 научных гипотез российской индологии с многомерными фильтрами по 7 наукометрическим шкалам.</p>
+            </article>
+
+            <article class="card">
+                <strong><a href="data-sources.html" class="bilingual-text" data-ru="🗂️ Источники данных" data-en="🗂️ Data Sources">🗂️ Источники данных</a></strong>
+                <p class="bilingual-text" data-ru="Первичные архивные программы Зографских и Рериховских чтений, а также интеграция с внешними реестрами (ORCID, Wikidata, ROR)." data-en="Primary archive files for Zograf and Roerich readings, and integration layers with global databases (ORCID, Wikidata, ROR).">Первичные архивные программы Зографских и Рериховских чтений, а также интеграция с внешними реестрами (ORCID, Wikidata, ROR).</p>
+            </article>
+
+            <article class="card">
+                <strong><a href="known-limitations.html" class="bilingual-text" data-ru="⚠️ Ограничения корпуса" data-en="⚠️ Corpus Caveats">⚠️ Ограничения корпуса</a></strong>
+                <p class="bilingual-text" data-ru="Ограничения оцифровки: орфографические вариации, лакуны в eLIBRARY/РИНЦ, особенности хеш-идентификаторов докладов." data-en="Digital boundaries: transliteration variances, missing open APIs for eLIBRARY/RINC, and talk hash-identifier stability.">Ограничения оцифровки: орфографические вариации, лакуны в eLIBRARY/РИНЦ, особенности хеш-идентификаторов докладов.</p>
+            </article>
+
+            <article class="card">
+                <strong><a href="metrics-guide.html" class="bilingual-text" data-ru="📊 Справочник по метрикам" data-en="📊 Metrics Reference">📊 Справочник по метрикам</a></strong>
+                <p class="bilingual-text" data-ru="Разъяснение расчетных показателей: активное ядро авторов, скорость академического обновления, коэффициент пересечения когорт." data-en="Definitions of calculated metrics: core authors, scientific renewal speed, and cohort overlap coefficients.">Разъяснение расчетных показателей: активное ядро авторов, скорость академического обновления, коэффициент пересечения когорт.</p>
+            </article>
+
+            <article class="card">
+                <strong><a href="classification-criteria.html" class="bilingual-text" data-ru="🏷️ Критерии классификации" data-en="🏷️ Argument Scale">🏷️ Критерии классификации</a></strong>
+                <p class="bilingual-text" data-ru="Шкала масштаба аргументации (L1–L3): детальный разбор и правила кодирования докладов от микрокейсов до глобальных обобщений." data-en="Argumentation scale coding rules (L1–L3): detailed rubric criteria from micro studies to discipline-wide paradigms.">Шкала масштаба аргументации (L1–L3): детальный разбор и правила кодирования докладов от микрокейсов до глобальных обобщений.</p>
+            </article>
+
+            <article class="card">
+                <strong><a href="data-quality.html" class="bilingual-text" data-ru="🛡️ Аудит качества данных" data-en="🛡️ Data Quality Audit">🛡️ Аудит качества данных</a></strong>
+                <p class="bilingual-text" data-ru="Результаты автоматических тестов ссылочной целостности базы данных, полноты метаданных и выборок для ручной сверки." data-en="Automated integrity check results, database referential consistency, and human-in-the-loop review samples.">Результаты автоматических тестов ссылочной целостности базы данных, полноты метаданных и выборок для ручной сверки.</p>
+            </article>
+
+            <article class="card">
+                <strong><a href="how-to-cite.html" class="bilingual-text" data-ru="🖋️ Цитирование и экспорт" data-en="🖋️ Citation & Exports">🖋️ Цитирование и экспорт</a></strong>
+                <p class="bilingual-text" data-ru="Рекомендации по библиографическому описанию архива и наборов данных, ссылки на machine-readable CITATION.cff и datapackage.json." data-en="Citing the archive in publications, export formats, and access to standard CITATION.cff and datapackage.json metadata files.">Рекомендации по библиографическому описанию архива и наборов данных, ссылки на machine-readable CITATION.cff and datapackage.json.</p>
+            </article>
+        </section>
+
+        <section class="list" style="margin-top: 3rem;">
+            <article class="card" style="border-left: 4px solid var(--accent);">
+                <strong class="bilingual-text" data-ru="🛠️ Для разработчиков и кураторов" data-en="🛠️ For Developers & Curators">🛠️ Для разработчиков и кураторов</strong>
+                <p class="bilingual-text" data-ru="Если вы хотите воспроизвести сборку базы данных, запустить pytest тесты или обновить реестр гипотез с помощью Python, обратитесь к файлам в репозитории: <code>docs/development.md</code> и <code>README.md</code>." data-en="To reproduce database builds, run unit tests, or run the extract_hypotheses.py Python script, refer to the offline repository files: <code>docs/development.md</code> and <code>README.md</code>.">Если вы хотите воспроизвести сборку базы данных, запустить pytest тесты или обновить реестр гипотез с помощью Python, обратитесь к файлам в репозитории: <code>docs/development.md</code> и <code>README.md</code>.</p>
+            </article>
+        </section>
+            """
+        ),
         "hypotheses.html": (
-            "Гипотезы исследования",
+            "Реестр гипотез",
             "Реестр научных гипотез, проверяемых методами дальнего чтения и сетевого анализа.",
             """
         <header>
-            <h1>Гипотезы исследования</h1>
-            <p>Ниже представлен реестр ключевых гипотез, проверяемых на материалах Индологического архива.</p>
+            <h1 class="bilingual-text" data-ru="Реестр гипотез" data-en="Hypotheses Registry">Реестр гипотез</h1>
+            <p class="bilingual-text" data-ru="Каталог аналитических гипотез, проверенных на массиве данных архива" data-en="Catalog of analytical hypotheses tested on the archive dataset">Каталог аналитических гипотез, проверенных на массиве данных архива</p>
         </header>
-        <section class="list">
-            <article class="card" id="H11">
-                <strong>[H11] Институциональный партикуляризм</strong>
-                <p>Зографские чтения — это площадка городской идентичности (участники массово не указывают учреждение), в отличие от институционально-ориентированных Рериховских чтений.</p>
-            </article>
-            <article class="card" id="H13">
-                <strong>[H13] Исторический перекос медиа-архива</strong>
-                <p>Видеоархив конференций содержит огромный исторический перекос, непропорционально освещая поздние периоды по сравнению с ранними.</p>
-            </article>
-            <article class="card" id="H16">
-                <strong>[H16] Хрупкость онлайн-когорты</strong>
-                <p>Когорта исследователей, вошедших в сообщество в онлайн-формате (2020–2021 гг.), демонстрирует высокую степень «осыпания» (низкий уровень удержания) по сравнению с офлайн-когортами.</p>
-            </article>
-            <article class="card" id="H20">
-                <strong>[H20] Коллективность и масштаб</strong>
-                <p>Существует прямая связь между коллективным авторством доклада и его уровнем обобщения (по шкале Гумилева).</p>
-            </article>
-            <article class="card" id="H22">
-                <strong>[H22] Входные ворота (темы дебютантов)</strong>
-                <p>Новые участники сообщества (дебютанты) чаще всего выбирают для первого доклада темы, связанные с современностью и колониализмом.</p>
-            </article>
-            <article class="card" id="H24">
-                <strong>[H24] Инфляция заголовков</strong>
-                <p>В сообществе наблюдается устойчивый исторический сдвиг в сторону объяснительных и длинных заголовков: растет среднее количество слов и доля заголовков с подзаголовком (через двоеточие).</p>
-            </article>
-            <article class="card" id="H25">
-                <strong>[H25] Случайность видеофиксации</strong>
-                <p>Камера фиксирует доклады не по академическому статусу ученого (Ядро vs Периферия), а в силу технической случайности.</p>
-            </article>
-            <article class="card" id="H27">
-                <strong>[H27] Узкая специализация мостовиков</strong>
-                <p>Ученые, выступающие на обеих площадках («мостовики»), не являются макро-синтетиками; доля макрообобщений среди них даже ниже среднего по полю.</p>
-            </article>
-            <article class="card" id="H30">
-                <strong>[H30] Смещение медиа-архива в микрокейсы</strong>
-                <p>На видеозаписи попадают почти исключительно доклады уровня микрокейсов (G1); макрообобщения (G3) видеоархивом практически не фиксируются.</p>
-            </article>
-            <article class="card" id="H32">
-                <strong>[H32] Ядро и макрообобщения</strong>
-                <p>Исследовательское «ядро» (авторы с 5 и более докладами) не производит больше макрообобщений (G3), чем исследователи из «периферии».</p>
-            </article>
-            <article class="card" id="H34">
-                <strong>[H34] Дисциплинарный масштаб</strong>
-                <p>Соотношение микрокейсов (G1) и обобщений (G2/G3) строго специфично для каждой дисциплины (L1) и является её структурной особенностью.</p>
-            </article>
-            <article class="card" id="H35">
-                <strong>[H35] Возраст и синтез</strong>
-                <p>Широкое концептуальное обобщение (G3 по шкале Гумилева) является прерогативой преимущественно старшего поколения исследователей.</p>
-            </article>
-        </section>
-            """,
+
+        <style>
+            .filters-panel {
+                background: rgba(10, 14, 26, 0.6);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                border-radius: 12px;
+                padding: 1.5rem;
+                margin-bottom: 2rem;
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 1.5rem;
+                backdrop-filter: blur(10px);
+            }
+
+            .filter-group {
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .filter-group label {
+                font-size: 0.85rem;
+                color: #94a3b8;
+                font-weight: 500;
+                text-transform: uppercase;
+                letter-spacing: 0.05em;
+            }
+
+            .filter-group select {
+                background: rgba(15, 23, 42, 0.8);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                color: #f8fafc;
+                padding: 0.75rem;
+                border-radius: 6px;
+                font-family: 'Inter', sans-serif;
+                font-size: 0.95rem;
+                cursor: pointer;
+                transition: border-color 0.2s ease;
+            }
+
+            .filter-group select:hover {
+                border-color: #3b82f6;
+            }
+
+            .hypotheses-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+                gap: 1.5rem;
+            }
+
+            .hypothesis-card {
+                background: rgba(15, 23, 42, 0.5);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                border-radius: 12px;
+                padding: 1.5rem;
+                transition: all 0.3s ease;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .hypothesis-card:hover {
+                transform: translateY(-4px);
+                border-color: #3b82f6;
+                box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.2);
+            }
+
+            .h-header {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                margin-bottom: 1rem;
+            }
+
+            .h-id {
+                background: #2563eb;
+                color: white;
+                padding: 0.25rem 0.5rem;
+                border-radius: 4px;
+                font-weight: 700;
+                font-size: 0.9rem;
+            }
+
+            .h-title {
+                font-size: 1.1rem;
+                font-weight: 600;
+                color: #f1f5f9;
+                margin: 0;
+                line-height: 1.4;
+            }
+
+            .h-desc {
+                color: #cbd5e1;
+                font-size: 0.95rem;
+                line-height: 1.6;
+                margin-bottom: 1.5rem;
+                flex-grow: 1;
+            }
+
+            .h-metrics {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.5rem;
+                margin-top: auto;
+            }
+
+            .metric-badge {
+                font-size: 0.75rem;
+                padding: 0.3rem 0.6rem;
+                border-radius: 12px;
+                font-weight: 600;
+                text-transform: uppercase;
+            }
+
+            .metric-sig { background: rgba(59, 130, 246, 0.2); color: #93c5fd; border: 1px solid rgba(59, 130, 246, 0.4); }
+            .metric-nov { background: rgba(16, 185, 129, 0.2); color: #6ee7b7; border: 1px solid rgba(16, 185, 129, 0.4); }
+            .metric-unx { background: rgba(139, 92, 246, 0.2); color: #c4b5fd; border: 1px solid rgba(139, 92, 246, 0.4); }
+            .metric-evi { background: rgba(245, 158, 11, 0.2); color: #fcd34d; border: 1px solid rgba(245, 158, 11, 0.4); }
+            .metric-sco { background: rgba(236, 72, 153, 0.2); color: #f9a8d4; border: 1px solid rgba(236, 72, 153, 0.4); }
+            .metric-met { background: rgba(14, 165, 233, 0.2); color: #7dd3fc; border: 1px solid rgba(14, 165, 233, 0.4); }
+            .metric-sta { background: rgba(239, 68, 68, 0.2); color: #fca5a5; border: 1px solid rgba(239, 68, 68, 0.4); }
+
+            .no-results {
+                grid-column: 1 / -1;
+                text-align: center;
+                padding: 4rem 2rem;
+                color: #94a3b8;
+                background: rgba(15, 23, 42, 0.3);
+                border-radius: 12px;
+                border: 1px dashed rgba(255,255,255,0.1);
+            }
+        </style>
+
+        <div class="filters-panel">
+            <div class="filter-group">
+                <label>Эмпирическая подтвержденность</label>
+                <select id="filter-evi">
+                    <option value="all">Все статусы</option>
+                    <option value="proven">Доказано (Proven)</option>
+                    <option value="partial">Частично (Partial)</option>
+                    <option value="refuted">Опровергнуто (Refuted)</option>
+                    <option value="inconclusive">Неопределенно (Inconclusive)</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>Масштаб обобщения</label>
+                <select id="filter-sco">
+                    <option value="all">Все масштабы</option>
+                    <option value="macro">Макро (G3)</option>
+                    <option value="meso">Сетевой (G2)</option>
+                    <option value="micro">Микрокейс (G1)</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>Методология</label>
+                <select id="filter-met">
+                    <option value="all">Все методы</option>
+                    <option value="prosopography">Просопография</option>
+                    <option value="network">Сетевая</option>
+                    <option value="nlp">NLP</option>
+                    <option value="gis">GIS</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>Публикационный статус</label>
+                <select id="filter-sta">
+                    <option value="all">Все статусы</option>
+                    <option value="core">В статье</option>
+                    <option value="supplementary">Дополнительно</option>
+                    <option value="future">В будущем</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>Значимость</label>
+                <select id="filter-sig">
+                    <option value="all">Все уровни</option>
+                    <option value="fundamental">Фундаментальная</option>
+                    <option value="structural">Структурная</option>
+                    <option value="niche">Нишевая</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>Новизна</label>
+                <select id="filter-nov">
+                    <option value="all">Все уровни</option>
+                    <option value="discovery">Открытие</option>
+                    <option value="revision">Опровержение</option>
+                    <option value="confirmation">Подтверждение</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>Неожиданность</label>
+                <select id="filter-unx">
+                    <option value="all">Все уровни</option>
+                    <option value="paradoxical">Парадоксально</option>
+                    <option value="surprising">Удивительно</option>
+                    <option value="expected">Ожидаемо</option>
+                </select>
+            </div>
+        </div>
+
+        <div id="hypotheses-grid" class="hypotheses-grid"></div>
+
+        <script type="module">
+            const DICT_SIG = {
+                'fundamental': 'Фундаментальная',
+                'structural': 'Структурная',
+                'niche': 'Нишевая'
+            };
+            const DICT_NOV = {
+                'discovery': 'Открытие',
+                'revision': 'Опровержение',
+                'confirmation': 'Подтверждение'
+            };
+            const DICT_UNX = {
+                'paradoxical': 'Парадоксально',
+                'surprising': 'Удивительно',
+                'expected': 'Ожидаемо'
+            };
+            const DICT_EVI = {
+                'proven': 'Доказано',
+                'partial': 'Частично',
+                'refuted': 'Опровергнуто',
+                'inconclusive': 'Требует проверки'
+            };
+            const DICT_SCO = {
+                'macro': 'Макро (G3)',
+                'meso': 'Сетевой (G2)',
+                'micro': 'Микрокейс (G1)'
+            };
+            const DICT_MET = {
+                'prosopography': 'Просопография',
+                'network': 'Сетевая',
+                'nlp': 'NLP',
+                'gis': 'GIS'
+            };
+            const DICT_STA = {
+                'core': 'В статье',
+                'supplementary': 'Дополнительно',
+                'future': 'В будущем'
+            };
+
+            let allHypotheses = [];
+
+            async function init() {
+                try {
+                    const response = await fetch('assets/data/hypotheses.json');
+                    allHypotheses = await response.json();
+                    renderCards(allHypotheses);
+                    setupFilters();
+                } catch (err) {
+                    console.error("Failed to load hypotheses:", err);
+                    document.getElementById('hypotheses-grid').innerHTML = '<div class="no-results">Ошибка загрузки данных.</div>';
+                }
+            }
+
+            function renderCards(data) {
+                const grid = document.getElementById('hypotheses-grid');
+                grid.innerHTML = '';
+
+                if (data.length === 0) {
+                    grid.innerHTML = '<div class="no-results">Нет гипотез, соответствующих выбранным фильтрам.</div>';
+                    return;
+                }
+
+                data.forEach(h => {
+                    const card = document.createElement('div');
+                    card.className = 'hypothesis-card';
+                    card.innerHTML = `
+                        <div class="h-header">
+                            <span class="h-id">${h.id}</span>
+                            <h3 class="h-title">${h.title_ru}</h3>
+                        </div>
+                        <div class="h-desc">${h.description_ru}</div>
+                        <div class="h-metrics">
+                            <span class="metric-badge metric-sta" title="Публикационный статус (Status)">STA: ${DICT_STA[h.status] || h.status}</span>
+                            <span class="metric-badge metric-met" title="Методология (Methodology)">MET: ${DICT_MET[h.methodology] || h.methodology}</span>
+                            <span class="metric-badge metric-sco" title="Масштаб обобщения (Scope)">SCO: ${DICT_SCO[h.scope] || h.scope}</span>
+                            <span class="metric-badge metric-evi" title="Эмпирическая подтвержденность (Evidence)">EVI: ${DICT_EVI[h.evidence] || h.evidence}</span>
+                            <span class="metric-badge metric-sig" title="Значимость (Significance)">SIG: ${DICT_SIG[h.significance] || h.significance}</span>
+                            <span class="metric-badge metric-nov" title="Новизна (Novelty)">NOV: ${DICT_NOV[h.novelty] || h.novelty}</span>
+                            <span class="metric-badge metric-unx" title="Неожиданность (Unexpectedness)">UNX: ${DICT_UNX[h.unexpectedness] || h.unexpectedness}</span>
+                        </div>
+                    `;
+                    grid.appendChild(card);
+                });
+            }
+
+            function setupFilters() {
+                const sigFilter = document.getElementById('filter-sig');
+                const novFilter = document.getElementById('filter-nov');
+                const unxFilter = document.getElementById('filter-unx');
+                const eviFilter = document.getElementById('filter-evi');
+                const scoFilter = document.getElementById('filter-sco');
+                const metFilter = document.getElementById('filter-met');
+                const staFilter = document.getElementById('filter-sta');
+
+                const applyFilters = () => {
+                    const sig = sigFilter.value;
+                    const nov = novFilter.value;
+                    const unx = unxFilter.value;
+                    const evi = eviFilter.value;
+                    const sco = scoFilter.value;
+                    const met = metFilter.value;
+                    const sta = staFilter.value;
+
+                    const filtered = allHypotheses.filter(h => {
+                        return (sig === 'all' || h.significance === sig) &&
+                               (nov === 'all' || h.novelty === nov) &&
+                               (unx === 'all' || h.unexpectedness === unx) &&
+                               (evi === 'all' || h.evidence === evi) &&
+                               (sco === 'all' || h.scope === sco) &&
+                               (met === 'all' || h.methodology === met) &&
+                               (sta === 'all' || h.status === sta);
+                    });
+                    renderCards(filtered);
+                };
+
+                sigFilter.addEventListener('change', applyFilters);
+                novFilter.addEventListener('change', applyFilters);
+                unxFilter.addEventListener('change', applyFilters);
+                eviFilter.addEventListener('change', applyFilters);
+                scoFilter.addEventListener('change', applyFilters);
+                metFilter.addEventListener('change', applyFilters);
+                staFilter.addEventListener('change', applyFilters);
+            }
+
+            document.addEventListener('DOMContentLoaded', init);
+        </script>
+            """
         ),
         "methodology.html": (
             "Methodology",
@@ -11705,7 +12043,7 @@ def generate_sitemap(data, records):
         "index.html", "en.html", "search.html", "download-data.html",
         "data-quality.html", "methodology.html", "hypotheses.html", "data-sources.html",
         "known-limitations.html", "how-to-cite.html", "metrics-guide.html",
-        "classification-criteria.html", "networks.html"
+        "classification-criteria.html", "networks.html", "docs.html"
     ]
     static_paths = sorted(set(static_paths))
 
