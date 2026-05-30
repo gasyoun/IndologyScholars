@@ -9,6 +9,8 @@ import sys
 import zlib
 
 LEGACY_REDIRECT_PATHS = set()
+MANIFEST_HASHES = {}
+MANIFEST_SIZES = {}
 import jinja2
 from collections import Counter, defaultdict
 from functools import lru_cache
@@ -68,7 +70,18 @@ def ensure_dirs():
 
 def write_text(path, content):
     Path(path).parent.mkdir(parents=True, exist_ok=True)
+    byte_content = content.encode("utf-8")
+    rel_path = str(path).replace("\\", "/")
+    MANIFEST_HASHES[rel_path] = hashlib.sha256(byte_content).hexdigest()
+    MANIFEST_SIZES[rel_path] = len(byte_content)
     Path(path).write_text(content, encoding="utf-8", newline="\n")
+
+def write_bytes(path, byte_content):
+    Path(path).parent.mkdir(parents=True, exist_ok=True)
+    rel_path = str(path).replace("\\", "/")
+    MANIFEST_HASHES[rel_path] = hashlib.sha256(byte_content).hexdigest()
+    MANIFEST_SIZES[rel_path] = len(byte_content)
+    Path(path).write_bytes(byte_content)
 
 
 def file_size_label(path):
@@ -133,10 +146,16 @@ def generate_publication_file_manifest():
     rows = []
     for path in generated_manifest_paths():
         rel = str(path).replace("\\", "/")
+        if rel in MANIFEST_HASHES:
+            sha = MANIFEST_HASHES[rel]
+            size = MANIFEST_SIZES[rel]
+        else:
+            sha = file_sha256(path)
+            size = path.stat().st_size
         rows.append({
             "path": rel,
-            "size_bytes": path.stat().st_size,
-            "sha256": file_sha256(path),
+            "size_bytes": size,
+            "sha256": sha,
         })
 
     Path("analytics_output").mkdir(exist_ok=True)
@@ -1117,7 +1136,7 @@ def write_app_icon(path, size):
         + chunk(b"IDAT", zlib.compress(raw, 9))
         + chunk(b"IEND", b"")
     )
-    Path(path).write_bytes(png)
+    write_bytes(path, png)
 
 
 def write_og_image(path):
@@ -1149,7 +1168,7 @@ def write_og_image(path):
         + chunk(b"IDAT", zlib.compress(raw, 9))
         + chunk(b"IEND", b"")
     )
-    Path(path).write_bytes(png)
+    write_bytes(path, png)
 
 
 def generate_search(data, records):
@@ -9155,22 +9174,53 @@ def generate_nlp_page(data, records):
             "slug": r.get("slug") or ""
         })
 
-    vectorizer = TfidfVectorizer(max_df=0.95, min_df=2, max_features=400)
-    tfidf_matrix = vectorizer.fit_transform(corpus)
-    feature_names = list(vectorizer.get_feature_names_out())
-    idf_weights = list(vectorizer.idf_)
+    import pickle
+    
+    corpus_hash = hashlib.sha256(json.dumps(corpus).encode("utf-8")).hexdigest()
+    cache_path = Path("analytics_output/nlp_cache.pkl")
+    
+    lda_fit = False
+    if cache_path.exists():
+        try:
+            cached = pickle.loads(cache_path.read_bytes())
+            if cached.get("corpus_hash") == corpus_hash:
+                tfidf_matrix = cached["tfidf_matrix"]
+                topic_distributions = cached["topic_distributions"]
+                topic_terms = cached["topic_terms"]
+                feature_names = cached["feature_names"]
+                idf_weights = cached["idf_weights"]
+                dominant_topics = topic_distributions.argmax(axis=1)
+                lda_fit = True
+        except Exception:
+            pass
+            
+    if not lda_fit:
+        vectorizer = TfidfVectorizer(max_df=0.95, min_df=2, max_features=400)
+        tfidf_matrix = vectorizer.fit_transform(corpus)
+        feature_names = list(vectorizer.get_feature_names_out())
+        idf_weights = list(vectorizer.idf_)
 
-    lda = LatentDirichletAllocation(n_components=6, random_state=42, max_iter=10)
-    lda.fit(tfidf_matrix)
-    
-    topic_distributions = lda.transform(tfidf_matrix)
-    dominant_topics = topic_distributions.argmax(axis=1)
-    
-    topic_terms = []
-    for topic_idx, topic in enumerate(lda.components_):
-        top_features_ind = topic.argsort()[:-10 - 1:-1]
-        top_features = [feature_names[i] for i in top_features_ind]
-        topic_terms.append(top_features)
+        lda = LatentDirichletAllocation(n_components=6, random_state=42, max_iter=10)
+        lda.fit(tfidf_matrix)
+        
+        topic_distributions = lda.transform(tfidf_matrix)
+        dominant_topics = topic_distributions.argmax(axis=1)
+        
+        topic_terms = []
+        for topic_idx, topic in enumerate(lda.components_):
+            top_features_ind = topic.argsort()[:-10 - 1:-1]
+            top_features = [feature_names[i] for i in top_features_ind]
+            topic_terms.append(top_features)
+            
+        cache_path.parent.mkdir(parents=True, exist_ok=True)
+        cache_path.write_bytes(pickle.dumps({
+            "corpus_hash": corpus_hash,
+            "tfidf_matrix": tfidf_matrix,
+            "topic_distributions": topic_distributions,
+            "topic_terms": topic_terms,
+            "feature_names": feature_names,
+            "idf_weights": idf_weights,
+        }))
 
     topic_titles = [
         "Лингвистика и грамматика",

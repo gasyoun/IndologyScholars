@@ -6,7 +6,7 @@
     "pipeline_version": "2026-05-25",
     "generator": "generate_publication_pages.py"
   },
-  "file_count": 2240,
+  "file_count": 2241,
   "files": [
     {
       "path": "404.html",
@@ -237,6 +237,11 @@
       "path": "analytics_output/newcomer_rate_by_year.csv",
       "size_bytes": 754,
       "sha256": "385a9b9e8aee97cc6e1473bda63344c195eaad61efef7387b29fa2be71ec6cd3"
+    },
+    {
+      "path": "analytics_output/nlp_cache.pkl",
+      "size_bytes": 147418,
+      "sha256": "1f20dff04b7a1d5dc53234a50113c0a155c97cc2344eafb9e6817f625bda8cfc"
     },
     {
       "path": "analytics_output/no_affiliation_history.md",
@@ -746,7 +751,7 @@
     {
       "path": "download-data.html",
       "size_bytes": 20300,
-      "sha256": "1f6e97bcfec0befa18b6e63f2c8d9e5f7a5aef20140bd575fb2ffbb5d6d24eea"
+      "sha256": "b3ed65bffbacdab2aa3ab85bce7f3637e6fb90b0a9b14f3864bdb7fbe9244830"
     },
     {
       "path": "en.html",
@@ -761,7 +766,7 @@
     {
       "path": "findings/visualisations.html",
       "size_bytes": 474714,
-      "sha256": "321c9e582764bceb9a333ffb2ee0c87f6bd2f6ebe7e9ce1b00b1ecc61801ad74"
+      "sha256": "09236cad228e7887d6f33402a83e3fa680463ac27e5a265034b656f9c0770c5e"
     },
     {
       "path": "generations/index.html",
