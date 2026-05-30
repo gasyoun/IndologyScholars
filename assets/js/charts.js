@@ -295,7 +295,7 @@ export function renderInstChart() {
                 tr.innerHTML = `
                     <td style="padding: 0.75rem 0.5rem; color: #ffffff; font-weight: 500;">
                         <span style="color: var(--accent-secondary); cursor: pointer; border-bottom: 1px dashed rgba(236,72,153,0.4);" onclick="switchTab('scholars'); setDashboardSearch('${d.name.replace(/'/g, "\\'")}')">
-                            ${translateAffiliation(d.name)}
+                            ${window.translateAffiliation ? window.translateAffiliation(d.name) : d.name}
                         </span>
                     </td>
                     <td style="padding: 0.75rem 0.5rem; color: var(--text-secondary);">${d.unique_scholars}</td>
@@ -348,11 +348,11 @@ export function renderWordCloud() {
                 
                 // Click to search
                 span.onclick = () => {
-                    switchTab('scholars');
+                    if (window.switchTab) window.switchTab('scholars');
                     const talksSearch = document.getElementById('talks-search');
                     if (talksSearch) {
                         talksSearch.value = w.text;
-                        handleFilterChange();
+                        if (window.handleFilterChange) window.handleFilterChange();
                     }
                 };
                 
