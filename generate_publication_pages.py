@@ -7,6 +7,8 @@ import sqlite3
 import struct
 import sys
 import zlib
+
+LEGACY_REDIRECT_PATHS = set()
 import jinja2
 from collections import Counter, defaultdict
 from functools import lru_cache
@@ -1069,6 +1071,8 @@ Sitemap: {site_url('sitemap.xml')}
 
 
 def write_app_icon(path, size):
+    if Path(path).exists():
+        return
     background = (10, 14, 26)
     lavender = (196, 181, 253)
     pink = (236, 72, 153)
@@ -1117,6 +1121,8 @@ def write_app_icon(path, size):
 
 
 def write_og_image(path):
+    if Path(path).exists():
+        return
     width, height = 1200, 630
     rows = []
     for y in range(height):
@@ -8556,7 +8562,7 @@ def generate_generations_page(data):
                     <table class="heatmap-table">
                         <thead>
                             <tr>
-                                <th>Период (Y) \ Когорта (X)</th>
+                                <th>Период (Y) \\ Когорта (X)</th>
                                 {cohort_headers}
                             </tr>
                         </thead>
@@ -10729,6 +10735,7 @@ def generate_theme_pages(data, records):
 
 
 def redirect_html(title, canonical_path, target_path):
+    LEGACY_REDIRECT_PATHS.add(str(canonical_path).replace("\\", "/"))
     target_url = site_url(target_path)
     target_href = "../" + target_path if "/" in canonical_path else target_path
     return f"""<!doctype html>
@@ -11636,41 +11643,31 @@ def generate_publication_docs(data):
         )
 
 
-def is_legacy_redirect(path):
-    try:
-        return "data-legacy-redirect" in Path(path).read_text(encoding="utf-8")
-    except OSError:
-        return False
-
-
-def generate_sitemap():
+def generate_sitemap(data, records):
     static_paths = [
-        "index.html",
-        "en.html",
-        "search.html",
-        "download-data.html",
-        "data-quality.html",
-        "methodology.html",
-        "hypotheses.html",
-        "data-sources.html",
-        "known-limitations.html",
-        "how-to-cite.html",
-        "metrics-guide.html",
-        "classification-criteria.html",
-        "networks.html",
+        "index.html", "en.html", "search.html", "download-data.html",
+        "data-quality.html", "methodology.html", "hypotheses.html", "data-sources.html",
+        "known-limitations.html", "how-to-cite.html", "metrics-guide.html",
+        "classification-criteria.html", "networks.html"
     ]
     static_paths = sorted(set(static_paths))
+
+    canonical_scholars = {f"s/{scholar['url_slug']}.html" for scholar in data.get("scholars", []) if "url_slug" in scholar}
+    canonical_scholars.add("s/index.html")
 
     scholars_paths = sorted(
         str(p).replace("\\", "/")
         for p in Path("s").glob("*.html")
-        if not is_legacy_redirect(p)
+        if str(p).replace("\\", "/") in canonical_scholars
     )
+
+    canonical_publications = {f"p/{r['slug']}.html" for r in records if "slug" in r}
+    canonical_publications.add("p/index.html")
 
     publications_paths = sorted(
         str(p).replace("\\", "/")
         for p in Path("p").glob("*.html")
-        if not is_legacy_redirect(p)
+        if str(p).replace("\\", "/") in canonical_publications
     )
 
     taxonomy_paths = []
@@ -11678,7 +11675,7 @@ def generate_sitemap():
         taxonomy_paths.extend(
             str(p).replace("\\", "/")
             for p in Path(dirname).glob("*.html")
-            if not is_legacy_redirect(p)
+            if str(p).replace("\\", "/") not in LEGACY_REDIRECT_PATHS
         )
     taxonomy_paths = sorted(set(taxonomy_paths), key=lambda p: (p.count("/"), p))
 
@@ -11695,18 +11692,14 @@ def generate_sitemap():
         urlset.append("</urlset>")
         write_text(filename, "\n".join(urlset) + "\n")
 
-    # Write sub-sitemaps
     write_sub_sitemap("sitemap_static.xml", static_paths)
     write_sub_sitemap("sitemap_scholars.xml", scholars_paths)
     write_sub_sitemap("sitemap_publications.xml", publications_paths)
     write_sub_sitemap("sitemap_taxonomy.xml", taxonomy_paths)
 
-    # Write index sitemap
     sitemaps = [
-        "sitemap_static.xml",
-        "sitemap_scholars.xml",
-        "sitemap_publications.xml",
-        "sitemap_taxonomy.xml",
+        "sitemap_static.xml", "sitemap_scholars.xml",
+        "sitemap_publications.xml", "sitemap_taxonomy.xml",
     ]
     index_xml = [
         '<?xml version="1.0" encoding="UTF-8"?>',
@@ -12048,7 +12041,7 @@ def main():
     generate_city_pages(data, records, authority)
     generate_institution_pages(data, records, authority)
     generate_publication_docs(data)
-    generate_sitemap()
+    generate_sitemap(data, records)
     patch_index_stats(data)
     manifest_count = generate_publication_file_manifest()
     print(f"Generated publication pages, sitemap, robots, search index, citation files, and preview assets. Theme review queue: {theme_queue_size} items. File manifest: {manifest_count} files.")
