@@ -252,6 +252,11 @@
             .metric-sco { background: rgba(236, 72, 153, 0.2); color: #f9a8d4; border: 1px solid rgba(236, 72, 153, 0.4); }
             .metric-met { background: rgba(14, 165, 233, 0.2); color: #7dd3fc; border: 1px solid rgba(14, 165, 233, 0.4); }
             .metric-sta { background: rgba(239, 68, 68, 0.2); color: #fca5a5; border: 1px solid rgba(239, 68, 68, 0.4); }
+            .metric-rep { background: rgba(79, 70, 229, 0.2); color: #c7d2fe; border: 1px solid rgba(79, 70, 229, 0.4); }
+            .metric-con { background: rgba(5, 150, 105, 0.2); color: #a7f3d0; border: 1px solid rgba(5, 150, 105, 0.4); }
+            .metric-dsc { background: rgba(180, 83, 9, 0.2); color: #fed7aa; border: 1px solid rgba(180, 83, 9, 0.4); }
+            .metric-int { background: rgba(109, 40, 217, 0.2); color: #ddd6fe; border: 1px solid rgba(109, 40, 217, 0.4); }
+            .metric-imp { background: rgba(190, 24, 74, 0.2); color: #fecdd3; border: 1px solid rgba(190, 24, 74, 0.4); }
 
             .no-results {
                 grid-column: 1 / -1;
@@ -330,6 +335,51 @@
                     <option value="expected">Ожидаемо</option>
                 </select>
             </div>
+            <div class="filter-group">
+                <label>Воспроизводимость</label>
+                <select id="filter-rep">
+                    <option value="all">Все типы</option>
+                    <option value="computational">Вычислимая (Computational)</option>
+                    <option value="hybrid">Гибридная (Hybrid)</option>
+                    <option value="qualitative">Экспертная (Qualitative)</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>Тип научного вклада</label>
+                <select id="filter-con">
+                    <option value="all">Все типы</option>
+                    <option value="empirical">Эмпирический (Empirical)</option>
+                    <option value="methodological">Методологический (Methodological)</option>
+                    <option value="conceptual">Концептуальный (Conceptual)</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>Охват доказательной базы</label>
+                <select id="filter-dsc">
+                    <option value="all">Все охваты</option>
+                    <option value="whole_corpus">Полнокорпусный (Whole Corpus)</option>
+                    <option value="comparative">Сравнительный (Comparative)</option>
+                    <option value="cohort">Когортный (Cohort-based)</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>Междисциплинарность</label>
+                <select id="filter-int">
+                    <option value="all">Все уровни</option>
+                    <option value="domain_specific">Монодисциплинарный (Domain-specific)</option>
+                    <option value="interdisciplinary">Междисциплинарный (Interdisciplinary)</option>
+                    <option value="transdisciplinary">Трансдисциплинарный (Transdisciplinary)</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>Потенциал цитируемости</label>
+                <select id="filter-imp">
+                    <option value="all">Все уровни</option>
+                    <option value="broad">Широкий (Broad)</option>
+                    <option value="regional">Региональный (Regional)</option>
+                    <option value="niche">Узкоспециальный (Niche)</option>
+                </select>
+            </div>
         </div>
 
         <div id="hypotheses-grid" class="hypotheses-grid"></div>
@@ -372,6 +422,31 @@
                 'supplementary': 'Дополнительно',
                 'future': 'В будущем'
             };
+            const DICT_REP = {
+                'computational': 'Вычислимая',
+                'hybrid': 'Гибридная',
+                'qualitative': 'Экспертная'
+            };
+            const DICT_CON = {
+                'empirical': 'Эмпирический',
+                'methodological': 'Методологический',
+                'conceptual': 'Концептуальный'
+            };
+            const DICT_DSC = {
+                'whole_corpus': 'Полнокорпусный',
+                'comparative': 'Сравнительный',
+                'cohort': 'Когортный'
+            };
+            const DICT_INT = {
+                'domain_specific': 'Монодисциплинарный',
+                'interdisciplinary': 'Междисциплинарный',
+                'transdisciplinary': 'Трансдисциплинарный'
+            };
+            const DICT_IMP = {
+                'broad': 'Широкий',
+                'regional': 'Региональный',
+                'niche': 'Узкоспециальный'
+            };
 
             let allHypotheses = [];
 
@@ -413,6 +488,11 @@
                             <span class="metric-badge metric-sig" title="Значимость (Significance)">SIG: ${DICT_SIG[h.significance] || h.significance}</span>
                             <span class="metric-badge metric-nov" title="Новизна (Novelty)">NOV: ${DICT_NOV[h.novelty] || h.novelty}</span>
                             <span class="metric-badge metric-unx" title="Неожиданность (Unexpectedness)">UNX: ${DICT_UNX[h.unexpectedness] || h.unexpectedness}</span>
+                            <span class="metric-badge metric-rep" title="Воспроизводимость (Reproducibility)">REP: ${DICT_REP[h.reproducibility] || h.reproducibility}</span>
+                            <span class="metric-badge metric-con" title="Тип научного вклада (Contribution Type)">CON: ${DICT_CON[h.contribution] || h.contribution}</span>
+                            <span class="metric-badge metric-dsc" title="Охват доказательной базы (Data Scope)">DSC: ${DICT_DSC[h.data_scope] || h.data_scope}</span>
+                            <span class="metric-badge metric-int" title="Междисциплинарность (Interdisciplinarity)">INT: ${DICT_INT[h.interdisciplinary] || h.interdisciplinary}</span>
+                            <span class="metric-badge metric-imp" title="Потенциал цитируемости (Impact Potential)">IMP: ${DICT_IMP[h.impact] || h.impact}</span>
                         </div>
                     `;
                     grid.appendChild(card);
@@ -427,6 +507,11 @@
                 const scoFilter = document.getElementById('filter-sco');
                 const metFilter = document.getElementById('filter-met');
                 const staFilter = document.getElementById('filter-sta');
+                const repFilter = document.getElementById('filter-rep');
+                const conFilter = document.getElementById('filter-con');
+                const dscFilter = document.getElementById('filter-dsc');
+                const intFilter = document.getElementById('filter-int');
+                const impFilter = document.getElementById('filter-imp');
 
                 const applyFilters = () => {
                     const sig = sigFilter.value;
@@ -436,6 +521,11 @@
                     const sco = scoFilter.value;
                     const met = metFilter.value;
                     const sta = staFilter.value;
+                    const rep = repFilter.value;
+                    const con = conFilter.value;
+                    const dsc = dscFilter.value;
+                    const int = intFilter.value;
+                    const imp = impFilter.value;
 
                     const filtered = allHypotheses.filter(h => {
                         return (sig === 'all' || h.significance === sig) &&
@@ -444,7 +534,12 @@
                                (evi === 'all' || h.evidence === evi) &&
                                (sco === 'all' || h.scope === sco) &&
                                (met === 'all' || h.methodology === met) &&
-                               (sta === 'all' || h.status === sta);
+                               (sta === 'all' || h.status === sta) &&
+                               (rep === 'all' || h.reproducibility === rep) &&
+                               (con === 'all' || h.contribution === con) &&
+                               (dsc === 'all' || h.data_scope === dsc) &&
+                               (int === 'all' || h.interdisciplinary === int) &&
+                               (imp === 'all' || h.impact === imp);
                     });
                     renderCards(filtered);
                 };
@@ -456,6 +551,11 @@
                 scoFilter.addEventListener('change', applyFilters);
                 metFilter.addEventListener('change', applyFilters);
                 staFilter.addEventListener('change', applyFilters);
+                repFilter.addEventListener('change', applyFilters);
+                conFilter.addEventListener('change', applyFilters);
+                dscFilter.addEventListener('change', applyFilters);
+                intFilter.addEventListener('change', applyFilters);
+                impFilter.addEventListener('change', applyFilters);
             }
 
             document.addEventListener('DOMContentLoaded', init);

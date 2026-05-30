@@ -11,7 +11,12 @@
     "evidence": "proven",
     "scope": "meso",
     "methodology": "prosopography",
-    "status": "core"
+    "status": "core",
+    "reproducibility": "hybrid",
+    "contribution": "conceptual",
+    "data_scope": "comparative",
+    "interdisciplinary": "interdisciplinary",
+    "impact": "regional"
   },
   {
     "id": "H2",
@@ -25,7 +30,12 @@
     "evidence": "proven",
     "scope": "meso",
     "methodology": "network",
-    "status": "core"
+    "status": "core",
+    "reproducibility": "computational",
+    "contribution": "empirical",
+    "data_scope": "comparative",
+    "interdisciplinary": "interdisciplinary",
+    "impact": "regional"
   },
   {
     "id": "H3",
@@ -39,7 +49,12 @@
     "evidence": "proven",
     "scope": "meso",
     "methodology": "nlp",
-    "status": "core"
+    "status": "core",
+    "reproducibility": "computational",
+    "contribution": "empirical",
+    "data_scope": "comparative",
+    "interdisciplinary": "interdisciplinary",
+    "impact": "regional"
   },
   {
     "id": "H4",
@@ -53,7 +68,12 @@
     "evidence": "proven",
     "scope": "meso",
     "methodology": "nlp",
-    "status": "core"
+    "status": "core",
+    "reproducibility": "computational",
+    "contribution": "empirical",
+    "data_scope": "comparative",
+    "interdisciplinary": "interdisciplinary",
+    "impact": "regional"
   },
   {
     "id": "H5",
@@ -67,7 +87,12 @@
     "evidence": "refuted",
     "scope": "meso",
     "methodology": "nlp",
-    "status": "core"
+    "status": "core",
+    "reproducibility": "computational",
+    "contribution": "empirical",
+    "data_scope": "comparative",
+    "interdisciplinary": "interdisciplinary",
+    "impact": "regional"
   },
   {
     "id": "H6",
@@ -81,7 +106,12 @@
     "evidence": "proven",
     "scope": "micro",
     "methodology": "prosopography",
-    "status": "core"
+    "status": "core",
+    "reproducibility": "computational",
+    "contribution": "empirical",
+    "data_scope": "cohort",
+    "interdisciplinary": "domain_specific",
+    "impact": "niche"
   },
   {
     "id": "H7",
@@ -95,7 +125,12 @@
     "evidence": "proven",
     "scope": "macro",
     "methodology": "network",
-    "status": "core"
+    "status": "core",
+    "reproducibility": "computational",
+    "contribution": "conceptual",
+    "data_scope": "whole_corpus",
+    "interdisciplinary": "transdisciplinary",
+    "impact": "broad"
   },
   {
     "id": "H8",
@@ -109,7 +144,12 @@
     "evidence": "refuted",
     "scope": "meso",
     "methodology": "nlp",
-    "status": "core"
+    "status": "core",
+    "reproducibility": "computational",
+    "contribution": "empirical",
+    "data_scope": "comparative",
+    "interdisciplinary": "interdisciplinary",
+    "impact": "regional"
   },
   {
     "id": "H9",
@@ -123,7 +163,12 @@
     "evidence": "proven",
     "scope": "macro",
     "methodology": "gis",
-    "status": "core"
+    "status": "core",
+    "reproducibility": "computational",
+    "contribution": "empirical",
+    "data_scope": "whole_corpus",
+    "interdisciplinary": "interdisciplinary",
+    "impact": "broad"
   },
   {
     "id": "H10",
@@ -137,7 +182,12 @@
     "evidence": "refuted",
     "scope": "micro",
     "methodology": "nlp",
-    "status": "core"
+    "status": "core",
+    "reproducibility": "computational",
+    "contribution": "empirical",
+    "data_scope": "whole_corpus",
+    "interdisciplinary": "interdisciplinary",
+    "impact": "regional"
   },
   {
     "id": "H11",
@@ -151,7 +201,12 @@
     "evidence": "proven",
     "scope": "meso",
     "methodology": "prosopography",
-    "status": "core"
+    "status": "core",
+    "reproducibility": "hybrid",
+    "contribution": "conceptual",
+    "data_scope": "whole_corpus",
+    "interdisciplinary": "interdisciplinary",
+    "impact": "regional"
   },
   {
     "id": "H12",
@@ -165,7 +220,12 @@
     "evidence": "inconclusive",
     "scope": "micro",
     "methodology": "prosopography",
-    "status": "core"
+    "status": "core",
+    "reproducibility": "hybrid",
+    "contribution": "empirical",
+    "data_scope": "cohort",
+    "interdisciplinary": "interdisciplinary",
+    "impact": "regional"
   },
   {
     "id": "H13",
@@ -179,7 +239,12 @@
     "evidence": "proven",
     "scope": "meso",
     "methodology": "nlp",
-    "status": "core"
+    "status": "core",
+    "reproducibility": "computational",
+    "contribution": "methodological",
+    "data_scope": "whole_corpus",
+    "interdisciplinary": "interdisciplinary",
+    "impact": "broad"
   },
   {
     "id": "H14",
@@ -193,7 +258,12 @@
     "evidence": "proven",
     "scope": "macro",
     "methodology": "nlp",
-    "status": "core"
+    "status": "core",
+    "reproducibility": "hybrid",
+    "contribution": "conceptual",
+    "data_scope": "whole_corpus",
+    "interdisciplinary": "transdisciplinary",
+    "impact": "broad"
   },
   {
     "id": "H15",
@@ -207,7 +277,12 @@
     "evidence": "partial",
     "scope": "micro",
     "methodology": "nlp",
-    "status": "core"
+    "status": "core",
+    "reproducibility": "computational",
+    "contribution": "methodological",
+    "data_scope": "cohort",
+    "interdisciplinary": "interdisciplinary",
+    "impact": "broad"
   },
   {
     "id": "H16",
@@ -221,7 +296,12 @@
     "evidence": "refuted",
     "scope": "meso",
     "methodology": "network",
-    "status": "core"
+    "status": "core",
+    "reproducibility": "computational",
+    "contribution": "empirical",
+    "data_scope": "cohort",
+    "interdisciplinary": "interdisciplinary",
+    "impact": "regional"
   },
   {
     "id": "H17",
@@ -235,7 +315,12 @@
     "evidence": "partial",
     "scope": "meso",
     "methodology": "nlp",
-    "status": "core"
+    "status": "core",
+    "reproducibility": "computational",
+    "contribution": "empirical",
+    "data_scope": "whole_corpus",
+    "interdisciplinary": "interdisciplinary",
+    "impact": "broad"
   },
   {
     "id": "H18",
@@ -249,7 +334,12 @@
     "evidence": "proven",
     "scope": "meso",
     "methodology": "network",
-    "status": "core"
+    "status": "core",
+    "reproducibility": "computational",
+    "contribution": "empirical",
+    "data_scope": "whole_corpus",
+    "interdisciplinary": "interdisciplinary",
+    "impact": "broad"
   },
   {
     "id": "H19",
@@ -263,7 +353,12 @@
     "evidence": "proven",
     "scope": "meso",
     "methodology": "prosopography",
-    "status": "core"
+    "status": "core",
+    "reproducibility": "hybrid",
+    "contribution": "empirical",
+    "data_scope": "comparative",
+    "interdisciplinary": "interdisciplinary",
+    "impact": "regional"
   },
   {
     "id": "H20",
@@ -277,7 +372,12 @@
     "evidence": "proven",
     "scope": "macro",
     "methodology": "network",
-    "status": "core"
+    "status": "core",
+    "reproducibility": "hybrid",
+    "contribution": "conceptual",
+    "data_scope": "whole_corpus",
+    "interdisciplinary": "transdisciplinary",
+    "impact": "broad"
   },
   {
     "id": "H21",
@@ -291,7 +391,12 @@
     "evidence": "partial",
     "scope": "meso",
     "methodology": "nlp",
-    "status": "core"
+    "status": "core",
+    "reproducibility": "computational",
+    "contribution": "empirical",
+    "data_scope": "whole_corpus",
+    "interdisciplinary": "interdisciplinary",
+    "impact": "broad"
   },
   {
     "id": "H22",
@@ -305,7 +410,12 @@
     "evidence": "partial",
     "scope": "micro",
     "methodology": "nlp",
-    "status": "core"
+    "status": "core",
+    "reproducibility": "computational",
+    "contribution": "empirical",
+    "data_scope": "cohort",
+    "interdisciplinary": "interdisciplinary",
+    "impact": "regional"
   },
   {
     "id": "H23",
@@ -319,7 +429,12 @@
     "evidence": "inconclusive",
     "scope": "meso",
     "methodology": "prosopography",
-    "status": "future"
+    "status": "future",
+    "reproducibility": "hybrid",
+    "contribution": "empirical",
+    "data_scope": "whole_corpus",
+    "interdisciplinary": "interdisciplinary",
+    "impact": "broad"
   },
   {
     "id": "H24",
@@ -333,7 +448,12 @@
     "evidence": "partial",
     "scope": "micro",
     "methodology": "nlp",
-    "status": "core"
+    "status": "core",
+    "reproducibility": "computational",
+    "contribution": "empirical",
+    "data_scope": "whole_corpus",
+    "interdisciplinary": "interdisciplinary",
+    "impact": "broad"
   },
   {
     "id": "H25",
@@ -347,7 +467,12 @@
     "evidence": "proven",
     "scope": "meso",
     "methodology": "nlp",
-    "status": "core"
+    "status": "core",
+    "reproducibility": "computational",
+    "contribution": "empirical",
+    "data_scope": "whole_corpus",
+    "interdisciplinary": "interdisciplinary",
+    "impact": "broad"
   },
   {
     "id": "H26",
@@ -361,7 +486,12 @@
     "evidence": "proven",
     "scope": "macro",
     "methodology": "nlp",
-    "status": "core"
+    "status": "core",
+    "reproducibility": "hybrid",
+    "contribution": "conceptual",
+    "data_scope": "whole_corpus",
+    "interdisciplinary": "transdisciplinary",
+    "impact": "broad"
   },
   {
     "id": "H27",
@@ -375,7 +505,12 @@
     "evidence": "proven",
     "scope": "macro",
     "methodology": "nlp",
-    "status": "core"
+    "status": "core",
+    "reproducibility": "computational",
+    "contribution": "empirical",
+    "data_scope": "whole_corpus",
+    "interdisciplinary": "interdisciplinary",
+    "impact": "broad"
   },
   {
     "id": "H28",
@@ -389,7 +524,12 @@
     "evidence": "partial",
     "scope": "meso",
     "methodology": "nlp",
-    "status": "core"
+    "status": "core",
+    "reproducibility": "computational",
+    "contribution": "empirical",
+    "data_scope": "comparative",
+    "interdisciplinary": "interdisciplinary",
+    "impact": "regional"
   },
   {
     "id": "H29",
@@ -403,7 +543,12 @@
     "evidence": "proven",
     "scope": "meso",
     "methodology": "nlp",
-    "status": "core"
+    "status": "core",
+    "reproducibility": "computational",
+    "contribution": "empirical",
+    "data_scope": "whole_corpus",
+    "interdisciplinary": "interdisciplinary",
+    "impact": "regional"
   },
   {
     "id": "H30",
@@ -417,7 +562,12 @@
     "evidence": "proven",
     "scope": "macro",
     "methodology": "nlp",
-    "status": "core"
+    "status": "core",
+    "reproducibility": "computational",
+    "contribution": "empirical",
+    "data_scope": "whole_corpus",
+    "interdisciplinary": "interdisciplinary",
+    "impact": "broad"
   },
   {
     "id": "H31",
@@ -431,7 +581,12 @@
     "evidence": "proven",
     "scope": "macro",
     "methodology": "nlp",
-    "status": "core"
+    "status": "core",
+    "reproducibility": "qualitative",
+    "contribution": "conceptual",
+    "data_scope": "cohort",
+    "interdisciplinary": "domain_specific",
+    "impact": "regional"
   },
   {
     "id": "H32",
@@ -445,7 +600,12 @@
     "evidence": "refuted",
     "scope": "macro",
     "methodology": "nlp",
-    "status": "core"
+    "status": "core",
+    "reproducibility": "computational",
+    "contribution": "empirical",
+    "data_scope": "whole_corpus",
+    "interdisciplinary": "interdisciplinary",
+    "impact": "broad"
   },
   {
     "id": "H33",
@@ -459,7 +619,12 @@
     "evidence": "proven",
     "scope": "micro",
     "methodology": "nlp",
-    "status": "core"
+    "status": "core",
+    "reproducibility": "computational",
+    "contribution": "empirical",
+    "data_scope": "cohort",
+    "interdisciplinary": "interdisciplinary",
+    "impact": "regional"
   },
   {
     "id": "H34",
@@ -473,7 +638,12 @@
     "evidence": "inconclusive",
     "scope": "micro",
     "methodology": "nlp",
-    "status": "core"
+    "status": "core",
+    "reproducibility": "computational",
+    "contribution": "empirical",
+    "data_scope": "whole_corpus",
+    "interdisciplinary": "interdisciplinary",
+    "impact": "broad"
   },
   {
     "id": "H35",
@@ -487,6 +657,11 @@
     "evidence": "proven",
     "scope": "macro",
     "methodology": "network",
-    "status": "core"
+    "status": "core",
+    "reproducibility": "computational",
+    "contribution": "empirical",
+    "data_scope": "cohort",
+    "interdisciplinary": "interdisciplinary",
+    "impact": "broad"
   }
 ]
