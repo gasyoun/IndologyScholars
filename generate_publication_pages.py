@@ -5085,11 +5085,13 @@ def generate_visualisations_page(data, records):
             <a href="#VIS_009_cohort_survival" class="viz-toc-item">
                 <span>VIS_009</span>
                 <b class="bilingual-text" data-ru="Кривые выживаемости когорт" data-en="Cohort Survival Curves">Кривые выживаемости когорт</b>
+                <span class="badge" style="background:#6c5ce7; color:white; margin-right:4px;" title="Гипотеза H16">H16</span>
                 <span class="badge badge-online bilingual-text" data-ru="Активна" data-en="Active">Активна</span>
             </a>
             <a href="#VIS_010_newcomer_rate" class="viz-toc-item">
                 <span>VIS_010</span>
                 <b class="bilingual-text" data-ru="Темп обновления (доля новичков)" data-en="Renewal Rate (newcomer share)">Темп обновления (доля новичков)</b>
+                <span class="badge" style="background:#6c5ce7; color:white; margin-right:4px;" title="Гипотеза H22">H22</span>
                 <span class="badge badge-online bilingual-text" data-ru="Активна" data-en="Active">Активна</span>
             </a>
             <a href="#VIS_023_loyalty" class="viz-toc-item">
@@ -5123,6 +5125,7 @@ def generate_visualisations_page(data, records):
             <a href="#VIS_042_inst_bias" class="viz-toc-item">
                 <span>VIS_042</span>
                 <b class="bilingual-text" data-ru="Город vs учреждение" data-en="City vs Institution">Город vs учреждение</b>
+                <span class="badge" style="background:#6c5ce7; color:white; margin-right:4px;" title="Гипотеза H11">H11</span>
                 <span class="badge badge-online bilingual-text" data-ru="Активна" data-en="Active">Активна</span>
             </a>
 
@@ -5189,6 +5192,7 @@ def generate_visualisations_page(data, records):
             <a href="#VIS_041_newbie_themes" class="viz-toc-item">
                 <span>VIS_041</span>
                 <b class="bilingual-text" data-ru="Входные ворота (темы)" data-en="Newbie Entry Topics">Входные ворота (темы)</b>
+                <span class="badge" style="background:#6c5ce7; color:white; margin-right:4px;" title="Гипотеза H22">H22</span>
                 <span class="badge badge-online bilingual-text" data-ru="Активна" data-en="Active">Активна</span>
             </a>
             <a href="#VIS_026_confidence" class="viz-toc-item">
@@ -5212,21 +5216,25 @@ def generate_visualisations_page(data, records):
             <a href="#VIS_031_age_scale" class="viz-toc-item">
                 <span>VIS_031</span>
                 <b class="bilingual-text" data-ru="Возраст и масштаб (G1-G3)" data-en="Age vs Abstraction (G1-G3)">Возраст и масштаб (G1-G3)</b>
+                <span class="badge" style="background:#6c5ce7; color:white; margin-right:4px;" title="Гипотеза H35">H35</span>
                 <span class="badge badge-online bilingual-text" data-ru="Активна" data-en="Active">Активна</span>
             </a>
             <a href="#VIS_032_disc_scale" class="viz-toc-item">
                 <span>VIS_032</span>
                 <b class="bilingual-text" data-ru="Дисциплина и масштаб" data-en="Discipline vs Abstraction">Дисциплина и масштаб</b>
+                <span class="badge" style="background:#6c5ce7; color:white; margin-right:4px;" title="Гипотеза H34">H34</span>
                 <span class="badge badge-online bilingual-text" data-ru="Активна" data-en="Active">Активна</span>
             </a>
             <a href="#VIS_033_core_scale" class="viz-toc-item">
                 <span>VIS_033</span>
                 <b class="bilingual-text" data-ru="Масштаб: ядро vs периферия" data-en="Scale: Core vs Periphery">Масштаб: ядро vs периферия</b>
+                <span class="badge" style="background:#6c5ce7; color:white; margin-right:4px;" title="Гипотеза H32">H32</span>
                 <span class="badge badge-online bilingual-text" data-ru="Активна" data-en="Active">Активна</span>
             </a>
             <a href="#VIS_034_bridge_scale" class="viz-toc-item">
                 <span>VIS_034</span>
                 <b class="bilingual-text" data-ru="Масштаб: мостовики vs локальные" data-en="Scale: Bridges vs Local">Масштаб: мостовики vs локальные</b>
+                <span class="badge" style="background:#6c5ce7; color:white; margin-right:4px;" title="Гипотеза H27">H27</span>
                 <span class="badge badge-online bilingual-text" data-ru="Активна" data-en="Active">Активна</span>
             </a>
             <a href="#VIS_025_scale" class="viz-toc-item">
@@ -5247,11 +5255,13 @@ def generate_visualisations_page(data, records):
             <a href="#VIS_035_words" class="viz-toc-item">
                 <span>VIS_035</span>
                 <b class="bilingual-text" data-ru="Инфляция заголовков (слова)" data-en="Title Length Inflation (Words)">Инфляция заголовков (слова)</b>
+                <span class="badge" style="background:#6c5ce7; color:white; margin-right:4px;" title="Гипотеза H24">H24</span>
                 <span class="badge badge-online bilingual-text" data-ru="Активна" data-en="Active">Активна</span>
             </a>
             <a href="#VIS_036_colons" class="viz-toc-item">
                 <span>VIS_036</span>
                 <b class="bilingual-text" data-ru="Эра подзаголовков (двоеточия)" data-en="The Colon Era">Эра подзаголовков (двоеточия)</b>
+                <span class="badge" style="background:#6c5ce7; color:white; margin-right:4px;" title="Гипотеза H24">H24</span>
                 <span class="badge badge-online bilingual-text" data-ru="Активна" data-en="Active">Активна</span>
             </a>
             <a href="#VIS_019_coauthorship" class="viz-toc-item">
@@ -5262,6 +5272,7 @@ def generate_visualisations_page(data, records):
             <a href="#VIS_037_coauthors" class="viz-toc-item">
                 <span>VIS_037</span>
                 <b class="bilingual-text" data-ru="Коллективность и микрокейс" data-en="Co-authorship vs Gumilyov Scale">Коллективность и микрокейс</b>
+                <span class="badge" style="background:#6c5ce7; color:white; margin-right:4px;" title="Гипотеза H20">H20</span>
                 <span class="badge badge-online bilingual-text" data-ru="Активна" data-en="Active">Активна</span>
             </a>
 
@@ -5280,16 +5291,19 @@ def generate_visualisations_page(data, records):
             <a href="#VIS_038_vid_years" class="viz-toc-item">
                 <span>VIS_038</span>
                 <b class="bilingual-text" data-ru="Радары видимости (YouTube Bias)" data-en="Visibility Radars (YouTube Bias)">Радары видимости (YouTube Bias)</b>
+                <span class="badge" style="background:#6c5ce7; color:white; margin-right:4px;" title="Гипотеза H13">H13</span>
                 <span class="badge badge-online bilingual-text" data-ru="Активна" data-en="Active">Активна</span>
             </a>
             <a href="#VIS_039_vid_scale" class="viz-toc-item">
                 <span>VIS_039</span>
                 <b class="bilingual-text" data-ru="Смещение в микрокейсы" data-en="Microcase Bias">Смещение в микрокейсы</b>
+                <span class="badge" style="background:#6c5ce7; color:white; margin-right:4px;" title="Гипотеза H30">H30</span>
                 <span class="badge badge-online bilingual-text" data-ru="Активна" data-en="Active">Активна</span>
             </a>
             <a href="#VIS_040_vid_core" class="viz-toc-item">
                 <span>VIS_040</span>
                 <b class="bilingual-text" data-ru="Статус и камера" data-en="Status and Camera">Статус и камера</b>
+                <span class="badge" style="background:#6c5ce7; color:white; margin-right:4px;" title="Гипотеза H25">H25</span>
                 <span class="badge badge-online bilingual-text" data-ru="Активна" data-en="Active">Активна</span>
             </a>
         </section>
@@ -5453,6 +5467,7 @@ def generate_visualisations_page(data, records):
             <h2>
                 <span class="viz-id-badge">VIS_010</span>
                 <span class="bilingual-text" data-ru="Географическая карта аффилиаций" data-en="Geospatial Affiliation Map">Географическая карта аффилиаций</span>
+                <span class="badge" style="background:#6c5ce7; color:white;" title="Гипотеза H22">H22</span>
             </h2>
             <p class="bilingual-text" style="color:var(--muted); font-size:0.9rem;" data-ru="География участников индологических конференций. Размер пузырьков отображает общее число докладов от исследователей из этих городов." data-en="Geography of Indology scholars. Bubble sizes represent the total number of presentations given by researchers based in these cities.">География участников индологических конференций.</p>
             <div id="geo-wrapper" style="position:relative; width:100%; overflow:hidden; margin-top:2rem;">
@@ -5503,6 +5518,7 @@ def generate_visualisations_page(data, records):
             <h2>
                 <span class="viz-id-badge">VIS_009</span>
                 <span class="bilingual-text" data-ru="Кривые выживаемости когорт" data-en="Cohort Survival Curves">Кривые выживаемости когорт</span>
+                <span class="badge" style="background:#6c5ce7; color:white;" title="Гипотеза H16">H16</span>
             </h2>
             <p class="bilingual-text" style="color:var(--muted); font-size:0.9rem;" data-ru="Каждая линия — когорта дебютантов одного года. По оси X — годы после первого доклада, по оси Y — доля когорты, всё ещё активной. Показаны только когорты от 5 человек." data-en="Each line is a cohort of scholars who debuted in the same year. X axis: years since first talk; Y axis: share of the cohort still active. Only cohorts of 5+ are shown.">Каждая линия — когорта дебютантов одного года; ось Y — доля когорты, всё ещё активной.</p>
             <div id="survival-wrapper" style="position:relative; width:100%; overflow:hidden; margin-top:1.5rem;">
@@ -5520,6 +5536,7 @@ def generate_visualisations_page(data, records):
             <h2>
                 <span class="viz-id-badge">VIS_010</span>
                 <span class="bilingual-text" data-ru="Темп обновления" data-en="Renewal Rate">Темп обновления</span>
+                <span class="badge" style="background:#6c5ce7; color:white;" title="Гипотеза H22">H22</span>
             </h2>
             <p class="bilingual-text" style="color:var(--muted); font-size:0.9rem;" data-ru="Доля докладчиков-новичков в каждом году (тех, кто ранее не выступал в данной серии). Высокие значения — приток новых людей, низкие — опора на постоянный круг." data-en="Share of first-time speakers each year (those who had not presented in that series before). High values signal an influx of new people; low values, reliance on a fixed core.">Доля докладчиков-новичков в каждом году по каждой серии.</p>
             <div id="newcomer-wrapper" style="position:relative; width:100%; overflow:hidden; margin-top:1.5rem;">
@@ -5798,6 +5815,7 @@ def generate_visualisations_page(data, records):
             <h2>
                 <span class="viz-id-badge">VIS_031</span>
                 <span class="bilingual-text" data-ru="Возраст и Масштаб обобщения (Шкала Гумилева)" data-en="Age vs Scale of Abstraction">Возраст и Масштаб обобщения</span>
+                <span class="badge" style="background:#6c5ce7; color:white;" title="Гипотеза H35">H35</span>
             </h2>
             <p class="bilingual-text" style="color:var(--muted); font-size:0.9rem;" data-ru="Распределение возраста авторов для докладов уровней G1, G2, G3. Подтверждает гипотезу H35 о том, что широкое обобщение — прерогатива старшего поколения." data-en="Distribution of author age for G1, G2, G3 presentations. Supports H35.">Возраст авторов и масштаб доклада.</p>
             <div id="vis031-wrapper" style="position:relative; width:100%; overflow:hidden; margin-top:1.5rem;">
@@ -5811,6 +5829,7 @@ def generate_visualisations_page(data, records):
             <h2>
                 <span class="viz-id-badge">VIS_032</span>
                 <span class="bilingual-text" data-ru="Дисциплинарный масштаб" data-en="Disciplinary Scale">Дисциплинарный масштаб</span>
+                <span class="badge" style="background:#6c5ce7; color:white;" title="Гипотеза H34">H34</span>
             </h2>
             <p class="bilingual-text" style="color:var(--muted); font-size:0.9rem;" data-ru="Доля микрокейсов (G1) и обобщений (G2/G3) внутри каждой дисциплины (L1). Подтверждает гипотезу H34." data-en="Share of microcases (G1) and generalizations (G2/G3) by discipline (L1). Supports H34.">Масштаб обобщения по дисциплинам.</p>
             <div id="vis032-wrapper" style="position:relative; width:100%; overflow:hidden; margin-top:1.5rem;">
@@ -5824,6 +5843,7 @@ def generate_visualisations_page(data, records):
             <h2>
                 <span class="viz-id-badge">VIS_033</span>
                 <span class="bilingual-text" data-ru="Масштаб: Ядро vs Периферия" data-en="Scale: Core vs Periphery">Масштаб: Ядро vs Периферия</span>
+                <span class="badge" style="background:#6c5ce7; color:white;" title="Гипотеза H32">H32</span>
             </h2>
             <p class="bilingual-text" style="color:var(--muted); font-size:0.9rem;" data-ru="Подтверждает H32: Ядро (>=5 докладов) не производит больше макрообобщений (G3), чем периферия." data-en="Supports H32: Core (>=5 talks) does not produce more macro generalizations than periphery.">Масштаб обобщения у Ядра и Периферии.</p>
             <div id="vis033-wrapper" style="position:relative; width:100%; overflow:hidden; margin-top:1.5rem;">
@@ -5837,6 +5857,7 @@ def generate_visualisations_page(data, records):
             <h2>
                 <span class="viz-id-badge">VIS_034</span>
                 <span class="bilingual-text" data-ru="Масштаб: Мостовики vs Локальные" data-en="Scale: Bridges vs Local">Масштаб: Мостовики vs Локальные</span>
+                <span class="badge" style="background:#6c5ce7; color:white;" title="Гипотеза H27">H27</span>
             </h2>
             <p class="bilingual-text" style="color:var(--muted); font-size:0.9rem;" data-ru="Подтверждает H27: Участники обеих площадок не являются синтетиками, их доля макрообобщений даже ниже." data-en="Supports H27: Bridge scholars are not macro-synthesizers.">Масштаб мышления участников обеих площадок.</p>
             <div id="vis034-wrapper" style="position:relative; width:100%; overflow:hidden; margin-top:1.5rem;">
@@ -5849,6 +5870,7 @@ def generate_visualisations_page(data, records):
             <h2>
                 <span class="viz-id-badge">VIS_035</span>
                 <span class="bilingual-text" data-ru="Инфляция заголовков (Слова)" data-en="Title Length Inflation (Words)">Инфляция заголовков (Слова)</span>
+                <span class="badge" style="background:#6c5ce7; color:white;" title="Гипотеза H24">H24</span>
             </h2>
             <p class="bilingual-text" style="color:var(--muted); font-size:0.9rem;" data-ru="Среднее количество слов в названиях докладов по годам. Подтверждает гипотезу H24 о сдвиге в сторону объяснительных и длинных заголовков." data-en="Average number of words in presentation titles by year. Supports H24.">Среднее количество слов в названиях докладов.</p>
             <div id="vis035-wrapper" style="position:relative; width:100%; overflow:hidden; margin-top:1.5rem;">
@@ -5862,6 +5884,7 @@ def generate_visualisations_page(data, records):
             <h2>
                 <span class="viz-id-badge">VIS_036</span>
                 <span class="bilingual-text" data-ru="Эра подзаголовков" data-en="The Colon Era">Эра подзаголовков</span>
+                <span class="badge" style="background:#6c5ce7; color:white;" title="Гипотеза H24">H24</span>
             </h2>
             <p class="bilingual-text" style="color:var(--muted); font-size:0.9rem;" data-ru="Доля названий докладов, содержащих двоеточие (как признак объяснительного подзаголовка). Подтверждает гипотезу H24." data-en="Share of presentation titles containing a colon (indicating an explanatory subtitle). Supports H24.">Доля названий докладов с подзаголовком (через двоеточие).</p>
             <div id="vis036-wrapper" style="position:relative; width:100%; overflow:hidden; margin-top:1.5rem;">
@@ -5875,6 +5898,7 @@ def generate_visualisations_page(data, records):
             <h2>
                 <span class="viz-id-badge">VIS_037</span>
                 <span class="bilingual-text" data-ru="Коллективность и Масштаб" data-en="Co-authorship vs Scale">Коллективность и Масштаб</span>
+                <span class="badge" style="background:#6c5ce7; color:white;" title="Гипотеза H20">H20</span>
             </h2>
             <p class="bilingual-text" style="color:var(--muted); font-size:0.9rem;" data-ru="Корреляция между коллективным авторством и уровнем обобщения. Подтверждает гипотезу H20." data-en="Correlation between multi-authorship and the level of generalization (Gumilyov scale). Supports H20.">Масштаб обобщения у индивидуальных и коллективных докладов.</p>
             <div id="vis037-wrapper" style="position:relative; width:100%; overflow:hidden; margin-top:1.5rem;">
@@ -5887,6 +5911,7 @@ def generate_visualisations_page(data, records):
             <h2>
                 <span class="viz-id-badge">VIS_038</span>
                 <span class="bilingual-text" data-ru="Радары видимости (YouTube Bias)" data-en="Visibility Radars (YouTube Bias)">Радары видимости (YouTube Bias)</span>
+                <span class="badge" style="background:#6c5ce7; color:white;" title="Гипотеза H13">H13</span>
             </h2>
             <p class="bilingual-text" style="color:var(--muted); font-size:0.9rem;" data-ru="Количество записанных на видео докладов (красный) относительно общего числа докладов (синий) по годам. Доказывает H13 об огромном историческом перекосе медиа-архива." data-en="Number of video-recorded presentations vs total presentations by year. Proves H13 regarding the massive historical bias of the media archive.">Покрытие конференции видеозаписями.</p>
             <div id="vis038-wrapper" style="position:relative; width:100%; overflow:hidden; margin-top:1.5rem;">
@@ -5900,6 +5925,7 @@ def generate_visualisations_page(data, records):
             <h2>
                 <span class="viz-id-badge">VIS_039</span>
                 <span class="bilingual-text" data-ru="Смещение в Микрокейсы" data-en="Microcase Bias">Смещение в Микрокейсы</span>
+                <span class="badge" style="background:#6c5ce7; color:white;" title="Гипотеза H30">H30</span>
             </h2>
             <p class="bilingual-text" style="color:var(--muted); font-size:0.9rem;" data-ru="Распределение записанных и незаписанных докладов по шкале Гумилева. Доказывает H30: на видео попадают почти исключительно G1, макрообобщения мы не записываем." data-en="Distribution of recorded and unrecorded talks on the Gumilyov scale. Proves H30: video almost exclusively captures G1 microcases.">Какие жанры попадают на YouTube?</p>
             <div id="vis039-wrapper" style="position:relative; width:100%; overflow:hidden; margin-top:1.5rem;">
@@ -5913,6 +5939,7 @@ def generate_visualisations_page(data, records):
             <h2>
                 <span class="viz-id-badge">VIS_040</span>
                 <span class="bilingual-text" data-ru="Статус и Камера" data-en="Status and Camera">Статус и Камера</span>
+                <span class="badge" style="background:#6c5ce7; color:white;" title="Гипотеза H25">H25</span>
             </h2>
             <p class="bilingual-text" style="color:var(--muted); font-size:0.9rem;" data-ru="Сравнение покрытия видеозаписями Ядра (>=5 докладов) и Периферии. Доказывает H25: камера снимает не по статусу ученого, а по технической случайности." data-en="Comparison of video coverage for Core (>=5 talks) vs Periphery. Proves H25: the camera records by chance, not by academic status.">Зависит ли видеозапись от статуса ученого?</p>
             <div id="vis040-wrapper" style="position:relative; width:100%; overflow:hidden; margin-top:1.5rem;">
@@ -5925,6 +5952,7 @@ def generate_visualisations_page(data, records):
             <h2>
                 <span class="viz-id-badge">VIS_041</span>
                 <span class="bilingual-text" data-ru="Входные ворота (Темы новичков)" data-en="Newbie Entry Topics">Входные ворота</span>
+                <span class="badge" style="background:#6c5ce7; color:white;" title="Гипотеза H22">H22</span>
             </h2>
             <p class="bilingual-text" style="color:var(--muted); font-size:0.9rem;" data-ru="Темы (L2 Period), через которые дебютанты входят в сообщество, в сравнении с темами старожилов. Доказывает H22: новички чаще входят через современность/колониализм." data-en="Topics (L2 Period) chosen by newcomers vs veterans. Proves H22: newcomers enter through modern/colonial topics.">Темы дебютных докладов.</p>
             <div id="vis041-wrapper" style="position:relative; width:100%; overflow:hidden; margin-top:1.5rem;">
@@ -5938,6 +5966,7 @@ def generate_visualisations_page(data, records):
             <h2>
                 <span class="viz-id-badge">VIS_042</span>
                 <span class="bilingual-text" data-ru="Город vs Учреждение" data-en="City vs Institution Format">Город vs Учреждение</span>
+                <span class="badge" style="background:#6c5ce7; color:white;" title="Гипотеза H11">H11</span>
             </h2>
             <p class="bilingual-text" style="color:var(--muted); font-size:0.9rem;" data-ru="Формат указания аффилиации на двух площадках. Доказывает H11: Зографские чтения — это площадка городской идентичности (94.7% не указывают учреждение), в отличие от Рериховских (87% указывают)." data-en="Affiliation format on the two platforms. Proves H11: Zograf is a city-identity platform, Roerich is institutional.">Институциональный партикуляризм площадок.</p>
             <div id="vis042-wrapper" style="position:relative; width:100%; overflow:hidden; margin-top:1.5rem;">
