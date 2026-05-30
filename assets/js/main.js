@@ -15,7 +15,31 @@ import { renderGrowthChart, renderCohortDistribution, renderGeoChart, renderSank
 
         // Language state
         
-        document.addEventListener('DOMContentLoaded', () => {
+        
+        // Fuzzy search setup with Fuse.js (hoisted to avoid memory leak)
+        let scholarFuse = null;
+        
+        const initFuse = () => {
+            if (!scholarFuse && window.Fuse && window.CONFERENCE_DATA && window.CONFERENCE_DATA.scholars) {
+                scholarFuse = new Fuse(window.CONFERENCE_DATA.scholars, {
+                    keys: ['full_name_ru', 'full_name_en'],
+                    threshold: 0.3,
+                    ignoreLocation: true
+                });
+            }
+        };
+
+        // Hide dropdowns on outside click - attached once globally
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.search-wrapper')) {
+                const scAuto = document.getElementById('scholars-autocomplete');
+                const tkAuto = document.getElementById('talks-autocomplete');
+                if(scAuto) scAuto.hidden = true;
+                if(tkAuto) tkAuto.hidden = true;
+            }
+        });
+
+document.addEventListener('DOMContentLoaded', () => {
             // Restore language if it's 'en' (since HTML defaults to RU)
             if (state.currentLang === 'en') {
                 state.currentLang = 'ru'; // set back so toggle swaps it correctly
@@ -88,7 +112,10 @@ import { renderGrowthChart, renderCohortDistribution, renderGeoChart, renderSank
             
             // Update button label
             document.getElementById('lang-switch-btn').textContent = state.currentLang === 'ru' ? 'EN' : 'RU';
-            document.getElementById('export-md-btn').textContent = state.currentLang === 'ru' ? 'Экспорт' : 'Export';
+            const exportHeader = document.getElementById('export-md-btn-header');
+            if (exportHeader) exportHeader.textContent = state.currentLang === 'ru' ? 'Экспорт' : 'Export';
+            const exportTable = document.getElementById('export-md-btn');
+            if (exportTable) exportTable.textContent = state.currentLang === 'ru' ? 'Экспорт' : 'Export';
             
             // Translate static elements
             const t = TRANSLATIONS[state.currentLang];
@@ -167,8 +194,6 @@ import { renderGrowthChart, renderCohortDistribution, renderGeoChart, renderSank
 
             // Re-render dynamic content
             updateSummaryStats();
-            initTilt();
-            observeReveals();
             renderScholarsTable();
             renderMatchingTalks(document.getElementById('talks-search').value.trim());
             initTimeline();
@@ -297,6 +322,47 @@ import { renderGrowthChart, renderCohortDistribution, renderGeoChart, renderSank
             }
         }
 
+        function renderTalkCard(talk, t, seriesClass) {
+            const dayName = talk.day_of_week ? talk.day_of_week[state.currentLang] : (state.currentLang === 'ru' ? 'Не указан' : 'Not specified');
+            
+            // Rank/order badge
+            let orderPillHtml = `<span class="badge" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: var(--text-secondary); font-size: 0.65rem; text-transform: none; margin-left: 0.5rem; padding: 0.15rem 0.4rem;"># ${t.orderTalkBadge.replace('{num}', talk.order_in_session).replace('{total}', talk.total_in_session)}</span>`;
+            if (talk.is_first_talk) {
+                orderPillHtml += `<span class="badge badge-zograf" style="font-size: 0.65rem; text-transform: none; margin-left: 0.5rem; padding: 0.15rem 0.4rem;">🥇 ${t.firstTalkBadge}</span>`;
+            }
+            if (talk.is_last_talk) {
+                orderPillHtml += `<span class="badge badge-roerich" style="font-size: 0.65rem; text-transform: none; margin-left: 0.5rem; padding: 0.15rem 0.4rem;">🎖️ ${t.lastTalkBadge}</span>`;
+            }
+
+            let presenterBadges = '';
+            if (talk.is_student) presenterBadges += `<span class="badge badge-roerich" style="font-size: 0.65rem; text-transform: none; margin-left: 0.5rem; padding: 0.15rem 0.4rem;">🎓 ${t.studentBadge}</span>`;
+            if (talk.is_independent) presenterBadges += `<span class="badge badge-zograf" style="font-size: 0.65rem; text-transform: none; margin-left: 0.5rem; padding: 0.15rem 0.4rem;">💼 ${t.independentBadge}</span>`;
+
+            return `
+                <div class="timeline-talk-card">
+                    <div class="timeline-talk-title">
+                        «${talk.title}»
+                        ${orderPillHtml}
+                    </div>
+                    <div class="timeline-talk-speaker">
+                        <strong>${talk.speaker}</strong> 
+                        ${talk.affiliation ? `<span class="badge ${seriesClass}" style="font-size: 0.7rem;">${translateAffiliation(talk.affiliation)}</span>` : ''}
+                        ${talk.is_online ? `<span class="badge badge-online">${t.onlineBadge}</span>` : ''}
+                        ${talk.videos && talk.videos.length ? `<span class="badge badge-video">${t.videoBadge}</span>` : ''}
+                        ${presenterBadges}
+                    </div>
+                    <div class="timeline-talk-meta" style="margin-top: 0.75rem;">
+                        <span>🏛️ <strong>${t.venue}</strong>: ${translateAffiliation(talk.venue)}</span>
+                        <span>💬 <strong>${t.session}</strong>: ${talk.session || (state.currentLang === 'ru' ? 'Научное заседание' : 'Scientific Session')}</span>
+                    </div>
+                    <div class="timeline-talk-meta" style="margin-top: 0.25rem; font-size: 0.78rem; color: var(--text-muted);">
+                        <span>📅 <strong>${t.day}</strong>: ${dayName} (${talk.date || ''})</span>
+                        <span>⏰ <strong>${t.timeLabel}</strong>: ${talk.time_interval}</span>
+                    </div>
+                </div>
+            `;
+        }
+
         function renderYearContent(year) {
             const body = document.getElementById('yb-' + year);
             if (!body) return;
@@ -313,46 +379,7 @@ import { renderGrowthChart, renderCohortDistribution, renderGeoChart, renderSank
                     <div class="series-block">
                         <div class="series-title-header">${t.zografReadingsLabel}</div>
                         <div class="talks-timeline-list">
-                            ${zTalks.map(talk => {
-                                const dayName = talk.day_of_week ? talk.day_of_week[state.currentLang] : (state.currentLang === 'ru' ? 'Не указан' : 'Not specified');
-                                
-                                // Rank/order badge
-                                let orderPillHtml = `<span class="badge" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: var(--text-secondary); font-size: 0.65rem; text-transform: none; margin-left: 0.5rem; padding: 0.15rem 0.4rem;"># ${t.orderTalkBadge.replace('{num}', talk.order_in_session).replace('{total}', talk.total_in_session)}</span>`;
-                                if (talk.is_first_talk) {
-                                    orderPillHtml += `<span class="badge badge-zograf" style="font-size: 0.65rem; text-transform: none; margin-left: 0.5rem; padding: 0.15rem 0.4rem;">🥇 ${t.firstTalkBadge}</span>`;
-                                }
-                                if (talk.is_last_talk) {
-                                    orderPillHtml += `<span class="badge badge-roerich" style="font-size: 0.65rem; text-transform: none; margin-left: 0.5rem; padding: 0.15rem 0.4rem;">🎖️ ${t.lastTalkBadge}</span>`;
-                                }
-
-                                let presenterBadges = '';
-                                if (talk.is_student) presenterBadges += `<span class="badge badge-roerich" style="font-size: 0.65rem; text-transform: none; margin-left: 0.5rem; padding: 0.15rem 0.4rem;">🎓 ${t.studentBadge}</span>`;
-                                if (talk.is_independent) presenterBadges += `<span class="badge badge-zograf" style="font-size: 0.65rem; text-transform: none; margin-left: 0.5rem; padding: 0.15rem 0.4rem;">💼 ${t.independentBadge}</span>`;
-
-                                return `
-                                    <div class="timeline-talk-card">
-                                        <div class="timeline-talk-title">
-                                            «${talk.title}»
-                                            ${orderPillHtml}
-                                        </div>
-                                        <div class="timeline-talk-speaker">
-                                            <strong>${talk.speaker}</strong> 
-                                            ${talk.affiliation ? `<span class="badge badge-zograf" style="font-size: 0.7rem;">${translateAffiliation(talk.affiliation)}</span>` : ''}
-                                            ${talk.is_online ? `<span class="badge badge-online">${t.onlineBadge}</span>` : ''}
-                                            ${talk.videos && talk.videos.length ? `<span class="badge badge-video">${t.videoBadge}</span>` : ''}
-                                            ${presenterBadges}
-                                        </div>
-                                        <div class="timeline-talk-meta" style="margin-top: 0.75rem;">
-                                            <span>🏛️ <strong>${t.venue}</strong>: ${translateAffiliation(talk.venue)}</span>
-                                            <span>💬 <strong>${t.session}</strong>: ${talk.session || (state.currentLang === 'ru' ? 'Научное заседание' : 'Scientific Session')}</span>
-                                        </div>
-                                        <div class="timeline-talk-meta" style="margin-top: 0.25rem; font-size: 0.78rem; color: var(--text-muted);">
-                                            <span>📅 <strong>${t.day}</strong>: ${dayName} (${talk.date || ''})</span>
-                                            <span>⏰ <strong>${t.timeLabel}</strong>: ${talk.time_interval}</span>
-                                        </div>
-                                    </div>
-                                `;
-                            }).join('')}
+                            ${zTalks.map(talk => renderTalkCard(talk, t, 'badge-zograf')).join('')}
                         </div>
                     </div>
                 ` : ''}
@@ -360,46 +387,7 @@ import { renderGrowthChart, renderCohortDistribution, renderGeoChart, renderSank
                     <div class="series-block">
                         <div class="series-title-header roerich">${t.roerichReadingsLabel}</div>
                         <div class="talks-timeline-list">
-                            ${rTalks.map(talk => {
-                                const dayName = talk.day_of_week ? talk.day_of_week[state.currentLang] : (state.currentLang === 'ru' ? 'Не указан' : 'Not specified');
-                                
-                                // Rank/order badge
-                                let orderPillHtml = `<span class="badge" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: var(--text-secondary); font-size: 0.65rem; text-transform: none; margin-left: 0.5rem; padding: 0.15rem 0.4rem;"># ${t.orderTalkBadge.replace('{num}', talk.order_in_session).replace('{total}', talk.total_in_session)}</span>`;
-                                if (talk.is_first_talk) {
-                                    orderPillHtml += `<span class="badge badge-zograf" style="font-size: 0.65rem; text-transform: none; margin-left: 0.5rem; padding: 0.15rem 0.4rem;">🥇 ${t.firstTalkBadge}</span>`;
-                                }
-                                if (talk.is_last_talk) {
-                                    orderPillHtml += `<span class="badge badge-roerich" style="font-size: 0.65rem; text-transform: none; margin-left: 0.5rem; padding: 0.15rem 0.4rem;">🎖️ ${t.lastTalkBadge}</span>`;
-                                }
-
-                                let presenterBadges = '';
-                                if (talk.is_student) presenterBadges += `<span class="badge badge-roerich" style="font-size: 0.65rem; text-transform: none; margin-left: 0.5rem; padding: 0.15rem 0.4rem;">🎓 ${t.studentBadge}</span>`;
-                                if (talk.is_independent) presenterBadges += `<span class="badge badge-zograf" style="font-size: 0.65rem; text-transform: none; margin-left: 0.5rem; padding: 0.15rem 0.4rem;">💼 ${t.independentBadge}</span>`;
-
-                                return `
-                                    <div class="timeline-talk-card">
-                                        <div class="timeline-talk-title">
-                                            «${talk.title}»
-                                            ${orderPillHtml}
-                                        </div>
-                                        <div class="timeline-talk-speaker">
-                                            <strong>${talk.speaker}</strong> 
-                                            ${talk.affiliation ? `<span class="badge badge-roerich" style="font-size: 0.7rem;">${translateAffiliation(talk.affiliation)}</span>` : ''}
-                                            ${talk.is_online ? `<span class="badge badge-online">${t.onlineBadge}</span>` : ''}
-                                            ${talk.videos && talk.videos.length ? `<span class="badge badge-video">${t.videoBadge}</span>` : ''}
-                                            ${presenterBadges}
-                                        </div>
-                                        <div class="timeline-talk-meta" style="margin-top: 0.75rem;">
-                                            <span>🏛️ <strong>${t.venue}</strong>: ${translateAffiliation(talk.venue)}</span>
-                                            <span>💬 <strong>${t.session}</strong>: ${talk.session || (state.currentLang === 'ru' ? 'Научное заседание' : 'Scientific Session')}</span>
-                                        </div>
-                                        <div class="timeline-talk-meta" style="margin-top: 0.25rem; font-size: 0.78rem; color: var(--text-muted);">
-                                            <span>📅 <strong>${t.day}</strong>: ${dayName} (${talk.date || ''})</span>
-                                            <span>⏰ <strong>${t.timeLabel}</strong>: ${talk.time_interval}</span>
-                                        </div>
-                                    </div>
-                                `;
-                            }).join('')}
+                            ${rTalks.map(talk => renderTalkCard(talk, t, 'badge-roerich')).join('')}
                         </div>
                     </div>
                 ` : ''}
@@ -586,18 +574,7 @@ import { renderGrowthChart, renderCohortDistribution, renderGeoChart, renderSank
         function handleFilterChange() {
 
             
-            // Fuzzy search setup with Fuse.js
-            let scholarFuse = null;
-            
-            const initFuse = () => {
-                if (!scholarFuse && window.Fuse && CONFERENCE_DATA && CONFERENCE_DATA.scholars) {
-                    scholarFuse = new Fuse(CONFERENCE_DATA.scholars, {
-                        keys: ['full_name_ru', 'full_name_en'],
-                        threshold: 0.3,
-                        ignoreLocation: true
-                    });
-                }
-            };
+
 
             // Autocomplete logic
             const buildAutocomplete = (inputId, dropdownId, getMatches, renderItem) => {
@@ -647,15 +624,7 @@ import { renderGrowthChart, renderCohortDistribution, renderGeoChart, renderSank
                 match => match.text
             );
 
-            // Hide dropdowns on outside click
-            document.addEventListener('click', (e) => {
-                if (!e.target.closest('.search-wrapper')) {
-                    const scAuto = document.getElementById('scholars-autocomplete');
-                    const tkAuto = document.getElementById('talks-autocomplete');
-                    if(scAuto) scAuto.hidden = true;
-                    if(tkAuto) tkAuto.hidden = true;
-                }
-            }, { once: true });
+
 
 
             const searchVal = document.getElementById('scholars-search').value.toLowerCase().trim();
@@ -880,6 +849,18 @@ import { renderGrowthChart, renderCohortDistribution, renderGeoChart, renderSank
                     `;
                 }
                 
+                if (!s.talks) {
+                    // Full scholars data not yet loaded – show placeholder
+                    detailRow.innerHTML = `
+                        <td colspan="5">
+                            <div class="detail-wrapper" style="text-align:center; color:var(--text-secondary); padding:1.5rem 1rem;">
+                                <div style="margin-bottom:0.5rem; font-size:0.85rem;">
+                                    ${state.currentLang === 'ru' ? 'Загрузка докладов…' : 'Loading presentations…'}
+                                </div>
+                            </div>
+                        </td>
+                    `;
+                } else {
                 let talksListHtml = s.talks.map(talk => {
                     const translatedSeries = talk.series.includes('Zograf') ? t.zografReadingsLabel : t.roerichReadingsLabel;
                     const dayName = talk.day_of_week ? talk.day_of_week[state.currentLang] : (state.currentLang === 'ru' ? 'Не указан' : 'Not specified');
@@ -1030,9 +1011,10 @@ import { renderGrowthChart, renderCohortDistribution, renderGeoChart, renderSank
                         </div>
                     </td>
                 `;
+                } // end if (s.talks)
                 tbody.appendChild(detailRow);
             });
-        }
+        } // end renderScholarsTable
 
         // Toggle row expander
         function toggleRowDetail(id) {
@@ -1110,20 +1092,7 @@ import { renderGrowthChart, renderCohortDistribution, renderGeoChart, renderSank
 
         // Draw Interactive SVG Growth Chart
         
-        const getChartColor = (name) => {
-            const colors = {
-                zograf: '#62ae92',
-                roerich: '#c59a56',
-                total: '#a78bfa'
-            };
-            return colors[name] || '#fff';
-        };
 
-        const destroyChart = (id) => {
-            if (window.myCharts[id]) {
-                window.myCharts[id].destroy();
-            }
-        };
 
         
 
@@ -1385,37 +1354,44 @@ import { renderGrowthChart, renderCohortDistribution, renderGeoChart, renderSank
             initScholars();
             initTimeline();
 
-            // Background lazy load of other site data chunks
-            timelinePromise = fetch('site_data_timeline.json?v=1.8.5').then(r => r.json());
-            networkPromise = fetch('site_data_network.json?v=1.8.5').then(r => r.json());
-            scholarsPromise = fetch('site_data_scholars.json?v=1.8.5').then(r => r.json());
+            const lazyLoadData = () => {
+                timelinePromise = fetch('site_data_timeline.json?v=1.8.5').then(r => r.json());
+                networkPromise = fetch('site_data_network.json?v=1.8.5').then(r => r.json());
+                scholarsPromise = fetch('site_data_scholars.json?v=1.8.5').then(r => r.json());
 
-            timelinePromise.then(timelineData => {
-                window.CONFERENCE_DATA.timeline = timelineData;
-                state.timelineLoaded = true;
-                initTimeline();
-            });
+                timelinePromise.then(timelineData => {
+                    window.CONFERENCE_DATA.timeline = timelineData;
+                    state.timelineLoaded = true;
+                    initTimeline();
+                });
 
-            networkPromise.then(networkData => {
-                window.CONFERENCE_DATA.network = networkData;
-                state.networkLoaded = true;
-                if (document.getElementById('sec-charts').classList.contains('active')) {
-                    startNetworkGraph();
-                }
-            });
-
-            scholarsPromise.then(fullScholars => {
-                const scholarMap = new Map(fullScholars.map(s => [s.id, s]));
-                window.CONFERENCE_DATA.scholars.forEach(s => {
-                    const full = scholarMap.get(s.id);
-                    if (full) {
-                        s.talks = full.talks;
-                        s.sessions = full.talks;
+                networkPromise.then(networkData => {
+                    window.CONFERENCE_DATA.network = networkData;
+                    state.networkLoaded = true;
+                    if (document.getElementById('sec-charts').classList.contains('active')) {
+                        startNetworkGraph();
                     }
                 });
-                state.fullScholarsLoaded = true;
-                handleFilterChange();
-            });
+
+                scholarsPromise.then(fullScholars => {
+                    const scholarMap = new Map(fullScholars.map(s => [s.id, s]));
+                    window.CONFERENCE_DATA.scholars.forEach(s => {
+                        const full = scholarMap.get(s.id);
+                        if (full) {
+                            s.talks = full.talks;
+                            s.sessions = full.talks;
+                        }
+                    });
+                    state.fullScholarsLoaded = true;
+                    handleFilterChange();
+                });
+            };
+
+            if (window.requestIdleCallback) {
+                window.requestIdleCallback(() => lazyLoadData(), { timeout: 2000 });
+            } else {
+                setTimeout(lazyLoadData, 1000);
+            }
 
             // Check for search parameter in URL
             const urlParams = new URLSearchParams(window.location.search);
@@ -1434,3 +1410,15 @@ import { renderGrowthChart, renderCohortDistribution, renderGeoChart, renderSank
             if (searchQuery || talksQuery || seriesQuery || sortQuery) handleFilterChange();
         });
     
+        // Expose functions globally to window for HTML event handlers and cross-module calls
+        window.toggleLanguage = toggleLanguage;
+        window.switchTab = switchTab;
+        window.exportToMarkdown = exportToMarkdown;
+        window.toggleViewMode = toggleViewMode;
+        window.changePage = changePage;
+        window.toggleYear = toggleYear;
+        window.setDashboardSearch = setDashboardSearch;
+        window.handleFilterChange = handleFilterChange;
+        window.translateAffiliation = translateAffiliation;
+        window.resetNetworkPhysics = resetNetworkPhysics;
+        window.toggleNetworkPhysics = toggleNetworkPhysics;
