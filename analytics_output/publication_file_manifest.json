@@ -410,18 +410,18 @@
     },
     {
       "path": "assets/js/charts.js",
-      "size_bytes": 15079,
-      "sha256": "b9668b0fa01e3676550463e8ad08550047bd01925b25d6af2da99d73d2cac54a"
+      "size_bytes": 19558,
+      "sha256": "7eb108b89b2edc6522014d2c8a854588362ab82588bffe76024c9ce95e942a85"
     },
     {
       "path": "assets/js/i18n.js",
-      "size_bytes": 16405,
-      "sha256": "12fd5c6604645b0a639d4db6f04c118f83e4879c655f8323c9f22dece61db440"
+      "size_bytes": 17062,
+      "sha256": "779aa9ce417184348b2d85fd510272fd7422bed0e44d46905b220f743e5ee2f4"
     },
     {
       "path": "assets/js/main.js",
-      "size_bytes": 78901,
-      "sha256": "4dc80357c47102ad8d2013d614521d1aec8466fe735cbbc9a21ddc8c5611bb64"
+      "size_bytes": 79465,
+      "sha256": "01d6593b8736461c1155410a9f2fe51443c39041200f9c5c867ef945ffe29553"
     },
     {
       "path": "assets/js/state.js",
@@ -8896,7 +8896,7 @@
     {
       "path": "findings/visualisations.html",
       "size_bytes": 474906,
-      "sha256": "0a4994b989938015fe5d3973e9c626161bfd34530d34916405d255641b42596d"
+      "sha256": "19a0531fc42dba8c64a07b99e87a9b328e4c5c63faf7536d86181e9adae167a9"
     },
     {
       "path": "generations/index.html",
@@ -8940,8 +8940,8 @@
     },
     {
       "path": "index.html",
-      "size_bytes": 37559,
-      "sha256": "7736afcb868a06c0ba9ee80ce6523b80e1dc4c7d5216cc650563c1cc58ec4aa8"
+      "size_bytes": 38623,
+      "sha256": "02f3e6094a1d9c04e09e59c1bd4154fe32d6d52f8d12612387d80d5d9eaa8163"
     },
     {
       "path": "institutions/if-ran.html",
