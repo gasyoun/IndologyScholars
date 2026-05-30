@@ -31,6 +31,7 @@ published programme.
 
 - The [main catalogue](https://gasyoun.github.io/IndologyScholars/) with
   searches by name, talk, city, and institution.
+- [Scientific Hypotheses Registry](https://gasyoun.github.io/IndologyScholars/hypotheses.html) — an interactive multi-dimensional registry of 35 hypotheses with a 7-metric schema and glassmorphic UI.
 - [Interactive Visualizations](https://gasyoun.github.io/IndologyScholars/findings/visualisations.html) —
   visual dashboard with stable IDs: Zograf × Roerich cohort overlaps, affiliation opacity timelines, and heatmaps.
 - [Conference pages](https://gasyoun.github.io/IndologyScholars/conferences/)

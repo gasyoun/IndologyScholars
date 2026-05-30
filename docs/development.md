@@ -54,6 +54,7 @@ python -m pip install -r requirements.txt
 python build_and_populate_db.py
 python generate_analytics.py
 python article/work_title_keywords.py
+python extract_hypotheses.py
 python generate_site_data.py
 python generate_network_json.py
 python generate_scholars_pages.py
@@ -73,6 +74,13 @@ python -m http.server 8000
 `fetch_latest_programs.py` обращается к внешним источникам и применяется,
 когда требуется загрузить новые официальные программы; он не нужен для
 воспроизводимой пересборки уже сохраненного корпуса.
+
+### Реестр научных гипотез
+
+Проект поддерживает автоматическое обновление **Реестра научных гипотез** (`hypotheses.html`), содержащего ровно 35 гипотез о российской индологии (H1–H35).
+- **Скрипт извлечения**: `extract_hypotheses.py` сканирует черновик научной статьи (`article/ppv_draft.md`) и сопутствующие артефакты, автоматически обнаруживая гипотезы по тегам `H1`–`H35` и записывая результат в `assets/data/hypotheses.json`.
+- **Ручная курация**: После автоматического извлечения куратор может вручную скорректировать сгенерированные случайным образом метрики (Significance, Novelty, Unexpectedness и др.) непосредственно в `assets/data/hypotheses.json`.
+- **Интерактивный интерфейс**: Страница `hypotheses.html` использует чистый ES-модульный JavaScript для фильтрации и отрисовки гипотез в современном glassmorphism-интерфейсе.
 
 ## Поток данных
 

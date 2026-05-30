@@ -31,17 +31,16 @@
 
 - [Главный каталог](https://gasyoun.github.io/IndologyScholars/) с поиском по
   именам, докладам, городам и институциям.
+- [Реестр научных гипотез](https://gasyoun.github.io/IndologyScholars/hypotheses.html) — многомерный фильтр по 35 гипотезам российской индологии с 7 наукометрическими шкалами и HSL glassmorphism дизайном.
 - [Интерактивные визуализации](https://gasyoun.github.io/IndologyScholars/findings/visualisations.html) —
   визуальный дашборд: пересечение когорт Зограф × Рерих, траектории аффилиаций и тепловые карты.
-- [Пространственный анализ (GIS)](https://gasyoun.github.io/IndologyScholars/) — интерактивная картография на базе Leaflet, отображающая академическую географию докладов.
-- [Академические потоки (Sankey Diagram)](https://gasyoun.github.io/IndologyScholars/) — диаграмма Санкей для отслеживания маршрутов между поколениями, конференциями и темами.
+- [Сетевую карту](https://gasyoun.github.io/IndologyScholars/networks.html)
+  соавторства и совместного присутствия в программах.
 - [Linked Open Data (LOD) Граф](https://gasyoun.github.io/IndologyScholars/indology_knowledge_graph.ttl) — машиночитаемый RDF/Turtle граф знаний для семантического веба (Semantic Web), описывающий ученых (foaf:Person) и события (schema:Event).
 - [Конференции](https://gasyoun.github.io/IndologyScholars/conferences/) с
   переходом к отдельным годам и программам.
 - [Тематические подборки](https://gasyoun.github.io/IndologyScholars/themes/)
   и [поколенческие когорты](https://gasyoun.github.io/IndologyScholars/generations/).
-- [Сетевую карту](https://gasyoun.github.io/IndologyScholars/networks.html)
-  соавторства и совместного присутствия в программах.
 - [Поиск по коллекции](https://gasyoun.github.io/IndologyScholars/search.html),
   включая отдельные страницы докладов и ссылки на видео, когда запись найдена.
 

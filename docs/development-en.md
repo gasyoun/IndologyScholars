@@ -53,6 +53,7 @@ python -m pip install -r requirements.txt
 python build_and_populate_db.py
 python generate_analytics.py
 python article/work_title_keywords.py
+python extract_hypotheses.py
 python generate_site_data.py
 python generate_network_json.py
 python generate_scholars_pages.py
@@ -72,6 +73,13 @@ Open `http://localhost:8000/`.
 `fetch_latest_programs.py` reaches external sources and is used when importing
 new official programmes; it is not required for a reproducible rebuild of the
 already preserved corpus.
+
+### Scientific Hypotheses Registry
+
+The project supports an automated pipeline for the **Scientific Hypotheses Registry** (`hypotheses.html`), which hosts exactly 35 research hypotheses (H1–H35) on Russian Indology.
+- **Extraction Script**: `extract_hypotheses.py` parses the article draft (`article/ppv_draft.md`) and related artifacts, automatically identifying `H1`–`H35` statements and exporting them to `assets/data/hypotheses.json`.
+- **Manual Curation**: After the automated run, the curator can manually refine the generated placeholder metrics (Significance, Novelty, Unexpectedness, etc.) directly in `assets/data/hypotheses.json`.
+- **Frontend Presentation**: `hypotheses.html` utilizes pure ES-module JavaScript to perform multi-dimensional array filtering in the client browser, rendered using premium HSL glassmorphism dark-mode card views.
 
 ## Data Flow
 
