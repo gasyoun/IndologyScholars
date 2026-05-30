@@ -1,0 +1,4 @@
+analytics_output/: total_indologists.csv, zograf_only_indologists.csv, roerich_only_indologists.csv, age_cohort_trend.csv
+network exports: 324 nodes, 7822 edges
+indology_scholars_analytics.md: sections 1–6 written.
+missing_birth_years.md: 41 scholars listed.

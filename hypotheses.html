@@ -3,185 +3,384 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Гипотезы исследования | Russian Indological Research Archive</title>
-    <meta name="description" content="Реестр научных гипотез, проверяемых методами дальнего чтения и сетевого анализа.">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://gasyoun.github.io/IndologyScholars/hypotheses.html">
-    <link rel="alternate" hreflang="ru" href="https://gasyoun.github.io/IndologyScholars/hypotheses.html">
-    <link rel="alternate" hreflang="x-default" href="https://gasyoun.github.io/IndologyScholars/hypotheses.html">
-    <link rel="icon" href="/IndologyScholars/assets/favicon.svg" type="image/svg+xml">
-    <link rel="manifest" href="/IndologyScholars/site.webmanifest">\n    <link rel="alternate" type="application/rss+xml" title="RSS" href="/IndologyScholars/feed.xml">
-    <link rel="apple-touch-icon" href="/IndologyScholars/assets/apple-touch-icon.png">
-    <meta name="theme-color" content="#101513">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-title" content="IndologyScholars">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://gasyoun.github.io/IndologyScholars/hypotheses.html">
-    <meta property="og:title" content="Гипотезы исследования | Russian Indological Research Archive">
-    <meta property="og:description" content="Реестр научных гипотез, проверяемых методами дальнего чтения и сетевого анализа.">
-    <meta property="og:image" content="https://gasyoun.github.io/IndologyScholars/assets/og-image.png">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Гипотезы исследования | Russian Indological Research Archive">
-    <meta name="twitter:description" content="Реестр научных гипотез, проверяемых методами дальнего чтения и сетевого анализа.">
-    <meta name="twitter:image" content="https://gasyoun.github.io/IndologyScholars/assets/og-image.png">
-    <script defer src="/IndologyScholars/assets/pwa.js"></script>
+    <title>Реестр Гипотез | IndologyScholars</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/index.css">
+    
+    <style>
+        .hypotheses-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
 
+        .filters-panel {
+            background: rgba(10, 14, 26, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            backdrop-filter: blur(10px);
+        }
 
-    <script type="application/ld+json">
-[
-  {
-    "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    "name": "Гипотезы исследования",
-    "description": "Реестр научных гипотез, проверяемых методами дальнего чтения и сетевого анализа.",
-    "url": "https://gasyoun.github.io/IndologyScholars/hypotheses.html",
-    "isPartOf": {
-      "@type": "WebSite",
-      "name": "Russian Indological Research Archive",
-      "url": "https://gasyoun.github.io/IndologyScholars/"
-    },
-    "dateModified": "2026-05-30"
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://gasyoun.github.io/IndologyScholars/"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Гипотезы исследования",
-        "item": "https://gasyoun.github.io/IndologyScholars/hypotheses.html"
-      }
-    ]
-  }
-]
-    </script>
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
 
-    <link rel="stylesheet" href="/IndologyScholars/assets/styles.css">
+        .filter-group label {
+            font-size: 0.85rem;
+            color: #94a3b8;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .filter-group select {
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #f8fafc;
+            padding: 0.75rem;
+            border-radius: 6px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: border-color 0.2s ease;
+        }
+
+        .filter-group select:hover {
+            border-color: #3b82f6;
+        }
+
+        .hypotheses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .hypothesis-card {
+            background: rgba(15, 23, 42, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .hypothesis-card:hover {
+            transform: translateY(-4px);
+            border-color: #3b82f6;
+            box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.2);
+        }
+
+        .h-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .h-id {
+            background: #2563eb;
+            color: white;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .h-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #f1f5f9;
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        .h-desc {
+            color: #cbd5e1;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .h-metrics {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: auto;
+        }
+
+        .metric-badge {
+            font-size: 0.75rem;
+            padding: 0.3rem 0.6rem;
+            border-radius: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .metric-sig { background: rgba(59, 130, 246, 0.2); color: #93c5fd; border: 1px solid rgba(59, 130, 246, 0.4); }
+        .metric-nov { background: rgba(16, 185, 129, 0.2); color: #6ee7b7; border: 1px solid rgba(16, 185, 129, 0.4); }
+        .metric-unx { background: rgba(139, 92, 246, 0.2); color: #c4b5fd; border: 1px solid rgba(139, 92, 246, 0.4); }
+        .metric-evi { background: rgba(245, 158, 11, 0.2); color: #fcd34d; border: 1px solid rgba(245, 158, 11, 0.4); }
+        .metric-sco { background: rgba(236, 72, 153, 0.2); color: #f9a8d4; border: 1px solid rgba(236, 72, 153, 0.4); }
+        .metric-met { background: rgba(14, 165, 233, 0.2); color: #7dd3fc; border: 1px solid rgba(14, 165, 233, 0.4); }
+        .metric-sta { background: rgba(239, 68, 68, 0.2); color: #fca5a5; border: 1px solid rgba(239, 68, 68, 0.4); }
+        
+        /* Specific metric colors based on value could be added via JS */
+        
+        .no-results {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 4rem 2rem;
+            color: #94a3b8;
+            background: rgba(15, 23, 42, 0.3);
+            border-radius: 12px;
+            border: 1px dashed rgba(255,255,255,0.1);
+        }
+
+        .page-header {
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(to right, #60a5fa, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .page-header p {
+            color: #94a3b8;
+            font-size: 1.1rem;
+        }
+    </style>
 </head>
-<body>
-    <main class="page">
-        <nav class="top-nav" aria-label="Primary">
+<body class="dark-theme">
+    
+    <nav class="navbar" style="padding: 1rem 2rem; background: rgba(10,14,26,0.9); border-bottom: 1px solid rgba(255,255,255,0.1);">
+        <a href="index.html" class="nav-brand" style="color: white; text-decoration: none; font-weight: 700; font-size: 1.2rem;">← На главную</a>
+    </nav>
 
-            <a href="/IndologyScholars/">Архив</a>
+    <main class="hypotheses-container">
+        <div class="page-header">
+            <h1 class="bilingual-text" data-ru="Реестр гипотез" data-en="Hypotheses Registry">Реестр гипотез</h1>
+            <p class="bilingual-text" data-ru="Каталог аналитических гипотез, проверенных на массиве данных архива" data-en="Catalog of analytical hypotheses tested on the archive dataset">Каталог аналитических гипотез, проверенных на массиве данных архива</p>
+        </div>
 
-            <a href="/IndologyScholars/search.html">Поиск</a>
+        <div class="filters-panel">
+            <div class="filter-group">
+                <label>Эмпирическая подтвержденность (Evidence)</label>
+                <select id="filter-evi">
+                    <option value="all">Все статусы</option>
+                    <option value="proven">Доказано (Proven)</option>
+                    <option value="partial">Частично подтверждено (Partial)</option>
+                    <option value="refuted">Опровергнуто (Refuted)</option>
+                    <option value="inconclusive">Требует проверки (Inconclusive)</option>
+                </select>
+            </div>
+            
+            <div class="filter-group">
+                <label>Масштаб обобщения (Scope)</label>
+                <select id="filter-sco">
+                    <option value="all">Все масштабы</option>
+                    <option value="macro">Макро-уровень (G3)</option>
+                    <option value="meso">Институциональный/Сетевой (G2)</option>
+                    <option value="micro">Микрокейс (G1)</option>
+                </select>
+            </div>
+            
+            <div class="filter-group">
+                <label>Методология (Methodology)</label>
+                <select id="filter-met">
+                    <option value="all">Все методы</option>
+                    <option value="prosopography">Просопография</option>
+                    <option value="network">Сетевой анализ</option>
+                    <option value="nlp">NLP и Тематика</option>
+                    <option value="gis">Пространственный (GIS)</option>
+                </select>
+            </div>
 
-            <a href="/IndologyScholars/s/">Исследователи</a>
+            <div class="filter-group">
+                <label>Публикационный статус (Status)</label>
+                <select id="filter-sta">
+                    <option value="all">Все статусы</option>
+                    <option value="core">В основной статье</option>
+                    <option value="supplementary">Дополнительные (Supplementary)</option>
+                    <option value="future">Для будущих исследований</option>
+                </select>
+            </div>
+            
+            <div class="filter-group">
+                <label>Значимость (Significance)</label>
+                <select id="filter-sig">
+                    <option value="all">Все уровни</option>
+                    <option value="fundamental">Фундаментальная (Macro)</option>
+                    <option value="structural">Структурная (Structural)</option>
+                    <option value="niche">Нишевая/Детальная (Niche)</option>
+                </select>
+            </div>
+            
+            <div class="filter-group">
+                <label>Новизна (Novelty)</label>
+                <select id="filter-nov">
+                    <option value="all">Все уровни</option>
+                    <option value="discovery">Открытие (Discovery)</option>
+                    <option value="revision">Пересмотр/Опровержение (Revision)</option>
+                    <option value="confirmation">Подтверждение/Оцифровка (Confirmation)</option>
+                </select>
+            </div>
+            
+            <div class="filter-group">
+                <label>Неожиданность (Unexpectedness)</label>
+                <select id="filter-unx">
+                    <option value="all">Все уровни</option>
+                    <option value="paradoxical">Парадоксально/Контринтуитивно (Paradoxical)</option>
+                    <option value="surprising">Удивительно (Surprising)</option>
+                    <option value="expected">Ожидаемо (Expected)</option>
+                </select>
+            </div>
+        </div>
 
-            <a href="/IndologyScholars/p/">Доклады</a>
-
-            <a href="/IndologyScholars/conferences/">Конференции</a>
-
-            <a href="/IndologyScholars/themes/">Рубрики</a>
-
-            <a href="/IndologyScholars/generations/">Поколения</a>
-
-            <details class="more-nav">
-                <summary>Еще</summary>
-                <div class="more-menu">
-
-                    <a href="/IndologyScholars/findings/">Выводы</a>
-
-                    <a href="/IndologyScholars/findings/visualisations.html">Визуализации</a>
-
-                    <a href="/IndologyScholars/topics/">Сюжеты</a>
-
-                    <a href="/IndologyScholars/download-data.html">Данные</a>
-
-                    <a href="/IndologyScholars/meso/">Мезоуровни</a>
-
-                    <a href="/IndologyScholars/keywords/">Ключевые слова</a>
-
-                    <a href="/IndologyScholars/gumilyov/">Гумилев</a>
-
-                    <a href="/IndologyScholars/classification-criteria.html">Критерии</a>
-
-                    <a href="/IndologyScholars/videos/">Видео</a>
-
-                    <a href="/IndologyScholars/cities/">Города</a>
-
-                    <a href="/IndologyScholars/institutions/">Институции</a>
-
-                    <a href="/IndologyScholars/collaboration/">Коллаборация</a>
-
-                    <a href="/IndologyScholars/nlp/">NLP-анализ</a>
-
-                    <a href="/IndologyScholars/data-quality.html">Качество</a>
-
-                    <a href="/IndologyScholars/en.html">English</a>
-
-                    <a href="/IndologyScholars/how-to-cite.html">Цитирование</a>
-
-                    <a href="/IndologyScholars/metrics-guide.html">Метрики</a>
-
-                </div>
-            </details>
-        </nav>
-
-        <header>
-            <h1>Гипотезы исследования</h1>
-            <p>Ниже представлен реестр ключевых гипотез, проверяемых на материалах Индологического архива.</p>
-        </header>
-        <section class="list">
-            <article class="card" id="H11">
-                <strong>[H11] Институциональный партикуляризм</strong>
-                <p>Зографские чтения — это площадка городской идентичности (участники массово не указывают учреждение), в отличие от институционально-ориентированных Рериховских чтений.</p>
-            </article>
-            <article class="card" id="H13">
-                <strong>[H13] Исторический перекос медиа-архива</strong>
-                <p>Видеоархив конференций содержит огромный исторический перекос, непропорционально освещая поздние периоды по сравнению с ранними.</p>
-            </article>
-            <article class="card" id="H16">
-                <strong>[H16] Хрупкость онлайн-когорты</strong>
-                <p>Когорта исследователей, вошедших в сообщество в онлайн-формате (2020–2021 гг.), демонстрирует высокую степень «осыпания» (низкий уровень удержания) по сравнению с офлайн-когортами.</p>
-            </article>
-            <article class="card" id="H20">
-                <strong>[H20] Коллективность и масштаб</strong>
-                <p>Существует прямая связь между коллективным авторством доклада и его уровнем обобщения (по шкале Гумилева).</p>
-            </article>
-            <article class="card" id="H22">
-                <strong>[H22] Входные ворота (темы дебютантов)</strong>
-                <p>Новые участники сообщества (дебютанты) чаще всего выбирают для первого доклада темы, связанные с современностью и колониализмом.</p>
-            </article>
-            <article class="card" id="H24">
-                <strong>[H24] Инфляция заголовков</strong>
-                <p>В сообществе наблюдается устойчивый исторический сдвиг в сторону объяснительных и длинных заголовков: растет среднее количество слов и доля заголовков с подзаголовком (через двоеточие).</p>
-            </article>
-            <article class="card" id="H25">
-                <strong>[H25] Случайность видеофиксации</strong>
-                <p>Камера фиксирует доклады не по академическому статусу ученого (Ядро vs Периферия), а в силу технической случайности.</p>
-            </article>
-            <article class="card" id="H27">
-                <strong>[H27] Узкая специализация мостовиков</strong>
-                <p>Ученые, выступающие на обеих площадках («мостовики»), не являются макро-синтетиками; доля макрообобщений среди них даже ниже среднего по полю.</p>
-            </article>
-            <article class="card" id="H30">
-                <strong>[H30] Смещение медиа-архива в микрокейсы</strong>
-                <p>На видеозаписи попадают почти исключительно доклады уровня микрокейсов (G1); макрообобщения (G3) видеоархивом практически не фиксируются.</p>
-            </article>
-            <article class="card" id="H32">
-                <strong>[H32] Ядро и макрообобщения</strong>
-                <p>Исследовательское «ядро» (авторы с 5 и более докладами) не производит больше макрообобщений (G3), чем исследователи из «периферии».</p>
-            </article>
-            <article class="card" id="H34">
-                <strong>[H34] Дисциплинарный масштаб</strong>
-                <p>Соотношение микрокейсов (G1) и обобщений (G2/G3) строго специфично для каждой дисциплины (L1) и является её структурной особенностью.</p>
-            </article>
-            <article class="card" id="H35">
-                <strong>[H35] Возраст и синтез</strong>
-                <p>Широкое концептуальное обобщение (G3 по шкале Гумилева) является прерогативой преимущественно старшего поколения исследователей.</p>
-            </article>
-        </section>
-
-        <div class="footer">© 2026 Russian Indological Research Archive. Сгенерировано из нормализованного архива конференций.</div>
+        <div id="hypotheses-grid" class="hypotheses-grid">
+            <!-- Rendered by JS -->
+        </div>
     </main>
+
+    <script type="module">
+        const DICT_SIG = {
+            'fundamental': 'Фундаментальная',
+            'structural': 'Структурная',
+            'niche': 'Нишевая'
+        };
+        const DICT_NOV = {
+            'discovery': 'Открытие',
+            'revision': 'Опровержение',
+            'confirmation': 'Подтверждение'
+        };
+        const DICT_UNX = {
+            'paradoxical': 'Парадоксально',
+            'surprising': 'Удивительно',
+            'expected': 'Ожидаемо'
+        };
+        const DICT_EVI = {
+            'proven': 'Доказано',
+            'partial': 'Частично',
+            'refuted': 'Опровергнуто',
+            'inconclusive': 'Требует проверки'
+        };
+        const DICT_SCO = {
+            'macro': 'Макро (G3)',
+            'meso': 'Сетевой (G2)',
+            'micro': 'Микрокейс (G1)'
+        };
+        const DICT_MET = {
+            'prosopography': 'Просопография',
+            'network': 'Сетевая',
+            'nlp': 'NLP',
+            'gis': 'GIS'
+        };
+        const DICT_STA = {
+            'core': 'В статье',
+            'supplementary': 'Дополнительно',
+            'future': 'В будущем'
+        };
+
+        let allHypotheses = [];
+
+        async function init() {
+            try {
+                const response = await fetch('assets/data/hypotheses.json');
+                allHypotheses = await response.json();
+                renderCards(allHypotheses);
+                setupFilters();
+            } catch (err) {
+                console.error("Failed to load hypotheses:", err);
+                document.getElementById('hypotheses-grid').innerHTML = '<div class="no-results">Ошибка загрузки данных.</div>';
+            }
+        }
+
+        function renderCards(data) {
+            const grid = document.getElementById('hypotheses-grid');
+            grid.innerHTML = '';
+
+            if (data.length === 0) {
+                grid.innerHTML = '<div class="no-results">Нет гипотез, соответствующих выбранным фильтрам.</div>';
+                return;
+            }
+
+            data.forEach(h => {
+                const card = document.createElement('div');
+                card.className = 'hypothesis-card';
+                card.innerHTML = `
+                    <div class="h-header">
+                        <span class="h-id">${h.id}</span>
+                        <h3 class="h-title">${h.title_ru}</h3>
+                    </div>
+                    <div class="h-desc">${h.description_ru}</div>
+                    <div class="h-metrics">
+                        <span class="metric-badge metric-sta" title="Публикационный статус (Status)">STA: ${DICT_STA[h.status] || h.status}</span>
+                        <span class="metric-badge metric-met" title="Методология (Methodology)">MET: ${DICT_MET[h.methodology] || h.methodology}</span>
+                        <span class="metric-badge metric-sco" title="Масштаб обобщения (Scope)">SCO: ${DICT_SCO[h.scope] || h.scope}</span>
+                        <span class="metric-badge metric-evi" title="Эмпирическая подтвержденность (Evidence)">EVI: ${DICT_EVI[h.evidence] || h.evidence}</span>
+                        <span class="metric-badge metric-sig" title="Значимость (Significance)">SIG: ${DICT_SIG[h.significance] || h.significance}</span>
+                        <span class="metric-badge metric-nov" title="Новизна (Novelty)">NOV: ${DICT_NOV[h.novelty] || h.novelty}</span>
+                        <span class="metric-badge metric-unx" title="Неожиданность (Unexpectedness)">UNX: ${DICT_UNX[h.unexpectedness] || h.unexpectedness}</span>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function setupFilters() {
+            const sigFilter = document.getElementById('filter-sig');
+            const novFilter = document.getElementById('filter-nov');
+            const unxFilter = document.getElementById('filter-unx');
+            const eviFilter = document.getElementById('filter-evi');
+            const scoFilter = document.getElementById('filter-sco');
+            const metFilter = document.getElementById('filter-met');
+            const staFilter = document.getElementById('filter-sta');
+
+            const applyFilters = () => {
+                const sig = sigFilter.value;
+                const nov = novFilter.value;
+                const unx = unxFilter.value;
+                const evi = eviFilter.value;
+                const sco = scoFilter.value;
+                const met = metFilter.value;
+                const sta = staFilter.value;
+
+                const filtered = allHypotheses.filter(h => {
+                    return (sig === 'all' || h.significance === sig) &&
+                           (nov === 'all' || h.novelty === nov) &&
+                           (unx === 'all' || h.unexpectedness === unx) &&
+                           (evi === 'all' || h.evidence === evi) &&
+                           (sco === 'all' || h.scope === sco) &&
+                           (met === 'all' || h.methodology === met) &&
+                           (sta === 'all' || h.status === sta);
+                });
+                renderCards(filtered);
+            };
+
+            sigFilter.addEventListener('change', applyFilters);
+            novFilter.addEventListener('change', applyFilters);
+            unxFilter.addEventListener('change', applyFilters);
+            eviFilter.addEventListener('change', applyFilters);
+            scoFilter.addEventListener('change', applyFilters);
+            metFilter.addEventListener('change', applyFilters);
+            staFilter.addEventListener('change', applyFilters);
+        }
+
+        document.addEventListener('DOMContentLoaded', init);
+    </script>
 </body>
 </html>
