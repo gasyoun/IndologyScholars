@@ -3,6 +3,8 @@ Host: gasyoun.github.io
 Clean-param: search&sort&page&filter /IndologyScholars/
 
 User-agent: *
+Disallow: /IndologyScholars/site_data*.json
+Disallow: /IndologyScholars/search-index.json
 Allow: /
 
 Sitemap: https://gasyoun.github.io/IndologyScholars/sitemap.xml

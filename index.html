@@ -9,6 +9,8 @@
     <link rel="canonical" href="https://gasyoun.github.io/IndologyScholars/">
     <link rel="alternate" hreflang="ru" href="https://gasyoun.github.io/IndologyScholars/">
     <link rel="alternate" hreflang="en" href="https://gasyoun.github.io/IndologyScholars/en.html">
+    <link rel="alternate" hreflang="x-default" href="https://gasyoun.github.io/IndologyScholars/">
+    <meta name="language" content="ru">
     <link rel="icon" href="/IndologyScholars/assets/favicon.svg" type="image/svg+xml">
     <link rel="manifest" href="/IndologyScholars/site.webmanifest">
     <link rel="apple-touch-icon" href="/IndologyScholars/assets/apple-touch-icon.png">
@@ -18,17 +20,18 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <script defer src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
     
-    <!-- Leaflet.js for Maps -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <!-- Leaflet.css for Maps loaded non-blockingly -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" media="print" onload="this.media='all'"/>
+    <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
     <script defer src="/IndologyScholars/assets/pwa.js"></script>
-    <link rel="preload" href="site_data.json?v=1.8.5" as="fetch" crossorigin>
+    <link rel="preload" href="site_data_summary.json?v=1.8.5" as="fetch" crossorigin>
     <meta name="keywords" content="Индология, Зографские чтения, Рериховские чтения, наука, востоковедение, ИВР РАН, ИВ РАН, МГУ, СПбГУ, статистика, научные доклады">
     <meta name="author" content="Dr. Mārcis Gasūns">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
+    <meta property="og:locale" content="ru_RU">
     <meta property="og:url" content="https://gasyoun.github.io/IndologyScholars/">
     <meta property="og:title" content="Российская индологическая наука: Единый архив">
     <meta property="og:description" content="Интерактивная база данных докладов конференций «Зографские чтения» и «Рериховские чтения» с расширенной аналитикой и интерактивными графами.">
@@ -58,7 +61,7 @@
       "distribution": [
         {
           "@type": "DataDownload",
-          "encodingFormat": "application/javascript",
+          "encodingFormat": "application/json",
           "contentUrl": "https://gasyoun.github.io/IndologyScholars/site_data.json"
         },
         {
@@ -93,7 +96,7 @@
                 <p id="sub-heading">Докладчики, доклады и связи российской индологии, 2004–2026.</p>
             </div>
             <div class="lang-switch-container" aria-label="Служебные действия">
-                <button class="lang-switch-btn" id="export-md-btn" onclick="exportToMarkdown()" title="Экспортировать выборку в Markdown">Экспорт</button>
+                <button class="lang-switch-btn" id="export-md-btn-header" onclick="exportToMarkdown()" title="Экспортировать выборку в Markdown">Экспорт</button>
                 <button class="lang-switch-btn" id="lang-switch-btn" onclick="toggleLanguage()" title="Switch language">EN</button>
             </div>
         </div>
