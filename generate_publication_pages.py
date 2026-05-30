@@ -5586,6 +5586,339 @@ def generate_visualisations_page(data, records):
                 <div class="legend-item"><span class="legend-color" style="background:#b83280;"></span><span class="bilingual-text" data-ru="Рериховские чтения" data-en="Roerich Readings">Рериховские чтения</span></div>
             </div>
         </section>
+
+        <!-- VIS_016_generations -->
+        <section class="viz-showcase-section" id="VIS_016_generations">
+            <h2>
+                <span class="viz-id-badge">VIS_016</span>
+                <span class="bilingual-text" data-ru="Смена поколений" data-en="Generational Eras">Смена поколений</span>
+            </h2>
+            <p class="bilingual-text" style="color:var(--muted); font-size:0.9rem;" data-ru="Распределение докладов по десятилетиям рождения авторов." data-en="Distribution of presentations by authors' birth decades.">Распределение докладов по десятилетиям рождения авторов.</p>
+            <div id="vis016-wrapper" style="position:relative; width:100%; overflow:hidden; margin-top:1.5rem;">
+                <svg id="vis016-svg" viewBox="0 0 800 360" style="width:100%; height:auto; background:rgba(0,0,0,0.15); border-radius:8px;"></svg>
+                <div id="vis016-tooltip" style="{tip_style}"></div>
+            </div>
+        </section>
+
+        <!-- VIS_018_title_length -->
+        <section class="viz-showcase-section" id="VIS_018_title_length">
+            <h2>
+                <span class="viz-id-badge">VIS_018</span>
+                <span class="bilingual-text" data-ru="Сложность названий" data-en="Title Complexity">Сложность названий</span>
+            </h2>
+            <p class="bilingual-text" style="color:var(--muted); font-size:0.9rem;" data-ru="Среднее количество слов в названиях докладов по годам." data-en="Average word count in presentation titles by year.">Среднее количество слов в названиях докладов по годам.</p>
+            <div id="vis018-wrapper" style="position:relative; width:100%; overflow:hidden; margin-top:1.5rem;">
+                <svg id="vis018-svg" viewBox="0 0 800 360" style="width:100%; height:auto; background:rgba(0,0,0,0.15); border-radius:8px;"></svg>
+                <div id="vis018-tooltip" style="{tip_style}"></div>
+            </div>
+        </section>
+
+        <!-- VIS_019_coauthorship -->
+        <section class="viz-showcase-section" id="VIS_019_coauthorship">
+            <h2>
+                <span class="viz-id-badge">VIS_019</span>
+                <span class="bilingual-text" data-ru="Индекс соавторства" data-en="Co-authorship Index">Индекс соавторства</span>
+            </h2>
+            <p class="bilingual-text" style="color:var(--muted); font-size:0.9rem;" data-ru="Процент докладов, написанных в соавторстве." data-en="Percentage of co-authored presentations over time.">Процент докладов, написанных в соавторстве.</p>
+            <div id="vis019-wrapper" style="position:relative; width:100%; overflow:hidden; margin-top:1.5rem;">
+                <svg id="vis019-svg" viewBox="0 0 800 360" style="width:100%; height:auto; background:rgba(0,0,0,0.15); border-radius:8px;"></svg>
+                <div id="vis019-tooltip" style="{tip_style}"></div>
+            </div>
+        </section>
+        <!-- VIS_020_velocity -->
+        <section class="viz-showcase-section" id="VIS_020_velocity">
+            <h2>
+                <span class="viz-id-badge">VIS_020</span>
+                <span class="bilingual-text" data-ru="Активность топ-5 ученых" data-en="Top 5 Scholars Velocity">Активность топ-5 ученых</span>
+            </h2>
+            <p class="bilingual-text" style="color:var(--muted); font-size:0.9rem;" data-ru="Кумулятивное число докладов пяти самых активных участников по годам." data-en="Cumulative presentations of the five most active scholars over time.">Кумулятивное число докладов пяти самых активных участников по годам.</p>
+            <div id="vis020-wrapper" style="position:relative; width:100%; overflow:hidden; margin-top:1.5rem;">
+                <svg id="vis020-svg" viewBox="0 0 800 360" style="width:100%; height:auto; background:rgba(0,0,0,0.15); border-radius:8px;"></svg>
+                <div id="vis020-tooltip" style="{tip_style}"></div>
+            </div>
+        </section>
+
+        <!-- VIS_021_institutions -->
+        <section class="viz-showcase-section" id="VIS_021_institutions">
+            <h2>
+                <span class="viz-id-badge">VIS_021</span>
+                <span class="bilingual-text" data-ru="Топ институций" data-en="Top Institutions">Топ институций</span>
+            </h2>
+            <p class="bilingual-text" style="color:var(--muted); font-size:0.9rem;" data-ru="Крупнейшие центры индологии по числу выступлений." data-en="Largest Indology centers by number of presentations.">Крупнейшие центры индологии по числу выступлений.</p>
+            <div id="vis021-wrapper" style="position:relative; width:100%; overflow:hidden; margin-top:1.5rem;">
+                <svg id="vis021-svg" viewBox="0 0 800 360" style="width:100%; height:auto; background:rgba(0,0,0,0.15); border-radius:8px;"></svg>
+                <div id="vis021-tooltip" style="{tip_style}"></div>
+            </div>
+        </section>
+
+        <!-- VIS_022_age_at_talk -->
+        <section class="viz-showcase-section" id="VIS_022_age_at_talk">
+            <h2>
+                <span class="viz-id-badge">VIS_022</span>
+                <span class="bilingual-text" data-ru="Возраст на момент доклада" data-en="Age at Presentation">Возраст на момент доклада</span>
+            </h2>
+            <p class="bilingual-text" style="color:var(--muted); font-size:0.9rem;" data-ru="Размах возраста исследователей в момент их выступления (мин, медиана, макс)." data-en="Age range of researchers at the time of their presentation (min, median, max).">Размах возраста исследователей в момент их выступления.</p>
+            <div id="vis022-wrapper" style="position:relative; width:100%; overflow:hidden; margin-top:1.5rem;">
+                <svg id="vis022-svg" viewBox="0 0 800 360" style="width:100%; height:auto; background:rgba(0,0,0,0.15); border-radius:8px;"></svg>
+                <div id="vis022-tooltip" style="{tip_style}"></div>
+            </div>
+        </section>
+        
+        <!-- VIS_023_loyalty -->
+        <section class="viz-showcase-section" id="VIS_023_loyalty">
+            <h2>
+                <span class="viz-id-badge">VIS_023</span>
+                <span class="bilingual-text" data-ru="Лояльность аудитории" data-en="Audience Loyalty">Лояльность аудитории</span>
+            </h2>
+            <p class="bilingual-text" style="color:var(--muted); font-size:0.9rem;" data-ru="Распределение числа уникальных лет участия." data-en="Distribution of unique years of participation.">Распределение числа уникальных лет участия.</p>
+            <div id="vis023-wrapper" style="position:relative; width:100%; overflow:hidden; margin-top:1.5rem;">
+                <svg id="vis023-svg" viewBox="0 0 800 360" style="width:100%; height:auto; background:rgba(0,0,0,0.15); border-radius:8px;"></svg>
+                <div id="vis023-tooltip" style="{tip_style}"></div>
+            </div>
+        </section>
+        <!-- VIS_024_keywords -->
+        <section class="viz-showcase-section" id="VIS_024_keywords">
+            <h2>
+                <span class="viz-id-badge">VIS_024</span>
+                <span class="bilingual-text" data-ru="Облако терминов" data-en="Keyword Cloud">Облако терминов</span>
+            </h2>
+            <p class="bilingual-text" style="color:var(--muted); font-size:0.9rem;" data-ru="Самые частые слова в названиях докладов (>4 букв)." data-en="Most frequent words in presentation titles (>4 chars).">Самые частые слова в названиях докладов.</p>
+            <div id="vis024-wrapper" style="position:relative; width:100%; overflow:hidden; margin-top:1.5rem;">
+                <svg id="vis024-svg" viewBox="0 0 800 360" style="width:100%; height:auto; background:rgba(0,0,0,0.15); border-radius:8px;"></svg>
+                <div id="vis024-tooltip" style="{tip_style}"></div>
+            </div>
+        </section>
+
+        <!-- VIS_025_scale -->
+        <section class="viz-showcase-section" id="VIS_025_scale">
+            <h2>
+                <span class="viz-id-badge">VIS_025</span>
+                <span class="bilingual-text" data-ru="Масштаб конференций" data-en="Conference Scale">Масштаб конференций</span>
+            </h2>
+            <p class="bilingual-text" style="color:var(--muted); font-size:0.9rem;" data-ru="Динамика количества секций и докладов по годам." data-en="Dynamics of session and presentation counts by year.">Динамика количества секций и докладов по годам.</p>
+            <div id="vis025-wrapper" style="position:relative; width:100%; overflow:hidden; margin-top:1.5rem;">
+                <svg id="vis025-svg" viewBox="0 0 800 360" style="width:100%; height:auto; background:rgba(0,0,0,0.15); border-radius:8px;"></svg>
+                <div id="vis025-tooltip" style="{tip_style}"></div>
+            </div>
+        </section>
+
+        <!-- VIS_026_confidence -->
+        <section class="viz-showcase-section" id="VIS_026_confidence">
+            <h2>
+                <span class="viz-id-badge">VIS_026</span>
+                <span class="bilingual-text" data-ru="Уверенность ИИ-разметки" data-en="AI Annotation Confidence">Уверенность ИИ-разметки</span>
+            </h2>
+            <p class="bilingual-text" style="color:var(--muted); font-size:0.9rem;" data-ru="Распределение уровня уверенности DeepSeek при классификации докладов." data-en="Distribution of DeepSeek confidence levels during presentation classification.">Распределение уровня уверенности DeepSeek.</p>
+            <div id="vis026-wrapper" style="position:relative; width:100%; overflow:hidden; margin-top:1.5rem;">
+                <svg id="vis026-svg" viewBox="0 0 800 360" style="width:100%; height:auto; background:rgba(0,0,0,0.15); border-radius:8px;"></svg>
+                <div id="vis026-tooltip" style="{tip_style}"></div>
+            </div>
+        </section>
+
+        <!-- VIS_027_l1_themes -->
+        <section class="viz-showcase-section" id="VIS_027_l1_themes">
+            <h2>
+                <span class="viz-id-badge">VIS_027</span>
+                <span class="bilingual-text" data-ru="Популярность макро-тем" data-en="Macro-theme Popularity">Популярность макро-тем</span>
+            </h2>
+            <p class="bilingual-text" style="color:var(--muted); font-size:0.9rem;" data-ru="Топ-10 макро-тем (L1) по количеству докладов." data-en="Top 10 macro-themes (L1) by number of presentations.">Топ-10 макро-тем (L1) по количеству докладов.</p>
+            <div id="vis027-wrapper" style="position:relative; width:100%; overflow:hidden; margin-top:1.5rem;">
+                <svg id="vis027-svg" viewBox="0 0 800 360" style="width:100%; height:auto; background:rgba(0,0,0,0.15); border-radius:8px;"></svg>
+                <div id="vis027-tooltip" style="{tip_style}"></div>
+            </div>
+        </section>
+
+        <!-- VIS_028_gumilyov -->
+        <section class="viz-showcase-section" id="VIS_028_gumilyov">
+            <h2>
+                <span class="viz-id-badge">VIS_028</span>
+                <span class="bilingual-text" data-ru="Пассионарность Гумилева" data-en="Gumilyov Passionarity">Пассионарность Гумилева</span>
+            </h2>
+            <p class="bilingual-text" style="color:var(--muted); font-size:0.9rem;" data-ru="Распределение стадий этногенеза Гумилева в классификации докладов." data-en="Distribution of Gumilyov ethnogenesis stages in presentation classifications.">Распределение стадий этногенеза Гумилева.</p>
+            <div id="vis028-wrapper" style="position:relative; width:100%; overflow:hidden; margin-top:1.5rem;">
+                <svg id="vis028-svg" viewBox="0 0 800 360" style="width:100%; height:auto; background:rgba(0,0,0,0.15); border-radius:8px;"></svg>
+                <div id="vis028-tooltip" style="{tip_style}"></div>
+            </div>
+        </section>
+
+        <!-- VIS_029_chars -->
+        <section class="viz-showcase-section" id="VIS_029_chars">
+            <h2>
+                <span class="viz-id-badge">VIS_029</span>
+                <span class="bilingual-text" data-ru="Длина названий (символы)" data-en="Title Length (chars)">Длина названий (символы)</span>
+            </h2>
+            <p class="bilingual-text" style="color:var(--muted); font-size:0.9rem;" data-ru="Средняя длина названий докладов в символах по годам." data-en="Average length of presentation titles in characters by year.">Средняя длина названий докладов в символах.</p>
+            <div id="vis029-wrapper" style="position:relative; width:100%; overflow:hidden; margin-top:1.5rem;">
+                <svg id="vis029-svg" viewBox="0 0 800 360" style="width:100%; height:auto; background:rgba(0,0,0,0.15); border-radius:8px;"></svg>
+                <div id="vis029-tooltip" style="{tip_style}"></div>
+            </div>
+        </section>
+
+        <!-- VIS_030_overlap -->
+        <section class="viz-showcase-section" id="VIS_030_overlap">
+            <h2>
+                <span class="viz-id-badge">VIS_030</span>
+                <span class="bilingual-text" data-ru="Пересечение аудиторий" data-en="Audience Overlap">Пересечение аудиторий</span>
+            </h2>
+            <p class="bilingual-text" style="color:var(--muted); font-size:0.9rem;" data-ru="Доля ученых, выступавших только на Зографских чтениях, только на Рериховских, или на обеих конференциях." data-en="Share of scholars presenting only at Zograf, only at Roerich, or both.">Доля ученых, выступавших только на Зографских, только на Рериховских, или на обеих.</p>
+            <div id="vis030-wrapper" style="position:relative; width:100%; overflow:hidden; margin-top:1.5rem;">
+                <svg id="vis030-svg" viewBox="0 0 800 360" style="width:100%; height:auto; background:rgba(0,0,0,0.15); border-radius:8px;"></svg>
+                <div id="vis030-tooltip" style="{tip_style}"></div>
+            </div>
+        </section>
+        <!-- VIS_031_age_scale -->
+        <section class="viz-showcase-section" id="VIS_031_age_scale">
+            <h2>
+                <span class="viz-id-badge">VIS_031</span>
+                <span class="bilingual-text" data-ru="Возраст и Масштаб обобщения (Шкала Гумилева)" data-en="Age vs Scale of Abstraction">Возраст и Масштаб обобщения</span>
+            </h2>
+            <p class="bilingual-text" style="color:var(--muted); font-size:0.9rem;" data-ru="Распределение возраста авторов для докладов уровней G1, G2, G3. Подтверждает гипотезу H35 о том, что широкое обобщение — прерогатива старшего поколения." data-en="Distribution of author age for G1, G2, G3 presentations. Supports H35.">Возраст авторов и масштаб доклада.</p>
+            <div id="vis031-wrapper" style="position:relative; width:100%; overflow:hidden; margin-top:1.5rem;">
+                <svg id="vis031-svg" viewBox="0 0 800 360" style="width:100%; height:auto; background:rgba(0,0,0,0.15); border-radius:8px;"></svg>
+                <div id="vis031-tooltip" style="{tip_style}"></div>
+            </div>
+        </section>
+
+        <!-- VIS_032_disc_scale -->
+        <section class="viz-showcase-section" id="VIS_032_disc_scale">
+            <h2>
+                <span class="viz-id-badge">VIS_032</span>
+                <span class="bilingual-text" data-ru="Дисциплинарный масштаб" data-en="Disciplinary Scale">Дисциплинарный масштаб</span>
+            </h2>
+            <p class="bilingual-text" style="color:var(--muted); font-size:0.9rem;" data-ru="Доля микрокейсов (G1) и обобщений (G2/G3) внутри каждой дисциплины (L1). Подтверждает гипотезу H34." data-en="Share of microcases (G1) and generalizations (G2/G3) by discipline (L1). Supports H34.">Масштаб обобщения по дисциплинам.</p>
+            <div id="vis032-wrapper" style="position:relative; width:100%; overflow:hidden; margin-top:1.5rem;">
+                <svg id="vis032-svg" viewBox="0 0 800 360" style="width:100%; height:auto; background:rgba(0,0,0,0.15); border-radius:8px;"></svg>
+                <div id="vis032-tooltip" style="{tip_style}"></div>
+            </div>
+        </section>
+
+        <!-- VIS_033_core_scale -->
+        <section class="viz-showcase-section" id="VIS_033_core_scale">
+            <h2>
+                <span class="viz-id-badge">VIS_033</span>
+                <span class="bilingual-text" data-ru="Масштаб: Ядро vs Периферия" data-en="Scale: Core vs Periphery">Масштаб: Ядро vs Периферия</span>
+            </h2>
+            <p class="bilingual-text" style="color:var(--muted); font-size:0.9rem;" data-ru="Подтверждает H32: Ядро (>=5 докладов) не производит больше макрообобщений (G3), чем периферия." data-en="Supports H32: Core (>=5 talks) does not produce more macro generalizations than periphery.">Масштаб обобщения у Ядра и Периферии.</p>
+            <div id="vis033-wrapper" style="position:relative; width:100%; overflow:hidden; margin-top:1.5rem;">
+                <svg id="vis033-svg" viewBox="0 0 800 360" style="width:100%; height:auto; background:rgba(0,0,0,0.15); border-radius:8px;"></svg>
+                <div id="vis033-tooltip" style="{tip_style}"></div>
+            </div>
+        </section>
+
+        <!-- VIS_034_bridge_scale -->
+        <section class="viz-showcase-section" id="VIS_034_bridge_scale">
+            <h2>
+                <span class="viz-id-badge">VIS_034</span>
+                <span class="bilingual-text" data-ru="Масштаб: Мостовики vs Локальные" data-en="Scale: Bridges vs Local">Масштаб: Мостовики vs Локальные</span>
+            </h2>
+            <p class="bilingual-text" style="color:var(--muted); font-size:0.9rem;" data-ru="Подтверждает H27: Участники обеих площадок не являются синтетиками, их доля макрообобщений даже ниже." data-en="Supports H27: Bridge scholars are not macro-synthesizers.">Масштаб мышления участников обеих площадок.</p>
+            <div id="vis034-wrapper" style="position:relative; width:100%; overflow:hidden; margin-top:1.5rem;">
+                <svg id="vis034-svg" viewBox="0 0 800 360" style="width:100%; height:auto; background:rgba(0,0,0,0.15); border-radius:8px;"></svg>
+                <div id="vis034-tooltip" style="{tip_style}"></div>
+            </div>
+        </section>
+        <!-- VIS_035_words -->
+        <section class="viz-showcase-section" id="VIS_035_words">
+            <h2>
+                <span class="viz-id-badge">VIS_035</span>
+                <span class="bilingual-text" data-ru="Инфляция заголовков (Слова)" data-en="Title Length Inflation (Words)">Инфляция заголовков (Слова)</span>
+            </h2>
+            <p class="bilingual-text" style="color:var(--muted); font-size:0.9rem;" data-ru="Среднее количество слов в названиях докладов по годам. Подтверждает гипотезу H24 о сдвиге в сторону объяснительных и длинных заголовков." data-en="Average number of words in presentation titles by year. Supports H24.">Среднее количество слов в названиях докладов.</p>
+            <div id="vis035-wrapper" style="position:relative; width:100%; overflow:hidden; margin-top:1.5rem;">
+                <svg id="vis035-svg" viewBox="0 0 800 360" style="width:100%; height:auto; background:rgba(0,0,0,0.15); border-radius:8px;"></svg>
+                <div id="vis035-tooltip" style="{tip_style}"></div>
+            </div>
+        </section>
+
+        <!-- VIS_036_colons -->
+        <section class="viz-showcase-section" id="VIS_036_colons">
+            <h2>
+                <span class="viz-id-badge">VIS_036</span>
+                <span class="bilingual-text" data-ru="Эра подзаголовков" data-en="The Colon Era">Эра подзаголовков</span>
+            </h2>
+            <p class="bilingual-text" style="color:var(--muted); font-size:0.9rem;" data-ru="Доля названий докладов, содержащих двоеточие (как признак объяснительного подзаголовка). Подтверждает гипотезу H24." data-en="Share of presentation titles containing a colon (indicating an explanatory subtitle). Supports H24.">Доля названий докладов с подзаголовком (через двоеточие).</p>
+            <div id="vis036-wrapper" style="position:relative; width:100%; overflow:hidden; margin-top:1.5rem;">
+                <svg id="vis036-svg" viewBox="0 0 800 360" style="width:100%; height:auto; background:rgba(0,0,0,0.15); border-radius:8px;"></svg>
+                <div id="vis036-tooltip" style="{tip_style}"></div>
+            </div>
+        </section>
+
+        <!-- VIS_037_coauthors -->
+        <section class="viz-showcase-section" id="VIS_037_coauthors">
+            <h2>
+                <span class="viz-id-badge">VIS_037</span>
+                <span class="bilingual-text" data-ru="Коллективность и Масштаб" data-en="Co-authorship vs Scale">Коллективность и Масштаб</span>
+            </h2>
+            <p class="bilingual-text" style="color:var(--muted); font-size:0.9rem;" data-ru="Корреляция между коллективным авторством и уровнем обобщения. Подтверждает гипотезу H20." data-en="Correlation between multi-authorship and the level of generalization (Gumilyov scale). Supports H20.">Масштаб обобщения у индивидуальных и коллективных докладов.</p>
+            <div id="vis037-wrapper" style="position:relative; width:100%; overflow:hidden; margin-top:1.5rem;">
+                <svg id="vis037-svg" viewBox="0 0 800 360" style="width:100%; height:auto; background:rgba(0,0,0,0.15); border-radius:8px;"></svg>
+                <div id="vis037-tooltip" style="{tip_style}"></div>
+            </div>
+        </section>
+        <!-- VIS_038_vid_years -->
+        <section class="viz-showcase-section" id="VIS_038_vid_years">
+            <h2>
+                <span class="viz-id-badge">VIS_038</span>
+                <span class="bilingual-text" data-ru="Радары видимости (YouTube Bias)" data-en="Visibility Radars (YouTube Bias)">Радары видимости (YouTube Bias)</span>
+            </h2>
+            <p class="bilingual-text" style="color:var(--muted); font-size:0.9rem;" data-ru="Количество записанных на видео докладов (красный) относительно общего числа докладов (синий) по годам. Доказывает H13 об огромном историческом перекосе медиа-архива." data-en="Number of video-recorded presentations vs total presentations by year. Proves H13 regarding the massive historical bias of the media archive.">Покрытие конференции видеозаписями.</p>
+            <div id="vis038-wrapper" style="position:relative; width:100%; overflow:hidden; margin-top:1.5rem;">
+                <svg id="vis038-svg" viewBox="0 0 800 360" style="width:100%; height:auto; background:rgba(0,0,0,0.15); border-radius:8px;"></svg>
+                <div id="vis038-tooltip" style="{tip_style}"></div>
+            </div>
+        </section>
+
+        <!-- VIS_039_vid_scale -->
+        <section class="viz-showcase-section" id="VIS_039_vid_scale">
+            <h2>
+                <span class="viz-id-badge">VIS_039</span>
+                <span class="bilingual-text" data-ru="Смещение в Микрокейсы" data-en="Microcase Bias">Смещение в Микрокейсы</span>
+            </h2>
+            <p class="bilingual-text" style="color:var(--muted); font-size:0.9rem;" data-ru="Распределение записанных и незаписанных докладов по шкале Гумилева. Доказывает H30: на видео попадают почти исключительно G1, макрообобщения мы не записываем." data-en="Distribution of recorded and unrecorded talks on the Gumilyov scale. Proves H30: video almost exclusively captures G1 microcases.">Какие жанры попадают на YouTube?</p>
+            <div id="vis039-wrapper" style="position:relative; width:100%; overflow:hidden; margin-top:1.5rem;">
+                <svg id="vis039-svg" viewBox="0 0 800 360" style="width:100%; height:auto; background:rgba(0,0,0,0.15); border-radius:8px;"></svg>
+                <div id="vis039-tooltip" style="{tip_style}"></div>
+            </div>
+        </section>
+
+        <!-- VIS_040_vid_core -->
+        <section class="viz-showcase-section" id="VIS_040_vid_core">
+            <h2>
+                <span class="viz-id-badge">VIS_040</span>
+                <span class="bilingual-text" data-ru="Статус и Камера" data-en="Status and Camera">Статус и Камера</span>
+            </h2>
+            <p class="bilingual-text" style="color:var(--muted); font-size:0.9rem;" data-ru="Сравнение покрытия видеозаписями Ядра (>=5 докладов) и Периферии. Доказывает H25: камера снимает не по статусу ученого, а по технической случайности." data-en="Comparison of video coverage for Core (>=5 talks) vs Periphery. Proves H25: the camera records by chance, not by academic status.">Зависит ли видеозапись от статуса ученого?</p>
+            <div id="vis040-wrapper" style="position:relative; width:100%; overflow:hidden; margin-top:1.5rem;">
+                <svg id="vis040-svg" viewBox="0 0 800 360" style="width:100%; height:auto; background:rgba(0,0,0,0.15); border-radius:8px;"></svg>
+                <div id="vis040-tooltip" style="{tip_style}"></div>
+            </div>
+        </section>
+        <!-- VIS_041_newbie_themes -->
+        <section class="viz-showcase-section" id="VIS_041_newbie_themes">
+            <h2>
+                <span class="viz-id-badge">VIS_041</span>
+                <span class="bilingual-text" data-ru="Входные ворота (Темы новичков)" data-en="Newbie Entry Topics">Входные ворота</span>
+            </h2>
+            <p class="bilingual-text" style="color:var(--muted); font-size:0.9rem;" data-ru="Темы (L2 Period), через которые дебютанты входят в сообщество, в сравнении с темами старожилов. Доказывает H22: новички чаще входят через современность/колониализм." data-en="Topics (L2 Period) chosen by newcomers vs veterans. Proves H22: newcomers enter through modern/colonial topics.">Темы дебютных докладов.</p>
+            <div id="vis041-wrapper" style="position:relative; width:100%; overflow:hidden; margin-top:1.5rem;">
+                <svg id="vis041-svg" viewBox="0 0 800 360" style="width:100%; height:auto; background:rgba(0,0,0,0.15); border-radius:8px;"></svg>
+                <div id="vis041-tooltip" style="{tip_style}"></div>
+            </div>
+        </section>
+
+        <!-- VIS_042_inst_bias -->
+        <section class="viz-showcase-section" id="VIS_042_inst_bias">
+            <h2>
+                <span class="viz-id-badge">VIS_042</span>
+                <span class="bilingual-text" data-ru="Город vs Учреждение" data-en="City vs Institution Format">Город vs Учреждение</span>
+            </h2>
+            <p class="bilingual-text" style="color:var(--muted); font-size:0.9rem;" data-ru="Формат указания аффилиации на двух площадках. Доказывает H11: Зографские чтения — это площадка городской идентичности (94.7% не указывают учреждение), в отличие от Рериховских (87% указывают)." data-en="Affiliation format on the two platforms. Proves H11: Zograf is a city-identity platform, Roerich is institutional.">Институциональный партикуляризм площадок.</p>
+            <div id="vis042-wrapper" style="position:relative; width:100%; overflow:hidden; margin-top:1.5rem;">
+                <svg id="vis042-svg" viewBox="0 0 800 360" style="width:100%; height:auto; background:rgba(0,0,0,0.15); border-radius:8px;"></svg>
+                <div id="vis042-tooltip" style="{tip_style}"></div>
+            </div>
+        </section>
+
     """
 
     scatter_js = """
