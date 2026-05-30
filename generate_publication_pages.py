@@ -5063,30 +5063,23 @@ def generate_visualisations_page(data, records):
         </header>
 
         <section class="viz-toc">
-            <strong class="bilingual-text" data-ru="Содержание атласа" data-en="Atlas Table of Contents">Содержание атласа</strong>
-            <a href="#VIS_001_orbit_scatter" class="viz-toc-item">
-                <span>VIS_001</span>
-                <b class="bilingual-text" data-ru="Орбита перекрёстной когорты (Зограф × Рерих)" data-en="Cross-Cohort Orbit Scatter (Zograf × Roerich)">Орбита перекрёстной когорты (Зограф × Рерих)</b>
-                <span class="badge badge-online bilingual-text" data-ru="Активна" data-en="Active">Активна</span>
-            </a>
-            <a href="#VIS_002_affiliation_opacity" class="viz-toc-item">
-                <span>VIS_002</span>
-                <b class="bilingual-text" data-ru="Таймлайн аффилиационной непрозрачности" data-en="Affiliation Opacity Timeline">Таймлайн аффилиационной непрозрачности</b>
-                <span class="badge badge-online bilingual-text" data-ru="Активна" data-en="Active">Активна</span>
-            </a>
-            <a href="#VIS_003_video_heatmap" class="viz-toc-item">
-                <span>VIS_003</span>
-                <b class="bilingual-text" data-ru="Тепловая карта видео-покрытия" data-en="Video Coverage Heatmap">Тепловая карта видео-покрытия</b>
-                <span class="badge bilingual-text" style="background:rgba(255,255,255,0.05); color:var(--muted);" data-ru="В планах" data-en="Planned">В планах</span>
-            </a>
-            <a href="#VIS_004_keyword_alluvial" class="viz-toc-item">
-                <span>VIS_004</span>
-                <b class="bilingual-text" data-ru="Эволюция ключевых слов и мезоуровней" data-en="Keyword/Meso Alluvial Flow">Эволюция ключевых слов и мезоуровней</b>
-                <span class="badge bilingual-text" style="background:rgba(255,255,255,0.05); color:var(--muted);" data-ru="В планах" data-en="Planned">В планах</span>
-            </a>
+            <strong class="bilingual-text" style="font-size:1.2rem; display:block; margin-bottom:1rem;" data-ru="Содержание атласа" data-en="Atlas Table of Contents">Содержание атласа</strong>
+
+            <!-- 1. Демография и жизненный цикл -->
+            <div class="toc-group-header bilingual-text" style="font-weight:600; margin-top:1.5rem; margin-bottom:0.5rem; color:var(--text-color);" data-ru="1. Демография и жизненный цикл" data-en="1. Demographics & Lifecycle">1. Демография и жизненный цикл</div>
             <a href="#VIS_008_demography_ribbon" class="viz-toc-item">
                 <span>VIS_008</span>
                 <b class="bilingual-text" data-ru="Возрастная лента поля (медиана и квартили)" data-en="Field Age Ribbon (median &amp; quartiles)">Возрастная лента поля (медиана и квартили)</b>
+                <span class="badge badge-online bilingual-text" data-ru="Активна" data-en="Active">Активна</span>
+            </a>
+            <a href="#VIS_016_generations" class="viz-toc-item">
+                <span>VIS_016</span>
+                <b class="bilingual-text" data-ru="Смена поколений (по декадам рождения)" data-en="Generational Eras (by birth decade)">Смена поколений (по декадам рождения)</b>
+                <span class="badge badge-online bilingual-text" data-ru="Активна" data-en="Active">Активна</span>
+            </a>
+            <a href="#VIS_022_age_at_talk" class="viz-toc-item">
+                <span>VIS_022</span>
+                <b class="bilingual-text" data-ru="Возраст на момент доклада" data-en="Age at Presentation">Возраст на момент доклада</b>
                 <span class="badge badge-online bilingual-text" data-ru="Активна" data-en="Active">Активна</span>
             </a>
             <a href="#VIS_009_cohort_survival" class="viz-toc-item">
@@ -5099,19 +5092,9 @@ def generate_visualisations_page(data, records):
                 <b class="bilingual-text" data-ru="Темп обновления (доля новичков)" data-en="Renewal Rate (newcomer share)">Темп обновления (доля новичков)</b>
                 <span class="badge badge-online bilingual-text" data-ru="Активна" data-en="Active">Активна</span>
             </a>
-            <a href="#VIS_011_theme_treemap" class="viz-toc-item">
-                <span>VIS_011</span>
-                <b class="bilingual-text" data-ru="Карта тем (L1 → L2, treemap)" data-en="Theme Treemap (L1 → L2)">Карта тем (L1 → L2, treemap)</b>
-                <span class="badge badge-online bilingual-text" data-ru="Активна" data-en="Active">Активна</span>
-            </a>
-            <a href="#VIS_012_gumilyov_stream" class="viz-toc-item">
-                <span>VIS_012</span>
-                <b class="bilingual-text" data-ru="Поток уровней обобщения (шкала Гумилёва)" data-en="Scale-of-Argument Streamgraph (Gumilyov)">Поток уровней обобщения (шкала Гумилёва)</b>
-                <span class="badge badge-online bilingual-text" data-ru="Активна" data-en="Active">Активна</span>
-            </a>
-            <a href="#VIS_013_keyword_diverging" class="viz-toc-item">
-                <span>VIS_013</span>
-                <b class="bilingual-text" data-ru="Ключевые слова: Зограф против Рериха" data-en="Keywords: Zograf vs Roerich">Ключевые слова: Зограф против Рериха</b>
+            <a href="#VIS_023_loyalty" class="viz-toc-item">
+                <span>VIS_023</span>
+                <b class="bilingual-text" data-ru="Лояльность (количество лет участия)" data-en="Loyalty (years participated)">Лояльность (количество лет участия)</b>
                 <span class="badge badge-online bilingual-text" data-ru="Активна" data-en="Active">Активна</span>
             </a>
             <a href="#VIS_014_closedness" class="viz-toc-item">
@@ -5119,31 +5102,12 @@ def generate_visualisations_page(data, records):
                 <b class="bilingual-text" data-ru="Замкнутость сообществ (сравнение метрик)" data-en="Community Closedness (metric comparison)">Замкнутость сообществ (сравнение метрик)</b>
                 <span class="badge badge-online bilingual-text" data-ru="Активна" data-en="Active">Активна</span>
             </a>
-            <a href="#VIS_015_online_share" class="viz-toc-item">
-                <span>VIS_015</span>
-                <b class="bilingual-text" data-ru="Сдвиг в онлайн (доля по годам)" data-en="The Online Shift (share by year)">Сдвиг в онлайн (доля по годам)</b>
-                <span class="badge badge-online bilingual-text" data-ru="Активна" data-en="Active">Активна</span>
-            </a>
 
-            <a href="#VIS_016_generations" class="viz-toc-item">
-                <span>VIS_016</span>
-                <b class="bilingual-text" data-ru="Смена поколений (по декадам рождения)" data-en="Generational Eras (by birth decade)">Смена поколений (по декадам рождения)</b>
-                <span class="badge badge-online bilingual-text" data-ru="Активна" data-en="Active">Активна</span>
-            </a>
-            <a href="#VIS_018_title_length" class="viz-toc-item">
-                <span>VIS_018</span>
-                <b class="bilingual-text" data-ru="Динамика длины названий докладов" data-en="Title Length Dynamics">Динамика длины названий докладов</b>
-                <span class="badge badge-online bilingual-text" data-ru="Активна" data-en="Active">Активна</span>
-            </a>
-            <a href="#VIS_019_coauthorship" class="viz-toc-item">
-                <span>VIS_019</span>
-                <b class="bilingual-text" data-ru="Индекс соавторства" data-en="Co-authorship Index">Индекс соавторства</b>
-                <span class="badge badge-online bilingual-text" data-ru="Активна" data-en="Active">Активна</span>
-            </a>
-
-            <a href="#VIS_020_velocity" class="viz-toc-item">
-                <span>VIS_020</span>
-                <b class="bilingual-text" data-ru="Активность топ-5 ученых" data-en="Top 5 Scholars Velocity">Активность топ-5 ученых</b>
+            <!-- 2. География и институции -->
+            <div class="toc-group-header bilingual-text" style="font-weight:600; margin-top:1.5rem; margin-bottom:0.5rem; color:var(--text-color);" data-ru="2. География и институции" data-en="2. Geography & Institutions">2. География и институции</div>
+            <a href="#VIS_010_geographic_map" class="viz-toc-item">
+                <span>VIS_010b</span>
+                <b class="bilingual-text" data-ru="Географическая карта аффилиаций" data-en="Geographic Map of Affiliations">Географическая карта аффилиаций</b>
                 <span class="badge badge-online bilingual-text" data-ru="Активна" data-en="Active">Активна</span>
             </a>
             <a href="#VIS_021_institutions" class="viz-toc-item">
@@ -5151,25 +5115,80 @@ def generate_visualisations_page(data, records):
                 <b class="bilingual-text" data-ru="Топ институций" data-en="Top Institutions">Топ институций</b>
                 <span class="badge badge-online bilingual-text" data-ru="Активна" data-en="Active">Активна</span>
             </a>
-            <a href="#VIS_022_age_at_talk" class="viz-toc-item">
-                <span>VIS_022</span>
-                <b class="bilingual-text" data-ru="Возраст на момент доклада" data-en="Age at Presentation">Возраст на момент доклада</b>
+            <a href="#VIS_002_affiliation_opacity" class="viz-toc-item">
+                <span>VIS_002</span>
+                <b class="bilingual-text" data-ru="Таймлайн аффилиационной непрозрачности" data-en="Affiliation Opacity Timeline">Таймлайн аффилиационной непрозрачности</b>
                 <span class="badge badge-online bilingual-text" data-ru="Активна" data-en="Active">Активна</span>
             </a>
-            <a href="#VIS_023_loyalty" class="viz-toc-item">
-                <span>VIS_023</span>
-                <b class="bilingual-text" data-ru="Лояльность (кол-во лет участия)" data-en="Loyalty (years participated)">Лояльность (кол-во лет участия)</b>
+            <a href="#VIS_042_inst_bias" class="viz-toc-item">
+                <span>VIS_042</span>
+                <b class="bilingual-text" data-ru="Город vs учреждение" data-en="City vs Institution">Город vs учреждение</b>
                 <span class="badge badge-online bilingual-text" data-ru="Активна" data-en="Active">Активна</span>
             </a>
 
+            <!-- 3. Сообщество и связи -->
+            <div class="toc-group-header bilingual-text" style="font-weight:600; margin-top:1.5rem; margin-bottom:0.5rem; color:var(--text-color);" data-ru="3. Сообщество и связи" data-en="3. Community & Networks">3. Сообщество и связи</div>
+            <a href="#VIS_001_orbit_scatter" class="viz-toc-item">
+                <span>VIS_001</span>
+                <b class="bilingual-text" data-ru="Орбита перекрёстной когорты (Зограф × Рерих)" data-en="Cross-Cohort Orbit Scatter (Zograf × Roerich)">Орбита перекрёстной когорты (Зограф × Рерих)</b>
+                <span class="badge badge-online bilingual-text" data-ru="Активна" data-en="Active">Активна</span>
+            </a>
+            <a href="#VIS_030_overlap" class="viz-toc-item">
+                <span>VIS_030</span>
+                <b class="bilingual-text" data-ru="Пересечение аудиторий (Зограф/Рерих)" data-en="Zograf/Roerich Audience Overlap">Пересечение аудиторий (Зограф/Рерих)</b>
+                <span class="badge badge-online bilingual-text" data-ru="Активна" data-en="Active">Активна</span>
+            </a>
+            <a href="#VIS_007_network_arc" class="viz-toc-item">
+                <span>VIS_007</span>
+                <b class="bilingual-text" data-ru="Сеть соавторства и пересечений" data-en="Co-authorship and Overlap Network">Сеть соавторства и пересечений</b>
+                <span class="badge bilingual-text" style="background:rgba(255,255,255,0.05); color:var(--muted);" data-ru="В планах" data-en="Planned">В планах</span>
+            </a>
+            <a href="#VIS_005_scholar_forest" class="viz-toc-item">
+                <span>VIS_005</span>
+                <b class="bilingual-text" data-ru="«Лес» активности исследователей" data-en="Scholar Activity Forest">«Лес» активности исследователей</b>
+                <span class="badge bilingual-text" style="background:rgba(255,255,255,0.05); color:var(--muted);" data-ru="В планах" data-en="Planned">В планах</span>
+            </a>
+            <a href="#VIS_020_velocity" class="viz-toc-item">
+                <span>VIS_020</span>
+                <b class="bilingual-text" data-ru="Активность топ-5 ученых" data-en="Top 5 Scholars Velocity">Активность топ-5 ученых</b>
+                <span class="badge badge-online bilingual-text" data-ru="Активна" data-en="Active">Активна</span>
+            </a>
+
+            <!-- 4. Темы и фокусы -->
+            <div class="toc-group-header bilingual-text" style="font-weight:600; margin-top:1.5rem; margin-bottom:0.5rem; color:var(--text-color);" data-ru="4. Темы и фокусы" data-en="4. Themes & Keywords">4. Темы и фокусы</div>
+            <a href="#VIS_004_keyword_alluvial" class="viz-toc-item">
+                <span>VIS_004</span>
+                <b class="bilingual-text" data-ru="Эволюция ключевых слов и мезоуровней" data-en="Keyword/Meso Alluvial Flow">Эволюция ключевых слов и мезоуровней</b>
+                <span class="badge bilingual-text" style="background:rgba(255,255,255,0.05); color:var(--muted);" data-ru="В планах" data-en="Planned">В планах</span>
+            </a>
+            <a href="#VIS_011_theme_treemap" class="viz-toc-item">
+                <span>VIS_011</span>
+                <b class="bilingual-text" data-ru="Карта тем (L1 → L2, treemap)" data-en="Theme Treemap (L1 → L2)">Карта тем (L1 → L2, treemap)</b>
+                <span class="badge badge-online bilingual-text" data-ru="Активна" data-en="Active">Активна</span>
+            </a>
+            <a href="#VIS_011_keyword_bubble_cloud" class="viz-toc-item">
+                <span>VIS_011b</span>
+                <b class="bilingual-text" data-ru="Динамическое облако тем" data-en="Dynamic Theme Bubble Cloud">Динамическое облако тем</b>
+                <span class="badge badge-online bilingual-text" data-ru="Активна" data-en="Active">Активна</span>
+            </a>
+            <a href="#VIS_013_keyword_diverging" class="viz-toc-item">
+                <span>VIS_013</span>
+                <b class="bilingual-text" data-ru="Ключевые слова: Зограф против Рериха" data-en="Keywords: Zograf vs Roerich">Ключевые слова: Зограф против Рериха</b>
+                <span class="badge badge-online bilingual-text" data-ru="Активна" data-en="Active">Активна</span>
+            </a>
             <a href="#VIS_024_keywords" class="viz-toc-item">
                 <span>VIS_024</span>
                 <b class="bilingual-text" data-ru="Облако терминов" data-en="Keyword Cloud">Облако терминов</b>
                 <span class="badge badge-online bilingual-text" data-ru="Активна" data-en="Active">Активна</span>
             </a>
-            <a href="#VIS_025_scale" class="viz-toc-item">
-                <span>VIS_025</span>
-                <b class="bilingual-text" data-ru="Масштаб конференций" data-en="Conference Scale">Масштаб конференций</b>
+            <a href="#VIS_027_l1_themes" class="viz-toc-item">
+                <span>VIS_027</span>
+                <b class="bilingual-text" data-ru="Популярность макротем" data-en="Macro-theme Popularity">Популярность макротем</b>
+                <span class="badge badge-online bilingual-text" data-ru="Активна" data-en="Active">Активна</span>
+            </a>
+            <a href="#VIS_041_newbie_themes" class="viz-toc-item">
+                <span>VIS_041</span>
+                <b class="bilingual-text" data-ru="Входные ворота (темы)" data-en="Newbie Entry Topics">Входные ворота (темы)</b>
                 <span class="badge badge-online bilingual-text" data-ru="Активна" data-en="Active">Активна</span>
             </a>
             <a href="#VIS_026_confidence" class="viz-toc-item">
@@ -5177,9 +5196,12 @@ def generate_visualisations_page(data, records):
                 <b class="bilingual-text" data-ru="Уверенность ИИ-разметки" data-en="AI Annotation Confidence">Уверенность ИИ-разметки</b>
                 <span class="badge badge-online bilingual-text" data-ru="Активна" data-en="Active">Активна</span>
             </a>
-            <a href="#VIS_027_l1_themes" class="viz-toc-item">
-                <span>VIS_027</span>
-                <b class="bilingual-text" data-ru="Популярность макро-тем" data-en="Macro-theme Popularity">Популярность макро-тем</b>
+
+            <!-- 5. Академические жанры и масштаб -->
+            <div class="toc-group-header bilingual-text" style="font-weight:600; margin-top:1.5rem; margin-bottom:0.5rem; color:var(--text-color);" data-ru="5. Академические жанры и масштаб" data-en="5. Genres & Epistemology">5. Академические жанры и масштаб</div>
+            <a href="#VIS_012_gumilyov_stream" class="viz-toc-item">
+                <span>VIS_012</span>
+                <b class="bilingual-text" data-ru="Поток уровней обобщения (шкала Гумилёва)" data-en="Scale-of-Argument Streamgraph (Gumilyov)">Поток уровней обобщения (шкала Гумилёва)</b>
                 <span class="badge badge-online bilingual-text" data-ru="Активна" data-en="Active">Активна</span>
             </a>
             <a href="#VIS_028_gumilyov" class="viz-toc-item">
@@ -5187,57 +5209,74 @@ def generate_visualisations_page(data, records):
                 <b class="bilingual-text" data-ru="Пассионарность Гумилева" data-en="Gumilyov Passionarity">Пассионарность Гумилева</b>
                 <span class="badge badge-online bilingual-text" data-ru="Активна" data-en="Active">Активна</span>
             </a>
+            <a href="#VIS_031_age_scale" class="viz-toc-item">
+                <span>VIS_031</span>
+                <b class="bilingual-text" data-ru="Возраст и масштаб (G1-G3)" data-en="Age vs Abstraction (G1-G3)">Возраст и масштаб (G1-G3)</b>
+                <span class="badge badge-online bilingual-text" data-ru="Активна" data-en="Active">Активна</span>
+            </a>
+            <a href="#VIS_032_disc_scale" class="viz-toc-item">
+                <span>VIS_032</span>
+                <b class="bilingual-text" data-ru="Дисциплина и масштаб" data-en="Discipline vs Abstraction">Дисциплина и масштаб</b>
+                <span class="badge badge-online bilingual-text" data-ru="Активна" data-en="Active">Активна</span>
+            </a>
+            <a href="#VIS_033_core_scale" class="viz-toc-item">
+                <span>VIS_033</span>
+                <b class="bilingual-text" data-ru="Масштаб: ядро vs периферия" data-en="Scale: Core vs Periphery">Масштаб: ядро vs периферия</b>
+                <span class="badge badge-online bilingual-text" data-ru="Активна" data-en="Active">Активна</span>
+            </a>
+            <a href="#VIS_034_bridge_scale" class="viz-toc-item">
+                <span>VIS_034</span>
+                <b class="bilingual-text" data-ru="Масштаб: мостовики vs локальные" data-en="Scale: Bridges vs Local">Масштаб: мостовики vs локальные</b>
+                <span class="badge badge-online bilingual-text" data-ru="Активна" data-en="Active">Активна</span>
+            </a>
+            <a href="#VIS_025_scale" class="viz-toc-item">
+                <span>VIS_025</span>
+                <b class="bilingual-text" data-ru="Масштаб конференций" data-en="Conference Scale">Масштаб конференций</b>
+                <span class="badge badge-online bilingual-text" data-ru="Активна" data-en="Active">Активна</span>
+            </a>
+            <a href="#VIS_018_title_length" class="viz-toc-item">
+                <span>VIS_018</span>
+                <b class="bilingual-text" data-ru="Динамика длины названий докладов" data-en="Title Length Dynamics">Динамика длины названий докладов</b>
+                <span class="badge badge-online bilingual-text" data-ru="Активна" data-en="Active">Активна</span>
+            </a>
             <a href="#VIS_029_chars" class="viz-toc-item">
                 <span>VIS_029</span>
                 <b class="bilingual-text" data-ru="Длина названий (символы)" data-en="Title Length (chars)">Длина названий (символы)</b>
                 <span class="badge badge-online bilingual-text" data-ru="Активна" data-en="Active">Активна</span>
             </a>
-            <a href="#VIS_030_overlap" class="viz-toc-item">
-                <span>VIS_030</span>
-                <b class="bilingual-text" data-ru="Пересечение аудиторий Зограф/Рерих" data-en="Zograf/Roerich Audience Overlap">Пересечение аудиторий Зограф/Рерих</b>
-                <span class="badge badge-online bilingual-text" data-ru="Активна" data-en="Active">Активна</span>
-            </a>
-
-            <!-- SERIES A -->
-            <a href="#VIS_031_age_scale" class="viz-toc-item">
-                <span>VIS_031</span>
-                <b class="bilingual-text" data-ru="Возраст и Масштаб (G1-G3)" data-en="Age vs Abstraction (G1-G3)">Возраст и Масштаб (G1-G3)</b>
-                <span class="badge badge-online bilingual-text" data-ru="Активна" data-en="Active">Активна</span>
-            </a>
-            <a href="#VIS_032_disc_scale" class="viz-toc-item">
-                <span>VIS_032</span>
-                <b class="bilingual-text" data-ru="Дисциплина и Масштаб" data-en="Discipline vs Abstraction">Дисциплина и Масштаб</b>
-                <span class="badge badge-online bilingual-text" data-ru="Активна" data-en="Active">Активна</span>
-            </a>
-            <a href="#VIS_033_core_scale" class="viz-toc-item">
-                <span>VIS_033</span>
-                <b class="bilingual-text" data-ru="Масштаб: Ядро vs Периферия" data-en="Scale: Core vs Periphery">Масштаб: Ядро vs Периферия</b>
-                <span class="badge badge-online bilingual-text" data-ru="Активна" data-en="Active">Активна</span>
-            </a>
-            <a href="#VIS_034_bridge_scale" class="viz-toc-item">
-                <span>VIS_034</span>
-                <b class="bilingual-text" data-ru="Масштаб: Мостовики vs Локальные" data-en="Scale: Bridges vs Local">Масштаб: Мостовики vs Локальные</b>
-                <span class="badge badge-online bilingual-text" data-ru="Активна" data-en="Active">Активна</span>
-            </a>
-
-            <!-- SERIES B -->
             <a href="#VIS_035_words" class="viz-toc-item">
                 <span>VIS_035</span>
-                <b class="bilingual-text" data-ru="Инфляция заголовков (Слова)" data-en="Title Length Inflation (Words)">Инфляция заголовков (Слова)</b>
+                <b class="bilingual-text" data-ru="Инфляция заголовков (слова)" data-en="Title Length Inflation (Words)">Инфляция заголовков (слова)</b>
                 <span class="badge badge-online bilingual-text" data-ru="Активна" data-en="Active">Активна</span>
             </a>
             <a href="#VIS_036_colons" class="viz-toc-item">
                 <span>VIS_036</span>
-                <b class="bilingual-text" data-ru="Эра подзаголовков (Двоеточия)" data-en="The Colon Era">Эра подзаголовков (Двоеточия)</b>
+                <b class="bilingual-text" data-ru="Эра подзаголовков (двоеточия)" data-en="The Colon Era">Эра подзаголовков (двоеточия)</b>
+                <span class="badge badge-online bilingual-text" data-ru="Активна" data-en="Active">Активна</span>
+            </a>
+            <a href="#VIS_019_coauthorship" class="viz-toc-item">
+                <span>VIS_019</span>
+                <b class="bilingual-text" data-ru="Индекс соавторства" data-en="Co-authorship Index">Индекс соавторства</b>
                 <span class="badge badge-online bilingual-text" data-ru="Активна" data-en="Active">Активна</span>
             </a>
             <a href="#VIS_037_coauthors" class="viz-toc-item">
                 <span>VIS_037</span>
-                <b class="bilingual-text" data-ru="Коллективность и Микрокейс" data-en="Co-authorship vs Gumilyov Scale">Коллективность и Микрокейс</b>
+                <b class="bilingual-text" data-ru="Коллективность и микрокейс" data-en="Co-authorship vs Gumilyov Scale">Коллективность и микрокейс</b>
                 <span class="badge badge-online bilingual-text" data-ru="Активна" data-en="Active">Активна</span>
             </a>
 
-            <!-- SERIES C -->
+            <!-- 6. Медиа-видимость и цифровизация -->
+            <div class="toc-group-header bilingual-text" style="font-weight:600; margin-top:1.5rem; margin-bottom:0.5rem; color:var(--text-color);" data-ru="6. Медиа-видимость и цифровизация" data-en="6. Media & Digital Shift">6. Медиа-видимость и цифровизация</div>
+            <a href="#VIS_015_online_share" class="viz-toc-item">
+                <span>VIS_015</span>
+                <b class="bilingual-text" data-ru="Сдвиг в онлайн (доля по годам)" data-en="The Online Shift (share by year)">Сдвиг в онлайн (доля по годам)</b>
+                <span class="badge badge-online bilingual-text" data-ru="Активна" data-en="Active">Активна</span>
+            </a>
+            <a href="#VIS_003_video_heatmap" class="viz-toc-item">
+                <span>VIS_003</span>
+                <b class="bilingual-text" data-ru="Тепловая карта видео-покрытия" data-en="Video Coverage Heatmap">Тепловая карта видео-покрытия</b>
+                <span class="badge bilingual-text" style="background:rgba(255,255,255,0.05); color:var(--muted);" data-ru="В планах" data-en="Planned">В планах</span>
+            </a>
             <a href="#VIS_038_vid_years" class="viz-toc-item">
                 <span>VIS_038</span>
                 <b class="bilingual-text" data-ru="Радары видимости (YouTube Bias)" data-en="Visibility Radars (YouTube Bias)">Радары видимости (YouTube Bias)</b>
@@ -5245,24 +5284,12 @@ def generate_visualisations_page(data, records):
             </a>
             <a href="#VIS_039_vid_scale" class="viz-toc-item">
                 <span>VIS_039</span>
-                <b class="bilingual-text" data-ru="Смещение в Микрокейсы" data-en="Microcase Bias">Смещение в Микрокейсы</b>
+                <b class="bilingual-text" data-ru="Смещение в микрокейсы" data-en="Microcase Bias">Смещение в микрокейсы</b>
                 <span class="badge badge-online bilingual-text" data-ru="Активна" data-en="Active">Активна</span>
             </a>
             <a href="#VIS_040_vid_core" class="viz-toc-item">
                 <span>VIS_040</span>
-                <b class="bilingual-text" data-ru="Статус и Камера" data-en="Status and Camera">Статус и Камера</b>
-                <span class="badge badge-online bilingual-text" data-ru="Активна" data-en="Active">Активна</span>
-            </a>
-
-            <!-- SERIES D & E -->
-            <a href="#VIS_041_newbie_themes" class="viz-toc-item">
-                <span>VIS_041</span>
-                <b class="bilingual-text" data-ru="Входные ворота (Темы)" data-en="Newbie Entry Topics">Входные ворота (Темы)</b>
-                <span class="badge badge-online bilingual-text" data-ru="Активна" data-en="Active">Активна</span>
-            </a>
-            <a href="#VIS_042_inst_bias" class="viz-toc-item">
-                <span>VIS_042</span>
-                <b class="bilingual-text" data-ru="Город vs Учреждение" data-en="City vs Institution">Город vs Учреждение</b>
+                <b class="bilingual-text" data-ru="Статус и камера" data-en="Status and Camera">Статус и камера</b>
                 <span class="badge badge-online bilingual-text" data-ru="Активна" data-en="Active">Активна</span>
             </a>
         </section>
