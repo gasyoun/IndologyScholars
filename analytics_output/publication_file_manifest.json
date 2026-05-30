@@ -766,7 +766,7 @@
     {
       "path": "findings/visualisations.html",
       "size_bytes": 474714,
-      "sha256": "09236cad228e7887d6f33402a83e3fa680463ac27e5a265034b656f9c0770c5e"
+      "sha256": "837114a980a3402d89c477ce066101b97e02e4ddf5cdf26f787f8ce0d032b06e"
     },
     {
       "path": "generations/index.html",
@@ -11095,8 +11095,8 @@
     },
     {
       "path": "sitemap.xml",
-      "size_bytes": 540,
-      "sha256": "c7035604856c3c46c330834c06337e1f76a26651fb4b79f1d0dcfed310c3616c"
+      "size_bytes": 676,
+      "sha256": "8f2c3ffbf4911d9146be4bf56080fd1fa878000fbb1c2bff7da6799dbef3c4fd"
     },
     {
       "path": "themes/academic-history.html",
