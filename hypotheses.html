@@ -128,9 +128,16 @@
             </details>
         </nav>
 
-        <header>
+        <header style="text-align: center; margin-bottom: 2rem;">
             <h1 class="bilingual-text" data-ru="Реестр гипотез" data-en="Hypotheses Registry">Реестр гипотез</h1>
             <p class="bilingual-text" data-ru="Каталог аналитических гипотез, проверенных на массиве данных архива" data-en="Catalog of analytical hypotheses tested on the archive dataset">Каталог аналитических гипотез, проверенных на массиве данных архива</p>
+
+            <div class="academic-badges" style="display: flex; gap: 0.5rem; margin-top: 1rem; flex-wrap: wrap; justify-content: center;">
+                <img src="https://img.shields.io/badge/DOI-10.5281%2Fzenodo.10616885-blue" alt="DOI" style="height: 20px;">
+                <img src="https://img.shields.io/badge/Open%20Access-Active-success" alt="Open Access" style="height: 20px;">
+                <img src="https://img.shields.io/badge/License-CC--BY--4.0-lightgrey" alt="License CC-BY-4.0" style="height: 20px;">
+                <img src="https://img.shields.io/badge/Data-FAIR-orange" alt="FAIR Data" style="height: 20px;">
+            </div>
         </header>
 
         <style>
@@ -139,7 +146,7 @@
                 border: 1px solid rgba(255, 255, 255, 0.1);
                 border-radius: 12px;
                 padding: 1.5rem;
-                margin-bottom: 2rem;
+                margin-bottom: 1.5rem;
                 display: grid;
                 grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
                 gap: 1.5rem;
@@ -176,6 +183,53 @@
                 border-color: #3b82f6;
             }
 
+            .export-panel {
+                display: flex;
+                gap: 1rem;
+                margin-bottom: 1.5rem;
+                justify-content: flex-end;
+                flex-wrap: wrap;
+            }
+
+            .btn-export {
+                padding: 0.6rem 1.2rem;
+                border-radius: 8px;
+                font-weight: 600;
+                cursor: pointer;
+                transition: all 0.2s ease;
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+                font-size: 0.9rem;
+            }
+
+            .btn-export:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 4px 12px rgba(255,255,255,0.05);
+            }
+
+            #btn-export-csv {
+                background: rgba(16, 185, 129, 0.1);
+                border: 1px solid rgba(16, 185, 129, 0.3);
+                color: #6ee7b7;
+            }
+
+            #btn-export-csv:hover {
+                background: rgba(16, 185, 129, 0.2);
+                border-color: #10b981;
+            }
+
+            #btn-export-json {
+                background: rgba(59, 130, 246, 0.1);
+                border: 1px solid rgba(59, 130, 246, 0.3);
+                color: #93c5fd;
+            }
+
+            #btn-export-json:hover {
+                background: rgba(59, 130, 246, 0.2);
+                border-color: #3b82f6;
+            }
+
             .hypotheses-grid {
                 display: grid;
                 grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -196,6 +250,13 @@
                 transform: translateY(-4px);
                 border-color: #3b82f6;
                 box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.2);
+            }
+
+            .hypothesis-card:target {
+                border-color: #3b82f6;
+                box-shadow: 0 0 25px rgba(59, 130, 246, 0.4);
+                background: rgba(59, 130, 246, 0.08);
+                transform: translateY(-4px);
             }
 
             .h-header {
@@ -220,6 +281,21 @@
                 color: #f1f5f9;
                 margin: 0;
                 line-height: 1.4;
+                flex-grow: 1;
+            }
+
+            .anchor-link {
+                color: #64748b;
+                text-decoration: none;
+                font-size: 0.9rem;
+                opacity: 0.4;
+                transition: opacity 0.2s ease;
+                cursor: pointer;
+            }
+
+            .anchor-link:hover {
+                opacity: 1;
+                color: #3b82f6;
             }
 
             .h-desc {
@@ -266,6 +342,122 @@
                 background: rgba(15, 23, 42, 0.3);
                 border-radius: 12px;
                 border: 1px dashed rgba(255,255,255,0.1);
+            }
+
+            .stats-summary-panel {
+                background: rgba(15, 23, 42, 0.4);
+                border: 1px solid rgba(255, 255, 255, 0.05);
+                border-radius: 12px;
+                padding: 1.25rem;
+                margin-bottom: 2rem;
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+                gap: 1rem;
+                text-align: center;
+                backdrop-filter: blur(10px);
+            }
+
+            .stat-metric-card {
+                padding: 0.75rem;
+                background: rgba(255, 255, 255, 0.02);
+                border-radius: 8px;
+                border: 1px solid rgba(255, 255, 255, 0.02);
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            .stat-metric-val {
+                font-size: 1.75rem;
+                font-weight: 700;
+                color: #3b82f6;
+                margin-bottom: 0.25rem;
+            }
+
+            .stat-metric-lbl {
+                font-size: 0.8rem;
+                color: #94a3b8;
+                text-transform: uppercase;
+                letter-spacing: 0.05em;
+            }
+
+            .citation-tabs-container {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 1rem;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+                padding-bottom: 0.5rem;
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+
+            .citation-tabs {
+                display: flex;
+                gap: 0.25rem;
+            }
+
+            .citation-tab {
+                background: transparent;
+                border: 1px solid transparent;
+                color: #94a3b8;
+                padding: 0.5rem 1rem;
+                border-radius: 6px;
+                cursor: pointer;
+                font-weight: 600;
+                transition: all 0.2s ease;
+                font-size: 0.85rem;
+            }
+
+            .citation-tab:hover {
+                color: #f1f5f9;
+                background: rgba(255, 255, 255, 0.02);
+            }
+
+            .citation-tab.active {
+                color: #3b82f6;
+                background: rgba(59, 130, 246, 0.1);
+                border-color: rgba(59, 130, 246, 0.2);
+            }
+
+            .citation-content {
+                display: none;
+                background: rgba(10, 14, 26, 0.6);
+                padding: 1.25rem;
+                border-radius: 8px;
+                font-family: 'Inter', sans-serif;
+                font-size: 0.9rem;
+                color: #cbd5e1;
+                line-height: 1.6;
+                border: 1px solid rgba(255, 255, 255, 0.05);
+            }
+
+            .citation-content.active {
+                display: block;
+            }
+
+            .btn-copy {
+                background: rgba(59, 130, 246, 0.1);
+                border: 1px solid rgba(59, 130, 246, 0.3);
+                color: #93c5fd;
+                padding: 0.5rem 1rem;
+                border-radius: 6px;
+                cursor: pointer;
+                font-weight: 600;
+                transition: all 0.2s ease;
+                font-size: 0.85rem;
+            }
+
+            .btn-copy:hover {
+                background: rgba(59, 130, 246, 0.2);
+                border-color: #3b82f6;
+                transform: translateY(-1px);
+            }
+
+            .btn-copy.success {
+                background: rgba(16, 185, 129, 0.1);
+                border-color: rgba(16, 185, 129, 0.3);
+                color: #6ee7b7;
             }
         </style>
 
@@ -382,7 +574,80 @@
             </div>
         </div>
 
+        <div class="export-panel">
+            <button id="btn-export-csv" class="btn-export" title="Скачать отфильтрованную выборку в формате CSV для Excel/R/Python">
+                📊 Экспорт выборки в CSV
+            </button>
+            <button id="btn-export-json" class="btn-export" title="Открыть или скачать исходный JSON-файл базы данных гипотез">
+                📥 Скачать полную базу JSON
+            </button>
+        </div>
+
+        <div id="stats-summary-panel" class="stats-summary-panel">
+            <div class="stat-metric-card">
+                <div class="stat-metric-val" id="stat-total-val">0</div>
+                <div class="stat-metric-lbl">Гипотез в выборке</div>
+            </div>
+            <div class="stat-metric-card">
+                <div class="stat-metric-val" id="stat-proven-pct">0%</div>
+                <div class="stat-metric-lbl">Эмпирически доказано</div>
+            </div>
+            <div class="stat-metric-card">
+                <div class="stat-metric-val" id="stat-reproducible-pct">0%</div>
+                <div class="stat-metric-lbl">Автовоспроизводимость</div>
+            </div>
+            <div class="stat-metric-card">
+                <div class="stat-metric-val" id="stat-interdisciplinary-pct">0%</div>
+                <div class="stat-metric-lbl">Междисциплинарность</div>
+            </div>
+            <div class="stat-metric-card" style="grid-column: span 2; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 80px;">
+                <div class="stat-metric-lbl" style="margin-bottom: 0.5rem; font-size: 0.75rem;">Распределение верификации гипотез (EVI)</div>
+                <div id="evidence-svg-chart-wrapper" style="width: 100%;"></div>
+            </div>
+        </div>
+
         <div id="hypotheses-grid" class="hypotheses-grid"></div>
+
+        <section class="citation-block">
+            <h3 class="bilingual-text" data-ru="📚 Как цитировать этот реестр" data-en="📚 How to Cite this Registry">📚 Как цитировать этот реестр</h3>
+            <p class="bilingual-text" style="font-size: 0.9rem; color: #94a3b8; margin-bottom: 1rem;" data-ru="Выберите подходящий формат цитирования для вашей научной работы:" data-en="Select the preferred citation format for your academic paper:">Выберите подходящий формат цитирования для вашей научной работы:</p>
+
+            <div class="citation-tabs-container">
+                <div class="citation-tabs">
+                    <button class="citation-tab active" data-tab="apa">APA / ГОСТ</button>
+                    <button class="citation-tab" data-tab="bibtex">BibTeX</button>
+                    <button class="citation-tab" data-tab="ris">RIS</button>
+                </div>
+                <button id="btn-copy-citation" class="btn-copy">
+                    <span id="copy-btn-text">Копировать</span>
+                    <span id="copy-btn-success" style="display:none;">✔ Скопировано!</span>
+                </button>
+            </div>
+
+            <div class="citation-contents">
+                <div id="citation-apa" class="citation-content active">
+                    Гасунс М. Ю. Реестр гипотез дальнего чтения и социологии индологических конференций // Russian Indological Research Archive. URL: https://gasyoun.github.io/IndologyScholars/hypotheses.html (дата обращения: <span class="current-date">30.05.2026</span>).
+                </div>
+                <div id="citation-bibtex" class="citation-content">
+<pre style="margin: 0; font-family: monospace; font-size: 0.85rem; color: #cbd5e1; overflow-x: auto; white-space: pre-wrap;">@misc{gasuns2026hypotheses,
+  author       = {Gasuns, M. Yu.},
+  title        = {Hypotheses Registry of Russian Indology: Far Reading and Sociological Analysis},
+  year         = {2026},
+  publisher    = {Russian Indological Research Archive},
+  howpublished = {\url{https://gasyoun.github.io/IndologyScholars/hypotheses.html}},
+  note         = {Accessed: <span class="current-date">30.05.2026</span>}
+}</pre>
+                </div>
+                <div id="citation-ris" class="citation-content">
+<pre style="margin: 0; font-family: monospace; font-size: 0.85rem; color: #cbd5e1; overflow-x: auto; white-space: pre-wrap;">TY  - ELEC
+AU  - Gasuns, M. Yu.
+TI  - Hypotheses Registry of Russian Indology: Far Reading and Sociological Analysis
+PY  - 2026
+UR  - https://gasyoun.github.io/IndologyScholars/hypotheses.html
+ER  - </pre>
+                </div>
+            </div>
+        </section>
 
         <script type="module">
             const DICT_SIG = {
@@ -449,17 +714,152 @@
             };
 
             let allHypotheses = [];
+            let currentlyFiltered = [];
+
+            // Global Toast helper style & function
+            window.showToast = function(id) {
+                let toast = document.getElementById('copy-toast');
+                if (!toast) {
+                    toast = document.createElement('div');
+                    toast.id = 'copy-toast';
+                    toast.style.cssText = `
+                        position: fixed;
+                        bottom: 2rem;
+                        right: 2rem;
+                        background: rgba(15, 23, 42, 0.95);
+                        border: 1px solid rgba(59, 130, 246, 0.5);
+                        color: #cbd5e1;
+                        padding: 0.75rem 1.5rem;
+                        border-radius: 8px;
+                        font-size: 0.9rem;
+                        box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+                        z-index: 1000;
+                        backdrop-filter: blur(10px);
+                        transition: opacity 0.3s ease, transform 0.3s ease;
+                        opacity: 0;
+                        transform: translateY(20px);
+                        pointer-events: none;
+                    `;
+                    document.body.appendChild(toast);
+                }
+                toast.textContent = `Ссылка на гипотезу ${id} скопирована в буфер обмена!`;
+                toast.style.opacity = '1';
+                toast.style.transform = 'translateY(0)';
+                setTimeout(() => {
+                    toast.style.opacity = '0';
+                    toast.style.transform = 'translateY(20px)';
+                }, 2200);
+            }
 
             async function init() {
                 try {
                     const response = await fetch('assets/data/hypotheses.json');
                     allHypotheses = await response.json();
+                    currentlyFiltered = [...allHypotheses];
                     renderCards(allHypotheses);
                     setupFilters();
+                    setupExport();
+                    setupCitation();
                 } catch (err) {
                     console.error("Failed to load hypotheses:", err);
                     document.getElementById('hypotheses-grid').innerHTML = '<div class="no-results">Ошибка загрузки данных.</div>';
                 }
+            }
+
+            function drawDynamicSVGChart(filtered) {
+                const wrapper = document.getElementById('evidence-svg-chart-wrapper');
+                if (!wrapper) return;
+
+                const total = filtered.length;
+                if (total === 0) {
+                    wrapper.innerHTML = '<div style="color: #64748b; font-size: 0.85rem; padding-top: 10px;">Нет данных для построения графика</div>';
+                    return;
+                }
+
+                const counts = {
+                    proven: filtered.filter(h => h.evidence === 'proven').length,
+                    partial: filtered.filter(h => h.evidence === 'partial').length,
+                    refuted: filtered.filter(h => h.evidence === 'refuted').length,
+                    inconclusive: filtered.filter(h => h.evidence === 'inconclusive').length
+                };
+
+                const pct = {
+                    proven: Math.round((counts.proven / total) * 100),
+                    partial: Math.round((counts.partial / total) * 100),
+                    refuted: Math.round((counts.refuted / total) * 100),
+                    inconclusive: Math.round((counts.inconclusive / total) * 100)
+                };
+
+                let svg = `<svg width="100%" height="20" style="border-radius: 6px; overflow: hidden; background: rgba(255,255,255,0.05); display: block;">`;
+                let currentX = 0;
+
+                const colors = {
+                    proven: '#10b981',       // Emerald
+                    partial: '#f59e0b',      // Amber
+                    refuted: '#ef4444',      // Rose
+                    inconclusive: '#64748b'  // Slate
+                };
+
+                const labels = {
+                    proven: 'Доказано',
+                    partial: 'Частично',
+                    refuted: 'Опровергнуто',
+                    inconclusive: 'Неопределенно'
+                };
+
+                ['proven', 'partial', 'refuted', 'inconclusive'].forEach(key => {
+                    const widthPct = (counts[key] / total) * 100;
+                    if (widthPct > 0) {
+                        svg += `<rect x="${currentX}%" y="0" width="${widthPct}%" height="20" fill="${colors[key]}" style="transition: all 0.3s ease;">
+                                  <title>${labels[key]}: ${counts[key]} (${Math.round(widthPct)}%)</title>
+                                </rect>`;
+                        currentX += widthPct;
+                    }
+                });
+
+                svg += `</svg>`;
+
+                let legend = `<div style="display: flex; gap: 0.75rem; justify-content: center; margin-top: 0.5rem; flex-wrap: wrap; font-size: 0.75rem;">`;
+                ['proven', 'partial', 'refuted', 'inconclusive'].forEach(key => {
+                    if (counts[key] > 0) {
+                        legend += `
+                            <div style="display: flex; align-items: center; gap: 0.25rem;">
+                                <span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: ${colors[key]};"></span>
+                                <span style="color: #cbd5e1;">${labels[key]}: <strong>${counts[key]}</strong> (${pct[key]}%)</span>
+                            </div>
+                        `;
+                    }
+                });
+                legend += `</div>`;
+
+                wrapper.innerHTML = svg + legend;
+            }
+
+            function updateStatsSummary(filtered) {
+                const total = filtered.length;
+                document.getElementById('stat-total-val').textContent = `${total} / ${allHypotheses.length}`;
+
+                if (total === 0) {
+                    document.getElementById('stat-proven-pct').textContent = '0%';
+                    document.getElementById('stat-reproducible-pct').textContent = '0%';
+                    document.getElementById('stat-interdisciplinary-pct').textContent = '0%';
+                    drawDynamicSVGChart(filtered);
+                    return;
+                }
+
+                const provenCount = filtered.filter(h => h.evidence === 'proven').length;
+                const provenPct = Math.round((provenCount / total) * 100);
+                document.getElementById('stat-proven-pct').textContent = `${provenPct}%`;
+
+                const reproducibleCount = filtered.filter(h => h.reproducibility === 'computational').length;
+                const reproduciblePct = Math.round((reproducibleCount / total) * 100);
+                document.getElementById('stat-reproducible-pct').textContent = `${reproduciblePct}%`;
+
+                const interdisciplinaryCount = filtered.filter(h => h.interdisciplinary === 'interdisciplinary' || h.interdisciplinary === 'transdisciplinary').length;
+                const interdisciplinaryPct = Math.round((interdisciplinaryCount / total) * 100);
+                document.getElementById('stat-interdisciplinary-pct').textContent = `${interdisciplinaryPct}%`;
+
+                drawDynamicSVGChart(filtered);
             }
 
             function renderCards(data) {
@@ -468,16 +868,30 @@
 
                 if (data.length === 0) {
                     grid.innerHTML = '<div class="no-results">Нет гипотез, соответствующих выбранным фильтрам.</div>';
+                    updateStatsSummary(data);
                     return;
                 }
 
                 data.forEach(h => {
                     const card = document.createElement('div');
                     card.className = 'hypothesis-card';
+                    card.id = h.id; // Target identification for anchors
+
+                    // Direct evidence routing paths based on methodology
+                    let evidenceLink = '';
+                    if (h.methodology === 'network') {
+                        evidenceLink = `<a href="networks.html" class="metric-badge" style="background: rgba(168, 85, 247, 0.15); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.3); text-decoration: none; display: inline-flex; align-items: center; gap: 0.25rem;" title="Открыть сетевые графы">📊 См. граф</a>`;
+                    } else if (h.methodology === 'gis') {
+                        evidenceLink = `<a href="spacetime.html" class="metric-badge" style="background: rgba(236, 72, 153, 0.15); color: #f472b6; border: 1px solid rgba(236, 72, 153, 0.3); text-decoration: none; display: inline-flex; align-items: center; gap: 0.25rem;" title="Открыть карту пространства-времени">🗺️ См. карту</a>`;
+                    } else if (h.methodology === 'prosopography') {
+                        evidenceLink = `<a href="index.html#scholars-section" class="metric-badge" style="background: rgba(34, 197, 94, 0.15); color: #4ade80; border: 1px solid rgba(34, 197, 94, 0.3); text-decoration: none; display: inline-flex; align-items: center; gap: 0.25rem;" title="Смотреть список исследователей">👥 См. ученых</a>`;
+                    }
+
                     card.innerHTML = `
                         <div class="h-header">
                             <span class="h-id">${h.id}</span>
                             <h3 class="h-title">${h.title_ru}</h3>
+                            <a href="#${h.id}" class="anchor-link" title="Скопировать ссылку на эту гипотезу" onclick="navigator.clipboard.writeText(window.location.origin + window.location.pathname + '#${h.id}'); showToast('${h.id}'); event.stopPropagation();">🔗</a>
                         </div>
                         <div class="h-desc">${h.description_ru}</div>
                         <div class="h-metrics">
@@ -493,10 +907,12 @@
                             <span class="metric-badge metric-dsc" title="Охват доказательной базы (Data Scope)">DSC: ${DICT_DSC[h.data_scope] || h.data_scope}</span>
                             <span class="metric-badge metric-int" title="Междисциплинарность (Interdisciplinarity)">INT: ${DICT_INT[h.interdisciplinary] || h.interdisciplinary}</span>
                             <span class="metric-badge metric-imp" title="Потенциал цитируемости (Impact Potential)">IMP: ${DICT_IMP[h.impact] || h.impact}</span>
+                            ${evidenceLink}
                         </div>
                     `;
                     grid.appendChild(card);
                 });
+                updateStatsSummary(data);
             }
 
             function setupFilters() {
@@ -527,7 +943,7 @@
                     const int = intFilter.value;
                     const imp = impFilter.value;
 
-                    const filtered = allHypotheses.filter(h => {
+                    currentlyFiltered = allHypotheses.filter(h => {
                         return (sig === 'all' || h.significance === sig) &&
                                (nov === 'all' || h.novelty === nov) &&
                                (unx === 'all' || h.unexpectedness === unx) &&
@@ -541,7 +957,7 @@
                                (int === 'all' || h.interdisciplinary === int) &&
                                (imp === 'all' || h.impact === imp);
                     });
-                    renderCards(filtered);
+                    renderCards(currentlyFiltered);
                 };
 
                 sigFilter.addEventListener('change', applyFilters);
@@ -556,6 +972,102 @@
                 dscFilter.addEventListener('change', applyFilters);
                 intFilter.addEventListener('change', applyFilters);
                 impFilter.addEventListener('change', applyFilters);
+            }
+
+            function setupExport() {
+                const btnCsv = document.getElementById('btn-export-csv');
+                const btnJson = document.getElementById('btn-export-json');
+
+                btnCsv.addEventListener('click', () => {
+                    if (currentlyFiltered.length === 0) {
+                        alert("Нет данных для экспорта!");
+                        return;
+                    }
+
+                    const headers = [
+                        "ID", "Title (RU)", "Title (EN)", "Description (RU)", "Description (EN)",
+                        "Significance", "Novelty", "Unexpectedness", "Evidence", "Scope",
+                        "Methodology", "Status", "Reproducibility", "Contribution",
+                        "Data Scope", "Interdisciplinary", "Impact"
+                    ];
+
+                    const escapeCSV = (val) => {
+                        if (val === null || val === undefined) return "";
+                        const str = String(val).replace(/"/g, '""');
+                        return `"${str}"`;
+                    };
+
+                    const rows = currentlyFiltered.map(h => [
+                        h.id, h.title_ru, h.title_en, h.description_ru, h.description_en,
+                        h.significance, h.novelty, h.unexpectedness, h.evidence, h.scope,
+                        h.methodology, h.status, h.reproducibility, h.contribution,
+                        h.data_scope, h.interdisciplinary, h.impact
+                    ].map(escapeCSV).join(","));
+
+                    const csvContent = "\ufeff" + [headers.join(","), ...rows].join("\n");
+                    const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
+                    const url = URL.createObjectURL(blob);
+                    const link = document.createElement("a");
+                    link.setAttribute("href", url);
+
+                    const timestamp = new Date().toISOString().slice(0, 10);
+                    link.setAttribute("download", `indology_hypotheses_export_${timestamp}.csv`);
+                    link.style.visibility = 'hidden';
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                });
+
+                btnJson.addEventListener('click', () => {
+                    window.open('assets/data/hypotheses.json', '_blank');
+                });
+            }
+
+            function setupCitation() {
+                const tabs = document.querySelectorAll('.citation-tab');
+                const contents = document.querySelectorAll('.citation-content');
+                const btnCopy = document.getElementById('btn-copy-citation');
+                const successText = document.getElementById('copy-btn-success');
+                const normalText = document.getElementById('copy-btn-text');
+
+                const now = new Date();
+                const formattedDate = now.toLocaleDateString('ru-RU', { day: '2-digit', month: '2-digit', year: 'numeric' });
+                document.querySelectorAll('.current-date').forEach(el => el.textContent = formattedDate);
+
+                tabs.forEach(tab => {
+                    tab.addEventListener('click', () => {
+                        tabs.forEach(t => t.classList.remove('active'));
+                        contents.forEach(c => c.classList.remove('active'));
+
+                        tab.classList.add('active');
+                        const target = document.getElementById(`citation-${tab.dataset.tab}`);
+                        if (target) target.classList.add('active');
+                    });
+                });
+
+                btnCopy.addEventListener('click', () => {
+                    const activeContent = document.querySelector('.citation-content.active');
+                    if (!activeContent) return;
+
+                    let text = activeContent.textContent.trim();
+                    const pre = activeContent.querySelector('pre');
+                    if (pre) {
+                        text = pre.textContent.trim();
+                    }
+
+                    navigator.clipboard.writeText(text).then(() => {
+                        normalText.style.display = 'none';
+                        successText.style.display = 'inline';
+                        btnCopy.classList.add('success');
+                        setTimeout(() => {
+                            successText.style.display = 'none';
+                            normalText.style.display = 'inline';
+                            btnCopy.classList.remove('success');
+                        }, 2000);
+                    }).catch(err => {
+                        console.error('Failed to copy citation:', err);
+                    });
+                });
             }
 
             document.addEventListener('DOMContentLoaded', init);
