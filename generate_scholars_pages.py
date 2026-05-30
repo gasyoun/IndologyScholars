@@ -777,6 +777,10 @@ def render_profile(scholar, related, authority, meso_by_presentation, meso_items
     )
 
     extra_css = ""
+    og_path = f"assets/og/scholar_{scholar.get('url_slug')}.png"
+    from publication_helpers import create_dynamic_og_image
+    create_dynamic_og_image([name_ru, profile_label, f"Докладов: {scholar.get('total_talks') or 0}"], og_path)
+
     return page_shell(
         f"{name_ru} | {SITE_NAME}",
         description,
@@ -784,6 +788,7 @@ def render_profile(scholar, related, authority, meso_by_presentation, meso_items
         body,
         profile_structured_data(scholar, authority),
         extra_head=extra_css,
+        custom_og_image=og_path,
     )
 
 

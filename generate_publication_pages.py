@@ -10123,7 +10123,14 @@ def generate_presentation_pages(records):
             page_data(title, seo_description, path, page_type="ScholarlyArticle"),
             make_breadcrumbs([("Главная", ""), ("Доклады", "p/"), (title, path)]),
         ]
-        write_text(path, page_shell(presentation_seo_title(title, public_id), seo_description, path, body, structured))
+        
+        og_path = f"assets/og/presentation_{public_id}.png"
+        from publication_helpers import create_dynamic_og_image
+        author_text = clean_text(talk.get("author") or "")
+        series_text = series_label(talk.get('series_key'), 'ru')
+        create_dynamic_og_image([title, f"Автор: {author_text}" if author_text else "", f"Конференция: {series_text} ({year})"], og_path)
+        
+        write_text(path, page_shell(presentation_seo_title(title, public_id), seo_description, path, body, structured, custom_og_image=og_path))
         
         card_html = (
             f'<article class="talk"><div class="entry-head"><strong><a href="{esc(Path(path).name)}">{esc(title)}</a></strong>'
