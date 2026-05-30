@@ -676,10 +676,24 @@ def render_profile(scholar, related, authority, meso_by_presentation, meso_items
         f'<p class="meta">{esc(note)}</p>' for note in scholar.get("affiliation_notes") or []
     )
     
+    person_authority = (authority.get("persons") or {}).get(scholar["id"], {})
+    orcid_url = None
+    if is_public_authority_record(person_authority):
+        urls_dict = clean_person_urls(person_authority)
+        orcid_url = urls_dict.get("orcid")
+
+    orcid_icon = ""
+    if orcid_url:
+        orcid_icon = f' <a href="{esc(orcid_url)}" target="_blank" rel="noopener" style="vertical-align: middle; margin-left: 6px;" title="ORCID iD (Verified Researcher Record)"><img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" alt="ORCID iD" style="width: 16px; height: 16px; border: none; vertical-align: middle;"></a>'
+
     life_ru = format_lifespan(scholar, "ru").strip()
     life_en = format_lifespan(scholar, "en").strip()
     ru_heading = f'{esc(name_ru)} <span class="life">{esc(life_ru)}</span>' if life_ru else esc(name_ru)
+    if orcid_icon:
+        ru_heading += orcid_icon
     en_heading = " ".join(part for part in [name_en, life_en] if part)
+    if orcid_icon:
+        en_heading += orcid_icon
     profile_note_html = f'<p class="profile-note">{esc(profile_note)}</p>' if profile_note else ""
     
     series_html = (

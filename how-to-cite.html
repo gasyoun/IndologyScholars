@@ -27,6 +27,18 @@
     <meta name="twitter:image" content="https://gasyoun.github.io/IndologyScholars/assets/og-image.png">
     <script defer src="/IndologyScholars/assets/pwa.js"></script>
 
+<meta name="citation_title" content="Citation Guidelines and Linked Open Data Integration for the Russian Indological Research Archive">
+<meta name="citation_author" content="Gasuns, M. Yu.">
+<meta name="citation_author_orcid" content="https://orcid.org/0000-0002-3665-636X">
+<meta name="citation_publication_date" content="2026/05/30">
+<meta name="citation_journal_title" content="Russian Indological Research Archive">
+<meta name="citation_language" content="rus">
+<meta name="DC.title" content="Citation Guidelines and Linked Open Data Integration for the Russian Indological Research Archive">
+<meta name="DC.creator" content="Gasuns, M. Yu.">
+<meta name="DC.creator.orcid" content="https://orcid.org/0000-0002-3665-636X">
+<meta name="DC.issued" content="2026-05-30">
+<meta name="DC.language" content="rus">
+
 
     <script type="application/ld+json">
 [
@@ -129,6 +141,9 @@
         </nav>
 
         <header style="text-align: center; margin-bottom: 2.5rem;">
+            <div class="lang-toggle-container" style="text-align: right; margin-bottom: 1.5rem;">
+                <button id="lang-toggle-btn" class="lang-toggle-btn" onclick="toggleLanguage()" style="background: rgba(59, 130, 246, 0.15); border: 1px solid rgba(59, 130, 246, 0.4); color: #60a5fa; padding: 0.5rem 1rem; border-radius: 20px; font-weight: 500; cursor: pointer; transition: all 0.2s ease;">English</button>
+            </div>
             <h1 class="bilingual-text" data-ru="Цитирование и экспорт" data-en="Citation & Exports">Цитирование и экспорт</h1>
             <p class="bilingual-text" data-ru="Рекомендации по интеграции материалов архива в научные работы, Вики-системы и персональные базы знаний" data-en="Guidelines on integrating archive materials into research papers, Wiki systems, and personal vaults">Рекомендации по интеграции материалов архива в научные работы, Вики-системы и персональные базы знаний</p>
         </header>
@@ -139,7 +154,7 @@
             <article class="card" style="border-left: 4px solid var(--accent); background: rgba(255, 255, 255, 0.02);">
                 <strong class="bilingual-text" data-ru="Рекомендуемое описание всего архива" data-en="Suggested Citation for the Complete Archive">Рекомендуемое описание всего архива</strong>
                 <div class="meta" style="margin-top: 0.5rem; font-size: 0.95rem; color: #f8fafc; line-height: 1.5;">
-                    Гасунс М. Ю. Russian Indological Research Archive: Объединенный реляционный архив индологических докладов. Версия 2026-05-30. URL: https://gasyoun.github.io/IndologyScholars/ (дата обращения: <span class="current-date">30.05.2026</span>).
+                    Гасунс М. Ю. <a href="https://orcid.org/0000-0002-3665-636X" target="_blank" rel="noopener" style="vertical-align: middle; margin-left: 4px;" title="ORCID iD"><img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" alt="ORCID" style="width: 16px; height: 16px; border: none; vertical-align: middle;"></a> Russian Indological Research Archive: Объединенный реляционный архив индологических докладов. Версия 2026-05-30. URL: https://gasyoun.github.io/IndologyScholars/ (дата обращения: <span class="current-date">30.05.2026</span>).
                 </div>
             </article>
 
@@ -201,11 +216,70 @@
             </article>
         </section>
 
+        <section class="list" style="margin-top: 3rem;">
+            <h2 class="bilingual-text" data-ru="📜 Академические стандарты и регламенты" data-en="📜 Academic Standards & Editorial Policies" style="font-size: 1.3rem; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 0.5rem; color: #3b82f6;">📜 Академические стандарты и регламенты</h2>
+
+            <article class="card">
+                <strong class="bilingual-text" data-ru="Редакционный совет и кураторство" data-en="Editorial Board & Scientific Curation">Редакционный совет и кураторство</strong>
+                <p class="bilingual-text"
+                   data-ru="Реестр гипотез и просопографическая база данных курируются ведущими специалистами в области индологии и цифровых гуманитарных наук (Digital Humanities). Проект осуществляется под руководством д-ра Марциса Гасунса. Редакционный контроль качества данных обеспечивается через рецензирование."
+                   data-en="The hypotheses registry and prosopographical database are curated by leading specialists in Indology and Digital Humanities. The project is led by Dr. Mārcis Gasūns. Editorial quality control is maintained through strict peer review.">Редакционный совет и кураторство</p>
+            </article>
+
+            <article class="card">
+                <strong class="bilingual-text" data-ru="Политика открытого рецензирования" data-en="Open Peer Review Policy">Политика открытого рецензирования</strong>
+                <p class="bilingual-text"
+                   data-ru="Мы придерживаемся стандартов открытой науки (Open Science). Все изменения, новые гипотезы или исправления вносятся в реестр через процедуру открытого рецензирования (Open Peer Review) посредством GitHub Pull Requests. Каждый PR проходит независимую верификацию методами автоматического тестирования и экспертной оценки."
+                   data-en="We adhere to Open Science standards. All additions, hypothesis updates, or data corrections are integrated via an Open Peer Review workflow utilizing GitHub Pull Requests. Each pull request undergoes independent automated verification and expert scientific review.">Политика открытого рецензирования</p>
+            </article>
+
+            <article class="card">
+                <strong class="bilingual-text" data-ru="Декларация о конфликте интересов" data-en="Conflict of Interest Statement">Декларация о конфликте интересов</strong>
+                <p class="bilingual-text"
+                   data-ru="Авторы и кураторы заявляют об отсутствии потенциальных или реальных конфликтов интересов, связанных с методологией, сбором данных или представленными выводами."
+                   data-en="The authors and curators declare no potential or actual conflicts of interest regarding the methodology, data collection, or research findings presented in this registry.">Декларация о конфликте интересов</p>
+            </article>
+
+            <article class="card">
+                <strong class="bilingual-text" data-ru="Источники финансирования и благодарности" data-en="Funding & Acknowledgements">Источники финансирования и благодарности</strong>
+                <p class="bilingual-text"
+                   data-ru="Сбор данных и разработка инфраструктуры выполнены на некоммерческой основе в рамках независимых исследовательских инициатив по сохранению научного наследия отечественной индологии. Мы выражаем признательность Институту восточных рукописей РАН и Институту востоковедения РАН за сохранение архивных программ конференций."
+                   data-en="Data collection and scientometric infrastructure development were conducted on a non-profit basis as part of independent research initiatives dedicated to preserving the scholarly heritage of Russian Indology. We express our gratitude to the Institute of Oriental Manuscripts (RAS) and the Institute of Oriental Studies (RAS) for preserving conference archives.">Источники финансирования и благодарности</p>
+            </article>
+        </section>
+
         <script>
+            let currentLang = localStorage.getItem('findings-lang') || 'ru';
+
+            function toggleLanguage() {
+                currentLang = currentLang === 'ru' ? 'en' : 'ru';
+                setLanguage(currentLang);
+            }
+            window.toggleLanguage = toggleLanguage;
+
+            function setLanguage(lang) {
+                currentLang = lang;
+                localStorage.setItem('findings-lang', lang);
+
+                document.querySelectorAll('.bilingual-text').forEach(el => {
+                    const text = el.getAttribute('data-' + lang);
+                    if (text) {
+                        el.innerHTML = text;
+                    }
+                });
+
+                const btn = document.getElementById('lang-toggle-btn');
+                if (btn) {
+                    btn.innerText = lang === 'ru' ? 'English' : 'Русский';
+                }
+            }
+
             document.addEventListener('DOMContentLoaded', () => {
                 const now = new Date();
                 const formattedDate = now.toLocaleDateString('ru-RU', { day: '2-digit', month: '2-digit', year: 'numeric' });
                 document.querySelectorAll('.current-date').forEach(el => el.textContent = formattedDate);
+
+                setLanguage(currentLang);
             });
         </script>
 

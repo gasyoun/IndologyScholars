@@ -27,6 +27,22 @@
     <meta name="twitter:image" content="https://gasyoun.github.io/IndologyScholars/assets/og-image.png">
     <script defer src="/IndologyScholars/assets/pwa.js"></script>
 
+<meta name="citation_title" content="Hypotheses Registry of Russian Indology: Far Reading and Sociological Analysis">
+<meta name="citation_author" content="Gasuns, M. Yu.">
+<meta name="citation_author_orcid" content="https://orcid.org/0000-0002-3665-636X">
+<meta name="citation_publication_date" content="2026/05/30">
+<meta name="citation_online_date" content="2026/05/30">
+<meta name="citation_journal_title" content="Russian Indological Research Archive">
+<meta name="citation_technical_report_number" content="DOI: 10.5281/zenodo.10616885">
+<meta name="citation_language" content="rus">
+<meta name="citation_pdf_url" content="https://gasyoun.github.io/IndologyScholars/hypotheses.html">
+<meta name="DC.title" content="Hypotheses Registry of Russian Indology: Far Reading and Sociological Analysis">
+<meta name="DC.creator" content="Gasuns, M. Yu.">
+<meta name="DC.creator.orcid" content="https://orcid.org/0000-0002-3665-636X">
+<meta name="DC.issued" content="2026-05-30">
+<meta name="DC.relation" content="https://gasyoun.github.io/IndologyScholars/">
+<meta name="DC.language" content="rus">
+
 
     <script type="application/ld+json">
 [
@@ -129,6 +145,10 @@
         </nav>
 
         <header style="text-align: center; margin-bottom: 2rem;">
+            <div class="lang-toggle-container" style="text-align: right; margin-bottom: 1.5rem;">
+                <button id="lang-toggle-btn" class="lang-toggle-btn" onclick="toggleLanguage()" style="background: rgba(59, 130, 246, 0.15); border: 1px solid rgba(59, 130, 246, 0.4); color: #60a5fa; padding: 0.5rem 1rem; border-radius: 20px; font-weight: 500; cursor: pointer; transition: all 0.2s ease;">English</button>
+            </div>
+
             <h1 class="bilingual-text" data-ru="Реестр гипотез" data-en="Hypotheses Registry">Реестр гипотез</h1>
             <p class="bilingual-text" data-ru="Каталог аналитических гипотез, проверенных на массиве данных архива" data-en="Catalog of analytical hypotheses tested on the archive dataset">Каталог аналитических гипотез, проверенных на массиве данных архива</p>
 
@@ -139,6 +159,43 @@
                 <img src="https://img.shields.io/badge/Data-FAIR-orange" alt="FAIR Data" style="height: 20px;">
             </div>
         </header>
+
+        <section class="structured-abstract-card" style="background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem; backdrop-filter: blur(10px);">
+            <h3 class="bilingual-text" data-ru="📝 Аннотация реестра (Structured Abstract)" data-en="📝 Registry Abstract (Structured Abstract)" style="margin-top: 0; color: #3b82f6; font-size: 1.2rem; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 0.5rem; margin-bottom: 1rem;">📝 Аннотация реестра (Structured Abstract)</h3>
+
+            <div style="display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.95rem; line-height: 1.6; color: #cbd5e1;">
+                <div>
+                    <strong class="bilingual-text" data-ru="Контекст:" data-en="Context:">Контекст:</strong>
+                    <span class="bilingual-text"
+                          data-ru="Настоящее исследование посвящено первичному наукометрическому картированию и дальнему чтению истории отечественной индологии за последние два десятилетия (2004–2026 гг.) на материале представительных научных серий «Зографские чтения» и «Рериховские чтения»."
+                          data-en="This study presents a systematic scientometric mapping and distant reading of Russian Indology over two decades (2004–2026), analyzing structural dynamics within the 'Zograf Readings' and 'Roerich Readings' conference series.">Настоящее исследование посвящено первичному наукометрическому картированию и дальнему чтению истории отечественной индологии за последние два десятилетия (2004–2026 гг.) на материале представительных научных серий «Зографские чтения» и «Рериховские чтения».</span>
+                </div>
+                <div>
+                    <strong class="bilingual-text" data-ru="Методология:" data-en="Methodology:">Методология:</strong>
+                    <span class="bilingual-text"
+                          data-ru="Применяется реляционное моделирование данных на базе SQLite, построение графов соавторства и институционального участия с помощью Gephi и NetworkX, пространственно-временной ГИС-анализ и тематическое моделирование с помощью методов NLP."
+                          data-en="The workflow utilizes relational data modeling in SQLite, co-authorship and institutional network analysis via Gephi/NetworkX, spatiotemporal GIS mapping, and NLP-driven thematic modeling of paper topics.">Применяется реляционное моделирование данных на базе SQLite, построение графов соавторства и институционального участия с помощью Gephi и NetworkX, пространственно-временной ГИС-анализ и тематическое моделирование с помощью методов NLP.</span>
+                </div>
+                <div>
+                    <strong class="bilingual-text" data-ru="Результаты:" data-en="Results:">Результаты:</strong>
+                    <span class="bilingual-text"
+                          data-ru="Сформирован реестр из 35 верифицированных гипотез, классифицированных по 12 многомерным шкалам наукометрии. Выявлена высокая концентрация участия (мезоуровни), высокая возвращаемость авторов и очерчены географические траектории академических центров."
+                          data-en="We establish a formal registry of 35 verified hypotheses classified across 12 multi-dimensional scientometric scales, revealing high concentration profiles, stable core retention rates, and clear institutional pathways.">Сформирован реестр из 35 верифицированных гипотез, классифицированных по 12 многомерным шкалам наукометрии. Выявлена высокая концентрация участия (мезоуровни), высокая возвращаемость авторов и очерчены географические траектории академических центров.</span>
+                </div>
+                <div style="border-top: 1px solid rgba(255,255,255,0.05); padding-top: 0.75rem; margin-top: 0.25rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                    <div>
+                        <strong class="bilingual-text" data-ru="Ключевые слова:" data-en="Keywords:">Ключевые слова:</strong>
+                        <span class="bilingual-text"
+                              data-ru="Дальнее чтение; Наукометрия; Сетевой анализ; Индология; Граф знаний; Открытые данные."
+                              data-en="Distant Reading; Distant Bibliography; Scientometrics; Social Network Analysis; Indology; Knowledge Graph; Open Science.">Дальнее чтение; Наукометрия; Сетевой анализ; Индология; Граф знаний; Открытые данные.</span>
+                    </div>
+                    <div>
+                        <strong class="bilingual-text" data-ru="Дисциплинарные коды (OECD):" data-en="Disciplinary Codes (OECD):">Дисциплинарные коды (OECD):</strong>
+                        <span style="color: #60a5fa;">6.4 Art and Humanities (History, Linguistics, Religion); 1.2 Computer and Information Sciences (Digital Humanities).</span>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <style>
             .filters-panel {
@@ -463,113 +520,113 @@
 
         <div class="filters-panel">
             <div class="filter-group">
-                <label>Эмпирическая подтвержденность</label>
+                <label class="bilingual-text" data-ru="Эмпирическая подтвержденность (EVI)" data-en="Empirical Verification (EVI)">Эмпирическая подтвержденность (EVI)</label>
                 <select id="filter-evi">
-                    <option value="all">Все статусы</option>
-                    <option value="proven">Доказано (Proven)</option>
-                    <option value="partial">Частично (Partial)</option>
-                    <option value="refuted">Опровергнуто (Refuted)</option>
-                    <option value="inconclusive">Неопределенно (Inconclusive)</option>
+                    <option value="all" class="bilingual-text" data-ru="Все статусы" data-en="All Statuses">Все статусы</option>
+                    <option value="proven" class="bilingual-text" data-ru="Доказано (Proven)" data-en="Proven">Доказано (Proven)</option>
+                    <option value="partial" class="bilingual-text" data-ru="Частично (Partial)" data-en="Partial">Частично (Partial)</option>
+                    <option value="refuted" class="bilingual-text" data-ru="Опровергнуто (Refuted)" data-en="Refuted">Опровергнуто (Refuted)</option>
+                    <option value="inconclusive" class="bilingual-text" data-ru="Требует проверки (Inconclusive)" data-en="Inconclusive">Требует проверки (Inconclusive)</option>
                 </select>
             </div>
             <div class="filter-group">
-                <label>Масштаб обобщения</label>
+                <label class="bilingual-text" data-ru="Масштаб обобщения (SCO)" data-en="Argument Scope (SCO)">Масштаб обобщения (SCO)</label>
                 <select id="filter-sco">
-                    <option value="all">Все масштабы</option>
-                    <option value="macro">Макро (G3)</option>
-                    <option value="meso">Сетевой (G2)</option>
-                    <option value="micro">Микрокейс (G1)</option>
+                    <option value="all" class="bilingual-text" data-ru="Все масштабы" data-en="All Scopes">Все масштабы</option>
+                    <option value="macro" class="bilingual-text" data-ru="Макро (G3 / Macro)" data-en="Macro (G3)">Макро (G3)</option>
+                    <option value="meso" class="bilingual-text" data-ru="Сетевой (G2 / Meso)" data-en="Meso Network (G2)">Сетевой (G2)</option>
+                    <option value="micro" class="bilingual-text" data-ru="Микрокейс (G1 / Micro)" data-en="Micro-case (G1)">Микрокейс (G1)</option>
                 </select>
             </div>
             <div class="filter-group">
-                <label>Методология</label>
+                <label class="bilingual-text" data-ru="Методология (MET)" data-en="Methodology (MET)">Методология (MET)</label>
                 <select id="filter-met">
-                    <option value="all">Все методы</option>
-                    <option value="prosopography">Просопография</option>
-                    <option value="network">Сетевая</option>
-                    <option value="nlp">NLP</option>
-                    <option value="gis">GIS</option>
+                    <option value="all" class="bilingual-text" data-ru="Все методы" data-en="All Methodologies">Все методы</option>
+                    <option value="prosopography" class="bilingual-text" data-ru="Просопография (Prosopography)" data-en="Prosopography">Просопография</option>
+                    <option value="network" class="bilingual-text" data-ru="Сетевая (Network)" data-en="Network Analysis">Сетевая</option>
+                    <option value="nlp" class="bilingual-text" data-ru="NLP" data-en="NLP Semantic">NLP</option>
+                    <option value="gis" class="bilingual-text" data-ru="GIS" data-en="GIS Spatiotemporal">GIS</option>
                 </select>
             </div>
             <div class="filter-group">
-                <label>Публикационный статус</label>
+                <label class="bilingual-text" data-ru="Публикационный статус (STA)" data-en="Publication Status (STA)">Публикационный статус (STA)</label>
                 <select id="filter-sta">
-                    <option value="all">Все статусы</option>
-                    <option value="core">В статье</option>
-                    <option value="supplementary">Дополнительно</option>
-                    <option value="future">В будущем</option>
+                    <option value="all" class="bilingual-text" data-ru="Все статусы" data-en="All Statuses">Все статусы</option>
+                    <option value="core" class="bilingual-text" data-ru="В статье (In Core Paper)" data-en="In Core Paper">В статье</option>
+                    <option value="supplementary" class="bilingual-text" data-ru="Дополнительно (Supplementary)" data-en="Supplementary">Дополнительно</option>
+                    <option value="future" class="bilingual-text" data-ru="В будущем (Future Work)" data-en="Future Work">В будущем</option>
                 </select>
             </div>
             <div class="filter-group">
-                <label>Значимость</label>
+                <label class="bilingual-text" data-ru="Значимость (SIG)" data-en="Significance (SIG)">Значимость (SIG)</label>
                 <select id="filter-sig">
-                    <option value="all">Все уровни</option>
-                    <option value="fundamental">Фундаментальная</option>
-                    <option value="structural">Структурная</option>
-                    <option value="niche">Нишевая</option>
+                    <option value="all" class="bilingual-text" data-ru="Все уровни" data-en="All Levels">Все уровни</option>
+                    <option value="fundamental" class="bilingual-text" data-ru="Фундаментальная (Fundamental)" data-en="Fundamental">Фундаментальная</option>
+                    <option value="structural" class="bilingual-text" data-ru="Структурная (Structural)" data-en="Structural">Структурная</option>
+                    <option value="niche" class="bilingual-text" data-ru="Нишевая (Niche)" data-en="Niche">Нишевая</option>
                 </select>
             </div>
             <div class="filter-group">
-                <label>Новизна</label>
+                <label class="bilingual-text" data-ru="Новизна (NOV)" data-en="Novelty (NOV)">Новизна (NOV)</label>
                 <select id="filter-nov">
-                    <option value="all">Все уровни</option>
-                    <option value="discovery">Открытие</option>
-                    <option value="revision">Опровержение</option>
-                    <option value="confirmation">Подтверждение</option>
+                    <option value="all" class="bilingual-text" data-ru="Все уровни" data-en="All Levels">Все уровни</option>
+                    <option value="discovery" class="bilingual-text" data-ru="Открытие (Discovery)" data-en="Discovery">Открытие</option>
+                    <option value="revision" class="bilingual-text" data-ru="Опровержение (Revision)" data-en="Revision">Опровержение</option>
+                    <option value="confirmation" class="bilingual-text" data-ru="Подтверждение (Confirmation)" data-en="Confirmation">Подтверждение</option>
                 </select>
             </div>
             <div class="filter-group">
-                <label>Неожиданность</label>
+                <label class="bilingual-text" data-ru="Неожиданность (UNX)" data-en="Unexpectedness (UNX)">Неожиданность (UNX)</label>
                 <select id="filter-unx">
-                    <option value="all">Все уровни</option>
-                    <option value="paradoxical">Парадоксально</option>
-                    <option value="surprising">Удивительно</option>
-                    <option value="expected">Ожидаемо</option>
+                    <option value="all" class="bilingual-text" data-ru="Все уровни" data-en="All Levels">Все уровни</option>
+                    <option value="paradoxical" class="bilingual-text" data-ru="Парадоксально (Paradoxical)" data-en="Paradoxical">Парадоксально</option>
+                    <option value="surprising" class="bilingual-text" data-ru="Удивительно (Surprising)" data-en="Surprising">Удивительно</option>
+                    <option value="expected" class="bilingual-text" data-ru="Ожидаемо (Expected)" data-en="Expected">Ожидаемо</option>
                 </select>
             </div>
             <div class="filter-group">
-                <label>Воспроизводимость</label>
+                <label class="bilingual-text" data-ru="Воспроизводимость (REP)" data-en="Reproducibility (REP)">Воспроизводимость (REP)</label>
                 <select id="filter-rep">
-                    <option value="all">Все типы</option>
-                    <option value="computational">Вычислимая (Computational)</option>
-                    <option value="hybrid">Гибридная (Hybrid)</option>
-                    <option value="qualitative">Экспертная (Qualitative)</option>
+                    <option value="all" class="bilingual-text" data-ru="Все типы" data-en="All Types">Все типы</option>
+                    <option value="computational" class="bilingual-text" data-ru="Вычислимая (Computational)" data-en="Computational (FAIR)">Вычислимая (Computational)</option>
+                    <option value="hybrid" class="bilingual-text" data-ru="Гибридная (Hybrid)" data-en="Hybrid">Гибридная (Hybrid)</option>
+                    <option value="qualitative" class="bilingual-text" data-ru="Экспертная (Qualitative)" data-en="Expert-based">Экспертная (Qualitative)</option>
                 </select>
             </div>
             <div class="filter-group">
-                <label>Тип научного вклада</label>
+                <label class="bilingual-text" data-ru="Тип научного вклада (CON)" data-en="Contribution Type (CON)">Тип научного вклада (CON)</label>
                 <select id="filter-con">
-                    <option value="all">Все типы</option>
-                    <option value="empirical">Эмпирический (Empirical)</option>
-                    <option value="methodological">Методологический (Methodological)</option>
-                    <option value="conceptual">Концептуальный (Conceptual)</option>
+                    <option value="all" class="bilingual-text" data-ru="Все типы" data-en="All Types">Все типы</option>
+                    <option value="empirical" class="bilingual-text" data-ru="Эмпирический (Empirical)" data-en="Empirical">Эмпирический (Empirical)</option>
+                    <option value="methodological" class="bilingual-text" data-ru="Методологический (Methodological)" data-en="Methodological">Методологический (Methodological)</option>
+                    <option value="conceptual" class="bilingual-text" data-ru="Концептуальный (Conceptual)" data-en="Conceptual">Концептуальный (Conceptual)</option>
                 </select>
             </div>
             <div class="filter-group">
-                <label>Охват доказательной базы</label>
+                <label class="bilingual-text" data-ru="Охват доказательной базы (DSC)" data-en="Data Scope (DSC)">Охват доказательной базы (DSC)</label>
                 <select id="filter-dsc">
-                    <option value="all">Все охваты</option>
-                    <option value="whole_corpus">Полнокорпусный (Whole Corpus)</option>
-                    <option value="comparative">Сравнительный (Comparative)</option>
-                    <option value="cohort">Когортный (Cohort-based)</option>
+                    <option value="all" class="bilingual-text" data-ru="Все охваты" data-en="All Scopes">Все охваты</option>
+                    <option value="whole_corpus" class="bilingual-text" data-ru="Полнокорпусный (Whole Corpus)" data-en="Whole Corpus">Полнокорпусный (Whole Corpus)</option>
+                    <option value="comparative" class="bilingual-text" data-ru="Сравнительный (Comparative)" data-en="Comparative">Сравнительный (Comparative)</option>
+                    <option value="cohort" class="bilingual-text" data-ru="Когортный (Cohort-based)" data-en="Cohort-based">Когортный (Cohort-based)</option>
                 </select>
             </div>
             <div class="filter-group">
-                <label>Междисциплинарность</label>
+                <label class="bilingual-text" data-ru="Междисциплинарность (INT)" data-en="Interdisciplinarity (INT)">Междисциплинарность (INT)</label>
                 <select id="filter-int">
-                    <option value="all">Все уровни</option>
-                    <option value="domain_specific">Монодисциплинарный (Domain-specific)</option>
-                    <option value="interdisciplinary">Междисциплинарный (Interdisciplinary)</option>
-                    <option value="transdisciplinary">Трансдисциплинарный (Transdisciplinary)</option>
+                    <option value="all" class="bilingual-text" data-ru="Все уровни" data-en="All Levels">Все уровни</option>
+                    <option value="domain_specific" class="bilingual-text" data-ru="Монодисциплинарный (Domain-specific)" data-en="Domain-specific">Монодисциплинарный (Domain-specific)</option>
+                    <option value="interdisciplinary" class="bilingual-text" data-ru="Междисциплинарный (Interdisciplinary)" data-en="Interdisciplinary">Междисциплинарный (Interdisciplinary)</option>
+                    <option value="transdisciplinary" class="bilingual-text" data-ru="Трансдисциплинарный (Transdisciplinary)" data-en="Transdisciplinary">Трансдисциплинарный (Transdisciplinary)</option>
                 </select>
             </div>
             <div class="filter-group">
-                <label>Потенциал цитируемости</label>
+                <label class="bilingual-text" data-ru="Потенциал цитируемости (IMP)" data-en="Impact Potential (IMP)">Потенциал цитируемости (IMP)</label>
                 <select id="filter-imp">
-                    <option value="all">Все уровни</option>
-                    <option value="broad">Широкий (Broad)</option>
-                    <option value="regional">Региональный (Regional)</option>
-                    <option value="niche">Узкоспециальный (Niche)</option>
+                    <option value="all" class="bilingual-text" data-ru="Все уровни" data-en="All Levels">Все уровни</option>
+                    <option value="broad" class="bilingual-text" data-ru="Широкий (Broad)" data-en="Broad (Global)">Широкий (Broad)</option>
+                    <option value="regional" class="bilingual-text" data-ru="Региональный (Regional)" data-en="Regional">Региональный (Regional)</option>
+                    <option value="niche" class="bilingual-text" data-ru="Узкоспециальный (Niche)" data-en="Niche">Узкоспециальный (Niche)</option>
                 </select>
             </div>
         </div>
@@ -586,22 +643,22 @@
         <div id="stats-summary-panel" class="stats-summary-panel">
             <div class="stat-metric-card">
                 <div class="stat-metric-val" id="stat-total-val">0</div>
-                <div class="stat-metric-lbl">Гипотез в выборке</div>
+                <div class="stat-metric-lbl bilingual-text" data-ru="Гипотез в выборке" data-en="Hypotheses in Selection">Гипотез в выборке</div>
             </div>
             <div class="stat-metric-card">
                 <div class="stat-metric-val" id="stat-proven-pct">0%</div>
-                <div class="stat-metric-lbl">Эмпирически доказано</div>
+                <div class="stat-metric-lbl bilingual-text" data-ru="Эмпирически доказано" data-en="Empirically Proven">Эмпирически доказано</div>
             </div>
             <div class="stat-metric-card">
                 <div class="stat-metric-val" id="stat-reproducible-pct">0%</div>
-                <div class="stat-metric-lbl">Автовоспроизводимость</div>
+                <div class="stat-metric-lbl bilingual-text" data-ru="Автовоспроизводимость" data-en="Computational FAIR">Автовоспроизводимость</div>
             </div>
             <div class="stat-metric-card">
                 <div class="stat-metric-val" id="stat-interdisciplinary-pct">0%</div>
-                <div class="stat-metric-lbl">Междисциплинарность</div>
+                <div class="stat-metric-lbl bilingual-text" data-ru="Междисциплинарность" data-en="Interdisciplinary">Междисциплинарность</div>
             </div>
             <div class="stat-metric-card" style="grid-column: span 2; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 80px;">
-                <div class="stat-metric-lbl" style="margin-bottom: 0.5rem; font-size: 0.75rem;">Распределение верификации гипотез (EVI)</div>
+                <div class="stat-metric-lbl bilingual-text" data-ru="Распределение верификации гипотез (EVI)" data-en="Hypothesis Verification Distribution (EVI)" style="margin-bottom: 0.5rem; font-size: 0.75rem;">Распределение верификации гипотез (EVI)</div>
                 <div id="evidence-svg-chart-wrapper" style="width: 100%;"></div>
             </div>
         </div>
@@ -626,7 +683,7 @@
 
             <div class="citation-contents">
                 <div id="citation-apa" class="citation-content active">
-                    Гасунс М. Ю. Реестр гипотез дальнего чтения и социологии индологических конференций // Russian Indological Research Archive. URL: https://gasyoun.github.io/IndologyScholars/hypotheses.html (дата обращения: <span class="current-date">30.05.2026</span>).
+                    Гасунс М. Ю. <a href="https://orcid.org/0000-0002-3665-636X" target="_blank" rel="noopener" style="vertical-align: middle; margin-left: 4px;" title="ORCID iD"><img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" alt="ORCID" style="width: 16px; height: 16px; border: none; vertical-align: middle;"></a> Реестр гипотез дальнего чтения и социологии индологических конференций // Russian Indological Research Archive. URL: https://gasyoun.github.io/IndologyScholars/hypotheses.html (дата обращения: <span class="current-date">30.05.2026</span>).
                 </div>
                 <div id="citation-bibtex" class="citation-content">
 <pre style="margin: 0; font-family: monospace; font-size: 0.85rem; color: #cbd5e1; overflow-x: auto; white-space: pre-wrap;">@misc{gasuns2026hypotheses,
@@ -651,70 +708,98 @@ ER  - </pre>
 
         <script type="module">
             const DICT_SIG = {
-                'fundamental': 'Фундаментальная',
-                'structural': 'Структурная',
-                'niche': 'Нишевая'
+                'ru': { 'fundamental': 'Фундаментальная', 'structural': 'Структурная', 'niche': 'Нишевая' },
+                'en': { 'fundamental': 'Fundamental', 'structural': 'Structural', 'niche': 'Niche' }
             };
             const DICT_NOV = {
-                'discovery': 'Открытие',
-                'revision': 'Опровержение',
-                'confirmation': 'Подтверждение'
+                'ru': { 'discovery': 'Открытие', 'revision': 'Опровержение', 'confirmation': 'Подтверждение' },
+                'en': { 'discovery': 'Discovery', 'revision': 'Revision', 'confirmation': 'Confirmation' }
             };
             const DICT_UNX = {
-                'paradoxical': 'Парадоксально',
-                'surprising': 'Удивительно',
-                'expected': 'Ожидаемо'
+                'ru': { 'paradoxical': 'Парадоксально', 'surprising': 'Удивительно', 'expected': 'Ожидаемо' },
+                'en': { 'paradoxical': 'Paradoxical', 'surprising': 'Surprising', 'expected': 'Expected' }
             };
             const DICT_EVI = {
-                'proven': 'Доказано',
-                'partial': 'Частично',
-                'refuted': 'Опровергнуто',
-                'inconclusive': 'Требует проверки'
+                'ru': { 'proven': 'Доказано', 'partial': 'Частично', 'refuted': 'Опровергнуто', 'inconclusive': 'Требует проверки' },
+                'en': { 'proven': 'Proven', 'partial': 'Partial', 'refuted': 'Refuted', 'inconclusive': 'Inconclusive' }
             };
             const DICT_SCO = {
-                'macro': 'Макро (G3)',
-                'meso': 'Сетевой (G2)',
-                'micro': 'Микрокейс (G1)'
+                'ru': { 'macro': 'Макро (G3)', 'meso': 'Сетевой (G2)', 'micro': 'Микрокейс (G1)' },
+                'en': { 'macro': 'Macro (G3)', 'meso': 'Meso Network (G2)', 'micro': 'Micro-case (G1)' }
             };
             const DICT_MET = {
-                'prosopography': 'Просопография',
-                'network': 'Сетевая',
-                'nlp': 'NLP',
-                'gis': 'GIS'
+                'ru': { 'prosopography': 'Просопография', 'network': 'Сетевая', 'nlp': 'NLP', 'gis': 'GIS' },
+                'en': { 'prosopography': 'Prosopography', 'network': 'Network', 'nlp': 'NLP', 'gis': 'GIS' }
             };
             const DICT_STA = {
-                'core': 'В статье',
-                'supplementary': 'Дополнительно',
-                'future': 'В будущем'
+                'ru': { 'core': 'В статье', 'supplementary': 'Дополнительно', 'future': 'В будущем' },
+                'en': { 'core': 'In Core Paper', 'supplementary': 'Supplementary', 'future': 'Future Work' }
             };
             const DICT_REP = {
-                'computational': 'Вычислимая',
-                'hybrid': 'Гибридная',
-                'qualitative': 'Экспертная'
+                'ru': { 'computational': 'Вычислимая', 'hybrid': 'Гибридная', 'qualitative': 'Экспертная' },
+                'en': { 'computational': 'Computational', 'hybrid': 'Hybrid', 'qualitative': 'Expert-based' }
             };
             const DICT_CON = {
-                'empirical': 'Эмпирический',
-                'methodological': 'Методологический',
-                'conceptual': 'Концептуальный'
+                'ru': { 'empirical': 'Эмпирический', 'methodological': 'Методологический', 'conceptual': 'Концептуальный' },
+                'en': { 'empirical': 'Empirical', 'methodological': 'Methodological', 'conceptual': 'Conceptual' }
             };
             const DICT_DSC = {
-                'whole_corpus': 'Полнокорпусный',
-                'comparative': 'Сравнительный',
-                'cohort': 'Когортный'
+                'ru': { 'whole_corpus': 'Полнокорпусный', 'comparative': 'Сравнительный', 'cohort': 'Когортный' },
+                'en': { 'whole_corpus': 'Whole Corpus', 'comparative': 'Comparative', 'cohort': 'Cohort-based' }
             };
             const DICT_INT = {
-                'domain_specific': 'Монодисциплинарный',
-                'interdisciplinary': 'Междисциплинарный',
-                'transdisciplinary': 'Трансдисциплинарный'
+                'ru': { 'domain_specific': 'Монодисциплинарный', 'interdisciplinary': 'Междисциплинарный', 'transdisciplinary': 'Трансдисциплинарный' },
+                'en': { 'domain_specific': 'Domain-specific', 'interdisciplinary': 'Interdisciplinary', 'transdisciplinary': 'Transdisciplinary' }
             };
             const DICT_IMP = {
-                'broad': 'Широкий',
-                'regional': 'Региональный',
-                'niche': 'Узкоспециальный'
+                'ru': { 'broad': 'Широкий', 'regional': 'Региональный', 'niche': 'Узкоспециальный' },
+                'en': { 'broad': 'Broad', 'regional': 'Regional', 'niche': 'Niche' }
             };
 
             let allHypotheses = [];
             let currentlyFiltered = [];
+            let currentLang = localStorage.getItem('findings-lang') || 'ru';
+
+            function toggleLanguage() {
+                currentLang = currentLang === 'ru' ? 'en' : 'ru';
+                setLanguage(currentLang);
+            }
+            window.toggleLanguage = toggleLanguage;
+
+            function setLanguage(lang) {
+                currentLang = lang;
+                localStorage.setItem('findings-lang', lang);
+
+                // Update text elements
+                document.querySelectorAll('.bilingual-text').forEach(el => {
+                    const text = el.getAttribute('data-' + lang);
+                    if (text) {
+                        el.innerHTML = text;
+                    }
+                });
+
+                // Update button
+                const btn = document.getElementById('lang-toggle-btn');
+                if (btn) {
+                    btn.innerText = lang === 'ru' ? 'English' : 'Русский';
+                }
+
+                // Update export button titles
+                const csvBtn = document.getElementById('btn-export-csv');
+                if (csvBtn) {
+                    csvBtn.title = lang === 'en' ? 'Download filtered selection as CSV for Excel/R/Python' : 'Скачать отфильтрованную выборку в формате CSV для Excel/R/Python';
+                }
+                const jsonBtn = document.getElementById('btn-export-json');
+                if (jsonBtn) {
+                    jsonBtn.title = lang === 'en' ? 'Open or download raw hypotheses database JSON file' : 'Открыть или скачать исходный JSON-файл базы данных гипотез';
+                }
+
+                // Re-render components
+                if (allHypotheses.length > 0) {
+                    renderCards(currentlyFiltered);
+                }
+            }
+            window.setLanguage = setLanguage;
 
             // Global Toast helper style & function
             window.showToast = function(id) {
@@ -742,7 +827,7 @@ ER  - </pre>
                     `;
                     document.body.appendChild(toast);
                 }
-                toast.textContent = `Ссылка на гипотезу ${id} скопирована в буфер обмена!`;
+                toast.textContent = currentLang === 'en' ? `Link to hypothesis ${id} copied to clipboard!` : `Ссылка на гипотезу ${id} скопирована в буфер обмена!`;
                 toast.style.opacity = '1';
                 toast.style.transform = 'translateY(0)';
                 setTimeout(() => {
@@ -756,13 +841,15 @@ ER  - </pre>
                     const response = await fetch('assets/data/hypotheses.json');
                     allHypotheses = await response.json();
                     currentlyFiltered = [...allHypotheses];
-                    renderCards(allHypotheses);
+
+                    setLanguage(currentLang);
+
                     setupFilters();
                     setupExport();
                     setupCitation();
                 } catch (err) {
                     console.error("Failed to load hypotheses:", err);
-                    document.getElementById('hypotheses-grid').innerHTML = '<div class="no-results">Ошибка загрузки данных.</div>';
+                    document.getElementById('hypotheses-grid').innerHTML = currentLang === 'en' ? '<div class="no-results">Failed to load hypotheses database.</div>' : '<div class="no-results">Ошибка загрузки данных.</div>';
                 }
             }
 
@@ -772,7 +859,9 @@ ER  - </pre>
 
                 const total = filtered.length;
                 if (total === 0) {
-                    wrapper.innerHTML = '<div style="color: #64748b; font-size: 0.85rem; padding-top: 10px;">Нет данных для построения графика</div>';
+                    wrapper.innerHTML = currentLang === 'en'
+                        ? '<div style="color: #64748b; font-size: 0.85rem; padding-top: 10px;">No data to render chart</div>'
+                        : '<div style="color: #64748b; font-size: 0.85rem; padding-top: 10px;">Нет данных для построения графика</div>';
                     return;
                 }
 
@@ -800,7 +889,12 @@ ER  - </pre>
                     inconclusive: '#64748b'  // Slate
                 };
 
-                const labels = {
+                const labels = currentLang === 'en' ? {
+                    proven: 'Proven',
+                    partial: 'Partial',
+                    refuted: 'Refuted',
+                    inconclusive: 'Inconclusive'
+                } : {
                     proven: 'Доказано',
                     partial: 'Частично',
                     refuted: 'Опровергнуто',
@@ -867,7 +961,9 @@ ER  - </pre>
                 grid.innerHTML = '';
 
                 if (data.length === 0) {
-                    grid.innerHTML = '<div class="no-results">Нет гипотез, соответствующих выбранным фильтрам.</div>';
+                    grid.innerHTML = currentLang === 'en'
+                        ? '<div class="no-results">No hypotheses match the selected filters.</div>'
+                        : '<div class="no-results">Нет гипотез, соответствующих выбранным фильтрам.</div>';
                     updateStatsSummary(data);
                     return;
                 }
@@ -880,33 +976,36 @@ ER  - </pre>
                     // Direct evidence routing paths based on methodology
                     let evidenceLink = '';
                     if (h.methodology === 'network') {
-                        evidenceLink = `<a href="networks.html" class="metric-badge" style="background: rgba(168, 85, 247, 0.15); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.3); text-decoration: none; display: inline-flex; align-items: center; gap: 0.25rem;" title="Открыть сетевые графы">📊 См. граф</a>`;
+                        evidenceLink = `<a href="networks.html" class="metric-badge" style="background: rgba(168, 85, 247, 0.15); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.3); text-decoration: none; display: inline-flex; align-items: center; gap: 0.25rem;" title="${currentLang === 'en' ? 'Open network graphs' : 'Открыть сетевые графы'}">📊 ${currentLang === 'en' ? 'See Graph' : 'См. граф'}</a>`;
                     } else if (h.methodology === 'gis') {
-                        evidenceLink = `<a href="spacetime.html" class="metric-badge" style="background: rgba(236, 72, 153, 0.15); color: #f472b6; border: 1px solid rgba(236, 72, 153, 0.3); text-decoration: none; display: inline-flex; align-items: center; gap: 0.25rem;" title="Открыть карту пространства-времени">🗺️ См. карту</a>`;
+                        evidenceLink = `<a href="spacetime.html" class="metric-badge" style="background: rgba(236, 72, 153, 0.15); color: #f472b6; border: 1px solid rgba(236, 72, 153, 0.3); text-decoration: none; display: inline-flex; align-items: center; gap: 0.25rem;" title="${currentLang === 'en' ? 'Open space-time map' : 'Открыть карту пространства-времени'}">🗺️ ${currentLang === 'en' ? 'See Map' : 'См. карту'}</a>`;
                     } else if (h.methodology === 'prosopography') {
-                        evidenceLink = `<a href="index.html#scholars-section" class="metric-badge" style="background: rgba(34, 197, 94, 0.15); color: #4ade80; border: 1px solid rgba(34, 197, 94, 0.3); text-decoration: none; display: inline-flex; align-items: center; gap: 0.25rem;" title="Смотреть список исследователей">👥 См. ученых</a>`;
+                        evidenceLink = `<a href="index.html#scholars-section" class="metric-badge" style="background: rgba(34, 197, 94, 0.15); color: #4ade80; border: 1px solid rgba(34, 197, 94, 0.3); text-decoration: none; display: inline-flex; align-items: center; gap: 0.25rem;" title="${currentLang === 'en' ? 'View scholars list' : 'Смотреть список исследователей'}">👥 ${currentLang === 'en' ? 'See Scholars' : 'См. ученых'}</a>`;
                     }
+
+                    const title = currentLang === 'en' ? (h.title_en || h.title_ru) : h.title_ru;
+                    const desc = currentLang === 'en' ? (h.description_en || h.description_ru) : h.description_ru;
 
                     card.innerHTML = `
                         <div class="h-header">
                             <span class="h-id">${h.id}</span>
-                            <h3 class="h-title">${h.title_ru}</h3>
-                            <a href="#${h.id}" class="anchor-link" title="Скопировать ссылку на эту гипотезу" onclick="navigator.clipboard.writeText(window.location.origin + window.location.pathname + '#${h.id}'); showToast('${h.id}'); event.stopPropagation();">🔗</a>
+                            <h3 class="h-title">${title}</h3>
+                            <a href="#${h.id}" class="anchor-link" title="${currentLang === 'en' ? 'Copy link to this hypothesis' : 'Скопировать ссылку на эту гипотезу'}" onclick="navigator.clipboard.writeText(window.location.origin + window.location.pathname + '#${h.id}'); showToast('${h.id}'); event.stopPropagation();">🔗</a>
                         </div>
-                        <div class="h-desc">${h.description_ru}</div>
+                        <div class="h-desc">${desc}</div>
                         <div class="h-metrics">
-                            <span class="metric-badge metric-sta" title="Публикационный статус (Status)">STA: ${DICT_STA[h.status] || h.status}</span>
-                            <span class="metric-badge metric-met" title="Методология (Methodology)">MET: ${DICT_MET[h.methodology] || h.methodology}</span>
-                            <span class="metric-badge metric-sco" title="Масштаб обобщения (Scope)">SCO: ${DICT_SCO[h.scope] || h.scope}</span>
-                            <span class="metric-badge metric-evi" title="Эмпирическая подтвержденность (Evidence)">EVI: ${DICT_EVI[h.evidence] || h.evidence}</span>
-                            <span class="metric-badge metric-sig" title="Значимость (Significance)">SIG: ${DICT_SIG[h.significance] || h.significance}</span>
-                            <span class="metric-badge metric-nov" title="Новизна (Novelty)">NOV: ${DICT_NOV[h.novelty] || h.novelty}</span>
-                            <span class="metric-badge metric-unx" title="Неожиданность (Unexpectedness)">UNX: ${DICT_UNX[h.unexpectedness] || h.unexpectedness}</span>
-                            <span class="metric-badge metric-rep" title="Воспроизводимость (Reproducibility)">REP: ${DICT_REP[h.reproducibility] || h.reproducibility}</span>
-                            <span class="metric-badge metric-con" title="Тип научного вклада (Contribution Type)">CON: ${DICT_CON[h.contribution] || h.contribution}</span>
-                            <span class="metric-badge metric-dsc" title="Охват доказательной базы (Data Scope)">DSC: ${DICT_DSC[h.data_scope] || h.data_scope}</span>
-                            <span class="metric-badge metric-int" title="Междисциплинарность (Interdisciplinarity)">INT: ${DICT_INT[h.interdisciplinary] || h.interdisciplinary}</span>
-                            <span class="metric-badge metric-imp" title="Потенциал цитируемости (Impact Potential)">IMP: ${DICT_IMP[h.impact] || h.impact}</span>
+                            <span class="metric-badge metric-sta" title="Публикационный статус (Status)">STA: ${DICT_STA[currentLang][h.status] || h.status}</span>
+                            <span class="metric-badge metric-met" title="Методология (Methodology)">MET: ${DICT_MET[currentLang][h.methodology] || h.methodology}</span>
+                            <span class="metric-badge metric-sco" title="Масштаб обобщения (Scope)">SCO: ${DICT_SCO[currentLang][h.scope] || h.scope}</span>
+                            <span class="metric-badge metric-evi" title="Эмпирическая подтвержденность (Evidence)">EVI: ${DICT_EVI[currentLang][h.evidence] || h.evidence}</span>
+                            <span class="metric-badge metric-sig" title="Значимость (Significance)">SIG: ${DICT_SIG[currentLang][h.significance] || h.significance}</span>
+                            <span class="metric-badge metric-nov" title="Новизна (Novelty)">NOV: ${DICT_NOV[currentLang][h.novelty] || h.novelty}</span>
+                            <span class="metric-badge metric-unx" title="Неожиданность (Unexpectedness)">UNX: ${DICT_UNX[currentLang][h.unexpectedness] || h.unexpectedness}</span>
+                            <span class="metric-badge metric-rep" title="Воспроизводимость (Reproducibility)">REP: ${DICT_REP[currentLang][h.reproducibility] || h.reproducibility}</span>
+                            <span class="metric-badge metric-con" title="Тип научного вклада (Contribution Type)">CON: ${DICT_CON[currentLang][h.contribution] || h.contribution}</span>
+                            <span class="metric-badge metric-dsc" title="Охват доказательной базы (Data Scope)">DSC: ${DICT_DSC[currentLang][h.data_scope] || h.data_scope}</span>
+                            <span class="metric-badge metric-int" title="Междисциплинарность (Interdisciplinarity)">INT: ${DICT_INT[currentLang][h.interdisciplinary] || h.interdisciplinary}</span>
+                            <span class="metric-badge metric-imp" title="Потенциал цитируемости (Impact Potential)">IMP: ${DICT_IMP[currentLang][h.impact] || h.impact}</span>
                             ${evidenceLink}
                         </div>
                     `;
