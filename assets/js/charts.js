@@ -360,3 +360,132 @@ export function renderWordCloud() {
             });
         }
 
+export function renderLotkaChart() {
+    const canvas = document.getElementById('canvas-lotka');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    destroyChart('lotka');
+    const t = TRANSLATIONS[state.currentLang];
+    
+    const counts = {};
+    CONFERENCE_DATA.scholars.forEach(s => {
+        const talks = s.total_talks || 0;
+        if (talks > 0) {
+            counts[talks] = (counts[talks] || 0) + 1;
+        }
+    });
+    
+    if (Object.keys(counts).length === 0) return;
+    
+    const maxTalks = Math.max(...Object.keys(counts).map(Number));
+    const labels = [];
+    const data = [];
+    for (let i = 1; i <= maxTalks; i++) {
+        labels.push(i);
+        data.push(counts[i] || 0);
+    }
+    
+    window.myCharts['lotka'] = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: t.chartLotkaY,
+                data: data,
+                backgroundColor: 'rgba(139, 92, 246, 0.7)',
+                borderColor: '#8b5cf6',
+                borderWidth: 1,
+                borderRadius: 4
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: { display: false }
+            },
+            scales: {
+                x: { 
+                    title: { display: true, text: t.chartLotkaX, color: '#87938c' },
+                    ticks: { color: '#87938c' }, 
+                    grid: { display: false } 
+                },
+                y: { 
+                    title: { display: true, text: t.chartLotkaY, color: '#87938c' },
+                    ticks: { color: '#87938c', stepSize: 10 }, 
+                    grid: { color: 'rgba(255,255,255,0.05)' }
+                }
+            }
+        }
+    });
+}
+
+export function renderTopicEvolutionChart() {
+    const canvas = document.getElementById('canvas-topic');
+    if (!canvas) return;
+    
+    // Timeline data is lazy-loaded, if not there yet we'll skip or show loading
+    if (!CONFERENCE_DATA.timeline) return;
+    
+    const ctx = canvas.getContext('2d');
+    destroyChart('topic');
+    
+    const years = Object.keys(CONFERENCE_DATA.timeline).sort();
+    const themeCounts = {}; 
+    
+    years.forEach(year => {
+        ['Zograf', 'Roerich'].forEach(venue => {
+            const talks = CONFERENCE_DATA.timeline[year][venue] || [];
+            talks.forEach(talk => {
+                const themeCode = (talk.theme && talk.theme.code) ? talk.theme.code : 'Other';
+                if (!themeCounts[themeCode]) themeCounts[themeCode] = {};
+                themeCounts[themeCode][year] = (themeCounts[themeCode][year] || 0) + 1;
+            });
+        });
+    });
+    
+    if (Object.keys(themeCounts).length === 0) return;
+    
+    const THEME_COLORS = {
+        AcademicHistory: '#8b5cf6',
+        Linguistics: '#3b82f6',
+        Philosophy: '#10b981',
+        Art: '#ec4899',
+        History: '#f59e0b',
+        Other: '#9ca3af'
+    };
+    
+    const THEME_NAMES = {
+        ru: { Linguistics: 'Лингвистика', Philosophy: 'Философия/Религия', History: 'История', Art: 'Искусство/Культура', AcademicHistory: 'История науки', Other: 'Другое' },
+        en: { Linguistics: 'Linguistics', Philosophy: 'Philosophy/Religion', History: 'History', Art: 'Art/Culture', AcademicHistory: 'Academic History', Other: 'Other' }
+    };
+    
+    const datasets = Object.keys(themeCounts).map(theme => {
+        return {
+            label: THEME_NAMES[state.currentLang][theme] || theme,
+            data: years.map(y => themeCounts[theme][y] || 0),
+            backgroundColor: THEME_COLORS[theme] || THEME_COLORS.Other,
+            borderWidth: 0
+        };
+    });
+    
+    window.myCharts['topic'] = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: years,
+            datasets: datasets
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: { position: 'bottom', labels: { color: '#e7ece8' } },
+                tooltip: { mode: 'index', intersect: false }
+            },
+            scales: {
+                x: { stacked: true, ticks: { color: '#87938c' }, grid: { display: false } },
+                y: { stacked: true, ticks: { color: '#87938c' }, grid: { color: 'rgba(255,255,255,0.05)' } }
+            }
+        }
+    });
+}

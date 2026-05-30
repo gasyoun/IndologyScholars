@@ -104,7 +104,11 @@ export const TRANSLATIONS = {
                 networkTeaserLink: "Открыть полную сеть ↗",
                 thAffil: "Аффилиация",
                 thScholars: "Ученые",
-                thTalks: "Доклады"
+                thTalks: "Доклады",
+                chartLotkaTitle: "Закон Лотки: Распределение научной продуктивности",
+                chartLotkaX: "Количество докладов",
+                chartLotkaY: "Количество ученых",
+                chartTopicTitle: "Эволюция тематик: Динамика исследований по годам"
             },
             en: {
                 mainHeading: "Archive of the Zograf and Roerich Readings",
@@ -211,6 +215,10 @@ export const TRANSLATIONS = {
                 networkTeaserLink: "Open Full Network ↗",
                 thAffil: "Affiliation",
                 thScholars: "Scholars",
-                thTalks: "Talks"
+                thTalks: "Talks",
+                chartLotkaTitle: "Lotka's Law: Scientific Productivity Distribution",
+                chartLotkaX: "Number of Talks",
+                chartLotkaY: "Number of Scholars",
+                chartTopicTitle: "Topic Evolution: Research Dynamics by Year"
             }
         };

@@ -1,6 +1,6 @@
 import { state } from './state.js';
 import { TRANSLATIONS } from './i18n.js';
-import { renderGrowthChart, renderCohortDistribution, renderGeoChart, renderSankeyChart, renderAgeChart, renderGenderChart, renderInstChart, renderWordCloud } from './charts.js';
+import { renderGrowthChart, renderCohortDistribution, renderGeoChart, renderSankeyChart, renderAgeChart, renderGenderChart, renderInstChart, renderWordCloud, renderLotkaChart, renderTopicEvolutionChart } from './charts.js';
 
 
         // Kick off critical path data fetch immediately (preload tag in <head> ensures it starts even earlier)
@@ -206,6 +206,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.getElementById('net-pause-btn').textContent = isNetPhysicsRunning ? t.netPauseBtn : t.netResumeBtn;
                 document.getElementById('chart-inst-title').textContent = t.chartInstTitle;
                 document.getElementById('chart-words-title').textContent = t.chartWordsTitle;
+                document.getElementById('chart-lotka-title').textContent = t.chartLotkaTitle;
+                document.getElementById('chart-topic-title').textContent = t.chartTopicTitle;
                 const teaserTextEl = document.getElementById('network-teaser-text');
                 if (teaserTextEl) teaserTextEl.textContent = t.networkTeaserText;
                 const teaserLinkEl = document.getElementById('network-teaser-link');
@@ -219,6 +221,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 renderSankeyChart();
                 renderAgeChart();
                 renderGenderChart();
+                renderLotkaChart();
+                renderTopicEvolutionChart();
                 renderInstChart();
                 renderWordCloud();
             }
@@ -265,6 +269,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 renderSankeyChart();
                 renderAgeChart();
                 renderGenderChart();
+                renderLotkaChart();
+                renderTopicEvolutionChart();
                 renderInstChart();
                 renderWordCloud();
                 startNetworkGraph();
@@ -1363,6 +1369,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     window.CONFERENCE_DATA.timeline = timelineData;
                     state.timelineLoaded = true;
                     initTimeline();
+                    if (document.getElementById('sec-charts').classList.contains('active')) {
+                        renderTopicEvolutionChart();
+                    }
                 });
 
                 networkPromise.then(networkData => {
