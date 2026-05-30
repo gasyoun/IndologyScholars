@@ -410,8 +410,8 @@
     },
     {
       "path": "assets/js/charts.js",
-      "size_bytes": 19558,
-      "sha256": "7eb108b89b2edc6522014d2c8a854588362ab82588bffe76024c9ce95e942a85"
+      "size_bytes": 22011,
+      "sha256": "69648be5aab2c5c2dae2396e185751ff13dd9a366466952d54be809e35974110"
     },
     {
       "path": "assets/js/i18n.js",
@@ -420,8 +420,8 @@
     },
     {
       "path": "assets/js/main.js",
-      "size_bytes": 79465,
-      "sha256": "01d6593b8736461c1155410a9f2fe51443c39041200f9c5c867ef945ffe29553"
+      "size_bytes": 83582,
+      "sha256": "ab01081513ac2f3fb222dcc9f3d2247cef45e7fa9a5f0ccc5ce253b54712e468"
     },
     {
       "path": "assets/js/state.js",
@@ -8881,7 +8881,7 @@
     {
       "path": "download-data.html",
       "size_bytes": 20488,
-      "sha256": "4dbb3bcb5c15dc0596716209c295f4ee9446501d1fcb4336d389f8f82ad8299e"
+      "sha256": "8cc0db0f98647bb37b80f0a975cf5612a61113e16e02afa60a2216b0cb3b26d6"
     },
     {
       "path": "en.html",
@@ -8896,7 +8896,7 @@
     {
       "path": "findings/visualisations.html",
       "size_bytes": 474906,
-      "sha256": "19a0531fc42dba8c64a07b99e87a9b328e4c5c63faf7536d86181e9adae167a9"
+      "sha256": "1ddb5337598e853d8d0b383c69044f422e7c8c0c86bcf468576a1fc0bd6d0781"
     },
     {
       "path": "generations/index.html",
@@ -8940,8 +8940,8 @@
     },
     {
       "path": "index.html",
-      "size_bytes": 38623,
-      "sha256": "02f3e6094a1d9c04e09e59c1bd4154fe32d6d52f8d12612387d80d5d9eaa8163"
+      "size_bytes": 39433,
+      "sha256": "69c8ee7fe5cdf7d25d3a6421fe54c80c07ce15996e9f5d31306fb231bab9a96a"
     },
     {
       "path": "institutions/if-ran.html",
@@ -19220,8 +19220,8 @@
     },
     {
       "path": "site_data.json",
-      "size_bytes": 4250336,
-      "sha256": "fae21c45bd80a5dd7dd629a32d7a99851540d86a62b773271d16b5a38de9ecb4"
+      "size_bytes": 4440608,
+      "sha256": "1ed281b9e7063f5b72f9805851023187210520bace18ad3fc35dea01d4753810"
     },
     {
       "path": "sitemap.xml",
