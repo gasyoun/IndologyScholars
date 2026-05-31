@@ -3,152 +3,163 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Академический гейткипинг: сетевые посредники и конфликт поколений</title>
+    <title>Академический гейткипинг | Russian Indological Research Archive</title>
     <meta name="description" content="Аналитическая статья о социологии науки, конфликте поколений и сетевых посредниках в российской индологии на материале Зографских и Рериховских чтений.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://gasyoun.github.io/IndologyScholars/gatekeeping.html">
+    <link rel="alternate" hreflang="ru" href="https://gasyoun.github.io/IndologyScholars/gatekeeping.html">
+    <link rel="alternate" hreflang="x-default" href="https://gasyoun.github.io/IndologyScholars/gatekeeping.html">
     <link rel="icon" href="/IndologyScholars/assets/favicon.svg" type="image/svg+xml">
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
-
-    <!-- Archive workspace styling -->
-    <link rel="stylesheet" href="/IndologyScholars/assets/index.css">
+    <link rel="manifest" href="/IndologyScholars/site.webmanifest">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/IndologyScholars/feed.xml">
+    <link rel="apple-touch-icon" href="/IndologyScholars/assets/apple-touch-icon.png">
+    <meta name="theme-color" content="#101513">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="IndologyScholars">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gasyoun.github.io/IndologyScholars/gatekeeping.html">
+    <meta property="og:title" content="Академический гейткипинг | Russian Indological Research Archive">
+    <meta property="og:description" content="Аналитическая статья о социологии науки, конфликте поколений и сетевых посредниках в российской индологии на материале Зографских и Рериховских чтений.">
+    <meta property="og:image" content="https://gasyoun.github.io/IndologyScholars/assets/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Академический гейткипинг | Russian Indological Research Archive">
+    <meta name="twitter:description" content="Аналитическая статья о социологии науки, конфликте поколений и сетевых посредниках в российской индологии на материале Зографских и Рериховских чтений.">
+    <meta name="twitter:image" content="https://gasyoun.github.io/IndologyScholars/assets/og-image.png">
+    <script defer src="/IndologyScholars/assets/pwa.js"></script>
 
     <style>
-        /* Specific styles for the article page to look premium and readable */
-        .article-container {
-            max-width: 800px;
-            margin: 4rem auto;
-            padding: 0 1.5rem;
-            color: var(--text-primary);
-            line-height: 1.7;
-            font-size: 1.1rem;
-        }
-
-        .article-container h1 {
-            font-family: 'Outfit', sans-serif;
-            font-size: 2.5rem;
-            color: var(--text-primary);
-            margin-bottom: 2rem;
-            line-height: 1.3;
-            background: linear-gradient(135deg, #fff 0%, #a5b4fc 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .article-container h2 {
-            font-family: 'Outfit', sans-serif;
-            font-size: 1.8rem;
-            color: var(--accent-primary);
-            margin-top: 3rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .article-container h3 {
-            font-family: 'Outfit', sans-serif;
-            font-size: 1.4rem;
-            color: #e2e8f0;
-            margin-top: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        .article-container p {
-            margin-bottom: 1.5rem;
-            color: var(--text-secondary);
-        }
-
-        .article-container ul {
-            margin-bottom: 1.5rem;
-            padding-left: 1.5rem;
-            color: var(--text-secondary);
-        }
-
-        .article-container li {
-            margin-bottom: 0.75rem;
-        }
-
-        .article-container strong {
-            color: #f1f5f9;
-            font-weight: 600;
-        }
-
-        .article-container blockquote {
-            border-left: 4px solid var(--accent-primary);
-            background: rgba(99, 102, 241, 0.05);
-            padding: 1rem 1.5rem;
-            margin: 2rem 0;
-            border-radius: 0 8px 8px 0;
-            font-style: italic;
-            color: #cbd5e1;
-        }
-
-        .article-container img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 12px;
-            margin: 2rem 0 1rem 0;
-            border: 1px solid var(--border-color);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-        }
-
-        .article-caption {
-            font-size: 0.9rem;
-            color: #94a3b8;
-            text-align: center;
-            margin-bottom: 3rem;
-            font-style: italic;
-        }
-
-        .back-nav {
-            margin-bottom: 3rem;
-        }
-
-        .back-nav a {
-            display: inline-flex;
-            align-items: center;
-            color: var(--accent-primary);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.2s;
-        }
-
-        .back-nav a:hover {
-            color: var(--accent-hover);
-        }
-
-        .back-nav svg {
-            width: 20px;
-            height: 20px;
-            margin-right: 0.5rem;
-        }
+        .article-container { max-width: 920px; line-height: 1.7; }
+        .article-container h3 { font-size: 1.2rem; color: var(--text); margin: 1.8rem 0 0.75rem; }
+        .article-container p, .article-container li { color: var(--muted); }
+        .article-container li { margin-bottom: 0.6rem; }
+        .note { border-left: 3px solid var(--accent); background: var(--panel); padding: 1rem 1.25rem; border-radius: 0 8px 8px 0; margin: 1.5rem 0; color: var(--muted); }
+        .two-col { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+        .mini-card { border: 1px solid var(--border); border-radius: 8px; padding: 1rem; background: var(--panel); }
+        .mini-card strong { color: #fff; }
+        table.data { width: 100%; border-collapse: collapse; margin: 1rem 0 1.5rem; font-size: 0.92rem; }
+        table.data th, table.data td { border-bottom: 1px solid var(--border); padding: 0.65rem 0.5rem; text-align: left; vertical-align: top; }
+        table.data th { color: #fff; font-weight: 600; }
+        table.data td { color: var(--muted); }
+        .article-figure { max-width: 100%; height: auto; border-radius: 12px; margin: 2rem 0 1rem; border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+        .article-caption { font-size: 0.9rem; color: var(--soft); margin-bottom: 2rem; font-style: italic; }
+        .article-container blockquote { border-left: 4px solid var(--accent); background: var(--panel); padding: 1rem 1.5rem; margin: 2rem 0; border-radius: 0 8px 8px 0; font-style: italic; color: var(--muted); }
+        @media (max-width: 760px) { .two-col { grid-template-columns: 1fr; } }
     </style>
+
+
+    <script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Академический гейткипинг",
+    "description": "Сетевые посредники, конфликт поколений и институциональные фильтры в российской индологии.",
+    "url": "https://gasyoun.github.io/IndologyScholars/gatekeeping.html",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Russian Indological Research Archive",
+      "url": "https://gasyoun.github.io/IndologyScholars/"
+    },
+    "dateModified": "2026-05-31"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Главная",
+        "item": "https://gasyoun.github.io/IndologyScholars/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Социология науки",
+        "item": "https://gasyoun.github.io/IndologyScholars/sociology.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Академический гейткипинг",
+        "item": "https://gasyoun.github.io/IndologyScholars/gatekeeping.html"
+      }
+    ]
+  }
+]
+    </script>
+
+    <link rel="stylesheet" href="/IndologyScholars/assets/styles.css">
 </head>
 <body>
+    <main class="page">
+        <nav class="top-nav" aria-label="Primary">
 
-    <header>
-        <div class="header-inner">
-            <div class="header-copy">
-                <h1>Академический гейткипинг</h1>
-                <p>Сетевые эффекты, конфликт поколений и институциональные фильтры в российской индологии.</p>
-            </div>
-            <div class="lang-switch-container">
-                <a href="/IndologyScholars/" class="lang-switch-btn" style="text-decoration:none; display:inline-flex; align-items:center; justify-content:center;">Вернуться к Архиву</a>
-            </div>
-        </div>
-    </header>
+            <a href="/IndologyScholars/">Архив</a>
 
-    <div class="article-container">
-        <div class="back-nav">
-            <a href="/IndologyScholars/">
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
-                Назад к базе данных
-            </a>
-        </div>
+            <a href="/IndologyScholars/search.html">Поиск</a>
 
-        <article>
+            <a href="/IndologyScholars/s/">Исследователи</a>
+
+            <a href="/IndologyScholars/p/">Доклады</a>
+
+            <a href="/IndologyScholars/conferences/">Конференции</a>
+
+            <a href="/IndologyScholars/themes/">Рубрики</a>
+
+            <a href="/IndologyScholars/generations/">Поколения</a>
+
+            <details class="more-nav">
+                <summary>Еще</summary>
+                <div class="more-menu">
+
+                    <a href="/IndologyScholars/docs.html">Документация</a>
+
+                    <a href="/IndologyScholars/findings/">Выводы</a>
+
+                    <a href="/IndologyScholars/findings/visualisations.html">Визуализации</a>
+
+                    <a href="/IndologyScholars/topics/">Сюжеты</a>
+
+                    <a href="/IndologyScholars/download-data.html">Данные</a>
+
+                    <a href="/IndologyScholars/meso/">Мезоуровни</a>
+
+                    <a href="/IndologyScholars/keywords/">Ключевые слова</a>
+
+                    <a href="/IndologyScholars/gumilyov/">Гумилев</a>
+
+                    <a href="/IndologyScholars/classification-criteria.html">Критерии</a>
+
+                    <a href="/IndologyScholars/videos/">Видео</a>
+
+                    <a href="/IndologyScholars/cities/">Города</a>
+
+                    <a href="/IndologyScholars/institutions/">Институции</a>
+
+                    <a href="/IndologyScholars/collaboration/">Коллаборация</a>
+
+                    <a href="/IndologyScholars/nlp/">NLP-анализ</a>
+
+                    <a href="/IndologyScholars/data-quality.html">Качество</a>
+
+                    <a href="/IndologyScholars/en.html">English</a>
+
+                    <a href="/IndologyScholars/how-to-cite.html">Цитирование</a>
+
+                    <a href="/IndologyScholars/metrics-guide.html">Метрики</a>
+
+                </div>
+            </details>
+        </nav>
+
+        <header>
             <h1>Сетевые посредники и академический гейткипинг: социология конфликта поколений в отечественной индологии</h1>
-
+            <p>Сетевые эффекты, конфликт поколений и институциональные фильтры в российской индологии.</p>
+        </header>
+        <div class="article-container">
+            <article>
             <h2>Смена сетевой парадигмы: от иерархии к распределенному посредничеству</h2>
             <p>В перспективе современной социологии науки (sociology of science) и структурного анализа сетей соавторств и научных коммуникаций мы наблюдаем фундаментальный поколенческий сдвиг. Долгое время архитектура индологического сообщества носила ярко выраженный центростремительный иерархический характер: авторитет концентрировался вокруг фигур старшего поколения, обладавших монополией на символический капитал и ресурсы.</p>
 
@@ -167,7 +178,7 @@
             <h2>Методология визуализации и доказательная база</h2>
             <p>Для наглядной демонстрации этого процесса мы применили инструменты сетевого анализа (Network Analysis). Используя алгоритм Betweenness Centrality (степень посредничества), мы визуализировали поколенческий сдвиг:</p>
 
-            <img src="/IndologyScholars/assets/img/brokerage_scatter.png" alt="Сетевая центральность vs Год первого доклада">
+            <img class="article-figure" src="assets/img/brokerage_scatter.png" alt="Сетевая центральность vs Год первого доклада">
             <div class="article-caption">Рис 1. Каждая точка — участник архива: по горизонтали показан год первого появления в программах, по вертикали — насколько часто этот участник оказывается связующим звеном между разными частями сети. Красные точки нужно читать не как «лучших» или «самых продуктивных», а как людей, через которых проходят необычно многие связи для их поколения. Иными словами, они чаще других соединяют группы, которые иначе оставались бы слабее связаны.</div>
 
             <h3>Институциональная власть против внешнего импакта (External Validation)</h3>
@@ -176,7 +187,7 @@
             <h3>Эффект исключения: очищение или структурная деградация?</h3>
             <p>Защитники сложившегося порядка могут утверждать, что исключение гиперактивных молодых узлов ведет к «очищению» сети от информационного шума и повышению её академической плотности. Математическое моделирование графа опровергает этот тезис.</p>
 
-            <img src="/IndologyScholars/assets/img/network_degradation.png" alt="Деградация связности графа">
+            <img class="article-figure" src="assets/img/network_degradation.png" alt="Деградация связности графа">
             <div class="article-caption">Рис 2. Это мысленный эксперимент: из сети временно убирается группа связующих участников, а затем сравнивается форма сообщества «до» и «после». Если после удаления растет число маленьких островков, значит люди хуже соединены друг с другом через общие площадки. Если уменьшается центральное ядро, значит сокращается та часть сообщества, где большинство участников остаются связаны хотя бы косвенно. Для гуманитарного чтения графика главное не формула, а направление изменения: исключение посредников делает поле более раздробленным.</div>
 
             <p>Симуляция "отмены" на исторических данных демонстрирует резкое падение связности всего сообщества. Удар наносится не просто по отдельным ученым, а по всей архитектуре научных связей. Более того, административная цензура порождает огромный <strong>«побочный ущерб» (collateral damage)</strong>. Сетевые посредники служат социальными лифтами для студентов и молодых исследователей. Исключение лидеров этого сетевого сообщества автоматически лишает голоса привязанную к ним молодежь, изолируя целое поколение исследователей от официального академического ядра.</p>
@@ -189,12 +200,10 @@
             <blockquote>
                 Следовательно, их отсутствие в программе — это статистическая аномалия, требующая проверки на институциональный фильтр. С точки зрения социологии науки, это может быть попыткой законсервировать распадающуюся парадигму через <em>цензуру и исключение</em>. Однако, как показывает история науки, подобные практики академического бойкота не останавливают развитие горизонтальных сетей. Они лишь ускоряют изоляцию самой консервативной элиты, превращая когда-то открытую научную конференцию в закрытый, стагнирующий клуб.
             </blockquote>
-        </article>
-    </div>
+            </article>
+        </div>
 
-    <footer>
-        <p>&copy; 2026 Российский индологический научный архив, к.ф.н. М.Ю. Гасунс (Обнинск)</p>
-    </footer>
-
+        <div class="footer">© 2026 Russian Indological Research Archive. Сгенерировано из нормализованного архива конференций.</div>
+    </main>
 </body>
 </html>
