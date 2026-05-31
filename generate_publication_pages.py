@@ -1023,6 +1023,36 @@ keywords:
                 },
             },
             {
+                "name": "human-review-index",
+                "path": "analytics_output/human_review_index.csv",
+                "format": "csv",
+                "mediatype": "text/csv",
+                "description": "Unified curator-facing index of open manual review items across authority IDs, RINC/OpenAlex/Wikipedia candidates, identity, classification, spacetime, affiliation, lineage, and data-quality queues.",
+                "schema": {
+                    "fields": [
+                        {"name": "domain", "type": "string"},
+                        {"name": "priority", "type": "integer"},
+                        {"name": "source_file", "type": "string"},
+                        {"name": "source_row", "type": "integer"},
+                        {"name": "record_id", "type": "string"},
+                        {"name": "label", "type": "string"},
+                        {"name": "status", "type": "string"},
+                        {"name": "reason", "type": "string"},
+                        {"name": "evidence_url", "type": "string"},
+                        {"name": "reviewer", "type": "string"},
+                        {"name": "checked_at", "type": "date"},
+                        {"name": "note", "type": "string"},
+                    ]
+                },
+            },
+            {
+                "name": "human-review-summary",
+                "path": "analytics_output/human_review_summary.json",
+                "format": "json",
+                "mediatype": "application/json",
+                "description": "Summary counts by domain and source file for the unified human-review index.",
+            },
+            {
                 "name": "network-nodes",
                 "path": "analytics_output/network_nodes.csv",
                 "format": "csv",
@@ -1485,6 +1515,7 @@ def generate_download_page(data):
         ("Theme provenance", "analytics_output/field_provenance_themes.csv", "Field-level provenance for generated presentation theme labels."),
         ("Gumilyov scale", "analytics_output/gumilyov_scale.csv", "Presentation-level scale of generalization used by the Gumilyov navigation pages."),
         ("Expert classification decisions", "analytics_output/classification_overrides.csv", "Reviewed revisions to themes, meso-levels, and Gumilyov argument levels, with a rationale for each affected presentation."),
+        ("Human review index", "analytics_output/human_review_index.csv", "Unified curator-facing inbox for open manual review items across authority IDs, identity, classification, spacetime, affiliation, lineage, and data-quality queues."),
         ("Verified affiliation spans", "curation/verified_affiliation_spans.csv", "Dated, source-backed institutional trajectories; tentative open continuations into later gaps are marked (?)."),
         ("YouTube video list", "analytics_output/youtube_video_list.csv", "Source inventory of collected recordings; public discovery is attached to presentation records."),
         ("YouTube mapping", "analytics_output/video_presentation_mapping.csv", "Video-to-presentation matching status used to display recording availability on presentations."),
@@ -11513,6 +11544,11 @@ def generate_publication_docs(data):
             <article class="card">
                 <strong><a href="data-quality.html" class="bilingual-text" data-ru="🛡️ Аудит качества данных" data-en="🛡️ Data Quality Audit">🛡️ Аудит качества данных</a></strong>
                 <p class="bilingual-text" data-ru="Результаты автоматических тестов ссылочной целостности базы данных, полноты метаданных и выборок для ручной сверки." data-en="Automated integrity check results, database referential consistency, and human-in-the-loop review samples.">Результаты автоматических тестов ссылочной целостности базы данных, полноты метаданных и выборок для ручной сверки.</p>
+            </article>
+
+            <article class="card">
+                <strong><a href="docs/scientometrics-sociology.md">Scientometrics & Sociology of Science</a></strong>
+                <p>Responsible metrics stance, human-review inbox, field-normalized additions, network sociology, cohort dynamics, topic evolution, and missingness rules.</p>
             </article>
 
             <article class="card">

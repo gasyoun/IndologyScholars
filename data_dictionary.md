@@ -20,7 +20,10 @@ This dictionary describes the reusable data outputs produced by the IndologyScho
 | `docs/reuse-rights.md` | Markdown | manual | Rights split for code, derived metadata, cached source material, and article drafts. |
 | `docs/institutional-scope.md` | Markdown | manual | Boundary note for city labels, programme affiliations, and verified institutional spans. |
 | `docs/classification-reliability-packet.md` | Markdown | manual + generated sample | Classification codebook, review layers, deterministic sample, and ambiguity rules. |
+| `docs/scientometrics-sociology.md` | Markdown | manual + generated review index | Responsible metrics stance, sociology-of-science additions, and manual-review rules. |
 | `analytics_output/data_quality_report.json` | JSON | `generate_publication_pages.py` | Machine-readable quality checks and review samples. |
+| `analytics_output/human_review_index.csv` | CSV | `tools/build_human_review_index.py` | Unified curator-facing index of all open human-review items. |
+| `analytics_output/human_review_summary.json` | JSON | `tools/build_human_review_index.py` | Summary counts for the unified human-review index. |
 | `analytics_output/publication_file_manifest.csv` | CSV | `generate_publication_pages.py` | Generated file manifest with byte sizes and SHA-256 checksums. |
 | `analytics_output/publication_file_manifest.json` | JSON | `generate_publication_pages.py` | JSON version of the generated file manifest with build metadata. |
 | `curation/verified_affiliation_spans.csv` | CSV | manual curation / `generate_site_data.py` | Source-backed dated institutional trajectories; open continuations inferred into later programme gaps are visibly marked `(?)`. |
@@ -73,6 +76,7 @@ Provenance sidecars document where curated or derived fields came from and how c
 | `analytics_output/field_provenance_themes.csv` | Generated presentation theme labels and theme review candidates. |
 | `curation/verified_affiliation_spans.csv` | Verified institutional trajectories; city-only programme markers remain geography, while an open trajectory continued beyond its starting evidence is marked `(?)` until contradicted. |
 | `analytics_output/classification_reliability_sample.csv` | Deterministic review sample for classification reliability checks; rows marked `queued_for_manual_review` are a review queue rather than adjudicated facts. |
+| `analytics_output/human_review_index.csv` | Unified open-work register for authority IDs, RINC/OpenAlex/Wikipedia candidates, identity aliases, birth-year gaps, classification, spacetime, affiliation, lineage, and data-quality review items. |
 
 Common columns:
 
@@ -88,6 +92,28 @@ Common columns:
 | `checked_at` | Review/check date when available. |
 | `reviewer` | Reviewer or process name when available. |
 | `notes` | Additional review notes. |
+
+### Human Review Index
+
+`analytics_output/human_review_index.csv` is the single recommended place to
+start manual checking. It is generated from the specialized queues, but it does
+not replace them; each row keeps `source_file` and `source_row` so the reviewer
+can return to the original evidence context.
+
+| Column | Meaning |
+| --- | --- |
+| `domain` | Review area, such as `authority_identity`, `theme_classification`, or `spacetime_index`. |
+| `priority` | Lower number means earlier human review. |
+| `source_file` | Original queue, audit CSV, or JSON quality report. |
+| `source_row` | Header-aware source row number where available. |
+| `record_id` | Local person/presentation ID or external candidate identifier. |
+| `label` | Human-readable person name, presentation title, or candidate label. |
+| `status` | Current open review status. Completed/accepted rows are filtered out. |
+| `reason` | Why this row needs a human decision. |
+| `evidence_url` | First available search/profile URL to inspect. |
+| `reviewer` | Person or process that performed the check. |
+| `checked_at` | Review date. |
+| `note` | Domain-specific context carried from the source queue. |
 
 Confidence values used in the project:
 

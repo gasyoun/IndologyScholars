@@ -305,6 +305,72 @@
       }
     },
     {
+      "name": "human-review-index",
+      "path": "analytics_output/human_review_index.csv",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "description": "Unified curator-facing index of open manual review items across authority IDs, RINC/OpenAlex/Wikipedia candidates, identity, classification, spacetime, affiliation, lineage, and data-quality queues.",
+      "schema": {
+        "fields": [
+          {
+            "name": "domain",
+            "type": "string"
+          },
+          {
+            "name": "priority",
+            "type": "integer"
+          },
+          {
+            "name": "source_file",
+            "type": "string"
+          },
+          {
+            "name": "source_row",
+            "type": "integer"
+          },
+          {
+            "name": "record_id",
+            "type": "string"
+          },
+          {
+            "name": "label",
+            "type": "string"
+          },
+          {
+            "name": "status",
+            "type": "string"
+          },
+          {
+            "name": "reason",
+            "type": "string"
+          },
+          {
+            "name": "evidence_url",
+            "type": "string"
+          },
+          {
+            "name": "reviewer",
+            "type": "string"
+          },
+          {
+            "name": "checked_at",
+            "type": "date"
+          },
+          {
+            "name": "note",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    {
+      "name": "human-review-summary",
+      "path": "analytics_output/human_review_summary.json",
+      "format": "json",
+      "mediatype": "application/json",
+      "description": "Summary counts by domain and source file for the unified human-review index."
+    },
+    {
       "name": "network-nodes",
       "path": "analytics_output/network_nodes.csv",
       "format": "csv",

@@ -481,13 +481,15 @@ def main():
             "field-provenance-themes",
             "verified-affiliation-spans",
             "classification-reliability-sample",
+            "human-review-index",
+            "human-review-summary",
             "network-nodes",
             "network-edges",
             "publication-file-manifest",
         ]:
             if resource_name not in resources:
                 fail(errors, f"datapackage.json missing resource {resource_name}")
-        for resource_name in ["site-data", "data-quality-report", "presentation-id-manifest", "network-nodes", "network-edges", "publication-file-manifest"]:
+        for resource_name in ["site-data", "data-quality-report", "presentation-id-manifest", "human-review-index", "network-nodes", "network-edges", "publication-file-manifest"]:
             if resource_name in resources and "schema" not in resources[resource_name]:
                 fail(errors, f"datapackage.json resource {resource_name} missing schema")
 
@@ -510,7 +512,9 @@ def main():
             "Stable Identifier Policy",
             "Provenance Sidecars",
             "Network Exports",
+            "Human Review Index",
             "presentation_id_manifest.csv",
+            "human_review_index.csv",
             "network_edges.csv",
             "publication_file_manifest.csv",
         ]:
@@ -531,6 +535,43 @@ def main():
             lines = read(provenance_path).splitlines()
             if len(lines) < 2:
                 fail(errors, f"{provenance_path} has no provenance rows")
+
+    if Path("analytics_output/human_review_index.csv").exists():
+        with open("analytics_output/human_review_index.csv", "r", encoding="utf-8-sig", newline="") as handle:
+            review_rows = list(csv.DictReader(handle))
+        review_fields = set(review_rows[0].keys()) if review_rows else set()
+        expected_review_fields = {
+            "domain",
+            "priority",
+            "source_file",
+            "source_row",
+            "record_id",
+            "label",
+            "status",
+            "reason",
+            "evidence_url",
+            "reviewer",
+            "checked_at",
+            "note",
+        }
+        missing_fields = expected_review_fields - review_fields
+        if missing_fields:
+            fail(errors, f"human_review_index.csv missing fields: {sorted(missing_fields)}")
+        required_domains = {
+            "authority_identity",
+            "rinc_identity",
+            "openalex_identity",
+            "theme_classification",
+            "classification_reliability",
+            "spacetime_index",
+            "affiliation_scope",
+        }
+        present_domains = {row.get("domain", "") for row in review_rows}
+        missing_domains = required_domains - present_domains
+        if missing_domains:
+            fail(errors, f"human_review_index.csv missing review domains: {sorted(missing_domains)}")
+        if len(review_rows) < 100:
+            fail(errors, "human_review_index.csv is unexpectedly small")
 
     if Path("analytics_output/network_nodes.csv").exists():
         with open("analytics_output/network_nodes.csv", encoding="utf-8", newline="") as f:

@@ -9,6 +9,7 @@ analytics:
 	python generate_analytics.py
 	python article/work_title_keywords.py
 	python tools/build_classification_reliability_sample.py
+	python tools/build_human_review_index.py
 
 data:
 	python generate_site_data.py
