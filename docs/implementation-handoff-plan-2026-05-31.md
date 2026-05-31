@@ -12,6 +12,35 @@ submission and a repository that can survive a skeptical technical reader.
 - Do not make generated site churn part of unrelated commits.
 - Promote useful scratch code into named tools; archive or ignore the rest.
 
+## Implementation Pass, 2026-05-31
+
+Completed from Phases 1-2:
+
+- Removed the pre-UDK working-note block from
+  `article/ppv_submission_article.md`.
+- Synchronized the PPV article, anonymous article, cover letter, README files,
+  and development docs to the current 1352 presentation / 1379 author
+  participation snapshot.
+- Updated PPV theme, period, and G-scale by-venue counts that were not covered
+  by the original drift report.
+- Recomputed the cover-letter character count for the submission article:
+  34,513 characters including spaces.
+- Added `article/check_anonymity.py` for the double-blind review artifact.
+- Added `pytest.ini` so root `python -m pytest` collects only `tests`.
+- Added PPV number and anonymity gates to both validation and rebuild/deploy
+  workflows.
+
+Verification run:
+
+- `python -m py_compile ... article/check_ppv_numbers.py article/check_anonymity.py ...`
+- `python -m pytest` → 40 passed
+- `python -m unittest discover -s tests` → 34 passed
+- `python validate_publication.py` → passed
+- `python article/check_ppv_numbers.py` → 0 drifts
+- `python article/check_anonymity.py` → passed
+- `python prepare_pages_artifact.py` → artifact prepared
+- `git diff --check` → passed
+
 ## Phase 0: Freeze And Triage
 
 Goal: stop new drift while the article is repaired.

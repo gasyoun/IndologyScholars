@@ -9,8 +9,8 @@ user-facing project page.
 ## Current Published Snapshot
 
 The source for figures published on the site is the `summary` object in
-`site_data.json`. As of 29 May 2026 it reports 270 speaker profiles,
-1351 unique talks, 1378 author participations, and 40 events across 22
+`site_data.json`. As of 31 May 2026 it reports 270 speaker profiles,
+1352 unique talks, 1379 author participations, and 40 events across 22
 programme years (2004-2026). 41 speakers occur in both series, 165
 occur only in the Zograf Readings, and 64 only in the Roerich Readings.
 
@@ -135,6 +135,12 @@ the Zograf-through-2025 censored block, Zograf 2026 preliminary, and G1/G2/G3
 — and exits non-zero on any drift, so the pre-submission gate fails until the
 article is synchronised. A current-state snapshot is written to
 `article/hypothesis_output/ppv_numbers_snapshot.{md,json}`.
+
+`article/check_anonymity.py` validates the double-blind artifact
+`article/ppv_submission_article_anonymous.md`: it must not contain the
+author name, e-mail, ORCID, postal address, or the pre-UDK drafting block.
+Both scripts run in the validation and rebuild/deploy workflows before
+publication.
 
 ## Genealogy track
 

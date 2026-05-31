@@ -312,11 +312,11 @@ def find_drifts(text: str, snap: dict[str, object]) -> list[dict]:
     out += check("Total unique scholars (methods 'В корпус')",
         r"В\s+устный\s+корпус\s+вошли\s+(\d[\d,]*)\s+уникальных\s+ученых", T["unique_scholars"], text)
     out += check("Total presentations (RU 'корпус включает')",
-        r"корпус\s+включает\s+(\d[\d,]*)\s+докладов", T["presentations"], text)
+        r"корпус\s+включает\s+(\d[\d,]*)\s+доклад(?:а|ов)", T["presentations"], text)
     out += check("Total presentations (EN 'contains X presentations')",
         r"contains\s+(\d[\d,]*)\s+presentations", T["presentations"], text)
     out += check("Total presentations (RU 'X уникальных докладов')",
-        r"(\d[\d,]*)\s+уникальных\s+докладов", T["presentations"], text)
+        r"(\d[\d,]*)\s+уникальных\s+доклад(?:а|ов)", T["presentations"], text)
     out += check("Total presentations (EN 'X of Y presentations')",
         r"of\s+(\d[\d,]*)\s+presentations\s+are", T["presentations"], text)
     # Anchored to specific Total-context phrasings to avoid matching the censored block.
@@ -324,7 +324,7 @@ def find_drifts(text: str, snap: dict[str, object]) -> list[dict]:
         r"(\d[\d,]*)\s+авторских\s+участий\s+и\s+\d+\s+ученых",
         T["author_participations"], text)
     out += check("Total author participations (RU, methods)",
-        r"уникальных\s+докладов\s+и\s+(\d[\d,]*)\s+авторских\s+участий",
+        r"уникальных\s+доклад(?:а|ов)\s+и\s+(\d[\d,]*)\s+авторских\s+участий",
         T["author_participations"], text)
     out += check("Total author participations (EN)",
         r"(\d[\d,]*)\s+author\s+participations", T["author_participations"], text)
@@ -347,7 +347,7 @@ def find_drifts(text: str, snap: dict[str, object]) -> list[dict]:
     out += check("Zograf 2026 declared presentations",
         r"(\d+)\s+заявленных\s+докладов", Z26["presentations"], text)
     out += check("Zograf 2026 author participations",
-        r"и\s+(\d+)\s+авторское\s+участие", Z26["author_participations"], text)
+        r"заявленных\s+докладов\s+и\s+(\d+)\s+авторское\s+участие", Z26["author_participations"], text)
 
     # --- Per-series (prose, § 3) ---
     out += check("Zograf presentations (prose)",
@@ -428,11 +428,11 @@ def find_drifts(text: str, snap: dict[str, object]) -> list[dict]:
     out += check("Zograf-2025 unique scholars (censored)",
         r"Зографские\s+чтения\s+дают\s+(\d+)\s+ученых", Z25["unique_scholars"], text)
     out += check("Zograf-2025 presentations (censored)",
-        r"ученых,\s+(\d+)\s+докладов", Z25["presentations"], text)
-    # Anchored to censored phrasing ("X ученых, Y докладов и Z авторских") which lacks "уникальных"
-    # before "докладов", so it does not match the Methods total phrasing.
+        r"ученых,\s+(\d+)\s+доклад(?:а|ов)", Z25["presentations"], text)
+    # Anchored to censored phrasing ("X ученых, Y доклада/докладов и Z авторское/авторских")
+    # which lacks "уникальных" before "доклада/докладов", so it does not match the Methods total phrasing.
     out += check("Zograf-2025 author participations (censored)",
-        r"ученых,\s+\d+\s+докладов\s+и\s+(\d+)\s+авторских\s+участий",
+        r"ученых,\s+\d+\s+доклад(?:а|ов)\s+и\s+(\d+)\s+авторск(?:ое\s+участие|их\s+участий)",
         Z25["author_participations"], text)
     out += check("Zograf-2025 core share %",
         r"Доля\s+ядра\s+тогда\s+составляет\s+(\d+\.\d+)%", Z25["core_share_pct"], text)
@@ -453,7 +453,7 @@ def find_drifts(text: str, snap: dict[str, object]) -> list[dict]:
             G["1"], text)
     if "2" in G:
         out += check("G2 traditions/schools (prose)",
-            r"G2\s+включает\s+(\d+)\s+докладов", G["2"], text)
+            r"G2\s+включает\s+(\d+)\s+доклад(?:а|ов)", G["2"], text)
     if "3" in G:
         out += check("G3 broad generalisations (prose)",
             r"G3\s+-\s+только\s+(\d+)\.", G["3"], text)
