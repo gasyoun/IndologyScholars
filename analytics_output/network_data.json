@@ -214,7 +214,7 @@
       "label": "Zograf Readings 2015",
       "local_id": "E2015",
       "slug": null,
-      "weight": 46.0
+      "weight": 45.0
     },
     {
       "id": "event:E2016",
@@ -2206,7 +2206,7 @@
       "label": "Тавастшерна Сергей Сергеевич",
       "local_id": "PERS_11da326d",
       "slug": "sergey-tavastsherna",
-      "weight": 29.0
+      "weight": 28.0
     },
     {
       "id": "person:PERS_2b7ca933",
@@ -2558,7 +2558,7 @@
       "label": "history_and_culture",
       "local_id": "history_and_culture",
       "slug": null,
-      "weight": 257.0
+      "weight": 256.0
     },
     {
       "id": "theme:linguistics_and_philology",
@@ -4487,14 +4487,6 @@
       "target": "event:E2014",
       "type": "person_event",
       "year": 2014,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_11da326d",
-      "target": "event:E2015",
-      "type": "person_event",
-      "year": 2015,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -16755,14 +16747,6 @@
       "weight": 1.0
     },
     {
-      "source": "person:PERS_11da326d",
-      "target": "person:PERS_ddb70dc9",
-      "type": "person_person_copresentation",
-      "year": 2015,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
       "source": "person:PERS_377db63e",
       "target": "person:PERS_7d6f456c",
       "type": "person_person_copresentation",
@@ -21468,14 +21452,6 @@
     },
     {
       "source": "person:PERS_0fd718a7",
-      "target": "person:PERS_11da326d",
-      "type": "person_person_same_session",
-      "year": 2015,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_0fd718a7",
       "target": "person:PERS_12125da9",
       "type": "person_person_same_session",
       "year": 2013,
@@ -22628,14 +22604,6 @@
     },
     {
       "source": "person:PERS_11da326d",
-      "target": "person:PERS_34c0d384",
-      "type": "person_person_same_session",
-      "year": 2015,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_11da326d",
       "target": "person:PERS_35a30342",
       "type": "person_person_same_session",
       "year": 2016,
@@ -22784,14 +22752,6 @@
       "type": "person_person_same_session",
       "year": 2025,
       "series": "Roerich Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_11da326d",
-      "target": "person:PERS_41d6aa73",
-      "type": "person_person_same_session",
-      "year": 2015,
-      "series": "Zograf Readings",
       "weight": 1.0
     },
     {
@@ -23054,14 +23014,6 @@
       "source": "person:PERS_11da326d",
       "target": "person:PERS_829c1de5",
       "type": "person_person_same_session",
-      "year": 2015,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_11da326d",
-      "target": "person:PERS_829c1de5",
-      "type": "person_person_same_session",
       "year": 2018,
       "series": "Zograf Readings",
       "weight": 1.0
@@ -23268,14 +23220,6 @@
     },
     {
       "source": "person:PERS_11da326d",
-      "target": "person:PERS_9a855a7b",
-      "type": "person_person_same_session",
-      "year": 2015,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_11da326d",
       "target": "person:PERS_9ad66151",
       "type": "person_person_same_session",
       "year": 2004,
@@ -23423,14 +23367,6 @@
       "target": "person:PERS_bff5de3e",
       "type": "person_person_same_session",
       "year": 2004,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_11da326d",
-      "target": "person:PERS_bff5de3e",
-      "type": "person_person_same_session",
-      "year": 2015,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -23700,14 +23636,6 @@
     },
     {
       "source": "person:PERS_11da326d",
-      "target": "person:PERS_ddb70dc9",
-      "type": "person_person_same_session",
-      "year": 2015,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_11da326d",
       "target": "person:PERS_de59a2bc",
       "type": "person_person_same_session",
       "year": 2012,
@@ -23895,14 +23823,6 @@
       "target": "person:PERS_f5b8b340",
       "type": "person_person_same_session",
       "year": 2025,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_11da326d",
-      "target": "person:PERS_f7c7adc7",
-      "type": "person_person_same_session",
-      "year": 2015,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -54959,14 +54879,6 @@
       "target": "theme:literature_and_poetry",
       "type": "person_theme",
       "year": 2020,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_11da326d",
-      "target": "theme:history_and_culture",
-      "type": "person_theme",
-      "year": 2015,
       "series": "Zograf Readings",
       "weight": 1.0
     },

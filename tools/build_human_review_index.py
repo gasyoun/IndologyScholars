@@ -262,6 +262,29 @@ def build_rows() -> list[dict[str, str]]:
         note_fields=("source", "notes"),
         priority_fn=lambda row: 80,
     )
+    add_csv_rows(
+        rows,
+        source_file="analytics_output/coauthorship_review.csv",
+        domain="coauthorship_review",
+        id_fields=("presentation_id",),
+        label_fields=("title",),
+        status_fields=("review_status",),
+        reason_fields=("human_action",),
+        evidence_fields=("source_url",),
+        note_fields=("year", "series", "people", "source_snippet"),
+        priority_fn=lambda row: 65,
+    )
+    add_csv_rows(
+        rows,
+        source_file="analytics_output/senior_absence_audit.csv",
+        domain="senior_absence",
+        id_fields=("person_id",),
+        label_fields=("display_name",),
+        status_fields=("review_status",),
+        reason_fields=("interpretation_note",),
+        note_fields=("cohort", "birth_year", "first_year", "last_year", "talks_before_threshold", "living_status_basis"),
+        priority_fn=lambda row: 60 if clean(row.get("cohort")) == "absent_after_2022" else 68,
+    )
 
     add_scientometrics_guardrail_rows(rows)
     add_data_quality_rows(rows)

@@ -186,6 +186,154 @@ def generate_network_exports(cursor):
 
     return len(nodes), len(edges)
 
+
+def generate_coauthorship_review(cursor):
+    cursor.execute("""
+        WITH multi AS (
+            SELECT presentation_id
+            FROM presentation_person
+            GROUP BY presentation_id
+            HAVING COUNT(*) > 1
+        )
+        SELECT
+            pr.presentation_id,
+            pr.title,
+            e.year,
+            es.series_name_en,
+            GROUP_CONCAT(
+                COALESCE(p.full_name_ru, p.display_name) || ' [' || pp.role || ']',
+                ' | '
+            ) AS people,
+            pr.source_snippet,
+            pr.source_url
+        FROM presentation pr
+        JOIN multi m ON m.presentation_id = pr.presentation_id
+        JOIN presentation_person pp ON pp.presentation_id = pr.presentation_id
+        JOIN person p ON p.person_id = pp.person_id
+        JOIN session s ON s.session_id = pr.session_id
+        JOIN event_day_venue edv ON edv.event_day_venue_id = s.event_day_venue_id
+        JOIN event_day ed ON ed.event_day_id = edv.event_day_id
+        JOIN event e ON e.event_id = ed.event_id
+        JOIN event_series es ON es.event_series_id = e.event_series_id
+        GROUP BY pr.presentation_id
+        ORDER BY e.year, es.event_series_id, pr.presentation_id
+    """)
+    rows = []
+    for row in cursor.fetchall():
+        presentation_id, title, year, series, people, source_snippet, source_url = row
+        rows.append({
+            "presentation_id": presentation_id,
+            "year": year,
+            "series": series,
+            "title": title,
+            "people": people,
+            "source_snippet": source_snippet,
+            "source_url": source_url,
+            "review_status": "source_backed_review",
+            "human_action": "Confirm that the programme line denotes a true joint presentation before citing as coauthorship.",
+        })
+
+    with open(os.path.join(OUTPUT_DIR, "coauthorship_review.csv"), "w", encoding="utf-8", newline="") as f:
+        fieldnames = [
+            "presentation_id", "year", "series", "title", "people",
+            "source_snippet", "source_url", "review_status", "human_action",
+        ]
+        writer = csv.DictWriter(f, fieldnames=fieldnames, lineterminator="\n")
+        writer.writeheader()
+        writer.writerows(rows)
+
+    return len(rows)
+
+
+def generate_senior_absence_audit(cursor):
+    cursor.execute("""
+        WITH person_years AS (
+            SELECT
+                p.person_id,
+                COALESCE(p.full_name_ru, p.display_name) AS display_name,
+                p.birth_year,
+                p.death_year,
+                e.year,
+                COUNT(DISTINCT pr.presentation_id) AS talks
+            FROM person p
+            JOIN presentation_person pp ON pp.person_id = p.person_id
+            JOIN presentation pr ON pr.presentation_id = pp.presentation_id
+            JOIN session s ON s.session_id = pr.session_id
+            JOIN event_day_venue edv ON edv.event_day_venue_id = s.event_day_venue_id
+            JOIN event_day ed ON ed.event_day_id = edv.event_day_id
+            JOIN event e ON e.event_id = ed.event_id
+            GROUP BY p.person_id, e.year
+        ),
+        agg AS (
+            SELECT
+                person_id,
+                display_name,
+                birth_year,
+                death_year,
+                SUM(CASE WHEN year <= 2022 THEN talks ELSE 0 END) AS talks_to_2022,
+                SUM(CASE WHEN year >= 2023 THEN talks ELSE 0 END) AS talks_after_2022,
+                SUM(CASE WHEN year <= 2025 THEN talks ELSE 0 END) AS talks_to_2025,
+                SUM(CASE WHEN year = 2026 THEN talks ELSE 0 END) AS talks_2026,
+                MIN(year) AS first_year,
+                MAX(year) AS last_year
+            FROM person_years
+            GROUP BY person_id
+        )
+        SELECT * FROM agg
+        WHERE birth_year IS NOT NULL
+          AND birth_year <= 1960
+          AND death_year IS NULL
+          AND (
+            (talks_to_2022 >= 5 AND COALESCE(talks_after_2022, 0) = 0)
+            OR (talks_to_2025 >= 5 AND COALESCE(talks_2026, 0) = 0)
+          )
+        ORDER BY display_name
+    """)
+    source_rows = [dict(zip([col[0] for col in cursor.description], row)) for row in cursor.fetchall()]
+
+    rows = []
+    for row in source_rows:
+        if row["talks_to_2022"] >= 5 and (row["talks_after_2022"] or 0) == 0:
+            rows.append({
+                "cohort": "absent_after_2022",
+                "person_id": row["person_id"],
+                "display_name": row["display_name"],
+                "birth_year": row["birth_year"],
+                "first_year": row["first_year"],
+                "last_year": row["last_year"],
+                "talks_before_threshold": row["talks_to_2022"],
+                "talks_after_threshold": row["talks_after_2022"] or 0,
+                "living_status_basis": "death_year blank in local database; externally verify before biographical claims",
+                "review_status": "review",
+                "interpretation_note": "Frequent senior-generation participant through 2022, absent in 2023-2026 archive data.",
+            })
+        if row["talks_to_2025"] >= 5 and (row["talks_2026"] or 0) == 0:
+            rows.append({
+                "cohort": "absent_in_2026",
+                "person_id": row["person_id"],
+                "display_name": row["display_name"],
+                "birth_year": row["birth_year"],
+                "first_year": row["first_year"],
+                "last_year": row["last_year"],
+                "talks_before_threshold": row["talks_to_2025"],
+                "talks_after_threshold": row["talks_2026"] or 0,
+                "living_status_basis": "death_year blank in local database; externally verify before biographical claims",
+                "review_status": "review",
+                "interpretation_note": "Frequent senior-generation participant before 2026, absent from the 2026 Zograf programme in current data.",
+            })
+
+    with open(os.path.join(OUTPUT_DIR, "senior_absence_audit.csv"), "w", encoding="utf-8", newline="") as f:
+        fieldnames = [
+            "cohort", "person_id", "display_name", "birth_year", "first_year",
+            "last_year", "talks_before_threshold", "talks_after_threshold",
+            "living_status_basis", "review_status", "interpretation_note",
+        ]
+        writer = csv.DictWriter(f, fieldnames=fieldnames, lineterminator="\n")
+        writer.writeheader()
+        writer.writerows(rows)
+
+    return len(rows)
+
 def main():
     conn = sqlite3.connect(DB_PATH)
     cursor = conn.cursor()
@@ -325,6 +473,8 @@ def main():
         writer.writerows(age_trend_rows)
 
     network_node_count, network_edge_count = generate_network_exports(cursor)
+    coauthorship_review_count = generate_coauthorship_review(cursor)
+    senior_absence_count = generate_senior_absence_audit(cursor)
 
     # ── missing_birth_years.md ────────────────────────────────────────────────
 
@@ -429,6 +579,8 @@ def main():
     print(f"analytics_output/: total_indologists.csv, zograf_only_indologists.csv, "
           f"roerich_only_indologists.csv, age_cohort_trend.csv")
     print(f"network exports: {network_node_count} nodes, {network_edge_count} edges")
+    print(f"coauthorship_review.csv: {coauthorship_review_count} rows.")
+    print(f"senior_absence_audit.csv: {senior_absence_count} rows.")
     print(f"indology_scholars_analytics.md: sections 1–6 written.")
     print(f"missing_birth_years.md: {len(missing_rows)} scholars listed.")
     conn.close()

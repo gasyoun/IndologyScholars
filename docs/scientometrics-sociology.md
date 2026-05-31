@@ -28,7 +28,8 @@ rather than replace it.
 `analytics_output/human_review_index.csv` is the single curator-facing inbox.
 It aggregates open items from authority, RINC, OpenAlex, Wikipedia, identity
 disambiguation, birth-year gaps, theme/classification reliability, spacetime
-indexing, affiliation scope, lineage candidates, and data-quality samples.
+indexing, affiliation scope, lineage candidates, coauthorship review, senior
+absence review, and data-quality samples.
 
 Minimum review fields:
 
@@ -90,6 +91,10 @@ The archive can support sociology-of-science questions with network measures:
 Report these as positions in the observed conference archive, not as complete
 maps of Russian Indology.
 
+`analytics_output/coauthorship_review.csv` is the review queue for multi-person
+programme lines. A row may support "same presentation record"; stronger
+language such as durable coauthorship requires human confirmation.
+
 ### 4. Cohort And Career-Stage Dynamics
 
 Useful additions:
@@ -103,6 +108,11 @@ Useful additions:
 
 Always distinguish observed archive participation from employment or career
 continuity.
+
+`analytics_output/senior_absence_audit.csv` operationalizes this caution for
+one sensitive question: frequent senior-generation participants who are no
+longer visible after 2022 or are absent from the 2026 programme. Every row is a
+review item, not a public claim about life status or career exit.
 
 ### 5. Topic And Field Evolution
 

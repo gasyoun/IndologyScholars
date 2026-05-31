@@ -6,7 +6,7 @@
 ## 1. High-Level Executive Summary
 
 - **Total Unique Scholars Identified**: 270
-- **Total Historical Presentations/Talks**: 1379
+- **Total Historical Presentations/Talks**: 1378
 - **Scholars in Zograf Readings only**: 165
 - **Scholars in Roerich Readings only**: 64
 - **Scholars Active in BOTH Conferences (Overlapping Cohort)**: 41
@@ -17,7 +17,7 @@ These scholars are active in both major Petersburg (Zograf) and Moscow (Roerich)
 | Scholar Name | Total Talks | Zograf Talks | Roerich Talks | Active Period |
 | :--- | :---: | :---: | :---: | :---: |
 | Корнеева Наталья Афанасьевна | 29 | 15 | 14 | 2008–2026 |
-| Тавастшерна Сергей Сергеевич | 29 | 17 | 12 | 2004–2026 |
+| Тавастшерна Сергей Сергеевич | 28 | 16 | 12 | 2004–2026 |
 | Александрова Наталия Владимировна | 27 | 12 | 15 | 2008–2026 |
 | Рыжакова Светлана Игоревна | 27 | 22 | 5 | 2004–2026 |
 | Цветкова Светлана Олеговна | 27 | 15 | 12 | 2007–2026 |
@@ -58,8 +58,8 @@ These scholars are active in both major Petersburg (Zograf) and Moscow (Roerich)
 | Псху Рузана Владимировна | 19 | 2007–2026 |
 | Игнатьев Андрей Александрович | 18 | 2004–2026 |
 | Скороходова Татьяна Григорьевна | 18 | 2006–2026 |
-| Тавастшерна Сергей Сергеевич | 17 | 2004–2026 |
 | Парибок Андрей Всеволодович | 17 | 2006–2026 |
+| Тавастшерна Сергей Сергеевич | 16 | 2004–2026 |
 | Десницкая Евгения Алексеевна | 16 | 2006–2026 |
 | Островская Елена Петровна | 16 | 2006–2025 |
 | Пахомов Сергей Владимирович | 16 | 2004–2025 |
@@ -114,7 +114,7 @@ The complete structured lists have been generated and exported to the `analytics
 | 2012 | 2012-05-16 | 32 | 46.9 | 43.0 | 34.0–62.2 | 26–76 |
 | 2013 | 2013-05-15 | 35 | 49.1 | 45 | 37.0–61.0 | 27–82 |
 | 2014 | 2014-05-14 | 37 | 47.9 | 45 | 36.5–60.5 | 27–75 |
-| 2015 | 2015-05-25 | 40 | 48.9 | 47.0 | 37.0–59.5 | 23–84 |
+| 2015 | 2015-05-25 | 39 | 48.9 | 47 | 37.0–60.0 | 23–84 |
 | 2016 | 2016-05-11 | 40 | 47.8 | 46.0 | 34.8–60.5 | 22–85 |
 | 2017 | 2017-05-16 | 40 | 47.6 | 46.5 | 35.0–56.8 | 25–86 |
 | 2018 | 2018-05-15 | 45 | 49.1 | 48 | 36.0–60.5 | 26–87 |
@@ -154,6 +154,6 @@ We analyze the structure of Russian Indological conferences through the lens of 
 
 **Nodes Generated:** 324
 
-**Edges Generated:** 7822
+**Edges Generated:** 7811
 
 The network is exported into standard edge list and node list CSV formats (`network_nodes.csv` and `network_edges.csv`) for use in external graphing tools like Gephi or Cytoscape.

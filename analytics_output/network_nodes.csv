@@ -25,7 +25,7 @@ event:E2011,event,Zograf Readings 2011,E2011,34
 event:E2012,event,Zograf Readings 2012,E2012,33
 event:E2013,event,Zograf Readings 2013,E2013,36
 event:E2014,event,Zograf Readings 2014,E2014,37
-event:E2015,event,Zograf Readings 2015,E2015,46
+event:E2015,event,Zograf Readings 2015,E2015,45
 event:E2016,event,Zograf Readings 2016,E2016,44
 event:E2017,event,Zograf Readings 2017,E2017,44
 event:E2018,event,Zograf Readings 2018,E2018,47
@@ -274,7 +274,7 @@ person:PERS_3d22e8d4,person,Стрелков Андрей Михайлович,P
 person:PERS_f940c5b3,person,Стрелкова Гюзэль Владимировна,PERS_f940c5b3,5
 person:PERS_7f908d49,person,Стрельцова Лилия Александровна,PERS_7f908d49,6
 person:PERS_42da4866,person,Стукалин Глеб Дмитриевич,PERS_42da4866,3
-person:PERS_11da326d,person,Тавастшерна Сергей Сергеевич,PERS_11da326d,29
+person:PERS_11da326d,person,Тавастшерна Сергей Сергеевич,PERS_11da326d,28
 person:PERS_2b7ca933,person,Танонова Елена Викторовна,PERS_2b7ca933,2
 person:PERS_3074a8e5,person,Терентьев Андрей Анатольевич,PERS_3074a8e5,5
 person:PERS_0e0a154e,person,Титлин Лев Игоревич,PERS_0e0a154e,7
@@ -318,7 +318,7 @@ person:PERS_0ca995ac,person,Яковлев Виктор Михайлович,PER
 person:PERS_b881461b,person,Яковлева Мария Николаевна,PERS_b881461b,3
 person:PERS_71e9dee1,person,Яскунас Валдас,PERS_71e9dee1,3
 theme:art_and_material_culture,theme,art_and_material_culture,art_and_material_culture,89
-theme:history_and_culture,theme,history_and_culture,history_and_culture,257
+theme:history_and_culture,theme,history_and_culture,history_and_culture,256
 theme:linguistics_and_philology,theme,linguistics_and_philology,linguistics_and_philology,123
 theme:literature_and_poetry,theme,literature_and_poetry,literature_and_poetry,282
 theme:religion_and_philosophy,theme,religion_and_philosophy,religion_and_philosophy,561

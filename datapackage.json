@@ -53,9 +53,9 @@
   ],
   "stats": {
     "total_scholars": 270,
-    "total_presentations": 1379,
+    "total_presentations": 1378,
     "unique_presentations": 1352,
-    "author_participations": 1379,
+    "author_participations": 1378,
     "total_events": 40,
     "years_covered": 22,
     "start_year": 2004,
@@ -870,6 +870,151 @@
           {
             "name": "weight",
             "type": "integer"
+          }
+        ]
+      }
+    },
+    {
+      "name": "coauthorship-review",
+      "path": "analytics_output/coauthorship_review.csv",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "description": "Human-review queue for source-backed multi-person presentation lines before treating them as coauthorship.",
+      "schema": {
+        "fields": [
+          {
+            "name": "presentation_id",
+            "type": "string"
+          },
+          {
+            "name": "year",
+            "type": "integer"
+          },
+          {
+            "name": "series",
+            "type": "string"
+          },
+          {
+            "name": "title",
+            "type": "string"
+          },
+          {
+            "name": "people",
+            "type": "string"
+          },
+          {
+            "name": "source_snippet",
+            "type": "string"
+          },
+          {
+            "name": "source_url",
+            "type": "string"
+          },
+          {
+            "name": "review_status",
+            "type": "string"
+          },
+          {
+            "name": "human_action",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    {
+      "name": "senior-absence-audit",
+      "path": "analytics_output/senior_absence_audit.csv",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "description": "Review queue for frequent senior-generation participants absent after 2022 or from the 2026 programme.",
+      "schema": {
+        "fields": [
+          {
+            "name": "cohort",
+            "type": "string"
+          },
+          {
+            "name": "person_id",
+            "type": "string"
+          },
+          {
+            "name": "display_name",
+            "type": "string"
+          },
+          {
+            "name": "birth_year",
+            "type": "integer"
+          },
+          {
+            "name": "first_year",
+            "type": "integer"
+          },
+          {
+            "name": "last_year",
+            "type": "integer"
+          },
+          {
+            "name": "talks_before_threshold",
+            "type": "integer"
+          },
+          {
+            "name": "talks_after_threshold",
+            "type": "integer"
+          },
+          {
+            "name": "living_status_basis",
+            "type": "string"
+          },
+          {
+            "name": "review_status",
+            "type": "string"
+          },
+          {
+            "name": "interpretation_note",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    {
+      "name": "presentation-person-exclusions",
+      "path": "curation/presentation_person_exclusions.csv",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "description": "Curated removals of machine-parsed presentation-person links after human review.",
+      "schema": {
+        "fields": [
+          {
+            "name": "presentation_id",
+            "type": "string"
+          },
+          {
+            "name": "person_id",
+            "type": "string"
+          },
+          {
+            "name": "role",
+            "type": "string"
+          },
+          {
+            "name": "status",
+            "type": "string"
+          },
+          {
+            "name": "reason",
+            "type": "string"
+          },
+          {
+            "name": "source_url",
+            "type": "string"
+          },
+          {
+            "name": "reviewed_by",
+            "type": "string"
+          },
+          {
+            "name": "review_date",
+            "type": "date"
           }
         ]
       }

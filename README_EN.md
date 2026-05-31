@@ -17,7 +17,7 @@ The published collection as of 31 May 2026 contains:
 | --- | ---: |
 | Speaker profiles | 270 |
 | Unique talks | 1352 |
-| Author participations | 1379 |
+| Author participations | 1378 |
 | Programme years | 22, from 2004 to 2026 |
 | Speakers found at both series | 41 |
 | Zograf Readings only | 165 |

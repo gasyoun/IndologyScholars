@@ -316,6 +316,9 @@ def main():
         "curation/verified_affiliation_spans.csv",
         "analytics_output/network_nodes.csv",
         "analytics_output/network_edges.csv",
+        "analytics_output/coauthorship_review.csv",
+        "analytics_output/senior_absence_audit.csv",
+        "curation/presentation_person_exclusions.csv",
         "analytics_output/publication_file_manifest.csv",
         "analytics_output/publication_file_manifest.json",
         "assets/og-image.png",
@@ -341,6 +344,8 @@ def main():
         "metrics-guide.html",
         "classification-criteria.html",
         "networks.html",
+        "sociology.html",
+        "gatekeeping.html",
         "videos/index.html",
     ]
     for path in required:
@@ -401,7 +406,7 @@ def main():
             for _, filename in sub_sitemaps:
                 if Path(filename).exists():
                     sitemap += "\n" + read(filename)
-        for page in ["", "en.html", "search.html", "download-data.html", "data-quality.html", "s/", "conferences/", "p/", "themes/", "topics/", "topics/ramayana.html", "topics/mahabharata.html", "generations/", "cities/", "institutions/", "metrics-guide.html", "classification-criteria.html", "networks.html", "videos/"]:
+        for page in ["", "en.html", "search.html", "download-data.html", "data-quality.html", "s/", "conferences/", "p/", "themes/", "topics/", "topics/ramayana.html", "topics/mahabharata.html", "generations/", "cities/", "institutions/", "metrics-guide.html", "classification-criteria.html", "networks.html", "sociology.html", "gatekeeping.html", "videos/"]:
             expected = "https://gasyoun.github.io/IndologyScholars/" + page
             if expected not in sitemap:
                 fail(errors, f"sitemap.xml missing {expected}")
@@ -495,6 +500,9 @@ def main():
             "fair-reuse-maturity-audit",
             "network-nodes",
             "network-edges",
+            "coauthorship-review",
+            "senior-absence-audit",
+            "presentation-person-exclusions",
             "publication-file-manifest",
         ]:
             if resource_name not in resources:
@@ -515,6 +523,9 @@ def main():
             "fair-reuse-maturity-audit",
             "network-nodes",
             "network-edges",
+            "coauthorship-review",
+            "senior-absence-audit",
+            "presentation-person-exclusions",
             "publication-file-manifest",
         ]:
             if resource_name in resources and "schema" not in resources[resource_name]:
@@ -546,6 +557,9 @@ def main():
             "scientometrics_guardrails.csv",
             "coverage_bias_audit.csv",
             "fair_reuse_maturity_audit.csv",
+            "coauthorship_review.csv",
+            "senior_absence_audit.csv",
+            "presentation_person_exclusions.csv",
             "network_edges.csv",
             "publication_file_manifest.csv",
         ]:
@@ -603,6 +617,8 @@ def main():
             "event_ecology",
             "network_robustness",
             "inter_rater_reliability",
+            "coauthorship_review",
+            "senior_absence",
         }
         present_domains = {row.get("domain", "") for row in review_rows}
         missing_domains = required_domains - present_domains
@@ -705,8 +721,8 @@ def main():
 
     if Path("analytics_output/network_edges.csv").exists():
         with open("analytics_output/network_edges.csv", encoding="utf-8", newline="") as f:
-            reader = csv.DictReader(f)
-            edge_types = {row.get("edge_type") for row in reader}
+            edge_rows = list(csv.DictReader(f))
+            edge_types = {row.get("edge_type") for row in edge_rows}
         expected_edge_types = {
             "person_event",
             "person_organization",
@@ -719,6 +735,43 @@ def main():
             fail(errors, "network_edges.csv has no edge rows")
         if not edge_types.issubset(expected_edge_types):
             fail(errors, f"network_edges.csv has unexpected edge types: {sorted(edge_types - expected_edge_types)}")
+        forbidden_pair = {"person:PERS_11da326d", "person:PERS_ddb70dc9"}
+        for row in edge_rows:
+            if row.get("edge_type") == "person_person_copresentation" and {row.get("source"), row.get("target")} == forbidden_pair:
+                fail(errors, "network_edges.csv still treats Azarkina and Tavastsherna as coauthors")
+
+    if Path("analytics_output/coauthorship_review.csv").exists():
+        with open("analytics_output/coauthorship_review.csv", encoding="utf-8-sig", newline="") as f:
+            coauthorship_rows = list(csv.DictReader(f))
+        if not coauthorship_rows:
+            fail(errors, "coauthorship_review.csv has no rows")
+        for row in coauthorship_rows:
+            if row.get("presentation_id") == "PRES_3e050c97df":
+                fail(errors, "coauthorship_review.csv still includes the excluded 2015 Azarkina/Tavastsherna line")
+
+    if Path("analytics_output/senior_absence_audit.csv").exists():
+        with open("analytics_output/senior_absence_audit.csv", encoding="utf-8-sig", newline="") as f:
+            senior_rows = list(csv.DictReader(f))
+        cohorts = {row.get("cohort") for row in senior_rows}
+        for cohort in {"absent_after_2022", "absent_in_2026"}:
+            if cohort not in cohorts:
+                fail(errors, f"senior_absence_audit.csv missing cohort {cohort}")
+        for row in senior_rows:
+            if row.get("review_status") != "review":
+                fail(errors, "senior_absence_audit.csv should keep all rows in review status")
+                break
+
+    if Path("curation/presentation_person_exclusions.csv").exists():
+        with open("curation/presentation_person_exclusions.csv", encoding="utf-8-sig", newline="") as f:
+            exclusion_rows = list(csv.DictReader(f))
+        expected_exclusion = any(
+            row.get("presentation_id") == "PRES_3e050c97df"
+            and row.get("person_id") == "PERS_11da326d"
+            and row.get("status") == "exclude"
+            for row in exclusion_rows
+        )
+        if not expected_exclusion:
+            fail(errors, "presentation_person_exclusions.csv missing the 2015 Azarkina/Tavastsherna exclusion")
 
     if Path("analytics_output/publication_file_manifest.csv").exists():
         with open("analytics_output/publication_file_manifest.csv", encoding="utf-8", newline="") as f:

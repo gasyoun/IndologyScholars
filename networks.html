@@ -1438,10 +1438,11 @@
                         ${themeMap.size ? formatWeightedList(themeMap) : 'не указаны'}
                     </div>
 
+                    ${collabPeople.size ? `
                     <h4 style="margin:0.75rem 0 0.25rem; font-size:0.82rem; text-transform:uppercase; color:var(--orange)">Соавторы в архиве (${collabPeople.size}):</h4>
                     <div style="font-size:0.8rem; max-height:80px; overflow-y:auto; padding-right:0.25rem; color:var(--muted)">
-                        ${collabPeople.size ? formatWeightedList(collabPeople) : 'нет соавторов докладов'}
-                    </div>
+                        ${formatWeightedList(collabPeople)}
+                    </div>` : ''}
 
                     <div style="margin-top:1rem; text-align:center;">
                         <a href="/IndologyScholars/s/${node.slug || node.id.replace('person:', '')}.html" class="btn-preset" style="display:inline-block; padding: 0.4rem 0.8rem; font-size:0.8rem;" target="_blank">Открыть профиль ↗</a>

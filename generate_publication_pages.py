@@ -120,6 +120,8 @@ def generated_manifest_paths():
         "classification-criteria.html",
         "metrics-guide.html",
         "networks.html",
+        "sociology.html",
+        "gatekeeping.html",
         "docs.html",
         "offline.html",
         "robots.txt",
@@ -1275,6 +1277,67 @@ keywords:
                 },
             },
             {
+                "name": "coauthorship-review",
+                "path": "analytics_output/coauthorship_review.csv",
+                "format": "csv",
+                "mediatype": "text/csv",
+                "description": "Human-review queue for source-backed multi-person presentation lines before treating them as coauthorship.",
+                "schema": {
+                    "fields": [
+                        {"name": "presentation_id", "type": "string"},
+                        {"name": "year", "type": "integer"},
+                        {"name": "series", "type": "string"},
+                        {"name": "title", "type": "string"},
+                        {"name": "people", "type": "string"},
+                        {"name": "source_snippet", "type": "string"},
+                        {"name": "source_url", "type": "string"},
+                        {"name": "review_status", "type": "string"},
+                        {"name": "human_action", "type": "string"},
+                    ]
+                },
+            },
+            {
+                "name": "senior-absence-audit",
+                "path": "analytics_output/senior_absence_audit.csv",
+                "format": "csv",
+                "mediatype": "text/csv",
+                "description": "Review queue for frequent senior-generation participants absent after 2022 or from the 2026 programme.",
+                "schema": {
+                    "fields": [
+                        {"name": "cohort", "type": "string"},
+                        {"name": "person_id", "type": "string"},
+                        {"name": "display_name", "type": "string"},
+                        {"name": "birth_year", "type": "integer"},
+                        {"name": "first_year", "type": "integer"},
+                        {"name": "last_year", "type": "integer"},
+                        {"name": "talks_before_threshold", "type": "integer"},
+                        {"name": "talks_after_threshold", "type": "integer"},
+                        {"name": "living_status_basis", "type": "string"},
+                        {"name": "review_status", "type": "string"},
+                        {"name": "interpretation_note", "type": "string"},
+                    ]
+                },
+            },
+            {
+                "name": "presentation-person-exclusions",
+                "path": "curation/presentation_person_exclusions.csv",
+                "format": "csv",
+                "mediatype": "text/csv",
+                "description": "Curated removals of machine-parsed presentation-person links after human review.",
+                "schema": {
+                    "fields": [
+                        {"name": "presentation_id", "type": "string"},
+                        {"name": "person_id", "type": "string"},
+                        {"name": "role", "type": "string"},
+                        {"name": "status", "type": "string"},
+                        {"name": "reason", "type": "string"},
+                        {"name": "source_url", "type": "string"},
+                        {"name": "reviewed_by", "type": "string"},
+                        {"name": "review_date", "type": "date"},
+                    ]
+                },
+            },
+            {
                 "name": "publication-file-manifest",
                 "path": "analytics_output/publication_file_manifest.csv",
                 "format": "csv",
@@ -1709,6 +1772,9 @@ def generate_download_page(data):
         ("Scientometrics claim registry", "analytics_output/scientometrics_claim_registry.csv", "Allowed claim families, required evidence, and forbidden overclaims for public interpretation."),
         ("Coverage bias audit", "analytics_output/coverage_bias_audit.csv", "Per-source authority/index coverage audit for responsible use of ORCID, Wikidata, VIAF, OpenAlex, Wikipedia, RINC, and related signals."),
         ("FAIR reuse audit", "analytics_output/fair_reuse_maturity_audit.csv", "Findability, accessibility, interoperability, and reusability checklist for release review."),
+        ("Coauthorship review", "analytics_output/coauthorship_review.csv", "Source-backed review queue for multi-person presentation lines before treating them as coauthorship."),
+        ("Senior absence audit", "analytics_output/senior_absence_audit.csv", "Review queue for frequent senior-generation participants absent after 2022 or from the 2026 programme."),
+        ("Presentation-person exclusions", "curation/presentation_person_exclusions.csv", "Curated removals of machine-parsed presentation-person links after human review."),
         ("Verified affiliation spans", "curation/verified_affiliation_spans.csv", "Dated, source-backed institutional trajectories; tentative open continuations into later gaps are marked (?)."),
         ("YouTube video list", "analytics_output/youtube_video_list.csv", "Source inventory of collected recordings; public discovery is attached to presentation records."),
         ("YouTube mapping", "analytics_output/video_presentation_mapping.csv", "Video-to-presentation matching status used to display recording availability on presentations."),
@@ -13155,7 +13221,7 @@ def generate_sitemap(data, records):
         "index.html", "en.html", "search.html", "download-data.html",
         "data-quality.html", "methodology.html", "hypotheses.html", "data-sources.html",
         "known-limitations.html", "how-to-cite.html", "metrics-guide.html",
-        "classification-criteria.html", "networks.html", "docs.html"
+        "classification-criteria.html", "networks.html", "sociology.html", "gatekeeping.html", "docs.html"
     ]
     static_paths = sorted(set(static_paths))
 

@@ -34,8 +34,11 @@ This dictionary describes the reusable data outputs produced by the IndologyScho
 | `analytics_output/network_robustness_checks.csv` | CSV | `tools/build_scientometrics_guardrails.py` | Typed network-model sensitivity and forbidden-inference checks. |
 | `analytics_output/inter_rater_reliability_plan.csv` | CSV | `tools/build_scientometrics_guardrails.py` | Double-coding plan and minimum reliability rules. |
 | `analytics_output/fair_reuse_maturity_audit.csv` | CSV | `tools/build_scientometrics_guardrails.py` | FAIR and reuse maturity evidence checklist. |
+| `analytics_output/coauthorship_review.csv` | CSV | `generate_analytics.py` | Review queue for source-backed multi-person presentation lines before public coauthorship claims. |
+| `analytics_output/senior_absence_audit.csv` | CSV | `generate_analytics.py` | Senior-generation absence review after 2022 and in the 2026 programme. |
 | `analytics_output/publication_file_manifest.csv` | CSV | `generate_publication_pages.py` | Generated file manifest with byte sizes and SHA-256 checksums. |
 | `analytics_output/publication_file_manifest.json` | JSON | `generate_publication_pages.py` | JSON version of the generated file manifest with build metadata. |
+| `curation/presentation_person_exclusions.csv` | CSV | manual curation / `build_and_populate_db.py` | Source-backed removals of machine-parsed presentation-person links after human review. |
 | `curation/verified_affiliation_spans.csv` | CSV | manual curation / `generate_site_data.py` | Source-backed dated institutional trajectories; open continuations inferred into later programme gaps are visibly marked `(?)`. |
 
 ## 2. Stable Identifier Policy
@@ -177,6 +180,7 @@ Public JSON-LD `sameAs` links are emitted only for public-confidence records: `c
 | --- | --- |
 | `analytics_output/network_nodes.csv` | Typed node list for person, event, organization, and theme network analysis. |
 | `analytics_output/network_edges.csv` | Weighted typed edges with year and conference series context. |
+| `analytics_output/coauthorship_review.csv` | Review queue for all remaining multi-person presentation records. |
 | `networks.html` | Human-readable explanation of network scope and interpretation limits. |
 
 ### `network_nodes.csv`
@@ -208,10 +212,25 @@ Edge types:
 | `person_organization` | A scholar is linked to a normalized affiliation observed in a program. |
 | `person_theme` | A scholar is linked to a broad title-derived theme. |
 | `organization_theme` | A normalized organization is linked to a broad theme through presentations by affiliated scholars. |
-| `person_person_copresentation` | Two scholars appear on the same presentation record. |
+| `person_person_copresentation` | Two scholars appear on the same presentation record after curated exclusions. This still needs human interpretation before being called durable coauthorship. |
 | `person_person_same_session` | Two scholars appear in the same session. This is co-presence, not proof of collaboration. |
 
 These are participation networks, not citation networks or comprehensive publication networks. Organization-theme edges describe observed conference-program affiliation context; they do not claim an institution's complete research profile.
+
+### `senior_absence_audit.csv`
+
+| Column | Meaning |
+| --- | --- |
+| `cohort` | `absent_after_2022` or `absent_in_2026`. |
+| `person_id` | Local person identifier. |
+| `display_name` | Public display name from the local database. |
+| `birth_year` | Local curated birth year; used only to define the senior-generation screen. |
+| `first_year`, `last_year` | First and last observed programme years in the archive. |
+| `talks_before_threshold` | Talk count before the relevant threshold. |
+| `talks_after_threshold` | Talk count after the threshold or in 2026. |
+| `living_status_basis` | Why the row is treated as a living-status review candidate; this is not a public biographical assertion. |
+| `review_status` | Always `review` until independently checked. |
+| `interpretation_note` | Plain-language caution for publication use. |
 
 ## 6. Analytics CSVs
 

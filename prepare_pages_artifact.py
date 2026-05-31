@@ -36,6 +36,8 @@ PUBLIC_PATHS = [
     "metrics-guide.html",
     "classification-criteria.html",
     "networks.html",
+    "sociology.html",
+    "gatekeeping.html",
     "indology_scholars_analytics.md",
 ]
 

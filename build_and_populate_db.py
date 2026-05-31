@@ -1,5 +1,7 @@
+import csv
 import sqlite3
 import sys
+from pathlib import Path
 
 # Expose modular pipeline components in the orchestrator for full backward compatibility
 from pipeline.schema import (
@@ -61,12 +63,48 @@ from pipeline.verification import (
 )
 
 DB_PATH = "conferences.db"
+PRESENTATION_PERSON_EXCLUSIONS = Path("curation/presentation_person_exclusions.csv")
 
 try:
     sys.stdout.reconfigure(encoding='utf-8')
     sys.stderr.reconfigure(encoding='utf-8')
 except Exception:
     pass
+
+
+def apply_presentation_person_exclusions(conn):
+    if not PRESENTATION_PERSON_EXCLUSIONS.exists():
+        return 0
+
+    accepted_statuses = {"exclude", "excluded", "confirmed", "manual"}
+    removed = 0
+    with PRESENTATION_PERSON_EXCLUSIONS.open("r", encoding="utf-8-sig", newline="") as handle:
+        for row in csv.DictReader(handle):
+            if (row.get("status") or "").strip().lower() not in accepted_statuses:
+                continue
+            presentation_id = (row.get("presentation_id") or "").strip()
+            person_id = (row.get("person_id") or "").strip()
+            role = (row.get("role") or "").strip()
+            if not presentation_id or not person_id:
+                continue
+
+            params = [presentation_id, person_id]
+            role_clause = ""
+            if role:
+                role_clause = " AND role = ?"
+                params.append(role)
+            cursor = conn.execute(
+                f"""
+                DELETE FROM presentation_person
+                WHERE presentation_id = ? AND person_id = ?{role_clause}
+                """,
+                params,
+            )
+            removed += cursor.rowcount
+
+    conn.commit()
+    print(f"Applied presentation-person exclusions: {removed} rows removed.")
+    return removed
 
 
 def main():
@@ -84,6 +122,9 @@ def main():
 
     print("Populating parsed Roerich Reading talks (2007-2025)...")
     populate_roerich_talks(conn)
+
+    print("Applying curated presentation-person exclusions...")
+    apply_presentation_person_exclusions(conn)
 
     print("Ingesting YouTube video media from mapping CSV (if present)...")
     ingest_video_media(conn)
