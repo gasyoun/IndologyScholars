@@ -56,11 +56,13 @@ python build_and_populate_db.py
 python generate_analytics.py
 python article/work_title_keywords.py
 python tools/build_classification_reliability_sample.py
-python tools/build_human_review_index.py
 python extract_hypotheses.py
 python generate_site_data.py
 python generate_network_json.py
 python generate_scholars_pages.py
+python generate_publication_pages.py
+python tools/build_scientometrics_guardrails.py
+python tools/build_human_review_index.py
 python generate_publication_pages.py
 python validate_publication.py
 python -m pytest

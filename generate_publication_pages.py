@@ -1053,6 +1053,195 @@ keywords:
                 "description": "Summary counts by domain and source file for the unified human-review index.",
             },
             {
+                "name": "scientometrics-guardrails",
+                "path": "analytics_output/scientometrics_guardrails.csv",
+                "format": "csv",
+                "mediatype": "text/csv",
+                "description": "Index of the eight scientometrics and sociology-of-science guardrail outputs.",
+                "schema": {
+                    "fields": [
+                        {"name": "guardrail_id", "type": "string"},
+                        {"name": "title", "type": "string"},
+                        {"name": "output_path", "type": "string"},
+                        {"name": "review_status", "type": "string"},
+                        {"name": "why_it_matters", "type": "string"},
+                        {"name": "next_human_action", "type": "string"},
+                        {"name": "source_anchor", "type": "string"},
+                    ]
+                },
+            },
+            {
+                "name": "scientometrics-guardrails-summary",
+                "path": "analytics_output/scientometrics_guardrails_summary.json",
+                "format": "json",
+                "mediatype": "application/json",
+                "description": "Summary counts for the scientometrics guardrail package.",
+            },
+            {
+                "name": "scientometrics-claim-registry",
+                "path": "analytics_output/scientometrics_claim_registry.csv",
+                "format": "csv",
+                "mediatype": "text/csv",
+                "description": "Allowed claim families, required evidence, and forbidden overclaims for responsible interpretation.",
+                "schema": {
+                    "fields": [
+                        {"name": "claim_id", "type": "string"},
+                        {"name": "claim_family", "type": "string"},
+                        {"name": "allowed_claim", "type": "string"},
+                        {"name": "allowed_scope", "type": "string"},
+                        {"name": "required_evidence", "type": "string"},
+                        {"name": "forbidden_overclaim", "type": "string"},
+                        {"name": "minimum_review_artifact", "type": "string"},
+                        {"name": "review_status", "type": "string"},
+                    ]
+                },
+            },
+            {
+                "name": "coverage-bias-audit",
+                "path": "analytics_output/coverage_bias_audit.csv",
+                "format": "csv",
+                "mediatype": "text/csv",
+                "description": "Per-source authority and index coverage audit for ORCID, Wikidata, VIAF, OpenAlex, Wikipedia, RINC/eLIBRARY, Google Scholar, official URLs, and any external ID.",
+                "schema": {
+                    "fields": [
+                        {"name": "source", "type": "string"},
+                        {"name": "source_label", "type": "string"},
+                        {"name": "covered_persons", "type": "integer"},
+                        {"name": "total_persons", "type": "integer"},
+                        {"name": "coverage_share", "type": "number"},
+                        {"name": "high_activity_missing_persons", "type": "integer"},
+                        {"name": "high_activity_threshold", "type": "integer"},
+                        {"name": "interpretation", "type": "string"},
+                        {"name": "review_status", "type": "string"},
+                        {"name": "review_action", "type": "string"},
+                    ]
+                },
+            },
+            {
+                "name": "negative-evidence-log",
+                "path": "analytics_output/negative_evidence_log.csv",
+                "format": "csv",
+                "mediatype": "text/csv",
+                "description": "Reviewable no-hit and rejected-filter evidence for identity matching.",
+                "schema": {
+                    "fields": [
+                        {"name": "evidence_id", "type": "string"},
+                        {"name": "source_file", "type": "string"},
+                        {"name": "source_row", "type": "integer"},
+                        {"name": "source_system", "type": "string"},
+                        {"name": "person_id", "type": "string"},
+                        {"name": "label", "type": "string"},
+                        {"name": "candidate_or_query", "type": "string"},
+                        {"name": "negative_signal", "type": "string"},
+                        {"name": "reason", "type": "string"},
+                        {"name": "review_status", "type": "string"},
+                        {"name": "reviewer", "type": "string"},
+                        {"name": "checked_at", "type": "date"},
+                        {"name": "note", "type": "string"},
+                    ]
+                },
+            },
+            {
+                "name": "conference-role-taxonomy",
+                "path": "analytics_output/conference_role_taxonomy.csv",
+                "format": "csv",
+                "mediatype": "text/csv",
+                "description": "Conference-program role taxonomy for presenter, chair, organizer, committee, invited, editorial, memorial, and discussant claims.",
+                "schema": {
+                    "fields": [
+                        {"name": "role_code", "type": "string"},
+                        {"name": "role_label", "type": "string"},
+                        {"name": "role_definition", "type": "string"},
+                        {"name": "possible_source_fields", "type": "string"},
+                        {"name": "public_claim_allowed", "type": "string"},
+                        {"name": "credit_mapping", "type": "string"},
+                        {"name": "review_status", "type": "string"},
+                        {"name": "notes", "type": "string"},
+                    ]
+                },
+            },
+            {
+                "name": "event-ecology-audit",
+                "path": "analytics_output/event_ecology_audit.csv",
+                "format": "csv",
+                "mediatype": "text/csv",
+                "description": "Event/session/venue/format/media coverage audit for conference ecology.",
+                "schema": {
+                    "fields": [
+                        {"name": "dimension", "type": "string"},
+                        {"name": "observed_count", "type": "integer"},
+                        {"name": "total_count", "type": "integer"},
+                        {"name": "coverage_share", "type": "number"},
+                        {"name": "evidence_source", "type": "string"},
+                        {"name": "interpretation", "type": "string"},
+                        {"name": "review_status", "type": "string"},
+                        {"name": "review_action", "type": "string"},
+                    ]
+                },
+            },
+            {
+                "name": "network-robustness-checks",
+                "path": "analytics_output/network_robustness_checks.csv",
+                "format": "csv",
+                "mediatype": "text/csv",
+                "description": "Typed network-model sensitivity checks and forbidden-inference rules.",
+                "schema": {
+                    "fields": [
+                        {"name": "check_id", "type": "string"},
+                        {"name": "network_model", "type": "string"},
+                        {"name": "edge_types_included", "type": "string"},
+                        {"name": "node_scope", "type": "string"},
+                        {"name": "question_supported", "type": "string"},
+                        {"name": "required_sensitivity_check", "type": "string"},
+                        {"name": "current_edge_count", "type": "integer"},
+                        {"name": "current_node_count", "type": "integer"},
+                        {"name": "review_status", "type": "string"},
+                        {"name": "forbidden_inference", "type": "string"},
+                        {"name": "note", "type": "string"},
+                    ]
+                },
+            },
+            {
+                "name": "inter-rater-reliability-plan",
+                "path": "analytics_output/inter_rater_reliability_plan.csv",
+                "format": "csv",
+                "mediatype": "text/csv",
+                "description": "Double-coding plan and minimum reliability rules for classification-dependent claims.",
+                "schema": {
+                    "fields": [
+                        {"name": "sample_id", "type": "string"},
+                        {"name": "classification_layer", "type": "string"},
+                        {"name": "sample_file", "type": "string"},
+                        {"name": "sample_rows", "type": "integer"},
+                        {"name": "queued_rows", "type": "integer"},
+                        {"name": "manual_override_rows", "type": "integer"},
+                        {"name": "primary_metric", "type": "string"},
+                        {"name": "minimum_pass_rule", "type": "string"},
+                        {"name": "current_status", "type": "string"},
+                        {"name": "review_action", "type": "string"},
+                        {"name": "review_status", "type": "string"},
+                    ]
+                },
+            },
+            {
+                "name": "fair-reuse-maturity-audit",
+                "path": "analytics_output/fair_reuse_maturity_audit.csv",
+                "format": "csv",
+                "mediatype": "text/csv",
+                "description": "FAIR and reuse maturity evidence checklist for releases.",
+                "schema": {
+                    "fields": [
+                        {"name": "fair_id", "type": "string"},
+                        {"name": "principle", "type": "string"},
+                        {"name": "criterion", "type": "string"},
+                        {"name": "evidence_path", "type": "string"},
+                        {"name": "evidence_status", "type": "string"},
+                        {"name": "review_status", "type": "string"},
+                        {"name": "action", "type": "string"},
+                    ]
+                },
+            },
+            {
                 "name": "network-nodes",
                 "path": "analytics_output/network_nodes.csv",
                 "format": "csv",
@@ -1516,6 +1705,10 @@ def generate_download_page(data):
         ("Gumilyov scale", "analytics_output/gumilyov_scale.csv", "Presentation-level scale of generalization used by the Gumilyov navigation pages."),
         ("Expert classification decisions", "analytics_output/classification_overrides.csv", "Reviewed revisions to themes, meso-levels, and Gumilyov argument levels, with a rationale for each affected presentation."),
         ("Human review index", "analytics_output/human_review_index.csv", "Unified curator-facing inbox for open manual review items across authority IDs, identity, classification, spacetime, affiliation, lineage, and data-quality queues."),
+        ("Scientometrics guardrails", "analytics_output/scientometrics_guardrails.csv", "Index of eight responsible-metrics guardrails and their generated review artifacts."),
+        ("Scientometrics claim registry", "analytics_output/scientometrics_claim_registry.csv", "Allowed claim families, required evidence, and forbidden overclaims for public interpretation."),
+        ("Coverage bias audit", "analytics_output/coverage_bias_audit.csv", "Per-source authority/index coverage audit for responsible use of ORCID, Wikidata, VIAF, OpenAlex, Wikipedia, RINC, and related signals."),
+        ("FAIR reuse audit", "analytics_output/fair_reuse_maturity_audit.csv", "Findability, accessibility, interoperability, and reusability checklist for release review."),
         ("Verified affiliation spans", "curation/verified_affiliation_spans.csv", "Dated, source-backed institutional trajectories; tentative open continuations into later gaps are marked (?)."),
         ("YouTube video list", "analytics_output/youtube_video_list.csv", "Source inventory of collected recordings; public discovery is attached to presentation records."),
         ("YouTube mapping", "analytics_output/video_presentation_mapping.csv", "Video-to-presentation matching status used to display recording availability on presentations."),
@@ -11548,7 +11741,7 @@ def generate_publication_docs(data):
 
             <article class="card">
                 <strong><a href="docs/scientometrics-sociology.md">Scientometrics & Sociology of Science</a></strong>
-                <p>Responsible metrics stance, human-review inbox, field-normalized additions, network sociology, cohort dynamics, topic evolution, and missingness rules.</p>
+                <p>Responsible metrics stance, human-review inbox, claim registry, coverage-bias audit, role taxonomy, network robustness, inter-rater plan, and FAIR/reuse guardrails.</p>
             </article>
 
             <article class="card">

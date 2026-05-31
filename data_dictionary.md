@@ -24,6 +24,16 @@ This dictionary describes the reusable data outputs produced by the IndologyScho
 | `analytics_output/data_quality_report.json` | JSON | `generate_publication_pages.py` | Machine-readable quality checks and review samples. |
 | `analytics_output/human_review_index.csv` | CSV | `tools/build_human_review_index.py` | Unified curator-facing index of all open human-review items. |
 | `analytics_output/human_review_summary.json` | JSON | `tools/build_human_review_index.py` | Summary counts for the unified human-review index. |
+| `analytics_output/scientometrics_guardrails.csv` | CSV | `tools/build_scientometrics_guardrails.py` | Index of the eight scientometrics and sociology-of-science guardrail outputs. |
+| `analytics_output/scientometrics_guardrails_summary.json` | JSON | `tools/build_scientometrics_guardrails.py` | Summary counts for the guardrail package. |
+| `analytics_output/scientometrics_claim_registry.csv` | CSV | `tools/build_scientometrics_guardrails.py` | Allowed claim families, required evidence, and forbidden overclaims. |
+| `analytics_output/coverage_bias_audit.csv` | CSV | `tools/build_scientometrics_guardrails.py` | Per-source authority/index coverage bias audit. |
+| `analytics_output/negative_evidence_log.csv` | CSV | `tools/build_scientometrics_guardrails.py` | Reviewable no-hit and rejected-filter evidence for identity matching. |
+| `analytics_output/conference_role_taxonomy.csv` | CSV | `tools/build_scientometrics_guardrails.py` | Conference-program role taxonomy for credit and role claims. |
+| `analytics_output/event_ecology_audit.csv` | CSV | `tools/build_scientometrics_guardrails.py` | Event/session/venue/format/media coverage audit for conference ecology. |
+| `analytics_output/network_robustness_checks.csv` | CSV | `tools/build_scientometrics_guardrails.py` | Typed network-model sensitivity and forbidden-inference checks. |
+| `analytics_output/inter_rater_reliability_plan.csv` | CSV | `tools/build_scientometrics_guardrails.py` | Double-coding plan and minimum reliability rules. |
+| `analytics_output/fair_reuse_maturity_audit.csv` | CSV | `tools/build_scientometrics_guardrails.py` | FAIR and reuse maturity evidence checklist. |
 | `analytics_output/publication_file_manifest.csv` | CSV | `generate_publication_pages.py` | Generated file manifest with byte sizes and SHA-256 checksums. |
 | `analytics_output/publication_file_manifest.json` | JSON | `generate_publication_pages.py` | JSON version of the generated file manifest with build metadata. |
 | `curation/verified_affiliation_spans.csv` | CSV | manual curation / `generate_site_data.py` | Source-backed dated institutional trajectories; open continuations inferred into later programme gaps are visibly marked `(?)`. |
@@ -77,6 +87,7 @@ Provenance sidecars document where curated or derived fields came from and how c
 | `curation/verified_affiliation_spans.csv` | Verified institutional trajectories; city-only programme markers remain geography, while an open trajectory continued beyond its starting evidence is marked `(?)` until contradicted. |
 | `analytics_output/classification_reliability_sample.csv` | Deterministic review sample for classification reliability checks; rows marked `queued_for_manual_review` are a review queue rather than adjudicated facts. |
 | `analytics_output/human_review_index.csv` | Unified open-work register for authority IDs, RINC/OpenAlex/Wikipedia candidates, identity aliases, birth-year gaps, classification, spacetime, affiliation, lineage, and data-quality review items. |
+| `analytics_output/scientometrics_guardrails.csv` | Machine-readable index for the claim, coverage, negative-evidence, role, event-ecology, network, inter-rater, and FAIR review layers. |
 
 Common columns:
 
@@ -114,6 +125,28 @@ can return to the original evidence context.
 | `reviewer` | Person or process that performed the check. |
 | `checked_at` | Review date. |
 | `note` | Domain-specific context carried from the source queue. |
+
+### Scientometrics Guardrails
+
+The guardrail package extends the human-review workflow from individual data
+cleaning tasks to interpretation control. The central index is
+`analytics_output/scientometrics_guardrails.csv`; each row points to one
+generated output and states why a human needs to review that layer.
+
+| Output | Meaning |
+| --- | --- |
+| `analytics_output/scientometrics_claim_registry.csv` | Claim registry: allowed claim, allowed scope, required evidence, forbidden overclaim, and minimum review artifact. |
+| `analytics_output/coverage_bias_audit.csv` | Coverage bias audit for ORCID, Wikidata, VIAF, OpenAlex, Wikipedia, RINC/eLIBRARY, Google Scholar, official URLs, and any external ID. |
+| `analytics_output/negative_evidence_log.csv` | Generated negative-evidence candidates from RINC/eLIBRARY no-match notes, Wikipedia no-hit rows, and zero-score OpenAlex candidates. |
+| `analytics_output/conference_role_taxonomy.csv` | Source-backed role vocabulary for presenter, chair, organizer, committee, invited, editorial, memorial, and discussant claims. |
+| `analytics_output/event_ecology_audit.csv` | Coverage audit for event themes, formats, sessions, chairs, venues, raw affiliations, normalized organizations, and media. |
+| `analytics_output/network_robustness_checks.csv` | Typed network specifications and sensitivity checks so edge semantics are not collapsed. |
+| `analytics_output/inter_rater_reliability_plan.csv` | Planned double-coding layers and reliability metrics for classification-dependent claims. |
+| `analytics_output/fair_reuse_maturity_audit.csv` | FAIR/reuse checklist for stable IDs, metadata, access, schemas, provenance, rights, limits, and guardrail documentation. |
+
+Rows with `review_status=pass` are evidence already present at build time.
+Rows with `review`, `needs_source_mapping`, or `planned_double_code` remain
+human-review work and are surfaced through `human_review_index.csv`.
 
 Confidence values used in the project:
 

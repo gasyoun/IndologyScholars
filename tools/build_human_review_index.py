@@ -35,7 +35,9 @@ FIELDS = [
 
 
 def clean(value: object) -> str:
-    return str(value or "").strip()
+    if value is None:
+        return ""
+    return str(value).strip()
 
 
 def read_csv(path: Path) -> list[dict[str, str]]:
@@ -261,9 +263,102 @@ def build_rows() -> list[dict[str, str]]:
         priority_fn=lambda row: 80,
     )
 
+    add_scientometrics_guardrail_rows(rows)
     add_data_quality_rows(rows)
     rows.sort(key=lambda row: (int(row["priority"] or 9999), row["domain"], row["label"], row["record_id"]))
     return rows
+
+
+def add_scientometrics_guardrail_rows(rows: list[dict[str, str]]) -> None:
+    add_csv_rows(
+        rows,
+        source_file="analytics_output/scientometrics_guardrails.csv",
+        domain="scientometrics_guardrail",
+        id_fields=("guardrail_id",),
+        label_fields=("title",),
+        status_fields=("review_status",),
+        reason_fields=("why_it_matters",),
+        evidence_fields=("source_anchor",),
+        note_fields=("next_human_action", "output_path"),
+        priority_fn=lambda row: 25,
+    )
+    add_csv_rows(
+        rows,
+        source_file="analytics_output/scientometrics_claim_registry.csv",
+        domain="scientometrics_claim",
+        id_fields=("claim_id",),
+        label_fields=("allowed_claim", "claim_family"),
+        status_fields=("review_status",),
+        reason_fields=("forbidden_overclaim",),
+        note_fields=("allowed_scope", "required_evidence", "minimum_review_artifact"),
+        priority_fn=lambda row: 35,
+    )
+    add_csv_rows(
+        rows,
+        source_file="analytics_output/coverage_bias_audit.csv",
+        domain="coverage_bias",
+        id_fields=("source",),
+        label_fields=("source_label",),
+        status_fields=("review_status",),
+        reason_fields=("interpretation",),
+        note_fields=("coverage_share", "high_activity_missing_persons", "review_action"),
+        priority_fn=lambda row: 45,
+    )
+    add_csv_rows(
+        rows,
+        source_file="analytics_output/conference_role_taxonomy.csv",
+        domain="conference_role_taxonomy",
+        id_fields=("role_code",),
+        label_fields=("role_label",),
+        status_fields=("review_status",),
+        reason_fields=("role_definition",),
+        note_fields=("possible_source_fields", "public_claim_allowed", "credit_mapping"),
+        priority_fn=lambda row: 70,
+    )
+    add_csv_rows(
+        rows,
+        source_file="analytics_output/event_ecology_audit.csv",
+        domain="event_ecology",
+        id_fields=("dimension",),
+        label_fields=("dimension",),
+        status_fields=("review_status",),
+        reason_fields=("interpretation",),
+        note_fields=("observed_count", "total_count", "coverage_share", "review_action"),
+        priority_fn=lambda row: 75,
+    )
+    add_csv_rows(
+        rows,
+        source_file="analytics_output/network_robustness_checks.csv",
+        domain="network_robustness",
+        id_fields=("check_id",),
+        label_fields=("network_model",),
+        status_fields=("review_status",),
+        reason_fields=("forbidden_inference",),
+        note_fields=("edge_types_included", "question_supported", "required_sensitivity_check", "current_edge_count"),
+        priority_fn=lambda row: 80,
+    )
+    add_csv_rows(
+        rows,
+        source_file="analytics_output/inter_rater_reliability_plan.csv",
+        domain="inter_rater_reliability",
+        id_fields=("sample_id",),
+        label_fields=("classification_layer",),
+        status_fields=("review_status",),
+        reason_fields=("minimum_pass_rule",),
+        note_fields=("sample_rows", "primary_metric", "review_action"),
+        priority_fn=lambda row: 85,
+    )
+    add_csv_rows(
+        rows,
+        source_file="analytics_output/fair_reuse_maturity_audit.csv",
+        domain="fair_reuse_maturity",
+        id_fields=("fair_id",),
+        label_fields=("criterion",),
+        status_fields=("review_status",),
+        reason_fields=("action",),
+        note_fields=("principle", "evidence_path", "evidence_status"),
+        priority_fn=lambda row: 90,
+    )
 
 
 def add_data_quality_rows(rows: list[dict[str, str]]) -> None:
@@ -296,7 +391,7 @@ def add_data_quality_rows(rows: list[dict[str, str]]) -> None:
 def write_outputs(rows: list[dict[str, str]]) -> None:
     OUT_CSV.parent.mkdir(parents=True, exist_ok=True)
     with OUT_CSV.open("w", encoding="utf-8", newline="") as handle:
-        writer = csv.DictWriter(handle, fieldnames=FIELDS)
+        writer = csv.DictWriter(handle, fieldnames=FIELDS, lineterminator="\r\n")
         writer.writeheader()
         writer.writerows(rows)
 
@@ -311,7 +406,8 @@ def write_outputs(rows: list[dict[str, str]]) -> None:
         "by_domain": dict(sorted(by_domain.items())),
         "by_source_file": dict(sorted(by_source.items())),
     }
-    OUT_JSON.write_text(json.dumps(summary, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    with OUT_JSON.open("w", encoding="utf-8", newline="\n") as handle:
+        handle.write(json.dumps(summary, ensure_ascii=False, indent=2) + "\n")
 
 
 def main() -> int:

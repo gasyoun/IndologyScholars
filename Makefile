@@ -1,6 +1,6 @@
-.PHONY: all db analytics data pages scholars validate
+.PHONY: all db analytics data pages pages-final scholars guardrails validate
 
-all: db analytics data scholars pages validate
+all: db analytics data scholars pages guardrails pages-final validate
 
 db:
 	python build_and_populate_db.py
@@ -9,7 +9,6 @@ analytics:
 	python generate_analytics.py
 	python article/work_title_keywords.py
 	python tools/build_classification_reliability_sample.py
-	python tools/build_human_review_index.py
 
 data:
 	python generate_site_data.py
@@ -18,6 +17,13 @@ scholars:
 	python generate_scholars_pages.py
 
 pages:
+	python generate_publication_pages.py
+
+guardrails:
+	python tools/build_scientometrics_guardrails.py
+	python tools/build_human_review_index.py
+
+pages-final:
 	python generate_publication_pages.py
 
 validate:

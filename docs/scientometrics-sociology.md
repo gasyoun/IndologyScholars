@@ -130,6 +130,31 @@ Publish missingness as a first-class appendix:
 
 This is essential for fair interpretation of field structure.
 
+## Guardrail Outputs
+
+The second implementation layer turns eight additional checks into generated
+artifacts. They are not rankings; they are review surfaces that constrain how
+the archive can be interpreted.
+
+| Guardrail | Output | Review use |
+| --- | --- | --- |
+| Registry of claims | `analytics_output/scientometrics_claim_registry.csv` | Lists allowed claim families, required evidence, and forbidden overclaims. |
+| Coverage bias audit | `analytics_output/coverage_bias_audit.csv` | Measures ORCID, Wikidata, VIAF, OpenAlex, Wikipedia, RINC/eLIBRARY, Google Scholar, and official-URL coverage without treating absence as quality. |
+| Negative evidence log | `analytics_output/negative_evidence_log.csv` | Records no-hit and rejected-filter identity evidence so false leads remain auditable. |
+| Conference role taxonomy | `analytics_output/conference_role_taxonomy.csv` | Separates presenter, co-presenter, chair, organizer, committee, invited, editorial, memorial, and discussant roles. |
+| Event ecology audit | `analytics_output/event_ecology_audit.csv` | Tracks session, chair, venue, affiliation, organization, format, and media coverage as conference infrastructure. |
+| Network robustness checks | `analytics_output/network_robustness_checks.csv` | Keeps co-presence, co-presentation, person-event, person-theme, person-organization, organization-theme, and bridge models separate. |
+| Inter-rater reliability plan | `analytics_output/inter_rater_reliability_plan.csv` | Defines double-coding layers and minimum reliability rules for classification claims. |
+| FAIR/reuse maturity audit | `analytics_output/fair_reuse_maturity_audit.csv` | Checks findability, accessibility, interoperability, and reusability evidence before release. |
+
+`analytics_output/scientometrics_guardrails.csv` is the index for these eight
+outputs, and `analytics_output/scientometrics_guardrails_summary.json` records
+their row counts for validation.
+
+The role taxonomy is CRediT-inspired but intentionally narrower: it describes
+conference-program roles only and must not be used as a publication-credit
+taxonomy unless the source text supplies that evidence.
+
 ## Claims To Avoid
 
 - "Scholar X is more important because they have more presentations."
@@ -143,5 +168,8 @@ This is essential for fair interpretation of field structure.
 
 - Leiden Manifesto for Research Metrics: https://leidenmanifesto.org/
 - DORA: https://sfdora.org/read/
+- CoARA Agreement on Reforming Research Assessment: https://www.coara.org/agreement/the-agreement-full-text/
+- CRediT contributor roles: https://credit.niso.org/
+- FAIR principles: https://doi.org/10.1038/sdata.2016.18
 - Fortunato et al., "Science of science": https://doi.org/10.1126/science.aao0185
 - OpenAlex author disambiguation documentation: https://help.openalex.org/hc/en-us/articles/24347048891543-Author-disambiguation

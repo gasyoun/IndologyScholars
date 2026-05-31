@@ -483,13 +483,40 @@ def main():
             "classification-reliability-sample",
             "human-review-index",
             "human-review-summary",
+            "scientometrics-guardrails",
+            "scientometrics-guardrails-summary",
+            "scientometrics-claim-registry",
+            "coverage-bias-audit",
+            "negative-evidence-log",
+            "conference-role-taxonomy",
+            "event-ecology-audit",
+            "network-robustness-checks",
+            "inter-rater-reliability-plan",
+            "fair-reuse-maturity-audit",
             "network-nodes",
             "network-edges",
             "publication-file-manifest",
         ]:
             if resource_name not in resources:
                 fail(errors, f"datapackage.json missing resource {resource_name}")
-        for resource_name in ["site-data", "data-quality-report", "presentation-id-manifest", "human-review-index", "network-nodes", "network-edges", "publication-file-manifest"]:
+        for resource_name in [
+            "site-data",
+            "data-quality-report",
+            "presentation-id-manifest",
+            "human-review-index",
+            "scientometrics-guardrails",
+            "scientometrics-claim-registry",
+            "coverage-bias-audit",
+            "negative-evidence-log",
+            "conference-role-taxonomy",
+            "event-ecology-audit",
+            "network-robustness-checks",
+            "inter-rater-reliability-plan",
+            "fair-reuse-maturity-audit",
+            "network-nodes",
+            "network-edges",
+            "publication-file-manifest",
+        ]:
             if resource_name in resources and "schema" not in resources[resource_name]:
                 fail(errors, f"datapackage.json resource {resource_name} missing schema")
 
@@ -513,8 +540,12 @@ def main():
             "Provenance Sidecars",
             "Network Exports",
             "Human Review Index",
+            "Scientometrics Guardrails",
             "presentation_id_manifest.csv",
             "human_review_index.csv",
+            "scientometrics_guardrails.csv",
+            "coverage_bias_audit.csv",
+            "fair_reuse_maturity_audit.csv",
             "network_edges.csv",
             "publication_file_manifest.csv",
         ]:
@@ -565,6 +596,13 @@ def main():
             "classification_reliability",
             "spacetime_index",
             "affiliation_scope",
+            "scientometrics_guardrail",
+            "scientometrics_claim",
+            "coverage_bias",
+            "conference_role_taxonomy",
+            "event_ecology",
+            "network_robustness",
+            "inter_rater_reliability",
         }
         present_domains = {row.get("domain", "") for row in review_rows}
         missing_domains = required_domains - present_domains
@@ -572,6 +610,88 @@ def main():
             fail(errors, f"human_review_index.csv missing review domains: {sorted(missing_domains)}")
         if len(review_rows) < 100:
             fail(errors, "human_review_index.csv is unexpectedly small")
+
+    if Path("analytics_output/scientometrics_guardrails.csv").exists():
+        with open("analytics_output/scientometrics_guardrails.csv", "r", encoding="utf-8-sig", newline="") as handle:
+            guardrail_rows = list(csv.DictReader(handle))
+        guardrail_ids = {row.get("guardrail_id") for row in guardrail_rows}
+        expected_guardrails = {f"G{i:02d}" for i in range(1, 9)}
+        if guardrail_ids != expected_guardrails:
+            fail(errors, f"scientometrics_guardrails.csv should contain G01-G08, found {sorted(guardrail_ids)}")
+        for row in guardrail_rows:
+            output_path = row.get("output_path") or ""
+            if output_path and not Path(output_path).exists():
+                fail(errors, f"scientometrics guardrail output missing: {output_path}")
+
+    if Path("analytics_output/scientometrics_claim_registry.csv").exists():
+        with open("analytics_output/scientometrics_claim_registry.csv", "r", encoding="utf-8-sig", newline="") as handle:
+            claim_rows = list(csv.DictReader(handle))
+        if len(claim_rows) < 8:
+            fail(errors, "scientometrics_claim_registry.csv should contain at least 8 claim families")
+        if not all(row.get("forbidden_overclaim") for row in claim_rows):
+            fail(errors, "scientometrics_claim_registry.csv rows must state forbidden overclaims")
+
+    if Path("analytics_output/coverage_bias_audit.csv").exists():
+        with open("analytics_output/coverage_bias_audit.csv", "r", encoding="utf-8-sig", newline="") as handle:
+            coverage_rows = list(csv.DictReader(handle))
+        coverage_sources = {row.get("source") for row in coverage_rows}
+        for source in ["openalex", "wikipedia", "rinc", "any_external_id"]:
+            if source not in coverage_sources:
+                fail(errors, f"coverage_bias_audit.csv missing source {source}")
+        if any(int(row.get("total_persons") or 0) <= 0 for row in coverage_rows):
+            fail(errors, "coverage_bias_audit.csv has a zero total_persons row")
+
+    if Path("analytics_output/negative_evidence_log.csv").exists():
+        with open("analytics_output/negative_evidence_log.csv", "r", encoding="utf-8-sig", newline="") as handle:
+            negative_rows = list(csv.DictReader(handle))
+        if not negative_rows:
+            fail(errors, "negative_evidence_log.csv should contain reviewable negative-evidence rows")
+        if not {row.get("source_system") for row in negative_rows}.issubset({"RINC/eLIBRARY", "Wikipedia", "OpenAlex"}):
+            fail(errors, "negative_evidence_log.csv has unexpected source systems")
+
+    if Path("analytics_output/conference_role_taxonomy.csv").exists():
+        with open("analytics_output/conference_role_taxonomy.csv", "r", encoding="utf-8-sig", newline="") as handle:
+            role_rows = list(csv.DictReader(handle))
+        roles = {row.get("role_code") for row in role_rows}
+        for role in ["presenter", "session_chair", "organizer", "invited_speaker", "memorial_subject"]:
+            if role not in roles:
+                fail(errors, f"conference_role_taxonomy.csv missing role {role}")
+
+    if Path("analytics_output/event_ecology_audit.csv").exists():
+        with open("analytics_output/event_ecology_audit.csv", "r", encoding="utf-8-sig", newline="") as handle:
+            ecology_rows = list(csv.DictReader(handle))
+        dimensions = {row.get("dimension") for row in ecology_rows}
+        for dimension in ["session_chair", "organization_normalization", "presentation_media"]:
+            if dimension not in dimensions:
+                fail(errors, f"event_ecology_audit.csv missing dimension {dimension}")
+
+    if Path("analytics_output/network_robustness_checks.csv").exists():
+        with open("analytics_output/network_robustness_checks.csv", "r", encoding="utf-8-sig", newline="") as handle:
+            robustness_rows = list(csv.DictReader(handle))
+        if len(robustness_rows) < 8:
+            fail(errors, "network_robustness_checks.csv should contain at least 8 checks")
+        included_edges = {row.get("edge_types_included") for row in robustness_rows}
+        for edge_type in ["person_person_same_session", "person_person_copresentation", "person_event"]:
+            if edge_type not in included_edges:
+                fail(errors, f"network_robustness_checks.csv missing edge model {edge_type}")
+
+    if Path("analytics_output/inter_rater_reliability_plan.csv").exists():
+        with open("analytics_output/inter_rater_reliability_plan.csv", "r", encoding="utf-8-sig", newline="") as handle:
+            irr_rows = list(csv.DictReader(handle))
+        layers = {row.get("classification_layer") for row in irr_rows}
+        for layer in ["theme_l1", "gumilyov_level", "identity_disambiguation"]:
+            if layer not in layers:
+                fail(errors, f"inter_rater_reliability_plan.csv missing layer {layer}")
+
+    if Path("analytics_output/fair_reuse_maturity_audit.csv").exists():
+        with open("analytics_output/fair_reuse_maturity_audit.csv", "r", encoding="utf-8-sig", newline="") as handle:
+            fair_rows = list(csv.DictReader(handle))
+        principles = {row.get("principle") for row in fair_rows}
+        if principles != {"F", "A", "I", "R"}:
+            fail(errors, f"fair_reuse_maturity_audit.csv should cover FAIR principles, found {sorted(principles)}")
+        missing_evidence = [row.get("fair_id") for row in fair_rows if row.get("evidence_status") != "present"]
+        if missing_evidence:
+            fail(errors, f"fair_reuse_maturity_audit.csv has missing evidence: {missing_evidence}")
 
     if Path("analytics_output/network_nodes.csv").exists():
         with open("analytics_output/network_nodes.csv", encoding="utf-8", newline="") as f:

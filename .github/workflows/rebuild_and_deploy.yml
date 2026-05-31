@@ -55,7 +55,6 @@ jobs:
           python generate_analytics.py
           python article/work_title_keywords.py
           python tools/build_classification_reliability_sample.py
-          python tools/build_human_review_index.py
 
       - name: Generate JS Configs (if any remain)
         run: |
@@ -69,6 +68,9 @@ jobs:
 
       - name: Generate Publication & SEO Pages
         run: |
+          python generate_publication_pages.py
+          python tools/build_scientometrics_guardrails.py
+          python tools/build_human_review_index.py
           python generate_publication_pages.py
 
       - name: Validate Publication Build
