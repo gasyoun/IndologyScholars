@@ -1,9 +1,9 @@
 {
   "total": {
     "unique_scholars": 270,
-    "presentations": 1351,
-    "author_participations": 1378,
-    "known_birth_years": 231,
+    "presentations": 1352,
+    "author_participations": 1379,
+    "known_birth_years": 229,
     "cross_cohort": 41,
     "zograf_only": 165,
     "roerich_only": 64,
@@ -20,8 +20,8 @@
   "series": {
     "Zograf": {
       "unique_scholars": 206,
-      "presentations": 879,
-      "author_participations": 901,
+      "presentations": 880,
+      "author_participations": 902,
       "one_talk_share_pct": 41.3,
       "core_share_pct": 34.5,
       "retention_pct": 58.7,
@@ -39,8 +39,8 @@
   },
   "zograf_until_2025": {
     "unique_scholars": 187,
-    "presentations": 821,
-    "author_participations": 840,
+    "presentations": 822,
+    "author_participations": 841,
     "one_talk_share_pct": 36.9,
     "core_share_pct": 35.8,
     "retention_pct": 63.1,
@@ -52,31 +52,31 @@
     "author_participations": 61
   },
   "g_levels": {
-    "1": 1156,
-    "2": 185,
-    "3": 10
+    "1": 1161,
+    "2": 182,
+    "3": 9
   },
   "theme_counts": {
     "Zograf": {
-      "philosophy": 190,
-      "literature": 195,
-      "religion": 205,
+      "philosophy": 197,
+      "literature": 193,
+      "religion": 204,
       "linguistics": 87,
       "history": 94,
-      "other": 8,
-      "art_archaeology": 46,
+      "art_archaeology": 44,
       "ethnography": 49,
+      "other": 7,
       "tibetology": 3,
       "pedagogy_applied": 2
     },
     "Roerich": {
-      "history": 91,
+      "history": 90,
       "religion": 144,
-      "philosophy": 49,
+      "philosophy": 53,
       "art_archaeology": 42,
-      "literature": 89,
+      "literature": 87,
       "ethnography": 8,
-      "linguistics": 44,
+      "linguistics": 43,
       "tibetology": 1,
       "other": 4
     }

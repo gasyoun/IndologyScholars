@@ -17,3 +17,8 @@
 The shared technical field reference is
 [data_dictionary.md](../data_dictionary.md); its field names and allowed
 values deliberately follow the published machine-readable exports.
+
+Additional audit and handoff documents:
+
+- [Academic career risk audit, 2026-05-31](academic-career-risk-audit-2026-05-31.md)
+- [Implementation and handoff plan, 2026-05-31](implementation-handoff-plan-2026-05-31.md)
