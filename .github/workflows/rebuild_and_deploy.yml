@@ -45,15 +45,16 @@ jobs:
 
       - name: Rebuild & Populate SQLite Database
         run: |
-          python scratch/export_presentation_id_manifest.py --out scratch/ci_manifest_before.csv
+          python tools/export_presentation_id_manifest.py --out scratch/ci_manifest_before.csv
           python build_and_populate_db.py
-          python scratch/export_presentation_id_manifest.py --out scratch/ci_manifest_after.csv
-          python scratch/compare_id_manifests.py scratch/ci_manifest_before.csv scratch/ci_manifest_after.csv --out analytics_output/id_stability_audit.json --csv-out analytics_output/id_stability_changed_ids.csv
+          python tools/export_presentation_id_manifest.py --out scratch/ci_manifest_after.csv
+          python tools/compare_id_manifests.py scratch/ci_manifest_before.csv scratch/ci_manifest_after.csv --out analytics_output/id_stability_audit.json --csv-out analytics_output/id_stability_changed_ids.csv
 
       - name: Generate Comparative Statistical Reports & CSVs
         run: |
           python generate_analytics.py
           python article/work_title_keywords.py
+          python tools/build_classification_reliability_sample.py
 
       - name: Generate JS Configs (if any remain)
         run: |

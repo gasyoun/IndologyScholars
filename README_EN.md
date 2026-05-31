@@ -83,4 +83,8 @@ current site collection.
 
 ## Licence
 
-Terms for reuse of project materials are given in [LICENSE](LICENSE).
+Code, templates, and validators are released under [Apache-2.0](LICENSE).
+Normalized metadata and derived CSV/JSON/SQLite exports are reusable under
+CC-BY-4.0 with archive attribution. Cached conference programmes, source
+quotations, and third-party material remain under their original rightsholders;
+see [reuse rights](docs/reuse-rights.md).

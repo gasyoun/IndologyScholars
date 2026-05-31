@@ -41,6 +41,49 @@ Verification run:
 - `python prepare_pages_artifact.py` → artifact prepared
 - `git diff --check` → passed
 
+## Implementation Pass 2, 2026-05-31
+
+Completed from Phases 2-5:
+
+- Added public count synchronization checks for README files, development
+  docs, and the PPV cover letter against `site_data.json`.
+- Added a generated HTML head check for literal backslash-n text and fixed the
+  shared base template that produced it.
+- Built `tools/build_classification_reliability_sample.py` and generated
+  `analytics_output/classification_reliability_sample.csv`.
+- Documented the classification reliability packet, conservative
+  institutional scope, and reuse-rights split.
+- Downgraded public institutional claims to programme-format evidence unless a
+  source-backed organization or dated span supports the claim.
+- Corrected `CITATION.cff` generation to identify the reusable object as a
+  dataset with ORCID and CC-BY-4.0 metadata rights.
+- Extended `datapackage.json` generation with rights metadata and the
+  classification-reliability sample resource.
+- Promoted active ID-manifest CI helpers from `scratch/` to `tools/` and
+  updated tests, Makefile, and workflows.
+- Ignored future local scratch/profiling artifacts and removed tracked
+  profiling/temp placeholders from the repository index while preserving local
+  copies.
+- Regenerated tracked publication pages, scholar pages, manifests, citation
+  files, and site metadata from the updated pipeline.
+
+Verification run:
+
+- `python -m pytest` -> 40 passed
+- `python -m unittest discover -s tests` -> 34 passed
+- CI-shaped rebuild from manifest export through `prepare_pages_artifact.py`
+  -> passed
+- `python validate_publication.py` -> passed
+- `python article/check_ppv_numbers.py` -> 0 drifts
+- `python article/check_anonymity.py` -> passed
+
+Release closure:
+
+- Push this implementation commit to `main`.
+- Wait for the validation/rebuild workflows to finish.
+- Create and push the `v1.0.0` dataset snapshot tag on the final green remote
+  commit, so citation metadata, generated files, and release pointer agree.
+
 ## Phase 0: Freeze And Triage
 
 Goal: stop new drift while the article is repaired.

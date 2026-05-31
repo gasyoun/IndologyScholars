@@ -81,11 +81,71 @@ def main():
     summary = data.get("summary", {})
     scholars = data.get("scholars", [])
     authority = load_authority_overrides()
+    total_scholars = summary.get("total_scholars", 0)
+    author_participations = summary.get("total_presentations", 0)
+    unique_presentations = summary.get("unique_presentations", 0)
+    total_events = summary.get("total_events", 0)
+    years_covered = summary.get("years_covered", 0)
+    start_year = summary.get("start_year", 0)
+    end_year = summary.get("end_year", 0)
+    overlap_scholars = summary.get("overlap_scholars", 0)
+    zograf_only = summary.get("zograf_only_scholars", 0)
+    roerich_only = summary.get("roerich_only_scholars", 0)
 
     if not data.get("schema_version"):
         fail(errors, "site_data.json missing schema_version")
     if not data.get("generated"):
         fail(errors, "site_data.json missing generated date")
+
+    public_count_snippets = {
+        "README.md": [
+            f"| Профили докладчиков | {total_scholars} |",
+            f"| Уникальные доклады | {unique_presentations} |",
+            f"| Авторские участия | {author_participations} |",
+            f"| Программные годы | {years_covered}, с {start_year} по {end_year} г. |",
+            f"| Участники обеих площадок | {overlap_scholars} |",
+            f"| Только Зографские чтения | {zograf_only} |",
+            f"| Только Рериховские чтения | {roerich_only} |",
+        ],
+        "README_EN.md": [
+            f"| Speaker profiles | {total_scholars} |",
+            f"| Unique talks | {unique_presentations} |",
+            f"| Author participations | {author_participations} |",
+            f"| Programme years | {years_covered}, from {start_year} to {end_year} |",
+            f"| Speakers found at both series | {overlap_scholars} |",
+            f"| Zograf Readings only | {zograf_only} |",
+            f"| Roerich Readings only | {roerich_only} |",
+        ],
+        "docs/development.md": [
+            f"{total_scholars} профилей докладчиков",
+            f"{unique_presentations} уникальных доклада",
+            f"{author_participations} авторских участий",
+            f"{total_events} событий за {years_covered}",
+            f"Участников обеих серий - {overlap_scholars}",
+            f"Зографских чтений - {zograf_only}",
+            f"Рериховских - {roerich_only}",
+        ],
+        "docs/development-en.md": [
+            f"{total_scholars} speaker profiles",
+            f"{unique_presentations} unique talks",
+            f"{author_participations} author participations",
+            f"{total_events} events across {years_covered}",
+            f"{overlap_scholars} speakers occur in both series",
+            f"{zograf_only}\noccur only in the Zograf Readings",
+            f"{roerich_only} only in the Roerich Readings",
+        ],
+        "article/ppv_cover_letter.md": [
+            f"реляционной базы из {unique_presentations} доклада, {author_participations} авторских участий и {total_scholars} учёных",
+        ],
+    }
+    for path, snippets in public_count_snippets.items():
+        if not Path(path).exists():
+            fail(errors, f"Count validation target is missing: {path}")
+            continue
+        content = read(path)
+        for snippet in snippets:
+            if snippet not in content:
+                fail(errors, f"{path} is not synchronized with site_data summary; missing `{snippet}`")
 
     if Path("conferences.db").exists():
         conn = sqlite3.connect("conferences.db")
@@ -292,6 +352,9 @@ def main():
         published_html.extend(Path(dirname).glob("*.html"))
     for page in set(published_html):
         html = read(page)
+        head = re.search(r"<head\b[^>]*>(.*?)</head>", html, flags=re.IGNORECASE | re.DOTALL)
+        if head and "\\n" in head.group(1):
+            fail(errors, f"{page} contains literal backslash-n in the HTML head")
         if "/IndologyScholars/scholars/" in html or "/IndologyScholars/presentations/" in html:
             fail(errors, f"{page} still links to a removed absolute route")
         if re.search(r'href="(?:\.\./)?(?:scholars|presentations)/', html):
@@ -417,6 +480,7 @@ def main():
             "field-provenance-authority",
             "field-provenance-themes",
             "verified-affiliation-spans",
+            "classification-reliability-sample",
             "network-nodes",
             "network-edges",
             "publication-file-manifest",
@@ -426,6 +490,19 @@ def main():
         for resource_name in ["site-data", "data-quality-report", "presentation-id-manifest", "network-nodes", "network-edges", "publication-file-manifest"]:
             if resource_name in resources and "schema" not in resources[resource_name]:
                 fail(errors, f"datapackage.json resource {resource_name} missing schema")
+
+    if Path("CITATION.cff").exists():
+        citation = read("CITATION.cff")
+        if "cff-version: 1.2.0" not in citation:
+            fail(errors, "CITATION.cff missing cff-version 1.2.0")
+        if 'type: dataset' not in citation:
+            fail(errors, "CITATION.cff should identify the archive as a dataset")
+        if 'name-particle: "Dr."' in citation:
+            fail(errors, "CITATION.cff should not encode academic title as name-particle")
+        if "orcid:" not in citation:
+            fail(errors, "CITATION.cff missing author ORCID")
+        if 'license: "CC-BY-4.0"' not in citation:
+            fail(errors, "CITATION.cff should describe the reusable dataset license")
 
     if Path("data_dictionary.md").exists():
         dictionary = read("data_dictionary.md")

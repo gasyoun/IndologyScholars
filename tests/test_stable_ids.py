@@ -22,8 +22,8 @@ publication_helpers = load_module("publication_helpers_under_test", "publication
 metadata_normalization = load_module("metadata_normalization_under_test", "metadata_normalization.py")
 title_normalization = load_module("title_normalization_under_test", "title_normalization.py")
 classification_overrides = load_module("classification_overrides_under_test", "classification_overrides.py")
-compare_manifests = load_module("compare_id_manifests_under_test", "scratch/compare_id_manifests.py")
-export_manifest = load_module("export_presentation_id_manifest_under_test", "scratch/export_presentation_id_manifest.py")
+compare_manifests = load_module("compare_id_manifests_under_test", "tools/compare_id_manifests.py")
+export_manifest = load_module("export_presentation_id_manifest_under_test", "tools/export_presentation_id_manifest.py")
 title_keywords = load_module("work_title_keywords_under_test", "article/work_title_keywords.py")
 
 

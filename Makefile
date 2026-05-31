@@ -7,6 +7,8 @@ db:
 
 analytics:
 	python generate_analytics.py
+	python article/work_title_keywords.py
+	python tools/build_classification_reliability_sample.py
 
 data:
 	python generate_site_data.py

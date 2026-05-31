@@ -10,7 +10,7 @@
 
 Источник чисел для публикуемого сайта - объект `summary` в
 `site_data.json`. На 31 мая 2026 г. он содержит 270 профилей докладчиков,
-1352 уникальный доклад, 1379 авторских участий и 40 событий за 22
+1352 уникальных доклада, 1379 авторских участий и 40 событий за 22
 программных года (2004-2026). Участников обеих серий - 41, только
 Зографских чтений - 165, только Рериховских - 64.
 
@@ -29,6 +29,8 @@
 | `authority_ids.json` | Проверенные внешние идентификаторы персон. |
 | `analytics_output/classification_overrides.csv` | Редакционные решения по публичным примерам классификации. |
 | `curation/teacher_student.csv` | Кураторские связи руководитель/ученик (issue #9, генеалогический трек). Схема и правила правок: `curation/teacher_student_schema.md`. |
+| `tools/` | Поддерживаемые служебные инструменты, используемые тестами или CI. |
+| `scratch/` | Исторические эксперименты и журналы; новые локальные эксперименты должны оставаться неотслеживаемыми. |
 
 Производные артефакты не правятся вручную: `conferences.db`,
 `site_data.json`, `search-index.json`, `analytics_output/`, каталоги
@@ -54,6 +56,7 @@ python -m pip install -r requirements.txt
 python build_and_populate_db.py
 python generate_analytics.py
 python article/work_title_keywords.py
+python tools/build_classification_reliability_sample.py
 python extract_hypotheses.py
 python generate_site_data.py
 python generate_network_json.py

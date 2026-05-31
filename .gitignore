@@ -16,12 +16,21 @@ article/ppv_corr.md
 # Local ID audit scratch manifests
 scratch/ci_manifest_*.csv
 scratch/manifest_*.csv
+scratch/local_*.py
+scratch/generate_sociology_plots.py
 
 # Temporary check and fix scripts
 fix_*.py
 check_*.py
 !article/check_anonymity.py
 !article/check_ppv_numbers.py
+
+# Local profiling/temp artifacts
+metadata.db
+profile_output.txt
+profile_utf8.txt
+profile_utf8_fast.txt
+temp.js
 
 
 # audit sidecars

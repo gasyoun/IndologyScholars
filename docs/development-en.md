@@ -29,6 +29,8 @@ Editable inputs and curation rules:
 | `authority_ids.json` | Verified external person identifiers. |
 | `analytics_output/classification_overrides.csv` | Editorial decisions for public classification examples. |
 | `curation/teacher_student.csv` | Curated advisor/student relationships (issue #9 genealogy track). Schema and editing rules: `curation/teacher_student_schema.md`. |
+| `tools/` | Maintained support tools used by tests or CI. |
+| `scratch/` | Historical experiments and logs; new local experiments should remain untracked. |
 
 Do not manually edit derived artifacts: `conferences.db`, `site_data.json`,
 `search-index.json`, `analytics_output/`, the `s/`, `p/`,
@@ -53,6 +55,7 @@ python -m pip install -r requirements.txt
 python build_and_populate_db.py
 python generate_analytics.py
 python article/work_title_keywords.py
+python tools/build_classification_reliability_sample.py
 python extract_hypotheses.py
 python generate_site_data.py
 python generate_network_json.py

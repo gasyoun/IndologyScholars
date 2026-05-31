@@ -24,6 +24,12 @@
       "path": "https://creativecommons.org/licenses/by/4.0/"
     }
   ],
+  "rights": {
+    "software_code": "Apache-2.0 for scripts, templates, and repository-native code.",
+    "derived_metadata_exports": "CC-BY-4.0 for normalized metadata, derived CSV/JSON exports, and generated public pages unless a file states otherwise.",
+    "source_program_cache": "Cached conference programmes, quoted snippets, and source images remain under their original rightsholders and are retained for verification.",
+    "third_party_assets": "Bundled fonts, icons, and external source records keep their upstream licences or terms."
+  },
   "contributors": [
     {
       "title": "Dr. Mārcis Gasūns",
@@ -230,6 +236,73 @@
       "format": "csv",
       "mediatype": "text/csv",
       "description": "Dated source-backed institutional trajectories used for public affiliation normalization."
+    },
+    {
+      "name": "classification-reliability-sample",
+      "path": "analytics_output/classification_reliability_sample.csv",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "description": "Deterministic stratified sample and manual-override records for classification reliability review.",
+      "schema": {
+        "fields": [
+          {
+            "name": "presentation_id",
+            "type": "string"
+          },
+          {
+            "name": "year",
+            "type": "integer"
+          },
+          {
+            "name": "series",
+            "type": "string"
+          },
+          {
+            "name": "title",
+            "type": "string"
+          },
+          {
+            "name": "theme_l1",
+            "type": "string"
+          },
+          {
+            "name": "period_l2",
+            "type": "string"
+          },
+          {
+            "name": "gumilyov_level",
+            "type": "integer"
+          },
+          {
+            "name": "meso_codes",
+            "type": "string"
+          },
+          {
+            "name": "confidence",
+            "type": "number"
+          },
+          {
+            "name": "review_bucket",
+            "type": "string"
+          },
+          {
+            "name": "review_status",
+            "type": "string"
+          },
+          {
+            "name": "selection_reason",
+            "type": "string"
+          },
+          {
+            "name": "model_rationale",
+            "type": "string"
+          },
+          {
+            "name": "override_reason",
+            "type": "string"
+          }
+        ]
+      }
     },
     {
       "name": "network-nodes",

@@ -4,13 +4,13 @@ title: "Russian Indological Research Archive: Unified Relational Archive"
 authors:
   - family-names: "Gasūns"
     given-names: "Mārcis"
-    name-particle: "Dr."
+    orcid: "https://orcid.org/0000-0003-4513-884X"
 type: dataset
 url: "https://gasyoun.github.io/IndologyScholars/"
 repository-code: "https://github.com/gasyoun/IndologyScholars"
 date-released: "2026-05-31"
 version: "1.0.0"
-license: "Apache-2.0"
+license: "CC-BY-4.0"
 abstract: "A curated relational archive of Zograf Readings and Roerich Readings conference programs, scholars, presentations, affiliations, cities, and thematic classifications."
 keywords:
   - Indology

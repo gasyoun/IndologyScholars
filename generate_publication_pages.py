@@ -839,13 +839,13 @@ title: "{SITE_NAME}: Unified Relational Archive"
 authors:
   - family-names: "Gasūns"
     given-names: "Mārcis"
-    name-particle: "Dr."
+    orcid: "https://orcid.org/0000-0003-4513-884X"
 type: dataset
 url: "{SITE_URL}"
 repository-code: "https://github.com/gasyoun/IndologyScholars"
 date-released: "{BUILD_DATE}"
 version: "1.0.0"
-license: "Apache-2.0"
+license: "CC-BY-4.0"
 abstract: "A curated relational archive of Zograf Readings and Roerich Readings conference programs, scholars, presentations, affiliations, cities, and thematic classifications."
 keywords:
   - Indology
@@ -874,6 +874,12 @@ keywords:
             {"name": "Apache-2.0", "path": "LICENSE", "title": "Software License"},
             {"name": "CC-BY-4.0", "title": "Dataset License (Derived Metadata)", "path": "https://creativecommons.org/licenses/by/4.0/"}
         ],
+        "rights": {
+            "software_code": "Apache-2.0 for scripts, templates, and repository-native code.",
+            "derived_metadata_exports": "CC-BY-4.0 for normalized metadata, derived CSV/JSON exports, and generated public pages unless a file states otherwise.",
+            "source_program_cache": "Cached conference programmes, quoted snippets, and source images remain under their original rightsholders and are retained for verification.",
+            "third_party_assets": "Bundled fonts, icons, and external source records keep their upstream licences or terms.",
+        },
         "contributors": [{"title": AUTHOR_NAME, "role": "author"}],
         "keywords": ["Indology", "digital humanities", "conference archive"],
         "sources": [
@@ -990,6 +996,31 @@ keywords:
                 "format": "csv",
                 "mediatype": "text/csv",
                 "description": "Dated source-backed institutional trajectories used for public affiliation normalization.",
+            },
+            {
+                "name": "classification-reliability-sample",
+                "path": "analytics_output/classification_reliability_sample.csv",
+                "format": "csv",
+                "mediatype": "text/csv",
+                "description": "Deterministic stratified sample and manual-override records for classification reliability review.",
+                "schema": {
+                    "fields": [
+                        {"name": "presentation_id", "type": "string"},
+                        {"name": "year", "type": "integer"},
+                        {"name": "series", "type": "string"},
+                        {"name": "title", "type": "string"},
+                        {"name": "theme_l1", "type": "string"},
+                        {"name": "period_l2", "type": "string"},
+                        {"name": "gumilyov_level", "type": "integer"},
+                        {"name": "meso_codes", "type": "string"},
+                        {"name": "confidence", "type": "number"},
+                        {"name": "review_bucket", "type": "string"},
+                        {"name": "review_status", "type": "string"},
+                        {"name": "selection_reason", "type": "string"},
+                        {"name": "model_rationale", "type": "string"},
+                        {"name": "override_reason", "type": "string"},
+                    ]
+                },
             },
             {
                 "name": "network-nodes",
@@ -5995,7 +6026,7 @@ def generate_visualisations_page(data, records):
                 <span class="bilingual-text" data-ru="Город vs Учреждение" data-en="City vs Institution Format">Город vs Учреждение</span>
                 <a href="/hypotheses.html#H11" class="badge" style="background:#6c5ce7; color:white; text-decoration:none;" title="Читать формулировку гипотезы H11">H11</a>
             </h2>
-            <p class="bilingual-text" style="color:var(--muted); font-size:0.9rem;" data-ru="Формат указания аффилиации на двух площадках. Доказывает H11: Зографские чтения — это площадка городской идентичности (94.7% не указывают учреждение), в отличие от Рериховских (87% указывают)." data-en="Affiliation format on the two platforms. Proves H11: Zograf is a city-identity platform, Roerich is institutional.">Институциональный партикуляризм площадок.</p>
+            <p class="bilingual-text" style="color:var(--muted); font-size:0.9rem;" data-ru="Формат указания аффилиации на двух площадках. Это измеряет стандарт публикации программ: Зографские чтения чаще дают городскую метку, Рериховские чаще называют учреждение." data-en="Affiliation format on the two platforms. This measures programme publication practice: Zograf more often gives a city label, while Roerich more often names an institution.">Формат аффилиаций площадок.</p>
             <div id="vis042-wrapper" style="position:relative; width:100%; overflow:hidden; margin-top:1.5rem;">
                 <svg id="vis042-svg" viewBox="0 0 800 360" style="width:100%; height:auto; background:rgba(0,0,0,0.15); border-radius:8px;"></svg>
                 <div id="vis042-tooltip" style="{tip_style}"></div>
@@ -12041,7 +12072,7 @@ def generate_publication_docs(data):
             
             <div class="citation-contents">
                 <div id="citation-apa" class="citation-content active">
-                    Гасунс М. Ю. <a href="https://orcid.org/0000-0002-3665-636X" target="_blank" rel="noopener" style="vertical-align: middle; margin-left: 4px;" title="ORCID iD"><img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" alt="ORCID" style="width: 16px; height: 16px; border: none; vertical-align: middle;"></a> Реестр гипотез дальнего чтения и социологии индологических конференций // Russian Indological Research Archive. URL: https://gasyoun.github.io/IndologyScholars/hypotheses.html (дата обращения: <span class="current-date">30.05.2026</span>).
+                    Гасунс М. Ю. <a href="https://orcid.org/0000-0003-4513-884X" target="_blank" rel="noopener" style="vertical-align: middle; margin-left: 4px;" title="ORCID iD"><img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" alt="ORCID" style="width: 16px; height: 16px; border: none; vertical-align: middle;"></a> Реестр гипотез дальнего чтения и социологии индологических конференций // Russian Indological Research Archive. URL: https://gasyoun.github.io/IndologyScholars/hypotheses.html (дата обращения: <span class="current-date">30.05.2026</span>).
                 </div>
                 <div id="citation-bibtex" class="citation-content">
 <pre style="margin: 0; font-family: monospace; font-size: 0.85rem; color: #cbd5e1; overflow-x: auto; white-space: pre-wrap;">@misc{gasuns2026hypotheses,
@@ -12609,7 +12640,7 @@ ER  - </pre>
             </article>
             <article class="card">
                 <strong>Institutional Registries</strong>
-                <div class="meta">Normalized organizations are linked to ROR (Research Organization Registry) to ensure global interoperability.</div>
+                <div class="meta">Normalized organizations may be linked to ROR or other authority records when a source-backed match exists; city-only programme labels are kept separate.</div>
             </article>
         </section>
             """,
@@ -12636,8 +12667,12 @@ ER  - </pre>
                 <p>A city in a program is not treated as employment. An institutional label is shown only when stated in the program or supplied by a source-backed dated span; it is never carried beyond that span without new evidence.</p>
             </article>
             <article class="card">
+                <strong>Institutional Scope</strong>
+                <p>Institution pages and organization-theme edges describe observed programme metadata and verified affiliation spans. They do not claim complete institutional productivity, employment status for city-only participants, or full institutional research profiles.</p>
+            </article>
+            <article class="card">
                 <strong>Broad Theme Classification</strong>
-                <p>Thematic classification is a coarse categorization based on presentation titles. It serves as a navigational index rather than a detailed content-analysis model.</p>
+                <p>Thematic classification is a coarse categorization based on presentation titles. It serves as a navigational index and article support layer, not a full content-analysis model; the reliability packet documents review samples and remaining ambiguity.</p>
             </article>
             <article class="card">
                 <strong>External Database Coverage Gaps</strong>
@@ -12672,7 +12707,7 @@ ER  - </pre>
             <article class="card" style="border-left: 4px solid var(--accent); background: rgba(255, 255, 255, 0.02);">
                 <strong class="bilingual-text" data-ru="Рекомендуемое описание всего архива" data-en="Suggested Citation for the Complete Archive">Рекомендуемое описание всего архива</strong>
                 <div class="meta" style="margin-top: 0.5rem; font-size: 0.95rem; color: #f8fafc; line-height: 1.5;">
-                    Гасунс М. Ю. <a href="https://orcid.org/0000-0002-3665-636X" target="_blank" rel="noopener" style="vertical-align: middle; margin-left: 4px;" title="ORCID iD"><img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" alt="ORCID" style="width: 16px; height: 16px; border: none; vertical-align: middle;"></a> {esc(SITE_NAME)}: Объединенный реляционный архив индологических докладов. Версия {BUILD_DATE}. URL: {SITE_URL} (дата обращения: <span class="current-date">30.05.2026</span>).
+                    Гасунс М. Ю. <a href="https://orcid.org/0000-0003-4513-884X" target="_blank" rel="noopener" style="vertical-align: middle; margin-left: 4px;" title="ORCID iD"><img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" alt="ORCID" style="width: 16px; height: 16px; border: none; vertical-align: middle;"></a> {esc(SITE_NAME)}: Объединенный реляционный архив индологических докладов. Версия {BUILD_DATE}. URL: {SITE_URL} (дата обращения: <span class="current-date">30.05.2026</span>).
                 </div>
             </article>
             
@@ -12844,7 +12879,7 @@ ER  - </pre>
         "hypotheses.html": """
 <meta name="citation_title" content="Hypotheses Registry of Russian Indology: Far Reading and Sociological Analysis">
 <meta name="citation_author" content="Gasuns, M. Yu.">
-<meta name="citation_author_orcid" content="https://orcid.org/0000-0002-3665-636X">
+<meta name="citation_author_orcid" content="https://orcid.org/0000-0003-4513-884X">
 <meta name="citation_publication_date" content="2026/05/30">
 <meta name="citation_online_date" content="2026/05/30">
 <meta name="citation_journal_title" content="Russian Indological Research Archive">
@@ -12853,7 +12888,7 @@ ER  - </pre>
 <meta name="citation_pdf_url" content="https://gasyoun.github.io/IndologyScholars/hypotheses.html">
 <meta name="DC.title" content="Hypotheses Registry of Russian Indology: Far Reading and Sociological Analysis">
 <meta name="DC.creator" content="Gasuns, M. Yu.">
-<meta name="DC.creator.orcid" content="https://orcid.org/0000-0002-3665-636X">
+<meta name="DC.creator.orcid" content="https://orcid.org/0000-0003-4513-884X">
 <meta name="DC.issued" content="2026-05-30">
 <meta name="DC.relation" content="https://gasyoun.github.io/IndologyScholars/">
 <meta name="DC.language" content="rus">
@@ -12861,13 +12896,13 @@ ER  - </pre>
         "how-to-cite.html": """
 <meta name="citation_title" content="Citation Guidelines and Linked Open Data Integration for the Russian Indological Research Archive">
 <meta name="citation_author" content="Gasuns, M. Yu.">
-<meta name="citation_author_orcid" content="https://orcid.org/0000-0002-3665-636X">
+<meta name="citation_author_orcid" content="https://orcid.org/0000-0003-4513-884X">
 <meta name="citation_publication_date" content="2026/05/30">
 <meta name="citation_journal_title" content="Russian Indological Research Archive">
 <meta name="citation_language" content="rus">
 <meta name="DC.title" content="Citation Guidelines and Linked Open Data Integration for the Russian Indological Research Archive">
 <meta name="DC.creator" content="Gasuns, M. Yu.">
-<meta name="DC.creator.orcid" content="https://orcid.org/0000-0002-3665-636X">
+<meta name="DC.creator.orcid" content="https://orcid.org/0000-0003-4513-884X">
 <meta name="DC.issued" content="2026-05-30">
 <meta name="DC.language" content="rus">
 """

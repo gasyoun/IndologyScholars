@@ -17,6 +17,9 @@ This dictionary describes the reusable data outputs produced by the IndologyScho
 | `search-index.json` | JSON | `generate_publication_pages.py` | Static search index for generated pages. |
 | `datapackage.json` | JSON | `generate_publication_pages.py` | Frictionless-style metadata, resource list, license, stats, and schemas for key outputs. |
 | `CITATION.cff` | YAML/CFF | `generate_publication_pages.py` | Citation metadata for dataset and software reuse. |
+| `docs/reuse-rights.md` | Markdown | manual | Rights split for code, derived metadata, cached source material, and article drafts. |
+| `docs/institutional-scope.md` | Markdown | manual | Boundary note for city labels, programme affiliations, and verified institutional spans. |
+| `docs/classification-reliability-packet.md` | Markdown | manual + generated sample | Classification codebook, review layers, deterministic sample, and ambiguity rules. |
 | `analytics_output/data_quality_report.json` | JSON | `generate_publication_pages.py` | Machine-readable quality checks and review samples. |
 | `analytics_output/publication_file_manifest.csv` | CSV | `generate_publication_pages.py` | Generated file manifest with byte sizes and SHA-256 checksums. |
 | `analytics_output/publication_file_manifest.json` | JSON | `generate_publication_pages.py` | JSON version of the generated file manifest with build metadata. |
@@ -69,6 +72,7 @@ Provenance sidecars document where curated or derived fields came from and how c
 | `analytics_output/field_provenance_authority.csv` | External authority identifiers and organization/place authority data. |
 | `analytics_output/field_provenance_themes.csv` | Generated presentation theme labels and theme review candidates. |
 | `curation/verified_affiliation_spans.csv` | Verified institutional trajectories; city-only programme markers remain geography, while an open trajectory continued beyond its starting evidence is marked `(?)` until contradicted. |
+| `analytics_output/classification_reliability_sample.csv` | Deterministic review sample for classification reliability checks; rows marked `queued_for_manual_review` are a review queue rather than adjudicated facts. |
 
 Common columns:
 

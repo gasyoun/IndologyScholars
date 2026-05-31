@@ -5,6 +5,9 @@
 | Описание коллекции / Collection guide | [README.md](../README.md) | [README_EN.md](../README_EN.md) |
 | Разработка и сборка / Development and build | [development.md](development.md) | [development-en.md](development-en.md) |
 | Аудит классификации / Classification audit | [classification-audit.md](classification-audit.md) | [classification-audit-en.md](classification-audit-en.md) |
+| Пакет надежности классификации / Classification reliability packet | [classification-reliability-packet.md](classification-reliability-packet.md) | [classification-reliability-packet.md](classification-reliability-packet.md) |
+| Границы институционального анализа / Institutional scope | [institutional-scope.md](institutional-scope.md) | [institutional-scope.md](institutional-scope.md) |
+| Права повторного использования / Reuse rights | [reuse-rights.md](reuse-rights.md) | [reuse-rights.md](reuse-rights.md) |
 | Проверка РИНЦ / RINC review | [rinc-review.md](rinc-review.md) | [rinc-review-en.md](rinc-review-en.md) |
 | Аудит интерфейса / Interface audit | [ux-ui-audit.md](ux-ui-audit.md) | [ux-ui-audit.md](ux-ui-audit.md) |
 | Визуализации / Visualizations | [visualisations.md](visualisations.md) | [visualisations.md](visualisations.md) |
