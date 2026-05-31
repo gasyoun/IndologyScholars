@@ -6,3 +6,4 @@ scikit-learn
 pymorphy3
 jinja2
 Pillow>=10.0.0
+pytest
