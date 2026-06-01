@@ -61,6 +61,7 @@ jobs:
           python generate_site_data.py
           python generate_network_json.py
           python generate_lod.py
+          python tools/build_sociology_visuals.py
 
       - name: Generate Static Pages for Individual Scholars
         run: |
@@ -87,9 +88,10 @@ jobs:
           # Add only changed datasets, database, caching, and static pages
           git add html_cache/*.html conferences.db site_data.json site_data_summary.json site_data_scholars.json site_data_timeline.json site_data_network.json public_ids.json analytics_output/*.csv analytics_output/*.json indology_scholars_analytics.md s/*.html
           git add article/hypothesis_output/*.csv article/hypothesis_output/*.json article/hypothesis_output/*.md article/figures/*.svg
-          git add assets/*.png assets/*.svg assets/*.js conferences/*.html p/*.html generations/*.html themes/*.html topics/*.html meso/*.html gumilyov/*.html videos/*.html findings/*.html keywords/*.html cities/*.html institutions/*.html
+          git add assets/*.png assets/*.svg assets/*.js assets/img/*.png assets/img/*.svg conferences/*.html p/*.html generations/*.html themes/*.html topics/*.html meso/*.html gumilyov/*.html videos/*.html findings/*.html keywords/*.html cities/*.html institutions/*.html
           git add sitemap*.xml robots.txt site.webmanifest offline.html service-worker.js search.html search-index.json CITATION.cff datapackage.json data_dictionary.md
-          git add 404.html en.html download-data.html data-quality.html methodology.html data-sources.html known-limitations.html how-to-cite.html metrics-guide.html classification-criteria.html networks.html index.html
+          git add curation/*.csv docs/*.md
+          git add 404.html en.html download-data.html data-quality.html methodology.html data-sources.html known-limitations.html how-to-cite.html metrics-guide.html classification-criteria.html networks.html sociology.html sociology-en.html gatekeeping.html gatekeeping-en.html index.html
           
           # Check if there are changes before committing to avoid empty commit errors
           if git diff-index --quiet HEAD --; then

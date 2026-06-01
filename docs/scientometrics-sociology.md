@@ -114,6 +114,17 @@ one sensitive question: frequent senior-generation participants who are no
 longer visible after 2022 or are absent from the 2026 programme. Every row is a
 review item, not a public claim about life status or career exit.
 
+`curation/senior_biographical_verification.csv` is the companion ledger for
+external checks. It records which public sources support a living/current
+profile, post-2022 external activity, or only a weaker "no death marker found"
+status. Post-2022 absence and 2026 programme absence should be interpreted as
+two different mechanisms: the first may reflect political and cross-border
+conditions around Russia, while the second is a separate programme-selection
+question.
+
+Editorial decisions for the public sociology and gatekeeping pages are recorded
+in `docs/sociology-gatekeeping-editorial-decisions.md`.
+
 ### 5. Topic And Field Evolution
 
 Recommended topic layers:
@@ -156,6 +167,7 @@ the archive can be interpreted.
 | Network robustness checks | `analytics_output/network_robustness_checks.csv` | Keeps co-presence, co-presentation, person-event, person-theme, person-organization, organization-theme, and bridge models separate. |
 | Inter-rater reliability plan | `analytics_output/inter_rater_reliability_plan.csv` | Defines double-coding layers and minimum reliability rules for classification claims. |
 | FAIR/reuse maturity audit | `analytics_output/fair_reuse_maturity_audit.csv` | Checks findability, accessibility, interoperability, and reusability evidence before release. |
+| Senior biographical verification | `curation/senior_biographical_verification.csv` | Tests whether absence rows can be explained by external biographical or activity evidence before making stronger claims. |
 
 `analytics_output/scientometrics_guardrails.csv` is the index for these eight
 outputs, and `analytics_output/scientometrics_guardrails_summary.json` records

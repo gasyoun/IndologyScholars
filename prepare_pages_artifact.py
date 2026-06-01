@@ -37,7 +37,9 @@ PUBLIC_PATHS = [
     "classification-criteria.html",
     "networks.html",
     "sociology.html",
+    "sociology-en.html",
     "gatekeeping.html",
+    "gatekeeping-en.html",
     "indology_scholars_analytics.md",
 ]
 

@@ -29,22 +29,30 @@
     <script defer src="/IndologyScholars/assets/pwa.js"></script>
 
     <style>
-        .article-container { max-width: 920px; line-height: 1.7; }
+        .article-container { max-width: 980px; line-height: 1.7; }
         .article-container h3 { font-size: 1.2rem; color: var(--text); margin: 1.8rem 0 0.75rem; }
         .article-container p, .article-container li { color: var(--muted); }
         .article-container li { margin-bottom: 0.6rem; }
         .note { border-left: 3px solid var(--accent); background: var(--panel); padding: 1rem 1.25rem; border-radius: 0 8px 8px 0; margin: 1.5rem 0; color: var(--muted); }
+        .warning-note { border-left-color: #f87171; }
         .two-col { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+        .three-col { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin: 1.5rem 0; }
         .mini-card { border: 1px solid var(--border); border-radius: 8px; padding: 1rem; background: var(--panel); }
         .mini-card strong { color: #fff; }
+        .mini-card .kicker { color: var(--soft); display: block; font-size: 0.78rem; letter-spacing: 0; text-transform: uppercase; margin-bottom: 0.35rem; }
+        .evidence-badges { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1rem 0 1.5rem; }
+        .badge { border: 1px solid var(--border); border-radius: 999px; color: var(--muted); background: var(--panel); padding: 0.25rem 0.7rem; font-size: 0.82rem; }
+        .badge strong { color: #fff; }
         table.data { width: 100%; border-collapse: collapse; margin: 1rem 0 1.5rem; font-size: 0.92rem; }
         table.data th, table.data td { border-bottom: 1px solid var(--border); padding: 0.65rem 0.5rem; text-align: left; vertical-align: top; }
         table.data th { color: #fff; font-weight: 600; }
         table.data td { color: var(--muted); }
-        .article-figure { max-width: 100%; height: auto; border-radius: 12px; margin: 2rem 0 1rem; border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+        .article-figure { width: 100%; max-width: 100%; height: auto; border-radius: 12px; margin: 2rem 0 1rem; border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.3); background: #101513; }
         .article-caption { font-size: 0.9rem; color: var(--soft); margin-bottom: 2rem; font-style: italic; }
         .article-container blockquote { border-left: 4px solid var(--accent); background: var(--panel); padding: 1rem 1.5rem; margin: 2rem 0; border-radius: 0 8px 8px 0; font-style: italic; color: var(--muted); }
-        @media (max-width: 760px) { .two-col { grid-template-columns: 1fr; } }
+        .lang-switch { margin-top: 1rem; }
+        .lang-switch a { display: inline-block; border: 1px solid var(--border); border-radius: 999px; padding: 0.35rem 0.8rem; text-decoration: none; color: var(--text); background: var(--panel); }
+        @media (max-width: 760px) { .two-col, .three-col { grid-template-columns: 1fr; } table.data { font-size: 0.84rem; } }
     </style>
 
 
@@ -61,7 +69,7 @@
       "name": "Russian Indological Research Archive",
       "url": "https://gasyoun.github.io/IndologyScholars/"
     },
-    "dateModified": "2026-05-31"
+    "dateModified": "2026-06-01"
   },
   {
     "@context": "https://schema.org",
@@ -151,13 +159,21 @@
         <header>
             <h1>Социология российской индологии: как читать конференционный архив</h1>
             <p>Институции, поколения, сетевые сообщества и конференционные площадки российской индологии.</p>
+            <p class="lang-switch"><a href="sociology-en.html">English version</a></p>
         </header>
         <div class="article-container">
             <article>
             <p>Эта страница шире, чем сюжет о гейткипинге. Она описывает поле как живую инфраструктуру: кто приходит на площадки, какие институты удерживают ядро, где возникают сетевые сообщества, как меняется поколенческий баланс и какие выводы нельзя делать без ручной проверки.</p>
 
             <div class="note">
-                Конференционные программы показывают наблюдаемую публичную активность, а не полную академическую биографию. Поэтому здесь важны не рейтинги людей, а структура поля: регулярность участия, мосты между площадками, паузы, возвращения и зоны, где данные требуют человека.
+                Для редакции и рецензентов эта страница устроена как гибрид: короткое эссе плюс проверяемые визуальные блоки. Конференционные программы показывают наблюдаемую публичную активность, а не полную академическую биографию.
+            </div>
+
+            <div class="evidence-badges">
+                <span class="badge"><strong>Наблюдение:</strong> строки программ</span>
+                <span class="badge"><strong>Метрика:</strong> сеть и годы участия</span>
+                <span class="badge"><strong>Гипотеза:</strong> механизм отсутствия</span>
+                <span class="badge"><strong>Ручная проверка:</strong> биография и мотив</span>
             </div>
 
             <h2>1. Институциональная экология</h2>
@@ -169,21 +185,27 @@
             </div>
 
             <h2>2. Поколения и смена присутствия</h2>
-            <p>Для социологии науки важны не только новички, но и исчезновения из программы. Ниже приведен строгий технический срез: участники старшего поколения с известным годом рождения не позже 1960 года, не менее чем пятью прежними выступлениями и пустым полем `death_year` в локальной базе. Это не утверждение о биографическом статусе; перед публикацией как факта список надо сверить вручную.</p>
+            <p>Для социологии науки важны не только новички, но и исчезновения из программы. Сама по себе пустота в строке календаря ничего не доказывает: это может быть смерть, болезнь, политический разрыв после 2022 года, личный выбор или программный фильтр. Поэтому ниже отсутствия разведены на две гипотезы и снабжены внешней биографической проверкой.</p>
+
+            <img class="article-figure" src="assets/img/sociology_generation_lifecycle.svg" alt="Матрица первого и последнего появления участников в архиве">
+            <div class="article-caption">Рис. 1. Матрица показывает жизненный цикл наблюдаемого присутствия: когда участники впервые появились в программах и в какой период последний раз видны в корпусе. Это не рейтинг и не биография, а карта публичной конференционной видимости.</div>
+
+            <img class="article-figure" src="assets/img/senior_absence_timeline.svg" alt="Таймлайн присутствия частых участников старшего поколения">
+            <div class="article-caption">Рис. 2. Таймлайн помогает увидеть, что «после 2022» и «в 2026» являются разными вопросами. Первый блок может быть связан с политическим и трансграничным контекстом вокруг РФ; второй требует отдельной проверки локальной программной селекции и личных отношений.</div>
 
             <h3>Частые участники старшего поколения, которых не видно после 2022 года</h3>
             <table class="data">
-                <thead><tr><th>Участник</th><th>Год рождения</th><th>Докладов до 2023</th><th>Последний год в архиве</th></tr></thead>
-                <tbody><tr><td>Видунас Витис</td><td>1960</td><td>15</td><td>2019</td></tr><tr><td>Огнева Елена Дмитриевна</td><td>1944</td><td>13</td><td>2022</td></tr><tr><td>Кокова Юлия Георгиевна</td><td>1955</td><td>8</td><td>2018</td></tr><tr><td>Невелева Светлана Леонидовна</td><td>1937</td><td>6</td><td>2011</td></tr><tr><td>Коробов Владимир Борисович</td><td>1957</td><td>5</td><td>2020</td></tr><tr><td>Терентьев Андрей Анатольевич</td><td>1948</td><td>5</td><td>2022</td></tr></tbody>
+                <thead><tr><th>Участник</th><th>Год рождения</th><th>Докладов до 2023</th><th>Последний год</th><th>Внешняя проверка</th></tr></thead>
+                <tbody><tr><td>Видунас Витис</td><td>1960</td><td>15</td><td>2019</td><td>внешняя активность после 2022<br><a href="https://www.mfa.lt/en/news/928/vilnius-university-scholar-vytis-vidunas-receives-the-2023-india-lithuania-friendship-award%3A35351">Vilnius University scholar Vytis Vidunas receives the 2023 India-Lithuania Friendship Award</a></td></tr><tr><td>Огнева Елена Дмитриевна</td><td>1944</td><td>13</td><td>2022</td><td>биографический профиль без отметки смерти<br><a href="https://ru.wikipedia.org/wiki/%D0%9E%D0%B3%D0%BD%D0%B5%D0%B2%D0%B0%2C_%D0%95%D0%BB%D0%B5%D0%BD%D0%B0_%D0%94%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B5%D0%B2%D0%BD%D0%B0">Огнева Елена Дмитриевна</a></td></tr><tr><td>Кокова Юлия Георгиевна</td><td>1955</td><td>8</td><td>2018</td><td>активный/текущий профиль<br><a href="https://orientaliarossica.com/orientalistsregion/3">Кокова Юлия Георгиевна | Orientalia Rossica</a></td></tr><tr><td>Невелева Светлана Леонидовна</td><td>1937</td><td>6</td><td>2011</td><td>биографический профиль без отметки смерти<br><a href="https://www.orientalstudies.ru/eng/images/personalia/pdf/neveleva.pdf">Невелева Светлана Леонидовна | ИВР РАН personalia PDF</a></td></tr><tr><td>Коробов Владимир Борисович</td><td>1957</td><td>5</td><td>2020</td><td>биографический профиль без отметки смерти<br><a href="https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D1%80%D0%BE%D0%B1%D0%BE%D0%B2%2C_%D0%92%D0%BB%D0%B0%D0%B4%D0%B8%D0%BC%D0%B8%D1%80_%D0%91%D0%BE%D1%80%D0%B8%D1%81%D0%BE%D0%B2%D0%B8%D1%87_%28%D0%B2%D0%BE%D1%81%D1%82%D0%BE%D0%BA%D0%BE%D0%B2%D0%B5%D0%B4%29">Коробов Владимир Борисович (востоковед)</a></td></tr><tr><td>Терентьев Андрей Анатольевич</td><td>1948</td><td>5</td><td>2022</td><td>активный/текущий профиль<br><a href="https://dharma.ru/list/person/terentev-andrey-anatolevich">Терентьев Андрей Анатольевич | Dharma.ru</a></td></tr></tbody>
             </table>
 
             <h3>Частые участники старшего поколения, отсутствующие в программе 2026 года</h3>
             <table class="data">
-                <thead><tr><th>Участник</th><th>Год рождения</th><th>Докладов до 2026</th><th>Последний год в архиве</th></tr></thead>
-                <tbody><tr><td>Лысенко Виктория Георгиевна</td><td>1953</td><td>25</td><td>2025</td></tr><tr><td>Вертоградова Виктория Викторовна</td><td>1933</td><td>17</td><td>2024</td></tr><tr><td>Островская Елена Петровна</td><td>1950</td><td>16</td><td>2025</td></tr><tr><td>Видунас Витис</td><td>1960</td><td>15</td><td>2019</td></tr><tr><td>Огнева Елена Дмитриевна</td><td>1944</td><td>13</td><td>2022</td></tr><tr><td>Кокова Юлия Георгиевна</td><td>1955</td><td>8</td><td>2018</td></tr><tr><td>Вигасин Алексей Алексеевич</td><td>1946</td><td>7</td><td>2025</td></tr><tr><td>Канаева Наталия Алексеевна</td><td>1953</td><td>6</td><td>2025</td></tr><tr><td>Невелева Светлана Леонидовна</td><td>1937</td><td>6</td><td>2011</td></tr><tr><td>Коробов Владимир Борисович</td><td>1957</td><td>5</td><td>2020</td></tr><tr><td>Стрелкова Гюзэль Владимировна</td><td>1958</td><td>5</td><td>2024</td></tr><tr><td>Терентьев Андрей Анатольевич</td><td>1948</td><td>5</td><td>2022</td></tr></tbody>
+                <thead><tr><th>Участник</th><th>Год рождения</th><th>Докладов до 2026</th><th>Последний год</th><th>Внешняя проверка</th></tr></thead>
+                <tbody><tr><td>Лысенко Виктория Георгиевна</td><td>1953</td><td>25</td><td>2025</td><td>активный/текущий профиль<br><a href="https://iph.ras.ru/lysenko.htm">Лысенко Виктория Георгиевна | Институт философии РАН</a></td></tr><tr><td>Вертоградова Виктория Викторовна</td><td>1933</td><td>17</td><td>2024</td><td>биографический профиль без отметки смерти<br><a href="https://philos.msu.ru/node/264">Вертоградова Виктория Викторовна | Философский факультет МГУ</a></td></tr><tr><td>Островская Елена Петровна</td><td>1950</td><td>16</td><td>2025</td><td>биографический профиль без отметки смерти<br><a href="https://ru.wikipedia.org/wiki/%D0%9E%D1%81%D1%82%D1%80%D0%BE%D0%B2%D1%81%D0%BA%D0%B0%D1%8F%2C_%D0%95%D0%BB%D0%B5%D0%BD%D0%B0_%D0%9F%D0%B5%D1%82%D1%80%D0%BE%D0%B2%D0%BD%D0%B0">Островская Елена Петровна</a></td></tr><tr><td>Видунас Витис</td><td>1960</td><td>15</td><td>2019</td><td>внешняя активность после 2022<br><a href="https://www.mfa.lt/en/news/928/vilnius-university-scholar-vytis-vidunas-receives-the-2023-india-lithuania-friendship-award%3A35351">Vilnius University scholar Vytis Vidunas receives the 2023 India-Lithuania Friendship Award</a></td></tr><tr><td>Огнева Елена Дмитриевна</td><td>1944</td><td>13</td><td>2022</td><td>биографический профиль без отметки смерти<br><a href="https://ru.wikipedia.org/wiki/%D0%9E%D0%B3%D0%BD%D0%B5%D0%B2%D0%B0%2C_%D0%95%D0%BB%D0%B5%D0%BD%D0%B0_%D0%94%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B5%D0%B2%D0%BD%D0%B0">Огнева Елена Дмитриевна</a></td></tr><tr><td>Кокова Юлия Георгиевна</td><td>1955</td><td>8</td><td>2018</td><td>активный/текущий профиль<br><a href="https://orientaliarossica.com/orientalistsregion/3">Кокова Юлия Георгиевна | Orientalia Rossica</a></td></tr><tr><td>Вигасин Алексей Алексеевич</td><td>1946</td><td>7</td><td>2025</td><td>активный/текущий профиль<br><a href="https://letopis.msu.ru/peoples/9793">ЭС: А.А.Вигасин | Летопись Московского университета</a></td></tr><tr><td>Канаева Наталия Алексеевна</td><td>1953</td><td>6</td><td>2025</td><td>активный/текущий профиль<br><a href="https://www.hse.ru/staff/nkanaeva/">Канаева Наталия Алексеевна | НИУ ВШЭ</a></td></tr><tr><td>Невелева Светлана Леонидовна</td><td>1937</td><td>6</td><td>2011</td><td>биографический профиль без отметки смерти<br><a href="https://www.orientalstudies.ru/eng/images/personalia/pdf/neveleva.pdf">Невелева Светлана Леонидовна | ИВР РАН personalia PDF</a></td></tr><tr><td>Коробов Владимир Борисович</td><td>1957</td><td>5</td><td>2020</td><td>биографический профиль без отметки смерти<br><a href="https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D1%80%D0%BE%D0%B1%D0%BE%D0%B2%2C_%D0%92%D0%BB%D0%B0%D0%B4%D0%B8%D0%BC%D0%B8%D1%80_%D0%91%D0%BE%D1%80%D0%B8%D1%81%D0%BE%D0%B2%D0%B8%D1%87_%28%D0%B2%D0%BE%D1%81%D1%82%D0%BE%D0%BA%D0%BE%D0%B2%D0%B5%D0%B4%29">Коробов Владимир Борисович (востоковед)</a></td></tr><tr><td>Стрелкова Гюзэль Владимировна</td><td>1958</td><td>5</td><td>2024</td><td>активный/текущий профиль<br><a href="https://istina.cemi-ras.ru/workers/388343/publications/">Стрелкова Гюзэль Владимировна | ИСТИНА</a></td></tr><tr><td>Терентьев Андрей Анатольевич</td><td>1948</td><td>5</td><td>2022</td><td>активный/текущий профиль<br><a href="https://dharma.ru/list/person/terentev-andrey-anatolevich">Терентьев Андрей Анатольевич | Dharma.ru</a></td></tr></tbody>
             </table>
 
-            <p>Машиночитаемая очередь проверки собирается в <a href="analytics_output/senior_absence_audit.csv">senior_absence_audit.csv</a>. Для научного текста лучше формулировать это осторожно: «не представлены в текущем корпусе после такого-то года», а не «ушли из поля».</p>
+            <p>Машиночитаемая очередь проверки собирается в <a href="analytics_output/senior_absence_audit.csv">senior_absence_audit.csv</a>, а внешние биографические источники — в <a href="curation/senior_biographical_verification.csv">senior_biographical_verification.csv</a>. Строки со статусом «нужен более сильный источник» не должны использоваться для публичных биографических утверждений без ручной проверки.</p>
 
             <h2>3. Сетевые посредники</h2>
             <p>Термин «брокер» в русском тексте звучит слишком экономически и иногда сбивает. Для страницы и подписей лучше использовать «сетевой посредник», «участник-связка» или «связующий участник». Тогда смысл остается тем же: это не начальник и не самый продуктивный автор, а человек, через которого разные группы оказываются соединены.</p>
@@ -192,12 +214,16 @@
             <p>Сюжет об исключении, программных фильтрах и поколенческом конфликте вынесен на отдельную страницу: <a href="gatekeeping.html">академический гейткипинг</a>. Так <code>sociology.html</code> остается обзорной рамкой, а более острый анализ не подменяет всю социологию науки.</p>
 
             <h2>5. Что должен проверять человек</h2>
+            <img class="article-figure" src="assets/img/sociology_review_dashboard.svg" alt="Панель очередей человеческой проверки">
+            <div class="article-caption">Рис. 3. Панель показывает, где вычисления прекращаются и начинается редакторская работа: 26 строк потенциального соавторства, 18 строк отсутствия старших участников, 12 внешних биографических проверок и 8 сетевых ограничений.</div>
             <ul>
                 <li>Списки отсутствующих участников: смерть, болезнь, смена темы, эмиграция, личный выбор и программный фильтр выглядят одинаково в голой таблице.</li>
                 <li>Соавторство: строка с двумя именами в программе не всегда означает устойчивую научную коллаборацию.</li>
                 <li>Аффилиации: РАН, университет, музей, библиотека и независимый статус не всегда исчерпывают реальное место работы.</li>
                 <li>Сетевые выводы: совместная сессия, совместный доклад, тема и институция являются разными типами связи.</li>
             </ul>
+
+            <p>Редакционные решения по аудитории, именованию людей и силе утверждений вынесены в <a href="docs/sociology-gatekeeping-editorial-decisions.md">мета-документ</a>.</p>
             </article>
         </div>
 

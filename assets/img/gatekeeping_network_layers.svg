@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="430" viewBox="0 0 980 430" role="img">
+<rect width="980" height="430" fill="#101513"/>
+<text x="28" y="34" fill="#eef6f0" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="800" text-anchor="start">Сеть не одна: разные типы связи дают разные вопросы</text>
+<text x="28" y="58" fill="#a8b7ae" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="400" text-anchor="start">Одинаковый графический язык не должен смешивать совместный доклад, одну сессию, тему и институцию.</text>
+<text x="28" y="107" fill="#eef6f0" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="650" text-anchor="start">same session copresence</text>
+<text x="180" y="107" fill="#a8b7ae" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="400" text-anchor="start">person_person_same_session</text>
+<rect x="315" y="92" width="530" height="24" rx="8" fill="#17201c" stroke="#304139"/>
+<rect x="315" y="92" width="520.0" height="24" rx="8" fill="#76a9ff" opacity="0.78"/>
+<text x="859" y="109" fill="#eef6f0" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="start">4645</text>
+<text x="28" y="145" fill="#eef6f0" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="650" text-anchor="start">same presentation</text>
+<text x="180" y="145" fill="#a8b7ae" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="400" text-anchor="start">person_person_copresentation</text>
+<rect x="315" y="130" width="530" height="24" rx="8" fill="#17201c" stroke="#304139"/>
+<rect x="315" y="130" width="2.9" height="24" rx="8" fill="#7ccf9b" opacity="0.78"/>
+<text x="859" y="147" fill="#eef6f0" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="start">26</text>
+<text x="28" y="183" fill="#eef6f0" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="650" text-anchor="start">person event bipartite</text>
+<text x="180" y="183" fill="#a8b7ae" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="400" text-anchor="start">person_event</text>
+<rect x="315" y="168" width="530" height="24" rx="8" fill="#17201c" stroke="#304139"/>
+<rect x="315" y="168" width="152.8" height="24" rx="8" fill="#f6b352" opacity="0.78"/>
+<text x="859" y="185" fill="#eef6f0" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="start">1365</text>
+<text x="28" y="221" fill="#eef6f0" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="650" text-anchor="start">person theme bipartite</text>
+<text x="180" y="221" fill="#a8b7ae" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="400" text-anchor="start">person_theme</text>
+<rect x="315" y="206" width="530" height="24" rx="8" fill="#17201c" stroke="#304139"/>
+<rect x="315" y="206" width="153.8" height="24" rx="8" fill="#f87171" opacity="0.78"/>
+<text x="859" y="223" fill="#eef6f0" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="start">1374</text>
+<text x="28" y="259" fill="#eef6f0" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="650" text-anchor="start">person organization bipartite</text>
+<text x="180" y="259" fill="#a8b7ae" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="400" text-anchor="start">person_organization</text>
+<rect x="315" y="244" width="530" height="24" rx="8" fill="#17201c" stroke="#304139"/>
+<rect x="315" y="244" width="30.1" height="24" rx="8" fill="#c084fc" opacity="0.78"/>
+<text x="859" y="261" fill="#eef6f0" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="start">269</text>
+<text x="28" y="297" fill="#eef6f0" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="650" text-anchor="start">organization theme bipartite</text>
+<text x="180" y="297" fill="#a8b7ae" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="400" text-anchor="start">organization_theme</text>
+<rect x="315" y="282" width="530" height="24" rx="8" fill="#17201c" stroke="#304139"/>
+<rect x="315" y="282" width="14.8" height="24" rx="8" fill="#60a5fa" opacity="0.78"/>
+<text x="859" y="299" fill="#eef6f0" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="start">132</text>
+<text x="28" y="335" fill="#eef6f0" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="650" text-anchor="start">series bridge</text>
+<text x="180" y="335" fill="#a8b7ae" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="400" text-anchor="start">person_event</text>
+<rect x="315" y="320" width="530" height="24" rx="8" fill="#17201c" stroke="#304139"/>
+<rect x="315" y="320" width="152.8" height="24" rx="8" fill="#f472b6" opacity="0.78"/>
+<text x="859" y="337" fill="#eef6f0" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="start">1365</text>
+<text x="28" y="384" fill="#a8b7ae" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="400" text-anchor="start">Выводы о гейткипинге должны переживать проверку на тип связи: co-presentation, co-session, person-event, person-theme и др.</text>
+<text x="28" y="406" fill="#7f9187" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="400" text-anchor="start">Иначе визуально убедительная сеть может отвечать не на тот вопрос.</text>
+</svg>

@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="430" viewBox="0 0 980 430" role="img">
+<rect width="980" height="430" fill="#101513"/>
+<text x="28" y="34" fill="#eef6f0" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="800" text-anchor="start">Две разные гипотезы отсутствия</text>
+<text x="28" y="58" fill="#a8b7ae" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="400" text-anchor="start">Пост-2022 исчезновения и кейс 2026 года не должны объясняться одним механизмом.</text>
+<text x="470.0" y="76" fill="#7ccf9b" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="800" text-anchor="middle">После 2022</text>
+<text x="750.0" y="76" fill="#f87171" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="800" text-anchor="middle">Программа 2026</text>
+<text x="28" y="132" fill="#eef6f0" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="650" text-anchor="start">Политический / трансграничный контекст</text>
+<rect x="330" y="100" width="268" height="44" rx="9" fill="#7ccf9b" opacity="0.18" stroke="#7ccf9b" stroke-opacity="0.35"/>
+<text x="348" y="129" fill="#7ccf9b" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="750" text-anchor="start">сильная гипотеза</text>
+<rect x="610" y="100" width="268" height="44" rx="9" fill="#7f9187" opacity="0.18" stroke="#7f9187" stroke-opacity="0.35"/>
+<text x="628" y="129" fill="#7f9187" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="750" text-anchor="start">не главный механизм</text>
+<text x="28" y="186" fill="#eef6f0" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="650" text-anchor="start">Локальные личные отношения и программная селекция</text>
+<rect x="330" y="154" width="268" height="44" rx="9" fill="#f6b352" opacity="0.18" stroke="#f6b352" stroke-opacity="0.35"/>
+<text x="348" y="183" fill="#f6b352" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="750" text-anchor="start">требует осторожности</text>
+<rect x="610" y="154" width="268" height="44" rx="9" fill="#7ccf9b" opacity="0.18" stroke="#7ccf9b" stroke-opacity="0.35"/>
+<text x="628" y="183" fill="#7ccf9b" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="750" text-anchor="start">сильная гипотеза</text>
+<text x="28" y="240" fill="#eef6f0" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="650" text-anchor="start">Биографический уход / смерть</text>
+<rect x="330" y="208" width="268" height="44" rx="9" fill="#76a9ff" opacity="0.18" stroke="#76a9ff" stroke-opacity="0.35"/>
+<text x="348" y="237" fill="#76a9ff" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="750" text-anchor="start">проверять внешне</text>
+<rect x="610" y="208" width="268" height="44" rx="9" fill="#76a9ff" opacity="0.18" stroke="#76a9ff" stroke-opacity="0.35"/>
+<text x="628" y="237" fill="#76a9ff" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="750" text-anchor="start">проверять внешне</text>
+<text x="28" y="294" fill="#eef6f0" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="650" text-anchor="start">Активность вне архива</text>
+<rect x="330" y="262" width="268" height="44" rx="9" fill="#76a9ff" opacity="0.18" stroke="#76a9ff" stroke-opacity="0.35"/>
+<text x="348" y="291" fill="#76a9ff" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="750" text-anchor="start">ищем подтверждения</text>
+<rect x="610" y="262" width="268" height="44" rx="9" fill="#f87171" opacity="0.18" stroke="#f87171" stroke-opacity="0.35"/>
+<text x="628" y="291" fill="#f87171" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="750" text-anchor="start">критически важно</text>
+<text x="28" y="348" fill="#eef6f0" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="650" text-anchor="start">Ошибка корпуса / неполная программа</text>
+<rect x="330" y="316" width="268" height="44" rx="9" fill="#c084fc" opacity="0.18" stroke="#c084fc" stroke-opacity="0.35"/>
+<text x="348" y="345" fill="#c084fc" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="750" text-anchor="start">контроль данных</text>
+<rect x="610" y="316" width="268" height="44" rx="9" fill="#c084fc" opacity="0.18" stroke="#c084fc" stroke-opacity="0.35"/>
+<text x="628" y="345" fill="#c084fc" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="750" text-anchor="start">контроль данных</text>
+<text x="28" y="392" fill="#a8b7ae" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="400" text-anchor="start">Смысл для рецензента: gatekeeping-гипотеза становится сильнее только после исключения биографических и внешне-активностных альтернатив.</text>
+</svg>

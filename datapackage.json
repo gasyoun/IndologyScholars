@@ -1,7 +1,7 @@
 {
   "profile": "data-package",
   "schema_version": "1.0.0",
-  "generated": "2026-05-31",
+  "generated": "2026-06-01",
   "build": {
     "source": "IndologyScholars",
     "pipeline_version": "2026-05-25",
@@ -11,7 +11,7 @@
   "title": "Russian Indological Research Archive",
   "description": "Normalized archive of Russian Indological conference presentations and scholar profiles.",
   "homepage": "https://gasyoun.github.io/IndologyScholars/",
-  "created": "2026-05-31",
+  "created": "2026-06-01",
   "licenses": [
     {
       "name": "Apache-2.0",
@@ -968,6 +968,53 @@
           {
             "name": "review_status",
             "type": "string"
+          },
+          {
+            "name": "interpretation_note",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    {
+      "name": "senior-biographical-verification",
+      "path": "curation/senior_biographical_verification.csv",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "description": "Curated external sources used to check biographical alternatives for senior-generation absence rows.",
+      "schema": {
+        "fields": [
+          {
+            "name": "person_id",
+            "type": "string"
+          },
+          {
+            "name": "display_name",
+            "type": "string"
+          },
+          {
+            "name": "cohort_scope",
+            "type": "string"
+          },
+          {
+            "name": "external_status",
+            "type": "string"
+          },
+          {
+            "name": "source_title",
+            "type": "string"
+          },
+          {
+            "name": "source_url",
+            "type": "string"
+          },
+          {
+            "name": "source_date",
+            "type": "date"
+          },
+          {
+            "name": "checked_at",
+            "type": "date"
           },
           {
             "name": "interpretation_note",

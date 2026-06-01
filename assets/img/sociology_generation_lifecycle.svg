@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="930" height="430" viewBox="0 0 930 430" role="img">
+<rect width="930" height="430" fill="#101513"/>
+<text x="28" y="34" fill="#eef6f0" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="800" text-anchor="start">Жизненный цикл присутствия в конференционном архиве</text>
+<text x="28" y="58" fill="#a8b7ae" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="400" text-anchor="start">Сколько участников впервые появились в одном периоде и когда последний раз видны в корпусе.</text>
+<text x="285.0" y="87" fill="#a8b7ae" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle">2004-2010</text>
+<text x="435.0" y="87" fill="#a8b7ae" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle">2011-2016</text>
+<text x="585.0" y="87" fill="#a8b7ae" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle">2017-2022</text>
+<text x="735.0" y="87" fill="#a8b7ae" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle">2023-2026</text>
+<text x="28" y="140" fill="#a8b7ae" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="start">last 2004-2010</text>
+<text x="28" y="200" fill="#a8b7ae" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="start">last 2011-2016</text>
+<text x="28" y="260" fill="#a8b7ae" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="start">last 2017-2022</text>
+<text x="28" y="320" fill="#a8b7ae" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="start">last 2023-2026</text>
+<rect x="210" y="105" width="142" height="52" rx="8" fill="#7ccf9b" opacity="0.37"/>
+<text x="281.0" y="139" fill="#eef6f0" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="800" text-anchor="middle">21</text>
+<rect x="360" y="105" width="142" height="52" rx="8" fill="#7ccf9b" opacity="0.12"/>
+<text x="431.0" y="139" fill="#eef6f0" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="800" text-anchor="middle">0</text>
+<rect x="510" y="105" width="142" height="52" rx="8" fill="#7ccf9b" opacity="0.12"/>
+<text x="581.0" y="139" fill="#eef6f0" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="800" text-anchor="middle">0</text>
+<rect x="660" y="105" width="142" height="52" rx="8" fill="#7ccf9b" opacity="0.12"/>
+<text x="731.0" y="139" fill="#eef6f0" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="800" text-anchor="middle">0</text>
+<rect x="210" y="165" width="142" height="52" rx="8" fill="#7ccf9b" opacity="0.30"/>
+<text x="281.0" y="199" fill="#eef6f0" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="800" text-anchor="middle">15</text>
+<rect x="360" y="165" width="142" height="52" rx="8" fill="#7ccf9b" opacity="0.42"/>
+<text x="431.0" y="199" fill="#eef6f0" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="800" text-anchor="middle">26</text>
+<rect x="510" y="165" width="142" height="52" rx="8" fill="#7ccf9b" opacity="0.12"/>
+<text x="581.0" y="199" fill="#eef6f0" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="800" text-anchor="middle">0</text>
+<rect x="660" y="165" width="142" height="52" rx="8" fill="#7ccf9b" opacity="0.12"/>
+<text x="731.0" y="199" fill="#eef6f0" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="800" text-anchor="middle">0</text>
+<rect x="210" y="225" width="142" height="52" rx="8" fill="#7ccf9b" opacity="0.32"/>
+<text x="281.0" y="259" fill="#eef6f0" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="800" text-anchor="middle">17</text>
+<rect x="360" y="225" width="142" height="52" rx="8" fill="#7ccf9b" opacity="0.32"/>
+<text x="431.0" y="259" fill="#eef6f0" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="800" text-anchor="middle">17</text>
+<rect x="510" y="225" width="142" height="52" rx="8" fill="#7ccf9b" opacity="0.47"/>
+<text x="581.0" y="259" fill="#eef6f0" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="800" text-anchor="middle">30</text>
+<rect x="660" y="225" width="142" height="52" rx="8" fill="#7ccf9b" opacity="0.12"/>
+<text x="731.0" y="259" fill="#eef6f0" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="800" text-anchor="middle">0</text>
+<rect x="210" y="285" width="142" height="52" rx="8" fill="#7ccf9b" opacity="0.59"/>
+<text x="281.0" y="319" fill="#eef6f0" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="800" text-anchor="middle">40</text>
+<rect x="360" y="285" width="142" height="52" rx="8" fill="#7ccf9b" opacity="0.37"/>
+<text x="431.0" y="319" fill="#eef6f0" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="800" text-anchor="middle">21</text>
+<rect x="510" y="285" width="142" height="52" rx="8" fill="#7ccf9b" opacity="0.34"/>
+<text x="581.0" y="319" fill="#eef6f0" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="800" text-anchor="middle">19</text>
+<rect x="660" y="285" width="142" height="52" rx="8" fill="#7ccf9b" opacity="0.87"/>
+<text x="731.0" y="319" fill="#eef6f0" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="800" text-anchor="middle">64</text>
+<text x="28" y="386" fill="#a8b7ae" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="400" text-anchor="start">Читать по строкам и столбцам: верхний правый угол — быстро исчезнувшие ранние участники; нижний правый — новые участники, видимые сейчас.</text>
+<text x="28" y="408" fill="#7f9187" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="400" text-anchor="start">Это не биография, а только наблюдаемое присутствие в двух конференционных сериях.</text>
+</svg>

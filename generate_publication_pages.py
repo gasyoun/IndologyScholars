@@ -121,7 +121,9 @@ def generated_manifest_paths():
         "metrics-guide.html",
         "networks.html",
         "sociology.html",
+        "sociology-en.html",
         "gatekeeping.html",
+        "gatekeeping-en.html",
         "docs.html",
         "offline.html",
         "robots.txt",
@@ -132,7 +134,7 @@ def generated_manifest_paths():
         "site_data.json",
         "sitemap.xml",
     ]
-    directories = ["analytics_output", "assets", "cities", "conferences", "p", "findings", "generations", "gumilyov", "institutions", "keywords", "meso", "s", "themes", "topics", "videos", "curation"]
+    directories = ["analytics_output", "assets", "cities", "conferences", "p", "findings", "generations", "gumilyov", "institutions", "keywords", "meso", "s", "themes", "topics", "videos", "curation", "docs"]
     paths = [Path(path) for path in roots]
     for dirname in directories:
         root = Path(dirname)
@@ -1319,6 +1321,26 @@ keywords:
                 },
             },
             {
+                "name": "senior-biographical-verification",
+                "path": "curation/senior_biographical_verification.csv",
+                "format": "csv",
+                "mediatype": "text/csv",
+                "description": "Curated external sources used to check biographical alternatives for senior-generation absence rows.",
+                "schema": {
+                    "fields": [
+                        {"name": "person_id", "type": "string"},
+                        {"name": "display_name", "type": "string"},
+                        {"name": "cohort_scope", "type": "string"},
+                        {"name": "external_status", "type": "string"},
+                        {"name": "source_title", "type": "string"},
+                        {"name": "source_url", "type": "string"},
+                        {"name": "source_date", "type": "date"},
+                        {"name": "checked_at", "type": "date"},
+                        {"name": "interpretation_note", "type": "string"},
+                    ]
+                },
+            },
+            {
                 "name": "presentation-person-exclusions",
                 "path": "curation/presentation_person_exclusions.csv",
                 "format": "csv",
@@ -1774,6 +1796,7 @@ def generate_download_page(data):
         ("FAIR reuse audit", "analytics_output/fair_reuse_maturity_audit.csv", "Findability, accessibility, interoperability, and reusability checklist for release review."),
         ("Coauthorship review", "analytics_output/coauthorship_review.csv", "Source-backed review queue for multi-person presentation lines before treating them as coauthorship."),
         ("Senior absence audit", "analytics_output/senior_absence_audit.csv", "Review queue for frequent senior-generation participants absent after 2022 or from the 2026 programme."),
+        ("Senior biographical verification", "curation/senior_biographical_verification.csv", "Curated external sources used to check whether senior-generation absence rows can be explained biographically."),
         ("Presentation-person exclusions", "curation/presentation_person_exclusions.csv", "Curated removals of machine-parsed presentation-person links after human review."),
         ("Verified affiliation spans", "curation/verified_affiliation_spans.csv", "Dated, source-backed institutional trajectories; tentative open continuations into later gaps are marked (?)."),
         ("YouTube video list", "analytics_output/youtube_video_list.csv", "Source inventory of collected recordings; public discovery is attached to presentation records."),
@@ -10550,28 +10573,54 @@ EXPERT_REVIEW_EXAMPLE_IDS = [
 
 ARTICLE_STYLE = """
     <style>
-        .article-container { max-width: 920px; line-height: 1.7; }
+        .article-container { max-width: 980px; line-height: 1.7; }
         .article-container h3 { font-size: 1.2rem; color: var(--text); margin: 1.8rem 0 0.75rem; }
         .article-container p, .article-container li { color: var(--muted); }
         .article-container li { margin-bottom: 0.6rem; }
         .note { border-left: 3px solid var(--accent); background: var(--panel); padding: 1rem 1.25rem; border-radius: 0 8px 8px 0; margin: 1.5rem 0; color: var(--muted); }
+        .warning-note { border-left-color: #f87171; }
         .two-col { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+        .three-col { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin: 1.5rem 0; }
         .mini-card { border: 1px solid var(--border); border-radius: 8px; padding: 1rem; background: var(--panel); }
         .mini-card strong { color: #fff; }
+        .mini-card .kicker { color: var(--soft); display: block; font-size: 0.78rem; letter-spacing: 0; text-transform: uppercase; margin-bottom: 0.35rem; }
+        .evidence-badges { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1rem 0 1.5rem; }
+        .badge { border: 1px solid var(--border); border-radius: 999px; color: var(--muted); background: var(--panel); padding: 0.25rem 0.7rem; font-size: 0.82rem; }
+        .badge strong { color: #fff; }
         table.data { width: 100%; border-collapse: collapse; margin: 1rem 0 1.5rem; font-size: 0.92rem; }
         table.data th, table.data td { border-bottom: 1px solid var(--border); padding: 0.65rem 0.5rem; text-align: left; vertical-align: top; }
         table.data th { color: #fff; font-weight: 600; }
         table.data td { color: var(--muted); }
-        .article-figure { max-width: 100%; height: auto; border-radius: 12px; margin: 2rem 0 1rem; border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+        .article-figure { width: 100%; max-width: 100%; height: auto; border-radius: 12px; margin: 2rem 0 1rem; border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.3); background: #101513; }
         .article-caption { font-size: 0.9rem; color: var(--soft); margin-bottom: 2rem; font-style: italic; }
         .article-container blockquote { border-left: 4px solid var(--accent); background: var(--panel); padding: 1rem 1.5rem; margin: 2rem 0; border-radius: 0 8px 8px 0; font-style: italic; color: var(--muted); }
-        @media (max-width: 760px) { .two-col { grid-template-columns: 1fr; } }
+        .lang-switch { margin-top: 1rem; }
+        .lang-switch a { display: inline-block; border: 1px solid var(--border); border-radius: 999px; padding: 0.35rem 0.8rem; text-decoration: none; color: var(--text); background: var(--panel); }
+        @media (max-width: 760px) { .two-col, .three-col { grid-template-columns: 1fr; } table.data { font-size: 0.84rem; } }
     </style>
 """
 
 
-def _senior_absence_rows(audit_rows, cohort):
+SENIOR_STATUS_RU = {
+    "active_or_current_profile": "активный/текущий профиль",
+    "external_activity_after_2022": "внешняя активность после 2022",
+    "biographical_profile_no_death_marker": "биографический профиль без отметки смерти",
+    "needs_stronger_biographical_source": "нужен более сильный источник",
+}
+
+
+SENIOR_STATUS_EN = {
+    "active_or_current_profile": "active/current profile",
+    "external_activity_after_2022": "external activity after 2022",
+    "biographical_profile_no_death_marker": "biographical profile without a death marker",
+    "needs_stronger_biographical_source": "stronger source needed",
+}
+
+
+def _senior_absence_rows(audit_rows, cohort, bio_rows=None, lang="ru"):
     selected = [row for row in audit_rows if row.get("cohort") == cohort]
+    bio_by_person = {row.get("person_id"): row for row in (bio_rows or [])}
+    labels = SENIOR_STATUS_EN if lang == "en" else SENIOR_STATUS_RU
 
     def sort_key(row):
         try:
@@ -10581,30 +10630,51 @@ def _senior_absence_rows(audit_rows, cohort):
         return (-talks, row.get("display_name") or "")
 
     selected.sort(key=sort_key)
-    return "".join(
-        f"<tr><td>{esc(row.get('display_name'))}</td>"
-        f"<td>{esc(row.get('birth_year'))}</td>"
-        f"<td>{esc(row.get('talks_before_threshold'))}</td>"
-        f"<td>{esc(row.get('last_year'))}</td></tr>"
-        for row in selected
-    )
+    rows = []
+    for row in selected:
+        bio = bio_by_person.get(row.get("person_id"), {})
+        status = labels.get(bio.get("external_status"), bio.get("external_status") or "review")
+        source_url = bio.get("source_url") or ""
+        source_title = bio.get("source_title") or ("source" if lang == "en" else "источник")
+        source_cell = f'<a href="{esc(source_url)}">{esc(source_title)}</a>' if source_url else esc(status)
+        rows.append(
+            f"<tr><td>{esc(row.get('display_name'))}</td>"
+            f"<td>{esc(row.get('birth_year'))}</td>"
+            f"<td>{esc(row.get('talks_before_threshold'))}</td>"
+            f"<td>{esc(row.get('last_year'))}</td>"
+            f"<td>{esc(status)}<br>{source_cell}</td></tr>"
+        )
+    return "".join(rows)
 
 
 def generate_sociology_page():
     audit_rows = load_csv_rows("analytics_output/senior_absence_audit.csv")
-    absent_after_2022 = _senior_absence_rows(audit_rows, "absent_after_2022")
-    absent_in_2026 = _senior_absence_rows(audit_rows, "absent_in_2026")
+    bio_rows = load_csv_rows("curation/senior_biographical_verification.csv")
+    coauthor_count = len(load_csv_rows("analytics_output/coauthorship_review.csv"))
+    network_check_count = len(load_csv_rows("analytics_output/network_robustness_checks.csv"))
+    absent_after_2022 = _senior_absence_rows(audit_rows, "absent_after_2022", bio_rows)
+    absent_in_2026 = _senior_absence_rows(audit_rows, "absent_in_2026", bio_rows)
+    absent_after_2022_en = _senior_absence_rows(audit_rows, "absent_after_2022", bio_rows, lang="en")
+    absent_in_2026_en = _senior_absence_rows(audit_rows, "absent_in_2026", bio_rows, lang="en")
     body = f"""
         <header>
             <h1>Социология российской индологии: как читать конференционный архив</h1>
             <p>Институции, поколения, сетевые сообщества и конференционные площадки российской индологии.</p>
+            <p class="lang-switch"><a href="sociology-en.html">English version</a></p>
         </header>
         <div class="article-container">
             <article>
             <p>Эта страница шире, чем сюжет о гейткипинге. Она описывает поле как живую инфраструктуру: кто приходит на площадки, какие институты удерживают ядро, где возникают сетевые сообщества, как меняется поколенческий баланс и какие выводы нельзя делать без ручной проверки.</p>
 
             <div class="note">
-                Конференционные программы показывают наблюдаемую публичную активность, а не полную академическую биографию. Поэтому здесь важны не рейтинги людей, а структура поля: регулярность участия, мосты между площадками, паузы, возвращения и зоны, где данные требуют человека.
+                Для редакции и рецензентов эта страница устроена как гибрид: короткое эссе плюс проверяемые визуальные блоки. Конференционные программы показывают наблюдаемую публичную активность, а не полную академическую биографию.
+            </div>
+
+            <div class="evidence-badges">
+                <span class="badge"><strong>Наблюдение:</strong> строки программ</span>
+                <span class="badge"><strong>Метрика:</strong> сеть и годы участия</span>
+                <span class="badge"><strong>Гипотеза:</strong> механизм отсутствия</span>
+                <span class="badge"><strong>Ручная проверка:</strong> биография и мотив</span>
             </div>
 
             <h2>1. Институциональная экология</h2>
@@ -10616,21 +10686,27 @@ def generate_sociology_page():
             </div>
 
             <h2>2. Поколения и смена присутствия</h2>
-            <p>Для социологии науки важны не только новички, но и исчезновения из программы. Ниже приведен строгий технический срез: участники старшего поколения с известным годом рождения не позже 1960 года, не менее чем пятью прежними выступлениями и пустым полем `death_year` в локальной базе. Это не утверждение о биографическом статусе; перед публикацией как факта список надо сверить вручную.</p>
+            <p>Для социологии науки важны не только новички, но и исчезновения из программы. Сама по себе пустота в строке календаря ничего не доказывает: это может быть смерть, болезнь, политический разрыв после 2022 года, личный выбор или программный фильтр. Поэтому ниже отсутствия разведены на две гипотезы и снабжены внешней биографической проверкой.</p>
+
+            <img class="article-figure" src="assets/img/sociology_generation_lifecycle.svg" alt="Матрица первого и последнего появления участников в архиве">
+            <div class="article-caption">Рис. 1. Матрица показывает жизненный цикл наблюдаемого присутствия: когда участники впервые появились в программах и в какой период последний раз видны в корпусе. Это не рейтинг и не биография, а карта публичной конференционной видимости.</div>
+
+            <img class="article-figure" src="assets/img/senior_absence_timeline.svg" alt="Таймлайн присутствия частых участников старшего поколения">
+            <div class="article-caption">Рис. 2. Таймлайн помогает увидеть, что «после 2022» и «в 2026» являются разными вопросами. Первый блок может быть связан с политическим и трансграничным контекстом вокруг РФ; второй требует отдельной проверки локальной программной селекции и личных отношений.</div>
 
             <h3>Частые участники старшего поколения, которых не видно после 2022 года</h3>
             <table class="data">
-                <thead><tr><th>Участник</th><th>Год рождения</th><th>Докладов до 2023</th><th>Последний год в архиве</th></tr></thead>
+                <thead><tr><th>Участник</th><th>Год рождения</th><th>Докладов до 2023</th><th>Последний год</th><th>Внешняя проверка</th></tr></thead>
                 <tbody>{absent_after_2022}</tbody>
             </table>
 
             <h3>Частые участники старшего поколения, отсутствующие в программе 2026 года</h3>
             <table class="data">
-                <thead><tr><th>Участник</th><th>Год рождения</th><th>Докладов до 2026</th><th>Последний год в архиве</th></tr></thead>
+                <thead><tr><th>Участник</th><th>Год рождения</th><th>Докладов до 2026</th><th>Последний год</th><th>Внешняя проверка</th></tr></thead>
                 <tbody>{absent_in_2026}</tbody>
             </table>
 
-            <p>Машиночитаемая очередь проверки собирается в <a href="analytics_output/senior_absence_audit.csv">senior_absence_audit.csv</a>. Для научного текста лучше формулировать это осторожно: «не представлены в текущем корпусе после такого-то года», а не «ушли из поля».</p>
+            <p>Машиночитаемая очередь проверки собирается в <a href="analytics_output/senior_absence_audit.csv">senior_absence_audit.csv</a>, а внешние биографические источники — в <a href="curation/senior_biographical_verification.csv">senior_biographical_verification.csv</a>. Строки со статусом «нужен более сильный источник» не должны использоваться для публичных биографических утверждений без ручной проверки.</p>
 
             <h2>3. Сетевые посредники</h2>
             <p>Термин «брокер» в русском тексте звучит слишком экономически и иногда сбивает. Для страницы и подписей лучше использовать «сетевой посредник», «участник-связка» или «связующий участник». Тогда смысл остается тем же: это не начальник и не самый продуктивный автор, а человек, через которого разные группы оказываются соединены.</p>
@@ -10639,12 +10715,16 @@ def generate_sociology_page():
             <p>Сюжет об исключении, программных фильтрах и поколенческом конфликте вынесен на отдельную страницу: <a href="gatekeeping.html">академический гейткипинг</a>. Так <code>sociology.html</code> остается обзорной рамкой, а более острый анализ не подменяет всю социологию науки.</p>
 
             <h2>5. Что должен проверять человек</h2>
+            <img class="article-figure" src="assets/img/sociology_review_dashboard.svg" alt="Панель очередей человеческой проверки">
+            <div class="article-caption">Рис. 3. Панель показывает, где вычисления прекращаются и начинается редакторская работа: {coauthor_count} строк потенциального соавторства, {len(audit_rows)} строк отсутствия старших участников, {len(bio_rows)} внешних биографических проверок и {network_check_count} сетевых ограничений.</div>
             <ul>
                 <li>Списки отсутствующих участников: смерть, болезнь, смена темы, эмиграция, личный выбор и программный фильтр выглядят одинаково в голой таблице.</li>
                 <li>Соавторство: строка с двумя именами в программе не всегда означает устойчивую научную коллаборацию.</li>
                 <li>Аффилиации: РАН, университет, музей, библиотека и независимый статус не всегда исчерпывают реальное место работы.</li>
                 <li>Сетевые выводы: совместная сессия, совместный доклад, тема и институция являются разными типами связи.</li>
             </ul>
+
+            <p>Редакционные решения по аудитории, именованию людей и силе утверждений вынесены в <a href="docs/sociology-gatekeeping-editorial-decisions.md">мета-документ</a>.</p>
             </article>
         </div>
     """
@@ -10662,56 +10742,143 @@ def generate_sociology_page():
             extra_head=ARTICLE_STYLE,
         ),
     )
+    body_en = f"""
+        <header>
+            <h1>Sociology of Russian Indology: how to read a conference archive</h1>
+            <p>Institutions, generations, network communities, and programme visibility.</p>
+            <p class="lang-switch"><a href="sociology.html">Русская версия</a></p>
+        </header>
+        <div class="article-container">
+            <article>
+            <p>This page is broader than the gatekeeping case. It treats the archive as a field observatory: who appears in conference programmes, which institutions hold the visible core, where network communities emerge, and which conclusions require human review.</p>
+            <div class="note">For editors and reviewers, the page is designed as a hybrid: a short essay plus inspectable visual evidence. Programme data show public conference activity, not a complete scholarly biography.</div>
+            <div class="evidence-badges">
+                <span class="badge"><strong>Observation:</strong> programme records</span>
+                <span class="badge"><strong>Metric:</strong> network and participation years</span>
+                <span class="badge"><strong>Hypothesis:</strong> mechanism of absence</span>
+                <span class="badge"><strong>Human review:</strong> biography and motive</span>
+            </div>
+
+            <h2>1. Institutional ecology</h2>
+            <p>Russian Indology is not held only by RAS institutes and classical universities. The corpus also shows museum, library, regional, independent, and inter-institutional trajectories. This matters because horizontal collaboration often appears outside a single department or laboratory.</p>
+            <div class="two-col">
+                <div class="mini-card"><strong>Formal venues.</strong><br>Zograf and Roerich Readings register a public face of the field: who is invited, who returns, and which themes receive programme space.</div>
+                <div class="mini-card"><strong>Network communities.</strong><br>Informal communities are visible through repeated themes, shared sessions, cross-city ties, and external activity, but should not be reduced to the American "invisible college" model.</div>
+            </div>
+
+            <h2>2. Generations and changing presence</h2>
+            <p>Absence from a programme is not self-explanatory. It may reflect death, illness, the post-2022 political rupture, personal choice, or programme filtering. The page therefore separates post-2022 absence from the 2026 programme case.</p>
+            <img class="article-figure" src="assets/img/sociology_generation_lifecycle.svg" alt="Matrix of first and last observed appearances">
+            <div class="article-caption">Figure 1. The matrix shows when participants first entered the programmes and when they were last visible in the corpus. It is a map of public conference visibility, not a biography or ranking.</div>
+            <img class="article-figure" src="assets/img/senior_absence_timeline.svg" alt="Timeline of frequent senior-generation participants">
+            <div class="article-caption">Figure 2. The timeline separates two questions: post-2022 absences, which may reflect political and cross-border context around Russia, and 2026 absences, which require a separate programme-selection review.</div>
+
+            <h3>Frequent senior-generation participants not visible after 2022</h3>
+            <table class="data"><thead><tr><th>Participant</th><th>Born</th><th>Talks before 2023</th><th>Last year</th><th>External check</th></tr></thead><tbody>{absent_after_2022_en}</tbody></table>
+
+            <h3>Frequent senior-generation participants absent from the 2026 programme</h3>
+            <table class="data"><thead><tr><th>Participant</th><th>Born</th><th>Talks before 2026</th><th>Last year</th><th>External check</th></tr></thead><tbody>{absent_in_2026_en}</tbody></table>
+
+            <p>The machine-readable review queue is <a href="analytics_output/senior_absence_audit.csv">senior_absence_audit.csv</a>; curated external biographical checks are in <a href="curation/senior_biographical_verification.csv">senior_biographical_verification.csv</a>.</p>
+
+            <h2>3. Network mediators</h2>
+            <p>The Russian page avoids using "broker" as the main public term. The intended meaning is a network mediator: a participant through whom otherwise weakly connected groups become connected.</p>
+
+            <h2>4. Gatekeeping as a focused case</h2>
+            <p>The more charged question of programme filters and generational conflict is separated into <a href="gatekeeping-en.html">the gatekeeping page</a>. This keeps the sociology page as a broad field overview.</p>
+
+            <h2>5. Where human review is needed</h2>
+            <img class="article-figure" src="assets/img/sociology_review_dashboard.svg" alt="Human review dashboard">
+            <div class="article-caption">Figure 3. The dashboard marks the boundary between computation and editorial review: {coauthor_count} potential coauthorship lines, {len(audit_rows)} senior-absence rows, {len(bio_rows)} external biographical checks, and {network_check_count} network caveats.</div>
+            <p>Editorial choices about audience, naming, and claim strength are recorded in the <a href="docs/sociology-gatekeeping-editorial-decisions.md">meta-document</a>.</p>
+            </article>
+        </div>
+    """
+    write_text(
+        "sociology-en.html",
+        page_shell(
+            f"Sociology of Russian Indology | {SITE_NAME}",
+            "A field-sociology overview of Russian Indology: institutions, generations, network communities, and review limits.",
+            "sociology-en.html",
+            body_en,
+            [
+                page_data("Sociology of Russian Indology", "Institutions, generations, network communities, and review limits.", "sociology-en.html"),
+                make_breadcrumbs([("Home", ""), ("Sociology of science", "sociology-en.html")]),
+            ],
+            extra_head=ARTICLE_STYLE,
+        ),
+    )
 
 
 def generate_gatekeeping_page():
     body = """
         <header>
-            <h1>Сетевые посредники и академический гейткипинг: социология конфликта поколений в отечественной индологии</h1>
+            <h1>Гейткипинг как проверяемая гипотеза: сетевые посредники и программа 2026 года</h1>
             <p>Сетевые эффекты, конфликт поколений и институциональные фильтры в российской индологии.</p>
+            <p class="lang-switch"><a href="gatekeeping-en.html">English version</a></p>
         </header>
         <div class="article-container">
             <article>
+            <div class="note warning-note">
+                Эта страница формулирует «институциональный фильтр» как гипотезу, а не как доказанное обвинение. Данные архива показывают структуру присутствия и отсутствия; мотивы программной селекции требуют внешней проверки и редакторской осторожности.
+            </div>
+
+            <div class="evidence-badges">
+                <span class="badge"><strong>Наблюдение:</strong> отсутствия в программе</span>
+                <span class="badge"><strong>Метрика:</strong> центральность и связность</span>
+                <span class="badge"><strong>Гипотеза:</strong> институциональный фильтр</span>
+                <span class="badge"><strong>Не доказано:</strong> мотив и намерение</span>
+            </div>
+
             <h2>Смена сетевой парадигмы: от иерархии к распределенному посредничеству</h2>
-            <p>В перспективе современной социологии науки (sociology of science) и структурного анализа сетей соавторств и научных коммуникаций мы наблюдаем фундаментальный поколенческий сдвиг. Долгое время архитектура индологического сообщества носила ярко выраженный центростремительный иерархический характер: авторитет концентрировался вокруг фигур старшего поколения, обладавших монополией на символический капитал и ресурсы.</p>
+            <p>В перспективе современной социологии науки и структурного анализа научных коммуникаций архив позволяет обсуждать поколенческий сдвиг: часть связности поля создается не только вертикальными институциями, но и горизонтальными сетевыми посредниками.</p>
 
             <p>Однако анализ динамики графа научных связей за последние годы демонстрирует феномен «структурных дыр» (по Р. Бёрту) и формирование новых узлов плотности. Молодые ученые, обладая более гибкими междисциплинарными связями и цифровой мобильностью, начали выступать в роли <strong>сетевых посредников</strong>. Они соединяют ранее изолированные академические кластеры, инициируют горизонтальные коллаборации и формируют собственные площадки, в том числе за пределами аффилиаций РАН и классических университетов.</p>
 
             <h2>Теоретический фундамент: от монополии к сетевым сообществам</h2>
-            <p>Текущие процессы в индологическом сообществе наиболее точно описываются через классические концепции социологии науки:</p>
+            <p>Текущие процессы можно описывать через несколько осторожных концептов социологии науки:</p>
             <ul>
-                <li><strong>Символическое насилие (Пьер Бурдье):</strong> В терминах работы «Homo Academicus», старшее поколение использует административный контроль (решения программных комитетов) для воспроизводства собственной власти и маргинализации конкурентов.</li>
-                <li><strong>Сетевые сообщества:</strong> Исключенная группа сформировала автономную горизонтальную среду обмена, которая за счет высокой связности стала восприниматься иерархией как институциональная угроза.</li>
+                <li><strong>Поле и символический капитал:</strong> программа конференции является не только расписанием, но и механизмом публичного признания.</li>
+                <li><strong>Boundary work:</strong> программная селекция может выглядеть как защита границ дисциплины, даже когда ее социальный эффект похож на исключение.</li>
+                <li><strong>Сетевые сообщества:</strong> горизонтальные группы могут сохранять активность вне одной площадки и тем самым становиться менее зависимыми от локального центра.</li>
             </ul>
 
-            <h3>Boundary Work и эпистемологический консерватизм</h3>
-            <p>Важно отметить, что с позиции консервативной элиты процессы исключения редко воспринимаются как осознанная цензура. В терминах социолога Томаса Гирина (Thomas Gieryn), мы наблюдаем классическую <strong>«boundary work» (работу по демаркации границ)</strong>. Старшее поколение искренне верит, что защищает «чистую» академическую науку от профанации. Конфликт поколений маскирует глубокий <em>эпистемический сдвиг</em> (по Т. Куну): молодое поколение использует цифровые методы (Digital Humanities), количественный анализ текстов и неклассические философские парадигмы. То, что элита маркирует как «низкое академическое качество», на деле является просто иной, более современной эпистемологической парадигмой, не укладывающейся в старые лекала текстологии.</p>
+            <h3>Что именно проверяется</h3>
+            <p>Кейс 2026 года не следует смешивать с пост-2022 исчезновениями из корпуса. После 2022 года часть отсутствий может быть связана с политическим и трансграничным контекстом вокруг РФ. В 2026 году проверяется другой механизм: локальная программная селекция и личные отношения внутри поля.</p>
+
+            <img class="article-figure" src="assets/img/gatekeeping_hypothesis_matrix.svg" alt="Матрица альтернативных гипотез отсутствия">
+            <div class="article-caption">Рис. 1. Матрица показывает, какие объяснения сильнее для пост-2022 отсутствий и какие — для программы 2026 года. Для рецензента важно, что гипотеза институционального фильтра становится сильнее только после проверки биографических, внешне-активностных и корпусных альтернатив.</div>
 
             <h2>Методология визуализации и доказательная база</h2>
-            <p>Для наглядной демонстрации этого процесса мы применили инструменты сетевого анализа (Network Analysis). Используя алгоритм Betweenness Centrality (степень посредничества), мы визуализировали поколенческий сдвиг:</p>
+            <p>Для наглядной демонстрации процесса используется сетевой анализ. Betweenness centrality здесь читается не как «качество ученого», а как мера того, насколько часто участник оказывается связующим звеном между частями наблюдаемой конференционной сети.</p>
 
             <img class="article-figure" src="assets/img/brokerage_scatter.png" alt="Сетевая центральность vs Год первого доклада">
-            <div class="article-caption">Рис 1. Каждая точка — участник архива: по горизонтали показан год первого появления в программах, по вертикали — насколько часто этот участник оказывается связующим звеном между разными частями сети. Красные точки нужно читать не как «лучших» или «самых продуктивных», а как людей, через которых проходят необычно многие связи для их поколения. Иными словами, они чаще других соединяют группы, которые иначе оставались бы слабее связаны.</div>
+            <div class="article-caption">Рис. 2. Каждая точка — участник архива: по горизонтали показан год первого появления в программах, по вертикали — насколько часто этот участник оказывается связующим звеном между разными частями сети. Красные точки нужно читать не как «лучших» или «самых продуктивных», а как людей, через которых проходят необычно многие связи для их поколения.</div>
 
-            <h3>Институциональная власть против внешнего импакта (External Validation)</h3>
-            <p>Старшее поколение склонно упрекать сетевых посредников в «имитации науки» и подмене качества количеством связей. Однако эта критика нуждается во внешней проверке наукометрическими и просопографическими критериями. В то время как «гейткиперы» контролируют трибуну конкретной конференции, группа сетевых посредников демонстрирует активность на независимых площадках, интеграцию в международные исследовательские проекты и видимость за пределами одного институционального контура.</p>
+            <h3>Не одна сеть, а несколько типов связей</h3>
+            <p>Рецензентская защита аргумента зависит от того, не смешиваем ли мы разные типы связи. Совместный доклад, одна сессия, общая тема, общее событие и общая институция отвечают на разные вопросы.</p>
+
+            <img class="article-figure" src="assets/img/gatekeeping_network_layers.svg" alt="Сравнение типов сетевых связей">
+            <div class="article-caption">Рис. 3. Слои сети разведены по смыслу. Это нужно, чтобы визуально убедительный граф не подменял вопрос: соавторство, сосуществование в сессии и общая тематическая область — не одно и то же.</div>
 
             <h3>Эффект исключения: очищение или структурная деградация?</h3>
-            <p>Защитники сложившегося порядка могут утверждать, что исключение гиперактивных молодых узлов ведет к «очищению» сети от информационного шума и повышению её академической плотности. Математическое моделирование графа опровергает этот тезис.</p>
+            <p>Если из сети убрать связующих участников, можно проверить не мотив исключения, а структурный эффект: поле становится плотнее или, наоборот, дробится на более мелкие острова.</p>
 
             <img class="article-figure" src="assets/img/network_degradation.png" alt="Деградация связности графа">
-            <div class="article-caption">Рис 2. Это мысленный эксперимент: из сети временно убирается группа связующих участников, а затем сравнивается форма сообщества «до» и «после». Если после удаления растет число маленьких островков, значит люди хуже соединены друг с другом через общие площадки. Если уменьшается центральное ядро, значит сокращается та часть сообщества, где большинство участников остаются связаны хотя бы косвенно. Для гуманитарного чтения графика главное не формула, а направление изменения: исключение посредников делает поле более раздробленным.</div>
+            <div class="article-caption">Рис. 4. Это мысленный эксперимент: из сети временно убирается группа связующих участников, а затем сравнивается форма сообщества «до» и «после». Если после удаления растет число маленьких островков, значит люди хуже соединены друг с другом через общие площадки. Для гуманитарного чтения графика главное не формула, а направление изменения.</div>
 
-            <p>Симуляция "отмены" на исторических данных демонстрирует резкое падение связности всего сообщества. Удар наносится не просто по отдельным ученым, а по всей архитектуре научных связей. Более того, административная цензура порождает огромный <strong>«побочный ущерб» (collateral damage)</strong>. Сетевые посредники служат социальными лифтами для студентов и молодых исследователей. Исключение лидеров этого сетевого сообщества автоматически лишает голоса привязанную к ним молодежь, изолируя целое поколение исследователей от официального академического ядра.</p>
+            <p>Симуляция не доказывает цензуру, но показывает возможный побочный ущерб программного фильтра: исключение сетевых посредников способно ослабить связи между группами и сократить доступ молодых участников к видимому ядру конференционной инфраструктуры.</p>
 
             <h2>Кейс 2026 года: проверка нулевой гипотезы</h2>
-            <p>Ярким эмпирическим подтверждением описанной тенденции стали события 2026 года и синхронное «исчезновение» из программы конференций пула активных исследователей молодого поколения (М. Гасунс, О. Ерченков, Е. Дмитриева, Е. Зорина).</p>
+            <p>В кейсе 2026 года проверяется синхронное отсутствие из программы пула активных исследователей молодого и среднего поколения: М. Гасунс, О. Ерченков, Е. Дмитриева, Е. Зорина. Имена приводятся для аудита источников; интерпретация остается структурной, а не персонально-обвинительной.</p>
 
-            <p>Чтобы исключить <strong>нулевую гипотезу</strong> (предположение о том, что эти авторы просто снизили академическую активность, не подали заявки или покинули науку), мы проанализировали их активность на внешних площадках в этот же период. Анализ подтверждает стабильно высокий или растущий уровень публикаций, переводов и грантовой активности данной группы вне контролируемого элитой контура в 2025-2026 годах.</p>
+            <p>Нулевая гипотеза проста: эти авторы могли снизить активность, сменить тему, не подать заявку или выйти из поля. Гипотеза институционального фильтра становится сильнее только если внешние источники показывают продолжающуюся активность, а программа одновременно теряет именно связующую группу. Этот шаг должен быть оформлен как отдельная таблица внешней проверки, а не как риторическое утверждение.</p>
 
             <blockquote>
-                Следовательно, их отсутствие в программе — это статистическая аномалия, требующая проверки на институциональный фильтр. С точки зрения социологии науки, это может быть попыткой законсервировать распадающуюся парадигму через <em>цензуру и исключение</em>. Однако, как показывает история науки, подобные практики академического бойкота не останавливают развитие горизонтальных сетей. Они лишь ускоряют изоляцию самой консервативной элиты, превращая когда-то открытую научную конференцию в закрытый, стагнирующий клуб.
+                Осторожная формула для рецензируемого текста: «наблюдаемая конфигурация совместима с гипотезой институционального фильтра, но не доказывает мотив; для усиления вывода нужны внешние данные об активности исключенной группы и документированная проверка альтернативных объяснений».
             </blockquote>
+
+            <p>Редакционные решения по аудитории, именованию людей и силе утверждений вынесены в <a href="docs/sociology-gatekeeping-editorial-decisions.md">мета-документ</a>.</p>
             </article>
         </div>
     """
@@ -10725,6 +10892,75 @@ def generate_gatekeeping_page():
             [
                 page_data("Академический гейткипинг", "Сетевые посредники, конфликт поколений и институциональные фильтры в российской индологии.", "gatekeeping.html"),
                 make_breadcrumbs([("Главная", ""), ("Социология науки", "sociology.html"), ("Академический гейткипинг", "gatekeeping.html")]),
+            ],
+            extra_head=ARTICLE_STYLE,
+        ),
+    )
+    body_en = """
+        <header>
+            <h1>Gatekeeping as a testable hypothesis: network mediators and the 2026 programme</h1>
+            <p>Network effects, generational conflict, and institutional filters in Russian Indology.</p>
+            <p class="lang-switch"><a href="gatekeeping.html">Русская версия</a></p>
+        </header>
+        <div class="article-container">
+            <article>
+            <div class="note warning-note">This page treats "institutional filtering" as a hypothesis, not as a proven accusation. The archive can show presence, absence, and network effects; motive and intent require external evidence and editorial caution.</div>
+            <div class="evidence-badges">
+                <span class="badge"><strong>Observation:</strong> programme absence</span>
+                <span class="badge"><strong>Metric:</strong> centrality and connectivity</span>
+                <span class="badge"><strong>Hypothesis:</strong> institutional filter</span>
+                <span class="badge"><strong>Not proven:</strong> motive and intent</span>
+            </div>
+
+            <h2>From hierarchy to distributed mediation</h2>
+            <p>The archive allows us to discuss a generational shift: some of the field's connectivity is produced not only by vertical institutions, but also by horizontal network mediators.</p>
+            <p>Network mediators connect otherwise weakly linked clusters, initiate horizontal collaboration, and build venues outside a single RAS or classical-university affiliation.</p>
+
+            <h2>Theoretical frame</h2>
+            <ul>
+                <li><strong>Field and symbolic capital:</strong> a conference programme is not just a schedule; it is also a mechanism of public recognition.</li>
+                <li><strong>Boundary work:</strong> programme selection may appear as disciplinary boundary maintenance while producing exclusion-like effects.</li>
+                <li><strong>Network communities:</strong> horizontal groups may remain active outside one venue and become less dependent on a local centre.</li>
+            </ul>
+
+            <h3>What is being tested</h3>
+            <p>The 2026 case should not be mixed with post-2022 absences. Post-2022 absence may reflect the political and cross-border context around Russia. The 2026 case tests a different mechanism: local programme selection and personal relations inside the field.</p>
+            <img class="article-figure" src="assets/img/gatekeeping_hypothesis_matrix.svg" alt="Matrix of alternative absence hypotheses">
+            <div class="article-caption">Figure 1. The matrix separates explanations for post-2022 absences and the 2026 programme case. The institutional-filter hypothesis becomes stronger only after biographical, external-activity, and corpus-completeness alternatives are checked.</div>
+
+            <h2>Visualization and evidence</h2>
+            <p>Betweenness centrality is used here not as a quality score, but as a measure of how often a participant links otherwise separate parts of the observed conference network.</p>
+            <img class="article-figure" src="assets/img/brokerage_scatter.png" alt="Network centrality by first observed year">
+            <div class="article-caption">Figure 2. Each point is a participant. Red points should be read as unusually connective for their generation, not as "better" or "more productive" scholars.</div>
+
+            <h3>Several networks, not one</h3>
+            <p>Joint presentation, same session, same topic, same event, and same institution answer different questions. The argument is stronger when these layers are kept separate.</p>
+            <img class="article-figure" src="assets/img/gatekeeping_network_layers.svg" alt="Comparison of network edge types">
+            <div class="article-caption">Figure 3. The layers are separated by meaning so that a visually persuasive graph does not answer the wrong question.</div>
+
+            <h3>Exclusion effect</h3>
+            <p>Removing connective participants cannot prove censorship, but it can test the structural effect: does the field become denser, or does it fragment into smaller islands?</p>
+            <img class="article-figure" src="assets/img/network_degradation.png" alt="Network degradation after removing mediators">
+            <div class="article-caption">Figure 4. The thought experiment removes a group of connective participants and compares the community before and after. The key humanities-readable point is the direction of change, not the formula.</div>
+
+            <h2>The 2026 case</h2>
+            <p>The 2026 case tests the synchronous absence of an active group: M. Gasuns, O. Erchenkov, E. Dmitrieva, and E. Zorina. Names are used for source auditability; the interpretation remains structural rather than personal.</p>
+            <p>The null hypothesis is simple: these authors may have reduced activity, shifted topics, not applied, or left the field. The institutional-filter hypothesis becomes stronger only if external sources show continuing activity while the programme loses a connective group.</p>
+            <blockquote>A cautious peer-reviewable formula: "the observed configuration is compatible with an institutional-filter hypothesis, but does not prove motive; stronger claims require external evidence of continued activity and documented testing of alternative explanations."</blockquote>
+            <p>Audience, naming, and claim-level choices are recorded in the <a href="docs/sociology-gatekeeping-editorial-decisions.md">editorial meta-document</a>.</p>
+            </article>
+        </div>
+    """
+    write_text(
+        "gatekeeping-en.html",
+        page_shell(
+            f"Academic Gatekeeping | {SITE_NAME}",
+            "Network mediators, generational conflict, and institutional-filter hypotheses in Russian Indology.",
+            "gatekeeping-en.html",
+            body_en,
+            [
+                page_data("Academic Gatekeeping", "Network mediators and institutional-filter hypotheses in Russian Indology.", "gatekeeping-en.html"),
+                make_breadcrumbs([("Home", ""), ("Sociology of science", "sociology-en.html"), ("Academic gatekeeping", "gatekeeping-en.html")]),
             ],
             extra_head=ARTICLE_STYLE,
         ),
@@ -13404,7 +13640,8 @@ def generate_sitemap(data, records):
         "index.html", "en.html", "search.html", "download-data.html",
         "data-quality.html", "methodology.html", "hypotheses.html", "data-sources.html",
         "known-limitations.html", "how-to-cite.html", "metrics-guide.html",
-        "classification-criteria.html", "networks.html", "sociology.html", "gatekeeping.html", "docs.html"
+        "classification-criteria.html", "networks.html", "sociology.html", "sociology-en.html",
+        "gatekeeping.html", "gatekeeping-en.html", "docs.html"
     ]
     static_paths = sorted(set(static_paths))
 

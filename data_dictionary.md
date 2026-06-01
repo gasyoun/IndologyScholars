@@ -36,6 +36,7 @@ This dictionary describes the reusable data outputs produced by the IndologyScho
 | `analytics_output/fair_reuse_maturity_audit.csv` | CSV | `tools/build_scientometrics_guardrails.py` | FAIR and reuse maturity evidence checklist. |
 | `analytics_output/coauthorship_review.csv` | CSV | `generate_analytics.py` | Review queue for source-backed multi-person presentation lines before public coauthorship claims. |
 | `analytics_output/senior_absence_audit.csv` | CSV | `generate_analytics.py` | Senior-generation absence review after 2022 and in the 2026 programme. |
+| `curation/senior_biographical_verification.csv` | CSV | manual curation / `tools/build_sociology_visuals.py` | External biographical and activity sources used to test whether senior-generation absence rows can be explained biographically. |
 | `analytics_output/publication_file_manifest.csv` | CSV | `generate_publication_pages.py` | Generated file manifest with byte sizes and SHA-256 checksums. |
 | `analytics_output/publication_file_manifest.json` | JSON | `generate_publication_pages.py` | JSON version of the generated file manifest with build metadata. |
 | `curation/presentation_person_exclusions.csv` | CSV | manual curation / `build_and_populate_db.py` | Source-backed removals of machine-parsed presentation-person links after human review. |
@@ -232,6 +233,17 @@ These are participation networks, not citation networks or comprehensive publica
 | `review_status` | Always `review` until independently checked. |
 | `interpretation_note` | Plain-language caution for publication use. |
 
+### `senior_biographical_verification.csv`
+
+| Column | Meaning |
+| --- | --- |
+| `person_id`, `display_name` | Local person identifier and public name. |
+| `cohort_scope` | Absence mechanism being checked: post-2022 absence or 2026 programme absence. |
+| `external_status` | Curated evidence status, such as current profile, post-2022 external activity, no death marker in a biographical profile, or need for a stronger source. |
+| `source_title`, `source_url`, `source_date` | External source used for the current verification row. |
+| `checked_at` | Date of the local curation check. |
+| `interpretation_note` | How the row may and may not be used in public argumentation. |
+
 ## 6. Analytics CSVs
 
 | Path | Meaning |
@@ -286,6 +298,8 @@ Theme labels are navigational aids derived primarily from presentation titles. T
 | `conferences/*.html` | Conference event pages. |
 | `p/*.html` | Permanent pages for individual presentation records, including classification and video status. |
 | `themes/*.html` | Theme landing pages. |
+| `sociology.html`, `sociology-en.html` | Russian and English field-sociology overview pages. |
+| `gatekeeping.html`, `gatekeeping-en.html` | Russian and English gatekeeping-hypothesis pages. |
 | `cities/*.html` | City/geography pages. |
 | `institutions/*.html` | Institution pages. |
 | `download-data.html` | Download links for reusable files. |

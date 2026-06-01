@@ -285,6 +285,18 @@ def build_rows() -> list[dict[str, str]]:
         note_fields=("cohort", "birth_year", "first_year", "last_year", "talks_before_threshold", "living_status_basis"),
         priority_fn=lambda row: 60 if clean(row.get("cohort")) == "absent_after_2022" else 68,
     )
+    add_csv_rows(
+        rows,
+        source_file="curation/senior_biographical_verification.csv",
+        domain="senior_biographical_verification",
+        id_fields=("person_id",),
+        label_fields=("display_name",),
+        status_fields=("external_status",),
+        reason_fields=("interpretation_note",),
+        evidence_fields=("source_url",),
+        note_fields=("cohort_scope", "source_title", "source_date", "checked_at"),
+        priority_fn=lambda row: 45 if clean(row.get("external_status")) == "needs_stronger_biographical_source" else 72,
+    )
 
     add_scientometrics_guardrail_rows(rows)
     add_data_quality_rows(rows)

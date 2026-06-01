@@ -318,7 +318,13 @@ def main():
         "analytics_output/network_edges.csv",
         "analytics_output/coauthorship_review.csv",
         "analytics_output/senior_absence_audit.csv",
+        "curation/senior_biographical_verification.csv",
         "curation/presentation_person_exclusions.csv",
+        "assets/img/sociology_generation_lifecycle.svg",
+        "assets/img/senior_absence_timeline.svg",
+        "assets/img/sociology_review_dashboard.svg",
+        "assets/img/gatekeeping_hypothesis_matrix.svg",
+        "assets/img/gatekeeping_network_layers.svg",
         "analytics_output/publication_file_manifest.csv",
         "analytics_output/publication_file_manifest.json",
         "assets/og-image.png",
@@ -345,7 +351,9 @@ def main():
         "classification-criteria.html",
         "networks.html",
         "sociology.html",
+        "sociology-en.html",
         "gatekeeping.html",
+        "gatekeeping-en.html",
         "videos/index.html",
     ]
     for path in required:
@@ -406,7 +414,7 @@ def main():
             for _, filename in sub_sitemaps:
                 if Path(filename).exists():
                     sitemap += "\n" + read(filename)
-        for page in ["", "en.html", "search.html", "download-data.html", "data-quality.html", "s/", "conferences/", "p/", "themes/", "topics/", "topics/ramayana.html", "topics/mahabharata.html", "generations/", "cities/", "institutions/", "metrics-guide.html", "classification-criteria.html", "networks.html", "sociology.html", "gatekeeping.html", "videos/"]:
+        for page in ["", "en.html", "search.html", "download-data.html", "data-quality.html", "s/", "conferences/", "p/", "themes/", "topics/ramayana.html", "topics/mahabharata.html", "generations/", "cities/", "institutions/", "metrics-guide.html", "classification-criteria.html", "networks.html", "sociology.html", "sociology-en.html", "gatekeeping.html", "gatekeeping-en.html", "videos/"]:
             expected = "https://gasyoun.github.io/IndologyScholars/" + page
             if expected not in sitemap:
                 fail(errors, f"sitemap.xml missing {expected}")
@@ -502,6 +510,7 @@ def main():
             "network-edges",
             "coauthorship-review",
             "senior-absence-audit",
+            "senior-biographical-verification",
             "presentation-person-exclusions",
             "publication-file-manifest",
         ]:
@@ -525,6 +534,7 @@ def main():
             "network-edges",
             "coauthorship-review",
             "senior-absence-audit",
+            "senior-biographical-verification",
             "presentation-person-exclusions",
             "publication-file-manifest",
         ]:
@@ -559,6 +569,7 @@ def main():
             "fair_reuse_maturity_audit.csv",
             "coauthorship_review.csv",
             "senior_absence_audit.csv",
+            "senior_biographical_verification.csv",
             "presentation_person_exclusions.csv",
             "network_edges.csv",
             "publication_file_manifest.csv",
@@ -619,6 +630,7 @@ def main():
             "inter_rater_reliability",
             "coauthorship_review",
             "senior_absence",
+            "senior_biographical_verification",
         }
         present_domains = {row.get("domain", "") for row in review_rows}
         missing_domains = required_domains - present_domains
@@ -760,6 +772,20 @@ def main():
             if row.get("review_status") != "review":
                 fail(errors, "senior_absence_audit.csv should keep all rows in review status")
                 break
+
+    if Path("curation/senior_biographical_verification.csv").exists():
+        with open("curation/senior_biographical_verification.csv", encoding="utf-8-sig", newline="") as f:
+            bio_rows = list(csv.DictReader(f))
+        senior_persons = {row.get("person_id") for row in senior_rows} if "senior_rows" in locals() else set()
+        bio_persons = {row.get("person_id") for row in bio_rows}
+        missing_bio = senior_persons - bio_persons
+        if missing_bio:
+            fail(errors, f"senior_biographical_verification.csv missing senior absence persons: {sorted(missing_bio)}")
+        for row in bio_rows:
+            if not row.get("source_url"):
+                fail(errors, f"senior_biographical_verification.csv row for {row.get('person_id')} is missing source_url")
+            if not row.get("checked_at"):
+                fail(errors, f"senior_biographical_verification.csv row for {row.get('person_id')} is missing checked_at")
 
     if Path("curation/presentation_person_exclusions.csv").exists():
         with open("curation/presentation_person_exclusions.csv", encoding="utf-8-sig", newline="") as f:
