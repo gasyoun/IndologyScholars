@@ -49,8 +49,11 @@ kept only for profiles where multiple talks make a dominant profile defensible.
 `voting.html` is a static GitHub Pages-compatible page. It does not transmit
 data to a server.
 
-It records two local browser flags and one optional note per talk:
+It records one respondent identity block, two local browser flags, and one
+optional note per talk:
 
+- `respondent_email`: required before CSV/JSON export or JSON copy;
+- `respondent_name`: optional display name or signature;
 - `heard`: what the listener actually attended;
 - `liked`: what the listener found especially successful.
 - `comment`: a free-text note for editor review, such as format changes,
@@ -59,10 +62,11 @@ It records two local browser flags and one optional note per talk:
 The page stores marks in `localStorage` under
 `indology-talk-votes-v1` and provides CSV/JSON export, including comments, for
 sending the results to the editor, organizer, or researcher. It also provides a
-JSON copy button for users who prefer pasting the result into a message instead
-of attaching a file. The default year is the newest programme year available in
-the generated corpus. It does not use cookies and it does not send data to the
-site administrator without a separate backend or manual export/copy action.
+JSON copy button for users who prefer pasting the result into a message or a
+Yandex Forms field instead of attaching a file. The default year is the newest
+programme year available in the generated corpus. It does not use cookies and it
+does not send data to the site administrator without a separate backend, Yandex
+Forms submission, or manual export/copy action.
 
 ## Programme vs. Performed Event
 

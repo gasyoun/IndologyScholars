@@ -1985,6 +1985,10 @@ def generate_voting_page(records):
             .vote-actions button {{ background: var(--panel); color: var(--text); border: 1px solid var(--border); border-radius: 6px; padding: 0.62rem 0.8rem; cursor: pointer; }}
             .vote-actions button:hover {{ border-color: var(--accent); }}
             .vote-status {{ margin: -0.4rem 0 1rem; color: var(--muted); font-size: 0.88rem; min-height: 1.3rem; }}
+            .vote-identity {{ display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.85rem; align-items: end; margin: 1.2rem 0; padding: 1rem; border: 1px solid var(--border); border-radius: 8px; background: rgba(255,255,255,0.025); }}
+            .vote-identity label {{ display: grid; gap: 0.35rem; color: var(--muted); font-size: 0.86rem; }}
+            .vote-identity input {{ width: 100%; background: var(--panel); color: var(--text); border: 1px solid var(--border); border-radius: 6px; padding: 0.62rem 0.7rem; }}
+            .vote-identity p {{ grid-column: 1 / -1; margin: 0; color: var(--muted); font-size: 0.88rem; }}
             .vote-row {{ display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 1rem; align-items: center; }}
             .vote-title {{ display: grid; gap: 0.35rem; min-width: 0; }}
             .vote-title strong {{ overflow-wrap: anywhere; }}
@@ -2005,8 +2009,17 @@ def generate_voting_page(records):
         </header>
         <aside class="caveat-block" role="note" aria-label="Local voting caveat">
             <strong>Статический режим</strong>
-            <p>GitHub Pages не принимает голоса на сервер. Отметки и комментарии сохраняются только в этом браузере, в localStorage; для передачи редактору, организатору или исследователю используйте экспорт CSV/JSON.</p>
+            <p>GitHub Pages не принимает голоса на сервер. Отметки, комментарии и email сохраняются только в этом браузере, в localStorage; для передачи редактору, организатору или исследователю используйте экспорт CSV/JSON или копирование JSON.</p>
         </aside>
+        <section class="vote-identity" aria-label="Кто заполняет отметки">
+            <label>Email заполняющего *
+                <input type="email" id="vote-respondent-email" autocomplete="email" required placeholder="name@example.org">
+            </label>
+            <label>Имя или подпись
+                <input type="text" id="vote-respondent-name" autocomplete="name" maxlength="160" placeholder="Как подписать выгрузку">
+            </label>
+            <p>Экспорт и копирование по умолчанию не анонимны: без email файл или JSON не формируются. Email нужен, чтобы редактор мог отличать независимые свидетельства и при необходимости уточнить спорные отметки.</p>
+        </section>
         <section class="grid">
             <article class="card"><strong>Год</strong><div class="metric" id="vote-year">{esc(default_year)}</div></article>
             <article class="card"><strong>Доклады в выборке</strong><div class="metric" id="vote-total">0</div></article>
@@ -2034,10 +2047,13 @@ def generate_voting_page(records):
         (() => {{
             const talks = JSON.parse(document.getElementById('talk-vote-data').textContent);
             const storageKey = 'indology-talk-votes-v1';
+            const respondentKey = 'indology-talk-vote-respondent-v1';
             const yearFilter = document.getElementById('vote-year-filter');
             const sessionFilter = document.getElementById('vote-session-filter');
             const list = document.getElementById('vote-list');
             const status = document.getElementById('vote-status');
+            const respondentEmail = document.getElementById('vote-respondent-email');
+            const respondentName = document.getElementById('vote-respondent-name');
             const stats = {{
                 year: document.getElementById('vote-year'),
                 total: document.getElementById('vote-total'),
@@ -2046,6 +2062,7 @@ def generate_voting_page(records):
             }};
             const years = [...new Set(talks.map(t => t.year).filter(Boolean))].sort((a, b) => b - a);
             let votes = loadVotes();
+            let respondent = loadRespondent();
 
             function loadVotes() {{
                 try {{
@@ -2057,6 +2074,25 @@ def generate_voting_page(records):
 
             function saveVotes() {{
                 localStorage.setItem(storageKey, JSON.stringify(votes));
+            }}
+
+            function loadRespondent() {{
+                try {{
+                    return JSON.parse(localStorage.getItem(respondentKey) || '{{}}');
+                }} catch (error) {{
+                    return {{}};
+                }}
+            }}
+
+            function saveRespondent() {{
+                respondent.email = respondentEmail.value.trim();
+                respondent.name = respondentName.value.trim();
+                localStorage.setItem(respondentKey, JSON.stringify(respondent));
+            }}
+
+            function renderRespondent() {{
+                respondentEmail.value = respondent.email || '';
+                respondentName.value = respondent.name || '';
             }}
 
             function escapeHtml(value) {{
@@ -2115,7 +2151,16 @@ def generate_voting_page(records):
             }}
 
             function rowsForExport() {{
+                const exportedAt = new Date().toISOString();
+                const respondentForExport = {{
+                    respondent_email: respondentEmail.value.trim(),
+                    respondent_name: respondentName.value.trim(),
+                    visibility_mode: 'identified',
+                    exported_at: exportedAt,
+                    source_page: location.href
+                }};
                 return currentRows().map(t => ({{
+                    ...respondentForExport,
                     id: t.id,
                     year: t.year,
                     series: t.series,
@@ -2155,6 +2200,21 @@ def generate_voting_page(records):
                 }}, 5000);
             }}
 
+            function requireRespondent() {{
+                saveRespondent();
+                if (!respondentEmail.value.trim()) {{
+                    setStatus('Укажите email заполняющего: экспорт и копирование по умолчанию не анонимны.');
+                    respondentEmail.focus();
+                    return false;
+                }}
+                if (respondentEmail.validity && !respondentEmail.validity.valid) {{
+                    setStatus('Проверьте формат email перед экспортом.');
+                    respondentEmail.focus();
+                    return false;
+                }}
+                return true;
+            }}
+
             async function copyText(text) {{
                 if (navigator.clipboard?.writeText) {{
                     await navigator.clipboard.writeText(text);
@@ -2172,19 +2232,22 @@ def generate_voting_page(records):
             }}
 
             document.getElementById('vote-export-csv').addEventListener('click', () => {{
+                if (!requireRespondent()) return;
                 const rows = rowsForExport();
-                const fields = ['id', 'year', 'series', 'date', 'time', 'session', 'speaker', 'title', 'heard', 'liked', 'comment', 'url'];
+                const fields = ['respondent_email', 'respondent_name', 'visibility_mode', 'exported_at', 'source_page', 'id', 'year', 'series', 'date', 'time', 'session', 'speaker', 'title', 'heard', 'liked', 'comment', 'url'];
                 const csv = [fields.join(','), ...rows.map(row => fields.map(field => csvEscape(row[field])).join(','))].join('\\n');
                 download(`indology-talk-votes-${{currentYear()}}.csv`, 'text/csv;charset=utf-8', csv + '\\n');
                 setStatus('CSV-файл подготовлен для отправки редактору.');
             }});
 
             document.getElementById('vote-export-json').addEventListener('click', () => {{
+                if (!requireRespondent()) return;
                 download(`indology-talk-votes-${{currentYear()}}.json`, 'application/json;charset=utf-8', JSON.stringify(rowsForExport(), null, 2));
                 setStatus('JSON-файл подготовлен для отправки редактору.');
             }});
 
             document.getElementById('vote-copy-json').addEventListener('click', async () => {{
+                if (!requireRespondent()) return;
                 try {{
                     await copyText(JSON.stringify(rowsForExport(), null, 2));
                     setStatus('JSON скопирован. Его можно вставить в письмо или сообщение администратору.');
@@ -2233,7 +2296,10 @@ def generate_voting_page(records):
                 render();
             }});
             sessionFilter.addEventListener('change', render);
+            respondentEmail.addEventListener('input', saveRespondent);
+            respondentName.addEventListener('input', saveRespondent);
 
+            renderRespondent();
             renderYearOptions();
             renderSessionOptions();
             render();
