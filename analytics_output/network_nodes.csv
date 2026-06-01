@@ -22,24 +22,24 @@ event:E2008,event,Zograf Readings 2008,E2008,26
 event:E2009,event,Zograf Readings 2009,E2009,31
 event:E2010,event,Zograf Readings 2010,E2010,26
 event:E2011,event,Zograf Readings 2011,E2011,34
-event:E2012,event,Zograf Readings 2012,E2012,33
-event:E2013,event,Zograf Readings 2013,E2013,36
-event:E2014,event,Zograf Readings 2014,E2014,37
+event:E2012,event,Zograf Readings 2012,E2012,34
+event:E2013,event,Zograf Readings 2013,E2013,37
+event:E2014,event,Zograf Readings 2014,E2014,38
 event:E2015,event,Zograf Readings 2015,E2015,45
-event:E2016,event,Zograf Readings 2016,E2016,44
+event:E2016,event,Zograf Readings 2016,E2016,45
 event:E2017,event,Zograf Readings 2017,E2017,44
-event:E2018,event,Zograf Readings 2018,E2018,47
-event:E2019,event,Zograf Readings 2019,E2019,53
+event:E2018,event,Zograf Readings 2018,E2018,48
+event:E2019,event,Zograf Readings 2019,E2019,54
 event:E2020,event,Zograf Readings 2020,E2020,46
-event:E2021,event,Zograf Readings 2021,E2021,49
-event:E2022,event,Zograf Readings 2022,E2022,49
+event:E2021,event,Zograf Readings 2021,E2021,50
+event:E2022,event,Zograf Readings 2022,E2022,50
 event:E2023,event,Zograf Readings 2023,E2023,44
 event:E2024,event,Zograf Readings 2024,E2024,53
-event:E2025,event,Zograf Readings 2025,E2025,56
+event:E2025,event,Zograf Readings 2025,E2025,57
 event:E2026,event,Zograf Readings 2026,E2026,61
 organization:Государственный Эрмитаж,organization,Государственный Эрмитаж,Государственный Эрмитаж,1
 organization:ИВ РАН,organization,ИВ РАН,ИВ РАН,164
-organization:ИВР РАН,organization,ИВР РАН,ИВР РАН,1
+organization:ИВР РАН,organization,ИВР РАН,ИВР РАН,10
 organization:ИФ РАН,organization,ИФ РАН,ИФ РАН,12
 organization:МАЭ РАН,organization,МАЭ РАН,МАЭ РАН,2
 organization:МГУ,organization,МГУ,МГУ,37
@@ -238,7 +238,7 @@ person:PERS_1a097e52,person,Парибок Андрей Всеволодович
 person:PERS_260a598a,person,Пахомов Сергей Владимирович,PERS_260a598a,16
 person:PERS_5f6fa17b,person,Пахомова Александра Михайловна,PERS_5f6fa17b,2
 person:PERS_37bb2d43,person,Покатилов Сергей Андреевич,PERS_37bb2d43,2
-person:PERS_d3c5382c,person,Попова Ирина Фёдоровна,PERS_d3c5382c,1
+person:PERS_d3c5382c,person,Попова Ирина Фёдоровна,PERS_d3c5382c,10
 person:PERS_003adcfe,person,Псху Рузана Владимировна,PERS_003adcfe,19
 person:PERS_23abae7d,person,Пушкарева Юлия Георгиевна,PERS_23abae7d,1
 person:PERS_3195408b,person,Ратушный Данила Николаевич,PERS_3195408b,1
@@ -322,4 +322,4 @@ theme:history_and_culture,theme,history_and_culture,history_and_culture,256
 theme:linguistics_and_philology,theme,linguistics_and_philology,linguistics_and_philology,123
 theme:literature_and_poetry,theme,literature_and_poetry,literature_and_poetry,282
 theme:religion_and_philosophy,theme,religion_and_philosophy,religion_and_philosophy,561
-theme:unspecified,theme,unspecified,unspecified,67
+theme:unspecified,theme,unspecified,unspecified,76

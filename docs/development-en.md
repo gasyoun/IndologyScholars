@@ -10,7 +10,7 @@ user-facing project page.
 
 The source for figures published on the site is the `summary` object in
 `site_data.json`. As of 31 May 2026 it reports 270 speaker profiles,
-1352 unique talks, 1378 author participations, and 40 events across 22
+1361 unique talks, 1387 author participations, and 40 events across 22
 programme years (2004-2026). 41 speakers occur in both series, 165
 occur only in the Zograf Readings, and 64 only in the Roerich Readings.
 

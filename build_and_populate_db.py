@@ -64,6 +64,7 @@ from pipeline.verification import (
 
 DB_PATH = "conferences.db"
 PRESENTATION_PERSON_EXCLUSIONS = Path("curation/presentation_person_exclusions.csv")
+INSTITUTIONAL_REMARKS = Path("curation/institutional_remarks.csv")
 
 try:
     sys.stdout.reconfigure(encoding='utf-8')
@@ -107,6 +108,132 @@ def apply_presentation_person_exclusions(conn):
     return removed
 
 
+def _first_session_for_event(conn, event_id):
+    row = conn.execute(
+        """
+        SELECT s.session_id
+        FROM session s
+        JOIN event_day_venue edv ON edv.event_day_venue_id = s.event_day_venue_id
+        JOIN event_day ed ON ed.event_day_id = edv.event_day_id
+        WHERE ed.event_id = ?
+          AND lower(coalesce(s.session_title, '')) NOT LIKE '%перерыв%'
+        ORDER BY ed.day_number, coalesce(s.start_time, '99:99'), s.session_id
+        LIMIT 1
+        """,
+        (event_id,),
+    ).fetchone()
+    return row[0] if row else None
+
+
+def import_institutional_remarks(conn):
+    if not INSTITUTIONAL_REMARKS.exists():
+        return 0
+
+    inserted = 0
+    with INSTITUTIONAL_REMARKS.open("r", encoding="utf-8-sig", newline="") as handle:
+        for row in csv.DictReader(handle):
+            if (row.get("status") or "").strip().lower() not in {"confirmed", "curated"}:
+                continue
+
+            year_text = (row.get("year") or "").strip()
+            speaker_name = (row.get("speaker_name") or "").strip()
+            title = (row.get("title") or "").strip()
+            if not year_text or not speaker_name or not title:
+                continue
+            year = int(year_text)
+
+            event_row = conn.execute(
+                """
+                SELECT event_id, source_url
+                FROM event
+                WHERE event_series_id = 1 AND year = ?
+                """,
+                (year,),
+            ).fetchone()
+            if not event_row:
+                continue
+            event_id, event_source_url = event_row
+
+            session_id = _first_session_for_event(conn, event_id)
+            if not session_id:
+                continue
+
+            person_id = get_or_create_person(conn, speaker_name, row.get("source_url") or event_source_url)
+            existing = conn.execute(
+                """
+                SELECT 1
+                FROM presentation p
+                JOIN presentation_person pp ON pp.presentation_id = p.presentation_id
+                JOIN session s ON s.session_id = p.session_id
+                JOIN event_day_venue edv ON edv.event_day_venue_id = s.event_day_venue_id
+                JOIN event_day ed ON ed.event_day_id = edv.event_day_id
+                JOIN event e ON e.event_id = ed.event_id
+                WHERE e.event_series_id = 1
+                  AND e.year = ?
+                  AND pp.person_id = ?
+                  AND lower(coalesce(p.notes, '')) LIKE '%institutional_remark%'
+                LIMIT 1
+                """,
+                (year, person_id),
+            ).fetchone()
+            if existing:
+                continue
+
+            order_row = conn.execute(
+                "SELECT coalesce(min(order_in_session), 1) FROM presentation WHERE session_id = ?",
+                (session_id,),
+            ).fetchone()
+            order_in_session = min(0, (order_row[0] or 1) - 1)
+            pres_id = stable_presentation_id(
+                "zograf",
+                year,
+                title,
+                speaker_name,
+                f"institutional_remark_{year}",
+            )
+            source_url = (row.get("source_url") or event_source_url).strip()
+            source_snippet = (row.get("source_snippet") or title).strip()
+            note = (row.get("note") or "").strip()
+            notes = "institutional_remark"
+            if note:
+                notes = f"{notes}; {note}"
+
+            presentation_cursor = conn.execute(
+                "INSERT OR IGNORE INTO presentation VALUES (?,?,?,?,?,?,?,?,?,?,?)",
+                (
+                    pres_id,
+                    session_id,
+                    title,
+                    None,
+                    "ru",
+                    "обращение; открытие конференции; институциональное приветствие",
+                    0,
+                    order_in_session,
+                    source_url,
+                    source_snippet,
+                    notes,
+                ),
+            )
+            conn.execute(
+                "INSERT OR IGNORE INTO presentation_person VALUES (?,?,?,?,?,?,?,?)",
+                (
+                    pres_id,
+                    person_id,
+                    "speaker",
+                    1,
+                    (row.get("affiliation_text_raw") or "").strip() or None,
+                    None,
+                    source_url,
+                    "Curated institutional opening remark.",
+                ),
+            )
+            inserted += presentation_cursor.rowcount
+
+    conn.commit()
+    print(f"Imported curated institutional remarks: {inserted} rows inserted.")
+    return inserted
+
+
 def main():
     print(f"Opening Database connection to {DB_PATH}")
     conn = sqlite3.connect(DB_PATH)
@@ -119,6 +246,9 @@ def main():
 
     print("Populating parsed Zograf Reading talks (2004-2026)...")
     populate_zograf_talks(conn)
+
+    print("Importing curated institutional remarks...")
+    import_institutional_remarks(conn)
 
     print("Populating parsed Roerich Reading talks (2007-2025)...")
     populate_roerich_talks(conn)

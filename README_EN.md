@@ -16,8 +16,8 @@ The published collection as of 31 May 2026 contains:
 | Measure | Value |
 | --- | ---: |
 | Speaker profiles | 270 |
-| Unique talks | 1352 |
-| Author participations | 1378 |
+| Unique talks | 1361 |
+| Author participations | 1387 |
 | Programme years | 22, from 2004 to 2026 |
 | Speakers found at both series | 41 |
 | Zograf Readings only | 165 |
