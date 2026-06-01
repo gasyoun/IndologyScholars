@@ -174,8 +174,15 @@ def load_meso_context():
         pid = clean_text(row.get("presentation_id") or "")
         for code in (row.get("meso_codes") or "").split("|"):
             code = clean_text(code)
-            if code and pid and code not in meso_by_presentation[pid]:
-                meso_by_presentation[pid].append(code)
+            if not code:
+                continue
+            if code == "bengal_bhakti_modernity":
+                for sub in ("bengal", "bhakti_vaishnava"):
+                    if pid and sub not in meso_by_presentation[pid]:
+                        meso_by_presentation[pid].append(sub)
+            else:
+                if pid and code not in meso_by_presentation[pid]:
+                    meso_by_presentation[pid].append(code)
 
     for code, label in MESO_LABELS.items():
         meso_items.setdefault(code, {"label": label, "kind": "Экспертный мезоуровень"})
@@ -489,8 +496,8 @@ def talk_card(talk, meso_by_presentation=None, meso_items=None):
     pid = clean_text(talk.get("presentation_id") or "")
     anchor_attr = f' id="{esc(pid)}"' if pid else ""
     title_href = f"../{presentation_path(pid)}" if pid else f'../{conference_path(talk.get("series"), talk.get("year"))}'
-    online_badge = '<span class="badge badge-online">Онлайн</span>' if talk.get("is_online") else ""
-    video_badge = '<span class="badge badge-video">Видео</span>' if videos else ""
+    online_badge = ' <span class="badge badge-online">Онлайн</span>' if talk.get("is_online") else ""
+    video_badge = ' <span class="badge badge-video">Видео</span>' if videos else ""
     return f"""
         <article class="talk"{anchor_attr}>
             <strong><a href="{esc(title_href)}">{esc(talk.get("title"))}</a></strong>{online_badge}{video_badge}

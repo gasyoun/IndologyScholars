@@ -247,13 +247,17 @@ def load_meso_mapping():
         with open("analytics_output/meso_codes_deepseek.csv", encoding="utf-8") as f:
             for row in csv.DictReader(f):
                 pid = str(row.get("presentation_id") or "").strip()
-                codes = [
-                    code.strip()
-                    for code in str(row.get("meso_codes") or "").split("|")
-                    if code.strip()
-                ]
-                if pid and codes:
-                    mapping[pid] = list(dict.fromkeys(codes))
+                codes_list = []
+                for code in str(row.get("meso_codes") or "").split("|"):
+                    c = code.strip()
+                    if not c:
+                        continue
+                    if c == "bengal_bhakti_modernity":
+                        codes_list.extend(["bengal", "bhakti_vaishnava"])
+                    else:
+                        codes_list.append(c)
+                if pid and codes_list:
+                    mapping[pid] = list(dict.fromkeys(codes_list))
     except FileNotFoundError:
         pass
     return mapping

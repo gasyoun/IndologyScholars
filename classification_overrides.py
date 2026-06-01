@@ -14,7 +14,6 @@ MESO_LABELS = {
     "vedic_studies": "Ведийские исследования",
     "sanskrit_grammar_panini": "Санскритская грамматика / Панини",
     "pali_early_buddhism": "Пали и ранний буддизм",
-    "bengal_bhakti_modernity": "Бенгалия, бхакти и современность",
     "hindi_urdu_new_indo_aryan": "Новые индоарийские языки",
     "nepal_newar_kathmandu": "Непал и неварский контур",
     "museum_collections": "Музейные собрания и коллекции",

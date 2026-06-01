@@ -668,8 +668,15 @@ def load_meso_memberships():
     for row in load_csv_rows("analytics_output/meso_codes_deepseek.csv"):
         pid = row.get("presentation_id") or ""
         for code in (row.get("meso_codes") or "").split("|"):
-            if code and pid and pid not in memberships[code]:
-                memberships[code].append(pid)
+            if not code:
+                continue
+            if code == "bengal_bhakti_modernity":
+                for sub in ("bengal", "bhakti_vaishnava"):
+                    if pid and pid not in memberships[sub]:
+                        memberships[sub].append(pid)
+            else:
+                if pid and pid not in memberships[code]:
+                    memberships[code].append(pid)
     reviewed_ids = set(CLASSIFICATION_OVERRIDES)
     for code in list(memberships):
         memberships[code] = [pid for pid in memberships[code] if pid not in reviewed_ids]
