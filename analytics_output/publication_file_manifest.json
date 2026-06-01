@@ -6,7 +6,7 @@
     "pipeline_version": "2026-05-25",
     "generator": "generate_publication_pages.py"
   },
-  "file_count": 3951,
+  "file_count": 3952,
   "files": [
     {
       "path": "404.html",
@@ -9129,6 +9129,11 @@
       "sha256": "41cc0d9cb7fa73932896442cef730efb2b632ce53a5b5a1832eae93deb651bb0"
     },
     {
+      "path": "docs/how-to-vote-2026.md",
+      "size_bytes": 6281,
+      "sha256": "8eaeb1dc27b36489f599236960009afca42028dd9256d9b97596e68490e88290"
+    },
+    {
       "path": "docs/implementation-handoff-plan-2026-05-31.md",
       "size_bytes": 9630,
       "sha256": "7f380fb2d30f1aeee3047e9d5fc31705b5b282ce42630afc7f30ab4efe05c5fa"
@@ -9186,7 +9191,7 @@
     {
       "path": "download-data.html",
       "size_bytes": 29027,
-      "sha256": "1c2e302c8f775b16a425f93c438442152db09c92aa8974beb4cfb63d96df23ca"
+      "sha256": "400c688840ceca5ab4d785fef41f6435a7a07e3edc6e77de35573c47a0f68b38"
     },
     {
       "path": "en.html",
@@ -9201,7 +9206,7 @@
     {
       "path": "findings/visualisations.html",
       "size_bytes": 474650,
-      "sha256": "fee0273bab6661c1cecd308285d4065d750f3e89cf7db576975230b48e0251f3"
+      "sha256": "c310180a9731a40d31c00f218883ef76d53b6ee909bf2347f1d8c629b5044820"
     },
     {
       "path": "gatekeeping-en.html",
