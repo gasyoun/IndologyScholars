@@ -385,14 +385,6 @@
       "weight": 39.0
     },
     {
-      "id": "person:PERS_d6ade703",
-      "type": "person",
-      "label": "Kozhevnikova Margarita Nikolaevna",
-      "local_id": "PERS_d6ade703",
-      "slug": "kozhevnikova-margarita",
-      "weight": 1.0
-    },
-    {
       "id": "person:PERS_800ac07e",
       "type": "person",
       "label": "А. А. Нейвирт",
@@ -401,35 +393,35 @@
       "weight": 2.0
     },
     {
-      "id": "person:PERS_c1cc76b9",
-      "type": "person",
-      "label": "А. Я. Таран",
-      "local_id": "PERS_c1cc76b9",
-      "slug": "taran",
-      "weight": 1.0
-    },
-    {
       "id": "person:PERS_b9a0e40c",
       "type": "person",
-      "label": "А.В. Осокин",
+      "label": "А. В. Осокин",
       "local_id": "PERS_b9a0e40c",
-      "slug": "a-v-osokin",
+      "slug": "osokin",
       "weight": 1.0
     },
     {
       "id": "person:PERS_3ccc9bd7",
       "type": "person",
-      "label": "А.Солька",
+      "label": "А. Солька",
       "local_id": "PERS_3ccc9bd7",
-      "slug": "a-solka",
+      "slug": "solka",
       "weight": 2.0
     },
     {
       "id": "person:PERS_410c5a08",
       "type": "person",
-      "label": "А.Хомиченкене",
+      "label": "А. Хомиченкене",
       "local_id": "PERS_410c5a08",
-      "slug": "a-khomichenkene",
+      "slug": "khomichenkene",
+      "weight": 1.0
+    },
+    {
+      "id": "person:PERS_c1cc76b9",
+      "type": "person",
+      "label": "А. Я. Таран",
+      "local_id": "PERS_c1cc76b9",
+      "slug": "taran",
       "weight": 1.0
     },
     {
@@ -643,7 +635,7 @@
     {
       "id": "person:PERS_f7c7adc7",
       "type": "person",
-      "label": "В. В. Донских",
+      "label": "В. В. Донских",
       "local_id": "PERS_f7c7adc7",
       "slug": "donskikh",
       "weight": 3.0
@@ -651,7 +643,7 @@
     {
       "id": "person:PERS_325e94f3",
       "type": "person",
-      "label": "В. В. Котин",
+      "label": "В. В. Котин",
       "local_id": "PERS_325e94f3",
       "slug": "kotin",
       "weight": 1.0
@@ -849,19 +841,19 @@
       "weight": 5.0
     },
     {
+      "id": "person:PERS_940c556e",
+      "type": "person",
+      "label": "Д. А. Шереметьев",
+      "local_id": "PERS_940c556e",
+      "slug": "sheremetev",
+      "weight": 1.0
+    },
+    {
       "id": "person:PERS_d018b6eb",
       "type": "person",
       "label": "Д. Валанчюнас",
       "local_id": "PERS_d018b6eb",
       "slug": "valanchyunas",
-      "weight": 1.0
-    },
-    {
-      "id": "person:PERS_940c556e",
-      "type": "person",
-      "label": "Д. А. Шереметьев",
-      "local_id": "PERS_940c556e",
-      "slug": "sheremetev",
       "weight": 1.0
     },
     {
@@ -971,9 +963,9 @@
     {
       "id": "person:PERS_c9e43db7",
       "type": "person",
-      "label": "Е. А.Бушуев",
+      "label": "Е. А. Бушуев",
       "local_id": "PERS_c9e43db7",
-      "slug": "a-bushuev",
+      "slug": "bushuev",
       "weight": 1.0
     },
     {
@@ -987,7 +979,7 @@
     {
       "id": "person:PERS_14dec06b",
       "type": "person",
-      "label": "Е. Б. Кудрявцева",
+      "label": "Е. Б. Кудрявцева",
       "local_id": "PERS_14dec06b",
       "slug": "kudryavtseva-dec06b",
       "weight": 1.0
@@ -995,7 +987,7 @@
     {
       "id": "person:PERS_04a4bbbb",
       "type": "person",
-      "label": "Е. И. Малоземова",
+      "label": "Е. И. Малоземова",
       "local_id": "PERS_04a4bbbb",
       "slug": "malozemova",
       "weight": 1.0
@@ -1003,7 +995,7 @@
     {
       "id": "person:PERS_e8f935aa",
       "type": "person",
-      "label": "Е. К. Кудрявцева",
+      "label": "Е. К. Кудрявцева",
       "local_id": "PERS_e8f935aa",
       "slug": "kudryavtseva-f935aa",
       "weight": 1.0
@@ -1011,17 +1003,17 @@
     {
       "id": "person:PERS_5d38cbae",
       "type": "person",
-      "label": "Е.Н. Аникеева",
+      "label": "Е. Н. Аникеева",
       "local_id": "PERS_5d38cbae",
-      "slug": "e-n-anikeeva",
+      "slug": "anikeeva",
       "weight": 1.0
     },
     {
       "id": "person:PERS_79ed852e",
       "type": "person",
-      "label": "Евграфов  Д.А.",
+      "label": "Евграфов Д. А.",
       "local_id": "PERS_79ed852e",
-      "slug": "evgrafov-d-a",
+      "slug": "evgrafov",
       "weight": 1.0
     },
     {
@@ -1131,7 +1123,7 @@
     {
       "id": "person:PERS_a4c4c35e",
       "type": "person",
-      "label": "И. В. Калинина",
+      "label": "И. В. Калинина",
       "local_id": "PERS_a4c4c35e",
       "slug": "kalinina",
       "weight": 1.0
@@ -1139,9 +1131,9 @@
     {
       "id": "person:PERS_c5aeda15",
       "type": "person",
-      "label": "И.Урнова",
+      "label": "И. Урнова",
       "local_id": "PERS_c5aeda15",
-      "slug": "i-urnova",
+      "slug": "urnova",
       "weight": 2.0
     },
     {
@@ -1203,9 +1195,9 @@
     {
       "id": "person:PERS_37c15317",
       "type": "person",
-      "label": "Калина А.Э.",
+      "label": "Калина А. Э.",
       "local_id": "PERS_37c15317",
-      "slug": "kalina-a-e",
+      "slug": "kalina",
       "weight": 1.0
     },
     {
@@ -1251,9 +1243,9 @@
     {
       "id": "person:PERS_d17a6a92",
       "type": "person",
-      "label": "Киняева А.В.",
+      "label": "Киняева А. В.",
       "local_id": "PERS_d17a6a92",
-      "slug": "kinyaeva-a-v",
+      "slug": "kinyaeva",
       "weight": 1.0
     },
     {
@@ -1279,6 +1271,14 @@
       "local_id": "PERS_3009a9e0",
       "slug": "kogan-anton",
       "weight": 4.0
+    },
+    {
+      "id": "person:PERS_d6ade703",
+      "type": "person",
+      "label": "Кожевникова Маргарита Николаевна",
+      "local_id": "PERS_d6ade703",
+      "slug": "kozhevnikova-margarita",
+      "weight": 1.0
     },
     {
       "id": "person:PERS_ba81468a",
@@ -1387,9 +1387,9 @@
     {
       "id": "person:PERS_3f406fe3",
       "type": "person",
-      "label": "Кравцова Е.Р.",
+      "label": "Кравцова Е. Р.",
       "local_id": "PERS_3f406fe3",
-      "slug": "kravtsova-e-r",
+      "slug": "kravtsova",
       "weight": 1.0
     },
     {
@@ -1601,51 +1601,51 @@
       "weight": 9.0
     },
     {
-      "id": "person:PERS_cea040bb",
-      "type": "person",
-      "label": "М. Рамдхари",
-      "local_id": "PERS_cea040bb",
-      "slug": "ramdkhari",
-      "weight": 1.0
-    },
-    {
       "id": "person:PERS_ddb70dc9",
       "type": "person",
-      "label": "М. А. Азаркина",
+      "label": "М. А. Азаркина",
       "local_id": "PERS_ddb70dc9",
       "slug": "azarkina",
       "weight": 1.0
     },
     {
-      "id": "person:PERS_0900c3c4",
-      "type": "person",
-      "label": "М. М. Фиалко",
-      "local_id": "PERS_0900c3c4",
-      "slug": "fialko",
-      "weight": 1.0
-    },
-    {
       "id": "person:PERS_57082cac",
       "type": "person",
-      "label": "М.А. Овчинникова",
+      "label": "М. А. Овчинникова",
       "local_id": "PERS_57082cac",
-      "slug": "m-a-ovchinnikova",
+      "slug": "ovchinnikova",
       "weight": 1.0
     },
     {
       "id": "person:PERS_d851ac20",
       "type": "person",
-      "label": "М.В. Вершинина",
+      "label": "М. В. Вершинина",
       "local_id": "PERS_d851ac20",
-      "slug": "m-v-vershinina",
+      "slug": "vershinina",
       "weight": 1.0
     },
     {
       "id": "person:PERS_ba537782",
       "type": "person",
-      "label": "М.И.Петрова",
+      "label": "М. И. Петрова",
       "local_id": "PERS_ba537782",
-      "slug": "m-i-petrova",
+      "slug": "petrova",
+      "weight": 1.0
+    },
+    {
+      "id": "person:PERS_0900c3c4",
+      "type": "person",
+      "label": "М. М. Фиалко",
+      "local_id": "PERS_0900c3c4",
+      "slug": "fialko",
+      "weight": 1.0
+    },
+    {
+      "id": "person:PERS_cea040bb",
+      "type": "person",
+      "label": "М. Рамдхари",
+      "local_id": "PERS_cea040bb",
+      "slug": "ramdkhari",
       "weight": 1.0
     },
     {
@@ -1755,7 +1755,7 @@
     {
       "id": "person:PERS_fa58484d",
       "type": "person",
-      "label": "Н. А. Александрова",
+      "label": "Н. А. Александрова",
       "local_id": "PERS_fa58484d",
       "slug": "aleksandrova",
       "weight": 1.0
@@ -1763,9 +1763,9 @@
     {
       "id": "person:PERS_0a42bfb2",
       "type": "person",
-      "label": "Н.В.Хомутинникова",
+      "label": "Н. В. Хомутинникова",
       "local_id": "PERS_0a42bfb2",
-      "slug": "n-v-khomutinnikova",
+      "slug": "khomutinnikova",
       "weight": 1.0
     },
     {
@@ -2011,7 +2011,7 @@
     {
       "id": "person:PERS_72d46eb6",
       "type": "person",
-      "label": "С. С. Чистяков",
+      "label": "С. С. Чистяков",
       "local_id": "PERS_72d46eb6",
       "slug": "chistyakov",
       "weight": 1.0
@@ -2155,9 +2155,9 @@
     {
       "id": "person:PERS_bbd15f4f",
       "type": "person",
-      "label": "Степин А.А.",
+      "label": "Степин А. А.",
       "local_id": "PERS_bbd15f4f",
-      "slug": "stepin-a-a",
+      "slug": "stepin",
       "weight": 1.0
     },
     {
@@ -2507,9 +2507,9 @@
     {
       "id": "person:PERS_929cab5a",
       "type": "person",
-      "label": "Ю.В. Предтеченская",
+      "label": "Ю. В. Предтеченская",
       "local_id": "PERS_929cab5a",
-      "slug": "yu-v-predtechenskaya",
+      "slug": "predtechenskaya",
       "weight": 2.0
     },
     {
