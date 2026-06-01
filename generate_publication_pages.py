@@ -24,6 +24,12 @@ except Exception:
     pass
 
 from classification_overrides import CLASSIFICATION_OVERRIDES, MESO_LABELS
+from keyword_filtering import (
+    KEYWORD_STOPLIST,
+    clean_public_keywords,
+    keyword_filter_decision,
+    public_keyword_label,
+)
 from publication_helpers import (
     AUTHOR_NAME,
     assign_public_ids,
@@ -41,6 +47,7 @@ from publication_helpers import (
     json_ld,
     load_authority_overrides,
     load_site_data,
+    normalize_time_interval,
     organization_structured_data,
     page_shell,
     place_structured_data,
@@ -133,6 +140,7 @@ def generated_manifest_paths():
         "site.webmanifest",
         "site_data.json",
         "sitemap.xml",
+        "voting.html",
     ]
     directories = ["analytics_output", "assets", "cities", "conferences", "p", "findings", "generations", "gumilyov", "institutions", "keywords", "meso", "s", "themes", "topics", "videos", "curation", "docs"]
     paths = [Path(path) for path in roots]
@@ -389,24 +397,9 @@ def format_distribution_links(distribution, depth=""):
     return "".join(links)
 
 
-PUBLIC_KEYWORD_LABELS = {
-    "рамаян": "Рамаяна",
-    "махабхарат": "Махабхарата",
-    "индия": "Индия",
-    "южная_индия": "Южная Индия",
-}
-
-
-def public_keyword_label(keyword):
-    return PUBLIC_KEYWORD_LABELS.get(clean_text(keyword).lower(), keyword)
-
-
 def format_keyword_links(terms, depth=""):
     links = []
-    for raw_term in str(terms or "").split(","):
-        term = clean_text(raw_term)
-        if not term:
-            continue
+    for term in clean_public_keywords(str(terms or "").split(",")):
         label = public_keyword_label(term)
         links.append(f'<a class="chip" href="{esc(search_path(term, depth))}">{esc(label)}</a>')
     return "".join(links)
@@ -1591,6 +1584,24 @@ def generate_search(data, records):
             "text": "ключевые слова статистика заголовки докладов частотность термины",
         }
     )
+    index.append(
+        {
+            "type": "Method",
+            "title": "Аудит ключевых слов",
+            "url": "keywords/review.html",
+            "meta": "Публичные и скрытые ключевые слова",
+            "text": "аудит ключевые слова стоп-лист фильтр шум служебные слова предметные термины",
+        }
+    )
+    index.append(
+        {
+            "type": "Presentation",
+            "title": "Отметки слушателя по докладам",
+            "url": "voting.html",
+            "meta": "Локальное голосование по докладам",
+            "text": "голосование доклады что слушали что понравилось посещение сессии экспорт csv json",
+        }
+    )
     for level, meta in GUMILYOV_LEVELS.items():
         index.append(
             {
@@ -1700,17 +1711,34 @@ def generate_keyword_stats_page(records):
     counts = Counter()
     series_counts = defaultdict(Counter)
     examples = defaultdict(list)
+    audit_counts = Counter()
+    audit_series_counts = defaultdict(Counter)
+    audit_examples = defaultdict(list)
+    audit_reasons = {}
+    talks_with_public_keywords = set()
 
     for talk in records_by_id.values():
         pid = clean_text(talk.get("presentation_id") or "")
+        series_key = talk.get("series_key") or talk.get("series") or ""
+        seen_public = set()
+        seen_audit = set()
         for raw_tag in talk.get("tags") or []:
-            tag = clean_text(raw_tag).lower()
-            if len(tag) < 3:
+            tag, keep, reason = keyword_filter_decision(raw_tag)
+            if not tag or tag in seen_audit:
                 continue
-            counts[tag] += 1
-            series_counts[tag][talk.get("series_key") or talk.get("series") or ""] += 1
-            if len(examples[tag]) < 4:
-                examples[tag].append(pid)
+            seen_audit.add(tag)
+            audit_counts[tag] += 1
+            audit_series_counts[tag][series_key] += 1
+            audit_reasons[tag] = reason
+            if len(audit_examples[tag]) < 4:
+                audit_examples[tag].append(pid)
+            if keep and tag not in seen_public:
+                seen_public.add(tag)
+                counts[tag] += 1
+                series_counts[tag][series_key] += 1
+                talks_with_public_keywords.add(pid)
+                if len(examples[tag]) < 4:
+                    examples[tag].append(pid)
 
     rows = []
     for tag, count in counts.most_common():
@@ -1741,24 +1769,71 @@ def generate_keyword_stats_page(records):
         writer.writeheader()
         writer.writerows({key: row[key] for key in writer.fieldnames} for row in rows)
 
+    audit_rows = []
+    for tag, count in sorted(audit_counts.items(), key=lambda item: (-item[1], item[0])):
+        zograf_count = audit_series_counts[tag].get("Zograf", 0) + audit_series_counts[tag].get("Zograf Readings", 0)
+        roerich_count = audit_series_counts[tag].get("Roerich", 0) + audit_series_counts[tag].get("Roerich Readings", 0)
+        keep = tag in counts
+        audit_rows.append(
+            {
+                "keyword": tag,
+                "label": public_keyword_label(tag),
+                "status": "public" if keep else "hidden",
+                "reason": "предметный термин" if keep else audit_reasons.get(tag, "скрыто фильтром"),
+                "presentations": count,
+                "zograf": zograf_count,
+                "roerich": roerich_count,
+                "examples": " | ".join(clean_text((records_by_id.get(pid) or {}).get("title") or "") for pid in audit_examples[tag]),
+            }
+        )
+
+    with open("analytics_output/keyword_filter_audit.csv", "w", encoding="utf-8", newline="") as handle:
+        writer = csv.DictWriter(handle, fieldnames=["keyword", "label", "status", "reason", "presentations", "zograf", "roerich", "examples"])
+        writer.writeheader()
+        writer.writerows(audit_rows)
+
     top_links = [
         f'<a class="chip" href="{esc(search_path(row["keyword"], "../"))}">{esc(public_keyword_label(row["keyword"]))} · {row["presentations"]}</a>'
         for row in rows[:30]
     ]
+    hidden_rows = [row for row in audit_rows if row["status"] == "hidden"]
+    hidden_links = [
+        f'<span class="chip">{esc(row["label"])} · {esc(row["presentations"])} <span class="meta">({esc(row["reason"])})</span></span>'
+        for row in hidden_rows[:30]
+    ]
+    audit_public_rows = [row for row in audit_rows if row["status"] == "public"]
+    audit_public_html = "".join(
+        f'<article class="talk"><strong><a href="{esc(search_path(row["keyword"], "../"))}">{esc(row["label"])}</a></strong>'
+        f'<div class="meta">{esc(row["presentations"])} докладов · Зограф: {esc(row["zograf"])} · Рерих: {esc(row["roerich"])}</div>'
+        f'<div class="meta">{esc(row["examples"])}</div></article>'
+        for row in audit_public_rows[:120]
+    )
+    audit_hidden_html = "".join(
+        f'<article class="talk"><strong>{esc(row["label"])}</strong>'
+        f'<div class="meta">{esc(row["presentations"])} докладов · {esc(row["reason"])}</div>'
+        f'<div class="meta">{esc(row["examples"])}</div></article>'
+        for row in hidden_rows[:120]
+    )
     body = f"""
         <header>
             <h1>Ключевые слова</h1>
-            <p>Сводная статистика ключевых слов, пересчитанных по нормализованным заголовкам докладов.</p>
+            <p>Сводная статистика предметных ключевых слов, пересчитанных по нормализованным заголовкам докладов после удаления служебных и слишком общих слов.</p>
         </header>
         <section class="grid">
             <article class="card"><strong>Ключевые слова</strong><div class="metric">{len(rows)}</div></article>
-            <article class="card"><strong>Доклады с ключевыми словами</strong><div class="metric">{sum(1 for talk in records_by_id.values() if talk.get("tags"))}</div></article>
+            <article class="card"><strong>Доклады с предметными словами</strong><div class="metric">{len(talks_with_public_keywords)}</div></article>
+            <article class="card"><strong>Скрыто как шум</strong><div class="metric">{len(hidden_rows)}</div></article>
         </section>
         {chip_section("Частотные слова", top_links)}
+        <aside class="caveat-block" role="note" aria-label="Keyword filter">
+            <strong>Правило публикации</strong>
+            <p>В публичные списки попадают предметные термины, полезные для навигации по докладам. Служебные формы, общие дисциплинарные слова, хронологические прилагательные и уже вынесенные географические маркеры скрываются, но остаются в audit-выгрузке.</p>
+            <div class="chip-list"><a class="chip" href="review.html">Открыть аудит фильтра</a><a class="chip" href="../analytics_output/keyword_filter_audit.csv">keyword_filter_audit.csv</a></div>
+        </aside>
         <section class="list">{''.join(row["html"] for row in rows)}</section>
         <section class="link-block">
             <strong>CSV</strong>
-            <div class="chip-list"><a class="chip" href="../analytics_output/keyword_stats.csv">keyword_stats.csv</a></div>
+            <div class="chip-list"><a class="chip" href="../analytics_output/keyword_stats.csv">keyword_stats.csv</a><a class="chip" href="../analytics_output/keyword_filter_audit.csv">keyword_filter_audit.csv</a></div>
         </section>
     """
     write_text(
@@ -1769,6 +1844,281 @@ def generate_keyword_stats_page(records):
             "keywords/",
             body,
             [page_data("Ключевые слова", "Сводная статистика ключевых слов докладов.", "keywords/"), make_breadcrumbs([("Главная", ""), ("Ключевые слова", "keywords/")])],
+        ),
+    )
+
+    audit_body = f"""
+        <header>
+            <h1>Аудит ключевых слов</h1>
+            <p>Проверочный слой для редактора: какие слова показаны в публичных списках, а какие скрыты как служебные, слишком общие или уже представленные другими фасетками.</p>
+        </header>
+        <section class="grid">
+            <article class="card"><strong>Публичные термины</strong><div class="metric">{len(audit_public_rows)}</div></article>
+            <article class="card"><strong>Скрытые слова</strong><div class="metric">{len(hidden_rows)}</div></article>
+            <article class="card"><strong>Стоп-лист</strong><div class="metric">{len(KEYWORD_STOPLIST)}</div><div class="meta">редактируется в keyword_filtering.py</div></article>
+        </section>
+        {chip_section("Скрыто чаще всего", hidden_links)}
+        <section class="link-block">
+            <strong>Выгрузки</strong>
+            <div class="chip-list"><a class="chip" href="../analytics_output/keyword_stats.csv">keyword_stats.csv</a><a class="chip" href="../analytics_output/keyword_filter_audit.csv">keyword_filter_audit.csv</a></div>
+        </section>
+        <h2>Публичные предметные слова</h2>
+        <section class="list">{audit_public_html}</section>
+        <h2>Скрытые слова для ручной проверки</h2>
+        <section class="list">{audit_hidden_html}</section>
+    """
+    write_text(
+        "keywords/review.html",
+        page_shell(
+            f"Аудит ключевых слов | {SITE_NAME}",
+            "Проверочная страница публичных и скрытых ключевых слов корпуса.",
+            "keywords/review.html",
+            audit_body,
+            [page_data("Аудит ключевых слов", "Публичные и скрытые ключевые слова корпуса.", "keywords/review.html"), make_breadcrumbs([("Главная", ""), ("Ключевые слова", "keywords/"), ("Аудит", "keywords/review.html")])],
+        ),
+    )
+
+
+def generate_voting_page(records):
+    records_by_id = presentation_records_by_id(records)
+    talks = []
+    for talk in records_by_id.values():
+        pid = clean_text(talk.get("presentation_id") or "")
+        if not pid:
+            continue
+        title = clean_text(talk.get("title") or "Доклад")
+        session_title = clean_text(talk.get("session_title") or talk.get("session") or "")
+        if not session_title or session_title.strip(" .").lower() == "перерыв":
+            session_title = "Секция не указана"
+        talks.append(
+            {
+                "id": pid,
+                "title": title,
+                "speaker": clean_text(talk.get("speaker") or talk.get("author") or ""),
+                "year": int(talk.get("year") or 0),
+                "series": series_label(talk.get("series_key") or talk.get("series"), "ru"),
+                "date": clean_text(talk.get("date") or ""),
+                "time": normalize_time_interval(talk.get("time_interval"), ""),
+                "session": session_title,
+                "order": int(talk.get("order_in_session") or 0),
+                "path": presentation_path(pid, title),
+            }
+        )
+    talks.sort(key=lambda item: (-item["year"], item["date"], item["series"], item["session"], item["order"], item["title"]))
+    years = sorted({talk["year"] for talk in talks if talk["year"]}, reverse=True)
+    default_year = years[0] if years else BUILD_DATE[:4]
+    payload = json.dumps(talks, ensure_ascii=False).replace("</", "<\\/")
+    body = f"""
+        <style>
+            .vote-toolbar {{ display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 0.8rem; align-items: end; margin: 1.2rem 0; }}
+            .vote-toolbar label {{ display: grid; gap: 0.35rem; color: var(--muted); font-size: 0.86rem; }}
+            .vote-toolbar select {{ width: 100%; background: var(--panel); color: var(--text); border: 1px solid var(--border); border-radius: 6px; padding: 0.62rem 0.7rem; }}
+            .vote-actions {{ display: flex; flex-wrap: wrap; gap: 0.5rem; }}
+            .vote-actions button {{ background: var(--panel); color: var(--text); border: 1px solid var(--border); border-radius: 6px; padding: 0.62rem 0.8rem; cursor: pointer; }}
+            .vote-actions button:hover {{ border-color: var(--accent); }}
+            .vote-row {{ display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 1rem; align-items: center; }}
+            .vote-title {{ display: grid; gap: 0.35rem; min-width: 0; }}
+            .vote-title strong {{ overflow-wrap: anywhere; }}
+            .vote-checks {{ display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: flex-end; }}
+            .vote-checks label {{ display: inline-flex; align-items: center; gap: 0.4rem; border: 1px solid var(--border); border-radius: 6px; padding: 0.45rem 0.6rem; color: var(--muted); background: rgba(255,255,255,0.02); white-space: nowrap; }}
+            .vote-checks input {{ width: 1rem; height: 1rem; }}
+            @media (max-width: 720px) {{
+                .vote-row {{ grid-template-columns: 1fr; }}
+                .vote-checks {{ justify-content: flex-start; }}
+            }}
+        </style>
+        <header>
+            <h1>Отметки слушателя по докладам</h1>
+            <p>Локальная страница для фиксации двух наблюдений по каждому докладу: что действительно слушали и какие выступления понравились.</p>
+        </header>
+        <aside class="caveat-block" role="note" aria-label="Local voting caveat">
+            <strong>Статический режим</strong>
+            <p>GitHub Pages не принимает голоса на сервер. Отметки сохраняются только в этом браузере; для передачи редактору, организатору или исследователю используйте экспорт CSV/JSON.</p>
+        </aside>
+        <section class="grid">
+            <article class="card"><strong>Год</strong><div class="metric" id="vote-year">{esc(default_year)}</div></article>
+            <article class="card"><strong>Доклады в выборке</strong><div class="metric" id="vote-total">0</div></article>
+            <article class="card"><strong>Слушали</strong><div class="metric" id="vote-heard">0</div></article>
+            <article class="card"><strong>Понравилось</strong><div class="metric" id="vote-liked">0</div></article>
+        </section>
+        <section class="vote-toolbar" aria-label="Фильтры голосования">
+            <label>Год
+                <select id="vote-year-filter"></select>
+            </label>
+            <label>Секция
+                <select id="vote-session-filter"></select>
+            </label>
+            <div class="vote-actions">
+                <button type="button" id="vote-export-csv">Экспорт CSV</button>
+                <button type="button" id="vote-export-json">Экспорт JSON</button>
+                <button type="button" id="vote-clear-year">Очистить год</button>
+            </div>
+        </section>
+        <section class="list" id="vote-list"></section>
+        <script type="application/json" id="talk-vote-data">{payload}</script>
+        <script>
+        (() => {{
+            const talks = JSON.parse(document.getElementById('talk-vote-data').textContent);
+            const storageKey = 'indology-talk-votes-v1';
+            const yearFilter = document.getElementById('vote-year-filter');
+            const sessionFilter = document.getElementById('vote-session-filter');
+            const list = document.getElementById('vote-list');
+            const stats = {{
+                year: document.getElementById('vote-year'),
+                total: document.getElementById('vote-total'),
+                heard: document.getElementById('vote-heard'),
+                liked: document.getElementById('vote-liked')
+            }};
+            const years = [...new Set(talks.map(t => t.year).filter(Boolean))].sort((a, b) => b - a);
+            let votes = loadVotes();
+
+            function loadVotes() {{
+                try {{
+                    return JSON.parse(localStorage.getItem(storageKey) || '{{}}');
+                }} catch (error) {{
+                    return {{}};
+                }}
+            }}
+
+            function saveVotes() {{
+                localStorage.setItem(storageKey, JSON.stringify(votes));
+            }}
+
+            function escapeHtml(value) {{
+                return String(value || '').replace(/[&<>"']/g, ch => ({{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}}[ch]));
+            }}
+
+            function currentYear() {{
+                return Number(yearFilter.value || years[0] || {json.dumps(default_year)});
+            }}
+
+            function currentRows() {{
+                const year = currentYear();
+                const session = sessionFilter.value || 'all';
+                return talks.filter(t => t.year === year && (session === 'all' || t.session === session));
+            }}
+
+            function renderYearOptions() {{
+                yearFilter.innerHTML = years.map(year => `<option value="${{year}}">${{year}}</option>`).join('');
+                yearFilter.value = String(years[0] || {json.dumps(default_year)});
+            }}
+
+            function renderSessionOptions() {{
+                const year = currentYear();
+                const sessions = [...new Set(talks.filter(t => t.year === year).map(t => t.session))].sort((a, b) => a.localeCompare(b, 'ru'));
+                const previous = sessionFilter.value;
+                sessionFilter.innerHTML = '<option value="all">Все секции</option>' + sessions.map(session => `<option value="${{escapeHtml(session)}}">${{escapeHtml(session)}}</option>`).join('');
+                sessionFilter.value = sessions.includes(previous) ? previous : 'all';
+            }}
+
+            function render() {{
+                const rows = currentRows();
+                const heard = rows.filter(t => votes[t.id]?.heard).length;
+                const liked = rows.filter(t => votes[t.id]?.liked).length;
+                stats.year.textContent = String(currentYear());
+                stats.total.textContent = String(rows.length);
+                stats.heard.textContent = String(heard);
+                stats.liked.textContent = String(liked);
+                list.innerHTML = rows.map(t => {{
+                    const vote = votes[t.id] || {{}};
+                    const meta = [t.series + ' ' + t.year, t.date, t.time, t.session, t.speaker].filter(Boolean).join(' · ');
+                    return `<article class="talk vote-row" data-id="${{escapeHtml(t.id)}}">
+                        <div class="vote-title">
+                            <strong><a href="${{escapeHtml(t.path)}}">${{escapeHtml(t.title)}}</a></strong>
+                            <div class="meta">${{escapeHtml(meta)}}</div>
+                        </div>
+                        <div class="vote-checks">
+                            <label><input type="checkbox" data-field="heard" ${{vote.heard ? 'checked' : ''}}>Слушал(а)</label>
+                            <label><input type="checkbox" data-field="liked" ${{vote.liked ? 'checked' : ''}}>Понравилось</label>
+                        </div>
+                    </article>`;
+                }}).join('');
+            }}
+
+            function rowsForExport() {{
+                return currentRows().map(t => ({{
+                    id: t.id,
+                    year: t.year,
+                    series: t.series,
+                    date: t.date,
+                    time: t.time,
+                    session: t.session,
+                    speaker: t.speaker,
+                    title: t.title,
+                    heard: Boolean(votes[t.id]?.heard),
+                    liked: Boolean(votes[t.id]?.liked),
+                    url: new URL(t.path, location.href).href
+                }}));
+            }}
+
+            function download(filename, mime, content) {{
+                const blob = new Blob([content], {{type: mime}});
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = filename;
+                document.body.appendChild(a);
+                a.click();
+                a.remove();
+                URL.revokeObjectURL(url);
+            }}
+
+            function csvEscape(value) {{
+                return '"' + String(value ?? '').replace(/"/g, '""') + '"';
+            }}
+
+            document.getElementById('vote-export-csv').addEventListener('click', () => {{
+                const rows = rowsForExport();
+                const fields = ['id', 'year', 'series', 'date', 'time', 'session', 'speaker', 'title', 'heard', 'liked', 'url'];
+                const csv = [fields.join(','), ...rows.map(row => fields.map(field => csvEscape(row[field])).join(','))].join('\\n');
+                download(`indology-talk-votes-${{currentYear()}}.csv`, 'text/csv;charset=utf-8', csv + '\\n');
+            }});
+
+            document.getElementById('vote-export-json').addEventListener('click', () => {{
+                download(`indology-talk-votes-${{currentYear()}}.json`, 'application/json;charset=utf-8', JSON.stringify(rowsForExport(), null, 2));
+            }});
+
+            document.getElementById('vote-clear-year').addEventListener('click', () => {{
+                for (const talk of talks.filter(t => t.year === currentYear())) {{
+                    delete votes[talk.id];
+                }}
+                saveVotes();
+                render();
+            }});
+
+            list.addEventListener('change', event => {{
+                const input = event.target;
+                if (!input.matches('input[type="checkbox"]')) return;
+                const row = input.closest('[data-id]');
+                const id = row?.dataset.id;
+                const field = input.dataset.field;
+                if (!id || !field) return;
+                votes[id] = votes[id] || {{}};
+                votes[id][field] = input.checked;
+                saveVotes();
+                render();
+            }});
+
+            yearFilter.addEventListener('change', () => {{
+                renderSessionOptions();
+                render();
+            }});
+            sessionFilter.addEventListener('change', render);
+
+            renderYearOptions();
+            renderSessionOptions();
+            render();
+        }})();
+        </script>
+    """
+    write_text(
+        "voting.html",
+        page_shell(
+            f"Отметки слушателя по докладам | {SITE_NAME}",
+            "Локальная страница для отметок слушателя: какие доклады слушали и какие понравились.",
+            "voting.html",
+            body,
+            [page_data("Отметки слушателя по докладам", "Локальные отметки слушателя по докладам.", "voting.html"), make_breadcrumbs([("Главная", ""), ("Отметки слушателя", "voting.html")])],
         ),
     )
 
@@ -1784,6 +2134,7 @@ def generate_download_page(data):
         ("Data dictionary", "data_dictionary.md", "Human-readable field guide for reusable CSV, JSON, SQLite, and generated publication outputs."),
         ("Data quality report", "analytics_output/data_quality_report.json", "Machine-readable quality checks and review samples."),
         ("Keyword statistics", "analytics_output/keyword_stats.csv", "Per-keyword presentation counts and example titles."),
+        ("Keyword filter audit", "analytics_output/keyword_filter_audit.csv", "Public/hidden keyword decisions with reasons and example titles."),
         ("Biographical provenance", "analytics_output/field_provenance_biographical.csv", "Field-level provenance for curated person names and life dates."),
         ("Authority provenance", "analytics_output/field_provenance_authority.csv", "Field-level provenance for external identifiers and organization authority records."),
         ("Theme provenance", "analytics_output/field_provenance_themes.csv", "Field-level provenance for generated presentation theme labels."),
@@ -5077,9 +5428,8 @@ def generate_visualisations_page(data, records):
     for row in cursor_tmp.fetchall():
         if row['title']:
             clean = regex.sub(r'[^а-яА-ЯёЁ]', ' ', row['title'].lower())
-            for w in clean.split():
-                if len(w) > 4:
-                    words[w] += 1
+            for w in clean_public_keywords(clean.split()):
+                words[w] += 1
     top_words = [{"text": k, "val": v} for k, v in sorted(words.items(), key=lambda x: x[1], reverse=True)[:30]]
     serialized_vis024 = json.dumps(top_words, ensure_ascii=False)
 
@@ -13377,6 +13727,10 @@ ER  - </pre>
                 <p>Russian name spelling, especially in international publications and Romanized metadata, varies significantly. Finding correct external identifiers (e.g. ORCID, Wikidata) requires resolving these spelling variations.</p>
             </article>
             <article class="card">
+                <strong>Programme Record vs. Performed Event</strong>
+                <p>A published programme records the announced administrative schedule, not necessarily the factual course of the meeting. A paper announced as offline may in practice be delivered online, the order of talks may change during the session, a speaker may cancel or fail to appear, and the public programme may remain uncorrected after the event. Therefore corpus records should be read as evidence of public programme visibility; claims about actual attendance, delivery, reception, or no-show status require separate verification through video recordings, day-of-event schedules, participant testimony, or minutes.</p>
+            </article>
+            <article class="card">
                 <strong>Historical and Temporary Affiliations</strong>
                 <p>A city in a program is not treated as employment. An institutional label is shown only when stated in the program or supplied by a source-backed dated span; it is never carried beyond that span without new evidence.</p>
             </article>
@@ -13641,7 +13995,7 @@ def generate_sitemap(data, records):
         "data-quality.html", "methodology.html", "hypotheses.html", "data-sources.html",
         "known-limitations.html", "how-to-cite.html", "metrics-guide.html",
         "classification-criteria.html", "networks.html", "sociology.html", "sociology-en.html",
-        "gatekeeping.html", "gatekeeping-en.html", "docs.html"
+        "gatekeeping.html", "gatekeeping-en.html", "docs.html", "voting.html"
     ]
     static_paths = sorted(set(static_paths))
 
@@ -14068,6 +14422,7 @@ def main():
     generate_home_assets(data)
     generate_search(data, records)
     generate_keyword_stats_page(records)
+    generate_voting_page(records)
     authority_stats = generate_authority_coverage(data, authority)
     generate_provenance_sidecars(data, authority, records)
     generate_download_page(data)

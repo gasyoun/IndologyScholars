@@ -7,6 +7,7 @@ from urllib.parse import quote
 import jinja2
 
 from classification_overrides import CLASSIFICATION_OVERRIDES, MESO_LABELS
+from keyword_filtering import clean_public_keywords, public_keyword_label
 from publication_helpers import (
     AUTHOR_NAME,
     assign_public_ids,
@@ -301,7 +302,8 @@ def scholar_description(scholar):
     total = scholar.get("total_talks", 0)
     years = describe_year_span(scholar.get("first_year"), scholar.get("last_year"))
     theme, _, _ = scholar_profile_meta(scholar)
-    return f"{name}: {talks_count_label(total)} в архиве Зографских и Рериховских чтений, период активности {years}, основной профиль: {theme}."
+    profile_descriptor = "засвидетельствованный профиль" if total == 1 else "основной профиль"
+    return f"{name}: {talks_count_label(total)} в архиве Зографских и Рериховских чтений, период активности {years}, {profile_descriptor}: {theme}."
 
 
 def unique_affiliations(scholar, limit=16):
@@ -332,34 +334,6 @@ def chip_links(items, href_factory, class_name="chip"):
     return "".join(f'<a class="{class_name}" href="{href_factory(item)}">{esc(item)}</a>' for item in items)
 
 
-GENERIC_TAGS = {
-    "индия",
-    "индийский",
-    "древний",
-    "средневековый",
-    "современный",
-    "текст",
-    "литература",
-    "москва",
-    "новый",
-    "петербург",
-    "санкт",
-    "старый",
-    "тема",
-    "форма",
-}
-
-PUBLIC_KEYWORD_LABELS = {
-    "рамаян": "Рамаяна",
-    "махабхарат": "Махабхарата",
-    "южная_индия": "Южная Индия",
-}
-
-
-def public_keyword_label(keyword):
-    return PUBLIC_KEYWORD_LABELS.get(clean_text(keyword).lower(), keyword)
-
-
 def talk_meso_codes(talk, meso_by_presentation):
     pid = clean_text(talk.get("presentation_id") or "")
     return list(dict.fromkeys(meso_by_presentation.get(pid, [])))
@@ -379,15 +353,7 @@ def linked_keyword_chip(keyword, class_name="mini-chip"):
 
 
 def clean_tags(talk):
-    values = []
-    seen = set()
-    for tag in talk.get("tags") or []:
-        value = clean_text(tag).lower()
-        if len(value) < 3 or value in GENERIC_TAGS or value in seen:
-            continue
-        seen.add(value)
-        values.append(value)
-    return values
+    return clean_public_keywords(talk.get("tags") or [])
 
 
 def scholar_context(scholar, meso_by_presentation):
@@ -777,6 +743,7 @@ def render_profile(scholar, related, authority, meso_by_presentation, meso_items
         activity_span=describe_year_span(scholar.get("first_year"), scholar.get("last_year")),
         activity_label=activity_label(scholar),
         theme_path=theme_path(theme_code),
+        profile_descriptor="Засвидетельствованный профиль" if (scholar.get("total_talks") or 0) == 1 else "Основной профиль",
         profile_label=profile_label,
         series_html=series_html,
         generation_html=generation_html,

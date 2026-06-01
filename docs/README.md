@@ -24,6 +24,7 @@ values deliberately follow the published machine-readable exports.
 
 Additional audit and handoff documents:
 
+- [Keyword and talk-marking notes, 2026-06-01](keyword-voting-method-notes-2026-06-01.md)
 - [Sociology and gatekeeping editorial decisions, 2026-06-01](sociology-gatekeeping-editorial-decisions.md)
 - [Academic career risk audit, 2026-05-31](academic-career-risk-audit-2026-05-31.md)
 - [Implementation and handoff plan, 2026-05-31](implementation-handoff-plan-2026-05-31.md)
