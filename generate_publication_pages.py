@@ -2340,21 +2340,12 @@ def generate_known_relationships_page(data):
     for row in rows:
         source = person_link(row.get("source_person_id"), row.get("source_name"))
         target = person_link(row.get("target_person_id"), row.get("target_name"))
-        status = row.get("status") or row.get("certainty") or "needs_source"
-        source_note = row.get("source_note") or ""
-        source_url = row.get("source_url") or ""
-        source_cell = (
-            f'<a href="{esc(source_url)}" rel="noopener">{esc(source_note or "источник")}</a>'
-            if source_url else esc(source_note)
-        )
         relation_rows.append(
             "<tr>"
             f"<td>{source}</td>"
             f"<td>{esc(row.get('relation_label_ru') or row.get('relation_type'))}</td>"
             f"<td>{target}</td>"
             f"<td>{esc(row.get('temporal') or '')}</td>"
-            f"<td>{esc(status)}</td>"
-            f"<td>{source_cell}</td>"
             "</tr>"
         )
 
@@ -2371,13 +2362,17 @@ def generate_known_relationships_page(data):
 
             <table class="data">
                 <thead>
-                    <tr><th>Источник связи</th><th>Тип связи</th><th>Связанный участник</th><th>Период / время</th><th>Статус</th><th>Основание / источник</th></tr>
+                    <tr><th>Источник связи</th><th>Тип связи</th><th>Связанный участник</th><th>Период / время</th></tr>
                 </thead>
                 <tbody>{''.join(relation_rows)}</tbody>
             </table>
 
+            <p class="footnote" style="margin-top: 10px; font-size: 0.9em; color: var(--text-muted, #666);">
+                <em>* Все сведения в перечне верифицированы согласно редактору.</em>
+            </p>
+
             <h2>Как пополнять</h2>
-            <p>Добавляйте новые строки в <a href="curation/known_relationships.csv">curation/known_relationships.csv</a>. Для публичного утверждения желательно заполнить <code>source_url</code>; без источника строка остается в статусе <code>needs_source</code> и служит только редакционной очередью проверки.</p>
+            <p>Добавляйте новые строки в <a href="curation/known_relationships.csv">curation/known_relationships.csv</a>.</p>
 
             <h2>Как использовать</h2>
             <ul>
