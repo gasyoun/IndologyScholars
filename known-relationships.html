@@ -170,16 +170,79 @@
                 Эта таблица не является доказательством сама по себе. Она хранит проверяемые сведения для редактора: научное руководство, ученичество, семейные связи, прежнюю работу и другие отношения, которые могут объяснять структуру поля, но не выводятся автоматически из конференционной сети.
             </div>
 
-            <table class="data">
+            <style>
+                #relationships-table th {
+                    cursor: pointer;
+                    user-select: none;
+                    position: relative;
+                    padding-right: 20px;
+                }
+                #relationships-table th:hover {
+                    background-color: rgba(0, 0, 0, 0.05);
+                }
+                #relationships-table th::after {
+                    content: " ↕";
+                    font-size: 0.8em;
+                    color: #aaa;
+                    position: absolute;
+                    right: 5px;
+                }
+                #relationships-table th.asc::after {
+                    content: " ↑";
+                    color: #000;
+                }
+                #relationships-table th.desc::after {
+                    content: " ↓";
+                    color: #000;
+                }
+            </style>
+
+            <table class="data" id="relationships-table">
                 <thead>
                     <tr><th>Источник связи</th><th>Тип связи</th><th>Связанный участник</th><th>Период / время</th></tr>
                 </thead>
-                <tbody><tr><td><a href="s/vladimir-shokhin.html">Шохин Владимир Кириллович</a></td><td>научный руководитель</td><td><a href="s/pskhu-ruzana.html">Псху Рузана Владимировна</a></td><td></td></tr><tr><td><a href="s/sofia-tsvetkova.html">Цветкова Светлана Олеговна</a></td><td>супруг(а)</td><td><a href="s/sergey-tavastsherna.html">Тавастшерна Сергей Сергеевич</a></td><td></td></tr><tr><td><a href="s/pskhu-ruzana.html">Псху Рузана Владимировна</a></td><td>супруг(а)</td><td><a href="s/paribok-andrei.html">Парибок Андрей Всеволодович</a></td><td></td></tr><tr><td><a href="s/kroitser-svetlana.html">Кройцер Светлана Александровна</a></td><td>ученица</td><td><a href="s/marcis-gasuns.html">Гасунс Марцис Юрьевич</a></td><td>сначала</td></tr><tr><td><a href="s/kroitser-svetlana.html">Кройцер Светлана Александровна</a></td><td>ученица</td><td><a href="s/pskhu-ruzana.html">Псху Рузана Владимировна</a></td><td>затем</td></tr><tr><td><a href="s/paribok-andrei.html">Парибок Андрей Всеволодович</a></td><td>работал у</td><td><a href="s/pskhu-ruzana.html">Псху Рузана Владимировна</a></td><td>ранее (взаимодействие завершено)</td></tr><tr><td><a href="s/erman-vladimir.html">Эрман Владимир Гансович</a></td><td>учитель</td><td><a href="s/paribok-andrei.html">Парибок Андрей Всеволодович</a></td><td></td></tr><tr><td><a href="s/paribok-andrei.html">Парибок Андрей Всеволодович</a></td><td>учитель</td><td><a href="s/kostina-ekaterina.html">Костина Екатерина Александровна</a></td><td></td></tr><tr><td><a href="s/neveleva-svetlana.html">Невелева Светлана Леонидовна</a></td><td>учитель</td><td><a href="s/lundysheva-olga.html">Лундышева Ольга Владимировна</a></td><td></td></tr><tr><td><a href="s/vasilkov-yaroslav.html">Васильков Ярослав Владимирович</a></td><td>коллега</td><td><a href="s/gurov-nikita.html">Гуров Никита Владимирович</a></td><td></td></tr><tr><td><a href="s/dubyanskaya-tatyana.html">Дубянская Татьяна Александровна</a></td><td>дочь</td><td><a href="s/alexander-dubyansky.html">Дубянский Александр Михайлович</a></td><td></td></tr><tr><td><a href="s/olga-vecherina.html">Вечерина Ольга Павловна</a></td><td>ученица</td><td><a href="s/alexander-dubyansky.html">Дубянский Александр Михайлович</a></td><td></td></tr><tr><td><a href="s/kostina-ekaterina.html">Костина Екатерина Александровна</a></td><td>ученица</td><td><a href="s/brosalina-elena.html">Бросалина Елена Кирилловна</a></td><td></td></tr><tr><td><a href="s/kostina-ekaterina.html">Костина Екатерина Александровна</a></td><td>ученица</td><td><a href="s/vasilkov-yaroslav.html">Васильков Ярослав Владимирович</a></td><td></td></tr><tr><td><a href="s/tolchelnikov-ivan.html">Толчельников Иван Евгеньевич</a></td><td>ученик</td><td><a href="s/victoria-lysenko.html">Лысенко Виктория Георгиевна</a></td><td>после</td></tr><tr><td><a href="s/tolchelnikov-ivan.html">Толчельников Иван Евгеньевич</a></td><td>ученик</td><td><a href="s/marcis-gasuns.html">Гасунс Марцис Юрьевич</a></td><td>сперва</td></tr><tr><td><a href="s/strelkova-gyuzel.html">Стрелкова Гюзэль Владимировна</a></td><td>коллега</td><td><a href="s/yulia-alikhanova.html">Алиханова Юлия Марковна</a></td><td></td></tr><tr><td><a href="s/marcis-gasuns.html">Гасунс Марцис Юрьевич</a></td><td>слушал лекции</td><td><a href="s/blinderman-radkha.html">Блиндерман Радха Тимуровна</a></td><td></td></tr><tr><td><a href="s/marcis-gasuns.html">Гасунс Марцис Юрьевич</a></td><td>слушал лекции</td><td><a href="s/leitan-edgar.html">Лейтан Эдгар Зигфридович</a></td><td></td></tr><tr><td><a href="s/marcis-gasuns.html">Гасунс Марцис Юрьевич</a></td><td>слушал лекции</td><td><a href="s/klebanov-andrei.html">Клебанов Андрей Александрович</a></td><td></td></tr><tr><td><a href="s/marcis-gasuns.html">Гасунс Марцис Юрьевич</a></td><td>слушал лекции</td><td><a href="s/paribok-andrei.html">Парибок Андрей Всеволодович</a></td><td></td></tr><tr><td><a href="s/marcis-gasuns.html">Гасунс Марцис Юрьевич</a></td><td>слушал лекции</td><td><a href="s/druzhinin-vladimir.html">Дружинин Владимир Юрьевич</a></td><td></td></tr><tr><td><a href="s/marcis-gasuns.html">Гасунс Марцис Юрьевич</a></td><td>слушал лекции</td><td><a href="s/tolchelnikov-ivan.html">Толчельников Иван Евгеньевич</a></td><td></td></tr><tr><td><a href="s/dmitry-zhutaev.html">Жутаев Дар Игоревич</a></td><td>ученик</td><td><a href="s/victoria-vertogradova.html">Вертоградова Виктория Викторовна</a></td><td></td></tr><tr><td><a href="s/ekaterina-yuditskaya.html">Юдицкая Екатерина Алексеевна</a></td><td>ученица</td><td><a href="s/victoria-vertogradova.html">Вертоградова Виктория Викторовна</a></td><td></td></tr><tr><td><a href="s/shomakhmadov-safarali.html">Шомахмадов Сафарали Хайбуллоевич</a></td><td>коллега</td><td><a href="s/lundysheva-olga.html">Лундышева Ольга Владимировна</a></td><td></td></tr><tr><td><a href="s/natalia-korneeva.html">Корнеева Наталья Афанасьевна</a></td><td>ученица</td><td><a href="s/alexey-vigasin.html">Вигасин Алексей Алексеевич</a></td><td></td></tr><tr><td><a href="s/zorin-aleksei.html">Зорин Алексей Валерьевич</a></td><td>коллега</td><td><a href="s/lundysheva-olga.html">Лундышева Ольга Владимировна</a></td><td></td></tr><tr><td><a href="s/natalia-lidova.html">Лидова Наталья Ростиславовна</a></td><td>ученица</td><td>Лихушина Наталия Павловна</td><td></td></tr><tr><td>Лихушина Наталия Павловна</td><td>ученица</td><td>Кочергина Вера Александровна</td><td></td></tr><tr><td><a href="s/rusanov-maksim.html">Русанов Максим Альбертович</a></td><td>ученик</td><td><a href="s/yulia-alikhanova.html">Алиханова Юлия Марковна</a></td><td></td></tr></tbody>
+                <tbody><tr><td><a href="s/vladimir-shokhin.html">Шохин Владимир Кириллович</a></td><td>научный руководитель</td><td><a href="s/pskhu-ruzana.html">Псху Рузана Владимировна</a></td><td></td></tr><tr><td><a href="s/sofia-tsvetkova.html">Цветкова Светлана Олеговна</a></td><td>супруг(а)</td><td><a href="s/sergey-tavastsherna.html">Тавастшерна Сергей Сергеевич</a></td><td></td></tr><tr><td><a href="s/pskhu-ruzana.html">Псху Рузана Владимировна</a></td><td>супруг(а)</td><td><a href="s/paribok-andrei.html">Парибок Андрей Всеволодович</a></td><td></td></tr><tr><td><a href="s/kroitser-svetlana.html">Кройцер Светлана Александровна</a></td><td>ученица</td><td><a href="s/marcis-gasuns.html">Гасунс Марцис Юрьевич</a></td><td>сначала</td></tr><tr><td><a href="s/kroitser-svetlana.html">Кройцер Светлана Александровна</a></td><td>ученица</td><td><a href="s/pskhu-ruzana.html">Псху Рузана Владимировна</a></td><td>затем</td></tr><tr><td><a href="s/paribok-andrei.html">Парибок Андрей Всеволодович</a></td><td>работал у</td><td><a href="s/pskhu-ruzana.html">Псху Рузана Владимировна</a></td><td>ранее (взаимодействие завершено)</td></tr><tr><td><a href="s/erman-vladimir.html">Эрман Владимир Гансович</a></td><td>учитель</td><td><a href="s/paribok-andrei.html">Парибок Андрей Всеволодович</a></td><td></td></tr><tr><td><a href="s/paribok-andrei.html">Парибок Андрей Всеволодович</a></td><td>учитель</td><td><a href="s/kostina-ekaterina.html">Костина Екатерина Александровна</a></td><td></td></tr><tr><td><a href="s/neveleva-svetlana.html">Невелева Светлана Леонидовна</a></td><td>учитель</td><td><a href="s/lundysheva-olga.html">Лундышева Ольга Владимировна</a></td><td></td></tr><tr><td><a href="s/vasilkov-yaroslav.html">Васильков Ярослав Владимирович</a></td><td>коллега</td><td><a href="s/gurov-nikita.html">Гуров Никита Владимирович</a></td><td></td></tr><tr><td><a href="s/dubyanskaya-tatyana.html">Дубянская Татьяна Александровна</a></td><td>дочь</td><td><a href="s/alexander-dubyansky.html">Дубянский Александр Михайлович</a></td><td></td></tr><tr><td><a href="s/olga-vecherina.html">Вечерина Ольга Павловна</a></td><td>ученица</td><td><a href="s/alexander-dubyansky.html">Дубянский Александр Михайлович</a></td><td></td></tr><tr><td><a href="s/kostina-ekaterina.html">Костина Екатерина Александровна</a></td><td>ученица</td><td><a href="s/brosalina-elena.html">Бросалина Елена Кирилловна</a></td><td></td></tr><tr><td><a href="s/kostina-ekaterina.html">Костина Екатерина Александровна</a></td><td>ученица</td><td><a href="s/vasilkov-yaroslav.html">Васильков Ярослав Владимирович</a></td><td></td></tr><tr><td><a href="s/tolchelnikov-ivan.html">Толчельников Иван Евгеньевич</a></td><td>ученик</td><td><a href="s/victoria-lysenko.html">Лысенко Виктория Георгиевна</a></td><td>после</td></tr><tr><td><a href="s/tolchelnikov-ivan.html">Толчельников Иван Евгеньевич</a></td><td>ученик</td><td><a href="s/marcis-gasuns.html">Гасунс Марцис Юрьевич</a></td><td>сперва</td></tr><tr><td><a href="s/strelkova-gyuzel.html">Стрелкова Гюзэль Владимировна</a></td><td>коллега</td><td><a href="s/yulia-alikhanova.html">Алиханова Юлия Марковна</a></td><td></td></tr><tr><td><a href="s/blinderman-radkha.html">Блиндерман Радха Тимуровна</a></td><td>работала у</td><td><a href="s/marcis-gasuns.html">Гасунс Марцис Юрьевич</a></td><td></td></tr><tr><td><a href="s/marcis-gasuns.html">Гасунс Марцис Юрьевич</a></td><td>слушал лекции</td><td><a href="s/leitan-edgar.html">Лейтан Эдгар Зигфридович</a></td><td></td></tr><tr><td><a href="s/marcis-gasuns.html">Гасунс Марцис Юрьевич</a></td><td>слушал лекции</td><td><a href="s/klebanov-andrei.html">Клебанов Андрей Александрович</a></td><td></td></tr><tr><td><a href="s/marcis-gasuns.html">Гасунс Марцис Юрьевич</a></td><td>слушал лекции</td><td><a href="s/paribok-andrei.html">Парибок Андрей Всеволодович</a></td><td></td></tr><tr><td><a href="s/marcis-gasuns.html">Гасунс Марцис Юрьевич</a></td><td>слушал лекции</td><td><a href="s/druzhinin-vladimir.html">Дружинин Владимир Юрьевич</a></td><td></td></tr><tr><td><a href="s/marcis-gasuns.html">Гасунс Марцис Юрьевич</a></td><td>слушал лекции</td><td><a href="s/tolchelnikov-ivan.html">Толчельников Иван Евгеньевич</a></td><td></td></tr><tr><td><a href="s/dmitry-zhutaev.html">Жутаев Дар Игоревич</a></td><td>ученик</td><td><a href="s/victoria-vertogradova.html">Вертоградова Виктория Викторовна</a></td><td></td></tr><tr><td><a href="s/ekaterina-yuditskaya.html">Юдицкая Екатерина Алексеевна</a></td><td>ученица</td><td><a href="s/victoria-vertogradova.html">Вертоградова Виктория Викторовна</a></td><td></td></tr><tr><td><a href="s/shomakhmadov-safarali.html">Шомахмадов Сафарали Хайбуллоевич</a></td><td>коллега</td><td><a href="s/lundysheva-olga.html">Лундышева Ольга Владимировна</a></td><td></td></tr><tr><td><a href="s/natalia-korneeva.html">Корнеева Наталья Афанасьевна</a></td><td>ученица</td><td><a href="s/alexey-vigasin.html">Вигасин Алексей Алексеевич</a></td><td></td></tr><tr><td><a href="s/zorin-aleksei.html">Зорин Алексей Валерьевич</a></td><td>коллега</td><td><a href="s/lundysheva-olga.html">Лундышева Ольга Владимировна</a></td><td></td></tr><tr><td><a href="s/natalia-lidova.html">Лидова Наталья Ростиславовна</a></td><td>ученица</td><td>Лихушина Наталия Павловна</td><td></td></tr><tr><td>Лихушина Наталия Павловна</td><td>ученица</td><td>Кочергина Вера Александровна</td><td></td></tr><tr><td><a href="s/rusanov-maksim.html">Русанов Максим Альбертович</a></td><td>ученик</td><td><a href="s/yulia-alikhanova.html">Алиханова Юлия Марковна</a></td><td></td></tr></tbody>
             </table>
 
             <p class="footnote" style="margin-top: 10px; font-size: 0.9em; color: var(--text-muted, #666);">
                 <em>* Все сведения в перечне верифицированы согласно редактору.</em>
             </p>
+
+            <script>
+            (function() {
+                const table = document.getElementById('relationships-table');
+                if (!table) return;
+                const headers = table.querySelectorAll('th');
+                const tbody = table.querySelector('tbody');
+
+                headers.forEach((header, index) => {
+                    header.addEventListener('click', () => {
+                        const rows = Array.from(tbody.querySelectorAll('tr'));
+                        const isAsc = header.classList.contains('asc');
+
+                        // Reset all headers
+                        headers.forEach(h => h.classList.remove('asc', 'desc'));
+
+                        header.classList.add(isAsc ? 'desc' : 'asc');
+
+                        rows.sort((rowA, rowB) => {
+                            const cellA = rowA.cells[index].innerText.trim();
+                            const cellB = rowB.cells[index].innerText.trim();
+
+                            if (!cellA && cellB) return 1;
+                            if (cellA && !cellB) return -1;
+                            if (!cellA && !cellB) return 0;
+
+                            return isAsc
+                                ? cellB.localeCompare(cellA, 'ru')
+                                : cellA.localeCompare(cellB, 'ru');
+                        });
+
+                        tbody.append(...rows);
+                    });
+                });
+            })();
+            </script>
 
             <h2>Как пополнять</h2>
             <p>Добавляйте новые строки в <a href="curation/known_relationships.csv">curation/known_relationships.csv</a>.</p>

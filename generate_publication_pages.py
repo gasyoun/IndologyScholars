@@ -2360,7 +2360,34 @@ def generate_known_relationships_page(data):
                 Эта таблица не является доказательством сама по себе. Она хранит проверяемые сведения для редактора: научное руководство, ученичество, семейные связи, прежнюю работу и другие отношения, которые могут объяснять структуру поля, но не выводятся автоматически из конференционной сети.
             </div>
 
-            <table class="data">
+            <style>
+                #relationships-table th {{
+                    cursor: pointer;
+                    user-select: none;
+                    position: relative;
+                    padding-right: 20px;
+                }}
+                #relationships-table th:hover {{
+                    background-color: rgba(0, 0, 0, 0.05);
+                }}
+                #relationships-table th::after {{
+                    content: " ↕";
+                    font-size: 0.8em;
+                    color: #aaa;
+                    position: absolute;
+                    right: 5px;
+                }}
+                #relationships-table th.asc::after {{
+                    content: " ↑";
+                    color: #000;
+                }}
+                #relationships-table th.desc::after {{
+                    content: " ↓";
+                    color: #000;
+                }}
+            </style>
+
+            <table class="data" id="relationships-table">
                 <thead>
                     <tr><th>Источник связи</th><th>Тип связи</th><th>Связанный участник</th><th>Период / время</th></tr>
                 </thead>
@@ -2370,6 +2397,42 @@ def generate_known_relationships_page(data):
             <p class="footnote" style="margin-top: 10px; font-size: 0.9em; color: var(--text-muted, #666);">
                 <em>* Все сведения в перечне верифицированы согласно редактору.</em>
             </p>
+
+            <script>
+            (function() {{
+                const table = document.getElementById('relationships-table');
+                if (!table) return;
+                const headers = table.querySelectorAll('th');
+                const tbody = table.querySelector('tbody');
+                
+                headers.forEach((header, index) => {{
+                    header.addEventListener('click', () => {{
+                        const rows = Array.from(tbody.querySelectorAll('tr'));
+                        const isAsc = header.classList.contains('asc');
+                        
+                        // Reset all headers
+                        headers.forEach(h => h.classList.remove('asc', 'desc'));
+                        
+                        header.classList.add(isAsc ? 'desc' : 'asc');
+                        
+                        rows.sort((rowA, rowB) => {{
+                            const cellA = rowA.cells[index].innerText.trim();
+                            const cellB = rowB.cells[index].innerText.trim();
+                            
+                            if (!cellA && cellB) return 1;
+                            if (cellA && !cellB) return -1;
+                            if (!cellA && !cellB) return 0;
+                            
+                            return isAsc 
+                                ? cellB.localeCompare(cellA, 'ru') 
+                                : cellA.localeCompare(cellB, 'ru');
+                        }});
+                        
+                        tbody.append(...rows);
+                    }});
+                }});
+            }})();
+            </script>
 
             <h2>Как пополнять</h2>
             <p>Добавляйте новые строки в <a href="curation/known_relationships.csv">curation/known_relationships.csv</a>.</p>
