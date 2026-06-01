@@ -5,6 +5,8 @@ Updated: 2026-06-01
 This document records the editorial and evidentiary decisions for `sociology.html`
 and `gatekeeping.html`.
 
+Russian version: `docs/sociology-gatekeeping-editorial-decisions-ru.md`.
+
 ## Audience
 
 Primary audience: editors and peer reviewers.
@@ -111,6 +113,18 @@ data can and cannot show.
 - alternative explanations;
 - external activity checks;
 - careful wording around institutional filtering.
+
+`known-relationships.html`:
+
+- separate curated layer for relationships not inferable from coauthorship or shared sessions;
+- reviewable source queue for advisor, spouse, teacher, student, and employment ties;
+- interpretive support only after the row has a source and review status.
+
+`curation/eastern_faculty_alumni.csv`:
+
+- reproducible curated filter for Faculty of Asian and African Studies / Oriental Faculty alumni;
+- generated candidates may be refreshed with `tools/extract_eastern_faculty_alumni.py`;
+- affiliation at the faculty is a candidate signal, not proof of graduation.
 
 ## English Version
 

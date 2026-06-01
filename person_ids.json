@@ -1,6 +1,7 @@
 {
   "description": "Legacy person_id assignments preserved so scholar profile URLs stay stable across database rebuilds. New people use deterministic IDs derived from normalized names.",
   "normalized_keys": {
+    "кожевникова м н": "PERS_d6ade703",
     "aleshina irina evgenyevna": "PERS_51e0a171",
     "aleshina irina evgenyevna b": "PERS_51e0a171",
     "alexandrova natalia vladimirovna": "PERS_f074f69f",

@@ -238,6 +238,13 @@
       "description": "Dated source-backed institutional trajectories used for public affiliation normalization."
     },
     {
+      "name": "eastern-faculty-alumni",
+      "path": "curation/eastern_faculty_alumni.csv",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "description": "Curated candidate filter for SPbU Oriental Faculty alumni; rows marked needs_source require external confirmation before strong claims."
+    },
+    {
       "name": "classification-reliability-sample",
       "path": "analytics_output/classification_reliability_sample.csv",
       "format": "csv",
@@ -1019,6 +1026,77 @@
           {
             "name": "interpretation_note",
             "type": "string"
+          }
+        ]
+      }
+    },
+    {
+      "name": "known-relationships",
+      "path": "curation/known_relationships.csv",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "description": "Curated review table for known relationships not always visible from conference-network sources.",
+      "schema": {
+        "fields": [
+          {
+            "name": "relation_id",
+            "type": "string"
+          },
+          {
+            "name": "source_person_id",
+            "type": "string"
+          },
+          {
+            "name": "source_name",
+            "type": "string"
+          },
+          {
+            "name": "target_person_id",
+            "type": "string"
+          },
+          {
+            "name": "target_name",
+            "type": "string"
+          },
+          {
+            "name": "relation_type",
+            "type": "string"
+          },
+          {
+            "name": "relation_label_ru",
+            "type": "string"
+          },
+          {
+            "name": "relation_label_en",
+            "type": "string"
+          },
+          {
+            "name": "direction",
+            "type": "string"
+          },
+          {
+            "name": "certainty",
+            "type": "string"
+          },
+          {
+            "name": "status",
+            "type": "string"
+          },
+          {
+            "name": "source_note",
+            "type": "string"
+          },
+          {
+            "name": "source_url",
+            "type": "string"
+          },
+          {
+            "name": "added_at",
+            "type": "date"
+          },
+          {
+            "name": "updated_at",
+            "type": "date"
           }
         ]
       }

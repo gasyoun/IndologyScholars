@@ -37,6 +37,8 @@ This dictionary describes the reusable data outputs produced by the IndologyScho
 | `analytics_output/coauthorship_review.csv` | CSV | `generate_analytics.py` | Review queue for source-backed multi-person presentation lines before public coauthorship claims. |
 | `analytics_output/senior_absence_audit.csv` | CSV | `generate_analytics.py` | Senior-generation absence review after 2022 and in the 2026 programme. |
 | `curation/senior_biographical_verification.csv` | CSV | manual curation / `tools/build_sociology_visuals.py` | External biographical and activity sources used to test whether senior-generation absence rows can be explained biographically. |
+| `curation/known_relationships.csv` | CSV | manual curation / `generate_publication_pages.py` | Known non-network relationships between participants, kept as a reviewable explanatory layer rather than inferred coauthorship. |
+| `curation/eastern_faculty_alumni.csv` | CSV | manual curation / `generate_site_data.py` | Candidate filter for SPbU Oriental Faculty alumni; rows require source-backed confirmation before strong claims. |
 | `analytics_output/publication_file_manifest.csv` | CSV | `generate_publication_pages.py` | Generated file manifest with byte sizes and SHA-256 checksums. |
 | `analytics_output/publication_file_manifest.json` | JSON | `generate_publication_pages.py` | JSON version of the generated file manifest with build metadata. |
 | `curation/presentation_person_exclusions.csv` | CSV | manual curation / `build_and_populate_db.py` | Source-backed removals of machine-parsed presentation-person links after human review. |
@@ -89,6 +91,8 @@ Provenance sidecars document where curated or derived fields came from and how c
 | `analytics_output/field_provenance_authority.csv` | External authority identifiers and organization/place authority data. |
 | `analytics_output/field_provenance_themes.csv` | Generated presentation theme labels and theme review candidates. |
 | `curation/verified_affiliation_spans.csv` | Verified institutional trajectories; city-only programme markers remain geography, while an open trajectory continued beyond its starting evidence is marked `(?)` until contradicted. |
+| `curation/known_relationships.csv` | Manual relationship layer for mentorship, family, employment, and other ties that are not reducible to conference co-presence. |
+| `curation/eastern_faculty_alumni.csv` | Curated candidate list powering the dashboard filter for SPbU Oriental Faculty alumni. |
 | `analytics_output/classification_reliability_sample.csv` | Deterministic review sample for classification reliability checks; rows marked `queued_for_manual_review` are a review queue rather than adjudicated facts. |
 | `analytics_output/human_review_index.csv` | Unified open-work register for authority IDs, RINC/OpenAlex/Wikipedia candidates, identity aliases, birth-year gaps, classification, spacetime, affiliation, lineage, and data-quality review items. |
 | `analytics_output/scientometrics_guardrails.csv` | Machine-readable index for the claim, coverage, negative-evidence, role, event-ecology, network, inter-rater, and FAIR review layers. |
@@ -243,6 +247,31 @@ These are participation networks, not citation networks or comprehensive publica
 | `source_title`, `source_url`, `source_date` | External source used for the current verification row. |
 | `checked_at` | Date of the local curation check. |
 | `interpretation_note` | How the row may and may not be used in public argumentation. |
+
+### `known_relationships.csv`
+
+| Column | Meaning |
+| --- | --- |
+| `relation_id` | Stable local relation row ID. |
+| `source_person_id`, `target_person_id` | Local person IDs when the people are already present in the archive. |
+| `source_name`, `target_name` | Human-readable names retained for review and for rows awaiting ID resolution. |
+| `relation_type` | Normalized relation category, such as `scientific_supervisor`, `teacher_of`, `student_of`, `spouse`, or `worked_for`. |
+| `relation_label_ru`, `relation_label_en` | Public labels for the relation. |
+| `direction` | `directed` for mentorship/work ties or `undirected` for reciprocal ties such as spouse. |
+| `certainty`, `status` | Review state; `needs_source` rows should not support strong public claims. |
+| `source_note`, `source_url` | Editorial note and optional public source used for verification. |
+| `added_at`, `updated_at` | Local curation dates. |
+
+### `eastern_faculty_alumni.csv`
+
+| Column | Meaning |
+| --- | --- |
+| `person_id`, `display_name` | Person ID and public name used by the dashboard filter. |
+| `status` | Review state; the initial rows are candidates until a source directly confirms alumni status. |
+| `source_url`, `source_note` | External source and/or note explaining why the row is included. |
+| `checked_at`, `curator_note` | Local curation date and free-form reviewer note. |
+
+The review queue can be reproduced with `tools/extract_eastern_faculty_alumni.py`. By default the script only emits heuristic candidates from local corpus snippets. With `--use-gemini` and `GEMINI_API_KEY`, it asks Gemini to classify the same snippets, but affiliation remains a candidate signal rather than proof of graduation.
 
 ## 6. Analytics CSVs
 

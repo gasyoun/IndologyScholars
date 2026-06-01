@@ -25,7 +25,7 @@
     <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
     <script defer src="/IndologyScholars/assets/pwa.js"></script>
-    <link rel="preload" href="site_data_summary.json?v=1.8.5" as="fetch" crossorigin>
+    <link rel="preload" href="site_data_summary.json?v=1.8.8" as="fetch" crossorigin>
     <meta name="keywords" content="Индология, Зографские чтения, Рериховские чтения, наука, востоковедение, ИВР РАН, ИВ РАН, МГУ, СПбГУ, статистика, научные доклады">
     <meta name="author" content="Dr. Mārcis Gasūns">
 
@@ -93,12 +93,12 @@
         <div class="header-inner">
             <div class="header-copy">
                 <h1 id="main-heading">Архив Зографских и Рериховских чтений</h1>
-                <p id="sub-heading">Докладчики, доклады и связи российской индологии, 2004–2026.</p>
+                <p id="sub-heading">Связи российской современной индологии, 2004–2026.</p>
             </div>
             <div class="lang-switch-container" aria-label="Служебные действия">
                 <a href="/IndologyScholars/sociology.html" class="lang-switch-btn" style="text-decoration:none; display:inline-flex; align-items:center; justify-content:center;" title="Социология науки и индологическое сообщество">Аналитика</a>
-                <button class="lang-switch-btn" id="export-md-btn-header" onclick="exportToMarkdown()" title="Экспортировать выборку в Markdown">Экспорт</button>
-                <button class="lang-switch-btn" id="lang-switch-btn" onclick="toggleLanguage()" title="Switch language">EN</button>
+                <button type="button" class="lang-switch-btn" id="export-md-btn-header" onclick="exportToMarkdown()" title="Экспортировать выборку в Markdown">Экспорт</button>
+                <button type="button" class="lang-switch-btn" id="lang-switch-btn" onclick="toggleLanguage()" title="Switch language">EN</button>
             </div>
         </div>
         <div class="header-inner" style="margin-top: 10px;">
@@ -141,6 +141,8 @@
                     <a href="data-quality.html" data-ru="Качество" data-en="Quality">Качество</a>
                     <a href="methodology.html" data-ru="Методология" data-en="Methodology">Методология</a>
                     <a href="networks.html" data-ru="Сети" data-en="Networks">Сети</a>
+                    <a href="known-relationships.html" data-ru="Внесетевые связи" data-en="Known ties">Внесетевые связи</a>
+                    <a href="voting.html" data-ru="Отметки докладов" data-en="Talk marks">Отметки докладов</a>
                     <a href="how-to-cite.html" data-ru="Цитирование" data-en="Cite">Цитирование</a>
                     <a href="en.html">English</a>
                 </div>
@@ -187,6 +189,7 @@
                         <option value="both" id="opt-both">Обе конференции (Общий актив)</option>
                         <option value="never-zograf" id="opt-never-zograf">Никогда не выступали на Зографских чт.</option>
                         <option value="never-roerich" id="opt-never-roerich">Никогда не выступали на Рериховских чт.</option>
+                        <option value="eastfac-alumni" id="opt-eastfac-alumni">Выпускники Востфака СПбГУ</option>
                     </select>
                 </div>
 
@@ -209,7 +212,7 @@
                         <button class="view-btn" id="btn-view-grid" onclick="toggleViewMode('grid')" aria-label="Сетка" title="Плиточный вид">
                             <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M4 4h6v6H4zm10 0h6v6h-6zM4 14h6v6H4zm10 0h6v6h-6z"/></svg>
                         </button>
-                        <button class="view-btn" id="export-md-btn" onclick="exportToMarkdown()" aria-label="Экспорт в Markdown" title="Экспорт списка" style="margin-left: 0.5rem; font-family: var(--font-display); font-size: 0.85rem; padding: 0.4rem 1rem;">
+                        <button type="button" class="view-btn" id="export-md-btn" onclick="exportToMarkdown()" aria-label="Экспорт в Markdown" title="Экспорт списка" style="margin-left: 0.5rem; font-family: var(--font-display); font-size: 0.85rem; padding: 0.4rem 1rem;">
                             Экспорт
                         </button>
                     </div>
@@ -607,6 +610,6 @@ CREATE TABLE presentation_person (
     </footer>
 
     <!-- Main Dynamic Application Script with Bilingual Localization (RU / EN) -->
-    <script type="module" src="/IndologyScholars/assets/js/main.js"></script>
+    <script type="module" src="/IndologyScholars/assets/js/main.js?v=1.8.8"></script>
 </body>
 </html>

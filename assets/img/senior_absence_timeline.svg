@@ -42,7 +42,7 @@
 <text x="1094" y="78" fill="#7f9187" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="start">Внешняя проверка</text>
 <line x1="28" y1="106" x2="1252" y2="106" stroke="#304139" stroke-width="1" opacity="0.45"/>
 <text x="28" y="101" fill="#eef6f0" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="650" text-anchor="start">Невелева Светлана Леонидовна</text>
-<text x="28" y="119" fill="#a8b7ae" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="400" text-anchor="start">1937; last 2011</text>
+<text x="28" y="119" fill="#a8b7ae" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="400" text-anchor="start">рожд. 1937; виден до 2011</text>
 <rect x="190" y="85" width="132" height="24" rx="8" fill="#7ccf9b" opacity="0.18"/><text x="202" y="101" fill="#7ccf9b" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700">post-2022 + 2026</text>
 <circle cx="306" cy="105" r="6.5" fill="#76a9ff"/>
 <circle cx="340" cy="105" r="2" fill="#304139" opacity="0.75"/>
@@ -70,7 +70,7 @@
 <rect x="1090" y="93" width="138" height="24" rx="8" fill="#7ccf9b" opacity="0.18"/><text x="1102" y="109" fill="#7ccf9b" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700">bio source</text>
 <line x1="28" y1="144" x2="1252" y2="144" stroke="#304139" stroke-width="1" opacity="0.45"/>
 <text x="28" y="139" fill="#eef6f0" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="650" text-anchor="start">Кокова Юлия Георгиевна</text>
-<text x="28" y="157" fill="#a8b7ae" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="400" text-anchor="start">1955; last 2018</text>
+<text x="28" y="157" fill="#a8b7ae" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="400" text-anchor="start">рожд. 1955; виден до 2018</text>
 <rect x="190" y="123" width="132" height="24" rx="8" fill="#7ccf9b" opacity="0.18"/><text x="202" y="139" fill="#7ccf9b" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700">post-2022 + 2026</text>
 <circle cx="306" cy="143" r="6.5" fill="#76a9ff"/>
 <circle cx="340" cy="143" r="2" fill="#304139" opacity="0.75"/>
@@ -98,7 +98,7 @@
 <rect x="1090" y="131" width="138" height="24" rx="8" fill="#7ccf9b" opacity="0.18"/><text x="1102" y="147" fill="#7ccf9b" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700">active profile</text>
 <line x1="28" y1="182" x2="1252" y2="182" stroke="#304139" stroke-width="1" opacity="0.45"/>
 <text x="28" y="177" fill="#eef6f0" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="650" text-anchor="start">Видунас Витис</text>
-<text x="28" y="195" fill="#a8b7ae" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="400" text-anchor="start">1960; last 2019</text>
+<text x="28" y="195" fill="#a8b7ae" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="400" text-anchor="start">рожд. 1960; виден до 2019</text>
 <rect x="190" y="161" width="132" height="24" rx="8" fill="#7ccf9b" opacity="0.18"/><text x="202" y="177" fill="#7ccf9b" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700">post-2022 + 2026</text>
 <circle cx="306" cy="181" r="6.5" fill="#76a9ff"/>
 <circle cx="340" cy="181" r="2" fill="#304139" opacity="0.75"/>
@@ -126,7 +126,7 @@
 <rect x="1090" y="169" width="138" height="24" rx="8" fill="#7ccf9b" opacity="0.18"/><text x="1102" y="185" fill="#7ccf9b" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700">active after 2022</text>
 <line x1="28" y1="220" x2="1252" y2="220" stroke="#304139" stroke-width="1" opacity="0.45"/>
 <text x="28" y="215" fill="#eef6f0" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="650" text-anchor="start">Коробов Владимир Борисович</text>
-<text x="28" y="233" fill="#a8b7ae" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="400" text-anchor="start">1957; last 2020</text>
+<text x="28" y="233" fill="#a8b7ae" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="400" text-anchor="start">рожд. 1957; виден до 2020</text>
 <rect x="190" y="199" width="132" height="24" rx="8" fill="#7ccf9b" opacity="0.18"/><text x="202" y="215" fill="#7ccf9b" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700">post-2022 + 2026</text>
 <circle cx="306" cy="219" r="2" fill="#304139" opacity="0.75"/>
 <circle cx="340" cy="219" r="2" fill="#304139" opacity="0.75"/>
@@ -154,7 +154,7 @@
 <rect x="1090" y="207" width="138" height="24" rx="8" fill="#7ccf9b" opacity="0.18"/><text x="1102" y="223" fill="#7ccf9b" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700">bio source</text>
 <line x1="28" y1="258" x2="1252" y2="258" stroke="#304139" stroke-width="1" opacity="0.45"/>
 <text x="28" y="253" fill="#eef6f0" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="650" text-anchor="start">Огнева Елена Дмитриевна</text>
-<text x="28" y="271" fill="#a8b7ae" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="400" text-anchor="start">1944; last 2022</text>
+<text x="28" y="271" fill="#a8b7ae" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="400" text-anchor="start">рожд. 1944; виден до 2022</text>
 <rect x="190" y="237" width="132" height="24" rx="8" fill="#7ccf9b" opacity="0.18"/><text x="202" y="253" fill="#7ccf9b" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700">post-2022 + 2026</text>
 <circle cx="306" cy="257" r="2" fill="#304139" opacity="0.75"/>
 <circle cx="340" cy="257" r="2" fill="#304139" opacity="0.75"/>
@@ -182,7 +182,7 @@
 <rect x="1090" y="245" width="138" height="24" rx="8" fill="#7ccf9b" opacity="0.18"/><text x="1102" y="261" fill="#7ccf9b" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700">bio source</text>
 <line x1="28" y1="296" x2="1252" y2="296" stroke="#304139" stroke-width="1" opacity="0.45"/>
 <text x="28" y="291" fill="#eef6f0" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="650" text-anchor="start">Терентьев Андрей Анатольевич</text>
-<text x="28" y="309" fill="#a8b7ae" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="400" text-anchor="start">1948; last 2022</text>
+<text x="28" y="309" fill="#a8b7ae" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="400" text-anchor="start">рожд. 1948; виден до 2022</text>
 <rect x="190" y="275" width="132" height="24" rx="8" fill="#7ccf9b" opacity="0.18"/><text x="202" y="291" fill="#7ccf9b" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700">post-2022 + 2026</text>
 <circle cx="306" cy="295" r="2" fill="#304139" opacity="0.75"/>
 <circle cx="340" cy="295" r="2" fill="#304139" opacity="0.75"/>
@@ -210,7 +210,7 @@
 <rect x="1090" y="283" width="138" height="24" rx="8" fill="#7ccf9b" opacity="0.18"/><text x="1102" y="299" fill="#7ccf9b" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700">active profile</text>
 <line x1="28" y1="334" x2="1252" y2="334" stroke="#304139" stroke-width="1" opacity="0.45"/>
 <text x="28" y="329" fill="#eef6f0" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="650" text-anchor="start">Вертоградова Виктория Викторовна</text>
-<text x="28" y="347" fill="#a8b7ae" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="400" text-anchor="start">1933; last 2024</text>
+<text x="28" y="347" fill="#a8b7ae" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="400" text-anchor="start">рожд. 1933; виден до 2024</text>
 <rect x="190" y="313" width="86" height="24" rx="8" fill="#f87171" opacity="0.18"/><text x="202" y="329" fill="#f87171" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700">2026</text>
 <circle cx="306" cy="333" r="2" fill="#304139" opacity="0.75"/>
 <circle cx="340" cy="333" r="2" fill="#304139" opacity="0.75"/>
@@ -238,7 +238,7 @@
 <rect x="1090" y="321" width="138" height="24" rx="8" fill="#7ccf9b" opacity="0.18"/><text x="1102" y="337" fill="#7ccf9b" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700">bio source</text>
 <line x1="28" y1="372" x2="1252" y2="372" stroke="#304139" stroke-width="1" opacity="0.45"/>
 <text x="28" y="367" fill="#eef6f0" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="650" text-anchor="start">Стрелкова Гюзэль Владимировна</text>
-<text x="28" y="385" fill="#a8b7ae" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="400" text-anchor="start">1958; last 2024</text>
+<text x="28" y="385" fill="#a8b7ae" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="400" text-anchor="start">рожд. 1958; виден до 2024</text>
 <rect x="190" y="351" width="86" height="24" rx="8" fill="#f87171" opacity="0.18"/><text x="202" y="367" fill="#f87171" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700">2026</text>
 <circle cx="306" cy="371" r="6.5" fill="#76a9ff"/>
 <circle cx="340" cy="371" r="2" fill="#304139" opacity="0.75"/>
@@ -266,7 +266,7 @@
 <rect x="1090" y="359" width="138" height="24" rx="8" fill="#7ccf9b" opacity="0.18"/><text x="1102" y="375" fill="#7ccf9b" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700">active profile</text>
 <line x1="28" y1="410" x2="1252" y2="410" stroke="#304139" stroke-width="1" opacity="0.45"/>
 <text x="28" y="405" fill="#eef6f0" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="650" text-anchor="start">Вигасин Алексей Алексеевич</text>
-<text x="28" y="423" fill="#a8b7ae" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="400" text-anchor="start">1946; last 2025</text>
+<text x="28" y="423" fill="#a8b7ae" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="400" text-anchor="start">рожд. 1946; виден до 2025</text>
 <rect x="190" y="389" width="86" height="24" rx="8" fill="#f87171" opacity="0.18"/><text x="202" y="405" fill="#f87171" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700">2026</text>
 <circle cx="306" cy="409" r="2" fill="#304139" opacity="0.75"/>
 <circle cx="340" cy="409" r="2" fill="#304139" opacity="0.75"/>
@@ -294,7 +294,7 @@
 <rect x="1090" y="397" width="138" height="24" rx="8" fill="#7ccf9b" opacity="0.18"/><text x="1102" y="413" fill="#7ccf9b" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700">active profile</text>
 <line x1="28" y1="448" x2="1252" y2="448" stroke="#304139" stroke-width="1" opacity="0.45"/>
 <text x="28" y="443" fill="#eef6f0" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="650" text-anchor="start">Канаева Наталия Алексеевна</text>
-<text x="28" y="461" fill="#a8b7ae" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="400" text-anchor="start">1953; last 2025</text>
+<text x="28" y="461" fill="#a8b7ae" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="400" text-anchor="start">рожд. 1953; виден до 2025</text>
 <rect x="190" y="427" width="86" height="24" rx="8" fill="#f87171" opacity="0.18"/><text x="202" y="443" fill="#f87171" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700">2026</text>
 <circle cx="306" cy="447" r="2" fill="#304139" opacity="0.75"/>
 <circle cx="340" cy="447" r="2" fill="#304139" opacity="0.75"/>
@@ -322,7 +322,7 @@
 <rect x="1090" y="435" width="138" height="24" rx="8" fill="#7ccf9b" opacity="0.18"/><text x="1102" y="451" fill="#7ccf9b" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700">active profile</text>
 <line x1="28" y1="486" x2="1252" y2="486" stroke="#304139" stroke-width="1" opacity="0.45"/>
 <text x="28" y="481" fill="#eef6f0" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="650" text-anchor="start">Лысенко Виктория Георгиевна</text>
-<text x="28" y="499" fill="#a8b7ae" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="400" text-anchor="start">1953; last 2025</text>
+<text x="28" y="499" fill="#a8b7ae" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="400" text-anchor="start">рожд. 1953; виден до 2025</text>
 <rect x="190" y="465" width="86" height="24" rx="8" fill="#f87171" opacity="0.18"/><text x="202" y="481" fill="#f87171" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700">2026</text>
 <circle cx="306" cy="485" r="6.5" fill="#76a9ff"/>
 <circle cx="340" cy="485" r="2" fill="#304139" opacity="0.75"/>
@@ -350,7 +350,7 @@
 <rect x="1090" y="473" width="138" height="24" rx="8" fill="#7ccf9b" opacity="0.18"/><text x="1102" y="489" fill="#7ccf9b" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700">active profile</text>
 <line x1="28" y1="524" x2="1252" y2="524" stroke="#304139" stroke-width="1" opacity="0.45"/>
 <text x="28" y="519" fill="#eef6f0" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="650" text-anchor="start">Островская Елена Петровна</text>
-<text x="28" y="537" fill="#a8b7ae" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="400" text-anchor="start">1950; last 2025</text>
+<text x="28" y="537" fill="#a8b7ae" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="400" text-anchor="start">рожд. 1950; виден до 2025</text>
 <rect x="190" y="503" width="86" height="24" rx="8" fill="#f87171" opacity="0.18"/><text x="202" y="519" fill="#f87171" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700">2026</text>
 <circle cx="306" cy="523" r="2" fill="#304139" opacity="0.75"/>
 <circle cx="340" cy="523" r="2" fill="#304139" opacity="0.75"/>

@@ -354,7 +354,10 @@ def main():
         "sociology-en.html",
         "gatekeeping.html",
         "gatekeeping-en.html",
+        "known-relationships.html",
         "videos/index.html",
+        "curation/known_relationships.csv",
+        "curation/eastern_faculty_alumni.csv",
     ]
     for path in required:
         if not Path(path).exists():
@@ -414,7 +417,7 @@ def main():
             for _, filename in sub_sitemaps:
                 if Path(filename).exists():
                     sitemap += "\n" + read(filename)
-        for page in ["", "en.html", "search.html", "download-data.html", "data-quality.html", "s/", "conferences/", "p/", "themes/", "topics/ramayana.html", "topics/mahabharata.html", "generations/", "cities/", "institutions/", "metrics-guide.html", "classification-criteria.html", "networks.html", "sociology.html", "sociology-en.html", "gatekeeping.html", "gatekeeping-en.html", "videos/"]:
+        for page in ["", "en.html", "search.html", "download-data.html", "data-quality.html", "s/", "conferences/", "p/", "themes/", "topics/ramayana.html", "topics/mahabharata.html", "generations/", "cities/", "institutions/", "metrics-guide.html", "classification-criteria.html", "networks.html", "sociology.html", "sociology-en.html", "gatekeeping.html", "gatekeeping-en.html", "known-relationships.html", "videos/"]:
             expected = "https://gasyoun.github.io/IndologyScholars/" + page
             if expected not in sitemap:
                 fail(errors, f"sitemap.xml missing {expected}")
@@ -570,6 +573,8 @@ def main():
             "coauthorship_review.csv",
             "senior_absence_audit.csv",
             "senior_biographical_verification.csv",
+            "known_relationships.csv",
+            "eastern_faculty_alumni.csv",
             "presentation_person_exclusions.csv",
             "network_edges.csv",
             "publication_file_manifest.csv",

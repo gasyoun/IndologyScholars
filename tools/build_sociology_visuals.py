@@ -121,7 +121,7 @@ def build_senior_absence_timeline() -> None:
 
         parts.append(f'<line x1="28" y1="{y + 18}" x2="{width - 30}" y2="{y + 18}" stroke="{BORDER}" stroke-width="1" opacity="0.45"/>')
         parts.append(label(28, y + 13, name, 13, TEXT, 650))
-        parts.append(label(28, y + 31, f"{scholar.get('birth_year') or '?'}; last {scholar.get('last_year')}", 11, MUTED))
+        parts.append(label(28, y + 31, f"рожд. {scholar.get('birth_year') or '?'}; виден до {scholar.get('last_year')}", 11, MUTED))
         parts.append(pill(190, y - 3, group_label, group_color, 86 if group_label == "2026" else 132))
 
         year_series: dict[int, set[str]] = defaultdict(set)
@@ -201,7 +201,7 @@ def build_review_dashboard() -> None:
     ]
     width, height = 920, 290
     parts = [
-        label(28, 34, "Где нужен человек", 24, TEXT, 800),
+        label(28, 34, "Что должен проверить редактор", 24, TEXT, 800),
         label(28, 58, "Эта панель отделяет вычисления от мест, где нужен редакторский или биографический контроль.", 14, MUTED),
     ]
     card_w = 204
@@ -219,8 +219,8 @@ def build_review_dashboard() -> None:
 
 def build_hypothesis_matrix() -> None:
     rows = [
-        ("Политический / трансграничный контекст", "сильная гипотеза", "не главный механизм"),
-        ("Локальные личные отношения и программная селекция", "требует осторожности", "сильная гипотеза"),
+        ("Политический контекст", "сильная гипотеза", "не главный механизм"),
+        ("Локальные личные отношения", "требует осторожности", "сильная гипотеза"),
         ("Биографический уход / смерть", "проверять внешне", "проверять внешне"),
         ("Активность вне архива", "ищем подтверждения", "критически важно"),
         ("Ошибка корпуса / неполная программа", "контроль данных", "контроль данных"),

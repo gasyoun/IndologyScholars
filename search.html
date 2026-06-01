@@ -130,15 +130,39 @@
         const initialQuery = new URLSearchParams(location.search).get('q') || '';
         input.value = initialQuery;
         fetch('search-index.json').then(r => r.json()).then(data => { docs = data; render(input.value); });
+        function normalizeSearchText(value) {
+            return String(value || '')
+                .toLowerCase()
+                .replace(/ё/g, 'е')
+                .replace(/[^\p{L}\p{N}\s-]/gu, ' ')
+                .replace(/\s+/g, ' ')
+                .trim();
+        }
         function searchableToken(token) {
-            if (/^рамаян[а-яё]*$/i.test(token)) return 'рамаян';
-            if (/^махабхарат[а-яё]*$/i.test(token)) return 'махабхарат';
-            return token;
+            const value = normalizeSearchText(token);
+            if (/^рамаян[а-яе]*$/i.test(value)) return 'рамаян';
+            if (/^махабхарат[а-яе]*$/i.test(value)) return 'махабхарат';
+            return value;
+        }
+        function stemToken(token) {
+            const value = searchableToken(token);
+            if (!/[а-яе]/.test(value) || value.length < 6) return value;
+            return value.replace(/(иями|ями|ами|ого|ему|ыми|ими|иях|ах|ях|ая|яя|ое|ее|ый|ий|ой|ые|ие|ых|их|ам|ям|ом|ем|ою|ею|а|я|ы|и|у|ю|е|о)$/u, '');
+        }
+        function tokenMatches(hay, hayTokens, queryToken) {
+            if (hay.includes(queryToken)) return true;
+            const stem = stemToken(queryToken);
+            if (stem.length < 4) return false;
+            return hayTokens.some(token => {
+                if (token.includes(queryToken) || (token.length >= 4 && queryToken.includes(token))) return true;
+                return stemToken(token).startsWith(stem);
+            });
         }
         function score(doc, query) {
             if (!query) return 0;
-            const hay = `${doc.title} ${doc.text}`.toLowerCase();
-            return query.split(/\s+/).filter(Boolean).map(searchableToken).reduce((sum, token) => sum + (hay.includes(token) ? 1 : 0), 0);
+            const hay = normalizeSearchText(`${doc.title} ${doc.text}`);
+            const hayTokens = hay.split(/\s+/).filter(Boolean);
+            return normalizeSearchText(query).split(/\s+/).filter(Boolean).map(searchableToken).reduce((sum, token) => sum + (tokenMatches(hay, hayTokens, token) ? 1 : 0), 0);
         }
         function render(query) {
             const q = query.trim().toLowerCase();

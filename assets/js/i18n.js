@@ -1,7 +1,7 @@
 export const TRANSLATIONS = {
             ru: {
                 mainHeading: "Архив Зографских и Рериховских чтений",
-                subHeading: "Докладчики, доклады и связи российской индологии, 2004–2026.",
+                subHeading: "Связи российской современной индологии, 2004–2026.",
                 statScholars: "Уникальные ученые",
                 statScholarsDesc: "Дедуплицированные индологи и докладчики",
                 statTalks: "Авторские участия",
@@ -44,6 +44,7 @@ export const TRANSLATIONS = {
                 filterBoth: "Обе конференции (Общий актив)",
                 filterNeverZograf: "Никогда не выступали на Зографских чт.",
                 filterNeverRoerich: "Никогда не выступали на Рериховских чт.",
+                filterEastFacAlumni: "Выпускники Востфака СПбГУ",
                 sortTalksDesc: "По числу докладов, убывание",
                 sortTalksAsc: "По числу докладов, возрастание",
                 sortNameAsc: "По алфавиту (А-Я)",
@@ -83,6 +84,7 @@ export const TRANSLATIONS = {
                 // New academic and temporal keys
                 studentBadge: "Студент / Аспирант",
                 independentBadge: "Независимый исследователь (НИ)",
+                eastFacBadge: "Востфак СПбГУ",
                 firstTalkBadge: "Открывающий доклад",
                 lastTalkBadge: "Закрывающий доклад",
                 orderTalkBadge: "{num}-й доклад из {total}",
@@ -112,7 +114,7 @@ export const TRANSLATIONS = {
             },
             en: {
                 mainHeading: "Archive of the Zograf and Roerich Readings",
-                subHeading: "Speakers, talks, and connections in Russian Indology, 2004-2026.",
+                subHeading: "Connections in contemporary Russian Indology, 2004-2026.",
                 statScholars: "Unique Scholars",
                 statScholarsDesc: "Deduplicated indologists & speakers",
                 statTalks: "Author Participations",
@@ -156,6 +158,7 @@ export const TRANSLATIONS = {
                 filterBoth: "Both (Overlapping Cohort)",
                 filterNeverZograf: "Never active at Zograf Readings",
                 filterNeverRoerich: "Never active at Roerich Readings",
+                filterEastFacAlumni: "SPbU Oriental Faculty alumni",
                 sortTalksDesc: "Talk count, descending",
                 sortTalksAsc: "Talk count, ascending",
                 sortNameAsc: "Name (A-Z)",
@@ -195,6 +198,7 @@ export const TRANSLATIONS = {
                 // New academic and temporal keys
                 studentBadge: "Student / PG",
                 independentBadge: "Independent Researcher (IR)",
+                eastFacBadge: "SPbU Oriental Faculty",
                 firstTalkBadge: "Opening Talk",
                 lastTalkBadge: "Closing Talk",
                 orderTalkBadge: "Talk {num} of {total}",

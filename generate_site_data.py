@@ -200,6 +200,19 @@ def classify_gender(full_name_ru, display_name):
 
 import csv
 
+def load_eastern_faculty_alumni():
+    rows = {}
+    try:
+        with open("curation/eastern_faculty_alumni.csv", encoding="utf-8-sig", newline="") as f:
+            for row in csv.DictReader(f):
+                pid = str(row.get("person_id") or "").strip()
+                if not pid or str(row.get("status") or "").strip().lower() == "rejected":
+                    continue
+                rows[pid] = row
+    except FileNotFoundError:
+        pass
+    return rows
+
 def load_theme_mapping():
     mapping = {"by_title": {}, "by_id": {}}
     try:
@@ -335,6 +348,7 @@ def main():
     conn = sqlite3.connect(DB_PATH)
     cursor = conn.cursor()
     verified_affiliation_spans = load_verified_affiliation_spans()
+    eastern_faculty_alumni = load_eastern_faculty_alumni()
     
     # Load ORCID and Wikidata from data_assertion
     cursor.execute("""
@@ -380,6 +394,7 @@ def main():
         degree = r_p[6] if has_degree else None
         degree_year = r_p[7] if has_degree else None
         degree_source_url = r_p[8] if has_degree else None
+        eastern_faculty_row = eastern_faculty_alumni.get(pid, {})
 
         std_name = format_to_initials(display_name)
         
@@ -456,6 +471,10 @@ def main():
             "degree": degree,
             "degree_year": degree_year,
             "degree_source_url": degree_source_url,
+            "is_eastern_faculty_alumnus": bool(eastern_faculty_row),
+            "eastern_faculty_alumnus_status": eastern_faculty_row.get("status"),
+            "eastern_faculty_alumnus_source_url": eastern_faculty_row.get("source_url"),
+            "eastern_faculty_alumnus_note": eastern_faculty_row.get("source_note"),
             "orcid": lod_assertions.get(pid, {}).get("orcid"),
             "wikidata": lod_assertions.get(pid, {}).get("wikidata"),
             "elibrary": lod_assertions.get(pid, {}).get("elibrary")
@@ -645,6 +664,10 @@ def main():
             "last_year": r[7],
             "is_student": meta["is_student"],
             "is_independent": meta["is_independent"],
+            "is_eastern_faculty_alumnus": meta["is_eastern_faculty_alumnus"],
+            "eastern_faculty_alumnus_status": meta.get("eastern_faculty_alumnus_status"),
+            "eastern_faculty_alumnus_source_url": meta.get("eastern_faculty_alumnus_source_url"),
+            "eastern_faculty_alumnus_note": meta.get("eastern_faculty_alumnus_note"),
             "has_changed_affiliations": len(public_affiliations) > 1,
             "all_affiliations": public_affiliations,
             "affiliation_notes": affiliation_notes,

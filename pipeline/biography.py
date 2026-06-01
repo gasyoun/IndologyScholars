@@ -70,6 +70,15 @@ def normalize_person_name(name):
     return " ".join(words)
 
 
+def display_person_name(name):
+    value = name.strip().replace('\xa0', ' ').replace('\u200b', '')
+    value = re.sub(r'\bC(?=\.)', 'С', value)
+    value = re.sub(r'\bA(?=\.)', 'А', value)
+    value = re.sub(r'(?<=\b[А-ЯЁA-Z])\.(?=[А-ЯЁA-ZА-ЯЁа-яёA-Za-z])', '. ', value)
+    value = re.sub(r'\s+', ' ', value)
+    return value.strip()
+
+
 BIOGRAPHICAL_DATA = {
     # normalized_key -> (full_name_ru, full_name_en, birth_year, death_year)
     "лысенко в г": ("Лысенко Виктория Георгиевна", "Lysenko Victoria Georgievna", 1953, None),
@@ -402,7 +411,7 @@ BIOGRAPHICAL_DATA.update({
     "бейнорюс а": ("Бейнорюс Аудрюс", "Audrius Beinorius", 1964, None),
     "яскунас в": ("Яскунас Валдас", "Valdas Jaskunas", 1973, None),
     "светлов р в": ("Светлов Роман Викторович", "Svetlov Roman Viktorovich", 1963, None),
-    "кожевникова м н": ("Kozhevnikova Margarita Nikolaevna", "Kozhevnikova Margarita Nikolaevna", 1961, None),
+    "кожевникова м н": ("Кожевникова Маргарита Николаевна", "Kozhevnikova Margarita Nikolaevna", 1961, None),
     "яковлев в м": ("Яковлев Виктор Михайлович", "Yakovlev Viktor Mikhailovich", 1941, 2022),
     "хохлов а н": ("Хохлов Александр Николаевич", "Khokhlov Alexander Nikolaevich", 1929, 2015),
     "дылыкова в с": ("Дылыкова Вилена Санджиевна", "Dylykova Vilena Sandzhievna", 1938, None),
@@ -492,6 +501,7 @@ def _apply_degree(cursor, pid, deg):
 
 def get_or_create_person(conn, name, source_url):
     name = name.strip()
+    display_name = display_person_name(name)
     norm_key = canonical_person_key(name)
     source_norm_key = normalize_person_name(name)
     pid = person_id_for_key(norm_key)
@@ -502,8 +512,8 @@ def get_or_create_person(conn, name, source_url):
     if row:
         current_display = row[1]
         # Prefer full name if currently initials-only
-        if len(name) > len(current_display) and '.' not in name:
-            cursor.execute("UPDATE person SET display_name = ? WHERE person_id = ?", (name, pid))
+        if len(display_name) > len(current_display) and '.' not in display_name:
+            cursor.execute("UPDATE person SET display_name = ? WHERE person_id = ?", (display_name, pid))
         return pid
 
     bio = BIOGRAPHICAL_DATA.get(norm_key) or BIOGRAPHICAL_DATA.get(source_norm_key)
@@ -514,9 +524,9 @@ def get_or_create_person(conn, name, source_url):
         b_year = bio[2]
         d_year = bio[3]
     else:
-        disp = name
-        full_ru = name if not any(c in 'abcdefghijklmnopqrstuvwxyz' for c in name.lower()) else None
-        full_en = name if any(c in 'abcdefghijklmnopqrstuvwxyz' for c in name.lower()) else None
+        disp = display_name
+        full_ru = display_name if not any(c in 'abcdefghijklmnopqrstuvwxyz' for c in display_name.lower()) else None
+        full_en = display_name if any(c in 'abcdefghijklmnopqrstuvwxyz' for c in display_name.lower()) else None
         b_year = None
         d_year = None
 

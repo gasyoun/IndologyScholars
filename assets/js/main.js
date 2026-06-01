@@ -4,7 +4,7 @@ import { renderGrowthChart, renderCohortDistribution, renderGeoChart, renderSank
 
 
         // Kick off critical path data fetch immediately (preload tag in <head> ensures it starts even earlier)
-        const _dataPromise = fetch('site_data_summary.json?v=1.8.5').then(r => r.json());
+        const _dataPromise = fetch('site_data_summary.json?v=1.8.8').then(r => r.json());
 
         let timelinePromise = null;
         let networkPromise = null;
@@ -38,6 +38,16 @@ import { renderGrowthChart, renderCohortDistribution, renderGeoChart, renderSank
                 if(tkAuto) tkAuto.hidden = true;
             }
         });
+
+        function setTextById(id, value) {
+            const element = document.getElementById(id);
+            if (element) element.textContent = value;
+        }
+
+        function setPlaceholderById(id, value) {
+            const element = document.getElementById(id);
+            if (element) element.placeholder = value;
+        }
 
 document.addEventListener('DOMContentLoaded', () => {
             // Restore language if it's 'en' (since HTML defaults to RU)
@@ -101,19 +111,24 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         function updateSummaryStats() {
-            const summary = CONFERENCE_DATA.summary || {};
-            const scholarsCount = summary.total_scholars || (CONFERENCE_DATA.scholars ? CONFERENCE_DATA.scholars.length : 0);
+            const data = window.CONFERENCE_DATA;
+            if (!data) return;
+            const summary = data.summary || {};
+            const scholarsCount = summary.total_scholars || (data.scholars ? data.scholars.length : 0);
             const talksCount = summary.total_presentations || 0;
-            const yearsCount = summary.years_covered || (CONFERENCE_DATA.stats ? CONFERENCE_DATA.stats.length : 0);
+            const yearsCount = summary.years_covered || (data.stats ? data.stats.length : 0);
             const overlapCount = summary.overlap_scholars || 0;
-            document.getElementById('stat-scholars-count').textContent = scholarsCount;
-            document.getElementById('stat-talks-count').textContent = talksCount;
-            document.getElementById('stat-years-count').textContent = yearsCount;
-            document.getElementById('stat-overlap-count').textContent = overlapCount;
+            setTextById('stat-scholars-count', scholarsCount);
+            setTextById('stat-talks-count', talksCount);
+            setTextById('stat-years-count', yearsCount);
+            setTextById('stat-overlap-count', overlapCount);
             if (summary.start_year && summary.end_year) {
-                document.getElementById('stat-years-desc').textContent = state.currentLang === 'ru'
-                    ? `Период с ${summary.start_year} по ${summary.end_year} годы`
-                    : `Period from ${summary.start_year} to ${summary.end_year}`;
+                setTextById(
+                    'stat-years-desc',
+                    state.currentLang === 'ru'
+                        ? `Период с ${summary.start_year} по ${summary.end_year} годы`
+                        : `Period from ${summary.start_year} to ${summary.end_year}`
+                );
             }
         }
 
@@ -121,9 +136,10 @@ document.addEventListener('DOMContentLoaded', () => {
         function toggleLanguage() {
             state.currentLang = state.currentLang === 'ru' ? 'en' : 'ru';
             localStorage.setItem('indology_lang', state.currentLang);
+            document.documentElement.setAttribute('lang', state.currentLang);
             
             // Update button label
-            document.getElementById('lang-switch-btn').textContent = state.currentLang === 'ru' ? 'EN' : 'RU';
+            setTextById('lang-switch-btn', state.currentLang === 'ru' ? 'EN' : 'RU');
             const exportHeader = document.getElementById('export-md-btn-header');
             if (exportHeader) exportHeader.textContent = state.currentLang === 'ru' ? 'Экспорт' : 'Export';
             const exportTable = document.getElementById('export-md-btn');
@@ -131,102 +147,104 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // Translate static elements
             const t = TRANSLATIONS[state.currentLang];
-            document.getElementById('main-heading').textContent = t.mainHeading;
-            document.getElementById('sub-heading').textContent = t.subHeading;
+            setTextById('main-heading', t.mainHeading);
+            setTextById('sub-heading', t.subHeading);
             document.querySelectorAll('.publication-links [data-ru][data-en]').forEach(element => {
                 element.textContent = element.dataset[state.currentLang];
             });
             
             // Metrics
-            document.getElementById('stat-scholars-label').textContent = t.statScholars;
-            document.getElementById('stat-scholars-desc').textContent = t.statScholarsDesc;
-            document.getElementById('stat-talks-label').textContent = t.statTalks;
-            document.getElementById('stat-talks-desc').textContent = t.statTalksDesc;
-            document.getElementById('stat-years-label').textContent = t.statYears;
-            document.getElementById('stat-years-desc').textContent = t.statYearsDesc;
-            document.getElementById('stat-overlap-label').textContent = t.statOverlap;
-            document.getElementById('stat-overlap-desc').textContent = t.statOverlapDesc;
-            document.getElementById('stat-youtube-label').textContent = t.statYoutube;
-            document.getElementById('stat-youtube-desc').textContent = t.statYoutubeDesc;
-            document.getElementById('findings-eyebrow').textContent = t.findingsEyebrow;
-            document.getElementById('findings-heading').textContent = t.findingsHeading;
-            document.getElementById('findings-lead').textContent = t.findingsLead;
-            document.getElementById('findings-corpus-note').textContent = t.findingsCorpusNote;
-            document.getElementById('findings-cta').textContent = t.findingsCta;
-            document.getElementById('insight-overlap-title').textContent = t.insightOverlapTitle;
-            document.getElementById('insight-overlap-text').textContent = t.insightOverlapText;
-            document.getElementById('insight-theme-title').textContent = t.insightThemeTitle;
-            document.getElementById('insight-theme-text').textContent = t.insightThemeText;
-            document.getElementById('insight-micro-title').textContent = t.insightMicroTitle;
-            document.getElementById('insight-micro-text').textContent = t.insightMicroText;
-            document.getElementById('insight-video-title').textContent = t.insightVideoTitle;
-            document.getElementById('insight-video-text').textContent = t.insightVideoText;
-            document.getElementById('generations-page-link').textContent = t.generationsPageLink;
+            setTextById('stat-scholars-label', t.statScholars);
+            setTextById('stat-scholars-desc', t.statScholarsDesc);
+            setTextById('stat-talks-label', t.statTalks);
+            setTextById('stat-talks-desc', t.statTalksDesc);
+            setTextById('stat-years-label', t.statYears);
+            setTextById('stat-years-desc', t.statYearsDesc);
+            setTextById('stat-overlap-label', t.statOverlap);
+            setTextById('stat-overlap-desc', t.statOverlapDesc);
+            setTextById('stat-youtube-label', t.statYoutube);
+            setTextById('stat-youtube-desc', t.statYoutubeDesc);
+            setTextById('findings-eyebrow', t.findingsEyebrow);
+            setTextById('findings-heading', t.findingsHeading);
+            setTextById('findings-lead', t.findingsLead);
+            setTextById('findings-corpus-note', t.findingsCorpusNote);
+            setTextById('findings-cta', t.findingsCta);
+            setTextById('insight-overlap-title', t.insightOverlapTitle);
+            setTextById('insight-overlap-text', t.insightOverlapText);
+            setTextById('insight-theme-title', t.insightThemeTitle);
+            setTextById('insight-theme-text', t.insightThemeText);
+            setTextById('insight-micro-title', t.insightMicroTitle);
+            setTextById('insight-micro-text', t.insightMicroText);
+            setTextById('insight-video-title', t.insightVideoTitle);
+            setTextById('insight-video-text', t.insightVideoText);
+            setTextById('generations-page-link', t.generationsPageLink);
 
             // Navigation
-            document.getElementById('tab-scholars').textContent = t.tabScholars;
-            document.getElementById('tab-timeline').textContent = t.tabTimeline;
-            document.getElementById('tab-charts').textContent = t.tabCharts;
+            setTextById('tab-scholars', t.tabScholars);
+            setTextById('tab-timeline', t.tabTimeline);
+            setTextById('tab-charts', t.tabCharts);
 
             // Search placeholder
-            document.getElementById('label-scholars-search').textContent = t.labelScholarSearch;
-            document.getElementById('label-talks-search').textContent = t.labelTalkSearch;
-            document.getElementById('label-series').textContent = t.labelSeries;
-            document.getElementById('label-sort').textContent = t.labelSort;
-            document.getElementById('scholars-search').placeholder = t.searchPlaceholder;
-            const talksSearch = document.getElementById('talks-search');
-            if (talksSearch) talksSearch.placeholder = t.searchTalksPlaceholder;
+            setTextById('label-scholars-search', t.labelScholarSearch);
+            setTextById('label-talks-search', t.labelTalkSearch);
+            setTextById('label-series', t.labelSeries);
+            setTextById('label-sort', t.labelSort);
+            setPlaceholderById('scholars-search', t.searchPlaceholder);
+            setPlaceholderById('talks-search', t.searchTalksPlaceholder);
 
             // Filters
-            document.getElementById('opt-all').textContent = t.filterAll;
-            document.getElementById('opt-zograf').textContent = t.filterZograf;
-            document.getElementById('opt-roerich').textContent = t.filterRoerich;
-            document.getElementById('opt-both').textContent = t.filterBoth;
-            document.getElementById('opt-never-zograf').textContent = t.filterNeverZograf;
-            document.getElementById('opt-never-roerich').textContent = t.filterNeverRoerich;
+            setTextById('opt-all', t.filterAll);
+            setTextById('opt-zograf', t.filterZograf);
+            setTextById('opt-roerich', t.filterRoerich);
+            setTextById('opt-both', t.filterBoth);
+            setTextById('opt-never-zograf', t.filterNeverZograf);
+            setTextById('opt-never-roerich', t.filterNeverRoerich);
+            setTextById('opt-eastfac-alumni', t.filterEastFacAlumni);
 
-            document.getElementById('opt-talks-desc').textContent = t.sortTalksDesc;
-            document.getElementById('opt-talks-asc').textContent = t.sortTalksAsc;
-            document.getElementById('opt-name-asc').textContent = t.sortNameAsc;
-            document.getElementById('opt-name-desc').textContent = t.sortNameDesc;
+            setTextById('opt-talks-desc', t.sortTalksDesc);
+            setTextById('opt-talks-asc', t.sortTalksAsc);
+            setTextById('opt-name-asc', t.sortNameAsc);
+            setTextById('opt-name-desc', t.sortNameDesc);
 
             // Table headers
-            document.getElementById('th-name').textContent = t.colName;
-            document.getElementById('th-total').textContent = t.colTotal;
-            document.getElementById('th-zograf').textContent = t.colZograf;
-            document.getElementById('th-roerich').textContent = t.colRoerich;
-            document.getElementById('th-years').textContent = t.colYears;
+            setTextById('th-name', t.colName);
+            setTextById('th-total', t.colTotal);
+            setTextById('th-zograf', t.colZograf);
+            setTextById('th-roerich', t.colRoerich);
+            setTextById('th-years', t.colYears);
 
             // Schema
-            document.getElementById('db-title').textContent = t.dbTitle;
-            document.getElementById('db-desc').textContent = t.dbDesc;
+            setTextById('db-title', t.dbTitle);
+            setTextById('db-desc', t.dbDesc);
 
             // Footer
-            document.getElementById('footer-copyright').textContent = t.footerCopyright;
+            setTextById('footer-copyright', t.footerCopyright);
 
             // Re-render dynamic content
+            if (!window.CONFERENCE_DATA || !Array.isArray(window.CONFERENCE_DATA.scholars)) return;
             updateSummaryStats();
             renderScholarsTable();
-            renderMatchingTalks(document.getElementById('talks-search').value.trim());
+            renderMatchingTalks((document.getElementById('talks-search')?.value || '').trim());
             initTimeline();
-            if (document.getElementById('sec-charts').classList.contains('active')) {
-                document.getElementById('chart-geo-title').textContent = t.chartGeoTitle;
-                document.getElementById('chart-age-title').textContent = t.chartAgeTitle;
-                document.getElementById('chart-gender-title').textContent = t.chartGenderTitle;
-                document.getElementById('chart-network-title').textContent = t.chartNetworkTitle;
-                document.getElementById('net-reset-btn').textContent = t.netResetBtn;
-                document.getElementById('net-pause-btn').textContent = isNetPhysicsRunning ? t.netPauseBtn : t.netResumeBtn;
-                document.getElementById('chart-inst-title').textContent = t.chartInstTitle;
-                document.getElementById('chart-words-title').textContent = t.chartWordsTitle;
-                document.getElementById('chart-lotka-title').textContent = t.chartLotkaTitle;
-                document.getElementById('chart-topic-title').textContent = t.chartTopicTitle;
+            if (document.getElementById('sec-charts')?.classList.contains('active')) {
+                setTextById('chart-geo-title', t.chartGeoTitle);
+                setTextById('chart-age-title', t.chartAgeTitle);
+                setTextById('chart-gender-title', t.chartGenderTitle);
+                setTextById('chart-network-title', t.chartNetworkTitle);
+                setTextById('net-reset-btn', t.netResetBtn);
+                setTextById('net-pause-btn', isNetPhysicsRunning ? t.netPauseBtn : t.netResumeBtn);
+                setTextById('chart-inst-title', t.chartInstTitle);
+                setTextById('chart-words-title', t.chartWordsTitle);
+                setTextById('chart-lotka-title', t.chartLotkaTitle);
+                setTextById('chart-topic-title', t.chartTopicTitle);
                 const teaserTextEl = document.getElementById('network-teaser-text');
                 if (teaserTextEl) teaserTextEl.textContent = t.networkTeaserText;
                 const teaserLinkEl = document.getElementById('network-teaser-link');
                 if (teaserLinkEl) teaserLinkEl.textContent = t.networkTeaserLink;
-                document.querySelectorAll('#inst-table th')[0].textContent = t.thAffil;
-                document.querySelectorAll('#inst-table th')[1].textContent = t.thScholars;
-                document.querySelectorAll('#inst-table th')[2].textContent = t.thTalks;
+                const instHeaders = document.querySelectorAll('#inst-table th');
+                if (instHeaders[0]) instHeaders[0].textContent = t.thAffil;
+                if (instHeaders[1]) instHeaders[1].textContent = t.thScholars;
+                if (instHeaders[2]) instHeaders[2].textContent = t.thTalks;
                 renderGrowthChart();
                 renderCohortDistribution();
                 renderGeoChart();
@@ -321,7 +339,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 // If not yet loaded, lazy fetch it!
                 if (!CONFERENCE_DATA.timeline[year]) {
-                    fetch(`site_data_timeline_${year}.json?v=1.8.5`)
+                    fetch(`site_data_timeline_${year}.json?v=1.8.8`)
                         .then(r => r.json())
                         .then(yearData => {
                             CONFERENCE_DATA.timeline[year] = yearData;
@@ -479,10 +497,36 @@ document.addEventListener('DOMContentLoaded', () => {
             }[ch]));
         }
 
+        function normalizeSearchText(value) {
+            return String(value || '')
+                .toLowerCase()
+                .replace(/ё/g, 'е')
+                .replace(/[^\p{L}\p{N}\s-]/gu, ' ')
+                .replace(/\s+/g, ' ')
+                .trim();
+        }
+
         function normalizedTalkToken(token) {
-            if (/^рамаян[а-яё]*$/i.test(token)) return 'рамаян';
-            if (/^махабхарат[а-яё]*$/i.test(token)) return 'махабхарат';
-            return token.toLowerCase();
+            const value = normalizeSearchText(token);
+            if (/^рамаян[а-яе]*$/i.test(value)) return 'рамаян';
+            if (/^махабхарат[а-яе]*$/i.test(value)) return 'махабхарат';
+            return value;
+        }
+
+        function stemTalkToken(token) {
+            const value = normalizedTalkToken(token);
+            if (!/[а-яе]/.test(value) || value.length < 6) return value;
+            return value.replace(/(иями|ями|ами|ого|ему|ыми|ими|иях|ах|ях|ая|яя|ое|ее|ый|ий|ой|ые|ие|ых|их|ам|ям|ом|ем|ою|ею|а|я|ы|и|у|ю|е|о)$/u, '');
+        }
+
+        function talkTokenMatches(haystack, hayTokens, queryToken) {
+            if (haystack.includes(queryToken)) return true;
+            const stem = stemTalkToken(queryToken);
+            if (stem.length < 4) return false;
+            return hayTokens.some(token => {
+                if (token.includes(queryToken) || (token.length >= 4 && queryToken.includes(token))) return true;
+                return stemTalkToken(token).startsWith(stem);
+            });
         }
 
         function publicTagLabel(tag) {
@@ -496,13 +540,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         function talkQueryTokens(query) {
-            return query.toLowerCase().trim().split(/\s+/).filter(Boolean).map(normalizedTalkToken);
+            return normalizeSearchText(query).split(/\s+/).filter(Boolean).map(normalizedTalkToken);
         }
 
         function titleMatchesTalkQuery(title, query) {
-            const titleValue = String(title || '').toLowerCase();
+            const titleValue = normalizeSearchText(title);
+            const titleTokens = titleValue.split(/\s+/).filter(Boolean);
             const tokens = talkQueryTokens(query);
-            return tokens.length > 0 && tokens.every(token => titleValue.includes(token));
+            return tokens.length > 0 && tokens.every(token => talkTokenMatches(titleValue, titleTokens, token));
         }
 
         function namedTopicForQuery(query) {
@@ -661,12 +706,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Apply search & conference affinity filters
             state.filteredScholars = CONFERENCE_DATA.scholars.filter(s => {
+                const scholarTalks = s.sessions || s.talks || [];
                 const matchesSearch = s.name.toLowerCase().includes(searchVal) ||
                                       s.original_fullname.toLowerCase().includes(searchVal) ||
                                       (s.full_name_ru && s.full_name_ru.toLowerCase().includes(searchVal)) ||
                                       (s.full_name_en && s.full_name_en.toLowerCase().includes(searchVal)) ||
                                       s.all_affiliations.some(aff => aff.toLowerCase().includes(searchVal)) ||
-                                      (s.sessions || s.talks).some(talk => 
+                                      scholarTalks.some(talk => 
                                           talk.title.toLowerCase().includes(searchVal) || 
                                           (talk.geography && talk.geography.ru.toLowerCase().includes(searchVal)) ||
                                           (talk.geography && talk.geography.en.toLowerCase().includes(searchVal))
@@ -674,7 +720,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 let matchesTalksSearch = true;
                 if (talksSearchVal) {
-                    matchesTalksSearch = (s.sessions || s.talks).some(talk => titleMatchesTalkQuery(talk.title, talksSearchVal));
+                    matchesTalksSearch = scholarTalks.some(talk => titleMatchesTalkQuery(talk.title, talksSearchVal));
                 }
                 
                 let matchesSeries = true;
@@ -688,6 +734,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     matchesSeries = s.zograf_talks === 0;
                 } else if (seriesFilter === 'never-roerich') {
                     matchesSeries = s.roerich_talks === 0;
+                } else if (seriesFilter === 'eastfac-alumni') {
+                    matchesSeries = Boolean(s.is_eastern_faculty_alumnus);
                 }
 
                 return matchesSearch && matchesTalksSearch && matchesSeries;
@@ -861,6 +909,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
                 if (s.is_independent) {
                     academicBadgesHtml += `<span class="badge badge-zograf" style="margin-right: 0.5rem; margin-bottom: 0.5rem; text-transform: none; font-size: 0.8rem;">💼 ${t.independentBadge}</span>`;
+                }
+                if (s.is_eastern_faculty_alumnus) {
+                    academicBadgesHtml += `<span class="badge badge-both" style="margin-right: 0.5rem; margin-bottom: 0.5rem; text-transform: none; font-size: 0.8rem;">${t.eastFacBadge}</span>`;
                 }
                 
                 let affiliationHistoryHtml = '';
@@ -1381,7 +1432,34 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('net-pause-btn').textContent = isNetPhysicsRunning ? t.netPauseBtn : t.netResumeBtn;
         }
 
-        function exportToMarkdown() {
+        function mergeFullScholars(fullScholars) {
+            if (!window.CONFERENCE_DATA || !Array.isArray(window.CONFERENCE_DATA.scholars)) return;
+            const scholarMap = new Map(fullScholars.map(s => [s.id, s]));
+            window.CONFERENCE_DATA.scholars.forEach(s => {
+                const full = scholarMap.get(s.id);
+                if (full) {
+                    s.talks = full.talks || [];
+                    s.sessions = full.talks || [];
+                }
+            });
+            state.fullScholarsLoaded = true;
+        }
+
+        async function ensureFullScholarsLoaded() {
+            if (!window.CONFERENCE_DATA) {
+                window.CONFERENCE_DATA = await _dataPromise;
+            }
+            if (state.fullScholarsLoaded) return;
+            if (!scholarsPromise) {
+                scholarsPromise = fetch('site_data_scholars.json?v=1.8.8').then(r => r.json());
+            }
+            const fullScholars = await scholarsPromise;
+            mergeFullScholars(fullScholars);
+            handleFilterChange();
+        }
+
+        async function exportToMarkdown() {
+            await ensureFullScholarsLoaded();
             const isRu = state.currentLang === 'ru';
             let content = isRu ? `# Выборка исследователей-индологов\n` : `# Selected Indology Scholars\n`;
             content += isRu ? `*Сгенерировано платформой IndologyScholars: ${new Date().toISOString().split('T')[0]}*\n` : `*Generated by IndologyScholars Platform: ${new Date().toISOString().split('T')[0]}*\n`;
@@ -1391,13 +1469,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 content += `## ${s.name}\n`;
                 content += isRu ? `* **Докладов**: ${s.total_talks} (Зографские: ${s.zograf_talks}, Рериховские: ${s.roerich_talks})\n` : `* **Total Talks**: ${s.total_talks} (Zograf: ${s.zograf_talks}, Roerich: ${s.roerich_talks})\n`;
                 
-                const yearsList = [...new Set(s.sessions.map(sess => sess.year))].sort();
+                const scholarTalks = s.sessions || s.talks || [];
+                const yearsList = [...new Set(scholarTalks.map(sess => sess.year))].sort();
                 const yearsStr = yearsList.length > 0 ? (yearsList.length === 1 ? `${yearsList[0]}` : `${yearsList[0]} - ${yearsList[yearsList.length - 1]}`) : 'N/A';
                 content += isRu ? `* **Годы активности**: ${yearsStr}\n` : `* **Active Years**: ${yearsStr}\n`;
                 content += isRu ? `* **Доминирующая тема**: ${translateThemeCode(s.dominant_theme)}\n\n` : `* **Dominant Theme**: ${translateThemeCode(s.dominant_theme)}\n\n`;
                 
                 content += isRu ? `### Список докладов:\n` : `### Presentations List:\n`;
-                s.sessions.sort((a, b) => b.year - a.year).forEach((sess, idx) => {
+                scholarTalks.slice().sort((a, b) => b.year - a.year).forEach((sess, idx) => {
                     const venueStr = sess.series === 'Zograf' ? (isRu ? 'Зографские' : 'Zograf Readings') : (isRu ? 'Рериховские' : 'Roerich Readings');
                     content += `${idx + 1}. ${sess.title} (${sess.year}, ${venueStr})\n`;
                 });
@@ -1426,9 +1505,9 @@ document.addEventListener('DOMContentLoaded', () => {
             initTimeline();
 
             const lazyLoadData = () => {
-                timelinePromise = fetch('site_data_timeline.json?v=1.8.5').then(r => r.json());
-                networkPromise = fetch('site_data_network.json?v=1.8.5').then(r => r.json());
-                scholarsPromise = fetch('site_data_scholars.json?v=1.8.5').then(r => r.json());
+                timelinePromise = fetch('site_data_timeline.json?v=1.8.8').then(r => r.json());
+                networkPromise = fetch('site_data_network.json?v=1.8.8').then(r => r.json());
+                scholarsPromise = fetch('site_data_scholars.json?v=1.8.8').then(r => r.json());
 
                 timelinePromise.then(timelineData => {
                     window.CONFERENCE_DATA.timeline = timelineData;
@@ -1448,15 +1527,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
 
                 scholarsPromise.then(fullScholars => {
-                    const scholarMap = new Map(fullScholars.map(s => [s.id, s]));
-                    window.CONFERENCE_DATA.scholars.forEach(s => {
-                        const full = scholarMap.get(s.id);
-                        if (full) {
-                            s.talks = full.talks;
-                            s.sessions = full.talks;
-                        }
-                    });
-                    state.fullScholarsLoaded = true;
+                    mergeFullScholars(fullScholars);
                     handleFilterChange();
                 });
             };
