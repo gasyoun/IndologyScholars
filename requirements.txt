@@ -5,5 +5,5 @@ jsonschema
 scikit-learn
 pymorphy3
 jinja2
-Pillow>=10.0.0
+Pillow>=12.2.0
 pytest
