@@ -73,6 +73,10 @@ function closeCitationModal() {
     </article>
 </section>
 
+{% if genealogy_html %}
+{{ genealogy_html | safe }}
+{% endif %}
+
 {% if external_links %}
 <h2>External Identifiers</h2>
 <div class="chip-row">

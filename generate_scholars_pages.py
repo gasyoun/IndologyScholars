@@ -629,6 +629,95 @@ def build_indexes(scholars):
     return by_theme, by_city
 
 
+def format_relationship_type(rel_type, lang="ru"):
+    mapping = {
+        "advisor": ("Научный руководитель", "Advisor"),
+        "supervisor": ("Научный консультант", "Supervisor"),
+        "mentor": ("Наставник / Учитель", "Mentor"),
+        "academic_lineage": ("Академическая линия", "Academic Lineage"),
+        "lectured": ("Преподаватель", "Lecturer"),
+    }
+    ru, en = mapping.get(rel_type, ("Связь", "Relation"))
+    return ru if lang == "ru" else en
+
+
+def build_genealogy_html(scholar):
+    advisors = scholar.get("advisors") or []
+    students = scholar.get("students") or []
+    
+    if not advisors and not students:
+        return ""
+        
+    html = []
+    html.append('<h2>Академическая генеалогия и преемственность</h2>')
+    html.append('<section class="grid proso-grid">')
+    
+    # Advisors Card
+    if advisors:
+        html.append('<article class="card genealogy-card">')
+        html.append('<strong>Научные руководители и наставники</strong>')
+        html.append('<ul class="genealogy-list">')
+        for a in advisors:
+            rel_label = format_relationship_type(a["relationship_type"], "ru")
+            period = ""
+            if a.get("period_start") or a.get("period_end"):
+                if a.get("period_start") and a.get("period_end"):
+                    period = f" ({a['period_start']}–{a['period_end']})"
+                elif a.get("period_start"):
+                    period = f" (с {a['period_start']})"
+                else:
+                    period = f" (заверш. в {a['period_end']})"
+                    
+            name_html = ""
+            if a.get("slug"):
+                name_html = f'<a href="{esc(a["slug"])}.html">{esc(a["name"])}</a>'
+            else:
+                name_html = f'<span class="external-scholar">{esc(a["name"])}</span>'
+                
+            evidence_html = ""
+            if a.get("evidence_url"):
+                note = a.get("evidence_note") or "Ссылка на подтверждение"
+                evidence_html = f' <a class="evidence-link" href="{esc(a["evidence_url"])}" target="_blank" rel="noopener" title="{esc(note)}">🔗</a>'
+                
+            html.append(f'<li>{name_html} <span class="rel-type">({rel_label})</span>{period}{evidence_html}</li>')
+        html.append('</ul>')
+        html.append('</article>')
+        
+    # Students Card
+    if students:
+        html.append('<article class="card genealogy-card">')
+        html.append('<strong>Ученики и преемники</strong>')
+        html.append('<ul class="genealogy-list">')
+        for s in students:
+            rel_label = format_relationship_type(s["relationship_type"], "ru")
+            period = ""
+            if s.get("period_start") or s.get("period_end"):
+                if s.get("period_start") and s.get("period_end"):
+                    period = f" ({s['period_start']}–{s['period_end']})"
+                elif s.get("period_start"):
+                    period = f" (с {s['period_start']})"
+                else:
+                    period = f" (заверш. в {s['period_end']})"
+                    
+            name_html = ""
+            if s.get("slug"):
+                name_html = f'<a href="{esc(s["slug"])}.html">{esc(s["name"])}</a>'
+            else:
+                name_html = f'<span class="external-scholar">{esc(s["name"])}</span>'
+                
+            evidence_html = ""
+            if s.get("evidence_url"):
+                note = s.get("evidence_note") or "Ссылка на подтверждение"
+                evidence_html = f' <a class="evidence-link" href="{esc(s["evidence_url"])}" target="_blank" rel="noopener" title="{esc(note)}">🔗</a>'
+                
+            html.append(f'<li>{name_html} <span class="rel-type">({rel_label})</span>{period}{evidence_html}</li>')
+        html.append('</ul>')
+        html.append('</article>')
+        
+    html.append('</section>')
+    return "\n".join(html)
+
+
 def render_profile(scholar, related, authority, meso_by_presentation, meso_items):
     name_ru = scholar.get("full_name_ru") or scholar.get("name")
     name_en = scholar.get("full_name_en") or scholar.get("name")
@@ -754,10 +843,86 @@ def render_profile(scholar, related, authority, meso_by_presentation, meso_items
         external_links=external_links,
         context_block=scholar_context_block(scholar, meso_by_presentation, meso_items),
         talk_cards=talk_cards,
-        related_html=related_html
+        related_html=related_html,
+        genealogy_html=build_genealogy_html(scholar)
     )
 
-    extra_css = ""
+    extra_css = """
+<style>
+.proso-grid {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+.genealogy-card {
+    background: linear-gradient(135deg, rgba(30, 27, 75, 0.4) 0%, rgba(15, 23, 42, 0.6) 100%);
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+.genealogy-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(99, 102, 241, 0.4);
+}
+.genealogy-card strong {
+    font-size: 1.1rem;
+    color: #e0e7ff;
+    display: block;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid rgba(99, 102, 241, 0.2);
+    padding-bottom: 0.5rem;
+}
+.genealogy-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.genealogy-list li {
+    padding: 0.6rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    font-size: 0.95rem;
+}
+.genealogy-list li:last-child {
+    border-bottom: none;
+}
+.genealogy-list li a {
+    color: #c084fc;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+.genealogy-list li a:hover {
+    color: #e879f9;
+    text-decoration: underline;
+}
+.genealogy-list .external-scholar {
+    color: #e2e8f0;
+    font-weight: 500;
+}
+.genealogy-list .rel-type {
+    color: var(--muted);
+    font-size: 0.85rem;
+    margin-left: 0.5rem;
+}
+.genealogy-list .evidence-link {
+    font-size: 0.85rem;
+    opacity: 0.5;
+    transition: opacity 0.2s, transform 0.2s;
+    margin-left: 0.5rem;
+    text-decoration: none !important;
+    display: inline-block;
+}
+.genealogy-list .evidence-link:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+</style>
+"""
     og_path = f"assets/og/scholar_{scholar.get('url_slug')}.png"
     from publication_helpers import create_dynamic_og_image
     create_dynamic_og_image([name_ru, profile_label, f"Докладов: {scholar.get('total_talks') or 0}"], og_path)

@@ -7,6 +7,7 @@ from classification_overrides import CLASSIFICATION_OVERRIDES, THEME_LABEL_OVERR
 from metadata_normalization import load_verified_affiliation_spans, public_affiliation, split_leading_affiliation
 from publication_helpers import GENERATION_COHORTS, assign_unique_slugs, build_presentation_slug_map, generation_cohort, load_authority_overrides, normalize_time_interval
 from title_normalization import THEME_OVERRIDES_BY_PRESENTATION_ID, TITLE_EDITORIAL_NOTES_BY_PRESENTATION_ID, canonical_title
+import pipeline.genealogy as gen
 
 DB_PATH = "conferences.db"
 OUTPUT_FILE = "site_data.json"
@@ -381,7 +382,7 @@ def main():
     person_cols = {r[1] for r in cursor.execute("PRAGMA table_info(person)").fetchall()}
     has_degree = {"degree", "degree_year", "degree_source_url"} <= person_cols
     degree_select = ", degree, degree_year, degree_source_url" if has_degree else ""
-    cursor.execute(f"SELECT person_id, display_name, birth_year, death_year, full_name_ru, full_name_en{degree_select} FROM person")
+    cursor.execute(f"SELECT person_id, display_name, birth_year, death_year, full_name_ru, full_name_en, normalized_key{degree_select} FROM person")
     persons_raw = cursor.fetchall()
 
     person_meta = {}
@@ -391,9 +392,10 @@ def main():
         death_year = r_p[3]
         full_name_ru = r_p[4]
         full_name_en = r_p[5]
-        degree = r_p[6] if has_degree else None
-        degree_year = r_p[7] if has_degree else None
-        degree_source_url = r_p[8] if has_degree else None
+        normalized_key = r_p[6]
+        degree = r_p[7] if has_degree else None
+        degree_year = r_p[8] if has_degree else None
+        degree_source_url = r_p[9] if has_degree else None
         eastern_faculty_row = eastern_faculty_alumni.get(pid, {})
 
         std_name = format_to_initials(display_name)
@@ -455,6 +457,7 @@ def main():
         
         person_meta[pid] = {
             "std_name": std_name,
+            "normalized_key": normalized_key,
             "is_student": is_student,
             "is_independent": is_independent,
             "has_changed_affiliations": has_changed_affiliations,
@@ -639,6 +642,7 @@ def main():
         scholars.append({
             "id": pid,
             "name": meta["std_name"],
+            "normalized_key": meta["normalized_key"],
             "original_fullname": r[1],
             "full_name_ru": meta["full_name_ru"] or meta["std_name"],
             "full_name_en": meta["full_name_en"] or meta["std_name"],
@@ -681,6 +685,59 @@ def main():
     # from authority_ids.json -> persons[id].preferred_latin_name).
     authority_overrides = load_authority_overrides()
     assign_unique_slugs(scholars, authority_overrides)
+
+    # Load teacher-student relationships
+    rels = gen.load_relationships(include_candidates=False)
+    advisor_map = gen.by_advisor(rels)
+    student_map = gen.by_student(rels)
+    
+    scholar_by_key = {s["normalized_key"]: s for s in scholars if s.get("normalized_key")}
+    
+    for s in scholars:
+        s_key = s.get("normalized_key")
+        s["advisors"] = []
+        s["students"] = []
+        
+        if s_key:
+            # Advisors of this scholar (where this scholar is student)
+            for r in student_map.get(s_key, []):
+                adv_slug = None
+                adv_id = None
+                if r.advisor_key in scholar_by_key:
+                    adv_slug = scholar_by_key[r.advisor_key]["url_slug"]
+                    adv_id = scholar_by_key[r.advisor_key]["id"]
+                s["advisors"].append({
+                    "name": r.advisor_name,
+                    "key": r.advisor_key,
+                    "relationship_type": r.relationship_type,
+                    "period_start": r.period_start,
+                    "period_end": r.period_end,
+                    "evidence_url": r.evidence_url,
+                    "evidence_note": r.evidence_note,
+                    "notes": r.notes,
+                    "slug": adv_slug,
+                    "id": adv_id
+                })
+                
+            # Students of this scholar (where this scholar is advisor)
+            for r in advisor_map.get(s_key, []):
+                stud_slug = None
+                stud_id = None
+                if r.student_key in scholar_by_key:
+                    stud_slug = scholar_by_key[r.student_key]["url_slug"]
+                    stud_id = scholar_by_key[r.student_key]["id"]
+                s["students"].append({
+                    "name": r.student_name,
+                    "key": r.student_key,
+                    "relationship_type": r.relationship_type,
+                    "period_start": r.period_start,
+                    "period_end": r.period_end,
+                    "evidence_url": r.evidence_url,
+                    "evidence_note": r.evidence_note,
+                    "notes": r.notes,
+                    "slug": stud_slug,
+                    "id": stud_id
+                })
 
     slug_by_id = {s["id"]: s["url_slug"] for s in scholars}
 
