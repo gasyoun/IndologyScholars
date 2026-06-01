@@ -6,7 +6,7 @@
 ## 1. High-Level Executive Summary
 
 - **Total Unique Scholars Identified**: 270
-- **Total Historical Presentations/Talks**: 1387
+- **Total Historical Presentations/Talks**: 1388
 - **Scholars in Zograf Readings only**: 165
 - **Scholars in Roerich Readings only**: 64
 - **Scholars Active in BOTH Conferences (Overlapping Cohort)**: 41
@@ -125,7 +125,7 @@ The complete structured lists have been generated and exported to the `analytics
 | 2023 | 2023-05-23 | 43 | 50.2 | 47 | 40.0–58.0 | 24–84 |
 | 2024 | 2024-05-14 | 48 | 49.6 | 47.5 | 39.0–64.2 | 21–85 |
 | 2025 | 2025-05-20 | 57 | 50.7 | 48 | 39.5–66.5 | 22–82 |
-| 2026 | 2026-05-26 | 58 | 49.0 | 47.5 | 37.0–57.2 | 20–83 |
+| 2026 | 2026-05-26 | 59 | 49.2 | 48 | 37.0–58.0 | 20–83 |
 
 ### Рериховские чтения (декабрь, Москва)
 
@@ -154,6 +154,6 @@ We analyze the structure of Russian Indological conferences through the lens of 
 
 **Nodes Generated:** 324
 
-**Edges Generated:** 7929
+**Edges Generated:** 7937
 
 The network is exported into standard edge list and node list CSV formats (`network_nodes.csv` and `network_edges.csv`) for use in external graphing tools like Gephi or Cytoscape.

@@ -36,10 +36,10 @@ event:E2022,event,Zograf Readings 2022,E2022,50
 event:E2023,event,Zograf Readings 2023,E2023,44
 event:E2024,event,Zograf Readings 2024,E2024,53
 event:E2025,event,Zograf Readings 2025,E2025,57
-event:E2026,event,Zograf Readings 2026,E2026,61
+event:E2026,event,Zograf Readings 2026,E2026,62
 organization:Государственный Эрмитаж,organization,Государственный Эрмитаж,Государственный Эрмитаж,1
 organization:ИВ РАН,organization,ИВ РАН,ИВ РАН,164
-organization:ИВР РАН,organization,ИВР РАН,ИВР РАН,10
+organization:ИВР РАН,organization,ИВР РАН,ИВР РАН,11
 organization:ИФ РАН,organization,ИФ РАН,ИФ РАН,12
 organization:МАЭ РАН,organization,МАЭ РАН,МАЭ РАН,2
 organization:МГУ,organization,МГУ,МГУ,37
@@ -238,7 +238,7 @@ person:PERS_1a097e52,person,Парибок Андрей Всеволодович
 person:PERS_260a598a,person,Пахомов Сергей Владимирович,PERS_260a598a,16
 person:PERS_5f6fa17b,person,Пахомова Александра Михайловна,PERS_5f6fa17b,2
 person:PERS_37bb2d43,person,Покатилов Сергей Андреевич,PERS_37bb2d43,2
-person:PERS_d3c5382c,person,Попова Ирина Фёдоровна,PERS_d3c5382c,10
+person:PERS_d3c5382c,person,Попова Ирина Фёдоровна,PERS_d3c5382c,11
 person:PERS_003adcfe,person,Псху Рузана Владимировна,PERS_003adcfe,19
 person:PERS_23abae7d,person,Пушкарева Юлия Георгиевна,PERS_23abae7d,1
 person:PERS_3195408b,person,Ратушный Данила Николаевич,PERS_3195408b,1
@@ -317,9 +317,9 @@ person:PERS_8e117242,person,Юдицкая Екатерина Алексеевн
 person:PERS_0ca995ac,person,Яковлев Виктор Михайлович,PERS_0ca995ac,8
 person:PERS_b881461b,person,Яковлева Мария Николаевна,PERS_b881461b,3
 person:PERS_71e9dee1,person,Яскунас Валдас,PERS_71e9dee1,3
-theme:art_and_material_culture,theme,art_and_material_culture,art_and_material_culture,89
+theme:art_and_material_culture,theme,art_and_material_culture,art_and_material_culture,93
 theme:history_and_culture,theme,history_and_culture,history_and_culture,256
-theme:linguistics_and_philology,theme,linguistics_and_philology,linguistics_and_philology,123
-theme:literature_and_poetry,theme,literature_and_poetry,literature_and_poetry,282
-theme:religion_and_philosophy,theme,religion_and_philosophy,religion_and_philosophy,561
-theme:unspecified,theme,unspecified,unspecified,76
+theme:linguistics_and_philology,theme,linguistics_and_philology,linguistics_and_philology,125
+theme:literature_and_poetry,theme,literature_and_poetry,literature_and_poetry,285
+theme:religion_and_philosophy,theme,religion_and_philosophy,religion_and_philosophy,575
+theme:unspecified,theme,unspecified,unspecified,54
