@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "total_open_review_items": 3280,
+  "total_open_review_items": 3281,
   "by_domain": {
     "affiliation_scope": 60,
     "authority_identity": 270,
@@ -22,7 +22,7 @@
     "senior_absence": 18,
     "senior_biographical_verification": 12,
     "spacetime_index": 1076,
-    "theme_classification": 46,
+    "theme_classification": 47,
     "theme_uncertainty": 329,
     "wikipedia_identity": 690
   },
@@ -46,7 +46,7 @@
     "analytics_output/senior_absence_audit.csv": 18,
     "analytics_output/spacetime_unmatched.csv": 1076,
     "analytics_output/theme_codes_uncertain_v2.csv": 329,
-    "analytics_output/theme_review_queue.csv": 46,
+    "analytics_output/theme_review_queue.csv": 47,
     "analytics_output/wikipedia_authority_candidates.csv": 690,
     "analytics_output/zograf_2026_affiliation_audit.csv": 60,
     "curation/senior_biographical_verification.csv": 12
