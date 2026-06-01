@@ -29,13 +29,15 @@ Editable inputs and curation rules:
 | `authority_ids.json` | Verified external person identifiers. |
 | `analytics_output/classification_overrides.csv` | Editorial decisions for public classification examples. |
 | `curation/teacher_student.csv` | Curated advisor/student relationships (issue #9 genealogy track). Schema and editing rules: `curation/teacher_student_schema.md`. |
-| `tools/` | Maintained support tools used by tests or CI. |
+| `curation/known_relationships.csv` | Curated personal/academic ties (e.g. spouse, advisor, co-workers) to support sociology/gatekeeping interpretations. |
+| `curation/eastern_faculty_alumni.csv` | Curated SPbU Oriental/Eastern Faculty alumni review queue and verification statuses. |
+| `tools/` | Maintained support tools used by tests, curation queues, or CI. |
 | `scratch/` | Historical experiments and logs; new local experiments should remain untracked. |
 
 Do not manually edit derived artifacts: `conferences.db`, `site_data.json`,
 `search-index.json`, `analytics_output/`, the `s/`, `p/`,
 `conferences/`, `themes/`, `cities/`, `institutions/`, and `generations/`
-directories, or generated informational HTML pages. Make a change in its
+directories, or generated informational HTML pages (including `known-relationships.html` and `voting.html`). Make a change in its
 source or generator and rebuild the artifacts.
 
 ## Build
@@ -121,6 +123,12 @@ separate strict audit of elevated levels is documented in
 [classification-audit-en.md](classification-audit-en.md); the Russian version
 is [classification-audit.md](classification-audit.md).
 
+### Known Relationships Layer
+Extra-network personal, academic, or professional ties that are not directly visible from joint presentations or shared sessions are manually recorded in `curation/known_relationships.csv`. These ties (such as advisor-student, spouses, or former co-workers) provide necessary contextual evidence for the gatekeeping case. This data is rendered interactively on `known-relationships.html` and reviewed according to the editorial policy in `docs/sociology-gatekeeping-editorial-decisions.md`.
+
+### Faculty Alumni Verification
+Alumni of the St Petersburg University Faculty of Asian and African Studies (Oriental Faculty) are tracked via `curation/eastern_faculty_alumni.csv`. Heuristic candidates can be automatically generated from site metadata using `tools/extract_eastern_faculty_alumni.py`. An affiliation mentioning SPbU is not automatically treated as graduation; candidate status requires independent verification before being marked as `confirmed`.
+
 ## Validation and Publication
 
 Run `validate_publication.py` and the unit tests before publication. The
@@ -173,6 +181,8 @@ out of the standard build sequence.
 | [classification-audit-en.md](classification-audit-en.md) | Audit of argument-scale coding. |
 | [rinc-review-en.md](rinc-review-en.md) | Manual review of RINC/eLIBRARY profiles. |
 | [ux-ui-audit.md](ux-ui-audit.md) | Interface audit and prioritized improvements to the user workflow (in Russian). |
+| [visualisations.md](visualisations.md) | Stable IDs and use cases for interactive public visualisations. |
+| [sociology-gatekeeping-editorial-decisions.md](sociology-gatekeeping-editorial-decisions.md) | Editorial, audience, naming, and claim-strength decisions for sociology and gatekeeping analyses. |
 | [archive/README.md](https://github.com/gasyoun/IndologyScholars/blob/main/archive/README.md) | Index of historical plans, snapshots, and handoff files. |
 | [archive/plans/architecture.md](https://github.com/gasyoun/IndologyScholars/blob/main/archive/plans/architecture.md) | Historical architecture plan. |
 | [archive/plans/architecture_implementation_plan.md](https://github.com/gasyoun/IndologyScholars/blob/main/archive/plans/architecture_implementation_plan.md) | Record of implemented architecture hardening. |

@@ -1359,6 +1359,7 @@ keywords:
                         {"name": "relation_label_en", "type": "string"},
                         {"name": "direction", "type": "string"},
                         {"name": "certainty", "type": "string"},
+                        {"name": "temporal", "type": "string"},
                         {"name": "status", "type": "string"},
                         {"name": "source_note", "type": "string"},
                         {"name": "source_url", "type": "string"},
@@ -1983,12 +1984,16 @@ def generate_voting_page(records):
             .vote-actions {{ display: flex; flex-wrap: wrap; gap: 0.5rem; }}
             .vote-actions button {{ background: var(--panel); color: var(--text); border: 1px solid var(--border); border-radius: 6px; padding: 0.62rem 0.8rem; cursor: pointer; }}
             .vote-actions button:hover {{ border-color: var(--accent); }}
+            .vote-status {{ margin: -0.4rem 0 1rem; color: var(--muted); font-size: 0.88rem; min-height: 1.3rem; }}
             .vote-row {{ display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 1rem; align-items: center; }}
             .vote-title {{ display: grid; gap: 0.35rem; min-width: 0; }}
             .vote-title strong {{ overflow-wrap: anywhere; }}
             .vote-checks {{ display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: flex-end; }}
             .vote-checks label {{ display: inline-flex; align-items: center; gap: 0.4rem; border: 1px solid var(--border); border-radius: 6px; padding: 0.45rem 0.6rem; color: var(--muted); background: rgba(255,255,255,0.02); white-space: nowrap; }}
             .vote-checks input {{ width: 1rem; height: 1rem; }}
+            .vote-note {{ grid-column: 1 / -1; display: grid; gap: 0.35rem; color: var(--muted); font-size: 0.86rem; }}
+            .vote-note textarea {{ width: 100%; min-height: 4.2rem; resize: vertical; background: var(--panel); color: var(--text); border: 1px solid var(--border); border-radius: 6px; padding: 0.65rem 0.75rem; font: inherit; line-height: 1.45; }}
+            .vote-note textarea:focus {{ outline: 2px solid rgba(150, 185, 255, 0.35); border-color: var(--accent); }}
             @media (max-width: 720px) {{
                 .vote-row {{ grid-template-columns: 1fr; }}
                 .vote-checks {{ justify-content: flex-start; }}
@@ -2000,7 +2005,7 @@ def generate_voting_page(records):
         </header>
         <aside class="caveat-block" role="note" aria-label="Local voting caveat">
             <strong>Статический режим</strong>
-            <p>GitHub Pages не принимает голоса на сервер. Отметки сохраняются только в этом браузере; для передачи редактору, организатору или исследователю используйте экспорт CSV/JSON.</p>
+            <p>GitHub Pages не принимает голоса на сервер. Отметки и комментарии сохраняются только в этом браузере, в localStorage; для передачи редактору, организатору или исследователю используйте экспорт CSV/JSON.</p>
         </aside>
         <section class="grid">
             <article class="card"><strong>Год</strong><div class="metric" id="vote-year">{esc(default_year)}</div></article>
@@ -2018,9 +2023,11 @@ def generate_voting_page(records):
             <div class="vote-actions">
                 <button type="button" id="vote-export-csv">Экспорт CSV</button>
                 <button type="button" id="vote-export-json">Экспорт JSON</button>
+                <button type="button" id="vote-copy-json">Скопировать JSON</button>
                 <button type="button" id="vote-clear-year">Очистить год</button>
             </div>
         </section>
+        <p class="vote-status" id="vote-status" aria-live="polite"></p>
         <section class="list" id="vote-list"></section>
         <script type="application/json" id="talk-vote-data">{payload}</script>
         <script>
@@ -2030,6 +2037,7 @@ def generate_voting_page(records):
             const yearFilter = document.getElementById('vote-year-filter');
             const sessionFilter = document.getElementById('vote-session-filter');
             const list = document.getElementById('vote-list');
+            const status = document.getElementById('vote-status');
             const stats = {{
                 year: document.getElementById('vote-year'),
                 total: document.getElementById('vote-total'),
@@ -2098,6 +2106,10 @@ def generate_voting_page(records):
                             <label><input type="checkbox" data-field="heard" ${{vote.heard ? 'checked' : ''}}>Слушал(а)</label>
                             <label><input type="checkbox" data-field="liked" ${{vote.liked ? 'checked' : ''}}>Понравилось</label>
                         </div>
+                        <label class="vote-note">
+                            <span>Комментарий для редактора</span>
+                            <textarea data-field="comment" maxlength="1000" placeholder="Например: доклад был онлайн, порядок изменился, выступление отменили, слушал(а) запись.">${{escapeHtml(vote.comment || '')}}</textarea>
+                        </label>
                     </article>`;
                 }}).join('');
             }}
@@ -2114,6 +2126,7 @@ def generate_voting_page(records):
                     title: t.title,
                     heard: Boolean(votes[t.id]?.heard),
                     liked: Boolean(votes[t.id]?.liked),
+                    comment: String(votes[t.id]?.comment || '').trim(),
                     url: new URL(t.path, location.href).href
                 }}));
             }}
@@ -2134,15 +2147,50 @@ def generate_voting_page(records):
                 return '"' + String(value ?? '').replace(/"/g, '""') + '"';
             }}
 
+            function setStatus(message) {{
+                status.textContent = message;
+                window.clearTimeout(setStatus.timer);
+                setStatus.timer = window.setTimeout(() => {{
+                    status.textContent = '';
+                }}, 5000);
+            }}
+
+            async function copyText(text) {{
+                if (navigator.clipboard?.writeText) {{
+                    await navigator.clipboard.writeText(text);
+                    return;
+                }}
+                const textarea = document.createElement('textarea');
+                textarea.value = text;
+                textarea.setAttribute('readonly', '');
+                textarea.style.position = 'fixed';
+                textarea.style.left = '-9999px';
+                document.body.appendChild(textarea);
+                textarea.select();
+                document.execCommand('copy');
+                textarea.remove();
+            }}
+
             document.getElementById('vote-export-csv').addEventListener('click', () => {{
                 const rows = rowsForExport();
-                const fields = ['id', 'year', 'series', 'date', 'time', 'session', 'speaker', 'title', 'heard', 'liked', 'url'];
+                const fields = ['id', 'year', 'series', 'date', 'time', 'session', 'speaker', 'title', 'heard', 'liked', 'comment', 'url'];
                 const csv = [fields.join(','), ...rows.map(row => fields.map(field => csvEscape(row[field])).join(','))].join('\\n');
                 download(`indology-talk-votes-${{currentYear()}}.csv`, 'text/csv;charset=utf-8', csv + '\\n');
+                setStatus('CSV-файл подготовлен для отправки редактору.');
             }});
 
             document.getElementById('vote-export-json').addEventListener('click', () => {{
                 download(`indology-talk-votes-${{currentYear()}}.json`, 'application/json;charset=utf-8', JSON.stringify(rowsForExport(), null, 2));
+                setStatus('JSON-файл подготовлен для отправки редактору.');
+            }});
+
+            document.getElementById('vote-copy-json').addEventListener('click', async () => {{
+                try {{
+                    await copyText(JSON.stringify(rowsForExport(), null, 2));
+                    setStatus('JSON скопирован. Его можно вставить в письмо или сообщение администратору.');
+                }} catch (error) {{
+                    setStatus('Не удалось скопировать JSON автоматически. Используйте экспорт JSON.');
+                }}
             }});
 
             document.getElementById('vote-clear-year').addEventListener('click', () => {{
@@ -2164,6 +2212,20 @@ def generate_voting_page(records):
                 votes[id][field] = input.checked;
                 saveVotes();
                 render();
+            }});
+
+            list.addEventListener('input', event => {{
+                const input = event.target;
+                if (!input.matches('textarea[data-field="comment"]')) return;
+                const row = input.closest('[data-id]');
+                const id = row?.dataset.id;
+                if (!id) return;
+                votes[id] = votes[id] || {{}};
+                votes[id].comment = input.value;
+                if (!votes[id].heard && !votes[id].liked && !votes[id].comment.trim()) {{
+                    delete votes[id];
+                }}
+                saveVotes();
             }});
 
             yearFilter.addEventListener('change', () => {{
@@ -2217,6 +2279,7 @@ def generate_known_relationships_page(data):
             f"<td>{source}</td>"
             f"<td>{esc(row.get('relation_label_ru') or row.get('relation_type'))}</td>"
             f"<td>{target}</td>"
+            f"<td>{esc(row.get('temporal') or '')}</td>"
             f"<td>{esc(status)}</td>"
             f"<td>{source_cell}</td>"
             "</tr>"
@@ -2235,7 +2298,7 @@ def generate_known_relationships_page(data):
 
             <table class="data">
                 <thead>
-                    <tr><th>Источник связи</th><th>Тип связи</th><th>Связанный участник</th><th>Статус</th><th>Основание / источник</th></tr>
+                    <tr><th>Источник связи</th><th>Тип связи</th><th>Связанный участник</th><th>Период / время</th><th>Статус</th><th>Основание / источник</th></tr>
                 </thead>
                 <tbody>{''.join(relation_rows)}</tbody>
             </table>

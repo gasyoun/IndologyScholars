@@ -29,13 +29,15 @@
 | `authority_ids.json` | Проверенные внешние идентификаторы персон. |
 | `analytics_output/classification_overrides.csv` | Редакционные решения по публичным примерам классификации. |
 | `curation/teacher_student.csv` | Кураторские связи руководитель/ученик (issue #9, генеалогический трек). Схема и правила правок: `curation/teacher_student_schema.md`. |
-| `tools/` | Поддерживаемые служебные инструменты, используемые тестами или CI. |
+| `curation/known_relationships.csv` | Кураторские межличностные и академические связи (супруги, руководители, коллеги) для интерпретации гейткипинга/социологии. |
+| `curation/eastern_faculty_alumni.csv` | Таблица кураторской сверки и подтверждения выпускников Восточного факультета СПбГУ. |
+| `tools/` | Поддерживаемые служебные инструменты для тестов, очередей курации или CI. |
 | `scratch/` | Исторические эксперименты и журналы; новые локальные эксперименты должны оставаться неотслеживаемыми. |
 
 Производные артефакты не правятся вручную: `conferences.db`,
 `site_data.json`, `search-index.json`, `analytics_output/`, каталоги
 `s/`, `p/`, `conferences/`, `themes/`, `cities/`,
-`institutions/`, `generations/` и собранные информационные HTML-страницы.
+`institutions/`, `generations/` и собранные информационные HTML-страницы (включая `known-relationships.html` и `voting.html`).
 Изменение их содержания выполняется в источнике или генераторе, после чего
 артефакты пересобираются.
 
@@ -122,6 +124,12 @@ flowchart TD
 [classification-audit.md](classification-audit.md); английская версия -
 [classification-audit-en.md](classification-audit-en.md).
 
+### Внесетевые связи (Known Relationships)
+Межличностные, академические или профессиональные связи участников, которые не выводятся напрямую из совместных докладов или сессий, фиксируются вручную в `curation/known_relationships.csv`. Эти связи (такие как научный руководитель-аспирант, супруги или бывшие коллеги) служат контекстом для гипотезы гейткипинга. Они отображаются на интерактивной странице `known-relationships.html` и регулируются редакционной политикой, описанной в `docs/sociology-gatekeeping-editorial-decisions-ru.md`.
+
+### Верификация выпускников Восточного факультета
+Сведения о выпускниках Восточного факультета СПбГУ (Факультета востоковедения / Восточного факультета ЛГУ) хранятся в `curation/eastern_faculty_alumni.csv`. Heuristic-кандидаты могут быть автоматически извлечены из метаданных сайта с помощью инструмента `tools/extract_eastern_faculty_alumni.py`. Само по себе упоминание СПбГУ в аффилиациях не является подтверждением факта выпуска и требует ручной кураторской сверки.
+
 ## Проверка и публикация
 
 Перед публикацией следует выполнить `validate_publication.py` и модульные
@@ -175,6 +183,8 @@ Workflow `.github/workflows/rebuild_and_deploy.yml` выполняет загр�
 | [classification-audit.md](classification-audit.md) | Аудит разметки масштаба аргументации. |
 | [rinc-review.md](rinc-review.md) | Ручная проверка профилей РИНЦ/eLIBRARY. |
 | [ux-ui-audit.md](ux-ui-audit.md) | Аудит интерфейса и приоритеты улучшения пользовательского сценария. |
+| [visualisations.md](visualisations.md) | Постоянные ID и исследовательские сценарии для интерактивных визуализаций. |
+| [sociology-gatekeeping-editorial-decisions-ru.md](sociology-gatekeeping-editorial-decisions-ru.md) | Редакционные решения по доказательствам, именованию людей и силе утверждений для страниц социологии и гейткипинга. |
 | [archive/README.md](https://github.com/gasyoun/IndologyScholars/blob/main/archive/README.md) | Указатель исторических планов, снимков и handoff-файлов. |
 | [archive/plans/architecture.md](https://github.com/gasyoun/IndologyScholars/blob/main/archive/plans/architecture.md) | Исторический архитектурный план. |
 | [archive/plans/architecture_implementation_plan.md](https://github.com/gasyoun/IndologyScholars/blob/main/archive/plans/architecture_implementation_plan.md) | Запись выполненного усиления архитектуры. |

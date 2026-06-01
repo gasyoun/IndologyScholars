@@ -80,26 +80,14 @@ Already available on the public site:
 4. **Radar chart stays parked.** The older radar idea remains optional, but the L1 x L2
    heatmap carries the thematic argument more cleanly.
 
-### First public sequence: `findings/`
+### First public sequence: `findings/` (Completed)
 
-1. **Bilingual findings shell.** Make the new findings visualisation module RU/EN from
-   the start, including legends, caveats, labels, metric tooltips, and data links.
-2. **Interactive cross-cohort orbit scatter.** X = Zograf talks, Y = Roerich talks,
-   diagonal = balanced participation, color = institution/trajectory, size = active span,
-   click = scholar profile. This turns the static cross-cohort figure into the clearest
-   public entry point for the "two forums / bridge cohort" argument.
-3. **Affiliation opacity timeline.** Year x series view of verified institution,
-   city-only, empty/unknown, and tentative `(?)` affiliation states. This directly supports
-   the "declaration vs programme evidence" argument and should link to provenance CSVs.
-4. **Exploratory L2/meso caveat block.** Allow L2/meso charts on `findings/`, but mark
-   them as classification-under-review and link to provenance/review queues.
-5. **Video coverage heatmap.** Year x series x theme coverage with mapping status
-   (`auto`, `needs_review`, `skip`) and links to the video catalogue. Publish
-   `needs_review` as uncertainty rather than hiding it; keep the whole layer framed as
-   verification/access evidence, not as a representative sample.
-6. **Keyword/topic evolution.** Interactive bump/alluvial chart for title keyword clusters,
-   meso codes, and period trends, using the existing `title_keyword_*` outputs. Vendor the
-   alluvial/Sankey dependency locally instead of loading it from a CDN.
+1. [x] **Bilingual findings shell.** Make the new findings visualisation module RU/EN from the start, including legends, caveats, labels, metric tooltips, and data links.
+2. [x] **Interactive cross-cohort orbit scatter.** X = Zograf talks, Y = Roerich talks, diagonal = balanced participation, color = institution/trajectory, size = active span, click = scholar profile. This turns the static cross-cohort figure into the clearest public entry point for the "two forums / bridge cohort" argument.
+3. [x] **Affiliation opacity timeline.** Year x series view of verified institution, city-only, empty/unknown, and tentative `(?)` affiliation states. This directly supports the "declaration vs programme evidence" argument and should link to provenance CSVs.
+4. [x] **Exploratory L2/meso caveat block.** Allow L2/meso charts on `findings/`, but mark them as classification-under-review and link to provenance/review queues.
+5. [x] **Video coverage heatmap.** Year x series x theme coverage with mapping status (`auto`, `needs_review`, `skip`) and links to the video catalogue. Publish `needs_review` as uncertainty rather than hiding it; keep the whole layer framed as verification/access evidence, not as a representative sample.
+6. [x] **Keyword/topic evolution.** Interactive bump/alluvial chart for title keyword clusters, meso codes, and period trends, using the existing `title_keyword_*` outputs. Vendor the alluvial/Sankey dependency locally instead of loading it from a CDN.
 
 ### Next public surfaces
 

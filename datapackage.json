@@ -1079,6 +1079,10 @@
             "type": "string"
           },
           {
+            "name": "temporal",
+            "type": "string"
+          },
+          {
             "name": "status",
             "type": "string"
           },

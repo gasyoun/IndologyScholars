@@ -258,7 +258,7 @@ These are participation networks, not citation networks or comprehensive publica
 | `relation_type` | Normalized relation category, such as `scientific_supervisor`, `teacher_of`, `student_of`, `spouse`, or `worked_for`. |
 | `relation_label_ru`, `relation_label_en` | Public labels for the relation. |
 | `direction` | `directed` for mentorship/work ties or `undirected` for reciprocal ties such as spouse. |
-| `certainty`, `status` | Review state; `needs_source` rows should not support strong public claims. |
+| `certainty`, `temporal`, `status` | Curation certainty, temporal/chronological details (such as `сначала`, `затем`, or `ранее`), and review status. |
 | `source_note`, `source_url` | Editorial note and optional public source used for verification. |
 | `added_at`, `updated_at` | Local curation dates. |
 
@@ -329,6 +329,8 @@ Theme labels are navigational aids derived primarily from presentation titles. T
 | `themes/*.html` | Theme landing pages. |
 | `sociology.html`, `sociology-en.html` | Russian and English field-sociology overview pages. |
 | `gatekeeping.html`, `gatekeeping-en.html` | Russian and English gatekeeping-hypothesis pages. |
+| `known-relationships.html` | Curated extra-network relationships and personal/academic ties. |
+| `voting.html` | Client-side listener talk marks (heard/liked) with CSV/JSON export. |
 | `cities/*.html` | City/geography pages. |
 | `institutions/*.html` | Institution pages. |
 | `download-data.html` | Download links for reusable files. |

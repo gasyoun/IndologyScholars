@@ -21,9 +21,14 @@ To ensure rigorous scientific reproducibility and robust academic citation, ever
 | Stable ID | Название (RU) | Name (EN) | Статус / Status |
 | --- | --- | --- | --- |
 | `VIS_001_orbit_scatter` | Орбита перекрёстной когорты | Cross-Cohort Orbit Scatter | **Live** (Интерактивный SVG / Interactive SVG) |
-| `VIS_002_affiliation_opacity` | Временная шкала прозрачности аффилиаций | Affiliation Opacity Timeline | Teaser (В разработке / In Development) |
-| `VIS_003_video_heatmap` | Тепловая карта видеопокрытия | Video Coverage Heatmap | Teaser (В разработке / In Development) |
-| `VIS_004_keyword_alluvial` | Аллювиальный граф ключевых слов | Keyword Flow Alluvial | Teaser (В разработке / In Development) |
+| `VIS_002_affiliation_opacity` | Временная шкала прозрачности аффилиаций | Affiliation Opacity Timeline | **Live** (Интерактивный SVG / Interactive SVG) |
+| `VIS_003_video_heatmap` | Тепловая карта видеопокрытия | Video Coverage Heatmap | **Live** (Интерактивный SVG / Interactive SVG) |
+| `VIS_004_keyword_alluvial` | Аллювиальный граф ключевых слов | Keyword Flow Alluvial | **Live** (Интерактивный SVG / Interactive SVG) |
+| `VIS_005_scholar_forest` | «Лес» активности исследователей | Scholar Activity Forest | **Live** (Интерактивный SVG / Interactive SVG) |
+| `VIS_006_thematic_hierarchy` | Тематическая иерархия (Sunburst) | Thematic Hierarchy (Sunburst) | **Live** (Интерактивный SVG / Interactive SVG) |
+| `VIS_007_network_arc` | Линейный дуговой граф мостов | Linear Arc Bridge Network | **Live** (Интерактивный SVG / Interactive SVG) |
+| `VIS_010_geographic_map` | Гео-пространственная карта | Geospatial Flow Map | **Live** (Интерактивная карта / Interactive Map) |
+| `VIS_011_keyword_bubble_cloud` | Облако тегов и ключевых слов | Dynamic Keyword Bubble Cloud | **Live** (Интерактивный SVG / Interactive SVG) |
 
 ---
 
