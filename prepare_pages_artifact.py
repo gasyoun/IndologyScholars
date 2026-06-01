@@ -40,6 +40,8 @@ PUBLIC_PATHS = [
     "sociology-en.html",
     "gatekeeping.html",
     "gatekeeping-en.html",
+    "known-relationships.html",
+    "voting.html",
     "indology_scholars_analytics.md",
 ]
 
@@ -56,6 +58,7 @@ PUBLIC_DIRS = [
     "gumilyov",
     "videos",
     "findings",
+    "keywords",
     "cities",
     "institutions",
     "curation",

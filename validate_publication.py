@@ -355,6 +355,9 @@ def main():
         "gatekeeping.html",
         "gatekeeping-en.html",
         "known-relationships.html",
+        "voting.html",
+        "keywords/index.html",
+        "keywords/review.html",
         "videos/index.html",
         "curation/known_relationships.csv",
         "curation/eastern_faculty_alumni.csv",
@@ -417,7 +420,7 @@ def main():
             for _, filename in sub_sitemaps:
                 if Path(filename).exists():
                     sitemap += "\n" + read(filename)
-        for page in ["", "en.html", "search.html", "download-data.html", "data-quality.html", "s/", "conferences/", "p/", "themes/", "topics/ramayana.html", "topics/mahabharata.html", "generations/", "cities/", "institutions/", "metrics-guide.html", "classification-criteria.html", "networks.html", "sociology.html", "sociology-en.html", "gatekeeping.html", "gatekeeping-en.html", "known-relationships.html", "videos/"]:
+        for page in ["", "en.html", "search.html", "download-data.html", "data-quality.html", "s/", "conferences/", "p/", "themes/", "topics/ramayana.html", "topics/mahabharata.html", "generations/", "cities/", "institutions/", "metrics-guide.html", "classification-criteria.html", "networks.html", "sociology.html", "sociology-en.html", "gatekeeping.html", "gatekeeping-en.html", "known-relationships.html", "voting.html", "keywords/", "keywords/review.html", "videos/"]:
             expected = "https://gasyoun.github.io/IndologyScholars/" + page
             if expected not in sitemap:
                 fail(errors, f"sitemap.xml missing {expected}")
