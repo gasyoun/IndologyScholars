@@ -1,8 +1,8 @@
 {
   "total": {
     "unique_scholars": 270,
-    "presentations": 1352,
-    "author_participations": 1378,
+    "presentations": 1362,
+    "author_participations": 1388,
     "known_birth_years": 229,
     "cross_cohort": 41,
     "zograf_only": 165,
@@ -12,20 +12,20 @@
   },
   "cross_cohort_pct": 15.2,
   "combined_activity": {
-    "one_talk_share_pct": 41.9,
-    "core_share_pct": 35.9,
-    "retention_pct": 58.1,
-    "gini": 0.554
+    "one_talk_share_pct": 41.5,
+    "core_share_pct": 36.3,
+    "retention_pct": 58.5,
+    "gini": 0.553
   },
   "series": {
     "Zograf": {
       "unique_scholars": 206,
-      "presentations": 880,
-      "author_participations": 901,
-      "one_talk_share_pct": 41.3,
-      "core_share_pct": 34.5,
-      "retention_pct": 58.7,
-      "gini": 0.524
+      "presentations": 890,
+      "author_participations": 911,
+      "one_talk_share_pct": 40.8,
+      "core_share_pct": 35.0,
+      "retention_pct": 59.2,
+      "gini": 0.523
     },
     "Roerich": {
       "unique_scholars": 105,
@@ -39,44 +39,44 @@
   },
   "zograf_until_2025": {
     "unique_scholars": 187,
-    "presentations": 822,
-    "author_participations": 840,
-    "one_talk_share_pct": 36.9,
-    "core_share_pct": 35.8,
-    "retention_pct": 63.1,
-    "gini": 0.509
+    "presentations": 831,
+    "author_participations": 849,
+    "one_talk_share_pct": 36.4,
+    "core_share_pct": 36.4,
+    "retention_pct": 63.6,
+    "gini": 0.507
   },
   "zograf_2026": {
-    "presentations": 58,
-    "unique_scholars": 61,
-    "author_participations": 61
+    "presentations": 59,
+    "unique_scholars": 62,
+    "author_participations": 62
   },
   "g_levels": {
-    "1": 1161,
-    "2": 182,
-    "3": 9
+    "1": 1146,
+    "2": 205,
+    "3": 11
   },
   "theme_counts": {
     "Zograf": {
-      "philosophy": 197,
-      "literature": 193,
+      "philosophy": 190,
+      "literature": 197,
       "religion": 204,
       "linguistics": 87,
-      "history": 94,
-      "art_archaeology": 44,
-      "ethnography": 49,
-      "other": 7,
+      "history": 88,
+      "other": 19,
+      "art_archaeology": 47,
+      "ethnography": 53,
       "tibetology": 3,
       "pedagogy_applied": 2
     },
     "Roerich": {
-      "history": 90,
-      "religion": 144,
-      "philosophy": 53,
+      "history": 92,
+      "religion": 142,
+      "philosophy": 50,
       "art_archaeology": 42,
-      "literature": 87,
+      "literature": 89,
       "ethnography": 8,
-      "linguistics": 43,
+      "linguistics": 44,
       "tibetology": 1,
       "other": 4
     }
