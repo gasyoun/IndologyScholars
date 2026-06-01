@@ -1,14 +1,14 @@
 {
   "prompt_version": "expanded-corpus-v1-2026-05-25",
-  "presentations": 1361,
+  "presentations": 1362,
   "gumilyov_scale": {
-    "1": 1145,
+    "1": 1146,
     "2": 205,
     "3": 11
   },
   "gumilyov_by_series": {
     "Zograf Readings": {
-      "1": 745,
+      "1": 746,
       "2": 135,
       "3": 9
     },
@@ -25,7 +25,7 @@
       "religion": 204,
       "linguistics": 87,
       "history": 88,
-      "other": 18,
+      "other": 19,
       "art_archaeology": 47,
       "ethnography": 53,
       "tibetology": 3,

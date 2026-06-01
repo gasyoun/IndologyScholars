@@ -53,9 +53,9 @@
   ],
   "stats": {
     "total_scholars": 270,
-    "total_presentations": 1387,
-    "unique_presentations": 1361,
-    "author_participations": 1387,
+    "total_presentations": 1388,
+    "unique_presentations": 1362,
+    "author_participations": 1388,
     "total_events": 40,
     "years_covered": 22,
     "start_year": 2004,
@@ -64,7 +64,7 @@
     "zograf_only_scholars": 165,
     "roerich_only_scholars": 64,
     "person_rows": 270,
-    "presentation_rows": 1361,
+    "presentation_rows": 1362,
     "event_rows": 40
   },
   "resources": [

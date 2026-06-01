@@ -6,7 +6,7 @@
     "pipeline_version": "2026-05-25",
     "generator": "generate_publication_pages.py"
   },
-  "file_count": 3974,
+  "file_count": 3987,
   "files": [
     {
       "path": "404.html",
@@ -26,12 +26,12 @@
     {
       "path": "analytics_output/authority_coverage.csv",
       "size_bytes": 31156,
-      "sha256": "6c66ed845931f4edee45e35741828133f3417d00405169817ce880bdb96102ca"
+      "sha256": "8dd08f98b43733e028441cbaa666cd866cf24e99d8ea97e6745f0cc547285aa7"
     },
     {
       "path": "analytics_output/authority_review_queue.csv",
       "size_bytes": 166529,
-      "sha256": "5b97c3cd7370a23cfcf694a49508dd723dcdb10183040eb153acaa9804073967"
+      "sha256": "89379b821f6c7d40e47b37292b24435648adcbd50b405cee1f6bdb56f40d61b7"
     },
     {
       "path": "analytics_output/birth_year_gap_audit.csv",
@@ -81,7 +81,7 @@
     {
       "path": "analytics_output/data_quality_report.json",
       "size_bytes": 1909,
-      "sha256": "39939a4f2d0526e4259bc953e0c98172fa365322a6751955595a0840970da6cc"
+      "sha256": "95025f33208aa676894f8976df538c0d171754d9cbba0afba9d3ad783868cd9c"
     },
     {
       "path": "analytics_output/debut_timing.csv",
@@ -110,13 +110,13 @@
     },
     {
       "path": "analytics_output/expanded_classification_deepseek.csv",
-      "size_bytes": 748452,
-      "sha256": "c511997674a89947e92e2e68760b57b6d58fc6f5fc1ceae94d085f74a166b198"
+      "size_bytes": 748850,
+      "sha256": "e30e81f547948429a3ab8be8254d9cfd7c2f5e1c0263e100699a97bf48ce2b4a"
     },
     {
       "path": "analytics_output/expanded_classification_deepseek_work.csv",
-      "size_bytes": 859616,
-      "sha256": "a18371cdadf79e3cccd69212a9bbb8ca5716c036c8b20ea0a69d71d612445396"
+      "size_bytes": 863390,
+      "sha256": "d809276a3a9ecc27b62d9adbf5752900e0d1b5e48f87d336787c94584b24bed9"
     },
     {
       "path": "analytics_output/expanded_classification_run.err",
@@ -180,13 +180,13 @@
     },
     {
       "path": "analytics_output/field_provenance_themes.csv",
-      "size_bytes": 547665,
-      "sha256": "c5a8f24f80824c29e27f1b47774318de4cf1467438b48ed8876bff403996a334"
+      "size_bytes": 547967,
+      "sha256": "05c8868bd7663857733ea326fe18019a4ede48f2dbcffebeed9abd2c6c70a5ce"
     },
     {
       "path": "analytics_output/gumilyov_scale.csv",
-      "size_bytes": 426208,
-      "sha256": "82b59343a75c664f85b4632ab7e91ea8a5d6d82f9bc4290eaed076458bd3cc79"
+      "size_bytes": 426443,
+      "sha256": "81837e1a99fa673a00aac5d6fbe3aced2605b07b3061ca9e68b1eb7772f2ea9c"
     },
     {
       "path": "analytics_output/gumilyov_scale_trends.csv",
@@ -265,8 +265,8 @@
     },
     {
       "path": "analytics_output/meso_codes_deepseek.csv",
-      "size_bytes": 278011,
-      "sha256": "c799e0d54435124be2d06aa50faf498f2f1d783d40ac7144df732b36a8402c2c"
+      "size_bytes": 278137,
+      "sha256": "f45c175cafffe9c3738800ff166e38e1cd839f4bd2c65329b63913f6d0d94fc6"
     },
     {
       "path": "analytics_output/negative_evidence_log.csv",
@@ -300,8 +300,8 @@
     },
     {
       "path": "analytics_output/nlp_cache.pkl",
-      "size_bytes": 148240,
-      "sha256": "2aee77e634fee463d79027f7e44662da6f69d742bdabfc2581471e8bdaac5ad7"
+      "size_bytes": 148350,
+      "sha256": "ff5da5420a9b08a89a359238c764eae6a8f79b7e02640e76a20e4c2b7044fa98"
     },
     {
       "path": "analytics_output/no_affiliation_history.md",
@@ -325,8 +325,8 @@
     },
     {
       "path": "analytics_output/presentation_id_manifest.csv",
-      "size_bytes": 541482,
-      "sha256": "aa813803b32348731ae654ce1527bdd4288904cde61df12ec08bae46bd617a12"
+      "size_bytes": 541828,
+      "sha256": "684bb344f2bddcf3f9eedd4d09039ab8257aa9242154bec181ed54db93b4e8c2"
     },
     {
       "path": "analytics_output/presentation_tags.csv",
@@ -380,13 +380,13 @@
     },
     {
       "path": "analytics_output/theme_codes_final.csv",
-      "size_bytes": 494076,
-      "sha256": "2686c7b373de7e8d204e8fa14738ace930fbc7383488cba422294743ae1a6342"
+      "size_bytes": 494361,
+      "sha256": "281e0af69f091690559b8b4181c4993cfac0246e8ac8a824aefa73363eed4d1d"
     },
     {
       "path": "analytics_output/theme_codes_final_v2.csv",
-      "size_bytes": 510989,
-      "sha256": "ee58534b4ea3da5beef2ce329c2fdfe53f15d9b2d3f5f89003e7254d852fd934"
+      "size_bytes": 511280,
+      "sha256": "9a4755cd5ef3ae4e59e8a4c5a83353df5a8afa963518e9aee9e21e04ab4a9dda"
     },
     {
       "path": "analytics_output/theme_codes_llm.csv",
@@ -410,8 +410,8 @@
     },
     {
       "path": "analytics_output/theme_review_queue.csv",
-      "size_bytes": 10392,
-      "sha256": "dcebea3793dcf70d00c8805c9c51919ba9bed757b817dfc9f16082494fe8e96f"
+      "size_bytes": 10675,
+      "sha256": "aedd141a84b98fa9a13b98e02c8916cc0bcac4267812b4a30ac83e1073b0b90d"
     },
     {
       "path": "analytics_output/total_indologists.csv",
@@ -545,8 +545,8 @@
     },
     {
       "path": "assets/nlp_data.js",
-      "size_bytes": 424025,
-      "sha256": "3c771a88bafecaf026d62ad2ff2e907a5fa5164d95c861dd0ff81b63c953d3ae"
+      "size_bytes": 424328,
+      "sha256": "441e3736e95875f118959534c6d5214bc6e693de8eedf8f541a9e1a4c4c39e9f"
     },
     {
       "path": "assets/og-image.png",
@@ -3679,9 +3679,49 @@
       "sha256": "95f071c9370b9d8037c083a0b15b7b6982e964bc3ea6de8dfebac44a8f48f19e"
     },
     {
+      "path": "assets/og/presentation_1673.png",
+      "size_bytes": 51625,
+      "sha256": "e3346925d6faa3cd11af24464b3648f705b1af75140fa331f3377c38e424eeac"
+    },
+    {
+      "path": "assets/og/presentation_1674.png",
+      "size_bytes": 52278,
+      "sha256": "67ec4ac3123c01dd2baa5e9203ea3c75eaecc2ce348b49492f990425e398e80b"
+    },
+    {
+      "path": "assets/og/presentation_1675.png",
+      "size_bytes": 51926,
+      "sha256": "985415b38a6f0e98b65954173b74500378caa3882223ffbb1e54f62297268c1e"
+    },
+    {
+      "path": "assets/og/presentation_1676.png",
+      "size_bytes": 52289,
+      "sha256": "7861f4517b9307cdb29dbb60e04888157ff93b7d4049d394bf3483f036e84daa"
+    },
+    {
+      "path": "assets/og/presentation_1677.png",
+      "size_bytes": 45134,
+      "sha256": "047bd00a3118539013f5b8e6ebfd2b5b3ca6509ccce9c72feb1826d0da933d6b"
+    },
+    {
+      "path": "assets/og/presentation_1678.png",
+      "size_bytes": 44375,
+      "sha256": "6b662cbcd278398adefd6080d0dd14a5b4d9861f1a4651e93da1f3ec955cd2c8"
+    },
+    {
+      "path": "assets/og/presentation_1679.png",
+      "size_bytes": 51776,
+      "sha256": "95a6a6662ced21e25524f17072726181bb4edf40cc1c4c6ebba7f880b373387a"
+    },
+    {
       "path": "assets/og/presentation_168.png",
       "size_bytes": 49455,
       "sha256": "7f4393bb2fdf7e535ca280893ed8d3343077518d11fb56f381f28e1020201c4a"
+    },
+    {
+      "path": "assets/og/presentation_1680.png",
+      "size_bytes": 41174,
+      "sha256": "4045128b6ac9d6e61090e262ab6fdfc25eda678160fd0b66ece62fc885842629"
     },
     {
       "path": "assets/og/presentation_169.png",
@@ -7469,6 +7509,11 @@
       "sha256": "88220866cfacbb9d2045fbdd02537a3055c059811bbb3139d2b441d511fc5c88"
     },
     {
+      "path": "assets/og/scholar_arun-kumar.png",
+      "size_bytes": 30921,
+      "sha256": "a9a03b7acde79bfa7aa4075181ffbac4bb41e66cf81b3acabe63dd10aa893503"
+    },
+    {
       "path": "assets/og/scholar_atmanova-yuliya.png",
       "size_bytes": 36389,
       "sha256": "9b3338d2660df8f77ee703fd3401f64376ff9e363a7e58f8526f5ca39ec79c3a"
@@ -7602,6 +7647,11 @@
       "path": "assets/og/scholar_desnitskaya-evgeniya.png",
       "size_bytes": 31884,
       "sha256": "6083f954378b45cc86b9282234938cfc93b50e711b714435fbaa1b1e61e4029e"
+    },
+    {
+      "path": "assets/og/scholar_dipak-miglani.png",
+      "size_bytes": 29904,
+      "sha256": "5aad3dcb469c9d4cbcb374601104dba674e5149f36b7380de330680e953a148b"
     },
     {
       "path": "assets/og/scholar_dmitrieva-viktoriya.png",
@@ -8012,6 +8062,11 @@
       "path": "assets/og/scholar_kudryavtseva-f935aa.png",
       "size_bytes": 30165,
       "sha256": "ac20f36ff06882518ac67d71498485d0457923859b29ee7b861e2088f93c124a"
+    },
+    {
+      "path": "assets/og/scholar_kumar-gaurav.png",
+      "size_bytes": 30427,
+      "sha256": "39e49b8e28cabfc56663b4c0fab5360b9ef61115c3421cd8098d0db62d1da3e2"
     },
     {
       "path": "assets/og/scholar_kurochkin-aleksandr.png",
@@ -8689,6 +8744,11 @@
       "sha256": "7ea28b091f0dba41d117d348ebce3901b6fbec7532ca66f509e1ebca21901064"
     },
     {
+      "path": "assets/og/scholar_vishvas-sapkal.png",
+      "size_bytes": 32235,
+      "sha256": "3f2ea4e58b8729445cc54e43c85bc51f52b21a0fd1bcedc56bd87b98b59861f2"
+    },
+    {
       "path": "assets/og/scholar_vladimir-shokhin.png",
       "size_bytes": 32305,
       "sha256": "d093ffc75e9f43efa0bf63bdd4b01dfd27add55636e4ebfb8b5df945408918dd"
@@ -8871,7 +8931,7 @@
     {
       "path": "conferences/index.html",
       "size_bytes": 14487,
-      "sha256": "c7abb55f2641c9bf36361b88df6cebcbb396bacc3220c95af26609bbfff87c3e"
+      "sha256": "0dae704ce76f64257fee1a145acdde8663276982c50a352dd7e57730952dc808"
     },
     {
       "path": "conferences/roerich-2008.html",
@@ -9060,8 +9120,8 @@
     },
     {
       "path": "conferences/zograf-2026.html",
-      "size_bytes": 75119,
-      "sha256": "1baa7ac466da3310a87747084974ed7e4ec9fa868685cd64188c2712799226bb"
+      "size_bytes": 75905,
+      "sha256": "32dff6b2b2d406f676768e0e764f1e817acd4d50b9f282d0b0226bba48723664"
     },
     {
       "path": "curation/__pycache__/audit_person_identity.cpython-314.pyc",
@@ -9090,8 +9150,8 @@
     },
     {
       "path": "curation/institutional_remarks.csv",
-      "size_bytes": 3875,
-      "sha256": "86ddc7d4145861cadeab39cb37c34ae6421885645ac043492b9b04599254a848"
+      "size_bytes": 8434,
+      "sha256": "b47d08464fb91436df3ea907d13de82d3068d87a0a90228700bb4a86112e6427"
     },
     {
       "path": "curation/known_relationships.csv",
@@ -9146,7 +9206,7 @@
     {
       "path": "datapackage.json",
       "size_bytes": 30227,
-      "sha256": "37e528642e5c3bac14d6a2b2b1b736438234791a74af8fe8009f27958153dbec"
+      "sha256": "92737460f1e1a92133503196aa911a0914c74e30aaf9042c7d649cec1510d565"
     },
     {
       "path": "docs.html",
@@ -9266,22 +9326,22 @@
     {
       "path": "download-data.html",
       "size_bytes": 29028,
-      "sha256": "1bb7f90ac6e00bcf99bd325e364c6eba713ffa5b1243ba9c104deecbb007edb8"
+      "sha256": "3772950720a9cce590051808fad81e8f2f6bebcd380592f3cd64b8163668d27f"
     },
     {
       "path": "en.html",
       "size_bytes": 9028,
-      "sha256": "e6bdb149286cc6de30c69a745b79add86e1cb7a7e8ab0f4b80c61c5272f142d5"
+      "sha256": "28497f42fddd534a19b9eba69d6e6cd5b950de90a0f2e230b6424f7936e2224a"
     },
     {
       "path": "findings/index.html",
       "size_bytes": 122288,
-      "sha256": "c9a144978ac4225ef290805064b608dd1255c043ab38e86f11ba9ebc6bc6cb18"
+      "sha256": "ebeae920eb192f583df4447609c1bcd29890f9da19fadc139cb3e6d9dccce301"
     },
     {
       "path": "findings/visualisations.html",
-      "size_bytes": 474590,
-      "sha256": "11409ae6a55f1804f1711d1f219e2b43d86263b04bd32eb524c606b47af2d1ae"
+      "size_bytes": 474778,
+      "sha256": "bd5c8fa794cab1b8081f887a696a83d91dad5c3eb48da978ff98170499a4e2f7"
     },
     {
       "path": "gatekeeping-en.html",
@@ -9295,23 +9355,23 @@
     },
     {
       "path": "generations/index.html",
-      "size_bytes": 97703,
-      "sha256": "9c2680e17e60b6322751f8da8cd6c3246bba89c6252e7ee56cd02ac9af9b5643"
+      "size_bytes": 97705,
+      "sha256": "3ecbd94c02fe3df1b93b80e8eafd0abf7e4265c9c0a2d18cb43669c571d81cb8"
     },
     {
       "path": "gumilyov/index.html",
       "size_bytes": 59525,
-      "sha256": "ecd2029b5c0e4461f5504b4530660cd2c1da6052453c96831641f4d7275f4da2"
+      "sha256": "b6d962c30ed42d38caa024bf7615b4d8afe3d8afdff4d3e9a244b27c001b50e5"
     },
     {
       "path": "gumilyov/level-0.html",
-      "size_bytes": 34599,
-      "sha256": "56fa822835c164fc9813fef6992f123b579606df6f85a02bb32566f6ad897cf3"
+      "size_bytes": 14067,
+      "sha256": "cd5eff975e592fe21baba49f30fb310274387f42a6dbfce6d71180dbb7690163"
     },
     {
       "path": "gumilyov/level-1.html",
-      "size_bytes": 1220544,
-      "sha256": "4e014f82adef02f979d4965adcb28d659ef7f089102d4c78c328c5e8c32aa43b"
+      "size_bytes": 1221239,
+      "sha256": "8e381754d88ffcf807ec3bcf545d364c42db008dd87027b72985de9b09135452"
     },
     {
       "path": "gumilyov/level-2.html",
@@ -9336,7 +9396,7 @@
     {
       "path": "index.html",
       "size_bytes": 40192,
-      "sha256": "8c982f559ae580408fa18ce1b9f90deb7cb7a04dae3f47b73a1f64cf5a43c781"
+      "sha256": "e4b04091a7411d1b47270e37aff79e3b9819a2bdb8731d0c09d7af83e3d9f523"
     },
     {
       "path": "institutions/if-ran.html",
@@ -9346,7 +9406,7 @@
     {
       "path": "institutions/index.html",
       "size_bytes": 7951,
-      "sha256": "7b1c909cbdcad69c0b20cfd589a1bb1ed4962fe6ec0fcf33aac1705f4945c047"
+      "sha256": "3e33b6ec7b68c427a3f9c520898bb7248c68fef027158a73625ceebcf4c6a362"
     },
     {
       "path": "institutions/iv-ran.html",
@@ -9355,8 +9415,8 @@
     },
     {
       "path": "institutions/ivr-ran.html",
-      "size_bytes": 18642,
-      "sha256": "fa143262e63782a98930e918d65dafe5d5ad065faaa27743092e289dc892ad5f"
+      "size_bytes": 19454,
+      "sha256": "a76d429c91bd66a338a9eef82f0bc4db07c6a81a747c22b1481fb16247e9f213"
     },
     {
       "path": "institutions/mae-ran.html",
@@ -10930,8 +10990,8 @@
     },
     {
       "path": "p/index.html",
-      "size_bytes": 65226,
-      "sha256": "8b4bd1effcae048be2e7adc468a11edcdf4807086a68ce5c45daf2af5e197dc7"
+      "size_bytes": 64997,
+      "sha256": "2d21857256f52472f743bd8e3362e2b9c66d9212eb4d77c7332b407d037056ac"
     },
     {
       "path": "p/indiiskaya-filosofiya-soznaniya-cherez-prizmu-tsivilizatsionnoi-demarkatsii-vostok-zapad.html",
@@ -13660,58 +13720,58 @@
     },
     {
       "path": "p/page-10.html",
-      "size_bytes": 60905,
-      "sha256": "7d98c338443085deb7466545ccf84d72c3b7666f0c6e559c7298a5ccdb627f7a"
+      "size_bytes": 61091,
+      "sha256": "6fe6e97c7d996ac8f88b7e548f118a1ebeb684189ef6ba05775965f7dff071ca"
     },
     {
       "path": "p/page-11.html",
-      "size_bytes": 60993,
-      "sha256": "6e369888d61c4e5b09368a153160da9683b497aad77e00ccc63d45ba774ec5f1"
+      "size_bytes": 60848,
+      "sha256": "29e85c752b519cf269611eaf8d59254b8f7c2c9d35fef0236a4fa0ace0be5700"
     },
     {
       "path": "p/page-12.html",
-      "size_bytes": 25109,
-      "sha256": "c8101e504d16ab2a9a2ba7d30474ffd9428daae00d94ba84385a960356f22549"
+      "size_bytes": 25619,
+      "sha256": "53b079a73bf964e84600dc85ffff46b3b2b884eeaa8af94df1e1461d365f2054"
     },
     {
       "path": "p/page-2.html",
-      "size_bytes": 63277,
-      "sha256": "eaecfd699ac172b6728c1282ed4111cc5a1b8db34eac850a94af2bf8f847be72"
+      "size_bytes": 63298,
+      "sha256": "33c466ed7be0451b54f8ea6c81b2bc5ab454cf1d351615b942b94fd4ea1a19ff"
     },
     {
       "path": "p/page-3.html",
-      "size_bytes": 62239,
-      "sha256": "5360b06777c02a54c6bd09c3299a6ae65641eede1ad7aa825d270a02882f348c"
+      "size_bytes": 62376,
+      "sha256": "0ad840e53544fcb66b0a0c86e44bdf6792f85ede1abbadb7ad715f22da14a6bb"
     },
     {
       "path": "p/page-4.html",
-      "size_bytes": 63723,
-      "sha256": "d0694c8337103997ed505261646221c19c897dc0dba0d06e94706289836c33d5"
+      "size_bytes": 63749,
+      "sha256": "d5df3e5bd62642688337dcff5f42bb0e62c5a9686015d2539a1f9dbd58de4edd"
     },
     {
       "path": "p/page-5.html",
-      "size_bytes": 61092,
-      "sha256": "a84e44d8f46b7572ec5a01f49751ad99f93af46391f9e7f1860b623cc3707d05"
+      "size_bytes": 60890,
+      "sha256": "44c0e7dc1e1d021b2c34a1f1db705ba38c81a803e73233174f3b8a95cfcbc7db"
     },
     {
       "path": "p/page-6.html",
-      "size_bytes": 63255,
-      "sha256": "aea4d172659da42531871034ac2568e1e9367ce67e25f7dbae2931d2a0a4de73"
+      "size_bytes": 63370,
+      "sha256": "b33a71e094b8f79cee38bf44ecd5d78cbee02f3adbb4cd31b1cb29e81f217d50"
     },
     {
       "path": "p/page-7.html",
-      "size_bytes": 61506,
-      "sha256": "cc9c1f93035ab5bb0f066bc34dd3087cbc0f7e8945f1ca2e9a8b7050a031df5a"
+      "size_bytes": 61553,
+      "sha256": "53b5ffeb4ddac6543ea6a750bfb05375927a80ee7a8574c5a7f99381b51e1570"
     },
     {
       "path": "p/page-8.html",
       "size_bytes": 61431,
-      "sha256": "2dc9681a034bb3cdd2d5e05a7c630a86c7f35a9709e2f64fcd6bf8dfa8c9e6df"
+      "sha256": "8b8a610f3376d66503ae2fe6b5b4aa640c3d8aad5aaf7264f2c4372de6ca467e"
     },
     {
       "path": "p/page-9.html",
-      "size_bytes": 61667,
-      "sha256": "79bc23d74f458f07c8ec1c971ae9a9438bfc6c602e5a5faab6c795879e9ac47d"
+      "size_bytes": 61578,
+      "sha256": "d77f7d4911a1aef86e94dff596d3269e7da21e08396ddc709d098fd733be7dce"
     },
     {
       "path": "p/paliiskaya-i-sanskritskie-versii-syuzhetov-o-samopozhertvovanii-bodkhisatvy-zaitsa.html",
@@ -14152,6 +14212,11 @@
       "path": "p/privetstvennoe-slovo-direktora-ivr-ran-820bf7.html",
       "size_bytes": 8861,
       "sha256": "bf21ca718a210e22c8cb5793870f01c1754791e5a71728865373bf0b182970e7"
+    },
+    {
+      "path": "p/privetstvennoe-slovo-direktora-ivr-ran-98206f.html",
+      "size_bytes": 8812,
+      "sha256": "e213c3c76352a83c76545d1422e2f9f11632dae93bd3862d5a65e5821764e57e"
     },
     {
       "path": "p/privetstvennoe-slovo-direktora-ivr-ran-bce058.html",
@@ -18426,7 +18491,7 @@
     {
       "path": "s/index.html",
       "size_bytes": 100072,
-      "sha256": "9fcf6cbf8b823ce6166d160d5b4c7c8e97019dc1e753b62c02830886949e580c"
+      "sha256": "e085997561218002a505f792e633c93bcf8e29ee8e5e22ced87cdb74722e604c"
     },
     {
       "path": "s/itkin-ilya.html",
@@ -19105,8 +19170,8 @@
     },
     {
       "path": "s/popova-irina.html",
-      "size_bytes": 27921,
-      "sha256": "28bdc9475ef60e1d2b6fb7b98d4b7415da971f4827e85f1698461d7bdd697398"
+      "size_bytes": 28746,
+      "sha256": "6890ee662bdab276ea6df872b0c1696267a54ecfc0b82de632a96ef67bdada2d"
     },
     {
       "path": "s/predtechenskaya.html",
@@ -19720,8 +19785,8 @@
     },
     {
       "path": "search-index.json",
-      "size_bytes": 1171521,
-      "sha256": "9b820094fc0df5d9c2a513f2613019efa8921d6de9a18292495b5147215fb850"
+      "size_bytes": 1172089,
+      "sha256": "c15e826d32f77b7da8c64098674e2aa0721ebef4b81df8a0ec169d771a2d9f7c"
     },
     {
       "path": "search.html",
@@ -19740,8 +19805,8 @@
     },
     {
       "path": "site_data.json",
-      "size_bytes": 4537407,
-      "sha256": "a0e3b10425ffd764bd55241b2425f23c19194329c6607d24dc232986554fcc61"
+      "size_bytes": 4539968,
+      "sha256": "79bbe68054542b63895682536be2fd3d6428c5b8defd7ba7eb0a6a85cebcacbb"
     },
     {
       "path": "sitemap.xml",
@@ -19796,7 +19861,7 @@
     {
       "path": "themes/index.html",
       "size_bytes": 18188,
-      "sha256": "a9866f4a331771edb6d239906a16317ef091dbb26998b1577c715a67ce109f08"
+      "sha256": "3ae5aff1bcdcc3417872d4c8f9793867e6f019f0df7cdb43d98c997baacd2743"
     },
     {
       "path": "themes/linguistics-and-philology.html",
@@ -19835,8 +19900,8 @@
     },
     {
       "path": "themes/unspecified.html",
-      "size_bytes": 26165,
-      "sha256": "ee3a81d6e4630058ef453be61768323f7d4d21fb94bfcd293a65e970fe7ab165"
+      "size_bytes": 26860,
+      "sha256": "c2726fe89bd41a7e7222bb803e90323dca339824f93c2511dd808f661bade5d7"
     },
     {
       "path": "topics/index.html",
@@ -19875,8 +19940,8 @@
     },
     {
       "path": "voting.html",
-      "size_bytes": 650718,
-      "sha256": "28f3f0cfc8a9357f93424b7fd666281d5ef2c1a6d7b5732f18aad46ec52fc258"
+      "size_bytes": 651101,
+      "sha256": "0e2b7a9c5ba8c899a0589ef348ea0a99e96c929b52182a4f8cdf95440dfc842f"
     }
   ]
 }

@@ -191,6 +191,7 @@ def import_institutional_remarks(conn):
                 speaker_name,
                 f"institutional_remark_{year}",
             )
+            is_online = 1 if (row.get("is_online") or "").strip().lower() in {"1", "true", "yes", "online"} else 0
             source_url = (row.get("source_url") or event_source_url).strip()
             source_snippet = (row.get("source_snippet") or title).strip()
             note = (row.get("note") or "").strip()
@@ -207,7 +208,7 @@ def import_institutional_remarks(conn):
                     None,
                     "ru",
                     "обращение; открытие конференции; институциональное приветствие",
-                    0,
+                    is_online,
                     order_in_session,
                     source_url,
                     source_snippet,

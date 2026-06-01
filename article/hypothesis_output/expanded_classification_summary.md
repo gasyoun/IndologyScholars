@@ -1,13 +1,13 @@
 # Expanded Classification Summary
 
 DeepSeek prompt version: `expanded-corpus-v1-2026-05-25`.
-Presentations classified: 1361.
+Presentations classified: 1362.
 
 ## Gumilyov Argument Scale
 
 | Level | Presentations | Share |
 |---|---:|---:|
-| L1 | 1145 | 84.1% |
+| L1 | 1146 | 84.1% |
 | L2 | 205 | 15.1% |
 | L3 | 11 | 0.8% |
 
