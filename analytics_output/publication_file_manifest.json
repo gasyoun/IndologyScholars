@@ -6,7 +6,7 @@
     "pipeline_version": "2026-05-25",
     "generator": "generate_publication_pages.py"
   },
-  "file_count": 3953,
+  "file_count": 3954,
   "files": [
     {
       "path": "404.html",
@@ -9179,6 +9179,11 @@
       "sha256": "4802e0b516d62c994c43b58f6cd420cb74140d8a3959a95d6508fcb0b035af69"
     },
     {
+      "path": "docs/submitting-relationships-ru.md",
+      "size_bytes": 7195,
+      "sha256": "c038a1dd879175209533e7ed46c355e5c3f81e3c470a2acadf0e852f11930775"
+    },
+    {
       "path": "docs/ux-ui-audit.md",
       "size_bytes": 14319,
       "sha256": "e22bace1016f1db1a5c91f72553092594e63a78f46d8bd86d33fcd55a126556a"
@@ -9196,7 +9201,7 @@
     {
       "path": "download-data.html",
       "size_bytes": 29027,
-      "sha256": "6ee55b4642d8c153655bebe48070a38867af8aca6a72952dcad4d7d05200fb1d"
+      "sha256": "f7b5d947202e58f3bea4bbce6454124864387c7067f91f81541d3a3dd2bc05bf"
     },
     {
       "path": "en.html",
@@ -9211,7 +9216,7 @@
     {
       "path": "findings/visualisations.html",
       "size_bytes": 474650,
-      "sha256": "0672c812639a0f20e0663291bd47f279082455a8f4a58a88539de55e5b034bb4"
+      "sha256": "3629fa9fc533faf91257557df8f4c03f0dddd4e413374e96dddfd8c71d129f38"
     },
     {
       "path": "gatekeeping-en.html",
