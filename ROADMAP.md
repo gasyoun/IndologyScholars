@@ -92,6 +92,12 @@ Long-range: video-archive, dataset DOI, agents module spinout, international art
 18. 🅰️ **Международная версия статьи.** Профиль `editors/iij.md` готов.
 19. 🅳 **Расширение корпуса.** Другие индологические площадки.
 
+20. 🅰️ **Международная версия статьи.** Исходник: `article/ppv_submission_article.md`.
+    Целевой журнал: Indo-Iranian Journal (Brill) — профиль `editors/iij.md` готов.
+    Задачи: (1) машинный перевод (DeepL/Claude), (2) адаптация References под
+    Chicago author-date, (3) контекст для международной аудитории,
+    (4) рецензия носителем. Оценка: ~1 неделя. Статус: отложено до подачи ППВ.
+
 ---
 
 ## Новые инструменты (2026-06-02)

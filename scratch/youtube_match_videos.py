@@ -65,8 +65,8 @@ AUTO_THRESHOLD = 0.55  # ratio above which we accept without review
 #   "XLV ЗОГРАФСКИЕ ЧТЕНИЯ, 17 мая 2024 г. Часть 1"        (Russian month name + Часть)
 #   "Институт Восточных Рукописей РАН. 1-ый день, ..."     (whole-day recording)
 SESSION_RECORDING_RES = [
-    re.compile(r"^(?:XL+|XLI+|XLV+|XLVI*|XLVII)\b.*\d{1,2}[.\-:]\d{1,2}", re.IGNORECASE),
-    re.compile(r"(?:XL+|XLI+|XLV+|XLVI*|XLVII)\b.*зограф", re.IGNORECASE),
+    re.compile(r"^(?:XL(?:IV)?+|XLI+|XLV+|XLVI*|XLVII)\b.*\d{1,2}[.\-:]\d{1,2}", re.IGNORECASE),
+    re.compile(r"(?:XL(?:IV)?+|XLI+|XLV+|XLVI*|XLVII)\b.*зограф", re.IGNORECASE),
     re.compile(r"\bзограф.*\b(ч\.|часть|часов|день)\s*\d", re.IGNORECASE),
     re.compile(r"^Институт\s+Восточных\s+Рукописей.*день", re.IGNORECASE),
 ]
@@ -102,6 +102,51 @@ def normalize(text):
     return t
 
 
+def extract_speaker_from_title(title: str) -> str:
+    """Try to extract speaker name from YouTube video title.
+    
+    Common patterns: "Фамилия И.О. Название" or "И.О. Фамилия. Название"
+    """
+    # Pattern: Lastname (possibly with initials) followed by period and title
+    # "Корнеева Н.А. Буддийская иконография..."
+    # "Н.А. Корнеева Буддийская иконография..."
+    m = re.match(
+        r"^([А-ЯЁ][а-яё]*(?:\s+[А-ЯЁ]\.)*\s+[А-ЯЁ][а-яё]+)\.",
+        title, re.IGNORECASE
+    )
+    if m:
+        return normalize(m.group(1))
+    m = re.match(
+        r"^((?:[А-ЯЁ]\.\s*)+[А-ЯЁ][а-яё]+)\.",
+        title, re.IGNORECASE
+    )
+    if m:
+        return normalize(m.group(1))
+    return ""
+
+
+def extract_year_from_published(published_at: str) -> int | None:
+    """Extract year from ISO datetime string."""
+    if not published_at:
+        return None
+    try:
+        # "2024-05-15T10:30:00Z" → 2024
+        return int(published_at[:4])
+    except (ValueError, IndexError):
+        return None
+
+
+def keyword_overlap(text1: str, text2: str) -> float:
+    """Jaccard similarity on content words (length >= 4)."""
+    words1 = {w for w in normalize(text1).split() if len(w) >= 4}
+    words2 = {w for w in normalize(text2).split() if len(w) >= 4}
+    if not words1 or not words2:
+        return 0.0
+    intersection = words1 & words2
+    union = words1 | words2
+    return len(intersection) / len(union) if union else 0.0
+
+
 def load_zograf_presentations():
     """Return list of dicts for ALL Zograf presentations across all years."""
     conn = sqlite3.connect(DB_PATH)
@@ -123,28 +168,38 @@ def load_zograf_presentations():
             for pid, title, year, speakers in rows]
 
 
-def best_match(video_title, candidates):
-    """Return (best_candidate, similarity) — candidates is list of presentation dicts."""
+def best_match(video_title, candidates, video_year=None):
+    """Return (best_candidate, similarity) — candidates is list of presentation dicts.
+    
+    Uses multi-signal scoring: title similarity + speaker match + year alignment + keyword overlap.
+    """
     if not candidates:
         return None, 0.0
     norm_video = normalize(video_title)
+    video_speaker = extract_speaker_from_title(video_title)
     best = None
-    best_ratio = 0.0
+    best_score = 0.0
     for cand in candidates:
-        # Build comparison string: title + speaker name (boost when speaker mentioned in video title)
         title_norm = normalize(cand["title"])
         speaker_norm = normalize(cand.get("speakers") or "")
-        # Pure title similarity
+        # Title similarity
         r_title = difflib.SequenceMatcher(None, norm_video, title_norm).ratio()
-        # Title+speaker similarity (sometimes YouTube title is "Lastname. Talk title")
         combined_norm = (title_norm + " " + speaker_norm).strip()
         r_combined = difflib.SequenceMatcher(None, norm_video, combined_norm).ratio()
-        # Use the better of the two
-        r = max(r_title, r_combined)
-        if r > best_ratio:
-            best_ratio = r
+        title_sim = max(r_title, r_combined)
+        # Speaker match (binary)
+        speaker_match = 1.0 if (video_speaker and video_speaker in speaker_norm) else 0.0
+        # Year alignment
+        cand_year = cand.get("year", 0)
+        year_score = 1.0 if (video_year and cand_year == video_year) else 0.5 if (video_year and abs(cand_year - video_year) <= 2) else 0.0
+        # Keyword overlap
+        kw_sim = keyword_overlap(video_title, cand["title"])
+        # Composite score
+        composite = 0.45 * title_sim + 0.25 * speaker_match + 0.15 * year_score + 0.15 * kw_sim
+        if composite > best_score:
+            best_score = composite
             best = cand
-    return best, best_ratio
+    return best, best_score
 
 
 def main():
@@ -166,12 +221,16 @@ def main():
     # Strategy: try the video's nominal year first; if no good match, fall back
     # to searching all Zograf years (some playlists mix multi-year content).
     # Auto-skip obvious noise (deleted/private/session-recording videos).
+    # NEW: use published_at as year upper bound, multi-signal scoring, dedup by video_id.
     out_rows = []
     counts = {"auto": 0, "needs_review": 0, "skip": 0}
     all_presentations = presentations
+    seen_video_ids = {}  # video_id → (best_row, best_score)
+
     for v in videos:
         video_title = normalize_time_interval(v.get("video_title", ""))
-        # Noise filter — short-circuit before any fuzzy matching
+
+        # Noise filter
         noise, reason = is_noise_title(video_title)
         if noise:
             counts["skip"] += 1
@@ -191,32 +250,53 @@ def main():
         year_str = v.get("year", "")
         primary_year = int(year_str) if year_str.isdigit() else None
 
-        # Pass 1: nominal year
-        match, ratio = (None, 0.0)
-        if primary_year is not None:
-            match, ratio = best_match(video_title, by_year.get(primary_year, []))
+        # published_at constraint: video can't be for a conference AFTER it was published
+        pub_year = extract_year_from_published(v.get("published_at", ""))
+        if pub_year and primary_year and primary_year > pub_year:
+            # The nominal year is after publish date — fall back to pub_year
+            primary_year = pub_year
 
-        # Pass 2: cross-year fallback if nominal year didn't produce a confident hit
+        # Pass 1: nominal year
+        match, score = (None, 0.0)
+        if primary_year is not None:
+            match, score = best_match(video_title, by_year.get(primary_year, []), primary_year)
+
+        # Pass 2: cross-year fallback
         used_year = primary_year
-        if ratio < AUTO_THRESHOLD:
-            xmatch, xratio = best_match(video_title, all_presentations)
-            if xratio > ratio:
-                match, ratio = xmatch, xratio
+        best_threshold = 0.50  # new lower threshold with multi-signal
+        if score < best_threshold:
+            xmatch, xscore = best_match(video_title, all_presentations, None)
+            if xscore > score:
+                match, score = xmatch, xscore
                 used_year = (xmatch or {}).get("year") if xmatch else primary_year
 
-        status = "auto" if ratio >= AUTO_THRESHOLD else "needs_review"
-        counts[status] = counts.get(status, 0) + 1
-        out_rows.append({
+        status = "auto" if score >= best_threshold else "needs_review"
+        row = {
             "video_id": v["video_id"],
             "video_url": v["video_url"],
             "video_title": video_title,
             "year": str(used_year) if used_year is not None else "",
             "title_hint": (match or {}).get("title", ""),
             "speaker_hint": (match or {}).get("speakers", ""),
-            "similarity": round(ratio, 3),
+            "similarity": round(score, 3),
             "status": status,
             "presentation_id_snapshot": (match or {}).get("presentation_id", ""),
-        })
+        }
+
+        # Deduplication: keep best match per video_id
+        vid = v["video_id"]
+        if vid in seen_video_ids:
+            prev = seen_video_ids[vid]
+            if score > prev[1]:
+                seen_video_ids[vid] = (row, score)
+                out_rows = [r for r in out_rows if r["video_id"] != vid]
+                out_rows.append(row)
+            # else: discard this lower-score duplicate
+            continue
+
+        seen_video_ids[vid] = (row, score)
+        counts[status] = counts.get(status, 0) + 1
+        out_rows.append(row)
 
     # Sort: needs_review first (worst similarity first), then auto (best last)
     out_rows.sort(key=lambda r: (0 if r["status"] != "auto" else 1, r["similarity"]))
@@ -228,9 +308,9 @@ def main():
         writer.writerows(out_rows)
 
     print(f"\nWrote {MAPPING_CSV}")
-    print(f"  auto (similarity ≥ {AUTO_THRESHOLD}): {counts.get('auto', 0)}")
+    print(f"  auto (score >= {best_threshold}): {counts.get('auto', 0)}")
     print(f"  needs_review: {counts.get('needs_review', 0)}")
-    print(f"  skip (noise: deleted/private/session-recording): {counts.get('skip', 0)}")
+    print(f"  skip (noise): {counts.get('skip', 0)}")
     print("\nReview the needs_review rows. Set status to 'manual_confirmed' to accept the match,")
     print("'skip' to drop the video, or replace presentation_id with the correct value.")
     print("Then commit the CSV; the build pipeline picks up 'auto' and 'manual_confirmed' rows.")

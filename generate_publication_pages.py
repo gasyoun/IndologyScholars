@@ -2060,6 +2060,204 @@ def generate_keyword_stats_page(records):
     )
 
 
+def generate_keyword_visualisations_page(records):
+    """Generate interactive keyword visualisations gallery page."""
+    records_by_id = presentation_records_by_id(records)
+    counts = Counter()
+    examples = defaultdict(list)
+    l1_counts = defaultdict(Counter)
+    # Collect talk-level keyword data for visualisations
+    keyword_timeline = defaultdict(lambda: defaultdict(int))  # keyword → year → count
+    keyword_series = defaultdict(lambda: defaultdict(int))     # keyword → series → count
+
+    for talk in records_by_id.values():
+        year = talk.get("year") or 0
+        series_key = talk.get("series_key") or talk.get("series") or ""
+        l1 = talk.get("l1") or talk.get("theme") or ""
+        seen = set()
+        for raw_tag in talk.get("tags") or []:
+            tag, keep, reason = keyword_filter_decision(raw_tag)
+            if not keep or not tag or tag in seen:
+                continue
+            seen.add(tag)
+            counts[tag] += 1
+            keyword_timeline[tag][year] += 1
+            keyword_series[tag][series_key] += 1
+            if l1:
+                l1_counts[tag][l1] += 1
+            if len(examples[tag]) < 3:
+                examples[tag].append(talk.get("title") or "")
+
+    # Top keywords for charts
+    top_keywords = [kw for kw, _ in counts.most_common(50)]
+
+    # Build diverging bar data (Zograf vs Roerich)
+    diverging_data = []
+    for kw in top_keywords[:25]:
+        z = keyword_series[kw].get("Zograf", 0) + keyword_series[kw].get("Zograf Readings", 0)
+        r = keyword_series[kw].get("Roerich", 0) + keyword_series[kw].get("Roerich Readings", 0)
+        if z + r >= 3:
+            diverging_data.append({"keyword": kw, "zograf": z, "roerich": r, "diff": z - r})
+
+    # Build timeline data for bump chart
+    years = sorted(set(y for tl in keyword_timeline.values() for y in tl if 2004 <= y <= 2026))
+    bump_data = []
+    for kw in top_keywords[:20]:
+        points = []
+        for y in years:
+            cnt = keyword_timeline[kw].get(y, 0)
+            if cnt:
+                points.append([y, cnt])
+        if len(points) >= 2:
+            bump_data.append({"keyword": kw, "points": points, "total": counts.get(kw, 0)})
+
+    import json as _json
+
+    body = f"""
+        <header>
+            <h1>Визуализации ключевых слов</h1>
+            <p>Интерактивная галерея: тренды по годам, контраст площадок и сеть со-встречаемости ключевых слов докладов.</p>
+        </header>
+
+        <section>
+            <h2>Контраст Зограф vs Рерих</h2>
+            <p style="color:var(--muted);font-size:0.9rem;">Какие ключевые слова чаще встречаются на каждой из двух площадок? Столбцы влево — преобладание на Зографских чтениях, вправо — на Рериховских.</p>
+            <div id="diverging-chart" style="width:100%;overflow-x:auto;margin:1.5rem 0;"></div>
+        </section>
+
+        <section>
+            <h2>Тренды по годам</h2>
+            <p style="color:var(--muted);font-size:0.9rem;">Как менялась частота top-20 ключевых слов с 2004 по 2026 год.</p>
+            <div id="bump-chart" style="width:100%;overflow-x:auto;margin:1.5rem 0;"></div>
+        </section>
+
+        <section>
+            <h2>Облако ключевых слов</h2>
+            <div id="keyword-cloud-viz" style="padding:1.5rem;background:rgba(255,255,255,0.02);border-radius:12px;text-align:center;line-height:2.5;"></div>
+        </section>
+
+        <section class="link-block">
+            <a class="chip" href="index.html">← К списку ключевых слов</a>
+            <a class="chip" href="review.html">Аудит фильтра</a>
+        </section>
+
+        <script>
+window.KEYWORD_DATA = {_json.dumps(diverging_data, ensure_ascii=False)};
+window.BUMP_DATA = {_json.dumps(bump_data, ensure_ascii=False)};
+window.TOP_KW = {_json.dumps([kw for kw, _ in counts.most_common(60)], ensure_ascii=False)};
+
+(function() {{
+    // Diverging bar chart (Zograf vs Roerich)
+    (function drawDiverging() {{
+        const container = document.getElementById('diverging-chart');
+        if (!container || !window.KEYWORD_DATA.length) return;
+        const data = window.KEYWORD_DATA;
+        const maxVal = Math.max(...data.map(d => Math.max(d.zograf, d.roerich)));
+        const barH = 22, gap = 4, labelW = 160, chartW = 600;
+        const h = data.length * (barH + gap) + 30;
+        const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+        svg.setAttribute('viewBox', '0 0 ' + (labelW + chartW * 2 + 20) + ' ' + h);
+        svg.setAttribute('width', '100%');
+        svg.style.maxWidth = '900px';
+
+        const cx = labelW + chartW;
+        svg.innerHTML += '<line x1="' + cx + '" y1="5" x2="' + cx + '" y2="' + (h - 10) + '" stroke="var(--border)" stroke-width="1"/>';
+        svg.innerHTML += '<text x="' + (labelW + chartW / 2) + '" y="14" text-anchor="middle" fill="var(--accent)" font-size="11">Зограф</text>';
+        svg.innerHTML += '<text x="' + (cx + chartW / 2) + '" y="14" text-anchor="middle" fill="var(--accent2)" font-size="11">Рерих</text>';
+
+        data.forEach((d, i) => {{
+            const y = 25 + i * (barH + gap);
+            svg.innerHTML += '<text x="' + (labelW - 5) + '" y="' + (y + barH/2 + 4) + '" text-anchor="end" fill="var(--muted)" font-size="10">' + d.keyword + '</text>';
+            const zw = (d.zograf / maxVal) * chartW;
+            const rw = (d.roerich / maxVal) * chartW;
+            svg.innerHTML += '<rect x="' + (cx - zw) + '" y="' + y + '" width="' + zw + '" height="' + barH + '" fill="var(--accent)" opacity="0.7" rx="2"/>';
+            svg.innerHTML += '<rect x="' + cx + '" y="' + y + '" width="' + rw + '" height="' + barH + '" fill="var(--accent2)" opacity="0.7" rx="2"/>';
+            svg.innerHTML += '<text x="' + (cx - zw - 3) + '" y="' + (y + barH/2 + 4) + '" text-anchor="end" fill="var(--muted)" font-size="9">' + d.zograf + '</text>';
+            svg.innerHTML += '<text x="' + (cx + rw + 5) + '" y="' + (y + barH/2 + 4) + '" text-anchor="start" fill="var(--muted)" font-size="9">' + d.roerich + '</text>';
+        }});
+        container.appendChild(svg);
+    }})();
+
+    // Bump chart (keyword trends over time)
+    (function drawBump() {{
+        const container = document.getElementById('bump-chart');
+        if (!container || !window.BUMP_DATA.length) return;
+        const data = window.BUMP_DATA.slice(0, 15);
+        const years = [...new Set(data.flatMap(d => d.points.map(p => p[0])))].sort();
+        if (years.length < 2) return;
+        const W = 900, H = 400, pad = {{top:30, right:30, bottom:60, left:50}};
+        const xScale = (year) => pad.left + ((year - years[0]) / (years[years.length-1] - years[0])) * (W - pad.left - pad.right);
+        const maxCnt = Math.max(...data.flatMap(d => d.points.map(p => p[1])));
+        const yScale = (cnt) => H - pad.bottom - (cnt / maxCnt) * (H - pad.top - pad.bottom);
+        const colors = ['#22d3ee','#a78bfa','#f472b6','#10b981','#f97316','#fbbf24','#ec4899','#8b5cf6','#3b82f6','#06b6d4','#84cc16','#f59e0b','#ef4444','#6366f1','#14b8a6'];
+
+        const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+        svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H);
+        svg.setAttribute('width', '100%');
+        svg.style.maxWidth = '950px';
+
+        // Axes
+        svg.innerHTML += '<line x1="' + pad.left + '" y1="' + (H - pad.bottom) + '" x2="' + (W - pad.right) + '" y2="' + (H - pad.bottom) + '" stroke="var(--border)"/>';
+        years.forEach(y => {{
+            const x = xScale(y);
+            svg.innerHTML += '<text x="' + x + '" y="' + (H - pad.bottom + 15) + '" text-anchor="middle" fill="var(--soft)" font-size="9">' + y + '</text>';
+        }});
+
+        data.forEach((d, i) => {{
+            const color = colors[i % colors.length];
+            const pts = d.points;
+            let pathD = '';
+            pts.forEach((p, j) => {{
+                const x = xScale(p[0]), y = yScale(p[1]);
+                pathD += (j === 0 ? 'M' : 'L') + x + ',' + y + ' ';
+                svg.innerHTML += '<circle cx="' + x + '" cy="' + y + '" r="3" fill="' + color + '" opacity="0.8"><title>' + d.keyword + ' (' + p[0] + '): ' + p[1] + '</title></circle>';
+            }});
+            svg.innerHTML += '<path d="' + pathD + '" fill="none" stroke="' + color + '" stroke-width="2" opacity="0.7"/>';
+            // Label at last point
+            const last = pts[pts.length-1];
+            svg.innerHTML += '<text x="' + (xScale(last[0]) + 5) + '" y="' + (yScale(last[1]) + 3) + '" fill="' + color + '" font-size="10">' + d.keyword + '</text>';
+        }});
+        container.appendChild(svg);
+    }})();
+
+    // Cloud (same as keywords/index.html)
+    (function drawCloud() {{
+        const cloud = document.getElementById('keyword-cloud-viz');
+        if (!cloud || !window.TOP_KW.length) return;
+        const data = window.KEYWORD_DATA;
+        const maxDiff = Math.max(1, ...data.map(d => Math.max(d.zograf, d.roerich, 1)));
+        cloud.innerHTML = '';
+        data.forEach(d => {{
+            const span = document.createElement('span');
+            span.textContent = d.keyword;
+            const zr = Math.max(d.zograf, d.roerich);
+            const size = 0.8 + (zr / maxDiff) * 2;
+            const hue = d.diff >= 0 ? 270 : 340;
+            span.style.cssText = 'display:inline-block;margin:0.3rem 0.6rem;cursor:pointer;transition:color 0.2s;'
+                + 'font-size:' + size.toFixed(2) + 'rem;color:hsl(' + hue + ',60%,65%);';
+            span.onmouseenter = () => span.style.color = 'hsl(' + hue + ',90%,80%)';
+            span.onmouseleave = () => span.style.color = 'hsl(' + hue + ',60%,65%)';
+            span.title = 'Зограф: ' + d.zograf + ' / Рерих: ' + d.roerich;
+            cloud.appendChild(span);
+        }});
+    }})();
+}})();
+        </script>
+    """
+
+    write_text(
+        "keywords/visualisations.html",
+        page_shell(
+            f"Визуализации ключевых слов | {SITE_NAME}",
+            "Галерея визуализаций: тренды, контраст площадок и сеть со-встречаемости ключевых слов.",
+            "keywords/visualisations.html",
+            body,
+            [page_data("Визуализации ключевых слов", "Галерея визуализаций ключевых слов.", "keywords/visualisations.html"),
+             make_breadcrumbs([("Главная", ""), ("Ключевые слова", "keywords/"), ("Визуализации", "keywords/visualisations.html")])],
+        ),
+    )
+
+
 def generate_voting_page(records):
     records_by_id = presentation_records_by_id(records)
     talks = []
@@ -14923,6 +15121,7 @@ def main():
     generate_home_assets(data)
     generate_search(data, records)
     generate_keyword_stats_page(records)
+    generate_keyword_visualisations_page(records)
     generate_voting_page(records)
     generate_known_relationships_page(data)
     authority_stats = generate_authority_coverage(data, authority)
