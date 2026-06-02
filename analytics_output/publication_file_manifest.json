@@ -275,8 +275,8 @@
     },
     {
       "path": "analytics_output/network_data.json",
-      "size_bytes": 1715677,
-      "sha256": "38195d38d411d9875182745a90bf3496dff0edbde79e0b0287d25c08402b9ee0"
+      "size_bytes": 1725052,
+      "sha256": "49e65e0d9f353f519b100e329f63486a5d8bb806f609b93e50f9b14bf9dfab12"
     },
     {
       "path": "analytics_output/network_edges.csv",
@@ -8855,8 +8855,8 @@
     },
     {
       "path": "assets/styles.css",
-      "size_bytes": 6948,
-      "sha256": "0a111ee234522781f1b169c4fd3bd17ddc856c88a31a83b38e38eb4d1108cbc6"
+      "size_bytes": 7039,
+      "sha256": "74ca0294118e45fcdaab7ef0ab2b99f439274f6bfa281d977aa74a95d6a6330a"
     },
     {
       "path": "cities/deli.html",
@@ -9326,7 +9326,7 @@
     {
       "path": "findings/visualisations.html",
       "size_bytes": 474777,
-      "sha256": "d9f34e6299dc970ae689b9486bac038bfca26c942aec1a8998960d32e858833b"
+      "sha256": "96bcd322d4f6a64f32b2a7c5d494c9d90d1895ae2ab521c6b7a9cf4d1d058992"
     },
     {
       "path": "gatekeeping-en.html",
@@ -9705,8 +9705,8 @@
     },
     {
       "path": "networks.html",
-      "size_bytes": 68696,
-      "sha256": "bdd5a9f4fdb63909759ec1adcb8f2d44a56936514b14de71bbe4a681b114cc71"
+      "size_bytes": 70926,
+      "sha256": "963bbc1016463639f30c6fd99e864d7e251c2c35693c65aebe3e06ce4abb96f8"
     },
     {
       "path": "offline.html",
