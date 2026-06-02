@@ -6,7 +6,7 @@
     "pipeline_version": "2026-05-25",
     "generator": "generate_publication_pages.py"
   },
-  "file_count": 3984,
+  "file_count": 3986,
   "files": [
     {
       "path": "404.html",
@@ -42,6 +42,16 @@
       "path": "analytics_output/birth_year_proxy_estimates.csv",
       "size_bytes": 456,
       "sha256": "01271f8f393d526a2c0de2a36afc6665b16986fa048ffc24275aa23ce66a4867"
+    },
+    {
+      "path": "analytics_output/city_trajectory_audit.csv",
+      "size_bytes": 71360,
+      "sha256": "8beafaad58f4fcfdd3df28024a39749dfe44feba0f4452613ac5315d91715b6d"
+    },
+    {
+      "path": "analytics_output/city_trajectory_summary.csv",
+      "size_bytes": 26718,
+      "sha256": "2a607d8eb6ad000096258cdd23257d2d4f6534e80249145731e83d957d4ef275"
     },
     {
       "path": "analytics_output/classification_overrides.csv",
@@ -9311,7 +9321,7 @@
     {
       "path": "download-data.html",
       "size_bytes": 29027,
-      "sha256": "44de811afc907d3a79acb58f0051fd4aa337bff615f773102da98f6253c85bd7"
+      "sha256": "6a73275449890e8ee7a5ede83b9bd1086094e45112520f92f59309d55cbece97"
     },
     {
       "path": "en.html",
@@ -9326,7 +9336,7 @@
     {
       "path": "findings/visualisations.html",
       "size_bytes": 474777,
-      "sha256": "96bcd322d4f6a64f32b2a7c5d494c9d90d1895ae2ab521c6b7a9cf4d1d058992"
+      "sha256": "545561d890caf7c9cf2c6ab0847642b78405e067e5a07df4ee05be88edfecb9c"
     },
     {
       "path": "gatekeeping-en.html",
