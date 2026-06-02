@@ -37,3 +37,7 @@ temp.js
 # audit sidecars
 .contributing_old.md
 .contributing_audit.txt
+
+# Generated curation outputs (not manually curated)
+curation/birth_year_findings.csv
+curation/birth_year_missing.csv
