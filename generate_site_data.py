@@ -201,6 +201,28 @@ def classify_gender(full_name_ru, display_name):
 
 import csv
 
+def load_city_trajectory():
+    """Return {person_id: {coverage_pct, city_only_talks, ...}} from audit CSV."""
+    data = {}
+    try:
+        with open("analytics_output/city_trajectory_summary.csv", encoding="utf-8-sig", newline="") as f:
+            for row in csv.DictReader(f):
+                pid = str(row.get("person_id") or "").strip()
+                if not pid:
+                    continue
+                data[pid] = {
+                    "coverage_pct": float(row.get("coverage_pct", 0)),
+                    "city_only_talks": int(row.get("city_only_talks", 0)),
+                    "institution_talks": int(row.get("institution_talks", 0)),
+                    "matched_city_labels": int(row.get("matched_city_labels", 0)),
+                    "unique_cities": str(row.get("unique_cities", "")),
+                    "unique_institutions": str(row.get("unique_institutions", "")),
+                }
+    except Exception:
+        pass
+    return data
+
+
 def load_eastern_faculty_alumni():
     rows = {}
     try:
@@ -742,6 +764,20 @@ def main():
                     "slug": stud_slug,
                     "id": stud_id
                 })
+
+    # Load city-to-institution trajectory audit
+    city_trajectory = load_city_trajectory()
+    for s in scholars:
+        pid = s.get("id", "")
+        traj = city_trajectory.get(pid, {})
+        s["affiliation_coverage_pct"] = traj.get("coverage_pct", 100.0)
+        s["affiliation_city_only_talks"] = traj.get("city_only_talks", 0)
+        s["affiliation_institution_talks"] = traj.get("institution_talks", 0)
+        s["affiliation_matched_city_labels"] = traj.get("matched_city_labels", 0)
+        # Only show for scholars with city-only labels and less than 100% coverage
+        s["show_affiliation_transparency"] = (
+            s["affiliation_city_only_talks"] > 0 and s["affiliation_coverage_pct"] < 100.0
+        )
 
     slug_by_id = {s["id"]: s["url_slug"] for s in scholars}
 

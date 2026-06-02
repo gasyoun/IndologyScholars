@@ -1786,6 +1786,7 @@ def generate_keyword_stats_page(records):
     counts = Counter()
     series_counts = defaultdict(Counter)
     examples = defaultdict(list)
+    l1_counts = defaultdict(Counter)
     audit_counts = Counter()
     audit_series_counts = defaultdict(Counter)
     audit_examples = defaultdict(list)
@@ -1795,6 +1796,7 @@ def generate_keyword_stats_page(records):
     for talk in records_by_id.values():
         pid = clean_text(talk.get("presentation_id") or "")
         series_key = talk.get("series_key") or talk.get("series") or ""
+        l1 = talk.get("l1") or talk.get("theme") or ""
         seen_public = set()
         seen_audit = set()
         for raw_tag in talk.get("tags") or []:
@@ -1812,6 +1814,8 @@ def generate_keyword_stats_page(records):
                 counts[tag] += 1
                 series_counts[tag][series_key] += 1
                 talks_with_public_keywords.add(pid)
+                if l1:
+                    l1_counts[tag][l1] += 1
                 if len(examples[tag]) < 4:
                     examples[tag].append(pid)
 
@@ -1819,6 +1823,8 @@ def generate_keyword_stats_page(records):
     for tag, count in counts.most_common():
         zograf_count = series_counts[tag].get("Zograf", 0) + series_counts[tag].get("Zograf Readings", 0)
         roerich_count = series_counts[tag].get("Roerich", 0) + series_counts[tag].get("Roerich Readings", 0)
+        top_l1 = l1_counts[tag].most_common(1)
+        top_l1_code = top_l1[0][0] if top_l1 else ""
         example_links = []
         for pid in examples[tag]:
             talk = records_by_id.get(pid)
@@ -1830,14 +1836,31 @@ def generate_keyword_stats_page(records):
                 "presentations": count,
                 "zograf": zograf_count,
                 "roerich": roerich_count,
+                "top_l1": top_l1_code,
                 "examples": " | ".join(clean_text((records_by_id.get(pid) or {}).get("title") or "") for pid in examples[tag]),
                 "html": (
-                    f'<article class="talk"><strong><a href="{esc(search_path(tag, "../"))}">{esc(public_keyword_label(tag))}</a></strong>'
+                    f'<article class="talk" data-keyword="{esc(tag)}" data-count="{count}"'
+                    f' data-zograf="{zograf_count}" data-roerich="{roerich_count}" data-l1="{esc(top_l1_code)}">'
+                    f'<strong><span class="kw-click" style="cursor:pointer;color:var(--accent);">'
+                    f'{esc(public_keyword_label(tag))}</span></strong>'
                     f'<div class="meta">{talks_count_label(count)} · Зограф: {zograf_count} · Рерих: {roerich_count}</div>'
-                    f'<div class="meta">{" · ".join(example_links)}</div></article>'
+                    f'<div class="meta kw-examples">{" · ".join(example_links)}</div></article>'
                 ),
             }
         )
+
+    # Build JSON data for client-side filtering
+    import json as _json
+    kw_data = []
+    for row in rows:
+        kw_data.append({
+            "k": row["keyword"],
+            "c": row["presentations"],
+            "z": row["zograf"],
+            "r": row["roerich"],
+            "l1": row.get("top_l1", ""),
+        })
+    kw_json = _json.dumps(kw_data, ensure_ascii=False)
 
     with open("analytics_output/keyword_stats.csv", "w", encoding="utf-8", newline="") as handle:
         writer = csv.DictWriter(handle, fieldnames=["keyword", "presentations", "zograf", "roerich", "examples"])
@@ -1889,27 +1912,110 @@ def generate_keyword_stats_page(records):
         f'<div class="meta">{esc(row["examples"])}</div></article>'
         for row in hidden_rows[:120]
     )
+    # Collect distinct L1 codes for filter dropdown
+    l1_options = sorted(set(row.get("top_l1", "") for row in rows if row.get("top_l1")))
+
     body = f"""
         <header>
             <h1>Ключевые слова</h1>
             <p>Сводная статистика предметных ключевых слов, пересчитанных по нормализованным заголовкам докладов после удаления служебных и слишком общих слов.</p>
         </header>
         <section class="grid">
-            <article class="card"><strong>Ключевые слова</strong><div class="metric">{len(rows)}</div></article>
+            <article class="card"><strong>Ключевые слова</strong><div class="metric" id="kw-total">{len(rows)}</div></article>
             <article class="card"><strong>Доклады с предметными словами</strong><div class="metric">{len(talks_with_public_keywords)}</div></article>
             <article class="card"><strong>Скрыто как шум</strong><div class="metric">{len(hidden_rows)}</div></article>
         </section>
-        {chip_section("Частотные слова", top_links)}
+        <section class="link-block" style="display:flex;flex-wrap:wrap;gap:0.75rem;align-items:end;margin-bottom:1rem;">
+            <div style="flex:1;min-width:200px;">
+                <label style="font-size:0.82rem;color:var(--muted);display:block;margin-bottom:0.25rem;">Поиск</label>
+                <input type="search" id="kw-search" placeholder="Введите слово..." style="width:100%;padding:0.55rem 0.75rem;border:1px solid var(--border);border-radius:8px;background:var(--panel);color:var(--text);font-size:0.9rem;">
+            </div>
+            <div style="min-width:160px;">
+                <label style="font-size:0.82rem;color:var(--muted);display:block;margin-bottom:0.25rem;">Дисциплина</label>
+                <select id="kw-l1" style="width:100%;padding:0.55rem 0.75rem;border:1px solid var(--border);border-radius:8px;background:var(--panel);color:var(--text);font-size:0.9rem;">
+                    <option value="">Все дисциплины</option>
+                    {''.join(f'<option value="{esc(c)}">{esc(c)}</option>' for c in l1_options)}
+                </select>
+            </div>
+            <div style="min-width:140px;">
+                <label style="font-size:0.82rem;color:var(--muted);display:block;margin-bottom:0.25rem;">Сортировка</label>
+                <select id="kw-sort" style="width:100%;padding:0.55rem 0.75rem;border:1px solid var(--border);border-radius:8px;background:var(--panel);color:var(--text);font-size:0.9rem;">
+                    <option value="freq">По частоте</option>
+                    <option value="alpha">По алфавиту</option>
+                </select>
+            </div>
+        </section>
+        <div id="keyword-cloud" style="margin:1.5rem 0;padding:1.5rem;background:rgba(255,255,255,0.02);border-radius:12px;text-align:center;line-height:2.5;"></div>
+        {chip_section("Топ-30 частотных слов", top_links)}
         <aside class="caveat-block" role="note" aria-label="Keyword filter">
             <strong>Правило публикации</strong>
             <p>В публичные списки попадают предметные термины, полезные для навигации по докладам. Служебные формы, общие дисциплинарные слова, хронологические прилагательные и уже вынесенные географические маркеры скрываются, но остаются в audit-выгрузке.</p>
             <div class="chip-list"><a class="chip" href="review.html">Открыть аудит фильтра</a><a class="chip" href="../analytics_output/keyword_filter_audit.csv">keyword_filter_audit.csv</a></div>
         </aside>
-        <section class="list">{''.join(row["html"] for row in rows)}</section>
+        <section class="list" id="kw-list">{''.join(row["html"] for row in rows)}</section>
         <section class="link-block">
             <strong>CSV</strong>
             <div class="chip-list"><a class="chip" href="../analytics_output/keyword_stats.csv">keyword_stats.csv</a><a class="chip" href="../analytics_output/keyword_filter_audit.csv">keyword_filter_audit.csv</a></div>
         </section>
+        <script>window.KEYWORD_DATA = {kw_json};</script>
+        <script>
+(function(){{
+    const DATA = window.KEYWORD_DATA || [];
+    const list = document.getElementById('kw-list');
+    const search = document.getElementById('kw-search');
+    const l1Select = document.getElementById('kw-l1');
+    const sortSelect = document.getElementById('kw-sort');
+    const totalEl = document.getElementById('kw-total');
+    const items = list ? Array.from(list.children) : [];
+
+    function applyFilters() {{
+        const q = (search.value || '').toLowerCase().trim();
+        const l1 = l1Select.value;
+        const sort = sortSelect.value;
+        let visible = 0;
+
+        items.forEach(el => {{
+            const kw = (el.dataset.keyword || '').toLowerCase();
+            const elL1 = el.dataset.l1 || '';
+            const match = (!q || kw.includes(q)) && (!l1 || elL1 === l1);
+            el.style.display = match ? '' : 'none';
+            if (match) visible++;
+        }});
+
+        if (sort === 'alpha') {{
+            const sorted = items.filter(el => el.style.display !== 'none');
+            sorted.sort((a, b) => (a.dataset.keyword || '').localeCompare(b.dataset.keyword || ''));
+            sorted.forEach(el => list.appendChild(el));
+        }}
+
+        if (totalEl) totalEl.textContent = visible;
+    }}
+
+    if (search) search.addEventListener('input', applyFilters);
+    if (l1Select) l1Select.addEventListener('change', applyFilters);
+    if (sortSelect) sortSelect.addEventListener('change', applyFilters);
+
+    // Keyword cloud (SVG, no external libs)
+    (function drawCloud() {{
+        const cloud = document.getElementById('keyword-cloud');
+        if (!cloud || !DATA.length) return;
+        const top = DATA.slice(0, 50);
+        const maxC = top[0].c;
+        cloud.innerHTML = '';
+        top.forEach(d => {{
+            const span = document.createElement('span');
+            span.textContent = d.k;
+            const size = 0.75 + (d.c / maxC) * 1.5;
+            span.style.cssText = 'display:inline-block;margin:0.25rem 0.5rem;cursor:pointer;transition:color 0.2s;'
+                + 'font-size:' + size.toFixed(2) + 'rem;color:var(--muted);';
+            span.onmouseenter = () => span.style.color = 'var(--accent)';
+            span.onmouseleave = () => span.style.color = 'var(--muted)';
+            span.onclick = () => {{ search.value = d.k; applyFilters(); }};
+            cloud.appendChild(span);
+        }});
+    }})();
+}})();
+        </script>
     """
     write_text(
         "keywords/index.html",

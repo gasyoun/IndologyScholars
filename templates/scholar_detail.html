@@ -71,6 +71,20 @@ function closeCitationModal() {
             {% endfor %}
         </div>
     </article>
+    {% if show_affiliation_transparency %}
+    <article class="card">
+        <strong>Аффилиационная прозрачность</strong>
+        <div style="font-size:1.2rem; font-weight:700; color:var(--accent2); margin:0.3rem 0;">
+            {{ affiliation_coverage_pct | round(1) }}%
+        </div>
+        <div class="meta" style="font-size:0.78rem; line-height:1.5;">
+            {{ affiliation_matched_city_labels }} из {{ affiliation_city_only_talks }} городских меток сопоставлены с конкретной институцией.
+        </div>
+        <div class="transparency-bar">
+            <div class="transparency-bar-fill" style="width:{{ affiliation_coverage_pct }}%"></div>
+        </div>
+    </article>
+    {% endif %}
 </section>
 
 {% if genealogy_html %}
