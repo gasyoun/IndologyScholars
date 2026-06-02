@@ -1258,6 +1258,22 @@
 
 
 
+
+
+            // Shared tooltip position helper: clamp to container right edge
+            function positionTooltip(tooltip, container, e, offsetX) {
+                offsetX = offsetX || 15;
+                const rect = container.getBoundingClientRect();
+                const tooltipRect = tooltip.getBoundingClientRect();
+                let x = e.clientX - rect.left + offsetX;
+                if (x + tooltipRect.width > rect.width) {
+                    x = e.clientX - rect.left - tooltipRect.width - offsetX;
+                }
+                const y = e.clientY - rect.top - tooltipRect.height - 10;
+                tooltip.style.left = x + 'px';
+                tooltip.style.top = y + 'px';
+            }
+
             function drawScatter() {
                 const svg = document.getElementById('scatter-svg');
                 if (!svg) return;
@@ -1404,13 +1420,7 @@
                     });
 
                     dot.addEventListener('mousemove', (e) => {
-                        const rect = svg.getBoundingClientRect();
-                        const tooltipRect = tooltip.getBoundingClientRect();
-                        // Position relative to scatter container
-                        const x = e.clientX - rect.left + 15;
-                        const y = e.clientY - rect.top - tooltipRect.height - 10;
-                        tooltip.style.left = x + 'px';
-                        tooltip.style.top = y + 'px';
+                        positionTooltip(tooltip, svg, e);
                     });
 
                     dot.addEventListener('mouseleave', () => {
@@ -1524,9 +1534,8 @@
                         tooltip.innerHTML = `<strong>${name}</strong><br/>Координаты: ${d.lat.toFixed(2)}°N, ${d.lon.toFixed(2)}°E<br/>Докладов: ${d.count}`;
                     });
                     circle.addEventListener('mousemove', (e) => {
-                        const container = document.getElementById('geo-wrapper').getBoundingClientRect();
-                        tooltip.style.left = (e.clientX - container.left + 15) + 'px';
-                        tooltip.style.top = (e.clientY - container.top - 30) + 'px';
+                        const container = document.getElementById('geo-wrapper');
+                        positionTooltip(tooltip, container, e, 15);
                     });
                     circle.addEventListener('mouseleave', () => {
                         circle.setAttribute('fill-opacity', '0.6');
@@ -1534,6 +1543,21 @@
                         circle.setAttribute('stroke-opacity', '0.4');
                         tooltip.style.opacity = '0';
                     });
+
+                    // Click navigates to city page
+                    const CITY_SLUGS = {
+                        'Moscow': 'moskva', 'St. Petersburg': 'sankt-peterburg', 'Kazan': 'kazan',
+                        'Novosibirsk': 'novosibirsk', 'Elista': 'elista', 'Delhi': 'deli',
+                        'Ulan-Ude': 'ulan-ude', 'Yekaterinburg': 'ekaterinburg',
+                        'Kyiv': 'krasnodar', 'Hamburg': '', 'Vienna': ''
+                    };
+                    const citySlug = CITY_SLUGS[d.city];
+                    if (citySlug) {
+                        circle.style.cursor = 'pointer';
+                        circle.addEventListener('click', () => {
+                            window.location.href = '../cities/' + citySlug + '.html';
+                        });
+                    }
                     svg.appendChild(circle);
 
                     // Draw name label
@@ -2348,12 +2372,7 @@
                     });
 
                     g.addEventListener('mousemove', (e) => {
-                        const rect = svg.getBoundingClientRect();
-                        const tooltipRect = tooltip.getBoundingClientRect();
-                        const tooltipX = e.clientX - rect.left + 15;
-                        const tooltipY = e.clientY - rect.top - tooltipRect.height - 10;
-                        tooltip.style.left = tooltipX + 'px';
-                        tooltip.style.top = tooltipY + 'px';
+                        positionTooltip(tooltip, svg, e);
                     });
 
                     g.addEventListener('mouseleave', () => {

@@ -1,6 +1,17 @@
 import csv
 import json
 import os
+import sys
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent
+sys.path.insert(0, str(ROOT))
+
+try:
+    from pipeline.genealogy import load_relationships
+except ImportError:
+    def load_relationships(*args, **kwargs):
+        return []
 
 def main():
     nodes_path = "analytics_output/network_nodes.csv"
@@ -61,7 +72,57 @@ def main():
                 "series": row["series"] if row["series"] else None,
                 "weight": float(row["weight"]) if row["weight"] else 1.0
             })
-            
+    
+    # ── Inject genealogy (teacher‑student) edges ──────────────────────
+    node_id_set = {n["id"] for n in nodes} | {n.get("local_id", "") for n in nodes}
+    genealogy_count = 0
+    try:
+        from pipeline.genealogy import load_relationships as load_genealogy
+        # Build key → PERS_id map from site_data (site_data loaded above)
+        key_to_id = {}
+        if os.path.exists(site_data_path):
+            try:
+                with open(site_data_path, mode='r', encoding='utf-8') as f:
+                    text = f.read().strip()
+                    prefix = "const CONFERENCE_DATA = "
+                    if text.startswith(prefix):
+                        text = text[len(prefix):]
+                    if text.endswith(";"):
+                        text = text[:-1]
+                    sd = json.loads(text)
+                    for scholar in sd.get("scholars", []):
+                        if scholar.get("normalized_key") and scholar.get("id"):
+                            key_to_id[scholar["normalized_key"]] = scholar["id"]
+            except Exception:
+                pass
+        
+        gen_rels = load_genealogy(include_candidates=False)
+        for r in gen_rels:
+            student_pid = key_to_id.get(r.student_key)
+            advisor_pid = key_to_id.get(r.advisor_key)
+            if not student_pid or not advisor_pid:
+                continue
+            sid = f"person:{student_pid}"
+            aid = f"person:{advisor_pid}"
+            if sid not in node_id_set or aid not in node_id_set:
+                continue
+            edges.append({
+                "source": aid,
+                "target": sid,
+                "type": "person_person_genealogy",
+                "year": None,
+                "series": None,
+                "weight": 1.0,
+                "relationship_type": r.relationship_type,
+                "relationship_label": f"{r.advisor_name} → {r.student_name}",
+                "status": r.status,
+                "evidence_note": r.evidence_note
+            })
+            genealogy_count += 1
+        print(f"Injected {genealogy_count} genealogy edges")
+    except Exception as e:
+        print(f"Warning: Could not inject genealogy edges: {e}")
+    
     data = {
         "nodes": nodes,
         "edges": edges
