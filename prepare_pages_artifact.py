@@ -43,6 +43,7 @@ PUBLIC_PATHS = [
     "known-relationships.html",
     "voting.html",
     "indology_scholars_analytics.md",
+    "missing_birth_years.md",
 ]
 
 PUBLIC_DIRS = [
