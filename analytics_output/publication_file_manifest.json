@@ -21,7 +21,7 @@
     {
       "path": "analytics_output/age_cohort_trend.csv",
       "size_bytes": 2341,
-      "sha256": "8551879de9763a425ed58991534c67ce763674410ab83f31c86ec3a33658ad00"
+      "sha256": "6761747927d2200f0dc66fda1111723a60831e5a3995cd816d2b684bf81a6ff2"
     },
     {
       "path": "analytics_output/authority_coverage.csv",
@@ -185,8 +185,8 @@
     },
     {
       "path": "analytics_output/field_provenance_biographical.csv",
-      "size_bytes": 208835,
-      "sha256": "55ea1aa13e62f1a02d937dd713724bd3ff6abf7c10e655bdef0e07aa9f2647b4"
+      "size_bytes": 210233,
+      "sha256": "24e1a84061fccf307f1f50e893a51e4ee22771a209d65c5745f9494293af8619"
     },
     {
       "path": "analytics_output/field_provenance_themes.csv",
@@ -9336,7 +9336,7 @@
     {
       "path": "download-data.html",
       "size_bytes": 29027,
-      "sha256": "09b2f83002c43a8758052cd4afaf1c8d240aac93faa14abc6beb8fb9d6e213db"
+      "sha256": "586cc9deb23e593bf67ba38f9e122a4ad436c031c136a0ac5fb4945780872fd0"
     },
     {
       "path": "en.html",
@@ -9351,7 +9351,7 @@
     {
       "path": "findings/visualisations.html",
       "size_bytes": 474777,
-      "sha256": "ebb27a7f354c692472b607eac6afeee12bc51e8e2d9fa580fa471b2f956f0459"
+      "sha256": "0a3abd04955454fde94ef04e8314202f4c66030816cebcbe4d55bec0aea3e7a2"
     },
     {
       "path": "gatekeeping-en.html",
@@ -9365,8 +9365,8 @@
     },
     {
       "path": "generations/index.html",
-      "size_bytes": 97705,
-      "sha256": "b139ebda5c929dbb60ecef6f6293f2485b86d6c38d8f4e2ac4946e1a58d4ec51"
+      "size_bytes": 97626,
+      "sha256": "61e8d6f77cc076b29c490600aba8ba8c6e26ff2bb622c2b178cd57ff4ca74585"
     },
     {
       "path": "gumilyov/index.html",
@@ -19000,8 +19000,8 @@
     },
     {
       "path": "s/minaeva-margarita.html",
-      "size_bytes": 27156,
-      "sha256": "5b10970378d551b5532ec153e32ec855a89ab4940f7d27d0744b6714e11a30bc"
+      "size_bytes": 27248,
+      "sha256": "de9124ba6bf00552ecff3c639d505ab83592600ad1fdd8465d64a9c04b6750fa"
     },
     {
       "path": "s/mitruev-bembya.html",
@@ -19200,8 +19200,8 @@
     },
     {
       "path": "s/pushkareva-yuliya.html",
-      "size_bytes": 22190,
-      "sha256": "48b1ed717d07b1d904548ebe242b5350b3a92b7e66cc9a53e717b43f27e4a8af"
+      "size_bytes": 22221,
+      "sha256": "04d54d43513f67e84bfbc70cd173eb879b700a5a4cc82466eeaad0a477ea34e3"
     },
     {
       "path": "s/rada-krapivina.html",
@@ -19800,8 +19800,8 @@
     },
     {
       "path": "search-index.json",
-      "size_bytes": 1172098,
-      "sha256": "71b11845a3474bbebbcbbe423fbe62217587a3fd46b47cf0ce7f9b3eb80f3d27"
+      "size_bytes": 1172104,
+      "sha256": "e943ffefccc4258d93f9396e72d47aaf668c4a2b14d4817a29aca58fd32a3feb"
     },
     {
       "path": "search.html",
@@ -19820,8 +19820,8 @@
     },
     {
       "path": "site_data.json",
-      "size_bytes": 4587910,
-      "sha256": "82f126297ac6e343ce92c9a7f0c613d7c9d06ed3af9feb6db296ef2d69242e5e"
+      "size_bytes": 4588020,
+      "sha256": "5bfef303d5c33f18636235b535da824dbb14066ba67a55404cbd4f87f6e32345"
     },
     {
       "path": "sitemap.xml",
