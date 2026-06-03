@@ -144,20 +144,40 @@ def try_wikipedia(name: str) -> tuple[int | None, str]:
 
 def try_dissercat(name: str) -> tuple[int | None, str]:
     """Search Dissercat for PhD thesis abstracts (always include birth year)."""
-    search_url = f"https://www.dissercat.com/search?q={urllib.parse.quote(name)}"
+    # Search with field keywords to filter false positives
+    search_url = f"https://www.dissercat.com/search?q={urllib.parse.quote(name + ' филолог')}"
     html = fetch_url(search_url)
-    if html:
-        # Find author profile links
-        links = re.findall(r'href="(/author/\d+)"', html)
-        if not links:
-            links = re.findall(r'href="(/content/[^"]+)"', html)
-        for link in links[:2]:
-            page_url = f"https://www.dissercat.com{link}"
-            page_html = fetch_url(page_url)
-            if page_html:
-                year = extract_birth_year(page_html)
-                if year:
-                    return year, page_url
+    if not html:
+        # Fallback: just name
+        search_url = f"https://www.dissercat.com/search?q={urllib.parse.quote(name)}"
+        html = fetch_url(search_url)
+
+    if not html:
+        return None, ""
+
+    # Find author profile links
+    links = re.findall(r'href="(/author/\d+)"', html)
+    if not links:
+        links = re.findall(r'href="(/content/[^"]+)"', html)
+
+    for link in links[:3]:
+        page_url = f"https://www.dissercat.com{link}"
+        page_html = fetch_url(page_url)
+        if not page_html:
+            continue
+
+        # Verify field relevance: skip if not philology/linguistics/history
+        field_ok = any(kw in page_html.lower() for kw in [
+            'филолог', 'лингвист', 'языкозна', 'индолог', 'востоковед',
+            'санскрит', 'литератур', 'текстолог', 'philolog', 'linguist',
+            'oriental', 'истори', 'философ', 'культуролог', 'этнограф'
+        ])
+        if not field_ok:
+            continue
+
+        year = extract_birth_year(page_html)
+        if year:
+            return year, page_url
     return None, ""
 
 
