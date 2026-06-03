@@ -5,7 +5,7 @@ import re
 
 from classification_overrides import CLASSIFICATION_OVERRIDES, THEME_LABEL_OVERRIDES
 from metadata_normalization import load_verified_affiliation_spans, public_affiliation, split_leading_affiliation
-from publication_helpers import GENERATION_COHORTS, assign_unique_slugs, build_presentation_slug_map, generation_cohort, load_authority_overrides, normalize_time_interval
+from publication_helpers import GENERATION_COHORTS, assign_unique_slugs, build_presentation_slug_map, generation_cohort, load_authority_overrides, normalize_affiliation, normalize_time_interval
 from title_normalization import THEME_OVERRIDES_BY_PRESENTATION_ID, TITLE_EDITORIAL_NOTES_BY_PRESENTATION_ID, canonical_title
 import pipeline.genealogy as gen
 
@@ -84,44 +84,24 @@ def get_day_of_week(date_str):
     except Exception:
         return {"ru": "Не указан", "en": "Not specified"}
 
+def _load_city_aliases():
+    try:
+        with open("assets/data/geography.json", encoding="utf-8") as f:
+            data = json.load(f)
+            return [(item["keyword"], item["ru"], item["en"]) for item in data.get("city_aliases", [])]
+    except FileNotFoundError:
+        return []
+
+_CITY_ALIASES = _load_city_aliases()
+
+
 def extract_geography(affiliation_text):
     if not affiliation_text:
         return {"ru": "Не указана", "en": "Not specified"}
     aff_low = affiliation_text.lower()
-    
-    cities = [
-        ("санкт-петербург", "Санкт-Петербург", "St. Petersburg"),
-        ("спб", "Санкт-Петербург", "St. Petersburg"),
-        ("ленинград", "Санкт-Петербург", "St. Petersburg"),
-        ("москва", "Москва", "Moscow"),
-        ("краснодар", "Краснодар", "Krasnodar"),
-        ("нижний новгород", "Нижний Новгород", "Nizhny Novgorod"),
-        ("томск", "Томск", "Tomsk"),
-        ("новосибирск", "Новосибирск", "Novosibirsk"),
-        ("владивосток", "Владивосток", "Vladivostok"),
-        ("улан-удэ", "Улан-Удэ", "Ulan-Ude"),
-        ("казань", "Казань", "Kazan"),
-        ("пенза", "Пенза", "Penza"),
-        ("обнинск", "Обнинск", "Obninsk"),
-        ("элиста", "Элиста", "Elista"),
-        ("копенгаген", "Копенгаген", "Copenhagen"),
-        ("copenhagen", "Копенгаген", "Copenhagen"),
-        ("тарту", "Тарту", "Tartu"),
-        ("tartu", "Тарту", "Tartu"),
-        ("вильнюс", "Вильнюс", "Vilnius"),
-        ("vilnius", "Вильнюс", "Vilnius"),
-        ("париж", "Париж", "Paris"),
-        ("paris", "Париж", "Paris"),
-        ("оксфорд", "Оксфорд", "Oxford"),
-        ("oxford", "Оксфорд", "Oxford"),
-        ("дели", "Дели", "Delhi"),
-        ("delhi", "Дели", "Delhi")
-    ]
-    
-    for keyword, ru, en in cities:
+    for keyword, ru, en in _CITY_ALIASES:
         if keyword in aff_low:
             return {"ru": ru, "en": en}
-            
     return {"ru": "Не указана", "en": "Not specified"}
 
 
@@ -191,13 +171,7 @@ def classify_gender(full_name_ru, display_name):
         if p_low.endswith(('ов', 'ев', 'ин', 'ий', 'ын')):
             return "M"
             
-    # Guess based on last letter of first word (usually last name or first name)
-    if parts:
-        last_letter = parts[0][-1].lower()
-        if last_letter in ['а', 'я', 'и']:
-            return "F"
-            
-    return "M"
+    return None
 
 import csv
 
@@ -952,47 +926,11 @@ def main():
         })
 
     # Format geography stats
-    geo_coordinates = {
-        "Москва": {"lat": 55.7558, "lon": 37.6173},
-        "Санкт-Петербург": {"lat": 59.9343, "lon": 30.3351},
-        "Краснодар": {"lat": 45.0393, "lon": 38.9872},
-        "Казань": {"lat": 55.7963, "lon": 49.1088},
-        "Новосибирск": {"lat": 55.0084, "lon": 82.9357},
-        "Улан-Удэ": {"lat": 51.8344, "lon": 107.5845},
-        "Пенза": {"lat": 53.1959, "lon": 45.0183},
-        "Обнинск": {"lat": 55.1120, "lon": 36.5865},
-        "Нижний Новгород": {"lat": 56.3269, "lon": 44.0059},
-        "Томск": {"lat": 56.4977, "lon": 84.9744},
-        "Элиста": {"lat": 46.3078, "lon": 44.2558},
-        "Рим": {"lat": 41.9028, "lon": 12.4964},
-        "Неаполь": {"lat": 40.8518, "lon": 14.2681},
-        "Милан": {"lat": 45.4642, "lon": 9.1900},
-        "Париж": {"lat": 48.8566, "lon": 2.3522},
-        "Лион": {"lat": 45.7640, "lon": 4.8357},
-        "Берлин": {"lat": 52.5200, "lon": 13.4050},
-        "Мюнхен": {"lat": 48.1351, "lon": 11.5820},
-        "Лондон": {"lat": 51.5074, "lon": -0.1278},
-        "Оксфорд": {"lat": 51.7520, "lon": -1.2577},
-        "Кембридж": {"lat": 52.2053, "lon": 0.1218},
-        "Киев": {"lat": 50.4501, "lon": 30.5234},
-        "Минск": {"lat": 53.9006, "lon": 27.5590},
-        "Астана": {"lat": 51.1694, "lon": 71.4288},
-        "Алматы": {"lat": 43.2220, "lon": 76.8512},
-        "Ташкент": {"lat": 41.2995, "lon": 69.2401},
-        "Дели": {"lat": 28.6139, "lon": 77.2090},
-        "Мумбаи": {"lat": 19.0760, "lon": 72.8777},
-        "Пуна": {"lat": 18.5204, "lon": 73.8567},
-        "Ченнаи": {"lat": 13.0827, "lon": 80.2707},
-        "Тарту": {"lat": 58.3780, "lon": 26.7290},
-        "Прага": {"lat": 50.0755, "lon": 14.4378},
-        "Варшава": {"lat": 52.2297, "lon": 21.0122},
-        "Будапешт": {"lat": 47.4979, "lon": 19.0402},
-        "Вена": {"lat": 48.2082, "lon": 16.3738},
-        "Стокгольм": {"lat": 59.3293, "lon": 18.0686},
-        "Осло": {"lat": 59.9139, "lon": 10.7522},
-        "Копенгаген": {"lat": 55.6761, "lon": 12.5683},
-        "Хельсинки": {"lat": 60.1695, "lon": 24.9354},
-    }
+    try:
+        with open("assets/data/geography.json", encoding="utf-8") as f:
+            geo_coordinates = json.load(f).get("coordinates", {})
+    except FileNotFoundError:
+        geo_coordinates = {}
     
     geography_stats = list(geo_counts.values())
     for g in geography_stats:
@@ -1133,21 +1071,6 @@ def main():
         })
 
     # 5. Affiliations Leaderboard
-    def normalize_affiliation(aff):
-        if not aff: return None
-        a = aff.lower()
-        if 'ивр ' in a or 'восточных рукописей' in a: return 'ИВР РАН'
-        if 'ив ран' in a or 'востоковедения ран' in a or 'ивран' in a: return 'ИВ РАН'
-        if 'спбгу' in a or 'петербургский' in a: return 'СПбГУ'
-        if 'мгу' in a or 'ломоносова' in a: return 'МГУ'
-        if 'вшэ' in a or 'высшая школа' in a: return 'НИУ ВШЭ'
-        if 'рггу' in a or 'гуманитарный' in a: return 'РГГУ'
-        if 'маэ' in a or 'кунсткамера' in a: return 'МАЭ РАН'
-        if 'эрмитаж' in a: return 'Государственный Эрмитаж'
-        if 'институт философии' in a or 'иф ран' in a: return 'ИФ РАН'
-        if 'независим' in a or 'independent' in a: return 'Независимые исследователи'
-        return None
-        
     inst_map = {}
     for s in scholars:
         # Keep track of unique scholars per inst

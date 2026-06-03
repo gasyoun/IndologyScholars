@@ -1,0 +1,78 @@
+{
+  "schema_version": "1.0.0",
+  "generated": "2026-06-03",
+  "build": {
+    "source": "IndologyScholars",
+    "pipeline_version": "2026-05-25",
+    "generator": "generate_publication_pages.py"
+  },
+  "summary": {
+    "total_scholars": 270,
+    "total_presentations": 1388,
+    "unique_presentations": 1362,
+    "author_participations": 1388,
+    "total_events": 40,
+    "years_covered": 22,
+    "start_year": 2004,
+    "end_year": 2026,
+    "overlap_scholars": 41,
+    "zograf_only_scholars": 165,
+    "roerich_only_scholars": 64,
+    "person_rows": 270,
+    "presentation_rows": 1362,
+    "event_rows": 40
+  },
+  "checks": [
+    {
+      "id": "dangling_sessions",
+      "label": "Sessions without joinable event_day_venue",
+      "severity": "error",
+      "count": 0,
+      "status": "pass"
+    },
+    {
+      "id": "missing_dates",
+      "label": "Presentations attached to undated event days",
+      "severity": "warning",
+      "count": 0,
+      "status": "pass"
+    },
+    {
+      "id": "missing_affiliations",
+      "label": "Presentation-person rows without raw affiliation",
+      "severity": "info",
+      "count": 0,
+      "status": "pass"
+    },
+    {
+      "id": "placeholder_titles",
+      "label": "Presentations with placeholder-like titles",
+      "severity": "info",
+      "count": 1,
+      "status": "review"
+    },
+    {
+      "id": "duplicate_full_names",
+      "label": "Duplicate full Russian names after normalization",
+      "severity": "warning",
+      "count": 0,
+      "status": "pass"
+    },
+    {
+      "id": "latin_initials",
+      "label": "Mixed Latin initials in Cyrillic names",
+      "severity": "info",
+      "count": 0,
+      "status": "pass"
+    }
+  ],
+  "samples": {
+    "placeholder_titles": [
+      {
+        "presentation_id": "PRES_117aeb7260",
+        "scholar": "Б. В. Загуменнов",
+        "title": "Тема уточняется"
+      }
+    ]
+  }
+}

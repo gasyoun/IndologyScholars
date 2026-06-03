@@ -14,3 +14,10 @@ Three rules matter before making automated changes:
    `L2`.
 3. Before publication, run `python validate_publication.py` and
    `python -m pytest`.
+4. Editable geographic data (city aliases and coordinates) lives in
+   `assets/data/geography.json`. Shared utility functions like
+   `normalize_affiliation` belong in `publication_helpers.py` — do not
+   duplicate them across generator scripts.
+5. The `scratch/` directory is for experiments and logs. Published pages
+   (including `findings/mobility.html`) must be generated from the main
+   pipeline in `generate_publication_pages.py`, not from `scratch/`.

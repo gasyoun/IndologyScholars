@@ -1,0 +1,319 @@
+{
+  "description": "Optional authority identifiers used by generators when known. Add ORCID, Wikidata, VIAF, ROR, or official URLs without changing code.",
+  "persons": {
+    "PERS_05d56645": {
+      "preferred_latin_name": "Alexander Babin"
+    },
+    "PERS_0665f215": {
+      "preferred_latin_name": "Vladimir Shokhin"
+    },
+    "PERS_0e0a154e": {
+      "preferred_latin_name": "Lev Titlin"
+    },
+    "PERS_11da326d": {
+      "preferred_latin_name": "Sergey Tavastsherna"
+    },
+    "PERS_12125da9": {
+      "preferred_latin_name": "Victoria Lysenko"
+    },
+    "PERS_1c6fcce5": {
+      "preferred_latin_name": "Elizaveta Kuzina"
+    },
+    "PERS_1fa7cc0c": {
+      "preferred_latin_name": "Alexander Dubyansky"
+    },
+    "PERS_36dabb79": {
+      "preferred_latin_name": "Anastasia Guriya"
+    },
+    "PERS_3b196639": {
+      "preferred_latin_name": "Nikolai Gordiichuk"
+    },
+    "PERS_3c202afd": {
+      "preferred_latin_name": "Rada Krapivina"
+    },
+    "PERS_40862f5e": {
+      "preferred_latin_name": "Natalia Korneeva"
+    },
+    "PERS_41d6aa73": {
+      "preferred_latin_name": "Daria Vorobyeva"
+    },
+    "PERS_50d73711": {
+      "preferred_latin_name": "Anna Smirnitskaya"
+    },
+    "PERS_5228da95": {
+      "preferred_latin_name": "Victoria Vertogradova"
+    },
+    "PERS_58b39545": {
+      "preferred_latin_name": "Evgenia Renkovskaya"
+    },
+    "PERS_61202bf3": {
+      "preferred_latin_name": "Yulia Alikhanova"
+    },
+    "PERS_6ae5c779": {
+      "preferred_latin_name": "Anastasia Fiveyskaya"
+    },
+    "PERS_72506535": {
+      "preferred_latin_name": "Anastasia Krylova"
+    },
+    "PERS_8516d1e4": {
+      "preferred_latin_name": "Marcis Gasuns",
+      "wikidata": "Q11111111",
+      "orcid": "0000-0003-2415-4676",
+      "samskrtam_ru": "https://samskrtam.ru/",
+      "confidence": "confirmed",
+      "checked_at": "2026-05-21"
+    },
+    "PERS_8e117242": {
+      "preferred_latin_name": "Ekaterina Yuditskaya"
+    },
+    "PERS_92868e4f": {
+      "preferred_latin_name": "Dmitry Zhutaev"
+    },
+    "PERS_93e2effb": {
+      "preferred_latin_name": "Dmitry Komissarov"
+    },
+    "PERS_9f398436": {
+      "preferred_latin_name": "Leonid Kulikov"
+    },
+    "PERS_aa964a12": {
+      "wikipedia": "https://ru.wikipedia.org/wiki/Самозванцев,_Андрей_Михайлович",
+      "confidence": "manual",
+      "source": "ru.wikipedia.org",
+      "checked_at": "2026-05-25"
+    },
+    "PERS_b4cdbfb8": {
+      "wikipedia": "https://ru.wikipedia.org/wiki/Эрман,_Владимир_Гансович",
+      "confidence": "manual",
+      "source": "ru.wikipedia.org",
+      "checked_at": "2026-05-25"
+    },
+    "PERS_c52dfaa0": {
+      "preferred_latin_name": "Sofia Tsvetkova"
+    },
+    "PERS_cdbd7a15": {
+      "preferred_latin_name": "Sergey Kullanda",
+      "wikipedia": "https://ru.wikipedia.org/wiki/Кулланда,_Сергей_Всеволодович",
+      "confidence": "manual",
+      "source": "ru.wikipedia.org",
+      "checked_at": "2026-05-25"
+    },
+    "PERS_cfb92c5f": {
+      "preferred_latin_name": "Evgeny Ulansky"
+    },
+    "PERS_d3c5382c": {
+      "wikipedia": "https://ru.wikipedia.org/wiki/Попова,_Ирина_Фёдоровна",
+      "confidence": "manual",
+      "source": "ru.wikipedia.org",
+      "checked_at": "2026-05-25"
+    },
+    "PERS_d98da899": {
+      "preferred_latin_name": "Svetlana Ryzhakova"
+    },
+    "PERS_ddb70dc9": {
+      "vk": "https://vk.com/m.azarkina",
+      "confidence": "manual",
+      "source": "vk.com",
+      "checked_at": "2026-05-25"
+    },
+    "PERS_e1dd6b3e": {
+      "preferred_latin_name": "Natalia Lidova"
+    },
+    "PERS_e5a5ac24": {
+      "wikipedia": "https://ru.wikipedia.org/wiki/Невелева,_Светлана_Леонидовна",
+      "confidence": "manual",
+      "source": "ru.wikipedia.org",
+      "checked_at": "2026-05-25"
+    },
+    "PERS_e31ca12d": {
+      "preferred_latin_name": "Olga Vecherina"
+    },
+    "PERS_ebb6d156": {
+      "preferred_latin_name": "Anastasia Lozhkina"
+    },
+    "PERS_efc88709": {
+      "preferred_latin_name": "Natalia Kanaeva"
+    },
+    "PERS_f074f69f": {
+      "preferred_latin_name": "Natalia Alexandrova"
+    },
+    "PERS_f2fef030": {
+      "preferred_latin_name": "Areg Mekhakyan"
+    },
+    "PERS_f5b8b340": {
+      "preferred_latin_name": "Alexey Vigasin"
+    }
+  },
+  "organizations": {
+    "ИВ РАН": {
+      "full_name_ru": "Институт востоковедения Российской академии наук",
+      "name_en": "Institute of Oriental Studies of the Russian Academy of Sciences",
+      "alternateName": [
+        "IOS RAS"
+      ],
+      "url": "https://www.ivran.ru",
+      "wikidata": "Q1414442"
+    },
+    "СПбГУ": {
+      "full_name_ru": "Санкт-Петербургский государственный университет",
+      "name_en": "Saint Petersburg State University",
+      "alternateName": [
+        "SPbU"
+      ],
+      "url": "https://spbu.ru",
+      "wikidata": "Q27621",
+      "ror": "00k2yeb14"
+    },
+    "МГУ": {
+      "full_name_ru": "Московский государственный университет имени М. В. Ломоносова",
+      "name_en": "Lomonosov Moscow State University",
+      "alternateName": [
+        "MSU"
+      ],
+      "url": "https://www.msu.ru",
+      "wikidata": "Q13164",
+      "ror": "02drsyg33"
+    },
+    "НИУ ВШЭ": {
+      "full_name_ru": "Национальный исследовательский университет «Высшая школа экономики»",
+      "name_en": "HSE University",
+      "alternateName": [
+        "Higher School of Economics"
+      ],
+      "url": "https://www.hse.ru",
+      "wikidata": "Q1340150",
+      "ror": "03p90cg98"
+    },
+    "ИФ РАН": {
+      "full_name_ru": "Институт философии Российской академии наук",
+      "name_en": "Institute of Philosophy, Russian Academy of Sciences",
+      "alternateName": [
+        "IPH RAS"
+      ],
+      "url": "https://iphras.ru",
+      "wikidata": "Q4201389"
+    },
+    "РГГУ": {
+      "full_name_ru": "Российский государственный гуманитарный университет",
+      "name_en": "Russian State University for the Humanities",
+      "alternateName": [
+        "RSUH"
+      ],
+      "url": "https://www.rsuh.ru",
+      "wikidata": "Q1056588"
+    },
+    "МАЭ РАН": {
+      "full_name_ru": "Музей антропологии и этнографии имени Петра Великого (Кунсткамера) Российской академии наук",
+      "name_en": "Peter the Great Museum of Anthropology and Ethnography (the Kunstkamera)",
+      "alternateName": [
+        "Kunstkamera"
+      ],
+      "url": "https://www.kunstkamera.ru",
+      "wikidata": "Q618774"
+    },
+    "Государственный Эрмитаж": {
+      "full_name_ru": "Государственный Эрмитаж",
+      "name_en": "State Hermitage Museum",
+      "alternateName": [
+        "The Hermitage"
+      ],
+      "url": "https://www.hermitagemuseum.org",
+      "wikidata": "Q132783"
+    },
+    "ИВР РАН": {
+      "full_name_ru": "Институт восточных рукописей Российской академии наук",
+      "name_en": "Institute of Oriental Manuscripts of the Russian Academy of Sciences",
+      "alternateName": [
+        "IOM RAS"
+      ],
+      "url": "https://www.orientalstudies.ru",
+      "wikidata": "Q1413813"
+    }
+  },
+  "places": {
+    "Санкт-Петербург": {
+      "name_en": "St. Petersburg",
+      "alternateName": [
+        "Saint Petersburg",
+        "Sankt-Peterburg"
+      ],
+      "wikidata": "Q656",
+      "country": "Russia",
+      "country_ru": "Россия"
+    },
+    "Москва": {
+      "name_en": "Moscow",
+      "alternateName": [
+        "Moskva"
+      ],
+      "wikidata": "Q649",
+      "country": "Russia",
+      "country_ru": "Россия"
+    },
+    "Пенза": {
+      "name_en": "Penza",
+      "wikidata": "Q5545",
+      "country": "Russia",
+      "country_ru": "Россия"
+    },
+    "Краснодар": {
+      "name_en": "Krasnodar",
+      "alternateName": [
+        "Yekaterinodar"
+      ],
+      "wikidata": "Q3219",
+      "country": "Russia",
+      "country_ru": "Россия"
+    },
+    "Казань": {
+      "name_en": "Kazan",
+      "alternateName": [
+        "Qazan"
+      ],
+      "wikidata": "Q900",
+      "country": "Russia",
+      "country_ru": "Россия"
+    },
+    "Элиста": {
+      "name_en": "Elista",
+      "wikidata": "Q3877",
+      "country": "Russia",
+      "country_ru": "Россия"
+    },
+    "Новосибирск": {
+      "name_en": "Novosibirsk",
+      "alternateName": [
+        "Novonikolayevsk"
+      ],
+      "wikidata": "Q883",
+      "country": "Russia",
+      "country_ru": "Россия"
+    },
+    "Нижний Новгород": {
+      "name_en": "Nizhny Novgorod",
+      "alternateName": [
+        "Gorky"
+      ],
+      "wikidata": "Q891",
+      "country": "Russia",
+      "country_ru": "Россия"
+    },
+    "Вильнюс": {
+      "name_en": "Vilnius",
+      "alternateName": [
+        "Vilna"
+      ],
+      "wikidata": "Q216",
+      "country": "Lithuania",
+      "country_ru": "Литва"
+    },
+    "Улан-Удэ": {
+      "name_en": "Ulan-Ude",
+      "alternateName": [
+        "Verkhneudinsk"
+      ],
+      "wikidata": "Q4338",
+      "country": "Russia",
+      "country_ru": "Россия"
+    }
+  }
+}

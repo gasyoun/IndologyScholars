@@ -1,0 +1,1181 @@
+{
+  "profile": "data-package",
+  "schema_version": "1.0.0",
+  "generated": "2026-06-03",
+  "build": {
+    "source": "IndologyScholars",
+    "pipeline_version": "2026-05-25",
+    "generator": "generate_publication_pages.py"
+  },
+  "name": "indology-scholars",
+  "title": "Russian Indological Research Archive",
+  "description": "Normalized archive of Russian Indological conference presentations and scholar profiles.",
+  "homepage": "https://gasyoun.github.io/IndologyScholars/",
+  "created": "2026-06-03",
+  "licenses": [
+    {
+      "name": "Apache-2.0",
+      "path": "LICENSE",
+      "title": "Software License"
+    },
+    {
+      "name": "CC-BY-4.0",
+      "title": "Dataset License (Derived Metadata)",
+      "path": "https://creativecommons.org/licenses/by/4.0/"
+    }
+  ],
+  "rights": {
+    "software_code": "Apache-2.0 for scripts, templates, and repository-native code.",
+    "derived_metadata_exports": "CC-BY-4.0 for normalized metadata, derived CSV/JSON exports, and generated public pages unless a file states otherwise.",
+    "source_program_cache": "Cached conference programmes, quoted snippets, and source images remain under their original rightsholders and are retained for verification.",
+    "third_party_assets": "Bundled fonts, icons, and external source records keep their upstream licences or terms."
+  },
+  "contributors": [
+    {
+      "title": "Dr. Mārcis Gasūns",
+      "role": "author"
+    }
+  ],
+  "keywords": [
+    "Indology",
+    "digital humanities",
+    "conference archive"
+  ],
+  "sources": [
+    {
+      "title": "Zograf Readings programs",
+      "path": "html_cache/"
+    },
+    {
+      "title": "Roerich Readings programs",
+      "path": "html_cache/"
+    }
+  ],
+  "stats": {
+    "total_scholars": 270,
+    "total_presentations": 1388,
+    "unique_presentations": 1362,
+    "author_participations": 1388,
+    "total_events": 40,
+    "years_covered": 22,
+    "start_year": 2004,
+    "end_year": 2026,
+    "overlap_scholars": 41,
+    "zograf_only_scholars": 165,
+    "roerich_only_scholars": 64,
+    "person_rows": 270,
+    "presentation_rows": 1362,
+    "event_rows": 40
+  },
+  "resources": [
+    {
+      "name": "site-data",
+      "path": "site_data.json",
+      "format": "js",
+      "mediatype": "application/javascript",
+      "description": "Browser payload with scholars, presentations, charts, and network data.",
+      "schema": {
+        "fields": [
+          {
+            "name": "schema_version",
+            "type": "string"
+          },
+          {
+            "name": "generated",
+            "type": "date"
+          },
+          {
+            "name": "summary",
+            "type": "object"
+          },
+          {
+            "name": "scholars",
+            "type": "array"
+          },
+          {
+            "name": "timeline",
+            "type": "object"
+          }
+        ]
+      }
+    },
+    {
+      "name": "database",
+      "path": "conferences.db",
+      "format": "sqlite",
+      "mediatype": "application/vnd.sqlite3",
+      "description": "Normalized SQLite database."
+    },
+    {
+      "name": "search-index",
+      "path": "search-index.json",
+      "format": "json",
+      "mediatype": "application/json",
+      "description": "Static search index for generated scholar and presentation pages."
+    },
+    {
+      "name": "data-quality-report",
+      "path": "analytics_output/data_quality_report.json",
+      "format": "json",
+      "mediatype": "application/json",
+      "description": "Machine-readable data quality checks and review samples.",
+      "schema": {
+        "fields": [
+          {
+            "name": "schema_version",
+            "type": "string"
+          },
+          {
+            "name": "generated",
+            "type": "date"
+          },
+          {
+            "name": "summary",
+            "type": "object"
+          },
+          {
+            "name": "checks",
+            "type": "array"
+          }
+        ]
+      }
+    },
+    {
+      "name": "data-dictionary",
+      "path": "data_dictionary.md",
+      "format": "md",
+      "mediatype": "text/markdown",
+      "description": "Human-readable field guide for reusable CSV, JSON, SQLite, and generated publication outputs."
+    },
+    {
+      "name": "presentation-id-manifest",
+      "path": "analytics_output/presentation_id_manifest.csv",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "description": "Stable presentation ID manifest used to audit rebuild stability.",
+      "schema": {
+        "fields": [
+          {
+            "name": "presentation_id",
+            "type": "string"
+          },
+          {
+            "name": "series",
+            "type": "string"
+          },
+          {
+            "name": "year",
+            "type": "integer"
+          },
+          {
+            "name": "event_id",
+            "type": "string"
+          },
+          {
+            "name": "session_id",
+            "type": "string"
+          },
+          {
+            "name": "title",
+            "type": "string"
+          },
+          {
+            "name": "first_speaker",
+            "type": "string"
+          },
+          {
+            "name": "all_speakers",
+            "type": "string"
+          },
+          {
+            "name": "source_url",
+            "type": "string"
+          },
+          {
+            "name": "source_snippet_hash",
+            "type": "string"
+          },
+          {
+            "name": "stable_key_candidate",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    {
+      "name": "id-stability-audit",
+      "path": "analytics_output/id_stability_audit.json",
+      "format": "json",
+      "mediatype": "application/json",
+      "description": "Machine-readable audit proving presentation IDs are stable across unchanged rebuilds."
+    },
+    {
+      "name": "field-provenance-biographical",
+      "path": "analytics_output/field_provenance_biographical.csv",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "description": "Field-level provenance for curated person names and life dates."
+    },
+    {
+      "name": "field-provenance-authority",
+      "path": "analytics_output/field_provenance_authority.csv",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "description": "Field-level provenance for external authority identifiers and organization records."
+    },
+    {
+      "name": "field-provenance-themes",
+      "path": "analytics_output/field_provenance_themes.csv",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "description": "Field-level provenance for generated presentation theme labels and review candidates."
+    },
+    {
+      "name": "verified-affiliation-spans",
+      "path": "curation/verified_affiliation_spans.csv",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "description": "Dated source-backed institutional trajectories used for public affiliation normalization."
+    },
+    {
+      "name": "eastern-faculty-alumni",
+      "path": "curation/eastern_faculty_alumni.csv",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "description": "Curated candidate filter for SPbU Oriental Faculty alumni; rows marked needs_source require external confirmation before strong claims."
+    },
+    {
+      "name": "classification-reliability-sample",
+      "path": "analytics_output/classification_reliability_sample.csv",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "description": "Deterministic stratified sample and manual-override records for classification reliability review.",
+      "schema": {
+        "fields": [
+          {
+            "name": "presentation_id",
+            "type": "string"
+          },
+          {
+            "name": "year",
+            "type": "integer"
+          },
+          {
+            "name": "series",
+            "type": "string"
+          },
+          {
+            "name": "title",
+            "type": "string"
+          },
+          {
+            "name": "theme_l1",
+            "type": "string"
+          },
+          {
+            "name": "period_l2",
+            "type": "string"
+          },
+          {
+            "name": "gumilyov_level",
+            "type": "integer"
+          },
+          {
+            "name": "meso_codes",
+            "type": "string"
+          },
+          {
+            "name": "confidence",
+            "type": "number"
+          },
+          {
+            "name": "review_bucket",
+            "type": "string"
+          },
+          {
+            "name": "review_status",
+            "type": "string"
+          },
+          {
+            "name": "selection_reason",
+            "type": "string"
+          },
+          {
+            "name": "model_rationale",
+            "type": "string"
+          },
+          {
+            "name": "override_reason",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    {
+      "name": "human-review-index",
+      "path": "analytics_output/human_review_index.csv",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "description": "Unified curator-facing index of open manual review items across authority IDs, RINC/OpenAlex/Wikipedia candidates, identity, classification, spacetime, affiliation, lineage, and data-quality queues.",
+      "schema": {
+        "fields": [
+          {
+            "name": "domain",
+            "type": "string"
+          },
+          {
+            "name": "priority",
+            "type": "integer"
+          },
+          {
+            "name": "source_file",
+            "type": "string"
+          },
+          {
+            "name": "source_row",
+            "type": "integer"
+          },
+          {
+            "name": "record_id",
+            "type": "string"
+          },
+          {
+            "name": "label",
+            "type": "string"
+          },
+          {
+            "name": "status",
+            "type": "string"
+          },
+          {
+            "name": "reason",
+            "type": "string"
+          },
+          {
+            "name": "evidence_url",
+            "type": "string"
+          },
+          {
+            "name": "reviewer",
+            "type": "string"
+          },
+          {
+            "name": "checked_at",
+            "type": "date"
+          },
+          {
+            "name": "note",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    {
+      "name": "human-review-summary",
+      "path": "analytics_output/human_review_summary.json",
+      "format": "json",
+      "mediatype": "application/json",
+      "description": "Summary counts by domain and source file for the unified human-review index."
+    },
+    {
+      "name": "scientometrics-guardrails",
+      "path": "analytics_output/scientometrics_guardrails.csv",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "description": "Index of the eight scientometrics and sociology-of-science guardrail outputs.",
+      "schema": {
+        "fields": [
+          {
+            "name": "guardrail_id",
+            "type": "string"
+          },
+          {
+            "name": "title",
+            "type": "string"
+          },
+          {
+            "name": "output_path",
+            "type": "string"
+          },
+          {
+            "name": "review_status",
+            "type": "string"
+          },
+          {
+            "name": "why_it_matters",
+            "type": "string"
+          },
+          {
+            "name": "next_human_action",
+            "type": "string"
+          },
+          {
+            "name": "source_anchor",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    {
+      "name": "scientometrics-guardrails-summary",
+      "path": "analytics_output/scientometrics_guardrails_summary.json",
+      "format": "json",
+      "mediatype": "application/json",
+      "description": "Summary counts for the scientometrics guardrail package."
+    },
+    {
+      "name": "scientometrics-claim-registry",
+      "path": "analytics_output/scientometrics_claim_registry.csv",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "description": "Allowed claim families, required evidence, and forbidden overclaims for responsible interpretation.",
+      "schema": {
+        "fields": [
+          {
+            "name": "claim_id",
+            "type": "string"
+          },
+          {
+            "name": "claim_family",
+            "type": "string"
+          },
+          {
+            "name": "allowed_claim",
+            "type": "string"
+          },
+          {
+            "name": "allowed_scope",
+            "type": "string"
+          },
+          {
+            "name": "required_evidence",
+            "type": "string"
+          },
+          {
+            "name": "forbidden_overclaim",
+            "type": "string"
+          },
+          {
+            "name": "minimum_review_artifact",
+            "type": "string"
+          },
+          {
+            "name": "review_status",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    {
+      "name": "coverage-bias-audit",
+      "path": "analytics_output/coverage_bias_audit.csv",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "description": "Per-source authority and index coverage audit for ORCID, Wikidata, VIAF, OpenAlex, Wikipedia, RINC/eLIBRARY, Google Scholar, official URLs, and any external ID.",
+      "schema": {
+        "fields": [
+          {
+            "name": "source",
+            "type": "string"
+          },
+          {
+            "name": "source_label",
+            "type": "string"
+          },
+          {
+            "name": "covered_persons",
+            "type": "integer"
+          },
+          {
+            "name": "total_persons",
+            "type": "integer"
+          },
+          {
+            "name": "coverage_share",
+            "type": "number"
+          },
+          {
+            "name": "high_activity_missing_persons",
+            "type": "integer"
+          },
+          {
+            "name": "high_activity_threshold",
+            "type": "integer"
+          },
+          {
+            "name": "interpretation",
+            "type": "string"
+          },
+          {
+            "name": "review_status",
+            "type": "string"
+          },
+          {
+            "name": "review_action",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    {
+      "name": "negative-evidence-log",
+      "path": "analytics_output/negative_evidence_log.csv",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "description": "Reviewable no-hit and rejected-filter evidence for identity matching.",
+      "schema": {
+        "fields": [
+          {
+            "name": "evidence_id",
+            "type": "string"
+          },
+          {
+            "name": "source_file",
+            "type": "string"
+          },
+          {
+            "name": "source_row",
+            "type": "integer"
+          },
+          {
+            "name": "source_system",
+            "type": "string"
+          },
+          {
+            "name": "person_id",
+            "type": "string"
+          },
+          {
+            "name": "label",
+            "type": "string"
+          },
+          {
+            "name": "candidate_or_query",
+            "type": "string"
+          },
+          {
+            "name": "negative_signal",
+            "type": "string"
+          },
+          {
+            "name": "reason",
+            "type": "string"
+          },
+          {
+            "name": "review_status",
+            "type": "string"
+          },
+          {
+            "name": "reviewer",
+            "type": "string"
+          },
+          {
+            "name": "checked_at",
+            "type": "date"
+          },
+          {
+            "name": "note",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    {
+      "name": "conference-role-taxonomy",
+      "path": "analytics_output/conference_role_taxonomy.csv",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "description": "Conference-program role taxonomy for presenter, chair, organizer, committee, invited, editorial, memorial, and discussant claims.",
+      "schema": {
+        "fields": [
+          {
+            "name": "role_code",
+            "type": "string"
+          },
+          {
+            "name": "role_label",
+            "type": "string"
+          },
+          {
+            "name": "role_definition",
+            "type": "string"
+          },
+          {
+            "name": "possible_source_fields",
+            "type": "string"
+          },
+          {
+            "name": "public_claim_allowed",
+            "type": "string"
+          },
+          {
+            "name": "credit_mapping",
+            "type": "string"
+          },
+          {
+            "name": "review_status",
+            "type": "string"
+          },
+          {
+            "name": "notes",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    {
+      "name": "event-ecology-audit",
+      "path": "analytics_output/event_ecology_audit.csv",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "description": "Event/session/venue/format/media coverage audit for conference ecology.",
+      "schema": {
+        "fields": [
+          {
+            "name": "dimension",
+            "type": "string"
+          },
+          {
+            "name": "observed_count",
+            "type": "integer"
+          },
+          {
+            "name": "total_count",
+            "type": "integer"
+          },
+          {
+            "name": "coverage_share",
+            "type": "number"
+          },
+          {
+            "name": "evidence_source",
+            "type": "string"
+          },
+          {
+            "name": "interpretation",
+            "type": "string"
+          },
+          {
+            "name": "review_status",
+            "type": "string"
+          },
+          {
+            "name": "review_action",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    {
+      "name": "network-robustness-checks",
+      "path": "analytics_output/network_robustness_checks.csv",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "description": "Typed network-model sensitivity checks and forbidden-inference rules.",
+      "schema": {
+        "fields": [
+          {
+            "name": "check_id",
+            "type": "string"
+          },
+          {
+            "name": "network_model",
+            "type": "string"
+          },
+          {
+            "name": "edge_types_included",
+            "type": "string"
+          },
+          {
+            "name": "node_scope",
+            "type": "string"
+          },
+          {
+            "name": "question_supported",
+            "type": "string"
+          },
+          {
+            "name": "required_sensitivity_check",
+            "type": "string"
+          },
+          {
+            "name": "current_edge_count",
+            "type": "integer"
+          },
+          {
+            "name": "current_node_count",
+            "type": "integer"
+          },
+          {
+            "name": "review_status",
+            "type": "string"
+          },
+          {
+            "name": "forbidden_inference",
+            "type": "string"
+          },
+          {
+            "name": "note",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    {
+      "name": "inter-rater-reliability-plan",
+      "path": "analytics_output/inter_rater_reliability_plan.csv",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "description": "Double-coding plan and minimum reliability rules for classification-dependent claims.",
+      "schema": {
+        "fields": [
+          {
+            "name": "sample_id",
+            "type": "string"
+          },
+          {
+            "name": "classification_layer",
+            "type": "string"
+          },
+          {
+            "name": "sample_file",
+            "type": "string"
+          },
+          {
+            "name": "sample_rows",
+            "type": "integer"
+          },
+          {
+            "name": "queued_rows",
+            "type": "integer"
+          },
+          {
+            "name": "manual_override_rows",
+            "type": "integer"
+          },
+          {
+            "name": "primary_metric",
+            "type": "string"
+          },
+          {
+            "name": "minimum_pass_rule",
+            "type": "string"
+          },
+          {
+            "name": "current_status",
+            "type": "string"
+          },
+          {
+            "name": "review_action",
+            "type": "string"
+          },
+          {
+            "name": "review_status",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    {
+      "name": "fair-reuse-maturity-audit",
+      "path": "analytics_output/fair_reuse_maturity_audit.csv",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "description": "FAIR and reuse maturity evidence checklist for releases.",
+      "schema": {
+        "fields": [
+          {
+            "name": "fair_id",
+            "type": "string"
+          },
+          {
+            "name": "principle",
+            "type": "string"
+          },
+          {
+            "name": "criterion",
+            "type": "string"
+          },
+          {
+            "name": "evidence_path",
+            "type": "string"
+          },
+          {
+            "name": "evidence_status",
+            "type": "string"
+          },
+          {
+            "name": "review_status",
+            "type": "string"
+          },
+          {
+            "name": "action",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    {
+      "name": "network-nodes",
+      "path": "analytics_output/network_nodes.csv",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "description": "Typed nodes for person, event, organization, and theme network analysis.",
+      "schema": {
+        "fields": [
+          {
+            "name": "node_id",
+            "type": "string"
+          },
+          {
+            "name": "node_type",
+            "type": "string"
+          },
+          {
+            "name": "label",
+            "type": "string"
+          },
+          {
+            "name": "local_id",
+            "type": "string"
+          },
+          {
+            "name": "weight",
+            "type": "integer"
+          }
+        ]
+      }
+    },
+    {
+      "name": "network-edges",
+      "path": "analytics_output/network_edges.csv",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "description": "Weighted network edges with explicit relation type, year, and conference series.",
+      "schema": {
+        "fields": [
+          {
+            "name": "source",
+            "type": "string"
+          },
+          {
+            "name": "target",
+            "type": "string"
+          },
+          {
+            "name": "edge_type",
+            "type": "string"
+          },
+          {
+            "name": "year",
+            "type": "integer"
+          },
+          {
+            "name": "series",
+            "type": "string"
+          },
+          {
+            "name": "weight",
+            "type": "integer"
+          }
+        ]
+      }
+    },
+    {
+      "name": "coauthorship-review",
+      "path": "analytics_output/coauthorship_review.csv",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "description": "Human-review queue for source-backed multi-person presentation lines before treating them as coauthorship.",
+      "schema": {
+        "fields": [
+          {
+            "name": "presentation_id",
+            "type": "string"
+          },
+          {
+            "name": "year",
+            "type": "integer"
+          },
+          {
+            "name": "series",
+            "type": "string"
+          },
+          {
+            "name": "title",
+            "type": "string"
+          },
+          {
+            "name": "people",
+            "type": "string"
+          },
+          {
+            "name": "source_snippet",
+            "type": "string"
+          },
+          {
+            "name": "source_url",
+            "type": "string"
+          },
+          {
+            "name": "review_status",
+            "type": "string"
+          },
+          {
+            "name": "human_action",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    {
+      "name": "senior-absence-audit",
+      "path": "analytics_output/senior_absence_audit.csv",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "description": "Review queue for frequent senior-generation participants absent after 2022 or from the 2026 programme.",
+      "schema": {
+        "fields": [
+          {
+            "name": "cohort",
+            "type": "string"
+          },
+          {
+            "name": "person_id",
+            "type": "string"
+          },
+          {
+            "name": "display_name",
+            "type": "string"
+          },
+          {
+            "name": "birth_year",
+            "type": "integer"
+          },
+          {
+            "name": "first_year",
+            "type": "integer"
+          },
+          {
+            "name": "last_year",
+            "type": "integer"
+          },
+          {
+            "name": "talks_before_threshold",
+            "type": "integer"
+          },
+          {
+            "name": "talks_after_threshold",
+            "type": "integer"
+          },
+          {
+            "name": "living_status_basis",
+            "type": "string"
+          },
+          {
+            "name": "review_status",
+            "type": "string"
+          },
+          {
+            "name": "interpretation_note",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    {
+      "name": "senior-biographical-verification",
+      "path": "curation/senior_biographical_verification.csv",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "description": "Curated external sources used to check biographical alternatives for senior-generation absence rows.",
+      "schema": {
+        "fields": [
+          {
+            "name": "person_id",
+            "type": "string"
+          },
+          {
+            "name": "display_name",
+            "type": "string"
+          },
+          {
+            "name": "cohort_scope",
+            "type": "string"
+          },
+          {
+            "name": "external_status",
+            "type": "string"
+          },
+          {
+            "name": "source_title",
+            "type": "string"
+          },
+          {
+            "name": "source_url",
+            "type": "string"
+          },
+          {
+            "name": "source_date",
+            "type": "date"
+          },
+          {
+            "name": "checked_at",
+            "type": "date"
+          },
+          {
+            "name": "interpretation_note",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    {
+      "name": "known-relationships",
+      "path": "curation/known_relationships.csv",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "description": "Curated review table for known relationships not always visible from conference-network sources.",
+      "schema": {
+        "fields": [
+          {
+            "name": "relation_id",
+            "type": "string"
+          },
+          {
+            "name": "source_person_id",
+            "type": "string"
+          },
+          {
+            "name": "source_name",
+            "type": "string"
+          },
+          {
+            "name": "target_person_id",
+            "type": "string"
+          },
+          {
+            "name": "target_name",
+            "type": "string"
+          },
+          {
+            "name": "relation_type",
+            "type": "string"
+          },
+          {
+            "name": "relation_label_ru",
+            "type": "string"
+          },
+          {
+            "name": "relation_label_en",
+            "type": "string"
+          },
+          {
+            "name": "direction",
+            "type": "string"
+          },
+          {
+            "name": "certainty",
+            "type": "string"
+          },
+          {
+            "name": "temporal",
+            "type": "string"
+          },
+          {
+            "name": "status",
+            "type": "string"
+          },
+          {
+            "name": "source_note",
+            "type": "string"
+          },
+          {
+            "name": "source_url",
+            "type": "string"
+          },
+          {
+            "name": "added_at",
+            "type": "date"
+          },
+          {
+            "name": "updated_at",
+            "type": "date"
+          }
+        ]
+      }
+    },
+    {
+      "name": "presentation-person-exclusions",
+      "path": "curation/presentation_person_exclusions.csv",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "description": "Curated removals of machine-parsed presentation-person links after human review.",
+      "schema": {
+        "fields": [
+          {
+            "name": "presentation_id",
+            "type": "string"
+          },
+          {
+            "name": "person_id",
+            "type": "string"
+          },
+          {
+            "name": "role",
+            "type": "string"
+          },
+          {
+            "name": "status",
+            "type": "string"
+          },
+          {
+            "name": "reason",
+            "type": "string"
+          },
+          {
+            "name": "source_url",
+            "type": "string"
+          },
+          {
+            "name": "reviewed_by",
+            "type": "string"
+          },
+          {
+            "name": "review_date",
+            "type": "date"
+          }
+        ]
+      }
+    },
+    {
+      "name": "publication-file-manifest",
+      "path": "analytics_output/publication_file_manifest.csv",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "description": "Generated publication file manifest with byte sizes and SHA-256 checksums.",
+      "schema": {
+        "fields": [
+          {
+            "name": "path",
+            "type": "string"
+          },
+          {
+            "name": "size_bytes",
+            "type": "integer"
+          },
+          {
+            "name": "sha256",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    {
+      "name": "analytics",
+      "path": "analytics_output/",
+      "format": "csv",
+      "description": "Derived analytical CSV exports."
+    }
+  ]
+}

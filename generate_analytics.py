@@ -6,37 +6,12 @@ import datetime
 from collections import defaultdict
 
 from generate_site_data import classify_theme, clean_title
+from publication_helpers import normalize_affiliation
 
 DB_PATH = "conferences.db"
 OUTPUT_DIR = "analytics_output"
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
-
-def normalize_affiliation(aff):
-    if not aff:
-        return None
-    value = aff.lower()
-    if "ивр " in value or "восточных рукописей" in value:
-        return "ИВР РАН"
-    if "ив ран" in value or "востоковедения ран" in value or "ивран" in value:
-        return "ИВ РАН"
-    if "спбгу" in value or "петербургский" in value:
-        return "СПбГУ"
-    if "мгу" in value or "ломоносова" in value:
-        return "МГУ"
-    if "вшэ" in value or "высшая школа" in value:
-        return "НИУ ВШЭ"
-    if "рггу" in value or "гуманитарный" in value:
-        return "РГГУ"
-    if "маэ" in value or "кунсткамера" in value:
-        return "МАЭ РАН"
-    if "эрмитаж" in value:
-        return "Государственный Эрмитаж"
-    if "институт философии" in value or "иф ран" in value:
-        return "ИФ РАН"
-    if "независим" in value or "independent" in value:
-        return "Независимые исследователи"
-    return None
 
 
 def node_id(node_type, local_id):

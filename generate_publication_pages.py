@@ -2259,12 +2259,7 @@ window.TOP_KW = {_json.dumps([kw for kw, _ in counts.most_common(60)], ensure_as
 
 
 def generate_gender_page():
-    import json as _json, re as _re
-    with open("site_data.json", encoding="utf-8") as f:
-        text = f.read().strip()
-        text = _re.sub(r'^const CONFERENCE_DATA = ', '', text)
-        text = _re.sub(r';$', '', text)
-        scholars = _json.loads(text).get("scholars", [])
+    scholars = load_site_data().get("scholars", [])
     women_all = sum(1 for s in scholars if s.get("gender") == "F")
     men_all = sum(1 for s in scholars if s.get("gender") == "M")
     known = women_all + men_all or 1
@@ -2345,6 +2340,61 @@ def generate_gender_page():
             body,
             [page_data("Гендерный баланс", "Анализ гендерного состава участников индологических конференций.", "findings/gender.html", page_type="Article"),
              make_breadcrumbs([("Главная", ""), ("Гендерный баланс", "findings/gender.html")])],
+        ),
+    )
+
+
+def generate_mobility_page():
+    scholars = load_site_data().get("scholars", [])
+    city_list = []
+    for s in scholars:
+        cities = set()
+        for t in s.get("talks", []):
+            g = t.get("geography", {})
+            c = g.get("ru", "") if isinstance(g, dict) else ""
+            if c and c not in ("Не указана", ""):
+                cities.add(c)
+        if len(cities) > 1:
+            city_list.append((s.get("full_name_ru") or s.get("name", ""), sorted(cities), s.get("url_slug", "")))
+    city_list.sort(key=lambda x: -len(x[1]))
+
+    aff_changes = sum(1 for s in scholars if s.get("has_changed_affiliations"))
+    total = len(scholars)
+
+    rows = "".join(
+        f'<tr><td><a href="../s/{esc(slug)}.html">{esc(name)}</a></td><td>{esc(", ".join(cities))}</td></tr>'
+        for name, cities, slug in city_list[:40]
+    )
+
+    avg_cities = round(sum(len(c[1]) for c in city_list) / len(city_list), 1) if city_list else 0
+    mobility_pct = round(100 * len(city_list) / total, 1) if total else 0
+    aff_change_pct = round(100 * aff_changes / total, 1) if total else 0
+
+    body = f'''<header>
+<h1>Межинституциональная мобильность</h1>
+<p>Анализ переходов учёных между городами и институциями за период 2004–2026 по данным опубликованных программ.</p>
+</header>
+<section class="grid">
+<article class="card"><strong>Учёных с переездами</strong><div class="metric">{len(city_list)}</div><div class="meta">из {total} ({mobility_pct}%)</div></article>
+<article class="card"><strong>Меняли аффилиацию</strong><div class="metric">{aff_changes}</div><div class="meta">из {total} ({aff_change_pct}%)</div></article>
+<article class="card"><strong>Среднее городов</strong><div class="metric">{avg_cities}</div></article>
+</section>
+<h2>Учёные, выступавшие из нескольких городов</h2>
+<div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;">
+<thead><tr><th>Учёный</th><th>Города</th></tr></thead>
+<tbody>{rows}</tbody>
+</table></div>
+<p style="color:var(--muted);margin-top:1.5rem;">Данные основаны на указанных в программах городах. Город не всегда равен институции.</p>'''
+
+    write_text(
+        "findings/mobility.html",
+        page_shell(
+            "Мобильность | " + SITE_NAME,
+            f"Анализ мобильности: {len(city_list)} учёных с переездами, {aff_changes} меняли аффилиацию.",
+            "findings/mobility.html",
+            body,
+            [page_data("Мобильность", "Анализ переходов учёных между городами и институциями.", "findings/mobility.html", page_type="Article"),
+             make_breadcrumbs([("Главная", ""), ("Мобильность", "findings/mobility.html")])],
         ),
     )
 
@@ -15214,6 +15264,7 @@ def main():
     generate_keyword_stats_page(records)
     generate_keyword_visualisations_page(records)
     generate_gender_page()
+    generate_mobility_page()
     generate_voting_page(records)
     generate_known_relationships_page(data)
     authority_stats = generate_authority_coverage(data, authority)

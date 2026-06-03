@@ -746,7 +746,7 @@ def render_profile(scholar, related, authority, meso_by_presentation, meso_items
 
     orcid_icon = ""
     if orcid_url:
-        orcid_icon = f' <a href="{esc(orcid_url)}" target="_blank" rel="noopener" style="vertical-align: middle; margin-left: 6px;" title="ORCID iD (Verified Researcher Record)"><img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" alt="ORCID iD" style="width: 16px; height: 16px; border: none; vertical-align: middle;"></a>'
+        orcid_icon = f' <a href="{esc(orcid_url)}" target="_blank" rel="noopener" style="vertical-align: middle; margin-left: 6px;" title="ORCID iD (Verified Researcher Record)"><svg width="16" height="16" viewBox="0 0 256 256" style="width:16px; height:16px; vertical-align:middle; fill:#a6ce39;"><path d="M256 128c0 70.7-57.3 128-128 128S0 198.7 0 128 57.3 0 128 0s128 57.3 128 128z"/><path d="M86.3 186.2H70.9V79.1h15.4v48.4V186.2z" fill="#fff"/><circle cx="78.6" cy="56.2" r="13.6" fill="#fff"/><path d="M108.9 79.1h14.8v15.6c2.1-10.9 11.3-17.5 20.4-17.5 24 0 28.4 15.8 28.4 36.2v72.8h-15.4v-70.3c0-12 0-24.7-15-24.7s-17.9 11.9-17.9 24.7v70.3h-15.4V79.1z" fill="#fff"/></svg></a>'
 
     life_ru = format_lifespan(scholar, "ru").strip()
     life_en = format_lifespan(scholar, "en").strip()

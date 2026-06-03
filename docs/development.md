@@ -31,13 +31,14 @@
 | `curation/teacher_student.csv` | Кураторские связи руководитель/ученик (issue #9, генеалогический трек). Схема и правила правок: `curation/teacher_student_schema.md`. |
 | `curation/known_relationships.csv` | Кураторские межличностные и академические связи (супруги, руководители, коллеги) для интерпретации гейткипинга/социологии. |
 | `curation/eastern_faculty_alumni.csv` | Таблица кураторской сверки и подтверждения выпускников Восточного факультета СПбГУ. |
+| `assets/data/geography.json` | Ключевые слова городов и географические координаты для извлечения аффилиаций. |
 | `tools/` | Поддерживаемые служебные инструменты для тестов, очередей курации или CI. |
 | `scratch/` | Исторические эксперименты и журналы; новые локальные эксперименты должны оставаться неотслеживаемыми. |
 
 Производные артефакты не правятся вручную: `conferences.db`,
 `site_data.json`, `search-index.json`, `analytics_output/`, каталоги
 `s/`, `p/`, `conferences/`, `themes/`, `cities/`,
-`institutions/`, `generations/` и собранные информационные HTML-страницы (включая `known-relationships.html` и `voting.html`).
+`institutions/`, `generations/`, `findings/` и собранные информационные HTML-страницы (включая `known-relationships.html`, `gender.html`, `mobility.html` и `voting.html`).
 Изменение их содержания выполняется в источнике или генераторе, после чего
 артефакты пересобираются.
 
@@ -109,6 +110,7 @@ flowchart TD
     F --> K["сетевые данные"]
     G --> L["s/"]
     H --> M["публичные HTML-страницы и поисковый индекс"]
+    H --> P["findings/ (gender, mobility, data-quality)"]
 ```
 
 ## Аффилиации и классификация

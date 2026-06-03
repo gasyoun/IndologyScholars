@@ -31,13 +31,14 @@ Editable inputs and curation rules:
 | `curation/teacher_student.csv` | Curated advisor/student relationships (issue #9 genealogy track). Schema and editing rules: `curation/teacher_student_schema.md`. |
 | `curation/known_relationships.csv` | Curated personal/academic ties (e.g. spouse, advisor, co-workers) to support sociology/gatekeeping interpretations. |
 | `curation/eastern_faculty_alumni.csv` | Curated SPbU Oriental/Eastern Faculty alumni review queue and verification statuses. |
+| `assets/data/geography.json` | City keyword aliases and geographic coordinates for affiliation extraction. |
 | `tools/` | Maintained support tools used by tests, curation queues, or CI. |
 | `scratch/` | Historical experiments and logs; new local experiments should remain untracked. |
 
 Do not manually edit derived artifacts: `conferences.db`, `site_data.json`,
 `search-index.json`, `analytics_output/`, the `s/`, `p/`,
-`conferences/`, `themes/`, `cities/`, `institutions/`, and `generations/`
-directories, or generated informational HTML pages (including `known-relationships.html` and `voting.html`). Make a change in its
+`conferences/`, `themes/`, `cities/`, `institutions/`, `generations/`,
+and `findings/` directories, or generated informational HTML pages (including `known-relationships.html`, `gender.html`, `mobility.html`, and `voting.html`). Make a change in its
 source or generator and rebuild the artifacts.
 
 ## Build
@@ -108,6 +109,7 @@ flowchart TD
     F --> K["network data"]
     G --> L["s/"]
     H --> M["public HTML pages and search index"]
+    H --> P["findings/ (gender, mobility, data-quality)"]
 ```
 
 ## Affiliations and Classification

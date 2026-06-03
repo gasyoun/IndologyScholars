@@ -24,6 +24,9 @@ import time
 import urllib.request
 from pathlib import Path
 
+sys.stdout.reconfigure(encoding="utf-8")
+sys.stderr.reconfigure(encoding="utf-8")
+
 ROOT = Path(__file__).resolve().parents[1]
 DB_PATH = ROOT / "conferences.db"
 CACHE_DIR = ROOT / "html_cache" / "sborniki"
@@ -237,7 +240,7 @@ def run(dry_run: bool = False, skip_download: bool = False):
         w.writerows(all_results)
 
     print(f"\n{'='*60}")
-    print(f"Total matched: {len(all_results)} articles → {OUT_PATH}")
+    print(f"Total matched: {len(all_results)} articles -> {OUT_PATH}")
     if all_results:
         print("\nTop matches:")
         for r in sorted(all_results, key=lambda x: -x["confidence"])[:10]:

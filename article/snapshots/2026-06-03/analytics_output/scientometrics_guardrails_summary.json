@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0.0",
+  "guardrail_count": 8,
+  "claim_registry_rows": 10,
+  "coverage_sources": 9,
+  "negative_evidence_rows": 278,
+  "conference_role_rows": 9,
+  "event_ecology_rows": 8,
+  "network_robustness_rows": 8,
+  "inter_rater_rows": 6,
+  "fair_audit_rows": 10,
+  "fair_non_pass_rows": 0,
+  "coverage_review_sources": 9,
+  "outputs": [
+    "analytics_output/scientometrics_claim_registry.csv",
+    "analytics_output/coverage_bias_audit.csv",
+    "analytics_output/negative_evidence_log.csv",
+    "analytics_output/conference_role_taxonomy.csv",
+    "analytics_output/event_ecology_audit.csv",
+    "analytics_output/network_robustness_checks.csv",
+    "analytics_output/inter_rater_reliability_plan.csv",
+    "analytics_output/fair_reuse_maturity_audit.csv"
+  ]
+}
