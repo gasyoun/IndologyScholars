@@ -226,6 +226,7 @@ def main():
     counts = {"auto": 0, "needs_review": 0, "skip": 0}
     all_presentations = presentations
     seen_video_ids = {}  # video_id → (best_row, best_score)
+    best_threshold = 0.50  # new lower threshold with multi-signal
 
     for v in videos:
         video_title = normalize_time_interval(v.get("video_title", ""))
@@ -263,7 +264,6 @@ def main():
 
         # Pass 2: cross-year fallback
         used_year = primary_year
-        best_threshold = 0.50  # new lower threshold with multi-signal
         if score < best_threshold:
             xmatch, xscore = best_match(video_title, all_presentations, None)
             if xscore > score:

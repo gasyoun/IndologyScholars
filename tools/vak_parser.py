@@ -266,18 +266,26 @@ def main():
         for j in journals:
             w.writerow({k: j.get(k, "") for k in fields})
 
-    with open(ANALYTICS_OUT / "vak_journals_philology.csv", "w", encoding="utf-8-sig", newline="") as f:
-        w = csv.DictWriter(f, fieldnames=fields)
-        w.writeheader()
-        for j in phil_journals:
-            w.writerow({k: j.get(k, "") for k in fields})
-
     EDITORS_DIR.mkdir(parents=True, exist_ok=True)
+    profile_count = 0
+    indo_count = 0
     for j in phil_journals:
         slug = normalize_slug(j["title"])
         (EDITORS_DIR / f"{slug}.md").write_text(generate_editor_profile(j), encoding="utf-8")
+        profile_count += 1
+        if is_indology_relevant(j["title"], j["specialty"]):
+            indo_count += 1
 
-    print(f"\nOutputs: vak_journals.csv, vak_journals_philology.csv, editors/*.md ({len(phil_journals)} profiles)")
+    # Write Indology-specific CSV
+    with open(ANALYTICS_OUT / "vak_journals_indology.csv", "w", encoding="utf-8-sig", newline="") as f:
+        w = csv.DictWriter(f, fieldnames=fields)
+        w.writeheader()
+        for j in phil_journals:
+            if is_indology_relevant(j["title"], j["specialty"]):
+                w.writerow({k: j.get(k, "") for k in fields})
+
+    print(f"\nOutputs: vak_journals.csv ({len(journals)} journals), "
+          f"vak_journals_indology.csv ({indo_count} indology), editors/*.md ({profile_count} profiles)")
     print(f"\nPhilology journals:")
     for j in phil_journals:
         print(f"  {j['title'][:70]:70s}  ISSN: {j.get('issn', 'N/A')}")
