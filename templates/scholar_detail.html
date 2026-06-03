@@ -85,6 +85,21 @@ function closeCitationModal() {
         </div>
     </article>
     {% endif %}
+    {% if network_session_mate_count and network_session_mate_count > 0 %}
+    <article class="card">
+        <strong>Сетевая активность</strong>
+        <div class="meta" style="font-size:0.85rem;">
+            {% if network_coauthor_count %}🖋 {{ network_coauthor_count }} соавторов · {% endif %}
+            🧑‍🤝‍🧑 {{ network_session_mate_count }} соседей по секциям
+        </div>
+    </article>
+    {% endif %}
+    {% if show_thematic_badge %}
+    <article class="card" style="border-color:rgba(16,185,129,0.3);">
+        <strong>🌐 Междисциплинарный профиль</strong>
+        <div class="meta">Выступает в нескольких дисциплинарных областях</div>
+    </article>
+    {% endif %}
 </section>
 
 {% if genealogy_html %}

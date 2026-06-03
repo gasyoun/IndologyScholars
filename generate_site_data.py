@@ -779,6 +779,27 @@ def main():
             s["affiliation_city_only_talks"] > 0 and s["affiliation_coverage_pct"] < 100.0
         )
 
+    # Compute network metrics per scholar (co-authors, session co-presence, thematic breadth)
+    cursor.execute("""
+        SELECT pp.person_id,
+               COUNT(DISTINCT CASE WHEN pp2.role='coauthor' THEN pp2.person_id END) as coauthors,
+               COUNT(DISTINCT CASE WHEN pp2.role='speaker' AND pp2.person_id != pp.person_id THEN pp2.person_id END) as session_mates
+        FROM presentation_person pp
+        JOIN presentation pr ON pp.presentation_id = pr.presentation_id
+        LEFT JOIN presentation_person pp2 ON pp2.presentation_id = pp.presentation_id AND pp2.person_id != pp.person_id
+        WHERE pp.role = 'speaker'
+        GROUP BY pp.person_id
+    """)
+    network_stats = {row[0]: {"coauthors": row[1], "session_mates": row[2]} for row in cursor.fetchall()}
+
+    for s in scholars:
+        pid = s.get("id", "")
+        stats = network_stats.get(pid, {})
+        s["network_coauthor_count"] = stats.get("coauthors", 0)
+        s["network_session_mate_count"] = stats.get("session_mates", 0)
+        # Thematic breadth badge
+        s["show_thematic_badge"] = s.get("thematic_breadth") == "Interdisciplinary"
+
     slug_by_id = {s["id"]: s["url_slug"] for s in scholars}
 
     # 2. Fetch all timeline talks grouped by Year and Series

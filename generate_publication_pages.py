@@ -2258,6 +2258,97 @@ window.TOP_KW = {_json.dumps([kw for kw, _ in counts.most_common(60)], ensure_as
     )
 
 
+def generate_gender_page():
+    import json as _json, re as _re
+    with open("site_data.json", encoding="utf-8") as f:
+        text = f.read().strip()
+        text = _re.sub(r'^const CONFERENCE_DATA = ', '', text)
+        text = _re.sub(r';$', '', text)
+        scholars = _json.loads(text).get("scholars", [])
+    women_all = sum(1 for s in scholars if s.get("gender") == "F")
+    men_all = sum(1 for s in scholars if s.get("gender") == "M")
+    known = women_all + men_all or 1
+
+    year_gender = defaultdict(lambda: {"F": 0, "M": 0})
+    for s in scholars:
+        g = s.get("gender")
+        if g not in ("F", "M"):
+            continue
+        for t in s.get("talks", []):
+            y = t.get("year")
+            if y:
+                year_gender[y][g] += 1
+
+    years_rows = []
+    for y in sorted(year_gender):
+        w = year_gender[y]["F"]
+        m = year_gender[y]["M"]
+        t = max(w + m, 1)
+        years_rows.append((y, w, m, t, round(100 * w / t, 1)))
+
+    top_women = sorted(
+        [s for s in scholars if s.get("gender") == "F" and int(s.get("total_talks") or 0) > 0],
+        key=lambda s: -int(s.get("total_talks") or 0),
+    )[:12]
+    women_chips = "".join(
+        f'<a class="chip" href="../s/{esc(s.get("url_slug",""))}.html">{esc(s.get("full_name_ru") or s.get("name",""))} ({s.get("total_talks",0)})</a>'
+        for s in top_women
+    )
+
+    theme_labels = {
+        "history_and_culture": "История, этнография",
+        "religion_and_philosophy": "Религия, философия",
+        "literature_and_poetry": "Литература, поэзия",
+        "linguistics_and_philology": "Лингвистика, филология",
+        "art_and_material_culture": "Искусство и мат. культура",
+    }
+    l1_gender = defaultdict(lambda: {"F": 0, "M": 0})
+    for s in scholars:
+        g = s.get("gender")
+        if g not in ("F", "M"):
+            continue
+        l1_gender[s.get("dominant_theme") or "unspecified"][g] += 1
+
+    l1_rows = "".join(
+        f'<tr><td>{esc(theme_labels.get(code, code))}</td><td>{v["F"]+v["M"]}</td><td>{v["F"]}</td><td>{v["M"]}</td><td>{round(100*v["F"]/(v["F"]+v["M"]),1)}%</td></tr>'
+        for code, v in sorted(l1_gender.items(), key=lambda kv: -sum(kv[1].values()))
+        if code in theme_labels and v["F"] + v["M"] > 0
+    )
+
+    ratio_str = f"1:{men_all/women_all:.1f}" if women_all else "&#8212;"
+
+    body = f'''<header>
+<h1>Гендерный баланс</h1>
+<p>Анализ гендерного состава участников Зографских и Рериховских чтений (2004&ndash;2026) по данным опубликованных программ.</p>
+</header>
+<section class="grid">
+<article class="card"><strong>Женщин</strong><div class="metric">{women_all}</div></article>
+<article class="card"><strong>Мужчин</strong><div class="metric">{men_all}</div></article>
+<article class="card"><strong>Соотношение Ж:М</strong><div class="metric">{ratio_str}</div><div class="meta">{round(100*women_all/known)}% женщин из {known} с известным полом</div></article>
+<article class="card"><strong>Докладов на учёного</strong><div class="metric">{round(sum(int(s.get("total_talks") or 0) for s in scholars if s.get("gender")=="F")/women_all,1) if women_all else 0} / {round(sum(int(s.get("total_talks") or 0) for s in scholars if s.get("gender")=="M")/men_all,1) if men_all else 0}</div><div class="meta">Ж / М среднее</div></article>
+</section>
+<h2>Распределение по дисциплинам</h2>
+<div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:0.9rem;">
+<thead><tr><th style="text-align:left">Дисциплина</th><th>Всего</th><th>Ж</th><th>М</th><th>% Ж</th></tr></thead>
+<tbody>{l1_rows}</tbody>
+</table></div>
+<h2>Топ женщин-исследователей</h2>
+<div class="chip-row">{women_chips}</div>
+<p style="margin-top:1.5rem;color:var(--muted);">Всего учёных с задокументированным полом: {known} (Ж: {women_all}, М: {men_all}). Данные основаны на конференционных программах и могут не отражать полный гендерный баланс дисциплины.</p>'''
+
+    write_text(
+        "findings/gender.html",
+        page_shell(
+            f"Гендерный баланс | {SITE_NAME}",
+            f"Гендерный анализ: {women_all} женщин, {men_all} мужчин, соотношение {ratio_str}.",
+            "findings/gender.html",
+            body,
+            [page_data("Гендерный баланс", "Анализ гендерного состава участников индологических конференций.", "findings/gender.html", page_type="Article"),
+             make_breadcrumbs([("Главная", ""), ("Гендерный баланс", "findings/gender.html")])],
+        ),
+    )
+
+
 def generate_voting_page(records):
     records_by_id = presentation_records_by_id(records)
     talks = []
@@ -15122,6 +15213,7 @@ def main():
     generate_search(data, records)
     generate_keyword_stats_page(records)
     generate_keyword_visualisations_page(records)
+    generate_gender_page()
     generate_voting_page(records)
     generate_known_relationships_page(data)
     authority_stats = generate_authority_coverage(data, authority)
