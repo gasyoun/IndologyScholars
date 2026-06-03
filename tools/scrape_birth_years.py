@@ -285,9 +285,9 @@ def run(dry_run: bool = False, limit: int | None = None):
     OUT_FOUND.parent.mkdir(parents=True, exist_ok=True)
 
     if found:
+        found_fields = ["person_id", "full_name", "talks", "best_affiliation", "birth_year", "source_url"]
         with open(OUT_FOUND, "w", encoding="utf-8-sig", newline="") as f:
-            w = csv.DictWriter(f, fieldnames=["person_id", "full_name", "talks",
-                                               "best_affiliation", "birth_year", "source_url"])
+            w = csv.DictWriter(f, fieldnames=found_fields, extrasaction='ignore')
             w.writeheader()
             w.writerows(found)
         print(f"\n{'='*60}")
