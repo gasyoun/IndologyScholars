@@ -1796,7 +1796,7 @@ def generate_keyword_stats_page(records):
     for talk in records_by_id.values():
         pid = clean_text(talk.get("presentation_id") or "")
         series_key = talk.get("series_key") or talk.get("series") or ""
-        l1 = talk.get("l1") or talk.get("theme") or ""
+        l1_code = (talk.get("theme") or {}).get("code", "")
         seen_public = set()
         seen_audit = set()
         for raw_tag in talk.get("tags") or []:
@@ -1814,8 +1814,8 @@ def generate_keyword_stats_page(records):
                 counts[tag] += 1
                 series_counts[tag][series_key] += 1
                 talks_with_public_keywords.add(pid)
-                if l1:
-                    l1_counts[tag][l1] += 1
+                if l1_code:
+                    l1_counts[tag][l1_code] += 1
                 if len(examples[tag]) < 4:
                     examples[tag].append(pid)
 
@@ -2073,7 +2073,7 @@ def generate_keyword_visualisations_page(records):
     for talk in records_by_id.values():
         year = talk.get("year") or 0
         series_key = talk.get("series_key") or talk.get("series") or ""
-        l1 = talk.get("l1") or talk.get("theme") or ""
+        l1_code = (talk.get("theme") or {}).get("code", "")
         seen = set()
         for raw_tag in talk.get("tags") or []:
             tag, keep, reason = keyword_filter_decision(raw_tag)
@@ -2083,8 +2083,8 @@ def generate_keyword_visualisations_page(records):
             counts[tag] += 1
             keyword_timeline[tag][year] += 1
             keyword_series[tag][series_key] += 1
-            if l1:
-                l1_counts[tag][l1] += 1
+            if l1_code:
+                l1_counts[tag][l1_code] += 1
             if len(examples[tag]) < 3:
                 examples[tag].append(talk.get("title") or "")
 
