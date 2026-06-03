@@ -6,7 +6,7 @@
     "pipeline_version": "2026-05-25",
     "generator": "generate_publication_pages.py"
   },
-  "file_count": 3992,
+  "file_count": 3995,
   "files": [
     {
       "path": "404.html",
@@ -254,6 +254,11 @@
       "sha256": "74210848a6c03123953ef198bb15d36bef16e182b1516f248245f035f45edc44"
     },
     {
+      "path": "analytics_output/interrater_sample.csv",
+      "size_bytes": 18842,
+      "sha256": "357569641812d3e01e52e4b2183e6296204a3fa4f5a0ef0b07b57f77d9c0c4c5"
+    },
+    {
       "path": "analytics_output/journal_requirements.csv",
       "size_bytes": 699,
       "sha256": "e9d223f11b4399d0ec5462cf3603dcab55e80f303230b2af9946fa63f4f64ecd"
@@ -347,6 +352,11 @@
       "path": "analytics_output/presentation_tags.csv",
       "size_bytes": 160670,
       "sha256": "ac108e729470051b33efd673fc9fc418eae793a078f1f4869542f0a8ca0f9f21"
+    },
+    {
+      "path": "analytics_output/publication_conversion.csv",
+      "size_bytes": 86,
+      "sha256": "9fbb22ca0641d937a94b1f7c78edb0fc748de4eb8acaaecd2118a544c7cf4e57"
     },
     {
       "path": "analytics_output/rinc_lookup_queue.csv",
@@ -487,6 +497,11 @@
       "path": "assets/apple-touch-icon.png",
       "size_bytes": 503,
       "sha256": "739dc722180ae02ca6190d21e2c509707ea167fb7af4a69edc0433a7244380f1"
+    },
+    {
+      "path": "assets/data/geography.json",
+      "size_bytes": 4215,
+      "sha256": "0dd3f2b44a40e2f76c6fcb9d1ec099391c70410fbfab490331ae34d279b71085"
     },
     {
       "path": "assets/data/hypotheses.json",
@@ -9255,13 +9270,13 @@
     },
     {
       "path": "docs/development-en.md",
-      "size_bytes": 10924,
-      "sha256": "579d82658ba79557d6b7cc7497f39fd4601d23e25a1f4c1d635488e4efb2e1ac"
+      "size_bytes": 11139,
+      "sha256": "d8a1c73f7ef03b0ff08df8150a58dc1d57a013dac11601a18b8a5ea2e65a5a8c"
     },
     {
       "path": "docs/development.md",
-      "size_bytes": 16520,
-      "sha256": "07e783060338c3a3f761d94ec6b467ca1ed205f9efe1242bc26c04f5b467fa40"
+      "size_bytes": 16804,
+      "sha256": "f758b9a3876bcb5a0ab4499d39edc39b879af9b64e1cf88bf594e4b44e55c35e"
     },
     {
       "path": "docs/how-to-vote-2026.md",
@@ -9336,7 +9351,7 @@
     {
       "path": "download-data.html",
       "size_bytes": 29027,
-      "sha256": "6110d9b74fdc9391819c38691635f9aa2c8e430a579e88f0865199f9500ce78e"
+      "sha256": "f0b8906f6acf2f23bf1a3375ca8e2eb41fac645dd5c9237adf64956528b3f019"
     },
     {
       "path": "en.html",
@@ -9345,23 +9360,23 @@
     },
     {
       "path": "findings/gender.html",
-      "size_bytes": 9687,
-      "sha256": "98a156018fda0011e1e248692841484855f8e8c1273dcf98c9cae37ab1ad3ccc"
+      "size_bytes": 9686,
+      "sha256": "326558a78e6bda5acb9c9173d3649343211b091a8e404cc9d7c0caa725b785e6"
     },
     {
       "path": "findings/index.html",
       "size_bytes": 122288,
-      "sha256": "5fb7a90e86d8907e477c6104fef3bcc8e05205f1972212a0d9c1930c8d61745f"
+      "sha256": "562e681704f35db79e7fc661687c1b8496c4636fb24798f913e54a205f628c73"
     },
     {
       "path": "findings/mobility.html",
-      "size_bytes": 2334,
-      "sha256": "7020967106564b01e5103071ebd3718b492a4bb5cbcca2086363bee0cefb44ec"
+      "size_bytes": 8197,
+      "sha256": "9c457317b5c848dda646dff60888b1482519d494874ac11633e9569165cca39c"
     },
     {
       "path": "findings/visualisations.html",
       "size_bytes": 474777,
-      "sha256": "d5f14bfc173ceee1e737074e5fd4cb42d61c92a54f27f68c041ba00fff711aa3"
+      "sha256": "e1bdf67e396ce6064fe32b61f84e131615d938c8f5359890135f596ba11d51b9"
     },
     {
       "path": "gatekeeping-en.html",
@@ -9416,7 +9431,7 @@
     {
       "path": "index.html",
       "size_bytes": 40192,
-      "sha256": "e4b04091a7411d1b47270e37aff79e3b9819a2bdb8731d0c09d7af83e3d9f523"
+      "sha256": "856f8d596ca96f1db34c6152f38e8ff0e73ba27668067a8b7a4f544c20468204"
     },
     {
       "path": "institutions/if-ran.html",
@@ -18965,8 +18980,8 @@
     },
     {
       "path": "s/marcis-gasuns.html",
-      "size_bytes": 40816,
-      "sha256": "329b35de52bff60ab6b5a8e8fdb6375ca4cd8db7ee80ab80315b64b838e59721"
+      "size_bytes": 41608,
+      "sha256": "13abffaa9b46e8337399849a4be896907fbea988e9b0de9365f3386820657bbb"
     },
     {
       "path": "s/maretina-kseniya.html",
@@ -19830,8 +19845,8 @@
     },
     {
       "path": "site_data.json",
-      "size_bytes": 4611131,
-      "sha256": "48fcdfc32bf642bf73dd6de9ea2e2359a8633fd07b5fa5e017b0905cd10bb62d"
+      "size_bytes": 4611148,
+      "sha256": "bc290a27195130238d9394772cb59696882ccaf084ebed71421f297ed41a0a3e"
     },
     {
       "path": "sitemap.xml",
