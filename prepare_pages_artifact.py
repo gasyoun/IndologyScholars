@@ -44,6 +44,7 @@ PUBLIC_PATHS = [
     "voting.html",
     "indology_scholars_analytics.md",
     "missing_birth_years.md",
+    "missing_birth_years.html",
 ]
 
 PUBLIC_DIRS = [
