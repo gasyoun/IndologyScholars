@@ -119,7 +119,6 @@
         </header>
         <label class="field-label" for="q">Поисковый запрос</label>
         <input class="search-box" id="q" type="search" placeholder="Имя, тема, город или организация" autofocus>
-        <div id="autocomplete" style="position:absolute;background:var(--panel);border:1px solid var(--border);border-radius:8px;max-height:200px;overflow-y:auto;display:none;z-index:100;width:calc(100% - 3rem);box-shadow:0 8px 32px rgba(0,0,0,0.5);"></div>
         <p class="meta" id="result-summary" aria-live="polite"></p>
         <section id="results" class="list" aria-label="Результаты поиска"></section>
         <script>
@@ -180,27 +179,6 @@
             history.replaceState(null, '', `${url.pathname}${url.search}${url.hash}`);
             render(input.value);
         });
-        // Autocomplete
-        const ac = document.getElementById('autocomplete');
-        input.addEventListener('input', function() {
-            const q = normalizeSearchText(this.value);
-            if (q.length < 2) { ac.style.display = 'none'; return; }
-            const matches = [];
-            const seen = new Set();
-            for (const d of docs) {
-                const t = normalizeSearchText(d.t || '');
-                const s = normalizeSearchText(d.s || '');
-                if (t.includes(q) || s.includes(q)) {
-                    const key = (d.s || '') + '|' + (d.l || '');
-                    if (!seen.has(key)) { seen.add(key); matches.push({label: d.l || d.t, type: d.c || '', slug: d.s || ''}); }
-                }
-                if (matches.length >= 8) break;
-            }
-            if (matches.length === 0) { ac.style.display = 'none'; return; }
-            ac.innerHTML = matches.map(m => '<div style="padding:0.5rem 0.75rem;cursor:pointer;border-bottom:1px solid var(--border);font-size:0.85rem;" onmousedown="event.preventDefault();document.getElementById(\'q\').value=\'' + m.label.replace(/'/g, "\\'") + '\';document.getElementById(\'autocomplete\').style.display=\'none\';render(\'' + m.label.replace(/'/g, "\\'") + '\')"><span style="color:var(--accent)">' + m.label + '</span> <span style="color:var(--muted);font-size:0.75rem;">' + (typeLabels[m.type] || m.type) + '</span></div>').join('');
-            ac.style.display = 'block';
-        });
-        document.addEventListener('click', function(e) { if (!ac.contains(e.target) && e.target !== input) ac.style.display = 'none'; });
         </script>
 
         <div class="footer">© 2026 Russian Indological Research Archive. Сгенерировано из нормализованного архива конференций.</div>
