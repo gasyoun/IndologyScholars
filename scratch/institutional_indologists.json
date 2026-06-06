@@ -1,0 +1,702 @@
+{
+  "description": "Indologists by institution (from Wikidata + Conference DB)",
+  "total": 87,
+  "people": [
+    {
+      "full_name": "Бабин Александр Николаевич",
+      "institution": "ВШЭ",
+      "source": "conference_db",
+      "total_talks": 13,
+      "zograf_talks": 7,
+      "roerich_talks": 6
+    },
+    {
+      "full_name": "Воробьева Дарья Николаевна",
+      "institution": "ВШЭ",
+      "source": "conference_db",
+      "total_talks": 14,
+      "zograf_talks": 5,
+      "roerich_talks": 9
+    },
+    {
+      "full_name": "Галимова Эльмира Валитовна",
+      "institution": "ВШЭ",
+      "source": "conference_db",
+      "total_talks": 1,
+      "zograf_talks": 0,
+      "roerich_talks": 1
+    },
+    {
+      "full_name": "Канаева Наталия Алексеевна",
+      "institution": "ВШЭ",
+      "source": "conference_db",
+      "total_talks": 6,
+      "zograf_talks": 3,
+      "roerich_talks": 3
+    },
+    {
+      "full_name": "Комиссаров Дмитрий Алексеевич",
+      "institution": "ВШЭ",
+      "source": "conference_db",
+      "total_talks": 10,
+      "zograf_talks": 9,
+      "roerich_talks": 1
+    },
+    {
+      "full_name": "Куликов Леонид Игоревич",
+      "institution": "ВШЭ",
+      "source": "conference_db",
+      "total_talks": 8,
+      "zograf_talks": 5,
+      "roerich_talks": 3
+    },
+    {
+      "full_name": "Лундышева Ольга Владимировна",
+      "institution": "ВШЭ",
+      "source": "conference_db",
+      "total_talks": 1,
+      "zograf_talks": 0,
+      "roerich_talks": 1
+    },
+    {
+      "full_name": "Минаева Маргарита Денисовна",
+      "institution": "ВШЭ",
+      "source": "conference_db",
+      "total_talks": 3,
+      "zograf_talks": 1,
+      "roerich_talks": 2
+    },
+    {
+      "full_name": "Молина Анна Валерьевна",
+      "institution": "ВШЭ",
+      "source": "conference_db",
+      "total_talks": 4,
+      "zograf_talks": 2,
+      "roerich_talks": 2
+    },
+    {
+      "full_name": "Цендина Анна Дамдиновна",
+      "institution": "ВШЭ",
+      "source": "conference_db",
+      "total_talks": 1,
+      "zograf_talks": 0,
+      "roerich_talks": 1
+    },
+    {
+      "full_name": "Чернавин Георгий Игоревич",
+      "institution": "ВШЭ",
+      "source": "conference_db",
+      "total_talks": 1,
+      "zograf_talks": 0,
+      "roerich_talks": 1
+    },
+    {
+      "full_name": "А. В. Осокин",
+      "institution": "ИВ РАН",
+      "source": "conference_db",
+      "total_talks": 1,
+      "zograf_talks": 0,
+      "roerich_talks": 1
+    },
+    {
+      "full_name": "Александрова Наталия Владимировна",
+      "institution": "ИВ РАН",
+      "source": "conference_db",
+      "total_talks": 27,
+      "zograf_talks": 12,
+      "roerich_talks": 15
+    },
+    {
+      "full_name": "Атманова Юлия Георгиевна",
+      "institution": "ИВ РАН",
+      "source": "conference_db",
+      "total_talks": 6,
+      "zograf_talks": 0,
+      "roerich_talks": 6
+    },
+    {
+      "full_name": "Вертоградова Виктория Викторовна",
+      "institution": "ИВ РАН",
+      "source": "conference_db",
+      "total_talks": 17,
+      "zograf_talks": 1,
+      "roerich_talks": 16
+    },
+    {
+      "full_name": "Вырщиков Евгений Геннадьевич",
+      "institution": "ИВ РАН",
+      "source": "conference_db",
+      "total_talks": 16,
+      "zograf_talks": 0,
+      "roerich_talks": 16
+    },
+    {
+      "full_name": "Гордийчук Николай Валентинович",
+      "institution": "ИВ РАН",
+      "source": "conference_db",
+      "total_talks": 10,
+      "zograf_talks": 5,
+      "roerich_talks": 5
+    },
+    {
+      "full_name": "Дробышев Юлий Игорьевич",
+      "institution": "ИВ РАН",
+      "source": "conference_db",
+      "total_talks": 15,
+      "zograf_talks": 0,
+      "roerich_talks": 15
+    },
+    {
+      "full_name": "Ермакова Татьяна Викторовна",
+      "institution": "ИВ РАН",
+      "source": "conference_db",
+      "total_talks": 15,
+      "zograf_talks": 15,
+      "roerich_talks": 0
+    },
+    {
+      "full_name": "Железнова Наталья Анатольевна",
+      "institution": "ИВ РАН",
+      "source": "conference_db",
+      "total_talks": 4,
+      "zograf_talks": 0,
+      "roerich_talks": 4
+    },
+    {
+      "full_name": "Жутаев Дар Игоревич",
+      "institution": "ИВ РАН",
+      "source": "conference_db",
+      "total_talks": 15,
+      "zograf_talks": 3,
+      "roerich_talks": 12
+    },
+    {
+      "full_name": "Игнатова Мария Михайловна",
+      "institution": "ИВ РАН",
+      "source": "conference_db",
+      "total_talks": 1,
+      "zograf_talks": 0,
+      "roerich_talks": 1
+    },
+    {
+      "full_name": "Иткин Илья Борисович",
+      "institution": "ИВ РАН",
+      "source": "conference_db",
+      "total_talks": 1,
+      "zograf_talks": 0,
+      "roerich_talks": 1
+    },
+    {
+      "full_name": "Карышева Ирина Александровна",
+      "institution": "ИВ РАН",
+      "source": "conference_db",
+      "total_talks": 1,
+      "zograf_talks": 0,
+      "roerich_talks": 1
+    },
+    {
+      "full_name": "Китинов Баатр Учаевич",
+      "institution": "ИВ РАН",
+      "source": "conference_db",
+      "total_talks": 10,
+      "zograf_talks": 0,
+      "roerich_talks": 10
+    },
+    {
+      "full_name": "Коган Антон Ильич",
+      "institution": "ИВ РАН",
+      "source": "conference_db",
+      "total_talks": 4,
+      "zograf_talks": 0,
+      "roerich_talks": 4
+    },
+    {
+      "full_name": "Комаров Эрик Наумович",
+      "institution": "ИВ РАН",
+      "source": "conference_db",
+      "total_talks": 2,
+      "zograf_talks": 0,
+      "roerich_talks": 2
+    },
+    {
+      "full_name": "Кораблин Денис Александрович",
+      "institution": "ИВ РАН",
+      "source": "conference_db",
+      "total_talks": 4,
+      "zograf_talks": 0,
+      "roerich_talks": 4
+    },
+    {
+      "full_name": "Крылова Анастасия Сергеевна",
+      "institution": "ИВ РАН",
+      "source": "conference_db",
+      "total_talks": 11,
+      "zograf_talks": 8,
+      "roerich_talks": 3
+    },
+    {
+      "full_name": "Кулланда Сергей Всеволодович",
+      "institution": "ИВ РАН",
+      "source": "conference_db",
+      "total_talks": 5,
+      "zograf_talks": 1,
+      "roerich_talks": 4
+    },
+    {
+      "full_name": "Лелюхин Дмитрий Николаевич",
+      "institution": "ИВ РАН",
+      "source": "conference_db",
+      "total_talks": 11,
+      "zograf_talks": 6,
+      "roerich_talks": 5
+    },
+    {
+      "full_name": "Лепехова Елена Сергеевна",
+      "institution": "ИВ РАН",
+      "source": "conference_db",
+      "total_talks": 8,
+      "zograf_talks": 0,
+      "roerich_talks": 8
+    },
+    {
+      "full_name": "Лучина Татьяна Владимировна",
+      "institution": "ИВ РАН",
+      "source": "conference_db",
+      "total_talks": 2,
+      "zograf_talks": 0,
+      "roerich_talks": 2
+    },
+    {
+      "full_name": "Люлина Анастасия Геннадьевна",
+      "institution": "ИВ РАН",
+      "source": "conference_db",
+      "total_talks": 9,
+      "zograf_talks": 0,
+      "roerich_talks": 9
+    },
+    {
+      "full_name": "М. А. Овчинникова",
+      "institution": "ИВ РАН",
+      "source": "conference_db",
+      "total_talks": 1,
+      "zograf_talks": 0,
+      "roerich_talks": 1
+    },
+    {
+      "full_name": "Мейтарчиян Маргарита Борисовна",
+      "institution": "ИВ РАН",
+      "source": "conference_db",
+      "total_talks": 2,
+      "zograf_talks": 0,
+      "roerich_talks": 2
+    },
+    {
+      "full_name": "Мехакян Арег Гайкович",
+      "institution": "ИВ РАН",
+      "source": "conference_db",
+      "total_talks": 20,
+      "zograf_talks": 5,
+      "roerich_talks": 15
+    },
+    {
+      "full_name": "Мрачковская Арина Витальевна",
+      "institution": "ИВ РАН",
+      "source": "conference_db",
+      "total_talks": 1,
+      "zograf_talks": 0,
+      "roerich_talks": 1
+    },
+    {
+      "full_name": "Немчинов Виктор Михайлович",
+      "institution": "ИВ РАН",
+      "source": "conference_db",
+      "total_talks": 2,
+      "zograf_talks": 0,
+      "roerich_talks": 2
+    },
+    {
+      "full_name": "Новосёлова Евгения Олеговна",
+      "institution": "ИВ РАН",
+      "source": "conference_db",
+      "total_talks": 1,
+      "zograf_talks": 0,
+      "roerich_talks": 1
+    },
+    {
+      "full_name": "Огнева Елена Дмитриевна",
+      "institution": "ИВ РАН",
+      "source": "conference_db",
+      "total_talks": 13,
+      "zograf_talks": 1,
+      "roerich_talks": 12
+    },
+    {
+      "full_name": "Островская Елена Петровна",
+      "institution": "ИВ РАН",
+      "source": "conference_db",
+      "total_talks": 16,
+      "zograf_talks": 16,
+      "roerich_talks": 0
+    },
+    {
+      "full_name": "Офертас Станислав Чеславович",
+      "institution": "ИВ РАН",
+      "source": "conference_db",
+      "total_talks": 14,
+      "zograf_talks": 0,
+      "roerich_talks": 14
+    },
+    {
+      "full_name": "Ренковская Евгения Алексеевна",
+      "institution": "ИВ РАН",
+      "source": "conference_db",
+      "total_talks": 8,
+      "zograf_talks": 6,
+      "roerich_talks": 2
+    },
+    {
+      "full_name": "Смирнитская Анна Александровна",
+      "institution": "ИВ РАН",
+      "source": "conference_db",
+      "total_talks": 9,
+      "zograf_talks": 7,
+      "roerich_talks": 2
+    },
+    {
+      "full_name": "Стрелков Андрей Михайлович",
+      "institution": "ИВ РАН",
+      "source": "conference_db",
+      "total_talks": 1,
+      "zograf_talks": 1,
+      "roerich_talks": 0
+    },
+    {
+      "full_name": "Тишин Владимир Владимирович",
+      "institution": "ИВ РАН",
+      "source": "conference_db",
+      "total_talks": 3,
+      "zograf_talks": 0,
+      "roerich_talks": 3
+    },
+    {
+      "full_name": "Тюлина Елена Владимировна",
+      "institution": "ИВ РАН",
+      "source": "conference_db",
+      "total_talks": 16,
+      "zograf_talks": 0,
+      "roerich_talks": 16
+    },
+    {
+      "full_name": "Шарыгин Глеб Витальевич",
+      "institution": "ИВ РАН",
+      "source": "conference_db",
+      "total_talks": 3,
+      "zograf_talks": 0,
+      "roerich_talks": 3
+    },
+    {
+      "full_name": "Шрестха Кришна Пракаш",
+      "institution": "ИВ РАН",
+      "source": "conference_db",
+      "total_talks": 12,
+      "zograf_talks": 0,
+      "roerich_talks": 12
+    },
+    {
+      "full_name": "Шустова Алла Михайловна",
+      "institution": "ИВ РАН",
+      "source": "conference_db",
+      "total_talks": 15,
+      "zograf_talks": 0,
+      "roerich_talks": 15
+    },
+    {
+      "full_name": "Юдицкая Екатерина Алексеевна",
+      "institution": "ИВ РАН",
+      "source": "conference_db",
+      "total_talks": 12,
+      "zograf_talks": 3,
+      "roerich_talks": 9
+    },
+    {
+      "full_name": "Крапивина Раиса Николаевна",
+      "institution": "ИВР РАН",
+      "source": "conference_db",
+      "total_talks": 7,
+      "zograf_talks": 5,
+      "roerich_talks": 2
+    },
+    {
+      "full_name": "Попова Ирина Фёдоровна",
+      "institution": "ИВР РАН",
+      "source": "conference_db",
+      "total_talks": 11,
+      "zograf_talks": 11,
+      "roerich_talks": 0
+    },
+    {
+      "full_name": "Алиханова Юлия Марковна",
+      "institution": "ИСАА МГУ",
+      "source": "conference_db",
+      "total_talks": 15,
+      "zograf_talks": 7,
+      "roerich_talks": 8
+    },
+    {
+      "full_name": "Вигасин Алексей Алексеевич",
+      "institution": "ИСАА МГУ",
+      "source": "conference_db",
+      "total_talks": 7,
+      "zograf_talks": 3,
+      "roerich_talks": 4
+    },
+    {
+      "full_name": "Гурия Анастасия Георгиевна",
+      "institution": "ИСАА МГУ",
+      "source": "conference_db",
+      "total_talks": 10,
+      "zograf_talks": 1,
+      "roerich_talks": 9
+    },
+    {
+      "full_name": "Дубянский Александр Михайлович",
+      "institution": "ИСАА МГУ",
+      "source": "conference_db",
+      "total_talks": 21,
+      "zograf_talks": 10,
+      "roerich_talks": 11
+    },
+    {
+      "full_name": "Никольская Ксения Дмитриевна",
+      "institution": "ИСАА МГУ",
+      "source": "conference_db",
+      "total_talks": 1,
+      "zograf_talks": 0,
+      "roerich_talks": 1
+    },
+    {
+      "full_name": "Уланский Евгений Андреевич",
+      "institution": "ИСАА МГУ",
+      "source": "conference_db",
+      "total_talks": 7,
+      "zograf_talks": 4,
+      "roerich_talks": 3
+    },
+    {
+      "full_name": "Фивейская Анастасия Васильевна",
+      "institution": "ИСАА МГУ",
+      "source": "conference_db",
+      "total_talks": 3,
+      "zograf_talks": 2,
+      "roerich_talks": 1
+    },
+    {
+      "full_name": "Хазизова Ксения Владимировна",
+      "institution": "ИСАА МГУ",
+      "source": "conference_db",
+      "total_talks": 1,
+      "zograf_talks": 0,
+      "roerich_talks": 1
+    },
+    {
+      "full_name": "Комарова Ирина Нигматовна",
+      "institution": "Институт языкознания РАН",
+      "source": "conference_db",
+      "total_talks": 5,
+      "zograf_talks": 0,
+      "roerich_talks": 5
+    },
+    {
+      "full_name": "Васильков Ярослав Владимирович",
+      "institution": "МАЭ РАН",
+      "source": "conference_db",
+      "total_talks": 20,
+      "zograf_talks": 19,
+      "roerich_talks": 1
+    },
+    {
+      "full_name": "Успенская Елена Николаевна",
+      "institution": "МАЭ РАН",
+      "source": "conference_db",
+      "total_talks": 3,
+      "zograf_talks": 3,
+      "roerich_talks": 0
+    },
+    {
+      "full_name": "Алешина Ирина Евгеньевна",
+      "institution": "МГУ",
+      "source": "conference_db",
+      "total_talks": 1,
+      "zograf_talks": 0,
+      "roerich_talks": 1
+    },
+    {
+      "full_name": "Атманова Юлия Георгиевна",
+      "institution": "МГУ",
+      "source": "conference_db",
+      "total_talks": 6,
+      "zograf_talks": 0,
+      "roerich_talks": 6
+    },
+    {
+      "full_name": "Борисов Яков Александрович",
+      "institution": "МГУ",
+      "source": "conference_db",
+      "total_talks": 1,
+      "zograf_talks": 0,
+      "roerich_talks": 1
+    },
+    {
+      "full_name": "Васильев Алексей Константинович",
+      "institution": "МГУ",
+      "source": "conference_db",
+      "total_talks": 4,
+      "zograf_talks": 0,
+      "roerich_talks": 4
+    },
+    {
+      "full_name": "Ложкина Анастасия Витальевна",
+      "institution": "МГУ",
+      "source": "conference_db",
+      "total_talks": 9,
+      "zograf_talks": 3,
+      "roerich_talks": 6
+    },
+    {
+      "full_name": "Пахомова Александра Михайловна",
+      "institution": "МГУ",
+      "source": "conference_db",
+      "total_talks": 2,
+      "zograf_talks": 0,
+      "roerich_talks": 2
+    },
+    {
+      "full_name": "Ч. Санчай",
+      "institution": "МГУ",
+      "source": "conference_db",
+      "total_talks": 1,
+      "zograf_talks": 0,
+      "roerich_talks": 1
+    },
+    {
+      "full_name": "Шапошникова Дарья Сергеевна",
+      "institution": "МГУ",
+      "source": "conference_db",
+      "total_talks": 1,
+      "zograf_talks": 0,
+      "roerich_talks": 1
+    },
+    {
+      "full_name": "Юдицкая Екатерина Алексеевна",
+      "institution": "МГУ",
+      "source": "conference_db",
+      "total_talks": 12,
+      "zograf_talks": 3,
+      "roerich_talks": 9
+    },
+    {
+      "full_name": "Александрова Наталия Владимировна",
+      "institution": "РГГУ",
+      "source": "conference_db",
+      "total_talks": 27,
+      "zograf_talks": 12,
+      "roerich_talks": 15
+    },
+    {
+      "full_name": "Гордийчук Николай Валентинович",
+      "institution": "РГГУ",
+      "source": "conference_db",
+      "total_talks": 10,
+      "zograf_talks": 5,
+      "roerich_talks": 5
+    },
+    {
+      "full_name": "Гуров Никита Владимирович",
+      "institution": "СПбГУ",
+      "source": "conference_db",
+      "total_talks": 5,
+      "zograf_talks": 5,
+      "roerich_talks": 0
+    },
+    {
+      "full_name": "Десницкая Евгения Алексеевна",
+      "institution": "СПбГУ",
+      "source": "conference_db",
+      "total_talks": 16,
+      "zograf_talks": 16,
+      "roerich_talks": 0
+    },
+    {
+      "full_name": "Елихина Юлия Игоревна",
+      "institution": "СПбГУ",
+      "source": "conference_db",
+      "total_talks": 4,
+      "zograf_talks": 0,
+      "roerich_talks": 4
+    },
+    {
+      "full_name": "Костина Екатерина Александровна",
+      "institution": "СПбГУ",
+      "source": "conference_db",
+      "total_talks": 7,
+      "zograf_talks": 7,
+      "roerich_talks": 0
+    },
+    {
+      "full_name": "Парибок Андрей Всеволодович",
+      "institution": "СПбГУ",
+      "source": "conference_db",
+      "total_talks": 17,
+      "zograf_talks": 17,
+      "roerich_talks": 0
+    },
+    {
+      "full_name": "Пахомов Сергей Владимирович",
+      "institution": "СПбГУ",
+      "source": "conference_db",
+      "total_talks": 16,
+      "zograf_talks": 16,
+      "roerich_talks": 0
+    },
+    {
+      "full_name": "Селиванова Тамара Петровна",
+      "institution": "СПбГУ",
+      "source": "conference_db",
+      "total_talks": 1,
+      "zograf_talks": 0,
+      "roerich_talks": 1
+    },
+    {
+      "full_name": "Соболева Диана Владимировна",
+      "institution": "СПбГУ",
+      "source": "conference_db",
+      "total_talks": 3,
+      "zograf_talks": 3,
+      "roerich_talks": 0
+    },
+    {
+      "full_name": "Тавастшерна Сергей Сергеевич",
+      "institution": "СПбГУ",
+      "source": "conference_db",
+      "total_talks": 28,
+      "zograf_talks": 16,
+      "roerich_talks": 12
+    },
+    {
+      "full_name": "Цветкова Светлана Олеговна",
+      "institution": "СПбГУ",
+      "source": "conference_db",
+      "total_talks": 27,
+      "zograf_talks": 15,
+      "roerich_talks": 12
+    },
+    {
+      "full_name": "Челнокова Анна Витальевна",
+      "institution": "СПбГУ",
+      "source": "conference_db",
+      "total_talks": 10,
+      "zograf_talks": 10,
+      "roerich_talks": 0
+    }
+  ]
+}

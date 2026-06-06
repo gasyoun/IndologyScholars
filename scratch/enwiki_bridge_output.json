@@ -1,0 +1,131 @@
+{
+  "description": "Raw en.wikipedia bridge output (en_title → ru_title, qid)",
+  "source_categories": [
+    "Category:Russian Indologists",
+    "Category:Soviet orientalists",
+    "Category:Russian orientalists"
+  ],
+  "total": 24,
+  "candidates": [
+    {
+      "en_title": "Aleksei Barannikov (linguist)",
+      "ru_title": "Баранников, Алексей Петрович",
+      "qid": "Q4077715"
+    },
+    {
+      "en_title": "Alexander Mervart",
+      "ru_title": "Мерварт, Александр Михайлович",
+      "qid": "Q3523976"
+    },
+    {
+      "en_title": "Alexander Senkevich",
+      "ru_title": "Сенкевич, Александр Николаевич",
+      "qid": "Q4416180"
+    },
+    {
+      "en_title": "Alexander von Staël-Holstein",
+      "ru_title": "Сталь-фон-Гольштейн, Александр Августович",
+      "qid": "Q565707"
+    },
+    {
+      "en_title": "Andrey Vostrikov",
+      "ru_title": "Востриков, Андрей Иванович",
+      "qid": "Q502136"
+    },
+    {
+      "en_title": "Anna Suvorova",
+      "ru_title": "Суворова, Анна Ароновна",
+      "qid": "Q4445158"
+    },
+    {
+      "en_title": "David B. Zilberman",
+      "ru_title": "Зильберман, Давид Беньяминович",
+      "qid": "Q4191868"
+    },
+    {
+      "en_title": "Eugene Chelyshev",
+      "ru_title": "Челышев, Евгений Петрович",
+      "qid": "Q4508639"
+    },
+    {
+      "en_title": "Eugenia Vanina",
+      "ru_title": "Ванина, Евгения Юрьевна",
+      "qid": "Q4103377"
+    },
+    {
+      "en_title": "Fyodor Shcherbatskoy",
+      "ru_title": "Щербатской, Фёдор Ипполитович",
+      "qid": "Q1341741"
+    },
+    {
+      "en_title": "Grigoriy Lvovitch Bondarevsky",
+      "ru_title": "Бондаревский, Григорий Львович",
+      "qid": "Q4093157"
+    },
+    {
+      "en_title": "Grigory Bongard-Levin",
+      "ru_title": "Бонгард-Левин, Григорий Максимович",
+      "qid": "Q3116666"
+    },
+    {
+      "en_title": "Irina Glushkova",
+      "ru_title": "Глушкова, Ирина Петровна",
+      "qid": "Q253832"
+    },
+    {
+      "en_title": "Ivan Minayev",
+      "ru_title": "Минаев, Иван Павлович",
+      "qid": "Q171275"
+    },
+    {
+      "en_title": "Koka Antonova",
+      "ru_title": "Антонова, Кока Александровна",
+      "qid": "Q19933264"
+    },
+    {
+      "en_title": "Leonid Alaev",
+      "ru_title": "Алаев, Леонид Борисович",
+      "qid": "Q22918415"
+    },
+    {
+      "en_title": "Ludmila Vassilyeva",
+      "ru_title": "",
+      "qid": "Q6698913"
+    },
+    {
+      "en_title": "Natalya Romanovna Guseva",
+      "ru_title": "Гусева, Наталья Романовна",
+      "qid": "Q4152723"
+    },
+    {
+      "en_title": "Otto von Böhtlingk",
+      "ru_title": "Бётлингк, Оттон Николаевич",
+      "qid": "Q76423"
+    },
+    {
+      "en_title": "Petr Topychkanov",
+      "ru_title": "",
+      "qid": "Q30323496"
+    },
+    {
+      "en_title": "Rostislav Rybakov",
+      "ru_title": "Рыбаков, Ростислав Борисович",
+      "qid": "Q4401411"
+    },
+    {
+      "en_title": "Sergey Oldenburg",
+      "ru_title": "Ольденбург, Сергей Фёдорович",
+      "qid": "Q171848"
+    },
+    {
+      "en_title": "Tatyana Elizarenkova",
+      "ru_title": "Елизаренкова, Татьяна Яковлевна",
+      "qid": "Q46908"
+    },
+    {
+      "en_title": "Yurij Yakovlevitch Glazov",
+      "ru_title": "Глазов, Юрий Яковлевич",
+      "qid": "Q75186213"
+    }
+  ]
+}
