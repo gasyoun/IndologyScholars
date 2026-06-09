@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "total_open_review_items": 3270,
+  "total_open_review_items": 3399,
   "by_domain": {
     "affiliation_scope": 60,
     "authority_identity": 270,
@@ -13,7 +13,7 @@
     "event_ecology": 3,
     "inter_rater_reliability": 6,
     "network_robustness": 8,
-    "openalex_identity": 367,
+    "openalex_identity": 496,
     "person_disambiguation": 9,
     "rinc_identity": 226,
     "scholarly_lineage": 1,
@@ -39,7 +39,7 @@
     "analytics_output/inter_rater_reliability_plan.csv": 6,
     "analytics_output/lineage_candidates.csv": 1,
     "analytics_output/network_robustness_checks.csv": 8,
-    "analytics_output/openalex_author_candidates.csv": 367,
+    "analytics_output/openalex_author_candidates.csv": 496,
     "analytics_output/rinc_lookup_queue.csv": 226,
     "analytics_output/scientometrics_claim_registry.csv": 10,
     "analytics_output/scientometrics_guardrails.csv": 8,

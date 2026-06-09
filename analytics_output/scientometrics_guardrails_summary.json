@@ -3,7 +3,7 @@
   "guardrail_count": 8,
   "claim_registry_rows": 10,
   "coverage_sources": 9,
-  "negative_evidence_rows": 278,
+  "negative_evidence_rows": 352,
   "conference_role_rows": 9,
   "event_ecology_rows": 8,
   "network_robustness_rows": 8,

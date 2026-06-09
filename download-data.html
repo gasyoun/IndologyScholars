@@ -42,7 +42,7 @@
       "name": "Russian Indological Research Archive",
       "url": "https://gasyoun.github.io/IndologyScholars/"
     },
-    "dateModified": "2026-06-06"
+    "dateModified": "2026-06-09"
   },
   {
     "@context": "https://schema.org",
@@ -70,6 +70,12 @@
       },
       {
         "@type": "DataDownload",
+        "name": "RDF/Turtle knowledge graph",
+        "contentUrl": "https://gasyoun.github.io/IndologyScholars/indology_knowledge_graph.ttl",
+        "description": "Linked Open Data graph (schema.org + FOAF + OWL) with scholar profiles, presentations, affiliations, and Wikidata/ORCID/VIAF sameAs links."
+      },
+      {
+        "@type": "DataDownload",
         "name": "Static search index",
         "contentUrl": "https://gasyoun.github.io/IndologyScholars/search-index.json",
         "description": "Compact JSON index for generated scholar and presentation pages."
@@ -91,6 +97,24 @@
         "name": "Data dictionary",
         "contentUrl": "https://gasyoun.github.io/IndologyScholars/data_dictionary.md",
         "description": "Human-readable field guide for reusable CSV, JSON, SQLite, and generated publication outputs."
+      },
+      {
+        "@type": "DataDownload",
+        "name": "Example analysis notebook",
+        "contentUrl": "https://gasyoun.github.io/IndologyScholars/notebooks/example_analysis.py",
+        "description": "Python script demonstrating loading, descriptive statistics, gender trends, theme distribution, and null-model overlap test."
+      },
+      {
+        "@type": "DataDownload",
+        "name": "Geography & Wikidata mappings",
+        "contentUrl": "https://gasyoun.github.io/IndologyScholars/assets/data/geography.json",
+        "description": "City name aliases, coordinates, and Wikidata Q-ID mappings for cities and L1 themes."
+      },
+      {
+        "@type": "DataDownload",
+        "name": "Wikidata QuickStatements batch",
+        "contentUrl": "https://gasyoun.github.io/IndologyScholars/analytics_output/wikidata_batch.txt",
+        "description": "Pre-formatted batch for creating top-20 scholar Wikidata items via QuickStatements v2."
       },
       {
         "@type": "DataDownload",
@@ -348,6 +372,16 @@
             <article class="card"><strong>Presentation records</strong><div class="meta">1388</div></article>
             <article class="card"><strong>Events</strong><div class="meta">40</div></article>
         </section>
+        <article class="card" style="margin-bottom:1.5rem; border-color:rgba(98,174,146,0.3); background:rgba(98,174,146,0.05);">
+            <strong>Dataset DOI</strong>
+            <div class="meta" style="margin-top:0.3rem;">
+                <a href="https://doi.org/10.5281/zenodo.XXXXXXX"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.XXXXXXX.svg" alt="DOI" style="height:20px;"></a>
+                <br>
+                Cite as: Gasūns, M. (2026). <em>IndologyScholars: Archive of Talks in Russian Indology</em> [Data set]. Zenodo. https://doi.org/10.5281/zenodo.XXXXXXX
+                <br>
+                <span style="color:var(--muted);">Replace XXXXXXX with the actual Zenodo ID after uploading <code>article/snapshots/2026-06-03/</code></span>
+            </div>
+        </article>
         <h2>Files</h2>
         <section class="grid">
             <article class="card">
@@ -360,6 +394,12 @@
                 <strong><a href="site_data.json">Dashboard payload</a></strong>
                 <div class="meta">Generated browser data used by the interactive dashboard and static scholar pages.</div>
                 <div class="meta">4.4 MB</div>
+            </article>
+
+            <article class="card">
+                <strong><a href="indology_knowledge_graph.ttl">RDF/Turtle knowledge graph</a></strong>
+                <div class="meta">Linked Open Data graph (schema.org + FOAF + OWL) with scholar profiles, presentations, affiliations, and Wikidata/ORCID/VIAF sameAs links.</div>
+                <div class="meta">476.5 KB</div>
             </article>
 
             <article class="card">
@@ -383,7 +423,25 @@
             <article class="card">
                 <strong><a href="data_dictionary.md">Data dictionary</a></strong>
                 <div class="meta">Human-readable field guide for reusable CSV, JSON, SQLite, and generated publication outputs.</div>
-                <div class="meta">24.7 KB</div>
+                <div class="meta">25.5 KB</div>
+            </article>
+
+            <article class="card">
+                <strong><a href="notebooks/example_analysis.py">Example analysis notebook</a></strong>
+                <div class="meta">Python script demonstrating loading, descriptive statistics, gender trends, theme distribution, and null-model overlap test.</div>
+                <div class="meta">6.8 KB</div>
+            </article>
+
+            <article class="card">
+                <strong><a href="assets/data/geography.json">Geography &amp; Wikidata mappings</a></strong>
+                <div class="meta">City name aliases, coordinates, and Wikidata Q-ID mappings for cities and L1 themes.</div>
+                <div class="meta">6.3 KB</div>
+            </article>
+
+            <article class="card">
+                <strong><a href="analytics_output/wikidata_batch.txt">Wikidata QuickStatements batch</a></strong>
+                <div class="meta">Pre-formatted batch for creating top-20 scholar Wikidata items via QuickStatements v2.</div>
+                <div class="meta">8.1 KB</div>
             </article>
 
             <article class="card">
@@ -413,7 +471,7 @@
             <article class="card">
                 <strong><a href="analytics_output/field_provenance_authority.csv">Authority provenance</a></strong>
                 <div class="meta">Field-level provenance for external identifiers and organization authority records.</div>
-                <div class="meta">9.4 KB</div>
+                <div class="meta">11.2 KB</div>
             </article>
 
             <article class="card">
@@ -533,7 +591,7 @@
             <article class="card">
                 <strong><a href="analytics_output/publication_file_manifest.csv">Publication file manifest</a></strong>
                 <div class="meta">Generated file list with byte sizes and SHA-256 checksums for reproducible release checks.</div>
-                <div class="meta">449.2 KB</div>
+                <div class="meta">449.5 KB</div>
             </article>
 
             <article class="card">
@@ -555,7 +613,7 @@
                 <li><code>python validate_publication.py</code> (Runs integrity checks)</li>
             </ol>
             <p><strong>Pipeline Version:</strong> 2026-05-25</p>
-            <p><strong>Build Date:</strong> 2026-06-06</p>
+            <p><strong>Build Date:</strong> 2026-06-09</p>
         </div>
 
         <div class="footer">© 2026 Russian Indological Research Archive. Сгенерировано из нормализованного архива конференций.</div>
