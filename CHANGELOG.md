@@ -38,10 +38,24 @@
 
 ### Документация
 
+*   **`docs/ru-enrichment-runbook.md`** — runbook Phase 5 (запуск изнутри РФ):
+    таблица достижимости, шаги Wikidata-обогащения годов жизни, ru-инфобоксов,
+    Playwright-скрапинга институтов, OpenAlex, идемпотентного пересева реестра,
+    rebuild/validate/commit.
 *   `docs/roster-merge-design.md` — статус «implemented», карта реализации,
     разрешённые open-questions (URL `indologists.html`, `RIND_<sha1>`,
     имперский период в общем реестре).
+*   `docs/development.md` / `development-en.md` — runbook в таблице техдокументов.
 *   `ROADMAP.md`, `.ai_state.md` — отметка о реализации.
+
+### Исправлено
+
+*   **Идемпотентность пересева реестра (Phase-5 гард):**
+    `tools/build_non_participant_registry.py` теперь дедуплицирует не только по
+    `registry_id`, но и по нормализованному имени. Поскольку `registry_id`
+    включает год рождения, обогащение, заполняющее пустой год, иначе
+    перехешировало бы человека в новый id и добавило дубль. Новый тест
+    `test_no_duplicate_names_in_registry` (pytest 71/71).
 
 ## [1.10.0] — 2026-06-10
 

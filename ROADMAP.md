@@ -43,7 +43,8 @@ A. 🅳 🟡 **Ростер русскоязычных индологов (`scra
    **неучастники выносятся отдельной страницей-реестром** (отличной от докладчиков).
    - ✅ Дизайн слияния: `docs/roster-merge-design.md` (участники → обогащение, неучастники → реестр)
    - ✅ Реализовано: `curation/non_participant_indologists.csv` (94), линкер участников (100, +2 Q-ID), страница `indologists.html`, 10 тестов, build+validate зелёные
-   - ⬜ Phase 5 обогащение (.ru, по runbook): Q-ID/годы жизни → `candidate`→`verified`
+   - ✅ Runbook Phase 5: `docs/ru-enrichment-runbook.md` (Wikidata годы, ru-инфобоксы, институты, идемпотентный re-seed)
+   - ⬜ Phase 5 прогон (.ru, по runbook): Q-ID/годы жизни → `candidate`→`verified`
    - ⬜ P0 `wikidata_enrich.py` → годы жизни 13 записям, перегенерировать crossref (где Wikidata доступна)
    - ⬜ P0 `scrape_institutions_web.py` + Playwright → институц. имена (по runbook, запуск внутри .ru)
    - ⬜ P1 `expand_wikipedia_indologists.py` → ru-инфобоксы новым именам (где ru.wiki-статьи открываются)
@@ -63,10 +64,10 @@ C. 🅳🅜 🟡 **Англоязычный data paper.**
    - ⬜ Подача в **Research Data Journal for the Humanities and Social Sciences (Brill)**
    - ⬜ **DOI на Zenodo** через GitHub-release; версия датасета — **датированная на каждый снимок** (CITATION.cff бампится при freeze)
    - ⬜ Inter-rater agreement в methods (`tools/compute_interrater_agreement.py`)
-D. 🅜 ⬜ **Runbook для .ru-шагов.** С хоста автоматизации доступен только en.wiki;
-   написать пошаговый runbook + довести скрипты, чтобы редактор прогонял
-   Playwright-скрапинг институтов, ru-инфобоксы и Wikidata REST изнутри .ru,
-   а парсинг результатов делался здесь.
+D. 🅜 ✅ **Runbook для .ru-шагов.** `docs/ru-enrichment-runbook.md` — пошагово:
+   Wikidata годы жизни, ru-инфобоксы, Playwright-скрапинг институтов, OpenAlex,
+   идемпотентный re-seed реестра, rebuild/validate/commit. Прогон — за редактором
+   изнутри .ru.
 
 ---
 

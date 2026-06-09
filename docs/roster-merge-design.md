@@ -156,7 +156,8 @@ matcher, CSV curation, page generation, and tests run anywhere.
 ## Remaining for the maintainer
 
 - Phase 5 enrichment (`wikidata_enrich.py`, ru-infobox fetch) is .ru-gated and
-  runs by runbook; it will raise Q-ID/life-year coverage and flip more
-  `candidate` rows to `verified`.
+  runs by runbook ([ru-enrichment-runbook.md](ru-enrichment-runbook.md)); it
+  will raise Q-ID/life-year coverage and flip more `candidate` rows to
+  `verified`.
 - The 70 `candidate` rows need a human-supplied `source_url` before they count
   as verified.

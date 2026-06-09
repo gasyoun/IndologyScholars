@@ -121,12 +121,22 @@ def main():
     # Non-destructive merge with any existing curated file.
     existing_rows = []
     existing_ids = set()
+    existing_names = set()
     if OUTPUT_CSV.exists():
         with OUTPUT_CSV.open(encoding="utf-8", newline="") as f:
             existing_rows = list(csv.DictReader(f))
         existing_ids = {r["registry_id"] for r in existing_rows}
+        existing_names = {cx.normalize(r.get("full_name_ru", "")) for r in existing_rows}
 
-    new_rows = [r for r in non_participants if r["registry_id"] not in existing_ids]
+    # A row is "new" only if BOTH its id and its normalized name are unseen.
+    # registry_id embeds birth_year, so a Phase-5 enrichment that fills a
+    # previously-empty birth year would otherwise re-hash an existing person to
+    # a new id and append a duplicate; the name guard prevents that.
+    new_rows = [
+        r for r in non_participants
+        if r["registry_id"] not in existing_ids
+        and cx.normalize(r.get("full_name_ru", "")) not in existing_names
+    ]
     print(f"Existing curated rows: {len(existing_rows)} | new to append: {len(new_rows)}")
 
     if dry_run:

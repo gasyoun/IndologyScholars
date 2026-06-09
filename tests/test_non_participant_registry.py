@@ -84,6 +84,15 @@ def test_registry_id_is_deterministic():
     assert reg.registry_id_for(p) == reg.registry_id_for(p2)
 
 
+def test_no_duplicate_names_in_registry():
+    """Phase-5 idempotency guard: filling a birth year changes registry_id
+    (birth_year is in the hash), so the merge must also dedupe by name. A
+    duplicate normalized name means an enrichment re-run would re-append people."""
+    names = [cx.normalize(r["full_name_ru"]) for r in _rows()]
+    dupes = {n for n in names if names.count(n) > 1}
+    assert not dupes, f"duplicate names in registry: {dupes}"
+
+
 # ── stat isolation ───────────────────────────────────────────────────
 
 def test_registry_people_are_non_participants():

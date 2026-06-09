@@ -236,6 +236,7 @@ Humanities and Social Sciences, Brill); `notebooks/example_analysis.py` —
 | [wikidata-guide.md](wikidata-guide.md) | Пошаговое руководство по привязке учёных к Wikidata Q-ID через пайплайн OpenAlex → Wikidata и QuickStatements. |
 | [../article/data_paper_draft.md](https://github.com/gasyoun/IndologyScholars/blob/main/article/data_paper_draft.md) | Англоязычный data paper: построение корпуса, модель данных, повторное использование (цель: Research Data Journal for the Humanities and Social Sciences). |
 | [roster-merge-design.md](roster-merge-design.md) | Дизайн слияния `scratch/`-ростера русскоязычных индологов в корпус (участники обогащаются, неучастники — отдельным реестром). |
+| [ru-enrichment-runbook.md](ru-enrichment-runbook.md) | Пошаговая инструкция Phase-5 обогащения, которое запускается внутри РФ (годы жизни из Wikidata, ru-инфобоксы, скраперы институтов). |
 
 `CHANGELOG.md` и материалы `article/` служат журналом или исследовательскими
 снимками; содержащиеся в них числа нужно читать в контексте указанной даты.
