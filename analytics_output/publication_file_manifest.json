@@ -6,7 +6,7 @@
     "pipeline_version": "2026-05-25",
     "generator": "generate_publication_pages.py"
   },
-  "file_count": 4001,
+  "file_count": 4002,
   "files": [
     {
       "path": "404.html",
@@ -9285,13 +9285,13 @@
     },
     {
       "path": "docs/development-en.md",
-      "size_bytes": 14332,
-      "sha256": "c49e5f1452c191b777065f583028a808e1cb28a6972ce9a279bbac325dae6800"
+      "size_bytes": 14540,
+      "sha256": "8721fb5bcbf57c42cb7347f868bcfe07a10b83f82ab08c1d61fe6728517ab669"
     },
     {
       "path": "docs/development.md",
-      "size_bytes": 21234,
-      "sha256": "763184955a4b7aed6dae43460f472b40162bf58aab29705ba7ae77051b893eec"
+      "size_bytes": 21518,
+      "sha256": "aa8de5d3fe995f239383e08e614fcda5173d910b270aa5d8d4bb88f8987a1d54"
     },
     {
       "path": "docs/how-to-vote-2026.md",
@@ -9330,8 +9330,13 @@
     },
     {
       "path": "docs/roster-merge-design.md",
-      "size_bytes": 8924,
-      "sha256": "6b9ced396dcb218a36471177ff16f470aaeac4c1dc247be1d8f688765ecdb5d4"
+      "size_bytes": 8981,
+      "sha256": "23e0b98b36f29d87da3c17db22b298ab409f8e3ac69ba221b1f80665fae16bc1"
+    },
+    {
+      "path": "docs/ru-enrichment-runbook.md",
+      "size_bytes": 6618,
+      "sha256": "98f9433251f329d20d4742c97e79abe8316339b3ae1aacb4586c0e0148aaf9c9"
     },
     {
       "path": "docs/scientometrics-sociology.md",
@@ -9376,7 +9381,7 @@
     {
       "path": "download-data.html",
       "size_bytes": 32601,
-      "sha256": "608e36b1204d2f61f770761874e0a85c21a87c2398d928572454ec08bbcd403c"
+      "sha256": "ca3cbed16bbad450e319c3bcebb5bf5cb0ac8b81f81e8f6f7fb8b944d3722e86"
     },
     {
       "path": "en.html",
@@ -9401,7 +9406,7 @@
     {
       "path": "findings/visualisations.html",
       "size_bytes": 474777,
-      "sha256": "a1c8af87a581c1345bb1b8ddd3f1b5932e3316f825605817face34fc11865e16"
+      "sha256": "50bab54d60b3043299673cb8fca9f49c7871ed3c3f8ad3e4210e838f09f1be14"
     },
     {
       "path": "gatekeeping-en.html",
