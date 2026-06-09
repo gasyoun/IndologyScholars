@@ -33,7 +33,9 @@
       "preferred_latin_name": "Alexander Dubyansky",
       "openalex": "A5109806905",
       "confidence": "candidate",
-      "checked_at": "2026-06-03"
+      "checked_at": "2026-06-03",
+      "wikidata": "Q109120330",
+      "source": "roster_match"
     },
     "PERS_36dabb79": {
       "preferred_latin_name": "Anastasia Guriya"
@@ -187,6 +189,12 @@
     },
     "PERS_f5b8b340": {
       "preferred_latin_name": "Alexey Vigasin"
+    },
+    "PERS_2f26a47a": {
+      "wikidata": "Q46908",
+      "confidence": "candidate",
+      "checked_at": "2026-06-10",
+      "source": "roster_match"
     }
   },
   "organizations": {

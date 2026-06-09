@@ -1,7 +1,24 @@
 # Design: Merging the Russian-Indologist Roster into the Corpus
 
-**Status:** design (not yet implemented) · **Date:** 2026-06-10 ·
-**Decision source:** roadmap session 2026-06-10.
+**Status:** implemented (2026-06-10) · **Decision source:** roadmap session
+2026-06-10.
+
+**Implementation map:**
+- Phase 1 seeder → `tools/build_non_participant_registry.py` →
+  `curation/non_participant_indologists.csv` (94 rows).
+- Phase 2 linker → `tools/link_roster_participants.py` →
+  `analytics_output/roster_participant_links.csv` (100 links) + Q-ID injection
+  into `authority_ids.json` (candidate).
+- Phase 3 page → `generate_registry_page()` in `generate_publication_pages.py`
+  → `indologists.html` (top-level, in nav + sitemap + validator).
+- Phase 4 tests → `tests/test_non_participant_registry.py` (10 tests).
+- Phase 5 enrichment (.ru, by runbook) — still pending.
+
+**Resolved open questions:** the page is the top-level `indologists.html`
+(not `indologists/registry.html`) to reuse the `known-relationships.html`
+precedent and avoid sub-directory relative-path machinery; `registry_id` is a
+deterministic `RIND_<sha1(surname|given|birth)[:8]>`; imperial-period figures
+share the one registry (life-years convey the era).
 
 ## Decisions this design implements
 
@@ -130,9 +147,16 @@ matcher, CSV curation, page generation, and tests run anywhere.
 4. **Enrichment pass** (.ru, by runbook): fill Q-IDs and life-years, then
    regenerate.
 
-## Open questions (for the maintainer)
+## Resolved decisions
 
-- Registry URL/slug: `indologists/registry.html` vs `non-participants.html`?
-- `registry_id` scheme: sequential `RIND_<n>` vs deterministic hash?
-- Should imperial-period figures (no possible participation, died pre-2004)
-  share the registry, or get their own historical section?
+- Registry URL: **top-level `indologists.html`** (mirrors `known-relationships.html`).
+- `registry_id`: **deterministic** `RIND_<sha1(surname|given|birth)[:8]>`.
+- Imperial-period figures: **share the one registry**; life-years convey the era.
+
+## Remaining for the maintainer
+
+- Phase 5 enrichment (`wikidata_enrich.py`, ru-infobox fetch) is .ru-gated and
+  runs by runbook; it will raise Q-ID/life-year coverage and flip more
+  `candidate` rows to `verified`.
+- The 70 `candidate` rows need a human-supplied `source_url` before they count
+  as verified.

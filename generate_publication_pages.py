@@ -132,6 +132,7 @@ def generated_manifest_paths():
         "gatekeeping.html",
         "gatekeeping-en.html",
         "known-relationships.html",
+        "indologists.html",
         "docs.html",
         "offline.html",
         "robots.txt",
@@ -1653,6 +1654,15 @@ def generate_search(data, records):
             "text": "известные связи научный руководитель ученик учитель супруг супруга семейные связи работа кураторская проверка внесетевые отношения Востфак",
         }
     )
+    index.append(
+        {
+            "type": "Method",
+            "title": "Индологи вне программы чтений",
+            "url": "indologists.html",
+            "meta": "Реестр неучастников",
+            "text": "индологи реестр неучастники вне программы русскоязычные санскритологи википедия wikidata годы жизни сфера роль аффилиация",
+        }
+    )
     for level, meta in GUMILYOV_LEVELS.items():
         index.append(
             {
@@ -2901,6 +2911,125 @@ def generate_known_relationships_page(data):
             [
                 page_data("Известные внесетевые связи", "Проверяемый слой отношений, не выводимых из конференционной сети.", "known-relationships.html"),
                 make_breadcrumbs([("Главная", ""), ("Известные внесетевые связи", "known-relationships.html")]),
+            ],
+            extra_head=ARTICLE_STYLE,
+        ),
+    )
+
+
+def generate_registry_page(data):
+    """Registry of Russian-language indologists who have NOT presented at the
+    Zograf/Roerich Readings. Curated source: curation/non_participant_indologists.csv.
+    Kept separate from the conference catalogue so it never enters conference
+    statistics (see docs/roster-merge-design.md)."""
+    rows = load_csv_rows("curation/non_participant_indologists.csv")
+    # Stable display order: by Russian full name.
+    rows.sort(key=lambda r: (r.get("full_name_ru") or "").lower())
+
+    def life_years(row):
+        b = (row.get("birth_year") or "").strip()
+        d = (row.get("death_year") or "").strip()
+        if b and d:
+            return f"{b}–{d}"
+        if b:
+            return f"род. {b}"
+        if d:
+            return f"–{d}"
+        return "?"
+
+    def name_cell(row):
+        name = row.get("full_name_ru") or row.get("full_name_en") or row.get("registry_id")
+        src = (row.get("source_url") or "").strip()
+        marker = ""
+        if (row.get("status") or "").strip() != "verified":
+            marker = ' <span class="needs-source" title="Требуется источник">(?)</span>'
+        if src:
+            return f'<a href="{esc(src)}" rel="nofollow noopener" target="_blank">{esc(name)}</a>{marker}'
+        return f"{esc(name)}{marker}"
+
+    verified = sum(1 for r in rows if (r.get("status") or "").strip() == "verified")
+    table_rows = []
+    for row in rows:
+        table_rows.append(
+            "<tr>"
+            f"<td>{name_cell(row)}</td>"
+            f"<td>{esc(life_years(row))}</td>"
+            f"<td>{esc(row.get('field') or '')}</td>"
+            f"<td>{esc(row.get('role') or '')}</td>"
+            f"<td>{esc(row.get('affiliation') or '')}</td>"
+            "</tr>"
+        )
+
+    body = f"""
+        <header>
+            <h1>Индологи вне программы чтений</h1>
+            <p>Реестр русскоязычных индологов, которые <strong>ни разу не выступали</strong> на Зографских или Рериховских чтениях. Это отдельный от каталога докладчиков слой: эти учёные не входят в конференционную статистику ({esc(str(data.get('summary', {}).get('total_scholars', '')))} докладчиков / {esc(str(data.get('summary', {}).get('unique_presentations', '')))} докладов).</p>
+        </header>
+        <div class="article-container">
+            <article>
+            <div class="note">
+                Список собран из категорий Википедии и Wikidata (см. <a href="docs/roster-merge-design.md">дизайн слияния ростера</a>) и сопоставлен с базой докладов. Запись со статусом «требуется источник» помечена <span class="needs-source">(?)</span> и не считается подтверждённой. Полный каталог докладчиков — на <a href="index.html">главной странице</a> и в <a href="s/index.html">указателе учёных</a>.
+            </div>
+
+            <p class="footnote" style="font-size:0.9em;color:var(--text-muted,#666);">
+                Всего в реестре: <strong>{len(rows)}</strong> · с подтверждённым источником: <strong>{verified}</strong> · требуют источника: <strong>{len(rows) - verified}</strong>.
+            </p>
+
+            <style>
+                .needs-source {{ color: #b8860b; font-weight: 600; }}
+                #registry-table th {{ cursor: pointer; user-select: none; position: relative; padding-right: 20px; }}
+                #registry-table th::after {{ content: " ↕"; font-size: 0.8em; color: #aaa; position: absolute; right: 5px; }}
+                #registry-table th.asc::after {{ content: " ↑"; color: #000; }}
+                #registry-table th.desc::after {{ content: " ↓"; color: #000; }}
+            </style>
+
+            <table class="data" id="registry-table">
+                <thead>
+                    <tr><th>ФИО</th><th>Годы</th><th>Сфера</th><th>Роль</th><th>Аффилиация</th></tr>
+                </thead>
+                <tbody>{''.join(table_rows)}</tbody>
+            </table>
+
+            <script>
+            (function() {{
+                const table = document.getElementById('registry-table');
+                if (!table) return;
+                const headers = table.querySelectorAll('th');
+                const tbody = table.querySelector('tbody');
+                headers.forEach((header, index) => {{
+                    header.addEventListener('click', () => {{
+                        const tr = Array.from(tbody.querySelectorAll('tr'));
+                        const isAsc = header.classList.contains('asc');
+                        headers.forEach(h => h.classList.remove('asc', 'desc'));
+                        header.classList.add(isAsc ? 'desc' : 'asc');
+                        tr.sort((a, b) => {{
+                            const x = a.cells[index].innerText.trim();
+                            const y = b.cells[index].innerText.trim();
+                            if (!x && y) return 1;
+                            if (x && !y) return -1;
+                            return isAsc ? y.localeCompare(x, 'ru') : x.localeCompare(y, 'ru');
+                        }});
+                        tbody.append(...tr);
+                    }});
+                }});
+            }})();
+            </script>
+
+            <h2>Как пополнять</h2>
+            <p>Добавляйте или правьте строки в <a href="curation/non_participant_indologists.csv">curation/non_participant_indologists.csv</a>. Запись со <code>status=verified</code> обязана иметь непустой <code>source_url</code>. Сид-генератор — <code>tools/build_non_participant_registry.py</code>.</p>
+            </article>
+        </div>
+    """
+    write_text(
+        "indologists.html",
+        page_shell(
+            f"Индологи вне программы чтений | {SITE_NAME}",
+            "Реестр русскоязычных индологов, не выступавших на Зографских и Рериховских чтениях; отдельный от каталога докладчиков слой.",
+            "indologists.html",
+            body,
+            [
+                page_data("Индологи вне программы чтений", "Реестр русскоязычных индологов, не входящих в конференционный корпус.", "indologists.html"),
+                make_breadcrumbs([("Главная", ""), ("Индологи вне программы чтений", "indologists.html")]),
             ],
             extra_head=ARTICLE_STYLE,
         ),
@@ -14849,7 +14978,7 @@ def generate_sitemap(data, records):
         "data-quality.html", "methodology.html", "hypotheses.html", "data-sources.html",
         "known-limitations.html", "how-to-cite.html", "metrics-guide.html",
         "classification-criteria.html", "networks.html", "sociology.html", "sociology-en.html",
-        "gatekeeping.html", "gatekeeping-en.html", "known-relationships.html", "docs.html", "voting.html"
+        "gatekeeping.html", "gatekeeping-en.html", "known-relationships.html", "indologists.html", "docs.html", "voting.html"
     ]
     static_paths = sorted(set(static_paths))
 
@@ -15281,6 +15410,7 @@ def main():
     generate_mobility_page()
     generate_voting_page(records)
     generate_known_relationships_page(data)
+    generate_registry_page(data)
     authority_stats = generate_authority_coverage(data, authority)
     generate_provenance_sidecars(data, authority, records)
     generate_download_page(data)

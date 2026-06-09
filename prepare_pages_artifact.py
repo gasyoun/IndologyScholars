@@ -41,6 +41,7 @@ PUBLIC_PATHS = [
     "gatekeeping.html",
     "gatekeeping-en.html",
     "known-relationships.html",
+    "indologists.html",
     "voting.html",
     "indology_scholars_analytics.md",
     "missing_birth_years.md",
