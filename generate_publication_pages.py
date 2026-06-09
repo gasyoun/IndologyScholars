@@ -2912,10 +2912,14 @@ def generate_download_page(data):
     resources = [
         ("SQLite database", "conferences.db", "Normalized relational source of events, sessions, presentations, people, venues, and affiliation strings."),
         ("Dashboard payload", "site_data.json", "Generated browser data used by the interactive dashboard and static scholar pages."),
+        ("RDF/Turtle knowledge graph", "indology_knowledge_graph.ttl", "Linked Open Data graph (schema.org + FOAF + OWL) with scholar profiles, presentations, affiliations, and Wikidata/ORCID/VIAF sameAs links."),
         ("Static search index", "search-index.json", "Compact JSON index for generated scholar and presentation pages."),
         ("Citation metadata", "CITATION.cff", "Machine-readable citation record for dataset/software reuse."),
         ("Frictionless datapackage", "datapackage.json", "Dataset metadata, resource list, license, and source notes."),
         ("Data dictionary", "data_dictionary.md", "Human-readable field guide for reusable CSV, JSON, SQLite, and generated publication outputs."),
+        ("Example analysis notebook", "notebooks/example_analysis.py", "Python script demonstrating loading, descriptive statistics, gender trends, theme distribution, and null-model overlap test."),
+        ("Geography & Wikidata mappings", "assets/data/geography.json", "City name aliases, coordinates, and Wikidata Q-ID mappings for cities and L1 themes."),
+        ("Wikidata QuickStatements batch", "analytics_output/wikidata_batch.txt", "Pre-formatted batch for creating top-20 scholar Wikidata items via QuickStatements v2."),
         ("Data quality report", "analytics_output/data_quality_report.json", "Machine-readable quality checks and review samples."),
         ("Keyword statistics", "analytics_output/keyword_stats.csv", "Per-keyword presentation counts and example titles."),
         ("Keyword filter audit", "analytics_output/keyword_filter_audit.csv", "Public/hidden keyword decisions with reasons and example titles."),
@@ -2974,6 +2978,16 @@ def generate_download_page(data):
             <article class="card"><strong>Presentation records</strong><div class="meta">{esc(summary.get("total_presentations", 0))}</div></article>
             <article class="card"><strong>Events</strong><div class="meta">{esc(summary.get("total_events", 0))}</div></article>
         </section>
+        <article class="card" style="margin-bottom:1.5rem; border-color:rgba(98,174,146,0.3); background:rgba(98,174,146,0.05);">
+            <strong>Dataset DOI</strong>
+            <div class="meta" style="margin-top:0.3rem;">
+                <a href="https://doi.org/10.5281/zenodo.XXXXXXX"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.XXXXXXX.svg" alt="DOI" style="height:20px;"></a>
+                <br>
+                Cite as: Gasūns, M. (2026). <em>IndologyScholars: Archive of Talks in Russian Indology</em> [Data set]. Zenodo. https://doi.org/10.5281/zenodo.XXXXXXX
+                <br>
+                <span style="color:var(--muted);">Replace XXXXXXX with the actual Zenodo ID after uploading <code>article/snapshots/2026-06-03/</code></span>
+            </div>
+        </article>
         <h2>Files</h2>
         <section class="grid">{''.join(cards)}</section>
 

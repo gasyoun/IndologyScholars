@@ -138,7 +138,13 @@ def score_candidate(candidate: dict, cyrillic_surname: str, latin_name: str) -> 
 def main():
     # Load site_data and authority_ids
     with open(SITE_DATA, encoding="utf-8") as f:
-        data = json.load(f)
+        text = f.read().strip()
+        prefix = "const CONFERENCE_DATA = "
+        if text.startswith(prefix):
+            text = text[len(prefix):]
+        if text.endswith(";"):
+            text = text[:-1]
+        data = json.loads(text)
     with open(AUTHORITY_IDS, encoding="utf-8") as f:
         authority = json.load(f)
 

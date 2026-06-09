@@ -2,10 +2,17 @@
   "description": "Optional authority identifiers used by generators when known. Add ORCID, Wikidata, VIAF, ROR, or official URLs without changing code.",
   "persons": {
     "PERS_05d56645": {
-      "preferred_latin_name": "Alexander Babin"
+      "preferred_latin_name": "Alexander Babin",
+      "openalex": "A5028785724",
+      "confidence": "candidate",
+      "checked_at": "2026-06-03",
+      "orcid": "0000-0003-3536-400X"
     },
     "PERS_0665f215": {
-      "preferred_latin_name": "Vladimir Shokhin"
+      "preferred_latin_name": "Vladimir Shokhin",
+      "openalex": "A5110754780",
+      "confidence": "candidate",
+      "checked_at": "2026-06-03"
     },
     "PERS_0e0a154e": {
       "preferred_latin_name": "Lev Titlin"
@@ -14,13 +21,19 @@
       "preferred_latin_name": "Sergey Tavastsherna"
     },
     "PERS_12125da9": {
-      "preferred_latin_name": "Victoria Lysenko"
+      "preferred_latin_name": "Victoria Lysenko",
+      "openalex": "A5109356143",
+      "confidence": "candidate",
+      "checked_at": "2026-06-03"
     },
     "PERS_1c6fcce5": {
       "preferred_latin_name": "Elizaveta Kuzina"
     },
     "PERS_1fa7cc0c": {
-      "preferred_latin_name": "Alexander Dubyansky"
+      "preferred_latin_name": "Alexander Dubyansky",
+      "openalex": "A5109806905",
+      "confidence": "candidate",
+      "checked_at": "2026-06-03"
     },
     "PERS_36dabb79": {
       "preferred_latin_name": "Anastasia Guriya"
@@ -32,10 +45,18 @@
       "preferred_latin_name": "Rada Krapivina"
     },
     "PERS_40862f5e": {
-      "preferred_latin_name": "Natalia Korneeva"
+      "preferred_latin_name": "Natalia Korneeva",
+      "openalex": "A5025798171",
+      "confidence": "candidate",
+      "checked_at": "2026-06-03",
+      "orcid": "0000-0002-2261-4682"
     },
     "PERS_41d6aa73": {
-      "preferred_latin_name": "Daria Vorobyeva"
+      "preferred_latin_name": "Daria Vorobyeva",
+      "openalex": "A5059958242",
+      "confidence": "candidate",
+      "checked_at": "2026-06-03",
+      "orcid": "0000-0002-7325-6504"
     },
     "PERS_50d73711": {
       "preferred_latin_name": "Anna Smirnitskaya"
@@ -53,7 +74,11 @@
       "preferred_latin_name": "Anastasia Fiveyskaya"
     },
     "PERS_72506535": {
-      "preferred_latin_name": "Anastasia Krylova"
+      "preferred_latin_name": "Anastasia Krylova",
+      "openalex": "A5061198994",
+      "confidence": "candidate",
+      "checked_at": "2026-06-03",
+      "orcid": "0000-0001-9962-4267"
     },
     "PERS_8516d1e4": {
       "preferred_latin_name": "Marcis Gasuns",
@@ -70,7 +95,11 @@
       "preferred_latin_name": "Dmitry Zhutaev"
     },
     "PERS_93e2effb": {
-      "preferred_latin_name": "Dmitry Komissarov"
+      "preferred_latin_name": "Dmitry Komissarov",
+      "openalex": "A5026063360",
+      "confidence": "candidate",
+      "checked_at": "2026-06-03",
+      "orcid": "0009-0001-8315-4464"
     },
     "PERS_9f398436": {
       "preferred_latin_name": "Leonid Kulikov"
@@ -88,14 +117,18 @@
       "checked_at": "2026-05-25"
     },
     "PERS_c52dfaa0": {
-      "preferred_latin_name": "Sofia Tsvetkova"
+      "preferred_latin_name": "Sofia Tsvetkova",
+      "openalex": "A5018164535",
+      "confidence": "candidate",
+      "checked_at": "2026-06-03"
     },
     "PERS_cdbd7a15": {
       "preferred_latin_name": "Sergey Kullanda",
       "wikipedia": "https://ru.wikipedia.org/wiki/Кулланда,_Сергей_Всеволодович",
       "confidence": "manual",
       "source": "ru.wikipedia.org",
-      "checked_at": "2026-05-25"
+      "checked_at": "2026-05-25",
+      "openalex": "A5091694401"
     },
     "PERS_cfb92c5f": {
       "preferred_latin_name": "Evgeny Ulansky"
@@ -116,7 +149,10 @@
       "checked_at": "2026-05-25"
     },
     "PERS_e1dd6b3e": {
-      "preferred_latin_name": "Natalia Lidova"
+      "preferred_latin_name": "Natalia Lidova",
+      "openalex": "A5089354591",
+      "confidence": "candidate",
+      "checked_at": "2026-06-03"
     },
     "PERS_e5a5ac24": {
       "wikipedia": "https://ru.wikipedia.org/wiki/Невелева,_Светлана_Леонидовна",
@@ -125,16 +161,26 @@
       "checked_at": "2026-05-25"
     },
     "PERS_e31ca12d": {
-      "preferred_latin_name": "Olga Vecherina"
+      "preferred_latin_name": "Olga Vecherina",
+      "openalex": "A5072321578",
+      "confidence": "candidate",
+      "checked_at": "2026-06-03",
+      "orcid": "0000-0001-5223-4683"
     },
     "PERS_ebb6d156": {
       "preferred_latin_name": "Anastasia Lozhkina"
     },
     "PERS_efc88709": {
-      "preferred_latin_name": "Natalia Kanaeva"
+      "preferred_latin_name": "Natalia Kanaeva",
+      "openalex": "A5014373447",
+      "confidence": "candidate",
+      "checked_at": "2026-06-03"
     },
     "PERS_f074f69f": {
-      "preferred_latin_name": "Natalia Alexandrova"
+      "preferred_latin_name": "Natalia Alexandrova",
+      "openalex": "A5026899555",
+      "confidence": "candidate",
+      "checked_at": "2026-06-03"
     },
     "PERS_f2fef030": {
       "preferred_latin_name": "Areg Mekhakyan"

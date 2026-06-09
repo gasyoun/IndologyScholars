@@ -4,6 +4,96 @@
 
 Этот проект представляет собой высокоточный академический конвейер для оцифровки, интеллектуального анализа и визуализации истории российской индологической науки.
 
+## [1.10.0] — 2026-06-10
+
+### Интернационализация, контроль авторитетов и LOD
+
+Трек после подачи ППВ: связать корпус с международной инфраструктурой
+(Wikidata, OpenAlex, ORCID), подготовить англоязычный data paper и заморозить
+снимок для DOI. **Актуальный корпус: 270 учёных, 1362 уникальных доклада,
+1388 авторских участий, 2004–2026, 41 учёный перекрёстной когорты, 165 только
+Зографских, 64 только Рериховских** (`site_data_summary.json`, 2026-06-04).
+
+### Добавлено
+
+*   **Сбор русскоязычных индологов за ~200 лет (`scratch/`-подпроект, HEAD-коммит):**
+    самостоятельный модуль ростера русскоязычных индологов и кросс-сверки с
+    участием в Зографских/Рериховских чтениях. **197 индологов** (114 из
+    вики-категорий + en.wiki-моста, 83 из базы конференций), Q-ID-покрытие
+    выросло с 8 до 26, **60 тестов** проходят. Скраперы: `enwiki_bridge.py`
+    (RKN-устойчивый путь en.wikipedia → ru-название + Wikidata Q-ID, режим
+    `--wide` по советским/российским ориенталистам), `expand_wikipedia_indologists.py`
+    (неразрушающее слияние, реальный `search_via_html()`), `wikidata_enrich.py`
+    (Q-ID → годы жизни через REST `Special:EntityData`), `scrape_institutions_web.py`
+    (static → Drupal JSON:API → Playwright), `scrape_common.py` (общий
+    retry/backoff HTTP + кэш + atomic writes). Собственные `scratch/roadmap.md`,
+    `scratch/changelog.md`, `scratch/ai_status.md`, `scratch/handoff.md`.
+*   **Сопоставление авторов с OpenAlex:** `scratch/openalex_author_candidates.py`
+    + `scratch/resume_openalex.py` (возобновляемый обход) опрашивают OpenAlex
+    Authors API по кириллическому ФИО и латинской транслитерации, скорят
+    кандидатов (RU-аффилиация +0.4, совпадение фамилии +0.2, ≥3 работы +0.2)
+    и пишут `analytics_output/openalex_author_candidates.csv` — **122 учёных
+    с ≥1 кандидатом, статус ручной сверки `todo`**.
+*   **Инъекция авторитетов:** `tools/inject_openalex_matches.py` переносит
+    высокоуверенные (≥0.8) совпадения в `authority_ids.json` с
+    `confidence='candidate'` (никогда `confirmed` без ручной сверки), доставая
+    ORCID/Wikidata из ответа OpenAlex.
+*   **Wikidata QuickStatements:** `tools/generate_wikidata_batch.py` отбирает
+    топ-N учёных по числу докладов без Q-ID и генерит v2-батч
+    (`analytics_output/wikidata_batch.txt`) с ISO-9-транслитерацией латинских
+    имён: P31 (человек), P106 (индолог), P101 (индология), P569, P27, P108 и
+    референс `S854` на страницу профиля. Руководство — `docs/wikidata-guide.md`.
+*   **Англоязычный data paper:** `article/data_paper_draft.md` — описание
+    корпуса (модель данных, происхождение полей, классификация L1/L2 + G1–G3,
+    видео-привязки, авторитетные идентификаторы, форматы SQLite/CSV/JSON/RDF,
+    Frictionless Data Package). **Целевой журнал — Research Data Journal for
+    the Humanities and Social Sciences (Brill).**
+*   **Linked Open Data:** перегенерирован `indology_knowledge_graph.ttl`
+    (`generate_lod.py`) с Wikidata Q-ID для городов и тем.
+*   **Wikidata Q-ID в гео-данных:** `assets/data/geography.json` дополнен
+    Q-ID для городов и тематических рубрик.
+*   **Inter-rater reliability:** `tools/build_interrater_sample.py` +
+    `tools/compute_interrater_agreement.py` (+ `build_classification_reliability_sample.py`)
+    — выборка и расчёт согласованности для классификации.
+*   **Замороженный снимок для DOI:** `tools/freeze_article_data.py` создаёт
+    `article/snapshots/2026-06-03/` под депозицию.
+*   **Пример анализа:** `notebooks/example_analysis.py` — воспроизводимый
+    разбор корпуса для внешних исследователей.
+
+### Документация
+
+*   `CLAUDE.md` дополнен: Wikidata Q-ID в `geography.json` (п. 4), раздел
+    интернационализации данных (п. 6: wikidata-guide, data paper, notebook),
+    снимок для DOI и inter-rater инструменты (п. 7).
+*   **`docs/roster-merge-design.md`** — дизайн слияния ростера русскоязычных
+    индологов в корпус: участники обогащаются (Q-ID, годы жизни) без
+    дублирования person-строк, неучастники публикуются отдельной
+    страницей-реестром, изолированной от конференционной статистики.
+*   `docs/development.md` / `development-en.md` — новый раздел
+    «Интернационализация и контроль авторитетов» + регистрация wikidata-guide,
+    data paper и дизайна слияния в таблице техдокументов.
+*   `data_dictionary.md` — `openalex_author_candidates.csv`, `wikidata_batch.txt`
+    и `indology_knowledge_graph.ttl` добавлены в раздел Authority Outputs.
+*   `ROADMAP.md`, `.ai_state.md`, `CHANGELOG.md` — данная запись.
+
+### Исправлено
+
+*   **`tools/generate_wikidata_batch.py` — неверные Q-ID и структура источника.**
+    `Q8088479` оказался вообще не «индологией», а служебной категорией
+    `Category:1198 establishments`. Исправлено: `P106 (род занятий)` →
+    `Q18524037` (профессия «индолог»), `P101 (область деятельности)` →
+    `Q625510` (область «индология»). Удалён фиктивный `P248 stated-in`
+    `Q126692818` (на деле — видеоигра 2024 г.); страница профиля теперь
+    цитируется как **референс** `S854` на ключевых утверждениях (а не как
+    отдельные statement-ы `P248`/`P854`). `P108 (работодатель)` больше не
+    получает строковых значений в item-поле — статья пишется только при
+    наличии Q-ID, дубли работодателя дедуплицируются. Батч перегенерирован.
+    Отправка в QuickStatements — по-прежнему только после ручной сверки
+    122 кандидатов.
+*   **`tools/inject_openalex_matches.py`:** выход с ошибкой при отсутствии
+    `requests` (раньше падал позже); `checked_at` теперь проставляется
+    текущей датой, а не зашитой `2026-06-03`.
+
 ## [1.9.2] — 2026-06-02
 
 ### Pre-submission gate (ППВ) — финал

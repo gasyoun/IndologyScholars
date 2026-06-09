@@ -2,16 +2,25 @@
 
 > Integrated roadmap across data/DB, generated site, the ППВ article, and the
 > `philology-research-agents` module. Three horizons: **Now / Next / Later**.
-> Составлено 2026-05-27, обновлено 2026-06-02. Текущий статус — **ППВ готов к подаче ✅**.
+> Составлено 2026-05-27, обновлено 2026-06-10. Текущий статус — **ППВ подан;
+> активный трек — интернационализация данных (Wikidata/OpenAlex/LOD) и
+> сбор русскоязычных индологов.**
 >
 > Это живой документ. Пункты уровня **Now** заведены как GitHub issues
 > (`gh issue list --label roadmap`); Next/Later описаны здесь и поднимаются в issues по
 > мере приближения.
 
-**TL;DR (EN).** ППВ article is submission-ready (35 195 chars, 0 drifts, anonymous copy
-synced, cover letter updated). Next: genealogy graph in networks.html deployed,
-city-to-institution trajectory audit created, VAK parser and birth-year scraper ready.
-Long-range: video-archive, dataset DOI, agents module spinout, international article.
+**TL;DR (EN).** ППВ article submitted. Active sprint: **expand the
+Russian-indologist roster** (`scratch/` sub-project — 197 indologists, 60 tests)
+and wire authority control (OpenAlex → Wikidata/ORCID, 122 candidates pending
+human review). English **data paper** drafted (`article/data_paper_draft.md`),
+target **Research Data Journal for the Humanities and Social Sciences (Brill)**;
+DOI snapshot frozen in `article/snapshots/`. Long-range: video-archive, agents
+module spinout, international ППВ translation.
+
+**Актуальный корпус (2026-06-04):** 270 учёных · 1362 уникальных доклада ·
+1388 авторских участий · 2004–2026 · 41 перекрёстной когорты · 165 только
+Зографских · 64 только Рериховских.
 
 ---
 
@@ -22,9 +31,47 @@ Long-range: video-archive, dataset DOI, agents module spinout, international art
 
 ---
 
-## NOW — ППВ: ✅ ГОТОВО К ПОДАЧЕ
+## NOW — активный спринт: сбор русскоязычных индологов + контроль авторитетов
 
-Категория подачи — **«статья» (≤ 40 000 знаков)**. Текущая версия
+Приоритет выбран редактором: **расширение ростера русскоязычных индологов**
+(подпроект `scratch/`) с параллельной привязкой к международным
+идентификаторам.
+
+A. 🅳 🟡 **Ростер русскоязычных индологов (`scratch/`) → слияние в корпус.**
+   197 индологов (114 вики/en.wiki-мост + 83 база конференций), Q-ID 8→26, 60 тестов.
+   **Решение: влить ростер в основной корпус** — участники связываются с профилями,
+   **неучастники выносятся отдельной страницей-реестром** (отличной от докладчиков).
+   - ✅ Дизайн слияния: `docs/roster-merge-design.md` (участники → обогащение, неучастники → реестр)
+   - ⬜ Реализовать по дизайну: curation-CSV неучастников, линкер участников, генератор реестра
+   - ⬜ P0 `wikidata_enrich.py` → годы жизни 13 записям, перегенерировать crossref (где Wikidata доступна)
+   - ⬜ P0 `scrape_institutions_web.py` + Playwright → институц. имена (по runbook, запуск внутри .ru)
+   - ⬜ P1 `expand_wikipedia_indologists.py` → ru-инфобоксы новым именам (где ru.wiki-статьи открываются)
+   - ⬜ P1 Ручной добор имперского периода (~15 имён)
+   - ⬜ P2 Постсоветские республики через en.wiki нац-категории + мост
+   - Детальный план: `scratch/roadmap.md`, статус: `scratch/ai_status.md`
+B. 🅳 🟡 **Контроль авторитетов (OpenAlex → Wikidata/ORCID).**
+   - ✅ 122 кандидата OpenAlex найдены (`analytics_output/openalex_author_candidates.csv`)
+   - ⬜ Ручная сверка 122 кандидатов (статус `todo` → `confirmed`)
+   - ⬜ Инъекция при `relevance_score ≥ 0.8` (порог подтверждён), `confidence='candidate'`
+   - ✅ Исправлены Q-ID в `generate_wikidata_batch.py`: P106 → `Q18524037` (профессия «индолог»), P101 → `Q625510` (область), удалён фиктивный `Q126692818`, источник как референс `S854`
+   - ⬜ Отправить Wikidata-батч **только после** полной сверки 122 кандидатов
+   - Руководство: `docs/wikidata-guide.md`
+C. 🅳🅜 🟡 **Англоязычный data paper.**
+   - ✅ Черновик `article/data_paper_draft.md` — **единоличное авторство (Gasūns)**, инструменты в acknowledgements
+   - ✅ Замороженный снимок `article/snapshots/2026-06-03/` (`tools/freeze_article_data.py`)
+   - ⬜ Подача в **Research Data Journal for the Humanities and Social Sciences (Brill)**
+   - ⬜ **DOI на Zenodo** через GitHub-release; версия датасета — **датированная на каждый снимок** (CITATION.cff бампится при freeze)
+   - ⬜ Inter-rater agreement в methods (`tools/compute_interrater_agreement.py`)
+D. 🅜 ⬜ **Runbook для .ru-шагов.** С хоста автоматизации доступен только en.wiki;
+   написать пошаговый runbook + довести скрипты, чтобы редактор прогонял
+   Playwright-скрапинг институтов, ru-инфобоксы и Wikidata REST изнутри .ru,
+   а парсинг результатов делался здесь.
+
+---
+
+## ✅ ЗАВЕРШЕНО — ППВ: подан
+
+Категория подачи — **«статья» (≤ 40 000 знаков)**. Версия
 `article/ppv_submission_article.md` — **35 195 знаков**.
 
 1. 🅰️ ✅ **Ссылочный аппарат ППВ.** 5 внутритекстовых ссылок `(Автор Год)`, «Литература»
@@ -87,7 +134,9 @@ Long-range: video-archive, dataset DOI, agents module spinout, international art
 ## LATER — стратегическое (6–12 месяцев)
 
 15. 🅜 **Видеоархив и цифровая доступность.**
-16. 🅳 **Воспроизводимость и открытые данные.** DOI на датасет.
+16. 🅳 🟡 **Воспроизводимость и открытые данные.** DOI на датасет — снимок
+    заморожен (`article/snapshots/2026-06-03/`), data paper в работе (см. NOW-C);
+    осталась Zenodo-депозиция и подача в Research Data Journal (Brill).
 17. 🅼 **Вынос модуля агентов в отдельный репозиторий.** (План: `SPINOUT_PLAN.md`)
 18. 🅰️ **Международная версия статьи.** Профиль `editors/iij.md` готов.
 19. 🅳 **Расширение корпуса.** Другие индологические площадки.
@@ -100,7 +149,20 @@ Long-range: video-archive, dataset DOI, agents module spinout, international art
 
 ---
 
-## Новые инструменты (2026-06-02)
+## Новые инструменты (2026-06-10)
+
+| Инструмент | Назначение |
+|------------|-----------|
+| `scratch/enwiki_bridge.py` | en.wikipedia → ru-название + Wikidata Q-ID (RKN-устойчив) |
+| `scratch/wikidata_enrich.py` | Q-ID → годы жизни (REST `Special:EntityData`) |
+| `scratch/scrape_institutions_web.py` | Скрапер сайтов институтов (static→JSON:API→Playwright) |
+| `scratch/openalex_author_candidates.py` + `resume_openalex.py` | Поиск кандидатов OpenAlex по ФИО |
+| `tools/inject_openalex_matches.py` | Инъекция совпадений OpenAlex → `authority_ids.json` (candidate) |
+| `tools/generate_wikidata_batch.py` | QuickStatements v2-батч (⚠️ исправить Q-ID до отправки) |
+| `tools/freeze_article_data.py` | Замороженный снимок корпуса для DOI |
+| `tools/build_interrater_sample.py` / `compute_interrater_agreement.py` | Inter-rater reliability |
+
+### Инструменты предыдущего спринта (2026-06-02)
 
 | Инструмент | Назначение |
 |------------|-----------|

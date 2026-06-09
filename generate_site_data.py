@@ -5,7 +5,7 @@ import re
 
 from classification_overrides import CLASSIFICATION_OVERRIDES, THEME_LABEL_OVERRIDES
 from metadata_normalization import load_verified_affiliation_spans, public_affiliation, split_leading_affiliation
-from publication_helpers import GENERATION_COHORTS, assign_unique_slugs, build_presentation_slug_map, generation_cohort, load_authority_overrides, normalize_affiliation, normalize_time_interval
+from publication_helpers import GENERATION_COHORTS, assign_unique_slugs, build_presentation_slug_map, generation_cohort, iso9_transliterate, load_authority_overrides, normalize_affiliation, normalize_time_interval
 from title_normalization import THEME_OVERRIDES_BY_PRESENTATION_ID, TITLE_EDITORIAL_NOTES_BY_PRESENTATION_ID, canonical_title
 import pipeline.genealogy as gen
 
@@ -465,7 +465,7 @@ def main():
             "birth_year": birth_year,
             "death_year": death_year,
             "full_name_ru": full_name_ru,
-            "full_name_en": full_name_en,
+            "full_name_en": full_name_en or (iso9_transliterate(full_name_ru) if full_name_ru else None),
             "gender": gender,
             "zograf_first": zograf_first,
             "zograf_last": zograf_last,
@@ -645,7 +645,7 @@ def main():
             "normalized_key": meta["normalized_key"],
             "original_fullname": r[1],
             "full_name_ru": meta["full_name_ru"] or meta["std_name"],
-            "full_name_en": meta["full_name_en"] or meta["std_name"],
+            "full_name_en": meta["full_name_en"] or iso9_transliterate(meta["full_name_ru"]) if meta.get("full_name_ru") else meta["std_name"],
             "birth_year": meta["birth_year"],
             "generation_code": cohort["code"] if cohort else None,
             "generation_label_ru": cohort["ru"] if cohort else None,

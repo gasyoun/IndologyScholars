@@ -177,6 +177,48 @@ Workflow `.github/workflows/rebuild_and_deploy.yml` выполняет загр�
 `site_data.json` и страницам профилей — это отдельный шаг, специально
 оставленный вне стандартной последовательности сборки.
 
+## Интернационализация и контроль авторитетов
+
+Внешние идентификаторы хранятся в `authority_ids.json` (валидируется по
+`authority_ids.schema.json`): на человека — `openalex` / `orcid` / `wikidata`
+с полем `confidence`, на организацию — `wikidata`. Q-ID городов и тем — в
+`assets/data/geography.json`. Граф знаний в Turtle
+`indology_knowledge_graph.ttl` перегенерируется через `generate_lod.py`.
+
+Пайплайн авторитетов никогда не утверждает совпадение без ручной сверки:
+
+1. `scratch/openalex_author_candidates.py` (или `scratch/resume_openalex.py`
+   для продолжения прерванного прогона) опрашивает OpenAlex Authors API по
+   кириллическому ФИО и латинской транслитерации, скорит кандидатов
+   (RU-аффилиация, совпадение фамилии, число работ) и пишет
+   `analytics_output/openalex_author_candidates.csv` со `manual_status=todo`.
+2. Человек помечает строки `confirmed`. `tools/inject_openalex_matches.py`
+   переносит высокоуверенные (≥0.8) совпадения в `authority_ids.json` с
+   `confidence='candidate'` (никогда `confirmed` автоматически), доставая
+   ORCID/Wikidata из ответа OpenAlex.
+3. `tools/generate_wikidata_batch.py` генерит QuickStatements v2-батч
+   (`analytics_output/wikidata_batch.txt`) для топ-учёных без Q-ID, с
+   ISO-9-транслитерацией и блоком источника. См. `wikidata-guide.md`.
+   **Известный дефект:** `Q_INDOLOGIST` и `Q_INDOLOGY` сейчас оба указывают
+   на `Q8088479` (это *область*, а не *профессия*); исправить Q-ID для
+   `P106` до отправки батча.
+
+`tools/build_interrater_sample.py` и `tools/compute_interrater_agreement.py`
+поддерживают расчёт согласованности кодировщиков для тематической разметки.
+`tools/freeze_article_data.py` пишет неизменяемый снимок корпуса в
+`article/snapshots/<дата>/` под депозицию DOI. Черновик англоязычного data
+paper — `article/data_paper_draft.md` (цель: Research Data Journal for the
+Humanities and Social Sciences, Brill); `notebooks/example_analysis.py` —
+воспроизводимый пример повторного использования.
+
+Подпроект `scratch/` (ростер русскоязычных индологов) собирает русскоязычных
+индологов за ~200 лет и кросс-сверяет с участием в Зографских/Рериховских
+чтениях (197 индологов, 60 тестов). Самодокументирован в `scratch/roadmap.md`,
+`scratch/changelog.md`, `scratch/ai_status.md`. Замечание о достижимости: с
+хоста автоматизации надёжно доступен только `en.wikipedia.org`; `ru.wikipedia`
+(РКН) и REST/SPARQL Wikidata — нет, поэтому `enwiki_bridge.py` — основной путь,
+а ru-/Wikidata-зависимые шаги запускаются с хоста, где есть доступ.
+
 ## Технические документы
 
 | Документ | Назначение |
@@ -191,6 +233,9 @@ Workflow `.github/workflows/rebuild_and_deploy.yml` выполняет загр�
 | [archive/plans/architecture.md](https://github.com/gasyoun/IndologyScholars/blob/main/archive/plans/architecture.md) | Исторический архитектурный план. |
 | [archive/plans/architecture_implementation_plan.md](https://github.com/gasyoun/IndologyScholars/blob/main/archive/plans/architecture_implementation_plan.md) | Запись выполненного усиления архитектуры. |
 | [../philology-research-agents/README.md](https://github.com/gasyoun/IndologyScholars/blob/main/philology-research-agents/README.md) | Портативный модуль из шести агентов-промптов для филологии, языкознания и востоковедения, с журнальными профилями редакторов (ППВ, IIJ, ВДИ, ВЯ, JAOS, OLZ) и Haiku-промптом для парсинга Перечня ВАК. Спроектирован для выноса в отдельный репозиторий. |
+| [wikidata-guide.md](wikidata-guide.md) | Пошаговое руководство по привязке учёных к Wikidata Q-ID через пайплайн OpenAlex → Wikidata и QuickStatements. |
+| [../article/data_paper_draft.md](https://github.com/gasyoun/IndologyScholars/blob/main/article/data_paper_draft.md) | Англоязычный data paper: построение корпуса, модель данных, повторное использование (цель: Research Data Journal for the Humanities and Social Sciences). |
+| [roster-merge-design.md](roster-merge-design.md) | Дизайн слияния `scratch/`-ростера русскоязычных индологов в корпус (участники обогащаются, неучастники — отдельным реестром). |
 
 `CHANGELOG.md` и материалы `article/` служат журналом или исследовательскими
 снимками; содержащиеся в них числа нужно читать в контексте указанной даты.
