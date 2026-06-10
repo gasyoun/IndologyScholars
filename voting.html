@@ -42,7 +42,7 @@
       "name": "Russian Indological Research Archive",
       "url": "https://gasyoun.github.io/IndologyScholars/"
     },
-    "dateModified": "2026-06-09"
+    "dateModified": "2026-06-10"
   },
   {
     "@context": "https://schema.org",
@@ -190,6 +190,7 @@
                 <select id="vote-session-filter"></select>
             </label>
             <div class="vote-actions">
+                <button type="button" id="vote-send-teacher">Отправить преподавателю</button>
                 <button type="button" id="vote-export-csv">Экспорт CSV</button>
                 <button type="button" id="vote-export-json">Экспорт JSON</button>
                 <button type="button" id="vote-copy-json">Скопировать JSON</button>
@@ -409,6 +410,23 @@
                     setStatus('JSON скопирован. Его можно вставить в письмо или сообщение администратору.');
                 } catch (error) {
                     setStatus('Не удалось скопировать JSON автоматически. Используйте экспорт JSON.');
+                }
+            });
+
+            const teacherFormUrl = "";
+            document.getElementById('vote-send-teacher').addEventListener('click', async () => {
+                if (!requireRespondent()) return;
+                try {
+                    await copyText(JSON.stringify(rowsForExport(), null, 2));
+                } catch (error) {
+                    setStatus('Не удалось скопировать JSON. Используйте «Экспорт JSON» и приложите файл к форме.');
+                    return;
+                }
+                if (teacherFormUrl) {
+                    window.open(teacherFormUrl, '_blank', 'noopener');
+                    setStatus('JSON скопирован и открыта форма преподавателя. Вставьте его в поле «JSON выгрузки» и отправьте.');
+                } else {
+                    setStatus('JSON скопирован. Вставьте его в форму преподавателя (ссылку на форму даст преподаватель).');
                 }
             });
 
