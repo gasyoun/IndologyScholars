@@ -59,6 +59,9 @@ from publication_helpers import (
 
 
 DB_PATH = "conferences.db"
+# Teacher's Yandex Form that receives pasted vote JSON (see docs/voting-admin-collection-options.md).
+# Set this to your form's public URL; leave empty to fall back to copy-only.
+VOTE_TEACHER_FORM_URL = ""
 BUILD_DATE = dt.date.today().isoformat()
 DATA_SCHEMA_VERSION = "1.0.0"
 PIPELINE_VERSION = "2026-05-25"
@@ -2496,6 +2499,7 @@ def generate_voting_page(records):
                 <select id="vote-session-filter"></select>
             </label>
             <div class="vote-actions">
+                <button type="button" id="vote-send-teacher">Отправить преподавателю</button>
                 <button type="button" id="vote-export-csv">Экспорт CSV</button>
                 <button type="button" id="vote-export-json">Экспорт JSON</button>
                 <button type="button" id="vote-copy-json">Скопировать JSON</button>
@@ -2715,6 +2719,23 @@ def generate_voting_page(records):
                     setStatus('JSON скопирован. Его можно вставить в письмо или сообщение администратору.');
                 }} catch (error) {{
                     setStatus('Не удалось скопировать JSON автоматически. Используйте экспорт JSON.');
+                }}
+            }});
+
+            const teacherFormUrl = {json.dumps(VOTE_TEACHER_FORM_URL)};
+            document.getElementById('vote-send-teacher').addEventListener('click', async () => {{
+                if (!requireRespondent()) return;
+                try {{
+                    await copyText(JSON.stringify(rowsForExport(), null, 2));
+                }} catch (error) {{
+                    setStatus('Не удалось скопировать JSON. Используйте «Экспорт JSON» и приложите файл к форме.');
+                    return;
+                }}
+                if (teacherFormUrl) {{
+                    window.open(teacherFormUrl, '_blank', 'noopener');
+                    setStatus('JSON скопирован и открыта форма преподавателя. Вставьте его в поле «JSON выгрузки» и отправьте.');
+                }} else {{
+                    setStatus('JSON скопирован. Вставьте его в форму преподавателя (ссылку на форму даст преподаватель).');
                 }}
             }});
 
