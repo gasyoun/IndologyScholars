@@ -61,8 +61,48 @@ These cases must be treated conservatively:
 
 When in doubt, the scale is lowered rather than elevated.
 
+## Inter-Rater Reliability Design
+
+`tools/build_interrater_sample.py` produces a truly blind coding sheet
+(`analytics_output/interrater_sample_blind.csv`) and a separate answer key
+(`analytics_output/interrater_sample_key.csv`) joined only at scoring time
+by `tools/compute_interrater_agreement.py`. The sample (seed 20260612,
+n=100) is stratified: a census of all argument-level-3 items, an oversample
+of 30 level-2 items, and a random level-1 fill — a simple random sample
+from a corpus that is ~86% G1 would leave the contested elevated levels
+unmeasurable. Reported statistics: percentage agreement, Cohen's κ with
+bootstrap 95% CIs (interpreted on the Landis & Koch 1977 bands),
+Krippendorff's α, and Gwet's AC1 (the skewed level distribution makes raw
+κ prevalence-sensitive).
+
+The strict second pass over elevated G2/G3 assignments was performed by the
+same model under a different adjudication prompt; it is a same-model
+consistency check, not independent verification. Independent verification
+is what the blind sample exists for.
+
+### Cross-model agreement (2026-06-12)
+
+As a sanity check preceding the human pass, the blind sample was coded by a
+second LLM family (Claude, Anthropic `claude-fable-5`), from
+title/year/series only, against the existing DeepSeek-assisted
+classifications (`analytics_output/interrater_crossmodel_claude.csv`):
+
+| Axis | % agree | Cohen's κ [95% CI] | Krippendorff's α | Gwet's AC1 [95% CI] |
+| --- | ---: | ---: | ---: | ---: |
+| L1 theme | 76.0% | 0.670 [0.554, 0.776] | 0.669 | 0.719 [0.617, 0.813] |
+| Argument level | 76.0% | 0.553 [0.400, 0.694] | 0.554 | 0.672 [0.551, 0.783] |
+
+Per-stratum agreement on the argument level: G1 86.4%, G2 63.3%, G3 54.5%.
+The G2/G3 boundary is the weak point; the most frequent confusions were
+G2→G1 (×10) and G3→G2 (×5), consistent with the conservative "when in
+doubt, lower" rule. This is **cross-model agreement, not human inter-rater
+reliability**; the human second-coder pass on the same blind sheet is the
+statistic to report at submission.
+
 ## Reuse Note
 
 Use `expanded_classification_deepseek.csv` as the current public classification
-export. Use `classification_reliability_sample.csv` when documenting manual
-quality control or planning a second human adjudication pass.
+export (canonical argument-scale column: `argument_level`; `gumilyov_level`
+is a legacy alias documented in `data_dictionary.md`). Use
+`classification_reliability_sample.csv` when documenting manual quality
+control or planning a second human adjudication pass.

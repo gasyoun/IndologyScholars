@@ -60,8 +60,9 @@ from publication_helpers import (
 
 DB_PATH = "conferences.db"
 # Teacher's Yandex Form that receives pasted vote JSON (see docs/voting-admin-collection-options.md).
-# Set this to your form's public URL; leave empty to fall back to copy-only.
-VOTE_TEACHER_FORM_URL = ""
+# This is the PUBLIC respondent link (/u/<id>/), not the /admin/.../edit editor URL.
+# Set to empty to fall back to copy-only.
+VOTE_TEACHER_FORM_URL = "https://forms.yandex.ru/u/6a28f0e995add5b922d0f14c"
 BUILD_DATE = dt.date.today().isoformat()
 DATA_SCHEMA_VERSION = "1.0.0"
 PIPELINE_VERSION = "2026-05-25"
@@ -1027,7 +1028,8 @@ keywords:
                         {"name": "title", "type": "string"},
                         {"name": "theme_l1", "type": "string"},
                         {"name": "period_l2", "type": "string"},
-                        {"name": "gumilyov_level", "type": "integer"},
+                        {"name": "argument_level", "type": "integer", "description": "Argument-scale level 1-3; canonical name."},
+                        {"name": "gumilyov_level", "type": "integer", "description": "Legacy alias of argument_level, retained for backward compatibility."},
                         {"name": "meso_codes", "type": "string"},
                         {"name": "confidence", "type": "number"},
                         {"name": "review_bucket", "type": "string"},
@@ -2275,6 +2277,7 @@ def generate_gender_page():
     scholars = load_site_data().get("scholars", [])
     women_all = sum(1 for s in scholars if s.get("gender") == "F")
     men_all = sum(1 for s in scholars if s.get("gender") == "M")
+    unknown_all = len(scholars) - women_all - men_all
     known = women_all + men_all or 1
 
     year_gender = defaultdict(lambda: {"F": 0, "M": 0})
@@ -2342,7 +2345,9 @@ def generate_gender_page():
 </table></div>
 <h2>Топ женщин-исследователей</h2>
 <div class="chip-row">{women_chips}</div>
-<p style="margin-top:1.5rem;color:var(--muted);">Всего учёных с задокументированным полом: {known} (Ж: {women_all}, М: {men_all}). Данные основаны на конференционных программах и могут не отражать полный гендерный баланс дисциплины.</p>'''
+<p style="margin-top:1.5rem;color:var(--muted);">Всего учёных: {len(scholars)}; пол определён для {known} (Ж: {women_all}, М: {men_all}), не определён для {unknown_all}. Данные основаны на конференционных программах и могут не отражать полный гендерный баланс дисциплины.</p>
+<h2>Методика</h2>
+<p style="color:var(--muted);">Пол выводится автоматически из русскоязычного имени (отчество, затем личное имя, затем склонение фамилии; функция <code>classify_gender</code> в <code>publication_helpers.py</code>). Это вероятностная атрибуция, а не самоидентификация. Имена, не позволяющие надёжного вывода, учитываются отдельной категорией «не определён» и не исключаются из знаменателей. Протокол ручной валидации и измеренная доля ошибок: <code>tools/validate_gender_inference.py</code>; порядок исправления и возражений &mdash; в <a href="https://github.com/gasyoun/IndologyScholars/blob/main/docs/persons-data-policy.md">политике персональных данных</a>.</p>'''
 
     write_text(
         "findings/gender.html",
@@ -2499,7 +2504,7 @@ def generate_voting_page(records):
                 <select id="vote-session-filter"></select>
             </label>
             <div class="vote-actions">
-                <button type="button" id="vote-send-teacher">Отправить преподавателю</button>
+                <button type="button" id="vote-send-teacher">Отправить голосование</button>
                 <button type="button" id="vote-export-csv">Экспорт CSV</button>
                 <button type="button" id="vote-export-json">Экспорт JSON</button>
                 <button type="button" id="vote-copy-json">Скопировать JSON</button>
@@ -2733,9 +2738,9 @@ def generate_voting_page(records):
                 }}
                 if (teacherFormUrl) {{
                     window.open(teacherFormUrl, '_blank', 'noopener');
-                    setStatus('JSON скопирован и открыта форма преподавателя. Вставьте его в поле «JSON выгрузки» и отправьте.');
+                    setStatus('JSON скопирован и открыта форма голосования. Вставьте его в поле «JSON выгрузки» и отправьте.');
                 }} else {{
-                    setStatus('JSON скопирован. Вставьте его в форму преподавателя (ссылку на форму даст преподаватель).');
+                    setStatus('JSON скопирован. Вставьте его в форму голосования (ссылку на форму даст преподаватель).');
                 }}
             }});
 
@@ -3076,8 +3081,8 @@ def generate_download_page(data):
         ("Biographical provenance", "analytics_output/field_provenance_biographical.csv", "Field-level provenance for curated person names and life dates."),
         ("Authority provenance", "analytics_output/field_provenance_authority.csv", "Field-level provenance for external identifiers and organization authority records."),
         ("Theme provenance", "analytics_output/field_provenance_themes.csv", "Field-level provenance for generated presentation theme labels."),
-        ("Gumilyov scale", "analytics_output/gumilyov_scale.csv", "Presentation-level scale of generalization used by the Gumilyov navigation pages."),
-        ("Expert classification decisions", "analytics_output/classification_overrides.csv", "Reviewed revisions to themes, meso-levels, and Gumilyov argument levels, with a rationale for each affected presentation."),
+        ("Argument scale", "analytics_output/gumilyov_scale.csv", "Presentation-level argument-scale levels (canonical column argument_level; gumilyov_level kept as a legacy alias)."),
+        ("Expert classification decisions", "analytics_output/classification_overrides.csv", "Reviewed revisions to themes, meso-levels, and argument-scale levels, with a rationale for each affected presentation."),
         ("Human review index", "analytics_output/human_review_index.csv", "Unified curator-facing inbox for open manual review items across authority IDs, identity, classification, spacetime, affiliation, lineage, and data-quality queues."),
         ("Scientometrics guardrails", "analytics_output/scientometrics_guardrails.csv", "Index of eight responsible-metrics guardrails and their generated review artifacts."),
         ("Scientometrics claim registry", "analytics_output/scientometrics_claim_registry.csv", "Allowed claim families, required evidence, and forbidden overclaims for public interpretation."),
@@ -9963,27 +9968,12 @@ def generate_generations_page(data):
     male_presentations_by_year = defaultdict(int)
     female_presentations_by_year = defaultdict(int)
 
+    # Single source of truth: the gender field computed by
+    # publication_helpers.classify_gender during site_data generation.
     scholar_gender = {}
     for s in scholars:
         pid = s.get("id")
-        fname = s.get("full_name_ru") or s.get("name") or ""
-        
-        gender = None
-        if any(pat in fname for pat in ["овна", "евна", "ична", "инична"]):
-            gender = "female"
-        elif any(pat in fname for pat in ["ович", "евич", "ич"]):
-            gender = "male"
-        else:
-            last_word = fname.split()[-1] if fname.split() else ""
-            if last_word.endswith(("ова", "ева", "ина", "ая")):
-                gender = "female"
-            elif last_word.endswith(("ов", "ев", "ин", "ий", "ый")):
-                gender = "male"
-            elif any(fname.split()[0].startswith(prefix) for prefix in ["Дми", "Але", "Сер", "Ива", "Мих", "Вла", "Кон", "Юри", "Анд", "Мих"]):
-                gender = "male"
-            elif any(fname.split()[0].startswith(prefix) for prefix in ["Оль", "Мар", "Ири", "Еле", "Тат", "Анн", "Све", "Нат", "Ека", "Люд"]):
-                gender = "female"
-        
+        gender = {"M": "male", "F": "female"}.get(s.get("gender"))
         if gender:
             scholar_gender[pid] = gender
             cohort = s.get("generation_code")

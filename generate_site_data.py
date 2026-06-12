@@ -5,7 +5,7 @@ import re
 
 from classification_overrides import CLASSIFICATION_OVERRIDES, THEME_LABEL_OVERRIDES
 from metadata_normalization import load_verified_affiliation_spans, public_affiliation, split_leading_affiliation
-from publication_helpers import GENERATION_COHORTS, assign_unique_slugs, build_presentation_slug_map, generation_cohort, iso9_transliterate, load_authority_overrides, normalize_affiliation, normalize_time_interval
+from publication_helpers import GENERATION_COHORTS, assign_unique_slugs, build_presentation_slug_map, classify_gender, generation_cohort, iso9_transliterate, load_authority_overrides, normalize_affiliation, normalize_time_interval
 from title_normalization import THEME_OVERRIDES_BY_PRESENTATION_ID, TITLE_EDITORIAL_NOTES_BY_PRESENTATION_ID, canonical_title
 import pipeline.genealogy as gen
 
@@ -139,39 +139,6 @@ def clean_title(title):
     # Remove multiple spaces and strip
     cleaned = re.sub(r'\s+', ' ', cleaned)
     return cleaned.strip()
-
-def classify_gender(full_name_ru, display_name):
-    name_to_check = (full_name_ru or display_name or "").strip()
-    parts = name_to_check.split()
-    
-    # 1. Patronymics check
-    for p in parts:
-        p_low = p.lower()
-        if p_low.endswith(('вна', 'евна', 'овна', 'ична', 'инична')):
-            return "F"
-        if p_low.endswith(('вич', 'евич', 'ович', 'ич', 'чич')):
-            return "M"
-            
-    # 2. First name check
-    female_first_names = ["маргарита", "наталия", "надежда", "елена", "ирина", "ольга", "татьяна", "анна", "мария", "софия", "евгения", "галина", "светлана", "людмила", "александра", "екатерина", "юлия", "любовь", "нина", "дарья", "лариса", "ксен", "ярослав", "вера", "тамара", "алена", "виктория", "марина", "жанна", "светлана", "надежда", "марианна"]
-    male_first_names = ["михаил", "бабасан", "павел", "андрей", "иван", "сергей", "алексей", "дмитрий", "владимир", "николай", "александр", "петр", "федор", "степан", "григорий", "ярослав", "василий", "георгий", "юрий", "максим", "кирилл", "артем", "роман", "евгений", "виктор", "леонид", "олег", "игорь", "святослав", "марцис", "макс", "эрман", "никита", "семен"]
-    
-    for p in parts:
-        p_low = p.lower()
-        if p_low in female_first_names:
-            return "F"
-        if p_low in male_first_names:
-            return "M"
-            
-    # 3. Last name endings check
-    for p in parts:
-        p_low = p.lower()
-        if p_low.endswith(('ова', 'ева', 'ина', 'ая', 'ына')):
-            return "F"
-        if p_low.endswith(('ов', 'ев', 'ин', 'ий', 'ын')):
-            return "M"
-            
-    return None
 
 import csv
 
@@ -607,7 +574,8 @@ def main():
                 "affiliation_note": affiliation_meta["note"],
                 "geography": geo,
                 "theme": theme,
-                "gumilyov_scale": g_scale,
+                "gumilyov_scale": g_scale,  # legacy alias of argument_level
+                "argument_level": g_scale,
                 "tags": p_tags,
                 "meso_codes": meso_codes_for(pres_id),
                 "classification_reason": manual_classification.get("reason"),
@@ -867,7 +835,8 @@ def main():
             "title": cleaned_title,
             "title_editorial_note": TITLE_EDITORIAL_NOTES_BY_PRESENTATION_ID.get(str(pres_id)),
             "theme": theme,
-            "gumilyov_scale": g_scale,
+            "gumilyov_scale": g_scale,  # legacy alias of argument_level
+            "argument_level": g_scale,
             "tags": p_tags,
             "meso_codes": meso_codes_for(pres_id),
             "classification_reason": manual_classification.get("reason"),
@@ -949,7 +918,8 @@ def main():
     female_count = sum(1 for s in scholars if s["gender"] == "F")
     gender_stats = {
         "M": male_count,
-        "F": female_count
+        "F": female_count,
+        "U": len(scholars) - male_count - female_count
     }
     
     age_groups = {
