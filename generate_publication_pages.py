@@ -2347,7 +2347,7 @@ def generate_gender_page():
 <div class="chip-row">{women_chips}</div>
 <p style="margin-top:1.5rem;color:var(--muted);">Всего учёных: {len(scholars)}; пол определён для {known} (Ж: {women_all}, М: {men_all}), не определён для {unknown_all}. Данные основаны на конференционных программах и могут не отражать полный гендерный баланс дисциплины.</p>
 <h2>Методика</h2>
-<p style="color:var(--muted);">Пол выводится автоматически из русскоязычного имени (отчество, затем личное имя, затем склонение фамилии; функция <code>classify_gender</code> в <code>publication_helpers.py</code>). Это вероятностная атрибуция, а не самоидентификация. Имена, не позволяющие надёжного вывода, учитываются отдельной категорией «не определён» и не исключаются из знаменателей. Протокол ручной валидации и измеренная доля ошибок: <code>tools/validate_gender_inference.py</code>; порядок исправления и возражений &mdash; в <a href="https://github.com/gasyoun/IndologyScholars/blob/main/docs/persons-data-policy.md">политике персональных данных</a>.</p>'''
+<p style="color:var(--muted);">Пол выводится автоматически из русскоязычного имени (однозначное личное имя, затем отчество, затем склонение фамилии; функция <code>classify_gender</code> в <code>publication_helpers.py</code>). Это вероятностная атрибуция, а не самоидентификация. Имена, не позволяющие надёжного вывода, учитываются отдельной категорией «не определён» и не исключаются из знаменателей. Протокол ручной валидации и измеренная доля ошибок: <code>tools/validate_gender_inference.py</code>; порядок исправления и возражений &mdash; в <a href="https://github.com/gasyoun/IndologyScholars/blob/main/docs/persons-data-policy.md">политике персональных данных</a>.</p>'''
 
     write_text(
         "findings/gender.html",
@@ -6721,6 +6721,60 @@ def generate_visualisations_page(data, records):
     conn_tmp.close()
 
 
+    # VIS_043 — coding reliability confusion matrices (cross-model blind sample),
+    # rendered server-side: rows = corpus classification, columns = second coder.
+    def _confusion_table(pairs, categories, labels):
+        counts = defaultdict(int)
+        for existing, coder2 in pairs:
+            counts[(existing, coder2)] += 1
+        row_max = {e: max([counts[(e, c)] for c in categories] + [1]) for e in categories}
+        head = "".join(
+            f'<th style="padding:0.35rem 0.5rem; font-size:0.75rem; color:var(--muted); text-align:center;">{labels.get(c, c)}</th>'
+            for c in categories
+        )
+        rows_html = ""
+        for e in categories:
+            cells = ""
+            for c in categories:
+                n = counts[(e, c)]
+                opacity = 0.06 + 0.74 * (n / row_max[e]) if n else 0.02
+                color = "98,174,146" if e == c else "214,118,86"
+                cells += (
+                    f'<td style="padding:0.45rem 0.5rem; text-align:center; font-size:0.85rem; '
+                    f'background:rgba({color},{opacity:.2f});">{n if n else ""}</td>'
+                )
+            rows_html += (
+                f'<tr><th style="padding:0.35rem 0.5rem; font-size:0.75rem; color:var(--muted); text-align:right;">{labels.get(e, e)}</th>{cells}</tr>'
+            )
+        return (
+            '<table style="border-collapse:collapse; margin:0 auto;">'
+            f'<thead><tr><th></th>{head}</tr></thead><tbody>{rows_html}</tbody></table>'
+        )
+
+    vis043_l1_table = vis043_g_table = ""
+    vis043_blind = {r.get("presentation_id"): r for r in load_csv_rows("analytics_output/interrater_crossmodel_claude.csv")}
+    vis043_key = {r.get("presentation_id"): r for r in load_csv_rows("analytics_output/interrater_sample_key.csv")}
+    if vis043_blind and vis043_key:
+        l1_pairs = []
+        g_pairs = []
+        for pid, row in vis043_blind.items():
+            key_row = vis043_key.get(pid)
+            if not key_row:
+                continue
+            if row.get("coder_2_l1"):
+                l1_pairs.append((key_row.get("existing_l1", ""), row.get("coder_2_l1", "")))
+            if row.get("coder_2_g"):
+                g_pairs.append((key_row.get("existing_g", ""), row.get("coder_2_g", "")))
+        l1_cats = ["history_and_culture", "religion_and_philosophy", "literature_and_poetry",
+                   "linguistics_and_philology", "art_and_material_culture", "unspecified"]
+        l1_labels = {
+            "history_and_culture": "Ист.", "religion_and_philosophy": "Рел.-фил.",
+            "literature_and_poetry": "Лит.", "linguistics_and_philology": "Лингв.",
+            "art_and_material_culture": "Иск.", "unspecified": "Не опр.",
+        }
+        vis043_l1_table = _confusion_table(l1_pairs, l1_cats, l1_labels)
+        vis043_g_table = _confusion_table(g_pairs, ["1", "2", "3"], {"1": "G1", "2": "G2", "3": "G3"})
+
     tip_style = (
         "position:absolute; background:rgba(18,18,24,0.95); border:1px solid rgba(255,255,255,0.15); "
         "border-radius:8px; padding:0.7rem 0.9rem; font-size:0.82rem; color:#fff; pointer-events:none; "
@@ -6882,6 +6936,12 @@ def generate_visualisations_page(data, records):
             <a href="#VIS_012_gumilyov_stream" class="viz-toc-item">
                 <span>VIS_012</span>
                 <b class="bilingual-text" data-ru="Поток уровней обобщения (шкала Гумилёва)" data-en="Scale-of-Argument Streamgraph (Gumilyov)">Поток уровней обобщения (шкала Гумилёва)</b>
+                <span class="badge badge-online bilingual-text" data-ru="Активна" data-en="Active">Активна</span>
+            </a>
+            <a href="#VIS_043_coding_reliability" class="viz-toc-item">
+                <span>VIS_043</span>
+                <b class="bilingual-text" data-ru="Надёжность кодирования (матрицы ошибок)" data-en="Coding Reliability (Confusion Matrices)">Надёжность кодирования (матрицы ошибок)</b>
+                <a href="/hypotheses.html#H15" class="badge" style="background:#6c5ce7; color:white; margin-right:4px; text-decoration:none;" title="Читать формулировку гипотезы H15">H15</a>
                 <span class="badge badge-online bilingual-text" data-ru="Активна" data-en="Active">Активна</span>
             </a>
             <a href="#VIS_028_gumilyov" class="viz-toc-item">
@@ -7649,6 +7709,27 @@ def generate_visualisations_page(data, records):
                 <svg id="vis042-svg" viewBox="0 0 800 360" style="width:100%; height:auto; background:rgba(0,0,0,0.15); border-radius:8px;"></svg>
                 <div id="vis042-tooltip" style="{tip_style}"></div>
             </div>
+        </section>
+
+        <!-- VIS_043_coding_reliability -->
+        <section class="viz-showcase-section" id="VIS_043_coding_reliability">
+            <h2>
+                <span class="viz-id-badge">VIS_043</span>
+                <span class="bilingual-text" data-ru="Надёжность кодирования (матрицы ошибок)" data-en="Coding Reliability (Confusion Matrices)">Надёжность кодирования</span>
+                <a href="/hypotheses.html#H15" class="badge" style="background:#6c5ce7; color:white; text-decoration:none;" title="Читать формулировку гипотезы H15">H15</a>
+            </h2>
+            <p class="bilingual-text" style="color:var(--muted); font-size:0.9rem;" data-ru="Слепая стратифицированная выборка из 100 заголовков, закодированная второй LLM-семьёй (Claude) против действующей классификации. Строки — классификация корпуса, столбцы — второй кодировщик; зелёная диагональ — согласие. Темы L1: κ=0.670; масштаб аргумента: κ=0.553, слабое место — граница G2/G3. Методика и статистика — в пакете надёжности классификации." data-en="A blind stratified sample of 100 titles coded by a second LLM family (Claude) against the published classification. Rows are the corpus codes, columns the second coder; the green diagonal marks agreement. L1 themes: kappa=0.670; argument scale: kappa=0.553, with the G2/G3 boundary as the weak point. Method and statistics: see the classification reliability packet.">Матрицы согласия двух кодировщиков.</p>
+            <div style="display:flex; flex-wrap:wrap; gap:2rem; justify-content:center; margin-top:1.5rem;">
+                <figure style="margin:0;">
+                    <figcaption class="bilingual-text" style="text-align:center; color:var(--muted); font-size:0.85rem; margin-bottom:0.5rem;" data-ru="Темы L1 (n=100)" data-en="L1 themes (n=100)">Темы L1 (n=100)</figcaption>
+                    {vis043_l1_table}
+                </figure>
+                <figure style="margin:0;">
+                    <figcaption class="bilingual-text" style="text-align:center; color:var(--muted); font-size:0.85rem; margin-bottom:0.5rem;" data-ru="Масштаб аргумента (n=100)" data-en="Argument scale (n=100)">Масштаб аргумента (n=100)</figcaption>
+                    {vis043_g_table}
+                </figure>
+            </div>
+            <p class="bilingual-text" style="color:var(--muted); font-size:0.8rem; margin-top:1rem;" data-ru="Это кросс-модельное согласие, а не межэкспертная надёжность: человеческий проход по тому же слепому листу — отчётная статистика при подаче." data-en="This is cross-model agreement, not human inter-rater reliability: the human pass over the same blind sheet is the statistic reported at submission.">Кросс-модельное согласие.</p>
         </section>
 
     """

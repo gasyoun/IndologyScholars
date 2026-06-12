@@ -832,6 +832,36 @@ def main():
         if manifest_json.get("file_count", 0) < 1:
             fail(errors, "publication_file_manifest.json has no files")
 
+    classification_csv = Path("analytics_output/expanded_classification_deepseek.csv")
+    if classification_csv.exists():
+        csv_levels = {}
+        for row in load_csv(classification_csv):
+            pid = str(row.get("presentation_id") or "").strip()
+            level = str(row.get("argument_level") or row.get("gumilyov_level") or "").strip()
+            if pid:
+                csv_levels[pid] = level
+        site_levels = {}
+        for scholar in scholars:
+            for talk in scholar.get("talks", []):
+                pid = str(talk.get("presentation_id") or "").strip()
+                level = talk.get("argument_level") or talk.get("gumilyov_scale")
+                if pid:
+                    site_levels[pid] = str(level) if level else ""
+        unleveled = [pid for pid, level in site_levels.items() if level not in ("1", "2", "3")]
+        if unleveled:
+            fail(errors, f"{len(unleveled)} published talks lack a valid argument_level (e.g. {unleveled[:3]})")
+        # Per-ID identity between the classification export and the public payload;
+        # talks resolved via the title-key fallback are absent from the CSV and skipped.
+        drifted = [
+            pid for pid in set(csv_levels) & set(site_levels)
+            if csv_levels[pid] != site_levels[pid]
+        ]
+        if drifted:
+            fail(
+                errors,
+                f"argument_level drift between expanded_classification_deepseek.csv and site_data.json for {len(drifted)} presentations (e.g. {drifted[:5]})",
+            )
+
     if Path("analytics_output/id_stability_audit.json").exists():
         audit = json.loads(read("analytics_output/id_stability_audit.json"))
         audit_summary = audit.get("summary", {})

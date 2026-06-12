@@ -65,25 +65,26 @@ _MALE_SURNAME_SUFFIXES = ("ов", "ев", "ин", "ий", "ын", "ый")
 
 
 def classify_gender(full_name_ru, display_name=None):
-    """Infer gender from a Russian name: patronymic suffix first (most
-    reliable), then first-name list, then surname declension. Suffix checks
-    apply to whole name tokens only, never substrings; -ич surnames
-    (Маркович etc.) are deliberately left to the first-name stage."""
+    """Infer gender from a Russian name: known first name first (exact,
+    unambiguous), then patronymic suffix, then surname declension. The
+    first-name stage runs before the patronymic stage so that -ович/-евич
+    SURNAMES (Маркович, Гуревич) cannot override an unambiguous female
+    first name. Suffix checks apply to whole tokens only, never substrings."""
     name_to_check = (full_name_ru or display_name or "").strip()
     parts = name_to_check.split()
-
-    for p in parts:
-        p_low = p.lower()
-        if p_low.endswith(_FEMALE_PATRONYMIC_SUFFIXES):
-            return "F"
-        if p_low.endswith(_MALE_PATRONYMIC_SUFFIXES):
-            return "M"
 
     for p in parts:
         p_low = p.lower()
         if p_low in FEMALE_FIRST_NAMES:
             return "F"
         if p_low in MALE_FIRST_NAMES:
+            return "M"
+
+    for p in parts:
+        p_low = p.lower()
+        if p_low.endswith(_FEMALE_PATRONYMIC_SUFFIXES):
+            return "F"
+        if p_low.endswith(_MALE_PATRONYMIC_SUFFIXES):
             return "M"
 
     for p in parts:
