@@ -14,9 +14,12 @@ ROOT = Path(__file__).resolve().parents[1]
 SCRATCH = ROOT / "scratch"
 OUTPUT = SCRATCH / "wikidata_indologists.json"
 
+# Verify TLS certificates (the default). This talks to www.wikidata.org, which
+# has a valid public certificate and needs no exception — disabling verification
+# (CERT_NONE / check_hostname=False) would let a network MITM silently feed
+# forged scholar data into the scraped JSON. The RKN-blocked host is
+# ru.wikipedia.org, not wikidata.org, so no bypass is required here.
 SSL_CTX = ssl.create_default_context()
-SSL_CTX.check_hostname = False
-SSL_CTX.verify_mode = ssl.CERT_NONE
 USER_AGENT = "IndologyScholars/1.0"
 DELAY = 0.3
 
