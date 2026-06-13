@@ -29,7 +29,9 @@ from publication_helpers import (
     is_public_authority_record,
 )
 
-_JINJA_ENV = jinja2.Environment(loader=jinja2.FileSystemLoader("templates"))
+# autoescape: pre-built HTML is passed explicitly via |safe; this escapes every
+# other (scalar) value by default so a scraped name can't inject markup.
+_JINJA_ENV = jinja2.Environment(loader=jinja2.FileSystemLoader("templates"), autoescape=True)
 
 
 OUTPUT_DIR = Path("s")
