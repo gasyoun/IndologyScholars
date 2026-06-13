@@ -22,7 +22,6 @@ from collections import defaultdict
 from pathlib import Path
 
 import numpy as np
-from scipy.stats import norm as _norm
 
 sys.stdout.reconfigure(encoding="utf-8")
 sys.stderr.reconfigure(encoding="utf-8")
@@ -252,7 +251,6 @@ def main():
             O1 += o1; E1 += d * r1 / at_risk
             V += d * (r1 / at_risk) * (1 - r1 / at_risk) * (at_risk - d) / (at_risk - 1)
         chi = (O1 - E1) ** 2 / V if V else 0.0
-        p = 1 - _norm.cdf(np.sqrt(chi)) if False else float(np.exp(-chi / 2)) if False else None
         from scipy.stats import chi2
         return chi, float(chi2.sf(chi, 1))
 
