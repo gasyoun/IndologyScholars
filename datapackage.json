@@ -277,8 +277,14 @@
             "type": "string"
           },
           {
+            "name": "argument_level",
+            "type": "integer",
+            "description": "Argument-scale level 1-3; canonical name."
+          },
+          {
             "name": "gumilyov_level",
-            "type": "integer"
+            "type": "integer",
+            "description": "Legacy alias of argument_level, retained for backward compatibility."
           },
           {
             "name": "meso_codes",
