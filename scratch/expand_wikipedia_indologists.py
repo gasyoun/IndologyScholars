@@ -48,52 +48,63 @@ def api_request(params: dict, timeout: int = 20) -> dict:
 
 
 class _TextExtractor(HTMLParser):
-    """Strip markup with the stdlib HTML parser instead of regexes.
+    """Strip markup to plain text using the stdlib HTML parser.
 
-    Regex-based tag stripping is fragile (it misses upper-case ``<SCRIPT>``
-    tags, comments spanning newlines, malformed end tags, etc. — see CodeQL
-    ``py/bad-tag-filter``). The parser handles those cases correctly. To keep
-    :func:`clean_html`'s downstream normalisation unchanged, every tag becomes
-    a single space (a word separator, as the old ``<[^>]+>`` substitution did),
-    ``<script>``/``<style>`` bodies are dropped, comments are dropped, and
-    entity references are re-emitted verbatim so the existing entity-collapsing
-    regexes still apply.
+    Regex-based tag stripping is fragile — it misses upper-case ``<SCRIPT>``
+    tags, comments spanning newlines, and malformed end tags (CodeQL
+    ``py/bad-tag-filter``). This parser instead:
+
+    * drops the bodies of ``<script>`` and ``<style>`` elements;
+    * turns every tag, comment, declaration and processing instruction into a
+      single space, so text on either side of removed markup never merges into
+      one word;
+    * lets the parser decode character and entity references
+      (``convert_charrefs=True``), so ``&`` and accented characters in names
+      (``é``, ``ü`` …) survive instead of being mangled or dropped.
+
+    ``clean_html``'s downstream normalisation (``\\xa0`` → space, whitespace
+    collapse) then runs on the decoded text. A non-skip tag is reported via
+    ``handle_starttag``/``handle_endtag`` (and ``handle_startendtag`` for void
+    tags); ``<script>``/``<style>`` are CDATA elements, so their whole body
+    arrives as a single ``handle_data`` call that is dropped while ``_skip`` is
+    set.
     """
 
     _SKIP = {"script", "style"}
 
     def __init__(self) -> None:
-        super().__init__(convert_charrefs=False)
+        super().__init__(convert_charrefs=True)
         self._parts: list[str] = []
-        self._skip_depth = 0
+        self._skip = 0
 
     def handle_starttag(self, tag: str, attrs: list) -> None:
         if tag in self._SKIP:
-            self._skip_depth += 1
-        else:
-            self._parts.append(" ")
+            self._skip += 1
+        self._parts.append(" ")
 
     def handle_startendtag(self, tag: str, attrs: list) -> None:
-        if tag not in self._SKIP:
-            self._parts.append(" ")
+        self._parts.append(" ")
 
     def handle_endtag(self, tag: str) -> None:
-        if tag in self._SKIP:
-            if self._skip_depth:
-                self._skip_depth -= 1
+        if tag in self._SKIP and self._skip:
+            self._skip -= 1
         self._parts.append(" ")
 
     def handle_data(self, data: str) -> None:
-        if self._skip_depth == 0:
+        if self._skip == 0:
             self._parts.append(data)
 
-    def handle_entityref(self, name: str) -> None:
-        if self._skip_depth == 0:
-            self._parts.append(f"&{name};")
+    def handle_comment(self, data: str) -> None:
+        self._parts.append(" ")
 
-    def handle_charref(self, name: str) -> None:
-        if self._skip_depth == 0:
-            self._parts.append(f"&#{name};")
+    def handle_decl(self, decl: str) -> None:
+        self._parts.append(" ")
+
+    def handle_pi(self, data: str) -> None:
+        self._parts.append(" ")
+
+    def unknown_decl(self, data: str) -> None:
+        self._parts.append(" ")
 
     def get_text(self) -> str:
         return "".join(self._parts)
@@ -107,11 +118,19 @@ def _strip_markup(value: str) -> str:
 
 
 def clean_html(value: str) -> str:
+    # _strip_markup (convert_charrefs=True) already strips tags, drops
+    # <script>/<style> bodies, and decodes entities, so the only normalisation
+    # left is non-breaking-space → space and whitespace collapse.
+    #
+    # Deliberately NO content-matching regex here. Earlier revisions ran
+    # `&...;` and `.mw-parser-output[^{]*\{[^}]*\}` substitutions on this
+    # already-plain text; both delete legitimate content — an unknown or
+    # double-encoded entity (e.g. "x &foo; y"), or any prose that merely
+    # mentions the CSS class name before a later brace group
+    # (e.g. "Стиль .mw-parser-output {цвет} задаётся темой"). Leftover CSS no
+    # longer reaches this point because the parser discards <style> bodies.
     value = _strip_markup(value)
-    value = re.sub(r"\.mw-parser-output[^{]*\{[^}]*\}", " ", value)
     value = value.replace("\xa0", " ")
-    value = re.sub(r"&[a-z]+;", " ", value)
-    value = re.sub(r"&#?\d+;", " ", value)
     value = re.sub(r"\s+", " ", value)
     return value.strip()
 
