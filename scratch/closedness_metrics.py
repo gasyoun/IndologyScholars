@@ -91,25 +91,41 @@ def compute_closedness(label, person_years):
     debut_returned = n_scholars - debut_only
     retention = (debut_returned / n_scholars * 100) if n_scholars else 0
 
-    # Cohort half-life: for each debut year, fraction still appearing N years later
-    cohort_data = defaultdict(lambda: defaultdict(int))  # debut_year -> years_since -> n_active
-    cohort_size = defaultdict(int)
+    # Cohort survival: per debut-year cohort, a censoring-aware Kaplan-Meier
+    # estimate of P(career span >= N years after debut). Career span = last -
+    # debut; a single appearance (span 0) and anyone last seen in the final
+    # observable window are RIGHT-CENSORED, not counted as departures.
+    #
+    # The earlier version reported active-at-EXACTLY-delta / cohort_size — a
+    # prevalence curve that is neither monotone nor censoring-aware (a cohort
+    # could look "more alive" at delta 3 than 2, and late cohorts collapsed to
+    # ~0). This is the same product-limit estimator the main pipeline uses for
+    # VIS_009/VIS_044.
+    last_obs_year = max((max(ys) for ys in person_years.values()), default=0)
+    cohort_censor_from = last_obs_year - 1
+    cohort_spans = defaultdict(list)  # debut_year -> [(span, event)]
     for pid, ys in person_years.items():
-        debut = min(ys)
-        cohort_size[debut] += 1
-        ys_set = set(ys)
-        for y in ys:
-            cohort_data[debut][y - debut] += 1
+        debut, last = min(ys), max(ys)
+        span = last - debut
+        censored = last >= cohort_censor_from or last == debut
+        cohort_spans[debut].append((span, 0 if censored else 1))
     cohort_rows = []
-    for debut_year in sorted(cohort_data.keys()):
-        for delta in sorted(cohort_data[debut_year].keys()):
+    for debut_year in sorted(cohort_spans):
+        obs = cohort_spans[debut_year]
+        n = len(obs)
+        surv = 1.0
+        for delta in range(0, max(span for span, _ in obs) + 1):
+            at_risk = sum(1 for span, _ in obs if span >= delta)
+            events = sum(1 for span, ev in obs if span == delta and ev == 1)
+            if at_risk > 0 and events > 0:
+                surv *= 1 - events / at_risk
             cohort_rows.append({
                 "series": label,
                 "debut_year": debut_year,
                 "years_since_debut": delta,
-                "active_n": cohort_data[debut_year][delta],
-                "cohort_size": cohort_size[debut_year],
-                "survival_pct": round(100 * cohort_data[debut_year][delta] / cohort_size[debut_year], 1),
+                "at_risk": at_risk,
+                "cohort_size": n,
+                "survival_pct": round(surv * 100, 1),
             })
 
     summary = {

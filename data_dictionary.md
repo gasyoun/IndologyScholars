@@ -287,7 +287,7 @@ The review queue can be reproduced with `tools/extract_eastern_faculty_alumni.py
 | `analytics_output/roerich_only_indologists.csv` | Scholars observed only in Roerich Readings within the indexed archive. |
 | `analytics_output/age_cohort_trend.csv` | Median age by conference event for speakers with known birth year. |
 | `analytics_output/newcomer_rate_by_year.csv` | Newcomer rate by year/series. |
-| `analytics_output/cohort_survival.csv` | Cohort return/survival metrics across conference years. |
+| `analytics_output/cohort_survival.csv` | Censoring-aware Kaplan-Meier cohort survival: per debut-year cohort, P(career span ≥ N years after debut). Single appearances and not-yet-departed scholars are right-censored (same estimator as VIS_009/VIS_044). |
 | `analytics_output/debut_timing.csv` | First-observed participation timing by scholar. |
 | `analytics_output/closedness_metrics.csv` | Local participation closedness/repeat-participation metrics. |
 | `analytics_output/online_share_by_year.csv` | Share of online/video-linked records by year where available. |
