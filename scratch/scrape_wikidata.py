@@ -150,9 +150,10 @@ def main():
         json.dump(output, f, ensure_ascii=False, indent=2)
 
     print(f"\nDone. {len(unique)} people saved to {OUTPUT}")
-    # Per-person fields (names, birth/death years, affiliations) are written to
-    # the JSON output above and are deliberately not echoed to the console, so
-    # personal data is never logged in clear text (CodeQL py/clear-text-logging).
+    # The resolved per-person records (names, birth/death years, affiliations)
+    # are written to the JSON output above and are intentionally not echoed
+    # here, to avoid logging the full personal records in clear text
+    # (CodeQL py/clear-text-logging).
 
 
 if __name__ == "__main__":
