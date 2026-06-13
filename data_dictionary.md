@@ -311,6 +311,16 @@ Mapped video records remain searchable in the video catalogue and also set the p
 The complete `L1`-`L3` classification pass and strict review of preliminary
 elevated levels are documented in `docs/classification-audit.md`.
 
+**Argument-scale naming.** The canonical machine-readable name for the
+argument-scale level is `argument_level` (integer 1-3). The column
+`gumilyov_level` and the `site_data.json` key `gumilyov_scale` are legacy
+aliases of the same value, retained for backward compatibility with earlier
+releases and the Russian-language site navigation; new reuse should read
+`argument_level`. The scale describes the scope of the argument stated in a
+title (case study / tradition-level generalization / inter-regional or
+methodological synthesis) and does not adopt any theoretical framework
+associated with the legacy eponym.
+
 Theme labels are navigational aids derived primarily from presentation titles. They should not be treated as a fine-grained content-analysis taxonomy without review.
 
 ## 8. Specialized Review Outputs

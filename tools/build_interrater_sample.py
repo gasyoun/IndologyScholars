@@ -1,22 +1,31 @@
-"""Inter-rater reliability sampling for L1 and G1 classification.
+"""Inter-rater reliability sampling for L1 theme and argument-level coding.
 
-Uses a fixed random seed to sample 100 unique presentation titles from the DB.
-Outputs a blank coding CSV for a second-blind coder, with columns for:
-  - L1 theme code + G1/G2/G3 level
-The second coder fills these independently; Cohen's κ / Krippendorff's α
-is then computed against the original classifications in site_data.json.
+Design requirements implemented here:
+
+1. **True blinding.** The coding sheet given to the second coder
+   (`interrater_sample_blind.csv`) contains no trace of the existing
+   classifications. The originals are written to a separate key file
+   (`interrater_sample_key.csv`) that is joined only at scoring time by
+   `tools/compute_interrater_agreement.py`. Do not give the key file to
+   the second coder.
+
+2. **Stratified sampling.** A simple random sample from a corpus that is
+   ~86% L1 / <1% L3 contains almost no elevated-level items, making the
+   reliability of exactly the most contested codes unmeasurable. The sample
+   therefore includes ALL argument-level-3 items, an oversample of level-2
+   items, and a random fill of level-1 items, with the stratum recorded in
+   the key file so agreement can be reported per stratum.
 
 Usage:
   python tools/build_interrater_sample.py
-Output:
-  analytics_output/interrater_sample.csv
+Outputs:
+  analytics_output/interrater_sample_blind.csv  (give to second coder)
+  analytics_output/interrater_sample_key.csv    (keep; used for scoring)
 """
 
 import csv
 import json
 import random
-import re
-import sqlite3
 import sys
 from pathlib import Path
 
@@ -24,12 +33,13 @@ sys.stdout.reconfigure(encoding="utf-8")
 sys.stderr.reconfigure(encoding="utf-8")
 
 ROOT = Path(__file__).resolve().parents[1]
-DB_PATH = ROOT / "conferences.db"
 SITE_DATA = ROOT / "site_data.json"
-OUT_PATH = ROOT / "analytics_output" / "interrater_sample.csv"
+BLIND_PATH = ROOT / "analytics_output" / "interrater_sample_blind.csv"
+KEY_PATH = ROOT / "analytics_output" / "interrater_sample_key.csv"
 
-SEED = 20260603
+SEED = 20260612
 SAMPLE_SIZE = 100
+L2_TARGET = 30  # oversampled relative to corpus share
 
 THEME_CODES = [
     "history_and_culture",
@@ -39,8 +49,6 @@ THEME_CODES = [
     "art_and_material_culture",
     "unspecified",
 ]
-
-GUMILYOV_LEVELS = ["1", "2", "3"]
 
 
 def load_site_data():
@@ -53,98 +61,80 @@ def load_site_data():
     return json.loads(text)
 
 
-def main():
-    random.seed(SEED)
-
-    conn = sqlite3.connect(str(DB_PATH))
-    conn.row_factory = sqlite3.Row
-    rows = conn.execute("""
-        SELECT DISTINCT pr.presentation_id, pr.title, e.year, es.series_name_en
-        FROM presentation pr
-        JOIN session s ON s.session_id = pr.session_id
-        JOIN event_day_venue edv ON edv.event_day_venue_id = s.event_day_venue_id
-        JOIN event_day ed ON ed.event_day_id = edv.event_day_id
-        JOIN event e ON e.event_id = ed.event_id
-        JOIN event_series es ON es.event_series_id = e.event_series_id
-        WHERE pr.title IS NOT NULL AND TRIM(pr.title) != ''
-        ORDER BY e.year, es.event_series_id, pr.presentation_id
-    """).fetchall()
-    conn.close()
-
-    print(f"Total unique presentation titles in DB: {len(rows)}")
-
-    sample = random.sample(rows, min(SAMPLE_SIZE, len(rows)))
-
-    # Load existing classifications for comparison (not shown to second coder)
+def collect_talks():
+    """Unique presentations with their published L1 theme and argument level."""
     data = load_site_data()
-    talk_map = {}
+    talks = {}
     for scholar in data.get("scholars", []):
         for talk in scholar.get("talks", []):
             pid = talk.get("presentation_id")
-            if pid:
-                talk_map[pid] = talk
+            title = (talk.get("title") or "").strip()
+            if not pid or not title or pid in talks:
+                continue
+            level = talk.get("argument_level") or talk.get("gumilyov_scale")
+            talks[pid] = {
+                "presentation_id": pid,
+                "title": title,
+                "year": talk.get("year"),
+                "series": talk.get("series") or "",
+                "existing_l1": (talk.get("theme") or {}).get("code") or "unspecified",
+                "existing_g": str(level) if level else "",
+            }
+    return sorted(talks.values(), key=lambda t: str(t["presentation_id"]))
 
-    print(f"\n{'='*50}")
-    print(f"INTER-RATER RELIABILITY CODING SHEET")
-    print(f"Seed: {SEED} | Sample size: {len(sample)}")
-    print(f"{'='*50}")
-    print()
-    print("Instructions for the second-blind coder:")
-    print("  1. Read the presentation title below.")
-    print("  2. Assign ONE L1 theme code from the list.")
-    print("  3. Assign ONE G-level (1=micro-case, 2=tradition/school, 3=global synthesis).")
-    print("  4. Do NOT look up the original classification or the author.")
-    print("  5. When in doubt, prefer the most conservative code (unspecified / G1).")
-    print()
-    print("L1 theme codes:")
-    for c in THEME_CODES:
-        print(f"  {c}")
-    print()
-    print("G levels: 1 = micro-case (single text/author/term/source)")
-    print("           2 = tradition, school, broad class of phenomena")
-    print("           3 = inter-regional, civilizational, or methodological frame")
-    print()
 
-    out_rows = []
-    for row in sample:
-        pid = row["presentation_id"]
-        title = row["title"]
-        year = row["year"]
-        series = row["series_name_en"]
+def main():
+    rng = random.Random(SEED)
+    talks = [t for t in collect_talks() if t["existing_g"] in ("1", "2", "3")]
+    print(f"Unique classified presentations: {len(talks)}")
 
-        existing = talk_map.get(pid, {})
-        orig_l1 = existing.get("theme", {}).get("code", "?")
-        orig_g = existing.get("gumilyov_scale", "?")
+    by_level = {"1": [], "2": [], "3": []}
+    for t in talks:
+        by_level[t["existing_g"]].append(t)
 
-        print(f"ID: {pid}")
-        print(f"Title: {title}")
-        print(f"Year: {year} | Series: {series}")
-        print(f"  CODER_2_L1: [    ]    (orig: {orig_l1})")
-        print(f"  CODER_2_G:  [    ]    (orig: {orig_g})")
-        print()
+    sample = list(by_level["3"])  # census of the rare stratum
+    sample += rng.sample(by_level["2"], min(L2_TARGET, len(by_level["2"])))
+    l1_fill = max(0, SAMPLE_SIZE - len(sample))
+    sample += rng.sample(by_level["1"], min(l1_fill, len(by_level["1"])))
 
-        out_rows.append({
-            "presentation_id": pid,
-            "title": title,
-            "year": year,
-            "series": series,
-            "coder_2_l1": "",
-            "coder_2_g": "",
-            "existing_l1": orig_l1,
-            "existing_g": orig_g,
-        })
+    # Shuffle so stratum membership is not inferable from row order.
+    rng.shuffle(sample)
 
-    OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
-    fields = ["presentation_id", "title", "year", "series", "coder_2_l1", "coder_2_g", "existing_l1", "existing_g"]
-    with open(OUT_PATH, "w", encoding="utf-8-sig", newline="") as f:
-        w = csv.DictWriter(f, fieldnames=fields)
+    print(f"Sample: {len(sample)} items "
+          f"(G3 census: {len(by_level['3'])}, G2 oversample: {min(L2_TARGET, len(by_level['2']))}, "
+          f"G1 fill: {l1_fill}) | seed {SEED}")
+
+    BLIND_PATH.parent.mkdir(parents=True, exist_ok=True)
+    blind_fields = ["presentation_id", "title", "year", "series", "coder_2_l1", "coder_2_g"]
+    with BLIND_PATH.open("w", encoding="utf-8-sig", newline="") as f:
+        w = csv.DictWriter(f, fieldnames=blind_fields, extrasaction="ignore")
         w.writeheader()
-        w.writerows(out_rows)
+        for t in sample:
+            w.writerow({**t, "coder_2_l1": "", "coder_2_g": ""})
 
-    print(f"\n{'='*50}")
-    print(f"Wrote {len(out_rows)} rows to {OUT_PATH}")
-    print(f"To compute agreement: python tools/compute_interrater_agreement.py")
-    print(f"{'='*50}")
+    key_fields = ["presentation_id", "existing_l1", "existing_g"]
+    with KEY_PATH.open("w", encoding="utf-8-sig", newline="") as f:
+        w = csv.DictWriter(f, fieldnames=key_fields, extrasaction="ignore")
+        w.writeheader()
+        for t in sorted(sample, key=lambda t: str(t["presentation_id"])):
+            w.writerow(t)
+
+    print(f"Blind coding sheet: {BLIND_PATH}")
+    print(f"Answer key (do NOT share with the coder): {KEY_PATH}")
+    print()
+    print("Instructions for the second coder (send together with the blind sheet):")
+    print("  1. Read only the title, year, and series.")
+    print("  2. coder_2_l1: ONE theme code from:")
+    for c in THEME_CODES:
+        print(f"       {c}")
+    print("  3. coder_2_g: ONE argument level:")
+    print("       1 = micro-case (single text/author/term/source)")
+    print("       2 = tradition, school, or broad class of phenomena")
+    print("       3 = inter-regional, civilizational, or methodological frame")
+    print("  4. Do not look up the original classification, the author, or the abstract.")
+    print("  5. When in doubt, prefer the most conservative code (unspecified / 1).")
+    print()
+    print("Scoring: python tools/compute_interrater_agreement.py")
 
 
 if __name__ == "__main__":

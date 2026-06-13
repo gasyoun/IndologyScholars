@@ -237,7 +237,7 @@ def call_deepseek(
     results = parsed.get("results") if isinstance(parsed, dict) else None
     if not isinstance(results, list):
         raise ValueError("DeepSeek response does not contain a results list")
-    return results, body.get("usage", {})
+    return results, body.get("usage", {}), body.get("model", model)
 
 
 def call_scale_audit(
@@ -272,7 +272,9 @@ def call_scale_audit(
     return results, body.get("usage", {})
 
 
-def normalize_result(source: dict[str, object], presentation: dict[str, object]) -> dict[str, object]:
+def normalize_result(
+    source: dict[str, object], presentation: dict[str, object], model_id: str = ""
+) -> dict[str, object]:
     theme = str(source.get("theme_l1", "")).strip()
     period = str(source.get("period_l2", "")).strip()
     material = str(source.get("material_l3", "")).strip()
@@ -332,6 +334,9 @@ def normalize_result(source: dict[str, object], presentation: dict[str, object])
         "rationale": str(source.get("rationale", "") or "").strip(),
         "source": "deepseek",
         "prompt_version": PROMPT_VERSION,
+        # Resolved model snapshot from the API response, not the floating
+        # alias from .env: required for reproducibility reporting.
+        "model_id": model_id,
         "valid": "yes" if valid else "no",
     }
     manual = CLASSIFICATION_OVERRIDES.get(str(presentation["presentation_id"]), {})
@@ -355,12 +360,14 @@ FIELDS = [
     "material_l3",
     "character_l4",
     "gumilyov_level",
+    "argument_level",
     "meso_codes",
     "proposed_meso",
     "confidence",
     "rationale",
     "source",
     "prompt_version",
+    "model_id",
     "valid",
 ]
 
@@ -387,9 +394,10 @@ def classify(args: argparse.Namespace) -> list[dict[str, object]]:
         batch_number = start // BATCH_SIZE + 1
         total_batches = (len(todo) + BATCH_SIZE - 1) // BATCH_SIZE
         response_rows = None
+        model_id = ""
         for attempt in range(1, MAX_RETRIES + 1):
             try:
-                response_rows, usage = call_deepseek(api_key, base_url, model, batch)
+                response_rows, usage, model_id = call_deepseek(api_key, base_url, model, batch)
                 tokens.update(
                     {key: value for key, value in usage.items() if isinstance(value, int)}
                 )
@@ -407,7 +415,7 @@ def classify(args: argparse.Namespace) -> list[dict[str, object]]:
             raw = by_id.get(str(presentation["presentation_id"]))
             if not raw:
                 continue
-            normalized = normalize_result(raw, presentation)
+            normalized = normalize_result(raw, presentation, model_id)
             if normalized["valid"] == "yes":
                 completed[str(presentation["presentation_id"])] = normalized
                 accepted += 1
@@ -519,6 +527,9 @@ def publish(rows: list[dict[str, object]], expected_total: int) -> None:
     if len(rows) != expected_total:
         raise SystemExit(f"Not publishing: {len(rows)} valid rows for {expected_total} presentations")
     for row in rows:
+        # Canonical export name; gumilyov_level is kept as a legacy alias
+        # (see data_dictionary.md for the mapping note).
+        row["argument_level"] = row["gumilyov_level"]
         proposal = str(row.get("proposed_meso") or "")
         if proposal not in PROMOTED_MESO_PROPOSALS:
             continue
@@ -559,6 +570,7 @@ def publish(rows: list[dict[str, object]], expected_total: int) -> None:
             "year": row["year"],
             "series_id": row["series_id"],
             "title": row["raw_title"],
+            "argument_level": row["gumilyov_level"],
             "gumilyov_level": row["gumilyov_level"],
             "confidence": row["confidence"],
             "source": row["source"],
@@ -569,7 +581,7 @@ def publish(rows: list[dict[str, object]], expected_total: int) -> None:
     write_csv(
         GUMILYOV_CSV,
         scale,
-        ["presentation_id", "year", "series_id", "title", "gumilyov_level", "confidence", "source", "why"],
+        ["presentation_id", "year", "series_id", "title", "argument_level", "gumilyov_level", "confidence", "source", "why"],
     )
     meso = [
         {

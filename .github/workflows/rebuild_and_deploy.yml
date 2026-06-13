@@ -83,6 +83,7 @@ jobs:
           python validate_publication.py
           python article/check_ppv_numbers.py
           python article/check_anonymity.py
+          python article/check_data_paper_numbers.py
 
       - name: Commit & Push Compiled Artifacts
         run: |

@@ -95,11 +95,25 @@ Each presentation receives two independent classifications:
 | Argument scale (G1–G3) | G1=micro-case, G2=tradition/school, G3=civilizational/methodological | Scale of generalization |
 
 L1/L2 codes were assigned by a rule-based classifier with LLM-assisted
-review (DeepSeek) and manual expert overrides. G-level coding follows a
-strict protocol: single-text/author/term studies are G1, broad traditions or
-schools are G2, and inter-civilizational or methodological syntheses are G3.
-An inter-rater reliability study (double-blind coding of 100 randomly
-sampled titles) is in progress.
+review and manual expert overrides. The LLM pass used the DeepSeek
+chat-completion API (`deepseek-chat` alias; prompt version
+`expanded-corpus-v1-2026-05-25`, temperature 0; from the 2026-06 pipeline
+revision onward the resolved model snapshot returned by the API is logged
+per record in the `model_id` column). Argument-scale coding (canonical
+column `argument_level`; G1=micro-case, G2=tradition/school,
+G3=civilizational/methodological) follows a strict written protocol:
+single-text/author/term studies are G1, broad traditions or schools are G2,
+and inter-civilizational or methodological syntheses are G3.
+
+All preliminary G2/G3 assignments passed a second, stricter audit pass.
+This audit was performed by the same model under a different adjudication
+prompt (`scale-audit-v2-2026-05-25`); it is a same-model consistency check,
+not an independent rating, and is reported here as such. Independent
+verification rests on the human inter-rater reliability study (blind coding
+of a stratified sample with all rare G3 items included; agreement reported
+as Cohen's κ with bootstrap confidence intervals, Krippendorff's α, and
+Gwet's AC1, the latter because the heavily skewed level distribution makes
+raw κ prevalence-sensitive).
 
 ### 2.5 Affiliation provenance
 
@@ -255,12 +269,23 @@ CSVs, curation files, and a SHA-256 manifest.
    forums. Other Russian Indological venues (Oriental Faculty seminars,
    regional conferences) and international participation are not included.
 
-4. **Classification subjectivity.** L1 and G-level codes were assigned by
-   a single coder with LLM assistance. Inter-rater reliability has not yet
-   been computed; a double-blind coding sample of 100 titles has been
-   prepared but not yet independently coded.
+4. **Classification subjectivity.** L1 and argument-scale codes were
+   assigned by a single coder with LLM assistance, and the strict G2/G3
+   audit pass was a same-model check rather than an independent rating.
+   A blind, stratified inter-rater sample (all G3 items, oversampled G2)
+   has been prepared; agreement statistics (Cohen's κ with bootstrap CIs,
+   Krippendorff's α, Gwet's AC1) will be reported before final deposition.
 
-5. **Identifier coverage.** Wikidata, ORCID, VIAF, and OpenAlex mappings
+5. **Gender attribution.** Gender is inferred from Russian name morphology
+   (patronymic, given name, surname declension), not self-identification.
+   Names that do not permit reliable inference are reported as an explicit
+   "unknown" category, and a manually verified validation sample with a
+   published error rate accompanies the dataset
+   (`tools/validate_gender_inference.py`). Correction and objection
+   procedures for living persons are described in
+   `docs/persons-data-policy.md`.
+
+6. **Identifier coverage.** Wikidata, ORCID, VIAF, and OpenAlex mappings
    are minimal. This limits cross-dataset linking and international
    discoverability. A candidate-matching pipeline exists and results are
    under human review.
