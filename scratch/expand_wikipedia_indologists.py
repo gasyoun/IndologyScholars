@@ -147,7 +147,10 @@ def extract_infobox(text: str) -> dict:
     if not ib:
         return info
 
-    rows = re.findall(r"<tr>(.*?)</tr>", ib.group(1), re.DOTALL)
+    # Real infobox rows carry class/style attributes (`<tr class="...">`); the
+    # bare `<tr>` pattern silently dropped every attributed row. Tolerate
+    # attributes, like the <th>/<td> patterns below already do.
+    rows = re.findall(r"<tr[^>]*>(.*?)</tr>", ib.group(1), re.DOTALL)
     for row in rows:
         lm = re.search(r"<th[^>]*>(.*?)</th>", row, re.DOTALL)
         vm = re.search(r"<td[^>]*>(.*?)</td>", row, re.DOTALL)
