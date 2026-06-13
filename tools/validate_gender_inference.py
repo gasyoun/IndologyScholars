@@ -102,9 +102,13 @@ def score_sample(rows):
         print(f"  Wilson 95% CI: [{lo:.1%}, {hi:.1%}]")
         errors = [r for r in inferred_known if r["inferred_gender"] != r["verified_gender"].strip().upper()]
         if errors:
-            print("  Errors:")
-            for r in errors:
-                print(f"    {r['person_id']} {r['full_name_ru']}: inferred {r['inferred_gender']}, verified {r['verified_gender']}")
+            # Report only the (non-identifying) person_id of each misclassified
+            # row. Names and gender labels stay in the CSV and are not echoed to
+            # the console, so personal data is not logged in clear text
+            # (CodeQL py/clear-text-logging-sensitive-data).
+            ids = ", ".join(str(r["person_id"]) for r in errors)
+            print(f"  Misclassified ({len(errors)}): {ids}")
+            print(f"  See {OUT_CSV.name} for the names and gender labels.")
         else:
             print("  No errors in the verified sample.")
     return True
