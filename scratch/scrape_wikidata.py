@@ -150,9 +150,10 @@ def main():
         json.dump(output, f, ensure_ascii=False, indent=2)
 
     print(f"\nDone. {len(unique)} people saved to {OUTPUT}")
+    # Employer affiliations are written to the JSON output above; they are kept
+    # out of this console summary so personal data is not echoed to logs.
     for p in unique:
-        emp = ", ".join(p.get("employers", [])[:2])
-        print(f"  {p['full_name']} | {p.get('birth_year','?')}-{p.get('death_year','?')} | {emp}")
+        print(f"  {p['full_name']} | {p.get('birth_year','?')}-{p.get('death_year','?')}")
 
 
 if __name__ == "__main__":

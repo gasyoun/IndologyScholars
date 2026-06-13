@@ -151,14 +151,28 @@ L2, даже если он охватывает длительное время:
 "rationale":"..."}]} без markdown. Нельзя возвращать поля, не указанные в схеме."""
 
 
-def read_dotenv() -> tuple[str, str, str]:
+def read_request_config() -> tuple[str, str]:
+    """Non-sensitive request configuration (base URL and model name)."""
     load_dotenv(dotenv_path=ROOT / ".env")
-    key = os.environ.get("DEEPSEEK_API_KEY", "").strip()
     base = os.environ.get("DEEPSEEK_BASE_URL", "https://api.deepseek.com").rstrip("/")
     model = os.environ.get("DEEPSEEK_MODEL", "deepseek-chat").strip() or "deepseek-chat"
+    return base, model
+
+
+def read_api_key() -> str:
+    """Read the DeepSeek credential on its own.
+
+    Deliberately kept separate from :func:`read_request_config`: bundling the
+    secret into a tuple with the (non-sensitive) base URL and model name let
+    static analysis treat the request URL — and therefore everything derived
+    from the API response — as credential-tainted. Reading the key in
+    isolation keeps it flowing only into the Authorization header.
+    """
+    load_dotenv(dotenv_path=ROOT / ".env")
+    key = os.environ.get("DEEPSEEK_API_KEY", "").strip()
     if not key:
         raise SystemExit("DEEPSEEK_API_KEY is not configured in .env")
-    return key, base, model
+    return key
 
 
 def load_presentations() -> list[dict[str, object]]:
@@ -366,7 +380,8 @@ FIELDS = [
 
 
 def classify(args: argparse.Namespace) -> list[dict[str, object]]:
-    api_key, base_url, model = read_dotenv()
+    api_key = read_api_key()
+    base_url, model = read_request_config()
     presentations = load_presentations()
     if args.limit:
         presentations = presentations[: args.limit]
@@ -432,7 +447,8 @@ def classify(args: argparse.Namespace) -> list[dict[str, object]]:
 
 
 def audit_elevated(rows: list[dict[str, object]]) -> list[dict[str, object]]:
-    api_key, base_url, model = read_dotenv()
+    api_key = read_api_key()
+    base_url, model = read_request_config()
     audit_fields = [
         "presentation_id",
         "preliminary_level",
