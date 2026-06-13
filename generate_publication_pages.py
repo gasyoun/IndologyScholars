@@ -68,7 +68,9 @@ BUILD_DATE = dt.date.today().isoformat()
 DATA_SCHEMA_VERSION = "1.0.0"
 PIPELINE_VERSION = "2026-05-25"
 PUBLIC_DIRS = ["assets", "conferences", "p", "themes", "topics", "generations", "meso", "gumilyov", "videos", "findings", "cities", "institutions", "keywords"]
-_JINJA_ENV = jinja2.Environment(loader=jinja2.FileSystemLoader("templates"))
+# autoescape: pre-built HTML is passed explicitly via |safe; this escapes every
+# other (scalar) value by default so a scraped name can't inject markup.
+_JINJA_ENV = jinja2.Environment(loader=jinja2.FileSystemLoader("templates"), autoescape=True)
 PRESENTATION_SLUG_BY_ID = {}
 MIN_PUBLIC_MESO_PRESENTATIONS = 2
 PRESENTATIONS_PER_PAGE = 120

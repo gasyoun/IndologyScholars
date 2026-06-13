@@ -703,7 +703,9 @@ def trim_description(text, limit=155):
     return text[: limit - 1].rsplit(" ", 1)[0] + "…"
 
 
-_JINJA_ENV = jinja2.Environment(loader=jinja2.FileSystemLoader("templates"))
+# autoescape: pre-built HTML is passed explicitly via |safe; this escapes every
+# other (scalar) value by default so a scraped name can't inject markup.
+_JINJA_ENV = jinja2.Environment(loader=jinja2.FileSystemLoader("templates"), autoescape=True)
 _BASE_TEMPLATE = None
 
 def page_shell(title, description, canonical_path, body, structured_data=None, extra_head="", robots="index, follow", language="ru", custom_og_image=None):
@@ -712,7 +714,7 @@ def page_shell(title, description, canonical_path, body, structured_data=None, e
         try:
             _BASE_TEMPLATE = _JINJA_ENV.get_template("base.html")
         except Exception:
-            env = jinja2.Environment(loader=jinja2.FileSystemLoader(str(Path(__file__).parent / "templates")))
+            env = jinja2.Environment(loader=jinja2.FileSystemLoader(str(Path(__file__).parent / "templates")), autoescape=True)
             _BASE_TEMPLATE = env.get_template("base.html")
             
     canonical = site_url(canonical_path)
