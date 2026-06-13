@@ -152,6 +152,12 @@ the Zograf-through-2025 censored block, Zograf 2026 preliminary, and G1/G2/G3
 article is synchronised. A current-state snapshot is written to
 `article/hypothesis_output/ppv_numbers_snapshot.{md,json}`.
 
+`article/check_data_paper_numbers.py` performs the same role for the English
+data paper draft (`article/data_paper_draft.md`): derivable claims (corpus
+counts, year range, birth-year coverage) are verified against the rebuilt
+`site_data.json`, and figures that cannot be re-derived from current
+artifacts are listed as warnings for manual re-derivation before submission.
+
 `article/check_anonymity.py` validates the double-blind artifact
 `article/ppv_submission_article_anonymous.md`: it must not contain the
 author name, e-mail, ORCID, postal address, or the pre-UDK drafting block.
@@ -233,6 +239,7 @@ ru-/Wikidata-dependent steps must run from a host with access.
 | [archive/plans/architecture_implementation_plan.md](https://github.com/gasyoun/IndologyScholars/blob/main/archive/plans/architecture_implementation_plan.md) | Record of implemented architecture hardening. |
 | [../philology-research-agents/README.md](https://github.com/gasyoun/IndologyScholars/blob/main/philology-research-agents/README.md) | Portable six-agent evidence-lab prompt module for philology, linguistics, and Oriental studies, with journal-specific editor profiles (ППВ, IIJ, ВДИ, ВЯ, JAOS, OLZ) and a Haiku-based VAK *Perechen'* parser. Designed to be moved into its own repository. |
 | [wikidata-guide.md](wikidata-guide.md) | Step-by-step guide to mapping scholars to Wikidata Q-IDs via the OpenAlex → Wikidata pipeline and QuickStatements. |
+| [persons-data-policy.md](persons-data-policy.md) | What personal data the archive publishes, the research basis, and the correction/objection procedure for living scholars (Russian version: [persons-data-policy-ru.md](persons-data-policy-ru.md)). |
 | [../article/data_paper_draft.md](https://github.com/gasyoun/IndologyScholars/blob/main/article/data_paper_draft.md) | English data paper describing corpus construction, data model, and reuse (target: Research Data Journal for the Humanities and Social Sciences). |
 | [roster-merge-design.md](roster-merge-design.md) | Design for merging the `scratch/` Russian-indologist roster into the corpus (participants enriched, non-participants as a separate registry). |
 | [ru-enrichment-runbook.md](ru-enrichment-runbook.md) | Step-by-step procedure for the Phase-5 enrichment that must run inside Russia (Wikidata life years, ru.wikipedia infoboxes, institutional scrapers). |

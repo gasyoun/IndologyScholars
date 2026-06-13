@@ -9,6 +9,7 @@
 | Наукометрия и социология науки / Scientometrics and sociology of science | [scientometrics-sociology.md](scientometrics-sociology.md) | [scientometrics-sociology.md](scientometrics-sociology.md) |
 | Границы институционального анализа / Institutional scope | [institutional-scope.md](institutional-scope.md) | [institutional-scope.md](institutional-scope.md) |
 | Права повторного использования / Reuse rights | [reuse-rights.md](reuse-rights.md) | [reuse-rights.md](reuse-rights.md) |
+| Политика персональных данных / Personal data policy | [persons-data-policy-ru.md](persons-data-policy-ru.md) | [persons-data-policy.md](persons-data-policy.md) |
 | Проверка РИНЦ / RINC review | [rinc-review.md](rinc-review.md) | [rinc-review-en.md](rinc-review-en.md) |
 | Аудит интерфейса / Interface audit | [ux-ui-audit.md](ux-ui-audit.md) | [ux-ui-audit.md](ux-ui-audit.md) |
 | Визуализации / Visualizations | [visualisations.md](visualisations.md) | [visualisations.md](visualisations.md) |

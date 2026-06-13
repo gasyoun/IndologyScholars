@@ -37,6 +37,79 @@ def generation_cohort(birth_year):
             return cohort
     return None
 
+
+# Canonical name-based gender inference. Validation protocol and measured
+# error rate: tools/validate_gender_inference.py; methodological limits are
+# documented in docs/persons-data-policy.md. Returns "F", "M", or None
+# (None must be reported as "unknown" in published denominators, never
+# silently dropped).
+FEMALE_FIRST_NAMES = frozenset([
+    "маргарита", "наталия", "наталья", "надежда", "елена", "ирина", "ольга",
+    "татьяна", "анна", "мария", "софия", "софья", "евгения", "галина",
+    "светлана", "людмила", "александра", "екатерина", "юлия", "любовь",
+    "нина", "дарья", "лариса", "ксения", "оксана", "вера", "тамара",
+    "алена", "алёна", "виктория", "марина", "жанна", "марианна",
+])
+MALE_FIRST_NAMES = frozenset([
+    "михаил", "бабасан", "павел", "андрей", "иван", "сергей", "алексей",
+    "дмитрий", "владимир", "николай", "александр", "петр", "пётр", "федор",
+    "фёдор", "степан", "григорий", "ярослав", "василий", "георгий", "юрий",
+    "максим", "кирилл", "артем", "артём", "роман", "евгений", "виктор",
+    "леонид", "олег", "игорь", "святослав", "марцис", "макс", "эрман",
+    "никита", "семен", "семён",
+])
+def wilson_interval(successes, n, z=1.96):
+    """Wilson score interval for a binomial proportion; returns (low, high)
+    in [0, 1]. Used for published shares so that small denominators carry
+    visible uncertainty instead of bare percentages."""
+    import math
+    if n == 0:
+        return 0.0, 0.0
+    p = successes / n
+    denom = 1 + z * z / n
+    centre = (p + z * z / (2 * n)) / denom
+    margin = z * math.sqrt(p * (1 - p) / n + z * z / (4 * n * n)) / denom
+    return max(0.0, centre - margin), min(1.0, centre + margin)
+
+
+_FEMALE_PATRONYMIC_SUFFIXES = ("овна", "евна", "ична", "инична")
+_MALE_PATRONYMIC_SUFFIXES = ("ович", "евич", "ьич", "мич", "кич")
+_FEMALE_SURNAME_SUFFIXES = ("ова", "ева", "ина", "ая", "ына")
+_MALE_SURNAME_SUFFIXES = ("ов", "ев", "ин", "ий", "ын", "ый")
+
+
+def classify_gender(full_name_ru, display_name=None):
+    """Infer gender from a Russian name: known first name first (exact,
+    unambiguous), then patronymic suffix, then surname declension. The
+    first-name stage runs before the patronymic stage so that -ович/-евич
+    SURNAMES (Маркович, Гуревич) cannot override an unambiguous female
+    first name. Suffix checks apply to whole tokens only, never substrings."""
+    name_to_check = (full_name_ru or display_name or "").strip()
+    parts = name_to_check.split()
+
+    for p in parts:
+        p_low = p.lower()
+        if p_low in FEMALE_FIRST_NAMES:
+            return "F"
+        if p_low in MALE_FIRST_NAMES:
+            return "M"
+
+    for p in parts:
+        p_low = p.lower()
+        if p_low.endswith(_FEMALE_PATRONYMIC_SUFFIXES):
+            return "F"
+        if p_low.endswith(_MALE_PATRONYMIC_SUFFIXES):
+            return "M"
+
+    for p in parts:
+        p_low = p.lower()
+        if p_low.endswith(_FEMALE_SURNAME_SUFFIXES):
+            return "F"
+        if p_low.endswith(_MALE_SURNAME_SUFFIXES):
+            return "M"
+
+    return None
+
 THEME_LABELS = {
     "history_and_culture": ("История, этнография и общество", "History, Culture & Society"),
     "religion_and_philosophy": ("Религия и философия", "Religion & Philosophy"),

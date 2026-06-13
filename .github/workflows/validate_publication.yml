@@ -35,7 +35,7 @@ jobs:
 
       - name: Compile Python Generators
         run: |
-          python -m py_compile build_and_populate_db.py generate_analytics.py generate_site_data.py generate_scholars_pages.py generate_publication_pages.py validate_publication.py prepare_pages_artifact.py publication_helpers.py article/work_title_keywords.py article/check_ppv_numbers.py article/check_anonymity.py tools/export_presentation_id_manifest.py tools/compare_id_manifests.py tools/build_classification_reliability_sample.py tools/build_scientometrics_guardrails.py tools/build_human_review_index.py tools/build_sociology_visuals.py tests/test_stable_ids.py
+          python -m py_compile build_and_populate_db.py generate_analytics.py generate_site_data.py generate_scholars_pages.py generate_publication_pages.py validate_publication.py prepare_pages_artifact.py publication_helpers.py article/work_title_keywords.py article/check_ppv_numbers.py article/check_anonymity.py article/check_data_paper_numbers.py tools/export_presentation_id_manifest.py tools/compare_id_manifests.py tools/build_classification_reliability_sample.py tools/build_scientometrics_guardrails.py tools/build_human_review_index.py tools/build_sociology_visuals.py tests/test_stable_ids.py
 
       - name: Run Regression Tests
         run: |
@@ -64,4 +64,5 @@ jobs:
           python validate_publication.py
           python article/check_ppv_numbers.py
           python article/check_anonymity.py
+          python article/check_data_paper_numbers.py
           python prepare_pages_artifact.py

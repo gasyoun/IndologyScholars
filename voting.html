@@ -190,7 +190,7 @@
                 <select id="vote-session-filter"></select>
             </label>
             <div class="vote-actions">
-                <button type="button" id="vote-send-teacher">Отправить преподавателю</button>
+                <button type="button" id="vote-send-teacher">Отправить голосование</button>
                 <button type="button" id="vote-export-csv">Экспорт CSV</button>
                 <button type="button" id="vote-export-json">Экспорт JSON</button>
                 <button type="button" id="vote-copy-json">Скопировать JSON</button>
@@ -413,7 +413,7 @@
                 }
             });
 
-            const teacherFormUrl = "";
+            const teacherFormUrl = "https://forms.yandex.ru/u/6a28f0e995add5b922d0f14c";
             document.getElementById('vote-send-teacher').addEventListener('click', async () => {
                 if (!requireRespondent()) return;
                 try {
@@ -424,9 +424,9 @@
                 }
                 if (teacherFormUrl) {
                     window.open(teacherFormUrl, '_blank', 'noopener');
-                    setStatus('JSON скопирован и открыта форма преподавателя. Вставьте его в поле «JSON выгрузки» и отправьте.');
+                    setStatus('JSON скопирован и открыта форма голосования. Вставьте его в поле «JSON выгрузки» и отправьте.');
                 } else {
-                    setStatus('JSON скопирован. Вставьте его в форму преподавателя (ссылку на форму даст преподаватель).');
+                    setStatus('JSON скопирован. Вставьте его в форму голосования (ссылку на форму даст преподаватель).');
                 }
             });
 

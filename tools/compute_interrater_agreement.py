@@ -1,158 +1,223 @@
-"""Compute inter-rater agreement for L1 theme classification and G-level.
+"""Compute inter-rater agreement for L1 theme and argument-level coding.
 
-Reads the filled-in interrater_sample.csv (with coder_2_l1 and coder_2_g columns
-filled by the second-blind coder), computes Cohen's κ against the existing
-classifications, and reports agreement statistics.
+Joins the second coder's filled blind sheet (interrater_sample_blind.csv)
+with the answer key (interrater_sample_key.csv) and reports, per coding axis:
+
+  - percentage agreement
+  - Cohen's kappa with a bootstrap 95% CI
+  - Krippendorff's alpha (nominal, two raters)
+  - Gwet's AC1 with a bootstrap 95% CI (reported because the corpus level
+    distribution is heavily skewed, which makes raw kappa
+    prevalence-sensitive; Gwet 2008)
+  - per-category and per-stratum agreement and a disagreement table
+
+Interpretation bands for kappa follow Landis & Koch (1977). Note that the
+sample is deliberately stratified (census of level-3 items, oversampled
+level-2), so pooled statistics describe the stratified sample, not the
+corpus; per-stratum agreement is the corpus-relevant reading.
 
 Usage:
-  python tools/compute_interrater_agreement.py [--csv analytics_output/interrater_sample.csv]
+  python tools/compute_interrater_agreement.py
+  python tools/compute_interrater_agreement.py --blind path.csv --key path.csv
 """
 
+import argparse
 import csv
+import random
 import sys
+from collections import Counter
 from pathlib import Path
 
 sys.stdout.reconfigure(encoding="utf-8")
 
 ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_CSV = ROOT / "analytics_output" / "interrater_sample.csv"
+DEFAULT_BLIND = ROOT / "analytics_output" / "interrater_sample_blind.csv"
+DEFAULT_KEY = ROOT / "analytics_output" / "interrater_sample_key.csv"
+
+BOOTSTRAP_REPS = 2000
+BOOTSTRAP_SEED = 20260612
 
 
-def cohen_kappa(a, b):
-    """Compute Cohen's κ from two parallel lists of categorical labels."""
-    n = len(a)
-    if n == 0:
-        return 0.0, 0.0, 0
-
-    cats = sorted(set(a) | set(b))
-    cat_idx = {c: i for i, c in enumerate(cats)}
-    k = len(cats)
-
-    # Observed agreement matrix
-    obs = [[0] * k for _ in range(k)]
-    for ai, bi in zip(a, b):
-        obs[cat_idx[ai]][cat_idx[bi]] += 1
-
-    p_o = sum(obs[i][i] for i in range(k)) / n
-
-    row_sums = [sum(obs[i][j] for j in range(k)) for i in range(k)]
-    col_sums = [sum(obs[i][j] for i in range(k)) for j in range(k)]
-    p_e = sum(row_sums[i] * col_sums[i] for i in range(k)) / (n * n)
-
-    if p_e == 1.0:
-        return 1.0, 1.0, n
-
-    kappa = (p_o - p_e) / (1 - p_e)
-    return round(kappa, 4), round(p_o, 4), n
-
-
-def pairwise_agreement(a, b):
-    """Simple percentage agreement."""
+def percentage_agreement(a, b):
     n = len(a)
     if n == 0:
         return 0.0
-    return round(sum(1 for x, y in zip(a, b) if x == y) / n, 4)
+    return sum(1 for x, y in zip(a, b) if x == y) / n
+
+
+def cohen_kappa(a, b):
+    """Cohen's kappa for two parallel lists of nominal labels."""
+    n = len(a)
+    if n == 0:
+        return 0.0
+    cats = sorted(set(a) | set(b))
+    p_o = percentage_agreement(a, b)
+    ca, cb = Counter(a), Counter(b)
+    p_e = sum(ca[c] * cb[c] for c in cats) / (n * n)
+    if p_e == 1.0:
+        return 1.0
+    return (p_o - p_e) / (1 - p_e)
+
+
+def gwet_ac1(a, b):
+    """Gwet's first-order agreement coefficient (AC1) for two raters,
+    nominal categories (Gwet 2008)."""
+    n = len(a)
+    if n == 0:
+        return 0.0
+    cats = sorted(set(a) | set(b))
+    k = len(cats)
+    if k == 1:
+        return 1.0
+    p_o = percentage_agreement(a, b)
+    ca, cb = Counter(a), Counter(b)
+    pi = {c: (ca[c] + cb[c]) / (2 * n) for c in cats}
+    p_e = sum(p * (1 - p) for p in pi.values()) / (k - 1)
+    if p_e == 1.0:
+        return 1.0
+    return (p_o - p_e) / (1 - p_e)
+
+
+def krippendorff_alpha_nominal(a, b):
+    """Krippendorff's alpha, nominal metric, two raters, no missing data."""
+    n = len(a)
+    if n == 0:
+        return 0.0
+    values = list(a) + list(b)
+    counts = Counter(values)
+    total = len(values)
+    if len(counts) == 1:
+        return 1.0
+    d_o = sum(1 for x, y in zip(a, b) if x != y) * 2 / (n * 2)
+    # expected disagreement from the pooled value distribution
+    d_e = 1 - sum(c * (c - 1) for c in counts.values()) / (total * (total - 1))
+    if d_e == 0:
+        return 1.0
+    return 1 - d_o / d_e
+
+
+def bootstrap_ci(stat_fn, a, b, reps=BOOTSTRAP_REPS, seed=BOOTSTRAP_SEED):
+    """Percentile bootstrap 95% CI resampling items."""
+    n = len(a)
+    if n == 0:
+        return 0.0, 0.0
+    rng = random.Random(seed)
+    stats = []
+    for _ in range(reps):
+        idx = [rng.randrange(n) for _ in range(n)]
+        stats.append(stat_fn([a[i] for i in idx], [b[i] for i in idx]))
+    stats.sort()
+    return stats[int(0.025 * reps)], stats[min(int(0.975 * reps), reps - 1)]
+
+
+def landis_koch(kappa):
+    if kappa < 0:
+        return "less than chance"
+    if kappa < 0.2:
+        return "slight"
+    if kappa < 0.4:
+        return "fair"
+    if kappa < 0.6:
+        return "moderate"
+    if kappa < 0.8:
+        return "substantial"
+    return "almost perfect"
+
+
+def report_axis(name, existing, coder2, strata):
+    n = len(existing)
+    if n == 0:
+        print(f"\n  {name}: no coded rows yet.")
+        return
+    p_a = percentage_agreement(existing, coder2)
+    kappa = cohen_kappa(existing, coder2)
+    k_lo, k_hi = bootstrap_ci(cohen_kappa, existing, coder2)
+    alpha = krippendorff_alpha_nominal(existing, coder2)
+    ac1 = gwet_ac1(existing, coder2)
+    a_lo, a_hi = bootstrap_ci(gwet_ac1, existing, coder2)
+
+    print(f"\n  {name} (n={n}):")
+    print(f"    Percentage agreement:  {p_a:.1%}")
+    print(f"    Cohen's kappa:         {kappa:.3f}  [95% CI {k_lo:.3f}, {k_hi:.3f}]  ({landis_koch(kappa)}, Landis & Koch 1977)")
+    print(f"    Krippendorff's alpha:  {alpha:.3f}")
+    print(f"    Gwet's AC1:            {ac1:.3f}  [95% CI {a_lo:.3f}, {a_hi:.3f}]")
+
+    by_stratum = {}
+    for e, c, s in zip(existing, coder2, strata):
+        by_stratum.setdefault(s, ([], []))
+        by_stratum[s][0].append(e)
+        by_stratum[s][1].append(c)
+    if len(by_stratum) > 1:
+        print("    Per-stratum agreement (stratum = original argument level):")
+        for s in sorted(by_stratum):
+            ea, cb = by_stratum[s]
+            print(f"      G{s}: {percentage_agreement(ea, cb):.1%}  (n={len(ea)})")
+
+    disagreements = Counter(
+        (e, c) for e, c in zip(existing, coder2) if e != c
+    )
+    if disagreements:
+        print(f"    Disagreements ({sum(disagreements.values())}):")
+        for (e, c), count in disagreements.most_common(12):
+            print(f"      coder2={c}  vs  existing={e}  (x{count})")
 
 
 def main():
-    csv_path = DEFAULT_CSV
-    if len(sys.argv) > 1 and sys.argv[1] != "--csv":
-        csv_path = Path(sys.argv[1])
-    elif "--csv" in sys.argv:
-        idx = sys.argv.index("--csv")
-        csv_path = Path(sys.argv[idx + 1])
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--blind", type=Path, default=DEFAULT_BLIND)
+    parser.add_argument("--key", type=Path, default=DEFAULT_KEY)
+    args = parser.parse_args()
 
-    if not csv_path.exists():
-        print(f"File not found: {csv_path}")
-        sys.exit(1)
+    for path in (args.blind, args.key):
+        if not path.exists():
+            print(f"File not found: {path}")
+            print("Run tools/build_interrater_sample.py first.")
+            sys.exit(1)
 
-    rows = list(csv.DictReader(open(csv_path, encoding="utf-8-sig")))
-    print(f"Loaded {len(rows)} rows from {csv_path}")
+    with args.blind.open(encoding="utf-8-sig", newline="") as f:
+        blind = {r["presentation_id"]: r for r in csv.DictReader(f)}
+    with args.key.open(encoding="utf-8-sig", newline="") as f:
+        key = {r["presentation_id"]: r for r in csv.DictReader(f)}
 
-    l1_existing = []
-    l1_coder2 = []
-    g_existing = []
-    g_coder2 = []
-    uncoded_1 = 0
-    uncoded_g = 0
+    missing_key = sorted(set(blind) - set(key))
+    if missing_key:
+        print(f"WARNING: {len(missing_key)} blind rows have no key entry; they are skipped.")
 
-    for r in rows:
-        e_l1 = r.get("existing_l1", "").strip()
-        c_l1 = r.get("coder_2_l1", "").strip()
-        e_g = r.get("existing_g", "").strip()
-        c_g = r.get("coder_2_g", "").strip()
-
+    l1_e, l1_c, l1_s = [], [], []
+    g_e, g_c, g_s = [], [], []
+    uncoded = 0
+    for pid, row in blind.items():
+        k = key.get(pid)
+        if not k:
+            continue
+        stratum = k.get("existing_g", "")
+        c_l1 = (row.get("coder_2_l1") or "").strip()
+        c_g = (row.get("coder_2_g") or "").strip().lstrip("GgLl")
+        if not c_l1 and not c_g:
+            uncoded += 1
+            continue
         if c_l1:
-            l1_existing.append(e_l1)
-            l1_coder2.append(c_l1)
-        else:
-            uncoded_1 += 1
-
+            l1_e.append(k.get("existing_l1", ""))
+            l1_c.append(c_l1)
+            l1_s.append(stratum)
         if c_g:
-            g_existing.append(e_g)
-            g_coder2.append(c_g)
-        else:
-            uncoded_g += 1
+            g_e.append(k.get("existing_g", ""))
+            g_c.append(c_g)
+            g_s.append(stratum)
 
-    print(f"\n{'='*60}")
+    print("=" * 64)
     print("INTER-RATER AGREEMENT REPORT")
-    print(f"{'='*60}")
+    print(f"Rows in blind sheet: {len(blind)}; fully uncoded: {uncoded}")
+    print("Note: the sample is stratified (G3 census, G2 oversample); pooled")
+    print("statistics describe the sample, per-stratum values the corpus.")
+    print("=" * 64)
 
-    if uncoded_1 == len(rows):
-        print("\n  L1: No second-coder data yet. Fill 'coder_2_l1' column and re-run.")
-    else:
-        kappa, po, n = cohen_kappa(l1_existing, l1_coder2)
-        agree = pairwise_agreement(l1_existing, l1_coder2)
-        print(f"\n  L1 Theme Classification (n={n} coded, {uncoded_1} uncoded):")
-        print(f"    Percentage agreement: {agree:.1%}")
-        print(f"    Cohen's κ:           {kappa:.3f}")
-        if kappa < 0:
-            print(f"    Interpretation:       Less than chance")
-        elif kappa < 0.2:
-            print(f"    Interpretation:       Slight agreement")
-        elif kappa < 0.4:
-            print(f"    Interpretation:       Fair agreement")
-        elif kappa < 0.6:
-            print(f"    Interpretation:       Moderate agreement")
-        elif kappa < 0.8:
-            print(f"    Interpretation:       Substantial agreement")
-        else:
-            print(f"    Interpretation:       Almost perfect agreement")
+    report_axis("L1 theme classification", l1_e, l1_c, l1_s)
+    report_axis("Argument level (G)", g_e, g_c, g_s)
 
-        # Confusion pairs
-        disagreements = [(l1_existing[i], l1_coder2[i]) for i in range(n) if l1_existing[i] != l1_coder2[i]]
-        if disagreements:
-            print(f"\n  Disagreements (n={len(disagreements)}):")
-            from collections import Counter
-            for (e, c), count in Counter(disagreements).most_common(10):
-                print(f"    {c:35s} ← existing: {e}  (×{count})")
-
-    if uncoded_g == len(rows):
-        print("\n  G-level: No second-coder data yet. Fill 'coder_2_g' column and re-run.")
-    else:
-        kappa, po, n = cohen_kappa(g_existing, g_coder2)
-        agree = pairwise_agreement(g_existing, g_coder2)
-        print(f"\n  G-level Classification (n={n} coded, {uncoded_g} uncoded):")
-        print(f"    Percentage agreement: {agree:.1%}")
-        print(f"    Cohen's κ:           {kappa:.3f}")
-        if kappa < 0.6:
-            print(f"    Interpretation:       Below substantial — classifications not fully reproducible")
-        elif kappa < 0.8:
-            print(f"    Interpretation:       Substantial agreement")
-        else:
-            print(f"    Interpretation:       Almost perfect agreement")
-
-        disagreements = [(g_existing[i], g_coder2[i]) for i in range(n) if g_existing[i] != g_coder2[i]]
-        if disagreements:
-            print(f"\n  Disagreements (n={len(disagreements)}):")
-            from collections import Counter
-            for (e, c), count in Counter(disagreements).most_common(10):
-                print(f"    G{c} ← existing: G{e}  (×{count})")
-
-    print(f"\n{'='*60}")
-    print(f"To improve L1 agreement: review disagreements above for ambiguous titles.")
-    print(f"For G-level: borderline G1/G2 cases often involve 'tradition' keywords in titles.")
-    print(f"{'='*60}")
+    print()
+    print("References: Landis & Koch (1977) Biometrics 33:159-174;")
+    print("Krippendorff (2004) Content Analysis; Gwet (2008) Br J Math Stat Psychol 61:29-48.")
 
 
 if __name__ == "__main__":

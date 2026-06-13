@@ -43,6 +43,7 @@ from publication_helpers import (
     THEME_LABELS,
     clean_text,
     describe_year_span,
+    wilson_interval,
     esc,
     json_ld,
     load_authority_overrides,
@@ -60,8 +61,9 @@ from publication_helpers import (
 
 DB_PATH = "conferences.db"
 # Teacher's Yandex Form that receives pasted vote JSON (see docs/voting-admin-collection-options.md).
-# Set this to your form's public URL; leave empty to fall back to copy-only.
-VOTE_TEACHER_FORM_URL = ""
+# This is the PUBLIC respondent link (/u/<id>/), not the /admin/.../edit editor URL.
+# Set to empty to fall back to copy-only.
+VOTE_TEACHER_FORM_URL = "https://forms.yandex.ru/u/6a28f0e995add5b922d0f14c"
 BUILD_DATE = dt.date.today().isoformat()
 DATA_SCHEMA_VERSION = "1.0.0"
 PIPELINE_VERSION = "2026-05-25"
@@ -1027,7 +1029,8 @@ keywords:
                         {"name": "title", "type": "string"},
                         {"name": "theme_l1", "type": "string"},
                         {"name": "period_l2", "type": "string"},
-                        {"name": "gumilyov_level", "type": "integer"},
+                        {"name": "argument_level", "type": "integer", "description": "Argument-scale level 1-3; canonical name."},
+                        {"name": "gumilyov_level", "type": "integer", "description": "Legacy alias of argument_level, retained for backward compatibility."},
                         {"name": "meso_codes", "type": "string"},
                         {"name": "confidence", "type": "number"},
                         {"name": "review_bucket", "type": "string"},
@@ -2275,6 +2278,7 @@ def generate_gender_page():
     scholars = load_site_data().get("scholars", [])
     women_all = sum(1 for s in scholars if s.get("gender") == "F")
     men_all = sum(1 for s in scholars if s.get("gender") == "M")
+    unknown_all = len(scholars) - women_all - men_all
     known = women_all + men_all or 1
 
     year_gender = defaultdict(lambda: {"F": 0, "M": 0})
@@ -2287,12 +2291,25 @@ def generate_gender_page():
             if y:
                 year_gender[y][g] += 1
 
-    years_rows = []
+    years_rows_html = ""
     for y in sorted(year_gender):
         w = year_gender[y]["F"]
         m = year_gender[y]["M"]
-        t = max(w + m, 1)
-        years_rows.append((y, w, m, t, round(100 * w / t, 1)))
+        t = w + m
+        if not t:
+            continue
+        share = 100 * w / t
+        lo, hi = wilson_interval(w, t)
+        bar_w = round(share, 1)
+        years_rows_html += (
+            f'<tr><td>{y}</td><td>{t}</td><td>{w}</td><td>{m}</td>'
+            f'<td style="white-space:nowrap;">{share:.0f}% <span style="color:var(--muted); font-size:0.8rem;">[{100*lo:.0f}–{100*hi:.0f}]</span></td>'
+            f'<td style="min-width:120px;"><div style="background:rgba(255,255,255,0.08); border-radius:4px; height:10px; position:relative;">'
+            f'<div style="background:rgba(98,174,146,0.8); border-radius:4px; height:10px; width:{bar_w}%;"></div>'
+            f'<div style="position:absolute; top:-2px; height:14px; border-left:1px solid rgba(255,255,255,0.45); left:{100*lo:.1f}%;"></div>'
+            f'<div style="position:absolute; top:-2px; height:14px; border-left:1px solid rgba(255,255,255,0.45); left:{100*hi:.1f}%;"></div>'
+            f'</div></td></tr>'
+        )
 
     top_women = sorted(
         [s for s in scholars if s.get("gender") == "F" and int(s.get("total_talks") or 0) > 0],
@@ -2335,6 +2352,12 @@ def generate_gender_page():
 <article class="card"><strong>Соотношение Ж:М</strong><div class="metric">{ratio_str}</div><div class="meta">{round(100*women_all/known)}% женщин из {known} с известным полом</div></article>
 <article class="card"><strong>Докладов на учёного</strong><div class="metric">{round(sum(int(s.get("total_talks") or 0) for s in scholars if s.get("gender")=="F")/women_all,1) if women_all else 0} / {round(sum(int(s.get("total_talks") or 0) for s in scholars if s.get("gender")=="M")/men_all,1) if men_all else 0}</div><div class="meta">Ж / М среднее</div></article>
 </section>
+<h2>Доля женщин среди докладчиков по годам</h2>
+<p style="color:var(--muted);font-size:0.85rem;">Единица счёта — авторские участия в данном году. В скобках — 95%-ный интервал Уилсона: малые программы дают широкие интервалы, и колебания между соседними годами внутри пересекающихся интервалов не следует интерпретировать как тренд.</p>
+<div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:0.9rem;">
+<thead><tr><th style="text-align:left">Год</th><th>Участий</th><th>Ж</th><th>М</th><th>% Ж [95% ДИ]</th><th></th></tr></thead>
+<tbody>{years_rows_html}</tbody>
+</table></div>
 <h2>Распределение по дисциплинам</h2>
 <div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:0.9rem;">
 <thead><tr><th style="text-align:left">Дисциплина</th><th>Всего</th><th>Ж</th><th>М</th><th>% Ж</th></tr></thead>
@@ -2342,7 +2365,9 @@ def generate_gender_page():
 </table></div>
 <h2>Топ женщин-исследователей</h2>
 <div class="chip-row">{women_chips}</div>
-<p style="margin-top:1.5rem;color:var(--muted);">Всего учёных с задокументированным полом: {known} (Ж: {women_all}, М: {men_all}). Данные основаны на конференционных программах и могут не отражать полный гендерный баланс дисциплины.</p>'''
+<p style="margin-top:1.5rem;color:var(--muted);">Всего учёных: {len(scholars)}; пол определён для {known} (Ж: {women_all}, М: {men_all}), не определён для {unknown_all}. Данные основаны на конференционных программах и могут не отражать полный гендерный баланс дисциплины.</p>
+<h2>Методика</h2>
+<p style="color:var(--muted);">Пол выводится автоматически из русскоязычного имени (однозначное личное имя, затем отчество, затем склонение фамилии; функция <code>classify_gender</code> в <code>publication_helpers.py</code>). Это вероятностная атрибуция, а не самоидентификация. Имена, не позволяющие надёжного вывода, учитываются отдельной категорией «не определён» и не исключаются из знаменателей. Протокол ручной валидации и измеренная доля ошибок: <code>tools/validate_gender_inference.py</code>; порядок исправления и возражений &mdash; в <a href="https://github.com/gasyoun/IndologyScholars/blob/main/docs/persons-data-policy.md">политике персональных данных</a>.</p>'''
 
     write_text(
         "findings/gender.html",
@@ -2499,7 +2524,7 @@ def generate_voting_page(records):
                 <select id="vote-session-filter"></select>
             </label>
             <div class="vote-actions">
-                <button type="button" id="vote-send-teacher">Отправить преподавателю</button>
+                <button type="button" id="vote-send-teacher">Отправить голосование</button>
                 <button type="button" id="vote-export-csv">Экспорт CSV</button>
                 <button type="button" id="vote-export-json">Экспорт JSON</button>
                 <button type="button" id="vote-copy-json">Скопировать JSON</button>
@@ -2733,9 +2758,9 @@ def generate_voting_page(records):
                 }}
                 if (teacherFormUrl) {{
                     window.open(teacherFormUrl, '_blank', 'noopener');
-                    setStatus('JSON скопирован и открыта форма преподавателя. Вставьте его в поле «JSON выгрузки» и отправьте.');
+                    setStatus('JSON скопирован и открыта форма голосования. Вставьте его в поле «JSON выгрузки» и отправьте.');
                 }} else {{
-                    setStatus('JSON скопирован. Вставьте его в форму преподавателя (ссылку на форму даст преподаватель).');
+                    setStatus('JSON скопирован. Вставьте его в форму голосования (ссылку на форму даст преподаватель).');
                 }}
             }});
 
@@ -3076,8 +3101,8 @@ def generate_download_page(data):
         ("Biographical provenance", "analytics_output/field_provenance_biographical.csv", "Field-level provenance for curated person names and life dates."),
         ("Authority provenance", "analytics_output/field_provenance_authority.csv", "Field-level provenance for external identifiers and organization authority records."),
         ("Theme provenance", "analytics_output/field_provenance_themes.csv", "Field-level provenance for generated presentation theme labels."),
-        ("Gumilyov scale", "analytics_output/gumilyov_scale.csv", "Presentation-level scale of generalization used by the Gumilyov navigation pages."),
-        ("Expert classification decisions", "analytics_output/classification_overrides.csv", "Reviewed revisions to themes, meso-levels, and Gumilyov argument levels, with a rationale for each affected presentation."),
+        ("Argument scale", "analytics_output/gumilyov_scale.csv", "Presentation-level argument-scale levels (canonical column argument_level; gumilyov_level kept as a legacy alias)."),
+        ("Expert classification decisions", "analytics_output/classification_overrides.csv", "Reviewed revisions to themes, meso-levels, and argument-scale levels, with a rationale for each affected presentation."),
         ("Human review index", "analytics_output/human_review_index.csv", "Unified curator-facing inbox for open manual review items across authority IDs, identity, classification, spacetime, affiliation, lineage, and data-quality queues."),
         ("Scientometrics guardrails", "analytics_output/scientometrics_guardrails.csv", "Index of eight responsible-metrics guardrails and their generated review artifacts."),
         ("Scientometrics claim registry", "analytics_output/scientometrics_claim_registry.csv", "Allowed claim families, required evidence, and forbidden overclaims for public interpretation."),
@@ -5602,20 +5627,70 @@ def generate_visualisations_page(data, records):
         })
     serialized_demography = json.dumps(demography_data, ensure_ascii=False)
 
-    # VIS_009 — Cohort survival curves
-    survival_map = {}
-    for row in load_csv_rows("analytics_output/cohort_survival.csv"):
-        key = (row.get("series"), row.get("debut_year"))
-        bucket = survival_map.setdefault(key, {
-            "series": _series_key(row.get("series")),
-            "debut": _gi(row.get("debut_year")),
-            "size": _gi(row.get("cohort_size")),
-            "points": [],
+    # Product-limit (Kaplan–Meier) estimator, shared by VIS_009 and VIS_044.
+    def _km_curve(observations):
+        """[(t, S(t))...] from (duration, event) pairs; censored observations
+        leave the risk set without producing a drop."""
+        observations = sorted(observations)
+        n_at_risk = len(observations)
+        points = [(0, 1.0)]
+        survival = 1.0
+        idx = 0
+        while idx < len(observations):
+            t = observations[idx][0]
+            events = removed = 0
+            while idx < len(observations) and observations[idx][0] == t:
+                events += observations[idx][1]
+                removed += 1
+                idx += 1
+            if events and n_at_risk:
+                survival *= 1 - events / n_at_risk
+                points.append((t, survival))
+            n_at_risk -= removed
+        return points
+
+    # VIS_009 — Cohort survival curves, censoring-aware Kaplan–Meier.
+    # Each line is one debut-year cohort within a single series, so the
+    # per-cohort attrition shape stays visible. Duration is the span between a
+    # scholar's first and last appearance in that series; a scholar last seen
+    # in the series' final observable window is right-censored, not counted as
+    # a departure. This replaces the earlier prevalence-at-delta curve (fed
+    # from scratch/, neither monotone nor censoring-aware).
+    series_years = defaultdict(set)
+    person_spells = []
+    for s in data.get("scholars", []):
+        per_series = defaultdict(set)
+        for t in s.get("talks", []):
+            y = t.get("year")
+            if not y:
+                continue
+            sk = _series_key(t.get("series"))
+            per_series[sk].add(int(y))
+            series_years[sk].add(int(y))
+        for sk, ys in per_series.items():
+            ys_sorted = sorted(ys)
+            person_spells.append({"series": sk, "debut": ys_sorted[0], "last": ys_sorted[-1]})
+
+    # Series-specific censoring horizon: the final observable programme year.
+    censor_from = {sk: (max(ys) - 1 if ys else 0) for sk, ys in series_years.items()}
+
+    cohorts = defaultdict(list)
+    for sp in person_spells:
+        event = 0 if sp["last"] >= censor_from.get(sp["series"], 9999) else 1
+        cohorts[(sp["series"], sp["debut"])].append((sp["last"] - sp["debut"], event))
+
+    survival_data = []
+    for (sk, debut), obs in cohorts.items():
+        if len(obs) < 5:
+            continue
+        survival_data.append({
+            "series": sk,
+            "debut": debut,
+            "size": len(obs),
+            "events": sum(e for _, e in obs),
+            "censored": sum(1 for _, e in obs if not e),
+            "points": [{"x": t, "y": round(srv * 100, 1)} for t, srv in _km_curve(obs)],
         })
-        bucket["points"].append({"x": _gi(row.get("years_since_debut")), "y": _gf(row.get("survival_pct"))})
-    survival_data = [c for c in survival_map.values() if c["size"] >= 5]
-    for c in survival_data:
-        c["points"].sort(key=lambda p: p["x"])
     survival_data.sort(key=lambda c: (c["series"], c["debut"]))
     serialized_survival = json.dumps(survival_data, ensure_ascii=False)
 
@@ -6716,6 +6791,146 @@ def generate_visualisations_page(data, records):
     conn_tmp.close()
 
 
+    # VIS_043 — coding reliability confusion matrices (cross-model blind sample),
+    # rendered server-side: rows = corpus classification, columns = second coder.
+    def _confusion_table(pairs, categories, labels):
+        counts = defaultdict(int)
+        for existing, coder2 in pairs:
+            counts[(existing, coder2)] += 1
+        row_max = {e: max([counts[(e, c)] for c in categories] + [1]) for e in categories}
+        head = "".join(
+            f'<th style="padding:0.35rem 0.5rem; font-size:0.75rem; color:var(--muted); text-align:center;">{labels.get(c, c)}</th>'
+            for c in categories
+        )
+        rows_html = ""
+        for e in categories:
+            cells = ""
+            for c in categories:
+                n = counts[(e, c)]
+                opacity = 0.06 + 0.74 * (n / row_max[e]) if n else 0.02
+                color = "98,174,146" if e == c else "214,118,86"
+                cells += (
+                    f'<td style="padding:0.45rem 0.5rem; text-align:center; font-size:0.85rem; '
+                    f'background:rgba({color},{opacity:.2f});">{n if n else ""}</td>'
+                )
+            rows_html += (
+                f'<tr><th style="padding:0.35rem 0.5rem; font-size:0.75rem; color:var(--muted); text-align:right;">{labels.get(e, e)}</th>{cells}</tr>'
+            )
+        return (
+            '<table style="border-collapse:collapse; margin:0 auto;">'
+            f'<thead><tr><th></th>{head}</tr></thead><tbody>{rows_html}</tbody></table>'
+        )
+
+    vis043_l1_table = vis043_g_table = ""
+    vis043_blind = {r.get("presentation_id"): r for r in load_csv_rows("analytics_output/interrater_crossmodel_claude.csv")}
+    vis043_key = {r.get("presentation_id"): r for r in load_csv_rows("analytics_output/interrater_sample_key.csv")}
+    if vis043_blind and vis043_key:
+        l1_pairs = []
+        g_pairs = []
+        for pid, row in vis043_blind.items():
+            key_row = vis043_key.get(pid)
+            if not key_row:
+                continue
+            if row.get("coder_2_l1"):
+                l1_pairs.append((key_row.get("existing_l1", ""), row.get("coder_2_l1", "")))
+            if row.get("coder_2_g"):
+                g_pairs.append((key_row.get("existing_g", ""), row.get("coder_2_g", "")))
+        l1_cats = ["history_and_culture", "religion_and_philosophy", "literature_and_poetry",
+                   "linguistics_and_philology", "art_and_material_culture", "unspecified"]
+        l1_labels = {
+            "history_and_culture": "Ист.", "religion_and_philosophy": "Рел.-фил.",
+            "literature_and_poetry": "Лит.", "linguistics_and_philology": "Лингв.",
+            "art_and_material_culture": "Иск.", "unspecified": "Не опр.",
+        }
+        vis043_l1_table = _confusion_table(l1_pairs, l1_cats, l1_labels)
+        vis043_g_table = _confusion_table(g_pairs, ["1", "2", "3"], {"1": "G1", "2": "G2", "3": "G3"})
+
+    # VIS_044 — Kaplan-Meier retention curves with right-censoring, computed
+    # in the main pipeline (not scratch/). Unit: scholar; duration: years
+    # between first and last observed appearance; a scholar whose last
+    # appearance falls in the final two programme years is censored, not
+    # treated as having left.
+    vis044_end_year = summary.get("end_year", 2026)
+    vis044_censor_from = vis044_end_year - 1
+    vis044_strata_defs = [
+        ("2004-2010", 2004, 2010, "#2b82c9"),
+        ("2011-2017", 2011, 2017, "#ff7b00"),
+        ("2018-" + str(vis044_end_year), 2018, vis044_end_year, "#62ae92"),
+    ]
+
+    # _km_curve is defined once at VIS_009 above and reused here.
+    vis044_curves = []
+    vis044_max_t = 1
+    for label, lo, hi, color in vis044_strata_defs:
+        obs = []
+        for s in data.get("scholars", []):
+            years = sorted({t.get("year") for t in s.get("talks", []) if t.get("year")})
+            if not years or not (lo <= years[0] <= hi):
+                continue
+            duration = years[-1] - years[0]
+            event = 0 if years[-1] >= vis044_censor_from else 1
+            obs.append((duration, event))
+        if len(obs) < 5:
+            continue
+        max_follow = max(d for d, _ in obs)
+        vis044_max_t = max(vis044_max_t, max_follow)
+        vis044_curves.append({
+            "label": label,
+            "color": color,
+            "n": len(obs),
+            "events": sum(e for _, e in obs),
+            "censored": sum(1 for _, e in obs if not e),
+            "points": _km_curve(obs),
+            "max_follow": max_follow,
+        })
+
+    vis044_svg = ""
+    if vis044_curves:
+        W, H, PL, PR, PT, PB = 800, 380, 60, 30, 30, 50
+        def _x(t):
+            return PL + (t / vis044_max_t) * (W - PL - PR)
+        def _y(srv):
+            return PT + (1 - srv) * (H - PT - PB)
+        grid = ""
+        for pct in (0, 25, 50, 75, 100):
+            gy = _y(pct / 100)
+            grid += (
+                f'<line x1="{PL}" y1="{gy:.1f}" x2="{W - PR}" y2="{gy:.1f}" stroke="rgba(255,255,255,0.08)"/>'
+                f'<text x="{PL - 8}" y="{gy + 4:.1f}" text-anchor="end" font-size="11" fill="var(--muted)">{pct}%</text>'
+            )
+        step = 5 if vis044_max_t > 10 else 2
+        for t in range(0, vis044_max_t + 1, step):
+            gx = _x(t)
+            grid += (
+                f'<line x1="{gx:.1f}" y1="{PT}" x2="{gx:.1f}" y2="{H - PB}" stroke="rgba(255,255,255,0.05)"/>'
+                f'<text x="{gx:.1f}" y="{H - PB + 18}" text-anchor="middle" font-size="11" fill="var(--muted)">{t}</text>'
+            )
+        paths = ""
+        legend = ""
+        for i, curve in enumerate(vis044_curves):
+            d = f'M {_x(0):.1f} {_y(1.0):.1f}'
+            prev_s = 1.0
+            for t, srv in curve["points"][1:]:
+                d += f' H {_x(t):.1f} V {_y(srv):.1f}'
+                prev_s = srv
+            d += f' H {_x(curve["max_follow"]):.1f}'
+            paths += f'<path d="{d}" fill="none" stroke="{curve["color"]}" stroke-width="2.5" opacity="0.9"/>'
+            ly = PT + 14 + i * 18
+            legend += (
+                f'<line x1="{W - PR - 240}" y1="{ly - 4}" x2="{W - PR - 215}" y2="{ly - 4}" stroke="{curve["color"]}" stroke-width="2.5"/>'
+                f'<text x="{W - PR - 208}" y="{ly}" font-size="11" fill="var(--muted)">'
+                f'{curve["label"]}: n={curve["n"]}, выбытий {curve["events"]}, цензур. {curve["censored"]}</text>'
+            )
+        x_title = (
+            f'<text x="{(PL + W - PR) / 2:.0f}" y="{H - 8}" text-anchor="middle" font-size="12" '
+            f'fill="var(--muted)">Лет с дебюта / Years since debut</text>'
+        )
+        vis044_svg = (
+            f'<svg viewBox="0 0 {W} {H}" style="width:100%; height:auto; background:rgba(0,0,0,0.15); '
+            f'border-radius:8px;" role="img" aria-label="Kaplan-Meier retention curves">'
+            f'{grid}{paths}{legend}{x_title}</svg>'
+        )
+
     tip_style = (
         "position:absolute; background:rgba(18,18,24,0.95); border:1px solid rgba(255,255,255,0.15); "
         "border-radius:8px; padding:0.7rem 0.9rem; font-size:0.82rem; color:#fff; pointer-events:none; "
@@ -6773,6 +6988,12 @@ def generate_visualisations_page(data, records):
             <a href="#VIS_014_closedness" class="viz-toc-item">
                 <span>VIS_014</span>
                 <b class="bilingual-text" data-ru="Замкнутость сообществ (сравнение метрик)" data-en="Community Closedness (metric comparison)">Замкнутость сообществ (сравнение метрик)</b>
+                <span class="badge badge-online bilingual-text" data-ru="Активна" data-en="Active">Активна</span>
+            </a>
+            <a href="#VIS_044_km_retention" class="viz-toc-item">
+                <span>VIS_044</span>
+                <b class="bilingual-text" data-ru="Удержание по Каплану–Мейеру (с цензурированием)" data-en="Kaplan–Meier Retention (censoring-aware)">Удержание по Каплану–Мейеру</b>
+                <a href="/hypotheses.html#H17" class="badge" style="background:#6c5ce7; color:white; margin-right:4px; text-decoration:none;" title="Читать формулировку гипотезы H17">H17</a>
                 <span class="badge badge-online bilingual-text" data-ru="Активна" data-en="Active">Активна</span>
             </a>
 
@@ -6877,6 +7098,12 @@ def generate_visualisations_page(data, records):
             <a href="#VIS_012_gumilyov_stream" class="viz-toc-item">
                 <span>VIS_012</span>
                 <b class="bilingual-text" data-ru="Поток уровней обобщения (шкала Гумилёва)" data-en="Scale-of-Argument Streamgraph (Gumilyov)">Поток уровней обобщения (шкала Гумилёва)</b>
+                <span class="badge badge-online bilingual-text" data-ru="Активна" data-en="Active">Активна</span>
+            </a>
+            <a href="#VIS_043_coding_reliability" class="viz-toc-item">
+                <span>VIS_043</span>
+                <b class="bilingual-text" data-ru="Надёжность кодирования (матрицы ошибок)" data-en="Coding Reliability (Confusion Matrices)">Надёжность кодирования (матрицы ошибок)</b>
+                <a href="/hypotheses.html#H15" class="badge" style="background:#6c5ce7; color:white; margin-right:4px; text-decoration:none;" title="Читать формулировку гипотезы H15">H15</a>
                 <span class="badge badge-online bilingual-text" data-ru="Активна" data-en="Active">Активна</span>
             </a>
             <a href="#VIS_028_gumilyov" class="viz-toc-item">
@@ -7191,7 +7418,7 @@ def generate_visualisations_page(data, records):
                 <span class="bilingual-text" data-ru="Кривые выживаемости когорт" data-en="Cohort Survival Curves">Кривые выживаемости когорт</span>
                 <a href="/hypotheses.html#H16" class="badge" style="background:#6c5ce7; color:white; text-decoration:none;" title="Читать формулировку гипотезы H16">H16</a>
             </h2>
-            <p class="bilingual-text" style="color:var(--muted); font-size:0.9rem;" data-ru="Каждая линия — когорта дебютантов одного года. По оси X — годы после первого доклада, по оси Y — доля когорты, всё ещё активной. Показаны только когорты от 5 человек." data-en="Each line is a cohort of scholars who debuted in the same year. X axis: years since first talk; Y axis: share of the cohort still active. Only cohorts of 5+ are shown.">Каждая линия — когорта дебютантов одного года; ось Y — доля когорты, всё ещё активной.</p>
+            <p class="bilingual-text" style="color:var(--muted); font-size:0.9rem;" data-ru="Каждая линия — когорта дебютантов одного года в одной серии. Оценка Каплана–Мейера: ось Y — доля когорты с продолжающимся участием через X лет после дебюта. Учёт правого цензурирования: тех, кого последний раз видели в последнем наблюдаемом окне серии, не считают выбывшими. Показаны только когорты от 5 человек. Тот же оценщик, что и в VIS_044." data-en="Each line is a one-year debut cohort within a single series. Kaplan–Meier estimate: the Y axis is the share of the cohort with continuing participation X years after debut. Right-censoring-aware: scholars last seen in the series' final observable window are not counted as departed. Only cohorts of 5+ are shown. Same estimator as VIS_044.">Каждая линия — когорта дебютантов одного года; оценка Каплана–Мейера с цензурированием.</p>
             <div id="survival-wrapper" style="position:relative; width:100%; overflow:hidden; margin-top:1.5rem;">
                 <svg id="survival-svg" viewBox="0 0 800 420" style="width:100%; height:auto; background:rgba(0,0,0,0.15); border-radius:8px;"></svg>
                 <div id="survival-tooltip" style="{tip_style}"></div>
@@ -7643,6 +7870,40 @@ def generate_visualisations_page(data, records):
             <div id="vis042-wrapper" style="position:relative; width:100%; overflow:hidden; margin-top:1.5rem;">
                 <svg id="vis042-svg" viewBox="0 0 800 360" style="width:100%; height:auto; background:rgba(0,0,0,0.15); border-radius:8px;"></svg>
                 <div id="vis042-tooltip" style="{tip_style}"></div>
+            </div>
+        </section>
+
+        <!-- VIS_043_coding_reliability -->
+        <section class="viz-showcase-section" id="VIS_043_coding_reliability">
+            <h2>
+                <span class="viz-id-badge">VIS_043</span>
+                <span class="bilingual-text" data-ru="Надёжность кодирования (матрицы ошибок)" data-en="Coding Reliability (Confusion Matrices)">Надёжность кодирования</span>
+                <a href="/hypotheses.html#H15" class="badge" style="background:#6c5ce7; color:white; text-decoration:none;" title="Читать формулировку гипотезы H15">H15</a>
+            </h2>
+            <p class="bilingual-text" style="color:var(--muted); font-size:0.9rem;" data-ru="Слепая стратифицированная выборка из 100 заголовков, закодированная второй LLM-семьёй (Claude) против действующей классификации. Строки — классификация корпуса, столбцы — второй кодировщик; зелёная диагональ — согласие. Темы L1: κ=0.670; масштаб аргумента: κ=0.553, слабое место — граница G2/G3. Методика и статистика — в пакете надёжности классификации." data-en="A blind stratified sample of 100 titles coded by a second LLM family (Claude) against the published classification. Rows are the corpus codes, columns the second coder; the green diagonal marks agreement. L1 themes: kappa=0.670; argument scale: kappa=0.553, with the G2/G3 boundary as the weak point. Method and statistics: see the classification reliability packet.">Матрицы согласия двух кодировщиков.</p>
+            <div style="display:flex; flex-wrap:wrap; gap:2rem; justify-content:center; margin-top:1.5rem;">
+                <figure style="margin:0;">
+                    <figcaption class="bilingual-text" style="text-align:center; color:var(--muted); font-size:0.85rem; margin-bottom:0.5rem;" data-ru="Темы L1 (n=100)" data-en="L1 themes (n=100)">Темы L1 (n=100)</figcaption>
+                    {vis043_l1_table}
+                </figure>
+                <figure style="margin:0;">
+                    <figcaption class="bilingual-text" style="text-align:center; color:var(--muted); font-size:0.85rem; margin-bottom:0.5rem;" data-ru="Масштаб аргумента (n=100)" data-en="Argument scale (n=100)">Масштаб аргумента (n=100)</figcaption>
+                    {vis043_g_table}
+                </figure>
+            </div>
+            <p class="bilingual-text" style="color:var(--muted); font-size:0.8rem; margin-top:1rem;" data-ru="Это кросс-модельное согласие, а не межэкспертная надёжность: человеческий проход по тому же слепому листу — отчётная статистика при подаче." data-en="This is cross-model agreement, not human inter-rater reliability: the human pass over the same blind sheet is the statistic reported at submission.">Кросс-модельное согласие.</p>
+        </section>
+
+        <!-- VIS_044_km_retention -->
+        <section class="viz-showcase-section" id="VIS_044_km_retention">
+            <h2>
+                <span class="viz-id-badge">VIS_044</span>
+                <span class="bilingual-text" data-ru="Удержание по Каплану–Мейеру" data-en="Kaplan–Meier Retention">Удержание по Каплану–Мейеру</span>
+                <a href="/hypotheses.html#H17" class="badge" style="background:#6c5ce7; color:white; text-decoration:none;" title="Читать формулировку гипотезы H17">H17</a>
+            </h2>
+            <p class="bilingual-text" style="color:var(--muted); font-size:0.9rem;" data-ru="Оценка Каплана–Мейера длительности участия (лет между первым и последним появлением в программах) по периодам дебюта. В отличие от простой доли активных, учитывает правое цензурирование: учёный, появлявшийся в последние два программных года, не считается выбывшим. Резкое падение в нуле — феномен однократных участников." data-en="Kaplan–Meier estimate of participation span (years between first and last programme appearance) by debut period. Unlike a raw active-share curve, it is right-censoring-aware: a scholar seen in the final two programme years is not counted as departed. The steep drop at zero is the one-time-participant phenomenon.">Кривые удержания с цензурированием.</p>
+            <div style="margin-top:1.5rem;">
+                {vis044_svg}
             </div>
         </section>
 
@@ -8929,7 +9190,7 @@ def generate_visualisations_page(data, records):
                 SURVIVAL_DATA.forEach(c => {
                     svg.appendChild(gEl('polyline', {points: c.points.map(p => xq(p.x) + ',' + yq(p.y)).join(' '), fill: 'none', stroke: SERIES_COLORS[c.series], 'stroke-width': 1.4, 'stroke-opacity': 0.4}));
                     c.points.forEach(p => { const dot = gEl('circle', {cx: xq(p.x), cy: yq(p.y), r: 3, fill: SERIES_COLORS[c.series], 'fill-opacity': 0.7});
-                        bindTip(dot, 'survival-wrapper', 'survival-tooltip', () => '<strong>' + seriesName(c.series) + ' · ' + T('дебют', 'debut') + ' ' + c.debut + '</strong><br>' + T('Размер когорты', 'Cohort size') + ': ' + c.size + '<br>' + T('Лет после дебюта', 'Years since debut') + ': ' + p.x + '<br>' + T('Активны', 'Active') + ': ' + p.y.toFixed(0) + '%');
+                        bindTip(dot, 'survival-wrapper', 'survival-tooltip', () => '<strong>' + seriesName(c.series) + ' · ' + T('дебют', 'debut') + ' ' + c.debut + '</strong><br>' + T('Размер когорты', 'Cohort size') + ': ' + c.size + ' (' + T('выбытий', 'departures') + ' ' + c.events + ', ' + T('цензур.', 'censored') + ' ' + c.censored + ')<br>' + T('Лет после дебюта', 'Years since debut') + ': ' + p.x + '<br>' + T('Доля с продолжающимся участием', 'Continuing participation') + ': ' + p.y.toFixed(0) + '%');
                         svg.appendChild(dot); });
                 });
                 svg.appendChild(gEl('line', {x1: pad.l, y1: H - pad.b, x2: W - pad.r, y2: H - pad.b, stroke: 'rgba(255,255,255,0.2)'}));
@@ -9963,27 +10224,12 @@ def generate_generations_page(data):
     male_presentations_by_year = defaultdict(int)
     female_presentations_by_year = defaultdict(int)
 
+    # Single source of truth: the gender field computed by
+    # publication_helpers.classify_gender during site_data generation.
     scholar_gender = {}
     for s in scholars:
         pid = s.get("id")
-        fname = s.get("full_name_ru") or s.get("name") or ""
-        
-        gender = None
-        if any(pat in fname for pat in ["овна", "евна", "ична", "инична"]):
-            gender = "female"
-        elif any(pat in fname for pat in ["ович", "евич", "ич"]):
-            gender = "male"
-        else:
-            last_word = fname.split()[-1] if fname.split() else ""
-            if last_word.endswith(("ова", "ева", "ина", "ая")):
-                gender = "female"
-            elif last_word.endswith(("ов", "ев", "ин", "ий", "ый")):
-                gender = "male"
-            elif any(fname.split()[0].startswith(prefix) for prefix in ["Дми", "Але", "Сер", "Ива", "Мих", "Вла", "Кон", "Юри", "Анд", "Мих"]):
-                gender = "male"
-            elif any(fname.split()[0].startswith(prefix) for prefix in ["Оль", "Мар", "Ири", "Еле", "Тат", "Анн", "Све", "Нат", "Ека", "Люд"]):
-                gender = "female"
-        
+        gender = {"M": "male", "F": "female"}.get(s.get("gender"))
         if gender:
             scholar_gender[pid] = gender
             cohort = s.get("generation_code")

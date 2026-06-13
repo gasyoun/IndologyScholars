@@ -1,5 +1,10 @@
 # Changelog: сбор русскоязычных индологов
 
+## [1.0.0] - 2026-06-13
+
+### Changed
+- Released the current scratch-pipeline changelog state as version 1.
+
 ## 2026-06-06 — Code review, en.wikipedia bridge, institutional scraper
 
 ### Диагностика сети (важно)
