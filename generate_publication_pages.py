@@ -5627,20 +5627,70 @@ def generate_visualisations_page(data, records):
         })
     serialized_demography = json.dumps(demography_data, ensure_ascii=False)
 
-    # VIS_009 — Cohort survival curves
-    survival_map = {}
-    for row in load_csv_rows("analytics_output/cohort_survival.csv"):
-        key = (row.get("series"), row.get("debut_year"))
-        bucket = survival_map.setdefault(key, {
-            "series": _series_key(row.get("series")),
-            "debut": _gi(row.get("debut_year")),
-            "size": _gi(row.get("cohort_size")),
-            "points": [],
+    # Product-limit (Kaplan–Meier) estimator, shared by VIS_009 and VIS_044.
+    def _km_curve(observations):
+        """[(t, S(t))...] from (duration, event) pairs; censored observations
+        leave the risk set without producing a drop."""
+        observations = sorted(observations)
+        n_at_risk = len(observations)
+        points = [(0, 1.0)]
+        survival = 1.0
+        idx = 0
+        while idx < len(observations):
+            t = observations[idx][0]
+            events = removed = 0
+            while idx < len(observations) and observations[idx][0] == t:
+                events += observations[idx][1]
+                removed += 1
+                idx += 1
+            if events and n_at_risk:
+                survival *= 1 - events / n_at_risk
+                points.append((t, survival))
+            n_at_risk -= removed
+        return points
+
+    # VIS_009 — Cohort survival curves, censoring-aware Kaplan–Meier.
+    # Each line is one debut-year cohort within a single series, so the
+    # per-cohort attrition shape stays visible. Duration is the span between a
+    # scholar's first and last appearance in that series; a scholar last seen
+    # in the series' final observable window is right-censored, not counted as
+    # a departure. This replaces the earlier prevalence-at-delta curve (fed
+    # from scratch/, neither monotone nor censoring-aware).
+    series_years = defaultdict(set)
+    person_spells = []
+    for s in data.get("scholars", []):
+        per_series = defaultdict(set)
+        for t in s.get("talks", []):
+            y = t.get("year")
+            if not y:
+                continue
+            sk = _series_key(t.get("series"))
+            per_series[sk].add(int(y))
+            series_years[sk].add(int(y))
+        for sk, ys in per_series.items():
+            ys_sorted = sorted(ys)
+            person_spells.append({"series": sk, "debut": ys_sorted[0], "last": ys_sorted[-1]})
+
+    # Series-specific censoring horizon: the final observable programme year.
+    censor_from = {sk: (max(ys) - 1 if ys else 0) for sk, ys in series_years.items()}
+
+    cohorts = defaultdict(list)
+    for sp in person_spells:
+        event = 0 if sp["last"] >= censor_from.get(sp["series"], 9999) else 1
+        cohorts[(sp["series"], sp["debut"])].append((sp["last"] - sp["debut"], event))
+
+    survival_data = []
+    for (sk, debut), obs in cohorts.items():
+        if len(obs) < 5:
+            continue
+        survival_data.append({
+            "series": sk,
+            "debut": debut,
+            "size": len(obs),
+            "events": sum(e for _, e in obs),
+            "censored": sum(1 for _, e in obs if not e),
+            "points": [{"x": t, "y": round(srv * 100, 1)} for t, srv in _km_curve(obs)],
         })
-        bucket["points"].append({"x": _gi(row.get("years_since_debut")), "y": _gf(row.get("survival_pct"))})
-    survival_data = [c for c in survival_map.values() if c["size"] >= 5]
-    for c in survival_data:
-        c["points"].sort(key=lambda p: p["x"])
     survival_data.sort(key=lambda c: (c["series"], c["debut"]))
     serialized_survival = json.dumps(survival_data, ensure_ascii=False)
 
@@ -6808,27 +6858,7 @@ def generate_visualisations_page(data, records):
         ("2018-" + str(vis044_end_year), 2018, vis044_end_year, "#62ae92"),
     ]
 
-    def _km_curve(observations):
-        """Product-limit estimator: [(t, S(t))...] from (duration, event) pairs."""
-        observations = sorted(observations)
-        n_at_risk = len(observations)
-        points = [(0, 1.0)]
-        survival = 1.0
-        idx = 0
-        while idx < len(observations):
-            t = observations[idx][0]
-            events = 0
-            removed = 0
-            while idx < len(observations) and observations[idx][0] == t:
-                events += observations[idx][1]
-                removed += 1
-                idx += 1
-            if events and n_at_risk:
-                survival *= 1 - events / n_at_risk
-                points.append((t, survival))
-            n_at_risk -= removed
-        return points
-
+    # _km_curve is defined once at VIS_009 above and reused here.
     vis044_curves = []
     vis044_max_t = 1
     for label, lo, hi, color in vis044_strata_defs:
@@ -7388,7 +7418,7 @@ def generate_visualisations_page(data, records):
                 <span class="bilingual-text" data-ru="Кривые выживаемости когорт" data-en="Cohort Survival Curves">Кривые выживаемости когорт</span>
                 <a href="/hypotheses.html#H16" class="badge" style="background:#6c5ce7; color:white; text-decoration:none;" title="Читать формулировку гипотезы H16">H16</a>
             </h2>
-            <p class="bilingual-text" style="color:var(--muted); font-size:0.9rem;" data-ru="Каждая линия — когорта дебютантов одного года. По оси X — годы после первого доклада, по оси Y — доля когорты, всё ещё активной. Показаны только когорты от 5 человек." data-en="Each line is a cohort of scholars who debuted in the same year. X axis: years since first talk; Y axis: share of the cohort still active. Only cohorts of 5+ are shown.">Каждая линия — когорта дебютантов одного года; ось Y — доля когорты, всё ещё активной.</p>
+            <p class="bilingual-text" style="color:var(--muted); font-size:0.9rem;" data-ru="Каждая линия — когорта дебютантов одного года в одной серии. Оценка Каплана–Мейера: ось Y — доля когорты с продолжающимся участием через X лет после дебюта. Учёт правого цензурирования: тех, кого последний раз видели в последнем наблюдаемом окне серии, не считают выбывшими. Показаны только когорты от 5 человек. Тот же оценщик, что и в VIS_044." data-en="Each line is a one-year debut cohort within a single series. Kaplan–Meier estimate: the Y axis is the share of the cohort with continuing participation X years after debut. Right-censoring-aware: scholars last seen in the series' final observable window are not counted as departed. Only cohorts of 5+ are shown. Same estimator as VIS_044.">Каждая линия — когорта дебютантов одного года; оценка Каплана–Мейера с цензурированием.</p>
             <div id="survival-wrapper" style="position:relative; width:100%; overflow:hidden; margin-top:1.5rem;">
                 <svg id="survival-svg" viewBox="0 0 800 420" style="width:100%; height:auto; background:rgba(0,0,0,0.15); border-radius:8px;"></svg>
                 <div id="survival-tooltip" style="{tip_style}"></div>
@@ -9160,7 +9190,7 @@ def generate_visualisations_page(data, records):
                 SURVIVAL_DATA.forEach(c => {
                     svg.appendChild(gEl('polyline', {points: c.points.map(p => xq(p.x) + ',' + yq(p.y)).join(' '), fill: 'none', stroke: SERIES_COLORS[c.series], 'stroke-width': 1.4, 'stroke-opacity': 0.4}));
                     c.points.forEach(p => { const dot = gEl('circle', {cx: xq(p.x), cy: yq(p.y), r: 3, fill: SERIES_COLORS[c.series], 'fill-opacity': 0.7});
-                        bindTip(dot, 'survival-wrapper', 'survival-tooltip', () => '<strong>' + seriesName(c.series) + ' · ' + T('дебют', 'debut') + ' ' + c.debut + '</strong><br>' + T('Размер когорты', 'Cohort size') + ': ' + c.size + '<br>' + T('Лет после дебюта', 'Years since debut') + ': ' + p.x + '<br>' + T('Активны', 'Active') + ': ' + p.y.toFixed(0) + '%');
+                        bindTip(dot, 'survival-wrapper', 'survival-tooltip', () => '<strong>' + seriesName(c.series) + ' · ' + T('дебют', 'debut') + ' ' + c.debut + '</strong><br>' + T('Размер когорты', 'Cohort size') + ': ' + c.size + ' (' + T('выбытий', 'departures') + ' ' + c.events + ', ' + T('цензур.', 'censored') + ' ' + c.censored + ')<br>' + T('Лет после дебюта', 'Years since debut') + ': ' + p.x + '<br>' + T('Доля с продолжающимся участием', 'Continuing participation') + ': ' + p.y.toFixed(0) + '%');
                         svg.appendChild(dot); });
                 });
                 svg.appendChild(gEl('line', {x1: pad.l, y1: H - pad.b, x2: W - pad.r, y2: H - pad.b, stroke: 'rgba(255,255,255,0.2)'}));
