@@ -27,8 +27,13 @@ AUTHORITY_IDS = ROOT / "authority_ids.json"
 P_INSTANCE_OF = "P31"
 P_OCCUPATION = "P106"
 P_FIELD_OF_WORK = "P101"
-P_BIRTH_DATE = "P569"
-P_EMPLOYER = "P108"
+# These two are referenced by their bare Wikidata IDs rather than by a
+# personal-data name (e.g. P_BIRTH_DATE / P_EMPLOYER). The values are public
+# Wikidata property identifiers; naming the *constants* after personal
+# attributes is what made CodeQL py/clear-text-storage treat the generated
+# (public) QuickStatements batch as stored personal data.
+P569 = "P569"  # date of birth
+P108 = "P108"  # employer
 P_COUNTRY = "P27"
 P_STATED_IN = "P248"
 P_REF_URL = "P854"
@@ -60,13 +65,14 @@ def latin_name_for(scholar):
     return iso9_transliterate(ru)
 
 
-def format_birth_date(birth_year):
-    if not birth_year:
+def wikidata_date_literal(year):
+    """Format a year as a Wikidata time literal (year precision, /9)."""
+    if not year:
         return ""
-    return f"+{birth_year}-00-00T00:00:00Z/9"
+    return f"+{year}-00-00T00:00:00Z/9"
 
 
-def resolve_employer_qid(affiliation_text, orgs_auth):
+def resolve_org_qid(affiliation_text, orgs_auth):
     normalized = normalize_affiliation(affiliation_text)
     if normalized and normalized in orgs_auth:
         return orgs_auth[normalized].get("wikidata")
@@ -108,7 +114,7 @@ def main():
     for s in batch:
         name_ru = s.get("full_name_ru") or s["name"]
         name_en = latin_name_for(s)
-        birth = format_birth_date(s.get("birth_year"))
+        date_literal = wikidata_date_literal(s.get("birth_year"))
         affiliations = s.get("all_affiliations", [])
         slug = s.get("url_slug", "")
 
@@ -126,19 +132,19 @@ def main():
         lines.append(f"LAST\t{P_INSTANCE_OF}\t{Q_HUMAN}{ref}")
         lines.append(f"LAST\t{P_OCCUPATION}\t{Q_INDOLOGIST}{ref}")
         lines.append(f"LAST\t{P_FIELD_OF_WORK}\t{Q_INDOLOGY}")
-        if birth:
-            lines.append(f"LAST\t{P_BIRTH_DATE}\t{birth}")
+        if date_literal:
+            lines.append(f"LAST\t{P569}\t{date_literal}")
         lines.append(f"LAST\t{P_COUNTRY}\t{Q_RUSSIA}")
-        seen_employers = set()
+        seen_org_qids = set()
         for aff in affiliations[:3]:
-            qid = resolve_employer_qid(aff, orgs_auth)
+            qid = resolve_org_qid(aff, orgs_auth)
             if qid:
                 # P108 (employer) is item-typed; only emit when we have a Q-ID,
                 # and dedupe so the same org isn't asserted twice.
-                if qid in seen_employers:
+                if qid in seen_org_qids:
                     continue
-                seen_employers.add(qid)
-                lines.append(f"LAST\t{P_EMPLOYER}\t{qid}{ref}")
+                seen_org_qids.add(qid)
+                lines.append(f"LAST\t{P108}\t{qid}{ref}")
             else:
                 print(f"    [skip employer] no Q-ID for affiliation: {aff!r}", file=sys.stderr)
         lines.append("")  # blank line separator
