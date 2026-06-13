@@ -30,6 +30,7 @@ To ensure rigorous scientific reproducibility and robust academic citation, ever
 | `VIS_010_geographic_map` | Гео-пространственная карта | Geospatial Flow Map | **Live** (Интерактивная карта / Interactive Map) |
 | `VIS_011_keyword_bubble_cloud` | Облако тегов и ключевых слов | Dynamic Keyword Bubble Cloud | **Live** (Интерактивный SVG / Interactive SVG) |
 | `VIS_043_coding_reliability` | Надёжность кодирования (матрицы ошибок слепой выборки) | Coding Reliability (blind-sample confusion matrices) | **Live** (Серверный HTML / Server-rendered HTML) |
+| `VIS_044_km_retention` | Удержание по Каплану–Мейеру с правым цензурированием | Kaplan–Meier retention with right-censoring | **Live** (Серверный SVG / Server-rendered SVG) |
 
 ---
 

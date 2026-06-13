@@ -19,7 +19,6 @@ Usage:
 
 import csv
 import json
-import math
 import random
 import sys
 from pathlib import Path
@@ -28,7 +27,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 sys.stdout.reconfigure(encoding="utf-8")
 
-from publication_helpers import classify_gender  # noqa: E402
+from publication_helpers import classify_gender, wilson_interval  # noqa: E402
 
 SITE_DATA = ROOT / "site_data.json"
 OUT_CSV = ROOT / "analytics_output" / "gender_validation_sample.csv"
@@ -53,16 +52,6 @@ def load_site_data():
     if text.endswith(";"):
         text = text[:-1]
     return json.loads(text)
-
-
-def wilson_interval(successes, n, z=1.96):
-    if n == 0:
-        return 0.0, 0.0
-    p = successes / n
-    denom = 1 + z * z / n
-    centre = (p + z * z / (2 * n)) / denom
-    margin = z * math.sqrt(p * (1 - p) / n + z * z / (4 * n * n)) / denom
-    return max(0.0, centre - margin), min(1.0, centre + margin)
 
 
 def build_sample():

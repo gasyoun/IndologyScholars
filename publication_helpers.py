@@ -58,6 +58,20 @@ MALE_FIRST_NAMES = frozenset([
     "леонид", "олег", "игорь", "святослав", "марцис", "макс", "эрман",
     "никита", "семен", "семён",
 ])
+def wilson_interval(successes, n, z=1.96):
+    """Wilson score interval for a binomial proportion; returns (low, high)
+    in [0, 1]. Used for published shares so that small denominators carry
+    visible uncertainty instead of bare percentages."""
+    import math
+    if n == 0:
+        return 0.0, 0.0
+    p = successes / n
+    denom = 1 + z * z / n
+    centre = (p + z * z / (2 * n)) / denom
+    margin = z * math.sqrt(p * (1 - p) / n + z * z / (4 * n * n)) / denom
+    return max(0.0, centre - margin), min(1.0, centre + margin)
+
+
 _FEMALE_PATRONYMIC_SUFFIXES = ("овна", "евна", "ична", "инична")
 _MALE_PATRONYMIC_SUFFIXES = ("ович", "евич", "ьич", "мич", "кич")
 _FEMALE_SURNAME_SUFFIXES = ("ова", "ева", "ина", "ая", "ына")

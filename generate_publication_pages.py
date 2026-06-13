@@ -43,6 +43,7 @@ from publication_helpers import (
     THEME_LABELS,
     clean_text,
     describe_year_span,
+    wilson_interval,
     esc,
     json_ld,
     load_authority_overrides,
@@ -2290,12 +2291,25 @@ def generate_gender_page():
             if y:
                 year_gender[y][g] += 1
 
-    years_rows = []
+    years_rows_html = ""
     for y in sorted(year_gender):
         w = year_gender[y]["F"]
         m = year_gender[y]["M"]
-        t = max(w + m, 1)
-        years_rows.append((y, w, m, t, round(100 * w / t, 1)))
+        t = w + m
+        if not t:
+            continue
+        share = 100 * w / t
+        lo, hi = wilson_interval(w, t)
+        bar_w = round(share, 1)
+        years_rows_html += (
+            f'<tr><td>{y}</td><td>{t}</td><td>{w}</td><td>{m}</td>'
+            f'<td style="white-space:nowrap;">{share:.0f}% <span style="color:var(--muted); font-size:0.8rem;">[{100*lo:.0f}–{100*hi:.0f}]</span></td>'
+            f'<td style="min-width:120px;"><div style="background:rgba(255,255,255,0.08); border-radius:4px; height:10px; position:relative;">'
+            f'<div style="background:rgba(98,174,146,0.8); border-radius:4px; height:10px; width:{bar_w}%;"></div>'
+            f'<div style="position:absolute; top:-2px; height:14px; border-left:1px solid rgba(255,255,255,0.45); left:{100*lo:.1f}%;"></div>'
+            f'<div style="position:absolute; top:-2px; height:14px; border-left:1px solid rgba(255,255,255,0.45); left:{100*hi:.1f}%;"></div>'
+            f'</div></td></tr>'
+        )
 
     top_women = sorted(
         [s for s in scholars if s.get("gender") == "F" and int(s.get("total_talks") or 0) > 0],
@@ -2338,6 +2352,12 @@ def generate_gender_page():
 <article class="card"><strong>Соотношение Ж:М</strong><div class="metric">{ratio_str}</div><div class="meta">{round(100*women_all/known)}% женщин из {known} с известным полом</div></article>
 <article class="card"><strong>Докладов на учёного</strong><div class="metric">{round(sum(int(s.get("total_talks") or 0) for s in scholars if s.get("gender")=="F")/women_all,1) if women_all else 0} / {round(sum(int(s.get("total_talks") or 0) for s in scholars if s.get("gender")=="M")/men_all,1) if men_all else 0}</div><div class="meta">Ж / М среднее</div></article>
 </section>
+<h2>Доля женщин среди докладчиков по годам</h2>
+<p style="color:var(--muted);font-size:0.85rem;">Единица счёта — авторские участия в данном году. В скобках — 95%-ный интервал Уилсона: малые программы дают широкие интервалы, и колебания между соседними годами внутри пересекающихся интервалов не следует интерпретировать как тренд.</p>
+<div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:0.9rem;">
+<thead><tr><th style="text-align:left">Год</th><th>Участий</th><th>Ж</th><th>М</th><th>% Ж [95% ДИ]</th><th></th></tr></thead>
+<tbody>{years_rows_html}</tbody>
+</table></div>
 <h2>Распределение по дисциплинам</h2>
 <div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:0.9rem;">
 <thead><tr><th style="text-align:left">Дисциплина</th><th>Всего</th><th>Ж</th><th>М</th><th>% Ж</th></tr></thead>
@@ -6775,6 +6795,112 @@ def generate_visualisations_page(data, records):
         vis043_l1_table = _confusion_table(l1_pairs, l1_cats, l1_labels)
         vis043_g_table = _confusion_table(g_pairs, ["1", "2", "3"], {"1": "G1", "2": "G2", "3": "G3"})
 
+    # VIS_044 — Kaplan-Meier retention curves with right-censoring, computed
+    # in the main pipeline (not scratch/). Unit: scholar; duration: years
+    # between first and last observed appearance; a scholar whose last
+    # appearance falls in the final two programme years is censored, not
+    # treated as having left.
+    vis044_end_year = summary.get("end_year", 2026)
+    vis044_censor_from = vis044_end_year - 1
+    vis044_strata_defs = [
+        ("2004-2010", 2004, 2010, "#2b82c9"),
+        ("2011-2017", 2011, 2017, "#ff7b00"),
+        ("2018-" + str(vis044_end_year), 2018, vis044_end_year, "#62ae92"),
+    ]
+
+    def _km_curve(observations):
+        """Product-limit estimator: [(t, S(t))...] from (duration, event) pairs."""
+        observations = sorted(observations)
+        n_at_risk = len(observations)
+        points = [(0, 1.0)]
+        survival = 1.0
+        idx = 0
+        while idx < len(observations):
+            t = observations[idx][0]
+            events = 0
+            removed = 0
+            while idx < len(observations) and observations[idx][0] == t:
+                events += observations[idx][1]
+                removed += 1
+                idx += 1
+            if events and n_at_risk:
+                survival *= 1 - events / n_at_risk
+                points.append((t, survival))
+            n_at_risk -= removed
+        return points
+
+    vis044_curves = []
+    vis044_max_t = 1
+    for label, lo, hi, color in vis044_strata_defs:
+        obs = []
+        for s in data.get("scholars", []):
+            years = sorted({t.get("year") for t in s.get("talks", []) if t.get("year")})
+            if not years or not (lo <= years[0] <= hi):
+                continue
+            duration = years[-1] - years[0]
+            event = 0 if years[-1] >= vis044_censor_from else 1
+            obs.append((duration, event))
+        if len(obs) < 5:
+            continue
+        max_follow = max(d for d, _ in obs)
+        vis044_max_t = max(vis044_max_t, max_follow)
+        vis044_curves.append({
+            "label": label,
+            "color": color,
+            "n": len(obs),
+            "events": sum(e for _, e in obs),
+            "censored": sum(1 for _, e in obs if not e),
+            "points": _km_curve(obs),
+            "max_follow": max_follow,
+        })
+
+    vis044_svg = ""
+    if vis044_curves:
+        W, H, PL, PR, PT, PB = 800, 380, 60, 30, 30, 50
+        def _x(t):
+            return PL + (t / vis044_max_t) * (W - PL - PR)
+        def _y(srv):
+            return PT + (1 - srv) * (H - PT - PB)
+        grid = ""
+        for pct in (0, 25, 50, 75, 100):
+            gy = _y(pct / 100)
+            grid += (
+                f'<line x1="{PL}" y1="{gy:.1f}" x2="{W - PR}" y2="{gy:.1f}" stroke="rgba(255,255,255,0.08)"/>'
+                f'<text x="{PL - 8}" y="{gy + 4:.1f}" text-anchor="end" font-size="11" fill="var(--muted)">{pct}%</text>'
+            )
+        step = 5 if vis044_max_t > 10 else 2
+        for t in range(0, vis044_max_t + 1, step):
+            gx = _x(t)
+            grid += (
+                f'<line x1="{gx:.1f}" y1="{PT}" x2="{gx:.1f}" y2="{H - PB}" stroke="rgba(255,255,255,0.05)"/>'
+                f'<text x="{gx:.1f}" y="{H - PB + 18}" text-anchor="middle" font-size="11" fill="var(--muted)">{t}</text>'
+            )
+        paths = ""
+        legend = ""
+        for i, curve in enumerate(vis044_curves):
+            d = f'M {_x(0):.1f} {_y(1.0):.1f}'
+            prev_s = 1.0
+            for t, srv in curve["points"][1:]:
+                d += f' H {_x(t):.1f} V {_y(srv):.1f}'
+                prev_s = srv
+            d += f' H {_x(curve["max_follow"]):.1f}'
+            paths += f'<path d="{d}" fill="none" stroke="{curve["color"]}" stroke-width="2.5" opacity="0.9"/>'
+            ly = PT + 14 + i * 18
+            legend += (
+                f'<line x1="{W - PR - 240}" y1="{ly - 4}" x2="{W - PR - 215}" y2="{ly - 4}" stroke="{curve["color"]}" stroke-width="2.5"/>'
+                f'<text x="{W - PR - 208}" y="{ly}" font-size="11" fill="var(--muted)">'
+                f'{curve["label"]}: n={curve["n"]}, выбытий {curve["events"]}, цензур. {curve["censored"]}</text>'
+            )
+        x_title = (
+            f'<text x="{(PL + W - PR) / 2:.0f}" y="{H - 8}" text-anchor="middle" font-size="12" '
+            f'fill="var(--muted)">Лет с дебюта / Years since debut</text>'
+        )
+        vis044_svg = (
+            f'<svg viewBox="0 0 {W} {H}" style="width:100%; height:auto; background:rgba(0,0,0,0.15); '
+            f'border-radius:8px;" role="img" aria-label="Kaplan-Meier retention curves">'
+            f'{grid}{paths}{legend}{x_title}</svg>'
+        )
+
     tip_style = (
         "position:absolute; background:rgba(18,18,24,0.95); border:1px solid rgba(255,255,255,0.15); "
         "border-radius:8px; padding:0.7rem 0.9rem; font-size:0.82rem; color:#fff; pointer-events:none; "
@@ -6832,6 +6958,12 @@ def generate_visualisations_page(data, records):
             <a href="#VIS_014_closedness" class="viz-toc-item">
                 <span>VIS_014</span>
                 <b class="bilingual-text" data-ru="Замкнутость сообществ (сравнение метрик)" data-en="Community Closedness (metric comparison)">Замкнутость сообществ (сравнение метрик)</b>
+                <span class="badge badge-online bilingual-text" data-ru="Активна" data-en="Active">Активна</span>
+            </a>
+            <a href="#VIS_044_km_retention" class="viz-toc-item">
+                <span>VIS_044</span>
+                <b class="bilingual-text" data-ru="Удержание по Каплану–Мейеру (с цензурированием)" data-en="Kaplan–Meier Retention (censoring-aware)">Удержание по Каплану–Мейеру</b>
+                <a href="/hypotheses.html#H17" class="badge" style="background:#6c5ce7; color:white; margin-right:4px; text-decoration:none;" title="Читать формулировку гипотезы H17">H17</a>
                 <span class="badge badge-online bilingual-text" data-ru="Активна" data-en="Active">Активна</span>
             </a>
 
@@ -7730,6 +7862,19 @@ def generate_visualisations_page(data, records):
                 </figure>
             </div>
             <p class="bilingual-text" style="color:var(--muted); font-size:0.8rem; margin-top:1rem;" data-ru="Это кросс-модельное согласие, а не межэкспертная надёжность: человеческий проход по тому же слепому листу — отчётная статистика при подаче." data-en="This is cross-model agreement, not human inter-rater reliability: the human pass over the same blind sheet is the statistic reported at submission.">Кросс-модельное согласие.</p>
+        </section>
+
+        <!-- VIS_044_km_retention -->
+        <section class="viz-showcase-section" id="VIS_044_km_retention">
+            <h2>
+                <span class="viz-id-badge">VIS_044</span>
+                <span class="bilingual-text" data-ru="Удержание по Каплану–Мейеру" data-en="Kaplan–Meier Retention">Удержание по Каплану–Мейеру</span>
+                <a href="/hypotheses.html#H17" class="badge" style="background:#6c5ce7; color:white; text-decoration:none;" title="Читать формулировку гипотезы H17">H17</a>
+            </h2>
+            <p class="bilingual-text" style="color:var(--muted); font-size:0.9rem;" data-ru="Оценка Каплана–Мейера длительности участия (лет между первым и последним появлением в программах) по периодам дебюта. В отличие от простой доли активных, учитывает правое цензурирование: учёный, появлявшийся в последние два программных года, не считается выбывшим. Резкое падение в нуле — феномен однократных участников." data-en="Kaplan–Meier estimate of participation span (years between first and last programme appearance) by debut period. Unlike a raw active-share curve, it is right-censoring-aware: a scholar seen in the final two programme years is not counted as departed. The steep drop at zero is the one-time-participant phenomenon.">Кривые удержания с цензурированием.</p>
+            <div style="margin-top:1.5rem;">
+                {vis044_svg}
+            </div>
         </section>
 
     """
