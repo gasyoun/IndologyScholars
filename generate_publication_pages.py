@@ -5676,7 +5676,9 @@ def generate_visualisations_page(data, records):
 
     cohorts = defaultdict(list)
     for sp in person_spells:
-        event = 0 if sp["last"] >= censor_from.get(sp["series"], 9999) else 1
+        # A single appearance (last == debut) is right-censored, not a departure
+        # observed at t=0 — otherwise one-timers drop S(0) below 1.
+        event = 0 if (sp["last"] >= censor_from.get(sp["series"], 9999) or sp["last"] == sp["debut"]) else 1
         cohorts[(sp["series"], sp["debut"])].append((sp["last"] - sp["debut"], event))
 
     survival_data = []
@@ -6868,7 +6870,9 @@ def generate_visualisations_page(data, records):
             if not years or not (lo <= years[0] <= hi):
                 continue
             duration = years[-1] - years[0]
-            event = 0 if years[-1] >= vis044_censor_from else 1
+            # A single appearance (years[-1] == years[0]) is right-censored, not
+            # a departure observed at t=0 (otherwise one-timers drop S(0) below 1).
+            event = 0 if (years[-1] >= vis044_censor_from or years[-1] == years[0]) else 1
             obs.append((duration, event))
         if len(obs) < 5:
             continue

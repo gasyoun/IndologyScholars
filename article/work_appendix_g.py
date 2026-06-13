@@ -217,7 +217,11 @@ def main():
                 continue
             debut, last = min(ys), max(ys)
             dur.append(last - debut)
-            event.append(0 if last >= CENSOR_FROM else 1)  # 1=dropout observed
+            # A single appearance (debut == last, duration 0) is right-censored,
+            # not a departure observed at t=0. Counting one-timers as duration-0
+            # events collapses ~40% of the sample onto time 0, dropping S(0)
+            # below 1 and making the median career span meaningless.
+            event.append(0 if (last >= CENSOR_FROM or debut == last) else 1)  # 1=dropout observed
         return np.array(dur), np.array(event)
 
     def km(dur, event):
