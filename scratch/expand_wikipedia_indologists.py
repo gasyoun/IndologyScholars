@@ -28,6 +28,7 @@ import json
 import re
 import time
 import urllib.parse
+from html.parser import HTMLParser
 from pathlib import Path
 
 import scrape_common as sc
@@ -46,11 +47,67 @@ def api_request(params: dict, timeout: int = 20) -> dict:
     return sc.api_get(API, params, timeout=timeout, verbose=True) or {}
 
 
+class _TextExtractor(HTMLParser):
+    """Strip markup with the stdlib HTML parser instead of regexes.
+
+    Regex-based tag stripping is fragile (it misses upper-case ``<SCRIPT>``
+    tags, comments spanning newlines, malformed end tags, etc. — see CodeQL
+    ``py/bad-tag-filter``). The parser handles those cases correctly. To keep
+    :func:`clean_html`'s downstream normalisation unchanged, every tag becomes
+    a single space (a word separator, as the old ``<[^>]+>`` substitution did),
+    ``<script>``/``<style>`` bodies are dropped, comments are dropped, and
+    entity references are re-emitted verbatim so the existing entity-collapsing
+    regexes still apply.
+    """
+
+    _SKIP = {"script", "style"}
+
+    def __init__(self) -> None:
+        super().__init__(convert_charrefs=False)
+        self._parts: list[str] = []
+        self._skip_depth = 0
+
+    def handle_starttag(self, tag: str, attrs: list) -> None:
+        if tag in self._SKIP:
+            self._skip_depth += 1
+        else:
+            self._parts.append(" ")
+
+    def handle_startendtag(self, tag: str, attrs: list) -> None:
+        if tag not in self._SKIP:
+            self._parts.append(" ")
+
+    def handle_endtag(self, tag: str) -> None:
+        if tag in self._SKIP:
+            if self._skip_depth:
+                self._skip_depth -= 1
+        self._parts.append(" ")
+
+    def handle_data(self, data: str) -> None:
+        if self._skip_depth == 0:
+            self._parts.append(data)
+
+    def handle_entityref(self, name: str) -> None:
+        if self._skip_depth == 0:
+            self._parts.append(f"&{name};")
+
+    def handle_charref(self, name: str) -> None:
+        if self._skip_depth == 0:
+            self._parts.append(f"&#{name};")
+
+    def get_text(self) -> str:
+        return "".join(self._parts)
+
+
+def _strip_markup(value: str) -> str:
+    parser = _TextExtractor()
+    parser.feed(value)
+    parser.close()
+    return parser.get_text()
+
+
 def clean_html(value: str) -> str:
-    value = re.sub(r"<style[^>]*>.*?</style>", " ", value, flags=re.DOTALL)
-    value = re.sub(r"<script[^>]*>.*?</script>", " ", value, flags=re.DOTALL)
-    value = re.sub(r"<[^>]+>", " ", value)
-    value = re.sub(r"<!--.*?-->", "", value)
+    value = _strip_markup(value)
     value = re.sub(r"\.mw-parser-output[^{]*\{[^}]*\}", " ", value)
     value = value.replace("\xa0", " ")
     value = re.sub(r"&[a-z]+;", " ", value)
