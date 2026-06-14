@@ -281,6 +281,208 @@
       ],
       "url": "https://www.orientalstudies.ru",
       "wikidata": "Q1413813"
+    },
+    "ГИИ": {
+      "full_name_ru": "Государственный институт искусствознания",
+      "name_en": "State Institute for Art Studies",
+      "alternateName": [
+        "ГИИ"
+      ],
+      "wikidata": "Q4146803",
+      "ror": "00z94ps04"
+    },
+    "ИВ НАН Украины": {
+      "full_name_ru": "Институт востоковедения имени А. Е. Крымского НАН Украины",
+      "name_en": "A. Yu. Krymsky Institute of Oriental Studies, National Academy of Sciences of Ukraine",
+      "alternateName": [
+        "ИВ НАН Украины",
+        "Институт востоковедения им. А. Е. Крымского НАН Украины"
+      ],
+      "wikidata": "Q12074682",
+      "ror": "013j1vq42"
+    },
+    "РУДН": {
+      "full_name_ru": "Российский университет дружбы народов",
+      "name_en": "Peoples' Friendship University of Russia",
+      "alternateName": [
+        "РУДН",
+        "RUDN"
+      ],
+      "wikidata": "Q839669",
+      "ror": "02dn9h927"
+    },
+    "МГППУ": {
+      "full_name_ru": "Московский государственный психолого-педагогический университет",
+      "name_en": "Moscow State University of Psychology and Education",
+      "alternateName": [
+        "МГППУ"
+      ],
+      "wikidata": "Q4304064",
+      "ror": "04rnxkh71"
+    },
+    "ИСАА": {
+      "full_name_ru": "Институт стран Азии и Африки МГУ имени М. В. Ломоносова",
+      "name_en": "Institute of Asian and African Studies, Lomonosov Moscow State University",
+      "alternateName": [
+        "ИСАА",
+        "ИСАА МГУ"
+      ],
+      "wikidata": "Q2782141"
+    },
+    "ИМЛИ РАН": {
+      "full_name_ru": "Институт мировой литературы имени А. М. Горького РАН",
+      "name_en": "A. M. Gorky Institute of World Literature of the Russian Academy of Sciences",
+      "alternateName": [
+        "ИМЛИ РАН",
+        "ИМЛИ"
+      ],
+      "wikidata": "Q3152043",
+      "ror": "020frqf17"
+    },
+    "ИЭА РАН": {
+      "full_name_ru": "Институт этнологии и антропологии имени Н. Н. Миклухо-Маклая РАН",
+      "name_en": "N.N. Miklukho-Maklai Institute of Ethnology and Anthropology, Russian Academy of Sciences",
+      "alternateName": [
+        "ИЭА РАН"
+      ],
+      "wikidata": "Q4201873",
+      "ror": "04f3vpm64"
+    },
+    "ИЯ РАН": {
+      "full_name_ru": "Институт языкознания РАН",
+      "name_en": "Institute of Linguistics of the Russian Academy of Sciences",
+      "alternateName": [
+        "ИЯ РАН",
+        "Институт языкознания РАН"
+      ],
+      "wikidata": "Q4201878",
+      "ror": "033px5146"
+    },
+    "Ольстерский университет": {
+      "full_name_ru": "Ольстерский университет",
+      "name_en": "Ulster University",
+      "alternateName": [
+        "Ulster University",
+        "Университет Ольстера"
+      ],
+      "wikidata": "Q2096524",
+      "ror": "01yp9g959"
+    },
+    "ГАУГН": {
+      "full_name_ru": "Государственный академический университет гуманитарных наук",
+      "name_en": "State Academic University of Humanities",
+      "alternateName": [
+        "ГАУГН"
+      ],
+      "wikidata": "Q4146754",
+      "ror": "01bqs3h57"
+    },
+    "МЦР": {
+      "full_name_ru": "Международный центр Рерихов",
+      "name_en": "International Centre of the Roerichs",
+      "alternateName": [
+        "МЦР"
+      ],
+      "wikidata": "Q4288619"
+    },
+    "СПбГИК": {
+      "full_name_ru": "Санкт-Петербургский государственный институт культуры",
+      "name_en": "Saint Petersburg State University of Culture and Arts",
+      "alternateName": [
+        "СПбГИК",
+        "Университет культуры, СПб"
+      ],
+      "wikidata": "Q4407698",
+      "ror": "02ktptg11"
+    },
+    "ИИЭ Валиханова": {
+      "full_name_ru": "Институт истории и этнологии имени Ч. Ч. Валиханова",
+      "name_en": "Ch. Ch. Valikhanov Institute of History and Ethnology",
+      "alternateName": [
+        "Институт истории и этнологии им. Ч. Ч. Валиханова"
+      ],
+      "wikidata": "Q60852541"
+    },
+    "ИИЕТ РАН": {
+      "full_name_ru": "Институт истории естествознания и техники имени С. И. Вавилова РАН",
+      "name_en": "S.I. Vavilov Institute for the History of Natural Science and Technology",
+      "alternateName": [
+        "ИИЕТ РАН"
+      ],
+      "wikidata": "Q4201531",
+      "ror": "04kybmr51"
+    },
+    "РАНХиГС": {
+      "full_name_ru": "Российская академия народного хозяйства и государственной службы при Президенте Российской Федерации",
+      "name_en": "Russian Presidential Academy of National Economy and Public Administration",
+      "alternateName": [
+        "РАНХиГС"
+      ],
+      "wikidata": "Q2822458",
+      "ror": "04xnm9a92"
+    },
+    "КрасГАУ": {
+      "full_name_ru": "Красноярский государственный аграрный университет",
+      "name_en": "Krasnoyarsk State Agrarian University",
+      "alternateName": [
+        "КрасГАУ"
+      ],
+      "wikidata": "Q4239242",
+      "ror": "05p3gfq61"
+    },
+    "ИМБТ СО РАН": {
+      "full_name_ru": "Институт монголоведения, буддологии и тибетологии СО РАН",
+      "name_en": "Institute of Mongolian, Buddhist and Tibetan Studies",
+      "alternateName": [
+        "ИМБТ СО РАН"
+      ],
+      "wikidata": "Q4201608",
+      "ror": "00je00x55"
+    },
+    "КНЦ РАН": {
+      "full_name_ru": "Калмыцкий научный центр РАН",
+      "name_en": "Kalmyk Scientific Center of the Russian Academy of Sciences",
+      "alternateName": [
+        "КНЦ РАН"
+      ],
+      "wikidata": "Q4210236",
+      "ror": "00z0g8n94"
+    },
+    "ГММ Скрябина": {
+      "full_name_ru": "Государственный мемориальный музей А. Н. Скрябина",
+      "name_en": "A.N. Scriabin Memorial Museum",
+      "alternateName": [
+        "ГММ А.Н. Скрябина"
+      ],
+      "wikidata": "Q4146864"
+    },
+    "УрФУ": {
+      "full_name_ru": "Уральский федеральный университет",
+      "name_en": "Ural Federal University",
+      "alternateName": [
+        "УрФУ",
+        "УФУ"
+      ],
+      "wikidata": "Q1506552",
+      "ror": "00hs7dr46"
+    },
+    "РГПУ им. Герцена": {
+      "full_name_ru": "Российский государственный педагогический университет им. А. И. Герцена",
+      "name_en": "Herzen State Pedagogical University of Russia",
+      "alternateName": [
+        "РГПУ им. А. И. Герцена"
+      ],
+      "wikidata": "Q323681",
+      "ror": "01e5ckr65"
+    },
+    "РостГМУ": {
+      "full_name_ru": "Ростовский государственный медицинский университет",
+      "name_en": "Rostov State Medical University",
+      "alternateName": [
+        "РостГМУ"
+      ],
+      "wikidata": "Q7370051",
+      "ror": "046a1ah60"
     }
   },
   "places": {
