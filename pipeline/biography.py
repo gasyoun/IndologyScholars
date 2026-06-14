@@ -392,6 +392,10 @@ DEGREE_DATA = {
 
 # Authoritative biographical corrections
 BIOGRAPHICAL_DATA.update({
+    # Phase-1 data-foundation: birth years resolved + verified via multi-source
+    # research (2026-06-14). Keyed by the participant's initials-form normalized key.
+    "хомиченкене а": ("Хомиченкене Алета", "Aleta Chomichenkiene", 1958, 2022),
+    "макмахуна ш": ("Макмахуна Шеймас", "Séamus Mac Mathúna", 1945, None),
     "вертоградова в в": ("Вертоградова Виктория Викторовна", "Vertogradova Victoria Viktorovna", 1933, None),
     "цветкова с о": ("Цветкова Светлана Олеговна", "Tsvetkova Svetlana Olegovna", 1978, None),
     "вечерина о п": ("Вечерина Ольга Павловна", "Vecherina Olga Pavlovna", 1960, 2023),
