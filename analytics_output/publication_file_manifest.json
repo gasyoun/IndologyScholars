@@ -6,7 +6,7 @@
     "pipeline_version": "2026-05-25",
     "generator": "generate_publication_pages.py"
   },
-  "file_count": 4007,
+  "file_count": 4008,
   "files": [
     {
       "path": "404.html",
@@ -9279,6 +9279,11 @@
       "sha256": "e4a321046789f20b9673738ec894d2b6d9a05244c298bb7d267c1cc51a1bc858"
     },
     {
+      "path": "docs/ROADMAP_2026.md",
+      "size_bytes": 4423,
+      "sha256": "b63a54e52ea3aa6723ab0f572d812ab11c286783e791cba0ab235bb4b011406d"
+    },
+    {
       "path": "docs/academic-career-risk-audit-2026-05-31.md",
       "size_bytes": 13775,
       "sha256": "2b7ed2805bca02cd48d608b68944e46af79d29bc0fadd758a319e07c860c3dd2"
@@ -9406,7 +9411,7 @@
     {
       "path": "download-data.html",
       "size_bytes": 32661,
-      "sha256": "0f8e404309904891313cb709a2688f710efcf9b61801b379f314e7f705ed2d32"
+      "sha256": "b5dc435ae56a8149f854d8276221618b92847e4f71fef51a76eef97e38201ff8"
     },
     {
       "path": "en.html",
@@ -9431,7 +9436,7 @@
     {
       "path": "findings/visualisations.html",
       "size_bytes": 492675,
-      "sha256": "64e9bb5b68be10bb5996c4ea7387159bb9ce2fef4990128756cdddb7c546944a"
+      "sha256": "2db29bfe08499f579176f31e3b3d5c037ff2c840f83bcd34fb64ecef693f878c"
     },
     {
       "path": "gatekeeping-en.html",
