@@ -335,8 +335,8 @@
     },
     {
       "path": "analytics_output/nlp_cache.pkl",
-      "size_bytes": 148377,
-      "sha256": "6c7ddaad65bf332768a7e7d65f0cada6225b5f60eca64300cd2eeaedd0188271"
+      "size_bytes": 148375,
+      "sha256": "593c693eebbf06d7d1ed7f659ef3b0b56a23ca4288b166316153b2205c371738"
     },
     {
       "path": "analytics_output/no_affiliation_history.md",
@@ -610,8 +610,8 @@
     },
     {
       "path": "assets/nlp_data.js",
-      "size_bytes": 424317,
-      "sha256": "df1e86cf00b3e1dd2776c957db10d31f6ba3b01afc469d3d2469dd397666ccfd"
+      "size_bytes": 424328,
+      "sha256": "441e3736e95875f118959534c6d5214bc6e693de8eedf8f541a9e1a4c4c39e9f"
     },
     {
       "path": "assets/og-image.png",
@@ -9280,8 +9280,8 @@
     },
     {
       "path": "docs/ROADMAP_2026.md",
-      "size_bytes": 6720,
-      "sha256": "6ddd85a4054cd1a2a41074e7503d47c41a120733095237621e07cb054b8f8cf1"
+      "size_bytes": 7367,
+      "sha256": "d23e54c778faf43f25dca89fce478fdbd15084367b2f43bea2f252909b8f1f23"
     },
     {
       "path": "docs/academic-career-risk-audit-2026-05-31.md",
@@ -9436,7 +9436,7 @@
     {
       "path": "findings/visualisations.html",
       "size_bytes": 492675,
-      "sha256": "93e442471ba5303d94ffb2a6f0ba4f523744db5aafe5e05a7642a482de6f8c0f"
+      "sha256": "ed629f4f19501db6740f2b85ee0d8e266e9ba00e18096f5be835b1ce1a7f7ddf"
     },
     {
       "path": "gatekeeping-en.html",
