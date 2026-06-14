@@ -55,7 +55,10 @@ def cohen_kappa(a, b):
     ca, cb = Counter(a), Counter(b)
     p_e = sum(ca[c] * cb[c] for c in cats) / (n * n)
     if p_e == 1.0:
-        return 1.0
+        # Degenerate resample (every item in one category): kappa is 0/0, i.e.
+        # undefined. Returning 1.0 here would bias the bootstrap CI upward on a
+        # skewed corpus; return NaN so bootstrap_ci drops the replicate instead.
+        return float("nan")
     return (p_o - p_e) / (1 - p_e)
 
 
@@ -105,9 +108,14 @@ def bootstrap_ci(stat_fn, a, b, reps=BOOTSTRAP_REPS, seed=BOOTSTRAP_SEED):
     stats = []
     for _ in range(reps):
         idx = [rng.randrange(n) for _ in range(n)]
-        stats.append(stat_fn([a[i] for i in idx], [b[i] for i in idx]))
+        val = stat_fn([a[i] for i in idx], [b[i] for i in idx])
+        if val == val:  # drop undefined (NaN) replicates — NaN != NaN
+            stats.append(val)
+    if not stats:
+        return float("nan"), float("nan")
     stats.sort()
-    return stats[int(0.025 * reps)], stats[min(int(0.975 * reps), reps - 1)]
+    m = len(stats)
+    return stats[int(0.025 * m)], stats[min(int(0.975 * m), m - 1)]
 
 
 def landis_koch(kappa):
