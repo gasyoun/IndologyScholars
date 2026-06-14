@@ -116,7 +116,9 @@ def test_conference_scholar_count_unchanged():
     """The registry is parallel data; it must not change conference headline
     numbers."""
     summary = json.loads(SUMMARY.read_text(encoding="utf-8"))["summary"]
-    assert summary["total_scholars"] == 270
+    # 268 after the 2026-06-14 Phase-1 dedup merged three duplicate person
+    # records (typo'd initials) into their canonical persons via person_aliases.csv.
+    assert summary["total_scholars"] == 268
 
 
 # ── participant links ────────────────────────────────────────────────

@@ -7,7 +7,7 @@ ORCID: 0000-0003-4513-884X
 ## Abstract
 
 We present the IndologyScholars corpus: a structured, open-access dataset
-of 1,362 conference presentations, 270 scholar profiles, and 1,388 author
+of 1,362 conference presentations, 268 scholar profiles, and 1,388 author
 participations drawn from published programs of the Zograf Readings (St.
 Petersburg) and Roerich Readings (Moscow) between 2004 and 2026. The dataset
 includes normalized speaker identities, institutional affiliations with
@@ -141,7 +141,7 @@ containing:
 
 | Section | Contents |
 |---------|----------|
-| `scholars` | 270 profiles with talks, affiliations, themes, external IDs |
+| `scholars` | 268 profiles with talks, affiliations, themes, external IDs |
 | `timeline` | Year-by-year presentation grids per series |
 | `summary` | Aggregate statistics |
 | `stats` | Year-over-year talk counts |
@@ -181,8 +181,8 @@ created, VIAF harvesting follows automatically.
 
 The dataset supports quantitative prosopography of an academic community:
 participation trajectories, institutional mobility, generational cohorts,
-and inter-venue permeability. All 270 scholars have standardized Latin
-transliterations, birth years (85.6% coverage), and talk-level thematic
+and inter-venue permeability. All 268 scholars have standardized Latin
+transliterations, birth years (87.3% coverage), and talk-level thematic
 classification.
 
 ### 4.2 Network analysis
