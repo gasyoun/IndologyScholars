@@ -4,6 +4,24 @@
 
 Этот проект представляет собой высокоточный академический конвейер для оцифровки, интеллектуального анализа и визуализации истории российской индологической науки.
 
+## [Unreleased]
+
+### Documentation
+- Documented the scope decision that the PPV article remains a two-venue study
+  of the main long-running Zograf and Roerich Readings, not a three-venue
+  comparison.
+- Added `docs/sementsov-readings-context-note.md` to classify Sementsov Readings
+  as a newer, marginal contextual venue outside the measured corpus; the Paribok
+  PDF is retained only as qualitative context, not row-level evidence.
+- Renamed the docs index entry to `Семенцовские чтения вне корпуса / Sementsov
+  Readings outside corpus`.
+
+### Changed
+- Added a manuscript-scope sentence to `article/ppv_submission_article.md`
+  clarifying that newer and specialized initiatives, including Sementsov
+  Readings, remain outside the corpus because the article is limited to the two
+  main long-term venues.
+
 ## [1.0.0] - 2026-06-13
 
 ### Changed

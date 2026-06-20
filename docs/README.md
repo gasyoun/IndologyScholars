@@ -11,6 +11,7 @@
 | Права повторного использования / Reuse rights | [reuse-rights.md](reuse-rights.md) | [reuse-rights.md](reuse-rights.md) |
 | Политика персональных данных / Personal data policy | [persons-data-policy-ru.md](persons-data-policy-ru.md) | [persons-data-policy.md](persons-data-policy.md) |
 | Проверка РИНЦ / RINC review | [rinc-review.md](rinc-review.md) | [rinc-review-en.md](rinc-review-en.md) |
+| Семенцовские чтения вне корпуса / Sementsov Readings outside corpus | [sementsov-readings-context-note.md](sementsov-readings-context-note.md) | [sementsov-readings-context-note.md](sementsov-readings-context-note.md) |
 | Аудит интерфейса / Interface audit | [ux-ui-audit.md](ux-ui-audit.md) | [ux-ui-audit.md](ux-ui-audit.md) |
 | Визуализации / Visualizations | [visualisations.md](visualisations.md) | [visualisations.md](visualisations.md) |
 | Исторические материалы / Historical materials | [archive/README.md](https://github.com/gasyoun/IndologyScholars/blob/main/archive/README.md) | [archive/README.md](https://github.com/gasyoun/IndologyScholars/blob/main/archive/README.md) |
