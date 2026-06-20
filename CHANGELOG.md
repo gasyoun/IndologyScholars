@@ -21,6 +21,14 @@
   clarifying that newer and specialized initiatives, including Sementsov
   Readings, remain outside the corpus because the article is limited to the two
   main long-term venues.
+- Refreshed Phase-5 roster audit artifacts without promoting unsupported
+  candidates: `scratch/non_participants.md` now classifies
+  Stal-fon-Golstein in the pre-2004 group, and
+  `analytics_output/roster_participant_links.csv` no longer marks already
+  present Q-IDs as pending injection.
+- Synchronized public snapshot counts in README/development/cover-letter
+  text to the validator-required 270 speaker profiles and 165 Zograf-only
+  profiles.
 
 ## [1.0.0] - 2026-06-13
 
