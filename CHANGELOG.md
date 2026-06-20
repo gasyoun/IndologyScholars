@@ -29,6 +29,9 @@
 - Synchronized public snapshot counts in README/development/cover-letter
   text to the validator-required 270 speaker profiles and 165 Zograf-only
   profiles.
+- Recorded a follow-up Phase-5 retry: Wikidata and ru.wikipedia enrichment
+  remain blocked on this host, so the next supported enrichment pass must run
+  on a network where those endpoints are reachable.
 
 ## [1.0.0] - 2026-06-13
 
