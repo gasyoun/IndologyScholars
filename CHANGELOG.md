@@ -32,6 +32,8 @@
 - Recorded a follow-up Phase-5 retry: Wikidata and ru.wikipedia enrichment
   remain blocked on this host, so the next supported enrichment pass must run
   on a network where those endpoints are reachable.
+- Added `docs/external-phase5-enrichment-runbook.md` with from-zero instructions
+  for running the Wikidata/ru.wikipedia enrichment on an external reachable host.
 
 ## [1.0.0] - 2026-06-13
 
