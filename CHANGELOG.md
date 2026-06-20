@@ -34,6 +34,9 @@
   on a network where those endpoints are reachable.
 - Added `docs/external-phase5-enrichment-runbook.md` with from-zero instructions
   for running the Wikidata/ru.wikipedia enrichment on an external reachable host.
+- Added `tools/run_external_phase5_enrichment.py`, a one-command external-host
+  runner for safe Phase-5 Wikidata/ru.wikipedia enrichment, validation, and
+  optional source-only commit/push.
 
 ## [1.0.0] - 2026-06-13
 

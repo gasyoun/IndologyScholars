@@ -7,6 +7,32 @@ Wikidata REST and ru.wikipedia article HTML are reachable.
 The goal is narrow: enrich the Russian indologist roster without changing the
 PPV article corpus. The article remains a two-venue Zograf/Roerich study.
 
+## One-Command Runner
+
+After cloning the repository and installing `requirements.txt`, the normal
+external-host command is:
+
+```bash
+python tools/run_external_phase5_enrichment.py --commit --push
+```
+
+The runner performs the safe automated part of this runbook:
+
+- checks Wikidata and ru.wikipedia reachability;
+- runs Wikidata life-year enrichment;
+- runs ru.wikipedia infobox enrichment;
+- rebuilds non-participant and participant-link artifacts;
+- checks registry health;
+- runs `validate_publication.py` and `pytest`;
+- stages only approved source/curation outputs;
+- commits and pushes if anything changed.
+
+It deliberately does not run institutional scraping or OpenAlex injection,
+because those outputs require manual review before they can affect curated data.
+
+Use the manual steps below when debugging a failed run or when the external host
+cannot push to GitHub.
+
 ## 0. Required Access
 
 The external computer needs:
