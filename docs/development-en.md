@@ -243,6 +243,7 @@ ru-/Wikidata-dependent steps must run from a host with access.
 | [../article/data_paper_draft.md](https://github.com/gasyoun/IndologyScholars/blob/main/article/data_paper_draft.md) | English data paper describing corpus construction, data model, and reuse (target: Research Data Journal for the Humanities and Social Sciences). |
 | [roster-merge-design.md](roster-merge-design.md) | Design for merging the `scratch/` Russian-indologist roster into the corpus (participants enriched, non-participants as a separate registry). |
 | [ru-enrichment-runbook.md](ru-enrichment-runbook.md) | Step-by-step procedure for the Phase-5 enrichment that must run inside Russia (Wikidata life years, ru.wikipedia infoboxes, institutional scrapers). |
+| [deepseek-clean-host-runbook.md](deepseek-clean-host-runbook.md) | Procedure for running the DeepSeek k-fold classification and video segmentation runners from a clean-egress host, because `api.openmodel.ai` inference is severed (DPI) from the automation host. |
 
 `CHANGELOG.md` and materials under `article/` are logs or research snapshots;
 read their figures in the context of their stated date. Working documents
