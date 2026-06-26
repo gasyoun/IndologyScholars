@@ -14,6 +14,156 @@ OUTPUT_DIR = "analytics_output"
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 
+def gini(values):
+    if not values:
+        return 0.0
+    sorted_values = sorted(values)
+    n = len(sorted_values)
+    total = sum(sorted_values)
+    if total == 0:
+        return 0.0
+    weighted = sum(i * value for i, value in enumerate(sorted_values, start=1))
+    return (2 * weighted) / (n * total) - (n + 1) / n
+
+
+def fetch_participation(cursor, series_id):
+    cursor.execute("""
+        SELECT pp.person_id, e.year
+          FROM presentation_person pp
+          JOIN presentation pres ON pres.presentation_id = pp.presentation_id
+          JOIN session s ON s.session_id = pres.session_id
+          JOIN event_day_venue edv ON edv.event_day_venue_id = s.event_day_venue_id
+          JOIN event_day ed ON ed.event_day_id = edv.event_day_id
+          JOIN event e ON e.event_id = ed.event_id
+         WHERE e.event_series_id = ?
+    """, (series_id,))
+    person_years = defaultdict(set)
+    for person_id, year in cursor.fetchall():
+        person_years[person_id].add(year)
+    return {person_id: sorted(years) for person_id, years in person_years.items()}
+
+
+def compute_closedness(label, person_years):
+    talks_per_person = [len(years) for years in person_years.values()]
+    n_scholars = len(talks_per_person)
+    n_total_participations = sum(talks_per_person)
+
+    one_talk = sum(1 for talks in talks_per_person if talks == 1)
+    core = sum(1 for talks in talks_per_person if talks >= 5)
+
+    years_sorted = sorted({year for years in person_years.values() for year in years})
+    debuts_by_year = defaultdict(int)
+    counts_by_year = defaultdict(int)
+    for years in person_years.values():
+        debut = min(years)
+        debuts_by_year[debut] += 1
+        for year in years:
+            counts_by_year[year] += 1
+
+    newcomer_rows = []
+    for year in years_sorted:
+        newcomers = debuts_by_year[year]
+        total = counts_by_year[year]
+        newcomer_rows.append({
+            "series": label,
+            "year": year,
+            "newcomers": newcomers,
+            "total": total,
+            "newcomer_pct": round(newcomers / total * 100, 1) if total else 0,
+        })
+
+    one_appearance = sum(1 for years in person_years.values() if len(years) == 1)
+    retention = (n_scholars - one_appearance) / n_scholars * 100 if n_scholars else 0
+
+    # Product-limit / Kaplan-Meier table for VIS_009. The rendered page uses
+    # the same semantics: final-window observations and single appearances are
+    # right-censored rather than counted as departures at t=0.
+    last_obs_year = max((max(years) for years in person_years.values()), default=0)
+    censor_from = last_obs_year - 1
+    cohort_spans = defaultdict(list)
+    for years in person_years.values():
+        debut, last = min(years), max(years)
+        span = last - debut
+        event = 0 if last >= censor_from or last == debut else 1
+        cohort_spans[debut].append((span, event))
+
+    cohort_rows = []
+    for debut_year in sorted(cohort_spans):
+        observations = cohort_spans[debut_year]
+        cohort_size = len(observations)
+        survival = 1.0
+        for delta in range(0, max(span for span, _ in observations) + 1):
+            at_risk = sum(1 for span, _ in observations if span >= delta)
+            events = sum(1 for span, event in observations if span == delta and event == 1)
+            if at_risk and events:
+                survival *= 1 - events / at_risk
+            cohort_rows.append({
+                "series": label,
+                "debut_year": debut_year,
+                "years_since_debut": delta,
+                "at_risk": at_risk,
+                "cohort_size": cohort_size,
+                "survival_pct": round(survival * 100, 1),
+            })
+
+    median_talks = sorted(talks_per_person)[len(talks_per_person) // 2] if talks_per_person else 0
+    summary = {
+        "series": label,
+        "n_scholars": n_scholars,
+        "n_total_participations": n_total_participations,
+        "one_talk_wonder_pct": round(100 * one_talk / n_scholars, 1) if n_scholars else 0,
+        "core_5plus_pct": round(100 * core / n_scholars, 1) if n_scholars else 0,
+        "gini_concentration": round(gini(talks_per_person), 3),
+        "retention_pct": round(retention, 1),
+        "median_talks_per_scholar": median_talks,
+        "max_talks_per_scholar": max(talks_per_person) if talks_per_person else 0,
+    }
+    return summary, newcomer_rows, cohort_rows
+
+
+def write_csv(path, rows, fieldnames):
+    with open(path, "w", encoding="utf-8", newline="") as f:
+        writer = csv.DictWriter(f, fieldnames=fieldnames, lineterminator="\n")
+        writer.writeheader()
+        writer.writerows(rows)
+
+
+def generate_closedness_metrics(cursor):
+    summary_rows = []
+    newcomer_rows = []
+    cohort_rows = []
+
+    for series_id, label in [(1, "Zograf"), (2, "Roerich")]:
+        summary, newcomers, cohorts = compute_closedness(label, fetch_participation(cursor, series_id))
+        summary_rows.append(summary)
+        newcomer_rows.extend(newcomers)
+        cohort_rows.extend(cohorts)
+
+    combined_years = defaultdict(set)
+    for series_id in [1, 2]:
+        for person_id, years in fetch_participation(cursor, series_id).items():
+            combined_years[person_id].update(years)
+    combined_years = {person_id: sorted(years) for person_id, years in combined_years.items()}
+    combined_summary, _, _ = compute_closedness("Combined", combined_years)
+    summary_rows.append(combined_summary)
+
+    write_csv(
+        os.path.join(OUTPUT_DIR, "closedness_metrics.csv"),
+        summary_rows,
+        list(summary_rows[0].keys()),
+    )
+    write_csv(
+        os.path.join(OUTPUT_DIR, "newcomer_rate_by_year.csv"),
+        newcomer_rows,
+        ["series", "year", "newcomers", "total", "newcomer_pct"],
+    )
+    write_csv(
+        os.path.join(OUTPUT_DIR, "cohort_survival.csv"),
+        cohort_rows,
+        ["series", "debut_year", "years_since_debut", "at_risk", "cohort_size", "survival_pct"],
+    )
+    return len(cohort_rows)
+
 
 def node_id(node_type, local_id):
     return f"{node_type}:{local_id}"
@@ -459,6 +609,7 @@ def main():
     network_node_count, network_edge_count = generate_network_exports(cursor)
     coauthorship_review_count = generate_coauthorship_review(cursor)
     senior_absence_count = generate_senior_absence_audit(cursor)
+    cohort_survival_count = generate_closedness_metrics(cursor)
 
     # ── missing_birth_years.md ────────────────────────────────────────────────
 
@@ -565,6 +716,7 @@ def main():
     print(f"network exports: {network_node_count} nodes, {network_edge_count} edges")
     print(f"coauthorship_review.csv: {coauthorship_review_count} rows.")
     print(f"senior_absence_audit.csv: {senior_absence_count} rows.")
+    print(f"closedness metrics: cohort_survival.csv {cohort_survival_count} rows.")
     print(f"indology_scholars_analytics.md: sections 1–6 written.")
     print(f"missing_birth_years.md: {len(missing_rows)} scholars listed.")
     conn.close()
