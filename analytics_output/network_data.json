@@ -305,12 +305,44 @@
       "weight": 62.0
     },
     {
+      "id": "organization:ГАУГН",
+      "type": "organization",
+      "label": "ГАУГН",
+      "local_id": "ГАУГН",
+      "slug": null,
+      "weight": 3.0
+    },
+    {
+      "id": "organization:ГИИ",
+      "type": "organization",
+      "label": "ГИИ",
+      "local_id": "ГИИ",
+      "slug": null,
+      "weight": 15.0
+    },
+    {
+      "id": "organization:ГММ Скрябина",
+      "type": "organization",
+      "label": "ГММ Скрябина",
+      "local_id": "ГММ Скрябина",
+      "slug": null,
+      "weight": 4.0
+    },
+    {
       "id": "organization:Государственный Эрмитаж",
       "type": "organization",
       "label": "Государственный Эрмитаж",
       "local_id": "Государственный Эрмитаж",
       "slug": null,
       "weight": 1.0
+    },
+    {
+      "id": "organization:ИВ НАН Украины",
+      "type": "organization",
+      "label": "ИВ НАН Украины",
+      "local_id": "ИВ НАН Украины",
+      "slug": null,
+      "weight": 8.0
     },
     {
       "id": "organization:ИВ РАН",
@@ -329,12 +361,84 @@
       "weight": 11.0
     },
     {
+      "id": "organization:ИИЕТ РАН",
+      "type": "organization",
+      "label": "ИИЕТ РАН",
+      "local_id": "ИИЕТ РАН",
+      "slug": null,
+      "weight": 1.0
+    },
+    {
+      "id": "organization:ИИЭ Валиханова",
+      "type": "organization",
+      "label": "ИИЭ Валиханова",
+      "local_id": "ИИЭ Валиханова",
+      "slug": null,
+      "weight": 1.0
+    },
+    {
+      "id": "organization:ИМБТ СО РАН",
+      "type": "organization",
+      "label": "ИМБТ СО РАН",
+      "local_id": "ИМБТ СО РАН",
+      "slug": null,
+      "weight": 1.0
+    },
+    {
+      "id": "organization:ИМЛИ РАН",
+      "type": "organization",
+      "label": "ИМЛИ РАН",
+      "local_id": "ИМЛИ РАН",
+      "slug": null,
+      "weight": 8.0
+    },
+    {
+      "id": "organization:ИСАА",
+      "type": "organization",
+      "label": "ИСАА",
+      "local_id": "ИСАА",
+      "slug": null,
+      "weight": 5.0
+    },
+    {
       "id": "organization:ИФ РАН",
       "type": "organization",
       "label": "ИФ РАН",
       "local_id": "ИФ РАН",
       "slug": null,
       "weight": 12.0
+    },
+    {
+      "id": "organization:ИЭА РАН",
+      "type": "organization",
+      "label": "ИЭА РАН",
+      "local_id": "ИЭА РАН",
+      "slug": null,
+      "weight": 4.0
+    },
+    {
+      "id": "organization:ИЯ РАН",
+      "type": "organization",
+      "label": "ИЯ РАН",
+      "local_id": "ИЯ РАН",
+      "slug": null,
+      "weight": 4.0
+    },
+    {
+      "id": "organization:КНЦ РАН",
+      "type": "organization",
+      "label": "КНЦ РАН",
+      "local_id": "КНЦ РАН",
+      "slug": null,
+      "weight": 1.0
+    },
+    {
+      "id": "organization:КрасГАУ",
+      "type": "organization",
+      "label": "КрасГАУ",
+      "local_id": "КрасГАУ",
+      "slug": null,
+      "weight": 1.0
     },
     {
       "id": "organization:МАЭ РАН",
@@ -345,12 +449,28 @@
       "weight": 2.0
     },
     {
+      "id": "organization:МГППУ",
+      "type": "organization",
+      "label": "МГППУ",
+      "local_id": "МГППУ",
+      "slug": null,
+      "weight": 6.0
+    },
+    {
       "id": "organization:МГУ",
       "type": "organization",
       "label": "МГУ",
       "local_id": "МГУ",
       "slug": null,
       "weight": 37.0
+    },
+    {
+      "id": "organization:МЦР",
+      "type": "organization",
+      "label": "МЦР",
+      "local_id": "МЦР",
+      "slug": null,
+      "weight": 2.0
     },
     {
       "id": "organization:НИУ ВШЭ",
@@ -369,6 +489,22 @@
       "weight": 2.0
     },
     {
+      "id": "organization:Ольстерский университет",
+      "type": "organization",
+      "label": "Ольстерский университет",
+      "local_id": "Ольстерский университет",
+      "slug": null,
+      "weight": 5.0
+    },
+    {
+      "id": "organization:РАНХиГС",
+      "type": "organization",
+      "label": "РАНХиГС",
+      "local_id": "РАНХиГС",
+      "slug": null,
+      "weight": 1.0
+    },
+    {
       "id": "organization:РГГУ",
       "type": "organization",
       "label": "РГГУ",
@@ -377,12 +513,52 @@
       "weight": 4.0
     },
     {
+      "id": "organization:РГПУ им. Герцена",
+      "type": "organization",
+      "label": "РГПУ им. Герцена",
+      "local_id": "РГПУ им. Герцена",
+      "slug": null,
+      "weight": 2.0
+    },
+    {
+      "id": "organization:РУДН",
+      "type": "organization",
+      "label": "РУДН",
+      "local_id": "РУДН",
+      "slug": null,
+      "weight": 9.0
+    },
+    {
+      "id": "organization:РостГМУ",
+      "type": "organization",
+      "label": "РостГМУ",
+      "local_id": "РостГМУ",
+      "slug": null,
+      "weight": 1.0
+    },
+    {
+      "id": "organization:СПбГИК",
+      "type": "organization",
+      "label": "СПбГИК",
+      "local_id": "СПбГИК",
+      "slug": null,
+      "weight": 1.0
+    },
+    {
       "id": "organization:СПбГУ",
       "type": "organization",
       "label": "СПбГУ",
       "local_id": "СПбГУ",
       "slug": null,
       "weight": 39.0
+    },
+    {
+      "id": "organization:УрФУ",
+      "type": "organization",
+      "label": "УрФУ",
+      "local_id": "УрФУ",
+      "slug": null,
+      "weight": 1.0
     },
     {
       "id": "person:PERS_800ac07e",
@@ -407,14 +583,6 @@
       "local_id": "PERS_3ccc9bd7",
       "slug": "solka",
       "weight": 2.0
-    },
-    {
-      "id": "person:PERS_410c5a08",
-      "type": "person",
-      "label": "А. Хомиченкене",
-      "local_id": "PERS_410c5a08",
-      "slug": "khomichenkene",
-      "weight": 1.0
     },
     {
       "id": "person:PERS_c1cc76b9",
@@ -494,14 +662,6 @@
       "label": "Атманова Юлия Георгиевна",
       "local_id": "PERS_088c4df7",
       "slug": "atmanova-yuliya",
-      "weight": 6.0
-    },
-    {
-      "id": "person:PERS_10547db9",
-      "type": "person",
-      "label": "Б. В. Загуменнов",
-      "local_id": "PERS_10547db9",
-      "slug": "zagumennov",
       "weight": 6.0
     },
     {
@@ -630,7 +790,7 @@
       "label": "Бушуев Евгений Сергеевич",
       "local_id": "PERS_30b54681",
       "slug": "bushuev-evgenii",
-      "weight": 3.0
+      "weight": 4.0
     },
     {
       "id": "person:PERS_f7c7adc7",
@@ -639,14 +799,6 @@
       "local_id": "PERS_f7c7adc7",
       "slug": "donskikh",
       "weight": 3.0
-    },
-    {
-      "id": "person:PERS_325e94f3",
-      "type": "person",
-      "label": "В. В. Котин",
-      "local_id": "PERS_325e94f3",
-      "slug": "kotin",
-      "weight": 1.0
     },
     {
       "id": "person:PERS_40375fef",
@@ -961,14 +1113,6 @@
       "weight": 4.0
     },
     {
-      "id": "person:PERS_c9e43db7",
-      "type": "person",
-      "label": "Е. А. Бушуев",
-      "local_id": "PERS_c9e43db7",
-      "slug": "bushuev",
-      "weight": 1.0
-    },
-    {
       "id": "person:PERS_4831e64b",
       "type": "person",
       "label": "Е. Анохина",
@@ -1087,6 +1231,14 @@
       "local_id": "PERS_36c30cf9",
       "slug": "zagorulko-andrei",
       "weight": 1.0
+    },
+    {
+      "id": "person:PERS_10547db9",
+      "type": "person",
+      "label": "Загуменнов Борис Иванович",
+      "local_id": "PERS_10547db9",
+      "slug": "zagumennov-boris",
+      "weight": 6.0
     },
     {
       "id": "person:PERS_94f33410",
@@ -1382,7 +1534,7 @@
       "label": "Котин Игорь Юрьевич",
       "local_id": "PERS_f19cd8a1",
       "slug": "kotin-igor",
-      "weight": 11.0
+      "weight": 12.0
     },
     {
       "id": "person:PERS_3f406fe3",
@@ -1663,6 +1815,14 @@
       "local_id": "PERS_69750b7c",
       "slug": "mazurina-valentina",
       "weight": 4.0
+    },
+    {
+      "id": "person:PERS_e15e7491",
+      "type": "person",
+      "label": "Макмахуна Шеймас",
+      "local_id": "PERS_e15e7491",
+      "slug": "makmakhuna-sheimas",
+      "weight": 1.0
     },
     {
       "id": "person:PERS_68e9019d",
@@ -2353,6 +2513,14 @@
       "weight": 4.0
     },
     {
+      "id": "person:PERS_5cb1449b",
+      "type": "person",
+      "label": "Хомиченкене Алета",
+      "local_id": "PERS_5cb1449b",
+      "slug": "khomichenkene-aleta",
+      "weight": 1.0
+    },
+    {
       "id": "person:PERS_3e952361",
       "type": "person",
       "label": "Хохлов Александр Николаевич",
@@ -2406,14 +2574,6 @@
       "label": "Чернавин Георгий Игоревич",
       "local_id": "PERS_94aa5d0a",
       "slug": "chernavin-georgii",
-      "weight": 1.0
-    },
-    {
-      "id": "person:PERS_752884a2",
-      "type": "person",
-      "label": "Ш. Макмахуна",
-      "local_id": "PERS_752884a2",
-      "slug": "makmakhuna",
       "weight": 1.0
     },
     {
@@ -2595,10 +2755,210 @@
   ],
   "edges": [
     {
+      "source": "organization:ГАУГН",
+      "target": "theme:literature_and_poetry",
+      "type": "organization_theme",
+      "year": 2019,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "organization:ГАУГН",
+      "target": "theme:literature_and_poetry",
+      "type": "organization_theme",
+      "year": 2020,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "organization:ГАУГН",
+      "target": "theme:literature_and_poetry",
+      "type": "organization_theme",
+      "year": 2021,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "organization:ГИИ",
+      "target": "theme:art_and_material_culture",
+      "type": "organization_theme",
+      "year": 2015,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "organization:ГИИ",
+      "target": "theme:art_and_material_culture",
+      "type": "organization_theme",
+      "year": 2016,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "organization:ГИИ",
+      "target": "theme:art_and_material_culture",
+      "type": "organization_theme",
+      "year": 2017,
+      "series": "Roerich Readings",
+      "weight": 2.0
+    },
+    {
+      "source": "organization:ГИИ",
+      "target": "theme:art_and_material_culture",
+      "type": "organization_theme",
+      "year": 2018,
+      "series": "Roerich Readings",
+      "weight": 3.0
+    },
+    {
+      "source": "organization:ГИИ",
+      "target": "theme:art_and_material_culture",
+      "type": "organization_theme",
+      "year": 2019,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "organization:ГИИ",
+      "target": "theme:art_and_material_culture",
+      "type": "organization_theme",
+      "year": 2020,
+      "series": "Roerich Readings",
+      "weight": 2.0
+    },
+    {
+      "source": "organization:ГИИ",
+      "target": "theme:art_and_material_culture",
+      "type": "organization_theme",
+      "year": 2021,
+      "series": "Roerich Readings",
+      "weight": 2.0
+    },
+    {
+      "source": "organization:ГИИ",
+      "target": "theme:religion_and_philosophy",
+      "type": "organization_theme",
+      "year": 2016,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "organization:ГИИ",
+      "target": "theme:religion_and_philosophy",
+      "type": "organization_theme",
+      "year": 2020,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "organization:ГИИ",
+      "target": "theme:religion_and_philosophy",
+      "type": "organization_theme",
+      "year": 2022,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "organization:ГММ Скрябина",
+      "target": "theme:literature_and_poetry",
+      "type": "organization_theme",
+      "year": 2022,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "organization:ГММ Скрябина",
+      "target": "theme:religion_and_philosophy",
+      "type": "organization_theme",
+      "year": 2020,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "organization:ГММ Скрябина",
+      "target": "theme:religion_and_philosophy",
+      "type": "organization_theme",
+      "year": 2021,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "organization:ГММ Скрябина",
+      "target": "theme:religion_and_philosophy",
+      "type": "organization_theme",
+      "year": 2023,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
       "source": "organization:Государственный Эрмитаж",
       "target": "theme:history_and_culture",
       "type": "organization_theme",
       "year": 2012,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "organization:ИВ НАН Украины",
+      "target": "theme:art_and_material_culture",
+      "type": "organization_theme",
+      "year": 2015,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "organization:ИВ НАН Украины",
+      "target": "theme:art_and_material_culture",
+      "type": "organization_theme",
+      "year": 2016,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "organization:ИВ НАН Украины",
+      "target": "theme:art_and_material_culture",
+      "type": "organization_theme",
+      "year": 2017,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "organization:ИВ НАН Украины",
+      "target": "theme:history_and_culture",
+      "type": "organization_theme",
+      "year": 2022,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "organization:ИВ НАН Украины",
+      "target": "theme:religion_and_philosophy",
+      "type": "organization_theme",
+      "year": 2012,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "organization:ИВ НАН Украины",
+      "target": "theme:religion_and_philosophy",
+      "type": "organization_theme",
+      "year": 2018,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "organization:ИВ НАН Украины",
+      "target": "theme:religion_and_philosophy",
+      "type": "organization_theme",
+      "year": 2020,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "organization:ИВ НАН Украины",
+      "target": "theme:religion_and_philosophy",
+      "type": "organization_theme",
+      "year": 2021,
       "series": "Roerich Readings",
       "weight": 1.0
     },
@@ -3099,6 +3459,118 @@
       "weight": 1.0
     },
     {
+      "source": "organization:ИИЕТ РАН",
+      "target": "theme:linguistics_and_philology",
+      "type": "organization_theme",
+      "year": 2015,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "organization:ИИЭ Валиханова",
+      "target": "theme:history_and_culture",
+      "type": "organization_theme",
+      "year": 2012,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "organization:ИМБТ СО РАН",
+      "target": "theme:religion_and_philosophy",
+      "type": "organization_theme",
+      "year": 2025,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "organization:ИМЛИ РАН",
+      "target": "theme:literature_and_poetry",
+      "type": "organization_theme",
+      "year": 2012,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "organization:ИМЛИ РАН",
+      "target": "theme:literature_and_poetry",
+      "type": "organization_theme",
+      "year": 2015,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "organization:ИМЛИ РАН",
+      "target": "theme:literature_and_poetry",
+      "type": "organization_theme",
+      "year": 2021,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "organization:ИМЛИ РАН",
+      "target": "theme:literature_and_poetry",
+      "type": "organization_theme",
+      "year": 2024,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "organization:ИМЛИ РАН",
+      "target": "theme:literature_and_poetry",
+      "type": "organization_theme",
+      "year": 2025,
+      "series": "Roerich Readings",
+      "weight": 2.0
+    },
+    {
+      "source": "organization:ИМЛИ РАН",
+      "target": "theme:religion_and_philosophy",
+      "type": "organization_theme",
+      "year": 2022,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "organization:ИМЛИ РАН",
+      "target": "theme:religion_and_philosophy",
+      "type": "organization_theme",
+      "year": 2023,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "organization:ИСАА",
+      "target": "theme:history_and_culture",
+      "type": "organization_theme",
+      "year": 2023,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "organization:ИСАА",
+      "target": "theme:history_and_culture",
+      "type": "organization_theme",
+      "year": 2025,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "organization:ИСАА",
+      "target": "theme:literature_and_poetry",
+      "type": "organization_theme",
+      "year": 2012,
+      "series": "Roerich Readings",
+      "weight": 2.0
+    },
+    {
+      "source": "organization:ИСАА",
+      "target": "theme:literature_and_poetry",
+      "type": "organization_theme",
+      "year": 2016,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
       "source": "organization:ИФ РАН",
       "target": "theme:religion_and_philosophy",
       "type": "organization_theme",
@@ -3171,12 +3643,140 @@
       "weight": 2.0
     },
     {
+      "source": "organization:ИЭА РАН",
+      "target": "theme:art_and_material_culture",
+      "type": "organization_theme",
+      "year": 2012,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "organization:ИЭА РАН",
+      "target": "theme:art_and_material_culture",
+      "type": "organization_theme",
+      "year": 2017,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "organization:ИЭА РАН",
+      "target": "theme:history_and_culture",
+      "type": "organization_theme",
+      "year": 2015,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "organization:ИЭА РАН",
+      "target": "theme:history_and_culture",
+      "type": "organization_theme",
+      "year": 2019,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "organization:ИЯ РАН",
+      "target": "theme:linguistics_and_philology",
+      "type": "organization_theme",
+      "year": 2012,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "organization:ИЯ РАН",
+      "target": "theme:linguistics_and_philology",
+      "type": "organization_theme",
+      "year": 2016,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "organization:ИЯ РАН",
+      "target": "theme:linguistics_and_philology",
+      "type": "organization_theme",
+      "year": 2017,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "organization:ИЯ РАН",
+      "target": "theme:linguistics_and_philology",
+      "type": "organization_theme",
+      "year": 2018,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "organization:КНЦ РАН",
+      "target": "theme:history_and_culture",
+      "type": "organization_theme",
+      "year": 2025,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "organization:КрасГАУ",
+      "target": "theme:art_and_material_culture",
+      "type": "organization_theme",
+      "year": 2024,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
       "source": "organization:МАЭ РАН",
       "target": "theme:history_and_culture",
       "type": "organization_theme",
       "year": 2007,
       "series": "Zograf Readings",
       "weight": 2.0
+    },
+    {
+      "source": "organization:МГППУ",
+      "target": "theme:religion_and_philosophy",
+      "type": "organization_theme",
+      "year": 2016,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "organization:МГППУ",
+      "target": "theme:religion_and_philosophy",
+      "type": "organization_theme",
+      "year": 2017,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "organization:МГППУ",
+      "target": "theme:religion_and_philosophy",
+      "type": "organization_theme",
+      "year": 2018,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "organization:МГППУ",
+      "target": "theme:religion_and_philosophy",
+      "type": "organization_theme",
+      "year": 2019,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "organization:МГППУ",
+      "target": "theme:religion_and_philosophy",
+      "type": "organization_theme",
+      "year": 2020,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "organization:МГППУ",
+      "target": "theme:religion_and_philosophy",
+      "type": "organization_theme",
+      "year": 2021,
+      "series": "Roerich Readings",
+      "weight": 1.0
     },
     {
       "source": "organization:МГУ",
@@ -3339,6 +3939,22 @@
       "weight": 1.0
     },
     {
+      "source": "organization:МЦР",
+      "target": "theme:religion_and_philosophy",
+      "type": "organization_theme",
+      "year": 2015,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "organization:МЦР",
+      "target": "theme:religion_and_philosophy",
+      "type": "organization_theme",
+      "year": 2017,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
       "source": "organization:НИУ ВШЭ",
       "target": "theme:art_and_material_culture",
       "type": "organization_theme",
@@ -3443,6 +4059,46 @@
       "weight": 1.0
     },
     {
+      "source": "organization:Ольстерский университет",
+      "target": "theme:literature_and_poetry",
+      "type": "organization_theme",
+      "year": 2015,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "organization:Ольстерский университет",
+      "target": "theme:literature_and_poetry",
+      "type": "organization_theme",
+      "year": 2017,
+      "series": "Roerich Readings",
+      "weight": 2.0
+    },
+    {
+      "source": "organization:Ольстерский университет",
+      "target": "theme:literature_and_poetry",
+      "type": "organization_theme",
+      "year": 2018,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "organization:Ольстерский университет",
+      "target": "theme:literature_and_poetry",
+      "type": "organization_theme",
+      "year": 2021,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "organization:РАНХиГС",
+      "target": "theme:history_and_culture",
+      "type": "organization_theme",
+      "year": 2018,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
       "source": "organization:РГГУ",
       "target": "theme:literature_and_poetry",
       "type": "organization_theme",
@@ -3472,6 +4128,94 @@
       "type": "organization_theme",
       "year": 2017,
       "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "organization:РГПУ им. Герцена",
+      "target": "theme:art_and_material_culture",
+      "type": "organization_theme",
+      "year": 2024,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "organization:РГПУ им. Герцена",
+      "target": "theme:history_and_culture",
+      "type": "organization_theme",
+      "year": 2021,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "organization:РУДН",
+      "target": "theme:history_and_culture",
+      "type": "organization_theme",
+      "year": 2017,
+      "series": "Roerich Readings",
+      "weight": 2.0
+    },
+    {
+      "source": "organization:РУДН",
+      "target": "theme:history_and_culture",
+      "type": "organization_theme",
+      "year": 2025,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "organization:РУДН",
+      "target": "theme:literature_and_poetry",
+      "type": "organization_theme",
+      "year": 2021,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "organization:РУДН",
+      "target": "theme:literature_and_poetry",
+      "type": "organization_theme",
+      "year": 2023,
+      "series": "Zograf Readings",
+      "weight": 2.0
+    },
+    {
+      "source": "organization:РУДН",
+      "target": "theme:religion_and_philosophy",
+      "type": "organization_theme",
+      "year": 2016,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "organization:РУДН",
+      "target": "theme:religion_and_philosophy",
+      "type": "organization_theme",
+      "year": 2018,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "organization:РУДН",
+      "target": "theme:religion_and_philosophy",
+      "type": "organization_theme",
+      "year": 2022,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "organization:РостГМУ",
+      "target": "theme:history_and_culture",
+      "type": "organization_theme",
+      "year": 2024,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "organization:СПбГИК",
+      "target": "theme:religion_and_philosophy",
+      "type": "organization_theme",
+      "year": 2007,
+      "series": "Zograf Readings",
       "weight": 1.0
     },
     {
@@ -3719,6 +4463,14 @@
       "target": "theme:unspecified",
       "type": "organization_theme",
       "year": 2020,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "organization:УрФУ",
+      "target": "theme:history_and_culture",
+      "type": "organization_theme",
+      "year": 2012,
       "series": "Roerich Readings",
       "weight": 1.0
     },
@@ -6099,6 +6851,14 @@
       "weight": 1.0
     },
     {
+      "source": "person:PERS_30b54681",
+      "target": "event:E2015",
+      "type": "person_event",
+      "year": 2015,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
       "source": "person:PERS_310b2911",
       "target": "event:E2024",
       "type": "person_event",
@@ -6128,14 +6888,6 @@
       "type": "person_event",
       "year": 2025,
       "series": "Roerich Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_325e94f3",
-      "target": "event:E2017",
-      "type": "person_event",
-      "year": 2017,
-      "series": "Zograf Readings",
       "weight": 1.0
     },
     {
@@ -7259,14 +8011,6 @@
       "weight": 1.0
     },
     {
-      "source": "person:PERS_410c5a08",
-      "target": "event:E2004",
-      "type": "person_event",
-      "year": 2004,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
       "source": "person:PERS_41d6aa73",
       "target": "event:E2015",
       "type": "person_event",
@@ -8055,6 +8799,14 @@
       "target": "event:E2026",
       "type": "person_event",
       "year": 2026,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_5cb1449b",
+      "target": "event:E2004",
+      "type": "person_event",
+      "year": 2004,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -8888,14 +9640,6 @@
       "type": "person_event",
       "year": 2017,
       "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_752884a2",
-      "target": "event:ER2017",
-      "type": "person_event",
-      "year": 2017,
-      "series": "Roerich Readings",
       "weight": 1.0
     },
     {
@@ -11987,14 +12731,6 @@
       "weight": 1.0
     },
     {
-      "source": "person:PERS_c9e43db7",
-      "target": "event:E2015",
-      "type": "person_event",
-      "year": 2015,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
       "source": "person:PERS_cac87738",
       "target": "event:E2019",
       "type": "person_event",
@@ -13007,6 +13743,14 @@
       "target": "event:ER2016",
       "type": "person_event",
       "year": 2016,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_e15e7491",
+      "target": "event:ER2017",
+      "type": "person_event",
+      "year": 2017,
       "series": "Roerich Readings",
       "weight": 1.0
     },
@@ -14116,6 +14860,14 @@
     },
     {
       "source": "person:PERS_f19cd8a1",
+      "target": "event:E2017",
+      "type": "person_event",
+      "year": 2017,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_f19cd8a1",
       "target": "event:E2018",
       "type": "person_event",
       "year": 2018,
@@ -14723,6 +15475,46 @@
       "weight": 1.0
     },
     {
+      "source": "person:PERS_003adcfe",
+      "target": "organization:РУДН",
+      "type": "person_organization",
+      "year": 2023,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_05d56645",
+      "target": "organization:ГИИ",
+      "type": "person_organization",
+      "year": 2017,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_05d56645",
+      "target": "organization:ГИИ",
+      "type": "person_organization",
+      "year": 2018,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_05d56645",
+      "target": "organization:ГИИ",
+      "type": "person_organization",
+      "year": 2020,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_05d56645",
+      "target": "organization:ГИИ",
+      "type": "person_organization",
+      "year": 2021,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
       "source": "person:PERS_05d56645",
       "target": "organization:НИУ ВШЭ",
       "type": "person_organization",
@@ -15011,6 +15803,54 @@
       "weight": 1.0
     },
     {
+      "source": "person:PERS_1c6fcce5",
+      "target": "organization:ГИИ",
+      "type": "person_organization",
+      "year": 2016,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_1c6fcce5",
+      "target": "organization:ГИИ",
+      "type": "person_organization",
+      "year": 2018,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_1c6fcce5",
+      "target": "organization:ГИИ",
+      "type": "person_organization",
+      "year": 2020,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_1c6fcce5",
+      "target": "organization:ГИИ",
+      "type": "person_organization",
+      "year": 2022,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_1c6fcce5",
+      "target": "organization:РУДН",
+      "type": "person_organization",
+      "year": 2021,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_1fa7cc0c",
+      "target": "organization:ИСАА",
+      "type": "person_organization",
+      "year": 2012,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
       "source": "person:PERS_1fa7cc0c",
       "target": "organization:МГУ",
       "type": "person_organization",
@@ -15051,6 +15891,14 @@
       "weight": 1.0
     },
     {
+      "source": "person:PERS_2011b78d",
+      "target": "organization:РГПУ им. Герцена",
+      "type": "person_organization",
+      "year": 2021,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
       "source": "person:PERS_22d87263",
       "target": "organization:СПбГУ",
       "type": "person_organization",
@@ -15069,6 +15917,14 @@
     {
       "source": "person:PERS_2c40b9b1",
       "target": "organization:СПбГУ",
+      "type": "person_organization",
+      "year": 2007,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_2c9b38ec",
+      "target": "organization:СПбГИК",
       "type": "person_organization",
       "year": 2007,
       "series": "Zograf Readings",
@@ -15171,6 +16027,22 @@
       "weight": 1.0
     },
     {
+      "source": "person:PERS_3195408b",
+      "target": "organization:РУДН",
+      "type": "person_organization",
+      "year": 2025,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_36dabb79",
+      "target": "organization:ИСАА",
+      "type": "person_organization",
+      "year": 2016,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
       "source": "person:PERS_36dabb79",
       "target": "organization:МГУ",
       "type": "person_organization",
@@ -15228,6 +16100,30 @@
     },
     {
       "source": "person:PERS_3b196639",
+      "target": "organization:ГАУГН",
+      "type": "person_organization",
+      "year": 2019,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_3b196639",
+      "target": "organization:ГАУГН",
+      "type": "person_organization",
+      "year": 2020,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_3b196639",
+      "target": "organization:ГАУГН",
+      "type": "person_organization",
+      "year": 2021,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_3b196639",
       "target": "organization:ИВ РАН",
       "type": "person_organization",
       "year": 2022,
@@ -15245,6 +16141,38 @@
     {
       "source": "person:PERS_3c202afd",
       "target": "organization:ИВР РАН",
+      "type": "person_organization",
+      "year": 2021,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_3c7d41ac",
+      "target": "organization:Ольстерский университет",
+      "type": "person_organization",
+      "year": 2015,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_3c7d41ac",
+      "target": "organization:Ольстерский университет",
+      "type": "person_organization",
+      "year": 2017,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_3c7d41ac",
+      "target": "organization:Ольстерский университет",
+      "type": "person_organization",
+      "year": 2018,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_3c7d41ac",
+      "target": "organization:Ольстерский университет",
       "type": "person_organization",
       "year": 2021,
       "series": "Roerich Readings",
@@ -15272,6 +16200,14 @@
       "type": "person_organization",
       "year": 2022,
       "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_3e38ff72",
+      "target": "organization:РГПУ им. Герцена",
+      "type": "person_organization",
+      "year": 2024,
+      "series": "Roerich Readings",
       "weight": 1.0
     },
     {
@@ -15303,6 +16239,62 @@
       "target": "organization:Независимые исследователи",
       "type": "person_organization",
       "year": 2025,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_41d6aa73",
+      "target": "organization:ГИИ",
+      "type": "person_organization",
+      "year": 2015,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_41d6aa73",
+      "target": "organization:ГИИ",
+      "type": "person_organization",
+      "year": 2016,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_41d6aa73",
+      "target": "organization:ГИИ",
+      "type": "person_organization",
+      "year": 2017,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_41d6aa73",
+      "target": "organization:ГИИ",
+      "type": "person_organization",
+      "year": 2018,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_41d6aa73",
+      "target": "organization:ГИИ",
+      "type": "person_organization",
+      "year": 2019,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_41d6aa73",
+      "target": "organization:ГИИ",
+      "type": "person_organization",
+      "year": 2020,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_41d6aa73",
+      "target": "organization:ГИИ",
+      "type": "person_organization",
+      "year": 2021,
       "series": "Roerich Readings",
       "weight": 1.0
     },
@@ -15507,6 +16499,14 @@
       "weight": 1.0
     },
     {
+      "source": "person:PERS_554c138a",
+      "target": "organization:ИИЕТ РАН",
+      "type": "person_organization",
+      "year": 2015,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
       "source": "person:PERS_56508328",
       "target": "organization:СПбГУ",
       "type": "person_organization",
@@ -15587,6 +16587,30 @@
       "weight": 1.0
     },
     {
+      "source": "person:PERS_5ed752d9",
+      "target": "organization:РУДН",
+      "type": "person_organization",
+      "year": 2016,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_5ed752d9",
+      "target": "organization:РУДН",
+      "type": "person_organization",
+      "year": 2017,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_5ed752d9",
+      "target": "organization:РУДН",
+      "type": "person_organization",
+      "year": 2018,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
       "source": "person:PERS_5f6fa17b",
       "target": "organization:МГУ",
       "type": "person_organization",
@@ -15599,6 +16623,14 @@
       "target": "organization:МГУ",
       "type": "person_organization",
       "year": 2024,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_61202bf3",
+      "target": "organization:ИСАА",
+      "type": "person_organization",
+      "year": 2012,
       "series": "Roerich Readings",
       "weight": 1.0
     },
@@ -15747,6 +16779,14 @@
       "weight": 1.0
     },
     {
+      "source": "person:PERS_6a165aa7",
+      "target": "organization:ИСАА",
+      "type": "person_organization",
+      "year": 2025,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
       "source": "person:PERS_6ae5c779",
       "target": "organization:МГУ",
       "type": "person_organization",
@@ -15779,11 +16819,35 @@
       "weight": 1.0
     },
     {
+      "source": "person:PERS_7da0afff",
+      "target": "organization:РАНХиГС",
+      "type": "person_organization",
+      "year": 2018,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_7efcddc6",
+      "target": "organization:КрасГАУ",
+      "type": "person_organization",
+      "year": 2024,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
       "source": "person:PERS_829c1de5",
       "target": "organization:МАЭ РАН",
       "type": "person_organization",
       "year": 2007,
       "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_88e5311f",
+      "target": "organization:КНЦ РАН",
+      "type": "person_organization",
+      "year": 2025,
+      "series": "Roerich Readings",
       "weight": 1.0
     },
     {
@@ -16019,6 +17083,14 @@
       "weight": 1.0
     },
     {
+      "source": "person:PERS_9ddf9210",
+      "target": "organization:ИМБТ СО РАН",
+      "type": "person_organization",
+      "year": 2025,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
       "source": "person:PERS_9f398436",
       "target": "organization:НИУ ВШЭ",
       "type": "person_organization",
@@ -16039,6 +17111,14 @@
       "target": "organization:НИУ ВШЭ",
       "type": "person_organization",
       "year": 2023,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_a8983673",
+      "target": "organization:РостГМУ",
+      "type": "person_organization",
+      "year": 2024,
       "series": "Roerich Readings",
       "weight": 1.0
     },
@@ -16276,6 +17356,14 @@
     },
     {
       "source": "person:PERS_ced3d7b4",
+      "target": "organization:ИМЛИ РАН",
+      "type": "person_organization",
+      "year": 2025,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_ced3d7b4",
       "target": "organization:НИУ ВШЭ",
       "type": "person_organization",
       "year": 2024,
@@ -16451,6 +17539,38 @@
       "weight": 1.0
     },
     {
+      "source": "person:PERS_d98da899",
+      "target": "organization:ИЭА РАН",
+      "type": "person_organization",
+      "year": 2012,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_d98da899",
+      "target": "organization:ИЭА РАН",
+      "type": "person_organization",
+      "year": 2015,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_d98da899",
+      "target": "organization:ИЭА РАН",
+      "type": "person_organization",
+      "year": 2017,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_d98da899",
+      "target": "organization:ИЭА РАН",
+      "type": "person_organization",
+      "year": 2019,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
       "source": "person:PERS_da862dde",
       "target": "organization:ИВ РАН",
       "type": "person_organization",
@@ -16535,6 +17655,38 @@
       "target": "organization:ИВ РАН",
       "type": "person_organization",
       "year": 2025,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_db0a826b",
+      "target": "organization:ИЯ РАН",
+      "type": "person_organization",
+      "year": 2012,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_db0a826b",
+      "target": "organization:ИЯ РАН",
+      "type": "person_organization",
+      "year": 2016,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_db0a826b",
+      "target": "organization:ИЯ РАН",
+      "type": "person_organization",
+      "year": 2017,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_db0a826b",
+      "target": "organization:ИЯ РАН",
+      "type": "person_organization",
+      "year": 2018,
       "series": "Roerich Readings",
       "weight": 1.0
     },
@@ -16555,6 +17707,206 @@
       "weight": 1.0
     },
     {
+      "source": "person:PERS_e15e7491",
+      "target": "organization:Ольстерский университет",
+      "type": "person_organization",
+      "year": 2017,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_e1d622e5",
+      "target": "organization:ИИЭ Валиханова",
+      "type": "person_organization",
+      "year": 2012,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_e1dd6b3e",
+      "target": "organization:ИМЛИ РАН",
+      "type": "person_organization",
+      "year": 2012,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_e1dd6b3e",
+      "target": "organization:ИМЛИ РАН",
+      "type": "person_organization",
+      "year": 2015,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_e1dd6b3e",
+      "target": "organization:ИМЛИ РАН",
+      "type": "person_organization",
+      "year": 2021,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_e1dd6b3e",
+      "target": "organization:ИМЛИ РАН",
+      "type": "person_organization",
+      "year": 2022,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_e1dd6b3e",
+      "target": "organization:ИМЛИ РАН",
+      "type": "person_organization",
+      "year": 2023,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_e1dd6b3e",
+      "target": "organization:ИМЛИ РАН",
+      "type": "person_organization",
+      "year": 2024,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_e1dd6b3e",
+      "target": "organization:ИМЛИ РАН",
+      "type": "person_organization",
+      "year": 2025,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_e31ca12d",
+      "target": "organization:МГППУ",
+      "type": "person_organization",
+      "year": 2016,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_e31ca12d",
+      "target": "organization:МГППУ",
+      "type": "person_organization",
+      "year": 2017,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_e31ca12d",
+      "target": "organization:МГППУ",
+      "type": "person_organization",
+      "year": 2018,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_e31ca12d",
+      "target": "organization:МГППУ",
+      "type": "person_organization",
+      "year": 2019,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_e31ca12d",
+      "target": "organization:МГППУ",
+      "type": "person_organization",
+      "year": 2020,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_e31ca12d",
+      "target": "organization:МГППУ",
+      "type": "person_organization",
+      "year": 2021,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_e31ca12d",
+      "target": "organization:РУДН",
+      "type": "person_organization",
+      "year": 2022,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_e31ca12d",
+      "target": "organization:РУДН",
+      "type": "person_organization",
+      "year": 2023,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_e72d4c09",
+      "target": "organization:ИВ НАН Украины",
+      "type": "person_organization",
+      "year": 2012,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_e72d4c09",
+      "target": "organization:ИВ НАН Украины",
+      "type": "person_organization",
+      "year": 2015,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_e72d4c09",
+      "target": "organization:ИВ НАН Украины",
+      "type": "person_organization",
+      "year": 2016,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_e72d4c09",
+      "target": "organization:ИВ НАН Украины",
+      "type": "person_organization",
+      "year": 2017,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_e72d4c09",
+      "target": "organization:ИВ НАН Украины",
+      "type": "person_organization",
+      "year": 2018,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_e72d4c09",
+      "target": "organization:ИВ НАН Украины",
+      "type": "person_organization",
+      "year": 2020,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_e72d4c09",
+      "target": "organization:ИВ НАН Украины",
+      "type": "person_organization",
+      "year": 2021,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_e72d4c09",
+      "target": "organization:ИВ НАН Украины",
+      "type": "person_organization",
+      "year": 2022,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
       "source": "person:PERS_e9545a0b",
       "target": "organization:ИВ РАН",
       "type": "person_organization",
@@ -16711,6 +18063,14 @@
       "target": "organization:ИВ РАН",
       "type": "person_organization",
       "year": 2025,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_ea44fd14",
+      "target": "organization:РУДН",
+      "type": "person_organization",
+      "year": 2017,
       "series": "Roerich Readings",
       "weight": 1.0
     },
@@ -16775,6 +18135,14 @@
       "target": "organization:СПбГУ",
       "type": "person_organization",
       "year": 2015,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_ee3448c3",
+      "target": "organization:УрФУ",
+      "type": "person_organization",
+      "year": 2012,
       "series": "Roerich Readings",
       "weight": 1.0
     },
@@ -16900,6 +18268,38 @@
     },
     {
       "source": "person:PERS_f2fef030",
+      "target": "organization:ГММ Скрябина",
+      "type": "person_organization",
+      "year": 2020,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_f2fef030",
+      "target": "organization:ГММ Скрябина",
+      "type": "person_organization",
+      "year": 2021,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_f2fef030",
+      "target": "organization:ГММ Скрябина",
+      "type": "person_organization",
+      "year": 2022,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_f2fef030",
+      "target": "organization:ГММ Скрябина",
+      "type": "person_organization",
+      "year": 2023,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_f2fef030",
       "target": "organization:ИВ РАН",
       "type": "person_organization",
       "year": 2018,
@@ -16911,6 +18311,30 @@
       "target": "organization:ИВ РАН",
       "type": "person_organization",
       "year": 2019,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_f2fef030",
+      "target": "organization:МЦР",
+      "type": "person_organization",
+      "year": 2015,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_f2fef030",
+      "target": "organization:МЦР",
+      "type": "person_organization",
+      "year": 2017,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_f5b8b340",
+      "target": "organization:ИСАА",
+      "type": "person_organization",
+      "year": 2023,
       "series": "Roerich Readings",
       "weight": 1.0
     },
@@ -17644,6 +19068,14 @@
     },
     {
       "source": "person:PERS_003adcfe",
+      "target": "person:PERS_30b54681",
+      "type": "person_person_same_session",
+      "year": 2015,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_003adcfe",
       "target": "person:PERS_310b2911",
       "type": "person_person_same_session",
       "year": 2025,
@@ -18119,14 +19551,6 @@
       "target": "person:PERS_c5677a3f",
       "type": "person_person_same_session",
       "year": 2016,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_003adcfe",
-      "target": "person:PERS_c9e43db7",
-      "type": "person_person_same_session",
-      "year": 2015,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -20724,6 +22148,14 @@
     },
     {
       "source": "person:PERS_0c451d76",
+      "target": "person:PERS_30b54681",
+      "type": "person_person_same_session",
+      "year": 2015,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_0c451d76",
       "target": "person:PERS_3357f25b",
       "type": "person_person_same_session",
       "year": 2012,
@@ -21023,14 +22455,6 @@
       "target": "person:PERS_c5677a3f",
       "type": "person_person_same_session",
       "year": 2016,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_0c451d76",
-      "target": "person:PERS_c9e43db7",
-      "type": "person_person_same_session",
-      "year": 2015,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -23236,14 +24660,6 @@
     },
     {
       "source": "person:PERS_11da326d",
-      "target": "person:PERS_752884a2",
-      "type": "person_person_same_session",
-      "year": 2017,
-      "series": "Roerich Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_11da326d",
       "target": "person:PERS_7542d270",
       "type": "person_person_same_session",
       "year": 2016,
@@ -23948,6 +25364,14 @@
     },
     {
       "source": "person:PERS_11da326d",
+      "target": "person:PERS_e15e7491",
+      "type": "person_person_same_session",
+      "year": 2017,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_11da326d",
       "target": "person:PERS_e1dd6b3e",
       "type": "person_person_same_session",
       "year": 2008,
@@ -24399,6 +25823,14 @@
       "target": "person:PERS_30b54681",
       "type": "person_person_same_session",
       "year": 2010,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_12125da9",
+      "target": "person:PERS_30b54681",
+      "type": "person_person_same_session",
+      "year": 2015,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -25135,14 +26567,6 @@
       "target": "person:PERS_c5677a3f",
       "type": "person_person_same_session",
       "year": 2016,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_12125da9",
-      "target": "person:PERS_c9e43db7",
-      "type": "person_person_same_session",
-      "year": 2015,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -27116,14 +28540,6 @@
     },
     {
       "source": "person:PERS_1fa7cc0c",
-      "target": "person:PERS_752884a2",
-      "type": "person_person_same_session",
-      "year": 2017,
-      "series": "Roerich Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_1fa7cc0c",
       "target": "person:PERS_7542d270",
       "type": "person_person_same_session",
       "year": 2019,
@@ -27504,6 +28920,14 @@
       "type": "person_person_same_session",
       "year": 2019,
       "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_1fa7cc0c",
+      "target": "person:PERS_e15e7491",
+      "type": "person_person_same_session",
+      "year": 2017,
+      "series": "Roerich Readings",
       "weight": 1.0
     },
     {
@@ -31060,7 +32484,7 @@
     },
     {
       "source": "person:PERS_2f26a47a",
-      "target": "person:PERS_410c5a08",
+      "target": "person:PERS_5cb1449b",
       "type": "person_person_same_session",
       "year": 2004,
       "series": "Zograf Readings",
@@ -31748,6 +33172,14 @@
     },
     {
       "source": "person:PERS_3074a8e5",
+      "target": "person:PERS_30b54681",
+      "type": "person_person_same_session",
+      "year": 2015,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_3074a8e5",
       "target": "person:PERS_3357f25b",
       "type": "person_person_same_session",
       "year": 2013,
@@ -32028,14 +33460,6 @@
     },
     {
       "source": "person:PERS_3074a8e5",
-      "target": "person:PERS_c9e43db7",
-      "type": "person_person_same_session",
-      "year": 2015,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_3074a8e5",
       "target": "person:PERS_d3c5382c",
       "type": "person_person_same_session",
       "year": 2016,
@@ -32188,6 +33612,14 @@
     },
     {
       "source": "person:PERS_30b54681",
+      "target": "person:PERS_56508328",
+      "type": "person_person_same_session",
+      "year": 2015,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_30b54681",
       "target": "person:PERS_7700f517",
       "type": "person_person_same_session",
       "year": 2010,
@@ -32236,6 +33668,14 @@
     },
     {
       "source": "person:PERS_30b54681",
+      "target": "person:PERS_92f293f8",
+      "type": "person_person_same_session",
+      "year": 2015,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_30b54681",
       "target": "person:PERS_ba81468a",
       "type": "person_person_same_session",
       "year": 2009,
@@ -32255,6 +33695,22 @@
       "target": "person:PERS_dd7de77e",
       "type": "person_person_same_session",
       "year": 2010,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_30b54681",
+      "target": "person:PERS_e96139bd",
+      "type": "person_person_same_session",
+      "year": 2015,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_30b54681",
+      "target": "person:PERS_ebb6d156",
+      "type": "person_person_same_session",
+      "year": 2015,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -32376,62 +33832,6 @@
       "type": "person_person_same_session",
       "year": 2025,
       "series": "Roerich Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_325e94f3",
-      "target": "person:PERS_3fd690ee",
-      "type": "person_person_same_session",
-      "year": 2017,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_325e94f3",
-      "target": "person:PERS_42da4866",
-      "type": "person_person_same_session",
-      "year": 2017,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_325e94f3",
-      "target": "person:PERS_50d73711",
-      "type": "person_person_same_session",
-      "year": 2017,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_325e94f3",
-      "target": "person:PERS_88d163c1",
-      "type": "person_person_same_session",
-      "year": 2017,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_325e94f3",
-      "target": "person:PERS_8df3730a",
-      "type": "person_person_same_session",
-      "year": 2017,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_325e94f3",
-      "target": "person:PERS_91b473b1",
-      "type": "person_person_same_session",
-      "year": 2017,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_325e94f3",
-      "target": "person:PERS_c52dfaa0",
-      "type": "person_person_same_session",
-      "year": 2017,
-      "series": "Zograf Readings",
       "weight": 1.0
     },
     {
@@ -33876,14 +35276,6 @@
     },
     {
       "source": "person:PERS_36dabb79",
-      "target": "person:PERS_752884a2",
-      "type": "person_person_same_session",
-      "year": 2017,
-      "series": "Roerich Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_36dabb79",
       "target": "person:PERS_829c1de5",
       "type": "person_person_same_session",
       "year": 2007,
@@ -34063,6 +35455,14 @@
       "target": "person:PERS_da862dde",
       "type": "person_person_same_session",
       "year": 2018,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_36dabb79",
+      "target": "person:PERS_e15e7491",
+      "type": "person_person_same_session",
+      "year": 2017,
       "series": "Roerich Readings",
       "weight": 1.0
     },
@@ -35580,7 +36980,7 @@
     },
     {
       "source": "person:PERS_3e105f43",
-      "target": "person:PERS_410c5a08",
+      "target": "person:PERS_5cb1449b",
       "type": "person_person_same_session",
       "year": 2004,
       "series": "Zograf Readings",
@@ -36591,6 +37991,14 @@
       "target": "person:PERS_f19cd8a1",
       "type": "person_person_same_session",
       "year": 2016,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_3fd690ee",
+      "target": "person:PERS_f19cd8a1",
+      "type": "person_person_same_session",
+      "year": 2017,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -37811,62 +39219,6 @@
       "weight": 1.0
     },
     {
-      "source": "person:PERS_410c5a08",
-      "target": "person:PERS_829c1de5",
-      "type": "person_person_same_session",
-      "year": 2004,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_410c5a08",
-      "target": "person:PERS_88d163c1",
-      "type": "person_person_same_session",
-      "year": 2004,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_410c5a08",
-      "target": "person:PERS_96b8b195",
-      "type": "person_person_same_session",
-      "year": 2004,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_410c5a08",
-      "target": "person:PERS_9a855a7b",
-      "type": "person_person_same_session",
-      "year": 2004,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_410c5a08",
-      "target": "person:PERS_ba537782",
-      "type": "person_person_same_session",
-      "year": 2004,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_410c5a08",
-      "target": "person:PERS_ba81468a",
-      "type": "person_person_same_session",
-      "year": 2004,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_410c5a08",
-      "target": "person:PERS_e5a5ac24",
-      "type": "person_person_same_session",
-      "year": 2004,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
       "source": "person:PERS_41d6aa73",
       "target": "person:PERS_50c46233",
       "type": "person_person_same_session",
@@ -38343,6 +39695,14 @@
       "target": "person:PERS_dd7de77e",
       "type": "person_person_same_session",
       "year": 2018,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_42da4866",
+      "target": "person:PERS_f19cd8a1",
+      "type": "person_person_same_session",
+      "year": 2017,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -39048,6 +40408,14 @@
       "type": "person_person_same_session",
       "year": 2020,
       "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_50d73711",
+      "target": "person:PERS_f19cd8a1",
+      "type": "person_person_same_session",
+      "year": 2017,
+      "series": "Zograf Readings",
       "weight": 1.0
     },
     {
@@ -40036,14 +41404,6 @@
     },
     {
       "source": "person:PERS_56508328",
-      "target": "person:PERS_c9e43db7",
-      "type": "person_person_same_session",
-      "year": 2015,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_56508328",
       "target": "person:PERS_d3c5382c",
       "type": "person_person_same_session",
       "year": 2016,
@@ -40591,6 +41951,62 @@
       "target": "person:PERS_fb73fb38",
       "type": "person_person_same_session",
       "year": 2026,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_5cb1449b",
+      "target": "person:PERS_829c1de5",
+      "type": "person_person_same_session",
+      "year": 2004,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_5cb1449b",
+      "target": "person:PERS_88d163c1",
+      "type": "person_person_same_session",
+      "year": 2004,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_5cb1449b",
+      "target": "person:PERS_96b8b195",
+      "type": "person_person_same_session",
+      "year": 2004,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_5cb1449b",
+      "target": "person:PERS_9a855a7b",
+      "type": "person_person_same_session",
+      "year": 2004,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_5cb1449b",
+      "target": "person:PERS_ba537782",
+      "type": "person_person_same_session",
+      "year": 2004,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_5cb1449b",
+      "target": "person:PERS_ba81468a",
+      "type": "person_person_same_session",
+      "year": 2004,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_5cb1449b",
+      "target": "person:PERS_e5a5ac24",
+      "type": "person_person_same_session",
+      "year": 2004,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -43747,46 +45163,6 @@
       "weight": 1.0
     },
     {
-      "source": "person:PERS_752884a2",
-      "target": "person:PERS_92868e4f",
-      "type": "person_person_same_session",
-      "year": 2017,
-      "series": "Roerich Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_752884a2",
-      "target": "person:PERS_b8bade8d",
-      "type": "person_person_same_session",
-      "year": 2017,
-      "series": "Roerich Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_752884a2",
-      "target": "person:PERS_c52dfaa0",
-      "type": "person_person_same_session",
-      "year": 2017,
-      "series": "Roerich Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_752884a2",
-      "target": "person:PERS_da862dde",
-      "type": "person_person_same_session",
-      "year": 2017,
-      "series": "Roerich Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_752884a2",
-      "target": "person:PERS_e9545a0b",
-      "type": "person_person_same_session",
-      "year": 2017,
-      "series": "Roerich Readings",
-      "weight": 1.0
-    },
-    {
       "source": "person:PERS_7542d270",
       "target": "person:PERS_829c1de5",
       "type": "person_person_same_session",
@@ -46668,6 +48044,14 @@
     },
     {
       "source": "person:PERS_88d163c1",
+      "target": "person:PERS_f19cd8a1",
+      "type": "person_person_same_session",
+      "year": 2017,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_88d163c1",
       "target": "person:PERS_f2fef030",
       "type": "person_person_same_session",
       "year": 2008,
@@ -47079,6 +48463,14 @@
       "target": "person:PERS_f19cd8a1",
       "type": "person_person_same_session",
       "year": 2015,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_8df3730a",
+      "target": "person:PERS_f19cd8a1",
+      "type": "person_person_same_session",
+      "year": 2017,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -47654,6 +49046,14 @@
       "source": "person:PERS_91b473b1",
       "target": "person:PERS_f19cd8a1",
       "type": "person_person_same_session",
+      "year": 2017,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_91b473b1",
+      "target": "person:PERS_f19cd8a1",
+      "type": "person_person_same_session",
       "year": 2022,
       "series": "Zograf Readings",
       "weight": 1.0
@@ -47903,6 +49303,14 @@
       "target": "person:PERS_de59a2bc",
       "type": "person_person_same_session",
       "year": 2012,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_92868e4f",
+      "target": "person:PERS_e15e7491",
+      "type": "person_person_same_session",
+      "year": 2017,
       "series": "Roerich Readings",
       "weight": 1.0
     },
@@ -48207,14 +49615,6 @@
       "target": "person:PERS_c5677a3f",
       "type": "person_person_same_session",
       "year": 2016,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_92f293f8",
-      "target": "person:PERS_c9e43db7",
-      "type": "person_person_same_session",
-      "year": 2015,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -51092,6 +52492,14 @@
     },
     {
       "source": "person:PERS_b8bade8d",
+      "target": "person:PERS_e15e7491",
+      "type": "person_person_same_session",
+      "year": 2017,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_b8bade8d",
       "target": "person:PERS_e1dd6b3e",
       "type": "person_person_same_session",
       "year": 2015,
@@ -52428,6 +53836,14 @@
     },
     {
       "source": "person:PERS_c52dfaa0",
+      "target": "person:PERS_e15e7491",
+      "type": "person_person_same_session",
+      "year": 2017,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_c52dfaa0",
       "target": "person:PERS_e1dd6b3e",
       "type": "person_person_same_session",
       "year": 2026,
@@ -52575,6 +53991,14 @@
       "target": "person:PERS_f19cd8a1",
       "type": "person_person_same_session",
       "year": 2016,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_c52dfaa0",
+      "target": "person:PERS_f19cd8a1",
+      "type": "person_person_same_session",
+      "year": 2017,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -52975,22 +54399,6 @@
       "target": "person:PERS_f56c5a7e",
       "type": "person_person_same_session",
       "year": 2025,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_c9e43db7",
-      "target": "person:PERS_e96139bd",
-      "type": "person_person_same_session",
-      "year": 2015,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_c9e43db7",
-      "target": "person:PERS_ebb6d156",
-      "type": "person_person_same_session",
-      "year": 2015,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -53884,6 +55292,14 @@
     },
     {
       "source": "person:PERS_da862dde",
+      "target": "person:PERS_e15e7491",
+      "type": "person_person_same_session",
+      "year": 2017,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_da862dde",
       "target": "person:PERS_e1dd6b3e",
       "type": "person_person_same_session",
       "year": 2012,
@@ -54303,6 +55719,14 @@
       "target": "person:PERS_f2fef030",
       "type": "person_person_same_session",
       "year": 2016,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_e15e7491",
+      "target": "person:PERS_e9545a0b",
+      "type": "person_person_same_session",
+      "year": 2017,
       "series": "Roerich Readings",
       "weight": 1.0
     },
@@ -57427,6 +58851,14 @@
       "weight": 1.0
     },
     {
+      "source": "person:PERS_30b54681",
+      "target": "theme:religion_and_philosophy",
+      "type": "person_theme",
+      "year": 2015,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
       "source": "person:PERS_310b2911",
       "target": "theme:religion_and_philosophy",
       "type": "person_theme",
@@ -57456,14 +58888,6 @@
       "type": "person_theme",
       "year": 2025,
       "series": "Roerich Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_325e94f3",
-      "target": "theme:literature_and_poetry",
-      "type": "person_theme",
-      "year": 2017,
-      "series": "Zograf Readings",
       "weight": 1.0
     },
     {
@@ -58587,14 +60011,6 @@
       "weight": 1.0
     },
     {
-      "source": "person:PERS_410c5a08",
-      "target": "theme:literature_and_poetry",
-      "type": "person_theme",
-      "year": 2004,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
       "source": "person:PERS_41d6aa73",
       "target": "theme:art_and_material_culture",
       "type": "person_theme",
@@ -59399,6 +60815,14 @@
       "target": "theme:linguistics_and_philology",
       "type": "person_theme",
       "year": 2026,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_5cb1449b",
+      "target": "theme:literature_and_poetry",
+      "type": "person_theme",
+      "year": 2004,
       "series": "Zograf Readings",
       "weight": 1.0
     },
@@ -60232,14 +61656,6 @@
       "type": "person_theme",
       "year": 2017,
       "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
-      "source": "person:PERS_752884a2",
-      "target": "theme:literature_and_poetry",
-      "type": "person_theme",
-      "year": 2017,
-      "series": "Roerich Readings",
       "weight": 1.0
     },
     {
@@ -63355,14 +64771,6 @@
       "weight": 1.0
     },
     {
-      "source": "person:PERS_c9e43db7",
-      "target": "theme:religion_and_philosophy",
-      "type": "person_theme",
-      "year": 2015,
-      "series": "Zograf Readings",
-      "weight": 1.0
-    },
-    {
       "source": "person:PERS_cac87738",
       "target": "theme:history_and_culture",
       "type": "person_theme",
@@ -64375,6 +65783,14 @@
       "target": "theme:religion_and_philosophy",
       "type": "person_theme",
       "year": 2016,
+      "series": "Roerich Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_e15e7491",
+      "target": "theme:literature_and_poetry",
+      "type": "person_theme",
+      "year": 2017,
       "series": "Roerich Readings",
       "weight": 1.0
     },
@@ -65479,6 +66895,14 @@
       "target": "theme:literature_and_poetry",
       "type": "person_theme",
       "year": 2016,
+      "series": "Zograf Readings",
+      "weight": 1.0
+    },
+    {
+      "source": "person:PERS_f19cd8a1",
+      "target": "theme:literature_and_poetry",
+      "type": "person_theme",
+      "year": 2017,
       "series": "Zograf Readings",
       "weight": 1.0
     },

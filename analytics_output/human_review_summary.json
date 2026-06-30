@@ -1,9 +1,9 @@
 {
   "schema_version": "1.0.0",
-  "total_open_review_items": 3399,
+  "total_open_review_items": 3400,
   "by_domain": {
     "affiliation_scope": 60,
-    "authority_identity": 270,
+    "authority_identity": 268,
     "biographical_gap": 65,
     "classification_reliability": 35,
     "coauthorship_review": 26,
@@ -19,15 +19,15 @@
     "scholarly_lineage": 1,
     "scientometrics_claim": 10,
     "scientometrics_guardrail": 8,
-    "senior_absence": 18,
-    "senior_biographical_verification": 12,
+    "senior_absence": 20,
+    "senior_biographical_verification": 13,
     "spacetime_index": 1076,
     "theme_classification": 34,
     "theme_uncertainty": 329,
     "wikipedia_identity": 690
   },
   "by_source_file": {
-    "analytics_output/authority_review_queue.csv": 270,
+    "analytics_output/authority_review_queue.csv": 268,
     "analytics_output/birth_year_gap_audit.csv": 65,
     "analytics_output/classification_reliability_sample.csv": 35,
     "analytics_output/coauthorship_review.csv": 26,
@@ -43,12 +43,12 @@
     "analytics_output/rinc_lookup_queue.csv": 226,
     "analytics_output/scientometrics_claim_registry.csv": 10,
     "analytics_output/scientometrics_guardrails.csv": 8,
-    "analytics_output/senior_absence_audit.csv": 18,
+    "analytics_output/senior_absence_audit.csv": 20,
     "analytics_output/spacetime_unmatched.csv": 1076,
     "analytics_output/theme_codes_uncertain_v2.csv": 329,
     "analytics_output/theme_review_queue.csv": 34,
     "analytics_output/wikipedia_authority_candidates.csv": 690,
     "analytics_output/zograf_2026_affiliation_audit.csv": 60,
-    "curation/senior_biographical_verification.csv": 12
+    "curation/senior_biographical_verification.csv": 13
   }
 }

@@ -5,9 +5,9 @@
 
 ## 1. High-Level Executive Summary
 
-- **Total Unique Scholars Identified**: 270
+- **Total Unique Scholars Identified**: 268
 - **Total Historical Presentations/Talks**: 1388
-- **Scholars in Zograf Readings only**: 165
+- **Scholars in Zograf Readings only**: 163
 - **Scholars in Roerich Readings only**: 64
 - **Scholars Active in BOTH Conferences (Overlapping Cohort)**: 41
 
@@ -98,25 +98,25 @@ The complete structured lists have been generated and exported to the `analytics
 ## 6. Демографический тренд: возраст участников на день конференции
 
 > Возраст = год начала конференции − год рождения участника (погрешность ≤1 год).
-> Год рождения известен для **231** из 270 учёных (39 отсутствуют, см. `missing_birth_years.md`).
+> Год рождения известен для **234** из 268 учёных (34 отсутствуют, см. `missing_birth_years.md`).
 
 ### Зографские чтения (май, Санкт-Петербург)
 
 | Год | Дата | N | Ср. возраст | Медиана | P25–P75 | Мин–Макс |
 | :---: | :--- | :---: | :---: | :---: | :--- | :--- |
-| 2004 | 2004-05-24 | 26 | 50.6 | 48.5 | 35.8–67.2 | 20–86 |
-| 2006 | 2006-05-15 | 28 | 49.4 | 49.5 | 36.0–62.2 | 22–88 |
+| 2004 | 2004-05-24 | 27 | 50.4 | 48 | 36.0–67.0 | 20–86 |
+| 2006 | 2006-05-15 | 29 | 49.7 | 50 | 36.0–61.5 | 22–88 |
 | 2007 | 2007-05-23 | 28 | 43.3 | 41.5 | 29.5–55.0 | 18–71 |
-| 2008 | 2008-05-26 | 22 | 51.6 | 53.5 | 36.8–68.2 | 30–77 |
-| 2009 | 2009-05-27 | 28 | 44.9 | 40.0 | 33.5–55.5 | 21–73 |
-| 2010 | 2010-05-17 | 24 | 47.3 | 41.5 | 34.2–63.0 | 22–79 |
-| 2011 | 2011-05-23 | 32 | 50.9 | 52.5 | 37.5–65.0 | 23–80 |
-| 2012 | 2012-05-16 | 33 | 47.1 | 44 | 34.0–61.5 | 26–76 |
+| 2008 | 2008-05-26 | 23 | 52.0 | 54 | 37.0–68.0 | 30–77 |
+| 2009 | 2009-05-27 | 29 | 45.4 | 40 | 34.0–56.5 | 21–73 |
+| 2010 | 2010-05-17 | 25 | 47.9 | 42 | 34.5–63.5 | 22–79 |
+| 2011 | 2011-05-23 | 33 | 51.3 | 54 | 38.0–65.0 | 23–80 |
+| 2012 | 2012-05-16 | 34 | 47.6 | 44.0 | 34.0–63.5 | 26–76 |
 | 2013 | 2013-05-15 | 36 | 49.2 | 46.0 | 37.0–60.8 | 27–82 |
 | 2014 | 2014-05-14 | 38 | 48.1 | 45.5 | 36.8–60.2 | 27–75 |
-| 2015 | 2015-05-25 | 39 | 48.9 | 47 | 37.0–60.0 | 23–84 |
+| 2015 | 2015-05-25 | 40 | 48.4 | 47.0 | 37.0–59.5 | 23–84 |
 | 2016 | 2016-05-11 | 41 | 47.9 | 46 | 35.5–60.0 | 22–85 |
-| 2017 | 2017-05-16 | 40 | 47.6 | 46.5 | 35.0–56.8 | 25–86 |
+| 2017 | 2017-05-16 | 41 | 47.7 | 47 | 35.0–56.5 | 25–86 |
 | 2018 | 2018-05-15 | 46 | 49.2 | 48.5 | 36.0–59.2 | 26–87 |
 | 2019 | 2019-05-14 | 53 | 46.4 | 45 | 34.0–53.5 | 22–88 |
 | 2020 | 2020-05-12 | 46 | 47.6 | 42.0 | 35.0–63.2 | 29–81 |
@@ -138,7 +138,7 @@ The complete structured lists have been generated and exported to the `analytics
 | 2013 | 2013-12-09 | 21 | 46.6 | 44 | 35.0–58.5 | 21–80 |
 | 2015 | 2015-12-09 | 31 | 46.4 | 39 | 33.0–60.0 | 22–82 |
 | 2016 | 2016-12-09 | 33 | 49.9 | 47 | 34.0–73.5 | 23–84 |
-| 2017 | 2017-12-09 | 37 | 52.4 | 48 | 39.0–74.5 | 25–85 |
+| 2017 | 2017-12-09 | 38 | 52.9 | 48.0 | 39.0–73.8 | 25–85 |
 | 2018 | 2018-12-09 | 36 | 49.4 | 44.5 | 33.5–57.0 | 26–86 |
 | 2019 | 2019-12-09 | 32 | 49.6 | 44.5 | 36.2–54.8 | 27–86 |
 | 2020 | 2020-12-09 | 30 | 48.8 | 42.5 | 37.8–56.0 | 27–87 |
@@ -152,8 +152,8 @@ The complete structured lists have been generated and exported to the `analytics
 
 We analyze the structure of Russian Indological conferences through the lens of participation networks. Unlike traditional bibliometric networks (which map who cites whom), our networks map **co-presence and shared scholarly context**. They help identify institutional centers of gravity, disciplinary clustering, and bridge scholars between the Zograf and Roerich readings.
 
-**Nodes Generated:** 324
+**Nodes Generated:** 344
 
-**Edges Generated:** 7937
+**Edges Generated:** 8095
 
 The network is exported into standard edge list and node list CSV formats (`network_nodes.csv` and `network_edges.csv`) for use in external graphing tools like Gephi or Cytoscape.

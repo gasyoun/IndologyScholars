@@ -8,11 +8,11 @@
 <text x="46" y="196" fill="#a8b7ae" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="400" text-anchor="start">строк с несколькими именами</text>
 <rect x="248" y="92" width="204" height="128" rx="10" fill="#17201c" stroke="#304139"/>
 <text x="266" y="122" fill="#eef6f0" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="750" text-anchor="start">Отсутствия</text>
-<text x="266" y="168" fill="#f87171" font-family="Inter, Arial, sans-serif" font-size="38" font-weight="800" text-anchor="start">18</text>
+<text x="266" y="168" fill="#f87171" font-family="Inter, Arial, sans-serif" font-size="38" font-weight="800" text-anchor="start">20</text>
 <text x="266" y="196" fill="#a8b7ae" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="400" text-anchor="start">старших участников в очереди</text>
 <rect x="468" y="92" width="204" height="128" rx="10" fill="#17201c" stroke="#304139"/>
 <text x="486" y="122" fill="#eef6f0" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="750" text-anchor="start">Биографии</text>
-<text x="486" y="168" fill="#7ccf9b" font-family="Inter, Arial, sans-serif" font-size="38" font-weight="800" text-anchor="start">12</text>
+<text x="486" y="168" fill="#7ccf9b" font-family="Inter, Arial, sans-serif" font-size="38" font-weight="800" text-anchor="start">13</text>
 <text x="486" y="196" fill="#a8b7ae" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="400" text-anchor="start">внешних проверок</text>
 <rect x="688" y="92" width="204" height="128" rx="10" fill="#17201c" stroke="#304139"/>
 <text x="706" y="122" fill="#eef6f0" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="750" text-anchor="start">Сети</text>
