@@ -1,0 +1,122 @@
+[
+  {
+    "topic": "General scholarly discussion",
+    "message_count": "45544",
+    "thread_count": "17531",
+    "author_count": "2794",
+    "first_year": "1990",
+    "last_year": "2026",
+    "median_thread_length": "5.0",
+    "top_list_function": "general discussion"
+  },
+  {
+    "topic": "Announcements and events",
+    "message_count": "2792",
+    "thread_count": "2436",
+    "author_count": "791",
+    "first_year": "1990",
+    "last_year": "2026",
+    "median_thread_length": "1.0",
+    "top_list_function": "announcement/event"
+  },
+  {
+    "topic": "Bibliographic requests",
+    "message_count": "2592",
+    "thread_count": "1464",
+    "author_count": "696",
+    "first_year": "1990",
+    "last_year": "2026",
+    "median_thread_length": "3.0",
+    "top_list_function": "bibliographic request"
+  },
+  {
+    "topic": "History and culture",
+    "message_count": "2587",
+    "thread_count": "1579",
+    "author_count": "856",
+    "first_year": "1991",
+    "last_year": "2026",
+    "median_thread_length": "4.0",
+    "top_list_function": "general discussion"
+  },
+  {
+    "topic": "Digital resources and tools",
+    "message_count": "2447",
+    "thread_count": "1436",
+    "author_count": "645",
+    "first_year": "1990",
+    "last_year": "2026",
+    "median_thread_length": "3.0",
+    "top_list_function": "digital resource/tool"
+  },
+  {
+    "topic": "Texts and philology",
+    "message_count": "1953",
+    "thread_count": "1038",
+    "author_count": "621",
+    "first_year": "1991",
+    "last_year": "2026",
+    "median_thread_length": "4.0",
+    "top_list_function": "philological discussion"
+  },
+  {
+    "topic": "Veda and ritual",
+    "message_count": "1394",
+    "thread_count": "783",
+    "author_count": "490",
+    "first_year": "1991",
+    "last_year": "2026",
+    "median_thread_length": "4.0",
+    "top_list_function": "general discussion"
+  },
+  {
+    "topic": "Grammar and linguistics",
+    "message_count": "1001",
+    "thread_count": "463",
+    "author_count": "347",
+    "first_year": "1991",
+    "last_year": "2025",
+    "median_thread_length": "7.0",
+    "top_list_function": "philological discussion"
+  },
+  {
+    "topic": "Manuscripts and epigraphy",
+    "message_count": "991",
+    "thread_count": "462",
+    "author_count": "344",
+    "first_year": "1991",
+    "last_year": "2026",
+    "median_thread_length": "5.0",
+    "top_list_function": "general discussion"
+  },
+  {
+    "topic": "Buddhism and Jainism",
+    "message_count": "507",
+    "thread_count": "340",
+    "author_count": "262",
+    "first_year": "1992",
+    "last_year": "2026",
+    "median_thread_length": "3.0",
+    "top_list_function": "general discussion"
+  },
+  {
+    "topic": "List administration",
+    "message_count": "190",
+    "thread_count": "146",
+    "author_count": "112",
+    "first_year": "1991",
+    "last_year": "2026",
+    "median_thread_length": "2.0",
+    "top_list_function": "list administration"
+  },
+  {
+    "topic": "Teaching and pedagogy",
+    "message_count": "114",
+    "thread_count": "76",
+    "author_count": "81",
+    "first_year": "1991",
+    "last_year": "2020",
+    "median_thread_length": "3.0",
+    "top_list_function": "general discussion"
+  }
+]

@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-06-30",
+  "row_count": 1921,
+  "by_domain": {
+    "author_normalization": 888,
+    "case_study_review": 250,
+    "count_mismatch": 8,
+    "first_review_shortlist": 25,
+    "noisy_subject": 250,
+    "reply_network": 500
+  },
+  "by_priority": {
+    "high": 913,
+    "low": 250,
+    "medium": 758
+  },
+  "notes": [
+    "The index is a reviewer-facing queue, not a list of errors.",
+    "Some large domains are capped for review ergonomics; source files remain complete."
+  ]
+}
