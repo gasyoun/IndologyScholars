@@ -1,8 +1,9 @@
-const CACHE_VERSION = "2026-06-30-pwa-v5";
+const CACHE_VERSION = "2026-06-30-pwa-v6";
 const CACHE_PREFIX = "indology-scholars-";
 const CORE_CACHE = `${CACHE_PREFIX}core-${CACHE_VERSION}`;
 const RUNTIME_CACHE = `${CACHE_PREFIX}runtime-${CACHE_VERSION}`;
 const BASE = "/IndologyScholars/";
+const INDOLOGY_ARCHIVE_PATH = `${BASE}IndologyArchive`;
 const INDOLOGY_ARCHIVE_BASE = `${BASE}IndologyArchive/`;
 const INDOLOGY_ARCHIVE_FALLBACK = `${INDOLOGY_ARCHIVE_BASE}index.html`;
 
@@ -87,6 +88,10 @@ async function cacheFirst(request) {
     return response;
 }
 
+function isIndologyArchivePath(pathname) {
+    return pathname === INDOLOGY_ARCHIVE_PATH || pathname.startsWith(INDOLOGY_ARCHIVE_BASE);
+}
+
 self.addEventListener("fetch", (event) => {
     if (event.request.method !== "GET") {
         return;
@@ -95,7 +100,11 @@ self.addEventListener("fetch", (event) => {
     const url = new URL(event.request.url);
     if (url.origin === self.location.origin && url.pathname.startsWith(BASE)) {
         if (event.request.mode === "navigate") {
-            const fallbackUrl = url.pathname.startsWith(INDOLOGY_ARCHIVE_BASE)
+            if (url.pathname === INDOLOGY_ARCHIVE_PATH) {
+                event.respondWith(Response.redirect(`${url.origin}${INDOLOGY_ARCHIVE_BASE}${url.search}`, 302));
+                return;
+            }
+            const fallbackUrl = isIndologyArchivePath(url.pathname)
                 ? INDOLOGY_ARCHIVE_FALLBACK
                 : `${BASE}offline.html`;
             event.respondWith(networkFirst(event.request, fallbackUrl));
