@@ -10,8 +10,8 @@
   "files": [
     {
       "path": "404.html",
-      "size_bytes": 6815,
-      "sha256": "47a1dcc6016c09ec7bff79b394de0cbfc1802f8e25c05cbeebae9b06651dc63d"
+      "size_bytes": 7275,
+      "sha256": "a2e0ccc23fbe91a9893bf8802c2f410a364276d62481dfef01139808db310ba0"
     },
     {
       "path": "CITATION.cff",
@@ -9546,7 +9546,7 @@
     {
       "path": "findings/visualisations.html",
       "size_bytes": 493390,
-      "sha256": "b2401ed082b0011ca287a71bb10672dd9585f10e9f68a540f7d010d4cb7c43de"
+      "sha256": "114dacb2f7c2e43c7d0c83a58b33a5aecd4b97a68a0ea5093823ac1e1f423c3c"
     },
     {
       "path": "gatekeeping-en.html",
@@ -19980,8 +19980,8 @@
     },
     {
       "path": "service-worker.js",
-      "size_bytes": 3685,
-      "sha256": "d1768adfd8a841f1f96da6953d72138382b8510f5707f13cb6c1a4647ca4b550"
+      "size_bytes": 4078,
+      "sha256": "0a91e23535fef18447e95598e74ede66bd27b43837cfd7108e2ae0ec636b878a"
     },
     {
       "path": "site.webmanifest",
