@@ -1671,6 +1671,15 @@ def generate_search(data, records):
             "text": "индологи реестр неучастники вне программы русскоязычные санскритологи википедия wikidata годы жизни сфера роль аффилиация",
         }
     )
+    index.append(
+        {
+            "type": "Dataset",
+            "title": "INDOLOGY-L Archive Atlas",
+            "url": "IndologyArchive/",
+            "meta": "Standalone mailing-list archive atlas",
+            "text": "INDOLOGY-L mailing list archive atlas pipermail metadata topics threads reply network author normalization curation dashboard search data dictionary datapackage citation",
+        }
+    )
     for level, meta in GUMILYOV_LEVELS.items():
         index.append(
             {
@@ -4053,6 +4062,7 @@ def generate_english_landing(data):
             <article class="card"><strong><a href="s/">Scholar Profiles</a></strong><div class="meta">Canonical generated pages with presentations, affiliations, themes, and related scholars.</div></article>
             <article class="card"><strong><a href="conferences/">Conference Indexes</a></strong><div class="meta">Year-by-year Zograf Readings and Roerich Readings pages.</div></article>
             <article class="card"><strong><a href="search.html">Search</a></strong><div class="meta">Static search across people, talks, cities, institutions, and themes.</div></article>
+            <article class="card"><strong><a href="IndologyArchive/">INDOLOGY-L Archive Atlas</a></strong><div class="meta">Standalone metadata atlas of the public INDOLOGY mailing-list archive: topics, threads, reply evidence, curation, and reusable data.</div></article>
             <article class="card"><strong><a href="gumilyov/">Gumilyov Scale</a></strong><div class="meta">Presentation-level scale of generalization: micro, regional, and global.</div></article>
             <article class="card"><strong><a href="videos/">YouTube Videos</a></strong><div class="meta">Full playlist inventory and mapped presentation recordings; mapped talks also carry a Video badge.</div></article>
             <article class="card"><strong><a href="networks.html">Networks</a></strong><div class="meta">Participation and co-presence networks.</div></article>
@@ -15251,7 +15261,8 @@ def generate_sitemap(data, records):
         "data-quality.html", "methodology.html", "hypotheses.html", "data-sources.html",
         "known-limitations.html", "how-to-cite.html", "metrics-guide.html",
         "classification-criteria.html", "networks.html", "sociology.html", "sociology-en.html",
-        "gatekeeping.html", "gatekeeping-en.html", "known-relationships.html", "indologists.html", "docs.html", "voting.html"
+        "gatekeeping.html", "gatekeeping-en.html", "known-relationships.html", "indologists.html", "docs.html", "voting.html",
+        "IndologyArchive/", "IndologyArchive/dashboard/index.html", "IndologyArchive/dashboard/search.html", "IndologyArchive/dashboard/curated.html"
     ]
     static_paths = sorted(set(static_paths))
 
