@@ -68,6 +68,10 @@ PUBLIC_DIRS = [
     "docs",
 ]
 
+PUBLIC_ALIASED_DIRS = {
+    "Indology": "IndologyArchive",
+}
+
 
 def copy_path(src, dest_root):
     source = Path(src)
@@ -86,6 +90,37 @@ def copy_dir(src, dest_root):
     if destination.exists():
         shutil.rmtree(destination)
     shutil.copytree(source, destination)
+
+
+def copy_dir_as(src, dest_root, public_name):
+    source = Path(src)
+    if not source.exists():
+        return
+    destination = dest_root / public_name
+    if destination.exists():
+        shutil.rmtree(destination)
+    shutil.copytree(source, destination)
+
+
+def write_indology_archive_landing(dest_root):
+    destination = dest_root / "IndologyArchive" / "index.html"
+    if not destination.parent.exists():
+        return
+    destination.write_text(
+        """<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="refresh" content="0; url=dashboard/index.html">
+  <title>INDOLOGY Archive Atlas</title>
+</head>
+<body>
+  <p><a href="dashboard/index.html">Open the INDOLOGY Archive Atlas</a></p>
+</body>
+</html>
+""",
+        encoding="utf-8",
+    )
 
 
 def minify_html(content):
@@ -159,6 +194,9 @@ def main():
         copy_path(path, dest)
     for path in PUBLIC_DIRS:
         copy_dir(path, dest)
+    for source, public_name in PUBLIC_ALIASED_DIRS.items():
+        copy_dir_as(source, dest, public_name)
+    write_indology_archive_landing(dest)
 
     minify_site(dest)
 
