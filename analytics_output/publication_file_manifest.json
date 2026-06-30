@@ -9546,7 +9546,7 @@
     {
       "path": "findings/visualisations.html",
       "size_bytes": 493390,
-      "sha256": "b840288a563d79c14086b025b1b7dfd64bb9e25dc2d554fab5e2d5a691b5be79"
+      "sha256": "b2401ed082b0011ca287a71bb10672dd9585f10e9f68a540f7d010d4cb7c43de"
     },
     {
       "path": "gatekeeping-en.html",
@@ -9940,8 +9940,8 @@
     },
     {
       "path": "offline.html",
-      "size_bytes": 3420,
-      "sha256": "c463a06893beee4be7445f2be7b8ba955ac944f81f80fbd0598893ef60be080e"
+      "size_bytes": 3498,
+      "sha256": "b4cf8b4f6e63b9ff88790c4747050feb0fecd3ef1dfc61f69409ebb7d6d92f03"
     },
     {
       "path": "p/101-sinonim-vody-v-vediiskom-slovare-nigkhantu.html",
@@ -19980,8 +19980,8 @@
     },
     {
       "path": "service-worker.js",
-      "size_bytes": 3120,
-      "sha256": "43aec4e9bbd088c1dd031d1a4b04082da204498a8e748fb652cd95defb2d21b3"
+      "size_bytes": 3685,
+      "sha256": "d1768adfd8a841f1f96da6953d72138382b8510f5707f13cb6c1a4647ca4b550"
     },
     {
       "path": "site.webmanifest",
