@@ -119,10 +119,15 @@
         </header>
         <section class="list">
             <article class="card"><strong><a href="/IndologyScholars/search.html">Search the archive</a></strong><div class="meta">Scholar profiles, talks, cities, institutions, and themes.</div></article>
+            <article class="card"><strong><a href="/IndologyScholars/IndologyArchive/">INDOLOGY-L Archive Atlas</a></strong><div class="meta">Standalone metadata atlas of the public INDOLOGY mailing-list archive.</div></article>
             <article class="card"><strong><a href="/IndologyScholars/s/">Browse scholars</a></strong><div class="meta">Canonical generated profile index.</div></article>
             <article class="card"><strong><a href="/IndologyScholars/">Dashboard</a></strong><div class="meta">Interactive overview and filters.</div></article>
         </section>
         <script>
+        const indologyArchivePath = '/IndologyScholars/IndologyArchive';
+        if (location.pathname === indologyArchivePath) {
+            location.replace(`${indologyArchivePath}/${location.search}${location.hash}`);
+        }
         const lastPart = decodeURIComponent(location.pathname.split('/').filter(Boolean).pop() || '');
         if (lastPart) {
             const query = lastPart.replace(/\.html$/i, '').replace(/[-_]+/g, ' ');
