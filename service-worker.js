@@ -1,8 +1,10 @@
-const CACHE_VERSION = "2026-05-30-pwa-v4";
+const CACHE_VERSION = "2026-06-30-pwa-v5";
 const CACHE_PREFIX = "indology-scholars-";
 const CORE_CACHE = `${CACHE_PREFIX}core-${CACHE_VERSION}`;
 const RUNTIME_CACHE = `${CACHE_PREFIX}runtime-${CACHE_VERSION}`;
 const BASE = "/IndologyScholars/";
+const INDOLOGY_ARCHIVE_BASE = `${BASE}IndologyArchive/`;
+const INDOLOGY_ARCHIVE_FALLBACK = `${INDOLOGY_ARCHIVE_BASE}index.html`;
 
 const CORE_URLS = [
     BASE,
@@ -23,6 +25,12 @@ const CORE_URLS = [
     `${BASE}assets/icon-512.png`,
     `${BASE}assets/apple-touch-icon.png`,
     `${BASE}assets/pwa.js`,
+    INDOLOGY_ARCHIVE_FALLBACK,
+    `${INDOLOGY_ARCHIVE_BASE}dashboard/index.html`,
+    `${INDOLOGY_ARCHIVE_BASE}dashboard/search.html`,
+    `${INDOLOGY_ARCHIVE_BASE}dashboard/curated.html`,
+    `${INDOLOGY_ARCHIVE_BASE}datapackage.json`,
+    `${INDOLOGY_ARCHIVE_BASE}CITATION.cff`,
 ];
 
 self.addEventListener("install", (event) => {
@@ -87,7 +95,10 @@ self.addEventListener("fetch", (event) => {
     const url = new URL(event.request.url);
     if (url.origin === self.location.origin && url.pathname.startsWith(BASE)) {
         if (event.request.mode === "navigate") {
-            event.respondWith(networkFirst(event.request, `${BASE}offline.html`));
+            const fallbackUrl = url.pathname.startsWith(INDOLOGY_ARCHIVE_BASE)
+                ? INDOLOGY_ARCHIVE_FALLBACK
+                : `${BASE}offline.html`;
+            event.respondWith(networkFirst(event.request, fallbackUrl));
             return;
         }
         if (url.pathname.endsWith(".json") || url.pathname.endsWith(".html") || url.pathname.endsWith("/")) {
