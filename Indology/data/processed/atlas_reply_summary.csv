@@ -1,0 +1,5 @@
+confidence,reply_rows,resolved_rows,share
+thread_inferred,22907,22907,0.5359
+exact_in_reply_to,14076,14076,0.3293
+unresolved,5646,0,0.1321
+references_chain,112,112,0.0026

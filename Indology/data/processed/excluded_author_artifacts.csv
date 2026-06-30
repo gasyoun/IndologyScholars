@@ -1,0 +1,3 @@
+raw_author,normalized_author,author_id,status,confidence,evidence,first_seen,last_seen,message_count,unique_subject_count
+Yahoo!Mail®,,,excluded,1.0,mail-client/list artifact or empty author string,2023-04-26T16:05:28+00:00,2026-01-01T02:21:02+00:00,8,8
+Mail Delivery Subsystem,,,excluded,1.0,mail-client/list artifact or empty author string,1993-11-16T03:02:42+00:00,1993-11-16T03:02:42+00:00,1,1

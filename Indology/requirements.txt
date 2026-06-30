@@ -1,0 +1,6 @@
+pandas>=2.0
+matplotlib>=3.7
+networkx>=3.0
+requests>=2.31
+ipykernel>=6.0
+

@@ -1,0 +1,9 @@
+slug,archive_count,mbox_count,difference,skipped_mbox_rows,classification,downstream_status,notes
+2023-August,138,140,2,2,known_minor_archive_or_mbox_count_quirk,handled_by_subject_alignment,Extra mbox rows were recorded in skipped_mbox_rows.csv; archive-index rows remain the canonical message set.
+2024-April,129,130,1,1,known_minor_archive_or_mbox_count_quirk,handled_by_subject_alignment,Extra mbox rows were recorded in skipped_mbox_rows.csv; archive-index rows remain the canonical message set.
+2024-December,118,119,1,1,known_minor_archive_or_mbox_count_quirk,handled_by_subject_alignment,Extra mbox rows were recorded in skipped_mbox_rows.csv; archive-index rows remain the canonical message set.
+2025-May,160,161,1,1,known_minor_archive_or_mbox_count_quirk,handled_by_subject_alignment,Extra mbox rows were recorded in skipped_mbox_rows.csv; archive-index rows remain the canonical message set.
+2025-July,106,107,1,1,known_minor_archive_or_mbox_count_quirk,handled_by_subject_alignment,Extra mbox rows were recorded in skipped_mbox_rows.csv; archive-index rows remain the canonical message set.
+2025-August,180,181,1,1,known_minor_archive_or_mbox_count_quirk,handled_by_subject_alignment,Extra mbox rows were recorded in skipped_mbox_rows.csv; archive-index rows remain the canonical message set.
+2025-September,129,130,1,1,known_minor_archive_or_mbox_count_quirk,handled_by_subject_alignment,Extra mbox rows were recorded in skipped_mbox_rows.csv; archive-index rows remain the canonical message set.
+2025-December,116,117,1,1,known_minor_archive_or_mbox_count_quirk,handled_by_subject_alignment,Extra mbox rows were recorded in skipped_mbox_rows.csv; archive-index rows remain the canonical message set.
