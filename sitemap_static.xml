@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://gasyoun.github.io/IndologyScholars/IndologyArchive/</loc>
+  </url>
+  <url>
+    <loc>https://gasyoun.github.io/IndologyScholars/IndologyArchive/dashboard/curated.html</loc>
+  </url>
+  <url>
+    <loc>https://gasyoun.github.io/IndologyScholars/IndologyArchive/dashboard/</loc>
+  </url>
+  <url>
+    <loc>https://gasyoun.github.io/IndologyScholars/IndologyArchive/dashboard/search.html</loc>
+  </url>
+  <url>
     <loc>https://gasyoun.github.io/IndologyScholars/classification-criteria.html</loc>
   </url>
   <url>

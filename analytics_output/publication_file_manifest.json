@@ -335,8 +335,8 @@
     },
     {
       "path": "analytics_output/nlp_cache.pkl",
-      "size_bytes": 148377,
-      "sha256": "6c7ddaad65bf332768a7e7d65f0cada6225b5f60eca64300cd2eeaedd0188271"
+      "size_bytes": 148375,
+      "sha256": "593c693eebbf06d7d1ed7f659ef3b0b56a23ca4288b166316153b2205c371738"
     },
     {
       "path": "analytics_output/no_affiliation_history.md",
@@ -561,7 +561,7 @@
     {
       "path": "assets/img/gatekeeping_network_layers.svg",
       "size_bytes": 5657,
-      "sha256": "93c820a9f6fe60b726a26788fe1f64cd4e68d39a2ae2bf4e1b20b94055156c1f"
+      "sha256": "e29d1799183f5264ed53ffca16cede89b5839d68d0f08ae3901f800f80988b54"
     },
     {
       "path": "assets/img/network_degradation.png",
@@ -610,8 +610,8 @@
     },
     {
       "path": "assets/nlp_data.js",
-      "size_bytes": 424317,
-      "sha256": "df1e86cf00b3e1dd2776c957db10d31f6ba3b01afc469d3d2469dd397666ccfd"
+      "size_bytes": 424328,
+      "sha256": "441e3736e95875f118959534c6d5214bc6e693de8eedf8f541a9e1a4c4c39e9f"
     },
     {
       "path": "assets/og-image.png",
@@ -9525,8 +9525,8 @@
     },
     {
       "path": "en.html",
-      "size_bytes": 9028,
-      "sha256": "1d7558ee2a9ec8654375c9934a97c00a6f28b9d1909962ced94970bd614a4df9"
+      "size_bytes": 9301,
+      "sha256": "8d20ea018677db49d51263eacc589bcdfb0ed793253d44fad37ec407b8a9940a"
     },
     {
       "path": "findings/gender.html",
@@ -9546,7 +9546,7 @@
     {
       "path": "findings/visualisations.html",
       "size_bytes": 493390,
-      "sha256": "21f254d0f51445c3b53ac8bbce0969402897eded8db260cd989fe33f8512f5f6"
+      "sha256": "b840288a563d79c14086b025b1b7dfd64bb9e25dc2d554fab5e2d5a691b5be79"
     },
     {
       "path": "gatekeeping-en.html",
@@ -19970,8 +19970,8 @@
     },
     {
       "path": "search-index.json",
-      "size_bytes": 1171896,
-      "sha256": "40eeb30749db7fc8ef9e18757455e0d2488b41838e81a04b31f99ce2fcca0bc3"
+      "size_bytes": 1172201,
+      "sha256": "77cc2b609f3a39c6bd98b4bbaa3bd521635b681b912343256633ef0c63da51c2"
     },
     {
       "path": "search.html",
