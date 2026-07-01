@@ -1004,6 +1004,34 @@ keywords:
                 "description": "Field-level provenance for generated presentation theme labels and review candidates.",
             },
             {
+                "name": "renou-presentations",
+                "path": "analytics_output/renou_presentations.csv",
+                "format": "csv",
+                "mediatype": "text/csv",
+                "description": "Presentation-level Renou state/register matches from conference titles and tags; a finding aid, not a final interpretation.",
+            },
+            {
+                "name": "renou-presentation-matches",
+                "path": "analytics_output/renou_presentation_matches.csv",
+                "format": "csv",
+                "mediatype": "text/csv",
+                "description": "Sparse Renou rule hits with matched terms, rule IDs, confidence labels, and presentation links.",
+            },
+            {
+                "name": "renou-state-summary",
+                "path": "analytics_output/renou_state_summary.csv",
+                "format": "csv",
+                "mediatype": "text/csv",
+                "description": "Main-site conference presentation counts by Renou I-V state axis.",
+            },
+            {
+                "name": "renou-register-summary",
+                "path": "analytics_output/renou_register_summary.csv",
+                "format": "csv",
+                "mediatype": "text/csv",
+                "description": "Main-site conference presentation counts by Renou register lattice.",
+            },
+            {
                 "name": "verified-affiliation-spans",
                 "path": "curation/verified_affiliation_spans.csv",
                 "format": "csv",
@@ -3112,6 +3140,11 @@ def generate_download_page(data):
         ("Biographical provenance", "analytics_output/field_provenance_biographical.csv", "Field-level provenance for curated person names and life dates."),
         ("Authority provenance", "analytics_output/field_provenance_authority.csv", "Field-level provenance for external identifiers and organization authority records."),
         ("Theme provenance", "analytics_output/field_provenance_themes.csv", "Field-level provenance for generated presentation theme labels."),
+        ("Renou presentations", "analytics_output/renou_presentations.csv", "Presentation-level Renou state/register matches from conference titles and tags."),
+        ("Renou matches", "analytics_output/renou_presentation_matches.csv", "Sparse Renou rule hits with matched terms, rule IDs, confidence labels, and presentation links."),
+        ("Renou state summary", "analytics_output/renou_state_summary.csv", "Main-site conference presentation counts by Renou I-V state axis."),
+        ("Renou register summary", "analytics_output/renou_register_summary.csv", "Main-site conference presentation counts by Renou register lattice."),
+        ("Renou export index", "analytics_output/renou_export_index.csv", "Filtered Renou CSV exports for each matched state/register."),
         ("Argument scale", "analytics_output/gumilyov_scale.csv", "Presentation-level argument-scale levels (canonical column argument_level; gumilyov_level kept as a legacy alias)."),
         ("Expert classification decisions", "analytics_output/classification_overrides.csv", "Reviewed revisions to themes, meso-levels, and argument-scale levels, with a rationale for each affected presentation."),
         ("Human review index", "analytics_output/human_review_index.csv", "Unified curator-facing inbox for open manual review items across authority IDs, identity, classification, spacetime, affiliation, lineage, and data-quality queues."),
@@ -4068,6 +4101,7 @@ def generate_english_landing(data):
             <article class="card"><strong><a href="conferences/">Conference Indexes</a></strong><div class="meta">Year-by-year Zograf Readings and Roerich Readings pages.</div></article>
             <article class="card"><strong><a href="search.html">Search</a></strong><div class="meta">Static search across people, talks, cities, institutions, and themes.</div></article>
             <article class="card"><strong><a href="IndologyArchive/">INDOLOGY-L Archive Atlas</a></strong><div class="meta">Standalone metadata atlas of the public INDOLOGY mailing-list archive: topics, threads, reply evidence, curation, and reusable data.</div></article>
+            <article class="card"><strong><a href="findings/renou.html">Renou Layer</a></strong><div class="meta">Conference-title state/register finding aid using the Renou I-V axis and register lattice.</div></article>
             <article class="card"><strong><a href="gumilyov/">Gumilyov Scale</a></strong><div class="meta">Presentation-level scale of generalization: micro, regional, and global.</div></article>
             <article class="card"><strong><a href="videos/">YouTube Videos</a></strong><div class="meta">Full playlist inventory and mapped presentation recordings; mapped talks also carry a Video badge.</div></article>
             <article class="card"><strong><a href="networks.html">Networks</a></strong><div class="meta">Participation and co-presence networks.</div></article>
@@ -4772,6 +4806,7 @@ def generate_findings_page(data, records):
                 <a class="chip bilingual-text" href="../videos/" data-ru="Видеоархив" data-en="Video Archive">Видеоархив</a>
                 <a class="chip bilingual-text" href="../conferences/" data-ru="Годы и программы" data-en="Years & Programs">Годы и программы</a>
                 <a class="chip bilingual-text" href="../themes/" data-ru="Тематические рубрики" data-en="Themes">Тематические рубрики</a>
+                <a class="chip bilingual-text" href="../findings/renou.html" data-ru="Слой Рену" data-en="Renou Layer">Слой Рену</a>
                 <a class="chip bilingual-text" href="../search.html" data-ru="Поиск по докладам" data-en="Search Papers">Поиск по докладам</a>
                 <a class="chip bilingual-text" href="../download-data.html" data-ru="CSV, JSON, SQLite" data-en="CSV, JSON, SQLite">CSV, JSON, SQLite</a>
             </div>

@@ -298,7 +298,29 @@ The review queue can be reproduced with `tools/extract_eastern_faculty_alumni.py
 
 Mapped video records remain searchable in the video catalogue and also set the public `Видео` status on the associated presentation page and card.
 
-## 7. Theme Coding Outputs
+## 7. Renou State/Register Layer
+
+The main-site Renou layer adapts the Louis Renou I-V state axis and register
+lattice to conference presentation titles and tags. It is a finding aid for
+public metadata, not a final content interpretation: a row is matched when an
+editable rule in `curation/renou_conference_rules.csv` finds a title/tag term.
+
+| Path | Meaning |
+| --- | --- |
+| `curation/renou_conference_rules.csv` | Editable title/tag matching rules derived from the Renou state/register vocabulary. |
+| `analytics_output/renou_presentations.csv` | Presentation-level Renou states, registers, evidence labels, public paths, scholars, and match status. |
+| `analytics_output/renou_presentation_matches.csv` | Sparse one-row-per-rule-hit table with matched terms, rule IDs, confidence labels, and presentation links. |
+| `analytics_output/renou_state_summary.csv` | Counts by Renou I-V state axis. |
+| `analytics_output/renou_register_summary.csv` | Counts by Renou register lattice. |
+| `analytics_output/renou_year_summary.csv` | Year-by-year coverage of matched presentations and visible states/registers. |
+| `analytics_output/renou_scholar_summary.csv` | Scholar-level summary of matched talks, states, and registers. |
+| `analytics_output/renou_export_index.csv` | Index of filtered state/register presentation exports. |
+| `findings/renou.html` | Public static browser for the main-site Renou layer. |
+
+The standalone INDOLOGY mailing-list appendix has its own Renou outputs under
+`Indology/data/processed/`; the two layers remain separate but comparable.
+
+## 8. Theme Coding Outputs
 
 | Path | Meaning |
 | --- | --- |
@@ -323,7 +345,7 @@ associated with the legacy eponym.
 
 Theme labels are navigational aids derived primarily from presentation titles. They should not be treated as a fine-grained content-analysis taxonomy without review.
 
-## 8. Specialized Review Outputs
+## 9. Specialized Review Outputs
 
 | Path | Meaning |
 | --- | --- |
@@ -333,7 +355,7 @@ Theme labels are navigational aids derived primarily from presentation titles. T
 | `missing_birth_years.md` | Scholars missing birth-year metadata, used for review rather than public identity assertions. |
 | `indology_scholars_analytics.md` | Human-readable analytical report generated from CSV outputs. |
 
-## 9. Public HTML Outputs
+## 10. Public HTML Outputs
 
 | Path | Purpose |
 | --- | --- |
@@ -359,7 +381,7 @@ Theme labels are navigational aids derived primarily from presentation titles. T
 | `classification-criteria.html` | Public criteria for themes, meso-levels, argument scale, and metadata normalization. |
 | `videos/*.html` | Standalone recording catalogue retained alongside presentation-level `Видео` badges. |
 
-## 10. Reuse Guidance
+## 11. Reuse Guidance
 
 1. Use `presentation_id` for joins only after checking `presentation_id_manifest.csv`.
 2. Use `datapackage.json` for machine-readable resource metadata and schemas.

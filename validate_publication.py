@@ -310,6 +310,13 @@ def main():
         "analytics_output/field_provenance_biographical.csv",
         "analytics_output/field_provenance_authority.csv",
         "analytics_output/field_provenance_themes.csv",
+        "analytics_output/renou_presentations.csv",
+        "analytics_output/renou_presentation_matches.csv",
+        "analytics_output/renou_state_summary.csv",
+        "analytics_output/renou_register_summary.csv",
+        "analytics_output/renou_export_index.csv",
+        "findings/renou.html",
+        "curation/renou_conference_rules.csv",
         "analytics_output/expanded_classification_deepseek.csv",
         "analytics_output/expanded_gumilyov_elevated_audit.csv",
         "analytics_output/meso_codes_deepseek.csv",
@@ -422,7 +429,7 @@ def main():
             for _, filename in sub_sitemaps:
                 if Path(filename).exists():
                     sitemap += "\n" + read(filename)
-        for page in ["", "en.html", "search.html", "download-data.html", "data-quality.html", "s/", "conferences/", "p/", "themes/", "topics/ramayana.html", "topics/mahabharata.html", "generations/", "cities/", "institutions/", "metrics-guide.html", "classification-criteria.html", "networks.html", "sociology.html", "sociology-en.html", "gatekeeping.html", "gatekeeping-en.html", "known-relationships.html", "indologists.html", "voting.html", "keywords/", "keywords/review.html", "videos/"]:
+        for page in ["", "en.html", "search.html", "download-data.html", "data-quality.html", "s/", "conferences/", "p/", "themes/", "topics/ramayana.html", "topics/mahabharata.html", "generations/", "cities/", "institutions/", "metrics-guide.html", "classification-criteria.html", "networks.html", "sociology.html", "sociology-en.html", "gatekeeping.html", "gatekeeping-en.html", "known-relationships.html", "indologists.html", "voting.html", "keywords/", "keywords/review.html", "videos/", "findings/renou.html"]:
             expected = "https://gasyoun.github.io/IndologyScholars/" + page
             if expected not in sitemap:
                 fail(errors, f"sitemap.xml missing {expected}")

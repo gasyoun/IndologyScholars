@@ -66,6 +66,7 @@ jobs:
           python generate_network_json.py
           python generate_lod.py
           python tools/build_sociology_visuals.py
+          python generate_renou_layer.py
 
       - name: Generate Static Pages for Individual Scholars
         run: |
