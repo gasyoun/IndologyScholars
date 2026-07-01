@@ -261,6 +261,14 @@ function populateFilters() {
     });
   }
 }
+function applyUrlParams() {
+  const params = new URLSearchParams(window.location.search);
+  for (const id of ["q", "kind", "topic", "func", "year"]) {
+    if (!params.has(id)) continue;
+    const el = document.getElementById(id);
+    if (el) el.value = params.get(id);
+  }
+}
 function filterRows(kind) {
   const q = document.getElementById("q").value.trim().toLowerCase();
   const topic = document.getElementById("topic").value;
@@ -306,6 +314,7 @@ async function load() {
   ]);
   Object.assign(state, {threads, authors, topics, messages});
   populateFilters();
+  applyUrlParams();
   renderBrowse();
   render();
 }
