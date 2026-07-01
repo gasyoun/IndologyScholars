@@ -32,6 +32,10 @@ This document describes the generated public-data layer for `INDOLOGY-L Archive 
 
 `atlas_timeline.csv`, `atlas_topic_profiles.csv`, `atlas_list_functions.csv`, `atlas_people_summary.csv`, `atlas_reply_summary.csv`, and `case_study_candidates.csv` translate raw metadata into indologist-facing questions about time, topics, list functions, participation, replies, and candidate threads for close reading.
 
+### Renou
+
+`data/curation/renou_subject_rules.csv` adapts the Louis Renou I-V state axis and register lattice from `RENOU.md` into human-editable subject-line matching rules. `renou_messages.csv` keeps one row per message with optional `renou_states` and `renou_registers`; `renou_message_matches.csv` is the sparse evidence table; `renou_thread_matches.csv`, `renou_state_summary.csv`, `renou_register_summary.csv`, and `renou_coverage.csv` aggregate the layer. Empty Renou fields mean not classified by this layer, not negative evidence.
+
 ### Search
 
 `search_threads.json`, `search_authors.json`, `search_topics.json`, and `search_messages_sample.json` feed the static search page. Message search remains compact metadata, not full text.
@@ -55,12 +59,14 @@ Human-facing review fields include `curation_status`, `review_track`, `review_de
 - Archive visibility is not field representativeness.
 - Author normalization is a reproducible audit layer, not a biographical authority file.
 - Case-study candidates are generated reading suggestions, not a canon of important threads.
+- The Renou layer is subject-line classification for mailing-list discussions, not dictionary headword tagging.
 
 ## Generated Resources
 
 | File | Rows | Description |
 | --- | ---: | --- |
 | `data/curation/first_review_notes.csv` | 25 | Human-editable review intake for importing first-review notes. |
+| `data/curation/renou_subject_rules.csv` | 25 | Human-editable Renou state/register subject matching rules. |
 | `data/processed/atlas_list_functions.csv` | 44 | Readable categories for what work the mailing list performed by decade. |
 | `data/processed/atlas_people_summary.csv` | 3150 | Conservative person-level participation summary using normalized author labels. |
 | `data/processed/atlas_reply_summary.csv` | 4 | Directed reply reconstruction counts by confidence level. |
@@ -81,7 +87,7 @@ Human-facing review fields include `curation_status`, `review_track`, `review_de
 | `data/processed/first_review_shortlist.csv` | 25 | Balanced first-pass shortlist for starting human case-study review. |
 | `data/processed/human_review_index.csv` | 1921 | Unified reviewer-facing queue for author, case-study, count, noisy-subject, and reply-network checks. |
 | `data/processed/human_review_summary.json` | 5 | Machine-readable summary of the unified human review index. |
-| `data/processed/interpretive_guardrails.csv` | 6 | Responsible-claims guardrails for interpreting reply, co-participation, volume, archive, and author-normalization outputs. |
+| `data/processed/interpretive_guardrails.csv` | 7 | Responsible-claims guardrails for interpreting reply, co-participation, volume, archive, and author-normalization outputs. |
 | `data/processed/messages.csv` | 62112 | Analyzed message metadata with cleaned subjects, topic labels, thread length, and author display strings. |
 | `data/processed/messages_clean.csv` | 62112 | Message metadata with conservative normalized author labels and author audit fields. |
 | `data/processed/messages_raw.csv` | 62112 | Harvested message metadata aligned from Pipermail HTML indexes and monthly mbox headers. |
@@ -92,6 +98,12 @@ Human-facing review fields include `curation_status`, `review_track`, `review_de
 | `data/processed/network_edges.csv` | 40703 | Undirected co-participation edges: two authors appear in the same thread. |
 | `data/processed/noisy_subjects.csv` | 397 | Generated atlas output. |
 | `data/processed/parse_issues.csv` | 8 | Generated atlas output. |
+| `data/processed/renou_coverage.csv` | 2 | Coverage counts for the sparse Renou subject-line layer. |
+| `data/processed/renou_message_matches.csv` | 9110 | Sparse message-level Renou state/register matches with matched terms and confidence. |
+| `data/processed/renou_messages.csv` | 62112 | Row-per-message sparse Renou state/register index derived from subject-line evidence. |
+| `data/processed/renou_register_summary.csv` | 935 | Renou register-axis summary by year, topic, and list function. |
+| `data/processed/renou_state_summary.csv` | 582 | Renou I-V state-axis summary by year, topic, and list function. |
+| `data/processed/renou_thread_matches.csv` | 3309 | Thread-level rollup of sparse Renou state/register matches. |
 | `data/processed/reply_edges.csv` | 42741 | Directed reply edges resolved from In-Reply-To, References, or conservative thread inference. |
 | `data/processed/reply_network_edges.csv` | 20782 | Aggregated directed reply edge weights by source, target, and confidence. |
 | `data/processed/review_import_audit.csv` | 25 | Audit trail for importing human review notes into curated case metadata. |

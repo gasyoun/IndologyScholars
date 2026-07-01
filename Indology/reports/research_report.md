@@ -26,6 +26,7 @@ This report reads the INDOLOGY mailing-list archive as a long-running scholarly 
 - Named network summaries describe public reply and co-participation evidence, not influence, prestige, or importance.
 - `human_review_index.csv` combines review needs across author normalization, case studies, parse quirks, noisy subjects, and reply evidence.
 - `interpretive_guardrails.csv` and `reports/interpretive_guardrails.md` state which public claims are supported and which overclaims should be avoided.
+- `renou_messages.csv` adds a sparse Renou state/register subject-line crosswalk from `RENOU.md`; unmatched rows mean not classified by this layer, not irrelevant to Renou.
 - Count mismatches are documented in `count_mismatch_audit.csv`; extra mbox rows are preserved in `skipped_mbox_rows.csv`.
 
 ## What Changed Over Time?
@@ -51,6 +52,53 @@ This report reads the INDOLOGY mailing-list archive as a long-running scholarly 
 | Grammar and linguistics | 1001 | 463 | 347 | philological discussion |
 | Manuscripts and epigraphy | 991 | 462 | 344 | general discussion |
 | Buddhism and Jainism | 507 | 340 | 262 | general discussion |
+
+## Renou State/Register Layer
+
+This sparse layer adapts the Louis Renou state and register axes documented in `RENOU.md` to INDOLOGY-L subject lines. It is a finding aid for discussions that clearly mention Vedic, Pāṇinian, epic, classical, Buddhist/Jaina, or register-specific material. It is not dictionary headword tagging and should not be read as a complete classification of all messages.
+
+| scope | total_rows | matched_rows | matched_percent | source_url |
+| --- | --- | --- | --- | --- |
+| messages | 62112 | 6217 | 10.01 | https://github.com/gasyoun/SanskritLexicography/blob/master/RussianTranslation/RENOU.md |
+| threads | 24033 | 3309 | 13.77 | https://github.com/gasyoun/SanskritLexicography/blob/master/RussianTranslation/RENOU.md |
+
+| renou_code | renou_label | message_count | thread_count |
+| --- | --- | --- | --- |
+| I | Vedic | 1528 | 881 |
+| III | Epic & prolongements | 1213 | 662 |
+| V | Buddhist / Jaina | 753 | 534 |
+| II | Pāṇinian | 724 | 366 |
+| IV | Classical | 324 | 181 |
+
+| renou_code | renou_label | message_count | thread_count |
+| --- | --- | --- | --- |
+| vyakarana | Vyākaraṇa | 649 | 325 |
+| epic | Epic | 563 | 340 |
+| rgveda | Ṛgveda | 523 | 285 |
+| kavya | Kāvya | 518 | 258 |
+| jaina | Jaina | 365 | 290 |
+| epig | Epigraphic | 355 | 209 |
+| bhasya | Bhāṣya | 293 | 154 |
+| tantra | Tantra | 211 | 122 |
+| katha | Kathā | 174 | 115 |
+| purana | Purāṇa | 158 | 90 |
+| upanisad | Upaniṣad | 144 | 79 |
+| natya | Nāṭya | 124 | 73 |
+
+| thread_root_id | thread_subject | renou_states | renou_registers | matched_message_count | confidence | first_url |
+| --- | --- | --- | --- | --- | --- | --- |
+| 000009 | forwarded message: seeking Mahabharata e-text. | III | epic | 1 | subject_pattern | https://list.indology.info/pipermail/indology/1990-November/000009.html |
+| 000116 | Vedic dates | I |  | 2 | subject_pattern | https://list.indology.info/pipermail/indology/1991-August/000116.html |
+| 000167 | need info about grammar book | II | vyakarana | 1 | subject_pattern | https://list.indology.info/pipermail/indology/1991-November/000167.html |
+| 000192 | 5.0679 Qs: Pali E-Texts; COMPress; Bergen Libraries... (5/109) | V |  | 1 | subject_pattern | https://list.indology.info/pipermail/indology/1992-February/000192.html |
+| 000193 | 5.0679 Qs: Pali E-Texts; COMPress; Bergen Libraries... (5/109 | V |  | 1 | subject_pattern | https://list.indology.info/pipermail/indology/1992-February/000193.html |
+| 000200 | help on Mahabharata passage | III | epic | 3 | subject_pattern | https://list.indology.info/pipermail/indology/1992-March/000200.html |
+| 000206 | Mahabharata 5.172.20 follow-up | III | epic | 2 | subject_pattern | https://list.indology.info/pipermail/indology/1992-March/000206.html |
+| 000255 | National scandal: Ganesha being sold as a "monster"! |  | epig | 1 | subject_pattern | https://list.indology.info/pipermail/indology/1992-June/000255.html |
+| 000265 | Chaulukya period inscriptions |  | epig | 2 | subject_pattern | https://list.indology.info/pipermail/indology/1992-June/000265.html |
+| 000323 | Harivamsa Translation | III | epic | 2 | subject_pattern | https://list.indology.info/pipermail/indology/1992-September/000323.html |
+| 000324 | Surgery | III | epic | 2 | subject_pattern | https://list.indology.info/pipermail/indology/1992-September/000324.html |
+| 000336 | Harivamsa Translation | III | epic | 1 | subject_pattern | https://list.indology.info/pipermail/indology/1992-September/000336.html |
 
 ## What Work Did The List Do?
 
@@ -146,7 +194,7 @@ Case-study curation is English-only. Rows remain `candidate` until a human revie
 - Unassigned review packet rows: 197
 - Review import audit rows: 25
 - Unified human review index rows: 1,921
-- Interpretive guardrail rows: 6
+- Interpretive guardrail rows: 7
 
 | review_priority_reason | short_title | effective_track | case_type | message_count | author_count | reply_count | page_path |
 | --- | --- | --- | --- | --- | --- | --- | --- |

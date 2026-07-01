@@ -16,6 +16,7 @@ from indology_archive_research.cleaning import run_cleaning
 from indology_archive_research.curation import run_curation
 from indology_archive_research.publication import run_publication
 from indology_archive_research.public_metadata import run_public_metadata
+from indology_archive_research.renou_layer import run_renou_layer
 from indology_archive_research.reply_network import run_reply_network
 from indology_archive_research.review_import import import_review_notes, seed_first_review_notes
 from indology_archive_research.scrape import harvest_archive
@@ -44,6 +45,7 @@ def build_arg_parser() -> argparse.ArgumentParser:
     parser.add_argument("--skip-cleaning", action="store_true")
     parser.add_argument("--skip-reply-network", action="store_true")
     parser.add_argument("--skip-atlas", action="store_true")
+    parser.add_argument("--skip-renou-layer", action="store_true")
     parser.add_argument("--skip-thread-explorer", action="store_true")
     parser.add_argument("--skip-curation", action="store_true")
     parser.add_argument("--seed-review-notes", action="store_true")
@@ -71,6 +73,8 @@ def main(argv: list[str] | None = None) -> None:
         run_reply_network(args.output_dir)
     if not args.skip_atlas:
         run_atlas(args.output_dir)
+    if not args.skip_renou_layer:
+        run_renou_layer(args.output_dir)
     if not args.skip_thread_explorer:
         run_thread_explorer(args.output_dir)
     if not args.skip_curation:

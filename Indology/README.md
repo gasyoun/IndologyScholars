@@ -67,6 +67,12 @@ stall or fail for `list.indology.info`.
 - `data/processed/human_review_index.csv` - unified review queue for author, case-study, count, noisy-subject, and reply-network checks.
 - `data/processed/human_review_summary.json` - summary counts for the unified review queue.
 - `data/processed/interpretive_guardrails.csv` - responsible-claims guardrails for interpreting atlas outputs.
+- `data/curation/renou_subject_rules.csv` - human-editable Renou state/register subject matching rules.
+- `data/processed/renou_messages.csv` - one row per message with optional Renou state/register matches.
+- `data/processed/renou_message_matches.csv` - sparse Renou message-level evidence rows.
+- `data/processed/renou_thread_matches.csv` - thread-level rollup of Renou state/register matches.
+- `data/processed/renou_state_summary.csv` - Renou I-V state-axis counts by year, topic, and list function.
+- `data/processed/renou_register_summary.csv` - Renou register-axis counts by year, topic, and list function.
 - `data/processed/named_reply_network_summary.csv` - named direct-reply evidence by decade, topic, and confidence.
 - `data/processed/named_coparticipation_network_summary.csv` - named co-participation evidence by topic.
 - `data/processed/search_threads.json` - static search index for generated thread pages.
@@ -111,6 +117,15 @@ time, what was discussed, what work the list did, who participated, who replied
 to whom, and which threads are worth close reading. It is intentionally cautious:
 case-study rows are candidates for human review, and people summaries are not
 rankings of scholarly importance.
+
+## Renou Layer
+
+The Renou layer adapts the Louis Renou state/register system documented in
+[`RENOU.md`](https://github.com/gasyoun/SanskritLexicography/blob/master/RussianTranslation/RENOU.md)
+to INDOLOGY-L subject lines. It is sparse by design: only subjects that clearly
+match a Renou state or register receive labels. Empty fields mean "not classified
+by this layer," not "not relevant to Renou." This is a mailing-list discussion
+finding aid, not dictionary headword or sense tagging.
 
 ## Thread Explorer
 

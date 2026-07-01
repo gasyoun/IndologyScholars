@@ -37,6 +37,13 @@ DATASET_DESCRIPTIONS = {
     "human_review_index.csv": "Unified reviewer-facing queue for author, case-study, count, noisy-subject, and reply-network checks.",
     "human_review_summary.json": "Machine-readable summary of the unified human review index.",
     "interpretive_guardrails.csv": "Responsible-claims guardrails for interpreting reply, co-participation, volume, archive, and author-normalization outputs.",
+    "renou_messages.csv": "Row-per-message sparse Renou state/register index derived from subject-line evidence.",
+    "renou_message_matches.csv": "Sparse message-level Renou state/register matches with matched terms and confidence.",
+    "renou_thread_matches.csv": "Thread-level rollup of sparse Renou state/register matches.",
+    "renou_state_summary.csv": "Renou I-V state-axis summary by year, topic, and list function.",
+    "renou_register_summary.csv": "Renou register-axis summary by year, topic, and list function.",
+    "renou_coverage.csv": "Coverage counts for the sparse Renou subject-line layer.",
+    "renou_subject_rules.csv": "Human-editable Renou state/register subject matching rules.",
     "named_reply_network_summary.csv": "Named direct-reply network summary by decade, topic, and confidence.",
     "named_coparticipation_network_summary.csv": "Named co-participation network summary by topic.",
     "search_threads.json": "Static search index for generated thread pages and case-study candidate status.",
@@ -145,6 +152,10 @@ def write_research_report(output_dir: Path) -> Path:
     review_import_audit = read_csv_if_exists(processed_dir / "review_import_audit.csv")
     human_review_index = read_csv_if_exists(processed_dir / "human_review_index.csv")
     interpretive_guardrails = read_csv_if_exists(processed_dir / "interpretive_guardrails.csv")
+    renou_coverage = read_csv_if_exists(processed_dir / "renou_coverage.csv")
+    renou_state_summary = read_csv_if_exists(processed_dir / "renou_state_summary.csv")
+    renou_register_summary = read_csv_if_exists(processed_dir / "renou_register_summary.csv")
+    renou_thread_matches = read_csv_if_exists(processed_dir / "renou_thread_matches.csv")
     review_philological = read_csv_if_exists(processed_dir / "case_review_queue_philological.csv")
     review_infrastructure = read_csv_if_exists(processed_dir / "case_review_queue_infrastructure.csv")
     review_unassigned = read_csv_if_exists(processed_dir / "case_review_queue_unassigned.csv")
@@ -188,6 +199,7 @@ def write_research_report(output_dir: Path) -> Path:
         "- Named network summaries describe public reply and co-participation evidence, not influence, prestige, or importance.",
         "- `human_review_index.csv` combines review needs across author normalization, case studies, parse quirks, noisy subjects, and reply evidence.",
         "- `interpretive_guardrails.csv` and `reports/interpretive_guardrails.md` state which public claims are supported and which overclaims should be avoided.",
+        "- `renou_messages.csv` adds a sparse Renou state/register subject-line crosswalk from `RENOU.md`; unmatched rows mean not classified by this layer, not irrelevant to Renou.",
         "- Count mismatches are documented in `count_mismatch_audit.csv`; extra mbox rows are preserved in `skipped_mbox_rows.csv`.",
         "",
         "## What Changed Over Time?",
@@ -205,6 +217,18 @@ def write_research_report(output_dir: Path) -> Path:
             "## What Was Discussed?",
             "",
             markdown_table(top_topics.rename(columns={"topic": "topic", "message_count": "messages", "thread_count": "threads", "author_count": "authors"}), 10),
+            "",
+            "## Renou State/Register Layer",
+            "",
+            "This sparse layer adapts the Louis Renou state and register axes documented in `RENOU.md` to INDOLOGY-L subject lines. It is a finding aid for discussions that clearly mention Vedic, Pāṇinian, epic, classical, Buddhist/Jaina, or register-specific material. It is not dictionary headword tagging and should not be read as a complete classification of all messages.",
+            "",
+            markdown_table(renou_coverage, 10),
+            "",
+            markdown_table(renou_state_summary.groupby(["renou_code", "renou_label"]).agg({"message_count": lambda s: pd.to_numeric(s, errors="coerce").sum(), "thread_count": lambda s: pd.to_numeric(s, errors="coerce").sum()}).reset_index().sort_values("message_count", ascending=False).head(10) if not renou_state_summary.empty else pd.DataFrame(), 10),
+            "",
+            markdown_table(renou_register_summary.groupby(["renou_code", "renou_label"]).agg({"message_count": lambda s: pd.to_numeric(s, errors="coerce").sum(), "thread_count": lambda s: pd.to_numeric(s, errors="coerce").sum()}).reset_index().sort_values("message_count", ascending=False).head(12) if not renou_register_summary.empty else pd.DataFrame(), 12),
+            "",
+            markdown_table(renou_thread_matches[["thread_root_id", "thread_subject", "renou_states", "renou_registers", "matched_message_count", "confidence", "first_url"]].head(12) if not renou_thread_matches.empty else pd.DataFrame(), 12),
             "",
             "## What Work Did The List Do?",
             "",
@@ -299,6 +323,10 @@ def write_dashboard(output_dir: Path) -> Path:
     review_import_audit = read_csv_if_exists(processed_dir / "review_import_audit.csv")
     human_review_index = read_csv_if_exists(processed_dir / "human_review_index.csv")
     interpretive_guardrails = read_csv_if_exists(processed_dir / "interpretive_guardrails.csv")
+    renou_coverage = read_csv_if_exists(processed_dir / "renou_coverage.csv")
+    renou_state_summary = read_csv_if_exists(processed_dir / "renou_state_summary.csv")
+    renou_register_summary = read_csv_if_exists(processed_dir / "renou_register_summary.csv")
+    renou_thread_matches = read_csv_if_exists(processed_dir / "renou_thread_matches.csv")
     review_philological = read_csv_if_exists(processed_dir / "case_review_queue_philological.csv")
     review_infrastructure = read_csv_if_exists(processed_dir / "case_review_queue_infrastructure.csv")
     review_unassigned = read_csv_if_exists(processed_dir / "case_review_queue_unassigned.csv")
@@ -320,6 +348,18 @@ def write_dashboard(output_dir: Path) -> Path:
         else pd.DataFrame()
     )
     functions_html = top_functions.head(12).to_html(index=False, classes="data") if not top_functions.empty else ""
+    renou_coverage_html = renou_coverage.to_html(index=False, classes="data") if not renou_coverage.empty else ""
+    renou_states_html = (
+        renou_state_summary.groupby(["renou_code", "renou_label"]).agg({"message_count": lambda s: pd.to_numeric(s, errors="coerce").sum(), "thread_count": lambda s: pd.to_numeric(s, errors="coerce").sum()}).reset_index().sort_values("message_count", ascending=False).head(10).to_html(index=False, classes="data")
+        if not renou_state_summary.empty
+        else ""
+    )
+    renou_registers_html = (
+        renou_register_summary.groupby(["renou_code", "renou_label"]).agg({"message_count": lambda s: pd.to_numeric(s, errors="coerce").sum(), "thread_count": lambda s: pd.to_numeric(s, errors="coerce").sum()}).reset_index().sort_values("message_count", ascending=False).head(12).to_html(index=False, classes="data")
+        if not renou_register_summary.empty
+        else ""
+    )
+    renou_threads_html = renou_thread_matches[["thread_subject", "renou_states", "renou_registers", "matched_message_count", "confidence", "first_url"]].head(12).to_html(index=False, classes="data", render_links=True) if not renou_thread_matches.empty else ""
     people_html = people[["normalized_author", "message_count", "thread_count", "first_year", "last_year", "top_list_function", "author_status"]].head(20).to_html(index=False, classes="data") if not people.empty else ""
     replies_html = reply_summary.to_html(index=False, classes="data") if not reply_summary.empty else ""
     curated_summary_html = curated_summary.to_html(index=False, classes="data") if not curated_summary.empty else ""
@@ -408,6 +448,17 @@ def write_dashboard(output_dir: Path) -> Path:
   </div>
   {top_topics_html}
 
+  <h2>Renou state/register layer</h2>
+  <p class="note">This sparse crosswalk adapts the Louis Renou I-V state axis and register lattice from <a href="https://github.com/gasyoun/SanskritLexicography/blob/master/RussianTranslation/RENOU.md">RENOU.md</a> to subject-line evidence. It is a finding aid: unmatched messages mean “not classified by this layer,” not “not relevant to Renou.”</p>
+  {renou_coverage_html}
+  <h3>State axis</h3>
+  {renou_states_html}
+  <h3>Register axis</h3>
+  {renou_registers_html}
+  <h3>Matched threads</h3>
+  {renou_threads_html}
+  <p><a href="../data/processed/renou_messages.csv">Message Renou index</a> · <a href="../data/processed/renou_message_matches.csv">Sparse message matches</a> · <a href="../data/processed/renou_thread_matches.csv">Thread rollup</a> · <a href="../data/curation/renou_subject_rules.csv">Editable rules</a></p>
+
   <h2>What work did the list do?</h2>
   <p class="note">List-function categories translate subjects into familiar scholarly practices: requests, announcements, technical help, debate, and philological exchange.</p>
   {functions_html}
@@ -471,6 +522,12 @@ def write_dashboard(output_dir: Path) -> Path:
     <li><a href="../data/processed/human_review_index.csv">Unified human review index</a></li>
     <li><a href="../data/processed/human_review_summary.json">Human review summary</a></li>
     <li><a href="../data/processed/interpretive_guardrails.csv">Interpretive guardrails table</a></li>
+    <li><a href="../data/processed/renou_messages.csv">Renou message index</a></li>
+    <li><a href="../data/processed/renou_message_matches.csv">Renou message matches</a></li>
+    <li><a href="../data/processed/renou_thread_matches.csv">Renou thread matches</a></li>
+    <li><a href="../data/processed/renou_state_summary.csv">Renou state summary</a></li>
+    <li><a href="../data/processed/renou_register_summary.csv">Renou register summary</a></li>
+    <li><a href="../data/curation/renou_subject_rules.csv">Renou subject rules</a></li>
     <li><a href="../data/processed/named_reply_network_summary.csv">Named direct-reply summary</a></li>
     <li><a href="../data/processed/named_coparticipation_network_summary.csv">Named co-participation summary</a></li>
     <li><a href="../data/processed/search_threads.json">Thread search index</a></li>

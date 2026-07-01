@@ -7,6 +7,13 @@
     "description": "Human-editable review intake for importing first-review notes."
   },
   {
+    "file": "renou_subject_rules.csv",
+    "relative_path": "data/curation/renou_subject_rules.csv",
+    "rows": 25,
+    "bytes": 8065,
+    "description": "Human-editable Renou state/register subject matching rules."
+  },
+  {
     "file": "atlas_list_functions.csv",
     "relative_path": "data/processed/atlas_list_functions.csv",
     "rows": 44,
@@ -149,8 +156,8 @@
   {
     "file": "interpretive_guardrails.csv",
     "relative_path": "data/processed/interpretive_guardrails.csv",
-    "rows": 6,
-    "bytes": 2346,
+    "rows": 7,
+    "bytes": 2820,
     "description": "Responsible-claims guardrails for interpreting reply, co-participation, volume, archive, and author-normalization outputs."
   },
   {
@@ -222,6 +229,48 @@
     "rows": 8,
     "bytes": 326,
     "description": "Generated atlas output."
+  },
+  {
+    "file": "renou_coverage.csv",
+    "relative_path": "data/processed/renou_coverage.csv",
+    "rows": 2,
+    "bytes": 287,
+    "description": "Coverage counts for the sparse Renou subject-line layer."
+  },
+  {
+    "file": "renou_message_matches.csv",
+    "relative_path": "data/processed/renou_message_matches.csv",
+    "rows": 9110,
+    "bytes": 4651911,
+    "description": "Sparse message-level Renou state/register matches with matched terms and confidence."
+  },
+  {
+    "file": "renou_messages.csv",
+    "relative_path": "data/processed/renou_messages.csv",
+    "rows": 62112,
+    "bytes": 19415441,
+    "description": "Row-per-message sparse Renou state/register index derived from subject-line evidence."
+  },
+  {
+    "file": "renou_register_summary.csv",
+    "relative_path": "data/processed/renou_register_summary.csv",
+    "rows": 935,
+    "bytes": 76008,
+    "description": "Renou register-axis summary by year, topic, and list function."
+  },
+  {
+    "file": "renou_state_summary.csv",
+    "relative_path": "data/processed/renou_state_summary.csv",
+    "rows": 582,
+    "bytes": 46143,
+    "description": "Renou I-V state-axis summary by year, topic, and list function."
+  },
+  {
+    "file": "renou_thread_matches.csv",
+    "relative_path": "data/processed/renou_thread_matches.csv",
+    "rows": 3309,
+    "bytes": 1056851,
+    "description": "Thread-level rollup of sparse Renou state/register matches."
   },
   {
     "file": "reply_edges.csv",
