@@ -210,6 +210,9 @@
 - Thread search rows with local page or public archive fallback: 250/250
 - Thread search rows whose curation status matches `curated_case_studies.csv`: 250/250
 
+- Author search rows with topic-count facets: 3,150/3,150
+- Author search rows with list-function facets: 3,150/3,150
+
 ## Publication Metadata Layer
 
 - Data dictionary generated: yes

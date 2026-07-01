@@ -461,6 +461,19 @@ def validation_report(output_dir: Path) -> str:
                 lines.extend(["## Blocking Validation Issues", "", "- Some `search_threads.json` rows have neither an existing local page nor a public archive fallback URL.", ""])
             if status_ok != len(thread_search):
                 lines.extend(["## Blocking Validation Issues", "", "- Some `search_threads.json` curation statuses do not match `curated_case_studies.csv`.", ""])
+        author_search = search_tables.get("search_authors.json", [])
+        if author_search:
+            author_topic_rows = sum(1 for row in author_search if row.get("topic_counts"))
+            author_function_rows = sum(1 for row in author_search if row.get("list_function_counts"))
+            lines.extend(
+                [
+                    f"- Author search rows with topic-count facets: {author_topic_rows:,}/{len(author_search):,}",
+                    f"- Author search rows with list-function facets: {author_function_rows:,}/{len(author_search):,}",
+                    "",
+                ]
+            )
+            if author_topic_rows == 0 or author_function_rows == 0:
+                lines.extend(["## Blocking Validation Issues", "", "- `search_authors.json` is missing author-level topic/list-function facet fields.", ""])
 
     datapackage = {}
     datapackage_errors: list[str] = []

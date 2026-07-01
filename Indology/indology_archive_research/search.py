@@ -87,6 +87,25 @@ def build_author_search(processed_dir: Path) -> pd.DataFrame:
     people = read_csv(processed_dir / "atlas_people_summary.csv")
     if people.empty:
         return pd.DataFrame()
+    messages = read_csv(processed_dir / "messages_clean.csv")
+    if not messages.empty and {"normalized_author", "primary_topic", "list_function"}.issubset(messages.columns):
+        def counts_for(column: str) -> pd.Series:
+            grouped = (
+                messages[messages[column].astype(str).str.strip().ne("")]
+                .groupby(["normalized_author", column])
+                .size()
+                .reset_index(name="count")
+                .sort_values(["normalized_author", "count", column], ascending=[True, False, True])
+            )
+            return grouped.groupby("normalized_author").apply(
+                lambda frame: "; ".join(f"{row[column]} ({row['count']})" for _, row in frame.iterrows())
+            )
+
+        people = people.merge(counts_for("primary_topic").rename("topic_counts").reset_index(), on="normalized_author", how="left")
+        people = people.merge(counts_for("list_function").rename("list_function_counts").reset_index(), on="normalized_author", how="left")
+    for column in ["topic_counts", "list_function_counts"]:
+        if column not in people.columns:
+            people[column] = ""
     return people[
         [
             "normalized_author",
@@ -95,7 +114,9 @@ def build_author_search(processed_dir: Path) -> pd.DataFrame:
             "first_year",
             "last_year",
             "top_topic",
+            "topic_counts",
             "top_list_function",
+            "list_function_counts",
             "resolved_replies_sent",
             "resolved_replies_received",
             "author_status",
@@ -202,7 +223,7 @@ def write_search_html(output_dir: Path) -> Path:
 const state = { threads: [], authors: [], topics: [], messages: [] };
 const fields = {
   threads: ["subject", "year", "primary_topic", "list_function", "message_count", "author_count", "reply_count", "curation_status", "review_track", "suggested_track", "suggested_track_basis", "case_type", "local_page", "first_url"],
-  authors: ["normalized_author", "message_count", "thread_count", "first_year", "last_year", "top_topic", "top_list_function", "author_status"],
+  authors: ["normalized_author", "message_count", "thread_count", "first_year", "last_year", "top_topic", "topic_counts", "top_list_function", "list_function_counts", "author_status"],
   topics: ["topic", "message_count", "thread_count", "author_count", "first_year", "last_year", "top_list_function"],
   messages: ["date", "author", "subject", "topic", "list_function", "archive_url"]
 };
@@ -214,6 +235,10 @@ function escapeHtml(value) {
 function textOf(row) { return Object.values(row).join(" ").toLowerCase(); }
 function match(row, q) { return !q || textOf(row).includes(q); }
 function val(row, names) { for (const name of names) if (row[name]) return row[name]; return ""; }
+function hasValue(row, fields, selected) {
+  if (!selected) return true;
+  return fields.some(name => String(row[name] || "").split(";").some(part => part.trim() === selected || part.trim().startsWith(`${selected} (`)));
+}
 function link(url, label="open") { return url ? `<a href="${escapeHtml(url)}">${escapeHtml(label)}</a>` : ""; }
 function countValues(rows, getter) {
   const counts = new Map();
@@ -278,7 +303,9 @@ function filterRows(kind) {
     const rowTopic = val(row, ["primary_topic", "topic", "top_topic"]);
     const rowFunc = val(row, ["list_function", "top_list_function"]);
     const rowYear = row.year || row.first_year || (row.date || "").slice(0,4);
-    return match(row, q) && (!topic || rowTopic === topic) && (!func || rowFunc === func) && (!year || rowYear === year);
+    const topicOk = kind === "authors" ? hasValue(row, ["topic_counts", "top_topic"], topic) : (!topic || rowTopic === topic);
+    const funcOk = kind === "authors" ? hasValue(row, ["list_function_counts", "top_list_function"], func) : (!func || rowFunc === func);
+    return match(row, q) && topicOk && funcOk && (!year || rowYear === year);
   });
 }
 function renderCell(row, field) {
@@ -298,7 +325,9 @@ function render() {
 document.getElementById("browse").addEventListener("click", event => {
   if (event.target.tagName !== "BUTTON") return;
   const { kind, field, value } = event.target.dataset;
-  document.getElementById("kind").value = kind;
+  const currentKind = document.getElementById("kind").value;
+  const nextKind = currentKind === "authors" && ["topic", "func", "year"].includes(field) ? "authors" : kind;
+  document.getElementById("kind").value = nextKind;
   if (field === "topic") document.getElementById("topic").value = value;
   if (field === "func") document.getElementById("func").value = value;
   if (field === "year") document.getElementById("year").value = value;
