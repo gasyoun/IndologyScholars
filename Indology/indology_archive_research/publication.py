@@ -491,12 +491,14 @@ def write_dashboard(output_dir: Path) -> Path:
     <div class="stat"><strong>{len(replies):,}</strong>directed reply rows</div>
   </section>
   <p class="note"><strong><a href="search.html">Open static search and browse indexes</a></strong> for subjects, authors, topics, years, list functions, messages, and generated thread pages. <strong><a href="curated.html">Open curated case-study workflow</a></strong> for English-only review queues and track filters.</p>
+  <p><strong>Core CSV downloads: </strong><a href="../data/processed/messages_clean.csv">cleaned messages</a> · <a href="../data/processed/threads.csv">threads</a> · <a href="../data/processed/months.csv">monthly archive index</a> · <a href="../data/processed/dataset_manifest.csv">dataset manifest</a></p>
   <h2>What changed over time?</h2>
   <p class="note">Volume, threads, and yearly author counts show when the list was quiet, when it became a regular scholarly exchange, and when online announcements and post-pandemic patterns intensified.</p>
   <div class="grid">
     <a href="../figures/yearly_message_volume.png"><img src="../figures/yearly_message_volume.png" alt="Yearly message volume"></a>
     <a href="../figures/monthly_message_volume.png"><img src="../figures/monthly_message_volume.png" alt="Monthly message volume"></a>
   </div>
+  <p><strong>CSV downloads: </strong><a href="../data/processed/atlas_timeline.csv">atlas timeline</a> · <a href="../data/processed/yearly_counts.csv">yearly counts</a> · <a href="../data/processed/monthly_counts.csv">monthly counts</a></p>
   {decade_html}
 
   <h2>What was discussed?</h2>
@@ -505,11 +507,12 @@ def write_dashboard(output_dir: Path) -> Path:
     <a href="../figures/topic_stream.png"><img src="../figures/topic_stream.png" alt="Topic mix over time"></a>
     <a href="../figures/topic_decade_heatmap.png"><img src="../figures/topic_decade_heatmap.png" alt="Topic decade heatmap"></a>
   </div>
+  <p><strong>CSV downloads: </strong><a href="../data/processed/atlas_topic_profiles.csv">topic profiles</a> · <a href="../data/processed/topic_year_counts.csv">topic-year counts</a> · <a href="../data/processed/topic_decade_counts.csv">topic-decade counts</a></p>
   {top_topics_html}
 
   <h2>Renou state/register layer</h2>
   <p class="note">This sparse crosswalk adapts the Louis Renou I-V state axis and register lattice from <a href="https://github.com/gasyoun/SanskritLexicography/blob/master/RussianTranslation/RENOU.md">RENOU.md</a> to subject-line evidence. It is a finding aid: unmatched messages mean “not classified by this layer,” not “not relevant to Renou.”</p>
-  <p><strong>Renou CSV downloads:</strong> <a href="../data/processed/renou_coverage.csv">coverage</a> · <a href="../data/processed/renou_state_summary.csv">state summary</a> · <a href="../data/processed/renou_register_summary.csv">register summary</a> · <a href="../data/processed/renou_export_index.csv">filtered export index</a></p>
+  <p><strong>Renou CSV downloads: </strong><a href="../data/processed/renou_coverage.csv">coverage</a> · <a href="../data/processed/renou_state_summary.csv">state summary</a> · <a href="../data/processed/renou_register_summary.csv">register summary</a> · <a href="../data/processed/renou_export_index.csv">filtered export index</a></p>
   {renou_coverage_html}
   <h3>State axis</h3>
   {renou_states_html}
@@ -521,35 +524,39 @@ def write_dashboard(output_dir: Path) -> Path:
 
   <h2>What work did the list do?</h2>
   <p class="note">List-function categories translate subjects into familiar scholarly practices: requests, announcements, technical help, debate, and philological exchange.</p>
+  <p><strong>CSV downloads: </strong><a href="../data/processed/atlas_list_functions.csv">list-function summary</a> · <a href="../data/processed/messages_clean.csv">message-level functions</a></p>
   {functions_html}
 
   <h2>Who participated?</h2>
   <p class="note">People summaries use conservative normalized author labels. Ambiguous email-like strings remain reviewable in the public author-normalization table.</p>
+  <p><strong>CSV downloads: </strong><a href="../data/processed/atlas_people_summary.csv">people summary</a> · <a href="../data/processed/author_aliases.csv">author aliases</a> · <a href="../data/processed/authors_needing_review.csv">authors needing review</a> · <a href="../data/processed/excluded_author_artifacts.csv">excluded artifacts</a></p>
   {people_html}
 
   <h2>Who replied to whom?</h2>
   <p class="note">The directed reply layer is stricter than co-participation. Exact header matches are strongest; thread-inferred edges are useful but should be treated as lower-confidence.</p>
   {replies_html}
-  <p><a href="../data/processed/reply_edges.csv">Download directed reply edges</a> · <a href="../data/processed/network_edges.csv">Download co-participation edges</a></p>
+  <p><strong>CSV downloads: </strong><a href="../data/processed/atlas_reply_summary.csv">reply confidence summary</a> · <a href="../data/processed/reply_edges.csv">directed reply edges</a> · <a href="../data/processed/reply_network_edges.csv">aggregated direct replies</a> · <a href="../data/processed/network_edges.csv">co-participation edges</a></p>
 
   <h2>Threads worth reading</h2>
   <p class="note">These are automatically selected candidates for human review, based on thread size, number of participants, reply density, topic variety, and request/resolution/debate language.</p>
+  <p><strong>CSV downloads: </strong><a href="../data/processed/case_study_candidates.csv">case-study candidates</a> · <a href="../data/processed/thread_explorer_index.csv">thread explorer index</a> · <a href="../data/processed/curated_case_studies.csv">curated case table</a></p>
   {cases_html}
 
   <h2>Case Study Explorer</h2>
   <p class="note">Each linked page shows chronology, participants, reply evidence, unresolved reply-like messages, and public Pipermail links. All pages remain candidate pages until manually curated.</p>
+  <p><strong>CSV downloads: </strong><a href="../data/processed/thread_explorer_index.csv">thread explorer index</a> · <a href="../data/processed/case_review_queue.csv">case review queue</a> · <a href="../data/processed/curated_case_studies.csv">curated case table</a></p>
   {explorer_sections}
 
   <h2>Curated Case-Study Workflow</h2>
   <p class="note">All 250 candidates remain available for review. Suggested tracks distinguish philological substance from infrastructure history, while human review fields stay empty until curated.</p>
   {curated_summary_html}
-  <p><a href="curated.html">Open curated workflow page</a> · <a href="../data/processed/first_review_shortlist.csv">First review shortlist ({len(first_review_shortlist):,})</a> · <a href="../data/processed/case_review_queue.csv">All candidates</a> · <a href="../data/processed/case_review_queue_philological.csv">Philological packet ({len(review_philological):,})</a> · <a href="../data/processed/case_review_queue_infrastructure.csv">Infrastructure packet ({len(review_infrastructure):,})</a> · <a href="../data/processed/case_review_queue_unassigned.csv">Unassigned packet ({len(review_unassigned):,})</a></p>
-  <p><a href="../reports/first_review_worksheet.md">Open first-review worksheet</a></p>
-  <p><a href="../data/curation/first_review_notes.csv">Editable review notes intake</a> · <a href="../data/processed/review_import_audit.csv">Review import audit ({len(review_import_audit):,})</a></p>
-  <p><a href="../data/processed/human_review_index.csv">Unified human review index ({len(human_review_index):,})</a> · <a href="../data/processed/human_review_summary.json">Human review summary</a></p>
+  <p><strong>CSV downloads: </strong><a href="../data/processed/curated_case_summary.csv">curated summary</a> · <a href="../data/processed/first_review_shortlist.csv">first review shortlist ({len(first_review_shortlist):,})</a> · <a href="../data/processed/case_review_queue.csv">all candidates</a> · <a href="../data/processed/case_review_queue_philological.csv">philological packet ({len(review_philological):,})</a> · <a href="../data/processed/case_review_queue_infrastructure.csv">infrastructure packet ({len(review_infrastructure):,})</a> · <a href="../data/processed/case_review_queue_unassigned.csv">unassigned packet ({len(review_unassigned):,})</a></p>
+  <p><strong>Review downloads: </strong><a href="../data/curation/first_review_notes.csv">editable review notes intake</a> · <a href="../data/processed/review_import_audit.csv">review import audit ({len(review_import_audit):,})</a> · <a href="../data/processed/human_review_index.csv">unified human review index ({len(human_review_index):,})</a> · <a href="../data/processed/human_review_summary.json">human review summary</a> · <a href="../reports/first_review_worksheet.md">first-review worksheet</a></p>
+  <p><a href="curated.html">Open curated workflow page</a></p>
 
   <h2>Named Network Summaries</h2>
   <p class="note">Named network tables describe visible public archive evidence. Direct-reply summaries and co-participation summaries are kept separate; self-reply rows are flagged and omitted from this sample table.</p>
+  <p><strong>CSV downloads: </strong><a href="../data/processed/named_reply_network_summary.csv">named direct-reply summary</a> · <a href="../data/processed/named_coparticipation_network_summary.csv">named co-participation summary</a> · <a href="../data/processed/reply_edges.csv">directed reply edges</a> · <a href="../data/processed/network_edges.csv">co-participation edges</a></p>
   <h3>Direct Reply Evidence</h3>
   {named_replies_html}
   <h3>Co-Participation Evidence</h3>
