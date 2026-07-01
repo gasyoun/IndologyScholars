@@ -1,5 +1,6 @@
 file,relative_path,rows,bytes,description
 first_review_notes.csv,data/curation/first_review_notes.csv,25,1254,Human-editable review intake for importing first-review notes.
+renou_subject_rules.csv,data/curation/renou_subject_rules.csv,25,8065,Human-editable Renou state/register subject matching rules.
 atlas_list_functions.csv,data/processed/atlas_list_functions.csv,44,1721,Readable categories for what work the mailing list performed by decade.
 atlas_people_summary.csv,data/processed/atlas_people_summary.csv,3150,387660,Conservative person-level participation summary using normalized author labels.
 atlas_reply_summary.csv,data/processed/atlas_reply_summary.csv,4,176,Directed reply reconstruction counts by confidence level.
@@ -20,7 +21,7 @@ excluded_author_artifacts.csv,data/processed/excluded_author_artifacts.csv,2,402
 first_review_shortlist.csv,data/processed/first_review_shortlist.csv,25,10500,Balanced first-pass shortlist for starting human case-study review.
 human_review_index.csv,data/processed/human_review_index.csv,1921,484519,"Unified reviewer-facing queue for author, case-study, count, noisy-subject, and reply-network checks."
 human_review_summary.json,data/processed/human_review_summary.json,5,519,Machine-readable summary of the unified human review index.
-interpretive_guardrails.csv,data/processed/interpretive_guardrails.csv,6,2346,"Responsible-claims guardrails for interpreting reply, co-participation, volume, archive, and author-normalization outputs."
+interpretive_guardrails.csv,data/processed/interpretive_guardrails.csv,7,2820,"Responsible-claims guardrails for interpreting reply, co-participation, volume, archive, and author-normalization outputs."
 messages.csv,data/processed/messages.csv,62112,37399305,"Analyzed message metadata with cleaned subjects, topic labels, thread length, and author display strings."
 messages_clean.csv,data/processed/messages_clean.csv,62112,44724787,Message metadata with conservative normalized author labels and author audit fields.
 messages_raw.csv,data/processed/messages_raw.csv,62112,30087143,Harvested message metadata aligned from Pipermail HTML indexes and monthly mbox headers.
@@ -31,6 +32,12 @@ named_reply_network_summary.csv,data/processed/named_reply_network_summary.csv,2
 network_edges.csv,data/processed/network_edges.csv,40703,3729624,Undirected co-participation edges: two authors appear in the same thread.
 noisy_subjects.csv,data/processed/noisy_subjects.csv,397,53066,Generated atlas output.
 parse_issues.csv,data/processed/parse_issues.csv,8,326,Generated atlas output.
+renou_coverage.csv,data/processed/renou_coverage.csv,2,287,Coverage counts for the sparse Renou subject-line layer.
+renou_message_matches.csv,data/processed/renou_message_matches.csv,9110,4651911,Sparse message-level Renou state/register matches with matched terms and confidence.
+renou_messages.csv,data/processed/renou_messages.csv,62112,19415441,Row-per-message sparse Renou state/register index derived from subject-line evidence.
+renou_register_summary.csv,data/processed/renou_register_summary.csv,935,76008,"Renou register-axis summary by year, topic, and list function."
+renou_state_summary.csv,data/processed/renou_state_summary.csv,582,46143,"Renou I-V state-axis summary by year, topic, and list function."
+renou_thread_matches.csv,data/processed/renou_thread_matches.csv,3309,1056851,Thread-level rollup of sparse Renou state/register matches.
 reply_edges.csv,data/processed/reply_edges.csv,42741,18793933,"Directed reply edges resolved from In-Reply-To, References, or conservative thread inference."
 reply_network_edges.csv,data/processed/reply_network_edges.csv,20782,1114806,"Aggregated directed reply edge weights by source, target, and confidence."
 review_import_audit.csv,data/processed/review_import_audit.csv,25,2644,Audit trail for importing human review notes into curated case metadata.

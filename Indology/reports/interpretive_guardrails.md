@@ -43,3 +43,10 @@ These guardrails keep public claims close to the evidence produced by the metada
 - Forbidden overclaim: Generated candidates are curated examples or definitive major debates before human review.
 - Required evidence: `case_study_candidates.csv`, `case_review_queue.csv`, and reviewed `curated_case_studies.csv` rows.
 - Current artifact: `data/processed/case_study_candidates.csv; data/processed/curated_case_studies.csv`
+
+## renou_subject_layer
+
+- Allowed claim: A message or thread subject clearly matches a Renou state/register rule adapted from RENOU.md.
+- Forbidden overclaim: A blank Renou field proves irrelevance, or a subject match is equivalent to dictionary headword/sense tagging.
+- Required evidence: `renou_subject_rules.csv`, matched term, confidence, archive URL, and thread context for interpreted examples.
+- Current artifact: `data/processed/renou_messages.csv; data/processed/renou_message_matches.csv; data/curation/renou_subject_rules.csv`

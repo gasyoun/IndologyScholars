@@ -124,7 +124,7 @@ def write_datapackage(output_dir: Path) -> Path:
             "A reproducible metadata-first atlas of the public INDOLOGY-L Pipermail archive. "
             "The package contains harvested metadata, conservative author-normalization audit tables, "
             "topic and list-function summaries, directed reply and co-participation evidence, curation "
-            "queues, validation reports, and static atlas/search pages."
+            "queues, sparse Renou state/register subject-line crosswalks, validation reports, and static atlas/search pages."
         ),
         "version": date.today().isoformat(),
         "created": date.today().isoformat(),
@@ -231,6 +231,10 @@ This document describes the generated public-data layer for `{DATASET_TITLE}`. T
 
 `atlas_timeline.csv`, `atlas_topic_profiles.csv`, `atlas_list_functions.csv`, `atlas_people_summary.csv`, `atlas_reply_summary.csv`, and `case_study_candidates.csv` translate raw metadata into indologist-facing questions about time, topics, list functions, participation, replies, and candidate threads for close reading.
 
+### Renou
+
+`data/curation/renou_subject_rules.csv` adapts the Louis Renou I-V state axis and register lattice from `RENOU.md` into human-editable subject-line matching rules. `renou_messages.csv` keeps one row per message with optional `renou_states` and `renou_registers`; `renou_message_matches.csv` is the sparse evidence table; `renou_thread_matches.csv`, `renou_state_summary.csv`, `renou_register_summary.csv`, and `renou_coverage.csv` aggregate the layer. Empty Renou fields mean not classified by this layer, not negative evidence.
+
 ### Search
 
 `search_threads.json`, `search_authors.json`, `search_topics.json`, and `search_messages_sample.json` feed the static search page. Message search remains compact metadata, not full text.
@@ -254,6 +258,7 @@ Human-facing review fields include `curation_status`, `review_track`, `review_de
 - Archive visibility is not field representativeness.
 - Author normalization is a reproducible audit layer, not a biographical authority file.
 - Case-study candidates are generated reading suggestions, not a canon of important threads.
+- The Renou layer is subject-line classification for mailing-list discussions, not dictionary headword tagging.
 
 ## Generated Resources
 
@@ -529,6 +534,14 @@ GUARDRAILS = [
         "forbidden_overclaim": "Generated candidates are curated examples or definitive major debates before human review.",
         "required_evidence": "`case_study_candidates.csv`, `case_review_queue.csv`, and reviewed `curated_case_studies.csv` rows.",
         "current_artifact": "data/processed/case_study_candidates.csv; data/processed/curated_case_studies.csv",
+        "review_status": "active_guardrail",
+    },
+    {
+        "claim_area": "renou_subject_layer",
+        "allowed_claim": "A message or thread subject clearly matches a Renou state/register rule adapted from RENOU.md.",
+        "forbidden_overclaim": "A blank Renou field proves irrelevance, or a subject match is equivalent to dictionary headword/sense tagging.",
+        "required_evidence": "`renou_subject_rules.csv`, matched term, confidence, archive URL, and thread context for interpreted examples.",
+        "current_artifact": "data/processed/renou_messages.csv; data/processed/renou_message_matches.csv; data/curation/renou_subject_rules.csv",
         "review_status": "active_guardrail",
     },
 ]

@@ -108,6 +108,23 @@
 | atlas_reply_summary.csv | 4 |
 | case_study_candidates.csv | 250 |
 
+## Renou State/Register Layer
+
+| table | rows | exists |
+| --- | --- | --- |
+| renou_messages.csv | 62112 | yes |
+| renou_message_matches.csv | 9110 | yes |
+| renou_thread_matches.csv | 3309 | yes |
+| renou_state_summary.csv | 582 | yes |
+| renou_register_summary.csv | 935 | yes |
+| renou_coverage.csv | 2 | yes |
+| renou_subject_rules.csv | 25 | yes |
+
+| scope | total_rows | matched_rows | matched_percent | source_url |
+| --- | --- | --- | --- | --- |
+| messages | 62112 | 6217 | 10.01 | https://github.com/gasyoun/SanskritLexicography/blob/master/RussianTranslation/RENOU.md |
+| threads | 24033 | 3309 | 13.77 | https://github.com/gasyoun/SanskritLexicography/blob/master/RussianTranslation/RENOU.md |
+
 ## Thread Explorer
 
 - Generated thread pages indexed: 250
@@ -196,12 +213,12 @@
 
 - Data dictionary generated: yes
 - Datapackage generated: yes
-- Datapackage resources listed: 55
+- Datapackage resources listed: 62
 - Datapackage resources with missing local paths: 0
 - Citation metadata generated: yes
 - Unified human review index rows: 1,921
 - Human review summary generated: yes
-- Interpretive guardrails rows: 6
+- Interpretive guardrails rows: 7
 - Interpretive guardrails report generated: yes
 
 | check | ok |
@@ -211,6 +228,7 @@
 | replies | yes |
 | networks | yes |
 | atlas | yes |
+| renou | yes |
 | search | yes |
 | curation | yes |
 | validation | yes |

@@ -85,6 +85,15 @@ def validation_report(output_dir: Path) -> str:
     human_review_summary_path = processed_dir / "human_review_summary.json"
     interpretive_guardrails_path = processed_dir / "interpretive_guardrails.csv"
     interpretive_guardrails_report_path = output_dir / "reports" / "interpretive_guardrails.md"
+    renou_paths = {
+        "renou_messages.csv": processed_dir / "renou_messages.csv",
+        "renou_message_matches.csv": processed_dir / "renou_message_matches.csv",
+        "renou_thread_matches.csv": processed_dir / "renou_thread_matches.csv",
+        "renou_state_summary.csv": processed_dir / "renou_state_summary.csv",
+        "renou_register_summary.csv": processed_dir / "renou_register_summary.csv",
+        "renou_coverage.csv": processed_dir / "renou_coverage.csv",
+        "renou_subject_rules.csv": output_dir / "data" / "curation" / "renou_subject_rules.csv",
+    }
 
     months = pd.read_csv(months_path) if months_path.exists() else pd.DataFrame()
     messages = pd.read_csv(messages_path, dtype=str, low_memory=False) if messages_path.exists() else pd.DataFrame()
@@ -113,6 +122,10 @@ def validation_report(output_dir: Path) -> str:
     named_coparticipation_summary = pd.read_csv(named_coparticipation_summary_path, dtype=str, low_memory=False).fillna("") if named_coparticipation_summary_path.exists() else pd.DataFrame()
     human_review_index = pd.read_csv(human_review_index_path, dtype=str, low_memory=False).fillna("") if human_review_index_path.exists() else pd.DataFrame()
     interpretive_guardrails = pd.read_csv(interpretive_guardrails_path, dtype=str, low_memory=False).fillna("") if interpretive_guardrails_path.exists() else pd.DataFrame()
+    renou_tables = {
+        name: pd.read_csv(path, dtype=str, low_memory=False).fillna("") if path.exists() else pd.DataFrame()
+        for name, path in renou_paths.items()
+    }
     search_tables: dict[str, list[dict[str, object]]] = {}
     search_errors: list[str] = []
     for name, path in search_paths.items():
@@ -215,6 +228,31 @@ def validation_report(output_dir: Path) -> str:
     else:
         missing_atlas = [name for name, table in atlas_tables.items() if table.empty]
         lines.extend(["## Guided Atlas Layers", "", f"- Missing or empty atlas tables: {', '.join(missing_atlas)}", ""])
+
+    renou_messages = renou_tables["renou_messages.csv"]
+    renou_rules = renou_tables["renou_subject_rules.csv"]
+    renou_missing = [name for name, frame in renou_tables.items() if frame.empty]
+    lines.extend(
+        [
+            "## Renou State/Register Layer",
+            "",
+            markdown_table(pd.DataFrame([{"table": name, "rows": len(frame), "exists": "yes" if renou_paths[name].exists() else "no"} for name, frame in renou_tables.items()])),
+            "",
+        ]
+    )
+    if not renou_tables["renou_coverage.csv"].empty:
+        lines.extend([markdown_table(renou_tables["renou_coverage.csv"]), ""])
+    valid_rule_axes = set(renou_rules["axis"].astype(str)) <= {"state", "register"} if not renou_rules.empty and "axis" in renou_rules.columns else False
+    valid_message_count = not renou_messages.empty and len(renou_messages) == len(messages_clean)
+    has_matches = not renou_tables["renou_message_matches.csv"].empty and not renou_tables["renou_thread_matches.csv"].empty
+    if renou_missing:
+        lines.extend(["## Blocking Validation Issues", "", "- Missing or empty Renou layer outputs: " + ", ".join(renou_missing), ""])
+    if not valid_message_count:
+        lines.extend(["## Blocking Validation Issues", "", f"- `renou_messages.csv` row count {len(renou_messages):,} does not match `messages_clean.csv` row count {len(messages_clean):,}.", ""])
+    if not valid_rule_axes:
+        lines.extend(["## Blocking Validation Issues", "", "- `renou_subject_rules.csv` has invalid or missing rule axes.", ""])
+    if not has_matches:
+        lines.extend(["## Blocking Validation Issues", "", "- Renou sparse match tables are empty; expected at least some subject-line matches.", ""])
 
     if not thread_index.empty:
         existing_pages = thread_index["page_path"].map(lambda value: (output_dir / "dashboard" / str(value)).exists())
@@ -425,7 +463,7 @@ def validation_report(output_dir: Path) -> str:
     data_dictionary_text = data_dictionary_path.read_text(encoding="utf-8") if data_dictionary_path.exists() else ""
     citation_text = citation_path.read_text(encoding="utf-8") if citation_path.exists() else ""
     guardrails_text = interpretive_guardrails_report_path.read_text(encoding="utf-8") if interpretive_guardrails_report_path.exists() else ""
-    dictionary_families = ["messages", "authors", "replies", "networks", "atlas", "search", "curation", "validation"]
+    dictionary_families = ["messages", "authors", "replies", "networks", "atlas", "renou", "search", "curation", "validation"]
     dictionary_hits = {
         family: family in data_dictionary_text.lower()
         for family in dictionary_families
@@ -450,7 +488,7 @@ def validation_report(output_dir: Path) -> str:
         for label, domains in expected_review_domain_groups.items()
     }
     guardrail_claim_areas = set(interpretive_guardrails["claim_area"].astype(str)) if not interpretive_guardrails.empty and "claim_area" in interpretive_guardrails.columns else set()
-    required_guardrails = {"direct_reply_network", "co_participation_network", "message_volume", "archive_representativeness", "author_normalization"}
+    required_guardrails = {"direct_reply_network", "co_participation_network", "message_volume", "archive_representativeness", "author_normalization", "renou_subject_layer"}
     guardrails_have_overclaims = (
         not interpretive_guardrails.empty
         and "forbidden_overclaim" in interpretive_guardrails.columns
