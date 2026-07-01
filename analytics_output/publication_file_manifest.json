@@ -335,8 +335,8 @@
     },
     {
       "path": "analytics_output/nlp_cache.pkl",
-      "size_bytes": 148377,
-      "sha256": "6c7ddaad65bf332768a7e7d65f0cada6225b5f60eca64300cd2eeaedd0188271"
+      "size_bytes": 148375,
+      "sha256": "593c693eebbf06d7d1ed7f659ef3b0b56a23ca4288b166316153b2205c371738"
     },
     {
       "path": "analytics_output/no_affiliation_history.md",
@@ -610,8 +610,8 @@
     },
     {
       "path": "assets/nlp_data.js",
-      "size_bytes": 424317,
-      "sha256": "df1e86cf00b3e1dd2776c957db10d31f6ba3b01afc469d3d2469dd397666ccfd"
+      "size_bytes": 424328,
+      "sha256": "441e3736e95875f118959534c6d5214bc6e693de8eedf8f541a9e1a4c4c39e9f"
     },
     {
       "path": "assets/og-image.png",
@@ -9546,7 +9546,7 @@
     {
       "path": "findings/visualisations.html",
       "size_bytes": 493390,
-      "sha256": "a7028724bf10ab57170bed961d2389f7d7fc13146a0ccd51b57d0215c96ae45d"
+      "sha256": "b44dceb4bc433f12dcdf1491bfea092bd1c0ebd6031ce013f7eb54c0ad9d8ed1"
     },
     {
       "path": "gatekeeping-en.html",
