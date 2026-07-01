@@ -120,6 +120,14 @@ def csv_link(filename: str, label: object) -> str:
     return link(f"../data/processed/{filename}", label)
 
 
+def csv_link_columns(frame: pd.DataFrame, columns: list[str], filename: str) -> pd.DataFrame:
+    local = frame.copy()
+    for column in columns:
+        if column in local.columns:
+            local[column] = local[column].map(lambda value: csv_link(filename, value))
+    return local
+
+
 def export_slug(axis: str, code: str) -> str:
     return re.sub(r"[^a-z0-9]+", "_", f"{axis}_{code}".lower()).strip("_")
 
@@ -419,6 +427,7 @@ def write_dashboard(output_dir: Path) -> Path:
     if not topic_profiles.empty:
         top_topics = topic_profiles[["topic", "message_count", "thread_count", "author_count", "top_list_function"]].head(12).copy()
         top_topics["topic"] = top_topics["topic"].map(lambda value: search_link(value, kind="threads", topic=value))
+        top_topics = csv_link_columns(top_topics, ["message_count", "thread_count", "author_count"], "atlas_topic_profiles.csv")
         top_topics["top_list_function"] = top_topics["top_list_function"].map(lambda value: search_link(value, kind="threads", func=value) if str(value) else "")
         top_topics_html = top_topics.to_html(index=False, classes="data", escape=False)
     else:
@@ -431,6 +440,7 @@ def write_dashboard(output_dir: Path) -> Path:
     if not top_functions.empty:
         function_display = top_functions.head(12).copy()
         function_display["list_function"] = function_display["list_function"].map(lambda value: search_link(value, kind="threads", func=value))
+        function_display = csv_link_columns(function_display, ["message_count"], "atlas_list_functions.csv")
         functions_html = function_display.to_html(index=False, classes="data", escape=False)
     else:
         functions_html = ""
@@ -447,6 +457,7 @@ def write_dashboard(output_dir: Path) -> Path:
     if not people.empty:
         people_display = people[["normalized_author", "message_count", "thread_count", "first_year", "last_year", "top_list_function", "author_status"]].head(20).copy()
         people_display["normalized_author"] = people_display["normalized_author"].map(lambda value: search_link(value, kind="authors", q=value))
+        people_display = csv_link_columns(people_display, ["message_count", "thread_count"], "atlas_people_summary.csv")
         people_display["first_year"] = people_display["first_year"].map(lambda value: search_link(value, kind="threads", year=value))
         people_display["last_year"] = people_display["last_year"].map(lambda value: search_link(value, kind="threads", year=value))
         people_display["top_list_function"] = people_display["top_list_function"].map(lambda value: search_link(value, kind="threads", func=value) if str(value) else "")
@@ -456,16 +467,18 @@ def write_dashboard(output_dir: Path) -> Path:
         people_html = ""
     if not reply_summary.empty:
         reply_display = reply_summary.copy()
+        reply_display = csv_link_columns(reply_display, ["message_count", "reply_rows"], "atlas_reply_summary.csv")
         for column in reply_display.columns:
-            if column != "message_count":
+            if column not in {"message_count", "reply_rows"}:
                 reply_display[column] = reply_display[column].map(lambda value: csv_link("reply_edges.csv", value))
         replies_html = reply_display.to_html(index=False, classes="data", escape=False)
     else:
         replies_html = ""
     if not curated_summary.empty:
         curated_display = curated_summary.copy()
+        curated_display = csv_link_columns(curated_display, ["count", "thread_count"], "curated_case_summary.csv")
         for column in curated_display.columns:
-            if column != "count":
+            if column not in {"count", "thread_count"}:
                 curated_display[column] = curated_display[column].map(lambda value: link("curated.html", value))
         curated_summary_html = curated_display.to_html(index=False, classes="data", escape=False)
     else:
@@ -478,6 +491,7 @@ def write_dashboard(output_dir: Path) -> Path:
         named_reply_display["decade"] = named_reply_display["decade"].map(lambda value: search_link(value, kind="threads", q=str(value)[:3]) if str(value) else "")
         named_reply_display["primary_topic"] = named_reply_display["primary_topic"].map(lambda value: search_link(value, kind="threads", topic=value) if str(value) else "")
         named_reply_display["confidence"] = named_reply_display["confidence"].map(lambda value: csv_link("reply_edges.csv", value))
+        named_reply_display = csv_link_columns(named_reply_display, ["reply_count", "is_self_reply"], "named_reply_network_summary.csv")
         named_replies_html = named_reply_display.to_html(index=False, classes="data", escape=False)
     else:
         named_replies_html = ""
@@ -487,6 +501,7 @@ def write_dashboard(output_dir: Path) -> Path:
         named_coparticipation_display["source_author"] = named_coparticipation_display["source_author"].map(lambda value: search_link(value, kind="authors", q=value))
         named_coparticipation_display["target_author"] = named_coparticipation_display["target_author"].map(lambda value: search_link(value, kind="authors", q=value))
         named_coparticipation_display["topic"] = named_coparticipation_display["topic"].map(lambda value: search_link(value, kind="threads", topic=value) if str(value) else "")
+        named_coparticipation_display = csv_link_columns(named_coparticipation_display, ["thread_count"], "named_coparticipation_network_summary.csv")
         named_coparticipation_html = named_coparticipation_display.to_html(index=False, classes="data", escape=False)
     else:
         named_coparticipation_html = ""
@@ -495,6 +510,8 @@ def write_dashboard(output_dir: Path) -> Path:
         case_display["subject"] = case_display.apply(lambda row: link(str(row.get("page_path", "")), row.get("subject", "")), axis=1)
         case_display["primary_topic"] = case_display["primary_topic"].map(lambda value: search_link(value, kind="threads", topic=value) if str(value) else "")
         case_display["list_function"] = case_display["list_function"].map(lambda value: search_link(value, kind="threads", func=value) if str(value) else "")
+        for column in ["case_score", "message_count", "author_count", "reply_count"]:
+            case_display[column] = case_display.apply(lambda row, col=column: link(str(row.get("page_path", "")), row.get(col, "")), axis=1)
         case_display["thread_page"] = case_display["page_path"].map(lambda value: f'<a href="{value}">open</a>')
         cases_html = case_display[["case_score", "subject", "primary_topic", "list_function", "message_count", "author_count", "reply_count", "thread_page"]].head(25).to_html(index=False, classes="data", escape=False)
     else:
@@ -508,6 +525,8 @@ def write_dashboard(output_dir: Path) -> Path:
             local["subject"] = local.apply(lambda row: link(str(row.get("page_path", "")), row.get("subject", "")), axis=1)
             local["primary_topic"] = local["primary_topic"].map(lambda value: search_link(value, kind="threads", topic=value) if str(value) else "")
             local["list_function"] = local["list_function"].map(lambda value: search_link(value, kind="threads", func=value) if str(value) else "")
+            for column in ["message_count", "author_count", "reply_count"]:
+                local[column] = local.apply(lambda row, col=column: link(str(row.get("page_path", "")), row.get(col, "")), axis=1)
             local["thread_page"] = local["page_path"].map(lambda value: f'<a href="{value}">open</a>')
             return f"<h3>{title}</h3>" + local[["subject", "primary_topic", "list_function", "message_count", "author_count", "reply_count", "thread_page"]].head(12).to_html(index=False, classes="data", escape=False)
 
@@ -526,6 +545,7 @@ def write_dashboard(output_dir: Path) -> Path:
         decade_summary = timeline.groupby("decade").agg({"message_count": lambda s: pd.to_numeric(s, errors="coerce").sum(), "thread_count": lambda s: pd.to_numeric(s, errors="coerce").sum(), "author_count": lambda s: pd.to_numeric(s, errors="coerce").max()}).reset_index()
         decade_summary = decade_summary.rename(columns={"message_count": "messages", "thread_count": "threads", "author_count": "max_yearly_authors"})
         decade_summary["decade"] = decade_summary["decade"].map(lambda value: search_link(value, kind="threads", q=str(value)[:3]) if str(value) else "")
+        decade_summary = csv_link_columns(decade_summary, ["messages", "threads", "max_yearly_authors"], "atlas_timeline.csv")
         decade_html = decade_summary.to_html(index=False, classes="data", escape=False)
 
     html = f"""<!doctype html>
