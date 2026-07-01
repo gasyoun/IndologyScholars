@@ -164,8 +164,8 @@ def renou_axis_html(frame: pd.DataFrame, axis: str, limit: int) -> str:
             {
                 "renou_code": link(messages_href, code),
                 "renou_label": link(messages_href, label),
-                "message_count": f"{to_int(row.get('message_count')):,}",
-                "thread_count": f"{to_int(row.get('thread_count')):,}",
+                "message_count": link(messages_href, f"{to_int(row.get('message_count')):,}"),
+                "thread_count": link(threads_href, f"{to_int(row.get('thread_count')):,}"),
                 "messages_csv": link(messages_href, "messages"),
                 "threads_csv": link(threads_href, "threads"),
                 "summary_csv": link(summary_href, "summary"),
@@ -444,12 +444,22 @@ def write_dashboard(output_dir: Path) -> Path:
         functions_html = function_display.to_html(index=False, classes="data", escape=False)
     else:
         functions_html = ""
-    renou_coverage_html = renou_coverage.to_html(index=False, classes="data", render_links=True) if not renou_coverage.empty else ""
+    if not renou_coverage.empty:
+        renou_coverage_display = renou_coverage.copy()
+        for column in ["scope", "total_rows", "matched_rows", "matched_percent"]:
+            if column in renou_coverage_display.columns:
+                renou_coverage_display[column] = renou_coverage_display[column].map(lambda value: csv_link("renou_coverage.csv", value))
+        if "source_url" in renou_coverage_display.columns:
+            renou_coverage_display["source_url"] = renou_coverage_display["source_url"].map(lambda value: link(str(value), "RENOU.md"))
+        renou_coverage_html = renou_coverage_display.to_html(index=False, classes="data", escape=False)
+    else:
+        renou_coverage_html = ""
     renou_states_html = renou_axis_html(renou_state_summary, "state", 10)
     renou_registers_html = renou_axis_html(renou_register_summary, "register", 12)
     if not renou_thread_matches.empty:
         thread_links = renou_thread_matches[["thread_subject", "renou_states", "renou_registers", "matched_message_count", "confidence", "first_url"]].head(12).copy()
         thread_links["thread_subject"] = thread_links.apply(lambda row: link(str(row.get("first_url", "")), row.get("thread_subject", "")), axis=1)
+        thread_links = csv_link_columns(thread_links, ["renou_states", "renou_registers", "matched_message_count", "confidence"], "renou_thread_matches.csv")
         thread_links["first_url"] = thread_links["first_url"].map(lambda value: link(str(value), "archive"))
         renou_threads_html = thread_links.to_html(index=False, classes="data", escape=False)
     else:
