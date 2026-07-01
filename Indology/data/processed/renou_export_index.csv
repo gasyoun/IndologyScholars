@@ -1,0 +1,76 @@
+renou_axis,renou_code,renou_label,export_kind,relative_path,rows
+register,atharva,Atharvaveda,messages,data/processed/renou_register_atharva_messages.csv,66
+register,atharva,Atharvaveda,threads,data/processed/renou_register_atharva_threads.csv,46
+register,atharva,Atharvaveda,summary,data/processed/renou_register_atharva_summary.csv,22
+register,bauddha,Bauddha,messages,data/processed/renou_register_bauddha_messages.csv,92
+register,bauddha,Bauddha,threads,data/processed/renou_register_bauddha_threads.csv,46
+register,bauddha,Bauddha,summary,data/processed/renou_register_bauddha_summary.csv,26
+register,bhasya,Bhāṣya,messages,data/processed/renou_register_bhasya_messages.csv,293
+register,bhasya,Bhāṣya,threads,data/processed/renou_register_bhasya_threads.csv,154
+register,bhasya,Bhāṣya,summary,data/processed/renou_register_bhasya_summary.csv,63
+register,brahmana,Brāhmaṇa,messages,data/processed/renou_register_brahmana_messages.csv,93
+register,brahmana,Brāhmaṇa,threads,data/processed/renou_register_brahmana_threads.csv,47
+register,brahmana,Brāhmaṇa,summary,data/processed/renou_register_brahmana_summary.csv,22
+register,epic,Epic,messages,data/processed/renou_register_epic_messages.csv,563
+register,epic,Epic,threads,data/processed/renou_register_epic_threads.csv,336
+register,epic,Epic,summary,data/processed/renou_register_epic_summary.csv,104
+register,epig,Epigraphic,messages,data/processed/renou_register_epig_messages.csv,355
+register,epig,Epigraphic,threads,data/processed/renou_register_epig_threads.csv,208
+register,epig,Epigraphic,summary,data/processed/renou_register_epig_summary.csv,89
+register,hors_inde,Outside India,messages,data/processed/renou_register_hors_inde_messages.csv,13
+register,hors_inde,Outside India,threads,data/processed/renou_register_hors_inde_threads.csv,12
+register,hors_inde,Outside India,summary,data/processed/renou_register_hors_inde_summary.csv,5
+register,jaina,Jaina,messages,data/processed/renou_register_jaina_messages.csv,365
+register,jaina,Jaina,threads,data/processed/renou_register_jaina_threads.csv,288
+register,jaina,Jaina,summary,data/processed/renou_register_jaina_summary.csv,101
+register,karika,Kārikā,messages,data/processed/renou_register_karika_messages.csv,17
+register,karika,Kārikā,threads,data/processed/renou_register_karika_threads.csv,8
+register,karika,Kārikā,summary,data/processed/renou_register_karika_summary.csv,3
+register,katha,Kathā,messages,data/processed/renou_register_katha_messages.csv,174
+register,katha,Kathā,threads,data/processed/renou_register_katha_threads.csv,115
+register,katha,Kathā,summary,data/processed/renou_register_katha_summary.csv,49
+register,kavya,Kāvya,messages,data/processed/renou_register_kavya_messages.csv,518
+register,kavya,Kāvya,threads,data/processed/renou_register_kavya_threads.csv,254
+register,kavya,Kāvya,summary,data/processed/renou_register_kavya_summary.csv,102
+register,natya,Nāṭya,messages,data/processed/renou_register_natya_messages.csv,124
+register,natya,Nāṭya,threads,data/processed/renou_register_natya_threads.csv,72
+register,natya,Nāṭya,summary,data/processed/renou_register_natya_summary.csv,25
+register,purana,Purāṇa,messages,data/processed/renou_register_purana_messages.csv,160
+register,purana,Purāṇa,threads,data/processed/renou_register_purana_threads.csv,90
+register,purana,Purāṇa,summary,data/processed/renou_register_purana_summary.csv,37
+register,rgveda,Ṛgveda,messages,data/processed/renou_register_rgveda_messages.csv,523
+register,rgveda,Ṛgveda,threads,data/processed/renou_register_rgveda_threads.csv,283
+register,rgveda,Ṛgveda,summary,data/processed/renou_register_rgveda_summary.csv,61
+register,smrti,Smṛti,messages,data/processed/renou_register_smrti_messages.csv,77
+register,smrti,Smṛti,threads,data/processed/renou_register_smrti_threads.csv,41
+register,smrti,Smṛti,summary,data/processed/renou_register_smrti_summary.csv,23
+register,sutra,Sūtra,messages,data/processed/renou_register_sutra_messages.csv,108
+register,sutra,Sūtra,threads,data/processed/renou_register_sutra_threads.csv,67
+register,sutra,Sūtra,summary,data/processed/renou_register_sutra_summary.csv,25
+register,tantra,Tantra,messages,data/processed/renou_register_tantra_messages.csv,211
+register,tantra,Tantra,threads,data/processed/renou_register_tantra_threads.csv,122
+register,tantra,Tantra,summary,data/processed/renou_register_tantra_summary.csv,60
+register,upanisad,Upaniṣad,messages,data/processed/renou_register_upanisad_messages.csv,144
+register,upanisad,Upaniṣad,threads,data/processed/renou_register_upanisad_threads.csv,79
+register,upanisad,Upaniṣad,summary,data/processed/renou_register_upanisad_summary.csv,28
+register,vyakarana,Vyākaraṇa,messages,data/processed/renou_register_vyakarana_messages.csv,649
+register,vyakarana,Vyākaraṇa,threads,data/processed/renou_register_vyakarana_threads.csv,324
+register,vyakarana,Vyākaraṇa,summary,data/processed/renou_register_vyakarana_summary.csv,81
+register,yajus,Yajurveda,messages,data/processed/renou_register_yajus_messages.csv,24
+register,yajus,Yajurveda,threads,data/processed/renou_register_yajus_threads.csv,13
+register,yajus,Yajurveda,summary,data/processed/renou_register_yajus_summary.csv,9
+state,I,Vedic,messages,data/processed/renou_state_i_messages.csv,1528
+state,I,Vedic,threads,data/processed/renou_state_i_threads.csv,873
+state,I,Vedic,summary,data/processed/renou_state_i_summary.csv,146
+state,II,Pāṇinian,messages,data/processed/renou_state_ii_messages.csv,724
+state,II,Pāṇinian,threads,data/processed/renou_state_ii_threads.csv,365
+state,II,Pāṇinian,summary,data/processed/renou_state_ii_summary.csv,91
+state,III,Epic & prolongements,messages,data/processed/renou_state_iii_messages.csv,1215
+state,III,Epic & prolongements,threads,data/processed/renou_state_iii_threads.csv,637
+state,III,Epic & prolongements,summary,data/processed/renou_state_iii_summary.csv,137
+state,IV,Classical,messages,data/processed/renou_state_iv_messages.csv,323
+state,IV,Classical,threads,data/processed/renou_state_iv_threads.csv,179
+state,IV,Classical,summary,data/processed/renou_state_iv_summary.csv,68
+state,V,Buddhist / Jaina,messages,data/processed/renou_state_v_messages.csv,751
+state,V,Buddhist / Jaina,threads,data/processed/renou_state_v_threads.csv,529
+state,V,Buddhist / Jaina,summary,data/processed/renou_state_v_summary.csv,139

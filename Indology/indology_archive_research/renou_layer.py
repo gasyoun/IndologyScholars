@@ -160,6 +160,62 @@ def strongest_confidence(values: list[str]) -> str:
     return sorted(values)[0]
 
 
+def export_slug(axis: str, code: str) -> str:
+    return re.sub(r"[^a-z0-9]+", "_", f"{axis}_{code}".lower()).strip("_")
+
+
+def write_axis_exports(processed_dir: Path, outputs: dict[str, pd.DataFrame]) -> dict[str, Path]:
+    paths: dict[str, Path] = {}
+    messages = outputs["renou_messages"]
+    matches = outputs["renou_message_matches"]
+    threads = outputs["renou_thread_matches"]
+    summaries = {
+        "state": outputs["renou_state_summary"],
+        "register": outputs["renou_register_summary"],
+    }
+    for stale in processed_dir.glob("renou_*_*_messages.csv"):
+        stale.unlink()
+    for stale in processed_dir.glob("renou_*_*_threads.csv"):
+        stale.unlink()
+    for stale in processed_dir.glob("renou_*_*_summary.csv"):
+        stale.unlink()
+
+    index_rows: list[dict[str, object]] = []
+    if not matches.empty:
+        for (axis, code, label), group in matches.groupby(["renou_axis", "renou_code", "renou_label"], dropna=False):
+            axis = str(axis)
+            code = str(code)
+            label = str(label)
+            slug = export_slug(axis, code)
+            message_ids = set(group["archive_id"].astype(str))
+            thread_ids = set(group["thread_root_id"].astype(str))
+            message_frame = messages[messages["archive_id"].astype(str).isin(message_ids)].copy()
+            thread_frame = threads[threads["thread_root_id"].astype(str).isin(thread_ids)].copy()
+            summary_frame = summaries.get(axis, pd.DataFrame())
+            summary_frame = summary_frame[summary_frame["renou_code"].astype(str).eq(code)].copy() if not summary_frame.empty else pd.DataFrame()
+            for kind, frame in [("messages", message_frame), ("threads", thread_frame), ("summary", summary_frame)]:
+                filename = f"renou_{slug}_{kind}.csv"
+                path = processed_dir / filename
+                frame.to_csv(path, index=False, encoding="utf-8")
+                paths[path.stem] = path
+                index_rows.append(
+                    {
+                        "renou_axis": axis,
+                        "renou_code": code,
+                        "renou_label": label,
+                        "export_kind": kind,
+                        "relative_path": f"data/processed/{filename}",
+                        "rows": len(frame),
+                    }
+                )
+
+    index = pd.DataFrame(index_rows)
+    index_path = processed_dir / "renou_export_index.csv"
+    index.to_csv(index_path, index=False, encoding="utf-8")
+    paths["renou_export_index"] = index_path
+    return paths
+
+
 def build_renou_tables(output_dir: Path) -> dict[str, pd.DataFrame]:
     processed_dir = output_dir / "data" / "processed"
     messages = read_csv(processed_dir / "messages_clean.csv")
@@ -314,6 +370,7 @@ def run_renou_layer(output_dir: Path) -> dict[str, Path]:
         path = processed_dir / f"{name}.csv"
         frame.to_csv(path, index=False, encoding="utf-8")
         paths[name] = path
+    paths.update(write_axis_exports(processed_dir, outputs))
     return paths
 
 

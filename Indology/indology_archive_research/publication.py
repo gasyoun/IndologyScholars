@@ -3,7 +3,9 @@
 from __future__ import annotations
 
 import argparse
+import html
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -43,6 +45,7 @@ DATASET_DESCRIPTIONS = {
     "renou_state_summary.csv": "Renou I-V state-axis summary by year, topic, and list function.",
     "renou_register_summary.csv": "Renou register-axis summary by year, topic, and list function.",
     "renou_coverage.csv": "Coverage counts for the sparse Renou subject-line layer.",
+    "renou_export_index.csv": "Index of filtered Renou state/register CSV downloads.",
     "renou_subject_rules.csv": "Human-editable Renou state/register subject matching rules.",
     "named_reply_network_summary.csv": "Named direct-reply network summary by decade, topic, and confidence.",
     "named_coparticipation_network_summary.csv": "Named co-participation network summary by topic.",
@@ -91,6 +94,64 @@ def to_int(value: object) -> int:
         return 0
 
 
+def dataset_description(path: Path) -> str:
+    if path.name in DATASET_DESCRIPTIONS:
+        return DATASET_DESCRIPTIONS[path.name]
+    if re.match(r"renou_(state|register)_.+_(messages|threads|summary)\.csv$", path.name):
+        return "Filtered Renou state/register CSV export used by the clickable dashboard tables."
+    return "Generated atlas output."
+
+
+def link(href: str, label: object) -> str:
+    return f'<a href="{html.escape(href, quote=True)}">{html.escape(str(label))}</a>'
+
+
+def export_slug(axis: str, code: str) -> str:
+    return re.sub(r"[^a-z0-9]+", "_", f"{axis}_{code}".lower()).strip("_")
+
+
+def axis_summary(frame: pd.DataFrame) -> pd.DataFrame:
+    if frame.empty:
+        return pd.DataFrame()
+    return (
+        frame.groupby(["renou_code", "renou_label"])
+        .agg(
+            {
+                "message_count": lambda s: pd.to_numeric(s, errors="coerce").sum(),
+                "thread_count": lambda s: pd.to_numeric(s, errors="coerce").sum(),
+            }
+        )
+        .reset_index()
+        .sort_values("message_count", ascending=False)
+    )
+
+
+def renou_axis_html(frame: pd.DataFrame, axis: str, limit: int) -> str:
+    summary = axis_summary(frame).head(limit)
+    if summary.empty:
+        return ""
+    rows = []
+    for _, row in summary.iterrows():
+        code = str(row.get("renou_code", ""))
+        label = str(row.get("renou_label", ""))
+        slug = export_slug(axis, code)
+        messages_href = f"../data/processed/renou_{slug}_messages.csv"
+        threads_href = f"../data/processed/renou_{slug}_threads.csv"
+        summary_href = f"../data/processed/renou_{slug}_summary.csv"
+        rows.append(
+            {
+                "renou_code": link(messages_href, code),
+                "renou_label": link(messages_href, label),
+                "message_count": f"{to_int(row.get('message_count')):,}",
+                "thread_count": f"{to_int(row.get('thread_count')):,}",
+                "messages_csv": link(messages_href, "messages"),
+                "threads_csv": link(threads_href, "threads"),
+                "summary_csv": link(summary_href, "summary"),
+            }
+        )
+    return pd.DataFrame(rows).to_html(index=False, classes="data", escape=False)
+
+
 def build_manifest(output_dir: Path) -> pd.DataFrame:
     processed_dir = output_dir / "data" / "processed"
     curation_dir = output_dir / "data" / "curation"
@@ -113,7 +174,7 @@ def build_manifest(output_dir: Path) -> pd.DataFrame:
                 "relative_path": str(path.relative_to(output_dir)).replace("\\", "/"),
                 "rows": row_count,
                 "bytes": path.stat().st_size,
-                "description": DATASET_DESCRIPTIONS.get(path.name, "Generated atlas output."),
+                "description": dataset_description(path),
             }
         )
     manifest = pd.DataFrame(rows)
@@ -348,18 +409,16 @@ def write_dashboard(output_dir: Path) -> Path:
         else pd.DataFrame()
     )
     functions_html = top_functions.head(12).to_html(index=False, classes="data") if not top_functions.empty else ""
-    renou_coverage_html = renou_coverage.to_html(index=False, classes="data") if not renou_coverage.empty else ""
-    renou_states_html = (
-        renou_state_summary.groupby(["renou_code", "renou_label"]).agg({"message_count": lambda s: pd.to_numeric(s, errors="coerce").sum(), "thread_count": lambda s: pd.to_numeric(s, errors="coerce").sum()}).reset_index().sort_values("message_count", ascending=False).head(10).to_html(index=False, classes="data")
-        if not renou_state_summary.empty
-        else ""
-    )
-    renou_registers_html = (
-        renou_register_summary.groupby(["renou_code", "renou_label"]).agg({"message_count": lambda s: pd.to_numeric(s, errors="coerce").sum(), "thread_count": lambda s: pd.to_numeric(s, errors="coerce").sum()}).reset_index().sort_values("message_count", ascending=False).head(12).to_html(index=False, classes="data")
-        if not renou_register_summary.empty
-        else ""
-    )
-    renou_threads_html = renou_thread_matches[["thread_subject", "renou_states", "renou_registers", "matched_message_count", "confidence", "first_url"]].head(12).to_html(index=False, classes="data", render_links=True) if not renou_thread_matches.empty else ""
+    renou_coverage_html = renou_coverage.to_html(index=False, classes="data", render_links=True) if not renou_coverage.empty else ""
+    renou_states_html = renou_axis_html(renou_state_summary, "state", 10)
+    renou_registers_html = renou_axis_html(renou_register_summary, "register", 12)
+    if not renou_thread_matches.empty:
+        thread_links = renou_thread_matches[["thread_subject", "renou_states", "renou_registers", "matched_message_count", "confidence", "first_url"]].head(12).copy()
+        thread_links["thread_subject"] = thread_links.apply(lambda row: link(str(row.get("first_url", "")), row.get("thread_subject", "")), axis=1)
+        thread_links["first_url"] = thread_links["first_url"].map(lambda value: link(str(value), "archive"))
+        renou_threads_html = thread_links.to_html(index=False, classes="data", escape=False)
+    else:
+        renou_threads_html = ""
     people_html = people[["normalized_author", "message_count", "thread_count", "first_year", "last_year", "top_list_function", "author_status"]].head(20).to_html(index=False, classes="data") if not people.empty else ""
     replies_html = reply_summary.to_html(index=False, classes="data") if not reply_summary.empty else ""
     curated_summary_html = curated_summary.to_html(index=False, classes="data") if not curated_summary.empty else ""
@@ -450,6 +509,7 @@ def write_dashboard(output_dir: Path) -> Path:
 
   <h2>Renou state/register layer</h2>
   <p class="note">This sparse crosswalk adapts the Louis Renou I-V state axis and register lattice from <a href="https://github.com/gasyoun/SanskritLexicography/blob/master/RussianTranslation/RENOU.md">RENOU.md</a> to subject-line evidence. It is a finding aid: unmatched messages mean “not classified by this layer,” not “not relevant to Renou.”</p>
+  <p><strong>Renou CSV downloads:</strong> <a href="../data/processed/renou_coverage.csv">coverage</a> · <a href="../data/processed/renou_state_summary.csv">state summary</a> · <a href="../data/processed/renou_register_summary.csv">register summary</a> · <a href="../data/processed/renou_export_index.csv">filtered export index</a></p>
   {renou_coverage_html}
   <h3>State axis</h3>
   {renou_states_html}

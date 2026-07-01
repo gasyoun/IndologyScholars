@@ -92,6 +92,7 @@ def validation_report(output_dir: Path) -> str:
         "renou_state_summary.csv": processed_dir / "renou_state_summary.csv",
         "renou_register_summary.csv": processed_dir / "renou_register_summary.csv",
         "renou_coverage.csv": processed_dir / "renou_coverage.csv",
+        "renou_export_index.csv": processed_dir / "renou_export_index.csv",
         "renou_subject_rules.csv": output_dir / "data" / "curation" / "renou_subject_rules.csv",
     }
 
@@ -245,6 +246,12 @@ def validation_report(output_dir: Path) -> str:
     valid_rule_axes = set(renou_rules["axis"].astype(str)) <= {"state", "register"} if not renou_rules.empty and "axis" in renou_rules.columns else False
     valid_message_count = not renou_messages.empty and len(renou_messages) == len(messages_clean)
     has_matches = not renou_tables["renou_message_matches.csv"].empty and not renou_tables["renou_thread_matches.csv"].empty
+    renou_export_index = renou_tables["renou_export_index.csv"]
+    export_paths_exist = (
+        not renou_export_index.empty
+        and "relative_path" in renou_export_index.columns
+        and renou_export_index["relative_path"].map(lambda value: (output_dir / str(value)).exists()).all()
+    )
     if renou_missing:
         lines.extend(["## Blocking Validation Issues", "", "- Missing or empty Renou layer outputs: " + ", ".join(renou_missing), ""])
     if not valid_message_count:
@@ -253,6 +260,8 @@ def validation_report(output_dir: Path) -> str:
         lines.extend(["## Blocking Validation Issues", "", "- `renou_subject_rules.csv` has invalid or missing rule axes.", ""])
     if not has_matches:
         lines.extend(["## Blocking Validation Issues", "", "- Renou sparse match tables are empty; expected at least some subject-line matches.", ""])
+    if not export_paths_exist:
+        lines.extend(["## Blocking Validation Issues", "", "- `renou_export_index.csv` is empty or points to missing filtered Renou CSV downloads.", ""])
 
     if not thread_index.empty:
         existing_pages = thread_index["page_path"].map(lambda value: (output_dir / "dashboard" / str(value)).exists())
