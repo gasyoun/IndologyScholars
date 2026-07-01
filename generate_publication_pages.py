@@ -1032,6 +1032,20 @@ keywords:
                 "description": "Main-site conference presentation counts by Renou register lattice.",
             },
             {
+                "name": "renou-cross-site-state-comparison",
+                "path": "analytics_output/renou_cross_site_state_comparison.csv",
+                "format": "csv",
+                "mediatype": "text/csv",
+                "description": "Comparison of main-site conference presentation counts and INDOLOGY archive message/thread counts by Renou I-V state code.",
+            },
+            {
+                "name": "renou-cross-site-register-comparison",
+                "path": "analytics_output/renou_cross_site_register_comparison.csv",
+                "format": "csv",
+                "mediatype": "text/csv",
+                "description": "Comparison of main-site conference presentation counts and INDOLOGY archive message/thread counts by Renou register code.",
+            },
+            {
                 "name": "verified-affiliation-spans",
                 "path": "curation/verified_affiliation_spans.csv",
                 "format": "csv",
@@ -3144,6 +3158,8 @@ def generate_download_page(data):
         ("Renou matches", "analytics_output/renou_presentation_matches.csv", "Sparse Renou rule hits with matched terms, rule IDs, confidence labels, and presentation links."),
         ("Renou state summary", "analytics_output/renou_state_summary.csv", "Main-site conference presentation counts by Renou I-V state axis."),
         ("Renou register summary", "analytics_output/renou_register_summary.csv", "Main-site conference presentation counts by Renou register lattice."),
+        ("Renou cross-site state comparison", "analytics_output/renou_cross_site_state_comparison.csv", "Conference presentations compared with INDOLOGY archive messages and threads by Renou state code."),
+        ("Renou cross-site register comparison", "analytics_output/renou_cross_site_register_comparison.csv", "Conference presentations compared with INDOLOGY archive messages and threads by Renou register code."),
         ("Renou export index", "analytics_output/renou_export_index.csv", "Filtered Renou CSV exports for each matched state/register."),
         ("Argument scale", "analytics_output/gumilyov_scale.csv", "Presentation-level argument-scale levels (canonical column argument_level; gumilyov_level kept as a legacy alias)."),
         ("Expert classification decisions", "analytics_output/classification_overrides.csv", "Reviewed revisions to themes, meso-levels, and argument-scale levels, with a rationale for each affected presentation."),
@@ -4102,6 +4118,7 @@ def generate_english_landing(data):
             <article class="card"><strong><a href="search.html">Search</a></strong><div class="meta">Static search across people, talks, cities, institutions, and themes.</div></article>
             <article class="card"><strong><a href="IndologyArchive/">INDOLOGY-L Archive Atlas</a></strong><div class="meta">Standalone metadata atlas of the public INDOLOGY mailing-list archive: topics, threads, reply evidence, curation, and reusable data.</div></article>
             <article class="card"><strong><a href="findings/renou.html">Renou Layer</a></strong><div class="meta">Conference-title state/register finding aid using the Renou I-V axis and register lattice.</div></article>
+            <article class="card"><strong><a href="findings/renou-comparison.html">Renou Comparison</a></strong><div class="meta">Conference presentations compared with INDOLOGY mailing-list messages and threads by Renou state/register.</div></article>
             <article class="card"><strong><a href="gumilyov/">Gumilyov Scale</a></strong><div class="meta">Presentation-level scale of generalization: micro, regional, and global.</div></article>
             <article class="card"><strong><a href="videos/">YouTube Videos</a></strong><div class="meta">Full playlist inventory and mapped presentation recordings; mapped talks also carry a Video badge.</div></article>
             <article class="card"><strong><a href="networks.html">Networks</a></strong><div class="meta">Participation and co-presence networks.</div></article>
@@ -4807,6 +4824,7 @@ def generate_findings_page(data, records):
                 <a class="chip bilingual-text" href="../conferences/" data-ru="Годы и программы" data-en="Years & Programs">Годы и программы</a>
                 <a class="chip bilingual-text" href="../themes/" data-ru="Тематические рубрики" data-en="Themes">Тематические рубрики</a>
                 <a class="chip bilingual-text" href="../findings/renou.html" data-ru="Слой Рену" data-en="Renou Layer">Слой Рену</a>
+                <a class="chip bilingual-text" href="../findings/renou-comparison.html" data-ru="Сравнение Рену" data-en="Renou Comparison">Сравнение Рену</a>
                 <a class="chip bilingual-text" href="../search.html" data-ru="Поиск по докладам" data-en="Search Papers">Поиск по докладам</a>
                 <a class="chip bilingual-text" href="../download-data.html" data-ru="CSV, JSON, SQLite" data-en="CSV, JSON, SQLite">CSV, JSON, SQLite</a>
             </div>

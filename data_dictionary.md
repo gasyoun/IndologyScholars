@@ -312,10 +312,13 @@ editable rule in `curation/renou_conference_rules.csv` finds a title/tag term.
 | `analytics_output/renou_presentation_matches.csv` | Sparse one-row-per-rule-hit table with matched terms, rule IDs, confidence labels, and presentation links. |
 | `analytics_output/renou_state_summary.csv` | Counts by Renou I-V state axis. |
 | `analytics_output/renou_register_summary.csv` | Counts by Renou register lattice. |
+| `analytics_output/renou_cross_site_state_comparison.csv` | Conference presentation counts compared with INDOLOGY archive message/thread counts by Renou I-V state code. |
+| `analytics_output/renou_cross_site_register_comparison.csv` | Conference presentation counts compared with INDOLOGY archive message/thread counts by Renou register code. |
 | `analytics_output/renou_year_summary.csv` | Year-by-year coverage of matched presentations and visible states/registers. |
 | `analytics_output/renou_scholar_summary.csv` | Scholar-level summary of matched talks, states, and registers. |
 | `analytics_output/renou_export_index.csv` | Index of filtered state/register presentation exports. |
 | `findings/renou.html` | Public static browser for the main-site Renou layer. |
+| `findings/renou-comparison.html` | Public comparison page linking the main-site conference layer with standalone INDOLOGY archive Renou outputs. |
 
 The standalone INDOLOGY mailing-list appendix has its own Renou outputs under
 `Indology/data/processed/`; the two layers remain separate but comparable.

@@ -374,6 +374,10 @@ def csv_page_link(filename: str, label: object) -> str:
     return link(f"../analytics_output/{filename}", label)
 
 
+def archive_csv_link(path: object, label: object) -> str:
+    return link(f"../IndologyArchive/{path}", label)
+
+
 def render_table(rows: list[dict[str, object]], columns: list[str], limit: int = 20) -> str:
     if not rows:
         return "<p>No rows.</p>"
@@ -387,6 +391,121 @@ def render_table(rows: list[dict[str, object]], columns: list[str], limit: int =
         lines.append("</tr>")
     lines.append("</tbody></table>")
     return "".join(lines)
+
+
+def int_value(value: object) -> int:
+    try:
+        return int(float(str(value or 0)))
+    except ValueError:
+        return 0
+
+
+def aggregate_archive_axis(root: Path, axis: str) -> dict[str, dict[str, object]]:
+    processed = root / "Indology" / "data" / "processed"
+    summary_rows = read_csv(processed / f"renou_{axis}_summary.csv")
+    export_rows = read_csv(processed / "renou_export_index.csv")
+    grouped: dict[str, dict[str, object]] = {}
+    for row in summary_rows:
+        code = row.get("renou_code", "")
+        if not code:
+            continue
+        out = grouped.setdefault(
+            code,
+            {
+                "renou_axis": axis,
+                "renou_code": code,
+                "renou_label": row.get("renou_label", ""),
+                "archive_message_count": 0,
+                "archive_thread_count": 0,
+                "archive_author_slice_count": 0,
+                "archive_first_year": "",
+                "archive_last_year": "",
+                "archive_primary_topics": set(),
+                "archive_list_functions": set(),
+                "archive_summary_rows": 0,
+            },
+        )
+        out["archive_message_count"] = int_value(out["archive_message_count"]) + int_value(row.get("message_count"))
+        out["archive_thread_count"] = int_value(out["archive_thread_count"]) + int_value(row.get("thread_count"))
+        out["archive_author_slice_count"] = int_value(out["archive_author_slice_count"]) + int_value(row.get("author_count"))
+        year = str(row.get("year", "")).strip()
+        if year:
+            years = [y for y in [out["archive_first_year"], out["archive_last_year"], year] if y]
+            out["archive_first_year"] = min(years)
+            out["archive_last_year"] = max(years)
+        if row.get("primary_topic"):
+            out["archive_primary_topics"].add(row["primary_topic"])
+        if row.get("list_function"):
+            out["archive_list_functions"].add(row["list_function"])
+        out["archive_summary_rows"] = int_value(out["archive_summary_rows"]) + 1
+
+    for row in export_rows:
+        if row.get("renou_axis") != axis:
+            continue
+        code = row.get("renou_code", "")
+        if code not in grouped:
+            grouped[code] = {
+                "renou_axis": axis,
+                "renou_code": code,
+                "renou_label": row.get("renou_label", ""),
+                "archive_message_count": 0,
+                "archive_thread_count": 0,
+                "archive_author_slice_count": 0,
+                "archive_first_year": "",
+                "archive_last_year": "",
+                "archive_primary_topics": set(),
+                "archive_list_functions": set(),
+                "archive_summary_rows": 0,
+            }
+        if row.get("export_kind") == "messages":
+            grouped[code]["archive_message_count"] = int_value(row.get("rows"))
+        elif row.get("export_kind") == "threads":
+            grouped[code]["archive_thread_count"] = int_value(row.get("rows"))
+
+    for row in grouped.values():
+        row["archive_primary_topics"] = collapse(list(row["archive_primary_topics"]))
+        row["archive_list_functions"] = collapse(list(row["archive_list_functions"]))
+    return grouped
+
+
+def compare_axis(root: Path, conference_rows: list[dict[str, object]], axis: str) -> list[dict[str, object]]:
+    archive_rows = aggregate_archive_axis(root, axis)
+    conference_by_code = {str(row["renou_code"]): row for row in conference_rows}
+    codes = sorted(set(conference_by_code) | set(archive_rows))
+    rows = []
+    for code in codes:
+        conference = conference_by_code.get(code, {})
+        archive = archive_rows.get(code, {})
+        rows.append(
+            {
+                "renou_axis": axis,
+                "renou_code": code,
+                "renou_label": conference.get("renou_label") or archive.get("renou_label", ""),
+                "conference_presentation_count": int_value(conference.get("presentation_count")),
+                "conference_scholar_count": int_value(conference.get("scholar_count")),
+                "conference_first_year": conference.get("first_year", ""),
+                "conference_last_year": conference.get("last_year", ""),
+                "conference_series": conference.get("series", ""),
+                "archive_message_count": int_value(archive.get("archive_message_count")),
+                "archive_thread_count": int_value(archive.get("archive_thread_count")),
+                "archive_author_slice_count": int_value(archive.get("archive_author_slice_count")),
+                "archive_first_year": archive.get("archive_first_year", ""),
+                "archive_last_year": archive.get("archive_last_year", ""),
+                "archive_primary_topics": archive.get("archive_primary_topics", ""),
+                "archive_list_functions": archive.get("archive_list_functions", ""),
+                "archive_summary_rows": int_value(archive.get("archive_summary_rows")),
+                "comparison_note": "present in both layers"
+                if code in conference_by_code and code in archive_rows
+                else ("conference-only match" if code in conference_by_code else "archive-only match"),
+            }
+        )
+    return sorted(
+        rows,
+        key=lambda row: (
+            -int_value(row["conference_presentation_count"]) - int_value(row["archive_thread_count"]),
+            str(row["renou_code"]),
+        ),
+    )
 
 
 def write_page(root: Path, outputs: dict[str, list[dict[str, object]]]) -> None:
@@ -462,7 +581,7 @@ def write_page(root: Path, outputs: dict[str, list[dict[str, object]]]) -> None:
     <div class="stat"><strong>{coverage['matched_scholars']}</strong>scholars with matched talks</div>
   </section>
   <p><strong>CSV downloads: </strong>{csv_page_link('renou_presentations.csv', 'presentations')} · {csv_page_link('renou_presentation_matches.csv', 'matches')} · {csv_page_link('renou_state_summary.csv', 'state summary')} · {csv_page_link('renou_register_summary.csv', 'register summary')} · {csv_page_link('renou_year_summary.csv', 'year summary')} · {csv_page_link('renou_scholar_summary.csv', 'scholar summary')} · {csv_page_link('renou_export_index.csv', 'filtered export index')}</p>
-  <p class="note">Rules are seeded in {link('../curation/renou_conference_rules.csv', 'curation/renou_conference_rules.csv')} and trace back to {link(RENOU_SOURCE_URL, 'RENOU.md')}. The INDOLOGY archive appendix remains separate, but both layers share the same cautious method.</p>
+  <p class="note">Rules are seeded in {link('../curation/renou_conference_rules.csv', 'curation/renou_conference_rules.csv')} and trace back to {link(RENOU_SOURCE_URL, 'RENOU.md')}. The INDOLOGY archive appendix remains separate, but both layers share the same cautious method. See the {link('renou-comparison.html', 'cross-site Renou comparison')} for conference/archive contrasts.</p>
 
   <h2>State Axis</h2>
   {render_table(state_rows, ['renou_code', 'renou_label', 'presentation_count', 'scholar_count', 'first_year', 'last_year', 'series'])}
@@ -482,6 +601,97 @@ def write_page(root: Path, outputs: dict[str, list[dict[str, object]]]) -> None:
     (findings / "renou.html").write_text(content, encoding="utf-8")
 
 
+def write_comparison_page(root: Path, outputs: dict[str, list[dict[str, object]]]) -> None:
+    findings = root / "findings"
+    findings.mkdir(exist_ok=True)
+    state_rows = outputs["state_comparison"]
+    register_rows = outputs["register_comparison"]
+    conference_coverage = outputs["coverage"][0]
+    archive_coverage_rows = read_csv(root / "Indology" / "data" / "processed" / "renou_coverage.csv")
+    archive_messages = next((row for row in archive_coverage_rows if row.get("scope") == "messages"), {})
+    archive_threads = next((row for row in archive_coverage_rows if row.get("scope") == "threads"), {})
+    state_display = []
+    for row in state_rows:
+        code = str(row["renou_code"])
+        state_display.append(
+            {
+                **row,
+                "renou_code": csv_page_link(f"renou_state_{code.lower()}_presentations.csv", code),
+                "renou_label": csv_page_link(f"renou_state_{code.lower()}_presentations.csv", row["renou_label"]),
+                "conference_presentation_count": csv_page_link(f"renou_state_{code.lower()}_presentations.csv", row["conference_presentation_count"]),
+                "archive_message_count": archive_csv_link(f"data/processed/renou_state_{code.lower()}_messages.csv", row["archive_message_count"]),
+                "archive_thread_count": archive_csv_link(f"data/processed/renou_state_{code.lower()}_threads.csv", row["archive_thread_count"]),
+            }
+        )
+    register_display = []
+    for row in register_rows:
+        code = str(row["renou_code"])
+        conference_filename = f"renou_register_{code}_presentations.csv"
+        archive_messages_path = f"data/processed/renou_register_{code}_messages.csv"
+        archive_threads_path = f"data/processed/renou_register_{code}_threads.csv"
+        has_conference_export = int_value(row["conference_presentation_count"]) > 0
+        register_display.append(
+            {
+                **row,
+                "renou_code": csv_page_link(conference_filename, code) if has_conference_export else archive_csv_link(archive_messages_path, code),
+                "renou_label": csv_page_link(conference_filename, row["renou_label"]) if has_conference_export else archive_csv_link(archive_messages_path, row["renou_label"]),
+                "conference_presentation_count": csv_page_link(conference_filename, row["conference_presentation_count"]) if has_conference_export else row["conference_presentation_count"],
+                "archive_message_count": archive_csv_link(archive_messages_path, row["archive_message_count"]),
+                "archive_thread_count": archive_csv_link(archive_threads_path, row["archive_thread_count"]),
+            }
+        )
+    shared_state = sum(1 for row in state_rows if row["comparison_note"] == "present in both layers")
+    shared_register = sum(1 for row in register_rows if row["comparison_note"] == "present in both layers")
+    content = f"""<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Renou Cross-Site Comparison · Indology Scholars</title>
+  <style>
+    body {{ font-family: system-ui, -apple-system, Segoe UI, sans-serif; margin: 0; color: #202124; background: #fafafa; line-height: 1.5; }}
+    main {{ max-width: 1240px; margin: 0 auto; padding: 32px 20px 56px; }}
+    h1 {{ font-size: 34px; margin: 0 0 8px; }}
+    h2 {{ margin-top: 36px; border-top: 1px solid #ddd; padding-top: 22px; }}
+    a {{ color: #245f73; }}
+    .note {{ color: #555; max-width: 940px; }}
+    .stats {{ display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; margin: 24px 0; }}
+    .stat {{ background: white; border: 1px solid #ddd; border-radius: 8px; padding: 14px; }}
+    .stat strong {{ display: block; font-size: 24px; }}
+    table.data {{ width: 100%; border-collapse: collapse; margin: 12px 0 18px; background: white; font-size: 13px; }}
+    table.data th, table.data td {{ border: 1px solid #ddd; padding: 6px 8px; vertical-align: top; }}
+    table.data th {{ background: #eef3f1; text-align: left; }}
+  </style>
+</head>
+<body>
+<main>
+  <p><a href="../index.html">Home</a> · <a href="index.html">Findings</a> · <a href="renou.html">Main-site Renou layer</a> · <a href="/IndologyScholars/IndologyArchive/dashboard/index.html">INDOLOGY archive atlas</a></p>
+  <h1>Renou Cross-Site Comparison</h1>
+  <p class="note">This page compares two separate Renou finding aids: conference presentation metadata from the main IndologyScholars site and mailing-list subject metadata from the standalone INDOLOGY Archive Atlas. Counts are not directly equivalent: conference rows count presentations, while archive rows count public email messages and threads. The comparison is useful for contrast, not ranking or representativeness claims.</p>
+  <section class="stats">
+    <div class="stat"><strong>{conference_coverage['matched_presentations']}</strong>matched conference presentations</div>
+    <div class="stat"><strong>{archive_messages.get('matched_rows', '')}</strong>matched archive messages</div>
+    <div class="stat"><strong>{archive_threads.get('matched_rows', '')}</strong>matched archive threads</div>
+    <div class="stat"><strong>{shared_state} / {len(state_rows)}</strong>shared state-axis codes</div>
+    <div class="stat"><strong>{shared_register} / {len(register_rows)}</strong>shared register codes</div>
+  </section>
+  <p><strong>CSV downloads: </strong>{csv_page_link('renou_cross_site_state_comparison.csv', 'state comparison')} · {csv_page_link('renou_cross_site_register_comparison.csv', 'register comparison')} · {csv_page_link('renou_presentations.csv', 'conference presentations')} · {archive_csv_link('data/processed/renou_messages.csv', 'archive messages')} · {archive_csv_link('data/processed/renou_export_index.csv', 'archive export index')}</p>
+
+  <h2>How To Read This</h2>
+  <p class="note">A high conference count means many presentation titles or tags triggered a Renou rule. A high archive count means many mailing-list subjects triggered a rule. Differences may reflect genre: conferences have curated paper titles, while the list has questions, announcements, bibliographic requests, technical support, and debate threads.</p>
+
+  <h2>State Axis Comparison</h2>
+  {render_table(state_display, ['renou_code', 'renou_label', 'conference_presentation_count', 'conference_scholar_count', 'archive_message_count', 'archive_thread_count', 'conference_first_year', 'conference_last_year', 'archive_first_year', 'archive_last_year', 'comparison_note'], limit=25)}
+
+  <h2>Register Comparison</h2>
+  {render_table(register_display, ['renou_code', 'renou_label', 'conference_presentation_count', 'conference_scholar_count', 'archive_message_count', 'archive_thread_count', 'conference_first_year', 'conference_last_year', 'archive_first_year', 'archive_last_year', 'comparison_note'], limit=40)}
+</main>
+</body>
+</html>
+"""
+    (findings / "renou-comparison.html").write_text(content, encoding="utf-8")
+
+
 def run(root: Path) -> dict[str, int]:
     curation_dir = root / "curation"
     out_dir = root / "analytics_output"
@@ -492,6 +702,8 @@ def run(root: Path) -> dict[str, int]:
     register_summary = summarize_matches(matches, presentation_rows_out, "register")
     year_summary = summarize_years(presentation_rows_out)
     scholar_summary = summarize_scholars(presentation_rows_out)
+    state_comparison = compare_axis(root, state_summary, "state")
+    register_comparison = compare_axis(root, register_summary, "register")
     matched_presentations = [row for row in presentation_rows_out if row["renou_match_status"] == "matched"]
     matched_scholars = {
         scholar_id
@@ -517,6 +729,8 @@ def run(root: Path) -> dict[str, int]:
         "year_summary": year_summary,
         "scholar_summary": scholar_summary,
         "coverage": coverage,
+        "state_comparison": state_comparison,
+        "register_comparison": register_comparison,
     }
     write_csv(out_dir / "renou_presentations.csv", presentation_rows_out)
     write_csv(out_dir / "renou_presentation_matches.csv", matches)
@@ -525,15 +739,20 @@ def run(root: Path) -> dict[str, int]:
     write_csv(out_dir / "renou_year_summary.csv", year_summary)
     write_csv(out_dir / "renou_scholar_summary.csv", scholar_summary)
     write_csv(out_dir / "renou_coverage.csv", coverage)
+    write_csv(out_dir / "renou_cross_site_state_comparison.csv", state_comparison)
+    write_csv(out_dir / "renou_cross_site_register_comparison.csv", register_comparison)
     export_index = write_filtered_exports(out_dir, presentation_rows_out, {"state": state_summary, "register": register_summary})
     write_csv(out_dir / "renou_export_index.csv", export_index)
     write_page(root, outputs)
+    write_comparison_page(root, outputs)
     return {
         "presentations": len(presentation_rows_out),
         "matches": len(matches),
         "matched_presentations": len(matched_presentations),
         "state_rows": len(state_summary),
         "register_rows": len(register_summary),
+        "comparison_state_rows": len(state_comparison),
+        "comparison_register_rows": len(register_comparison),
     }
 
 
