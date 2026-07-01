@@ -231,6 +231,34 @@
       "description": "Field-level provenance for generated presentation theme labels and review candidates."
     },
     {
+      "name": "renou-presentations",
+      "path": "analytics_output/renou_presentations.csv",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "description": "Presentation-level Renou state/register matches from conference titles and tags; a finding aid, not a final interpretation."
+    },
+    {
+      "name": "renou-presentation-matches",
+      "path": "analytics_output/renou_presentation_matches.csv",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "description": "Sparse Renou rule hits with matched terms, rule IDs, confidence labels, and presentation links."
+    },
+    {
+      "name": "renou-state-summary",
+      "path": "analytics_output/renou_state_summary.csv",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "description": "Main-site conference presentation counts by Renou I-V state axis."
+    },
+    {
+      "name": "renou-register-summary",
+      "path": "analytics_output/renou_register_summary.csv",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "description": "Main-site conference presentation counts by Renou register lattice."
+    },
+    {
       "name": "verified-affiliation-spans",
       "path": "curation/verified_affiliation_spans.csv",
       "format": "csv",
