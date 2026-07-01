@@ -5,13 +5,13 @@ This report reads the INDOLOGY mailing-list archive as a long-running scholarly 
 ## Coverage
 
 - Months: 426
-- Messages: 62,112
-- Threads: 24,033
+- Messages: 62,115
+- Threads: 24,034
 - Raw author strings: 3,283
 - Author strings needing review: 888
-- Directed reply rows: 42,741
-- Resolved directed replies: 37,095
-- Aggregated directed reply edges: 20,782
+- Directed reply rows: 42,743
+- Resolved directed replies: 37,097
+- Aggregated directed reply edges: 20,783
 
 ## Method Notes
 
@@ -36,18 +36,18 @@ This report reads the INDOLOGY mailing-list archive as a long-running scholarly 
 | 1990s | 19692 | 7745 | 536 |
 | 2000s | 14212 | 5326 | 480 |
 | 2010s | 17710 | 6873 | 309 |
-| 2020s | 10498 | 4089 | 317 |
+| 2020s | 10501 | 4090 | 317 |
 
 ## What Was Discussed?
 
 | topic | messages | threads | authors | top_list_function |
 | --- | --- | --- | --- | --- |
-| General scholarly discussion | 45544 | 17531 | 2794 | general discussion |
+| General scholarly discussion | 45546 | 17533 | 2794 | general discussion |
 | Announcements and events | 2792 | 2436 | 791 | announcement/event |
 | Bibliographic requests | 2592 | 1464 | 696 | bibliographic request |
 | History and culture | 2587 | 1579 | 856 | general discussion |
 | Digital resources and tools | 2447 | 1436 | 645 | digital resource/tool |
-| Texts and philology | 1953 | 1038 | 621 | philological discussion |
+| Texts and philology | 1954 | 1037 | 621 | philological discussion |
 | Veda and ritual | 1394 | 783 | 490 | general discussion |
 | Grammar and linguistics | 1001 | 463 | 347 | philological discussion |
 | Manuscripts and epigraphy | 991 | 462 | 344 | general discussion |
@@ -59,16 +59,16 @@ This sparse layer adapts the Louis Renou state and register axes documented in `
 
 | scope | total_rows | matched_rows | matched_percent | source_url |
 | --- | --- | --- | --- | --- |
-| messages | 62112 | 6217 | 10.01 | https://github.com/gasyoun/SanskritLexicography/blob/master/RussianTranslation/RENOU.md |
-| threads | 24033 | 3309 | 13.77 | https://github.com/gasyoun/SanskritLexicography/blob/master/RussianTranslation/RENOU.md |
+| messages | 62115 | 6217 | 10.01 | https://github.com/gasyoun/SanskritLexicography/blob/master/RussianTranslation/RENOU.md |
+| threads | 24034 | 3307 | 13.76 | https://github.com/gasyoun/SanskritLexicography/blob/master/RussianTranslation/RENOU.md |
 
 | renou_code | renou_label | message_count | thread_count |
 | --- | --- | --- | --- |
 | I | Vedic | 1528 | 881 |
-| III | Epic & prolongements | 1213 | 662 |
-| V | Buddhist / Jaina | 753 | 534 |
+| III | Epic & prolongements | 1215 | 662 |
+| V | Buddhist / Jaina | 751 | 532 |
 | II | Pāṇinian | 724 | 366 |
-| IV | Classical | 324 | 181 |
+| IV | Classical | 323 | 180 |
 
 | renou_code | renou_label | message_count | thread_count |
 | --- | --- | --- | --- |
@@ -81,7 +81,7 @@ This sparse layer adapts the Louis Renou state and register axes documented in `
 | bhasya | Bhāṣya | 293 | 154 |
 | tantra | Tantra | 211 | 122 |
 | katha | Kathā | 174 | 115 |
-| purana | Purāṇa | 158 | 90 |
+| purana | Purāṇa | 160 | 90 |
 | upanisad | Upaniṣad | 144 | 79 |
 | natya | Nāṭya | 124 | 73 |
 
@@ -104,9 +104,9 @@ This sparse layer adapts the Louis Renou state and register axes documented in `
 
 | list_function | messages |
 | --- | --- |
-| general discussion | 47824 |
+| general discussion | 47828 |
 | identification/help request | 3280 |
-| philological discussion | 3126 |
+| philological discussion | 3125 |
 | digital resource/tool | 2420 |
 | announcement/event | 2262 |
 | bibliographic request | 1362 |
@@ -122,7 +122,7 @@ This sparse layer adapts the Louis Renou state and register axes documented in `
 | Dominik Wujastyk | 3413 | 2766 | 1990 | 2026 | general discussion | confirmed |
 | Madhav Deshpande | 1888 | 1107 | 1994 | 2026 | general discussion | confirmed |
 | N. Ganesan | 1126 | 608 | 1997 | 2001 | general discussion | confirmed |
-| Harry Spier | 1044 | 647 | 1999 | 2026 | general discussion | confirmed |
+| Harry Spier | 1045 | 647 | 1999 | 2026 | general discussion | confirmed |
 | Nagaraj Paturi | 832 | 401 | 2014 | 2026 | general discussion | confirmed |
 | Matthew Kapstein | 805 | 578 | 2001 | 2026 | general discussion | confirmed |
 | Lars Martin Fosse | 784 | 490 | 1992 | 2016 | general discussion | confirmed |
@@ -140,7 +140,7 @@ This sparse layer adapts the Louis Renou state and register axes documented in `
 | confidence | reply_rows | resolved_rows | share |
 | --- | --- | --- | --- |
 | thread_inferred | 22907 | 22907 | 0.5359 |
-| exact_in_reply_to | 14076 | 14076 | 0.3293 |
+| exact_in_reply_to | 14078 | 14078 | 0.3294 |
 | unresolved | 5646 | 0 | 0.1321 |
 | references_chain | 112 | 112 | 0.0026 |
 
@@ -213,14 +213,14 @@ Case-study curation is English-only. Rows remain `candidate` until a human revie
 | infrastructure history track | HTML Based Email (AOL 6.0) | infrastructure_history | general discussion | 46 | 19 | 44 | threads/017-023602-html-based-email-aol-6-0.html |
 | infrastructure history track | Update 2 to Pali Canon online | infrastructure_history | digital resource/tool | 39 | 22 | 38 | threads/025-006983-update-2-to-pali-canon-online.html |
 | infrastructure history track | Vedic Website | infrastructure_history | digital resource/tool | 27 | 14 | 26 | threads/070-006442-vedic-website.html |
-| infrastructure history track | INSA email address? | infrastructure_history | general discussion | 29 | 12 | 28 | threads/075-016462-insa-email-address.html |
+| infrastructure history track | INSA email address? | infrastructure_history | general discussion | 29 | 12 | 28 | threads/074-016462-insa-email-address.html |
 | infrastructure history track | Manuscript collections on archive.org | infrastructure_history | philological debate | 28 | 14 | 27 | threads/081-057928-manuscript-collections-on-archive-org.html |
 | debate or controversy case type | Vicious Debate |  | debate/controversy | 35 | 10 | 33 | threads/066-014354-vicious-debate.html |
-| debate or controversy case type | "samsara" meaning "life" | philological_substance | philological debate | 23 | 15 | 21 | threads/090-032536-samsara-meaning-life.html |
-| debate or controversy case type | references to tuLu language in ancient Tamil text | philological_substance | philological debate | 26 | 14 | 25 | threads/109-015333-references-to-tulu-language-in-ancient-tamil-text.html |
+| debate or controversy case type | "samsara" meaning "life" | philological_substance | philological debate | 23 | 15 | 21 | threads/089-032536-samsara-meaning-life.html |
+| debate or controversy case type | references to tuLu language in ancient Tamil text | philological_substance | philological debate | 26 | 14 | 25 | threads/110-015333-references-to-tulu-language-in-ancient-tamil-text.html |
 | community memory or announcement case type | Johannes Bronkhorst gone |  | memorial/community memory | 39 | 38 | 38 | threads/012-060627-johannes-bronkhorst-gone.html |
 | community memory or announcement case type | Event announcement: Testing Workshop |  | announcement | 21 | 13 | 19 | threads/100-005629-event-announcement-testing-workshop.html |
-| community memory or announcement case type | New publication |  | announcement/event | 24 | 15 | 23 | threads/143-043031-new-publication.html |
+| community memory or announcement case type | New publication |  | announcement/event | 24 | 15 | 23 | threads/137-043031-new-publication.html |
 | high-participation unassigned candidate | questions: hymns, latAveZin, manner of death |  | general discussion | 58 | 20 | 57 | threads/008-015672-questions-hymns-latavezin-manner-of-death.html |
 | high-participation unassigned candidate | Millennium |  | general discussion | 61 | 16 | 60 | threads/009-019623-millennium.html |
 
@@ -244,15 +244,15 @@ The named network tables are public-archive metadata summaries. `direct_reply` r
 | direct_reply | Madhav Deshpande | Harry Spier | 2020s | General scholarly discussion | exact_in_reply_to | 28 | False |
 | direct_reply | N. Ganesan | Swaminathan Madhuresan | 1990s | General scholarly discussion | thread_inferred | 27 | False |
 | direct_reply | Christian Ferstl | Madhav Deshpande | 2020s | General scholarly discussion | exact_in_reply_to | 27 | False |
-| direct_reply | Hock, Hans Henrich | Madhav Deshpande | 2020s | General scholarly discussion | exact_in_reply_to | 26 | False |
 | direct_reply | Lars Martin Fosse | N. Ganesan | 1990s | General scholarly discussion | thread_inferred | 26 | False |
+| direct_reply | Hock, Hans Henrich | Madhav Deshpande | 2020s | General scholarly discussion | exact_in_reply_to | 26 | False |
 | direct_reply | DEVARAKONDA VENKATA NARAYANA SARMA | Sudalaimuthu Palaniappan | 1990s | General scholarly discussion | thread_inferred | 25 | False |
 | direct_reply | Nagaraj Paturi | patrick mccartney | 2010s | General scholarly discussion | exact_in_reply_to | 24 | False |
 | direct_reply | Petr Mares | Swaminathan Madhuresan | 1990s | General scholarly discussion | thread_inferred | 24 | False |
 | direct_reply | Miguel Carrasquer Vidal | N. Ganesan | 1990s | General scholarly discussion | thread_inferred | 23 | False |
 | direct_reply | N. Ganesan | Edwin Bryant | 1990s | General scholarly discussion | thread_inferred | 22 | False |
 | direct_reply | Nagaraj Paturi | Artur Karp | 2010s | General scholarly discussion | exact_in_reply_to | 21 | False |
-| direct_reply | Vidyasankar Sundaresan | Sudalaimuthu Palaniappan | 2000s | General scholarly discussion | thread_inferred | 20 | False |
+| direct_reply | Harry Spier | Madhav Deshpande | 2020s | General scholarly discussion | exact_in_reply_to | 20 | False |
 
 | network_type | source_author | target_author | topic | thread_count |
 | --- | --- | --- | --- | --- |

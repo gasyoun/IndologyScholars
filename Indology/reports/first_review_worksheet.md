@@ -406,7 +406,7 @@ Reviewer fields:
 - Topic: General scholarly discussion
 - List function: general discussion
 - Messages/authors/replies: 29/12/28
-- Local thread page: `threads/075-016462-insa-email-address.html`
+- Local thread page: `threads/074-016462-insa-email-address.html`
 - Public archive URL: https://list.indology.info/pipermail/indology/1999-April/016462.html
 - Generated evidence: long thread; multi-author; resolved replies; debate language
 
@@ -484,7 +484,7 @@ Reviewer fields:
 - Topic: General scholarly discussion
 - List function: philological discussion
 - Messages/authors/replies: 23/15/21
-- Local thread page: `threads/090-032536-samsara-meaning-life.html`
+- Local thread page: `threads/089-032536-samsara-meaning-life.html`
 - Public archive URL: https://list.indology.info/pipermail/indology/2009-February/032539.html
 - Generated evidence: long thread; multi-author; resolved replies; request/help language
 
@@ -510,7 +510,7 @@ Reviewer fields:
 - Topic: General scholarly discussion
 - List function: general discussion
 - Messages/authors/replies: 26/14/25
-- Local thread page: `threads/109-015333-references-to-tulu-language-in-ancient-tamil-text.html`
+- Local thread page: `threads/110-015333-references-to-tulu-language-in-ancient-tamil-text.html`
 - Public archive URL: https://list.indology.info/pipermail/indology/1999-January/015333.html
 - Generated evidence: long thread; multi-author; resolved replies
 
@@ -588,7 +588,7 @@ Reviewer fields:
 - Topic: General scholarly discussion
 - List function: announcement/event
 - Messages/authors/replies: 24/15/23
-- Local thread page: `threads/143-043031-new-publication.html`
+- Local thread page: `threads/137-043031-new-publication.html`
 - Public archive URL: https://list.indology.info/pipermail/indology/2016-April/043031.html
 - Generated evidence: long thread; multi-author; resolved replies
 

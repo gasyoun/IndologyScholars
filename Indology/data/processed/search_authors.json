@@ -37,14 +37,14 @@
   },
   {
     "normalized_author": "Harry Spier",
-    "message_count": "1044",
+    "message_count": "1045",
     "thread_count": "647",
     "first_year": "1999",
     "last_year": "2026",
     "top_topic": "General scholarly discussion",
     "top_list_function": "general discussion",
-    "resolved_replies_sent": "590",
-    "resolved_replies_received": "925",
+    "resolved_replies_sent": "591",
+    "resolved_replies_received": "926",
     "author_status": "confirmed"
   },
   {
@@ -721,14 +721,14 @@
   },
   {
     "normalized_author": "Asko Parpola",
-    "message_count": "168",
-    "thread_count": "155",
+    "message_count": "169",
+    "thread_count": "156",
     "first_year": "1997",
     "last_year": "2026",
     "top_topic": "General scholarly discussion",
     "top_list_function": "general discussion",
-    "resolved_replies_sent": "134",
-    "resolved_replies_received": "100",
+    "resolved_replies_sent": "135",
+    "resolved_replies_received": "101",
     "author_status": "confirmed"
   },
   {
@@ -2916,6 +2916,18 @@
     "author_status": "confirmed"
   },
   {
+    "normalized_author": "Tyler Neill",
+    "message_count": "47",
+    "thread_count": "42",
+    "first_year": "2017",
+    "last_year": "2026",
+    "top_topic": "General scholarly discussion",
+    "top_list_function": "general discussion",
+    "resolved_replies_sent": "19",
+    "resolved_replies_received": "31",
+    "author_status": "confirmed"
+  },
+  {
     "normalized_author": "Alex Watson",
     "message_count": "47",
     "thread_count": "41",
@@ -2985,18 +2997,6 @@
     "top_list_function": "general discussion",
     "resolved_replies_sent": "32",
     "resolved_replies_received": "17",
-    "author_status": "confirmed"
-  },
-  {
-    "normalized_author": "Tyler Neill",
-    "message_count": "46",
-    "thread_count": "41",
-    "first_year": "2017",
-    "last_year": "2026",
-    "top_topic": "General scholarly discussion",
-    "top_list_function": "general discussion",
-    "resolved_replies_sent": "19",
-    "resolved_replies_received": "31",
     "author_status": "confirmed"
   },
   {

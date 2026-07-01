@@ -38,7 +38,7 @@
       "path": "data/curation/first_review_notes.csv",
       "format": "CSV",
       "mediatype": "text/csv",
-      "bytes": 1254,
+      "bytes": 1228,
       "rows": "25",
       "description": "Human-editable review intake for importing first-review notes."
     },
@@ -47,7 +47,7 @@
       "path": "data/curation/renou_subject_rules.csv",
       "format": "CSV",
       "mediatype": "text/csv",
-      "bytes": 8065,
+      "bytes": 8039,
       "rows": "25",
       "description": "Human-editable Renou state/register subject matching rules."
     },
@@ -56,7 +56,7 @@
       "path": "data/processed/atlas_list_functions.csv",
       "format": "CSV",
       "mediatype": "text/csv",
-      "bytes": 1721,
+      "bytes": 1675,
       "rows": "44",
       "description": "Readable categories for what work the mailing list performed by decade."
     },
@@ -65,7 +65,7 @@
       "path": "data/processed/atlas_people_summary.csv",
       "format": "CSV",
       "mediatype": "text/csv",
-      "bytes": 387660,
+      "bytes": 384509,
       "rows": "3150",
       "description": "Conservative person-level participation summary using normalized author labels."
     },
@@ -74,7 +74,7 @@
       "path": "data/processed/atlas_reply_summary.csv",
       "format": "CSV",
       "mediatype": "text/csv",
-      "bytes": 176,
+      "bytes": 171,
       "rows": "4",
       "description": "Directed reply reconstruction counts by confidence level."
     },
@@ -83,7 +83,7 @@
       "path": "data/processed/atlas_timeline.csv",
       "format": "CSV",
       "mediatype": "text/csv",
-      "bytes": 2983,
+      "bytes": 2945,
       "rows": "37",
       "description": "Year-by-year atlas summary for volume, threads, authors, dominant topics, and list functions."
     },
@@ -92,7 +92,7 @@
       "path": "data/processed/atlas_topic_profiles.csv",
       "format": "CSV",
       "mediatype": "text/csv",
-      "bytes": 1045,
+      "bytes": 1032,
       "rows": "12",
       "description": "Topic profiles with time span, thread counts, author counts, and dominant list functions."
     },
@@ -101,7 +101,7 @@
       "path": "data/processed/author_aliases.csv",
       "format": "CSV",
       "mediatype": "text/csv",
-      "bytes": 592439,
+      "bytes": 589155,
       "rows": "3283",
       "description": "Public author-normalization audit table, one row per raw author string."
     },
@@ -110,7 +110,7 @@
       "path": "data/processed/author_eras.csv",
       "format": "CSV",
       "mediatype": "text/csv",
-      "bytes": 114242,
+      "bytes": 109966,
       "rows": "4275",
       "description": "Generated atlas output."
     },
@@ -119,7 +119,7 @@
       "path": "data/processed/authors_needing_review.csv",
       "format": "CSV",
       "mediatype": "text/csv",
-      "bytes": 189047,
+      "bytes": 188158,
       "rows": "888",
       "description": "Ambiguous author strings retained without identity merging."
     },
@@ -128,7 +128,7 @@
       "path": "data/processed/case_review_queue.csv",
       "format": "CSV",
       "mediatype": "text/csv",
-      "bytes": 91979,
+      "bytes": 91582,
       "rows": "250",
       "description": "English-only review queue for all generated case-study candidates."
     },
@@ -137,7 +137,7 @@
       "path": "data/processed/case_review_queue_infrastructure.csv",
       "format": "CSV",
       "mediatype": "text/csv",
-      "bytes": 6861,
+      "bytes": 6844,
       "rows": "16",
       "description": "Review packet for case-study candidates suggested as infrastructure history."
     },
@@ -146,7 +146,7 @@
       "path": "data/processed/case_review_queue_philological.csv",
       "format": "CSV",
       "mediatype": "text/csv",
-      "bytes": 16413,
+      "bytes": 16359,
       "rows": "37",
       "description": "Review packet for case-study candidates suggested as philological substance."
     },
@@ -155,7 +155,7 @@
       "path": "data/processed/case_review_queue_unassigned.csv",
       "format": "CSV",
       "mediatype": "text/csv",
-      "bytes": 69423,
+      "bytes": 69095,
       "rows": "197",
       "description": "Review packet for case-study candidates without an automatic track suggestion."
     },
@@ -164,7 +164,7 @@
       "path": "data/processed/case_study_candidates.csv",
       "format": "CSV",
       "mediatype": "text/csv",
-      "bytes": 118620,
+      "bytes": 118432,
       "rows": "250",
       "description": "Data-driven thread candidates for close reading and human curation."
     },
@@ -173,7 +173,7 @@
       "path": "data/processed/count_mismatch_audit.csv",
       "format": "CSV",
       "mediatype": "text/csv",
-      "bytes": 1724,
+      "bytes": 1715,
       "rows": "8",
       "description": "Documentation of months where archive index and mbox counts differ."
     },
@@ -182,7 +182,7 @@
       "path": "data/processed/curated_case_studies.csv",
       "format": "CSV",
       "mediatype": "text/csv",
-      "bytes": 36146,
+      "bytes": 35833,
       "rows": "250",
       "description": "Review-ready curation table seeded from generated case-study candidates."
     },
@@ -191,7 +191,7 @@
       "path": "data/processed/curated_case_summary.csv",
       "format": "CSV",
       "mediatype": "text/csv",
-      "bytes": 722,
+      "bytes": 707,
       "rows": "14",
       "description": "Aggregate counts by curation status, track, and case type."
     },
@@ -200,7 +200,7 @@
       "path": "data/processed/excluded_author_artifacts.csv",
       "format": "CSV",
       "mediatype": "text/csv",
-      "bytes": 402,
+      "bytes": 399,
       "rows": "2",
       "description": "Mail-client/list artifacts excluded from person-level analysis."
     },
@@ -209,7 +209,7 @@
       "path": "data/processed/first_review_shortlist.csv",
       "format": "CSV",
       "mediatype": "text/csv",
-      "bytes": 10500,
+      "bytes": 10474,
       "rows": "25",
       "description": "Balanced first-pass shortlist for starting human case-study review."
     },
@@ -218,7 +218,7 @@
       "path": "data/processed/human_review_index.csv",
       "format": "CSV",
       "mediatype": "text/csv",
-      "bytes": 484519,
+      "bytes": 482597,
       "rows": "1921",
       "description": "Unified reviewer-facing queue for author, case-study, count, noisy-subject, and reply-network checks."
     },
@@ -227,7 +227,7 @@
       "path": "data/processed/human_review_summary.json",
       "format": "JSON",
       "mediatype": "application/json",
-      "bytes": 519,
+      "bytes": 499,
       "rows": "5",
       "description": "Machine-readable summary of the unified human review index."
     },
@@ -236,7 +236,7 @@
       "path": "data/processed/interpretive_guardrails.csv",
       "format": "CSV",
       "mediatype": "text/csv",
-      "bytes": 2820,
+      "bytes": 2812,
       "rows": "7",
       "description": "Responsible-claims guardrails for interpreting reply, co-participation, volume, archive, and author-normalization outputs."
     },
@@ -245,8 +245,8 @@
       "path": "data/processed/messages.csv",
       "format": "CSV",
       "mediatype": "text/csv",
-      "bytes": 37399305,
-      "rows": "62112",
+      "bytes": 38862085,
+      "rows": "72338",
       "description": "Analyzed message metadata with cleaned subjects, topic labels, thread length, and author display strings."
     },
     {
@@ -254,8 +254,8 @@
       "path": "data/processed/messages_clean.csv",
       "format": "CSV",
       "mediatype": "text/csv",
-      "bytes": 44724787,
-      "rows": "62112",
+      "bytes": 46187887,
+      "rows": "72338",
       "description": "Message metadata with conservative normalized author labels and author audit fields."
     },
     {
@@ -263,8 +263,8 @@
       "path": "data/processed/messages_raw.csv",
       "format": "CSV",
       "mediatype": "text/csv",
-      "bytes": 30087143,
-      "rows": "62112",
+      "bytes": 31611262,
+      "rows": "72338",
       "description": "Harvested message metadata aligned from Pipermail HTML indexes and monthly mbox headers."
     },
     {
@@ -272,7 +272,7 @@
       "path": "data/processed/monthly_counts.csv",
       "format": "CSV",
       "mediatype": "text/csv",
-      "bytes": 5081,
+      "bytes": 4654,
       "rows": "426",
       "description": "Message volume by archive month."
     },
@@ -290,8 +290,8 @@
       "path": "data/processed/named_coparticipation_network_summary.csv",
       "format": "CSV",
       "mediatype": "text/csv",
-      "bytes": 6181268,
-      "rows": "47102",
+      "bytes": 6134280,
+      "rows": "47103",
       "description": "Named co-participation network summary by topic."
     },
     {
@@ -299,8 +299,8 @@
       "path": "data/processed/named_reply_network_summary.csv",
       "format": "CSV",
       "mediatype": "text/csv",
-      "bytes": 3867610,
-      "rows": "24544",
+      "bytes": 3843358,
+      "rows": "24546",
       "description": "Named direct-reply network summary by decade, topic, and confidence."
     },
     {
@@ -308,7 +308,7 @@
       "path": "data/processed/network_edges.csv",
       "format": "CSV",
       "mediatype": "text/csv",
-      "bytes": 3729624,
+      "bytes": 3688940,
       "rows": "40703",
       "description": "Undirected co-participation edges: two authors appear in the same thread."
     },
@@ -317,7 +317,7 @@
       "path": "data/processed/noisy_subjects.csv",
       "format": "CSV",
       "mediatype": "text/csv",
-      "bytes": 53066,
+      "bytes": 52668,
       "rows": "397",
       "description": "Generated atlas output."
     },
@@ -335,7 +335,7 @@
       "path": "data/processed/renou_coverage.csv",
       "format": "CSV",
       "mediatype": "text/csv",
-      "bytes": 287,
+      "bytes": 284,
       "rows": "2",
       "description": "Coverage counts for the sparse Renou subject-line layer."
     },
@@ -344,7 +344,7 @@
       "path": "data/processed/renou_message_matches.csv",
       "format": "CSV",
       "mediatype": "text/csv",
-      "bytes": 4651911,
+      "bytes": 4642715,
       "rows": "9110",
       "description": "Sparse message-level Renou state/register matches with matched terms and confidence."
     },
@@ -353,8 +353,8 @@
       "path": "data/processed/renou_messages.csv",
       "format": "CSV",
       "mediatype": "text/csv",
-      "bytes": 19415441,
-      "rows": "62112",
+      "bytes": 19354671,
+      "rows": "62115",
       "description": "Row-per-message sparse Renou state/register index derived from subject-line evidence."
     },
     {
@@ -362,7 +362,7 @@
       "path": "data/processed/renou_register_summary.csv",
       "format": "CSV",
       "mediatype": "text/csv",
-      "bytes": 76008,
+      "bytes": 75072,
       "rows": "935",
       "description": "Renou register-axis summary by year, topic, and list function."
     },
@@ -371,8 +371,8 @@
       "path": "data/processed/renou_state_summary.csv",
       "format": "CSV",
       "mediatype": "text/csv",
-      "bytes": 46143,
-      "rows": "582",
+      "bytes": 45480,
+      "rows": "581",
       "description": "Renou I-V state-axis summary by year, topic, and list function."
     },
     {
@@ -380,8 +380,8 @@
       "path": "data/processed/renou_thread_matches.csv",
       "format": "CSV",
       "mediatype": "text/csv",
-      "bytes": 1056851,
-      "rows": "3309",
+      "bytes": 1052906,
+      "rows": "3307",
       "description": "Thread-level rollup of sparse Renou state/register matches."
     },
     {
@@ -389,8 +389,8 @@
       "path": "data/processed/reply_edges.csv",
       "format": "CSV",
       "mediatype": "text/csv",
-      "bytes": 18793933,
-      "rows": "42741",
+      "bytes": 18752433,
+      "rows": "42743",
       "description": "Directed reply edges resolved from In-Reply-To, References, or conservative thread inference."
     },
     {
@@ -398,8 +398,8 @@
       "path": "data/processed/reply_network_edges.csv",
       "format": "CSV",
       "mediatype": "text/csv",
-      "bytes": 1114806,
-      "rows": "20782",
+      "bytes": 1094068,
+      "rows": "20783",
       "description": "Aggregated directed reply edge weights by source, target, and confidence."
     },
     {
@@ -407,7 +407,7 @@
       "path": "data/processed/review_import_audit.csv",
       "format": "CSV",
       "mediatype": "text/csv",
-      "bytes": 2644,
+      "bytes": 2618,
       "rows": "25",
       "description": "Audit trail for importing human review notes into curated case metadata."
     },
@@ -416,7 +416,7 @@
       "path": "data/processed/search_authors.json",
       "format": "JSON",
       "mediatype": "application/json",
-      "bytes": 1168397,
+      "bytes": 1130596,
       "rows": "3150",
       "description": "Static search index for conservative author summaries."
     },
@@ -425,8 +425,8 @@
       "path": "data/processed/search_messages_sample.json",
       "format": "JSON",
       "mediatype": "application/json",
-      "bytes": 1576231,
-      "rows": "4064",
+      "bytes": 1536354,
+      "rows": "4066",
       "description": "Compact metadata-only message sample for static search."
     },
     {
@@ -434,7 +434,7 @@
       "path": "data/processed/search_threads.json",
       "format": "JSON",
       "mediatype": "application/json",
-      "bytes": 189980,
+      "bytes": 184881,
       "rows": "250",
       "description": "Static search index for generated thread pages and case-study candidate status."
     },
@@ -443,7 +443,7 @@
       "path": "data/processed/search_topics.json",
       "format": "JSON",
       "mediatype": "application/json",
-      "bytes": 3297,
+      "bytes": 3176,
       "rows": "12",
       "description": "Static search index for topic profiles."
     },
@@ -452,8 +452,8 @@
       "path": "data/processed/skipped_mbox_rows.csv",
       "format": "CSV",
       "mediatype": "text/csv",
-      "bytes": 1626,
-      "rows": "9",
+      "bytes": 1735,
+      "rows": "12",
       "description": "Extra mbox rows skipped during subject-based archive alignment."
     },
     {
@@ -461,7 +461,7 @@
       "path": "data/processed/thread_explorer_index.csv",
       "format": "CSV",
       "mediatype": "text/csv",
-      "bytes": 71269,
+      "bytes": 70911,
       "rows": "250",
       "description": "Index of generated static thread explorer pages for case-study candidates."
     },
@@ -470,8 +470,8 @@
       "path": "data/processed/threads.csv",
       "format": "CSV",
       "mediatype": "text/csv",
-      "bytes": 3109741,
-      "rows": "24033",
+      "bytes": 3086126,
+      "rows": "24034",
       "description": "Reconstructed thread-level metadata."
     },
     {
@@ -479,7 +479,7 @@
       "path": "data/processed/topic_decade_counts.csv",
       "format": "CSV",
       "mediatype": "text/csv",
-      "bytes": 1658,
+      "bytes": 1609,
       "rows": "48",
       "description": "Topic message counts by decade."
     },
@@ -488,7 +488,7 @@
       "path": "data/processed/topic_year_counts.csv",
       "format": "CSV",
       "mediatype": "text/csv",
-      "bytes": 13007,
+      "bytes": 12601,
       "rows": "405",
       "description": "Topic message counts by year."
     },
@@ -497,7 +497,7 @@
       "path": "data/processed/yearly_counts.csv",
       "format": "CSV",
       "mediatype": "text/csv",
-      "bytes": 415,
+      "bytes": 377,
       "rows": "37",
       "description": "Message volume by year."
     },
@@ -506,7 +506,7 @@
       "path": "data_dictionary.md",
       "format": "MD",
       "mediatype": "text/markdown",
-      "bytes": 10741,
+      "bytes": 10622,
       "rows": 120,
       "description": "Plain-English data dictionary and reuse guide."
     },
@@ -515,7 +515,7 @@
       "path": "CITATION.cff",
       "format": "CFF",
       "mediatype": "application/octet-stream",
-      "bytes": 760,
+      "bytes": 743,
       "rows": 16,
       "description": "Citation metadata for the standalone INDOLOGY-L archive atlas."
     },
@@ -524,7 +524,7 @@
       "path": "datapackage.json",
       "format": "JSON",
       "mediatype": "application/json",
-      "bytes": 20103,
+      "bytes": 19509,
       "rows": 1,
       "description": "Frictionless-style machine-readable dataset metadata."
     },
@@ -533,7 +533,7 @@
       "path": "reports/research_report.md",
       "format": "MD",
       "mediatype": "text/markdown",
-      "bytes": 22780,
+      "bytes": 22477,
       "rows": 286,
       "description": "Narrative research report for the public atlas."
     },
@@ -542,7 +542,7 @@
       "path": "reports/validation.md",
       "format": "MD",
       "mediatype": "text/markdown",
-      "bytes": 15854,
+      "bytes": 15565,
       "rows": 289,
       "description": "Validation report and manual checklist."
     },
@@ -551,7 +551,7 @@
       "path": "reports/interpretive_guardrails.md",
       "format": "MD",
       "mediatype": "text/markdown",
-      "bytes": 3367,
+      "bytes": 3315,
       "rows": 52,
       "description": "Responsible-claims guide for interpreting generated outputs."
     },
@@ -560,7 +560,7 @@
       "path": "reports/first_review_worksheet.md",
       "format": "MD",
       "mediatype": "text/markdown",
-      "bytes": 21760,
+      "bytes": 21104,
       "rows": 656,
       "description": "Worksheet for the first pass of case-study review."
     },
@@ -569,7 +569,7 @@
       "path": "dashboard/index.html",
       "format": "HTML",
       "mediatype": "text/html",
-      "bytes": 61696,
+      "bytes": 59733,
       "rows": 1984,
       "description": "Static guided atlas dashboard."
     },
@@ -578,7 +578,7 @@
       "path": "dashboard/search.html",
       "format": "HTML",
       "mediatype": "text/html",
-      "bytes": 9469,
+      "bytes": 9311,
       "rows": 158,
       "description": "Static search and browse interface."
     },
@@ -587,7 +587,7 @@
       "path": "dashboard/curated.html",
       "format": "HTML",
       "mediatype": "text/html",
-      "bytes": 67423,
+      "bytes": 67150,
       "rows": 251,
       "description": "Static curation workflow page."
     }

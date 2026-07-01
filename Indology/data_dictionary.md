@@ -88,32 +88,32 @@ Human-facing review fields include `curation_status`, `review_track`, `review_de
 | `data/processed/human_review_index.csv` | 1921 | Unified reviewer-facing queue for author, case-study, count, noisy-subject, and reply-network checks. |
 | `data/processed/human_review_summary.json` | 5 | Machine-readable summary of the unified human review index. |
 | `data/processed/interpretive_guardrails.csv` | 7 | Responsible-claims guardrails for interpreting reply, co-participation, volume, archive, and author-normalization outputs. |
-| `data/processed/messages.csv` | 62112 | Analyzed message metadata with cleaned subjects, topic labels, thread length, and author display strings. |
-| `data/processed/messages_clean.csv` | 62112 | Message metadata with conservative normalized author labels and author audit fields. |
-| `data/processed/messages_raw.csv` | 62112 | Harvested message metadata aligned from Pipermail HTML indexes and monthly mbox headers. |
+| `data/processed/messages.csv` | 72338 | Analyzed message metadata with cleaned subjects, topic labels, thread length, and author display strings. |
+| `data/processed/messages_clean.csv` | 72338 | Message metadata with conservative normalized author labels and author audit fields. |
+| `data/processed/messages_raw.csv` | 72338 | Harvested message metadata aligned from Pipermail HTML indexes and monthly mbox headers. |
 | `data/processed/monthly_counts.csv` | 426 | Message volume by archive month. |
 | `data/processed/months.csv` | 426 | Generated atlas output. |
-| `data/processed/named_coparticipation_network_summary.csv` | 47102 | Named co-participation network summary by topic. |
-| `data/processed/named_reply_network_summary.csv` | 24544 | Named direct-reply network summary by decade, topic, and confidence. |
+| `data/processed/named_coparticipation_network_summary.csv` | 47103 | Named co-participation network summary by topic. |
+| `data/processed/named_reply_network_summary.csv` | 24546 | Named direct-reply network summary by decade, topic, and confidence. |
 | `data/processed/network_edges.csv` | 40703 | Undirected co-participation edges: two authors appear in the same thread. |
 | `data/processed/noisy_subjects.csv` | 397 | Generated atlas output. |
 | `data/processed/parse_issues.csv` | 8 | Generated atlas output. |
 | `data/processed/renou_coverage.csv` | 2 | Coverage counts for the sparse Renou subject-line layer. |
 | `data/processed/renou_message_matches.csv` | 9110 | Sparse message-level Renou state/register matches with matched terms and confidence. |
-| `data/processed/renou_messages.csv` | 62112 | Row-per-message sparse Renou state/register index derived from subject-line evidence. |
+| `data/processed/renou_messages.csv` | 62115 | Row-per-message sparse Renou state/register index derived from subject-line evidence. |
 | `data/processed/renou_register_summary.csv` | 935 | Renou register-axis summary by year, topic, and list function. |
-| `data/processed/renou_state_summary.csv` | 582 | Renou I-V state-axis summary by year, topic, and list function. |
-| `data/processed/renou_thread_matches.csv` | 3309 | Thread-level rollup of sparse Renou state/register matches. |
-| `data/processed/reply_edges.csv` | 42741 | Directed reply edges resolved from In-Reply-To, References, or conservative thread inference. |
-| `data/processed/reply_network_edges.csv` | 20782 | Aggregated directed reply edge weights by source, target, and confidence. |
+| `data/processed/renou_state_summary.csv` | 581 | Renou I-V state-axis summary by year, topic, and list function. |
+| `data/processed/renou_thread_matches.csv` | 3307 | Thread-level rollup of sparse Renou state/register matches. |
+| `data/processed/reply_edges.csv` | 42743 | Directed reply edges resolved from In-Reply-To, References, or conservative thread inference. |
+| `data/processed/reply_network_edges.csv` | 20783 | Aggregated directed reply edge weights by source, target, and confidence. |
 | `data/processed/review_import_audit.csv` | 25 | Audit trail for importing human review notes into curated case metadata. |
 | `data/processed/search_authors.json` | 3150 | Static search index for conservative author summaries. |
-| `data/processed/search_messages_sample.json` | 4064 | Compact metadata-only message sample for static search. |
+| `data/processed/search_messages_sample.json` | 4066 | Compact metadata-only message sample for static search. |
 | `data/processed/search_threads.json` | 250 | Static search index for generated thread pages and case-study candidate status. |
 | `data/processed/search_topics.json` | 12 | Static search index for topic profiles. |
-| `data/processed/skipped_mbox_rows.csv` | 9 | Extra mbox rows skipped during subject-based archive alignment. |
+| `data/processed/skipped_mbox_rows.csv` | 12 | Extra mbox rows skipped during subject-based archive alignment. |
 | `data/processed/thread_explorer_index.csv` | 250 | Index of generated static thread explorer pages for case-study candidates. |
-| `data/processed/threads.csv` | 24033 | Reconstructed thread-level metadata. |
+| `data/processed/threads.csv` | 24034 | Reconstructed thread-level metadata. |
 | `data/processed/topic_decade_counts.csv` | 48 | Topic message counts by decade. |
 | `data/processed/topic_year_counts.csv` | 405 | Topic message counts by year. |
 | `data/processed/yearly_counts.csv` | 37 | Message volume by year. |
