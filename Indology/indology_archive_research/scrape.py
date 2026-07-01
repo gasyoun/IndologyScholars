@@ -256,7 +256,9 @@ def parse_mbox_messages(gzip_bytes: bytes) -> list[dict[str, str]]:
     if not starts:
         return []
     starts.append(len(text))
-    parser = Parser(policy=policy.default)
+    # Historical Pipermail mboxes contain a few malformed Message-ID headers.
+    # compat32 preserves raw header text instead of validating structured values.
+    parser = Parser(policy=policy.compat32)
     rows: list[dict[str, str]] = []
     for i in range(len(starts) - 1):
         chunk = text[starts[i] : starts[i + 1]]
