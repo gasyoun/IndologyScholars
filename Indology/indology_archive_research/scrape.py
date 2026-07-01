@@ -71,10 +71,17 @@ def configure_stdio() -> None:
         sys.stderr.reconfigure(encoding="utf-8")
 
 
-def fetch_url(url: str, cache_path: Path, insecure: bool, delay: float, retries: int) -> bytes:
+def fetch_url(
+    url: str,
+    cache_path: Path,
+    insecure: bool,
+    delay: float,
+    retries: int,
+    refresh: bool = False,
+) -> bytes:
     """Fetch a URL with a filesystem cache."""
 
-    if cache_path.exists() and cache_path.stat().st_size > 0:
+    if not refresh and cache_path.exists() and cache_path.stat().st_size > 0:
         return cache_path.read_bytes()
     cache_path.parent.mkdir(parents=True, exist_ok=True)
     context = ssl._create_unverified_context() if insecure else None
@@ -395,7 +402,7 @@ def harvest_archive(
 ) -> None:
     raw_dir = output_dir / "data" / "raw"
     processed_dir = output_dir / "data" / "processed"
-    index_bytes = fetch_url(BASE_URL, raw_dir / "index.html", insecure, delay, retries)
+    index_bytes = fetch_url(BASE_URL, raw_dir / "index.html", insecure, delay, retries, refresh=True)
     index_html = index_bytes.decode("utf-8", "replace")
     months = [m for m in parse_archive_index(index_html) if start_year <= m.year <= end_year]
 
