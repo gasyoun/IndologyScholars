@@ -191,12 +191,20 @@ def plot_figures(output_dir: Path, tables: dict[str, pd.DataFrame]) -> None:
     topic_decade = tables["topic_decade_counts"].copy()
     heat = topic_decade.pivot_table(index="primary_topic", columns="decade", values="message_count", aggfunc="sum", fill_value=0)
     heat = heat.loc[heat.sum(axis=1).sort_values(ascending=False).index]
-    fig, ax = plt.subplots(figsize=(9, 5))
-    image = ax.imshow(heat.values, aspect="auto", cmap="YlGnBu")
-    ax.set_title("Topic Counts By Decade")
+    heat_share = heat.div(heat.sum(axis=1).replace(0, pd.NA), axis=0).fillna(0) * 100
+    fig, ax = plt.subplots(figsize=(10, 5.5))
+    image = ax.imshow(heat_share.values, aspect="auto", cmap="YlGnBu", vmin=0, vmax=100)
+    ax.set_title("Topic Distribution By Decade")
     ax.set_yticks(range(len(heat.index)), heat.index)
     ax.set_xticks(range(len(heat.columns)), heat.columns, rotation=45, ha="right")
-    fig.colorbar(image, ax=ax, label="Messages")
+    ax.set_xlabel("Decade")
+    for row_index, topic in enumerate(heat.index):
+        for col_index, decade in enumerate(heat.columns):
+            count = int(heat.loc[topic, decade])
+            share = heat_share.loc[topic, decade]
+            text_color = "white" if share >= 55 else "#253238"
+            ax.text(col_index, row_index, f"{share:.0f}%\n{count:,}", ha="center", va="center", fontsize=8, color=text_color)
+    fig.colorbar(image, ax=ax, label="Share of each topic's messages (%)")
     fig.savefig(figures_dir / "topic_decade_heatmap.png")
     plt.close(fig)
 
