@@ -118,6 +118,7 @@
 | renou_state_summary.csv | 581 | yes |
 | renou_register_summary.csv | 935 | yes |
 | renou_coverage.csv | 2 | yes |
+| renou_export_index.csv | 75 | yes |
 | renou_subject_rules.csv | 25 | yes |
 
 | scope | total_rows | matched_rows | matched_percent | source_url |
@@ -213,7 +214,7 @@
 
 - Data dictionary generated: yes
 - Datapackage generated: yes
-- Datapackage resources listed: 62
+- Datapackage resources listed: 138
 - Datapackage resources with missing local paths: 0
 - Citation metadata generated: yes
 - Unified human review index rows: 1,921

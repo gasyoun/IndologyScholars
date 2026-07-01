@@ -3,140 +3,140 @@
     "file": "first_review_notes.csv",
     "relative_path": "data/curation/first_review_notes.csv",
     "rows": 25,
-    "bytes": 1228,
+    "bytes": 1254,
     "description": "Human-editable review intake for importing first-review notes."
   },
   {
     "file": "renou_subject_rules.csv",
     "relative_path": "data/curation/renou_subject_rules.csv",
     "rows": 25,
-    "bytes": 8039,
+    "bytes": 8065,
     "description": "Human-editable Renou state/register subject matching rules."
   },
   {
     "file": "atlas_list_functions.csv",
     "relative_path": "data/processed/atlas_list_functions.csv",
     "rows": 44,
-    "bytes": 1675,
+    "bytes": 1720,
     "description": "Readable categories for what work the mailing list performed by decade."
   },
   {
     "file": "atlas_people_summary.csv",
     "relative_path": "data/processed/atlas_people_summary.csv",
     "rows": 3150,
-    "bytes": 384509,
+    "bytes": 387660,
     "description": "Conservative person-level participation summary using normalized author labels."
   },
   {
     "file": "atlas_reply_summary.csv",
     "relative_path": "data/processed/atlas_reply_summary.csv",
     "rows": 4,
-    "bytes": 171,
+    "bytes": 176,
     "description": "Directed reply reconstruction counts by confidence level."
   },
   {
     "file": "atlas_timeline.csv",
     "relative_path": "data/processed/atlas_timeline.csv",
     "rows": 37,
-    "bytes": 2945,
+    "bytes": 2983,
     "description": "Year-by-year atlas summary for volume, threads, authors, dominant topics, and list functions."
   },
   {
     "file": "atlas_topic_profiles.csv",
     "relative_path": "data/processed/atlas_topic_profiles.csv",
     "rows": 12,
-    "bytes": 1032,
+    "bytes": 1045,
     "description": "Topic profiles with time span, thread counts, author counts, and dominant list functions."
   },
   {
     "file": "author_aliases.csv",
     "relative_path": "data/processed/author_aliases.csv",
     "rows": 3283,
-    "bytes": 589155,
+    "bytes": 592439,
     "description": "Public author-normalization audit table, one row per raw author string."
   },
   {
     "file": "author_eras.csv",
     "relative_path": "data/processed/author_eras.csv",
     "rows": 4275,
-    "bytes": 109966,
+    "bytes": 114242,
     "description": "Generated atlas output."
   },
   {
     "file": "authors_needing_review.csv",
     "relative_path": "data/processed/authors_needing_review.csv",
     "rows": 888,
-    "bytes": 188158,
+    "bytes": 189047,
     "description": "Ambiguous author strings retained without identity merging."
   },
   {
     "file": "case_review_queue.csv",
     "relative_path": "data/processed/case_review_queue.csv",
     "rows": 250,
-    "bytes": 91582,
+    "bytes": 91833,
     "description": "English-only review queue for all generated case-study candidates."
   },
   {
     "file": "case_review_queue_infrastructure.csv",
     "relative_path": "data/processed/case_review_queue_infrastructure.csv",
     "rows": 16,
-    "bytes": 6844,
+    "bytes": 6861,
     "description": "Review packet for case-study candidates suggested as infrastructure history."
   },
   {
     "file": "case_review_queue_philological.csv",
     "relative_path": "data/processed/case_review_queue_philological.csv",
     "rows": 37,
-    "bytes": 16359,
+    "bytes": 16397,
     "description": "Review packet for case-study candidates suggested as philological substance."
   },
   {
     "file": "case_review_queue_unassigned.csv",
     "relative_path": "data/processed/case_review_queue_unassigned.csv",
     "rows": 197,
-    "bytes": 69095,
+    "bytes": 69293,
     "description": "Review packet for case-study candidates without an automatic track suggestion."
   },
   {
     "file": "case_study_candidates.csv",
     "relative_path": "data/processed/case_study_candidates.csv",
     "rows": 250,
-    "bytes": 118432,
+    "bytes": 118683,
     "description": "Data-driven thread candidates for close reading and human curation."
   },
   {
     "file": "count_mismatch_audit.csv",
     "relative_path": "data/processed/count_mismatch_audit.csv",
     "rows": 8,
-    "bytes": 1715,
+    "bytes": 1724,
     "description": "Documentation of months where archive index and mbox counts differ."
   },
   {
     "file": "curated_case_studies.csv",
     "relative_path": "data/processed/curated_case_studies.csv",
     "rows": 250,
-    "bytes": 35833,
+    "bytes": 36084,
     "description": "Review-ready curation table seeded from generated case-study candidates."
   },
   {
     "file": "curated_case_summary.csv",
     "relative_path": "data/processed/curated_case_summary.csv",
     "rows": 14,
-    "bytes": 707,
+    "bytes": 722,
     "description": "Aggregate counts by curation status, track, and case type."
   },
   {
     "file": "excluded_author_artifacts.csv",
     "relative_path": "data/processed/excluded_author_artifacts.csv",
     "rows": 2,
-    "bytes": 399,
+    "bytes": 402,
     "description": "Mail-client/list artifacts excluded from person-level analysis."
   },
   {
     "file": "first_review_shortlist.csv",
     "relative_path": "data/processed/first_review_shortlist.csv",
     "rows": 25,
-    "bytes": 10474,
+    "bytes": 10500,
     "description": "Balanced first-pass shortlist for starting human case-study review."
   },
   {
@@ -150,28 +150,28 @@
     "file": "human_review_summary.json",
     "relative_path": "data/processed/human_review_summary.json",
     "rows": 5,
-    "bytes": 499,
+    "bytes": 519,
     "description": "Machine-readable summary of the unified human review index."
   },
   {
     "file": "interpretive_guardrails.csv",
     "relative_path": "data/processed/interpretive_guardrails.csv",
     "rows": 7,
-    "bytes": 2812,
+    "bytes": 2820,
     "description": "Responsible-claims guardrails for interpreting reply, co-participation, volume, archive, and author-normalization outputs."
   },
   {
     "file": "messages.csv",
     "relative_path": "data/processed/messages.csv",
     "rows": 72338,
-    "bytes": 38862085,
+    "bytes": 38934424,
     "description": "Analyzed message metadata with cleaned subjects, topic labels, thread length, and author display strings."
   },
   {
     "file": "messages_clean.csv",
     "relative_path": "data/processed/messages_clean.csv",
     "rows": 72338,
-    "bytes": 46187887,
+    "bytes": 46260226,
     "description": "Message metadata with conservative normalized author labels and author audit fields."
   },
   {
@@ -185,7 +185,7 @@
     "file": "monthly_counts.csv",
     "relative_path": "data/processed/monthly_counts.csv",
     "rows": 426,
-    "bytes": 4654,
+    "bytes": 5081,
     "description": "Message volume by archive month."
   },
   {
@@ -199,28 +199,28 @@
     "file": "named_coparticipation_network_summary.csv",
     "relative_path": "data/processed/named_coparticipation_network_summary.csv",
     "rows": 47103,
-    "bytes": 6134280,
+    "bytes": 6181384,
     "description": "Named co-participation network summary by topic."
   },
   {
     "file": "named_reply_network_summary.csv",
     "relative_path": "data/processed/named_reply_network_summary.csv",
     "rows": 24546,
-    "bytes": 3843358,
+    "bytes": 3867905,
     "description": "Named direct-reply network summary by decade, topic, and confidence."
   },
   {
     "file": "network_edges.csv",
     "relative_path": "data/processed/network_edges.csv",
     "rows": 40703,
-    "bytes": 3688940,
+    "bytes": 3729644,
     "description": "Undirected co-participation edges: two authors appear in the same thread."
   },
   {
     "file": "noisy_subjects.csv",
     "relative_path": "data/processed/noisy_subjects.csv",
     "rows": 397,
-    "bytes": 52668,
+    "bytes": 53066,
     "description": "Generated atlas output."
   },
   {
@@ -234,91 +234,623 @@
     "file": "renou_coverage.csv",
     "relative_path": "data/processed/renou_coverage.csv",
     "rows": 2,
-    "bytes": 284,
+    "bytes": 287,
     "description": "Coverage counts for the sparse Renou subject-line layer."
+  },
+  {
+    "file": "renou_export_index.csv",
+    "relative_path": "data/processed/renou_export_index.csv",
+    "rows": 75,
+    "bytes": 6470,
+    "description": "Index of filtered Renou state/register CSV downloads."
   },
   {
     "file": "renou_message_matches.csv",
     "relative_path": "data/processed/renou_message_matches.csv",
     "rows": 9110,
-    "bytes": 4642715,
+    "bytes": 4651826,
     "description": "Sparse message-level Renou state/register matches with matched terms and confidence."
   },
   {
     "file": "renou_messages.csv",
     "relative_path": "data/processed/renou_messages.csv",
     "rows": 62115,
-    "bytes": 19354671,
+    "bytes": 19416787,
     "description": "Row-per-message sparse Renou state/register index derived from subject-line evidence."
+  },
+  {
+    "file": "renou_register_atharva_messages.csv",
+    "relative_path": "data/processed/renou_register_atharva_messages.csv",
+    "rows": 66,
+    "bytes": 28702,
+    "description": "Filtered Renou state/register CSV export used by the clickable dashboard tables."
+  },
+  {
+    "file": "renou_register_atharva_summary.csv",
+    "relative_path": "data/processed/renou_register_atharva_summary.csv",
+    "rows": 22,
+    "bytes": 1892,
+    "description": "Filtered Renou state/register CSV export used by the clickable dashboard tables."
+  },
+  {
+    "file": "renou_register_atharva_threads.csv",
+    "relative_path": "data/processed/renou_register_atharva_threads.csv",
+    "rows": 46,
+    "bytes": 15315,
+    "description": "Filtered Renou state/register CSV export used by the clickable dashboard tables."
+  },
+  {
+    "file": "renou_register_bauddha_messages.csv",
+    "relative_path": "data/processed/renou_register_bauddha_messages.csv",
+    "rows": 92,
+    "bytes": 41781,
+    "description": "Filtered Renou state/register CSV export used by the clickable dashboard tables."
+  },
+  {
+    "file": "renou_register_bauddha_summary.csv",
+    "relative_path": "data/processed/renou_register_bauddha_summary.csv",
+    "rows": 26,
+    "bytes": 2170,
+    "description": "Filtered Renou state/register CSV export used by the clickable dashboard tables."
+  },
+  {
+    "file": "renou_register_bauddha_threads.csv",
+    "relative_path": "data/processed/renou_register_bauddha_threads.csv",
+    "rows": 46,
+    "bytes": 18704,
+    "description": "Filtered Renou state/register CSV export used by the clickable dashboard tables."
+  },
+  {
+    "file": "renou_register_bhasya_messages.csv",
+    "relative_path": "data/processed/renou_register_bhasya_messages.csv",
+    "rows": 293,
+    "bytes": 128208,
+    "description": "Filtered Renou state/register CSV export used by the clickable dashboard tables."
+  },
+  {
+    "file": "renou_register_bhasya_summary.csv",
+    "relative_path": "data/processed/renou_register_bhasya_summary.csv",
+    "rows": 63,
+    "bytes": 5403,
+    "description": "Filtered Renou state/register CSV export used by the clickable dashboard tables."
+  },
+  {
+    "file": "renou_register_bhasya_threads.csv",
+    "relative_path": "data/processed/renou_register_bhasya_threads.csv",
+    "rows": 154,
+    "bytes": 51592,
+    "description": "Filtered Renou state/register CSV export used by the clickable dashboard tables."
+  },
+  {
+    "file": "renou_register_brahmana_messages.csv",
+    "relative_path": "data/processed/renou_register_brahmana_messages.csv",
+    "rows": 93,
+    "bytes": 42044,
+    "description": "Filtered Renou state/register CSV export used by the clickable dashboard tables."
+  },
+  {
+    "file": "renou_register_brahmana_summary.csv",
+    "relative_path": "data/processed/renou_register_brahmana_summary.csv",
+    "rows": 22,
+    "bytes": 1968,
+    "description": "Filtered Renou state/register CSV export used by the clickable dashboard tables."
+  },
+  {
+    "file": "renou_register_brahmana_threads.csv",
+    "relative_path": "data/processed/renou_register_brahmana_threads.csv",
+    "rows": 47,
+    "bytes": 18451,
+    "description": "Filtered Renou state/register CSV export used by the clickable dashboard tables."
+  },
+  {
+    "file": "renou_register_epic_messages.csv",
+    "relative_path": "data/processed/renou_register_epic_messages.csv",
+    "rows": 563,
+    "bytes": 246719,
+    "description": "Filtered Renou state/register CSV export used by the clickable dashboard tables."
+  },
+  {
+    "file": "renou_register_epic_summary.csv",
+    "relative_path": "data/processed/renou_register_epic_summary.csv",
+    "rows": 104,
+    "bytes": 7940,
+    "description": "Filtered Renou state/register CSV export used by the clickable dashboard tables."
+  },
+  {
+    "file": "renou_register_epic_threads.csv",
+    "relative_path": "data/processed/renou_register_epic_threads.csv",
+    "rows": 336,
+    "bytes": 122729,
+    "description": "Filtered Renou state/register CSV export used by the clickable dashboard tables."
+  },
+  {
+    "file": "renou_register_epig_messages.csv",
+    "relative_path": "data/processed/renou_register_epig_messages.csv",
+    "rows": 355,
+    "bytes": 152720,
+    "description": "Filtered Renou state/register CSV export used by the clickable dashboard tables."
+  },
+  {
+    "file": "renou_register_epig_summary.csv",
+    "relative_path": "data/processed/renou_register_epig_summary.csv",
+    "rows": 89,
+    "bytes": 7546,
+    "description": "Filtered Renou state/register CSV export used by the clickable dashboard tables."
+  },
+  {
+    "file": "renou_register_epig_threads.csv",
+    "relative_path": "data/processed/renou_register_epig_threads.csv",
+    "rows": 208,
+    "bytes": 65900,
+    "description": "Filtered Renou state/register CSV export used by the clickable dashboard tables."
+  },
+  {
+    "file": "renou_register_hors_inde_messages.csv",
+    "relative_path": "data/processed/renou_register_hors_inde_messages.csv",
+    "rows": 13,
+    "bytes": 5964,
+    "description": "Filtered Renou state/register CSV export used by the clickable dashboard tables."
+  },
+  {
+    "file": "renou_register_hors_inde_summary.csv",
+    "relative_path": "data/processed/renou_register_hors_inde_summary.csv",
+    "rows": 5,
+    "bytes": 570,
+    "description": "Filtered Renou state/register CSV export used by the clickable dashboard tables."
+  },
+  {
+    "file": "renou_register_hors_inde_threads.csv",
+    "relative_path": "data/processed/renou_register_hors_inde_threads.csv",
+    "rows": 12,
+    "bytes": 3653,
+    "description": "Filtered Renou state/register CSV export used by the clickable dashboard tables."
+  },
+  {
+    "file": "renou_register_jaina_messages.csv",
+    "relative_path": "data/processed/renou_register_jaina_messages.csv",
+    "rows": 365,
+    "bytes": 164363,
+    "description": "Filtered Renou state/register CSV export used by the clickable dashboard tables."
+  },
+  {
+    "file": "renou_register_jaina_summary.csv",
+    "relative_path": "data/processed/renou_register_jaina_summary.csv",
+    "rows": 101,
+    "bytes": 7814,
+    "description": "Filtered Renou state/register CSV export used by the clickable dashboard tables."
+  },
+  {
+    "file": "renou_register_jaina_threads.csv",
+    "relative_path": "data/processed/renou_register_jaina_threads.csv",
+    "rows": 288,
+    "bytes": 100224,
+    "description": "Filtered Renou state/register CSV export used by the clickable dashboard tables."
+  },
+  {
+    "file": "renou_register_karika_messages.csv",
+    "relative_path": "data/processed/renou_register_karika_messages.csv",
+    "rows": 17,
+    "bytes": 7391,
+    "description": "Filtered Renou state/register CSV export used by the clickable dashboard tables."
+  },
+  {
+    "file": "renou_register_karika_summary.csv",
+    "relative_path": "data/processed/renou_register_karika_summary.csv",
+    "rows": 3,
+    "bytes": 363,
+    "description": "Filtered Renou state/register CSV export used by the clickable dashboard tables."
+  },
+  {
+    "file": "renou_register_karika_threads.csv",
+    "relative_path": "data/processed/renou_register_karika_threads.csv",
+    "rows": 8,
+    "bytes": 2523,
+    "description": "Filtered Renou state/register CSV export used by the clickable dashboard tables."
+  },
+  {
+    "file": "renou_register_katha_messages.csv",
+    "relative_path": "data/processed/renou_register_katha_messages.csv",
+    "rows": 174,
+    "bytes": 75946,
+    "description": "Filtered Renou state/register CSV export used by the clickable dashboard tables."
+  },
+  {
+    "file": "renou_register_katha_summary.csv",
+    "relative_path": "data/processed/renou_register_katha_summary.csv",
+    "rows": 49,
+    "bytes": 4008,
+    "description": "Filtered Renou state/register CSV export used by the clickable dashboard tables."
+  },
+  {
+    "file": "renou_register_katha_threads.csv",
+    "relative_path": "data/processed/renou_register_katha_threads.csv",
+    "rows": 115,
+    "bytes": 36053,
+    "description": "Filtered Renou state/register CSV export used by the clickable dashboard tables."
+  },
+  {
+    "file": "renou_register_kavya_messages.csv",
+    "relative_path": "data/processed/renou_register_kavya_messages.csv",
+    "rows": 518,
+    "bytes": 223263,
+    "description": "Filtered Renou state/register CSV export used by the clickable dashboard tables."
+  },
+  {
+    "file": "renou_register_kavya_summary.csv",
+    "relative_path": "data/processed/renou_register_kavya_summary.csv",
+    "rows": 102,
+    "bytes": 8538,
+    "description": "Filtered Renou state/register CSV export used by the clickable dashboard tables."
+  },
+  {
+    "file": "renou_register_kavya_threads.csv",
+    "relative_path": "data/processed/renou_register_kavya_threads.csv",
+    "rows": 254,
+    "bytes": 85407,
+    "description": "Filtered Renou state/register CSV export used by the clickable dashboard tables."
+  },
+  {
+    "file": "renou_register_natya_messages.csv",
+    "relative_path": "data/processed/renou_register_natya_messages.csv",
+    "rows": 124,
+    "bytes": 54030,
+    "description": "Filtered Renou state/register CSV export used by the clickable dashboard tables."
+  },
+  {
+    "file": "renou_register_natya_summary.csv",
+    "relative_path": "data/processed/renou_register_natya_summary.csv",
+    "rows": 25,
+    "bytes": 2206,
+    "description": "Filtered Renou state/register CSV export used by the clickable dashboard tables."
+  },
+  {
+    "file": "renou_register_natya_threads.csv",
+    "relative_path": "data/processed/renou_register_natya_threads.csv",
+    "rows": 72,
+    "bytes": 23970,
+    "description": "Filtered Renou state/register CSV export used by the clickable dashboard tables."
+  },
+  {
+    "file": "renou_register_purana_messages.csv",
+    "relative_path": "data/processed/renou_register_purana_messages.csv",
+    "rows": 160,
+    "bytes": 70968,
+    "description": "Filtered Renou state/register CSV export used by the clickable dashboard tables."
+  },
+  {
+    "file": "renou_register_purana_summary.csv",
+    "relative_path": "data/processed/renou_register_purana_summary.csv",
+    "rows": 37,
+    "bytes": 3059,
+    "description": "Filtered Renou state/register CSV export used by the clickable dashboard tables."
+  },
+  {
+    "file": "renou_register_purana_threads.csv",
+    "relative_path": "data/processed/renou_register_purana_threads.csv",
+    "rows": 90,
+    "bytes": 34532,
+    "description": "Filtered Renou state/register CSV export used by the clickable dashboard tables."
+  },
+  {
+    "file": "renou_register_rgveda_messages.csv",
+    "relative_path": "data/processed/renou_register_rgveda_messages.csv",
+    "rows": 523,
+    "bytes": 223424,
+    "description": "Filtered Renou state/register CSV export used by the clickable dashboard tables."
+  },
+  {
+    "file": "renou_register_rgveda_summary.csv",
+    "relative_path": "data/processed/renou_register_rgveda_summary.csv",
+    "rows": 61,
+    "bytes": 4983,
+    "description": "Filtered Renou state/register CSV export used by the clickable dashboard tables."
+  },
+  {
+    "file": "renou_register_rgveda_threads.csv",
+    "relative_path": "data/processed/renou_register_rgveda_threads.csv",
+    "rows": 283,
+    "bytes": 91425,
+    "description": "Filtered Renou state/register CSV export used by the clickable dashboard tables."
+  },
+  {
+    "file": "renou_register_smrti_messages.csv",
+    "relative_path": "data/processed/renou_register_smrti_messages.csv",
+    "rows": 77,
+    "bytes": 33291,
+    "description": "Filtered Renou state/register CSV export used by the clickable dashboard tables."
+  },
+  {
+    "file": "renou_register_smrti_summary.csv",
+    "relative_path": "data/processed/renou_register_smrti_summary.csv",
+    "rows": 23,
+    "bytes": 2004,
+    "description": "Filtered Renou state/register CSV export used by the clickable dashboard tables."
+  },
+  {
+    "file": "renou_register_smrti_threads.csv",
+    "relative_path": "data/processed/renou_register_smrti_threads.csv",
+    "rows": 41,
+    "bytes": 12884,
+    "description": "Filtered Renou state/register CSV export used by the clickable dashboard tables."
   },
   {
     "file": "renou_register_summary.csv",
     "relative_path": "data/processed/renou_register_summary.csv",
     "rows": 935,
-    "bytes": 75072,
+    "bytes": 76008,
     "description": "Renou register-axis summary by year, topic, and list function."
+  },
+  {
+    "file": "renou_register_sutra_messages.csv",
+    "relative_path": "data/processed/renou_register_sutra_messages.csv",
+    "rows": 108,
+    "bytes": 47070,
+    "description": "Filtered Renou state/register CSV export used by the clickable dashboard tables."
+  },
+  {
+    "file": "renou_register_sutra_summary.csv",
+    "relative_path": "data/processed/renou_register_sutra_summary.csv",
+    "rows": 25,
+    "bytes": 2055,
+    "description": "Filtered Renou state/register CSV export used by the clickable dashboard tables."
+  },
+  {
+    "file": "renou_register_sutra_threads.csv",
+    "relative_path": "data/processed/renou_register_sutra_threads.csv",
+    "rows": 67,
+    "bytes": 22294,
+    "description": "Filtered Renou state/register CSV export used by the clickable dashboard tables."
+  },
+  {
+    "file": "renou_register_tantra_messages.csv",
+    "relative_path": "data/processed/renou_register_tantra_messages.csv",
+    "rows": 211,
+    "bytes": 92692,
+    "description": "Filtered Renou state/register CSV export used by the clickable dashboard tables."
+  },
+  {
+    "file": "renou_register_tantra_summary.csv",
+    "relative_path": "data/processed/renou_register_tantra_summary.csv",
+    "rows": 60,
+    "bytes": 4835,
+    "description": "Filtered Renou state/register CSV export used by the clickable dashboard tables."
+  },
+  {
+    "file": "renou_register_tantra_threads.csv",
+    "relative_path": "data/processed/renou_register_tantra_threads.csv",
+    "rows": 122,
+    "bytes": 42703,
+    "description": "Filtered Renou state/register CSV export used by the clickable dashboard tables."
+  },
+  {
+    "file": "renou_register_upanisad_messages.csv",
+    "relative_path": "data/processed/renou_register_upanisad_messages.csv",
+    "rows": 144,
+    "bytes": 64415,
+    "description": "Filtered Renou state/register CSV export used by the clickable dashboard tables."
+  },
+  {
+    "file": "renou_register_upanisad_summary.csv",
+    "relative_path": "data/processed/renou_register_upanisad_summary.csv",
+    "rows": 28,
+    "bytes": 2387,
+    "description": "Filtered Renou state/register CSV export used by the clickable dashboard tables."
+  },
+  {
+    "file": "renou_register_upanisad_threads.csv",
+    "relative_path": "data/processed/renou_register_upanisad_threads.csv",
+    "rows": 79,
+    "bytes": 31131,
+    "description": "Filtered Renou state/register CSV export used by the clickable dashboard tables."
+  },
+  {
+    "file": "renou_register_vyakarana_messages.csv",
+    "relative_path": "data/processed/renou_register_vyakarana_messages.csv",
+    "rows": 649,
+    "bytes": 300535,
+    "description": "Filtered Renou state/register CSV export used by the clickable dashboard tables."
+  },
+  {
+    "file": "renou_register_vyakarana_summary.csv",
+    "relative_path": "data/processed/renou_register_vyakarana_summary.csv",
+    "rows": 81,
+    "bytes": 7536,
+    "description": "Filtered Renou state/register CSV export used by the clickable dashboard tables."
+  },
+  {
+    "file": "renou_register_vyakarana_threads.csv",
+    "relative_path": "data/processed/renou_register_vyakarana_threads.csv",
+    "rows": 324,
+    "bytes": 130328,
+    "description": "Filtered Renou state/register CSV export used by the clickable dashboard tables."
+  },
+  {
+    "file": "renou_register_yajus_messages.csv",
+    "relative_path": "data/processed/renou_register_yajus_messages.csv",
+    "rows": 24,
+    "bytes": 10658,
+    "description": "Filtered Renou state/register CSV export used by the clickable dashboard tables."
+  },
+  {
+    "file": "renou_register_yajus_summary.csv",
+    "relative_path": "data/processed/renou_register_yajus_summary.csv",
+    "rows": 9,
+    "bytes": 783,
+    "description": "Filtered Renou state/register CSV export used by the clickable dashboard tables."
+  },
+  {
+    "file": "renou_register_yajus_threads.csv",
+    "relative_path": "data/processed/renou_register_yajus_threads.csv",
+    "rows": 13,
+    "bytes": 5119,
+    "description": "Filtered Renou state/register CSV export used by the clickable dashboard tables."
+  },
+  {
+    "file": "renou_state_i_messages.csv",
+    "relative_path": "data/processed/renou_state_i_messages.csv",
+    "rows": 1528,
+    "bytes": 635693,
+    "description": "Filtered Renou state/register CSV export used by the clickable dashboard tables."
+  },
+  {
+    "file": "renou_state_i_summary.csv",
+    "relative_path": "data/processed/renou_state_i_summary.csv",
+    "rows": 146,
+    "bytes": 10216,
+    "description": "Filtered Renou state/register CSV export used by the clickable dashboard tables."
+  },
+  {
+    "file": "renou_state_i_threads.csv",
+    "relative_path": "data/processed/renou_state_i_threads.csv",
+    "rows": 873,
+    "bytes": 264287,
+    "description": "Filtered Renou state/register CSV export used by the clickable dashboard tables."
+  },
+  {
+    "file": "renou_state_ii_messages.csv",
+    "relative_path": "data/processed/renou_state_ii_messages.csv",
+    "rows": 724,
+    "bytes": 332333,
+    "description": "Filtered Renou state/register CSV export used by the clickable dashboard tables."
+  },
+  {
+    "file": "renou_state_ii_summary.csv",
+    "relative_path": "data/processed/renou_state_ii_summary.csv",
+    "rows": 91,
+    "bytes": 7458,
+    "description": "Filtered Renou state/register CSV export used by the clickable dashboard tables."
+  },
+  {
+    "file": "renou_state_ii_threads.csv",
+    "relative_path": "data/processed/renou_state_ii_threads.csv",
+    "rows": 365,
+    "bytes": 142461,
+    "description": "Filtered Renou state/register CSV export used by the clickable dashboard tables."
+  },
+  {
+    "file": "renou_state_iii_messages.csv",
+    "relative_path": "data/processed/renou_state_iii_messages.csv",
+    "rows": 1215,
+    "bytes": 521872,
+    "description": "Filtered Renou state/register CSV export used by the clickable dashboard tables."
+  },
+  {
+    "file": "renou_state_iii_summary.csv",
+    "relative_path": "data/processed/renou_state_iii_summary.csv",
+    "rows": 137,
+    "bytes": 12090,
+    "description": "Filtered Renou state/register CSV export used by the clickable dashboard tables."
+  },
+  {
+    "file": "renou_state_iii_threads.csv",
+    "relative_path": "data/processed/renou_state_iii_threads.csv",
+    "rows": 637,
+    "bytes": 225517,
+    "description": "Filtered Renou state/register CSV export used by the clickable dashboard tables."
+  },
+  {
+    "file": "renou_state_iv_messages.csv",
+    "relative_path": "data/processed/renou_state_iv_messages.csv",
+    "rows": 323,
+    "bytes": 141309,
+    "description": "Filtered Renou state/register CSV export used by the clickable dashboard tables."
+  },
+  {
+    "file": "renou_state_iv_summary.csv",
+    "relative_path": "data/processed/renou_state_iv_summary.csv",
+    "rows": 68,
+    "bytes": 5326,
+    "description": "Filtered Renou state/register CSV export used by the clickable dashboard tables."
+  },
+  {
+    "file": "renou_state_iv_threads.csv",
+    "relative_path": "data/processed/renou_state_iv_threads.csv",
+    "rows": 179,
+    "bytes": 63027,
+    "description": "Filtered Renou state/register CSV export used by the clickable dashboard tables."
   },
   {
     "file": "renou_state_summary.csv",
     "relative_path": "data/processed/renou_state_summary.csv",
     "rows": 581,
-    "bytes": 45480,
+    "bytes": 46062,
     "description": "Renou I-V state-axis summary by year, topic, and list function."
+  },
+  {
+    "file": "renou_state_v_messages.csv",
+    "relative_path": "data/processed/renou_state_v_messages.csv",
+    "rows": 751,
+    "bytes": 325518,
+    "description": "Filtered Renou state/register CSV export used by the clickable dashboard tables."
+  },
+  {
+    "file": "renou_state_v_summary.csv",
+    "relative_path": "data/processed/renou_state_v_summary.csv",
+    "rows": 139,
+    "bytes": 11404,
+    "description": "Filtered Renou state/register CSV export used by the clickable dashboard tables."
+  },
+  {
+    "file": "renou_state_v_threads.csv",
+    "relative_path": "data/processed/renou_state_v_threads.csv",
+    "rows": 529,
+    "bytes": 172794,
+    "description": "Filtered Renou state/register CSV export used by the clickable dashboard tables."
   },
   {
     "file": "renou_thread_matches.csv",
     "relative_path": "data/processed/renou_thread_matches.csv",
     "rows": 3307,
-    "bytes": 1052906,
+    "bytes": 1056214,
     "description": "Thread-level rollup of sparse Renou state/register matches."
   },
   {
     "file": "reply_edges.csv",
     "relative_path": "data/processed/reply_edges.csv",
     "rows": 42743,
-    "bytes": 18752433,
+    "bytes": 18795177,
     "description": "Directed reply edges resolved from In-Reply-To, References, or conservative thread inference."
   },
   {
     "file": "reply_network_edges.csv",
     "relative_path": "data/processed/reply_network_edges.csv",
     "rows": 20783,
-    "bytes": 1094068,
+    "bytes": 1114852,
     "description": "Aggregated directed reply edge weights by source, target, and confidence."
   },
   {
     "file": "review_import_audit.csv",
     "relative_path": "data/processed/review_import_audit.csv",
     "rows": 25,
-    "bytes": 2618,
+    "bytes": 2644,
     "description": "Audit trail for importing human review notes into curated case metadata."
   },
   {
     "file": "search_authors.json",
     "relative_path": "data/processed/search_authors.json",
     "rows": 3150,
-    "bytes": 1130596,
+    "bytes": 1168397,
     "description": "Static search index for conservative author summaries."
   },
   {
     "file": "search_messages_sample.json",
     "relative_path": "data/processed/search_messages_sample.json",
     "rows": 4066,
-    "bytes": 1536354,
+    "bytes": 1577015,
     "description": "Compact metadata-only message sample for static search."
   },
   {
     "file": "search_threads.json",
     "relative_path": "data/processed/search_threads.json",
     "rows": 250,
-    "bytes": 184881,
+    "bytes": 189882,
     "description": "Static search index for generated thread pages and case-study candidate status."
   },
   {
     "file": "search_topics.json",
     "relative_path": "data/processed/search_topics.json",
     "rows": 12,
-    "bytes": 3176,
+    "bytes": 3297,
     "description": "Static search index for topic profiles."
   },
   {
@@ -332,35 +864,35 @@
     "file": "thread_explorer_index.csv",
     "relative_path": "data/processed/thread_explorer_index.csv",
     "rows": 250,
-    "bytes": 70911,
+    "bytes": 71162,
     "description": "Index of generated static thread explorer pages for case-study candidates."
   },
   {
     "file": "threads.csv",
     "relative_path": "data/processed/threads.csv",
     "rows": 24034,
-    "bytes": 3086126,
+    "bytes": 3110161,
     "description": "Reconstructed thread-level metadata."
   },
   {
     "file": "topic_decade_counts.csv",
     "relative_path": "data/processed/topic_decade_counts.csv",
     "rows": 48,
-    "bytes": 1609,
+    "bytes": 1658,
     "description": "Topic message counts by decade."
   },
   {
     "file": "topic_year_counts.csv",
     "relative_path": "data/processed/topic_year_counts.csv",
     "rows": 405,
-    "bytes": 12601,
+    "bytes": 13007,
     "description": "Topic message counts by year."
   },
   {
     "file": "yearly_counts.csv",
     "relative_path": "data/processed/yearly_counts.csv",
     "rows": 37,
-    "bytes": 377,
+    "bytes": 415,
     "description": "Message volume by year."
   }
 ]

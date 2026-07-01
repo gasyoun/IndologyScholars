@@ -99,10 +99,86 @@ Human-facing review fields include `curation_status`, `review_track`, `review_de
 | `data/processed/noisy_subjects.csv` | 397 | Generated atlas output. |
 | `data/processed/parse_issues.csv` | 8 | Generated atlas output. |
 | `data/processed/renou_coverage.csv` | 2 | Coverage counts for the sparse Renou subject-line layer. |
+| `data/processed/renou_export_index.csv` | 75 | Index of filtered Renou state/register CSV downloads. |
 | `data/processed/renou_message_matches.csv` | 9110 | Sparse message-level Renou state/register matches with matched terms and confidence. |
 | `data/processed/renou_messages.csv` | 62115 | Row-per-message sparse Renou state/register index derived from subject-line evidence. |
+| `data/processed/renou_register_atharva_messages.csv` | 66 | Filtered Renou state/register CSV export used by the clickable dashboard tables. |
+| `data/processed/renou_register_atharva_summary.csv` | 22 | Filtered Renou state/register CSV export used by the clickable dashboard tables. |
+| `data/processed/renou_register_atharva_threads.csv` | 46 | Filtered Renou state/register CSV export used by the clickable dashboard tables. |
+| `data/processed/renou_register_bauddha_messages.csv` | 92 | Filtered Renou state/register CSV export used by the clickable dashboard tables. |
+| `data/processed/renou_register_bauddha_summary.csv` | 26 | Filtered Renou state/register CSV export used by the clickable dashboard tables. |
+| `data/processed/renou_register_bauddha_threads.csv` | 46 | Filtered Renou state/register CSV export used by the clickable dashboard tables. |
+| `data/processed/renou_register_bhasya_messages.csv` | 293 | Filtered Renou state/register CSV export used by the clickable dashboard tables. |
+| `data/processed/renou_register_bhasya_summary.csv` | 63 | Filtered Renou state/register CSV export used by the clickable dashboard tables. |
+| `data/processed/renou_register_bhasya_threads.csv` | 154 | Filtered Renou state/register CSV export used by the clickable dashboard tables. |
+| `data/processed/renou_register_brahmana_messages.csv` | 93 | Filtered Renou state/register CSV export used by the clickable dashboard tables. |
+| `data/processed/renou_register_brahmana_summary.csv` | 22 | Filtered Renou state/register CSV export used by the clickable dashboard tables. |
+| `data/processed/renou_register_brahmana_threads.csv` | 47 | Filtered Renou state/register CSV export used by the clickable dashboard tables. |
+| `data/processed/renou_register_epic_messages.csv` | 563 | Filtered Renou state/register CSV export used by the clickable dashboard tables. |
+| `data/processed/renou_register_epic_summary.csv` | 104 | Filtered Renou state/register CSV export used by the clickable dashboard tables. |
+| `data/processed/renou_register_epic_threads.csv` | 336 | Filtered Renou state/register CSV export used by the clickable dashboard tables. |
+| `data/processed/renou_register_epig_messages.csv` | 355 | Filtered Renou state/register CSV export used by the clickable dashboard tables. |
+| `data/processed/renou_register_epig_summary.csv` | 89 | Filtered Renou state/register CSV export used by the clickable dashboard tables. |
+| `data/processed/renou_register_epig_threads.csv` | 208 | Filtered Renou state/register CSV export used by the clickable dashboard tables. |
+| `data/processed/renou_register_hors_inde_messages.csv` | 13 | Filtered Renou state/register CSV export used by the clickable dashboard tables. |
+| `data/processed/renou_register_hors_inde_summary.csv` | 5 | Filtered Renou state/register CSV export used by the clickable dashboard tables. |
+| `data/processed/renou_register_hors_inde_threads.csv` | 12 | Filtered Renou state/register CSV export used by the clickable dashboard tables. |
+| `data/processed/renou_register_jaina_messages.csv` | 365 | Filtered Renou state/register CSV export used by the clickable dashboard tables. |
+| `data/processed/renou_register_jaina_summary.csv` | 101 | Filtered Renou state/register CSV export used by the clickable dashboard tables. |
+| `data/processed/renou_register_jaina_threads.csv` | 288 | Filtered Renou state/register CSV export used by the clickable dashboard tables. |
+| `data/processed/renou_register_karika_messages.csv` | 17 | Filtered Renou state/register CSV export used by the clickable dashboard tables. |
+| `data/processed/renou_register_karika_summary.csv` | 3 | Filtered Renou state/register CSV export used by the clickable dashboard tables. |
+| `data/processed/renou_register_karika_threads.csv` | 8 | Filtered Renou state/register CSV export used by the clickable dashboard tables. |
+| `data/processed/renou_register_katha_messages.csv` | 174 | Filtered Renou state/register CSV export used by the clickable dashboard tables. |
+| `data/processed/renou_register_katha_summary.csv` | 49 | Filtered Renou state/register CSV export used by the clickable dashboard tables. |
+| `data/processed/renou_register_katha_threads.csv` | 115 | Filtered Renou state/register CSV export used by the clickable dashboard tables. |
+| `data/processed/renou_register_kavya_messages.csv` | 518 | Filtered Renou state/register CSV export used by the clickable dashboard tables. |
+| `data/processed/renou_register_kavya_summary.csv` | 102 | Filtered Renou state/register CSV export used by the clickable dashboard tables. |
+| `data/processed/renou_register_kavya_threads.csv` | 254 | Filtered Renou state/register CSV export used by the clickable dashboard tables. |
+| `data/processed/renou_register_natya_messages.csv` | 124 | Filtered Renou state/register CSV export used by the clickable dashboard tables. |
+| `data/processed/renou_register_natya_summary.csv` | 25 | Filtered Renou state/register CSV export used by the clickable dashboard tables. |
+| `data/processed/renou_register_natya_threads.csv` | 72 | Filtered Renou state/register CSV export used by the clickable dashboard tables. |
+| `data/processed/renou_register_purana_messages.csv` | 160 | Filtered Renou state/register CSV export used by the clickable dashboard tables. |
+| `data/processed/renou_register_purana_summary.csv` | 37 | Filtered Renou state/register CSV export used by the clickable dashboard tables. |
+| `data/processed/renou_register_purana_threads.csv` | 90 | Filtered Renou state/register CSV export used by the clickable dashboard tables. |
+| `data/processed/renou_register_rgveda_messages.csv` | 523 | Filtered Renou state/register CSV export used by the clickable dashboard tables. |
+| `data/processed/renou_register_rgveda_summary.csv` | 61 | Filtered Renou state/register CSV export used by the clickable dashboard tables. |
+| `data/processed/renou_register_rgveda_threads.csv` | 283 | Filtered Renou state/register CSV export used by the clickable dashboard tables. |
+| `data/processed/renou_register_smrti_messages.csv` | 77 | Filtered Renou state/register CSV export used by the clickable dashboard tables. |
+| `data/processed/renou_register_smrti_summary.csv` | 23 | Filtered Renou state/register CSV export used by the clickable dashboard tables. |
+| `data/processed/renou_register_smrti_threads.csv` | 41 | Filtered Renou state/register CSV export used by the clickable dashboard tables. |
 | `data/processed/renou_register_summary.csv` | 935 | Renou register-axis summary by year, topic, and list function. |
+| `data/processed/renou_register_sutra_messages.csv` | 108 | Filtered Renou state/register CSV export used by the clickable dashboard tables. |
+| `data/processed/renou_register_sutra_summary.csv` | 25 | Filtered Renou state/register CSV export used by the clickable dashboard tables. |
+| `data/processed/renou_register_sutra_threads.csv` | 67 | Filtered Renou state/register CSV export used by the clickable dashboard tables. |
+| `data/processed/renou_register_tantra_messages.csv` | 211 | Filtered Renou state/register CSV export used by the clickable dashboard tables. |
+| `data/processed/renou_register_tantra_summary.csv` | 60 | Filtered Renou state/register CSV export used by the clickable dashboard tables. |
+| `data/processed/renou_register_tantra_threads.csv` | 122 | Filtered Renou state/register CSV export used by the clickable dashboard tables. |
+| `data/processed/renou_register_upanisad_messages.csv` | 144 | Filtered Renou state/register CSV export used by the clickable dashboard tables. |
+| `data/processed/renou_register_upanisad_summary.csv` | 28 | Filtered Renou state/register CSV export used by the clickable dashboard tables. |
+| `data/processed/renou_register_upanisad_threads.csv` | 79 | Filtered Renou state/register CSV export used by the clickable dashboard tables. |
+| `data/processed/renou_register_vyakarana_messages.csv` | 649 | Filtered Renou state/register CSV export used by the clickable dashboard tables. |
+| `data/processed/renou_register_vyakarana_summary.csv` | 81 | Filtered Renou state/register CSV export used by the clickable dashboard tables. |
+| `data/processed/renou_register_vyakarana_threads.csv` | 324 | Filtered Renou state/register CSV export used by the clickable dashboard tables. |
+| `data/processed/renou_register_yajus_messages.csv` | 24 | Filtered Renou state/register CSV export used by the clickable dashboard tables. |
+| `data/processed/renou_register_yajus_summary.csv` | 9 | Filtered Renou state/register CSV export used by the clickable dashboard tables. |
+| `data/processed/renou_register_yajus_threads.csv` | 13 | Filtered Renou state/register CSV export used by the clickable dashboard tables. |
+| `data/processed/renou_state_i_messages.csv` | 1528 | Filtered Renou state/register CSV export used by the clickable dashboard tables. |
+| `data/processed/renou_state_i_summary.csv` | 146 | Filtered Renou state/register CSV export used by the clickable dashboard tables. |
+| `data/processed/renou_state_i_threads.csv` | 873 | Filtered Renou state/register CSV export used by the clickable dashboard tables. |
+| `data/processed/renou_state_ii_messages.csv` | 724 | Filtered Renou state/register CSV export used by the clickable dashboard tables. |
+| `data/processed/renou_state_ii_summary.csv` | 91 | Filtered Renou state/register CSV export used by the clickable dashboard tables. |
+| `data/processed/renou_state_ii_threads.csv` | 365 | Filtered Renou state/register CSV export used by the clickable dashboard tables. |
+| `data/processed/renou_state_iii_messages.csv` | 1215 | Filtered Renou state/register CSV export used by the clickable dashboard tables. |
+| `data/processed/renou_state_iii_summary.csv` | 137 | Filtered Renou state/register CSV export used by the clickable dashboard tables. |
+| `data/processed/renou_state_iii_threads.csv` | 637 | Filtered Renou state/register CSV export used by the clickable dashboard tables. |
+| `data/processed/renou_state_iv_messages.csv` | 323 | Filtered Renou state/register CSV export used by the clickable dashboard tables. |
+| `data/processed/renou_state_iv_summary.csv` | 68 | Filtered Renou state/register CSV export used by the clickable dashboard tables. |
+| `data/processed/renou_state_iv_threads.csv` | 179 | Filtered Renou state/register CSV export used by the clickable dashboard tables. |
 | `data/processed/renou_state_summary.csv` | 581 | Renou I-V state-axis summary by year, topic, and list function. |
+| `data/processed/renou_state_v_messages.csv` | 751 | Filtered Renou state/register CSV export used by the clickable dashboard tables. |
+| `data/processed/renou_state_v_summary.csv` | 139 | Filtered Renou state/register CSV export used by the clickable dashboard tables. |
+| `data/processed/renou_state_v_threads.csv` | 529 | Filtered Renou state/register CSV export used by the clickable dashboard tables. |
 | `data/processed/renou_thread_matches.csv` | 3307 | Thread-level rollup of sparse Renou state/register matches. |
 | `data/processed/reply_edges.csv` | 42743 | Directed reply edges resolved from In-Reply-To, References, or conservative thread inference. |
 | `data/processed/reply_network_edges.csv` | 20783 | Aggregated directed reply edge weights by source, target, and confidence. |
