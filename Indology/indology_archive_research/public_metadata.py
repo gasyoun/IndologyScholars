@@ -192,9 +192,10 @@ def write_data_dictionary(output_dir: Path) -> Path:
     table = "| File | Rows | Description |\n| --- | ---: | --- |\n"
     if not manifest.empty:
         for _, row in manifest.iterrows():
+            description = str(row.get("description", "")).replace("|", "\\|")
             table += (
                 f"| `{row.get('relative_path', row.get('file', ''))}` | "
-                f"{row.get('rows', '')} | {str(row.get('description', '')).replace('|', '\\|')} |\n"
+                f"{row.get('rows', '')} | {description} |\n"
             )
 
     text = f"""# INDOLOGY-L Archive Atlas Data Dictionary
