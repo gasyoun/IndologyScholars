@@ -9400,13 +9400,13 @@
     },
     {
       "path": "docs/development-en.md",
-      "size_bytes": 15429,
-      "sha256": "13807b5f3a0654019a9607aebacc21899fff4cf3a30b23436be183e397ace3a0"
+      "size_bytes": 15854,
+      "sha256": "97a2ae8b1499efdb3669cfa11ff62be5d18074e25430d72cf23f4549c54eed6e"
     },
     {
       "path": "docs/development.md",
-      "size_bytes": 21897,
-      "sha256": "a4ba1d673b750acd66374b66f7b53cd35f9acc29215fa6e8d45115ab2f96c202"
+      "size_bytes": 22584,
+      "sha256": "9327c3f769dc290298fb916f16de4a5776e9c9cf09d17c869903e669ad666e82"
     },
     {
       "path": "docs/external-phase5-enrichment-runbook.md",
@@ -9546,7 +9546,7 @@
     {
       "path": "findings/visualisations.html",
       "size_bytes": 493390,
-      "sha256": "34a1c281f00f30ce0664480841dd2ff48fcd8b1bc1cdd130fa8e07ac06ad6959"
+      "sha256": "0bde821bde4982f5b711b0669e25237b6072ba006715bafd45ea74adf50d8f97"
     },
     {
       "path": "gatekeeping-en.html",
