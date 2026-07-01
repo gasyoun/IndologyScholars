@@ -43,6 +43,9 @@
   и [поколенческие когорты](https://gasyoun.github.io/IndologyScholars/generations/).
 - [Поиск по коллекции](https://gasyoun.github.io/IndologyScholars/search.html),
   включая отдельные страницы докладов и ссылки на видео, когда запись найдена.
+- [INDOLOGY Archive Atlas](https://gasyoun.github.io/IndologyScholars/IndologyArchive/) -
+  отдельное приложение к проекту по публичному архиву рассылки INDOLOGY-L. Оно
+  обновляется отдельным workflow GitHub Actions первого числа каждого месяца.
 
 ## Как читать сведения
 
