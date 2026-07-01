@@ -259,6 +259,20 @@
       "description": "Main-site conference presentation counts by Renou register lattice."
     },
     {
+      "name": "renou-cross-site-state-comparison",
+      "path": "analytics_output/renou_cross_site_state_comparison.csv",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "description": "Comparison of main-site conference presentation counts and INDOLOGY archive message/thread counts by Renou I-V state code."
+    },
+    {
+      "name": "renou-cross-site-register-comparison",
+      "path": "analytics_output/renou_cross_site_register_comparison.csv",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "description": "Comparison of main-site conference presentation counts and INDOLOGY archive message/thread counts by Renou register code."
+    },
+    {
       "name": "verified-affiliation-spans",
       "path": "curation/verified_affiliation_spans.csv",
       "format": "csv",
