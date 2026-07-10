@@ -35,28 +35,28 @@
     },
     {
       "path": "analytics_output/birth_year_gap_audit.csv",
-      "size_bytes": 5971,
-      "sha256": "419f485a84d01999a5cb7e3f57f0dbb2544c0651498f67e4b9096c9953b81ff9"
+      "size_bytes": 5905,
+      "sha256": "a5b735427ed7f5b223865ed447bd3a0e3c1c5c4f9e724a15769dd75979aa1fb2"
     },
     {
       "path": "analytics_output/birth_year_proxy_estimates.csv",
-      "size_bytes": 460,
-      "sha256": "232bc0fc11114d9d4a69e0c6a05d30c705d09cebc7ef39b5ddd051a1b5f278bb"
+      "size_bytes": 456,
+      "sha256": "01271f8f393d526a2c0de2a36afc6665b16986fa048ffc24275aa23ce66a4867"
     },
     {
       "path": "analytics_output/caption_inventory.csv",
-      "size_bytes": 86681,
-      "sha256": "4afe0d136d350325d826cf42fb304de740b89898887fda37efe5db2fedb521e1"
+      "size_bytes": 86504,
+      "sha256": "c07775dc0a803135d5b14d6dde2eb2ba7e7c88de6048c6f442e220c279b3b5ed"
     },
     {
       "path": "analytics_output/city_trajectory_audit.csv",
-      "size_bytes": 72080,
-      "sha256": "6643a0ff74b56cf3ad4226e89a0d3ea9f4af61f4a708321f7c2bb9476d645b25"
+      "size_bytes": 71360,
+      "sha256": "8beafaad58f4fcfdd3df28024a39749dfe44feba0f4452613ac5315d91715b6d"
     },
     {
       "path": "analytics_output/city_trajectory_summary.csv",
-      "size_bytes": 26953,
-      "sha256": "6f1874d77e42807e2de5e06d8e652bd8e0880b681c378c19e7c7d819127cbb87"
+      "size_bytes": 26718,
+      "sha256": "2a607d8eb6ad000096258cdd23257d2d4f6534e80249145731e83d957d4ef275"
     },
     {
       "path": "analytics_output/classification_overrides.csv",
@@ -100,13 +100,13 @@
     },
     {
       "path": "analytics_output/debut_timing.csv",
-      "size_bytes": 14264,
-      "sha256": "e703528304a181bc1dd018d2ac1374fee5fea420f0958dda19abb032635cf362"
+      "size_bytes": 14037,
+      "sha256": "612f84abbc641c9d402da5b440b91a7df82ab1cbf86597b2fe521240a61ffa19"
     },
     {
       "path": "analytics_output/debut_timing.svg",
-      "size_bytes": 16870,
-      "sha256": "7013150fb705f96a9eacdf5e9273abbe3423243515169f1107e6cab9f188faab"
+      "size_bytes": 16716,
+      "sha256": "3595c086f343e162231a0c80df8be9cc00423a3e6c4a4006add489cf40b52614"
     },
     {
       "path": "analytics_output/event_ecology_audit.csv",
@@ -120,43 +120,43 @@
     },
     {
       "path": "analytics_output/expanded_classification_audit_v2.log",
-      "size_bytes": 751,
-      "sha256": "70f677d8f2fe4d30c8914ae7f4b1d925852d50581c4955343eb67da954be25e2"
+      "size_bytes": 732,
+      "sha256": "35845f972defacf2db5fa5d3da5b3937d353db5a6386f48352eb5606ff8c910e"
     },
     {
       "path": "analytics_output/expanded_classification_deepseek.csv",
-      "size_bytes": 748850,
-      "sha256": "e30e81f547948429a3ab8be8254d9cfd7c2f5e1c0263e100699a97bf48ce2b4a"
+      "size_bytes": 747487,
+      "sha256": "7dae6f2aa09a7e9fcadca36ba0527d090031952e76deb7af5cebde168d84918d"
     },
     {
       "path": "analytics_output/expanded_classification_deepseek_work.csv",
-      "size_bytes": 863390,
-      "sha256": "d809276a3a9ecc27b62d9adbf5752900e0d1b5e48f87d336787c94584b24bed9"
+      "size_bytes": 861712,
+      "sha256": "1dd6a5584a04b8830bd2243acf188203d6d7cb6f1f08828d3e82f859b804d418"
     },
     {
       "path": "analytics_output/expanded_classification_run.err",
-      "size_bytes": 750,
-      "sha256": "2130c1241b3e3ec66f65ca2b733c519be78cfba3d201fba95d7bfebca719ead4"
+      "size_bytes": 737,
+      "sha256": "2aa07e6a6a16e99330769ed1d4da6ca7d100d9bac1c277992e9b709f31103773"
     },
     {
       "path": "analytics_output/expanded_classification_run.log",
-      "size_bytes": 97,
-      "sha256": "bad355acf011df7dd31d56ccd4614694ec152a8e0d4b3afa721264d4d23a4375"
+      "size_bytes": 95,
+      "sha256": "3c4fcee5e130847b7f46fee5584ed8a9455caca3044fefa69cc9e9e5d884aa73"
     },
     {
       "path": "analytics_output/expanded_classification_run_2.err",
-      "size_bytes": 56,
-      "sha256": "0ed414b894848090716dcfb1e011eae3f1ad5d8aec7ee009e080a51f032fb443"
+      "size_bytes": 55,
+      "sha256": "55b48f60166522fac13f139422e0835919c2de3aad1cce36afa531261ac2ecb6"
     },
     {
       "path": "analytics_output/expanded_classification_run_2.log",
-      "size_bytes": 2919,
-      "sha256": "903e8f0b858a10bf25a4ce3b19d62e66ae8bbd35c2d006501fedac96969246d5"
+      "size_bytes": 2850,
+      "sha256": "cda00f0c665162099c82836fd95056c163d4f5969f30eff270b0245fe3cb4bac"
     },
     {
       "path": "analytics_output/expanded_classification_run_audit.err",
-      "size_bytes": 1272,
-      "sha256": "569d9a6320a2db57176f0a9b476acfaa8645382aa4a70870152bc61626ef4de1"
+      "size_bytes": 1260,
+      "sha256": "97ed4308b3f9767fe263a58d1f7d114c98a41c91979066585f64fa39f86b4bec"
     },
     {
       "path": "analytics_output/expanded_classification_run_audit.log",
@@ -165,18 +165,18 @@
     },
     {
       "path": "analytics_output/expanded_classification_run_audit_2.err",
-      "size_bytes": 260,
-      "sha256": "aefb7f2627a2f1cbebf3aa4b3358e88dc438e2ba093dd44d4ca37dead3803dbc"
+      "size_bytes": 256,
+      "sha256": "5b821fa00ac8f727725f3e2ff804c3d911ed10ceda287bf5a15066d50fd56ed6"
     },
     {
       "path": "analytics_output/expanded_classification_run_audit_2.log",
-      "size_bytes": 777,
-      "sha256": "56423e3bc6ab13eadb148f753aeaf86012d2f4917838d2780427b321dc4f32d0"
+      "size_bytes": 759,
+      "sha256": "0cc37bc5d0eb26452bde376030617bb40a37c0b02ca2d99e3a19014433059f50"
     },
     {
       "path": "analytics_output/expanded_gumilyov_elevated_audit.csv",
-      "size_bytes": 99821,
-      "sha256": "832ac815ca5974b16412434cac7ffab313c70500fcf299d6e59d17afba1603d4"
+      "size_bytes": 99529,
+      "sha256": "18051bf28b300247a317840322f8abffaff1e727027e5675ae885a92310db508"
     },
     {
       "path": "analytics_output/fair_reuse_maturity_audit.csv",
@@ -200,23 +200,23 @@
     },
     {
       "path": "analytics_output/gender_validation_sample.csv",
-      "size_bytes": 3970,
-      "sha256": "c6c60cc16a2feff111f66d56344a91e841d838d39d40b8e31fa08a1770f5ce48"
+      "size_bytes": 3909,
+      "sha256": "21faf7bb0c96f32a8ecd2cbe5f3135547b45e6efb13cd1a1ce7ceb1801af203f"
     },
     {
       "path": "analytics_output/gumilyov_scale.csv",
-      "size_bytes": 426443,
-      "sha256": "81837e1a99fa673a00aac5d6fbe3aced2605b07b3061ca9e68b1eb7772f2ea9c"
+      "size_bytes": 425080,
+      "sha256": "1917b47b2436e93c4621013a2e7b924bd8033922db5a4e5e5e83f6a376b9f566"
     },
     {
       "path": "analytics_output/gumilyov_scale_trends.csv",
-      "size_bytes": 1400,
-      "sha256": "416917702b52ece1eb9be5fa37321183dc03a94b5a1c03d4d13e5d6090460322"
+      "size_bytes": 1377,
+      "sha256": "3d92f1784bda925d6572e124fdc8fffc7dde2c3da0670784be2b0406779352aa"
     },
     {
       "path": "analytics_output/gumilyov_video_comparison.csv",
-      "size_bytes": 27404,
-      "sha256": "2d9f84ce828c9af805d0731a3b259b5495ecef52da42f3b2366dc4d8149103e2"
+      "size_bytes": 27314,
+      "sha256": "5fe4271a8e491f2576e9ffe8ca56e1184341f92ab9bef796a61f0aabef3994fd"
     },
     {
       "path": "analytics_output/human_review_index.csv",
@@ -230,18 +230,18 @@
     },
     {
       "path": "analytics_output/id_migration_presentation.csv",
-      "size_bytes": 216718,
-      "sha256": "c335f19ca4a0edf4962f2314a9f86e323d107273923dcdc45d4153eb1f1104e7"
+      "size_bytes": 215822,
+      "sha256": "170e710864c7eba0ab8fdf1b333241fb83c29121388d2b576f6ddf0a7ea24c6c"
     },
     {
       "path": "analytics_output/id_migration_presentation.json",
-      "size_bytes": 440979,
-      "sha256": "ab93bf02befb4ecda1f3db64b9e7e2cfe40b6cac996749efd361af930bdfd451"
+      "size_bytes": 431995,
+      "sha256": "a8b7785290b006d5bec41a9c2cc35b81a54efda2b5ffb9cdef5ce5cc41ecc1f8"
     },
     {
       "path": "analytics_output/id_stability_audit.json",
-      "size_bytes": 971,
-      "sha256": "e996de81912ebffcd34786cf2d9686df2d44d1b8754db9890acf297cd3b3da08"
+      "size_bytes": 944,
+      "sha256": "de7ca6707a3bc648d2147384414da6aacd69404d4276a78b8ce0b5ef20523a8b"
     },
     {
       "path": "analytics_output/id_stability_changed_ids.csv",
@@ -250,13 +250,13 @@
     },
     {
       "path": "analytics_output/identity_alias_candidates.csv",
-      "size_bytes": 1871,
-      "sha256": "6867ec5d4db97990d2e12bc12587045f7e6fc8ccb9bb78a81a95a648750a2981"
+      "size_bytes": 1861,
+      "sha256": "1b0f69b67d72cf2892f24b1e7e71b805f56d39da1562fb96dbb1b06dbcab9a88"
     },
     {
       "path": "analytics_output/identity_trend_summary.json",
-      "size_bytes": 280,
-      "sha256": "631a15e2d5e74129e76044b6bd8406dba20aa244022a5d4735e42bad94430380"
+      "size_bytes": 271,
+      "sha256": "d0c82fea8293f1ab70dbe8888ec358d7aa48692260d4d0cdfcbf09cd6ff5e724"
     },
     {
       "path": "analytics_output/inter_rater_reliability_plan.csv",
@@ -265,28 +265,28 @@
     },
     {
       "path": "analytics_output/interrater_crossmodel_claude.csv",
-      "size_bytes": 19757,
-      "sha256": "8b34e05fbbdf1e8a9bb667d8e0303e3555d615c0e57d3772d0c2180baa4caa61"
+      "size_bytes": 19656,
+      "sha256": "909037b89fd5a33e5369e2a0849768759009ad1199b42d2d106dc0a724d49464"
     },
     {
       "path": "analytics_output/interrater_sample_blind.csv",
-      "size_bytes": 17474,
-      "sha256": "57d325c952ddaf6836bde9255c60958e61e42da1e0e0020b24f2e670cf124454"
+      "size_bytes": 17373,
+      "sha256": "585f99c5bc605a2c890c333b9a8e179f5e134dffeb7711a23aecbed4302cf007"
     },
     {
       "path": "analytics_output/interrater_sample_key.csv",
-      "size_bytes": 4217,
-      "sha256": "24f6a3233d915346eda21331ef7f1a543e9c95995ae67673ea26900d6fdf01de"
+      "size_bytes": 4116,
+      "sha256": "9857ac3a462019acdf9c49631e1cd14ed58aafc5ece5ff1786e3b62e01f1fca5"
     },
     {
       "path": "analytics_output/journal_requirements.csv",
-      "size_bytes": 703,
-      "sha256": "d3d63d62b68da5a6c10fdfd3e6f65c8cb2b48ffc90b8a0647894bff95dce3cff"
+      "size_bytes": 699,
+      "sha256": "e9d223f11b4399d0ec5462cf3603dcab55e80f303230b2af9946fa63f4f64ecd"
     },
     {
       "path": "analytics_output/keyword_clusters.md",
-      "size_bytes": 2968,
-      "sha256": "ba1f93c4cfda446e6736ceab1ec7492f127a5b907de8ac4bcf3a1c6084af2eca"
+      "size_bytes": 2946,
+      "sha256": "1ad3c2ea3dde99d003aa5fb29a29a962a6394f7b9ac17e29379cc10f2f830d33"
     },
     {
       "path": "analytics_output/keyword_filter_audit.csv",
@@ -300,13 +300,13 @@
     },
     {
       "path": "analytics_output/lineage_candidates.csv",
-      "size_bytes": 559,
-      "sha256": "c8a8165db8a23620e0aa5dc14b5647db74a74654b93d5b03b3b6eb96fb7e7b7a"
+      "size_bytes": 557,
+      "sha256": "6125a048e1c81b3a244941846d326961b23327d4b37d1c9c0bb87d1c399b7839"
     },
     {
       "path": "analytics_output/meso_codes_deepseek.csv",
-      "size_bytes": 278137,
-      "sha256": "f45c175cafffe9c3738800ff166e38e1cd839f4bd2c65329b63913f6d0d94fc6"
+      "size_bytes": 276774,
+      "sha256": "6136e9f9b989dc9a051b61a123616132ba11966c91d79b66cd557d4fcd7b7b17"
     },
     {
       "path": "analytics_output/negative_evidence_log.csv",
@@ -315,8 +315,8 @@
     },
     {
       "path": "analytics_output/network_data.json",
-      "size_bytes": 1831226,
-      "sha256": "e49d00702d0f6de460b54e86782ecf0b6ba87338b4c61dcef4291a2bbacc4c4e"
+      "size_bytes": 1763469,
+      "sha256": "20978c32c2d51b97c9d9bd388733cc81b7186494d7dfd91c7670225f27eb3adc"
     },
     {
       "path": "analytics_output/network_edges.csv",
@@ -340,33 +340,33 @@
     },
     {
       "path": "analytics_output/nlp_cache.pkl",
-      "size_bytes": 148350,
-      "sha256": "ff5da5420a9b08a89a359238c764eae6a8f79b7e02640e76a20e4c2b7044fa98"
+      "size_bytes": 148375,
+      "sha256": "593c693eebbf06d7d1ed7f659ef3b0b56a23ca4288b166316153b2205c371738"
     },
     {
       "path": "analytics_output/no_affiliation_history.md",
-      "size_bytes": 11973,
-      "sha256": "e5a5907d3e926fe99ca0b686c5b193f45ac45e5c1fcefa462bc50727154324e3"
+      "size_bytes": 11831,
+      "sha256": "e61d5e029f1062ea2a37bf5a2ba189ddd857f5a2bdbdc608b815d5f3b6f752c2"
     },
     {
       "path": "analytics_output/online_repeaters_2020_plus.csv",
-      "size_bytes": 289,
-      "sha256": "c7ba1364fc8afc36acc059631d27cb3f05c151ecc264c110f7192948500bd938"
+      "size_bytes": 285,
+      "sha256": "13b31076534001a5ca7f37335d3bee2f51903485906693964bb01189d1bcd8da"
     },
     {
       "path": "analytics_output/online_share_by_year.csv",
-      "size_bytes": 1389,
-      "sha256": "dc1cef88f69306dc88a0379dda9160612616767a2913e83612848e739e261a7b"
+      "size_bytes": 1358,
+      "sha256": "2b1ab67ac80448cf171671d25aa83316890b01f7ec82dea07a234e5b767a02d3"
     },
     {
       "path": "analytics_output/openalex_author_candidates.csv",
-      "size_bytes": 89627,
-      "sha256": "dbdf643cb351c0a245c4f2d0cac4dda0ee7313e76c2a7cc73ce7888ec340ff04"
+      "size_bytes": 89130,
+      "sha256": "8e482e4b97b8fd5d0d1dcd8217dd7e761caf9ec52f128817c69b7794f2d0d79b"
     },
     {
       "path": "analytics_output/presentation_id_manifest.csv",
-      "size_bytes": 541828,
-      "sha256": "684bb344f2bddcf3f9eedd4d09039ab8257aa9242154bec181ed54db93b4e8c2"
+      "size_bytes": 540465,
+      "sha256": "a9715df0715f1fd4ed4e8c183defb4cb9faaf52d6d462f08e79e7f636d29b6ca"
     },
     {
       "path": "analytics_output/presentation_tags.csv",
@@ -375,8 +375,8 @@
     },
     {
       "path": "analytics_output/publication_conversion.csv",
-      "size_bytes": 87,
-      "sha256": "3febc5e594eeaaa1253a915816d8d8bfae784cb3b8b6d9501c111754d12523d3"
+      "size_bytes": 86,
+      "sha256": "9fbb22ca0641d937a94b1f7c78edb0fc748de4eb8acaaecd2118a544c7cf4e57"
     },
     {
       "path": "analytics_output/renou_coverage.csv",
@@ -550,8 +550,8 @@
     },
     {
       "path": "analytics_output/rinc_lookup_queue.csv",
-      "size_bytes": 41750,
-      "sha256": "8dc56ee62b96d380265144da39226632df9e699fcdbdd84b32452461b0164ce3"
+      "size_bytes": 41523,
+      "sha256": "965efa074634725c96dfbdd4a2ff40045b71c0a652fda752ce43e8c7ca112ab7"
     },
     {
       "path": "analytics_output/roerich_only_indologists.csv",
@@ -560,8 +560,8 @@
     },
     {
       "path": "analytics_output/roster_participant_links.csv",
-      "size_bytes": 13767,
-      "sha256": "3dc0052bac95cd72e66bad65938a4a59860920d0c02beaf2cde68e99a0a338e4"
+      "size_bytes": 13666,
+      "sha256": "b7575cc56fcfa1ce5a974da8dc79af8216fa93b7aa159da12a669c75d73cff6f"
     },
     {
       "path": "analytics_output/scientometrics_claim_registry.csv",
@@ -590,43 +590,43 @@
     },
     {
       "path": "analytics_output/spacetime_unmatched.csv",
-      "size_bytes": 307180,
-      "sha256": "57431e13b4cf9288e2d01d1cbc641fcdd7586cb2e2016f10cde6ae2983ea6db3"
+      "size_bytes": 306103,
+      "sha256": "f3520ae187c06339dc89fb334dfbe0e831e09a7a299c581cb11e42b38a1fc9a3"
     },
     {
       "path": "analytics_output/theme_codes_baseline.csv",
-      "size_bytes": 187960,
-      "sha256": "d56fb118383c57e4cc3b1e51be8b7f514670820166a0e2bd3bf58b023c201bd8"
+      "size_bytes": 187064,
+      "sha256": "5137a2c98e5ca8dcdf622b9a926aa078bc33c9ad1f09d2c5976a92d2e3a8c7c2"
     },
     {
       "path": "analytics_output/theme_codes_final.csv",
-      "size_bytes": 494361,
-      "sha256": "281e0af69f091690559b8b4181c4993cfac0246e8ac8a824aefa73363eed4d1d"
+      "size_bytes": 492998,
+      "sha256": "e6dc5459d898ad214e8894e68ba79ece8563f7ba702df94a01b798209fd1e51b"
     },
     {
       "path": "analytics_output/theme_codes_final_v2.csv",
-      "size_bytes": 511280,
-      "sha256": "9a4755cd5ef3ae4e59e8a4c5a83353df5a8afa963518e9aee9e21e04ab4a9dda"
+      "size_bytes": 509917,
+      "sha256": "26c48fcee44f18ec3a3742439e8f59040896def3502345264dd1be216412be14"
     },
     {
       "path": "analytics_output/theme_codes_llm.csv",
-      "size_bytes": 290168,
-      "sha256": "d903baaf0f023493a85a08f17ed09a18c7daffae844df3a1439e2546fb417aca"
+      "size_bytes": 289307,
+      "sha256": "8727ffbf8b33d5916ed69637e9e261639cb4d1e074a2dc4de1df3b35cfaa4bdb"
     },
     {
       "path": "analytics_output/theme_codes_llm_v2.csv",
-      "size_bytes": 293670,
-      "sha256": "b0096175b6c3ef87d440ff2ba64e5873738822cd1415676c0ac140d15149f9df"
+      "size_bytes": 292872,
+      "sha256": "deca287c9b5b2c6c071f986b1f45c67323f895a4abade96d18507d7226654662"
     },
     {
       "path": "analytics_output/theme_codes_uncertain.csv",
-      "size_bytes": 4175,
-      "sha256": "ac3d04b89a0f9636b861c1eb27bc46b871d633e799af368f1611058251ace953"
+      "size_bytes": 4148,
+      "sha256": "8e5e7998b097b8d78196ece1e9d11ad5bbfef2f56eeb051c196a09a5b34ff3da"
     },
     {
       "path": "analytics_output/theme_codes_uncertain_v2.csv",
-      "size_bytes": 76079,
-      "sha256": "fb19e801c3a5f381448f9b6d3db454676243cb942d90861f8cca6dba32b0b336"
+      "size_bytes": 75749,
+      "sha256": "7a93233659bdb4cf21e7a179705008b0a7523089738073878b5277e8cc3d206c"
     },
     {
       "path": "analytics_output/theme_review_queue.csv",
@@ -640,48 +640,48 @@
     },
     {
       "path": "analytics_output/vak_journals.csv",
-      "size_bytes": 580470,
-      "sha256": "97a116bb5e0d968858e6cc7be5d34d9f658c612328202abb8b974bcb5f1c6545"
+      "size_bytes": 577382,
+      "sha256": "dfcabf89c83fe626260a977d1c8653ab28f733bfcaa3bfa339b1ff0105ee828e"
     },
     {
       "path": "analytics_output/vak_journals_indology.csv",
-      "size_bytes": 18835,
-      "sha256": "c4ff607d3ef6d38f7ef16edecaf1ba1cfb04a10c289f3c74a9695b465169a604"
+      "size_bytes": 18755,
+      "sha256": "443dd76a45fdf27cfda8dba3393a0515eb7491f2e4ec7485e5eef6e8582363ed"
     },
     {
       "path": "analytics_output/video_presentation_mapping.csv",
-      "size_bytes": 65933,
-      "sha256": "afb8858863081808ab671a31ce8df8fe0f8b9e4af59cdc26d7ac0bb640e1dec3"
+      "size_bytes": 65754,
+      "sha256": "49f786ace20af6440cac8161122b8cc6e98f2cff73057e2072a9ba87a7a34e79"
     },
     {
       "path": "analytics_output/wikidata_batch.txt",
-      "size_bytes": 8528,
-      "sha256": "5191072c734be974d6ba64de2b265dd637d5118563f492f1145984d97c92226a"
+      "size_bytes": 8337,
+      "sha256": "d246332b5b17344ceb88b2f76d0036c061610c3fb750364e815343cf960c07aa"
     },
     {
       "path": "analytics_output/wikipedia_authority_candidates.csv",
-      "size_bytes": 390625,
-      "sha256": "25405724be1aeeac65762811def0a350c9621ef1010f3b69048a00c16cda88a7"
+      "size_bytes": 389929,
+      "sha256": "415008db1e3eaa4c650818fc496a690e29f06d7d658ea5223abbe2f7e744c74f"
     },
     {
       "path": "analytics_output/youtube_playlist_summary.csv",
-      "size_bytes": 345,
-      "sha256": "c427532a45d167921b621d6fbb74f86429b07ab0a9d00f3680fdd36f00cda6de"
+      "size_bytes": 340,
+      "sha256": "f88dec55a953f86aa585176fe3ff3d0f15bb85e154cf69caceade65c26712a37"
     },
     {
       "path": "analytics_output/youtube_video_list.csv",
-      "size_bytes": 53407,
-      "sha256": "1449a7bbd9edf2ea595e5b4f6bb6e357d4461d91ae5b8dcea1d3eda36ee786b0"
+      "size_bytes": 53228,
+      "sha256": "55cbdb65cbc45ea1198fdffa9460518e1b1fcefbb100434845a755dd6615298b"
     },
     {
       "path": "analytics_output/zograf_2026_affiliation_audit.csv",
-      "size_bytes": 15014,
-      "sha256": "804aae06baaac8b52d6ce2a11d4798a2a912e7eb316da4e253f494406b11edc1"
+      "size_bytes": 14953,
+      "sha256": "6ab850d5a7c508b2d247a357c0eef3eb48d7c9100a88f977c080325f5317d758"
     },
     {
       "path": "analytics_output/zograf_2026_no_affiliation.md",
-      "size_bytes": 8168,
-      "sha256": "d4855e4fe0c51ad088596bc948b2b2a54b6dfa79c5f9ab17931784347f2976b6"
+      "size_bytes": 8090,
+      "sha256": "38f8056e715d0f7bc91c053c3ba452c2917351e58282ffa2a698d0b09c912fba"
     },
     {
       "path": "analytics_output/zograf_only_indologists.csv",
@@ -700,13 +700,13 @@
     },
     {
       "path": "assets/data/geography.json",
-      "size_bytes": 9422,
-      "sha256": "d52bc2813f7569629a3be8bef95e5ebd813edfed0313dbac4571973e3799c575"
+      "size_bytes": 9255,
+      "sha256": "c316d76b20ff30148d6a3aadbac39e3de753e047397120d95bc4cd270787d45b"
     },
     {
       "path": "assets/data/hypotheses.json",
-      "size_bytes": 37123,
-      "sha256": "523048b4e7903dbff51805be272bbccdc79b1f60448b6e285c2e5bc3063504bb"
+      "size_bytes": 36457,
+      "sha256": "8d9cf4629fbdc7b62d0bbe64ad63d0606933692638070d65b82bc9e73be3f5a7"
     },
     {
       "path": "assets/favicon.svg",
@@ -730,13 +730,13 @@
     },
     {
       "path": "assets/img/gatekeeping_hypothesis_matrix.svg",
-      "size_bytes": 5208,
-      "sha256": "e0969d018e9ff8b64a0a9ae3b1a7b859b09f90091ce630f83624bef9ed58f0f8"
+      "size_bytes": 5175,
+      "sha256": "f1d537e7162fe90cc8889e260024ed0e819dbfddd9c5e27f03c4e5169d7a0ea3"
     },
     {
       "path": "assets/img/gatekeeping_network_layers.svg",
-      "size_bytes": 5699,
-      "sha256": "449dc20b00f61566bfc549d616ebd6c7e452c5cb1d8f0698ece1bbf18f59491c"
+      "size_bytes": 5657,
+      "sha256": "e29d1799183f5264ed53ffca16cede89b5839d68d0f08ae3901f800f80988b54"
     },
     {
       "path": "assets/img/network_degradation.png",
@@ -745,43 +745,43 @@
     },
     {
       "path": "assets/img/senior_absence_timeline.svg",
-      "size_bytes": 34716,
-      "sha256": "c1029fa5d2ad45aac3032da180f44a3b16fbeaf7ad867d1835c0cf4e2a06d18d"
+      "size_bytes": 34307,
+      "sha256": "1220d87b37ca21d96ad21c1a2438cd7a500d4eca15435042bff0d513206f4bb6"
     },
     {
       "path": "assets/img/sociology_generation_lifecycle.svg",
-      "size_bytes": 6229,
-      "sha256": "1d1f2da09a03ff64ada00dd513aaae02ecbbdb88b319bc9cc942bda50cdb8e6c"
+      "size_bytes": 6182,
+      "sha256": "6571ae170b4885e916c95253100aa3334f774b645e29bac25fc4cb1a9a007492"
     },
     {
       "path": "assets/img/sociology_review_dashboard.svg",
-      "size_bytes": 3404,
-      "sha256": "34f3b1aab51085f176bb6e501a14770ef45b17cb3619e64729ab0f05c6b3e510"
+      "size_bytes": 3381,
+      "sha256": "d914cc9b98f138f77e2370c19b4b0f40b00da3a8fb54da61781035af120940ed"
     },
     {
       "path": "assets/index.css",
-      "size_bytes": 35559,
-      "sha256": "46e085827265a69874610cbad2cec27c4d6802219a0c025edb997b40844380fd"
+      "size_bytes": 34322,
+      "sha256": "e6e053bdb255fc453f88ae787ad577435251da5d574594aa913fa57c705ce21d"
     },
     {
       "path": "assets/js/charts.js",
-      "size_bytes": 22546,
-      "sha256": "0ec415b7512d0d30159cc86bceb8bf4307b380dbb9bcc9281a7c336b0b2da271"
+      "size_bytes": 22011,
+      "sha256": "69648be5aab2c5c2dae2396e185751ff13dd9a366466952d54be809e35974110"
     },
     {
       "path": "assets/js/i18n.js",
-      "size_bytes": 17538,
-      "sha256": "757743a12a5c6c13a5e522f94315eb509749b865f018d49b20bff73b54123cfa"
+      "size_bytes": 17310,
+      "sha256": "eba4bd12151935f99e966bc288b521735ecb6eb606833807ad10188ed5efe0e2"
     },
     {
       "path": "assets/js/main.js",
-      "size_bytes": 86639,
-      "sha256": "b0b31d4d6955ecc94b7fe7a382fea5f3d848685b69a75d5d9b0668d1c788bbc8"
+      "size_bytes": 85070,
+      "sha256": "9c3491e09c947cafcf057022c2327c0bb69d4317e780170d590794e4802bad67"
     },
     {
       "path": "assets/js/state.js",
-      "size_bytes": 311,
-      "sha256": "578d462c07c9d2b4fe3c93484eb04de4b6bdb19b92c78d91506c9ef0e640c48b"
+      "size_bytes": 301,
+      "sha256": "d8a37a643e8bea4ed25fff3badaf16532ff0da3716877eaeb118c96826f5ae42"
     },
     {
       "path": "assets/nlp_data.js",
@@ -9105,13 +9105,13 @@
     },
     {
       "path": "assets/pwa.js",
-      "size_bytes": 300,
-      "sha256": "575204e3dc246e4f91d916da85c3b71e7b6c3b28a0b0158f52211e4fe135edf3"
+      "size_bytes": 289,
+      "sha256": "52ba5ddc06e80891e6c30c0fb8c41ef37ae3adf7c86fd88455e52f627913e820"
     },
     {
       "path": "assets/styles.css",
-      "size_bytes": 8253,
-      "sha256": "3417c6b1e16e8b6b00be8834ba971dd9ebd8b6db122467f969f886315ea1a977"
+      "size_bytes": 7982,
+      "sha256": "cec891f0cdbcc37e81be544e4e992ce16a0ed6853171b35fc79127938738a351"
     },
     {
       "path": "cities/deli.html",
@@ -9455,13 +9455,13 @@
     },
     {
       "path": "curation/audit_person_identity.py",
-      "size_bytes": 9527,
-      "sha256": "71fa9fb994d2a2707166609b5cd0b9ee5ca0f560c24fd89d90c3b50311f0fa3b"
+      "size_bytes": 9276,
+      "sha256": "38b66ec365fc0c1d106112d875896a2654a812b8326e7145cad02ff2f918aed4"
     },
     {
       "path": "curation/audit_wikipedia_authority.py",
-      "size_bytes": 7652,
-      "sha256": "9482c0cdebd1491db1d46d9d131c5d6995ad230563b1056b0ed6a2b36d50406f"
+      "size_bytes": 7439,
+      "sha256": "ded15b0aa68f4374457d867fd503ca1212c40d3c81bfd149317dc4087d219917"
     },
     {
       "path": "curation/disciplines.csv",
@@ -9470,18 +9470,18 @@
     },
     {
       "path": "curation/eastern_faculty_alumni.csv",
-      "size_bytes": 672,
-      "sha256": "d9c5dda275651a0915a67d549e2eba91941b136fa795bd82bc6d15e0118e910d"
+      "size_bytes": 669,
+      "sha256": "63966bcb119c5f4291eca169004d83b3180d917b457d78c5a8de9a6c827d6de5"
     },
     {
       "path": "curation/institutional_remarks.csv",
-      "size_bytes": 8452,
-      "sha256": "880cf68116efd43a50d2c9754b291ec5af0345192bef619817894026e08f8d52"
+      "size_bytes": 8434,
+      "sha256": "b47d08464fb91436df3ea907d13de82d3068d87a0a90228700bb4a86112e6427"
     },
     {
       "path": "curation/known_relationships.csv",
-      "size_bytes": 10156,
-      "sha256": "7b7fea9e912e6479fe19d2dd00e083a357d0099bd3796ed2923412e6ee2a8cbb"
+      "size_bytes": 10123,
+      "sha256": "8c0a7ea44fe3574540bcf702021d29939c5ceeaa2c1a6aa5c54875a43e95bc84"
     },
     {
       "path": "curation/meso_discipline_crosswalk.csv",
@@ -9490,13 +9490,13 @@
     },
     {
       "path": "curation/non_participant_indologists.csv",
-      "size_bytes": 30961,
-      "sha256": "d94d08a8ee9855addf254030b5c7260ceff8b0b81184dfaf88bf9837c08fe921"
+      "size_bytes": 30866,
+      "sha256": "96c786404c6b9744e87ab786bc244ece51383f04157e0880aee6e8e852ec7ffd"
     },
     {
       "path": "curation/person_aliases.csv",
-      "size_bytes": 4592,
-      "sha256": "0ee8c40266583afed1677d9488e2fe238e3616d0666a20c64f4e93cf969f46c7"
+      "size_bytes": 4572,
+      "sha256": "62b9120d680d54f31666b2ab92f027d4d7c76a96a49fc2b5d8d3668d9e471b97"
     },
     {
       "path": "curation/person_disciplines.csv",
@@ -9505,38 +9505,38 @@
     },
     {
       "path": "curation/presentation_person_exclusions.csv",
-      "size_bytes": 341,
-      "sha256": "91742aeaa73d85bb85416770d3bc45194d589ceeef60627d46f00a19672c1963"
+      "size_bytes": 339,
+      "sha256": "efd69281a4b4796fe52a08840f13b98df5f0230d9463bd3b83e0ae9b46902011"
     },
     {
       "path": "curation/renou_conference_rules.csv",
-      "size_bytes": 10311,
-      "sha256": "c4c32bbf7dce11332c4bb6c7989c965b62dafdbcf97e8fda2a1e943cb4c25ce1"
+      "size_bytes": 10285,
+      "sha256": "90352bd80b799f31801aa29e134523d609255a8fbce6e57590c48f81d513b71d"
     },
     {
       "path": "curation/senior_biographical_verification.csv",
-      "size_bytes": 5926,
-      "sha256": "65a5ae9f6ff74d7ed87bbee710a80c4ebbd0cc51ef16619bbd8616476981b496"
+      "size_bytes": 5912,
+      "sha256": "49acb10f0e40280de3cac8066431b4d23651d15b391bca2197a0c1e73be3700b"
     },
     {
       "path": "curation/spacetime_overrides.csv",
-      "size_bytes": 531,
-      "sha256": "8cd4823c26e5d9a935244d4f72595ffe996d51f77dfd8b52d43af041a78a7dda"
+      "size_bytes": 528,
+      "sha256": "324249ee192a69e0327ec9df5e3e3739291aaf631eae71322ed29de5302a7ffa"
     },
     {
       "path": "curation/teacher_student.csv",
-      "size_bytes": 6949,
-      "sha256": "57bae6fe6f11f02b3f75191b49a548f9ed7a6a097629654d39fff481daac9141"
+      "size_bytes": 6924,
+      "sha256": "b779f434c44dc52a9ba645c3bb7dc3c8d6db732c892d82bec0a90b9ce6087271"
     },
     {
       "path": "curation/teacher_student_schema.md",
-      "size_bytes": 5745,
-      "sha256": "18a2b500d7ad63fbd41b0aa90829b9afd9763af494376e55d13bcc0644491f6f"
+      "size_bytes": 5670,
+      "sha256": "79452bf5c59172afa4be931077512fffaf74db387e039ff04900844417e329a6"
     },
     {
       "path": "curation/verified_affiliation_spans.csv",
-      "size_bytes": 739,
-      "sha256": "11803341a0681c9df7e0fa1a580c10bb44dd353df9ea650b2bdf659e862064e8"
+      "size_bytes": 736,
+      "sha256": "e748de122b1f306ba323a945b834d5a6c11507234bb501909e850c667064247b"
     },
     {
       "path": "data-quality.html",
@@ -9545,8 +9545,8 @@
     },
     {
       "path": "data_dictionary.md",
-      "size_bytes": 29829,
-      "sha256": "7d7fa947eb4a0a7ccbfddbdc29ad6d7ed86c0a6d938d6482b0c8eaccf872551a"
+      "size_bytes": 29435,
+      "sha256": "f3a36d2f6684af9e9f5ade16b295fff419162b9d9a116e11a33b59fafd648c75"
     },
     {
       "path": "datapackage.json",
@@ -9560,8 +9560,8 @@
     },
     {
       "path": "docs/README.md",
-      "size_bytes": 3818,
-      "sha256": "0fc5361d9e0578e98a2418c6d6db87f37d0ee9b7c304be3407860e11ea56de32"
+      "size_bytes": 3784,
+      "sha256": "d3f0ff13248054a831142080adcdf7360faf775addd774ec8dfef57c6c2613d7"
     },
     {
       "path": "docs/ROADMAP_2026.md",
@@ -9570,73 +9570,73 @@
     },
     {
       "path": "docs/ROADMAP_SANSKRITOLOGY_INDOLOGY_SECTIONS_2026_2027.md",
-      "size_bytes": 22791,
-      "sha256": "63e42e7e171e83579d60ccf15f433fd4a830565c2567c4ce82430a61dd479341"
+      "size_bytes": 22575,
+      "sha256": "9efb78838e64e8bef01a16efbcb66126effe008d5125aecb50430b3314d4d4c9"
     },
     {
       "path": "docs/academic-career-risk-audit-2026-05-31.md",
-      "size_bytes": 14072,
-      "sha256": "c8875dd5994b63bc530cde6672d771910feee7b51d19f8c0a0665c7d0b38d22e"
+      "size_bytes": 13775,
+      "sha256": "2b7ed2805bca02cd48d608b68944e46af79d29bc0fadd758a319e07c860c3dd2"
     },
     {
       "path": "docs/classification-audit-en.md",
-      "size_bytes": 2397,
-      "sha256": "2e16a5361652a7c1c13c7589481c075fd6d02edc1904b106e28961af778e4d62"
+      "size_bytes": 2349,
+      "sha256": "9f2e20b99d6ccae642c243d5ef7ea6b53203f4b951eae52c819e3092e348a94f"
     },
     {
       "path": "docs/classification-audit.md",
-      "size_bytes": 3699,
-      "sha256": "7cb7e2f41b6ed6b59aec6014b55699ed98fef255f6dab47452f26407b204bf42"
+      "size_bytes": 3651,
+      "sha256": "3e944c761592d729d44445a637d8a82e54394590878413ea184a448c763d65b6"
     },
     {
       "path": "docs/classification-reliability-packet.md",
-      "size_bytes": 5294,
-      "sha256": "12b992bcce02a38d0e931fd6d6822f72a3c4279505a68d94f7b7ef1fc12e071b"
+      "size_bytes": 5186,
+      "sha256": "ae209f54511769d005b4b5bfbeadba50645722b9e07266647b40eb1a7e5bb3d7"
     },
     {
       "path": "docs/deepseek-clean-host-runbook.md",
-      "size_bytes": 5552,
-      "sha256": "655a276b12ccaac817080a245c7434743dab6ea1502401d3ee8a2358e58a0b24"
+      "size_bytes": 5423,
+      "sha256": "e294b1bfe33110b869e787e629c18d49823c6096a932e2d90d8e4d6000a08107"
     },
     {
       "path": "docs/development-en.md",
-      "size_bytes": 16111,
-      "sha256": "c8d0c9dc8be62777f6b1f900fe88f28322ce2a9763aac42f5c27d68c01e14892"
+      "size_bytes": 15854,
+      "sha256": "97a2ae8b1499efdb3669cfa11ff62be5d18074e25430d72cf23f4549c54eed6e"
     },
     {
       "path": "docs/development.md",
-      "size_bytes": 22835,
-      "sha256": "be506baecc817768dd7fe294c78de40b0483267729f7dd059056c3b710f11120"
+      "size_bytes": 22584,
+      "sha256": "9327c3f769dc290298fb916f16de4a5776e9c9cf09d17c869903e669ad666e82"
     },
     {
       "path": "docs/external-phase5-enrichment-runbook.md",
-      "size_bytes": 7294,
-      "sha256": "add874114932b71660fb8f8ca35e0faf725eb4586929b5a296b6b532334947ad"
+      "size_bytes": 7038,
+      "sha256": "244a621aa0fea8f775f2f72992e4a8fb750755c9d73870adf1a9bd7b99f9e45c"
     },
     {
       "path": "docs/how-to-vote-2026.md",
-      "size_bytes": 8576,
-      "sha256": "b625a4f7128c15494bbc80a3fcf76e8b3017c625085d2f9cd3d7469a8caa40d2"
+      "size_bytes": 8465,
+      "sha256": "238f9e6be1a1f54d22e30bf45f933222ba64c8e792f5118b06ff3a924c264d2b"
     },
     {
       "path": "docs/implementation-handoff-plan-2026-05-31.md",
-      "size_bytes": 9897,
-      "sha256": "a6b55cc8d08f3280b4f36953733ec57d892a17f55f794b784b1f41242f6d3e8f"
+      "size_bytes": 9630,
+      "sha256": "7f380fb2d30f1aeee3047e9d5fc31705b5b282ce42630afc7f30ab4efe05c5fa"
     },
     {
       "path": "docs/institutional-scope.md",
-      "size_bytes": 1478,
-      "sha256": "a67e938f33edb6400a1795a2c55d1fa398e0bf692d31934101bcc972de19d8fa"
+      "size_bytes": 1446,
+      "sha256": "5a6d0cf9ab7383ede0655005728a946a3fbd1c3f07b81bc877545d8638affe08"
     },
     {
       "path": "docs/keyword-voting-method-notes-2026-06-01.md",
-      "size_bytes": 4253,
-      "sha256": "438ba99bbb32fe182f735b5e4f1002991b7fa1015a1a8b676d6602aab1b8d4f8"
+      "size_bytes": 4153,
+      "sha256": "d0777911f55b8df41888dc180977623387f364e99b607a1920bec5de65f59986"
     },
     {
       "path": "docs/onboarding-zograf-contributor-ru.md",
-      "size_bytes": 13839,
-      "sha256": "f29edca89434101e5a931e0202e6a933137dac9771e67bccdc3ffcb1488dc8d4"
+      "size_bytes": 13685,
+      "sha256": "e832ee75d2df1a6ddb0408eea3b3f36c00744fe5c5f22b31275d7f226af4f70e"
     },
     {
       "path": "docs/paribok-recension-sementsovskie-2026.pdf",
@@ -9645,93 +9645,93 @@
     },
     {
       "path": "docs/persons-data-policy-ru.md",
-      "size_bytes": 6293,
-      "sha256": "6af06a5ad1496a5f6bc4449fe44d29632efa71913854dd013a6ebde48a25e9e3"
+      "size_bytes": 6229,
+      "sha256": "fe78e966bf426eea775ad2ea8c4a1a8ca4f776aae9b93a1da1d2bb8028a9aef4"
     },
     {
       "path": "docs/persons-data-policy.md",
-      "size_bytes": 3622,
-      "sha256": "a6009699275e895d678e316ddad5c00a171d45baedbf6529f0f1ffa63a750335"
+      "size_bytes": 3560,
+      "sha256": "41a7b57f7ffb7a1b3c86ee9511c72f8e87f7b893ca8fc671d59f3d5c565c4638"
     },
     {
       "path": "docs/renou-precision-audit.md",
-      "size_bytes": 8872,
-      "sha256": "c5ea29ab5358c313f4b0051a5dd068293c2b1296bb4a88b8c45add68081061c1"
+      "size_bytes": 8701,
+      "sha256": "64929096b509653bf86fa14a86b2e7360fc8a903a636f688bf86bbbefc227b28"
     },
     {
       "path": "docs/reuse-rights.md",
-      "size_bytes": 1211,
-      "sha256": "7db1ee48d1a5ae745fd5cd22f176928642cb26f7fcaa53124ccda7559d6cf955"
+      "size_bytes": 1193,
+      "sha256": "dd41d420ee0aa5392556a62bb8735d49f8af0a8e1f914a4d5510db7631d03b71"
     },
     {
       "path": "docs/rinc-review-en.md",
-      "size_bytes": 2234,
-      "sha256": "c6d049b4f5b1e8808d5c8aef56c4eb0b1e118190c0418567f9f636544bda8438"
+      "size_bytes": 2187,
+      "sha256": "7db6ba43727a9b68d420d4f0e243d6dd2275e398e4a1c8d454cc1b479477593c"
     },
     {
       "path": "docs/rinc-review.md",
-      "size_bytes": 4304,
-      "sha256": "e40a20b47fb8688a4eba88a3d9b522667a3df9c5fadd31cd31349e08c7d93cab"
+      "size_bytes": 4264,
+      "sha256": "72a4677809eb75a6bd11ec151f7ec413e231bb4adc81718492ca6e9ddc379a2f"
     },
     {
       "path": "docs/roster-merge-design.md",
-      "size_bytes": 9144,
-      "sha256": "1f32d823c3a209f961a3077e0be67214d4ce2bf12287a857daa7a2bcb1bdfffa"
+      "size_bytes": 8981,
+      "sha256": "23711841bd0c7355f508e196a56e38af2e66f76014b769a0579f6dc441c31c7e"
     },
     {
       "path": "docs/ru-enrichment-runbook.md",
-      "size_bytes": 6770,
-      "sha256": "94c0294b80949b6134da3a30bdaa17f62eacf7d2924edd1b616e9c8aa8428d27"
+      "size_bytes": 6618,
+      "sha256": "98f9433251f329d20d4742c97e79abe8316339b3ae1aacb4586c0e0148aaf9c9"
     },
     {
       "path": "docs/scientometrics-sociology.md",
-      "size_bytes": 9526,
-      "sha256": "3db1b5b4e99f43a6399d170a6ff3876bcf2d633dc7053d657327aac432079205"
+      "size_bytes": 9329,
+      "sha256": "5ee5f4b7ba74b715aef8056667f9b41ac67a5064e8ec04188a1f616d44d5033d"
     },
     {
       "path": "docs/sementsov-readings-context-note.md",
-      "size_bytes": 6916,
-      "sha256": "ed7b1dc62936d7a68b6ac76e3b54631566ef4bc3fe43aa996d39d8350a8deeb6"
+      "size_bytes": 6770,
+      "sha256": "14a99023d820c0d3f013680f087c3654414e2b75ebd3c4ef4cc4c336653c4dff"
     },
     {
       "path": "docs/sociology-gatekeeping-editorial-decisions-ru.md",
-      "size_bytes": 8990,
-      "sha256": "300b5ffe3b7da173d5de1e6dc2bd904121b01747de6561229cc8a14bac8eb178"
+      "size_bytes": 8832,
+      "sha256": "6a9e6a3be54e018dc64622afefd872e78159e36222646b4f7a247fe83f09526c"
     },
     {
       "path": "docs/sociology-gatekeeping-editorial-decisions.md",
-      "size_bytes": 5244,
-      "sha256": "ffc56481c0498839ea73f48e10e5b45dafe09cb350ca9d8fda24c0aeb98e813b"
+      "size_bytes": 5087,
+      "sha256": "4802e0b516d62c994c43b58f6cd420cb74140d8a3959a95d6508fcb0b035af69"
     },
     {
       "path": "docs/submitting-relationships-ru.md",
-      "size_bytes": 7257,
-      "sha256": "9de922c4638163a9a254a94682955c99141bd317163e65ff9fb9a9c3bc21a675"
+      "size_bytes": 7195,
+      "sha256": "c038a1dd879175209533e7ed46c355e5c3f81e3c470a2acadf0e852f11930775"
     },
     {
       "path": "docs/ux-ui-audit.md",
-      "size_bytes": 14500,
-      "sha256": "e4847c6bbd8bcd065f4eb2649f1661e19b411fd6494df0ef736e7122ea432092"
+      "size_bytes": 14319,
+      "sha256": "e22bace1016f1db1a5c91f72553092594e63a78f46d8bd86d33fcd55a126556a"
     },
     {
       "path": "docs/visualisations.md",
-      "size_bytes": 12241,
-      "sha256": "9f7b3ee9ddb17c12cd02883d1b62352ac5303eb62fb3c9c5cb27a7691311de0e"
+      "size_bytes": 12152,
+      "sha256": "8458be190b86a5c37e12db962e639d7cb240d1966bd4e87ee1acada36b6e5c50"
     },
     {
       "path": "docs/voting-admin-collection-options.md",
-      "size_bytes": 15576,
-      "sha256": "af94385bfac1dafc778491e47f37d1895e17417c32be4206d6e73d1af44013e5"
+      "size_bytes": 15360,
+      "sha256": "bb50bf0305fd9d5f7efe0e20ecbb9d7476ac9c0f1b192b71f3b25a1f86e7d0ae"
     },
     {
       "path": "docs/wikidata-guide.md",
-      "size_bytes": 4262,
-      "sha256": "3d190280d13ee25aa75b4e877b2587c7f0c6eda8b2c975b31915447e50acd3af"
+      "size_bytes": 4137,
+      "sha256": "c73dfc9ba294a30440228049c208b6bc3b4343d399ddf24a51d878e802d9c3a7"
     },
     {
       "path": "download-data.html",
       "size_bytes": 37519,
-      "sha256": "459eff0a3c9c175d424602a5e67e52b72253619abe0d7e306c077ba7433c2c50"
+      "sha256": "252a9ecf31d0cd055baf1359a5a73971d0f53629624017bae9fa37d636965f77"
     },
     {
       "path": "en.html",
@@ -9755,18 +9755,18 @@
     },
     {
       "path": "findings/renou-comparison.html",
-      "size_bytes": 17743,
-      "sha256": "8517911329ec6721cbea9c22c6cc7e392a1cdc6f8524e78927d456699a1d9c2d"
+      "size_bytes": 17697,
+      "sha256": "24faa3ee81ec6d0c2af96e50dfb3c527caaaad17792e182679433ebabc165d74"
     },
     {
       "path": "findings/renou.html",
-      "size_bytes": 25212,
-      "sha256": "555f5b36ef74729437bc66eb5e55b9b344e1b51172a8121448d4cae5232daf43"
+      "size_bytes": 25163,
+      "sha256": "b5a9267d990f760cd114c4f9564bbafd24b78d4e0f43d2021733a9067c7d1be1"
     },
     {
       "path": "findings/visualisations.html",
       "size_bytes": 493631,
-      "sha256": "b740730028c97f5bd895240669220cd99e1530441ba74e3c7164beff3c7e7252"
+      "sha256": "bf0e6e592f488a2fad01840fe927259d70bad0a9359a25f6f987198544c85d75"
     },
     {
       "path": "gatekeeping-en.html",
@@ -9790,8 +9790,8 @@
     },
     {
       "path": "gumilyov/level-0.html",
-      "size_bytes": 14313,
-      "sha256": "4980bdcc2d41b9853587f6815b8fd15aa11cefcb0ae6dd3f90338679080d38fd"
+      "size_bytes": 14067,
+      "sha256": "cd5eff975e592fe21baba49f30fb310274387f42a6dbfce6d71180dbb7690163"
     },
     {
       "path": "gumilyov/level-1.html",
@@ -10160,13 +10160,13 @@
     },
     {
       "path": "networks.html",
-      "size_bytes": 72567,
-      "sha256": "7a8f44bcd0b72190049e827ac14633c0d8a9b6be0df4baa42776f18f37f4abd8"
+      "size_bytes": 70926,
+      "sha256": "963bbc1016463639f30c6fd99e864d7e251c2c35693c65aebe3e06ce4abb96f8"
     },
     {
       "path": "offline.html",
-      "size_bytes": 3597,
-      "sha256": "c3480e4be3d2cc438b5842dab400edd7e2f3bd892eb777aa61224304943f6357"
+      "size_bytes": 3498,
+      "sha256": "b4cf8b4f6e63b9ff88790c4747050feb0fecd3ef1dfc61f69409ebb7d6d92f03"
     },
     {
       "path": "p/101-sinonim-vody-v-vediiskom-slovare-nigkhantu.html",
@@ -20210,8 +20210,8 @@
     },
     {
       "path": "service-worker.js",
-      "size_bytes": 4202,
-      "sha256": "cf11b63c902d8e856a590f99643ba86cc5057b8011e75d187a24a4373179d0c3"
+      "size_bytes": 4078,
+      "sha256": "0a91e23535fef18447e95598e74ede66bd27b43837cfd7108e2ae0ec636b878a"
     },
     {
       "path": "site.webmanifest",
@@ -20240,8 +20240,8 @@
     },
     {
       "path": "themes/academic-history.html",
-      "size_bytes": 10939,
-      "sha256": "618786821a39908207902f94776e8c90604ea4a8aa14e4fa71fa69ee7998bdf6"
+      "size_bytes": 10729,
+      "sha256": "e3a3e9502ea54eac06e4c12aad99a0a144c642a70a796bc631b889935b76037c"
     },
     {
       "path": "themes/academichistory.html",
@@ -20260,8 +20260,8 @@
     },
     {
       "path": "themes/ethnography.html",
-      "size_bytes": 9991,
-      "sha256": "04504bca05ad2889630f87f468605c787cd0005adbf1f455c04f285d92022e0e"
+      "size_bytes": 9797,
+      "sha256": "192d9db513576db85de42ad34d43367d109db9b17e8ba13be66803cbd3cc1b21"
     },
     {
       "path": "themes/history-and-culture.html",
@@ -20295,8 +20295,8 @@
     },
     {
       "path": "themes/literature.html",
-      "size_bytes": 9574,
-      "sha256": "24bbe6847f73e4b5d09298567f157ffe2601104c257998644cf66d5b044f892a"
+      "size_bytes": 9380,
+      "sha256": "b5edfb5ec4ba38412849c70db62670d162e6c40eaf07d1bb3cb7ce5439ca72de"
     },
     {
       "path": "themes/philosophy.html",
@@ -20310,8 +20310,8 @@
     },
     {
       "path": "themes/religious-studies.html",
-      "size_bytes": 8331,
-      "sha256": "280f73b7bf44e92e060edad1f73c189c81f0a89aae735a5fc36c8eb6ceed75d9"
+      "size_bytes": 8153,
+      "sha256": "f122eb427a2fcfe85c85dd62e9f6baae403000c1fe55cff7498c1d49118ab158"
     },
     {
       "path": "themes/unspecified.html",
