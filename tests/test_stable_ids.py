@@ -317,6 +317,42 @@ class StableIdTests(unittest.TestCase):
             ),
         )
 
+    def test_patronymic_surname_does_not_steal_the_patronymic_initial(self):
+        # A surname ending in a patronymic suffix (-вич/-вна/-чна/-чич) must not
+        # be misread as the patronymic. The case-5 scan starts at index 1, so
+        # the real patronymic (never the first token) is picked up correctly.
+        self.assertEqual(
+            build.normalize_person_name("Коссович Каэтан Андреевич"),
+            "коссович к а",
+        )
+        self.assertEqual(
+            build.normalize_person_name("Шелкович Владимир Михайлович"),
+            "шелкович в м",
+        )
+        self.assertEqual(
+            build.normalize_person_name("Файбушевич Светлана Ивановна"),
+            "файбушевич с и",
+        )
+        # Last-First-Patronymic order with an ordinary surname is unaffected.
+        self.assertEqual(
+            build.normalize_person_name("Шохин Владимир Кириллович"),
+            "шохин в к",
+        )
+
+    def test_patronymic_surname_participants_keep_their_pinned_ids(self):
+        # The two existing conference participants whose surnames end in a
+        # patronymic suffix are pinned in person_ids.json so the normalizer fix
+        # does not churn their committed PERS_ ids (referenced by data_assertion
+        # rows, page slugs, and og images).
+        self.assertEqual(
+            build.person_id_for_key(build.canonical_person_key("Шелкович Владимир Михайлович")),
+            "PERS_8a8c5d8b",
+        )
+        self.assertEqual(
+            build.person_id_for_key(build.canonical_person_key("Файбушевич Светлана Ивановна")),
+            "PERS_936e1165",
+        )
+
     def test_compare_manifests_reports_clean_unchanged_rebuild(self):
         before = [
             {

@@ -41,8 +41,14 @@ def normalize_person_name(name):
     parts = [p for p in name.split() if p]
     if len(parts) >= 3:
         patronymic_idx = -1
-        for idx, part in enumerate(parts):
-            if part.endswith(('вич', 'вна', 'чна', 'чич', 'вна.', 'вич.')):
+        # A patronymic is never the first token in either supported order
+        # (First Patronymic Last, or Last First Patronymic), so start the scan
+        # at index 1. This stops a surname whose own ending matches a
+        # patronymic suffix (-вич/-вна/-чна/-чич) — e.g. "Коссович",
+        # "Шелкович", "Файбушевич" — from being misread as the patronymic and
+        # stealing its initial.
+        for idx in range(1, len(parts)):
+            if parts[idx].endswith(('вич', 'вна', 'чна', 'чич', 'вна.', 'вич.')):
                 patronymic_idx = idx
                 break
         
