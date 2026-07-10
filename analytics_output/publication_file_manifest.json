@@ -6,7 +6,7 @@
     "pipeline_version": "2026-05-25",
     "generator": "generate_publication_pages.py"
   },
-  "file_count": 4064,
+  "file_count": 4065,
   "files": [
     {
       "path": "404.html",
@@ -9554,6 +9554,11 @@
       "sha256": "d23e54c778faf43f25dca89fce478fdbd15084367b2f43bea2f252909b8f1f23"
     },
     {
+      "path": "docs/ROADMAP_SANSKRITOLOGY_INDOLOGY_SECTIONS_2026_2027.md",
+      "size_bytes": 20854,
+      "sha256": "1931988573356e037494b1175cd502b72b105e7ccc7e4b80997d65291045216c"
+    },
+    {
       "path": "docs/academic-career-risk-audit-2026-05-31.md",
       "size_bytes": 13775,
       "sha256": "2b7ed2805bca02cd48d608b68944e46af79d29bc0fadd758a319e07c860c3dd2"
@@ -9711,7 +9716,7 @@
     {
       "path": "download-data.html",
       "size_bytes": 37278,
-      "sha256": "2fecb4af830fa7388d5c11c00da26ed8d11c5f163c29cd22d0758fd0bcaba1a8"
+      "sha256": "70a9738643ea010cb03836b26fe0ada25a77ab92be5d3be9c7c3e957162a2650"
     },
     {
       "path": "en.html",
@@ -9746,7 +9751,7 @@
     {
       "path": "findings/visualisations.html",
       "size_bytes": 493390,
-      "sha256": "c553cb9ea7c3a6f50d97d72b042d458853ea73b5aa506a24ed48e144d0996d01"
+      "sha256": "9a75a81ca3262a484ffc5800aaf887c43c54b1357fa016a25bae75b936a1ddef"
     },
     {
       "path": "gatekeeping-en.html",
