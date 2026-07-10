@@ -61,6 +61,7 @@ from pipeline.verification import (
     verify_db,
     ingest_video_media,
 )
+from pipeline.disciplines import populate_prosopography
 
 DB_PATH = "conferences.db"
 PRESENTATION_PERSON_EXCLUSIONS = Path("curation/presentation_person_exclusions.csv")
@@ -259,6 +260,10 @@ def main():
 
     print("Ingesting YouTube video media from mapping CSV (if present)...")
     ingest_video_media(conn)
+
+    # After exclusions: disciplines are derived from the final talk set.
+    print("Populating prosopographical spine (disciplines, roles, relations)...")
+    populate_prosopography(conn)
 
     print("Verifying database integrity and statistics...")
     verify_db(conn)
