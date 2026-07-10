@@ -54,3 +54,6 @@ html_cache/vak/
 # Never commit it — a committed pickle is loaded at build time and would be a
 # code-execution vector if a PR swapped it.
 analytics_output/nlp_cache.pkl
+
+# Personal review sheets (voting artifacts, not repo deliverables)
+review/
