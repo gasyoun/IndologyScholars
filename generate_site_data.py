@@ -2,6 +2,7 @@ import sqlite3
 import json
 import datetime
 import re
+from collections import defaultdict
 
 from classification_overrides import CLASSIFICATION_OVERRIDES, THEME_LABEL_OVERRIDES
 from metadata_normalization import load_verified_affiliation_spans, public_affiliation, split_leading_affiliation
@@ -311,6 +312,103 @@ def classify_theme(year, series, title, presentation_id=None, fallback_title=Non
                 break
     code = code or "unspecified"
     return get_theme_meta(code)
+
+
+def build_historical_scholars(conn, authority_overrides):
+    """Scholar records for `person_kind='historical'` figures (H484, Phase 2).
+
+    These never presented, so they are NOT in `scholars` (which joins presentation_person)
+    and must not be -- that list drives the cited count of 268. They are emitted separately,
+    as `historical_scholars`, and given memorial profile pages by generate_scholars_pages.
+
+    Every talk-derived field is zeroed/emptied. The dict carries the full participant key
+    set so the shared profile renderer (which reads e.g. total_talks, talks, generation_code,
+    all_affiliations) never hits a missing key on a zero-talk person.
+    """
+    cur = conn.cursor()
+    person_cols = {r[1] for r in cur.execute("PRAGMA table_info(person)")}
+    if "person_kind" not in person_cols:
+        return []  # DB predates the H484 schema; nothing to emit.
+
+    disciplines_by_person = defaultdict(list)
+    for pid, code, conf in cur.execute(
+        "SELECT pd.person_id, d.discipline_id, pd.confidence "
+        "FROM person_discipline pd JOIN discipline d ON d.discipline_id = pd.discipline_id "
+        "WHERE d.discipline_id != 'unattested' ORDER BY pd.confidence DESC, d.discipline_id"
+    ):
+        disciplines_by_person[pid].append({"code": code, "confidence": conf})
+
+    roles_by_person = defaultdict(list)
+    for pid, role, from_year, to_year, notes in cur.execute(
+        "SELECT person_id, role, from_year, to_year, notes FROM person_role"
+    ):
+        roles_by_person[pid].append(
+            {"role": role, "from_year": from_year, "to_year": to_year, "organization": notes}
+        )
+
+    scholars = []
+    for r in cur.execute(
+        "SELECT person_id, display_name, full_name_ru, full_name_en, birth_year, death_year, "
+        "degree, degree_year, degree_source_url, source_url, notes "
+        "FROM person WHERE person_kind = 'historical' ORDER BY birth_year, display_name"
+    ):
+        pid, display_name = r[0], r[1]
+        full_name_ru = r[2] or display_name
+        full_name_en = r[3] or (iso9_transliterate(full_name_ru) if full_name_ru else display_name)
+        birth_year, death_year = r[4], r[5]
+        cohort = generation_cohort(birth_year)
+        scholars.append({
+            "id": pid,
+            "name": format_to_initials(display_name),
+            "normalized_key": None,
+            "original_fullname": display_name,
+            "full_name_ru": full_name_ru,
+            "full_name_en": full_name_en,
+            "birth_year": birth_year,
+            "generation_code": cohort["code"] if cohort else None,
+            "generation_label_ru": cohort["ru"] if cohort else None,
+            "generation_label_en": cohort["en"] if cohort else None,
+            "death_year": death_year,
+            "degree": r[6],
+            "degree_year": r[7],
+            "degree_source_url": r[8],
+            "gender": None,
+            "zograf_first": None,
+            "zograf_last": None,
+            "roerich_first": None,
+            "roerich_last": None,
+            "dominant_theme": None,
+            "thematic_breadth": None,
+            "total_talks": 0,
+            "zograf_talks": 0,
+            "roerich_talks": 0,
+            "first_year": None,
+            "last_year": None,
+            "is_student": False,
+            "is_independent": False,
+            "is_eastern_faculty_alumnus": False,
+            "eastern_faculty_alumnus_status": None,
+            "eastern_faculty_alumnus_source_url": None,
+            "eastern_faculty_alumnus_note": None,
+            "has_changed_affiliations": False,
+            "all_affiliations": [],
+            "affiliation_notes": [],
+            "orcid": None,
+            "wikidata": r[9],  # Wikidata entity URL, the memorial figure's source authority
+            "elibrary": None,
+            "talks": [],
+            # Historical-only fields (participants lack these; harmless extra keys).
+            "person_kind": "historical",
+            "wikidata_source_url": r[9],
+            "disciplines": disciplines_by_person.get(pid, []),
+            "roles": roles_by_person.get(pid, []),
+            "note": r[10],
+        })
+
+    if scholars:
+        assign_unique_slugs(scholars, authority_overrides)
+    return scholars
+
 
 def main():
     conn = sqlite3.connect(DB_PATH)
@@ -653,6 +751,10 @@ def main():
     # from authority_ids.json -> persons[id].preferred_latin_name).
     authority_overrides = load_authority_overrides()
     assign_unique_slugs(scholars, authority_overrides)
+
+    # Historical figures (H484): emitted separately from `scholars` so the cited count of
+    # 268 speakers is untouched; they get memorial profile pages of their own.
+    historical_scholars = build_historical_scholars(conn, authority_overrides)
 
     # Load teacher-student relationships
     rels = gen.load_relationships(include_candidates=False)
@@ -1131,6 +1233,7 @@ def main():
         },
         "summary": summary,
         "scholars": scholars,
+        "historical_scholars": historical_scholars,
         "timeline": timeline,
         "stats": stats,
         "geography_stats": geography_stats,

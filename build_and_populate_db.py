@@ -62,6 +62,7 @@ from pipeline.verification import (
     ingest_video_media,
 )
 from pipeline.disciplines import populate_prosopography
+from pipeline.historical import seed_historical_persons, seed_historical_roles
 
 DB_PATH = "conferences.db"
 PRESENTATION_PERSON_EXCLUSIONS = Path("curation/presentation_person_exclusions.csv")
@@ -261,9 +262,21 @@ def main():
     print("Ingesting YouTube video media from mapping CSV (if present)...")
     ingest_video_media(conn)
 
+    # Historical figures (H484): seeded BEFORE populate_prosopography so the manual
+    # discipline path resolves them by normalized_key. They never presented, so no
+    # published speaker count (all join through presentation_person) is touched.
+    print("Seeding historical prosopography layer (H484)...")
+    hist_persons, hist_assertions = seed_historical_persons(conn)
+    print(f"  historical persons: {hist_persons}; sourced data_assertion rows: {hist_assertions}")
+
     # After exclusions: disciplines are derived from the final talk set.
     print("Populating prosopographical spine (disciplines, roles, relations)...")
     populate_prosopography(conn)
+
+    # Historical roles are added AFTER populate_prosopography, whose load_person_roles
+    # opens with an unconditional DELETE FROM person_role.
+    hist_roles, hist_roles_skipped = seed_historical_roles(conn)
+    print(f"  historical person_role rows: {hist_roles} inserted, {hist_roles_skipped} skipped")
 
     print("Verifying database integrity and statistics...")
     verify_db(conn)

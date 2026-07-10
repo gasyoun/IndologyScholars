@@ -3024,6 +3024,15 @@ def generate_registry_page(data):
     Kept separate from the conference catalogue so it never enters conference
     statistics (see docs/roster-merge-design.md)."""
     rows = load_csv_rows("curation/non_participant_indologists.csv")
+    # H484: figures migrated into the historical prosopography spine now have their own
+    # memorial pages, so they must NOT also appear here (migrated, not duplicated). Drop
+    # any row whose registry_id was claimed by curation/historical_persons.csv.
+    migrated = {
+        (r.get("registry_id") or "").strip()
+        for r in load_csv_rows("curation/historical_persons.csv")
+        if (r.get("registry_id") or "").strip()
+    }
+    rows = [r for r in rows if (r.get("registry_id") or "").strip() not in migrated]
     # Stable display order: by Russian full name.
     rows.sort(key=lambda r: (r.get("full_name_ru") or "").lower())
 

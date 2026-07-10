@@ -199,7 +199,14 @@ def init_db(conn):
         degree_source_url TEXT,
         normalized_key TEXT,
         source_url TEXT,
-        notes TEXT
+        notes TEXT,
+        -- H484 decision A1, variant A: ONE person spine, discriminated by kind, rather
+        -- than a parallel `historical_person` table (which would fork the graph against
+        -- roadmap R5). `historical` figures never presented, so they carry no
+        -- presentation_person rows; every published count of "speakers" is therefore
+        -- derived by joining presentation_person, never by COUNT(*) FROM person.
+        person_kind TEXT NOT NULL DEFAULT 'conference_participant'
+            CHECK (person_kind IN ('conference_participant', 'historical'))
     )""")
     
     cursor.execute("""

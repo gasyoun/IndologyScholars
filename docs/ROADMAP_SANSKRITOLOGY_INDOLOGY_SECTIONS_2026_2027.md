@@ -1,6 +1,6 @@
 # Роадмап разделов «Санскритология в России» и «Индология в России»
 
-_Created: 10-07-2026 · Last updated: 10-07-2026_
+_Created: 10-07-2026 · Last updated: 10-07-2026 (A1 решено, Фаза 2 первый транш выполнен)_
 
 Проектный план двух новых разделов сайта [IndologyScholars](https://github.com/gasyoun/IndologyScholars),
 построенных по образцу [«Дравидология в России»](https://iocs.hse.ru/news/395622778.html) —
@@ -28,6 +28,16 @@ _Created: 10-07-2026 · Last updated: 10-07-2026_
 именно так — как «раздел индологии», — и то же отношение связывает санскритологию с индологией.
 Альтернатива (две независимые базы) немедленно раздвоила бы Щербатского, Оболенского,
 Иванова и ещё сотню людей, работавших в обеих рамках.
+
+**A1 (решено человеком 10-07-2026, вариант A). Где живут исторические фигуры, не выступавшие
+на чтениях.** В `conferences.db` ноль персон без докладов: человек попадал в `person` только
+через парсер программ. Прямая заливка ~40 исторических фигур сломала бы цитируемое «268
+докладчиков». Ruling: **один спайн `person` с колонкой-дискриминатором `person_kind`**
+(`conference_participant` | `historical`) — прямое следствие R5, а не второй граф. Все
+публикуемые счётчики докладчиков считаются через соединение с `presentation_person`, а не
+`count(person)`, поэтому 268 остаётся 268. Отвергнуты: отдельная таблица `historical_person`
+(раздвоила бы спайн вопреки R5) и расширение `RIND_`-реестра (фасетные таблицы Фазы 1
+ссылаются на `person(person_id)`). Реализация — [H484](https://github.com/gasyoun/Uprava/blob/main/handoffs/H484-Opus_IndologyScholars_historical-prosopography-phase2_10.07.26.md).
 
 ## Что у нас есть и чего нет
 
@@ -127,17 +137,35 @@ presentation → presentation_person`. Она отлично описывает,
 
 Результат: раздел существует, честно ограничен 2004–2026, и его уже можно показывать.
 
-### Фаза 2 — исторический просопографический слой (недели)
+### Фаза 2 — исторический просопографический слой (первый транш выполнен 10-07-2026)
 
-- Целевой первый транш: **~40 фигур первого ряда** XVIII — середины XX в.
-  (Лебедев, Ленц, Коссович, Петров, Минаев, Ольденбург, Щербатской, Обермиллер,
-  Баранников, Востриков…), а не «все». Разворачивать итеративно.
-- Wikidata-first, как и в [ROADMAP_2026.md](https://github.com/gasyoun/IndologyScholars/blob/main/docs/ROADMAP_2026.md):
-  ru.wikipedia недоступна с CI-хоста (блокировка РКН), поэтому мост
-  [`scratch/enwiki_bridge.py`](https://github.com/gasyoun/IndologyScholars/blob/main/scratch/enwiki_bridge.py).
-- Каждый факт — строкой в `data_assertion` с `source_url`. Ноль фактов без ссылки.
-- Заполнить `person_role` для институций: Казанский университет, Петербургский
-  университет, Азиатский музей → ИВ АН → ИВР РАН, ИВ РАН, ИФ РАН, ИВКА.
+Первый транш загружен: **26 фигур** XVIII — середины XX в. (Лебедев, Ленц, Коссович,
+Петров, Бётлингк, Васильев, Минаев, Миллер, Овсянико-Куликовский, Ольденбург, Щербатской,
+Сталь-фон-Гольштейн, Мерварт, Баранников, Смирнов, Тюляев, Обермиллер, Востриков, Рерих,
+Ульяновский, Кальянов, Антонова, Бродов, Гусева, Макаев, Серебряков). Источник истины —
+[`curation/historical_persons.csv`](https://github.com/gasyoun/IndologyScholars/blob/main/curation/historical_persons.csv)
+(+ роли в [`historical_person_roles.csv`](https://github.com/gasyoun/IndologyScholars/blob/main/curation/historical_person_roles.csv)),
+сидер [`pipeline/historical.py`](https://github.com/gasyoun/IndologyScholars/blob/main/pipeline/historical.py).
+
+- **Сеть.** Wikidata REST и ru.wikipedia оказались доступны с хоста 10-07-2026 (вопреки
+  записи в `.ai_state.md` о таймаутах), поэтому даты, Q-ID и институции взяты напрямую из
+  Wikidata резолвером [`tools/resolve_historical_wikidata.py`](https://github.com/gasyoun/IndologyScholars/blob/main/tools/resolve_historical_wikidata.py),
+  а не через мост enwiki. Резолвер помечает расхождения дат (`status=disputed`): у Вострикова
+  и Коссовича год рождения на Wikidata спорен.
+- Каждый биографический факт — строкой в `data_assertion` (`curator_id='h484_historical_seeder'`)
+  с `source_url` на страницу Wikidata. Ноль фактов без ссылки. 78 строк.
+- `person_role` заполнен из Wikidata P108/P69: **82 строки** (16 с датами-квалификаторами),
+  `organization_id` пока NULL (как в Фазе 1), лейбл организации — в `notes`.
+- Дисциплины проставлены вручную по биографии в
+  [`curation/person_disciplines.csv`](https://github.com/gasyoun/IndologyScholars/blob/main/curation/person_disciplines.csv)
+  (`method=manual_biographical`): у исторических фигур нет докладов, meso-кроссволк к ним неприменим.
+- 17 дореволюционных строк из `non_participant_indologists.csv` **перенесены, а не
+  продублированы**: реестр `indologists.html` их больше не показывает (у них теперь свои
+  мемориальные страницы). Попутно исправлен неверный Q-ID Антоновой (`Q12486524` →
+  индолог `Q19933264`).
+
+Остаётся: добор до полного ~40-фигурного транша (имперский период) и последующие фигуры
+итеративно.
 
 ### Фаза 3 — авторский нарратив (недели, параллельно Фазе 2)
 

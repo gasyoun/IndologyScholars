@@ -543,9 +543,13 @@ def main():
 
     n_with_age = sum(1 for r in total_scholars
                      if any(True for _ in [r]))  # placeholder; use direct query
-    cursor.execute("SELECT COUNT(*) FROM person WHERE birth_year IS NOT NULL")
+    # Scoped to conference participants: this report is about birth-year coverage among the
+    # 268 presenters ("участников" below). Historical figures (H484, person_kind='historical')
+    # all carry birth years and would otherwise inflate both numerator and denominator.
+    _participant = "person_kind = 'conference_participant'"
+    cursor.execute(f"SELECT COUNT(*) FROM person WHERE birth_year IS NOT NULL AND {_participant}")
     n_with_age = cursor.fetchone()[0]
-    cursor.execute("SELECT COUNT(*) FROM person")
+    cursor.execute(f"SELECT COUNT(*) FROM person WHERE {_participant}")
     n_total_persons = cursor.fetchone()[0]
 
     # 3. Scholars missing birth_year
