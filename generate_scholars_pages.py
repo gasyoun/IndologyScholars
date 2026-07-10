@@ -1148,6 +1148,26 @@ def main():
             if pers_written:
                 written_files.add(pers_written)
 
+    # Historical figures (H484): memorial profile pages for people who never presented.
+    # They live in `historical_scholars`, not `scholars`, so the cited count of 268 is
+    # untouched; render_profile already bifurcates to the memorial format on death_year.
+    historical = data.get("historical_scholars", [])
+    if historical:
+        # Slugs were assigned within the historical list alone; a figure could in principle
+        # collide with a participant page. Disambiguate against already-written filenames
+        # rather than silently overwriting a presenter's page.
+        participant_slugs = {s["url_slug"] for s in scholars}
+        for h in historical:
+            if h["url_slug"] in participant_slugs:
+                h["url_slug"] = f"{h['url_slug']}-hist"
+        initialize_presentation_slugs(historical)
+        with ThreadPoolExecutor() as executor:
+            for slug, canonical_filename, pers_written in executor.map(process_scholar, historical):
+                generated_slugs.add(slug)
+                written_files.add(canonical_filename)
+                if pers_written:
+                    written_files.add(pers_written)
+
     for legacy_id, target_id in legacy_redirects.items():
         target_scholar = scholars_by_id.get(target_id)
         if not target_scholar:

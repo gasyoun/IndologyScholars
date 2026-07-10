@@ -121,11 +121,18 @@ def test_h473_assertions_match_person_discipline_rows_exactly(conn):
 
 
 def test_curated_assertions_survive_the_rebuild(conn):
-    """The 803 hand-curated provenance rows must never be dropped."""
-    curated = conn.execute(
-        "SELECT count(*) FROM data_assertion WHERE curator_id != ?", (CURATOR_ID,)
+    """The 803 irreproducible provenance rows must never be dropped.
+
+    These live ONLY in the committed conferences.db (ORCID / Wikidata / birth years) and
+    are owned by three curators. The invariant is pinned to those specific curators, not to
+    ``!= h473_discipline_tagger``: later derived layers add their own curated rows (e.g. the
+    H484 historical seeder), which must not mask a regression in the original 803.
+    """
+    original = conn.execute(
+        "SELECT count(*) FROM data_assertion WHERE curator_id IN "
+        "('system_normalizer', 'scraper', 'MG')"
     ).fetchone()[0]
-    assert curated == 803
+    assert original == 803
 
 
 def test_relation_types_are_constrained(conn):

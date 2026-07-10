@@ -173,7 +173,11 @@ def main():
     except jsonschema.exceptions.ValidationError as e:
         fail(errors, f"authority_ids.json schema validation failed: {e.message} at path {list(e.path)}")
 
-    scholar_ids = {s["id"] for s in scholars}
+    # Historical figures (H484) get memorial profile pages too, but are kept out of
+    # `scholars` so the cited count of 268 stays a count of presenters. Both sets of
+    # people own pages under s/, so the page-reconciliation below must know about both.
+    historical_scholars = data.get("historical_scholars", [])
+    scholar_ids = {s["id"] for s in scholars} | {s["id"] for s in historical_scholars}
     persons_auth = authority.get("persons") or {}
     duplicate_authority_ids = defaultdict(list)
     for person_id, person_auth in persons_auth.items():

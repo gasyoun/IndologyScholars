@@ -536,9 +536,12 @@ def get_or_create_person(conn, name, source_url):
         b_year = None
         d_year = None
 
+    # person_kind is stated, not left to the column default: this function is the ONLY
+    # path into `person` for someone who presented. Historical figures who never presented
+    # are seeded by pipeline.historical instead (H484 decision A1, variant A).
     cursor.execute(
-        "INSERT INTO person (person_id, display_name, full_name_ru, full_name_en, birth_year, death_year, normalized_key, source_url) VALUES (?,?,?,?,?,?,?,?)",
-        (pid, disp, full_ru, full_en, b_year, d_year, norm_key, source_url)
+        "INSERT INTO person (person_id, display_name, full_name_ru, full_name_en, birth_year, death_year, normalized_key, source_url, person_kind) VALUES (?,?,?,?,?,?,?,?,?)",
+        (pid, disp, full_ru, full_en, b_year, d_year, norm_key, source_url, 'conference_participant')
     )
     
     deg = DEGREE_DATA.get(norm_key) or DEGREE_DATA.get(source_norm_key)
