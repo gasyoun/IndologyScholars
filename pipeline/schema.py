@@ -82,7 +82,17 @@ def init_db(conn):
     cursor.execute("DROP TABLE IF EXISTS presentation")
     cursor.execute("DROP TABLE IF EXISTS presentation_person")
     cursor.execute("DROP TABLE IF EXISTS media")
-    
+    # Prosopographical spine (H473). Rebuilt from curation/ CSVs on every run,
+    # exactly like the conference tables above.
+    cursor.execute("DROP TABLE IF EXISTS person_discipline")
+    cursor.execute("DROP TABLE IF EXISTS work_discipline")
+    cursor.execute("DROP TABLE IF EXISTS discipline")
+    cursor.execute("DROP TABLE IF EXISTS work")
+    cursor.execute("DROP TABLE IF EXISTS person_role")
+    cursor.execute("DROP TABLE IF EXISTS relation")
+    # NOTE: data_assertion is deliberately NOT dropped -- it carries 803 curated
+    # provenance rows that no generator can reproduce.
+
     cursor.execute("""
     CREATE TABLE event_series (
         event_series_id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -251,6 +261,109 @@ def init_db(conn):
         mime_type TEXT,
         source_url TEXT NOT NULL,
         notes TEXT
+    )""")
+
+    # --- Prosopographical spine (H473, Phase 1) -------------------------------
+    # The conference tables above describe who spoke where. These describe the
+    # scholarly biography, which the "Indology in Russia" sections require.
+
+    # Flat dictionary with a parent pointer, so ratifying decision D1 (the
+    # boundaries of "indology") never requires a schema migration -- only rows.
+    cursor.execute("""
+    CREATE TABLE discipline (
+        discipline_id TEXT PRIMARY KEY,
+        label_ru TEXT NOT NULL,
+        label_en TEXT,
+        parent_discipline_id TEXT,
+        status TEXT DEFAULT 'core',
+        notes TEXT,
+        FOREIGN KEY(parent_discipline_id) REFERENCES discipline(discipline_id)
+    )""")
+
+    cursor.execute("""
+    CREATE TABLE person_discipline (
+        person_id TEXT NOT NULL,
+        discipline_id TEXT NOT NULL,
+        confidence REAL NOT NULL DEFAULT 1.0,
+        method TEXT,
+        evidence TEXT,
+        source_url TEXT,
+        notes TEXT,
+        PRIMARY KEY (person_id, discipline_id),
+        FOREIGN KEY(person_id) REFERENCES person(person_id),
+        FOREIGN KEY(discipline_id) REFERENCES discipline(discipline_id)
+    )""")
+
+    # Empty in Phase 1; populated in Phase 4 from the lexicographic corpus.
+    cursor.execute("""
+    CREATE TABLE work (
+        work_id TEXT PRIMARY KEY,
+        title TEXT NOT NULL,
+        work_type TEXT CHECK(work_type IN ('book','article','translation','dictionary','edition')),
+        year INTEGER,
+        language TEXT,
+        publisher TEXT,
+        source_url TEXT,
+        notes TEXT
+    )""")
+
+    cursor.execute("""
+    CREATE TABLE work_discipline (
+        work_id TEXT NOT NULL,
+        discipline_id TEXT NOT NULL,
+        confidence REAL NOT NULL DEFAULT 1.0,
+        notes TEXT,
+        PRIMARY KEY (work_id, discipline_id),
+        FOREIGN KEY(work_id) REFERENCES work(work_id),
+        FOREIGN KEY(discipline_id) REFERENCES discipline(discipline_id)
+    )""")
+
+    # Affiliation in time. presentation_person.affiliation_text_raw hangs off a
+    # single talk, so it cannot exist for a scholar who died before 2004.
+    cursor.execute("""
+    CREATE TABLE person_role (
+        person_role_id TEXT PRIMARY KEY,
+        person_id TEXT NOT NULL,
+        organization_id TEXT,
+        role TEXT,
+        from_year INTEGER,
+        to_year INTEGER,
+        source_url TEXT,
+        notes TEXT,
+        FOREIGN KEY(person_id) REFERENCES person(person_id),
+        FOREIGN KEY(organization_id) REFERENCES organization(organization_id)
+    )""")
+
+    cursor.execute("""
+    CREATE TABLE relation (
+        relation_id TEXT PRIMARY KEY,
+        subject_person_id TEXT NOT NULL,
+        object_person_id TEXT NOT NULL,
+        relation_type TEXT NOT NULL CHECK(relation_type IN ('teacher','student','successor')),
+        evidence_url TEXT,
+        confidence REAL DEFAULT 1.0,
+        notes TEXT,
+        FOREIGN KEY(subject_person_id) REFERENCES person(person_id),
+        FOREIGN KEY(object_person_id) REFERENCES person(person_id)
+    )""")
+
+    # data_assertion holds 803 curated provenance rows but was only ever created
+    # by scratch/provenance_audit_prototype.py -- it survived because the .db is
+    # committed and init_db never dropped it. generate_site_data.py SELECTs from
+    # it unconditionally, so a fresh build after `rm conferences.db` used to die
+    # here. Create it if absent; never drop it.
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS data_assertion (
+        assertion_id INTEGER PRIMARY KEY AUTOINCREMENT,
+        entity_type TEXT NOT NULL,
+        entity_id TEXT NOT NULL,
+        attribute TEXT NOT NULL,
+        value TEXT NOT NULL,
+        source_url TEXT,
+        citation TEXT,
+        confidence TEXT NOT NULL,
+        curator_id TEXT NOT NULL,
+        verified_at TEXT NOT NULL
     )""")
     conn.commit()
 

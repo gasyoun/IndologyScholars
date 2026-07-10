@@ -128,6 +128,8 @@ def generated_manifest_paths():
         "en.html",
         "how-to-cite.html",
         "index.html",
+        "indologiya-v-rossii.html",
+        "sanskritologiya-v-rossii.html",
         "known-limitations.html",
         "methodology.html",
         "hypotheses.html",
@@ -12301,6 +12303,252 @@ def _senior_absence_rows(audit_rows, cohort, bio_rows=None, lang="ru", exclude_p
     return "".join(rows)
 
 
+# --- "Indology in Russia" / "Sanskritology in Russia" sections (H473, Phase 1) ---
+# R5: the umbrella is Indology; Sanskritology is a FACET over the same person
+# spine, not a second database. Both pages are two views over one graph, so both
+# are built by one function parameterised by `facet`.
+
+SECTION_TENTATIVE_BELOW = 0.8
+
+
+def _facet_scholars(scholars, facet):
+    """Scholars in the facet, plus the confidence split. facet=None -> umbrella."""
+    if facet is None:
+        selected = [s for s in scholars if any(
+            d.get("code") != "unattested" for d in (s.get("disciplines") or [])
+        )]
+        return selected, [], []
+    selected, confident, tentative = [], [], []
+    for scholar in scholars:
+        for entry in scholar.get("disciplines") or []:
+            if entry.get("code") != facet:
+                continue
+            selected.append(scholar)
+            if (entry.get("confidence") or 0) >= SECTION_TENTATIVE_BELOW:
+                confident.append(scholar)
+            else:
+                tentative.append(scholar)
+            break
+    return selected, confident, tentative
+
+
+def _section_stat_cards(cards):
+    items = "".join(
+        f'<article class="card"><strong>{esc(title)}</strong>'
+        f'<div class="metric">{esc(str(value))}</div>'
+        f'<div class="meta">{esc(note)}</div></article>'
+        for title, value, note in cards
+    )
+    return f'<section class="grid">{items}</section>'
+
+
+def _discipline_table(scholars):
+    counts = Counter()
+    tentative = Counter()
+    labels = {}
+    for scholar in scholars:
+        for entry in scholar.get("disciplines") or []:
+            code = entry.get("code")
+            if code == "unattested":
+                continue
+            counts[code] += 1
+            labels[code] = entry.get("label_ru") or code
+            if (entry.get("confidence") or 0) < SECTION_TENTATIVE_BELOW:
+                tentative[code] += 1
+    rows = "".join(
+        f"<tr><td>{esc(labels[code])}</td><td>{n}</td><td>{tentative[code]}</td></tr>"
+        for code, n in counts.most_common()
+    )
+    return (
+        '<table class="data-table"><thead><tr><th>Дисциплина</th>'
+        "<th>Персон</th><th>из них предварительно</th></tr></thead>"
+        f"<tbody>{rows}</tbody></table>"
+    )
+
+
+def _generation_table(scholars, generation_stats):
+    in_facet = Counter(s.get("generation_code") for s in scholars if s.get("generation_code"))
+    rows = []
+    for row in generation_stats:
+        code = row.get("code")
+        if not in_facet.get(code):
+            continue
+        rows.append(f"<tr><td>{esc(row.get('label_ru'))}</td><td>{in_facet[code]}</td></tr>")
+    unknown = sum(1 for s in scholars if not s.get("generation_code"))
+    if unknown:
+        rows.append(f"<tr><td>Год рождения не установлен</td><td>{unknown}</td></tr>")
+    return (
+        '<table class="data-table"><thead><tr><th>Поколение</th><th>Персон</th></tr>'
+        f"</thead><tbody>{''.join(rows)}</tbody></table>"
+    )
+
+
+def _city_table(geography_stats, limit=12):
+    rows = "".join(
+        f"<tr><td>{esc(row.get('ru'))}</td><td>{esc(row.get('count'))}</td></tr>"
+        for row in geography_stats[:limit]
+    )
+    return (
+        '<table class="data-table"><thead><tr><th>Город</th><th>Упоминаний в аффилиациях</th>'
+        f"</tr></thead><tbody>{rows}</tbody></table>"
+    )
+
+
+def _scholar_links(scholars, limit=40):
+    ordered = sorted(
+        scholars,
+        key=lambda s: (-(s.get("total_talks") or 0), clean_text(s.get("full_name_ru") or s.get("name"))),
+    )[:limit]
+    chips = "".join(
+        f'<a class="chip" href="s/{esc(s["url_slug"])}.html">'
+        f'{esc(s.get("full_name_ru") or s.get("name"))}</a>'
+        for s in ordered
+        if s.get("url_slug")
+    )
+    return f'<div class="chip-row">{chips}</div>'
+
+
+def generate_section_pages(data):
+    scholars = data.get("scholars", [])
+    summary = data.get("summary", {})
+    generation_stats = data.get("generation_stats", [])
+    geography_stats = data.get("geography_stats", [])
+
+    both_series = sum(
+        1 for s in scholars if (s.get("zograf_talks") or 0) and (s.get("roerich_talks") or 0)
+    )
+    memorial_total = sum(1 for s in scholars if s.get("death_year"))
+    years_covered = int(summary.get("years_covered", 0) or 0)
+
+    sections = [
+        {
+            "facet": None,
+            "path": "indologiya-v-rossii.html",
+            "title": "Индология в России",
+            "sibling": ("Санскритология в России", "sanskritologiya-v-rossii.html"),
+            "lead": (
+                "Зонтичный раздел: люди, их деятельность и достижения в российской индологии. "
+                "Построен по образцу авторского сайта «Дравидология в России» А. М. Дубянского, "
+                "но поверх реляционной базы, а не только очерка."
+            ),
+        },
+        {
+            "facet": "sanskritology",
+            "path": "sanskritologiya-v-rossii.html",
+            "title": "Санскритология в России",
+            "sibling": ("Индология в России", "indologiya-v-rossii.html"),
+            "lead": (
+                "Раздел о санскритологии — это фасет внутри «Индологии в России», "
+                "а не отдельная база данных. Один спайн персон, одно поле дисциплины, "
+                "два представления над одним графом."
+            ),
+        },
+    ]
+
+    for section in sections:
+        facet = section["facet"]
+        selected, confident, tentative = _facet_scholars(scholars, facet)
+        sibling_title, sibling_path = section["sibling"]
+
+        if facet is None:
+            cards = [
+                ("Персон", len(selected), "с установленной дисциплиной"),
+                ("Доклады", summary.get("unique_presentations", 0), "уникальных, 2004–2026"),
+                ("Обе площадки", both_series, "Зографские × Рериховские чтения"),
+                ("Мемориальных очерков", memorial_total, "персон с известным годом смерти"),
+            ]
+            unattested_total = sum(
+                1 for s in scholars
+                if all(d.get("code") == "unattested" for d in (s.get("disciplines") or [{}]))
+            )
+            facet_note = (
+                f'<p>Раздел охватывает {len(selected)} '
+                f'{ru_plural(len(selected), "персону", "персоны", "персон")}, '
+                "засвидетельствованных программами Зографских и Рериховских чтений за "
+                f'{esc(years_covered)} {ru_plural(years_covered, "год", "года", "лет")}. '
+                f'Ещё {unattested_total} '
+                f'{ru_plural(unattested_total, "персона присутствует", "персоны присутствуют", "персон присутствуют")} '
+                "в архиве только институциональными приветствиями, и дисциплина не приписана.</p>"
+            )
+        else:
+            cards = [
+                ("Персон в фасете", len(selected), "отнесены к санскритологии"),
+                ("Уверенно", len(confident), "уверенность ≥ 0,8"),
+                ("Предварительно", len(tentative), "уверенность < 0,8, помечены «(?)»"),
+                ("Мемориальных очерков", sum(1 for s in selected if s.get("death_year")), "в фасете"),
+            ]
+            facet_note = (
+                f'<p>В фасет попали {len(selected)} '
+                f'{ru_plural(len(selected), "персона", "персоны", "персон")}. '
+                "Отнесение выполнено по названиям докладов "
+                "и аффилиациям через курируемый кроссволк "
+                '<a href="curation/meso_discipline_crosswalk.csv">meso → дисциплина</a> и ручную разметку '
+                '<a href="curation/person_disciplines.csv">person_disciplines.csv</a>. '
+                "Классификатор ключевых слов при этом не использовался: его кириллические основы "
+                "не заякорены и дают ошибку не ниже 7,1% "
+                '(<a href="docs/renou-precision-audit.md">аудит точности</a>).</p>'
+            )
+
+        body = f"""
+        <header>
+            <h1>{esc(section["title"])}</h1>
+            <p>{esc(section["lead"])}</p>
+            <p class="lang-switch">См. также: <a href="{esc(sibling_path)}">{esc(sibling_title)}</a></p>
+        </header>
+        <div class="article-container">
+            <article>
+            <div class="note"><strong>Этап 1.</strong> Раздел открыт на существующих данных
+            2004–2026 годов. Исторический слой (XVIII век — середина XX века) и авторские
+            очерки готовятся отдельно: в корпусе пока нет ни одного человека, родившегося
+            до 1918 года, и притворяться, что раздел почти готов, было бы нечестно.</div>
+
+            {facet_note}
+
+            <h2>Счётчики</h2>
+            {_section_stat_cards(cards)}
+
+            <h2>Дисциплины</h2>
+            <p>Плоский справочник с указателем на родителя: ратификация границ индологии
+            (решение D1) добавит строки, но не потребует миграции схемы.</p>
+            {_discipline_table(selected)}
+
+            <h2>Поколения</h2>
+            <p>Срез по году рождения. Пустой год рождения означает «не установлен».</p>
+            {_generation_table(selected, generation_stats)}
+
+            <h2>География</h2>
+            {_city_table(geography_stats)}
+
+            <h2>Персоналии</h2>
+            <p>До 40 имён по числу докладов в архиве. Полный список — в
+            <a href="s/index.html">указателе исследователей</a>.</p>
+            {_scholar_links(selected)}
+
+            <h2>Что дальше</h2>
+            <ul>
+                <li>Этап 2 — исторический просопографический слой (~40 фигур XVIII — середины XX века).</li>
+                <li>Этап 3 — авторский очерк истории дисциплины и мемориальные очерки.</li>
+                <li>Этап 4 — библиографический спайн: труды, а не доклады.</li>
+            </ul>
+            </article>
+        </div>
+        """
+        write_text(
+            section["path"],
+            page_shell(
+                f'{section["title"]} | {SITE_NAME}',
+                section["lead"],
+                section["path"],
+                body,
+                [
+                    page_data(section["title"], section["lead"], section["path"]),
+                    make_breadcrumbs([("Главная", ""), (section["title"], section["path"])]),
+                ],
+                extra_head=ARTICLE_STYLE,
+            ),
+        )
+
+
 def generate_sociology_page():
     audit_rows = load_csv_rows("analytics_output/senior_absence_audit.csv")
     bio_rows = load_csv_rows("curation/senior_biographical_verification.csv")
@@ -15320,6 +15568,7 @@ def generate_sitemap(data, records):
         "known-limitations.html", "how-to-cite.html", "metrics-guide.html",
         "classification-criteria.html", "networks.html", "sociology.html", "sociology-en.html",
         "gatekeeping.html", "gatekeeping-en.html", "known-relationships.html", "indologists.html", "docs.html", "voting.html",
+        "indologiya-v-rossii.html", "sanskritologiya-v-rossii.html",
         "IndologyArchive/", "IndologyArchive/dashboard/index.html", "IndologyArchive/dashboard/search.html", "IndologyArchive/dashboard/curated.html"
     ]
     static_paths = sorted(set(static_paths))
@@ -15765,6 +16014,7 @@ def main():
     generate_collaboration_page(data)
     generate_nlp_page(data, records)
     generate_classification_criteria_page(records)
+    generate_section_pages(data)
     generate_sociology_page()
     generate_gatekeeping_page()
     generate_gumilyov_pages(data, records)

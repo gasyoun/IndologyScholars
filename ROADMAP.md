@@ -18,8 +18,8 @@ target **Research Data Journal for the Humanities and Social Sciences (Brill)**;
 DOI snapshot frozen in `article/snapshots/`. Long-range: video-archive, agents
 module spinout, international ППВ translation.
 
-**Актуальный корпус (2026-06-04):** 270 учёных · 1362 уникальных доклада ·
-1388 авторских участий · 2004–2026 · 41 перекрёстной когорты · 165 только
+**Актуальный корпус (2026-07-10):** 268 учёных · 1362 уникальных доклада ·
+1388 авторских участий · 2004–2026 · 41 перекрёстной когорты · 163 только
 Зографских · 64 только Рериховских.
 
 ---

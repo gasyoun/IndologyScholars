@@ -28,7 +28,7 @@ share the one registry (life-years convey the era).
    presented are published as a **separate registry**, clearly distinguished
    from conference speakers.
 2. **Conference statistics must not change.** The headline numbers
-   (270 scholars · 1362 unique presentations · 1388 author participations)
+   (268 scholars · 1362 unique presentations · 1388 author participations)
    describe the *conference corpus*. Registry (non-participant) indologists are
    a parallel dataset and never enter those counts.
 3. **No fabrication.** A registry row is published only with a source; an
@@ -40,7 +40,7 @@ share the one registry (life-years convey the era).
 | --- | --- | --- |
 | `scratch/wikipedia_indologists_expanded.json` | `people` (114, wiki/en.wiki-bridge) + `new_from_institutions` (83, from conf DB). Fields: `full_name`, `surname`, `given_name`, `birth_year`, `death_year`, `scientific_field`, `role`, `workplace`, `alma_mater`, `degree`, `wikidata_qid`, `is_indologist`. | Raw roster |
 | `scratch/non_participants.md` | Curated report: ~100 participants vs ~94 non-participants, with life-years/field/role/affiliation/degree. | Human-verified split |
-| `site_data.json` / `conferences.db` | 270 conference scholars with stable `person_id`. | Match target |
+| `site_data.json` / `conferences.db` | 268 conference scholars with stable `person_id`. | Match target |
 | `authority_ids.json` | Per-person `openalex`/`orcid`/`wikidata` + `confidence`. | Enrichment sink |
 | `person_ids.json` / `public_ids.json` | Stable-ID policy. | ID namespace |
 
@@ -108,7 +108,7 @@ clean and prevents a registry person from ever being mistaken for a speaker.
 - `generate_site_data.py` and the summary/validator continue to count only
   conference-derived persons. The registry is a *separate* JSON
   (`site_data_registry.json` or similar) consumed only by the registry page.
-- Add a test asserting `total_scholars == 270`-style invariants are unaffected
+- Add a test asserting `total_scholars == 268`-style invariants are unaffected
   by the registry build (regression guard against accidental stat leakage).
 
 ## Validation & tests

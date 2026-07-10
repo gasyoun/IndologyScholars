@@ -707,6 +707,32 @@ def main():
                     "id": stud_id
                 })
 
+    # Discipline facet (H473). Drives the "Indology in Russia" umbrella section and
+    # the "Sanskritology in Russia" facet page, plus the discipline chips on profiles.
+    discipline_labels = {
+        code: {"label_ru": ru, "label_en": en, "parent": parent, "status": status}
+        for code, ru, en, parent, status in cursor.execute(
+            "SELECT discipline_id, label_ru, label_en, parent_discipline_id, status FROM discipline"
+        )
+    }
+    disciplines_by_person = {}
+    for person_id, code, confidence, method, evidence in cursor.execute(
+        "SELECT person_id, discipline_id, confidence, method, evidence "
+        "FROM person_discipline ORDER BY confidence DESC, discipline_id"
+    ):
+        meta = discipline_labels.get(code, {})
+        disciplines_by_person.setdefault(person_id, []).append({
+            "code": code,
+            "label_ru": meta.get("label_ru", code),
+            "label_en": meta.get("label_en"),
+            "status": meta.get("status"),
+            "confidence": confidence,
+            "method": method,
+            "evidence": evidence,
+        })
+    for s in scholars:
+        s["disciplines"] = disciplines_by_person.get(s["id"], [])
+
     # Load city-to-institution trajectory audit
     city_trajectory = load_city_trajectory()
     for s in scholars:

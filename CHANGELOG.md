@@ -6,6 +6,52 @@
 
 ## [Unreleased]
 
+### Added
+- **Разделы «Индология в России» и «Санскритология в России» (этап 1, H473).**
+  Две посадочные страницы, генерируемые из БД: `indologiya-v-rossii.html` —
+  зонтичный раздел, `sanskritologiya-v-rossii.html` — фасет над тем же спайном
+  персон (решение R5), а не вторая база. Обе в `sitemap.xml` и в навигации.
+- **Просопографический спайн схемы:** таблицы `discipline`, `person_discipline`,
+  `work`, `work_discipline`, `person_role`, `relation` в `pipeline/schema.py`.
+  `work` создаётся пустой и наполняется на этапе 4.
+- **Таксономия дисциплин v0** — `curation/disciplines.csv` (плоская, с
+  `parent_discipline_id`, чтобы решение D1 меняло строки, а не схему). Девять
+  кодов стартового набора плюс четыре со `status=proposed`
+  (`literature`, `linguistics`, `ethnography`, `history_of_indology`), без
+  которых стартовый набор покрывал лишь 203 из 268 персон.
+- **Разметка 268 персон:** 607 строк `person_discipline` — 267 персон с
+  дисциплиной, одна (директор ИВР РАН, только институциональные приветствия)
+  помечена служебным кодом `unattested` с `confidence = 0.0` вместо выдуманной
+  дисциплины. Источники: курируемый кроссволк
+  `curation/meso_discipline_crosswalk.csv` над `meso_codes_deepseek.csv` и
+  ручная разметка `curation/person_disciplines.csv`. `keyword_filtering.py`
+  сознательно не использован (риск P1: незаякорённые основы, ошибка ≥ 7,1%).
+- `tests/test_discipline_spine.py` — 14 регрессионных тестов на инварианты
+  спайна (полнота разметки, изоляция сентинела, границы уверенности,
+  идемпотентность `data_assertion`).
+
+### Changed
+- **Шаблон персоны раздвоен по `death_year`** (решение R4): 26 персон с известным
+  годом смерти получают мемориальный очерк, 242 — сухую карточку-реестр со
+  ссылкой на политику персональных данных. Пустой `death_year` трактуется как
+  «не установлено», а не «жив»; ни одна карточка-реестр не печатает дат смерти.
+- Дисциплины выведены на карточку персоны; отнесения с уверенностью ниже 0,8
+  помечаются знаком «(?)».
+
+### Fixed
+- **`data_assertion` больше не сирота.** Таблица создавалась только скриптом
+  `scratch/provenance_audit_prototype.py` и выживала лишь потому, что `.db`
+  закоммичен, — при этом `generate_site_data.py` безусловно читает из неё, так
+  что сборка после `rm conferences.db` падала. Теперь `init_db` создаёт её через
+  `CREATE TABLE IF NOT EXISTS` и никогда не дропает; сборка печатает громкое
+  предупреждение, если 803 курируемые строки провенанса отсутствуют.
+- **Риск P4 снят: расхождение 268/270 объяснено.** Коммит `52b05255f`
+  (30-06-2026) пересобрал БД и в том же коммите поправил README: две курируемые
+  склейки личностей плюс три переименования карточек-инициалов дают −5 +3 = −2.
+  README уже был верен; устаревшие «270» вычищены из `ROADMAP.md`,
+  `docs/ROADMAP_2026.md`, `docs/roster-merge-design.md`, `docs/wikidata-guide.md`
+  и `docs/onboarding-zograf-contributor-ru.md`.
+
 ### Documentation
 - Documented the scope decision that the PPV article remains a two-venue study
   of the main long-running Zograf and Roerich Readings, not a three-venue

@@ -5,11 +5,17 @@
     </button>
     <h1>{{ ru_heading | safe }}</h1>
     <p>{{ en_heading | e }}</p>
+    {% if is_memorial %}
+    <p class="profile-kind profile-kind-memorial">Мемориальный очерк</p>
+    {% else %}
+    <p class="profile-kind profile-kind-registry">Карточка-реестр</p>
+    {% endif %}
     {{ format_degree_html | safe }}
     <p>{{ description | e }}</p>
     {% if profile_note_html %}
     {{ profile_note_html | safe }}
     {% endif %}
+    {{ registry_note_html | safe }}
 </header>
 
 <!-- Citation Modal -->
@@ -58,6 +64,11 @@ function closeCitationModal() {
         {{ affiliation_notes | safe }}
     </article>
     <article class="card">
+        <strong>Дисциплины</strong>
+        <div class="chip-row">{{ discipline_chips | safe }}</div>
+        <div class="meta" style="font-size:0.78rem;">Знак «(?)» — предварительное отнесение (уверенность ниже 0,8).</div>
+    </article>
+    <article class="card">
         <strong>Географические центры</strong>
         <div class="chip-row">{{ city_chips | safe }}</div>
     </article>
@@ -101,6 +112,8 @@ function closeCitationModal() {
     </article>
     {% endif %}
 </section>
+
+{{ memorial_html | safe }}
 
 {% if genealogy_html %}
 {{ genealogy_html | safe }}

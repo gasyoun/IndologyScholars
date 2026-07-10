@@ -2,7 +2,7 @@
 
 ## Goal
 
-Map the 270 scholars in the IndologyScholars archive to Wikidata Q-IDs.
+Map the 268 scholars in the IndologyScholars archive to Wikidata Q-IDs.
 Once mapped, every scholar becomes discoverable via:
 - Wikidata Query Service (SPARQL)
 - Google Knowledge Graph
@@ -14,7 +14,7 @@ Once mapped, every scholar becomes discoverable via:
 
 | Metric | Value |
 |--------|-------|
-| Total scholars | 270 |
+| Total scholars | 268 |
 | With Wikidata Q-ID | 1 (0.4%) |
 | With ORCID | 1 (0.4%) |
 | With VIAF | 0 |

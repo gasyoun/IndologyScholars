@@ -798,6 +798,9 @@ def page_shell(title, description, canonical_path, body, structured_data=None, e
         ]
         more_label = "Еще"
         more_nav_items = [
+            # Russian-only sections (H473); decision D3 has not yet ruled on an English version.
+            ("Индология в России", "/IndologyScholars/indologiya-v-rossii.html"),
+            ("Санскритология в России", "/IndologyScholars/sanskritologiya-v-rossii.html"),
             ("Документация", "/IndologyScholars/docs.html"),
             ("Выводы", "/IndologyScholars/findings/"),
             ("Визуализации", "/IndologyScholars/findings/visualisations.html"),

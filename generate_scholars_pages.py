@@ -650,6 +650,73 @@ def format_relationship_type(rel_type, lang="ru"):
     return ru if lang == "ru" else en
 
 
+def is_memorial(scholar):
+    """A memorial essay is owed only where a death year is actually recorded.
+
+    An empty ``death_year`` means UNKNOWN, not "alive" (roadmap risk P3). Such a
+    profile is rendered as a dry registry card, and no life dates are printed.
+    """
+    return bool(scholar.get("death_year"))
+
+
+# Disciplines below this confidence are shown as tentative rather than asserted.
+DISCIPLINE_TENTATIVE_BELOW = 0.8
+
+
+def discipline_chips(scholar):
+    """Chips for the discipline facet; `unattested` is stated, never hidden."""
+    entries = scholar.get("disciplines") or []
+    if not entries:
+        return '<span class="meta">Дисциплина не установлена.</span>'
+    chips = []
+    for entry in entries:
+        label = entry.get("label_ru") or entry.get("code")
+        if entry.get("code") == "unattested":
+            chips.append(f'<span class="chip chip-unattested">{esc(label)}</span>')
+            continue
+        tentative = (entry.get("confidence") or 0) < DISCIPLINE_TENTATIVE_BELOW
+        title = esc(entry.get("evidence") or "")
+        marker = " (?)" if tentative else ""
+        cls = "chip chip-tentative" if tentative else "chip"
+        chips.append(f'<span class="{cls}" title="{title}">{esc(label)}{marker}</span>')
+    return "".join(chips)
+
+
+def build_memorial_html(scholar):
+    """Memorial layout for the 26 scholars with a recorded death year.
+
+    Phase 1 ships the frame, not the essay: the narrative belongs to Phase 3 and
+    the works list to Phase 4. The placeholders say so rather than pretend.
+    """
+    if not is_memorial(scholar):
+        return ""
+    name = scholar.get("full_name_ru") or scholar.get("name")
+    return (
+        '<section class="memorial-block">'
+        '<h2>Место в традиции</h2>'
+        f'<p class="meta">Мемориальный очерк о {esc(name)} — авторский текст, '
+        'который будет добавлен на этапе 3 работы над разделом. '
+        'Ниже приведены сведения, засвидетельствованные архивом.</p>'
+        '<h3>Труды</h3>'
+        '<p class="meta">Библиографический спайн наполняется на этапе 4; '
+        'в архиве пока учтены только доклады, но не публикации.</p>'
+        '</section>'
+    )
+
+
+def build_registry_note_html(scholar):
+    """Dry registry card note for profiles without a recorded death year."""
+    if is_memorial(scholar):
+        return ""
+    return (
+        '<p class="registry-note meta">Карточка-реестр: только факты из опубликованных '
+        'источников — аффилиации, доклады и внешние идентификаторы. Оценки научного '
+        'вклада здесь не приводятся; см. '
+        '<a href="../docs/persons-data-policy-ru.md">политику персональных данных</a>. '
+        'Отсутствие года смерти означает, что сведений нет, а не то, что они установлены.</p>'
+    )
+
+
 def build_genealogy_html(scholar):
     advisors = scholar.get("advisors") or []
     students = scholar.get("students") or []
@@ -861,7 +928,11 @@ def render_profile(scholar, related, authority, meso_by_presentation, meso_items
         context_block=scholar_context_block(scholar, meso_by_presentation, meso_items),
         talk_cards=talk_cards,
         related_html=related_html,
-        genealogy_html=build_genealogy_html(scholar)
+        genealogy_html=build_genealogy_html(scholar),
+        is_memorial=is_memorial(scholar),
+        discipline_chips=discipline_chips(scholar),
+        memorial_html=build_memorial_html(scholar),
+        registry_note_html=build_registry_note_html(scholar),
     )
 
     extra_css = """
