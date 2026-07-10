@@ -55,6 +55,24 @@ def validation_report(output_dir: Path) -> str:
         "atlas_reply_summary.csv": processed_dir / "atlas_reply_summary.csv",
         "case_study_candidates.csv": processed_dir / "case_study_candidates.csv",
     }
+    insight_paths = {
+        "reply_confidence_year_counts.csv": processed_dir / "reply_confidence_year_counts.csv",
+        "topic_decade_share.csv": processed_dir / "topic_decade_share.csv",
+        "list_function_decade_share.csv": processed_dir / "list_function_decade_share.csv",
+        "thread_typology.csv": processed_dir / "thread_typology.csv",
+        "case_score_components.csv": processed_dir / "case_score_components.csv",
+        "review_queue_summary.csv": processed_dir / "review_queue_summary.csv",
+        "author_participation_cohorts.csv": processed_dir / "author_participation_cohorts.csv",
+    }
+    insight_figure_paths = {
+        "reply_confidence_over_time.png": output_dir / "figures" / "reply_confidence_over_time.png",
+        "topic_share_slope_1990s_2020s.png": output_dir / "figures" / "topic_share_slope_1990s_2020s.png",
+        "list_function_decade_mix.png": output_dir / "figures" / "list_function_decade_mix.png",
+        "thread_typology_scatter.png": output_dir / "figures" / "thread_typology_scatter.png",
+        "case_score_components.png": output_dir / "figures" / "case_score_components.png",
+        "review_queue_summary.png": output_dir / "figures" / "review_queue_summary.png",
+        "author_participation_cohorts.png": output_dir / "figures" / "author_participation_cohorts.png",
+    }
     thread_index_path = processed_dir / "thread_explorer_index.csv"
     curated_cases_path = processed_dir / "curated_case_studies.csv"
     review_notes_path = output_dir / "data" / "curation" / "first_review_notes.csv"
@@ -108,6 +126,7 @@ def validation_report(output_dir: Path) -> str:
     count_mismatch_audit = pd.read_csv(count_mismatch_audit_path, dtype=str, low_memory=False) if count_mismatch_audit_path.exists() else pd.DataFrame()
     skipped_mbox = pd.read_csv(skipped_mbox_path, dtype=str, low_memory=False) if skipped_mbox_path.exists() else pd.DataFrame()
     atlas_tables = {name: pd.read_csv(path, dtype=str, low_memory=False) if path.exists() else pd.DataFrame() for name, path in atlas_paths.items()}
+    insight_tables = {name: pd.read_csv(path, dtype=str, low_memory=False) if path.exists() else pd.DataFrame() for name, path in insight_paths.items()}
     thread_index = pd.read_csv(thread_index_path, dtype=str, low_memory=False) if thread_index_path.exists() else pd.DataFrame()
     curated_cases = pd.read_csv(curated_cases_path, dtype=str, low_memory=False) if curated_cases_path.exists() else pd.DataFrame()
     review_notes = pd.read_csv(review_notes_path, dtype=str, low_memory=False).fillna("") if review_notes_path.exists() else pd.DataFrame()
@@ -229,6 +248,31 @@ def validation_report(output_dir: Path) -> str:
     else:
         missing_atlas = [name for name, table in atlas_tables.items() if table.empty]
         lines.extend(["## Guided Atlas Layers", "", f"- Missing or empty atlas tables: {', '.join(missing_atlas)}", ""])
+
+    missing_insights = [name for name, table in insight_tables.items() if table.empty]
+    missing_figures = [name for name, path in insight_figure_paths.items() if not path.exists() or path.stat().st_size == 0]
+    if missing_insights or missing_figures:
+        lines.extend(
+            [
+                "## Insight Layers",
+                "",
+                f"- Missing or empty insight tables: {', '.join(missing_insights) if missing_insights else 'none'}",
+                f"- Missing or empty insight figures: {', '.join(missing_figures) if missing_figures else 'none'}",
+                "",
+            ]
+        )
+    else:
+        insight_counts = pd.DataFrame([{"table": name, "rows": len(table)} for name, table in insight_tables.items()])
+        lines.extend(
+            [
+                "## Insight Layers",
+                "",
+                markdown_table(insight_counts),
+                "",
+                f"- Insight figures generated: {len(insight_figure_paths):,}",
+                "",
+            ]
+        )
 
     renou_messages = renou_tables["renou_messages.csv"]
     renou_rules = renou_tables["renou_subject_rules.csv"]

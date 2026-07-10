@@ -14,6 +14,7 @@ from indology_archive_research.analysis import save_tables, plot_figures
 from indology_archive_research.atlas import run_atlas
 from indology_archive_research.cleaning import run_cleaning
 from indology_archive_research.curation import run_curation
+from indology_archive_research.insights import run_insights
 from indology_archive_research.publication import run_publication
 from indology_archive_research.public_metadata import run_public_metadata
 from indology_archive_research.renou_layer import run_renou_layer
@@ -90,6 +91,7 @@ def main(argv: list[str] | None = None) -> None:
         )
         if not args.skip_curation:
             run_curation(args.output_dir)
+    run_insights(args.output_dir, make_figures=not args.skip_figures)
     if not args.skip_search:
         run_search(args.output_dir)
     if not args.skip_publication:
