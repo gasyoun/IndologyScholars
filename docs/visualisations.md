@@ -20,7 +20,7 @@ To ensure rigorous scientific reproducibility and robust academic citation, ever
 
 | Stable ID | Название (RU) | Name (EN) | Статус / Status |
 | --- | --- | --- | --- |
-| `VIS_001_orbit_scatter` | Орбита перекрёстной когорты | Cross-Cohort Orbit Scatter | **Live** (Интерактивный SVG / Interactive SVG) |
+| `VIS_001_orbit_scatter` | Орбита перекрестной когорты | Cross-Cohort Orbit Scatter | **Live** (Интерактивный SVG / Interactive SVG) |
 | `VIS_002_affiliation_opacity` | Временная шкала прозрачности аффилиаций | Affiliation Opacity Timeline | **Live** (Интерактивный SVG / Interactive SVG) |
 | `VIS_003_video_heatmap` | Тепловая карта видеопокрытия | Video Coverage Heatmap | **Live** (Интерактивный SVG / Interactive SVG) |
 | `VIS_004_keyword_alluvial` | Аллювиальный граф ключевых слов | Keyword Flow Alluvial | **Live** (Интерактивный SVG / Interactive SVG) |
@@ -29,7 +29,7 @@ To ensure rigorous scientific reproducibility and robust academic citation, ever
 | `VIS_007_network_arc` | Линейный дуговой граф мостов | Linear Arc Bridge Network | **Live** (Интерактивный SVG / Interactive SVG) |
 | `VIS_010_geographic_map` | Гео-пространственная карта | Geospatial Flow Map | **Live** (Интерактивная карта / Interactive Map) |
 | `VIS_011_keyword_bubble_cloud` | Облако тегов и ключевых слов | Dynamic Keyword Bubble Cloud | **Live** (Интерактивный SVG / Interactive SVG) |
-| `VIS_043_coding_reliability` | Надёжность кодирования (матрицы ошибок слепой выборки) | Coding Reliability (blind-sample confusion matrices) | **Live** (Серверный HTML / Server-rendered HTML) |
+| `VIS_043_coding_reliability` | Надежность кодирования (матрицы ошибок слепой выборки) | Coding Reliability (blind-sample confusion matrices) | **Live** (Серверный HTML / Server-rendered HTML) |
 | `VIS_044_km_retention` | Удержание по Каплану–Мейеру с правым цензурированием | Kaplan–Meier retention with right-censoring | **Live** (Серверный SVG / Server-rendered SVG) |
 
 ---

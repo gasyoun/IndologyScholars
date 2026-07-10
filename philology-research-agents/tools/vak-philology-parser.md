@@ -6,7 +6,7 @@
 > returns the **philology** journals as CSV or JSON. Output feeds new `editors/<journal>.md`
 > profiles for this module.
 >
-> Детерминированный промпт для **claude-haiku-4-5**: подаёшь строки **Перечня ВАК** —
+> Детерминированный промпт для **claude-haiku-4-5**: подаешь строки **Перечня ВАК** —
 > получаешь филологические журналы в CSV или JSON. Результат — вход для новых профилей
 > `editors/<journal>.md`.
 
@@ -111,7 +111,7 @@ title,issn,vak_category,philology_specialties,date_included,other_branches,flag
 
 - **Chunking · По частям.** Перечень ~3000 строк — за раз не влезет. Подавай частями.
   - CSV: на продолжениях скажи «продолжай, заголовок не повторяй» и склеивай строки.
-  - JSON: каждый фрагмент даёт самостоятельный объект; объединяй массивы `journals` и
+  - JSON: каждый фрагмент дает самостоятельный объект; объединяй массивы `journals` и
     дедуплицируй по `issn`/`title` на своей стороне.
 - **Downstream · Дальше.** Поля `philology_specialties` + `other_branches` показывают,
   какие журналы чисто филологические. Для индологии фильтруй по `5.9.6` / `10.02.22`,

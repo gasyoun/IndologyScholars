@@ -98,7 +98,7 @@ The complete structured lists have been generated and exported to the `analytics
 ## 6. Демографический тренд: возраст участников на день конференции
 
 > Возраст = год начала конференции − год рождения участника (погрешность ≤1 год).
-> Год рождения известен для **231** из 270 учёных (39 отсутствуют, см. `missing_birth_years.md`).
+> Год рождения известен для **231** из 270 ученых (39 отсутствуют, см. `missing_birth_years.md`).
 
 ### Зографские чтения (май, Санкт-Петербург)
 
@@ -152,8 +152,8 @@ The complete structured lists have been generated and exported to the `analytics
 
 We analyze the structure of Russian Indological conferences through the lens of participation networks. Unlike traditional bibliometric networks (which map who cites whom), our networks map **co-presence and shared scholarly context**. They help identify institutional centers of gravity, disciplinary clustering, and bridge scholars between the Zograf and Roerich readings.
 
-**Nodes Generated:** 324
+**Nodes Generated:** 346
 
-**Edges Generated:** 7937
+**Edges Generated:** 8095
 
 The network is exported into standard edge list and node list CSV formats (`network_nodes.csv` and `network_edges.csv`) for use in external graphing tools like Gephi or Cytoscape.

@@ -18,7 +18,7 @@
 | `ivran.ru`, `orientalstudies.ru` | ❌ | ✅ |
 
 Поэтому **основной путь сбора — `enwiki_bridge.py`** (через en.wikipedia, РКН его
-не трогает). Он даёт ru-название + Wikidata Q-ID. Старый
+не трогает). Он дает ru-название + Wikidata Q-ID. Старый
 `expand_wikipedia_indologists.py` нужен только для русскоязычных полей инфобокса
 и запускается на машине в РФ.
 
@@ -28,13 +28,13 @@ python scratch/enwiki_bridge.py        # 1. en.wiki → ru-название + Q-
 python scratch/wikidata_enrich.py      # 2. Q-ID → годы жизни (где Wikidata доступна)
 python scratch/expand_wikipedia_indologists.py  # 3. ru-инфобоксы (на машине в РФ)
 python scratch/scrape_institutions_web.py       # 4. сайты институтов (в РФ; нужен Playwright)
-python scratch/crossref_nonparticipants.py      # 5. отчёт
+python scratch/crossref_nonparticipants.py      # 5. отчет
 python -m pytest tests/                          # 6. валидация (60 passed)
 ```
 
 **Два важных исправления:**
 - ⚠️ **«Полный цикл» больше НЕ разрушительный.** Раньше `expand_…py` перезаписывал
-  master результатом живого (заблокированного) запроса и стёр бы все имена.
+  master результатом живого (заблокированного) запроса и стер бы все имена.
   Теперь слияние неразрушающее (atomic write, только дополнение). Старое
   предупреждение в §6 снято.
 - **`search_via_html()` теперь реально есть** в `expand_…py` (раньше FAQ/changelog
@@ -46,7 +46,7 @@ write + нормализация), `tests/test_indologist_matching.py`,
 `tests/test_institutions_web.py`. Текущее: **114** записей в `people`
 (+Бондаревский, +Сталь-фон-Гольштейн), Q-ID 8→26.
 
-`enwiki_bridge.py --wide` дополнительно берёт `Soviet/Russian orientalists` и
+`enwiki_bridge.py --wide` дополнительно берет `Soviet/Russian orientalists` и
 оставляет только индологов (фильтр по индийским категориям) — так найден
 имперский индолог Сталь-фон-Гольштейн.
 
@@ -56,7 +56,7 @@ write + нормализация), `tests/test_indologist_matching.py`,
 
 Собрать **всех** индологов, говоривших на русском или живших в Российской империи / СССР / РФ за последние 200 лет. Разметить их по участию в Рериховских и Зографских чтениях (2004–2026).
 
-**Текущий результат:** 197 имён (~80% полноты), разбивка: 100 участников, 94 неучастника.
+**Текущий результат:** 197 имен (~80% полноты), разбивка: 100 участников, 94 неучастника.
 (114 в `people` + 83 в `new_from_institutions`; Q-ID-покрытие выросло 8→26 после en.wiki-моста.)
 
 ---
@@ -101,7 +101,7 @@ write + нормализация), `tests/test_indologist_matching.py`,
     │                        │
     │                        ▼
     │         ┌──────────────────────────────────────┐
-    │         │ scratch/non_participants.md          │  ← ИТОГОВЫЙ ОТЧЁТ
+    │         │ scratch/non_participants.md          │  ← ИТОГОВЫЙ ОТЧЕТ
     │         └──────────────────────────────────────┘
 ```
 
@@ -109,7 +109,7 @@ write + нормализация), `tests/test_indologist_matching.py`,
 
 ## 3. Быстрый старт
 
-### Перегенерировать отчёт из существующих данных (без сети)
+### Перегенерировать отчет из существующих данных (без сети)
 
 ```bash
 python scratch/crossref_nonparticipants.py
@@ -138,7 +138,7 @@ python scratch/scrape_institutions.py
 # 3. Слияние
 python scratch/merge_institutions.py
 
-# 4. Сопоставление + отчёт
+# 4. Сопоставление + отчет
 python scratch/crossref_nonparticipants.py
 
 # 5. Валидация
@@ -212,7 +212,7 @@ python scratch/scrape_institutions.py
 5. Генерирует `institutional_summary.md`
 
 **Вход:** оба JSON  
-**Выход:** обновлённый `wikipedia_indologists_expanded.json`, `institutional_summary.md`
+**Выход:** обновленный `wikipedia_indologists_expanded.json`, `institutional_summary.md`
 
 **Как запустить:**
 ```bash
@@ -223,7 +223,7 @@ python scratch/merge_institutions.py
 
 ### 4.4 `crossref_nonparticipants.py`
 
-**Назначение:** сопоставить вики-список с базой конференций, сгенерировать отчёт.
+**Назначение:** сопоставить вики-список с базой конференций, сгенерировать отчет.
 
 **Метод:**
 1. Загружает `wikipedia_indologists_expanded.json`
@@ -244,7 +244,7 @@ python scratch/crossref_nonparticipants.py
 
 ### 4.5 `add_sssr_names.py`
 
-**Назначение:** одноразовый скрипт, добавивший 28 имён из `Категория:Индологи_СССР`.
+**Назначение:** одноразовый скрипт, добавивший 28 имен из `Категория:Индологи_СССР`.
 
 **Использование:** больше не нужен — имена уже в `wikipedia_indologists_expanded.json`.
 
@@ -252,7 +252,7 @@ python scratch/crossref_nonparticipants.py
 
 ### 4.6 `add_search_results.py`
 
-**Назначение:** одноразовый скрипт, добавивший 12 имён из полнотекстового поиска.
+**Назначение:** одноразовый скрипт, добавивший 12 имен из полнотекстового поиска.
 
 **Использование:** больше не нужен — имена уже в `wikipedia_indologists_expanded.json`.
 
@@ -326,7 +326,7 @@ python scratch/crossref_nonparticipants.py
 | План A | Найти JSON API в исходном коде (Drupal → `/jsonapi/`) |
 | План B | Playwright / headless Chrome для JS-рендера |
 
-### 6.4 Ложные срабатывания при сопоставлении имён
+### 6.4 Ложные срабатывания при сопоставлении имен
 
 | Защита | surname + given name: минимум 2 буквы совпадения в имени |
 |--------|----------------------------------------------------------|
@@ -388,7 +388,7 @@ python -m pytest tests/ -q       # 40 юнит-тестов
 
 ### Где лежат итоговые данные?
 
-- `scratch/non_participants.md` — отчёт для чтения
+- `scratch/non_participants.md` — отчет для чтения
 - `scratch/wikipedia_indologists_expanded.json` — машиночитаемые данные
 
 ---
@@ -400,7 +400,7 @@ python -m pytest tests/ -q       # 40 юнит-тестов
 | `scratch/changelog.md` | Хронология всех изменений |
 | `scratch/roadmap.md` | Дорожная карта с узкими местами |
 | `scratch/ai_status.md` | Статус ИИ-ассистента |
-| `scratch/non_participants.md` | **Итоговый отчёт** |
+| `scratch/non_participants.md` | **Итоговый отчет** |
 | `scratch/wikipedia_indologists_expanded.json` | **Основной файл данных** |
 | `scratch/scrape_common.py` | Общий robust-HTTP + atomic write + нормализация |
 | `scratch/enwiki_bridge.py` | **Основной путь:** en.wiki → ru-название + Q-ID (RKN-устойчиво) |

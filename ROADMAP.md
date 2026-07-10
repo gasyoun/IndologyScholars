@@ -18,8 +18,8 @@ target **Research Data Journal for the Humanities and Social Sciences (Brill)**;
 DOI snapshot frozen in `article/snapshots/`. Long-range: video-archive, agents
 module spinout, international ППВ translation.
 
-**Актуальный корпус (2026-06-04):** 270 учёных · 1362 уникальных доклада ·
-1388 авторских участий · 2004–2026 · 41 перекрёстной когорты · 165 только
+**Актуальный корпус (2026-06-04):** 270 ученых · 1362 уникальных доклада ·
+1388 авторских участий · 2004–2026 · 41 перекрестной когорты · 165 только
 Зографских · 64 только Рериховских.
 
 ---
@@ -42,20 +42,20 @@ A. 🅳 🟡 **Ростер русскоязычных индологов (`scra
    **Решение: влить ростер в основной корпус** — участники связываются с профилями,
    **неучастники выносятся отдельной страницей-реестром** (отличной от докладчиков).
    - ✅ Дизайн слияния: `docs/roster-merge-design.md` (участники → обогащение, неучастники → реестр)
-   - ✅ Реализовано: `curation/non_participant_indologists.csv` (94), линкер участников (100, +2 Q-ID), страница `indologists.html`, 10 тестов, build+validate зелёные
+   - ✅ Реализовано: `curation/non_participant_indologists.csv` (94), линкер участников (100, +2 Q-ID), страница `indologists.html`, 10 тестов, build+validate зеленые
    - ✅ Runbook Phase 5: `docs/ru-enrichment-runbook.md` (Wikidata годы, ru-инфобоксы, институты, идемпотентный re-seed)
    - ⬜ Phase 5 прогон (.ru, по runbook): Q-ID/годы жизни → `candidate`→`verified`
    - ⬜ P0 `wikidata_enrich.py` → годы жизни 13 записям, перегенерировать crossref (где Wikidata доступна)
    - ⬜ P0 `scrape_institutions_web.py` + Playwright → институц. имена (по runbook, запуск внутри .ru)
    - ⬜ P1 `expand_wikipedia_indologists.py` → ru-инфобоксы новым именам (где ru.wiki-статьи открываются)
-   - ⬜ P1 Ручной добор имперского периода (~15 имён)
+   - ⬜ P1 Ручной добор имперского периода (~15 имен)
    - ⬜ P2 Постсоветские республики через en.wiki нац-категории + мост
    - Детальный план: `scratch/roadmap.md`, статус: `scratch/ai_status.md`
 B. 🅳 🟡 **Контроль авторитетов (OpenAlex → Wikidata/ORCID).**
    - ✅ 122 кандидата OpenAlex найдены (`analytics_output/openalex_author_candidates.csv`)
    - ⬜ Ручная сверка 122 кандидатов (статус `todo` → `confirmed`)
-   - ⬜ Инъекция при `relevance_score ≥ 0.8` (порог подтверждён), `confidence='candidate'`
-   - ✅ Исправлены Q-ID в `generate_wikidata_batch.py`: P106 → `Q18524037` (профессия «индолог»), P101 → `Q625510` (область), удалён фиктивный `Q126692818`, источник как референс `S854`
+   - ⬜ Инъекция при `relevance_score ≥ 0.8` (порог подтвержден), `confidence='candidate'`
+   - ✅ Исправлены Q-ID в `generate_wikidata_batch.py`: P106 → `Q18524037` (профессия «индолог»), P101 → `Q625510` (область), удален фиктивный `Q126692818`, источник как референс `S854`
    - ⬜ Отправить Wikidata-батч **только после** полной сверки 122 кандидатов
    - Руководство: `docs/wikidata-guide.md`
 C. 🅳🅜 🟡 **Англоязычный data paper.**
@@ -85,7 +85,7 @@ D. 🅜 ✅ **Runbook для .ru-шагов.** `docs/ru-enrichment-runbook.md` �
    `check_anonymity.py` passed, числа синхронизированы.
 5. 🅰️🅳 ✅ **Пересборка БД и сверка чисел.** БД пересобрана, `check_ppv_numbers.py` → 0 drifts.
 6. 🅰️🅜 ✅ **Pre-submission gate.** `validate_publication.py` passed, `pytest` 40/40,
-   иллюстрации 300 dpi, cover letter обновлён.
+   иллюстрации 300 dpi, cover letter обновлен.
 
 **Результат:** статья, обезличенная копия, DOCX, иллюстрации, cover letter — всё готово.
 
@@ -96,12 +96,12 @@ D. 🅜 ✅ **Runbook для .ru-шагов.** `docs/ru-enrichment-runbook.md` �
 7. 🅳🅜 🟡 **Генеалогия и сети (заявленный «top track»).**
    - ✅ 20 teacher-student edges в `network_data.json` + пресет «Генеалогия» в networks.html
    - ✅ `tools/city_trajectory_audit.py` — 719 city-меток, 165 сопоставлено с институцией (22.9%)
-   - ⬜ Связать траектории с профилями учёных на сайте
+   - ⬜ Связать траектории с профилями ученых на сайте
 8. 🅳 🟡 **Покрытие и качество данных.**
    - ✅ Баг соавторов исправлен (`presentation_person_exclusions.csv`)
    - ✅ Bengal taxonomy избыточность устранена
    - ✅ `tools/scrape_birth_years.py` + `tools/apply_birth_years.py` — скрапер дат
-   - ⬜ 33 учёных без дат рождения (30 city-only, 3 с институциями)
+   - ⬜ 33 ученых без дат рождения (30 city-only, 3 с институциями)
    - ⬜ Фильтрация мусорных ключевых слов
 9. 🅜 ⬜ **Публикационная конверсия.** Какие доклады стали статьями/сборниками.
 10. 🅼 🟡 **Перечень ВАК.**
@@ -113,10 +113,10 @@ D. 🅜 ✅ **Runbook для .ru-шагов.** `docs/ru-enrichment-runbook.md` �
 12. 🅢 🟡 **Сайт/UX.**
     - ✅ `positionTooltip()` — tooltip clamp на всех визуализациях
     - ✅ Клик по городу на карте → страница города
-    - ✅ `.profile-facts` горизонтальная вёрстка (3 колонки)
+    - ✅ `.profile-facts` горизонтальная верстка (3 колонки)
     - ✅ «Соавторы (0)» скрыты (уже было)
     - ✅ «засвидетельствованный профиль» для 1 доклада (уже было)
-    - ⬜ Фильтр «выпускник Востфака» — ждёт ручной верификации alumni
+    - ⬜ Фильтр «выпускник Востфака» — ждет ручной верификации alumni
     - ⬜ Страница ключевых слов
 13. 🅳 ✅ **Качество данных.** Баг соавторов, Bengal taxonomy, связи в CSV — всё сделано.
 14. 🅜 🟡 **Наукометрия и новые фичи.**
@@ -126,9 +126,9 @@ D. 🅜 ✅ **Runbook для .ru-шагов.** `docs/ru-enrichment-runbook.md` �
 
 ---
 
-## VISUALISATION ROADMAP — что ещё можно добавить
+## VISUALISATION ROADMAP — что еще можно добавить
 
-Подробный рабочий список живёт в `article/visual.md`. Текущий набор визуализаций
+Подробный рабочий список живет в `article/visual.md`. Текущий набор визуализаций
 на `findings/visualisations.html` — 9 интерактивных SVG/карт (VIS_001–VIS_010).
 
 ---
@@ -177,6 +177,6 @@ D. 🅜 ✅ **Runbook для .ru-шагов.** `docs/ru-enrichment-runbook.md` �
 
 - `site_data.json` и сгенерированные HTML/CSV/JSON — **производные**; править генератор и
   пересобирать, не сами артефакты.
-- Сохранять явную неопределённость: открытая аффилиация — `(?)`; невалидированная
+- Сохранять явную неопределенность: открытая аффилиация — `(?)`; невалидированная
   классификация не публикуется как `L2`.
 - Перед публикацией: `python validate_publication.py` и `pytest`.

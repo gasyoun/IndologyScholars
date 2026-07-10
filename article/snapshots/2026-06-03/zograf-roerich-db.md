@@ -888,8 +888,8 @@ Use layered extraction:
 - **Layer D (talk-level, optional but recommended):**
   - split by time blocks (e.g., “11:00 – 14:00”, “Перерыв…”),
   - within a block, split talk entries by a pattern like:  
-    - `([А-ЯЁ][а-яё-]+)\s+[А-Я]\.[А-Я]\.\s*\(` for initials-based lists, or  
-    - `([А-ЯЁ][а-яё-]+)\s+[А-ЯЁ][а-яё]+\s+[А-ЯЁ][а-яё]+` for full-name style (2025). citeturn6view0turn3view0turn26view0  
+    - `([А-ЯЕ][а-яе-]+)\s+[А-Я]\.[А-Я]\.\s*\(` for initials-based lists, or  
+    - `([А-ЯЕ][а-яе-]+)\s+[А-ЯЕ][а-яе]+\s+[А-ЯЕ][а-яе]+` for full-name style (2025). citeturn6view0turn3view0turn26view0  
   - store `source_snippet` for each parsed presentation to support audits.
 
 ### Python script outline (requests + BeautifulSoup + psycopg2)

@@ -64,7 +64,7 @@ roster JSON ──► matcher (tests/test_indologist_matching.py) ──► is p
 ### Flow A — participants (enrich, never duplicate)
 
 - Reuse the existing fuzzy matcher (already 60-test covered) to map each roster
-  person to a `person_id`. Surname + given-name with initial/ё-insensitive
+  person to a `person_id`. Surname + given-name with initial/е-insensitive
   verification; reject near-collisions ("Иванов Вячеслав ≠ Иванов Владимир").
 - For a confident match, **do not create a person row**. Instead:
   - Birth/death years → existing birth-year assertion path

@@ -41,7 +41,7 @@ before any row is copied here.
 
 ## `status` vocabulary · статусы
 
-- `verified` — есть `evidence_url` и/или цитата из надёжного источника; запись публикуема.
+- `verified` — есть `evidence_url` и/или цитата из надежного источника; запись публикуема.
 - `candidate` — правдоподобная гипотеза, требует проверки; не публикуется.
 - `disputed` — есть противоречащие источники; запись содержит обе версии в `notes`.
 
@@ -59,7 +59,7 @@ specific period. If unsure, use `status=candidate` and record what is known in
 `evidence_note`. Empty `evidence_url` + `status=verified` is invalid and rejected
 by `pipeline/genealogy.py`.
 
-Строка с `status=verified` допустима **только**, если `evidence_url` ведёт на
+Строка с `status=verified` допустима **только**, если `evidence_url` ведет на
 реально проверяемый источник конкретной связи руководитель–ученик в указанный
 период. Если уверенности нет — `status=candidate` и краткое пояснение в
 `evidence_note`. Пустой `evidence_url` при `status=verified` — ошибка и
@@ -69,7 +69,7 @@ by `pipeline/genealogy.py`.
 
 1. Найти подходящего кандидата в `analytics_output/lineage_candidates.csv` или
    из собственных биографических источников.
-2. Найти подтверждение (РГБ-каталог, автореферат, биография, надёжная статья).
+2. Найти подтверждение (РГБ-каталог, автореферат, биография, надежная статья).
 3. Заполнить строку по схеме выше; для нелатинских URL — ссылка как есть.
 4. Запустить `python -c "from pipeline.genealogy import load_relationships; load_relationships()"`
    — он провалидирует и поднимет ошибку при проблемах.

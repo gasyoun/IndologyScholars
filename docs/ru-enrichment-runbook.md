@@ -42,7 +42,7 @@ Do not commit `.env`, API keys, or `html_cache/` dumps (already git-ignored).
 ## Step 1 — Wikidata life years (highest value, lowest effort)
 
 Turns each roster Q-ID into birth/death years via the stable REST endpoint.
-Without this, dated scholars (e.g. Бётлингк, d. 1904) are mis-filed as living.
+Without this, dated scholars (e.g. Бетлингк, d. 1904) are mis-filed as living.
 
 ```
 python scratch/wikidata_enrich.py --dry-run     # report what would be filled

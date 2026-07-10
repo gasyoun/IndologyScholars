@@ -15,12 +15,12 @@ philology-research-agents/
 ├── shared/ (3 шт.)        ✅ conventions, evidence-scale, source-hierarchy
 ├── editors/ (6 шт.)       ✅ ppv, iij, vdi, vya, jaos, olz
 ├── examples/ (1 шт.)      ✅ example-arya-RU.md — прогон всех 6 агентов
-└── tools/                 ⬜ vak-philology-parser.md (заменён на tools/vak_parser.py)
+└── tools/                 ⬜ vak-philology-parser.md (заменен на tools/vak_parser.py)
 ```
 
 ## Фаза 1 — Python-оркестратор (≈2–3 дня)
 
-**Цель:** лёгкий Python-скрипт, прогоняющий 6 агентов последовательно через Anthropic API.
+**Цель:** легкий Python-скрипт, прогоняющий 6 агентов последовательно через Anthropic API.
 
 ### Компоненты
 

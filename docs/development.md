@@ -163,7 +163,7 @@ Workflow `.github/workflows/rebuild_and_deploy.yml` выполняет загр�
 ## Генеалогический трек
 
 Слой «руководитель/ученик» (issue #9) — курируемый, не выводимый из данных.
-Схема в `curation/teacher_student_schema.md` задаёт CSV из двенадцати колонок
+Схема в `curation/teacher_student_schema.md` задает CSV из двенадцати колонок
 и правило «не выдумывать»: `status=verified` требует непустого `evidence_url`,
 обосновывающего конкретную связь. `pipeline/genealogy.py` — загрузчик с
 построчной валидацией (обязательные поля, словари `relationship_type` и
@@ -173,7 +173,7 @@ Workflow `.github/workflows/rebuild_and_deploy.yml` выполняет загр�
 `article/work_lineage_candidates.py` производит эвристические подсказки в
 `analytics_output/lineage_candidates.csv` по со-авторству (≥ 2 совместных
 докладов) и возрастному разрыву (≥ 15 лет). Это отправные точки для ручной
-проверки, не утверждения как факты. Загрузчик пока не подключён к
+проверки, не утверждения как факты. Загрузчик пока не подключен к
 `site_data.json` и страницам профилей — это отдельный шаг, специально
 оставленный вне стандартной последовательности сборки.
 
@@ -197,14 +197,14 @@ Workflow `.github/workflows/rebuild_and_deploy.yml` выполняет загр�
    `confidence='candidate'` (никогда `confirmed` автоматически), доставая
    ORCID/Wikidata из ответа OpenAlex.
 3. `tools/generate_wikidata_batch.py` генерит QuickStatements v2-батч
-   (`analytics_output/wikidata_batch.txt`) для топ-учёных без Q-ID, с
+   (`analytics_output/wikidata_batch.txt`) для топ-ученых без Q-ID, с
    ISO-9-транслитерацией и блоком источника. См. `wikidata-guide.md`.
    **Известный дефект:** `Q_INDOLOGIST` и `Q_INDOLOGY` сейчас оба указывают
    на `Q8088479` (это *область*, а не *профессия*); исправить Q-ID для
    `P106` до отправки батча.
 
 `tools/build_interrater_sample.py` и `tools/compute_interrater_agreement.py`
-поддерживают расчёт согласованности кодировщиков для тематической разметки.
+поддерживают расчет согласованности кодировщиков для тематической разметки.
 `tools/freeze_article_data.py` пишет неизменяемый снимок корпуса в
 `article/snapshots/<дата>/` под депозицию DOI. Черновик англоязычного data
 paper — `article/data_paper_draft.md` (цель: Research Data Journal for the
@@ -215,7 +215,7 @@ Humanities and Social Sciences, Brill); `notebooks/example_analysis.py` —
 индологов за ~200 лет и кросс-сверяет с участием в Зографских/Рериховских
 чтениях (197 индологов, 60 тестов). Самодокументирован в `scratch/roadmap.md`,
 `scratch/changelog.md`, `scratch/ai_status.md`. Замечание о достижимости: с
-хоста автоматизации надёжно доступен только `en.wikipedia.org`; `ru.wikipedia`
+хоста автоматизации надежно доступен только `en.wikipedia.org`; `ru.wikipedia`
 (РКН) и REST/SPARQL Wikidata — нет, поэтому `enwiki_bridge.py` — основной путь,
 а ru-/Wikidata-зависимые шаги запускаются с хоста, где есть доступ.
 
@@ -233,8 +233,8 @@ Humanities and Social Sciences, Brill); `notebooks/example_analysis.py` —
 | [archive/plans/architecture.md](https://github.com/gasyoun/IndologyScholars/blob/main/archive/plans/architecture.md) | Исторический архитектурный план. |
 | [archive/plans/architecture_implementation_plan.md](https://github.com/gasyoun/IndologyScholars/blob/main/archive/plans/architecture_implementation_plan.md) | Запись выполненного усиления архитектуры. |
 | [../philology-research-agents/README.md](https://github.com/gasyoun/IndologyScholars/blob/main/philology-research-agents/README.md) | Портативный модуль из шести агентов-промптов для филологии, языкознания и востоковедения, с журнальными профилями редакторов (ППВ, IIJ, ВДИ, ВЯ, JAOS, OLZ) и Haiku-промптом для парсинга Перечня ВАК. Спроектирован для выноса в отдельный репозиторий. |
-| [wikidata-guide.md](wikidata-guide.md) | Пошаговое руководство по привязке учёных к Wikidata Q-ID через пайплайн OpenAlex → Wikidata и QuickStatements. |
-| [persons-data-policy-ru.md](persons-data-policy-ru.md) | Какие персональные данные публикует архив, исследовательское основание и порядок исправления/возражения для живущих учёных (английская версия: [persons-data-policy.md](persons-data-policy.md)). |
+| [wikidata-guide.md](wikidata-guide.md) | Пошаговое руководство по привязке ученых к Wikidata Q-ID через пайплайн OpenAlex → Wikidata и QuickStatements. |
+| [persons-data-policy-ru.md](persons-data-policy-ru.md) | Какие персональные данные публикует архив, исследовательское основание и порядок исправления/возражения для живущих ученых (английская версия: [persons-data-policy.md](persons-data-policy.md)). |
 | [../article/data_paper_draft.md](https://github.com/gasyoun/IndologyScholars/blob/main/article/data_paper_draft.md) | Англоязычный data paper: построение корпуса, модель данных, повторное использование (цель: Research Data Journal for the Humanities and Social Sciences). |
 | [roster-merge-design.md](roster-merge-design.md) | Дизайн слияния `scratch/`-ростера русскоязычных индологов в корпус (участники обогащаются, неучастники — отдельным реестром). |
 | [ru-enrichment-runbook.md](ru-enrichment-runbook.md) | Пошаговая инструкция Phase-5 обогащения, которое запускается внутри РФ (годы жизни из Wikidata, ru-инфобоксы, скраперы институтов). |
