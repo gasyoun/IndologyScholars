@@ -16,7 +16,7 @@ DCS/BHS attestation (strata A-E), a different unit and a different question. Its
 `{sheet_id, generated, decided, items:[{id, decision, note}]}` export contract is
 reused here verbatim so one scorer can read either sheet. The Renou scheme itself
 is defined in that repo's RENOU.md, which both IndologyScholars layers already cite
-as `source_url`; the rule tables are currently duplicated (see H452).
+as `source_url`; the rule tables are currently duplicated (see H459).
 
 Usage:
     python tools/build_renou_precision_sheet.py
