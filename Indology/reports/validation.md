@@ -108,6 +108,20 @@
 | atlas_reply_summary.csv | 4 |
 | case_study_candidates.csv | 250 |
 
+## Insight Layers
+
+| table | rows |
+| --- | --- |
+| reply_confidence_year_counts.csv | 94 |
+| topic_decade_share.csv | 48 |
+| list_function_decade_share.csv | 44 |
+| thread_typology.csv | 24033 |
+| case_score_components.csv | 250 |
+| review_queue_summary.csv | 6 |
+| author_participation_cohorts.csv | 15 |
+
+- Insight figures generated: 7
+
 ## Thread Explorer
 
 - Generated thread pages indexed: 250
@@ -196,7 +210,7 @@
 
 - Data dictionary generated: yes
 - Datapackage generated: yes
-- Datapackage resources listed: 55
+- Datapackage resources listed: 77
 - Datapackage resources with missing local paths: 0
 - Citation metadata generated: yes
 - Unified human review index rows: 1,921

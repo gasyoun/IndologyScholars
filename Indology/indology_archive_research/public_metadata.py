@@ -124,7 +124,7 @@ def write_datapackage(output_dir: Path) -> Path:
             "A reproducible metadata-first atlas of the public INDOLOGY-L Pipermail archive. "
             "The package contains harvested metadata, conservative author-normalization audit tables, "
             "topic and list-function summaries, directed reply and co-participation evidence, curation "
-            "queues, validation reports, and static atlas/search pages."
+            "queues, derived insight views, validation reports, and static atlas/search pages."
         ),
         "version": date.today().isoformat(),
         "created": date.today().isoformat(),
@@ -230,6 +230,10 @@ This document describes the generated public-data layer for `{DATASET_TITLE}`. T
 ### Atlas
 
 `atlas_timeline.csv`, `atlas_topic_profiles.csv`, `atlas_list_functions.csv`, `atlas_people_summary.csv`, `atlas_reply_summary.csv`, and `case_study_candidates.csv` translate raw metadata into indologist-facing questions about time, topics, list functions, participation, replies, and candidate threads for close reading.
+
+### Insights
+
+`reply_confidence_year_counts.csv`, `topic_decade_share.csv`, `list_function_decade_share.csv`, `thread_typology.csv`, `case_score_components.csv`, `review_queue_summary.csv`, and `author_participation_cohorts.csv` are additive, metadata-only interpretive views. They explain reply evidence, topic/list-function drift, thread shape, case-score ingredients, review burden, and participation cohorts without inferring influence or importance.
 
 ### Search
 

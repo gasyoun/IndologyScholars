@@ -56,6 +56,13 @@
     "description": "Generated atlas output."
   },
   {
+    "file": "author_participation_cohorts.csv",
+    "relative_path": "data/processed/author_participation_cohorts.csv",
+    "rows": 15,
+    "bytes": 543,
+    "description": "Author participation cohorts by first active decade and active-span class."
+  },
+  {
     "file": "authors_needing_review.csv",
     "relative_path": "data/processed/authors_needing_review.csv",
     "rows": 888,
@@ -89,6 +96,13 @@
     "rows": 197,
     "bytes": 69423,
     "description": "Review packet for case-study candidates without an automatic track suggestion."
+  },
+  {
+    "file": "case_score_components.csv",
+    "relative_path": "data/processed/case_score_components.csv",
+    "rows": 250,
+    "bytes": 24953,
+    "description": "Readable components behind generated case-study candidate scores."
   },
   {
     "file": "case_study_candidates.csv",
@@ -152,6 +166,13 @@
     "rows": 6,
     "bytes": 2346,
     "description": "Responsible-claims guardrails for interpreting reply, co-participation, volume, archive, and author-normalization outputs."
+  },
+  {
+    "file": "list_function_decade_share.csv",
+    "relative_path": "data/processed/list_function_decade_share.csv",
+    "rows": 44,
+    "bytes": 1721,
+    "description": "List-function message counts and within-decade shares."
   },
   {
     "file": "messages.csv",
@@ -224,6 +245,13 @@
     "description": "Generated atlas output."
   },
   {
+    "file": "reply_confidence_year_counts.csv",
+    "relative_path": "data/processed/reply_confidence_year_counts.csv",
+    "rows": 94,
+    "bytes": 3270,
+    "description": "Yearly directed-reply evidence counts by confidence level."
+  },
+  {
     "file": "reply_edges.csv",
     "relative_path": "data/processed/reply_edges.csv",
     "rows": 42741,
@@ -243,6 +271,13 @@
     "rows": 25,
     "bytes": 2644,
     "description": "Audit trail for importing human review notes into curated case metadata."
+  },
+  {
+    "file": "review_queue_summary.csv",
+    "relative_path": "data/processed/review_queue_summary.csv",
+    "rows": 6,
+    "bytes": 539,
+    "description": "Review-burden summary by human-attention domain."
   },
   {
     "file": "search_authors.json",
@@ -287,6 +322,13 @@
     "description": "Index of generated static thread explorer pages for case-study candidates."
   },
   {
+    "file": "thread_typology.csv",
+    "relative_path": "data/processed/thread_typology.csv",
+    "rows": 24033,
+    "bytes": 2516683,
+    "description": "Thread-level typology table with volume, participation, and reply-density evidence."
+  },
+  {
     "file": "threads.csv",
     "relative_path": "data/processed/threads.csv",
     "rows": 24033,
@@ -301,6 +343,13 @@
     "description": "Topic message counts by decade."
   },
   {
+    "file": "topic_decade_share.csv",
+    "relative_path": "data/processed/topic_decade_share.csv",
+    "rows": 48,
+    "bytes": 2003,
+    "description": "Topic message counts and within-decade shares for topic drift analysis."
+  },
+  {
     "file": "topic_year_counts.csv",
     "relative_path": "data/processed/topic_year_counts.csv",
     "rows": 405,
@@ -313,5 +362,110 @@
     "rows": 37,
     "bytes": 415,
     "description": "Message volume by year."
+  },
+  {
+    "file": "author_era_matrix.png",
+    "relative_path": "figures/author_era_matrix.png",
+    "rows": "",
+    "bytes": 136529,
+    "description": "Generated atlas output."
+  },
+  {
+    "file": "author_participation_cohorts.png",
+    "relative_path": "figures/author_participation_cohorts.png",
+    "rows": "",
+    "bytes": 45262,
+    "description": "Publication-ready figure summarizing author participation cohorts."
+  },
+  {
+    "file": "case_score_components.png",
+    "relative_path": "figures/case_score_components.png",
+    "rows": "",
+    "bytes": 113204,
+    "description": "Publication-ready figure explaining generated case-study score components."
+  },
+  {
+    "file": "list_function_decade_mix.png",
+    "relative_path": "figures/list_function_decade_mix.png",
+    "rows": "",
+    "bytes": 64046,
+    "description": "Publication-ready figure showing how list functions changed by decade."
+  },
+  {
+    "file": "monthly_message_volume.png",
+    "relative_path": "figures/monthly_message_volume.png",
+    "rows": "",
+    "bytes": 141158,
+    "description": "Generated atlas output."
+  },
+  {
+    "file": "reply_confidence_over_time.png",
+    "relative_path": "figures/reply_confidence_over_time.png",
+    "rows": "",
+    "bytes": 65721,
+    "description": "Publication-ready figure showing reply evidence confidence over time."
+  },
+  {
+    "file": "review_queue_summary.png",
+    "relative_path": "figures/review_queue_summary.png",
+    "rows": "",
+    "bytes": 42453,
+    "description": "Publication-ready figure summarizing human review burden by domain."
+  },
+  {
+    "file": "thread_coparticipation_network.png",
+    "relative_path": "figures/thread_coparticipation_network.png",
+    "rows": "",
+    "bytes": 335377,
+    "description": "Generated atlas output."
+  },
+  {
+    "file": "thread_length_distribution.png",
+    "relative_path": "figures/thread_length_distribution.png",
+    "rows": "",
+    "bytes": 34841,
+    "description": "Generated atlas output."
+  },
+  {
+    "file": "thread_typology_scatter.png",
+    "relative_path": "figures/thread_typology_scatter.png",
+    "rows": "",
+    "bytes": 205118,
+    "description": "Publication-ready figure comparing thread size, participation, and reply density."
+  },
+  {
+    "file": "topic_decade_heatmap.png",
+    "relative_path": "figures/topic_decade_heatmap.png",
+    "rows": "",
+    "bytes": 86656,
+    "description": "Generated atlas output."
+  },
+  {
+    "file": "topic_share_slope_1990s_2020s.png",
+    "relative_path": "figures/topic_share_slope_1990s_2020s.png",
+    "rows": "",
+    "bytes": 105970,
+    "description": "Publication-ready figure showing the largest topic-share changes between the 1990s and 2020s."
+  },
+  {
+    "file": "topic_small_multiples.png",
+    "relative_path": "figures/topic_small_multiples.png",
+    "rows": "",
+    "bytes": 267501,
+    "description": "Generated atlas output."
+  },
+  {
+    "file": "topic_stream.png",
+    "relative_path": "figures/topic_stream.png",
+    "rows": "",
+    "bytes": 202512,
+    "description": "Generated atlas output."
+  },
+  {
+    "file": "yearly_message_volume.png",
+    "relative_path": "figures/yearly_message_volume.png",
+    "rows": "",
+    "bytes": 34204,
+    "description": "Generated atlas output."
   }
 ]

@@ -224,6 +224,117 @@ The named network tables are public-archive metadata summaries. `direct_reply` r
 | co_participation | Dominik Wujastyk | Matthew Kapstein | Digital resources and tools | 113 |
 | co_participation | Dominik Wujastyk | Matthew Kapstein | General scholarly discussion | 113 |
 
+## Insight Tables And Figures
+
+The insight layer adds derived, metadata-only views that explain change and review priorities without ranking people or inferring influence.
+
+### Reply Evidence Over Time
+
+| year | confidence | reply_rows | resolved_rows | share_of_year |
+| --- | --- | --- | --- | --- |
+| 1990 | thread_inferred | 4 | 4 | 1.0 |
+| 1991 | thread_inferred | 59 | 59 | 0.9672 |
+| 1991 | unresolved | 2 | 0 | 0.0328 |
+| 1992 | thread_inferred | 72 | 72 | 0.9351 |
+| 1992 | unresolved | 5 | 0 | 0.0649 |
+| 1993 | thread_inferred | 187 | 187 | 0.959 |
+| 1993 | unresolved | 8 | 0 | 0.041 |
+| 1994 | thread_inferred | 358 | 358 | 0.9421 |
+| 1994 | unresolved | 22 | 0 | 0.0579 |
+| 1995 | thread_inferred | 997 | 997 | 0.9353 |
+| 1995 | unresolved | 69 | 0 | 0.0647 |
+| 1996 | exact_in_reply_to | 1 | 1 | 0.0006 |
+
+### Topic And List-Function Drift
+
+| decade | primary_topic | message_count | share_of_decade |
+| --- | --- | --- | --- |
+| 1990s | General scholarly discussion | 15551 | 0.7897 |
+| 1990s | History and culture | 1015 | 0.0515 |
+| 1990s | Digital resources and tools | 548 | 0.0278 |
+| 1990s | Texts and philology | 478 | 0.0243 |
+| 1990s | Bibliographic requests | 470 | 0.0239 |
+| 1990s | Veda and ritual | 464 | 0.0236 |
+| 1990s | Announcements and events | 434 | 0.022 |
+| 1990s | Grammar and linguistics | 378 | 0.0192 |
+| 1990s | Manuscripts and epigraphy | 147 | 0.0075 |
+| 1990s | Buddhism and Jainism | 114 | 0.0058 |
+| 1990s | List administration | 63 | 0.0032 |
+| 1990s | Teaching and pedagogy | 30 | 0.0015 |
+
+| decade | list_function | message_count | share_of_decade |
+| --- | --- | --- | --- |
+| 1990s | general discussion | 16519 | 0.8389 |
+| 1990s | philological discussion | 919 | 0.0467 |
+| 1990s | identification/help request | 833 | 0.0423 |
+| 1990s | digital resource/tool | 544 | 0.0276 |
+| 1990s | announcement/event | 333 | 0.0169 |
+| 1990s | debate/controversy | 238 | 0.0121 |
+| 1990s | job/position | 116 | 0.0059 |
+| 1990s | bibliographic request | 96 | 0.0049 |
+| 1990s | list administration | 63 | 0.0032 |
+| 1990s | obituary/memorial | 17 | 0.0009 |
+| 1990s | technical support | 14 | 0.0007 |
+| 2000s | general discussion | 11609 | 0.8168 |
+
+### Thread Typology And Case Scores
+
+| thread_root_id | year | thread_subject | primary_topic | list_function | message_count | author_count | reply_count | reply_density |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 052077 | 2020 | A distraction from the Coronavirus | General scholarly discussion | general discussion | 122 | 19 | 122 | 1.0 |
+| 013924 | 1998 | SV: Paired Horse and PIE breakup | General scholarly discussion | general discussion | 108 | 14 | 106 | 0.9815 |
+| 049514 | 2019 | Non-standard sandhi | Grammar and linguistics | philological discussion | 82 | 10 | 81 | 0.9878 |
+| 015606 | 1999 | Ontology of Ramanuja | General scholarly discussion | general discussion | 74 | 12 | 73 | 0.9865 |
+| 023195 | 2000 | "Science" in India | History and culture | general discussion | 70 | 34 | 68 | 0.9714 |
+| 019623 | 2000 | Millennium | General scholarly discussion | general discussion | 61 | 16 | 60 | 0.9836 |
+| 010710 | 1998 | Tamil words in English | General scholarly discussion | general discussion | 59 | 26 | 57 | 0.9661 |
+| 015672 | 1999 | questions: hymns, latAveZin, manner of death | General scholarly discussion | general discussion | 58 | 20 | 57 | 0.9828 |
+| 049728 | 2019 | Sexism and Bias on INDOLOGY governing committee | General scholarly discussion | debate/controversy | 56 | 35 | 55 | 0.9821 |
+| 014599 | 1998 | 'Siva and Avalokitezvara | General scholarly discussion | general discussion | 55 | 14 | 54 | 0.9818 |
+| 012389 | 1998 | South India geography | General scholarly discussion | general discussion | 53 | 15 | 51 | 0.9623 |
+| 051856 | 2020 | A distraction from the Coronavirus | General scholarly discussion | general discussion | 52 | 16 | 51 | 0.9808 |
+
+| thread_root_id | subject | score | message_component | author_component | reply_component | topic_component | request_component | resolution_component | debate_component |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 052077 | A distraction from the Coronavirus | 427 | 122 | 57 | 244 | 4 | 0 | 0 | 0 |
+| 013924 | SV: Paired Horse and PIE breakup | 388 | 108 | 42 | 212 | 16 | 0 | 10 | 0 |
+| 023195 | "Science" in India | 338 | 70 | 102 | 136 | 20 | 0 | 10 | 0 |
+| 049728 | Sexism and Bias on INDOLOGY governing committee | 285 | 56 | 105 | 110 | 4 | 0 | 0 | 10 |
+| 015606 | Ontology of Ramanuja | 284 | 74 | 36 | 146 | 28 | 0 | 0 | 0 |
+| 049514 | Non-standard sandhi | 282 | 82 | 30 | 162 | 8 | 0 | 0 | 0 |
+| 010710 | Tamil words in English | 279 | 59 | 78 | 114 | 16 | 12 | 0 | 0 |
+| 015672 | questions: hymns, latAveZin, manner of death | 264 | 58 | 60 | 114 | 20 | 12 | 0 | 0 |
+| 019623 | Millennium | 257 | 61 | 48 | 120 | 16 | 12 | 0 | 0 |
+| 020450 | BiBTeX Packages for citing MSS | 247 | 47 | 66 | 92 | 20 | 12 | 10 | 0 |
+| 030283 | Pancaratna of the MBh? | 238 | 44 | 78 | 86 | 8 | 12 | 0 | 10 |
+| 060627 | Johannes Bronkhorst gone | 233 | 39 | 114 | 76 | 4 | 0 | 0 | 0 |
+
+### Review Burden And Participation Cohorts
+
+| domain | review_items | priority | interpretive_note |
+| --- | --- | --- | --- |
+| author_normalization | 888 | high | Ambiguous author strings retained without identity merging. |
+| case_study_review | 250 | medium | Generated case-study candidates awaiting human curation. |
+| count_mismatch | 8 | high | Archive index and mbox count disagreements. |
+| noisy_subjects | 397 | low | Low-signal or mechanical subject lines. |
+| unresolved_replies | 5646 | medium | Reply-like rows without resolved target messages. |
+| named_network_caution | 1717 | medium | Self-reply or named-network rows needing careful interpretation. |
+
+| first_decade | active_span_class | author_count | message_count | thread_count |
+| --- | --- | --- | --- | --- |
+| 1990s | decade-scale | 112 | 4970 | 3732 |
+| 1990s | multi-decade | 120 | 20693 | 15778 |
+| 1990s | one-year | 1038 | 3004 | 2538 |
+| 1990s | short-term | 531 | 9771 | 7718 |
+| 2000s | decade-scale | 89 | 2477 | 2007 |
+| 2000s | multi-decade | 99 | 7436 | 6069 |
+| 2000s | one-year | 257 | 705 | 582 |
+| 2000s | short-term | 127 | 1739 | 1375 |
+| 2010s | decade-scale | 206 | 5030 | 3946 |
+| 2010s | multi-decade | 51 | 3697 | 2665 |
+| 2010s | one-year | 155 | 251 | 231 |
+| 2010s | short-term | 90 | 922 | 666 |
+
 ## Archive Caveats
 
 - Count-mismatch months documented: 8

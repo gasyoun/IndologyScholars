@@ -69,6 +69,13 @@ stall or fail for `list.indology.info`.
 - `data/processed/interpretive_guardrails.csv` - responsible-claims guardrails for interpreting atlas outputs.
 - `data/processed/named_reply_network_summary.csv` - named direct-reply evidence by decade, topic, and confidence.
 - `data/processed/named_coparticipation_network_summary.csv` - named co-participation evidence by topic.
+- `data/processed/reply_confidence_year_counts.csv` - yearly directed-reply evidence counts by confidence level.
+- `data/processed/topic_decade_share.csv` - topic counts and within-decade shares for topic-drift analysis.
+- `data/processed/list_function_decade_share.csv` - list-function counts and within-decade shares.
+- `data/processed/thread_typology.csv` - thread-level size, participation, reply-density, topic, and list-function evidence.
+- `data/processed/case_score_components.csv` - readable case-study score components for candidate-review transparency.
+- `data/processed/review_queue_summary.csv` - review-burden summary by human-attention domain.
+- `data/processed/author_participation_cohorts.csv` - author participation cohorts by first decade and active-span class.
 - `data/processed/search_threads.json` - static search index for generated thread pages.
 - `data/processed/search_authors.json` - static search index for conservative author summaries.
 - `data/processed/search_topics.json` - static search index for topic profiles.
@@ -143,6 +150,15 @@ network summaries are public-archive metadata only:
 `named_reply_network_summary.csv` records direct-reply evidence and flags
 self-reply rows, while `named_coparticipation_network_summary.csv` records
 shared-thread evidence.
+
+## Insight Layer
+
+`python -m indology_archive_research.insights --output-dir .` adds derived
+metadata-only views for reply confidence over time, topic and list-function
+drift, thread typology, case-score components, review burden, and participation
+cohorts. These outputs are additive and preserve the same interpretation limits:
+reply evidence is not influence, co-participation is not collaboration, and
+message volume is not scholarly importance.
 
 ## Review Round Trip
 

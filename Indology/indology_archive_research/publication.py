@@ -9,6 +9,8 @@ from pathlib import Path
 
 import pandas as pd
 
+from .insights import INSIGHT_FIGURES, INSIGHT_TABLE_DESCRIPTIONS
+
 
 def configure_stdio() -> None:
     if hasattr(sys.stdout, "reconfigure"):
@@ -59,6 +61,14 @@ DATASET_DESCRIPTIONS = {
     "topic_decade_counts.csv": "Topic message counts by decade.",
     "monthly_counts.csv": "Message volume by archive month.",
     "yearly_counts.csv": "Message volume by year.",
+    "reply_confidence_over_time.png": "Publication-ready figure showing reply evidence confidence over time.",
+    "topic_share_slope_1990s_2020s.png": "Publication-ready figure showing the largest topic-share changes between the 1990s and 2020s.",
+    "list_function_decade_mix.png": "Publication-ready figure showing how list functions changed by decade.",
+    "thread_typology_scatter.png": "Publication-ready figure comparing thread size, participation, and reply density.",
+    "case_score_components.png": "Publication-ready figure explaining generated case-study score components.",
+    "review_queue_summary.png": "Publication-ready figure summarizing human review burden by domain.",
+    "author_participation_cohorts.png": "Publication-ready figure summarizing author participation cohorts.",
+    **INSIGHT_TABLE_DESCRIPTIONS,
 }
 
 
@@ -87,13 +97,16 @@ def to_int(value: object) -> int:
 def build_manifest(output_dir: Path) -> pd.DataFrame:
     processed_dir = output_dir / "data" / "processed"
     curation_dir = output_dir / "data" / "curation"
+    figures_dir = output_dir / "figures"
     rows = []
-    for path in sorted([*processed_dir.glob("*.csv"), *processed_dir.glob("*.json"), *curation_dir.glob("*.csv")]):
+    for path in sorted([*processed_dir.glob("*.csv"), *processed_dir.glob("*.json"), *curation_dir.glob("*.csv"), *figures_dir.glob("*.png")]):
         if path.name in {"dataset_manifest.csv", "dataset_manifest.json"}:
             continue
         try:
             if path.suffix == ".json":
                 row_count = len(json.loads(path.read_text(encoding="utf-8")))
+            elif path.suffix == ".png":
+                row_count = ""
             else:
                 row_count = sum(1 for _ in path.open("r", encoding="utf-8", errors="replace")) - 1
         except OSError:
@@ -150,6 +163,13 @@ def write_research_report(output_dir: Path) -> Path:
     review_unassigned = read_csv_if_exists(processed_dir / "case_review_queue_unassigned.csv")
     named_replies = read_csv_if_exists(processed_dir / "named_reply_network_summary.csv")
     named_coparticipation = read_csv_if_exists(processed_dir / "named_coparticipation_network_summary.csv")
+    reply_confidence_year = read_csv_if_exists(processed_dir / "reply_confidence_year_counts.csv")
+    topic_decade_share = read_csv_if_exists(processed_dir / "topic_decade_share.csv")
+    list_function_decade_share = read_csv_if_exists(processed_dir / "list_function_decade_share.csv")
+    thread_typology = read_csv_if_exists(processed_dir / "thread_typology.csv")
+    case_score_components = read_csv_if_exists(processed_dir / "case_score_components.csv")
+    review_queue_summary = read_csv_if_exists(processed_dir / "review_queue_summary.csv")
+    author_cohorts = read_csv_if_exists(processed_dir / "author_participation_cohorts.csv")
     interauthor_replies = named_replies[named_replies["is_self_reply"].astype(str).ne("True")] if "is_self_reply" in named_replies.columns else named_replies
 
     resolved_replies = replies[replies["target_author"] != ""] if not replies.empty else pd.DataFrame()
@@ -257,6 +277,32 @@ def write_research_report(output_dir: Path) -> Path:
             "",
             markdown_table(named_coparticipation[["network_type", "source_author", "target_author", "topic", "thread_count"]].head(15) if not named_coparticipation.empty else pd.DataFrame(), 15),
             "",
+            "## Insight Tables And Figures",
+            "",
+            "The insight layer adds derived, metadata-only views that explain change and review priorities without ranking people or inferring influence.",
+            "",
+            "### Reply Evidence Over Time",
+            "",
+            markdown_table(reply_confidence_year.head(12) if not reply_confidence_year.empty else pd.DataFrame(), 12),
+            "",
+            "### Topic And List-Function Drift",
+            "",
+            markdown_table(topic_decade_share.head(12) if not topic_decade_share.empty else pd.DataFrame(), 12),
+            "",
+            markdown_table(list_function_decade_share.head(12) if not list_function_decade_share.empty else pd.DataFrame(), 12),
+            "",
+            "### Thread Typology And Case Scores",
+            "",
+            markdown_table(thread_typology[["thread_root_id", "year", "thread_subject", "primary_topic", "list_function", "message_count", "author_count", "reply_count", "reply_density"]].head(12) if not thread_typology.empty else pd.DataFrame(), 12),
+            "",
+            markdown_table(case_score_components[["thread_root_id", "subject", "score", "message_component", "author_component", "reply_component", "topic_component", "request_component", "resolution_component", "debate_component"]].head(12) if not case_score_components.empty else pd.DataFrame(), 12),
+            "",
+            "### Review Burden And Participation Cohorts",
+            "",
+            markdown_table(review_queue_summary if not review_queue_summary.empty else pd.DataFrame(), 12),
+            "",
+            markdown_table(author_cohorts if not author_cohorts.empty else pd.DataFrame(), 12),
+            "",
             "## Archive Caveats",
             "",
             f"- Count-mismatch months documented: {len(mismatches):,}",
@@ -304,6 +350,13 @@ def write_dashboard(output_dir: Path) -> Path:
     review_unassigned = read_csv_if_exists(processed_dir / "case_review_queue_unassigned.csv")
     named_replies = read_csv_if_exists(processed_dir / "named_reply_network_summary.csv")
     named_coparticipation = read_csv_if_exists(processed_dir / "named_coparticipation_network_summary.csv")
+    reply_confidence_year = read_csv_if_exists(processed_dir / "reply_confidence_year_counts.csv")
+    topic_decade_share = read_csv_if_exists(processed_dir / "topic_decade_share.csv")
+    list_function_decade_share = read_csv_if_exists(processed_dir / "list_function_decade_share.csv")
+    thread_typology = read_csv_if_exists(processed_dir / "thread_typology.csv")
+    case_score_components = read_csv_if_exists(processed_dir / "case_score_components.csv")
+    review_queue_summary = read_csv_if_exists(processed_dir / "review_queue_summary.csv")
+    author_cohorts = read_csv_if_exists(processed_dir / "author_participation_cohorts.csv")
     interauthor_replies = named_replies[named_replies["is_self_reply"].astype(str).ne("True")] if "is_self_reply" in named_replies.columns else named_replies
     figures = [
         "monthly_message_volume.png",
@@ -312,6 +365,7 @@ def write_dashboard(output_dir: Path) -> Path:
         "topic_decade_heatmap.png",
         "thread_length_distribution.png",
         "thread_coparticipation_network.png",
+        *INSIGHT_FIGURES,
     ]
     top_topics_html = topic_profiles[["topic", "message_count", "thread_count", "author_count", "top_list_function"]].head(12).to_html(index=False, classes="data") if not topic_profiles.empty else ""
     top_functions = (
@@ -325,6 +379,13 @@ def write_dashboard(output_dir: Path) -> Path:
     curated_summary_html = curated_summary.to_html(index=False, classes="data") if not curated_summary.empty else ""
     named_replies_html = interauthor_replies[["network_type", "source_author", "target_author", "decade", "primary_topic", "confidence", "reply_count", "is_self_reply"]].head(20).to_html(index=False, classes="data") if not interauthor_replies.empty else ""
     named_coparticipation_html = named_coparticipation[["network_type", "source_author", "target_author", "topic", "thread_count"]].head(20).to_html(index=False, classes="data") if not named_coparticipation.empty else ""
+    reply_confidence_html = reply_confidence_year.tail(12).to_html(index=False, classes="data") if not reply_confidence_year.empty else ""
+    topic_decade_share_html = topic_decade_share.head(12).to_html(index=False, classes="data") if not topic_decade_share.empty else ""
+    list_function_decade_share_html = list_function_decade_share.head(12).to_html(index=False, classes="data") if not list_function_decade_share.empty else ""
+    thread_typology_html = thread_typology[["thread_root_id", "year", "thread_subject", "primary_topic", "list_function", "message_count", "author_count", "reply_count", "reply_density"]].head(15).to_html(index=False, classes="data") if not thread_typology.empty else ""
+    case_components_html = case_score_components[["thread_root_id", "subject", "score", "message_component", "author_component", "reply_component", "topic_component", "request_component", "resolution_component", "debate_component"]].head(15).to_html(index=False, classes="data") if not case_score_components.empty else ""
+    review_summary_html = review_queue_summary.to_html(index=False, classes="data") if not review_queue_summary.empty else ""
+    cohort_html = author_cohorts.to_html(index=False, classes="data") if not author_cohorts.empty else ""
     case_display = thread_index.copy()
     if not case_display.empty:
         case_display["thread_page"] = case_display["page_path"].map(lambda value: f'<a href="{value}">open</a>')
@@ -444,6 +505,29 @@ def write_dashboard(output_dir: Path) -> Path:
   <h3>Co-Participation Evidence</h3>
   {named_coparticipation_html}
 
+  <h2>Insight Layer</h2>
+  <p class="note">These derived views explain change, thread shape, review burden, and participation cohorts from existing metadata only. They do not infer influence, prestige, collaboration, or message-body meaning.</p>
+  <div class="grid">
+    <a href="../figures/reply_confidence_over_time.png"><img src="../figures/reply_confidence_over_time.png" alt="Reply evidence confidence over time"></a>
+    <a href="../figures/topic_share_slope_1990s_2020s.png"><img src="../figures/topic_share_slope_1990s_2020s.png" alt="Topic share changes from 1990s to 2020s"></a>
+    <a href="../figures/list_function_decade_mix.png"><img src="../figures/list_function_decade_mix.png" alt="List function mix by decade"></a>
+    <a href="../figures/thread_typology_scatter.png"><img src="../figures/thread_typology_scatter.png" alt="Thread typology scatterplot"></a>
+    <a href="../figures/case_score_components.png"><img src="../figures/case_score_components.png" alt="Case score components"></a>
+    <a href="../figures/review_queue_summary.png"><img src="../figures/review_queue_summary.png" alt="Review queue summary"></a>
+    <a href="../figures/author_participation_cohorts.png"><img src="../figures/author_participation_cohorts.png" alt="Author participation cohorts"></a>
+  </div>
+  <h3>Reply Evidence Over Time</h3>
+  {reply_confidence_html}
+  <h3>Topic And List-Function Drift</h3>
+  {topic_decade_share_html}
+  {list_function_decade_share_html}
+  <h3>Thread Typology And Case Scores</h3>
+  {thread_typology_html}
+  {case_components_html}
+  <h3>Review Burden And Participation Cohorts</h3>
+  {review_summary_html}
+  {cohort_html}
+
   <h2>Reports And Data</h2>
   <ul>
     <li><a href="../data_dictionary.md">Data dictionary</a></li>
@@ -471,6 +555,13 @@ def write_dashboard(output_dir: Path) -> Path:
     <li><a href="../data/processed/human_review_index.csv">Unified human review index</a></li>
     <li><a href="../data/processed/human_review_summary.json">Human review summary</a></li>
     <li><a href="../data/processed/interpretive_guardrails.csv">Interpretive guardrails table</a></li>
+    <li><a href="../data/processed/reply_confidence_year_counts.csv">Reply confidence over time</a></li>
+    <li><a href="../data/processed/topic_decade_share.csv">Topic decade shares</a></li>
+    <li><a href="../data/processed/list_function_decade_share.csv">List-function decade shares</a></li>
+    <li><a href="../data/processed/thread_typology.csv">Thread typology</a></li>
+    <li><a href="../data/processed/case_score_components.csv">Case score components</a></li>
+    <li><a href="../data/processed/review_queue_summary.csv">Review queue summary</a></li>
+    <li><a href="../data/processed/author_participation_cohorts.csv">Author participation cohorts</a></li>
     <li><a href="../data/processed/named_reply_network_summary.csv">Named direct-reply summary</a></li>
     <li><a href="../data/processed/named_coparticipation_network_summary.csv">Named co-participation summary</a></li>
     <li><a href="../data/processed/search_threads.json">Thread search index</a></li>

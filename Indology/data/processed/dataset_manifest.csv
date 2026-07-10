@@ -7,11 +7,13 @@ atlas_timeline.csv,data/processed/atlas_timeline.csv,37,2983,"Year-by-year atlas
 atlas_topic_profiles.csv,data/processed/atlas_topic_profiles.csv,12,1045,"Topic profiles with time span, thread counts, author counts, and dominant list functions."
 author_aliases.csv,data/processed/author_aliases.csv,3283,592439,"Public author-normalization audit table, one row per raw author string."
 author_eras.csv,data/processed/author_eras.csv,4275,114242,Generated atlas output.
+author_participation_cohorts.csv,data/processed/author_participation_cohorts.csv,15,543,Author participation cohorts by first active decade and active-span class.
 authors_needing_review.csv,data/processed/authors_needing_review.csv,888,189047,Ambiguous author strings retained without identity merging.
 case_review_queue.csv,data/processed/case_review_queue.csv,250,91979,English-only review queue for all generated case-study candidates.
 case_review_queue_infrastructure.csv,data/processed/case_review_queue_infrastructure.csv,16,6861,Review packet for case-study candidates suggested as infrastructure history.
 case_review_queue_philological.csv,data/processed/case_review_queue_philological.csv,37,16413,Review packet for case-study candidates suggested as philological substance.
 case_review_queue_unassigned.csv,data/processed/case_review_queue_unassigned.csv,197,69423,Review packet for case-study candidates without an automatic track suggestion.
+case_score_components.csv,data/processed/case_score_components.csv,250,24953,Readable components behind generated case-study candidate scores.
 case_study_candidates.csv,data/processed/case_study_candidates.csv,250,118620,Data-driven thread candidates for close reading and human curation.
 count_mismatch_audit.csv,data/processed/count_mismatch_audit.csv,8,1724,Documentation of months where archive index and mbox counts differ.
 curated_case_studies.csv,data/processed/curated_case_studies.csv,250,36146,Review-ready curation table seeded from generated case-study candidates.
@@ -21,6 +23,7 @@ first_review_shortlist.csv,data/processed/first_review_shortlist.csv,25,10500,Ba
 human_review_index.csv,data/processed/human_review_index.csv,1921,484519,"Unified reviewer-facing queue for author, case-study, count, noisy-subject, and reply-network checks."
 human_review_summary.json,data/processed/human_review_summary.json,5,519,Machine-readable summary of the unified human review index.
 interpretive_guardrails.csv,data/processed/interpretive_guardrails.csv,6,2346,"Responsible-claims guardrails for interpreting reply, co-participation, volume, archive, and author-normalization outputs."
+list_function_decade_share.csv,data/processed/list_function_decade_share.csv,44,1721,List-function message counts and within-decade shares.
 messages.csv,data/processed/messages.csv,62112,37399305,"Analyzed message metadata with cleaned subjects, topic labels, thread length, and author display strings."
 messages_clean.csv,data/processed/messages_clean.csv,62112,44724787,Message metadata with conservative normalized author labels and author audit fields.
 messages_raw.csv,data/processed/messages_raw.csv,62112,30087143,Harvested message metadata aligned from Pipermail HTML indexes and monthly mbox headers.
@@ -31,16 +34,35 @@ named_reply_network_summary.csv,data/processed/named_reply_network_summary.csv,2
 network_edges.csv,data/processed/network_edges.csv,40703,3729624,Undirected co-participation edges: two authors appear in the same thread.
 noisy_subjects.csv,data/processed/noisy_subjects.csv,397,53066,Generated atlas output.
 parse_issues.csv,data/processed/parse_issues.csv,8,326,Generated atlas output.
+reply_confidence_year_counts.csv,data/processed/reply_confidence_year_counts.csv,94,3270,Yearly directed-reply evidence counts by confidence level.
 reply_edges.csv,data/processed/reply_edges.csv,42741,18793933,"Directed reply edges resolved from In-Reply-To, References, or conservative thread inference."
 reply_network_edges.csv,data/processed/reply_network_edges.csv,20782,1114806,"Aggregated directed reply edge weights by source, target, and confidence."
 review_import_audit.csv,data/processed/review_import_audit.csv,25,2644,Audit trail for importing human review notes into curated case metadata.
+review_queue_summary.csv,data/processed/review_queue_summary.csv,6,539,Review-burden summary by human-attention domain.
 search_authors.json,data/processed/search_authors.json,3150,1168397,Static search index for conservative author summaries.
 search_messages_sample.json,data/processed/search_messages_sample.json,4064,1576231,Compact metadata-only message sample for static search.
 search_threads.json,data/processed/search_threads.json,250,189980,Static search index for generated thread pages and case-study candidate status.
 search_topics.json,data/processed/search_topics.json,12,3297,Static search index for topic profiles.
 skipped_mbox_rows.csv,data/processed/skipped_mbox_rows.csv,9,1626,Extra mbox rows skipped during subject-based archive alignment.
 thread_explorer_index.csv,data/processed/thread_explorer_index.csv,250,71269,Index of generated static thread explorer pages for case-study candidates.
+thread_typology.csv,data/processed/thread_typology.csv,24033,2516683,"Thread-level typology table with volume, participation, and reply-density evidence."
 threads.csv,data/processed/threads.csv,24033,3109741,Reconstructed thread-level metadata.
 topic_decade_counts.csv,data/processed/topic_decade_counts.csv,48,1658,Topic message counts by decade.
+topic_decade_share.csv,data/processed/topic_decade_share.csv,48,2003,Topic message counts and within-decade shares for topic drift analysis.
 topic_year_counts.csv,data/processed/topic_year_counts.csv,405,13007,Topic message counts by year.
 yearly_counts.csv,data/processed/yearly_counts.csv,37,415,Message volume by year.
+author_era_matrix.png,figures/author_era_matrix.png,,136529,Generated atlas output.
+author_participation_cohorts.png,figures/author_participation_cohorts.png,,45262,Publication-ready figure summarizing author participation cohorts.
+case_score_components.png,figures/case_score_components.png,,113204,Publication-ready figure explaining generated case-study score components.
+list_function_decade_mix.png,figures/list_function_decade_mix.png,,64046,Publication-ready figure showing how list functions changed by decade.
+monthly_message_volume.png,figures/monthly_message_volume.png,,141158,Generated atlas output.
+reply_confidence_over_time.png,figures/reply_confidence_over_time.png,,65721,Publication-ready figure showing reply evidence confidence over time.
+review_queue_summary.png,figures/review_queue_summary.png,,42453,Publication-ready figure summarizing human review burden by domain.
+thread_coparticipation_network.png,figures/thread_coparticipation_network.png,,335377,Generated atlas output.
+thread_length_distribution.png,figures/thread_length_distribution.png,,34841,Generated atlas output.
+thread_typology_scatter.png,figures/thread_typology_scatter.png,,205118,"Publication-ready figure comparing thread size, participation, and reply density."
+topic_decade_heatmap.png,figures/topic_decade_heatmap.png,,86656,Generated atlas output.
+topic_share_slope_1990s_2020s.png,figures/topic_share_slope_1990s_2020s.png,,105970,Publication-ready figure showing the largest topic-share changes between the 1990s and 2020s.
+topic_small_multiples.png,figures/topic_small_multiples.png,,267501,Generated atlas output.
+topic_stream.png,figures/topic_stream.png,,202512,Generated atlas output.
+yearly_message_volume.png,figures/yearly_message_volume.png,,34204,Generated atlas output.

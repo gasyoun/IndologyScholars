@@ -32,6 +32,10 @@ This document describes the generated public-data layer for `INDOLOGY-L Archive 
 
 `atlas_timeline.csv`, `atlas_topic_profiles.csv`, `atlas_list_functions.csv`, `atlas_people_summary.csv`, `atlas_reply_summary.csv`, and `case_study_candidates.csv` translate raw metadata into indologist-facing questions about time, topics, list functions, participation, replies, and candidate threads for close reading.
 
+### Insights
+
+`reply_confidence_year_counts.csv`, `topic_decade_share.csv`, `list_function_decade_share.csv`, `thread_typology.csv`, `case_score_components.csv`, `review_queue_summary.csv`, and `author_participation_cohorts.csv` are additive, metadata-only interpretive views. They explain reply evidence, topic/list-function drift, thread shape, case-score ingredients, review burden, and participation cohorts without inferring influence or importance.
+
 ### Search
 
 `search_threads.json`, `search_authors.json`, `search_topics.json`, and `search_messages_sample.json` feed the static search page. Message search remains compact metadata, not full text.
@@ -68,11 +72,13 @@ Human-facing review fields include `curation_status`, `review_track`, `review_de
 | `data/processed/atlas_topic_profiles.csv` | 12 | Topic profiles with time span, thread counts, author counts, and dominant list functions. |
 | `data/processed/author_aliases.csv` | 3283 | Public author-normalization audit table, one row per raw author string. |
 | `data/processed/author_eras.csv` | 4275 | Generated atlas output. |
+| `data/processed/author_participation_cohorts.csv` | 15 | Author participation cohorts by first active decade and active-span class. |
 | `data/processed/authors_needing_review.csv` | 888 | Ambiguous author strings retained without identity merging. |
 | `data/processed/case_review_queue.csv` | 250 | English-only review queue for all generated case-study candidates. |
 | `data/processed/case_review_queue_infrastructure.csv` | 16 | Review packet for case-study candidates suggested as infrastructure history. |
 | `data/processed/case_review_queue_philological.csv` | 37 | Review packet for case-study candidates suggested as philological substance. |
 | `data/processed/case_review_queue_unassigned.csv` | 197 | Review packet for case-study candidates without an automatic track suggestion. |
+| `data/processed/case_score_components.csv` | 250 | Readable components behind generated case-study candidate scores. |
 | `data/processed/case_study_candidates.csv` | 250 | Data-driven thread candidates for close reading and human curation. |
 | `data/processed/count_mismatch_audit.csv` | 8 | Documentation of months where archive index and mbox counts differ. |
 | `data/processed/curated_case_studies.csv` | 250 | Review-ready curation table seeded from generated case-study candidates. |
@@ -82,6 +88,7 @@ Human-facing review fields include `curation_status`, `review_track`, `review_de
 | `data/processed/human_review_index.csv` | 1921 | Unified reviewer-facing queue for author, case-study, count, noisy-subject, and reply-network checks. |
 | `data/processed/human_review_summary.json` | 5 | Machine-readable summary of the unified human review index. |
 | `data/processed/interpretive_guardrails.csv` | 6 | Responsible-claims guardrails for interpreting reply, co-participation, volume, archive, and author-normalization outputs. |
+| `data/processed/list_function_decade_share.csv` | 44 | List-function message counts and within-decade shares. |
 | `data/processed/messages.csv` | 62112 | Analyzed message metadata with cleaned subjects, topic labels, thread length, and author display strings. |
 | `data/processed/messages_clean.csv` | 62112 | Message metadata with conservative normalized author labels and author audit fields. |
 | `data/processed/messages_raw.csv` | 62112 | Harvested message metadata aligned from Pipermail HTML indexes and monthly mbox headers. |
@@ -92,17 +99,36 @@ Human-facing review fields include `curation_status`, `review_track`, `review_de
 | `data/processed/network_edges.csv` | 40703 | Undirected co-participation edges: two authors appear in the same thread. |
 | `data/processed/noisy_subjects.csv` | 397 | Generated atlas output. |
 | `data/processed/parse_issues.csv` | 8 | Generated atlas output. |
+| `data/processed/reply_confidence_year_counts.csv` | 94 | Yearly directed-reply evidence counts by confidence level. |
 | `data/processed/reply_edges.csv` | 42741 | Directed reply edges resolved from In-Reply-To, References, or conservative thread inference. |
 | `data/processed/reply_network_edges.csv` | 20782 | Aggregated directed reply edge weights by source, target, and confidence. |
 | `data/processed/review_import_audit.csv` | 25 | Audit trail for importing human review notes into curated case metadata. |
+| `data/processed/review_queue_summary.csv` | 6 | Review-burden summary by human-attention domain. |
 | `data/processed/search_authors.json` | 3150 | Static search index for conservative author summaries. |
 | `data/processed/search_messages_sample.json` | 4064 | Compact metadata-only message sample for static search. |
 | `data/processed/search_threads.json` | 250 | Static search index for generated thread pages and case-study candidate status. |
 | `data/processed/search_topics.json` | 12 | Static search index for topic profiles. |
 | `data/processed/skipped_mbox_rows.csv` | 9 | Extra mbox rows skipped during subject-based archive alignment. |
 | `data/processed/thread_explorer_index.csv` | 250 | Index of generated static thread explorer pages for case-study candidates. |
+| `data/processed/thread_typology.csv` | 24033 | Thread-level typology table with volume, participation, and reply-density evidence. |
 | `data/processed/threads.csv` | 24033 | Reconstructed thread-level metadata. |
 | `data/processed/topic_decade_counts.csv` | 48 | Topic message counts by decade. |
+| `data/processed/topic_decade_share.csv` | 48 | Topic message counts and within-decade shares for topic drift analysis. |
 | `data/processed/topic_year_counts.csv` | 405 | Topic message counts by year. |
 | `data/processed/yearly_counts.csv` | 37 | Message volume by year. |
+| `figures/author_era_matrix.png` |  | Generated atlas output. |
+| `figures/author_participation_cohorts.png` |  | Publication-ready figure summarizing author participation cohorts. |
+| `figures/case_score_components.png` |  | Publication-ready figure explaining generated case-study score components. |
+| `figures/list_function_decade_mix.png` |  | Publication-ready figure showing how list functions changed by decade. |
+| `figures/monthly_message_volume.png` |  | Generated atlas output. |
+| `figures/reply_confidence_over_time.png` |  | Publication-ready figure showing reply evidence confidence over time. |
+| `figures/review_queue_summary.png` |  | Publication-ready figure summarizing human review burden by domain. |
+| `figures/thread_coparticipation_network.png` |  | Generated atlas output. |
+| `figures/thread_length_distribution.png` |  | Generated atlas output. |
+| `figures/thread_typology_scatter.png` |  | Publication-ready figure comparing thread size, participation, and reply density. |
+| `figures/topic_decade_heatmap.png` |  | Generated atlas output. |
+| `figures/topic_share_slope_1990s_2020s.png` |  | Publication-ready figure showing the largest topic-share changes between the 1990s and 2020s. |
+| `figures/topic_small_multiples.png` |  | Generated atlas output. |
+| `figures/topic_stream.png` |  | Generated atlas output. |
+| `figures/yearly_message_volume.png` |  | Generated atlas output. |
 

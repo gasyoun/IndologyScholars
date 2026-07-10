@@ -1,0 +1,7 @@
+domain,review_items,priority,interpretive_note
+author_normalization,888,high,Ambiguous author strings retained without identity merging.
+case_study_review,250,medium,Generated case-study candidates awaiting human curation.
+count_mismatch,8,high,Archive index and mbox count disagreements.
+noisy_subjects,397,low,Low-signal or mechanical subject lines.
+unresolved_replies,5646,medium,Reply-like rows without resolved target messages.
+named_network_caution,1717,medium,Self-reply or named-network rows needing careful interpretation.
