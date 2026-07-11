@@ -6,7 +6,7 @@
     "pipeline_version": "2026-05-25",
     "generator": "generate_publication_pages.py"
   },
-  "file_count": 4151,
+  "file_count": 4156,
   "files": [
     {
       "path": "404.html",
@@ -9779,6 +9779,11 @@
       "sha256": "d0777911f55b8df41888dc180977623387f364e99b607a1920bec5de65f59986"
     },
     {
+      "path": "docs/link-integrity-fair-audit-07.2026.md",
+      "size_bytes": 8456,
+      "sha256": "6940733a1571aabca4711840d7ae53ff9e592e1249578c57e14ac9d5f00a72de"
+    },
+    {
       "path": "docs/onboarding-zograf-contributor-ru.md",
       "size_bytes": 13685,
       "sha256": "e832ee75d2df1a6ddb0408eea3b3f36c00744fe5c5f22b31275d7f226af4f70e"
@@ -9876,7 +9881,7 @@
     {
       "path": "download-data.html",
       "size_bytes": 37519,
-      "sha256": "d119498ba1c7055c474e2840e28ea9701eab1e687ff0c2f438cd27e79d26d535"
+      "sha256": "85fbaf7031d76f787fe46a26425a97d4e3f4ea1a81afe2fa7e9f61f0ed164184"
     },
     {
       "path": "en.html",
@@ -9911,7 +9916,7 @@
     {
       "path": "findings/visualisations.html",
       "size_bytes": 493631,
-      "sha256": "b29291935c177d014313b085cea5e69d7a27c7553bef3c31ee6432540add5afb"
+      "sha256": "4f93d13b9d32f1ce8dd8e2a7f33d8bf6f3311abcb6dc5a6fdd3a3236aa90a399"
     },
     {
       "path": "gatekeeping-en.html",
@@ -9932,11 +9937,6 @@
       "path": "gumilyov/index.html",
       "size_bytes": 59766,
       "sha256": "71ebe40eb570662e228fab13352f6f8cdd7f195d12fe6efc05f60e22d73cd8a4"
-    },
-    {
-      "path": "gumilyov/level-0.html",
-      "size_bytes": 14067,
-      "sha256": "cd5eff975e592fe21baba49f30fb310274387f42a6dbfce6d71180dbb7690163"
     },
     {
       "path": "gumilyov/level-1.html",
@@ -19344,6 +19344,11 @@
       "sha256": "faff2713ccf0ece43c355df7bbcd3b61c1c7bc67d2e501ab85fb66cd16b07b9f"
     },
     {
+      "path": "s/kogan.html",
+      "size_bytes": 837,
+      "sha256": "945380a0d9587965fd5bb7234369667c23a1e21e3087ce510cc2468e87e45645"
+    },
+    {
       "path": "s/kokova-yuliya.html",
       "size_bytes": 36198,
       "sha256": "a619f3b0bbffe0fbea84e839d94281e2ef0ebf8e33fe51e6eb9aa79ba232d67a"
@@ -19707,6 +19712,11 @@
       "path": "s/meitarchiyan-margarita.html",
       "size_bytes": 26380,
       "sha256": "0966595ee4887a34fb71370242b7b8da09d26e8632f856047e29a0d1b8d4db3e"
+    },
+    {
+      "path": "s/mekhakyan-6e2007.html",
+      "size_bytes": 887,
+      "sha256": "c714f35693230f20c5a0d7884d612856d7f381aceec5758641a93f7a3d6cb1ab"
     },
     {
       "path": "s/mekhakyan-fef030.html",
@@ -20159,6 +20169,11 @@
       "sha256": "3813cee1167abfd2c277814e688c3b8a4932750c67aaf76ece30111379e96e10"
     },
     {
+      "path": "s/shrestkha.html",
+      "size_bytes": 895,
+      "sha256": "6d43e418f6b8d63494e505ff8da9a4119cb1301e2852070e18f44ba4bb72f3fc"
+    },
+    {
       "path": "s/shustova-alla.html",
       "size_bytes": 49129,
       "sha256": "8fe520f1f8988111942712aaed9019b82c7ea076e21c22f1a881e47576254865"
@@ -20394,6 +20409,11 @@
       "sha256": "e70249905ff603862045f97552f8418da104df82cd64e8457e70514d6a4a368c"
     },
     {
+      "path": "s/v-m-shelkovich.html",
+      "size_bytes": 897,
+      "sha256": "476eee26b18f6515d55e12cc38109a4dec4f54dd3dd7828815bdb1dd328e794a"
+    },
+    {
       "path": "s/valanchyunas.html",
       "size_bytes": 22351,
       "sha256": "a102100309049ee56fccd48bf690ab2a8d4bf9fb0716cc331f25d42f7e2a8e52"
@@ -20542,6 +20562,11 @@
       "path": "s/yuditskaya-117242.html",
       "size_bytes": 960,
       "sha256": "17d429f65bf5f45cf3d3fae42486e79585a89446de79706949771c6a30201069"
+    },
+    {
+      "path": "s/yuditskaya-c4d444.html",
+      "size_bytes": 960,
+      "sha256": "84791f90611e90dcf00e0d4b9c9060fdc3c0b30d12e116a742e3993c126ab43a"
     },
     {
       "path": "s/yulia-alikhanova.html",
