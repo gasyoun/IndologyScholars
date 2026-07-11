@@ -96,9 +96,18 @@ jobs:
           # alongside site_data_timeline.json — generate_site_data.py rewrites
           # both from one dict, but omitting the chunks here let them rot until
           # tests/test_site_data_schema.py::test_site_data_timeline_chunks failed.
-          git add html_cache/*.html conferences.db site_data.json site_data_summary.json site_data_scholars.json site_data_timeline.json site_data_timeline_*.json site_data_network.json public_ids.json analytics_output/*.csv analytics_output/*.json indology_scholars_analytics.md s/*.html
+          git add html_cache/*.html conferences.db site_data.json site_data_summary.json site_data_scholars.json site_data_timeline.json site_data_timeline_*.json site_data_network.json public_ids.json analytics_output/*.csv analytics_output/*.json indology_scholars_analytics.md
           git add article/hypothesis_output/*.csv article/hypothesis_output/*.json article/hypothesis_output/*.md article/figures/*.svg
-          git add assets/*.png assets/*.svg assets/*.js assets/img/*.png assets/img/*.svg conferences/*.html p/*.html generations/*.html themes/*.html topics/*.html meso/*.html gumilyov/*.html videos/*.html findings/*.html keywords/*.html cities/*.html institutions/*.html
+          git add assets/*.png assets/*.svg assets/*.js assets/img/*.png assets/img/*.svg
+          # Generated page dirs (every file is a rebuilt .html) use `git add -A` so
+          # that when a person/entity is rekeyed or removed, the STALE page is pruned
+          # instead of lingering. A `<dir>/*.html` glob can only stage adds/mods — it
+          # cannot stage a deletion of a file that vanished from disk, so an orphaned
+          # page stays in the committed tree. That is exactly how s/PERS_340348fc.html
+          # (old Коссович id, rekeyed in PR #83/#84) survived and failed
+          # validate_publication.py's scholar-page check. validate runs earlier in this
+          # job, so a broken build can never reach this step to mass-delete pages.
+          git add -A -- s/ p/ conferences/ generations/ themes/ topics/ meso/ gumilyov/ videos/ findings/ keywords/ cities/ institutions/
           git add sitemap*.xml robots.txt site.webmanifest offline.html service-worker.js search.html search-index.json CITATION.cff datapackage.json data_dictionary.md
           git add curation/*.csv docs/*.md
           git add 404.html en.html download-data.html data-quality.html methodology.html data-sources.html known-limitations.html how-to-cite.html metrics-guide.html classification-criteria.html networks.html sociology.html sociology-en.html gatekeeping.html gatekeeping-en.html known-relationships.html voting.html index.html
