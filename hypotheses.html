@@ -856,6 +856,14 @@ ER  - </pre>
                     setupFilters();
                     setupExport();
                     setupCitation();
+
+                    // Deep links (#H16 etc.): card ids exist only after the
+                    // dynamic render, so the browser's own fragment scroll
+                    // has already failed by now — restore it manually.
+                    if (window.location.hash) {
+                        const target = document.getElementById(window.location.hash.slice(1));
+                        if (target) target.scrollIntoView({ block: 'start' });
+                    }
                 } catch (err) {
                     console.error("Failed to load hypotheses:", err);
                     document.getElementById('hypotheses-grid').innerHTML = currentLang === 'en' ? '<div class="no-results">Failed to load hypotheses database.</div>' : '<div class="no-results">Ошибка загрузки данных.</div>';

@@ -11831,6 +11831,18 @@ def generate_gumilyov_pages(data, records):
             ),
         )
 
+    # Remove stale level pages this build no longer writes (an empty-level
+    # page left on disk keeps re-entering the on-disk sitemap globs and can
+    # carry links to records that have since left the corpus).
+    written_level_names = {
+        Path(gumilyov_path(level)).name
+        for level in sorted(GUMILYOV_LEVELS)
+        if level != 0 or grouped.get(level)
+    }
+    for stale in Path("gumilyov").glob("level-*.html"):
+        if stale.name not in written_level_names:
+            stale.unlink()
+
     gumilyov_motivation = render_gumilyov_rhetoric_examples(records_by_id)
     index_body = f"""
         <header>
