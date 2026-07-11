@@ -9600,8 +9600,8 @@
     },
     {
       "path": "curation/disciplines.csv",
-      "size_bytes": 4297,
-      "sha256": "84b9cb7528ab624a95cc36d945a1ff9fb0d3edc658ca04472e247d607f7322f6"
+      "size_bytes": 4229,
+      "sha256": "c4f8396643f744f7af07c911abad4a0fdd9be8ef85f9deff73d48be65a79fad8"
     },
     {
       "path": "curation/eastern_faculty_alumni.csv",
@@ -9630,8 +9630,8 @@
     },
     {
       "path": "curation/meso_discipline_crosswalk.csv",
-      "size_bytes": 5895,
-      "sha256": "ed5ab53b253beb131083a10e32a176c83e7e0b51e3a8ca1cc3b487a53986e980"
+      "size_bytes": 6132,
+      "sha256": "2d3ebce8b947fdeaf23a59d08dcd7eaeea501bb371b1172504cc172c0f452bf2"
     },
     {
       "path": "curation/non_participant_indologists.csv",
@@ -9715,8 +9715,8 @@
     },
     {
       "path": "docs/ROADMAP_SANSKRITOLOGY_INDOLOGY_SECTIONS_2026_2027.md",
-      "size_bytes": 26036,
-      "sha256": "579e564d71251489e6e2c88392c1f7023bfc919dd5eb558262ff66775453a5f4"
+      "size_bytes": 22908,
+      "sha256": "ef7a64faf42de9eab52c6e1f5f5bf797bc22b01838a77831932b7103ab72fb48"
     },
     {
       "path": "docs/academic-career-risk-audit-2026-05-31.md",
@@ -9911,7 +9911,7 @@
     {
       "path": "findings/visualisations.html",
       "size_bytes": 493631,
-      "sha256": "55d3b849c68d0702e7cbc8db7230a98c6e05103fbee27d233807eea55e613cf2"
+      "sha256": "8912ebe87c7313179698618b589a302ac66adfc0868ba01425a054655c1d9f69"
     },
     {
       "path": "gatekeeping-en.html",
@@ -9975,8 +9975,8 @@
     },
     {
       "path": "indologiya-v-rossii.html",
-      "size_bytes": 20301,
-      "sha256": "b4d4d19cfda4cccfa554956faae9667f975da401b11dc493c47bdb2c78042fc1"
+      "size_bytes": 20491,
+      "sha256": "ef259f828400f37adf1d3df0b66ac70ef04129acd86143a69cdc1769166c9d7d"
     },
     {
       "path": "institutions/if-ran.html",
@@ -20600,8 +20600,8 @@
     },
     {
       "path": "sanskritologiya-v-rossii.html",
-      "size_bytes": 20562,
-      "sha256": "31a464df58971e6a4c225dddf353dc7b017ba107756e6e4971d2610f0695d1cd"
+      "size_bytes": 20752,
+      "sha256": "6bc2de211b04454823695f21f19fe1662113935f4267828eb58d2c0ba9a2386d"
     },
     {
       "path": "search-index.json",
@@ -20625,8 +20625,8 @@
     },
     {
       "path": "site_data.json",
-      "size_bytes": 4876759,
-      "sha256": "cbe0b589569f7747cda1b99af2cb9106d069d7e8e010cf5fbb061062c9f26da8"
+      "size_bytes": 4876007,
+      "sha256": "784c47b0e7990a8fcbd4be5e6d586aff953a58ca09fa74bb44fc272b6c23af2f"
     },
     {
       "path": "sitemap.xml",
