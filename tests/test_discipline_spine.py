@@ -68,6 +68,22 @@ def test_unattested_confidence_is_zero(conn):
     assert all(c == 0.0 for c in confidences), confidences
 
 
+def test_decision_d1_ratified_all_four_proposed_codes(conn):
+    """D1 (10-07-2026) ratified literature/linguistics/ethnography/history_of_indology.
+
+    Every subject discipline is now `core` and hangs under the indology umbrella;
+    only the `unattested` sentinel sits outside. No `proposed` code may survive
+    without a fresh ruling.
+    """
+    rows = dict(conn.execute("SELECT discipline_id, status FROM discipline"))
+    for code in ("literature", "linguistics", "ethnography", "history_of_indology"):
+        assert rows[code] == "core", f"{code} should be ratified by D1, got {rows[code]!r}"
+    assert "proposed" not in rows.values(), (
+        f"unratified codes present: {[c for c, s in rows.items() if s == 'proposed']}"
+    )
+    assert rows["unattested"] == "sentinel"
+
+
 def test_unattested_is_not_a_child_of_indology(conn):
     parent = conn.execute(
         "SELECT parent_discipline_id FROM discipline WHERE discipline_id = 'unattested'"
