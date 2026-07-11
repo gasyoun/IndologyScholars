@@ -1,0 +1,61 @@
+/* Sustainable-направление (H563/H660): переопределение токенов assets/index.css.
+   Подключается ПОСЛЕ index.css — раскладка и логика не меняются, меняется кожа:
+   светлая схема «мох и глина» по умолчанию, тёмная — из настроек системы;
+   системные шрифты вместо Google Fonts; без tilt-декора и свечений. */
+
+:root {
+  color-scheme: light dark;
+
+  /* светлая схема — мох и глина */
+  --bg-primary: #f3f1ea;
+  --bg-secondary: #ecebe0;
+  --bg-card: #faf9f4;
+  --bg-card-hover: #f1efe6;
+  --border-color: #cfd3bf;
+  --border-hover: #3f5a33;
+  --text-primary: #26301f;
+  --text-secondary: #4c5941;
+  --text-muted: #5f6b52;
+  --accent-primary: #3f5a33;
+  --accent-secondary: #8a5a34;
+  --accent-gradient: linear-gradient(135deg, #3f5a33 0%, #5d7a4e 100%);
+  --accent-glow: rgba(63, 90, 51, 0.10);
+
+  /* системные шрифты — 0 веб-шрифтов */
+  --font-display: system-ui, "Segoe UI", sans-serif;
+  --font-sans: system-ui, "Segoe UI", sans-serif;
+  --font-mono: ui-monospace, Consolas, monospace;
+
+  /* спокойнее анимации */
+  --transition: all 0.15s ease;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-primary: #161a14;
+    --bg-secondary: #1b2018;
+    --bg-card: #1d221a;
+    --bg-card-hover: #232a1f;
+    --border-color: #333c2c;
+    --border-hover: #9fc285;
+    --text-primary: #e4e6da;
+    --text-secondary: #bcc7ab;
+    --text-muted: #9aa789;
+    --accent-primary: #9fc285;
+    --accent-secondary: #cf9a63;
+    --accent-gradient: linear-gradient(135deg, #9fc285 0%, #7ea368 100%);
+    --accent-glow: rgba(159, 194, 133, 0.10);
+  }
+}
+
+/* плашка макета — без правки разметки */
+body::before {
+  content: "Макет · sustainable web design (H563/H660) · рабочая страница: index.html в корне";
+  display: block;
+  padding: 6px 14px;
+  background: var(--bg-secondary);
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border-color);
+  font: 12px/1.4 system-ui, sans-serif;
+  text-align: center;
+}
