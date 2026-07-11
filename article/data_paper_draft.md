@@ -14,7 +14,8 @@ includes normalized speaker identities, institutional affiliations with
 explicit provenance tagging, thematic classification (L1/L2), a three-level
 argument-scale coding (G1–G3), video-record mapping, and external authority
 identifiers (Wikidata, ORCID, VIAF, OpenAlex). All data are published as
-SQLite, CSV, JSON, and RDF/Turtle under open licenses with a Frictionless
+SQLite, CSV, JSON, and RDF/Turtle under open licenses (CC BY 4.0 for the
+derived metadata, Apache-2.0 for the pipeline code) with a Frictionless
 Data Package manifest. The dataset supports prosopographic research,
 scientometric studies of conference-based scholarly communities, digital
 humanities methodology development, and cross-venue comparison of
@@ -53,12 +54,14 @@ scholars can access and extend it.
 ### 2.1 Source material
 
 The primary sources are the published conference programs for 40 event
-records (22 program years). Programs were preserved as HTML in
-`html_cache/`. Three supplementary data layers are manually curated:
+records (22 program years): the Zograf Readings (2004–2026, 22 events) and
+the Roerich Readings (2007–2025, 18 events). Programs were preserved as
+HTML in `html_cache/`. Five supplementary data layers are manually curated:
 
-- `authority_ids.json` — verified external person identifiers
+- `authority_ids.json` — external person identifiers with per-record confidence
 - `curation/verified_affiliation_spans.csv` — dated institutional trajectories
 - `curation/teacher_student.csv` — advisor/student relationships
+- `curation/historical_persons.csv` — pre-Soviet and Soviet-era historical Indologists (see §3.1)
 - `assets/data/geography.json` — city name aliases, coordinates, and Wikidata Q-IDs
 
 ### 2.2 Pipeline
@@ -129,10 +132,22 @@ until a new institution or end date is documented.
 ### 3.1 Database schema
 
 The SQLite database (`conferences.db`) uses a normalized relational schema
-with 10 tables: `person`, `presentation`, `presentation_person`, `session`,
-`event_day_venue`, `event_day`, `event`, `event_series`, `venue`, and
-`media`. The `presentation_person` table supports multi-author presentations
-with role labeling (`speaker`, `coauthor`).
+with 19 tables. The event/program core comprises `person`, `presentation`,
+`presentation_person`, `session`, `event_day_venue`, `event_day`, `event`,
+`event_series`, `venue`, and `media`; a curated knowledge layer adds
+`organization`, `place`, `discipline`, `person_discipline`, `work`,
+`work_discipline`, `person_role`, `relation`, and `data_assertion` (the
+last stores per-fact provenance for curated assertions). The
+`presentation_person` table supports multi-author presentations with role
+labeling (`speaker`, `coauthor`).
+
+The `person` table carries a `person_kind` discriminator separating the 268
+conference participants from a curated historical prosopographical layer of
+26 pre-contemporary Russian Indologists (`historical`), seeded from
+`curation/historical_persons.csv` with Wikidata-sourced dates and
+identifiers. All presentation-level counts reported in this paper (and all
+published aggregate statistics) are computed over conference participants
+only, via the `presentation_person` join.
 
 ### 3.2 Public dataset
 
@@ -159,21 +174,26 @@ where available. The graph is importable into standard triple stores
 
 ### 3.4 External identifiers
 
-Public authority records in `authority_ids.json` include:
+Public authority records in `authority_ids.json` carry a per-record
+confidence field (`manual`/`confirmed` vs. `candidate`); machine-suggested
+matches enter the file only as `candidate` and are excluded from verified
+counts until a human confirms them. Coverage over the 268 scholar profiles:
 
-| Identifier | Coverage (as of 2026-06-03) |
-|------------|------------------------------|
-| Wikidata | 0.4% |
-| ORCID | 0.4% |
-| VIAF | 0% |
-| OpenAlex | 0% |
-| RINC/eLIBRARY | 0% |
-| Google Scholar | tracked but not yet mapped |
+| Identifier | Coverage (as of 2026-07-11) | Of which unverified `candidate` |
+|------------|------------------------------|---------------------------------|
+| Wikidata | 3 (1.1%) | 2 |
+| ORCID | 7 (2.6%) | 6 |
+| OpenAlex | 14 (5.2%) | 13 |
+| VIAF | 0 | — |
+| RINC/eLIBRARY | 0 | — |
+| Google Scholar | tracked but not yet mapped | — |
 
 Coverage is low because the mapping requires human verification. OpenAlex
-API-based candidate matching has been run (122 scholars returned at least
-one candidate), and human review is ongoing. Once Wikidata items are
-created, VIAF harvesting follows automatically.
+API-based candidate matching has been run (181 scholars returned at least
+one candidate, 496 candidate rows in
+`analytics_output/openalex_author_candidates.csv`), and all rows currently
+await manual review. Once Wikidata items are created, VIAF harvesting
+follows automatically.
 
 ## 4. Reuse Potential
 
@@ -187,10 +207,11 @@ classification.
 
 ### 4.2 Network analysis
 
-Five network edge types are exported:
+Six network edge types are exported (`analytics_output/network_edges.csv`):
 - `person_event` — participation traces
 - `person_organization` — affiliation links
 - `person_theme` — thematic engagement
+- `organization_theme` — institutional thematic profiles
 - `person_person_copresentation` — co-authorship (reviewed)
 - `person_person_same_session` — session co-presence
 
@@ -236,21 +257,48 @@ and a download page.
 |--------|------|-------------|
 | SQLite | `conferences.db` | Normalized relational database |
 | JSON | `site_data.json` | Master public dataset |
-| CSV | `analytics_output/*.csv` | 40+ statistical and review exports |
+| CSV | `analytics_output/*.csv` | 100+ statistical and review exports |
 | RDF/Turtle | `indology_knowledge_graph.ttl` | Linked data graph |
-| Data Package | `datapackage.json` | Frictionless metadata manifest |
+| Data Package | `datapackage.json` | Frictionless manifest (40 curated resources) |
 | CFF | `CITATION.cff` | Citation metadata |
 
-### 5.3 Archived snapshot
+### 5.3 Licensing and reuse conditions
 
-A frozen version of the dataset used for publication is archived at:
+The repository is dual-licensed, following the split declared in
+`datapackage.json`:
+
+- **Code** (the build pipeline, generators, validators, and tools) is
+  licensed under **Apache License 2.0** (`LICENSE`).
+- **Derived metadata** (the normalized dataset: `conferences.db`,
+  `site_data.json`, analytics CSV exports, and the RDF graph) is licensed
+  under **Creative Commons Attribution 4.0 International (CC BY 4.0)**.
+
+The underlying conference programs are short factual listings that were
+publicly distributed by the organizers; the dataset reproduces normalized
+factual metadata (names, titles, dates, venues, affiliations), not the
+prose of any copyrighted publication. Reusers should cite the dataset as
+described in §7. Data about living persons are limited to public
+professional facts; correction and objection procedures are documented in
+`docs/persons-data-policy.md`.
+
+### 5.4 Archived snapshot and data availability
+
+A frozen version of the dataset used for publication will be archived at:
 
 **Gasūns, M. (2026).** *IndologyScholars: Archive of Talks in Russian
 Indology* [Data set]. Zenodo. https://doi.org/10.5281/zenodo.XXXXXXX
 (Replace XXXXXXX with actual Zenodo ID after upload.)
 
 The snapshot includes `conferences.db`, `site_data.json`, all analytics
-CSVs, curation files, and a SHA-256 manifest.
+CSVs, curation files, and a SHA-256 manifest. Snapshots are produced by
+`tools/freeze_article_data.py` into `article/snapshots/<date>/`; the
+snapshot archived for this paper will be re-frozen from the repository
+state current at deposition time. Deposition metadata is pre-staged in
+`article/zenodo_metadata.json`; the Zenodo deposit itself has **not yet
+been performed** and the DOI above is a placeholder until it is. Until the
+DOI exists, the dataset is fully accessible through the GitHub repository
+and the live site, both of which carry the same licensing terms as the
+future deposit.
 
 ## 6. Limitations
 
@@ -272,9 +320,15 @@ CSVs, curation files, and a SHA-256 manifest.
 4. **Classification subjectivity.** L1 and argument-scale codes were
    assigned by a single coder with LLM assistance, and the strict G2/G3
    audit pass was a same-model check rather than an independent rating.
-   A blind, stratified inter-rater sample (all G3 items, oversampled G2)
-   has been prepared; agreement statistics (Cohen's κ with bootstrap CIs,
-   Krippendorff's α, Gwet's AC1) will be reported before final deposition.
+   A blind, stratified inter-rater sample (all G3 items, oversampled G2,
+   n=100) has been prepared. A cross-model sanity check (a second LLM
+   family coding the blind sample from title/year/series only) yielded
+   Cohen's κ = 0.670 [95% CI 0.554–0.776] for L1 and κ = 0.553
+   [0.400–0.694] for the argument level, with the G2/G3 boundary the
+   weakest region (`docs/classification-reliability-packet.md`). This is
+   cross-model agreement, not human inter-rater reliability; the human
+   second-coder statistics on the same blind sheet will be reported before
+   final deposition.
 
 5. **Gender attribution.** Gender is inferred from Russian name morphology
    (patronymic, given name, surname declension), not self-identification.
@@ -286,9 +340,25 @@ CSVs, curation files, and a SHA-256 manifest.
    `docs/persons-data-policy.md`.
 
 6. **Identifier coverage.** Wikidata, ORCID, VIAF, and OpenAlex mappings
-   are minimal. This limits cross-dataset linking and international
-   discoverability. A candidate-matching pipeline exists and results are
-   under human review.
+   are minimal (§3.4), and most existing mappings are machine-suggested
+   `candidate` records awaiting human confirmation. This limits
+   cross-dataset linking and international discoverability. A
+   candidate-matching pipeline exists and results are under human review.
+
+7. **Name-heuristic false positives.** Identity resolution and roster
+   expansion rely on heuristics over Russian name morphology (patronymic
+   detection, transliteration matching, name-order parsing), and these
+   heuristics are known to produce occasional false positives — for
+   example, surnames ending in *-вич* were at one point mis-parsed as
+   patronymics, creating a spurious person entry that was later detected
+   and removed. All counts in this paper are therefore re-derived from the
+   committed data files by an automated gate
+   (`article/check_data_paper_numbers.py`) rather than quoted from earlier
+   prose, machine-suggested identity links are quarantined behind the
+   `candidate` confidence status until verified, and the person-alias
+   override table (`curation/person_aliases.csv`) records manual
+   corrections. Residual undetected merge or split errors in low-frequency
+   names cannot be excluded.
 
 ## 7. Citation
 
@@ -296,11 +366,12 @@ When using this dataset, please cite both the data paper and the archived
 snapshot:
 
 > Gasūns, M. (2026). Russian Indological Research Archive: A Conference
-> Corpus for Prosopography. *[Journal name, pending submission]*.
+> Corpus for Prosopography. *Research Data Journal for the Humanities and
+> Social Sciences* (submission pending).
 >
 > Gasūns, M. (2026). *IndologyScholars: Archive of Talks in Russian
 > Indology* [Data set]. Zenodo. https://doi.org/10.5281/zenodo.XXXXXXX
-> (Update after Zenodo upload.)
+> (Update after Zenodo upload; see §5.4 — deposit not yet performed.)
 
 ## 8. Acknowledgments
 
@@ -319,5 +390,7 @@ humanities community for the tools that made this corpus possible.
 
 ---
 
-*Draft: 2026-06-03. Target journal: Journal of Open Humanities Data
-(Ubiquity Press). Word count target: 3,000–4,000.*
+*Draft: 2026-06-03. Revised: 2026-07-11 (all derivable figures re-verified
+against the committed data by `article/check_data_paper_numbers.py`).
+Target journal: Research Data Journal for the Humanities and Social
+Sciences (Brill). Word count target: 3,000–4,000.*
