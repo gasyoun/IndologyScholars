@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <base href="../">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Российская индологическая наука — sustainable-макет</title>
+    <meta name="description" content="Интерактивная база данных и аналитическая панель, объединяющая научные доклады конференций «Зографские чтения» и «Рериховские чтения» (2004–2026 гг.).">
+    <meta name="robots" content="noindex">
+    <link rel="canonical" href="https://gasyoun.github.io/IndologyScholars/">
+    <link rel="alternate" hreflang="ru" href="https://gasyoun.github.io/IndologyScholars/">
+    <link rel="alternate" hreflang="en" href="https://gasyoun.github.io/IndologyScholars/en.html">
+    <link rel="alternate" hreflang="x-default" href="https://gasyoun.github.io/IndologyScholars/">
+    <meta name="language" content="ru">
+    <link rel="icon" href="/IndologyScholars/assets/favicon.svg" type="image/svg+xml">
+    <link rel="manifest" href="/IndologyScholars/site.webmanifest">
+    <link rel="apple-touch-icon" href="/IndologyScholars/assets/apple-touch-icon.png">
+    <meta name="theme-color" content="#f3f1ea" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#161a14" media="(prefers-color-scheme: dark)">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="IndologyScholars">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <script defer src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    
+    <!-- Leaflet.css for Maps loaded non-blockingly -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" media="print" onload="this.media='all'"/>
+    <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+    <script defer src="/IndologyScholars/assets/pwa.js"></script>
+    <link rel="preload" href="site_data_summary.json?v=1.8.8" as="fetch" crossorigin>
+    <meta name="keywords" content="Индология, Зографские чтения, Рериховские чтения, наука, востоковедение, ИВР РАН, ИВ РАН, МГУ, СПбГУ, статистика, научные доклады">
+    <meta name="author" content="Dr. Mārcis Gasūns">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ru_RU">
+    <meta property="og:url" content="https://gasyoun.github.io/IndologyScholars/">
+    <meta property="og:title" content="Российская индологическая наука: Единый архив">
+    <meta property="og:description" content="Интерактивная база данных докладов конференций «Зографские чтения» и «Рериховские чтения» с расширенной аналитикой и интерактивными графами.">
+    <meta property="og:image" content="https://gasyoun.github.io/IndologyScholars/assets/og-image.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://gasyoun.github.io/IndologyScholars/">
+    <meta property="twitter:title" content="Российская индологическая наука: Единый архив">
+    <meta property="twitter:description" content="Интерактивная база данных докладов конференций «Зографские чтения» и «Рериховские чтения» с расширенной аналитикой.">
+    <meta property="twitter:image" content="https://gasyoun.github.io/IndologyScholars/assets/og-image.png">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Dataset",
+      "name": "Russian Indological Research Archive",
+      "alternateName": "Российский индологический научный архив",
+      "description": "Normalized archive of Zograf Readings and Roerich Readings conference presentations, scholars, affiliations, cities, and themes.",
+      "url": "https://gasyoun.github.io/IndologyScholars/",
+      "creator": {
+        "@type": "Person",
+        "name": "Dr. Mārcis Gasūns"
+      },
+      "license": "https://github.com/gasyoun/IndologyScholars/blob/main/LICENSE",
+      "isAccessibleForFree": true,
+      "keywords": ["Indology", "digital humanities", "conference archive", "Zograf Readings", "Roerich Readings"],
+      "distribution": [
+        {
+          "@type": "DataDownload",
+          "encodingFormat": "application/json",
+          "contentUrl": "https://gasyoun.github.io/IndologyScholars/site_data.json"
+        },
+        {
+          "@type": "DataDownload",
+          "encodingFormat": "application/json",
+          "contentUrl": "https://gasyoun.github.io/IndologyScholars/datapackage.json"
+        }
+      ]
+    }
+    </script>
+    
+    <!-- Google Fonts -->
+    
+    <!-- UI Libraries: Chart.js, VanillaTilt, Fuse.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/chartjs-chart-sankey"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.min.js"></script>
+
+    <!-- Archive workspace styling -->
+    <link rel="stylesheet" href="/IndologyScholars/assets/index.css">
+    <link rel="stylesheet" href="mockups/sustainable.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-inner">
+            <div class="header-copy">
+                <h1 id="main-heading">Архив Зографских и Рериховских чтений</h1>
+                <p id="sub-heading">Связи российской современной индологии, 2004–2026.</p>
+            </div>
+            <div class="lang-switch-container" aria-label="Служебные действия">
+                <a href="/IndologyScholars/sociology.html" class="lang-switch-btn" style="text-decoration:none; display:inline-flex; align-items:center; justify-content:center;" title="Социология науки и индологическое сообщество">Аналитика</a>
+                <button type="button" class="lang-switch-btn" id="export-md-btn-header" onclick="exportToMarkdown()" title="Экспортировать выборку в Markdown">Экспорт</button>
+                <button type="button" class="lang-switch-btn" id="lang-switch-btn" onclick="toggleLanguage()" title="Switch language">EN</button>
+            </div>
+        </div>
+        <div class="header-inner" style="margin-top: 10px;">
+            <nav class="nav-links">
+                <a href="search.html" class="bilingual-text" data-ru="Поиск" data-en="Search">Поиск</a>
+                <a href="generations/" class="bilingual-text" data-ru="Поколения" data-en="Generations">Поколения</a>
+                <a href="themes/" class="bilingual-text" data-ru="Темы" data-en="Themes">Темы</a>
+                <a href="conferences/" class="bilingual-text" data-ru="Конференции" data-en="Conferences">Конференции</a>
+                <a href="networks.html" class="bilingual-text" data-ru="Сети" data-en="Networks">Сети</a>
+                <a href="findings/visualisations.html" class="bilingual-text" data-ru="Дашборд" data-en="Dashboard">Дашборд</a>
+                <a href="hypotheses.html" class="bilingual-text" data-ru="Гипотезы" data-en="Hypotheses" style="color: #60a5fa;">Гипотезы <span style="font-size: 0.7em; background: #3b82f6; color: white; padding: 2px 6px; border-radius: 4px; margin-left: 4px;">NEW</span></a>
+                <a href="docs.html" class="bilingual-text" data-ru="Документация" data-en="Docs" style="color: #38bdf8;">Документация</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="container">
+        
+        <nav class="publication-links" aria-label="Разделы архива">
+            <a href="search.html" data-ru="Поиск" data-en="Search">Поиск</a>
+            <a href="s/" data-ru="Исследователи" data-en="Scholars">Исследователи</a>
+            <a href="p/" data-ru="Доклады" data-en="Papers">Доклады</a>
+            <a href="conferences/" data-ru="Конференции" data-en="Conferences">Конференции</a>
+            <a href="themes/" data-ru="Рубрики" data-en="Themes">Рубрики</a>
+            <a href="generations/" data-ru="Поколения" data-en="Generations">Поколения</a>
+            <details class="more-links">
+                <summary data-ru="Еще" data-en="More">Еще</summary>
+                <div class="more-links-menu">
+                    <a href="indologiya-v-rossii.html" data-ru="Индология в России" data-en="Indology in Russia">Индология в России</a>
+                    <a href="sanskritologiya-v-rossii.html" data-ru="Санскритология в России" data-en="Sanskritology in Russia">Санскритология в России</a>
+                    <a href="docs.html" data-ru="Документация" data-en="Docs">Документация</a>
+                    <a href="findings/" data-ru="Выводы" data-en="Findings">Выводы</a>
+                    <a href="findings/visualisations.html" data-ru="Визуализации" data-en="Visualizations">Визуализации</a>
+                    <a href="topics/" data-ru="Сюжеты" data-en="Named texts">Сюжеты</a>
+                    <a href="download-data.html" data-ru="Данные" data-en="Data">Данные</a>
+                    <a href="gumilyov/" data-ru="Гумилев" data-en="Gumilyov">Гумилев</a>
+                    <a href="classification-criteria.html" data-ru="Критерии" data-en="Criteria">Критерии</a>
+                    <a href="videos/" data-ru="Видео" data-en="Videos">Видео</a>
+                    <a href="cities/" data-ru="Города" data-en="Cities">Города</a>
+                    <a href="institutions/" data-ru="Институции" data-en="Institutions">Институции</a>
+                    <a href="data-quality.html" data-ru="Качество" data-en="Quality">Качество</a>
+                    <a href="methodology.html" data-ru="Методология" data-en="Methodology">Методология</a>
+                    <a href="networks.html" data-ru="Сети" data-en="Networks">Сети</a>
+                    <a href="known-relationships.html" data-ru="Внесетевые связи" data-en="Known ties">Внесетевые связи</a>
+                    <a href="voting.html" data-ru="Отметки докладов" data-en="Talk marks">Отметки докладов</a>
+                    <a href="how-to-cite.html" data-ru="Цитирование" data-en="Cite">Цитирование</a>
+                    <a href="en.html">English</a>
+                </div>
+            </details>
+        </nav>
+
+        <nav class="controls" id="dashboard-controls" role="tablist" aria-label="Представление архива">
+            <button class="tab-btn active" id="tab-scholars" role="tab" aria-selected="true" aria-controls="sec-scholars" tabindex="0" onclick="switchTab('scholars')">Каталог</button>
+            <button class="tab-btn" id="tab-timeline" role="tab" aria-selected="false" aria-controls="sec-timeline" tabindex="-1" onclick="switchTab('timeline')">Хронология</button>
+            <button class="tab-btn" id="tab-charts" role="tab" aria-selected="false" aria-controls="sec-charts" tabindex="-1" onclick="switchTab('charts')">Аналитика</button>
+        </nav>
+
+        <!-- Tab 1: Scholars Directory -->
+        <section class="dashboard-section active" id="sec-scholars" role="tabpanel" aria-labelledby="tab-scholars">
+            <div class="filter-bar" id="scholars-filters">
+                <div class="filter-field">
+                    <label class="filter-label" id="label-scholars-search" for="scholars-search">Докладчик</label>
+                    <div class="search-wrapper">
+                        <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                        </svg>
+                        <input type="search" class="search-input" id="scholars-search" placeholder="Имя, организация, город" oninput="handleFilterChange()">
+                        <ul class="autocomplete-dropdown" id="scholars-autocomplete" hidden></ul>
+                    </div>
+                </div>
+
+                <div class="filter-field">
+                    <label class="filter-label" id="label-talks-search" for="talks-search">Название доклада</label>
+                    <div class="search-wrapper">
+                        <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg>
+                        <input type="search" class="search-input" id="talks-search" placeholder="Тема или слово в заглавии" oninput="handleFilterChange()">
+                        <ul class="autocomplete-dropdown" id="talks-autocomplete" hidden></ul>
+                    </div>
+                </div>
+
+                <div class="filter-field">
+                    <label class="filter-label" id="label-series" for="filter-series">Площадка</label>
+                    <select class="select-filter" id="filter-series" onchange="handleFilterChange()">
+                        <option value="all" id="opt-all">Все конференции</option>
+                        <option value="zograf" id="opt-zograf">Зографские чтения (Санкт-Петербург)</option>
+                        <option value="roerich" id="opt-roerich">Рериховские чтения (Москва)</option>
+                        <option value="both" id="opt-both">Обе конференции (Общий актив)</option>
+                        <option value="never-zograf" id="opt-never-zograf">Никогда не выступали на Зографских чт.</option>
+                        <option value="never-roerich" id="opt-never-roerich">Никогда не выступали на Рериховских чт.</option>
+                        <option value="eastfac-alumni" id="opt-eastfac-alumni">Выпускники Востфака СПбГУ</option>
+                    </select>
+                </div>
+
+                <div class="filter-field">
+                    <label class="filter-label" id="label-sort" for="filter-sort">Сортировка</label>
+                    <select class="select-filter" id="filter-sort" onchange="handleFilterChange()">
+                        <option value="talks-desc" id="opt-talks-desc">По числу докладов, убывание</option>
+                        <option value="talks-asc" id="opt-talks-asc">По числу докладов, возрастание</option>
+                        <option value="name-asc" id="opt-name-asc">По алфавиту (А-Я)</option>
+                        <option value="name-desc" id="opt-name-desc">По алфавиту (Я-А)</option>
+                    </select>
+                </div>
+                
+                <div class="filter-field view-toggle">
+                    <label class="filter-label" id="label-view">Отображение</label>
+                    <div style="display: flex; gap: 0.5rem; align-items: center;">
+                        <button class="view-btn active" id="btn-view-table" onclick="toggleViewMode('table')" aria-label="Таблица" title="Табличный вид">
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"/></svg>
+                        </button>
+                        <button class="view-btn" id="btn-view-grid" onclick="toggleViewMode('grid')" aria-label="Сетка" title="Плиточный вид">
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M4 4h6v6H4zm10 0h6v6h-6zM4 14h6v6H4zm10 0h6v6h-6z"/></svg>
+                        </button>
+                        <button type="button" class="view-btn" id="export-md-btn" onclick="exportToMarkdown()" aria-label="Экспорт в Markdown" title="Экспорт списка" style="margin-left: 0.5rem; font-family: var(--font-display); font-size: 0.85rem; padding: 0.4rem 1rem;">
+                            Экспорт
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <section class="query-results" id="talk-query-results" hidden aria-live="polite">
+                <div class="query-results-header">
+                    <h3 id="talk-query-heading"></h3>
+                    <div class="query-actions">
+                        <a class="query-link" id="talk-query-permalink" href=""></a>
+                        <a class="query-link" id="talk-query-topic-link" href="topics/ramayana.html" hidden></a>
+                    </div>
+                </div>
+                <p class="query-summary" id="talk-query-summary"></p>
+                <div class="query-talks" id="talk-query-list"></div>
+            </section>
+
+            <div class="table-container" id="scholars-table-container">
+                <table id="scholars-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 50%;" id="th-name">ФИО ученого / Докладчика</th>
+                            <th style="width: 15%;" id="th-total">Всего докладов</th>
+                            <th style="width: 15%;" id="th-zograf">Зографские</th>
+                            <th style="width: 15%;" id="th-roerich">Рериховские</th>
+                            <th style="width: 15%;" id="th-years">Период активности</th>
+                        </tr>
+                    </thead>
+                    <tbody id="scholars-tbody">
+                        <!-- Dynamic Rows here -->
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="scholars-grid-view" id="scholars-grid-container" hidden>
+                <!-- Dynamic Grid Cards here -->
+            </div>
+
+            <div class="pagination-bar" id="scholars-pagination">
+                <button class="page-btn" id="prev-page-btn" onclick="changePage(-1)">Предыдущая</button>
+                <span id="page-indicator" style="font-family: var(--font-display); font-weight: 500;">Страница 1 из 10</span>
+                <button class="page-btn" id="next-page-btn" onclick="changePage(1)">Следующая</button>
+            </div>
+        </section>
+
+        <!-- Tab 2: Conferences Timeline -->
+        <section class="dashboard-section" id="sec-timeline" role="tabpanel" aria-labelledby="tab-timeline" hidden>
+            <div class="timeline-container" id="timeline-accordion">
+                <!-- Dynamically generated accordion cards by year -->
+            </div>
+        </section>
+
+        <!-- Tab 3: Statistical Insights -->
+        <section class="dashboard-section" id="sec-charts" role="tabpanel" aria-labelledby="tab-charts" hidden>
+            <div class="analytics-grid">
+                
+                <!-- Annual Growth Chart -->
+                <div class="chart-card">
+                    <h3 class="chart-title" id="chart-annual-title">Динамика научных исследований: Объем докладов по годам (2004–2026 гг.)</h3>
+                    <div id="chart-annual-growth" style="height: 350px;">
+                        <canvas id="canvas-growth" style="width: 100%; height: 100%; background: rgba(10, 14, 26, 0.4); border-radius: 8px;"></canvas>
+                    </div>
+                </div>
+
+                <!-- Scholar Affinity Distribution -->
+                <div class="chart-card">
+                    <h3 class="chart-title" id="chart-affinity-title">Научное сродство и географическое распределение кадров</h3>
+                    <div id="chart-affinity" style="height: 350px;">
+                        <canvas id="canvas-affinity"></canvas>
+                    </div>
+                </div>
+
+                <!-- Academic Flows Sankey Chart -->
+                <div class="chart-card" style="grid-column: span 2;">
+                    <h3 class="chart-title" id="chart-sankey-title">Академические потоки: Поколения → Конференции → Темы</h3>
+                    <div id="chart-sankey" style="height: 400px; background: rgba(10, 14, 26, 0.4); border-radius: 8px;">
+                        <canvas id="canvas-sankey"></canvas>
+                    </div>
+                </div>
+
+                <!-- Scholar Generation Distribution Chart -->
+                <div class="chart-card">
+                    <h3 class="chart-title" id="chart-age-title">Поколения исследователей по году рождения</h3>
+                    <a class="query-link" id="generations-page-link" href="generations/">Поименный список поколений</a>
+                    <div id="chart-age" style="height: 350px;">
+                        <canvas id="canvas-age" style="width: 100%; height: 100%; background: rgba(10, 14, 26, 0.4); border-radius: 8px;"></canvas>
+                    </div>
+                </div>
+
+                <!-- Gender Representation Chart -->
+                <div class="chart-card">
+                    <h3 class="chart-title" id="chart-gender-title">Гендерное представительство научного сообщества</h3>
+                    <div id="chart-gender" style="height: 350px;">
+                        <canvas id="canvas-gender" style="width: 100%; height: 100%; background: rgba(10, 14, 26, 0.4); border-radius: 8px;"></canvas>
+                    </div>
+                </div>
+
+                <!-- Lotka's Law Chart -->
+                <div class="chart-card">
+                    <h3 class="chart-title" id="chart-lotka-title">Закон Лотки: Распределение научной продуктивности</h3>
+                    <div id="chart-lotka" style="height: 350px;">
+                        <canvas id="canvas-lotka" style="width: 100%; height: 100%; background: rgba(10, 14, 26, 0.4); border-radius: 8px;"></canvas>
+                    </div>
+                </div>
+
+                <!-- Topic Evolution Chart -->
+                <div class="chart-card" style="grid-column: span 2;">
+                    <h3 class="chart-title" id="chart-topic-title">Эволюция тематик: Динамика исследований по годам</h3>
+                    <div id="chart-topic" style="height: 400px;">
+                        <canvas id="canvas-topic" style="width: 100%; height: 100%; background: rgba(10, 14, 26, 0.4); border-radius: 8px;"></canvas>
+                    </div>
+                </div>
+
+                <!-- Interactive Academic Collaboration Graph (Network) -->
+                <div class="chart-card" style="grid-column: span 2;">
+                    <h3 class="chart-title" id="chart-network-title" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                        <span>Интерактивный граф научных связей (Коллаборации по секциям)</span>
+                        <div style="display: flex; align-items: center; gap: 0.75rem; font-size: 0.9rem; font-weight: 500;">
+                            <span id="net-slider-label" style="color: var(--text-secondary);">Период:</span>
+                            <span id="net-slider-value" style="color: var(--accent-primary); font-family: var(--font-display); width: 45px;">2024</span>
+                            <input type="range" id="net-year-slider" min="1996" max="2024" step="1" value="2024" 
+                                style="width: 150px; cursor: pointer; accent-color: var(--accent-primary);">
+                        </div>
+                    </h3>
+                    <div id="chart-network-container" style="height: 480px; position: relative; background: rgba(10, 14, 26, 0.45); border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.05);">
+                        <div id="canvas-network" style="width: 100%; height: 100%;"></div>
+                        <!-- Control buttons for network -->
+                        <div style="position: absolute; bottom: 1rem; right: 1rem; display: flex; gap: 0.5rem; z-index: 99;">
+                            <button onclick="resetNetworkPhysics()" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.1); color: #ffffff; padding: 0.4rem 0.8rem; border-radius: 4px; font-size: 0.8rem; cursor: pointer; backdrop-filter: blur(5px); transition: 0.2s;" id="net-reset-btn">Сбросить</button>
+                            <button onclick="toggleNetworkPhysics()" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.1); color: #ffffff; padding: 0.4rem 0.8rem; border-radius: 4px; font-size: 0.8rem; cursor: pointer; backdrop-filter: blur(5px); transition: 0.2s;" id="net-pause-btn">Пауза</button>
+                        </div>
+                    </div>
+                    <div style="margin-top: 1rem; padding: 0.75rem 1rem; background: rgba(139, 92, 246, 0.05); border-left: 3px solid var(--accent-primary); border-radius: 0 8px 8px 0; font-size: 0.9rem; color: var(--text-secondary); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+                        <span id="network-teaser-text">💡 Полномасштабная сеть содержит все институции, секции, темы и сплошные перекрестные связи с поиском и детальной фильтрацией.</span>
+                        <a href="networks.html" style="color: var(--accent-primary); font-weight: 600; text-decoration: none; border-bottom: 1.5px solid transparent; transition: 0.2s; white-space: nowrap;" onmouseover="this.style.borderColor='var(--accent-primary)'" onmouseout="this.style.borderColor='transparent'">
+                            <span id="network-teaser-link">Открыть полную сеть ↗</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Geographic Distribution Chart -->
+                <div class="chart-card" style="grid-column: span 2;">
+                    <h3 class="chart-title" id="chart-geo-title">Географическое представительство: Научные доклады по городам</h3>
+                    <div id="chart-geo" style="height: 350px;">
+                        <div id="map-geo" style="width: 100%; height: 100%; background: rgba(10, 14, 26, 0.4); border-radius: 8px; z-index: 1;"></div>
+                    </div>
+                </div>
+
+                <!-- Institutions Leaderboard -->
+                <div class="chart-card">
+                    <h3 class="chart-title" id="chart-inst-title">Рейтинг научно-исследовательских центров</h3>
+                    <div id="chart-inst" style="height: 350px; overflow-y: auto;">
+                        <table id="inst-table" style="width: 100%; border-collapse: collapse; margin-top: 0.5rem;">
+                            <thead>
+                                <tr style="border-bottom: 1px solid rgba(255,255,255,0.1); color: var(--text-secondary); font-size: 0.8rem; text-align: left;">
+                                    <th style="padding: 0.5rem;">Аффилиация</th>
+                                    <th style="padding: 0.5rem;">Ученые</th>
+                                    <th style="padding: 0.5rem;">Доклады</th>
+                                </tr>
+                            </thead>
+                            <tbody id="inst-tbody">
+                                <!-- Dynamic Leaderboard rows -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Thematic Word Cloud -->
+                <div class="chart-card">
+                    <h3 class="chart-title" id="chart-words-title">Тематическое облако тегов (N-Gram Analysis)</h3>
+                    <div id="chart-words" style="height: 350px; position: relative; background: rgba(10, 14, 26, 0.4); border-radius: 8px; display: flex; flex-wrap: wrap; justify-content: center; align-content: center; padding: 1rem; overflow: hidden; gap: 0.5rem;">
+                        <!-- Dynamic Word Cloud spans -->
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Tab 4: Database Architecture -->
+        <section class="dashboard-section" id="sec-schema" hidden>
+            <div class="schema-card">
+                <h3 class="chart-title" style="margin-bottom: 0.5rem;" id="db-title">Реляционная схема базы данных (conferences.db)</h3>
+                <p style="color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 0.95rem;" id="db-desc">Нормализованная база данных SQLite использует строгие ссылочные связи для сопоставления площадок, дат, залов заседаний, сессий, докладчиков и тем научных сообщений.</p>
+                <div class="code-block" id="schema-ddl-code">
+-- SQLite normalized database schema
+CREATE TABLE event_series (
+    event_series_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    series_name_en TEXT NOT NULL UNIQUE,
+    series_name_ru TEXT,
+    notes TEXT
+);
+
+CREATE TABLE place (
+    place_id TEXT PRIMARY KEY,
+    address_text TEXT,
+    city TEXT,
+    region TEXT,
+    country TEXT,
+    postal_code TEXT,
+    latitude REAL,
+    longitude REAL,
+    source_url TEXT,
+    notes TEXT
+);
+
+CREATE TABLE organization (
+    organization_id TEXT PRIMARY KEY,
+    display_name TEXT NOT NULL UNIQUE,
+    display_name_ru TEXT,
+    org_type TEXT,
+    parent_org_id TEXT,
+    source_url TEXT,
+    notes TEXT
+);
+
+CREATE TABLE venue (
+    venue_id TEXT PRIMARY KEY,
+    display_name TEXT NOT NULL UNIQUE,
+    venue_type TEXT,
+    organization_id TEXT,
+    place_id TEXT,
+    source_url TEXT,
+    notes TEXT,
+    FOREIGN KEY(organization_id) REFERENCES organization(organization_id),
+    FOREIGN KEY(place_id) REFERENCES place(place_id)
+);
+
+CREATE TABLE event (
+    event_id TEXT PRIMARY KEY,
+    event_series_id INTEGER,
+    ordinal_int INTEGER,
+    ordinal_roman TEXT,
+    year INTEGER NOT NULL,
+    theme_ru TEXT,
+    theme_en TEXT,
+    start_date TEXT,
+    end_date TEXT,
+    format TEXT DEFAULT 'unspecified',
+    is_online INTEGER DEFAULT 0,
+    online_platform TEXT,
+    program_post_id TEXT,
+    source_url TEXT NOT NULL,
+    notes TEXT,
+    FOREIGN KEY(event_series_id) REFERENCES event_series(event_series_id)
+);
+
+CREATE TABLE event_day (
+    event_day_id TEXT PRIMARY KEY,
+    event_id TEXT,
+    day_number INTEGER NOT NULL,
+    calendar_date TEXT,
+    day_label_raw TEXT,
+    source_url TEXT NOT NULL,
+    notes TEXT,
+    FOREIGN KEY(event_id) REFERENCES event(event_id)
+);
+
+CREATE TABLE event_day_venue (
+    event_day_venue_id TEXT PRIMARY KEY,
+    event_day_id TEXT,
+    venue_id TEXT,
+    occurrence_order INTEGER NOT NULL DEFAULT 1,
+    room_text_raw TEXT,
+    time_text_raw TEXT,
+    source_url TEXT NOT NULL,
+    source_snippet TEXT,
+    FOREIGN KEY(event_day_id) REFERENCES event_day(event_day_id),
+    FOREIGN KEY(venue_id) REFERENCES venue(venue_id)
+);
+
+CREATE TABLE person (
+    person_id TEXT PRIMARY KEY,
+    display_name TEXT NOT NULL UNIQUE,
+    normalized_key TEXT,
+    source_url TEXT,
+    notes TEXT
+);
+
+CREATE TABLE session (
+    session_id TEXT PRIMARY KEY,
+    event_day_venue_id TEXT,
+    session_title TEXT,
+    session_type TEXT,
+    start_time TEXT,
+    end_time TEXT,
+    time_text_raw TEXT,
+    chair_text_raw TEXT,
+    source_url TEXT NOT NULL,
+    source_snippet TEXT,
+    notes TEXT,
+    FOREIGN KEY(event_day_venue_id) REFERENCES event_day_venue(event_day_venue_id)
+);
+
+CREATE TABLE presentation (
+    presentation_id TEXT PRIMARY KEY,
+    session_id TEXT,
+    title TEXT,
+    abstract TEXT,
+    language TEXT DEFAULT 'unspecified',
+    keywords TEXT,
+    is_online INTEGER DEFAULT 0,
+    order_in_session INTEGER,
+    source_url TEXT NOT NULL,
+    source_snippet TEXT,
+    notes TEXT,
+    FOREIGN KEY(session_id) REFERENCES session(session_id)
+);
+
+CREATE TABLE presentation_person (
+    presentation_id TEXT,
+    person_id TEXT,
+    role TEXT DEFAULT 'unspecified',
+    author_order INTEGER,
+    affiliation_text_raw TEXT,
+    organization_id TEXT,
+    source_url TEXT NOT NULL,
+    notes TEXT,
+    PRIMARY KEY (presentation_id, person_id, role),
+    FOREIGN KEY(presentation_id) REFERENCES presentation(presentation_id),
+    FOREIGN KEY(person_id) REFERENCES person(person_id),
+    FOREIGN KEY(organization_id) REFERENCES organization(organization_id)
+);
+                </div>
+            </div>
+        </section>
+
+        <section class="stats-grid" id="stats-dashboard" aria-label="Состав архива">
+            <div class="stat-card" id="card-scholars">
+                <div class="stat-num gradient-text" id="stat-scholars-count">268</div>
+                <div class="stat-label" id="stat-scholars-label">Уникальные ученые</div>
+                <div class="stat-desc" id="stat-scholars-desc">Дедуплицированные индологи и докладчики</div>
+            </div>
+            <div class="stat-card" id="card-talks">
+                <div class="stat-num gradient-text" id="stat-talks-count">1388</div>
+                <div class="stat-label" id="stat-talks-label">Авторские участия</div>
+                <div class="stat-desc" id="stat-talks-desc">1388 участий в 1362 уникальных докладах</div>
+            </div>
+            <div class="stat-card" id="card-years">
+                <div class="stat-num gradient-text" id="stat-years-count">22</div>
+                <div class="stat-label" id="stat-years-label">Годы корпуса</div>
+                <div class="stat-desc" id="stat-years-desc">Период с 2004 по 2026 годы</div>
+            </div>
+            <div class="stat-card" id="card-overlap">
+                <div class="stat-num gradient-text" id="stat-overlap-count">41</div>
+                <div class="stat-label" id="stat-overlap-label">Обе площадки</div>
+                <div class="stat-desc" id="stat-overlap-desc">Ученые, участвовавшие в обеих конференциях</div>
+            </div>
+            <div class="stat-card" id="card-youtube">
+                <div class="stat-num gradient-text" id="stat-youtube-count">82</div>
+                <div class="stat-label" id="stat-youtube-label">Доклады с видео</div>
+                <div class="stat-desc" id="stat-youtube-desc">Записи, привязанные к докладам</div>
+            </div>
+        </section>
+
+        <section class="findings-strip" aria-labelledby="findings-heading">
+            <div class="findings-header">
+                <div>
+                    <div class="findings-eyebrow" id="findings-eyebrow">Аналитические наблюдения</div>
+                    <h2 class="findings-title" id="findings-heading">Что показывает корпус конференций</h2>
+                    <p class="findings-lead" id="findings-lead">Две площадки связаны общими участниками, но сохраняют различимые тематические акценты и формы научного разговора.</p>
+                </div>
+                <a class="findings-cta" id="findings-cta" href="findings/">Смотреть выводы</a>
+            </div>
+            <p class="findings-corpus-note" id="findings-corpus-note">В корпусе: 268 ученых, 1362 уникальных докладов и 1388 авторских участий.</p>
+            <div class="findings-grid">
+                <article class="insight-card">
+                    <div class="insight-metric" id="insight-overlap-metric">41 / 130.9</div>
+                    <div class="insight-title" id="insight-overlap-title">Пересечение ниже ожидания</div>
+                    <div class="insight-text" id="insight-overlap-text">41 ученый выступал на обеих площадках при модельном ожидании 130.9.</div>
+                </article>
+                <article class="insight-card">
+                    <div class="insight-metric" id="insight-theme-metric">75.2% / 55.3%</div>
+                    <div class="insight-title" id="insight-theme-title">Разные тематические оптики</div>
+                    <div class="insight-text" id="insight-theme-text">Классико-средневековые темы заметнее в Рериховских чтениях, чем в Зографских.</div>
+                </article>
+                <article class="insight-card">
+                    <div class="insight-metric" id="insight-micro-metric">1146 / 1362</div>
+                    <div class="insight-title" id="insight-micro-title">Микрокейс является нормой</div>
+                    <div class="insight-text" id="insight-micro-text">В разметке преобладают доклады о конкретном тексте, авторе или источнике.</div>
+                </article>
+                <article class="insight-card">
+                    <div class="insight-metric" id="insight-video-metric">82</div>
+                    <div class="insight-title" id="insight-video-title">Видео как проверяемый слой</div>
+                    <div class="insight-text" id="insight-video-text">Прямые видеоссылки привязаны к 82 докладам; этот слой охватывает лишь часть корпуса.</div>
+                </article>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p id="footer-copyright">&copy; 2026 Российский индологический научный архив, к.ф.н. М.Ю. Гасунс (Обнинск)</p>
+    </footer>
+
+    <!-- Main Dynamic Application Script with Bilingual Localization (RU / EN) -->
+    <script type="module" src="/IndologyScholars/assets/js/main.js?v=1.8.8"></script>
+</body>
+</html>
