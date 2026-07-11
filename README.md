@@ -1,6 +1,8 @@
 # IndologyScholars: архив докладов по российской индологии
 
-[English version](README_EN.md) | [Документация для разработчиков](docs/development.md)
+_Created: 24-04-2026 · Last updated: 11-07-2026_
+
+[English version](https://github.com/gasyoun/IndologyScholars/blob/main/README_EN.md) | [Документация для разработчиков](https://github.com/gasyoun/IndologyScholars/blob/main/docs/development.md)
 
 **IndologyScholars** - открытый навигационный архив программ двух российских
 индологических форумов: Зографских чтений в Санкт-Петербурге и Рериховских
@@ -11,7 +13,7 @@
 
 ## Состав архива
 
-Опубликованная выборка на 31 мая 2026 г. содержит:
+Опубликованная выборка на 11 июля 2026 г. содержит:
 
 | Показатель | Значение |
 | --- | ---: |
@@ -41,6 +43,9 @@
   переходом к отдельным годам и программам.
 - [Тематические подборки](https://gasyoun.github.io/IndologyScholars/themes/)
   и [поколенческие когорты](https://gasyoun.github.io/IndologyScholars/generations/).
+- Обзорные очерки [«Индология в России»](https://gasyoun.github.io/IndologyScholars/indologiya-v-rossii.html)
+  и [«Санскритология в России»](https://gasyoun.github.io/IndologyScholars/sanskritologiya-v-rossii.html) —
+  нарративные разделы, помещающие корпус в контекст истории дисциплины.
 - [Поиск по коллекции](https://gasyoun.github.io/IndologyScholars/search.html),
   включая отдельные страницы докладов и ссылки на видео, когда запись найдена.
 - [INDOLOGY Archive Atlas](https://gasyoun.github.io/IndologyScholars/IndologyArchive/) -
@@ -72,14 +77,14 @@
 
 Для ссылки на проект используйте
 [рекомендации по цитированию](https://gasyoun.github.io/IndologyScholars/how-to-cite.html)
-или файл [CITATION.cff](CITATION.cff).
+или файл [CITATION.cff](https://github.com/gasyoun/IndologyScholars/blob/main/CITATION.cff).
 
 ## Документация
 
-- [Разработка и воспроизводимость, на русском](docs/development.md)
-- [Development and reproducibility, in English](docs/development-en.md)
-- [Технический аудит классификации](docs/classification-audit.md)
-- [Словарь данных](data_dictionary.md)
+- [Разработка и воспроизводимость, на русском](https://github.com/gasyoun/IndologyScholars/blob/main/docs/development.md)
+- [Development and reproducibility, in English](https://github.com/gasyoun/IndologyScholars/blob/main/docs/development-en.md)
+- [Технический аудит классификации](https://github.com/gasyoun/IndologyScholars/blob/main/docs/classification-audit.md)
+- [Словарь данных](https://github.com/gasyoun/IndologyScholars/blob/main/data_dictionary.md)
 
 Исторические аналитические тексты и рукописи в репозитории могут описывать
 более ранние снимки корпуса; актуальными для сайта являются опубликованные
@@ -87,8 +92,10 @@
 
 ## Лицензия
 
-Код, шаблоны и валидаторы распространяются по [Apache-2.0](LICENSE).
+Код, шаблоны и валидаторы распространяются по [Apache-2.0](https://github.com/gasyoun/IndologyScholars/blob/main/LICENSE).
 Нормализованные метаданные и производные CSV/JSON/SQLite-выгрузки доступны для
 повторного использования по CC-BY-4.0 с указанием архива. Кэшированные
 программы конференций, цитаты из источников и сторонние материалы сохраняют
-права исходных правообладателей; подробнее см. [reuse-rights](docs/reuse-rights.md).
+права исходных правообладателей; подробнее см. [reuse-rights](https://github.com/gasyoun/IndologyScholars/blob/main/docs/reuse-rights.md).
+
+_Dr. Mārcis Gasūns_
