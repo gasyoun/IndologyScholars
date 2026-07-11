@@ -63,9 +63,16 @@ def normalize_person_name(name):
                     last = parts[2]
                     first = parts[0]
             elif patronymic_idx == 1 and len(parts) == 3:
-                # Last First Patronymic (e.g. Шохин Владимир Кириллович)
-                last = parts[0]
-                first = parts[2]
+                # First Patronymic Last (e.g. Владимир Михайлович Шелкович).
+                # A patronymic at index 1 can only be the given-name-first
+                # order, so the surname is the LAST token — never parts[0],
+                # which is the given name. Getting this backwards mis-keyed any
+                # given-name-first name whose surname ends in a patronymic
+                # suffix (Шелкович, Файбушевич, Коссович → they steal their own
+                # patronymic initial), and silently swapped first/last for every
+                # ordinary given-name-first full name too.
+                last = parts[2]
+                first = parts[0]
             else:
                 last = parts[0]
                 first = parts[1]
