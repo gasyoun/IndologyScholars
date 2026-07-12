@@ -6,7 +6,7 @@ Audit of the archive's internal integrity — links between records, pages and d
 files inside the repository and the generated site — plus stable-ID consistency and
 FAIR-metadata completeness per record type. Executed by Fable 5 (`claude-fable-5`)
 under handoff
-[H718](https://github.com/gasyoun/Uprava/blob/main/handoffs/H718-Fable_IndologyScholars_archive-link-integrity-fair-pass_11.07.26.md).
+[H718](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H718-Fable_IndologyScholars_archive-link-integrity-fair-pass_11.07.26.md).
 External-link liveness was deliberately **not** probed (only enwiki is reachable
 from this host; outages are the outage board's business).
 
