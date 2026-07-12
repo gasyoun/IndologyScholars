@@ -1,5 +1,7 @@
 # IndologyScholars — Roadmap 2026
 
+_Created: 14-06-2026 · Last updated: 10-07-2026_
+
 **Goal:** a submission-ready PPV data paper ([`article/ppv_draft.md`](../article/ppv_draft.md)) in **2026** (soft deadline), with the corpus's data gaps filled and four new analyses added. Direction set via a roadmap interview on 2026-06-14.
 
 ## Guiding decisions

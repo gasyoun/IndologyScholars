@@ -1,5 +1,7 @@
 # ROADMAP — IndologyScholars
 
+_Created: 27-05-2026 · Last updated: 10-07-2026_
+
 > Integrated roadmap across data/DB, generated site, the ППВ article, and the
 > `philology-research-agents` module. Three horizons: **Now / Next / Later**.
 > Составлено 2026-05-27, обновлено 2026-06-10. Текущий статус — **ППВ подан;
@@ -180,3 +182,5 @@ D. 🅜 ✅ **Runbook для .ru-шагов.** `docs/ru-enrichment-runbook.md` �
 - Сохранять явную неопределённость: открытая аффилиация — `(?)`; невалидированная
   классификация не публикуется как `L2`.
 - Перед публикацией: `python validate_publication.py` и `pytest`.
+
+_Dr. Mārcis Gasūns_
