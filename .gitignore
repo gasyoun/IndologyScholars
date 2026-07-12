@@ -57,3 +57,13 @@ analytics_output/nlp_cache.pkl
 
 # Personal review sheets (voting artifacts, not repo deliverables)
 review/
+
+# ---- Nagari Google Group archive (closed list: 2,333 real emails + private bodies) ----
+# The raw Takeout dump (1.88 GB mbox + members.csv) and the built SQLite DB are
+# NEVER committed. Only curated/derived outputs may be published, and only after
+# a /publish-safety-check GO (third-party members joined a *closed* list).
+nagari-2005-2026/
+nagari/data/
+nagari/site/
+nagari/md/
+nagari/**/__pycache__/
