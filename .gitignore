@@ -24,9 +24,15 @@ scratch/generate_sociology_plots.py
 scratch/.http_cache/
 scratch/*.tmp
 
-# Temporary check and fix scripts
-fix_*.py
-check_*.py
+# Temporary check and fix scripts (scoped to scratch/ and article/ only —
+# an unanchored check_*.py/fix_*.py pattern here previously blocked committing
+# ANY tools/check_*.py helper too; H718's auditor had to be renamed
+# audit_archive_integrity.py to work around it. Papercut 70ab88998431,
+# weekly-review Phase 2c triage, 13-07-2026.)
+scratch/check_*.py
+scratch/fix_*.py
+article/check_*.py
+article/fix_*.py
 !article/check_anonymity.py
 !article/check_ppv_numbers.py
 
