@@ -103,6 +103,83 @@
   runner for safe Phase-5 Wikidata/ru.wikipedia enrichment, validation, and
   optional source-only commit/push.
 
+## [1.1.0] - 2026-07-14
+
+_(Backfilled 14-07-2026, H790 changelog-backfill pass, Sonnet 5
+(`claude-sonnet-5`) — real research/data deliverables merged since the H473
+entry above that had no changelog record.)_
+
+### Added
+- **H484 Phase 2 — historical prosopography layer** (decision A1, variant A,
+  [#79](https://github.com/gasyoun/IndologyScholars/pull/79)). Indologists who
+  never presented at the Zograf/Roerich readings now load into the single
+  `person` spine via a `person_kind` discriminator
+  (`conference_participant` | `historical`) instead of a parallel
+  `historical_person` table (would have broken roadmap R5); historical
+  figures carry no `presentation_person` rows so every published
+  speaker count stays 268. New `pipeline/historical.py` seeder from
+  `curation/historical_persons.csv`; new
+  `tools/resolve_historical_wikidata.py` pinned-QID resolver emits 26
+  figures (all with `death_year` + sourced `data_assertion`) and 82
+  `person_role` rows; 17 pre-1918 `RIND_` rows migrated (not duplicated).
+- **D1 ruled** — the four proposed discipline codes
+  (`literature`/`linguistics`/`ethnography`/`history_of_indology`) promoted
+  `proposed`→`core` in `curation/disciplines.csv`
+  ([#87](https://github.com/gasyoun/IndologyScholars/pull/87)).
+- **A26 data paper** — re-verified every figure against committed data and
+  completed the scholarly sections for Zenodo pre-staging
+  ([H674](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H674-Fable_IndologyScholars_a26-data-paper-figures-verify.md),
+  [#90](https://github.com/gasyoun/IndologyScholars/pull/90)): schema
+  figures 10→19 tables (+ the new historical `person_kind` layer, 26
+  figures), OpenAlex candidates 122→181 persons (496 rows),
+  identifier-coverage table refreshed to 2026-07-11, network edge types
+  5→6 (`organization_theme`), CSV exports 40+→100+; retargeted from
+  *Journal of Open Humanities Data* to *Research Data Journal for the
+  Humanities and Social Sciences* (Brill) per the locked authorship
+  decision; added the dual-licensing statement (Apache-2.0 code / CC BY
+  4.0 derived metadata), a data-availability statement, a name-heuristic
+  false-positive limitation, and cross-model agreement figures (L1
+  κ=0.670, argument-level κ=0.553) with the human-IRR caveat;
+  `check_data_paper_numbers.py` machine-verified claims 10→19.
+- **H829 — Nagari archive**: searchable archive + 20-year retrospective of
+  the closed «Общество ревнителей санскрита» Google Group
+  ([#93](https://github.com/gasyoun/IndologyScholars/pull/93)).
+  Reproducible stdlib-only pipeline over the Google Takeout mbox dump
+  (2005–2026): 18,729 messages, 2,928 threads, 2,333 members, 2,030
+  attachments, 0 parse errors. `ingest.py` (mbox→SQLite+FTS5, diacritics
+  folded), `insights.py` (4 analysis layers: timeline/activity,
+  thread+co-participation networks, topic taxonomy + body NLP, Sanskrit
+  terms + book index), `export_md.py` (per-thread Markdown mirror, 22
+  year-folders), and a self-contained interactive HTML retrospective page
+  (SVG charts, light/dark, client-side thread search).
+- Mockups: landing-dashboard reskin in the "sustainable direction"
+  (H660/H563 fan-out,
+  [#88](https://github.com/gasyoun/IndologyScholars/pull/88)) — token-level
+  CSS reskin (moss-and-clay light / system dark), non-destructive
+  (`mockups/` only, live `index.html` untouched).
+
+### Fixed
+- **H496/H718** — internal link/anchor integrity + FAIR metadata pass
+  ([#84](https://github.com/gasyoun/IndologyScholars/pull/84),
+  [#92](https://github.com/gasyoun/IndologyScholars/pull/92)): fixed
+  patronymic-suffixed surnames stealing the patronymic initial and the
+  given-name-first key parse for `-вич`/`-вна` surnames; deleted the
+  stale orphaned `gumilyov/level-0.html` page; remapped 5 dangling
+  `slug_redirects.json` rows so old published scholar URLs redirect
+  instead of 404ing; restored `location.hash` scroll-to-anchor after the
+  `hypotheses.html` dynamic card render (33 deep links were landing at
+  page top); added version + author ORCID to `CITATION.cff` and fixed a
+  wrong-org repository URL.
+- Fixed a build crash from a stale `normalized_key` for «Коссович» that had
+  frozen deploys since H484/H496
+  ([#83](https://github.com/gasyoun/IndologyScholars/pull/83)).
+- Hardened the deploy pipeline: 4 pages 404ing were missing from the Pages
+  artifact allowlist ([#81](https://github.com/gasyoun/IndologyScholars/pull/81));
+  orphaned generated pages are now pruned via `git add -A`.
+- `.gitignore` — scoped the `check_*.py`/`fix_*.py` ignore rule to
+  `scratch/`/`article/` only, so equivalently-named tracked tool scripts
+  elsewhere stop disappearing from `git status`.
+
 ## [1.0.0] - 2026-06-13
 
 ### Changed
