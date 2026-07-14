@@ -37,7 +37,7 @@ _Created: 10-07-2026 · Last updated: 10-07-2026 (A1 решено, Фаза 2 п
 публикуемые счётчики докладчиков считаются через соединение с `presentation_person`, а не
 `count(person)`, поэтому 268 остаётся 268. Отвергнуты: отдельная таблица `historical_person`
 (раздвоила бы спайн вопреки R5) и расширение `RIND_`-реестра (фасетные таблицы Фазы 1
-ссылаются на `person(person_id)`). Реализация — [H484](https://github.com/gasyoun/Uprava/blob/main/handoffs/H484-Opus_IndologyScholars_historical-prosopography-phase2_10.07.26.md).
+ссылаются на `person(person_id)`). Реализация — [H484](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H484-Opus_IndologyScholars_historical-prosopography-phase2_10.07.26.md).
 
 ## Что у нас есть и чего нет
 

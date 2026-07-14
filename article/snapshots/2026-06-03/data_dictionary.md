@@ -1,6 +1,6 @@
 # IndologyScholars Data Dictionary
 
-[Documentation index](docs/README.md) | [Development guide](docs/development-en.md) | [Русская техническая документация](docs/development.md)
+[Documentation index](docs/README.md) | [Development guide](../../../docs/development-en.md) | [Русская техническая документация](../../../docs/development.md)
 
 Date: 2026-05-25  
 Dataset schema version: 1.0.0  
