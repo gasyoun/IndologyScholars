@@ -180,6 +180,113 @@ entry above that had no changelog record.)_
   `scratch/`/`article/` only, so equivalently-named tracked tool scripts
   elsewhere stop disappearing from `git status`.
 
+## [1.0.1] - 2026-07-10
+
+_(Backfilled 14-07-2026, H790 changelog-backfill pass, Sonnet 5
+(`claude-sonnet-5`) — the pre-H473 window: 129 non-bot commits / 51 merged
+PRs between the `v1.0.0` tag (2026-05-31) and the H473 commit (2026-07-10)
+that had no changelog record at all. The `[1.0.0] - 2026-06-13` section
+above only ever marked "released the current state as version 1" — it
+documented nothing from the four weeks of work that actually followed it.
+Dependency-bump PRs (#18, #22, #42, #43, #45, #46, #50) are omitted as
+routine, matching the convention used for the other Tier-2 repos in this
+handoff.)_
+
+### Fixed
+- **Statistical-methodology bugs in the survival/agreement analysis**
+  ([#33](https://github.com/gasyoun/IndologyScholars/pull/33),
+  [#34](https://github.com/gasyoun/IndologyScholars/pull/34),
+  [#36](https://github.com/gasyoun/IndologyScholars/pull/36)): Kaplan-Meier
+  now censors single-appearance scholars instead of treating them as
+  duration-0 events (twice — the shared curve estimator, then
+  `cohort_survival.csv` specifically); Cohen's-kappa bootstrap CI no longer
+  returns a spurious 1.0 from degenerate resamples.
+- **Security hardening** ([#24](https://github.com/gasyoun/IndologyScholars/pull/24),
+  [#26](https://github.com/gasyoun/IndologyScholars/pull/26),
+  [#27](https://github.com/gasyoun/IndologyScholars/pull/27),
+  [#30](https://github.com/gasyoun/IndologyScholars/pull/30),
+  [#32](https://github.com/gasyoun/IndologyScholars/pull/32)): fixed
+  CodeQL high-severity alerts (names/gender no longer logged in the
+  gender-inference QA report; a bad-tag-filter that caused `clean_html`
+  data loss was rewritten and hardened); `scrape_wikidata.py` now verifies
+  TLS certificates; Jinja autoescape enabled on page-render environments.
+- **Data-pipeline correctness** ([#28](https://github.com/gasyoun/IndologyScholars/pull/28),
+  [#29](https://github.com/gasyoun/IndologyScholars/pull/29),
+  [#58](https://github.com/gasyoun/IndologyScholars/pull/58),
+  [#59](https://github.com/gasyoun/IndologyScholars/pull/59),
+  [#60](https://github.com/gasyoun/IndologyScholars/pull/60),
+  [#68](https://github.com/gasyoun/IndologyScholars/pull/68)):
+  `extract_infobox` now captures rows that carry attributes; a
+  timeline-chunk drift traced to the rebuild bot never committing the
+  chunks was fixed at the source; the INDOLOGY archive layer got a
+  Python-3.11 metadata fix, malformed-mbox-header tolerance, a topic
+  decade-heatmap fix, and an author topic-filter fix.
+- Stopped committing the pickle NLP cache; normalized `.gitignore`
+  ([#35](https://github.com/gasyoun/IndologyScholars/pull/35)). Removed
+  dead log-rank p-value code in `work_appendix_g.py`
+  ([#31](https://github.com/gasyoun/IndologyScholars/pull/31)).
+
+### Added
+- **Restored 3 unpushed `ai-wip` commits that existed only on a local
+  machine** ([#23](https://github.com/gasyoun/IndologyScholars/pull/23)):
+  gender-classification validation + tests
+  (`tools/validate_gender_inference.py`), inter-rater reliability tooling
+  (`tools/compute_interrater_agreement.py`, blind/key sample split), a
+  data-paper number-check CI gate (`article/check_data_paper_numbers.py`),
+  a shared Kaplan-Meier `_km_curve` estimator, persons-data-policy docs
+  (RU+EN), and LOD knowledge-graph expansion
+  (`indology_knowledge_graph.ttl`).
+- **Phase 1 birth-year/affiliation research**
+  ([#37](https://github.com/gasyoun/IndologyScholars/pull/37)–[#41](https://github.com/gasyoun/IndologyScholars/pull/41)):
+  `docs/ROADMAP_2026.md`; recalibrated Phase 1 to treat birth years (not
+  affiliations) as the real gap; birth-year auto-scouting found 0/39
+  auto-resolvable with bias concentrated in ~6 recurring names; 22
+  organization Q-IDs + 15 city geocodes added; 5 birth-year resolutions
+  (2 new + 3 dedup-merges).
+- **A25 submission checklist** ([#47](https://github.com/gasyoun/IndologyScholars/pull/47)–[#49](https://github.com/gasyoun/IndologyScholars/pull/49)):
+  filled ORCID in the submission-render HTML + checklist, synced the HTML
+  author block to the submitted `.md`.
+- **INDOLOGY archive atlas** ([#51](https://github.com/gasyoun/IndologyScholars/pull/51)–[#57](https://github.com/gasyoun/IndologyScholars/pull/57),
+  [#61](https://github.com/gasyoun/IndologyScholars/pull/61)): new
+  `IndologyArchive` atlas tracked, published, linked from the portal, and
+  cached in the PWA offline shell; a Renou classification layer added to
+  the atlas data; a monthly archive updater; clickable Renou data
+  downloads.
+- **Dashboard + Renou conference layer** ([#62](https://github.com/gasyoun/IndologyScholars/pull/62)–[#67](https://github.com/gasyoun/IndologyScholars/pull/67)):
+  dashboard CSV download links, clickable table entries (audited for
+  coverage); the Renou classification layer extended to the main-site
+  conference data with a cross-site (archive vs. conference) comparison.
+- **A53 — Renou classifier precision audit (research finding, blocked)**
+  ([#75](https://github.com/gasyoun/IndologyScholars/pull/75)):
+  `generate_renou_layer.py`'s rule table anchors Latin alternatives with
+  `\b` but leaves Cyrillic stems unanchored — `тика` (intended as *ṭīkā*)
+  matches inside Эро**тика**/прак**тика**/семан**тика**/грамма**тика**,
+  producing **85 of 116** `bhasya`-register matches as false positives
+  (73%; every one inspected). Corpus-wide floor: **7.1%** of all 1,706
+  conference matches are mechanically-detectable false positives — a floor,
+  not an estimate, since the detector cannot see semantic errors. This
+  blocks the archive-vs-conference Renou état-II/IV disciplinary-profile
+  claim (365 vs 22 archive threads, 179 vs 321 conference) from publication
+  until precision is measured per stratum. Registered as `A53`, blocked.
+  Added `docs/renou-precision-audit.md`, `tools/build_renou_precision_sheet.py`
+  (seeded, risk-stratified 150-item gold sample), and
+  `tools/score_renou_precision.py` (per-stratum precision, Wilson 95% CIs).
+  Recovered 418 lines of `Indology/indology_archive_research/insights.py`
+  and 7 derived tables/figures that existed uncommitted on a stale local
+  branch, one `git checkout` from being lost — re-applied source-only via
+  `/branch-contention-recover`; corrected the GTD hub row that had
+  mis-flagged that tree as disposable regen churn
+  ([gasyoun/Uprava@950f030](https://github.com/gasyoun/Uprava/commit/950f030)).
+
+### Engine
+- `generate_publication_pages.py`'s `CITATION.cff` generator now reads the
+  released version from `git describe --tags --abbrev=0` instead of a
+  hardcoded `"1.0.0"` — found because the [1.1.0] bump above was silently
+  reverted by the very next auto-rebuild commit
+  ([`7de400187`](https://github.com/gasyoun/IndologyScholars/commit/7de400187)),
+  which regenerates `CITATION.cff` from that same hardcoded template on
+  every push.
+
 ## [1.0.0] - 2026-06-13
 
 ### Changed

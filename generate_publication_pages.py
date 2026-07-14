@@ -5,6 +5,7 @@ import json
 import re
 import sqlite3
 import struct
+import subprocess
 import sys
 import zlib
 
@@ -65,6 +66,24 @@ DB_PATH = "conferences.db"
 # Set to empty to fall back to copy-only.
 VOTE_TEACHER_FORM_URL = "https://forms.yandex.ru/u/6a28f0e995add5b922d0f14c"
 BUILD_DATE = dt.date.today().isoformat()
+
+
+def _latest_release_version():
+    """Latest git tag (CITATION.cff version), so a manual version bump
+    survives the next auto-rebuild instead of being clobbered by a hardcoded
+    string (H790 finding: v1.1.0 was bumped in CITATION.cff then silently
+    reverted to 1.0.0 by the next rebuild commit)."""
+    try:
+        tag = subprocess.run(
+            ["git", "describe", "--tags", "--abbrev=0"],
+            capture_output=True, text=True, check=True,
+        ).stdout.strip()
+        return tag[1:] if tag.startswith("v") else tag
+    except Exception:
+        return "1.0.0"
+
+
+RELEASE_VERSION = _latest_release_version()
 DATA_SCHEMA_VERSION = "1.0.0"
 PIPELINE_VERSION = "2026-05-25"
 PUBLIC_DIRS = ["assets", "conferences", "p", "themes", "topics", "generations", "meso", "gumilyov", "videos", "findings", "cities", "institutions", "keywords"]
@@ -859,7 +878,7 @@ type: dataset
 url: "{SITE_URL}"
 repository-code: "https://github.com/gasyoun/IndologyScholars"
 date-released: "{BUILD_DATE}"
-version: "1.0.0"
+version: "{RELEASE_VERSION}"
 license: "CC-BY-4.0"
 abstract: "A curated relational archive of Zograf Readings and Roerich Readings conference programs, scholars, presentations, affiliations, cities, and thematic classifications."
 keywords:
