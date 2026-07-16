@@ -1,6 +1,6 @@
 {
-  "_status": "NOT YET DEPOSITED — pre-staged metadata only. Zenodo actions are frozen org-wide until after 2026-07-15 and DOI minting requires explicit permission. Deposit via GitHub release + tools/freeze_article_data.py re-freeze, then replace the DOI placeholders in article/data_paper_draft.md and bump CITATION.cff.",
-  "_prepared": "2026-07-11, H674, Fable 5 (claude-fable-5)",
+  "_status": "NOT YET DEPOSITED — deposit-ready. The org-wide Zenodo freeze expired 2026-07-15; the snapshot is frozen (article/snapshots/2026-07-17/), CITATION.cff is synced, and the GitHub release exists. The deposit itself requires MG's Zenodo login (human @DO in Uprava/GTD_NEXT_ACTIONS.md): enable the Zenodo-GitHub integration (or upload article/snapshots/2026-07-17/ manually with this metadata), then paste the minted concept+version DOIs over the PENDING markers in article/data_paper_draft.md §5.4/§7 and into CITATION.cff.",
+  "_prepared": "2026-07-11, H674, Fable 5 (claude-fable-5); deposit-ready 2026-07-17, H1072, Fable 5 (claude-fable-5)",
   "metadata": {
     "upload_type": "dataset",
     "title": "IndologyScholars: Russian Indological Research Archive — Zograf and Roerich Readings Conference Corpus (2004–2026)",
@@ -37,7 +37,7 @@
         "resource_type": "publication"
       }
     ],
-    "version": "TO-SET-AT-FREEZE (dated snapshot version, e.g. 2026.MM.DD; sync CITATION.cff)",
+    "version": "2026.07.17",
     "language": "rus"
   }
 }

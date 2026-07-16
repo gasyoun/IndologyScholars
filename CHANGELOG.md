@@ -6,6 +6,26 @@
 
 ## [Unreleased]
 
+## [1.2.0] - 2026-07-17
+
+### Added
+- **A26 data paper: депозит-готовый пакет Zenodo (H1072).** Заморожен снимок
+  `article/snapshots/2026-07-17/` (`tools/freeze_article_data.py`, 19 позиций,
+  SHA-256 `manifest.txt`); версия датасета `2026.07.17` вписана в
+  `article/zenodo_metadata.json` (статус переведен из «заморожено org-wide» в
+  «deposit-ready», заморозка истекла 15-07-2026); `CITATION.cff` синхронизирован
+  (v1.2.0, дата 17-07-2026, каноническое название датасета). В
+  `article/data_paper_draft.md` §5.4/§7 плейсхолдер DOI разделён на явные
+  слоты concept/version (`10.5281/zenodo.PENDING`), название датасета
+  гармонизировано между статьёй, Zenodo-метаданными и `CITATION.cff`, байлайн
+  с диакритикой. Кросс-модельная κ переподтверждена из
+  `analytics_output/interrater_crossmodel_claude.csv`
+  (L1 κ=0,670 [0,554–0,776]; argument κ=0,553 [0,400–0,694]) — единственная
+  ранее не машинно-проверенная цифра; ворота
+  `article/check_data_paper_numbers.py` (19 утверждений), `validate_publication.py`
+  и pytest (147) зеленые. Сам депозит Zenodo — человеческий шаг (логин MG),
+  вынесен в Uprava GTD. Fable 5 (`claude-fable-5`).
+
 ### Changed
 - **Решение D1 принято (10-07-2026): границы индологии ратифицированы.** Четыре
   кода, добавленные в этапе 1 со `status=proposed` — `literature`, `linguistics`,

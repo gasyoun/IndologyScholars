@@ -1,0 +1,15 @@
+key,value
+H1_overlap_observed,41
+H1_overlap_expected_mean,130.95
+H1_overlap_expected_sd,3.91
+H1_z,-23.021
+H1_p_one_sided_low,4.999750012499375e-05
+H2_logrank_chi2,0.475
+H2_logrank_p,0.49092245081312724
+H2_median_span_zograf,7
+H2_median_span_roerich,9
+H4_zograf_cityonly_pct,70.3
+H4_roerich_cityonly_pct,9.6
+H4_cmh_OR,20.52
+H4_cmh_chi2,462.0
+H4_cmh_p,1.7827144702717767e-102

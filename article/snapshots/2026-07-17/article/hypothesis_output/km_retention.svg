@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="400" viewBox="0 0 640 400" font-family="Georgia, serif">
+<rect width="640" height="400" fill="white"/>
+<line x1="55" y1="20" x2="55" y2="355" stroke="#333"/>
+<line x1="55" y1="355" x2="620" y2="355" stroke="#333"/>
+<text x="47" y="359.0" text-anchor="end" font-size="11">0%</text>
+<line x1="55" y1="355.0" x2="620" y2="355.0" stroke="#eee"/>
+<text x="47" y="275.2" text-anchor="end" font-size="11">25%</text>
+<line x1="55" y1="271.2" x2="620" y2="271.2" stroke="#eee"/>
+<text x="47" y="191.5" text-anchor="end" font-size="11">50%</text>
+<line x1="55" y1="187.5" x2="620" y2="187.5" stroke="#eee"/>
+<text x="47" y="107.8" text-anchor="end" font-size="11">75%</text>
+<line x1="55" y1="103.8" x2="620" y2="103.8" stroke="#eee"/>
+<text x="47" y="24.0" text-anchor="end" font-size="11">100%</text>
+<line x1="55" y1="20.0" x2="620" y2="20.0" stroke="#eee"/>
+<path d="M 55.0 20.0 L 55.0 20.0 L 55.0 109.4 L 90.3 109.4 L 90.3 123.5 L 125.6 123.5 L 125.6 144.6 L 160.9 144.6 L 160.9 155.4 L 196.2 155.4 L 196.2 159.9 L 231.6 159.9 L 231.6 177.8 L 266.9 177.8 L 266.9 184.6 L 302.2 184.6 L 302.2 191.5 L 337.5 191.5 L 337.5 193.9 L 372.8 193.9 L 372.8 204.1 L 408.1 204.1 L 408.1 209.4 L 443.4 209.4 L 443.4 212.3 L 478.8 212.3 L 478.8 215.2 L 549.4 215.2 L 549.4 222.1 L 584.7 222.1 L 584.7 236.8 L 620.0 236.8 L 620.0 241.0" fill="none" stroke="#2980b9" stroke-width="2.2"/>
+<text x="480" y="40" fill="#2980b9" font-size="13">Зограф</text>
+<path d="M 55.0 20.0 L 55.0 20.0 L 55.0 64.7 L 90.3 64.7 L 90.3 73.3 L 125.6 73.3 L 125.6 87.4 L 160.9 87.4 L 160.9 96.8 L 196.2 96.8 L 196.2 111.7 L 231.6 111.7 L 231.6 131.6 L 266.9 131.6 L 266.9 175.2 L 337.5 175.2 L 337.5 180.6 L 372.8 180.6 L 372.8 191.9 L 408.1 191.9 L 408.1 197.7 L 443.4 197.7 L 443.4 226.8 L 478.8 226.8 L 478.8 250.1 L 549.4 250.1 L 549.4 257.6" fill="none" stroke="#c0392b" stroke-width="2.2"/>
+<text x="480" y="58" fill="#c0392b" font-size="13">Рерих</text>
+<text x="55" y="388" font-size="12" fill="#333">лет от дебюта до последнего выступления</text>
+<text x="14" y="178" font-size="12" fill="#333" transform="rotate(-90 14 178)">доля ещё активных</text>
+</svg>

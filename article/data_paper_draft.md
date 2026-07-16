@@ -1,6 +1,6 @@
 # Russian Indological Research Archive: A Conference Corpus for Prosopography
 
-**Marcis Gasuns**  
+**Mārcis Gasūns**  
 Independent researcher, Obninsk, Russia  
 ORCID: 0000-0003-4513-884X  
 
@@ -285,20 +285,22 @@ professional facts; correction and objection procedures are documented in
 
 A frozen version of the dataset used for publication will be archived at:
 
-**Gasūns, M. (2026).** *IndologyScholars: Archive of Talks in Russian
-Indology* [Data set]. Zenodo. https://doi.org/10.5281/zenodo.XXXXXXX
-(Replace XXXXXXX with actual Zenodo ID after upload.)
+**Gasūns, M. (2026).** *IndologyScholars: Russian Indological Research
+Archive — Zograf and Roerich Readings Conference Corpus (2004–2026)*
+[Data set]. Zenodo. Concept DOI: `10.5281/zenodo.PENDING` (all versions);
+version DOI: `10.5281/zenodo.PENDING` (this snapshot). Both DOIs are
+minted on deposit and will replace these markers before submission.
 
-The snapshot includes `conferences.db`, `site_data.json`, all analytics
-CSVs, curation files, and a SHA-256 manifest. Snapshots are produced by
-`tools/freeze_article_data.py` into `article/snapshots/<date>/`; the
-snapshot archived for this paper will be re-frozen from the repository
-state current at deposition time. Deposition metadata is pre-staged in
-`article/zenodo_metadata.json`; the Zenodo deposit itself has **not yet
-been performed** and the DOI above is a placeholder until it is. Until the
-DOI exists, the dataset is fully accessible through the GitHub repository
-and the live site, both of which carry the same licensing terms as the
-future deposit.
+The frozen snapshot for this paper is `article/snapshots/2026-07-17/`,
+produced by `tools/freeze_article_data.py`; it includes `conferences.db`,
+`site_data.json`, all analytics CSVs, curation files, and a SHA-256
+manifest. Deposition metadata is pre-staged in
+`article/zenodo_metadata.json` (dataset version `2026.07.17`, matching the
+snapshot date and `CITATION.cff`). The Zenodo deposit itself has **not yet
+been performed** and the DOIs above are pending markers until it is. Until
+the DOIs exist, the dataset is fully accessible through the GitHub
+repository and the live site, both of which carry the same licensing terms
+as the future deposit.
 
 ## 6. Limitations
 
@@ -369,9 +371,11 @@ snapshot:
 > Corpus for Prosopography. *Research Data Journal for the Humanities and
 > Social Sciences* (submission pending).
 >
-> Gasūns, M. (2026). *IndologyScholars: Archive of Talks in Russian
-> Indology* [Data set]. Zenodo. https://doi.org/10.5281/zenodo.XXXXXXX
-> (Update after Zenodo upload; see §5.4 — deposit not yet performed.)
+> Gasūns, M. (2026). *IndologyScholars: Russian Indological Research
+> Archive — Zograf and Roerich Readings Conference Corpus (2004–2026)*
+> [Data set]. Zenodo. https://doi.org/10.5281/zenodo.PENDING
+> (cite the concept DOI; update after deposit — see §5.4, not yet
+> performed.)
 
 ## 8. Acknowledgments
 
@@ -391,6 +395,10 @@ humanities community for the tools that made this corpus possible.
 ---
 
 *Draft: 2026-06-03. Revised: 2026-07-11 (all derivable figures re-verified
-against the committed data by `article/check_data_paper_numbers.py`).
+against the committed data by `article/check_data_paper_numbers.py`);
+2026-07-17 (snapshot re-frozen, cross-model κ re-derived from
+`analytics_output/interrater_crossmodel_claude.csv`, dataset title
+harmonized across §5.4/§7, `article/zenodo_metadata.json`, and
+`CITATION.cff`, DOI slots split into concept/version pending markers).
 Target journal: Research Data Journal for the Humanities and Social
 Sciences (Brill). Word count target: 3,000–4,000.*
