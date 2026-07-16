@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use this archive, please cite it."
-title: "Russian Indological Research Archive: Unified Relational Archive"
+title: "IndologyScholars: Russian Indological Research Archive — Zograf and Roerich Readings Conference Corpus (2004–2026)"
 authors:
   - family-names: "Gasūns"
     given-names: "Mārcis"
@@ -8,8 +8,8 @@ authors:
 type: dataset
 url: "https://gasyoun.github.io/IndologyScholars/"
 repository-code: "https://github.com/gasyoun/IndologyScholars"
-date-released: "2026-07-16"
-version: "1.1.0"
+date-released: "2026-07-17"
+version: "1.2.0"
 license: "CC-BY-4.0"
 abstract: "A curated relational archive of Zograf Readings and Roerich Readings conference programs, scholars, presentations, affiliations, cities, and thematic classifications."
 keywords:
