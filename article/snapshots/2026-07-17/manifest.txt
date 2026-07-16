@@ -1,5 +1,5 @@
 PPV Article Data Snapshot
-Frozen: 2026-07-17T00:35:12
+Frozen: 2026-07-17T00:57:55
 Repository: https://github.com/gasyoun/IndologyScholars
 
 ============================================================
@@ -21,7 +21,7 @@ FILE MANIFEST (SHA-256 checksums)
   c520e482010257b2c814d5eeb9dbae1d1676723b522e34e6a1099753e2fb5e7a        9453  analytics_output/cohort_survival.csv
   e2819d8ac541aa3998cb51bb850b7f007a871c283dc2b34207465dbf66221087        2694  analytics_output/conference_role_taxonomy.csv
   3d54257c4cbb408dff6beca4eeb6b6c55c69067ac204acbce02dd4fc71bc7cf8        2087  analytics_output/coverage_bias_audit.csv
-  97cb34e99a1b9ae4f99cee8a34f7a976ef650b493506bb76ec1d1de1f3d48dc6        2006  analytics_output/data_quality_report.json
+  f93821c66c7fa5f4b6c3aedcae565d8eab08d21b1e27d7bbf913f3dd43843e12        2006  analytics_output/data_quality_report.json
   e703528304a181bc1dd018d2ac1374fee5fea420f0958dda19abb032635cf362       14264  analytics_output/debut_timing.csv
   7013150fb705f96a9eacdf5e9273abbe3423243515169f1107e6cab9f188faab       16870  analytics_output/debut_timing.svg
   805a57a0c59d62aae045c39169b7718dd6b0a9fbb4c39a611fd4491fac3af7ef        1573  analytics_output/event_ecology_audit.csv
@@ -40,8 +40,8 @@ FILE MANIFEST (SHA-256 checksums)
   832ac815ca5974b16412434cac7ffab313c70500fcf299d6e59d17afba1603d4       99821  analytics_output/expanded_gumilyov_elevated_audit.csv
   5527f8a862e3e77b41b6a691a48623c96a8b2e82b2e9186ca5e5ae11db7f78b5        1417  analytics_output/fair_reuse_maturity_audit.csv
   03832ac6d9d83325f7a13ecc86994014a106a9965b5ee7134e4be08741a430ab       23904  analytics_output/field_provenance_authority.csv
-  db7281ced46badcdf3fcf260510886c9ed3820636cdc2d92c1bdd8322a1766ad      235689  analytics_output/field_provenance_biographical.csv
-  6f1227f2673559ce8047f90b586f5d3d2526082310d9450afbedff6a9c6ff65c      547967  analytics_output/field_provenance_themes.csv
+  129d8d017621280edd75a8468beda198474ed70614c6906048e89a35ea5566eb      235689  analytics_output/field_provenance_biographical.csv
+  3c476b958b7a645ae9bb61b24e172dac43d39c8d0bdb7d9244802e4742d6e44d      547967  analytics_output/field_provenance_themes.csv
   c6c60cc16a2feff111f66d56344a91e841d838d39d40b8e31fa08a1770f5ce48        3970  analytics_output/gender_validation_sample.csv
   81837e1a99fa673a00aac5d6fbe3aced2605b07b3061ca9e68b1eb7772f2ea9c      426443  analytics_output/gumilyov_scale.csv
   416917702b52ece1eb9be5fa37321183dc03a94b5a1c03d4d13e5d6090460322        1400  analytics_output/gumilyov_scale_trends.csv
@@ -52,7 +52,7 @@ FILE MANIFEST (SHA-256 checksums)
   631a15e2d5e74129e76044b6bd8406dba20aa244022a5d4735e42bad94430380         280  analytics_output/identity_trend_summary.json
   c335f19ca4a0edf4962f2314a9f86e323d107273923dcdc45d4153eb1f1104e7      216718  analytics_output/id_migration_presentation.csv
   ab93bf02befb4ecda1f3db64b9e7e2cfe40b6cac996749efd361af930bdfd451      440979  analytics_output/id_migration_presentation.json
-  0ca664ab1fc9dbb0478b58fea814fcc2321dd2ecd8b12ac492ee0f56e090a6be         971  analytics_output/id_stability_audit.json
+  02d67b3b1f46b838cd498ea60500bab4d4665870a680b90cec809b351f2dc3c1         971  analytics_output/id_stability_audit.json
   d415e5cf3dd0f05b8821395f12e9f7c9e9ff7b0c4b40ff455f130e9bd0f87cb6          99  analytics_output/id_stability_changed_ids.csv
   8b34e05fbbdf1e8a9bb667d8e0303e3555d615c0e57d3772d0c2180baa4caa61       19757  analytics_output/interrater_crossmodel_claude.csv
   57d325c952ddaf6836bde9255c60958e61e42da1e0e0020b24f2e670cf124454       17474  analytics_output/interrater_sample_blind.csv
@@ -77,8 +77,8 @@ FILE MANIFEST (SHA-256 checksums)
   684bb344f2bddcf3f9eedd4d09039ab8257aa9242154bec181ed54db93b4e8c2      541828  analytics_output/presentation_id_manifest.csv
   04be00af51979e0b06aeb7c6dcb919943419a7d8489ad01495b0f5a88453cb1c      160670  analytics_output/presentation_tags.csv
   3febc5e594eeaaa1253a915816d8d8bfae784cb3b8b6d9501c111754d12523d3          87  analytics_output/publication_conversion.csv
-  2c24172a746b91bbee8d1fd3ea5b0745d9cc637b78a96f86da7b69883fbaa1b3      481169  analytics_output/publication_file_manifest.csv
-  7436e5cb9a8c51720a80d8e122f9046215da83bd782ab7d3d0b81a12f1f5ea62      784782  analytics_output/publication_file_manifest.json
+  dfbd51673b63dd533250ced5d5bc08d23331926b03be742605e1ca3b7faf024c      481169  analytics_output/publication_file_manifest.csv
+  08c10e4602f34e3b8c4e33824f565ebbe93ebab0b5a546775941f936c85fcd41      784782  analytics_output/publication_file_manifest.json
   204471444a0b673322a858646159d0e72d009e75ea56fdb66c8ce62e7e231eac         219  analytics_output/renou_coverage.csv
   a41a7ed3f7b1cb8ab043d7eaf210274ef71636cb760329e8879604b38884a68a        7753  analytics_output/renou_cross_site_register_comparison.csv
   36803f8bda9aa6942976a1a8c6735446cb0180e42daedc014828485eb3eec1aa        2737  analytics_output/renou_cross_site_state_comparison.csv
@@ -218,9 +218,9 @@ FILE MANIFEST (SHA-256 checksums)
   57bae6fe6f11f02b3f75191b49a548f9ed7a6a097629654d39fff481daac9141        6949  curation/teacher_student.csv
   18a2b500d7ad63fbd41b0aa90829b9afd9763af494376e55d13bcc0644491f6f        5745  curation/teacher_student_schema.md
   11803341a0681c9df7e0fa1a580c10bb44dd353df9ea650b2bdf659e862064e8         739  curation/verified_affiliation_spans.csv
-  1c43496f19c6ca5c563c65d0e709ff2b09c15ba5f5c60ddde2c9736070e3075c     1814528  conferences.db
-  21ff8f6b449672aef42a3fa05a0fde4625a47cec6cb592d3ce6fbda00d383848     4876007  site_data.json
-  d87b59c631740a4f54985672bb6916862dcf968d1b3389a0d47d7a1976f7451f      566058  site_data_summary.json
+  d16b62b063061c557bebc960fcfec48f82136ef2e4cb0dee4b2debdc80509154     1814528  conferences.db
+  34d4699c4d6467ec871aa54cfcf25cd79b4f9f4aaa3abf65a009ee662b5ab32c     4876007  site_data.json
+  31c0b19cf31fc929ee6dba7739c66bdb0d9267402be049fc2389d9be4ff915f7      566058  site_data_summary.json
   cf3796659d5e9fa122c85095a7dc238f7bbdfe08b3e346f47f21c2c619257b32     2374302  site_data_scholars.json
   6eaffac22ec10b1172d463b0e53cf16c597ef6f2a83ae010ff2d2397b21b7e3f     2160061  site_data_timeline.json
   50889e4531ef60f215466292be814f43c5d0eb6e34e6be47b0858741a67a8084      286572  site_data_network.json
@@ -229,7 +229,7 @@ FILE MANIFEST (SHA-256 checksums)
   e83e162e70139b39cf4c02ea3dc67650d61f441c2e82e2670c3d90baa207118b       57384  public_ids.json
   d52bc2813f7569629a3be8bef95e5ebd813edfed0313dbac4571973e3799c575        9422  assets/data/geography.json
   7d7fa947eb4a0a7ccbfddbdc29ad6d7ed86c0a6d938d6482b0c8eaccf872551a       29829  data_dictionary.md
-  33d2abebd3205ef93fbac1d2922f83b472ad30873ffe394b83d3197cb991b702       33510  datapackage.json
-  4fa4cfd7c1b596002520672acef99d9d1f865429955472c47768e1ef35d21124         764  CITATION.cff
+  5d40401aa3cbae508d1a8b092b52598ba60bffda27968c92459f08c9d7f08da0       33510  datapackage.json
+  fe528af277ce93fc82f501e1ef93bcf969e9a62663ffbe6d08cbdb017c9068c1         798  CITATION.cff
   52dca983539521ce49a74a06423aad9acd047b521c7ba0a7955fb18ef3b463a3       96238  zograf-roerich-db.md
   53d70d83426b31256a5ce8bfbbcdf05fcf5ed7a46c6f1dbb082e33018ddd1230     1172201  search-index.json

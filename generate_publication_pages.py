@@ -869,7 +869,7 @@ def generate_home_assets(data):
     summary = data.get("summary", {})
     citation = f"""cff-version: 1.2.0
 message: "If you use this archive, please cite it."
-title: "{SITE_NAME}: Unified Relational Archive"
+title: "IndologyScholars: Russian Indological Research Archive — Zograf and Roerich Readings Conference Corpus (2004–2026)"
 authors:
   - family-names: "Gasūns"
     given-names: "Mārcis"
