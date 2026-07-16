@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="380" viewBox="0 0 640 380" font-family="Georgia, serif">
+<rect width="640" height="380" fill="white"/>
+<rect x="50.0" y="339.7" width="16.3" height="0.3" fill="#9bb4c9"/>
+<rect x="67.3" y="339.4" width="16.3" height="0.6" fill="#9bb4c9"/>
+<rect x="84.5" y="338.1" width="16.3" height="1.9" fill="#9bb4c9"/>
+<rect x="101.8" y="335.8" width="16.3" height="4.2" fill="#9bb4c9"/>
+<rect x="119.1" y="332.9" width="16.3" height="7.1" fill="#9bb4c9"/>
+<rect x="136.4" y="329.0" width="16.3" height="11.0" fill="#9bb4c9"/>
+<rect x="153.6" y="317.4" width="16.3" height="22.6" fill="#9bb4c9"/>
+<rect x="170.9" y="295.7" width="16.3" height="44.3" fill="#9bb4c9"/>
+<rect x="188.2" y="276.2" width="16.3" height="63.8" fill="#9bb4c9"/>
+<rect x="205.5" y="237.7" width="16.3" height="102.3" fill="#9bb4c9"/>
+<rect x="222.7" y="203.5" width="16.3" height="136.5" fill="#9bb4c9"/>
+<rect x="240.0" y="151.8" width="16.3" height="188.2" fill="#9bb4c9"/>
+<rect x="257.3" y="109.3" width="16.3" height="230.7" fill="#9bb4c9"/>
+<rect x="274.5" y="62.4" width="16.3" height="277.6" fill="#9bb4c9"/>
+<rect x="291.8" y="31.9" width="16.3" height="308.1" fill="#9bb4c9"/>
+<rect x="309.1" y="20.0" width="16.3" height="320.0" fill="#9bb4c9"/>
+<rect x="326.4" y="49.1" width="16.3" height="290.9" fill="#9bb4c9"/>
+<rect x="343.6" y="56.7" width="16.3" height="283.3" fill="#9bb4c9"/>
+<rect x="360.9" y="103.4" width="16.3" height="236.6" fill="#9bb4c9"/>
+<rect x="378.2" y="149.8" width="16.3" height="190.2" fill="#9bb4c9"/>
+<rect x="395.5" y="198.9" width="16.3" height="141.1" fill="#9bb4c9"/>
+<rect x="412.7" y="243.3" width="16.3" height="96.7" fill="#9bb4c9"/>
+<rect x="430.0" y="278.1" width="16.3" height="61.9" fill="#9bb4c9"/>
+<rect x="447.3" y="304.4" width="16.3" height="35.6" fill="#9bb4c9"/>
+<rect x="464.5" y="320.5" width="16.3" height="19.5" fill="#9bb4c9"/>
+<rect x="481.8" y="329.0" width="16.3" height="11.0" fill="#9bb4c9"/>
+<rect x="499.1" y="334.1" width="16.3" height="5.9" fill="#9bb4c9"/>
+<rect x="516.4" y="338.1" width="16.3" height="1.9" fill="#9bb4c9"/>
+<rect x="533.6" y="338.9" width="16.3" height="1.1" fill="#9bb4c9"/>
+<rect x="550.9" y="340.0" width="16.3" height="0.0" fill="#9bb4c9"/>
+<rect x="568.2" y="340.0" width="16.3" height="0.0" fill="#9bb4c9"/>
+<rect x="585.5" y="340.0" width="16.3" height="0.0" fill="#9bb4c9"/>
+<rect x="602.7" y="339.8" width="16.3" height="0.2" fill="#9bb4c9"/>
+<line x1="-1245.5" y1="20" x2="-1245.5" y2="340" stroke="#c0392b" stroke-width="2.5"/>
+<text x="-1240.5" y="35" fill="#c0392b" font-size="13">наблюдаемое: 41</text>
+<line x1="308.2" y1="20" x2="308.2" y2="340" stroke="#2c3e50" stroke-dasharray="4 3"/>
+<text x="313.2" y="55" fill="#2c3e50" font-size="13">ожидаемое: 131</text>
+<text x="50" y="370" font-size="12" fill="#333">число учёных, выступавших на обеих площадках (нулевое распределение)</text>
+</svg>

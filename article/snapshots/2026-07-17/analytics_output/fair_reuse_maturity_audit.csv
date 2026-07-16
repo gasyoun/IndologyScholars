@@ -1,0 +1,11 @@
+fair_id,principle,criterion,evidence_path,evidence_status,review_status,action
+FAIR01,F,Stable local identifiers are exported.,analytics_output/presentation_id_manifest.csv,present,pass,Keep current evidence current across releases.
+FAIR02,F,Machine-readable dataset metadata exists.,datapackage.json,present,pass,Keep current evidence current across releases.
+FAIR03,A,Public download/documentation page exists.,download-data.html,present,pass,Keep current evidence current across releases.
+FAIR04,A,Citation metadata exists.,CITATION.cff,present,pass,Keep current evidence current across releases.
+FAIR05,I,Typed network exports use explicit schemas.,analytics_output/network_edges.csv,present,pass,Keep current evidence current across releases.
+FAIR06,I,CSV field meanings are documented.,data_dictionary.md,present,pass,Keep current evidence current across releases.
+FAIR07,R,Reuse rights are documented.,docs/reuse-rights.md,present,pass,Keep current evidence current across releases.
+FAIR08,R,Field provenance sidecars exist.,analytics_output/field_provenance_authority.csv,present,pass,Keep current evidence current across releases.
+FAIR09,R,Known limitations are public.,known-limitations.html,present,pass,Keep current evidence current across releases.
+FAIR10,R,Scientometrics guardrails are documented.,docs/scientometrics-sociology.md,present,pass,Keep current evidence current across releases.

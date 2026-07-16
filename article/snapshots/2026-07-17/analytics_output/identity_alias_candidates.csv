@@ -1,0 +1,10 @@
+alias_person_id,alias_name,alias_normalized_key,alias_talks,target_person_id,target_name,target_normalized_key,target_birth_year,target_talks,match_rule,score,confidence,curation_status
+PERS_f8e06692,В. Коробов,коробов в,4,PERS_e96139bd,Коробов Владимир Борисович,коробов в б,1957,1,initial_prefix,90,high,review
+PERS_675f37f0,А. Бабин,бабин а,1,PERS_05d56645,Бабин Александр Николаевич,бабин а н,1990,12,initial_prefix,90,high,review
+PERS_5af1c05a,Г. Стукалин,стукалин г,1,PERS_42da4866,Стукалин Глеб Дмитриевич,стукалин г д,1992,2,initial_prefix,90,high,review
+PERS_ac7e1d48,И. Рыжакова,рыжакова и,1,PERS_d98da899,Рыжакова Светлана Игоревна,рыжакова с и,1970,26,patronymic_initial_only,70,medium,review
+PERS_300654cc,К. Маретина,маретина к,1,PERS_50c46233,Маретина Ксения Александровна,маретина к а,1982,4,initial_prefix,90,high,review
+PERS_f55cf2d5,Н. Краснодембская,краснодембская н,1,PERS_bc97fb65,Краснодембская Нина Георгиевна,краснодембская н г,1939,14,initial_prefix,90,high,review
+PERS_5e6bef63,П. Лужинская,лужинская п,1,PERS_8df81b6d,Лужинская Полина Александровна,лужинская п а,2002,2,initial_prefix,90,high,review
+PERS_ba7b23ae,М. Демченко,демченко м,1,PERS_7542d270,Демченко Максим Борисович,демченко м б,1985,10,initial_prefix,90,high,review
+PERS_56e6d363,М. Павлова,павлова м,1,PERS_34c0d384,Павлова Мария Борисовна,павлова м б,1987,2,initial_prefix,90,high,review

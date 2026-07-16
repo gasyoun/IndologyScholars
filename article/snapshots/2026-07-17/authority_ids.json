@@ -1,0 +1,575 @@
+{
+  "description": "Optional authority identifiers used by generators when known. Add ORCID, Wikidata, VIAF, ROR, or official URLs without changing code.",
+  "persons": {
+    "PERS_05d56645": {
+      "preferred_latin_name": "Alexander Babin",
+      "openalex": "A5028785724",
+      "confidence": "candidate",
+      "checked_at": "2026-06-03",
+      "orcid": "0000-0003-3536-400X"
+    },
+    "PERS_0665f215": {
+      "preferred_latin_name": "Vladimir Shokhin",
+      "openalex": "A5110754780",
+      "confidence": "candidate",
+      "checked_at": "2026-06-03"
+    },
+    "PERS_0e0a154e": {
+      "preferred_latin_name": "Lev Titlin"
+    },
+    "PERS_11da326d": {
+      "preferred_latin_name": "Sergey Tavastsherna"
+    },
+    "PERS_12125da9": {
+      "preferred_latin_name": "Victoria Lysenko",
+      "openalex": "A5109356143",
+      "confidence": "candidate",
+      "checked_at": "2026-06-03"
+    },
+    "PERS_1c6fcce5": {
+      "preferred_latin_name": "Elizaveta Kuzina"
+    },
+    "PERS_1fa7cc0c": {
+      "preferred_latin_name": "Alexander Dubyansky",
+      "openalex": "A5109806905",
+      "confidence": "candidate",
+      "checked_at": "2026-06-03",
+      "wikidata": "Q109120330",
+      "source": "roster_match"
+    },
+    "PERS_36dabb79": {
+      "preferred_latin_name": "Anastasia Guriya"
+    },
+    "PERS_3b196639": {
+      "preferred_latin_name": "Nikolai Gordiichuk"
+    },
+    "PERS_3c202afd": {
+      "preferred_latin_name": "Rada Krapivina"
+    },
+    "PERS_40862f5e": {
+      "preferred_latin_name": "Natalia Korneeva",
+      "openalex": "A5025798171",
+      "confidence": "candidate",
+      "checked_at": "2026-06-03",
+      "orcid": "0000-0002-2261-4682"
+    },
+    "PERS_41d6aa73": {
+      "preferred_latin_name": "Daria Vorobyeva",
+      "openalex": "A5059958242",
+      "confidence": "candidate",
+      "checked_at": "2026-06-03",
+      "orcid": "0000-0002-7325-6504"
+    },
+    "PERS_50d73711": {
+      "preferred_latin_name": "Anna Smirnitskaya"
+    },
+    "PERS_5228da95": {
+      "preferred_latin_name": "Victoria Vertogradova"
+    },
+    "PERS_58b39545": {
+      "preferred_latin_name": "Evgenia Renkovskaya"
+    },
+    "PERS_61202bf3": {
+      "preferred_latin_name": "Yulia Alikhanova"
+    },
+    "PERS_6ae5c779": {
+      "preferred_latin_name": "Anastasia Fiveyskaya"
+    },
+    "PERS_72506535": {
+      "preferred_latin_name": "Anastasia Krylova",
+      "openalex": "A5061198994",
+      "confidence": "candidate",
+      "checked_at": "2026-06-03",
+      "orcid": "0000-0001-9962-4267"
+    },
+    "PERS_8516d1e4": {
+      "preferred_latin_name": "Marcis Gasuns",
+      "wikidata": "Q11111111",
+      "orcid": "0000-0003-2415-4676",
+      "samskrtam_ru": "https://samskrtam.ru/",
+      "confidence": "confirmed",
+      "checked_at": "2026-05-21"
+    },
+    "PERS_8e117242": {
+      "preferred_latin_name": "Ekaterina Yuditskaya"
+    },
+    "PERS_92868e4f": {
+      "preferred_latin_name": "Dmitry Zhutaev"
+    },
+    "PERS_93e2effb": {
+      "preferred_latin_name": "Dmitry Komissarov",
+      "openalex": "A5026063360",
+      "confidence": "candidate",
+      "checked_at": "2026-06-03",
+      "orcid": "0009-0001-8315-4464"
+    },
+    "PERS_9f398436": {
+      "preferred_latin_name": "Leonid Kulikov"
+    },
+    "PERS_aa964a12": {
+      "wikipedia": "https://ru.wikipedia.org/wiki/Самозванцев,_Андрей_Михайлович",
+      "confidence": "manual",
+      "source": "ru.wikipedia.org",
+      "checked_at": "2026-05-25"
+    },
+    "PERS_b4cdbfb8": {
+      "wikipedia": "https://ru.wikipedia.org/wiki/Эрман,_Владимир_Гансович",
+      "confidence": "manual",
+      "source": "ru.wikipedia.org",
+      "checked_at": "2026-05-25"
+    },
+    "PERS_c52dfaa0": {
+      "preferred_latin_name": "Sofia Tsvetkova",
+      "openalex": "A5018164535",
+      "confidence": "candidate",
+      "checked_at": "2026-06-03"
+    },
+    "PERS_cdbd7a15": {
+      "preferred_latin_name": "Sergey Kullanda",
+      "wikipedia": "https://ru.wikipedia.org/wiki/Кулланда,_Сергей_Всеволодович",
+      "confidence": "manual",
+      "source": "ru.wikipedia.org",
+      "checked_at": "2026-05-25",
+      "openalex": "A5091694401"
+    },
+    "PERS_cfb92c5f": {
+      "preferred_latin_name": "Evgeny Ulansky"
+    },
+    "PERS_d3c5382c": {
+      "wikipedia": "https://ru.wikipedia.org/wiki/Попова,_Ирина_Фёдоровна",
+      "confidence": "manual",
+      "source": "ru.wikipedia.org",
+      "checked_at": "2026-05-25"
+    },
+    "PERS_d98da899": {
+      "preferred_latin_name": "Svetlana Ryzhakova"
+    },
+    "PERS_ddb70dc9": {
+      "vk": "https://vk.com/m.azarkina",
+      "confidence": "manual",
+      "source": "vk.com",
+      "checked_at": "2026-05-25"
+    },
+    "PERS_e1dd6b3e": {
+      "preferred_latin_name": "Natalia Lidova",
+      "openalex": "A5089354591",
+      "confidence": "candidate",
+      "checked_at": "2026-06-03"
+    },
+    "PERS_e5a5ac24": {
+      "wikipedia": "https://ru.wikipedia.org/wiki/Невелева,_Светлана_Леонидовна",
+      "confidence": "manual",
+      "source": "ru.wikipedia.org",
+      "checked_at": "2026-05-25"
+    },
+    "PERS_e31ca12d": {
+      "preferred_latin_name": "Olga Vecherina",
+      "openalex": "A5072321578",
+      "confidence": "candidate",
+      "checked_at": "2026-06-03",
+      "orcid": "0000-0001-5223-4683"
+    },
+    "PERS_ebb6d156": {
+      "preferred_latin_name": "Anastasia Lozhkina"
+    },
+    "PERS_efc88709": {
+      "preferred_latin_name": "Natalia Kanaeva",
+      "openalex": "A5014373447",
+      "confidence": "candidate",
+      "checked_at": "2026-06-03"
+    },
+    "PERS_f074f69f": {
+      "preferred_latin_name": "Natalia Alexandrova",
+      "openalex": "A5026899555",
+      "confidence": "candidate",
+      "checked_at": "2026-06-03"
+    },
+    "PERS_f2fef030": {
+      "preferred_latin_name": "Areg Mekhakyan"
+    },
+    "PERS_f5b8b340": {
+      "preferred_latin_name": "Alexey Vigasin"
+    },
+    "PERS_2f26a47a": {
+      "wikidata": "Q46908",
+      "confidence": "candidate",
+      "checked_at": "2026-06-10",
+      "source": "roster_match"
+    }
+  },
+  "organizations": {
+    "ИВ РАН": {
+      "full_name_ru": "Институт востоковедения Российской академии наук",
+      "name_en": "Institute of Oriental Studies of the Russian Academy of Sciences",
+      "alternateName": [
+        "IOS RAS"
+      ],
+      "url": "https://www.ivran.ru",
+      "wikidata": "Q1414442"
+    },
+    "СПбГУ": {
+      "full_name_ru": "Санкт-Петербургский государственный университет",
+      "name_en": "Saint Petersburg State University",
+      "alternateName": [
+        "SPbU"
+      ],
+      "url": "https://spbu.ru",
+      "wikidata": "Q27621",
+      "ror": "00k2yeb14"
+    },
+    "МГУ": {
+      "full_name_ru": "Московский государственный университет имени М. В. Ломоносова",
+      "name_en": "Lomonosov Moscow State University",
+      "alternateName": [
+        "MSU"
+      ],
+      "url": "https://www.msu.ru",
+      "wikidata": "Q13164",
+      "ror": "02drsyg33"
+    },
+    "НИУ ВШЭ": {
+      "full_name_ru": "Национальный исследовательский университет «Высшая школа экономики»",
+      "name_en": "HSE University",
+      "alternateName": [
+        "Higher School of Economics"
+      ],
+      "url": "https://www.hse.ru",
+      "wikidata": "Q1340150",
+      "ror": "03p90cg98"
+    },
+    "ИФ РАН": {
+      "full_name_ru": "Институт философии Российской академии наук",
+      "name_en": "Institute of Philosophy, Russian Academy of Sciences",
+      "alternateName": [
+        "IPH RAS"
+      ],
+      "url": "https://iphras.ru",
+      "wikidata": "Q4201389"
+    },
+    "РГГУ": {
+      "full_name_ru": "Российский государственный гуманитарный университет",
+      "name_en": "Russian State University for the Humanities",
+      "alternateName": [
+        "RSUH"
+      ],
+      "url": "https://www.rsuh.ru",
+      "wikidata": "Q1056588"
+    },
+    "МАЭ РАН": {
+      "full_name_ru": "Музей антропологии и этнографии имени Петра Великого (Кунсткамера) Российской академии наук",
+      "name_en": "Peter the Great Museum of Anthropology and Ethnography (the Kunstkamera)",
+      "alternateName": [
+        "Kunstkamera"
+      ],
+      "url": "https://www.kunstkamera.ru",
+      "wikidata": "Q618774"
+    },
+    "Государственный Эрмитаж": {
+      "full_name_ru": "Государственный Эрмитаж",
+      "name_en": "State Hermitage Museum",
+      "alternateName": [
+        "The Hermitage"
+      ],
+      "url": "https://www.hermitagemuseum.org",
+      "wikidata": "Q132783"
+    },
+    "ИВР РАН": {
+      "full_name_ru": "Институт восточных рукописей Российской академии наук",
+      "name_en": "Institute of Oriental Manuscripts of the Russian Academy of Sciences",
+      "alternateName": [
+        "IOM RAS"
+      ],
+      "url": "https://www.orientalstudies.ru",
+      "wikidata": "Q1413813"
+    },
+    "ГИИ": {
+      "full_name_ru": "Государственный институт искусствознания",
+      "name_en": "State Institute for Art Studies",
+      "alternateName": [
+        "ГИИ"
+      ],
+      "wikidata": "Q4146803",
+      "ror": "00z94ps04"
+    },
+    "ИВ НАН Украины": {
+      "full_name_ru": "Институт востоковедения имени А. Е. Крымского НАН Украины",
+      "name_en": "A. Yu. Krymsky Institute of Oriental Studies, National Academy of Sciences of Ukraine",
+      "alternateName": [
+        "ИВ НАН Украины",
+        "Институт востоковедения им. А. Е. Крымского НАН Украины"
+      ],
+      "wikidata": "Q12074682",
+      "ror": "013j1vq42"
+    },
+    "РУДН": {
+      "full_name_ru": "Российский университет дружбы народов",
+      "name_en": "Peoples' Friendship University of Russia",
+      "alternateName": [
+        "РУДН",
+        "RUDN"
+      ],
+      "wikidata": "Q839669",
+      "ror": "02dn9h927"
+    },
+    "МГППУ": {
+      "full_name_ru": "Московский государственный психолого-педагогический университет",
+      "name_en": "Moscow State University of Psychology and Education",
+      "alternateName": [
+        "МГППУ"
+      ],
+      "wikidata": "Q4304064",
+      "ror": "04rnxkh71"
+    },
+    "ИСАА": {
+      "full_name_ru": "Институт стран Азии и Африки МГУ имени М. В. Ломоносова",
+      "name_en": "Institute of Asian and African Studies, Lomonosov Moscow State University",
+      "alternateName": [
+        "ИСАА",
+        "ИСАА МГУ"
+      ],
+      "wikidata": "Q2782141"
+    },
+    "ИМЛИ РАН": {
+      "full_name_ru": "Институт мировой литературы имени А. М. Горького РАН",
+      "name_en": "A. M. Gorky Institute of World Literature of the Russian Academy of Sciences",
+      "alternateName": [
+        "ИМЛИ РАН",
+        "ИМЛИ"
+      ],
+      "wikidata": "Q3152043",
+      "ror": "020frqf17"
+    },
+    "ИЭА РАН": {
+      "full_name_ru": "Институт этнологии и антропологии имени Н. Н. Миклухо-Маклая РАН",
+      "name_en": "N.N. Miklukho-Maklai Institute of Ethnology and Anthropology, Russian Academy of Sciences",
+      "alternateName": [
+        "ИЭА РАН"
+      ],
+      "wikidata": "Q4201873",
+      "ror": "04f3vpm64"
+    },
+    "ИЯ РАН": {
+      "full_name_ru": "Институт языкознания РАН",
+      "name_en": "Institute of Linguistics of the Russian Academy of Sciences",
+      "alternateName": [
+        "ИЯ РАН",
+        "Институт языкознания РАН"
+      ],
+      "wikidata": "Q4201878",
+      "ror": "033px5146"
+    },
+    "Ольстерский университет": {
+      "full_name_ru": "Ольстерский университет",
+      "name_en": "Ulster University",
+      "alternateName": [
+        "Ulster University",
+        "Университет Ольстера"
+      ],
+      "wikidata": "Q2096524",
+      "ror": "01yp9g959"
+    },
+    "ГАУГН": {
+      "full_name_ru": "Государственный академический университет гуманитарных наук",
+      "name_en": "State Academic University of Humanities",
+      "alternateName": [
+        "ГАУГН"
+      ],
+      "wikidata": "Q4146754",
+      "ror": "01bqs3h57"
+    },
+    "МЦР": {
+      "full_name_ru": "Международный центр Рерихов",
+      "name_en": "International Centre of the Roerichs",
+      "alternateName": [
+        "МЦР"
+      ],
+      "wikidata": "Q4288619"
+    },
+    "СПбГИК": {
+      "full_name_ru": "Санкт-Петербургский государственный институт культуры",
+      "name_en": "Saint Petersburg State University of Culture and Arts",
+      "alternateName": [
+        "СПбГИК",
+        "Университет культуры, СПб"
+      ],
+      "wikidata": "Q4407698",
+      "ror": "02ktptg11"
+    },
+    "ИИЭ Валиханова": {
+      "full_name_ru": "Институт истории и этнологии имени Ч. Ч. Валиханова",
+      "name_en": "Ch. Ch. Valikhanov Institute of History and Ethnology",
+      "alternateName": [
+        "Институт истории и этнологии им. Ч. Ч. Валиханова"
+      ],
+      "wikidata": "Q60852541"
+    },
+    "ИИЕТ РАН": {
+      "full_name_ru": "Институт истории естествознания и техники имени С. И. Вавилова РАН",
+      "name_en": "S.I. Vavilov Institute for the History of Natural Science and Technology",
+      "alternateName": [
+        "ИИЕТ РАН"
+      ],
+      "wikidata": "Q4201531",
+      "ror": "04kybmr51"
+    },
+    "РАНХиГС": {
+      "full_name_ru": "Российская академия народного хозяйства и государственной службы при Президенте Российской Федерации",
+      "name_en": "Russian Presidential Academy of National Economy and Public Administration",
+      "alternateName": [
+        "РАНХиГС"
+      ],
+      "wikidata": "Q2822458",
+      "ror": "04xnm9a92"
+    },
+    "КрасГАУ": {
+      "full_name_ru": "Красноярский государственный аграрный университет",
+      "name_en": "Krasnoyarsk State Agrarian University",
+      "alternateName": [
+        "КрасГАУ"
+      ],
+      "wikidata": "Q4239242",
+      "ror": "05p3gfq61"
+    },
+    "ИМБТ СО РАН": {
+      "full_name_ru": "Институт монголоведения, буддологии и тибетологии СО РАН",
+      "name_en": "Institute of Mongolian, Buddhist and Tibetan Studies",
+      "alternateName": [
+        "ИМБТ СО РАН"
+      ],
+      "wikidata": "Q4201608",
+      "ror": "00je00x55"
+    },
+    "КНЦ РАН": {
+      "full_name_ru": "Калмыцкий научный центр РАН",
+      "name_en": "Kalmyk Scientific Center of the Russian Academy of Sciences",
+      "alternateName": [
+        "КНЦ РАН"
+      ],
+      "wikidata": "Q4210236",
+      "ror": "00z0g8n94"
+    },
+    "ГММ Скрябина": {
+      "full_name_ru": "Государственный мемориальный музей А. Н. Скрябина",
+      "name_en": "A.N. Scriabin Memorial Museum",
+      "alternateName": [
+        "ГММ А.Н. Скрябина"
+      ],
+      "wikidata": "Q4146864"
+    },
+    "УрФУ": {
+      "full_name_ru": "Уральский федеральный университет",
+      "name_en": "Ural Federal University",
+      "alternateName": [
+        "УрФУ",
+        "УФУ"
+      ],
+      "wikidata": "Q1506552",
+      "ror": "00hs7dr46"
+    },
+    "РГПУ им. Герцена": {
+      "full_name_ru": "Российский государственный педагогический университет им. А. И. Герцена",
+      "name_en": "Herzen State Pedagogical University of Russia",
+      "alternateName": [
+        "РГПУ им. А. И. Герцена"
+      ],
+      "wikidata": "Q323681",
+      "ror": "01e5ckr65"
+    },
+    "РостГМУ": {
+      "full_name_ru": "Ростовский государственный медицинский университет",
+      "name_en": "Rostov State Medical University",
+      "alternateName": [
+        "РостГМУ"
+      ],
+      "wikidata": "Q7370051",
+      "ror": "046a1ah60"
+    }
+  },
+  "places": {
+    "Санкт-Петербург": {
+      "name_en": "St. Petersburg",
+      "alternateName": [
+        "Saint Petersburg",
+        "Sankt-Peterburg"
+      ],
+      "wikidata": "Q656",
+      "country": "Russia",
+      "country_ru": "Россия"
+    },
+    "Москва": {
+      "name_en": "Moscow",
+      "alternateName": [
+        "Moskva"
+      ],
+      "wikidata": "Q649",
+      "country": "Russia",
+      "country_ru": "Россия"
+    },
+    "Пенза": {
+      "name_en": "Penza",
+      "wikidata": "Q5545",
+      "country": "Russia",
+      "country_ru": "Россия"
+    },
+    "Краснодар": {
+      "name_en": "Krasnodar",
+      "alternateName": [
+        "Yekaterinodar"
+      ],
+      "wikidata": "Q3219",
+      "country": "Russia",
+      "country_ru": "Россия"
+    },
+    "Казань": {
+      "name_en": "Kazan",
+      "alternateName": [
+        "Qazan"
+      ],
+      "wikidata": "Q900",
+      "country": "Russia",
+      "country_ru": "Россия"
+    },
+    "Элиста": {
+      "name_en": "Elista",
+      "wikidata": "Q3877",
+      "country": "Russia",
+      "country_ru": "Россия"
+    },
+    "Новосибирск": {
+      "name_en": "Novosibirsk",
+      "alternateName": [
+        "Novonikolayevsk"
+      ],
+      "wikidata": "Q883",
+      "country": "Russia",
+      "country_ru": "Россия"
+    },
+    "Нижний Новгород": {
+      "name_en": "Nizhny Novgorod",
+      "alternateName": [
+        "Gorky"
+      ],
+      "wikidata": "Q891",
+      "country": "Russia",
+      "country_ru": "Россия"
+    },
+    "Вильнюс": {
+      "name_en": "Vilnius",
+      "alternateName": [
+        "Vilna"
+      ],
+      "wikidata": "Q216",
+      "country": "Lithuania",
+      "country_ru": "Литва"
+    },
+    "Улан-Удэ": {
+      "name_en": "Ulan-Ude",
+      "alternateName": [
+        "Verkhneudinsk"
+      ],
+      "wikidata": "Q4338",
+      "country": "Russia",
+      "country_ru": "Россия"
+    }
+  }
+}

@@ -1,0 +1,9 @@
+dimension,observed_count,total_count,coverage_share,evidence_source,interpretation,review_status,review_action
+event_theme,40,40,1.000,conferences.db,Conference themes are available only when programme metadata exposes them.,pass,Check programme headers for missing event themes.
+event_format,40,40,1.000,conferences.db,Format labels document online/offline/hybrid context when explicit.,pass,Review format fields before making digital-turn claims.
+session_title,243,243,1.000,conferences.db,"Session titles are an event-ecology layer, not topical proof by themselves.",pass,Recover missing session titles from source programmes where possible.
+session_chair,34,243,0.140,conferences.db,Chair metadata supports role sociology only after source-backed extraction.,review,Manually extract chair strings where programme layout preserves them.
+venue_room,139,139,1.000,conferences.db,Room/venue detail helps describe conference infrastructure.,pass,Check weak venue rows against source snippets.
+raw_affiliation_text,1362,1362,1.000,conferences.db,Raw affiliations are source strings and may be incomplete or inconsistent.,pass,Normalize only source-backed affiliation strings.
+organization_normalization,0,1362,0.000,conferences.db,Organization IDs are stricter than raw affiliation strings.,review,Do not use organization networks as institutional productivity until coverage improves.
+presentation_media,82,1362,0.060,conferences.db,"Media coverage is preservation visibility, not status.",review,Keep video availability separate from quality or importance claims.
