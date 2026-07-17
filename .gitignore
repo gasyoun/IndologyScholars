@@ -80,8 +80,12 @@ nagari/site/*
 # stays ignored; only this deliberately-selected PD subset is published.
 !nagari/site/books/
 !nagari/site/books/**
-# The Markdown mirror carries full message bodies and is NOT redacted: the audit
-# finds 1,290 distinct third-party addresses across 42,421 occurrences. It cannot
-# be published until export_md.py redacts the way page.py already does.
-nagari/md/
+# The Markdown mirror (one file per thread, full message bodies) is published as
+# of 17-07-2026: export_md.py now redacts the way page.py already did (H1104,
+# verified 0 leaked addresses by scripts/audit_publish_surface.py), and MG ruled
+# via chat to publish it so site links (notable threads / search results / files
+# shared) resolve to real online files instead of dead text. Attachment BLOBS
+# (the actual PDFs/DjVu etc.) stay a separate, still-open rights question -- only
+# the pre-cleared subset under nagari/site/books/ is public.
+!nagari/md/
 nagari/**/__pycache__/

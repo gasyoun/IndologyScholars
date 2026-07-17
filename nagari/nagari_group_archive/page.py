@@ -19,7 +19,9 @@ import json
 import sys
 from datetime import date
 from pathlib import Path
+from urllib.parse import quote
 
+from nagari_group_archive.export_md import slug as md_slug
 from nagari_group_archive.redact import NAME_STOP, mask_name, redact_emails
 
 PKG_DATA = Path(__file__).resolve().parents[1] / "data"
@@ -27,6 +29,18 @@ DEFAULT_DUMP = Path(
     r"C:/Users/user/Documents/GitHub/IndologyScholars/nagari-2005-2026/nagari@googlegroups.com"
 )
 DEFAULT_OUT = Path(__file__).resolve().parents[1] / "site" / "index.html"
+
+# Every thread's per-message mirror is published as a Markdown file at this path
+# pattern (see export_md.py); mirror the same subject/year/thrid -> filename
+# logic here so the site can link straight to the online blob.
+REPO_BLOB = "https://github.com/gasyoun/IndologyScholars/blob/main"
+
+
+def thread_md_url(subject_raw: str, year: str, gm_thrid: str) -> str:
+    subj = redact_emails(subject_raw) or "(без темы)"
+    y = year if year else "undated"
+    fname = f"{md_slug(subj)}__{str(gm_thrid)[-8:]}.md"
+    return f"{REPO_BLOB}/{quote(f'nagari/md/{y}/{fname}')}"
 
 
 def configure_stdio() -> None:
@@ -64,6 +78,18 @@ def build(dump: Path, out: Path) -> dict:
     books = rd(PKG_DATA / "processed" / "book_index.csv")
     authors = rd(PKG_DATA / "processed" / "top_authors.csv")
     name, desc = group_description(dump)
+
+    # export_md.py names each file after its thread's *starter* message subject/year,
+    # which can differ from the subject/year of whichever message shared a given
+    # attachment (thread drift) -- look the URL up by gm_thrid, never recompute it
+    # from a book/message row directly, or the link 404s.
+    thread_by_id = {t["gm_thrid"]: t for t in threads}
+
+    def md_url_for_thread(gm_thrid: str, fallback_subject: str, fallback_year: str) -> str:
+        t = thread_by_id.get(gm_thrid)
+        if t is not None:
+            return thread_md_url(t["subject"], t["year"], gm_thrid)
+        return thread_md_url(fallback_subject, fallback_year, gm_thrid)
 
     tot = site["totals"]
     ay = site["activity"]["by_year"]
@@ -140,13 +166,14 @@ def build(dump: Path, out: Path) -> dict:
     # embeddable compact thread list for search/browse
     thr_compact = [
         [redact_emails(t["subject"])[:120], mask_name(t["starter"]), int(t["year"]) if str(t["year"]).isdigit() else 0,
-         int(t["n_messages"]), int(t["n_authors"])]
+         int(t["n_messages"]), int(t["n_authors"]), thread_md_url(t["subject"], t["year"], t["gm_thrid"])]
         for t in threads if t["subject"]
     ]
 
     # notable threads (biggest) + tag the Gita court case
     notable = [
-        {"subject": redact_emails(t["subject"]), "year": t["year"], "n": int(t["n_messages"]), "a": int(t["n_authors"]), "starter": mask_name(t["starter"])}
+        {"subject": redact_emails(t["subject"]), "year": t["year"], "n": int(t["n_messages"]), "a": int(t["n_authors"]),
+         "starter": mask_name(t["starter"]), "url": thread_md_url(t["subject"], t["year"], t["gm_thrid"])}
         for t in threads[:24]
     ]
 
@@ -166,7 +193,8 @@ def build(dump: Path, out: Path) -> dict:
         "deva": deva, "iast": iast, "heat": heat,
         "attachments_by_type": site["sanskrit"]["attachments_by_type"],
         "top_authors": top_authors_disp, "threads": thr_compact,
-        "book_top": [{"f": redact_emails(b["filename"]), "ext": b["ext"], "y": b["year"], "mb": round(int(b["size_bytes"]) / 1e6, 1), "by": mask_name(b["sharer"])} for b in books[:60]],
+        "book_top": [{"f": redact_emails(b["filename"]), "ext": b["ext"], "y": b["year"], "mb": round(int(b["size_bytes"]) / 1e6, 1), "by": mask_name(b["sharer"]),
+                      "url": md_url_for_thread(b["gm_thrid"], b["subject"], b["year"])} for b in books[:60]],
         "meta": {
             "n_books": len(books), "att_bytes": total_att_bytes, "span": span,
             "first_year": first_year, "last_year": last_year,

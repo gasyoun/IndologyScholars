@@ -530,12 +530,12 @@ function authorsTable(){
 function notableTable(){
   let h="<table class=data><thead><tr><th>Тема</th><th class=n>Год</th><th class=n>Сообщ.</th><th class=n>Авторов</th></tr></thead><tbody>";
   DATA.notable.forEach(t=>{const gita=/подсудное|суд/i.test(t.subject);
-    h+=`<tr><td>${gita?'<span class=hl>':''}${t.subject}${gita?'</span>':''}</td><td class=n>${t.year}</td><td class=n>${fmt(t.n)}</td><td class=n>${fmt(t.a)}</td></tr>`;});
+    h+=`<tr><td>${gita?'<span class=hl>':''}<a href="${t.url}" target=_blank rel=noopener>${t.subject}</a>${gita?'</span>':''}</td><td class=n>${t.year}</td><td class=n>${fmt(t.n)}</td><td class=n>${fmt(t.a)}</td></tr>`;});
   $("#t_notable").innerHTML=h+"</tbody></table>";
 }
 function booksTable(){
   let h="<table class=data><thead><tr><th>Файл</th><th class=n>Год</th><th class=n>МБ</th><th>Поделился</th></tr></thead><tbody>";
-  DATA.book_top.forEach(b=>h+=`<tr><td>${b.f||"—"} <span class=m>.${b.ext}</span></td><td class=n>${b.y}</td><td class=n>${b.mb}</td><td>${b.by||""}</td></tr>`);
+  DATA.book_top.forEach(b=>h+=`<tr><td><a href="${b.url}" target=_blank rel=noopener>${b.f||"—"}</a> <span class=m>.${b.ext}</span></td><td class=n>${b.y}</td><td class=n>${b.mb}</td><td>${b.by||""}</td></tr>`);
   $("#t_books").innerHTML=h+"</tbody></table>";
   let a="<table class=data><thead><tr><th>Тип</th><th class=n>Файлов</th><th class=n>Объём</th></tr></thead><tbody>";
   DATA.attachments_by_type.forEach(r=>a+=`<tr><td>.${r.ext}</td><td class=n>${fmt(r.count)}</td><td class=n>${(r.total_bytes/1048576).toFixed(1)} МБ</td></tr>`);
@@ -550,7 +550,7 @@ function search(){
     let rows=T;
     if(s){const parts=s.split(/\s+/);rows=T.filter(r=>{const hay=(r[0]+" "+r[1]).toLowerCase();return parts.every(p=>hay.includes(p));});}
     rows=rows.slice().sort((a,b)=>b[3]-a[3]).slice(0,200);
-    res.innerHTML=rows.map(r=>`<div class=row><div><div class=t>${esc(r[0])}</div><div class=m>${esc(r[1])} · ${r[2]||"?"}</div></div><div class=meta>${r[3]} сообщ.<br>${r[4]} авт.</div></div>`).join("")||"<div class=row><div class=m>Ничего не найдено</div></div>";
+    res.innerHTML=rows.map(r=>`<div class=row><div><div class=t><a href="${r[5]}" target=_blank rel=noopener>${esc(r[0])}</a></div><div class=m>${esc(r[1])} · ${r[2]||"?"}</div></div><div class=meta>${r[3]} сообщ.<br>${r[4]} авт.</div></div>`).join("")||"<div class=row><div class=m>Ничего не найдено</div></div>";
   }
   const esc=x=>(x||"").replace(/[&<>]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));
   q.addEventListener("input",run);run();
