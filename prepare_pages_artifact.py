@@ -176,13 +176,24 @@ def minify_css(content):
 
 
 def minify_js(content):
-    # Very simple safe JS minification
-    # Remove comments
-    content = re.sub(r'//.*?\n', '\n', content)
-    content = re.sub(r'/\*(.*?)\*/', '', content, flags=re.DOTALL)
-    # Collapse multiple spaces
-    content = re.sub(r'\s+', ' ', content)
-    return content.strip()
+    # Correctness over cleverness. The previous "very simple" version was neither
+    # simple nor safe: `//.*?\n` -> '\n' ate every `//` that lived *inside* a
+    # string literal — the https:// URLs in assets/js/main.js (ORCID, Wikidata
+    # links) and the map basemap tile template in charts.js were all corrupted —
+    # and then `\s+` -> ' ' flattened newlines so any surviving `//` comment
+    # would swallow the rest of the file (the same failure that blanked the
+    # nagari charts through minify_html). A regex cannot tell code from strings,
+    # regex literals or template literals, so we do NOT touch any line's inline
+    # content. We only drop lines that are unambiguously whole-line `//` comments
+    # or blank — that keeps newlines (no comment can swallow code) and cannot
+    # corrupt a URL, string, or regex. Modest savings, zero risk.
+    kept = []
+    for line in content.splitlines():
+        stripped = line.strip()
+        if not stripped or stripped.startswith("//"):
+            continue
+        kept.append(line)
+    return "\n".join(kept)
 
 
 def minify_site(dest_root):

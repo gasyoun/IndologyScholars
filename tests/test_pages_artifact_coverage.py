@@ -100,3 +100,45 @@ def test_minify_html_does_not_flatten_script_newlines():
     html = "<body><script>\n// c\nvar keep = 1;\n</script></body>\n"
     out = ppa.minify_html(html)
     assert "// c\nvar keep = 1;" in out
+
+
+def test_minify_js_preserves_urls_and_string_slashes():
+    """Regression: JS minification must not corrupt `//` inside string literals.
+    The old `//.*?\\n` -> '\\n' comment strip ate every https:// URL (ORCID /
+    Wikidata scholar links, the map basemap tile template) and then flattened
+    newlines so a surviving comment could swallow the rest of the file."""
+    js = (
+        '// whole-line comment, safe to drop\n'
+        'const orcid = "https://orcid.org/0000-0003-4513-884X";\n'
+        'const tiles = "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png";\n'
+        'const re = /a\\/\\/b/;   // inline note\n'
+        '\n'
+        'function f(){ return orcid; }\n'
+    )
+    out = ppa.minify_js(js)
+    # URLs and their `//` survive intact.
+    assert "https://orcid.org/0000-0003-4513-884X" in out
+    assert "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png" in out
+    # The regex literal (which contains `//`) is untouched.
+    assert "/a\\/\\/b/" in out
+    # Whole-line comments and blank lines are dropped; real code stays.
+    assert "whole-line comment" not in out
+    assert "function f(){ return orcid; }" in out
+    # Newlines are preserved (no line-comment can swallow the following code).
+    assert "\n" in out
+
+
+def test_minify_js_matches_shipped_asset_urls():
+    """The two real shipped assets that carry https:// URLs in strings must keep
+    them after minification."""
+    for name, needle in (
+        ("assets/js/main.js", "https://orcid.org"),
+        ("assets/js/charts.js", "basemaps.cartocdn.com"),
+    ):
+        path = ROOT / name
+        if not path.exists():
+            pytest.skip(f"{name} not present")
+        src = path.read_text(encoding="utf-8")
+        if needle not in src:
+            pytest.skip(f"{needle} not in {name} anymore")
+        assert needle in ppa.minify_js(src), f"minify_js corrupted {needle} in {name}"
