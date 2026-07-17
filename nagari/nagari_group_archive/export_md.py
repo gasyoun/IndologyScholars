@@ -5,8 +5,10 @@ one ``.md`` per Gmail thread, grouped into ``md/<year>/`` folders, each with YAM
 front-matter (subject, participants, span) followed by the messages in
 chronological order. A ``md/INDEX.md`` links every year.
 
-These files carry full message bodies and real sender names, so ``md/`` is
-git-ignored until a ``/publish-safety-check`` GO — same rule as the DB.
+Third-party email addresses are redacted (see :mod:`nagari_group_archive.redact`,
+shared with :mod:`page`), but bodies still carry real sender names and quoted
+private correspondence, so ``md/`` stays git-ignored pending a human publication
+decision — same rule as the DB.
 
 Usage::
 
@@ -22,6 +24,8 @@ import sqlite3
 import sys
 from collections import defaultdict
 from pathlib import Path
+
+from nagari_group_archive.redact import mask_name, redact_emails
 
 DEFAULT_DB = Path(__file__).resolve().parents[1] / "data" / "nagari.db"
 DEFAULT_OUT = Path(__file__).resolve().parents[1] / "md"
@@ -70,12 +74,14 @@ def export(db_path: Path, out: Path, min_messages: int) -> dict:
         items.sort(key=lambda x: x[2] or "")
         first = items[0]
         year = first[8] or "undated"
-        subject = first[6] or first[5] or "(без темы)"
+        subject = redact_emails(first[6] or first[5] or "(без темы)")
         participants = []
         for it in items:
             nm = it[3] or it[4]
-            if nm and nm not in participants:
-                participants.append(nm)
+            if nm:
+                nm = mask_name(nm)
+                if nm not in participants:
+                    participants.append(nm)
         span_first = next((it[2] for it in items if it[2]), "")
         span_last = next((it[2] for it in reversed(items) if it[2]), "")
 
@@ -96,10 +102,11 @@ def export(db_path: Path, out: Path, min_messages: int) -> dict:
             "",
         ]
         for n, it in enumerate(items, 1):
-            who = it[3] or it[4] or "(аноним)"
+            who_raw = it[3] or it[4]
+            who = mask_name(who_raw) if who_raw else "(аноним)"
             when = (it[2] or "")[:19].replace("T", " ")
             att = f" · 📎 {it[9]}" if it[9] else ""
-            body = (it[7] or "").strip()
+            body = redact_emails((it[7] or "").strip())
             lines.append(f"## {n}. {who} — {when}{att}")
             lines.append("")
             lines.append(body if body else "_(пустое тело / только вложение)_")
