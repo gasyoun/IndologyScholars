@@ -18,6 +18,14 @@
   блоков `<script>`/`<style>` (минифицируется только разметка вокруг них); регрессия закрыта
   двумя тестами в
   [`tests/test_pages_artifact_coverage.py`](https://github.com/gasyoun/IndologyScholars/blob/main/tests/test_pages_artifact_coverage.py).
+- **Тот же минификатор портил `https://`-ссылки в отдельных `.js` (страницы учёных и карта).**
+  `minify_js` в [`prepare_pages_artifact.py`](https://github.com/gasyoun/IndologyScholars/blob/main/prepare_pages_artifact.py)
+  вырезал комментарии приёмом `//.*?\n` → `\n`, который срабатывал и на `//` **внутри строк**:
+  из `assets/js/main.js` пропадали ссылки ORCID/Wikidata, из `assets/js/charts.js` — URL тайлов
+  подложки карты (`basemaps.cartocdn.com`). Исправление: `minify_js` больше не трогает
+  внутристрочное содержимое (регулярка не отличает код от строк/regex/шаблонных литералов) —
+  удаляются только строки-целиком-комментарии `//` и пустые строки, переводы строк сохраняются.
+  Регрессия закрыта двумя тестами (включая проверку реальных ссылок в shipped-ассетах).
 
 ### Added
 - **Книгохранилище: учебный архив для студентов — опубликовано 134 файла (81.1 МБ).**
