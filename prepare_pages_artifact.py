@@ -74,6 +74,9 @@ PUBLIC_DIRS = [
 
 PUBLIC_ALIASED_DIRS = {
     "Indology": "IndologyArchive",
+    # Only index.html is committed under nagari/site/; the DB, the Markdown mirror
+    # and the raw dump are git-ignored, so nothing else can reach the artifact.
+    "nagari/site": "nagari",
 }
 
 
