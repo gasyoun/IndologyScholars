@@ -75,6 +75,11 @@ nagari/data/
 # nagari/scripts/audit_publish_surface.py). Everything else under site/ stays out.
 nagari/site/*
 !nagari/site/index.html
+# Rights-cleared public-domain attachments (bucket B of the H1142 census only:
+# pre-1930 imprints, authors dead >=70y). Everything else under data/attachments/
+# stays ignored; only this deliberately-selected PD subset is published.
+!nagari/site/books/
+!nagari/site/books/**
 # The Markdown mirror carries full message bodies and is NOT redacted: the audit
 # finds 1,290 distinct third-party addresses across 42,421 occurrences. It cannot
 # be published until export_md.py redacts the way page.py already does.
