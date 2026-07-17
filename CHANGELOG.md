@@ -7,20 +7,21 @@
 ## [Unreleased]
 
 ### Added
-- **Книгохранилище: опубликован bucket B (общественное достояние) вложений nagari.**
-  По явному решению владельца («make public at my own risk», 17-07-2026) из 413 книжных
-  вложений выложены **только 24 файла (53.7 МБ)**, отнесённые правовой переписью
-  [H1142](https://github.com/gasyoun/Uprava/blob/main/handoffs/H1142-Fable_IndologyScholars_nagari-attachment-rights-triage-census_17.07.26.md)
-  к общественному достоянию (издания до 1930 г., авторы умерли ≥70 лет назад — Bayer 1735,
-  Brockhaus 1841, Weber 1852, Гумбольдт 1859, Bühler, Кнауэр, Кудрявский 1917, Festgruss-тома
-  1888/1893). Страница `/nagari/books/`, построена
-  [`build_pd_books_portal.py`](https://github.com/gasyoun/IndologyScholars/blob/main/nagari/scripts/build_pd_books_portal.py)
-  из `nagari/reports/nagari_attachment_rights.csv`; выложенные PDF лежат в `nagari/site/books/`
-  (точечное исключение из ignore-правила).
-- **Намеренно НЕ опубликовано:** bucket A (98 работ владельца — свои черновики/планы/PhD,
-  решает автор), B-cand/C-cand (лицензия не подтверждена), D-author (169) и D-third (62,
-  в авторском праве), E (45, не идентифицировано) и 3 файла — типографский слой над текстом
-  Зализняка в авторском праве. Полные 986 МБ извлечённых блобов остаются в
+- **Книгохранилище: учебный архив для студентов — опубликовано 134 файла (81.1 МБ).**
+  По решению владельца («publish all … for education purposes», 17-07-2026) из 413 книжных
+  вложений выложено всё, что правомерно открыть: **работы владельца (bucket A, 95)**,
+  **общественное достояние (B, 24)** и **свободно распространяемые документы (B-cand/C-cand,
+  15)** — по правовой переписи
+  [H1142](https://github.com/gasyoun/Uprava/blob/main/handoffs/H1142-Fable_IndologyScholars_nagari-attachment-rights-triage-census_17.07.26.md).
+  Страница `/nagari/books/` с секциями по основаниям; построена
+  [`build_books_portal.py`](https://github.com/gasyoun/IndologyScholars/blob/main/nagari/scripts/build_books_portal.py)
+  из `nagari/reports/nagari_attachment_rights.csv`; файлы лежат в `nagari/site/books/`
+  (точечное исключение из ignore-правила). Заменяет `build_pd_books_portal.py` (был только bucket B).
+- **НЕ опубликовано — 279 файлов в авторском праве третьих лиц** (учебная цель разрешения не
+  заменяет, сайт GitHub Pages — открытый веб, не «только для студентов»): D-author (169 — работы
+  участников списка, разрешение авторов получаемо по запросу), D-third (62 — словари/статьи/
+  монографии третьих лиц), E (45 — не идентифицировано) и 3 файла типографского слоя над
+  текстом Зализняка (текст в авторском праве). Полные 986 МБ извлечённых блобов остаются в
   `nagari/data/attachments/` под общим ignore-правилом.
 
 ## [1.2.1] - 2026-07-17
