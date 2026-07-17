@@ -174,6 +174,7 @@ footer{padding:30px 0 60px;color:var(--muted);font-size:.85rem}
     <h3>Сообщения по годам</h3>
     <p class="note">Одна серия. Наведите курсор для точных значений; пик отмечен.</p>
     <div id="c_msgs"></div>
+    <p class="note" id="n_partial"></p>
   </div>
 
   <div class="cols">
@@ -281,7 +282,8 @@ footer{padding:30px 0 60px;color:var(--muted);font-size:.85rem}
       <li><b>Треды</b> восстановлены по <code>X-GM-THRID</code>; связи ответов — по <code>In-Reply-To</code>. Связь ответа — это разговор, а не влияние; совместное участие в теме — не соавторство.</li>
       <li><b>Счётчик сообщений — не мера учёности.</b> Активность автора отражает роль в переписке, а не вклад в науку.</li>
       <li><b>Имена не объединены.</b> Один человек мог писать под разными подписями и почтовыми никами; они здесь не слиты в одну личность.</li>
-      <li><b>Приватность.</b> Это была закрытая группа. Публикация имён и цитат — решение, которое принимает человек; перед публикацией страница проходит проверку <code>/publish-safety-check</code>.</li>
+      <li id="cav_partial" hidden></li>
+      <li><b>Приватность.</b> Это была закрытая группа. Все адреса электронной почты со страницы удалены — проверено скриптом <code>audit_publish_surface.py</code> (0 адресов на странице). Публикация имён и цитат — решение владельца списка; полнотекстовый архив писем и файлы-вложения не опубликованы.</li>
     </ul>
   </div>
   <footer>
@@ -304,6 +306,18 @@ function showTip(html,ev){tip.innerHTML=html;tip.style.opacity=1;moveTip(ev);}
 function moveTip(ev){let x=ev.clientX+14,y=ev.clientY+14;if(x+270>innerWidth)x=ev.clientX-tip.offsetWidth-14;tip.style.left=x+"px";tip.style.top=y+"px";}
 function hideTip(){tip.style.opacity=0;}
 function hoverable(e,html){e.style.cursor="crosshair";e.addEventListener("mousemove",ev=>showTip(html,ev));e.addEventListener("mouseleave",hideTip);}
+
+// ---- partial final year: the mbox ends mid-year, so the last by-year point is
+// incomplete. Mark it everywhere so a short final bar is not misread as a crash.
+const PARTIAL = (DATA.meta && DATA.meta.partial) || null;
+function isPartial(y){return !!(PARTIAL && y===PARTIAL.year);}
+function pnote(y){return isPartial(y)?`<br><i>неполный год · только до ${PARTIAL.cutoff_ru}</i>`:"";}
+function partialGuide(F,x){
+  if(!PARTIAL)return;
+  add(F.svg,"line",{x1:x,y1:F.m.t,x2:x,y2:F.H-F.m.b,stroke:"var(--muted)","stroke-width":1,"stroke-dasharray":"3 3","stroke-opacity":.7});
+  const t=txt(F.svg,x,F.m.t+11,"неполный",null);
+  t.setAttribute("text-anchor","middle");t.setAttribute("fill","var(--muted)");t.setAttribute("font-size","10");
+}
 
 // ---- base plot frame ----
 function frame(mount,W,H,m){
@@ -339,8 +353,12 @@ function areaYears(mountId,rows,valKey,{peak}={}){
   add(F.svg,"path",{d:dl,class:"s1",fill:"none","stroke-width":2});
   rows.forEach(r=>{
     const cx=X(r.year),cy=Y(r[valKey]);
+    if(isPartial(r.year))partialGuide(F,cx);
     const dot=add(F.svg,"circle",{cx,cy,r:8,fill:"transparent"});
-    hoverable(dot,`<b>${r.year}</b><br>${fmt(r[valKey])}`);
+    hoverable(dot,`<b>${r.year}</b><br>${fmt(r[valKey])}${pnote(r.year)}`);
+    if(isPartial(r.year)){
+      const pm=add(F.svg,"circle",{cx,cy,r:5,class:"s1"});pm.setAttribute("fill","var(--surface)");pm.setAttribute("stroke-width","2");
+    }
     if(peak&&r.year===peak.year){
       add(F.svg,"circle",{cx,cy,r:4,class:"s1"}).setAttribute("stroke","var(--surface)");
       txt(F.svg,cx,cy-12,`пик · ${fmt(r[valKey])}`,"vlabel").setAttribute("text-anchor","middle");
@@ -360,7 +378,8 @@ function barsYears(mountId,rows,valKey){
   rows.forEach((r,i)=>{
     const x=m.l+(i+0.5)*(F.iw/rows.length), h=(r[valKey]/ymax)*F.ih, y=m.t+F.ih-h;
     const b=add(F.svg,"rect",{x:x-bw/2,y,width:bw,height:Math.max(h,0.5),rx:3,class:"s1"});
-    hoverable(b,`<b>${r.year}</b><br>${fmt(r[valKey])}`);
+    if(isPartial(r.year)){b.setAttribute("fill","var(--surface)");b.setAttribute("stroke-width","1.5");b.setAttribute("stroke-dasharray","4 2");}
+    hoverable(b,`<b>${r.year}</b><br>${fmt(r[valKey])}${pnote(r.year)}`);
     if(i%2===0||i===rows.length-1)txt(F.svg,x,H-14,r.year,"tick").setAttribute("text-anchor","middle");
   });
 }
@@ -374,7 +393,8 @@ function lineYears(mountId,rows,valKey){
   let dl="";rows.forEach((r,i)=>dl+=(i?"L":"M")+X(r.year)+","+Y(r[valKey]));
   add(F.svg,"path",{d:dl,class:"s2",fill:"none","stroke-width":2});
   rows.forEach(r=>{const cx=X(r.year),cy=Y(r[valKey]);
-    const dot=add(F.svg,"circle",{cx,cy,r:7,fill:"transparent"});hoverable(dot,`<b>${r.year}</b><br>${fmt(r[valKey])} всего`);});
+    const dot=add(F.svg,"circle",{cx,cy,r:7,fill:"transparent"});hoverable(dot,`<b>${r.year}</b><br>${fmt(r[valKey])} всего${pnote(r.year)}`);
+    if(isPartial(r.year)){const pm=add(F.svg,"circle",{cx,cy,r:5,class:"s2"});pm.setAttribute("fill","var(--surface)");pm.setAttribute("stroke-width","2");}});
   xs.forEach((y,i)=>{if(i%2===0||i===xs.length-1)txt(F.svg,X(y),H-14,y,"tick").setAttribute("text-anchor","middle");});
 }
 
@@ -426,6 +446,7 @@ function topicLines(){
   let ymax=1;ser.forEach(s=>s.values.forEach(v=>ymax=Math.max(ymax,v)));ymax*=1.08;
   const X=i=>m.l+(i/(years.length-1))*F.iw, Y=v=>m.t+F.ih-(v/ymax)*F.ih;
   yGrid(F,ymax,4);
+  years.forEach((y,i)=>{if(isPartial(y))partialGuide(F,X(i));});
   years.forEach((y,i)=>{if(i%2===0||i===years.length-1)txt(F.svg,X(i),H-14,y,"tick").setAttribute("text-anchor","middle");});
   const paths={};
   ser.forEach((s,si)=>{
@@ -433,7 +454,7 @@ function topicLines(){
     const p=add(F.svg,"path",{d,class:SERCLS[si],fill:"none","stroke-width":2,"data-tag":s.tag});
     p.setAttribute("stroke-opacity",".9");paths[s.tag]=p;
     s.values.forEach((v,i)=>{const dot=add(F.svg,"circle",{cx:X(i),cy:Y(v),r:6,fill:"transparent","data-tag":s.tag});
-      hoverable(dot,`<b>${s.tag}</b> · ${years[i]}<br>${fmt(v)} сообщ.`);});
+      hoverable(dot,`<b>${s.tag}</b> · ${years[i]}<br>${fmt(v)} сообщ.${pnote(years[i])}`);});
   });
   // legend with toggles
   const L=$("#l_topics");L.innerHTML="";
@@ -558,6 +579,14 @@ chips("#ch_deva",DATA.deva);
 chips("#ch_iast",DATA.iast);
 notableTable();
 search();
+
+// ---- partial-year disclosure (filled only when the data ends mid-year) ----
+if(PARTIAL){
+  const n=$("#n_partial");
+  if(n)n.innerHTML=`<b>${PARTIAL.year}</b> — неполный год: данные только до ${PARTIAL.cutoff_ru} (≈${PARTIAL.coverage_pct}% года), поэтому последний столбец ниже полных лет. В пересчёте на полный год — примерно ${fmt(PARTIAL.annualized_msgs)} сообщений.`;
+  const cav=$("#cav_partial");
+  if(cav){cav.hidden=false;cav.innerHTML=`<b>Последний год неполный.</b> Экспорт обрывается на ${PARTIAL.cutoff_ru} (≈${PARTIAL.coverage_pct}% ${PARTIAL.year} года), так что ${PARTIAL.year}-й во всех графиках «по годам» показан частично и помечен пунктиром; годовые итоги за ${PARTIAL.year} сравнивать с полными годами напрямую нельзя.`;}
+}
 </script>
 </body>
 </html>'''

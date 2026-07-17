@@ -17,6 +17,7 @@ import argparse
 import csv
 import json
 import sys
+from datetime import date
 from pathlib import Path
 
 from nagari_group_archive.redact import NAME_STOP, mask_name, redact_emails
@@ -72,6 +73,29 @@ def build(dump: Path, out: Path) -> dict:
     peak = max(ay, key=lambda r: r["messages"])
     first_year, last_year = ay[0]["year"], ay[-1]["year"]
     span = last_year - first_year
+
+    # Partial final year: the mbox ends mid-year (date_max), so the last point in
+    # every by-year series covers only part of its year. Left unmarked, the short
+    # final bar reads as a collapse rather than an incomplete year. Compute the
+    # coverage and an annualized projection so the page can say so; self-disables
+    # on a future full-year rebuild (coverage ~1.0 -> partial is None).
+    MONTHS_RU = ["", "января", "февраля", "марта", "апреля", "мая", "июня",
+                 "июля", "августа", "сентября", "октября", "ноября", "декабря"]
+    partial = None
+    dmax = str(tot.get("date_max") or "")[:10]
+    if dmax:
+        yy, mm, dd = (int(x) for x in dmax.split("-"))
+        doy = date(yy, mm, dd).timetuple().tm_yday
+        ydays = 366 if (yy % 4 == 0 and (yy % 100 != 0 or yy % 400 == 0)) else 365
+        cov = doy / ydays
+        if last_year == yy and cov < 0.99:
+            partial = {
+                "year": yy,
+                "cutoff": dmax,
+                "cutoff_ru": f"{dd} {MONTHS_RU[mm]} {yy}",
+                "coverage_pct": round(cov * 100),
+                "annualized_msgs": round(ay[-1]["messages"] / cov),
+            }
     total_att_bytes = sum(int(r["total_bytes"] or 0) for r in site["sanskrit"]["attachments_by_type"])
 
     # cumulative membership curve
@@ -148,6 +172,7 @@ def build(dump: Path, out: Path) -> dict:
             "first_year": first_year, "last_year": last_year,
             "reply_resolved": site["meta"]["reply_resolved"], "n_font": site["sanskrit"]["n_font_threads"],
             "n_pdf": next((int(r["count"]) for r in site["sanskrit"]["attachments_by_type"] if r["ext"] == "pdf"), 0),
+            "partial": partial,
         },
     }
 
