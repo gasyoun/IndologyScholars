@@ -16,30 +16,16 @@ from __future__ import annotations
 import argparse
 import csv
 import json
-import re
 import sys
 from pathlib import Path
+
+from nagari_group_archive.redact import NAME_STOP, mask_name, redact_emails
 
 PKG_DATA = Path(__file__).resolve().parents[1] / "data"
 DEFAULT_DUMP = Path(
     r"C:/Users/user/Documents/GitHub/IndologyScholars/nagari-2005-2026/nagari@googlegroups.com"
 )
 DEFAULT_OUT = Path(__file__).resolve().parents[1] / "site" / "index.html"
-
-NAME_STOP = {"mārcis", "marcis", "gasūns", "gasuns", "gmail", "googlegroups"}
-EMAIL_RE = re.compile(r"^\s*([\w.+-]+)@[\w.-]+\.[A-Za-z]{2,}\s*$")
-EMAIL_SUB = re.compile(r"([\w.+-]+)@[\w.-]+\.[A-Za-z]{2,}")
-
-
-def mask_name(s: str) -> str:
-    """Mask an email-shaped display name to ``local@…`` (names are public, addresses are not)."""
-    m = EMAIL_RE.match(s or "")
-    return f"{m.group(1)}@…" if m else (s or "")
-
-
-def redact_emails(s: str) -> str:
-    """Redact any email *substring* inside free text (subjects, filenames) to ``local@…``."""
-    return EMAIL_SUB.sub(lambda m: f"{m.group(1)}@…", s or "")
 
 
 def configure_stdio() -> None:
