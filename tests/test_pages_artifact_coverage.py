@@ -67,3 +67,36 @@ def test_the_two_section_pages_are_covered():
     """Explicit regression for the H473 sections that triggered this guard."""
     for name in ("indologiya-v-rossii.html", "sanskritologiya-v-rossii.html"):
         assert name in ppa.PUBLIC_PATHS
+
+
+def test_minify_html_preserves_inline_script_bodies():
+    """Regression: HTML minification must not collapse newlines inside inline
+    <script>. It used to run `\\s+` -> ' ' over the whole document, flattening
+    the script to one line; the first `// ...` line comment then swallowed the
+    rest of the script, blanking every chart on the nagari retrospective (and
+    any other inline-JS page). The body must survive verbatim."""
+    html = (
+        "<html>\n  <head>\n    <style>\n      .a { color: red; }\n    </style>\n"
+        "  </head>\n  <body>\n    <div>\n      <p>hi</p>\n    </div>\n"
+        "    <script>\n"
+        "const DATA = {\"x\":1};\n"
+        "// a line comment that must stay on its own line\n"
+        "function render(){ return DATA.x; }\n"
+        "render();\n"
+        "</script>\n  </body>\n</html>\n"
+    )
+    out = ppa.minify_html(html)
+    # Markup outside the script is still minified.
+    assert "<div><p>hi</p></div>" in out
+    # The inline script is preserved verbatim: the comment keeps its trailing
+    # newline, so `function render` and `render()` remain live code.
+    assert "// a line comment that must stay on its own line\nfunction render" in out
+    assert "\nrender();\n" in out
+
+
+def test_minify_html_does_not_flatten_script_newlines():
+    """A `//` comment inside inline JS must never end up on the same line as the
+    code that follows it after minification."""
+    html = "<body><script>\n// c\nvar keep = 1;\n</script></body>\n"
+    out = ppa.minify_html(html)
+    assert "// c\nvar keep = 1;" in out
