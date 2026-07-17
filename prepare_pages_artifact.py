@@ -131,13 +131,38 @@ def write_indology_archive_landing(dest_root):
 
 
 def minify_html(content):
+    # Protect the bodies of inline <script> and <style> from whitespace
+    # collapsing. Collapsing newlines inside an inline script turns any single
+    # "// ..." line comment into one that swallows the rest of the now one-line
+    # script, silently killing every page with inline JS (the nagari
+    # retrospective's charts were blanked this way). CSS is whitespace-tolerant,
+    # but its bodies are preserved for the same structural reason.
+    protected: list[str] = []
+
+    def _stash(match: "re.Match[str]") -> str:
+        protected.append(match.group(0))
+        return f"\x00PROTECTED{len(protected) - 1}\x00"
+
+    content = re.sub(
+        r'<(script|style)\b[^>]*>.*?</\1\s*>',
+        _stash,
+        content,
+        flags=re.DOTALL | re.IGNORECASE,
+    )
     # Remove HTML comments (except IE conditional comments)
     content = re.sub(r'<!--(?!\[if).*?-->', '', content, flags=re.DOTALL)
     # Remove whitespace between tags where safe
     content = re.sub(r'>\s+<', '><', content)
     # Collapse multiple whitespaces
     content = re.sub(r'\s+', ' ', content)
-    return content.strip()
+    content = content.strip()
+    # Restore the protected <script>/<style> bodies verbatim.
+    content = re.sub(
+        r'\x00PROTECTED(\d+)\x00',
+        lambda m: protected[int(m.group(1))],
+        content,
+    )
+    return content
 
 
 def minify_css(content):

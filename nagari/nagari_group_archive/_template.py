@@ -149,12 +149,12 @@ footer{padding:30px 0 60px;color:var(--muted);font-size:.85rem}
 <header class="hero"><div class="wrap">
   <div class="kicker">История одной гуглгруппы · nagari@googlegroups.com</div>
   <h1>20 лет Обществу ревнителей санскрита</h1>
-  <div class="sub">Закрытый академический список о санскрите и индологии прожил __SPAN__ года — с __FY__ по __LY__. Здесь его память: __MSGS__ сообщений в __THREADS__ тредах от __AUTHORS__ авторов, __MEMBERS__ участников и целое книгохранилище.</div>
+  <div class="sub">Закрытый академический список о санскрите и индологии живет с __FY__ года — уже __SPAN__ года и продолжается. Перед вами срез его переписки по состоянию на __LY__ год, который обновляется примерно раз в месяц: __MSGS__ сообщений в __THREADS__ тредах от __AUTHORS__ авторов, __MEMBERS__ участников и целое книгохранилище.</div>
   <div class="desc">__DESC__</div>
   <div class="prov">Источник: экспорт Google Takeout (<code>topics.mbox</code>). Данные разобраны воспроизводимым конвейером; имена и цитаты приводятся как в архиве. Порядок сообщений и треды восстановлены по заголовку <code>X-GM-THRID</code>.</div>
 
   <div class="tiles">
-    <div class="tile"><div class="v">__SPAN__</div><div class="l">года истории (__FY__–__LY__)</div></div>
+    <div class="tile"><div class="v">__SPAN__</div><div class="l">года истории — с __FY__ по сей день</div></div>
     <div class="tile"><div class="v">__MSGS__</div><div class="l">сообщений</div></div>
     <div class="tile"><div class="v">__THREADS__</div><div class="l">тредов (тем)</div></div>
     <div class="tile"><div class="v">__MEMBERS__</div><div class="l">участников</div></div>
