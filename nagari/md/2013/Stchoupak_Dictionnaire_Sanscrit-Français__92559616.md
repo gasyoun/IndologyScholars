@@ -6,9 +6,12 @@ messages: 5
 participants: "Artem Novikov, Serge A, Marcis"
 first: 2013-06-13T15:22:35+03:00
 last: 2013-06-18T07:52:25+03:00
+source_url: https://groups.google.com/d/msgid/nagari/79c403a4-70cf-4ff7-9466-4cdcd3550c7b@googlegroups.com
 ---
 
 # Stchoupak Dictionnaire Sanscrit-Français
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/79c403a4-70cf-4ff7-9466-4cdcd3550c7b@googlegroups.com)
 
 > 5 сообщений · 3 участников · 2013-06-13 — 2013-06-18
 

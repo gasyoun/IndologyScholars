@@ -6,9 +6,12 @@ messages: 2
 participants: "feigin, Marcis"
 first: 2007-03-28T22:28:11+03:00
 last: 2007-03-29T04:13:02
+source_url: https://groups.google.com/d/msgid/nagari/1175110091.359367.40840@y80g2000hsf.googlegroups.com
 ---
 
 # Discussion on tarasov-iconography-2004
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/1175110091.359367.40840@y80g2000hsf.googlegroups.com)
 
 > 2 сообщений · 2 участников · 2007-03-28 — 2007-03-29
 

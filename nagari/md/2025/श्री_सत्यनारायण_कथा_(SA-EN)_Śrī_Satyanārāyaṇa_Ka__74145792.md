@@ -6,9 +6,12 @@ messages: 1
 participants: "ли ла"
 first: 2025-05-07T11:39:23+03:00
 last: 2025-05-07T11:39:23+03:00
+source_url: https://groups.google.com/d/msgid/nagari/ab871f9f-c53c-463b-a890-f0b96af8411an@googlegroups.com
 ---
 
 # श्री सत्यनारायण कथा (SA-EN) Śrī Satyanārāyaṇa Kathā. Мультфильм на санскрите.
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/ab871f9f-c53c-463b-a890-f0b96af8411an@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2025-05-07 — 2025-05-07
 

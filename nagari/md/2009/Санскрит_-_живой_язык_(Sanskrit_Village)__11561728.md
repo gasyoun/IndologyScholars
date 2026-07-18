@@ -6,9 +6,12 @@ messages: 1
 participants: "Октябрин"
 first: 2009-06-12T14:00:21+03:00
 last: 2009-06-12T14:00:21+03:00
+source_url: https://groups.google.com/d/msgid/nagari/4ffb5418-e004-4e70-9016-6937eba734d6@g19g2000yql.googlegroups.com
 ---
 
 # Санскрит - живой язык (Sanskrit Village)
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/4ffb5418-e004-4e70-9016-6937eba734d6@g19g2000yql.googlegroups.com)
 
 > 1 сообщений · 1 участников · 2009-06-12 — 2009-06-12
 

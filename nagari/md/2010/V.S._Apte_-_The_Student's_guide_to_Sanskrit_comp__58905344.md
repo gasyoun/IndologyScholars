@@ -6,9 +6,12 @@ messages: 5
 participants: "antara, Brahman, Marcis, Сачков Сергей"
 first: 2010-01-07T17:39:24+03:00
 last: 2010-03-02T20:42:28+03:00
+source_url: https://groups.google.com/d/msgid/nagari/9bbed6fe-d8de-42bc-8c58-37ae3b70f944@a21g2000yqc.googlegroups.com
 ---
 
 # V.S. Apte - The Student's guide to Sanskrit composition.
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/9bbed6fe-d8de-42bc-8c58-37ae3b70f944@a21g2000yqc.googlegroups.com)
 
 > 5 сообщений · 4 участников · 2010-01-07 — 2010-03-02
 

@@ -6,9 +6,12 @@ messages: 2
 participants: "Marcis, sujanasi"
 first: 2007-03-19T16:58:11
 last: 2007-03-19T18:59:09+03:00
+source_url: https://groups.google.com/d/msgid/nagari/1174323491.844613.73640@n59g2000hsh.googlegroups.com
 ---
 
 # Обсуждение на 319-monier-oliver
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/1174323491.844613.73640@n59g2000hsh.googlegroups.com)
 
 > 2 сообщений · 2 участников · 2007-03-19 — 2007-03-19
 

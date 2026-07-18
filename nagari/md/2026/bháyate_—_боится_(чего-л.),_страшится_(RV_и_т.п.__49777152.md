@@ -6,9 +6,12 @@ messages: 1
 participants: "Mārcis Gasūns"
 first: 2026-03-17T13:19:02+03:00
 last: 2026-03-17T13:19:02+03:00
+source_url: https://groups.google.com/d/msgid/nagari/b8295b6f-2db1-49e1-87cf-285c0c8f3389n@googlegroups.com
 ---
 
 # bháyate — боится (чего-л.), страшится (RV и т.п.)
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/b8295b6f-2db1-49e1-87cf-285c0c8f3389n@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2026-03-17 — 2026-03-17
 

@@ -6,9 +6,12 @@ messages: 6
 participants: "Michael Bykov, Marcis, Serge A"
 first: 2016-04-29T23:02:18+03:00
 last: 2016-04-30T11:43:06+03:00
+source_url: https://groups.google.com/d/msgid/nagari/CAN5SjAANdzQrztRHP0zmQs8cQF9jkwPgwkbVxPoA%2BXZcBpk7CQ@mail.gmail.com
 ---
 
 # morpheus v.0.3
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/CAN5SjAANdzQrztRHP0zmQs8cQF9jkwPgwkbVxPoA%2BXZcBpk7CQ@mail.gmail.com)
 
 > 6 сообщений · 3 участников · 2016-04-29 — 2016-04-30
 

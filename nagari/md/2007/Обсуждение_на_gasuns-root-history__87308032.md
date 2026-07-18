@@ -6,9 +6,12 @@ messages: 5
 participants: "sujanasi, Marcis"
 first: 2007-03-29T22:26:03+03:00
 last: 2007-04-01T12:44:58+03:00
+source_url: https://groups.google.com/d/msgid/nagari/1175196363.310797.289850@n76g2000hsh.googlegroups.com
 ---
 
 # Обсуждение на gasuns-root-history
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/1175196363.310797.289850@n76g2000hsh.googlegroups.com)
 
 > 5 сообщений · 2 участников · 2007-03-29 — 2007-04-01
 

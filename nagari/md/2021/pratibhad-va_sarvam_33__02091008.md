@@ -6,9 +6,12 @@ messages: 2
 participants: "Anna Sviridenkova, Artem Teterin"
 first: 2021-04-20T15:18:26+03:00
 last: 2021-04-22T17:11:32+03:00
+source_url: https://groups.google.com/d/msgid/nagari/5369bdaa-565a-44e0-9b6f-49ca94ee07b0n@googlegroups.com
 ---
 
 # pratibhad-va sarvam ||33||
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/5369bdaa-565a-44e0-9b6f-49ca94ee07b0n@googlegroups.com)
 
 > 2 сообщений · 2 участников · 2021-04-20 — 2021-04-22
 

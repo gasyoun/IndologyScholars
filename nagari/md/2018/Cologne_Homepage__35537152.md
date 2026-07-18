@@ -6,9 +6,12 @@ messages: 4
 participants: "Marcis, tvitaly1"
 first: 2018-08-09T09:50:28+03:00
 last: 2018-08-18T14:11:18+03:00
+source_url: https://groups.google.com/d/msgid/nagari/54d37ffe-2e29-4eb4-b91d-98204a87e82a@googlegroups.com
 ---
 
 # Cologne Homepage
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/54d37ffe-2e29-4eb4-b91d-98204a87e82a@googlegroups.com)
 
 > 4 сообщений · 2 участников · 2018-08-09 — 2018-08-18
 

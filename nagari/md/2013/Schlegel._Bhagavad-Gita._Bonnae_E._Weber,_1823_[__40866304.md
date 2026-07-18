@@ -6,9 +6,12 @@ messages: 3
 participants: "Marcis, Nick Morozoff"
 first: 2013-03-07T14:53:11+03:00
 last: 2013-03-07T20:54:11+03:00
+source_url: https://groups.google.com/d/msgid/nagari/15633bf3-66aa-4422-b368-afc99b397dd4@googlegroups.com
 ---
 
 # Schlegel. Bhagavad-Gita. Bonnae: E. Weber, 1823 [к истории индийской типографии]
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/15633bf3-66aa-4422-b368-afc99b397dd4@googlegroups.com)
 
 > 3 сообщений · 2 участников · 2013-03-07 — 2013-03-07
 

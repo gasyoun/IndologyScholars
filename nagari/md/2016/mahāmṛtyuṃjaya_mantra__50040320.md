@@ -6,9 +6,12 @@ messages: 6
 participants: "Мария Устинова, Radim Navyan, Serge A, Sergii Sekundant, Marcis"
 first: 2016-06-26T12:33:44+03:00
 last: 2017-01-23T22:38:06+03:00
+source_url: https://groups.google.com/d/msgid/nagari/3fd02ea7-1186-476a-abe2-b1fb7bb638da@googlegroups.com
 ---
 
 # mahāmṛtyuṃjaya mantra
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/3fd02ea7-1186-476a-abe2-b1fb7bb638da@googlegroups.com)
 
 > 6 сообщений · 5 участников · 2016-06-26 — 2017-01-23
 

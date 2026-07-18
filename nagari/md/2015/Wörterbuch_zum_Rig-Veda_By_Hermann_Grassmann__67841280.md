@@ -6,9 +6,12 @@ messages: 3
 participants: "Dmitri, Marcis"
 first: 2015-02-22T06:53:18+03:00
 last: 2015-02-22T19:58:00+03:00
+source_url: https://groups.google.com/d/msgid/nagari/b3184629-08ca-4c4a-8b04-66556d405fd7@googlegroups.com
 ---
 
 # Wörterbuch zum Rig-Veda By Hermann Grassmann
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/b3184629-08ca-4c4a-8b04-66556d405fd7@googlegroups.com)
 
 > 3 сообщений · 2 участников · 2015-02-22 — 2015-02-22
 

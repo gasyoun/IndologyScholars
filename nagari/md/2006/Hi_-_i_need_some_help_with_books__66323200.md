@@ -6,9 +6,12 @@ messages: 7
 participants: "bumasoft@…, gasyoun@…, ignat 99, Marian Busoi, Marcis Gasuns"
 first: 2006-06-17T10:58:01
 last: 2006-06-20T09:07:52+03:00
+source_url: https://groups.google.com/d/msgid/nagari/1150541881.738300.236840@h76g2000cwa.googlegroups.com
 ---
 
 # Hi - i need some help with books
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/1150541881.738300.236840@h76g2000cwa.googlegroups.com)
 
 > 7 сообщений · 5 участников · 2006-06-17 — 2006-06-20
 

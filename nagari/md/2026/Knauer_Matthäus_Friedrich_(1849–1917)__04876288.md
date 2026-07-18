@@ -6,9 +6,12 @@ messages: 1
 participants: "Mārcis Gasūns"
 first: 2026-02-21T16:58:33+03:00
 last: 2026-02-21T16:58:33+03:00
+source_url: https://groups.google.com/d/msgid/nagari/423bbb09-5c8e-4adc-b6d7-ea1235cc6d33n@googlegroups.com
 ---
 
 # Knauer Matthäus Friedrich (1849–1917)
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/423bbb09-5c8e-4adc-b6d7-ea1235cc6d33n@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2026-02-21 — 2026-02-21
 

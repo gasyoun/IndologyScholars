@@ -6,9 +6,12 @@ messages: 2
 participants: "Marcis"
 first: 2013-03-06T10:16:48+03:00
 last: 2013-03-06T18:44:07+03:00
+source_url: https://groups.google.com/d/msgid/nagari/5418bc94-cef3-4b21-8b91-2f4141c6f567@googlegroups.com
 ---
 
 # Typesetting Specimen ведийского текста от Ульриха Штиля (2005 г.)
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/5418bc94-cef3-4b21-8b91-2f4141c6f567@googlegroups.com)
 
 > 2 сообщений · 1 участников · 2013-03-06 — 2013-03-06
 

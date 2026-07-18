@@ -6,9 +6,12 @@ messages: 4
 participants: "LNS, narayan prasad, Deshpande, Madhav, Srinivasakrishnan ln"
 first: 2007-12-16T05:43:03+03:00
 last: 2007-12-16T21:01:09+03:00
+source_url: https://groups.google.com/d/msgid/nagari/caa88e79-dce5-4ab9-bc46-13988019a003@w56g2000hsf.googlegroups.com
 ---
 
 # quest for Info
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/caa88e79-dce5-4ab9-bc46-13988019a003@w56g2000hsf.googlegroups.com)
 
 > 4 сообщений · 4 участников · 2007-12-16 — 2007-12-16
 

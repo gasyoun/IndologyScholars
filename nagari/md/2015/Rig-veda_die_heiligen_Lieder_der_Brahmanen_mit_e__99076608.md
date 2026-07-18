@@ -6,9 +6,12 @@ messages: 6
 participants: "Brahman, Marcis, Serge A, Тихвинский Виталий Игоревич"
 first: 2015-11-08T12:18:15+03:00
 last: 2015-11-08T21:50:20+03:00
+source_url: https://groups.google.com/d/msgid/nagari/8b0eb187-6f85-4887-85fc-1a2752c1e984@googlegroups.com
 ---
 
 # Rig-veda : die heiligen Lieder der Brahmanen : mit einer Einleitung, Text und Übersetzung des Prâtis
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/8b0eb187-6f85-4887-85fc-1a2752c1e984@googlegroups.com)
 
 > 6 сообщений · 4 участников · 2015-11-08 — 2015-11-08
 

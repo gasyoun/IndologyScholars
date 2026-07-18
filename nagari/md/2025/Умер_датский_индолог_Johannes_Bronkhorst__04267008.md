@@ -6,9 +6,12 @@ messages: 1
 participants: "Mārcis"
 first: 2025-05-14T21:59:06+03:00
 last: 2025-05-14T21:59:06+03:00
+source_url: https://groups.google.com/d/msgid/nagari/2843019e-95c8-4226-b071-5516a10d8e97n@googlegroups.com
 ---
 
 # Умер датский индолог Johannes Bronkhorst
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/2843019e-95c8-4226-b071-5516a10d8e97n@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2025-05-14 — 2025-05-14
 

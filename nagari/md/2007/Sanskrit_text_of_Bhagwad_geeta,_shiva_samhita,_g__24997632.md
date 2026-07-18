@@ -6,9 +6,12 @@ messages: 2
 participants: "Puneet Madaan, Kartik Khandwala"
 first: 2007-09-22T10:56:46+03:00
 last: 2007-09-22T14:38:38+03:00
+source_url: https://groups.google.com/d/msgid/nagari/b2056f9a0709220056q708a70e1g975cd3a9881d7f1e@mail.gmail.com
 ---
 
 # Sanskrit text of Bhagwad geeta, shiva samhita, gheranda samhita, ....
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/b2056f9a0709220056q708a70e1g975cd3a9881d7f1e@mail.gmail.com)
 
 > 2 сообщений · 2 участников · 2007-09-22 — 2007-09-22
 

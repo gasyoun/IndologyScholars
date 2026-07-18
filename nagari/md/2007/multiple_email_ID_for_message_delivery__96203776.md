@@ -6,9 +6,12 @@ messages: 1
 participants: "narayan prasad"
 first: 2007-03-16T21:09:52+03:00
 last: 2007-03-16T21:09:52+03:00
+source_url: https://groups.google.com/d/msgid/nagari/630330570703161109h46a95df9vce5fce21876fcb14@mail.gmail.com
 ---
 
 # multiple email ID for message delivery
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/630330570703161109h46a95df9vce5fce21876fcb14@mail.gmail.com)
 
 > 1 сообщений · 1 участников · 2007-03-16 — 2007-03-16
 

@@ -6,9 +6,12 @@ messages: 1
 participants: "Mārcis Gasūns"
 first: 2026-06-20T12:08:05+03:00
 last: 2026-06-20T12:08:05+03:00
+source_url: https://groups.google.com/d/msgid/nagari/48d100a6-3d74-4464-93b3-0dacf12c37f9n@googlegroups.com
 ---
 
 # Модуль Lexicon от DharmaMitra
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/48d100a6-3d74-4464-93b3-0dacf12c37f9n@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2026-06-20 — 2026-06-20
 

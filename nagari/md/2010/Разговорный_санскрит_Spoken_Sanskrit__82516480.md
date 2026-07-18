@@ -6,9 +6,12 @@ messages: 1
 participants: "Stormwatsch"
 first: 2010-08-09T08:12:50+03:00
 last: 2010-08-09T08:12:50+03:00
+source_url: https://groups.google.com/d/msgid/nagari/76904226-7d40-4392-b03b-be5d8a296bbb@i31g2000yqm.googlegroups.com
 ---
 
 # Разговорный санскрит / Spoken Sanskrit
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/76904226-7d40-4392-b03b-be5d8a296bbb@i31g2000yqm.googlegroups.com)
 
 > 1 сообщений · 1 участников · 2010-08-09 — 2010-08-09
 

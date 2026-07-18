@@ -6,9 +6,12 @@ messages: 3
 participants: "Dmitri, Marcis"
 first: 2015-04-19T18:34:42+03:00
 last: 2015-04-20T20:56:30+03:00
+source_url: https://groups.google.com/d/msgid/nagari/2bd356a6-132a-4f1a-b87c-5512f4fdb7bf@googlegroups.com
 ---
 
 # dhaatu inv & i
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/2bd356a6-132a-4f1a-b87c-5512f4fdb7bf@googlegroups.com)
 
 > 3 сообщений · 2 участников · 2015-04-19 — 2015-04-20
 

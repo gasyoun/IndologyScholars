@@ -6,9 +6,12 @@ messages: 15
 participants: "Алексей Мордвинов, Olga Luchina, Евгений Уланский, Serge A, Владимир Карицкий, Sergii Sekundant"
 first: 2019-07-03T11:45:50+03:00
 last: 2019-07-07T07:07:10+03:00
+source_url: https://groups.google.com/d/msgid/nagari/ed33f306-9bc6-4b96-8999-c1c5005fb071@googlegroups.com
 ---
 
 # Разбор шлоки МхБ I.160.5
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/ed33f306-9bc6-4b96-8999-c1c5005fb071@googlegroups.com)
 
 > 15 сообщений · 6 участников · 2019-07-03 — 2019-07-07
 

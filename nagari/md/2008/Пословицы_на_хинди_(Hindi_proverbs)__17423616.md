@@ -6,9 +6,12 @@ messages: 12
 participants: "klaus, narayan prasad, Alexandre Elizariev, Marcis, Ojin"
 first: 2008-02-02T19:30:47+03:00
 last: 2008-03-22T11:35:41+03:00
+source_url: https://groups.google.com/d/msgid/nagari/1766fa80-cc03-4870-9d81-0de5a030fd7b@s13g2000prd.googlegroups.com
 ---
 
 # Пословицы на хинди (Hindi proverbs)
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/1766fa80-cc03-4870-9d81-0de5a030fd7b@s13g2000prd.googlegroups.com)
 
 > 12 сообщений · 5 участников · 2008-02-02 — 2008-03-22
 

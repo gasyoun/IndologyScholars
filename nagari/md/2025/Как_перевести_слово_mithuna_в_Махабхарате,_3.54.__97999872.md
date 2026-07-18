@@ -6,9 +6,12 @@ messages: 6
 participants: "Георгий Х., Konstantin Ivanov, Serge A"
 first: 2025-02-18T10:20:34+03:00
 last: 2025-02-18T23:43:22+03:00
+source_url: https://groups.google.com/d/msgid/nagari/5a065e60-4fd9-4d47-a36c-76496da8445an@googlegroups.com
 ---
 
 # Как перевести слово mithuna в Махабхарате, 3.54.32 ?
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/5a065e60-4fd9-4d47-a36c-76496da8445an@googlegroups.com)
 
 > 6 сообщений · 3 участников · 2025-02-18 — 2025-02-18
 

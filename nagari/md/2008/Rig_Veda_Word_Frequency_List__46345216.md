@@ -6,9 +6,12 @@ messages: 2
 participants: "Marcis, Duri"
 first: 2008-08-05T10:59:30+03:00
 last: 2008-08-06T10:46:46+03:00
+source_url: https://groups.google.com/d/msgid/nagari/c5686a6e-1f7b-44c4-ae6d-85479d2c25ed@b1g2000hsg.googlegroups.com
 ---
 
 # Rig Veda Word Frequency List
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/c5686a6e-1f7b-44c4-ae6d-85479d2c25ed@b1g2000hsg.googlegroups.com)
 
 > 2 сообщений · 2 участников · 2008-08-05 — 2008-08-06
 

@@ -6,9 +6,12 @@ messages: 23
 participants: "Marcis, borissoff, Lev Titlin, Serge A, Владимир Карицкий, Artem Novikov, Constantine Borissoff"
 first: 2013-08-20T22:33:10+03:00
 last: 2013-09-19T23:26:29+03:00
+source_url: https://groups.google.com/d/msgid/nagari/0a3ceaf6-c9ff-41ff-bb75-5abb19e0b127@googlegroups.com
 ---
 
 # athāto rogānutpādanīyādhyāyaṃ vyākhyāsyāmaḥ (AHS Su 4.1)
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/0a3ceaf6-c9ff-41ff-bb75-5abb19e0b127@googlegroups.com)
 
 > 23 сообщений · 7 участников · 2013-08-20 — 2013-09-19
 

@@ -6,9 +6,12 @@ messages: 9
 participants: "tulasi, doc, Serge, Varun Kumar, Marcis"
 first: 2011-07-21T06:51:16+03:00
 last: 2011-10-09T15:41:17+03:00
+source_url: https://groups.google.com/d/msgid/nagari/CAMbBtXvTCgo5qBhJcxqQsWvw20TkHDuy0JCSM6Q0e78%2BxQVZ3g@mail.gmail.com
 ---
 
 # Nagari script
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/CAMbBtXvTCgo5qBhJcxqQsWvw20TkHDuy0JCSM6Q0e78%2BxQVZ3g@mail.gmail.com)
 
 > 9 сообщений · 5 участников · 2011-07-21 — 2011-10-09
 

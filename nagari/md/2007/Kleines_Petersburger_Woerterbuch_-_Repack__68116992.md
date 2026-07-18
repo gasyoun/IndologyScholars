@@ -6,9 +6,12 @@ messages: 1
 participants: "danstender"
 first: 2007-05-27T21:03:21+03:00
 last: 2007-05-27T21:03:21+03:00
+source_url: https://groups.google.com/d/msgid/nagari/1180289001.994995.245790@h2g2000hsg.googlegroups.com
 ---
 
 # Kleines Petersburger Woerterbuch - Repack
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/1180289001.994995.245790@h2g2000hsg.googlegroups.com)
 
 > 1 сообщений · 1 участников · 2007-05-27 — 2007-05-27
 

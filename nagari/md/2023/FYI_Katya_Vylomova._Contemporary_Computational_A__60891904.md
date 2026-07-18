@@ -6,9 +6,12 @@ messages: 2
 participants: "Mārcis, Светлана Кройцер"
 first: 2023-12-06T23:26:21+03:00
 last: 2023-12-07T03:49:04+03:00
+source_url: https://groups.google.com/d/msgid/nagari/76c2d99e-7fc8-4996-84ab-5a94a8c7ffbfn@googlegroups.com
 ---
 
 # FYI: Katya Vylomova. Contemporary Computational Approaches to Linguistic Morphology, Typology and Social Psychology
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/76c2d99e-7fc8-4996-84ab-5a94a8c7ffbfn@googlegroups.com)
 
 > 2 сообщений · 2 участников · 2023-12-06 — 2023-12-07
 

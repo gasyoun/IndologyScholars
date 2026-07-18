@@ -6,9 +6,12 @@ messages: 4
 participants: "Michael Bykov, Marcis, Radim Navyan"
 first: 2015-04-17T14:28:38+03:00
 last: 2015-04-17T16:06:38+03:00
+source_url: https://groups.google.com/d/msgid/nagari/CAN5SjAAKK1jYFiRvYemVa9U0_NFogMt6zG3whuHitwLB3Q-rkw@mail.gmail.com
 ---
 
 # dental -> palatal in LSK
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/CAN5SjAAKK1jYFiRvYemVa9U0_NFogMt6zG3whuHitwLB3Q-rkw@mail.gmail.com)
 
 > 4 сообщений · 3 участников · 2015-04-17 — 2015-04-17
 

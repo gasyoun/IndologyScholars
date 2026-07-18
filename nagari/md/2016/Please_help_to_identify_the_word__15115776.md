@@ -6,9 +6,12 @@ messages: 11
 participants: "Mandala Pati (Владислав), Serge A, dhaval patel, Marcis"
 first: 2016-05-21T17:53:15+03:00
 last: 2016-05-21T22:28:09+03:00
+source_url: https://groups.google.com/d/msgid/nagari/3b1a18fe-0df6-4082-a8bf-bfd8acec580a@googlegroups.com
 ---
 
 # Please help to identify the word
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/3b1a18fe-0df6-4082-a8bf-bfd8acec580a@googlegroups.com)
 
 > 11 сообщений · 4 участников · 2016-05-21 — 2016-05-21
 

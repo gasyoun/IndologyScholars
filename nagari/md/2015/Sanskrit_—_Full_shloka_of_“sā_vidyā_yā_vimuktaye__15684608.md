@@ -6,9 +6,12 @@ messages: 6
 participants: "Vincent Verheyen, Radim Navyan, narayan prasad"
 first: 2015-02-01T18:57:32+03:00
 last: 2015-02-02T00:58:20+03:00
+source_url: https://groups.google.com/d/msgid/nagari/0d0fd856-f173-463a-be98-19a2450d03f1@googlegroups.com
 ---
 
 # Sanskrit — Full shloka of “sā vidyā yā vimuktaye”
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/0d0fd856-f173-463a-be98-19a2450d03f1@googlegroups.com)
 
 > 6 сообщений · 3 участников · 2015-02-01 — 2015-02-02
 

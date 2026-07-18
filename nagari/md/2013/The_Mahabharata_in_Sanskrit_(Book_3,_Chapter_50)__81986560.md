@@ -6,9 +6,12 @@ messages: 1
 participants: "Marcis"
 first: 2013-02-05T08:59:07+03:00
 last: 2013-02-05T08:59:07+03:00
+source_url: https://groups.google.com/d/msgid/nagari/22009b02-2c7f-4f81-995d-a0b4cde18df3@googlegroups.com
 ---
 
 # The Mahabharata in Sanskrit (Book 3, Chapter 50)
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/22009b02-2c7f-4f81-995d-a0b4cde18df3@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2013-02-05 — 2013-02-05
 

@@ -6,9 +6,12 @@ messages: 2
 participants: "JudasFawley, Worga"
 first: 2007-11-07T22:55:24
 last: 2007-11-09T10:29:02
+source_url: https://groups.google.com/d/msgid/nagari/1194476124.115071.184040@d55g2000hsg.googlegroups.com
 ---
 
 # Sanskrit Grammars for download
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/1194476124.115071.184040@d55g2000hsg.googlegroups.com)
 
 > 2 сообщений · 2 участников · 2007-11-07 — 2007-11-09
 

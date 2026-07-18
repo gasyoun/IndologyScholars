@@ -6,9 +6,12 @@ messages: 1
 participants: "danstender"
 first: 2007-06-13T16:29:48+03:00
 last: 2007-06-13T16:29:48+03:00
+source_url: https://groups.google.com/d/msgid/nagari/1181741388.680726.98380@j4g2000prf.googlegroups.com
 ---
 
 # New Google Group: Granthinah
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/1181741388.680726.98380@j4g2000prf.googlegroups.com)
 
 > 1 сообщений · 1 участников · 2007-06-13 — 2007-06-13
 

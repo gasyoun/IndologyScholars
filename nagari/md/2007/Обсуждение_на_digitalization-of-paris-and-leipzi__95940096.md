@@ -6,9 +6,12 @@ messages: 4
 participants: "Wrd, gasyoun@…"
 first: 2007-02-24T23:36:19+03:00
 last: 2007-02-25T14:13:34+03:00
+source_url: https://groups.google.com/d/msgid/nagari/1172349379.092980.307990@v33g2000cwv.googlegroups.com
 ---
 
 # Обсуждение на digitalization-of-paris-and-leipzig-ngar-fonts
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/1172349379.092980.307990@v33g2000cwv.googlegroups.com)
 
 > 4 сообщений · 2 участников · 2007-02-24 — 2007-02-25
 

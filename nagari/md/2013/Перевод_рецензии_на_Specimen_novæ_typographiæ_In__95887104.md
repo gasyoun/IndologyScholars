@@ -6,9 +6,12 @@ messages: 1
 participants: "Marcis"
 first: 2013-03-08T12:05:20+03:00
 last: 2013-03-08T12:05:20+03:00
+source_url: https://groups.google.com/d/msgid/nagari/29a9ede1-54eb-4d5e-bad1-29dad7a36ec2@googlegroups.com
 ---
 
 # Перевод рецензии на Specimen novæ typographiæ Indicæ (1821 г.)
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/29a9ede1-54eb-4d5e-bad1-29dad7a36ec2@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2013-03-08 — 2013-03-08
 

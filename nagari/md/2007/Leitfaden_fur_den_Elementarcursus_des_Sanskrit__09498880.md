@@ -6,9 +6,12 @@ messages: 1
 participants: "Marcis"
 first: 2007-10-27T17:16:21
 last: 2007-10-27T17:16:21
+source_url: https://groups.google.com/d/msgid/nagari/1193505381.883415.48630@57g2000hsv.googlegroups.com
 ---
 
 # Leitfaden fur den Elementarcursus des Sanskrit
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/1193505381.883415.48630@57g2000hsv.googlegroups.com)
 
 > 1 сообщений · 1 участников · 2007-10-27 — 2007-10-27
 

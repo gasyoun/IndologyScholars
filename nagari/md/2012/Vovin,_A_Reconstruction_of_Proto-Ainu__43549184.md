@@ -6,9 +6,12 @@ messages: 3
 participants: "Stormwatsch"
 first: 2012-06-12T02:32:00+03:00
 last: 2012-06-12T02:36:18+03:00
+source_url: https://groups.google.com/d/msgid/nagari/990ac0d2-3ad7-4b61-81fc-87851c6eb478@googlegroups.com
 ---
 
 # Vovin, A Reconstruction of Proto-Ainu
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/990ac0d2-3ad7-4b61-81fc-87851c6eb478@googlegroups.com)
 
 > 3 сообщений · 1 участников · 2012-06-12 — 2012-06-12
 

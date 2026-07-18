@@ -6,9 +6,12 @@ messages: 2
 participants: "!!!Latha!!! !Latha!, Alessandro Nutini"
 first: 2008-09-26T10:42:57+03:00
 last: 2008-09-26T11:00:52+03:00
+source_url: https://groups.google.com/d/msgid/nagari/b6de03550809260042m432ebecbne23b433762084182@mail.gmail.com
 ---
 
 # Defeating the Hacker: A non-technical guide to computer security
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/b6de03550809260042m432ebecbne23b433762084182@mail.gmail.com)
 
 > 2 сообщений · 2 участников · 2008-09-26 — 2008-09-26
 

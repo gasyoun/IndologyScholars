@@ -6,9 +6,12 @@ messages: 1
 participants: "Дмитрий Тарасов"
 first: 2021-01-10T16:58:21+03:00
 last: 2021-01-10T16:58:21+03:00
+source_url: https://groups.google.com/d/msgid/nagari/c3545d46-31ea-4111-a325-c5aceba19645n@googlegroups.com
 ---
 
 # Бюлер XLVI (nyapaptat 3, а не 5 тип аориста)
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/c3545d46-31ea-4111-a325-c5aceba19645n@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2021-01-10 — 2021-01-10
 

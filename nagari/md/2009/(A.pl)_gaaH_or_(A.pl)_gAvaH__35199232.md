@@ -6,9 +6,12 @@ messages: 11
 participants: "vladimir, Brahman, Stormwatsch"
 first: 2009-11-01T15:06:45+03:00
 last: 2009-11-09T13:14:16+03:00
+source_url: https://groups.google.com/d/msgid/nagari/000b01ca5aeb%24cd979c00%24011613ac@acerd29f329b82
 ---
 
 # (A.pl) gaaH or (A.pl) gAvaH?
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/000b01ca5aeb%24cd979c00%24011613ac@acerd29f329b82)
 
 > 11 сообщений · 3 участников · 2009-11-01 — 2009-11-09
 

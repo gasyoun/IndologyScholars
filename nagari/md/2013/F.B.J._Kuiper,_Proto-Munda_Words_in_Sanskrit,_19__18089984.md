@@ -6,9 +6,12 @@ messages: 1
 participants: "Marcis"
 first: 2013-02-20T22:10:19+03:00
 last: 2013-02-20T22:10:19+03:00
+source_url: https://groups.google.com/d/msgid/nagari/408a7588-e93d-4778-92ae-bfe1fbe84566@googlegroups.com
 ---
 
 # F.B.J. Kuiper, Proto-Munda Words in Sanskrit, 1948
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/408a7588-e93d-4778-92ae-bfe1fbe84566@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2013-02-20 — 2013-02-20
 

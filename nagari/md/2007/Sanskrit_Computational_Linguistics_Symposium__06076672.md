@@ -6,9 +6,12 @@ messages: 1
 participants: "Gérard Huet"
 first: 2007-04-11T18:39:17+03:00
 last: 2007-04-11T18:39:17+03:00
+source_url: https://groups.google.com/d/msgid/nagari/6C8A59A1-6F43-48C1-9067-78D535CBD78F@inria.fr
 ---
 
 # Sanskrit Computational Linguistics Symposium
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/6C8A59A1-6F43-48C1-9067-78D535CBD78F@inria.fr)
 
 > 1 сообщений · 1 участников · 2007-04-11 — 2007-04-11
 

@@ -6,9 +6,12 @@ messages: 4
 participants: "Marcis, Simurg Gamayun"
 first: 2022-12-19T01:50:58+03:00
 last: 2022-12-21T19:39:50+03:00
+source_url: https://groups.google.com/d/msgid/nagari/107699e8-e0b3-485e-a13a-9f20b052f135n@googlegroups.com
 ---
 
 # Histoire de la langue sanskrite
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/107699e8-e0b3-485e-a13a-9f20b052f135n@googlegroups.com)
 
 > 4 сообщений · 2 участников · 2022-12-19 — 2022-12-21
 

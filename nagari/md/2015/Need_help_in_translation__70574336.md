@@ -6,9 +6,12 @@ messages: 16
 participants: "Radim Navyan, Kartik K, narayan prasad, Dmitri, Владимир Карицкий"
 first: 2015-07-11T18:33:44+03:00
 last: 2015-08-22T23:05:57+03:00
+source_url: https://groups.google.com/d/msgid/nagari/271ab735-4c39-426e-a602-50e8a8d93f06@googlegroups.com
 ---
 
 # Need help in translation
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/271ab735-4c39-426e-a602-50e8a8d93f06@googlegroups.com)
 
 > 16 сообщений · 5 участников · 2015-07-11 — 2015-08-22
 

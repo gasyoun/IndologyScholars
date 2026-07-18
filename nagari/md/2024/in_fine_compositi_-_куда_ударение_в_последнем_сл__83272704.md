@@ -6,9 +6,12 @@ messages: 5
 participants: "Георгий Х., Constantine, Mauricio Vinco"
 first: 2024-07-17T08:05:22+03:00
 last: 2024-07-19T00:15:01+03:00
+source_url: https://groups.google.com/d/msgid/nagari/83febc90-09f1-40e2-b0cc-390c628bf180n@googlegroups.com
 ---
 
 # in fine compositi - куда ударение в последнем слоге?
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/83febc90-09f1-40e2-b0cc-390c628bf180n@googlegroups.com)
 
 > 5 сообщений · 3 участников · 2024-07-17 — 2024-07-19
 

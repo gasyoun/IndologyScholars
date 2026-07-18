@@ -6,9 +6,12 @@ messages: 1
 participants: "Artem Novikov"
 first: 2013-06-14T16:30:03+03:00
 last: 2013-06-14T16:30:03+03:00
+source_url: https://groups.google.com/d/msgid/nagari/afb1a409-790d-4e4d-af6e-453fb828313a@googlegroups.com
 ---
 
 # Словари Boehtlingk'a
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/afb1a409-790d-4e4d-af6e-453fb828313a@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2013-06-14 — 2013-06-14
 

@@ -6,9 +6,12 @@ messages: 4
 participants: "Dmitri, Marcis, Worga"
 first: 2012-07-10T00:39:58+03:00
 last: 2012-09-03T22:55:57+03:00
+source_url: https://groups.google.com/d/msgid/nagari/d59616a2-d8c0-4762-9cef-47cde32f1953@googlegroups.com
 ---
 
 # Java version of Charles Wikner's preprocessor for SKT LaTeX package
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/d59616a2-d8c0-4762-9cef-47cde32f1953@googlegroups.com)
 
 > 4 сообщений · 3 участников · 2012-07-10 — 2012-09-03
 

@@ -6,9 +6,12 @@ messages: 2
 participants: "Dmitri, Marcis"
 first: 2013-04-28T05:04:52+03:00
 last: 2014-01-24T21:07:48+03:00
+source_url: https://groups.google.com/d/msgid/nagari/495c791a-f2b9-451d-b3e3-a452b820feed@googlegroups.com
 ---
 
 # The Soma-hymns of the Ṛgveda by S.S.Bhawe
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/495c791a-f2b9-451d-b3e3-a452b820feed@googlegroups.com)
 
 > 2 сообщений · 2 участников · 2013-04-28 — 2014-01-24
 

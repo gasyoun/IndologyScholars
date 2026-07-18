@@ -6,9 +6,12 @@ messages: 16
 participants: "Marcis, DmitriNet, Worga, Sct"
 first: 2007-03-27T17:44:55
 last: 2007-04-22T13:12:19
+source_url: https://groups.google.com/d/msgid/nagari/1175017495.330750.68430@b75g2000hsg.googlegroups.com
 ---
 
 # A good source of scanned Sanskrit documents
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/1175017495.330750.68430@b75g2000hsg.googlegroups.com)
 
 > 16 сообщений · 4 участников · 2007-03-27 — 2007-04-22
 

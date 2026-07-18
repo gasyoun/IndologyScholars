@@ -6,9 +6,12 @@ messages: 1
 participants: "Marcis"
 first: 2013-02-20T22:01:02+03:00
 last: 2013-02-20T22:01:02+03:00
+source_url: https://groups.google.com/d/msgid/nagari/7026ce99-01a0-4e90-99e3-0df3c5da8aaa@googlegroups.com
 ---
 
 # General Plan of the Concordance (HOS)
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/7026ce99-01a0-4e90-99e3-0df3c5da8aaa@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2013-02-20 — 2013-02-20
 

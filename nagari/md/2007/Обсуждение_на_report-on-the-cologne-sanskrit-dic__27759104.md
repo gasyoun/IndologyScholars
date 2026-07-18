@@ -6,9 +6,12 @@ messages: 2
 participants: "Marcis, Peter"
 first: 2007-02-27T19:39:00
 last: 2007-02-28T18:32:12+03:00
+source_url: https://groups.google.com/d/msgid/nagari/1172605140.889629.293400@t69g2000cwt.googlegroups.com
 ---
 
 # Обсуждение на report-on-the-cologne-sanskrit-dictionary-project
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/1172605140.889629.293400@t69g2000cwt.googlegroups.com)
 
 > 2 сообщений · 2 участников · 2007-02-27 — 2007-02-28
 

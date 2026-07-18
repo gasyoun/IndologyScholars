@@ -6,9 +6,12 @@ messages: 4
 participants: "danstender, Worga, Marcis"
 first: 2007-04-17T21:17:18+03:00
 last: 2007-04-20T08:17:46
+source_url: https://groups.google.com/d/msgid/nagari/1176833838.741948.231900@n59g2000hsh.googlegroups.com
 ---
 
 # Found @ Rapidshare 2
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/1176833838.741948.231900@n59g2000hsh.googlegroups.com)
 
 > 4 сообщений · 3 участников · 2007-04-17 — 2007-04-20
 

@@ -6,9 +6,12 @@ messages: 6
 participants: "Artem Novikov, Marcis, Lev Titlin"
 first: 2013-05-19T18:54:09+03:00
 last: 2013-05-22T19:42:46+03:00
+source_url: https://groups.google.com/d/msgid/nagari/ad63adc4-e2fc-4545-8c5c-b91cd933ad5f@googlegroups.com
 ---
 
 # SanDic Online
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/ad63adc4-e2fc-4545-8c5c-b91cd933ad5f@googlegroups.com)
 
 > 6 сообщений · 3 участников · 2013-05-19 — 2013-05-22
 

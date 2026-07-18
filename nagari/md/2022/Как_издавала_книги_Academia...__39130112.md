@@ -6,9 +6,12 @@ messages: 1
 participants: "Marcis"
 first: 2022-04-01T10:53:32+03:00
 last: 2022-04-01T10:53:32+03:00
+source_url: https://groups.google.com/d/msgid/nagari/c6828367-35e5-4080-b889-73e70539cdf8n@googlegroups.com
 ---
 
 # Как издавала книги Academia...
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/c6828367-35e5-4080-b889-73e70539cdf8n@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2022-04-01 — 2022-04-01
 

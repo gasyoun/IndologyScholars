@@ -6,9 +6,12 @@ messages: 1
 participants: "Marcis"
 first: 2019-05-29T18:02:46+03:00
 last: 2019-05-29T18:02:46+03:00
+source_url: https://groups.google.com/d/msgid/nagari/883b80c0-668d-4d21-9abb-bf66cbce459d@googlegroups.com
 ---
 
 # Рериховские чтения-LVIII. Проблемы формирования текста и культуры древней и средневековой Индии
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/883b80c0-668d-4d21-9abb-bf66cbce459d@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2019-05-29 — 2019-05-29
 

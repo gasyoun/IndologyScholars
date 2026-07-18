@@ -6,9 +6,12 @@ messages: 2
 participants: "klaus, Marcis"
 first: 2008-03-04T22:32:12+03:00
 last: 2008-03-05T14:43:00+03:00
+source_url: https://groups.google.com/d/msgid/nagari/f1be2809-5294-4e76-a67d-5176ee50e7c5@e23g2000prf.googlegroups.com
 ---
 
 # Curiosities of Indo-European tradition
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/f1be2809-5294-4e76-a67d-5176ee50e7c5@e23g2000prf.googlegroups.com)
 
 > 2 сообщений · 2 участников · 2008-03-04 — 2008-03-05
 

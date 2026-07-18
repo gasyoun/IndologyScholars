@@ -6,9 +6,12 @@ messages: 2
 participants: "TJA, Serge A"
 first: 2019-08-25T00:01:41+03:00
 last: 2019-08-26T01:38:10+03:00
+source_url: https://groups.google.com/d/msgid/nagari/8fe6851c-daab-4a6e-a4d4-f35df5f1f80b@googlegroups.com
 ---
 
 # ayaṃ me hasto bhagavān...
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/8fe6851c-daab-4a6e-a4d4-f35df5f1f80b@googlegroups.com)
 
 > 2 сообщений · 2 участников · 2019-08-25 — 2019-08-26
 

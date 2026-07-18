@@ -6,9 +6,12 @@ messages: 13
 participants: "acharaya Kushal Kumar, kalindi dd kalindi dd, Serge, Roman Smirnov, Vasu Srinivasan"
 first: 2008-03-22T15:19:58+03:00
 last: 2008-04-28T21:35:42+03:00
+source_url: https://groups.google.com/d/msgid/nagari/ced23554-a7c0-4dcd-aa0c-fb3a0031fd6d@k13g2000hse.googlegroups.com
 ---
 
 # pooja at moscow
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/ced23554-a7c0-4dcd-aa0c-fb3a0031fd6d@k13g2000hse.googlegroups.com)
 
 > 13 сообщений · 5 участников · 2008-03-22 — 2008-04-28
 

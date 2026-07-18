@@ -6,9 +6,12 @@ messages: 5
 participants: "Aravinda Jayasundara, Chetan Pandey, Puneet Madaan"
 first: 2008-12-19T07:01:50+03:00
 last: 2008-12-22T12:54:23+03:00
+source_url: https://groups.google.com/d/msgid/nagari/a6977fc0812182001k4a136f74j227e52ce70bd3db2@mail.gmail.com
 ---
 
 # Learning Sanskrit
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/a6977fc0812182001k4a136f74j227e52ce70bd3db2@mail.gmail.com)
 
 > 5 сообщений · 3 участников · 2008-12-19 — 2008-12-22
 

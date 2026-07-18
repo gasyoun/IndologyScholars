@@ -6,9 +6,12 @@ messages: 1
 participants: "Marcis"
 first: 2013-03-17T15:22:31+03:00
 last: 2013-03-17T15:22:31+03:00
+source_url: https://groups.google.com/d/msgid/nagari/bdf2ecf1-7899-4143-a680-7beecc2d0f5a@googlegroups.com
 ---
 
 # К истории шрифта Шлегеля: les matrices de deux corps de nâgarî
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/bdf2ecf1-7899-4143-a680-7beecc2d0f5a@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2013-03-17 — 2013-03-17
 

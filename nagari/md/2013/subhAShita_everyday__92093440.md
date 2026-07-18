@@ -6,9 +6,12 @@ messages: 48
 participants: "ShaSa, Serge A, Владимир Карицкий, Marcis, Dmitri"
 first: 2013-12-19T11:51:26+03:00
 last: 2014-02-21T16:16:39+03:00
+source_url: https://groups.google.com/d/msgid/nagari/50088918-ce5a-4d64-aa3d-4e31612d62f2@googlegroups.com
 ---
 
 # subhAShita everyday
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/50088918-ce5a-4d64-aa3d-4e31612d62f2@googlegroups.com)
 
 > 48 сообщений · 5 участников · 2013-12-19 — 2014-02-21
 

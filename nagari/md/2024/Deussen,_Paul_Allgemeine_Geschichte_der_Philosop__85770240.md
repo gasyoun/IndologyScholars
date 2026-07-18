@@ -6,9 +6,12 @@ messages: 1
 participants: "Mārcis"
 first: 2024-04-04T21:46:42+03:00
 last: 2024-04-04T21:46:42+03:00
+source_url: https://groups.google.com/d/msgid/nagari/b093073f-2535-41c5-a0f2-18547fef1864n@googlegroups.com
 ---
 
 # Deussen, Paul Allgemeine Geschichte der Philosophie
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/b093073f-2535-41c5-a0f2-18547fef1864n@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2024-04-04 — 2024-04-04
 

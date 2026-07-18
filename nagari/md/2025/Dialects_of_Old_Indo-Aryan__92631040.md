@@ -6,9 +6,12 @@ messages: 1
 participants: "Mārcis"
 first: 2025-02-20T12:12:41+03:00
 last: 2025-02-20T12:12:41+03:00
+source_url: https://groups.google.com/d/msgid/nagari/9f9886d0-d4be-40a4-851f-04522da01197n@googlegroups.com
 ---
 
 # Dialects of Old Indo-Aryan
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/9f9886d0-d4be-40a4-851f-04522da01197n@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2025-02-20 — 2025-02-20
 

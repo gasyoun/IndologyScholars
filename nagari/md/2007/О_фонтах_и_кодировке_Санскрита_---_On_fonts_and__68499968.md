@@ -6,9 +6,12 @@ messages: 14
 participants: "Marcis, DmitriNet, klaus, Worga, Roman Smirnov"
 first: 2007-04-04T05:12:00
 last: 2007-04-07T10:51:40+03:00
+source_url: https://groups.google.com/d/msgid/nagari/1175663520.611931.187900@l77g2000hsb.googlegroups.com
 ---
 
 # О фонтах и кодировке Санскрита --- On fonts and encodings of Sanskrit
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/1175663520.611931.187900@l77g2000hsb.googlegroups.com)
 
 > 14 сообщений · 5 участников · 2007-04-04 — 2007-04-07
 

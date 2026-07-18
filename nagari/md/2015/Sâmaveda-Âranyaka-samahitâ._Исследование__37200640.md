@@ -6,9 +6,12 @@ messages: 1
 participants: "Marcis"
 first: 2015-03-01T00:19:57+03:00
 last: 2015-03-01T00:19:57+03:00
+source_url: https://groups.google.com/d/msgid/nagari/42d781ca-47ca-4c21-be27-6252907e9ec8@googlegroups.com
 ---
 
 # Sâmaveda-Âranyaka-samahitâ. Исследование
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/42d781ca-47ca-4c21-be27-6252907e9ec8@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2015-03-01 — 2015-03-01
 

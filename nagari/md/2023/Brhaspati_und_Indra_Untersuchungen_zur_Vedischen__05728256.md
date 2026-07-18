@@ -6,9 +6,12 @@ messages: 1
 participants: "Marcis"
 first: 2023-09-16T07:02:51+03:00
 last: 2023-09-16T07:02:51+03:00
+source_url: https://groups.google.com/d/msgid/nagari/27cdd57d-d0da-48d6-baca-471fa6716271n@googlegroups.com
 ---
 
 # Brhaspati und Indra: Untersuchungen zur Vedischen Mythologie und Kulturgeschichte
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/27cdd57d-d0da-48d6-baca-471fa6716271n@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2023-09-16 — 2023-09-16
 

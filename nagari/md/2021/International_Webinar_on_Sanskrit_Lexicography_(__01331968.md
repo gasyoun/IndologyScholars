@@ -6,9 +6,12 @@ messages: 1
 participants: "Marcis"
 first: 2021-07-23T21:28:59+03:00
 last: 2021-07-23T21:28:59+03:00
+source_url: https://groups.google.com/d/msgid/nagari/213f33f5-17f3-4299-9c4d-11904a04e282n@googlegroups.com
 ---
 
 # International Webinar on Sanskrit Lexicography (25-е июля, воскр., 15:00)
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/213f33f5-17f3-4299-9c4d-11904a04e282n@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2021-07-23 — 2021-07-23
 

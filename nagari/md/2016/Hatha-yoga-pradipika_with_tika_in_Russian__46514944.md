@@ -6,9 +6,12 @@ messages: 7
 participants: "Radim Navyan, Marcis, Usha Sanka, Dmitri"
 first: 2016-02-21T20:20:37+03:00
 last: 2016-02-28T21:51:51+03:00
+source_url: https://groups.google.com/d/msgid/nagari/5a8da9f3-1491-441c-b7fa-b9776b9b1b1a@googlegroups.com
 ---
 
 # Hatha-yoga-pradipika with tika in Russian
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/5a8da9f3-1491-441c-b7fa-b9776b9b1b1a@googlegroups.com)
 
 > 7 сообщений · 4 участников · 2016-02-21 — 2016-02-28
 

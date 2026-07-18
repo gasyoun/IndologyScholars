@@ -6,9 +6,12 @@ messages: 1
 participants: "Mārcis"
 first: 2024-06-01T09:58:45+03:00
 last: 2024-06-01T09:58:45+03:00
+source_url: https://groups.google.com/d/msgid/nagari/66471507-6e86-40a4-abd2-a8d8f0a7e0f1n@googlegroups.com
 ---
 
 # Kane,Pandurang Vaman History of Sanskrit poetics / By P. V. Kane
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/66471507-6e86-40a4-abd2-a8d8f0a7e0f1n@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2024-06-01 — 2024-06-01
 

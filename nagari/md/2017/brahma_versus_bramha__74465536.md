@@ -6,9 +6,12 @@ messages: 3
 participants: "Ekaterina, Narayan Prasad, Deka, Rabin"
 first: 2017-12-09T13:41:45+03:00
 last: 2017-12-10T01:16:39+03:00
+source_url: https://groups.google.com/d/msgid/nagari/6e2c06b9-a64a-4841-bbc3-c8c8b57bd703@googlegroups.com
 ---
 
 # brahma versus bramha
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/6e2c06b9-a64a-4841-bbc3-c8c8b57bd703@googlegroups.com)
 
 > 3 сообщений · 3 участников · 2017-12-09 — 2017-12-10
 

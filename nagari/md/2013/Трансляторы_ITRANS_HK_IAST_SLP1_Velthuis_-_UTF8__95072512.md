@@ -6,9 +6,12 @@ messages: 5
 participants: "Artem Novikov, Marcis, Serge A"
 first: 2013-02-25T11:50:17+03:00
 last: 2013-02-26T12:14:12+03:00
+source_url: https://groups.google.com/d/msgid/nagari/0b4b3c5d-996a-4111-9bbb-42c5931a98a6@googlegroups.com
 ---
 
 # Трансляторы ITRANS/HK/IAST/SLP1/Velthuis <-> UTF8
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/0b4b3c5d-996a-4111-9bbb-42c5931a98a6@googlegroups.com)
 
 > 5 сообщений · 3 участников · 2013-02-25 — 2013-02-26
 

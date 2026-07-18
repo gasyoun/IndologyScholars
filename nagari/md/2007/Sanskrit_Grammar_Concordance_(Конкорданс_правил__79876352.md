@@ -6,9 +6,12 @@ messages: 1
 participants: "Marcis"
 first: 2007-05-15T07:55:01+03:00
 last: 2007-05-15T07:55:01+03:00
+source_url: https://groups.google.com/d/msgid/nagari/1179204901.185348.28170@u30g2000hsc.googlegroups.com
 ---
 
 # Sanskrit Grammar Concordance (Конкорданс правил санскритской грамматики)
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/1179204901.185348.28170@u30g2000hsc.googlegroups.com)
 
 > 1 сообщений · 1 участников · 2007-05-15 — 2007-05-15
 

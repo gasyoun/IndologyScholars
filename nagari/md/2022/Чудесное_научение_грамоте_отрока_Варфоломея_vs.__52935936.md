@@ -6,9 +6,12 @@ messages: 2
 participants: "Marcis, Светлана Кройцер"
 first: 2022-04-19T10:25:13+03:00
 last: 2022-04-19T14:12:44+03:00
+source_url: https://groups.google.com/d/msgid/nagari/f379149f-ef0c-4ab6-b47c-50df025671ebn@googlegroups.com
 ---
 
 # Чудесное научение грамоте отрока Варфоломея vs. Панини
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/f379149f-ef0c-4ab6-b47c-50df025671ebn@googlegroups.com)
 
 > 2 сообщений · 2 участников · 2022-04-19 — 2022-04-19
 

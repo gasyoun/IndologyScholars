@@ -6,9 +6,12 @@ messages: 8
 participants: "Dmitri, Marcis"
 first: 2015-03-06T05:55:12+03:00
 last: 2015-03-09T16:53:24+03:00
+source_url: https://groups.google.com/d/msgid/nagari/d08f561d-58a4-43cf-b881-20baedf61c7d@googlegroups.com
 ---
 
 # L. Renou EVP I
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/d08f561d-58a4-43cf-b881-20baedf61c7d@googlegroups.com)
 
 > 8 сообщений · 2 участников · 2015-03-06 — 2015-03-09
 

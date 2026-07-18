@@ -6,9 +6,12 @@ messages: 3
 participants: "Mārcis, Serge A, Finansovo Konsultantska Grupa"
 first: 2025-01-01T17:49:30+03:00
 last: 2025-01-04T13:47:21+03:00
+source_url: https://groups.google.com/d/msgid/nagari/ec6f232d-5cbc-45d1-a1bb-90632eb4e1dan@googlegroups.com
 ---
 
 # Рожденный [однажды] (jāta eva na jāyate)…
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/ec6f232d-5cbc-45d1-a1bb-90632eb4e1dan@googlegroups.com)
 
 > 3 сообщений · 3 участников · 2025-01-01 — 2025-01-04
 

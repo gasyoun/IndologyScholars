@@ -6,9 +6,12 @@ messages: 2
 participants: "Andrey Terentyev, Serge A"
 first: 2019-08-08T23:41:47+03:00
 last: 2019-08-09T05:20:17+03:00
+source_url: https://groups.google.com/d/msgid/nagari/44afebdc-5433-411a-aa7c-2a81e23b0da6@googlegroups.com
 ---
 
 # Bodhicaryāvatāra
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/44afebdc-5433-411a-aa7c-2a81e23b0da6@googlegroups.com)
 
 > 2 сообщений · 2 участников · 2019-08-08 — 2019-08-09
 

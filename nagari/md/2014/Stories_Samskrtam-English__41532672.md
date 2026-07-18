@@ -6,9 +6,12 @@ messages: 3
 participants: "ShaSa"
 first: 2014-02-07T13:43:14+03:00
 last: 2014-02-07T14:27:14+03:00
+source_url: https://groups.google.com/d/msgid/nagari/41151682-4176-4707-864a-23589d0161d2@googlegroups.com
 ---
 
 # Stories : Samskrtam-English
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/41151682-4176-4707-864a-23589d0161d2@googlegroups.com)
 
 > 3 сообщений · 1 участников · 2014-02-07 — 2014-02-07
 

@@ -6,9 +6,12 @@ messages: 6
 participants: "Olga Litvinenko, Mārcis, Serge A"
 first: 2024-10-13T19:09:01+03:00
 last: 2024-10-24T21:34:55+03:00
+source_url: https://groups.google.com/d/msgid/nagari/eca25010-c662-4cd5-9f3e-3740e8fc520en@googlegroups.com
 ---
 
 # Converter devanagari-siddham-devanagari
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/eca25010-c662-4cd5-9f3e-3740e8fc520en@googlegroups.com)
 
 > 6 сообщений · 3 участников · 2024-10-13 — 2024-10-24
 

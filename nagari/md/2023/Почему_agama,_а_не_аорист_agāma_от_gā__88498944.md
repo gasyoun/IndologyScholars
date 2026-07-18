@@ -6,9 +6,12 @@ messages: 2
 participants: "Marskoy Gato, Евгений Уланский"
 first: 2023-04-08T18:44:45+03:00
 last: 2023-04-08T19:06:27+03:00
+source_url: https://groups.google.com/d/msgid/nagari/23d015d6-fa5b-449a-a835-30f91fdb0121n@googlegroups.com
 ---
 
 # Почему agama, а не аорист agāma от gā?
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/23d015d6-fa5b-449a-a835-30f91fdb0121n@googlegroups.com)
 
 > 2 сообщений · 2 участников · 2023-04-08 — 2023-04-08
 

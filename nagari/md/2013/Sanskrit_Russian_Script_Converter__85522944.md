@@ -6,9 +6,12 @@ messages: 3
 participants: "ken p, śrīdṛṣṭvā"
 first: 2013-11-18T20:49:43+03:00
 last: 2014-02-26T21:58:45+03:00
+source_url: https://groups.google.com/d/msgid/nagari/4ebaa101-0be0-45df-b492-9b4bdf9f26af@googlegroups.com
 ---
 
 # Sanskrit Russian Script Converter
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/4ebaa101-0be0-45df-b492-9b4bdf9f26af@googlegroups.com)
 
 > 3 сообщений · 2 участников · 2013-11-18 — 2014-02-26
 

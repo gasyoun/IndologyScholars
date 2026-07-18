@@ -6,9 +6,12 @@ messages: 1
 participants: "Marcis"
 first: 2013-03-03T20:49:09+03:00
 last: 2013-03-03T20:49:09+03:00
+source_url: https://groups.google.com/d/msgid/nagari/d4d5f84d-3669-4d5f-afaa-3e506a079685@googlegroups.com
 ---
 
 # Liste der 807 tatsächlich belegten Sanskrit-Ligaturen
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/d4d5f84d-3669-4d5f-afaa-3e506a079685@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2013-03-03 — 2013-03-03
 

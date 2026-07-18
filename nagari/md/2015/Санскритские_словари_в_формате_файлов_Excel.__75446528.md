@@ -6,9 +6,12 @@ messages: 103
 participants: "Brahman, Radim Navyan, Тихвинский Виталий Игоревич, Marcis, Dmitri, Serge A"
 first: 2015-01-17T16:30:20+03:00
 last: 2015-11-05T20:03:26+03:00
+source_url: https://groups.google.com/d/msgid/nagari/6e25ae30-9d2e-430d-810c-d019f4e6b7de@googlegroups.com
 ---
 
 # Санскритские словари в формате файлов Excel.
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/6e25ae30-9d2e-430d-810c-d019f4e6b7de@googlegroups.com)
 
 > 103 сообщений · 6 участников · 2015-01-17 — 2015-11-05
 

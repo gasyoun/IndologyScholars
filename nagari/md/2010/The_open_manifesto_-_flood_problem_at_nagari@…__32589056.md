@@ -6,9 +6,12 @@ messages: 74
 participants: "rudraksha encyclopedia, kalindi dd kalindi dd, Worga, Vasu Srinivasan, Lev Titlin, Владимир Романовский, sworga@…, DmitriNet, Simurg Gamayun, Stormwatsch, Roman Smirnov, Marcis"
 first: 2010-11-24T04:56:08+03:00
 last: 2010-12-02T23:26:08+03:00
+source_url: https://groups.google.com/d/msgid/nagari/AANLkTimKfbHyKOaXQW3Qp4tzP9BjzmL5Y4kXCQu1YT7N@mail.gmail.com
 ---
 
 # The open manifesto - flood problem at nagari@…
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/AANLkTimKfbHyKOaXQW3Qp4tzP9BjzmL5Y4kXCQu1YT7N@mail.gmail.com)
 
 > 74 сообщений · 12 участников · 2010-11-24 — 2010-12-02
 

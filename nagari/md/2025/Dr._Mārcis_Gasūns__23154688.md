@@ -6,9 +6,12 @@ messages: 1
 participants: "Mārcis Gasūns"
 first: 2025-11-22T12:41:03+03:00
 last: 2025-11-22T12:41:03+03:00
+source_url: https://groups.google.com/d/msgid/nagari/5fa7298d-a194-417e-8b26-911af904f2c8n@googlegroups.com
 ---
 
 # Dr. Mārcis Gasūns
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/5fa7298d-a194-417e-8b26-911af904f2c8n@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2025-11-22 — 2025-11-22
 

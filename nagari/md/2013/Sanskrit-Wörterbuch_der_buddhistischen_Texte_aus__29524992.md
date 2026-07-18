@@ -6,9 +6,12 @@ messages: 1
 participants: "Marcis"
 first: 2013-12-21T19:05:15+03:00
 last: 2013-12-21T19:05:15+03:00
+source_url: https://groups.google.com/d/msgid/nagari/ddf04006-7180-436e-99ff-d4e44e28f9c1@googlegroups.com
 ---
 
 # Sanskrit-Wörterbuch der buddhistischen Texte aus den Turfan-Funden
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/ddf04006-7180-436e-99ff-d4e44e28f9c1@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2013-12-21 — 2013-12-21
 

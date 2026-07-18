@@ -6,9 +6,12 @@ messages: 4
 participants: "Arvind_Kolhatkar, ShaSa, Marcis"
 first: 2015-04-16T23:57:52+03:00
 last: 2015-04-17T22:52:07+03:00
+source_url: https://groups.google.com/d/msgid/nagari/bc1feb1d-5201-4ec6-91ad-a09127db7d82@googlegroups.com
 ---
 
 # Vaman Shivaram Apte वामन शिवराम आपटे
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/bc1feb1d-5201-4ec6-91ad-a09127db7d82@googlegroups.com)
 
 > 4 сообщений · 3 участников · 2015-04-16 — 2015-04-17
 

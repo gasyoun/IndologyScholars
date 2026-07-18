@@ -6,9 +6,12 @@ messages: 1
 participants: "josé antonio estrella mora"
 first: 2018-05-10T23:29:00+03:00
 last: 2018-05-10T23:29:00+03:00
+source_url: https://groups.google.com/d/msgid/nagari/f08d9e12-aa6b-4fc4-8c01-720f3088de93@googlegroups.com
 ---
 
 # A book on Sanskrit for beginners.
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/f08d9e12-aa6b-4fc4-8c01-720f3088de93@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2018-05-10 — 2018-05-10
 

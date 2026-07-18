@@ -6,9 +6,12 @@ messages: 3
 participants: "Trivikram das, Владимир Карицкий"
 first: 2017-02-17T00:16:31+03:00
 last: 2017-02-17T14:49:40+03:00
+source_url: https://groups.google.com/d/msgid/nagari/21fcacc5-1964-4bf0-836c-e6ea44889d9d@googlegroups.com
 ---
 
 # VEDANTHA DESIKA VIJAYAM NATAKAM
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/21fcacc5-1964-4bf0-836c-e6ea44889d9d@googlegroups.com)
 
 > 3 сообщений · 2 участников · 2017-02-17 — 2017-02-17
 

@@ -6,9 +6,12 @@ messages: 1
 participants: "Varun Gupta"
 first: 2018-11-29T06:34:32+03:00
 last: 2018-11-29T06:34:32+03:00
+source_url: https://groups.google.com/d/msgid/nagari/95fa9cfb-0a4b-4ca4-a75d-612d10757cab@googlegroups.com
 ---
 
 # Books on Indology
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/95fa9cfb-0a4b-4ca4-a75d-612d10757cab@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2018-11-29 — 2018-11-29
 

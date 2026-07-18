@@ -6,9 +6,12 @@ messages: 6
 participants: "Mārcis Gasūns, Иван Малютин, Serge A, Finansovo Konsultantska Grupa"
 first: 2026-03-21T10:45:33+03:00
 last: 2026-03-24T10:09:16+03:00
+source_url: https://groups.google.com/d/msgid/nagari/e1f9ed4f-2632-48ce-b1b9-838c5939a019n@googlegroups.com
 ---
 
 # Cologne Sanskrit Lexicon App
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/e1f9ed4f-2632-48ce-b1b9-838c5939a019n@googlegroups.com)
 
 > 6 сообщений · 4 участников · 2026-03-21 — 2026-03-24
 

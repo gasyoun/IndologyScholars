@@ -6,9 +6,12 @@ messages: 1
 participants: "varun"
 first: 2007-05-04T05:57:13+03:00
 last: 2007-05-04T05:57:13+03:00
+source_url: https://groups.google.com/d/msgid/nagari/1178247433.640336.69140@p77g2000hsh.googlegroups.com
 ---
 
 # Books on Religion.Philosophy,Theological & Oriental Studies
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/1178247433.640336.69140@p77g2000hsh.googlegroups.com)
 
 > 1 сообщений · 1 участников · 2007-05-04 — 2007-05-04
 

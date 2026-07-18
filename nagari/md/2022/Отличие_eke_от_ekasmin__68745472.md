@@ -6,9 +6,12 @@ messages: 6
 participants: "Георгий Х., Евгений Уланский"
 first: 2022-05-01T12:42:24+03:00
 last: 2022-05-01T22:23:15+03:00
+source_url: https://groups.google.com/d/msgid/nagari/bc50fb2e-92ad-4de0-aa26-fcf070531e0an@googlegroups.com
 ---
 
 # Отличие eke от ekasmin
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/bc50fb2e-92ad-4de0-aa26-fcf070531e0an@googlegroups.com)
 
 > 6 сообщений · 2 участников · 2022-05-01 — 2022-05-01
 

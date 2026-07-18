@@ -6,9 +6,12 @@ messages: 22
 participants: "Mandala Pati (Владислав), Kartik K, Radim Navyan, Kartik108, Marcis"
 first: 2015-01-13T19:01:39+03:00
 last: 2015-01-17T19:33:24+03:00
+source_url: https://groups.google.com/d/msgid/nagari/af56cca1-4793-4758-b744-583beb1bd8cc@googlegroups.com
 ---
 
 # Why in the verse word भूमौ in saptamī?
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/af56cca1-4793-4758-b744-583beb1bd8cc@googlegroups.com)
 
 > 22 сообщений · 5 участников · 2015-01-13 — 2015-01-17
 

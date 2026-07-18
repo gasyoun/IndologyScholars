@@ -6,9 +6,12 @@ messages: 2
 participants: "Mārcis Gasūns, Юлия Пушкарева"
 first: 2025-11-18T15:22:44+03:00
 last: 2025-11-18T18:15:49+03:00
+source_url: https://groups.google.com/d/msgid/nagari/85883ffd-2ae7-4dc8-979d-335c96072521n@googlegroups.com
 ---
 
 # “Hindi in the Modern World” (IAAS MSU, 2025)
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/85883ffd-2ae7-4dc8-979d-335c96072521n@googlegroups.com)
 
 > 2 сообщений · 2 участников · 2025-11-18 — 2025-11-18
 

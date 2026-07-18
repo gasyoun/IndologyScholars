@@ -6,9 +6,12 @@ messages: 3
 participants: "Marcis, sujanasi, Worga"
 first: 2007-03-08T17:55:54
 last: 2007-03-08T21:57:16+03:00
+source_url: https://groups.google.com/d/msgid/nagari/1173376554.845758.182220@t69g2000cwt.googlegroups.com
 ---
 
 # Обсуждение на sanskrit-mp3-multimedia
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/1173376554.845758.182220@t69g2000cwt.googlegroups.com)
 
 > 3 сообщений · 3 участников · 2007-03-08 — 2007-03-08
 

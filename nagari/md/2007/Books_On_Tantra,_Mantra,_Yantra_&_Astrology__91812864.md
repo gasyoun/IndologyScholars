@@ -6,9 +6,12 @@ messages: 4
 participants: "Indian Books Centre"
 first: 2007-05-05T05:59:44+03:00
 last: 2007-05-05T06:00:02+03:00
+source_url: https://groups.google.com/d/msgid/nagari/014b01c78ec1%24a21ed370%240201a8c0@PC2
 ---
 
 # Books On Tantra, Mantra, Yantra & Astrology
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/014b01c78ec1%24a21ed370%240201a8c0@PC2)
 
 > 4 сообщений · 1 участников · 2007-05-05 — 2007-05-05
 

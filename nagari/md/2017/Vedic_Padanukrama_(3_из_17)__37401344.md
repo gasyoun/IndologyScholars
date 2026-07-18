@@ -6,9 +6,12 @@ messages: 5
 participants: "Marcis, Radim Navyan, Владимир Карицкий, Efrain Raul Eduardo Romano Abarca"
 first: 2017-01-12T22:27:18+03:00
 last: 2017-01-22T01:06:39+03:00
+source_url: https://groups.google.com/d/msgid/nagari/cc990d6e-235d-49ea-878b-d21799a3632d@googlegroups.com
 ---
 
 # Vedic Padanukrama (3 из 17)
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/cc990d6e-235d-49ea-878b-d21799a3632d@googlegroups.com)
 
 > 5 сообщений · 4 участников · 2017-01-12 — 2017-01-22
 

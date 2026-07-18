@@ -6,9 +6,12 @@ messages: 1
 participants: "Marcis"
 first: 2023-03-25T22:32:44+03:00
 last: 2023-03-25T22:32:44+03:00
+source_url: https://groups.google.com/d/msgid/nagari/66e68156-913d-4c55-bc83-0a17c03a0a44n@googlegroups.com
 ---
 
 # 7th International Sanskrit Computational Linguistics Symposium (2024)
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/66e68156-913d-4c55-bc83-0a17c03a0a44n@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2023-03-25 — 2023-03-25
 

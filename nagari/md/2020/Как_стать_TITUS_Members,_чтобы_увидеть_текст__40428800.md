@@ -6,9 +6,12 @@ messages: 2
 participants: "ли ла, Marcis"
 first: 2020-11-28T01:01:20+03:00
 last: 2020-11-29T17:40:48+03:00
+source_url: https://groups.google.com/d/msgid/nagari/9e259228-d270-42b1-8e1e-beea3e2f7c52n@googlegroups.com
 ---
 
 # Как стать TITUS Members, чтобы увидеть текст ?
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/9e259228-d270-42b1-8e1e-beea3e2f7c52n@googlegroups.com)
 
 > 2 сообщений · 2 участников · 2020-11-28 — 2020-11-29
 

@@ -6,9 +6,12 @@ messages: 3
 participants: "Penkoloda, Serge A"
 first: 2013-07-17T21:41:19+03:00
 last: 2013-07-24T14:04:01+03:00
+source_url: https://groups.google.com/d/msgid/nagari/5d7921f1-c89e-4778-87a9-f452590c74bb@googlegroups.com
 ---
 
 # bhAvatu bhAratam
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/5d7921f1-c89e-4778-87a9-f452590c74bb@googlegroups.com)
 
 > 3 сообщений · 2 участников · 2013-07-17 — 2013-07-24
 

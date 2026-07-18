@@ -6,9 +6,12 @@ messages: 1
 participants: "Marcis"
 first: 2021-02-11T12:34:02+03:00
 last: 2021-02-11T12:34:02+03:00
+source_url: https://groups.google.com/d/msgid/nagari/feeff99c-4fba-4b77-9a24-e2fdea43a824n@googlegroups.com
 ---
 
 # Learn Sanskrit with the Cambridge Introduction to Sanskrit
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/feeff99c-4fba-4b77-9a24-e2fdea43a824n@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2021-02-11 — 2021-02-11
 

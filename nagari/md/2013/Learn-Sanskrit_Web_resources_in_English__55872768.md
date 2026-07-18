@@ -6,9 +6,12 @@ messages: 18
 participants: "ShaSa, geniushkg ., Владимир Карицкий"
 first: 2013-12-19T19:55:34+03:00
 last: 2015-04-18T11:56:19+03:00
+source_url: https://groups.google.com/d/msgid/nagari/2b33bbd9-7c1a-43a9-9716-8a611e2466b9@googlegroups.com
 ---
 
 # Learn-Sanskrit Web resources in English
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/2b33bbd9-7c1a-43a9-9716-8a611e2466b9@googlegroups.com)
 
 > 18 сообщений · 3 участников · 2013-12-19 — 2015-04-18
 

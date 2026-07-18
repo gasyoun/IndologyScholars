@@ -6,9 +6,12 @@ messages: 1
 participants: "Worga"
 first: 2011-02-08T22:25:04+03:00
 last: 2011-02-08T22:25:04+03:00
+source_url: https://groups.google.com/d/msgid/nagari/6c924164-0d64-4bee-8a93-40a2d2981020@x13g2000vbe.googlegroups.com
 ---
 
 # Complete derivation of the verb root श्रिञ् in लुङ् लकार (aorist) using अष्टाध्यायी of पाणिनि.
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/6c924164-0d64-4bee-8a93-40a2d2981020@x13g2000vbe.googlegroups.com)
 
 > 1 сообщений · 1 участников · 2011-02-08 — 2011-02-08
 

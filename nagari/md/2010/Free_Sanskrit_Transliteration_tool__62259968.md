@@ -6,9 +6,12 @@ messages: 8
 participants: "Worga, Serge"
 first: 2010-11-21T23:41:03+03:00
 last: 2010-11-26T22:57:27+03:00
+source_url: https://groups.google.com/d/msgid/nagari/06d88401-a630-488b-9a0f-2d43576a0b4a@z19g2000yqb.googlegroups.com
 ---
 
 # Free Sanskrit Transliteration tool
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/06d88401-a630-488b-9a0f-2d43576a0b4a@z19g2000yqb.googlegroups.com)
 
 > 8 сообщений · 2 участников · 2010-11-21 — 2010-11-26
 

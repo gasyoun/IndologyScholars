@@ -6,9 +6,12 @@ messages: 1
 participants: "Yury Panikov"
 first: 2010-07-01T21:11:14+03:00
 last: 2010-07-01T21:11:14+03:00
+source_url: https://groups.google.com/d/msgid/nagari/ae9722ae-235d-4b9a-b8c6-b3fda8deaf4a@s9g2000yqd.googlegroups.com
 ---
 
 # Vaiyakarana Siddhanta Kaumudi - Изучение грамматики санскрита через комментарии к сутрам Панини
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/ae9722ae-235d-4b9a-b8c6-b3fda8deaf4a@s9g2000yqd.googlegroups.com)
 
 > 1 сообщений · 1 участников · 2010-07-01 — 2010-07-01
 

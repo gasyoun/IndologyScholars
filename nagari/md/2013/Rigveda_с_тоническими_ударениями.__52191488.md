@@ -6,9 +6,12 @@ messages: 2
 participants: "borissoff"
 first: 2013-09-19T11:30:32+03:00
 last: 2013-09-19T12:07:21+03:00
+source_url: https://groups.google.com/d/msgid/nagari/33fc5ddd-b58c-4cc9-8c10-970568c62e47@googlegroups.com
 ---
 
 # Rigveda с тоническими ударениями.
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/33fc5ddd-b58c-4cc9-8c10-970568c62e47@googlegroups.com)
 
 > 2 сообщений · 1 участников · 2013-09-19 — 2013-09-19
 

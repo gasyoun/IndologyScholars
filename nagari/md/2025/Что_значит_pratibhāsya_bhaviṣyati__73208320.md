@@ -6,9 +6,12 @@ messages: 5
 participants: "Георгий Х., Serge A, Natālija Burišina"
 first: 2025-12-25T17:38:17+03:00
 last: 2025-12-28T15:34:49+03:00
+source_url: https://groups.google.com/d/msgid/nagari/9e2b7125-6fae-4438-818c-61a87deff6fbn@googlegroups.com
 ---
 
 # Что значит pratibhāsya bhaviṣyati
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/9e2b7125-6fae-4438-818c-61a87deff6fbn@googlegroups.com)
 
 > 5 сообщений · 3 участников · 2025-12-25 — 2025-12-28
 

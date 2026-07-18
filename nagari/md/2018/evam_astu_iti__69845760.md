@@ -6,9 +6,12 @@ messages: 3
 participants: "Даяна Батырова, Ольга 111"
 first: 2018-12-02T21:24:44+03:00
 last: 2018-12-02T22:02:44+03:00
+source_url: https://groups.google.com/d/msgid/nagari/2846a28d-5d5f-4582-995c-0f373e94bce1@googlegroups.com
 ---
 
 # evam astu iti
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/2846a28d-5d5f-4582-995c-0f373e94bce1@googlegroups.com)
 
 > 3 сообщений · 2 участников · 2018-12-02 — 2018-12-02
 

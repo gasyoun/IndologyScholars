@@ -6,9 +6,12 @@ messages: 1
 participants: "Marcis"
 first: 2015-10-23T13:43:15+03:00
 last: 2015-10-23T13:43:15+03:00
+source_url: https://groups.google.com/d/msgid/nagari/c1837f2a-583b-43ac-a62d-5b733443a34a@googlegroups.com
 ---
 
 # Санскрит vs. санскритский язык
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/c1837f2a-583b-43ac-a62d-5b733443a34a@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2015-10-23 — 2015-10-23
 

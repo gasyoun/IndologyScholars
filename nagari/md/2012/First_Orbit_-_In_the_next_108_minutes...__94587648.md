@@ -6,9 +6,12 @@ messages: 1
 participants: "Worga"
 first: 2012-03-12T16:23:03+03:00
 last: 2012-03-12T16:23:03+03:00
+source_url: https://groups.google.com/d/msgid/nagari/0209d07a-b402-4575-87b1-f643ec27c6a6@j11g2000yqj.googlegroups.com
 ---
 
 # First Orbit - In the next 108 minutes...
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/0209d07a-b402-4575-87b1-f643ec27c6a6@j11g2000yqj.googlegroups.com)
 
 > 1 сообщений · 1 участников · 2012-03-12 — 2012-03-12
 

@@ -6,9 +6,12 @@ messages: 1
 participants: "Simurg Gamayun"
 first: 2013-03-19T20:11:30+03:00
 last: 2013-03-19T20:11:30+03:00
+source_url: https://groups.google.com/d/msgid/nagari/CANLT93iTat1N%2BHsnCaow8edpd4x8gApZn9uMLZrdRVqQSHKwvw@mail.gmail.com
 ---
 
 # : Langenscheidts Handwörterbuch, Sanskrit-Deutsch (1999 г.)
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/CANLT93iTat1N%2BHsnCaow8edpd4x8gApZn9uMLZrdRVqQSHKwvw@mail.gmail.com)
 
 > 1 сообщений · 1 участников · 2013-03-19 — 2013-03-19
 

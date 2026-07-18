@@ -6,9 +6,12 @@ messages: 1
 participants: "Marcis"
 first: 2023-02-17T11:08:58+03:00
 last: 2023-02-17T11:08:58+03:00
+source_url: https://groups.google.com/d/msgid/nagari/603d6c73-7597-4b99-afae-d0dbffb39cedn@googlegroups.com
 ---
 
 # A dictionary English and Sanscrit
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/603d6c73-7597-4b99-afae-d0dbffb39cedn@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2023-02-17 — 2023-02-17
 

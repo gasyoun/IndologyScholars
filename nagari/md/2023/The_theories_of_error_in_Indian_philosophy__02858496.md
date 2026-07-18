@@ -6,9 +6,12 @@ messages: 1
 participants: "Mārcis"
 first: 2023-12-28T17:29:24+03:00
 last: 2023-12-28T17:29:24+03:00
+source_url: https://groups.google.com/d/msgid/nagari/5067d9f1-afc0-43a3-8ea8-c03226914ecfn@googlegroups.com
 ---
 
 # The theories of error in Indian philosophy
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/5067d9f1-afc0-43a3-8ea8-c03226914ecfn@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2023-12-28 — 2023-12-28
 

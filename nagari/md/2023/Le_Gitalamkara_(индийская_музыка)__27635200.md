@@ -6,9 +6,12 @@ messages: 1
 participants: "Marcis"
 first: 2023-05-19T00:55:10+03:00
 last: 2023-05-19T00:55:10+03:00
+source_url: https://groups.google.com/d/msgid/nagari/cd5788d6-60c6-49d5-838f-254e31e4cd7bn@googlegroups.com
 ---
 
 # Le Gitalamkara (индийская музыка)
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/cd5788d6-60c6-49d5-838f-254e31e4cd7bn@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2023-05-19 — 2023-05-19
 

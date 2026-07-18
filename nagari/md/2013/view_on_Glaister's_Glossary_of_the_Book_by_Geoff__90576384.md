@@ -6,9 +6,12 @@ messages: 1
 participants: "Marcis"
 first: 2013-03-08T15:03:36+03:00
 last: 2013-03-08T15:03:36+03:00
+source_url: https://groups.google.com/d/msgid/nagari/d60d6fb3-0b4e-4ef6-912c-1a54f8a2d3b8@googlegroups.com
 ---
 
 # view on Glaister's Glossary of the Book by Geoffrey Ashall (1981)
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/d60d6fb3-0b4e-4ef6-912c-1a54f8a2d3b8@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2013-03-08 — 2013-03-08
 

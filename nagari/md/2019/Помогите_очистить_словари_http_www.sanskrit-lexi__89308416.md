@@ -6,9 +6,12 @@ messages: 14
 participants: "tvitaly1, Евгений Уланский, Marcis, Penkoloda, Serge A"
 first: 2019-12-05T13:29:40+03:00
 last: 2019-12-21T17:09:58+03:00
+source_url: https://groups.google.com/d/msgid/nagari/d876fb58-2c6b-4b60-83ff-d5d9e80ea660@googlegroups.com
 ---
 
 # Помогите очистить словари http://www.sanskrit-lexicon.uni-koeln.de от мусора!
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/d876fb58-2c6b-4b60-83ff-d5d9e80ea660@googlegroups.com)
 
 > 14 сообщений · 5 участников · 2019-12-05 — 2019-12-21
 

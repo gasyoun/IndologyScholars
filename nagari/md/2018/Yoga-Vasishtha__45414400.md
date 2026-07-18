@@ -6,9 +6,12 @@ messages: 11
 participants: "Penkoloda, Radim Navyan, Marcis, Serge A, prorvacilop aves"
 first: 2018-01-19T18:47:33+03:00
 last: 2018-01-29T06:55:23+03:00
+source_url: https://groups.google.com/d/msgid/nagari/7d984366-ce46-4ffc-8cbc-8857b8b1ebc5@googlegroups.com
 ---
 
 # Yoga-Vasishtha
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/7d984366-ce46-4ffc-8cbc-8857b8b1ebc5@googlegroups.com)
 
 > 11 сообщений · 5 участников · 2018-01-19 — 2018-01-29
 

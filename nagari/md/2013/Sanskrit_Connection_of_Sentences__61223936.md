@@ -6,9 +6,12 @@ messages: 1
 participants: "Marcis"
 first: 2013-02-20T22:16:17+03:00
 last: 2013-02-20T22:16:17+03:00
+source_url: https://groups.google.com/d/msgid/nagari/eb9ca28e-491b-4629-8b0e-03ea22845f68@googlegroups.com
 ---
 
 # Sanskrit Connection of Sentences
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/eb9ca28e-491b-4629-8b0e-03ea22845f68@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2013-02-20 — 2013-02-20
 

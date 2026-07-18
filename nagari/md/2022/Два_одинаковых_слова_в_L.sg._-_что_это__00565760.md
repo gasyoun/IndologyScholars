@@ -6,9 +6,12 @@ messages: 5
 participants: "Георгий Х., Владимир Карицкий, Евгений Уланский, ли ла"
 first: 2022-07-16T10:59:19+03:00
 last: 2022-07-31T00:21:29+03:00
+source_url: https://groups.google.com/d/msgid/nagari/55cf13f7-c1ea-4599-ac90-2c3afe8917edn@googlegroups.com
 ---
 
 # Два одинаковых слова в L.sg. - что это?
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/55cf13f7-c1ea-4599-ac90-2c3afe8917edn@googlegroups.com)
 
 > 5 сообщений · 4 участников · 2022-07-16 — 2022-07-31
 

@@ -6,9 +6,12 @@ messages: 2
 participants: "Радим Навьян, Marcis"
 first: 2014-10-06T01:31:19+03:00
 last: 2014-10-06T11:51:32+03:00
+source_url: https://groups.google.com/d/msgid/nagari/a4d354a3-6e4e-470c-a176-670a1a222afb@googlegroups.com
 ---
 
 # DLI Downloader
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/a4d354a3-6e4e-470c-a176-670a1a222afb@googlegroups.com)
 
 > 2 сообщений · 2 участников · 2014-10-06 — 2014-10-06
 

@@ -6,9 +6,12 @@ messages: 1
 participants: "Mārcis Gasūns"
 first: 2026-03-17T18:06:10+03:00
 last: 2026-03-17T18:06:10+03:00
+source_url: https://groups.google.com/d/msgid/nagari/7fb5a40d-8e0d-4cb6-8ac4-51f277b2fc87n@googlegroups.com
 ---
 
 # Vidzemes lībiešu pēcteči (Rasma Noriņa про девять поколений рода Гасунсов)
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/7fb5a40d-8e0d-4cb6-8ac4-51f277b2fc87n@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2026-03-17 — 2026-03-17
 

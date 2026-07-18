@@ -6,9 +6,12 @@ messages: 7
 participants: "Irina Bukach, Ekaterina Kostina, Marcis, Artem Teterin, Serge A"
 first: 2021-04-24T16:13:25+03:00
 last: 2021-04-26T21:55:07+03:00
+source_url: https://groups.google.com/d/msgid/nagari/ae17ffd9-cd4c-4626-b065-4137a4c0cc69n@googlegroups.com
 ---
 
 # Vedic chanting
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/ae17ffd9-cd4c-4626-b065-4137a4c0cc69n@googlegroups.com)
 
 > 7 сообщений · 5 участников · 2021-04-24 — 2021-04-26
 

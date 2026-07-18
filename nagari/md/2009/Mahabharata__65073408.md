@@ -6,9 +6,12 @@ messages: 2
 participants: "vladimir, narayan prasad"
 first: 2009-05-01T11:22:30+03:00
 last: 2009-05-01T14:04:00+03:00
+source_url: https://groups.google.com/d/msgid/nagari/000801c9ca35%24fc5f6f00%24420e13ac@acerd29f329b82
 ---
 
 # Mahabharata
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/000801c9ca35%24fc5f6f00%24420e13ac@acerd29f329b82)
 
 > 2 сообщений · 2 участников · 2009-05-01 — 2009-05-01
 

@@ -6,9 +6,12 @@ messages: 2
 participants: "Daniel Stender, Marcis"
 first: 2007-08-05T16:53:23+03:00
 last: 2007-08-08T14:17:30+03:00
+source_url: https://groups.google.com/d/msgid/nagari/46B5D653.5000302@uni-bonn.de
 ---
 
 # New Indologica @ Rapishare
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/46B5D653.5000302@uni-bonn.de)
 
 > 2 сообщений · 2 участников · 2007-08-05 — 2007-08-08
 

@@ -6,9 +6,12 @@ messages: 17
 participants: "Marcis, Евгений Бобряшов, Ашот Меликян, Puneet Madaan, Alksndr Bd`v, Worga, DmitriNet"
 first: 2007-09-13T17:16:04
 last: 2007-09-28T09:18:19+03:00
+source_url: https://groups.google.com/d/msgid/nagari/1189703764.900563.298140@y42g2000hsy.googlegroups.com
 ---
 
 # Sanscrit Mantras in .mp3
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/1189703764.900563.298140@y42g2000hsy.googlegroups.com)
 
 > 17 сообщений · 7 участников · 2007-09-13 — 2007-09-28
 

@@ -6,9 +6,12 @@ messages: 18
 participants: "Марина Захарова, Иван Малютин, Serge A, Natalia Vachnadze"
 first: 2025-10-17T17:39:46+03:00
 last: 2025-10-20T19:58:21+03:00
+source_url: https://groups.google.com/d/msgid/nagari/38ef32b8-8ea1-4415-9a5b-ca457eadfd26n@googlegroups.com
 ---
 
 # Помогите пожалуйста распутать nirṛtyagniśiveṣeccamam ( निऋत्यग्निशिवेषेच्चमं )
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/38ef32b8-8ea1-4415-9a5b-ca457eadfd26n@googlegroups.com)
 
 > 18 сообщений · 4 участников · 2025-10-17 — 2025-10-20
 

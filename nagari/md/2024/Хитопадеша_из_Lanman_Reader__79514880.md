@@ -6,9 +6,12 @@ messages: 5
 participants: "Konstantin Ivanov, Евгений Уланский, Serge A"
 first: 2024-10-14T09:34:30+03:00
 last: 2024-10-15T21:14:58+03:00
+source_url: https://groups.google.com/d/msgid/nagari/000b2664-0ebb-4b67-983f-e72416b83279n@googlegroups.com
 ---
 
 # Хитопадеша из Lanman Reader
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/000b2664-0ebb-4b67-983f-e72416b83279n@googlegroups.com)
 
 > 5 сообщений · 3 участников · 2024-10-14 — 2024-10-15
 

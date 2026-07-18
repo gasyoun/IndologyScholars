@@ -6,9 +6,12 @@ messages: 1
 participants: "Mārcis"
 first: 2024-08-16T10:34:03+03:00
 last: 2024-08-16T10:34:03+03:00
+source_url: https://groups.google.com/d/msgid/nagari/993ced3c-61f8-4899-8aca-ca1fbb6405aen@googlegroups.com
 ---
 
 # Staal,Frits Universals: Studies in Indian logic linguistics
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/993ced3c-61f8-4899-8aca-ca1fbb6405aen@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2024-08-16 — 2024-08-16
 

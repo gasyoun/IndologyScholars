@@ -6,9 +6,12 @@ messages: 1
 participants: "!!!Latha!!! !Latha!"
 first: 2008-09-30T11:57:15+03:00
 last: 2008-09-30T11:57:15+03:00
+source_url: https://groups.google.com/d/msgid/nagari/b6de03550809300157j3987d5d7t1bae564a58aa34e7@mail.gmail.com
 ---
 
 # Managing Security with Snort and IDS Tools
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/b6de03550809300157j3987d5d7t1bae564a58aa34e7@mail.gmail.com)
 
 > 1 сообщений · 1 участников · 2008-09-30 — 2008-09-30
 

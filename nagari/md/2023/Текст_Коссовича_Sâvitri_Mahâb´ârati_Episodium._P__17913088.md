@@ -6,9 +6,12 @@ messages: 6
 participants: "Вячеслав Чеботаряну, Serge A"
 first: 2023-01-29T12:40:06+03:00
 last: 2023-01-29T15:00:25+03:00
+source_url: https://groups.google.com/d/msgid/nagari/443e7766-805a-4238-9729-b22e0b1cb223n@googlegroups.com
 ---
 
 # Текст Коссовича "Sâvitri Mahâb´ârati Episodium. Petropoli"
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/443e7766-805a-4238-9729-b22e0b1cb223n@googlegroups.com)
 
 > 6 сообщений · 2 участников · 2023-01-29 — 2023-01-29
 

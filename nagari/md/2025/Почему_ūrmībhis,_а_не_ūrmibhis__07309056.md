@@ -6,9 +6,12 @@ messages: 4
 participants: "Георгий Х., Serge A, Ольга 111"
 first: 2025-12-05T23:58:04+03:00
 last: 2025-12-07T09:39:30+03:00
+source_url: https://groups.google.com/d/msgid/nagari/23927444-210c-4fff-ac54-317603d916d6n@googlegroups.com
 ---
 
 # Почему ūrmībhis, а не ūrmibhis?
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/23927444-210c-4fff-ac54-317603d916d6n@googlegroups.com)
 
 > 4 сообщений · 3 участников · 2025-12-05 — 2025-12-07
 

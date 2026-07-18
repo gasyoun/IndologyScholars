@@ -6,9 +6,12 @@ messages: 1
 participants: "rhiain"
 first: 2006-07-02T16:56:11+03:00
 last: 2006-07-02T16:56:11+03:00
+source_url: https://groups.google.com/d/msgid/nagari/1151848571.767589.63920@h44g2000cwa.googlegroups.com
 ---
 
 # Fonts (Tamil, Bengali, Gurmukhi, Kannada, Malayalam, Brahmi)
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/1151848571.767589.63920@h44g2000cwa.googlegroups.com)
 
 > 1 сообщений · 1 участников · 2006-07-02 — 2006-07-02
 

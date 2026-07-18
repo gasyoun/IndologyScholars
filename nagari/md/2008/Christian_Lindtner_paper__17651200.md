@@ -6,9 +6,12 @@ messages: 1
 participants: "adi cirstei"
 first: 2008-10-07T12:25:04+03:00
 last: 2008-10-07T12:25:04+03:00
+source_url: https://groups.google.com/d/msgid/nagari/d30b165c0810070225v1da41878u827c0528a715d32b@mail.gmail.com
 ---
 
 # Christian Lindtner paper
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/d30b165c0810070225v1da41878u827c0528a715d32b@mail.gmail.com)
 
 > 1 сообщений · 1 участников · 2008-10-07 — 2008-10-07
 

@@ -6,9 +6,12 @@ messages: 4
 participants: "Trivikram das, Владимир Карицкий"
 first: 2017-02-16T13:48:59+03:00
 last: 2017-02-17T09:02:15+03:00
+source_url: https://groups.google.com/d/msgid/nagari/18dfd1d2-ab07-48e3-83e3-07f97c530005@googlegroups.com
 ---
 
 # Raavana EkaPaatraAbhinayah - Ravana in sanskrit play
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/18dfd1d2-ab07-48e3-83e3-07f97c530005@googlegroups.com)
 
 > 4 сообщений · 2 участников · 2017-02-16 — 2017-02-17
 

@@ -6,9 +6,12 @@ messages: 1
 participants: "ksenia"
 first: 2010-05-05T21:07:08+03:00
 last: 2010-05-05T21:07:08+03:00
+source_url: https://groups.google.com/d/msgid/nagari/f970efbb-a137-47db-a708-d64af38bd1b9@i9g2000yqi.googlegroups.com
 ---
 
 # The Language of the Gods in the World of Men : Sheldon Pollock
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/f970efbb-a137-47db-a708-d64af38bd1b9@i9g2000yqi.googlegroups.com)
 
 > 1 сообщений · 1 участников · 2010-05-05 — 2010-05-05
 

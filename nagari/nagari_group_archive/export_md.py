@@ -24,14 +24,39 @@ import sqlite3
 import sys
 from collections import defaultdict
 from pathlib import Path
+from urllib.parse import quote
 
 from nagari_group_archive.redact import mask_name, redact_emails
 
 DEFAULT_DB = Path(__file__).resolve().parents[1] / "data" / "nagari.db"
 DEFAULT_OUT = Path(__file__).resolve().parents[1] / "md"
 
+# Google Groups' documented msgid deep link (used in List-Archive headers and
+# newsreader signatures): /d/msgid/<group>/<Message-Id, unbracketed> opens the
+# original topic scrolled to that message. Verified live 17-07-2026.
+GROUP = "nagari"
+
 ILLEGAL = re.compile(r'[<>:"/\\|?*\x00-\x1f]')
 WS = re.compile(r"\s+")
+
+
+def google_groups_url(message_id: str, sender_email: str) -> str | None:
+    mid = (message_id or "").strip().strip("<>")
+    if not mid:
+        return None
+    # Most Message-Ids are opaque client-generated tokens (Gmail's CA.../a Yandex
+    # web-id/a googlegroups.com uuid) that reveal only a mail-provider domain, but
+    # some mail servers build the Message-Id from the sender's own mailbox local
+    # part -- publishing those verbatim would re-identify a masked name even
+    # though redact_emails() never sees the value (it's never in `body`/`subject`).
+    # ~0.5% of threads hit this (14/2928, measured 17-07-2026); skip the link
+    # rather than the whole feature.
+    local = (sender_email or "").split("@")[0].lower()
+    norm_local = re.sub(r"[._-]", "", local)
+    norm_mid = re.sub(r"[._-]", "", mid.lower())
+    if len(norm_local) >= 4 and norm_local in norm_mid:
+        return None
+    return f"https://groups.google.com/d/msgid/{GROUP}/{quote(mid, safe='@.')}"
 
 
 def configure_stdio() -> None:
@@ -55,7 +80,7 @@ def export(db_path: Path, out: Path, min_messages: int) -> dict:
     db = sqlite3.connect(db_path)
     rows = db.execute(
         "SELECT gm_thrid, id, date_utc, from_name, from_email, subject, subject_clean, "
-        "body_text, year, n_attachments FROM messages ORDER BY gm_thrid, date_utc"
+        "body_text, year, n_attachments, message_id FROM messages ORDER BY gm_thrid, date_utc"
     ).fetchall()
     threads = defaultdict(list)
     for r in rows:
@@ -84,6 +109,7 @@ def export(db_path: Path, out: Path, min_messages: int) -> dict:
                     participants.append(nm)
         span_first = next((it[2] for it in items if it[2]), "")
         span_last = next((it[2] for it in reversed(items) if it[2]), "")
+        topic_url = google_groups_url(first[10], first[4])
 
         lines = [
             "---",
@@ -94,10 +120,18 @@ def export(db_path: Path, out: Path, min_messages: int) -> dict:
             f"participants: {yaml_escape(', '.join(participants[:25]))}",
             f"first: {span_first}",
             f"last: {span_last}",
+        ]
+        if topic_url:
+            lines.append(f"source_url: {topic_url}")
+        lines += [
             "---",
             "",
             f"# {subject}",
             "",
+        ]
+        if topic_url:
+            lines += [f"[Читать оригинальный тред в Google Groups]({topic_url})", ""]
+        lines += [
             f"> {len(items)} сообщений · {len(participants)} участников · {span_first[:10]} — {span_last[:10]}",
             "",
         ]

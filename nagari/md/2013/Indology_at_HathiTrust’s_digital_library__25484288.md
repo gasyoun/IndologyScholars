@@ -6,9 +6,12 @@ messages: 1
 participants: "Marcis"
 first: 2013-05-24T19:31:20+03:00
 last: 2013-05-24T19:31:20+03:00
+source_url: https://groups.google.com/d/msgid/nagari/25b0818b-b2b1-426d-a194-ae9a812d57f7@googlegroups.com
 ---
 
 # Indology at HathiTrust’s digital library
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/25b0818b-b2b1-426d-a194-ae9a812d57f7@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2013-05-24 — 2013-05-24
 

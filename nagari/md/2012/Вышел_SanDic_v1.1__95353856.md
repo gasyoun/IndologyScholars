@@ -6,9 +6,12 @@ messages: 53
 participants: "Artem Novikov, Stormwatsch, andron, Aspasios, atman, Marcis, Serge A, śrīdṛṣṭvā, Dmitri"
 first: 2012-09-24T10:07:09+03:00
 last: 2013-03-22T12:38:32+03:00
+source_url: https://groups.google.com/d/msgid/nagari/9f458033-35c1-4ff4-83d2-45939b269004@googlegroups.com
 ---
 
 # Вышел SanDic v1.1
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/9f458033-35c1-4ff4-83d2-45939b269004@googlegroups.com)
 
 > 53 сообщений · 9 участников · 2012-09-24 — 2013-03-22
 

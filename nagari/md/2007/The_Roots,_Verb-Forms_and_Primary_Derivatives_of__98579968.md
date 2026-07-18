@@ -6,9 +6,12 @@ messages: 15
 participants: "KK, Marcis, Deshpande, Madhav, Kartik Khandwala, Duri, danstender, Max Levin, Worga, Poe666"
 first: 2007-09-29T17:16:12+03:00
 last: 2007-11-07T22:50:22
+source_url: https://groups.google.com/d/msgid/nagari/1191075372.240451.253740@g4g2000hsf.googlegroups.com
 ---
 
 # "The Roots, Verb-Forms and Primary Derivatives of the Sanskrit Language" by William Dwight Whitney
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/1191075372.240451.253740@g4g2000hsf.googlegroups.com)
 
 > 15 сообщений · 9 участников · 2007-09-29 — 2007-11-07
 

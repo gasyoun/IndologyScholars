@@ -6,9 +6,12 @@ messages: 4
 participants: "borissoff, Mandala Pati, Marcis"
 first: 2013-07-30T02:05:07+03:00
 last: 2013-09-06T03:53:33+03:00
+source_url: https://groups.google.com/d/msgid/nagari/0df0427f-42ee-4c64-b6e9-9ebb4789d12a@googlegroups.com
 ---
 
 # Sanskrit Grammar tool
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/0df0427f-42ee-4c64-b6e9-9ebb4789d12a@googlegroups.com)
 
 > 4 сообщений · 3 участников · 2013-07-30 — 2013-09-06
 

@@ -6,9 +6,12 @@ messages: 1
 participants: "Marcis"
 first: 2013-03-11T22:23:06+03:00
 last: 2013-03-11T22:23:06+03:00
+source_url: https://groups.google.com/d/msgid/nagari/aeb45619-cf4b-4d56-ad7a-870aecaa2791@googlegroups.com
 ---
 
 # Кто работал с Visual OpenType Layout Tool (VOLT)?
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/aeb45619-cf4b-4d56-ad7a-870aecaa2791@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2013-03-11 — 2013-03-11
 

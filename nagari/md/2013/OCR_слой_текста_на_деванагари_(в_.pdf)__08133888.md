@@ -6,9 +6,12 @@ messages: 1
 participants: "Marcis"
 first: 2013-11-04T22:59:10+03:00
 last: 2013-11-04T22:59:10+03:00
+source_url: https://groups.google.com/d/msgid/nagari/afed9549-4e93-49fb-af37-0a3ab3ecee94@googlegroups.com
 ---
 
 # OCR слой текста на деванагари (в .pdf)
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/afed9549-4e93-49fb-af37-0a3ab3ecee94@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2013-11-04 — 2013-11-04
 

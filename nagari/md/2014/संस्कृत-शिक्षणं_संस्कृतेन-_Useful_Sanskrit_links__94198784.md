@@ -6,9 +6,12 @@ messages: 3
 participants: "ShaSa"
 first: 2014-07-19T13:30:29+03:00
 last: 2015-06-27T17:53:13+03:00
+source_url: https://groups.google.com/d/msgid/nagari/32b17d93-0585-483b-9aab-5893a6ff65da@googlegroups.com
 ---
 
 # संस्कृत-शिक्षणं संस्कृतेन- Useful Sanskrit links
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/32b17d93-0585-483b-9aab-5893a6ff65da@googlegroups.com)
 
 > 3 сообщений · 1 участников · 2014-07-19 — 2015-06-27
 

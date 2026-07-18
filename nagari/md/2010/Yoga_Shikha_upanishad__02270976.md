@@ -6,9 +6,12 @@ messages: 3
 participants: "Анастасия, Serge"
 first: 2010-04-14T13:49:45+03:00
 last: 2010-04-14T15:39:53+03:00
+source_url: https://groups.google.com/d/msgid/nagari/5de8fbe8-f31b-49b1-89f6-35660fac9c17@r18g2000yqd.googlegroups.com
 ---
 
 # Yoga Shikha upanishad
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/5de8fbe8-f31b-49b1-89f6-35660fac9c17@r18g2000yqd.googlegroups.com)
 
 > 3 сообщений · 2 участников · 2010-04-14 — 2010-04-14
 

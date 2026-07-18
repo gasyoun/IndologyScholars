@@ -6,9 +6,12 @@ messages: 55
 participants: "Daniel Stender, Worga, Puneet Madaan, Marcis, Deshpande, Madhav, danstender, Duri, Max Levin, Simurg Gamayun, narayan prasad, sworga@…, chod, Kiran Paranjape"
 first: 2007-08-31T12:08:39+03:00
 last: 2008-05-01T21:28:28+03:00
+source_url: https://groups.google.com/d/msgid/nagari/46D7DA97.5030008@uni-bonn.de
 ---
 
 # Some newly found uploads @ Rapishare
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/46D7DA97.5030008@uni-bonn.de)
 
 > 55 сообщений · 13 участников · 2007-08-31 — 2008-05-01
 

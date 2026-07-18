@@ -6,9 +6,12 @@ messages: 1
 participants: "Mārcis"
 first: 2025-10-08T13:47:56+03:00
 last: 2025-10-08T13:47:56+03:00
+source_url: https://groups.google.com/d/msgid/nagari/235f7b71-98d1-45f6-8d9a-6b97dd4ae6den@googlegroups.com
 ---
 
 # 🗣 БАРТЕР (ВРЕМЯ vs. НАВЫКИ)
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/235f7b71-98d1-45f6-8d9a-6b97dd4ae6den@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2025-10-08 — 2025-10-08
 

@@ -6,9 +6,12 @@ messages: 5
 participants: "Nat, Владимир Карицкий, Nastassja Graham"
 first: 2011-11-21T01:50:13+03:00
 last: 2012-02-14T08:52:28+03:00
+source_url: https://groups.google.com/d/msgid/nagari/b122c5f8-e0a4-4ba6-ba73-9e659ba044c4@h31g2000pro.googlegroups.com
 ---
 
 # Sanskrit translation
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/b122c5f8-e0a4-4ba6-ba73-9e659ba044c4@h31g2000pro.googlegroups.com)
 
 > 5 сообщений · 3 участников · 2011-11-21 — 2012-02-14
 

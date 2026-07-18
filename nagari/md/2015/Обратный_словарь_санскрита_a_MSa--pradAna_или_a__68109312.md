@@ -6,9 +6,12 @@ messages: 2
 participants: "Marcis, narayan prasad"
 first: 2015-01-22T14:50:49+03:00
 last: 2015-01-22T15:41:05+03:00
+source_url: https://groups.google.com/d/msgid/nagari/b91aa868-8f7e-426a-91f4-4f89201a81de@googlegroups.com
 ---
 
 # Обратный словарь санскрита: a/MSa--pradAna или a/MSa--pradAna-
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/b91aa868-8f7e-426a-91f4-4f89201a81de@googlegroups.com)
 
 > 2 сообщений · 2 участников · 2015-01-22 — 2015-01-22
 

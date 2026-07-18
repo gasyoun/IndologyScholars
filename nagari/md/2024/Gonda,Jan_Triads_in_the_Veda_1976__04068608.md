@@ -6,9 +6,12 @@ messages: 1
 participants: "Mārcis"
 first: 2024-01-21T18:14:44+03:00
 last: 2024-01-21T18:14:44+03:00
+source_url: https://groups.google.com/d/msgid/nagari/894c3914-87c6-4bdd-8aab-91410defebdan@googlegroups.com
 ---
 
 # Gonda,Jan Triads in the Veda 1976
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/894c3914-87c6-4bdd-8aab-91410defebdan@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2024-01-21 — 2024-01-21
 

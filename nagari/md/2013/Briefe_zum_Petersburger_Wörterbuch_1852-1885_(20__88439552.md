@@ -6,9 +6,12 @@ messages: 1
 participants: "Marcis"
 first: 2013-03-07T13:06:56+03:00
 last: 2013-03-07T13:06:56+03:00
+source_url: https://groups.google.com/d/msgid/nagari/e134acc0-4ba1-4c70-b6d0-2c99efb06ebd@googlegroups.com
 ---
 
 # Briefe zum Petersburger Wörterbuch 1852-1885 (2007 г.)
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/e134acc0-4ba1-4c70-b6d0-2c99efb06ebd@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2013-03-07 — 2013-03-07
 

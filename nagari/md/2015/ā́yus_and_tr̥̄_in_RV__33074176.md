@@ -6,9 +6,12 @@ messages: 41
 participants: "Dmitri, Marcis, Radim Navyan, Владимир Карицкий, Тихвинский Виталий Игоревич, Serge A, Michael Bykov"
 first: 2015-05-22T07:59:59+03:00
 last: 2015-07-25T17:28:05+03:00
+source_url: https://groups.google.com/d/msgid/nagari/bec40a95-c8aa-48d4-8b65-d00b1b01aeea@googlegroups.com
 ---
 
 # ā́yus and tr̥̄ in RV
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/bec40a95-c8aa-48d4-8b65-d00b1b01aeea@googlegroups.com)
 
 > 41 сообщений · 7 участников · 2015-05-22 — 2015-07-25
 

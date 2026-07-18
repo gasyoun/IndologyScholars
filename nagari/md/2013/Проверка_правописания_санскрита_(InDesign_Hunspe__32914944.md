@@ -6,9 +6,12 @@ messages: 1
 participants: "Marcis"
 first: 2013-07-08T16:52:59+03:00
 last: 2013-07-08T16:52:59+03:00
+source_url: https://groups.google.com/d/msgid/nagari/847f30e6-4cab-4870-b46b-ffea7e0863b1@googlegroups.com
 ---
 
 # Проверка правописания санскрита (InDesign Hunspell и Word 2007)
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/847f30e6-4cab-4870-b46b-ffea7e0863b1@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2013-07-08 — 2013-07-08
 

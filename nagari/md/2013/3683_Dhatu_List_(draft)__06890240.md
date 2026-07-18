@@ -6,9 +6,12 @@ messages: 2
 participants: "Marcis"
 first: 2013-04-17T17:21:08+03:00
 last: 2013-05-04T06:57:47+03:00
+source_url: https://groups.google.com/d/msgid/nagari/37ece35c-1d74-4140-831a-cce7e8760fbd@googlegroups.com
 ---
 
 # 3683 Dhatu List (draft)
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/37ece35c-1d74-4140-831a-cce7e8760fbd@googlegroups.com)
 
 > 2 сообщений · 1 участников · 2013-04-17 — 2013-05-04
 

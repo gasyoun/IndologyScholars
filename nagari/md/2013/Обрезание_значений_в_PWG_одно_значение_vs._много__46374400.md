@@ -6,9 +6,12 @@ messages: 1
 participants: "Marcis"
 first: 2013-06-18T06:31:59+03:00
 last: 2013-06-18T06:31:59+03:00
+source_url: https://groups.google.com/d/msgid/nagari/a7042e76-b8fd-4bb0-8614-0412bb96b6e0@googlegroups.com
 ---
 
 # Обрезание значений в PWG: одно значение vs. много (глагольных) значений
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/a7042e76-b8fd-4bb0-8614-0412bb96b6e0@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2013-06-18 — 2013-06-18
 

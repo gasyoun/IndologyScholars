@@ -6,9 +6,12 @@ messages: 3
 participants: "Artem Novikov, Marcis"
 first: 2013-06-19T22:25:22+03:00
 last: 2013-06-20T21:49:24+03:00
+source_url: https://groups.google.com/d/msgid/nagari/477392e8-46ea-465d-bce3-7771a539ebf7@googlegroups.com
 ---
 
 # SanDic roadmap
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/477392e8-46ea-465d-bce3-7771a539ebf7@googlegroups.com)
 
 > 3 сообщений · 2 участников · 2013-06-19 — 2013-06-20
 

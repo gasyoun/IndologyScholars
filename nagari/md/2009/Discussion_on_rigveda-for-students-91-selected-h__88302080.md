@@ -6,9 +6,12 @@ messages: 2
 participants: "Kukasia, Madhusoodhanan Namboothiri"
 first: 2009-05-16T01:55:33+03:00
 last: 2009-05-21T20:50:05+03:00
+source_url: https://groups.google.com/d/msgid/nagari/7917ef41-1dbf-4a80-a0fa-65f63a74f52a@s28g2000vbp.googlegroups.com
 ---
 
 # Discussion on rigveda-for-students-91-selected-hymns
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/7917ef41-1dbf-4a80-a0fa-65f63a74f52a@s28g2000vbp.googlegroups.com)
 
 > 2 сообщений · 2 участников · 2009-05-16 — 2009-05-21
 

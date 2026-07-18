@@ -6,9 +6,12 @@ messages: 9
 participants: "Marcis, Radim Navyan, Kosta Bentchev, Тихвинский Виталий Игоревич"
 first: 2017-01-23T11:05:52+03:00
 last: 2017-03-12T12:14:40+03:00
+source_url: https://groups.google.com/d/msgid/nagari/28cafceb-d548-4f55-b755-4fc33cb09179@googlegroups.com
 ---
 
 # Некролог Otto Böhtlingk
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/28cafceb-d548-4f55-b755-4fc33cb09179@googlegroups.com)
 
 > 9 сообщений · 4 участников · 2017-01-23 — 2017-03-12
 

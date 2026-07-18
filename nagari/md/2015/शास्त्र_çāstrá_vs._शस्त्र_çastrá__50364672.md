@@ -6,9 +6,12 @@ messages: 26
 participants: "Marcis, Radim Navyan, Dmitri, Arvind Kolhatkar, Arvind_Kolhatkar, Mandala Pati (Владислав)"
 first: 2015-03-09T13:19:30+03:00
 last: 2015-06-06T05:13:26+03:00
+source_url: https://groups.google.com/d/msgid/nagari/a7c81673-e285-456c-915d-73d3b142eb69@googlegroups.com
 ---
 
 # शास्त्र çāstrá vs. शस्त्र çastrá
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/a7c81673-e285-456c-915d-73d3b142eb69@googlegroups.com)
 
 > 26 сообщений · 6 участников · 2015-03-09 — 2015-06-06
 

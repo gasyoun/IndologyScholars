@@ -6,9 +6,12 @@ messages: 7
 participants: "baobabus@…, Ларина Мерелли, utpala, ignat, Marcis, Serge"
 first: 2007-10-20T20:02:39+03:00
 last: 2007-10-27T15:11:03+03:00
+source_url: https://groups.google.com/d/msgid/nagari/1192899759.929582.37410@e34g2000pro.googlegroups.com
 ---
 
 # неизвестная мне буква (unknown letter)
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/1192899759.929582.37410@e34g2000pro.googlegroups.com)
 
 > 7 сообщений · 6 участников · 2007-10-20 — 2007-10-27
 

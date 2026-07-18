@@ -6,9 +6,12 @@ messages: 5
 participants: "Aishh, Syed Hussain, achyut karve, Sthanu, Gopal Krishna Rath"
 first: 2010-04-17T04:46:00+03:00
 last: 2010-05-26T09:16:44+03:00
+source_url: https://groups.google.com/d/msgid/nagari/bb4dffbc-c4a7-4240-9de4-b14586498ce5@i25g2000yqm.googlegroups.com
 ---
 
 # Code of Creation
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/bb4dffbc-c4a7-4240-9de4-b14586498ce5@i25g2000yqm.googlegroups.com)
 
 > 5 сообщений · 5 участников · 2010-04-17 — 2010-05-26
 

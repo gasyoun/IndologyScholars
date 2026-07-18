@@ -6,9 +6,12 @@ messages: 1
 participants: "Daniel Stender"
 first: 2007-08-19T17:46:54+03:00
 last: 2007-08-19T17:46:54+03:00
+source_url: https://groups.google.com/d/msgid/nagari/46C857DE.5030008@uni-bonn.de
 ---
 
 # Rapidshare ressource update
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/46C857DE.5030008@uni-bonn.de)
 
 > 1 сообщений · 1 участников · 2007-08-19 — 2007-08-19
 

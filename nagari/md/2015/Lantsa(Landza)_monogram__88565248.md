@@ -6,9 +6,12 @@ messages: 2
 participants: "Vladimir Rozhko, Marcis"
 first: 2015-10-06T01:05:42+03:00
 last: 2015-10-06T07:32:19+03:00
+source_url: https://groups.google.com/d/msgid/nagari/4d856c4d-b24c-4a1e-9291-70bb26830d78@googlegroups.com
 ---
 
 # Lantsa(Landza) monogram
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/4d856c4d-b24c-4a1e-9291-70bb26830d78@googlegroups.com)
 
 > 2 сообщений · 2 участников · 2015-10-06 — 2015-10-06
 

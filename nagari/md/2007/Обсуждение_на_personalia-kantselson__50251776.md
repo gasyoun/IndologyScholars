@@ -6,9 +6,12 @@ messages: 4
 participants: "sujanasi, Marcis"
 first: 2007-03-21T17:05:10+03:00
 last: 2007-03-22T22:11:36+03:00
+source_url: https://groups.google.com/d/msgid/nagari/1174485910.302488.293450@e1g2000hsg.googlegroups.com
 ---
 
 # Обсуждение на personalia-kantselson
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/1174485910.302488.293450@e1g2000hsg.googlegroups.com)
 
 > 4 сообщений · 2 участников · 2007-03-21 — 2007-03-22
 

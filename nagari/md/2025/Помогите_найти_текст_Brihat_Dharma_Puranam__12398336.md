@@ -6,9 +6,12 @@ messages: 4
 participants: "Alexander Myltsev, Simurg Gamayun, ли ла, Serge A"
 first: 2025-06-30T21:38:16+03:00
 last: 2025-07-02T02:02:06+03:00
+source_url: https://groups.google.com/d/msgid/nagari/131f7f4e-88ea-4b01-8af8-1452b80290a6n@googlegroups.com
 ---
 
 # Помогите найти текст Brihat Dharma Puranam
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/131f7f4e-88ea-4b01-8af8-1452b80290a6n@googlegroups.com)
 
 > 4 сообщений · 4 участников · 2025-06-30 — 2025-07-02
 

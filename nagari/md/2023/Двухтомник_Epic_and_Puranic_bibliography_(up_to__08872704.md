@@ -6,9 +6,12 @@ messages: 1
 participants: "Marcis"
 first: 2023-10-05T20:50:57+03:00
 last: 2023-10-05T20:50:57+03:00
+source_url: https://groups.google.com/d/msgid/nagari/1dbd360a-6e0f-490e-ac9d-5a63113de56cn@googlegroups.com
 ---
 
 # Двухтомник Epic and Puranic bibliography (up to 1985)
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/1dbd360a-6e0f-490e-ac9d-5a63113de56cn@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2023-10-05 — 2023-10-05
 

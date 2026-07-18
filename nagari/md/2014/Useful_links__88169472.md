@@ -6,9 +6,12 @@ messages: 12
 participants: "ShaSa, Radim Navyan, Marcis, Usha Sanka"
 first: 2014-08-28T17:20:19+03:00
 last: 2015-04-05T18:13:06+03:00
+source_url: https://groups.google.com/d/msgid/nagari/2a7bac38-9607-4d45-ad2a-27a6644e9a38@googlegroups.com
 ---
 
 # Useful links
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/2a7bac38-9607-4d45-ad2a-27a6644e9a38@googlegroups.com)
 
 > 12 сообщений · 4 участников · 2014-08-28 — 2015-04-05
 

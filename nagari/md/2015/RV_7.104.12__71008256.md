@@ -6,9 +6,12 @@ messages: 7
 participants: "Dmitri, Radim Navyan, Michael Bykov"
 first: 2015-05-03T06:56:19+03:00
 last: 2015-05-04T19:07:32+03:00
+source_url: https://groups.google.com/d/msgid/nagari/5cf3dd64-583b-4999-a056-ab29c14c7b85@googlegroups.com
 ---
 
 # RV 7.104.12
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/5cf3dd64-583b-4999-a056-ab29c14c7b85@googlegroups.com)
 
 > 7 сообщений · 3 участников · 2015-05-03 — 2015-05-04
 

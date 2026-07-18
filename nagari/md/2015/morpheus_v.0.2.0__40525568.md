@@ -6,9 +6,12 @@ messages: 11
 participants: "Michael Bykov, Тихвинский Виталий Игоревич, Marcis, Brahman, त्रिविक्रम्"
 first: 2015-08-22T14:49:06+03:00
 last: 2015-10-06T09:40:23+03:00
+source_url: https://groups.google.com/d/msgid/nagari/CAN5SjADgx_V0cnGAEP-TWxz8LxNR3Fh%3DEtX7RcUwSzcq3i_FpA@mail.gmail.com
 ---
 
 # morpheus v.0.2.0
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/CAN5SjADgx_V0cnGAEP-TWxz8LxNR3Fh%3DEtX7RcUwSzcq3i_FpA@mail.gmail.com)
 
 > 11 сообщений · 5 участников · 2015-08-22 — 2015-10-06
 

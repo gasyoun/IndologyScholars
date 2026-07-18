@@ -6,9 +6,12 @@ messages: 2
 participants: "Олег Ильков, Serge A"
 first: 2025-04-24T14:18:35+03:00
 last: 2025-04-27T13:29:03+03:00
+source_url: https://groups.google.com/d/msgid/nagari/aef25202-2189-441a-925f-f9510bbde60cn@googlegroups.com
 ---
 
 # vasa- в значении жить - это Ātmanepada?
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/aef25202-2189-441a-925f-f9510bbde60cn@googlegroups.com)
 
 > 2 сообщений · 2 участников · 2025-04-24 — 2025-04-27
 

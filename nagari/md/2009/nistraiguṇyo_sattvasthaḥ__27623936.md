@@ -6,9 +6,12 @@ messages: 9
 participants: "sergey_108, DmitriNet, Simurg Gamayun, vladimir"
 first: 2009-03-21T19:03:48+03:00
 last: 2009-03-25T11:45:59+03:00
+source_url: https://groups.google.com/d/msgid/nagari/c83acdef-6b77-40b3-9e37-ee565278295d@y9g2000yqg.googlegroups.com
 ---
 
 # nistraiguṇyo sattvasthaḥ
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/c83acdef-6b77-40b3-9e37-ee565278295d@y9g2000yqg.googlegroups.com)
 
 > 9 сообщений · 4 участников · 2009-03-21 — 2009-03-25
 

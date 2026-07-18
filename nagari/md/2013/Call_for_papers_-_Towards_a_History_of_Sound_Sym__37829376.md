@@ -6,9 +6,12 @@ messages: 1
 participants: "Luca Nobile"
 first: 2013-07-07T19:33:20+03:00
 last: 2013-07-07T19:33:20+03:00
+source_url: https://groups.google.com/d/msgid/nagari/89b14d75-5a2f-4098-b9ba-4069543914a0@googlegroups.com
 ---
 
 # Call for papers - Towards a History of Sound Symbolic Theories
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/89b14d75-5a2f-4098-b9ba-4069543914a0@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2013-07-07 — 2013-07-07
 

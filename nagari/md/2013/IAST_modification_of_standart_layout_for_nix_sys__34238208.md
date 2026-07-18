@@ -6,9 +6,12 @@ messages: 4
 participants: "śrīdṛṣṭvā, Artem Novikov, Marcis"
 first: 2013-03-11T13:04:16+03:00
 last: 2013-03-11T16:48:47+03:00
+source_url: https://groups.google.com/d/msgid/nagari/188e059c-b3d6-417d-a8b5-a056560120a7@googlegroups.com
 ---
 
 # IAST modification of standart layout for *nix systems.
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/188e059c-b3d6-417d-a8b5-a056560120a7@googlegroups.com)
 
 > 4 сообщений · 3 участников · 2013-03-11 — 2013-03-11
 

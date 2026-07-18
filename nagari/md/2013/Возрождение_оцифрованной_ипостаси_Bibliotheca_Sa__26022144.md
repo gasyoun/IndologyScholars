@@ -6,9 +6,12 @@ messages: 1
 participants: "Marcis"
 first: 2013-03-23T10:59:54+03:00
 last: 2013-03-23T10:59:54+03:00
+source_url: https://groups.google.com/d/msgid/nagari/6940376a-7568-434a-a28e-e82916835aea@googlegroups.com
 ---
 
 # Возрождение оцифрованной ипостаси Bibliotheca Sanscritica: KEWA & EWA
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/6940376a-7568-434a-a28e-e82916835aea@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2013-03-23 — 2013-03-23
 

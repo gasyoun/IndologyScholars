@@ -6,9 +6,12 @@ messages: 3
 participants: "Michael Bykov, Marcis, Тихвинский Виталий Игоревич"
 first: 2015-11-01T21:27:26+03:00
 last: 2015-11-01T22:58:19+03:00
+source_url: https://groups.google.com/d/msgid/nagari/CAN5SjACdQHuT96G%3Dk5TnBqE_9nzeEFzj1ZUAX-Wo2RJePoKZMQ@mail.gmail.com
 ---
 
 # Russian sounds IPA vs IAST
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/CAN5SjACdQHuT96G%3Dk5TnBqE_9nzeEFzj1ZUAX-Wo2RJePoKZMQ@mail.gmail.com)
 
 > 3 сообщений · 3 участников · 2015-11-01 — 2015-11-01
 

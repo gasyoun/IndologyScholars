@@ -6,9 +6,12 @@ messages: 1
 participants: "Penkoloda"
 first: 2013-02-05T05:42:25+03:00
 last: 2013-02-05T05:42:25+03:00
+source_url: https://groups.google.com/d/msgid/nagari/7751bb0c-4bb8-402e-8a83-c464757b9077@googlegroups.com
 ---
 
 # Vedic chants
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/7751bb0c-4bb8-402e-8a83-c464757b9077@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2013-02-05 — 2013-02-05
 

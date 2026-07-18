@@ -6,9 +6,12 @@ messages: 1
 participants: "Marcis"
 first: 2008-01-27T17:36:52+03:00
 last: 2008-01-27T17:36:52+03:00
+source_url: https://groups.google.com/d/msgid/nagari/305e77af-e745-4b8c-a6d4-a36071d8a4d0@e6g2000prf.googlegroups.com
 ---
 
 # New Sanskrit Search Engine (Google Widget)
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/305e77af-e745-4b8c-a6d4-a36071d8a4d0@e6g2000prf.googlegroups.com)
 
 > 1 сообщений · 1 участников · 2008-01-27 — 2008-01-27
 

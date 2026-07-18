@@ -6,9 +6,12 @@ messages: 1
 participants: "Indian Books Centre"
 first: 2007-05-04T06:09:10+03:00
 last: 2007-05-04T06:09:10+03:00
+source_url: https://groups.google.com/d/msgid/nagari/00ea01c78df9%24a6775500%240201a8c0@PC2
 ---
 
 # Books on Sri Subodhini & Vaishnav Studies
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/00ea01c78df9%24a6775500%240201a8c0@PC2)
 
 > 1 сообщений · 1 участников · 2007-05-04 — 2007-05-04
 

@@ -6,9 +6,12 @@ messages: 8
 participants: "अ क, Владимир Карицкий, Natalia Vachnadze, Serge A"
 first: 2020-11-23T21:40:44+03:00
 last: 2020-11-26T18:30:52+03:00
+source_url: https://groups.google.com/d/msgid/nagari/93db8f6d-b90c-4872-8cd5-0f80f2b6007an@googlegroups.com
 ---
 
 # ooha-poh patu
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/93db8f6d-b90c-4872-8cd5-0f80f2b6007an@googlegroups.com)
 
 > 8 сообщений · 4 участников · 2020-11-23 — 2020-11-26
 

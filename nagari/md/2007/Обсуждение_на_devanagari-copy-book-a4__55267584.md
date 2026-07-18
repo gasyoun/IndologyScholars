@@ -6,9 +6,12 @@ messages: 8
 participants: "Marcis, Worga, honorius"
 first: 2007-03-02T03:47:21
 last: 2007-03-10T13:29:31+03:00
+source_url: https://groups.google.com/d/msgid/nagari/1172807241.179347.254570@t69g2000cwt.googlegroups.com
 ---
 
 # Обсуждение на devanagari-copy-book-a4
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/1172807241.179347.254570@t69g2000cwt.googlegroups.com)
 
 > 8 сообщений · 3 участников · 2007-03-02 — 2007-03-10
 

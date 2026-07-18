@@ -6,9 +6,12 @@ messages: 1
 participants: "Marcis"
 first: 2013-02-27T20:42:08+03:00
 last: 2013-02-27T20:42:08+03:00
+source_url: https://groups.google.com/d/msgid/nagari/a47fd009-af66-430f-afd6-a20e46779d4f@googlegroups.com
 ---
 
 # Latin Terms in Sanskrit Dictionaries (2006 г.)
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/a47fd009-af66-430f-afd6-a20e46779d4f@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2013-02-27 — 2013-02-27
 

@@ -6,9 +6,12 @@ messages: 6
 participants: "Daniel Stender, Madhav M. Deshpande, danstender, Sct"
 first: 2007-06-13T18:08:49+03:00
 last: 2007-06-15T07:21:22+03:00
+source_url: https://groups.google.com/d/msgid/nagari/46700881.30408@uni-bonn.de
 ---
 
 # Searching Lanman article
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/46700881.30408@uni-bonn.de)
 
 > 6 сообщений · 4 участников · 2007-06-13 — 2007-06-15
 

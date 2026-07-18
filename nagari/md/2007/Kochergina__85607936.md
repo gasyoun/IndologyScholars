@@ -6,9 +6,12 @@ messages: 5
 participants: "vinayaka, avakurasava@…, Marcis, Serge"
 first: 2007-11-10T12:37:59+03:00
 last: 2007-11-12T03:08:09+03:00
+source_url: https://groups.google.com/d/msgid/nagari/1194687479.550000.191210@57g2000hsv.googlegroups.com
 ---
 
 # Kochergina
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/1194687479.550000.191210@57g2000hsv.googlegroups.com)
 
 > 5 сообщений · 4 участников · 2007-11-10 — 2007-11-12
 

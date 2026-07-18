@@ -6,9 +6,12 @@ messages: 4
 participants: "padmavat...@…, Евгений Уланский, padmavatidasibvg@…"
 first: 2022-03-19T16:20:53+03:00
 last: 2022-03-19T18:28:23+03:00
+source_url: https://groups.google.com/d/msgid/nagari/d964da4d-aadd-4652-ad7c-24b040341ec9n@googlegroups.com
 ---
 
 # Как работать с sanskrit-lexicon.uni-koeln?
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/d964da4d-aadd-4652-ad7c-24b040341ec9n@googlegroups.com)
 
 > 4 сообщений · 3 участников · 2022-03-19 — 2022-03-19
 

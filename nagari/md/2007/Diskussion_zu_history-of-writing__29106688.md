@@ -6,9 +6,12 @@ messages: 6
 participants: "Marcis, Worga, sujanasi"
 first: 2007-03-20T10:55:42
 last: 2007-03-21T02:38:30
+source_url: https://groups.google.com/d/msgid/nagari/1174388142.581579.109530@o5g2000hsb.googlegroups.com
 ---
 
 # Diskussion zu history-of-writing
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/1174388142.581579.109530@o5g2000hsb.googlegroups.com)
 
 > 6 сообщений · 3 участников · 2007-03-20 — 2007-03-21
 

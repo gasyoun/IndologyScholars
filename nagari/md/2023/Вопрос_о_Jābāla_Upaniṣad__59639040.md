@@ -6,9 +6,12 @@ messages: 4
 participants: "Владимир, Владимир Карицкий"
 first: 2023-10-24T09:59:30+03:00
 last: 2023-10-25T11:51:44+03:00
+source_url: https://groups.google.com/d/msgid/nagari/32684d31-f445-4c73-9775-24af32d12097n@googlegroups.com
 ---
 
 # Вопрос о Jābāla Upaniṣad
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/32684d31-f445-4c73-9775-24af32d12097n@googlegroups.com)
 
 > 4 сообщений · 2 участников · 2023-10-24 — 2023-10-25
 

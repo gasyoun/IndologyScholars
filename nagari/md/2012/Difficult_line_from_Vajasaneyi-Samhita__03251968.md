@@ -6,9 +6,12 @@ messages: 10
 participants: "Dmitri, Mark Hale, Serge, Sergii Sekundant"
 first: 2012-02-20T01:01:22+03:00
 last: 2012-03-03T01:12:31+03:00
+source_url: https://groups.google.com/d/msgid/nagari/1270876.1630.1329688882857.JavaMail.geo-discussion-forums@ynkz21
 ---
 
 # Difficult line from Vajasaneyi-Samhita
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/1270876.1630.1329688882857.JavaMail.geo-discussion-forums@ynkz21)
 
 > 10 сообщений · 4 участников · 2012-02-20 — 2012-03-03
 

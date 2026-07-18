@@ -6,9 +6,12 @@ messages: 1
 participants: "Mārcis"
 first: 2024-01-02T21:47:08+03:00
 last: 2024-01-02T21:47:08+03:00
+source_url: https://groups.google.com/d/msgid/nagari/040d5ed1-96cd-4b87-9e83-318efefc59cen@googlegroups.com
 ---
 
 # Bhartrharis Vakyapadiya. 2: Text der Palmblatt-Handschrift Trivandrum
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/040d5ed1-96cd-4b87-9e83-318efefc59cen@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2024-01-02 — 2024-01-02
 

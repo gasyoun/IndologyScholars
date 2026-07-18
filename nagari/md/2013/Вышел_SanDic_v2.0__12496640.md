@@ -6,9 +6,12 @@ messages: 70
 participants: "Artem Novikov, Lev Titlin, śrīdṛṣṭvā, Marcis, Serge A, Aspasios, धीरसिंह, ShaSa"
 first: 2013-04-20T17:58:42+03:00
 last: 2013-11-20T00:31:20+03:00
+source_url: https://groups.google.com/d/msgid/nagari/3d799014-adf1-4ac3-82b4-c4eacc056583@googlegroups.com
 ---
 
 # Вышел SanDic v2.0
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/3d799014-adf1-4ac3-82b4-c4eacc056583@googlegroups.com)
 
 > 70 сообщений · 8 участников · 2013-04-20 — 2013-11-20
 

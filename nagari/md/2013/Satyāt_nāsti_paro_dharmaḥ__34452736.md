@@ -6,9 +6,12 @@ messages: 1
 participants: "Marcis"
 first: 2013-02-05T22:50:15+03:00
 last: 2013-02-05T22:50:15+03:00
+source_url: https://groups.google.com/d/msgid/nagari/4aedf841-c0f8-42f5-9fd2-0b48ce0e0fc8@googlegroups.com
 ---
 
 # Satyāt nāsti paro dharmaḥ
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/4aedf841-c0f8-42f5-9fd2-0b48ce0e0fc8@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2013-02-05 — 2013-02-05
 

@@ -6,9 +6,12 @@ messages: 2
 participants: "Marcis, Constantine I."
 first: 2022-07-06T19:02:43+03:00
 last: 2022-07-06T19:13:28+03:00
+source_url: https://groups.google.com/d/msgid/nagari/8c7ce8a5-adb2-48eb-a802-46511dc2a667n@googlegroups.com
 ---
 
 # Bhūtasaṃkhyā — кеннинги для обозначения чисел словами обыденного санскрита
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/8c7ce8a5-adb2-48eb-a802-46511dc2a667n@googlegroups.com)
 
 > 2 сообщений · 2 участников · 2022-07-06 — 2022-07-06
 

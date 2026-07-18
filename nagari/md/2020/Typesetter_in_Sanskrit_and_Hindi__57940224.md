@@ -6,9 +6,12 @@ messages: 2
 participants: "Vikas Murarka, Oleg Puzyreff"
 first: 2020-07-23T11:15:40+03:00
 last: 2020-07-23T11:35:26+03:00
+source_url: https://groups.google.com/d/msgid/nagari/f0b51972-bee8-4546-b032-14c0cc9f6859n@googlegroups.com
 ---
 
 # Typesetter in Sanskrit and Hindi
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/f0b51972-bee8-4546-b032-14c0cc9f6859n@googlegroups.com)
 
 > 2 сообщений · 2 участников · 2020-07-23 — 2020-07-23
 
