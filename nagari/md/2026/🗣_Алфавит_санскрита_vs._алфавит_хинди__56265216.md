@@ -6,9 +6,12 @@ messages: 1
 participants: "Mārcis Gasūns"
 first: 2026-03-24T14:38:33+03:00
 last: 2026-03-24T14:38:33+03:00
+source_url: https://groups.google.com/d/msgid/nagari/bd980273-ff36-4f2b-bd97-c54e11c3ea06n@googlegroups.com
 ---
 
 # 🗣 Алфавит санскрита vs. алфавит хинди
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/bd980273-ff36-4f2b-bd97-c54e11c3ea06n@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2026-03-24 — 2026-03-24
 

@@ -6,9 +6,12 @@ messages: 3
 participants: "ли ла, Marcis, ли 8"
 first: 2021-03-04T14:34:28+03:00
 last: 2021-03-04T16:45:04+03:00
+source_url: https://groups.google.com/d/msgid/nagari/4fd62d72-dad8-44c3-b750-6039c7fcce10n@googlegroups.com
 ---
 
 # Как зарегистрироваться на sanskrit-linguistics.org ?
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/4fd62d72-dad8-44c3-b750-6039c7fcce10n@googlegroups.com)
 
 > 3 сообщений · 3 участников · 2021-03-04 — 2021-03-04
 

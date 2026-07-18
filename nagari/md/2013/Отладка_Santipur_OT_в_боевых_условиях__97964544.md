@@ -6,9 +6,12 @@ messages: 7
 participants: "Marcis, Artem Novikov, Serge A"
 first: 2013-02-26T22:07:53+03:00
 last: 2013-02-28T09:39:14+03:00
+source_url: https://groups.google.com/d/msgid/nagari/86226b48-f552-4658-ade5-ed43bd8c629e@googlegroups.com
 ---
 
 # Отладка Santipur OT в боевых условиях
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/86226b48-f552-4658-ade5-ed43bd8c629e@googlegroups.com)
 
 > 7 сообщений · 3 участников · 2013-02-26 — 2013-02-28
 

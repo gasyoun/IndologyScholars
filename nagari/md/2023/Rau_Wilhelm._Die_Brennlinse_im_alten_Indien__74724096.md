@@ -6,9 +6,12 @@ messages: 1
 participants: "Marcis"
 first: 2023-03-10T18:48:56+03:00
 last: 2023-03-10T18:48:56+03:00
+source_url: https://groups.google.com/d/msgid/nagari/e3c6492d-68a1-41b4-93a8-1b10a13fbea3n@googlegroups.com
 ---
 
 # Rau Wilhelm. Die Brennlinse im alten Indien
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/e3c6492d-68a1-41b4-93a8-1b10a13fbea3n@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2023-03-10 — 2023-03-10
 

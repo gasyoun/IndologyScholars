@@ -6,9 +6,12 @@ messages: 4
 participants: "Marcis, Владимир Карицкий, Serge A"
 first: 2014-12-15T21:20:45+03:00
 last: 2014-12-16T00:08:10+03:00
+source_url: https://groups.google.com/d/msgid/nagari/426890ed-255b-4645-8ad4-956edd30f691@googlegroups.com
 ---
 
 # Errata Бхагавадгиты Д. Бурбы (2009)
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/426890ed-255b-4645-8ad4-956edd30f691@googlegroups.com)
 
 > 4 сообщений · 3 участников · 2014-12-15 — 2014-12-16
 

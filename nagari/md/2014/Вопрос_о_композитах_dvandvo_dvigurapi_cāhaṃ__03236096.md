@@ -6,9 +6,12 @@ messages: 4
 participants: "Marcis, Usha Sanka, Andrey Klebanov"
 first: 2014-03-23T16:00:01+03:00
 last: 2014-04-14T16:04:46+03:00
+source_url: https://groups.google.com/d/msgid/nagari/91ecf83d-ac6d-4247-8dba-dbcf2864a490@googlegroups.com
 ---
 
 # Вопрос о композитах: dvandvo dvigurapi cāhaṃ
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/91ecf83d-ac6d-4247-8dba-dbcf2864a490@googlegroups.com)
 
 > 4 сообщений · 3 участников · 2014-03-23 — 2014-04-14
 

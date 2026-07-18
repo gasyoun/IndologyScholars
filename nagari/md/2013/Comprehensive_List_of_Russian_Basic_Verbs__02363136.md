@@ -6,9 +6,12 @@ messages: 3
 participants: "narayan prasad, Marcis"
 first: 2013-02-17T20:34:20+03:00
 last: 2013-02-18T19:29:44+03:00
+source_url: https://groups.google.com/d/msgid/nagari/CAKmACTnh8Sw1f9hWt%2BiGwzvx5yrVwEvdHb7fVyRNrAamMFeVkQ@mail.gmail.com
 ---
 
 # Comprehensive List of Russian Basic Verbs
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/CAKmACTnh8Sw1f9hWt%2BiGwzvx5yrVwEvdHb7fVyRNrAamMFeVkQ@mail.gmail.com)
 
 > 3 сообщений · 2 участников · 2013-02-17 — 2013-02-18
 

@@ -6,9 +6,12 @@ messages: 4
 participants: "Narayan Prasad, Marcis"
 first: 2017-11-09T13:02:20+03:00
 last: 2017-11-10T15:06:55+03:00
+source_url: https://groups.google.com/d/msgid/nagari/CAKmACTk50mkK9advpMSMdtCp8cv9JW2goSbyAU8RrdCLFxSQYQ@mail.gmail.com
 ---
 
 # Two more articles on Sanskrit Grammar
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/CAKmACTk50mkK9advpMSMdtCp8cv9JW2goSbyAU8RrdCLFxSQYQ@mail.gmail.com)
 
 > 4 сообщений · 2 участников · 2017-11-09 — 2017-11-10
 

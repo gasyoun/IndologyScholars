@@ -6,9 +6,12 @@ messages: 3
 participants: "Mandala Pati (Владислав), Serge A"
 first: 2016-03-11T07:52:24+03:00
 last: 2016-03-11T17:50:05+03:00
+source_url: https://groups.google.com/d/msgid/nagari/a7eb2a1f-bd8f-4d73-aa36-9e0407376c5d@googlegroups.com
 ---
 
 # On-line Sanskrit vocabulary course
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/a7eb2a1f-bd8f-4d73-aa36-9e0407376c5d@googlegroups.com)
 
 > 3 сообщений · 2 участников · 2016-03-11 — 2016-03-11
 

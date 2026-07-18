@@ -6,9 +6,12 @@ messages: 5
 participants: "Kartik108, Worga, danstender, Marcis"
 first: 2007-09-22T01:30:38+03:00
 last: 2007-10-03T15:33:13+03:00
+source_url: https://groups.google.com/d/msgid/nagari/1190413838.199982.143350@y42g2000hsy.googlegroups.com
 ---
 
 # Discussion on sharma
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/1190413838.199982.143350@y42g2000hsy.googlegroups.com)
 
 > 5 сообщений · 4 участников · 2007-09-22 — 2007-10-03
 

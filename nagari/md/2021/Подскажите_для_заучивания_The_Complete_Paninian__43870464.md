@@ -6,9 +6,12 @@ messages: 3
 participants: "Denis Molodtsov, ли 8"
 first: 2021-04-09T11:44:46+03:00
 last: 2021-04-13T01:21:19+03:00
+source_url: https://groups.google.com/d/msgid/nagari/c703cbfb-a33f-428a-8782-f79a75978d24n@googlegroups.com
 ---
 
 # Подскажите для заучивания The Complete Paninian Sutrapath
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/c703cbfb-a33f-428a-8782-f79a75978d24n@googlegroups.com)
 
 > 3 сообщений · 2 участников · 2021-04-09 — 2021-04-13
 

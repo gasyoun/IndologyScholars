@@ -6,9 +6,12 @@ messages: 8
 participants: "kalindi dd kalindi dd, Puneet Madaan, rudraksha encyclopedia, Kiran Paranjape, doc, narakeshvara"
 first: 2008-08-27T10:58:51+03:00
 last: 2008-08-28T09:55:47+03:00
+source_url: https://groups.google.com/d/msgid/nagari/652cce710808270058l267affccmff7d1544ebd8e3b9@mail.gmail.com
 ---
 
 # Ice cream in Sanskrit and Hindi
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/652cce710808270058l267affccmff7d1544ebd8e3b9@mail.gmail.com)
 
 > 8 сообщений · 6 участников · 2008-08-27 — 2008-08-28
 

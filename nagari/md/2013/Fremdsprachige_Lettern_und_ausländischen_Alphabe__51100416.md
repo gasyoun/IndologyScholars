@@ -6,9 +6,12 @@ messages: 1
 participants: "Marcis"
 first: 2013-03-08T11:00:11+03:00
 last: 2013-03-08T11:00:11+03:00
+source_url: https://groups.google.com/d/msgid/nagari/dec7c59f-505c-462a-b7ed-cf0590d2ed7a@googlegroups.com
 ---
 
 # Fremdsprachige Lettern und ausländischen Alphabeten (Wien)
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/dec7c59f-505c-462a-b7ed-cf0590d2ed7a@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2013-03-08 — 2013-03-08
 

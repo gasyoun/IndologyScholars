@@ -6,9 +6,12 @@ messages: 4
 participants: "Michael Bykov, Marcis"
 first: 2019-03-26T13:46:55+03:00
 last: 2019-03-27T18:13:24+03:00
+source_url: https://groups.google.com/d/msgid/nagari/CAN5SjACXmDDSATN19U0YYa8O9VbNdDRP9Lox6cKR8OCv7LwsCg@mail.gmail.com
 ---
 
 # Pecha.js & Cholok.js
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/CAN5SjACXmDDSATN19U0YYa8O9VbNdDRP9Lox6cKR8OCv7LwsCg@mail.gmail.com)
 
 > 4 сообщений · 2 участников · 2019-03-26 — 2019-03-27
 

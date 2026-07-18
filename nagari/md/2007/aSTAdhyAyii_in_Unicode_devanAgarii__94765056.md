@@ -6,9 +6,12 @@ messages: 15
 participants: "narayan prasad, danstender, Vasu Srinivasan, Marcis, Narayan Prasad, Chetan Pandey"
 first: 2007-07-17T08:19:03+03:00
 last: 2007-08-01T13:38:59+03:00
+source_url: https://groups.google.com/d/msgid/nagari/630330570707162219h59204452j243c1b32f69aeebd@mail.gmail.com
 ---
 
 # aSTAdhyAyii in Unicode devanAgarii
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/630330570707162219h59204452j243c1b32f69aeebd@mail.gmail.com)
 
 > 15 сообщений · 6 участников · 2007-07-17 — 2007-08-01
 

@@ -6,9 +6,12 @@ messages: 1
 participants: "Marcis"
 first: 2013-06-23T15:43:29+03:00
 last: 2013-06-23T15:43:29+03:00
+source_url: https://groups.google.com/d/msgid/nagari/410cca83-4421-4b89-9320-a9b10a394f78@googlegroups.com
 ---
 
 # Статья Sanskrit из Meyers Konversationslexikon (1885-1892)
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/410cca83-4421-4b89-9320-a9b10a394f78@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2013-06-23 — 2013-06-23
 

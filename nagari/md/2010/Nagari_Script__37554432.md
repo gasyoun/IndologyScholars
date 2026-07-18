@@ -6,9 +6,12 @@ messages: 8
 participants: "Deka, Rabin, Nina Schriber, Brahman, Tulasi, deka, Roman Smirnov, Rabin Рабин"
 first: 2010-06-05T11:37:37+03:00
 last: 2010-07-19T08:03:43+03:00
+source_url: https://groups.google.com/d/msgid/nagari/AANLkTimSB9spUn6qd-4feKniQWnWKG_CpFuSi-i8jp_B@mail.gmail.com
 ---
 
 # Nagari Script
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/AANLkTimSB9spUn6qd-4feKniQWnWKG_CpFuSi-i8jp_B@mail.gmail.com)
 
 > 8 сообщений · 7 участников · 2010-06-05 — 2010-07-19
 

@@ -6,9 +6,12 @@ messages: 9
 participants: "Владимир Карицкий, Иван Малютин, tvitaly1"
 first: 2023-10-22T06:02:45+03:00
 last: 2023-11-19T12:51:16+03:00
+source_url: https://groups.google.com/d/msgid/nagari/1697943765.342753965@f481.i.mail.ru
 ---
 
 # Sarala Samskrita Gita
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/1697943765.342753965@f481.i.mail.ru)
 
 > 9 сообщений · 3 участников · 2023-10-22 — 2023-11-19
 

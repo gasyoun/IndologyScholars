@@ -6,9 +6,12 @@ messages: 143
 participants: "Worga, Brahman, rudraksha encyclopedia, Lev Titlin, sworga@…, Октябрин, Владимир Романовский, Stormwatsch, Yury Panikov, Илья Александров, Владимир Карицкий, Ashot Hambartsumyan, Serge, DmitriNet, MAX KASHIRSKY, aman"
 first: 2011-03-13T20:53:45+03:00
 last: 2011-05-20T14:20:02+03:00
+source_url: https://groups.google.com/d/msgid/nagari/c2f2c10e-7a18-407a-9f74-02e093b845bf@r4g2000vbq.googlegroups.com
 ---
 
 # Russian pantheon. Cognate words in Sanskrit and Russian.
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/c2f2c10e-7a18-407a-9f74-02e093b845bf@r4g2000vbq.googlegroups.com)
 
 > 143 сообщений · 16 участников · 2011-03-13 — 2011-05-20
 

@@ -6,9 +6,12 @@ messages: 17
 participants: "Dmitri, Marcis, Serge A"
 first: 2014-05-12T02:03:49+03:00
 last: 2014-11-12T03:17:03+03:00
+source_url: https://groups.google.com/d/msgid/nagari/98cb63c5-7843-4569-8280-a96b0556c448@googlegroups.com
 ---
 
 # Mandala 9 project
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/98cb63c5-7843-4569-8280-a96b0556c448@googlegroups.com)
 
 > 17 сообщений · 3 участников · 2014-05-12 — 2014-11-12
 

@@ -6,9 +6,12 @@ messages: 1
 participants: "Marcis"
 first: 2023-09-14T08:56:13+03:00
 last: 2023-09-14T08:56:13+03:00
+source_url: https://groups.google.com/d/msgid/nagari/9bfdaf1c-0dec-48cb-a04e-8999e7f4fdb4n@googlegroups.com
 ---
 
 # A picturesque tour along the rivers Ganges and Jumna, in India
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/9bfdaf1c-0dec-48cb-a04e-8999e7f4fdb4n@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2023-09-14 — 2023-09-14
 

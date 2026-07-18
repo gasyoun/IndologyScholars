@@ -6,9 +6,12 @@ messages: 2
 participants: "Daniel, Arvind_Kolhatkar"
 first: 2012-01-27T15:25:05+03:00
 last: 2012-01-30T07:17:27+03:00
+source_url: https://groups.google.com/d/msgid/nagari/51f21f6a-45ab-412e-85a1-be889a1c183e@h3g2000yqe.googlegroups.com
 ---
 
 # Introduction
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/51f21f6a-45ab-412e-85a1-be889a1c183e@h3g2000yqe.googlegroups.com)
 
 > 2 сообщений · 2 участников · 2012-01-27 — 2012-01-30
 

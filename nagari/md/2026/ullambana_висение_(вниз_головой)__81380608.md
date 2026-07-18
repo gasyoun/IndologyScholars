@@ -6,9 +6,12 @@ messages: 1
 participants: "Mārcis Gasūns"
 first: 2026-04-04T18:34:14+03:00
 last: 2026-04-04T18:34:14+03:00
+source_url: https://groups.google.com/d/msgid/nagari/82f95da8-4cac-4968-beff-92df34151671n@googlegroups.com
 ---
 
 # ullambana "висение (вниз головой)"
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/82f95da8-4cac-4968-beff-92df34151671n@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2026-04-04 — 2026-04-04
 

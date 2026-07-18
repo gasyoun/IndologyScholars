@@ -6,9 +6,12 @@ messages: 11
 participants: "Dmitri, Serge A, Lev Titlin"
 first: 2012-03-03T20:12:19+03:00
 last: 2012-03-06T22:24:07+03:00
+source_url: https://groups.google.com/d/msgid/nagari/9140788.1065.1330794739283.JavaMail.geo-discussion-forums@ynlt17
 ---
 
 # Грамматика RV 8.69.14
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/9140788.1065.1330794739283.JavaMail.geo-discussion-forums@ynlt17)
 
 > 11 сообщений · 3 участников · 2012-03-03 — 2012-03-06
 

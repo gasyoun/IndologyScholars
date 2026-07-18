@@ -6,9 +6,12 @@ messages: 1
 participants: "Marcis"
 first: 2013-06-29T21:03:21+03:00
 last: 2013-06-29T21:03:21+03:00
+source_url: https://groups.google.com/d/msgid/nagari/327ec7a1-698f-49f1-aea8-213600d9bb69@googlegroups.com
 ---
 
 # Proceedings (Extract) of XII International Congress of Orientalists, Rome, October 1899
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/327ec7a1-698f-49f1-aea8-213600d9bb69@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2013-06-29 — 2013-06-29
 

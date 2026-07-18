@@ -6,9 +6,12 @@ messages: 5
 participants: "Artem Novikov, andron, Serge A"
 first: 2013-06-08T18:28:49+03:00
 last: 2013-06-24T09:45:58+03:00
+source_url: https://groups.google.com/d/msgid/nagari/ceb9395e-1c0b-47ed-950e-652bd9386623@googlegroups.com
 ---
 
 # Санскрито-русский словарь проекта yukta.org
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/ceb9395e-1c0b-47ed-950e-652bd9386623@googlegroups.com)
 
 > 5 сообщений · 3 участников · 2013-06-08 — 2013-06-24
 

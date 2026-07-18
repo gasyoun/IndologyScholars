@@ -6,9 +6,12 @@ messages: 1
 participants: "Marcis"
 first: 2013-03-07T12:17:19+03:00
 last: 2013-03-07T12:17:19+03:00
+source_url: https://groups.google.com/d/msgid/nagari/abf970ca-8775-4c75-b4bc-5d8d381288fb@googlegroups.com
 ---
 
 # Alexander von Humboldts Bibliothek (Völker, Sprache und Schrift. Werke über Ethnologie, Linguistik)
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/abf970ca-8775-4c75-b4bc-5d8d381288fb@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2013-03-07 — 2013-03-07
 

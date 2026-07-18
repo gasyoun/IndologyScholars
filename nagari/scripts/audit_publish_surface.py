@@ -88,7 +88,18 @@ def main() -> int:
         print("[md ] {:,} files, {:.1f} MB (full message bodies)".format(len(files), total / 1048576))
         md_leaks: dict[str, int] = {}
         for p in files:
-            for addr, n in scan_emails(p.read_text(encoding="utf-8", errors="replace")).items():
+            text = p.read_text(encoding="utf-8", errors="replace")
+            # source_url / the "original topic" link carry a Message-Id, not a
+            # mailbox address -- export_md.google_groups_url() already vets each
+            # one against the sender's own address before emitting it, so scanning
+            # these lines here would just be ~2,900 false positives on opaque
+            # client-generated tokens that happen to be email-shaped.
+            text = "\n".join(
+                line for line in text.split("\n")
+                if not line.startswith("source_url:")
+                and "groups.google.com/d/msgid/" not in line
+            )
+            for addr, n in scan_emails(text).items():
                 md_leaks[addr] = md_leaks.get(addr, 0) + n
         if md_leaks:
             hits = sum(md_leaks.values())

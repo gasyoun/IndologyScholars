@@ -6,9 +6,12 @@ messages: 9
 participants: "Pan Kotski, Marcis, antara, oleksiy smirnov"
 first: 2007-06-01T19:17:29+03:00
 last: 2007-06-20T18:25:16
+source_url: https://groups.google.com/d/msgid/nagari/1180714649.209911.59850@k79g2000hse.googlegroups.com
 ---
 
 # Monier Williams
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/1180714649.209911.59850@k79g2000hse.googlegroups.com)
 
 > 9 сообщений · 4 участников · 2007-06-01 — 2007-06-20
 

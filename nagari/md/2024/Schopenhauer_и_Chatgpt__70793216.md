@@ -6,9 +6,12 @@ messages: 2
 participants: "Konstantin Ivanov, Mārcis"
 first: 2024-11-06T09:03:37+03:00
 last: 2024-11-06T09:22:29+03:00
+source_url: https://groups.google.com/d/msgid/nagari/c55f17a9-9c72-48b7-8786-b041352940aan@googlegroups.com
 ---
 
 # Schopenhauer и Chatgpt
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/c55f17a9-9c72-48b7-8786-b041352940aan@googlegroups.com)
 
 > 2 сообщений · 2 участников · 2024-11-06 — 2024-11-06
 

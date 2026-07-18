@@ -6,9 +6,12 @@ messages: 3
 participants: "rudraksha encyclopedia, Marcis, vladimir"
 first: 2009-01-06T15:09:29+03:00
 last: 2009-01-31T11:22:13+03:00
+source_url: https://groups.google.com/d/msgid/nagari/6e13308e0901060409q3c2afdb5o6821c62f77485ecf@mail.gmail.com
 ---
 
 # New M.Monier - Williams Sanskrit-English Dictionary
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/6e13308e0901060409q3c2afdb5o6821c62f77485ecf@mail.gmail.com)
 
 > 3 сообщений · 3 участников · 2009-01-06 — 2009-01-31
 

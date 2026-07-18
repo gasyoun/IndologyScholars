@@ -6,9 +6,12 @@ messages: 2
 participants: "Natālija Burišina, Serge A"
 first: 2021-08-20T14:34:53+03:00
 last: 2021-08-20T17:35:12+03:00
+source_url: https://groups.google.com/d/msgid/nagari/CAJSXksY9eitg94RQb6xqebLH9NC1mxZJbKbjzHpo4UyKOdrmUg@mail.gmail.com
 ---
 
 # Vedic accents
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/CAJSXksY9eitg94RQb6xqebLH9NC1mxZJbKbjzHpo4UyKOdrmUg@mail.gmail.com)
 
 > 2 сообщений · 2 участников · 2021-08-20 — 2021-08-20
 

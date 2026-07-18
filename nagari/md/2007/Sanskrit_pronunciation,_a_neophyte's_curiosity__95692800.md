@@ -6,9 +6,12 @@ messages: 2
 participants: "Duri, Alexandre V. Elizariev"
 first: 2007-12-21T11:50:21+03:00
 last: 2007-12-21T14:49:21+03:00
+source_url: https://groups.google.com/d/msgid/nagari/a93a30f5-6d3a-4f28-a111-7b81795db731@b40g2000prf.googlegroups.com
 ---
 
 # Sanskrit pronunciation, a neophyte's curiosity
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/a93a30f5-6d3a-4f28-a111-7b81795db731@b40g2000prf.googlegroups.com)
 
 > 2 сообщений · 2 участников · 2007-12-21 — 2007-12-21
 

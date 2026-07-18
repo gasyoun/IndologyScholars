@@ -6,9 +6,12 @@ messages: 2
 participants: "ken p, śrīdṛṣṭvā"
 first: 2013-12-09T21:25:11+03:00
 last: 2013-12-24T15:35:21+03:00
+source_url: https://groups.google.com/d/msgid/nagari/08e1e1e4-c5fa-4653-9e87-8c9347c5f587@googlegroups.com
 ---
 
 # Russian IPA Converter
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/08e1e1e4-c5fa-4653-9e87-8c9347c5f587@googlegroups.com)
 
 > 2 сообщений · 2 участников · 2013-12-09 — 2013-12-24
 

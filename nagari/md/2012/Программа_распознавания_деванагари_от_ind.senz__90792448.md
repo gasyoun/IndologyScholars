@@ -6,9 +6,12 @@ messages: 3
 participants: "Marcis, atman, Artem Novikov"
 first: 2012-07-16T11:54:10+03:00
 last: 2012-07-21T18:52:51+03:00
+source_url: https://groups.google.com/d/msgid/nagari/45bdfe52-eea9-44a2-a0b8-453a81a0627d@googlegroups.com
 ---
 
 # Программа распознавания деванагари от ind.senz
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/45bdfe52-eea9-44a2-a0b8-453a81a0627d@googlegroups.com)
 
 > 3 сообщений · 3 участников · 2012-07-16 — 2012-07-21
 

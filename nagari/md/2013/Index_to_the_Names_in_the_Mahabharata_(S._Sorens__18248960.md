@@ -6,9 +6,12 @@ messages: 1
 participants: "Marcis"
 first: 2013-06-18T07:45:24+03:00
 last: 2013-06-18T07:45:24+03:00
+source_url: https://groups.google.com/d/msgid/nagari/f844d2c4-3002-424f-a16b-6abe5aede083@googlegroups.com
 ---
 
 # Index to the Names in the Mahabharata (S. Sorensen)
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/f844d2c4-3002-424f-a16b-6abe5aede083@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2013-06-18 — 2013-06-18
 

@@ -6,9 +6,12 @@ messages: 11
 participants: "kalindi dd kalindi dd, Lev Titlin, Brahman"
 first: 2010-11-29T23:51:15+03:00
 last: 2010-12-03T15:52:50+03:00
+source_url: https://groups.google.com/d/msgid/nagari/AANLkTi%3D%3D4LTzg0BwgZvKoKk_33Twgn8G7ximo5y2NQk9@mail.gmail.com
 ---
 
 # Different Sanskrit schools - where is better to learn? / Разные школы санскрита - где лучше учить?
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/AANLkTi%3D%3D4LTzg0BwgZvKoKk_33Twgn8G7ximo5y2NQk9@mail.gmail.com)
 
 > 11 сообщений · 3 участников · 2010-11-29 — 2010-12-03
 

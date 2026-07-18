@@ -6,9 +6,12 @@ messages: 3
 participants: "Marcis, Worga"
 first: 2014-11-28T13:19:54+03:00
 last: 2014-11-28T21:51:47+03:00
+source_url: https://groups.google.com/d/msgid/nagari/f516147f-c028-4888-8274-4531bbccb8aa@googlegroups.com
 ---
 
 # Anfang der Sanskrit-Studien in Rußland (1833)
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/f516147f-c028-4888-8274-4531bbccb8aa@googlegroups.com)
 
 > 3 сообщений · 2 участников · 2014-11-28 — 2014-11-28
 

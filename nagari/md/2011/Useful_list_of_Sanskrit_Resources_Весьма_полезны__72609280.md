@@ -6,9 +6,12 @@ messages: 3
 participants: "Dmitri, Marcis, Arvind_Kolhatkar"
 first: 2011-09-01T22:43:12+03:00
 last: 2011-10-27T06:06:53+03:00
+source_url: https://groups.google.com/d/msgid/nagari/2067144.1847.1314906192079.JavaMail.geo-discussion-forums@yqaa12
 ---
 
 # Useful list of Sanskrit Resources: Весьма полезный список интернет-ресурсов по Санскриту
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/2067144.1847.1314906192079.JavaMail.geo-discussion-forums@yqaa12)
 
 > 3 сообщений · 3 участников · 2011-09-01 — 2011-10-27
 

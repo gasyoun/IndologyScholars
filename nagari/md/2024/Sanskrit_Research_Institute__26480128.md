@@ -6,9 +6,12 @@ messages: 1
 participants: "Mārcis"
 first: 2024-09-08T13:39:28+03:00
 last: 2024-09-08T13:39:28+03:00
+source_url: https://groups.google.com/d/msgid/nagari/e036ee4d-fb45-4dda-8bfd-b025060214f8n@googlegroups.com
 ---
 
 # Sanskrit Research Institute
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/e036ee4d-fb45-4dda-8bfd-b025060214f8n@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2024-09-08 — 2024-09-08
 

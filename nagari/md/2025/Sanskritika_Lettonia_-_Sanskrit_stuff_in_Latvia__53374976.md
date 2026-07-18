@@ -6,9 +6,12 @@ messages: 1
 participants: "Antonio Ferreira-Jardim"
 first: 2025-04-02T22:28:22+03:00
 last: 2025-04-02T22:28:22+03:00
+source_url: https://groups.google.com/d/msgid/nagari/CAGDOqfo8Zk7jAMJYMEFmXTb%3DA%3DKrgMBbYjSBvNZMjiNSicHAxQ@mail.gmail.com
 ---
 
 # Sanskritika Lettonia - Sanskrit stuff in Latvia? Санскрит в Латвии?
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/CAGDOqfo8Zk7jAMJYMEFmXTb%3DA%3DKrgMBbYjSBvNZMjiNSicHAxQ@mail.gmail.com)
 
 > 1 сообщений · 1 участников · 2025-04-02 — 2025-04-02
 

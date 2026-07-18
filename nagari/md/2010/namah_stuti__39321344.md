@@ -6,9 +6,12 @@ messages: 1
 participants: "Deka, Rabin"
 first: 2010-04-11T01:49:38+03:00
 last: 2010-04-11T01:49:38+03:00
+source_url: https://groups.google.com/d/msgid/nagari/w2ja33c52121004101549m623f74f4p8d13c69fb5cba265@mail.gmail.com
 ---
 
 # namah stuti
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/w2ja33c52121004101549m623f74f4p8d13c69fb5cba265@mail.gmail.com)
 
 > 1 сообщений · 1 участников · 2010-04-11 — 2010-04-11
 

@@ -6,9 +6,12 @@ messages: 2
 participants: "Marcis, Olya Allo"
 first: 2022-03-28T14:29:47+03:00
 last: 2022-03-28T14:36:18+03:00
+source_url: https://groups.google.com/d/msgid/nagari/547f0ec5-4096-4c96-ba0e-326111cea829n@googlegroups.com
 ---
 
 # In memoriam: Алексей Мордвинов (из Бердска)
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/547f0ec5-4096-4c96-ba0e-326111cea829n@googlegroups.com)
 
 > 2 сообщений · 2 участников · 2022-03-28 — 2022-03-28
 

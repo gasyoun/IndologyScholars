@@ -6,9 +6,12 @@ messages: 1
 participants: "Mārcis"
 first: 2024-04-17T18:24:37+03:00
 last: 2024-04-17T18:24:37+03:00
+source_url: https://groups.google.com/d/msgid/nagari/57606ba8-157d-4b4f-9904-018ae96367e7n@googlegroups.com
 ---
 
 # cent studies in Sanskrit and Indology
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/57606ba8-157d-4b4f-9904-018ae96367e7n@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2024-04-17 — 2024-04-17
 

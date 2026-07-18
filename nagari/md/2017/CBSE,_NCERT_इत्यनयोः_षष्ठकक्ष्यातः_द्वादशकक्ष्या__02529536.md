@@ -6,9 +6,12 @@ messages: 1
 participants: "Keshav Mishra"
 first: 2017-12-01T08:03:47+03:00
 last: 2017-12-01T08:03:47+03:00
+source_url: https://groups.google.com/d/msgid/nagari/48ae8733-cc61-4039-a138-91ff561270cf@googlegroups.com
 ---
 
 # CBSE, NCERT इत्यनयोः षष्ठकक्ष्यातः द्वादशकक्ष्यां यावत् संस्कृतपाठ्यपुस्तकानाम् अनुशिक्षणम्
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/48ae8733-cc61-4039-a138-91ff561270cf@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2017-12-01 — 2017-12-01
 

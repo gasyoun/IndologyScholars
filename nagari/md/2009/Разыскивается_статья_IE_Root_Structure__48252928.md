@@ -6,9 +6,12 @@ messages: 3
 participants: "Marcis, Marcis Gasuns"
 first: 2009-07-31T17:59:49+03:00
 last: 2009-09-12T04:12:14+03:00
+source_url: https://groups.google.com/d/msgid/nagari/2b31453e-6bf6-445a-b4dd-141466303924@c1g2000yqi.googlegroups.com
 ---
 
 # Разыскивается статья "IE Root Structure"
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/2b31453e-6bf6-445a-b4dd-141466303924@c1g2000yqi.googlegroups.com)
 
 > 3 сообщений · 2 участников · 2009-07-31 — 2009-09-12
 

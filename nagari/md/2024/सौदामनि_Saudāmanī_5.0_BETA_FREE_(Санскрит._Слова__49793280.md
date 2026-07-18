@@ -6,9 +6,12 @@ messages: 11
 participants: "ли ла, Vladimir Leonchenko, Валера"
 first: 2024-01-09T02:27:37+03:00
 last: 2024-01-18T17:18:05+03:00
+source_url: https://groups.google.com/d/msgid/nagari/a51e7583-46dd-4cfd-9ac0-1413f71955dcn@googlegroups.com
 ---
 
 # सौदामनि Saudāmanī 5.0 BETA FREE (Санскрит. Словари интерактивные.)
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/a51e7583-46dd-4cfd-9ac0-1413f71955dcn@googlegroups.com)
 
 > 11 сообщений · 3 участников · 2024-01-09 — 2024-01-18
 

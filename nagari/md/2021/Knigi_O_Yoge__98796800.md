@@ -6,9 +6,12 @@ messages: 3
 participants: "Natālija Burišina, Marcis"
 first: 2021-04-26T17:05:16+03:00
 last: 2021-04-26T17:32:26+03:00
+source_url: https://groups.google.com/d/msgid/nagari/CAJSXksbLz-CpGok_PRV9Z65i%2B2%3D8cyPPAoqfjUwksd9Q16w4mA@mail.gmail.com
 ---
 
 # Knigi O Yoge
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/CAJSXksbLz-CpGok_PRV9Z65i%2B2%3D8cyPPAoqfjUwksd9Q16w4mA@mail.gmail.com)
 
 > 3 сообщений · 2 участников · 2021-04-26 — 2021-04-26
 

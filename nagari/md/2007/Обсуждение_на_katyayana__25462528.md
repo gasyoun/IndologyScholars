@@ -6,9 +6,12 @@ messages: 2
 participants: "sujanasi, Marcis"
 first: 2007-03-06T19:34:08+03:00
 last: 2007-03-07T11:07:40
+source_url: https://groups.google.com/d/msgid/nagari/1173198848.495371.106200@j27g2000cwj.googlegroups.com
 ---
 
 # Обсуждение на katyayana
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/1173198848.495371.106200@j27g2000cwj.googlegroups.com)
 
 > 2 сообщений · 2 участников · 2007-03-06 — 2007-03-07
 

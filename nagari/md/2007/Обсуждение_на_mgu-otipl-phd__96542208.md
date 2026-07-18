@@ -6,9 +6,12 @@ messages: 2
 participants: "sujanasi, Marcis"
 first: 2007-04-03T22:05:07+03:00
 last: 2007-04-04T00:52:02
+source_url: https://groups.google.com/d/msgid/nagari/1175627107.434039.110330@e65g2000hsc.googlegroups.com
 ---
 
 # Обсуждение на mgu-otipl-phd
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/1175627107.434039.110330@e65g2000hsc.googlegroups.com)
 
 > 2 сообщений · 2 участников · 2007-04-03 — 2007-04-04
 

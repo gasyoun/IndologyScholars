@@ -6,9 +6,12 @@ messages: 6
 participants: "Svara, Simurg Gamayun, Worga, ignat, Чистая ЛЮБОВЬ..."
 first: 2008-11-14T18:50:28+03:00
 last: 2008-11-16T23:10:12+03:00
+source_url: https://groups.google.com/d/msgid/nagari/ba0e110b-50a7-4653-9fa5-8eb94750db11@c36g2000prc.googlegroups.com
 ---
 
 # Discussion on в расеюшке процветала ведическая культура
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/ba0e110b-50a7-4653-9fa5-8eb94750db11@c36g2000prc.googlegroups.com)
 
 > 6 сообщений · 5 участников · 2008-11-14 — 2008-11-16
 

@@ -6,9 +6,12 @@ messages: 5
 participants: "danstender, Marcis, Worga"
 first: 2007-04-14T21:55:57+03:00
 last: 2007-04-15T12:57:13+03:00
+source_url: https://groups.google.com/d/msgid/nagari/1176576957.099595.97730@q75g2000hsh.googlegroups.com
 ---
 
 # Grassmanns "Woerterbuch zum Rigveda"
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/1176576957.099595.97730@q75g2000hsh.googlegroups.com)
 
 > 5 сообщений · 3 участников · 2007-04-14 — 2007-04-15
 

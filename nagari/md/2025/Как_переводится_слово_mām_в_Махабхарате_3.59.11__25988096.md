@@ -6,9 +6,12 @@ messages: 7
 participants: "Георгий Х., Иван Малютин, Serge A"
 first: 2025-10-17T10:48:35+03:00
 last: 2025-10-20T00:13:33+03:00
+source_url: https://groups.google.com/d/msgid/nagari/44c59345-80ce-41a8-9b7f-f0d52693593an@googlegroups.com
 ---
 
 # Как переводится слово mām в Махабхарате 3.59.11?
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/44c59345-80ce-41a8-9b7f-f0d52693593an@googlegroups.com)
 
 > 7 сообщений · 3 участников · 2025-10-17 — 2025-10-20
 

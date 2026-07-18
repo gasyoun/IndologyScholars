@@ -6,9 +6,12 @@ messages: 1
 participants: "Michael Bykov"
 first: 2016-05-10T21:37:26+03:00
 last: 2016-05-10T21:37:26+03:00
+source_url: https://groups.google.com/d/msgid/nagari/CAN5SjAB5WJNp7PjnvEG5SqsOoDQP4zOYevBn12x3hZbmjgu05w@mail.gmail.com
 ---
 
 # Morpheus-03 - FireFox
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/CAN5SjAB5WJNp7PjnvEG5SqsOoDQP4zOYevBn12x3hZbmjgu05w@mail.gmail.com)
 
 > 1 сообщений · 1 участников · 2016-05-10 — 2016-05-10
 

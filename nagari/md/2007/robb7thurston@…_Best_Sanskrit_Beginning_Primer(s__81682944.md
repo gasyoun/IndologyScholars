@@ -6,9 +6,12 @@ messages: 2
 participants: "robb thurston, Vikram Nanda"
 first: 2007-03-12T23:50:05+03:00
 last: 2007-03-13T02:03:38+03:00
+source_url: https://groups.google.com/d/msgid/nagari/922e4a5c0703121350u78134a8fu2617086632a0d25b@mail.gmail.com
 ---
 
 # robb7thurston@…: Best Sanskrit Beginning Primer(s): Contingents like Dictionary(s)
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/922e4a5c0703121350u78134a8fu2617086632a0d25b@mail.gmail.com)
 
 > 2 сообщений · 2 участников · 2007-03-12 — 2007-03-13
 

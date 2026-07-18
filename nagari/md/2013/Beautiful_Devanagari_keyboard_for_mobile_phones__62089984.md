@@ -6,9 +6,12 @@ messages: 8
 participants: "Worga, Marcis, sworga@…"
 first: 2013-08-28T18:09:04+03:00
 last: 2013-09-20T15:55:24+03:00
+source_url: https://groups.google.com/d/msgid/nagari/4bb4d2d2-b956-4865-beb8-73f2c338f542@googlegroups.com
 ---
 
 # Beautiful Devanagari keyboard for mobile phones with Android!
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/4bb4d2d2-b956-4865-beb8-73f2c338f542@googlegroups.com)
 
 > 8 сообщений · 3 участников · 2013-08-28 — 2013-09-20
 

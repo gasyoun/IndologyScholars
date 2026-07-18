@@ -6,9 +6,12 @@ messages: 3
 participants: "Michael Bykov, Marcis"
 first: 2019-01-25T02:14:53+03:00
 last: 2019-01-27T20:58:17+03:00
+source_url: https://groups.google.com/d/msgid/nagari/CAN5SjABSMNassT5W_r8wX-8kcpGC4QM_S-ubd7MVhx4J%2BSi0Jg@mail.gmail.com
 ---
 
 # Diglossa.js
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/CAN5SjABSMNassT5W_r8wX-8kcpGC4QM_S-ubd7MVhx4J%2BSi0Jg@mail.gmail.com)
 
 > 3 сообщений · 2 участников · 2019-01-25 — 2019-01-27
 

@@ -6,9 +6,12 @@ messages: 23
 participants: "narayan prasad, Worga, Marcis, Gnostic, sworga@…"
 first: 2007-03-07T07:33:59+03:00
 last: 2007-03-18T00:02:17+03:00
+source_url: https://groups.google.com/d/msgid/nagari/630330570703062033t3c5ede01nac39fca8422dc753@mail.gmail.com
 ---
 
 # How to type in Russian ?
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/630330570703062033t3c5ede01nac39fca8422dc753@mail.gmail.com)
 
 > 23 сообщений · 5 участников · 2007-03-07 — 2007-03-18
 

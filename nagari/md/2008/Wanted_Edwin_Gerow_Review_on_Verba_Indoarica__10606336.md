@@ -6,9 +6,12 @@ messages: 2
 participants: "Marcis"
 first: 2008-08-11T19:23:07+03:00
 last: 2008-08-12T07:21:05+03:00
+source_url: https://groups.google.com/d/msgid/nagari/ed08f7cc-fbf1-415f-b559-939d9fcfa14d@f36g2000hsa.googlegroups.com
 ---
 
 # Wanted: Edwin Gerow Review on Verba Indoarica
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/ed08f7cc-fbf1-415f-b559-939d9fcfa14d@f36g2000hsa.googlegroups.com)
 
 > 2 сообщений · 1 участников · 2008-08-11 — 2008-08-12
 

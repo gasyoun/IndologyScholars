@@ -6,9 +6,12 @@ messages: 4
 participants: "Maria Iontseva, JC"
 first: 2021-08-07T16:19:40+03:00
 last: 2021-08-09T13:30:11+03:00
+source_url: https://groups.google.com/d/msgid/nagari/19e70a66-356f-4f6e-96a6-97a7c93f0287n@googlegroups.com
 ---
 
 # Упоминание концепций śunya и śunyata в упанишадах и других небуддийских текстах до 7го века (расцвета тантры))
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/19e70a66-356f-4f6e-96a6-97a7c93f0287n@googlegroups.com)
 
 > 4 сообщений · 2 участников · 2021-08-07 — 2021-08-09
 

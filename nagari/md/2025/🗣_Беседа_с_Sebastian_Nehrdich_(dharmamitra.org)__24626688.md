@@ -6,9 +6,12 @@ messages: 1
 participants: "Mārcis"
 first: 2025-02-28T15:28:27+03:00
 last: 2025-02-28T15:28:27+03:00
+source_url: https://groups.google.com/d/msgid/nagari/daa923d3-5361-4a87-bce5-86fbb9647a98n@googlegroups.com
 ---
 
 # 🗣 Беседа с Sebastian Nehrdich (dharmamitra.org)
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/daa923d3-5361-4a87-bce5-86fbb9647a98n@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2025-02-28 — 2025-02-28
 

@@ -6,9 +6,12 @@ messages: 4
 participants: "Георгий Х., Иван Малютин"
 first: 2025-12-19T20:03:57+03:00
 last: 2025-12-21T01:54:56+03:00
+source_url: https://groups.google.com/d/msgid/nagari/4a7743eb-3c09-43a4-93e0-41f6c0b108e9n@googlegroups.com
 ---
 
 # Загадочное tathāsatyam в "Махабхарате"
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/4a7743eb-3c09-43a4-93e0-41f6c0b108e9n@googlegroups.com)
 
 > 4 сообщений · 2 участников · 2025-12-19 — 2025-12-21
 

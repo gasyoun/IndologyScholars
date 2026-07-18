@@ -6,9 +6,12 @@ messages: 25
 participants: "Radha Blinderman, Marcis, Dmitri, Serge A, Владимир Карицкий, Worga, Mandala Pati"
 first: 2013-01-04T15:34:37+03:00
 last: 2013-09-05T15:07:45+03:00
+source_url: https://groups.google.com/d/msgid/nagari/CAESYzOLgLBAz22tjZCWd4inKkJc7-fK6A1vy2mZj70M3JsGr1w@mail.gmail.com
 ---
 
 # Bhagavad Gita
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/CAESYzOLgLBAz22tjZCWd4inKkJc7-fK6A1vy2mZj70M3JsGr1w@mail.gmail.com)
 
 > 25 сообщений · 7 участников · 2013-01-04 — 2013-09-05
 

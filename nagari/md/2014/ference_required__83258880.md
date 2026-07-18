@@ -6,9 +6,12 @@ messages: 2
 participants: "narayan prasad, Serge A"
 first: 2014-11-28T18:11:24+03:00
 last: 2014-12-02T18:19:19+03:00
+source_url: https://groups.google.com/d/msgid/nagari/CAKmACTmGNvu_ZrzoQ1ME5NrEGA%3DnBzSV8%2BB-AixAAZE_hpyjHQ@mail.gmail.com
 ---
 
 # ference required
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/CAKmACTmGNvu_ZrzoQ1ME5NrEGA%3DnBzSV8%2BB-AixAAZE_hpyjHQ@mail.gmail.com)
 
 > 2 сообщений · 2 участников · 2014-11-28 — 2014-12-02
 

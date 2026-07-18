@@ -6,9 +6,12 @@ messages: 27
 participants: "Gleb Kamalutdinov, Serge A, Radim Navyan, Marcis"
 first: 2016-03-18T16:07:22+03:00
 last: 2016-04-23T21:19:03+03:00
+source_url: https://groups.google.com/d/msgid/nagari/683fdceb-8db7-439c-a527-40af243ca5e9@googlegroups.com
 ---
 
 # nāmarūpajñānam - перевод синонимов названий растений из нигханту.
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/683fdceb-8db7-439c-a527-40af243ca5e9@googlegroups.com)
 
 > 27 сообщений · 4 участников · 2016-03-18 — 2016-04-23
 

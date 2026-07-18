@@ -6,9 +6,12 @@ messages: 1
 participants: "shorey@…"
 first: 2012-06-29T10:03:39+03:00
 last: 2012-06-29T10:03:39+03:00
+source_url: https://groups.google.com/d/msgid/nagari/1661270348-1340953419-cardhu_decombobulator_blackberry.rim.net-1904037563-@b1.c5.bise7.blackberry
 ---
 
 # Sanskrit - help
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/1661270348-1340953419-cardhu_decombobulator_blackberry.rim.net-1904037563-@b1.c5.bise7.blackberry)
 
 > 1 сообщений · 1 участников · 2012-06-29 — 2012-06-29
 

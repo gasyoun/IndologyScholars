@@ -6,9 +6,12 @@ messages: 10
 participants: "Trivikram das, Владимир Карицкий, Serge A"
 first: 2016-05-26T17:55:52+03:00
 last: 2016-06-01T21:36:37+03:00
+source_url: https://groups.google.com/d/msgid/nagari/e72197a6-58f9-4a98-a8f0-546d53448555@googlegroups.com
 ---
 
 # Помогите с переводом( help me with translate )
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/e72197a6-58f9-4a98-a8f0-546d53448555@googlegroups.com)
 
 > 10 сообщений · 3 участников · 2016-05-26 — 2016-06-01
 

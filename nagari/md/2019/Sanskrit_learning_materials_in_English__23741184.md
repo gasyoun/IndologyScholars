@@ -6,9 +6,12 @@ messages: 8
 participants: "Mari Kadanik, Люблю Копать, Marcis, Serge A"
 first: 2019-04-15T14:53:37+03:00
 last: 2019-04-22T21:35:34+03:00
+source_url: https://groups.google.com/d/msgid/nagari/ca7ee145-89de-4422-b3ee-e447637ef759@googlegroups.com
 ---
 
 # Sanskrit learning materials in English
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/ca7ee145-89de-4422-b3ee-e447637ef759@googlegroups.com)
 
 > 8 сообщений · 4 участников · 2019-04-15 — 2019-04-22
 

@@ -6,9 +6,12 @@ messages: 9
 participants: "DmitriNet, sergey_108, vladimir"
 first: 2009-03-19T19:39:35+03:00
 last: 2009-03-21T20:15:33+03:00
+source_url: https://groups.google.com/d/msgid/nagari/74f85f92-bcfe-4a34-8aac-d75c830dca0f@q27g2000vbn.googlegroups.com
 ---
 
 # Pratyabhij~naah.rdayam
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/74f85f92-bcfe-4a34-8aac-d75c830dca0f@q27g2000vbn.googlegroups.com)
 
 > 9 сообщений · 3 участников · 2009-03-19 — 2009-03-21
 

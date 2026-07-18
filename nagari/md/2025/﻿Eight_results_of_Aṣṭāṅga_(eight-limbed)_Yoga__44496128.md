@@ -6,9 +6,12 @@ messages: 1
 participants: "Mārcis"
 first: 2025-02-17T13:39:09+03:00
 last: 2025-02-17T13:39:09+03:00
+source_url: https://groups.google.com/d/msgid/nagari/a14143d1-86c4-43e7-a41d-7d54b6f765e6n@googlegroups.com
 ---
 
 # ﻿Eight results of Aṣṭāṅga (eight-limbed) Yoga
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/a14143d1-86c4-43e7-a41d-7d54b6f765e6n@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2025-02-17 — 2025-02-17
 

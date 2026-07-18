@@ -6,9 +6,12 @@ messages: 14
 participants: "śrīdṛṣṭvā, Marcis, Artem Novikov"
 first: 2013-03-13T17:53:13+03:00
 last: 2013-03-19T17:50:00+03:00
+source_url: https://groups.google.com/d/msgid/nagari/adf27f6c-bb88-405b-b058-9096c7058d40@googlegroups.com
 ---
 
 # IAST extension for SanDic
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/adf27f6c-bb88-405b-b058-9096c7058d40@googlegroups.com)
 
 > 14 сообщений · 3 участников · 2013-03-13 — 2013-03-19
 

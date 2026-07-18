@@ -6,9 +6,12 @@ messages: 1
 participants: "Marcis"
 first: 2023-09-03T02:11:51+03:00
 last: 2023-09-03T02:11:51+03:00
+source_url: https://groups.google.com/d/msgid/nagari/079b5dd9-0195-4899-9bcd-7ad26f631119n@googlegroups.com
 ---
 
 # Sanskrit and allied indological studies in Europe
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/079b5dd9-0195-4899-9bcd-7ad26f631119n@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2023-09-03 — 2023-09-03
 

@@ -6,9 +6,12 @@ messages: 1
 participants: "Yury Panikov"
 first: 2009-12-01T20:50:12+03:00
 last: 2009-12-01T20:50:12+03:00
+source_url: https://groups.google.com/d/msgid/nagari/eda698a3-e032-4905-a857-adb6f3b53742@g26g2000yqe.googlegroups.com
 ---
 
 # Co-creation: Sanskrit roots in Slavic languages dictionary via Google Wave
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/eda698a3-e032-4905-a857-adb6f3b53742@g26g2000yqe.googlegroups.com)
 
 > 1 сообщений · 1 участников · 2009-12-01 — 2009-12-01
 

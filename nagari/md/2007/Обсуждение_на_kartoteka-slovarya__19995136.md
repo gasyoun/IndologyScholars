@@ -6,9 +6,12 @@ messages: 27
 participants: "Shravan, Marcis, Worga, Peter, prpska@…"
 first: 2007-03-02T18:00:44
 last: 2007-04-04T09:26:41
+source_url: https://groups.google.com/d/msgid/nagari/1172858444.208956.280080@8g2000cwh.googlegroups.com
 ---
 
 # Обсуждение на kartoteka-slovarya
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/1172858444.208956.280080@8g2000cwh.googlegroups.com)
 
 > 27 сообщений · 5 участников · 2007-03-02 — 2007-04-04
 

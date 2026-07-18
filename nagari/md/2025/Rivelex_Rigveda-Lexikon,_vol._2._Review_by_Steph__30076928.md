@@ -6,9 +6,12 @@ messages: 1
 participants: "Mārcis"
 first: 2025-02-09T12:57:41+03:00
 last: 2025-02-09T12:57:41+03:00
+source_url: https://groups.google.com/d/msgid/nagari/3fc53f7b-6a6b-44e0-bd00-59491dc59ed8n@googlegroups.com
 ---
 
 # Rivelex: Rigveda-Lexikon, vol. 2. Review by: Stephanie W. Jamison (2017)
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/3fc53f7b-6a6b-44e0-bd00-59491dc59ed8n@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2025-02-09 — 2025-02-09
 

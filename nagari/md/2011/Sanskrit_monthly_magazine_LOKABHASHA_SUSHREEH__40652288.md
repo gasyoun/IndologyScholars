@@ -6,9 +6,12 @@ messages: 4
 participants: "subhendu rath, Vasu Srinivasan, rudraksha encyclopedia, Владимир Карицкий"
 first: 2011-08-26T12:21:47+03:00
 last: 2011-09-05T12:54:18+03:00
+source_url: https://groups.google.com/d/msgid/nagari/CAGD-iMh0ant1YHivsP4cc0qMxE%3DC3vE4DFd16PbRrM1eeaur0Q@mail.gmail.com
 ---
 
 # Sanskrit monthly magazine "LOKABHASHA SUSHREEH"
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/CAGD-iMh0ant1YHivsP4cc0qMxE%3DC3vE4DFd16PbRrM1eeaur0Q@mail.gmail.com)
 
 > 4 сообщений · 4 участников · 2011-08-26 — 2011-09-05
 

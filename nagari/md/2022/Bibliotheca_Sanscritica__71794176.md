@@ -6,9 +6,12 @@ messages: 1
 participants: "Marcis"
 first: 2022-07-11T10:03:12+03:00
 last: 2022-07-11T10:03:12+03:00
+source_url: https://groups.google.com/d/msgid/nagari/ef494fea-180f-4d44-8b7d-c69cd045c97fn@googlegroups.com
 ---
 
 # "Bibliotheca Sanscritica"
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/ef494fea-180f-4d44-8b7d-c69cd045c97fn@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2022-07-11 — 2022-07-11
 

@@ -6,9 +6,12 @@ messages: 12
 participants: "Marcis, Deshpande, Madhav, Беда, Worga, klaus"
 first: 2008-07-01T12:00:00+03:00
 last: 2008-07-20T21:32:38+03:00
+source_url: https://groups.google.com/d/msgid/nagari/75bec566-dfa1-4f9e-a032-94fe07322647@r66g2000hsg.googlegroups.com
 ---
 
 # Wanted: Wilkins / Radicals of the Sanscrita Language, 1815
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/75bec566-dfa1-4f9e-a032-94fe07322647@r66g2000hsg.googlegroups.com)
 
 > 12 сообщений · 5 участников · 2008-07-01 — 2008-07-20
 

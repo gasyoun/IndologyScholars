@@ -6,9 +6,12 @@ messages: 11
 participants: "cape verde, Yury Panikov, rudraksha encyclopedia, Arvind_Kolhatkar, Aditya B.S.A, shorey@…"
 first: 2012-07-01T16:13:50+03:00
 last: 2012-09-04T13:19:25+03:00
+source_url: https://groups.google.com/d/msgid/nagari/CAM7m0vrgEqZT0%2BuinQ%2BS-Jdv_wiYT6P8bOSxbLw8jEx%3Dq_GE0g@mail.gmail.com
 ---
 
 # a look at the false Aryan Invasion theory of India by Max Muller
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/CAM7m0vrgEqZT0%2BuinQ%2BS-Jdv_wiYT6P8bOSxbLw8jEx%3Dq_GE0g@mail.gmail.com)
 
 > 11 сообщений · 6 участников · 2012-07-01 — 2012-09-04
 

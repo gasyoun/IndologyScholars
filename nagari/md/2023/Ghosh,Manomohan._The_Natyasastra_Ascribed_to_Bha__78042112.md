@@ -6,9 +6,12 @@ messages: 1
 participants: "Marcis"
 first: 2023-06-16T17:17:49+03:00
 last: 2023-06-16T17:17:49+03:00
+source_url: https://groups.google.com/d/msgid/nagari/b27316d2-29a9-487f-9693-353595ff414an@googlegroups.com
 ---
 
 # Ghosh,Manomohan. The Natyasastra: Ascribed to Bharata-Muni
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/b27316d2-29a9-487f-9693-353595ff414an@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2023-06-16 — 2023-06-16
 

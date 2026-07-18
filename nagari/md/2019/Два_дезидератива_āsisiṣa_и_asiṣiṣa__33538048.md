@@ -6,9 +6,12 @@ messages: 2
 participants: "Светлана Гапонова, Serge A"
 first: 2019-11-23T23:30:13+03:00
 last: 2019-11-24T07:26:04+03:00
+source_url: https://groups.google.com/d/msgid/nagari/f8a47e78-e142-4486-bc1b-36a48dd4d212@googlegroups.com
 ---
 
 # Два дезидератива: āsisiṣa и asiṣiṣa
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/f8a47e78-e142-4486-bc1b-36a48dd4d212@googlegroups.com)
 
 > 2 сообщений · 2 участников · 2019-11-23 — 2019-11-24
 

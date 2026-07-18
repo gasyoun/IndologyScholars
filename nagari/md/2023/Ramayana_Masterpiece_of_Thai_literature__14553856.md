@@ -6,9 +6,12 @@ messages: 1
 participants: "Marcis"
 first: 2023-10-09T08:59:24+03:00
 last: 2023-10-09T08:59:24+03:00
+source_url: https://groups.google.com/d/msgid/nagari/fb058d0d-0f35-445b-b53c-cac2c7c74113n@googlegroups.com
 ---
 
 # Ramayana: Masterpiece of Thai literature
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/fb058d0d-0f35-445b-b53c-cac2c7c74113n@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2023-10-09 — 2023-10-09
 

@@ -6,9 +6,12 @@ messages: 2
 participants: "Marcis, Serge A"
 first: 2021-01-29T19:10:51+03:00
 last: 2021-02-02T07:17:23+03:00
+source_url: https://groups.google.com/d/msgid/nagari/f554d65c-3a5e-4628-9e71-2e43a5205eaen@googlegroups.com
 ---
 
 # Introduction to Famous Sanskrit Poets – Part 1
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/f554d65c-3a5e-4628-9e71-2e43a5205eaen@googlegroups.com)
 
 > 2 сообщений · 2 участников · 2021-01-29 — 2021-02-02
 

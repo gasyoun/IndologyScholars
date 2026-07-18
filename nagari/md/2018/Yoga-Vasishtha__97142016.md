@@ -6,9 +6,12 @@ messages: 6
 participants: "Penkoloda, Radim Navyan, prorvacilop aves"
 first: 2018-04-04T16:26:02+03:00
 last: 2018-04-06T04:27:38+03:00
+source_url: https://groups.google.com/d/msgid/nagari/03327f14-b8c1-43c5-99d7-740d07fb2e02@googlegroups.com
 ---
 
 # Yoga-Vasishtha
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/03327f14-b8c1-43c5-99d7-740d07fb2e02@googlegroups.com)
 
 > 6 сообщений · 3 участников · 2018-04-04 — 2018-04-06
 

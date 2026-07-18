@@ -6,9 +6,12 @@ messages: 1
 participants: "acharaya Kushal Kumar"
 first: 2008-09-09T11:43:41+03:00
 last: 2008-09-09T11:43:41+03:00
+source_url: https://groups.google.com/d/msgid/nagari/f10e7b81-66fc-4c9a-ab6d-527434057822@a1g2000hsb.googlegroups.com
 ---
 
 # View this page "astrology Basic"
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/f10e7b81-66fc-4c9a-ab6d-527434057822@a1g2000hsb.googlegroups.com)
 
 > 1 сообщений · 1 участников · 2008-09-09 — 2008-09-09
 

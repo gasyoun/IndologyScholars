@@ -6,9 +6,12 @@ messages: 6
 participants: "Stormwatsch, Marcis, klaus, MAX KASHIRSKY"
 first: 2010-12-02T12:53:40+03:00
 last: 2011-01-19T20:37:47+03:00
+source_url: https://groups.google.com/d/msgid/nagari/634ebaeb-ab07-4872-9843-7556a5a6b2b6@k13g2000vbq.googlegroups.com
 ---
 
 # Buddhist Hybrid Sanskrit Reader
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/634ebaeb-ab07-4872-9843-7556a5a6b2b6@k13g2000vbq.googlegroups.com)
 
 > 6 сообщений · 4 участников · 2010-12-02 — 2011-01-19
 

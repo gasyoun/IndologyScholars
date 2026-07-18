@@ -6,9 +6,12 @@ messages: 3
 participants: "Constantine, Евгений Уланский"
 first: 2024-05-03T14:34:33+03:00
 last: 2024-05-03T15:01:10+03:00
+source_url: https://groups.google.com/d/msgid/nagari/121feb07-a211-4abf-8636-9844321e3623n@googlegroups.com
 ---
 
 # bali vs balī
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/121feb07-a211-4abf-8636-9844321e3623n@googlegroups.com)
 
 > 3 сообщений · 2 участников · 2024-05-03 — 2024-05-03
 

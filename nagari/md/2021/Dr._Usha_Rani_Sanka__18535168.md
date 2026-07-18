@@ -6,9 +6,12 @@ messages: 2
 participants: "Marcis, Vd Srinivas Rao Surabhi"
 first: 2021-12-08T18:06:46+03:00
 last: 2021-12-11T06:14:44+03:00
+source_url: https://groups.google.com/d/msgid/nagari/f209f90a-2e26-447c-bb22-d06045665740n@googlegroups.com
 ---
 
 # Dr. Usha Rani Sanka
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/f209f90a-2e26-447c-bb22-d06045665740n@googlegroups.com)
 
 > 2 сообщений · 2 участников · 2021-12-08 — 2021-12-11
 

@@ -6,9 +6,12 @@ messages: 4
 participants: "cape verde, Aditya B.S.A, Yury Panikov"
 first: 2012-03-06T21:17:20+03:00
 last: 2012-03-07T16:02:03+03:00
+source_url: https://groups.google.com/d/msgid/nagari/CAM7m0vox%2BMMMObaX%2BegOvC%3DkV2EqLMn9%2Bx0Ek9KcMzt3qRpjZQ@mail.gmail.com
 ---
 
 # Russia finally overcomes US dirty tricks in India
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/CAM7m0vox%2BMMMObaX%2BegOvC%3DkV2EqLMn9%2Bx0Ek9KcMzt3qRpjZQ@mail.gmail.com)
 
 > 4 сообщений · 3 участников · 2012-03-06 — 2012-03-07
 

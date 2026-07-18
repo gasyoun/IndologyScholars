@@ -6,9 +6,12 @@ messages: 1
 participants: "!!!Latha!!! !Latha!"
 first: 2008-10-01T19:02:10+03:00
 last: 2008-10-01T19:02:10+03:00
+source_url: https://groups.google.com/d/msgid/nagari/b6de03550810010902kcfeda50lebecd848d70a7afb@mail.gmail.com
 ---
 
 # Pc Tips ..Dont Miss it
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/b6de03550810010902kcfeda50lebecd848d70a7afb@mail.gmail.com)
 
 > 1 сообщений · 1 участников · 2008-10-01 — 2008-10-01
 

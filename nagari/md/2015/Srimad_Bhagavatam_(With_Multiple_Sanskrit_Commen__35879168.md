@@ -6,9 +6,12 @@ messages: 3
 participants: "Владимир Карицкий, Radim Navyan, Mandala Pati (Владислав)"
 first: 2015-09-28T06:30:54+03:00
 last: 2015-10-20T10:58:52+03:00
+source_url: https://groups.google.com/d/msgid/nagari/1443411054.137405958@f244.i.mail.ru
 ---
 
 # Srimad Bhagavatam (With Multiple Sanskrit Commentaries) by Various Authors
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/1443411054.137405958@f244.i.mail.ru)
 
 > 3 сообщений · 3 участников · 2015-09-28 — 2015-10-20
 

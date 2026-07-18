@@ -6,9 +6,12 @@ messages: 2
 participants: "Marcis, Serge"
 first: 2008-01-20T05:37:53+03:00
 last: 2008-01-20T15:04:00+03:00
+source_url: https://groups.google.com/d/msgid/nagari/d97f7702-f86f-47ae-bc38-41790f6e8775@n20g2000hsh.googlegroups.com
 ---
 
 # Смерть rapidshare.com. Переход на depositfiles.com
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/d97f7702-f86f-47ae-bc38-41790f6e8775@n20g2000hsh.googlegroups.com)
 
 > 2 сообщений · 2 участников · 2008-01-20 — 2008-01-20
 

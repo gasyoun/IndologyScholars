@@ -6,9 +6,12 @@ messages: 9
 participants: "Marcis, Radim Navyan, Serge A"
 first: 2015-05-04T20:00:26+03:00
 last: 2015-05-04T22:42:23+03:00
+source_url: https://groups.google.com/d/msgid/nagari/6536268d-82f0-4fcd-882e-c634d74784ba@googlegroups.com
 ---
 
 # imperfektum вне грамматики датского языка
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/6536268d-82f0-4fcd-882e-c634d74784ba@googlegroups.com)
 
 > 9 сообщений · 3 участников · 2015-05-04 — 2015-05-04
 

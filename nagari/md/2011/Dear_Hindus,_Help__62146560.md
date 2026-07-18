@@ -6,9 +6,12 @@ messages: 3
 participants: "Brahman, Тихвинский Виталий Игоревич"
 first: 2011-06-17T22:17:36+03:00
 last: 2011-06-20T16:19:20+03:00
+source_url: https://groups.google.com/d/msgid/nagari/f3b9d6b0-1a48-452d-a4fb-d1ccc7736370@f2g2000yqh.googlegroups.com
 ---
 
 # Dear Hindus, Help
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/f3b9d6b0-1a48-452d-a4fb-d1ccc7736370@f2g2000yqh.googlegroups.com)
 
 > 3 сообщений · 2 участников · 2011-06-17 — 2011-06-20
 

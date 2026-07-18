@@ -6,9 +6,12 @@ messages: 14
 participants: "Владимир Шаронин, Valera, Mārcis, Alexander Myltsev, Serge A"
 first: 2023-11-30T10:59:01+03:00
 last: 2024-01-01T09:28:02+03:00
+source_url: https://groups.google.com/d/msgid/nagari/5f5662b4-f8ec-4512-a609-2b5c1e078bfen@googlegroups.com
 ---
 
 # Деванагари в системе LaTeX и Microsoft Word
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/5f5662b4-f8ec-4512-a609-2b5c1e078bfen@googlegroups.com)
 
 > 14 сообщений · 5 участников · 2023-11-30 — 2024-01-01
 

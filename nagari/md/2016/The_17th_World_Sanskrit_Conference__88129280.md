@@ -6,9 +6,12 @@ messages: 3
 participants: "Marina Savelieva, Marcis"
 first: 2016-11-08T22:30:30+03:00
 last: 2016-11-10T18:38:07+03:00
+source_url: https://groups.google.com/d/msgid/nagari/CAB4U0d2OVDgDpD1HdAKrBbZcYPBh7wYjM%2BEiQbvzQCq261BBwg@mail.gmail.com
 ---
 
 # The 17th World Sanskrit Conference
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/CAB4U0d2OVDgDpD1HdAKrBbZcYPBh7wYjM%2BEiQbvzQCq261BBwg@mail.gmail.com)
 
 > 3 сообщений · 2 участников · 2016-11-08 — 2016-11-10
 

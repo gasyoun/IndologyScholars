@@ -6,9 +6,12 @@ messages: 1
 participants: "Marcis"
 first: 2023-02-21T10:30:17+03:00
 last: 2023-02-21T10:30:17+03:00
+source_url: https://groups.google.com/d/msgid/nagari/cef91ed2-78e5-44dd-91f4-59c463600959n@googlegroups.com
 ---
 
 # Pusalker A.D. Studies in the epics and Puranas
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/cef91ed2-78e5-44dd-91f4-59c463600959n@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2023-02-21 — 2023-02-21
 

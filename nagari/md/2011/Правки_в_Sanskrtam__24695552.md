@@ -6,9 +6,12 @@ messages: 1
 participants: "Brahman"
 first: 2011-11-16T15:17:44+03:00
 last: 2011-11-16T15:17:44+03:00
+source_url: https://groups.google.com/d/msgid/nagari/4b3c1bcb-1ac0-4a9d-8dd7-80d3b149faa7@x7g2000yqb.googlegroups.com
 ---
 
 # Правки в Sanskrtam
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/4b3c1bcb-1ac0-4a9d-8dd7-80d3b149faa7@x7g2000yqb.googlegroups.com)
 
 > 1 сообщений · 1 участников · 2011-11-16 — 2011-11-16
 

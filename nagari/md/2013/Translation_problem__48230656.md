@@ -6,9 +6,12 @@ messages: 4
 participants: "narayan prasad, Marcis, Stormwatsch"
 first: 2013-03-25T12:49:49+03:00
 last: 2013-03-25T20:17:34+03:00
+source_url: https://groups.google.com/d/msgid/nagari/CAKmACTmti9eypoWR%2Bm8SuFGDUxoLmhGKGOEkUEOinp5L1Tn7pg@mail.gmail.com
 ---
 
 # Translation problem
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/CAKmACTmti9eypoWR%2Bm8SuFGDUxoLmhGKGOEkUEOinp5L1Tn7pg@mail.gmail.com)
 
 > 4 сообщений · 3 участников · 2013-03-25 — 2013-03-25
 

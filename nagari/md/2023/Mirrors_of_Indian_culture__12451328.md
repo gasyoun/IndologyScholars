@@ -6,9 +6,12 @@ messages: 1
 participants: "Marcis"
 first: 2023-09-18T08:29:03+03:00
 last: 2023-09-18T08:29:03+03:00
+source_url: https://groups.google.com/d/msgid/nagari/225d01a4-701c-4a28-9701-5418a2dc33cbn@googlegroups.com
 ---
 
 # Mirrors of Indian culture
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/225d01a4-701c-4a28-9701-5418a2dc33cbn@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2023-09-18 — 2023-09-18
 

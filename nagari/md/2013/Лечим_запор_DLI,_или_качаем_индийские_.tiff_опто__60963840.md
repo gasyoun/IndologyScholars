@@ -6,9 +6,12 @@ messages: 1
 participants: "Marcis"
 first: 2013-08-03T16:35:16+03:00
 last: 2013-08-03T16:35:16+03:00
+source_url: https://groups.google.com/d/msgid/nagari/52794c71-89f1-42a8-ace5-fbc3ab1aa3d8@googlegroups.com
 ---
 
 # Лечим запор DLI, или качаем индийские .tiff оптом
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/52794c71-89f1-42a8-ace5-fbc3ab1aa3d8@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2013-08-03 — 2013-08-03
 

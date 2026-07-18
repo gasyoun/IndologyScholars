@@ -6,9 +6,12 @@ messages: 3
 participants: "Indian Books Centre"
 first: 2007-05-05T05:57:19+03:00
 last: 2007-05-05T05:57:33+03:00
+source_url: https://groups.google.com/d/msgid/nagari/00fa01c78ec1%2440885fa0%240201a8c0@PC2
 ---
 
 # Books on Ayurveda , Tibetan, Unani & Alternative Medicine (New Releases)
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/00fa01c78ec1%2440885fa0%240201a8c0@PC2)
 
 > 3 сообщений · 1 участников · 2007-05-05 — 2007-05-05
 

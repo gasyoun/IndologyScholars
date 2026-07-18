@@ -6,9 +6,12 @@ messages: 5
 participants: "Penkoloda, Dmitri, Arvind_Kolhatkar, prorvacilop aves"
 first: 2015-04-23T14:17:23+03:00
 last: 2015-04-24T00:20:00+03:00
+source_url: https://groups.google.com/d/msgid/nagari/c8ac174a-de98-4d17-bf9e-7cfc5c07c7cb@googlegroups.com
 ---
 
 # Yoga-Vasishtha
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/c8ac174a-de98-4d17-bf9e-7cfc5c07c7cb@googlegroups.com)
 
 > 5 сообщений · 4 участников · 2015-04-23 — 2015-04-24
 

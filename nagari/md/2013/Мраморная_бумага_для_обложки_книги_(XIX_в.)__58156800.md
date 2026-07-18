@@ -6,9 +6,12 @@ messages: 2
 participants: "Marcis, Stormwatsch"
 first: 2013-03-12T20:46:40+03:00
 last: 2013-03-12T21:25:08+03:00
+source_url: https://groups.google.com/d/msgid/nagari/7d6d08b4-3c85-4589-b1df-a82330fb06c9@googlegroups.com
 ---
 
 # Мраморная бумага для обложки книги (XIX в.)
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/7d6d08b4-3c85-4589-b1df-a82330fb06c9@googlegroups.com)
 
 > 2 сообщений · 2 участников · 2013-03-12 — 2013-03-12
 

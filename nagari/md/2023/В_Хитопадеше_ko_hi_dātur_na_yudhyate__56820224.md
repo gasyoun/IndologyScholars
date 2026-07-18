@@ -6,9 +6,12 @@ messages: 2
 participants: "Марина Захарова, Евгений Уланский"
 first: 2023-06-08T00:26:12+03:00
 last: 2023-06-08T11:08:29+03:00
+source_url: https://groups.google.com/d/msgid/nagari/a40b07ce-1938-45c8-a669-3fe1eebdb608n@googlegroups.com
 ---
 
 # В Хитопадеше ko hi dātur na yudhyate
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/a40b07ce-1938-45c8-a669-3fe1eebdb608n@googlegroups.com)
 
 > 2 сообщений · 2 участников · 2023-06-08 — 2023-06-08
 

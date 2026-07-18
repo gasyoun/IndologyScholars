@@ -6,9 +6,12 @@ messages: 3
 participants: "Marcis, Deshpande, Madhav, Mavi"
 first: 2008-06-24T09:25:08+03:00
 last: 2008-06-25T09:39:19+03:00
+source_url: https://groups.google.com/d/msgid/nagari/cb54c7a1-e288-4b51-a533-ef9270090de2@d77g2000hsb.googlegroups.com
 ---
 
 # Wanted: JAOS, 1955 (M.B. Emeneau)
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/cb54c7a1-e288-4b51-a533-ef9270090de2@d77g2000hsb.googlegroups.com)
 
 > 3 сообщений · 3 участников · 2008-06-24 — 2008-06-25
 

@@ -6,9 +6,12 @@ messages: 2
 participants: "Marcis, mahabala bhatta"
 first: 2013-02-20T22:07:36+03:00
 last: 2013-07-18T05:36:35+03:00
+source_url: https://groups.google.com/d/msgid/nagari/b4bc4fb1-4b3e-4def-b667-2add2b9f2c0e@googlegroups.com
 ---
 
 # port on the Sanskrit Text Archive (D. Wujastyk 1988)
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/b4bc4fb1-4b3e-4def-b667-2add2b9f2c0e@googlegroups.com)
 
 > 2 сообщений · 2 участников · 2013-02-20 — 2013-07-18
 

@@ -6,9 +6,12 @@ messages: 1
 participants: "Mārcis"
 first: 2024-03-20T19:27:17+03:00
 last: 2024-03-20T19:27:17+03:00
+source_url: https://groups.google.com/d/msgid/nagari/64d9abc9-5ae5-4f3f-9785-5163f920114bn@googlegroups.com
 ---
 
 # Benveniste, Emile / Vrtra et vroragna: Etude de mythologie indo-iranienne
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/64d9abc9-5ae5-4f3f-9785-5163f920114bn@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2024-03-20 — 2024-03-20
 

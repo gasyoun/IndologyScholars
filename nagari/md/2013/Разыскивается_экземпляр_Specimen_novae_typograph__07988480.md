@@ -6,9 +6,12 @@ messages: 1
 participants: "Marcis"
 first: 2013-03-08T17:08:40+03:00
 last: 2013-03-08T17:08:40+03:00
+source_url: https://groups.google.com/d/msgid/nagari/0d76875d-60a9-415f-b660-c0208a0a2ecf@googlegroups.com
 ---
 
 # Разыскивается экземпляр Specimen novae typographiae Indicae (1821 г.)
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/0d76875d-60a9-415f-b660-c0208a0a2ecf@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2013-03-08 — 2013-03-08
 

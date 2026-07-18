@@ -6,9 +6,12 @@ messages: 3
 participants: "Marcis"
 first: 2007-09-20T14:27:57
 last: 2007-09-30T17:39:45
+source_url: https://groups.google.com/d/msgid/nagari/1190298477.652292.230320@57g2000hsv.googlegroups.com
 ---
 
 # Non-Sanskrit Indian Music mp3 Collection
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/1190298477.652292.230320@57g2000hsv.googlegroups.com)
 
 > 3 сообщений · 1 участников · 2007-09-20 — 2007-09-30
 

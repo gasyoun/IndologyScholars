@@ -6,9 +6,12 @@ messages: 12
 participants: "Mārcis, Konstantin Ivanov, Constantine, Serge A, tvitaly1"
 first: 2024-10-06T19:20:48+03:00
 last: 2024-10-15T21:44:27+03:00
+source_url: https://groups.google.com/d/msgid/nagari/ed130a06-9385-488a-a10e-8020b4cab855n@googlegroups.com
 ---
 
 # Режим упрощенного поиска на Кельне: brahman vs. brāhmaṇa
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/ed130a06-9385-488a-a10e-8020b4cab855n@googlegroups.com)
 
 > 12 сообщений · 5 участников · 2024-10-06 — 2024-10-15
 

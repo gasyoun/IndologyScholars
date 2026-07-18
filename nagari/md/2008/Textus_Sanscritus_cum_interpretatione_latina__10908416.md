@@ -6,9 +6,12 @@ messages: 8
 participants: "Duri, Rodrigo Diaz, Marcis, klaus, adiere"
 first: 2008-08-11T13:46:22+03:00
 last: 2008-09-15T15:33:15+03:00
+source_url: https://groups.google.com/d/msgid/nagari/16960a41-6a50-4895-8748-53b34e106bfa@m36g2000hse.googlegroups.com
 ---
 
 # Textus Sanscritus cum interpretatione latina
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/16960a41-6a50-4895-8748-53b34e106bfa@m36g2000hse.googlegroups.com)
 
 > 8 сообщений · 5 участников · 2008-08-11 — 2008-09-15
 

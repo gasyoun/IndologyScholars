@@ -6,9 +6,12 @@ messages: 3
 participants: "Ashot Hambartsumyan, Mārcis Gasūns"
 first: 2026-06-26T07:33:55+03:00
 last: 2026-06-28T21:52:56+03:00
+source_url: https://groups.google.com/d/msgid/nagari/1335466641.2216375.1782448435994@mail.yahoo.com
 ---
 
 # MW sanskrit-lexicon.uni-koeln.de не работает корректно
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/1335466641.2216375.1782448435994@mail.yahoo.com)
 
 > 3 сообщений · 2 участников · 2026-06-26 — 2026-06-28
 

@@ -6,9 +6,12 @@ messages: 15
 participants: "Marcis, klaus, Serge"
 first: 2007-03-18T08:14:13
 last: 2007-03-25T10:30:13+03:00
+source_url: https://groups.google.com/d/msgid/nagari/1174205653.587340.253160@d57g2000hsg.googlegroups.com
 ---
 
 # Обсуждение на ru-sa-dictionary
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/1174205653.587340.253160@d57g2000hsg.googlegroups.com)
 
 > 15 сообщений · 3 участников · 2007-03-18 — 2007-03-25
 

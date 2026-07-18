@@ -6,9 +6,12 @@ messages: 2
 participants: "Vikas Murarka, ли ла"
 first: 2020-07-22T19:14:25+03:00
 last: 2020-07-23T01:32:02+03:00
+source_url: https://groups.google.com/d/msgid/nagari/fad75810-c412-4590-82d5-23fae81514e4n@googlegroups.com
 ---
 
 # New Member
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/fad75810-c412-4590-82d5-23fae81514e4n@googlegroups.com)
 
 > 2 сообщений · 2 участников · 2020-07-22 — 2020-07-23
 

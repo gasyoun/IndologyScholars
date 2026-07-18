@@ -6,9 +6,12 @@ messages: 1
 participants: "Arvind_Kolhatkar"
 first: 2015-03-28T01:38:42+03:00
 last: 2015-03-28T01:38:42+03:00
+source_url: https://groups.google.com/d/msgid/nagari/c2e3622d-28ab-4f76-bef4-762a2c1f4cec@googlegroups.com
 ---
 
 # вриттадарпаНа - वृत्तदर्पण - Mirror of Sanskrit Meters
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/c2e3622d-28ab-4f76-bef4-762a2c1f4cec@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2015-03-28 — 2015-03-28
 

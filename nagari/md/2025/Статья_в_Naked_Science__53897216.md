@@ -6,9 +6,12 @@ messages: 2
 participants: "menestrul, Владимир Карицкий"
 first: 2025-03-09T02:33:20+03:00
 last: 2025-03-09T06:28:25+03:00
+source_url: https://groups.google.com/d/msgid/nagari/e1983e49-0a9c-4af1-a731-d3795ff2a691n@googlegroups.com
 ---
 
 # Статья в Naked Science
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/e1983e49-0a9c-4af1-a731-d3795ff2a691n@googlegroups.com)
 
 > 2 сообщений · 2 участников · 2025-03-09 — 2025-03-09
 

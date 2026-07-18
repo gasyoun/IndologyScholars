@@ -6,9 +6,12 @@ messages: 1
 participants: "Mārcis"
 first: 2025-02-07T12:43:10+03:00
 last: 2025-02-07T12:43:10+03:00
+source_url: https://groups.google.com/d/msgid/nagari/cfa123e0-5732-413f-ac79-32418b613cf1n@googlegroups.com
 ---
 
 # A Higher Sanskrit Grammar by M. R. Kale (7-е изд.)
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/cfa123e0-5732-413f-ac79-32418b613cf1n@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2025-02-07 — 2025-02-07
 

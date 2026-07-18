@@ -6,9 +6,12 @@ messages: 18
 participants: "danstender, Marcis, Sct, Madhav M. Deshpande, Serge"
 first: 2007-06-04T16:46:36+03:00
 last: 2007-06-26T18:27:27
+source_url: https://groups.google.com/d/msgid/nagari/1180964796.060583.299270@p77g2000hsh.googlegroups.com
 ---
 
 # Neue Indologica @ Rapidshare
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/1180964796.060583.299270@p77g2000hsh.googlegroups.com)
 
 > 18 сообщений · 5 участников · 2007-06-04 — 2007-06-26
 

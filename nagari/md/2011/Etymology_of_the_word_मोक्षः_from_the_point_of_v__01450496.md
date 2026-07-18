@@ -6,9 +6,12 @@ messages: 1
 participants: "Worga"
 first: 2011-01-19T15:48:52+03:00
 last: 2011-01-19T15:48:52+03:00
+source_url: https://groups.google.com/d/msgid/nagari/e497a83b-fc9a-48a5-8bc8-af815d926bfc@s5g2000yqm.googlegroups.com
 ---
 
 # Etymology of the word मोक्षः from the point of view of Panini Grammar
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/e497a83b-fc9a-48a5-8bc8-af815d926bfc@s5g2000yqm.googlegroups.com)
 
 > 1 сообщений · 1 участников · 2011-01-19 — 2011-01-19
 

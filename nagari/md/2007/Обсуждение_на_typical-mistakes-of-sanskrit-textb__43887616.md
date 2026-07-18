@@ -6,9 +6,12 @@ messages: 3
 participants: "gasyoun@…, Wrd"
 first: 2007-02-23T17:54:32
 last: 2007-02-23T21:38:36+03:00
+source_url: https://groups.google.com/d/msgid/nagari/1172253272.017524.91740@a75g2000cwd.googlegroups.com
 ---
 
 # Обсуждение на typical-mistakes-of-sanskrit-textbooks
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/1172253272.017524.91740@a75g2000cwd.googlegroups.com)
 
 > 3 сообщений · 2 участников · 2007-02-23 — 2007-02-23
 

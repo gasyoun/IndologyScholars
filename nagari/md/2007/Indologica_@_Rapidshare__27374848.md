@@ -6,9 +6,12 @@ messages: 6
 participants: "danstender, Marcis"
 first: 2007-05-07T13:19:50+03:00
 last: 2007-06-19T21:42:15+03:00
+source_url: https://groups.google.com/d/msgid/nagari/1178533190.570267.42670@h2g2000hsg.googlegroups.com
 ---
 
 # Indologica @ Rapidshare
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/1178533190.570267.42670@h2g2000hsg.googlegroups.com)
 
 > 6 сообщений · 2 участников · 2007-05-07 — 2007-06-19
 

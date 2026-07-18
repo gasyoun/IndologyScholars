@@ -6,9 +6,12 @@ messages: 35
 participants: "gasyoun@…, Wrd, Marcis, Peter, sujanasi, Worga, Sct, honorius, Sudhir K. Mishra, narayan prasad"
 first: 2007-02-23T03:53:28
 last: 2007-03-12T12:17:45+03:00
+source_url: https://groups.google.com/d/msgid/nagari/1172202808.807793.103540@v33g2000cwv.googlegroups.com
 ---
 
 # Просмотреть эту страницу "List of Sanskrit Books. Список книг по санск
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/1172202808.807793.103540@v33g2000cwv.googlegroups.com)
 
 > 35 сообщений · 10 участников · 2007-02-23 — 2007-03-12
 

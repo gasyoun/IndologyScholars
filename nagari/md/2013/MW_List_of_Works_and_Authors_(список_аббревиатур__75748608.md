@@ -6,9 +6,12 @@ messages: 1
 participants: "Marcis"
 first: 2013-11-15T22:40:09+03:00
 last: 2013-11-15T22:40:09+03:00
+source_url: https://groups.google.com/d/msgid/nagari/362c936a-661c-4230-896c-20ab6bbab77d@googlegroups.com
 ---
 
 # MW List of Works and Authors (список аббревиатур MW)
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/362c936a-661c-4230-896c-20ab6bbab77d@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2013-11-15 — 2013-11-15
 

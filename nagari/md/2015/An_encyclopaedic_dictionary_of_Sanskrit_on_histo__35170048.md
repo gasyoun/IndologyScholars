@@ -6,9 +6,12 @@ messages: 13
 participants: "Mandala Pati (Владислав), Marcis, doc, narayan prasad, Владимир Карицкий"
 first: 2015-01-28T22:09:20+03:00
 last: 2015-01-29T13:08:02+03:00
+source_url: https://groups.google.com/d/msgid/nagari/e3982e50-116a-4c61-98d4-e9d0f8096ec8@googlegroups.com
 ---
 
 # An encyclopaedic dictionary of Sanskrit on historical principles (set of 10 Volumes)
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/e3982e50-116a-4c61-98d4-e9d0f8096ec8@googlegroups.com)
 
 > 13 сообщений · 5 участников · 2015-01-28 — 2015-01-29
 

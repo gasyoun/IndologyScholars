@@ -6,9 +6,12 @@ messages: 14
 participants: "Mandala Pati (Владислав), Radim Navyan, Serge A, Тихвинский Виталий Игоревич, Marcis, Владимир Карицкий, Narayan Prasad"
 first: 2016-09-22T20:14:23+03:00
 last: 2016-10-08T20:00:45+03:00
+source_url: https://groups.google.com/d/msgid/nagari/0b8d0064-c6d3-4d8a-ae06-b40c2610f2fa@googlegroups.com
 ---
 
 # Ищу перевод произведения (Looking for translation of the work)
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/0b8d0064-c6d3-4d8a-ae06-b40c2610f2fa@googlegroups.com)
 
 > 14 сообщений · 7 участников · 2016-09-22 — 2016-10-08
 

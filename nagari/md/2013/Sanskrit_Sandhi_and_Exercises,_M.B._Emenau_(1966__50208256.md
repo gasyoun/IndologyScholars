@@ -6,9 +6,12 @@ messages: 3
 participants: "Marcis, focusonjoy"
 first: 2013-03-03T13:24:57+03:00
 last: 2013-05-10T21:14:50+03:00
+source_url: https://groups.google.com/d/msgid/nagari/49523267-d176-4d81-b550-643b573ebd9d@googlegroups.com
 ---
 
 # Sanskrit Sandhi and Exercises, M.B. Emenau (1966)
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/49523267-d176-4d81-b550-643b573ebd9d@googlegroups.com)
 
 > 3 сообщений · 2 участников · 2013-03-03 — 2013-05-10
 

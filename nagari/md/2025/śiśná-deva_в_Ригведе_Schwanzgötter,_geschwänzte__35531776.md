@@ -6,9 +6,12 @@ messages: 3
 participants: "Mārcis, Serge A, Владимир Карицкий"
 first: 2025-01-01T17:38:28+03:00
 last: 2025-01-05T05:16:12+03:00
+source_url: https://groups.google.com/d/msgid/nagari/ff83e096-e572-49ce-81d4-e200c8bdf3cfn@googlegroups.com
 ---
 
 # śiśná-deva в Ригведе Schwanzgötter, geschwänzte Dämonen
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/ff83e096-e572-49ce-81d4-e200c8bdf3cfn@googlegroups.com)
 
 > 3 сообщений · 3 участников · 2025-01-01 — 2025-01-05
 

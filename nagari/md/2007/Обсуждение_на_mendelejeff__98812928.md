@@ -6,9 +6,12 @@ messages: 1
 participants: "Дядя"
 first: 2007-03-24T10:39:00+03:00
 last: 2007-03-24T10:39:00+03:00
+source_url: https://groups.google.com/d/msgid/nagari/1174721940.914419.300970@p15g2000hsd.googlegroups.com
 ---
 
 # Обсуждение на mendelejeff
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/1174721940.914419.300970@p15g2000hsd.googlegroups.com)
 
 > 1 сообщений · 1 участников · 2007-03-24 — 2007-03-24
 

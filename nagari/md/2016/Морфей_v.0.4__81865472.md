@@ -6,9 +6,12 @@ messages: 8
 participants: "Michael Bykov, Radim Navyan, Marcis, Mandala Pati (Владислав)"
 first: 2016-09-27T17:01:46+03:00
 last: 2016-09-30T17:01:18+03:00
+source_url: https://groups.google.com/d/msgid/nagari/CAN5SjAABn6UMTfJ-%3DrZwyc6d0HVtEpp%3DYb8cLTW-aNxYKv38VQ@mail.gmail.com
 ---
 
 # Морфей v.0.4
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/CAN5SjAABn6UMTfJ-%3DrZwyc6d0HVtEpp%3DYb8cLTW-aNxYKv38VQ@mail.gmail.com)
 
 > 8 сообщений · 4 участников · 2016-09-27 — 2016-09-30
 

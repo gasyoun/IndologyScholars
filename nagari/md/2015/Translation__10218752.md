@@ -6,9 +6,12 @@ messages: 17
 participants: "Tori Remondelli, Kartik K, Marcis, Владимир Карицкий, Serge A, Dmitri"
 first: 2015-02-10T05:43:59+03:00
 last: 2015-02-11T00:08:54+03:00
+source_url: https://groups.google.com/d/msgid/nagari/301c4740-70c4-46f1-a354-e8cfb95be4f9@googlegroups.com
 ---
 
 # Translation
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/301c4740-70c4-46f1-a354-e8cfb95be4f9@googlegroups.com)
 
 > 17 сообщений · 6 участников · 2015-02-10 — 2015-02-11
 

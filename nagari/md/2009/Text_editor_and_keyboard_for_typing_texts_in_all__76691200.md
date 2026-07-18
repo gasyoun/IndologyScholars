@@ -6,9 +6,12 @@ messages: 45
 participants: "Worga, Сачков Сергей, klaus, Лев Титлин, vladimir, Stormwatsch, sworga@…, doc"
 first: 2009-10-25T15:31:40+03:00
 last: 2010-01-17T23:59:58+03:00
+source_url: https://groups.google.com/d/msgid/nagari/1e01d571-751b-4866-9219-708bd5c994c2@r36g2000vbn.googlegroups.com
 ---
 
 # Text editor and keyboard for typing texts in all possible combinations of Indic scripts
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/1e01d571-751b-4866-9219-708bd5c994c2@r36g2000vbn.googlegroups.com)
 
 > 45 сообщений · 8 участников · 2009-10-25 — 2010-01-17
 

@@ -6,9 +6,12 @@ messages: 9
 participants: "Mihail Bayaryn, Stormwatsch, narayan prasad, Worga, Marcis"
 first: 2011-04-07T00:46:23+03:00
 last: 2011-04-14T15:30:59+03:00
+source_url: https://groups.google.com/d/msgid/nagari/26945222.997.1302126383903.JavaMail.geo-discussion-forums@yqkq14
 ---
 
 # шрифт Siddhanta
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/26945222.997.1302126383903.JavaMail.geo-discussion-forums@yqkq14)
 
 > 9 сообщений · 5 участников · 2011-04-07 — 2011-04-14
 

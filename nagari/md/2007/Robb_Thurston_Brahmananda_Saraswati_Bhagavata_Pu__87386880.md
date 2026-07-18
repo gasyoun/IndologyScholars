@@ -6,9 +6,12 @@ messages: 1
 participants: "robb7thurston"
 first: 2007-03-10T23:04:37+03:00
 last: 2007-03-10T23:04:37+03:00
+source_url: https://groups.google.com/d/msgid/nagari/1173557077.552998.315590@j27g2000cwj.googlegroups.com
 ---
 
 # Robb Thurston: Brahmananda Saraswati: Bhagavata Purana
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/1173557077.552998.315590@j27g2000cwj.googlegroups.com)
 
 > 1 сообщений · 1 участников · 2007-03-10 — 2007-03-10
 

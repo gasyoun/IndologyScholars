@@ -6,9 +6,12 @@ messages: 9
 participants: "Gérard Huet, Chetan Pandey, Puneet Madaan, kalindi dd kalindi dd, Serge, chod, Anton Bezumtsev, Marcis"
 first: 2007-06-07T01:14:02+03:00
 last: 2008-07-17T12:27:35+03:00
+source_url: https://groups.google.com/d/msgid/nagari/3BAD30E9-BE7F-41B7-80DB-407C6556C1C8@inria.fr
 ---
 
 # Sanskrit Computational Linguistics Symposium - last call for communications.
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/3BAD30E9-BE7F-41B7-80DB-407C6556C1C8@inria.fr)
 
 > 9 сообщений · 8 участников · 2007-06-07 — 2008-07-17
 

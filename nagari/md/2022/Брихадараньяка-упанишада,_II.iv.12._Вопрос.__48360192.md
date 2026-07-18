@@ -6,9 +6,12 @@ messages: 7
 participants: "Вячеслав Чеботаряну, Serge A, Marcis"
 first: 2022-09-17T16:07:29+03:00
 last: 2022-09-19T19:51:10+03:00
+source_url: https://groups.google.com/d/msgid/nagari/7451c26b-83e0-4379-96df-7078b9883a38n@googlegroups.com
 ---
 
 # Брихадараньяка-упанишада, II.iv.12. Вопрос.
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/7451c26b-83e0-4379-96df-7078b9883a38n@googlegroups.com)
 
 > 7 сообщений · 3 участников · 2022-09-17 — 2022-09-19
 

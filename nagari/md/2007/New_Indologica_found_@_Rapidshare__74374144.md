@@ -6,9 +6,12 @@ messages: 1
 participants: "Daniel Stender"
 first: 2007-08-24T22:15:55+03:00
 last: 2007-08-24T22:15:55+03:00
+source_url: https://groups.google.com/d/msgid/nagari/46CF2E6B.3020707@uni-bonn.de
 ---
 
 # New Indologica found @ Rapidshare
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/46CF2E6B.3020707@uni-bonn.de)
 
 > 1 сообщений · 1 участников · 2007-08-24 — 2007-08-24
 

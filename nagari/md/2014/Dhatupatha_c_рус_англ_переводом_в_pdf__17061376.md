@@ -6,9 +6,12 @@ messages: 14
 participants: "Yury Panikov, Marcis, Mandala Pati (Владислав), ShaSa, Dmitri"
 first: 2014-01-12T20:52:54+03:00
 last: 2014-01-20T03:02:08+03:00
+source_url: https://groups.google.com/d/msgid/nagari/cb29d86f-9fb7-4b32-bba5-a522f27f6202@googlegroups.com
 ---
 
 # Dhatupatha c рус/англ переводом в pdf
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/cb29d86f-9fb7-4b32-bba5-a522f27f6202@googlegroups.com)
 
 > 14 сообщений · 5 участников · 2014-01-12 — 2014-01-20
 

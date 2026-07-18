@@ -6,9 +6,12 @@ messages: 3
 participants: "ли ла, Serge A"
 first: 2025-05-13T18:35:51+03:00
 last: 2025-05-19T14:11:28+03:00
+source_url: https://groups.google.com/d/msgid/nagari/914080ea-b619-4061-9a0e-4e8629b30b9fn@googlegroups.com
 ---
 
 # Можно ли ещё как перевести nṛpébhyaḥ тут : nṛpébhyaḥ āhārám pacāmaḥ ?
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/914080ea-b619-4061-9a0e-4e8629b30b9fn@googlegroups.com)
 
 > 3 сообщений · 2 участников · 2025-05-13 — 2025-05-19
 

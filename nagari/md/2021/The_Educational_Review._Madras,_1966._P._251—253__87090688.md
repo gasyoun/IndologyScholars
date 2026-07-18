@@ -6,9 +6,12 @@ messages: 1
 participants: "Вячеслав Чеботаряну"
 first: 2021-11-23T16:24:04+03:00
 last: 2021-11-23T16:24:04+03:00
+source_url: https://groups.google.com/d/msgid/nagari/290a8e4a-9d3c-4112-8929-bc4339d130afn@googlegroups.com
 ---
 
 # The Educational Review. Madras, 1966. P. 251—253
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/290a8e4a-9d3c-4112-8929-bc4339d130afn@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2021-11-23 — 2021-11-23
 

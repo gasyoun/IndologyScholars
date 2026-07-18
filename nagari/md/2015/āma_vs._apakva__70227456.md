@@ -6,9 +6,12 @@ messages: 4
 participants: "Dmitri, Radim Navyan, ShaSa"
 first: 2015-06-29T17:30:25+03:00
 last: 2015-06-30T18:38:55+03:00
+source_url: https://groups.google.com/d/msgid/nagari/a39b9775-f4dd-47ed-89e7-ed9e93a8782e@googlegroups.com
 ---
 
 # āma vs. apakva
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/a39b9775-f4dd-47ed-89e7-ed9e93a8782e@googlegroups.com)
 
 > 4 сообщений · 3 участников · 2015-06-29 — 2015-06-30
 

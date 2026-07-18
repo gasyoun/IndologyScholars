@@ -6,9 +6,12 @@ messages: 2
 participants: "Marcis, Serge A"
 first: 2022-05-12T13:25:06+03:00
 last: 2022-05-12T16:03:39+03:00
+source_url: https://groups.google.com/d/msgid/nagari/142d7f13-ef92-404d-ae18-4c1e44002068n@googlegroups.com
 ---
 
 # Санскрит добавлен в Google Translate
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/142d7f13-ef92-404d-ae18-4c1e44002068n@googlegroups.com)
 
 > 2 сообщений · 2 участников · 2022-05-12 — 2022-05-12
 

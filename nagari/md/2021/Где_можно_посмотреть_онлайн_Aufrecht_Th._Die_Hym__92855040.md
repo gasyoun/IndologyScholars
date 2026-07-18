@@ -6,9 +6,12 @@ messages: 7
 participants: "tvitaly1, Ashot Hambartsumyan, Marcis"
 first: 2021-01-03T14:23:53+03:00
 last: 2021-01-31T11:56:25+03:00
+source_url: https://groups.google.com/d/msgid/nagari/060bafe6-6aba-4544-9a6c-197ace94a3f5n@googlegroups.com
 ---
 
 # Где можно посмотреть онлайн Aufrecht Th. Die Hymnen des Rigveda. З. Auflage. Berlin, 1955.
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/060bafe6-6aba-4544-9a6c-197ace94a3f5n@googlegroups.com)
 
 > 7 сообщений · 3 участников · 2021-01-03 — 2021-01-31
 

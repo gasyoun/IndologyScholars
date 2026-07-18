@@ -6,9 +6,12 @@ messages: 16
 participants: "klaus, vladimir, sergey_108, Marcis Gasuns"
 first: 2009-03-28T19:12:20+03:00
 last: 2009-04-21T09:15:11+03:00
+source_url: https://groups.google.com/d/msgid/nagari/754a3939-b6df-4af6-9bb2-5d82a6146a04@z14g2000yqa.googlegroups.com
 ---
 
 # Обсуждение на indische-spruche-word-by-word
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/754a3939-b6df-4af6-9bb2-5d82a6146a04@z14g2000yqa.googlegroups.com)
 
 > 16 сообщений · 4 участников · 2009-03-28 — 2009-04-21
 

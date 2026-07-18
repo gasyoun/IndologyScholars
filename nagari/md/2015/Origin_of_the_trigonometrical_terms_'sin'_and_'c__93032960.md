@@ -6,9 +6,12 @@ messages: 2
 participants: "Arvind_Kolhatkar, Marcis"
 first: 2015-04-15T19:07:36+03:00
 last: 2015-04-15T23:38:00+03:00
+source_url: https://groups.google.com/d/msgid/nagari/760f82c2-cfa1-4ab8-984a-0eb85a17c2f7@googlegroups.com
 ---
 
 # Origin of the trigonometrical terms 'sin' and 'cos' in AryabhaTIya.
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/760f82c2-cfa1-4ab8-984a-0eb85a17c2f7@googlegroups.com)
 
 > 2 сообщений · 2 участников · 2015-04-15 — 2015-04-15
 

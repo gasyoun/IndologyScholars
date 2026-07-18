@@ -6,9 +6,12 @@ messages: 15
 participants: "narayan prasad, Worga, Marcis, Simurg Gamayun, Kostya Slobodyanik, Vasu Srinivasan, Serge"
 first: 2007-04-30T20:01:08+03:00
 last: 2007-05-03T21:46:46+03:00
+source_url: https://groups.google.com/d/msgid/nagari/630330570704301001l43d5ccf2m31ad5bbf2c03b142@mail.gmail.com
 ---
 
 # V.S. Apte Dictionary
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/630330570704301001l43d5ccf2m31ad5bbf2c03b142@mail.gmail.com)
 
 > 15 сообщений · 7 участников · 2007-04-30 — 2007-05-03
 

@@ -6,9 +6,12 @@ messages: 1
 participants: "Marcis"
 first: 2013-02-20T22:14:15+03:00
 last: 2013-02-20T22:14:15+03:00
+source_url: https://groups.google.com/d/msgid/nagari/34c03bd3-7fd4-4397-bc3b-22d9ac54557e@googlegroups.com
 ---
 
 # Интересно про Encyclopaedic Dictionary of Sanskrit on Historical Principles
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/34c03bd3-7fd4-4397-bc3b-22d9ac54557e@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2013-02-20 — 2013-02-20
 

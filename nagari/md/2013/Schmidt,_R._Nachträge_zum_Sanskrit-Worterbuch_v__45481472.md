@@ -6,9 +6,12 @@ messages: 1
 participants: "Marcis"
 first: 2013-06-21T00:33:23+03:00
 last: 2013-06-21T00:33:23+03:00
+source_url: https://groups.google.com/d/msgid/nagari/bed96e01-6768-41d6-ad2e-be6c901ebfaf@googlegroups.com
 ---
 
 # Schmidt, R.: Nachträge zum Sanskrit-Worterbuch von O. Bohtlingk (в поисках Book Review, 1930)
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/bed96e01-6768-41d6-ad2e-be6c901ebfaf@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2013-06-21 — 2013-06-21
 

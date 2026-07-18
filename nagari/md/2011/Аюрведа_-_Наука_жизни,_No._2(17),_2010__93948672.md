@@ -6,9 +6,12 @@ messages: 1
 participants: "Worga"
 first: 2011-02-13T04:46:22+03:00
 last: 2011-02-13T04:46:22+03:00
+source_url: https://groups.google.com/d/msgid/nagari/7487275f-8e29-4081-b1ff-002547b3cac1@o8g2000vbq.googlegroups.com
 ---
 
 # Аюрведа - Наука жизни, No. 2(17), 2010
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/7487275f-8e29-4081-b1ff-002547b3cac1@o8g2000vbq.googlegroups.com)
 
 > 1 сообщений · 1 участников · 2011-02-13 — 2011-02-13
 

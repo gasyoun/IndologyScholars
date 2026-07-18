@@ -6,9 +6,12 @@ messages: 2
 participants: "Георгий Х."
 first: 2026-03-14T09:53:38+03:00
 last: 2026-03-14T12:14:42+03:00
+source_url: https://groups.google.com/d/msgid/nagari/e50f4e45-fda9-4fb8-ae41-0122bf3c0fben@googlegroups.com
 ---
 
 # Как точно переводится фраза kāmasya vaśam eyivān?
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/e50f4e45-fda9-4fb8-ae41-0122bf3c0fben@googlegroups.com)
 
 > 2 сообщений · 1 участников · 2026-03-14 — 2026-03-14
 

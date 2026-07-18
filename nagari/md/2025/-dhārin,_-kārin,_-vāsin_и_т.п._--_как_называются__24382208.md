@@ -6,9 +6,12 @@ messages: 2
 participants: "Георгий Х., Serge A"
 first: 2025-01-17T01:59:30+03:00
 last: 2025-01-18T01:11:07+03:00
+source_url: https://groups.google.com/d/msgid/nagari/f5c0b867-c89f-43d2-b7ea-74e84aacd706n@googlegroups.com
 ---
 
 # -dhārin, -kārin, -vāsin и т.п. -- как называются?
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/f5c0b867-c89f-43d2-b7ea-74e84aacd706n@googlegroups.com)
 
 > 2 сообщений · 2 участников · 2025-01-17 — 2025-01-18
 

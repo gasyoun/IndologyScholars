@@ -6,9 +6,12 @@ messages: 8
 participants: "Dmitri, Serge A"
 first: 2012-03-21T02:41:05+03:00
 last: 2012-03-22T07:30:45+03:00
+source_url: https://groups.google.com/d/msgid/nagari/18379197.1429.1332286865072.JavaMail.geo-discussion-forums@ynjc20
 ---
 
 # RV 1.70
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/18379197.1429.1332286865072.JavaMail.geo-discussion-forums@ynjc20)
 
 > 8 сообщений · 2 участников · 2012-03-21 — 2012-03-22
 

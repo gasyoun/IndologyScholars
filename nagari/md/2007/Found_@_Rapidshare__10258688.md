@@ -6,9 +6,12 @@ messages: 8
 participants: "Marcis, danstender, Worga"
 first: 2007-04-15T14:47:48
 last: 2007-06-14T19:36:41
+source_url: https://groups.google.com/d/msgid/nagari/1176648468.996462.211160@y80g2000hsf.googlegroups.com
 ---
 
 # Found @ Rapidshare
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/1176648468.996462.211160@y80g2000hsf.googlegroups.com)
 
 > 8 сообщений · 3 участников · 2007-04-15 — 2007-06-14
 

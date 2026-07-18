@@ -6,9 +6,12 @@ messages: 1
 participants: "Marcis"
 first: 2008-03-04T07:51:40+03:00
 last: 2008-03-04T07:51:40+03:00
+source_url: https://groups.google.com/d/msgid/nagari/a8869d53-a84a-48f6-9b10-709ae9d32588@u72g2000hsf.googlegroups.com
 ---
 
 # Zur Geschichte des Sanskrit-Woerterbuchs, 1876
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/a8869d53-a84a-48f6-9b10-709ae9d32588@u72g2000hsf.googlegroups.com)
 
 > 1 сообщений · 1 участников · 2008-03-04 — 2008-03-04
 

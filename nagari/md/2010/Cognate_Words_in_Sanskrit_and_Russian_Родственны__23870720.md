@@ -6,9 +6,12 @@ messages: 31
 participants: "Stormwatsch, Simurg Gamayun, Vasu Srinivasan, Worga, TM Центр, Владимир Романовский, sworga@…, MAX KASHIRSKY, Haron, Marcis"
 first: 2010-10-13T04:48:55+03:00
 last: 2010-11-23T13:06:54+03:00
+source_url: https://groups.google.com/d/msgid/nagari/b4f391cb-32cb-4af9-9c15-22eba03c5f72@f25g2000yqc.googlegroups.com
 ---
 
 # Cognate Words in Sanskrit and Russian | Родственные слова в санскрите и русском
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/b4f391cb-32cb-4af9-9c15-22eba03c5f72@f25g2000yqc.googlegroups.com)
 
 > 31 сообщений · 10 участников · 2010-10-13 — 2010-11-23
 

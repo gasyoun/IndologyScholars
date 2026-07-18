@@ -6,9 +6,12 @@ messages: 3
 participants: "Marcis, अ क"
 first: 2021-12-27T11:56:09+03:00
 last: 2022-02-12T12:48:15+03:00
+source_url: https://groups.google.com/d/msgid/nagari/93dffc3a-c6e1-49fd-80a7-91d2687bcc3dn@googlegroups.com
 ---
 
 # Серия плакатов к серии книг «Bibliotheca Sanscritica»
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/93dffc3a-c6e1-49fd-80a7-91d2687bcc3dn@googlegroups.com)
 
 > 3 сообщений · 2 участников · 2021-12-27 — 2022-02-12
 

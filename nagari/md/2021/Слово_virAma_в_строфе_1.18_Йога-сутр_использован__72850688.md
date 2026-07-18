@@ -6,9 +6,12 @@ messages: 5
 participants: "Vasyl Ve, Constantine I., Serge A"
 first: 2021-09-28T12:30:57+03:00
 last: 2021-09-28T18:15:50+03:00
+source_url: https://groups.google.com/d/msgid/nagari/348c9b20-efb6-46b3-96f9-e457902bb0ecn@googlegroups.com
 ---
 
 # Слово virAma в строфе 1.18 Йога-сутр использовано в единственном числе?
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/348c9b20-efb6-46b3-96f9-e457902bb0ecn@googlegroups.com)
 
 > 5 сообщений · 3 участников · 2021-09-28 — 2021-09-28
 

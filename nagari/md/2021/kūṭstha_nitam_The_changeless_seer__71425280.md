@@ -6,9 +6,12 @@ messages: 4
 participants: "Marcis, Serge A"
 first: 2021-01-19T20:10:37+03:00
 last: 2021-01-21T01:09:14+03:00
+source_url: https://groups.google.com/d/msgid/nagari/ad38e738-b28a-4ccc-b404-87d1989ec0f6n@googlegroups.com
 ---
 
 # kūṭstha nitam The changeless seer
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/ad38e738-b28a-4ccc-b404-87d1989ec0f6n@googlegroups.com)
 
 > 4 сообщений · 2 участников · 2021-01-19 — 2021-01-21
 

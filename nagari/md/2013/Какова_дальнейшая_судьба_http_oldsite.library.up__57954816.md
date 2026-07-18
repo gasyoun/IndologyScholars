@@ -6,9 +6,12 @@ messages: 5
 participants: "Brahman, Marcis, Serge A"
 first: 2013-06-18T22:36:45+03:00
 last: 2013-07-10T08:28:51+03:00
+source_url: https://groups.google.com/d/msgid/nagari/69334633-6ea1-4b24-ae56-1e8ef33b4013@googlegroups.com
 ---
 
 # Какова дальнейшая судьба http://oldsite.library.upenn.edu ?
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/69334633-6ea1-4b24-ae56-1e8ef33b4013@googlegroups.com)
 
 > 5 сообщений · 3 участников · 2013-06-18 — 2013-07-10
 

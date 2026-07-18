@@ -6,9 +6,12 @@ messages: 1
 participants: "Alex"
 first: 2009-06-23T16:26:28+03:00
 last: 2009-06-23T16:26:28+03:00
+source_url: https://groups.google.com/d/msgid/nagari/d0c6e766-032b-455a-b7a4-3c37018a385e@e21g2000yqb.googlegroups.com
 ---
 
 # New indological website
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/d0c6e766-032b-455a-b7a4-3c37018a385e@e21g2000yqb.googlegroups.com)
 
 > 1 сообщений · 1 участников · 2009-06-23 — 2009-06-23
 

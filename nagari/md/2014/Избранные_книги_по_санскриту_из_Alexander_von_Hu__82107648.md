@@ -6,9 +6,12 @@ messages: 1
 participants: "Marcis"
 first: 2014-12-03T17:01:36+03:00
 last: 2014-12-03T17:01:36+03:00
+source_url: https://groups.google.com/d/msgid/nagari/39629c93-d0f0-4ad7-b2a2-ea907b2b08c6@googlegroups.com
 ---
 
 # Избранные книги по санскриту из Alexander von Humboldts Bibliothek
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/39629c93-d0f0-4ad7-b2a2-ea907b2b08c6@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2014-12-03 — 2014-12-03
 

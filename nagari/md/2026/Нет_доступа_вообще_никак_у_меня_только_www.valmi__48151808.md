@@ -6,9 +6,12 @@ messages: 3
 participants: "ли ла, Mārcis Gasūns, Serge A"
 first: 2026-06-08T23:53:18+03:00
 last: 2026-06-10T13:42:14+03:00
+source_url: https://groups.google.com/d/msgid/nagari/d7103c28-64d0-47c3-a325-cff5ff17db97n@googlegroups.com
 ---
 
 # Нет доступа вообще никак у меня только ? www.valmiki.iitk.ac.in
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/d7103c28-64d0-47c3-a325-cff5ff17db97n@googlegroups.com)
 
 > 3 сообщений · 3 участников · 2026-06-08 — 2026-06-10
 

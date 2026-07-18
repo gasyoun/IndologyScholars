@@ -6,9 +6,12 @@ messages: 2
 participants: "Marcis, Oleg Puzyreff"
 first: 2020-08-20T21:21:27+03:00
 last: 2020-08-20T22:03:23+03:00
+source_url: https://groups.google.com/d/msgid/nagari/92917c15-c4fb-4088-98b2-3939c3b74551n@googlegroups.com
 ---
 
 # Уход Mehendale
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/92917c15-c4fb-4088-98b2-3939c3b74551n@googlegroups.com)
 
 > 2 сообщений · 2 участников · 2020-08-20 — 2020-08-20
 

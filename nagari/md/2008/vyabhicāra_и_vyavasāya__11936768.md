@@ -6,9 +6,12 @@ messages: 5
 participants: "sergey_108, Marcis, Worga, Irina Kotik"
 first: 2008-07-19T08:53:18+03:00
 last: 2008-08-03T17:34:42+03:00
+source_url: https://groups.google.com/d/msgid/nagari/afc633f4-c087-4ad5-8ad9-1d60312d2c64@e53g2000hsa.googlegroups.com
 ---
 
 # vyabhicāra и vyavasāya
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/afc633f4-c087-4ad5-8ad9-1d60312d2c64@e53g2000hsa.googlegroups.com)
 
 > 5 сообщений · 4 участников · 2008-07-19 — 2008-08-03
 

@@ -6,9 +6,12 @@ messages: 3
 participants: "vladimir, Momir Nikic"
 first: 2009-01-03T11:04:39+03:00
 last: 2009-01-04T14:50:02+03:00
+source_url: https://groups.google.com/d/msgid/nagari/691a1213-9491-4f63-bc70-a6cac23561d5@r10g2000prf.googlegroups.com
 ---
 
 # Обсуждение на zaliznyak-sanskrit
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/691a1213-9491-4f63-bc70-a6cac23561d5@r10g2000prf.googlegroups.com)
 
 > 3 сообщений · 2 участников · 2009-01-03 — 2009-01-04
 

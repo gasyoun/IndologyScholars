@@ -6,9 +6,12 @@ messages: 1
 participants: "Marcis"
 first: 2013-02-05T22:47:47+03:00
 last: 2013-02-05T22:47:47+03:00
+source_url: https://groups.google.com/d/msgid/nagari/9c213d2e-a16e-4bff-95ef-10cbb488b71d@googlegroups.com
 ---
 
 # Walter Slaje: Schlüssel zu den Übungsstücken (Wichtrach 1986)
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/9c213d2e-a16e-4bff-95ef-10cbb488b71d@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2013-02-05 — 2013-02-05
 

@@ -6,9 +6,12 @@ messages: 4
 participants: "yajvan, Vasu Srinivasan, N.S. VenkataNarasimha"
 first: 2008-11-11T14:01:53+03:00
 last: 2009-01-12T21:30:12+03:00
+source_url: https://groups.google.com/d/msgid/nagari/106437f3-e832-469d-a595-f48dfbc143fc@z28g2000prd.googlegroups.com
 ---
 
 # Pronounciation of the word brAhmaNa
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/106437f3-e832-469d-a595-f48dfbc143fc@z28g2000prd.googlegroups.com)
 
 > 4 сообщений · 3 участников · 2008-11-11 — 2009-01-12
 

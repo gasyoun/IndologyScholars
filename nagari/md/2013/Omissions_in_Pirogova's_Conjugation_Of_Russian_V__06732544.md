@@ -6,9 +6,12 @@ messages: 1
 participants: "narayan prasad"
 first: 2013-02-16T14:02:56+03:00
 last: 2013-02-16T14:02:56+03:00
+source_url: https://groups.google.com/d/msgid/nagari/CAKmACTmzOR9cY8DRXoB16nWMGhU8Zsvo_tNcUbttHNp0Dmfo_Q@mail.gmail.com
 ---
 
 # Omissions in Pirogova's "Conjugation Of Russian Verbs" (1988)
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/CAKmACTmzOR9cY8DRXoB16nWMGhU8Zsvo_tNcUbttHNp0Dmfo_Q@mail.gmail.com)
 
 > 1 сообщений · 1 участников · 2013-02-16 — 2013-02-16
 

@@ -6,9 +6,12 @@ messages: 4
 participants: "Иван Малютин, treff, Natālija Burišina"
 first: 2025-04-11T03:36:20+03:00
 last: 2025-06-27T16:17:56+03:00
+source_url: https://groups.google.com/d/msgid/nagari/CAFg%2BCAhVX4JjmyM25D3d%3DZ9Ai9vP1BFtu8K3gOF0seb-3RoTuA@mail.gmail.com
 ---
 
 # Pāli reader
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/CAFg%2BCAhVX4JjmyM25D3d%3DZ9Ai9vP1BFtu8K3gOF0seb-3RoTuA@mail.gmail.com)
 
 > 4 сообщений · 3 участников · 2025-04-11 — 2025-06-27
 

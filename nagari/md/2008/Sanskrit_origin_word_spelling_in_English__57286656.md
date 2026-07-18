@@ -6,9 +6,12 @@ messages: 4
 participants: "Marcis, Serge"
 first: 2008-01-22T12:01:15+03:00
 last: 2008-01-25T10:16:33+03:00
+source_url: https://groups.google.com/d/msgid/nagari/249dcadd-edb7-4d04-9c85-80989d02a587@q39g2000hsf.googlegroups.com
 ---
 
 # Sanskrit origin word spelling in English
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/249dcadd-edb7-4d04-9c85-80989d02a587@q39g2000hsf.googlegroups.com)
 
 > 4 сообщений · 2 участников · 2008-01-22 — 2008-01-25
 

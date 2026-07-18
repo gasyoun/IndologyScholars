@@ -6,9 +6,12 @@ messages: 3
 participants: "Георгий Х., Serge A, Евгений Уланский"
 first: 2025-01-03T13:52:33+03:00
 last: 2025-01-03T16:13:56+03:00
+source_url: https://groups.google.com/d/msgid/nagari/5184ce70-b3a1-48a1-8fe7-4863ce5fb5efn@googlegroups.com
 ---
 
 # Самаса prāptakālam
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/5184ce70-b3a1-48a1-8fe7-4863ce5fb5efn@googlegroups.com)
 
 > 3 сообщений · 3 участников · 2025-01-03 — 2025-01-03
 

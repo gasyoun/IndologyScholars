@@ -6,9 +6,12 @@ messages: 3
 participants: "Георгий Х., Serge A"
 first: 2026-04-16T23:52:17+03:00
 last: 2026-04-22T14:25:06+03:00
+source_url: https://groups.google.com/d/msgid/nagari/7591b433-3916-48be-b3fd-07863d123929n@googlegroups.com
 ---
 
 # Непонятнки с синтаксисом (MBh.3.61.3)
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/7591b433-3916-48be-b3fd-07863d123929n@googlegroups.com)
 
 > 3 сообщений · 2 участников · 2026-04-16 — 2026-04-22
 

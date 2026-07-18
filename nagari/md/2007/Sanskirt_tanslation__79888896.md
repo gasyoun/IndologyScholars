@@ -6,9 +6,12 @@ messages: 3
 participants: "Marcis, allstarnash@…, Kartik Khandwala"
 first: 2007-09-14T19:47:28
 last: 2007-09-15T00:54:54+03:00
+source_url: https://groups.google.com/d/msgid/nagari/1189799248.712739.223970@19g2000hsx.googlegroups.com
 ---
 
 # Sanskirt tanslation
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/1189799248.712739.223970@19g2000hsx.googlegroups.com)
 
 > 3 сообщений · 3 участников · 2007-09-14 — 2007-09-15
 

@@ -6,9 +6,12 @@ messages: 1
 participants: "Duri"
 first: 2009-09-26T01:06:30+03:00
 last: 2009-09-26T01:06:30+03:00
+source_url: https://groups.google.com/d/msgid/nagari/e66913cf-e63a-4dce-bf24-b729326f049d@p9g2000vbl.googlegroups.com
 ---
 
 # Sanskrit and XML
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/e66913cf-e63a-4dce-bf24-b729326f049d@p9g2000vbl.googlegroups.com)
 
 > 1 сообщений · 1 участников · 2009-09-26 — 2009-09-26
 

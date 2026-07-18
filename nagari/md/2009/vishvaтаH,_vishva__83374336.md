@@ -6,9 +6,12 @@ messages: 3
 participants: "Brahman, vladimir"
 first: 2009-10-15T11:41:56+03:00
 last: 2009-10-17T14:06:35+03:00
+source_url: https://groups.google.com/d/msgid/nagari/e9e997fa-34f8-4493-9db0-49fcae80c349@a32g2000yqm.googlegroups.com
 ---
 
 # vishvaтаH, vishva
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/e9e997fa-34f8-4493-9db0-49fcae80c349@a32g2000yqm.googlegroups.com)
 
 > 3 сообщений · 2 участников · 2009-10-15 — 2009-10-17
 

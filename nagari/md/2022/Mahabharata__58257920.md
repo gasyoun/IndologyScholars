@@ -6,9 +6,12 @@ messages: 7
 participants: "Darius Sruoginis, Maxim Efremov, Natālija Burišina, Marcis"
 first: 2022-01-05T21:34:21+03:00
 last: 2022-01-07T11:26:27+03:00
+source_url: https://groups.google.com/d/msgid/nagari/feb9d91a-0cbc-4f18-9059-56c72e67c68cn@googlegroups.com
 ---
 
 # Mahabharata
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/feb9d91a-0cbc-4f18-9059-56c72e67c68cn@googlegroups.com)
 
 > 7 сообщений · 4 участников · 2022-01-05 — 2022-01-07
 

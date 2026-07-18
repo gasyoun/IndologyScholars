@@ -6,9 +6,12 @@ messages: 3
 participants: "Marcis, Mandala Pati (Владислав)"
 first: 2015-07-20T16:55:41+03:00
 last: 2015-07-29T18:15:15+03:00
+source_url: https://groups.google.com/d/msgid/nagari/0dc7c334-e5a1-42b9-8141-e2b084e56a6a@googlegroups.com
 ---
 
 # Шрифт Gaura Times
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/0dc7c334-e5a1-42b9-8141-e2b084e56a6a@googlegroups.com)
 
 > 3 сообщений · 2 участников · 2015-07-20 — 2015-07-29
 

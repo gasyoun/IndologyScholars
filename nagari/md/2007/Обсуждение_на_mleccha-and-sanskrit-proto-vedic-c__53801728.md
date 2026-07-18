@@ -6,9 +6,12 @@ messages: 1
 participants: "Marcis"
 first: 2007-03-10T21:39:09
 last: 2007-03-10T21:39:09
+source_url: https://groups.google.com/d/msgid/nagari/1173562749.072418.141960@n33g2000cwc.googlegroups.com
 ---
 
 # Обсуждение на mleccha-and-sanskrit-proto-vedic-continuum
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/1173562749.072418.141960@n33g2000cwc.googlegroups.com)
 
 > 1 сообщений · 1 участников · 2007-03-10 — 2007-03-10
 

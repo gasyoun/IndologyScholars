@@ -6,9 +6,12 @@ messages: 2
 participants: "Marcis, Агафья Винокурова"
 first: 2023-10-13T10:55:17+03:00
 last: 2023-10-18T14:48:26+03:00
+source_url: https://groups.google.com/d/msgid/nagari/4331c671-663e-40c4-94c0-6e926981a85fn@googlegroups.com
 ---
 
 # A comparative grammar of the Sanscrit, Zend, Greek, Latin, Lithuanian, Gothic, German, and Sclavonic languages
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/4331c671-663e-40c4-94c0-6e926981a85fn@googlegroups.com)
 
 > 2 сообщений · 2 участников · 2023-10-13 — 2023-10-18
 

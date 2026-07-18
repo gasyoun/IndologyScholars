@@ -6,9 +6,12 @@ messages: 10
 participants: "Alex Kruckov, Владимир Карицкий, Serge A, Marcis"
 first: 2020-05-19T17:43:34+03:00
 last: 2020-05-30T12:04:04+03:00
+source_url: https://groups.google.com/d/msgid/nagari/4f0ecc87-3659-452f-a1a2-72777d434a6d@googlegroups.com
 ---
 
 # saa atmaatatvamasi सा अत्मातत्वमसि Chandogya Upanishad VI.8.7 - правильное прочтение?
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/4f0ecc87-3659-452f-a1a2-72777d434a6d@googlegroups.com)
 
 > 10 сообщений · 4 участников · 2020-05-19 — 2020-05-30
 

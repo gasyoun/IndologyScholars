@@ -6,9 +6,12 @@ messages: 4
 participants: "Даяна Батырова, Serge A, Люблю Копать"
 first: 2019-02-20T20:42:15+03:00
 last: 2019-02-21T20:53:59+03:00
+source_url: https://groups.google.com/d/msgid/nagari/a15e07ef-7e44-4bca-8b2d-7acd5aee8786@googlegroups.com
 ---
 
 # незнакомая лигатура из Nag Publishers
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/a15e07ef-7e44-4bca-8b2d-7acd5aee8786@googlegroups.com)
 
 > 4 сообщений · 3 участников · 2019-02-20 — 2019-02-21
 

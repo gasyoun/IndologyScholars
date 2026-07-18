@@ -6,9 +6,12 @@ messages: 21
 participants: "Penkoloda, Тихвинский Виталий Игоревич, Serge A, prorvacilop aves, narayan prasad, Marcis"
 first: 2014-11-19T07:37:16+03:00
 last: 2014-12-14T06:06:13+03:00
+source_url: https://groups.google.com/d/msgid/nagari/9c90dec5-d296-45a1-9d95-8c434641ef25@googlegroups.com
 ---
 
 # Yoga-Vasishtha
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/9c90dec5-d296-45a1-9d95-8c434641ef25@googlegroups.com)
 
 > 21 сообщений · 6 участников · 2014-11-19 — 2014-12-14
 

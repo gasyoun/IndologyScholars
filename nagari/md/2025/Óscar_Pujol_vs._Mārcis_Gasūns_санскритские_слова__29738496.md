@@ -6,9 +6,12 @@ messages: 1
 participants: "Mārcis"
 first: 2025-02-24T09:49:55+03:00
 last: 2025-02-24T09:49:55+03:00
+source_url: https://groups.google.com/d/msgid/nagari/723e812e-42dc-44b1-8993-e0ea3019a4f7n@googlegroups.com
 ---
 
 # Óscar Pujol vs. Mārcis Gasūns: санскритские словари
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/723e812e-42dc-44b1-8993-e0ea3019a4f7n@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2025-02-24 — 2025-02-24
 

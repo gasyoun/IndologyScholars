@@ -6,9 +6,12 @@ messages: 4
 participants: "narayan prasad, Sergey Lobanov"
 first: 2013-03-24T15:01:51+03:00
 last: 2013-03-24T15:52:06+03:00
+source_url: https://groups.google.com/d/msgid/nagari/CAKmACTnEab3X0Rumf6PUk308PBTCSLK0D4VPbzJs%3DxgbZr0zfQ@mail.gmail.com
 ---
 
 # Meaning of Russian word "розог"
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/CAKmACTnEab3X0Rumf6PUk308PBTCSLK0D4VPbzJs%3DxgbZr0zfQ@mail.gmail.com)
 
 > 4 сообщений · 2 участников · 2013-03-24 — 2013-03-24
 

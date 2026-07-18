@@ -6,9 +6,12 @@ messages: 1
 participants: "Alexander Myltsev"
 first: 2025-03-05T17:30:13+03:00
 last: 2025-03-05T17:30:13+03:00
+source_url: https://groups.google.com/d/msgid/nagari/6bfef96a-29f5-4af8-bfc3-fb1506a034f9n@googlegroups.com
 ---
 
 # Аудио с правильным произношением prāṇāyāmamantrāḥ
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/6bfef96a-29f5-4af8-bfc3-fb1506a034f9n@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2025-03-05 — 2025-03-05
 

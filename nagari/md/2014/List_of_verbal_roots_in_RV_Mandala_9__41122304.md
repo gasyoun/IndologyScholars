@@ -6,9 +6,12 @@ messages: 3
 participants: "Dmitri, Marcis"
 first: 2014-02-28T22:38:14+03:00
 last: 2014-03-04T22:52:21+03:00
+source_url: https://groups.google.com/d/msgid/nagari/f12e2c7f-e176-4c16-897b-98c5136b59c1@googlegroups.com
 ---
 
 # List of verbal roots in RV Mandala 9
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/f12e2c7f-e176-4c16-897b-98c5136b59c1@googlegroups.com)
 
 > 3 сообщений · 2 участников · 2014-02-28 — 2014-03-04
 

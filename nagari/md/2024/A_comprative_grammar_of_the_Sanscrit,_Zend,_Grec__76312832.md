@@ -6,9 +6,12 @@ messages: 1
 participants: "Mārcis"
 first: 2024-04-07T20:06:21+03:00
 last: 2024-04-07T20:06:21+03:00
+source_url: https://groups.google.com/d/msgid/nagari/d4880cdb-475d-4a00-a0bc-c3736ffeedefn@googlegroups.com
 ---
 
 # A comprative grammar of the Sanscrit, Zend, Greck, Latin, Lithuanian, Gothic, German, and Sclavonic languages
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/d4880cdb-475d-4a00-a0bc-c3736ffeedefn@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2024-04-07 — 2024-04-07
 

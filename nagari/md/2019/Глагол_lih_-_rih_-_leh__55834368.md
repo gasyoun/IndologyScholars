@@ -6,9 +6,12 @@ messages: 2
 participants: "Konstantin I."
 first: 2019-08-14T20:05:54+03:00
 last: 2019-08-14T20:44:58+03:00
+source_url: https://groups.google.com/d/msgid/nagari/cb2c8b1b-6f52-4509-ba19-28f3ac78d5f8@googlegroups.com
 ---
 
 # Глагол lih - rih - leh
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/cb2c8b1b-6f52-4509-ba19-28f3ac78d5f8@googlegroups.com)
 
 > 2 сообщений · 1 участников · 2019-08-14 — 2019-08-14
 

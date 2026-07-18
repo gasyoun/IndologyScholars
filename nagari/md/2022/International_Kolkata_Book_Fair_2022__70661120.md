@@ -6,9 +6,12 @@ messages: 1
 participants: "Marcis"
 first: 2022-03-05T21:35:27+03:00
 last: 2022-03-05T21:35:27+03:00
+source_url: https://groups.google.com/d/msgid/nagari/6693f7bd-682b-4086-98b7-84c4f8f9d6c5n@googlegroups.com
 ---
 
 # International Kolkata Book Fair 2022
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/6693f7bd-682b-4086-98b7-84c4f8f9d6c5n@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2022-03-05 — 2022-03-05
 

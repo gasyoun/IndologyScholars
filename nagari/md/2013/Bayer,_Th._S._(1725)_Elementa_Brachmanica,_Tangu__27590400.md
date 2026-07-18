@@ -6,9 +6,12 @@ messages: 2
 participants: "Marcis, narayan prasad"
 first: 2013-06-29T20:32:17+03:00
 last: 2013-06-30T08:47:32+03:00
+source_url: https://groups.google.com/d/msgid/nagari/3aa5b196-5cac-4c8e-99c2-54e896255dab@googlegroups.com
 ---
 
 # Bayer, Th. S. (1725) Elementa Brachmanica, Tangutana et Mungalica
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/3aa5b196-5cac-4c8e-99c2-54e896255dab@googlegroups.com)
 
 > 2 сообщений · 2 участников · 2013-06-29 — 2013-06-30
 

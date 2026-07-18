@@ -6,9 +6,12 @@ messages: 1
 participants: "Владимир Карицкий"
 first: 2018-04-15T12:01:59+03:00
 last: 2018-04-15T12:01:59+03:00
+source_url: https://groups.google.com/d/msgid/nagari/1523782919.803456034@f386.i.mail.ru
 ---
 
 # nagari - Google Groups: сообщения, ожидающие передачи [{IOGEr6_22LSNVioCeXcwB2HUngipgWOF0}]
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/1523782919.803456034@f386.i.mail.ru)
 
 > 1 сообщений · 1 участников · 2018-04-15 — 2018-04-15
 

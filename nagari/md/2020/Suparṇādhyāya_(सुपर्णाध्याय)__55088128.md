@@ -6,9 +6,12 @@ messages: 3
 participants: "Анна Пахомова, Владимир Карицкий, Annet Whatever"
 first: 2020-06-22T20:11:38+03:00
 last: 2020-06-28T18:10:29+03:00
+source_url: https://groups.google.com/d/msgid/nagari/bca2ad62-fe5b-45ad-9f76-8d93ca2bf7e0o@googlegroups.com
 ---
 
 # Suparṇādhyāya (सुपर्णाध्याय)
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/bca2ad62-fe5b-45ad-9f76-8d93ca2bf7e0o@googlegroups.com)
 
 > 3 сообщений · 3 участников · 2020-06-22 — 2020-06-28
 

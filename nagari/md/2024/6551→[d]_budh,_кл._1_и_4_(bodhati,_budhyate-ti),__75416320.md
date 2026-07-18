@@ -6,9 +6,12 @@ messages: 3
 participants: "Mārcis, Serge A, Anatoliy Artemenko"
 first: 2024-07-23T15:29:19+03:00
 last: 2024-07-26T12:26:56+03:00
+source_url: https://groups.google.com/d/msgid/nagari/ebba5aee-92d4-4425-9444-54ec6f6e8315n@googlegroups.com
 ---
 
 # 6551→[d] budh, кл. 1 и 4 (bodhati, budhyate-ti), 1) обращать на что л, вниманіе (В.)
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/ebba5aee-92d4-4425-9444-54ec6f6e8315n@googlegroups.com)
 
 > 3 сообщений · 3 участников · 2024-07-23 — 2024-07-26
 

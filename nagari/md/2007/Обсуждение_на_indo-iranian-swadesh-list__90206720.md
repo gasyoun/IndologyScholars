@@ -6,9 +6,12 @@ messages: 1
 participants: "klaus"
 first: 2007-04-02T13:09:12+03:00
 last: 2007-04-02T13:09:12+03:00
+source_url: https://groups.google.com/d/msgid/nagari/1175508552.403116.181640@b75g2000hsg.googlegroups.com
 ---
 
 # Обсуждение на indo-iranian-swadesh-list
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/1175508552.403116.181640@b75g2000hsg.googlegroups.com)
 
 > 1 сообщений · 1 участников · 2007-04-02 — 2007-04-02
 

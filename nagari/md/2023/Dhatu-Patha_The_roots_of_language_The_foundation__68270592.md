@@ -6,9 +6,12 @@ messages: 4
 participants: "Marcis, Narayan Prasad"
 first: 2023-06-13T11:31:36+03:00
 last: 2023-06-14T14:03:18+03:00
+source_url: https://groups.google.com/d/msgid/nagari/c1e659e1-9cf8-486e-ae60-5807baf7744cn@googlegroups.com
 ---
 
 # Dhatu-Patha: The roots of language: The foundations of the Indo-European verbal system
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/c1e659e1-9cf8-486e-ae60-5807baf7744cn@googlegroups.com)
 
 > 4 сообщений · 2 участников · 2023-06-13 — 2023-06-14
 

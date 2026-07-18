@@ -6,9 +6,12 @@ messages: 10
 participants: "Narayan Prasad, Евгений Уланский, Владимир Карицкий, Thamizharasan Desikan"
 first: 2019-11-10T20:29:46+03:00
 last: 2019-11-15T09:21:36+03:00
+source_url: https://groups.google.com/d/msgid/nagari/CAKmACTkhJuo4v1740jDCCZEqsznBUHzb_mj2jSLPOERg79j3pg@mail.gmail.com
 ---
 
 # Learning Panini in Stages (for Adults only)
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/CAKmACTkhJuo4v1740jDCCZEqsznBUHzb_mj2jSLPOERg79j3pg@mail.gmail.com)
 
 > 10 сообщений · 4 участников · 2019-11-10 — 2019-11-15
 

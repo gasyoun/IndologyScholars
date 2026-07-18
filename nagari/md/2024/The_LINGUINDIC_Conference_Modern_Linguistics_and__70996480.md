@@ -6,9 +6,12 @@ messages: 1
 participants: "Mārcis"
 first: 2024-11-06T14:46:41+03:00
 last: 2024-11-06T14:46:41+03:00
+source_url: https://groups.google.com/d/msgid/nagari/d53b7b62-0d5a-42a0-9477-fc6785a62669n@googlegroups.com
 ---
 
 # "The LINGUINDIC Conference: Modern Linguistics and Ancient India"
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/d53b7b62-0d5a-42a0-9477-fc6785a62669n@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2024-11-06 — 2024-11-06
 

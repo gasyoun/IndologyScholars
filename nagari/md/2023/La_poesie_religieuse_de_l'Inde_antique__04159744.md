@@ -6,9 +6,12 @@ messages: 1
 participants: "Marcis"
 first: 2023-08-21T14:08:21+03:00
 last: 2023-08-21T14:08:21+03:00
+source_url: https://groups.google.com/d/msgid/nagari/ddb2a3a5-b920-40b4-8da8-af5318672077n@googlegroups.com
 ---
 
 # La poesie religieuse de l'Inde antique
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/ddb2a3a5-b920-40b4-8da8-af5318672077n@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2023-08-21 — 2023-08-21
 

@@ -6,9 +6,12 @@ messages: 1
 participants: "Mārcis"
 first: 2025-02-09T12:21:26+03:00
 last: 2025-02-09T12:21:26+03:00
+source_url: https://groups.google.com/d/msgid/nagari/bb7f4c74-0b73-4fef-88ef-e70d430a469en@googlegroups.com
 ---
 
 # A New Dictionary of the Rigveda 2008
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/bb7f4c74-0b73-4fef-88ef-e70d430a469en@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2025-02-09 — 2025-02-09
 

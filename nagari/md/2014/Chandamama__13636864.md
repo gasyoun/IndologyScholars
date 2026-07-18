@@ -6,9 +6,12 @@ messages: 4
 participants: "ShaSa, Marcis"
 first: 2014-02-06T10:41:57+03:00
 last: 2014-02-06T13:48:16+03:00
+source_url: https://groups.google.com/d/msgid/nagari/18625978-04cb-4470-847e-3972bd3591a5@googlegroups.com
 ---
 
 # Chandamama
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/18625978-04cb-4470-847e-3972bd3591a5@googlegroups.com)
 
 > 4 сообщений · 2 участников · 2014-02-06 — 2014-02-06
 

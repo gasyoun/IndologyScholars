@@ -6,9 +6,12 @@ messages: 14
 participants: "Marcis, klaus, narayan prasad"
 first: 2007-03-18T08:20:38
 last: 2007-04-09T11:59:31+03:00
+source_url: https://groups.google.com/d/msgid/nagari/1174206038.586302.194080@y80g2000hsf.googlegroups.com
 ---
 
 # Обсуждение на renou-histoire-1956
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/1174206038.586302.194080@y80g2000hsf.googlegroups.com)
 
 > 14 сообщений · 3 участников · 2007-03-18 — 2007-04-09
 

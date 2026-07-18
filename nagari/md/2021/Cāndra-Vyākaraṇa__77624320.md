@@ -6,9 +6,12 @@ messages: 3
 participants: "Marcis, Selfish Man, Dr.h.c. Kalantarova Olena"
 first: 2021-07-01T00:05:24+03:00
 last: 2021-07-01T10:00:27+03:00
+source_url: https://groups.google.com/d/msgid/nagari/55533ea2-6fa9-412c-a87e-27a30d6830bfn@googlegroups.com
 ---
 
 # Cāndra-Vyākaraṇa
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/55533ea2-6fa9-412c-a87e-27a30d6830bfn@googlegroups.com)
 
 > 3 сообщений · 3 участников · 2021-07-01 — 2021-07-01
 

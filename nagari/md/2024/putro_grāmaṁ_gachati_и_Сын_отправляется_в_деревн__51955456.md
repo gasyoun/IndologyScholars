@@ -6,9 +6,12 @@ messages: 4
 participants: "Mārcis, Иван Малютин, Serge A"
 first: 2024-11-09T19:02:32+03:00
 last: 2024-11-10T19:18:47+03:00
+source_url: https://groups.google.com/d/msgid/nagari/c4384037-3757-4fdf-b680-72c1fc8d319bn@googlegroups.com
 ---
 
 # putro grāmaṁ gachati и "Сын отправляется в деревню, чтобы провести исследование" у Мистраля
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/c4384037-3757-4fdf-b680-72c1fc8d319bn@googlegroups.com)
 
 > 4 сообщений · 3 участников · 2024-11-09 — 2024-11-10
 

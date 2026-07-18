@@ -6,9 +6,12 @@ messages: 5
 participants: "Роман Клепиков, Евгений Уланский"
 first: 2021-11-16T12:32:37+03:00
 last: 2021-11-17T10:46:04+03:00
+source_url: https://groups.google.com/d/msgid/nagari/61b9c9bd-fa46-41d3-ae42-231c4bd4e5f6n@googlegroups.com
 ---
 
 # ā в ojas (Махабхарата VI. 23. 6)
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/61b9c9bd-fa46-41d3-ae42-231c4bd4e5f6n@googlegroups.com)
 
 > 5 сообщений · 2 участников · 2021-11-16 — 2021-11-17
 

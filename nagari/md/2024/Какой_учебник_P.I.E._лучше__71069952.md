@@ -6,9 +6,12 @@ messages: 12
 participants: "Constantine, Mārcis, Евгений Уланский, Maxim Efremov"
 first: 2024-02-28T14:16:22+03:00
 last: 2024-03-12T12:31:32+03:00
+source_url: https://groups.google.com/d/msgid/nagari/334418bc-31ef-49a4-a056-cb36716d4599n@googlegroups.com
 ---
 
 # Какой учебник P.I.E. лучше?
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/334418bc-31ef-49a4-a056-cb36716d4599n@googlegroups.com)
 
 > 12 сообщений · 4 участников · 2024-02-28 — 2024-03-12
 

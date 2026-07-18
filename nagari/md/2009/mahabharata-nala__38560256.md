@@ -6,9 +6,12 @@ messages: 3
 participants: "Kukasia, klaus"
 first: 2009-04-08T03:20:47+03:00
 last: 2009-04-08T21:46:58+03:00
+source_url: https://groups.google.com/d/msgid/nagari/17ad135e-87e0-4cc5-b6cc-8585d2414749@o11g2000yql.googlegroups.com
 ---
 
 # mahabharata-nala
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/17ad135e-87e0-4cc5-b6cc-8585d2414749@o11g2000yql.googlegroups.com)
 
 > 3 сообщений · 2 участников · 2009-04-08 — 2009-04-08
 

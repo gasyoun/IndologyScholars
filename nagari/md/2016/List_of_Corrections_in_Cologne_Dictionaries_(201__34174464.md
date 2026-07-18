@@ -6,9 +6,12 @@ messages: 1
 participants: "Marcis"
 first: 2016-10-12T13:49:23+03:00
 last: 2016-10-12T13:49:23+03:00
+source_url: https://groups.google.com/d/msgid/nagari/61f459b7-e886-4d25-9798-9030278e46ed@googlegroups.com
 ---
 
 # List of Corrections in Cologne Dictionaries (2014-2016)
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/61f459b7-e886-4d25-9798-9030278e46ed@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2016-10-12 — 2016-10-12
 

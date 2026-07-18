@@ -6,9 +6,12 @@ messages: 4
 participants: "SriKanth!, Сокровища Богов, Евгений Римша, Nathan Phalswal"
 first: 2011-12-19T20:13:16+03:00
 last: 2011-12-20T10:51:16+03:00
+source_url: https://groups.google.com/d/msgid/nagari/6f042f06-7ddc-4ce2-8a1a-b5a0dd155e0b@h4g2000yqk.googlegroups.com
 ---
 
 # Is Gita Banned in Russia?
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/6f042f06-7ddc-4ce2-8a1a-b5a0dd155e0b@h4g2000yqk.googlegroups.com)
 
 > 4 сообщений · 4 участников · 2011-12-19 — 2011-12-20
 

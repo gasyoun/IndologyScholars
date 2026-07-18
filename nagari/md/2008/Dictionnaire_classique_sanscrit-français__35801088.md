@@ -6,9 +6,12 @@ messages: 1
 participants: "klaus"
 first: 2008-12-28T16:50:29+03:00
 last: 2008-12-28T16:50:29+03:00
+source_url: https://groups.google.com/d/msgid/nagari/43ac3f7f-8138-40c8-ab7f-8141b170dfca@w1g2000prk.googlegroups.com
 ---
 
 # Dictionnaire classique sanscrit-français
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/43ac3f7f-8138-40c8-ab7f-8141b170dfca@w1g2000prk.googlegroups.com)
 
 > 1 сообщений · 1 участников · 2008-12-28 — 2008-12-28
 

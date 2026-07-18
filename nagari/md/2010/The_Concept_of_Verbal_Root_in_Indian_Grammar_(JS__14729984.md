@@ -6,9 +6,12 @@ messages: 3
 participants: "Marcis, Deshpande, Madhav"
 first: 2010-05-03T09:24:32+03:00
 last: 2010-05-04T20:52:52+03:00
+source_url: https://groups.google.com/d/msgid/nagari/60813d4a-f622-4e4a-951d-18124388b536@p2g2000yqh.googlegroups.com
 ---
 
 # The Concept of Verbal Root in Indian Grammar (JSTOR)
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/60813d4a-f622-4e4a-951d-18124388b536@p2g2000yqh.googlegroups.com)
 
 > 3 сообщений · 2 участников · 2010-05-03 — 2010-05-04
 

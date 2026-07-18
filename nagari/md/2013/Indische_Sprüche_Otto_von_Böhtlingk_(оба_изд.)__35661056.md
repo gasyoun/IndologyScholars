@@ -6,9 +6,12 @@ messages: 1
 participants: "Marcis"
 first: 2013-06-18T13:25:52+03:00
 last: 2013-06-18T13:25:52+03:00
+source_url: https://groups.google.com/d/msgid/nagari/732746cd-cc3f-4080-b964-056be58ff006@googlegroups.com
 ---
 
 # Indische Sprüche: Otto von Böhtlingk (оба изд.)
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/732746cd-cc3f-4080-b964-056be58ff006@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2013-06-18 — 2013-06-18
 

@@ -6,9 +6,12 @@ messages: 3
 participants: "sergey_108, DmitriNet, vladimir"
 first: 2009-03-28T22:56:34+03:00
 last: 2009-03-31T09:15:20+03:00
+source_url: https://groups.google.com/d/msgid/nagari/072c93da-108a-4409-b515-7eca2ff289cc@c36g2000yqn.googlegroups.com
 ---
 
 # na me dveṣyo 'sti na priyaḥ - yo mad-bhaktaḥ sa me priyaḥ
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/072c93da-108a-4409-b515-7eca2ff289cc@c36g2000yqn.googlegroups.com)
 
 > 3 сообщений · 3 участников · 2009-03-28 — 2009-03-31
 

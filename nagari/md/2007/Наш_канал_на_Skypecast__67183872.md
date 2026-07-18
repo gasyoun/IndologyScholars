@@ -6,9 +6,12 @@ messages: 1
 participants: "gasyoun@…"
 first: 2007-02-22T17:34:33
 last: 2007-02-22T17:34:33
+source_url: https://groups.google.com/d/msgid/nagari/1172165673.916577.92310@a75g2000cwd.googlegroups.com
 ---
 
 # Наш канал на Skypecast
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/1172165673.916577.92310@a75g2000cwd.googlegroups.com)
 
 > 1 сообщений · 1 участников · 2007-02-22 — 2007-02-22
 

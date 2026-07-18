@@ -6,9 +6,12 @@ messages: 8
 participants: "Mandala Pati (Владислав), Marcis, Radim Navyan"
 first: 2015-04-13T17:34:54+03:00
 last: 2015-06-05T14:00:10+03:00
+source_url: https://groups.google.com/d/msgid/nagari/d15c2bff-7375-4ddc-94f3-b8eb6b492382@googlegroups.com
 ---
 
 # Программа Ganakastadhyayi
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/d15c2bff-7375-4ddc-94f3-b8eb6b492382@googlegroups.com)
 
 > 8 сообщений · 3 участников · 2015-04-13 — 2015-06-05
 

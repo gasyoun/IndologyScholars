@@ -6,9 +6,12 @@ messages: 20
 participants: "Dmitri, narayan prasad, Serge, Arvind_Kolhatkar, Brahman"
 first: 2012-01-26T20:32:18+03:00
 last: 2012-02-11T04:31:46+03:00
+source_url: https://groups.google.com/d/msgid/nagari/18850256.5403.1327599138951.JavaMail.geo-discussion-forums@yqbc11
 ---
 
 # Sudadohas verse
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/18850256.5403.1327599138951.JavaMail.geo-discussion-forums@yqbc11)
 
 > 20 сообщений · 5 участников · 2012-01-26 — 2012-02-11
 

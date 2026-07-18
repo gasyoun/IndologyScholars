@@ -6,9 +6,12 @@ messages: 4
 participants: "Trivikram das, Andrey Terentyev, Marcis, Serge A"
 first: 2017-03-22T23:14:06+03:00
 last: 2017-05-23T16:20:16+03:00
+source_url: https://groups.google.com/d/msgid/nagari/74e09a6f-f2f9-4770-b5a8-150dbd9e4bf0@googlegroups.com
 ---
 
 # Sama Veda (Chamakam & Rudra Suktam)
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/74e09a6f-f2f9-4770-b5a8-150dbd9e4bf0@googlegroups.com)
 
 > 4 сообщений · 4 участников · 2017-03-22 — 2017-05-23
 

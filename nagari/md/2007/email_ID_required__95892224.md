@@ -6,9 +6,12 @@ messages: 4
 participants: "narayan prasad, Marcis, Worga"
 first: 2007-03-22T07:16:46+03:00
 last: 2007-03-23T10:13:27
+source_url: https://groups.google.com/d/msgid/nagari/630330570703212116m46c826aahcf84710ab6851670@mail.gmail.com
 ---
 
 # email ID required
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/630330570703212116m46c826aahcf84710ab6851670@mail.gmail.com)
 
 > 4 сообщений · 3 участников · 2007-03-22 — 2007-03-23
 

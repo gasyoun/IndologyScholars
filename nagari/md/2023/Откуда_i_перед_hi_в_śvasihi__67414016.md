@@ -6,9 +6,12 @@ messages: 2
 participants: "Черухин Денис, Евгений Уланский"
 first: 2023-02-11T13:19:03+03:00
 last: 2023-02-11T21:57:55+03:00
+source_url: https://groups.google.com/d/msgid/nagari/65615870-d9b7-46aa-8ab3-bfd8b8839190n@googlegroups.com
 ---
 
 # Откуда i перед hi в śvasihi ?
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/65615870-d9b7-46aa-8ab3-bfd8b8839190n@googlegroups.com)
 
 > 2 сообщений · 2 участников · 2023-02-11 — 2023-02-11
 

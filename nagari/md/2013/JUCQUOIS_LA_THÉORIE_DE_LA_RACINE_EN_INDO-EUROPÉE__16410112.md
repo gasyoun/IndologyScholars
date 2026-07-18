@@ -6,9 +6,12 @@ messages: 1
 participants: "Marcis"
 first: 2013-02-05T09:05:23+03:00
 last: 2013-02-05T09:05:23+03:00
+source_url: https://groups.google.com/d/msgid/nagari/cb27fd8a-e303-4d07-b993-de5c8de2687e@googlegroups.com
 ---
 
 # JUCQUOIS: LA THÉORIE DE LA RACINE EN INDO-EUROPÉEN
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/cb27fd8a-e303-4d07-b993-de5c8de2687e@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2013-02-05 — 2013-02-05
 

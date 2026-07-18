@@ -6,9 +6,12 @@ messages: 1
 participants: "ShaSa"
 first: 2014-05-24T00:42:35+03:00
 last: 2014-05-24T00:42:35+03:00
+source_url: https://groups.google.com/d/msgid/nagari/135ea030-5ce2-47f0-9e75-8d9c0b7a6210@googlegroups.com
 ---
 
 # Kids Sanskrit
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/135ea030-5ce2-47f0-9e75-8d9c0b7a6210@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2014-05-24 — 2014-05-24
 

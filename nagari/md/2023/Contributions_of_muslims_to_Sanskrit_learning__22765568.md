@@ -6,9 +6,12 @@ messages: 1
 participants: "Marcis"
 first: 2023-06-23T13:46:57+03:00
 last: 2023-06-23T13:46:57+03:00
+source_url: https://groups.google.com/d/msgid/nagari/4d019dcd-e08b-4917-8cf7-dacb72007ba1n@googlegroups.com
 ---
 
 # Contributions of muslims to Sanskrit learning
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/4d019dcd-e08b-4917-8cf7-dacb72007ba1n@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2023-06-23 — 2023-06-23
 

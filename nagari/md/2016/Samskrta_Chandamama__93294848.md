@@ -6,9 +6,12 @@ messages: 3
 participants: "Usha Sanka, Dmitri"
 first: 2016-01-28T10:16:19+03:00
 last: 2016-02-06T13:41:16+03:00
+source_url: https://groups.google.com/d/msgid/nagari/a12d35d8-a377-491e-94f8-f099466e1cca@googlegroups.com
 ---
 
 # Samskrta Chandamama
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/a12d35d8-a377-491e-94f8-f099466e1cca@googlegroups.com)
 
 > 3 сообщений · 2 участников · 2016-01-28 — 2016-02-06
 

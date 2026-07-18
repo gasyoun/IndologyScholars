@@ -6,9 +6,12 @@ messages: 1
 participants: "Георгий Х."
 first: 2026-06-28T13:42:21+03:00
 last: 2026-06-28T13:42:21+03:00
+source_url: https://groups.google.com/d/msgid/nagari/c1a9dfa2-9f7c-43ce-a760-afe1b90185d1n@googlegroups.com
 ---
 
 # Оборот "kaccid ... bhavet prāptas"
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/c1a9dfa2-9f7c-43ce-a760-afe1b90185d1n@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2026-06-28 — 2026-06-28
 

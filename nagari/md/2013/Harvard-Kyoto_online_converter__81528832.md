@@ -6,9 +6,12 @@ messages: 28
 participants: "śrīdṛṣṭvā, Marcis, Brahman, Artem Novikov, Веданта-крит дас"
 first: 2013-09-13T17:26:50+03:00
 last: 2014-09-24T21:54:14+03:00
+source_url: https://groups.google.com/d/msgid/nagari/9f8effe4-d5f6-445e-81f4-7bd07a9cbced@googlegroups.com
 ---
 
 # Harvard-Kyoto online converter
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/9f8effe4-d5f6-445e-81f4-7bd07a9cbced@googlegroups.com)
 
 > 28 сообщений · 5 участников · 2013-09-13 — 2014-09-24
 

@@ -6,9 +6,12 @@ messages: 1
 participants: "gasyoun@…"
 first: 2005-06-15T17:03:00+03:00
 last: 2005-06-15T17:03:00+03:00
+source_url: https://groups.google.com/d/msgid/nagari/1118844180.547399.132500@g14g2000cwa.googlegroups.com
 ---
 
 # (Win32) Availible Devanagari Fonts
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/1118844180.547399.132500@g14g2000cwa.googlegroups.com)
 
 > 1 сообщений · 1 участников · 2005-06-15 — 2005-06-15
 

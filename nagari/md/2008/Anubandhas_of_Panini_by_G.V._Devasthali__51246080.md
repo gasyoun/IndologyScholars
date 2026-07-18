@@ -6,9 +6,12 @@ messages: 1
 participants: "KK"
 first: 2008-03-29T14:18:35+03:00
 last: 2008-03-29T14:18:35+03:00
+source_url: https://groups.google.com/d/msgid/nagari/871d6d4f-1665-4e9e-9af1-f11af0a184af@m44g2000hsc.googlegroups.com
 ---
 
 # "Anubandhas of Panini" by G.V. Devasthali
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/871d6d4f-1665-4e9e-9af1-f11af0a184af@m44g2000hsc.googlegroups.com)
 
 > 1 сообщений · 1 участников · 2008-03-29 — 2008-03-29
 

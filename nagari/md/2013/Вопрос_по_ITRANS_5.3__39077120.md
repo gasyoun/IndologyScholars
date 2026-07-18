@@ -6,9 +6,12 @@ messages: 5
 participants: "Artem Novikov, Serge A"
 first: 2013-02-22T13:50:08+03:00
 last: 2013-02-22T15:33:38+03:00
+source_url: https://groups.google.com/d/msgid/nagari/543e1e04-496c-477c-a736-23a3c3c051d9@googlegroups.com
 ---
 
 # Вопрос по ITRANS 5.3
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/543e1e04-496c-477c-a736-23a3c3c051d9@googlegroups.com)
 
 > 5 сообщений · 2 участников · 2013-02-22 — 2013-02-22
 

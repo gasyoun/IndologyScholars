@@ -6,9 +6,12 @@ messages: 2
 participants: "ShaSa, Usha Sanka"
 first: 2014-02-05T10:30:15+03:00
 last: 2014-02-05T10:55:31+03:00
+source_url: https://groups.google.com/d/msgid/nagari/e12d75c6-7a61-4ed2-89ab-b972951e6c42@googlegroups.com
 ---
 
 # Sanskrit by Flash Cards
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/e12d75c6-7a61-4ed2-89ab-b972951e6c42@googlegroups.com)
 
 > 2 сообщений · 2 участников · 2014-02-05 — 2014-02-05
 

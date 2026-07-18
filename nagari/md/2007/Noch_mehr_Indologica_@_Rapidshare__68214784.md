@@ -6,9 +6,12 @@ messages: 7
 participants: "danstender, Marcis, narayan prasad, Narayan Prasad"
 first: 2007-05-11T20:44:45+03:00
 last: 2007-06-24T07:12:53
+source_url: https://groups.google.com/d/msgid/nagari/1178905485.995012.239750@w5g2000hsg.googlegroups.com
 ---
 
 # Noch mehr Indologica @ Rapidshare
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/1178905485.995012.239750@w5g2000hsg.googlegroups.com)
 
 > 7 сообщений · 4 участников · 2007-05-11 — 2007-06-24
 

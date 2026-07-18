@@ -6,9 +6,12 @@ messages: 2
 participants: "Marcis, klaus"
 first: 2007-03-29T08:45:10
 last: 2007-03-29T10:40:01+03:00
+source_url: https://groups.google.com/d/msgid/nagari/1175157910.766320.230390@p77g2000hsh.googlegroups.com
 ---
 
 # Обсуждение на lassen-anthologia-1856
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/1175157910.766320.230390@p77g2000hsh.googlegroups.com)
 
 > 2 сообщений · 2 участников · 2007-03-29 — 2007-03-29
 

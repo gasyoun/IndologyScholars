@@ -6,9 +6,12 @@ messages: 16
 participants: "Artem Novikov, Lev Titlin, Dmitri, Stormwatsch, andron, atman, Shantira Shani"
 first: 2012-05-09T04:45:59+03:00
 last: 2012-05-30T20:28:09+03:00
+source_url: https://groups.google.com/d/msgid/nagari/7389124.3478.1336527959014.JavaMail.geo-discussion-forums@yncd3
 ---
 
 # Sanskrit-English Dictionary - SanDic v1.0
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/7389124.3478.1336527959014.JavaMail.geo-discussion-forums@yncd3)
 
 > 16 сообщений · 7 участников · 2012-05-09 — 2012-05-30
 

@@ -6,9 +6,12 @@ messages: 2
 participants: "Marcis, Serge A"
 first: 2016-05-20T18:54:14+03:00
 last: 2016-05-21T19:57:23+03:00
+source_url: https://groups.google.com/d/msgid/nagari/7ce9850c-104e-41b4-bd4a-83408b863937@googlegroups.com
 ---
 
 # Къ бiографiи К. А. Коссовича.
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/7ce9850c-104e-41b4-bd4a-83408b863937@googlegroups.com)
 
 > 2 сообщений · 2 участников · 2016-05-20 — 2016-05-21
 

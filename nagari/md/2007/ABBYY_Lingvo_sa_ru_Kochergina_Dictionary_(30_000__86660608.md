@@ -6,9 +6,12 @@ messages: 2
 participants: "Marcis, Wrd"
 first: 2007-02-27T10:19:47
 last: 2007-02-27T12:28:01+03:00
+source_url: https://groups.google.com/d/msgid/nagari/1172571587.003551.231800@a75g2000cwd.googlegroups.com
 ---
 
 # ABBYY Lingvo sa_ru Kochergina Dictionary (30 000 gasyoun@…).rar
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/1172571587.003551.231800@a75g2000cwd.googlegroups.com)
 
 > 2 сообщений · 2 участников · 2007-02-27 — 2007-02-27
 

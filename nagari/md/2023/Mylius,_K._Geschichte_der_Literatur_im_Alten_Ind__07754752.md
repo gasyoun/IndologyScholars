@@ -6,9 +6,12 @@ messages: 1
 participants: "Marcis"
 first: 2023-04-16T23:26:52+03:00
 last: 2023-04-16T23:26:52+03:00
+source_url: https://groups.google.com/d/msgid/nagari/f36ce8b8-209d-46dd-acd2-e60dc18f4480n@googlegroups.com
 ---
 
 # Mylius, K. Geschichte der Literatur im Alten Indien 1983
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/f36ce8b8-209d-46dd-acd2-e60dc18f4480n@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2023-04-16 — 2023-04-16
 

@@ -6,9 +6,12 @@ messages: 3
 participants: "Marcis, borissoff"
 first: 2013-10-10T13:49:14+03:00
 last: 2013-11-05T10:12:32+03:00
+source_url: https://groups.google.com/d/msgid/nagari/c6d82e01-e78c-4d3a-9528-3b682671fa99@googlegroups.com
 ---
 
 # The Reverse Index of Old Indian [Missing Pages Wanted]
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/c6d82e01-e78c-4d3a-9528-3b682671fa99@googlegroups.com)
 
 > 3 сообщений · 2 участников · 2013-10-10 — 2013-11-05
 

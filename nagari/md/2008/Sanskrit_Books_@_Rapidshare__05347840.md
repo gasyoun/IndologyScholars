@@ -6,9 +6,12 @@ messages: 1
 participants: "Marcis"
 first: 2008-08-04T14:55:52+03:00
 last: 2008-08-04T14:55:52+03:00
+source_url: https://groups.google.com/d/msgid/nagari/daea29da-d6c0-4eb6-98f0-a314c16a93de@k37g2000hsf.googlegroups.com
 ---
 
 # Sanskrit Books @ Rapidshare
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/daea29da-d6c0-4eb6-98f0-a314c16a93de@k37g2000hsf.googlegroups.com)
 
 > 1 сообщений · 1 участников · 2008-08-04 — 2008-08-04
 

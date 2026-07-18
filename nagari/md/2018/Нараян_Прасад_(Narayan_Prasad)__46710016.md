@@ -6,9 +6,12 @@ messages: 1
 participants: "Marcis"
 first: 2018-03-15T18:43:36+03:00
 last: 2018-03-15T18:43:36+03:00
+source_url: https://groups.google.com/d/msgid/nagari/7bc45478-526c-4200-a5fc-ccf7bc86d466@googlegroups.com
 ---
 
 # Нараян Прасад (Narayan Prasad)
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/7bc45478-526c-4200-a5fc-ccf7bc86d466@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2018-03-15 — 2018-03-15
 

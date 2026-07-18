@@ -6,9 +6,12 @@ messages: 1
 participants: "Mārcis Gasūns"
 first: 2025-12-28T09:53:25+03:00
 last: 2025-12-28T09:53:25+03:00
+source_url: https://groups.google.com/d/msgid/nagari/1af080aa-d921-4aad-abca-f5a24fdf1c2fn@googlegroups.com
 ---
 
 # Махабхарата I. 61. 84-92
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/1af080aa-d921-4aad-abca-f5a24fdf1c2fn@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2025-12-28 — 2025-12-28
 

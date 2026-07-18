@@ -6,9 +6,12 @@ messages: 8
 participants: "Maxim Efremov, Евгений Уланский, Paul H"
 first: 2019-12-24T19:16:41+03:00
 last: 2019-12-25T18:05:20+03:00
+source_url: https://groups.google.com/d/msgid/nagari/7287d415-6dcf-420d-a94f-b25296f5f404@googlegroups.com
 ---
 
 # Муламадхьямакакарика (Mulamadhyamakakarika)
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/7287d415-6dcf-420d-a94f-b25296f5f404@googlegroups.com)
 
 > 8 сообщений · 3 участников · 2019-12-24 — 2019-12-25
 

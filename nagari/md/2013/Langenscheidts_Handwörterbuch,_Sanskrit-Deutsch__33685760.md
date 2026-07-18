@@ -6,9 +6,12 @@ messages: 3
 participants: "Marcis, Artem Novikov, Simurg Gamayun"
 first: 2013-03-19T19:27:01+03:00
 last: 2013-03-20T18:52:03+03:00
+source_url: https://groups.google.com/d/msgid/nagari/91892a1a-2406-4b4a-b84d-7faba58f9b82@googlegroups.com
 ---
 
 # Langenscheidts Handwörterbuch, Sanskrit-Deutsch (1999 г.)
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/91892a1a-2406-4b4a-b84d-7faba58f9b82@googlegroups.com)
 
 > 3 сообщений · 3 участников · 2013-03-19 — 2013-03-20
 

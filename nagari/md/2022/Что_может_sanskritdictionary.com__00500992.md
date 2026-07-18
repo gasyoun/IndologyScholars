@@ -6,9 +6,12 @@ messages: 1
 participants: "Marcis"
 first: 2022-05-27T23:32:33+03:00
 last: 2022-05-27T23:32:33+03:00
+source_url: https://groups.google.com/d/msgid/nagari/79a176a4-7351-425a-84ff-81319ad3fe3dn@googlegroups.com
 ---
 
 # Что может sanskritdictionary.com?
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/79a176a4-7351-425a-84ff-81319ad3fe3dn@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2022-05-27 — 2022-05-27
 

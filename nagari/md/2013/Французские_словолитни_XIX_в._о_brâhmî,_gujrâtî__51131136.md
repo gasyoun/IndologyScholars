@@ -6,9 +6,12 @@ messages: 1
 participants: "Marcis"
 first: 2013-03-08T16:50:55+03:00
 last: 2013-03-08T16:50:55+03:00
+source_url: https://groups.google.com/d/msgid/nagari/6073f5a5-f3f1-4d02-8356-5dc391c16a12@googlegroups.com
 ---
 
 # Французские словолитни XIX в. о brâhmî, gujrâtî и javanais
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/6073f5a5-f3f1-4d02-8356-5dc391c16a12@googlegroups.com)
 
 > 1 сообщений · 1 участников · 2013-03-08 — 2013-03-08
 

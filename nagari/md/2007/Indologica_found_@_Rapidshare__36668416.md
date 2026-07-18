@@ -6,9 +6,12 @@ messages: 7
 participants: "danstender, Marcis, Worga"
 first: 2007-05-26T15:37:09+03:00
 last: 2007-07-02T08:13:20
+source_url: https://groups.google.com/d/msgid/nagari/1180183029.812075.92030@g4g2000hsf.googlegroups.com
 ---
 
 # Indologica found @ Rapidshare
+
+[Читать оригинальный тред в Google Groups](https://groups.google.com/d/msgid/nagari/1180183029.812075.92030@g4g2000hsf.googlegroups.com)
 
 > 7 сообщений · 3 участников · 2007-05-26 — 2007-07-02
 
