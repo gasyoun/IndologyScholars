@@ -6,7 +6,7 @@
     "pipeline_version": "2026-05-25",
     "generator": "generate_publication_pages.py"
   },
-  "file_count": 4156,
+  "file_count": 4161,
   "files": [
     {
       "path": "404.html",
@@ -257,6 +257,31 @@
       "path": "analytics_output/identity_trend_summary.json",
       "size_bytes": 271,
       "sha256": "d0c82fea8293f1ab70dbe8888ec358d7aa48692260d4d0cdfcbf09cd6ff5e724"
+    },
+    {
+      "path": "analytics_output/indology_feed/renou_coverage.csv",
+      "size_bytes": 284,
+      "sha256": "edd99404f85857ef5595063cf87bf46769c478addb976b5e0b38137dab383521"
+    },
+    {
+      "path": "analytics_output/indology_feed/renou_export_index.csv",
+      "size_bytes": 6394,
+      "sha256": "66bbc4b7a72f968ed0e7cde4ada43a96ca22773c79da46935932593a95188f31"
+    },
+    {
+      "path": "analytics_output/indology_feed/renou_message_matches.csv",
+      "size_bytes": 4642715,
+      "sha256": "56f3331c8ef56cb19a6139d7ae2dd60e8747e1e1e15a5a81bbb26e31eb45b24b"
+    },
+    {
+      "path": "analytics_output/indology_feed/renou_register_summary.csv",
+      "size_bytes": 75072,
+      "sha256": "b4f931b73ea6be4eaf12eb5af45604848e34969a347fb89aea7cf0d5796b945a"
+    },
+    {
+      "path": "analytics_output/indology_feed/renou_state_summary.csv",
+      "size_bytes": 45480,
+      "sha256": "40af8a82f618564be6310ea13a8904144612cf7e770436bd3aa054db25c6f805"
     },
     {
       "path": "analytics_output/inter_rater_reliability_plan.csv",
@@ -9745,13 +9770,13 @@
     },
     {
       "path": "docs/development-en.md",
-      "size_bytes": 15854,
-      "sha256": "97a2ae8b1499efdb3669cfa11ff62be5d18074e25430d72cf23f4549c54eed6e"
+      "size_bytes": 15948,
+      "sha256": "7a1a22a62513127406c5d334e012e5e048a2712328e2b48f59be21c21170ddf7"
     },
     {
       "path": "docs/development.md",
-      "size_bytes": 22584,
-      "sha256": "9327c3f769dc290298fb916f16de4a5776e9c9cf09d17c869903e669ad666e82"
+      "size_bytes": 22664,
+      "sha256": "4d56878bee6569f07516d7e81df7c8fe772176ed591303f0dcc098c933846ae3"
     },
     {
       "path": "docs/external-phase5-enrichment-runbook.md",
@@ -9881,7 +9906,7 @@
     {
       "path": "download-data.html",
       "size_bytes": 37519,
-      "sha256": "12fd1510d92fe0d1f14731f7d52a6173d532ffdd5cce473651dfc76f6e099110"
+      "sha256": "4691fcf87eca4f10144c988b7be006acd8c6f26e9d24564d654f6ecae194b2a1"
     },
     {
       "path": "en.html",
@@ -9905,18 +9930,18 @@
     },
     {
       "path": "findings/renou-comparison.html",
-      "size_bytes": 17694,
-      "sha256": "2fa1b9fb87f71922b93d15b103b6471cbfc801940977c625b697f0ec080b6387"
+      "size_bytes": 19813,
+      "sha256": "bec0e5f3242a357c0b043461efe7f565f542fb1bbc977627ba5efcaabd4ff98c"
     },
     {
       "path": "findings/renou.html",
-      "size_bytes": 25114,
-      "sha256": "46f13b7c431e859a4f2711fb274a57895a91f6f52fe4baf6408a0ebf8a2d4ac3"
+      "size_bytes": 25127,
+      "sha256": "c2796a27ac72f46f3cde92457322f936aa29f3155bd2211527eea5af0aefa894"
     },
     {
       "path": "findings/visualisations.html",
       "size_bytes": 493631,
-      "sha256": "2a2720bfb62068f363540f1eb10b9cab2ab85b69efe73bf8fb92507f117dbdd7"
+      "sha256": "35ffe0704ed8e59f708cf8b2cd1319edc02d5524caff97b9d2cf035e7630eb16"
     },
     {
       "path": "gatekeeping-en.html",
