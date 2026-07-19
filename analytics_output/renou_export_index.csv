@@ -1,25 +1,25 @@
 export_kind,relative_path,renou_axis,renou_code,renou_label,rows
-presentations,analytics_output/renou_state_iv_presentations.csv,state,IV,Classical,321
-presentations,analytics_output/renou_state_v_presentations.csv,state,V,Buddhist / Jaina,187
-presentations,analytics_output/renou_state_iii_presentations.csv,state,III,Epic & prolongements,140
-presentations,analytics_output/renou_state_i_presentations.csv,state,I,Vedic,99
+presentations,analytics_output/renou_state_iv_presentations.csv,state,IV,Classical,315
+presentations,analytics_output/renou_state_v_presentations.csv,state,V,Buddhist / Jaina,182
+presentations,analytics_output/renou_state_iii_presentations.csv,state,III,Epic & prolongements,131
+presentations,analytics_output/renou_state_i_presentations.csv,state,I,Vedic,92
 presentations,analytics_output/renou_state_ii_presentations.csv,state,II,Pāṇinian,22
 presentations,analytics_output/renou_register_kavya_presentations.csv,register,kavya,Kāvya,297
-presentations,analytics_output/renou_register_bauddha_presentations.csv,register,bauddha,Bauddha,156
-presentations,analytics_output/renou_register_bhasya_presentations.csv,register,bhasya,Bhāṣya,116
-presentations,analytics_output/renou_register_epic_presentations.csv,register,epic,Epic,57
-presentations,analytics_output/renou_register_tantra_presentations.csv,register,tantra,Tantra,51
+presentations,analytics_output/renou_register_bauddha_presentations.csv,register,bauddha,Bauddha,151
+presentations,analytics_output/renou_register_epic_presentations.csv,register,epic,Epic,55
 presentations,analytics_output/renou_register_katha_presentations.csv,register,katha,Kathā,50
-presentations,analytics_output/renou_register_purana_presentations.csv,register,purana,Purāṇa,40
+presentations,analytics_output/renou_register_tantra_presentations.csv,register,tantra,Tantra,47
 presentations,analytics_output/renou_register_natya_presentations.csv,register,natya,Nāṭya,39
-presentations,analytics_output/renou_register_sutra_presentations.csv,register,sutra,Sūtra,31
+presentations,analytics_output/renou_register_purana_presentations.csv,register,purana,Purāṇa,38
+presentations,analytics_output/renou_register_bhasya_presentations.csv,register,bhasya,Bhāṣya,25
+presentations,analytics_output/renou_register_sutra_presentations.csv,register,sutra,Sūtra,25
 presentations,analytics_output/renou_register_vyakarana_presentations.csv,register,vyakarana,Vyākaraṇa,20
 presentations,analytics_output/renou_register_rgveda_presentations.csv,register,rgveda,Ṛgveda,17
 presentations,analytics_output/renou_register_epig_presentations.csv,register,epig,Epigraphic,15
-presentations,analytics_output/renou_register_smrti_presentations.csv,register,smrti,Smṛti,13
 presentations,analytics_output/renou_register_upanisad_presentations.csv,register,upanisad,Upaniṣad,10
 presentations,analytics_output/renou_register_brahmana_presentations.csv,register,brahmana,Brāhmaṇa,9
 presentations,analytics_output/renou_register_jaina_presentations.csv,register,jaina,Jaina,9
+presentations,analytics_output/renou_register_smrti_presentations.csv,register,smrti,Smṛti,4
 presentations,analytics_output/renou_register_atharva_presentations.csv,register,atharva,Atharvaveda,3
 presentations,analytics_output/renou_register_hors_inde_presentations.csv,register,hors_inde,Outside India,2
-presentations,analytics_output/renou_register_karika_presentations.csv,register,karika,Kārikā,2
+presentations,analytics_output/renou_register_karika_presentations.csv,register,karika,Kārikā,1
