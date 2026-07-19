@@ -1,6 +1,6 @@
 # Renou classifier — precision audit
 
-_Created: 10-07-2026 · Last updated: 10-07-2026_
+_Created: 10-07-2026 · Last updated: 19-07-2026_
 
 The Renou état/register layer assigns Louis Renou's periodization of Sanskrit
 literature to two independent corpora in this repository. Both layers are
@@ -167,5 +167,103 @@ The rule table is currently **duplicated** across three consumers — this repo'
 and the état pilot in
 [`SanskritLexicography/RussianTranslation`](https://github.com/gasyoun/SanskritLexicography/tree/master/RussianTranslation).
 A fix applied to one will not reach the others.
+
+## 5. Fix landed (H459, 19-07-2026)
+
+Measured by Sonnet 5 (`claude-sonnet-5`) against the same
+[`generate_renou_layer.py`](https://github.com/gasyoun/IndologyScholars/blob/main/generate_renou_layer.py)
+after applying the anchoring fix this document called for. Every bare
+Cyrillic alternative in `RULE_ROWS` now carries a `(?<![а-яё])` left
+lookbehind so it cannot fire mid-word; `тика` and `ману` — the two stems
+responsible for the worst false positives above — additionally carry a
+`(?![а-яё])` right lookahead, since both are complete Sanskrit-term
+transliterations rather than Russian morphological prefixes (contrast
+`коммент`→комментарий or `бхашь`→бхашья, which must stay open on the right
+to match their declined continuations, and still do). The stray unanchored
+Latin tokens sitting inside Cyrillic runs (`jaina`, `vyākaraṇa`, `kāvya`) were
+dropped as pure redundancy with the already-anchored `\b(...)\b` Latin group
+each duplicated. `пали` picked up the missing left boundary alongside its
+existing trailing one.
+
+**Acceptance test (the same predicate that measured the 7.1% floor in §2):
+121 of 1,706 rows failed before the fix; 0 of 1,559 rows fail after.**
+
+### Coverage before / after
+
+| Layer | Metric | Before | After | Δ |
+| --- | --- | ---: | ---: | ---: |
+| Conference | matched presentations | 781 (57.3%) | 722 (53.0%) | −59 (−4.3 pts) |
+| Conference | matched scholars | 190 | 177 | −13 |
+| Archive (messages) | matched | 6,217 (10.0%) | 6,217 (10.0%) | 0 |
+| Archive (threads) | matched | 3,307 (13.8%) | 3,307 (13.8%) | 0 |
+
+The archive layer is unaffected by design: its rule table
+([`Indology/data/curation/renou_subject_rules.csv`](https://github.com/gasyoun/IndologyScholars/blob/main/Indology/data/curation/renou_subject_rules.csv))
+carries no Cyrillic alternatives at all — INDOLOGY-L subject lines are
+overwhelmingly English — so it never had this defect. Re-run and diffed
+anyway per H459 scope item 4; both `renou_coverage.csv` outputs are recorded
+byte-identical to their pre-fix state.
+
+### Register/state axis, presentations lost (all confirmed false positives)
+
+| Code | Before | After | Δ |
+| --- | ---: | ---: | ---: |
+| `register:bhasya` | 116 | 25 | −91 (−78%) |
+| `register:smrti` | 13 | 4 | −9 (−69%) |
+| `register:sutra` | 31 | 25 | −6 (−19%) |
+| `register:purana` | 40 | 38 | −2 (−5%) |
+| `state:I` | 99 | 92 | −7 (−7%) |
+| `state:III` | 140 | 131 | −9 (−6%) |
+| `state:IV` | 321 | 315 | −6 (−2%) |
+| `state:V` | 187 | 182 | −5 (−3%) |
+| `state:II` | 22 | 22 | 0 |
+
+`тика` and `ману` — 85 and an unmeasured handful of the `bhasya`/`smrti`
+matches respectively — now fire on **zero** presentations in the current
+corpus: every occurrence in the live titles was the false positive this
+document identified, none was a genuine standalone use. Spot-checked: «Эротика
+в Ригведе: мужское и женское начало» now resolves to `state:I Vedic` +
+`register:rgveda` (via «Ригвед» in the title) instead of `register:bhasya`
+(via the removed «тика»).
+
+### Also landed: `matched_field` export (scope item 2)
+
+`renou_presentation_matches.csv` now carries `matched_field` (`title` | `tag`)
+and `matched_field_text` (the literal tag string, empty for title matches).
+The «Эротика в Ригведе» example above also now correctly shows a
+`register:kavya` hit sourced from `matched_field=tag`,
+`matched_field_text="Literature & Poetry"` — previously invisible evidence,
+exactly the 14%-of-sample gap this document flagged.
+
+### What did not land — and why
+
+**Scope item 3 (deduplicate the rule table into one canonical file) is
+intentionally not done.** It is gated behind the `@DECIDE` this document and
+[H459](https://github.com/gasyoun/Uprava/blob/main/handoffs/H459-Sonnet_IndologyScholars_renou-rules-anchor-fix-and-dedupe_10.07.26.md)
+both name — canonical home in `SanskritLexicography/RussianTranslation` next
+to `RENOU.md`, or in `sanskrit-util` — and that ruling has not been made. The
+table therefore still exists in the same three places (now anchored in one of
+them, `RULE_ROWS`); a fix applied to `RULE_ROWS` still does not reach
+`Indology/data/curation/renou_subject_rules.csv` or the `RussianTranslation`
+état pilot. The archive table did not need the anchoring fix (see above), and
+the `RussianTranslation` pilot was out of scope for this repo's session
+entirely.
+
+**A fourth, previously-unnoted duplicate:** `curation/renou_conference_rules.csv`
+in this repo is seeded from `RULE_ROWS` by `generate_renou_layer.py`'s
+`seed_rules()` — but only if the file does not already exist. Since it was
+committed once at the layer's creation ([#66](https://github.com/gasyoun/IndologyScholars/pull/66))
+and never touched again, it had silently drifted into a fourth, stale copy:
+editing `RULE_ROWS` alone would have had **zero effect** on the actual pipeline
+output, because `apply_rules()` reads the cached CSV, not the Python literal.
+This fix deletes and lets it reseed on every session that touches the rule
+table until scope item 3 resolves the dedup question properly; the safer
+long-term fix (make `run()` always regenerate this file from `RULE_ROWS`, or
+retire the seed-once behaviour once a canonical file is chosen) is left to
+whoever executes step 3.
+
+**Scope item 5 (raise coverage) was not attempted**, per its own explicit
+gate ("only then") and the guardrail against loosening patterns to chase
+coverage.
 
 _Dr. Mārcis Gasūns_

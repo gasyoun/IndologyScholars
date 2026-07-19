@@ -25,7 +25,7 @@ RULE_ROWS: list[dict[str, str]] = [
         "code": "I",
         "label": "Vedic",
         "covers": "Saṃhitā, Brāhmaṇa, Upaniṣad, Sūtra, Vedāṅga",
-        "pattern": r"\b(vedic|veda|vedā|rigveda|rgveda|ṛgveda|atharvaveda|yajurveda|samaveda|samhita|saṃhitā|brahmana|brāhmaṇa|aranyaka|āraṇyaka|upanishad|upaniṣad|upanisad|vedanga|vedāṅga|srauta|shrauta|śrauta|grhya|gṛhya|pravargya)\b|вед(ийск|ическ|а|ы|ы)|ригвед|атхарвавед|яджурвед|самавед|упанишад|брахман|араньяк|шраут|грихь|праварг",
+        "pattern": r"\b(vedic|veda|vedā|rigveda|rgveda|ṛgveda|atharvaveda|yajurveda|samaveda|samhita|saṃhitā|brahmana|brāhmaṇa|aranyaka|āraṇyaka|upanishad|upaniṣad|upanisad|vedanga|vedāṅga|srauta|shrauta|śrauta|grhya|gṛhya|pravargya)\b|(?<![а-яё])вед(ийск|ическ|а|ы)|(?<![а-яё])ригвед|(?<![а-яё])атхарвавед|(?<![а-яё])яджурвед|(?<![а-яё])самавед|(?<![а-яё])упанишад|(?<![а-яё])брахман|(?<![а-яё])араньяк|(?<![а-яё])шраут|(?<![а-яё])грихь|(?<![а-яё])праварг",
         "confidence": "title_tag_pattern",
     },
     {
@@ -33,7 +33,7 @@ RULE_ROWS: list[dict[str, str]] = [
         "code": "II",
         "label": "Pāṇinian",
         "covers": "the classical norm and grammarians' Sanskrit",
-        "pattern": r"\b(panini|pāṇini|patanjali|patañjali|ashtadhyayi|aṣṭādhyāyī|vyakarana|vyākaraṇa|grammar|grammatical|grammarian|mahābhāṣya|mahabhasya|kāśikā|kasika|nirukta)\b|панини|пāṇini|патанджал|аш[тṭ]адхьяй|аштападх|вьякаран|vyākaraṇa|грамматик|нир?укт",
+        "pattern": r"\b(panini|pāṇini|patanjali|patañjali|ashtadhyayi|aṣṭādhyāyī|vyakarana|vyākaraṇa|grammar|grammatical|grammarian|mahābhāṣya|mahabhasya|kāśikā|kasika|nirukta)\b|(?<![а-яё])панини|(?<![а-яё])пāṇini|(?<![а-яё])патанджал|(?<![а-яё])аш[тṭ]адхьяй|(?<![а-яё])аштападх|(?<![а-яё])вьякаран|(?<![а-яё])грамматик|(?<![а-яё])нир?укт",
         "confidence": "title_tag_pattern",
     },
     {
@@ -41,7 +41,7 @@ RULE_ROWS: list[dict[str, str]] = [
         "code": "III",
         "label": "Epic & prolongements",
         "covers": "Mbh, Rām, Harivaṃśa, Gītā, Purāṇa, Smṛti, Tantra",
-        "pattern": r"\b(mahabharata|mahābhārata|mbh|ramayana|rāmāyaṇa|harivamsa|harivaṃśa|gita|gītā|bhagavadgita|bhagavadgītā|purana|purāṇa|smriti|smṛti|tantra|dharmasastra|dharmaśāstra)\b|махабхарат|рамаян|хариванш|гит[аеы]|бхагавадгит|пуран|смрит|тантр|дхармашастр|дхарма-шастр",
+        "pattern": r"\b(mahabharata|mahābhārata|mbh|ramayana|rāmāyaṇa|harivamsa|harivaṃśa|gita|gītā|bhagavadgita|bhagavadgītā|purana|purāṇa|smriti|smṛti|tantra|dharmasastra|dharmaśāstra)\b|(?<![а-яё])махабхарат|(?<![а-яё])рамаян|(?<![а-яё])хариванш|(?<![а-яё])гит[аеы]|(?<![а-яё])бхагавадгит|(?<![а-яё])пуран|(?<![а-яё])смрит|(?<![а-яё])тантр|(?<![а-яё])дхармашастр|(?<![а-яё])дхарма-шастр",
         "confidence": "title_tag_pattern",
     },
     {
@@ -49,7 +49,7 @@ RULE_ROWS: list[dict[str, str]] = [
         "code": "IV",
         "label": "Classical",
         "covers": "kāvya, drama, kathā, classical śāstra, kośa, later grammar",
-        "pattern": r"\b(kavya|kāvya|drama|natya|nāṭya|katha|kathā|shastra|śāstra|sastra|sāstra|kosha|kośa|classical sanskrit|kalidasa|kālidāsa|bhasa|bhāsa|dandin|daṇḍin|campu|campū|poetry|poetic)\b|кавь|kāvya|драм|натья|натъя|катх|шастр|классическ(ий|ого|ая)? санскрит|калидас|бхас|данди|поэз|стих",
+        "pattern": r"\b(kavya|kāvya|drama|natya|nāṭya|katha|kathā|shastra|śāstra|sastra|sāstra|kosha|kośa|classical sanskrit|kalidasa|kālidāsa|bhasa|bhāsa|dandin|daṇḍin|campu|campū|poetry|poetic)\b|(?<![а-яё])кавь|(?<![а-яё])драм|(?<![а-яё])натья|(?<![а-яё])натъя|(?<![а-яё])катх|(?<![а-яё])шастр|(?<![а-яё])классическ(ий|ого|ая)? санскрит|(?<![а-яё])калидас|(?<![а-яё])бхас|(?<![а-яё])данди|(?<![а-яё])поэз|(?<![а-яё])стих",
         "confidence": "title_tag_pattern",
     },
     {
@@ -57,29 +57,29 @@ RULE_ROWS: list[dict[str, str]] = [
         "code": "V",
         "label": "Buddhist / Jaina",
         "covers": "Buddhist Hybrid and Jaina Sanskrit",
-        "pattern": r"\b(buddh|bauddha|bhs|buddhist hybrid|jain|jaina|jainism|pali|pāli|prakrit|prākrit|abhidharma|bodhisattva|mahāyāna|mahayana|theravada|vajrayana|vajrayāna|tripitaka|tipitaka)\b|будд|баудд|джайн|jaina|палий|пали\b|пракрит|абхидхарм|бодхисаттв|махаян|тхеравад|ваджраян|трипитак",
+        "pattern": r"\b(buddh|bauddha|bhs|buddhist hybrid|jain|jaina|jainism|pali|pāli|prakrit|prākrit|abhidharma|bodhisattva|mahāyāna|mahayana|theravada|vajrayana|vajrayāna|tripitaka|tipitaka)\b|(?<![а-яё])будд|(?<![а-яё])баудд|(?<![а-яё])джайн|(?<![а-яё])палий|(?<![а-яё])пали\b|(?<![а-яё])пракрит|(?<![а-яё])абхидхарм|(?<![а-яё])бодхисаттв|(?<![а-яё])махаян|(?<![а-яё])тхеравад|(?<![а-яё])ваджраян|(?<![а-яё])трипитак",
         "confidence": "title_tag_pattern",
     },
-    ("register", "rgveda", "Ṛgveda", "Ṛgveda", r"\b(rigveda|rgveda|r\u0325gveda|ṛgveda|rv\b)\b|ригвед", "title_tag_pattern"),
-    ("register", "atharva", "Atharvaveda", "Atharvaveda", r"\b(atharva|atharvaveda|av\b)\b|атхарвав", "title_tag_pattern"),
-    ("register", "yajus", "Yajurveda", "Yajurveda", r"\b(yajurveda|yajus|yajur)\b|яджурвед", "title_tag_pattern"),
-    ("register", "brahmana", "Brāhmaṇa", "Brāhmaṇa", r"\b(brahmana|brāhmaṇa|satapatha|śatapatha|shatapatha|aitareya|taittiriya|taittirīya)\b|брахман|ш?атапатх|айтре|тайттир", "title_tag_pattern"),
-    ("register", "upanisad", "Upaniṣad", "Upaniṣad", r"\b(upanishad|upaniṣad|upanisad|brhadaranyaka|bṛhadāraṇyaka|chandogya|chāndogya|katha up|kaṭha up)\b|упанишад|брихадараньяк|чхандог", "title_tag_pattern"),
-    ("register", "sutra", "Sūtra", "Sūtra", r"\b(sutra|sūtra|kalpasutra|kalpasūtra|grhya|gṛhya|srauta|śrauta|shrauta)\b|сутр|кальпасутр|грихь|шраут", "title_tag_pattern"),
-    ("register", "vyakarana", "Vyākaraṇa", "Vyākaraṇa", r"\b(vyakarana|vyākaraṇa|panini|pāṇini|ashtadhyayi|aṣṭādhyāyī|patanjali|patañjali|grammar|grammatical)\b|вьякаран|панини|патанджал|грамматик", "title_tag_pattern"),
-    ("register", "epic", "Epic", "Epic", r"\b(mahabharata|mahābhārata|mbh|ramayana|rāmāyaṇa|harivamsa|harivaṃśa|epic)\b|махабхарат|рамаян|эпос|эпическ|хариванш", "title_tag_pattern"),
-    ("register", "purana", "Purāṇa", "Purāṇa", r"\b(purana|purāṇa|bhagavata|bhāgavata|devibhagavata|devībhāgavata|vishnu purana|viṣṇu purāṇa)\b|пуран|бхагават", "title_tag_pattern"),
-    ("register", "tantra", "Tantra", "Tantra", r"\b(tantra|tantric|tantrism|tantrik|tantrika|kularnava|kulārṇava)\b|тантр", "title_tag_pattern"),
-    ("register", "smrti", "Smṛti", "Smṛti", r"\b(smriti|smṛti|manu|yajnavalkya|yājñavalkya|dharmasastra|dharmaśāstra)\b|смрит|ману|яджнявалк|дхармашастр", "title_tag_pattern"),
-    ("register", "karika", "Kārikā", "Kārikā", r"\b(karika|kārikā|karikas|kārikās)\b|карик", "title_tag_pattern"),
-    ("register", "bhasya", "Bhāṣya", "Bhāṣya", r"\b(bhasya|bhāṣya|commentary|commentarial|commentator|sāyaṇa|sayana|śaṅkara|shankara|tikā|ṭīkā|tika|vrtti|vṛtti)\b|бхашь|коммент|шанкар|саян|тика|вритт", "title_tag_pattern"),
-    ("register", "katha", "Kathā", "Kathā", r"\b(katha|kathā|story|stories|narrative|tale|tales)\b|катх|повеств|рассказ|сюжет", "title_tag_pattern"),
-    ("register", "natya", "Nāṭya", "Nāṭya", r"\b(natya|nāṭya|drama|dramatic|theatre|theater|play|plays|natyasastra|nāṭyaśāstra)\b|натья|драм|театр|пьес", "title_tag_pattern"),
-    ("register", "kavya", "Kāvya", "Kāvya", r"\b(kavya|kāvya|poetry|poetic|poem|verse|kalidasa|kālidāsa|campu|campū)\b|кавь|поэз|поэм|стих|калидас|чампу", "title_tag_pattern"),
-    ("register", "bauddha", "Bauddha", "Bauddha", r"\b(buddh|bauddha|bhs|buddhist hybrid|abhidharma|bodhisattva|mahāyāna|mahayana|vajrayana|vajrayāna|theravada)\b|будд|баудд|абхидхарм|бодхисаттв|махаян|ваджраян", "title_tag_pattern"),
-    ("register", "jaina", "Jaina", "Jaina", r"\b(jain|jaina|jainism|jaina sanskrit|kalpasutra|kalpasūtra)\b|джайн", "title_tag_pattern"),
-    ("register", "epig", "Epigraphic", "Epigraphic", r"\b(epigraph|epigraphy|inscription|inscriptions|copper[- ]plate|donative|prasasti|praśasti)\b|эпиграф|надпис|прашаст", "title_tag_pattern"),
-    ("register", "hors_inde", "Outside India", "Outside India", r"\b(khotan|khotanese|sogdian|tocharian|central asian sanskrit|outside india|hors inde)\b|хотан|согд|тохар|центральноазиатск", "title_tag_pattern"),
+    ("register", "rgveda", "Ṛgveda", "Ṛgveda", r"\b(rigveda|rgveda|r̥gveda|ṛgveda|rv\b)\b|(?<![а-яё])ригвед", "title_tag_pattern"),
+    ("register", "atharva", "Atharvaveda", "Atharvaveda", r"\b(atharva|atharvaveda|av\b)\b|(?<![а-яё])атхарвав", "title_tag_pattern"),
+    ("register", "yajus", "Yajurveda", "Yajurveda", r"\b(yajurveda|yajus|yajur)\b|(?<![а-яё])яджурвед", "title_tag_pattern"),
+    ("register", "brahmana", "Brāhmaṇa", "Brāhmaṇa", r"\b(brahmana|brāhmaṇa|satapatha|śatapatha|shatapatha|aitareya|taittiriya|taittirīya)\b|(?<![а-яё])брахман|(?<![а-яё])ш?атапатх|(?<![а-яё])айтре|(?<![а-яё])тайттир", "title_tag_pattern"),
+    ("register", "upanisad", "Upaniṣad", "Upaniṣad", r"\b(upanishad|upaniṣad|upanisad|brhadaranyaka|bṛhadāraṇyaka|chandogya|chāndogya|katha up|kaṭha up)\b|(?<![а-яё])упанишад|(?<![а-яё])брихадараньяк|(?<![а-яё])чхандог", "title_tag_pattern"),
+    ("register", "sutra", "Sūtra", "Sūtra", r"\b(sutra|sūtra|kalpasutra|kalpasūtra|grhya|gṛhya|srauta|śrauta|shrauta)\b|(?<![а-яё])сутр|(?<![а-яё])кальпасутр|(?<![а-яё])грихь|(?<![а-яё])шраут", "title_tag_pattern"),
+    ("register", "vyakarana", "Vyākaraṇa", "Vyākaraṇa", r"\b(vyakarana|vyākaraṇa|panini|pāṇini|ashtadhyayi|aṣṭādhyāyī|patanjali|patañjali|grammar|grammatical)\b|(?<![а-яё])вьякаран|(?<![а-яё])панини|(?<![а-яё])патанджал|(?<![а-яё])грамматик", "title_tag_pattern"),
+    ("register", "epic", "Epic", "Epic", r"\b(mahabharata|mahābhārata|mbh|ramayana|rāmāyaṇa|harivamsa|harivaṃśa|epic)\b|(?<![а-яё])махабхарат|(?<![а-яё])рамаян|(?<![а-яё])эпос|(?<![а-яё])эпическ|(?<![а-яё])хариванш", "title_tag_pattern"),
+    ("register", "purana", "Purāṇa", "Purāṇa", r"\b(purana|purāṇa|bhagavata|bhāgavata|devibhagavata|devībhāgavata|vishnu purana|viṣṇu purāṇa)\b|(?<![а-яё])пуран|(?<![а-яё])бхагават", "title_tag_pattern"),
+    ("register", "tantra", "Tantra", "Tantra", r"\b(tantra|tantric|tantrism|tantrik|tantrika|kularnava|kulārṇava)\b|(?<![а-яё])тантр", "title_tag_pattern"),
+    ("register", "smrti", "Smṛti", "Smṛti", r"\b(smriti|smṛti|manu|yajnavalkya|yājñavalkya|dharmasastra|dharmaśāstra)\b|(?<![а-яё])смрит|(?<![а-яё])ману(?![а-яё])|(?<![а-яё])яджнявалк|(?<![а-яё])дхармашастр", "title_tag_pattern"),
+    ("register", "karika", "Kārikā", "Kārikā", r"\b(karika|kārikā|karikas|kārikās)\b|(?<![а-яё])карик", "title_tag_pattern"),
+    ("register", "bhasya", "Bhāṣya", "Bhāṣya", r"\b(bhasya|bhāṣya|commentary|commentarial|commentator|sāyaṇa|sayana|śaṅkara|shankara|tikā|ṭīkā|tika|vrtti|vṛtti)\b|(?<![а-яё])бхашь|(?<![а-яё])коммент|(?<![а-яё])шанкар|(?<![а-яё])саян|(?<![а-яё])тика(?![а-яё])|(?<![а-яё])вритт", "title_tag_pattern"),
+    ("register", "katha", "Kathā", "Kathā", r"\b(katha|kathā|story|stories|narrative|tale|tales)\b|(?<![а-яё])катх|(?<![а-яё])повеств|(?<![а-яё])рассказ|(?<![а-яё])сюжет", "title_tag_pattern"),
+    ("register", "natya", "Nāṭya", "Nāṭya", r"\b(natya|nāṭya|drama|dramatic|theatre|theater|play|plays|natyasastra|nāṭyaśāstra)\b|(?<![а-яё])натья|(?<![а-яё])драм|(?<![а-яё])театр|(?<![а-яё])пьес", "title_tag_pattern"),
+    ("register", "kavya", "Kāvya", "Kāvya", r"\b(kavya|kāvya|poetry|poetic|poem|verse|kalidasa|kālidāsa|campu|campū)\b|(?<![а-яё])кавь|(?<![а-яё])поэз|(?<![а-яё])поэм|(?<![а-яё])стих|(?<![а-яё])калидас|(?<![а-яё])чампу", "title_tag_pattern"),
+    ("register", "bauddha", "Bauddha", "Bauddha", r"\b(buddh|bauddha|bhs|buddhist hybrid|abhidharma|bodhisattva|mahāyāna|mahayana|vajrayana|vajrayāna|theravada)\b|(?<![а-яё])будд|(?<![а-яё])баудд|(?<![а-яё])абхидхарм|(?<![а-яё])бодхисаттв|(?<![а-яё])махаян|(?<![а-яё])ваджраян", "title_tag_pattern"),
+    ("register", "jaina", "Jaina", "Jaina", r"\b(jain|jaina|jainism|jaina sanskrit|kalpasutra|kalpasūtra)\b|(?<![а-яё])джайн", "title_tag_pattern"),
+    ("register", "epig", "Epigraphic", "Epigraphic", r"\b(epigraph|epigraphy|inscription|inscriptions|copper[- ]plate|donative|prasasti|praśasti)\b|(?<![а-яё])эпиграф|(?<![а-яё])надпис|(?<![а-яё])прашаст", "title_tag_pattern"),
+    ("register", "hors_inde", "Outside India", "Outside India", r"\b(khotan|khotanese|sogdian|tocharian|central asian sanskrit|outside india|hors inde)\b|(?<![а-яё])хотан|(?<![а-яё])согд|(?<![а-яё])тохар|(?<![а-яё])центральноазиатск", "title_tag_pattern"),
 ]
 
 
@@ -190,8 +190,24 @@ def presentation_rows(root: Path) -> list[dict[str, object]]:
     return sorted(clean_rows, key=lambda r: (str(r.get("year", "")), str(r.get("presentation_id", ""))))
 
 
-def match_text(row: dict[str, object]) -> str:
-    return " ".join(str(row.get(key, "")) for key in ["title", "tags", "meso_codes", "theme_en", "theme_code"])
+def match_field_items(row: dict[str, object]) -> list[tuple[str, str]]:
+    """(field, text) pairs to search, title first, then each individual tag/
+    meso_code/theme value, so a hit can be attributed to its real surface
+    instead of the previous opaque combined blob. H459 scope item 2: 21 of a
+    150-item precision gold sample matched a subject tag whose text was never
+    exported, making those rows unauditable in renou_presentation_matches.csv.
+    """
+    items: list[tuple[str, str]] = [("title", str(row.get("title", "")))]
+    for key in ("tags", "meso_codes"):
+        value = str(row.get(key, ""))
+        for part in value.split("; "):
+            if part:
+                items.append(("tag", part))
+    for key in ("theme_en", "theme_code"):
+        value = str(row.get(key, ""))
+        if value:
+            items.append(("tag", value))
+    return items
 
 
 def compile_rules(rules: list[dict[str, str]]) -> list[dict[str, object]]:
@@ -207,12 +223,23 @@ def apply_rules(rows: list[dict[str, object]], rules: list[dict[str, object]]) -
     presentation_out = []
     match_out = []
     for row in rows:
-        text = match_text(row)
+        field_items = match_field_items(row)
         matches = []
         for rule in rules:
             regex = rule["_regex"]
             assert isinstance(regex, re.Pattern)
-            match = regex.search(text)
+            match = None
+            matched_field = ""
+            matched_field_text = ""
+            for field, text in field_items:
+                if not text:
+                    continue
+                found = regex.search(text)
+                if found:
+                    match = found
+                    matched_field = field
+                    matched_field_text = "" if field == "title" else text
+                    break
             if not match:
                 continue
             matches.append(rule)
@@ -226,6 +253,8 @@ def apply_rules(rows: list[dict[str, object]], rules: list[dict[str, object]]) -
                     "renou_code": rule["code"],
                     "renou_label": rule["label"],
                     "matched_term": match.group(0),
+                    "matched_field": matched_field,
+                    "matched_field_text": matched_field_text,
                     "confidence": rule.get("confidence", "title_tag_pattern"),
                     "rule_id": rule["rule_id"],
                     "public_path": row["public_path"],
