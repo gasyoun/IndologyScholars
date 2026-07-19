@@ -49,13 +49,13 @@ EXCLUDED_PREFIXES = (
 
 SKIP_SCHEMES = ('http:', 'https:', 'mailto:', 'tel:', 'data:', 'javascript:', 'ftp:')
 
-# prepare_pages_artifact.py publishes source Indology/ under public path
-# IndologyArchive/ — links to the public path are valid on the deployed site.
-DEPLOY_ALIASES = {'IndologyArchive': 'Indology'}
+DEPLOY_ALIASES = {}
 
 # Files that exist only in the deployed artifact (written by
-# prepare_pages_artifact.py), not in the source tree.
-DEPLOY_SYNTHESIZED = {'Indology/index.html'}
+# prepare_pages_artifact.py), not in the source tree. IndologyArchive/index.html
+# is a redirect stub to gasyoun/IndologyArchiveAtlas's own Pages site (H460
+# split) kept for old inbound links; the archive itself no longer lives here.
+DEPLOY_SYNTHESIZED = {'IndologyArchive/index.html'}
 
 # Pages whose anchors are attached client-side (JS render); fragments into
 # them are invisible to a static parse and are reported separately.
@@ -259,7 +259,9 @@ def main():
             defect(cls, 'public_ids.json', f'{pid} -> {rel}')
 
     # ---- 4: FAIR metadata ------------------------------------------------
-    for dp_path in ('datapackage.json', 'Indology/datapackage.json'):
+    # Indology/ split into gasyoun/IndologyArchiveAtlas (H460) — its FAIR
+    # metadata is audited there now, not here.
+    for dp_path in ('datapackage.json',):
         full = ROOT / dp_path
         if not full.exists():
             defect('missing-fair-file', dp_path, 'datapackage.json absent')
@@ -285,7 +287,7 @@ def main():
             if not dp.get(field):
                 defect('incomplete-package-metadata', dp_path, f'missing {field}')
 
-    for cff_path in ('CITATION.cff', 'Indology/CITATION.cff'):
+    for cff_path in ('CITATION.cff',):
         full = ROOT / cff_path
         if not full.exists():
             defect('missing-fair-file', cff_path, 'CITATION.cff absent')

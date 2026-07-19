@@ -141,12 +141,13 @@ The `.github/workflows/rebuild_and_deploy.yml` workflow fetches new programmes,
 runs the full build and validation, and deploys GitHub Pages on 20 June and
 20 December at 00:00 UTC, as well as on manual dispatch.
 
-The standalone INDOLOGY-L mailing-list appendix is updated by
-`.github/workflows/update_indology_archive.yml`. It runs on the 1st of each
-month at 03:00 UTC, can also be started manually from the GitHub Actions UI,
-regenerates `Indology/` from the cached Pipermail harvest, refreshes the
-top-level archive index to discover new months, commits changed atlas files,
-and redeploys the Pages artifact under `IndologyArchive/`.
+The INDOLOGY-L mailing-list atlas split out into its own repo,
+[`gasyoun/IndologyArchiveAtlas`](https://github.com/gasyoun/IndologyArchiveAtlas)
+(H460, 19-07-2026) — its own monthly `update_indology_archive.yml` and Pages
+deploy now live there. This site consumes only a small one-way feed from it
+(`tools/fetch_indology_feed.py`, run before `generate_renou_layer.py` in
+`rebuild_and_deploy.yml`) for the Renou cross-site comparison; the old
+`/IndologyArchive/` path here now redirects to the new repo's Pages site.
 
 ### Article numbers consistency
 
