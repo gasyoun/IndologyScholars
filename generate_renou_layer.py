@@ -18,6 +18,7 @@ from urllib.parse import quote
 
 
 RENOU_SOURCE_URL = "https://github.com/gasyoun/SanskritLexicography/blob/master/RussianTranslation/RENOU.md"
+INDOLOGY_FEED_REPO_URL = "https://github.com/gasyoun/IndologyArchiveAtlas/blob/main"
 
 RULE_ROWS: list[dict[str, str]] = [
     {
@@ -404,7 +405,7 @@ def csv_page_link(filename: str, label: object) -> str:
 
 
 def archive_csv_link(path: object, label: object) -> str:
-    return link(f"../IndologyArchive/{path}", label)
+    return link(f"{INDOLOGY_FEED_REPO_URL}/{path}", label)
 
 
 def render_table(rows: list[dict[str, object]], columns: list[str], limit: int = 20) -> str:
@@ -430,9 +431,9 @@ def int_value(value: object) -> int:
 
 
 def aggregate_archive_axis(root: Path, axis: str) -> dict[str, dict[str, object]]:
-    processed = root / "Indology" / "data" / "processed"
-    summary_rows = read_csv(processed / f"renou_{axis}_summary.csv")
-    export_rows = read_csv(processed / "renou_export_index.csv")
+    feed = root / "analytics_output" / "indology_feed"
+    summary_rows = read_csv(feed / f"renou_{axis}_summary.csv")
+    export_rows = read_csv(feed / "renou_export_index.csv")
     grouped: dict[str, dict[str, object]] = {}
     for row in summary_rows:
         code = row.get("renou_code", "")
@@ -600,7 +601,7 @@ def write_page(root: Path, outputs: dict[str, list[dict[str, object]]]) -> None:
 </head>
 <body>
 <main>
-  <p><a href="../index.html">Home</a> · <a href="index.html">Findings</a> · <a href="/IndologyScholars/IndologyArchive/dashboard/index.html">INDOLOGY archive atlas</a></p>
+  <p><a href="../index.html">Home</a> · <a href="index.html">Findings</a> · <a href="https://gasyoun.github.io/IndologyArchiveAtlas/dashboard/index.html">INDOLOGY archive atlas</a></p>
   <h1>Renou Layer For Conference Metadata</h1>
   <p class="note">This page applies the Renou I-V state axis and register lattice to main-site conference presentation titles and tags. It is a finding aid for public metadata: a match means a title/tag triggered an editable rule, not that the presentation has been fully interpreted or ranked.</p>
   <section class="stats">
@@ -636,7 +637,7 @@ def write_comparison_page(root: Path, outputs: dict[str, list[dict[str, object]]
     state_rows = outputs["state_comparison"]
     register_rows = outputs["register_comparison"]
     conference_coverage = outputs["coverage"][0]
-    archive_coverage_rows = read_csv(root / "Indology" / "data" / "processed" / "renou_coverage.csv")
+    archive_coverage_rows = read_csv(root / "analytics_output" / "indology_feed" / "renou_coverage.csv")
     archive_messages = next((row for row in archive_coverage_rows if row.get("scope") == "messages"), {})
     archive_threads = next((row for row in archive_coverage_rows if row.get("scope") == "threads"), {})
     state_display = []
@@ -694,7 +695,7 @@ def write_comparison_page(root: Path, outputs: dict[str, list[dict[str, object]]
 </head>
 <body>
 <main>
-  <p><a href="../index.html">Home</a> · <a href="index.html">Findings</a> · <a href="renou.html">Main-site Renou layer</a> · <a href="/IndologyScholars/IndologyArchive/dashboard/index.html">INDOLOGY archive atlas</a></p>
+  <p><a href="../index.html">Home</a> · <a href="index.html">Findings</a> · <a href="renou.html">Main-site Renou layer</a> · <a href="https://gasyoun.github.io/IndologyArchiveAtlas/dashboard/index.html">INDOLOGY archive atlas</a></p>
   <h1>Renou Cross-Site Comparison</h1>
   <p class="note">This page compares two separate Renou finding aids: conference presentation metadata from the main IndologyScholars site and mailing-list subject metadata from the standalone INDOLOGY Archive Atlas. Counts are not directly equivalent: conference rows count presentations, while archive rows count public email messages and threads. The comparison is useful for contrast, not ranking or representativeness claims.</p>
   <section class="stats">

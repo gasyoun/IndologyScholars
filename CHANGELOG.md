@@ -6,6 +6,17 @@
 
 ## [Unreleased]
 
+### Changed
+- **`Indology/` (атлас архива рассылки INDOLOGY-L, 1990–2026) выделен в
+  отдельный репозиторий [`gasyoun/IndologyArchiveAtlas`](https://github.com/gasyoun/IndologyArchiveAtlas)
+  (H460)**, вместе с полной историей коммитов (`git filter-repo`) и
+  собственным ежемесячным workflow/Pages-деплоем. Этот сайт теперь читает
+  только маленький односторонний фид (`tools/fetch_indology_feed.py`,
+  ~5 МБ) для кросс-сайтового сравнения Рену
+  ([`generate_renou_layer.py`](https://github.com/gasyoun/IndologyScholars/blob/main/generate_renou_layer.py))
+  вместо прямого чтения дерева `Indology/`; старый путь `/IndologyArchive/`
+  теперь редиректит на Pages нового репозитория.
+
 ### Fixed
 - **Все интерактивные графики на страницах с встроенным JS были пусты на живом сайте
   (тепловая карта, топ-авторы, темы, сеть ответов, книгохранилище — «не загружены»).**

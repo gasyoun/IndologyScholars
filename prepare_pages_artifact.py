@@ -73,11 +73,12 @@ PUBLIC_DIRS = [
 ]
 
 PUBLIC_ALIASED_DIRS = {
-    "Indology": "IndologyArchive",
     # Only index.html is committed under nagari/site/; the DB, the Markdown mirror
     # and the raw dump are git-ignored, so nothing else can reach the artifact.
     "nagari/site": "nagari",
 }
+
+INDOLOGY_ARCHIVE_PAGES_URL = "https://gasyoun.github.io/IndologyArchiveAtlas/dashboard/index.html"
 
 
 def copy_path(src, dest_root):
@@ -110,19 +111,22 @@ def copy_dir_as(src, dest_root, public_name):
 
 
 def write_indology_archive_landing(dest_root):
+    # Indology/ split out into its own repo + Pages site (H460). This redirect
+    # keeps any existing inbound links/bookmarks to the old
+    # /IndologyArchive/ path working instead of 404ing.
     destination = dest_root / "IndologyArchive" / "index.html"
-    if not destination.parent.exists():
-        return
+    destination.parent.mkdir(parents=True, exist_ok=True)
     destination.write_text(
-        """<!doctype html>
+        f"""<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="refresh" content="0; url=dashboard/index.html">
-  <title>INDOLOGY Archive Atlas</title>
+  <meta http-equiv="refresh" content="0; url={INDOLOGY_ARCHIVE_PAGES_URL}">
+  <title>INDOLOGY Archive Atlas (moved)</title>
 </head>
 <body>
-  <p><a href="dashboard/index.html">Open the INDOLOGY Archive Atlas</a></p>
+  <p>The INDOLOGY Archive Atlas moved to its own repo.
+  <a href="{INDOLOGY_ARCHIVE_PAGES_URL}">Open the INDOLOGY Archive Atlas</a></p>
 </body>
 </html>
 """,

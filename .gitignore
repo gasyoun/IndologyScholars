@@ -61,6 +61,11 @@ html_cache/vak/
 # code-execution vector if a PR swapped it.
 analytics_output/nlp_cache.pkl
 
+# One-way feed fetched from gasyoun/IndologyArchiveAtlas (H460 split) by
+# tools/fetch_indology_feed.py. Not duplicated here — CI re-fetches it every
+# build; generate_renou_layer.py degrades gracefully if it's absent.
+analytics_output/indology_feed/
+
 # Personal review sheets (voting artifacts, not repo deliverables)
 review/
 

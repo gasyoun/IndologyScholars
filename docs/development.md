@@ -143,12 +143,14 @@ Workflow `.github/workflows/rebuild_and_deploy.yml` выполняет загр�
 программ, полную сборку, валидацию и развертывание GitHub Pages по расписанию
 20 июня и 20 декабря в 00:00 UTC, а также по ручному запуску.
 
-Отдельное приложение по архиву рассылки INDOLOGY-L обновляется workflow
-`.github/workflows/update_indology_archive.yml`. Он запускается первого числа
-каждого месяца в 03:00 UTC, доступен для ручного запуска в GitHub Actions,
-пересобирает `Indology/` из кэшированного Pipermail-harvest, обновляет верхний
-индекс архива для обнаружения новых месяцев, коммитит изменения атласа и заново
-публикует Pages-артефакт под путём `IndologyArchive/`.
+Атлас архива рассылки INDOLOGY-L выделен в отдельный репозиторий
+[`gasyoun/IndologyArchiveAtlas`](https://github.com/gasyoun/IndologyArchiveAtlas)
+(H460, 19-07-2026) — свой ежемесячный `update_indology_archive.yml` и
+публикация Pages теперь там. Этот сайт потребляет только небольшой
+одностороний фид оттуда (`tools/fetch_indology_feed.py`, запускается перед
+`generate_renou_layer.py` в `rebuild_and_deploy.yml`) для кросс-сайтового
+сравнения Рену; старый путь `/IndologyArchive/` теперь перенаправляет на
+Pages нового репозитория.
 
 ### Сверка чисел статьи
 

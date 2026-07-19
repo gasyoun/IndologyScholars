@@ -37,7 +37,7 @@ def _static_sitemap_root_pages():
             continue
         rel = loc[idx + len(SITE_BASE):]
         # Root-level pages only: no '/' in the remainder. Directory entries
-        # (e.g. IndologyArchive/…) are shipped via PUBLIC_DIRS/aliased dirs.
+        # (e.g. nagari/…) are shipped via PUBLIC_DIRS/aliased dirs.
         if rel.endswith(".html") and "/" not in rel:
             pages.add(rel)
     return pages

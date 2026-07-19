@@ -60,6 +60,10 @@ jobs:
           python article/work_title_keywords.py
           python tools/build_classification_reliability_sample.py
 
+      - name: Fetch INDOLOGY Archive Atlas Feed
+        run: |
+          python tools/fetch_indology_feed.py
+
       - name: Generate JS Configs (if any remain)
         run: |
           python generate_site_data.py
