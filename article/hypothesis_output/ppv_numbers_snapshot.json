@@ -53,9 +53,25 @@
   },
   "g_levels": {
     "1": 1146,
+    "2": 207,
+    "3": 9
+  },
+  "g_levels_raw": {
+    "1": 1146,
     "2": 205,
     "3": 11
   },
+  "editorial_reclassifications": {
+    "PRES_5f75a74856": [
+      "3",
+      "2"
+    ],
+    "PRES_787b14a0e0": [
+      "3",
+      "2"
+    ]
+  },
+  "override_errors": [],
   "theme_counts": {
     "Zograf": {
       "philosophy": 190,
@@ -80,5 +96,73 @@
       "tibetology": 1,
       "other": 4
     }
+  },
+  "meso_counts": {
+    "bhakti_vaishnava": 45,
+    "tibetology_himalaya": 69,
+    "dravidology_south_india": 63,
+    "yoga_ayurveda": 11,
+    "hindi_urdu_new_indo_aryan": 12,
+    "buddhist_studies": 217,
+    "sanskrit_grammar_panini": 50,
+    "himalaya": 10,
+    "philosophy_epistemology": 115,
+    "literary_studies": 47,
+    "epic_ramayana_mahabharata": 69,
+    "etymology": 24,
+    "bengal": 49,
+    "translation_reception": 43,
+    "vedic_studies": 80,
+    "modern_literature": 27,
+    "comparative_analysis": 66,
+    "colonial_encounters": 32,
+    "visual_material_culture": 55,
+    "ritual_studies": 48,
+    "modern_society_politics": 31,
+    "vaishnava": 20,
+    "travel_history": 6,
+    "manuscripts_epigraphy": 39,
+    "ethnography_performance": 42,
+    "pali_early_buddhism": 34,
+    "china_mongolia_inner_asia": 28,
+    "expeditions": 26,
+    "history_of_indology": 59,
+    "museum_collections": 28,
+    "nepal_newar_kathmandu": 38,
+    "jain_studies": 12,
+    "roerich_studies": 9,
+    "metrics": 9,
+    "prosody": 7,
+    "assam": 5,
+    "cosmology": 8,
+    "english_literature": 2,
+    "life_cycle_rituals": 8,
+    "bengal_bhakti_modernity": 6,
+    "fieldwork": 3,
+    "sikh_studies": 4,
+    "new_indo_aryan_languages": 7,
+    "board_games": 5,
+    "twentieth_century": 2
+  },
+  "appendix": {
+    "H1_overlap_observed": 41.0,
+    "H1_overlap_expected_mean": 130.95,
+    "H1_overlap_expected_sd": 3.91,
+    "H1_z": -23.021,
+    "H1_p_one_sided_low": 4.999750012499375e-05,
+    "H2_logrank_chi2": 0.475,
+    "H2_logrank_p": 0.49092245081312724,
+    "H2_median_span_zograf": 7.0,
+    "H2_median_span_roerich": 9.0,
+    "H4_zograf_cityonly_pct": 70.3,
+    "H4_roerich_cityonly_pct": 9.6,
+    "H4_cmh_OR": 20.52,
+    "H4_cmh_chi2": 462.0,
+    "H4_cmh_p": 1.7827144702717767e-102
+  },
+  "retention_by_city": {
+    "Moscow": 63.1,
+    "SPb": 64.6,
+    "Regions/Foreign": 31.7
   }
 }
