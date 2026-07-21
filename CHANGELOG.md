@@ -6,6 +6,8 @@
 
 ## [Unreleased]
 
+## [1.3.0] - 2026-07-21
+
 ### Changed
 - **`Indology/` (атлас архива рассылки INDOLOGY-L, 1990–2026) выделен в
   отдельный репозиторий [`gasyoun/IndologyArchiveAtlas`](https://github.com/gasyoun/IndologyArchiveAtlas)
