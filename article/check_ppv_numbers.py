@@ -31,6 +31,27 @@ DB = ROOT / "conferences.db"
 CLASS_CSV = ROOT / "analytics_output" / "expanded_classification_deepseek.csv"
 ARTICLES = [ROOT / "article" / "ppv_submission_article.md"]
 OUT = ROOT / "article" / "hypothesis_output"
+APPENDIX_CSV = OUT / "appendix_g_summary.csv"
+RETENTION_CSV = OUT / "geographic_speaker_retention.csv"
+
+# Editorial reclassifications applied in the submitted article (see § 5: the two
+# 2023 talks on the "южноазиатская схема рациональности" generalise one tradition
+# without claiming an inter-civilisational frame, so G3 -> G2). The CSV keeps the
+# model's raw labels; the article states the post-editorial figures, so the
+# expected G counts are adjusted here. Each override is verified against the CSV:
+# if the CSV row no longer carries the "from" level, the override is stale and is
+# reported as a failure instead of being silently applied.
+EDITORIAL_RECLASS: dict[str, tuple[str, str]] = {
+    "PRES_5f75a74856": ("3", "2"),
+    "PRES_787b14a0e0": ("3", "2"),
+}
+
+# Written-out numerals used where the article states a small count as a word.
+RU_NUMERAL_INSTR = {2: "двумя", 3: "тремя", 4: "четырьмя", 5: "пятью", 6: "шестью",
+                    7: "семью", 8: "восемью", 9: "девятью", 10: "десятью",
+                    11: "одиннадцатью", 12: "двенадцатью"}
+EN_NUMERAL = {2: "two", 3: "three", 4: "four", 5: "five", 6: "six", 7: "seven",
+              8: "eight", 9: "nine", 10: "ten", 11: "eleven", 12: "twelve"}
 
 
 # ---------------------------------------------------------------------------
@@ -110,23 +131,75 @@ def combined_block(con: sqlite3.Connection) -> dict[str, float]:
     }
 
 
-def classification_blocks() -> tuple[dict[str, int], dict[str, dict[str, int]]]:
-    """Return (g_levels, theme_counts_by_series)."""
+def classification_blocks() -> tuple[dict[str, int], dict[str, int], dict[str, dict[str, int]], dict[str, int], list[str]]:
+    """Return (g_levels_editorial, g_levels_raw, theme_counts_by_series, meso_counts, override_errors)."""
     g: Counter[str] = Counter()
     themes: dict[str, Counter[str]] = {"Zograf": Counter(), "Roerich": Counter()}
+    meso: Counter[str] = Counter()
+    override_errors: list[str] = []
     if not CLASS_CSV.exists():
-        return dict(g), {k: dict(v) for k, v in themes.items()}
+        return dict(g), dict(g), {k: dict(v) for k, v in themes.items()}, dict(meso), override_errors
+    seen_overrides: set[str] = set()
     with open(CLASS_CSV, encoding="utf-8-sig") as fh:
         for row in csv.DictReader(fh):
             level = row.get("gumilyov_level", "").strip()
             if level:
                 g[level] += 1
+            pid = row.get("presentation_id", "").strip()
+            if pid in EDITORIAL_RECLASS:
+                seen_overrides.add(pid)
+                if level != EDITORIAL_RECLASS[pid][0]:
+                    override_errors.append(
+                        f"stale editorial override {pid}: CSV level is {level!r}, "
+                        f"override expects {EDITORIAL_RECLASS[pid][0]!r}"
+                    )
             series_label = row.get("series", "")
             bucket = "Zograf" if "Zograf" in series_label else "Roerich" if "Roerich" in series_label else None
             theme = row.get("theme_l1", "").strip()
             if bucket and theme:
                 themes[bucket][theme] += 1
-    return dict(g), {k: dict(v) for k, v in themes.items()}
+            for code in re.split(r"[|;]", row.get("meso_codes", "")):
+                code = code.strip()
+                if code:
+                    meso[code] += 1
+    for pid in EDITORIAL_RECLASS:
+        if pid not in seen_overrides:
+            override_errors.append(f"editorial override {pid} not found in {CLASS_CSV.name}")
+    g_raw = dict(g)
+    g_edit = Counter(g)
+    if not override_errors:
+        for pid, (src, dst) in EDITORIAL_RECLASS.items():
+            g_edit[src] -= 1
+            g_edit[dst] += 1
+    return dict(g_edit), g_raw, {k: dict(v) for k, v in themes.items()}, dict(meso), override_errors
+
+
+def read_appendix_summary() -> dict[str, float]:
+    """Read appendix_g_summary.csv (null-model + city-only figures) if present."""
+    out: dict[str, float] = {}
+    if not APPENDIX_CSV.exists():
+        return out
+    with open(APPENDIX_CSV, encoding="utf-8-sig") as fh:
+        for row in csv.DictReader(fh):
+            try:
+                out[row["key"]] = float(row["value"])
+            except (KeyError, TypeError, ValueError):
+                continue
+    return out
+
+
+def read_retention_by_city() -> dict[str, float]:
+    """Read geographic_speaker_retention.csv (retention % by city marker) if present."""
+    out: dict[str, float] = {}
+    if not RETENTION_CSV.exists():
+        return out
+    with open(RETENTION_CSV, encoding="utf-8-sig") as fh:
+        for row in csv.DictReader(fh):
+            try:
+                out[row["city"]] = float(row["retention_pct"])
+            except (KeyError, TypeError, ValueError):
+                continue
+    return out
 
 
 def build_snapshot() -> dict[str, object]:
@@ -232,7 +305,7 @@ def build_snapshot() -> dict[str, object]:
 
     cross_cohort_pct = pct(total["cross_cohort"], total["unique_scholars"])
 
-    g_levels, theme_counts = classification_blocks()
+    g_levels, g_levels_raw, theme_counts, meso_counts, override_errors = classification_blocks()
 
     snapshot = {
         "total": total,
@@ -246,7 +319,13 @@ def build_snapshot() -> dict[str, object]:
             "author_participations": zog_2026_row[2],
         },
         "g_levels": g_levels,
+        "g_levels_raw": g_levels_raw,
+        "editorial_reclassifications": {k: list(v) for k, v in EDITORIAL_RECLASS.items()},
+        "override_errors": override_errors,
         "theme_counts": theme_counts,
+        "meso_counts": meso_counts,
+        "appendix": read_appendix_summary(),
+        "retention_by_city": read_retention_by_city(),
     }
     return snapshot
 
@@ -288,6 +367,60 @@ def check(label: str, regex: str, expected, text: str, *, flags: int = 0) -> lis
                     "context": ctx,
                 }
             )
+    return drifts
+
+
+def check_word(label: str, regex: str, expected: int, numerals: dict[int, str],
+               text: str) -> list[dict]:
+    """Check a written-out numeral (e.g. 'девятью заголовками') against a count."""
+    drifts = []
+    want = numerals.get(expected)
+    for m in re.finditer(regex, text):
+        word = m.group(1).lower()
+        if want is None or word != want:
+            line_no = text[: m.start()].count("\n") + 1
+            ctx = text[max(0, m.start() - 30): min(len(text), m.end() + 35)].replace("\n", " ").strip()
+            drifts.append({
+                "label": label,
+                "expected": want if want is not None else f"<numeral for {expected}>",
+                "found": word,
+                "line": line_no,
+                "context": ctx,
+            })
+    return drifts
+
+
+def check_table_column_sums(label: str, header_regex: str, expected_left: int,
+                            expected_right: int, text: str) -> list[dict]:
+    """Sum the two count columns of a '| name | n (pct) | n (pct) |' table."""
+    drifts = []
+    header = re.search(header_regex, text)
+    if not header:
+        return drifts
+    block = text[header.end():]
+    stop = re.search(r"\n\s*\n", block)
+    if stop:
+        block = block[: stop.start()]
+    left = right = 0
+    rows = 0
+    for m in re.finditer(
+        r"\|\s*[^|\d][^|]*\|\s*(\d+)\s*\([\d.]+\)\s*\|\s*(\d+)\s*\([\d.]+\)\s*\|", block
+    ):
+        left += int(m.group(1))
+        right += int(m.group(2))
+        rows += 1
+    if not rows:
+        return drifts
+    line_no = text[: header.start()].count("\n") + 1
+    for side, got, exp in (("Zograf", left, expected_left), ("Roerich", right, expected_right)):
+        if got != exp:
+            drifts.append({
+                "label": f"{label} column sum ({side})",
+                "expected": exp,
+                "found": got,
+                "line": line_no,
+                "context": f"table column sums to {got}, corpus artifact says {exp}",
+            })
     return drifts
 
 
@@ -347,7 +480,8 @@ def find_drifts(text: str, snap: dict[str, object]) -> list[dict]:
     out += check("Zograf 2026 declared presentations",
         r"(\d+)\s+заявленных\s+докладов", Z26["presentations"], text)
     out += check("Zograf 2026 author participations",
-        r"заявленных\s+докладов\s+и\s+(\d+)\s+авторское\s+участие", Z26["author_participations"], text)
+        r"заявленных\s+докладов\s+и\s+(\d+)\s+авторск(?:ое\s+участие|их\s+участи[йя])",
+        Z26["author_participations"], text)
 
     # --- Per-series (prose, § 3) ---
     out += check("Zograf presentations (prose)",
@@ -465,6 +599,120 @@ def find_drifts(text: str, snap: dict[str, object]) -> list[dict]:
     out += check("G1 denominator (EN 'of X presentations')",
         r"of\s+(\d[\d,]*)\s+presentations\s+are\s+micro", T["presentations"], text)
 
+    # --- § 5 prose 'Из X уникальных докладов Y относятся к G1' ---
+    out += check("G1 denominator (§ 5 'Из X уникальных докладов')",
+        r"Из\s+(\d[\d,]*)\s+уникальных\s+докладов\s+\d[\d,]*\s+относятся\s+к\s+G1",
+        T["presentations"], text)
+    if "1" in G:
+        out += check("G1 micro-cases (§ 5 '... Y относятся к G1')",
+            r"Из\s+\d[\d,]*\s+уникальных\s+докладов\s+(\d[\d,]*)\s+относятся\s+к\s+G1",
+            G["1"], text)
+
+    # --- § 5 G-scale table rows ---
+    if "1" in G:
+        out += check("Table: G1 row",
+            r"\|\s*G1\s*\|[^|]+\|\s*(\d+)\s*\|", G["1"], text)
+    if "2" in G:
+        out += check("Table: G2 row",
+            r"\|\s*G2\s*\|[^|]+\|\s*(\d+)\s*\|", G["2"], text)
+    if "3" in G:
+        out += check("Table: G3 row",
+            r"\|\s*G3\s*\|[^|]+\|\s*(\d+)\s*\|", G["3"], text)
+
+    # --- § 4 summary-table G row ('| Шкала G | G1 = X из Y докладов |') ---
+    if "1" in G:
+        out += check("§ 4 summary row: G1 count",
+            r"\|\s*Шкала\s+G\s*\|\s*G1\s*=\s*(\d[\d,]*)\s+из", G["1"], text)
+    out += check("§ 4 summary row: G1 denominator",
+        r"\|\s*Шкала\s+G\s*\|\s*G1\s*=\s*\d[\d,]*\s+из\s+(\d[\d,]*)\s+докладов",
+        T["presentations"], text)
+
+    # --- § 7 conclusion sentence ('нормой поля: X из Y докладов') ---
+    if "1" in G:
+        out += check("§ 7 conclusion: G1 count",
+            r"нормой\s+поля:\s+(\d[\d,]*)\s+из", G["1"], text)
+    out += check("§ 7 conclusion: G1 denominator",
+        r"нормой\s+поля:\s+\d[\d,]*\s+из\s+(\d[\d,]*)\s+докладов",
+        T["presentations"], text)
+    if "3" in G:
+        out += check_word("§ 7 conclusion: G3 numeral (RU)",
+            r"глобальные\s+обобщения[^.]*представлены\s+(?:лишь\s+)?(\w+)\s+заголовками",
+            G["3"], RU_NUMERAL_INSTR, text)
+        out += check_word("Abstract: G3 numeral (EN 'only N titles')",
+            r"only\s+(\w+)\s+titles", G["3"], EN_NUMERAL, text)
+        out += check("G3 talks in age paragraph (RU 'Среди девяти G3')",
+            r"Среди\s+(\d+)\s+G3-докладов", G["3"], text)
+
+    # --- Affiliation participations denominator ('Среди X авторских участий') ---
+    out += check("Affiliation denominator (RU 'Среди X авторских участий')",
+        r"Среди\s+(\d[\d,]*)\s+авторских\s+участий", T["author_participations"], text)
+
+    # --- Discipline / period table column sums vs per-series presentations ---
+    out += check_table_column_sums("§ 4 discipline table (L1)",
+        r"\|\s*Дисциплина\s+L1\s*\|", S["Zograf"]["presentations"],
+        S["Roerich"]["presentations"], text)
+    out += check_table_column_sums("§ 4 period table (L2)",
+        r"\|\s*Период\s+L2\s*\|", S["Zograf"]["presentations"],
+        S["Roerich"]["presentations"], text)
+
+    # --- Meso-level block (§ 5) ---
+    M = snap.get("meso_counts") or {}
+    if M:
+        out += check("Meso: buddhist_studies",
+            r"буддийские\s+традиции\s+\((\d+)\s+докладов\)", M.get("buddhist_studies", 0), text)
+        out += check("Meso: philosophy_epistemology",
+            r"философию\s+и\s+эпистемологию\s+\((\d+)\)", M.get("philosophy_epistemology", 0), text)
+        out += check("Meso: vedic_studies",
+            r"ведийские\s+исследования\s+\((\d+)\)", M.get("vedic_studies", 0), text)
+        out += check("Meso: comparative_analysis",
+            r"сравнительный\s+анализ\s+\((\d+)\)", M.get("comparative_analysis", 0), text)
+        out += check("Meso: tibetology_himalaya ('по N')",
+            r"\(по\s+(\d+)\)", M.get("tibetology_himalaya", 0), text)
+        out += check("Meso: epic_ramayana_mahabharata ('по N')",
+            r"\(по\s+(\d+)\)", M.get("epic_ramayana_mahabharata", 0), text)
+
+    # --- Null-model expectation + city-only shares (appendix_g_summary.csv) ---
+    A = snap.get("appendix") or {}
+    if "H1_overlap_expected_mean" in A:
+        exp_overlap = int(round(A["H1_overlap_expected_mean"]))
+        out += check("Expected overlap (RU abstract 'ожидает N')",
+            r"ожидает\s+(\d[\d,.]*\d|\d)", exp_overlap, text)
+        out += check("Expected overlap (EN abstract 'would expect N')",
+            r"would\s+expect\s+(\d[\d,.]*\d|\d)", exp_overlap, text)
+        out += check("Expected overlap (§ 3 'ожидался/ожидалось бы N')",
+            r"ожидал(?:ось|ся)\s+бы\s+(\d[\d,.]*\d|\d)", exp_overlap, text)
+        out += check("Expected overlap (§ 4 table 'вместо ожидаемых N')",
+            r"вместо\s+ожидаемых\s+(\d[\d,.]*\d|\d)", exp_overlap, text)
+        out += check("Expected overlap (§ 7 'нулевого ожидания N')",
+            r"нулевого\s+ожидания\s+(\d[\d,.]*\d|\d)", exp_overlap, text)
+    if "H1_overlap_expected_sd" in A:
+        out += check("Null-model sd (RU 'стандартное отклонение N')",
+            r"стандартное\s+отклонение\s+(\d+\.\d+)", round(A["H1_overlap_expected_sd"], 1), text)
+    if "H4_zograf_cityonly_pct" in A:
+        out += check("City-only share, Zograf (§ 4 prose)",
+            r"только\s+город,\s+составляет\s+(\d+\.\d+)%\s+на\s+Зографских",
+            A["H4_zograf_cityonly_pct"], text)
+        out += check("City-only share, Zograf (§ 4 summary table)",
+            r"только\s+город\"\s+(\d+\.\d+)%\s+на\s+Зографе",
+            A["H4_zograf_cityonly_pct"], text)
+    if "H4_roerich_cityonly_pct" in A:
+        out += check("City-only share, Roerich (§ 4 prose)",
+            r"Зографских\s+чтениях\s+и\s+(\d+\.\d+)%\s+на\s+Рериховских",
+            A["H4_roerich_cityonly_pct"], text)
+        out += check("City-only share, Roerich (§ 4 summary table)",
+            r"только\s+город\"\s+\d+\.\d+%\s+на\s+Зографе\s+и\s+(\d+\.\d+)%\s+на\s+Рерихе",
+            A["H4_roerich_cityonly_pct"], text)
+
+    # --- Retention by city marker (§ 4) ---
+    R = snap.get("retention_by_city") or {}
+    if R:
+        out += check("Retention: regional city markers",
+            r"городами:\s+(\d+\.\d+)%\s+против", R.get("Regions/Foreign", 0.0), text)
+        out += check("Retention: Moscow markers",
+            r"против\s+(\d+\.\d+)%\s+у\s+московских", R.get("Moscow", 0.0), text)
+        out += check("Retention: SPb markers",
+            r"московских\s+и\s+(\d+\.\d+)%\s+у\s+петербургских", R.get("SPb", 0.0), text)
+
     # Strip duplicates: same label + same line + same expected/found
     seen = set()
     uniq: list[dict] = []
@@ -530,11 +778,13 @@ def write_snapshot_and_report(snap: dict, drifts: list[dict]) -> None:
         f"- Zograf 2026 preliminary: {z26['presentations']} presentations, "
         f"{z26['unique_scholars']} scholars, {z26['author_participations']} author participations",
         "",
-        "## G-scale (from expanded_classification_deepseek.csv)",
+        "## G-scale (from expanded_classification_deepseek.csv, after editorial reclassifications)",
         "",
         f"- G1 micro-cases: **{g.get('1', 0)}**",
         f"- G2 traditions/schools: **{g.get('2', 0)}**",
         f"- G3 broad generalisations: **{g.get('3', 0)}**",
+        f"- Raw model labels before the editorial G3->G2 reclassification "
+        f"(see the article's § 5): {snap.get('g_levels_raw', {})}",
         "",
         "## Article drifts (article numbers that do not match the snapshot above)",
         "",
@@ -560,13 +810,16 @@ def main() -> int:
     write_snapshot_and_report(snap, drifts)
     print(f"Wrote {OUT / 'ppv_numbers_snapshot.md'}")
     print(f"Wrote {OUT / 'ppv_numbers_snapshot.json'}")
+    override_errors = snap.get("override_errors") or []
+    for err in override_errors:
+        print(f"  OVERRIDE ERROR: {err}")
     print(f"Article drifts: {len(drifts)}")
     for d in drifts:
         print(
             f"  line {d['line']:>3}  {d['label']:<48}  "
             f"expected {d['expected']!s:>8}  found {d['found']!s:>8}"
         )
-    return 1 if drifts else 0
+    return 1 if drifts or override_errors else 0
 
 
 if __name__ == "__main__":
