@@ -6,7 +6,7 @@
     "pipeline_version": "2026-05-25",
     "generator": "generate_publication_pages.py"
   },
-  "file_count": 4161,
+  "file_count": 4160,
   "files": [
     {
       "path": "404.html",
@@ -16,7 +16,7 @@
     {
       "path": "CITATION.cff",
       "size_bytes": 798,
-      "sha256": "202a34fa2ec3f463069df22310529883de243ef21ffbb9f6a3c17136458f736f"
+      "sha256": "d17709e9162d891d33d7b1dde792da2caeaa0fe9afd1bb9122105569a36d2c8d"
     },
     {
       "path": "analytics_output/age_cohort_trend.csv",
@@ -259,11 +259,6 @@
       "sha256": "d0c82fea8293f1ab70dbe8888ec358d7aa48692260d4d0cdfcbf09cd6ff5e724"
     },
     {
-      "path": "analytics_output/indology_feed/renou_coverage.csv",
-      "size_bytes": 284,
-      "sha256": "edd99404f85857ef5595063cf87bf46769c478addb976b5e0b38137dab383521"
-    },
-    {
       "path": "analytics_output/indology_feed/renou_export_index.csv",
       "size_bytes": 6394,
       "sha256": "66bbc4b7a72f968ed0e7cde4ada43a96ca22773c79da46935932593a95188f31"
@@ -365,8 +360,8 @@
     },
     {
       "path": "analytics_output/nlp_cache.pkl",
-      "size_bytes": 148375,
-      "sha256": "c631478125542cb6453459a9ae7b9bf0b4c0a4bc52a52d906d0b74cfbf37fb13"
+      "size_bytes": 148377,
+      "sha256": "374278314919ff11fa4ca4fcfa88342b4dc58b28c6be1a8348321c66b3464384"
     },
     {
       "path": "analytics_output/no_affiliation_history.md",
@@ -810,8 +805,8 @@
     },
     {
       "path": "assets/nlp_data.js",
-      "size_bytes": 424330,
-      "sha256": "e85c09ef61f9f46ab36c48630a7673012a3df0b1d21e0dcb2030e3e372d84118"
+      "size_bytes": 424327,
+      "sha256": "b37e279c66f49341e4f4fdb1ddb29423cd4e2c81f0a0dd7417263f9b5cb27f8a"
     },
     {
       "path": "assets/og-image.png",
@@ -9906,7 +9901,7 @@
     {
       "path": "download-data.html",
       "size_bytes": 37519,
-      "sha256": "c07659a04dd338a7d76781aa1fbc27d4455228b7e684df27f390c1894ea4d750"
+      "sha256": "c63806f067d42895b318a20dbe4613f608b0f7784127af2ea20afa12ae4bf621"
     },
     {
       "path": "en.html",
@@ -9930,8 +9925,8 @@
     },
     {
       "path": "findings/renou-comparison.html",
-      "size_bytes": 19813,
-      "sha256": "bec0e5f3242a357c0b043461efe7f565f542fb1bbc977627ba5efcaabd4ff98c"
+      "size_bytes": 19805,
+      "sha256": "f3c6298b6d2caa3266f23519e8f5cc59d870e238d53dc023dd2e8a89b0c45b99"
     },
     {
       "path": "findings/renou.html",
@@ -9941,7 +9936,7 @@
     {
       "path": "findings/visualisations.html",
       "size_bytes": 493631,
-      "sha256": "d601343e225292f8f8ad90790aecc0e295eb26c67688744b04b0c4b6316c4038"
+      "sha256": "ef6ea16430b5938ce34a62bd014b3a7dcc1ce8c5f2074f563e82478f6416d082"
     },
     {
       "path": "gatekeeping-en.html",
