@@ -6,6 +6,16 @@
 
 ## [Unreleased]
 
+### Added
+- **`sources/vigasin/`** — 27 full-text `.mdx` conversions of A.A. Vigasin's *Изучение Индии
+  в России* landed as raw source material for future scholar-page work
+  ([H1443](https://github.com/gasyoun/Uprava/blob/main/handoffs/H1443-Sonnet_IndologyScholars_vigasin-corpus-extract-route_22.07.26.md),
+  Sonnet 5 `claude-sonnet-5`), routed by scholar where a `/s/<slug>` registry row already
+  exists in `curation/historical_persons.csv`, else under `scholars/_unregistered/`. Not wired
+  into `generate_scholars_pages.py` — that pipeline has no MDX support and its Phase 3/4
+  (memorial essay / bibliography) are still unbuilt placeholders. Published full text, repo
+  owner's rights risk explicitly accepted 22-07-2026.
+
 ## [1.3.0] - 2026-07-21
 
 ### Changed
