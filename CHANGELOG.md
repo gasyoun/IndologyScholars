@@ -6,6 +6,8 @@
 
 ## [Unreleased]
 
+## [1.4.0] - 2026-07-22
+
 ### Added
 - **`sources/vigasin/`** — 27 full-text `.mdx` conversions of A.A. Vigasin's *Изучение Индии
   в России* landed as raw source material for future scholar-page work
