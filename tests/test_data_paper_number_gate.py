@@ -114,3 +114,51 @@ def test_missing_anchor_phrase_still_fails(run_on, summary):
     rc, mutated = run_on(lambda d: d.replace(correct, "scholar profiles"))
     assert correct not in mutated
     assert rc == 1, "gate must fail when an anchored claim's phrase disappears"
+
+
+def test_kappa_digit_swap_is_caught(run_on, gate):
+    """Issue #137: a swapped κ digit must fail (no longer warning-only)."""
+    kappas = gate.load_cross_model_kappa()
+    assert "kappa_l1" in kappas, "reliability packet must supply L1 κ"
+    good = f"{kappas['kappa_l1']:.3f}"
+    # Swap last digit while keeping three-decimal shape (0.670 -> 0.671).
+    bad = good[:-1] + ("1" if good[-1] != "1" else "2")
+    assert good != bad
+
+    def mutate(d):
+        # Draft uses "Cohen's κ = 0.670 [95% CI …]"
+        old = f"Cohen's κ = {good}"
+        new = f"Cohen's κ = {bad}"
+        assert old in d, f"expected anchor {old!r} in draft"
+        return d.replace(old, new, 1)
+
+    rc, mutated = run_on(mutate)
+    assert f"Cohen's κ = {bad}" in mutated
+    assert rc == 1, "hardened gate must reject a wrong κ L1 value"
+
+
+def test_csv_floor_claim_overclaim_is_caught(run_on):
+    """Issue #138: draft floor higher than live analytics CSV count fails."""
+
+    def mutate(d):
+        # Inflate the floor far beyond any plausible export count.
+        old = "100+ statistical and review exports"
+        new = "99999+ statistical and review exports"
+        assert old in d
+        return d.replace(old, new, 1)
+
+    rc, mutated = run_on(mutate)
+    assert "99999+ statistical and review exports" in mutated
+    assert rc == 1
+
+
+def test_auth_row_contradictory_duplicate_is_caught(run_on):
+    """Issue #138: a second authority table row with wrong counts fails."""
+
+    def mutate(d):
+        # Append a duplicate Wikidata row with wrong count; first row stays correct.
+        stale = "\n| Wikidata | 99 (99.9%) | 99 |\n"
+        return d + stale
+
+    rc, _ = run_on(mutate)
+    assert rc == 1, "gate must reject contradictory duplicate authority rows"

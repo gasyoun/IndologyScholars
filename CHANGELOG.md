@@ -16,6 +16,13 @@
   (Anthropic / OpenModel / DeepSeek) + `--dry-run`.
 
 ### Changed
+- **Data-paper number gate soft spots closed** ([#137](https://github.com/gasyoun/IndologyScholars/issues/137),
+  [#138](https://github.com/gasyoun/IndologyScholars/issues/138), Grok 4.5):
+  cross-model κ is hard-asserted from `docs/classification-reliability-packet.md`
+  (tight float tol so a one-digit swap fails); authority coverage rows check every
+  table match; `N+ statistical and review exports` is floor-anchored against live
+  `analytics_output/*.csv` count. Regression tests extended (7 total). Gate: 23
+  anchored claims.
 - **Gender-year CIs are cluster-robust** (H1473): participations cluster by
   scholar; methods note on `findings/gender.html`.
 - Scholar profiles show a **city trajectory timeline** from
