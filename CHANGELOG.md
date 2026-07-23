@@ -6,6 +6,17 @@
 
 ## [Unreleased]
 
+## [1.4.2] - 2026-07-23
+
+### Changed
+- **Docs micro-residual after H1528**
+  ([H1529](https://github.com/gasyoun/Uprava/blob/main/handoffs/H1529-Sonnet_IndologyScholars_stale-docs-micro-v141-phase4_23.07.26.md),
+  Grok 4.5): `.ai_state.md` header release line → **v1.4.2**;
+  `docs/ROADMAP_2026.md` Phase 4 deposit item marked package-ready (H1072) with
+  only the human Zenodo login remaining. Restores `CITATION.cff` to the live
+  release version after the post-merge auto-rebuild had rewritten it to **1.4.0**
+  (tag-describe race before `v1.4.1` was visible to CI).
+
 ## [1.4.1] - 2026-07-23
 
 ### Changed
