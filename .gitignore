@@ -94,3 +94,13 @@ nagari/site/*
 # the pre-cleared subset under nagari/site/books/ is public.
 !nagari/md/
 nagari/**/__pycache__/
+
+# ---- VK ORS wall archive (vk.com/wall-88831040, public page) ----
+# The raw VK export (xlsx) and the built SQLite DB are regenerable build
+# artifacts, not committed (unlike nagari, this is a public wall — no
+# privacy gate, just repo hygiene: keep the ~21 MB DB and the xlsx out of
+# git history). Only code + curated CSV/JSON layers under data/processed/
+# and data/site_data.json are tracked.
+vk-ors/vk_posts_all.xlsx
+vk-ors/data/vk_ors.db
+vk-ors/**/__pycache__/
