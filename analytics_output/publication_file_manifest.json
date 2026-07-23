@@ -9730,13 +9730,13 @@
     },
     {
       "path": "docs/README.md",
-      "size_bytes": 3784,
-      "sha256": "d3f0ff13248054a831142080adcdf7360faf775addd774ec8dfef57c6c2613d7"
+      "size_bytes": 5078,
+      "sha256": "eb96ae5f747cf2c3ecb30540b8592f5dfc4c4d68fb2974783635cd0fb437b0f3"
     },
     {
       "path": "docs/ROADMAP_2026.md",
-      "size_bytes": 7317,
-      "sha256": "1378bb59f33674324b2b1fe95f5bde607e36c8c29569c0e962c62c07bcbfd801"
+      "size_bytes": 7503,
+      "sha256": "3f7a5664651805fb14f1f2619a2b31327a9f831f9842bd28c0eb266d97770039"
     },
     {
       "path": "docs/ROADMAP_SANSKRITOLOGY_INDOLOGY_SECTIONS_2026_2027.md",
@@ -9770,13 +9770,13 @@
     },
     {
       "path": "docs/development-en.md",
-      "size_bytes": 15948,
-      "sha256": "7a1a22a62513127406c5d334e012e5e048a2712328e2b48f59be21c21170ddf7"
+      "size_bytes": 16784,
+      "sha256": "c7b88292e57673197f2862e12cb0ec2f84a0d488ae30228506dc8108cd435e2b"
     },
     {
       "path": "docs/development.md",
-      "size_bytes": 22664,
-      "sha256": "4d56878bee6569f07516d7e81df7c8fe772176ed591303f0dcc098c933846ae3"
+      "size_bytes": 23756,
+      "sha256": "b6c812ff4efcf41b2600ded3a66705ebc31de8296a970072618a1597ee6e078e"
     },
     {
       "path": "docs/external-phase5-enrichment-runbook.md",
@@ -9941,7 +9941,7 @@
     {
       "path": "findings/visualisations.html",
       "size_bytes": 493631,
-      "sha256": "e8d5bbe52f41d9230a80313b0e7242d43853bd310981e721fd8657d7b3de2117"
+      "sha256": "1c4c9158983ef78f30a0f887cd37b71482ef709feb05166fb73ebed7dd6376b4"
     },
     {
       "path": "gatekeeping-en.html",
