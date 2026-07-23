@@ -9,13 +9,24 @@ user-facing project page.
 ## Current Published Snapshot
 
 The source for figures published on the site is the `summary` object in
-`site_data.json`. As of 31 May 2026 it reports 268 speaker profiles,
+`site_data.json`. As of 23 July 2026 it reports 268 speaker profiles,
 1362 unique talks, 1388 author participations, and 40 events across 22
 programme years (2004-2026). 41 speakers occur in both series, 163
 occur only in the Zograf Readings, and 64 only in the Roerich Readings.
+A separate historical prosopographical layer (26 figures) is stored under
+`person_kind = historical` and does **not** change the speaker counts above.
 
 Historical manuscripts, reports, and change logs may preserve older snapshots
 and must not be substituted for the current `site_data.json` publication state.
+
+Sibling subsystems (not part of the main conference build above):
+
+| Path | Role |
+| --- | --- |
+| [`nagari/`](https://github.com/gasyoun/IndologyScholars/tree/main/nagari) | Closed Google Group archive + Pages retrospective. |
+| [`vk-ors/`](https://github.com/gasyoun/IndologyScholars/tree/main/vk-ors) | VK wall export → SQLite+FTS5 + four analysis layers. |
+| [`sources/vigasin/`](https://github.com/gasyoun/IndologyScholars/tree/main/sources/vigasin) | Raw Vigasin full-text sources (not yet in scholar-page generator). |
+| [`gasyoun/IndologyArchiveAtlas`](https://github.com/gasyoun/IndologyArchiveAtlas) | Spun-out INDOLOGY-L atlas; this repo keeps a feed + redirect only. |
 
 ## Sources and Derived Files
 

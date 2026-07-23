@@ -31,6 +31,18 @@ Three rules matter before making automated changes:
    Inter-rater reliability sampling is handled by
    `tools/build_interrater_sample.py` and
    `tools/compute_interrater_agreement.py`.
+8. Birth years: source of truth is `pipeline/biography.py` →
+   `BIOGRAPHICAL_DATA` (keyed by `normalized_key`). Never treat
+   `UPDATE person SET birth_year` as durable — rebuild reseeds `person`
+   from that dict. See `missing_birth_years.md`.
+9. Sibling subsystems have their own READMEs and are **not** produced by
+   `generate_publication_pages.py`: `nagari/` (closed Google Group),
+   `vk-ors/` (VK wall). The INDOLOGY-L atlas lives in
+   `gasyoun/IndologyArchiveAtlas`; this repo only fetches a small feed and
+   redirects `/IndologyArchive/`.
+10. Historical figures (`person_kind=historical`, seeded from
+    `curation/historical_persons.csv`) must not be mixed into published
+    speaker counts (268).
 
 ## Operational hazard notes
 

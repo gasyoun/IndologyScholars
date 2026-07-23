@@ -6,7 +6,21 @@
 
 ## [Unreleased]
 
+## [1.4.1] - 2026-07-23
+
 ### Changed
+- **Stale living documentation refreshed to post-v1.4.0 reality**
+  ([H1528](https://github.com/gasyoun/Uprava/blob/main/handoffs/H1528-Sonnet_IndologyScholars_stale-docs-refresh_23.07.26.md),
+  Grok 4.5). README/README_EN now surface nagari, vk-ors, the historical layer,
+  and the spun-out [IndologyArchiveAtlas](https://github.com/gasyoun/IndologyArchiveAtlas)
+  (no longer imply the atlas still lives under this Pages root). `.ai_state.md`
+  and `ROADMAP.md` drop the obsolete **270** speakers / **122** OpenAlex framing
+  in favour of **268** / **181 persons · 496 candidate rows**; data-paper status
+  is deposit-ready (human Zenodo login remains). `missing_birth_years.md` no
+  longer recommends a non-durable `UPDATE person` SQL path — durable edits go
+  through `pipeline/biography.py` → `BIOGRAPHICAL_DATA`. `docs/ROADMAP_2026.md`
+  ticks the H1467 anchored number-gate item; `docs/README.md`, both development
+  guides, `CLAUDE.md`, and `nagari/README.md` point at the sibling subsystems.
 - **`article/check_data_paper_numbers.py` hardened from substring containment to
   anchored value assertions**
   ([H1467](https://github.com/gasyoun/Uprava/blob/main/handoffs/H1467-Opus_IndologyScholars_harden-data-paper-number-gate_22.07.26.md),

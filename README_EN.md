@@ -1,17 +1,22 @@
 # IndologyScholars: Archive of Talks in Russian Indology
 
-[Русская версия](README.md) | [Developer documentation](docs/development-en.md)
+_Created: 24-04-2026 · Last updated: 23-07-2026_
+
+[Русская версия](https://github.com/gasyoun/IndologyScholars/blob/main/README.md) | [Developer documentation](https://github.com/gasyoun/IndologyScholars/blob/main/docs/development-en.md)
 
 **IndologyScholars** is an open navigation archive of programmes from two
 Russian Indological forums: the Zograf Readings in St Petersburg and the
 Roerich Readings in Moscow. It connects speakers, talk titles, participation
 years, recorded affiliations, thematic categories, and available video records.
+Sibling subsystems cover the closed Google Group of the Sanskrit Zealots Society
+(`nagari/`), its public VK wall (`vk-ors/`), and the spun-out INDOLOGY-L atlas.
 
 [Open the site](https://gasyoun.github.io/IndologyScholars/)
 
 ## Archive Coverage
 
-The published collection as of 31 May 2026 contains:
+The published speaker collection (`site_data.json` summary, current as of
+23 July 2026) contains:
 
 | Measure | Value |
 | --- | ---: |
@@ -25,7 +30,8 @@ The published collection as of 31 May 2026 contains:
 
 The archive covers the Zograf Readings for 2004-2026 and the Roerich Readings
 for 2007-2025. The 2026 Zograf programme is included as a preliminarily
-published programme.
+published programme. A separate **historical prosopographical layer** (26
+figures; `person_kind = historical`) is tracked outside the speaker counts.
 
 ## What You Can Explore
 
@@ -42,6 +48,19 @@ published programme.
   co-authorship and programme co-presence.
 - [Collection search](https://gasyoun.github.io/IndologyScholars/search.html),
   including individual talk pages and video links where recordings are known.
+- [Non-participant indologist registry](https://gasyoun.github.io/IndologyScholars/indologists.html) —
+  scholars outside the conference programmes, linked via roster enrichment.
+- [«20 years of the Sanskrit Zealots Society»](https://gasyoun.github.io/IndologyScholars/nagari/) —
+  retrospective of the closed Google Group (`nagari/`; source is rights-gated).
+- [VK wall archive](https://github.com/gasyoun/IndologyScholars/tree/main/vk-ors) —
+  public VK page posts with SQLite+FTS5 and a four-layer analysis (`vk-ors/`).
+- [INDOLOGY Archive Atlas](https://gasyoun.github.io/IndologyArchiveAtlas/) —
+  atlas of the public INDOLOGY-L mailing list, **spun out** to
+  [`gasyoun/IndologyArchiveAtlas`](https://github.com/gasyoun/IndologyArchiveAtlas)
+  (H460). The legacy path
+  […/IndologyScholars/IndologyArchive/](https://gasyoun.github.io/IndologyScholars/IndologyArchive/)
+  redirects there; this repo keeps only a one-way feed for Renou comparison
+  (`tools/fetch_indology_feed.py`).
 
 ## Reading the Records
 
@@ -72,10 +91,11 @@ or [CITATION.cff](CITATION.cff).
 
 ## Documentation
 
-- [Разработка и воспроизводимость, на русском](docs/development.md)
-- [Development and reproducibility, in English](docs/development-en.md)
-- [Technical classification audit](docs/classification-audit-en.md)
-- [Data dictionary](data_dictionary.md)
+- [Разработка и воспроизводимость, на русском](https://github.com/gasyoun/IndologyScholars/blob/main/docs/development.md)
+- [Development and reproducibility, in English](https://github.com/gasyoun/IndologyScholars/blob/main/docs/development-en.md)
+- [Technical classification audit](https://github.com/gasyoun/IndologyScholars/blob/main/docs/classification-audit-en.md)
+- [Data dictionary](https://github.com/gasyoun/IndologyScholars/blob/main/data_dictionary.md)
+- [Documentation index](https://github.com/gasyoun/IndologyScholars/blob/main/docs/README.md)
 
 Historical analytical documents and manuscripts in this repository may refer
 to earlier corpus snapshots; the published pages and data exports describe the
@@ -83,8 +103,10 @@ current site collection.
 
 ## Licence
 
-Code, templates, and validators are released under [Apache-2.0](LICENSE).
+Code, templates, and validators are released under [Apache-2.0](https://github.com/gasyoun/IndologyScholars/blob/main/LICENSE).
 Normalized metadata and derived CSV/JSON/SQLite exports are reusable under
 CC-BY-4.0 with archive attribution. Cached conference programmes, source
 quotations, and third-party material remain under their original rightsholders;
-see [reuse rights](docs/reuse-rights.md).
+see [reuse rights](https://github.com/gasyoun/IndologyScholars/blob/main/docs/reuse-rights.md).
+
+_Dr. Mārcis Gasūns_

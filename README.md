@@ -1,19 +1,23 @@
 # IndologyScholars: архив докладов по российской индологии
 
-_Created: 24-04-2026 · Last updated: 11-07-2026_
+_Created: 24-04-2026 · Last updated: 23-07-2026_
 
 [English version](https://github.com/gasyoun/IndologyScholars/blob/main/README_EN.md) | [Документация для разработчиков](https://github.com/gasyoun/IndologyScholars/blob/main/docs/development.md)
 
-**IndologyScholars** - открытый навигационный архив программ двух российских
+**IndologyScholars** — открытый навигационный архив программ двух российских
 индологических форумов: Зографских чтений в Санкт-Петербурге и Рериховских
 чтений в Москве. Архив связывает докладчиков, названия докладов, годы участия,
 зафиксированные аффилиации, тематические рубрики и доступные видеозаписи.
+Рядом с ядром корпуса живут спутники: закрытая гуглгруппа «Общество ревнителей
+санскрита» (`nagari/`), публичная VK-стена того же сообщества (`vk-ors/`) и
+выделенный атлас рассылки INDOLOGY-L.
 
 [Открыть сайт](https://gasyoun.github.io/IndologyScholars/)
 
 ## Состав архива
 
-Опубликованная выборка на 11 июля 2026 г. содержит:
+Опубликованная выборка докладчиков (снимок `site_data.json`, актуален на
+23 июля 2026 г.) содержит:
 
 | Показатель | Значение |
 | --- | ---: |
@@ -27,7 +31,9 @@ _Created: 24-04-2026 · Last updated: 11-07-2026_
 
 В архив включены Зографские чтения 2004-2026 гг. и Рериховские чтения
 2007-2025 гг. Программа Зографских чтений 2026 г. учитывается как
-предварительно опубликованная программа.
+предварительно опубликованная программа. Отдельно от счётчика докладчиков
+ведётся **исторический просопографический слой** (26 фигур; `person_kind =
+historical`).
 
 ## Что можно найти
 
@@ -48,9 +54,19 @@ _Created: 24-04-2026 · Last updated: 11-07-2026_
   нарративные разделы, помещающие корпус в контекст истории дисциплины.
 - [Поиск по коллекции](https://gasyoun.github.io/IndologyScholars/search.html),
   включая отдельные страницы докладов и ссылки на видео, когда запись найдена.
-- [INDOLOGY Archive Atlas](https://gasyoun.github.io/IndologyScholars/IndologyArchive/) -
-  отдельное приложение к проекту по публичному архиву рассылки INDOLOGY-L. Оно
-  обновляется отдельным workflow GitHub Actions первого числа каждого месяца.
+- [Реестр индологов вне программ](https://gasyoun.github.io/IndologyScholars/indologists.html) —
+  неучастники конференций, связанные с корпусом через enrichment.
+- [«20 лет Обществу ревнителей санскрита»](https://gasyoun.github.io/IndologyScholars/nagari/) —
+  ретроспектива закрытой гуглгруппы (`nagari/`; исходник прав-ограничен).
+- [VK-архив «Общество ревнителей санскрита»](https://github.com/gasyoun/IndologyScholars/tree/main/vk-ors) —
+  стена vk.com, SQLite+FTS5 и четырёхслойный анализ (`vk-ors/`).
+- [INDOLOGY Archive Atlas](https://gasyoun.github.io/IndologyArchiveAtlas/) —
+  атлас публичной рассылки INDOLOGY-L, **выделен** в отдельный репозиторий
+  [`gasyoun/IndologyArchiveAtlas`](https://github.com/gasyoun/IndologyArchiveAtlas)
+  (H460). Старый путь
+  […/IndologyScholars/IndologyArchive/](https://gasyoun.github.io/IndologyScholars/IndologyArchive/)
+  на этом сайте перенаправляет на новый Pages; для Renou-сравнения здесь
+  остаётся односторонний feed (`tools/fetch_indology_feed.py`).
 
 ## Как читать сведения
 

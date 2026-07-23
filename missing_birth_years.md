@@ -1,16 +1,37 @@
 # Учёные без даты рождения / Scholars Missing Birth Year
 
-Дата генерации: 2026-07-10
+_Created: 10-07-2026 · Last updated: 23-07-2026_
+
+Дата генерации таблицы: 2026-07-10
 
 Без года рождения: **34** из 268 участников (234 уже заполнены).
 
-Для заполнения выполните SQL-запрос:
+## Как заполнять (важно)
+
+**Источник истины — не `conferences.db`.** Сборка дропает и пересевает таблицу
+`person` из словаря `BIOGRAPHICAL_DATA` в
+[`pipeline/biography.py`](https://github.com/gasyoun/IndologyScholars/blob/main/pipeline/biography.py)
+(ключ — `normalized_key`). Правка только через SQL:
 
 ```sql
 UPDATE person SET birth_year = <YYYY> WHERE person_id = '<id>';
 ```
 
-После заполнения запустите `python generate_analytics.py && python generate_scholars_pages.py`.
+**не переживает** следующий `python build_and_populate_db.py`.
+
+### Стойкая правка
+
+1. Добавить (или дополнить) запись в `BIOGRAPHICAL_DATA` в `pipeline/biography.py`
+   с годом рождения и, по возможности, источником.
+2. Пересобрать: `python build_and_populate_db.py` → `python generate_analytics.py` →
+   `python generate_site_data.py` → `python generate_scholars_pages.py` (или полный
+   `make all` / pipeline из `docs/development.md`).
+3. Прогнать `python validate_publication.py` и `python -m pytest`.
+
+Цепочка `tools/scrape_birth_years.py` → `birth_year_findings.csv` →
+`tools/apply_birth_years.py` пока пишет **только** в `conferences.db` и даёт
+ложное ощущение успеха до rebuild — не использовать как финальный шаг, пока
+`apply_birth_years.py` не эмитит строки `BIOGRAPHICAL_DATA`.
 
 ---
 

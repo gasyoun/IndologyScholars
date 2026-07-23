@@ -1,4 +1,4 @@
-_Created: 12-07-2026 · Last updated: 12-07-2026_
+_Created: 12-07-2026 · Last updated: 23-07-2026_
 
 # nagari_group_archive — архив «Общество ревнителей санскрита» (2005–2026)
 
@@ -7,10 +7,11 @@ Google Takeout в поисковую базу + аналитику + юбиле�
 **«20 лет Обществу ревнителей санскрита: история гуглгруппы»**.
 
 Родственник по духу пакету
-[Indology/indology_archive_research](https://github.com/gasyoun/IndologyScholars/blob/main/Indology/README.md)
-(атлас публичного списка INDOLOGY-L), но источник здесь — *закрытый* список,
-экспортированный целиком, поэтому доступны **тела писем и метаданные вложений**, а
-не только заголовки.
+[IndologyArchiveAtlas](https://github.com/gasyoun/IndologyArchiveAtlas)
+(атлас публичного списка INDOLOGY-L; выделен из этого репозитория в H460),
+но источник здесь — *закрытый* список, экспортированный целиком, поэтому
+доступны **тела писем и метаданные вложений**, а не только заголовки.
+Публичный VK-двойник той же реальной общины — [`vk-ors/`](https://github.com/gasyoun/IndologyScholars/tree/main/vk-ors).
 
 ## Что внутри
 
