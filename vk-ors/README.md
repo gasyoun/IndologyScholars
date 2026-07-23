@@ -14,6 +14,7 @@ Excel-экспорт постов (без тредов и без имён авт
 
 | Стадия | Модуль | Делает |
 |---|---|---|
+| 0 (опц.) | [fetch.py](https://github.com/gasyoun/IndologyScholars/blob/main/vk-ors/vk_ors_archive/fetch.py) | Живой `wall.get` VK API → перезаписывает `vk_posts_all.xlsx` тем же форматом столбцов, что и ручной экспорт |
 | 1 | [ingest.py](https://github.com/gasyoun/IndologyScholars/blob/main/vk-ors/vk_ors_archive/ingest.py) | `vk_posts_all.xlsx` → SQLite (`posts`, `hashtags`) + индекс `posts_fts` (FTS5, unicode61, диакритика свёрнута) |
 | 2 | [insights.py](https://github.com/gasyoun/IndologyScholars/blob/main/vk-ors/vk_ors_archive/insights.py) | 4 слоя анализа → CSV в `data/processed/` + `data/site_data.json` |
 | 3 | [page.py](https://github.com/gasyoun/IndologyScholars/blob/main/vk-ors/vk_ors_archive/page.py) | Self-contained HTML-ретроспектива → `site/index.html` |
@@ -33,18 +34,26 @@ Excel-экспорт постов (без тредов и без имён авт
 
 ## Запуск
 
-Зависимости: `openpyxl` (стандартная библиотека для SQLite с FTS5 не нужна доп. пакетов).
+Зависимости: `openpyxl`, `requests`, `python-dotenv` (для `fetch.py`; SQLite с
+FTS5 — стандартная библиотека, доп. пакетов не нужна).
 
 ```sh
 cd vk-ors
+python -m vk_ors_archive.fetch       # опц.: живой пул стены → перезаписывает vk_posts_all.xlsx
 python -m vk_ors_archive.ingest      # xlsx → SQLite (data/vk_ors.db)
 python -m vk_ors_archive.insights    # 4 слоя → data/processed/*.csv + data/site_data.json
 python -m vk_ors_archive.page        # self-contained HTML → site/index.html
 python -m vk_ors_archive.ingest --limit 300   # быстрая проверка разбора
 ```
 
-Сырой экспорт (`vk_posts_all.xlsx`) читается из корня `vk-ors/` и
-**никогда не изменяется**.
+Внутри самого `ingest.py` экспорт (`vk_posts_all.xlsx`) читается из корня
+`vk-ors/` и **никогда не изменяется** этим модулем — только читается
+read-only. Обновление файла — отдельный, явный шаг: либо ручной новый
+экспорт, либо `fetch.py`. `fetch.py` читает `VK_ACCESS_TOKEN` / `VK_DOMAIN`
+(`samskrtamru`) / `VK_API_VERSION` из корневого `.env` (не коммитится) и
+пишет xlsx с тем же расположением столбцов, что и ручной экспорт — так что
+`ingest.py` не меняется. Первый прогон (23-07-2026): 7611 постов (было 7610
+на дату ручного экспорта 22-07-2026) — сходится с 1 новым постом за сутки.
 
 ## Публикация
 
