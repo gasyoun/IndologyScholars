@@ -40,7 +40,7 @@ Infrastructure already exists for all four — this is *develop into the paper*,
 ## Phase 4 — Submission
 
 - [ ] Figures ([`article/make_ppv_figures.py`](../article/make_ppv_figures.py)), prose + the four new-analysis sections, cover letter ([`article/ppv_cover_letter.md`](../article/ppv_cover_letter.md)).
-- [ ] Optional: deposit the dataset (`datapackage.json` + a Zenodo DOI) so it is citable alongside the paper.
+- [x] **Deposit package ready** (H1072): snapshot [`article/snapshots/2026-07-17/`](../article/snapshots/2026-07-17/), [`article/zenodo_metadata.json`](../article/zenodo_metadata.json), `datapackage.json` regenerated on build. **Not yet deposited** — human step only: Zenodo login → mint concept+version DOIs → paste over `PENDING` markers in `article/data_paper_draft.md` §5.4/§7 and `CITATION.cff` (if DOI fields are added there).
 
 ---
 *Drafted with Claude Code, 2026-06-14. Edit freely — this captures the agreed direction, not a contract.*
