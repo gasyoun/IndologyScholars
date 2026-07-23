@@ -6,6 +6,20 @@
 
 ## [Unreleased]
 
+### Changed
+- **`article/check_data_paper_numbers.py` hardened from substring containment to
+  anchored value assertions**
+  ([H1467](https://github.com/gasyoun/Uprava/blob/main/handoffs/H1467-Opus_IndologyScholars_harden-data-paper-number-gate_22.07.26.md),
+  Opus 4.8 `claude-opus-4-8`). The data-paper submission gate now verifies each
+  quoted figure with a phrase-anchored regex that captures the number and compares
+  it with word boundaries, reusing the `check()`/`check_word()` drift helpers already
+  used by the PPV gate (`check_ppv_numbers.py`) instead of `snippet in draft`. This
+  closes three drift classes the old containment missed: substring-bleed false passes
+  (`"22 event"` was satisfied by `"122 events"`), contradictory duplicates (a correct
+  value elsewhere masked a stale one), and location-blind reporting. New regression
+  test `tests/test_data_paper_number_gate.py` pins all three. Gate still exits 0 on
+  current artifacts (21 anchored claims verified).
+
 ## [1.4.0] - 2026-07-22
 
 ### Added
