@@ -344,7 +344,14 @@ def _parse_number(s: str) -> int | float | None:
         return None
 
 
-def check(label: str, regex: str, expected, text: str, *, flags: int = 0) -> list[dict]:
+def check(label: str, regex: str, expected, text: str, *, flags: int = 0,
+          tol: float = 0.05) -> list[dict]:
+    """Compare every capture group 1 against ``expected``.
+
+    Float comparisons use ``tol`` (default 0.05 — good for percentages).
+    Cohen's κ and other 3-decimal stats should pass ``tol=5e-4`` or smaller so
+    a single-digit swap fails the gate.
+    """
     drifts = []
     for m in re.finditer(regex, text, flags=flags):
         s = m.group(1)
@@ -352,7 +359,7 @@ def check(label: str, regex: str, expected, text: str, *, flags: int = 0) -> lis
         if n is None:
             continue
         if isinstance(expected, float) or isinstance(n, float):
-            ok = abs(float(n) - float(expected)) < 0.05
+            ok = abs(float(n) - float(expected)) < tol
         else:
             ok = n == expected
         if not ok:
