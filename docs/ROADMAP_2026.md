@@ -26,7 +26,7 @@ De-risks data quality before submission. **None of the four new analyses is hard
 
 Infrastructure already exists for all four — this is *develop into the paper*, not build from scratch.
 
-- [ ] **Topic / theme evolution** — *start now, no data dependency.* Theme/meso codes + LDA are already computed (`analytics_output/meso_codes_deepseek.csv`, the NLP pipeline in `generate_publication_pages.py`). Add a time-series of how disciplinary themes shift across editions.
+- [x] **Topic / theme evolution** — `findings/theme-evolution.html` + `analytics_output/theme_share_by_year.csv` from `meso_codes_deepseek.csv` (H1516, 2026-07-23).
 - [ ] **Co-authorship networks** — [`generate_network_json.py`](../generate_network_json.py) / `site_data_network.json` exist; formalise the collaboration graph and the brokers/bridges between Zograf and Roerich.
 - [ ] **Geographic mobility** — *needs Phase-1 affiliations.* [`findings/mobility.html`](../findings/mobility.html) + the city data are the starting point.
 - [ ] **Gatekeeping / centrality** — *last; needs the co-authorship network.* [`gatekeeping.html`](../gatekeeping.html) exists; add centrality / anchoring measures over the collaboration + participation graph.
@@ -34,7 +34,7 @@ Infrastructure already exists for all four — this is *develop into the paper*,
 ## Phase 3 — Pre-submission hardening
 
 - [x] [`article/check_data_paper_numbers.py`](../article/check_data_paper_numbers.py): replace substring-presence checks with **anchored value assertions** (a wrong figure must fail the gate, not pass because the right string appears somewhere). **Done H1467** (PR #132, 2026-07-22/23): phrase-anchored regex + `tests/test_data_paper_number_gate.py`.
-- [ ] Per-year gender-share CIs: replace the i.i.d. Wilson interval with a **design-aware / cluster-robust** one (participations cluster by scholar, so the bands are currently too narrow).
+- [x] Per-year gender-share CIs: **cluster-robust** sandwich SE (`cluster_robust_proportion_interval` in `publication_helpers.py`; H1473, 2026-07-23). Methods note on `findings/gender.html`.
 - [x] Freeze the DOI snapshot ([`tools/freeze_article_data.py`](../tools/freeze_article_data.py)) — **`article/snapshots/2026-07-17/`** (H1072). Re-run `article/check_anonymity.py` + `article/check_ppv_numbers.py` at deposit time if prose changes.
 
 ## Phase 4 — Submission

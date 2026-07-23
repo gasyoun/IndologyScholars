@@ -72,6 +72,38 @@ def wilson_interval(successes, n, z=1.96):
     return max(0.0, centre - margin), min(1.0, centre + margin)
 
 
+def cluster_robust_proportion_interval(cluster_counts, z=1.96):
+    """Cluster-robust Wald interval for a binary proportion.
+
+    Participations often cluster by scholar: one person may give several
+    talks in the same year, so i.i.d. Wilson intervals understate uncertainty.
+    Each cluster contributes (successes, trials); for person-level attributes
+    like gender, successes is either 0 or trials.
+
+    Uses the cluster-sum residual sandwich SE with a G/(G-1) finite-sample
+    correction. Falls back to Wilson when G < 2 or n == 0.
+    """
+    import math
+
+    pairs = [(int(s or 0), int(t or 0)) for s, t in (cluster_counts or []) if int(t or 0) > 0]
+    n = sum(t for _, t in pairs)
+    if n == 0:
+        return 0.0, 0.0
+    S = sum(s for s, _ in pairs)
+    G = len(pairs)
+    if G < 2:
+        return wilson_interval(S, n, z)
+    p = S / n
+    u_sum_sq = 0.0
+    for s, t in pairs:
+        u = s - p * t
+        u_sum_sq += u * u
+    se = math.sqrt(u_sum_sq * (G / max(G - 1, 1))) / n
+    lo = max(0.0, p - z * se)
+    hi = min(1.0, p + z * se)
+    return lo, hi
+
+
 _FEMALE_PATRONYMIC_SUFFIXES = ("овна", "евна", "ична", "инична")
 _MALE_PATRONYMIC_SUFFIXES = ("ович", "евич", "ьич", "мич", "кич")
 _FEMALE_SURNAME_SUFFIXES = ("ова", "ева", "ина", "ая", "ына")

@@ -43,6 +43,7 @@ from publication_helpers import (
     SITE_URL,
     THEME_LABELS,
     clean_text,
+    cluster_robust_proportion_interval,
     describe_year_span,
     wilson_interval,
     esc,
@@ -2355,15 +2356,21 @@ def generate_gender_page():
     unknown_all = len(scholars) - women_all - men_all
     known = women_all + men_all or 1
 
+    # Participation counts by year, clustered by scholar (one gender, k talks).
     year_gender = defaultdict(lambda: {"F": 0, "M": 0})
+    year_clusters = defaultdict(list)  # year -> [(female_successes, talks)]
     for s in scholars:
         g = s.get("gender")
         if g not in ("F", "M"):
             continue
+        talks_by_year = Counter()
         for t in s.get("talks", []):
             y = t.get("year")
             if y:
-                year_gender[y][g] += 1
+                talks_by_year[y] += 1
+        for y, k in talks_by_year.items():
+            year_gender[y][g] += k
+            year_clusters[y].append((k if g == "F" else 0, k))
 
     years_rows_html = ""
     for y in sorted(year_gender):
@@ -2373,7 +2380,7 @@ def generate_gender_page():
         if not t:
             continue
         share = 100 * w / t
-        lo, hi = wilson_interval(w, t)
+        lo, hi = cluster_robust_proportion_interval(year_clusters[y])
         bar_w = round(share, 1)
         years_rows_html += (
             f'<tr><td>{y}</td><td>{t}</td><td>{w}</td><td>{m}</td>'
@@ -2427,7 +2434,7 @@ def generate_gender_page():
 <article class="card"><strong>Докладов на учёного</strong><div class="metric">{round(sum(int(s.get("total_talks") or 0) for s in scholars if s.get("gender")=="F")/women_all,1) if women_all else 0} / {round(sum(int(s.get("total_talks") or 0) for s in scholars if s.get("gender")=="M")/men_all,1) if men_all else 0}</div><div class="meta">Ж / М среднее</div></article>
 </section>
 <h2>Доля женщин среди докладчиков по годам</h2>
-<p style="color:var(--muted);font-size:0.85rem;">Единица счёта — авторские участия в данном году. В скобках — 95%-ный интервал Уилсона: малые программы дают широкие интервалы, и колебания между соседними годами внутри пересекающихся интервалов не следует интерпретировать как тренд.</p>
+<p style="color:var(--muted);font-size:0.85rem;">Единица счёта — авторские участия в данном году. В скобках — 95%-ный <strong>кластер-робастный</strong> интервал (кластер = учёный внутри года): повторные доклады одного человека не считаются независимыми, поэтому полосы шире, чем у i.i.d. интервала Уилсона. Колебания между соседними годами внутри пересекающихся интервалов не следует интерпретировать как тренд.</p>
 <div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:0.9rem;">
 <thead><tr><th style="text-align:left">Год</th><th>Участий</th><th>Ж</th><th>М</th><th>% Ж [95% ДИ]</th><th></th></tr></thead>
 <tbody>{years_rows_html}</tbody>
@@ -2441,7 +2448,8 @@ def generate_gender_page():
 <div class="chip-row">{women_chips}</div>
 <p style="margin-top:1.5rem;color:var(--muted);">Всего учёных: {len(scholars)}; пол определён для {known} (Ж: {women_all}, М: {men_all}), не определён для {unknown_all}. Данные основаны на конференционных программах и могут не отражать полный гендерный баланс дисциплины.</p>
 <h2>Методика</h2>
-<p style="color:var(--muted);">Пол выводится автоматически из русскоязычного имени (однозначное личное имя, затем отчество, затем склонение фамилии; функция <code>classify_gender</code> в <code>publication_helpers.py</code>). Это вероятностная атрибуция, а не самоидентификация. Имена, не позволяющие надёжного вывода, учитываются отдельной категорией «не определён» и не исключаются из знаменателей. Протокол ручной валидации и измеренная доля ошибок: <code>tools/validate_gender_inference.py</code>; порядок исправления и возражений &mdash; в <a href="https://github.com/gasyoun/IndologyScholars/blob/main/docs/persons-data-policy.md">политике персональных данных</a>.</p>'''
+<p style="color:var(--muted);">Пол выводится автоматически из русскоязычного имени (однозначное личное имя, затем отчество, затем склонение фамилии; функция <code>classify_gender</code> в <code>publication_helpers.py</code>). Это вероятностная атрибуция, а не самоидентификация. Имена, не позволяющие надёжного вывода, учитываются отдельной категорией «не определён» и не исключаются из знаменателей. Протокол ручной валидации и измеренная доля ошибок: <code>tools/validate_gender_inference.py</code>; порядок исправления и возражений &mdash; в <a href="https://github.com/gasyoun/IndologyScholars/blob/main/docs/persons-data-policy.md">политике персональных данных</a>.</p>
+<p style="color:var(--muted);">Интервалы доли женщин по годам: <code>cluster_robust_proportion_interval</code> (sandwich SE по кластерам-учёным, поправка G/(G−1); при одном кластере — fallback на Wilson). Точечная оценка остаётся долей участий; меняется только ширина ДИ, чтобы не завышать точность при повторных выступлениях одного докладчика.</p>'''
 
     write_text(
         "findings/gender.html",
@@ -2452,6 +2460,162 @@ def generate_gender_page():
             body,
             [page_data("Гендерный баланс", "Анализ гендерного состава участников индологических конференций.", "findings/gender.html", page_type="Article"),
              make_breadcrumbs([("Главная", ""), ("Гендерный баланс", "findings/gender.html")])],
+        ),
+    )
+
+
+def generate_theme_evolution_page():
+    """H1516: theme/meso code share by year from meso_codes_deepseek.csv."""
+    rows = load_csv_rows("analytics_output/meso_codes_deepseek.csv")
+    year_code = defaultdict(Counter)
+    year_total = Counter()
+    for row in rows:
+        try:
+            year = int(row.get("year") or 0)
+        except (TypeError, ValueError):
+            continue
+        if year < 2000:
+            continue
+        codes = [c.strip() for c in (row.get("meso_codes") or "").split("|") if c.strip()]
+        if not codes:
+            codes = ["_unclassified"]
+        # One presentation contributes once per year; multi-label codes each get 1.
+        year_total[year] += 1
+        for code in codes:
+            if code == "bengal_bhakti_modernity":
+                year_code[year]["bengal"] += 1
+                year_code[year]["bhakti_vaishnava"] += 1
+            else:
+                year_code[year][code] += 1
+
+    # Top codes overall (exclude unclassified for the chart keys).
+    overall = Counter()
+    for y, ctr in year_code.items():
+        overall.update(ctr)
+    top_codes = [c for c, _ in overall.most_common(12) if c != "_unclassified"][:8]
+
+    # Write analytics CSV (derive-don't-store companion).
+    out_rows = []
+    for year in sorted(year_total):
+        denom = year_total[year] or 1
+        for code in top_codes:
+            cnt = year_code[year].get(code, 0)
+            out_rows.append({
+                "year": year,
+                "meso_code": code,
+                "label": MESO_LABELS.get(code, code),
+                "count": cnt,
+                "presentations": year_total[year],
+                "share": round(cnt / denom, 4),
+            })
+        uncl = year_code[year].get("_unclassified", 0)
+        out_rows.append({
+            "year": year,
+            "meso_code": "_unclassified",
+            "label": "без meso-кода",
+            "count": uncl,
+            "presentations": year_total[year],
+            "share": round(uncl / denom, 4),
+        })
+    Path("analytics_output").mkdir(exist_ok=True)
+    with open("analytics_output/theme_share_by_year.csv", "w", encoding="utf-8", newline="") as handle:
+        writer = csv.DictWriter(
+            handle,
+            fieldnames=["year", "meso_code", "label", "count", "presentations", "share"],
+        )
+        writer.writeheader()
+        writer.writerows(out_rows)
+
+    # Simple HTML: table of shares + stacked bar approximation.
+    palette = [
+        "#62ae92", "#6c5ce7", "#e17055", "#0984e3", "#fdcb6e",
+        "#00b894", "#a29bfe", "#d63031", "#636e72",
+    ]
+    code_color = {c: palette[i % len(palette)] for i, c in enumerate(top_codes)}
+    legend = "".join(
+        f'<span class="chip" style="border-color:{code_color[c]};">'
+        f'<span style="display:inline-block;width:10px;height:10px;border-radius:2px;'
+        f'background:{code_color[c]};margin-right:0.35rem;"></span>'
+        f'{esc(MESO_LABELS.get(c, c))}</span>'
+        for c in top_codes
+    )
+    bar_rows = ""
+    for year in sorted(year_total):
+        denom = year_total[year] or 1
+        segments = ""
+        for c in top_codes:
+            share = 100 * year_code[year].get(c, 0) / denom
+            if share <= 0:
+                continue
+            segments += (
+                f'<div title="{esc(MESO_LABELS.get(c, c))}: {share:.1f}%" '
+                f'style="display:inline-block;height:18px;width:{share:.2f}%;'
+                f'background:{code_color[c]};"></div>'
+            )
+        other = 100 - sum(100 * year_code[year].get(c, 0) / denom for c in top_codes)
+        if other > 0.5:
+            segments += (
+                f'<div title="прочее / без кода: {other:.1f}%" '
+                f'style="display:inline-block;height:18px;width:{other:.2f}%;'
+                f'background:rgba(255,255,255,0.12);"></div>'
+            )
+        bar_rows += (
+            f'<tr><td>{year}</td><td>{year_total[year]}</td>'
+            f'<td style="min-width:280px;"><div style="white-space:nowrap;background:rgba(255,255,255,0.04);'
+            f'border-radius:4px;overflow:hidden;line-height:0;">{segments}</div></td></tr>'
+        )
+
+    # Compact numeric table: year × top codes share %.
+    head_cells = "".join(f"<th>{esc(MESO_LABELS.get(c, c))}</th>" for c in top_codes)
+    num_rows = ""
+    for year in sorted(year_total):
+        denom = year_total[year] or 1
+        cells = "".join(
+            f"<td>{100 * year_code[year].get(c, 0) / denom:.0f}%</td>" for c in top_codes
+        )
+        num_rows += f"<tr><td>{year}</td><td>{year_total[year]}</td>{cells}</tr>"
+
+    body = f'''<header>
+<h1>Эволюция тем (meso-коды)</h1>
+<p>Доля докладов с выбранными meso-кодами по годам (2004–2026). Источник:
+<code>analytics_output/meso_codes_deepseek.csv</code>. Один доклад может нести несколько кодов;
+доля кода = число докладов с этим кодом / число докладов года (сумма долей может превышать 100%).</p>
+</header>
+<section class="grid">
+<article class="card"><strong>Годов</strong><div class="metric">{len(year_total)}</div></article>
+<article class="card"><strong>Докладов с кодами</strong><div class="metric">{sum(year_total.values())}</div></article>
+<article class="card"><strong>Уникальных meso</strong><div class="metric">{len(overall)}</div></article>
+</section>
+<h2>Топ meso-кодов по годам (stacked share)</h2>
+<div class="chip-row" style="margin-bottom:1rem;">{legend}</div>
+<div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:0.9rem;">
+<thead><tr><th style="text-align:left">Год</th><th>Докладов</th><th>Доли</th></tr></thead>
+<tbody>{bar_rows}</tbody>
+</table></div>
+<h2>Таблица долей (%)</h2>
+<div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:0.85rem;">
+<thead><tr><th style="text-align:left">Год</th><th>n</th>{head_cells}</tr></thead>
+<tbody>{num_rows}</tbody>
+</table></div>
+<p class="meta" style="margin-top:1.5rem;">CSV: <a href="../analytics_output/theme_share_by_year.csv">theme_share_by_year.csv</a>.
+Классификация meso — DeepSeek + overrides; не ранжирование «важности» тем.</p>'''
+
+    write_text(
+        "findings/theme-evolution.html",
+        page_shell(
+            f"Эволюция тем | {SITE_NAME}",
+            "Time-series of meso theme codes across conference editions (2004–2026).",
+            "findings/theme-evolution.html",
+            body,
+            [
+                page_data(
+                    "Эволюция тем",
+                    "Доля meso-кодов по годам конференций.",
+                    "findings/theme-evolution.html",
+                    page_type="Article",
+                ),
+                make_breadcrumbs([("Главная", ""), ("Эволюция тем", "findings/theme-evolution.html")]),
+            ],
         ),
     )
 
@@ -16040,6 +16204,7 @@ def main():
     generate_keyword_stats_page(records)
     generate_keyword_visualisations_page(records)
     generate_gender_page()
+    generate_theme_evolution_page()
     generate_mobility_page()
     generate_voting_page(records)
     generate_known_relationships_page(data)

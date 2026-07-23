@@ -96,6 +96,29 @@ function closeCitationModal() {
         </div>
     </article>
     {% endif %}
+    {% if show_city_trajectory and city_trajectory %}
+    <article class="card" style="grid-column: 1 / -1;">
+        <strong>Городская траектория</strong>
+        <div class="meta" style="font-size:0.78rem; margin:0.35rem 0 0.6rem;">
+            Годы программ → город (институция — только если сопоставлена аудитом city→institution; «(?)» / низкая уверенность не скрываются).
+        </div>
+        <ol style="margin:0; padding-left:1.2rem; font-size:0.9rem; line-height:1.55;">
+            {% for stop in city_trajectory %}
+            <li>
+                {% if stop.year %}
+                    {% if stop.year_to and stop.year_to != stop.year %}{{ stop.year }}–{{ stop.year_to }}{% else %}{{ stop.year }}{% endif %}
+                {% else %}
+                    <span class="meta">год н/д</span>
+                {% endif %}
+                — {{ stop.city | e }}
+                {% if stop.institution %}
+                    · <span class="meta">{{ stop.institution | e }}</span>
+                {% endif %}
+            </li>
+            {% endfor %}
+        </ol>
+    </article>
+    {% endif %}
     {% if network_session_mate_count and network_session_mate_count > 0 %}
     <article class="card">
         <strong>Сетевая активность</strong>

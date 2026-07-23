@@ -212,33 +212,88 @@ def thread_and_network_tables(db: sqlite3.Connection) -> dict:
 # Layer 3 — topic taxonomy + body NLP
 # --------------------------------------------------------------------------- #
 def topic_tables(db: sqlite3.Connection) -> dict:
+    """Classify messages with the two-level taxonomy (H1518); keep legacy tag keys."""
+    try:
+        from nagari_group_archive.taxonomy import classify, LEGACY_TAG_ORDER
+    except ImportError:
+        from taxonomy import classify, LEGACY_TAG_ORDER  # type: ignore
+
     rows = db.execute("SELECT id, year, subject_clean, body_text FROM messages").fetchall()
     topic_year = defaultdict(Counter)   # tag -> year -> count
     topic_total = Counter()
+    parent_year = defaultdict(Counter)
+    parent_total = Counter()
     term_counter = Counter()
-    msg_tags = []
+    primary_total = Counter()
     for _id, year, subj, body in rows:
         text = f"{subj or ''}\n{(body or '')[:4000]}"
-        matched = [tag for tag, pat in TOPICS.items() if pat.search(text)]
-        if not matched:
-            matched = ["разное"]
+        cl = classify(text)
+        matched = cl.labels or ["разное"]
         for tag in matched:
             topic_total[tag] += 1
             if year:
                 topic_year[tag][year] += 1
-        # Russian content terms (subjects only — cleaner signal than bodies)
+        parent_total[cl.parent] += 1
+        if year:
+            parent_year[cl.parent][year] += 1
+        primary_total[cl.primary] += 1
         for w in WORD_RU.findall((subj or "").lower()):
             if w not in RU_STOP:
                 term_counter[w] += 1
+    tag_order = list(dict.fromkeys(list(LEGACY_TAG_ORDER) + list(TAG_ORDER) + ["разное"]))
     ty_rows = []
-    for tag in TAG_ORDER + ["разное"]:
+    for tag in tag_order:
         for y, c in sorted(topic_year[tag].items()):
             ty_rows.append({"tag": tag, "year": y, "count": c})
     write_csv(PROCESSED / "topics_by_year.csv", ty_rows, ["tag", "year", "count"])
+    parent_rows = []
+    for parent, years in parent_year.items():
+        for y, c in sorted(years.items()):
+            parent_rows.append({"parent": parent, "year": y, "count": c})
+    write_csv(PROCESSED / "topics_parent_by_year.csv", parent_rows, ["parent", "year", "count"])
     term_rows = [{"term": t, "count": c} for t, c in term_counter.most_common(300)]
     write_csv(PROCESSED / "subject_terms.csv", term_rows, ["term", "count"])
-    return {"topic_total": dict(topic_total), "topic_year": {k: dict(v) for k, v in topic_year.items()},
-            "top_terms": term_rows[:60]}
+    primary_rows = [{"tag": t, "count": c} for t, c in primary_total.most_common()]
+    write_csv(PROCESSED / "topic_primary_totals.csv", primary_rows, ["tag", "count"])
+    return {
+        "topic_total": dict(topic_total),
+        "topic_year": {k: dict(v) for k, v in topic_year.items()},
+        "parent_total": dict(parent_total),
+        "top_terms": term_rows[:60],
+    }
+
+
+def misc_audit(db: sqlite3.Connection) -> dict:
+    """H1518 step 0: share of messages classified as «разное» + top unmatched lemmas."""
+    try:
+        from nagari_group_archive.taxonomy import classify
+        from nagari_group_archive._lemma import tokens
+    except ImportError:
+        from taxonomy import classify  # type: ignore
+        from _lemma import tokens  # type: ignore
+
+    rows = db.execute("SELECT subject_clean, body_text FROM messages").fetchall()
+    n = 0
+    misc_n = 0
+    unmatched = Counter()
+    for subj, body in rows:
+        n += 1
+        text = f"{subj or ''}\n{(body or '')[:2000]}"
+        cl = classify(text)
+        if cl.primary == "разное" or cl.labels == ["разное"]:
+            misc_n += 1
+            for tok in tokens(text, min_len=4):
+                if tok not in RU_STOP:
+                    unmatched[tok] += 1
+    share = (misc_n / n) if n else 0.0
+    audit_rows = [{"lemma": t, "count": c} for t, c in unmatched.most_common(300)]
+    write_csv(PROCESSED / "misc_audit.csv", audit_rows, ["lemma", "count"])
+    summary = {"messages": n, "misc": misc_n, "misc_share": round(share, 4)}
+    (PROCESSED / "misc_audit_summary.json").write_text(
+        json.dumps(summary, ensure_ascii=False, indent=2), encoding="utf-8"
+    )
+    print(f"  misc_audit: {misc_n}/{n} = {share:.1%}", flush=True)
+    return summary
 
 
 # --------------------------------------------------------------------------- #
@@ -316,7 +371,10 @@ def run(db_path: Path) -> dict:
     site = {"totals": totals(db)}
     print("  layer 1: activity", flush=True); site["activity"] = activity_tables(db)
     print("  layer 2: threads + networks", flush=True); site["network"] = thread_and_network_tables(db)
-    print("  layer 3: topics + terms", flush=True); site["topics"] = topic_tables(db)
+    print("  layer 3: topics + terms", flush=True)
+    site["topics"] = topic_tables(db)
+    print("  layer 3b: misc_audit", flush=True)
+    site["misc_audit"] = misc_audit(db)
     print("  layer 4: sanskrit + books", flush=True); site["sanskrit"] = sanskrit_and_books(db)
     db.close()
     # trim the network payload for the page (full tables live in CSV)
