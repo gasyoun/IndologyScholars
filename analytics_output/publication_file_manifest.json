@@ -16,7 +16,7 @@
     {
       "path": "CITATION.cff",
       "size_bytes": 798,
-      "sha256": "e739498201abcd966f4839d01d77ab171b61770642520109fea3f086acf55ca4"
+      "sha256": "eeaa8474bc0d33da8daba39f522b9a41b1d9eddebeb253c80b877a938d245a7b"
     },
     {
       "path": "analytics_output/age_cohort_trend.csv",
@@ -9735,8 +9735,8 @@
     },
     {
       "path": "docs/ROADMAP_2026.md",
-      "size_bytes": 7503,
-      "sha256": "3f7a5664651805fb14f1f2619a2b31327a9f831f9842bd28c0eb266d97770039"
+      "size_bytes": 7834,
+      "sha256": "0a71eefa4efbb46cbd2544ae5a0c54f76ecd77be05ee3c747dd64b2107550280"
     },
     {
       "path": "docs/ROADMAP_SANSKRITOLOGY_INDOLOGY_SECTIONS_2026_2027.md",
@@ -9941,7 +9941,7 @@
     {
       "path": "findings/visualisations.html",
       "size_bytes": 493631,
-      "sha256": "1c4c9158983ef78f30a0f887cd37b71482ef709feb05166fb73ebed7dd6376b4"
+      "sha256": "93c9b53d15d19e5d5cc856665941c95a4aec990d3863f0a5682b0266834a35f9"
     },
     {
       "path": "gatekeeping-en.html",
