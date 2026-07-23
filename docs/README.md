@@ -15,6 +15,12 @@
 | Семенцовские чтения вне корпуса / Sementsov Readings outside corpus | [sementsov-readings-context-note.md](sementsov-readings-context-note.md) | [sementsov-readings-context-note.md](sementsov-readings-context-note.md) |
 | Аудит интерфейса / Interface audit | [ux-ui-audit.md](ux-ui-audit.md) | [ux-ui-audit.md](ux-ui-audit.md) |
 | Визуализации / Visualizations | [visualisations.md](visualisations.md) | [visualisations.md](visualisations.md) |
+| Дорожная карта 2026 (PPV-first) / 2026 roadmap | [ROADMAP_2026.md](ROADMAP_2026.md) | [ROADMAP_2026.md](ROADMAP_2026.md) |
+| Интегрированный roadmap / Integrated roadmap | [ROADMAP.md](https://github.com/gasyoun/IndologyScholars/blob/main/ROADMAP.md) | [ROADMAP.md](https://github.com/gasyoun/IndologyScholars/blob/main/ROADMAP.md) |
+| nagari (закрытая гуглгруппа / closed Google Group) | [nagari/README.md](https://github.com/gasyoun/IndologyScholars/blob/main/nagari/README.md) | [nagari/README.md](https://github.com/gasyoun/IndologyScholars/blob/main/nagari/README.md) |
+| vk-ors (VK-стена «Общество ревнителей санскрита») | [vk-ors/README.md](https://github.com/gasyoun/IndologyScholars/blob/main/vk-ors/README.md) | [vk-ors/README.md](https://github.com/gasyoun/IndologyScholars/blob/main/vk-ors/README.md) |
+| Vigasin corpus (raw sources) | [sources/vigasin/](https://github.com/gasyoun/IndologyScholars/tree/main/sources/vigasin) | [sources/vigasin/](https://github.com/gasyoun/IndologyScholars/tree/main/sources/vigasin) |
+| INDOLOGY-L atlas (spun-out) | [IndologyArchiveAtlas](https://github.com/gasyoun/IndologyArchiveAtlas) | [IndologyArchiveAtlas](https://github.com/gasyoun/IndologyArchiveAtlas) |
 | Исторические материалы / Historical materials | [archive/README.md](https://github.com/gasyoun/IndologyScholars/blob/main/archive/README.md) | [archive/README.md](https://github.com/gasyoun/IndologyScholars/blob/main/archive/README.md) |
 
 Общий технический справочник полей хранится в

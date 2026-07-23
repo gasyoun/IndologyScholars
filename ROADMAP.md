@@ -1,26 +1,29 @@
 # ROADMAP — IndologyScholars
 
+_Created: 27-05-2026 · Last updated: 23-07-2026_
+
 > Integrated roadmap across data/DB, generated site, the ППВ article, and the
 > `philology-research-agents` module. Three horizons: **Now / Next / Later**.
-> Составлено 2026-05-27, обновлено 2026-06-10. Текущий статус — **ППВ подан;
-> активный трек — интернационализация данных (Wikidata/OpenAlex/LOD) и
-> сбор русскоязычных индологов.**
+> Составлено 2026-05-27, обновлено 2026-07-23. Текущий статус — **ППВ подан;
+> A26 deposit-ready; ростер влит; human gates: Zenodo DOI, OpenAlex review, IRR;
+> Phase-5 enrichment на clean-egress.**
 >
 > Это живой документ. Пункты уровня **Now** заведены как GitHub issues
 > (`gh issue list --label roadmap`); Next/Later описаны здесь и поднимаются в issues по
 > мере приближения.
 
-**TL;DR (EN).** ППВ article submitted. Active sprint: **expand the
-Russian-indologist roster** (`scratch/` sub-project — 197 indologists, 60 tests)
-and wire authority control (OpenAlex → Wikidata/ORCID, 122 candidates pending
-human review). English **data paper** drafted (`article/data_paper_draft.md`),
-target **Research Data Journal for the Humanities and Social Sciences (Brill)**;
-DOI snapshot frozen in `article/snapshots/`. Long-range: video-archive, agents
-module spinout, international ППВ translation.
+**TL;DR (EN).** ППВ article submitted. Roster merge **shipped** (94 non-participants
++ participant linker). OpenAlex queue: **181 persons / 496 candidate rows**
+(`todo`). English **data paper** (`article/data_paper_draft.md`) is
+**Zenodo deposit-ready** (snapshot `2026-07-17`, H1072); remaining human steps
+are Zenodo login → mint DOI → Brill submission (+ deferred human IRR).
+Siblings: `nagari/`, `vk-ors/`; INDOLOGY atlas spun out to
+[`IndologyArchiveAtlas`](https://github.com/gasyoun/IndologyArchiveAtlas).
+Long-range: video-archive, agents module spinout, international ППВ translation.
 
-**Актуальный корпус (2026-07-10):** 268 учёных · 1362 уникальных доклада ·
+**Актуальный корпус (2026-07-23):** 268 учёных · 1362 уникальных доклада ·
 1388 авторских участий · 2004–2026 · 41 перекрёстной когорты · 163 только
-Зографских · 64 только Рериховских.
+Зографских · 64 только Рериховских · +26 historical (вне счётчика докладчиков).
 
 ---
 
@@ -37,37 +40,34 @@ module spinout, international ППВ translation.
 (подпроект `scratch/`) с параллельной привязкой к международным
 идентификаторам.
 
-A. 🅳 🟡 **Ростер русскоязычных индологов (`scratch/`) → слияние в корпус.**
-   197 индологов (114 вики/en.wiki-мост + 83 база конференций), Q-ID 8→26, 60 тестов.
-   **Решение: влить ростер в основной корпус** — участники связываются с профилями,
-   **неучастники выносятся отдельной страницей-реестром** (отличной от докладчиков).
-   - ✅ Дизайн слияния: `docs/roster-merge-design.md` (участники → обогащение, неучастники → реестр)
-   - ✅ Реализовано: `curation/non_participant_indologists.csv` (94), линкер участников (100, +2 Q-ID), страница `indologists.html`, 10 тестов, build+validate зелёные
-   - ✅ Runbook Phase 5: `docs/ru-enrichment-runbook.md` (Wikidata годы, ru-инфобоксы, институты, идемпотентный re-seed)
-   - ⬜ Phase 5 прогон (.ru, по runbook): Q-ID/годы жизни → `candidate`→`verified`
-   - ⬜ P0 `wikidata_enrich.py` → годы жизни 13 записям, перегенерировать crossref (где Wikidata доступна)
-   - ⬜ P0 `scrape_institutions_web.py` + Playwright → институц. имена (по runbook, запуск внутри .ru)
-   - ⬜ P1 `expand_wikipedia_indologists.py` → ru-инфобоксы новым именам (где ru.wiki-статьи открываются)
+A. 🅳 🟡 **Ростер русскоязычных индологов → слияние в корпус (merge shipped; Phase-5 open).**
+   **Решение принято и реализовано:** участники связаны с профилями,
+   **неучастники** — отдельной страницей-реестром.
+   - ✅ Дизайн слияния: `docs/roster-merge-design.md`
+   - ✅ Реализовано: `curation/non_participant_indologists.csv` (94), линкер участников, страница `indologists.html`, тесты, build+validate зелёные
+   - ✅ Исторический слой: 26 `person_kind=historical` (H484)
+   - ✅ Runbook Phase 5: `docs/ru-enrichment-runbook.md`
+   - ⬜ Phase 5 прогон (clean-egress / .ru): Q-ID/годы жизни → `candidate`→`verified`
+   - ⬜ P0 `wikidata_enrich.py` / `expand_wikipedia_indologists.py` / Playwright institutions (где сеть доступна)
    - ⬜ P1 Ручной добор имперского периода (~15 имён)
    - ⬜ P2 Постсоветские республики через en.wiki нац-категории + мост
-   - Детальный план: `scratch/roadmap.md`, статус: `scratch/ai_status.md`
 B. 🅳 🟡 **Контроль авторитетов (OpenAlex → Wikidata/ORCID).**
-   - ✅ 122 кандидата OpenAlex найдены (`analytics_output/openalex_author_candidates.csv`)
-   - ⬜ Ручная сверка 122 кандидатов (статус `todo` → `confirmed`)
+   - ✅ OpenAlex-очередь: **181** персон / **496** строк-кандидатов (`analytics_output/openalex_author_candidates.csv`; все `todo` на 2026-07-23)
+   - ⬜ Ручная сверка 181 персон (статус `todo` → `confirmed`)
    - ⬜ Инъекция при `relevance_score ≥ 0.8` (порог подтверждён), `confidence='candidate'`
-   - ✅ Исправлены Q-ID в `generate_wikidata_batch.py`: P106 → `Q18524037` (профессия «индолог»), P101 → `Q625510` (область), удалён фиктивный `Q126692818`, источник как референс `S854`
-   - ⬜ Отправить Wikidata-батч **только после** полной сверки 122 кандидатов
+   - ✅ Исправлены Q-ID в `generate_wikidata_batch.py`: P106 → `Q18524037`, P101 → `Q625510`, удалён фиктивный `Q126692818`, источник как референс `S854`
+   - ⬜ Отправить Wikidata-батч **только после** полной сверки OpenAlex-кандидатов
    - Руководство: `docs/wikidata-guide.md`
-C. 🅳🅜 🟡 **Англоязычный data paper.**
+C. 🅳🅜 🟡 **Англоязычный data paper (A26).**
    - ✅ Черновик `article/data_paper_draft.md` — **единоличное авторство (Gasūns)**, инструменты в acknowledgements
-   - ✅ Замороженный снимок `article/snapshots/2026-06-03/` (`tools/freeze_article_data.py`)
+   - ✅ Deposit-ready снимок `article/snapshots/2026-07-17/` + `article/zenodo_metadata.json` (H1072); number gate hardened (H1467)
+   - ⬜ **DOI на Zenodo** (human login) → вписать concept+version DOI поверх `PENDING`
    - ⬜ Подача в **Research Data Journal for the Humanities and Social Sciences (Brill)**
-   - ⬜ **DOI на Zenodo** через GitHub-release; версия датасета — **датированная на каждый снимок** (CITATION.cff бампится при freeze)
-   - ⬜ Inter-rater agreement в methods (`tools/compute_interrater_agreement.py`)
+   - ⬜ Human inter-rater agreement (`tools/compute_interrater_agreement.py`) — отложено на 2026
 D. 🅜 ✅ **Runbook для .ru-шагов.** `docs/ru-enrichment-runbook.md` — пошагово:
    Wikidata годы жизни, ru-инфобоксы, Playwright-скрапинг институтов, OpenAlex,
    идемпотентный re-seed реестра, rebuild/validate/commit. Прогон — за редактором
-   изнутри .ru.
+   изнутри .ru / clean-egress.
 
 ---
 

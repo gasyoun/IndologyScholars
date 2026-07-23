@@ -33,9 +33,9 @@ Infrastructure already exists for all four — this is *develop into the paper*,
 
 ## Phase 3 — Pre-submission hardening
 
-- [ ] [`article/check_data_paper_numbers.py`](../article/check_data_paper_numbers.py): replace substring-presence checks with **anchored value assertions** (a wrong figure must fail the gate, not pass because the right string appears somewhere).
+- [x] [`article/check_data_paper_numbers.py`](../article/check_data_paper_numbers.py): replace substring-presence checks with **anchored value assertions** (a wrong figure must fail the gate, not pass because the right string appears somewhere). **Done H1467** (PR #132, 2026-07-22/23): phrase-anchored regex + `tests/test_data_paper_number_gate.py`.
 - [ ] Per-year gender-share CIs: replace the i.i.d. Wilson interval with a **design-aware / cluster-robust** one (participations cluster by scholar, so the bands are currently too narrow).
-- [ ] Re-run `article/check_anonymity.py` + `article/check_ppv_numbers.py`; freeze the DOI snapshot ([`tools/freeze_article_data.py`](../tools/freeze_article_data.py)).
+- [x] Freeze the DOI snapshot ([`tools/freeze_article_data.py`](../tools/freeze_article_data.py)) — **`article/snapshots/2026-07-17/`** (H1072). Re-run `article/check_anonymity.py` + `article/check_ppv_numbers.py` at deposit time if prose changes.
 
 ## Phase 4 — Submission
 
