@@ -16,6 +16,7 @@ Excel-экспорт постов (без тредов и без имён авт
 |---|---|---|
 | 1 | [ingest.py](https://github.com/gasyoun/IndologyScholars/blob/main/vk-ors/vk_ors_archive/ingest.py) | `vk_posts_all.xlsx` → SQLite (`posts`, `hashtags`) + индекс `posts_fts` (FTS5, unicode61, диакритика свёрнута) |
 | 2 | [insights.py](https://github.com/gasyoun/IndologyScholars/blob/main/vk-ors/vk_ors_archive/insights.py) | 4 слоя анализа → CSV в `data/processed/` + `data/site_data.json` |
+| 3 | [page.py](https://github.com/gasyoun/IndologyScholars/blob/main/vk-ors/vk_ors_archive/page.py) | Self-contained HTML-ретроспектива → `site/index.html` |
 
 ### Четыре слоя анализа
 
@@ -38,6 +39,7 @@ Excel-экспорт постов (без тредов и без имён авт
 cd vk-ors
 python -m vk_ors_archive.ingest      # xlsx → SQLite (data/vk_ors.db)
 python -m vk_ors_archive.insights    # 4 слоя → data/processed/*.csv + data/site_data.json
+python -m vk_ors_archive.page        # self-contained HTML → site/index.html
 python -m vk_ors_archive.ingest --limit 300   # быстрая проверка разбора
 ```
 

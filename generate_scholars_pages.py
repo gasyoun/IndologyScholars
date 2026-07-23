@@ -920,6 +920,8 @@ def render_profile(scholar, related, authority, meso_by_presentation, meso_items
         affiliation_city_only_talks=scholar.get("affiliation_city_only_talks", 0),
         affiliation_matched_city_labels=scholar.get("affiliation_matched_city_labels", 0),
         affiliation_institution_talks=scholar.get("affiliation_institution_talks", 0),
+        city_trajectory=scholar.get("city_trajectory") or [],
+        show_city_trajectory=bool(scholar.get("show_city_trajectory")),
         network_coauthor_count=scholar.get("network_coauthor_count", 0),
         network_session_mate_count=scholar.get("network_session_mate_count", 0),
         show_thematic_badge=scholar.get("show_thematic_badge", False),

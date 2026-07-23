@@ -6,6 +6,22 @@
 
 ## [Unreleased]
 
+### Added
+- **Theme evolution time-series** (H1516): `findings/theme-evolution.html` +
+  `analytics_output/theme_share_by_year.csv` from meso codes by year.
+- **vk-ors HTML retrospective**: `vk_ors_archive/page.py` → `vk-ors/site/index.html`.
+- **nagari H1518 Wave-1 scaffold**: two-level `taxonomy.py`, stdlib `_lemma.py`,
+  `misc_audit` + parent-topic tables in insights (full rebuild needs `nagari.db`).
+- **Philology agents offline tests** + multi-provider orchestrator
+  (Anthropic / OpenModel / DeepSeek) + `--dry-run`.
+
+### Changed
+- **Gender-year CIs are cluster-robust** (H1473): participations cluster by
+  scholar; methods note on `findings/gender.html`.
+- Scholar profiles show a **city trajectory timeline** from
+  `city_trajectory_audit.csv` when ≥2 stops exist.
+- Keyword stoplist expanded with additional non-content title tokens.
+
 ## [1.4.2] - 2026-07-23
 
 ### Changed

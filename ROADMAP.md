@@ -96,20 +96,21 @@ D. 🅜 ✅ **Runbook для .ru-шагов.** `docs/ru-enrichment-runbook.md` �
 7. 🅳🅜 🟡 **Генеалогия и сети (заявленный «top track»).**
    - ✅ 20 teacher-student edges в `network_data.json` + пресет «Генеалогия» в networks.html
    - ✅ `tools/city_trajectory_audit.py` — 719 city-меток, 165 сопоставлено с институцией (22.9%)
-   - ⬜ Связать траектории с профилями учёных на сайте
+   - ✅ Связать траектории с профилями учёных на сайте (`city_trajectory` timeline + coverage bar on scholar pages)
 8. 🅳 🟡 **Покрытие и качество данных.**
    - ✅ Баг соавторов исправлен (`presentation_person_exclusions.csv`)
    - ✅ Bengal taxonomy избыточность устранена
    - ✅ `tools/scrape_birth_years.py` + `tools/apply_birth_years.py` — скрапер дат
    - ⬜ 33 учёных без дат рождения (30 city-only, 3 с институциями)
-   - ⬜ Фильтрация мусорных ключевых слов
+   - ✅ Фильтрация мусорных ключевых слов (`keyword_filtering.py` + keywords pages; stoplist extended 2026-07-23)
 9. 🅜 ⬜ **Публикационная конверсия.** Какие доклады стали статьями/сборниками.
 10. 🅼 🟡 **Перечень ВАК.**
     - ✅ `tools/vak_parser.py` — парсер Excel в CSV + генератор `editors/*.md`
     - ⬜ Загрузить актуальный .xlsx с сайта ВАК и прогнать
 11. 🅼 🟡 **Зрелость модуля агентов.**
     - ✅ `philology-research-agents/SPINOUT_PLAN.md` — 3-фазный план выноса
-    - ⬜ Python-оркестратор на Anthropic SDK + анти-галлюцинационные тесты
+    - ✅ Python-оркестратор (`orchestrator.py`: Anthropic / OpenModel / DeepSeek) + offline + anti-fabrication tests
+    - ⬜ Фаза 2: вынос в отдельный репозиторий
 12. 🅢 🟡 **Сайт/UX.**
     - ✅ `positionTooltip()` — tooltip clamp на всех визуализациях
     - ✅ Клик по городу на карте → страница города
@@ -117,7 +118,7 @@ D. 🅜 ✅ **Runbook для .ru-шагов.** `docs/ru-enrichment-runbook.md` �
     - ✅ «Соавторы (0)» скрыты (уже было)
     - ✅ «засвидетельствованный профиль» для 1 доклада (уже было)
     - ⬜ Фильтр «выпускник Востфака» — ждёт ручной верификации alumni
-    - ⬜ Страница ключевых слов
+    - ✅ Страница ключевых слов (`keywords/index.html` + review + visualisations)
 13. 🅳 ✅ **Качество данных.** Баг соавторов, Bengal taxonomy, связи в CSV — всё сделано.
 14. 🅜 🟡 **Наукометрия и новые фичи.**
     - ✅ Caveat о программах + inline-ссылки на рисунки в статье

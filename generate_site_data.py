@@ -165,6 +165,48 @@ def load_city_trajectory():
     return data
 
 
+def load_city_trajectory_timeline():
+    """Year-ordered city (and optional institution) stops per person from audit detail."""
+    by_person = {}
+    try:
+        with open("analytics_output/city_trajectory_audit.csv", encoding="utf-8-sig", newline="") as f:
+            for row in csv.DictReader(f):
+                pid = str(row.get("person_id") or "").strip()
+                city = str(row.get("city_label") or "").strip()
+                if not pid or not city:
+                    continue
+                try:
+                    year = int(row.get("city_year") or 0)
+                except (TypeError, ValueError):
+                    year = 0
+                inst = str(row.get("matched_institution") or "").strip()
+                conf = str(row.get("confidence") or "").strip()
+                by_person.setdefault(pid, []).append({
+                    "year": year,
+                    "city": city,
+                    "institution": inst,
+                    "confidence": conf,
+                })
+    except Exception:
+        return {}
+    # Sort and collapse consecutive identical (city, institution) stops.
+    out = {}
+    for pid, stops in by_person.items():
+        stops.sort(key=lambda s: (s["year"] or 9999, s["city"]))
+        collapsed = []
+        for stop in stops:
+            if collapsed and collapsed[-1]["city"] == stop["city"] and collapsed[-1].get("institution") == stop.get("institution"):
+                prev = collapsed[-1]
+                if stop["year"] and (not prev.get("year_to") or stop["year"] > prev["year_to"]):
+                    prev["year_to"] = stop["year"]
+                continue
+            item = dict(stop)
+            item["year_to"] = stop["year"] or None
+            collapsed.append(item)
+        out[pid] = collapsed
+    return out
+
+
 def load_eastern_faculty_alumni():
     rows = {}
     try:
@@ -837,6 +879,7 @@ def main():
 
     # Load city-to-institution trajectory audit
     city_trajectory = load_city_trajectory()
+    city_timeline = load_city_trajectory_timeline()
     for s in scholars:
         pid = s.get("id", "")
         traj = city_trajectory.get(pid, {})
@@ -848,6 +891,9 @@ def main():
         s["show_affiliation_transparency"] = (
             s["affiliation_city_only_talks"] > 0 and s["affiliation_coverage_pct"] < 100.0
         )
+        timeline = city_timeline.get(pid) or []
+        s["city_trajectory"] = timeline
+        s["show_city_trajectory"] = len(timeline) >= 2
 
     # Compute network metrics per scholar (co-authors, session co-presence, thematic breadth)
     cursor.execute("""
