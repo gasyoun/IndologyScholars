@@ -104,3 +104,7 @@ nagari/**/__pycache__/
 vk-ors/vk_posts_all.xlsx
 vk-ors/data/vk_ors.db
 vk-ors/**/__pycache__/
+
+# VK attachment metadata (regenerable via fetch.py; hotlink URLs rot)
+vk-ors/data/attachments_raw.json
+

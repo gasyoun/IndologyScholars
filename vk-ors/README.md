@@ -1,4 +1,4 @@
-_Created: 23-07-2026 · Last updated: 23-07-2026_
+_Created: 23-07-2026 · Last updated: 24-07-2026_
 
 # vk_ors_archive — архив стены «Общество ревнителей санскрита» ВКонтакте (2015–2026)
 
@@ -73,5 +73,22 @@ read-only. Обновление файла — отдельный, явный ш
   словаре/грамматике; это сигнал темы поста, не лексикографическая запись.
 
 _Auto-generated pipeline._
+
+
+## Wave-1 advanced visualization (24-07-2026)
+
+Расширение поверх четырёх слоёв (см. [PLAN](https://github.com/gasyoun/IndologyScholars/blob/main/docs/PLAN_vk-ors_advanced_visualization_grok_2026-Q3.md)):
+
+1. **Галерея** — etch.py пишет data/attachments_raw.json (URL/type/size) в том же
+   wall.get-проходе; ingest.py → таблица ttachments; insights.py →
+   ttachments_gallery.csv + ключ gallery в site_data.json.
+2. **Фасетный поиск** — компактный search_index встроен в HTML; фильтры год /
+   тип вложения / tier / хэштег + подстрока текста (client-side, без CDN).
+3. **Engagement tiers** — перцентили score внутри года (likes + 5×reposts +
+   2×comments + views/50); top ~5% = iral / outlier.
+
+Миниатюры hotlink на CDN ВК; при протухшем URL — карточка «смотреть на ВК».
+ttachments_raw.json gitignored (как xlsx/db) — regenerable через etch.py.
+
 
 _Dr. Mārcis Gasūns_

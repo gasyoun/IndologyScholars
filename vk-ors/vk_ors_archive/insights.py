@@ -1,8 +1,8 @@
 """Compute the analysis layers from ``vk_ors.db`` into CSV tables + ``site_data.json``.
 
-Four layers, adapted from ``nagari_group_archive.insights`` to a VK wall export
-(no thread/reply graph, no per-author breakdown — one publishing account, but
-rich per-post engagement counters instead):
+Four original layers, adapted from ``nagari_group_archive.insights`` to a VK
+wall export (no thread/reply graph, no per-author breakdown — one publishing
+account, but rich per-post engagement counters instead):
 
 1. Timeline & activity   — posts per year & month, engagement sums/averages.
 2. Engagement            — top posts by likes/reposts/comments/views, the
@@ -13,10 +13,17 @@ rich per-post engagement counters instead):
                             type inventory, book-flagged posts (doc attachment
                             + book-ish text).
 
+Wave-1 advanced viz additions (additive, do not replace layers 1–4):
+
+5. Gallery export         — ``attachments_gallery.csv`` + ``gallery`` key.
+6. Engagement tiers       — within-year percentile buckets + top~5% outlier
+                            flag (score = likes + 5*reposts + comments + views/50).
+7. Search index           — compact per-post array for client-side facets.
+
 Everything is written under ``<pkg>/../data/processed/`` and bundled into
 ``site_data.json``. Interpretive guardrails from the nagari/Indology packages
 apply: likes are not agreement, views are not readership, hashtag presence is
-not a curated taxonomy.
+not a curated taxonomy; "viral"/outlier is a statistical percentile label.
 """
 
 from __future__ import annotations
@@ -59,6 +66,22 @@ RU_STOP = set("""это как для что при чтобы если так �
 этих такой такие таких себя свои своих спасибо просто здесь речь слово слова также
 который которая которые которых свою своей более среди перед после между такое настоящ""".split())
 
+# Engagement score weights (documented choice — views scaled so they don't
+# completely dominate likes/reposts on a wall with multi-thousand view counts).
+W_LIKES = 1
+W_REPOSTS = 5
+W_COMMENTS = 2
+W_VIEWS_DIV = 50
+
+# Within-year percentile buckets → tier label. Top ~5% = outlier/"viral".
+TIER_CUTS = (
+    (0.25, "low"),
+    (0.50, "mid_low"),
+    (0.75, "mid_high"),
+    (0.95, "high"),
+    (1.01, "viral"),  # remainder; is_outlier also set for top ~5%
+)
+
 
 def configure_stdio() -> None:
     for s in (sys.stdout, sys.stderr):
@@ -73,6 +96,15 @@ def write_csv(path: Path, rows: list[dict], header: list[str]) -> None:
         w.writeheader()
         for r in rows:
             w.writerow({k: r.get(k, "") for k in header})
+
+
+def engagement_score(likes: int, reposts: int, comments: int, views: int) -> float:
+    return (
+        W_LIKES * (likes or 0)
+        + W_REPOSTS * (reposts or 0)
+        + W_COMMENTS * (comments or 0)
+        + (views or 0) / W_VIEWS_DIV
+    )
 
 
 # --------------------------------------------------------------------------- #
@@ -257,14 +289,222 @@ def sanskrit_and_attachments(db: sqlite3.Connection) -> dict:
     }
 
 
+# --------------------------------------------------------------------------- #
+# Wave-1c — engagement tiers (within-year percentiles)
+# --------------------------------------------------------------------------- #
+def engagement_tiers(db: sqlite3.Connection) -> dict[int, dict]:
+    """Return {post_id: {tier, is_outlier, score, year}} and write CSV."""
+    by_year: dict[int, list[tuple[int, float]]] = defaultdict(list)
+    for pid, year, likes, reposts, comments, views in db.execute(
+        "SELECT id, year, likes, reposts, comments, views FROM posts WHERE year IS NOT NULL"
+    ):
+        score = engagement_score(likes, reposts, comments, views)
+        by_year[year].append((pid, score))
+
+    result: dict[int, dict] = {}
+    csv_rows: list[dict] = []
+    for year, items in sorted(by_year.items()):
+        items_sorted = sorted(items, key=lambda x: x[1])
+        n = len(items_sorted)
+        for rank, (pid, score) in enumerate(items_sorted):
+            # percentile of this post within its year (0..1)
+            pct = (rank + 1) / n if n else 0.0
+            tier = "low"
+            for cut, label in TIER_CUTS:
+                if pct <= cut:
+                    tier = label
+                    break
+            is_outlier = pct > 0.95  # top ~5%
+            if is_outlier:
+                tier = "viral"
+            result[pid] = {
+                "tier": tier,
+                "is_outlier": is_outlier,
+                "score": round(score, 2),
+                "year": year,
+                "percentile": round(pct, 4),
+            }
+            csv_rows.append({
+                "post_id": pid,
+                "year": year,
+                "tier": tier,
+                "is_outlier": int(is_outlier),
+                "score": round(score, 2),
+                "percentile": round(pct, 4),
+            })
+    write_csv(
+        PROCESSED / "engagement_tiers.csv",
+        csv_rows,
+        ["post_id", "year", "tier", "is_outlier", "score", "percentile"],
+    )
+    # Sanity: ~5% outliers overall
+    n_out = sum(1 for v in result.values() if v["is_outlier"])
+    n_all = len(result) or 1
+    print(f"  engagement tiers: {n_all} posts, {n_out} outliers ({100*n_out/n_all:.1f}%)", flush=True)
+    return result
+
+
+# --------------------------------------------------------------------------- #
+# Wave-1a/1b — gallery + search index
+# --------------------------------------------------------------------------- #
+def gallery_and_search(db: sqlite3.Connection, tiers: dict[int, dict]) -> dict:
+    """Build gallery CSV/JSON + compact per-post search index."""
+    # tags by post
+    tags_by_post: dict[int, list[str]] = defaultdict(list)
+    for pid, tag in db.execute("SELECT post_id, tag FROM hashtags"):
+        tags_by_post[pid].append(tag)
+
+    # attachments joined to posts
+    gallery_rows: list[dict] = []
+    att_types_by_post: dict[int, set[str]] = defaultdict(set)
+    n_att = 0
+    try:
+        att_query = db.execute(
+            """SELECT a.post_id, a.type, a.url, a.width, a.height, a.position,
+                      p.url, p.date_utc, p.year, substr(p.text,1,160),
+                      p.likes, p.reposts, p.comments, p.views
+               FROM attachments a
+               JOIN posts p ON p.id = a.post_id
+               ORDER BY p.date_utc DESC, a.position"""
+        )
+    except sqlite3.OperationalError:
+        att_query = []
+
+    for row in att_query:
+        (
+            post_id, atype, aurl, width, height, pos,
+            purl, date_utc, year, excerpt, likes, reposts, comments, views,
+        ) = row
+        n_att += 1
+        att_types_by_post[post_id].add(atype)
+        tier_info = tiers.get(post_id) or {}
+        gallery_rows.append({
+            "post_id": post_id,
+            "type": atype,
+            "url": aurl or "",
+            "width": width or "",
+            "height": height or "",
+            "position": pos,
+            "post_url": purl or "",
+            "date": (date_utc or "")[:10],
+            "year": year or "",
+            "excerpt": excerpt or "",
+            "likes": likes or 0,
+            "reposts": reposts or 0,
+            "comments": comments or 0,
+            "views": views or 0,
+            "tags": " ".join(tags_by_post.get(post_id) or []),
+            "engagement_tier": tier_info.get("tier") or "",
+            "is_outlier": int(bool(tier_info.get("is_outlier"))),
+        })
+
+    write_csv(
+        PROCESSED / "attachments_gallery.csv",
+        gallery_rows,
+        [
+            "post_id", "type", "url", "width", "height", "position",
+            "post_url", "date", "year", "excerpt", "likes", "reposts",
+            "comments", "views", "tags", "engagement_tier", "is_outlier",
+        ],
+    )
+
+    # Gallery for the page: prefer items with a renderable URL; cap for payload size
+    gallery_for_page = [
+        {
+            "post_id": r["post_id"],
+            "type": r["type"],
+            "url": r["url"],
+            "post_url": r["post_url"],
+            "date": r["date"],
+            "year": r["year"],
+            "excerpt": (r["excerpt"] or "")[:120],
+            "likes": r["likes"],
+            "engagement_tier": r["engagement_tier"],
+            "is_outlier": r["is_outlier"],
+            "tags": r["tags"],
+        }
+        for r in gallery_rows
+        if r["url"] or r["type"] in ("photo", "video", "doc", "link")
+    ]
+    # Cap gallery payload (hotlinked thumbs); keep newest first
+    GALLERY_CAP = 800
+    gallery_for_page = gallery_for_page[:GALLERY_CAP]
+
+    # Compact search index: one object per post
+    search_index: list[dict] = []
+    for pid, date_utc, year, text, likes, reposts, comments, views, att_types, purl in db.execute(
+        "SELECT id, date_utc, year, substr(text,1,280), likes, reposts, comments, views, "
+        "attachment_types, url FROM posts ORDER BY date_utc DESC"
+    ):
+        tier_info = tiers.get(pid) or {}
+        types = sorted(att_types_by_post.get(pid) or set())
+        if not types and att_types:
+            types = sorted(t.strip() for t in att_types.split(",") if t.strip())
+        search_index.append({
+            "id": pid,
+            "date": (date_utc or "")[:10],
+            "year": year or "",
+            "text": text or "",
+            "tags": tags_by_post.get(pid) or [],
+            "attachment_types": types,
+            "engagement_tier": tier_info.get("tier") or "low",
+            "is_outlier": bool(tier_info.get("is_outlier")),
+            "url": purl or "",
+            "likes": likes or 0,
+            "reposts": reposts or 0,
+            "views": views or 0,
+            "score": tier_info.get("score") or 0,
+        })
+
+    print(f"  gallery: {n_att} attachment rows, {len(gallery_for_page)} in page payload", flush=True)
+    print(f"  search index: {len(search_index)} posts", flush=True)
+
+    # Tier distribution for engagement explorer
+    tier_year: dict[str, Counter] = defaultdict(Counter)
+    for info in tiers.values():
+        tier_year[str(info["year"])][info["tier"]] += 1
+    tier_by_year = {
+        y: dict(counts) for y, counts in sorted(tier_year.items())
+    }
+
+    # Top posts per tier (for explorer)
+    top_by_tier: dict[str, list] = defaultdict(list)
+    for item in sorted(search_index, key=lambda x: -float(x.get("score") or 0)):
+        t = item["engagement_tier"]
+        if len(top_by_tier[t]) < 12:
+            top_by_tier[t].append({
+                "id": item["id"], "url": item["url"], "date": item["date"],
+                "excerpt": (item["text"] or "")[:140], "likes": item["likes"],
+                "score": item["score"], "year": item["year"],
+            })
+
+    return {
+        "gallery": gallery_for_page,
+        "search_index": search_index,
+        "n_attachments": n_att,
+        "tier_by_year": tier_by_year,
+        "top_by_tier": dict(top_by_tier),
+        "score_weights": {
+            "likes": W_LIKES, "reposts": W_REPOSTS,
+            "comments": W_COMMENTS, "views_div": W_VIEWS_DIV,
+        },
+    }
+
+
 def totals(db: sqlite3.Connection) -> dict:
     n_posts = db.execute("SELECT count(*) FROM posts").fetchone()[0]
     n_tags = db.execute("SELECT count(DISTINCT tag) FROM hashtags").fetchone()[0]
     dmin, dmax = db.execute("SELECT min(date_utc), max(date_utc) FROM posts WHERE date_utc<>''").fetchone()
     sums = db.execute("SELECT sum(likes), sum(reposts), sum(comments), sum(views) FROM posts").fetchone()
+    n_att = 0
+    try:
+        n_att = db.execute("SELECT count(*) FROM attachments").fetchone()[0]
+    except sqlite3.OperationalError:
+        pass
     return {
         "posts": n_posts, "distinct_hashtags": n_tags, "date_min": dmin, "date_max": dmax,
         "likes": sums[0] or 0, "reposts": sums[1] or 0, "comments": sums[2] or 0, "views": sums[3] or 0,
+        "attachments": n_att,
     }
 
 
@@ -276,7 +516,10 @@ def run(db_path: Path) -> dict:
     print("  layer 2: engagement", flush=True); site["engagement"] = engagement_tables(db)
     print("  layer 3: topics + hashtags", flush=True); site["topics"] = topic_tables(db)
     print("  layer 4: sanskrit + attachments", flush=True); site["sanskrit"] = sanskrit_and_attachments(db)
+    print("  wave-1c: engagement tiers", flush=True); tiers = engagement_tiers(db)
+    print("  wave-1a/b: gallery + search index", flush=True); advanced = gallery_and_search(db, tiers)
     db.close()
+
     site_page = {
         "totals": site["totals"],
         "activity": site["activity"],
@@ -286,6 +529,13 @@ def run(db_path: Path) -> dict:
         "topics": site["topics"],
         "sanskrit": {k: v for k, v in site["sanskrit"].items() if k != "book_posts_top"},
         "books_top": site["sanskrit"]["book_posts_top"][:40],
+        # Wave-1 advanced viz payload
+        "gallery": advanced["gallery"],
+        "search_index": advanced["search_index"],
+        "tier_by_year": advanced["tier_by_year"],
+        "top_by_tier": advanced["top_by_tier"],
+        "score_weights": advanced["score_weights"],
+        "n_attachments": advanced["n_attachments"],
     }
     (PROCESSED.parent / "site_data.json").write_text(
         json.dumps(site_page, ensure_ascii=False, indent=1), encoding="utf-8"

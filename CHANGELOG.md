@@ -7,6 +7,13 @@
 ## [Unreleased]
 
 ### Added
+- **vk-ors advanced visualization** (H1557, Grok 4.5): media gallery (hotlinked
+  attachment thumbs + onerror fallback), client-side faceted search (year /
+  hashtag / attachment type / engagement tier), within-year engagement percentile
+  tiers (~5% viral/outlier). Pipeline: etch.py → ttachments_raw.json →
+  ttachments table → gallery CSV + embedded search index → site/index.html.
+  Plan: [docs/PLAN_vk-ors_advanced_visualization_grok_2026-Q3.md](https://github.com/gasyoun/IndologyScholars/blob/main/docs/PLAN_vk-ors_advanced_visualization_grok_2026-Q3.md).
+
 - **Theme evolution time-series** (H1516): `findings/theme-evolution.html` +
   `analytics_output/theme_share_by_year.csv` from meso codes by year.
 - **vk-ors HTML retrospective**: `vk_ors_archive/page.py` → `vk-ors/site/index.html`.
