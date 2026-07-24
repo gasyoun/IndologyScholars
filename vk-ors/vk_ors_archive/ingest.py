@@ -12,6 +12,9 @@ the schema is flatter than ``nagari_group_archive.ingest``. Writes:
 * ``posts_fts``  — an FTS5 index over the post text for ranked full-text
   search across Russian, IAST and Devanagari (unicode61, diacritics folded
   so ``atman`` matches ``ātman``).
+* ``attachments`` — optional wave-1a table loaded from
+  ``data/attachments_raw.json`` (produced by ``fetch.py``). Additive; the
+  xlsx remains read-only and its column layout is unchanged.
 
 Usage::
 
@@ -24,6 +27,7 @@ Nothing here is destructive to the source: the xlsx is opened read-only.
 from __future__ import annotations
 
 import argparse
+import json
 import re
 import sqlite3
 import sys
@@ -33,8 +37,10 @@ from pathlib import Path
 
 import openpyxl
 
-DEFAULT_XLSX = Path(__file__).resolve().parents[1] / "vk_posts_all.xlsx"
-DEFAULT_DB = Path(__file__).resolve().parents[1] / "data" / "vk_ors.db"
+PKG = Path(__file__).resolve().parents[1]
+DEFAULT_XLSX = PKG / "vk_posts_all.xlsx"
+DEFAULT_DB = PKG / "data" / "vk_ors.db"
+DEFAULT_ATTACHMENTS = PKG / "data" / "attachments_raw.json"
 
 RE_WS = re.compile(r"\s+")
 RE_HASHTAG = re.compile(r"#([\w][\w\-]{1,60})", re.UNICODE)
@@ -90,10 +96,21 @@ CREATE TABLE hashtags (
     post_id      INTEGER REFERENCES posts(id),
     tag          TEXT
 );
+CREATE TABLE attachments (
+    id           INTEGER PRIMARY KEY AUTOINCREMENT,
+    post_id      INTEGER REFERENCES posts(id),
+    type         TEXT,
+    url          TEXT,
+    width        INTEGER,
+    height       INTEGER,
+    position     INTEGER
+);
 CREATE INDEX idx_posts_ym    ON posts(ym);
 CREATE INDEX idx_posts_year  ON posts(year);
 CREATE INDEX idx_hashtags_tag ON hashtags(tag);
 CREATE INDEX idx_hashtags_post ON hashtags(post_id);
+CREATE INDEX idx_attachments_post ON attachments(post_id);
+CREATE INDEX idx_attachments_type ON attachments(type);
 CREATE VIRTUAL TABLE posts_fts USING fts5(
     text,
     tokenize = 'unicode61 remove_diacritics 2'
@@ -141,7 +158,48 @@ def parse_row(row: tuple, fallback_idx: int) -> dict:
     }
 
 
-def build(xlsx_path: Path, db_path: Path, limit: int | None) -> dict:
+def load_attachments(db: sqlite3.Connection, path: Path, known_ids: set[int]) -> int:
+    """Load attachments_raw.json into the attachments table. Returns row count."""
+    if not path.exists():
+        print(f"  attachments: {path} missing — skipping (run fetch.py first for gallery)", flush=True)
+        return 0
+    raw = json.loads(path.read_text(encoding="utf-8"))
+    n = 0
+    skipped_orphan = 0
+    for post_id_s, items in raw.items():
+        try:
+            post_id = int(post_id_s)
+        except (TypeError, ValueError):
+            continue
+        if post_id not in known_ids:
+            # --limit slice: raw file has full wall; only load posts we ingested
+            skipped_orphan += 1
+            continue
+        for item in items or []:
+            db.execute(
+                """INSERT INTO attachments(post_id, type, url, width, height, position)
+                   VALUES (?,?,?,?,?,?)""",
+                (
+                    post_id,
+                    (item.get("type") or "unknown"),
+                    (item.get("url") or ""),
+                    item.get("width"),
+                    item.get("height"),
+                    int(item.get("position") or 0),
+                ),
+            )
+            n += 1
+    if skipped_orphan:
+        print(f"  attachments: skipped {skipped_orphan} post_ids not in posts (limit slice?)", flush=True)
+    return n
+
+
+def build(
+    xlsx_path: Path,
+    db_path: Path,
+    limit: int | None,
+    attachments_path: Path,
+) -> dict:
     if not xlsx_path.exists():
         raise FileNotFoundError(f"missing {xlsx_path}")
 
@@ -152,6 +210,7 @@ def build(xlsx_path: Path, db_path: Path, limit: int | None) -> dict:
     db.executescript(SCHEMA)
 
     n_posts = n_tags = 0
+    known_ids: set[int] = set()
     start = time.time()
     for idx, row in enumerate(iter_rows(xlsx_path, limit=limit), start=1):
         rec = parse_row(row, idx)
@@ -165,6 +224,7 @@ def build(xlsx_path: Path, db_path: Path, limit: int | None) -> dict:
                 rec["views"], rec["n_attachments"], rec["attachment_types"],
             ),
         )
+        known_ids.add(rec["id"])
         for tag in rec["tags"]:
             db.execute("INSERT INTO hashtags(post_id,tag) VALUES (?,?)", (rec["id"], tag))
             n_tags += 1
@@ -175,10 +235,19 @@ def build(xlsx_path: Path, db_path: Path, limit: int | None) -> dict:
 
     print("  populating FTS index ...", flush=True)
     db.execute("INSERT INTO posts_fts(rowid,text) SELECT id,text FROM posts")
+
+    print("  loading attachments ...", flush=True)
+    n_att = load_attachments(db, attachments_path, known_ids)
+
     db.commit()
     db.execute("PRAGMA optimize")
     db.close()
-    return {"posts": n_posts, "hashtags": n_tags, "seconds": round(time.time() - start, 1)}
+    return {
+        "posts": n_posts,
+        "hashtags": n_tags,
+        "attachments": n_att,
+        "seconds": round(time.time() - start, 1),
+    }
 
 
 def main(argv: list[str] | None = None) -> None:
@@ -186,10 +255,12 @@ def main(argv: list[str] | None = None) -> None:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--xlsx", type=Path, default=DEFAULT_XLSX, help="VK export xlsx path")
     ap.add_argument("--db", type=Path, default=DEFAULT_DB, help="output SQLite path")
+    ap.add_argument("--attachments", type=Path, default=DEFAULT_ATTACHMENTS,
+                    help="attachments_raw.json from fetch.py")
     ap.add_argument("--limit", type=int, default=None, help="parse only the first N rows (validation)")
     args = ap.parse_args(argv)
     print(f"Ingesting {args.xlsx}", flush=True)
-    stats = build(args.xlsx, args.db, args.limit)
+    stats = build(args.xlsx, args.db, args.limit, args.attachments)
     print(f"Done: {stats}", flush=True)
     print(f"DB: {args.db}", flush=True)
 
