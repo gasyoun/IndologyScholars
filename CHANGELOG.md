@@ -6,12 +6,14 @@
 
 ## [Unreleased]
 
+## [1.4.3] - 2026-07-24
+
 ### Added
 - **vk-ors advanced visualization** (H1557, Grok 4.5): media gallery (hotlinked
   attachment thumbs + onerror fallback), client-side faceted search (year /
   hashtag / attachment type / engagement tier), within-year engagement percentile
-  tiers (~5% viral/outlier). Pipeline: etch.py → ttachments_raw.json →
-  ttachments table → gallery CSV + embedded search index → site/index.html.
+  tiers (~5% viral/outlier). Pipeline: fetch.py → attachments_raw.json →
+  attachments table → gallery CSV + embedded search index → site/index.html.
   Plan: [docs/PLAN_vk-ors_advanced_visualization_grok_2026-Q3.md](https://github.com/gasyoun/IndologyScholars/blob/main/docs/PLAN_vk-ors_advanced_visualization_grok_2026-Q3.md).
 
 - **Theme evolution time-series** (H1516): `findings/theme-evolution.html` +
@@ -23,6 +25,11 @@
   (Anthropic / OpenModel / DeepSeek) + `--dry-run`.
 
 ### Changed
+- **vk-ors live data refresh** (24-07-2026, Grok 4.5): full `fetch` → `ingest` →
+  `insights` → `page` on wave-1 pipeline against `vk.com/samskrtamru` —
+  **7,613** posts (was 7,611); **10,174** attachments; gallery 800; search
+  index 7,608; regenerated `vk-ors/data/processed/*`, `site_data.json`,
+  `site/index.html`.
 - **Data-paper number gate soft spots closed** ([#137](https://github.com/gasyoun/IndologyScholars/issues/137),
   [#138](https://github.com/gasyoun/IndologyScholars/issues/138), Grok 4.5):
   cross-model κ is hard-asserted from `docs/classification-reliability-packet.md`
