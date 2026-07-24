@@ -54,6 +54,11 @@ read-only. Обновление файла — отдельный, явный ш
 пишет xlsx с тем же расположением столбцов, что и ручной экспорт — так что
 `ingest.py` не меняется. Первый прогон (23-07-2026): 7611 постов (было 7610
 на дату ручного экспорта 22-07-2026) — сходится с 1 новым постом за сутки.
+Live-refresh (24-07-2026, wave-1 pipeline): **7613** постов в xlsx/SQLite;
+insights **7608** (dated); **10183** raw / **10174** ingested attachments;
+gallery payload **800** thumbs; search index **7608**; engagement outliers
+**387** (5.1%). Totals ≈ 170 285 likes · 35 383 reposts · 13 375 comments ·
+5 081 524 views.
 
 ## Публикация
 
