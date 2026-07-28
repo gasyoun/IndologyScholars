@@ -8,6 +8,12 @@ import jinja2
 from classification_overrides import THEME_LABEL_OVERRIDES
 
 SITE_URL = "https://gasyoun.github.io/IndologyScholars/"
+# Per-entity OG images (assets/og/*.png, ~1700 files) are committed to git but
+# deliberately excluded from the GitHub Pages deploy artifact (see
+# prepare_pages_artifact.py) — that many small files pushed the Pages
+# deployment past its timeout (H1741). They are still served fine as OG
+# meta-tag images from raw.githubusercontent.com, which crawlers accept.
+RAW_CONTENT_URL = "https://raw.githubusercontent.com/gasyoun/IndologyScholars/main/"
 SITE_NAME = "Russian Indological Research Archive"
 SITE_NAME_RU = "Российский индологический научный архив"
 AUTHOR_NAME = "Dr. Mārcis Gasūns"
@@ -871,7 +877,7 @@ def page_shell(title, description, canonical_path, body, structured_data=None, e
         description=desc,
         robots=robots,
         canonical=canonical,
-        og_image_url=site_url(custom_og_image) if custom_og_image else OG_IMAGE_URL,
+        og_image_url=RAW_CONTENT_URL + str(custom_og_image).lstrip("/") if custom_og_image else OG_IMAGE_URL,
         extra_head=extra_head,
         structured_data_json=structured_data_json,
         nav_items=nav_items,

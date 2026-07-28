@@ -231,6 +231,17 @@ def minify_site(dest_root):
     print(f"Minified {html_count} HTML, {css_count} CSS, and {js_count} JS files.")
 
 
+def prune_og_images(dest_root):
+    # assets/og/ holds ~1700 per-scholar/per-presentation OG PNGs. Shipping
+    # them in the Pages artifact pushed the deployment past its timeout
+    # (H1741) — GitHub Pages degrades badly with that many small files. The
+    # images stay committed to git and are served as OG meta-tag images via
+    # raw.githubusercontent.com instead (see publication_helpers.RAW_CONTENT_URL).
+    og_dir = Path(dest_root) / "assets" / "og"
+    if og_dir.exists():
+        shutil.rmtree(og_dir)
+
+
 def main():
     dest = Path("_site")
     if dest.exists():
@@ -243,6 +254,7 @@ def main():
         copy_dir(path, dest)
     for source, public_name in PUBLIC_ALIASED_DIRS.items():
         copy_dir_as(source, dest, public_name)
+    prune_og_images(dest)
     write_indology_archive_landing(dest)
 
     minify_site(dest)
