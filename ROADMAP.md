@@ -1,6 +1,6 @@
 # ROADMAP — IndologyScholars
 
-_Created: 27-05-2026 · Last updated: 23-07-2026_
+_Created: 27-05-2026 · Last updated: 29-07-2026_
 
 > Integrated roadmap across data/DB, generated site, the ППВ article, and the
 > `philology-research-agents` module. Three horizons: **Now / Next / Later**.
@@ -141,14 +141,12 @@ D. 🅜 ✅ **Runbook для .ru-шагов.** `docs/ru-enrichment-runbook.md` �
     заморожен (`article/snapshots/2026-06-03/`), data paper в работе (см. NOW-C);
     осталась Zenodo-депозиция и подача в Research Data Journal (Brill).
 17. 🅼 **Вынос модуля агентов в отдельный репозиторий.** (План: `SPINOUT_PLAN.md`)
-18. 🅰️ **Международная версия статьи.** Профиль `editors/iij.md` готов.
-19. 🅳 **Расширение корпуса.** Другие индологические площадки.
-
-20. 🅰️ **Международная версия статьи.** Исходник: `article/ppv_submission_article.md`.
+18. 🅰️ **Международная версия статьи.** Исходник: `article/ppv_submission_article.md`.
     Целевой журнал: Indo-Iranian Journal (Brill) — профиль `editors/iij.md` готов.
     Задачи: (1) машинный перевод (DeepL/Claude), (2) адаптация References под
     Chicago author-date, (3) контекст для международной аудитории,
     (4) рецензия носителем. Оценка: ~1 неделя. Статус: отложено до подачи ППВ.
+19. 🅳 **Расширение корпуса.** Другие индологические площадки.
 
 ---
 
