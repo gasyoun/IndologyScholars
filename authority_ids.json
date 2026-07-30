@@ -195,6 +195,10 @@
       "confidence": "candidate",
       "checked_at": "2026-06-10",
       "source": "roster_match"
+    },
+    "PERS_8a8c5d8b": {
+      "preferred_latin_name": "Vladimir Shelkovich",
+      "note": "MG ruling 30-07-2026: rename url_slug vladimir -> vladimir-shelkovich"
     }
   },
   "organizations": {
