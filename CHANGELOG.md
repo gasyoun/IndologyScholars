@@ -6,6 +6,9 @@
 
 ## [Unreleased]
 
+### Changed
+- **Shelkovich url_slug `vladimir` → `vladimir-shelkovich` + redirect** (MG ruling 30-07-2026 in-Grok vote 1b, Grok 4.5 `grok-4.5`, [H1948](https://github.com/gasyoun/Uprava/blob/main/handoffs/H1948-Grok_Uprava_quick-decide-votes-apply_30.07.26.md)): `authority_ids.json` preferred_latin_name, `slug_redirects.json` row for old `vladimir`, site_data slug patch, scholar pages regenerated.
+
 ### Added
 - **`community_lenses/` shared five-lens schema + versioned codebook contracts**
   (H1893, Sonnet 5 `claude-sonnet-5`): stable source-namespaced IDs (`ids.py`),
