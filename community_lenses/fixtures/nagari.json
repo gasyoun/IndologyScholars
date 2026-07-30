@@ -1,0 +1,115 @@
+{
+  "corpus": {
+    "corpus_id": "nagari",
+    "title": "Nāgarī closed Google Group archive",
+    "medium": "mailing_list",
+    "forum_orientation": "many_to_many_threaded",
+    "native_unit": "message",
+    "canonical_url": null,
+    "rights_status": "closed_group_archive_republished_with_permission"
+  },
+  "manifest": {
+    "snapshot_id": "nagari:2026-07-01",
+    "corpus_id": "nagari",
+    "coverage_start": "2005-01-01",
+    "coverage_end": "2026-06-30",
+    "cutoff_date": "2026-07-01",
+    "coverage_status": "complete",
+    "source_version": "nagari-2005-2026-mbox-export",
+    "acquired_at": "2026-07-01T09:00:00Z",
+    "source_sha256": "222222222222222222222222222222222222222222222222222222222222bbbb",
+    "pipeline_commit": "fixture-only-not-a-real-commit",
+    "schema_version": "1.0.0",
+    "codebook_version": "1.0.0",
+    "rights_basis": "closed Google Group; group-owner permission on file, not republished in full"
+  },
+  "containers": [
+    {
+      "container_id": "nagari:container:thread_demo1",
+      "corpus_id": "nagari",
+      "source_snapshot_id": "nagari:2026-07-01",
+      "parent_container_id": null,
+      "container_type": "thread",
+      "source_native_id": "thread_demo1",
+      "title": "Sandhi query",
+      "date_from": "2018-03-02",
+      "date_to": "2018-03-04",
+      "source_url": null
+    }
+  ],
+  "records": [
+    {
+      "record_id": "nagari:<demo1.native@example-list.org>",
+      "corpus_id": "nagari",
+      "source_record_id": "<demo1.native@example-list.org>",
+      "source_record_id_method": "native",
+      "container_id": "nagari:container:thread_demo1",
+      "record_type": "message",
+      "title_or_subject": "Sandhi query",
+      "body_locator": "nagari/nagari_group_archive (gitignored raw mbox; not redistributed)",
+      "created_at": "2018-03-02T10:00:00Z",
+      "language": "en",
+      "canonical_url": null,
+      "content_sha256": null,
+      "status": "active",
+      "is_partial_2026": 0,
+      "access_class": "restricted",
+      "source_snapshot_id": "nagari:2026-07-01"
+    },
+    {
+      "record_id": "nagari:ahivblgry36zbxn6aye2pjsgirnnfs6zasmfmzdi7nqtv4qhhbyq",
+      "corpus_id": "nagari",
+      "source_record_id": "ahivblgry36zbxn6aye2pjsgirnnfs6zasmfmzdi7nqtv4qhhbyq",
+      "source_record_id_method": "fallback_hash",
+      "_source_record_id_note": "sha256 base32 fallback of normalized Message-ID <reply1.native@example-list.org> via community_lenses.ids.fallback_message_id_hash (no stable native ID for this reply)",
+      "container_id": "nagari:container:thread_demo1",
+      "record_type": "message",
+      "title_or_subject": "Re: Sandhi query",
+      "body_locator": "nagari/nagari_group_archive (gitignored raw mbox; not redistributed)",
+      "created_at": "2018-03-03T08:00:00Z",
+      "language": "en",
+      "canonical_url": null,
+      "content_sha256": null,
+      "status": "active",
+      "is_partial_2026": 0,
+      "access_class": "restricted",
+      "source_snapshot_id": "nagari:2026-07-01"
+    }
+  ],
+  "record_names": [
+    {
+      "record_id": "nagari:<demo1.native@example-list.org>",
+      "ordinal": 1,
+      "role": "author",
+      "name_as_source": "A. Scholar",
+      "affiliation_as_source": null,
+      "source_account_id": "a.scholar@example.org",
+      "person_id": null
+    }
+  ],
+  "record_relations": [
+    {
+      "subject_record_id": "nagari:ahivblgry36zbxn6aye2pjsgirnnfs6zasmfmzdi7nqtv4qhhbyq",
+      "predicate": "reply_to",
+      "object_record_id": "nagari:<demo1.native@example-list.org>",
+      "evidence_locator": "In-Reply-To header"
+    }
+  ],
+  "classification_assignments": [
+    {
+      "record_id": "nagari:<demo1.native@example-list.org>",
+      "scheme_id": "native_topic",
+      "label_id": "nagari:group_thread_topic",
+      "value": "Sandhi query",
+      "evidence_span": "subject",
+      "method": "thread_subject",
+      "method_version": "1.0.0",
+      "confidence": 1.0,
+      "review_status": "not_applicable",
+      "reviewer": null,
+      "assigned_at": "2026-07-01T09:00:00Z"
+    }
+  ],
+  "annotations": [],
+  "quotes": []
+}

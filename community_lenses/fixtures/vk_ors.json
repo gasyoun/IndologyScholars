@@ -1,0 +1,89 @@
+{
+  "corpus": {
+    "corpus_id": "vk_ors",
+    "title": "VK “Общество ревнителей санскрита” wall archive",
+    "medium": "social_media_wall",
+    "forum_orientation": "one_to_many_broadcast_with_comments",
+    "native_unit": "post",
+    "canonical_url": "https://vk.com/sanskrit_ors",
+    "rights_status": "public_vk_wall"
+  },
+  "manifest": {
+    "snapshot_id": "vk_ors:2026-06-15",
+    "corpus_id": "vk_ors",
+    "coverage_start": "2013-01-01",
+    "coverage_end": "2026-06-01",
+    "cutoff_date": "2026-06-15",
+    "coverage_status": "complete",
+    "source_version": "vk_ors.db@2026-06-15",
+    "acquired_at": "2026-06-15T09:00:00Z",
+    "source_sha256": "333333333333333333333333333333333333333333333333333333333333cccc",
+    "pipeline_commit": "fixture-only-not-a-real-commit",
+    "schema_version": "1.0.0",
+    "codebook_version": "1.0.0",
+    "rights_basis": "public VK wall, fetched via wall.get with no auth beyond a public token"
+  },
+  "containers": [
+    {
+      "container_id": "vk_ors:container:wall",
+      "corpus_id": "vk_ors",
+      "source_snapshot_id": "vk_ors:2026-06-15",
+      "parent_container_id": null,
+      "container_type": "wall",
+      "source_native_id": "sanskrit_ors",
+      "title": "Общество ревнителей санскрита",
+      "date_from": "2013-01-01",
+      "date_to": "2026-06-01",
+      "source_url": "https://vk.com/sanskrit_ors"
+    }
+  ],
+  "records": [
+    {
+      "record_id": "vk_ors:987654321_100",
+      "corpus_id": "vk_ors",
+      "source_record_id": "987654321_100",
+      "source_record_id_method": "native",
+      "container_id": "vk_ors:container:wall",
+      "record_type": "post",
+      "title_or_subject": null,
+      "body_locator": "vk-ors/data/vk_ors.db#posts.id=100",
+      "created_at": "2020-05-04T12:00:00Z",
+      "language": "ru",
+      "canonical_url": "https://vk.com/wall-987654321_100",
+      "content_sha256": null,
+      "status": "active",
+      "is_partial_2026": 0,
+      "access_class": "public",
+      "source_snapshot_id": "vk_ors:2026-06-15"
+    }
+  ],
+  "record_names": [
+    {
+      "record_id": "vk_ors:987654321_100",
+      "ordinal": 1,
+      "role": "author",
+      "name_as_source": "Общество ревнителей санскрита",
+      "affiliation_as_source": null,
+      "source_account_id": "-987654321",
+      "person_id": null
+    }
+  ],
+  "record_relations": [],
+  "classification_assignments": [
+    {
+      "record_id": "vk_ors:987654321_100",
+      "scheme_id": "native_topic",
+      "label_id": "vk_ors:hashtag",
+      "value": "#санскрит",
+      "evidence_span": "hashtag",
+      "method": "insights_hashtag_extraction",
+      "method_version": "1.0.0",
+      "confidence": 1.0,
+      "review_status": "not_applicable",
+      "reviewer": null,
+      "assigned_at": "2026-06-15T09:00:00Z"
+    }
+  ],
+  "annotations": [],
+  "quotes": []
+}

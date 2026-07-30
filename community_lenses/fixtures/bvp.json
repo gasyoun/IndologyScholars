@@ -1,0 +1,52 @@
+{
+  "corpus": {
+    "corpus_id": "bvp",
+    "title": "BVP (not yet acquired; placeholder per H1893 scope)",
+    "medium": "unknown",
+    "forum_orientation": "unknown",
+    "native_unit": "unknown",
+    "canonical_url": null,
+    "rights_status": "unknown_not_yet_acquired"
+  },
+  "manifest": {
+    "snapshot_id": "bvp:none",
+    "corpus_id": "bvp",
+    "coverage_start": null,
+    "coverage_end": null,
+    "cutoff_date": null,
+    "coverage_status": "unavailable",
+    "source_version": "not_acquired",
+    "acquired_at": "2026-07-30T00:00:00Z",
+    "source_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "pipeline_commit": "fixture-only-not-a-real-commit",
+    "schema_version": "1.0.0",
+    "codebook_version": "1.0.0",
+    "rights_basis": "unknown; BVP acquisition and rights review are out of scope for H1893 (see H1896)"
+  },
+  "containers": [],
+  "records": [
+    {
+      "record_id": "bvp:placeholder",
+      "corpus_id": "bvp",
+      "source_record_id": "placeholder",
+      "source_record_id_method": "native",
+      "container_id": null,
+      "record_type": "unavailable_placeholder",
+      "title_or_subject": null,
+      "body_locator": null,
+      "created_at": null,
+      "language": null,
+      "canonical_url": null,
+      "content_sha256": null,
+      "status": "unavailable",
+      "is_partial_2026": 0,
+      "access_class": "unknown",
+      "source_snapshot_id": "bvp:none"
+    }
+  ],
+  "record_names": [],
+  "record_relations": [],
+  "classification_assignments": [],
+  "annotations": [],
+  "quotes": []
+}

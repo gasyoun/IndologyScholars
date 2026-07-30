@@ -1,0 +1,22 @@
+label_id,label,definition,inclusion,exclusion,examples,parent_label_id,status,version
+rgveda,Ṛgveda,Ṛgveda register (reused from generate_renou_layer.py RULE_ROWS; axis=register),Ṛgveda-specific material,Other Vedic registers (see atharva/yajus),Ṛgveda-Saṃhitā hymn study,I,active,1.0.0
+atharva,Atharvaveda,Atharvaveda register (reused from generate_renou_layer.py RULE_ROWS; axis=register),Atharvaveda-specific material,Other Vedic registers (see rgveda/yajus),Atharvaveda charm study,I,active,1.0.0
+yajus,Yajurveda,Yajurveda register (reused from generate_renou_layer.py RULE_ROWS; axis=register),Yajurveda-specific material,Other Vedic registers (see rgveda/atharva),Yajurveda ritual formula study,I,active,1.0.0
+brahmana,Brāhmaṇa,Brāhmaṇa register (reused from generate_renou_layer.py RULE_ROWS; axis=register),"Śatapatha, Aitareya, Taittirīya Brāhmaṇa material",Sūtra-literature register (see sutra),Śatapatha Brāhmaṇa study,I,active,1.0.0
+upanisad,Upaniṣad,Upaniṣad register (reused from generate_renou_layer.py RULE_ROWS; axis=register),"Bṛhadāraṇyaka, Chāndogya and related Upaniṣads",Brāhmaṇa-proper register (see brahmana),Chāndogya Upaniṣad study,I,active,1.0.0
+sutra,Sūtra,Sūtra register (reused from generate_renou_layer.py RULE_ROWS; axis=register),"Kalpasūtra, Gṛhya, Śrauta sūtra material",Brāhmaṇa-proper register (see brahmana),Śrautasūtra ritual manual study,I,active,1.0.0
+vyakarana,Vyākaraṇa,Vyākaraṇa register (reused from generate_renou_layer.py RULE_ROWS; axis=register),Grammatical-tradition material,Non-grammatical classical material (see kavya),Pāṇinian sūtra classification,II,active,1.0.0
+epic,Epic,Epic register (reused from generate_renou_layer.py RULE_ROWS; axis=register),"Mahābhārata, Rāmāyaṇa material",Purāṇic register (see purana),Mahābhārata narrative study,III,active,1.0.0
+purana,Purāṇa,Purāṇa register (reused from generate_renou_layer.py RULE_ROWS; axis=register),Purāṇic material,Epic-proper register (see epic),Bhāgavata Purāṇa study,III,active,1.0.0
+tantra,Tantra,Tantra register (reused from generate_renou_layer.py RULE_ROWS; axis=register),Tantric material,Smṛti-proper register (see smrti),Kulārṇava Tantra study,III,active,1.0.0
+smrti,Smṛti,Smṛti register (reused from generate_renou_layer.py RULE_ROWS; axis=register),"Manu, Yājñavalkya, dharmaśāstra material",Tantric register (see tantra),Manusmṛti study,III,active,1.0.0
+karika,Kārikā,Kārikā register (reused from generate_renou_layer.py RULE_ROWS; axis=register),Kārikā-form verse treatises,Bhāṣya-form commentary (see bhasya),Sāṃkhyakārikā study,IV,active,1.0.0
+bhasya,Bhāṣya,Bhāṣya register (reused from generate_renou_layer.py RULE_ROWS; axis=register),Commentarial (bhāṣya/ṭīkā/vṛtti) material,Kārikā-form treatises (see karika),Śaṅkara-bhāṣya study,IV,active,1.0.0
+katha,Kathā,Kathā register (reused from generate_renou_layer.py RULE_ROWS; axis=register),Narrative/story literature,Nāṭya-form drama (see natya),Kathāsaritsāgara narrative study,IV,active,1.0.0
+natya,Nāṭya,Nāṭya register (reused from generate_renou_layer.py RULE_ROWS; axis=register),Dramatic/theatrical literature,Kāvya-form poetry (see kavya),Nāṭyaśāstra study,IV,active,1.0.0
+kavya,Kāvya,Kāvya register (reused from generate_renou_layer.py RULE_ROWS; axis=register),Poetic literature,Nāṭya-form drama (see natya),Kālidāsa kāvya study,IV,active,1.0.0
+bauddha,Bauddha,Bauddha register (reused from generate_renou_layer.py RULE_ROWS; axis=register),Buddhist Sanskrit material,Jaina register (see jaina),Abhidharma study,V,active,1.0.0
+jaina,Jaina,Jaina register (reused from generate_renou_layer.py RULE_ROWS; axis=register),Jaina Sanskrit material,Buddhist register (see bauddha),Jaina āgama study,V,active,1.0.0
+epig,Epigraphic,Epigraphic register (reused from generate_renou_layer.py RULE_ROWS; axis=register),Inscriptional material,Manuscript-transmitted literary registers,Copper-plate donative inscription study,,active,1.0.0
+hors_inde,Outside India,Outside-India register (reused from generate_renou_layer.py RULE_ROWS; axis=register),"Khotanese, Sogdian, Tocharian Central Asian Sanskrit material",India-transmitted registers,Khotanese Sanskrit fragment study,,active,1.0.0
+unknown,Unknown,Insufficient evidence to place the record on the Renou register axis.,Missing or unreadable subject/body evidence.,Any record where a register could be determined.,,,active,1.0.0

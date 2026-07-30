@@ -1,0 +1,89 @@
+{
+  "corpus": {
+    "corpus_id": "conferences",
+    "title": "Roerich/Zograf Readings conference corpus",
+    "medium": "conference_programme",
+    "forum_orientation": "one_to_many_scheduled",
+    "native_unit": "presentation",
+    "canonical_url": "https://ancient.ivran.ru/rerihovskie-chteniya",
+    "rights_status": "public_published_programme"
+  },
+  "manifest": {
+    "snapshot_id": "conferences:2026-07-17",
+    "corpus_id": "conferences",
+    "coverage_start": "2004-01-01",
+    "coverage_end": "2026-06-30",
+    "cutoff_date": "2026-07-17",
+    "coverage_status": "complete",
+    "source_version": "zograf-roerich-db.md@2026-07-17",
+    "acquired_at": "2026-07-17T09:00:00Z",
+    "source_sha256": "111111111111111111111111111111111111111111111111111111111111aaaa",
+    "pipeline_commit": "fixture-only-not-a-real-commit",
+    "schema_version": "1.0.0",
+    "codebook_version": "1.0.0",
+    "rights_basis": "publicly posted institutional conference programme"
+  },
+  "containers": [
+    {
+      "container_id": "conferences:container:SESS_demo1",
+      "corpus_id": "conferences",
+      "source_snapshot_id": "conferences:2026-07-17",
+      "parent_container_id": null,
+      "container_type": "session",
+      "source_native_id": "SESS_demo1",
+      "title": "Морфология и синтаксис",
+      "date_from": "2026-04-10",
+      "date_to": "2026-04-10",
+      "source_url": "https://ancient.ivran.ru/rerihovskie-chteniya/2026"
+    }
+  ],
+  "records": [
+    {
+      "record_id": "conferences:PRES_demo1",
+      "corpus_id": "conferences",
+      "source_record_id": "PRES_demo1",
+      "source_record_id_method": "native",
+      "container_id": "conferences:container:SESS_demo1",
+      "record_type": "presentation",
+      "title_or_subject": "Средний залог в санскрите",
+      "body_locator": "zograf-roerich-db.md#Events.csv",
+      "created_at": "2026-04-10",
+      "language": "ru",
+      "canonical_url": "https://ancient.ivran.ru/rerihovskie-chteniya/2026",
+      "content_sha256": null,
+      "status": "active",
+      "is_partial_2026": 1,
+      "access_class": "public",
+      "source_snapshot_id": "conferences:2026-07-17"
+    }
+  ],
+  "record_names": [
+    {
+      "record_id": "conferences:PRES_demo1",
+      "ordinal": 1,
+      "role": "speaker",
+      "name_as_source": "Малютин Иван Иванович (Санкт-Петербург)",
+      "affiliation_as_source": "Санкт-Петербург",
+      "source_account_id": null,
+      "person_id": null
+    }
+  ],
+  "record_relations": [],
+  "classification_assignments": [
+    {
+      "record_id": "conferences:PRES_demo1",
+      "scheme_id": "native_topic",
+      "label_id": "conferences:programme_topic",
+      "value": "Средний залог",
+      "evidence_span": "title",
+      "method": "programme_metadata",
+      "method_version": "1.0.0",
+      "confidence": 1.0,
+      "review_status": "not_applicable",
+      "reviewer": null,
+      "assigned_at": "2026-07-17T09:00:00Z"
+    }
+  ],
+  "annotations": [],
+  "quotes": []
+}
