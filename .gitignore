@@ -108,3 +108,10 @@ vk-ors/**/__pycache__/
 # VK attachment metadata (regenerable via fetch.py; hotlink URLs rot)
 vk-ors/data/attachments_raw.json
 
+# ---- BVP public Google Groups archive ----
+# Raw pages, crawl checkpoints, parsed message text, and failure ledgers are
+# local acquisition assets. Only reviewed aggregate/quotation derivatives may
+# later be promoted through an explicit publication gate.
+bvp/data/
+bvp/**/__pycache__/
+

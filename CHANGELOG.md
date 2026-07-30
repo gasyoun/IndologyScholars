@@ -10,6 +10,15 @@
 - **Shelkovich url_slug `vladimir` → `vladimir-shelkovich` + redirect** (MG ruling 30-07-2026 in-Grok vote 1b, Grok 4.5 `grok-4.5`, [H1948](https://github.com/gasyoun/Uprava/blob/main/handoffs/H1948-Grok_Uprava_quick-decide-votes-apply_30.07.26.md)): `authority_ids.json` preferred_latin_name, `slug_redirects.json` row for old `vladimir`, site_data slug patch, scholar pages regenerated.
 
 ### Added
+- **BVP public acquisition unit** (PR #153, Grok 4.5 `grok-4.5`): bounded,
+  resumable first-page scraper for
+  [Bharatiya Vidvat Parishat](https://groups.google.com/g/bvparishat)
+  (`bvp/scrape.py`, `bvp/fetch_hardening.py`, `bvp/README.md`), parser tests
+  (`tests/test_bvp_scrape.py`), gitignore for raw/parsed captures under
+  `bvp/data/`, and source assessment
+  (`analytics_output/community_lenses/reports/bvp_source_assessment.md`).
+  Coverage is `partial` (first listing page only; pagination is a separate unit).
+
 - **`community_lenses/` shared five-lens schema + versioned codebook contracts**
   (H1893, Sonnet 5 `claude-sonnet-5`): stable source-namespaced IDs (`ids.py`),
   16-table SQLite schema (`schema.py`) covering sources/snapshots/containers/
