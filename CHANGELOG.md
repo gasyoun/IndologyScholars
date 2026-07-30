@@ -6,6 +6,24 @@
 
 ## [Unreleased]
 
+### Added
+- **`community_lenses/` shared five-lens schema + versioned codebook contracts**
+  (H1893, Sonnet 5 `claude-sonnet-5`): stable source-namespaced IDs (`ids.py`),
+  16-table SQLite schema (`schema.py`) covering sources/snapshots/containers/
+  records/actors/reviewed-identity-links/annotations/quotes/provenance,
+  manifest contract (`manifests.py`), versioned codebook shells for
+  `native_topic`/`shared_topic`/`community_function`/`renou_state`/
+  `renou_register`/`argument_level` (`taxonomy.py` + `codebooks/*.csv`,
+  `renou_state`/`renou_register` reuse `generate_renou_layer.py`'s vocabulary),
+  and a fixture/build layer (`build.py`) with a representative fixture for all
+  five lenses (conferences, nagari, vk_ors, indology_l, bvp-unavailable).
+  Fail-closed on invalid IDs/references, missing provenance/rights, and
+  native/derived mixing; quote/person fields default non-exportable/pending.
+  Architecture + ACL-standards-adaptation notes in
+  [docs/ARCHITECTURE_IndologyScholars_sanskrit-community-lenses.md](https://github.com/gasyoun/IndologyScholars/blob/main/docs/ARCHITECTURE_IndologyScholars_sanskrit-community-lenses.md).
+  Local implementation only per handoff scope — not committed/released this
+  pass; unblocks H1894/H1895.
+
 ## [1.4.3] - 2026-07-24
 
 ### Added

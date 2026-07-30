@@ -1,0 +1,8 @@
+label_id,label,definition,inclusion,exclusion,examples,parent_label_id,status,version
+I,Vedic,"Saṃhitā, Brāhmaṇa, Upaniṣad, Sūtra, Vedāṅga.",Reused verbatim from generate_renou_layer.py RULE_ROWS (state axis).,Post-Vedic classical or later material (see II-V).,a Rigveda samhita talk,,active,1.0.0
+II,Pāṇinian,The classical norm and grammarians' Sanskrit.,Reused verbatim from generate_renou_layer.py RULE_ROWS (state axis).,Vedic-only or purely literary material.,a Paninian grammar talk,,active,1.0.0
+III,Epic & prolongements,"Mbh, Rām, Harivaṃśa, Gītā, Purāṇa, Smṛti, Tantra.",Reused verbatim from generate_renou_layer.py RULE_ROWS (state axis).,Vedic or classical-grammar-only material.,a Mahabharata talk,,active,1.0.0
+IV,Classical,"Kāvya, drama, kathā, classical śāstra, kośa, later grammar.",Reused verbatim from generate_renou_layer.py RULE_ROWS (state axis).,Epic/Puranic or Vedic material.,a Kalidasa kavya talk,,active,1.0.0
+V,Buddhist / Jaina,Buddhist Hybrid and Jaina Sanskrit.,Reused verbatim from generate_renou_layer.py RULE_ROWS (state axis).,Brahmanical Vedic/classical/epic material.,a Buddhist Hybrid Sanskrit talk,,active,1.0.0
+not_applicable,Not applicable,The item makes no textual-state-specific claim.,Announcements; administrative posts.,Any item attributable to a state above.,,,active,1.0.0
+unknown,Unknown,Insufficient evidence to assign a Renou state.,Missing or unreadable title/tag evidence.,Any record where a state could be determined.,,,active,1.0.0
