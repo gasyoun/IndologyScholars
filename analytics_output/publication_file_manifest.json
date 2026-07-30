@@ -6,7 +6,7 @@
     "pipeline_version": "2026-05-25",
     "generator": "generate_publication_pages.py"
   },
-  "file_count": 4177,
+  "file_count": 4180,
   "files": [
     {
       "path": "404.html",
@@ -25,13 +25,13 @@
     },
     {
       "path": "analytics_output/authority_coverage.csv",
-      "size_bytes": 31280,
-      "sha256": "5e8743e1790a65c52eea30e84f5de28c5f483f18ba8f868eeaf8400939607e66"
+      "size_bytes": 31299,
+      "sha256": "a673d2952b41e83133e434318381a254a432e31302742de4cd63b0977b7c9e04"
     },
     {
       "path": "analytics_output/authority_review_queue.csv",
-      "size_bytes": 165609,
-      "sha256": "3b35a4e8b54c7e27aa8c24cb4b83a68fab73b05ab6a4d8035a4f1e86367856ee"
+      "size_bytes": 165636,
+      "sha256": "81fbb3f10b1cb508369ba3db20d88bdd5b770149d7173b5217e002cca060d68e"
     },
     {
       "path": "analytics_output/birth_year_gap_audit.csv",
@@ -82,6 +82,11 @@
       "path": "analytics_output/cohort_survival.csv",
       "size_bytes": 9082,
       "sha256": "33c8e1243faddd2d42090b11c6aad550370db21d87e6cef4850c34f0f5c9291a"
+    },
+    {
+      "path": "analytics_output/community_lenses/reports/bvp_source_assessment.md",
+      "size_bytes": 2767,
+      "sha256": "2ec76617eacf977642290ff4d86ac2a3b3bbb753d254937b5d1525d72267e169"
     },
     {
       "path": "analytics_output/conference_role_taxonomy.csv",
@@ -185,8 +190,8 @@
     },
     {
       "path": "analytics_output/field_provenance_authority.csv",
-      "size_bytes": 23904,
-      "sha256": "03832ac6d9d83325f7a13ecc86994014a106a9965b5ee7134e4be08741a430ab"
+      "size_bytes": 24069,
+      "sha256": "68cfdb397137cdf84ac3aefd48bc08f3278d9901cd24416adbef6f78def294d1"
     },
     {
       "path": "analytics_output/field_provenance_biographical.csv",
@@ -220,8 +225,8 @@
     },
     {
       "path": "analytics_output/human_review_index.csv",
-      "size_bytes": 1174388,
-      "sha256": "31cb56a126375b99c1cf7eceee5bad622883063c7fefcf53ffef3e698ffc30f4"
+      "size_bytes": 1174358,
+      "sha256": "9dab1b4a5815ec8efc4ac89f1e5961fbda13a4546a9dd746cfb97b478d8a1fea"
     },
     {
       "path": "analytics_output/human_review_summary.json",
@@ -340,8 +345,8 @@
     },
     {
       "path": "analytics_output/network_data.json",
-      "size_bytes": 1763469,
-      "sha256": "20978c32c2d51b97c9d9bd388733cc81b7186494d7dfd91c7670225f27eb3adc"
+      "size_bytes": 1763480,
+      "sha256": "b4090ce48ea908b26d264f5ab233799b912241d5c3a84dc44667e3030eee6caf"
     },
     {
       "path": "analytics_output/network_edges.csv",
@@ -365,8 +370,8 @@
     },
     {
       "path": "analytics_output/nlp_cache.pkl",
-      "size_bytes": 148377,
-      "sha256": "374278314919ff11fa4ca4fcfa88342b4dc58b28c6be1a8348321c66b3464384"
+      "size_bytes": 148375,
+      "sha256": "c631478125542cb6453459a9ae7b9bf0b4c0a4bc52a52d906d0b74cfbf37fb13"
     },
     {
       "path": "analytics_output/no_affiliation_history.md",
@@ -430,8 +435,8 @@
     },
     {
       "path": "analytics_output/renou_presentations.csv",
-      "size_bytes": 812334,
-      "sha256": "daee0e85e188e2187b711bc2e3f6da02837901da999277b7f02076eb9390d1b9"
+      "size_bytes": 812345,
+      "sha256": "680266efc1ea8d76fe77aac6caf74b9a50e99c52170e5162eb3289983f75c64d"
     },
     {
       "path": "analytics_output/renou_register_atharva_presentations.csv",
@@ -440,8 +445,8 @@
     },
     {
       "path": "analytics_output/renou_register_bauddha_presentations.csv",
-      "size_bytes": 101654,
-      "sha256": "dde1f8ba8f2391e4201b7b6d74035870d61571c92c1eb53119e79d00272bc44c"
+      "size_bytes": 101665,
+      "sha256": "ca97ca8883ac6ee107b0f46be939ee4556481b187d59bd6289f900f5fa20cbb1"
     },
     {
       "path": "analytics_output/renou_register_bhasya_presentations.csv",
@@ -485,8 +490,8 @@
     },
     {
       "path": "analytics_output/renou_register_kavya_presentations.csv",
-      "size_bytes": 180302,
-      "sha256": "c6f5f79dea2f62aa371eeb73de83f5562d85c0132123c61aa895bc778e605a6d"
+      "size_bytes": 180313,
+      "sha256": "4229c01741d9e645cf42bd5ad8430576ec0239cbefce50bb9d29db226d3c0999"
     },
     {
       "path": "analytics_output/renou_register_natya_presentations.csv",
@@ -535,8 +540,8 @@
     },
     {
       "path": "analytics_output/renou_scholar_summary.csv",
-      "size_bytes": 21146,
-      "sha256": "f7405289d016a09fd781e6fe836c8f80ff5d28b76302e6582dccd08fe09aad59"
+      "size_bytes": 21157,
+      "sha256": "d6484d1d203e3fffbd9d525cbcee4c2fd6bdc5e6e6487c53b450c016fec346af"
     },
     {
       "path": "analytics_output/renou_state_i_presentations.csv",
@@ -555,8 +560,8 @@
     },
     {
       "path": "analytics_output/renou_state_iv_presentations.csv",
-      "size_bytes": 191646,
-      "sha256": "1f20377a9321a37119b93de0f232482a8d6e050bf245e1ea04c01d87bfaaef31"
+      "size_bytes": 191657,
+      "sha256": "0f760a745affe72ab97d2ff5f92b84df69bd9933e207ca07b7f00a20a0072fda"
     },
     {
       "path": "analytics_output/renou_state_summary.csv",
@@ -565,8 +570,8 @@
     },
     {
       "path": "analytics_output/renou_state_v_presentations.csv",
-      "size_bytes": 121641,
-      "sha256": "be3ec2abf5f58f2e4f6dcd7b52c5e00f77e22fde31a49f37c34d4b72a7e0fe03"
+      "size_bytes": 121652,
+      "sha256": "924c90d618eb9ef52ebfc2031c271c3d3127605f222ef9d15df8ba0d0cfdcae4"
     },
     {
       "path": "analytics_output/renou_year_summary.csv",
@@ -815,8 +820,8 @@
     },
     {
       "path": "assets/nlp_data.js",
-      "size_bytes": 424327,
-      "sha256": "b37e279c66f49341e4f4fdb1ddb29423cd4e2c81f0a0dd7417263f9b5cb27f8a"
+      "size_bytes": 424330,
+      "sha256": "e85c09ef61f9f46ab36c48630a7673012a3df0b1d21e0dcb2030e3e372d84118"
     },
     {
       "path": "assets/og-image.png",
@@ -9159,6 +9164,11 @@
       "sha256": "3f2ea4e58b8729445cc54e43c85bc51f52b21a0fd1bcedc56bd87b98b59861f2"
     },
     {
+      "path": "assets/og/scholar_vladimir-shelkovich.png",
+      "size_bytes": 36612,
+      "sha256": "e7cd300f422672dbd0769da78d9bfcfd66460a4a688b8be315a62db0ece82c40"
+    },
+    {
       "path": "assets/og/scholar_vladimir-shokhin.png",
       "size_bytes": 32305,
       "sha256": "d093ffc75e9f43efa0bf63bdd4b01dfd27add55636e4ebfb8b5df945408918dd"
@@ -9420,8 +9430,8 @@
     },
     {
       "path": "classification-criteria.html",
-      "size_bytes": 31597,
-      "sha256": "ff69fe7e96aa27b607c6c781a31aed7a41f263274033871d5d8508ef12f672a4"
+      "size_bytes": 31608,
+      "sha256": "2e6c6166a19c83802769afeb1d52e8734de37f7106026874287f67f36333ac38"
     },
     {
       "path": "conferences/index.html",
@@ -9515,8 +9525,8 @@
     },
     {
       "path": "conferences/zograf-2006.html",
-      "size_bytes": 41746,
-      "sha256": "6d0719e0044a0546bca5f69f4d89770d6e2a478d876d11f8acdc5e458b89adec"
+      "size_bytes": 41757,
+      "sha256": "673c07df17820f4cf19c3bab075d93f068ccc4891da3183b0e5c2f461ba1d0ab"
     },
     {
       "path": "conferences/zograf-2007.html",
@@ -9981,7 +9991,7 @@
     {
       "path": "download-data.html",
       "size_bytes": 37519,
-      "sha256": "035d14f2cb3e7b17cda82b2de1eac9c47edb81c1d50beba7d23ae73b54ed0f69"
+      "sha256": "ed22c862cd0ec65cccdf3178b358cdfa603d49e39c9db306f6738c800a55b2d9"
     },
     {
       "path": "en.html",
@@ -9995,8 +10005,8 @@
     },
     {
       "path": "findings/index.html",
-      "size_bytes": 122886,
-      "sha256": "222b7202852fa1a9d843d307f0507ec72f069bcd729e1816c6eda2f32ee14466"
+      "size_bytes": 122897,
+      "sha256": "ce718fe680340f4a3a85279bada9030a23a2b4cfab7f036ad6f69b59a6f92d11"
     },
     {
       "path": "findings/mobility.html",
@@ -10020,8 +10030,8 @@
     },
     {
       "path": "findings/visualisations.html",
-      "size_bytes": 493627,
-      "sha256": "4956c136df326187a582a8c0057ce1dc395394d9f465658f2baa20dd21b6f32f"
+      "size_bytes": 493638,
+      "sha256": "022fce260ceedfb92439f785e3729d4a07dad23bca5cab76f3b7533961ba9ae7"
     },
     {
       "path": "gatekeeping-en.html",
@@ -10035,8 +10045,8 @@
     },
     {
       "path": "generations/index.html",
-      "size_bytes": 97415,
-      "sha256": "36325ad4f3bc1fd887f0bb2729c45c8f012d4350b1af156181e67db8416ee35b"
+      "size_bytes": 97426,
+      "sha256": "8e9861d2954f4469130221fcf36aa4005abe646a29cc610684b947549037c75c"
     },
     {
       "path": "gumilyov/index.html",
@@ -10050,8 +10060,8 @@
     },
     {
       "path": "gumilyov/level-2.html",
-      "size_bytes": 237281,
-      "sha256": "86f3f096e5ce007178517fbff1b34ff4343296bfc0439348f787c6debc464cba"
+      "size_bytes": 237292,
+      "sha256": "c49a3b682db63945b8f01748666b660e67d71f5ef5fa8a5421dbb5668849ae0c"
     },
     {
       "path": "gumilyov/level-3.html",
@@ -10195,8 +10205,8 @@
     },
     {
       "path": "meso/comparative-analysis.html",
-      "size_bytes": 86863,
-      "sha256": "e3194cd74448bd701f3cb3f5839b3cda9ca804efcc5f38e19980f88db14580dd"
+      "size_bytes": 86874,
+      "sha256": "0d5ecca64abb93ae48def2d39d2c20c7210eb67d4554f54687d21f22d5c6cc64"
     },
     {
       "path": "meso/cosmology.html",
@@ -13080,8 +13090,8 @@
     },
     {
       "path": "p/modeli-khristianskogo-i-indo-buddiiskogo-vremeni-v-sovremennoi-literature.html",
-      "size_bytes": 11182,
-      "sha256": "463603cbbcd7126a6eedde6a8e8acaffac189c52297cdfc6a3f9df42efde166a"
+      "size_bytes": 11193,
+      "sha256": "f43571f18f6b51885a7b96e2343e726eafa09cf286466a534bcdda565b92bc5d"
     },
     {
       "path": "p/modeli-motivatsii-ponyatii-muzh-i-zhena-v-dravidiiskikh-yazykakh.html",
@@ -14420,8 +14430,8 @@
     },
     {
       "path": "p/page-12.html",
-      "size_bytes": 25860,
-      "sha256": "eef4dbe6dee217008c2f5c46096f5ec53782ea192a088c942c51d1785aac448f"
+      "size_bytes": 25871,
+      "sha256": "0673162707330c728315abfb0d3b39b0df4493a8b4afab48d79ddbb135f63cc4"
     },
     {
       "path": "p/page-2.html",
@@ -18090,8 +18100,8 @@
     },
     {
       "path": "s/PERS_8a8c5d8b.html",
-      "size_bytes": 896,
-      "sha256": "f1be8b8cae29e9a9eb94f81cf0599602d8c891f45d245a45727ae04342ea9bfa"
+      "size_bytes": 951,
+      "sha256": "65dd25164e953845abeb3e243d58e965550c027600d7d55b71e169d497d7bf30"
     },
     {
       "path": "s/PERS_8df3730a.html",
@@ -19310,8 +19320,8 @@
     },
     {
       "path": "s/index.html",
-      "size_bytes": 99774,
-      "sha256": "952ab46b54c2524e4a34da0e520c130854cfbb3d8b697e8eff14f2da8114cb7c"
+      "size_bytes": 99785,
+      "sha256": "f517c0666e2ba2dd280fbaa09edc3e3984ba7a9bae6c948a01630b86b60e566a"
     },
     {
       "path": "s/itkin-ilya.html",
@@ -20515,8 +20525,8 @@
     },
     {
       "path": "s/v-m-shelkovich.html",
-      "size_bytes": 897,
-      "sha256": "476eee26b18f6515d55e12cc38109a4dec4f54dd3dd7828815bdb1dd328e794a"
+      "size_bytes": 952,
+      "sha256": "1d176b26c0a80619bbd8349b2eca7832a0845a8afa3c640a17671d597ff84833"
     },
     {
       "path": "s/valanchyunas.html",
@@ -20594,14 +20604,19 @@
       "sha256": "addeb5df85b65ffa9f2462efc51474b43683864e58c68e2cd57b10e99c0aa666"
     },
     {
+      "path": "s/vladimir-shelkovich.html",
+      "size_bytes": 24843,
+      "sha256": "3e6067b639a127a71e978839da5492881f1f649ce4276e42325d16f6b23c6ac6"
+    },
+    {
       "path": "s/vladimir-shokhin.html",
       "size_bytes": 34873,
       "sha256": "d3b39cd49c654fbd0aec8cdf036dfc53cdbc6c91cbed200cc8ff624e98a89b94"
     },
     {
       "path": "s/vladimir.html",
-      "size_bytes": 24711,
-      "sha256": "e965a7abf031cda93ce645c94c5771494d06e24b97d6563493791b198035a732"
+      "size_bytes": 946,
+      "sha256": "49e1b29edab301bb5ec3d93345a0941bf7b6dd7d1e64deeb86659efab32c0764"
     },
     {
       "path": "s/voloshina-oksana.html",
@@ -20735,8 +20750,8 @@
     },
     {
       "path": "search-index.json",
-      "size_bytes": 1172201,
-      "sha256": "53d70d83426b31256a5ce8bfbbcdf05fcf5ed7a46c6f1dbb082e33018ddd1230"
+      "size_bytes": 1172212,
+      "sha256": "8e17bcee6dceff836ea671edf2ad1a6efb8fd3ff676a9c589bad90aaa34022ad"
     },
     {
       "path": "search.html",
@@ -20755,8 +20770,8 @@
     },
     {
       "path": "site_data.json",
-      "size_bytes": 4932167,
-      "sha256": "41976b91c3c83be130592e58c11aa916464b422cbd6e538fa92d1fc3c64cc481"
+      "size_bytes": 4932200,
+      "sha256": "e7d9f359ccddb64f64cae8b9c171645528d45d7b38bf19aa9b28a1691cb8d01d"
     },
     {
       "path": "sitemap.xml",
