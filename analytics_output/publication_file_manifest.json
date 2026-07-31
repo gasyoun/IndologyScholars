@@ -16,7 +16,7 @@
     {
       "path": "CITATION.cff",
       "size_bytes": 798,
-      "sha256": "9e7ea269b0bd622c68d776995f94afd29e4d04ec7e64ffe3019dbbc68480b5b9"
+      "sha256": "db15bdffa123643875184b6a708949e00d682c5201b0d8ca865d82b58752c3ab"
     },
     {
       "path": "analytics_output/age_cohort_trend.csv",
@@ -370,8 +370,8 @@
     },
     {
       "path": "analytics_output/nlp_cache.pkl",
-      "size_bytes": 148377,
-      "sha256": "374278314919ff11fa4ca4fcfa88342b4dc58b28c6be1a8348321c66b3464384"
+      "size_bytes": 148375,
+      "sha256": "c631478125542cb6453459a9ae7b9bf0b4c0a4bc52a52d906d0b74cfbf37fb13"
     },
     {
       "path": "analytics_output/no_affiliation_history.md",
@@ -820,8 +820,8 @@
     },
     {
       "path": "assets/nlp_data.js",
-      "size_bytes": 424327,
-      "sha256": "b37e279c66f49341e4f4fdb1ddb29423cd4e2c81f0a0dd7417263f9b5cb27f8a"
+      "size_bytes": 424330,
+      "sha256": "e85c09ef61f9f46ab36c48630a7673012a3df0b1d21e0dcb2030e3e372d84118"
     },
     {
       "path": "assets/og-image.png",
@@ -9795,8 +9795,8 @@
     },
     {
       "path": "docs/ROADMAP_2026.md",
-      "size_bytes": 7721,
-      "sha256": "2b27c5bff3c36bbaba60e62c21e70b4c21b74d9d54b0245edd3b0e57be1c24e2"
+      "size_bytes": 8593,
+      "sha256": "5e576ee683316a2bea49bf0242fd88ea37e24f91aff6008cc0db95403d4e0124"
     },
     {
       "path": "docs/ROADMAP_IndologyScholars_sanskrit-community-lenses_2026H2.md",
@@ -10031,7 +10031,7 @@
     {
       "path": "findings/visualisations.html",
       "size_bytes": 493638,
-      "sha256": "7e3b9a008d7c260e56b02a7a04fc3e6f40052f9fc0f5424cbb257df0159c5229"
+      "sha256": "1beb4f97220baa40cd04ea159a97de4228c3a56b2e3f86a94a2bc411cfe8a98b"
     },
     {
       "path": "gatekeeping-en.html",
