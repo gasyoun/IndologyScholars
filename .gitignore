@@ -64,7 +64,11 @@ analytics_output/nlp_cache.pkl
 # One-way feed fetched from gasyoun/IndologyArchiveAtlas (H460 split) by
 # tools/fetch_indology_feed.py. Not duplicated here — CI re-fetches it every
 # build; generate_renou_layer.py degrades gracefully if it's absent.
+# indology_feed.prev/ is the atomic-promotion rollback backup (H1894); it is
+# removed on a clean promotion and only lingers after a crash mid-swap.
 analytics_output/indology_feed/
+analytics_output/indology_feed.prev/
+analytics_output/indology_feed_manifest.json
 
 # Personal review sheets (voting artifacts, not repo deliverables)
 review/

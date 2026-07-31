@@ -6,6 +6,25 @@
 
 ## [Unreleased]
 
+### Added
+- **Atomic INDOLOGY-L feed fetch + local pinning manifest** (H1894, Sonnet 5
+  `claude-sonnet-5`, local-only — not committed/pushed):
+  `tools/fetch_indology_feed.py` rebuilt to try a versioned
+  `feed/manifest.json` from
+  [gasyoun/IndologyArchiveAtlas](https://github.com/gasyoun/IndologyArchiveAtlas)
+  first, fall back to the legacy five-file Renou export while that manifest
+  is unpublished, validate schema version/checksums/row counts entirely in a
+  staging directory, and promote atomically via two local renames so a
+  failed validation never touches the live
+  `analytics_output/indology_feed/` snapshot. Every promotion writes one
+  local manifest, `analytics_output/indology_feed_manifest.json`, pinning
+  every promoted file's sha256/size/row-count plus coverage status, source
+  version, acquisition time, and pipeline commit.
+  `tests/test_indology_feed_snapshot.py` covers clean promotion (both
+  modes), missing file, checksum mismatch, schema mismatch, row-count
+  drift, an interrupted download, and legacy-mode missing file — each
+  asserting the prior snapshot survives byte-identical.
+
 ### Changed
 - **Shelkovich url_slug `vladimir` → `vladimir-shelkovich` + redirect** (MG ruling 30-07-2026 in-Grok vote 1b, Grok 4.5 `grok-4.5`, [H1948](https://github.com/gasyoun/Uprava/blob/main/handoffs/H1948-Grok_Uprava_quick-decide-votes-apply_30.07.26.md)): `authority_ids.json` preferred_latin_name, `slug_redirects.json` row for old `vladimir`, site_data slug patch, scholar pages regenerated.
 
