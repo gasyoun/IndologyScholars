@@ -347,6 +347,18 @@ as the future deposit.
    cross-dataset linking and international discoverability. A
    candidate-matching pipeline exists and results are under human review.
 
+7. **Birth-year coverage.** 34 of 268 scholars (12.7%) lack a birth year.
+   This is a genuine source gap, not a name-matching failure: a Wikidata +
+   `ru.wikipedia` identity pass and a further hand-curation search over
+   institutional/dissertation sources resolved 0 of 34. The gap is
+   concentrated among one-time presenters (29 of 34); the remaining 5
+   recurring names (2-3 appearances each) were targeted directly and still
+   yielded no verifiable birth year, since most are lower-profile
+   researchers from `orientalstudies.ru` conference programmes with no
+   biographical page. This inflates the missing-data share slightly in the
+   age, generational-cohort, age-at-debut, and Kaplan-Meier analyses;
+   affected rows are excluded rather than imputed.
+
 7. **Name-heuristic false positives.** Identity resolution and roster
    expansion rely on heuristics over Russian name morphology (patronymic
    detection, transliteration matching, name-order parsing), and these
