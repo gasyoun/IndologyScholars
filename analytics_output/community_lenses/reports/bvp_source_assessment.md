@@ -1,4 +1,4 @@
-_Measured: 29-07-2026 · Status: local bounded acquisition_
+_Measured: 29-07-2026 (single-page smoke), 30-07-2026 (three-page pagination pilot) · Status: local bounded acquisition_
 
 # BVP public source assessment
 
@@ -53,9 +53,35 @@ discovered IDs, fetched pages, parsed records, exclusions, and failures
 reconcile. Exact article quotations require a stable public URL, context audit,
 and removal of unrelated contact/signature material without paraphrasing.
 
+## Three-page pagination pilot (H1892, 30-07-2026)
+
+`bvp/paginate_live.py` drives the public "Next page" control in a headless
+Chromium tab (Playwright) rather than replaying Google Groups' private
+batchexecute RPC contract. Bounded to exactly three consecutive listing
+pages this run:
+
+| Measure | Observed |
+|---|---:|
+| Pages requested / completed | 3 / 3 |
+| Displayed total (stable across all 3 pages) | 23,468 |
+| Listed rows | 90 |
+| Unique conversation IDs | 90 |
+| Duplicate IDs | 0 |
+| Faults | 0 |
+| Unexplained gap (beyond the 3 enumerated pages) | 23,378 |
+| Coverage status | `partial` |
+
+Page ranges reconciled exactly sequentially (1–30, 31–60, 61–90) with no
+overlap and no repeated row-set signature. `coverage_status` remains
+`partial` by contract — a clean 3-page pilot is not archive-wide coverage.
+Fixture tests for repeated-page, overlap/backward-range, denominator-change,
+no-new-IDs, interruption/resume, and HTTP 403/429-stop live in
+`tests/test_bvp_pagination.py`.
+
 ## Next bounded unit
 
-Implement and fixture-test sequential pagination by driving the public Next
-button or a documented equivalent, persisting each page's continuation token
-and row-ID set. Stop on repeated row sets, missing token, schema drift,
-HTTP 403/429, or an unexplained denominator gap.
+Extend the pagination pilot beyond three pages under the same fault
+contract, or begin the person/author identity-resolution pass over the 90
+already-checkpointed conversation IDs. Full-archive (23,468-conversation)
+enumeration remains out of scope until a much larger bounded run is
+explicitly authorized.
