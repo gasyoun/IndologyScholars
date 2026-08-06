@@ -70,16 +70,27 @@ BUILD_DATE = dt.date.today().isoformat()
 
 
 def _latest_release_version():
-    """Latest git tag (CITATION.cff version), so a manual version bump
+    """Latest RELEASE tag (CITATION.cff version), so a manual version bump
     survives the next auto-rebuild instead of being clobbered by a hardcoded
     string (H790 finding: v1.1.0 was bumped in CITATION.cff then silently
-    reverted to 1.0.0 by the next rebuild commit)."""
+    reverted to 1.0.0 by the next rebuild commit).
+
+    Only `v<semver>` tags count. A bare `git describe --tags` takes ANY tag,
+    including the `reserve-vX.Y.Z` refs that `Uprava/tools/cut_release.py`
+    pushes to claim a version number before a release exists — on 06-08-2026
+    exactly that leaked into a published `CITATION.cff` as
+    `version: "reserve-v1.6.0"`, and came back as a rebase conflict during the
+    very release the reservation was protecting (H1899).
+    """
     try:
-        tag = subprocess.run(
-            ["git", "describe", "--tags", "--abbrev=0"],
+        tags = subprocess.run(
+            ["git", "tag", "--list", "v[0-9]*", "--sort=-v:refname"],
             capture_output=True, text=True, check=True,
-        ).stdout.strip()
-        return tag[1:] if tag.startswith("v") else tag
+        ).stdout.split()
+        for tag in tags:
+            if re.fullmatch(r"v\d+\.\d+\.\d+", tag):
+                return tag[1:]
+        return "1.0.0"
     except Exception:
         return "1.0.0"
 
