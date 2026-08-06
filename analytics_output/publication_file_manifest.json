@@ -6,7 +6,7 @@
     "pipeline_version": "2026-05-25",
     "generator": "generate_publication_pages.py"
   },
-  "file_count": 4180,
+  "file_count": 4204,
   "files": [
     {
       "path": "404.html",
@@ -84,9 +84,129 @@
       "sha256": "33c8e1243faddd2d42090b11c6aad550370db21d87e6cef4850c34f0f5c9291a"
     },
     {
+      "path": "analytics_output/community_lenses/figures/captions.json",
+      "size_bytes": 6085,
+      "sha256": "a10a418c6c40f977781925c2ed6b9cb4fb0db8e93da68dd67266b7f27d4d9e0f"
+    },
+    {
+      "path": "analytics_output/community_lenses/figures/captions.md",
+      "size_bytes": 6563,
+      "sha256": "180bb21c0e73573d7dcd8fe8c50403f7426bb11b6129e6fde60f8f291aa8fd0b"
+    },
+    {
+      "path": "analytics_output/community_lenses/figures/fig1_activity_by_period.svg",
+      "size_bytes": 11358,
+      "sha256": "2712138e24a59963da9983c49601985934a2ed71290887809dbea8163bd17809"
+    },
+    {
+      "path": "analytics_output/community_lenses/figures/fig2_intellectual_content.svg",
+      "size_bytes": 8361,
+      "sha256": "393e2ee6f79355a35263915ade2cdadb8d1046b9b876ebb50f7721f50c47f5e7"
+    },
+    {
+      "path": "analytics_output/community_lenses/figures/fig3_community_function.svg",
+      "size_bytes": 5094,
+      "sha256": "8ca2de6a8ca1440f523c505ddc8aee21de75fa34843b09d17c5de8045821dcb4"
+    },
+    {
+      "path": "analytics_output/community_lenses/figures/fig4_argument_level.svg",
+      "size_bytes": 8113,
+      "sha256": "f0eb80482e22d5b6a22f72f1dfce6a876dd456d8f72d96e6fcc52522a7a4034d"
+    },
+    {
+      "path": "analytics_output/community_lenses/figures/fig5_person_overlap.svg",
+      "size_bytes": 4641,
+      "sha256": "66bac3985b742e7d4c4ccaa9bad106e916e1bcd1b06500b6e4453b831027419a"
+    },
+    {
+      "path": "analytics_output/community_lenses/figures/fig6_orientation_contrast.svg",
+      "size_bytes": 4802,
+      "sha256": "d96e5d6f868c51fe1609c11a3ef86fdc46646fef092b92bd61547adcbf660bd8"
+    },
+    {
+      "path": "analytics_output/community_lenses/reports/H1899_completion_note.md",
+      "size_bytes": 7180,
+      "sha256": "f1b290fa63361deafd13ecdcae81b55af702bf37a5432eaa8ac974d926b66dc6"
+    },
+    {
+      "path": "analytics_output/community_lenses/reports/bvp_adapter_reconciliation.md",
+      "size_bytes": 2091,
+      "sha256": "724e3b73143c8cd68e9d6b29a7a1431c57613e2d8ceefb1fd64a66331dbf0bb4"
+    },
+    {
       "path": "analytics_output/community_lenses/reports/bvp_source_assessment.md",
       "size_bytes": 2767,
       "sha256": "2ec76617eacf977642290ff4d86ac2a3b3bbb753d254937b5d1525d72267e169"
+    },
+    {
+      "path": "analytics_output/community_lenses/reports/claims_ledger.csv",
+      "size_bytes": 9239,
+      "sha256": "50b16663da2b0c3e04bebdb7bc6c64f19ec7496e140935a909d76434423c32e9"
+    },
+    {
+      "path": "analytics_output/community_lenses/reports/classification_validity.md",
+      "size_bytes": 6542,
+      "sha256": "c263851ae78230df5e7f38686a927b0012f47932e6304fc478de473dceb6ef40"
+    },
+    {
+      "path": "analytics_output/community_lenses/reports/comparison_validity.md",
+      "size_bytes": 11204,
+      "sha256": "f6d3e410a8b2bc9415fc085b04dc02af5d0deb20409eb954a8ce3d29f194a061"
+    },
+    {
+      "path": "analytics_output/community_lenses/reports/conferences_coverage.md",
+      "size_bytes": 1238,
+      "sha256": "b7c52f30d39ce0e21838deac64e2e3c4b0591f9c2d4fa3dcc8e3c9bcafbc8a7f"
+    },
+    {
+      "path": "analytics_output/community_lenses/reports/indology_l_coverage.md",
+      "size_bytes": 950,
+      "sha256": "12bbcd92f54dfcfde7b78dd4ba62b596bff1730bad43d3b6f6e090da0cec233a"
+    },
+    {
+      "path": "analytics_output/community_lenses/reports/nagari_coverage.md",
+      "size_bytes": 1157,
+      "sha256": "f395658d57234c8a0537203dad3c76e254b95c78956b385ad890f96dce749a9a"
+    },
+    {
+      "path": "analytics_output/community_lenses/reports/vk_ors_coverage.md",
+      "size_bytes": 1105,
+      "sha256": "90fb9ba4f8f3a69864d381e83c5a9230d2b9903473d9f4d9812982498eb4a9d5"
+    },
+    {
+      "path": "analytics_output/community_lenses/tables/activity_by_period.csv",
+      "size_bytes": 5881,
+      "sha256": "0b6a28213bbdd082a0dfb4a1afce2c7ede0e2967d5f09c6440247fe5d9dc9b18"
+    },
+    {
+      "path": "analytics_output/community_lenses/tables/argument_level_by_lens.csv",
+      "size_bytes": 4114,
+      "sha256": "38d664aa29521104a6a841262d1e362087a17b0182481ffe475a874aefde0e1e"
+    },
+    {
+      "path": "analytics_output/community_lenses/tables/community_function_by_lens.csv",
+      "size_bytes": 1830,
+      "sha256": "918008f6d48db324a8cce31bde52e0a58d38baf96cb6d09c43e100e7284bc6fd"
+    },
+    {
+      "path": "analytics_output/community_lenses/tables/intellectual_content_by_lens.csv",
+      "size_bytes": 5245,
+      "sha256": "2abd7c4b47b4fdbb793553761483d9b03ab9b98ed2ea96276715720a1ba5565b"
+    },
+    {
+      "path": "analytics_output/community_lenses/tables/lens_source_coverage.csv",
+      "size_bytes": 1561,
+      "sha256": "65511faaa6528413563722a30dd3d1c4e1b5ab6cb8bd0ccb8725e6350a22712e"
+    },
+    {
+      "path": "analytics_output/community_lenses/tables/orientation_contrast.csv",
+      "size_bytes": 2618,
+      "sha256": "fa85771c23f7779fd3dfc36755ab910be9ba22442a0f071f10b8f6af7b5f4ab0"
+    },
+    {
+      "path": "analytics_output/community_lenses/tables/person_overlap.csv",
+      "size_bytes": 1708,
+      "sha256": "20ad3eca92a14230d7f404176c069e031cd60b2f63ecfa288858815badca84fa"
     },
     {
       "path": "analytics_output/conference_role_taxonomy.csv",
@@ -370,8 +490,8 @@
     },
     {
       "path": "analytics_output/nlp_cache.pkl",
-      "size_bytes": 148377,
-      "sha256": "374278314919ff11fa4ca4fcfa88342b4dc58b28c6be1a8348321c66b3464384"
+      "size_bytes": 148375,
+      "sha256": "c631478125542cb6453459a9ae7b9bf0b4c0a4bc52a52d906d0b74cfbf37fb13"
     },
     {
       "path": "analytics_output/no_affiliation_history.md",
@@ -820,8 +940,8 @@
     },
     {
       "path": "assets/nlp_data.js",
-      "size_bytes": 424327,
-      "sha256": "b37e279c66f49341e4f4fdb1ddb29423cd4e2c81f0a0dd7417263f9b5cb27f8a"
+      "size_bytes": 424330,
+      "sha256": "e85c09ef61f9f46ab36c48630a7673012a3df0b1d21e0dcb2030e3e372d84118"
     },
     {
       "path": "assets/og-image.png",
@@ -9991,7 +10111,7 @@
     {
       "path": "download-data.html",
       "size_bytes": 37519,
-      "sha256": "4d7449cd0a275cb6a8709fce78538bef35b0b973afc336fa08d4d56597154aa2"
+      "sha256": "1cabc4d2ee0421ff1e1ecead2f5b8451bdb367c4addbc8b81b4de501c6359d8e"
     },
     {
       "path": "en.html",
@@ -10031,7 +10151,7 @@
     {
       "path": "findings/visualisations.html",
       "size_bytes": 493638,
-      "sha256": "29a6277a77d195d2b58cbf11a9272f5dc8566ea87b3c2bd9f81351de3c60a30a"
+      "sha256": "cd81524dd28393de8270f5916d5de8cb5d593cbc71650660b13097d850dcfff7"
     },
     {
       "path": "gatekeeping-en.html",
