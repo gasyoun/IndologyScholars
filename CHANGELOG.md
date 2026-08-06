@@ -6,8 +6,9 @@
 
 ## [Unreleased]
 
+## [1.5.0] - 2026-07-31
 ### Changed
-- **Shelkovich url_slug `vladimir` → `vladimir-shelkovich` + redirect** (MG ruling 30-07-2026 in-Grok vote 1b, Grok 4.5 `grok-4.5`, [H1948](https://github.com/gasyoun/Uprava/blob/main/handoffs/H1948-Grok_Uprava_quick-decide-votes-apply_30.07.26.md)): `authority_ids.json` preferred_latin_name, `slug_redirects.json` row for old `vladimir`, site_data slug patch, scholar pages regenerated.
+- **Shelkovich url_slug `vladimir` → `vladimir-shelkovich` + redirect** (MG ruling 30-07-2026 in-Grok vote 1b, Grok 4.5 `grok-4.5`, [H1948](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H1948-Grok_Uprava_quick-decide-votes-apply_30.07.26.md)): `authority_ids.json` preferred_latin_name, `slug_redirects.json` row for old `vladimir`, site_data slug patch, scholar pages regenerated.
 
 ### Added
 - **Wave 1E: comparison validity report, six figures, frozen packages, Russian revision outline**
@@ -137,7 +138,7 @@
 
 ### Changed
 - **Docs micro-residual after H1528**
-  ([H1529](https://github.com/gasyoun/Uprava/blob/main/handoffs/H1529-Sonnet_IndologyScholars_stale-docs-micro-v141-phase4_23.07.26.md),
+  ([H1529](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H1529-Sonnet_IndologyScholars_stale-docs-micro-v141-phase4_23.07.26.md),
   Grok 4.5): `.ai_state.md` header release line → **v1.4.2**;
   `docs/ROADMAP_2026.md` Phase 4 deposit item marked package-ready (H1072) with
   only the human Zenodo login remaining. Restores `CITATION.cff` to the live
@@ -148,7 +149,7 @@
 
 ### Changed
 - **Stale living documentation refreshed to post-v1.4.0 reality**
-  ([H1528](https://github.com/gasyoun/Uprava/blob/main/handoffs/H1528-Sonnet_IndologyScholars_stale-docs-refresh_23.07.26.md),
+  ([H1528](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H1528-Sonnet_IndologyScholars_stale-docs-refresh_23.07.26.md),
   Grok 4.5). README/README_EN now surface nagari, vk-ors, the historical layer,
   and the spun-out [IndologyArchiveAtlas](https://github.com/gasyoun/IndologyArchiveAtlas)
   (no longer imply the atlas still lives under this Pages root). `.ai_state.md`
@@ -161,7 +162,7 @@
   guides, `CLAUDE.md`, and `nagari/README.md` point at the sibling subsystems.
 - **`article/check_data_paper_numbers.py` hardened from substring containment to
   anchored value assertions**
-  ([H1467](https://github.com/gasyoun/Uprava/blob/main/handoffs/H1467-Opus_IndologyScholars_harden-data-paper-number-gate_22.07.26.md),
+  ([H1467](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H1467-Opus_IndologyScholars_harden-data-paper-number-gate_22.07.26.md),
   Opus 4.8 `claude-opus-4-8`). The data-paper submission gate now verifies each
   quoted figure with a phrase-anchored regex that captures the number and compares
   it with word boundaries, reusing the `check()`/`check_word()` drift helpers already
@@ -177,7 +178,7 @@
 ### Added
 - **`sources/vigasin/`** — 27 full-text `.mdx` conversions of A.A. Vigasin's *Изучение Индии
   в России* landed as raw source material for future scholar-page work
-  ([H1443](https://github.com/gasyoun/Uprava/blob/main/handoffs/H1443-Sonnet_IndologyScholars_vigasin-corpus-extract-route_22.07.26.md),
+  ([H1443](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H1443-Sonnet_IndologyScholars_vigasin-corpus-extract-route_22.07.26.md),
   Sonnet 5 `claude-sonnet-5`), routed by scholar where a `/s/<slug>` registry row already
   exists in `curation/historical_persons.csv`, else under `scholars/_unregistered/`. Not wired
   into `generate_scholars_pages.py` — that pipeline has no MDX support and its Phase 3/4
