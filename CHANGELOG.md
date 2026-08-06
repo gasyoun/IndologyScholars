@@ -11,6 +11,66 @@
 - **Shelkovich url_slug `vladimir` → `vladimir-shelkovich` + redirect** (MG ruling 30-07-2026 in-Grok vote 1b, Grok 4.5 `grok-4.5`, [H1948](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H1948-Grok_Uprava_quick-decide-votes-apply_30.07.26.md)): `authority_ids.json` preferred_latin_name, `slug_redirects.json` row for old `vladimir`, site_data slug patch, scholar pages regenerated.
 
 ### Added
+- **Wave 1E: comparison validity report, six figures, frozen packages, Russian revision outline**
+  (H1899, Opus 5 `claude-opus-5`): `community_lenses/{metrics,figures,report,snapshot,cli}.py` —
+  7 denominator-aware metric tables (every row names numerator, denominator, unit, period,
+  missingness, snapshot, method+version), 6 deterministic hand-written SVG figures with
+  denominators and coverage caveats in every caption, `comparison_validity.md` over the V1–V11
+  evidence classes, a 14-row `claims_ledger.csv` with zero unlinked claims, freeze/verify/compare
+  for the `through-2025` (27 270 records) and `partial-2026` (427 records) packages, 17 CLI
+  verification gates, and `article/ppv_comparative_revision_outline_ru.md`.
+  40 new tests (`tests/test_community_lenses_{metrics,snapshot}.py`), repo-wide suite 347 passed.
+  Suppressed by evidence, not by omission: cross-lens Gumilev (pilot unreviewed), any
+  Russia–West–India magnitude comparison (INDOLOGY-L and BVP absent — gaps, not zeros), and the
+  Renou layer (gold gate binding). The frozen packages themselves, the reviewed identity/quote
+  registers and the identity evidence report stay **local** until the closed-group rights gate is
+  approved — see the landing split in `analytics_output/community_lenses/reports/H1899_completion_note.md`.
+- **Wave 1D identity/quote layer** (H1898, Fable 5 `claude-fable-5`):
+  `community_lenses/{identity,quotes}.py` with 35 tests and a fully synthetic fixture; the
+  reviewed decision tables themselves remain unpublished under the same rights gate.
+- **Wave 1B community-lens adapters: conferences, nagari, vk_ors, indology_l**
+  (H1895, Sonnet 5 `claude-sonnet-5`):
+  `community_lenses/adapters/{conferences,nagari,vk_ors,indology_l}.py`, each
+  exposing `build_fixture()`/`coverage_report()` into the H1893 shared
+  contract, plus per-source coverage reports under
+  `analytics_output/community_lenses/reports/` and
+  `tests/test_community_lenses_adapters.py` (37 tests: idempotence, stable
+  IDs, fail-closed validation, graceful-degrade, rights defaults, no
+  `shared_topic` pre-emption). **conferences** and **vk_ors** are `complete`
+  (real `conferences.db` / `vk-ors/data/vk_ors.db` reads, native hashtags only,
+  no fabricated identities). **nagari** is a bounded 300-message `pilot` (the
+  1.88 GB Takeout mbox lives only in the main tree) reusing the group's own
+  taxonomy/redaction, never auto-linking authors. **indology_l** is
+  deliberately `unavailable`: H1894 (atomic feed hardening) was never actually
+  built despite being registry-marked Done, so this adapter refuses the old
+  unhardened fetcher output and reports a named gap instead of fabricating a
+  snapshot. Also fixed a real idempotence bug in
+  `community_lenses/adapters/_shared.py::unavailable_fixture` — it stamped
+  `acquired_at` with wall-clock `datetime.now()`, breaking the
+  build-twice-identically contract for any `unavailable` corpus; pinned to a
+  deterministic placeholder instead. `theme_codes_final_v2.csv` l1-l4
+  crosswalk mapping deliberately NOT done (H1897's scope). Local
+  implementation only per handoff scope. Verification matrix green: `pytest`
+  (287 passed), `unittest discover -s tests` (36 passed),
+  `validate_publication.py`, `nagari/scripts/audit_publish_surface.py`,
+  `git diff --check`.
+
+- **BVP community-lens adapter** (H1896, Sonnet 5 `claude-sonnet-5`):
+  `community_lenses/adapters/bvp.py` — read-only `LensAdapter` over the frozen,
+  gitignored H1892 acquisition (`bvp/data/meta/state.json` +
+  `bvp/data/parsed/*.json`). Pinned manifest `bvp:partial:2026-07-29:386f655244ed`;
+  30/23,467 conversations enumerated (0.128%), 156 native messages → 155
+  included / 1 kept-explicit-but-excluded (semantic-DOM-fallback record with no
+  public author/body). `coverage_status` stays `partial`;
+  `supports_population_metrics=False` is mechanically enforced via
+  `require_population_metrics()` (raises `PopulationMetricsDisabled`), proven
+  flippable only against a fully synthetic `complete` fixture in tests, never the
+  live snapshot. 23 tests in `tests/test_bvp_adapter.py` (partial manifest,
+  incomplete record, exclusion, interrupted-manifest parse failure, duplicate-ID
+  rejection, deterministic ordering, denominator mismatch, population-query
+  rejection, gate flip). Local implementation only per handoff scope — not
+  committed/released this pass.
+
 - **BVP public acquisition unit** (PR #153, Grok 4.5 `grok-4.5`): bounded,
   resumable first-page scraper for
   [Bharatiya Vidvat Parishat](https://groups.google.com/g/bvparishat)

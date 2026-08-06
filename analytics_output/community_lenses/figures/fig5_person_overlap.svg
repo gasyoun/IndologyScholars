@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="456" viewBox="0 0 1000 456" role="img" aria-labelledby="t d">
+<title id="t">Рис. 5. Пересечение площадок по проверенным персонам</title>
+<desc id="d">Only accepted identity links; ambiguous candidates are never counted.</desc>
+<rect x="0" y="0" width="1000" height="456" fill="#ffffff"/>
+<text x="24.0" y="34.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="start" fill="#1b1b1b">Рис. 5. Проверенные персоны, засвидетельствованные более чем в одной линзе</text>
+<text x="24.0" y="56.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="normal" text-anchor="start" fill="#1b1b1b">Учитываются ТОЛЬКО принятые связи личности; неоднозначные кандидаты не входят ни в один счёт.</text>
+<text x="24.0" y="74.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="normal" text-anchor="start" fill="#1b1b1b">Знаменатель — персоны, связанные внутри той же линзы.</text>
+<text x="24.0" y="122.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="normal" text-anchor="start" fill="#1b1b1b">Рериховские/Зографские чтения (confere</text>
+<rect x="300.0" y="112.0" width="620.0" height="14.0" fill="#6b8fbc"/>
+<rect x="300.0" y="112.0" width="16.2" height="14.0" fill="#123a6b"/>
+<text x="926.0" y="123.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="9" font-weight="normal" text-anchor="start" fill="#1b1b1b">кросс-линзовых 7 из 268 связанных персон</text>
+<text x="24.0" y="168.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="normal" text-anchor="start" fill="#1b1b1b">nagari (закрытая Google-группа)</text>
+<rect x="300.0" y="158.0" width="16.2" height="14.0" fill="#6b8fbc"/>
+<rect x="300.0" y="158.0" width="16.2" height="14.0" fill="#b0824a"/>
+<text x="322.2" y="169.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="9" font-weight="normal" text-anchor="start" fill="#1b1b1b">кросс-линзовых 7 из 7 связанных персон</text>
+<text x="24.0" y="214.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="normal" text-anchor="start" fill="#1b1b1b">ORS/VK (стена сообщества)</text>
+<rect x="300.0" y="204.0" width="0.0" height="14.0" fill="#6b8fbc"/>
+<rect x="300.0" y="204.0" width="0.0" height="14.0" fill="#6b8fbc"/>
+<text x="306.0" y="215.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="9" font-weight="normal" text-anchor="start" fill="#1b1b1b">кросс-линзовых 0 из 0 связанных персон</text>
+<rect x="300.0" y="244.0" width="620.0" height="32.0" fill="none" stroke="#9a9a9a" stroke-width="1" stroke-dasharray="5 4"/>
+<text x="610.0" y="256.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#9a9a9a">INDOLOGY-L: НЕТ НАБЛЮДЕНИЯ</text>
+<text x="610.0" y="273.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" font-weight="normal" text-anchor="middle" fill="#9a9a9a">source_unavailable_on_this_machine</text>
+<rect x="300.0" y="288.0" width="620.0" height="32.0" fill="none" stroke="#9a9a9a" stroke-width="1" stroke-dasharray="5 4"/>
+<text x="610.0" y="300.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#9a9a9a">BVP (Bharatiya Vidvat Parishad): НЕТ НАБЛЮДЕНИЯ</text>
+<text x="610.0" y="317.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" font-weight="normal" text-anchor="middle" fill="#9a9a9a">source_unavailable_on_this_machine</text>
+<text x="24.0" y="416.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" font-weight="normal" text-anchor="start" fill="#1b1b1b">Тёмная часть столбца — персоны с принятой межлинзовой связью; светлая — все связанные персоны линзы.</text>
+<text x="24.0" y="432.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" font-weight="normal" text-anchor="start" fill="#1b1b1b">Связи выведены из членства в ЗАКРЫТОЙ группе: именные межплощадочные утверждения не экспортируются до одобрения прав nagari.</text>
+</svg>
