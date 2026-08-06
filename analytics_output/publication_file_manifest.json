@@ -15,8 +15,8 @@
     },
     {
       "path": "CITATION.cff",
-      "size_bytes": 807,
-      "sha256": "409e0775c3ce902d1510f2ced2a290461deb7238fb2338999898d67e03c308a4"
+      "size_bytes": 798,
+      "sha256": "8c21b9ce25bb21e84ce554505d0ea513acbf52b7206508f1288f945cf603d89b"
     },
     {
       "path": "analytics_output/age_cohort_trend.csv",
@@ -490,8 +490,8 @@
     },
     {
       "path": "analytics_output/nlp_cache.pkl",
-      "size_bytes": 148375,
-      "sha256": "c631478125542cb6453459a9ae7b9bf0b4c0a4bc52a52d906d0b74cfbf37fb13"
+      "size_bytes": 148377,
+      "sha256": "374278314919ff11fa4ca4fcfa88342b4dc58b28c6be1a8348321c66b3464384"
     },
     {
       "path": "analytics_output/no_affiliation_history.md",
@@ -940,8 +940,8 @@
     },
     {
       "path": "assets/nlp_data.js",
-      "size_bytes": 424330,
-      "sha256": "e85c09ef61f9f46ab36c48630a7673012a3df0b1d21e0dcb2030e3e372d84118"
+      "size_bytes": 424327,
+      "sha256": "b37e279c66f49341e4f4fdb1ddb29423cd4e2c81f0a0dd7417263f9b5cb27f8a"
     },
     {
       "path": "assets/og-image.png",
@@ -10111,7 +10111,7 @@
     {
       "path": "download-data.html",
       "size_bytes": 37519,
-      "sha256": "18546f8b616ef27dada1b83bfac9aae08fd95e66555c642107f5de41a32b6f83"
+      "sha256": "1cabc4d2ee0421ff1e1ecead2f5b8451bdb367c4addbc8b81b4de501c6359d8e"
     },
     {
       "path": "en.html",
@@ -10151,7 +10151,7 @@
     {
       "path": "findings/visualisations.html",
       "size_bytes": 493638,
-      "sha256": "6899a8bc21d0d4befe286725b5d4f9872e4e2cfec37d14711661e52f1c299d08"
+      "sha256": "15ce03e9cfe66997685199639f34617297434a95698516767421899b9ea456ea"
     },
     {
       "path": "gatekeeping-en.html",
