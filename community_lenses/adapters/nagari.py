@@ -32,6 +32,12 @@ CORPUS_ID = "nagari"
 # already anticipates this split by pointing at the main tree).
 _CANDIDATE_DB_PATHS = (
     REPO_ROOT / "nagari" / "data" / "nagari.db",
+    # The canonical built db on this machine (H1898 §Inputs pins it here); the
+    # nagari_group_archive path below was the pre-H1898 guess and no longer
+    # exists. Keeping both means neither layout silently degrades the lens to
+    # "unavailable" while a real db sits on disk — the H1899 compatibility fix
+    # recorded in analytics_output/community_lenses/reports/comparison_validity.md.
+    Path(r"C:\Users\user\Documents\GitHub\IndologyScholars\nagari\data\nagari.db"),
     Path(r"C:\Users\user\Documents\GitHub\IndologyScholars\nagari\nagari_group_archive\data\nagari.db"),
 )
 
