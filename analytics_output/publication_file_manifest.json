@@ -15,8 +15,8 @@
     },
     {
       "path": "CITATION.cff",
-      "size_bytes": 798,
-      "sha256": "aa942adc8e09a2355cff64c7e78d94e1fa22d32ab7035bea03ff7b1244c839ad"
+      "size_bytes": 807,
+      "sha256": "409e0775c3ce902d1510f2ced2a290461deb7238fb2338999898d67e03c308a4"
     },
     {
       "path": "analytics_output/age_cohort_trend.csv",
@@ -135,8 +135,8 @@
     },
     {
       "path": "analytics_output/community_lenses/reports/bvp_source_assessment.md",
-      "size_bytes": 2767,
-      "sha256": "2ec76617eacf977642290ff4d86ac2a3b3bbb753d254937b5d1525d72267e169"
+      "size_bytes": 5316,
+      "sha256": "92f3247aecbc0d73a902e9151f95a99caa0ad546f2275dcd7ec60a7249a3c40f"
     },
     {
       "path": "analytics_output/community_lenses/reports/claims_ledger.csv",
@@ -10111,7 +10111,7 @@
     {
       "path": "download-data.html",
       "size_bytes": 37519,
-      "sha256": "1cabc4d2ee0421ff1e1ecead2f5b8451bdb367c4addbc8b81b4de501c6359d8e"
+      "sha256": "18546f8b616ef27dada1b83bfac9aae08fd95e66555c642107f5de41a32b6f83"
     },
     {
       "path": "en.html",
@@ -10151,7 +10151,7 @@
     {
       "path": "findings/visualisations.html",
       "size_bytes": 493638,
-      "sha256": "cd81524dd28393de8270f5916d5de8cb5d593cbc71650660b13097d850dcfff7"
+      "sha256": "6199603b29a5d14f5bc5c720f9f09683984f39847a03295cad0597cf0e9afc3d"
     },
     {
       "path": "gatekeeping-en.html",
