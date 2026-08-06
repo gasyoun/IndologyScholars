@@ -6,10 +6,7 @@
 
 ## [Unreleased]
 
-## [1.5.0] - 2026-07-31
-### Changed
-- **Shelkovich url_slug `vladimir` → `vladimir-shelkovich` + redirect** (MG ruling 30-07-2026 in-Grok vote 1b, Grok 4.5 `grok-4.5`, [H1948](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H1948-Grok_Uprava_quick-decide-votes-apply_30.07.26.md)): `authority_ids.json` preferred_latin_name, `slug_redirects.json` row for old `vladimir`, site_data slug patch, scholar pages regenerated.
-
+## [1.6.0] - 2026-08-06
 ### Added
 - **Wave 1E: comparison validity report, six figures, frozen packages, Russian revision outline**
   (H1899, Opus 5 `claude-opus-5`): `community_lenses/{metrics,figures,report,snapshot,cli}.py` —
@@ -71,6 +68,12 @@
   rejection, gate flip). Local implementation only per handoff scope — not
   committed/released this pass.
 
+
+## [1.5.0] - 2026-07-31
+### Changed
+- **Shelkovich url_slug `vladimir` → `vladimir-shelkovich` + redirect** (MG ruling 30-07-2026 in-Grok vote 1b, Grok 4.5 `grok-4.5`, [H1948](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H1948-Grok_Uprava_quick-decide-votes-apply_30.07.26.md)): `authority_ids.json` preferred_latin_name, `slug_redirects.json` row for old `vladimir`, site_data slug patch, scholar pages regenerated.
+
+### Added
 - **BVP public acquisition unit** (PR #153, Grok 4.5 `grok-4.5`): bounded,
   resumable first-page scraper for
   [Bharatiya Vidvat Parishat](https://groups.google.com/g/bvparishat)
@@ -616,6 +619,12 @@ handoff.)_
 
 ### Changed
 - Released the current changelog state as version 1.
+
+> **Ниже — ЛЕГАСИ-нумерация до перезапуска версий 13-06-2026** (`## [1.0.0] - 2026-06-13`
+> выше: «Released the current changelog state as version 1»). Серия 1.0.0–1.12.0 за май–июнь
+> 2026 **никогда не тегировалась** — git-тегов `v1.6.0`…`v1.12.0` из неё не существует, и
+> номера в актуальной серии переиспользуются законно. Читать нумерацию ниже как
+> самостоятельную историческую шкалу, а не как продолжение текущей.
 
 ## [1.12.0] — 2026-06-10
 
