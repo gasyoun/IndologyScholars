@@ -87,8 +87,28 @@ def _conversation(conversation_id: str, messages: list[dict], **overrides) -> di
 # --- real, on-disk partial acquisition --------------------------------------
 
 
-def test_live_bvp_fixture_matches_corpus_id_and_is_partial():
+def _live_bvp_or_skip() -> dict:
+    """The live BVP fixture, or a skip when this machine holds no acquisition.
+
+    `bvp/data/` is gitignored, so on CI and on any fresh clone the adapter
+    correctly reports `unavailable` — and the tests below would then be
+    asserting a fact about one machine's disk, not about the code. Skipping
+    keeps them strict where they can be evaluated (and stops the ones that
+    only passed on an empty record list from passing vacuously), while
+    `test_live_bvp_degrades_gracefully_when_no_state_is_found` still covers
+    the absent-source path directly.
+    """
     fixture = bvp.build_fixture()
+    if fixture["manifest"]["coverage_status"] == "unavailable":
+        pytest.skip(
+            "no local BVP acquisition (bvp/data/meta/state.json) on this machine; "
+            "run bvp/scrape.py or restore the frozen capture to exercise these"
+        )
+    return fixture
+
+
+def test_live_bvp_fixture_matches_corpus_id_and_is_partial():
+    fixture = _live_bvp_or_skip()
     assert fixture["corpus"]["corpus_id"] == "bvp"
     assert fixture["manifest"]["corpus_id"] == "bvp"
     # H1892's frozen local acquisition exists on this machine (bvp/data/); if
@@ -98,27 +118,27 @@ def test_live_bvp_fixture_matches_corpus_id_and_is_partial():
 
 
 def test_live_bvp_manifest_is_individually_valid():
-    fixture = bvp.build_fixture()
+    fixture = _live_bvp_or_skip()
     manifest = SourceManifest(**fixture["manifest"])
     assert validate_manifest(manifest) == []
 
 
 def test_live_bvp_record_ids_are_stable_and_match_make_record_id():
-    fixture = bvp.build_fixture()
+    fixture = _live_bvp_or_skip()
     for record in fixture["records"]:
         expected = make_record_id("bvp", record["source_record_id"])
         assert record["record_id"] == expected
 
 
 def test_live_bvp_produces_real_records_and_never_claims_complete():
-    fixture = bvp.build_fixture()
+    fixture = _live_bvp_or_skip()
     assert len(fixture["records"]) > 0
     assert fixture["manifest"]["coverage_status"] == "partial"
     assert bvp.population_metrics_allowed(fixture) is False
 
 
 def test_live_bvp_fixture_loads_and_validates_with_no_errors():
-    fixture = bvp.build_fixture()
+    fixture = _live_bvp_or_skip()
     conn = _fresh_connection()
     build.populate_corpus(conn, fixture)
     conn.commit()
@@ -127,8 +147,8 @@ def test_live_bvp_fixture_loads_and_validates_with_no_errors():
 
 
 def test_live_bvp_build_is_idempotent_across_two_runs():
-    fixture_a = bvp.build_fixture()
-    fixture_b = bvp.build_fixture()
+    fixture_a = _live_bvp_or_skip()
+    fixture_b = _live_bvp_or_skip()
 
     conn_a = _fresh_connection()
     build.populate_corpus(conn_a, fixture_a)
@@ -144,7 +164,7 @@ def test_live_bvp_build_is_idempotent_across_two_runs():
 def test_live_bvp_has_at_least_one_incomplete_record_kept_explicit():
     """bvp_source_assessment.md: one thread parsed via DOM fallback with no
     usable public author/body -- must remain a real record, not be dropped."""
-    fixture = bvp.build_fixture()
+    fixture = _live_bvp_or_skip()
     recon = fixture["_reconciliation"]
     assert recon["messages_incomplete"] >= 1
     incomplete_annotations = [
@@ -158,19 +178,19 @@ def test_live_bvp_has_at_least_one_incomplete_record_kept_explicit():
 
 
 def test_live_bvp_never_auto_links_a_person():
-    fixture = bvp.build_fixture()
+    fixture = _live_bvp_or_skip()
     assert all(rn["person_id"] is None for rn in fixture["record_names"])
 
 
 def test_live_bvp_never_emits_a_quote_or_shared_topic_assignment():
-    fixture = bvp.build_fixture()
+    fixture = _live_bvp_or_skip()
     assert fixture["quotes"] == []
     scheme_ids = {a["scheme_id"] for a in fixture["classification_assignments"]}
     assert "shared_topic" not in scheme_ids
 
 
 def test_live_bvp_never_copies_native_title_into_a_shared_topic_value():
-    fixture = bvp.build_fixture()
+    fixture = _live_bvp_or_skip()
     titles_by_record = {r["record_id"]: r.get("title_or_subject") for r in fixture["records"]}
     for assignment in fixture["classification_assignments"]:
         if assignment["scheme_id"] != "shared_topic":
@@ -180,7 +200,7 @@ def test_live_bvp_never_copies_native_title_into_a_shared_topic_value():
 
 
 def test_live_bvp_coverage_report_names_native_unit_and_denominator():
-    fixture = bvp.build_fixture()
+    fixture = _live_bvp_or_skip()
     report = bvp.coverage_report(fixture)
     assert "Native unit type" in report
     assert "Denominator definition" in report
@@ -189,7 +209,7 @@ def test_live_bvp_coverage_report_names_native_unit_and_denominator():
 
 
 def test_live_bvp_coverage_report_states_expert_judgment_not_representativeness():
-    fixture = bvp.build_fixture()
+    fixture = _live_bvp_or_skip()
     report = bvp.coverage_report(fixture)
     assert "Gas" in report  # Gasūns -- avoid a literal ū encoding dependency in the assertion
     assert "not evidence" in report or "representative" in report
