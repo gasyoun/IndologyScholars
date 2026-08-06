@@ -10,6 +10,23 @@
 - **Shelkovich url_slug `vladimir` → `vladimir-shelkovich` + redirect** (MG ruling 30-07-2026 in-Grok vote 1b, Grok 4.5 `grok-4.5`, [H1948](https://github.com/gasyoun/Uprava/blob/main/handoffs/H1948-Grok_Uprava_quick-decide-votes-apply_30.07.26.md)): `authority_ids.json` preferred_latin_name, `slug_redirects.json` row for old `vladimir`, site_data slug patch, scholar pages regenerated.
 
 ### Added
+- **Wave 1E: comparison validity report, six figures, frozen packages, Russian revision outline**
+  (H1899, Opus 5 `claude-opus-5`): `community_lenses/{metrics,figures,report,snapshot,cli}.py` —
+  7 denominator-aware metric tables (every row names numerator, denominator, unit, period,
+  missingness, snapshot, method+version), 6 deterministic hand-written SVG figures with
+  denominators and coverage caveats in every caption, `comparison_validity.md` over the V1–V11
+  evidence classes, a 14-row `claims_ledger.csv` with zero unlinked claims, freeze/verify/compare
+  for the `through-2025` (27 270 records) and `partial-2026` (427 records) packages, 17 CLI
+  verification gates, and `article/ppv_comparative_revision_outline_ru.md`.
+  40 new tests (`tests/test_community_lenses_{metrics,snapshot}.py`), repo-wide suite 347 passed.
+  Suppressed by evidence, not by omission: cross-lens Gumilev (pilot unreviewed), any
+  Russia–West–India magnitude comparison (INDOLOGY-L and BVP absent — gaps, not zeros), and the
+  Renou layer (gold gate binding). The frozen packages themselves, the reviewed identity/quote
+  registers and the identity evidence report stay **local** until the closed-group rights gate is
+  approved — see the landing split in `analytics_output/community_lenses/reports/H1899_completion_note.md`.
+- **Wave 1D identity/quote layer** (H1898, Fable 5 `claude-fable-5`):
+  `community_lenses/{identity,quotes}.py` with 35 tests and a fully synthetic fixture; the
+  reviewed decision tables themselves remain unpublished under the same rights gate.
 - **Wave 1B community-lens adapters: conferences, nagari, vk_ors, indology_l**
   (H1895, Sonnet 5 `claude-sonnet-5`):
   `community_lenses/adapters/{conferences,nagari,vk_ors,indology_l}.py`, each

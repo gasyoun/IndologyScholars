@@ -1,0 +1,36 @@
+{
+  "description": "Fully synthetic identity fixtures for H1898 tests. No real person, account, or message data.",
+  "persons": {
+    "conferences:PERS_TEST01": {"person_id": "conferences:PERS_TEST01", "display_name": "Тестова Анна Петровна"},
+    "conferences:PERS_TEST02": {"person_id": "conferences:PERS_TEST02", "display_name": "Примеров Борис Иванович"},
+    "conferences:PERS_TEST03": {"person_id": "conferences:PERS_TEST03", "display_name": "Тестова Мария Петровна"}
+  },
+  "authority_ids": {
+    "PERS_TEST01": {"preferred_latin_name": "Anna Testova", "orcid": "0000-0000-0000-0001"}
+  },
+  "aliases": [
+    {"alias_name": "А. Тестова", "target_name": "Тестова Анна Петровна", "status": "accepted", "confidence": "manual", "source": "synthetic", "note": "synthetic"}
+  ],
+  "identities": [
+    {"corpus_id": "nagari", "record_id": "nagari:<syn-1@example>", "ordinal": 1, "role": "author",
+     "name_as_source": "Anna Testova", "affiliation_as_source": null,
+     "source_account_id": "atest@…", "person_id": null,
+     "created_at": "2020-01-01T00:00:00", "source_snapshot_id": "nagari:pilot:synthetic"},
+    {"corpus_id": "nagari", "record_id": "nagari:<syn-2@example>", "ordinal": 1, "role": "author",
+     "name_as_source": "Анна Тестова", "affiliation_as_source": null,
+     "source_account_id": "atest@…", "person_id": null,
+     "created_at": "2021-05-05T00:00:00", "source_snapshot_id": "nagari:pilot:synthetic"},
+    {"corpus_id": "nagari", "record_id": "nagari:<syn-3@example>", "ordinal": 1, "role": "author",
+     "name_as_source": "Boris Primerov", "affiliation_as_source": null,
+     "source_account_id": "bprim@…", "person_id": null,
+     "created_at": "2022-02-02T00:00:00", "source_snapshot_id": "nagari:pilot:synthetic"},
+    {"corpus_id": "vk_ors", "record_id": "vk_ors:-1_1", "ordinal": 1, "role": "author",
+     "name_as_source": "Совсем Непохожий Никнейм", "affiliation_as_source": null,
+     "source_account_id": null, "person_id": null,
+     "created_at": "2023-03-03T00:00:00", "source_snapshot_id": "vk_ors:synthetic"}
+  ],
+  "source_text": "Первая строка контекста.\nВопрос: как выучить грамматику Панини за год?\nПодпись с контактом: test@example.com\nПоследняя строка контекста.",
+  "quote_ok": "как выучить грамматику Панини за год?",
+  "quote_with_omission": "Вопрос: [...] за год?",
+  "quote_paraphrase": "Вопрос о том, как быстро выучить грамматику Панини."
+}
