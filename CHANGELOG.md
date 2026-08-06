@@ -5,6 +5,8 @@
 Этот проект представляет собой высокоточный академический конвейер для оцифровки, интеллектуального анализа и визуализации истории российской индологической науки.
 
 ## [Unreleased]
+
+## [1.6.1] - 2026-08-06
 ### Added
 - **BVP pagination pilot v2 + recovered pagination driver** (H2297, Sonnet 5
   `claude-sonnet-5`): H1892's 30-07-2026 three-page BVP pagination pilot
