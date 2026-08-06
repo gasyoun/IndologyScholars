@@ -5,6 +5,21 @@
 Этот проект представляет собой высокоточный академический конвейер для оцифровки, интеллектуального анализа и визуализации истории российской индологической науки.
 
 ## [Unreleased]
+### Added
+- **BVP pagination pilot v2 + recovered pagination driver** (H2297, Sonnet 5
+  `claude-sonnet-5`): H1892's 30-07-2026 three-page BVP pagination pilot
+  output was destroyed when its worktree was removed before durable escrow
+  ([FINDINGS §314](https://github.com/gasyoun/Uprava/blob/main/FINDINGS.md),
+  [#169](https://github.com/gasyoun/IndologyScholars/issues/169)). Recovered
+  `bvp/pagination.py`/`bvp/paginate_live.py`/`tests/test_bvp_pagination.py`
+  (built + tested during H1892 but stranded on an unmerged branch, never
+  landed on `main` at all — [#174](https://github.com/gasyoun/IndologyScholars/pull/174)),
+  re-ran the pilot (3/3 pages, 90/90 unique conversation IDs, 0 duplicates,
+  0 faults, `displayed_total=23476`), and this time escrowed the small
+  hash/pointer record `bvp/data/meta/manifest_pin.json` durably — force-added
+  past the `bvp/data/` ignore, committed, and reachability-verified from a
+  fresh `origin/main` worktree before teardown
+  ([#175](https://github.com/gasyoun/IndologyScholars/pull/175)).
 
 ## [1.6.0] - 2026-08-06
 ### Added
