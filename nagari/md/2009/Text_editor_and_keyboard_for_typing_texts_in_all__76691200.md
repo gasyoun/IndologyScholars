@@ -17,34 +17,62 @@ source_url: https://groups.google.com/d/msgid/nagari/1e01d571-751b-4866-9219-708
 
 ## 1. Worga — 2009-10-25 15:31:40
 
-Here is found a nice tool for typing in देवनागरी -
-
-http://www.tanontech.net/kavitype/index.htm
-http://www.tanontech.net/download.htm
-
-The KaviType™ Text Editor and KaviType™ EveryWhere is a suite of
-software tools for typing in every Indic language and every Indic
-script within Windows.
-
-Purpose of the software
-
-The KaviType™ Text Editor is a text processing software designed
-primarily for typing texts using all possible combinations of Indic
-scripts like Devanāgarī, Bengali, Gujarati, Gurmukhi, Kannada,
-Malayalam, Oriya, Tamil, Telugu etc. within just one document.
-
-The Visual Keyboard within the KaviType™ Text Editor is also
-extensively used for educational purposes especially for children and
-students who are learning to type on a computer in their native
-language and in their native script.
-
-The KaviType™ EveryWhere allows typing in every Indic language within
-every Windows application which supports Unicode™, i.e. Microsoft
-Wordpad, Microsoft Notepad, Microsoft Word, Microsoft Excel, Microsoft
-Outlook and other Microsoft Office programs and diverse messaging
-clients and internet browsers.
-________________________________________________________________________________
-
+Here is found a nice tool for typing in देवनागरी -
+
+
+
+http://www.tanontech.net/kavitype/index.htm
+
+http://www.tanontech.net/download.htm
+
+
+
+The KaviType™ Text Editor and KaviType™ EveryWhere is a suite of
+
+software tools for typing in every Indic language and every Indic
+
+script within Windows.
+
+
+
+Purpose of the software
+
+
+
+The KaviType™ Text Editor is a text processing software designed
+
+primarily for typing texts using all possible combinations of Indic
+
+scripts like Devanāgarī, Bengali, Gujarati, Gurmukhi, Kannada,
+
+Malayalam, Oriya, Tamil, Telugu etc. within just one document.
+
+
+
+The Visual Keyboard within the KaviType™ Text Editor is also
+
+extensively used for educational purposes especially for children and
+
+students who are learning to type on a computer in their native
+
+language and in their native script.
+
+
+
+The KaviType™ EveryWhere allows typing in every Indic language within
+
+every Windows application which supports Unicode™, i.e. Microsoft
+
+Wordpad, Microsoft Notepad, Microsoft Word, Microsoft Excel, Microsoft
+
+Outlook and other Microsoft Office programs and diverse messaging
+
+clients and internet browsers.
+
+________________________________________________________________________________
+
+
+
 Is here someone who thinks that it is useful?
 
 ## 2. Сачков Сергей — 2009-10-25 16:28:49
@@ -215,81 +243,156 @@ On 4 Nov., 17:39, klaus <NVMORO...@…> wrote:
 
 ## 6. vladimir — 2009-11-05 11:26:53
 
-Лев, а вы пробовали установить Intranslator 2003? Он прекрасно переводит тексты набираемые посредством "интранса" и в "девангари", и "траслитерациию".
-Владимир.
-  ----- Original Message ----- 
-  From: Лев Титлин 
-  To: nagari@… 
-  Sent: Wednesday, November 04, 2009 11:11 PM
-  Subject: Re: Text editor and keyboard for typing texts in all possible combinations of Indic scripts
-
-
-  А смысл чото в программе не понимаю. Что, с визуальной клаиватурой Виндоус печатать хуже что ли?
-
-  Лучше бы сделали что-нибудь, чтобы с латинской транслитерацией санскрита (надстрочные знаки) не было проблем (установка шрифтов, и т.п. Ибо даже с Юникодом у многих проблемы (у кого система ниже Висты).
-
-
-  4 ноября 2009 г. 22:35 пользователь Worga <sworga@…> написал:
-
-    Как можно снести такую красоту (?):
-
-    http://storeimgs.com/show.php/43390_KaviType51.png.html
-
-    Я удивляюсь! Я пользуюсь этим редактором для печати всех текстов на
-    Деванагари потому что ну очень удобно. Вот уже и следующая версия на
-    подходе (как на скриншоте и даже ещё лучше):
-
-    http://www.tanontech.net/download/kavitype51.zip
-
-
-
-
-
-    On 4 Nov., 17:39, klaus <NVMORO...@…> wrote:
-    > Не понравилась мне KaviType™. Она даёт только виртуальную клавиатуру,
-    > которая и так есть в windows HP. Кроме того, она открывает себя и
-    > ставит свой значок внизу справа. Отключить можно только перезагрузкой.
-    > Снёс.
-    >
-    > On 25 окт, 14:31, Worga <swo...@…> wrote:
-    >
-    > > Here is found a nice tool for typing in देवनागरी -
-    >
-
-    > >http://www.tanontech.net/kavitype/index.htmhttp://www.tanontech.net/d...
-
-    >
-    > > The KaviType™ Text Editor and KaviType™ EveryWhere is a suite of
-    > > software tools for typing in every Indic language and every Indic
-    > > script within Windows.
-    >
-    > > Purpose of the software
-    >
-    > > The KaviType™ Text Editor is a text processing software designed
-    > > primarily for typing texts using all possible combinations of Indic
-    > > scripts like Devanāgarī, Bengali, Gujarati, Gurmukhi, Kannada,
-    > > Malayalam, Oriya, Tamil, Telugu etc. within just one document.
-    >
-    > > The Visual Keyboard within the KaviType™ Text Editor is also
-    > > extensively used for educational purposes especially for children and
-    > > students who are learning to type on a computer in their native
-    > > language and in their native script.
-    >
-    > > The KaviType™ EveryWhere allows typing in every Indic language within
-    > > every Windows application which supports Unicode™, i.e. Microsoft
-    > > Wordpad, Microsoft Notepad, Microsoft Word, Microsoft Excel, Microsoft
-    > > Outlook and other Microsoft Office programs and diverse messaging
-    > > clients and internet browsers.
-    > > ___________________________________________________________________________­_____
-    >
-    > > Is here someone who thinks that it is useful?
-
-
-
-
-
-  -- 
-  С уважением,
+Лев, а вы пробовали установить Intranslator 2003? Он прекрасно переводит тексты набираемые посредством "интранса" и в "девангари", и "траслитерациию".
+
+Владимир.
+
+  ----- Original Message ----- 
+
+  From: Лев Титлин 
+
+  To: nagari@… 
+
+  Sent: Wednesday, November 04, 2009 11:11 PM
+
+  Subject: Re: Text editor and keyboard for typing texts in all possible combinations of Indic scripts
+
+
+
+
+
+  А смысл чото в программе не понимаю. Что, с визуальной клаиватурой Виндоус печатать хуже что ли?
+
+
+
+  Лучше бы сделали что-нибудь, чтобы с латинской транслитерацией санскрита (надстрочные знаки) не было проблем (установка шрифтов, и т.п. Ибо даже с Юникодом у многих проблемы (у кого система ниже Висты).
+
+
+
+
+
+  4 ноября 2009 г. 22:35 пользователь Worga <sworga@…> написал:
+
+
+
+    Как можно снести такую красоту (?):
+
+
+
+    http://storeimgs.com/show.php/43390_KaviType51.png.html
+
+
+
+    Я удивляюсь! Я пользуюсь этим редактором для печати всех текстов на
+
+    Деванагари потому что ну очень удобно. Вот уже и следующая версия на
+
+    подходе (как на скриншоте и даже ещё лучше):
+
+
+
+    http://www.tanontech.net/download/kavitype51.zip
+
+
+
+
+
+
+
+
+
+
+
+    On 4 Nov., 17:39, klaus <NVMORO...@…> wrote:
+
+    > Не понравилась мне KaviType™. Она даёт только виртуальную клавиатуру,
+
+    > которая и так есть в windows HP. Кроме того, она открывает себя и
+
+    > ставит свой значок внизу справа. Отключить можно только перезагрузкой.
+
+    > Снёс.
+
+    >
+
+    > On 25 окт, 14:31, Worga <swo...@…> wrote:
+
+    >
+
+    > > Here is found a nice tool for typing in देवनागरी -
+
+    >
+
+
+
+    > >http://www.tanontech.net/kavitype/index.htmhttp://www.tanontech.net/d...
+
+
+
+    >
+
+    > > The KaviType™ Text Editor and KaviType™ EveryWhere is a suite of
+
+    > > software tools for typing in every Indic language and every Indic
+
+    > > script within Windows.
+
+    >
+
+    > > Purpose of the software
+
+    >
+
+    > > The KaviType™ Text Editor is a text processing software designed
+
+    > > primarily for typing texts using all possible combinations of Indic
+
+    > > scripts like Devanāgarī, Bengali, Gujarati, Gurmukhi, Kannada,
+
+    > > Malayalam, Oriya, Tamil, Telugu etc. within just one document.
+
+    >
+
+    > > The Visual Keyboard within the KaviType™ Text Editor is also
+
+    > > extensively used for educational purposes especially for children and
+
+    > > students who are learning to type on a computer in their native
+
+    > > language and in their native script.
+
+    >
+
+    > > The KaviType™ EveryWhere allows typing in every Indic language within
+
+    > > every Windows application which supports Unicode™, i.e. Microsoft
+
+    > > Wordpad, Microsoft Notepad, Microsoft Word, Microsoft Excel, Microsoft
+
+    > > Outlook and other Microsoft Office programs and diverse messaging
+
+    > > clients and internet browsers.
+
+    > > ___________________________________________________________________________­_____
+
+    >
+
+    > > Is here someone who thinks that it is useful?
+
+
+
+
+
+
+
+
+
+
+
+  -- 
+
+  С уважением,
+
   Лев Титлин
 
 ## 7. Лев Титлин — 2009-11-05 11:39:50

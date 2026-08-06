@@ -17,11 +17,18 @@ source_url: https://groups.google.com/d/msgid/nagari/c9517df7-4ef2-4601-b012-4f9
 
 ## 1. Mārcis — 2024-03-12 09:40:17
 
-Dandekar,Ramchandra Narayan  Vedic mythological tracts / R. N. Dandekar. - 
-Delhi : Ajanta, 1979. - 383, [5] p. - (Select writings /R. N. Dandekar; 1). 
-- Указ. с.371-383.
-
-Религии мира • Индуизм • История
-Философия • Индия • Древний период
-
+Dandekar,Ramchandra Narayan  Vedic mythological tracts / R. N. Dandekar. - 
+
+Delhi : Ajanta, 1979. - 383, [5] p. - (Select writings /R. N. Dandekar; 1). 
+
+- Указ. с.371-383.
+
+
+
+Религии мира • Индуизм • История
+
+Философия • Индия • Древний период
+
+
+
 см. https://vk.com/samskrtamru?w=wall-88831040_21174

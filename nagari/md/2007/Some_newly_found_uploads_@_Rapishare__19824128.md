@@ -499,102 +499,174 @@ If you spin an oriental man, does he become disoriented?
 
 ## 27. Duri — 2007-11-19 18:03:56
 
-I have figured out that WinDJView lets you enlarge the picture and
-move it around the page. No problem them, but thanks a lot to those
-who have helped me.
-
-On 2 Nov, 18:57, Duri <fabrizio.du...@…> wrote:
-> Some of these scans are really perfect. Too bad some of them have a
-> larger bottom margin than the top one. That makes it impossible to
-> bind them.
->
-> On 31 Ott, 15:34, Worga <swo...@…> wrote:
->
->
->
-> >  О сродстве языка славянского с санскритским
-> > (288 страниц)
-> > Составил А. Гильфердинг
-> > + филологические замечания К.А. Коссовича к данной работе (24
-> > страницы)
-> > Санкт-Петербург, Типография Императорской Академии Наук, 1853
->
-> > "About congeniality of Russian and Sanskrit" (288 pages)
-> > By A. Gilferding
-> > + philological comments (24 pages) by K. Kossovich
-> > All in Russian
-> > Academy of Sciences in Sankt-Petersburg, 1853
->
-> > Format: DjVu
-> > Size: 9 mb
->
-> >http://rapidshare.com/files/66496394/GilferdingOSrodstveRusskogoISans...- Nascondi testo tra virgolette -
->
+I have figured out that WinDJView lets you enlarge the picture and
+
+move it around the page. No problem them, but thanks a lot to those
+
+who have helped me.
+
+
+
+On 2 Nov, 18:57, Duri <fabrizio.du...@…> wrote:
+
+> Some of these scans are really perfect. Too bad some of them have a
+
+> larger bottom margin than the top one. That makes it impossible to
+
+> bind them.
+
+>
+
+> On 31 Ott, 15:34, Worga <swo...@…> wrote:
+
+>
+
+>
+
+>
+
+> >  О сродстве языка славянского с санскритским
+
+> > (288 страниц)
+
+> > Составил А. Гильфердинг
+
+> > + филологические замечания К.А. Коссовича к данной работе (24
+
+> > страницы)
+
+> > Санкт-Петербург, Типография Императорской Академии Наук, 1853
+
+>
+
+> > "About congeniality of Russian and Sanskrit" (288 pages)
+
+> > By A. Gilferding
+
+> > + philological comments (24 pages) by K. Kossovich
+
+> > All in Russian
+
+> > Academy of Sciences in Sankt-Petersburg, 1853
+
+>
+
+> > Format: DjVu
+
+> > Size: 9 mb
+
+>
+
+> >http://rapidshare.com/files/66496394/GilferdingOSrodstveRusskogoISans...- Nascondi testo tra virgolette -
+
+>
+
 > - Mostra testo tra virgolette -
 
 ## 28. danstender — 2007-11-21 10:14:37
 
-http://rapidshare.com/files/69666149/hoffman_-_indischer_und_deutscher_geist.djvu.html
+http://rapidshare.com/files/69666149/hoffman_-_indischer_und_deutscher_geist.djvu.html
+
 http://rapidshare.com/files/70145792/kirfel_-_briefwechsel_schlegel_lassen.djvu
 
 ## 29. danstender — 2007-11-23 06:02:52
 
-http://rapidshare.com/files/71199626/schirmer_-_schlegel_und_seine_zeit.djvu
-http://rapidshare.com/files/71625368/bareau_-_indischer_buddhismus.djvu
-
-http://www.uni-bonn.de/~uzstzm/
+http://rapidshare.com/files/71199626/schirmer_-_schlegel_und_seine_zeit.djvu
+
+http://rapidshare.com/files/71625368/bareau_-_indischer_buddhismus.djvu
+
+
+
+http://www.uni-bonn.de/~uzstzm/
+
 http://granthinam.blogspot.com/
 
 ## 30. Marcis — 2007-11-26 01:42:06
 
-Lieber Daniel,
-
-Wunderbar!
-Hier ist ein Buch von uns: http://rapidshare.com/files/72282611/Petrov-Nagari1865.pdf
-Klein ist es, aber von einen grossen Mann.
-
-On Nov 7, 10:13 pm, danstender <uzs...@…> wrote:
-> On Nov 4, 5:06 pm, danstender <uzs...@…> wrote:
->
-> > Vaidya, Para ur ma Lak mana (Ed.): Bodhicary vat ra of   ntideva with
-> > the commentary Pa jik  of Praj  karamati. Darbhanga: Mithila Institute
-> > of Post-graduate Studies and Research in Sanskrit Learning V.S. 1904
-> > (Buddhist Sanskrit Text 12).
->
+Lieber Daniel,
+
+
+
+Wunderbar!
+
+Hier ist ein Buch von uns: http://rapidshare.com/files/72282611/Petrov-Nagari1865.pdf
+
+Klein ist es, aber von einen grossen Mann.
+
+
+
+On Nov 7, 10:13 pm, danstender <uzs...@…> wrote:
+
+> On Nov 4, 5:06 pm, danstender <uzs...@…> wrote:
+
+>
+
+> > Vaidya, Para ur ma Lak mana (Ed.): Bodhicary vat ra of   ntideva with
+
+> > the commentary Pa jik  of Praj  karamati. Darbhanga: Mithila Institute
+
+> > of Post-graduate Studies and Research in Sanskrit Learning V.S. 1904
+
+> > (Buddhist Sanskrit Text 12).
+
+>
+
 > > experimental photography:http://rapidshare.com/files/67334200/bca-p_v_.djvu
 
 ## 31. danstender — 2007-12-09 23:05:52
 
-http://rapidshare.com/files/74307487/datta_-_libraries_ancient_medieval_india.djvu
-http://rapidshare.com/files/74676820/weller_-_index_bca.djvu (Yes!)
-http://rapidshare.com/files/74700864/bonner_gelehrte_sprachwissenschaften__teilw_.djvu
-
-Gruss,
+http://rapidshare.com/files/74307487/datta_-_libraries_ancient_medieval_india.djvu
+
+http://rapidshare.com/files/74676820/weller_-_index_bca.djvu (Yes!)
+
+http://rapidshare.com/files/74700864/bonner_gelehrte_sprachwissenschaften__teilw_.djvu
+
+
+
+Gruss,
+
 DS
 
 ## 32. danstender — 2007-12-17 23:00:04
 
-http://rapidshare.com/files/77020268/leifer_-_india_and_the_germans.djvu
-http://rapidshare.com/files/76940003/sakya_-_pracalita_nepala_lipi_varna_mala.pdf
-http://rapidshare.com/files/77153775/sakya_-_nepala_lipi_samgraha.djvu
-http://rapidshare.com/files/77165967/rajavamsi_-_pracina_lipi_varnamala.djvu
-http://rapidshare.com/files/77260132/lienhard_-_nepalese_mss_introduction.djvu
-
-Greetings,
+http://rapidshare.com/files/77020268/leifer_-_india_and_the_germans.djvu
+
+http://rapidshare.com/files/76940003/sakya_-_pracalita_nepala_lipi_varna_mala.pdf
+
+http://rapidshare.com/files/77153775/sakya_-_nepala_lipi_samgraha.djvu
+
+http://rapidshare.com/files/77165967/rajavamsi_-_pracina_lipi_varnamala.djvu
+
+http://rapidshare.com/files/77260132/lienhard_-_nepalese_mss_introduction.djvu
+
+
+
+Greetings,
+
 Daniel Stender
 
 ## 33. Marcis — 2007-12-18 11:38:16
 
-What are the lipi books about? Just MSS or some sort of calligraphy?
-The files are huge sometimes and it would be great if you could add 1
-or 2 words about every book, thanyavad in advance,
-
- Namonamah, M.
-
-On Dec 18, 2:00 am, danstender <uzs...@…> wrote:
-> http://rapidshare.com/files/77020268/leifer_-_india_and_the_germans.djvuhttp://rapidshare.com/files/76940003/sakya_-_pracalita_nepala_lipi_va...http://rapidshare.com/files/77153775/sakya_-_nepala_lipi_samgraha.djvuhttp://rapidshare.com/files/77165967/rajavamsi_-_pracina_lipi_varnama...http://rapidshare.com/files/77260132/lienhard_-_nepalese_mss_introduc...
->
-> Greetings,
+What are the lipi books about? Just MSS or some sort of calligraphy?
+
+The files are huge sometimes and it would be great if you could add 1
+
+or 2 words about every book, thanyavad in advance,
+
+
+
+ Namonamah, M.
+
+
+
+On Dec 18, 2:00 am, danstender <uzs...@…> wrote:
+
+> http://rapidshare.com/files/77020268/leifer_-_india_and_the_germans.djvuhttp://rapidshare.com/files/76940003/sakya_-_pracalita_nepala_lipi_va...http://rapidshare.com/files/77153775/sakya_-_nepala_lipi_samgraha.djvuhttp://rapidshare.com/files/77165967/rajavamsi_-_pracina_lipi_varnama...http://rapidshare.com/files/77260132/lienhard_-_nepalese_mss_introduc...
+
+>
+
+> Greetings,
+
 > Daniel Stender
 
 ## 34. Simurg Gamayun — 2007-12-19 02:02:44
@@ -618,24 +690,42 @@ the book which reference is marked to.
 
 ## 35. Worga — 2007-12-21 12:18:51
 
-Franz Bopp
-A Comparative Grammar of the Sanskrit Zend, Greek, Latin, Lithuanian,
-Gothic, German and Sclavonic Languages
-
-Synopsis
-1845. Conducted through the press by H.H. Wilson. Bopp, German
-philologist, conducted research in many languages and earned a great
-reputation as a scholar by demonstrating the relationship of the Indo-
-European languages in his Comparative Grammar.
-
-Volume 1 ~ 23 mb
-Volume 2 ~ 26 mb
-Volume 3 ~ 40 mb
-
-DLI scans
-
-http://rapidshare.com/files/77991873/BoppComparativeGrammarVolume1.djvu
-http://rapidshare.com/files/77987012/BoppComparativeGrammarVolume2.djvu
+Franz Bopp
+
+A Comparative Grammar of the Sanskrit Zend, Greek, Latin, Lithuanian,
+
+Gothic, German and Sclavonic Languages
+
+
+
+Synopsis
+
+1845. Conducted through the press by H.H. Wilson. Bopp, German
+
+philologist, conducted research in many languages and earned a great
+
+reputation as a scholar by demonstrating the relationship of the Indo-
+
+European languages in his Comparative Grammar.
+
+
+
+Volume 1 ~ 23 mb
+
+Volume 2 ~ 26 mb
+
+Volume 3 ~ 40 mb
+
+
+
+DLI scans
+
+
+
+http://rapidshare.com/files/77991873/BoppComparativeGrammarVolume1.djvu
+
+http://rapidshare.com/files/77987012/BoppComparativeGrammarVolume2.djvu
+
 http://rapidshare.com/files/77990179/BoppComparativeGrammarVolume3.pdf
 
 ## 36. narayan prasad — 2007-12-21 13:39:00
@@ -736,109 +826,196 @@ Thanks so much.
 
 ## 39. Worga — 2007-12-21 22:01:03
 
-As requested once again
-everything is in DjVu format
-
-Franz Bopp
-A Comparative Grammar of the Sanskrit Zend, Greek, Latin, Lithuanian,
-Gothic, German and Sclavonic Languages
-
-Synopsis
-1845. Conducted through the press by H.H. Wilson. Bopp, German
-philologist, conducted research in many languages and earned a great
-reputation as a scholar by demonstrating the relationship of the
-Indo-
-European languages in his Comparative Grammar.
-
-
-Volume 1 ~ 23 mb
-Volume 2 ~ 26 mb
-Volume 3 ~ 26 mb
-
-
-DLI scans
-
-
-http://rapidshare.com/files/77991873/BoppComparativeGrammarVolume1.djvu
-http://rapidshare.com/files/77987012/BoppComparativeGrammarVolume2.djvu
+As requested once again
+
+everything is in DjVu format
+
+
+
+Franz Bopp
+
+A Comparative Grammar of the Sanskrit Zend, Greek, Latin, Lithuanian,
+
+Gothic, German and Sclavonic Languages
+
+
+
+Synopsis
+
+1845. Conducted through the press by H.H. Wilson. Bopp, German
+
+philologist, conducted research in many languages and earned a great
+
+reputation as a scholar by demonstrating the relationship of the
+
+Indo-
+
+European languages in his Comparative Grammar.
+
+
+
+
+
+Volume 1 ~ 23 mb
+
+Volume 2 ~ 26 mb
+
+Volume 3 ~ 26 mb
+
+
+
+
+
+DLI scans
+
+
+
+
+
+http://rapidshare.com/files/77991873/BoppComparativeGrammarVolume1.djvu
+
+http://rapidshare.com/files/77987012/BoppComparativeGrammarVolume2.djvu
+
 http://rapidshare.com/files/78151349/BoppComparativeGrammarVolume3.djvu
 
 ## 40. Worga — 2007-12-26 17:07:17
 
-Title: Concise dictionary of the Hindi language - Hindi/English
-edition
-Author: prof. R.C. Pathak
-Year: 1949
-Format: PDF
-Size: ~42 mb
-Publisher: Bhargava book depot chowk, Varanasi
-DLI scan
-
+Title: Concise dictionary of the Hindi language - Hindi/English
+
+edition
+
+Author: prof. R.C. Pathak
+
+Year: 1949
+
+Format: PDF
+
+Size: ~42 mb
+
+Publisher: Bhargava book depot chowk, Varanasi
+
+DLI scan
+
+
+
 http://rapidshare.com/files/79157955/ConsiseHindiEnglishDictionary1949.pdf
 
 ## 41. danstender — 2008-01-02 18:23:01
 
-http://rapidshare.com/files/78264376/bori_gita.djvu
-(Belvalkar, S.K. (Ed.): Bhagavadgita. Reprint from B.O.R. Institutes
-edition of the Mbh. 2nd Edition. Poona 1968)
-
-http://rapidshare.com/files/78264505/soerensen_-_mhb_concordance.djvu
-(S. Soerensen: Index to the Names in the Mahabharata. Concordance to
-the
-Bombay and Calcutta Editions [pp. X-XLI]. Delhi 1963)
--- saw page sequence mess, fix yourself or wait for update coming soon
---
-
-http://rapidshare.com/files/79473038/hunter_-_life_of_hodgson.djvu
-(W.W. Hunter: Life of B.H. Hodgson. London 1896 [Reprint])
-
-http://rapidshare.com/files/79803990/yuyama_-_buddhist_sanskrit_ms_collections.djvu
-(Akira Yuyama: Buddhist Sanskrit Manuscript Collections. Tokyo 1992)
-
-http://rapidshare.com/files/75663116/siddhantakaumudi_balamanorama_tattvabodhini_1.djvu
-http://rapidshare.com/files/80383161/siddhantakaumudi_balamanorama_tattvabodhini_2.djvu
-(Vaiyakaranasiddhantakaumudi with Balamanorama and Tattvabodhini. 4.
-Vol. 1997, 1+2)
-
-Happy new year,
+http://rapidshare.com/files/78264376/bori_gita.djvu
+
+(Belvalkar, S.K. (Ed.): Bhagavadgita. Reprint from B.O.R. Institutes
+
+edition of the Mbh. 2nd Edition. Poona 1968)
+
+
+
+http://rapidshare.com/files/78264505/soerensen_-_mhb_concordance.djvu
+
+(S. Soerensen: Index to the Names in the Mahabharata. Concordance to
+
+the
+
+Bombay and Calcutta Editions [pp. X-XLI]. Delhi 1963)
+
+-- saw page sequence mess, fix yourself or wait for update coming soon
+
+--
+
+
+
+http://rapidshare.com/files/79473038/hunter_-_life_of_hodgson.djvu
+
+(W.W. Hunter: Life of B.H. Hodgson. London 1896 [Reprint])
+
+
+
+http://rapidshare.com/files/79803990/yuyama_-_buddhist_sanskrit_ms_collections.djvu
+
+(Akira Yuyama: Buddhist Sanskrit Manuscript Collections. Tokyo 1992)
+
+
+
+http://rapidshare.com/files/75663116/siddhantakaumudi_balamanorama_tattvabodhini_1.djvu
+
+http://rapidshare.com/files/80383161/siddhantakaumudi_balamanorama_tattvabodhini_2.djvu
+
+(Vaiyakaranasiddhantakaumudi with Balamanorama and Tattvabodhini. 4.
+
+Vol. 1997, 1+2)
+
+
+
+Happy new year,
+
 Daniel Stender
 
 ## 42. danstender — 2008-01-15 21:09:26
 
-D.P. Hill: The holy lake of the acts of Rama. An english translation
-of Tulasi Das's Ramacaritamanasa. Oxford 1952 (Reprint)
-http://rapidshare.com/files/82236091/ramcaritmanas_uebers_hill.djvu
-
-E. Conze: Buddhist scriptures. A bibliography. New York (usw.) 1982
-http://rapidshare.com/files/82699565/conze_-_buddhist_scriptures.djvu
-
-S. Soerensen: Index to the Names in the Mahabharata. Concordance to
-the Bombay and Calcutta Editions [pp. X-XLI]. Delhi 1963
-http://rapidshare.com/files/82933683/soerensen_-_mhb_concordance.djvu
-
-C. Vogel (Ed.): Vagbhata's Astangahrdayasamhita. The first five
-chapters of its Tibetan version. Edited and rendered into English
-along with the original Sanskrit. Wiesbaden 1965.
+D.P. Hill: The holy lake of the acts of Rama. An english translation
+
+of Tulasi Das's Ramacaritamanasa. Oxford 1952 (Reprint)
+
+http://rapidshare.com/files/82236091/ramcaritmanas_uebers_hill.djvu
+
+
+
+E. Conze: Buddhist scriptures. A bibliography. New York (usw.) 1982
+
+http://rapidshare.com/files/82699565/conze_-_buddhist_scriptures.djvu
+
+
+
+S. Soerensen: Index to the Names in the Mahabharata. Concordance to
+
+the Bombay and Calcutta Editions [pp. X-XLI]. Delhi 1963
+
+http://rapidshare.com/files/82933683/soerensen_-_mhb_concordance.djvu
+
+
+
+C. Vogel (Ed.): Vagbhata's Astangahrdayasamhita. The first five
+
+chapters of its Tibetan version. Edited and rendered into English
+
+along with the original Sanskrit. Wiesbaden 1965.
+
 http://rapidshare.com/files/83022260/vogel_-_astangahrdayasamhita.djvu
 
 ## 43. Marcis — 2008-01-18 03:58:16
 
-I'm no fan of Tulsidas and Conze, but Soerensen is great!
-
-Название: Henry-Elements1902.pdf Размер: 1.78 Мб
-http://sanskrit.ifolder.ru/4995047 Доступен до: 2008-02-17 03:56:47
-
-On 16 янв, 00:09, danstender <uzs...@…> wrote:
-> D.P. Hill: The holy lake of the acts of Rama. An english translation
-> of Tulasi Das's Ramacaritamanasa. Oxford 1952 (Reprint)http://rapidshare.com/files/82236091/ramcaritmanas_uebers_hill.djvu
->
-> E. Conze: Buddhist scriptures. A bibliography. New York (usw.) 1982http://rapidshare.com/files/82699565/conze_-_buddhist_scriptures.djvu
->
-> S. Soerensen: Index to the Names in the Mahabharata. Concordance to
-> the Bombay and Calcutta Editions [pp. X-XLI]. Delhi 1963http://rapidshare.com/files/82933683/soerensen_-_mhb_concordance.djvu
->
-> C. Vogel (Ed.): Vagbhata's Astangahrdayasamhita. The first five
-> chapters of its Tibetan version. Edited and rendered into English
+I'm no fan of Tulsidas and Conze, but Soerensen is great!
+
+
+
+Название: Henry-Elements1902.pdf Размер: 1.78 Мб
+
+http://sanskrit.ifolder.ru/4995047 Доступен до: 2008-02-17 03:56:47
+
+
+
+On 16 янв, 00:09, danstender <uzs...@…> wrote:
+
+> D.P. Hill: The holy lake of the acts of Rama. An english translation
+
+> of Tulasi Das's Ramacaritamanasa. Oxford 1952 (Reprint)http://rapidshare.com/files/82236091/ramcaritmanas_uebers_hill.djvu
+
+>
+
+> E. Conze: Buddhist scriptures. A bibliography. New York (usw.) 1982http://rapidshare.com/files/82699565/conze_-_buddhist_scriptures.djvu
+
+>
+
+> S. Soerensen: Index to the Names in the Mahabharata. Concordance to
+
+> the Bombay and Calcutta Editions [pp. X-XLI]. Delhi 1963http://rapidshare.com/files/82933683/soerensen_-_mhb_concordance.djvu
+
+>
+
+> C. Vogel (Ed.): Vagbhata's Astangahrdayasamhita. The first five
+
+> chapters of its Tibetan version. Edited and rendered into English
+
 > along with the original Sanskrit. Wiesbaden 1965.http://rapidshare.com/files/83022260/vogel_-_astangahrdayasamhita.djvu
 
 ## 44. Simurg Gamayun — 2008-01-19 20:27:25
@@ -859,42 +1036,62 @@ book being edited in Germany.
 
 ## 46. danstender — 2008-02-24 12:34:56
 
-http://rapidshare.com/files/94039532/bhs_grammar.djvu (Edgerton)
-
-http://rapidshare.com/files/94221253/slusser.part1.rar
-http://rapidshare.com/files/94225830/slusser.part2.rar
-M.S. Slusser: Nepal Mandala. A cultural study of the Kathmandu Valley.
+http://rapidshare.com/files/94039532/bhs_grammar.djvu (Edgerton)
+
+
+
+http://rapidshare.com/files/94221253/slusser.part1.rar
+
+http://rapidshare.com/files/94225830/slusser.part2.rar
+
+M.S. Slusser: Nepal Mandala. A cultural study of the Kathmandu Valley.
+
 2 vol. Princeton 1982.
 
 ## 47. Marcis — 2008-02-25 08:28:53
 
-Edgerton, Grammatik, hurra!
-
-On 24 фев, 15:34, danstender <uzs...@…> wrote:
+Edgerton, Grammatik, hurra!
+
+
+
+On 24 фев, 15:34, danstender <uzs...@…> wrote:
+
 > http://rapidshare.com/files/94039532/bhs_grammar.djvu(Edgerton)
 
 ## 48. danstender — 2008-02-28 22:28:03
 
-http://rapidshare.com/files/95700927/bhs_dictionary.djvu (Edgerton)
-
-Enjoy!
+http://rapidshare.com/files/95700927/bhs_dictionary.djvu (Edgerton)
+
+
+
+Enjoy!
+
 DS
 
 ## 49. danstender — 2008-03-19 13:39:24
 
-http://rapidshare.com/files/100055966/andersen_-_pali_reader_glossary.djvu
+http://rapidshare.com/files/100055966/andersen_-_pali_reader_glossary.djvu
+
 http://rapidshare.com/files/100058847/waldschmidt_-_mahaparinirvanasutra.djvu
 
 ## 50. danstender — 2008-04-18 20:25:40
 
-http://rapidshare.com/files/104305498/bloch_-_inscriptions_d_asoka.djvu
-http://rapidshare.com/files/104333268/allchin_norman_-_guide_to_asoka_inscriptions.djvu
-http://rapidshare.com/files/108514633/janert_-_abstaende_schlussvokalbezeichnungen.djvu
-(towards Asoka Inscriptions, too)
-http://rapidshare.com/files/107755876/sircar_-_glossary.djvu (Indian
-Epigraphical Glossary)
-
-Enjoy,
+http://rapidshare.com/files/104305498/bloch_-_inscriptions_d_asoka.djvu
+
+http://rapidshare.com/files/104333268/allchin_norman_-_guide_to_asoka_inscriptions.djvu
+
+http://rapidshare.com/files/108514633/janert_-_abstaende_schlussvokalbezeichnungen.djvu
+
+(towards Asoka Inscriptions, too)
+
+http://rapidshare.com/files/107755876/sircar_-_glossary.djvu (Indian
+
+Epigraphical Glossary)
+
+
+
+Enjoy,
+
 Daniel Stender
 
 ## 51. Worga — 2008-04-30 01:31:08

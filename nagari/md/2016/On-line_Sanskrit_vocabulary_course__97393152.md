@@ -55,6 +55,8 @@ https://loftylearning.com/
 
 ## 3. Mandala Pati (Владислав) — 2016-03-11 17:50:05
 
-Сделал небольшую видео презентацию этого курса:
-
+Сделал небольшую видео презентацию этого курса:
+
+
+
 https://www.youtube.com/watch?v=_8iMTpHjWFM&index=75&list=PLWKzPq-N-pwDXwKjQ7CMfiQLGR6W7P4TP

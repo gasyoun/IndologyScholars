@@ -29,35 +29,64 @@ http://samskrtam.ru - учи санскрит, в раю никто не гов�
 
 ## 2. Евгений Уланский — 2019-12-05 13:37:33
 
-Виталий, так может в книге неправильно
-
-чт, 5 дек. 2019 г., 13:29 tvitaly1 <tvitaly66@…>:
-
-> https://vk.com/samskrtamru https://www.facebook.com/samskrtamru
-> http://samskrtam.ru - учи санскрит, в раю никто не говорит по-русски!
-> Помогите очистить словари http://www.sanskrit-lexicon.uni-koeln.de от
-> мусора! Регистрируйтесь на https://github.com/sanskrit-lexicon/
->
-> Неприятные вещи,конечно. Я им посылал сообщение, правда без регистрации,
-> но кнопка та есть и не для зарегистрированных. Ноль внимание, как были
-> разночтения для статьи vida, так они и остались.
-> Неприятно все это! Подробности в графическом файле.
->
->
-> --
-> Чтобы отменить подписку на группу, посвященную санскриту,
-> отправьте сообщение по адресу - мы поймем, простим даже:
-> Nagari-unsubscribe@…
-> ---
-> Вы получили это сообщение, поскольку подписаны на группу "Общество
-> ревнителей санскрита (Sanscrit)".
-> Чтобы отменить подписку на эту группу и больше не получать от нее
-> сообщения, отправьте письмо на электронный адрес
-> nagari+unsubscribe@….
-> Чтобы посмотреть обсуждение на веб-странице, перейдите по ссылке
-> https://groups.google.com/d/msgid/nagari/d876fb58-2c6b-4b60-83ff-d5d9e80ea660%40googlegroups.com
-> <https://groups.google.com/d/msgid/nagari/d876fb58-2c6b-4b60-83ff-d5d9e80ea660%40googlegroups.com?utm_medium=email&utm_source=footer>
-> .
+Виталий, так может в книге неправильно
+
+
+
+чт, 5 дек. 2019 г., 13:29 tvitaly1 <tvitaly66@…>:
+
+
+
+> https://vk.com/samskrtamru https://www.facebook.com/samskrtamru
+
+> http://samskrtam.ru - учи санскрит, в раю никто не говорит по-русски!
+
+> Помогите очистить словари http://www.sanskrit-lexicon.uni-koeln.de от
+
+> мусора! Регистрируйтесь на https://github.com/sanskrit-lexicon/
+
+>
+
+> Неприятные вещи,конечно. Я им посылал сообщение, правда без регистрации,
+
+> но кнопка та есть и не для зарегистрированных. Ноль внимание, как были
+
+> разночтения для статьи vida, так они и остались.
+
+> Неприятно все это! Подробности в графическом файле.
+
+>
+
+>
+
+> --
+
+> Чтобы отменить подписку на группу, посвященную санскриту,
+
+> отправьте сообщение по адресу - мы поймем, простим даже:
+
+> Nagari-unsubscribe@…
+
+> ---
+
+> Вы получили это сообщение, поскольку подписаны на группу "Общество
+
+> ревнителей санскрита (Sanscrit)".
+
+> Чтобы отменить подписку на эту группу и больше не получать от нее
+
+> сообщения, отправьте письмо на электронный адрес
+
+> nagari+unsubscribe@….
+
+> Чтобы посмотреть обсуждение на веб-странице, перейдите по ссылке
+
+> https://groups.google.com/d/msgid/nagari/d876fb58-2c6b-4b60-83ff-d5d9e80ea660%40googlegroups.com
+
+> <https://groups.google.com/d/msgid/nagari/d876fb58-2c6b-4b60-83ff-d5d9e80ea660%40googlegroups.com?utm_medium=email&utm_source=footer>
+
+> .
+
 >
 
 ## 3. tvitaly1 — 2019-12-05 13:45:11
@@ -196,16 +225,26 @@ On Thursday, December 5, 2019 at 1:29:40 PM UTC+3, tvitaly1 wrote:
 
 ## 7. tvitaly1 — 2019-12-18 19:14:53
 
->
-> Ну СЛАВА БОГУ, исправили и поблагодарили!
->
-
-"Respected Sir,
-We have incorporated the corrections to Wilson dictionary submitted by you 
-on 5 December 2019.
-WIL 35063 विद वेदे) To know. वेदि) To know. वेदे
-WIL 35064 विद् विट् to know विद् to know विट्
-Thank you very much.
+>
+
+> Ну СЛАВА БОГУ, исправили и поблагодарили!
+
+>
+
+
+
+"Respected Sir,
+
+We have incorporated the corrections to Wilson dictionary submitted by you 
+
+on 5 December 2019.
+
+WIL 35063 विद वेदे) To know. वेदि) To know. वेदे
+
+WIL 35064 विद् विट् to know विद् to know विट्
+
+Thank you very much.
+
 We look forward to your suggestions and corrections. "
 
 ## 8. Serge A — 2019-12-18 21:14:25

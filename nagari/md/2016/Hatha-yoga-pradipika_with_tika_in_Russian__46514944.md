@@ -100,30 +100,54 @@ On Sunday, February 21, 2016 at 10:50:38 PM UTC+5:30, Radim Navyan wrote:
 
 ## 4. Radim Navyan — 2016-02-22 10:33:00
 
-22.02.2016 11:37, Usha Sanka пишет:
-> Namaste
-> After long time. Happy to see you back.. :)
-Missed you too. Life has changed, new tasks, new responsibilities, zero 
-free time.
-> Seems to be great work..indeed!
-Thanks.
-> Got typos checked?
-It's everlasting process. Actually I've already made a couple of 
-corrections in पद–विभाग.
-> All fine- but for the breaking of Mulam text (in red). Since पदविभाग 
-> is separately given (as a part of the word to word meaning - i.e. 
-> प्रतिपदार्थ) मूलम् should have been kept unbroken.. or one more line could 
-> be added in smaller print for पदविभाग.. below the Mulam.
-I see. It was expected. What can I say for my "defence"?) This paper is 
-for educational purposes, not  scientific. I try to make some 
-ready-to-read texts for beginners. For the sake of this I propose 
-simplified (un-sandhi-ed) sanskrit writing. I've already made a huge 
-amount of texts in this style and additional lines would be just like a 
-burden. Furthermore, the mulam itself in classic presentation  is 
-available in Internet for any of those, who disagree with my pedagogics.
-
-> (Just tried to say something.. nothing hard. Had enough fights on this 
-> matter. Just a suggestion.)
+22.02.2016 11:37, Usha Sanka пишет:
+
+> Namaste
+
+> After long time. Happy to see you back.. :)
+
+Missed you too. Life has changed, new tasks, new responsibilities, zero 
+
+free time.
+
+> Seems to be great work..indeed!
+
+Thanks.
+
+> Got typos checked?
+
+It's everlasting process. Actually I've already made a couple of 
+
+corrections in पद–विभाग.
+
+> All fine- but for the breaking of Mulam text (in red). Since पदविभाग 
+
+> is separately given (as a part of the word to word meaning - i.e. 
+
+> प्रतिपदार्थ) मूलम् should have been kept unbroken.. or one more line could 
+
+> be added in smaller print for पदविभाग.. below the Mulam.
+
+I see. It was expected. What can I say for my "defence"?) This paper is 
+
+for educational purposes, not  scientific. I try to make some 
+
+ready-to-read texts for beginners. For the sake of this I propose 
+
+simplified (un-sandhi-ed) sanskrit writing. I've already made a huge 
+
+amount of texts in this style and additional lines would be just like a 
+
+burden. Furthermore, the mulam itself in classic presentation  is 
+
+available in Internet for any of those, who disagree with my pedagogics.
+
+
+
+> (Just tried to say something.. nothing hard. Had enough fights on this 
+
+> matter. Just a suggestion.)
+
 That's OK, really.
 
 ## 5. Dmitri — 2016-02-22 20:08:12
@@ -153,39 +177,70 @@ On Sunday, February 21, 2016 at 10:20:38 AM UTC-7, Radim Navyan wrote:
 
 ## 6. Radim Navyan — 2016-02-22 21:24:03
 
-22.02.2016 22:08, Dmitri пишет:
-> А что же такое это особое усилие prayatna?
-Я бы ответил так: контроль над процессом дыхания со стороны воли. За 
-счёт этого дыхание в любом случае получается иным, нежели когда мы дышим 
+22.02.2016 22:08, Dmitri пишет:
+
+> А что же такое это особое усилие prayatna?
+
+Я бы ответил так: контроль над процессом дыхания со стороны воли. За 
+
+счёт этого дыхание в любом случае получается иным, нежели когда мы дышим 
+
 в обычном, неконтролируемом режиме.
 
 ## 7. Radim Navyan — 2016-02-28 21:51:51
 
-The total block of shat-karmas from Hatha-yoga-pradipika with my 
-translation deposited here:
-
-(1) Intro (2:21-23)
-https://www.academia.edu/22470218/Shatkarma_Intro_from_Hatka-yoga-pradipika_with_tika
-
-(2) Dhauti (2:24-25)
-https://www.academia.edu/22488082/Dhauti_from_Hatha-yoga-pradipika_with_tika
-
-(3) Basti (2:26-28)
-https://www.academia.edu/22550278/Basti_from_Hatha-yoga-pradipika_with_tika
-
-(4) Neti (2:29-30)
-https://www.academia.edu/22550333/Neti_from_Hatha-yoga-pradipika_with_tika
-
-(5) Trataka (2:31-32)
-https://www.academia.edu/22550385/Trataka_from_Hatha-yoga-pradipika_with_tika
-
-(6) Nauli (2:33-34)
-https://www.academia.edu/22377681/Nauli-kriya_from_Hatha-yoga-pradipika_with_tika
-
-(7) Kapalabhati (2:35)
-https://www.academia.edu/22550398/Kapalabhati_from_Hatha-yoga-pradipika_with_tika
-
-(8) Outro (2:36-37)
-https://www.academia.edu/22550451/Shatkarmas_fruit_from_Hatha-yoga-pradipika_with_tika
-
+The total block of shat-karmas from Hatha-yoga-pradipika with my 
+
+translation deposited here:
+
+
+
+(1) Intro (2:21-23)
+
+https://www.academia.edu/22470218/Shatkarma_Intro_from_Hatka-yoga-pradipika_with_tika
+
+
+
+(2) Dhauti (2:24-25)
+
+https://www.academia.edu/22488082/Dhauti_from_Hatha-yoga-pradipika_with_tika
+
+
+
+(3) Basti (2:26-28)
+
+https://www.academia.edu/22550278/Basti_from_Hatha-yoga-pradipika_with_tika
+
+
+
+(4) Neti (2:29-30)
+
+https://www.academia.edu/22550333/Neti_from_Hatha-yoga-pradipika_with_tika
+
+
+
+(5) Trataka (2:31-32)
+
+https://www.academia.edu/22550385/Trataka_from_Hatha-yoga-pradipika_with_tika
+
+
+
+(6) Nauli (2:33-34)
+
+https://www.academia.edu/22377681/Nauli-kriya_from_Hatha-yoga-pradipika_with_tika
+
+
+
+(7) Kapalabhati (2:35)
+
+https://www.academia.edu/22550398/Kapalabhati_from_Hatha-yoga-pradipika_with_tika
+
+
+
+(8) Outro (2:36-37)
+
+https://www.academia.edu/22550451/Shatkarmas_fruit_from_Hatha-yoga-pradipika_with_tika
+
+
+
 Enjoy.

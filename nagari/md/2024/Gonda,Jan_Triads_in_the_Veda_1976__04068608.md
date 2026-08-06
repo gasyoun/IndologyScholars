@@ -17,14 +17,24 @@ source_url: https://groups.google.com/d/msgid/nagari/894c3914-87c6-4bdd-8aab-914
 
 ## 1. Mārcis — 2024-01-21 18:14:44
 
-Gonda,Jan  Triads in the Veda / By J. Gonda. - Amsterdam [a.o.] : 
-North-Holland publ.co., 1976. - 246 p. - (Verhandelingen der Koninklijke 
-Nederlandse Akad. van wetenschappen. Afd. letterkunde. Nieuwe reeks; Deel 
-91). - Указ. с.232-246.
-
-Различные аспекты троичности (триады божеств, три социальные страты и т.п.) 
-в Ведах - древнейшем памятнике индийской религиозной литературы ;
-
-Религии мира • Индуизм • Индия
-
+Gonda,Jan  Triads in the Veda / By J. Gonda. - Amsterdam [a.o.] : 
+
+North-Holland publ.co., 1976. - 246 p. - (Verhandelingen der Koninklijke 
+
+Nederlandse Akad. van wetenschappen. Afd. letterkunde. Nieuwe reeks; Deel 
+
+91). - Указ. с.232-246.
+
+
+
+Различные аспекты троичности (триады божеств, три социальные страты и т.п.) 
+
+в Ведах - древнейшем памятнике индийской религиозной литературы ;
+
+
+
+Религии мира • Индуизм • Индия
+
+
+
 см. https://vk.com/samskrtamru?w=wall-88831040_20929

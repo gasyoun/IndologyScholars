@@ -81,186 +81,342 @@ wrote:
 
 ## 5. Mandala Pati (Владислав) — 2015-01-28 22:44:05
 
-Может у вас и "дхарма-коша" в шести томах есть?
+Может у вас и "дхарма-коша" в шести томах есть?
+
 http://www.exoticindiaart.com/book/details/dharmakosa-rajanitikanda-sanskrit-only-in-six-volumes-most-voluminous-encyclopedia-on-ideals-of-indian-politics-NAB945/
 
 ## 6. Marcis — 2015-01-29 10:24:32
 
-Только шеститомник 
-на https://www.scribd.com/doc/106529463/History-of-Dharmashastra-Ancient-and-Medieval-Religious-and-Civil-Law-v-kane-Poona-1946-600dpi-Jbig2-Losssless 
-- читал, что считается наиболее авторитетным именно он.
-
-On Wednesday, 28 January 2015 22:44:05 UTC+3, Mandala Pati (Владислав) 
-wrote:
->
-> Может у вас и "дхарма-коша" в шести томах есть?
->
-> http://www.exoticindiaart.com/book/details/dharmakosa-rajanitikanda-sanskrit-only-in-six-volumes-most-voluminous-encyclopedia-on-ideals-of-indian-politics-NAB945/
->
+Только шеститомник 
+
+на https://www.scribd.com/doc/106529463/History-of-Dharmashastra-Ancient-and-Medieval-Religious-and-Civil-Law-v-kane-Poona-1946-600dpi-Jbig2-Losssless 
+
+- читал, что считается наиболее авторитетным именно он.
+
+
+
+On Wednesday, 28 January 2015 22:44:05 UTC+3, Mandala Pati (Владислав) 
+
+wrote:
+
+>
+
+> Может у вас и "дхарма-коша" в шести томах есть?
+
+>
+
+> http://www.exoticindiaart.com/book/details/dharmakosa-rajanitikanda-sanskrit-only-in-six-volumes-most-voluminous-encyclopedia-on-ideals-of-indian-politics-NAB945/
+
+>
+
 >
 
 ## 7. doc — 2015-01-29 12:33:35
 
-Password please. Scribd wants a login and pwd t access the data
-Many thanks
-
-2015-01-29 12:54 GMT+05:30 Marcis <gasyoun@…>:
-
-> Только шеститомник на
-> https://www.scribd.com/doc/106529463/History-of-Dharmashastra-Ancient-and-Medieval-Religious-and-Civil-Law-v-kane-Poona-1946-600dpi-Jbig2-Losssless
-> - читал, что считается наиболее авторитетным именно он.
->
-> On Wednesday, 28 January 2015 22:44:05 UTC+3, Mandala Pati (Владислав)
-> wrote:
->>
->> Может у вас и "дхарма-коша" в шести томах есть?
->> http://www.exoticindiaart.com/book/details/dharmakosa-
->> rajanitikanda-sanskrit-only-in-six-volumes-most-
->> voluminous-encyclopedia-on-ideals-of-indian-politics-NAB945/
->>
->>  --
-> Чтобы отменить подписку на группу, посвященную санскриту,
-> отправьте сообщение по адресу - мы поймем, простим даже:
-> Nagari-unsubscribe@…
-> ---
-> Вы получили это сообщение, поскольку подписаны на группу "Общество
-> ревнителей санскрита (Sanscrit)".
-> Чтобы отменить подписку на эту группу и больше не получать от нее
-> сообщения, отправьте письмо на электронный адрес
-> nagari+unsubscribe@….
-> Чтобы настроить другие параметры, перейдите по ссылке
-> https://groups.google.com/d/optout.
->
-
-
-
--- 
-Best regards,
-
+Password please. Scribd wants a login and pwd t access the data
+
+Many thanks
+
+
+
+2015-01-29 12:54 GMT+05:30 Marcis <gasyoun@…>:
+
+
+
+> Только шеститомник на
+
+> https://www.scribd.com/doc/106529463/History-of-Dharmashastra-Ancient-and-Medieval-Religious-and-Civil-Law-v-kane-Poona-1946-600dpi-Jbig2-Losssless
+
+> - читал, что считается наиболее авторитетным именно он.
+
+>
+
+> On Wednesday, 28 January 2015 22:44:05 UTC+3, Mandala Pati (Владислав)
+
+> wrote:
+
+>>
+
+>> Может у вас и "дхарма-коша" в шести томах есть?
+
+>> http://www.exoticindiaart.com/book/details/dharmakosa-
+
+>> rajanitikanda-sanskrit-only-in-six-volumes-most-
+
+>> voluminous-encyclopedia-on-ideals-of-indian-politics-NAB945/
+
+>>
+
+>>  --
+
+> Чтобы отменить подписку на группу, посвященную санскриту,
+
+> отправьте сообщение по адресу - мы поймем, простим даже:
+
+> Nagari-unsubscribe@…
+
+> ---
+
+> Вы получили это сообщение, поскольку подписаны на группу "Общество
+
+> ревнителей санскрита (Sanscrit)".
+
+> Чтобы отменить подписку на эту группу и больше не получать от нее
+
+> сообщения, отправьте письмо на электронный адрес
+
+> nagari+unsubscribe@….
+
+> Чтобы настроить другие параметры, перейдите по ссылке
+
+> https://groups.google.com/d/optout.
+
+>
+
+
+
+
+
+
+
+-- 
+
+Best regards,
+
+
+
 Doc
 
 ## 8. Marcis — 2015-01-29 12:54:15
 
-On Thursday, 29 January 2015 12:34:24 UTC+3, boromir wrote:
->
-> Password please. Scribd wants a login and pwd t access the data
->
+On Thursday, 29 January 2015 12:34:24 UTC+3, boromir wrote:
+
+>
+
+> Password please. Scribd wants a login and pwd t access the data
+
+>
+
 > Создать логин не догадались?
 
 ## 9. doc — 2015-01-29 12:58:27
 
-Hello, I tried to open an account. ScribD is no longer free!!!!
-
-2015-01-29 15:24 GMT+05:30 Marcis <gasyoun@…>:
-
->
->
-> On Thursday, 29 January 2015 12:34:24 UTC+3, boromir wrote:
->>
->> Password please. Scribd wants a login and pwd t access the data
->>
->> Создать логин не догадались?
->
-> --
-> Чтобы отменить подписку на группу, посвященную санскриту,
-> отправьте сообщение по адресу - мы поймем, простим даже:
-> Nagari-unsubscribe@…
-> ---
-> Вы получили это сообщение, поскольку подписаны на группу "Общество
-> ревнителей санскрита (Sanscrit)".
-> Чтобы отменить подписку на эту группу и больше не получать от нее
-> сообщения, отправьте письмо на электронный адрес
-> nagari+unsubscribe@….
-> Чтобы настроить другие параметры, перейдите по ссылке
-> https://groups.google.com/d/optout.
->
-
-
-
--- 
-Best regards,
-
+Hello, I tried to open an account. ScribD is no longer free!!!!
+
+
+
+2015-01-29 15:24 GMT+05:30 Marcis <gasyoun@…>:
+
+
+
+>
+
+>
+
+> On Thursday, 29 January 2015 12:34:24 UTC+3, boromir wrote:
+
+>>
+
+>> Password please. Scribd wants a login and pwd t access the data
+
+>>
+
+>> Создать логин не догадались?
+
+>
+
+> --
+
+> Чтобы отменить подписку на группу, посвященную санскриту,
+
+> отправьте сообщение по адресу - мы поймем, простим даже:
+
+> Nagari-unsubscribe@…
+
+> ---
+
+> Вы получили это сообщение, поскольку подписаны на группу "Общество
+
+> ревнителей санскрита (Sanscrit)".
+
+> Чтобы отменить подписку на эту группу и больше не получать от нее
+
+> сообщения, отправьте письмо на электронный адрес
+
+> nagari+unsubscribe@….
+
+> Чтобы настроить другие параметры, перейдите по ссылке
+
+> https://groups.google.com/d/optout.
+
+>
+
+
+
+
+
+
+
+-- 
+
+Best regards,
+
+
+
 Doc
 
 ## 10. narayan prasad — 2015-01-29 12:58:34
 
-To download anything, payment is a must.
-
-2015-01-29 15:24 GMT+05:30 Marcis <gasyoun@…>:
-
->
->
-> On Thursday, 29 January 2015 12:34:24 UTC+3, boromir wrote:
->>
->> Password please. Scribd wants a login and pwd t access the data
->>
->> Создать логин не догадались?
->
-> --
-> Чтобы отменить подписку на группу, посвященную санскриту,
-> отправьте сообщение по адресу - мы поймем, простим даже:
-> Nagari-unsubscribe@…
-> ---
-> Вы получили это сообщение, поскольку подписаны на группу "Общество
-> ревнителей санскрита (Sanscrit)".
-> Чтобы отменить подписку на эту группу и больше не получать от нее
-> сообщения, отправьте письмо на электронный адрес
-> nagari+unsubscribe@….
-> Чтобы настроить другие параметры, перейдите по ссылке
-> https://groups.google.com/d/optout.
+To download anything, payment is a must.
+
+
+
+2015-01-29 15:24 GMT+05:30 Marcis <gasyoun@…>:
+
+
+
+>
+
+>
+
+> On Thursday, 29 January 2015 12:34:24 UTC+3, boromir wrote:
+
+>>
+
+>> Password please. Scribd wants a login and pwd t access the data
+
+>>
+
+>> Создать логин не догадались?
+
+>
+
+> --
+
+> Чтобы отменить подписку на группу, посвященную санскриту,
+
+> отправьте сообщение по адресу - мы поймем, простим даже:
+
+> Nagari-unsubscribe@…
+
+> ---
+
+> Вы получили это сообщение, поскольку подписаны на группу "Общество
+
+> ревнителей санскрита (Sanscrit)".
+
+> Чтобы отменить подписку на эту группу и больше не получать от нее
+
+> сообщения, отправьте письмо на электронный адрес
+
+> nagari+unsubscribe@….
+
+> Чтобы настроить другие параметры, перейдите по ссылке
+
+> https://groups.google.com/d/optout.
+
 >
 
 ## 11. doc — 2015-01-29 12:59:56
 
-Great. In that case I'll download on payment. Many thanx.
-
-2015-01-29 15:28 GMT+05:30 narayan prasad <hindix@…>:
-
-> To download anything, payment is a must.
->
-> 2015-01-29 15:24 GMT+05:30 Marcis <gasyoun@…>:
->
->>
->>
->> On Thursday, 29 January 2015 12:34:24 UTC+3, boromir wrote:
->>>
->>> Password please. Scribd wants a login and pwd t access the data
->>>
->>> Создать логин не догадались?
->>
->> --
->> Чтобы отменить подписку на группу, посвященную санскриту,
->> отправьте сообщение по адресу - мы поймем, простим даже:
->> Nagari-unsubscribe@…
->> ---
->> Вы получили это сообщение, поскольку подписаны на группу "Общество
->> ревнителей санскрита (Sanscrit)".
->> Чтобы отменить подписку на эту группу и больше не получать от нее
->> сообщения, отправьте письмо на электронный адрес
->> nagari+unsubscribe@….
->> Чтобы настроить другие параметры, перейдите по ссылке
->> https://groups.google.com/d/optout.
->>
->
->  --
-> Чтобы отменить подписку на группу, посвященную санскриту,
-> отправьте сообщение по адресу - мы поймем, простим даже:
-> Nagari-unsubscribe@…
-> ---
-> Вы получили это сообщение, поскольку подписаны на группу "Общество
-> ревнителей санскрита (Sanscrit)".
-> Чтобы отменить подписку на эту группу и больше не получать от нее
-> сообщения, отправьте письмо на электронный адрес
-> nagari+unsubscribe@….
-> Чтобы настроить другие параметры, перейдите по ссылке
-> https://groups.google.com/d/optout.
->
-
-
-
--- 
-Best regards,
-
+Great. In that case I'll download on payment. Many thanx.
+
+
+
+2015-01-29 15:28 GMT+05:30 narayan prasad <hindix@…>:
+
+
+
+> To download anything, payment is a must.
+
+>
+
+> 2015-01-29 15:24 GMT+05:30 Marcis <gasyoun@…>:
+
+>
+
+>>
+
+>>
+
+>> On Thursday, 29 January 2015 12:34:24 UTC+3, boromir wrote:
+
+>>>
+
+>>> Password please. Scribd wants a login and pwd t access the data
+
+>>>
+
+>>> Создать логин не догадались?
+
+>>
+
+>> --
+
+>> Чтобы отменить подписку на группу, посвященную санскриту,
+
+>> отправьте сообщение по адресу - мы поймем, простим даже:
+
+>> Nagari-unsubscribe@…
+
+>> ---
+
+>> Вы получили это сообщение, поскольку подписаны на группу "Общество
+
+>> ревнителей санскрита (Sanscrit)".
+
+>> Чтобы отменить подписку на эту группу и больше не получать от нее
+
+>> сообщения, отправьте письмо на электронный адрес
+
+>> nagari+unsubscribe@….
+
+>> Чтобы настроить другие параметры, перейдите по ссылке
+
+>> https://groups.google.com/d/optout.
+
+>>
+
+>
+
+>  --
+
+> Чтобы отменить подписку на группу, посвященную санскриту,
+
+> отправьте сообщение по адресу - мы поймем, простим даже:
+
+> Nagari-unsubscribe@…
+
+> ---
+
+> Вы получили это сообщение, поскольку подписаны на группу "Общество
+
+> ревнителей санскрита (Sanscrit)".
+
+> Чтобы отменить подписку на эту группу и больше не получать от нее
+
+> сообщения, отправьте письмо на электронный адрес
+
+> nagari+unsubscribe@….
+
+> Чтобы настроить другие параметры, перейдите по ссылке
+
+> https://groups.google.com/d/optout.
+
+>
+
+
+
+
+
+
+
+-- 
+
+Best regards,
+
+
+
 Doc
 
 ## 12. Владимир Карицкий — 2015-01-29 13:01:35
@@ -283,9 +439,14 @@ Doc
 
 ## 13. Marcis — 2015-01-29 13:08:02
 
-On Thursday, 29 January 2015 12:59:09 UTC+3, boromir wrote:
->
-> Hello, I tried to open an account. ScribD is no longer free!!!!
->
->
+On Thursday, 29 January 2015 12:59:09 UTC+3, boromir wrote:
+
+>
+
+> Hello, I tried to open an account. ScribD is no longer free!!!!
+
+>
+
+>
+
 Если дать взамен файлы, то бесплатно. Читайте правила.

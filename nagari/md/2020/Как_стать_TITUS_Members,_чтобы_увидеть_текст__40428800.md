@@ -17,28 +17,48 @@ source_url: https://groups.google.com/d/msgid/nagari/9e259228-d270-42b1-8e1e-bee
 
 ## 1. ли ла — 2020-11-28 01:01:20
 
-Тут http://titus.uni-frankfurt.de/indexe.htm  видны не всякие тексты.
-Например, видна махабхарата
-http://titus.uni-frankfurt.de/texte/etcs/ind/aind/mbh/mbh.htm
-Но Панини не видно
-http://titus.fkidg1.uni-frankfurt.de/texte/etcc/ind/aind/klskt/panini/panin.htm
-пишут : TITUS Members only 
-<http://titus.fkidg1.uni-frankfurt.de/texte/etcc/ind/aind/klskt/astavakr/astav.htm>
+Тут http://titus.uni-frankfurt.de/indexe.htm  видны не всякие тексты.
+
+Например, видна махабхарата
+
+http://titus.uni-frankfurt.de/texte/etcs/ind/aind/mbh/mbh.htm
+
+Но Панини не видно
+
+http://titus.fkidg1.uni-frankfurt.de/texte/etcc/ind/aind/klskt/panini/panin.htm
+
+пишут : TITUS Members only 
+
+<http://titus.fkidg1.uni-frankfurt.de/texte/etcc/ind/aind/klskt/astavakr/astav.htm>
+
 вот
 
 ## 2. Marcis — 2020-11-29 17:40:48
 
-https://ashtadhyayi.com/ тут гораздо удобнее Панини
-
-On Saturday, 28 November 2020 at 01:01:20 UTC+3 ли ла wrote:
-
-> Тут http://titus.uni-frankfurt.de/indexe.htm  видны не всякие тексты.
-> Например, видна махабхарата
-> http://titus.uni-frankfurt.de/texte/etcs/ind/aind/mbh/mbh.htm
-> Но Панини не видно
->
-> http://titus.fkidg1.uni-frankfurt.de/texte/etcc/ind/aind/klskt/panini/panin.htm
-> пишут : TITUS Members only 
-> <http://titus.fkidg1.uni-frankfurt.de/texte/etcc/ind/aind/klskt/astavakr/astav.htm>
-> вот
+https://ashtadhyayi.com/ тут гораздо удобнее Панини
+
+
+
+On Saturday, 28 November 2020 at 01:01:20 UTC+3 ли ла wrote:
+
+
+
+> Тут http://titus.uni-frankfurt.de/indexe.htm  видны не всякие тексты.
+
+> Например, видна махабхарата
+
+> http://titus.uni-frankfurt.de/texte/etcs/ind/aind/mbh/mbh.htm
+
+> Но Панини не видно
+
+>
+
+> http://titus.fkidg1.uni-frankfurt.de/texte/etcc/ind/aind/klskt/panini/panin.htm
+
+> пишут : TITUS Members only 
+
+> <http://titus.fkidg1.uni-frankfurt.de/texte/etcc/ind/aind/klskt/astavakr/astav.htm>
+
+> вот
+
 >

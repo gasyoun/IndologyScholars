@@ -17,1490 +17,2972 @@ source_url: https://groups.google.com/d/msgid/nagari/c5686a6e-1f7b-44c4-ae6d-854
 
 ## 1. Marcis — 2008-08-05 10:59:30
 
-http://www.intratext.com/ixt/SAN0010/_STAT.HTM#palfa
-
-Frequency - Word Form
-1904 na
-1351 a
-1155 no
-1126 te
-1046 hymn
-Frequency - Word Form
- 957 pra
- 928 sa
- 685 vi
- 613 ca
- 545 indra
- 531 tvam
- 516 nah
- 507 yo
-Frequency - Word Form
- 479 tva
- 456 ma
- 445 hi
- 430 yad
- 415 agne
- 412 pari
- 411 ta
- 410 ya
- 403 vam
- 379 va
- 372 deva
- 370 ye
- 362 sam
- 354 tam
- 346 ni
- 335 uta
- 327 abhi
- 323 vo
- 311 asya
- 300 yat
- 292 vishva
- 288 soma
- 257 nu
- 243 me
- 241 vayam
- 224 yatha
- 218 yam
- 212 upa
- 210 divo
-Frequency - Word Form
- 199 su
- 195 anu
- 191 rodasi
- 185 prati
- 182 cid
- 181 u
- 176 iva
- 174 yah
- 173 maruto
- 168 yasya
- 167 rayim
- 163 mahi
- 161 tava
- 160 rtasya
- 160 vishve
- 155 indro
- 153 somam
- 150 indram
- 148 adha
- 143 adhi
- 139 ayam
- 133 ratham
- 133 sham
- 133 tad
- 133 vrsa
- 133 yuvam
- 130 agnim
- 125 syama
- 122 yajñam
- 120 hota
- 116 devah
- 115 ha
- 115 pavasva
- 114 bhara
- 111 mitro
- 110 sapta
- 110 vah
- 109 tat
- 108 apa
- 106 ava
- 106 divi
- 105 esa
- 104 ashvina
- 104 somo
- 103 dashuse
- 102 devo
- 101 asme
- 101 yuyam
-Frequency - Word Form
-  98 vayo
-  96 adya
-  96 apo
-  96 tan
-  95 raja
-  94 shura
-  94 varuno
-  94 yatra
-  93 brahma
-  93 indraya
-  93 manasa
-  92 imam
-  92 yena
-  91 maho
-  91 piba
-  90 divah
-  90 dive
-  90 havamahe
-  90 sma
-  89 devanam
-  89 savita
-  88 cit
-  88 devan
-  88 yahi
-  87 eva
-  87 mahe
-  87 yan
-  85 nama
-  85 vasu
-  84 bhava
-  84 kam
-  84 marutah
-  83 acha
-  83 id
-  83 somah
-  80 krdhi
-  80 maghavan
-  79 sharma
-  79 somasya
-  78 diva
-  78 nara
-  77 dhiya
-  77 ga
-  77 hari
-  77 pata
-  77 vajam
-  76 havam
-  76 ima
-  76 nunam
-  76 prthivi
-  76 vishvani
-  75 devaso
-  75 gira
-  75 ko
-  75 r
-  74 devam
-  74 iha
-  74 so
-  74 suryasya
-  74 yanti
-  73 raya
-  73 varuna
-  72 asi
-  72 dha
-  72 im
-  72 tasya
-  72 vishvam
-  71 pavamana
-  70 madaya
-  70 tve
-  70 ubhe
-  69 astu
-  69 dhi
-  69 pahi
-  68 indrah
-  68 naro
-  68 shatam
-  68 vipra
-  67 pitaye
-  67 yatam
-  66 agna
-  66 pura
-  66 ratho
-  66 sakha
-  66 sya
-  66 yadi
-  65 girah
-  65 idam
-  65 para
-  65 priyam
-  65 sutam
-  64 nasatya
-  64 pita
-  64 ud
-  63 devesu
-  63 dyavaprthivi
-  63 gahi
-  63 suryam
-  63 tubhyam
-  62 huve
-  62 made
-  62 namasa
-  62 prthivya
-  62 saca
-  61 dharaya
-  61 ime
-  61 it
-  61 vaso
-  61 veda
-  60 aham
-  60 ati
-  60 indrasya
-  60 narah
-  60 stomam
-  60 vaha
-  59 cin
-  59 sutah
-  58 devasya
-  58 madhu
-  58 mama
-  58 pavate
-  58 puru
-  58 rtam
-  58 sute
-  57 indo
-  56 dasha
-  56 kratva
-  56 mitravaruna
-  56 saha
-  56 vrtram
-  55 aryama
-  55 asmakam
-  55 bhadra
-  55 giro
-  55 rayo
-  55 shavasa
-  54 agnih
-  54 kim
-  54 mata
-  54 raye
-  53 atra
-  53 bhagam
-  53 devi
-  53 maghava
-  53 puro
-  53 tmana
-  52 asmabhyam
-  52 asti
-  52 esam
-  52 gavo
-  52 gha
-  52 vidvan
-  52 vrnimahe
-  52 vrsana
-  51 brhad
-  51 dadhire
-  51 santi
-  51 varunasya
-  51 vasuni
-  51 vishvasya
-  51 yaste
-Frequency - Word Form
-  50 agnir
-  50 dyam
-  50 rathena
-  50 suryo
-  50 tena
-  50 yajñasya
-  50 yati
-  49 apam
-  49 ka
-  49 marutam
-  49 sutasya
-  48 dadhe
-  48 jananam
-  48 prathamam
-  48 puruhuta
-  48 rayah
-  48 somapitaye
-  47 dhehi
-  47 jusasva
-  47 sada
-  47 santu
-  47 sarasvati
-  47 suviryam
-  47 tvamagne
-  46 brhat
-  46 isam
-  46 kratum
-  46 mano
-  46 nahi
-  46 pati
-  46 patim
-  46 vrsabho
-  46 vrsanam
-  45 bhuri
-  45 indragni
-  45 pate
-  45 usaso
-  44 atha
-  44 divas
-  44 pusa
-  44 vajram
-  43 brahmani
-  43 dhiyam
-  43 guha
-  43 jahi
-  43 kada
-  43 krtam
-  43 sakam
-  43 vrtraha
-  43 vy
-  42 brahmanas
-  42 cana
-  42 rathe
-  42 shravo
-  42 svastaye
-  42 tvaya
-  41 bhuvanani
-  41 dasra
-  41 prthivim
-  41 utaye
-  41 uto
-  41 vajinam
-  40 ete
-  40 mitram
-  40 punano
-  40 shatakrato
-  40 vaji
-  39 gatam
-  39 iyam
-  39 rudra
-  39 suta
-  39 svasti
-  39 utayah
-  38 asmin
-  38 ghrtam
-  38 pañca
-  38 priya
-  38 sadyo
-  38 sahaso
-  38 tu
-  38 tyam
-  38 vishvatah
-  37 barhisi
-  37 gavam
-  37 havya
-  37 kavih
-  37 purvyam
-  37 sahasram
-  37 shrutam
-  37 surya
-  36 apah
-  36 bhadram
-  36 duto
-  36 havisa
-  36 ittha
-  36 mahah
-  36 mahina
-  36 ojasa
-  36 pavamano
-  36 sumatim
-  36 visha
-  35 eti
-  35 hotaram
-  35 madhvah
-  35 padam
-  35 vidma
-  34 asma
-  34 huvema
-  34 janam
-  34 jatavedah
-  34 prathama
-  34 ratha
-  34 sadane
-  34 same
-  34 satra
-  34 shrudhi
-  34 stha
-  34 suryena
-  34 ut
-  34 vacam
-  33 bhago
-  33 bhuma
-  33 bhuvanasya
-  33 garbham
-  33 janaya
-  33 madhva
-  33 prthivyah
-  33 rayinam
-  33 tamu
-  33 vajesu
-  33 visham
-  33 visho
-  33 vrdhe
-  32 aha
-  32 amrta
-  32 bhavati
-  32 dhama
-  32 dyava
-  32 jivase
-  32 kva
-  32 manuso
-  32 mitra
-  32 patha
-  32 rajasi
-  32 ratnam
-  32 sakhyam
-  32 sakhye
-  32 stomo
-  32 tasma
-  32 uti
-  32 vacah
-  32 vasavo
-  32 vasunam
-  32 vitaye
-  31 adhvare
-  31 api
-  31 asman
-  31 brhaspate
-  31 eta
-  31 in
-  31 krnute
-  31 madhvo
-  31 mahna
-  31 manma
-  31 mitrasya
-  31 nabhantamanyake
-  31 nr^in
-  31 pade
-  31 prathamo
-  31 prtanasu
-  31 rtena
-  31 sahasa
-  31 sahasra
-  31 sataye
-  31 suvitaya
-  31 tya
-  31 ubha
-  31 vaco
-  31 vana
-  31 varunaya
-  31 yada
-  31 yasmin
-  30 aditya
-  30 avase
-  30 citram
-  30 devebhyo
-  30 dhattam
-  30 dhiyo
-  30 dravinam
-  30 dvisah
-  30 kad
-  30 manisa
-  30 martyah
-  30 sajosasa
-  30 satyam
-  30 sim
-  30 suno
-  30 tisro
-  30 vahantu
-  29 bhare
-  29 citra
-  29 dhara
-  29 gopa
-  29 imahe
-  29 kah
-  29 manave
-  29 pavitre
-  29 pibatam
-  29 punah
-  29 purvih
-  29 putra
-  29 rbhavo
-  29 sakhya
-  29 sunvate
-  29 suro
-  29 tistha
-  29 tye
-  29 vajasataye
-  29 yabhih
-  29 yuja
-  28 aram
-  28 aryo
-  28 asmai
-  28 brahmana
-  28 brhantam
-  28 havante
-  28 hitam
-  28 jato
-  28 katha
-  28 namo
-  28 patih
-  28 punana
-  28 puruni
-  28 srava
-  28 usasa
-  28 vahanti
-  28 vajasya
-  28 viksu
-  28 yadindra
-  27 adhvaram
-  27 bodhi
-  27 dame
-  27 davane
-  27 dhiyah
-  27 duhita
-  27 ena
-  27 gayata
-  27 hanti
-  27 jatavedo
-  27 maksu
-  27 martyam
-  27 nava
-  27 nrbhih
-  27 purve
-  27 radho
-  27 rajamsi
-  27 satya
-  27 shocisa
-  27 shriye
-  27 sustutim
-  27 svayam
-  27 tana
-  27 vajrena
-  27 vavrdhe
-  27 vrata
-  27 vrsabham
-  27 yajñe
-  27 yaksi
-  26 barhih
-  26 dadhati
-  26 dadhise
-  26 devaya
-  26 etam
-  26 grnate
-  26 harivo
-  26 kavayo
-  26 mahitva
-  26 manah
-  26 pathah
-  26 pitaro
-  26 sad
-  26 sajosa
-  26 sakhayah
-  26 shavistha
-  26 shukra
-  26 suto
-  26 svah
-  26 tvad
-  26 uso
-  26 varunam
-  26 vatsam
-  26 vidathe
-  26 vrsabha
-  26 vrsne
-  26 vrtrahan
-  26 yajñesu
-  25 anti
-  25 bhut
-  25 dade
-  25 dvita
-  25 gavah
-  25 ghrtena
-  25 kave
-  25 mahan
-  25 mahyam
-  25 nir
-  25 parame
-  25 purutra
-  25 rajaso
-  25 raksa
-  25 sahasrinam
-  25 san
-  25 shatrun
-  25 shunam
-  25 shuro
-  25 surayah
-  25 suviram
-  25 tanva
-  25 tvasta
-  25 uru
-  25 varam
-  25 vira
-  25 vratani
-  25 vrsano
-  25 yajño
-  24 aya
-  24 dadhana
-  24 dhenavah
-  24 eka
-  24 indavah
-  24 jaghana
-  24 jane
-  24 marto
-  24 matara
-  24 paro
-  24 pavitra
-  24 priyah
-  24 prthivyam
-  24 prtsu
-  24 radhase
-  24 rajan
-  24 saho
-  24 sajosah
-  24 sakhyaya
-  24 samanam
-  24 shishum
-  24 srja
-  24 stuhi
-  24 tani
-  24 tanvam
-  24 ugra
-  24 vajino
-  24 vato
-  24 vipro
-  24 viryam
-  24 vrajam
-  24 yaya
-  24 yonim
-  23 amrtasya
-  23 antah
-  23 are
-  23 bahu
-  23 brhato
-  23 cakrma
-  23 dyauh
-  23 grhe
-  23 havyam
-  23 iti
-  23 jana
-  23 jata
-  23 kuvit
-  23 mada
-  23 madah
-  23 maha
-  23 mam
-  23 martyaya
-  23 naram
-  23 pada
-  23 pavaka
-  23 pitaram
-  23 purah
-  23 purva
-  23 samudram
-  23 shravah
-  23 shyeno
-  23 sindhavah
-  23 sumana
-  23 surye
-  23 tasmai
-  23 varunah
-  23 varyam
-  23 vidathesu
-  23 vishvaha
-  23 vratam
-  22 ad
-  22 asa
-  22 bhavantu
-  22 dah
-  22 data
-  22 dhavati
-  22 gachatam
-  22 gava
-  22 girvanah
-  22 gosu
-  22 grham
-  22 havih
-  22 hrda
-  22 indre
-  22 jagama
-  22 janita
-  22 jaritre
-  22 jusanta
-  22 kamam
-  22 kasya
-  22 ketum
-  22 krnuhi
-  22 mataram
-  22 nadyo
-  22 payo
-  22 rtava
-  22 samatsu
-  22 savana
-  22 shardho
-  22 sindhavo
-  22 suryah
-  22 trini
-  22 trir
-  22 vaja
-  22 vajrin
-  22 vayave
-  22 vrtrani
-  22 yantu
-  22 yas
-  21 arsati
-  21 bibharti
-  21 brhaspatim
-  21 cakara
-  21 carsaninam
-  21 dadati
-  21 daksasya
-  21 daksina
-  21 dhayi
-  21 dhimahi
-  21 didihi
-  21 divya
-  21 drlha
-  21 durita
-  21 ekam
-  21 haribhyam
-  21 harim
-  21 jajana
-  21 kavim
-  21 krnoti
-  21 ksatram
-  21 mitraya
-  21 mo
-  21 navyam
-  21 nrnam
-  21 pantham
-  21 prajam
-  21 priyo
-  21 radhah
-  21 rocana
-  21 sacante
-  21 samidha
-  21 samudre
-  21 shrnutam
-  21 somaso
-  21 sukrato
-  21 sve
-  21 udu
-  21 vaca
-  21 vaksi
-  21 vidhema
-  21 viprah
-  21 vrsno
-  21 yajatra
-  21 yato
+http://www.intratext.com/ixt/SAN0010/_STAT.HTM#palfa
+
+
+
+Frequency - Word Form
+
+1904 na
+
+1351 a
+
+1155 no
+
+1126 te
+
+1046 hymn
+
+Frequency - Word Form
+
+ 957 pra
+
+ 928 sa
+
+ 685 vi
+
+ 613 ca
+
+ 545 indra
+
+ 531 tvam
+
+ 516 nah
+
+ 507 yo
+
+Frequency - Word Form
+
+ 479 tva
+
+ 456 ma
+
+ 445 hi
+
+ 430 yad
+
+ 415 agne
+
+ 412 pari
+
+ 411 ta
+
+ 410 ya
+
+ 403 vam
+
+ 379 va
+
+ 372 deva
+
+ 370 ye
+
+ 362 sam
+
+ 354 tam
+
+ 346 ni
+
+ 335 uta
+
+ 327 abhi
+
+ 323 vo
+
+ 311 asya
+
+ 300 yat
+
+ 292 vishva
+
+ 288 soma
+
+ 257 nu
+
+ 243 me
+
+ 241 vayam
+
+ 224 yatha
+
+ 218 yam
+
+ 212 upa
+
+ 210 divo
+
+Frequency - Word Form
+
+ 199 su
+
+ 195 anu
+
+ 191 rodasi
+
+ 185 prati
+
+ 182 cid
+
+ 181 u
+
+ 176 iva
+
+ 174 yah
+
+ 173 maruto
+
+ 168 yasya
+
+ 167 rayim
+
+ 163 mahi
+
+ 161 tava
+
+ 160 rtasya
+
+ 160 vishve
+
+ 155 indro
+
+ 153 somam
+
+ 150 indram
+
+ 148 adha
+
+ 143 adhi
+
+ 139 ayam
+
+ 133 ratham
+
+ 133 sham
+
+ 133 tad
+
+ 133 vrsa
+
+ 133 yuvam
+
+ 130 agnim
+
+ 125 syama
+
+ 122 yajñam
+
+ 120 hota
+
+ 116 devah
+
+ 115 ha
+
+ 115 pavasva
+
+ 114 bhara
+
+ 111 mitro
+
+ 110 sapta
+
+ 110 vah
+
+ 109 tat
+
+ 108 apa
+
+ 106 ava
+
+ 106 divi
+
+ 105 esa
+
+ 104 ashvina
+
+ 104 somo
+
+ 103 dashuse
+
+ 102 devo
+
+ 101 asme
+
+ 101 yuyam
+
+Frequency - Word Form
+
+  98 vayo
+
+  96 adya
+
+  96 apo
+
+  96 tan
+
+  95 raja
+
+  94 shura
+
+  94 varuno
+
+  94 yatra
+
+  93 brahma
+
+  93 indraya
+
+  93 manasa
+
+  92 imam
+
+  92 yena
+
+  91 maho
+
+  91 piba
+
+  90 divah
+
+  90 dive
+
+  90 havamahe
+
+  90 sma
+
+  89 devanam
+
+  89 savita
+
+  88 cit
+
+  88 devan
+
+  88 yahi
+
+  87 eva
+
+  87 mahe
+
+  87 yan
+
+  85 nama
+
+  85 vasu
+
+  84 bhava
+
+  84 kam
+
+  84 marutah
+
+  83 acha
+
+  83 id
+
+  83 somah
+
+  80 krdhi
+
+  80 maghavan
+
+  79 sharma
+
+  79 somasya
+
+  78 diva
+
+  78 nara
+
+  77 dhiya
+
+  77 ga
+
+  77 hari
+
+  77 pata
+
+  77 vajam
+
+  76 havam
+
+  76 ima
+
+  76 nunam
+
+  76 prthivi
+
+  76 vishvani
+
+  75 devaso
+
+  75 gira
+
+  75 ko
+
+  75 r
+
+  74 devam
+
+  74 iha
+
+  74 so
+
+  74 suryasya
+
+  74 yanti
+
+  73 raya
+
+  73 varuna
+
+  72 asi
+
+  72 dha
+
+  72 im
+
+  72 tasya
+
+  72 vishvam
+
+  71 pavamana
+
+  70 madaya
+
+  70 tve
+
+  70 ubhe
+
+  69 astu
+
+  69 dhi
+
+  69 pahi
+
+  68 indrah
+
+  68 naro
+
+  68 shatam
+
+  68 vipra
+
+  67 pitaye
+
+  67 yatam
+
+  66 agna
+
+  66 pura
+
+  66 ratho
+
+  66 sakha
+
+  66 sya
+
+  66 yadi
+
+  65 girah
+
+  65 idam
+
+  65 para
+
+  65 priyam
+
+  65 sutam
+
+  64 nasatya
+
+  64 pita
+
+  64 ud
+
+  63 devesu
+
+  63 dyavaprthivi
+
+  63 gahi
+
+  63 suryam
+
+  63 tubhyam
+
+  62 huve
+
+  62 made
+
+  62 namasa
+
+  62 prthivya
+
+  62 saca
+
+  61 dharaya
+
+  61 ime
+
+  61 it
+
+  61 vaso
+
+  61 veda
+
+  60 aham
+
+  60 ati
+
+  60 indrasya
+
+  60 narah
+
+  60 stomam
+
+  60 vaha
+
+  59 cin
+
+  59 sutah
+
+  58 devasya
+
+  58 madhu
+
+  58 mama
+
+  58 pavate
+
+  58 puru
+
+  58 rtam
+
+  58 sute
+
+  57 indo
+
+  56 dasha
+
+  56 kratva
+
+  56 mitravaruna
+
+  56 saha
+
+  56 vrtram
+
+  55 aryama
+
+  55 asmakam
+
+  55 bhadra
+
+  55 giro
+
+  55 rayo
+
+  55 shavasa
+
+  54 agnih
+
+  54 kim
+
+  54 mata
+
+  54 raye
+
+  53 atra
+
+  53 bhagam
+
+  53 devi
+
+  53 maghava
+
+  53 puro
+
+  53 tmana
+
+  52 asmabhyam
+
+  52 asti
+
+  52 esam
+
+  52 gavo
+
+  52 gha
+
+  52 vidvan
+
+  52 vrnimahe
+
+  52 vrsana
+
+  51 brhad
+
+  51 dadhire
+
+  51 santi
+
+  51 varunasya
+
+  51 vasuni
+
+  51 vishvasya
+
+  51 yaste
+
+Frequency - Word Form
+
+  50 agnir
+
+  50 dyam
+
+  50 rathena
+
+  50 suryo
+
+  50 tena
+
+  50 yajñasya
+
+  50 yati
+
+  49 apam
+
+  49 ka
+
+  49 marutam
+
+  49 sutasya
+
+  48 dadhe
+
+  48 jananam
+
+  48 prathamam
+
+  48 puruhuta
+
+  48 rayah
+
+  48 somapitaye
+
+  47 dhehi
+
+  47 jusasva
+
+  47 sada
+
+  47 santu
+
+  47 sarasvati
+
+  47 suviryam
+
+  47 tvamagne
+
+  46 brhat
+
+  46 isam
+
+  46 kratum
+
+  46 mano
+
+  46 nahi
+
+  46 pati
+
+  46 patim
+
+  46 vrsabho
+
+  46 vrsanam
+
+  45 bhuri
+
+  45 indragni
+
+  45 pate
+
+  45 usaso
+
+  44 atha
+
+  44 divas
+
+  44 pusa
+
+  44 vajram
+
+  43 brahmani
+
+  43 dhiyam
+
+  43 guha
+
+  43 jahi
+
+  43 kada
+
+  43 krtam
+
+  43 sakam
+
+  43 vrtraha
+
+  43 vy
+
+  42 brahmanas
+
+  42 cana
+
+  42 rathe
+
+  42 shravo
+
+  42 svastaye
+
+  42 tvaya
+
+  41 bhuvanani
+
+  41 dasra
+
+  41 prthivim
+
+  41 utaye
+
+  41 uto
+
+  41 vajinam
+
+  40 ete
+
+  40 mitram
+
+  40 punano
+
+  40 shatakrato
+
+  40 vaji
+
+  39 gatam
+
+  39 iyam
+
+  39 rudra
+
+  39 suta
+
+  39 svasti
+
+  39 utayah
+
+  38 asmin
+
+  38 ghrtam
+
+  38 pañca
+
+  38 priya
+
+  38 sadyo
+
+  38 sahaso
+
+  38 tu
+
+  38 tyam
+
+  38 vishvatah
+
+  37 barhisi
+
+  37 gavam
+
+  37 havya
+
+  37 kavih
+
+  37 purvyam
+
+  37 sahasram
+
+  37 shrutam
+
+  37 surya
+
+  36 apah
+
+  36 bhadram
+
+  36 duto
+
+  36 havisa
+
+  36 ittha
+
+  36 mahah
+
+  36 mahina
+
+  36 ojasa
+
+  36 pavamano
+
+  36 sumatim
+
+  36 visha
+
+  35 eti
+
+  35 hotaram
+
+  35 madhvah
+
+  35 padam
+
+  35 vidma
+
+  34 asma
+
+  34 huvema
+
+  34 janam
+
+  34 jatavedah
+
+  34 prathama
+
+  34 ratha
+
+  34 sadane
+
+  34 same
+
+  34 satra
+
+  34 shrudhi
+
+  34 stha
+
+  34 suryena
+
+  34 ut
+
+  34 vacam
+
+  33 bhago
+
+  33 bhuma
+
+  33 bhuvanasya
+
+  33 garbham
+
+  33 janaya
+
+  33 madhva
+
+  33 prthivyah
+
+  33 rayinam
+
+  33 tamu
+
+  33 vajesu
+
+  33 visham
+
+  33 visho
+
+  33 vrdhe
+
+  32 aha
+
+  32 amrta
+
+  32 bhavati
+
+  32 dhama
+
+  32 dyava
+
+  32 jivase
+
+  32 kva
+
+  32 manuso
+
+  32 mitra
+
+  32 patha
+
+  32 rajasi
+
+  32 ratnam
+
+  32 sakhyam
+
+  32 sakhye
+
+  32 stomo
+
+  32 tasma
+
+  32 uti
+
+  32 vacah
+
+  32 vasavo
+
+  32 vasunam
+
+  32 vitaye
+
+  31 adhvare
+
+  31 api
+
+  31 asman
+
+  31 brhaspate
+
+  31 eta
+
+  31 in
+
+  31 krnute
+
+  31 madhvo
+
+  31 mahna
+
+  31 manma
+
+  31 mitrasya
+
+  31 nabhantamanyake
+
+  31 nr^in
+
+  31 pade
+
+  31 prathamo
+
+  31 prtanasu
+
+  31 rtena
+
+  31 sahasa
+
+  31 sahasra
+
+  31 sataye
+
+  31 suvitaya
+
+  31 tya
+
+  31 ubha
+
+  31 vaco
+
+  31 vana
+
+  31 varunaya
+
+  31 yada
+
+  31 yasmin
+
+  30 aditya
+
+  30 avase
+
+  30 citram
+
+  30 devebhyo
+
+  30 dhattam
+
+  30 dhiyo
+
+  30 dravinam
+
+  30 dvisah
+
+  30 kad
+
+  30 manisa
+
+  30 martyah
+
+  30 sajosasa
+
+  30 satyam
+
+  30 sim
+
+  30 suno
+
+  30 tisro
+
+  30 vahantu
+
+  29 bhare
+
+  29 citra
+
+  29 dhara
+
+  29 gopa
+
+  29 imahe
+
+  29 kah
+
+  29 manave
+
+  29 pavitre
+
+  29 pibatam
+
+  29 punah
+
+  29 purvih
+
+  29 putra
+
+  29 rbhavo
+
+  29 sakhya
+
+  29 sunvate
+
+  29 suro
+
+  29 tistha
+
+  29 tye
+
+  29 vajasataye
+
+  29 yabhih
+
+  29 yuja
+
+  28 aram
+
+  28 aryo
+
+  28 asmai
+
+  28 brahmana
+
+  28 brhantam
+
+  28 havante
+
+  28 hitam
+
+  28 jato
+
+  28 katha
+
+  28 namo
+
+  28 patih
+
+  28 punana
+
+  28 puruni
+
+  28 srava
+
+  28 usasa
+
+  28 vahanti
+
+  28 vajasya
+
+  28 viksu
+
+  28 yadindra
+
+  27 adhvaram
+
+  27 bodhi
+
+  27 dame
+
+  27 davane
+
+  27 dhiyah
+
+  27 duhita
+
+  27 ena
+
+  27 gayata
+
+  27 hanti
+
+  27 jatavedo
+
+  27 maksu
+
+  27 martyam
+
+  27 nava
+
+  27 nrbhih
+
+  27 purve
+
+  27 radho
+
+  27 rajamsi
+
+  27 satya
+
+  27 shocisa
+
+  27 shriye
+
+  27 sustutim
+
+  27 svayam
+
+  27 tana
+
+  27 vajrena
+
+  27 vavrdhe
+
+  27 vrata
+
+  27 vrsabham
+
+  27 yajñe
+
+  27 yaksi
+
+  26 barhih
+
+  26 dadhati
+
+  26 dadhise
+
+  26 devaya
+
+  26 etam
+
+  26 grnate
+
+  26 harivo
+
+  26 kavayo
+
+  26 mahitva
+
+  26 manah
+
+  26 pathah
+
+  26 pitaro
+
+  26 sad
+
+  26 sajosa
+
+  26 sakhayah
+
+  26 shavistha
+
+  26 shukra
+
+  26 suto
+
+  26 svah
+
+  26 tvad
+
+  26 uso
+
+  26 varunam
+
+  26 vatsam
+
+  26 vidathe
+
+  26 vrsabha
+
+  26 vrsne
+
+  26 vrtrahan
+
+  26 yajñesu
+
+  25 anti
+
+  25 bhut
+
+  25 dade
+
+  25 dvita
+
+  25 gavah
+
+  25 ghrtena
+
+  25 kave
+
+  25 mahan
+
+  25 mahyam
+
+  25 nir
+
+  25 parame
+
+  25 purutra
+
+  25 rajaso
+
+  25 raksa
+
+  25 sahasrinam
+
+  25 san
+
+  25 shatrun
+
+  25 shunam
+
+  25 shuro
+
+  25 surayah
+
+  25 suviram
+
+  25 tanva
+
+  25 tvasta
+
+  25 uru
+
+  25 varam
+
+  25 vira
+
+  25 vratani
+
+  25 vrsano
+
+  25 yajño
+
+  24 aya
+
+  24 dadhana
+
+  24 dhenavah
+
+  24 eka
+
+  24 indavah
+
+  24 jaghana
+
+  24 jane
+
+  24 marto
+
+  24 matara
+
+  24 paro
+
+  24 pavitra
+
+  24 priyah
+
+  24 prthivyam
+
+  24 prtsu
+
+  24 radhase
+
+  24 rajan
+
+  24 saho
+
+  24 sajosah
+
+  24 sakhyaya
+
+  24 samanam
+
+  24 shishum
+
+  24 srja
+
+  24 stuhi
+
+  24 tani
+
+  24 tanvam
+
+  24 ugra
+
+  24 vajino
+
+  24 vato
+
+  24 vipro
+
+  24 viryam
+
+  24 vrajam
+
+  24 yaya
+
+  24 yonim
+
+  23 amrtasya
+
+  23 antah
+
+  23 are
+
+  23 bahu
+
+  23 brhato
+
+  23 cakrma
+
+  23 dyauh
+
+  23 grhe
+
+  23 havyam
+
+  23 iti
+
+  23 jana
+
+  23 jata
+
+  23 kuvit
+
+  23 mada
+
+  23 madah
+
+  23 maha
+
+  23 mam
+
+  23 martyaya
+
+  23 naram
+
+  23 pada
+
+  23 pavaka
+
+  23 pitaram
+
+  23 purah
+
+  23 purva
+
+  23 samudram
+
+  23 shravah
+
+  23 shyeno
+
+  23 sindhavah
+
+  23 sumana
+
+  23 surye
+
+  23 tasmai
+
+  23 varunah
+
+  23 varyam
+
+  23 vidathesu
+
+  23 vishvaha
+
+  23 vratam
+
+  22 ad
+
+  22 asa
+
+  22 bhavantu
+
+  22 dah
+
+  22 data
+
+  22 dhavati
+
+  22 gachatam
+
+  22 gava
+
+  22 girvanah
+
+  22 gosu
+
+  22 grham
+
+  22 havih
+
+  22 hrda
+
+  22 indre
+
+  22 jagama
+
+  22 janita
+
+  22 jaritre
+
+  22 jusanta
+
+  22 kamam
+
+  22 kasya
+
+  22 ketum
+
+  22 krnuhi
+
+  22 mataram
+
+  22 nadyo
+
+  22 payo
+
+  22 rtava
+
+  22 samatsu
+
+  22 savana
+
+  22 shardho
+
+  22 sindhavo
+
+  22 suryah
+
+  22 trini
+
+  22 trir
+
+  22 vaja
+
+  22 vajrin
+
+  22 vayave
+
+  22 vrtrani
+
+  22 yantu
+
+  22 yas
+
+  21 arsati
+
+  21 bibharti
+
+  21 brhaspatim
+
+  21 cakara
+
+  21 carsaninam
+
+  21 dadati
+
+  21 daksasya
+
+  21 daksina
+
+  21 dhayi
+
+  21 dhimahi
+
+  21 didihi
+
+  21 divya
+
+  21 drlha
+
+  21 durita
+
+  21 ekam
+
+  21 haribhyam
+
+  21 harim
+
+  21 jajana
+
+  21 kavim
+
+  21 krnoti
+
+  21 ksatram
+
+  21 mitraya
+
+  21 mo
+
+  21 navyam
+
+  21 nrnam
+
+  21 pantham
+
+  21 prajam
+
+  21 priyo
+
+  21 radhah
+
+  21 rocana
+
+  21 sacante
+
+  21 samidha
+
+  21 samudre
+
+  21 shrnutam
+
+  21 somaso
+
+  21 sukrato
+
+  21 sve
+
+  21 udu
+
+  21 vaca
+
+  21 vaksi
+
+  21 vidhema
+
+  21 viprah
+
+  21 vrsno
+
+  21 yajatra
+
+  21 yato
+
   21 yavistha
 
 ## 2. Duri — 2008-08-06 10:46:46
 
-What a coincidence! I was looking for this kind of information and now
-it turns up on the group! Thank you, Marcis. It even seems to be from
-a site that I actually knew. Now I will try and figure out what these
-words actually mean. At the moment I am building my vocabulary and
-trying to read and understand a classical text. How did you know
-that? ;-)
-
-On 5 авг, 09:59, Marcis <gasy...@…> wrote:
-> http://www.intratext.com/ixt/SAN0010/_STAT.HTM#palfa
->
-> Frequency - Word Form
-> 1904 na
-> 1351 a
-> 1155 no
-> 1126 te
-> 1046 hymn
-> Frequency - Word Form
->  957 pra
->  928 sa
->  685 vi
->  613 ca
->  545 indra
->  531 tvam
->  516 nah
->  507 yo
-> Frequency - Word Form
->  479 tva
->  456 ma
->  445 hi
->  430 yad
->  415 agne
->  412 pari
->  411 ta
->  410 ya
->  403 vam
->  379 va
->  372 deva
->  370 ye
->  362 sam
->  354 tam
->  346 ni
->  335 uta
->  327 abhi
->  323 vo
->  311 asya
->  300 yat
->  292 vishva
->  288 soma
->  257 nu
->  243 me
->  241 vayam
->  224 yatha
->  218 yam
->  212 upa
->  210 divo
-> Frequency - Word Form
->  199 su
->  195 anu
->  191 rodasi
->  185 prati
->  182 cid
->  181 u
->  176 iva
->  174 yah
->  173 maruto
->  168 yasya
->  167 rayim
->  163 mahi
->  161 tava
->  160 rtasya
->  160 vishve
->  155 indro
->  153 somam
->  150 indram
->  148 adha
->  143 adhi
->  139 ayam
->  133 ratham
->  133 sham
->  133 tad
->  133 vrsa
->  133 yuvam
->  130 agnim
->  125 syama
->  122 yajñam
->  120 hota
->  116 devah
->  115 ha
->  115 pavasva
->  114 bhara
->  111 mitro
->  110 sapta
->  110 vah
->  109 tat
->  108 apa
->  106 ava
->  106 divi
->  105 esa
->  104 ashvina
->  104 somo
->  103 dashuse
->  102 devo
->  101 asme
->  101 yuyam
-> Frequency - Word Form
->   98 vayo
->   96 adya
->   96 apo
->   96 tan
->   95 raja
->   94 shura
->   94 varuno
->   94 yatra
->   93 brahma
->   93 indraya
->   93 manasa
->   92 imam
->   92 yena
->   91 maho
->   91 piba
->   90 divah
->   90 dive
->   90 havamahe
->   90 sma
->   89 devanam
->   89 savita
->   88 cit
->   88 devan
->   88 yahi
->   87 eva
->   87 mahe
->   87 yan
->   85 nama
->   85 vasu
->   84 bhava
->   84 kam
->   84 marutah
->   83 acha
->   83 id
->   83 somah
->   80 krdhi
->   80 maghavan
->   79 sharma
->   79 somasya
->   78 diva
->   78 nara
->   77 dhiya
->   77 ga
->   77 hari
->   77 pata
->   77 vajam
->   76 havam
->   76 ima
->   76 nunam
->   76 prthivi
->   76 vishvani
->   75 devaso
->   75 gira
->   75 ko
->   75 r
->   74 devam
->   74 iha
->   74 so
->   74 suryasya
->   74 yanti
->   73 raya
->   73 varuna
->   72 asi
->   72 dha
->   72 im
->   72 tasya
->   72 vishvam
->   71 pavamana
->   70 madaya
->   70 tve
->   70 ubhe
->   69 astu
->   69 dhi
->   69 pahi
->   68 indrah
->   68 naro
->   68 shatam
->   68 vipra
->   67 pitaye
->   67 yatam
->   66 agna
->   66 pura
->   66 ratho
->   66 sakha
->   66 sya
->   66 yadi
->   65 girah
->   65 idam
->   65 para
->   65 priyam
->   65 sutam
->   64 nasatya
->   64 pita
->   64 ud
->   63 devesu
->   63 dyavaprthivi
->   63 gahi
->   63 suryam
->   63 tubhyam
->   62 huve
->   62 made
->   62 namasa
->   62 prthivya
->   62 saca
->   61 dharaya
->   61 ime
->   61 it
->   61 vaso
->   61 veda
->   60 aham
->   60 ati
->   60 indrasya
->   60 narah
->   60 stomam
->   60 vaha
->   59 cin
->   59 sutah
->   58 devasya
->   58 madhu
->   58 mama
->   58 pavate
->   58 puru
->   58 rtam
->   58 sute
->   57 indo
->   56 dasha
->   56 kratva
->   56 mitravaruna
->   56 saha
->   56 vrtram
->   55 aryama
->   55 asmakam
->   55 bhadra
->   55 giro
->   55 rayo
->   55 shavasa
->   54 agnih
->   54 kim
->   54 mata
->   54 raye
->   53 atra
->   53 bhagam
->   53 devi
->   53 maghava
->   53 puro
->   53 tmana
->   52 asmabhyam
->   52 asti
->   52 esam
->   52 gavo
->   52 gha
->   52 vidvan
->   52 vrnimahe
->   52 vrsana
->   51 brhad
->   51 dadhire
->   51 santi
->   51 varunasya
->   51 vasuni
->   51 vishvasya
->   51 yaste
-> Frequency - Word Form
->   50 agnir
->   50 dyam
->   50 rathena
->   50 suryo
->   50 tena
->   50 yajñasya
->   50 yati
->   49 apam
->   49 ka
->   49 marutam
->   49 sutasya
->   48 dadhe
->   48 jananam
->   48 prathamam
->   48 puruhuta
->   48 rayah
->   48 somapitaye
->   47 dhehi
->   47 jusasva
->   47 sada
->   47 santu
->   47 sarasvati
->   47 suviryam
->   47 tvamagne
->   46 brhat
->   46 isam
->   46 kratum
->   46 mano
->   46 nahi
->   46 pati
->   46 patim
->   46 vrsabho
->   46 vrsanam
->   45 bhuri
->   45 indragni
->   45 pate
->   45 usaso
->   44 atha
->   44 divas
->   44 pusa
->   44 vajram
->   43 brahmani
->   43 dhiyam
->   43 guha
->   43 jahi
->   43 kada
->   43 krtam
->   43 sakam
->   43 vrtraha
->   43 vy
->   42 brahmanas
->   42 cana
->   42 rathe
->   42 shravo
->   42 svastaye
->   42 tvaya
->   41 bhuvanani
->   41 dasra
->   41 prthivim
->   41 utaye
->   41 uto
->   41 vajinam
->   40 ete
->   40 mitram
->   40 punano
->   40 shatakrato
->   40 vaji
->   39 gatam
->   39 iyam
->   39 rudra
->   39 suta
->   39 svasti
->   39 utayah
->   38 asmin
->   38 ghrtam
->   38 pañca
->   38 priya
->   38 sadyo
->   38 sahaso
->   38 tu
->   38 tyam
->   38 vishvatah
->   37 barhisi
->   37 gavam
->   37 havya
->   37 kavih
->   37 purvyam
->   37 sahasram
->   37 shrutam
->   37 surya
->   36 apah
->   36 bhadram
->   36 duto
->   36 havisa
->   36 ittha
->   36 mahah
->   36 mahina
->   36 ojasa
->   36 pavamano
->   36 sumatim
->   36 visha
->   35 eti
->   35 hotaram
->   35 madhvah
->   35 padam
->   35 vidma
->   34 asma
->   34 huvema
->   34 janam
->   34 jatavedah
->   34 prathama
->   34 ratha
->   34 sadane
->   34 same
->   34 satra
->   34 shrudhi
->   34 stha
->   34 suryena
->   34 ut
->   34 vacam
->   33 bhago
->   33 bhuma
->   33 bhuvanasya
->   33 garbham
->   33 janaya
->   33 madhva
->   33 prthivyah
->   33 rayinam
->   33 tamu
->   33 vajesu
->   33 visham
->   33 visho
->   33 vrdhe
->   32 aha
->   32 amrta
->   32 bhavati
->   32 dhama
->   32 dyava
->   32 jivase
->   32 kva
->   32 manuso
->   32 mitra
->   32 patha
->   32 rajasi
->   32 ratnam
->   32 sakhyam
->   32 sakhye
->   32 stomo
->   32 tasma
->   32 uti
->   32 vacah
->   32 vasavo
->   32 vasunam
->   32 vitaye
->   31 adhvare
->   31 api
->   31 asman
->   31 brhaspate
->   31 eta
->   31 in
->   31 krnute
->   31 madhvo
->   31 mahna
->   31 manma
->   31 mitrasya
->   31 nabhantamanyake
->   31 nr^in
->   31 pade
->   31 prathamo
->   31 prtanasu
->   31 rtena
->   31 sahasa
->   31 sahasra
->   31 sataye
->   31 suvitaya
->   31 tya
->   31 ubha
->   31 vaco
->   31 vana
->   31 varunaya
->   31 yada
->   31 yasmin
->   30 aditya
->   30 avase
->   30 citram
->   30 devebhyo
->   30 dhattam
->   30 dhiyo
->   30 dravinam
->   30 dvisah
->   30 kad
->   30 manisa
->   30 martyah
->   30 sajosasa
->   30 satyam
->   30 sim
->   30 suno
->   30 tisro
->   30 vahantu
->   29 bhare
->   29 citra
->   29 dhara
->   29 gopa
->   29 imahe
->   29 kah
->   29 manave
->   29 pavitre
->   29 pibatam
->   29 punah
->   29 purvih
->   29 putra
->   29 rbhavo
->   29 sakhya
->   29 sunvate
->   29 suro
->   29 tistha
->   29 tye
->   29 vajasataye
->   29 yabhih
->   29 yuja
->   28 aram
->   28 aryo
->   28 asmai
->   28 brahmana
->   28 brhantam
->   28 havante
->   28 hitam
->   28 jato
->   28 katha
->   28 namo
->   28 patih
->   28 punana
->   28 puruni
->   28 srava
->   28 usasa
->   28 vahanti
->   28 vajasya
->   28 viksu
->   28 yadindra
->   27 adhvaram
->   27 bodhi
->   27 dame
->   27 davane
->   27 dhiyah
->   27 duhita
->   27 ena
->   27 gayata
->   27 hanti
->   27 jatavedo
->   27 maksu
->   27 martyam
->   27 nava
->   27 nrbhih
->   27 purve
->   27 radho
->   27 rajamsi
->   27 satya
->   27 shocisa
->   27 shriye
->   27 sustutim
->   27 svayam
->   27 tana
->   27 vajrena
->   27 vavrdhe
->   27 vrata
->   27 vrsabham
->   27 yajñe
->   27 yaksi
->   26 barhih
->   26 dadhati
->   26 dadhise
->   26 devaya
->   26 etam
->   26 grnate
->   26 harivo
->   26 kavayo
->   26 mahitva
->   26 manah
->   26 pathah
->   26 pitaro
->   26 sad
->   26 sajosa
->   26 sakhayah
->   26 shavistha
->   26 shukra
->   26 suto
->   26 svah
->   26 tvad
->   26 uso
->   26 varunam
->   26 vatsam
->   26 vidathe
->   26 vrsabha
->   26 vrsne
->   26 vrtrahan
->   26 yajñesu
->   25 anti
->   25 bhut
->   25 dade
->   25 dvita
->   25 gavah
->   25 ghrtena
->   25 kave
->   25 mahan
->   25 mahyam
->   25 nir
->   25 parame
->   25 purutra
->   25 rajaso
->   25 raksa
->   25 sahasrinam
->   25 san
->   25 shatrun
->   25 shunam
->   25 shuro
->   25 surayah
->   25 suviram
->   25 tanva
->   25 tvasta
->   25 uru
->   25 varam
->   25 vira
->   25 vratani
->   25 vrsano
->   25 yajño
->   24 aya
->   24 dadhana
->   24 dhenavah
->   24 eka
->   24 indavah
->   24 jaghana
->   24 jane
->   24 marto
->   24 matara
->   24 paro
->   24 pavitra
->   24 priyah
->   24 prthivyam
->   24 prtsu
->   24 radhase
->   24 rajan
->   24 saho
->   24 sajosah
->   24 sakhyaya
->   24 samanam
->   24 shishum
->   24 srja
->   24 stuhi
->   24 tani
->   24 tanvam
->   24 ugra
->   24 vajino
->   24 vato
->   24 vipro
->   24 viryam
->   24 vrajam
->   24 yaya
->   24 yonim
->   23 amrtasya
->   23 antah
->   23 are
->   23 bahu
->   23 brhato
->   23 cakrma
->   23 dyauh
->   23 grhe
->   23 havyam
->   23 iti
->   23 jana
->   23 jata
->   23 kuvit
->   23 mada
->   23 madah
->   23 maha
->   23 mam
->   23 martyaya
->   23 naram
->   23 pada
->   23 pavaka
->   23 pitaram
->   23 purah
->   23 purva
->   23 samudram
->   23 shravah
->   23 shyeno
->   23 sindhavah
->   23 sumana
->   23 surye
->   23 tasmai
->   23 varunah
->   23 varyam
->   23 vidathesu
->   23 vishvaha
->   23 vratam
->   22 ad
->   22 asa
->   22 bhavantu
->   22 dah
->   22 data
->   22 dhavati
->   22 gachatam
->   22 gava
->   22 girvanah
->   22 gosu
->   22 grham
->   22 havih
->   22 hrda
->   22 indre
->   22 jagama
->   22 janita
->   22 jaritre
->   22 jusanta
->   22 kamam
->   22 kasya
->   22 ketum
->   22 krnuhi
->   22 mataram
->   22 nadyo
->   22 payo
->   22 rtava
->   22 samatsu
->   22 savana
->   22 shardho
->   22 sindhavo
->   22 suryah
->   22 trini
->   22 trir
->   22 vaja
->   22 vajrin
->   22 vayave
->   22 vrtrani
->   22 yantu
->   22 yas
->   21 arsati
->   21 bibharti
->   21 brhaspatim
->   21 cakara
->   21 carsaninam
->   21 dadati
->   21 daksasya
->   21 daksina
->   21 dhayi
->   21 dhimahi
->   21 didihi
->   21 divya
->   21 drlha
->   21 durita
->   21 ekam
->   21 haribhyam
->   21 harim
->   21 jajana
->   21 kavim
->   21 krnoti
->   21 ksatram
->   21 mitraya
->   21 mo
->   21 navyam
->   21 nrnam
->   21 pantham
->   21 prajam
->   21 priyo
->   21 radhah
->   21 rocana
->   21 sacante
->   21 samidha
->   21 samudre
->   21 shrnutam
->   21 somaso
->   21 sukrato
->   21 sve
->   21 udu
->   21 vaca
->   21 vaksi
->   21 vidhema
->   21 viprah
->   21 vrsno
->   21 yajatra
->   21 yato
+What a coincidence! I was looking for this kind of information and now
+
+it turns up on the group! Thank you, Marcis. It even seems to be from
+
+a site that I actually knew. Now I will try and figure out what these
+
+words actually mean. At the moment I am building my vocabulary and
+
+trying to read and understand a classical text. How did you know
+
+that? ;-)
+
+
+
+On 5 авг, 09:59, Marcis <gasy...@…> wrote:
+
+> http://www.intratext.com/ixt/SAN0010/_STAT.HTM#palfa
+
+>
+
+> Frequency - Word Form
+
+> 1904 na
+
+> 1351 a
+
+> 1155 no
+
+> 1126 te
+
+> 1046 hymn
+
+> Frequency - Word Form
+
+>  957 pra
+
+>  928 sa
+
+>  685 vi
+
+>  613 ca
+
+>  545 indra
+
+>  531 tvam
+
+>  516 nah
+
+>  507 yo
+
+> Frequency - Word Form
+
+>  479 tva
+
+>  456 ma
+
+>  445 hi
+
+>  430 yad
+
+>  415 agne
+
+>  412 pari
+
+>  411 ta
+
+>  410 ya
+
+>  403 vam
+
+>  379 va
+
+>  372 deva
+
+>  370 ye
+
+>  362 sam
+
+>  354 tam
+
+>  346 ni
+
+>  335 uta
+
+>  327 abhi
+
+>  323 vo
+
+>  311 asya
+
+>  300 yat
+
+>  292 vishva
+
+>  288 soma
+
+>  257 nu
+
+>  243 me
+
+>  241 vayam
+
+>  224 yatha
+
+>  218 yam
+
+>  212 upa
+
+>  210 divo
+
+> Frequency - Word Form
+
+>  199 su
+
+>  195 anu
+
+>  191 rodasi
+
+>  185 prati
+
+>  182 cid
+
+>  181 u
+
+>  176 iva
+
+>  174 yah
+
+>  173 maruto
+
+>  168 yasya
+
+>  167 rayim
+
+>  163 mahi
+
+>  161 tava
+
+>  160 rtasya
+
+>  160 vishve
+
+>  155 indro
+
+>  153 somam
+
+>  150 indram
+
+>  148 adha
+
+>  143 adhi
+
+>  139 ayam
+
+>  133 ratham
+
+>  133 sham
+
+>  133 tad
+
+>  133 vrsa
+
+>  133 yuvam
+
+>  130 agnim
+
+>  125 syama
+
+>  122 yajñam
+
+>  120 hota
+
+>  116 devah
+
+>  115 ha
+
+>  115 pavasva
+
+>  114 bhara
+
+>  111 mitro
+
+>  110 sapta
+
+>  110 vah
+
+>  109 tat
+
+>  108 apa
+
+>  106 ava
+
+>  106 divi
+
+>  105 esa
+
+>  104 ashvina
+
+>  104 somo
+
+>  103 dashuse
+
+>  102 devo
+
+>  101 asme
+
+>  101 yuyam
+
+> Frequency - Word Form
+
+>   98 vayo
+
+>   96 adya
+
+>   96 apo
+
+>   96 tan
+
+>   95 raja
+
+>   94 shura
+
+>   94 varuno
+
+>   94 yatra
+
+>   93 brahma
+
+>   93 indraya
+
+>   93 manasa
+
+>   92 imam
+
+>   92 yena
+
+>   91 maho
+
+>   91 piba
+
+>   90 divah
+
+>   90 dive
+
+>   90 havamahe
+
+>   90 sma
+
+>   89 devanam
+
+>   89 savita
+
+>   88 cit
+
+>   88 devan
+
+>   88 yahi
+
+>   87 eva
+
+>   87 mahe
+
+>   87 yan
+
+>   85 nama
+
+>   85 vasu
+
+>   84 bhava
+
+>   84 kam
+
+>   84 marutah
+
+>   83 acha
+
+>   83 id
+
+>   83 somah
+
+>   80 krdhi
+
+>   80 maghavan
+
+>   79 sharma
+
+>   79 somasya
+
+>   78 diva
+
+>   78 nara
+
+>   77 dhiya
+
+>   77 ga
+
+>   77 hari
+
+>   77 pata
+
+>   77 vajam
+
+>   76 havam
+
+>   76 ima
+
+>   76 nunam
+
+>   76 prthivi
+
+>   76 vishvani
+
+>   75 devaso
+
+>   75 gira
+
+>   75 ko
+
+>   75 r
+
+>   74 devam
+
+>   74 iha
+
+>   74 so
+
+>   74 suryasya
+
+>   74 yanti
+
+>   73 raya
+
+>   73 varuna
+
+>   72 asi
+
+>   72 dha
+
+>   72 im
+
+>   72 tasya
+
+>   72 vishvam
+
+>   71 pavamana
+
+>   70 madaya
+
+>   70 tve
+
+>   70 ubhe
+
+>   69 astu
+
+>   69 dhi
+
+>   69 pahi
+
+>   68 indrah
+
+>   68 naro
+
+>   68 shatam
+
+>   68 vipra
+
+>   67 pitaye
+
+>   67 yatam
+
+>   66 agna
+
+>   66 pura
+
+>   66 ratho
+
+>   66 sakha
+
+>   66 sya
+
+>   66 yadi
+
+>   65 girah
+
+>   65 idam
+
+>   65 para
+
+>   65 priyam
+
+>   65 sutam
+
+>   64 nasatya
+
+>   64 pita
+
+>   64 ud
+
+>   63 devesu
+
+>   63 dyavaprthivi
+
+>   63 gahi
+
+>   63 suryam
+
+>   63 tubhyam
+
+>   62 huve
+
+>   62 made
+
+>   62 namasa
+
+>   62 prthivya
+
+>   62 saca
+
+>   61 dharaya
+
+>   61 ime
+
+>   61 it
+
+>   61 vaso
+
+>   61 veda
+
+>   60 aham
+
+>   60 ati
+
+>   60 indrasya
+
+>   60 narah
+
+>   60 stomam
+
+>   60 vaha
+
+>   59 cin
+
+>   59 sutah
+
+>   58 devasya
+
+>   58 madhu
+
+>   58 mama
+
+>   58 pavate
+
+>   58 puru
+
+>   58 rtam
+
+>   58 sute
+
+>   57 indo
+
+>   56 dasha
+
+>   56 kratva
+
+>   56 mitravaruna
+
+>   56 saha
+
+>   56 vrtram
+
+>   55 aryama
+
+>   55 asmakam
+
+>   55 bhadra
+
+>   55 giro
+
+>   55 rayo
+
+>   55 shavasa
+
+>   54 agnih
+
+>   54 kim
+
+>   54 mata
+
+>   54 raye
+
+>   53 atra
+
+>   53 bhagam
+
+>   53 devi
+
+>   53 maghava
+
+>   53 puro
+
+>   53 tmana
+
+>   52 asmabhyam
+
+>   52 asti
+
+>   52 esam
+
+>   52 gavo
+
+>   52 gha
+
+>   52 vidvan
+
+>   52 vrnimahe
+
+>   52 vrsana
+
+>   51 brhad
+
+>   51 dadhire
+
+>   51 santi
+
+>   51 varunasya
+
+>   51 vasuni
+
+>   51 vishvasya
+
+>   51 yaste
+
+> Frequency - Word Form
+
+>   50 agnir
+
+>   50 dyam
+
+>   50 rathena
+
+>   50 suryo
+
+>   50 tena
+
+>   50 yajñasya
+
+>   50 yati
+
+>   49 apam
+
+>   49 ka
+
+>   49 marutam
+
+>   49 sutasya
+
+>   48 dadhe
+
+>   48 jananam
+
+>   48 prathamam
+
+>   48 puruhuta
+
+>   48 rayah
+
+>   48 somapitaye
+
+>   47 dhehi
+
+>   47 jusasva
+
+>   47 sada
+
+>   47 santu
+
+>   47 sarasvati
+
+>   47 suviryam
+
+>   47 tvamagne
+
+>   46 brhat
+
+>   46 isam
+
+>   46 kratum
+
+>   46 mano
+
+>   46 nahi
+
+>   46 pati
+
+>   46 patim
+
+>   46 vrsabho
+
+>   46 vrsanam
+
+>   45 bhuri
+
+>   45 indragni
+
+>   45 pate
+
+>   45 usaso
+
+>   44 atha
+
+>   44 divas
+
+>   44 pusa
+
+>   44 vajram
+
+>   43 brahmani
+
+>   43 dhiyam
+
+>   43 guha
+
+>   43 jahi
+
+>   43 kada
+
+>   43 krtam
+
+>   43 sakam
+
+>   43 vrtraha
+
+>   43 vy
+
+>   42 brahmanas
+
+>   42 cana
+
+>   42 rathe
+
+>   42 shravo
+
+>   42 svastaye
+
+>   42 tvaya
+
+>   41 bhuvanani
+
+>   41 dasra
+
+>   41 prthivim
+
+>   41 utaye
+
+>   41 uto
+
+>   41 vajinam
+
+>   40 ete
+
+>   40 mitram
+
+>   40 punano
+
+>   40 shatakrato
+
+>   40 vaji
+
+>   39 gatam
+
+>   39 iyam
+
+>   39 rudra
+
+>   39 suta
+
+>   39 svasti
+
+>   39 utayah
+
+>   38 asmin
+
+>   38 ghrtam
+
+>   38 pañca
+
+>   38 priya
+
+>   38 sadyo
+
+>   38 sahaso
+
+>   38 tu
+
+>   38 tyam
+
+>   38 vishvatah
+
+>   37 barhisi
+
+>   37 gavam
+
+>   37 havya
+
+>   37 kavih
+
+>   37 purvyam
+
+>   37 sahasram
+
+>   37 shrutam
+
+>   37 surya
+
+>   36 apah
+
+>   36 bhadram
+
+>   36 duto
+
+>   36 havisa
+
+>   36 ittha
+
+>   36 mahah
+
+>   36 mahina
+
+>   36 ojasa
+
+>   36 pavamano
+
+>   36 sumatim
+
+>   36 visha
+
+>   35 eti
+
+>   35 hotaram
+
+>   35 madhvah
+
+>   35 padam
+
+>   35 vidma
+
+>   34 asma
+
+>   34 huvema
+
+>   34 janam
+
+>   34 jatavedah
+
+>   34 prathama
+
+>   34 ratha
+
+>   34 sadane
+
+>   34 same
+
+>   34 satra
+
+>   34 shrudhi
+
+>   34 stha
+
+>   34 suryena
+
+>   34 ut
+
+>   34 vacam
+
+>   33 bhago
+
+>   33 bhuma
+
+>   33 bhuvanasya
+
+>   33 garbham
+
+>   33 janaya
+
+>   33 madhva
+
+>   33 prthivyah
+
+>   33 rayinam
+
+>   33 tamu
+
+>   33 vajesu
+
+>   33 visham
+
+>   33 visho
+
+>   33 vrdhe
+
+>   32 aha
+
+>   32 amrta
+
+>   32 bhavati
+
+>   32 dhama
+
+>   32 dyava
+
+>   32 jivase
+
+>   32 kva
+
+>   32 manuso
+
+>   32 mitra
+
+>   32 patha
+
+>   32 rajasi
+
+>   32 ratnam
+
+>   32 sakhyam
+
+>   32 sakhye
+
+>   32 stomo
+
+>   32 tasma
+
+>   32 uti
+
+>   32 vacah
+
+>   32 vasavo
+
+>   32 vasunam
+
+>   32 vitaye
+
+>   31 adhvare
+
+>   31 api
+
+>   31 asman
+
+>   31 brhaspate
+
+>   31 eta
+
+>   31 in
+
+>   31 krnute
+
+>   31 madhvo
+
+>   31 mahna
+
+>   31 manma
+
+>   31 mitrasya
+
+>   31 nabhantamanyake
+
+>   31 nr^in
+
+>   31 pade
+
+>   31 prathamo
+
+>   31 prtanasu
+
+>   31 rtena
+
+>   31 sahasa
+
+>   31 sahasra
+
+>   31 sataye
+
+>   31 suvitaya
+
+>   31 tya
+
+>   31 ubha
+
+>   31 vaco
+
+>   31 vana
+
+>   31 varunaya
+
+>   31 yada
+
+>   31 yasmin
+
+>   30 aditya
+
+>   30 avase
+
+>   30 citram
+
+>   30 devebhyo
+
+>   30 dhattam
+
+>   30 dhiyo
+
+>   30 dravinam
+
+>   30 dvisah
+
+>   30 kad
+
+>   30 manisa
+
+>   30 martyah
+
+>   30 sajosasa
+
+>   30 satyam
+
+>   30 sim
+
+>   30 suno
+
+>   30 tisro
+
+>   30 vahantu
+
+>   29 bhare
+
+>   29 citra
+
+>   29 dhara
+
+>   29 gopa
+
+>   29 imahe
+
+>   29 kah
+
+>   29 manave
+
+>   29 pavitre
+
+>   29 pibatam
+
+>   29 punah
+
+>   29 purvih
+
+>   29 putra
+
+>   29 rbhavo
+
+>   29 sakhya
+
+>   29 sunvate
+
+>   29 suro
+
+>   29 tistha
+
+>   29 tye
+
+>   29 vajasataye
+
+>   29 yabhih
+
+>   29 yuja
+
+>   28 aram
+
+>   28 aryo
+
+>   28 asmai
+
+>   28 brahmana
+
+>   28 brhantam
+
+>   28 havante
+
+>   28 hitam
+
+>   28 jato
+
+>   28 katha
+
+>   28 namo
+
+>   28 patih
+
+>   28 punana
+
+>   28 puruni
+
+>   28 srava
+
+>   28 usasa
+
+>   28 vahanti
+
+>   28 vajasya
+
+>   28 viksu
+
+>   28 yadindra
+
+>   27 adhvaram
+
+>   27 bodhi
+
+>   27 dame
+
+>   27 davane
+
+>   27 dhiyah
+
+>   27 duhita
+
+>   27 ena
+
+>   27 gayata
+
+>   27 hanti
+
+>   27 jatavedo
+
+>   27 maksu
+
+>   27 martyam
+
+>   27 nava
+
+>   27 nrbhih
+
+>   27 purve
+
+>   27 radho
+
+>   27 rajamsi
+
+>   27 satya
+
+>   27 shocisa
+
+>   27 shriye
+
+>   27 sustutim
+
+>   27 svayam
+
+>   27 tana
+
+>   27 vajrena
+
+>   27 vavrdhe
+
+>   27 vrata
+
+>   27 vrsabham
+
+>   27 yajñe
+
+>   27 yaksi
+
+>   26 barhih
+
+>   26 dadhati
+
+>   26 dadhise
+
+>   26 devaya
+
+>   26 etam
+
+>   26 grnate
+
+>   26 harivo
+
+>   26 kavayo
+
+>   26 mahitva
+
+>   26 manah
+
+>   26 pathah
+
+>   26 pitaro
+
+>   26 sad
+
+>   26 sajosa
+
+>   26 sakhayah
+
+>   26 shavistha
+
+>   26 shukra
+
+>   26 suto
+
+>   26 svah
+
+>   26 tvad
+
+>   26 uso
+
+>   26 varunam
+
+>   26 vatsam
+
+>   26 vidathe
+
+>   26 vrsabha
+
+>   26 vrsne
+
+>   26 vrtrahan
+
+>   26 yajñesu
+
+>   25 anti
+
+>   25 bhut
+
+>   25 dade
+
+>   25 dvita
+
+>   25 gavah
+
+>   25 ghrtena
+
+>   25 kave
+
+>   25 mahan
+
+>   25 mahyam
+
+>   25 nir
+
+>   25 parame
+
+>   25 purutra
+
+>   25 rajaso
+
+>   25 raksa
+
+>   25 sahasrinam
+
+>   25 san
+
+>   25 shatrun
+
+>   25 shunam
+
+>   25 shuro
+
+>   25 surayah
+
+>   25 suviram
+
+>   25 tanva
+
+>   25 tvasta
+
+>   25 uru
+
+>   25 varam
+
+>   25 vira
+
+>   25 vratani
+
+>   25 vrsano
+
+>   25 yajño
+
+>   24 aya
+
+>   24 dadhana
+
+>   24 dhenavah
+
+>   24 eka
+
+>   24 indavah
+
+>   24 jaghana
+
+>   24 jane
+
+>   24 marto
+
+>   24 matara
+
+>   24 paro
+
+>   24 pavitra
+
+>   24 priyah
+
+>   24 prthivyam
+
+>   24 prtsu
+
+>   24 radhase
+
+>   24 rajan
+
+>   24 saho
+
+>   24 sajosah
+
+>   24 sakhyaya
+
+>   24 samanam
+
+>   24 shishum
+
+>   24 srja
+
+>   24 stuhi
+
+>   24 tani
+
+>   24 tanvam
+
+>   24 ugra
+
+>   24 vajino
+
+>   24 vato
+
+>   24 vipro
+
+>   24 viryam
+
+>   24 vrajam
+
+>   24 yaya
+
+>   24 yonim
+
+>   23 amrtasya
+
+>   23 antah
+
+>   23 are
+
+>   23 bahu
+
+>   23 brhato
+
+>   23 cakrma
+
+>   23 dyauh
+
+>   23 grhe
+
+>   23 havyam
+
+>   23 iti
+
+>   23 jana
+
+>   23 jata
+
+>   23 kuvit
+
+>   23 mada
+
+>   23 madah
+
+>   23 maha
+
+>   23 mam
+
+>   23 martyaya
+
+>   23 naram
+
+>   23 pada
+
+>   23 pavaka
+
+>   23 pitaram
+
+>   23 purah
+
+>   23 purva
+
+>   23 samudram
+
+>   23 shravah
+
+>   23 shyeno
+
+>   23 sindhavah
+
+>   23 sumana
+
+>   23 surye
+
+>   23 tasmai
+
+>   23 varunah
+
+>   23 varyam
+
+>   23 vidathesu
+
+>   23 vishvaha
+
+>   23 vratam
+
+>   22 ad
+
+>   22 asa
+
+>   22 bhavantu
+
+>   22 dah
+
+>   22 data
+
+>   22 dhavati
+
+>   22 gachatam
+
+>   22 gava
+
+>   22 girvanah
+
+>   22 gosu
+
+>   22 grham
+
+>   22 havih
+
+>   22 hrda
+
+>   22 indre
+
+>   22 jagama
+
+>   22 janita
+
+>   22 jaritre
+
+>   22 jusanta
+
+>   22 kamam
+
+>   22 kasya
+
+>   22 ketum
+
+>   22 krnuhi
+
+>   22 mataram
+
+>   22 nadyo
+
+>   22 payo
+
+>   22 rtava
+
+>   22 samatsu
+
+>   22 savana
+
+>   22 shardho
+
+>   22 sindhavo
+
+>   22 suryah
+
+>   22 trini
+
+>   22 trir
+
+>   22 vaja
+
+>   22 vajrin
+
+>   22 vayave
+
+>   22 vrtrani
+
+>   22 yantu
+
+>   22 yas
+
+>   21 arsati
+
+>   21 bibharti
+
+>   21 brhaspatim
+
+>   21 cakara
+
+>   21 carsaninam
+
+>   21 dadati
+
+>   21 daksasya
+
+>   21 daksina
+
+>   21 dhayi
+
+>   21 dhimahi
+
+>   21 didihi
+
+>   21 divya
+
+>   21 drlha
+
+>   21 durita
+
+>   21 ekam
+
+>   21 haribhyam
+
+>   21 harim
+
+>   21 jajana
+
+>   21 kavim
+
+>   21 krnoti
+
+>   21 ksatram
+
+>   21 mitraya
+
+>   21 mo
+
+>   21 navyam
+
+>   21 nrnam
+
+>   21 pantham
+
+>   21 prajam
+
+>   21 priyo
+
+>   21 radhah
+
+>   21 rocana
+
+>   21 sacante
+
+>   21 samidha
+
+>   21 samudre
+
+>   21 shrnutam
+
+>   21 somaso
+
+>   21 sukrato
+
+>   21 sve
+
+>   21 udu
+
+>   21 vaca
+
+>   21 vaksi
+
+>   21 vidhema
+
+>   21 viprah
+
+>   21 vrsno
+
+>   21 yajatra
+
+>   21 yato
+
 >   21 yavistha

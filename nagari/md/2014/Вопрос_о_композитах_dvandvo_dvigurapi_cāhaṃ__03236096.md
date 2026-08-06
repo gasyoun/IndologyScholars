@@ -33,39 +33,72 @@ yenāhaṃ syāṃ bahuvrīhiḥ.
 
 ## 2. Usha Sanka — 2014-03-23 17:07:06
 
-A king is addressed here, who is approached for money by the speaker. It is
-said that all samAsas got their names from this verse. Does this answer the
-question?
-
-
-2014-03-23 18:30 GMT+05:30 Marcis <gasyoun@…>:
-
-> Господа,
->
-> dvandvo dvigurapi cāhaṃ madgehe nityamavyayībhāvaḥ, tatpuruṣa karmadhāraya
-> yenāhaṃ syāṃ bahuvrīhiḥ.
-> द्वन्द्वो द्विगुरपि चाहं मद्गेहे नित्यमव्ययीभावः । तत्पुरुष कर्मधारय
-> येनाहं स्यां बहुव्रीहिः ॥
->
-> Я женат (букв. двое, dvandvo) и имею скот (dviguḥ). У меня постоянное
-> (nityam) отсутствие трат (благодаря нищете, avyayībhāvaḥ). Так дай же,
-> человек (tatpuruṣa), мне работу. [Такую] (karma dhāraya) благодаря которой
-> я могу стать владельцем обильного риса (bahuvrīhiḥ).
->
-> Кто имеет что возразить?
->
-> --
-> Чтобы отменить подписку на группу, посвященную санскриту,
-> отправьте сообщение по адресу - мы поймем, простим даже:
-> Nagari-unsubscribe@…
-> ---
-> Вы получили это сообщение, поскольку подписаны на группу "Общество
-> ревнителей санскрита (Sanscrit)".
-> Чтобы отменить подписку на эту группу и больше не получать от нее
-> сообщения, отправьте письмо на электронный адрес
-> nagari+unsubscribe@….
-> Чтобы настроить другие параметры, перейдите по ссылке
-> https://groups.google.com/d/optout.
+A king is addressed here, who is approached for money by the speaker. It is
+
+said that all samAsas got their names from this verse. Does this answer the
+
+question?
+
+
+
+
+
+2014-03-23 18:30 GMT+05:30 Marcis <gasyoun@…>:
+
+
+
+> Господа,
+
+>
+
+> dvandvo dvigurapi cāhaṃ madgehe nityamavyayībhāvaḥ, tatpuruṣa karmadhāraya
+
+> yenāhaṃ syāṃ bahuvrīhiḥ.
+
+> द्वन्द्वो द्विगुरपि चाहं मद्गेहे नित्यमव्ययीभावः । तत्पुरुष कर्मधारय
+
+> येनाहं स्यां बहुव्रीहिः ॥
+
+>
+
+> Я женат (букв. двое, dvandvo) и имею скот (dviguḥ). У меня постоянное
+
+> (nityam) отсутствие трат (благодаря нищете, avyayībhāvaḥ). Так дай же,
+
+> человек (tatpuruṣa), мне работу. [Такую] (karma dhāraya) благодаря которой
+
+> я могу стать владельцем обильного риса (bahuvrīhiḥ).
+
+>
+
+> Кто имеет что возразить?
+
+>
+
+> --
+
+> Чтобы отменить подписку на группу, посвященную санскриту,
+
+> отправьте сообщение по адресу - мы поймем, простим даже:
+
+> Nagari-unsubscribe@…
+
+> ---
+
+> Вы получили это сообщение, поскольку подписаны на группу "Общество
+
+> ревнителей санскрита (Sanscrit)".
+
+> Чтобы отменить подписку на эту группу и больше не получать от нее
+
+> сообщения, отправьте письмо на электронный адрес
+
+> nagari+unsubscribe@….
+
+> Чтобы настроить другие параметры, перейдите по ссылке
+
+> https://groups.google.com/d/optout.
+
 >
 
 ## 3. Andrey Klebanov — 2014-04-08 00:19:39

@@ -104,9 +104,12 @@ http://rapidshare.com/files/457217124/tyad.pdf
 
 ## 7. Worga — 2011-04-13 15:23:45
 
-Шрифт Siddhanta - screenshots:
-
-http://www.onlinedisk.ru/image/645065/Siddhanta1.gif
+Шрифт Siddhanta - screenshots:
+
+
+
+http://www.onlinedisk.ru/image/645065/Siddhanta1.gif
+
 http://www.onlinedisk.ru/image/645066/Siddhanta2.gif
 
 ## 8. Marcis — 2011-04-13 18:57:15

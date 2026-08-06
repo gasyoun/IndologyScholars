@@ -17,73 +17,132 @@ source_url: https://groups.google.com/d/msgid/nagari/ad38e738-b28a-4ccc-b404-87d
 
 ## 1. Marcis — 2021-01-19 20:10:37 · 📎 2
 
-[image: kutstha.JPG]
-
-Что за зверь? хиндятина какая? Из глоссария Айэнгара.
-
-[image: kutstha2.JPG]
-
-
-кутстха нитьян   
-
-Такие бывают провидцы в MW:
-
- 1 kavi (seer)
-2 dūradarśin (seer)
-3 mantradraṣṭṛ (seer)
-4 muni (seer)
-5 vādiśa (seer)
-6 vidvajjana (seer)
-7 vidvas (seer)
-8 vipra (seer)
-9 viprānumadita (seer)
-10 vṛddhāraṇya (seer)
-11 sādhu (seer)
-12 siddha (seer)
-13 siddhādeśa (seer)
-14 sūktadarśin (seer)
+[image: kutstha.JPG]
+
+
+
+Что за зверь? хиндятина какая? Из глоссария Айэнгара.
+
+
+
+[image: kutstha2.JPG]
+
+
+
+
+
+кутстха нитьян   
+
+
+
+Такие бывают провидцы в MW:
+
+
+
+ 1 kavi (seer)
+
+2 dūradarśin (seer)
+
+3 mantradraṣṭṛ (seer)
+
+4 muni (seer)
+
+5 vādiśa (seer)
+
+6 vidvajjana (seer)
+
+7 vidvas (seer)
+
+8 vipra (seer)
+
+9 viprānumadita (seer)
+
+10 vṛddhāraṇya (seer)
+
+11 sādhu (seer)
+
+12 siddha (seer)
+
+13 siddhādeśa (seer)
+
+14 sūktadarśin (seer)
+
 15 saumedhika (seer)
 
 ## 2. Marcis — 2021-01-19 20:12:12 · 📎 1
 
-kakutstha самое близкое
-
+kakutstha самое близкое
+
+
+
 [image: iyengar.JPG]
 
 ## 3. Serge A — 2021-01-20 17:42:23
 
-Там *kūṭastha* однозначно.
-BTW, странно, что слово *nityan* не вызвало никаких вопросов.
-
-
-вторник, 19 января 2021 г. в 20:10:38 UTC+3, Marcis: 
-
-> [image: kutstha.JPG]
->
-> Что за зверь? хиндятина какая? Из глоссария Айэнгара.
->
-> [image: kutstha2.JPG]
->
->
-> кутстха нитьян   
->
-> Такие бывают провидцы в MW:
->
->  1 kavi (seer)
-> 2 dūradarśin (seer)
-> 3 mantradraṣṭṛ (seer)
-> 4 muni (seer)
-> 5 vādiśa (seer)
-> 6 vidvajjana (seer)
-> 7 vidvas (seer)
-> 8 vipra (seer)
-> 9 viprānumadita (seer)
-> 10 vṛddhāraṇya (seer)
-> 11 sādhu (seer)
-> 12 siddha (seer)
-> 13 siddhādeśa (seer)
-> 14 sūktadarśin (seer)
-> 15 saumedhika (seer)  
+Там *kūṭastha* однозначно.
+
+BTW, странно, что слово *nityan* не вызвало никаких вопросов.
+
+
+
+
+
+вторник, 19 января 2021 г. в 20:10:38 UTC+3, Marcis: 
+
+
+
+> [image: kutstha.JPG]
+
+>
+
+> Что за зверь? хиндятина какая? Из глоссария Айэнгара.
+
+>
+
+> [image: kutstha2.JPG]
+
+>
+
+>
+
+> кутстха нитьян   
+
+>
+
+> Такие бывают провидцы в MW:
+
+>
+
+>  1 kavi (seer)
+
+> 2 dūradarśin (seer)
+
+> 3 mantradraṣṭṛ (seer)
+
+> 4 muni (seer)
+
+> 5 vādiśa (seer)
+
+> 6 vidvajjana (seer)
+
+> 7 vidvas (seer)
+
+> 8 vipra (seer)
+
+> 9 viprānumadita (seer)
+
+> 10 vṛddhāraṇya (seer)
+
+> 11 sādhu (seer)
+
+> 12 siddha (seer)
+
+> 13 siddhādeśa (seer)
+
+> 14 sūktadarśin (seer)
+
+> 15 saumedhika (seer)  
+
 >
 
 ## 4. Marcis — 2021-01-21 01:09:14

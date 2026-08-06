@@ -17,15 +17,26 @@ source_url: https://groups.google.com/d/msgid/nagari/9bfdaf1c-0dec-48cb-a04e-899
 
 ## 1. Marcis — 2023-09-14 08:56:13
 
-Forrest, Charles Ramus  A picturesque tour along the rivers Ganges and 
-Jumna, in India : [Consisting of twenty-four highly finished and coloured 
-views, a map, and vignettes, from original drawings made on the spot; with 
-illustrations, historical and descriptive / [By Forrest]; Forew. by Lokesh 
-Chandra. - New Delhi : Niyogi books, 2015. - IV, 191, [6] p., [21] l. ill., 
-map. : ill. - (Archives in India historical reprints). - Подзаг. указ. на 
-обл. - Факс. воспр. изд. : London: Ackermann, 1824. - ISBN 
-978-93-83098-72-9.
-
-География • Экспедиции и путешествия • Реки • Ганг
-
+Forrest, Charles Ramus  A picturesque tour along the rivers Ganges and 
+
+Jumna, in India : [Consisting of twenty-four highly finished and coloured 
+
+views, a map, and vignettes, from original drawings made on the spot; with 
+
+illustrations, historical and descriptive / [By Forrest]; Forew. by Lokesh 
+
+Chandra. - New Delhi : Niyogi books, 2015. - IV, 191, [6] p., [21] l. ill., 
+
+map. : ill. - (Archives in India historical reprints). - Подзаг. указ. на 
+
+обл. - Факс. воспр. изд. : London: Ackermann, 1824. - ISBN 
+
+978-93-83098-72-9.
+
+
+
+География • Экспедиции и путешествия • Реки • Ганг
+
+
+
 см. https://vk.com/samskrtamru?w=wall-88831040_19917

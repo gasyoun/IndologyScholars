@@ -17,33 +17,60 @@ source_url: https://groups.google.com/d/msgid/nagari/634ebaeb-ab07-4872-9843-755
 
 ## 1. Stormwatsch — 2010-12-02 12:53:40
 
-Title: Buddhist Hybrid Sanskrit Reader
-Author: Franklin Edgerton
-Publisher: Yale University Press
-Publication date: 1953
-Number of pages: 86
-Format / Quality: pdf / very good
-Size: 9,93 MB
-Language: English, Buddhist Hybrid Sanskrit (in Latin transliteration)
-
-"Buddhist Hybrid Sanskrit Reader is a collection of selections from
-the Mahavastu, Mahaparinirvana Sutra, Udanavarga and Lalitavistara,
-which have been edited according to the principles to be adopted for
-Buddhist Hybrid Sanskrit. The purpose behind this work is to
-facilitate the practical use of the author's Buddhist Hybrid Sanskrit
-Grammar and Dictionary (2 vols.) by scholars and students as well as
-teachers interested in the language.
-
-This reader contains selections from the most important Buddhist
-Hybrid Sanskrit texts and facilitates the use of Buddhist Hybrid
-Sanskrit Grammar and Dictionary."
-
-Taken from this site:
-http://uz-translations.net/?category=indian-indbooks&altname=buddhist_hybrid_sanskrit_reader
-
-Links for those who is reluctant to register there:
-
-http://ifile.it/iuxh86v
+Title: Buddhist Hybrid Sanskrit Reader
+
+Author: Franklin Edgerton
+
+Publisher: Yale University Press
+
+Publication date: 1953
+
+Number of pages: 86
+
+Format / Quality: pdf / very good
+
+Size: 9,93 MB
+
+Language: English, Buddhist Hybrid Sanskrit (in Latin transliteration)
+
+
+
+"Buddhist Hybrid Sanskrit Reader is a collection of selections from
+
+the Mahavastu, Mahaparinirvana Sutra, Udanavarga and Lalitavistara,
+
+which have been edited according to the principles to be adopted for
+
+Buddhist Hybrid Sanskrit. The purpose behind this work is to
+
+facilitate the practical use of the author's Buddhist Hybrid Sanskrit
+
+Grammar and Dictionary (2 vols.) by scholars and students as well as
+
+teachers interested in the language.
+
+
+
+This reader contains selections from the most important Buddhist
+
+Hybrid Sanskrit texts and facilitates the use of Buddhist Hybrid
+
+Sanskrit Grammar and Dictionary."
+
+
+
+Taken from this site:
+
+http://uz-translations.net/?category=indian-indbooks&altname=buddhist_hybrid_sanskrit_reader
+
+
+
+Links for those who is reluctant to register there:
+
+
+
+http://ifile.it/iuxh86v
+
 Mirror: http://www.mediafire.com/?j4jl9yi19n88nnl
 
 ## 2. Marcis — 2010-12-17 02:59:17

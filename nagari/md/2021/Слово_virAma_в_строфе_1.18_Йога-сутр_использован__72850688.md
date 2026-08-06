@@ -26,32 +26,58 @@ https://www.sanskrit-trikashaivism.com/en/patanjali-yoga-sutras/629
 
 ## 2. Constantine I. — 2021-09-28 13:33:34
 
-В ед. ч., и похоже на член составного слова.
-
-вт, 28 сент. 2021, 12:30 Vasyl Ve <vasv1771@…>:
-
->
-> Добрый день, хочу задать один вопрос. Слово virAma в строфе 1.18 Йога-сутр
-> использовано в единственном числе, или, может быть, во множественном? Может
-> быть так, что 2000 лет назад в санскрите оно могло быть во множественном
-> числе в этой форме? Заранее спасибо. Ссылка на санскритский текст:
-> https://www.sanskrit-trikashaivism.com/en/patanjali-yoga-sutras/629
-> <https://www.sanskrit-trikashaivism.com/en/patanjali-yoga-sutras/629?fbclid=IwAR3C8WhfplRGdLEq9zYRp50Y4M7KQ7evv79ZqBBrOPXNq8fL7D_L1X_KNcw>
->
-> --
-> Чтобы отменить подписку на группу, посвященную санскриту,
-> отправьте сообщение по адресу - мы поймем, простим даже:
-> Nagari-unsubscribe@…
-> ---
-> Вы получили это сообщение, поскольку подписаны на группу "Общество
-> ревнителей санскрита (Sanscrit)".
-> Чтобы отменить подписку на эту группу и больше не получать от нее
-> сообщения, отправьте письмо на электронный адрес
-> nagari+unsubscribe@….
-> Чтобы посмотреть обсуждение на веб-странице, перейдите по ссылке
-> https://groups.google.com/d/msgid/nagari/348c9b20-efb6-46b3-96f9-e457902bb0ecn%40googlegroups.com
-> <https://groups.google.com/d/msgid/nagari/348c9b20-efb6-46b3-96f9-e457902bb0ecn%40googlegroups.com?utm_medium=email&utm_source=footer>
-> .
+В ед. ч., и похоже на член составного слова.
+
+
+
+вт, 28 сент. 2021, 12:30 Vasyl Ve <vasv1771@…>:
+
+
+
+>
+
+> Добрый день, хочу задать один вопрос. Слово virAma в строфе 1.18 Йога-сутр
+
+> использовано в единственном числе, или, может быть, во множественном? Может
+
+> быть так, что 2000 лет назад в санскрите оно могло быть во множественном
+
+> числе в этой форме? Заранее спасибо. Ссылка на санскритский текст:
+
+> https://www.sanskrit-trikashaivism.com/en/patanjali-yoga-sutras/629
+
+> <https://www.sanskrit-trikashaivism.com/en/patanjali-yoga-sutras/629?fbclid=IwAR3C8WhfplRGdLEq9zYRp50Y4M7KQ7evv79ZqBBrOPXNq8fL7D_L1X_KNcw>
+
+>
+
+> --
+
+> Чтобы отменить подписку на группу, посвященную санскриту,
+
+> отправьте сообщение по адресу - мы поймем, простим даже:
+
+> Nagari-unsubscribe@…
+
+> ---
+
+> Вы получили это сообщение, поскольку подписаны на группу "Общество
+
+> ревнителей санскрита (Sanscrit)".
+
+> Чтобы отменить подписку на эту группу и больше не получать от нее
+
+> сообщения, отправьте письмо на электронный адрес
+
+> nagari+unsubscribe@….
+
+> Чтобы посмотреть обсуждение на веб-странице, перейдите по ссылке
+
+> https://groups.google.com/d/msgid/nagari/348c9b20-efb6-46b3-96f9-e457902bb0ecn%40googlegroups.com
+
+> <https://groups.google.com/d/msgid/nagari/348c9b20-efb6-46b3-96f9-e457902bb0ecn%40googlegroups.com?utm_medium=email&utm_source=footer>
+
+> .
+
 >
 
 ## 3. Vasyl Ve — 2021-09-28 13:46:05

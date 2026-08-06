@@ -17,77 +17,144 @@ source_url: https://groups.google.com/d/msgid/nagari/50088918-ce5a-4d64-aa3d-4e3
 
 ## 1. ShaSa — 2013-12-19 11:51:26
 
-Namaste,
-here is an effort from me to give a word to word meaning to subhAShitas 
-(=lit. good sayings) in English for their exact understanding.
-Please let me know if any improvement is needed in this approach. Is 
-grammatical detail needed?
-Whatever you feel like, let me know. Your feed back will be highly 
-appreciated.
-First one is here! My most favorite subhAShitam.
--Regards
-
-उद्यमेन हि सिध्यन्ति कार्यणि न मनोरथै: | 
-न हि सुप्तस्य सिंहस्य प्रविशन्ति मुखे मॄगा: || 
-Any work will not get accomplished just merely by desiring for it's 
-completion. A 'prey' by itself doesn't enter in to the sleeping lion's 
-mouth!!! 
-कार्यणि उद्यमेन हि सिध्यन्ति। मनोरथै: न (सिध्यन्ति) | मॄगा: सुप्तस्य 
-सिंहस्य मुखे न हि प्रविशन्ति || 
-कार्यणि - tasks, work
-उद्यमेन - by effort, trying 
-हि - indeed
-सिध्यन्ति - get accomplished, done, (bear fruit)
-मनोरथै: - by desires, fancies
-न (सिध्यन्ति) - are not accomplished
-मॄगा: - deer, or animals in general
-सुप्तस्य - of that which is slept
-सिंहस्य - of the lion
-मुखे - in the mouth
-न हि - never, do not
-प्रविशन्ति - enter, go into
-If any work is to be accomplished, strong efforts are required. (We cannot 
-achieve an aim) merely by desiring its completion.
+Namaste,
+
+here is an effort from me to give a word to word meaning to subhAShitas 
+
+(=lit. good sayings) in English for their exact understanding.
+
+Please let me know if any improvement is needed in this approach. Is 
+
+grammatical detail needed?
+
+Whatever you feel like, let me know. Your feed back will be highly 
+
+appreciated.
+
+First one is here! My most favorite subhAShitam.
+
+-Regards
+
+
+
+उद्यमेन हि सिध्यन्ति कार्यणि न मनोरथै: | 
+
+न हि सुप्तस्य सिंहस्य प्रविशन्ति मुखे मॄगा: || 
+
+Any work will not get accomplished just merely by desiring for it's 
+
+completion. A 'prey' by itself doesn't enter in to the sleeping lion's 
+
+mouth!!! 
+
+कार्यणि उद्यमेन हि सिध्यन्ति। मनोरथै: न (सिध्यन्ति) | मॄगा: सुप्तस्य 
+
+सिंहस्य मुखे न हि प्रविशन्ति || 
+
+कार्यणि - tasks, work
+
+उद्यमेन - by effort, trying 
+
+हि - indeed
+
+सिध्यन्ति - get accomplished, done, (bear fruit)
+
+मनोरथै: - by desires, fancies
+
+न (सिध्यन्ति) - are not accomplished
+
+मॄगा: - deer, or animals in general
+
+सुप्तस्य - of that which is slept
+
+सिंहस्य - of the lion
+
+मुखे - in the mouth
+
+न हि - never, do not
+
+प्रविशन्ति - enter, go into
+
+If any work is to be accomplished, strong efforts are required. (We cannot 
+
+achieve an aim) merely by desiring its completion.
+
 Animals will not enter a sleeping lion's mouth on their own.
 
 ## 2. ShaSa — 2013-12-19 11:53:00
 
-Read- मृगाः instead of मॄगा:
-
-On Thursday, December 19, 2013 2:21:26 PM UTC+5:30, ShaSa wrote:
->
-> Namaste,
-> here is an effort from me to give a word to word meaning to subhAShitas 
-> (=lit. good sayings) in English for their exact understanding.
-> Please let me know if any improvement is needed in this approach. Is 
-> grammatical detail needed?
-> Whatever you feel like, let me know. Your feed back will be highly 
-> appreciated.
-> First one is here! My most favorite subhAShitam.
-> -Regards
->
-> उद्यमेन हि सिध्यन्ति कार्यणि न मनोरथै: | 
-> न हि सुप्तस्य सिंहस्य प्रविशन्ति मुखे मॄगा: || 
-> Any work will not get accomplished just merely by desiring for it's 
-> completion. A 'prey' by itself doesn't enter in to the sleeping lion's 
-> mouth!!! 
-> कार्यणि उद्यमेन हि सिध्यन्ति। मनोरथै: न (सिध्यन्ति) | मॄगा: सुप्तस्य 
-> सिंहस्य मुखे न हि प्रविशन्ति || 
-> कार्यणि - tasks, work
-> उद्यमेन - by effort, trying 
-> हि - indeed
-> सिध्यन्ति - get accomplished, done, (bear fruit)
-> मनोरथै: - by desires, fancies
-> न (सिध्यन्ति) - are not accomplished
-> मॄगा: - deer, or animals in general
-> सुप्तस्य - of that which is slept
-> सिंहस्य - of the lion
-> मुखे - in the mouth
-> न हि - never, do not
-> प्रविशन्ति - enter, go into
-> If any work is to be accomplished, strong efforts are required. (We cannot 
-> achieve an aim) merely by desiring its completion.
-> Animals will not enter a sleeping lion's mouth on their own.
+Read- मृगाः instead of मॄगा:
+
+
+
+On Thursday, December 19, 2013 2:21:26 PM UTC+5:30, ShaSa wrote:
+
+>
+
+> Namaste,
+
+> here is an effort from me to give a word to word meaning to subhAShitas 
+
+> (=lit. good sayings) in English for their exact understanding.
+
+> Please let me know if any improvement is needed in this approach. Is 
+
+> grammatical detail needed?
+
+> Whatever you feel like, let me know. Your feed back will be highly 
+
+> appreciated.
+
+> First one is here! My most favorite subhAShitam.
+
+> -Regards
+
+>
+
+> उद्यमेन हि सिध्यन्ति कार्यणि न मनोरथै: | 
+
+> न हि सुप्तस्य सिंहस्य प्रविशन्ति मुखे मॄगा: || 
+
+> Any work will not get accomplished just merely by desiring for it's 
+
+> completion. A 'prey' by itself doesn't enter in to the sleeping lion's 
+
+> mouth!!! 
+
+> कार्यणि उद्यमेन हि सिध्यन्ति। मनोरथै: न (सिध्यन्ति) | मॄगा: सुप्तस्य 
+
+> सिंहस्य मुखे न हि प्रविशन्ति || 
+
+> कार्यणि - tasks, work
+
+> उद्यमेन - by effort, trying 
+
+> हि - indeed
+
+> सिध्यन्ति - get accomplished, done, (bear fruit)
+
+> मनोरथै: - by desires, fancies
+
+> न (सिध्यन्ति) - are not accomplished
+
+> मॄगा: - deer, or animals in general
+
+> सुप्तस्य - of that which is slept
+
+> सिंहस्य - of the lion
+
+> मुखे - in the mouth
+
+> न हि - never, do not
+
+> प्रविशन्ति - enter, go into
+
+> If any work is to be accomplished, strong efforts are required. (We cannot 
+
+> achieve an aim) merely by desiring its completion.
+
+> Animals will not enter a sleeping lion's mouth on their own.
+
 >
 
 ## 3. Serge A — 2013-12-19 13:16:04
@@ -173,67 +240,128 @@ harmful than these. We cannot be with them even if it were in heaven.
 
 ## 6. ShaSa — 2013-12-22 09:18:08
 
-विद्या विवादाय धनं मदाय 
-
-शक्तिः परेषां परिपीडनाय। 
-
-खलस्य साधोर्विपरीतमेतत् 
-
-ज्ञानाय दानाय च रक्षणाय ॥
-
-A wicked man uses his education for argument, money to be arrogant and 
-strength to hurt others. 
-
-In contrast a virtuous person uses the same for acquiring new knowledge, 
-charity and protecting respectively.
-
-खलस्य विद्या विवादाय(भवति)। धनं मदाय(भवति)। शक्तिः परेषां परिपीडनाय (भवति)। 
-एतत् साधोः विपरीतम्। (विद्या) ज्ञानाय। (धनं) दानाय (शक्तिः परेषां) रक्षणाय च 
-(भवति)॥
-
-खलस्य -  of crooked man, wicked man
-
-विद्या -  education, Knowledge
-
-विवादाय - argument
-
-धनं - Wealth, money
-
-मदाय - for Pride, arrogance, conceit
-
-शक्तिः - Power, strength
-
-परेषां - of others
-
-परिपीडनाय - for inflicting pain upon 
-
-एतत् - this
-
-साधोः - of good man
-
-विपरीतम् - opposite.
-
-ज्ञानाय - for wisdom.
-
-दानाय - for charity
-
-च - and 
-
-रक्षणाय - for protection
-
-A wicked man's Knowledge is used only for arguing with others. His Wealth 
-makes him an egoist. His strength is used just to inflict pain on others. 
-
-The opposite is true for a good man. His Learning is used for gaining 
-knowledge; his wealth is used to donate it to others and his might is used 
-to protect. 
-
-
-Only if someone could give Russian meanings on daily basis. (like Serge did 
-it for first one.) If needed, I can give words from "Google Translate" and 
-then work will be lessened for the Russian meaning provider. It should take 
-not more than 5-10 minutes. Anyone from group? Please let me know.
-
+विद्या विवादाय धनं मदाय 
+
+
+
+शक्तिः परेषां परिपीडनाय। 
+
+
+
+खलस्य साधोर्विपरीतमेतत् 
+
+
+
+ज्ञानाय दानाय च रक्षणाय ॥
+
+
+
+A wicked man uses his education for argument, money to be arrogant and 
+
+strength to hurt others. 
+
+
+
+In contrast a virtuous person uses the same for acquiring new knowledge, 
+
+charity and protecting respectively.
+
+
+
+खलस्य विद्या विवादाय(भवति)। धनं मदाय(भवति)। शक्तिः परेषां परिपीडनाय (भवति)। 
+
+एतत् साधोः विपरीतम्। (विद्या) ज्ञानाय। (धनं) दानाय (शक्तिः परेषां) रक्षणाय च 
+
+(भवति)॥
+
+
+
+खलस्य -  of crooked man, wicked man
+
+
+
+विद्या -  education, Knowledge
+
+
+
+विवादाय - argument
+
+
+
+धनं - Wealth, money
+
+
+
+मदाय - for Pride, arrogance, conceit
+
+
+
+शक्तिः - Power, strength
+
+
+
+परेषां - of others
+
+
+
+परिपीडनाय - for inflicting pain upon 
+
+
+
+एतत् - this
+
+
+
+साधोः - of good man
+
+
+
+विपरीतम् - opposite.
+
+
+
+ज्ञानाय - for wisdom.
+
+
+
+दानाय - for charity
+
+
+
+च - and 
+
+
+
+रक्षणाय - for protection
+
+
+
+A wicked man's Knowledge is used only for arguing with others. His Wealth 
+
+makes him an egoist. His strength is used just to inflict pain on others. 
+
+
+
+The opposite is true for a good man. His Learning is used for gaining 
+
+knowledge; his wealth is used to donate it to others and his might is used 
+
+to protect. 
+
+
+
+
+
+Only if someone could give Russian meanings on daily basis. (like Serge did 
+
+it for first one.) If needed, I can give words from "Google Translate" and 
+
+then work will be lessened for the Russian meaning provider. It should take 
+
+not more than 5-10 minutes. Anyone from group? Please let me know.
+
+
+
 -regards
 
 ## 7. Serge A — 2013-12-22 22:26:34
@@ -445,330 +573,642 @@ the heat of the Sun. They provide their fruits for the benefit of others.
 
 ## 10. ShaSa — 2013-12-27 17:06:30
 
-गच्छन् पिपीलको याति, योजनानां शतान्यपि।
-अगच्छन् वैनतेयोsपि, पदमेकं न गच्छति॥
-An ant covers hundreds of miles when it keeps moving. Garuda, when 
-stagnant, does not move even one foot. 
-अन्वयः - 
-पिपीलकः गच्छन् योजनानां शतानि अपि याति, वैनतेयः अगच्छन् एकं पदम् (अपि) न 
-गच्छति।
-पिपीलकः - ant
-
-गच्छन् - (lit. the one who is) moving, walking, going ahead
-
-योजनानां शतानि - (of) hundreds of miles (yojana- an ancient measure of 
-distance) [Apte-A measure of distance equal to four Krośas or eight or nine 
-miles;]
-
-अपि - also
-
-याति - goes
-
-वैनतेयः - son of vinatA, garuDa, the king of birds (Eagle)
-
-अगच्छन् - (lit. the one who is) not moving
-
-एकं - one
-
-पदम् (अपि) - step
-
-न - (does) not
-
-गच्छति - goes
-An ant is small. But it can cross hundreds of miles when on move. Garuda is 
-big and powerful. It can fly. But when stagnant, does not move even one 
-foot. Message- Even a genius cannot achieve anything without trying. But an 
-ordinary person can reach his goal by his steady efforts.
-
-
-gacchan pipīlako yāti yojanānāṃ śatānyapi।
-
-agacchan vainateyo'pi padamekaṃ na gacchati॥
-
-anvayaḥ -
-
-pipīlakaḥ gacchan yojanānāṃ śatāni api yāti। vainateyaḥ agacchan ekaṃ padam 
-(api) na gacchati।
-
-pipīlakaḥ - 
-
-gacchan - 
-
-yojanānāṃ śatāni - 
-
-api - 
-
-yāti - 
-
-vainateyaḥ - 
-
-agacchan - 
-
-ekaṃ - 
-
-padam (api) - 
-
-na - 
-
+गच्छन् पिपीलको याति, योजनानां शतान्यपि।
+
+अगच्छन् वैनतेयोsपि, पदमेकं न गच्छति॥
+
+An ant covers hundreds of miles when it keeps moving. Garuda, when 
+
+stagnant, does not move even one foot. 
+
+अन्वयः - 
+
+पिपीलकः गच्छन् योजनानां शतानि अपि याति, वैनतेयः अगच्छन् एकं पदम् (अपि) न 
+
+गच्छति।
+
+पिपीलकः - ant
+
+
+
+गच्छन् - (lit. the one who is) moving, walking, going ahead
+
+
+
+योजनानां शतानि - (of) hundreds of miles (yojana- an ancient measure of 
+
+distance) [Apte-A measure of distance equal to four Krośas or eight or nine 
+
+miles;]
+
+
+
+अपि - also
+
+
+
+याति - goes
+
+
+
+वैनतेयः - son of vinatA, garuDa, the king of birds (Eagle)
+
+
+
+अगच्छन् - (lit. the one who is) not moving
+
+
+
+एकं - one
+
+
+
+पदम् (अपि) - step
+
+
+
+न - (does) not
+
+
+
+गच्छति - goes
+
+An ant is small. But it can cross hundreds of miles when on move. Garuda is 
+
+big and powerful. It can fly. But when stagnant, does not move even one 
+
+foot. Message- Even a genius cannot achieve anything without trying. But an 
+
+ordinary person can reach his goal by his steady efforts.
+
+
+
+
+
+gacchan pipīlako yāti yojanānāṃ śatānyapi।
+
+
+
+agacchan vainateyo'pi padamekaṃ na gacchati॥
+
+
+
+anvayaḥ -
+
+
+
+pipīlakaḥ gacchan yojanānāṃ śatāni api yāti। vainateyaḥ agacchan ekaṃ padam 
+
+(api) na gacchati।
+
+
+
+pipīlakaḥ - 
+
+
+
+gacchan - 
+
+
+
+yojanānāṃ śatāni - 
+
+
+
+api - 
+
+
+
+yāti - 
+
+
+
+vainateyaḥ - 
+
+
+
+agacchan - 
+
+
+
+ekaṃ - 
+
+
+
+padam (api) - 
+
+
+
+na - 
+
+
+
 gacchati -
 
 ## 11. ShaSa — 2013-12-28 13:45:57
 
-तत्कर्म यन्न बन्धाय सा विद्या या विमुक्तये।
-आयासायापरं कर्म विद्यान्या शिल्पनैपुणम्॥
-
-पदपाठः- 
-
-तत् कर्म यत् न बन्धाय, सा विद्या या विमुक्तये। आयासाय अपरं कर्म विद्या अन्या 
-शिल्पनैपुणम्॥
-
-प्रतिपदार्थः-
-
-यत् न बन्धाय (भवति) तत् (एव) कर्म। या विमुक्तये (नयति) सा विद्या। अपरं कर्म 
-आयासाय (भवति)। अन्या विद्या शिल्पनैपुणम् (मात्रम् भवति)।
-
-Effort is that which does not make us bound. Learning is that which leads 
-us to liberation. Rest of all activity is for exertion. And all other 
-learning is mere craftsmanship.
-
-प्रतिपदार्थः-
-
-यत् - that which
-
-न बन्धाय (भवति) - is not for bondage
-
-तत् (एव) - that (alone is)
-
-कर्म -  action, effort, activity.
-
-या - that which 
-
-विमुक्तये (नयति) - (leads to) liberation
-
-सा विद्या - that is learning, knowledge
-
-अपरं कर्म - other work, activity
-
-आयासाय (भवति) - (is only) for waste of energy, exertion
-
-अन्या विद्या - other learning
-
-शिल्पनैपुणम् (मात्रम् भवति) - (is just mere) craftsmanship.
-
-That is action, effort which does not promote attachment; That is knowledge 
-which liberates [one from bondage] All other action is mere [pointless] 
-effort/hardship; all other knowledge is merely another skill/craftsmanship.
-
-IAST-
-
-tatkarma yanna bandhāya sā vidyā yā vimuktaye।
-
-āyāsāyāparaṃ karma vidyānyā śilpanaipuṇam॥
-
-padapāṭhaḥ- 
-
-tat karma yat na bandhāya, sā vidyā yā vimuktaye। āyāsāya aparaṃ karma 
-vidyā anyā śilpanaipuṇam॥
-
-anvayaḥ-
-
-yat na bandhāya (bhavati) tat (eva) karma। yā vimuktaye (nayati) sā vidyā। 
-aparaṃ karma āyāsāya (bhavati)। anyā vidyā śilpanaipuṇam (mātram bhavati)।
-
-pratipadārthaḥ-
-
-yat -
-
-na bandhāya (bhavati) -
-
-tat (eva) karma -
-
-yā -
-
-vimuktaye (nayati) -
-
-sā vidyā -
-
-aparaṃ karma -
-
-āyāsāya (bhavati) -
-
-anyā vidyā -
-
+तत्कर्म यन्न बन्धाय सा विद्या या विमुक्तये।
+
+आयासायापरं कर्म विद्यान्या शिल्पनैपुणम्॥
+
+
+
+पदपाठः- 
+
+
+
+तत् कर्म यत् न बन्धाय, सा विद्या या विमुक्तये। आयासाय अपरं कर्म विद्या अन्या 
+
+शिल्पनैपुणम्॥
+
+
+
+प्रतिपदार्थः-
+
+
+
+यत् न बन्धाय (भवति) तत् (एव) कर्म। या विमुक्तये (नयति) सा विद्या। अपरं कर्म 
+
+आयासाय (भवति)। अन्या विद्या शिल्पनैपुणम् (मात्रम् भवति)।
+
+
+
+Effort is that which does not make us bound. Learning is that which leads 
+
+us to liberation. Rest of all activity is for exertion. And all other 
+
+learning is mere craftsmanship.
+
+
+
+प्रतिपदार्थः-
+
+
+
+यत् - that which
+
+
+
+न बन्धाय (भवति) - is not for bondage
+
+
+
+तत् (एव) - that (alone is)
+
+
+
+कर्म -  action, effort, activity.
+
+
+
+या - that which 
+
+
+
+विमुक्तये (नयति) - (leads to) liberation
+
+
+
+सा विद्या - that is learning, knowledge
+
+
+
+अपरं कर्म - other work, activity
+
+
+
+आयासाय (भवति) - (is only) for waste of energy, exertion
+
+
+
+अन्या विद्या - other learning
+
+
+
+शिल्पनैपुणम् (मात्रम् भवति) - (is just mere) craftsmanship.
+
+
+
+That is action, effort which does not promote attachment; That is knowledge 
+
+which liberates [one from bondage] All other action is mere [pointless] 
+
+effort/hardship; all other knowledge is merely another skill/craftsmanship.
+
+
+
+IAST-
+
+
+
+tatkarma yanna bandhāya sā vidyā yā vimuktaye।
+
+
+
+āyāsāyāparaṃ karma vidyānyā śilpanaipuṇam॥
+
+
+
+padapāṭhaḥ- 
+
+
+
+tat karma yat na bandhāya, sā vidyā yā vimuktaye। āyāsāya aparaṃ karma 
+
+vidyā anyā śilpanaipuṇam॥
+
+
+
+anvayaḥ-
+
+
+
+yat na bandhāya (bhavati) tat (eva) karma। yā vimuktaye (nayati) sā vidyā। 
+
+aparaṃ karma āyāsāya (bhavati)। anyā vidyā śilpanaipuṇam (mātram bhavati)।
+
+
+
+pratipadārthaḥ-
+
+
+
+yat -
+
+
+
+na bandhāya (bhavati) -
+
+
+
+tat (eva) karma -
+
+
+
+yā -
+
+
+
+vimuktaye (nayati) -
+
+
+
+sā vidyā -
+
+
+
+aparaṃ karma -
+
+
+
+āyāsāya (bhavati) -
+
+
+
+anyā vidyā -
+
+
+
 śilpanaipuṇam (mātram bhavati) -
 
 ## 12. ShaSa — 2013-12-29 09:34:09
 
-Namaste,
-
->From now on subhAshitas from Vladimir Karitskaya's, (as Google 
-transliterated it for me) collection, who shared his work recently.
-
-Russian meaning is given by him, and he asked to see whether things are OK 
-in his work.
-
-"Единственная просьба: если Вам будет не трудно, если найдёте ошибки, или 
-какие-нибудь другие субхашиты, дайте, пожалуйста, мне об этом знать."
-
-So- here we go-
-
-श्रूयतां धर्मसर्वस्वं श्रुत्वा चैव विचार्यताम् ।
-
-आत्मनः प्रतिकूलानि परेषान्न समाचरेत् ॥
-
-श्रूयतां, धर्मसर्वस्वं, श्रुत्वा, च एव, विचार्यताम् । आत्मनः, प्रतिकूलानि, 
-परेषान् न समाचरेत् ॥
-
-धर्म-सर्वस्वं श्रूयताम्। श्रुत्वा च एव विचार्यताम् । आत्मनः प्रतिकूलानि 
-परेषान् न समाचरेत् ॥
-
-Hear the essence of all piety and good. Ponder: Do not do unto others as 
-would not wish to own.
-
-धर्म-सर्वस्वं - (essence of) all dharma (It has many meanings- What applies 
-here is this- Duty, prescribed course of conduct (=Apte))
-
-श्रूयताम् - Do hear, listen to
-
-श्रुत्वा च एव - Having heard, after hearing
-
-विचार्यताम् - think, ponder
-
-आत्मनः - of the self
-
-प्रतिकूलानि - unpleasant, disagreeable things;
-
-परेषान् - to others
-
-न - never, do not 
-
-समाचरेत् - should do, perform, practise
-
-तात्पर्यम्- Listen to the essence of all dharma- and then think it over 
-well. Do never perform things that are disagreeable to self, towards others.
-
-Comment- This statement is like a measuring meter-scale, for those who do 
-not want to hurt others. How do we know if they are hurt? It is by the 
-simple law- that which is disagreeable to us, will be same for others as 
-well. Same Being dwells in everyone.
-
------------------
-
-IAST-
-
-śrūyatāṃ dharmasarvasvaṃ śrutvā caiva vicāryatām ।
-
-ātmanaḥ pratikūlāni pareṣānna samācaret ॥
-
-śrūyatāṃ, dharmasarvasvaṃ, śrutvā, ca eva, vicāryatām । ātmanaḥ, 
-pratikūlāni, pareṣān na samācaret॥
-
-dharma-sarvasvaṃ śrūyatām। śrutvā ca eva vicāryatām । ātmanaḥ pratikūlāni 
-pareṣān na samācaret ॥
-
-dharma-sarvasvaṃ -
-
-śrūyatām -
-
-śrutvā -
-
-ca eva -
-
-vicāryatām  -
-
-ātmanaḥ -
-
-pratikūlāni -
-
-pareṣān -
-
-na -
-
-samācaret -
-Услышьте [же суть] всего благочестия и [хорошо] поразмыслите: не поступайте 
+Namaste,
+
+
+
+>From now on subhAshitas from Vladimir Karitskaya's, (as Google 
+
+transliterated it for me) collection, who shared his work recently.
+
+
+
+Russian meaning is given by him, and he asked to see whether things are OK 
+
+in his work.
+
+
+
+"Единственная просьба: если Вам будет не трудно, если найдёте ошибки, или 
+
+какие-нибудь другие субхашиты, дайте, пожалуйста, мне об этом знать."
+
+
+
+So- here we go-
+
+
+
+श्रूयतां धर्मसर्वस्वं श्रुत्वा चैव विचार्यताम् ।
+
+
+
+आत्मनः प्रतिकूलानि परेषान्न समाचरेत् ॥
+
+
+
+श्रूयतां, धर्मसर्वस्वं, श्रुत्वा, च एव, विचार्यताम् । आत्मनः, प्रतिकूलानि, 
+
+परेषान् न समाचरेत् ॥
+
+
+
+धर्म-सर्वस्वं श्रूयताम्। श्रुत्वा च एव विचार्यताम् । आत्मनः प्रतिकूलानि 
+
+परेषान् न समाचरेत् ॥
+
+
+
+Hear the essence of all piety and good. Ponder: Do not do unto others as 
+
+would not wish to own.
+
+
+
+धर्म-सर्वस्वं - (essence of) all dharma (It has many meanings- What applies 
+
+here is this- Duty, prescribed course of conduct (=Apte))
+
+
+
+श्रूयताम् - Do hear, listen to
+
+
+
+श्रुत्वा च एव - Having heard, after hearing
+
+
+
+विचार्यताम् - think, ponder
+
+
+
+आत्मनः - of the self
+
+
+
+प्रतिकूलानि - unpleasant, disagreeable things;
+
+
+
+परेषान् - to others
+
+
+
+न - never, do not 
+
+
+
+समाचरेत् - should do, perform, practise
+
+
+
+तात्पर्यम्- Listen to the essence of all dharma- and then think it over 
+
+well. Do never perform things that are disagreeable to self, towards others.
+
+
+
+Comment- This statement is like a measuring meter-scale, for those who do 
+
+not want to hurt others. How do we know if they are hurt? It is by the 
+
+simple law- that which is disagreeable to us, will be same for others as 
+
+well. Same Being dwells in everyone.
+
+
+
+-----------------
+
+
+
+IAST-
+
+
+
+śrūyatāṃ dharmasarvasvaṃ śrutvā caiva vicāryatām ।
+
+
+
+ātmanaḥ pratikūlāni pareṣānna samācaret ॥
+
+
+
+śrūyatāṃ, dharmasarvasvaṃ, śrutvā, ca eva, vicāryatām । ātmanaḥ, 
+
+pratikūlāni, pareṣān na samācaret॥
+
+
+
+dharma-sarvasvaṃ śrūyatām। śrutvā ca eva vicāryatām । ātmanaḥ pratikūlāni 
+
+pareṣān na samācaret ॥
+
+
+
+dharma-sarvasvaṃ -
+
+
+
+śrūyatām -
+
+
+
+śrutvā -
+
+
+
+ca eva -
+
+
+
+vicāryatām  -
+
+
+
+ātmanaḥ -
+
+
+
+pratikūlāni -
+
+
+
+pareṣān -
+
+
+
+na -
+
+
+
+samācaret -
+
+Услышьте [же суть] всего благочестия и [хорошо] поразмыслите: не поступайте 
+
 с другими так, как не пожелали бы себе.
 
 ## 13. ShaSa — 2014-01-01 16:52:30
 
-Namaste,
-
-Happy New Year to all the Sanskrit zealots. 
-
-Here is today's subhAShitam.
-
-
-विदेशेषु धनं विद्या व्यसनेष धनं मतिः।
-
-परलोके धनं धर्मः शीलं सर्वत्र वै धनम्॥
-
-pada vibhAga and anvaya are easy- so not given.
-
-विदेशेषु - In foreign countries
-
-धनं - money
-
-विद्या - Learning, knowledge
-
-व्यसनेषु - in adversities
-
-धनं - wealth
-
-मतिः - Intellect, sense
-
-परलोके - in next-world (in Life after death)
-
-धनं - currency
-
-धर्मः - good deeds, virtues
-
-शीलं - character
-
-सर्वत्र - everywhere
-
-वै - indeed
-
-धनम् - treasure
-
-तात्पर्यम्-
-
-In foreign countries, Learning or knowledge is money. In adversities wealth 
-is intellect. In next-world (in Life after death) currency is good deeds 
-done. Character is treasure everywhere,
-
-indeed.
-
------------------------------
-
-IAST-
-
-videśeṣu dhanaṃ vidyā vyasaneṣa dhanaṃ matiḥ|
-
-paraloke dhanaṃ dharmaḥ śīlaṃ sarvatra vai dhanam||
-
-videśeṣu -
-
-dhanaṃ -
-
-vidyā -
-
-vyasaneṣu -
-
-dhanaṃ -
-
-matiḥ -
-
-paraloke -
-
-dhanaṃ -
-
-dharmaḥ -
-
-śīlaṃ -
-
-sarvatra -
-
-vai -
-
+Namaste,
+
+
+
+Happy New Year to all the Sanskrit zealots. 
+
+
+
+Here is today's subhAShitam.
+
+
+
+
+
+विदेशेषु धनं विद्या व्यसनेष धनं मतिः।
+
+
+
+परलोके धनं धर्मः शीलं सर्वत्र वै धनम्॥
+
+
+
+pada vibhAga and anvaya are easy- so not given.
+
+
+
+विदेशेषु - In foreign countries
+
+
+
+धनं - money
+
+
+
+विद्या - Learning, knowledge
+
+
+
+व्यसनेषु - in adversities
+
+
+
+धनं - wealth
+
+
+
+मतिः - Intellect, sense
+
+
+
+परलोके - in next-world (in Life after death)
+
+
+
+धनं - currency
+
+
+
+धर्मः - good deeds, virtues
+
+
+
+शीलं - character
+
+
+
+सर्वत्र - everywhere
+
+
+
+वै - indeed
+
+
+
+धनम् - treasure
+
+
+
+तात्पर्यम्-
+
+
+
+In foreign countries, Learning or knowledge is money. In adversities wealth 
+
+is intellect. In next-world (in Life after death) currency is good deeds 
+
+done. Character is treasure everywhere,
+
+
+
+indeed.
+
+
+
+-----------------------------
+
+
+
+IAST-
+
+
+
+videśeṣu dhanaṃ vidyā vyasaneṣa dhanaṃ matiḥ|
+
+
+
+paraloke dhanaṃ dharmaḥ śīlaṃ sarvatra vai dhanam||
+
+
+
+videśeṣu -
+
+
+
+dhanaṃ -
+
+
+
+vidyā -
+
+
+
+vyasaneṣu -
+
+
+
+dhanaṃ -
+
+
+
+matiḥ -
+
+
+
+paraloke -
+
+
+
+dhanaṃ -
+
+
+
+dharmaḥ -
+
+
+
+śīlaṃ -
+
+
+
+sarvatra -
+
+
+
+vai -
+
+
+
 dhanam -
 
 ## 14. Владимир Карицкий — 2014-01-02 06:47:41
@@ -1127,13 +1567,20 @@ him. He will be a misfit in any gathering – like a duck among swans.
 
 ## 21. ShaSa — 2014-01-08 19:05:55
 
-two corrections-
-(That) mother is enemy, (that) father is opponent - who do not educate 
-their child. That child will not look proper in any meeting, like a crane 
-among swans.
-प्रतिपदार्थः-
-बकः - bakaḥ - crane 
-Both the mother and father are enemies of a child if they do not educate 
+two corrections-
+
+(That) mother is enemy, (that) father is opponent - who do not educate 
+
+their child. That child will not look proper in any meeting, like a crane 
+
+among swans.
+
+प्रतिपदार्थः-
+
+बकः - bakaḥ - crane 
+
+Both the mother and father are enemies of a child if they do not educate 
+
 him. He will be a misfit in any gathering – like a crane among swans.
 
 ## 22. Serge A — 2014-01-08 21:26:04
@@ -2077,33 +2524,60 @@ other living creatures as equal to one’s self- is a scholar (indeed).
 
 ## 37. Marcis — 2014-02-06 21:01:51 · 📎 1
 
-Namaste,
-
-The work you have started is of rare quality. It continues work started on 
-Spruche in 2007.
-I'm also glad to see that you receive help on a regular basis from lovers 
-of Sanskrit maxims.
-Would love to see if the subhashitas are present 
-in http://samskrtam.ru/indische-spruche/
-Could you try to search for them and include number of Spruch? In 1st and 
-2nd edition.
-For your convenience I have compiled a .txt file. It contains 6738 
-references in PWG to 
-Spruche books with detailed explanations of meanings of words from the 
-maxims. Sample:
-
-   - >Spr.  (II) 1012. <
-   - >Spr.  (II) 1013. <
-   - >Spr.  (II) 1019<
-   - >Spr.  (II) 1025. <
-   
-M.G.
-
-On Thursday, 6 February 2014 18:11:02 UTC+4, ShaSa wrote:
->
-> मातृवत् परदारेषु परद्रव्येषु लोष्ठवत् । 
->
-> आत्मवत् सर्वभूतेषु यः पश्यति सः पण्डितः ॥
+Namaste,
+
+
+
+The work you have started is of rare quality. It continues work started on 
+
+Spruche in 2007.
+
+I'm also glad to see that you receive help on a regular basis from lovers 
+
+of Sanskrit maxims.
+
+Would love to see if the subhashitas are present 
+
+in http://samskrtam.ru/indische-spruche/
+
+Could you try to search for them and include number of Spruch? In 1st and 
+
+2nd edition.
+
+For your convenience I have compiled a .txt file. It contains 6738 
+
+references in PWG to 
+
+Spruche books with detailed explanations of meanings of words from the 
+
+maxims. Sample:
+
+
+
+   - >Spr.  (II) 1012. <
+
+   - >Spr.  (II) 1013. <
+
+   - >Spr.  (II) 1019<
+
+   - >Spr.  (II) 1025. <
+
+   
+
+M.G.
+
+
+
+On Thursday, 6 February 2014 18:11:02 UTC+4, ShaSa wrote:
+
+>
+
+> मातृवत् परदारेषु परद्रव्येषु लोष्ठवत् । 
+
+>
+
+> आत्मवत् सर्वभूतेषु यः पश्यति सः पण्डितः ॥
+
 >
 
 ## 38. Serge A — 2014-02-07 01:28:50
@@ -2204,88 +2678,166 @@ Menschen um Hader, Guten um Ruhe. [Spruche-1873iii]
 
 ## 40. Dmitri — 2014-02-13 00:36:13
 
-On Wednesday, February 12, 2014 7:27:22 AM UTC-7, ShaSa wrote:
->
-> makṣikāḥ vraṇam icchanti| pārthivāḥ dhanam icchanti| nīcāḥ kalaham 
-> icchanti| paṇḍitāḥ sandhim icchanti|| 
->
-> मक्षिकाः -makṣikāḥ -flies
->
-> व्रणम् -vraṇam -wound (obj.)
->
-> इच्छन्ति -icchanti -desire
->
-> पार्थिवाः -pārthivāḥ -kings
->
-> धनम् -dhanam -money
->
-> नीचाः -nīcāḥ -low minded-people
->
-> कलहम् -kalaham -strife, quarrel (obj.)
->
-> पण्डिताः -paṇḍitāḥ -learned, scholars
->
-> सन्धिम् -sandhim -peace, compromise
->
->  
->
-> Flies desire wounds. Kings want money. Low people look for quarrel. 
-> Learned people want peace.
->
->
-> Why सन्धिम्  would mean "peace" here?   "critical juncture , crisis , 
+On Wednesday, February 12, 2014 7:27:22 AM UTC-7, ShaSa wrote:
+
+>
+
+> makṣikāḥ vraṇam icchanti| pārthivāḥ dhanam icchanti| nīcāḥ kalaham 
+
+> icchanti| paṇḍitāḥ sandhim icchanti|| 
+
+>
+
+> मक्षिकाः -makṣikāḥ -flies
+
+>
+
+> व्रणम् -vraṇam -wound (obj.)
+
+>
+
+> इच्छन्ति -icchanti -desire
+
+>
+
+> पार्थिवाः -pārthivāḥ -kings
+
+>
+
+> धनम् -dhanam -money
+
+>
+
+> नीचाः -nīcāḥ -low minded-people
+
+>
+
+> कलहम् -kalaham -strife, quarrel (obj.)
+
+>
+
+> पण्डिताः -paṇḍitāḥ -learned, scholars
+
+>
+
+> सन्धिम् -sandhim -peace, compromise
+
+>
+
+>  
+
+>
+
+> Flies desire wounds. Kings want money. Low people look for quarrel. 
+
+> Learned people want peace.
+
+>
+
+>
+
+> Why सन्धिम्  would mean "peace" here?   "critical juncture , crisis , 
+
 opportune moment" (MW)  would fit here better.
 
 ## 41. ShaSa — 2014-02-13 12:14:11
 
-Yes. saMdhi generally means what you said. But a word can have more than 
-one meaning according to different contexts.
-Here are my references-
-1. Apte- संधिः sandhiḥ
-
-संधिः 1 Union, junction, combination, connection; संधये सरला सूची वक्रा 
-छेदाय कर्तरी Subhāṣ.; Me.6. *-2* A compact, an agreement. *-3* Alliance, 
-league, friend- ship, peace, treaty of peace (one of the six expedients to 
-be used in foreign politics); कति प्रकाराः संधीनां भवन्ति H.4; (the several 
-kinds are described in H.4.16- 125); शत्रुणा न हि संदध्यात् सुश्लिष्टेनापि 
-संधिना H.1.85. *-*
-2. http://www.sanskrit-lexicon.uni-koeln.de/aequery/index.html
-Apte- English-Sanskrit Dic.
-Entered- "PEACE" First entry is saMdhi
-
-3. http://spokensanskrit.de/index.php? सन्धि *sandhi*<http://spokensanskrit.de/index.php?tinput=sandhi&direction=SE&script=HK&link=yes&beginning=0> 
-m. making<http://spokensanskrit.de/index.php?tinput=making&direction=ES&script=HK&link=yes&beginning=0> 
-a<http://spokensanskrit.de/index.php?tinput=a&direction=ES&script=HK&link=yes&beginning=0> 
-treaty<http://spokensanskrit.de/index.php?tinput=treaty&direction=ES&script=HK&link=yes&beginning=0> 
-of<http://spokensanskrit.de/index.php?tinput=of&direction=ES&script=HK&link=yes&beginning=0> 
-peace<http://spokensanskrit.de/index.php?tinput=peace&direction=ES&script=HK&link=yes&beginning=0>saMdhi- 
-MW-
-* [L=231647]* * m.* alliance , league , reconciliation , peace between (gen.) 
-or with (instr. with or without सह) , making a treaty of peace , 
-negotiating alliances (one of a king's six courses of action » गुण ; many 
-kinds are specified e.g. अदृष्ट-पुरुष , उच्छिन्न , काञ्चन , कपाल , संतान , 
-qq. vv.) Mn.  Ya1jn5.  Hit.  &c 
-Here "saMdhi" is given as opposed to "kalahaM". So it will be a compromise, 
-a peace-alliance. So meaning is learned never go for disputing with things; 
-they just compromise and leave it off then and there. *"**critical juncture 
-, crisis , opportune moment" *do not suit the context.
-Thankyou.
-
-On Thursday, February 13, 2014 3:06:13 AM UTC+5:30, Dmitri wrote:
->
->
-> सन्धिम् -sandhim -peace, compromise
->>
->>  
->>
->> Flies desire wounds. Kings want money. Low people look for quarrel. 
->> Learned people want peace.
->>
->>
->> Why सन्धिम्  would mean "peace" here?   "critical juncture , crisis , 
-> opportune moment" (MW)  would fit here better.
->
->  
+Yes. saMdhi generally means what you said. But a word can have more than 
+
+one meaning according to different contexts.
+
+Here are my references-
+
+1. Apte- संधिः sandhiḥ
+
+
+
+संधिः 1 Union, junction, combination, connection; संधये सरला सूची वक्रा 
+
+छेदाय कर्तरी Subhāṣ.; Me.6. *-2* A compact, an agreement. *-3* Alliance, 
+
+league, friend- ship, peace, treaty of peace (one of the six expedients to 
+
+be used in foreign politics); कति प्रकाराः संधीनां भवन्ति H.4; (the several 
+
+kinds are described in H.4.16- 125); शत्रुणा न हि संदध्यात् सुश्लिष्टेनापि 
+
+संधिना H.1.85. *-*
+
+2. http://www.sanskrit-lexicon.uni-koeln.de/aequery/index.html
+
+Apte- English-Sanskrit Dic.
+
+Entered- "PEACE" First entry is saMdhi
+
+
+
+3. http://spokensanskrit.de/index.php? सन्धि *sandhi*<http://spokensanskrit.de/index.php?tinput=sandhi&direction=SE&script=HK&link=yes&beginning=0> 
+
+m. making<http://spokensanskrit.de/index.php?tinput=making&direction=ES&script=HK&link=yes&beginning=0> 
+
+a<http://spokensanskrit.de/index.php?tinput=a&direction=ES&script=HK&link=yes&beginning=0> 
+
+treaty<http://spokensanskrit.de/index.php?tinput=treaty&direction=ES&script=HK&link=yes&beginning=0> 
+
+of<http://spokensanskrit.de/index.php?tinput=of&direction=ES&script=HK&link=yes&beginning=0> 
+
+peace<http://spokensanskrit.de/index.php?tinput=peace&direction=ES&script=HK&link=yes&beginning=0>saMdhi- 
+
+MW-
+
+* [L=231647]* * m.* alliance , league , reconciliation , peace between (gen.) 
+
+or with (instr. with or without सह) , making a treaty of peace , 
+
+negotiating alliances (one of a king's six courses of action » गुण ; many 
+
+kinds are specified e.g. अदृष्ट-पुरुष , उच्छिन्न , काञ्चन , कपाल , संतान , 
+
+qq. vv.) Mn.  Ya1jn5.  Hit.  &c 
+
+Here "saMdhi" is given as opposed to "kalahaM". So it will be a compromise, 
+
+a peace-alliance. So meaning is learned never go for disputing with things; 
+
+they just compromise and leave it off then and there. *"**critical juncture 
+
+, crisis , opportune moment" *do not suit the context.
+
+Thankyou.
+
+
+
+On Thursday, February 13, 2014 3:06:13 AM UTC+5:30, Dmitri wrote:
+
+>
+
+>
+
+> सन्धिम् -sandhim -peace, compromise
+
+>>
+
+>>  
+
+>>
+
+>> Flies desire wounds. Kings want money. Low people look for quarrel. 
+
+>> Learned people want peace.
+
+>>
+
+>>
+
+>> Why सन्धिम्  would mean "peace" here?   "critical juncture , crisis , 
+
+> opportune moment" (MW)  would fit here better.
+
+>
+
+>  
+
 >
 
 ## 42. Serge A — 2014-02-14 00:49:17
@@ -2359,81 +2911,156 @@ nīcāḥ kalaham icchanti śāntim icchanti sādhavaḥ ||
 
 ## 43. Dmitri — 2014-02-14 07:33:24
 
-If -sandhim (acc.) -peace, compromise - объединения, союза, мира  then
-the first line is disconnected from the second.  Причём тут мухи и короли?
-
-Not to mention that peace is sought mostly by cowards rather than by 
-pundits.
-
-
-On Thursday, February 13, 2014 2:49:17 PM UTC-7, Serge A wrote:
->
-> > Why सन्धिम्  would mean "peace" here?   "critical juncture , crisis , 
-> opportune moment" (MW)  would fit here better.
->
-> Такое значение не в кассу. Кризисы только авантюристам на руку, но никак 
-> не пандитам. Мудрецам милее мир и покой. Тишь, да гладь, да божья 
-> благодать, как говорится.
->
-> मक्षिका व्रणमिच्छन्ति धनमिच्छन्ति पार्थिवाः ।
-> नीचाः कलहमिच्छन्ति सन्धिमिच्छन्ति पण्डिताः ॥
-> makṣikā vraṇam icchanti dhanam icchanti pārthivāḥ |
-> nīcāḥ kalaham icchanti sandhim icchanti paṇḍitāḥ ||
->
-> मक्षिकाः -makṣikāḥ -flies - мухи
-> इच्छन्ति -icchanti -desire - ищут
-> व्रणम् -vraṇam (acc.) -wound (obj.) - рану
-> पार्थिवाः -pārthivāḥ -kings - цари 
-> धनम् -dhanam (acc.) -money - денег
-> नीचाः -nīcāḥ -low minded-people - низкие (люди)
-> कलहम् -kalaham (acc.) -strife, quarrel (obj.) - раздора
-> पण्डिताः -paṇḍitāḥ -learned, scholars - мудрые, учёные
-> सन्धिम् -sandhim (acc.) -peace, compromise - объединения, союза, мира
->
-> Хотя чаще встречается другой вариант второй строки:
-> नीचाः कलहमिच्छन्ति शान्तिमिच्छन्ति साधवः॥
-> nīcāḥ kalaham icchanti śāntim icchanti sādhavaḥ ||
-> низкие ссоры ищут, покоя ищут святые
->
->
-> четверг, 13 февраля 2014 г., 1:36:13 UTC+4 пользователь Dmitri написал:
->>
->>
->>
->> On Wednesday, February 12, 2014 7:27:22 AM UTC-7, ShaSa wrote:
->>>
->>> makṣikāḥ vraṇam icchanti| pārthivāḥ dhanam icchanti| nīcāḥ kalaham 
->>> icchanti| paṇḍitāḥ sandhim icchanti|| 
->>>
->>> मक्षिकाः -makṣikāḥ -flies
->>>
->>> व्रणम् -vraṇam -wound (obj.)
->>>
->>> इच्छन्ति -icchanti -desire
->>>
->>> पार्थिवाः -pārthivāḥ -kings
->>>
->>> धनम् -dhanam -money
->>>
->>> नीचाः -nīcāḥ -low minded-people
->>>
->>> कलहम् -kalaham -strife, quarrel (obj.)
->>>
->>> पण्डिताः -paṇḍitāḥ -learned, scholars
->>>
->>> सन्धिम् -sandhim -peace, compromise
->>>
->>>  
->>>
->>> Flies desire wounds. Kings want money. Low people look for quarrel. 
->>> Learned people want peace.
->>>
->>>
->>> Why सन्धिम्  would mean "peace" here?   "critical juncture , crisis , 
->> opportune moment" (MW)  would fit here better.
->>
->>  
->>
+If -sandhim (acc.) -peace, compromise - объединения, союза, мира  then
+
+the first line is disconnected from the second.  Причём тут мухи и короли?
+
+
+
+Not to mention that peace is sought mostly by cowards rather than by 
+
+pundits.
+
+
+
+
+
+On Thursday, February 13, 2014 2:49:17 PM UTC-7, Serge A wrote:
+
+>
+
+> > Why सन्धिम्  would mean "peace" here?   "critical juncture , crisis , 
+
+> opportune moment" (MW)  would fit here better.
+
+>
+
+> Такое значение не в кассу. Кризисы только авантюристам на руку, но никак 
+
+> не пандитам. Мудрецам милее мир и покой. Тишь, да гладь, да божья 
+
+> благодать, как говорится.
+
+>
+
+> मक्षिका व्रणमिच्छन्ति धनमिच्छन्ति पार्थिवाः ।
+
+> नीचाः कलहमिच्छन्ति सन्धिमिच्छन्ति पण्डिताः ॥
+
+> makṣikā vraṇam icchanti dhanam icchanti pārthivāḥ |
+
+> nīcāḥ kalaham icchanti sandhim icchanti paṇḍitāḥ ||
+
+>
+
+> मक्षिकाः -makṣikāḥ -flies - мухи
+
+> इच्छन्ति -icchanti -desire - ищут
+
+> व्रणम् -vraṇam (acc.) -wound (obj.) - рану
+
+> पार्थिवाः -pārthivāḥ -kings - цари 
+
+> धनम् -dhanam (acc.) -money - денег
+
+> नीचाः -nīcāḥ -low minded-people - низкие (люди)
+
+> कलहम् -kalaham (acc.) -strife, quarrel (obj.) - раздора
+
+> पण्डिताः -paṇḍitāḥ -learned, scholars - мудрые, учёные
+
+> सन्धिम् -sandhim (acc.) -peace, compromise - объединения, союза, мира
+
+>
+
+> Хотя чаще встречается другой вариант второй строки:
+
+> नीचाः कलहमिच्छन्ति शान्तिमिच्छन्ति साधवः॥
+
+> nīcāḥ kalaham icchanti śāntim icchanti sādhavaḥ ||
+
+> низкие ссоры ищут, покоя ищут святые
+
+>
+
+>
+
+> четверг, 13 февраля 2014 г., 1:36:13 UTC+4 пользователь Dmitri написал:
+
+>>
+
+>>
+
+>>
+
+>> On Wednesday, February 12, 2014 7:27:22 AM UTC-7, ShaSa wrote:
+
+>>>
+
+>>> makṣikāḥ vraṇam icchanti| pārthivāḥ dhanam icchanti| nīcāḥ kalaham 
+
+>>> icchanti| paṇḍitāḥ sandhim icchanti|| 
+
+>>>
+
+>>> मक्षिकाः -makṣikāḥ -flies
+
+>>>
+
+>>> व्रणम् -vraṇam -wound (obj.)
+
+>>>
+
+>>> इच्छन्ति -icchanti -desire
+
+>>>
+
+>>> पार्थिवाः -pārthivāḥ -kings
+
+>>>
+
+>>> धनम् -dhanam -money
+
+>>>
+
+>>> नीचाः -nīcāḥ -low minded-people
+
+>>>
+
+>>> कलहम् -kalaham -strife, quarrel (obj.)
+
+>>>
+
+>>> पण्डिताः -paṇḍitāḥ -learned, scholars
+
+>>>
+
+>>> सन्धिम् -sandhim -peace, compromise
+
+>>>
+
+>>>  
+
+>>>
+
+>>> Flies desire wounds. Kings want money. Low people look for quarrel. 
+
+>>> Learned people want peace.
+
+>>>
+
+>>>
+
+>>> Why सन्धिम्  would mean "peace" here?   "critical juncture , crisis , 
+
+>> opportune moment" (MW)  would fit here better.
+
+>>
+
+>>  
+
+>>
+
 >
 
 ## 44. Serge A — 2014-02-16 18:30:27
@@ -2510,14 +3137,22 @@ On Sunday, February 16, 2014 8:30:27 AM UTC-7, Serge A wrote:
 
 ## 46. ShaSa — 2014-02-16 21:29:58 · 📎 2
 
-Namaste
-Here are सुभाषितs dealt till now in one file. Can find 
-1. English-Russian Word to word Translation, 
-2. English-Russian-German meaning 
-3. Bohtlingk Spruche References.
-along with good MSWord-settings. Used Sanskrit2003 font- (attached)
-
-With due Thanks to Serge :)
+Namaste
+
+Here are सुभाषितs dealt till now in one file. Can find 
+
+1. English-Russian Word to word Translation, 
+
+2. English-Russian-German meaning 
+
+3. Bohtlingk Spruche References.
+
+along with good MSWord-settings. Used Sanskrit2003 font- (attached)
+
+
+
+With due Thanks to Serge :)
+
 -Regards
 
 ## 47. Serge A — 2014-02-17 22:12:14

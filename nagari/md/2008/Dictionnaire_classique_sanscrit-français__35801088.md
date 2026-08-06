@@ -17,10 +17,16 @@ source_url: https://groups.google.com/d/msgid/nagari/43ac3f7f-8138-40c8-ab7f-814
 
 ## 1. klaus — 2008-12-28 16:50:29
 
-Dictionnaire classique sanscrit-français où sont coordonnés, revisés
-et complétés les travaux de Wilson, Bopp, Westergaard, Johnson, etc.
-et contenant le devanagari, sa transcription européene,
-l'interprétation, les racines et de nombreux rapprochements
-philologiques
-http://www.archive.org/details/dictionnaireclas00burnuoft
+Dictionnaire classique sanscrit-français où sont coordonnés, revisés
+
+et complétés les travaux de Wilson, Bopp, Westergaard, Johnson, etc.
+
+et contenant le devanagari, sa transcription européene,
+
+l'interprétation, les racines et de nombreux rapprochements
+
+philologiques
+
+http://www.archive.org/details/dictionnaireclas00burnuoft
+
 DjVu 51 MB

@@ -17,21 +17,36 @@ source_url: https://groups.google.com/d/msgid/nagari/06d88401-a630-488b-9a0f-2d4
 
 ## 1. Worga — 2010-11-21 23:41:03
 
-Here is a free Sanskrit transliteration program - a stand alone
-utility for transliteration from/to Devanāgarī using Harvard-Kyoto,
-ITRANS, IAST, SLP1 and Velthui's transliteration schemes.
-
-The screenshot is here:
-
-http://www.kavitype.com/kavitype/images/kvttranslit.png
-
-Download link is here:
-
-http://www.kavitype.com/download/kvttranslit.zip
-
-(~1.5 mb)
-
-Please post your bug reports (if any) and improvement requests or
+Here is a free Sanskrit transliteration program - a stand alone
+
+utility for transliteration from/to Devanāgarī using Harvard-Kyoto,
+
+ITRANS, IAST, SLP1 and Velthui's transliteration schemes.
+
+
+
+The screenshot is here:
+
+
+
+http://www.kavitype.com/kavitype/images/kvttranslit.png
+
+
+
+Download link is here:
+
+
+
+http://www.kavitype.com/download/kvttranslit.zip
+
+
+
+(~1.5 mb)
+
+
+
+Please post your bug reports (if any) and improvement requests or
+
 requests for additional functionalities here.
 
 ## 2. Serge — 2010-11-26 19:43:00

@@ -108,29 +108,52 @@ Mark Hale
 
 ## 3. Dmitri — 2012-02-23 22:53:25
 
-Thanks Mark,
-
-I was not aware that in Vedic Sanskrit n.acc.pl  of nouns in -a could have 
-ending ā́ instead of ā́ni.
-
-Here are some unanswered questions I see, may be mistakenly, if A.B.Keith's 
-translation is accepted:
-
-vāṃ is Abl.Dat.Gen. dual of "your"
-while mánām̐si  vratā́ cittā́ni  are plural, if vratā́ is taken to be 
-n.acc.pl. (with ending ā́ instead of ā́ni)
-So at least one person of those two has more than one mind and more than 
-one heart.  How? What does that mean?
-The dual here refers, if I understand it correctly, to two fires: one 
-contained in ukha pot and the other in garhapatya altar.
-It still does not clarify multiple hearts and minds.  Citta=heart is a bit 
-forced.
-
-"United have I made ... your ordinances"  is not clear at all in this 
-context.
-What does "ordinance"  mean when applied to these two fires?
-
-Best,
+Thanks Mark,
+
+
+
+I was not aware that in Vedic Sanskrit n.acc.pl  of nouns in -a could have 
+
+ending ā́ instead of ā́ni.
+
+
+
+Here are some unanswered questions I see, may be mistakenly, if A.B.Keith's 
+
+translation is accepted:
+
+
+
+vāṃ is Abl.Dat.Gen. dual of "your"
+
+while mánām̐si  vratā́ cittā́ni  are plural, if vratā́ is taken to be 
+
+n.acc.pl. (with ending ā́ instead of ā́ni)
+
+So at least one person of those two has more than one mind and more than 
+
+one heart.  How? What does that mean?
+
+The dual here refers, if I understand it correctly, to two fires: one 
+
+contained in ukha pot and the other in garhapatya altar.
+
+It still does not clarify multiple hearts and minds.  Citta=heart is a bit 
+
+forced.
+
+
+
+"United have I made ... your ordinances"  is not clear at all in this 
+
+context.
+
+What does "ordinance"  mean when applied to these two fires?
+
+
+
+Best,
+
       Dmitri.
 
 ## 4. Serge — 2012-02-24 03:05:19

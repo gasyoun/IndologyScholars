@@ -17,5 +17,6 @@ source_url: https://groups.google.com/d/msgid/nagari/b4b13e6e-ca03-4b62-ae5c-66f
 
 ## 1. klaus — 2008-03-06 21:31:24
 
-http://books.google.com/books?id=IYcIAAAAQAAJ&printsec=frontcover&lr=&hl=ru
+http://books.google.com/books?id=IYcIAAAAQAAJ&printsec=frontcover&lr=&hl=ru
+
 Allahabad, 1854

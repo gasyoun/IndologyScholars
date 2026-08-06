@@ -17,100 +17,190 @@ source_url: https://groups.google.com/d/msgid/nagari/3d799014-adf1-4ac3-82b4-c4e
 
 ## 1. Artem Novikov — 2013-04-20 17:58:42
 
-Изменил схему БД, поэтому необходимо также обновить файл базы sandic.db
-
-Добавил в базу словарь корней от Владислава:
-
-Maṇḍala Pati dāsa
-List of verbal roots with final forms 
-http://sourceforge.net/p/dhatu-patha
-
-
-
-Адрес проекта:
-https://sourceforge.net/projects/sandic/
-
-Бинарник под Windows:
-http://sourceforge.net/projects/sandic/files/sandic_w32s.exe/download
-
-Словарная база данных
-http://sourceforge.net/projects/sandic/files/sandic.zip/download
-
-
-<http://a.fsdn.com/con/app/proj/sandic/screenshots/screen1.png>
-
-<http://a.fsdn.com/con/app/proj/sandic/screenshots/screen2.png>
-
+Изменил схему БД, поэтому необходимо также обновить файл базы sandic.db
+
+
+
+Добавил в базу словарь корней от Владислава:
+
+
+
+Maṇḍala Pati dāsa
+
+List of verbal roots with final forms 
+
+http://sourceforge.net/p/dhatu-patha
+
+
+
+
+
+
+
+Адрес проекта:
+
+https://sourceforge.net/projects/sandic/
+
+
+
+Бинарник под Windows:
+
+http://sourceforge.net/projects/sandic/files/sandic_w32s.exe/download
+
+
+
+Словарная база данных
+
+http://sourceforge.net/projects/sandic/files/sandic.zip/download
+
+
+
+
+
+<http://a.fsdn.com/con/app/proj/sandic/screenshots/screen1.png>
+
+
+
+<http://a.fsdn.com/con/app/proj/sandic/screenshots/screen2.png>
+
+
+
 <http://a.fsdn.com/con/app/proj/sandic/screenshots/screen3.png>
 
 ## 2. Lev Titlin — 2013-04-20 19:23:03
 
-Большое спасибо.
-Но очень бы хотелось .deb (а лучше репозиторий) под Linux.
-Линуксойды скажут спасибо)))
-А то уж больно архаично ручками-то собирать. Да и не все умеют.
-Раз уж Винду делаете бинарник, то негоже забывать и вторую по популярности
-систему.
-
-20 апреля 2013 г., 18:58 пользователь Artem Novikov
-<novikovag@…>написал:
-
-> Изменил схему БД, поэтому необходимо также обновить файл базы sandic.db
->
-> Добавил в базу словарь корней от Владислава:
->
-> Maṇḍala Pati dāsa
-> List of verbal roots with final forms
-> http://sourceforge.net/p/dhatu-patha
->
->
->
-> Адрес проекта:
-> https://sourceforge.net/projects/sandic/
->
-> Бинарник под Windows:
-> http://sourceforge.net/projects/sandic/files/sandic_w32s.exe/download
->
-> Словарная база данных
-> http://sourceforge.net/projects/sandic/files/sandic.zip/download
->
->
->  <http://a.fsdn.com/con/app/proj/sandic/screenshots/screen1.png>
->
->  <http://a.fsdn.com/con/app/proj/sandic/screenshots/screen2.png>
->
->  <http://a.fsdn.com/con/app/proj/sandic/screenshots/screen3.png>
->
->
->  --
-> Чтобы отменить подписку на группу, посвященную санскриту,
-> отправьте сообщение по адресу - мы поймем, простим даже:
-> Nagari-unsubscribe@…
-> ---
-> Вы получили это сообщение, поскольку подписаны на группу Общество
-> ревнителей санскрита (Sanscrit).
->
-> Чтобы отказаться от подписки на эту группу и перестать получать из нее
-> сообщения, отправьте электронное письмо на адрес
-> nagari+unsubscribe@….
-> Подробнее о функциях можно узнать на странице
-> https://groups.google.com/groups/opt_out.
->
->
->
-
-
-
--- 
-Best regards,
-Lev I. Titlin
-Centre for Oriental Philosophy Studies
-Institute of Philosophy
-Russian Academy of Sciences
-
-+7(929) 577 1050 (Mob)
-+7(495) 472 4905 (Res)
-
+Большое спасибо.
+
+Но очень бы хотелось .deb (а лучше репозиторий) под Linux.
+
+Линуксойды скажут спасибо)))
+
+А то уж больно архаично ручками-то собирать. Да и не все умеют.
+
+Раз уж Винду делаете бинарник, то негоже забывать и вторую по популярности
+
+систему.
+
+
+
+20 апреля 2013 г., 18:58 пользователь Artem Novikov
+
+<novikovag@…>написал:
+
+
+
+> Изменил схему БД, поэтому необходимо также обновить файл базы sandic.db
+
+>
+
+> Добавил в базу словарь корней от Владислава:
+
+>
+
+> Maṇḍala Pati dāsa
+
+> List of verbal roots with final forms
+
+> http://sourceforge.net/p/dhatu-patha
+
+>
+
+>
+
+>
+
+> Адрес проекта:
+
+> https://sourceforge.net/projects/sandic/
+
+>
+
+> Бинарник под Windows:
+
+> http://sourceforge.net/projects/sandic/files/sandic_w32s.exe/download
+
+>
+
+> Словарная база данных
+
+> http://sourceforge.net/projects/sandic/files/sandic.zip/download
+
+>
+
+>
+
+>  <http://a.fsdn.com/con/app/proj/sandic/screenshots/screen1.png>
+
+>
+
+>  <http://a.fsdn.com/con/app/proj/sandic/screenshots/screen2.png>
+
+>
+
+>  <http://a.fsdn.com/con/app/proj/sandic/screenshots/screen3.png>
+
+>
+
+>
+
+>  --
+
+> Чтобы отменить подписку на группу, посвященную санскриту,
+
+> отправьте сообщение по адресу - мы поймем, простим даже:
+
+> Nagari-unsubscribe@…
+
+> ---
+
+> Вы получили это сообщение, поскольку подписаны на группу Общество
+
+> ревнителей санскрита (Sanscrit).
+
+>
+
+> Чтобы отказаться от подписки на эту группу и перестать получать из нее
+
+> сообщения, отправьте электронное письмо на адрес
+
+> nagari+unsubscribe@….
+
+> Подробнее о функциях можно узнать на странице
+
+> https://groups.google.com/groups/opt_out.
+
+>
+
+>
+
+>
+
+
+
+
+
+
+
+-- 
+
+Best regards,
+
+Lev I. Titlin
+
+Centre for Oriental Philosophy Studies
+
+Institute of Philosophy
+
+Russian Academy of Sciences
+
+
+
++7(929) 577 1050 (Mob)
+
++7(495) 472 4905 (Res)
+
+
+
 R.S.V.P.
 
 ## 3. Artem Novikov — 2013-04-21 12:10:51
@@ -552,39 +642,72 @@ http://sanskrit.inria.fr/Dico.pdf
 
 ## 10. Artem Novikov — 2013-04-22 20:46:45
 
-Обновлен до v2.1
-Пофиксен баг с поиском в деванагари
-
-суббота, 20 апреля 2013 г., 22:58:42 UTC+8 пользователь Artem Novikov 
-написал:
->
-> Изменил схему БД, поэтому необходимо также обновить файл базы sandic.db
->
-> Добавил в базу словарь корней от Владислава:
->
-> Maṇḍala Pati dāsa
-> List of verbal roots with final forms 
-> http://sourceforge.net/p/dhatu-patha
->
->
->
-> Адрес проекта:
-> https://sourceforge.net/projects/sandic/
->
-> Бинарник под Windows:
-> http://sourceforge.net/projects/sandic/files/sandic_w32s.exe/download
->
-> Словарная база данных
-> http://sourceforge.net/projects/sandic/files/sandic.zip/download
->
->
-> <http://a.fsdn.com/con/app/proj/sandic/screenshots/screen1.png>
->
-> <http://a.fsdn.com/con/app/proj/sandic/screenshots/screen2.png>
->
-> <http://a.fsdn.com/con/app/proj/sandic/screenshots/screen3.png>
->
->
+Обновлен до v2.1
+
+Пофиксен баг с поиском в деванагари
+
+
+
+суббота, 20 апреля 2013 г., 22:58:42 UTC+8 пользователь Artem Novikov 
+
+написал:
+
+>
+
+> Изменил схему БД, поэтому необходимо также обновить файл базы sandic.db
+
+>
+
+> Добавил в базу словарь корней от Владислава:
+
+>
+
+> Maṇḍala Pati dāsa
+
+> List of verbal roots with final forms 
+
+> http://sourceforge.net/p/dhatu-patha
+
+>
+
+>
+
+>
+
+> Адрес проекта:
+
+> https://sourceforge.net/projects/sandic/
+
+>
+
+> Бинарник под Windows:
+
+> http://sourceforge.net/projects/sandic/files/sandic_w32s.exe/download
+
+>
+
+> Словарная база данных
+
+> http://sourceforge.net/projects/sandic/files/sandic.zip/download
+
+>
+
+>
+
+> <http://a.fsdn.com/con/app/proj/sandic/screenshots/screen1.png>
+
+>
+
+> <http://a.fsdn.com/con/app/proj/sandic/screenshots/screen2.png>
+
+>
+
+> <http://a.fsdn.com/con/app/proj/sandic/screenshots/screen3.png>
+
+>
+
+>
+
 >
 
 ## 11. Marcis — 2013-04-23 09:30:06 · 📎 1
@@ -611,210 +734,406 @@ enter. Пять лишних действий. Наводить справки �
 
 ## 12. Artem Novikov — 2013-04-29 02:31:37
 
-Оказались в softpedia, можно бацать лого =)
-
-<http://s1.softpedia-static.com/base_img/softpedia_free_award_f.gif>
-
-
-
-
-суббота, 20 апреля 2013 г., 22:58:42 UTC+8 пользователь Artem Novikov 
-написал:
->
-> Изменил схему БД, поэтому необходимо также обновить файл базы sandic.db
->
-> Добавил в базу словарь корней от Владислава:
->
-> Maṇḍala Pati dāsa
-> List of verbal roots with final forms 
-> http://sourceforge.net/p/dhatu-patha
->
->
->
-> Адрес проекта:
-> https://sourceforge.net/projects/sandic/
->
-> Бинарник под Windows:
-> http://sourceforge.net/projects/sandic/files/sandic_w32s.exe/download
->
-> Словарная база данных
-> http://sourceforge.net/projects/sandic/files/sandic.zip/download
->
->
-> <http://a.fsdn.com/con/app/proj/sandic/screenshots/screen1.png>
->
-> <http://a.fsdn.com/con/app/proj/sandic/screenshots/screen2.png>
->
-> <http://a.fsdn.com/con/app/proj/sandic/screenshots/screen3.png>
->
->
+Оказались в softpedia, можно бацать лого =)
+
+
+
+<http://s1.softpedia-static.com/base_img/softpedia_free_award_f.gif>
+
+
+
+
+
+
+
+
+
+суббота, 20 апреля 2013 г., 22:58:42 UTC+8 пользователь Artem Novikov 
+
+написал:
+
+>
+
+> Изменил схему БД, поэтому необходимо также обновить файл базы sandic.db
+
+>
+
+> Добавил в базу словарь корней от Владислава:
+
+>
+
+> Maṇḍala Pati dāsa
+
+> List of verbal roots with final forms 
+
+> http://sourceforge.net/p/dhatu-patha
+
+>
+
+>
+
+>
+
+> Адрес проекта:
+
+> https://sourceforge.net/projects/sandic/
+
+>
+
+> Бинарник под Windows:
+
+> http://sourceforge.net/projects/sandic/files/sandic_w32s.exe/download
+
+>
+
+> Словарная база данных
+
+> http://sourceforge.net/projects/sandic/files/sandic.zip/download
+
+>
+
+>
+
+> <http://a.fsdn.com/con/app/proj/sandic/screenshots/screen1.png>
+
+>
+
+> <http://a.fsdn.com/con/app/proj/sandic/screenshots/screen2.png>
+
+>
+
+> <http://a.fsdn.com/con/app/proj/sandic/screenshots/screen3.png>
+
+>
+
+>
+
 >
 
 ## 13. Lev Titlin — 2013-04-30 14:47:58
 
-Большое спасибо, śrīdṛṣṭvā!
-
-Все заработало. Только оказалось надо установить
-libsqlite4-dev
-
-Работает очень быстро.
-
-29 апреля 2013 г., 3:31 пользователь Artem Novikov <novikovag@…>написал:
-
-> Оказались в softpedia, можно бацать лого =)
->
-> <http://s1.softpedia-static.com/base_img/softpedia_free_award_f.gif>
->
->
->
->
-> суббота, 20 апреля 2013 г., 22:58:42 UTC+8 пользователь Artem Novikov
-> написал:
->
->> Изменил схему БД, поэтому необходимо также обновить файл базы sandic.db
->>
->> Добавил в базу словарь корней от Владислава:
->>
->> Maṇḍala Pati dāsa
->> List of verbal roots with final forms
->> http://sourceforge.net/p/dhatu-patha
->>
->>
->>
->> Адрес проекта:
->> https://sourceforge.net/projects/sandic/
->>
->> Бинарник под Windows:
->> http://sourceforge.net/projects/sandic/files/sandic_w32s.exe/download
->>
->> Словарная база данных
->> http://sourceforge.net/projects/sandic/files/sandic.zip/download
->>
->>
->>  <http://a.fsdn.com/con/app/proj/sandic/screenshots/screen1.png>
->>
->>  <http://a.fsdn.com/con/app/proj/sandic/screenshots/screen2.png>
->>
->>  <http://a.fsdn.com/con/app/proj/sandic/screenshots/screen3.png>
->>
->>
->>  --
-> Чтобы отменить подписку на группу, посвященную санскриту,
-> отправьте сообщение по адресу - мы поймем, простим даже:
-> Nagari-unsubscribe@…
-> ---
-> Вы получили это сообщение, поскольку подписаны на группу Общество
-> ревнителей санскрита (Sanscrit).
->
-> Чтобы отказаться от подписки на эту группу и перестать получать из нее
-> сообщения, отправьте электронное письмо на адрес
-> nagari+unsubscribe@….
-> Подробнее о функциях можно узнать на странице
-> https://groups.google.com/groups/opt_out.
->
->
->
-
-
-
--- 
-Best regards,
-Lev I. Titlin
-Centre for Oriental Philosophy Studies
-Institute of Philosophy
-Russian Academy of Sciences
-
-+7(929) 577 1050 (Mob)
-+7(495) 472 4905 (Res)
-
+Большое спасибо, śrīdṛṣṭvā!
+
+
+
+Все заработало. Только оказалось надо установить
+
+libsqlite4-dev
+
+
+
+Работает очень быстро.
+
+
+
+29 апреля 2013 г., 3:31 пользователь Artem Novikov <novikovag@…>написал:
+
+
+
+> Оказались в softpedia, можно бацать лого =)
+
+>
+
+> <http://s1.softpedia-static.com/base_img/softpedia_free_award_f.gif>
+
+>
+
+>
+
+>
+
+>
+
+> суббота, 20 апреля 2013 г., 22:58:42 UTC+8 пользователь Artem Novikov
+
+> написал:
+
+>
+
+>> Изменил схему БД, поэтому необходимо также обновить файл базы sandic.db
+
+>>
+
+>> Добавил в базу словарь корней от Владислава:
+
+>>
+
+>> Maṇḍala Pati dāsa
+
+>> List of verbal roots with final forms
+
+>> http://sourceforge.net/p/dhatu-patha
+
+>>
+
+>>
+
+>>
+
+>> Адрес проекта:
+
+>> https://sourceforge.net/projects/sandic/
+
+>>
+
+>> Бинарник под Windows:
+
+>> http://sourceforge.net/projects/sandic/files/sandic_w32s.exe/download
+
+>>
+
+>> Словарная база данных
+
+>> http://sourceforge.net/projects/sandic/files/sandic.zip/download
+
+>>
+
+>>
+
+>>  <http://a.fsdn.com/con/app/proj/sandic/screenshots/screen1.png>
+
+>>
+
+>>  <http://a.fsdn.com/con/app/proj/sandic/screenshots/screen2.png>
+
+>>
+
+>>  <http://a.fsdn.com/con/app/proj/sandic/screenshots/screen3.png>
+
+>>
+
+>>
+
+>>  --
+
+> Чтобы отменить подписку на группу, посвященную санскриту,
+
+> отправьте сообщение по адресу - мы поймем, простим даже:
+
+> Nagari-unsubscribe@…
+
+> ---
+
+> Вы получили это сообщение, поскольку подписаны на группу Общество
+
+> ревнителей санскрита (Sanscrit).
+
+>
+
+> Чтобы отказаться от подписки на эту группу и перестать получать из нее
+
+> сообщения, отправьте электронное письмо на адрес
+
+> nagari+unsubscribe@….
+
+> Подробнее о функциях можно узнать на странице
+
+> https://groups.google.com/groups/opt_out.
+
+>
+
+>
+
+>
+
+
+
+
+
+
+
+-- 
+
+Best regards,
+
+Lev I. Titlin
+
+Centre for Oriental Philosophy Studies
+
+Institute of Philosophy
+
+Russian Academy of Sciences
+
+
+
++7(929) 577 1050 (Mob)
+
++7(495) 472 4905 (Res)
+
+
+
 R.S.V.P.
 
 ## 14. Artem Novikov — 2013-05-01 15:13:52
 
-Уважаемые бубунтоводы, запостите парочку скринов, шибко интересно.
-
-вторник, 30 апреля 2013 г., 19:47:58 UTC+8 пользователь Aspasios написал:
->
-> Большое спасибо, śrīdṛṣṭvā!
->
-> Все заработало. Только оказалось надо установить 
-> libsqlite4-dev
->
-> Работает очень быстро.
->
-> 29 апреля 2013 г., 3:31 пользователь Artem Novikov <novi...@…<javascript:>
-> > написал:
->
->> Оказались в softpedia, можно бацать лого =)
->>
->> <http://s1.softpedia-static.com/base_img/softpedia_free_award_f.gif>
->>
->>
->>
->>
->> суббота, 20 апреля 2013 г., 22:58:42 UTC+8 пользователь Artem Novikov 
->> написал:
->>
->>> Изменил схему БД, поэтому необходимо также обновить файл базы sandic.db
->>>
->>> Добавил в базу словарь корней от Владислава:
->>>
->>> Maṇḍala Pati dāsa
->>> List of verbal roots with final forms 
->>> http://sourceforge.net/p/dhatu-patha
->>>
->>>
->>>
->>> Адрес проекта:
->>> https://sourceforge.net/projects/sandic/
->>>
->>> Бинарник под Windows:
->>> http://sourceforge.net/projects/sandic/files/sandic_w32s.exe/download
->>>
->>> Словарная база данных
->>> http://sourceforge.net/projects/sandic/files/sandic.zip/download
->>>
->>>
->>>  <http://a.fsdn.com/con/app/proj/sandic/screenshots/screen1.png>
->>>
->>>  <http://a.fsdn.com/con/app/proj/sandic/screenshots/screen2.png>
->>>
->>>  <http://a.fsdn.com/con/app/proj/sandic/screenshots/screen3.png>
->>>
->>>
->>>  -- 
->> Чтобы отменить подписку на группу, посвященную санскриту, 
->> отправьте сообщение по адресу - мы поймем, простим даже: 
->> Nagari-un...@… <javascript:>
->> --- 
->> Вы получили это сообщение, поскольку подписаны на группу Общество 
->> ревнителей санскрита (Sanscrit).
->>  
->> Чтобы отказаться от подписки на эту группу и перестать получать из нее 
->> сообщения, отправьте электронное письмо на адрес 
->> nagari+un...@… <javascript:>.
->> Подробнее о функциях можно узнать на странице 
->> https://groups.google.com/groups/opt_out.
->>  
->>  
->>
->
->
->
-> -- 
-> Best regards,
-> Lev I. Titlin
-> Centre for Oriental Philosophy Studies
-> Institute of Philosophy
-> Russian Academy of Sciences
->
-> +7(929) 577 1050 (Mob)
-> +7(495) 472 4905 (Res)
->
-> R.S.V.P.
->
->
->
+Уважаемые бубунтоводы, запостите парочку скринов, шибко интересно.
+
+
+
+вторник, 30 апреля 2013 г., 19:47:58 UTC+8 пользователь Aspasios написал:
+
+>
+
+> Большое спасибо, śrīdṛṣṭvā!
+
+>
+
+> Все заработало. Только оказалось надо установить 
+
+> libsqlite4-dev
+
+>
+
+> Работает очень быстро.
+
+>
+
+> 29 апреля 2013 г., 3:31 пользователь Artem Novikov <novi...@…<javascript:>
+
+> > написал:
+
+>
+
+>> Оказались в softpedia, можно бацать лого =)
+
+>>
+
+>> <http://s1.softpedia-static.com/base_img/softpedia_free_award_f.gif>
+
+>>
+
+>>
+
+>>
+
+>>
+
+>> суббота, 20 апреля 2013 г., 22:58:42 UTC+8 пользователь Artem Novikov 
+
+>> написал:
+
+>>
+
+>>> Изменил схему БД, поэтому необходимо также обновить файл базы sandic.db
+
+>>>
+
+>>> Добавил в базу словарь корней от Владислава:
+
+>>>
+
+>>> Maṇḍala Pati dāsa
+
+>>> List of verbal roots with final forms 
+
+>>> http://sourceforge.net/p/dhatu-patha
+
+>>>
+
+>>>
+
+>>>
+
+>>> Адрес проекта:
+
+>>> https://sourceforge.net/projects/sandic/
+
+>>>
+
+>>> Бинарник под Windows:
+
+>>> http://sourceforge.net/projects/sandic/files/sandic_w32s.exe/download
+
+>>>
+
+>>> Словарная база данных
+
+>>> http://sourceforge.net/projects/sandic/files/sandic.zip/download
+
+>>>
+
+>>>
+
+>>>  <http://a.fsdn.com/con/app/proj/sandic/screenshots/screen1.png>
+
+>>>
+
+>>>  <http://a.fsdn.com/con/app/proj/sandic/screenshots/screen2.png>
+
+>>>
+
+>>>  <http://a.fsdn.com/con/app/proj/sandic/screenshots/screen3.png>
+
+>>>
+
+>>>
+
+>>>  -- 
+
+>> Чтобы отменить подписку на группу, посвященную санскриту, 
+
+>> отправьте сообщение по адресу - мы поймем, простим даже: 
+
+>> Nagari-un...@… <javascript:>
+
+>> --- 
+
+>> Вы получили это сообщение, поскольку подписаны на группу Общество 
+
+>> ревнителей санскрита (Sanscrit).
+
+>>  
+
+>> Чтобы отказаться от подписки на эту группу и перестать получать из нее 
+
+>> сообщения, отправьте электронное письмо на адрес 
+
+>> nagari+un...@… <javascript:>.
+
+>> Подробнее о функциях можно узнать на странице 
+
+>> https://groups.google.com/groups/opt_out.
+
+>>  
+
+>>  
+
+>>
+
+>
+
+>
+
+>
+
+> -- 
+
+> Best regards,
+
+> Lev I. Titlin
+
+> Centre for Oriental Philosophy Studies
+
+> Institute of Philosophy
+
+> Russian Academy of Sciences
+
+>
+
+> +7(929) 577 1050 (Mob)
+
+> +7(495) 472 4905 (Res)
+
+>
+
+> R.S.V.P.
+
+>
+
+>
+
+>
+
 >
 
 ## 15. Marcis — 2013-05-31 16:47:54
@@ -878,40 +1197,74 @@ On Monday, 3 June 2013 18:08:37 UTC+7, Serge A wrote:
 
 ## 19. Serge A — 2013-06-04 10:41:50
 
-Сейчас обнаружил, что далеко не все вносимые в оцифрованном Моньере 
-исправления идут на пользу.
-
-В старой версии поиска 
-http://www.sanskrit-lexicon.uni-koeln.de/cgi-bin/tamil/recherche
-
-2 *AbhA* 2 *f.* splendour , light ; a flash ; colour , appearance , beauty 
-MBh. Mn. Sus3r. Pan5cat. &c. ; a reflected image , outline ; likeness , 
-resemblance MBh. R. ; *(mfn.) ifc. like , resembling , appearing* R. 
-Ka1vya7d. S3is3. &c. (e.g. %{hemA7bha} , shining like gold) ; [cf. Hib. 
-{avibh} , `" likeness , similitude "' ; {avibe} , `" neatness , elegance "' 
-; {avibhcal} , `" a spark of fire "' ?] [145,2]
-
-В одной статье сначала приводится существительное (f.), а затем - 
-прилагательное (mfn).
-В новой версии при переформатировании потеряли указание на прилагательное, 
-все значения идут как ж.р.
-http://www.sanskrit-lexicon.uni-koeln.de/monier/
-
-*(H2) A-bhA 2 [L=25230]* *f.* splendour , light * [L=25231]* a flash *[L=25232]
-* colour , appearance , beauty MBh.  Mn.  Sus3r.  Pan5cat.  &c  * [L=25233]* a 
-reflected image , outline * [L=25234]* likeness , resemblance MBh.  R.  *[p= 
-145<http://www.sanskrit-lexicon.uni-koeln.de/cgi-bin/monier/serveimg.pl?file=/scans/MWScan/MWScanjpg/mw0145-Abayu.jpg>
-,2] [L=25235]* *ifc. like , resembling , appearing* R.  Ka1vya7d.  S3is3. &c 
-(e.g. hemA*bha , shining like gold) ; ([cf. Hib. avibh , " likeness , 
-similitude " ; avibe , " neatness , elegance " ; avibhcal , " a spark of 
-fire " ?]) 
-В словарной базе программы, соответственно, тоже оказалось всё ж.р.
-
-• *f. ifc. like, resembling, appearing* R. Ka1vya7d. S3is3. &c. (e.g. हेमा*भ, 
-shining like gold); ([cf. Hib. avibh, "likeness, similitude"; avibe, 
-"neatness, elegance"; avibhcal, "a spark of fire" ?])
-
-Какой бы ни был удобный поиск, а сканированная версия словаря всегда должна 
+Сейчас обнаружил, что далеко не все вносимые в оцифрованном Моньере 
+
+исправления идут на пользу.
+
+
+
+В старой версии поиска 
+
+http://www.sanskrit-lexicon.uni-koeln.de/cgi-bin/tamil/recherche
+
+
+
+2 *AbhA* 2 *f.* splendour , light ; a flash ; colour , appearance , beauty 
+
+MBh. Mn. Sus3r. Pan5cat. &c. ; a reflected image , outline ; likeness , 
+
+resemblance MBh. R. ; *(mfn.) ifc. like , resembling , appearing* R. 
+
+Ka1vya7d. S3is3. &c. (e.g. %{hemA7bha} , shining like gold) ; [cf. Hib. 
+
+{avibh} , `" likeness , similitude "' ; {avibe} , `" neatness , elegance "' 
+
+; {avibhcal} , `" a spark of fire "' ?] [145,2]
+
+
+
+В одной статье сначала приводится существительное (f.), а затем - 
+
+прилагательное (mfn).
+
+В новой версии при переформатировании потеряли указание на прилагательное, 
+
+все значения идут как ж.р.
+
+http://www.sanskrit-lexicon.uni-koeln.de/monier/
+
+
+
+*(H2) A-bhA 2 [L=25230]* *f.* splendour , light * [L=25231]* a flash *[L=25232]
+
+* colour , appearance , beauty MBh.  Mn.  Sus3r.  Pan5cat.  &c  * [L=25233]* a 
+
+reflected image , outline * [L=25234]* likeness , resemblance MBh.  R.  *[p= 
+
+145<http://www.sanskrit-lexicon.uni-koeln.de/cgi-bin/monier/serveimg.pl?file=/scans/MWScan/MWScanjpg/mw0145-Abayu.jpg>
+
+,2] [L=25235]* *ifc. like , resembling , appearing* R.  Ka1vya7d.  S3is3. &c 
+
+(e.g. hemA*bha , shining like gold) ; ([cf. Hib. avibh , " likeness , 
+
+similitude " ; avibe , " neatness , elegance " ; avibhcal , " a spark of 
+
+fire " ?]) 
+
+В словарной базе программы, соответственно, тоже оказалось всё ж.р.
+
+
+
+• *f. ifc. like, resembling, appearing* R. Ka1vya7d. S3is3. &c. (e.g. हेमा*भ, 
+
+shining like gold); ([cf. Hib. avibh, "likeness, similitude"; avibe, 
+
+"neatness, elegance"; avibhcal, "a spark of fire" ?])
+
+
+
+Какой бы ни был удобный поиск, а сканированная версия словаря всегда должна 
+
 быть под рукой для сверки.
 
 ## 20. Artem Novikov — 2013-06-05 13:11:17
@@ -1110,84 +1463,162 @@ https://community.kde.org/Necessitas/CompileQtFramework
 
 ## 26. Lev Titlin — 2013-06-14 16:15:52
 
-Думаю, скорее буду копать в сторону допиливания словарей к Goldendict.
-
-14 июня 2013 г., 17:13 пользователь Artem Novikov <novikovag@…>написал:
-
-> А никаких дополнительных усилий не требуется, просто нужно пересобрать под
-> данную платформу.
-> 1. у меня нет под рукой Android - устройств
-> 2. это не самая приоритетная задача
->
-> Necessitas вам в помощь:
-> https://community.kde.org/Necessitas/CompileQtFramework
->
-> Если получится собрать, отпишитесь.
->
-> пятница, 14 июня 2013 г., 17:48:08 UTC+8 пользователь Aspasios написал:
->
->> Уважаемый Артем, планируется ли реализация под Android?
->> Учитывая, что под линукс работает вроде хорошо.
->> Вообще хотелось бы поднять в сообществе тему Андройда, который
->> архипопулярен.
->> Лично я поставил пока GoldenDict и словрь MW в формате Lingvo. Но есть
->> проблемы. Плюс хотелось бы добавить словарей.
->>
->> пятница, 7 июня 2013 г., 14:45:54 UTC+4 пользователь Artem Novikov
->> написал:
->>>
->>> *В 13 дюймовый монитор не влазит, хотел показать *
->>> lol. Ели бы было 100 виджетов, вы бы все держали открытыми?
->>>
->>> *Все кёльнские оцифоврки имеют номер страницы*
->>> никакой Келньской маркировки и разметки никогда не будет
->>>
->>> пятница, 7 июня 2013 г., 3:29:13 UTC+8 пользователь Marcis написал:
->>>>
->>>> В 13 дюймовый монитор не влазит, хотел показать. А уменьшить не дает,
->>>> так я за нижнюю черту схватить не могу.
->>>> Вот о чем еще думаю. Все кёльнские оцифоврки имеют номер страницы.
->>>> Нельзя ли сделать такой режим (галочка),
->>>> что когда копирую, то после текста вставлять и правильно сформированная
->>>> библиографическая ссылка, например,
->>>> [MW 1899: 346]?
->>>>
->>>> On Thursday, 6 June 2013 21:49:53 UTC+7, Artem Novikov wrote:
->>>>>
->>>>> http://www.sandic.ru/files/sandic_w32s.exe
->>>>>
->>>>> пофиксил пару багов, добавил поиск по ентеру и размер по последней
->>>>> карточке плюс мелочевка
->>>>>
->>>>  --
-> Чтобы отменить подписку на группу, посвященную санскриту,
-> отправьте сообщение по адресу - мы поймем, простим даже:
-> Nagari-unsubscribe@…
-> ---
-> Вы получили это сообщение, поскольку подписаны на группу Общество
-> ревнителей санскрита (Sanscrit).
->
-> Чтобы отказаться от подписки на эту группу и перестать получать из нее
-> сообщения, отправьте электронное письмо на адрес
-> nagari+unsubscribe@….
-> Настройки подписки и доставки писем:
-> https://groups.google.com/groups/opt_out.
->
->
->
-
-
-
--- 
-Best regards,
-Lev I. Titlin
-Centre for Oriental Philosophy Studies
-Institute of Philosophy
-Russian Academy of Sciences
-
-+7(929) 577 1050 (Mob)
-+7(495) 472 4905 (Res)
-
+Думаю, скорее буду копать в сторону допиливания словарей к Goldendict.
+
+
+
+14 июня 2013 г., 17:13 пользователь Artem Novikov <novikovag@…>написал:
+
+
+
+> А никаких дополнительных усилий не требуется, просто нужно пересобрать под
+
+> данную платформу.
+
+> 1. у меня нет под рукой Android - устройств
+
+> 2. это не самая приоритетная задача
+
+>
+
+> Necessitas вам в помощь:
+
+> https://community.kde.org/Necessitas/CompileQtFramework
+
+>
+
+> Если получится собрать, отпишитесь.
+
+>
+
+> пятница, 14 июня 2013 г., 17:48:08 UTC+8 пользователь Aspasios написал:
+
+>
+
+>> Уважаемый Артем, планируется ли реализация под Android?
+
+>> Учитывая, что под линукс работает вроде хорошо.
+
+>> Вообще хотелось бы поднять в сообществе тему Андройда, который
+
+>> архипопулярен.
+
+>> Лично я поставил пока GoldenDict и словрь MW в формате Lingvo. Но есть
+
+>> проблемы. Плюс хотелось бы добавить словарей.
+
+>>
+
+>> пятница, 7 июня 2013 г., 14:45:54 UTC+4 пользователь Artem Novikov
+
+>> написал:
+
+>>>
+
+>>> *В 13 дюймовый монитор не влазит, хотел показать *
+
+>>> lol. Ели бы было 100 виджетов, вы бы все держали открытыми?
+
+>>>
+
+>>> *Все кёльнские оцифоврки имеют номер страницы*
+
+>>> никакой Келньской маркировки и разметки никогда не будет
+
+>>>
+
+>>> пятница, 7 июня 2013 г., 3:29:13 UTC+8 пользователь Marcis написал:
+
+>>>>
+
+>>>> В 13 дюймовый монитор не влазит, хотел показать. А уменьшить не дает,
+
+>>>> так я за нижнюю черту схватить не могу.
+
+>>>> Вот о чем еще думаю. Все кёльнские оцифоврки имеют номер страницы.
+
+>>>> Нельзя ли сделать такой режим (галочка),
+
+>>>> что когда копирую, то после текста вставлять и правильно сформированная
+
+>>>> библиографическая ссылка, например,
+
+>>>> [MW 1899: 346]?
+
+>>>>
+
+>>>> On Thursday, 6 June 2013 21:49:53 UTC+7, Artem Novikov wrote:
+
+>>>>>
+
+>>>>> http://www.sandic.ru/files/sandic_w32s.exe
+
+>>>>>
+
+>>>>> пофиксил пару багов, добавил поиск по ентеру и размер по последней
+
+>>>>> карточке плюс мелочевка
+
+>>>>>
+
+>>>>  --
+
+> Чтобы отменить подписку на группу, посвященную санскриту,
+
+> отправьте сообщение по адресу - мы поймем, простим даже:
+
+> Nagari-unsubscribe@…
+
+> ---
+
+> Вы получили это сообщение, поскольку подписаны на группу Общество
+
+> ревнителей санскрита (Sanscrit).
+
+>
+
+> Чтобы отказаться от подписки на эту группу и перестать получать из нее
+
+> сообщения, отправьте электронное письмо на адрес
+
+> nagari+unsubscribe@….
+
+> Настройки подписки и доставки писем:
+
+> https://groups.google.com/groups/opt_out.
+
+>
+
+>
+
+>
+
+
+
+
+
+
+
+-- 
+
+Best regards,
+
+Lev I. Titlin
+
+Centre for Oriental Philosophy Studies
+
+Institute of Philosophy
+
+Russian Academy of Sciences
+
+
+
++7(929) 577 1050 (Mob)
+
++7(495) 472 4905 (Res)
+
+
+
 R.S.V.P.
 
 ## 27. śrīdṛṣṭvā — 2013-06-17 21:49:32
@@ -1438,244 +1869,474 @@ On Monday, April 22, 2013 3:56:21 PM UTC+3, śrīdṛṣṭvā wrote:
 
 ## 29. Lev Titlin — 2013-06-28 10:39:22 · 📎 1
 
-Вот скриншот с Linux Mint.
-Есть одна большая проблема. Окно со словарной статьей не запоминает размер
-(об этом уже писали).
-Тогда делаю Сервис - Главная карточка, и вроде-бы все не так плохо, НО! :
-зачем-то ВЫЛЕЗАЕТ всякий раз снова окошко со словарной статьей, которое и
-закрывает собой это Главное окно!
-В чем сермяжный смысл? Можно ли это настроить?
-
-18 июня 2013 г., 1:54 пользователь Artem Novikov <novikovag@…>написал:
-
-> 1. что словарь надо аргументом командной строки вписывать
-> если он в другом каталоги или называется не  sandic.db, то да
->
-> 2. программа логи пишет?
-> нет
->
-> вторник, 18 июня 2013 г., 2:49:32 UTC+8 пользователь śrīdṛṣṭvā написал:
->
->> Привѣтъ, друзья!
->> Артем, попробовал я скомпилировать словарь под старую добрую
->> "Человечность 10.04.3 LTS". И проделав все те же шаги, что и под 12.04 она
->> собралась. Но при запуске словарь не показывает содержимого, т.е. просто
->> пустой. Не подключается sandic.db, хотя в 12.04 такой проблемы не было. Ну
->> проверил тоже самое на yukta.db, тоже ничего. Твоя программа логи пишет?
->>
->> PS: И еще. Правильно ли я понимаю, что словарь надо аргументом командной
->> строки вписывать?
->>
->> On Monday, April 22, 2013 3:56:21 PM UTC+3, śrīdṛṣṭvā wrote:
->>>
->>> ॐ।
->>> नमोनमः॥
->>> В моем случае Ubuntu 12.04 LTS, с предварительно установленным Qt,
->>> потребовалось проделать следущее:
->>> 1.Установить это:
->>> sudo apt-get install libsqlite3-dev
->>> 2.Делаем qmake
->>> 3.Открыть созданный Makefile, добавляем к строке LIBS (у меня они в
->>> строке 19):
->>> -lsqlite3
->>> 4.Если система 32-битная, то 4й пункт пропускаем.
->>> Если сислема 64-битная открываем файл mainwindow.cpp, находим 164
->>> строчку и вместо
->>> action->setData(reinterpret_cast<int>(dock));
->>> вписываем
->>> action->setData(reinterpret_cast<long long>(dock));
->>> 5.Делаем make
->>> 6.Запускаем ./SanDic
->>>
->>> Программа запускается быстрее, на одноядерном ПК за 10 секунд, на
->>> нетбуке не проверял.
->>> IAST не работает вовсе. Но имея Harvard-Kyoto он уже и не нужен.
->>> А имея ввод devanāgarī через ibus, мне и вовсе транслитератор не нужен)))
->>>
->>> Благоденствия и Счастия Тебе Артем।
->>> स्वस्तिते॥
->>>
->>> On Sunday, April 21, 2013 2:10:51 AM UTC-7, Artem Novikov wrote:
->>>>
->>>> Я не забываю, я просто ей не пользуюсь.
->>>>
->>>> воскресенье, 21 апреля 2013 г., 0:23:03 UTC+8 пользователь Aspasios
->>>> написал:
->>>>>
->>>>> Большое спасибо.
->>>>> Но очень бы хотелось .deb (а лучше репозиторий) под Linux.
->>>>> Линуксойды скажут спасибо)))
->>>>> А то уж больно архаично ручками-то собирать. Да и не все умеют.
->>>>> Раз уж Винду делаете бинарник, то негоже забывать и вторую по
->>>>> популярности систему.
->>>>>
->>>>> 20 апреля 2013 г., 18:58 пользователь Artem Novikov <novi...@…
->>>>> > написал:
->>>>>
->>>>>> Изменил схему БД, поэтому необходимо также обновить файл базы
->>>>>> sandic.db
->>>>>>
->>>>>> Добавил в базу словарь корней от Владислава:
->>>>>>
->>>>>> Maṇḍala Pati dāsa
->>>>>> List of verbal roots with final forms
->>>>>> http://sourceforge.net/p/dhatu-patha
->>>>>>
->>>>>>
->>>>>>
->>>>>> Адрес проекта:
->>>>>> https://sourceforge.net/projects/sandic/
->>>>>>
->>>>>> Бинарник под Windows:
->>>>>> http://sourceforge.net/projects/sandic/files/sandic_w32s.exe/download
->>>>>>
->>>>>> Словарная база данных
->>>>>> http://sourceforge.net/projects/sandic/files/sandic.zip/download
->>>>>>
->>>>>>
->>>>>>  <http://a.fsdn.com/con/app/proj/sandic/screenshots/screen1.png>
->>>>>>
->>>>>>  <http://a.fsdn.com/con/app/proj/sandic/screenshots/screen2.png>
->>>>>>
->>>>>>  <http://a.fsdn.com/con/app/proj/sandic/screenshots/screen3.png>
->>>>>>
->>>>>>
->>>>>> --
->>>>>> Чтобы отменить подписку на группу, посвященную санскриту,
->>>>>> отправьте сообщение по адресу - мы поймем, простим даже:
->>>>>> Nagari-un...@…
->>>>>> ---
->>>>>> Вы получили это сообщение, поскольку подписаны на группу Общество
->>>>>> ревнителей санскрита (Sanscrit).
->>>>>>
->>>>>> Чтобы отказаться от подписки на эту группу и перестать получать из
->>>>>> нее сообщения, отправьте электронное письмо на адрес
->>>>>> nagari+un...@….
->>>>>> Подробнее о функциях можно узнать на странице
->>>>>> https://groups.google.com/groups/opt_out.
->>>>>>
->>>>>>
->>>>>>
->>>>>
->>>>>
->>>>>
->>>>> --
->>>>> Best regards,
->>>>> Lev I. Titlin
->>>>> Centre for Oriental Philosophy Studies
->>>>> Institute of Philosophy
->>>>> Russian Academy of Sciences
->>>>>
->>>>> +7(929) 577 1050 (Mob)
->>>>> +7(495) 472 4905 (Res)
->>>>>
->>>>> R.S.V.P.
->>>>>
->>>>>
->>>>>
->>>>>  --
-> Чтобы отменить подписку на группу, посвященную санскриту,
-> отправьте сообщение по адресу - мы поймем, простим даже:
-> Nagari-unsubscribe@…
-> ---
-> Вы получили это сообщение, поскольку подписаны на группу Общество
-> ревнителей санскрита (Sanscrit).
->
-> Чтобы отказаться от подписки на эту группу и перестать получать из нее
-> сообщения, отправьте электронное письмо на адрес
-> nagari+unsubscribe@….
-> Настройки подписки и доставки писем:
-> https://groups.google.com/groups/opt_out.
->
->
->
-
-
-
--- 
-Best regards,
-Lev I. Titlin
-Centre for Oriental Philosophy Studies
-Institute of Philosophy
-Russian Academy of Sciences
-
-+7(929) 577 1050 (Mob)
+Вот скриншот с Linux Mint.
+
+Есть одна большая проблема. Окно со словарной статьей не запоминает размер
+
+(об этом уже писали).
+
+Тогда делаю Сервис - Главная карточка, и вроде-бы все не так плохо, НО! :
+
+зачем-то ВЫЛЕЗАЕТ всякий раз снова окошко со словарной статьей, которое и
+
+закрывает собой это Главное окно!
+
+В чем сермяжный смысл? Можно ли это настроить?
+
+
+
+18 июня 2013 г., 1:54 пользователь Artem Novikov <novikovag@…>написал:
+
+
+
+> 1. что словарь надо аргументом командной строки вписывать
+
+> если он в другом каталоги или называется не  sandic.db, то да
+
+>
+
+> 2. программа логи пишет?
+
+> нет
+
+>
+
+> вторник, 18 июня 2013 г., 2:49:32 UTC+8 пользователь śrīdṛṣṭvā написал:
+
+>
+
+>> Привѣтъ, друзья!
+
+>> Артем, попробовал я скомпилировать словарь под старую добрую
+
+>> "Человечность 10.04.3 LTS". И проделав все те же шаги, что и под 12.04 она
+
+>> собралась. Но при запуске словарь не показывает содержимого, т.е. просто
+
+>> пустой. Не подключается sandic.db, хотя в 12.04 такой проблемы не было. Ну
+
+>> проверил тоже самое на yukta.db, тоже ничего. Твоя программа логи пишет?
+
+>>
+
+>> PS: И еще. Правильно ли я понимаю, что словарь надо аргументом командной
+
+>> строки вписывать?
+
+>>
+
+>> On Monday, April 22, 2013 3:56:21 PM UTC+3, śrīdṛṣṭvā wrote:
+
+>>>
+
+>>> ॐ।
+
+>>> नमोनमः॥
+
+>>> В моем случае Ubuntu 12.04 LTS, с предварительно установленным Qt,
+
+>>> потребовалось проделать следущее:
+
+>>> 1.Установить это:
+
+>>> sudo apt-get install libsqlite3-dev
+
+>>> 2.Делаем qmake
+
+>>> 3.Открыть созданный Makefile, добавляем к строке LIBS (у меня они в
+
+>>> строке 19):
+
+>>> -lsqlite3
+
+>>> 4.Если система 32-битная, то 4й пункт пропускаем.
+
+>>> Если сислема 64-битная открываем файл mainwindow.cpp, находим 164
+
+>>> строчку и вместо
+
+>>> action->setData(reinterpret_cast<int>(dock));
+
+>>> вписываем
+
+>>> action->setData(reinterpret_cast<long long>(dock));
+
+>>> 5.Делаем make
+
+>>> 6.Запускаем ./SanDic
+
+>>>
+
+>>> Программа запускается быстрее, на одноядерном ПК за 10 секунд, на
+
+>>> нетбуке не проверял.
+
+>>> IAST не работает вовсе. Но имея Harvard-Kyoto он уже и не нужен.
+
+>>> А имея ввод devanāgarī через ibus, мне и вовсе транслитератор не нужен)))
+
+>>>
+
+>>> Благоденствия и Счастия Тебе Артем।
+
+>>> स्वस्तिते॥
+
+>>>
+
+>>> On Sunday, April 21, 2013 2:10:51 AM UTC-7, Artem Novikov wrote:
+
+>>>>
+
+>>>> Я не забываю, я просто ей не пользуюсь.
+
+>>>>
+
+>>>> воскресенье, 21 апреля 2013 г., 0:23:03 UTC+8 пользователь Aspasios
+
+>>>> написал:
+
+>>>>>
+
+>>>>> Большое спасибо.
+
+>>>>> Но очень бы хотелось .deb (а лучше репозиторий) под Linux.
+
+>>>>> Линуксойды скажут спасибо)))
+
+>>>>> А то уж больно архаично ручками-то собирать. Да и не все умеют.
+
+>>>>> Раз уж Винду делаете бинарник, то негоже забывать и вторую по
+
+>>>>> популярности систему.
+
+>>>>>
+
+>>>>> 20 апреля 2013 г., 18:58 пользователь Artem Novikov <novi...@…
+
+>>>>> > написал:
+
+>>>>>
+
+>>>>>> Изменил схему БД, поэтому необходимо также обновить файл базы
+
+>>>>>> sandic.db
+
+>>>>>>
+
+>>>>>> Добавил в базу словарь корней от Владислава:
+
+>>>>>>
+
+>>>>>> Maṇḍala Pati dāsa
+
+>>>>>> List of verbal roots with final forms
+
+>>>>>> http://sourceforge.net/p/dhatu-patha
+
+>>>>>>
+
+>>>>>>
+
+>>>>>>
+
+>>>>>> Адрес проекта:
+
+>>>>>> https://sourceforge.net/projects/sandic/
+
+>>>>>>
+
+>>>>>> Бинарник под Windows:
+
+>>>>>> http://sourceforge.net/projects/sandic/files/sandic_w32s.exe/download
+
+>>>>>>
+
+>>>>>> Словарная база данных
+
+>>>>>> http://sourceforge.net/projects/sandic/files/sandic.zip/download
+
+>>>>>>
+
+>>>>>>
+
+>>>>>>  <http://a.fsdn.com/con/app/proj/sandic/screenshots/screen1.png>
+
+>>>>>>
+
+>>>>>>  <http://a.fsdn.com/con/app/proj/sandic/screenshots/screen2.png>
+
+>>>>>>
+
+>>>>>>  <http://a.fsdn.com/con/app/proj/sandic/screenshots/screen3.png>
+
+>>>>>>
+
+>>>>>>
+
+>>>>>> --
+
+>>>>>> Чтобы отменить подписку на группу, посвященную санскриту,
+
+>>>>>> отправьте сообщение по адресу - мы поймем, простим даже:
+
+>>>>>> Nagari-un...@…
+
+>>>>>> ---
+
+>>>>>> Вы получили это сообщение, поскольку подписаны на группу Общество
+
+>>>>>> ревнителей санскрита (Sanscrit).
+
+>>>>>>
+
+>>>>>> Чтобы отказаться от подписки на эту группу и перестать получать из
+
+>>>>>> нее сообщения, отправьте электронное письмо на адрес
+
+>>>>>> nagari+un...@….
+
+>>>>>> Подробнее о функциях можно узнать на странице
+
+>>>>>> https://groups.google.com/groups/opt_out.
+
+>>>>>>
+
+>>>>>>
+
+>>>>>>
+
+>>>>>
+
+>>>>>
+
+>>>>>
+
+>>>>> --
+
+>>>>> Best regards,
+
+>>>>> Lev I. Titlin
+
+>>>>> Centre for Oriental Philosophy Studies
+
+>>>>> Institute of Philosophy
+
+>>>>> Russian Academy of Sciences
+
+>>>>>
+
+>>>>> +7(929) 577 1050 (Mob)
+
+>>>>> +7(495) 472 4905 (Res)
+
+>>>>>
+
+>>>>> R.S.V.P.
+
+>>>>>
+
+>>>>>
+
+>>>>>
+
+>>>>>  --
+
+> Чтобы отменить подписку на группу, посвященную санскриту,
+
+> отправьте сообщение по адресу - мы поймем, простим даже:
+
+> Nagari-unsubscribe@…
+
+> ---
+
+> Вы получили это сообщение, поскольку подписаны на группу Общество
+
+> ревнителей санскрита (Sanscrit).
+
+>
+
+> Чтобы отказаться от подписки на эту группу и перестать получать из нее
+
+> сообщения, отправьте электронное письмо на адрес
+
+> nagari+unsubscribe@….
+
+> Настройки подписки и доставки писем:
+
+> https://groups.google.com/groups/opt_out.
+
+>
+
+>
+
+>
+
+
+
+
+
+
+
+-- 
+
+Best regards,
+
+Lev I. Titlin
+
+Centre for Oriental Philosophy Studies
+
+Institute of Philosophy
+
+Russian Academy of Sciences
+
+
+
++7(929) 577 1050 (Mob)
+
 +7(495) 472 4905 (Res)
 
 ## 30. धीरसिंह — 2013-06-29 22:56:00
 
-Загрузил ваш словарь и сейчас осваиваю. Можно спросить, какое издание 
-словаря Apte вы использовали для базы?
-
-On Saturday, April 20, 2013 3:58:42 PM UTC+1, Artem Novikov wrote:
->
-> Изменил схему БД, поэтому необходимо также обновить файл базы sandic.db
->
-> Добавил в базу словарь корней от Владислава:
->
-> Maṇḍala Pati dāsa
-> List of verbal roots with final forms 
-> http://sourceforge.net/p/dhatu-patha
->
->
->
-> Адрес проекта:
-> https://sourceforge.net/projects/sandic/
->
-> Бинарник под Windows:
-> http://sourceforge.net/projects/sandic/files/sandic_w32s.exe/download
->
-> Словарная база данных
-> http://sourceforge.net/projects/sandic/files/sandic.zip/download
->
->
-> <http://a.fsdn.com/con/app/proj/sandic/screenshots/screen1.png>
->
-> <http://a.fsdn.com/con/app/proj/sandic/screenshots/screen2.png>
->
-> <http://a.fsdn.com/con/app/proj/sandic/screenshots/screen3.png>
->
->
+Загрузил ваш словарь и сейчас осваиваю. Можно спросить, какое издание 
+
+словаря Apte вы использовали для базы?
+
+
+
+On Saturday, April 20, 2013 3:58:42 PM UTC+1, Artem Novikov wrote:
+
+>
+
+> Изменил схему БД, поэтому необходимо также обновить файл базы sandic.db
+
+>
+
+> Добавил в базу словарь корней от Владислава:
+
+>
+
+> Maṇḍala Pati dāsa
+
+> List of verbal roots with final forms 
+
+> http://sourceforge.net/p/dhatu-patha
+
+>
+
+>
+
+>
+
+> Адрес проекта:
+
+> https://sourceforge.net/projects/sandic/
+
+>
+
+> Бинарник под Windows:
+
+> http://sourceforge.net/projects/sandic/files/sandic_w32s.exe/download
+
+>
+
+> Словарная база данных
+
+> http://sourceforge.net/projects/sandic/files/sandic.zip/download
+
+>
+
+>
+
+> <http://a.fsdn.com/con/app/proj/sandic/screenshots/screen1.png>
+
+>
+
+> <http://a.fsdn.com/con/app/proj/sandic/screenshots/screen2.png>
+
+>
+
+> <http://a.fsdn.com/con/app/proj/sandic/screenshots/screen3.png>
+
+>
+
+>
+
 >
 
 ## 31. Artem Novikov — 2013-06-30 07:33:18
 
-Help->About
-
-воскресенье, 30 июня 2013 г., 3:56:00 UTC+8 пользователь धीरसिंह написал:
->
-> Загрузил ваш словарь и сейчас осваиваю. Можно спросить, какое издание 
-> словаря Apte вы использовали для базы?
->
-> On Saturday, April 20, 2013 3:58:42 PM UTC+1, Artem Novikov wrote:
->>
->> Изменил схему БД, поэтому необходимо также обновить файл базы sandic.db
->>
->> Добавил в базу словарь корней от Владислава:
->>
->> Maṇḍala Pati dāsa
->> List of verbal roots with final forms 
->> http://sourceforge.net/p/dhatu-patha
->>
->>
->>
->> Адрес проекта:
->> https://sourceforge.net/projects/sandic/
->>
->> Бинарник под Windows:
->> http://sourceforge.net/projects/sandic/files/sandic_w32s.exe/download
->>
->> Словарная база данных
->> http://sourceforge.net/projects/sandic/files/sandic.zip/download
->>
->>
->> <http://a.fsdn.com/con/app/proj/sandic/screenshots/screen1.png>
->>
->> <http://a.fsdn.com/con/app/proj/sandic/screenshots/screen2.png>
->>
->> <http://a.fsdn.com/con/app/proj/sandic/screenshots/screen3.png>
->>
->>
+Help->About
+
+
+
+воскресенье, 30 июня 2013 г., 3:56:00 UTC+8 пользователь धीरसिंह написал:
+
+>
+
+> Загрузил ваш словарь и сейчас осваиваю. Можно спросить, какое издание 
+
+> словаря Apte вы использовали для базы?
+
+>
+
+> On Saturday, April 20, 2013 3:58:42 PM UTC+1, Artem Novikov wrote:
+
+>>
+
+>> Изменил схему БД, поэтому необходимо также обновить файл базы sandic.db
+
+>>
+
+>> Добавил в базу словарь корней от Владислава:
+
+>>
+
+>> Maṇḍala Pati dāsa
+
+>> List of verbal roots with final forms 
+
+>> http://sourceforge.net/p/dhatu-patha
+
+>>
+
+>>
+
+>>
+
+>> Адрес проекта:
+
+>> https://sourceforge.net/projects/sandic/
+
+>>
+
+>> Бинарник под Windows:
+
+>> http://sourceforge.net/projects/sandic/files/sandic_w32s.exe/download
+
+>>
+
+>> Словарная база данных
+
+>> http://sourceforge.net/projects/sandic/files/sandic.zip/download
+
+>>
+
+>>
+
+>> <http://a.fsdn.com/con/app/proj/sandic/screenshots/screen1.png>
+
+>>
+
+>> <http://a.fsdn.com/con/app/proj/sandic/screenshots/screen2.png>
+
+>>
+
+>> <http://a.fsdn.com/con/app/proj/sandic/screenshots/screen3.png>
+
+>>
+
+>>
+
 >>
 
 ## 32. Marcis — 2013-09-21 13:32:07
@@ -1807,40 +2468,70 @@ On Monday, 23 September 2013 19:24:18 UTC+4, Artem Novikov wrote:
 
 ## 43. Marcis — 2013-09-24 22:42:21
 
-Gabriel Pradiipaka: Because the software is programmed to detect “mechaka” 
-and  not “mecaka”. But be careful, because “cha” is not ITRANS 5.3 but 
-older than even 5.1: 
-http://www.sanskrit-sanscrito.com.ar/en/learning-sanskrit-transliterating-2-1/411#ITRANS
- 
-In ITRANS 5.3, the nomenclature is “ca” and not “cha”. This problem is 
-happening with all the words containing “c”, obviously. My suggestion is 
-that one includes all the possible versions of ITRANS “just in case” 
-someone decides to use an older character.
-
-On Tuesday, 24 September 2013 18:45:43 UTC+4, Artem Novikov wrote:
->
-> нет
->
+Gabriel Pradiipaka: Because the software is programmed to detect “mechaka” 
+
+and  not “mecaka”. But be careful, because “cha” is not ITRANS 5.3 but 
+
+older than even 5.1: 
+
+http://www.sanskrit-sanscrito.com.ar/en/learning-sanskrit-transliterating-2-1/411#ITRANS
+
+ 
+
+In ITRANS 5.3, the nomenclature is “ca” and not “cha”. This problem is 
+
+happening with all the words containing “c”, obviously. My suggestion is 
+
+that one includes all the possible versions of ITRANS “just in case” 
+
+someone decides to use an older character.
+
+
+
+On Tuesday, 24 September 2013 18:45:43 UTC+4, Artem Novikov wrote:
+
+>
+
+> нет
+
+>
+
 >
 
 ## 44. ShaSa — 2013-09-30 14:07:36
 
-Namaste
-You said- *2. I do not plan to do this project.*
-
-The SanDic is a good idea, and a very useful project. Why do you want to 
-stop it? Please do not stop it. Beginning right with its name, it has been 
-an interesting one.
-I had heard that it is going to add upto 10 dictionaries..! Especially the 
-dhAtu-explanation I find the most useful. When I search for some dhAtu, the 
-SanDic appears also in the google-search, I find it very interesting and 
-systematic. Please continue that and make it more powerful.
-Thankyou.
-
-On Sunday, September 22, 2013 2:22:20 PM UTC+5:30, Artem Novikov wrote:
->
-> 1. Какой инсталлер он ран, где он его нашел?) Такая ошибка если база не в 
-> каталоге с исполняемым файлом, или неверно задан путь в командной строке.
+Namaste
+
+You said- *2. I do not plan to do this project.*
+
+
+
+The SanDic is a good idea, and a very useful project. Why do you want to 
+
+stop it? Please do not stop it. Beginning right with its name, it has been 
+
+an interesting one.
+
+I had heard that it is going to add upto 10 dictionaries..! Especially the 
+
+dhAtu-explanation I find the most useful. When I search for some dhAtu, the 
+
+SanDic appears also in the google-search, I find it very interesting and 
+
+systematic. Please continue that and make it more powerful.
+
+Thankyou.
+
+
+
+On Sunday, September 22, 2013 2:22:20 PM UTC+5:30, Artem Novikov wrote:
+
+>
+
+> 1. Какой инсталлер он ран, где он его нашел?) Такая ошибка если база не в 
+
+> каталоге с исполняемым файлом, или неверно задан путь в командной строке.
+
 > 2. Я больше не планирую заниматься этим проектом.
 
 ## 45. śrīdṛṣṭvā — 2013-09-30 16:21:16
@@ -1897,7 +2588,8 @@ On Thursday, 3 October 2013 01:48:17 UTC+4, Artem Novikov wrote:
 
 ## 49. Artem Novikov — 2013-10-03 17:03:49
 
-Качни SQLiteSpy и не парся
+Качни SQLiteSpy и не парся
+
 http://www.yunqa.de/delphi/doku.php/products/sqlitespy/index
 
 ## 50. Marcis — 2013-10-03 21:20:55 · 📎 1
@@ -2042,30 +2734,54 @@ On Friday, 4 October 2013 01:06:36 UTC+4, Artem Novikov wrote:
 
 ## 55. ShaSa — 2013-10-19 00:22:32
 
-Namaste,
-       “Can’t open database file: sandic.db”
-I had the same problem. It is solved when I tried downloading from this 
-link-
-http://samskrtam.ru/?s=Sandic
-All of the files- the database and .exe are needed to be in one single 
-folder. (Any one, created by us even)
--iti sham
-
-
-
-On Sunday, September 22, 2013 10:29:13 AM UTC+5:30, Marcis wrote:
->
-> Gabriel Pradiipaka написал письмо. Артем, в чем может быть дело?
->
-> The problem is that every time I try to run the installer, it reads:
->  “Can’t open database file: sandic.db”
->  I am using Windows 7 Ultimate x64 with all the MS updates fully installed.
->
-> Когда-то года 3-4 назад Дубль ГИС тоже решили держать оболочку и базу 
-> отдельно. Потом затюкали их и вернули нормально, как и изначально было - в 
-> 1 экзешник, при этом любую базу можно удалить или обновить. Уже который 
-> знакомый жалуется на подобные проблемы, да вообще давно ничего от Вас не 
-> слышно. Не пора ли?
+Namaste,
+
+       “Can’t open database file: sandic.db”
+
+I had the same problem. It is solved when I tried downloading from this 
+
+link-
+
+http://samskrtam.ru/?s=Sandic
+
+All of the files- the database and .exe are needed to be in one single 
+
+folder. (Any one, created by us even)
+
+-iti sham
+
+
+
+
+
+
+
+On Sunday, September 22, 2013 10:29:13 AM UTC+5:30, Marcis wrote:
+
+>
+
+> Gabriel Pradiipaka написал письмо. Артем, в чем может быть дело?
+
+>
+
+> The problem is that every time I try to run the installer, it reads:
+
+>  “Can’t open database file: sandic.db”
+
+>  I am using Windows 7 Ultimate x64 with all the MS updates fully installed.
+
+>
+
+> Когда-то года 3-4 назад Дубль ГИС тоже решили держать оболочку и базу 
+
+> отдельно. Потом затюкали их и вернули нормально, как и изначально было - в 
+
+> 1 экзешник, при этом любую базу можно удалить или обновить. Уже который 
+
+> знакомый жалуется на подобные проблемы, да вообще давно ничего от Вас не 
+
+> слышно. Не пора ли?
+
 >
 
 ## 56. Marcis — 2013-10-19 08:31:07 · 📎 1
@@ -2281,180 +2997,346 @@ On Tuesday, 22 October 2013 11:53:17 UTC+4, Artem Novikov wrote:
 
 ## 67. Marcis — 2013-11-07 09:27:02
 
-Артем,
-
-Я понял, что 3 окна для ввода это действительно ерунда. А 4й был вообще 
-глупо. Комп сам может распознать, что ты вводишь - особой хитрости не 
-требуется. И решено это до этого было уже дважды, правда оба раза для веба, 
-но есть готовый алгоритм.
-
-http://sanskritdictionary.com/?q=dh%C4%81vati
-Sanskrit Dictionary understands and transcodes देवनागर्-ई IAST, 
-Harvard-Kyoto, SLP1, ITRANS. You can type in any of the Sanskrit 
-transliteration systems you are familiar with and we will detect and 
-convert it to IAST for the purpose of searching.
-
-При этом делали русские ребята, где бы их найти
-Sergey K- Input Detection Scripting
-Alex T- Google Translate API Scripting
-Vitaly D - Monier XML Processing
-
-Ту же задачу буквально на днях решил 
-https://github.com/shreevatsa/sanskrit/tree/metrical-scan 
-для http://sanskritmetres.appspot.com/ даже не подозревая, что она уже 
-решалась.
-(The input can be in either Devanagari, IAST, Harvard-Kyoto, or ITRANS 
-format.)
-
+Артем,
+
+
+
+Я понял, что 3 окна для ввода это действительно ерунда. А 4й был вообще 
+
+глупо. Комп сам может распознать, что ты вводишь - особой хитрости не 
+
+требуется. И решено это до этого было уже дважды, правда оба раза для веба, 
+
+но есть готовый алгоритм.
+
+
+
+http://sanskritdictionary.com/?q=dh%C4%81vati
+
+Sanskrit Dictionary understands and transcodes देवनागर्-ई IAST, 
+
+Harvard-Kyoto, SLP1, ITRANS. You can type in any of the Sanskrit 
+
+transliteration systems you are familiar with and we will detect and 
+
+convert it to IAST for the purpose of searching.
+
+
+
+При этом делали русские ребята, где бы их найти
+
+Sergey K- Input Detection Scripting
+
+Alex T- Google Translate API Scripting
+
+Vitaly D - Monier XML Processing
+
+
+
+Ту же задачу буквально на днях решил 
+
+https://github.com/shreevatsa/sanskrit/tree/metrical-scan 
+
+для http://sanskritmetres.appspot.com/ даже не подозревая, что она уже 
+
+решалась.
+
+(The input can be in either Devanagari, IAST, Harvard-Kyoto, or ITRANS 
+
+format.)
+
+
+
 М.
 
 ## 68. Lev Titlin — 2013-11-19 16:37:09
 
-Кто-нибудь уже пытался собирать словарь под Android?
-А то намучился я с GoldenDict на ондроеде, деванагари нажимается через
-пень-колоду...
-
---
-Best regards,
-Lev I. Titlin, PhD
-Research scholar, Department for Oriental Philosophy Studies
-Institute of Philosophy
-Russian Academy of Science
-Moscow, Volkhonka, 14/1 build. 5
-Russia, 119991
-
-+7(929) 577 1050 (Mob)
-+7(495) 472 4905 (Res)
-e-mail: titlus@…
-
-
-7 ноября 2013 г., 10:27 пользователь Marcis <gasyoun@…> написал:
-
-> Артем,
->
-> Я понял, что 3 окна для ввода это действительно ерунда. А 4й был вообще
-> глупо. Комп сам может распознать, что ты вводишь - особой хитрости не
-> требуется. И решено это до этого было уже дважды, правда оба раза для веба,
-> но есть готовый алгоритм.
->
-> http://sanskritdictionary.com/?q=dh%C4%81vati
-> Sanskrit Dictionary understands and transcodes देवनागर्-ई IAST,
-> Harvard-Kyoto, SLP1, ITRANS. You can type in any of the Sanskrit
-> transliteration systems you are familiar with and we will detect and
-> convert it to IAST for the purpose of searching.
->
-> При этом делали русские ребята, где бы их найти
-> Sergey K- Input Detection Scripting
-> Alex T- Google Translate API Scripting
-> Vitaly D - Monier XML Processing
->
-> Ту же задачу буквально на днях решил
-> https://github.com/shreevatsa/sanskrit/tree/metrical-scan
-> для http://sanskritmetres.appspot.com/ даже не подозревая, что она уже
-> решалась.
-> (The input can be in either Devanagari, IAST, Harvard-Kyoto, or ITRANS
-> format.)
->
-> М.
->
-> --
-> Чтобы отменить подписку на группу, посвященную санскриту,
-> отправьте сообщение по адресу - мы поймем, простим даже:
-> Nagari-unsubscribe@…
-> ---
-> Вы получили это сообщение, поскольку подписаны на группу Общество
-> ревнителей санскрита (Sanscrit).
->
-> Чтобы отказаться от подписки на эту группу и перестать получать из нее
-> сообщения, отправьте электронное письмо на адрес
-> nagari+unsubscribe@….
-> Настройки подписки и доставки писем:
-> https://groups.google.com/groups/opt_out.
+Кто-нибудь уже пытался собирать словарь под Android?
+
+А то намучился я с GoldenDict на ондроеде, деванагари нажимается через
+
+пень-колоду...
+
+
+
+--
+
+Best regards,
+
+Lev I. Titlin, PhD
+
+Research scholar, Department for Oriental Philosophy Studies
+
+Institute of Philosophy
+
+Russian Academy of Science
+
+Moscow, Volkhonka, 14/1 build. 5
+
+Russia, 119991
+
+
+
++7(929) 577 1050 (Mob)
+
++7(495) 472 4905 (Res)
+
+e-mail: titlus@…
+
+
+
+
+
+7 ноября 2013 г., 10:27 пользователь Marcis <gasyoun@…> написал:
+
+
+
+> Артем,
+
+>
+
+> Я понял, что 3 окна для ввода это действительно ерунда. А 4й был вообще
+
+> глупо. Комп сам может распознать, что ты вводишь - особой хитрости не
+
+> требуется. И решено это до этого было уже дважды, правда оба раза для веба,
+
+> но есть готовый алгоритм.
+
+>
+
+> http://sanskritdictionary.com/?q=dh%C4%81vati
+
+> Sanskrit Dictionary understands and transcodes देवनागर्-ई IAST,
+
+> Harvard-Kyoto, SLP1, ITRANS. You can type in any of the Sanskrit
+
+> transliteration systems you are familiar with and we will detect and
+
+> convert it to IAST for the purpose of searching.
+
+>
+
+> При этом делали русские ребята, где бы их найти
+
+> Sergey K- Input Detection Scripting
+
+> Alex T- Google Translate API Scripting
+
+> Vitaly D - Monier XML Processing
+
+>
+
+> Ту же задачу буквально на днях решил
+
+> https://github.com/shreevatsa/sanskrit/tree/metrical-scan
+
+> для http://sanskritmetres.appspot.com/ даже не подозревая, что она уже
+
+> решалась.
+
+> (The input can be in either Devanagari, IAST, Harvard-Kyoto, or ITRANS
+
+> format.)
+
+>
+
+> М.
+
+>
+
+> --
+
+> Чтобы отменить подписку на группу, посвященную санскриту,
+
+> отправьте сообщение по адресу - мы поймем, простим даже:
+
+> Nagari-unsubscribe@…
+
+> ---
+
+> Вы получили это сообщение, поскольку подписаны на группу Общество
+
+> ревнителей санскрита (Sanscrit).
+
+>
+
+> Чтобы отказаться от подписки на эту группу и перестать получать из нее
+
+> сообщения, отправьте электронное письмо на адрес
+
+> nagari+unsubscribe@….
+
+> Настройки подписки и доставки писем:
+
+> https://groups.google.com/groups/opt_out.
+
 >
 
 ## 69. Lev Titlin — 2013-11-19 16:50:37
 
-Пока не могу понять, с какого конца подступиться к этой сборке. Никогда
-раньше таким не занимался.
-
---
-Best regards,
-Lev I. Titlin, PhD
-Research scholar, Department for Oriental Philosophy Studies
-Institute of Philosophy
-Russian Academy of Science
-Moscow, Volkhonka, 14/1 build. 5
-Russia, 119991
-
-+7(929) 577 1050 (Mob)
-+7(495) 472 4905 (Res)
-e-mail: titlus@…
-
-
-19 ноября 2013 г., 17:37 пользователь Lev Titlin <titlus@…> написал:
-
-> Кто-нибудь уже пытался собирать словарь под Android?
-> А то намучился я с GoldenDict на ондроеде, деванагари нажимается через
-> пень-колоду...
->
-> --
-> Best regards,
-> Lev I. Titlin, PhD
-> Research scholar, Department for Oriental Philosophy Studies
-> Institute of Philosophy
-> Russian Academy of Science
-> Moscow, Volkhonka, 14/1 build. 5
-> Russia, 119991
->
-> +7(929) 577 1050 (Mob)
-> +7(495) 472 4905 (Res)
-> e-mail: titlus@…
->
->
-> 7 ноября 2013 г., 10:27 пользователь Marcis <gasyoun@…> написал:
->
-> Артем,
->>
->> Я понял, что 3 окна для ввода это действительно ерунда. А 4й был вообще
->> глупо. Комп сам может распознать, что ты вводишь - особой хитрости не
->> требуется. И решено это до этого было уже дважды, правда оба раза для веба,
->> но есть готовый алгоритм.
->>
->> http://sanskritdictionary.com/?q=dh%C4%81vati
->> Sanskrit Dictionary understands and transcodes देवनागर्-ई IAST,
->> Harvard-Kyoto, SLP1, ITRANS. You can type in any of the Sanskrit
->> transliteration systems you are familiar with and we will detect and
->> convert it to IAST for the purpose of searching.
->>
->> При этом делали русские ребята, где бы их найти
->> Sergey K- Input Detection Scripting
->> Alex T- Google Translate API Scripting
->> Vitaly D - Monier XML Processing
->>
->>  Ту же задачу буквально на днях решил
->> https://github.com/shreevatsa/sanskrit/tree/metrical-scan
->> для http://sanskritmetres.appspot.com/ даже не подозревая, что она уже
->> решалась.
->> (The input can be in either Devanagari, IAST, Harvard-Kyoto, or ITRANS
->> format.)
->>
->> М.
->>
->> --
->> Чтобы отменить подписку на группу, посвященную санскриту,
->> отправьте сообщение по адресу - мы поймем, простим даже:
->> Nagari-unsubscribe@…
->> ---
->> Вы получили это сообщение, поскольку подписаны на группу Общество
->> ревнителей санскрита (Sanscrit).
->>
->> Чтобы отказаться от подписки на эту группу и перестать получать из нее
->> сообщения, отправьте электронное письмо на адрес
->> nagari+unsubscribe@….
->> Настройки подписки и доставки писем:
->> https://groups.google.com/groups/opt_out.
->>
->
+Пока не могу понять, с какого конца подступиться к этой сборке. Никогда
+
+раньше таким не занимался.
+
+
+
+--
+
+Best regards,
+
+Lev I. Titlin, PhD
+
+Research scholar, Department for Oriental Philosophy Studies
+
+Institute of Philosophy
+
+Russian Academy of Science
+
+Moscow, Volkhonka, 14/1 build. 5
+
+Russia, 119991
+
+
+
++7(929) 577 1050 (Mob)
+
++7(495) 472 4905 (Res)
+
+e-mail: titlus@…
+
+
+
+
+
+19 ноября 2013 г., 17:37 пользователь Lev Titlin <titlus@…> написал:
+
+
+
+> Кто-нибудь уже пытался собирать словарь под Android?
+
+> А то намучился я с GoldenDict на ондроеде, деванагари нажимается через
+
+> пень-колоду...
+
+>
+
+> --
+
+> Best regards,
+
+> Lev I. Titlin, PhD
+
+> Research scholar, Department for Oriental Philosophy Studies
+
+> Institute of Philosophy
+
+> Russian Academy of Science
+
+> Moscow, Volkhonka, 14/1 build. 5
+
+> Russia, 119991
+
+>
+
+> +7(929) 577 1050 (Mob)
+
+> +7(495) 472 4905 (Res)
+
+> e-mail: titlus@…
+
+>
+
+>
+
+> 7 ноября 2013 г., 10:27 пользователь Marcis <gasyoun@…> написал:
+
+>
+
+> Артем,
+
+>>
+
+>> Я понял, что 3 окна для ввода это действительно ерунда. А 4й был вообще
+
+>> глупо. Комп сам может распознать, что ты вводишь - особой хитрости не
+
+>> требуется. И решено это до этого было уже дважды, правда оба раза для веба,
+
+>> но есть готовый алгоритм.
+
+>>
+
+>> http://sanskritdictionary.com/?q=dh%C4%81vati
+
+>> Sanskrit Dictionary understands and transcodes देवनागर्-ई IAST,
+
+>> Harvard-Kyoto, SLP1, ITRANS. You can type in any of the Sanskrit
+
+>> transliteration systems you are familiar with and we will detect and
+
+>> convert it to IAST for the purpose of searching.
+
+>>
+
+>> При этом делали русские ребята, где бы их найти
+
+>> Sergey K- Input Detection Scripting
+
+>> Alex T- Google Translate API Scripting
+
+>> Vitaly D - Monier XML Processing
+
+>>
+
+>>  Ту же задачу буквально на днях решил
+
+>> https://github.com/shreevatsa/sanskrit/tree/metrical-scan
+
+>> для http://sanskritmetres.appspot.com/ даже не подозревая, что она уже
+
+>> решалась.
+
+>> (The input can be in either Devanagari, IAST, Harvard-Kyoto, or ITRANS
+
+>> format.)
+
+>>
+
+>> М.
+
+>>
+
+>> --
+
+>> Чтобы отменить подписку на группу, посвященную санскриту,
+
+>> отправьте сообщение по адресу - мы поймем, простим даже:
+
+>> Nagari-unsubscribe@…
+
+>> ---
+
+>> Вы получили это сообщение, поскольку подписаны на группу Общество
+
+>> ревнителей санскрита (Sanscrit).
+
+>>
+
+>> Чтобы отказаться от подписки на эту группу и перестать получать из нее
+
+>> сообщения, отправьте электронное письмо на адрес
+
+>> nagari+unsubscribe@….
+
+>> Настройки подписки и доставки писем:
+
+>> https://groups.google.com/groups/opt_out.
+
+>>
+
+>
+
 >
 
 ## 70. Marcis — 2013-11-20 00:31:20

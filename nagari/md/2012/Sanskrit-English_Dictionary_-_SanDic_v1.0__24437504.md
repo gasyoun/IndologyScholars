@@ -17,26 +17,46 @@ source_url: https://groups.google.com/d/msgid/nagari/7389124.3478.1336527959014.
 
 ## 1. Artem Novikov — 2012-05-09 04:45:59 · 📎 2
 
-Возникла необходимость в электронном словаре, ничего подходящего не нашел, 
-поэтому решил создать свой.
-
-SanDic это проект санскритского словаря с открытым кодом доступный под 
-лицензией GPL.
-
-В базу включены следующие словари:
-
-Apte Vaman Shivaram
-Revised and enlarged edition of Prin. V. S. Apte's The practical 
-Sanskrit-English dictionary. Poona: Prasad Prakashan, 1957-1959. 3v.
-
-Arthur Anthony Macdonell
-A practical Sanskrit dictionary with transliteration, accentuation, and 
-etymological analysis throughout. London: Oxford University Press, 1929.
-
-Monier Williams
-Sanskrit-English Dictionary
-
-Адрес проекта:
+Возникла необходимость в электронном словаре, ничего подходящего не нашел, 
+
+поэтому решил создать свой.
+
+
+
+SanDic это проект санскритского словаря с открытым кодом доступный под 
+
+лицензией GPL.
+
+
+
+В базу включены следующие словари:
+
+
+
+Apte Vaman Shivaram
+
+Revised and enlarged edition of Prin. V. S. Apte's The practical 
+
+Sanskrit-English dictionary. Poona: Prasad Prakashan, 1957-1959. 3v.
+
+
+
+Arthur Anthony Macdonell
+
+A practical Sanskrit dictionary with transliteration, accentuation, and 
+
+etymological analysis throughout. London: Oxford University Press, 1929.
+
+
+
+Monier Williams
+
+Sanskrit-English Dictionary
+
+
+
+Адрес проекта:
+
 https://sourceforge.net/projects/sandic/
 
 ## 2. Lev Titlin — 2012-05-09 09:57:46
@@ -141,32 +161,58 @@ R.S.V.P.
 
 ## 4. Dmitri — 2012-05-09 16:02:11
 
-Мой анти-вирус показывает что sandic_w32s.exe содержит вирус Trojan.Dopper
-
-On Tuesday, May 8, 2012 7:45:59 PM UTC-6, Artem Novikov wrote:
->
-> Возникла необходимость в электронном словаре, ничего подходящего не нашел, 
-> поэтому решил создать свой.
->
-> SanDic это проект санскритского словаря с открытым кодом доступный под 
-> лицензией GPL.
->
-> В базу включены следующие словари:
->
-> Apte Vaman Shivaram
-> Revised and enlarged edition of Prin. V. S. Apte's The practical 
-> Sanskrit-English dictionary. Poona: Prasad Prakashan, 1957-1959. 3v.
->
-> Arthur Anthony Macdonell
-> A practical Sanskrit dictionary with transliteration, accentuation, and 
-> etymological analysis throughout. London: Oxford University Press, 1929.
->
-> Monier Williams
-> Sanskrit-English Dictionary
->
-> Адрес проекта:
-> https://sourceforge.net/projects/sandic/
->
+Мой анти-вирус показывает что sandic_w32s.exe содержит вирус Trojan.Dopper
+
+
+
+On Tuesday, May 8, 2012 7:45:59 PM UTC-6, Artem Novikov wrote:
+
+>
+
+> Возникла необходимость в электронном словаре, ничего подходящего не нашел, 
+
+> поэтому решил создать свой.
+
+>
+
+> SanDic это проект санскритского словаря с открытым кодом доступный под 
+
+> лицензией GPL.
+
+>
+
+> В базу включены следующие словари:
+
+>
+
+> Apte Vaman Shivaram
+
+> Revised and enlarged edition of Prin. V. S. Apte's The practical 
+
+> Sanskrit-English dictionary. Poona: Prasad Prakashan, 1957-1959. 3v.
+
+>
+
+> Arthur Anthony Macdonell
+
+> A practical Sanskrit dictionary with transliteration, accentuation, and 
+
+> etymological analysis throughout. London: Oxford University Press, 1929.
+
+>
+
+> Monier Williams
+
+> Sanskrit-English Dictionary
+
+>
+
+> Адрес проекта:
+
+> https://sourceforge.net/projects/sandic/
+
+>
+
 >
 
 ## 5. Stormwatsch — 2012-05-09 16:55:47
@@ -633,66 +679,124 @@ On Monday, May 14, 2012 9:31:26 AM UTC+3, atman wrote:
 
 ## 15. Shantira Shani — 2012-05-29 16:35:46
 
-А чем плох этот словарь? - *Sanskrit Dictionary for Spoken Sanskrit*<http://spokensanskrit.de/>
-.
-
-среда, 9 мая 2012 г., 3:45:59 UTC+2 пользователь Artem Novikov написал:
->
-> Возникла необходимость в электронном словаре, ничего подходящего не нашел, 
-> поэтому решил создать свой.
->
-> SanDic это проект санскритского словаря с открытым кодом доступный под 
-> лицензией GPL.
->
-> В базу включены следующие словари:
->
-> Apte Vaman Shivaram
-> Revised and enlarged edition of Prin. V. S. Apte's The practical 
-> Sanskrit-English dictionary. Poona: Prasad Prakashan, 1957-1959. 3v.
->
-> Arthur Anthony Macdonell
-> A practical Sanskrit dictionary with transliteration, accentuation, and 
-> etymological analysis throughout. London: Oxford University Press, 1929.
->
-> Monier Williams
-> Sanskrit-English Dictionary
->
-> Адрес проекта:
-> https://sourceforge.net/projects/sandic/
->
+А чем плох этот словарь? - *Sanskrit Dictionary for Spoken Sanskrit*<http://spokensanskrit.de/>
+
+.
+
+
+
+среда, 9 мая 2012 г., 3:45:59 UTC+2 пользователь Artem Novikov написал:
+
+>
+
+> Возникла необходимость в электронном словаре, ничего подходящего не нашел, 
+
+> поэтому решил создать свой.
+
+>
+
+> SanDic это проект санскритского словаря с открытым кодом доступный под 
+
+> лицензией GPL.
+
+>
+
+> В базу включены следующие словари:
+
+>
+
+> Apte Vaman Shivaram
+
+> Revised and enlarged edition of Prin. V. S. Apte's The practical 
+
+> Sanskrit-English dictionary. Poona: Prasad Prakashan, 1957-1959. 3v.
+
+>
+
+> Arthur Anthony Macdonell
+
+> A practical Sanskrit dictionary with transliteration, accentuation, and 
+
+> etymological analysis throughout. London: Oxford University Press, 1929.
+
+>
+
+> Monier Williams
+
+> Sanskrit-English Dictionary
+
+>
+
+> Адрес проекта:
+
+> https://sourceforge.net/projects/sandic/
+
+>
+
 >
 
 ## 16. Artem Novikov — 2012-05-30 20:28:09
 
-Доступен только через онлайн
-
-вторник, 29 мая 2012 г., 21:35:46 UTC+8 пользователь Shantira Shani написал:
->
-> А чем плох этот словарь? - *Sanskrit Dictionary for Spoken Sanskrit*<http://spokensanskrit.de/>
-> .
->
-> среда, 9 мая 2012 г., 3:45:59 UTC+2 пользователь Artem Novikov написал:
->>
->> Возникла необходимость в электронном словаре, ничего подходящего не 
->> нашел, поэтому решил создать свой.
->>
->> SanDic это проект санскритского словаря с открытым кодом доступный под 
->> лицензией GPL.
->>
->> В базу включены следующие словари:
->>
->> Apte Vaman Shivaram
->> Revised and enlarged edition of Prin. V. S. Apte's The practical 
->> Sanskrit-English dictionary. Poona: Prasad Prakashan, 1957-1959. 3v.
->>
->> Arthur Anthony Macdonell
->> A practical Sanskrit dictionary with transliteration, accentuation, and 
->> etymological analysis throughout. London: Oxford University Press, 1929.
->>
->> Monier Williams
->> Sanskrit-English Dictionary
->>
->> Адрес проекта:
->> https://sourceforge.net/projects/sandic/
->>
+Доступен только через онлайн
+
+
+
+вторник, 29 мая 2012 г., 21:35:46 UTC+8 пользователь Shantira Shani написал:
+
+>
+
+> А чем плох этот словарь? - *Sanskrit Dictionary for Spoken Sanskrit*<http://spokensanskrit.de/>
+
+> .
+
+>
+
+> среда, 9 мая 2012 г., 3:45:59 UTC+2 пользователь Artem Novikov написал:
+
+>>
+
+>> Возникла необходимость в электронном словаре, ничего подходящего не 
+
+>> нашел, поэтому решил создать свой.
+
+>>
+
+>> SanDic это проект санскритского словаря с открытым кодом доступный под 
+
+>> лицензией GPL.
+
+>>
+
+>> В базу включены следующие словари:
+
+>>
+
+>> Apte Vaman Shivaram
+
+>> Revised and enlarged edition of Prin. V. S. Apte's The practical 
+
+>> Sanskrit-English dictionary. Poona: Prasad Prakashan, 1957-1959. 3v.
+
+>>
+
+>> Arthur Anthony Macdonell
+
+>> A practical Sanskrit dictionary with transliteration, accentuation, and 
+
+>> etymological analysis throughout. London: Oxford University Press, 1929.
+
+>>
+
+>> Monier Williams
+
+>> Sanskrit-English Dictionary
+
+>>
+
+>> Адрес проекта:
+
+>> https://sourceforge.net/projects/sandic/
+
+>>
+
 >>

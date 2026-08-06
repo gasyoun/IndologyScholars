@@ -17,6 +17,8 @@ source_url: https://groups.google.com/d/msgid/nagari/4deaf27c-6e9a-4ee7-b289-5d2
 
 ## 1. Mārcis — 2024-12-25 12:56:48
 
-Tantrāloka Абхинавагупты переведена на русский язык вплоть до 5 главы
-
+Tantrāloka Абхинавагупты переведена на русский язык вплоть до 5 главы
+
+
+
 https://www.sanskrit-trikashaivism.com/ru/tantraloka-5-trika-scriptures-non-dual-shaivism-of-kashmir-ru/

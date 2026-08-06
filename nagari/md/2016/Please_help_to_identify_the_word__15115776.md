@@ -94,26 +94,42 @@ wrote:
 
 ## 6. dhaval patel — 2016-05-21 19:29:04
 
-For step by step derivation, please use the following tool -
-http://www.sanskritworld.in/sanskrittool/SanskritVerb/tiGanta.html
-
-For question at hand see this link in particular -
+For step by step derivation, please use the following tool -
+
+http://www.sanskritworld.in/sanskrittool/SanskritVerb/tiGanta.html
+
+
+
+For question at hand see this link in particular -
+
 http://www.sanskritworld.in/sanskrittool/SanskritVerb/panini.php?first=vfN&upasarga=&lakAra=low&sanAdi=&tran=SLP1&vAcya=kartR&frontend=1&cond11=2&number=09.0299&removed_sutras=&step=11&type=tiGanta
 
 ## 7. Mandala Pati (Владислав) — 2016-05-21 19:49:49
 
-Thank you very much! Amazing website! I'm happy.
-
-One question. Is it possible to translate वृणीष्व as you may choose/ask?
-
-On Saturday, May 21, 2016 at 9:59:06 PM UTC+5:30, dhaval patel wrote:
->
-> For step by step derivation, please use the following tool - 
-> http://www.sanskritworld.in/sanskrittool/SanskritVerb/tiGanta.html
->
-> For question at hand see this link in particular - 
->
-> http://www.sanskritworld.in/sanskrittool/SanskritVerb/panini.php?first=vfN&upasarga=&lakAra=low&sanAdi=&tran=SLP1&vAcya=kartR&frontend=1&cond11=2&number=09.0299&removed_sutras=&step=11&type=tiGanta
+Thank you very much! Amazing website! I'm happy.
+
+
+
+One question. Is it possible to translate वृणीष्व as you may choose/ask?
+
+
+
+On Saturday, May 21, 2016 at 9:59:06 PM UTC+5:30, dhaval patel wrote:
+
+>
+
+> For step by step derivation, please use the following tool - 
+
+> http://www.sanskritworld.in/sanskrittool/SanskritVerb/tiGanta.html
+
+>
+
+> For question at hand see this link in particular - 
+
+>
+
+> http://www.sanskritworld.in/sanskrittool/SanskritVerb/panini.php?first=vfN&upasarga=&lakAra=low&sanAdi=&tran=SLP1&vAcya=kartR&frontend=1&cond11=2&number=09.0299&removed_sutras=&step=11&type=tiGanta
+
 >
 
 ## 8. Serge A — 2016-05-21 20:25:36
@@ -193,10 +209,16 @@ https://yadi.sk/d/Rln0HLNWrtSKG
 
 ## 11. Marcis — 2016-05-21 22:28:09
 
-On Saturday, 21 May 2016 19:49:49 UTC+3, Mandala Pati (Владислав) wrote:
->
-> Thank you very much! Amazing website! I'm happy.
->
-
-It Dhaval a few years to build it. And it's still not final. It's his 
+On Saturday, 21 May 2016 19:49:49 UTC+3, Mandala Pati (Владислав) wrote:
+
+>
+
+> Thank you very much! Amazing website! I'm happy.
+
+>
+
+
+
+It Dhaval a few years to build it. And it's still not final. It's his 
+
 magnum opus.

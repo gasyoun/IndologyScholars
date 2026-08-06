@@ -17,10 +17,16 @@ source_url: https://groups.google.com/d/msgid/nagari/697d46c7-e063-46e9-a825-960
 
 ## 1. Marcis — 2013-03-03 21:04:13 · 📎 3
 
-Кто поможет перевести из немецкого не переведенную Эрнштедтом страничку из 
-Бюлера?
-
-Nach der Aussprache der Maräthä Bratimanen, welche in ganz Indien als die 
-beste anerkannt wird und sich deshalb zur Nachahmung empfiehlt, haben 
-folgende Buchstaben besondere, zum Theil im Deutschen nicht vorkommende 
+Кто поможет перевести из немецкого не переведенную Эрнштедтом страничку из 
+
+Бюлера?
+
+
+
+Nach der Aussprache der Maräthä Bratimanen, welche in ganz Indien als die 
+
+beste anerkannt wird und sich deshalb zur Nachahmung empfiehlt, haben 
+
+folgende Buchstaben besondere, zum Theil im Deutschen nicht vorkommende 
+
 Lautwerthe

@@ -25,14 +25,20 @@ http://tirhuta.blogspot.in/
 
 ## 2. ShaSa — 2014-07-19 13:32:30
 
-One more- for subhAshita-lovers- Just discovered.
-(If you cannot get to the link by direct clicking- please copy paste the 
-same in the address bar.)
+One more- for subhAshita-lovers- Just discovered.
+
+(If you cannot get to the link by direct clicking- please copy paste the 
+
+same in the address bar.)
+
 http://sa.wikiquote.org/wiki/वर्गः:वर्णानुगुणं_सुभाषितानि
 
 ## 3. ShaSa — 2015-06-27 17:53:13
 
-Namaste
-https://sa.wikipedia.org/wiki/सूक्तयः
-Please find good quotes in Samskrt literature on this page. 
+Namaste
+
+https://sa.wikipedia.org/wiki/सूक्तयः
+
+Please find good quotes in Samskrt literature on this page. 
+
 Some are really worth learning by heart. :)

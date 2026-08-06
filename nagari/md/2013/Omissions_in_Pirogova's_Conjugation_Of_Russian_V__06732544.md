@@ -17,14 +17,24 @@ source_url: https://groups.google.com/d/msgid/nagari/CAKmACTmzOR9cY8DRXoB16nWMGh
 
 ## 1. narayan prasad — 2013-02-16 14:02:56
 
-On p.191, col.2, for the verb "Нанести", the Table No. is given as 45,
-but Group is missing, which I think, should be V.
-
-   On p.319, col.2, for the verb "Яснеть", both Table No. and Group No. are
-missing. I think, it should be 2 and I respectively.
-
-    The exact total number of verbs is = 11211.
-
-  (The approximate number has been mentioned in the FOREWORD as 12000.)
-
+On p.191, col.2, for the verb "Нанести", the Table No. is given as 45,
+
+but Group is missing, which I think, should be V.
+
+
+
+   On p.319, col.2, for the verb "Яснеть", both Table No. and Group No. are
+
+missing. I think, it should be 2 and I respectively.
+
+
+
+    The exact total number of verbs is = 11211.
+
+
+
+  (The approximate number has been mentioned in the FOREWORD as 12000.)
+
+
+
 --- Narayan Prasad

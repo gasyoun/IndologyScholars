@@ -79,84 +79,162 @@ San Jose, California 95128
 
 ## 2. Nina Schriber — 2010-06-25 22:53:06
 
-Можете ли вы объяснить, больше на Nagari-Tree сценариев?
-
-Пожалуйста, просвещать о том, как Наланда-скрипт, а также Kamarupa-
-скрипт соединяется с Nagari-скрипта!
-
-Сценарий имя должно быть Nagari-скрипта. Это также обсуждался на 13-й
-Всемирной конференции санскрите, Эдинбург, Шотландия, 10-14 июля 2006
-года.
-
-Можете ли вы Приведены примеры на подходе и моральные различия в
-Unicode?
-
-Namaskar!
-Нина Шрайбер
-
-
-On Jun 5, 1:37 am, "Deka, Rabin" <deka.ra...@…> wrote:
-
-Уважаемые ученые,
-
-Какие важные меры могут предотвратить падение Nagari-Дерево Сценарий?
-Иными словами, Дева-Nagari сценарий подход неправильным.
-
-What critical measures can prevent fall of Nagari-Tree of Script?
-In other words, Deva-Nagari script approach is wrong.
-
-Изобразительное с ответом на русском языке!
-
-What do I mean by Nagari-Tree of Script?
-Let me explain with the help of Latin-Tree of Script.
-
-Latin-Tree of Script:
-
-Latin (Basic) - http://www.alanwood.net/unicode/basic_latin.html
-Latin-1 Supplement - http://www.alanwood.net/unicode/latin_1_supplement.html
-Latin Extended-A - http://www.alanwood.net/unicode/latin_extended_a.html
-Latin Extended Additional -
-http://www.alanwood.net/unicode/latin_extended_b.html
-Latin Extended-B - http://www.alanwood.net/unicode/latin_extended_b.html
-Latin Extended-C - http://unicode.org/charts/PDF/U2C60.pdf
-Latin Extended-D - http://unicode.org/charts/PDF/UA720.pdf
-
-Above, you find all styles of Latin script - including at least 8
-century style to today.
-
-Nagari-Tree of Script:
-
-For Nagari-Tree, Unicode Inc has not taken same approach/moral as it
-did for Latin-Tree.
-
-Instead, Unicode Inc has encoded from 19 Century style. This style
-was
-designed form Nagari-Tree to write Hindi using printing press. Hindi
-is now Indian National Language. Unicode Inc uses the term
-Deva-Nagari.
-
-Unfortunately, Unicode Inc made Sanskrit a sub-set of Hindi too.
-To see this you need to know how to read a Deva-Nagari Unicode font
-file with its project.
-
-Have you visited Buddhist Pagodas in South East China?
-
-In some Pagodas two kinds of inscription are found.
-Some scholars call one Nalanda-Script and the other Kamarupa-Script.
-Both Nalanda-Script and Kamarupa-Script are styles variation of
-Nagari-Tree Script.
-
-If Nagari-Tree of script can be restored, Kamarupa-Script and
-Nalanda-Script get encoded automatically. And other styles that are
-dropped as obscure.
-
-In other words, Deva-Nagari script approach is wrong.
-So what critical measures can prevent fall of Nagari-Tree of Script?
-
-
-Regards,
-Rabin Deka, Ph.D.
-1324 S Winchester BL Unit 177
+Можете ли вы объяснить, больше на Nagari-Tree сценариев?
+
+
+
+Пожалуйста, просвещать о том, как Наланда-скрипт, а также Kamarupa-
+
+скрипт соединяется с Nagari-скрипта!
+
+
+
+Сценарий имя должно быть Nagari-скрипта. Это также обсуждался на 13-й
+
+Всемирной конференции санскрите, Эдинбург, Шотландия, 10-14 июля 2006
+
+года.
+
+
+
+Можете ли вы Приведены примеры на подходе и моральные различия в
+
+Unicode?
+
+
+
+Namaskar!
+
+Нина Шрайбер
+
+
+
+
+
+On Jun 5, 1:37 am, "Deka, Rabin" <deka.ra...@…> wrote:
+
+
+
+Уважаемые ученые,
+
+
+
+Какие важные меры могут предотвратить падение Nagari-Дерево Сценарий?
+
+Иными словами, Дева-Nagari сценарий подход неправильным.
+
+
+
+What critical measures can prevent fall of Nagari-Tree of Script?
+
+In other words, Deva-Nagari script approach is wrong.
+
+
+
+Изобразительное с ответом на русском языке!
+
+
+
+What do I mean by Nagari-Tree of Script?
+
+Let me explain with the help of Latin-Tree of Script.
+
+
+
+Latin-Tree of Script:
+
+
+
+Latin (Basic) - http://www.alanwood.net/unicode/basic_latin.html
+
+Latin-1 Supplement - http://www.alanwood.net/unicode/latin_1_supplement.html
+
+Latin Extended-A - http://www.alanwood.net/unicode/latin_extended_a.html
+
+Latin Extended Additional -
+
+http://www.alanwood.net/unicode/latin_extended_b.html
+
+Latin Extended-B - http://www.alanwood.net/unicode/latin_extended_b.html
+
+Latin Extended-C - http://unicode.org/charts/PDF/U2C60.pdf
+
+Latin Extended-D - http://unicode.org/charts/PDF/UA720.pdf
+
+
+
+Above, you find all styles of Latin script - including at least 8
+
+century style to today.
+
+
+
+Nagari-Tree of Script:
+
+
+
+For Nagari-Tree, Unicode Inc has not taken same approach/moral as it
+
+did for Latin-Tree.
+
+
+
+Instead, Unicode Inc has encoded from 19 Century style. This style
+
+was
+
+designed form Nagari-Tree to write Hindi using printing press. Hindi
+
+is now Indian National Language. Unicode Inc uses the term
+
+Deva-Nagari.
+
+
+
+Unfortunately, Unicode Inc made Sanskrit a sub-set of Hindi too.
+
+To see this you need to know how to read a Deva-Nagari Unicode font
+
+file with its project.
+
+
+
+Have you visited Buddhist Pagodas in South East China?
+
+
+
+In some Pagodas two kinds of inscription are found.
+
+Some scholars call one Nalanda-Script and the other Kamarupa-Script.
+
+Both Nalanda-Script and Kamarupa-Script are styles variation of
+
+Nagari-Tree Script.
+
+
+
+If Nagari-Tree of script can be restored, Kamarupa-Script and
+
+Nalanda-Script get encoded automatically. And other styles that are
+
+dropped as obscure.
+
+
+
+In other words, Deva-Nagari script approach is wrong.
+
+So what critical measures can prevent fall of Nagari-Tree of Script?
+
+
+
+
+
+Regards,
+
+Rabin Deka, Ph.D.
+
+1324 S Winchester BL Unit 177
+
 San Jose, California 95128
 
 ## 3. Brahman — 2010-06-30 14:08:17

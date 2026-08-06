@@ -17,16 +17,26 @@ source_url: https://groups.google.com/d/msgid/nagari/caa88e79-dce5-4ab9-bc46-139
 
 ## 1. LNS — 2007-12-16 05:43:03
 
-What is the Sanskrit term for the phenomenon where one word is used
-for the conjugation of another? For example, 'bhU' for 'as' 'to be',
-'paz' for 'dRz' 'to see'.
-
-Is there a general English term for this?  This seems to exist in
-English too e.g., 'go' 'went' etc. as well as in German e.g., the
-conjugation of 'sein', to be.
-
-Thanks in dvance,
-
+What is the Sanskrit term for the phenomenon where one word is used
+
+for the conjugation of another? For example, 'bhU' for 'as' 'to be',
+
+'paz' for 'dRz' 'to see'.
+
+
+
+Is there a general English term for this?  This seems to exist in
+
+English too e.g., 'go' 'went' etc. as well as in German e.g., the
+
+conjugation of 'sein', to be.
+
+
+
+Thanks in dvance,
+
+
+
 Srini
 
 ## 2. narayan prasad — 2007-12-16 05:55:47

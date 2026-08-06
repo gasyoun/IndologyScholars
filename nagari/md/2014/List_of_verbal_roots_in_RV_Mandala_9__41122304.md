@@ -17,14 +17,22 @@ source_url: https://groups.google.com/d/msgid/nagari/f12e2c7f-e176-4c16-897b-98c
 
 ## 1. Dmitri — 2014-02-28 22:38:14 · 📎 1
 
-Friday special for Marcis:
-
-Velthius encoding.
-Only verbal roots happening in RV9 are in the list along with the actual 
-frequency of occurrence.  
-RV9 has many words that do not have a clear etymology from a verbal root 
-(nakta, a.nu, svar, etc.).
-
+Friday special for Marcis:
+
+
+
+Velthius encoding.
+
+Only verbal roots happening in RV9 are in the list along with the actual 
+
+frequency of occurrence.  
+
+RV9 has many words that do not have a clear etymology from a verbal root 
+
+(nakta, a.nu, svar, etc.).
+
+
+
 Может сгодится на что.
 
 ## 2. Marcis — 2014-03-04 12:14:27

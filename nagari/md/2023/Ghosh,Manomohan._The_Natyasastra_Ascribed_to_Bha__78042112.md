@@ -17,15 +17,26 @@ source_url: https://groups.google.com/d/msgid/nagari/b27316d2-29a9-487f-9693-353
 
 ## 1. Marcis — 2023-06-16 17:17:49
 
-Ghosh,Manomohan  The Natyasastra: Ascribed to Bharata-Muni. Vol. 1: 
-(Chapters 1-XXVII) / Ed. with an introd. and various readings. - Calcutta : 
-Manisha Granthalaya, 1967. - LXXXII, 238 p. - Предисл. на англ. яз. Текст 
-на санскрит. яз.
-
-Ghosh; Manomohan; The Natyasastra: Ascribed to Bharata-Muni. Vol. 1: 
-(Chapters 1-XXVII); Место издания; Calcutta; Издательство; Manisha 
-Granthalaya; Дата издания; 1967; Язык; Английский; Тематика; Художественная 
-литература; Предметная рубрика; Индийская литература; Источник; Основной 
-фонд
-
+Ghosh,Manomohan  The Natyasastra: Ascribed to Bharata-Muni. Vol. 1: 
+
+(Chapters 1-XXVII) / Ed. with an introd. and various readings. - Calcutta : 
+
+Manisha Granthalaya, 1967. - LXXXII, 238 p. - Предисл. на англ. яз. Текст 
+
+на санскрит. яз.
+
+
+
+Ghosh; Manomohan; The Natyasastra: Ascribed to Bharata-Muni. Vol. 1: 
+
+(Chapters 1-XXVII); Место издания; Calcutta; Издательство; Manisha 
+
+Granthalaya; Дата издания; 1967; Язык; Английский; Тематика; Художественная 
+
+литература; Предметная рубрика; Индийская литература; Источник; Основной 
+
+фонд
+
+
+
 см. https://vk.com/samskrtamru?w=wall-88831040_18802

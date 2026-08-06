@@ -165,54 +165,102 @@ Kalindi dd
 
 ## 5. Serge — 2008-04-23 16:44:08
 
-i suppose better would be स्वागतं गुरुदेव
-
-On 23 апр, 15:53, "Puneet Madaan" <puneetmad...@…> wrote:
-> Hi,
-> for translation purposes, you can use ...
->
-> http://www.josh18.com/storycomment.php?flag=c&id=188471
->
-> BTW, u need to use "Swagatam Gurudev" to get appropriate output, which is "
-> स्वागतम गुरुदेव" ..
->
-> Greetings
-> Puneet
->
-> On Wed, Apr 23, 2008 at 7:40 AM, kalindi dd kalindi dd <
->
->
->
->
->
-> kalindi.kalining...@…> wrote:
-> > Namaste!
-> > Could you please write me, how to write in correct way «Swagatam,
-> > Gurudeva" in Sanskrit?
->
-> >  Kalindi dd
->
-> > 14.04.08, Chetan Pandey<pande...@…> написал(а):
->
-> > > > Hi All:
->
-> > > Please check out my Web Site called sanskrit Utilities.
->
-> > >www.sktutilities.com
->
-> > > It is guaranteed to work only in IE 7. It has a Devenagari
-> > Transliterator,
-> > > Sandhi Engine and Pratyahara Decoder.
->
-> > > Thanks
->
-> > > Chetan Pandey
->
-> --
-> If you spin an oriental man, does he become disoriented?
-> (-: ¿ʇɥǝɹpɹǝʌ ɟdoʞ uǝp ɹıp ɥɔı ,qɐɥ 'ɐɐu
-> -----PM- Скрыть цитируемый текст -
->
+i suppose better would be स्वागतं गुरुदेव
+
+
+
+On 23 апр, 15:53, "Puneet Madaan" <puneetmad...@…> wrote:
+
+> Hi,
+
+> for translation purposes, you can use ...
+
+>
+
+> http://www.josh18.com/storycomment.php?flag=c&id=188471
+
+>
+
+> BTW, u need to use "Swagatam Gurudev" to get appropriate output, which is "
+
+> स्वागतम गुरुदेव" ..
+
+>
+
+> Greetings
+
+> Puneet
+
+>
+
+> On Wed, Apr 23, 2008 at 7:40 AM, kalindi dd kalindi dd <
+
+>
+
+>
+
+>
+
+>
+
+>
+
+> kalindi.kalining...@…> wrote:
+
+> > Namaste!
+
+> > Could you please write me, how to write in correct way «Swagatam,
+
+> > Gurudeva" in Sanskrit?
+
+>
+
+> >  Kalindi dd
+
+>
+
+> > 14.04.08, Chetan Pandey<pande...@…> написал(а):
+
+>
+
+> > > > Hi All:
+
+>
+
+> > > Please check out my Web Site called sanskrit Utilities.
+
+>
+
+> > >www.sktutilities.com
+
+>
+
+> > > It is guaranteed to work only in IE 7. It has a Devenagari
+
+> > Transliterator,
+
+> > > Sandhi Engine and Pratyahara Decoder.
+
+>
+
+> > > Thanks
+
+>
+
+> > > Chetan Pandey
+
+>
+
+> --
+
+> If you spin an oriental man, does he become disoriented?
+
+> (-: ¿ʇɥǝɹpɹǝʌ ɟdoʞ uǝp ɹıp ɥɔı ,qɐɥ 'ɐɐu
+
+> -----PM- Скрыть цитируемый текст -
+
+>
+
 > - Показать цитируемый текст -
 
 ## 6. chod — 2008-04-23 19:00:43
@@ -238,27 +286,48 @@ chod
 
 ## 7. Serge — 2008-04-23 21:15:39
 
-> квадратики вместо санскрита. Что делать ?
-
-чтобы в WinXP было видно дэванагари, должна стоять галочка Панель
-управления - Язык и региональные стандарты - Языки - Установить
-поддержку языков с письмом справа налево и сложным письмом
-
-On 23 апр, 20:00, chod <bob...@…> wrote:
-> В теле писем квадратики вместо санскрита. Что делать ?
->
-> The Bat! 3.5
->
-> >> BTW, u need to use "Swagatam Gurudev" to get appropriate output, which is "
-> >> ??????? ???????" ..
->
-> >> Greetings
-> >> Puneet
->
-> >> On Wed, Apr 23, 2008 at 7:40 AM, kalindi dd kalindi dd <
->
-> --
-> С уважением,
+> квадратики вместо санскрита. Что делать ?
+
+
+
+чтобы в WinXP было видно дэванагари, должна стоять галочка Панель
+
+управления - Язык и региональные стандарты - Языки - Установить
+
+поддержку языков с письмом справа налево и сложным письмом
+
+
+
+On 23 апр, 20:00, chod <bob...@…> wrote:
+
+> В теле писем квадратики вместо санскрита. Что делать ?
+
+>
+
+> The Bat! 3.5
+
+>
+
+> >> BTW, u need to use "Swagatam Gurudev" to get appropriate output, which is "
+
+> >> ??????? ???????" ..
+
+>
+
+> >> Greetings
+
+> >> Puneet
+
+>
+
+> >> On Wed, Apr 23, 2008 at 7:40 AM, kalindi dd kalindi dd <
+
+>
+
+> --
+
+> С уважением,
+
 > chod
 
 ## 8. Anton Bezumtsev — 2008-07-16 20:39:47
@@ -268,9 +337,14 @@ On 23 апр, 20:00, chod <bob...@…> wrote:
 
 ## 9. Marcis — 2008-07-17 12:27:35
 
-Нет, не 1го, а разных. Разных, не связанных между собой корпусов.
-http://rapidshare.com/files/130303433/Jasan-Sanskrit_Dic1870.pdf.html
-
-On 17 июл, 00:39, "Anton Bezumtsev" <bezumtsev.an...@…> wrote:
-> *Sanskrit Computational Linguistics-* имеется ввиду составление электронного
+Нет, не 1го, а разных. Разных, не связанных между собой корпусов.
+
+http://rapidshare.com/files/130303433/Jasan-Sanskrit_Dic1870.pdf.html
+
+
+
+On 17 июл, 00:39, "Anton Bezumtsev" <bezumtsev.an...@…> wrote:
+
+> *Sanskrit Computational Linguistics-* имеется ввиду составление электронного
+
 > санскритского корпуса и т.д.?

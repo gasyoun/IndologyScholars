@@ -25,37 +25,68 @@ source_url: https://groups.google.com/d/msgid/nagari/1697943765.342753965@f481.i
 
 ## 2. Иван Малютин — 2023-10-22 16:02:37
 
-Дорогой Владимир!
-
-बहवः
-धन्यवादाः
-
-🥰
-
-вс, 22 окт. 2023 г. в 06:02, 'Владимир Карицкий' via Общество ревнителей
-санскрита (Sanscrit) <nagari@…>:
-
-> Обнаружил хорошую подборку, делюсь:
-> https://www.youtube.com/watch?v=gTA5z7G2frw&list=PLWjpkY4mU2RBqCm12Z7wd5bXjXxXJgDQp&index=245
->
-> --
-> Владимир Карицкий
-> Отправлено из Почты Mail.ru <https://trk.mail.ru/c/zzm979>
->
-> --
-> Чтобы отменить подписку на группу, посвященную санскриту,
-> отправьте сообщение по адресу - мы поймем, простим даже:
-> Nagari-unsubscribe@…
-> ---
-> Вы получили это сообщение, поскольку подписаны на группу "Общество
-> ревнителей санскрита (Sanscrit)".
-> Чтобы отменить подписку на эту группу и больше не получать от нее
-> сообщения, отправьте письмо на электронный адрес
-> nagari+unsubscribe@….
-> Чтобы посмотреть обсуждение на веб-странице, перейдите по ссылке
-> https://groups.google.com/d/msgid/nagari/1697943765.342753965%40f481.i.mail.ru
-> <https://groups.google.com/d/msgid/nagari/1697943765.342753965%40f481.i.mail.ru?utm_medium=email&utm_source=footer>
-> .
+Дорогой Владимир!
+
+
+
+बहवः
+
+धन्यवादाः
+
+
+
+🥰
+
+
+
+вс, 22 окт. 2023 г. в 06:02, 'Владимир Карицкий' via Общество ревнителей
+
+санскрита (Sanscrit) <nagari@…>:
+
+
+
+> Обнаружил хорошую подборку, делюсь:
+
+> https://www.youtube.com/watch?v=gTA5z7G2frw&list=PLWjpkY4mU2RBqCm12Z7wd5bXjXxXJgDQp&index=245
+
+>
+
+> --
+
+> Владимир Карицкий
+
+> Отправлено из Почты Mail.ru <https://trk.mail.ru/c/zzm979>
+
+>
+
+> --
+
+> Чтобы отменить подписку на группу, посвященную санскриту,
+
+> отправьте сообщение по адресу - мы поймем, простим даже:
+
+> Nagari-unsubscribe@…
+
+> ---
+
+> Вы получили это сообщение, поскольку подписаны на группу "Общество
+
+> ревнителей санскрита (Sanscrit)".
+
+> Чтобы отменить подписку на эту группу и больше не получать от нее
+
+> сообщения, отправьте письмо на электронный адрес
+
+> nagari+unsubscribe@….
+
+> Чтобы посмотреть обсуждение на веб-странице, перейдите по ссылке
+
+> https://groups.google.com/d/msgid/nagari/1697943765.342753965%40f481.i.mail.ru
+
+> <https://groups.google.com/d/msgid/nagari/1697943765.342753965%40f481.i.mail.ru?utm_medium=email&utm_source=footer>
+
+> .
+
 >
 
 ## 3. Владимир Карицкий — 2023-10-23 05:24:34
@@ -102,101 +133,196 @@ source_url: https://groups.google.com/d/msgid/nagari/1697943765.342753965@f481.i
 
 ## 4. Иван Малютин — 2023-10-23 14:19:03
 
-Что это за текст в основе? И что за перевод? Уточните, Владимир, пожалуйста.
-
-С уважением,
-Иван
-
-
-Пн, 23 окт. 2023 г. в 05:24, 'Владимир Карицкий' via Общество ревнителей
-санскрита (Sanscrit) <nagari@…>:
-
-> Для интересующихся перевод первых пяти глав в помощь:
-> https://yadi.sk/d/FfM-dC38RHpUlA
->
->
->
-> Воскресенье, 22 октября 2023, 14:49 +03:00 от Иван Малютин <
-> takatakmasale@…>:
->
->
-> Дорогой Владимир!
->
-> बहवः
-> धन्यवादाः
->
-> 🥰
->
-> вс, 22 окт. 2023г. в 06:02, 'Владимир Карицкий' via Общество ревнителей
-> санскрита (Sanscrit) <nagari@…
-> <//e.mail.ru/compose/?mailto=mailto%3anagari@…>>:
->
-> Обнаружил хорошую подборку, делюсь:
-> https://www.youtube.com/watch?v=gTA5z7G2frw&list=PLWjpkY4mU2RBqCm12Z7wd5bXjXxXJgDQp&index=245
->
-> --
-> Владимир Карицкий
-> Отправлено из Почты Mail.ru <https://trk.mail.ru/c/zzm979>
->
->
-> --
-> Чтобы отменить подписку на группу, посвященную санскриту,
-> отправьте сообщение по адресу - мы поймем, простим даже:
-> Nagari-unsubscribe@…
-> <//e.mail.ru/compose/?mailto=mailto%3aNagari%2dunsubscribe@…>
-> ---
-> Вы получили это сообщение, поскольку подписаны на группу "Общество
-> ревнителей санскрита (Sanscrit)".
-> Чтобы отменить подписку на эту группу и больше не получать от нее
-> сообщения, отправьте письмо на электронный адрес
-> nagari+unsubscribe@…
-> <//e.mail.ru/compose/?mailto=mailto%3anagari%2bunsubscribe@…>
-> .
-> Чтобы посмотреть обсуждение на веб-странице, перейдите по ссылке
-> https://groups.google.com/d/msgid/nagari/1697943765.342753965%40f481.i.mail.ru
-> <https://groups.google.com/d/msgid/nagari/1697943765.342753965%40f481.i.mail.ru?utm_medium=email&utm_source=footer>
-> .
->
->
-> --
-> Чтобы отменить подписку на группу, посвященную санскриту,
-> отправьте сообщение по адресу - мы поймем, простим даже:
-> Nagari-unsubscribe@…
-> <http:///compose?To=Nagari%2dunsubscribe@…>
-> ---
-> Вы получили это сообщение, поскольку подписаны на группу "Общество
-> ревнителей санскрита (Sanscrit)".
-> Чтобы отменить подписку на эту группу и больше не получать от нее
-> сообщения, отправьте письмо на электронный адрес
-> nagari+unsubscribe@…
-> <//e.mail.ru/compose/?mailto=mailto%3anagari%2bunsubscribe@…>
-> .
-> Чтобы посмотреть обсуждение на веб-странице, перейдите по ссылке
-> https://groups.google.com/d/msgid/nagari/CAFg%2BCAh_J1qAYBh38efUTq0gYh7LHTRzytgRvUH3xZWn6WqF%3DA%40mail.gmail.com
-> <https://groups.google.com/d/msgid/nagari/CAFg%2BCAh_J1qAYBh38efUTq0gYh7LHTRzytgRvUH3xZWn6WqF%3DA%40mail.gmail.com?utm_medium=email&utm_source=footer>
-> .
->
->
->
-> --
-> Владимир Карицкий
-> Отправлено из Почты Mail.ru <https://trk.mail.ru/c/zzm979>
->
->
-> --
-> Чтобы отменить подписку на группу, посвященную санскриту,
-> отправьте сообщение по адресу - мы поймем, простим даже:
-> Nagari-unsubscribe@…
-> ---
-> Вы получили это сообщение, поскольку подписаны на группу "Общество
-> ревнителей санскрита (Sanscrit)".
-> Чтобы отменить подписку на эту группу и больше не получать от нее
-> сообщения, отправьте письмо на электронный адрес
-> nagari+unsubscribe@….
-> Чтобы посмотреть обсуждение на веб-странице, перейдите по ссылке
-> https://groups.google.com/d/msgid/nagari/1698027874.475052318%40f735.i.mail.ru
-> <https://groups.google.com/d/msgid/nagari/1698027874.475052318%40f735.i.mail.ru?utm_medium=email&utm_source=footer>
-> .
+Что это за текст в основе? И что за перевод? Уточните, Владимир, пожалуйста.
+
+
+
+С уважением,
+
+Иван
+
+
+
+
+
+Пн, 23 окт. 2023 г. в 05:24, 'Владимир Карицкий' via Общество ревнителей
+
+санскрита (Sanscrit) <nagari@…>:
+
+
+
+> Для интересующихся перевод первых пяти глав в помощь:
+
+> https://yadi.sk/d/FfM-dC38RHpUlA
+
+>
+
+>
+
+>
+
+> Воскресенье, 22 октября 2023, 14:49 +03:00 от Иван Малютин <
+
+> takatakmasale@…>:
+
+>
+
+>
+
+> Дорогой Владимир!
+
+>
+
+> बहवः
+
+> धन्यवादाः
+
+>
+
+> 🥰
+
+>
+
+> вс, 22 окт. 2023г. в 06:02, 'Владимир Карицкий' via Общество ревнителей
+
+> санскрита (Sanscrit) <nagari@…
+
+> <//e.mail.ru/compose/?mailto=mailto%3anagari@…>>:
+
+>
+
+> Обнаружил хорошую подборку, делюсь:
+
+> https://www.youtube.com/watch?v=gTA5z7G2frw&list=PLWjpkY4mU2RBqCm12Z7wd5bXjXxXJgDQp&index=245
+
+>
+
+> --
+
+> Владимир Карицкий
+
+> Отправлено из Почты Mail.ru <https://trk.mail.ru/c/zzm979>
+
+>
+
+>
+
+> --
+
+> Чтобы отменить подписку на группу, посвященную санскриту,
+
+> отправьте сообщение по адресу - мы поймем, простим даже:
+
+> Nagari-unsubscribe@…
+
+> <//e.mail.ru/compose/?mailto=mailto%3aNagari%2dunsubscribe@…>
+
+> ---
+
+> Вы получили это сообщение, поскольку подписаны на группу "Общество
+
+> ревнителей санскрита (Sanscrit)".
+
+> Чтобы отменить подписку на эту группу и больше не получать от нее
+
+> сообщения, отправьте письмо на электронный адрес
+
+> nagari+unsubscribe@…
+
+> <//e.mail.ru/compose/?mailto=mailto%3anagari%2bunsubscribe@…>
+
+> .
+
+> Чтобы посмотреть обсуждение на веб-странице, перейдите по ссылке
+
+> https://groups.google.com/d/msgid/nagari/1697943765.342753965%40f481.i.mail.ru
+
+> <https://groups.google.com/d/msgid/nagari/1697943765.342753965%40f481.i.mail.ru?utm_medium=email&utm_source=footer>
+
+> .
+
+>
+
+>
+
+> --
+
+> Чтобы отменить подписку на группу, посвященную санскриту,
+
+> отправьте сообщение по адресу - мы поймем, простим даже:
+
+> Nagari-unsubscribe@…
+
+> <http:///compose?To=Nagari%2dunsubscribe@…>
+
+> ---
+
+> Вы получили это сообщение, поскольку подписаны на группу "Общество
+
+> ревнителей санскрита (Sanscrit)".
+
+> Чтобы отменить подписку на эту группу и больше не получать от нее
+
+> сообщения, отправьте письмо на электронный адрес
+
+> nagari+unsubscribe@…
+
+> <//e.mail.ru/compose/?mailto=mailto%3anagari%2bunsubscribe@…>
+
+> .
+
+> Чтобы посмотреть обсуждение на веб-странице, перейдите по ссылке
+
+> https://groups.google.com/d/msgid/nagari/CAFg%2BCAh_J1qAYBh38efUTq0gYh7LHTRzytgRvUH3xZWn6WqF%3DA%40mail.gmail.com
+
+> <https://groups.google.com/d/msgid/nagari/CAFg%2BCAh_J1qAYBh38efUTq0gYh7LHTRzytgRvUH3xZWn6WqF%3DA%40mail.gmail.com?utm_medium=email&utm_source=footer>
+
+> .
+
+>
+
+>
+
+>
+
+> --
+
+> Владимир Карицкий
+
+> Отправлено из Почты Mail.ru <https://trk.mail.ru/c/zzm979>
+
+>
+
+>
+
+> --
+
+> Чтобы отменить подписку на группу, посвященную санскриту,
+
+> отправьте сообщение по адресу - мы поймем, простим даже:
+
+> Nagari-unsubscribe@…
+
+> ---
+
+> Вы получили это сообщение, поскольку подписаны на группу "Общество
+
+> ревнителей санскрита (Sanscrit)".
+
+> Чтобы отменить подписку на эту группу и больше не получать от нее
+
+> сообщения, отправьте письмо на электронный адрес
+
+> nagari+unsubscribe@….
+
+> Чтобы посмотреть обсуждение на веб-странице, перейдите по ссылке
+
+> https://groups.google.com/d/msgid/nagari/1698027874.475052318%40f735.i.mail.ru
+
+> <https://groups.google.com/d/msgid/nagari/1698027874.475052318%40f735.i.mail.ru?utm_medium=email&utm_source=footer>
+
+> .
+
 >
 
 ## 5. Владимир Карицкий — 2023-10-23 15:30:58
@@ -277,161 +403,316 @@ source_url: https://groups.google.com/d/msgid/nagari/1697943765.342753965@f481.i
 
 ## 6. Иван Малютин — 2023-10-30 23:42:42
 
-Там просто ньясы всякие, комментарии, откуда такое берётся? В обычной
-редакции такое не предусмотрено.
-
-Пн, 23 окт. 2023 г. в 15:31, 'Владимир Карицкий' via Общество ревнителей
-санскрита (Sanscrit) <nagari@…>:
-
->
-> Текст не помню откуда брал. Перевод мой. Раньше выкладывал по стиху здесь
-> каждую неделю.
->
-> Понедельник, 23 октября 2023, 14:19 +03:00 от Иван Малютин <
-> takatakmasale@…>:
->
->
-> Что это за текст в основе? И что за перевод? Уточните, Владимир,
-> пожалуйста.
->
-> С уважением,
-> Иван
->
->
-> Пн, 23 окт. 2023 г. в 05:24, 'Владимир Карицкий' via Общество ревнителей
-> санскрита (Sanscrit) <nagari@…
-> <https://touch.mail.ru/compose/?mailto=mailto%3anagari@…>>:
->
-> Для интересующихся перевод первых пяти глав в помощь:
-> https://yadi.sk/d/FfM-dC38RHpUlA
->
->
->
-> Воскресенье, 22 октября 2023, 14:49 +03:00 от Иван Малютин <
-> takatakmasale@…
-> <https://touch.mail.ru/compose/?mailto=mailto%3atakatakmasale@…>>:
->
->
-> Дорогой Владимир!
->
-> बहवः
-> धन्यवादाः
->
-> 🥰
->
-> вс, 22 окт. 2023г. в 06:02, 'Владимир Карицкий' via Общество ревнителей
-> санскрита (Sanscrit) <nagari@…
-> <http://e.mail.ru/compose/?mailto=mailto%3anagari@…>>:
->
-> Обнаружил хорошую подборку, делюсь:
-> https://www.youtube.com/watch?v=gTA5z7G2frw&list=PLWjpkY4mU2RBqCm12Z7wd5bXjXxXJgDQp&index=245
->
-> --
-> Владимир Карицкий
-> Отправлено из Почты Mail.ru <https://trk.mail.ru/c/zzm979>
->
->
-> --
-> Чтобы отменить подписку на группу, посвященную санскриту,
-> отправьте сообщение по адресу - мы поймем, простим даже:
-> Nagari-unsubscribe@…
-> <http://e.mail.ru/compose/?mailto=mailto%3aNagari%2dunsubscribe@…>
-> ---
-> Вы получили это сообщение, поскольку подписаны на группу "Общество
-> ревнителей санскрита (Sanscrit)".
-> Чтобы отменить подписку на эту группу и больше не получать от нее
-> сообщения, отправьте письмо на электронный адрес
-> nagari+unsubscribe@…
-> <http://e.mail.ru/compose/?mailto=mailto%3anagari%2bunsubscribe@…>
-> .
-> Чтобы посмотреть обсуждение на веб-странице, перейдите по ссылке
-> https://groups.google.com/d/msgid/nagari/1697943765.342753965%40f481.i.mail.ru
-> <https://groups.google.com/d/msgid/nagari/1697943765.342753965%40f481.i.mail.ru?utm_medium=email&utm_source=footer>
-> .
->
->
-> --
-> Чтобы отменить подписку на группу, посвященную санскриту,
-> отправьте сообщение по адресу - мы поймем, простим даже:
-> Nagari-unsubscribe@…
-> <http:///compose?To=Nagari%2dunsubscribe@…>
-> ---
-> Вы получили это сообщение, поскольку подписаны на группу "Общество
-> ревнителей санскрита (Sanscrit)".
-> Чтобы отменить подписку на эту группу и больше не получать от нее
-> сообщения, отправьте письмо на электронный адрес
-> nagari+unsubscribe@…
-> <http://e.mail.ru/compose/?mailto=mailto%3anagari%2bunsubscribe@…>
-> .
-> Чтобы посмотреть обсуждение на веб-странице, перейдите по ссылке
-> https://groups.google.com/d/msgid/nagari/CAFg%2BCAh_J1qAYBh38efUTq0gYh7LHTRzytgRvUH3xZWn6WqF%3DA%40mail.gmail.com
-> <https://groups.google.com/d/msgid/nagari/CAFg%2BCAh_J1qAYBh38efUTq0gYh7LHTRzytgRvUH3xZWn6WqF%3DA%40mail.gmail.com?utm_medium=email&utm_source=footer>
-> .
->
->
->
-> --
-> Владимир Карицкий
-> Отправлено из Почты Mail.ru <https://trk.mail.ru/c/zzm979>
->
->
-> --
-> Чтобы отменить подписку на группу, посвященную санскриту,
-> отправьте сообщение по адресу - мы поймем, простим даже:
-> Nagari-unsubscribe@…
-> <https://touch.mail.ru/compose/?mailto=mailto%3aNagari%2dunsubscribe@…>
-> ---
-> Вы получили это сообщение, поскольку подписаны на группу "Общество
-> ревнителей санскрита (Sanscrit)".
-> Чтобы отменить подписку на эту группу и больше не получать от нее
-> сообщения, отправьте письмо на электронный адрес
-> nagari+unsubscribe@…
-> <https://touch.mail.ru/compose/?mailto=mailto%3anagari%2bunsubscribe@…>
-> .
-> Чтобы посмотреть обсуждение на веб-странице, перейдите по ссылке
-> https://groups.google.com/d/msgid/nagari/1698027874.475052318%40f735.i.mail.ru
-> <https://groups.google.com/d/msgid/nagari/1698027874.475052318%40f735.i.mail.ru?utm_medium=email&utm_source=footer>
-> .
->
-> --
-> Чтобы отменить подписку на группу, посвященную санскриту,
-> отправьте сообщение по адресу - мы поймем, простим даже:
-> Nagari-unsubscribe@…
-> <https://touch.mail.ru/compose?To=Nagari%2dunsubscribe@…>
-> ---
-> Вы получили это сообщение, поскольку подписаны на группу "Общество
-> ревнителей санскрита (Sanscrit)".
-> Чтобы отменить подписку на эту группу и больше не получать от нее
-> сообщения, отправьте письмо на электронный адрес
-> nagari+unsubscribe@…
-> <https://touch.mail.ru/compose/?mailto=mailto%3anagari%2bunsubscribe@…>
-> .
->
-> Чтобы посмотреть обсуждение на веб-странице, перейдите по ссылке
-> https://groups.google.com/d/msgid/nagari/CAFg%2BCAh%2BUpChXDvN_NrQTaUH1KTt5GzEvx76XqFwqJeuDinYbA%40mail.gmail.com
-> <https://groups.google.com/d/msgid/nagari/CAFg%2BCAh%2BUpChXDvN_NrQTaUH1KTt5GzEvx76XqFwqJeuDinYbA%40mail.gmail.com?utm_medium=email&utm_source=footer>
-> .
->
->
->
-> --
-> Владимир Карицкий
-> Отправлено из Почты Mail.ru <https://trk.mail.ru/c/zzm979>
->
-> --
-> Чтобы отменить подписку на группу, посвященную санскриту,
-> отправьте сообщение по адресу - мы поймем, простим даже:
-> Nagari-unsubscribe@…
-> ---
-> Вы получили это сообщение, поскольку подписаны на группу "Общество
-> ревнителей санскрита (Sanscrit)".
-> Чтобы отменить подписку на эту группу и больше не получать от нее
-> сообщения, отправьте письмо на электронный адрес
-> nagari+unsubscribe@….
-> Чтобы посмотреть обсуждение на веб-странице, перейдите по ссылке
-> https://groups.google.com/d/msgid/nagari/1698064258.318034349%40f497.i.mail.ru
-> <https://groups.google.com/d/msgid/nagari/1698064258.318034349%40f497.i.mail.ru?utm_medium=email&utm_source=footer>
-> .
+Там просто ньясы всякие, комментарии, откуда такое берётся? В обычной
+
+редакции такое не предусмотрено.
+
+
+
+Пн, 23 окт. 2023 г. в 15:31, 'Владимир Карицкий' via Общество ревнителей
+
+санскрита (Sanscrit) <nagari@…>:
+
+
+
+>
+
+> Текст не помню откуда брал. Перевод мой. Раньше выкладывал по стиху здесь
+
+> каждую неделю.
+
+>
+
+> Понедельник, 23 октября 2023, 14:19 +03:00 от Иван Малютин <
+
+> takatakmasale@…>:
+
+>
+
+>
+
+> Что это за текст в основе? И что за перевод? Уточните, Владимир,
+
+> пожалуйста.
+
+>
+
+> С уважением,
+
+> Иван
+
+>
+
+>
+
+> Пн, 23 окт. 2023 г. в 05:24, 'Владимир Карицкий' via Общество ревнителей
+
+> санскрита (Sanscrit) <nagari@…
+
+> <https://touch.mail.ru/compose/?mailto=mailto%3anagari@…>>:
+
+>
+
+> Для интересующихся перевод первых пяти глав в помощь:
+
+> https://yadi.sk/d/FfM-dC38RHpUlA
+
+>
+
+>
+
+>
+
+> Воскресенье, 22 октября 2023, 14:49 +03:00 от Иван Малютин <
+
+> takatakmasale@…
+
+> <https://touch.mail.ru/compose/?mailto=mailto%3atakatakmasale@…>>:
+
+>
+
+>
+
+> Дорогой Владимир!
+
+>
+
+> बहवः
+
+> धन्यवादाः
+
+>
+
+> 🥰
+
+>
+
+> вс, 22 окт. 2023г. в 06:02, 'Владимир Карицкий' via Общество ревнителей
+
+> санскрита (Sanscrit) <nagari@…
+
+> <http://e.mail.ru/compose/?mailto=mailto%3anagari@…>>:
+
+>
+
+> Обнаружил хорошую подборку, делюсь:
+
+> https://www.youtube.com/watch?v=gTA5z7G2frw&list=PLWjpkY4mU2RBqCm12Z7wd5bXjXxXJgDQp&index=245
+
+>
+
+> --
+
+> Владимир Карицкий
+
+> Отправлено из Почты Mail.ru <https://trk.mail.ru/c/zzm979>
+
+>
+
+>
+
+> --
+
+> Чтобы отменить подписку на группу, посвященную санскриту,
+
+> отправьте сообщение по адресу - мы поймем, простим даже:
+
+> Nagari-unsubscribe@…
+
+> <http://e.mail.ru/compose/?mailto=mailto%3aNagari%2dunsubscribe@…>
+
+> ---
+
+> Вы получили это сообщение, поскольку подписаны на группу "Общество
+
+> ревнителей санскрита (Sanscrit)".
+
+> Чтобы отменить подписку на эту группу и больше не получать от нее
+
+> сообщения, отправьте письмо на электронный адрес
+
+> nagari+unsubscribe@…
+
+> <http://e.mail.ru/compose/?mailto=mailto%3anagari%2bunsubscribe@…>
+
+> .
+
+> Чтобы посмотреть обсуждение на веб-странице, перейдите по ссылке
+
+> https://groups.google.com/d/msgid/nagari/1697943765.342753965%40f481.i.mail.ru
+
+> <https://groups.google.com/d/msgid/nagari/1697943765.342753965%40f481.i.mail.ru?utm_medium=email&utm_source=footer>
+
+> .
+
+>
+
+>
+
+> --
+
+> Чтобы отменить подписку на группу, посвященную санскриту,
+
+> отправьте сообщение по адресу - мы поймем, простим даже:
+
+> Nagari-unsubscribe@…
+
+> <http:///compose?To=Nagari%2dunsubscribe@…>
+
+> ---
+
+> Вы получили это сообщение, поскольку подписаны на группу "Общество
+
+> ревнителей санскрита (Sanscrit)".
+
+> Чтобы отменить подписку на эту группу и больше не получать от нее
+
+> сообщения, отправьте письмо на электронный адрес
+
+> nagari+unsubscribe@…
+
+> <http://e.mail.ru/compose/?mailto=mailto%3anagari%2bunsubscribe@…>
+
+> .
+
+> Чтобы посмотреть обсуждение на веб-странице, перейдите по ссылке
+
+> https://groups.google.com/d/msgid/nagari/CAFg%2BCAh_J1qAYBh38efUTq0gYh7LHTRzytgRvUH3xZWn6WqF%3DA%40mail.gmail.com
+
+> <https://groups.google.com/d/msgid/nagari/CAFg%2BCAh_J1qAYBh38efUTq0gYh7LHTRzytgRvUH3xZWn6WqF%3DA%40mail.gmail.com?utm_medium=email&utm_source=footer>
+
+> .
+
+>
+
+>
+
+>
+
+> --
+
+> Владимир Карицкий
+
+> Отправлено из Почты Mail.ru <https://trk.mail.ru/c/zzm979>
+
+>
+
+>
+
+> --
+
+> Чтобы отменить подписку на группу, посвященную санскриту,
+
+> отправьте сообщение по адресу - мы поймем, простим даже:
+
+> Nagari-unsubscribe@…
+
+> <https://touch.mail.ru/compose/?mailto=mailto%3aNagari%2dunsubscribe@…>
+
+> ---
+
+> Вы получили это сообщение, поскольку подписаны на группу "Общество
+
+> ревнителей санскрита (Sanscrit)".
+
+> Чтобы отменить подписку на эту группу и больше не получать от нее
+
+> сообщения, отправьте письмо на электронный адрес
+
+> nagari+unsubscribe@…
+
+> <https://touch.mail.ru/compose/?mailto=mailto%3anagari%2bunsubscribe@…>
+
+> .
+
+> Чтобы посмотреть обсуждение на веб-странице, перейдите по ссылке
+
+> https://groups.google.com/d/msgid/nagari/1698027874.475052318%40f735.i.mail.ru
+
+> <https://groups.google.com/d/msgid/nagari/1698027874.475052318%40f735.i.mail.ru?utm_medium=email&utm_source=footer>
+
+> .
+
+>
+
+> --
+
+> Чтобы отменить подписку на группу, посвященную санскриту,
+
+> отправьте сообщение по адресу - мы поймем, простим даже:
+
+> Nagari-unsubscribe@…
+
+> <https://touch.mail.ru/compose?To=Nagari%2dunsubscribe@…>
+
+> ---
+
+> Вы получили это сообщение, поскольку подписаны на группу "Общество
+
+> ревнителей санскрита (Sanscrit)".
+
+> Чтобы отменить подписку на эту группу и больше не получать от нее
+
+> сообщения, отправьте письмо на электронный адрес
+
+> nagari+unsubscribe@…
+
+> <https://touch.mail.ru/compose/?mailto=mailto%3anagari%2bunsubscribe@…>
+
+> .
+
+>
+
+> Чтобы посмотреть обсуждение на веб-странице, перейдите по ссылке
+
+> https://groups.google.com/d/msgid/nagari/CAFg%2BCAh%2BUpChXDvN_NrQTaUH1KTt5GzEvx76XqFwqJeuDinYbA%40mail.gmail.com
+
+> <https://groups.google.com/d/msgid/nagari/CAFg%2BCAh%2BUpChXDvN_NrQTaUH1KTt5GzEvx76XqFwqJeuDinYbA%40mail.gmail.com?utm_medium=email&utm_source=footer>
+
+> .
+
+>
+
+>
+
+>
+
+> --
+
+> Владимир Карицкий
+
+> Отправлено из Почты Mail.ru <https://trk.mail.ru/c/zzm979>
+
+>
+
+> --
+
+> Чтобы отменить подписку на группу, посвященную санскриту,
+
+> отправьте сообщение по адресу - мы поймем, простим даже:
+
+> Nagari-unsubscribe@…
+
+> ---
+
+> Вы получили это сообщение, поскольку подписаны на группу "Общество
+
+> ревнителей санскрита (Sanscrit)".
+
+> Чтобы отменить подписку на эту группу и больше не получать от нее
+
+> сообщения, отправьте письмо на электронный адрес
+
+> nagari+unsubscribe@….
+
+> Чтобы посмотреть обсуждение на веб-странице, перейдите по ссылке
+
+> https://groups.google.com/d/msgid/nagari/1698064258.318034349%40f497.i.mail.ru
+
+> <https://groups.google.com/d/msgid/nagari/1698064258.318034349%40f497.i.mail.ru?utm_medium=email&utm_source=footer>
+
+> .
+
 >
 
 ## 7. Владимир Карицкий — 2023-10-31 05:15:31

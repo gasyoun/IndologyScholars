@@ -17,11 +17,18 @@ source_url: https://groups.google.com/d/msgid/nagari/993ced3c-61f8-4899-8aca-ca1
 
 ## 1. Mārcis — 2024-08-16 10:34:03
 
-Staal,Frits Universals: Studies in Indian logic linguistics. - Chicago : 
-The University of Chicago press, London, 1988. - X, 267 p. - Библиогр. в 
-конце глав.-Указ. с.263-267. - ISBN 0-226-76999-2 (cloth) .
-
-Исследования языковых структур и методов мышления в древнеиндийской, логике 
-и лингвистике. Статьи 60-х -70-х гг.
-
+Staal,Frits Universals: Studies in Indian logic linguistics. - Chicago : 
+
+The University of Chicago press, London, 1988. - X, 267 p. - Библиогр. в 
+
+конце глав.-Указ. с.263-267. - ISBN 0-226-76999-2 (cloth) .
+
+
+
+Исследования языковых структур и методов мышления в древнеиндийской, логике 
+
+и лингвистике. Статьи 60-х -70-х гг.
+
+
+
 см. https://vk.com/samskrtamru?w=wall-88831040_22312

@@ -26,16 +26,26 @@ Regards,
 
 ## 2. Marcis — 2012-07-16 11:47:46
 
-Upload to dropbox with a public link?
-
-вторник, 10 июля 2012 г., 4:39:58 UTC+7 пользователь Dmitri написал:
->
-> I made a java port of the SKT.C preprocessor for SKT LaTeX package.
-> If anyone is interested, it I can send both jar and java files for it.  
-> Feel free to use and post on the WWW.
->
-> Regards,
->              Dmitri.
+Upload to dropbox with a public link?
+
+
+
+вторник, 10 июля 2012 г., 4:39:58 UTC+7 пользователь Dmitri написал:
+
+>
+
+> I made a java port of the SKT.C preprocessor for SKT LaTeX package.
+
+> If anyone is interested, it I can send both jar and java files for it.  
+
+> Feel free to use and post on the WWW.
+
+>
+
+> Regards,
+
+>              Dmitri.
+
 >
 
 ## 3. Dmitri — 2012-07-17 17:47:07

@@ -17,58 +17,104 @@ source_url: https://groups.google.com/d/msgid/nagari/CAKmACTnh8Sw1f9hWt%2BiGwzvx
 
 ## 1. narayan prasad — 2013-02-17 20:34:20
 
-Dear Members,
-
-     Is there any comprehensive list of Russian Basic Verbs (i.e.
-unprefixed verbs) along with the corresponding prefixed ones on the model
-of the following ?
-
-
-100 Russian verbs in common use, and 1,000 of their compound forms (1917)
-http://archive.org/details/100russianverbsi00bernrich
-
-In the book "Conjugation of Russian Verbs",  L I Pirogova lists all the
-verbs (about 11210) extracted from Ozhegov's dictionary. But if this
-information were available in the form mentioned above, it would have been
-much more useful.
-
-    Thanks.
+Dear Members,
+
+
+
+     Is there any comprehensive list of Russian Basic Verbs (i.e.
+
+unprefixed verbs) along with the corresponding prefixed ones on the model
+
+of the following ?
+
+
+
+
+
+100 Russian verbs in common use, and 1,000 of their compound forms (1917)
+
+http://archive.org/details/100russianverbsi00bernrich
+
+
+
+In the book "Conjugation of Russian Verbs",  L I Pirogova lists all the
+
+verbs (about 11210) extracted from Ozhegov's dictionary. But if this
+
+information were available in the form mentioned above, it would have been
+
+much more useful.
+
+
+
+    Thanks.
+
     Narayan Prasad
 
 ## 2. Marcis — 2013-02-18 17:31:38
 
-Try http://gramota.ru/spravka/add_question/ 
-or http://www.ruslang.ru/agens.php?id=admin
-
-On Sunday, 17 February 2013 21:34:20 UTC+4, Narayan Prasad wrote:
->
-> Dear Members,
->      
->      Is there any comprehensive list of Russian Basic Verbs (i.e. 
-> unprefixed verbs) along with the corresponding prefixed ones on the model 
-> of the following ?
->   
->
-> 100 Russian verbs in common use, and 1,000 of their compound forms (1917) 
-> http://archive.org/details/100russianverbsi00bernrich
->
-> In the book "Conjugation of Russian Verbs",  L I Pirogova lists all the 
-> verbs (about 11210) extracted from Ozhegov's dictionary. But if this 
-> information were available in the form mentioned above, it would have been 
-> much more useful.
->   
->     Thanks.
->     Narayan Prasad
+Try http://gramota.ru/spravka/add_question/ 
+
+or http://www.ruslang.ru/agens.php?id=admin
+
+
+
+On Sunday, 17 February 2013 21:34:20 UTC+4, Narayan Prasad wrote:
+
+>
+
+> Dear Members,
+
+>      
+
+>      Is there any comprehensive list of Russian Basic Verbs (i.e. 
+
+> unprefixed verbs) along with the corresponding prefixed ones on the model 
+
+> of the following ?
+
+>   
+
+>
+
+> 100 Russian verbs in common use, and 1,000 of their compound forms (1917) 
+
+> http://archive.org/details/100russianverbsi00bernrich
+
+>
+
+> In the book "Conjugation of Russian Verbs",  L I Pirogova lists all the 
+
+> verbs (about 11210) extracted from Ozhegov's dictionary. But if this 
+
+> information were available in the form mentioned above, it would have been 
+
+> much more useful.
+
+>   
+
+>     Thanks.
+
+>     Narayan Prasad
+
 >
 
 ## 3. narayan prasad — 2013-02-18 19:29:44
 
-OK. Thanks a lot.
-
---- Narayan Prasad
-
-2013/2/18 Marcis <gasyoun@…>
-
-> Try http://gramota.ru/spravka/add_question/ or
-> http://www.ruslang.ru/agens.php?id=admin
+OK. Thanks a lot.
+
+
+
+--- Narayan Prasad
+
+
+
+2013/2/18 Marcis <gasyoun@…>
+
+
+
+> Try http://gramota.ru/spravka/add_question/ or
+
+> http://www.ruslang.ru/agens.php?id=admin
+
 >

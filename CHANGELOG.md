@@ -5,6 +5,17 @@
 Этот проект представляет собой высокоточный академический конвейер для оцифровки, интеллектуального анализа и визуализации истории российской индологической науки.
 
 ## [Unreleased]
+### Fixed
+- **Renormalized 1,311 CR-carrying blobs to LF** (H2315, Sonnet 5
+  `claude-sonnet-5`), closing the org EOL census violation
+  ([Uprava/tools/eol_census.py](https://github.com/gasyoun/Uprava/blob/main/tools/eol_census.py))
+  and [#178](https://github.com/gasyoun/IndologyScholars/issues/178). 1,302
+  files under `nagari/md/` (2007-era archival Google-Group export) plus
+  `article/ppv_draft.md` and `scratch/decode_out.txt` carried a mix of CRLF
+  line endings and lone `\r` (old Mac-style) line breaks; `git add
+  --renormalize` fixed the CRLF pairs, a universal-newline follow-up pass
+  fixed the lone-`\r` remainder. Verified 0 remaining CR bytes, 0 files
+  deleted, no line merged/lost.
 
 ## [1.6.1] - 2026-08-06
 ### Added

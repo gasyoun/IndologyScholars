@@ -17,17 +17,28 @@ source_url: https://groups.google.com/d/msgid/nagari/4f0ecc87-3659-452f-a1a2-727
 
 ## 1. Alex Kruckov — 2020-05-19 17:43:34
 
-*But one who knows the basics of Sanskrit or Telugu or Kannada will dispute 
-the reading in the very first instance.  The original reading goes this 
-way: सा अत्मातत्वमसि. It is common sense to read it either way.Hence, this 
-can be read as both tat tvam asi as well as atat tvam asi. There’s no 
-bearing upon the reader to read it only one way and not as the other.  One 
-can read it based on the way the context presents it. And mind you, there 
-is no grammatical violation in reading either way. Just because it is 
-“generally read” as tat tvam asi does not forbid people from reading it 
-otherwise.http://creative.sulekha.com/atat-tvam-asi-of-madhva_418923_blog 
-<http://creative.sulekha.com/atat-tvam-asi-of-madhva_418923_blog>Какое 
-правильное прочтение, возможно ли прочтение и то и другое  "tat tvam asi as 
+*But one who knows the basics of Sanskrit or Telugu or Kannada will dispute 
+
+the reading in the very first instance.  The original reading goes this 
+
+way: सा अत्मातत्वमसि. It is common sense to read it either way.Hence, this 
+
+can be read as both tat tvam asi as well as atat tvam asi. There’s no 
+
+bearing upon the reader to read it only one way and not as the other.  One 
+
+can read it based on the way the context presents it. And mind you, there 
+
+is no grammatical violation in reading either way. Just because it is 
+
+“generally read” as tat tvam asi does not forbid people from reading it 
+
+otherwise.http://creative.sulekha.com/atat-tvam-asi-of-madhva_418923_blog 
+
+<http://creative.sulekha.com/atat-tvam-asi-of-madhva_418923_blog>Какое 
+
+правильное прочтение, возможно ли прочтение и то и другое  "tat tvam asi as 
+
 well as atat tvam asi"  ?Om Namo Narayana*
 
 ## 2. Владимир Карицкий — 2020-05-20 09:31:34

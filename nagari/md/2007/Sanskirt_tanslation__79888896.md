@@ -35,19 +35,32 @@ Laurie @ Allstar Nashville
 
 ## 3. Kartik Khandwala — 2007-09-15 00:54:54
 
-What is the phrase you want to translate?
-
-K
-Sent from my BlackBerry(R) wireless device.
-
------Original Message-----
-From: allstarnash@…
-
-Date: Fri, 14 Sep 2007 19:10:40 
-To:Nagari@…
-Subject: Sanskirt tanslation
-
-
+What is the phrase you want to translate?
+
+
+
+K
+
+Sent from my BlackBerry(R) wireless device.
+
+
+
+-----Original Message-----
+
+From: allstarnash@…
+
+
+
+Date: Fri, 14 Sep 2007 19:10:40 
+
+To:Nagari@…
+
+Subject: Sanskirt tanslation
+
+
+
+
+
 Where can I locate text help me translate a phrase for a memorial tattoo for my grandfather who has passed away?
 
 --

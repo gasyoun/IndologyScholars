@@ -17,93 +17,170 @@ source_url: https://groups.google.com/d/msgid/nagari/249dcadd-edb7-4d04-9c85-809
 
 ## 1. Marcis — 2008-01-22 12:01:15
 
-http://forums.dmoz.org/forum/viewtopic.php?t=915505&postdays=0&postorder=asc&start=200
-http://www.dmoz.org/Science/Social_Sciences/Linguistics/Languages/Natural/Indo-European/Indo-Iranian/Indo-Aryan/Sanskrit/
-
-Spelling:
-
-Seems to be alright, except that I don't think that the word
-"sanskrit" is capitalized.
-
-Is the editor right?
-
+http://forums.dmoz.org/forum/viewtopic.php?t=915505&postdays=0&postorder=asc&start=200
+
+http://www.dmoz.org/Science/Social_Sciences/Linguistics/Languages/Natural/Indo-European/Indo-Iranian/Indo-Aryan/Sanskrit/
+
+
+
+Spelling:
+
+
+
+Seems to be alright, except that I don't think that the word
+
+"sanskrit" is capitalized.
+
+
+
+Is the editor right?
+
+
+
  M.
 
 ## 2. Serge — 2008-01-22 19:04:18
 
-и как открыть первую ссылку?
-у меня какая-то чушь высвечивается насчёт авторизации.
-
-On 22 янв, 12:01, Marcis <gasy...@…> wrote:
-> http://forums.dmoz.org/forum/viewtopic.php?t=915505&postdays=0&postor...http://www.dmoz.org/Science/Social_Sciences/Linguistics/Languages/Nat...
->
-> Spelling:
->
-> Seems to be alright, except that I don't think that the word
-> "sanskrit" is capitalized.
->
-> Is the editor right?
->
+и как открыть первую ссылку?
+
+у меня какая-то чушь высвечивается насчёт авторизации.
+
+
+
+On 22 янв, 12:01, Marcis <gasy...@…> wrote:
+
+> http://forums.dmoz.org/forum/viewtopic.php?t=915505&postdays=0&postor...http://www.dmoz.org/Science/Social_Sciences/Linguistics/Languages/Nat...
+
+>
+
+> Spelling:
+
+>
+
+> Seems to be alright, except that I don't think that the word
+
+> "sanskrit" is capitalized.
+
+>
+
+> Is the editor right?
+
+>
+
 >  M.
 
 ## 3. Marcis — 2008-01-25 09:36:22
 
-Став редактором dmoz.
-Редактор оспорил, что я пишу правильно, что нужно употреблять
-прописные буквы в словах Sanskrit, Classical Sanskrit.
-
-On 22 янв, 22:04, Serge <renuv...@…> wrote:
-> и как открыть первую ссылку?
-> у меня какая-то чушь высвечивается насчёт авторизации.
->
-> On 22 янв, 12:01, Marcis <gasy...@…> wrote:
->
-> >http://forums.dmoz.org/forum/viewtopic.php?t=915505&postdays=0&postor......
->
-> > Spelling:
->
-> > Seems to be alright, except that I don't think that the word
-> > "sanskrit" is capitalized.
->
-> > Is the editor right?
->
-> >  M.
->
+Став редактором dmoz.
+
+Редактор оспорил, что я пишу правильно, что нужно употреблять
+
+прописные буквы в словах Sanskrit, Classical Sanskrit.
+
+
+
+On 22 янв, 22:04, Serge <renuv...@…> wrote:
+
+> и как открыть первую ссылку?
+
+> у меня какая-то чушь высвечивается насчёт авторизации.
+
+>
+
+> On 22 янв, 12:01, Marcis <gasy...@…> wrote:
+
+>
+
+> >http://forums.dmoz.org/forum/viewtopic.php?t=915505&postdays=0&postor......
+
+>
+
+> > Spelling:
+
+>
+
+> > Seems to be alright, except that I don't think that the word
+
+> > "sanskrit" is capitalized.
+
+>
+
+> > Is the editor right?
+
+>
+
+> >  M.
+
+>
+
 >
 
 ## 4. Serge — 2008-01-25 10:16:33
 
-А о каком языке вообще идёт речь? Об английском?
-Согласно нормам английского языка, названия языков пишутся с прописной
-буквы.
-Всё слово, разумеется, капитализировать не нужно.
-Напр., Old Church Slavonic, Sanskrit etc.
-Неправильно писать sanskrit, SANSKRIT, SAnskrIT etc.
-
-
-On 25 янв, 09:36, Marcis <gasy...@…> wrote:
-> Став редактором dmoz.
-> Редактор оспорил, что я пишу правильно, что нужно употреблять
-> прописные буквы в словах Sanskrit, Classical Sanskrit.
->
-> On 22 янв, 22:04, Serge <renuv...@…> wrote:
->
->
->
-> > и как открыть первую ссылку?
-> > у меня какая-то чушь высвечивается насчёт авторизации.
->
-> > On 22 янв, 12:01, Marcis <gasy...@…> wrote:
->
-> > >http://forums.dmoz.org/forum/viewtopic.php?t=915505&postdays=0&postor......
->
-> > > Spelling:
->
-> > > Seems to be alright, except that I don't think that the word
-> > > "sanskrit" is capitalized.
->
-> > > Is the editor right?
->
-> > >  M.- Скрыть цитируемый текст -
->
+А о каком языке вообще идёт речь? Об английском?
+
+Согласно нормам английского языка, названия языков пишутся с прописной
+
+буквы.
+
+Всё слово, разумеется, капитализировать не нужно.
+
+Напр., Old Church Slavonic, Sanskrit etc.
+
+Неправильно писать sanskrit, SANSKRIT, SAnskrIT etc.
+
+
+
+
+
+On 25 янв, 09:36, Marcis <gasy...@…> wrote:
+
+> Став редактором dmoz.
+
+> Редактор оспорил, что я пишу правильно, что нужно употреблять
+
+> прописные буквы в словах Sanskrit, Classical Sanskrit.
+
+>
+
+> On 22 янв, 22:04, Serge <renuv...@…> wrote:
+
+>
+
+>
+
+>
+
+> > и как открыть первую ссылку?
+
+> > у меня какая-то чушь высвечивается насчёт авторизации.
+
+>
+
+> > On 22 янв, 12:01, Marcis <gasy...@…> wrote:
+
+>
+
+> > >http://forums.dmoz.org/forum/viewtopic.php?t=915505&postdays=0&postor......
+
+>
+
+> > > Spelling:
+
+>
+
+> > > Seems to be alright, except that I don't think that the word
+
+> > > "sanskrit" is capitalized.
+
+>
+
+> > > Is the editor right?
+
+>
+
+> > >  M.- Скрыть цитируемый текст -
+
+>
+
 > - Показать цитируемый текст -

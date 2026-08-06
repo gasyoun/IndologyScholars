@@ -175,121 +175,224 @@ Vijaya. Parimala Publications. Там в конце первого тома пе
 
 ## 6. ShaSa — 2014-01-14 17:22:40
 
-Namaste
-Hope this will be helpful to you to some extent.
-https://www.dropbox.com/s/h0cnw7mw49kvh4d/DhatuKosha-SktEng-BahuballabhSastri.pdf
-This is in Sanskrit Total- For anyone who might need-
-http://sanskritdocuments.org/all_sa/dhatupathaindex_sa.html
-Thankyou.
--Regards
-
-
-On Sunday, January 12, 2014 11:22:54 PM UTC+5:30, Yury Panikov wrote:
->
-> Всем привет!
->
-> Остались ещё колдуны способные корректно перегнать приаттаченный doc в 
-> pdf? У меня что-то не не выходит. 
->
->
-> P.S. Если у кого есть более качественная Дхутупатха с переводом на 
-> русский/английский с благодарностью приму в дар.
->
->
->
->
+Namaste
+
+Hope this will be helpful to you to some extent.
+
+https://www.dropbox.com/s/h0cnw7mw49kvh4d/DhatuKosha-SktEng-BahuballabhSastri.pdf
+
+This is in Sanskrit Total- For anyone who might need-
+
+http://sanskritdocuments.org/all_sa/dhatupathaindex_sa.html
+
+Thankyou.
+
+-Regards
+
+
+
+
+
+On Sunday, January 12, 2014 11:22:54 PM UTC+5:30, Yury Panikov wrote:
+
+>
+
+> Всем привет!
+
+>
+
+> Остались ещё колдуны способные корректно перегнать приаттаченный doc в 
+
+> pdf? У меня что-то не не выходит. 
+
+>
+
+>
+
+> P.S. Если у кого есть более качественная Дхутупатха с переводом на 
+
+> русский/английский с благодарностью приму в дар.
+
+>
+
+>
+
+>
+
+>
+
 >
 
 ## 7. ShaSa — 2014-01-14 17:25:39
 
-One more- Good list- with verbal-prefixes as well-
-https://www.dropbox.com/s/1s5nq9qcahokc9d/Dhatu-Upasarga-List-Eng.Mngs.pdf
-
-On Tuesday, January 14, 2014 7:52:40 PM UTC+5:30, ShaSa wrote:
->
-> Namaste
-> Hope this will be helpful to you to some extent.
->
-> https://www.dropbox.com/s/h0cnw7mw49kvh4d/DhatuKosha-SktEng-BahuballabhSastri.pdf
-> This is in Sanskrit Total- For anyone who might need-
-> http://sanskritdocuments.org/all_sa/dhatupathaindex_sa.html
-> Thankyou.
-> -Regards
->
->
-> On Sunday, January 12, 2014 11:22:54 PM UTC+5:30, Yury Panikov wrote:
->>
->> Всем привет!
->>
->> Остались ещё колдуны способные корректно перегнать приаттаченный doc в 
->> pdf? У меня что-то не не выходит. 
->>
->>
->> P.S. Если у кого есть более качественная Дхутупатха с переводом на 
->> русский/английский с благодарностью приму в дар.
->>
->>
->>
->>
+One more- Good list- with verbal-prefixes as well-
+
+https://www.dropbox.com/s/1s5nq9qcahokc9d/Dhatu-Upasarga-List-Eng.Mngs.pdf
+
+
+
+On Tuesday, January 14, 2014 7:52:40 PM UTC+5:30, ShaSa wrote:
+
+>
+
+> Namaste
+
+> Hope this will be helpful to you to some extent.
+
+>
+
+> https://www.dropbox.com/s/h0cnw7mw49kvh4d/DhatuKosha-SktEng-BahuballabhSastri.pdf
+
+> This is in Sanskrit Total- For anyone who might need-
+
+> http://sanskritdocuments.org/all_sa/dhatupathaindex_sa.html
+
+> Thankyou.
+
+> -Regards
+
+>
+
+>
+
+> On Sunday, January 12, 2014 11:22:54 PM UTC+5:30, Yury Panikov wrote:
+
+>>
+
+>> Всем привет!
+
+>>
+
+>> Остались ещё колдуны способные корректно перегнать приаттаченный doc в 
+
+>> pdf? У меня что-то не не выходит. 
+
+>>
+
+>>
+
+>> P.S. Если у кого есть более качественная Дхутупатха с переводом на 
+
+>> русский/английский с благодарностью приму в дар.
+
+>>
+
+>>
+
+>>
+
+>>
+
 >>
 
 ## 8. Yury Panikov — 2014-01-14 19:30:35
 
-Namaste ShaSa,
-
-Thanks a lot for your file with upasargas!
-
-Regards,
-Yury
-
-вторник, 14 января 2014 г., 18:25:39 UTC+4 пользователь ShaSa написал:
->
-> One more- Good list- with verbal-prefixes as well-
-> https://www.dropbox.com/s/1s5nq9qcahokc9d/Dhatu-Upasarga-List-Eng.Mngs.pdf
->
-> On Tuesday, January 14, 2014 7:52:40 PM UTC+5:30, ShaSa wrote:
->>
->> Namaste
->> Hope this will be helpful to you to some extent.
->>
->> https://www.dropbox.com/s/h0cnw7mw49kvh4d/DhatuKosha-SktEng-BahuballabhSastri.pdf
->> This is in Sanskrit Total- For anyone who might need-
->> http://sanskritdocuments.org/all_sa/dhatupathaindex_sa.html
->> Thankyou.
->> -Regards
->>
->>
->> On Sunday, January 12, 2014 11:22:54 PM UTC+5:30, Yury Panikov wrote:
->>>
->>> Всем привет!
->>>
->>> Остались ещё колдуны способные корректно перегнать приаттаченный doc в 
->>> pdf? У меня что-то не не выходит. 
->>>
->>>
->>> P.S. Если у кого есть более качественная Дхaтупатха с переводом на 
->>> русский/английский с благодарностью приму в дар.
->>>
->>>
->>>
->>>
+Namaste ShaSa,
+
+
+
+Thanks a lot for your file with upasargas!
+
+
+
+Regards,
+
+Yury
+
+
+
+вторник, 14 января 2014 г., 18:25:39 UTC+4 пользователь ShaSa написал:
+
+>
+
+> One more- Good list- with verbal-prefixes as well-
+
+> https://www.dropbox.com/s/1s5nq9qcahokc9d/Dhatu-Upasarga-List-Eng.Mngs.pdf
+
+>
+
+> On Tuesday, January 14, 2014 7:52:40 PM UTC+5:30, ShaSa wrote:
+
+>>
+
+>> Namaste
+
+>> Hope this will be helpful to you to some extent.
+
+>>
+
+>> https://www.dropbox.com/s/h0cnw7mw49kvh4d/DhatuKosha-SktEng-BahuballabhSastri.pdf
+
+>> This is in Sanskrit Total- For anyone who might need-
+
+>> http://sanskritdocuments.org/all_sa/dhatupathaindex_sa.html
+
+>> Thankyou.
+
+>> -Regards
+
+>>
+
+>>
+
+>> On Sunday, January 12, 2014 11:22:54 PM UTC+5:30, Yury Panikov wrote:
+
+>>>
+
+>>> Всем привет!
+
+>>>
+
+>>> Остались ещё колдуны способные корректно перегнать приаттаченный doc в 
+
+>>> pdf? У меня что-то не не выходит. 
+
+>>>
+
+>>>
+
+>>> P.S. Если у кого есть более качественная Дхaтупатха с переводом на 
+
+>>> русский/английский с благодарностью приму в дар.
+
+>>>
+
+>>>
+
+>>>
+
+>>>
+
 >>>
 
 ## 9. Dmitri — 2014-01-14 20:23:09
 
-On Tuesday, January 14, 2014 7:52:40 PM UTC+5:30, ShaSa wrote:
->
-> Namaste
->> Hope this will be helpful to you to some extent.
->>
->> https://www.dropbox.com/s/h0cnw7mw49kvh4d/DhatuKosha-SktEng-BahuballabhSastri.pdf
->> This is in Sanskrit Total- For anyone who might need-
->> http://sanskritdocuments.org/all_sa/dhatupathaindex_sa.html
->> Thankyou.
->> -Regards
->>
->>
-Не знает ли кто подобного списка корней с частотностью их использования в 
+On Tuesday, January 14, 2014 7:52:40 PM UTC+5:30, ShaSa wrote:
+
+>
+
+> Namaste
+
+>> Hope this will be helpful to you to some extent.
+
+>>
+
+>> https://www.dropbox.com/s/h0cnw7mw49kvh4d/DhatuKosha-SktEng-BahuballabhSastri.pdf
+
+>> This is in Sanskrit Total- For anyone who might need-
+
+>> http://sanskritdocuments.org/all_sa/dhatupathaindex_sa.html
+
+>> Thankyou.
+
+>> -Regards
+
+>>
+
+>>
+
+Не знает ли кто подобного списка корней с частотностью их использования в 
+
 определённом corpus (как то RigVeda или Mahābhārata)?
 
 ## 10. Marcis — 2014-01-15 16:54:10

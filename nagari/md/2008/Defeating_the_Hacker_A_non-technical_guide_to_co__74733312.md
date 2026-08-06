@@ -34,18 +34,32 @@ Dictionary<http://bookscabinet.blogspot.com/2008/09/new-hackers-dictionary.html>
 
 ## 2. Alessandro Nutini — 2008-09-26 11:00:52
 
-Thanks, but where's the password for open the files  ??!!! :(((((
-  ----- Original Message ----- 
-  From: !!!Latha!!! !Latha! 
-  To: acastleofbooks@… ; baddogbooks@… ; bibliographic-ontology-specification-group@… ; book-cafe@… ; Book-Reviews@… ; books-and-books@… ; Books-Books-Books@… ; Computer-Knowledge@… ; dogearedbooks@… ; Egyptianyogagroup@… ; FOR-SALE-UK@… ; freecomputerbooks@… ; Google-Reading-Forum@… ; harry-potter-for-real-fans@… ; holistichealth@… ; inside-google-book-search@… ; InternationalSocialistOrganization@… ; kunduz1@… ; LibrosVirtuales@… ; littleblackbookmy@… ; majdimag@… ; Meet_E-Book@… ; michiganBwB@… ; moesbooks_events@… ; obfc@… ; onlyfree@… ; openletter@… ; pda-ebook@… ; prathambooks@… ; RaveTechnologies@… ; seanward@… ; Self-Publishing@… ; selfref@… ; semeadoresdapalavra@… ; Share-Your-Chessbase-Files@… ; Shopping-Autos-Clothing-Gifts@… ; soabook@… ; technical-club@… ; todayskagga@… ; Wild-Fermentation@… ; aboutocp@… ; adulterycarmen@… ; Asian-Issues-Opportunities@… ; asiansirens@… ; books_free@… ; cpwd@… ; ebookexchange@… ; ebooks@… ; ELNYA@… ; fbreader@… ; FOR-SALE-US@… ; Free-books@… ; freehentaimovie@… ; FunIndia@… ; Google-Books@… ; Gtech@… ; honna@… ; iklan-gratis@… ; insidegre@… ; Iranbusiness@… ; lotr@… ; medarticles@… ; motivated@… ; my-link-isthere@… ; Nagari@… ; nudeindianwomen@… ; OneUrdu@… ; phpbook@… ; pokerbooks@… ; powerbooks@… ; ramfc@… ; roz-ek-quote@… ; Science-Fiction@… ; shiagroup@… ; Simply-Poetry@… ; testing_help@… ; The-Entrepreneur@… ; themagicofromance@… ; theuniquegeek@… ; TontoPress@… ; zarahemla-books-updates@… ; arisan_ebook@… ; Azores@… ; bid1st@… ; bisnis-internet-online@… ; booktube@… ; e-commerce@… ; eAntakshari@… ; Ebay-Selling-Secrets@… ; ebooknetworking@… ; Free-Poetry@… ; Fun-In-the-Tub@… ; g-books@… ; g4books@… ; Honest-People-Honest-Opportunity@… ; iklanminiplus@… ; indiantreepix@… ; Joseph-Everett@… ; jutawansiber@… ; Karachi-786@… ; making_money_now@… ; mastertrader@… ; MOdal-rm620-pulangan-komisyen-RM-2000-sebulan@… ; NailTech@… ; Only-the-best-opportunities@… ; peluang-bisnis-internet@… ; super-ebook@… ; Teen-Book-Discuss@… ; trabajo-Teletrabajo@… ; valueads@… ; Wellness-Medicine@… ; abbey-of-the-arts@… ; B820-Exam@… ; Beginners-Jazz-Piano-Discussion-Group@… ; chunktohunk@… ; clubnews@… ; Da-Vinci-Code@… ; freecontentarticles@… ; goodbookclub@… ; HebrewMSS@… ; HijinxBookClub@… ; indiatourism@… ; joeperez-news@… ; michellesbookstore@… ; Outsourcing-Data-Entry-Services@… ; Princess-J-Creations-Decorative-Arts-Studio@… ; Romance-Previews@… ; SA-TAW@… ; Sensex@… ; spikemagazine@… ; sueaugustine@… ; thinktargetdotnet@… ; Time-Travel-Romance-Book-Club@… ; Transfiguration-College@… ; vicromreaders@… ; webnegocios@… ; apalsa_books@… ; articlebank@… ; brentwood-mall@… ; chinathink@… ; ComicArt@… ; DBKD@… ; delhincrevents@… ; discuss-invadingthesacred@… ; don-aslett@… ; Donations-Available-for-Tulane-and-LSU-Med@… ; Erotica-Romance-Book-Club@… ; free-reprintable-articles@… ; GettingThingsDone@… ; GU-Harry-Potter-Readers@… ; harrisons-internal-medicine@… ; harrypotter@… ; HomeBizMagazine@… ; homeschooling@… ; HS_Swap@… ; india-travelogue@… ; isotope-events@… ; kerala-nri@… ; MDLinks@… ; mododorico@… ; newarrivals@… ; norilana-books@… ; NorthWest-Association-of-Book-Publishers@… ; NovelRecommendations@… ; Paranormal-Romance-Book-Club@… ; petite-anglaise-book-news@… ; picture-bucket@… ; Professional-Writers@… ; Publish-These-Articles@… ; rationallyspeaking@… ; readordie@… ; richellemead@… ; SarahArthurNewsletter@… ; secrets-to-the-universe@… ; sobuttons@… ; tgbook@… ; theauthoritarians@… ; unbook@… ; williamfdevault@… ; wseas@… ; wyrm-publishing@… 
-  Sent: Friday, September 26, 2008 9:42 AM
-  Subject: Defeating the Hacker: A non-technical guide to computer security
-
-
-  Books Cabinet Latest Updates
-    a.. Hacking Ubuntu: Serious Hacks Mods and Customizations
-    b.. Hack-Proof Your Wireless Network 
-    c.. Hacking the hacker
-    d.. Defeating the Hacker: A non-technical guide to computer security 
-    e.. Ethical Hacking (EC-Council Exam 312-50): Student Courseware
+Thanks, but where's the password for open the files  ??!!! :(((((
+
+  ----- Original Message ----- 
+
+  From: !!!Latha!!! !Latha! 
+
+  To: acastleofbooks@… ; baddogbooks@… ; bibliographic-ontology-specification-group@… ; book-cafe@… ; Book-Reviews@… ; books-and-books@… ; Books-Books-Books@… ; Computer-Knowledge@… ; dogearedbooks@… ; Egyptianyogagroup@… ; FOR-SALE-UK@… ; freecomputerbooks@… ; Google-Reading-Forum@… ; harry-potter-for-real-fans@… ; holistichealth@… ; inside-google-book-search@… ; InternationalSocialistOrganization@… ; kunduz1@… ; LibrosVirtuales@… ; littleblackbookmy@… ; majdimag@… ; Meet_E-Book@… ; michiganBwB@… ; moesbooks_events@… ; obfc@… ; onlyfree@… ; openletter@… ; pda-ebook@… ; prathambooks@… ; RaveTechnologies@… ; seanward@… ; Self-Publishing@… ; selfref@… ; semeadoresdapalavra@… ; Share-Your-Chessbase-Files@… ; Shopping-Autos-Clothing-Gifts@… ; soabook@… ; technical-club@… ; todayskagga@… ; Wild-Fermentation@… ; aboutocp@… ; adulterycarmen@… ; Asian-Issues-Opportunities@… ; asiansirens@… ; books_free@… ; cpwd@… ; ebookexchange@… ; ebooks@… ; ELNYA@… ; fbreader@… ; FOR-SALE-US@… ; Free-books@… ; freehentaimovie@… ; FunIndia@… ; Google-Books@… ; Gtech@… ; honna@… ; iklan-gratis@… ; insidegre@… ; Iranbusiness@… ; lotr@… ; medarticles@… ; motivated@… ; my-link-isthere@… ; Nagari@… ; nudeindianwomen@… ; OneUrdu@… ; phpbook@… ; pokerbooks@… ; powerbooks@… ; ramfc@… ; roz-ek-quote@… ; Science-Fiction@… ; shiagroup@… ; Simply-Poetry@… ; testing_help@… ; The-Entrepreneur@… ; themagicofromance@… ; theuniquegeek@… ; TontoPress@… ; zarahemla-books-updates@… ; arisan_ebook@… ; Azores@… ; bid1st@… ; bisnis-internet-online@… ; booktube@… ; e-commerce@… ; eAntakshari@… ; Ebay-Selling-Secrets@… ; ebooknetworking@… ; Free-Poetry@… ; Fun-In-the-Tub@… ; g-books@… ; g4books@… ; Honest-People-Honest-Opportunity@… ; iklanminiplus@… ; indiantreepix@… ; Joseph-Everett@… ; jutawansiber@… ; Karachi-786@… ; making_money_now@… ; mastertrader@… ; MOdal-rm620-pulangan-komisyen-RM-2000-sebulan@… ; NailTech@… ; Only-the-best-opportunities@… ; peluang-bisnis-internet@… ; super-ebook@… ; Teen-Book-Discuss@… ; trabajo-Teletrabajo@… ; valueads@… ; Wellness-Medicine@… ; abbey-of-the-arts@… ; B820-Exam@… ; Beginners-Jazz-Piano-Discussion-Group@… ; chunktohunk@… ; clubnews@… ; Da-Vinci-Code@… ; freecontentarticles@… ; goodbookclub@… ; HebrewMSS@… ; HijinxBookClub@… ; indiatourism@… ; joeperez-news@… ; michellesbookstore@… ; Outsourcing-Data-Entry-Services@… ; Princess-J-Creations-Decorative-Arts-Studio@… ; Romance-Previews@… ; SA-TAW@… ; Sensex@… ; spikemagazine@… ; sueaugustine@… ; thinktargetdotnet@… ; Time-Travel-Romance-Book-Club@… ; Transfiguration-College@… ; vicromreaders@… ; webnegocios@… ; apalsa_books@… ; articlebank@… ; brentwood-mall@… ; chinathink@… ; ComicArt@… ; DBKD@… ; delhincrevents@… ; discuss-invadingthesacred@… ; don-aslett@… ; Donations-Available-for-Tulane-and-LSU-Med@… ; Erotica-Romance-Book-Club@… ; free-reprintable-articles@… ; GettingThingsDone@… ; GU-Harry-Potter-Readers@… ; harrisons-internal-medicine@… ; harrypotter@… ; HomeBizMagazine@… ; homeschooling@… ; HS_Swap@… ; india-travelogue@… ; isotope-events@… ; kerala-nri@… ; MDLinks@… ; mododorico@… ; newarrivals@… ; norilana-books@… ; NorthWest-Association-of-Book-Publishers@… ; NovelRecommendations@… ; Paranormal-Romance-Book-Club@… ; petite-anglaise-book-news@… ; picture-bucket@… ; Professional-Writers@… ; Publish-These-Articles@… ; rationallyspeaking@… ; readordie@… ; richellemead@… ; SarahArthurNewsletter@… ; secrets-to-the-universe@… ; sobuttons@… ; tgbook@… ; theauthoritarians@… ; unbook@… ; williamfdevault@… ; wseas@… ; wyrm-publishing@… 
+
+  Sent: Friday, September 26, 2008 9:42 AM
+
+  Subject: Defeating the Hacker: A non-technical guide to computer security
+
+
+
+
+
+  Books Cabinet Latest Updates
+
+    a.. Hacking Ubuntu: Serious Hacks Mods and Customizations
+
+    b.. Hack-Proof Your Wireless Network 
+
+    c.. Hacking the hacker
+
+    d.. Defeating the Hacker: A non-technical guide to computer security 
+
+    e.. Ethical Hacking (EC-Council Exam 312-50): Student Courseware
+
     f.. New Hacker's Dictionary

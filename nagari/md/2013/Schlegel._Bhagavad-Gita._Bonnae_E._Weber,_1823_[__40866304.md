@@ -17,27 +17,48 @@ source_url: https://groups.google.com/d/msgid/nagari/15633bf3-66aa-4422-b368-afc
 
 ## 1. Marcis — 2013-03-07 14:53:11 · 📎 2
 
-Может ли кто помочь точным переводом выделенного текста 
-http://archive.org/details/bhagavadgitaide00schlgoog? Хочу собрать сведения 
-о истории шрифтов дэванагари и Шлегель был ее активным участиником 200 лет 
-назад. Заранее благодарю,
-
-PRAEFATIO.
-
-Quum tertio abhinc anno Luteliae Parisiorum cotn-morarer *propter munus 
-mihi demandatum, ut in prin-**cipe artis typographicae sede typos 
-litterarum Deva-**ungaricaruni caelandos, feriundos, flandoscurarem, qui-bus 
-Regia munificentia Academiam nostram Rhenanam ditavit: statim circumspicere 
-coepi, quidnani potissiroum liisce typis cxcusum publici iuris facerem*. 
-Eligendum crat aliquid non nimiae molis, ne mora diuturniore eru-dilorum 
-exspectationem frustrarer, nee nimis difficile, ut in tanta librorum 
-inopia, venalium utiquc ac modico prelio parabilium, tironibus quoque 
-consulerem. Magna sane incditorum copia praesto mihi erat in Bibliothe-ca 
-Franciae Regis; sed non magnopcre allectabar liac gloriola, ut primus 
-aliquid novi in lucem protraxisse diccrer: siquidem, quantum equidein 
-iudicare valeo, plcraeque librorum Sanscritorum editiones, quae huc-usque 
-prodiere, ita sunt comparatae, ut satis anipla lum critico acumini, turn 
-solerli interprets diligen-tiae matcria relicta   sit.    Couverti  igitur  anjmum 
+Может ли кто помочь точным переводом выделенного текста 
+
+http://archive.org/details/bhagavadgitaide00schlgoog? Хочу собрать сведения 
+
+о истории шрифтов дэванагари и Шлегель был ее активным участиником 200 лет 
+
+назад. Заранее благодарю,
+
+
+
+PRAEFATIO.
+
+
+
+Quum tertio abhinc anno Luteliae Parisiorum cotn-morarer *propter munus 
+
+mihi demandatum, ut in prin-**cipe artis typographicae sede typos 
+
+litterarum Deva-**ungaricaruni caelandos, feriundos, flandoscurarem, qui-bus 
+
+Regia munificentia Academiam nostram Rhenanam ditavit: statim circumspicere 
+
+coepi, quidnani potissiroum liisce typis cxcusum publici iuris facerem*. 
+
+Eligendum crat aliquid non nimiae molis, ne mora diuturniore eru-dilorum 
+
+exspectationem frustrarer, nee nimis difficile, ut in tanta librorum 
+
+inopia, venalium utiquc ac modico prelio parabilium, tironibus quoque 
+
+consulerem. Magna sane incditorum copia praesto mihi erat in Bibliothe-ca 
+
+Franciae Regis; sed non magnopcre allectabar liac gloriola, ut primus 
+
+aliquid novi in lucem protraxisse diccrer: siquidem, quantum equidein 
+
+iudicare valeo, plcraeque librorum Sanscritorum editiones, quae huc-usque 
+
+prodiere, ita sunt comparatae, ut satis anipla lum critico acumini, turn 
+
+solerli interprets diligen-tiae matcria relicta   sit.    Couverti  igitur  anjmum 
+
 ad
 
 ## 2. Nick Morozoff — 2013-03-07 20:20:48

@@ -17,6 +17,8 @@ source_url: https://groups.google.com/d/msgid/nagari/95e8b86b-0ee7-41ac-aab7-5ed
 
 ## 1. Rustem — 2008-06-14 22:39:05
 
-Нажмите на ссылку http://groups.google.com/group/Nagari/web/transliteration-map-pronunciation-key-for-sanskrit
-или, если ссылку открыть не удается, скопируйте ее и вставьте в
+Нажмите на ссылку http://groups.google.com/group/Nagari/web/transliteration-map-pronunciation-key-for-sanskrit
+
+или, если ссылку открыть не удается, скопируйте ее и вставьте в
+
 адресную строку браузера.

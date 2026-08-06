@@ -40,10 +40,16 @@ a/MSa--vat- m
 
 ## 2. narayan prasad — 2015-01-22 15:41:05
 
-No. The correct way of the "Обратный словарь" would be very similar to the
-usual one, but read from right to left, instead of left to right. Even all
-the derivatives of a head-word that are lumped under the head-word in
-certain dictionaries, should be considered completely in the alphabetical
-order (from right to left). So whatever be the stem, all words ending with
-a particular suffix should appear one after another. Cf. A.A. Зализняк
+No. The correct way of the "Обратный словарь" would be very similar to the
+
+usual one, but read from right to left, instead of left to right. Even all
+
+the derivatives of a head-word that are lumped under the head-word in
+
+certain dictionaries, should be considered completely in the alphabetical
+
+order (from right to left). So whatever be the stem, all words ending with
+
+a particular suffix should appear one after another. Cf. A.A. Зализняк
+
 (1980): "Грамматический словарь русского языка ".

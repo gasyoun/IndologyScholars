@@ -75,82 +75,158 @@ http://www.youtube.com/watch?v=h1_3TnyHmBE
 
 ## 2. geniushkg . — 2013-12-20 06:55:57
 
-On 12/19/13, ShaSa <usha.sanka@…> wrote:
-> Namaste
-> Here is something- if anyone wants to learn Sanskrit.
-> I do not know if it will be helpful (for this is a Russian group)- but I
-> collected these.. so am sending you.
-> Here are some places on web where Sanskrit is there- Different approaches,
-> different levels.. and different fruits.
-> 1. http://chitrapurmath.net/sanskrit/step_by_step_level1.asp
->  from Chitrapur Math
-> 2.
-> http://slabhyankar.wordpress.com/category/learning-sanskrit-by-fresh-approach/lessons-01-to-10/
-> 3. http://sanskrit.jnu.ac.in/elearning/mainpage.html
-> 4. http://murthygss.tripod.com/samskrutasopanam_1.htm
-> 5. http://sanskritcentral.com/videos
-> 6. Google book -
-> http://books.google.co.in/books?id=oIHmemh74gwC&pg=PT206&lpg=PT206&dq=%E0%A4%96%E0%A4%BE%E0%A4%A6%E0%A4%A4%E0%A4%BF&source=bl&ots=1j-jcqo9ce&sig=71UFu4zqleRggMnY3fn2VErTwuU&hl=en&sa=X&ei=IWcPUeS6EM_HrQensoCwCA&ved=0CFQQ6AEwCDgK
-> 7.
-> http://prramamurthy1931.blogspot.in/2012/07/index-familiarize-yourself-with.html
-> 8. Learning-Skt- by Upanishat
-> http://upanishat.wordpress.com/
-> 9. Learning-Skt- by Geeta Slokas
-> http://study1geetaa2sanskrit.wordpress.com/
-> 10. Vyakaranam
-> http://grammarofsanskrit.wordpress.com/
-> 11. http://samskrit.wordpress.com/
-> 12. http://www.acharya.gen.in:8080/sanskrit/tutor.php
-> 13. http://simplesanskrit.wordpress.com/category/lessons-1-to-10/
->
-> Research Journals and general magazines-
-> magazines-periodicals-in-sanskrit/
-> http://sanskritaprasruti.wordpress.com/2012/03/22/magazines-periodicals-in-sanskrit/
->
-> From Youtube-
-> 1. Learn Sanskrit with subtitles - Story for Children "BookBox.com"
-> http://www.youtube.com/watch?v=WfGQcNo-gRA&feature=list_related&playnext=1&list=SP498DD92172740CBE
->
-> Hear some Sanskrit- for listening *abhyAsa*-
->
-> 2.Shri Kutumba Shastry speech
-> http://www.youtube.com/watch?v=lyCBGrYjM1A&feature=related
->
-> 3.Gita Jayanti Speech (Sanskrit)
-> http://www.youtube.com/watch?v=Rk7SGkf3q64&feature=related
-> 4.Sanskrit Vidwat Sadas (Full Speech)
-> http://www.youtube.com/watch?v=axDeuR2dF0g&feature=related
-> 5.Swamiji Birthday - Sanskrit Speech (Saara Rasa and Marma Jnana)
-> http://www.youtube.com/watch?v=qhDD1OAj0J8&feature=related
-> 6. Sanskrit and its Glory - in Sanskrit & English (Full Speech)
-> http://www.youtube.com/watch?v=Sy0kmw68tnI&feature=related
-> 7. Sanskrit Grammar Verbs- (dhatav(ah)) Some Dhatu lessons-
-> http://www.youtube.com/watch?v=nzWvWM21Y1Y&feature=results_main&playnext=1&list=PL983223FCE48A66E9
-> 8. SamvaadaMalaa - Sanskrit Conversations
-> http://www.youtube.com/watch?v=h1_3TnyHmBE
->
->  All the best-:)
-> -regards
->
-> --
-> Чтобы отменить подписку на группу, посвященную санскриту,
-> отправьте сообщение по адресу - мы поймем, простим даже:
-> Nagari-unsubscribe@…
-> ---
-> Вы получили это сообщение, поскольку подписаны на группу Общество ревнителей
-> санскрита (Sanscrit).
->
-> Чтобы отказаться от подписки на эту группу и перестать получать из нее
-> сообщения, отправьте электронное письмо на адрес
-> nagari+unsubscribe@….
-> Настройки подписки и доставки писем:
-> https://groups.google.com/groups/opt_out.
->
-
-Thankyou very much ,
-
-May everbeneficeint  lord of the gods bless you with path of light
--- 
+On 12/19/13, ShaSa <usha.sanka@…> wrote:
+
+> Namaste
+
+> Here is something- if anyone wants to learn Sanskrit.
+
+> I do not know if it will be helpful (for this is a Russian group)- but I
+
+> collected these.. so am sending you.
+
+> Here are some places on web where Sanskrit is there- Different approaches,
+
+> different levels.. and different fruits.
+
+> 1. http://chitrapurmath.net/sanskrit/step_by_step_level1.asp
+
+>  from Chitrapur Math
+
+> 2.
+
+> http://slabhyankar.wordpress.com/category/learning-sanskrit-by-fresh-approach/lessons-01-to-10/
+
+> 3. http://sanskrit.jnu.ac.in/elearning/mainpage.html
+
+> 4. http://murthygss.tripod.com/samskrutasopanam_1.htm
+
+> 5. http://sanskritcentral.com/videos
+
+> 6. Google book -
+
+> http://books.google.co.in/books?id=oIHmemh74gwC&pg=PT206&lpg=PT206&dq=%E0%A4%96%E0%A4%BE%E0%A4%A6%E0%A4%A4%E0%A4%BF&source=bl&ots=1j-jcqo9ce&sig=71UFu4zqleRggMnY3fn2VErTwuU&hl=en&sa=X&ei=IWcPUeS6EM_HrQensoCwCA&ved=0CFQQ6AEwCDgK
+
+> 7.
+
+> http://prramamurthy1931.blogspot.in/2012/07/index-familiarize-yourself-with.html
+
+> 8. Learning-Skt- by Upanishat
+
+> http://upanishat.wordpress.com/
+
+> 9. Learning-Skt- by Geeta Slokas
+
+> http://study1geetaa2sanskrit.wordpress.com/
+
+> 10. Vyakaranam
+
+> http://grammarofsanskrit.wordpress.com/
+
+> 11. http://samskrit.wordpress.com/
+
+> 12. http://www.acharya.gen.in:8080/sanskrit/tutor.php
+
+> 13. http://simplesanskrit.wordpress.com/category/lessons-1-to-10/
+
+>
+
+> Research Journals and general magazines-
+
+> magazines-periodicals-in-sanskrit/
+
+> http://sanskritaprasruti.wordpress.com/2012/03/22/magazines-periodicals-in-sanskrit/
+
+>
+
+> From Youtube-
+
+> 1. Learn Sanskrit with subtitles - Story for Children "BookBox.com"
+
+> http://www.youtube.com/watch?v=WfGQcNo-gRA&feature=list_related&playnext=1&list=SP498DD92172740CBE
+
+>
+
+> Hear some Sanskrit- for listening *abhyAsa*-
+
+>
+
+> 2.Shri Kutumba Shastry speech
+
+> http://www.youtube.com/watch?v=lyCBGrYjM1A&feature=related
+
+>
+
+> 3.Gita Jayanti Speech (Sanskrit)
+
+> http://www.youtube.com/watch?v=Rk7SGkf3q64&feature=related
+
+> 4.Sanskrit Vidwat Sadas (Full Speech)
+
+> http://www.youtube.com/watch?v=axDeuR2dF0g&feature=related
+
+> 5.Swamiji Birthday - Sanskrit Speech (Saara Rasa and Marma Jnana)
+
+> http://www.youtube.com/watch?v=qhDD1OAj0J8&feature=related
+
+> 6. Sanskrit and its Glory - in Sanskrit & English (Full Speech)
+
+> http://www.youtube.com/watch?v=Sy0kmw68tnI&feature=related
+
+> 7. Sanskrit Grammar Verbs- (dhatav(ah)) Some Dhatu lessons-
+
+> http://www.youtube.com/watch?v=nzWvWM21Y1Y&feature=results_main&playnext=1&list=PL983223FCE48A66E9
+
+> 8. SamvaadaMalaa - Sanskrit Conversations
+
+> http://www.youtube.com/watch?v=h1_3TnyHmBE
+
+>
+
+>  All the best-:)
+
+> -regards
+
+>
+
+> --
+
+> Чтобы отменить подписку на группу, посвященную санскриту,
+
+> отправьте сообщение по адресу - мы поймем, простим даже:
+
+> Nagari-unsubscribe@…
+
+> ---
+
+> Вы получили это сообщение, поскольку подписаны на группу Общество ревнителей
+
+> санскрита (Sanscrit).
+
+>
+
+> Чтобы отказаться от подписки на эту группу и перестать получать из нее
+
+> сообщения, отправьте электронное письмо на адрес
+
+> nagari+unsubscribe@….
+
+> Настройки подписки и доставки писем:
+
+> https://groups.google.com/groups/opt_out.
+
+>
+
+
+
+Thankyou very much ,
+
+
+
+May everbeneficeint  lord of the gods bless you with path of light
+
+-- 
+
 Hardik
 
 ## 3. Владимир Карицкий — 2013-12-22 06:20:11
@@ -324,12 +400,18 @@ Enjoy learning. :)
 
 ## 14. ShaSa — 2014-06-16 12:37:40
 
-Namaste
-Here is a place for those interested in bhagavad-gItA-
-
-http://sanskritdocuments.org/all_sa/bgwordsSeqD_sa.html||भगवद्गीता शब्दार्थसुची ||The following list of words from Bhagavadgita is arranged sequentially as
-देवनागरी(Transliteration) = meaning.
-
+Namaste
+
+Here is a place for those interested in bhagavad-gItA-
+
+
+
+http://sanskritdocuments.org/all_sa/bgwordsSeqD_sa.html||भगवद्गीता शब्दार्थसुची ||The following list of words from Bhagavadgita is arranged sequentially as
+
+देवनागरी(Transliteration) = meaning.
+
+
+
 Happy learning
 
 ## 15. ShaSa — 2014-06-24 05:30:12
@@ -360,13 +442,18 @@ Thankyou
 
 ## 17. ShaSa — 2015-01-16 10:08:12
 
-Namaste
-https://www.youtube.com/user/OnlineSamskrTutorial/videos
-Learning videos from Samskrita Bharati.
+Namaste
+
+https://www.youtube.com/user/OnlineSamskrTutorial/videos
+
+Learning videos from Samskrita Bharati.
+
 All the best
 
 ## 18. ShaSa — 2015-04-18 11:56:19
 
-http://www.sriaurobindoandmother.com/Content.aspx?ContentURL=/_StaticContent/SriAurobindoAshram/-03%20The%20Ashram/Departments/sanskrit/Text%20%20Books%20%20With%20%20Audio/Speak%20Sanskrit/-00_Contents.htm
-Namaste
+http://www.sriaurobindoandmother.com/Content.aspx?ContentURL=/_StaticContent/SriAurobindoAshram/-03%20The%20Ashram/Departments/sanskrit/Text%20%20Books%20%20With%20%20Audio/Speak%20Sanskrit/-00_Contents.htm
+
+Namaste
+
 Seems to be an interesting place of learners.

@@ -17,24 +17,42 @@ source_url: https://groups.google.com/d/msgid/nagari/afc633f4-c087-4ad5-8ad9-1d6
 
 ## 1. sergey_108 — 2008-07-19 08:53:18
 
-Как лучше переводить vyabhicarati, vyabhicāra в таких
-выражениях, как:
-
-vikāro hi saḥ, vikāraś ca vyabhicarati
-
-tasmāt ghaṭādi-buddhi-viṣayo 'san, vyabhicārāt | na tu sad-buddhi-
-viṣayaḥ, avyabhicārāt
-
-ghaṭe vinaṣṭe ghaṭa-buddhau vyabhicarantyāṃ sad-buddhir api
-vyabhicaratīti cet
-
-Как лучше переводить vyavasāya в таких
-выражениях, как:
-
-vyavasāyātmikā niścaya-svabhāvā ekā eva buddhiḥ
-
-utsṛjyaś ca bāhyāṃ durācāratām antaḥ samyag-vyavasāya-sāmarthyāt
-
+Как лучше переводить vyabhicarati, vyabhicāra в таких
+
+выражениях, как:
+
+
+
+vikāro hi saḥ, vikāraś ca vyabhicarati
+
+
+
+tasmāt ghaṭādi-buddhi-viṣayo 'san, vyabhicārāt | na tu sad-buddhi-
+
+viṣayaḥ, avyabhicārāt
+
+
+
+ghaṭe vinaṣṭe ghaṭa-buddhau vyabhicarantyāṃ sad-buddhir api
+
+vyabhicaratīti cet
+
+
+
+Как лучше переводить vyavasāya в таких
+
+выражениях, как:
+
+
+
+vyavasāyātmikā niścaya-svabhāvā ekā eva buddhiḥ
+
+
+
+utsṛjyaś ca bāhyāṃ durācāratām antaḥ samyag-vyavasāya-sāmarthyāt
+
+
+
 vyavasāyo 'smi vyavasāyinām
 
 ## 2. Marcis — 2008-07-28 06:38:46
@@ -43,17 +61,24 @@ heiliges Sanskrit [Pott 1833: ix] :)
 
 ## 3. sergey_108 — 2008-07-28 13:54:58
 
-Спасибо, но, к сожалению, не знаю немецкий :(
-
-On 28 июл, 05:38, Marcis <gasy...@…> wrote:
+Спасибо, но, к сожалению, не знаю немецкий :(
+
+
+
+On 28 июл, 05:38, Marcis <gasy...@…> wrote:
+
 > heiliges Sanskrit [Pott 1833: ix] :)
 
 ## 4. Worga — 2008-07-29 11:47:24
 
-"heiliges Sanskrit [Pott 1833: ix]"
-- Марик, а где это можно скачать?
-
-On 28 июл, 07:38, Marcis <gasy...@…> wrote:
+"heiliges Sanskrit [Pott 1833: ix]"
+
+- Марик, а где это можно скачать?
+
+
+
+On 28 июл, 07:38, Marcis <gasy...@…> wrote:
+
 > heiliges Sanskrit [Pott 1833: ix] :)
 
 ## 5. Irina Kotik — 2008-08-03 17:34:42

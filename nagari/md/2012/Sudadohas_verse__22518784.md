@@ -17,17 +17,28 @@ source_url: https://groups.google.com/d/msgid/nagari/18850256.5403.1327599138951
 
 ## 1. Dmitri — 2012-01-26 20:32:18
 
-Уважаемые ревнители Санскрита,
-
-Satapatha Brahmana (  7.1.1.14 )  упоминает Sudadohas стих.
-Кто нибудь может привести оригинал на Санскрите?
-
-To our English speaking members:
-
-Satapatha Brahmana (  7.1.1.14 )  makes reference to Sudadohas verse.
-Could you post the original verse itself in Sanskrit.
-
-Thanks,
+Уважаемые ревнители Санскрита,
+
+
+
+Satapatha Brahmana (  7.1.1.14 )  упоминает Sudadohas стих.
+
+Кто нибудь может привести оригинал на Санскрите?
+
+
+
+To our English speaking members:
+
+
+
+Satapatha Brahmana (  7.1.1.14 )  makes reference to Sudadohas verse.
+
+Could you post the original verse itself in Sanskrit.
+
+
+
+Thanks,
+
          Dmitri.
 
 ## 2. narayan prasad — 2012-01-26 21:35:36
@@ -149,15 +160,24 @@ On 27 янв, 06:52, Dmitri <kanc...@…> wrote:
 
 ## 5. Dmitri — 2012-01-27 09:02:50
 
-Awesome, thank you Serge!
-
-Yet another question from the same context:
-
-What is the meaning of the last word in Vajasaneyi-Samhita XII.46.e*
-*         चित॑ स्थ परि॒चित॑ ऊर्ध्व॒चितः॑ श्नयध्वम् ।।
-श्नयध्वम्  ?
-How should it be analyzed? 
-It seems to be a verb form, but I don't know which verb and which form is 
+Awesome, thank you Serge!
+
+
+
+Yet another question from the same context:
+
+
+
+What is the meaning of the last word in Vajasaneyi-Samhita XII.46.e*
+
+*         चित॑ स्थ परि॒चित॑ ऊर्ध्व॒चितः॑ श्नयध्वम् ।।
+
+श्नयध्वम्  ?
+
+How should it be analyzed? 
+
+It seems to be a verb form, but I don't know which verb and which form is 
+
 this.
 
 ## 6. narayan prasad — 2012-01-27 11:34:36
@@ -255,57 +275,108 @@ Thank you Arvind.
 
 ## 11. Dmitri — 2012-01-31 19:49:44
 
-Хотелось бы обсудить грамматику и смысл Sudadohas стиха.
-(I'd like to discuss grammatical structure and meanings of Sudadohas verse)
-
-Вот моя попытка проанализировать его --- натяжки весьма серьёзные.
-Может быть кто знает как его анализировать или имеет идеи получше.
-(Here is my attempt at analyzing it. It has quite questionable assumptions.
-Maybe someone just knows the grammatical structure in question or has a better idea.)
-
-Оригинальный стих как он дан в TITUS:
-(Original verse as it is given in TITUS:)
-
-Vajasaneyi-Samhita XII.55
-
-taa asya suudadohasa.h soma.m "srii.nanti p.r"snaya.h |
-janman devaanaa.m vi"sas tri.svaa rocane diva.h || 
-
-Каждое слово дано в инфинитиве и указана форма его в стихе
-(each word is given unmodified and its form in the verse is specified in parenthesis)
-
-taa (f.pl.nom.)  ayam (m.sing.gen.) suudadohas (adj.m.sing.gen.) 
-soma (m.sing.acc.) "srii (cl.9.P.pl.3rd) p.r"sni (adj.f.pl.nom.) |
-
-janman (sing. m.or n. voc. or loc.?)
-deva (m.pl.gen.) vi"s (f.sing.gen. or abl.?) tri (m.pl.loc.) aa (ind.?) 
-rocana (n.sing.loc.) div (m.sing.gen.)
-
-Первая строка проблем не представляет, а вот вторая имеет как минимум три.
-(First line seems clear, but the second poses to me at least three problems.)
-
-1. janman  --- звательный падеж ? Это не вписывается в текст.  Или же это locative который у существительных на -man может иметь loc.sing. без i в конце (так написано у Macdonell-a в "Vedic Grammar"?
-
-(Is it vocative?  It does not fit well with the rest of the verse. Or is it a locative that, per Macdonell's "Vedic Grammar", might have ending -man ?)
-
-2. aa ---относится к чему, к tri или к vi"s в аблативе или же к глаголу который пропущен но предполагается ?
-
-(What this indeclinable refers to?  To tri ? To vi"s that is in ablative? To an elided verb?)
-
-3. К чему относится tri?
-
-(What tri refers to?)
----------------------------
-
-Два перевода мне попавшихся не совсем соответсвуют грамматике этого стиха.
-(Translations I came across seem to violate grammatical structure of the verse)
-
----------
-The dappled kine who stream with milk prepare his draught of Soma
-Clans in the birthplace of the Gods, in the three luminous realms of heaven.
----------
-At his birth the well-like milking, speckled ones mix the Soma (draught), 
-the clans of the gods in the three spheres of the heavens.' 
+Хотелось бы обсудить грамматику и смысл Sudadohas стиха.
+
+(I'd like to discuss grammatical structure and meanings of Sudadohas verse)
+
+
+
+Вот моя попытка проанализировать его --- натяжки весьма серьёзные.
+
+Может быть кто знает как его анализировать или имеет идеи получше.
+
+(Here is my attempt at analyzing it. It has quite questionable assumptions.
+
+Maybe someone just knows the grammatical structure in question or has a better idea.)
+
+
+
+Оригинальный стих как он дан в TITUS:
+
+(Original verse as it is given in TITUS:)
+
+
+
+Vajasaneyi-Samhita XII.55
+
+
+
+taa asya suudadohasa.h soma.m "srii.nanti p.r"snaya.h |
+
+janman devaanaa.m vi"sas tri.svaa rocane diva.h || 
+
+
+
+Каждое слово дано в инфинитиве и указана форма его в стихе
+
+(each word is given unmodified and its form in the verse is specified in parenthesis)
+
+
+
+taa (f.pl.nom.)  ayam (m.sing.gen.) suudadohas (adj.m.sing.gen.) 
+
+soma (m.sing.acc.) "srii (cl.9.P.pl.3rd) p.r"sni (adj.f.pl.nom.) |
+
+
+
+janman (sing. m.or n. voc. or loc.?)
+
+deva (m.pl.gen.) vi"s (f.sing.gen. or abl.?) tri (m.pl.loc.) aa (ind.?) 
+
+rocana (n.sing.loc.) div (m.sing.gen.)
+
+
+
+Первая строка проблем не представляет, а вот вторая имеет как минимум три.
+
+(First line seems clear, but the second poses to me at least three problems.)
+
+
+
+1. janman  --- звательный падеж ? Это не вписывается в текст.  Или же это locative который у существительных на -man может иметь loc.sing. без i в конце (так написано у Macdonell-a в "Vedic Grammar"?
+
+
+
+(Is it vocative?  It does not fit well with the rest of the verse. Or is it a locative that, per Macdonell's "Vedic Grammar", might have ending -man ?)
+
+
+
+2. aa ---относится к чему, к tri или к vi"s в аблативе или же к глаголу который пропущен но предполагается ?
+
+
+
+(What this indeclinable refers to?  To tri ? To vi"s that is in ablative? To an elided verb?)
+
+
+
+3. К чему относится tri?
+
+
+
+(What tri refers to?)
+
+---------------------------
+
+
+
+Два перевода мне попавшихся не совсем соответсвуют грамматике этого стиха.
+
+(Translations I came across seem to violate grammatical structure of the verse)
+
+
+
+---------
+
+The dappled kine who stream with milk prepare his draught of Soma
+
+Clans in the birthplace of the Gods, in the three luminous realms of heaven.
+
+---------
+
+At his birth the well-like milking, speckled ones mix the Soma (draught), 
+
+the clans of the gods in the three spheres of the heavens.' 
+
 ---------
 
 ## 12. Serge — 2012-02-02 13:51:50
@@ -699,28 +770,52 @@ On 4 фев, 01:40, Serge <renuv...@…> wrote:
 
 ## 20. Dmitri — 2012-02-11 04:31:46
 
-После некоторых поисков и размышлений, грамматический анализ в одной из возможных интепретаций выглядит так:
-
-taa (f.pl.nom.)  ayam (m.sing.gen.) suudadohas (adj.f.pl.gen.)
-soma (m.sing.acc.) "srii (cl.9.P.pl.3rd) p.r"sni (adj.f.pl.nom.) |
-
-janman (m.sing.loc.)
-deva (m.pl.gen.) vi"s (f.sing.abl.) tri (n.pl.loc.) aa (ind.)
-rocana (n.sing.loc.) div (m.sing.gen.) 
-
-
-tri относится к пропущенному слову pavitra --- фильтр в pl.loc.
-
-taa asya понимается здесь как "коровы Агни".
-
-А вот вариант перевода --- всё, чего нет в тексте прямо, заключено в [].
-Here is an attempt at translation. Everything that is not present in the original is in [].
------------------------------------------------------------------
-[Коровы Агни,] разнообразные и молоком обильные, варят Сому [смешивая его с теплым молоком].
-При рождении, из обители богов через три [фильтра Сома направляется] в сияние небес.
-
-[Cows of Agni], manifold and abundant with milk, cook Soma [by mixing it with warm milk]
-At birth, from the dwelling of gods through the three [filters]
-[Soma] goes towards the luminous sphere of the sky.
-
+После некоторых поисков и размышлений, грамматический анализ в одной из возможных интепретаций выглядит так:
+
+
+
+taa (f.pl.nom.)  ayam (m.sing.gen.) suudadohas (adj.f.pl.gen.)
+
+soma (m.sing.acc.) "srii (cl.9.P.pl.3rd) p.r"sni (adj.f.pl.nom.) |
+
+
+
+janman (m.sing.loc.)
+
+deva (m.pl.gen.) vi"s (f.sing.abl.) tri (n.pl.loc.) aa (ind.)
+
+rocana (n.sing.loc.) div (m.sing.gen.) 
+
+
+
+
+
+tri относится к пропущенному слову pavitra --- фильтр в pl.loc.
+
+
+
+taa asya понимается здесь как "коровы Агни".
+
+
+
+А вот вариант перевода --- всё, чего нет в тексте прямо, заключено в [].
+
+Here is an attempt at translation. Everything that is not present in the original is in [].
+
+-----------------------------------------------------------------
+
+[Коровы Агни,] разнообразные и молоком обильные, варят Сому [смешивая его с теплым молоком].
+
+При рождении, из обители богов через три [фильтра Сома направляется] в сияние небес.
+
+
+
+[Cows of Agni], manifold and abundant with milk, cook Soma [by mixing it with warm milk]
+
+At birth, from the dwelling of gods through the three [filters]
+
+[Soma] goes towards the luminous sphere of the sky.
+
+
+
 -----------------------------------------------------------------

@@ -14,14 +14,22 @@ last: 2008-05-09T12:52:04+03:00
 
 ## 1. Max Levin — 2008-05-09 12:52:04
 
-Max Levin
-
------ Исходное сообщение -----
-От: Vasu Srinivasan <vasya10@…>
-Отправлено: 28 апреля 2008 г. 22:35
-Кому: Nagari@…
-Тема: Re: pooja at moscow
-
+Max Levin
+
+
+
+----- Исходное сообщение -----
+
+От: Vasu Srinivasan <vasya10@…>
+
+Отправлено: 28 апреля 2008 г. 22:35
+
+Кому: Nagari@…
+
+Тема: Re: pooja at moscow
+
+
+
 Let me take the liberty to translate acharya-ji's reply to English.
 
 ---

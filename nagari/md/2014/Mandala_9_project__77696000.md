@@ -205,169 +205,308 @@ On Wednesday, 14 May 2014 17:23:10 UTC+4, Dmitri wrote:
 
 ## 7. Dmitri — 2014-09-22 04:30:25
 
-Syntax markup of Mandala 9 is done.
-
-http://www.theasis.net/RgV/RV_index.html
-
-Also added translations of Mandala 9 by Hermann Grassmann and by Jamison 
-and Brereton (2014)
-
-Renou is next.
-
------------------------------------------------------------------------------------------------------------------
-
-On Sunday, May 11, 2014 5:03:49 PM UTC-6, Dmitri wrote:
->
-> В дополнение к собиранию разных переводов Mandala 9 of Rig Veda я задалcя 
-> целью создать syntax markup (части речи, склонения и т.п.)
-> Вот как это пока выглядит:
->
-> http://www.theasis.net/RgV/RV_index.html
->
-> Предложения и замечания как по форме так и по содержанию этих файлов 
-> приветствуются.
+Syntax markup of Mandala 9 is done.
+
+
+
+http://www.theasis.net/RgV/RV_index.html
+
+
+
+Also added translations of Mandala 9 by Hermann Grassmann and by Jamison 
+
+and Brereton (2014)
+
+
+
+Renou is next.
+
+
+
+-----------------------------------------------------------------------------------------------------------------
+
+
+
+On Sunday, May 11, 2014 5:03:49 PM UTC-6, Dmitri wrote:
+
+>
+
+> В дополнение к собиранию разных переводов Mandala 9 of Rig Veda я задалcя 
+
+> целью создать syntax markup (части речи, склонения и т.п.)
+
+> Вот как это пока выглядит:
+
+>
+
+> http://www.theasis.net/RgV/RV_index.html
+
+>
+
+> Предложения и замечания как по форме так и по содержанию этих файлов 
+
+> приветствуются.
+
 >
 
 ## 8. Dmitri — 2014-09-22 04:36:52
 
-Если кому интересно, то полный перевод Grassmann можно скачать тут:
-
-http://www.theasis.net/RgV/RV_Grassmann.zip
-
-On Sunday, September 21, 2014 7:30:27 PM UTC-6, Dmitri wrote:
->
-> Syntax markup of Mandala 9 is done.
->
-> http://www.theasis.net/RgV/RV_index.html
->
-> Also added translations of Mandala 9 by Hermann Grassmann and by Jamison 
-> and Brereton (2014)
->
-> Renou is next.
->
->
-> -----------------------------------------------------------------------------------------------------------------
->
-> On Sunday, May 11, 2014 5:03:49 PM UTC-6, Dmitri wrote:
->>
->> В дополнение к собиранию разных переводов Mandala 9 of Rig Veda я задалcя 
->> целью создать syntax markup (части речи, склонения и т.п.)
->> Вот как это пока выглядит:
->>
->> http://www.theasis.net/RgV/RV_index.html
->>
->> Предложения и замечания как по форме так и по содержанию этих файлов 
->> приветствуются.
->>
+Если кому интересно, то полный перевод Grassmann можно скачать тут:
+
+
+
+http://www.theasis.net/RgV/RV_Grassmann.zip
+
+
+
+On Sunday, September 21, 2014 7:30:27 PM UTC-6, Dmitri wrote:
+
+>
+
+> Syntax markup of Mandala 9 is done.
+
+>
+
+> http://www.theasis.net/RgV/RV_index.html
+
+>
+
+> Also added translations of Mandala 9 by Hermann Grassmann and by Jamison 
+
+> and Brereton (2014)
+
+>
+
+> Renou is next.
+
+>
+
+>
+
+> -----------------------------------------------------------------------------------------------------------------
+
+>
+
+> On Sunday, May 11, 2014 5:03:49 PM UTC-6, Dmitri wrote:
+
+>>
+
+>> В дополнение к собиранию разных переводов Mandala 9 of Rig Veda я задалcя 
+
+>> целью создать syntax markup (части речи, склонения и т.п.)
+
+>> Вот как это пока выглядит:
+
+>>
+
+>> http://www.theasis.net/RgV/RV_index.html
+
+>>
+
+>> Предложения и замечания как по форме так и по содержанию этих файлов 
+
+>> приветствуются.
+
+>>
+
 >
 
 ## 9. Marcis — 2014-09-22 19:38:17
 
-Будем ждать Рену в .txt, спасибо.
-
-On Monday, 22 September 2014 05:30:27 UTC+4, Dmitri wrote:
->
-> Syntax markup of Mandala 9 is done.
->
-> http://www.theasis.net/RgV/RV_index.html
->
-> Also added translations of Mandala 9 by Hermann Grassmann and by Jamison 
-> and Brereton (2014)
->
-> Renou is next.
->
->>
->> Предложения и замечания как по форме так и по содержанию этих файлов 
->> приветствуются.
->>
+Будем ждать Рену в .txt, спасибо.
+
+
+
+On Monday, 22 September 2014 05:30:27 UTC+4, Dmitri wrote:
+
+>
+
+> Syntax markup of Mandala 9 is done.
+
+>
+
+> http://www.theasis.net/RgV/RV_index.html
+
+>
+
+> Also added translations of Mandala 9 by Hermann Grassmann and by Jamison 
+
+> and Brereton (2014)
+
+>
+
+> Renou is next.
+
+>
+
+>>
+
+>> Предложения и замечания как по форме так и по содержанию этих файлов 
+
+>> приветствуются.
+
+>>
+
 >
 
 ## 10. Dmitri — 2014-10-22 19:20:41 · 📎 1
 
-Первый том (VIII) о 9 мандале -- 9.1--9.67
-PDF of EVP-VIII  with OCR is in here (~7.5Mb)
-
-http://www.theasis.net/RgV/RenouVIII.pdf
-
-
-On Monday, September 22, 2014 10:38:17 AM UTC-6, Marcis wrote:
->
-> Будем ждать Рену в .txt, спасибо.
->
-> On Monday, 22 September 2014 05:30:27 UTC+4, Dmitri wrote:
->>
->> Syntax markup of Mandala 9 is done.
->>
->> http://www.theasis.net/RgV/RV_index.html
->>
->> Also added translations of Mandala 9 by Hermann Grassmann and by Jamison 
->> and Brereton (2014)
->>
->> Renou is next.
->>
->>>
->>> Предложения и замечания как по форме так и по содержанию этих файлов 
->>> приветствуются.
->>>
+Первый том (VIII) о 9 мандале -- 9.1--9.67
+
+PDF of EVP-VIII  with OCR is in here (~7.5Mb)
+
+
+
+http://www.theasis.net/RgV/RenouVIII.pdf
+
+
+
+
+
+On Monday, September 22, 2014 10:38:17 AM UTC-6, Marcis wrote:
+
+>
+
+> Будем ждать Рену в .txt, спасибо.
+
+>
+
+> On Monday, 22 September 2014 05:30:27 UTC+4, Dmitri wrote:
+
+>>
+
+>> Syntax markup of Mandala 9 is done.
+
+>>
+
+>> http://www.theasis.net/RgV/RV_index.html
+
+>>
+
+>> Also added translations of Mandala 9 by Hermann Grassmann and by Jamison 
+
+>> and Brereton (2014)
+
+>>
+
+>> Renou is next.
+
+>>
+
+>>>
+
+>>> Предложения и замечания как по форме так и по содержанию этих файлов 
+
+>>> приветствуются.
+
+>>>
+
 >>
 
 ## 11. Marcis — 2014-10-22 22:43:17
 
-5. sahasrin cf. 12,9 ; ép. formulaire avec rayi ou (pl.) isaḥ ou
-vájān; sur la formation, Debrunner Suffixe pp. 331, 334./ Ici á
-est factitivant et rejaillit sur 4b./ devá adj. (devé adhvaré) 7.104,18 ;
-(devéna mánasā) 1.91,23; (devâya jânmane) 1.20,1 9.108,8, donc
-d’emploi exceptionnel (un peu moins rare au fém.) et sans doute
-secondaire.
-
-И что, прямо без грязи и примесей? Здорово. Но все же продолжаем ждать 
-обновление тулзы.
-
->
+5. sahasrin cf. 12,9 ; ép. formulaire avec rayi ou (pl.) isaḥ ou
+
+vájān; sur la formation, Debrunner Suffixe pp. 331, 334./ Ici á
+
+est factitivant et rejaillit sur 4b./ devá adj. (devé adhvaré) 7.104,18 ;
+
+(devéna mánasā) 1.91,23; (devâya jânmane) 1.20,1 9.108,8, donc
+
+d’emploi exceptionnel (un peu moins rare au fém.) et sans doute
+
+secondaire.
+
+
+
+И что, прямо без грязи и примесей? Здорово. Но все же продолжаем ждать 
+
+обновление тулзы.
+
+
+
+>
+
 >>>>
 
 ## 12. Dmitri — 2014-10-23 05:14:02
 
-грязи там много --- в основном в diacritics в словах на Санскрите
-
-On Wednesday, October 22, 2014 1:43:17 PM UTC-6, Marcis wrote:
->
-> 5. sahasrin cf. 12,9 ; ép. formulaire avec rayi ou (pl.) isaḥ ou
-> vájān; sur la formation, Debrunner Suffixe pp. 331, 334./ Ici á
-> est factitivant et rejaillit sur 4b./ devá adj. (devé adhvaré) 7.104,18 ;
-> (devéna mánasā) 1.91,23; (devâya jânmane) 1.20,1 9.108,8, donc
-> d’emploi exceptionnel (un peu moins rare au fém.) et sans doute
-> secondaire.
->
-> И что, прямо без грязи и примесей? Здорово. Но все же продолжаем ждать 
-> обновление тулзы.
->
->>
+грязи там много --- в основном в diacritics в словах на Санскрите
+
+
+
+On Wednesday, October 22, 2014 1:43:17 PM UTC-6, Marcis wrote:
+
+>
+
+> 5. sahasrin cf. 12,9 ; ép. formulaire avec rayi ou (pl.) isaḥ ou
+
+> vájān; sur la formation, Debrunner Suffixe pp. 331, 334./ Ici á
+
+> est factitivant et rejaillit sur 4b./ devá adj. (devé adhvaré) 7.104,18 ;
+
+> (devéna mánasā) 1.91,23; (devâya jânmane) 1.20,1 9.108,8, donc
+
+> d’emploi exceptionnel (un peu moins rare au fém.) et sans doute
+
+> secondaire.
+
+>
+
+> И что, прямо без грязи и примесей? Здорово. Но все же продолжаем ждать 
+
+> обновление тулзы.
+
+>
+
+>>
+
 >>>>>
 
 ## 13. Dmitri — 2014-10-24 06:31:10
 
-On Wednesday, October 22, 2014 1:43:17 PM UTC-6, Marcis wrote:
->
-> но все же продолжаем ждать обновление тулзы.
->>
->>
->>>>>
-Здесь
-https://www.dropbox.com/s/dztemaou2ulgxfk/RV_trans.jar?dl=0 
-
-или здесь
-
-http://www.theasis.net/RgV/RV_trans.jar
-
-Эта версия позволяет искать среди результатов предыдущего поиска
-Добавлены
-
-H.Grassman -- all 10 mandalas
-Jamison & Brereton  9th mandala only
-Renou verses 1-67 (EVP VIII) of 9th mandala only.
-Renou verses 68--114 (EVP IX) of 9th mandala are forthcoming.
-
+On Wednesday, October 22, 2014 1:43:17 PM UTC-6, Marcis wrote:
+
+>
+
+> но все же продолжаем ждать обновление тулзы.
+
+>>
+
+>>
+
+>>>>>
+
+Здесь
+
+https://www.dropbox.com/s/dztemaou2ulgxfk/RV_trans.jar?dl=0 
+
+
+
+или здесь
+
+
+
+http://www.theasis.net/RgV/RV_trans.jar
+
+
+
+Эта версия позволяет искать среди результатов предыдущего поиска
+
+Добавлены
+
+
+
+H.Grassman -- all 10 mandalas
+
+Jamison & Brereton  9th mandala only
+
+Renou verses 1-67 (EVP VIII) of 9th mandala only.
+
+Renou verses 68--114 (EVP IX) of 9th mandala are forthcoming.
+
+
+
 Надеюсь будет полезной сия app.
 
 ## 14. Marcis — 2014-10-24 17:07:13
@@ -472,64 +611,120 @@ On Friday, October 24, 2014 8:07:14 AM UTC-6, Marcis wrote:
 
 ## 16. Dmitri — 2014-11-11 20:15:02
 
-Оба тома готовы
-EVP-VIII, EVP IX
-
-PDF-A of scans and plain txt-s.
-http://www.theasis.net/RgV/Renou_EVP_8_9.zip
-
-
-
-On Wednesday, October 22, 2014 10:20:41 AM UTC-6, Dmitri wrote:
->
-> Первый том (VIII) о 9 мандале -- 9.1--9.67
-> PDF of EVP-VIII  with OCR is in here (~7.5Mb)
->
-> http://www.theasis.net/RgV/RenouVIII.pdf
->
->
-> On Monday, September 22, 2014 10:38:17 AM UTC-6, Marcis wrote:
->>
->> Будем ждать Рену в .txt, спасибо.
->>
->> On Monday, 22 September 2014 05:30:27 UTC+4, Dmitri wrote:
->>>
->>> Syntax markup of Mandala 9 is done.
->>>
->>> http://www.theasis.net/RgV/RV_index.html
->>>
->>> Also added translations of Mandala 9 by Hermann Grassmann and by Jamison 
->>> and Brereton (2014)
->>>
->>> Renou is next.
->>>
->>>>
->>>> Предложения и замечания как по форме так и по содержанию этих файлов 
->>>> приветствуются.
->>>>
+Оба тома готовы
+
+EVP-VIII, EVP IX
+
+
+
+PDF-A of scans and plain txt-s.
+
+http://www.theasis.net/RgV/Renou_EVP_8_9.zip
+
+
+
+
+
+
+
+On Wednesday, October 22, 2014 10:20:41 AM UTC-6, Dmitri wrote:
+
+>
+
+> Первый том (VIII) о 9 мандале -- 9.1--9.67
+
+> PDF of EVP-VIII  with OCR is in here (~7.5Mb)
+
+>
+
+> http://www.theasis.net/RgV/RenouVIII.pdf
+
+>
+
+>
+
+> On Monday, September 22, 2014 10:38:17 AM UTC-6, Marcis wrote:
+
+>>
+
+>> Будем ждать Рену в .txt, спасибо.
+
+>>
+
+>> On Monday, 22 September 2014 05:30:27 UTC+4, Dmitri wrote:
+
+>>>
+
+>>> Syntax markup of Mandala 9 is done.
+
+>>>
+
+>>> http://www.theasis.net/RgV/RV_index.html
+
+>>>
+
+>>> Also added translations of Mandala 9 by Hermann Grassmann and by Jamison 
+
+>>> and Brereton (2014)
+
+>>>
+
+>>> Renou is next.
+
+>>>
+
+>>>>
+
+>>>> Предложения и замечания как по форме так и по содержанию этих файлов 
+
+>>>> приветствуются.
+
+>>>>
+
 >>>
 
 ## 17. Marcis — 2014-11-12 03:17:03
 
-Отличное качество сканов, спасибо. А всего Вы их сколько отсканировали. 
-Есть еще, или это оно и есть?
-
-On Tuesday, 11 November 2014 20:15:02 UTC+3, Dmitri wrote:
->
-> Оба тома готовы
-> EVP-VIII, EVP IX
->
-> PDF-A of scans and plain txt-s.
-> http://www.theasis.net/RgV/Renou_EVP_8_9.zip
->
->
->
-> On Wednesday, October 22, 2014 10:20:41 AM UTC-6, Dmitri wrote:
->>
->> Первый том (VIII) о 9 мандале -- 9.1--9.67
->> PDF of EVP-VIII  with OCR is in here (~7.5Mb)
->>
->> http://www.theasis.net/RgV/RenouVIII.pdf
->>
->>>
+Отличное качество сканов, спасибо. А всего Вы их сколько отсканировали. 
+
+Есть еще, или это оно и есть?
+
+
+
+On Tuesday, 11 November 2014 20:15:02 UTC+3, Dmitri wrote:
+
+>
+
+> Оба тома готовы
+
+> EVP-VIII, EVP IX
+
+>
+
+> PDF-A of scans and plain txt-s.
+
+> http://www.theasis.net/RgV/Renou_EVP_8_9.zip
+
+>
+
+>
+
+>
+
+> On Wednesday, October 22, 2014 10:20:41 AM UTC-6, Dmitri wrote:
+
+>>
+
+>> Первый том (VIII) о 9 мандале -- 9.1--9.67
+
+>> PDF of EVP-VIII  with OCR is in here (~7.5Mb)
+
+>>
+
+>> http://www.theasis.net/RgV/RenouVIII.pdf
+
+>>
+
+>>>
+
 >>>>>

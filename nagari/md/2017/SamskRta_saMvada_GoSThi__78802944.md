@@ -17,21 +17,38 @@ source_url: https://groups.google.com/d/msgid/nagari/abe55289-7a73-441c-a7d5-6ce
 
 ## 1. Trivikram das — 2017-02-17 21:34:28
 
-ну в общем такие дела, благодаря ютубу, становится возможным 
-поприсутствовать на самых настоящих диспутах санскритских пандитов!!
-Вот тут избранное, все  самое интересное, и все с хорошим качеством. В 
-основном на всех видео дебаты школ майавады(адвайты) и двайты (вишишта 
-двайта и двайты) .
-https://www.youtube.com/watch?v=vbeDvGpHu7w
-https://www.youtube.com/watch?v=X-tAtIZOq7I&t=2s
-https://www.youtube.com/watch?v=GRUAn0OeXEw&t=1s
-https://www.youtube.com/watch?v=PVgjBuLWfa0&t=3s
-
-https://www.youtube.com/watch?v=DIfeckiMPHU
-https://www.youtube.com/watch?v=6wk1XRv1MCg&t=778s
-
-https://www.youtube.com/watch?v=3hmXqo5KJgI
-https://www.youtube.com/watch?v=-Vhd4AsFUew
-https://www.youtube.com/watch?v=YRbxyItpQ0E&t=46s
-
+ну в общем такие дела, благодаря ютубу, становится возможным 
+
+поприсутствовать на самых настоящих диспутах санскритских пандитов!!
+
+Вот тут избранное, все  самое интересное, и все с хорошим качеством. В 
+
+основном на всех видео дебаты школ майавады(адвайты) и двайты (вишишта 
+
+двайта и двайты) .
+
+https://www.youtube.com/watch?v=vbeDvGpHu7w
+
+https://www.youtube.com/watch?v=X-tAtIZOq7I&t=2s
+
+https://www.youtube.com/watch?v=GRUAn0OeXEw&t=1s
+
+https://www.youtube.com/watch?v=PVgjBuLWfa0&t=3s
+
+
+
+https://www.youtube.com/watch?v=DIfeckiMPHU
+
+https://www.youtube.com/watch?v=6wk1XRv1MCg&t=778s
+
+
+
+https://www.youtube.com/watch?v=3hmXqo5KJgI
+
+https://www.youtube.com/watch?v=-Vhd4AsFUew
+
+https://www.youtube.com/watch?v=YRbxyItpQ0E&t=46s
+
+
+
 https://www.youtube.com/watch?v=OKEnMGcIN9c
