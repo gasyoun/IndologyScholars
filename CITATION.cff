@@ -9,7 +9,7 @@ type: dataset
 url: "https://gasyoun.github.io/IndologyScholars/"
 repository-code: "https://github.com/gasyoun/IndologyScholars"
 date-released: "2026-08-06"
-version: "1.6.0"
+version: "reserve-v1.6.0"
 license: "CC-BY-4.0"
 abstract: "A curated relational archive of Zograf Readings and Roerich Readings conference programs, scholars, presentations, affiliations, cities, and thematic classifications."
 keywords:
