@@ -6,6 +6,26 @@
 
 ## [Unreleased]
 ### Fixed
+- **Гейтированный H1899-слой курации теперь игнорируется git'ом, а не «памятью
+  сессии»** (Opus 5 1M `claude-opus-5[1m]`,
+  [#180](https://github.com/gasyoun/IndologyScholars/issues/180)). Четыре
+  артефакта — `curation/community_person_links.csv`,
+  `curation/community_quotes.csv`, `article/comparison_snapshots/` (80 файлов,
+  5,8 МБ) и `analytics_output/community_lenses/reports/identity_quote_evidence.md`
+  — несут явную пометку о запрете экспорта в собственной схеме
+  (`rights_review_status = non_exportable/pending_review` без approver/scope/
+  permitted-use; `exportable = no` во всех 13 строках person-links) и называют
+  живых людей по имени вместе с маскированным local-part аккаунта из закрытой
+  рассылки. При этом `git check-ignore` не находил ни одного из этих путей: они
+  были защищены только тем, что их никто не добавил в индекс. Репозиторий
+  ПУБЛИЧНЫЙ, а публикация необратима (блобы остаются в истории, форках и
+  зеркалах), поэтому обычный `git add -A` в worktree `IndologyScholars-h1899-34220`
+  опубликовал бы всё четыре. Тот же класс, что и
+  [#169](https://github.com/gasyoun/IndologyScholars/issues/169): статус
+  local-only существовал в прозе (строка реестра H1899, фраза внутри самого
+  отчёта), но нигде, куда смотрит инструментарий. Ни один из путей не был
+  отслеживаемым, так что правила действуют сразу. Продвигать наверх — только
+  через явное согласование прав (approver + scope + permitted use).
 - **Renormalized 1,311 CR-carrying blobs to LF** (H2315, Sonnet 5
   `claude-sonnet-5`), closing the org EOL census violation
   ([Uprava/tools/eol_census.py](https://github.com/gasyoun/Uprava/blob/main/tools/eol_census.py))
