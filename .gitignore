@@ -115,3 +115,16 @@ vk-ors/data/attachments_raw.json
 bvp/data/
 bvp/**/__pycache__/
 
+
+# ---- H1899 gated curation layer (issue #180) ----
+# These carry an explicit non-export designation in their own schema:
+# rights_review_status = non_exportable/pending_review with no approver, scope
+# or permitted-use recorded, and exportable = no on every person-link row. They
+# name living people (masked account local-parts) from a closed mailing list.
+# This repo is PUBLIC and a push is irreversible, so the designation is enforced
+# here rather than left to whoever remembers not to type `git add -A`. Promote
+# only through an explicit rights approval (approver + scope + permitted use).
+curation/community_person_links.csv
+curation/community_quotes.csv
+article/comparison_snapshots/
+analytics_output/community_lenses/reports/identity_quote_evidence.md
