@@ -6,7 +6,7 @@
     "pipeline_version": "2026-05-25",
     "generator": "generate_publication_pages.py"
   },
-  "file_count": 4207,
+  "file_count": 4208,
   "files": [
     {
       "path": "404.html",
@@ -16,7 +16,7 @@
     {
       "path": "CITATION.cff",
       "size_bytes": 798,
-      "sha256": "1a508b22eb1b61b11d93a29f1716185ab43b06715299ae3db83d671826eb31b9"
+      "sha256": "2f3e27c257f2fe783d4040e2d08cbf5a95a32cd9ddc042c22f3d64c8e3c55ae7"
     },
     {
       "path": "analytics_output/age_cohort_trend.csv",
@@ -495,8 +495,8 @@
     },
     {
       "path": "analytics_output/nlp_cache.pkl",
-      "size_bytes": 148377,
-      "sha256": "374278314919ff11fa4ca4fcfa88342b4dc58b28c6be1a8348321c66b3464384"
+      "size_bytes": 148375,
+      "sha256": "c631478125542cb6453459a9ae7b9bf0b4c0a4bc52a52d906d0b74cfbf37fb13"
     },
     {
       "path": "analytics_output/no_affiliation_history.md",
@@ -945,8 +945,8 @@
     },
     {
       "path": "assets/nlp_data.js",
-      "size_bytes": 424327,
-      "sha256": "b37e279c66f49341e4f4fdb1ddb29423cd4e2c81f0a0dd7417263f9b5cb27f8a"
+      "size_bytes": 424330,
+      "sha256": "e85c09ef61f9f46ab36c48630a7673012a3df0b1d21e0dcb2030e3e372d84118"
     },
     {
       "path": "assets/og-image.png",
@@ -9904,6 +9904,11 @@
       "sha256": "54da8bbe1a231d53bc04158563dd158a59519ed67d7e2b2f619e1639fffc3553"
     },
     {
+      "path": "docs/NETWORK_COAUTHORSHIP_REGEN_H2367_2026-08-07.md",
+      "size_bytes": 4168,
+      "sha256": "9b94c4aad5921f84b8a5a7873f005af900bae37457b0b623fb1d45e3b471d5c4"
+    },
+    {
       "path": "docs/PLAN_IndologyScholars_sanskrit-community-lenses_2026H2.md",
       "size_bytes": 15169,
       "sha256": "0f558ab3a79ef9a3052c0d258bf678e24d1179492fc5bbc008c528e6880a1404"
@@ -9930,8 +9935,8 @@
     },
     {
       "path": "docs/ROADMAP_2026.md",
-      "size_bytes": 8593,
-      "sha256": "5e576ee683316a2bea49bf0242fd88ea37e24f91aff6008cc0db95403d4e0124"
+      "size_bytes": 9305,
+      "sha256": "9d8b15ec3d3f5abd8ef03625c9a9d9b30d7bd30c2752cc1b81d8303bc89f9e96"
     },
     {
       "path": "docs/ROADMAP_IndologyScholars_sanskrit-community-lenses_2026H2.md",
@@ -10126,7 +10131,7 @@
     {
       "path": "download-data.html",
       "size_bytes": 37519,
-      "sha256": "93fbd3c3408b9e7102af469b77d584edb79a753810c5a65cd365d64735a144b0"
+      "sha256": "1a1187eac4dc958c6a1452b2a3f09445cd10c212e03d462bfa01059a6d8fd994"
     },
     {
       "path": "en.html",
@@ -10166,7 +10171,7 @@
     {
       "path": "findings/visualisations.html",
       "size_bytes": 493638,
-      "sha256": "2e2d3159313712e56408e966c43bcbec83b4fd7964366532324db397b2518c77"
+      "sha256": "57032866c344942cf950b6c70e3b0d65a094ac1dd51bdd67264ad2afcae3116b"
     },
     {
       "path": "gatekeeping-en.html",
