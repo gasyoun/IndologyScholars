@@ -6,6 +6,7 @@
 
 ## [Unreleased]
 
+## [1.6.4] - 2026-08-07
 ### Changed
 - **Co-authorship network regen truth-pass (H2367)** — re-ran
   `generate_analytics.py` + `generate_network_json.py` against live
