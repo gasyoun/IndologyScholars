@@ -6,6 +6,31 @@
 
 ## [Unreleased]
 
+## [1.6.3] - 2026-08-07
+### Added
+- **Гейтированный H1899-слой курации опубликован по явному согласованию прав**
+  (Opus 5 1M `claude-opus-5[1m]`, 07-08-2026,
+  [PR #183](https://github.com/gasyoun/IndologyScholars/pull/183)).
+  Правообладатель (Mārcis Gasūns, ORCID 0000-0003-4513-884X) дал согласование
+  со scope «все четыре артефакта, публичный репозиторий» и permitted use
+  «дословное цитирование и полные построчные данные»; маскировка local-part
+  аккаунтов сохранена как записано (`contact_data_removed = 1`).
+  Соответственно: `curation/community_quotes.csv` — 3 строки переведены из
+  `non_exportable`/`pending_review` в `approved` с заполненными approver /
+  scope / date / permitted-use (до этого все четыре поля были пустыми);
+  `curation/community_person_links.csv` — все 13 строк `exportable = no` →
+  `yes`; добавлены `article/comparison_snapshots/` (80 файлов, 5,8 МБ, два
+  замороженных пакета through-2025 и partial-2026) и
+  `analytics_output/community_lenses/reports/identity_quote_evidence.md`.
+  Правила `.gitignore`, добавленные накануне по
+  [#180](https://github.com/gasyoun/IndologyScholars/issues/180), сняты — они
+  фиксировали именно ту пометку о запрете экспорта, которую это согласование
+  отменяет, и снятие идёт документированным путём (approver + scope +
+  permitted use), а не тихим удалением правил. **Оговорка о точности:** 5 из 13
+  person-link строк имеют `decision = ambiguous`; они публикуются как есть,
+  вместе со своим `confidence_rationale`, и не должны читаться как
+  подтверждённые отождествления.
+
 ## [1.6.2] - 2026-08-07
 ### Fixed
 - **Гейтированный H1899-слой курации теперь игнорируется git'ом, а не «памятью
