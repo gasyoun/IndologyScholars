@@ -6,7 +6,7 @@
     "pipeline_version": "2026-05-25",
     "generator": "generate_publication_pages.py"
   },
-  "file_count": 4208,
+  "file_count": 4214,
   "files": [
     {
       "path": "404.html",
@@ -16,7 +16,7 @@
     {
       "path": "CITATION.cff",
       "size_bytes": 798,
-      "sha256": "7e5c267f4891981d772964d898eb410222f20204f5120476bcc87653f85d1f3a"
+      "sha256": "115d33f9f680a141add8b7ece273e0a852b74fa0beb20de0e603c018a5e43f05"
     },
     {
       "path": "analytics_output/age_cohort_trend.csv",
@@ -469,6 +469,26 @@
       "sha256": "42dc4d706425bd80f1ac94dc7c44828e494f25841c896c5546fc9faae1faf5e8"
     },
     {
+      "path": "analytics_output/network_centrality_collaboration.csv",
+      "size_bytes": 27485,
+      "sha256": "4a43330fac1323630147adf3e37733f47e4232e47c7b4cc1a18714978a76c889"
+    },
+    {
+      "path": "analytics_output/network_centrality_event.csv",
+      "size_bytes": 26434,
+      "sha256": "2cde92c1a4c3c0a9757877ecb9a0b35128c85b4929b8aa16f0d2bfa2a3f33aaa"
+    },
+    {
+      "path": "analytics_output/network_centrality_session.csv",
+      "size_bytes": 26771,
+      "sha256": "d4725fb34a028baa2ae087dbaef3c62a5ecdf961964e897476ca252e4d62955c"
+    },
+    {
+      "path": "analytics_output/network_centrality_summary.json",
+      "size_bytes": 4536,
+      "sha256": "549590fb1d095e5a7faa6ec34b6d40e9a08f19191f2aed78ab22d9845131b3b4"
+    },
+    {
       "path": "analytics_output/network_data.json",
       "size_bytes": 1763480,
       "sha256": "b4090ce48ea908b26d264f5ab233799b912241d5c3a84dc44667e3030eee6caf"
@@ -489,14 +509,19 @@
       "sha256": "d10dce3b329c7da183d4db2df6b86f1cb23e790db234182b26440d860e23e728"
     },
     {
+      "path": "analytics_output/network_series_bridges.csv",
+      "size_bytes": 4061,
+      "sha256": "4982f8a59ff5f2e1ad9a7e0e51b461b49ee0ae6ea42d5d08eda18eb5835c6f62"
+    },
+    {
       "path": "analytics_output/newcomer_rate_by_year.csv",
       "size_bytes": 899,
       "sha256": "d397286d95c89815b154d7d70b8af35e1ec7f88ec2d4abb1a949689cf1823d59"
     },
     {
       "path": "analytics_output/nlp_cache.pkl",
-      "size_bytes": 148377,
-      "sha256": "374278314919ff11fa4ca4fcfa88342b4dc58b28c6be1a8348321c66b3464384"
+      "size_bytes": 148375,
+      "sha256": "c631478125542cb6453459a9ae7b9bf0b4c0a4bc52a52d906d0b74cfbf37fb13"
     },
     {
       "path": "analytics_output/no_affiliation_history.md",
@@ -945,8 +970,8 @@
     },
     {
       "path": "assets/nlp_data.js",
-      "size_bytes": 424327,
-      "sha256": "b37e279c66f49341e4f4fdb1ddb29423cd4e2c81f0a0dd7417263f9b5cb27f8a"
+      "size_bytes": 424330,
+      "sha256": "e85c09ef61f9f46ab36c48630a7673012a3df0b1d21e0dcb2030e3e372d84118"
     },
     {
       "path": "assets/og-image.png",
@@ -9904,6 +9929,11 @@
       "sha256": "54da8bbe1a231d53bc04158563dd158a59519ed67d7e2b2f619e1639fffc3553"
     },
     {
+      "path": "docs/NETWORK_CENTRALITY_GATEKEEPING_H2411_2026-08-07.md",
+      "size_bytes": 3238,
+      "sha256": "3db74e47149182057d3276b0584ec22f4da9b048fcbbe70b208247f2abfd1e47"
+    },
+    {
       "path": "docs/NETWORK_COAUTHORSHIP_REGEN_H2367_2026-08-07.md",
       "size_bytes": 4168,
       "sha256": "9b94c4aad5921f84b8a5a7873f005af900bae37457b0b623fb1d45e3b471d5c4"
@@ -9935,8 +9965,8 @@
     },
     {
       "path": "docs/ROADMAP_2026.md",
-      "size_bytes": 9305,
-      "sha256": "9d8b15ec3d3f5abd8ef03625c9a9d9b30d7bd30c2752cc1b81d8303bc89f9e96"
+      "size_bytes": 9694,
+      "sha256": "4face8fc9cf92a01de2efb46f8a773ca94ea92cc6a420e2fea3222b958ed877c"
     },
     {
       "path": "docs/ROADMAP_IndologyScholars_sanskrit-community-lenses_2026H2.md",
@@ -10131,7 +10161,7 @@
     {
       "path": "download-data.html",
       "size_bytes": 37519,
-      "sha256": "1a1187eac4dc958c6a1452b2a3f09445cd10c212e03d462bfa01059a6d8fd994"
+      "sha256": "03511e09a2eeb39fa63390dc006c7d08fa570ef6bfff88f2361241ba93a41afc"
     },
     {
       "path": "en.html",
@@ -10171,17 +10201,17 @@
     {
       "path": "findings/visualisations.html",
       "size_bytes": 493638,
-      "sha256": "8f75988e550e5e79dc68bb1a9bf6f25233e35a929d083c375c7e615b06086582"
+      "sha256": "ca0cf1a81135110b1697a3e6e902e4365f978ad95003a2966535715994b14ec7"
     },
     {
       "path": "gatekeeping-en.html",
-      "size_bytes": 17352,
-      "sha256": "3cc783ae1489676da1b7015f61901225836c74e50c58d78375c50c9b5f31c472"
+      "size_bytes": 22814,
+      "sha256": "569ff3bbbbf6796915bc1d26fee1d389c6968a3f1213caca7321e6852a70290a"
     },
     {
       "path": "gatekeeping.html",
-      "size_bytes": 25906,
-      "sha256": "2191c5b15e6ec6cb6bede654b6b7bbb65673178435817da7fa7bcf9828bc53ec"
+      "size_bytes": 31867,
+      "sha256": "f00657b72b0485032544c6f51dedba9c1478473225d9c130367397303d982ae6"
     },
     {
       "path": "generations/index.html",
