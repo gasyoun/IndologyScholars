@@ -6,6 +6,17 @@
 
 ## [Unreleased]
 
+### Changed
+- **Co-authorship network regen truth-pass (H2367)** — re-ran
+  `generate_analytics.py` + `generate_network_json.py` against live
+  `conferences.db`; export counts are **344** nodes / **8095** CSV edges /
+  **8115** JSON edges (incl. 20 genealogy), with **26** true co-presentation
+  edges. Five high-weight co-author pairs re-checked against the DB (all
+  confirmed). Byte-identical to the current auto-rebuild payload; durable
+  recipe + audit in
+  [`docs/NETWORK_COAUTHORSHIP_REGEN_H2367_2026-08-07.md`](docs/NETWORK_COAUTHORSHIP_REGEN_H2367_2026-08-07.md);
+  Phase-2 roadmap checkbox ticked. Grok 4.5 (`grok-4.5`).
+
 ## [1.6.3] - 2026-08-07
 ### Added
 - **Гейтированный H1899-слой курации опубликован по явному согласованию прав**
