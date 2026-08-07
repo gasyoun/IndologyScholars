@@ -6,7 +6,7 @@
     "pipeline_version": "2026-05-25",
     "generator": "generate_publication_pages.py"
   },
-  "file_count": 4204,
+  "file_count": 4207,
   "files": [
     {
       "path": "404.html",
@@ -157,6 +157,11 @@
       "path": "analytics_output/community_lenses/reports/conferences_coverage.md",
       "size_bytes": 1238,
       "sha256": "b7c52f30d39ce0e21838deac64e2e3c4b0591f9c2d4fa3dcc8e3c9bcafbc8a7f"
+    },
+    {
+      "path": "analytics_output/community_lenses/reports/identity_quote_evidence.md",
+      "size_bytes": 6407,
+      "sha256": "49a33c87957fc74f8beb894203e4f995a79cc7d70fb8fc1a5ff1cba383c53981"
     },
     {
       "path": "analytics_output/community_lenses/reports/indology_l_coverage.md",
@@ -9759,6 +9764,16 @@
       "sha256": "ded15b0aa68f4374457d867fd503ca1212c40d3c81bfd149317dc4087d219917"
     },
     {
+      "path": "curation/community_person_links.csv",
+      "size_bytes": 4674,
+      "sha256": "f40c4d55f12fc1a79f4043d8ec3cf3281e6c5e29916007443938e8e00ffa2743"
+    },
+    {
+      "path": "curation/community_quotes.csv",
+      "size_bytes": 3504,
+      "sha256": "37e9c5865fe2f252f6403af5c185a9a95b38968b3f63a88e473406d1b63a37f2"
+    },
+    {
       "path": "curation/disciplines.csv",
       "size_bytes": 4229,
       "sha256": "c4f8396643f744f7af07c911abad4a0fdd9be8ef85f9deff73d48be65a79fad8"
@@ -10111,7 +10126,7 @@
     {
       "path": "download-data.html",
       "size_bytes": 37519,
-      "sha256": "2b5e26b7bae156dd16ed45830485334ddce44193629147996b4e49dcba612696"
+      "sha256": "93fbd3c3408b9e7102af469b77d584edb79a753810c5a65cd365d64735a144b0"
     },
     {
       "path": "en.html",
@@ -10151,7 +10166,7 @@
     {
       "path": "findings/visualisations.html",
       "size_bytes": 493638,
-      "sha256": "81987eeca27ae6e00df8ca1c4fff3de6540744846f0d9b081bdf010c0601e28a"
+      "sha256": "9f46cbac7ad1fe222149ca4d871c28f640541496be58d7e8e077f203a3d3b796"
     },
     {
       "path": "gatekeeping-en.html",
