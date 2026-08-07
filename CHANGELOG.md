@@ -6,6 +6,7 @@
 
 ## [Unreleased]
 
+## [1.6.5] - 2026-08-07
 ### Added
 - **Gatekeeping multi-layer centrality (H2411)** — `tools/compute_network_centrality.py`
   writes collaboration / session / event betweenness+degree CSVs,
