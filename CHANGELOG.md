@@ -6,6 +6,14 @@
 
 ## [Unreleased]
 
+### Added
+- **Gatekeeping multi-layer centrality (H2411)** — `tools/compute_network_centrality.py`
+  writes collaboration / session / event betweenness+degree CSVs,
+  `network_series_bridges.csv` (41 Zograf↔Roerich dual-series people), and
+  `network_centrality_summary.json`; live tables on `gatekeeping.html` + EN.
+  Report: `docs/NETWORK_CENTRALITY_GATEKEEPING_H2411_2026-08-07.md`. Phase-2
+  gatekeeping checkbox ticked. Grok 4.5 (`grok-4.5`).
+
 ## [1.6.4] - 2026-08-07
 ### Changed
 - **Co-authorship network regen truth-pass (H2367)** — re-ran

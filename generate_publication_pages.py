@@ -1,6 +1,7 @@
 import datetime as dt
 import csv
 import hashlib
+import html
 import json
 import re
 import sqlite3
@@ -12932,8 +12933,95 @@ def generate_sociology_page():
     )
 
 
+def _gatekeeping_centrality_block(lang="ru"):
+    """Live tables from tools/compute_network_centrality.py (H2411)."""
+    summary_path = Path("analytics_output/network_centrality_summary.json")
+    summary = {}
+    if summary_path.exists():
+        try:
+            summary = json.loads(summary_path.read_text(encoding="utf-8"))
+        except (json.JSONDecodeError, OSError):
+            summary = {}
+    session_rows = load_csv_rows("analytics_output/network_centrality_session.csv")[:10]
+    collab_rows = [r for r in load_csv_rows("analytics_output/network_centrality_collaboration.csv") if int(r.get("degree") or 0) > 0][:10]
+    bridge_rows = load_csv_rows("analytics_output/network_series_bridges.csv")[:10]
+    layers = summary.get("layers") or {}
+    n_bridge = summary.get("series_bridge_people", len(load_csv_rows("analytics_output/network_series_bridges.csv")))
+    sess_edges = (layers.get("session") or {}).get("undirected_edges", "—")
+    collab_edges = (layers.get("collaboration") or {}).get("undirected_edges", "—")
+    event_edges = (layers.get("event") or {}).get("undirected_edges", "—")
+
+    def esc_cell(value):
+        return html.escape(str(value if value is not None else ""))
+
+    def person_cell(row):
+        name = row.get("display_name") or row.get("person_id") or ""
+        return esc_cell(name)
+
+    def table(headers, body_rows):
+        th = "".join(f"<th>{esc_cell(h)}</th>" for h in headers)
+        trs = []
+        for cells in body_rows:
+            trs.append("<tr>" + "".join(f"<td>{c}</td>" for c in cells) + "</tr>")
+        return f'<table class="data"><thead><tr>{th}</tr></thead><tbody>{"".join(trs)}</tbody></table>'
+
+    if lang == "en":
+        cards = f"""
+            <div class="three-col">
+                <div class="mini-card"><span class="kicker">Collaboration edges</span><strong>{esc_cell(collab_edges)}</strong><div>co-presentation pairs (programme lines)</div></div>
+                <div class="mini-card"><span class="kicker">Session edges</span><strong>{esc_cell(sess_edges)}</strong><div>same-session co-presence (not co-authorship)</div></div>
+                <div class="mini-card"><span class="kicker">Series bridges</span><strong>{esc_cell(n_bridge)}</strong><div>people with talks in both Zograf and Roerich</div></div>
+            </div>
+            <p class="note">Betweenness is a structural connectivity score, not scholarly quality. Edge types are never mixed into one undifferentiated network (see <code>analytics_output/network_robustness_checks.csv</code>). Recipe: <code>python tools/compute_network_centrality.py</code>.</p>
+            <h3>Top session-layer betweenness</h3>
+            {table(
+                ["Scholar", "Betweenness", "Degree", "Series"],
+                [[person_cell(r), esc_cell(r.get("betweenness")), esc_cell(r.get("degree")), esc_cell(r.get("series_attended"))] for r in session_rows],
+            )}
+            <h3>Zograf ↔ Roerich bridges (both series)</h3>
+            {table(
+                ["Scholar", "Zograf", "Roerich", "Event betweenness", "Co-talk degree"],
+                [[person_cell(r), esc_cell(r.get("zograf_talks")), esc_cell(r.get("roerich_talks")), esc_cell(r.get("event_betweenness")), esc_cell(r.get("collaboration_degree"))] for r in bridge_rows],
+            )}
+            <h3>Collaboration degree (co-presentation partners)</h3>
+            {table(
+                ["Scholar", "Partners", "Betweenness", "Series"],
+                [[person_cell(r), esc_cell(r.get("degree")), esc_cell(r.get("betweenness")), esc_cell(r.get("series_attended"))] for r in collab_rows],
+            ) if collab_rows else "<p>No multi-person presentation edges in the current export.</p>"}
+            <p class="article-caption">Source CSVs: <code>network_centrality_session.csv</code>, <code>network_centrality_collaboration.csv</code>, <code>network_series_bridges.csv</code>, <code>network_centrality_summary.json</code> (H2411).</p>
+        """
+    else:
+        cards = f"""
+            <div class="three-col">
+                <div class="mini-card"><span class="kicker">Рёбра коллаборации</span><strong>{esc_cell(collab_edges)}</strong><div>пары со-докладчиков (строка программы)</div></div>
+                <div class="mini-card"><span class="kicker">Рёбра сессий</span><strong>{esc_cell(sess_edges)}</strong><div>соприсутствие в сессии (не соавторство)</div></div>
+                <div class="mini-card"><span class="kicker">Мосты серий</span><strong>{esc_cell(n_bridge)}</strong><div>участники и Зографа, и Рериха</div></div>
+            </div>
+            <p class="note">Betweenness — мера структурной связности, а не «качества» учёного. Типы рёбер не смешиваются в один недифференцированный граф (см. <code>analytics_output/network_robustness_checks.csv</code>). Рецепт: <code>python tools/compute_network_centrality.py</code>.</p>
+            <h3>Топ by betweenness (слой сессий)</h3>
+            {table(
+                ["Учёный", "Betweenness", "Степень", "Серии"],
+                [[person_cell(r), esc_cell(r.get("betweenness")), esc_cell(r.get("degree")), esc_cell(r.get("series_attended"))] for r in session_rows],
+            )}
+            <h3>Мосты Зограф ↔ Рерих (обе серии)</h3>
+            {table(
+                ["Учёный", "Зограф", "Рерих", "Event betweenness", "Степень со-докладов"],
+                [[person_cell(r), esc_cell(r.get("zograf_talks")), esc_cell(r.get("roerich_talks")), esc_cell(r.get("event_betweenness")), esc_cell(r.get("collaboration_degree"))] for r in bridge_rows],
+            )}
+            <h3>Степень коллаборации (партнёры по со-докладу)</h3>
+            {table(
+                ["Учёный", "Партнёры", "Betweenness", "Серии"],
+                [[person_cell(r), esc_cell(r.get("degree")), esc_cell(r.get("betweenness")), esc_cell(r.get("series_attended"))] for r in collab_rows],
+            ) if collab_rows else "<p>В текущем экспорте нет рёбер многоавторских докладов.</p>"}
+            <p class="article-caption">Источник: <code>network_centrality_session.csv</code>, <code>network_centrality_collaboration.csv</code>, <code>network_series_bridges.csv</code>, <code>network_centrality_summary.json</code> (H2411).</p>
+        """
+    return cards
+
+
 def generate_gatekeeping_page():
-    body = """
+    centrality_ru = _gatekeeping_centrality_block("ru")
+    centrality_en = _gatekeeping_centrality_block("en")
+    body = f"""
         <header>
             <h1>Гейткипинг как проверяемая гипотеза: сетевые посредники и программа 2026 года</h1>
             <p>Сетевые эффекты, конфликт поколений и институциональные фильтры в российской индологии.</p>
@@ -12998,6 +13086,10 @@ def generate_gatekeeping_page():
             <img class="article-figure" src="assets/img/gatekeeping_network_layers.svg" alt="Сравнение типов сетевых связей">
             <div class="article-caption">Рис. 3. Слои сети разведены по смыслу. Это нужно, чтобы визуально убедительный граф не подменял вопрос: соавторство, сосуществование в сессии и общая тематическая область — не одно и то же.</div>
 
+            <h2>Измеренная центральность и мосты (H2411)</h2>
+            <p>Ниже — пересчитываемые таблицы по трём несмешиваемым слоям (коллаборация / сессия / событие) и список участников, наблюдаемых в обеих сериях. Регенерация: <code>python tools/compute_network_centrality.py</code>.</p>
+            {centrality_ru}
+
             <h2>Кейс 2026 года: проверка нулевой гипотезы</h2>
             <p>В кейсе 2026 года проверяется синхронное отсутствие из программы пула активных исследователей молодого и среднего поколения: М. Гасунс, О. Ерченков, В. Дмитриева, А. Зорин и Сизова как строка дополнительной идентификации. Имена приводятся для аудита источников; интерпретация остается структурной, а не персонально-обвинительной.</p>
 
@@ -13025,7 +13117,7 @@ def generate_gatekeeping_page():
             extra_head=ARTICLE_STYLE,
         ),
     )
-    body_en = """
+    body_en = f"""
         <header>
             <h1>Gatekeeping as a testable hypothesis: network mediators and the 2026 programme</h1>
             <p>Network effects, generational conflict, and institutional filters in Russian Indology.</p>
@@ -13081,6 +13173,10 @@ def generate_gatekeeping_page():
             <p>Joint presentation, same session, same topic, same event, and same institution answer different questions. The argument is stronger when these layers are kept separate.</p>
             <img class="article-figure" src="assets/img/gatekeeping_network_layers.svg" alt="Comparison of network edge types">
             <div class="article-caption">Figure 3. The layers are separated by meaning so that a visually persuasive graph does not answer the wrong question.</div>
+
+            <h2>Measured centrality and bridges (H2411)</h2>
+            <p>The tables below are recomputed from the live archive on three non-mixed layers (collaboration / session / event) plus people observed in both series. Recipe: <code>python tools/compute_network_centrality.py</code>.</p>
+            {centrality_en}
 
             <h2>The 2026 case</h2>
             <p>The 2026 case tests the synchronous absence of an active group: M. Gasuns, O. Erchenkov, V. Dmitrieva, A. Zorin, and Sizova as an additional identity-check row. Names are used for source auditability; the interpretation remains structural rather than personal.</p>
