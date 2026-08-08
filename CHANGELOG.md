@@ -6,6 +6,9 @@
 
 ## [Unreleased]
 
+### Fixed
+- **Zenodo DOIs backfilled** — concept `10.5281/zenodo.21360652`, version `10.5281/zenodo.21847873` (v1.6.7) from live Zenodo↔GitHub record into `data_paper_draft.md`, `CITATION.cff`, `zenodo_metadata.json`, roadmap. Packaging docs had stale "human login" language after integration was already live.
+
 ## [1.6.7] - 2026-08-08
 ### Changed
 - **Phase-4 PPV four-analyses prose (H2421)** — submission article

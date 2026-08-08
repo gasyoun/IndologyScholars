@@ -1,5 +1,5 @@
 {
-  "_status": "NOT YET DEPOSITED — deposit-ready. The org-wide Zenodo freeze expired 2026-07-15; the snapshot is frozen (article/snapshots/2026-07-17/), CITATION.cff is synced, and the GitHub release exists. The deposit itself requires MG's Zenodo login (human @DO in Uprava/GTD_NEXT_ACTIONS.md): enable the Zenodo-GitHub integration (or upload article/snapshots/2026-07-17/ manually with this metadata), then paste the minted concept+version DOIs over the PENDING markers in article/data_paper_draft.md §5.4/§7 and into CITATION.cff.",
+  "_status": "DEPOSITED via Zenodo↔GitHub integration. Concept DOI 10.5281/zenodo.21360652; latest version DOI 10.5281/zenodo.21847873 (v1.6.7, 2026-08-08). Backfilled into data_paper_draft.md and CITATION.cff 2026-08-08.",
   "_prepared": "2026-07-11, H674, Fable 5 (claude-fable-5); deposit-ready 2026-07-17, H1072, Fable 5 (claude-fable-5)",
   "metadata": {
     "upload_type": "dataset",
@@ -39,5 +39,8 @@
     ],
     "version": "2026.07.17",
     "language": "rus"
-  }
+  },
+  "concept_doi": "10.5281/zenodo.21360652",
+  "version_doi": "10.5281/zenodo.21847873",
+  "version_tag": "v1.6.7"
 }

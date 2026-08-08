@@ -3520,11 +3520,11 @@ def generate_download_page(data):
         <article class="card" style="margin-bottom:1.5rem; border-color:rgba(98,174,146,0.3); background:rgba(98,174,146,0.05);">
             <strong>Dataset DOI</strong>
             <div class="meta" style="margin-top:0.3rem;">
-                <a href="https://doi.org/10.5281/zenodo.XXXXXXX"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.XXXXXXX.svg" alt="DOI" style="height:20px;"></a>
+                <a href="https://doi.org/10.5281/zenodo.21360652"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.21360652.svg" alt="DOI" style="height:20px;"></a>
                 <br>
-                Cite as: Gasūns, M. (2026). <em>IndologyScholars: Archive of Talks in Russian Indology</em> [Data set]. Zenodo. https://doi.org/10.5281/zenodo.XXXXXXX
+                Cite as: Gasūns, M. (2026). <em>IndologyScholars: Archive of Talks in Russian Indology</em> [Data set]. Zenodo. https://doi.org/10.5281/zenodo.21360652
                 <br>
-                <span style="color:var(--muted);">Replace XXXXXXX with the actual Zenodo ID after uploading <code>article/snapshots/2026-06-03/</code></span>
+                <span style="color:var(--muted);">Concept DOI from Zenodo-GitHub (all versions). Pin version DOI <code>10.5281/zenodo.21847873</code> for v1.6.7.</span>
             </div>
         </article>
         <h2>Files</h2>
@@ -14589,7 +14589,7 @@ def generate_publication_docs(data):
             <p class="bilingual-text" data-ru="Каталог аналитических гипотез, проверенных на массиве данных архива" data-en="Catalog of analytical hypotheses tested on the archive dataset">Каталог аналитических гипотез, проверенных на массиве данных архива</p>
             
             <div class="academic-badges" style="display: flex; gap: 0.5rem; margin-top: 1rem; flex-wrap: wrap; justify-content: center;">
-                <img src="https://img.shields.io/badge/DOI-10.5281%2Fzenodo.10616885-blue" alt="DOI" style="height: 20px;">
+                <img src="https://img.shields.io/badge/DOI-10.5281%2Fzenodo.21360652-blue" alt="DOI" style="height: 20px;">
                 <img src="https://img.shields.io/badge/Open%20Access-Active-success" alt="Open Access" style="height: 20px;">
                 <img src="https://img.shields.io/badge/License-CC--BY--4.0-lightgrey" alt="License CC-BY-4.0" style="height: 20px;">
                 <img src="https://img.shields.io/badge/Data-FAIR-orange" alt="FAIR Data" style="height: 20px;">
@@ -15934,7 +15934,7 @@ ER  - </pre>
 <meta name="citation_publication_date" content="2026/05/30">
 <meta name="citation_online_date" content="2026/05/30">
 <meta name="citation_journal_title" content="Russian Indological Research Archive">
-<meta name="citation_technical_report_number" content="DOI: 10.5281/zenodo.10616885">
+<meta name="citation_technical_report_number" content="DOI: 10.5281/zenodo.21360652">
 <meta name="citation_language" content="rus">
 <meta name="citation_pdf_url" content="https://gasyoun.github.io/IndologyScholars/hypotheses.html">
 <meta name="DC.title" content="Hypotheses Registry of Russian Indology: Far Reading and Sociological Analysis">
