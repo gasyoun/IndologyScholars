@@ -6,6 +6,7 @@
 
 ## [Unreleased]
 
+## [1.6.8] - 2026-08-08
 ### Fixed
 - **Live Pages DOI badges** — replace remaining \zenodo.XXXXXXX\ / stale badge
   IDs on \download-data.html\ and \hypotheses.html\ with concept DOI
