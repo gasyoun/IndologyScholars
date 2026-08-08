@@ -6,6 +6,7 @@
 
 ## [Unreleased]
 
+## [1.6.6] - 2026-08-08
 ### Added
 - **Geographic mobility formalisation (H2416)** —
   `tools/compute_geographic_mobility.py` writes multi-city movers,
