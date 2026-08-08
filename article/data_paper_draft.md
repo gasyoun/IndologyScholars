@@ -283,24 +283,21 @@ professional facts; correction and objection procedures are documented in
 
 ### 5.4 Archived snapshot and data availability
 
-A frozen version of the dataset used for publication will be archived at:
+A citable version of the dataset is archived at Zenodo (GitHub↔Zenodo integration):
 
 **Gasūns, M. (2026).** *IndologyScholars: Russian Indological Research
 Archive — Zograf and Roerich Readings Conference Corpus (2004–2026)*
-[Data set]. Zenodo. Concept DOI: `10.5281/zenodo.PENDING` (all versions);
-version DOI: `10.5281/zenodo.PENDING` (this snapshot). Both DOIs are
-minted on deposit and will replace these markers before submission.
+[Data set]. Zenodo. Concept DOI: `10.5281/zenodo.21360652` (all versions);
+version DOI: `10.5281/zenodo.21847873` (GitHub release `v1.6.7`, 2026-08-08). Both DOIs were
+minted automatically by the Zenodo↔GitHub integration on release publish.
 
-The frozen snapshot for this paper is `article/snapshots/2026-07-17/`,
-produced by `tools/freeze_article_data.py`; it includes `conferences.db`,
-`site_data.json`, all analytics CSVs, curation files, and a SHA-256
-manifest. Deposition metadata is pre-staged in
-`article/zenodo_metadata.json` (dataset version `2026.07.17`, matching the
-snapshot date and `CITATION.cff`). The Zenodo deposit itself has **not yet
-been performed** and the DOIs above are pending markers until it is. Until
-the DOIs exist, the dataset is fully accessible through the GitHub
-repository and the live site, both of which carry the same licensing terms
-as the future deposit.
+The frozen paper snapshot `article/snapshots/2026-07-17/` (produced by
+`tools/freeze_article_data.py`) remains the scholarly freeze for A26 numbers;
+it includes `conferences.db`, `site_data.json`, analytics CSVs, curation
+files, and a SHA-256 manifest. The live Zenodo record archives the GitHub
+release tree via the webhook (software/dataset bundle). Metadata template:
+`article/zenodo_metadata.json`. Cite the **concept DOI** for the dataset
+family; pin the **version DOI** when a specific release must be reproducible.
 
 ## 6. Limitations
 
@@ -385,9 +382,8 @@ snapshot:
 >
 > Gasūns, M. (2026). *IndologyScholars: Russian Indological Research
 > Archive — Zograf and Roerich Readings Conference Corpus (2004–2026)*
-> [Data set]. Zenodo. https://doi.org/10.5281/zenodo.PENDING
-> (cite the concept DOI; update after deposit — see §5.4, not yet
-> performed.)
+> [Data set]. Zenodo. https://doi.org/10.5281/zenodo.21360652
+> (concept DOI; version \1.6.7\ = https://doi.org/10.5281/zenodo.21847873).
 
 ## 8. Acknowledgments
 
@@ -411,6 +407,6 @@ against the committed data by `article/check_data_paper_numbers.py`);
 2026-07-17 (snapshot re-frozen, cross-model κ re-derived from
 `analytics_output/interrater_crossmodel_claude.csv`, dataset title
 harmonized across §5.4/§7, `article/zenodo_metadata.json`, and
-`CITATION.cff`, DOI slots split into concept/version pending markers).
+`CITATION.cff`, DOI slots split into concept/version; backfilled 2026-08-08 from live Zenodo record after GitHub integration confirmed).
 Target journal: Research Data Journal for the Humanities and Social
 Sciences (Brill). Word count target: 3,000–4,000.*
