@@ -9,14 +9,14 @@ text{font-family:Arial,'Liberation Sans',sans-serif;fill:#1f2933}.small{font-siz
 <text x="577.0" y="102.0" class="small" text-anchor="middle">регионы/</text>
 <text x="577.0" y="115.0" class="small" text-anchor="middle">зарубежье</text>
 <text x="206.0" y="160.0" class="axis" text-anchor="end">Зографские</text>
-<rect x="222.0" y="118.0" width="140.0" height="74.0" rx="0" fill="rgb(158,188,223)" stroke="#ffffff" opacity="1.0"/>
-<text x="293.0" y="151.0" class="axis" text-anchor="middle" font-weight="700">32.2%</text>
-<text x="293.0" y="171.0" class="small" text-anchor="middle">n=290</text>
-<rect x="364.0" y="118.0" width="140.0" height="74.0" rx="0" fill="rgb(161,191,224)" stroke="#ffffff" opacity="1.0"/>
-<text x="435.0" y="151.0" class="axis" text-anchor="middle" font-weight="700">30.8%</text>
+<rect x="222.0" y="118.0" width="140.0" height="74.0" rx="0" fill="rgb(156,187,222)" stroke="#ffffff" opacity="1.0"/>
+<text x="293.0" y="151.0" class="axis" text-anchor="middle" font-weight="700">33.0%</text>
+<text x="293.0" y="171.0" class="small" text-anchor="middle">n=301</text>
+<rect x="364.0" y="118.0" width="140.0" height="74.0" rx="0" fill="rgb(162,191,224)" stroke="#ffffff" opacity="1.0"/>
+<text x="435.0" y="151.0" class="axis" text-anchor="middle" font-weight="700">30.4%</text>
 <text x="435.0" y="171.0" class="small" text-anchor="middle">n=277</text>
-<rect x="506.0" y="118.0" width="140.0" height="74.0" rx="0" fill="rgb(145,179,219)" stroke="#ffffff" opacity="1.0"/>
-<text x="577.0" y="151.0" class="axis" text-anchor="middle" font-weight="700">37.0%</text>
+<rect x="506.0" y="118.0" width="140.0" height="74.0" rx="0" fill="rgb(146,180,219)" stroke="#ffffff" opacity="1.0"/>
+<text x="577.0" y="151.0" class="axis" text-anchor="middle" font-weight="700">36.6%</text>
 <text x="577.0" y="171.0" class="small" text-anchor="middle">n=333</text>
 <text x="206.0" y="236.0" class="axis" text-anchor="end">Рериховские</text>
 <rect x="222.0" y="194.0" width="140.0" height="74.0" rx="0" fill="rgb(223,234,244)" stroke="#ffffff" opacity="1.0"/>
@@ -38,17 +38,17 @@ text{font-family:Arial,'Liberation Sans',sans-serif;fill:#1f2933}.small{font-siz
 <text x="638.0" y="233.4" class="axis" text-anchor="end">40%</text>
 <line x1="650.0" y1="155.1" x2="960.0" y2="155.1" stroke="#edf1f5" stroke-width="1"/>
 <text x="638.0" y="159.1" class="axis" text-anchor="end">60%</text>
-<rect x="675.8" y="140.7" width="51.7" height="237.3" rx="0" fill="#2f6fbb" stroke="none" opacity="1.0"/>
-<text x="701.7" y="132.7" class="small" text-anchor="middle" font-weight="700">63.9%</text>
+<rect x="675.8" y="127.3" width="51.7" height="250.7" rx="0" fill="#2f6fbb" stroke="none" opacity="1.0"/>
+<text x="701.7" y="119.3" class="small" text-anchor="middle" font-weight="700">67.5%</text>
 <text x="701.7" y="400.0" class="small" text-anchor="middle">СПб</text>
-<text x="701.7" y="418.0" class="label" text-anchor="middle">n=83</text>
-<rect x="779.2" y="145.5" width="51.7" height="232.5" rx="0" fill="#b8554b" stroke="none" opacity="1.0"/>
-<text x="805.0" y="137.5" class="small" text-anchor="middle" font-weight="700">62.6%</text>
+<text x="701.7" y="418.0" class="label" text-anchor="middle">n=80</text>
+<rect x="779.2" y="137.7" width="51.7" height="240.3" rx="0" fill="#b8554b" stroke="none" opacity="1.0"/>
+<text x="805.0" y="129.7" class="small" text-anchor="middle" font-weight="700">64.7%</text>
 <text x="805.0" y="400.0" class="small" text-anchor="middle">Москва</text>
-<text x="805.0" y="418.0" class="label" text-anchor="middle">n=123</text>
-<rect x="882.5" y="261.7" width="51.7" height="116.3" rx="0" fill="#708090" stroke="none" opacity="1.0"/>
-<text x="908.3" y="253.7" class="small" text-anchor="middle" font-weight="700">31.3%</text>
+<text x="805.0" y="418.0" class="label" text-anchor="middle">n=119</text>
+<rect x="882.5" y="232.8" width="51.7" height="145.2" rx="0" fill="#708090" stroke="none" opacity="1.0"/>
+<text x="908.3" y="224.8" class="small" text-anchor="middle" font-weight="700">39.1%</text>
 <text x="908.3" y="400.0" class="small" text-anchor="middle">регионы/ зарубежье</text>
-<text x="908.3" y="418.0" class="label" text-anchor="middle">n=83</text>
+<text x="908.3" y="418.0" class="label" text-anchor="middle">n=69</text>
 <text x="96.0" y="500.0" class="subtitle" text-anchor="start">Ключевой контраст: петербургская площадка почти паритетна для двух столиц, московская — преимущественно московская.</text>
 </svg>

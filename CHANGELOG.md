@@ -6,6 +6,13 @@
 
 ## [Unreleased]
 
+### Changed
+- **Phase-4 PPV four-analyses prose (H2421)** — submission article
+  `ppv_submission_article.md` gains §6 (networks, centrality, mobility,
+  theme evolution) + fifth conclusion; cover letter and roadmap Phase-4
+  figures/prose checkbox updated; `make_ppv_figures.py` re-run. Char count
+  remains under PPV 40k. Grok 4.5 (`grok-4.5`).
+
 ## [1.6.6] - 2026-08-08
 ### Added
 - **Geographic mobility formalisation (H2416)** —
