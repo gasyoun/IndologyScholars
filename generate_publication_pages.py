@@ -2633,52 +2633,150 @@ def generate_theme_evolution_page():
 
 
 def generate_mobility_page():
+    """Phase-2 geographic mobility page (H2416): recomputable metrics + gravity tables."""
+    summary = {}
+    summary_path = Path("analytics_output/geographic_mobility_summary.json")
+    if summary_path.exists():
+        try:
+            summary = json.loads(summary_path.read_text(encoding="utf-8"))
+        except (json.JSONDecodeError, OSError):
+            summary = {}
+
+    mover_rows = load_csv_rows("analytics_output/geographic_mobility_movers.csv")
+    dist_rows = load_csv_rows("analytics_output/geographic_mobility_distribution.csv")
+    if not dist_rows:
+        dist_rows = load_csv_rows("article/hypothesis_output/geographic_presentation_distribution.csv")
+    ret_rows = load_csv_rows("analytics_output/geographic_mobility_retention.csv")
+    if not ret_rows:
+        ret_rows = load_csv_rows("article/hypothesis_output/geographic_speaker_retention.csv")
+
+    # Fall back to live site_data if mobility CSVs not yet generated
     scholars = load_site_data().get("scholars", [])
-    city_list = []
-    for s in scholars:
-        cities = set()
-        for t in s.get("talks", []):
-            g = t.get("geography", {})
-            c = g.get("ru", "") if isinstance(g, dict) else ""
-            if c and c not in ("Не указана", ""):
-                cities.add(c)
-        if len(cities) > 1:
-            city_list.append((s.get("full_name_ru") or s.get("name", ""), sorted(cities), s.get("url_slug", "")))
-    city_list.sort(key=lambda x: -len(x[1]))
+    if not mover_rows:
+        city_list = []
+        for s in scholars:
+            cities = set()
+            for t in s.get("talks", []):
+                g = t.get("geography", {})
+                c = g.get("ru", "") if isinstance(g, dict) else ""
+                if c and c not in ("Не указана", ""):
+                    cities.add(c)
+            if len(cities) > 1:
+                city_list.append((s.get("full_name_ru") or s.get("name", ""), sorted(cities), s.get("url_slug", "")))
+        city_list.sort(key=lambda x: -len(x[1]))
+        aff_changes = sum(1 for s in scholars if s.get("has_changed_affiliations"))
+        total = len(scholars)
+        avg_cities = round(sum(len(c[1]) for c in city_list) / len(city_list), 1) if city_list else 0
+        mobility_pct = round(100 * len(city_list) / total, 1) if total else 0
+        aff_change_pct = round(100 * aff_changes / total, 1) if total else 0
+        n_movers = len(city_list)
+        rows = "".join(
+            f'<tr><td><a href="../s/{esc(slug)}.html">{esc(name)}</a></td><td>{esc(", ".join(cities))}</td></tr>'
+            for name, cities, slug in city_list[:40]
+        )
+    else:
+        total = int(summary.get("n_scholars") or len(scholars) or 0)
+        n_movers = int(summary.get("multi_city_movers") or len(mover_rows))
+        aff_changes = int(summary.get("affiliation_changers") or 0)
+        if not aff_changes:
+            aff_changes = sum(1 for s in scholars if s.get("has_changed_affiliations"))
+        avg_cities = summary.get("avg_cities_among_movers") or 0
+        mobility_pct = summary.get("multi_city_pct")
+        if mobility_pct is None:
+            mobility_pct = round(100 * n_movers / total, 1) if total else 0
+        aff_change_pct = summary.get("affiliation_changer_pct")
+        if aff_change_pct is None:
+            aff_change_pct = round(100 * aff_changes / total, 1) if total else 0
+        rows = "".join(
+            (
+                f'<tr><td><a href="../s/{esc(r.get("url_slug") or r.get("person_id"))}.html">'
+                f'{esc(r.get("display_name"))}</a></td>'
+                f'<td>{esc((r.get("cities") or "").replace("; ", ", "))}</td></tr>'
+            )
+            for r in mover_rows[:40]
+            if r.get("url_slug") or r.get("person_id")
+        )
 
-    aff_changes = sum(1 for s in scholars if s.get("has_changed_affiliations"))
-    total = len(scholars)
+    def data_table(headers, body_cells):
+        th = "".join(f"<th>{esc(h)}</th>" for h in headers)
+        trs = []
+        for cells in body_cells:
+            trs.append("<tr>" + "".join(f"<td>{esc(c)}</td>" for c in cells) + "</tr>")
+        return (
+            f'<div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;">'
+            f'<thead><tr>{th}</tr></thead><tbody>{"".join(trs)}</tbody></table></div>'
+        )
 
-    rows = "".join(
-        f'<tr><td><a href="../s/{esc(slug)}.html">{esc(name)}</a></td><td>{esc(", ".join(cities))}</td></tr>'
-        for name, cities, slug in city_list[:40]
-    )
+    dist_html = ""
+    if dist_rows:
+        dist_html = (
+            "<h2>Географическая гравитация площадок</h2>"
+            "<p>Доли докладов по городу аффилиации (SPb / Москва / регионы и зарубежье), "
+            "отдельно для Зографских и Рериховских чтений. Бакеты выводятся из текста аффилиации "
+            "в программе (те же правила, что в paper hypothesis H9).</p>"
+            + data_table(
+                ["Город", "Зограф докладов", "Зограф %", "Рерих докладов", "Рерих %"],
+                [
+                    [
+                        r.get("city"),
+                        r.get("zograf_talks"),
+                        r.get("zograf_pct"),
+                        r.get("roerich_talks"),
+                        r.get("roerich_pct"),
+                    ]
+                    for r in dist_rows
+                ],
+            )
+        )
 
-    avg_cities = round(sum(len(c[1]) for c in city_list) / len(city_list), 1) if city_list else 0
-    mobility_pct = round(100 * len(city_list) / total, 1) if total else 0
-    aff_change_pct = round(100 * aff_changes / total, 1) if total else 0
+    ret_html = ""
+    if ret_rows:
+        ret_html = (
+            "<h2>Удержание по домашнему городу</h2>"
+            "<p>Доля участников с докладами в ≥2 разных годах внутри своего city-bucket. "
+            "Регионы/зарубежье удерживаются слабее столиц — это corpus-level retention, "
+            "не доказательство «прекаризации».</p>"
+            + data_table(
+                ["Город", "Спикеров", "Возвращавшихся", "Retention %"],
+                [
+                    [
+                        r.get("city"),
+                        r.get("total_speakers"),
+                        r.get("returning_speakers"),
+                        r.get("retention_pct"),
+                    ]
+                    for r in ret_rows
+                ],
+            )
+        )
 
     body = f'''<header>
 <h1>Межинституциональная мобильность</h1>
 <p>Анализ переходов учёных между городами и институциями за период 2004–2026 по данным опубликованных программ.</p>
 </header>
 <section class="grid">
-<article class="card"><strong>Учёных с переездами</strong><div class="metric">{len(city_list)}</div><div class="meta">из {total} ({mobility_pct}%)</div></article>
+<article class="card"><strong>Учёных с переездами</strong><div class="metric">{n_movers}</div><div class="meta">из {total} ({mobility_pct}%)</div></article>
 <article class="card"><strong>Меняли аффилиацию</strong><div class="metric">{aff_changes}</div><div class="meta">из {total} ({aff_change_pct}%)</div></article>
-<article class="card"><strong>Среднее городов</strong><div class="metric">{avg_cities}</div></article>
+<article class="card"><strong>Среднее городов</strong><div class="metric">{avg_cities}</div><div class="meta">среди multi-city</div></article>
 </section>
+<div class="note" style="border-left:3px solid var(--accent);background:var(--panel);padding:1rem 1.25rem;margin:1.5rem 0;color:var(--muted);">
+Город в программе ≠ место работы. City-only аффилиация часто формат Зографа, а не биографический «отрыв от института» (см. paper H4).
+Регенерация: <code>python tools/compute_geographic_mobility.py</code> → затем пересборка страницы.
+</div>
+{dist_html}
+{ret_html}
 <h2>Учёные, выступавшие из нескольких городов</h2>
 <div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;">
 <thead><tr><th>Учёный</th><th>Города</th></tr></thead>
 <tbody>{rows}</tbody>
 </table></div>
-<p style="color:var(--muted);margin-top:1.5rem;">Данные основаны на указанных в программах городах. Город не всегда равен институции.</p>'''
+<p style="color:var(--muted);margin-top:1.5rem;">Источник: <code>analytics_output/geographic_mobility_*.csv</code> + <code>geographic_mobility_summary.json</code> (H2416). Города извлекаются из текста аффилиации в программах через <code>geography.json</code>.</p>'''
 
     write_text(
         "findings/mobility.html",
         page_shell(
             "Мобильность | " + SITE_NAME,
-            f"Анализ мобильности: {len(city_list)} учёных с переездами, {aff_changes} меняли аффилиацию.",
+            f"Анализ мобильности: {n_movers} учёных с переездами, {aff_changes} меняли аффилиацию.",
             "findings/mobility.html",
             body,
             [page_data("Мобильность", "Анализ переходов учёных между городами и институциями.", "findings/mobility.html", page_type="Article"),

@@ -42,7 +42,7 @@
       "name": "Russian Indological Research Archive",
       "url": "https://gasyoun.github.io/IndologyScholars/"
     },
-    "dateModified": "2026-08-07"
+    "dateModified": "2026-08-08"
   },
   {
     "@context": "https://schema.org",
@@ -143,14 +143,20 @@
 <section class="grid">
 <article class="card"><strong>Учёных с переездами</strong><div class="metric">8</div><div class="meta">из 268 (3.0%)</div></article>
 <article class="card"><strong>Меняли аффилиацию</strong><div class="metric">27</div><div class="meta">из 268 (10.1%)</div></article>
-<article class="card"><strong>Среднее городов</strong><div class="metric">2.1</div></article>
+<article class="card"><strong>Среднее городов</strong><div class="metric">2.1</div><div class="meta">среди multi-city</div></article>
 </section>
+<div class="note" style="border-left:3px solid var(--accent);background:var(--panel);padding:1rem 1.25rem;margin:1.5rem 0;color:var(--muted);">
+Город в программе ≠ место работы. City-only аффилиация часто формат Зографа, а не биографический «отрыв от института» (см. paper H4).
+Регенерация: <code>python tools/compute_geographic_mobility.py</code> → затем пересборка страницы.
+</div>
+<h2>Географическая гравитация площадок</h2><p>Доли докладов по городу аффилиации (SPb / Москва / регионы и зарубежье), отдельно для Зографских и Рериховских чтений. Бакеты выводятся из текста аффилиации в программе (те же правила, что в paper hypothesis H9).</p><div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;"><thead><tr><th>Город</th><th>Зограф докладов</th><th>Зограф %</th><th>Рерих докладов</th><th>Рерих %</th></tr></thead><tbody><tr><td>SPb</td><td>301</td><td>33.0</td><td>33</td><td>6.9</td></tr><tr><td>Moscow</td><td>277</td><td>30.4</td><td>260</td><td>54.5</td></tr><tr><td>Regions/Foreign</td><td>333</td><td>36.6</td><td>184</td><td>38.6</td></tr></tbody></table></div>
+<h2>Удержание по домашнему городу</h2><p>Доля участников с докладами в ≥2 разных годах внутри своего city-bucket. Регионы/зарубежье удерживаются слабее столиц — это corpus-level retention, не доказательство «прекаризации».</p><div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;"><thead><tr><th>Город</th><th>Спикеров</th><th>Возвращавшихся</th><th>Retention %</th></tr></thead><tbody><tr><td>Moscow</td><td>119</td><td>77</td><td>64.7</td></tr><tr><td>SPb</td><td>80</td><td>54</td><td>67.5</td></tr><tr><td>Regions/Foreign</td><td>69</td><td>27</td><td>39.1</td></tr></tbody></table></div>
 <h2>Учёные, выступавшие из нескольких городов</h2>
 <div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;">
 <thead><tr><th>Учёный</th><th>Города</th></tr></thead>
-<tbody><tr><td><a href="../s/marcis-gasuns.html">Гасунс Марцис Юрьевич</a></td><td>Краснодар, Москва, Обнинск</td></tr><tr><td><a href="../s/areg-mekhakyan.html">Мехакян Арег Гайкович</a></td><td>Ереван, Москва</td></tr><tr><td><a href="../s/paribok-andrei.html">Парибок Андрей Всеволодович</a></td><td>Москва, Санкт-Петербург</td></tr><tr><td><a href="../s/daria-vorobyeva.html">Воробьева Дарья Николаевна</a></td><td>Москва, Санкт-Петербург</td></tr><tr><td><a href="../s/oranskaya-tatyana.html">Оранская Татьяна Иосифовна</a></td><td>Гамбург, Санкт-Петербург</td></tr><tr><td><a href="../s/bitinaite-elena.html">Битинайте Елена Алексеевна</a></td><td>Краснодар, Ростов-на-Дону</td></tr><tr><td><a href="../s/kurochkin-aleksandr.html">Курочкин Александр Юрьевич</a></td><td>Москва, Санкт-Петербург</td></tr><tr><td><a href="../s/zhukova-lyubov.html">Жукова Любовь Евгеньевна</a></td><td>Москва, Санкт-Петербург</td></tr></tbody>
+<tbody><tr><td><a href="../s/marcis-gasuns.html">Гасунс Марцис Юрьевич</a></td><td>Краснодар, Москва, Обнинск</td></tr><tr><td><a href="../s/bitinaite-elena.html">Битинайте Елена Алексеевна</a></td><td>Краснодар, Ростов-на-Дону</td></tr><tr><td><a href="../s/daria-vorobyeva.html">Воробьева Дарья Николаевна</a></td><td>Москва, Санкт-Петербург</td></tr><tr><td><a href="../s/zhukova-lyubov.html">Жукова Любовь Евгеньевна</a></td><td>Москва, Санкт-Петербург</td></tr><tr><td><a href="../s/kurochkin-aleksandr.html">Курочкин Александр Юрьевич</a></td><td>Москва, Санкт-Петербург</td></tr><tr><td><a href="../s/areg-mekhakyan.html">Мехакян Арег Гайкович</a></td><td>Ереван, Москва</td></tr><tr><td><a href="../s/oranskaya-tatyana.html">Оранская Татьяна Иосифовна</a></td><td>Гамбург, Санкт-Петербург</td></tr><tr><td><a href="../s/paribok-andrei.html">Парибок Андрей Всеволодович</a></td><td>Москва, Санкт-Петербург</td></tr></tbody>
 </table></div>
-<p style="color:var(--muted);margin-top:1.5rem;">Данные основаны на указанных в программах городах. Город не всегда равен институции.</p>
+<p style="color:var(--muted);margin-top:1.5rem;">Источник: <code>analytics_output/geographic_mobility_*.csv</code> + <code>geographic_mobility_summary.json</code> (H2416). Города извлекаются из текста аффилиации в программах через <code>geography.json</code>.</p>
         <div class="footer">© 2026 Russian Indological Research Archive. Сгенерировано из нормализованного архива конференций.</div>
     </main>
 </body>
