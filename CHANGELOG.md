@@ -6,6 +6,7 @@
 
 ## [Unreleased]
 
+## [1.6.7] - 2026-08-08
 ### Changed
 - **Phase-4 PPV four-analyses prose (H2421)** — submission article
   `ppv_submission_article.md` gains §6 (networks, centrality, mobility,
