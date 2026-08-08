@@ -16,7 +16,7 @@
     {
       "path": "CITATION.cff",
       "size_bytes": 798,
-      "sha256": "739477fa8e33d4a53ce9ac5d1306d5edeccb6ba09d70abe97b450216daae9a1b"
+      "sha256": "d42a7d6e884cda79a6db46681d03f3dd18d72ce4b7b536a4ba21b50f99d31f73"
     },
     {
       "path": "analytics_output/age_cohort_trend.csv",
@@ -10231,7 +10231,7 @@
     {
       "path": "findings/visualisations.html",
       "size_bytes": 493638,
-      "sha256": "1bfc2f5264ad860931decbee9f3b2e4a0bb36f6b57910ac77e02e613527772f0"
+      "sha256": "e0528262c5fc27393c786b05d0a361e4bee6025ca2f7e18f738c94b8d6b95f4b"
     },
     {
       "path": "gatekeeping-en.html",
