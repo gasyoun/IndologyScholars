@@ -7,6 +7,12 @@
 ## [Unreleased]
 
 ### Fixed
+- **Live Pages DOI badges** — replace remaining \zenodo.XXXXXXX\ / stale badge
+  IDs on \download-data.html\ and \hypotheses.html\ with concept DOI
+  .5281/zenodo.21360652\; align submission retention numbers with H2416
+  CSV so rebuild-and-deploy validation passes and Pages can publish.
+
+### Fixed
 - **Zenodo DOIs backfilled** — concept `10.5281/zenodo.21360652`, version `10.5281/zenodo.21847873` (v1.6.7) from live Zenodo↔GitHub record into `data_paper_draft.md`, `CITATION.cff`, `zenodo_metadata.json`, roadmap. Packaging docs had stale "human login" language after integration was already live.
 
 ## [1.6.7] - 2026-08-08
