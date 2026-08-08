@@ -1,0 +1,65 @@
+{
+  "generated": "2026-08-08",
+  "handoff": "H2416",
+  "source": "site_data+db",
+  "n_scholars": 268,
+  "multi_city_movers": 8,
+  "multi_city_pct": 3.0,
+  "affiliation_changers": 27,
+  "affiliation_changer_pct": 10.1,
+  "avg_cities_among_movers": 2.1,
+  "gravity": {
+    "zograf_talks_total": 911,
+    "roerich_talks_total": 477,
+    "unknown_bucket_talks": 0
+  },
+  "distribution": [
+    {
+      "city": "SPb",
+      "zograf_talks": 301,
+      "zograf_pct": 33.0,
+      "roerich_talks": 33,
+      "roerich_pct": 6.9
+    },
+    {
+      "city": "Moscow",
+      "zograf_talks": 277,
+      "zograf_pct": 30.4,
+      "roerich_talks": 260,
+      "roerich_pct": 54.5
+    },
+    {
+      "city": "Regions/Foreign",
+      "zograf_talks": 333,
+      "zograf_pct": 36.6,
+      "roerich_talks": 184,
+      "roerich_pct": 38.6
+    }
+  ],
+  "retention": [
+    {
+      "city": "Moscow",
+      "total_speakers": 119,
+      "returning_speakers": 77,
+      "retention_pct": 64.7
+    },
+    {
+      "city": "SPb",
+      "total_speakers": 80,
+      "returning_speakers": 54,
+      "retention_pct": 67.5
+    },
+    {
+      "city": "Regions/Foreign",
+      "total_speakers": 69,
+      "returning_speakers": 27,
+      "retention_pct": 39.1
+    }
+  ],
+  "notes": [
+    "City labels are extracted from programme affiliation text only.",
+    "City is not the same as employing institution.",
+    "City-only affiliation is often a Zograf programme format artifact (paper H4).",
+    "Retention = speakers with talks in ≥2 distinct years within their home-city bucket."
+  ]
+}

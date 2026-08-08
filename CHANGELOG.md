@@ -6,6 +6,14 @@
 
 ## [Unreleased]
 
+### Added
+- **Geographic mobility formalisation (H2416)** —
+  `tools/compute_geographic_mobility.py` writes multi-city movers,
+  affiliation changers, SPb/Moscow/Regions gravity + retention CSVs and
+  summary JSON; `findings/mobility.html` shows live tables and methods
+  caveats. Phase-2 mobility checkbox ticked. Report:
+  `docs/GEOGRAPHIC_MOBILITY_H2416_2026-08-08.md`. Grok 4.5 (`grok-4.5`).
+
 ## [1.6.5] - 2026-08-07
 ### Added
 - **Gatekeeping multi-layer centrality (H2411)** — `tools/compute_network_centrality.py`
