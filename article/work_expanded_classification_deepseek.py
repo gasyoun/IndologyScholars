@@ -155,7 +155,7 @@ def read_request_config() -> tuple[str, str]:
     """Non-sensitive request configuration (base URL and model name)."""
     load_dotenv(dotenv_path=ROOT / ".env")
     base = os.environ.get("DEEPSEEK_BASE_URL", "https://api.deepseek.com").rstrip("/")
-    model = os.environ.get("DEEPSEEK_MODEL", "deepseek-chat").strip() or "deepseek-chat"
+    model = os.environ.get("DEEPSEEK_MODEL", "deepseek-v4-flash").strip() or "deepseek-v4-flash"
     return base, model
 
 
