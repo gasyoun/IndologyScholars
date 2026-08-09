@@ -32,7 +32,7 @@ load_dotenv()
 
 API_KEY = os.environ.get("DEEPSEEK_API_KEY", "").strip()
 BASE_URL = os.environ.get("DEEPSEEK_BASE_URL", "https://api.deepseek.com").rstrip("/")
-MODEL = os.environ.get("DEEPSEEK_MODEL", "deepseek-chat")
+MODEL = os.environ.get("DEEPSEEK_MODEL", "deepseek-v4-flash")
 
 if not API_KEY:
     print("ERROR: DEEPSEEK_API_KEY не задан в .env", file=sys.stderr)
@@ -223,8 +223,9 @@ def main():
 
     print(f"\nГотово. Неудачных батчей: {n_failed_batches}.")
     print(f"Total tokens — input: {total_in_tokens}, output: {total_out_tokens}")
-    # DeepSeek pricing (rough): $0.27/1M input + $1.10/1M output for deepseek-chat
-    est_cost = total_in_tokens * 0.27e-6 + total_out_tokens * 1.10e-6
+    # DeepSeek pricing (rough) for deepseek-v4-flash: $0.14/1M input (cache miss),
+    # $0.0028/1M input (cache hit), $0.28/1M output — using cache-miss input rate here
+    est_cost = total_in_tokens * 0.14e-6 + total_out_tokens * 0.28e-6
     print(f"Примерная стоимость: ${est_cost:.4f}")
 
     merge_and_summarize()
