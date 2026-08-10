@@ -35,6 +35,7 @@ article/check_*.py
 article/fix_*.py
 !article/check_anonymity.py
 !article/check_ppv_numbers.py
+!article/check_comparative_revision_numbers.py
 
 # Local profiling/temp artifacts
 metadata.db
