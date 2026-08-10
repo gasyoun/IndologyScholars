@@ -5,6 +5,8 @@
 Этот проект представляет собой высокоточный академический конвейер для оцифровки, интеллектуального анализа и визуализации истории российской индологической науки.
 
 ## [Unreleased]
+
+## [1.7.0] - 2026-08-10
 ### Added
 - **Русская сравнительная редакция статьи ППВ (H1900)** — новый документ
   [`article/ppv_comparative_revision_ru.md`](https://github.com/gasyoun/IndologyScholars/blob/main/article/ppv_comparative_revision_ru.md):
@@ -26,7 +28,7 @@
   карточки были типографски заменены на тире; восстановлены байты реестра
   (найдено новым шлюзом, а не глазами).
 
-
+## [1.6.8] - 2026-08-08
 ### Fixed
 - **Live Pages DOI badges** — replace remaining \zenodo.XXXXXXX\ / stale badge
   IDs on \download-data.html\ and \hypotheses.html\ with concept DOI
