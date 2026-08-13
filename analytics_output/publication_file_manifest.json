@@ -9340,8 +9340,8 @@
     },
     {
       "path": "assets/og/scholar_vladimir-shelkovich.png",
-      "size_bytes": 36612,
-      "sha256": "e7cd300f422672dbd0769da78d9bfcfd66460a4a688b8be315a62db0ece82c40"
+      "size_bytes": 35602,
+      "sha256": "0477359995ba938006d90eda254f2d122862252a9d5973933275d5eb28e750ee"
     },
     {
       "path": "assets/og/scholar_vladimir-shokhin.png",
@@ -10231,7 +10231,7 @@
     {
       "path": "findings/visualisations.html",
       "size_bytes": 493638,
-      "sha256": "71c7a77b46324e1123c1de906ae310934499e950c03b7c91a30f7867ff5f7c92"
+      "sha256": "fd0daf4193cc777702a8eede488233afeaed4f29533b07fdde224ac28718a4e5"
     },
     {
       "path": "gatekeeping-en.html",
