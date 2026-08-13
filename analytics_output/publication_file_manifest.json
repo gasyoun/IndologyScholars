@@ -6,7 +6,7 @@
     "pipeline_version": "2026-05-25",
     "generator": "generate_publication_pages.py"
   },
-  "file_count": 4220,
+  "file_count": 4222,
   "files": [
     {
       "path": "404.html",
@@ -239,6 +239,11 @@
       "sha256": "3595c086f343e162231a0c80df8be9cc00423a3e6c4a4006add489cf40b52614"
     },
     {
+      "path": "analytics_output/deepseek_flash_calls.jsonl",
+      "size_bytes": 4791,
+      "sha256": "fa6a6ccf62278eaf133878d943e6cb21d979fc85950ce980797e17002f6b3fb2"
+    },
+    {
       "path": "analytics_output/event_ecology_audit.csv",
       "size_bytes": 1564,
       "sha256": "b752d12ae4056c0f48a10c1984a9fe7cf881c1b4edee9298e0be007108e17120"
@@ -260,8 +265,8 @@
     },
     {
       "path": "analytics_output/expanded_classification_deepseek_work.csv",
-      "size_bytes": 861712,
-      "sha256": "1dd6a5584a04b8830bd2243acf188203d6d7cb6f1f08828d3e82f859b804d418"
+      "size_bytes": 865558,
+      "sha256": "d2bac54c025567e3a2f3c19cbc842aaedb5e42af657b312cabd7619f41eb6f93"
     },
     {
       "path": "analytics_output/expanded_classification_run.err",
@@ -545,8 +550,8 @@
     },
     {
       "path": "analytics_output/nlp_cache.pkl",
-      "size_bytes": 148375,
-      "sha256": "c631478125542cb6453459a9ae7b9bf0b4c0a4bc52a52d906d0b74cfbf37fb13"
+      "size_bytes": 148377,
+      "sha256": "374278314919ff11fa4ca4fcfa88342b4dc58b28c6be1a8348321c66b3464384"
     },
     {
       "path": "analytics_output/no_affiliation_history.md",
@@ -815,13 +820,13 @@
     },
     {
       "path": "analytics_output/theme_codes_llm.csv",
-      "size_bytes": 289307,
-      "sha256": "8727ffbf8b33d5916ed69637e9e261639cb4d1e074a2dc4de1df3b35cfaa4bdb"
+      "size_bytes": 299402,
+      "sha256": "c1e2542daed262b996bbba262363014eefb88c12c64aab5ad6afce2abe5f52d8"
     },
     {
       "path": "analytics_output/theme_codes_llm_v2.csv",
-      "size_bytes": 292872,
-      "sha256": "deca287c9b5b2c6c071f986b1f45c67323f895a4abade96d18507d7226654662"
+      "size_bytes": 299172,
+      "sha256": "1048a6fd82a8a49f50adc48e782ce75ebaed6d642253796525e496e841b58618"
     },
     {
       "path": "analytics_output/theme_codes_uncertain.csv",
@@ -995,8 +1000,8 @@
     },
     {
       "path": "assets/nlp_data.js",
-      "size_bytes": 424330,
-      "sha256": "e85c09ef61f9f46ab36c48630a7673012a3df0b1d21e0dcb2030e3e372d84118"
+      "size_bytes": 424327,
+      "sha256": "b37e279c66f49341e4f4fdb1ddb29423cd4e2c81f0a0dd7417263f9b5cb27f8a"
     },
     {
       "path": "assets/og-image.png",
@@ -9944,6 +9949,11 @@
       "sha256": "31a9c1b1eeb9a5aeab633238b82e069b90eca405887c4dd6a429420d297dc75b"
     },
     {
+      "path": "docs/FLASH_REMAINDER_LABELS_H2678_2026-08-14.md",
+      "size_bytes": 4944,
+      "sha256": "a81705b588311ffe606237109459c6c4c553a329c84d88078dff520f75ef0f7f"
+    },
+    {
       "path": "docs/GEOGRAPHIC_MOBILITY_H2416_2026-08-08.md",
       "size_bytes": 2725,
       "sha256": "65caca2313bd9e4152d087f6aeb0074c11d6d66fce48b2a8c8ca9be22418ea26"
@@ -9990,8 +10000,8 @@
     },
     {
       "path": "docs/README.md",
-      "size_bytes": 5078,
-      "sha256": "eb96ae5f747cf2c3ecb30540b8592f5dfc4c4d68fb2974783635cd0fb437b0f3"
+      "size_bytes": 5228,
+      "sha256": "7624dfd4e8fd1672dd64db10411a8974d16b99e2b26758ad74291b561d70f53f"
     },
     {
       "path": "docs/ROADMAP_2026.md",
@@ -10191,7 +10201,7 @@
     {
       "path": "download-data.html",
       "size_bytes": 37533,
-      "sha256": "288e128157807daf0d5e53c962656e57386b7e67be562c1469b06a3fb6b219ab"
+      "sha256": "0d1003673b95148dbab518a63cd6ab3af1ab3e8b54cf5502bd7678a0560080c1"
     },
     {
       "path": "en.html",
@@ -10231,7 +10241,7 @@
     {
       "path": "findings/visualisations.html",
       "size_bytes": 493638,
-      "sha256": "fd0daf4193cc777702a8eede488233afeaed4f29533b07fdde224ac28718a4e5"
+      "sha256": "a12b72c4173a11bc64bfecec0bab5b6a53ddeabddc683968039e92a8efce8629"
     },
     {
       "path": "gatekeeping-en.html",
