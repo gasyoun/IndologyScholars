@@ -568,7 +568,9 @@ def write_validity_report(
     a("_Dr. Mārcis Gasūns_")
 
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    # newline="\n": these reports are copied into the comparison packages and
+    # hashed into manifest.json (H2573).
+    path.write_text("\n".join(lines) + "\n", encoding="utf-8", newline="\n")
     return path
 
 

@@ -302,9 +302,17 @@ def freeze(
     ddl = "\n".join(
         f"-- {table}\n{schema.DDL[table].strip()};\n" for table in schema.TABLE_ORDER
     )
-    (destination / "schema.sql").write_text(ddl, encoding="utf-8")
+    # newline="\n" is load-bearing, not cosmetic (H2573): the default text mode
+    # translates every "\n" to "\r\n" on Windows, so file_sha256 below hashed
+    # CRLF bytes while .gitattributes (`* text=auto eol=lf`) stored LF. Every
+    # one of the 52 non-CSV files in the two committed packages then failed
+    # verify_snapshot with a hash mismatch, on a clean tree, for a package the
+    # same commit had just built. Keep newline="\n" on every writer whose output
+    # is hashed into a manifest.
+    (destination / "schema.sql").write_text(ddl, encoding="utf-8", newline="\n")
     (destination / "DATA_DICTIONARY.md").write_text(
-        data_dictionary(name, accounting, len(quote_rows)), encoding="utf-8"
+        data_dictionary(name, accounting, len(quote_rows)),
+        encoding="utf-8", newline="\n",
     )
 
     stamp = created_at or datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
@@ -360,7 +368,7 @@ def write_manifest(
     manifest_path = destination / "manifest.json"
     manifest_path.write_text(
         json.dumps(manifest, ensure_ascii=False, indent=2, sort_keys=True) + "\n",
-        encoding="utf-8",
+        encoding="utf-8", newline="\n",
     )
 
     lines = [
@@ -383,7 +391,8 @@ def write_manifest(
     for entry in files:
         lines.append(f"| `{entry['path']}` | {entry['bytes']} | `{entry['sha256']}` |")
     lines += ["", f"Total files: {len(files)}.", "", "_Dr. Mārcis Gasūns_"]
-    (destination / "manifest.txt").write_text("\n".join(lines) + "\n", encoding="utf-8")
+    (destination / "manifest.txt").write_text(
+        "\n".join(lines) + "\n", encoding="utf-8", newline="\n")
     return manifest_path
 
 

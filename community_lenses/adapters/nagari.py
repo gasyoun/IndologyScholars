@@ -108,6 +108,19 @@ def build_fixture() -> dict:
 
     known_message_ids: dict[str, str] = {}  # normalized native message-id -> record_id
     pending_replies: list[tuple[str, str]] = []  # (subject_record_id, normalized in_reply_to)
+    # H2573: the archive contains genuine mbox double-deliveries — the SAME
+    # Message-ID stored twice at adjacent mbox_index with identical subject and
+    # timestamp (2 pairs in the 18,729-record slice). `record` is UNIQUE on
+    # (corpus_id, source_record_id), so emitting both raised
+    # sqlite3.IntegrityError and no nagari fixture could be built at all.
+    # Unlike bvp.py — which raises DuplicateNativeId because a duplicate there
+    # means its own scraper double-counted — these duplicates are a property of
+    # the upstream archive, so raising would permanently break a valid source.
+    # They are collapsed to the first occurrence and COUNTED, then reported as
+    # `excluded` in coverage_report so the denominator stays honest rather than
+    # silently shrinking.
+    seen_source_record_ids: set[str] = set()
+    duplicate_source_record_ids: list[str] = []
 
     for msg in messages:
         gm_thrid = (msg.get("gm_thrid") or "").strip()
@@ -124,6 +137,10 @@ def build_fixture() -> dict:
             source_record_id_method = "fallback_hash"
 
         record_id = make_record_id(CORPUS_ID, source_record_id)
+        if source_record_id in seen_source_record_ids:
+            duplicate_source_record_ids.append(source_record_id)
+            continue
+        seen_source_record_ids.add(source_record_id)
         if raw_message_id:
             known_message_ids[normalize_message_id(raw_message_id)] = record_id
 
@@ -261,6 +278,8 @@ def build_fixture() -> dict:
         "classification_assignments": classification_assignments,
         "annotations": [],
         "quotes": [],
+        # H2573: mbox double-deliveries collapsed above. Reported, not hidden.
+        "_duplicate_source_record_ids": duplicate_source_record_ids,
         "_extra_schemes": [
             {
                 "scheme_id": _NATIVE_SCHEME_ID,
@@ -304,9 +323,10 @@ def coverage_report(fixture: dict) -> str:
         coverage_status=manifest["coverage_status"],
         manifest_snapshot_id=manifest["snapshot_id"],
         date_range=f"{manifest.get('coverage_start') or '?'} .. {manifest.get('coverage_end') or '?'}",
-        denominator_definition="one row per parsed mbox message (nagari.db `messages` table)",
+        denominator_definition="one row per parsed mbox message (nagari.db `messages` table), "
+        "minus mbox double-deliveries collapsed on a repeated Message-ID",
         included=len(records) if is_available else 0,
-        excluded=0,
+        excluded=len(fixture.get("_duplicate_source_record_ids", [])) if is_available else 0,
         failures=0,
         completeness_status=(
             f"pilot slice only ({len(records)} of the full 2005-2026 archive) -- "
@@ -322,5 +342,9 @@ def coverage_report(fixture: dict) -> str:
             "parent/child taxonomy is reused verbatim under its own `nagari_native_taxonomy` scheme, "
             "not crosswalked onto shared_topic.",
             "quote_policy defaults to non_exportable at the schema level; this adapter emits zero quotes.",
+            f"{len(fixture.get('_duplicate_source_record_ids', []))} mbox double-delivery/-ies "
+            "(the same Message-ID stored twice at adjacent mbox_index, identical subject and "
+            "timestamp) collapsed to the first occurrence and counted as `excluded`; this is an "
+            "upstream archive property, not a scraper defect (H2573).",
         ],
     )

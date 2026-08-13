@@ -477,7 +477,10 @@ def write_all(
     for figure_id in FIGURE_IDS:
         svg, caption = built[figure_id]
         path = directory / f"{figure_id}.svg"
-        path.write_text(svg, encoding="utf-8")
+        # newline="\n": these SVGs are copied into the comparison packages and
+        # hashed into manifest.json, so a CRLF-translated write breaks
+        # verify_snapshot on Windows (H2573).
+        path.write_text(svg, encoding="utf-8", newline="\n")
         captions[figure_id] = caption
         written.append(path)
 
@@ -497,10 +500,11 @@ def write_all(
         lines.append(captions[figure_id])
         lines.append("")
     lines.append("_Dr. Mārcis Gasūns_")
-    CAPTIONS_PATH.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    CAPTIONS_PATH.write_text(
+        "\n".join(lines) + "\n", encoding="utf-8", newline="\n")
     CAPTIONS_JSON.write_text(
         json.dumps(captions, ensure_ascii=False, indent=2, sort_keys=True) + "\n",
-        encoding="utf-8",
+        encoding="utf-8", newline="\n",
     )
     written.extend([CAPTIONS_PATH, CAPTIONS_JSON])
     return written
