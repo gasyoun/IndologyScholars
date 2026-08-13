@@ -38,3 +38,4 @@ Additional audit and handoff documents:
 - [Редакционные решения по гейткипингу и социологии (RU), 2026-06-01](sociology-gatekeeping-editorial-decisions-ru.md)
 - [Academic career risk audit, 2026-05-31](academic-career-risk-audit-2026-05-31.md)
 - [Implementation and handoff plan, 2026-05-31](implementation-handoff-plan-2026-05-31.md)
+- [Flash remainder labels (H2678), 2026-08-14](https://github.com/gasyoun/IndologyScholars/blob/main/docs/FLASH_REMAINDER_LABELS_H2678_2026-08-14.md)
