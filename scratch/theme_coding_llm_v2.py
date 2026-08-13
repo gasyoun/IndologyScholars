@@ -11,6 +11,7 @@ LLM-кодирование 860 заголовков из theme_review_queue.csv 
   analytics_output/theme_codes_uncertain.csv   — confidence<0.6 → ручная сверка
 """
 
+import argparse
 import os
 import sys
 import csv
@@ -18,6 +19,11 @@ import json
 import time
 import re
 from collections import defaultdict
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
+from tools.deepseek_call_log import log_deepseek_call  # noqa: E402
 
 try:
     sys.stdout.reconfigure(encoding='utf-8')
@@ -47,6 +53,25 @@ OUT_UNCERTAIN = "analytics_output/theme_codes_uncertain_v2.csv"
 BATCH_SIZE = 20
 MAX_RETRIES = 2
 REQUEST_TIMEOUT = 90
+VALID_L1 = {
+    "history_and_culture",
+    "religion_and_philosophy",
+    "literature_and_poetry",
+    "linguistics_and_philology",
+    "art_and_material_culture",
+}
+VALID_L2 = {"ancient", "medieval", "modern", "multi_period", "unspecified"}
+VALID_L3 = {
+    "tibetology",
+    "texts_and_manuscripts",
+    "fieldwork_and_ethnography",
+    "visual_arts_and_music",
+    "ritual_and_practice",
+    "socio_political",
+    "pedagogy_and_applied",
+    "unspecified",
+}
+VALID_L4 = {"fundamental", "applied", "descriptive"}
 
 SYSTEM_PROMPT = """Ты — эксперт по русской индологии и востоковедению. Тебе даны
 заголовки докладов на двух конференциях (Зографские и Рериховские чтения, 2004–2026).
@@ -105,13 +130,13 @@ def call_deepseek(messages):
         "messages": messages,
         "temperature": 0.1,
         "response_format": {"type": "json_object"},
-        "max_tokens": 4000,
+        "max_tokens": 32768,
     }
     resp = requests.post(f"{BASE_URL}/chat/completions", headers=headers, json=payload, timeout=REQUEST_TIMEOUT)
     resp.raise_for_status()
     data = resp.json()
     content = data["choices"][0]["message"]["content"]
-    return content, data.get("usage", {})
+    return content, data.get("usage", {}), data.get("model", MODEL)
 
 
 def parse_response(content):
@@ -153,10 +178,38 @@ def append_results(rows):
             w.writerow({k: r.get(k, "") for k in fields})
 
 
+def schema_valid_row(row: dict) -> bool:
+    try:
+        conf = float(row.get("conf") or 0)
+    except (TypeError, ValueError):
+        return False
+    return (
+        row.get("l1") in VALID_L1
+        and row.get("l2") in VALID_L2
+        and row.get("l3") in VALID_L3
+        and row.get("l4") in VALID_L4
+        and 0.0 <= conf <= 1.0
+    )
+
+
+def parse_args():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--limit", type=int, default=0, help="Label at most N remainder rows.")
+    parser.add_argument(
+        "--no-merge",
+        action="store_true",
+        help="Do not rewrite theme_codes_final_v2.csv (rights/publish stay human).",
+    )
+    return parser.parse_args()
+
+
 def main():
+    args = parse_args()
     queue = load_queue()
     done = load_existing_results()
     todo = [r for r in queue if r["presentation_id"] not in done]
+    if args.limit:
+        todo = todo[: args.limit]
     print(f"Очередь: {len(queue)} строк. Уже размечено: {len(done)}. К обработке: {len(todo)}.")
 
     total_in_tokens = 0
@@ -176,15 +229,33 @@ def main():
         ]
 
         results = None
+        batch_ids = [item["presentation_id"] for item in batch]
         for attempt in range(1, MAX_RETRIES + 2):
+            usage = {}
+            model_id = MODEL
             try:
-                content, usage = call_deepseek(messages)
+                content, usage, model_id = call_deepseek(messages)
                 total_in_tokens += usage.get("prompt_tokens", 0)
                 total_out_tokens += usage.get("completion_tokens", 0)
                 results = parse_response(content)
+                log_deepseek_call(
+                    script="scratch/theme_coding_llm_v2.py",
+                    model=model_id or MODEL,
+                    ids=batch_ids,
+                    usage=usage,
+                    ok=True,
+                )
                 break
             except (requests.exceptions.RequestException, json.JSONDecodeError, ValueError) as e:
                 print(f"  attempt {attempt} failed: {type(e).__name__}: {str(e)[:140]}", file=sys.stderr)
+                log_deepseek_call(
+                    script="scratch/theme_coding_llm_v2.py",
+                    model=model_id or MODEL,
+                    ids=batch_ids,
+                    usage=usage,
+                    ok=False,
+                    error=f"{type(e).__name__}: {str(e)[:140]}",
+                )
                 if attempt > MAX_RETRIES:
                     break
                 time.sleep(2 ** attempt)
@@ -201,7 +272,7 @@ def main():
             r = by_id.get(item["presentation_id"])
             if not r:
                 continue
-            out_rows.append({
+            candidate = {
                 "presentation_id": item["presentation_id"],
                 "year": item["year"],
                 "series": item["series"],
@@ -212,7 +283,16 @@ def main():
                 "l4": r.get("l4", ""),
                 "conf": r.get("conf", ""),
                 "why": r.get("why", ""),
-            })
+            }
+            if not schema_valid_row(candidate):
+                print(
+                    f"  rejected schema {item['presentation_id']}: "
+                    f"l1={candidate['l1']} l2={candidate['l2']} "
+                    f"l3={candidate['l3']} l4={candidate['l4']} conf={candidate['conf']}",
+                    file=sys.stderr,
+                )
+                continue
+            out_rows.append(candidate)
         append_results(out_rows)
         print(f"  + записано {len(out_rows)} строк (cumulative in={total_in_tokens}, out={total_out_tokens} tokens)")
 
@@ -223,7 +303,10 @@ def main():
     est_cost = total_in_tokens * 0.14e-6 + total_out_tokens * 0.28e-6
     print(f"Примерная стоимость: ${est_cost:.4f}")
 
-    merge_and_summarize()
+    if args.no_merge:
+        print("Skip merge (--no-merge): theme_codes_final_v2.csv left untouched.")
+    else:
+        merge_and_summarize()
 
 
 def merge_and_summarize():
@@ -299,6 +382,17 @@ def merge_and_summarize():
                 })
                 if final_rows[-1]["confidence"] < 0.6:
                     uncertain.append(final_rows[-1])
+
+    if os.path.exists(OUT_FINAL) and os.path.getsize(OUT_FINAL) > 0:
+        with open(OUT_FINAL, encoding="utf-8") as f:
+            existing_n = sum(1 for _ in csv.DictReader(f))
+        if existing_n > len(final_rows):
+            print(
+                f"Refusing to shrink {OUT_FINAL}: existing {existing_n} > merge {len(final_rows)}. "
+                "Rights/publish stay human.",
+                file=sys.stderr,
+            )
+            return
 
     fields = ["presentation_id", "year", "series", "title", "l1", "l2", "l3", "l4", "source", "confidence", "why"]
     with open(OUT_FINAL, "w", encoding="utf-8", newline="") as f:

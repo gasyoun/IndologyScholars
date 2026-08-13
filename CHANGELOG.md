@@ -6,6 +6,17 @@
 
 ## [Unreleased]
 
+### Added
+- **W1 Flash remainder labels (H2678)** — ran the existing
+  `deepseek-v4-flash` scripts from PR #222 on unpublished remainder:
+  34 theme-v1 + 20 theme-v2 review-queue titles and 1 work_expanded talk
+  (`PRES_f4113dc86a`). Schema-valid sidecar writes only; published finals
+  untouched. JSONL spend log in `analytics_output/deepseek_flash_calls.jsonl`
+  (~$0.0104 upper bound). Research-agent orchestrator parked (no remainder
+  corpus). Report:
+  [`docs/FLASH_REMAINDER_LABELS_H2678_2026-08-14.md`](https://github.com/gasyoun/IndologyScholars/blob/main/docs/FLASH_REMAINDER_LABELS_H2678_2026-08-14.md).
+  Grok 4.6 (`grok-4.6`).
+
 ## [1.7.0] - 2026-08-10
 ### Added
 - **Русская сравнительная редакция статьи ППВ (H1900)** — новый документ

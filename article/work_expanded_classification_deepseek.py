@@ -25,6 +25,7 @@ sys.path.insert(0, str(ROOT))
 
 from classification_overrides import CLASSIFICATION_OVERRIDES, MESO_LABELS  # noqa: E402
 from title_normalization import canonical_title  # noqa: E402
+from tools.deepseek_call_log import log_deepseek_call  # noqa: E402
 
 
 DB = ROOT / "conferences.db"
@@ -239,7 +240,7 @@ def call_deepseek(
         ],
         "temperature": 0.0,
         "response_format": {"type": "json_object"},
-        "max_tokens": 6000,
+        "max_tokens": 32768,
     }
     headers = {"Authorization": f"Bearer {api_key}", "Content-Type": "application/json"}
     response = requests.post(
@@ -268,7 +269,7 @@ def call_scale_audit(
             {"role": "user", "content": "Проверь повышенные уровни:\n" + titles},
         ],
         "temperature": 0.0,
-        "max_tokens": 4000,
+        "max_tokens": 32768,
     }
     headers = {"Authorization": f"Bearer {api_key}", "Content-Type": "application/json"}
     response = requests.post(
@@ -410,15 +411,31 @@ def classify(args: argparse.Namespace) -> list[dict[str, object]]:
         total_batches = (len(todo) + BATCH_SIZE - 1) // BATCH_SIZE
         response_rows = None
         model_id = ""
+        batch_ids = [str(row["presentation_id"]) for row in batch]
         for attempt in range(1, MAX_RETRIES + 1):
             try:
                 response_rows, usage, model_id = call_deepseek(api_key, base_url, model, batch)
                 tokens.update(
                     {key: value for key, value in usage.items() if isinstance(value, int)}
                 )
+                log_deepseek_call(
+                    script="article/work_expanded_classification_deepseek.py",
+                    model=model_id or model,
+                    ids=batch_ids,
+                    usage=usage,
+                    ok=True,
+                )
                 break
             except (requests.RequestException, ValueError, KeyError, json.JSONDecodeError) as exc:
                 print(f"[{batch_number}/{total_batches}] attempt {attempt} failed: {exc}", file=sys.stderr)
+                log_deepseek_call(
+                    script="article/work_expanded_classification_deepseek.py",
+                    model=model,
+                    ids=batch_ids,
+                    usage={},
+                    ok=False,
+                    error=str(exc)[:200],
+                )
                 if attempt < MAX_RETRIES:
                     time.sleep(2**attempt)
         if response_rows is None:
@@ -479,12 +496,28 @@ def audit_elevated(rows: list[dict[str, object]]) -> list[dict[str, object]]:
     for start in range(0, len(todo), BATCH_SIZE):
         batch = todo[start : start + BATCH_SIZE]
         response_rows = None
+        audit_ids = [str(row["presentation_id"]) for row in batch]
         for attempt in range(1, MAX_RETRIES + 1):
             try:
                 response_rows, _usage = call_scale_audit(api_key, base_url, model, batch)
+                log_deepseek_call(
+                    script="article/work_expanded_classification_deepseek.py:audit",
+                    model=model,
+                    ids=audit_ids,
+                    usage=_usage,
+                    ok=True,
+                )
                 break
             except (requests.RequestException, ValueError, KeyError, json.JSONDecodeError) as exc:
                 print(f"Audit attempt {attempt} failed: {exc}", file=sys.stderr)
+                log_deepseek_call(
+                    script="article/work_expanded_classification_deepseek.py:audit",
+                    model=model,
+                    ids=audit_ids,
+                    usage={},
+                    ok=False,
+                    error=str(exc)[:200],
+                )
                 if attempt < MAX_RETRIES:
                     time.sleep(2**attempt)
         if response_rows is None:
