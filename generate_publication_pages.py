@@ -70,6 +70,22 @@ VOTE_TEACHER_FORM_URL = "https://forms.yandex.ru/u/6a28f0e995add5b922d0f14c"
 BUILD_DATE = dt.date.today().isoformat()
 
 
+def _recorded_citation_version():
+    """The version already published in CITATION.cff, or None if unreadable.
+
+    Read as a FLOOR, never as the answer: see `_latest_release_version`.
+    """
+    try:
+        with open("CITATION.cff", encoding="utf-8") as fh:
+            for line in fh:
+                m = re.match(r'\s*version:\s*"?(\d+\.\d+\.\d+)"?\s*$', line)
+                if m:
+                    return m.group(1)
+    except Exception:
+        pass
+    return None
+
+
 def _latest_release_version():
     """Latest RELEASE tag (CITATION.cff version), so a manual version bump
     survives the next auto-rebuild instead of being clobbered by a hardcoded
@@ -82,7 +98,19 @@ def _latest_release_version():
     exactly that leaked into a published `CITATION.cff` as
     `version: "reserve-v1.6.0"`, and came back as a rebase conflict during the
     very release the reservation was protecting (H1899).
+
+    The tag list alone is still not enough, because it is read in a RACE with
+    the release itself: the rebuild is triggered by the release commit, and the
+    tag is pushed after that commit lands. On 14-08-2026 the run for
+    `chore(release): 1.12.1 (#233)` started 3 s after the merge, saw only up to
+    `v1.7.0`, and rewrote the freshly published `version: "1.12.1"` back to
+    `"1.7.0"` — the exact H790 regression, re-entering through a door H790's
+    tag lookup had left open. `fetch-depth: 0` does not help; the tag did not
+    exist yet. So the version already recorded in CITATION.cff is taken as a
+    FLOOR: this function may raise the published version, never lower it.
     """
+    recorded = _recorded_citation_version()
+    tagged = None
     try:
         tags = subprocess.run(
             ["git", "tag", "--list", "v[0-9]*", "--sort=-v:refname"],
@@ -90,10 +118,18 @@ def _latest_release_version():
         ).stdout.split()
         for tag in tags:
             if re.fullmatch(r"v\d+\.\d+\.\d+", tag):
-                return tag[1:]
-        return "1.0.0"
+                tagged = tag[1:]
+                break
     except Exception:
+        tagged = None
+
+    def _key(v):
+        return tuple(int(p) for p in v.split("."))
+
+    candidates = [v for v in (tagged, recorded) if v]
+    if not candidates:
         return "1.0.0"
+    return max(candidates, key=_key)
 
 
 RELEASE_VERSION = _latest_release_version()
