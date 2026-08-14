@@ -36,7 +36,7 @@
 | --- | --- |
 | `html_cache/` | Сохраненные программы конференций, первичный программный источник. |
 | `zograf-roerich-db.md` | Ручные исходные сведения о сериях, событиях и местах. |
-| `curation/` | Проверенные исправления и датированные траектории аффилиаций. |
+| `curation/` | Проверенные исправления и датированные траектории аффилиаций. Закрытые файлы H1899 (`community_person_links.csv`, `community_quotes.csv`) требуют полной записи в [`curation/rights_approvals.json`](https://github.com/gasyoun/IndologyScholars/blob/main/curation/rights_approvals.json); [`scripts/publish_safety_gate.py`](https://github.com/gasyoun/IndologyScholars/blob/main/scripts/publish_safety_gate.py) закрывается fail-closed до выгрузки Pages (H2578). |
 | `authority_ids.json` | Проверенные внешние идентификаторы персон. |
 | `analytics_output/classification_overrides.csv` | Редакционные решения по публичным примерам классификации. |
 | `curation/teacher_student.csv` | Кураторские связи руководитель/ученик (issue #9, генеалогический трек). Схема и правила правок: `curation/teacher_student_schema.md`. |
@@ -157,6 +157,13 @@ Pre-push (после `git config core.hooksPath .githooks`): хук
 умолчанию. Операторские заметки:
 [PRE_PUSH_STALE_BASE_OPERATOR.md](https://github.com/gasyoun/IndologyScholars/blob/main/docs/PRE_PUSH_STALE_BASE_OPERATOR.md).
 Регрессия: `python -m pytest tests/test_pre_push_stale_base.py -q`.
+
+Publish-safety (H2578): перед сборкой `_site` и `upload-pages-artifact` гейт
+[`scripts/publish_safety_gate.py`](https://github.com/gasyoun/IndologyScholars/blob/main/scripts/publish_safety_gate.py)
+проверяет четыре артефакта H1899. `.gitignore` и untracked — не одобрение.
+Операторские заметки:
+[PUBLISH_SAFETY_GATE_OPERATOR.md](https://github.com/gasyoun/IndologyScholars/blob/main/docs/PUBLISH_SAFETY_GATE_OPERATOR.md).
+Регрессия: `python -m pytest tests/test_publish_safety_gate.py -q`.
 
 Workflow `.github/workflows/rebuild_and_deploy.yml` выполняет загрузку новых
 программ, полную сборку, валидацию и развертывание GitHub Pages по расписанию

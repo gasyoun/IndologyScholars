@@ -6,6 +6,25 @@
 
 ## [Unreleased]
 
+### Added
+- **Publish-safety gate for the four H1899 artifacts (H2578)** — rights
+  approval is now a machine check, not "the file is untracked / gitignored"
+  ([PR #181](https://github.com/gasyoun/IndologyScholars/pull/181) /
+  [PR #183](https://github.com/gasyoun/IndologyScholars/pull/183)).
+  [`scripts/publish_safety_gate.py`](https://github.com/gasyoun/IndologyScholars/blob/main/scripts/publish_safety_gate.py)
+  fails closed when `rights_approver` / `scope` / `date` / `permitted_use`
+  in [`curation/rights_approvals.json`](https://github.com/gasyoun/IndologyScholars/blob/main/curation/rights_approvals.json)
+  are absent, malformed, or inconsistent with the artifact, and it never
+  treats `.gitignore` or untracked status as approval. Git probes retry at
+  most 5 times then fail closed.
+  [`prepare_pages_artifact.py`](https://github.com/gasyoun/IndologyScholars/blob/main/prepare_pages_artifact.py)
+  runs the gate *before* `_site` is written, so an unsafe publish exits
+  non-zero before `upload-pages-artifact`. Four named cases in
+  [`tests/test_publish_safety_gate.py`](https://github.com/gasyoun/IndologyScholars/blob/main/tests/test_publish_safety_gate.py).
+  Operator notes:
+  [`docs/PUBLISH_SAFETY_GATE_OPERATOR.md`](https://github.com/gasyoun/IndologyScholars/blob/main/docs/PUBLISH_SAFETY_GATE_OPERATOR.md).
+  Grok 4.5 (`grok-4.5`).
+
 ## [1.12.13] - 2026-08-14
 ### Fixed
 - **Закрытый список nagari больше не валит `validate` на строке Уланского (H2767)** —
