@@ -6,6 +6,25 @@
 
 ## [Unreleased]
 
+## [1.12.11] - 2026-08-14
+### Fixed
+- **Версия в `CITATION.cff` теперь только повышается — пересборка не может её понизить (H2734)** —
+  [PR #234](https://github.com/gasyoun/IndologyScholars/pull/234). Автопересборка, запущенная
+  **самим релизным коммитом** [51a6fd625](https://github.com/gasyoun/IndologyScholars/commit/51a6fd625)
+  (`chore(release): 1.12.1`), стартовала через **3 секунды** после merge — раньше, чем был запушен тег
+  `v1.12.1`, — и переписала только что опубликованное `version: "1.12.1"` обратно в `"1.7.0"`
+  ([6e57a85bf](https://github.com/gasyoun/IndologyScholars/commit/6e57a85bf)). Цитируемая версия почти
+  сутки отставала от собственного тега на пять минорных релизов.
+  [`generate_publication_pages.py`](https://github.com/gasyoun/IndologyScholars/blob/main/generate_publication_pages.py)
+  берёт версию из `git tag --list v[0-9]*` — это была правка H790 (вместо захардкоженной строки),
+  сужённая в H1899 до отсева `reserve-v*`; обе предполагали, что тег **уже существует**. Здесь он не
+  существует по построению, и `fetch-depth: 0` не помогает. Теперь уже опубликованная в `CITATION.cff`
+  версия читается как **нижняя граница**: настоящий более новый тег по-прежнему поднимает версию,
+  `reserve-v*` по-прежнему игнорируется, сравнение — по кортежу чисел (лексически `"1.7.0" > "1.12.1"`).
+  Регрессия закреплена шестью проверками в
+  [`tests/test_citation_version_floor.py`](https://github.com/gasyoun/IndologyScholars/blob/main/tests/test_citation_version_floor.py),
+  включая живую: **закоммиченный** `CITATION.cff` не может быть ниже новейшего тега в чекауте.
+
 ## [1.12.1] - 2026-08-14
 ### Fixed
 - **Оба замороженных пакета сравнения снова проходят `verify_snapshot` (H2573)** —
