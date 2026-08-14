@@ -6,6 +6,22 @@
 
 ## [Unreleased]
 
+### Fixed
+- **Оба замороженных пакета сравнения снова проходят `verify_snapshot` (H2573)** —
+  манифесты в
+  [`article/comparison_snapshots/through-2025`](https://github.com/gasyoun/IndologyScholars/tree/main/article/comparison_snapshots/through-2025)
+  и
+  [`article/comparison_snapshots/partial-2026`](https://github.com/gasyoun/IndologyScholars/tree/main/article/comparison_snapshots/partial-2026)
+  хранили sha256 от CRLF-байтов: `freeze` писал `schema.sql`, `DATA_DICTIONARY.md`,
+  фигуры/подписи и отчёты через `Path.write_text` в текстовом режиме по умолчанию,
+  тогда как `.gitattributes` (`* text=auto eol=lf`) хранит LF. Все **52** не-CSV
+  файла (26 × 2 пакета) не сходились со своим же манифестом с самого дня коммита.
+  Писатели уже исправлены (`newline="\n"`, PR #228); здесь пересчитаны сами
+  манифесты по фактически закоммиченному payload — **не** пересборкой пакета
+  (это благословило бы возможный дрейф). Полезная нагрузка не менялась:
+  52/52 старых хеша воспроизводятся, если LF-байты с диска раздуть до CRLF.
+  `tests/test_community_lenses_snapshot.py` — 15 passed. Opus 5 (`claude-opus-5`).
+
 ### Added
 - **W1 Flash remainder labels (H2678)** — ran the existing
   `deepseek-v4-flash` scripts from PR #222 on unpublished remainder:
