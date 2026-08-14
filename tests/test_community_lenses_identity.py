@@ -13,7 +13,7 @@ import sys
 REPO_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(REPO_ROOT))
 
-from community_lenses import identity  # noqa: E402
+from community_lenses import identity, quotes  # noqa: E402
 
 FIXTURE_PATH = (
     REPO_ROOT
@@ -27,6 +27,28 @@ FIXTURE_PATH = (
 
 def load_fixture() -> dict:
     return json.loads(FIXTURE_PATH.read_text(encoding="utf-8"))
+
+
+def nagari_has_complete_approval(quote_rows: list[dict]) -> bool:
+    return any(
+        row.get("corpus_id") == "nagari" and quotes.approval_complete(row)
+        for row in quote_rows
+    )
+
+
+def assert_closed_list_exportable(person_rows: list[dict], quote_rows: list[dict]) -> None:
+    """nagari person-links may be exportable=yes only with a complete approval."""
+    approved = nagari_has_complete_approval(quote_rows)
+    for row in person_rows:
+        if row.get("corpus_id") != "nagari":
+            continue
+        if row.get("exportable") == "yes":
+            if not approved:
+                raise AssertionError(
+                    f"nagari exportable=yes requires a complete approval record: {row}"
+                )
+        elif row.get("exportable") != "no":
+            raise AssertionError(f"nagari exportable must be yes or no: {row}")
 
 
 def make_link(**overrides) -> dict:
@@ -170,14 +192,53 @@ class RealDecisionTableTests(unittest.TestCase):
                 )
 
     def test_closed_list_rows_not_exportable(self):
-        for row in self.rows:
-            if row["corpus_id"] == "nagari":
-                self.assertEqual(row["exportable"], "no", row)
+        """nagari stays fail-closed unless a complete rights-approval record exists.
+
+        PR #183 / commit 26dad1db4 recorded owner approval (07-08-2026) covering
+        all four H1899 artifacts and flipped the live person-link rows to
+        exportable=yes. The quote register is the machine-readable approval
+        store (approver / scope / date / permitted-use). Without that record
+        the old unconditional ``exportable=no`` rule still holds.
+        """
+        quote_rows: list[dict] = []
+        if quotes.QUOTES_PATH.exists():
+            with quotes.QUOTES_PATH.open(encoding="utf-8", newline="") as handle:
+                quote_rows = list(csv.DictReader(handle))
+        assert_closed_list_exportable(self.rows, quote_rows)
 
     def test_ambiguous_rows_carry_rationale_not_links(self):
         ambiguous = [r for r in self.rows if r["decision"] == "ambiguous"]
         for row in ambiguous:
             self.assertTrue(row["confidence_rationale"], row)
+
+
+class ClosedListApprovalGateTests(unittest.TestCase):
+    def test_yes_without_approval_is_rejected(self):
+        with self.assertRaises(AssertionError):
+            assert_closed_list_exportable(
+                [make_link(exportable="yes")],
+                [make_link(corpus_id="nagari")],
+            )
+
+    def test_yes_with_complete_approval_is_allowed(self):
+        approval = {
+            "corpus_id": "nagari",
+            "rights_approver": "Named Owner",
+            "rights_approval_scope": "all four H1899 artifacts",
+            "rights_approval_date": "2026-08-07",
+            "rights_permitted_use": "verbatim quotation and full row-level data",
+        }
+        assert_closed_list_exportable([make_link(exportable="yes")], [approval])
+
+    def test_no_still_allowed_when_approval_exists(self):
+        approval = {
+            "corpus_id": "nagari",
+            "rights_approver": "Named Owner",
+            "rights_approval_scope": "this quote only",
+            "rights_approval_date": "2026-08-07",
+            "rights_permitted_use": "article illustration",
+        }
+        assert_closed_list_exportable([make_link(exportable="no")], [approval])
 
 
 if __name__ == "__main__":
