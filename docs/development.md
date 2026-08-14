@@ -150,6 +150,14 @@ flowchart TD
 стабильность идентификаторов, полноту обязательных страниц и метаданные
 выгрузок.
 
+Pre-push (после `git config core.hooksPath .githooks`): хук
+[`.githooks/pre-push`](https://github.com/gasyoun/IndologyScholars/blob/main/.githooks/pre-push)
+блокирует локальную базу behind / diverged / remote-advanced и новые CRLF-блобы
+до отправки объектов. Молчаливый revert на уровне строк — предупреждение по
+умолчанию. Операторские заметки:
+[PRE_PUSH_STALE_BASE_OPERATOR.md](https://github.com/gasyoun/IndologyScholars/blob/main/docs/PRE_PUSH_STALE_BASE_OPERATOR.md).
+Регрессия: `python -m pytest tests/test_pre_push_stale_base.py -q`.
+
 Workflow `.github/workflows/rebuild_and_deploy.yml` выполняет загрузку новых
 программ, полную сборку, валидацию и развертывание GitHub Pages по расписанию
 20 июня и 20 декабря в 00:00 UTC, а также по ручному запуску.

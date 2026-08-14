@@ -6,6 +6,20 @@
 
 ## [Unreleased]
 
+### Added
+- **Pre-push base-state gate + regression suite (H2579)** — the hook from
+  [PR #179](https://github.com/gasyoun/IndologyScholars/pull/179) now
+  **blocks** a push whose local base is `behind`, `diverged`, or
+  `remote-advanced` *before objects are sent* (including `--force`), fetches
+  at most 5 times then fails closed, and keeps the CRLF-in-blob gate as a
+  hard block. Line-level silent-revert stays WARN-by-default and prints
+  `PUSH WARNING` (not a false `PUSH BLOCKED`) unless `STALE_BASE_PUSH_STRICT=1`
+  (H2656 banner honesty, ported). Four named cases plus CRLF / warn / escape
+  in [`tests/test_pre_push_stale_base.py`](https://github.com/gasyoun/IndologyScholars/blob/main/tests/test_pre_push_stale_base.py).
+  Operator notes:
+  [`docs/PRE_PUSH_STALE_BASE_OPERATOR.md`](https://github.com/gasyoun/IndologyScholars/blob/main/docs/PRE_PUSH_STALE_BASE_OPERATOR.md).
+  Grok 4.6 (`grok-4.6`).
+
 ## [1.12.11] - 2026-08-14
 ### Fixed
 - **Версия в `CITATION.cff` теперь только повышается — пересборка не может её понизить (H2734)** —

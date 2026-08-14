@@ -148,6 +148,14 @@ Run `validate_publication.py` and the unit tests before publication. The
 validator checks consistency between the public summary and the database,
 identifier stability, required public pages, and export metadata.
 
+Pre-push (after `git config core.hooksPath .githooks`): the hook in
+[`.githooks/pre-push`](https://github.com/gasyoun/IndologyScholars/blob/main/.githooks/pre-push)
+blocks a local base that is behind, diverged, or remote-advanced, and blocks
+new CRLF blobs, before objects are sent. Line-level silent-revert is a warning
+by default. Operator notes:
+[PRE_PUSH_STALE_BASE_OPERATOR.md](https://github.com/gasyoun/IndologyScholars/blob/main/docs/PRE_PUSH_STALE_BASE_OPERATOR.md).
+Regression: `python -m pytest tests/test_pre_push_stale_base.py -q`.
+
 The `.github/workflows/rebuild_and_deploy.yml` workflow fetches new programmes,
 runs the full build and validation, and deploys GitHub Pages on 20 June and
 20 December at 00:00 UTC, as well as on manual dispatch.
@@ -262,6 +270,7 @@ ru-/Wikidata-dependent steps must run from a host with access.
 | [../article/data_paper_draft.md](https://github.com/gasyoun/IndologyScholars/blob/main/article/data_paper_draft.md) | English data paper describing corpus construction, data model, and reuse (target: Research Data Journal for the Humanities and Social Sciences). |
 | [roster-merge-design.md](roster-merge-design.md) | Design for merging the `scratch/` Russian-indologist roster into the corpus (participants enriched, non-participants as a separate registry). |
 | [ru-enrichment-runbook.md](ru-enrichment-runbook.md) | Step-by-step procedure for the Phase-5 enrichment that must run inside Russia (Wikidata life years, ru.wikipedia infoboxes, institutional scrapers). |
+| [PRE_PUSH_STALE_BASE_OPERATOR.md](https://github.com/gasyoun/IndologyScholars/blob/main/docs/PRE_PUSH_STALE_BASE_OPERATOR.md) | Pre-push base-state (behind / diverged / clean / remote-advanced) + CRLF blob gate: what blocks, how to recover, escape hatches (H2579). |
 | [deepseek-clean-host-runbook.md](deepseek-clean-host-runbook.md) | Procedure for running the DeepSeek k-fold classification and video segmentation runners from a clean-egress host, because `api.openmodel.ai` inference is severed (DPI) from the automation host. |
 
 `CHANGELOG.md` and materials under `article/` are logs or research snapshots;
