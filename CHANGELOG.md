@@ -6,6 +6,24 @@
 
 ## [Unreleased]
 
+### Fixed
+- **Закрытый список nagari больше не валит `validate` на строке Уланского (H2767)** —
+  [PR #183](https://github.com/gasyoun/IndologyScholars/pull/183) / коммит
+  [26dad1db4](https://github.com/gasyoun/IndologyScholars/commit/26dad1db4)
+  уже записал одобрение правообладателя (07-08-2026) и выставил
+  `exportable=yes` на всех 13 строках
+  [`curation/community_person_links.csv`](https://github.com/gasyoun/IndologyScholars/blob/main/curation/community_person_links.csv),
+  но
+  [`tests/test_community_lenses_identity.py`](https://github.com/gasyoun/IndologyScholars/blob/main/tests/test_community_lenses_identity.py)
+  всё ещё требовал безусловное `exportable=no`. Первый красный ряд — Евгений
+  Уланский — был единственной причиной красного `validate` на `main`
+  (1 failed / rest passed). Тест теперь снимает замок только при полной
+  записи одобрения в
+  [`curation/community_quotes.csv`](https://github.com/gasyoun/IndologyScholars/blob/main/curation/community_quotes.csv)
+  (approver / scope / date / permitted-use); без неё правило fail-closed
+  сохраняется. Статусы цитат (`Q-VK-22289` и nagari quotes) в этом проходе
+  не трогались. Grok 4.6 (`grok-4.6`).
+
 ## [1.12.12] - 2026-08-14
 ### Added
 - **Pre-push base-state gate + regression suite (H2579)** — the hook from
