@@ -6,6 +6,7 @@
 
 ## [Unreleased]
 
+## [1.12.12] - 2026-08-14
 ### Added
 - **Pre-push base-state gate + regression suite (H2579)** — the hook from
   [PR #179](https://github.com/gasyoun/IndologyScholars/pull/179) now
