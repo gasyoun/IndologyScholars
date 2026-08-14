@@ -36,7 +36,7 @@ Editable inputs and curation rules:
 | --- | --- |
 | `html_cache/` | Preserved conference programmes, the primary programme source. |
 | `zograf-roerich-db.md` | Manually maintained source information on series, events, and places. |
-| `curation/` | Verified corrections and dated affiliation trajectories. |
+| `curation/` | Verified corrections and dated affiliation trajectories. Gated H1899 files (`community_person_links.csv`, `community_quotes.csv`) need a complete record in [`curation/rights_approvals.json`](https://github.com/gasyoun/IndologyScholars/blob/main/curation/rights_approvals.json); [`scripts/publish_safety_gate.py`](https://github.com/gasyoun/IndologyScholars/blob/main/scripts/publish_safety_gate.py) fails closed before Pages upload (H2578). |
 | `authority_ids.json` | Verified external person identifiers. |
 | `analytics_output/classification_overrides.csv` | Editorial decisions for public classification examples. |
 | `curation/teacher_student.csv` | Curated advisor/student relationships (issue #9 genealogy track). Schema and editing rules: `curation/teacher_student_schema.md`. |
@@ -156,6 +156,14 @@ by default. Operator notes:
 [PRE_PUSH_STALE_BASE_OPERATOR.md](https://github.com/gasyoun/IndologyScholars/blob/main/docs/PRE_PUSH_STALE_BASE_OPERATOR.md).
 Regression: `python -m pytest tests/test_pre_push_stale_base.py -q`.
 
+Publish-safety (H2578): before `_site` is built and before
+`upload-pages-artifact`,
+[`scripts/publish_safety_gate.py`](https://github.com/gasyoun/IndologyScholars/blob/main/scripts/publish_safety_gate.py)
+checks the four H1899 artifacts. `.gitignore` and untracked status are not
+approval. Operator notes:
+[PUBLISH_SAFETY_GATE_OPERATOR.md](https://github.com/gasyoun/IndologyScholars/blob/main/docs/PUBLISH_SAFETY_GATE_OPERATOR.md).
+Regression: `python -m pytest tests/test_publish_safety_gate.py -q`.
+
 The `.github/workflows/rebuild_and_deploy.yml` workflow fetches new programmes,
 runs the full build and validation, and deploys GitHub Pages on 20 June and
 20 December at 00:00 UTC, as well as on manual dispatch.
@@ -271,6 +279,7 @@ ru-/Wikidata-dependent steps must run from a host with access.
 | [roster-merge-design.md](roster-merge-design.md) | Design for merging the `scratch/` Russian-indologist roster into the corpus (participants enriched, non-participants as a separate registry). |
 | [ru-enrichment-runbook.md](ru-enrichment-runbook.md) | Step-by-step procedure for the Phase-5 enrichment that must run inside Russia (Wikidata life years, ru.wikipedia infoboxes, institutional scrapers). |
 | [PRE_PUSH_STALE_BASE_OPERATOR.md](https://github.com/gasyoun/IndologyScholars/blob/main/docs/PRE_PUSH_STALE_BASE_OPERATOR.md) | Pre-push base-state (behind / diverged / clean / remote-advanced) + CRLF blob gate: what blocks, how to recover, escape hatches (H2579). |
+| [PUBLISH_SAFETY_GATE_OPERATOR.md](https://github.com/gasyoun/IndologyScholars/blob/main/docs/PUBLISH_SAFETY_GATE_OPERATOR.md) | H1899 rights gate: four named cases, catalog schema, fail-closed before Pages upload, 5-try git cap (H2578). |
 | [deepseek-clean-host-runbook.md](deepseek-clean-host-runbook.md) | Procedure for running the DeepSeek k-fold classification and video segmentation runners from a clean-egress host, because `api.openmodel.ai` inference is severed (DPI) from the automation host. |
 
 `CHANGELOG.md` and materials under `article/` are logs or research snapshots;

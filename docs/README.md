@@ -5,6 +5,7 @@
 | Описание коллекции / Collection guide | [README.md](../README.md) | [README_EN.md](../README_EN.md) |
 | Разработка и сборка / Development and build | [development.md](development.md) | [development-en.md](development-en.md) |
 | Pre-push stale-base / CRLF (H2579) | [PRE_PUSH_STALE_BASE_OPERATOR.md](https://github.com/gasyoun/IndologyScholars/blob/main/docs/PRE_PUSH_STALE_BASE_OPERATOR.md) | [PRE_PUSH_STALE_BASE_OPERATOR.md](https://github.com/gasyoun/IndologyScholars/blob/main/docs/PRE_PUSH_STALE_BASE_OPERATOR.md) |
+| Publish-safety / H1899 rights gate (H2578) | [PUBLISH_SAFETY_GATE_OPERATOR.md](https://github.com/gasyoun/IndologyScholars/blob/main/docs/PUBLISH_SAFETY_GATE_OPERATOR.md) | [PUBLISH_SAFETY_GATE_OPERATOR.md](https://github.com/gasyoun/IndologyScholars/blob/main/docs/PUBLISH_SAFETY_GATE_OPERATOR.md) |
 | Аудит классификации / Classification audit | [classification-audit.md](classification-audit.md) | [classification-audit-en.md](classification-audit-en.md) |
 | Пакет надежности классификации / Classification reliability packet | [classification-reliability-packet.md](classification-reliability-packet.md) | [classification-reliability-packet.md](classification-reliability-packet.md) |
 | Наукометрия и социология науки / Scientometrics and sociology of science | [scientometrics-sociology.md](scientometrics-sociology.md) | [scientometrics-sociology.md](scientometrics-sociology.md) |

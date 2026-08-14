@@ -886,6 +886,20 @@ def main():
         if audit_summary.get("after_duplicate_stable_key_rows") != 0:
             fail(errors, "id_stability_audit.json reports duplicate stable-key rows")
 
+    scripts_dir = Path(__file__).resolve().parent / "scripts"
+    if scripts_dir.is_dir():
+        if str(scripts_dir) not in sys.path:
+            sys.path.insert(0, str(scripts_dir))
+        import publish_safety_gate as psg  # noqa: WPS433
+
+        verdict = psg.evaluate(Path(__file__).resolve().parent)
+        if not verdict.ok:
+            for item in verdict.findings:
+                fail(
+                    errors,
+                    f"publish-safety [{item.code}] {item.path}: {item.detail}",
+                )
+
     if errors:
         print("Publication validation failed:")
         for error in errors:

@@ -1,0 +1,42 @@
+{
+  "schema_version": "h2578-1.0.0",
+  "note": "Machine-readable rights approvals for gated artifacts. .gitignore, file location, and untracked status are never approval.",
+  "artifacts": [
+    {
+      "path": "curation/community_quotes.csv",
+      "kind": "quote_register",
+      "rights_approver": "Mārcis Gasūns (ORCID 0000-0003-4513-884X)",
+      "rights_approval_scope": "all four H1899 artifacts; public repo publication",
+      "rights_approval_date": "2026-08-07",
+      "rights_permitted_use": "verbatim quotation and full row-level data",
+      "recorded_in": "https://github.com/gasyoun/IndologyScholars/pull/183"
+    },
+    {
+      "path": "curation/community_person_links.csv",
+      "kind": "person_links",
+      "rights_approver": "Mārcis Gasūns (ORCID 0000-0003-4513-884X)",
+      "rights_approval_scope": "all four H1899 artifacts; public repo publication",
+      "rights_approval_date": "2026-08-07",
+      "rights_permitted_use": "verbatim quotation and full row-level data",
+      "recorded_in": "https://github.com/gasyoun/IndologyScholars/pull/183"
+    },
+    {
+      "path": "article/comparison_snapshots",
+      "kind": "snapshot_tree",
+      "rights_approver": "Mārcis Gasūns (ORCID 0000-0003-4513-884X)",
+      "rights_approval_scope": "all four H1899 artifacts; public repo publication",
+      "rights_approval_date": "2026-08-07",
+      "rights_permitted_use": "verbatim quotation and full row-level data",
+      "recorded_in": "https://github.com/gasyoun/IndologyScholars/pull/183"
+    },
+    {
+      "path": "analytics_output/community_lenses/reports/identity_quote_evidence.md",
+      "kind": "report",
+      "rights_approver": "Mārcis Gasūns (ORCID 0000-0003-4513-884X)",
+      "rights_approval_scope": "all four H1899 artifacts; public repo publication",
+      "rights_approval_date": "2026-08-07",
+      "rights_permitted_use": "verbatim quotation and full row-level data",
+      "recorded_in": "https://github.com/gasyoun/IndologyScholars/pull/183"
+    }
+  ]
+}
