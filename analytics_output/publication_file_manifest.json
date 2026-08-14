@@ -6,7 +6,7 @@
     "pipeline_version": "2026-05-25",
     "generator": "generate_publication_pages.py"
   },
-  "file_count": 4222,
+  "file_count": 4223,
   "files": [
     {
       "path": "404.html",
@@ -9999,9 +9999,14 @@
       "sha256": "b243655a77c268acf4631d465dab3de9d7afd8aeb4db63e60a7d4da5a9686008"
     },
     {
+      "path": "docs/PRE_PUSH_STALE_BASE_OPERATOR.md",
+      "size_bytes": 3369,
+      "sha256": "b3d33b2544ae379f03241192272576a3c09d895e15ee55acffa7d3fe5f9e9133"
+    },
+    {
       "path": "docs/README.md",
-      "size_bytes": 5228,
-      "sha256": "7624dfd4e8fd1672dd64db10411a8974d16b99e2b26758ad74291b561d70f53f"
+      "size_bytes": 5523,
+      "sha256": "db39014da52e212f4731a5da0e202251e10bb6addbddb146017d851751baebee"
     },
     {
       "path": "docs/ROADMAP_2026.md",
@@ -10065,13 +10070,13 @@
     },
     {
       "path": "docs/development-en.md",
-      "size_bytes": 16784,
-      "sha256": "c7b88292e57673197f2862e12cb0ec2f84a0d488ae30228506dc8108cd435e2b"
+      "size_bytes": 17599,
+      "sha256": "e9bccd2b80f84ce2d7355e6cc9f62fc57b893bc050137e57e55d1b1bea1a66b6"
     },
     {
       "path": "docs/development.md",
-      "size_bytes": 23756,
-      "sha256": "b6c812ff4efcf41b2600ded3a66705ebc31de8296a970072618a1597ee6e078e"
+      "size_bytes": 24435,
+      "sha256": "d798db2862304c4380d454711db137ba20734b1b675db05e15785df951d4b7ce"
     },
     {
       "path": "docs/external-phase5-enrichment-runbook.md",
@@ -10201,7 +10206,7 @@
     {
       "path": "download-data.html",
       "size_bytes": 37533,
-      "sha256": "5396bfe2e7d4b1428e8884dede2ed210e6d6f75655c7dde65edcad45d6ba02db"
+      "sha256": "63777dd37e47ff99023fa21c25c7016d6f2e4797218219988517a67352e5c528"
     },
     {
       "path": "en.html",
@@ -10241,7 +10246,7 @@
     {
       "path": "findings/visualisations.html",
       "size_bytes": 493638,
-      "sha256": "8712212f2a226f0a6292003ca9a0d77685b00f148b6fffa63b0af9c0f8e1e7de"
+      "sha256": "55ea18a37710df88a0d1b39cd8e3b679cea79cd5e78089429d2dddab21f62ce6"
     },
     {
       "path": "gatekeeping-en.html",
