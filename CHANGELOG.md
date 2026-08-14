@@ -6,6 +6,7 @@
 
 ## [Unreleased]
 
+## [1.12.13] - 2026-08-14
 ### Fixed
 - **Закрытый список nagari больше не валит `validate` на строке Уланского (H2767)** —
   [PR #183](https://github.com/gasyoun/IndologyScholars/pull/183) / коммит
