@@ -6,7 +6,7 @@
     "pipeline_version": "2026-05-25",
     "generator": "generate_publication_pages.py"
   },
-  "file_count": 4223,
+  "file_count": 4225,
   "files": [
     {
       "path": "404.html",
@@ -9889,6 +9889,11 @@
       "sha256": "e403c109f166858451436d516af189cfedf7fea4ae269720893e26fce5baa0cd"
     },
     {
+      "path": "curation/rights_approvals.json",
+      "size_bytes": 2004,
+      "sha256": "8176612c3347ad622634737aecc2d4868ad8229db5af192e4cbb5b681aa77a6c"
+    },
+    {
       "path": "curation/senior_biographical_verification.csv",
       "size_bytes": 5912,
       "sha256": "49acb10f0e40280de3cac8066431b4d23651d15b391bca2197a0c1e73be3700b"
@@ -10004,9 +10009,14 @@
       "sha256": "b3d33b2544ae379f03241192272576a3c09d895e15ee55acffa7d3fe5f9e9133"
     },
     {
+      "path": "docs/PUBLISH_SAFETY_GATE_OPERATOR.md",
+      "size_bytes": 3908,
+      "sha256": "75184961a05ae4ce6d9021571e77606d909d7f606b628a4b8a93fed1a37a5c29"
+    },
+    {
       "path": "docs/README.md",
-      "size_bytes": 5523,
-      "sha256": "db39014da52e212f4731a5da0e202251e10bb6addbddb146017d851751baebee"
+      "size_bytes": 5826,
+      "sha256": "f1665bb35279935f635cf141edd533040260d25a8336ace37fbb62c1c0a54c8e"
     },
     {
       "path": "docs/ROADMAP_2026.md",
@@ -10070,13 +10080,13 @@
     },
     {
       "path": "docs/development-en.md",
-      "size_bytes": 17599,
-      "sha256": "e9bccd2b80f84ce2d7355e6cc9f62fc57b893bc050137e57e55d1b1bea1a66b6"
+      "size_bytes": 18727,
+      "sha256": "cb5ef3d3cb0e93b200906748de4c2aea5d14aae7e57bbaf3855cf46a5f81aca8"
     },
     {
       "path": "docs/development.md",
-      "size_bytes": 24435,
-      "sha256": "d798db2862304c4380d454711db137ba20734b1b675db05e15785df951d4b7ce"
+      "size_bytes": 25457,
+      "sha256": "b075e1bd782a31ee20658a900c163f6ac3f4d9b99b7506e3952247a58d4e73c2"
     },
     {
       "path": "docs/external-phase5-enrichment-runbook.md",
@@ -10206,7 +10216,7 @@
     {
       "path": "download-data.html",
       "size_bytes": 37533,
-      "sha256": "63777dd37e47ff99023fa21c25c7016d6f2e4797218219988517a67352e5c528"
+      "sha256": "4337e34a07c13277a8df50027cae9d40e8e5170fe680078ac36a84da71585193"
     },
     {
       "path": "en.html",
@@ -10246,7 +10256,7 @@
     {
       "path": "findings/visualisations.html",
       "size_bytes": 493638,
-      "sha256": "5820e7d0eb53f88d06c4944b13a46fb9a389992a95a2ed97bb4fe7761fc23401"
+      "sha256": "82714323d6ec9c4795eb67249a3a9ae26c31c09adeeca27b82f16cef5400f870"
     },
     {
       "path": "gatekeeping-en.html",
