@@ -218,15 +218,34 @@ class RealRegisterTests(unittest.TestCase):
         for row in self.rows:
             quotes.validate_aggregate_pointer(row)
 
-    def test_closed_list_rows_are_non_exportable(self):
+    def test_closed_list_rows_are_non_exportable_without_approval(self):
+        """Closed-list quotes stay non_exportable unless approval_complete.
+
+        H2573 parked the three approved rows fail-closed on the valid token
+        ``non_exportable``. H2771 flips them to ``exportable_approved`` now
+        that the rights lift is ruled. Without a complete approval record
+        the old lock still holds.
+        """
         for row in self.rows:
-            if row["corpus_id"] in quotes.CLOSED_CORPORA:
-                self.assertEqual(
-                    quotes.effective_rights_status(row), "non_exportable", row["quote_id"]
-                )
+            if row["corpus_id"] not in quotes.CLOSED_CORPORA:
+                continue
+            status = quotes.effective_rights_status(row)
+            if quotes.approval_complete(row):
+                self.assertIn(status, quotes.RIGHTS_STATES, row["quote_id"])
+            else:
+                self.assertEqual(status, "non_exportable", row["quote_id"])
 
     def test_no_exportable_row_without_approval(self):
-        self.assertEqual(quotes.exportable_rows(self.rows), [])
+        exported = quotes.exportable_rows(self.rows)
+        for row in exported:
+            self.assertTrue(
+                quotes.approval_complete(row),
+                f"{row['quote_id']} is exportable without a complete approval record",
+            )
+        self.assertEqual(
+            {row["quote_id"] for row in exported},
+            {"Q-VK-22289", "Q-NG-PANINI-ASK", "Q-NG-PANINI-ANSWER"},
+        )
 
     def test_no_contact_data_in_any_registered_quote(self):
         for row in self.rows:

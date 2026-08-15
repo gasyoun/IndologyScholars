@@ -69,14 +69,16 @@ context (none had to be omitted this pass; the omission path is test-covered).
 
 | Quote | Corpus | Behaviour | Rights state | Aggregate evidence |
 |---|---|---|---|---|
-| Q-VK-22289 | vk_ors | announced | pending_review | 313 / 7608 posts self-tagged `#bookzealots` (unit: wall posts; complete; vk_ors:2026-07-24) |
-| Q-NG-PANINI-ASK | nagari | asked | **non_exportable** | 426 / 18727 messages from the accepted ulanskiy@… identity (unit: messages; **pilot** — no population claim) |
-| Q-NG-PANINI-ANSWER | nagari | answered | **non_exportable** | `aggregate_evidence_unavailable`: H1897 froze no answer-type scheme for nagari; no denominator exists |
+| Q-VK-22289 | vk_ors | announced | **exportable_approved** | 313 / 7608 posts self-tagged `#bookzealots` (unit: wall posts; complete; vk_ors:2026-07-24) |
+| Q-NG-PANINI-ASK | nagari | asked | **exportable_approved** | 426 / 18727 messages from the accepted ulanskiy@… identity (unit: messages; **pilot** — no population claim) |
+| Q-NG-PANINI-ANSWER | nagari | answered | **exportable_approved** | `aggregate_evidence_unavailable`: H1897 froze no answer-type scheme for nagari; no denominator exists |
 
-Counts by source and export state: vk_ors 1 (pending_review) · nagari 2 (non_exportable) ·
-exportable_approved 0. The mechanical gate held: `exportable_rows()` returns **0** rows —
-no approval record exists yet for any source, and closed-list rows are forced
-`non_exportable` regardless of what a row claims. Contact data: none present in any
+Counts by source and export state: vk_ors 1 (exportable_approved) · nagari 2 (exportable_approved) ·
+exportable_approved 3. The mechanical gate now returns **3** rows — all three carry a
+complete approval record (approver / scope / 2026-08-07 / permitted use) from
+[PR #183](https://github.com/gasyoun/IndologyScholars/pull/183); H2771 flipped
+`rights_review_status` from the H2573 fail-closed park to `exportable_approved`.
+Contact data: none present in any
 registered quote (regex-checked); context review notes are in
 `analytics_output/community_lenses/review/quote_context_review.csv`.
 

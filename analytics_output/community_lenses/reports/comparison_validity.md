@@ -65,7 +65,7 @@ The through-2025 package is cut at 31-12-2025; 2026 lives in its own snapshot an
 ## 6. Quotation context and rights (V8)
 
 - Registered quotes: **3** (Q-NG-PANINI-ANSWER, Q-NG-PANINI-ASK, Q-VK-22289); each verified character-for-character against its pinned source with before/after context hashes.
-- Exportable quotes: **0**. The mechanical gate holds: closed-list (nagari) rows are forced `non_exportable`, and the VK row stays `pending_review` until an approval record exists. A failed quote is omitted — never paraphrased.
+- Exportable quotes: **3** (Q-VK-22289, Q-NG-PANINI-ASK, Q-NG-PANINI-ANSWER). A row is exportable only when `rights_review_status` is `exportable_approved` and the four approval fields are complete; closed-list rows without that record stay `non_exportable`. A failed quote is omitted — never paraphrased.
 - Contact data: none present in any registered quote (regex-checked).
 
 ## 7. Metric denominators (V9)

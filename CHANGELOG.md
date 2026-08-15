@@ -25,6 +25,17 @@
   [`docs/PUBLISH_SAFETY_GATE_OPERATOR.md`](https://github.com/gasyoun/IndologyScholars/blob/main/docs/PUBLISH_SAFETY_GATE_OPERATOR.md).
   Grok 4.5 (`grok-4.5`).
 
+### Changed
+- **Три одобренные цитаты теперь `exportable_approved` (H2771)** — строки
+  `Q-VK-22289`, `Q-NG-PANINI-ASK` (Уланский) и `Q-NG-PANINI-ANSWER` в
+  [`curation/community_quotes.csv`](https://github.com/gasyoun/IndologyScholars/blob/main/curation/community_quotes.csv)
+  несли полную запись одобрения с
+  [PR #183](https://github.com/gasyoun/IndologyScholars/pull/183), но
+  `rights_review_status` оставался `non_exportable` после fail-closed
+  нормализации H2573. Человеческое «flip» снимает парковку: `exportable_rows()`
+  возвращает эти три строки. Замороженные пакеты
+  `article/comparison_snapshots/` не переписывались. Grok 4.6 (`grok-4.6`).
+
 ## [1.12.13] - 2026-08-14
 ### Fixed
 - **Закрытый список nagari больше не валит `validate` на строке Уланского (H2767)** —

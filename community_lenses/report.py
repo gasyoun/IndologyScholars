@@ -282,6 +282,13 @@ def load_quote_ids() -> set[str]:
         return {row["quote_id"] for row in csv.DictReader(handle)}
 
 
+def load_quote_rows() -> list[dict]:
+    if not quotes.QUOTES_PATH.exists():
+        return []
+    with quotes.QUOTES_PATH.open(encoding="utf-8", newline="") as handle:
+        return list(csv.DictReader(handle))
+
+
 def validate_claims(
     claims: list[dict],
     tables: dict[str, list[dict]] | None = None,
@@ -489,9 +496,12 @@ def write_validity_report(
     a(f"- Registered quotes: **{len(quote_ids)}** ({', '.join(quote_ids) if quote_ids else '—'}); "
       "each verified character-for-character against its pinned source with before/after "
       "context hashes.")
-    a("- Exportable quotes: **0**. The mechanical gate holds: closed-list (nagari) rows are "
-      "forced `non_exportable`, and the VK row stays `pending_review` until an approval record "
-      "exists. A failed quote is omitted — never paraphrased.")
+    exportable = quotes.exportable_rows(load_quote_rows())
+    exportable_ids = ", ".join(row["quote_id"] for row in exportable) or "—"
+    a(f"- Exportable quotes: **{len(exportable)}** ({exportable_ids}). "
+      "A row is exportable only when `rights_review_status` is `exportable_approved` "
+      "and the four approval fields are complete; closed-list rows without that "
+      "record stay `non_exportable`. A failed quote is omitted — never paraphrased.")
     a("- Contact data: none present in any registered quote (regex-checked).")
     a("")
 
