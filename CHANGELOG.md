@@ -6,6 +6,7 @@
 
 ## [Unreleased]
 
+## [1.12.14] - 2026-08-15
 ### Added
 - **Publish-safety gate for the four H1899 artifacts (H2578)** — rights
   approval is now a machine check, not "the file is untracked / gitignored"
