@@ -6,6 +6,13 @@
 
 ## [Unreleased]
 
+### Changed
+
+- **H2820 — CLAUDE.md truth-pass** (Grok 4.6 `grok-4.6`, 16-08-2026). One-sentence
+  what (Zograf + Roerich archive), how to run (`make all`,
+  `validate_publication.py`, `pytest`), do-not-touch (derived `site_data.json`
+  / generated trees / `scratch/`). AGENTS.md twin regenerated.
+
 ## [1.12.14] - 2026-08-15
 ### Added
 - **Publish-safety gate for the four H1899 artifacts (H2578)** — rights
