@@ -4,12 +4,10 @@
 # git feeds pre-push one line per ref being pushed on stdin:
 #     <local ref> <local sha> <remote ref> <remote sha>
 # For each real (non-delete) update we ask scripts/pre_push_stale_base_check.py
-# two things: (a) is the local base behind, diverged, or remote-advanced
-# relative to the live remote tip — those BLOCK before objects are sent
-# (H2579); (b) would the push install our version of a file over an upstream
-# change that our commits never saw. (b) is the #1516 shape: a clean
-# fast-forward, green pre-commit hooks, and six files (29-07) then 19
-# line-level fixes (04-08) silently reverted. (b) WARNs by default.
+# whether the push would install our version of a file over an upstream change
+# that our commits never saw. That is the shape behind both incidents on #1516:
+# a clean fast-forward, green pre-commit hooks, and six files (29-07) then 19
+# line-level fixes (04-08) silently reverted.
 #
 # Deliberately a PRE-PUSH, not a pre-commit: the commit is local and cheap to
 # redo, the push is the point of no return where other sessions start reading it.
@@ -55,7 +53,7 @@ while read -r local_ref local_sha remote_ref remote_sha; do
     # a new tag slipped through only because the all-zeros remote_sha branch
     # above short-circuits first, so the bug was invisible on the initial push.
     # A guard that refuses correct pushes gets switched off, which is how the
-    # stale-base sibling above ended up WARN-only.
+    # stale-base sibling above was demoted to WARN for a week (re-promoted 16-08-2026).
     case "$remote_ref" in
         refs/heads/*) ;;
         *) continue ;;
@@ -67,12 +65,9 @@ while read -r local_ref local_sha remote_ref remote_sha; do
     short_remote="${remote_ref#refs/heads/}"
     tracking="$remote_name/$short_remote"
 
-    # (1) base-state (behind / diverged / remote-advanced BLOCK) + line-level
-    #     silent-revert scan (WARN by default, STRICT to block). Pass the live
-    #     remote sha from stdin so a stale origin/<branch> tracking ref cannot
-    #     hide a remote that has already moved (H2579).
+    # (1) stale-base silent-revert check — BLOCKS since 16-08-2026 (MG), see the header.
     if [ -z "${ALLOW_STALE_BASE_PUSH:-}" ] && [ -f "$CHECKER" ]; then
-        if ! python "$CHECKER" "$local_sha" "$tracking" --remote-sha "$remote_sha"; then
+        if ! python "$CHECKER" "$local_sha" "$tracking"; then
             status=1
         fi
     fi
