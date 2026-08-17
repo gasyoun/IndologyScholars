@@ -28,8 +28,16 @@ That pair is the whole rule. Old lines are ordinary edits. Your own lines are yo
 Someone else's line from an hour ago, deleted by a commit that never mentions it, is
 the defect.
 
-WARN BY DEFAULT — AND WHY IT WAS DEMOTED
-----------------------------------------
+BLOCKS BY DEFAULT — DEMOTED, THEN RE-PROMOTED
+---------------------------------------------
+**Current behaviour: this hook REFUSES the push.** Override per-push with
+``ALLOW_STALE_BASE_PUSH=1``. ``STALE_BASE_PUSH_STRICT=1`` is now the default and is
+accepted as a no-op.
+
+Re-promoted 16-08-2026 on MG's ruling, reversing the demotion described below. The
+history is kept because it is the argument against this decision, and a future session
+weighing another flip should read it rather than rediscover it:
+
 This started as a **blocking** hook, which is what #1516 asked for. It was demoted to a
 warning on the day it shipped, on measured evidence: while landing its own handoff it
 refused three pushes, all of them legitimate, all of them this repo's standard workflow —
@@ -40,19 +48,23 @@ refused three pushes, all of them legitimate, all of them this repo's standard w
 3. ``handoff_close.py`` archiving a handoff, which repoints ``handoffs/X`` links to
    ``handoffs/archive/X`` **inside rows added minutes ago**.
 
-(1) and (2) are exempted below. (3) is not cleanly exemptible without special-casing the
-repo's own tooling. Three false-positive classes from routine work in one session, against
-two true incidents in a week, is the wrong ratio for a blocker: the standing response to a
-hook that refuses good pushes is to switch it off, and then it protects nothing. So the
-default is a loud warning that lets the push through, matching how the org already treats
-imperfect-judgment guards (``pre_shell_guards`` guard 9 warns on ``git pull``, because
-pulls are sometimes right)::
+(1) and (2) are exempted below. **(3) is not exempted**, so a ``handoff_close.py`` archive
+run that repoints links inside freshly-added rows will now be refused and needs the escape
+hatch. That is the known live cost of blocking; if it proves noisy in practice, exempt (3)
+rather than demote the hook a second time.
 
-    STALE_BASE_PUSH_STRICT=1 git push ...   # restore blocking
-    ALLOW_STALE_BASE_PUSH=1  git push ...   # silence entirely
+The demotion argument was that three false-positive classes against two true incidents is
+the wrong ratio for a blocker, since the standing response to a hook that refuses good
+pushes is to switch it off, and then it protects nothing. The counter-argument, which won:
+a silent revert of another session's work is not recoverable by the person it happens to —
+they discover it days later, if ever — while a false positive costs one extra environment
+variable at the moment of the push, by someone who can see exactly what is being reverted::
 
-A deliberate revert of fresh upstream work is flagged too — correctly. The goal is to put
-the fact in front of a human at the last moment it is still free to act on, not to forbid.
+    ALLOW_STALE_BASE_PUSH=1  git push ...   # per-push override (the only one needed)
+    STALE_BASE_PUSH_STRICT=1 git push ...   # accepted no-op; blocking is now the default
+
+A deliberate revert of fresh upstream work is flagged too — correctly, and now it must be
+declared with the override rather than merely noticed.
 
 LIMITS (measured, not assumed)
 ------------------------------
@@ -68,30 +80,6 @@ LIMITS (measured, not assumed)
 Install once per clone::
 
     git config core.hooksPath .githooks
-
-BASE-STATE GATE (H2579)
------------------------
-A separate, *non-vacuous* check runs first. FINDINGS §312 still holds: comparing
-merge-base to the remote tip cannot detect the silent-revert class (those
-pushes are clean fast-forwards). What it *can* do is refuse a push whose local
-base is **behind** or **diverged** *before objects are sent* — including a
-``--force`` that would otherwise overwrite the remote — and it can see a
-**remote-advanced** tip that the local tracking ref has not yet absorbed
-(pre-push stdin ``remote_sha`` vs ``origin/<branch>``).
-
-Classification (exactly four operator-facing states):
-
-* ``clean``           — remote is an ancestor of local (fast-forward).
-* ``behind``          — local is an ancestor of remote (would rewind the branch).
-* ``diverged``        — neither is an ancestor of the other.
-* ``remote-advanced`` — the live remote tip (``--remote-sha`` or a successful
-  fetch) is not the tracking ref we started with, and the live classification
-  is behind or diverged.
-
-``behind`` and ``diverged`` (and the remote-advanced form of either) **block**
-the push. ``clean`` continues to the line-level scan above. Fetch is retried
-at most ``FETCH_TRIES`` (5) times; if every try fails and no live tip is
-known, the check fails closed.
 """
 from __future__ import annotations
 
@@ -109,9 +97,7 @@ sys.stderr.reconfigure(encoding="utf-8")
 ESCAPE_ENV = "ALLOW_STALE_BASE_PUSH"
 STRICT_ENV = "STALE_BASE_PUSH_STRICT"
 MAX_LISTED = 12
-FETCH_TRIES = 5
 HUNK_RE = re.compile(r"^@@ -(\d+)(?:,(\d+))? \+")
-BASE_BLOCK = frozenset({"behind", "diverged", "remote-advanced", "unknown"})
 
 
 def git(*args: str, check: bool = False) -> str:
@@ -125,97 +111,6 @@ def git(*args: str, check: bool = False) -> str:
     if check and proc.returncode != 0:
         raise RuntimeError("git %s failed: %s" % (" ".join(args), proc.stderr.strip()))
     return proc.stdout
-
-
-def fetch_with_cap(remote: str, tries: int = FETCH_TRIES) -> tuple[bool, int]:
-    """Fetch ``remote`` at most ``tries`` times. Returns (ok, attempts_used)."""
-    if tries < 1:
-        return False, 0
-    for attempt in range(1, tries + 1):
-        proc = subprocess.run(
-            ("git", "fetch", remote, "--quiet"),
-            capture_output=True,
-            text=True,
-            encoding="utf-8",
-            errors="replace",
-        )
-        if proc.returncode == 0:
-            return True, attempt
-    return False, tries
-
-
-def classify_base(local_ref: str, remote_ref: str) -> str:
-    """Return equal | clean | behind | diverged | unknown.
-
-    ``clean`` means remote is an ancestor of local (a fast-forward). This is
-    not the §312-vacuous 'merge-base != remote tip' silent-revert test: a
-    clean-FF revert is invisible here and is handled by the line-level scan.
-    """
-    local = git("rev-parse", "--verify", "--quiet", local_ref).strip()
-    remote = git("rev-parse", "--verify", "--quiet", remote_ref).strip()
-    if not local or not remote:
-        return "unknown"
-    if local == remote:
-        return "equal"
-    mb = git("merge-base", local, remote).strip()
-    if not mb:
-        return "diverged"
-    if mb == remote:
-        return "clean"
-    if mb == local:
-        return "behind"
-    return "diverged"
-
-
-def resolve_live_tip(tracking: str, remote_sha: str | None,
-                     fetched: bool) -> tuple[str, bool]:
-    """Pick the live remote tip and whether tracking was stale.
-
-    Returns ``(tip_ref, remote_advanced)``. ``remote_advanced`` is true when
-    we learned a tip that is not the tracking SHA we started with.
-    """
-    tracking_sha = git("rev-parse", "--verify", "--quiet", tracking).strip()
-    if remote_sha:
-        live = remote_sha.strip()
-        if git("rev-parse", "--verify", "--quiet", live).strip():
-            return live, bool(tracking_sha and tracking_sha != live)
-    if fetched and tracking_sha:
-        return tracking, False
-    if tracking_sha:
-        return tracking, False
-    return tracking, False
-
-
-def report_base_block(state: str, local_ref: str, remote_ref: str,
-                      remote_advanced: bool, fetch_ok: bool,
-                      fetch_tries: int) -> None:
-    e = sys.stderr
-    print("", file=e)
-    print("PUSH BLOCKED — local base is %s vs %s." % (state, remote_ref), file=e)
-    if remote_advanced:
-        print("The live remote tip has advanced past the tracking ref this clone", file=e)
-        print("last recorded (remote-advanced). A push now would not be a clean", file=e)
-        print("fast-forward — including under --force, which git would otherwise accept.", file=e)
-    elif state == "behind":
-        print("HEAD is an ancestor of the remote tip. Pushing it would rewind the", file=e)
-        print("branch (or, with --force, delete commits another session already landed).", file=e)
-    elif state == "diverged":
-        print("Local and remote each have commits the other does not. A force-push", file=e)
-        print("would overwrite the remote side; a normal push would be rejected later.", file=e)
-        print("Refusing here so nothing is sent.", file=e)
-    else:
-        print("The remote tip could not be classified after %d fetch attempt(s)."
-              % fetch_tries, file=e)
-        if not fetch_ok:
-            print("Fetch failed every try (cap is %d). Fail closed."
-                  % FETCH_TRIES, file=e)
-    print("", file=e)
-    print("Recover:", file=e)
-    print("    git fetch origin && git rebase %s" % remote_ref, file=e)
-    print("or rebuild on a fresh worktree off the live tip. Do not force-push.", file=e)
-    print("", file=e)
-    print("Deliberate override (rare):  %s=1 git push ..." % ESCAPE_ENV, file=e)
-    print("", file=e)
 
 
 def pushed_commits(remote_ref: str, local_ref: str) -> set[str]:
@@ -335,22 +230,16 @@ def report(found: dict[str, list], remote_ref: str, recent_days: float,
            truncated: bool, max_paths: int) -> None:
     total = sum(len(v) for v in found.values())
     e = sys.stderr
-    # Banner must match what main() returns. Default is WARN (exit 0); BLOCK
-    # only under STALE_BASE_PUSH_STRICT=1. Printing "PUSH BLOCKED" on the
-    # default path announced a refusal that never happened (H2656).
-    strict = bool(os.environ.get(STRICT_ENV))
+    # The banner must match what main() actually returns — the H2656 lesson, kept
+    # after the 16-08-2026 re-promotion to a blocker. It once printed "PUSH BLOCKED"
+    # on a path that warned and let the push through; a session read that as a
+    # refusal twice and hand-verified origin both times before noticing. Now the
+    # check blocks unconditionally, so the one banner is the true one.
     print("", file=e)
-    if strict:
-        print("PUSH BLOCKED (%s=1) — this push deletes %d line(s) that landed on %s"
-              % (STRICT_ENV, total, remote_ref), file=e)
-        print("within the last %g day(s), in %d file(s), and your commits never "
-              "reference them." % (recent_days, len(found)), file=e)
-    else:
-        print("PUSH WARNING — the push is PROCEEDING; nothing has been refused."
-              , file=e)
-        print("It deletes %d line(s) that landed on %s within the last %g day(s), in "
-              "%d file(s)," % (total, remote_ref, recent_days, len(found)), file=e)
-        print("and your commits never reference them.", file=e)
+    print("PUSH BLOCKED — this push deletes %d line(s) that landed on %s"
+          % (total, remote_ref), file=e)
+    print("within the last %g day(s), in %d file(s), and your commits never "
+          "reference them." % (recent_days, len(found)), file=e)
     print("", file=e)
     shown = 0
     for path, hits in found.items():
@@ -382,10 +271,6 @@ def report(found: dict[str, list], remote_ref: str, recent_days: float,
     print("", file=e)
 
 
-def emit_json(payload: dict) -> None:
-    print(json.dumps(payload))
-
-
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     ap.add_argument("local_ref")
@@ -394,98 +279,34 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--max-paths", type=int, default=40)
     ap.add_argument("--no-fetch", action="store_true")
     ap.add_argument("--json", action="store_true")
-    ap.add_argument("--remote-sha", default="",
-                    help="live remote tip from pre-push stdin (preferred over tracking)")
-    ap.add_argument("--fetch-tries", type=int, default=FETCH_TRIES)
     args = ap.parse_args(argv)
 
-    if os.environ.get(ESCAPE_ENV):
+    if not args.no_fetch:
+        git("fetch", args.remote_ref.split("/", 1)[0] or "origin", "--quiet")
+
+    if not git("rev-parse", "--verify", "--quiet", args.remote_ref).strip():
         if args.json:
-            emit_json({"result": "skip", "reason": ESCAPE_ENV})
+            print(json.dumps({"result": "skip", "reason": "remote ref not found"}))
         return 0
 
-    remote_name = args.remote_ref.split("/", 1)[0] or "origin"
-    tracking_before = git("rev-parse", "--verify", "--quiet", args.remote_ref).strip()
-    fetch_ok = True
-    fetch_tries = 0
-    if not args.no_fetch:
-        fetch_ok, fetch_tries = fetch_with_cap(remote_name, args.fetch_tries)
-
-    live_tip, tracking_stale = resolve_live_tip(
-        args.remote_ref, args.remote_sha or None, fetch_ok)
-    # Fetch updates the tracking ref, so "was the clone stale?" is the
-    # pre-fetch SHA compared to the live tip — not tracking-after-fetch.
-    live_sha = git("rev-parse", "--verify", "--quiet", live_tip).strip()
-    if tracking_before and live_sha and tracking_before != live_sha:
-        tracking_stale = True
-
-    live_exists = bool(git("rev-parse", "--verify", "--quiet", live_tip).strip())
-    if not live_exists:
-        state = "unknown"
-        payload = {
-            "result": "block",
-            "base_state": state,
-            "remote_advanced": tracking_stale,
-            "fetch_ok": fetch_ok,
-            "fetch_tries": fetch_tries,
-            "reason": "remote tip not in object store",
-        }
-        if args.json:
-            emit_json(payload)
-        else:
-            report_base_block(state, args.local_ref, live_tip,
-                              tracking_stale, fetch_ok, fetch_tries)
-        return 1
-
-    raw_state = classify_base(args.local_ref, live_tip)
-    remote_advanced = tracking_stale and raw_state in {"behind", "diverged"}
-    state = "remote-advanced" if remote_advanced else raw_state
-
-    if state in BASE_BLOCK:
-        payload = {
-            "result": "block",
-            "base_state": state,
-            "raw_state": raw_state,
-            "remote_advanced": remote_advanced,
-            "fetch_ok": fetch_ok,
-            "fetch_tries": fetch_tries,
-            "paths": [],
-            "lines": 0,
-            "truncated": False,
-        }
-        if args.json:
-            emit_json(payload)
-        else:
-            report_base_block(state, args.local_ref, live_tip,
-                              remote_advanced, fetch_ok, fetch_tries)
-        return 1
-
-    found, truncated = scan(args.local_ref, live_tip, args.recent_days, args.max_paths)
-    strict = bool(os.environ.get(STRICT_ENV))
-    if found:
-        result = "block" if strict else "warn"
-        rc = 1 if strict else 0
-    else:
-        result = "ok"
-        rc = 0
+    found, truncated = scan(args.local_ref, args.remote_ref, args.recent_days, args.max_paths)
 
     if args.json:
-        emit_json({
-            "result": result,
-            "base_state": state,
-            "raw_state": raw_state,
-            "remote_advanced": remote_advanced,
-            "fetch_ok": fetch_ok,
-            "fetch_tries": fetch_tries,
+        print(json.dumps({
+            "result": "block" if found else "ok",
             "paths": sorted(found),
             "lines": sum(len(v) for v in found.values()),
             "truncated": truncated,
-        })
-        return rc
+        }))
+        return 1 if found else 0
 
-    if found:
-        report(found, live_tip, args.recent_days, truncated, args.max_paths)
-    return rc
+    if not found:
+        return 0
+    report(found, args.remote_ref, args.recent_days, truncated, args.max_paths)
+    # BLOCKS by default (MG 16-08-2026, reversing the demotion below). The push is
+    # refused; the escape hatch in the banner is the single way through. STRICT_ENV
+    # is kept as an accepted no-op so older callers and docs do not break.
+    return 1
 
 
 if __name__ == "__main__":
