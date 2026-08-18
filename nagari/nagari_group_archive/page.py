@@ -77,6 +77,12 @@ def build(dump: Path, out: Path) -> dict:
     threads = rd(PKG_DATA / "processed" / "thread_sizes.csv")
     books = rd(PKG_DATA / "processed" / "book_index.csv")
     authors = rd(PKG_DATA / "processed" / "top_authors.csv")
+    primary_totals = rd(PKG_DATA / "processed" / "topic_primary_totals.csv")
+    entities_rows = rd(PKG_DATA / "processed" / "entities_by_type.csv")
+    entity_trend_rows = rd(PKG_DATA / "processed" / "entity_trends.csv")
+    cooc_rows = rd(PKG_DATA / "processed" / "topic_cooccurrence.csv")
+    topic_entity_rows = rd(PKG_DATA / "processed" / "topic_entity_matrix.csv")
+    phrase_rows = rd(PKG_DATA / "processed" / "phrases.csv")
     name, desc = group_description(dump)
 
     # export_md.py names each file after its thread's *starter* message subject/year,
@@ -185,6 +191,76 @@ def build(dump: Path, out: Path) -> dict:
 
     heat = site["activity"]["heat"]
 
+    # ---- H1518 Step 7: taxonomy drill-down, entities, co-occurrence, phrases ----
+    try:
+        from nagari_group_archive.taxonomy import parent_of
+    except ImportError:
+        from taxonomy import parent_of  # type: ignore
+
+    parent_children: dict[str, list[dict]] = {}
+    for r in primary_totals:
+        tag = r["tag"]
+        if tag == "разное":
+            continue
+        parent = parent_of(tag)
+        parent_children.setdefault(parent, []).append({"tag": tag, "count": int(r["count"])})
+    for lst in parent_children.values():
+        lst.sort(key=lambda x: -x["count"])
+    parent_totals = [
+        {"parent": p, "count": sum(c["count"] for c in kids)}
+        for p, kids in parent_children.items()
+    ]
+    parent_totals.sort(key=lambda x: -x["count"])
+
+    ENTITY_TYPE_LABEL = {"text": "Тексты", "person": "Учёные", "dict": "Словари", "tool": "Инструменты", "place": "Места"}
+    entities_by_type: dict[str, list[dict]] = {}
+    for r in entities_rows:
+        entities_by_type.setdefault(r["type"], []).append({"name": r["entity"], "count": int(r["count"])})
+    for lst in entities_by_type.values():
+        lst.sort(key=lambda x: -x["count"])
+        del lst[12:]
+    entity_types = [
+        {"type": t, "label": ENTITY_TYPE_LABEL.get(t, t), "items": items}
+        for t, items in entities_by_type.items()
+    ]
+
+    top_entity_names = {e["entity"] for e in sorted(entities_rows, key=lambda r: -int(r["count"]))[:12]}
+    entity_trend_by_name: dict[str, list] = {}
+    for r in entity_trend_rows:
+        if r["entity"] in top_entity_names:
+            entity_trend_by_name.setdefault(r["entity"], []).append({"year": int(r["year"]), "count": int(r["count"])})
+    for lst in entity_trend_by_name.values():
+        lst.sort(key=lambda x: x["year"])
+    entity_trends = [{"entity": name, "series": series} for name, series in entity_trend_by_name.items()]
+
+    cooc = [
+        {"a": r["topic_a"], "b": r["topic_b"], "n": int(r["n_threads"])}
+        for r in sorted(cooc_rows, key=lambda r: -int(r["n_threads"]))
+        if r["topic_a"] != "разное" and r["topic_b"] != "разное"
+    ][:20]
+
+    _topic_counts = {r["tag"]: int(r["count"]) for r in primary_totals}
+    top_topics_for_matrix = sorted((t for t in _topic_counts if t != "разное"), key=lambda t: -_topic_counts[t])[:10]
+    top_entities_for_matrix = [e["entity"] for e in sorted(entities_rows, key=lambda r: -int(r["count"]))[:10]]
+    te_lookup = {(r["topic"], r["entity"]): int(r["count"]) for r in topic_entity_rows}
+    topic_entity_matrix = {
+        "topics": top_topics_for_matrix,
+        "entities": top_entities_for_matrix,
+        "cells": [
+            [te_lookup.get((t, e), 0) for e in top_entities_for_matrix]
+            for t in top_topics_for_matrix
+        ],
+    }
+
+    phrases_llr = [r["phrase"] for r in phrase_rows if r["method"] == "llr"][:60]
+    phrases_tfidf = [r["phrase"] for r in phrase_rows if r["method"] == "tfidf"][:40]
+
+    # H1518 Wave-2 fence: quote surface is wired but OFF. Never populate this
+    # from message bodies in Wave 1 -- flipping it on is a human @DECIDE after
+    # /publish-safety-check, not something this generator does.
+    SHOW_QUOTES = False
+    quotes: list = []
+
     payload = {
         "totals": tot, "activity": ay, "membership": membership, "peak": peak,
         "topic_series": topic_series, "topic_total": topic_total,
@@ -193,6 +269,11 @@ def build(dump: Path, out: Path) -> dict:
         "deva": deva, "iast": iast, "heat": heat,
         "attachments_by_type": site["sanskrit"]["attachments_by_type"],
         "top_authors": top_authors_disp, "threads": thr_compact,
+        "parent_totals": parent_totals, "parent_children": parent_children,
+        "entity_types": entity_types, "entity_trends": entity_trends,
+        "cooc": cooc, "topic_entity_matrix": topic_entity_matrix,
+        "phrases_llr": phrases_llr, "phrases_tfidf": phrases_tfidf,
+        "show_quotes": SHOW_QUOTES, "quotes": quotes,
         "book_top": [{"f": redact_emails(b["filename"]), "ext": b["ext"], "y": b["year"], "mb": round(int(b["size_bytes"]) / 1e6, 1), "by": mask_name(b["sharer"]),
                       "url": md_url_for_thread(b["gm_thrid"], b["subject"], b["year"])} for b in books[:60]],
         "meta": {

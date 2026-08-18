@@ -1,0 +1,629 @@
+entity,year,count
+Бхагавад-гита,2007,1
+Бхагавад-гита,2008,2
+Бхагавад-гита,2009,40
+Бхагавад-гита,2010,37
+Бхагавад-гита,2011,169
+Бхагавад-гита,2012,17
+Бхагавад-гита,2013,30
+Бхагавад-гита,2014,4
+Бхагавад-гита,2015,55
+Бхагавад-гита,2016,11
+Бхагавад-гита,2017,28
+Бхагавад-гита,2018,3
+Бхагавад-гита,2019,4
+Бхагавад-гита,2020,20
+Бхагавад-гита,2021,26
+Бхагавад-гита,2022,6
+Бхагавад-гита,2023,2
+Бхагавад-гита,2024,12
+Бхагавад-гита,2025,5
+Бхагавад-гита,2026,6
+Махабхарата,2007,4
+Махабхарата,2008,5
+Махабхарата,2009,6
+Махабхарата,2010,6
+Махабхарата,2011,4
+Махабхарата,2012,1
+Махабхарата,2013,11
+Махабхарата,2014,10
+Махабхарата,2015,9
+Махабхарата,2016,4
+Махабхарата,2017,13
+Махабхарата,2018,13
+Махабхарата,2019,17
+Махабхарата,2020,4
+Махабхарата,2021,30
+Махабхарата,2022,14
+Махабхарата,2023,5
+Махабхарата,2024,38
+Махабхарата,2025,51
+Махабхарата,2026,8
+Patañjali,2007,10
+Patañjali,2008,1
+Patañjali,2009,15
+Patañjali,2010,8
+Patañjali,2012,108
+Patañjali,2014,18
+Patañjali,2015,6
+Patañjali,2017,1
+Patañjali,2018,1
+Patañjali,2019,1
+Patañjali,2020,7
+Patañjali,2021,18
+Patañjali,2023,5
+Patañjali,2024,1
+Patañjali,2025,40
+Patañjali,2026,2
+Delhi,2007,10
+Delhi,2008,3
+Delhi,2009,2
+Delhi,2010,5
+Delhi,2011,2
+Delhi,2012,1
+Delhi,2013,6
+Delhi,2015,5
+Delhi,2018,4
+Delhi,2019,1
+Delhi,2020,1
+Delhi,2021,1
+Delhi,2022,4
+Delhi,2023,6
+Delhi,2024,3
+Delhi,2025,4
+Delhi,2026,6
+Рамаяна,2010,2
+Рамаяна,2011,1
+Рамаяна,2012,2
+Рамаяна,2013,1
+Рамаяна,2014,6
+Рамаяна,2015,5
+Рамаяна,2016,3
+Рамаяна,2017,3
+Рамаяна,2019,4
+Рамаяна,2020,6
+Рамаяна,2021,2
+Рамаяна,2022,16
+Рамаяна,2023,7
+Рамаяна,2024,2
+Рамаяна,2025,12
+Рамаяна,2026,8
+Ригведа,2007,10
+Ригведа,2008,2
+Ригведа,2009,6
+Ригведа,2010,7
+Ригведа,2011,7
+Ригведа,2012,1
+Ригведа,2013,9
+Ригведа,2014,7
+Ригведа,2015,99
+Ригведа,2016,8
+Ригведа,2017,7
+Ригведа,2018,1
+Ригведа,2019,5
+Ригведа,2020,3
+Ригведа,2021,20
+Ригведа,2022,3
+Ригведа,2023,3
+Ригведа,2024,6
+Ригведа,2025,14
+Ригведа,2026,1
+Упанишады,2009,2
+Упанишады,2010,4
+Упанишады,2011,1
+Упанишады,2012,8
+Упанишады,2013,5
+Упанишады,2014,8
+Упанишады,2015,21
+Упанишады,2016,19
+Упанишады,2017,8
+Упанишады,2018,12
+Упанишады,2019,7
+Упанишады,2020,12
+Упанишады,2021,11
+Упанишады,2022,17
+Упанишады,2023,29
+Упанишады,2024,10
+Упанишады,2025,10
+Упанишады,2026,1
+Pāṇini,2007,21
+Pāṇini,2008,9
+Pāṇini,2009,26
+Pāṇini,2010,87
+Pāṇini,2011,46
+Pāṇini,2012,13
+Pāṇini,2013,11
+Pāṇini,2014,30
+Pāṇini,2015,131
+Pāṇini,2016,43
+Pāṇini,2017,39
+Pāṇini,2018,43
+Pāṇini,2019,35
+Pāṇini,2020,14
+Pāṇini,2021,23
+Pāṇini,2022,15
+Pāṇini,2023,8
+Pāṇini,2024,17
+Pāṇini,2025,21
+Pāṇini,2026,4
+Йога-Васиштха,2011,10
+Йога-Васиштха,2012,28
+Йога-Васиштха,2013,17
+Йога-Васиштха,2014,91
+Йога-Васиштха,2015,34
+Йога-Васиштха,2016,5
+Йога-Васиштха,2017,49
+Йога-Васиштха,2018,34
+Йога-Васиштха,2019,79
+Йога-Васиштха,2020,2
+Йога-Васиштха,2023,1
+Йога-Васиштха,2025,4
+Йога-Васиштха,2026,1
+Moscow,2007,5
+Moscow,2008,14
+Moscow,2009,2
+Moscow,2010,1
+Moscow,2011,3
+Moscow,2012,4
+Moscow,2013,5
+Moscow,2014,1
+Moscow,2015,19
+Moscow,2016,7
+Moscow,2017,2
+Moscow,2018,2
+Moscow,2019,6
+Moscow,2020,4
+Moscow,2021,20
+Moscow,2022,12
+Moscow,2023,24
+Moscow,2024,25
+Moscow,2025,16
+Moscow,2026,4
+Saint Petersburg,2007,5
+Saint Petersburg,2008,5
+Saint Petersburg,2010,3
+Saint Petersburg,2011,2
+Saint Petersburg,2012,3
+Saint Petersburg,2013,5
+Saint Petersburg,2014,4
+Saint Petersburg,2015,4
+Saint Petersburg,2016,2
+Saint Petersburg,2017,3
+Saint Petersburg,2018,2
+Saint Petersburg,2019,5
+Saint Petersburg,2020,6
+Saint Petersburg,2021,7
+Saint Petersburg,2022,3
+Saint Petersburg,2023,1
+Saint Petersburg,2024,5
+Saint Petersburg,2025,5
+Saint Petersburg,2026,4
+Панчатантра,2010,1
+Панчатантра,2012,1
+Панчатантра,2013,3
+Панчатантра,2014,3
+Панчатантра,2015,2
+Панчатантра,2016,1
+Панчатантра,2017,1
+Панчатантра,2018,1
+Панчатантра,2019,1
+Панчатантра,2021,1
+Панчатантра,2023,1
+Панчатантра,2025,1
+Панчатантра,2026,1
+GitHub,2013,1
+GitHub,2014,5
+GitHub,2015,11
+GitHub,2016,5
+GitHub,2017,3
+GitHub,2018,2
+GitHub,2019,6
+GitHub,2021,3
+GitHub,2023,4
+GitHub,2024,11
+GitHub,2025,7
+GitHub,2026,3
+Ferdinand Knauer,2007,7
+Ferdinand Knauer,2008,2
+Ferdinand Knauer,2009,2
+Ferdinand Knauer,2011,15
+Ferdinand Knauer,2012,5
+Ferdinand Knauer,2013,6
+Ferdinand Knauer,2014,18
+Ferdinand Knauer,2015,24
+Ferdinand Knauer,2016,1
+Ferdinand Knauer,2019,2
+Ferdinand Knauer,2020,64
+Ferdinand Knauer,2021,4
+Ferdinand Knauer,2022,5
+Ferdinand Knauer,2024,1
+Ferdinand Knauer,2026,1
+Andrey Zaliznyak,2007,1
+Andrey Zaliznyak,2008,1
+Andrey Zaliznyak,2009,13
+Andrey Zaliznyak,2010,3
+Andrey Zaliznyak,2011,14
+Andrey Zaliznyak,2012,4
+Andrey Zaliznyak,2013,3
+Andrey Zaliznyak,2014,6
+Andrey Zaliznyak,2015,24
+Andrey Zaliznyak,2017,21
+Andrey Zaliznyak,2018,12
+Andrey Zaliznyak,2019,2
+Andrey Zaliznyak,2020,2
+Andrey Zaliznyak,2021,3
+Andrey Zaliznyak,2022,6
+Andrey Zaliznyak,2023,2
+Andrey Zaliznyak,2024,4
+Andrey Zaliznyak,2025,7
+Andrey Zaliznyak,2026,1
+Monier-Williams,2007,21
+Monier-Williams,2008,8
+Monier-Williams,2009,9
+Monier-Williams,2010,3
+Monier-Williams,2011,7
+Monier-Williams,2012,10
+Monier-Williams,2013,29
+Monier-Williams,2014,16
+Monier-Williams,2015,30
+Monier-Williams,2016,4
+Monier-Williams,2017,5
+Monier-Williams,2018,10
+Monier-Williams,2019,2
+Monier-Williams,2020,1
+Monier-Williams,2021,17
+Monier-Williams,2022,3
+Monier-Williams,2023,1
+Monier-Williams,2024,6
+Monier-Williams,2025,2
+Monier-Williams,2026,3
+Varanasi,2007,7
+Varanasi,2009,4
+Varanasi,2010,5
+Varanasi,2011,7
+Varanasi,2012,1
+Varanasi,2013,6
+Varanasi,2014,1
+Varanasi,2015,3
+Varanasi,2016,2
+Varanasi,2017,3
+Varanasi,2018,8
+Varanasi,2019,10
+Varanasi,2020,1
+Varanasi,2021,2
+Varanasi,2022,1
+Varanasi,2023,3
+Varanasi,2025,1
+Varanasi,2026,1
+Rudolph Roth,2007,4
+Rudolph Roth,2008,1
+Rudolph Roth,2010,1
+Rudolph Roth,2011,2
+Rudolph Roth,2012,5
+Rudolph Roth,2013,9
+Rudolph Roth,2014,4
+Rudolph Roth,2015,4
+Rudolph Roth,2016,3
+Rudolph Roth,2017,1
+Rudolph Roth,2020,5
+Rudolph Roth,2021,2
+Rudolph Roth,2022,1
+Rudolph Roth,2023,5
+Rudolph Roth,2025,3
+Wikipedia,2007,7
+Wikipedia,2008,1
+Wikipedia,2009,7
+Wikipedia,2010,8
+Wikipedia,2011,22
+Wikipedia,2012,13
+Wikipedia,2013,24
+Wikipedia,2014,7
+Wikipedia,2015,16
+Wikipedia,2016,11
+Wikipedia,2017,7
+Wikipedia,2018,9
+Wikipedia,2019,14
+Wikipedia,2020,8
+Wikipedia,2021,10
+Wikipedia,2022,4
+Wikipedia,2023,11
+Wikipedia,2024,6
+Wikipedia,2025,11
+DCS,2013,4
+DCS,2014,1
+DCS,2015,1
+DCS,2016,3
+DCS,2018,2
+DCS,2019,5
+DCS,2020,1
+DCS,2021,4
+DCS,2022,2
+DCS,2023,1
+DCS,2024,4
+DCS,2025,1
+Georg Bühler,2007,22
+Georg Bühler,2008,20
+Georg Bühler,2009,2
+Georg Bühler,2011,17
+Georg Bühler,2012,3
+Georg Bühler,2013,5
+Georg Bühler,2014,3
+Georg Bühler,2015,6
+Georg Bühler,2016,3
+Georg Bühler,2017,2
+Georg Bühler,2018,2
+Georg Bühler,2019,13
+Georg Bühler,2020,3
+Georg Bühler,2021,3
+Georg Bühler,2022,1
+Georg Bühler,2023,1
+Georg Bühler,2024,3
+Georg Bühler,2025,3
+Аштадхьяи,2007,3
+Аштадхьяи,2009,4
+Аштадхьяи,2010,1
+Аштадхьяи,2011,3
+Аштадхьяи,2013,1
+Аштадхьяи,2014,2
+Аштадхьяи,2015,4
+Аштадхьяи,2016,4
+Аштадхьяи,2017,4
+Аштадхьяи,2018,12
+Аштадхьяи,2019,13
+Аштадхьяи,2020,11
+Аштадхьяи,2021,17
+Аштадхьяи,2022,4
+Аштадхьяи,2023,4
+Аштадхьяи,2024,5
+Аштадхьяи,2025,11
+Tatyana Elizarenkova,2007,2
+Tatyana Elizarenkova,2010,8
+Tatyana Elizarenkova,2011,2
+Tatyana Elizarenkova,2012,4
+Tatyana Elizarenkova,2013,3
+Tatyana Elizarenkova,2014,1
+Tatyana Elizarenkova,2015,25
+Tatyana Elizarenkova,2017,3
+Tatyana Elizarenkova,2018,1
+Tatyana Elizarenkova,2020,4
+Tatyana Elizarenkova,2021,11
+Tatyana Elizarenkova,2023,2
+Tatyana Elizarenkova,2024,1
+Tatyana Elizarenkova,2025,3
+Пураны,2007,4
+Пураны,2008,2
+Пураны,2009,5
+Пураны,2010,4
+Пураны,2011,3
+Пураны,2012,2
+Пураны,2013,2
+Пураны,2014,3
+Пураны,2015,7
+Пураны,2016,10
+Пураны,2017,3
+Пураны,2018,16
+Пураны,2019,14
+Пураны,2020,8
+Пураны,2021,19
+Пураны,2023,7
+Пураны,2024,1
+Пураны,2025,4
+Śaṅkara,2007,1
+Śaṅkara,2009,11
+Śaṅkara,2010,11
+Śaṅkara,2012,5
+Śaṅkara,2013,2
+Śaṅkara,2014,4
+Śaṅkara,2015,7
+Śaṅkara,2016,3
+Śaṅkara,2017,1
+Śaṅkara,2018,2
+Śaṅkara,2020,1
+Śaṅkara,2021,14
+Śaṅkara,2024,1
+Śaṅkara,2025,12
+Pune,2007,2
+Pune,2008,1
+Pune,2013,1
+Pune,2015,2
+Pune,2019,1
+Pune,2021,1
+Pune,2022,4
+Pune,2025,1
+Vaman Shivram Apte,2007,23
+Vaman Shivram Apte,2008,9
+Vaman Shivram Apte,2009,1
+Vaman Shivram Apte,2010,25
+Vaman Shivram Apte,2011,20
+Vaman Shivram Apte,2012,9
+Vaman Shivram Apte,2013,9
+Vaman Shivram Apte,2014,26
+Vaman Shivram Apte,2015,62
+Vaman Shivram Apte,2016,31
+Vaman Shivram Apte,2017,46
+Vaman Shivram Apte,2018,9
+Vaman Shivram Apte,2019,2
+Vaman Shivram Apte,2020,5
+Vaman Shivram Apte,2021,4
+Vaman Shivram Apte,2023,1
+Vaman Shivram Apte,2025,1
+Apte Practical Sanskrit-English Dictionary,2007,23
+Apte Practical Sanskrit-English Dictionary,2008,9
+Apte Practical Sanskrit-English Dictionary,2009,1
+Apte Practical Sanskrit-English Dictionary,2010,25
+Apte Practical Sanskrit-English Dictionary,2011,20
+Apte Practical Sanskrit-English Dictionary,2012,9
+Apte Practical Sanskrit-English Dictionary,2013,9
+Apte Practical Sanskrit-English Dictionary,2014,26
+Apte Practical Sanskrit-English Dictionary,2015,63
+Apte Practical Sanskrit-English Dictionary,2016,31
+Apte Practical Sanskrit-English Dictionary,2017,46
+Apte Practical Sanskrit-English Dictionary,2018,9
+Apte Practical Sanskrit-English Dictionary,2019,2
+Apte Practical Sanskrit-English Dictionary,2020,5
+Apte Practical Sanskrit-English Dictionary,2021,4
+Apte Practical Sanskrit-English Dictionary,2023,1
+Apte Practical Sanskrit-English Dictionary,2025,1
+Wilson Sanskrit-English Dictionary,2007,5
+Wilson Sanskrit-English Dictionary,2008,1
+Wilson Sanskrit-English Dictionary,2009,1
+Wilson Sanskrit-English Dictionary,2010,1
+Wilson Sanskrit-English Dictionary,2012,1
+Wilson Sanskrit-English Dictionary,2013,4
+Wilson Sanskrit-English Dictionary,2014,2
+Wilson Sanskrit-English Dictionary,2015,13
+Wilson Sanskrit-English Dictionary,2016,8
+Wilson Sanskrit-English Dictionary,2017,1
+Wilson Sanskrit-English Dictionary,2018,2
+Wilson Sanskrit-English Dictionary,2019,3
+Wilson Sanskrit-English Dictionary,2020,3
+Wilson Sanskrit-English Dictionary,2021,1
+Wilson Sanskrit-English Dictionary,2023,2
+Wilson Sanskrit-English Dictionary,2024,2
+Wilson Sanskrit-English Dictionary,2025,2
+Hermann Grassmann,2007,1
+Hermann Grassmann,2014,3
+Hermann Grassmann,2015,3
+Hermann Grassmann,2016,1
+Hermann Grassmann,2020,2
+Hermann Grassmann,2025,2
+Wörterbuch zum Rig-Veda,2007,1
+Wörterbuch zum Rig-Veda,2013,1
+Wörterbuch zum Rig-Veda,2014,3
+Wörterbuch zum Rig-Veda,2015,4
+Wörterbuch zum Rig-Veda,2016,1
+Wörterbuch zum Rig-Veda,2020,2
+Wörterbuch zum Rig-Veda,2025,2
+Grosses Petersburger Wörterbuch,2007,1
+Grosses Petersburger Wörterbuch,2008,1
+Grosses Petersburger Wörterbuch,2011,2
+Grosses Petersburger Wörterbuch,2012,2
+Grosses Petersburger Wörterbuch,2013,7
+Grosses Petersburger Wörterbuch,2014,79
+Grosses Petersburger Wörterbuch,2015,19
+Grosses Petersburger Wörterbuch,2016,5
+Grosses Petersburger Wörterbuch,2017,9
+Grosses Petersburger Wörterbuch,2018,2
+Grosses Petersburger Wörterbuch,2019,1
+Grosses Petersburger Wörterbuch,2021,2
+Grosses Petersburger Wörterbuch,2022,2
+Grosses Petersburger Wörterbuch,2023,2
+Grosses Petersburger Wörterbuch,2025,1
+Vācaspatyam,2013,1
+Vācaspatyam,2014,2
+Vācaspatyam,2015,10
+Vācaspatyam,2016,3
+Vācaspatyam,2018,1
+Vācaspatyam,2021,3
+Vācaspatyam,2023,1
+Otto Böhtlingk,2007,8
+Otto Böhtlingk,2008,2
+Otto Böhtlingk,2009,1
+Otto Böhtlingk,2011,5
+Otto Böhtlingk,2012,2
+Otto Böhtlingk,2013,5
+Otto Böhtlingk,2014,78
+Otto Böhtlingk,2015,16
+Otto Böhtlingk,2016,4
+Otto Böhtlingk,2017,9
+Otto Böhtlingk,2018,1
+Otto Böhtlingk,2021,1
+Otto Böhtlingk,2023,2
+Horace Hayman Wilson,2010,2
+Horace Hayman Wilson,2011,2
+Horace Hayman Wilson,2013,1
+Horace Hayman Wilson,2014,4
+Horace Hayman Wilson,2015,10
+Horace Hayman Wilson,2016,3
+Horace Hayman Wilson,2017,1
+Horace Hayman Wilson,2018,2
+Horace Hayman Wilson,2019,3
+Horace Hayman Wilson,2020,3
+Horace Hayman Wilson,2021,1
+Horace Hayman Wilson,2023,1
+Dropbox,2011,6
+Dropbox,2012,4
+Dropbox,2013,27
+Dropbox,2014,13
+Dropbox,2015,8
+Dropbox,2016,1
+Dropbox,2017,2
+Dropbox,2021,4
+Carl Cappeller,2007,1
+Carl Cappeller,2021,3
+Cappeller Sanskrit-English Dictionary,2007,1
+Cappeller Sanskrit-English Dictionary,2014,1
+Cappeller Sanskrit-English Dictionary,2015,1
+Cappeller Sanskrit-English Dictionary,2021,3
+Amarakosha,2009,2
+Amarakosha,2010,2
+Amarakosha,2015,1
+Amarakosha,2020,1
+Harvard-Kyoto,2007,2
+Harvard-Kyoto,2010,2
+Harvard-Kyoto,2011,1
+Harvard-Kyoto,2013,33
+Harvard-Kyoto,2014,2
+Harvard-Kyoto,2015,2
+Harvard-Kyoto,2019,1
+SLP1,2010,1
+SLP1,2011,1
+SLP1,2013,11
+SLP1,2015,4
+SLP1,2016,3
+SLP1,2018,1
+SLP1,2019,2
+Arthur Macdonell,2007,4
+Arthur Macdonell,2008,1
+Arthur Macdonell,2011,1
+Arthur Macdonell,2012,4
+Arthur Macdonell,2013,7
+Arthur Macdonell,2014,1
+Arthur Macdonell,2015,3
+Arthur Macdonell,2016,1
+Arthur Macdonell,2018,1
+Macdonell Sanskrit-English Dictionary,2007,4
+Macdonell Sanskrit-English Dictionary,2008,1
+Macdonell Sanskrit-English Dictionary,2011,1
+Macdonell Sanskrit-English Dictionary,2012,4
+Macdonell Sanskrit-English Dictionary,2013,7
+Macdonell Sanskrit-English Dictionary,2014,1
+Macdonell Sanskrit-English Dictionary,2015,3
+Macdonell Sanskrit-English Dictionary,2016,1
+Macdonell Sanskrit-English Dictionary,2018,1
+Дхатупатха,2007,4
+Дхатупатха,2011,3
+Дхатупатха,2013,2
+Дхатупатха,2014,14
+Дхатупатха,2015,2
+Дхатупатха,2017,1
+Kātyāyana,2007,2
+Kātyāyana,2015,2
+Kātyāyana,2016,3
+Kātyāyana,2017,1
+Kātyāyana,2018,1
+Vrindavan,2010,1
+Vrindavan,2016,1
+Śabdakalpadruma,2013,1
+Śabdakalpadruma,2015,4
+Śabdakalpadruma,2016,1
+ITRANS,2007,7
+ITRANS,2009,1
+ITRANS,2010,4
+ITRANS,2011,2
+ITRANS,2012,1
+ITRANS,2013,25
+ITRANS,2015,3
+Sanskrit-Wörterbuch in kürzerer Fassung,2007,2
+Sanskrit-Wörterbuch in kürzerer Fassung,2011,1
+Sanskrit-Wörterbuch in kürzerer Fassung,2013,4
+Sanskrit-Wörterbuch in kürzerer Fassung,2015,1
+Velthuis,2007,1
+Velthuis,2011,1
+Velthuis,2013,7
+Unicode Devanagari,2014,1
+Rapidshare,2007,184
+Rapidshare,2008,24
+Rapidshare,2009,3
+Rapidshare,2010,15
+Rapidshare,2011,23

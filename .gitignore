@@ -75,7 +75,25 @@ review/
 # NEVER committed. Only curated/derived outputs may be published, and only after
 # a /publish-safety-check GO (third-party members joined a *closed* list).
 nagari-2005-2026/
-nagari/data/
+nagari/data/*
+# H1518 Step 1/5/8: static derived artifacts + the Step 8 citable dataset.
+# Neither the lemma map nor phrases.csv nor the release tables below carry
+# email addresses (verified by scripts/audit_publish_surface.py); author
+# display names in phrases.csv/thread_topics.csv/topic_authors.csv match the
+# existing site_data.json top_authors precedent (already public).
+!nagari/data/lemma_map.json
+!nagari/data/phrases.csv
+!nagari/data/datapackage.json
+!nagari/data/CITATION.cff
+!nagari/data/processed
+nagari/data/processed/*
+!nagari/data/processed/topics_by_year.csv
+!nagari/data/processed/thread_topics.csv
+!nagari/data/processed/entities_by_type.csv
+!nagari/data/processed/entity_trends.csv
+!nagari/data/processed/topic_cooccurrence.csv
+!nagari/data/processed/topic_entity_matrix.csv
+!nagari/data/processed/misc_audit_summary.json
 # The retrospective page is the ONE published artifact: it embeds aggregate stats
 # and thread subjects only, and carries no email addresses at all (verified by
 # nagari/scripts/audit_publish_surface.py). Everything else under site/ stays out.
