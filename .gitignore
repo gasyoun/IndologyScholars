@@ -75,7 +75,13 @@ review/
 # NEVER committed. Only curated/derived outputs may be published, and only after
 # a /publish-safety-check GO (third-party members joined a *closed* list).
 nagari-2005-2026/
-nagari/data/
+nagari/data/*
+# H1518 Step 1/5: static derived artifacts the live stdlib pipeline reads --
+# form->lemma map and PMI/LLR/TF-IDF phrase table. Neither carries email
+# addresses; author display names in phrases.csv match the existing
+# site_data.json top_authors precedent (already public).
+!nagari/data/lemma_map.json
+!nagari/data/phrases.csv
 # The retrospective page is the ONE published artifact: it embeds aggregate stats
 # and thread subjects only, and carries no email addresses at all (verified by
 # nagari/scripts/audit_publish_surface.py). Everything else under site/ stays out.
