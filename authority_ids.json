@@ -487,6 +487,44 @@
       ],
       "wikidata": "Q7370051",
       "ror": "046a1ah60"
+    },
+    "ГМВ": {
+      "full_name_ru": "Государственный музей Востока",
+      "name_en": "State Museum of Oriental Art",
+      "alternateName": [
+        "ГМВ",
+        "Музей Востока"
+      ],
+      "wikidata": "Q1056108"
+    },
+    "МГТУ им. Баумана": {
+      "full_name_ru": "Московский государственный технический университет имени Н. Э. Баумана",
+      "name_en": "Bauman Moscow State Technical University",
+      "alternateName": [
+        "МГТУ",
+        "МГТУ им. Баумана"
+      ],
+      "wikidata": "Q1472245",
+      "ror": "00pb8h375"
+    },
+    "МАИ": {
+      "full_name_ru": "Московский авиационный институт",
+      "name_en": "Moscow Aviation Institute",
+      "alternateName": [
+        "МАИ"
+      ],
+      "wikidata": "Q1719898",
+      "ror": "033zpbv42"
+    },
+    "РГХПУ им. Строганова": {
+      "full_name_ru": "Российский государственный художественно-промышленный университет имени С. Г. Строганова",
+      "name_en": "Stroganov Moscow State Academy of Arts and Industry",
+      "alternateName": [
+        "РГХПУ",
+        "РГХПУ им. С.Г. Строганова"
+      ],
+      "wikidata": "Q2360835",
+      "ror": "01a233t53"
     }
   },
   "places": {
