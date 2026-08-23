@@ -25,13 +25,13 @@
     },
     {
       "path": "analytics_output/authority_coverage.csv",
-      "size_bytes": 31299,
-      "sha256": "a673d2952b41e83133e434318381a254a432e31302742de4cd63b0977b7c9e04"
+      "size_bytes": 31030,
+      "sha256": "27aa268fea324ee40e55ecc201bf837ecd7bfb6df4ecb495153b8148457eddb1"
     },
     {
       "path": "analytics_output/authority_review_queue.csv",
-      "size_bytes": 165636,
-      "sha256": "81fbb3f10b1cb508369ba3db20d88bdd5b770149d7173b5217e002cca060d68e"
+      "size_bytes": 165367,
+      "sha256": "69ce4484b9aeb1af50100933f2ce89457bf5448ce548970931bbeb977a6d1d5e"
     },
     {
       "path": "analytics_output/birth_year_gap_audit.csv",
@@ -60,8 +60,8 @@
     },
     {
       "path": "analytics_output/classification_overrides.csv",
-      "size_bytes": 82,
-      "sha256": "61ea398fcc55d45937a20167755f24ab76dcd77c92e0c123493f1d54e85c998b"
+      "size_bytes": 81,
+      "sha256": "042d05dd750dee7c298cfb94ac546b41386f13f942f24f66cfe5842f8542eaa3"
     },
     {
       "path": "analytics_output/classification_reliability_sample.csv",
@@ -320,18 +320,18 @@
     },
     {
       "path": "analytics_output/field_provenance_authority.csv",
-      "size_bytes": 24069,
-      "sha256": "68cfdb397137cdf84ac3aefd48bc08f3278d9901cd24416adbef6f78def294d1"
+      "size_bytes": 23848,
+      "sha256": "803eec154df82bf745c179989be721042594eefd3c260599ccf0adec838edb45"
     },
     {
       "path": "analytics_output/field_provenance_biographical.csv",
-      "size_bytes": 235689,
-      "sha256": "a9ff9d81c80fa02f273fe8c69411c71ec6ca9cd7dbc7272559b3f9790bbb1179"
+      "size_bytes": 234822,
+      "sha256": "b96d3aafcd61ff744c6aaad1240f2ad6492f26de14e1f7ec67e3f4a2ec0c1e16"
     },
     {
       "path": "analytics_output/field_provenance_themes.csv",
-      "size_bytes": 547967,
-      "sha256": "0cf503253f9bbdbcc59529a936fe1ba508115b7691bb415a754b859b0bce4271"
+      "size_bytes": 546578,
+      "sha256": "8d07d37ff4b9634f0e602e43d293781cbafca10bb147bb938411314e6a7f171d"
     },
     {
       "path": "analytics_output/gender_validation_sample.csv",
@@ -475,13 +475,13 @@
     },
     {
       "path": "analytics_output/keyword_filter_audit.csv",
-      "size_bytes": 1041121,
-      "sha256": "d3d03fd09174b780b5d86d877570fff55d468490b302dc5b8b42efe27a709f92"
+      "size_bytes": 1038024,
+      "sha256": "3cf8e53cd42bf129160f949da96919c4bf0e3daa3e339aa7f93a0997100bbfef"
     },
     {
       "path": "analytics_output/keyword_stats.csv",
-      "size_bytes": 822112,
-      "sha256": "7f70c7cc84da6eeaba84cd577f179cae101b8121211078961f487d23fcb21978"
+      "size_bytes": 819069,
+      "sha256": "0158ab12254948b6f20edd9cc42be32f06d77f66246afe51014dc03f3ed81c4a"
     },
     {
       "path": "analytics_output/lineage_candidates.csv",
@@ -840,13 +840,13 @@
     },
     {
       "path": "analytics_output/theme_review_queue.csv",
-      "size_bytes": 10675,
-      "sha256": "aedd141a84b98fa9a13b98e02c8916cc0bcac4267812b4a30ac83e1073b0b90d"
+      "size_bytes": 10640,
+      "sha256": "c27789f33325df9b7c9ef19f41de1691442ba3ab0816048cd5b0f0eb765b04d4"
     },
     {
       "path": "analytics_output/theme_share_by_year.csv",
-      "size_bytes": 16484,
-      "sha256": "4c0bbca3327dbe4ced8b4b55a710c86cfc5caaa8c9a554037cdb065012df2c64"
+      "size_bytes": 16285,
+      "sha256": "20d3be66c51bba49fda65f60a017d4331c3bc9e32b83a6f20af24d2885d8915f"
     },
     {
       "path": "analytics_output/total_indologists.csv",
@@ -10216,7 +10216,7 @@
     {
       "path": "download-data.html",
       "size_bytes": 37533,
-      "sha256": "8811be01558ba13f5b7bbb17f3df1649ecf001f4cb1e5ffa8b7e89510905bf61"
+      "sha256": "cc58ac4be650f9536c1ba3d5ae91276913f47be309a8845aa86e60e53294b238"
     },
     {
       "path": "en.html",
@@ -10256,7 +10256,7 @@
     {
       "path": "findings/visualisations.html",
       "size_bytes": 493638,
-      "sha256": "d431ef8694e2d9cb12a801f48c0cebfca37f167c20187457c27e33f189d60b01"
+      "sha256": "6bb4307dc0eee25ee5ca5773473c46a348e6c61684517c43e1421b7f9a9b6fd5"
     },
     {
       "path": "gatekeeping-en.html",
