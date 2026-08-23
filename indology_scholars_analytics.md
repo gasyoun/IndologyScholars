@@ -152,8 +152,8 @@ The complete structured lists have been generated and exported to the `analytics
 
 We analyze the structure of Russian Indological conferences through the lens of participation networks. Unlike traditional bibliometric networks (which map who cites whom), our networks map **co-presence and shared scholarly context**. They help identify institutional centers of gravity, disciplinary clustering, and bridge scholars between the Zograf and Roerich readings.
 
-**Nodes Generated:** 344
+**Nodes Generated:** 347
 
-**Edges Generated:** 8095
+**Edges Generated:** 8103
 
 The network is exported into standard edge list and node list CSV formats (`network_nodes.csv` and `network_edges.csv`) for use in external graphing tools like Gephi or Cytoscape.

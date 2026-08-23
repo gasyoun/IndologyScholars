@@ -320,8 +320,8 @@
     },
     {
       "path": "analytics_output/field_provenance_authority.csv",
-      "size_bytes": 23848,
-      "sha256": "803eec154df82bf745c179989be721042594eefd3c260599ccf0adec838edb45"
+      "size_bytes": 26126,
+      "sha256": "18c6beaf81e349fad1868d93245a534ed906543de58f6a5b2232b821c95d1741"
     },
     {
       "path": "analytics_output/field_provenance_biographical.csv",
@@ -381,7 +381,7 @@
     {
       "path": "analytics_output/human_review_index.csv",
       "size_bytes": 1174358,
-      "sha256": "9dab1b4a5815ec8efc4ac89f1e5961fbda13a4546a9dd746cfb97b478d8a1fea"
+      "sha256": "f7aac9b96854ddf0b34cabec6061c3dbf66e2cd1a8f1fcd964205b87b25bfa29"
     },
     {
       "path": "analytics_output/human_review_summary.json",
@@ -520,23 +520,23 @@
     },
     {
       "path": "analytics_output/network_data.json",
-      "size_bytes": 1763480,
-      "sha256": "b4090ce48ea908b26d264f5ab233799b912241d5c3a84dc44667e3030eee6caf"
+      "size_bytes": 1765758,
+      "sha256": "f4249f244e761cd9c14a5ec09cd34e6eac5f86be2911082d45ca425d3f4c4022"
     },
     {
       "path": "analytics_output/network_edges.csv",
-      "size_bytes": 715891,
-      "sha256": "86e4a47d7b48065b266c999cee1f14192480077cccd0808beaef0adf5df7b423"
+      "size_bytes": 716635,
+      "sha256": "8649654228a3c3698ad1870240caf1e39603a54dfdf21456f3b4aad8bf4adc52"
     },
     {
       "path": "analytics_output/network_nodes.csv",
-      "size_bytes": 29858,
-      "sha256": "5fedc6cbfc19a0f72eb63996f7997c33c9190b1b2d303b8da1fd082834539b9a"
+      "size_bytes": 30077,
+      "sha256": "651c54579e83848af58ff707a9fa85fb11743feb2a1254e7c11bd5fdba144a10"
     },
     {
       "path": "analytics_output/network_robustness_checks.csv",
       "size_bytes": 2033,
-      "sha256": "d10dce3b329c7da183d4db2df6b86f1cb23e790db234182b26440d860e23e728"
+      "sha256": "1eaab820eaa4add3a9aeb168210c9f2212003e697d89c4be4e215a7505287f0c"
     },
     {
       "path": "analytics_output/network_series_bridges.csv",
@@ -10020,8 +10020,8 @@
     },
     {
       "path": "docs/ROADMAP_2026.md",
-      "size_bytes": 10685,
-      "sha256": "b9fe7da46aace887c44447e313debb5524b1331e3393cf0b57c7cabe72691e35"
+      "size_bytes": 11876,
+      "sha256": "4396bd078338ea85f1f2b0326d1761fb08bb256c10274c7fc7e8a77f7dd83f1d"
     },
     {
       "path": "docs/ROADMAP_IndologyScholars_sanskrit-community-lenses_2026H2.md",
@@ -10216,7 +10216,7 @@
     {
       "path": "download-data.html",
       "size_bytes": 37533,
-      "sha256": "cc58ac4be650f9536c1ba3d5ae91276913f47be309a8845aa86e60e53294b238"
+      "sha256": "0ce5224c459bf64c23669a1ae1ad2e41834dc3ced096e599e52e1f35fe3b8529"
     },
     {
       "path": "en.html",
@@ -10256,7 +10256,7 @@
     {
       "path": "findings/visualisations.html",
       "size_bytes": 493638,
-      "sha256": "6bb4307dc0eee25ee5ca5773473c46a348e6c61684517c43e1421b7f9a9b6fd5"
+      "sha256": "816d490d55cdac54bb147b954fb63985ee8de48e2b4aabf22505abed386f6f13"
     },
     {
       "path": "gatekeeping-en.html",

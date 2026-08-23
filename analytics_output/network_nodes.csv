@@ -39,6 +39,7 @@ event:E2025,event,Zograf Readings 2025,E2025,57
 event:E2026,event,Zograf Readings 2026,E2026,62
 organization:ГАУГН,organization,ГАУГН,ГАУГН,3
 organization:ГИИ,organization,ГИИ,ГИИ,15
+organization:ГМВ,organization,ГМВ,ГМВ,2
 organization:ГММ Скрябина,organization,ГММ Скрябина,ГММ Скрябина,4
 organization:Государственный Эрмитаж,organization,Государственный Эрмитаж,Государственный Эрмитаж,1
 organization:ИВ НАН Украины,organization,ИВ НАН Украины,ИВ НАН Украины,8
@@ -54,8 +55,10 @@ organization:ИЭА РАН,organization,ИЭА РАН,ИЭА РАН,4
 organization:ИЯ РАН,organization,ИЯ РАН,ИЯ РАН,4
 organization:КНЦ РАН,organization,КНЦ РАН,КНЦ РАН,1
 organization:КрасГАУ,organization,КрасГАУ,КрасГАУ,1
+organization:МАИ,organization,МАИ,МАИ,1
 organization:МАЭ РАН,organization,МАЭ РАН,МАЭ РАН,2
 organization:МГППУ,organization,МГППУ,МГППУ,6
+organization:МГТУ им. Баумана,organization,МГТУ им. Баумана,МГТУ им. Баумана,1
 organization:МГУ,organization,МГУ,МГУ,37
 organization:МЦР,organization,МЦР,МЦР,2
 organization:НИУ ВШЭ,organization,НИУ ВШЭ,НИУ ВШЭ,16
