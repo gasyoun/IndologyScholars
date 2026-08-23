@@ -2002,7 +2002,7 @@ def generate_keyword_stats_page(records):
     kw_json = _json.dumps(kw_data, ensure_ascii=False)
 
     with open("analytics_output/keyword_stats.csv", "w", encoding="utf-8", newline="") as handle:
-        writer = csv.DictWriter(handle, fieldnames=["keyword", "presentations", "zograf", "roerich", "examples"])
+        writer = csv.DictWriter(handle, fieldnames=["keyword", "presentations", "zograf", "roerich", "examples"], lineterminator="\n")
         writer.writeheader()
         writer.writerows({key: row[key] for key in writer.fieldnames} for row in rows)
 
@@ -2025,7 +2025,7 @@ def generate_keyword_stats_page(records):
         )
 
     with open("analytics_output/keyword_filter_audit.csv", "w", encoding="utf-8", newline="") as handle:
-        writer = csv.DictWriter(handle, fieldnames=["keyword", "label", "status", "reason", "presentations", "zograf", "roerich", "examples"])
+        writer = csv.DictWriter(handle, fieldnames=["keyword", "label", "status", "reason", "presentations", "zograf", "roerich", "examples"], lineterminator="\n")
         writer.writeheader()
         writer.writerows(audit_rows)
 
@@ -2570,6 +2570,7 @@ def generate_theme_evolution_page():
         writer = csv.DictWriter(
             handle,
             fieldnames=["year", "meso_code", "label", "count", "presentations", "share"],
+            lineterminator="\n",
         )
         writer.writeheader()
         writer.writerows(out_rows)
@@ -3933,7 +3934,7 @@ def generate_authority_coverage(data, authority):
             "has_orcid", "has_wikidata", "has_viaf", "has_openalex", "has_wikipedia", "has_rinc", "has_google_scholar",
             "has_vk", "has_official_url", "has_any_external_id", "authority_confidence", "checked_at"
         ]
-        writer = csv.DictWriter(f, fieldnames=fieldnames)
+        writer = csv.DictWriter(f, fieldnames=fieldnames, lineterminator="\n")
         writer.writeheader()
         for r in coverage_rows:
             writer.writerow(r)
@@ -3944,7 +3945,7 @@ def generate_authority_coverage(data, authority):
             "reason", "suggested_query", "rinc_search_url", "openalex_search_url",
             "wikipedia_search_url", "review_status"
         ]
-        writer = csv.DictWriter(f, fieldnames=fieldnames)
+        writer = csv.DictWriter(f, fieldnames=fieldnames, lineterminator="\n")
         writer.writeheader()
         for r in review_queue:
             writer.writerow(r)
@@ -4003,7 +4004,7 @@ def generate_provenance_sidecars(data, authority, records):
             "entity_type", "entity_id", "display_name", "field_name", "field_value",
             "source_type", "source_url", "confidence", "checked_at", "notes",
         ]
-        writer = csv.DictWriter(f, fieldnames=fieldnames)
+        writer = csv.DictWriter(f, fieldnames=fieldnames, lineterminator="\n")
         writer.writeheader()
         writer.writerows(bio_rows)
 
@@ -4055,7 +4056,7 @@ def generate_provenance_sidecars(data, authority, records):
             "entity_type", "entity_id", "field_name", "field_value",
             "source_type", "confidence", "checked_at", "notes",
         ]
-        writer = csv.DictWriter(f, fieldnames=fieldnames)
+        writer = csv.DictWriter(f, fieldnames=fieldnames, lineterminator="\n")
         writer.writeheader()
         writer.writerows(authority_rows)
 
@@ -4103,7 +4104,7 @@ def generate_provenance_sidecars(data, authority, records):
             "confidence", "checked_at", "title", "l1_review_candidate", "l1_confidence",
             "l3_review_candidate", "l3_confidence", "notes",
         ]
-        writer = csv.DictWriter(f, fieldnames=fieldnames)
+        writer = csv.DictWriter(f, fieldnames=fieldnames, lineterminator="\n")
         writer.writeheader()
         writer.writerows(theme_rows)
 
@@ -4248,7 +4249,7 @@ def generate_theme_review_queue(records: list) -> int:
         "review_status", "notes",
     ]
     with open(out_path, "w", encoding="utf-8", newline="") as f:
-        writer = csv.DictWriter(f, fieldnames=fieldnames)
+        writer = csv.DictWriter(f, fieldnames=fieldnames, lineterminator="\n")
         writer.writeheader()
         writer.writerows(queue)
 
@@ -13409,7 +13410,7 @@ def generate_classification_criteria_page(records):
         )
     with open("analytics_output/classification_overrides.csv", "w", encoding="utf-8", newline="") as handle:
         ledger_fieldnames = ["presentation_id", "title", "theme_code", "theme_label_ru", "gumilyov_level", "meso_codes", "reason"]
-        writer = csv.DictWriter(handle, fieldnames=ledger_fieldnames)
+        writer = csv.DictWriter(handle, fieldnames=ledger_fieldnames, lineterminator="\n")
         writer.writeheader()
         writer.writerows(ledger_rows)
     body = f"""
