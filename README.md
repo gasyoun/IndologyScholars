@@ -1,6 +1,6 @@
 # IndologyScholars: архив докладов по российской индологии
 
-_Created: 24-04-2026 · Last updated: 23-07-2026_
+_Created: 24-04-2026 · Last updated: 26-08-2026_
 
 [English version](https://github.com/gasyoun/IndologyScholars/blob/main/README_EN.md) | [Документация для разработчиков](https://github.com/gasyoun/IndologyScholars/blob/main/docs/development.md)
 
@@ -105,6 +105,40 @@ historical`).
 Исторические аналитические тексты и рукописи в репозитории могут описывать
 более ранние снимки корпуса; актуальными для сайта являются опубликованные
 страницы и выгрузки данных.
+
+## Как этот репозиторий связан с остальными
+
+Архив — часть организационного «хребта» из примерно 85 репозиториев; ниже — что
+он отдаёт наружу, кто это читает и куда записывать находки.
+
+- **Что производит.** Просопографический слой докладов: перекрёстную таблицу
+  мезо-код → дисциплина
+  [`curation/meso_discipline_crosswalk.csv`](https://github.com/gasyoun/IndologyScholars/blob/main/curation/meso_discipline_crosswalk.csv)
+  (50 сопоставлений с оценкой уверенности), справочник дисциплин
+  [`curation/disciplines.csv`](https://github.com/gasyoun/IndologyScholars/blob/main/curation/disciplines.csv)
+  и ручные назначения
+  [`curation/person_disciplines.csv`](https://github.com/gasyoun/IndologyScholars/blob/main/curation/person_disciplines.csv).
+  Внутри репозитория их читает
+  [`pipeline/disciplines.py`](https://github.com/gasyoun/IndologyScholars/blob/main/pipeline/disciplines.py),
+  собирая таблицу `person_discipline`.
+- **Кто читает.** Перекрёстная таблица зарегистрирована как ребро графа в
+  [PROJECT_INTERLINKS.md](https://github.com/gasyoun/Uprava/blob/main/PROJECT_INTERLINKS.md)
+  и [interlinks_edges.tsv](https://github.com/gasyoun/Uprava/blob/main/interlinks_edges.tsv)
+  (26-08-2026): её не следует пересобирать заново в соседних репозиториях. Из
+  соседей архив сам потребляет ленту
+  [`gasyoun/IndologyArchiveAtlas`](https://github.com/gasyoun/IndologyArchiveAtlas)
+  (`feed/*.csv` → `tools/fetch_indology_feed.py`).
+- **Куда писать находки.** Инфраструктура и процесс →
+  [Uprava/FINDINGS.md](https://github.com/gasyoun/Uprava/blob/main/FINDINGS.md);
+  санскритские данные →
+  [SanskritLexicography/FINDINGS.md](https://github.com/gasyoun/SanskritLexicography/blob/master/FINDINGS.md).
+  Своих реестров этот репозиторий не держит.
+- **Общий код.** Прежде чем писать нормализатор, транскриптор или парсер —
+  [SHARED_CODE.md](https://github.com/gasyoun/github-spine/blob/main/SHARED_CODE.md).
+- **Что уже существует.**
+  [FEATURES_INDEX.md](https://github.com/gasyoun/SanskritLexicography/blob/master/FEATURES_INDEX.md).
+- **Что делать дальше.**
+  [GTD_NEXT_ACTIONS.md](https://github.com/gasyoun/Uprava/blob/main/GTD_NEXT_ACTIONS.md).
 
 ## Лицензия
 
