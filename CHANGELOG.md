@@ -6,6 +6,11 @@
 
 ## [Unreleased]
 
+## [1.12.16] - 2026-08-26
+### Added
+
+- **H3567 — репозиторий подключён к организационному «хребту»** (Opus 5 `claude-opus-5`, 26-08-2026, [PR #258](https://github.com/gasyoun/IndologyScholars/pull/258)). Правило F5 отменяет вердикт `standalone-by-design`: [`curation/meso_discipline_crosswalk.csv`](https://github.com/gasyoun/IndologyScholars/blob/main/curation/meso_discipline_crosswalk.csv) (50 сопоставлений мезо-код → дисциплина с оценкой уверенности, читается [`pipeline/disciplines.py`](https://github.com/gasyoun/IndologyScholars/blob/main/pipeline/disciplines.py) в таблицу `person_discipline`) зарегистрирована как ребро-производитель одновременно в [interlinks_edges.tsv](https://github.com/gasyoun/Uprava/blob/main/interlinks_edges.tsv) и [PROJECT_INTERLINKS.md](https://github.com/gasyoun/Uprava/blob/main/PROJECT_INTERLINKS.md); вердикт в [INTERLINKS_COVERAGE_LEDGER.tsv](https://github.com/gasyoun/Uprava/blob/main/INTERLINKS_COVERAGE_LEDGER.tsv) переведён в `edges-registered` тем же коммитом. Правило F1 — строка-указатель в [CLAUDE.md](https://github.com/gasyoun/IndologyScholars/blob/main/CLAUDE.md) на два хабовых реестра находок, своих реестров репозиторий не заводит. Правило F11 — раздел «Как этот репозиторий связан с остальными» в [README.md](https://github.com/gasyoun/IndologyScholars/blob/main/README.md). Проверка второго шлюза выполнена измерением, а не допущением: ни csl-atlas, ни kosha сегодня не читают никакого отображения дисциплин, поэтому ребро зарегистрировано только со стороны производителя и несёт условие снятия.
+
 ## [1.12.15] - 2026-08-24
 
 
