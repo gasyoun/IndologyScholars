@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-_Created: 19-05-2026 · Last updated: 16-08-2026_
+_Created: 19-05-2026 · Last updated: 26-08-2026_
 
 `IndologyScholars` is an open **navigation archive of two Russian Indology
 forums** — Зографские чтения (St Petersburg) and Рериховские чтения (Moscow) —
@@ -69,6 +69,12 @@ Frozen DOI snapshot: `python tools/freeze_article_data.py` →
   (`known-relationships.html`, `gender.html`, `mobility.html`, `voting.html`).
 - `scratch/` — experiments only; never publish from it.
 - `article/snapshots/` — freeze via the tool, do not hand-patch.
+
+Gotchas from this repo: infra and process →
+[Uprava/FINDINGS.md](https://github.com/gasyoun/Uprava/blob/main/FINDINGS.md);
+Sanskrit data →
+[SanskritLexicography/FINDINGS.md](https://github.com/gasyoun/SanskritLexicography/blob/master/FINDINGS.md).
+This repo keeps no local registries of its own (ruling F1, 26-08-2026).
 
 Danger facts:
 [Uprava DANGER_FACTS.md](https://github.com/gasyoun/Uprava/blob/main/DANGER_FACTS.md)
