@@ -38,6 +38,7 @@ event:E2024,event,Zograf Readings 2024,E2024,53
 event:E2025,event,Zograf Readings 2025,E2025,57
 event:E2026,event,Zograf Readings 2026,E2026,62
 organization:ГАУГН,organization,ГАУГН,ГАУГН,3
+organization:ГБУ Замок Шереметьева,organization,ГБУ Замок Шереметьева,ГБУ Замок Шереметьева,1
 organization:ГИИ,organization,ГИИ,ГИИ,15
 organization:ГМВ,organization,ГМВ,ГМВ,2
 organization:ГММ Скрябина,organization,ГММ Скрябина,ГММ Скрябина,4
@@ -62,7 +63,7 @@ organization:МГТУ им. Баумана,organization,МГТУ им. Баум�
 organization:МГУ,organization,МГУ,МГУ,37
 organization:МЦР,organization,МЦР,МЦР,2
 organization:НИУ ВШЭ,organization,НИУ ВШЭ,НИУ ВШЭ,16
-organization:Независимые исследователи,organization,Независимые исследователи,Независимые исследователи,2
+organization:Независимые исследователи,organization,Независимые исследователи,Независимые исследователи,13
 organization:Ольстерский университет,organization,Ольстерский университет,Ольстерский университет,5
 organization:РАНХиГС,organization,РАНХиГС,РАНХиГС,1
 organization:РГГУ,organization,РГГУ,РГГУ,4
@@ -71,6 +72,7 @@ organization:РУДН,organization,РУДН,РУДН,9
 organization:РостГМУ,organization,РостГМУ,РостГМУ,1
 organization:СПбГИК,organization,СПбГИК,СПбГИК,1
 organization:СПбГУ,organization,СПбГУ,СПбГУ,39
+organization:УРАО,organization,УРАО,УРАО,1
 organization:УрФУ,organization,УрФУ,УрФУ,1
 person:PERS_800ac07e,person,А. А. Нейвирт,PERS_800ac07e,2
 person:PERS_b9a0e40c,person,А. В. Осокин,PERS_b9a0e40c,1
