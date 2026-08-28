@@ -6,6 +6,7 @@
 
 ## [Unreleased]
 
+## [1.12.17] - 2026-08-28
 ### Added
 
 - **H3269 — affiliation org tail vs `authority_ids.json`** (Grok 4.6 `grok-4.6`, 28-08-2026). Census of the A12 leftover: minted Wikidata/ROR for **УРАО** ([Q4475813](https://www.wikidata.org/wiki/Q4475813)) and **ГБУ Замок Шереметьева** ([Q4523096](https://www.wikidata.org/wiki/Q4523096)); mapped programme shorthand **НИ / ни** onto `Независимые исследователи`; listed three single mentions as unresolvable (Администрация Главы Республики Калмыкия; МРЦ; ММС). Report: [`docs/AFFILIATION_ORG_TAIL_H3269_2026-08-28.md`](https://github.com/gasyoun/IndologyScholars/blob/main/docs/AFFILIATION_ORG_TAIL_H3269_2026-08-28.md). Did **not** regenerate the co-authorship network.
