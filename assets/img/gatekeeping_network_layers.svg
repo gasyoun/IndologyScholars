@@ -25,13 +25,13 @@
 <text x="28" y="259" fill="#eef6f0" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="650" text-anchor="start">person organization bipartite</text>
 <text x="180" y="259" fill="#a8b7ae" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="400" text-anchor="start">person_organization</text>
 <rect x="315" y="244" width="530" height="24" rx="8" fill="#17201c" stroke="#304139"/>
-<rect x="315" y="244" width="40.3" height="24" rx="8" fill="#c084fc" opacity="0.78"/>
-<text x="859" y="261" fill="#eef6f0" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="start">367</text>
+<rect x="315" y="244" width="41.7" height="24" rx="8" fill="#c084fc" opacity="0.78"/>
+<text x="859" y="261" fill="#eef6f0" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="start">380</text>
 <text x="28" y="297" fill="#eef6f0" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="650" text-anchor="start">organization theme bipartite</text>
 <text x="180" y="297" fill="#a8b7ae" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="400" text-anchor="start">organization_theme</text>
 <rect x="315" y="282" width="530" height="24" rx="8" fill="#17201c" stroke="#304139"/>
-<rect x="315" y="282" width="24.1" height="24" rx="8" fill="#60a5fa" opacity="0.78"/>
-<text x="859" y="299" fill="#eef6f0" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="start">219</text>
+<rect x="315" y="282" width="25.3" height="24" rx="8" fill="#60a5fa" opacity="0.78"/>
+<text x="859" y="299" fill="#eef6f0" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="start">230</text>
 <text x="28" y="335" fill="#eef6f0" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="650" text-anchor="start">series bridge</text>
 <text x="180" y="335" fill="#a8b7ae" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="400" text-anchor="start">person_event</text>
 <rect x="315" y="320" width="530" height="24" rx="8" fill="#17201c" stroke="#304139"/>

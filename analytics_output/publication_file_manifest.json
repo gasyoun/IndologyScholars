@@ -16,7 +16,7 @@
     {
       "path": "CITATION.cff",
       "size_bytes": 800,
-      "sha256": "a642fa3b890260647193fa7a2894c67d6e205b91b5049bbef8da87c85617cf05"
+      "sha256": "eb71fbea389f56318bb812b8f246d03c755be4290e322564465f4cff60a82c7e"
     },
     {
       "path": "analytics_output/age_cohort_trend.csv",
@@ -951,7 +951,7 @@
     {
       "path": "assets/img/gatekeeping_network_layers.svg",
       "size_bytes": 5657,
-      "sha256": "cfcfb82016e153f10d44b6fee1fddb6d58be5345ba74fd97218b2cf84fd8baef"
+      "sha256": "a1fa98fdc9cff6bf921ad49574ae1bb0f2f3acaaf6eba621eceeb4d13febad69"
     },
     {
       "path": "assets/img/network_degradation.png",
@@ -10271,7 +10271,7 @@
     {
       "path": "findings/visualisations.html",
       "size_bytes": 493638,
-      "sha256": "2fadc080abc0dc9a7e5305e765f448b3788220d0ba5b0c62f55db1d496c28eb4"
+      "sha256": "6a0b2dba7ab453462de244a34a5c4a581b599de1ce283604cf722d5b22a389e5"
     },
     {
       "path": "gatekeeping-en.html",
