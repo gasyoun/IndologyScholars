@@ -1,6 +1,8 @@
-"""One-off check: current affiliation-mention resolution stats vs. the
-docs/ROADMAP_2026.md A12 residual-tail claim (~14 institutions / ~60 mentions
-with no Q-ID). Reads conferences.db + authority_ids.json + geography.json.
+"""Affiliation-mention resolution stats vs authority_ids.json.
+
+A12 residual-tail claim (~14 institutions / ~60 mentions with no Q-ID) is
+closed except three unresolvable single mentions (H3269). Reads
+conferences.db + authority_ids.json + geography.json.
 """
 import json
 import os
@@ -35,6 +37,9 @@ if isinstance(geo, dict):
             for item in block:
                 if isinstance(item, dict) and item.get("name"):
                     city_names.add(str(item["name"]).lower())
+    for item in geo.get("city_aliases") or []:
+        if isinstance(item, dict) and item.get("keyword"):
+            city_names.add(str(item["keyword"]).lower())
 
 total = len(rows)
 not_stated = 0
@@ -42,6 +47,19 @@ org_resolved_with_qid = 0
 org_resolved_no_qid = 0
 city_like = 0
 unresolved = Counter()
+# Institution-shaped leftovers that also contain a city token (A12's greedy
+# city check used to hide these in the geography bucket).
+ORGISH_HINTS = (
+    "администрация",
+    "гбу",
+    "университет",
+    "институт",
+    "академи",
+    "музей",
+    "ммс",
+    "мрц",
+    "филиал",
+)
 
 for raw, org_id in rows:
     text = (raw or "").strip()
@@ -57,8 +75,8 @@ for raw, org_id in rows:
         else:
             org_resolved_no_qid += 1
         continue
-    # crude city check: any known city token appears in the raw text
-    if any(c in low for c in city_names):
+    orgish = any(h in low for h in ORGISH_HINTS)
+    if any(c in low for c in city_names) and not orgish:
         city_like += 1
         continue
     unresolved[text] += 1

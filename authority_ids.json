@@ -525,6 +525,29 @@
       ],
       "wikidata": "Q2360835",
       "ror": "01a233t53"
+    },
+    "УРАО": {
+      "full_name_ru": "Университет Российской академии образования",
+      "name_en": "University of the Russian Academy of Education",
+      "alternateName": [
+        "УРАО",
+        "УРИО",
+        "University of Russian Innovation Education"
+      ],
+      "url": "https://urio-edu.ru",
+      "wikidata": "Q4475813",
+      "ror": "02d2yjc53"
+    },
+    "ГБУ Замок Шереметьева": {
+      "full_name_ru": "Государственное бюджетное учреждение культуры Республики Марий Эл «Замок Шереметева»",
+      "name_en": "Sheremetev Castle (Yurino)",
+      "alternateName": [
+        "ГБУ «Замок Шереметьева»",
+        "Замок Шереметева",
+        "Замок Шереметьева"
+      ],
+      "url": "https://zamoksheremeteva.com",
+      "wikidata": "Q4523096"
     }
   },
   "places": {
