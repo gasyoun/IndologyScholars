@@ -657,13 +657,37 @@ _AFFILIATION_ALIASES = [
     (("мгту",), ("баумана",), "МГТУ им. Баумана"),
     (("маи",), (), "МАИ"),
     (("ргхпу",), ("строганов",), "РГХПУ им. Строганова"),
+    (("урао",), ("университет российской академии образования",), "УРАО"),
+    (
+        (),
+        ("замок шереметьева", "замок шереметева"),
+        "ГБУ Замок Шереметьева",
+    ),
 ]
+
+
+def _is_independent_shorthand(value):
+    """Programme shorthand НИ / ни = независимый исследователь.
+
+    Match only the isolated abbreviation (standalone, trailing, or before a
+    comma), never the Russian particle inside a longer phrase.
+    """
+    v = (value or "").strip().lower()
+    if v in {"ни", "н.и.", "н. и.", "ni"}:
+        return True
+    if v.startswith("ни,") or v.endswith(" ни"):
+        return True
+    if " ни," in v:
+        return True
+    return False
 
 
 def normalize_affiliation(aff):
     if not aff:
         return None
     value = aff.lower()
+    if _is_independent_shorthand(value):
+        return "Независимые исследователи"
     if "ивр " in value or "восточных рукописей" in value:
         return "ИВР РАН"
     if "ив ран" in value or "востоковедения ран" in value or "ивран" in value:
