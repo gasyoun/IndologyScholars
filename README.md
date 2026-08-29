@@ -1,6 +1,6 @@
 # IndologyScholars: архив докладов по российской индологии
 
-_Created: 24-04-2026 · Last updated: 26-08-2026_
+_Created: 24-04-2026 · Last updated: 29-08-2026_
 
 [English version](https://github.com/gasyoun/IndologyScholars/blob/main/README_EN.md) | [Документация для разработчиков](https://github.com/gasyoun/IndologyScholars/blob/main/docs/development.md)
 
@@ -124,8 +124,20 @@ historical`).
 - **Кто читает.** Перекрёстная таблица зарегистрирована как ребро графа в
   [PROJECT_INTERLINKS.md](https://github.com/gasyoun/Uprava/blob/main/PROJECT_INTERLINKS.md)
   и [interlinks_edges.tsv](https://github.com/gasyoun/Uprava/blob/main/interlinks_edges.tsv)
-  (26-08-2026): её не следует пересобирать заново в соседних репозиториях. Из
-  соседей архив сам потребляет ленту
+  (26-08-2026): её не следует пересобирать заново в соседних репозиториях.
+  **С 29-08-2026 (решение F5c) у неё есть и зарегистрированные потребители** —
+  [`csl-atlas`](https://github.com/gasyoun/csl-atlas) и
+  [`kosha`](https://github.com/gasyoun/kosha), строки `consumes` со статусом `proposed`.
+  ⚠️ **Статус `proposed` — не украшение:** замер 29-08-2026 (`git grep -il
+  meso_discipline_crosswalk|person_disciplines|disciplines.csv`) показывает, что **ни один из
+  них таблицу пока не читает**. Строки держатся на *намерении*, признанном решением F5
+  обязательным: брать эту перекрёстную таблицу, а не собирать свою таксономию дисциплин
+  русской индологии заново, и никогда не откатываться к `keyword_filtering.py` с его
+  погрешностью ≥ 7,1 %. **Условие снятия:** если к следующей переписи связности ни один из
+  них так и не будет её читать, обе строки-потребителя удаляются; строка-производитель
+  остаётся в любом случае. До этого момента отсутствие чтения — известное датированное
+  состояние, а не дефект.
+  Из соседей архив сам потребляет ленту
   [`gasyoun/IndologyArchiveAtlas`](https://github.com/gasyoun/IndologyArchiveAtlas)
   (`feed/*.csv` → `tools/fetch_indology_feed.py`).
 - **Куда писать находки.** Инфраструктура и процесс →
