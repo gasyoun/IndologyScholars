@@ -301,7 +301,10 @@ def test_crlf_blob_still_blocks_on_clean_push(tmp_path):
     assert remote_tip(bare) != git(us, "rev-parse", "HEAD")
 
 
-def test_silent_revert_warns_by_default_blocks_when_strict(tmp_path):
+def test_silent_revert_blocks_by_default_strict_is_a_no_op(tmp_path):
+    """MG 16-08-2026 re-promoted the line-level scan from warn to block-by-default
+    (see the checker's module docstring, 'BLOCKS BY DEFAULT'). STALE_BASE_PUSH_STRICT
+    is kept as an accepted no-op so older callers/docs referencing it do not break."""
     bare, them, us = world(tmp_path)
     write(them / "audit.md", "# Audit\n\nseed line\nlink: handoffs/archive/H1.md\n")
     git(them, "add", "-A")
@@ -315,9 +318,9 @@ def test_silent_revert_warns_by_default_blocks_when_strict(tmp_path):
     git(us, "commit", "-m", "stale copy")
 
     rc, payload, _ = run_checker(us, "HEAD", "origin/main", "--no-fetch")
-    assert rc == 0
+    assert rc == 1
     assert payload["base_state"] == "clean"
-    assert payload["result"] == "warn"
+    assert payload["result"] == "block"
     assert "audit.md" in payload["paths"]
 
     rc_strict, payload_s, _ = run_checker(
