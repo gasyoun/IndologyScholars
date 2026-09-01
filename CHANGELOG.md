@@ -6,6 +6,36 @@
 
 ## 2026-08-29
 
+### H3646 — восстановлен базовый gate pre_push_stale_base_check.py (base_state), потерянный слиянием устаревшей ветки
+
+[scripts/pre_push_stale_base_check.py](https://github.com/gasyoun/IndologyScholars/blob/main/scripts/pre_push_stale_base_check.py)
+после `ba9cce6c5` (H2579, 14-08-2026) вводил gate классификации базы push
+(`clean`/`behind`/`diverged`/`remote-advanced`) со своим JSON-контрактом
+(`base_state`). Слияние устаревшей ветки `b47685068` (PR #245, 17-08-2026) не
+видело этот коммит и молча откатило его код — тот самый класс дефекта
+Uprava#1516, который сам файл призван ловить, — оставив только докстринг
+позднейшей ревизии «BLOCKS BY DEFAULT» без соответствующего кода. 9 тестов в
+[tests/test_pre_push_stale_base.py](https://github.com/gasyoun/IndologyScholars/blob/main/tests/test_pre_push_stale_base.py)
+падали с `AttributeError`/пропавшим `base_state`.
+
+- Восстановлены `classify_base`, `fetch_with_cap`, `resolve_live_tip`,
+  `report_base_block`, `BASE_BLOCK`/`FETCH_TRIES` из `ba9cce6c5`, поверх уже
+  существующих исключений `archive_normalized`/`is_registry_bookkeeping`.
+- [.githooks/pre-push](https://github.com/gasyoun/IndologyScholars/blob/main/.githooks/pre-push)
+  теперь передаёт `--remote-sha` из stdin пуша, чтобы gate видел
+  «remote-advanced» без лишнего fetch.
+- `test_silent_revert_warns_by_default_blocks_when_strict` мигрирован в
+  `test_silent_revert_blocks_by_default_strict_is_a_no_op`: докстринг файла
+  фиксирует решение MG от 16-08-2026 о переходе построчного скана с warn на
+  block-by-default, а этот тест остался нетронутым с исходного H2579-коммита
+  и проверял уже отменённое поведение.
+- `CITATION.cff` уже соответствует последнему тегу (`v1.12.17`) — подъём
+  версии не потребовался.
+- «Зависание >60с» из постановки задачи — не бесконечный цикл, а накладные
+  расходы git-подпроцессов на Windows в тестах, поднимающих реальные
+  bare/clone/push миры (~107с на 10 тестов); отдельный вызов чекера
+  завершается за доли секунды.
+
 ### Перекрёстная таблица дисциплин получила зарегистрированных потребителей: csl-atlas и kosha (решение F5c)
 
 Решение F5a (26-08-2026) оставило ребро
@@ -35,6 +65,9 @@ RussianRamayana. 29-08-2026 решение F5b освободило слот (п
   Строка-производитель не затрагивается.
 
 ## [Unreleased]
+### Fixed
+
+- **H3646 — pre_push_stale_base_check.py base_state gate restored** (Sonnet 5 `claude-sonnet-5`, 29-08-2026). The H2579 base-state classification gate (`ba9cce6c5`, 14-08-2026) was silently dropped by a stale-branch PR merge (`b47685068`, PR #245, 17-08-2026) — restored `classify_base`/`fetch_with_cap`/`remote-advanced` detection, wired `--remote-sha` through [.githooks/pre-push](https://github.com/gasyoun/IndologyScholars/blob/main/.githooks/pre-push), migrated the one stale test to the current block-by-default contract. See [`.ai_state.md`](https://github.com/gasyoun/IndologyScholars/blob/main/.ai_state.md) WIP for detail.
 
 ## [1.12.17] - 2026-08-28
 ### Added

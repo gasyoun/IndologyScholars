@@ -67,7 +67,7 @@ while read -r local_ref local_sha remote_ref remote_sha; do
 
     # (1) stale-base silent-revert check — BLOCKS since 16-08-2026 (MG), see the header.
     if [ -z "${ALLOW_STALE_BASE_PUSH:-}" ] && [ -f "$CHECKER" ]; then
-        if ! python "$CHECKER" "$local_sha" "$tracking"; then
+        if ! python "$CHECKER" "$local_sha" "$tracking" --remote-sha "$remote_sha"; then
             status=1
         fi
     fi
