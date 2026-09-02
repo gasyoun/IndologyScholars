@@ -65,6 +65,9 @@ RussianRamayana. 29-08-2026 решение F5b освободило слот (п
   Строка-производитель не затрагивается.
 
 ## [Unreleased]
+<!-- entries land in changelog_queue/ -- appended via tools/changelog_queue_consume.py, consumed by cut_release.py at release-cut (H3355); direct bullets here are hook-blocked -->
+
+## [1.12.18] - 2026-09-01
 ### Fixed
 
 - **H3646 — pre_push_stale_base_check.py base_state gate restored** (Sonnet 5 `claude-sonnet-5`, 29-08-2026). The H2579 base-state classification gate (`ba9cce6c5`, 14-08-2026) was silently dropped by a stale-branch PR merge (`b47685068`, PR #245, 17-08-2026) — restored `classify_base`/`fetch_with_cap`/`remote-advanced` detection, wired `--remote-sha` through [.githooks/pre-push](https://github.com/gasyoun/IndologyScholars/blob/main/.githooks/pre-push), migrated the one stale test to the current block-by-default contract. See [`.ai_state.md`](https://github.com/gasyoun/IndologyScholars/blob/main/.ai_state.md) WIP for detail.
