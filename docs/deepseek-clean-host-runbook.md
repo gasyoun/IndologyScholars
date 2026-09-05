@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 # DeepSeek clean-host runbook (openmodel.ai inference)
 
 The DeepSeek runners cannot run from the editor's automation host: inference
@@ -127,3 +129,5 @@ Full classification is 1362 talks × 5 runs ≈ small; full video segmentation
 chunks the long sessions (the largest is ~10h ≈ 123k tokens). Both are well
 within an unlimited-budget week. Start with the `--limit` trials to confirm
 output quality before the full runs.
+
+_Dr. Mārcis Gasūns_

@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 5834617651200
 subject: "Christian Lindtner paper"
@@ -26,3 +28,5 @@ The Seminar for Buddhist Studies, 1994. pp. 1-30
 
 Thank you very much,
 Adrian
+
+_Dr. Mārcis Gasūns_

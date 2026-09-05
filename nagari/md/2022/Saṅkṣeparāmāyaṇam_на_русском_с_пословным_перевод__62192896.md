@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7084686269162192896
 subject: "Saṅkṣeparāmāyaṇam на русском с пословным переводом"
@@ -19,3 +21,5 @@ source_url: https://groups.google.com/d/msgid/nagari/f2058db9-8fde-4999-b803-715
 
 https://www.youtube.com/watch?v=GObkoge_fys среди вайшнавов тоже есть 
 достойные санскритологи
+
+_Dr. Mārcis Gasūns_

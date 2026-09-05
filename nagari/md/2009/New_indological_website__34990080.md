@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7708034990080
 subject: "New indological website"
@@ -54,3 +56,5 @@ my own experiences and difficulties with the language.
 alleviate a little bit the dearth of indological publications in
 
 Spanish.
+
+_Dr. Mārcis Gasūns_

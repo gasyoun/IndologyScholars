@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 35028802207744
 subject: "dental -> palatal in LSK"
@@ -395,3 +397,5 @@ On Friday, 17 April 2015 14:28:40 UTC+3, Michael Bykov wrote:
 http://diglossa.ru
 
 xmpp://m.bykov@…
+
+_Dr. Mārcis Gasūns_

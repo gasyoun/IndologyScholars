@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 11492906762240
 subject: "Different Sanskrit schools - where is better to learn? / Разные школы санскрита - где лучше учить?"
@@ -608,3 +610,5 @@ On 29 ноя, 23:51, kalindi dd kalindi dd
 > санскрит.  Но это больше ашрам, там можно жить бесплатно.*
 >
 > *Кто что скажет?*
+
+_Dr. Mārcis Gasūns_

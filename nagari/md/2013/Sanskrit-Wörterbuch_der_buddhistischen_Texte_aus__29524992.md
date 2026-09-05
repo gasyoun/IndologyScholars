@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 25522829524992
 subject: "Sanskrit-Wörterbuch der buddhistischen Texte aus den Turfan-Funden"
@@ -40,3 +42,5 @@ http://www.v-r.de/en/seriesdetail-0-0/sanskrit_woerterbuch_der_buddhistischen_te
 
 
 М.Г.
+
+_Dr. Mārcis Gasūns_

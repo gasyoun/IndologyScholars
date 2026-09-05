@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7194006682717913088
 subject: "Текст Коссовича 'Sâvitri Mahâb´ârati Episodium. Petropoli'"
@@ -135,3 +137,5 @@ https://books.google.ru/books?id=dlNDAAAAYAAJ
 >>>>> Если находили, поделитесь.
 >>>>
 >>>>
+
+_Dr. Mārcis Gasūns_

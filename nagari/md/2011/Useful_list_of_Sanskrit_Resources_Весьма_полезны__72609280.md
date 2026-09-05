@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 15829072609280
 subject: "Useful list of Sanskrit Resources: Весьма полезный список интернет-ресурсов по Санскриту"
@@ -52,3 +54,5 @@ iv) archive.org
 
 
 Arvind Kolhatkar, Toronto, October 26, 2011.
+
+_Dr. Mārcis Gasūns_

@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 27728488169472
 subject: "Useful links"
@@ -247,3 +249,5 @@ On Sunday, 5 April 2015 11:47:26 UTC+3, ShaSa wrote:
 >
 
 >
+
+_Dr. Mārcis Gasūns_

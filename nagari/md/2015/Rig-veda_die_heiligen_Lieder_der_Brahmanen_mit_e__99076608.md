@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 6214707275899076608
 subject: "Rig-veda : die heiligen Lieder der Brahmanen : mit einer Einleitung, Text und Übersetzung des Prâtis"
@@ -244,3 +246,5 @@ Rig-Veda oder die heiligen Lieder der Brahmanen ... 1856
 > Чтобы отменить подписку на эту группу и больше не получать от нее сообщения, отправьте письмо на электронный адрес nagari+unsubscribe@….
 
 > Чтобы настроить другие параметры, перейдите по ссылке https://groups.google.com/d/optout.
+
+_Dr. Mārcis Gasūns_

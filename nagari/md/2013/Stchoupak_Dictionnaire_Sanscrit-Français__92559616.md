@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 23002392559616
 subject: "Stchoupak Dictionnaire Sanscrit-Français"
@@ -85,3 +87,5 @@ http://www.sanskrit-lexicon.uni-koeln.de/scans/BURScan/2013/web/webtc1/index.php
 оцифровок.
 Боюсь такими темпами и до Кочергиной лет через 50 дойдут, нужно 
 поторопиться.
+
+_Dr. Mārcis Gasūns_

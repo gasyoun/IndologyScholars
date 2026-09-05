@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 6660139368341045248
 subject: "незнакомая лигатура из Nag Publishers"
@@ -137,3 +139,5 @@ Publishers.
 > https://groups.google.com/d/optout.
 
 >
+
+_Dr. Mārcis Gasūns_

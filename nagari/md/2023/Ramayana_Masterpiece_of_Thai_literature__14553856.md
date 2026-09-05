@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7287834356514553856
 subject: "Ramayana: Masterpiece of Thai literature"
@@ -34,3 +36,5 @@ Thai Ramayanae.
 
 
 см. https://vk.com/samskrtamru?w=wall-88831040_20176
+
+_Dr. Mārcis Gasūns_

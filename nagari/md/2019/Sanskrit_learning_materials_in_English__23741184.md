@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 6680088252523741184
 subject: "Sanskrit learning materials in English"
@@ -292,3 +294,5 @@ kell 12:15:
 > https://groups.google.com/d/optout.
 
 >
+
+_Dr. Mārcis Gasūns_

@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7354085254485770240
 subject: "Deussen, Paul Allgemeine Geschichte der Philosophie"
@@ -36,3 +38,5 @@ Philosophie der Upanishad's. - 5. Aufl. - Leipzig : Brockhaus, 1922. - XIV,
 
 
 см. https://vk.com/samskrtamru?w=wall-88831040_21276
+
+_Dr. Mārcis Gasūns_

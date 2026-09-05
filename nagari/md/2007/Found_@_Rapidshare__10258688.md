@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 2159110258688
 subject: "Found @ Rapidshare"
@@ -166,3 +168,5 @@ On 16 О©╫О©╫О©╫, 23:50, "Worga" <swo...@…> wrote:
 > Die Version, die Daniel gefunden hat, ist eine WIRKLICH KOMPLETTE
 > Version von EWA. Die Version unter Link von Marik hat nur zwei Baende
 > und die Einleitung Seiten 1 - 33 fehlt.
+
+_Dr. Mārcis Gasūns_

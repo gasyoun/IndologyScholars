@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 5257211936768
 subject: "vyabhicāra и vyavasāya"
@@ -90,3 +92,5 @@ On 28 июл, 07:38, Marcis <gasy...@…> wrote:
 
 С уважением,
 Ирина.
+
+_Dr. Mārcis Gasūns_

@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 6955467311598796800
 subject: "Knigi O Yoge"
@@ -178,3 +180,5 @@ On Mon, 26 Apr 2021 at 17:09, Marcis <gasyoun@…> wrote:
 > .
 
 >
+
+_Dr. Mārcis Gasūns_

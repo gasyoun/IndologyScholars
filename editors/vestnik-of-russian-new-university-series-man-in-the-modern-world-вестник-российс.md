@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 # Vestnik of Russian New University. Series Man in the modern world" ("Вестник Российского нового университета. Серия "Человек в современном мире")
 
 - **ISSN:** 2414-925X
@@ -20,3 +22,5 @@
 ## Контакты
 
 <!-- E-mail редакции, адрес для отправки -->
+
+_Dr. Mārcis Gasūns_

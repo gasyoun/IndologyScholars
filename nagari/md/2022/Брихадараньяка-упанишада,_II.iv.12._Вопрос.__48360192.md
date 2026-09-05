@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7144334712548360192
 subject: "Брихадараньяка-упанишада, II.iv.12. Вопрос."
@@ -474,3 +476,5 @@ On Sunday, 18 September 2022 at 15:26:34 UTC+3 Serge A wrote:
 >>>>> потеряно a<nu>vina*ś*yati (в них исчезает)?
 >>>>>
 >>>>
+
+_Dr. Mārcis Gasūns_

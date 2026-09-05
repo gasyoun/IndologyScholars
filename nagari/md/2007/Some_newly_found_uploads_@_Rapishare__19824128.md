@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 3219419824128
 subject: "Some newly found uploads @ Rapishare"
@@ -1189,3 +1191,5 @@ http://freetranslationblog.blogspot.com
 -- 
 Webmaster - Translations
 http://freetranslationblog.blogspot.com
+
+_Dr. Mārcis Gasūns_

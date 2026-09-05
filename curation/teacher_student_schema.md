@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 # `teacher_student.csv` — schema · схема
 
 > Curated, evidence-backed advisor/mentor relationships between persons in the
@@ -73,3 +75,5 @@ by `pipeline/genealogy.py`.
 3. Заполнить строку по схеме выше; для нелатинских URL — ссылка как есть.
 4. Запустить `python -c "from pipeline.genealogy import load_relationships; load_relationships()"`
    — он провалидирует и поднимет ошибку при проблемах.
+
+_Dr. Mārcis Gasūns_

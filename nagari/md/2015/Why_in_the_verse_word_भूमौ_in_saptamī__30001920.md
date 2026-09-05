@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 30792530001920
 subject: "Why in the verse word भूमौ in saptamī?"
@@ -3138,3 +3140,5 @@ Radim Navyan
 > Чтобы настроить другие параметры, перейдите по ссылке 
 
 > https://groups.google.com/d/optout.
+
+_Dr. Mārcis Gasūns_

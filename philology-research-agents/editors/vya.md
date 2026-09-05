@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 # Editor profile — ВЯ «Вопросы языкознания» (ИЯз РАН)
 # Профиль редактора — Voprosy Jazykoznanija / Topics in the Study of Language
 
@@ -104,3 +106,5 @@ References
 > Differs from ВДИ in linguistic conventions (Leipzig Glossing for examples,
 > stricter `*`-marking, broader language coverage); identical citation /
 > References discipline.
+
+_Dr. Mārcis Gasūns_

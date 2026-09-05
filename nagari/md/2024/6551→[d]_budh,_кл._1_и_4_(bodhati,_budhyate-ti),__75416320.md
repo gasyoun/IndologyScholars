@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7394807369375416320
 subject: "6551→[d] budh, кл. 1 и 4 (bodhati, budhyate-ti), 1) обращать на что л, вниманіе (В.)"
@@ -133,3 +135,5 @@ vacanam mama, выслушай мою рѣчь, МБ.); ε) пра, пробуж
 >> 2016. — 360 с., 1 л. портр. — (серия „Bibliotheca Sanscritica“, 10).
 >>
 >
+
+_Dr. Mārcis Gasūns_

@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 11049362259968
 subject: "Free Sanskrit Transliteration tool"
@@ -493,3 +495,5 @@ On 26 Nov., 17:43, Serge <renuv...@…> wrote:
 > в итрансе k + RRi/R^i + Sh/shh + N + a + H
 > т.е. в итрансе возможно 4 варианта написания
 > kRRiShNaH kRRishhNaH kR^iShNaH kR^ishhNaH
+
+_Dr. Mārcis Gasūns_

@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 21764640866304
 subject: "Schlegel. Bhagavad-Gita. Bonnae: E. Weber, 1823 [к истории индийской типографии]"
@@ -134,3 +136,5 @@ On Thursday, 7 March 2013 21:20:48 UTC+4, klaus wrote:
 > рукописей.
 >
 >
+
+_Dr. Mārcis Gasūns_

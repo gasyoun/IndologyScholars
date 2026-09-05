@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 6253795529346514944
 subject: "Hatha-yoga-pradipika with tika in Russian"
@@ -244,3 +246,5 @@ https://www.academia.edu/22550451/Shatkarmas_fruit_from_Hatha-yoga-pradipika_wit
 
 
 Enjoy.
+
+_Dr. Mārcis Gasūns_

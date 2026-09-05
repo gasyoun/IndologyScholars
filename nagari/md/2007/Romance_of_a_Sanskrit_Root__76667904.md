@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 3958876667904
 subject: "Romance of a Sanskrit Root"
@@ -26,3 +28,5 @@ by
 Dr. Raghu Vira
 
 http://technical-hindi.googlegroups.com/web/Romance_of_a_Sanskrit_Root.htm
+
+_Dr. Mārcis Gasūns_

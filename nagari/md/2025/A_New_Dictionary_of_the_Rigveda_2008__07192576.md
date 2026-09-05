@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7469347078407192576
 subject: "A New Dictionary of the Rigveda 2008"
@@ -124,3 +126,5 @@ Toshifumi Gotō, and others has just appeared (2007).
 
 
 https://www.jstor.org/stable/25608361
+
+_Dr. Mārcis Gasūns_

@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 17533222518784
 subject: "Sudadohas verse"
@@ -819,3 +821,5 @@ At birth, from the dwelling of gods through the three [filters]
 
 
 -----------------------------------------------------------------
+
+_Dr. Mārcis Gasūns_

@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 6898391120869326848
 subject: "ooha-poh patu"
@@ -552,3 +554,5 @@ https://www.wisdomlib.org/definition/uhapoha
 >>  
 >>
 >
+
+_Dr. Mārcis Gasūns_

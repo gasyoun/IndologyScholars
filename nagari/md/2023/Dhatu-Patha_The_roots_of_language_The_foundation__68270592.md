@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7244085530268270592
 subject: "Dhatu-Patha: The roots of language: The foundations of the Indo-European verbal system"
@@ -308,3 +310,5 @@ On Wed, 14 Jun 2023 at 12:59, Marcis <gasyoun@…> wrote:
 > .
 
 >
+
+_Dr. Mārcis Gasūns_

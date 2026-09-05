@@ -1,6 +1,8 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 # Technical Audit of Talk Classification
 
-[Русская версия](classification-audit.md) | [Development and reproducibility](development-en.md)
+[Русская версия](https://github.com/gasyoun/IndologyScholars/blob/main/docs/classification-audit.md) | [Development and reproducibility](https://github.com/gasyoun/IndologyScholars/blob/main/docs/development-en.md)
 
 Classification pass date: 2026-05-25  
 Coding prompt version: `expanded-corpus-v1-2026-05-25`  
@@ -46,3 +48,5 @@ The level describes the scale of the argument stated in a title, not the
 quality of a talk, the geographic extent of its material, or its author's
 standing. A region, language, period, pair of compared objects, or the word
 "tradition" does not by itself raise a case study to `L2` or `L3`.
+
+_Dr. Mārcis Gasūns_

@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 2537668214784
 subject: "Noch mehr Indologica @ Rapidshare"
@@ -179,3 +181,5 @@ On Jun 23, 10:52 pm, Marcis <gasy...@…> wrote:
 > > --- Narayan Prasad- Hide quoted text -
 >
 > - Show quoted text -
+
+_Dr. Mārcis Gasūns_

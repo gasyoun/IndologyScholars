@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7609317596004876288
 subject: "Knauer Matthäus Friedrich (1849–1917)"
@@ -560,3 +562,5 @@ Ausbildungsjahr 1888/89 dienen). – Sankt Petersburg, 1888. – S. 421.
 
 
 *Autoren:* Tscherkasjanowa I. W. <https://enc.rusdeutsch.eu/avtor/?b=38>
+
+_Dr. Mārcis Gasūns_

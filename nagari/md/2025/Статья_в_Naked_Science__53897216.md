@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7479585909653897216
 subject: "Статья в Naked Science"
@@ -47,3 +49,5 @@ https://naked-science.ru/article/history/grammar-of-sanskrit
 --
 Владимир Карицкий
 Отправлено из Почты  Mail
+
+_Dr. Mārcis Gasūns_

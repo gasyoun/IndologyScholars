@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 6333206147111059456
 subject: "Ищу перевод произведения (Looking for translation of the work)"
@@ -1844,3 +1846,5 @@ In the same chapter of the mudgala-puraaNa, there is a mention of
 > https://groups.google.com/d/optout.
 
 >
+
+_Dr. Mārcis Gasūns_

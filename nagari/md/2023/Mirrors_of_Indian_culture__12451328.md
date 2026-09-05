@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7280033747412451328
 subject: "Mirrors of Indian culture"
@@ -25,3 +27,5 @@ Delhi : Sundeep Prakashan, 1982. - XII, 215 p. : [22] l.ill. - Библиогр.
 архитектуры и влияние их на развитие культуры. Индийское искусство • История
 
 см. https://vk.com/samskrtamru?w=wall-88831040_19976
+
+_Dr. Mārcis Gasūns_

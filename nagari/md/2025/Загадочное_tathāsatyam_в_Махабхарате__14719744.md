@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7585615923714719744
 subject: "Загадочное tathāsatyam в 'Махабхарате'"
@@ -923,3 +925,5 @@ takatakmasale@…> написал:
 > .
 
 >
+
+_Dr. Mārcis Gasūns_

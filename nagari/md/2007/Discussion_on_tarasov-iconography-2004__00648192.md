@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 1679600648192
 subject: "Discussion on tarasov-iconography-2004"
@@ -27,3 +29,5 @@ source_url: https://groups.google.com/d/msgid/nagari/1175110091.359367.40840@y80
 
 On 29 О©╫О©╫О©╫, 02:28, "feigin" <a_fei...@…> wrote:
 > О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫, О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫, О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫?
+
+_Dr. Mārcis Gasūns_

@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 32311615684608
 subject: "Sanskrit — Full shloka of “sā vidyā yā vimuktaye”"
@@ -384,3 +386,5 @@ On Sunday, 1 February 2015 19:35:57 UTC+1, Radim Navyan wrote:
 >
 
 >
+
+_Dr. Mārcis Gasūns_

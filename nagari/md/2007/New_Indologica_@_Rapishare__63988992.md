@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 3199563988992
 subject: "New Indologica @ Rapishare"
@@ -40,3 +42,5 @@ On 5 О©╫О©╫О©╫, 20:53, Daniel Stender <uzs...@…> wrote:
 >
 > Cheers,
 > Daniel Stender
+
+_Dr. Mārcis Gasūns_

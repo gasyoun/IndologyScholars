@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 22054988414976
 subject: "К истории шрифта Шлегеля: les matrices de deux corps de nâgarî"
@@ -112,3 +114,5 @@ points, gravé en 1821 par Vibert, aux frais et sous la direction de
 Schlegel, fut cédé, en 1833, à l'Imprimerie Royale par la Société asiatique 
 
 de Paris.
+
+_Dr. Mārcis Gasūns_

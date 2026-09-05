@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 22115133685760
 subject: "Langenscheidts Handwörterbuch, Sanskrit-Deutsch (1999 г.)"
@@ -303,3 +305,5 @@ DJVU. Последний файл постраничный и более чис�
 >
 
 >
+
+_Dr. Mārcis Gasūns_

@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 5516912754688
 subject: "View this page 'astrology Basic'"
@@ -300,3 +302,5 @@ but the true happiness lies in Bhakti ( devotion to the lord )
 Markand rishi was destine to die at age of sixteen but Bhakti to lord
 
 Shiva saved him from the clutches of death.
+
+_Dr. Mārcis Gasūns_

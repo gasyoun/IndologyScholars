@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 2587179876352
 subject: "Sanskrit Grammar Concordance (Конкорданс правил санскритской грамматики)"
@@ -36,3 +38,5 @@ the concordance by myself, only editing if needed at all.
 
   Regards, Marcis Gasuns,
 Academ, Tartaria, Russia
+
+_Dr. Mārcis Gasūns_

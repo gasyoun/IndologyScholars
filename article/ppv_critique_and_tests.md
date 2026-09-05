@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 # Что усилить в статье: критика, проверки, следующие гипотезы
 
 Версия: 2026-05-21. Этот файл фиксирует не литературную правку, а исследовательскую
@@ -110,3 +112,5 @@
 - `article/hypothesis_output/network_bridges_session.svg` — более строгий сессионный вариант сетевых посредников.
 
 Скрипты генерации: `article/make_ppv_figures.py` и `article/work_ppv_hypotheses.py`.
+
+_Dr. Mārcis Gasūns_

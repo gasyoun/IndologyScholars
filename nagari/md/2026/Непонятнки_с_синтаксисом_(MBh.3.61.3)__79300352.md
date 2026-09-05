@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7629462812179300352
 subject: "Непонятнки с синтаксисом (MBh.3.61.3)"
@@ -309,3 +311,5 @@ saha śālmalaiḥ vartante iti saśālmalāḥ candanāḥ; taiḥ api sañchan
 > .
 
 >
+
+_Dr. Mārcis Gasūns_

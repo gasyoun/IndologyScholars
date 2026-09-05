@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 5307646345216
 subject: "Rig Veda Word Frequency List"
@@ -2986,3 +2988,5 @@ On 5 авг, 09:59, Marcis <gasy...@…> wrote:
 >   21 yato
 
 >   21 yavistha
+
+_Dr. Mārcis Gasūns_

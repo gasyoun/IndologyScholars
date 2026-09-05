@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7191140299740020736
 subject: "Die Sutra's des Vedanta oder die Cariraka-mimansa"
@@ -24,3 +26,5 @@ Leipzig; Издательство; Brockhaus; Дата издания; 1887; Я�
 Источник; Основной фонд
 
 см. https://vk.com/samskrtamru?w=wall-88831040_17277
+
+_Dr. Mārcis Gasūns_

@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7326570324304068608
 subject: "Gonda,Jan Triads in the Veda 1976"
@@ -38,3 +40,5 @@ Nederlandse Akad. van wetenschappen. Afd. letterkunde. Nieuwe reeks; Deel
 
 
 см. https://vk.com/samskrtamru?w=wall-88831040_20929
+
+_Dr. Mārcis Gasūns_

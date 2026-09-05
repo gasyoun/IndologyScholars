@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7081540414039130112
 subject: "Как издавала книги Academia..."
@@ -22,3 +24,5 @@ source_url: https://groups.google.com/d/msgid/nagari/c6828367-35e5-4080-b889-73e
 
 
 Целиком на https://vk.com/sanscritica?w=wall-90338032_6520
+
+_Dr. Mārcis Gasūns_

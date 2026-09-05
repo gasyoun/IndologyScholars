@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 6540583913197142016
 subject: "Yoga-Vasishtha"
@@ -232,3 +234,5 @@ On Thursday, April 5, 2018 at 2:51:11 PM UTC+3, Penkoloda wrote:
 >> Подскажите пожалуйста.
 >>
 >
+
+_Dr. Mārcis Gasūns_

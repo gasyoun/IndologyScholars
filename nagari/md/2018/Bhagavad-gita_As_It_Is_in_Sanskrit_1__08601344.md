@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 6539886665708601344
 subject: "Bhagavad-gita As It Is in Sanskrit 1"
@@ -48,3 +50,5 @@ https://archive.org/details/Bhagavad-gita_As_It_Is_Sanskrit1
 > https://archive.org/details/Bhagavad-gita_As_It_Is_Sanskrit1
 
 >
+
+_Dr. Mārcis Gasūns_

@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 21013816410112
 subject: "JUCQUOIS: LA THÉORIE DE LA RACINE EN INDO-EUROPÉEN"
@@ -88,3 +90,5 @@ dont le nombre est censé rendre le mouvement par le jeu d'une illusion en
 tous points semblable à l'illusion d'optique sur laquelle est basé le 
 
 cinéma.
+
+_Dr. Mārcis Gasūns_

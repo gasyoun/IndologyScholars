@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 21797907988480
 subject: "Разыскивается экземпляр Specimen novae typographiae Indicae (1821 г.)"
@@ -110,3 +112,5 @@ deutscher Dichter und Denker - der Brüder August Wilhelm und Friedrich von
 Schlegel, Goethes, Schillers und Herders - mit der Sanskrit-Literatur, 
 
 ausgestellt sind frühe Beispiele indischer Drucke.)
+
+_Dr. Mārcis Gasūns_

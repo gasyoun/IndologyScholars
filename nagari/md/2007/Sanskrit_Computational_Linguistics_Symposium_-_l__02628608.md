@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 2774802628608
 subject: "Sanskrit Computational Linguistics Symposium - last call for communications."
@@ -348,3 +350,5 @@ On 17 июл, 00:39, "Anton Bezumtsev" <bezumtsev.an...@…> wrote:
 > *Sanskrit Computational Linguistics-* имеется ввиду составление электронного
 
 > санскритского корпуса и т.д.?
+
+_Dr. Mārcis Gasūns_

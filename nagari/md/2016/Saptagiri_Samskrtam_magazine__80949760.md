@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 6255299239880949760
 subject: "Saptagiri Samskrtam magazine"
@@ -34,3 +36,5 @@ I have requested for previous copies. Will share as soon as I get hold of
 them.
 
 -उषा
+
+_Dr. Mārcis Gasūns_

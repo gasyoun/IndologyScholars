@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 21583347318784
 subject: "Die Ausspräche der Buchstaben (1883 г.)"
@@ -30,3 +32,5 @@ beste anerkannt wird und sich deshalb zur Nachahmung empfiehlt, haben
 folgende Buchstaben besondere, zum Theil im Deutschen nicht vorkommende 
 
 Lautwerthe
+
+_Dr. Mārcis Gasūns_

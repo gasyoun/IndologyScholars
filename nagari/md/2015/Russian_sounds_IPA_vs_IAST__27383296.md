@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 6212251223427383296
 subject: "Russian sounds IPA vs IAST"
@@ -810,3 +812,5 @@ On Sunday, 1 November 2015 21:27:30 UTC+3, Michael Bykov wrote:
 > Чтобы отменить подписку на эту группу и больше не получать от нее сообщения, отправьте письмо на электронный адрес nagari+unsubscribe@….
 
 > Чтобы настроить другие параметры, перейдите по ссылке https://groups.google.com/d/optout.
+
+_Dr. Mārcis Gasūns_

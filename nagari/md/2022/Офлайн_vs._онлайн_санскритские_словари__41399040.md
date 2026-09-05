@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7082754660541399040
 subject: "Офлайн vs. онлайн санскритские словари"
@@ -25,3 +27,5 @@ source_url: https://groups.google.com/d/msgid/nagari/0c109f6c-04ac-4000-bae3-854
 Один из старичков - SanDic:
 
 http://samskrtam.ru/sandic-sanskrit-dictionary/
+
+_Dr. Mārcis Gasūns_

@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 21178861223936
 subject: "Sanskrit Connection of Sentences"
@@ -422,3 +424,5 @@ Vane jalam iti Devadattena dhrutaḥ. (20)
 
 
 ‘[Beleiving that] there was water in the forest, Devadatta run away.’
+
+_Dr. Mārcis Gasūns_

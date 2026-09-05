@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7064182590541922304
 subject: "kommentarii Sayani na RV"
@@ -279,3 +281,5 @@ rašė:
 >>
 
 >
+
+_Dr. Mārcis Gasūns_

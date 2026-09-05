@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 6369087092871397376
 subject: "Найти откуда Стотра/Find where comes Stotra"
@@ -905,3 +907,5 @@ On Wednesday, 28 December 2016 19:56:13 UTC+3, Serge A wrote:
 > Там тоже Брахманда есть, в юникоде. И в ней тоже не находятся слова этого 
 > гимна.
 >
+
+_Dr. Mārcis Gasūns_

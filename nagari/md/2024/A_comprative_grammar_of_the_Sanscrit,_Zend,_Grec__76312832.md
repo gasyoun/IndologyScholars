@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7355172644776312832
 subject: "A comprative grammar of the Sanscrit, Zend, Greck, Latin, Lithuanian, Gothic, German, and Sclavonic languages"
@@ -30,3 +32,5 @@ XV, 952 p., tab. - (Doc. semiotica; Ser.  1:  Linguistik). - Пер. с нем.
 
 
 см. https://vk.com/samskrtamru?w=wall-88831040_21293
+
+_Dr. Mārcis Gasūns_

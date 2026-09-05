@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 12129935556608
 subject: "Complete derivation of the verb root श्रिञ् in लुङ् लकार (aorist) using अष्टाध्यायी of पाणिनि."
@@ -27,3 +29,5 @@ upon' in लुङ् लकार (aorist) using अष्टाध्याय
 http://www.kavitype.com/kavitype/examples/zri_luG.zip
 
 (05.02.2011)
+
+_Dr. Mārcis Gasūns_

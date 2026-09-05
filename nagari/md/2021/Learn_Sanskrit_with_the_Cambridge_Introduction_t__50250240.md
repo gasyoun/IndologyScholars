@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 6927937049450250240
 subject: "Learn Sanskrit with the Cambridge Introduction to Sanskrit"
@@ -50,3 +52,5 @@ https://www.facebook.com/groups/CambridgeIntroToSanskrit/
 
 
 М.
+
+_Dr. Mārcis Gasūns_

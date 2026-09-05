@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7473426753692631040
 subject: "Dialects of Old Indo-Aryan"
@@ -26,3 +28,5 @@ Occasional paper / Center for South and Southeast Asia Studies 13.
 
 
 см. https://vk.com/wall-88831040_23612
+
+_Dr. Mārcis Gasūns_

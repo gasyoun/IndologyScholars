@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 6264835801088
 subject: "Dictionnaire classique sanscrit-français"
@@ -30,3 +32,5 @@ philologiques
 http://www.archive.org/details/dictionnaireclas00burnuoft
 
 DjVu 51 MB
+
+_Dr. Mārcis Gasūns_

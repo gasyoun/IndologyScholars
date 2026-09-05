@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 6340528634634174464
 subject: "List of Corrections in Cologne Dictionaries (2014-2016)"
@@ -372,3 +374,5 @@ Miscellaneous Details:
       
 
       https://github.com/sanskrit-lexicon/CORRECTIONS/issues/30
+
+_Dr. Mārcis Gasūns_

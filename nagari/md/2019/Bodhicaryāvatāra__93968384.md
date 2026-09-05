@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 6722899024893968384
 subject: "Bodhicaryāvatāra"
@@ -93,3 +95,5 @@ https://en.wikipedia.org/wiki/Sampajañña
 >
 > Андрей.
 >
+
+_Dr. Mārcis Gasūns_

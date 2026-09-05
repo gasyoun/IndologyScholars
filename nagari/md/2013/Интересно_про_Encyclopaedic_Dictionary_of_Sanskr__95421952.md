@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 21177095421952
 subject: "Интересно про Encyclopaedic Dictionary of Sanskrit on Historical Principles"
@@ -492,3 +494,5 @@ overwhelming project, the connections to ancient India.
 academic discovery. 
 
     "Sanskrit," he said, "has so many shades.
+
+_Dr. Mārcis Gasūns_

@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 20314095353856
 subject: "Вышел SanDic v1.1"
@@ -1439,3 +1441,5 @@ On Wednesday, 20 March 2013 21:41:55 UTC+4, Dmitri wrote:
 > Про них речь?
 > *
 >
+
+_Dr. Mārcis Gasūns_

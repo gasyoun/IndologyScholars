@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 _Measured: 29-07-2026 (single-page smoke), 06-08-2026 (three-page pagination pilot v2) · Status: local bounded acquisition_
 
 # BVP public source assessment
@@ -102,3 +104,5 @@ contract, or begin the person/author identity-resolution pass over the
 already-checkpointed conversation IDs. Full-archive (~23,476-conversation)
 enumeration remains out of scope until a much larger bounded run is
 explicitly authorized.
+
+_Dr. Mārcis Gasūns_

@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 35886833074176
 subject: "ā́yus and tr̥̄ in RV"
@@ -3197,3 +3199,5 @@ On Friday, July 24, 2015 at 2:11:12 AM UTC-6, Radim Navyan wrote:
 > синонимизация через "жизнь" безотносительно сроков. Да оно и по смыслу 
 > здесь иначе не встанет.
 >
+
+_Dr. Mārcis Gasūns_

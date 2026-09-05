@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 26329503236096
 subject: "Вопрос о композитах: dvandvo dvigurapi cāhaṃ"
@@ -148,3 +150,5 @@ nityamavyayībhāvaḥ, tatpuruṣa karmadhāraya yenāhaṃ syāṃ bahuvrīhi�
 (tatpuruṣa), мне работу. [Такую] (karma dhāraya) благодаря которой я могу 
 стать владельцем обильного риса (bahuvrīhiḥ).  
 Что скажете?
+
+_Dr. Mārcis Gasūns_

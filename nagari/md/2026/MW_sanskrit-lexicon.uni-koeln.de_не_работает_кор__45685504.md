@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7655557773345685504
 subject: "MW sanskrit-lexicon.uni-koeln.de не работает корректно"
@@ -62,3 +64,5 @@ Nagari-unsubscribe@…
 Вы получили это сообщение, поскольку подписаны на группу "Общество ревнителей санскрита (Sanscrit)".
 Чтобы отменить подписку на эту группу и больше не получать от нее сообщения, отправьте письмо на электронный адрес nagari+unsubscribe@….
 Чтобы посмотреть обсуждение, перейдите по ссылке https://groups.google.com/d/msgid/nagari/cdedfadb-2e8a-431d-889d-2ba488beb031n%40googlegroups.com.
+
+_Dr. Mārcis Gasūns_

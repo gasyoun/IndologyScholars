@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 5546593746944
 subject: "Question: Vostrikov works on Vasubandhu"
@@ -54,3 +56,5 @@ Does anybody know if these two works (the article and the monograph) were
 ever actually published and if so where?
 
 Thanks.
+
+_Dr. Mārcis Gasūns_

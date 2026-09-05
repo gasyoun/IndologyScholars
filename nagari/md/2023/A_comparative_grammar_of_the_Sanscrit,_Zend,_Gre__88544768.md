@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7289348561088544768
 subject: "A comparative grammar of the Sanscrit, Zend, Greek, Latin, Lithuanian, Gothic, German, and Sclavonic languages"
@@ -90,3 +92,5 @@ P.457-952.
 > .
 
 >
+
+_Dr. Mārcis Gasūns_

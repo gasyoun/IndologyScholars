@@ -1,6 +1,8 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 # Руководство по проверке РИНЦ/eLIBRARY профилей (SciGuide Phase 4)
 
-[English version](rinc-review-en.md) | [Разработка и воспроизводимость](development.md)
+[English version](https://github.com/gasyoun/IndologyScholars/blob/main/docs/rinc-review-en.md) | [Разработка и воспроизводимость](https://github.com/gasyoun/IndologyScholars/blob/main/docs/development.md)
 
 ## Цель
 Установление точных идентификаторов `rinc_author_id` и `spin` для персон в архиве IndologyScholars. 
@@ -38,3 +40,5 @@
 
 ## Интеграция
 После того как профили подтверждены (`review_status = confirmed`), перенесите их `rinc_author_id` и `spin` в файл `authority_ids.json`. При следующей генерации сайта скрипт `generate_scholars_pages.py` автоматически добавит ссылки на РИНЦ в профили персон.
+
+_Dr. Mārcis Gasūns_

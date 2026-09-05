@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7454956450035531776
 subject: "śiśná-deva в Ригведе Schwanzgötter, geschwänzte Dämonen"
@@ -153,3 +155,5 @@ Vaikhānasa). Тема — Индра. Размер — триштубх.
 --
 Владимир Карицкий
 Отправлено из Почты  Mail
+
+_Dr. Mārcis Gasūns_

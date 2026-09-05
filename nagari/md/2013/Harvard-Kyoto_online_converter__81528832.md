@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 24242481528832
 subject: "Harvard-Kyoto online converter"
@@ -1418,3 +1420,5 @@ On Wednesday, 24 September 2014 12:28:05 UTC+4, Веданта-крит дас w
 >> Таблица http://sanskrit-tool.ucoz.ru/translit.html
 >>
 >
+
+_Dr. Mārcis Gasūns_

@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 21581649674240
 subject: "Liste der 807 tatsächlich belegten Sanskrit-Ligaturen"
@@ -130,3 +132,5 @@ lg, ld, lp, lph, lb, lbh, lm, ly, ll, lv, lś, lh, vṇ, vn, vy, vr, vl, śc,
 ṣr, ṣv, ṣṣ, sk, skh, st, sth, sn, sp, sph, sm, sy, sr, sv, ss,  hṇ, hn, hm, 
 
 hy, hr, hl, hv
+
+_Dr. Mārcis Gasūns_

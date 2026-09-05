@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 2388052148224
 subject: "Books on Religion.Philosophy,Theological & Oriental Studies"
@@ -2340,3 +2342,5 @@ E-mail indianbookscentre@…
 
 
 Website: http://www.indianbookscentre.com
+
+_Dr. Mārcis Gasūns_

@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 21558650208256
 subject: "Sanskrit Sandhi and Exercises, M.B. Emenau (1966)"
@@ -104,3 +106,5 @@ On Friday, 10 May 2013 20:46:08 UTC+4, focusonjoy wrote:
 >
 >>
 >>
+
+_Dr. Mārcis Gasūns_

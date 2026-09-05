@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 21004481986560
 subject: "The Mahabharata in Sanskrit (Book 3, Chapter 50)"
@@ -582,3 +584,5 @@ Nalo       dic.
 Rursus    aggressus      in Nischadhos,     Nalo         omnia     
 
 denuntiavit.
+
+_Dr. Mārcis Gasūns_

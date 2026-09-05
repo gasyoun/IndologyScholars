@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 21168909189120
 subject: "port on the Sanskrit Text Archive (D. Wujastyk 1988)"
@@ -858,3 +860,5 @@ On Thursday, February 21, 2013 12:37:36 AM UTC+5:30, Marcis wrote:
 >  
 
 >
+
+_Dr. Mārcis Gasūns_

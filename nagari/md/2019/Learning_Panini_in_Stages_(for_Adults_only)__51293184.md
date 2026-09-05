@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 6757731630851293184
 subject: "Learning Panini in Stages (for Adults only)"
@@ -1374,3 +1376,5 @@ On Fri, Nov 15, 2019 at 8:53 AM Narayan Prasad <hindix@…> wrote:
 > .
 
 >
+
+_Dr. Mārcis Gasūns_

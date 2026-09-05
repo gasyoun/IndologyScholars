@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 5879732633600
 subject: "Обсуждение на otto-boehtlingk"
@@ -18,3 +20,5 @@ source_url: https://groups.google.com/d/msgid/nagari/a61d41d2-6ee5-4e70-8e5b-caf
 ## 1. Brahman — 2008-10-28 14:07:28
 
 Я разобрался как качать!
+
+_Dr. Mārcis Gasūns_

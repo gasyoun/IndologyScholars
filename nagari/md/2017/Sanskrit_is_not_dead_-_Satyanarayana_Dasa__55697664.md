@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 6419990220755697664
 subject: "Sanskrit is not dead - Satyanarayana Dasa"
@@ -25,3 +27,5 @@ https://www.youtube.com/watch?v=Zused4CGMw4
 ## 2. Trivikram das — 2017-05-14 17:42:11
 
 https://www.youtube.com/watch?v=ZErxsCxSQsA
+
+_Dr. Mārcis Gasūns_

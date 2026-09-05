@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7518778895854731264
 subject: "The Little Red Book (справочник парадигм санскрита)"
@@ -26,3 +28,5 @@ https://sanskritdictionary.com/sites/little-red-book HTML страница
 
 
 [image: апввпавпава.png]
+
+_Dr. Mārcis Gasūns_

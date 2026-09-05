@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 21034734452736
 subject: "Satyāt nāsti paro dharmaḥ"
@@ -500,3 +502,5 @@ own.
 74.    haṁso hi kṣīramādatte tanmiçrā varjayatyapaḥ ,
 
     Goose milk
+
+_Dr. Mārcis Gasūns_

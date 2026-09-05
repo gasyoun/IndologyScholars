@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 22723625484288
 subject: "Indology at HathiTrust’s digital library"
@@ -34,3 +36,5 @@ Vikramorvaśí : a drama, by Kálidása. Edited, for ... . Kālidāsa.
 Warm regards from cold Novosibirsk,
 
 Marcis Gasuns, in hunt for MW's books
+
+_Dr. Mārcis Gasūns_

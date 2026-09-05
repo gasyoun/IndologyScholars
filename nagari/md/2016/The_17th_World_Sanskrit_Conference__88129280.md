@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 6350682249788129280
 subject: "The 17th World Sanskrit Conference"
@@ -126,3 +128,5 @@ On Tuesday, 8 November 2016 22:30:35 UTC+3, Marina Savelieva wrote:
 -- 
 
 एवं भवतु
+
+_Dr. Mārcis Gasūns_

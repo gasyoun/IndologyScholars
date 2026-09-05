@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 6858607428041179136
 subject: "Titles on Hinduism"
@@ -18,3 +20,5 @@ source_url: https://groups.google.com/d/msgid/nagari/a4fe754c-87b2-4cfb-9049-e79
 ## 1. Soham Bhattacharya — 2020-08-08 14:00:29
 
 Hello everyone, I've recently finished reading Wendy Doniger and have no idea what to read next about Hinduism and Sanskrit. Can anyone suggest me some informative titles?
+
+_Dr. Mārcis Gasūns_

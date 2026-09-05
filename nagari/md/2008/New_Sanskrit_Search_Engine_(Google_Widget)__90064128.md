@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 4585190064128
 subject: "New Sanskrit Search Engine (Google Widget)"
@@ -70,3 +72,5 @@ my email is gasyoun {at} ya.ru,
 
 
  Regards, Marcis
+
+_Dr. Mārcis Gasūns_

@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7033755605887090688
 subject: "The Educational Review. Madras, 1966. P. 251—253"
@@ -32,3 +34,5 @@ Smirnov B., "The Cultural Value of the Mahabharata", The Educational
 Review. Madras, 1966. 11. P. 251—253
 
 Всем хорошего дня!
+
+_Dr. Mārcis Gasūns_

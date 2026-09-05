@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 # Russian Indological Research Archive: A Conference Corpus for Prosopography
 
 **Mārcis Gasūns**  
@@ -410,3 +412,5 @@ harmonized across §5.4/§7, `article/zenodo_metadata.json`, and
 `CITATION.cff`, DOI slots split into concept/version; backfilled 2026-08-08 from live Zenodo record after GitHub integration confirmed).
 Target journal: Research Data Journal for the Humanities and Social
 Sciences (Brill). Word count target: 3,000–4,000.*
+
+_Dr. Mārcis Gasūns_

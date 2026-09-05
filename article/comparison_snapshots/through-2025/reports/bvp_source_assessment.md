@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 _Measured: 29-07-2026 · Status: local bounded acquisition_
 
 # BVP public source assessment
@@ -59,3 +61,5 @@ Implement and fixture-test sequential pagination by driving the public Next
 button or a documented equivalent, persisting each page's continuation token
 and row-ID set. Stop on repeated row sets, missing token, schema drift,
 HTTP 403/429, or an unexplained denominator gap.
+
+_Dr. Mārcis Gasūns_

@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 21957758156800
 subject: "Мраморная бумага для обложки книги (XIX в.)"
@@ -59,3 +61,5 @@ http://vintageprintable.com/wordpress/vintage-printable-%E2%80%93-art-and-design
 >
 > http://vintageprintable.com/wordpress/vintage-printable-%E2%80%93-art-and-design/design-textile-and-paper/design-paper-marbleized-blue-1/
 >
+
+_Dr. Mārcis Gasūns_

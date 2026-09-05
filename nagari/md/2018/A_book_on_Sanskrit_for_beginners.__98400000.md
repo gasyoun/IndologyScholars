@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 6554052650598400000
 subject: "A book on Sanskrit for beginners."
@@ -32,3 +34,5 @@ please, could you be so kind as to advice me any GOOD BOOK for a BEGINNER
 to start learning Sanskrit? Or any other ONLINE RESOURCE for that purpose? 
 
 Thanks in advance for your time. Jose
+
+_Dr. Mārcis Gasūns_

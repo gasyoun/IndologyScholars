@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 3121769086976
 subject: "Rapidshare ressource update"
@@ -30,3 +32,5 @@ http://rapidshare.com/files/42839384/aigrII1.djvu
 
 Greetings,
 Daniel Stender
+
+_Dr. Mārcis Gasūns_

@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7521813579312398336
 subject: "Помогите найти текст Brihat Dharma Puranam"
@@ -157,3 +159,5 @@ https://archive.org/details/in.ernet.dli.2015.337467/page/n211/mode/2up
 >>> .
 >>>
 >>
+
+_Dr. Mārcis Gasūns_

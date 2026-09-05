@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 31545268109312
 subject: "Обратный словарь санскрита: a/MSa--pradAna или a/MSa--pradAna-"
@@ -53,3 +55,5 @@ order (from right to left). So whatever be the stem, all words ending with
 a particular suffix should appear one after another. Cf. A.A. Зализняк
 
 (1980): "Грамматический словарь русского языка ".
+
+_Dr. Mārcis Gasūns_

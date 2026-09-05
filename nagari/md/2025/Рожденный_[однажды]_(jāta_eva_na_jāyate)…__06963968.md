@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7454959292506963968
 subject: "Рожденный [однажды] (jāta eva na jāyate)…"
@@ -359,3 +361,5 @@ jāta eva na jāyate
 > .
 
 >
+
+_Dr. Mārcis Gasūns_

@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 2671868116992
 subject: "Kleines Petersburger Woerterbuch - Repack"
@@ -26,3 +28,5 @@ Cologne Scans. Postprocessed  & shrunk, 1 File = 103 MB.
 
 Enjoy,
 Daniel Stender
+
+_Dr. Mārcis Gasūns_

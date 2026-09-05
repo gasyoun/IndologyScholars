@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 6793723904
 subject: "(Win32) Availible Devanagari Fonts"
@@ -19,3 +21,5 @@ source_url: https://groups.google.com/d/msgid/nagari/1118844180.547399.132500@g1
 
 >>From Stenzler's Bestseller Grammar.
 http://www.nagari.southindia.ru/fonts/100.jpg
+
+_Dr. Mārcis Gasūns_

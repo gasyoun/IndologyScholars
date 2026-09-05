@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7448251540520828928
 subject: "1st Eurasian Congress of Linguistics (Moscow 2024)"
@@ -24,3 +26,5 @@ source_url: https://groups.google.com/d/msgid/nagari/2197a888-f927-4f5c-8b44-23a
 https://vk.com/wall-88831040_23086
 
 [image: dsfdsdsds.png]
+
+_Dr. Mārcis Gasūns_

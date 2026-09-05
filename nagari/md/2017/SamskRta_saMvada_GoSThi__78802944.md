@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 6388147393678802944
 subject: "SamskRta saMvada GoSThi"
@@ -52,3 +54,5 @@ https://www.youtube.com/watch?v=YRbxyItpQ0E&t=46s
 
 
 https://www.youtube.com/watch?v=OKEnMGcIN9c
+
+_Dr. Mārcis Gasūns_

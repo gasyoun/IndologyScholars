@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 23280537829376
 subject: "Call for papers - Towards a History of Sound Symbolic Theories"
@@ -43,3 +45,5 @@ Best wishes,
 
 Luca Nobile
 MCF - University of Burgundy
+
+_Dr. Mārcis Gasūns_

@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7403637321739796480
 subject: "Staal,Frits Universals: Studies in Indian logic linguistics"
@@ -32,3 +34,5 @@ The University of Chicago press, London, 1988. - X, 267 p. - Библиогр. �
 
 
 см. https://vk.com/samskrtamru?w=wall-88831040_22312
+
+_Dr. Mārcis Gasūns_

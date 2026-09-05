@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7983472836608
 subject: "nou Grammaire Sanscrite"
@@ -31,3 +33,5 @@ On Aug 9, 6:15 pm, Simurg Gamayun <simurg...@…> wrote:
 > А вот меня интересует работа Renou Grammaire Sanscrite, Tome I. Phonetique.
 > Composition. Derivation. Paris, 1930.
 > М.б. кто-то уже отсканировал.
+
+_Dr. Mārcis Gasūns_

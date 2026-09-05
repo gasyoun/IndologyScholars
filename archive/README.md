@@ -1,6 +1,8 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 # Архив / Archive
 
-[Текущая документация](../docs/README.md) | [Current documentation](../docs/README.md)
+[Текущая документация](https://github.com/gasyoun/IndologyScholars/blob/main/docs/README.md) | [Current documentation](https://github.com/gasyoun/IndologyScholars/blob/main/docs/README.md)
 
 Этот каталог хранит датированные рабочие материалы и снимки состояния,
 которые полезны для истории решений, но не описывают текущую публикацию.
@@ -24,3 +26,5 @@ Current figures come from `site_data.json` and the maintained documents under
 
 Archived documents may intentionally retain counts, wording, and paths that
 were accurate when written and subsequently changed.
+
+_Dr. Mārcis Gasūns_

@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 1277871259648
 subject: "Обсуждение на 319-monier-oliver"
@@ -26,3 +28,5 @@ On 19 О©╫О©╫О©╫, 21:59, "sujanasi" <sujan...@…> wrote:
 ## 2. sujanasi — 2007-03-19 18:59:09
 
 O mein Gott! Wozu ist das alles?
+
+_Dr. Mārcis Gasūns_

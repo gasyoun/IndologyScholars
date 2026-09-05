@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7488800040053374976
 subject: "Sanskritika Lettonia - Sanskrit stuff in Latvia? Санскрит в Латвии?"
@@ -72,3 +74,5 @@ UQ, Австралия
 
 
 >
+
+_Dr. Mārcis Gasūns_

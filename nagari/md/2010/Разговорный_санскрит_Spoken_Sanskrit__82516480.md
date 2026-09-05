@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 9975082516480
 subject: "Разговорный санскрит / Spoken Sanskrit"
@@ -30,3 +32,5 @@ Pages: 223
 
 Те, кому лень там регистрировться, могут скачать DJVU, 3 МБ, тут:
 http://files.uz-translations.uz/bsj4qxb7slyj.html
+
+_Dr. Mārcis Gasūns_

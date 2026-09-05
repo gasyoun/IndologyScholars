@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 # Agent 3 — Verifier · Агент 3 — Верификатор
 
 > Pipeline step 3. Checks the existence and accuracy of everything claimed by agents 1–2.
@@ -86,3 +88,5 @@ Verifier:
 - Preliminary A–E rating by source:
 - Overall bibliographic-reliability verdict:
 ```
+
+_Dr. Mārcis Gasūns_

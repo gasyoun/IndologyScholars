@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 22622873059328
 subject: "An Encyclopaedic Dictionary of Sanskrit of Historical Principles (1976)"
@@ -21,3 +23,5 @@ source_url: https://groups.google.com/d/msgid/nagari/0daac8cc-ee47-4b53-acd5-468
 Никому .pdf не пробегал? 
 Хотя бы предисловие и несколько страниц текста было бы более чем 
 достаточно. Премного благодарю.
+
+_Dr. Mārcis Gasūns_

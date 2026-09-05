@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7175077773795393536
 subject: "Vaitâna Sûtra: Das Ritual des Atharvaveda"
@@ -23,3 +25,5 @@ Vaitâna Sûtra: Das Ritual des Atharvaveda; Место издания; Strassbu
 История литературы • Древний период; Источник; Основной фонд
 
 см. https://vk.com/samskrtamru?w=wall-88831040_16905
+
+_Dr. Mārcis Gasūns_

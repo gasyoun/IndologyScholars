@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 35182091436032
 subject: "Yoga-Vasishtha"
@@ -132,3 +134,5 @@ Nagari-unsubscribe@…
 Чтобы отменить подписку на эту тему, перейдите по ссылке https://groups.google.com/d/topic/nagari/Eujp7HCqFNE/unsubscribe.
 Чтобы отменить подписку на эту группу и все ее темы, отправьте письмо на электронный адрес nagari+unsubscribe@….
 Чтобы настроить другие параметры, перейдите по ссылке https://groups.google.com/d/optout.
+
+_Dr. Mārcis Gasūns_

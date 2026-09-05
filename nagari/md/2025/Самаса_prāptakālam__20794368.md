@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7455640402020794368
 subject: "Самаса prāptakālam"
@@ -211,3 +213,5 @@ sā viniścitya bahudhā vicārya ca punar punar ।
 > .
 
 >
+
+_Dr. Mārcis Gasūns_

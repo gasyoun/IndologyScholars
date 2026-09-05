@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 6918227623936
 subject: "nistraiguṇyo sattvasthaḥ"
@@ -435,3 +437,5 @@ Subject: Re: nistraiguṇyo sattvasthaḥ
 >
 > >
 >
+
+_Dr. Mārcis Gasūns_

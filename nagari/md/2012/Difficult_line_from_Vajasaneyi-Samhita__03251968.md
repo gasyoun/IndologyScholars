@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 17830503251968
 subject: "Difficult line from Vajasaneyi-Samhita"
@@ -410,3 +412,5 @@ On Wednesday, February 29, 2012 11:07:54 AM UTC-7, Serge A wrote:
 > отправьте сообщение по адресу:
 > Nagari-unsubscribe@…
 >
+
+_Dr. Mārcis Gasūns_

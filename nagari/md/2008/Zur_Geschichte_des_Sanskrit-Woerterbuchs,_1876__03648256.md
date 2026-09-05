@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 4734903648256
 subject: "Zur Geschichte des Sanskrit-Woerterbuchs, 1876"
@@ -60,3 +62,5 @@ geblieben sind und eine Pflege gefunden haben, wie nirgends.
 Gesprochen in der Versammlung der Orientalisten zu Innsbruck, am 29.
 
 Sept. 1874, von R. Roth
+
+_Dr. Mārcis Gasūns_

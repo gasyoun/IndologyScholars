@@ -1,6 +1,8 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 # Scientometrics And Sociology Of Science Layer
 
-[Documentation index](README.md) | [Data dictionary](../data_dictionary.md) | [Human review index](../analytics_output/human_review_index.csv)
+[Documentation index](https://github.com/gasyoun/IndologyScholars/blob/main/docs/README.md) | [Data dictionary](https://github.com/gasyoun/IndologyScholars/blob/main/data_dictionary.md) | [Human review index](https://github.com/gasyoun/IndologyScholars/blob/main/analytics_output/human_review_index.csv)
 
 This note defines how scientometric and sociology-of-science claims should be
 added to the archive without turning conference metadata into unsupported
@@ -195,3 +197,5 @@ taxonomy unless the source text supplies that evidence.
 - FAIR principles: https://doi.org/10.1038/sdata.2016.18
 - Fortunato et al., "Science of science": https://doi.org/10.1126/science.aao0185
 - OpenAlex author disambiguation documentation: https://help.openalex.org/hc/en-us/articles/24347048891543-Author-disambiguation
+
+_Dr. Mārcis Gasūns_

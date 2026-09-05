@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 6270455119872
 subject: "Обсуждение на zaliznyak-sanskrit"
@@ -97,3 +99,5 @@ Subject: Обсуждение на zaliznyak-sanskrit
 Если моё сообщение показалось неуместным, то извеняюсь.
 
 >
+
+_Dr. Mārcis Gasūns_

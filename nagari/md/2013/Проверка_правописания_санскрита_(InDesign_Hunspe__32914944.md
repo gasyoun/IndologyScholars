@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 23296232914944
 subject: "Проверка правописания санскрита (InDesign Hunspell и Word 2007)"
@@ -29,3 +31,5 @@ source_url: https://groups.google.com/d/msgid/nagari/847f30e6-4cab-4870-b46b-ffe
 подключиться? Я все, дальше пасс.
 Подробности буду выкладывать: http://samskrtam.ru/sanskrit-hunspell/ - 
 удивительно, но прежние попытки уже умерли.
+
+_Dr. Mārcis Gasūns_

@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7292613008325345280
 subject: "Sarala Samskrita Gita"
@@ -990,3 +992,5 @@ source_url: https://groups.google.com/d/msgid/nagari/1697943765.342753965@f481.i
 >>  
 >>
 >
+
+_Dr. Mārcis Gasūns_

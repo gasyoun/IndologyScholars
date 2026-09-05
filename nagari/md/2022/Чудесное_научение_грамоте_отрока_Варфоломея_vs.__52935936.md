@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7088212649952935936
 subject: "Чудесное научение грамоте отрока Варфоломея vs. Панини"
@@ -158,3 +160,5 @@ source_url: https://groups.google.com/d/msgid/nagari/f379149f-ef0c-4ab6-b47c-50d
 > .
 
 >
+
+_Dr. Mārcis Gasūns_

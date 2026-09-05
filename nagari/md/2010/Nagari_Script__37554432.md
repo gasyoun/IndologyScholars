@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 9519137554432
 subject: "Nagari Script"
@@ -363,3 +365,5 @@ I will answer other questions later.
 
 Рабина
 Rabin
+
+_Dr. Mārcis Gasūns_

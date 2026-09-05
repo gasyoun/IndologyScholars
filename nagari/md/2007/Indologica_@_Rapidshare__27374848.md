@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 2500327374848
 subject: "Indologica @ Rapidshare"
@@ -124,3 +126,5 @@ Grierson - Linguistic Survey of India
 
 Gruss,
 Daniel Stender
+
+_Dr. Mārcis Gasūns_

@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 15717040652288
 subject: "Sanskrit monthly magazine 'LOKABHASHA SUSHREEH'"
@@ -189,3 +191,5 @@ Nagari-unsubscribe@…
 Чтобы отменить подписку на эту группу, 
 отправьте сообщение по адресу: 
 Nagari-unsubscribe@…
+
+_Dr. Mārcis Gasūns_

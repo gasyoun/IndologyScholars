@@ -1,6 +1,8 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 # Classification Reliability Packet
 
-[Development notes](development-en.md) | [Technical audit](classification-audit-en.md)
+[Development notes](https://github.com/gasyoun/IndologyScholars/blob/main/docs/development-en.md) | [Technical audit](https://github.com/gasyoun/IndologyScholars/blob/main/docs/classification-audit-en.md)
 
 This packet is the citation-facing reliability note for the thematic and
 argument-scale classification used in the public archive and PPV article.
@@ -106,3 +108,5 @@ export (canonical argument-scale column: `argument_level`; `gumilyov_level`
 is a legacy alias documented in `data_dictionary.md`). Use
 `classification_reliability_sample.csv` when documenting manual quality
 control or planning a second human adjudication pass.
+
+_Dr. Mārcis Gasūns_

@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 18261394587648
 subject: "First Orbit - In the next 108 minutes..."
@@ -82,3 +84,5 @@ For the full 30 languages please consider buying the BluRay version.
 
 
 http://www.onlinedisk.ru/image/841167/Acknowledges.gif
+
+_Dr. Mārcis Gasūns_

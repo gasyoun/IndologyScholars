@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 21729984380928
 subject: "Alexander von Humboldts Bibliothek (Völker, Sprache und Schrift. Werke über Ethnologie, Linguistik)"
@@ -38,3 +40,5 @@ Entnommen aus Henry Stevens: The Humboldt Library. Reprint: Leipzig 1967
 Buchstaben. Leipzig 1841 – 
 
 With the Nalopakhyanam, Crutabodhah, Ghatakarparam, &c. as specimens
+
+_Dr. Mārcis Gasūns_

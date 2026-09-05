@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 23063518248960
 subject: "Index to the Names in the Mahabharata (S. Sorensen)"
@@ -3462,3 +3464,5 @@ Indra*^4¦ = Çiva (1000 names^1)
 इन्द्रकर्मन्
 
   ▼
+
+_Dr. Mārcis Gasūns_

@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 21920225427456
 subject: "Кто работал с Visual OpenType Layout Tool (VOLT)?"
@@ -40,3 +42,5 @@ http://scripts.sil.org/cms/scripts/page.php?item_id=VOLT_Tutorial туториа
 С чего начать - не понятно. http://www.sanskritweb.net/itrans/s99fonts.zip 
 
 нужно Шлегелевский шрифт перегнать в OTF.
+
+_Dr. Mārcis Gasūns_

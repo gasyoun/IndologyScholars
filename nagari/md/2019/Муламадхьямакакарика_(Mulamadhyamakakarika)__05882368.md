@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 6774041446205882368
 subject: "Муламадхьямакакарика (Mulamadhyamakakarika)"
@@ -306,3 +308,5 @@ On Wed, Dec 25, 2019 at 2:04 AM Maxim Efremov <efrem1@…> wrote:
 > .
 
 >
+
+_Dr. Mārcis Gasūns_

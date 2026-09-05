@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 22202598555648
 subject: "Meaning of Russian word 'розог'"
@@ -224,3 +226,5 @@ Narayan Prasad
 > http://ru.wikipedia.org/wiki/%D0%EE%E7%E3%E8
 
 >
+
+_Dr. Mārcis Gasūns_

@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 21854534238208
 subject: "IAST modification of standart layout for *nix systems."
@@ -619,3 +621,5 @@ On Monday, March 11, 2013 4:39:01 AM UTC-7, Marcis wrote:
 >> Будем знать. А как в LibreOffice с деванагари? Проблем нет?
 >>
 >>
+
+_Dr. Mārcis Gasūns_

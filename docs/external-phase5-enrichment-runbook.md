@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 # External Phase-5 Enrichment Runbook
 
 This runbook is for running the network-dependent Phase-5 roster enrichment on
@@ -254,3 +256,5 @@ Stop without committing if:
 - a `verified` registry row lacks `source_url`
 - the roster JSON loses existing people
 - the diff contains unrelated generated HTML or sitemap churn
+
+_Dr. Mārcis Gasūns_

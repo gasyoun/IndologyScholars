@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 161895940096
 subject: "Обсуждение на digitalization-of-paris-and-leipzig-ngar-fonts"
@@ -48,3 +50,5 @@ On 25 О©╫О©╫О©╫, 17:13, "Wrd" <waro...@…> wrote:
 ## 4. Wrd — 2007-02-25 14:13:34
 
 О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫, О©╫ О©╫О©╫О©╫О©╫О©╫ - О©╫О©╫О©╫ О©╫О©╫О©╫?
+
+_Dr. Mārcis Gasūns_

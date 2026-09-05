@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 # История изменений (Changelog)
 
 Все заметные изменения в этом проекте будут отражены в данном файле.
@@ -270,7 +272,7 @@ RussianRamayana. 29-08-2026 решение F5b освободило слот (п
   edges. Five high-weight co-author pairs re-checked against the DB (all
   confirmed). Byte-identical to the current auto-rebuild payload; durable
   recipe + audit in
-  [`docs/NETWORK_COAUTHORSHIP_REGEN_H2367_2026-08-07.md`](docs/NETWORK_COAUTHORSHIP_REGEN_H2367_2026-08-07.md);
+  [`docs/NETWORK_COAUTHORSHIP_REGEN_H2367_2026-08-07.md`](https://github.com/gasyoun/IndologyScholars/blob/main/docs/NETWORK_COAUTHORSHIP_REGEN_H2367_2026-08-07.md);
   Phase-2 roadmap checkbox ticked. Grok 4.5 (`grok-4.5`).
 
 ## [1.6.3] - 2026-08-07
@@ -1199,24 +1201,24 @@ handoff.)_
     *   Все временные/статусные маркеры (`"сначала"`, `"затем"`, `"ранее (взаимодействие завершено)"`) перенесены из типов/ярлыков связей в новый структурированный столбец `temporal`.
     *   Ярлыки связей стандартизованы (например, `"ученица сначала"` / `"ученица затем"` приведены к `"ученица"`), а `"раньше работал на"` исправлено на `"работал у"`, чтобы отделить смысловую связь от её временного состояния.
     *   Статусы сомнительных или требующих источника связей (`needs_source`) переведены в подтверждённые (`confirmed`) на основании прямого указания редактора, с соответствующим основанием `"Согласно редактору"`.
-    *   Интерактивная таблица на странице [known-relationships.html](known-relationships.html) дополнена новой колонкой «Период / время».
+    *   Интерактивная таблица на странице [known-relationships.html](https://github.com/gasyoun/IndologyScholars/blob/main/known-relationships.html) дополнена новой колонкой «Период / время».
 
 ## [1.9.0] — 2026-06-01
 
 ### Добавлено
 
-*   **Внесетевые связи (Known Relationships)**: добавлены `curation/known_relationships.csv` (межличностные и академические связи) и интерактивная страница [known-relationships.html](known-relationships.html) для отображения межличностных отношений, не выводимых напрямую из сети соавторства/соприсутствия.
-*   **Верификация выпускников Восточного факультета СПбГУ**: добавлен воспроизводимый кураторский фильтр `curation/eastern_faculty_alumni.csv` и скрипт генерации кандидатов [tools/extract_eastern_faculty_alumni.py](tools/extract_eastern_faculty_alumni.py).
+*   **Внесетевые связи (Known Relationships)**: добавлены `curation/known_relationships.csv` (межличностные и академические связи) и интерактивная страница [known-relationships.html](https://github.com/gasyoun/IndologyScholars/blob/main/known-relationships.html) для отображения межличностных отношений, не выводимых напрямую из сети соавторства/соприсутствия.
+*   **Верификация выпускников Восточного факультета СПбГУ**: добавлен воспроизводимый кураторский фильтр `curation/eastern_faculty_alumni.csv` и скрипт генерации кандидатов [tools/extract_eastern_faculty_alumni.py](https://github.com/gasyoun/IndologyScholars/blob/main/tools/extract_eastern_faculty_alumni.py).
 *   **Двуязычная социология и гейткипинг**: реализованы полноценные английские версии аналитических страниц `sociology-en.html` и `gatekeeping-en.html` для внешнего рецензирования.
-*   **Отметки слушателя по докладам**: создана статичная страница [voting.html](voting.html) для клиентского ведения локальных отметок «прослушано» (heard) и «понравилось» (liked) с выгрузкой в CSV/JSON.
+*   **Отметки слушателя по докладам**: создана статичная страница [voting.html](https://github.com/gasyoun/IndologyScholars/blob/main/voting.html) для клиентского ведения локальных отметок «прослушано» (heard) и «понравилось» (liked) с выгрузкой в CSV/JSON.
 
 ### Изменено
 
-*   **Редакционная и доказательная политика**: добавлены русский [docs/sociology-gatekeeping-editorial-decisions-ru.md](docs/sociology-gatekeeping-editorial-decisions-ru.md) и английский [docs/sociology-gatekeeping-editorial-decisions.md](docs/sociology-gatekeeping-editorial-decisions.md) мета-документы, фиксирующие стандарты доказательности, правила именования людей и разведение механизмов отсутствия (после 2022 и в 2026 гг.).
+*   **Редакционная и доказательная политика**: добавлены русский [docs/sociology-gatekeeping-editorial-decisions-ru.md](https://github.com/gasyoun/IndologyScholars/blob/main/docs/sociology-gatekeeping-editorial-decisions-ru.md) и английский [docs/sociology-gatekeeping-editorial-decisions.md](https://github.com/gasyoun/IndologyScholars/blob/main/docs/sociology-gatekeeping-editorial-decisions.md) мета-документы, фиксирующие стандарты доказательности, правила именования людей и разведение механизмов отсутствия (после 2022 и в 2026 гг.).
 *   **Обновление документации**:
-    *   [data_dictionary.md](data_dictionary.md) расширен описанием `known-relationships.html`, `voting.html` и новыми кураторскими таблицами.
-    *   [docs/development.md](docs/development.md) и [docs/development-en.md](docs/development-en.md) обновлены: добавлены разделы по внесетевым связям и верификации выпускников, а также новые скрипты и документы в карты путей.
-    *   [docs/README.md](docs/README.md) дополнен ссылками на новые редакционные регламенты.
+    *   [data_dictionary.md](https://github.com/gasyoun/IndologyScholars/blob/main/data_dictionary.md) расширен описанием `known-relationships.html`, `voting.html` и новыми кураторскими таблицами.
+    *   [docs/development.md](https://github.com/gasyoun/IndologyScholars/blob/main/docs/development.md) и [docs/development-en.md](https://github.com/gasyoun/IndologyScholars/blob/main/docs/development-en.md) обновлены: добавлены разделы по внесетевым связям и верификации выпускников, а также новые скрипты и документы в карты путей.
+    *   [docs/README.md](https://github.com/gasyoun/IndologyScholars/blob/main/docs/README.md) дополнен ссылками на новые редакционные регламенты.
 
 ## [1.8.9] — 2026-05-29
 
@@ -1609,3 +1611,5 @@ handoff.)_
     *   Создана детальная интерактивная хронология конференций в виде вертикального таймлайна с раскрывающимися списками.
     *   Реализованы интерактивные SVG-графики годовой динамики публикационной активности и гео-сродства.
 *   **Модуль сериализации (`generate_site_data.py`):** Сборка реляционных таблиц SQLite в высокопроизводительный статический JSON-объект `site_data.json` для работы клиентского фронтенда.
+
+_Dr. Mārcis Gasūns_

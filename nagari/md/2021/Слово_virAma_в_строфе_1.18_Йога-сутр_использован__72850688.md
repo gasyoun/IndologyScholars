@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7012914758772850688
 subject: "Слово virAma в строфе 1.18 Йога-сутр использовано в единственном числе?"
@@ -208,3 +210,5 @@ https://www.sanskrit-trikashaivism.com/en/patanjali-yoga-sutras/629
 >>>> .
 >>>>
 >>>
+
+_Dr. Mārcis Gasūns_

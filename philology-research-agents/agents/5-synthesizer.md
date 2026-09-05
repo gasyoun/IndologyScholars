@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 # Agent 5 — Synthesizer · Агент 5 — Синтезатор
 
 > Pipeline step 5. Integrates all prior agents into one verdict: what is established,
@@ -86,3 +88,5 @@ Synthesizer:
 - Editions / catalogues / manuscripts worth checking:
 - Answer limitation (incl. reliance on internal knowledge):
 ```
+
+_Dr. Mārcis Gasūns_

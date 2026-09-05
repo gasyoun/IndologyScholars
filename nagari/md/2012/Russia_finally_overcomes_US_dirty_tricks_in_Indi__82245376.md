@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 18231382245376
 subject: "Russia finally overcomes US dirty tricks in India"
@@ -5010,3 +5012,5 @@ Non-violence is the ultimate dharma. So too is violence in service of Dharma
 
 अहिंसा परमो धर्मः धर्म हिंसा तथीव च
 Ahimsa Paramo Dharma Dharma himsa tathaiva cha
+
+_Dr. Mārcis Gasūns_

@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 6935760873863512064
 subject: "Как зарегистрироваться на sanskrit-linguistics.org ?"
@@ -87,3 +89,5 @@ On Thursday, 4 March 2021 at 14:34:28 UTC+3 ли ла wrote:
 > .
 
 >
+
+_Dr. Mārcis Gasūns_

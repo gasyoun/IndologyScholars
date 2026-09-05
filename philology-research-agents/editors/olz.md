@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 # Editor profile — Orientalistische Literaturzeitung (OLZ, De Gruyter)
 # Профиль редактора — Orientalistische Literaturzeitung
 
@@ -113,3 +115,5 @@ OLZ — старейший европейский востоковедчески
 > Differs from JAOS by genre (review journal vs research-article journal) and
 > language (German default). Differs from ППВ/ВДИ/ВЯ by being non-Russian,
 > footnote-based, and review-focused.
+
+_Dr. Mārcis Gasūns_

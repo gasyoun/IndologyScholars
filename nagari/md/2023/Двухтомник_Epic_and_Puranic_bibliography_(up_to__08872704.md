@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7286533382108872704
 subject: "Двухтомник Epic and Puranic bibliography (up to 1985)"
@@ -46,3 +48,5 @@ Tubingen; Vol.3,Pt.2). - ISBN 3-447-03028-3.
 
 
 см. https://vk.com/samskrtamru?w=wall-88831040_20162
+
+_Dr. Mārcis Gasūns_

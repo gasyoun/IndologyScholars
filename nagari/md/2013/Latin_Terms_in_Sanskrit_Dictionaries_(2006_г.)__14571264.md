@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 21421714571264
 subject: "Latin Terms in Sanskrit Dictionaries (2006 г.)"
@@ -80,3 +82,5 @@ Dragulin 1908. – S. 192
 [2] <#_ftnref2> Longman Dictionary of Contemporary English, 3rd edition. 
 
 Longman Group Ltd, Essex, England, 1995, p. xi
+
+_Dr. Mārcis Gasūns_

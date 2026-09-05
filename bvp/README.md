@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 # BVP public archive acquisition
 
 This directory contains the bounded, resumable acquisition layer for the
@@ -62,3 +64,5 @@ the displayed listing denominator reconciles, and every gap is explained.
 
 The hardening behavior is adapted from `D:\Tools\wisdomlib-scrape`, but this
 repository has no runtime dependency on that external working directory.
+
+_Dr. Mārcis Gasūns_

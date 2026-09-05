@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 3123294765056
 subject: "aSTAdhyAyii in Unicode devanAgarii"
@@ -510,3 +512,5 @@ This etext also suffers from a lot many typing errors.
 > Chetan Pandey
 >
 >
+
+_Dr. Mārcis Gasūns_

@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7619611862904078336
 subject: "Cologne Sanskrit Lexicon App"
@@ -215,3 +217,5 @@ On Sunday, 22 March 2026 at 03:05:52 UTC+3 Serge A wrote:
 > .
 
 >
+
+_Dr. Mārcis Gasūns_

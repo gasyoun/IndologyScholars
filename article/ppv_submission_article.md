@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 УДК 061.3:001.32(470:540)
 
 # Двадцать лет российской индологии: Зографские и Рериховские чтения (2004-2026)
@@ -235,3 +237,5 @@ Gini, Corrado. *Variabilità e mutabilità: contributo allo studio delle distrib
 Schreibman, Susan; Siemens, Ray; Unsworth, John (eds.). *A Companion to Digital Humanities*. Oxford: Blackwell Publishing, 2004.
 
 Stone, Lawrence. Prosopography. *Daedalus*. 1971. Vol. 100, no. 1. P. 46-79.
+
+_Dr. Mārcis Gasūns_

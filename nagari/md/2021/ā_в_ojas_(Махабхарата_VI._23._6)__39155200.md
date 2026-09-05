@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7031098362639155200
 subject: "ā в ojas (Махабхарата VI. 23. 6)"
@@ -424,3 +426,5 @@ uttamaujasaḥ. И здесь нет никакой связи с видом ф�
 > .
 
 >
+
+_Dr. Mārcis Gasūns_

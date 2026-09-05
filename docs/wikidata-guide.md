@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 # Wikidata Batch Creation Guide for IndologyScholars
 
 ## Goal
@@ -123,3 +125,5 @@ wd = sum(1 for v in persons.values() if v.get('wikidata'))
 print(f'Wikidata coverage: {wd} / {len(persons)} ({100*wd/len(persons):.1f}%)')
 "
 ```
+
+_Dr. Mārcis Gasūns_

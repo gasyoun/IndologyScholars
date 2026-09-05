@@ -1,6 +1,6 @@
 # План сравнительной редакции статьи ППВ — пятилинзовый контекст (H1899)
 
-_Created: 06-08-2026 · Last updated: 06-08-2026_
+_Created: 06-08-2026 · Last updated: 05-09-2026_
 
 Подготовил: Opus 5 (`claude-opus-5`), локальный проход H1899, ветка
 `h1899-report-figures-snapshot` от `origin/codex/community-lenses-ask-plan`.
@@ -34,8 +34,8 @@ _Created: 06-08-2026 · Last updated: 06-08-2026_
 |---|---|
 | [`analytics_output/community_lenses/tables/`](../analytics_output/community_lenses/tables/) | 7 замороженных таблиц метрик; каждая строка со своим числителем/знаменателем |
 | [`analytics_output/community_lenses/figures/`](../analytics_output/community_lenses/figures/) | 6 рисунков + подписи (`captions.md`) |
-| [`analytics_output/community_lenses/reports/comparison_validity.md`](../analytics_output/community_lenses/reports/comparison_validity.md) | отчёт о валидности, V1–V11 |
-| [`analytics_output/community_lenses/reports/claims_ledger.csv`](../analytics_output/community_lenses/reports/claims_ledger.csv) | реестр утверждений: вердикт + связь со свидетельством |
+| [`analytics_output/community_lenses/reports/comparison_validity.md`](https://github.com/gasyoun/IndologyScholars/blob/main/analytics_output/community_lenses/reports/comparison_validity.md) | отчёт о валидности, V1–V11 |
+| [`analytics_output/community_lenses/reports/claims_ledger.csv`](https://github.com/gasyoun/IndologyScholars/blob/main/analytics_output/community_lenses/reports/claims_ledger.csv) | реестр утверждений: вердикт + связь со свидетельством |
 | [`comparison_snapshots/through-2025/`](comparison_snapshots/through-2025/) · [`partial-2026/`](comparison_snapshots/partial-2026/) | замороженные пакеты с манифестами SHA-256 |
 
 Ни одно число в статье не берётся из чата или из промежуточного вывода: оно
@@ -59,7 +59,7 @@ _Created: 06-08-2026 · Last updated: 06-08-2026_
   охвату след сообщества; другие площадки показывают иные формы активности,
   несводимые к докладам.
 - **Свидетельства:** `cl-conf-scale`, `cl-orientation-premise`.
-- **Рисунок/таблица:** [`lens_source_coverage.csv`](../analytics_output/community_lenses/tables/lens_source_coverage.csv).
+- **Рисунок/таблица:** [`lens_source_coverage.csv`](https://github.com/gasyoun/IndologyScholars/blob/main/analytics_output/community_lenses/tables/lens_source_coverage.csv).
 - **Правка к текущему тексту:** добавить один абзац о том, что «активность»
   измеряется в родных единицах (доклад / сообщение / пост) и никогда не
   суммируется между площадками.
@@ -70,8 +70,8 @@ _Created: 06-08-2026 · Last updated: 06-08-2026_
 - **Утверждения:** `cl-conf-scale`, `cl-2026-partial`, `cl-orientation-premise`.
 - **Свидетельства:** `coverage.conferences`, `coverage.nagari`, `coverage.vk_ors`,
   `coverage.indology_l`, `coverage.bvp`; `activity.*.2026-partial`.
-- **Рисунок/таблица:** [`fig1_activity_by_period.svg`](../analytics_output/community_lenses/figures/fig1_activity_by_period.svg),
-  [`source_manifests.csv`](comparison_snapshots/through-2025/source_manifests.csv).
+- **Рисунок/таблица:** [`fig1_activity_by_period.svg`](https://github.com/gasyoun/IndologyScholars/blob/main/analytics_output/community_lenses/figures/fig1_activity_by_period.svg),
+  [`source_manifests.csv`](https://github.com/gasyoun/IndologyScholars/blob/main/article/comparison_snapshots/through-2025/source_manifests.csv).
 - **Что добавить:**
   1. таблицу пяти линз: родная единица, снимок, покрытие, число записей,
      основание прав;
@@ -90,7 +90,7 @@ _Created: 06-08-2026 · Last updated: 06-08-2026_
   2018–2025 выше доли 2005–2010 внутри той же линзы.
 - **Свидетельства:** `activity.conferences.2005-2010`,
   `activity.conferences.2011-2017`, `activity.conferences.2018-2025`.
-- **Рисунок:** [`fig1_activity_by_period.svg`](../analytics_output/community_lenses/figures/fig1_activity_by_period.svg) — верхняя панель.
+- **Рисунок:** [`fig1_activity_by_period.svg`](https://github.com/gasyoun/IndologyScholars/blob/main/analytics_output/community_lenses/figures/fig1_activity_by_period.svg) — верхняя панель.
 - **Контрсвидетельство:** рост может отражать изменение практики учёта программ;
   различить это по имеющимся данным нельзя — сказать прямо.
 - **Ограничение:** описательное сравнение долей; причинных формулировок нет.
@@ -105,8 +105,8 @@ _Created: 06-08-2026 · Last updated: 06-08-2026_
   `content.conferences.religion_philosophy.taxonomy_crosswalk`,
   `content.nagari.texts_philology.taxonomy_crosswalk`,
   `function.nagari.teaching_learning.taxonomy_crosswalk`; цитата `Q-VK-22289`.
-- **Рисунки:** [`fig2_intellectual_content.svg`](../analytics_output/community_lenses/figures/fig2_intellectual_content.svg),
-  [`fig3_community_function.svg`](../analytics_output/community_lenses/figures/fig3_community_function.svg).
+- **Рисунки:** [`fig2_intellectual_content.svg`](https://github.com/gasyoun/IndologyScholars/blob/main/analytics_output/community_lenses/figures/fig2_intellectual_content.svg),
+  [`fig3_community_function.svg`](https://github.com/gasyoun/IndologyScholars/blob/main/analytics_output/community_lenses/figures/fig3_community_function.svg).
 - **Обязательная оговорка в тексте:** кроссволк H1897 не прошёл человеческую
   проверку, поэтому общие тематические доли подаются как **предварительные**;
   родные тематические коды остаются принятым свидетельством.
@@ -123,8 +123,8 @@ _Created: 06-08-2026 · Last updated: 06-08-2026_
   `gumilev.conferences.G3.gumilyov_scale_csv_deepseek_strict_scale_audit`,
   `overlap.conferences`, `overlap.nagari`; цитаты `Q-NG-PANINI-ASK`,
   `Q-NG-PANINI-ANSWER`.
-- **Рисунки:** [`fig4_argument_level.svg`](../analytics_output/community_lenses/figures/fig4_argument_level.svg),
-  [`fig5_person_overlap.svg`](../analytics_output/community_lenses/figures/fig5_person_overlap.svg).
+- **Рисунки:** [`fig4_argument_level.svg`](https://github.com/gasyoun/IndologyScholars/blob/main/analytics_output/community_lenses/figures/fig4_argument_level.svg),
+  [`fig5_person_overlap.svg`](https://github.com/gasyoun/IndologyScholars/blob/main/analytics_output/community_lenses/figures/fig5_person_overlap.svg).
 - **Что можно сказать:** семь человек засвидетельствованы и в программе, и в
   закрытой группе (641 упоминание); пять кандидатов остались неоднозначными и
   исключены из счёта; ни одна связь не принята автоматически.
@@ -142,7 +142,7 @@ _Created: 06-08-2026 · Last updated: 06-08-2026_
 - **Свидетельства:** `gumilev.nagari.G1.deterministic_ruleset_pilot`,
   `gumilev.vk_ors.unknown.deterministic_ruleset_pilot`, `coverage.indology_l`,
   `coverage.bvp`.
-- **Рисунок:** [`fig6_orientation_contrast.svg`](../analytics_output/community_lenses/figures/fig6_orientation_contrast.svg).
+- **Рисунок:** [`fig6_orientation_contrast.svg`](https://github.com/gasyoun/IndologyScholars/blob/main/analytics_output/community_lenses/figures/fig6_orientation_contrast.svg).
 - **Ключевой абзац редакции:** сравнение «Россия — Запад — Индия» в этом снимке
   **не выполняется**: INDOLOGY-L заблокирован отсутствием атомарного снимка,
   BVP — отсутствием собранного корпуса. Это пробел доказательств, а не
@@ -175,7 +175,7 @@ _Created: 06-08-2026 · Last updated: 06-08-2026_
 ## Подписи к рисункам
 
 Готовые подписи (линза · родная единица · период · знаменатель · оговорка о
-покрытии) — [`figures/captions.md`](../analytics_output/community_lenses/figures/captions.md).
+покрытии) — [`figures/captions.md`](https://github.com/gasyoun/IndologyScholars/blob/main/analytics_output/community_lenses/figures/captions.md).
 В статье они используются **дословно**: подпись без знаменателя — дефект.
 
 ## Чего H1900 делать не должен

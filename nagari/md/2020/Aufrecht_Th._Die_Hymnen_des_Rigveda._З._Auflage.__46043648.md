@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 6864960388646043648
 subject: "Aufrecht Th. Die Hymnen des Rigveda. З. Auflage. Berlin, 1955 Интересно взглянуть"
@@ -20,3 +22,5 @@ source_url: https://groups.google.com/d/msgid/nagari/bd0d7de1-5e21-4817-924a-90d
 Aufrecht Th. Die Hymnen des Rigveda. З. Auflage. Berlin, 1955
 
 Интересно было бы взглянуть, в первом издании транслитерация текста Ригведы.
+
+_Dr. Mārcis Gasūns_

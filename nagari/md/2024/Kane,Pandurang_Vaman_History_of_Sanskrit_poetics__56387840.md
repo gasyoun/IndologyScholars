@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7375425752756387840
 subject: "Kane,Pandurang Vaman History of Sanskrit poetics / By P. V. Kane"
@@ -26,3 +28,5 @@ Kane,Pandurang Vaman History of Sanskrit poetics / By P. V. Kane. - 4th ed.
 Индийское литературоведение • Теория литературы • Поэзия
 
 см. https://vk.com/wall-88831040_21751
+
+_Dr. Mārcis Gasūns_

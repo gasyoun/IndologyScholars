@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 21091706732544
 subject: "Omissions in Pirogova's 'Conjugation Of Russian Verbs' (1988)"
@@ -38,3 +40,5 @@ missing. I think, it should be 2 and I respectively.
 
 
 --- Narayan Prasad
+
+_Dr. Mārcis Gasūns_

@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 6828565987433906176
 subject: "saa atmaatatvamasi सा अत्मातत्वमसि Chandogya Upanishad VI.8.7 - правильное прочтение?"
@@ -350,3 +352,5 @@ On Friday, 29 May 2020 13:02:11 UTC+3, Serge A wrote:
 >>
 > Тот, который выбрал А.Я. 
 >
+
+_Dr. Mārcis Gasūns_
