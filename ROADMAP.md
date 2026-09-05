@@ -179,3 +179,5 @@ D. 🅜 ✅ **Runbook для .ru-шагов.** `docs/ru-enrichment-runbook.md` �
 - Сохранять явную неопределённость: открытая аффилиация — `(?)`; невалидированная
   классификация не публикуется как `L2`.
 - Перед публикацией: `python validate_publication.py` и `pytest`.
+
+_Dr. Mārcis Gasūns_

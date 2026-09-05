@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 # Implementation And Handoff Plan, 2026-05-31
 
 This plan turns `docs/academic-career-risk-audit-2026-05-31.md` into an
@@ -265,3 +267,5 @@ git status -sb
 
 Do not call the PPV package ready until all four commands are clean and the
 anonymous artifact has passed an explicit identity check.
+
+_Dr. Mārcis Gasūns_

@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 4271295692800
 subject: "Sanskrit pronunciation, a neophyte's curiosity"
@@ -53,3 +55,5 @@ Subject: Sanskrit pronunciation, a neophyte's curiosity
 > other language (at least that I know of). Is it possible that, v being
 > pronounced w, ph and bh were pronounced like f and v respectively?
 > >
+
+_Dr. Mārcis Gasūns_

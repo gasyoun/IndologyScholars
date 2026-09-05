@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7076800662768451584
 subject: "Как работать с sanskrit-lexicon.uni-koeln?"
@@ -299,3 +301,5 @@ Nagari-unsubscribe@…
 > .
 
 >
+
+_Dr. Mārcis Gasūns_

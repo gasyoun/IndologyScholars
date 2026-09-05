@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7247831260822765568
 subject: "Contributions of muslims to Sanskrit learning"
@@ -40,3 +42,5 @@ Calcutta; Дата издания; 1954; Язык; Английский; Тем�
 
 
 см. https://vk.com/samskrtamru?w=wall-88831040_18912
+
+_Dr. Mārcis Gasūns_

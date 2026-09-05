@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7254238560256
 subject: "mahabharata-nala"
@@ -63,3 +65,5 @@ On 8 апр, 03:20, Kukasia <katya...@…> wrote:
 On 8 апр, 03:20, Kukasia <katya...@…> wrote:
 > Поиск выдает ссылку, которая ведет на страницу, которой не существует.
 > Ищу перевод и анализ истории Налы.
+
+_Dr. Mārcis Gasūns_

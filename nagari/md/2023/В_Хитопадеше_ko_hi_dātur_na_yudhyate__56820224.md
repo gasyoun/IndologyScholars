@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7242062662256820224
 subject: "В Хитопадеше ko hi dātur na yudhyate"
@@ -90,3 +92,5 @@ https://www.sanskritorium.ru/converter/
 > .
 
 >
+
+_Dr. Mārcis Gasūns_

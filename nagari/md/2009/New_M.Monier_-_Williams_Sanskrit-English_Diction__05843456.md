@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 6287005843456
 subject: "New M.Monier - Williams Sanskrit-English Dictionary"
@@ -57,3 +59,5 @@ Subject: Re: New M.Monier - Williams Sanskrit-English Dictionary
 > издаваемых Motilal.
 > >
 >
+
+_Dr. Mārcis Gasūns_

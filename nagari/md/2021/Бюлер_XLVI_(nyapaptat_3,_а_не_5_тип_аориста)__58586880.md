@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 6916130436158586880
 subject: "Бюлер XLVI (nyapaptat 3, а не 5 тип аориста)"
@@ -29,3 +31,5 @@ https://www.galenel.info/sanskrit/index.html
 указан 5 тип, хотя в Бюлере только по 3 типу. Как быть?
 Преподавание санскрита - Наталия Лихушина.. www.galenel.info 
 <https://vk.com/away.php?to=https%3A%2F%2Fwww.galenel.info%2Fsanskrit%2Findex.html>
+
+_Dr. Mārcis Gasūns_

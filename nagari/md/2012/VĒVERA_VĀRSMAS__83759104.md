@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 18430483759104
 subject: "VĒVERA VĀRSMAS"
@@ -1358,3 +1360,5 @@ Ak, mīļotā! Pūrā kas noslēpta, ik ilgi vēl sveces liesma slēpjama?
 
 
 „Esmu” – dzelzī kaltas kājas, „esmu”- cilpa apvīta ap kaklu.
+
+_Dr. Mārcis Gasūns_

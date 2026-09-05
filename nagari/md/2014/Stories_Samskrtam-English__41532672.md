@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 26025941532672
 subject: "Stories : Samskrtam-English"
@@ -47,3 +49,5 @@ You can find here much Samskrtam material- with sandhi-split and tagged
 plain texts (only source-texts not translations or commentaries)
 Sandhi-splitting will help in understanding of text easily. The material is 
 free-downloadable.
+
+_Dr. Mārcis Gasūns_

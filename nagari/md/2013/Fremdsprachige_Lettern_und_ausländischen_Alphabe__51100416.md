@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 21782951100416
 subject: "Fremdsprachige Lettern und ausländischen Alphabeten (Wien)"
@@ -82,3 +84,5 @@ Orden und Bischöfe eingerichtet wurden.
 Написал на office@… посмотрим, расскажут ли еще что-то про 
 
 санскритские печатные дела в Вене.
+
+_Dr. Mārcis Gasūns_

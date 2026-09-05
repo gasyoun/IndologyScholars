@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 5376198049792
 subject: "Ice cream in Sanskrit and Hindi"
@@ -437,3 +439,5 @@ I need the word, which will resound beautiful for Russians:).
 
 
 Thank you very much.
+
+_Dr. Mārcis Gasūns_

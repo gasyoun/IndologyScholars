@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 # Handoff: сбор русскоязычных индологов
 
 > Инструкция для продолжения работы без ИИ-ассистента.  
@@ -409,3 +411,5 @@ python -m pytest tests/ -q       # 40 юнит-тестов
 | `scratch/enwiki_bridge_output.json` | Аудит-трейл en.wiki-моста |
 | `tests/test_indologist_matching.py` | Юнит-тесты matcher/merge/дат |
 | `tests/test_institutions_web.py` | Юнит-тесты парсера институтов |
+
+_Dr. Mārcis Gasūns_

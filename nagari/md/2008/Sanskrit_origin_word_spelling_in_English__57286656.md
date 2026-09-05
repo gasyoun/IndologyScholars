@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 4553657286656
 subject: "Sanskrit origin word spelling in English"
@@ -184,3 +186,5 @@ On 25 янв, 09:36, Marcis <gasy...@…> wrote:
 >
 
 > - Показать цитируемый текст -
+
+_Dr. Mārcis Gasūns_

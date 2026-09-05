@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 34974293032960
 subject: "Origin of the trigonometrical terms 'sin' and 'cos' in AryabhaTIya."
@@ -220,3 +222,5 @@ On Wednesday, 15 April 2015 19:07:37 UTC+3, Arvind_Kolhatkar wrote:
 > Sanskrit word कोज्या changed into cosinus or its short form 'cos'.
 
 >
+
+_Dr. Mārcis Gasūns_

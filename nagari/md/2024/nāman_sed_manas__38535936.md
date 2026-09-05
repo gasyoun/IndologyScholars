@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7352777359738535936
 subject: "nāman sed manas"
@@ -94,3 +96,5 @@ gantavyaṃ yadi *mano *niścitaṃ
 ## 3. Constantine — 2024-04-01 09:55:31
 
 यदि नाम, ‘if ever’
+
+_Dr. Mārcis Gasūns_

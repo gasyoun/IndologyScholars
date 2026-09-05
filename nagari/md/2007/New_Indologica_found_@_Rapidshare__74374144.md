@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 3216474374144
 subject: "New Indologica found @ Rapidshare"
@@ -28,3 +30,5 @@ http://rapidshare.com/files/51059589/allchin_-_birth_indian_civilization.djvu
 
 Cheers,
 DS
+
+_Dr. Mārcis Gasūns_

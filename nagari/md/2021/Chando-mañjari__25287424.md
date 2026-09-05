@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 6969508883725287424
 subject: "Chando-mañjari"
@@ -19,3 +21,5 @@ source_url: https://groups.google.com/d/msgid/nagari/61383203-ac36-43b2-a144-536
 
 Доброе время суток! Скажите, пожалуйста, существует ли в природе 
 "Чхандо-манджари" в английском переводе?
+
+_Dr. Mārcis Gasūns_

@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 108367183872
 subject: "Наш канал на Skypecast"
@@ -20,3 +22,5 @@ source_url: https://groups.google.com/d/msgid/nagari/1172165673.916577.92310@a75
 О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫ О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫ О©╫О©╫ О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫. О©╫О©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫,
 О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫.
 https://skypecasts.skype.com/skypecasts/skypecast/detailed.html?id_talk=458068
+
+_Dr. Mārcis Gasūns_

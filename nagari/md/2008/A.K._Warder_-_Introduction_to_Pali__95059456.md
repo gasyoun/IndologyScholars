@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 5779495059456
 subject: "A.K. Warder - 'Introduction to Pali'"
@@ -176,3 +178,5 @@ On 6 окт, 16:32, Ashot Hambartsumyan <ahambartsum...@…> wrote:
 > > достать.
 
 > > Буду признателен за помощь.
+
+_Dr. Mārcis Gasūns_

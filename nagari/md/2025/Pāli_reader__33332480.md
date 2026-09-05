@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7491848032333332480
 subject: "Pāli reader"
@@ -284,3 +286,5 @@ On Fri, 11 Apr 2025 at 03:36, Иван Малютин <takatakmasale@…> wrote:
 > .
 
 >
+
+_Dr. Mārcis Gasūns_

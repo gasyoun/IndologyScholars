@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 11547683323904
 subject: "Buddhist Hybrid Sanskrit Reader"
@@ -162,3 +164,5 @@ ______________Макс Каширский_____________
 
 On Dec 23 2010, 10:06 pm, MAX KASHIRSKY <supali...@…> wrote:
 > на рисовой бумаге
+
+_Dr. Mārcis Gasūns_

@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 # Keyword Clusters (TF-IDF + NMF)
 
 Based on `871` presentation titles, analyzed via pymorphy3.
@@ -20,3 +22,4 @@ Based on `871` presentation titles, analyzed via pymorphy3.
 ### Cluster 6
 - **Keywords:** индия, древний, традиция, южный, культурный, средневековый, искусство, источник, образ, эпический, адивась, культура, музыкальный, ведийский, восточный, книга, миф, культ, учение, храм, инструмент, мир, религиозный, теория, тулунаду
 
+_Dr. Mārcis Gasūns_

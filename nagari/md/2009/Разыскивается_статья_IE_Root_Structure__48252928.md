@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7954448252928
 subject: "Разыскивается статья 'IE Root Structure'"
@@ -66,3 +68,5 @@ Linguistic and Literary Studies in Honor of Archibald Hill, t.3,
 Солнцев, Вадим Михайлович Проблема слова и корня в китайском языке.
 Автореф.дисс. ... к.филол.н. М., 1953. - это, получается, пряма дорога в
 Химки?
+
+_Dr. Mārcis Gasūns_

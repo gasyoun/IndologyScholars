@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7484688302080
 subject: "Discussion on rigveda-for-students-91-selected-hymns"
@@ -36,3 +38,5 @@ knowledge to sread to you. with high regards
 > >
 
 >
+
+_Dr. Mārcis Gasūns_

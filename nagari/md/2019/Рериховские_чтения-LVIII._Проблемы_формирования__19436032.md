@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 6696464619019436032
 subject: "Рериховские чтения-LVIII. Проблемы формирования текста и культуры древней и средневековой Индии"
@@ -28,3 +30,5 @@ source_url: https://groups.google.com/d/msgid/nagari/883b80c0-668d-4d21-9abb-bf6
 http://ancient.ivran.ru/rerihovskie-chteniya
 
 М,Г.
+
+_Dr. Mārcis Gasūns_

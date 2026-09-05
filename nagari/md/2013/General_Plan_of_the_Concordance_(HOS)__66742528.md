@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 21157566742528
 subject: "General Plan of the Concordance (HOS)"
@@ -2730,3 +2732,5 @@ similar to them; and such pādas have been incorporated in the Concordance.
 Mahābhāṣya. The Mahā-Bhāṣya. A single kārikā, to be found at vol. i., page 
 
 96, of Kielhorn's edition, is identical with a śloka occurring at GB.1.1.26.
+
+_Dr. Mārcis Gasūns_

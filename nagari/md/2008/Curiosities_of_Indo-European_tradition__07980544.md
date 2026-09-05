@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 4748207980544
 subject: "Curiosities of Indo-European tradition"
@@ -150,3 +152,5 @@ On 5 мар, 01:32, klaus <NVMORO...@…> wrote:
 > гимнов, сочинённых южной ветвью арийцев после того, как они спустились
 
 > в долину семи рек (Инд, Пенджаб -- <<Пять рек>> -- и Сарасвати).
+
+_Dr. Mārcis Gasūns_

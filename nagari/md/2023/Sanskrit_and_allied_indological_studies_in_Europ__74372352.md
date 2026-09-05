@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7274370266774372352
 subject: "Sanskrit and allied indological studies in Europe"
@@ -32,3 +34,5 @@ Madras, 1956. - 117 p., front. - (Madras univ. sanskrit. ser; 22).
 
 
 см. https://vk.com/samskrtamru?w=wall-88831040_19760
+
+_Dr. Mārcis Gasūns_

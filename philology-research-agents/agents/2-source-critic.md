@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 # Agent 2 — Source & Textual Critic · Агент 2 — Филолог-источниковед
 
 > Pipeline step 2. The agent that did not exist in the parent prompt. Goes from the
@@ -109,3 +111,5 @@ Transliteration:
 Unresolved / to be checked:
 - [shelf-marks, references, datings that cannot be confirmed without the edition/catalogue]
 ```
+
+_Dr. Mārcis Gasūns_

@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 6300431941050040320
 subject: "mahāmṛtyuṃjaya mantra"
@@ -375,3 +377,5 @@ losmachen.
 
 Tryambaka we worship, sweet augmenter of prosperity. As from its stem the 
 cucumber, so may I be released from death, not reft of immortality.
+
+_Dr. Mārcis Gasūns_

@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7096793963828346880
 subject: "Санскрит добавлен в Google Translate"
@@ -25,3 +27,5 @@ wQ_EYS7D4S8ZAAesZYNOLK2HIt4h-9b6bcO1V0rcJL7UkWyiMm5zQmRz24LtmDZdOX2oqVMiJ5Ap_Cci
 О да, прикольно. А ведь там ещё и послушать "правильное" произношение можно.
 
 [image: Screenshot_1864.jpg]
+
+_Dr. Mārcis Gasūns_

@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 8317776691200
 subject: "Text editor and keyboard for typing texts in all possible combinations of Indic scripts"
@@ -7329,3 +7331,5 @@ On 3 Dez. 2009, 11:18, Лев Титлин <tit...@…> wrote:
 > ...
 >
 > Erfahren Sie mehr >>
+
+_Dr. Mārcis Gasūns_

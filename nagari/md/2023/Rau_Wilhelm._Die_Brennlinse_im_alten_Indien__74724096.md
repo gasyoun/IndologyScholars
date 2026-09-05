@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7208945137374724096
 subject: "Rau Wilhelm. Die Brennlinse im alten Indien"
@@ -24,3 +26,5 @@ Steiner; Дата издания; 1983; Язык; Немецкий; Темати
 Древний период; Источник; Основной фонд
 
 см. https://vk.com/samskrtamru?w=wall-88831040_17772
+
+_Dr. Mārcis Gasūns_

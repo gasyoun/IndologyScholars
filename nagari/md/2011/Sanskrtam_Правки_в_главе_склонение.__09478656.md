@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 16361409478656
 subject: "Sanskrtam | Правки в главе склонение."
@@ -19,3 +21,5 @@ source_url: https://groups.google.com/d/msgid/nagari/94c48c6c-e21b-40db-a7d7-2dc
 
 Правки  в главе склонение.
 http://tvitaly1.narod.ru/Sanskrtam.zip
+
+_Dr. Mārcis Gasūns_

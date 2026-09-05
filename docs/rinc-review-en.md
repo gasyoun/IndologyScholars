@@ -1,6 +1,8 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 # Guide to Verifying RINC/eLIBRARY Profiles (SciGuide Phase 4)
 
-[Русская версия](rinc-review.md) | [Development and reproducibility](development-en.md)
+[Русская версия](https://github.com/gasyoun/IndologyScholars/blob/main/docs/rinc-review.md) | [Development and reproducibility](https://github.com/gasyoun/IndologyScholars/blob/main/docs/development-en.md)
 
 ## Purpose
 
@@ -45,3 +47,5 @@ After a profile has been confirmed (`review_status = confirmed`), transfer its
 `rinc_author_id` and `spin` to `authority_ids.json`. On the next site
 generation, `generate_scholars_pages.py` will include RINC links on person
 profiles.
+
+_Dr. Mārcis Gasūns_

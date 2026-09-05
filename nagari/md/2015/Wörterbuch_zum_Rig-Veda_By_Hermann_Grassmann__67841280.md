@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 33003567841280
 subject: "Wörterbuch zum Rig-Veda By Hermann Grassmann"
@@ -62,3 +64,5 @@ On Saturday, February 21, 2015 at 11:24:09 PM UTC-7, Marcis wrote:
 >>
 
 >
+
+_Dr. Mārcis Gasūns_

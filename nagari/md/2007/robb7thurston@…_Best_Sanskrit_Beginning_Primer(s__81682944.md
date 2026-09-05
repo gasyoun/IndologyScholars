@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 1059081682944
 subject: "robb7thurston@…: Best Sanskrit Beginning Primer(s): Contingents like Dictionary(s)"
@@ -46,3 +48,5 @@ robb thurston wrote:
 >      Robb Thurston
 >
 > >
+
+_Dr. Mārcis Gasūns_

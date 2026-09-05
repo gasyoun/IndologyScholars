@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 33953652146176
 subject: "вриттадарпаНа - वृत्तदर्पण - Mirror of Sanskrit Meters"
@@ -46,3 +48,5 @@ I hope you enjoy it...
 
 
 Arvind Kolhatkar
+
+_Dr. Mārcis Gasūns_

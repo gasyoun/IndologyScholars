@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 21738188439552
 subject: "Briefe zum Petersburger Wörterbuch 1852-1885 (2007 г.)"
@@ -21,3 +23,5 @@ http://www.uni-hamburg.de/oag/noag/noag2009_10_4.pdf благосклонная 
 на книгу http://books.google.ru/books?id=5l1Ynwj7aBcC 
 Briefe zum Petersburger Wörterbuch 1852-1885. Переписка О. Бётлинга, жаль, 
 что доступны лишь отдельные страницы увесистого томика.
+
+_Dr. Mārcis Gasūns_

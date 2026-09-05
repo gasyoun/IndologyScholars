@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7474874303429738496
 subject: "Óscar Pujol vs. Mārcis Gasūns: санскритские словари"
@@ -22,3 +24,5 @@ source_url: https://groups.google.com/d/msgid/nagari/723e812e-42dc-44b1-8993-e0e
 https://youtube.com/live/nkYssXLfbaA
 
 [image: pujol.jpg]
+
+_Dr. Mārcis Gasūns_

@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 # Source hierarchy for the humanities · Иерархия источников в гуманитарных науках
 
 > Shared building block. Referenced by the orchestrator and by every agent.
@@ -76,3 +78,5 @@ primary witness and on methodological soundness.
 Popular books without apparatus, blogs, forums, marketing/popularization, generative
 paraphrase unchecked against the source, "everybody knows," ideologically loaded texts
 without verification.
+
+_Dr. Mārcis Gasūns_

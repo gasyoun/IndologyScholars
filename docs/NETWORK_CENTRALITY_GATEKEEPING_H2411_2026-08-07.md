@@ -1,6 +1,6 @@
 # Network centrality + series bridges for gatekeeping (H2411)
 
-_Created: 07-08-2026 · Last updated: 07-08-2026_
+_Created: 07-08-2026 · Last updated: 05-09-2026_
 
 **Handoff:** [H2411](https://github.com/gasyoun/Uprava/blob/main/handoffs/H2411-Grok_IndologyScholars_gatekeeping-centrality-measures_07.08.26.md) · **Executor:** Grok 4.5 (`grok-4.5`)  
 **Depends on:** co-authorship export truth-pass [H2367](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H2367-Grok_IndologyScholars_coauthorship-network-regen_07.08.26.md)
@@ -21,13 +21,13 @@ python -c "import generate_publication_pages as g; g.generate_gatekeeping_page()
 
 | File | Content |
 |---|---|
-| [`analytics_output/network_centrality_collaboration.csv`](../analytics_output/network_centrality_collaboration.csv) | degree + betweenness on **co-presentation** pairs only |
-| [`analytics_output/network_centrality_session.csv`](../analytics_output/network_centrality_session.csv) | same-session co-presence graph |
-| [`analytics_output/network_centrality_event.csv`](../analytics_output/network_centrality_event.csv) | same-event-year co-attendance projection |
-| [`analytics_output/network_series_bridges.csv`](../analytics_output/network_series_bridges.csv) | people with talks in **both** Zograf and Roerich |
-| [`analytics_output/network_centrality_summary.json`](../analytics_output/network_centrality_summary.json) | layer counts + top-3 snapshots |
+| [`analytics_output/network_centrality_collaboration.csv`](https://github.com/gasyoun/IndologyScholars/blob/main/analytics_output/network_centrality_collaboration.csv) | degree + betweenness on **co-presentation** pairs only |
+| [`analytics_output/network_centrality_session.csv`](https://github.com/gasyoun/IndologyScholars/blob/main/analytics_output/network_centrality_session.csv) | same-session co-presence graph |
+| [`analytics_output/network_centrality_event.csv`](https://github.com/gasyoun/IndologyScholars/blob/main/analytics_output/network_centrality_event.csv) | same-event-year co-attendance projection |
+| [`analytics_output/network_series_bridges.csv`](https://github.com/gasyoun/IndologyScholars/blob/main/analytics_output/network_series_bridges.csv) | people with talks in **both** Zograf and Roerich |
+| [`analytics_output/network_centrality_summary.json`](https://github.com/gasyoun/IndologyScholars/blob/main/analytics_output/network_centrality_summary.json) | layer counts + top-3 snapshots |
 
-Pages: [`gatekeeping.html`](../gatekeeping.html) / [`gatekeeping-en.html`](../gatekeeping-en.html) — section **Measured centrality and bridges (H2411)** with live tables.
+Pages: [`gatekeeping.html`](https://github.com/gasyoun/IndologyScholars/blob/main/gatekeeping.html) / [`gatekeeping-en.html`](https://github.com/gasyoun/IndologyScholars/blob/main/gatekeeping-en.html) — section **Measured centrality and bridges (H2411)** with live tables.
 
 ## Counts (2026-08-07, from `conferences.db`)
 
@@ -47,7 +47,7 @@ Pages: [`gatekeeping.html`](../gatekeeping.html) / [`gatekeeping-en.html`](../ga
 
 ## Prior art reused
 
-- Brandes betweenness already in [`article/work_ppv_hypotheses.py`](../article/work_ppv_hypotheses.py) (`network_bridges*.csv` for the paper appendix).
+- Brandes betweenness already in [`article/work_ppv_hypotheses.py`](https://github.com/gasyoun/IndologyScholars/blob/main/article/work_ppv_hypotheses.py) (`network_bridges*.csv` for the paper appendix).
 - H2411 adds a **stdlib tool under `tools/`**, typed layer CSVs under `analytics_output/`, and wires tables into the public gatekeeping pages.
 
 ## Non-goals

@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 6512788992845414400
 subject: "Yoga-Vasishtha"
@@ -304,3 +306,5 @@ On Tuesday, January 23, 2018 at 5:00:24 PM UTC+3, Marcis wrote:
 > Какое из переизданий? 
 
 >
+
+_Dr. Mārcis Gasūns_

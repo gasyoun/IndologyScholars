@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 16865324695552
 subject: "Правки в Sanskrtam"
@@ -21,3 +23,5 @@ source_url: https://groups.google.com/d/msgid/nagari/4b3c1bcb-1ac0-4a9d-8dd7-80d
 работы над базой нашел небольшие ошибки в Sanskrtam, которые выправил,
 добавил склонение слов с основой на -кш.
 http://tvitaly1.narod.ru/Sanskrtam.zip
+
+_Dr. Mārcis Gasūns_

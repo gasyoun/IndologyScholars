@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 6165804484270227456
 subject: "āma vs. apakva"
@@ -184,3 +186,5 @@ On Monday, June 29, 2015 at 11:31:29 AM UTC-6, ShaSa wrote:
 >>
 
 >
+
+_Dr. Mārcis Gasūns_

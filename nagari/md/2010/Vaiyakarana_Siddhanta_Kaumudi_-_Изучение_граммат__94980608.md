@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 9867894980608
 subject: "Vaiyakarana Siddhanta Kaumudi - Изучение грамматики санскрита через комментарии к сутрам Панини"
@@ -42,3 +44,5 @@ Siddhanta Kaumudi to a batch of students every morning.
 Материалы сегодняшнего урока доступны на специально созданной гугл
 волне. Доступ к ней я смогу предоставить всем желающим, после
 получения ваших wave.google.com координат по вышеуказанной почте.
+
+_Dr. Mārcis Gasūns_

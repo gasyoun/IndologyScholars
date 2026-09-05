@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 34795355635712
 subject: "Программа Ganakastadhyayi"
@@ -231,3 +233,5 @@ On Friday, 5 June 2015 13:15:54 UTC+3, Mandala Pati (Владислав) wrote:
 >
 > А как? У вас есть исходники программы? 
 >
+
+_Dr. Mārcis Gasūns_

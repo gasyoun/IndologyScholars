@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 23130297860096
 subject: "Статья Sanskrit из Meyers Konversationslexikon (1885-1892)"
@@ -320,3 +322,5 @@ gelangt (Berl.
 1880 ff., in Onckens »Allgemeiner Geschichte«).
 
 http://www.retrobibliothek.de/retrobib/seite.html?id=120073
+
+_Dr. Mārcis Gasūns_

@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 # Sociology and Gatekeeping Pages: Editorial Decisions
 
 Updated: 2026-06-01
@@ -155,3 +157,5 @@ Preferred Russian terms:
 - "сетевые сообщества".
 
 Avoid using "брокер" as the main public-facing term.
+
+_Dr. Mārcis Gasūns_

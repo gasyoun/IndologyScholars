@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7562200400302964736
 subject: "Помогите пожалуйста распутать nirṛtyagniśiveṣeccamam ( निऋत्यग्निशिवेषेच्चमं )"
@@ -2861,3 +2863,5 @@ nirṛti+agni+śiveṣu (Loc.pl.) uccam nīcaṁ vāyu+indrayos (Loc.du) tathā 
 >>>>>> .
 >>>>>>
 >>>>>
+
+_Dr. Mārcis Gasūns_

@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7447965073408
 subject: "Mahabharata"
@@ -49,3 +51,5 @@ Hopefully, विनिवारयिषुः means "desirous of preventing", 
 >
 > >
 >
+
+_Dr. Mārcis Gasūns_

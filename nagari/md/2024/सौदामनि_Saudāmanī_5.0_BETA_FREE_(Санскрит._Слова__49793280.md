@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7321873231149793280
 subject: "सौदामनि Saudāmanī 5.0 BETA FREE (Санскрит. Словари интерактивные.)"
@@ -683,3 +685,5 @@ https://nnmclub.to/forum/viewtopic.php?t=1691855
 >>>>>>>>>> Раздаётся, пока  компьютер включён.
 >>>>>>>>>>
 >>>>>>>>>
+
+_Dr. Mārcis Gasūns_

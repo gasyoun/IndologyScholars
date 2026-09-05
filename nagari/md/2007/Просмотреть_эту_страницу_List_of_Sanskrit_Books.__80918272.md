@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 112980918272
 subject: "Просмотреть эту страницу 'List of Sanskrit Books. Список книг по санск"
@@ -727,3 +729,5 @@ to create one. The big constraint is the time.
 > New Delhi-110067
 > http://www.geocities.com/mishra_skumar78/
 >
+
+_Dr. Mārcis Gasūns_

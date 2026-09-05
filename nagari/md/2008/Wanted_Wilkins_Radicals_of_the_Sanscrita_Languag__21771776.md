@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 5146621771776
 subject: "Wanted: Wilkins / Radicals of the Sanscrita Language, 1815"
@@ -300,3 +302,5 @@ http://books.google.com/books?id=cqMIAAAAQAAJ&pg=PA96&dq=Wilkins+Radicals&lr=&as
 Как идет диссертация?
 
 Николай.
+
+_Dr. Mārcis Gasūns_

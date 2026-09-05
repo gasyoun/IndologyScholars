@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 6650206175668207616
 subject: "Diglossa.js"
@@ -136,3 +138,5 @@ On Friday, 25 January 2019 02:16:24 UTC+3, Michael Bykov wrote:
 
 
 http://diglossa.org
+
+_Dr. Mārcis Gasūns_

@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7360226322783666176
 subject: "Buddhistische Stotras aus ostturkischen Sanskrittexten"
@@ -26,3 +28,5 @@ Berlin, Akademie, 1, N. 22, 1955. 132 S.
 Стран Востока литературоведение • История литературы
 
 см. https://vk.com/samskrtamru?w=wall-88831040_21377
+
+_Dr. Mārcis Gasūns_

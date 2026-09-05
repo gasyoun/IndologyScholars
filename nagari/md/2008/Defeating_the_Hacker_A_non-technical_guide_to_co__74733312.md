@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 5703374733312
 subject: "Defeating the Hacker: A non-technical guide to computer security"
@@ -63,3 +65,5 @@ Thanks, but where's the password for open the files  ??!!! :(((((
     e.. Ethical Hacking (EC-Council Exam 312-50): Student Courseware
 
     f.. New Hacker's Dictionary
+
+_Dr. Mārcis Gasūns_

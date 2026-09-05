@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 80582017024
 subject: "Fonts (Tamil, Bengali, Gurmukhi, Kannada, Malayalam, Brahmi)"
@@ -41,3 +43,5 @@ http://www.clickeralam.org/product.html
 
 Brahmi
 http://www.nibbanam.com/Brahmi/brahmi.htm
+
+_Dr. Mārcis Gasūns_

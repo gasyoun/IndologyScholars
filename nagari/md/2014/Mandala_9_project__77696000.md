@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 26750877696000
 subject: "Mandala 9 project"
@@ -728,3 +730,5 @@ On Tuesday, 11 November 2014 20:15:02 UTC+3, Dmitri wrote:
 >>>
 
 >>>>>
+
+_Dr. Mārcis Gasūns_

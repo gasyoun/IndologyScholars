@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 26247041122304
 subject: "List of verbal roots in RV Mandala 9"
@@ -52,3 +54,5 @@ On Tuesday, March 4, 2014 2:14:27 AM UTC-7, Marcis wrote:
 > 481 корень - не мало. Вопрос - по омонимам, 2е это 2е по какой системе? 
 > Грасману или как? Например, √a"s2 или √yu2.
 >
+
+_Dr. Mārcis Gasūns_

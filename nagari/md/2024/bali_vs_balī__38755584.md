@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7364735360338755584
 subject: "bali vs balī"
@@ -191,3 +193,5 @@ taruṇa молодой - taruṇāyate | nāmadhātu, prathamapuruṣa, ekavaca
 >> .
 >>
 >
+
+_Dr. Mārcis Gasūns_

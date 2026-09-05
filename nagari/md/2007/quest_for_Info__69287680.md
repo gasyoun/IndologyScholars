@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 4220969287680
 subject: "quest for Info"
@@ -164,3 +166,5 @@ On 12/15/07, Deshpande, Madhav <mmdesh@…> wrote:
 Cheers,
 
 Srini
+
+_Dr. Mārcis Gasūns_

@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 23890162089984
 subject: "Beautiful Devanagari keyboard for mobile phones with Android!"
@@ -267,3 +269,5 @@ On Wednesday, 18 September 2013 18:21:10 UTC+4, swo...@… wrote:
 > пойму...
 >
 > https://sites.google.com/site/bhashaime/ для винды, раньше не встречал.
+
+_Dr. Mārcis Gasūns_

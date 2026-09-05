@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 6979696052477624320
 subject: "Cāndra-Vyākaraṇa"
@@ -224,3 +226,5 @@ groups....
 > .
 
 >
+
+_Dr. Mārcis Gasūns_

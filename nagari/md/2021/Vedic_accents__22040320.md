@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 6998474440122040320
 subject: "Vedic accents"
@@ -138,3 +140,5 @@ daivI\" sva\_stira\'stu naH .
 > +371 26466450 <+371%2026%20466%20450>
 
 >
+
+_Dr. Mārcis Gasūns_

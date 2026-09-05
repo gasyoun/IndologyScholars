@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7425292968758607872
 subject: "Converter devanagari-siddham-devanagari"
@@ -115,3 +117,5 @@ https://www.aksharamukha.com/converter
 >> Спасибо) 
 >>
 >
+
+_Dr. Mārcis Gasūns_

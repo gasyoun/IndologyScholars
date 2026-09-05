@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 # Editor profile — ППВ «Письменные памятники Востока» (ИВР РАН)
 # Профиль редактора — ППВ (Written Monuments of the Orient, IOM RAS)
 
@@ -117,3 +119,5 @@ References
 > To adapt to another journal, copy this file to `editors/<journal>.md` and replace the
 > house-style rules. The base editor agent and the rest of the pipeline are unchanged.
 > Для другого журнала: скопируйте файл в `editors/<journal>.md` и замените правила стиля.
+
+_Dr. Mārcis Gasūns_

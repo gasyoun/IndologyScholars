@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 2000706076672
 subject: "Sanskrit Computational Linguistics Symposium"
@@ -122,3 +124,5 @@ attend and participate to the Workshop sessions.
 More information on the Workshop will be posted to the Sanskrit Forum  
 of the Zen Bulletin Board
 (http://sanskrit.inria.fr/zf/).
+
+_Dr. Mārcis Gasūns_

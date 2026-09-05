@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 6286799850916806656
 subject: "Къ бiографiи К. А. Коссовича."
@@ -59,3 +61,5 @@ source_url: https://groups.google.com/d/msgid/nagari/7ce9850c-104e-41b4-bd4a-834
 >
 > И. Рогозниковъ.
 >
+
+_Dr. Mārcis Gasūns_

@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 6486353037590790144
 subject: "Two more articles on Sanskrit Grammar"
@@ -73,3 +75,5 @@ Ok.
 >
 >
 Free of charge and popular.
+
+_Dr. Mārcis Gasūns_

@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 25493155872768
 subject: "Learn-Sanskrit Web resources in English"
@@ -457,3 +459,5 @@ http://www.sriaurobindoandmother.com/Content.aspx?ContentURL=/_StaticContent/Sri
 Namaste
 
 Seems to be an interesting place of learners.
+
+_Dr. Mārcis Gasūns_

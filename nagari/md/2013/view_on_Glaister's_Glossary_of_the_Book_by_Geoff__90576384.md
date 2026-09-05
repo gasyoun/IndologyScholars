@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 21789890576384
 subject: "view on Glaister's Glossary of the Book by Geoffrey Ashall (1981)"
@@ -23,3 +25,5 @@ William R. Eshelman
 The Library Quarterly
 Vol. 51, No. 2 (Apr., 1981), pp. 221-223
 Does someones has JStor access, please?
+
+_Dr. Mārcis Gasūns_

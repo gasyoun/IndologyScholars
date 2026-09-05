@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7178624911755182080
 subject: "Histoire de la langue sanskrite"
@@ -582,3 +584,5 @@ On Monday, 19 December 2022 at 13:30:11 UTC+3 simurghus wrote:
 > .
 
 >
+
+_Dr. Mārcis Gasūns_

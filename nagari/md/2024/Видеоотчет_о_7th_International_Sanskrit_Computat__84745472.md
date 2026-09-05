@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7377486880384745472
 subject: "Видеоотчет о 7th International Sanskrit Computational Linguistics Symposium"
@@ -25,3 +27,5 @@ source_url: https://groups.google.com/d/msgid/nagari/1e7c5c7d-81f8-4df2-8af5-b03
 
 7th ISCLS in Auroville - February 15-17th 2024
 https://www.youtube.com/watch?v=Ro7nIlG8Dug
+
+_Dr. Mārcis Gasūns_

@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 6479646674930106368
 subject: "sanskrit books for free"
@@ -46,3 +48,5 @@ Let me know if you are interested.
 Sincerely,
 
 Guruprasad V
+
+_Dr. Mārcis Gasūns_

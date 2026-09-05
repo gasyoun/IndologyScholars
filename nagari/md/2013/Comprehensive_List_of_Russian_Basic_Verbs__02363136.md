@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 21096102363136
 subject: "Comprehensive List of Russian Basic Verbs"
@@ -118,3 +120,5 @@ OK. Thanks a lot.
 > http://www.ruslang.ru/agens.php?id=admin
 
 >
+
+_Dr. Mārcis Gasūns_

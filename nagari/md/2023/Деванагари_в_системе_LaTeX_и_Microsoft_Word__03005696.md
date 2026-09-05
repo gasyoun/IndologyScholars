@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7307161613103005696
 subject: "Деванагари в системе LaTeX и Microsoft Word"
@@ -308,3 +310,5 @@ On Sunday 24 December 2023 at 12:38:03 UTC+3 Serge A wrote:
 
 
 http://bookszlibb74ugqojhzhg2a63w5i2atv5bqarulgczawnbmsb6s6qead.onion/book/27283967/c696bb/the-latex-companion-parts-i-ii-3rd-edition-tools-and-techniques-for-computer-typesetting.html
+
+_Dr. Mārcis Gasūns_

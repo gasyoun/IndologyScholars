@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7649130589148151808
 subject: "Нет доступа вообще никак у меня только ? www.valmiki.iitk.ac.in"
@@ -47,3 +49,5 @@ On Monday, 8 June 2026 at 23:53:18 UTC+3 ли ла wrote:
 
 > И сюда тоже : *gitasupersite.iitk.ac.in* 
 > <https://www.gitasupersite.iitk.ac.in/>
+
+_Dr. Mārcis Gasūns_

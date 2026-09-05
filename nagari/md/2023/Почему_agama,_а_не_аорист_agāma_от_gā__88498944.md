@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7219705529388498944
 subject: "Почему agama, а не аорист agāma от gā?"
@@ -100,3 +102,5 @@ source_url: https://groups.google.com/d/msgid/nagari/23d015d6-fa5b-449a-a835-30f
 > .
 
 >
+
+_Dr. Mārcis Gasūns_

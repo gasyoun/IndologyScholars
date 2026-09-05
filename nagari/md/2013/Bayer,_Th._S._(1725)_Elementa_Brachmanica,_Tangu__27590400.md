@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 23171327590400
 subject: "Bayer, Th. S. (1725) Elementa Brachmanica, Tangutana et Mungalica"
@@ -78,3 +80,5 @@ E.J. Brill; Leiden-New York, 1988.
 > Вырезал из журнала отдельно саму статью, первые *образцы деванагари*.
 
 >
+
+_Dr. Mārcis Gasūns_

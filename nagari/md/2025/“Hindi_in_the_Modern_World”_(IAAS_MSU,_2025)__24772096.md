@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7574039814624772096
 subject: "“Hindi in the Modern World” (IAAS MSU, 2025)"
@@ -555,3 +557,5 @@ Q & A session
 С уважением,
 Юлия Пушкарева
 yulia12.1978@…
+
+_Dr. Mārcis Gasūns_

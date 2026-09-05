@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7392466454083272704
 subject: "in fine compositi - куда ударение в последнем слоге?"
@@ -224,3 +226,5 @@ On Wednesday 17 July 2024 at 08:05:22 UTC+3 Георгий Х. wrote:
 > .
 
 >
+
+_Dr. Mārcis Gasūns_

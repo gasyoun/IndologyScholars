@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 23803132379136
 subject: "athāto rogānutpādanīyādhyāyaṃ vyākhyāsyāmaḥ (AHS Su 4.1)"
@@ -1198,3 +1200,5 @@ http://ayurvedam.ru/astanga-hrdaya-samhita/
 Создал подстрочник для всей книги, падаю с ног.
 
 М.Г.
+
+_Dr. Mārcis Gasūns_

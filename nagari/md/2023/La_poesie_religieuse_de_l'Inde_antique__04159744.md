@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7269730800704159744
 subject: "La poesie religieuse de l'Inde antique"
@@ -30,3 +32,5 @@ religions; 8).
 
 
 см. https://vk.com/samskrtamru?w=wall-88831040_19672
+
+_Dr. Mārcis Gasūns_

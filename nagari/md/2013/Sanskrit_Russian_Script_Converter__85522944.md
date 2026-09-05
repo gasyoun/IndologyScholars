@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 25287085522944
 subject: "Sanskrit Russian Script Converter"
@@ -152,3 +154,5 @@ On Tuesday, December 24, 2013 6:55:08 AM UTC-6, śrīdṛṣṭvā wrote:
 >> Is there any IAST type script converter for Russian/Sanskrit languages?
 >>
 >
+
+_Dr. Mārcis Gasūns_

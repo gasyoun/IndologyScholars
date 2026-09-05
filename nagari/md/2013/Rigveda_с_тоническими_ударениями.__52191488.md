@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 24409552191488
 subject: "Rigveda с тоническими ударениями."
@@ -52,3 +54,5 @@ On Thursday, September 19, 2013 9:30:32 AM UTC+1, borissoff wrote:
 > http://www.academia.edu/attachments/31912254/download_file
 
 >
+
+_Dr. Mārcis Gasūns_

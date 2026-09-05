@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7468610508705234944
 subject: "A Higher Sanskrit Grammar by M. R. Kale (7-е изд.)"
@@ -24,3 +26,5 @@ R. Kale — распространенный в современный Инди�
 https://vk.com/sanskritskype?w=wall-89658969_9092
 
 [image: sasasaa.png]
+
+_Dr. Mārcis Gasūns_

@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7198943394467414016
 subject: "Откуда i перед hi в śvasihi ?"
@@ -105,3 +107,5 @@ imper. rudihi (NB -hi); opt. rudyām. Отдельные формы с соед�
 > .
 
 >
+
+_Dr. Mārcis Gasūns_

@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 4801251246080
 subject: "'Anubandhas of Panini' by G.V. Devasthali"
@@ -40,3 +42,5 @@ used by Panini along with examples and index?
 Thanks,
 
 K
+
+_Dr. Mārcis Gasūns_

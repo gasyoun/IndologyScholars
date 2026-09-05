@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 17597075554304
 subject: "Introduction"
@@ -72,3 +74,5 @@ Good luck to you in your quest...
 
 
 Arvind Kolhatkar, Toronto, January 29, 2012.
+
+_Dr. Mārcis Gasūns_

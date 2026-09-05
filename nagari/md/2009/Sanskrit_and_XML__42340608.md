@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 8033542340608
 subject: "Sanskrit and XML"
@@ -22,3 +24,5 @@ Can anybody help me find resources on this topic? In particular I am
 looking for an example of DTD (Document Type Definition) and a list of
 
 Devanagari entities. Thank you.
+
+_Dr. Mārcis Gasūns_

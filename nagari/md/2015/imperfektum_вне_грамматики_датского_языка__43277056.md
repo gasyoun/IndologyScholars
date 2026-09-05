@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 35386143277056
 subject: "imperfektum вне грамматики датского языка"
@@ -359,3 +361,5 @@ http://da.wikipedia.org/wiki/Imperfektum
 >
 
 Кажется, ко мне вопрос. Только я не понял, о чём. А потому не могу ответить.
+
+_Dr. Mārcis Gasūns_

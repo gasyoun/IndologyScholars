@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7587804894273208320
 subject: "Что значит pratibhāsya bhaviṣyati"
@@ -498,3 +500,5 @@ On Sun, 28 Dec 2025 at 12:22, Serge A <renuvate@…> wrote:
 > .
 
 >
+
+_Dr. Mārcis Gasūns_

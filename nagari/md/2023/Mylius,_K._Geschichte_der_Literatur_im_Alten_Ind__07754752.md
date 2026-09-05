@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7222746910007754752
 subject: "Mylius, K. Geschichte der Literatur im Alten Indien 1983"
@@ -30,3 +32,5 @@ Leipzig; Дата издания; 1983; Язык; Немецкий; Темати
 см. https://vk.com/samskrtamru?w=wall-88831040_18160
 
 [image: ывываывыв.png]
+
+_Dr. Mārcis Gasūns_

@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 9168139321344
 subject: "namah stuti"
@@ -27,3 +29,5 @@ tava - Для Вашего хорошего себя;
 hasta-gṛhīta kunda-puñjayā [хаста-gṛhīta Кунда-puñjayā], - Deka [Дека]
 [image:
 http://upload.wikimedia.org/wikipedia/commons/1/1f/Jasmine_flowers_190605_kpjas.jpg]
+
+_Dr. Mārcis Gasūns_

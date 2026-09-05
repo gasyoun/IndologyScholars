@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 2763484299264
 subject: "Neue Indologica @ Rapidshare"
@@ -451,3 +453,5 @@ On 17 О©╫О©╫О©╫, 18:23, "Madhav M. Deshpande" <mmd...@…> wrote:
 > Thanks a lot for these volumes of Vedic Variants and the Nirukta.
 >
 > Madhav Deshpande
+
+_Dr. Mārcis Gasūns_

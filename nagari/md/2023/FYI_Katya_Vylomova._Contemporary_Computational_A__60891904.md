@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7309580710160891904
 subject: "FYI: Katya Vylomova. Contemporary Computational Approaches to Linguistic Morphology, Typology and Social Psychology"
@@ -116,3 +118,5 @@ Approaches to Linguistic Morphology, Typology and Social Psychology.
 > .
 
 >
+
+_Dr. Mārcis Gasūns_

@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 5323941216256
 subject: "Разные определения atmanepada и parasmaipada"
@@ -43,3 +45,5 @@ http://nagari.southindia.ru/2007-atmanepada-vs-parasmaipada/
 -- 
 С уважением,
  Traven
+
+_Dr. Mārcis Gasūns_

@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 5303005347840
 subject: "Sanskrit Books @ Rapidshare"
@@ -56,3 +58,5 @@ the list)
 
 
 M.G.
+
+_Dr. Mārcis Gasūns_

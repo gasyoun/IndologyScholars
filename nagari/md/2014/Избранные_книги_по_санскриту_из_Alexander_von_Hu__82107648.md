@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 29734782107648
 subject: "Избранные книги по санскриту из Alexander von Humboldts Bibliothek"
@@ -132,3 +134,5 @@ Leipzig 1967 / Bearbeitet, mit Personen- und Stichwortregister versehen von*
    - 5083 Kalidasa Malakiva und Agnimitra. Drama, übersetzt aus dem 
 
    Sanskrit von A. Weber. Berlin 1856
+
+_Dr. Mārcis Gasūns_

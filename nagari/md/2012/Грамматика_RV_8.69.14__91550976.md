@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 18186791550976
 subject: "Грамматика RV 8.69.14"
@@ -535,3 +537,5 @@ Institute of Philosophy RAS
 +7(495) 472 4905 (Res)
 
 R.S.V.P.
+
+_Dr. Mārcis Gasūns_

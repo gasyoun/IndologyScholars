@@ -1,6 +1,8 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 # Reuse Rights
 
-[Development notes](development-en.md) | [Data package](../datapackage.json) | [Citation metadata](../CITATION.cff)
+[Development notes](https://github.com/gasyoun/IndologyScholars/blob/main/docs/development-en.md) | [Data package](https://github.com/gasyoun/IndologyScholars/blob/main/datapackage.json) | [Citation metadata](https://github.com/gasyoun/IndologyScholars/blob/main/CITATION.cff)
 
 This repository contains several kinds of material with different reuse
 conditions.
@@ -16,3 +18,5 @@ conditions.
 For reproducible reuse, cite `CITATION.cff`, record the release tag or commit,
 and prefer the published file manifest in
 `analytics_output/publication_file_manifest.{csv,json}` for checksums.
+
+_Dr. Mārcis Gasūns_

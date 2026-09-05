@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 21785795887104
 subject: "Перевод рецензии на Specimen novæ typographiæ Indicæ (1821 г.)"
@@ -172,3 +174,5 @@ DE   MEMBRES   DE   L'INSTITUT,
 
 
 *JUILLET   **l82l.*
+
+_Dr. Mārcis Gasūns_

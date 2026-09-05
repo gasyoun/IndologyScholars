@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 4755859439616
 subject: "Raja-Niti, a collection of Hindu apologues, in the Braj bhasha"
@@ -20,3 +22,5 @@ source_url: https://groups.google.com/d/msgid/nagari/b4b13e6e-ca03-4b62-ae5c-66f
 http://books.google.com/books?id=IYcIAAAAQAAJ&printsec=frontcover&lr=&hl=ru
 
 Allahabad, 1854
+
+_Dr. Mārcis Gasūns_

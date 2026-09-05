@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 # IndologyScholars Data Dictionary
 
 [Documentation index](docs/README.md) | [Development guide](docs/development-en.md) | [Русская техническая документация](docs/development.md)
@@ -392,3 +394,5 @@ Theme labels are navigational aids derived primarily from presentation titles. T
 4. Treat `candidate`, `heuristic`, and `unknown` confidence values as review targets.
 5. Do not interpret same-session network edges as collaboration without independent evidence.
 6. Cite both the original conference program and this archive when making claims about exact historical wording.
+
+_Dr. Mārcis Gasūns_

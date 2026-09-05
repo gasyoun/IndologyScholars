@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 6913493037392855040
 subject: "Где можно посмотреть онлайн Aufrecht Th. Die Hymnen des Rigveda. З. Auflage. Berlin, 1955."
@@ -250,3 +252,5 @@ https://vedaweb.uni-koeln.de/rigveda/view/index/1
 >> https://vedaweb.uni-koeln.de/rigveda/view/index/1  
 >>
 >
+
+_Dr. Mārcis Gasūns_

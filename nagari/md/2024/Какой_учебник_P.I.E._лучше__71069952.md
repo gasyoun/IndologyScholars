@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7340610135971069952
 subject: "Какой учебник P.I.E. лучше?"
@@ -448,3 +450,5 @@ Nagari-unsubscribe@…
 
 вот теперь понятно
 [image: Снимок.PNG]
+
+_Dr. Mārcis Gasūns_

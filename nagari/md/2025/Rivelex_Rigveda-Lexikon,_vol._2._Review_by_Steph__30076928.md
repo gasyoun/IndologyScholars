@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7469356417630076928
 subject: "Rivelex: Rigveda-Lexikon, vol. 2. Review by: Stephanie W. Jamison (2017)"
@@ -122,3 +124,5 @@ usually in the
 
 
 https://www.jstor.org/stable/26546264
+
+_Dr. Mārcis Gasūns_

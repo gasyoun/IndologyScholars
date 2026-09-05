@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 5910588030976
 subject: "Pronounciation of the word brAhmaNa"
@@ -247,3 +249,5 @@ On 1/10/09, N.S. VenkataNarasimha <nsvnarasimha@…> wrote:
 -- 
 Regards,
 Vasu Srinivasan
+
+_Dr. Mārcis Gasūns_

@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 6919519757171425280
 subject: "kūṭstha nitam The changeless seer"
@@ -159,3 +161,5 @@ On Wednesday, 20 January 2021 at 17:42:23 UTC+3 Serge A wrote:
 >
 
 Ну nitya я сразу списал на запись "со слуха".
+
+_Dr. Mārcis Gasūns_

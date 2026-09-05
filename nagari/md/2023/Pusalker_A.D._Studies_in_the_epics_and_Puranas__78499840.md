@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7202508190478499840
 subject: "Pusalker A.D. Studies in the epics and Puranas"
@@ -24,3 +26,5 @@ bhavan; Дата издания; 1955; Язык; Английский; Тема�
 Древний период • Поэзия; Источник; Основной фонд
 
 см. https://vk.com/samskrtamru?w=wall-88831040_17567
+
+_Dr. Mārcis Gasūns_

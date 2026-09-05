@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7201033814674505728
 subject: "A dictionary English and Sanscrit"
@@ -24,3 +26,5 @@ Motilal Banarsidass; Дата издания; 1964; Язык; Английски
 Словари двуязычные • Англо-санскрит; Источник; Основной фонд
 
 см. https://vk.com/samskrtamru?w=wall-88831040_17545
+
+_Dr. Mārcis Gasūns_

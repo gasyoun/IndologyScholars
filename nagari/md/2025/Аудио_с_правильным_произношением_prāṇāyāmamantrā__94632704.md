@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7478332688594632704
 subject: "Аудио с правильным произношением prāṇāyāmamantrāḥ"
@@ -21,3 +23,5 @@ source_url: https://groups.google.com/d/msgid/nagari/6bfef96a-29f5-4af8-bfc3-fb1
 
 Подскажите, где найти аудио с хорошим произношением prāṇāyāmamantrāḥ . 
 Текст в файле. Поискал, хороших не нашёл.
+
+_Dr. Mārcis Gasūns_

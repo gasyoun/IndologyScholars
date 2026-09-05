@@ -1,6 +1,6 @@
 # Vigasin corpus — raw source materials
 
-_Created: 22-07-2026 · Last updated: 22-07-2026_
+_Created: 22-07-2026 · Last updated: 05-09-2026_
 
 Full-text `.mdx` conversions of A.A. Vigasin's *Изучение Индии в России (очерки и материалы)*
 (history of Russian Indology) plus two overlapping biographical fragments from his *Работы
@@ -15,8 +15,8 @@ for this specific corpus).
 ## Why "sources/", not the `/s/<slug>` pages
 
 This site's `/s/<slug>` scholar pages are **fully generated static HTML** built by
-[`generate_scholars_pages.py`](../../generate_scholars_pages.py) from
-[`curation/historical_persons.csv`](../../curation/historical_persons.csv) — there is no MDX
+[`generate_scholars_pages.py`](https://github.com/gasyoun/IndologyScholars/blob/main/generate_scholars_pages.py) from
+[`curation/historical_persons.csv`](https://github.com/gasyoun/IndologyScholars/blob/main/curation/historical_persons.csv) — there is no MDX
 pipeline anywhere in this repo and no per-scholar content directory to drop a biography or
 letter transcript into. `build_memorial_html()` explicitly documents this as **unbuilt**: every
 one of the 26 historical figures currently renders a placeholder —

@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 25725817061376
 subject: "Dhatupatha c рус/англ переводом в pdf"
@@ -489,3 +491,5 @@ On Friday, January 17, 2014 12:39:23 PM UTC-7, Yury Panikov wrote:
 >>
 >>
 >>
+
+_Dr. Mārcis Gasūns_

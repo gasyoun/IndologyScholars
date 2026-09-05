@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 25478892093440
 subject: "subhAShita everyday"
@@ -3185,3 +3187,5 @@ dātāraṃ kṛpaṇaṃ manye mṛto'pyarthaṃ na muñcati ||
 ## 48. Владимир Карицкий — 2014-02-21 16:16:39
 
 Не подскажите, где можно скачать 10 главных упанишад на санскрите в вордовском формате?
+
+_Dr. Mārcis Gasūns_

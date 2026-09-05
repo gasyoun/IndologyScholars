@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7617000885823995904
 subject: "Как точно переводится фраза kāmasya vaśam eyivān?"
@@ -101,3 +103,5 @@ vaśam eyivān.
 > .
 
 >
+
+_Dr. Mārcis Gasūns_

@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 5768964210688
 subject: "Pc Tips ..Dont Miss it"
@@ -143,3 +145,5 @@ Enhancements<http://urtips.blogspot.com/2008/07/10-fast-and-free-security-enhanc
  ► <http://urtips.blogspot.com/?widgetType=BlogArchive&widgetId=BlogArchive1&action=toggle&dir=open&toggle=YEARLY-1167638400000&toggleopen=MONTHLY-1222844400000>
 2007<http://urtips.blogspot.com/search?updated-min=2007-01-01T00%3A00%3A00-08%3A00&updated-max=2008-01-01T00%3A00%3A00-08%3A00&max-results=50>
 (102)
+
+_Dr. Mārcis Gasūns_

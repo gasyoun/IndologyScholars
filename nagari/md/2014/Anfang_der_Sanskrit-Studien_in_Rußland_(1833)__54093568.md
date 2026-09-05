@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 29688954093568
 subject: "Anfang der Sanskrit-Studien in Rußland (1833)"
@@ -83,3 +85,5 @@ On Friday, 28 November 2014 21:19:27 UTC+3, Worga wrote:
 > А вообще, я переезжаю в Питер в середине декабря...
 >
 >
+
+_Dr. Mārcis Gasūns_

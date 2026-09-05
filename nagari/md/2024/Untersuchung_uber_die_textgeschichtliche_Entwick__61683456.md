@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7343598640961683456
 subject: "Untersuchung uber die textgeschichtliche Entwicklung des tibetischen Buddhacarita 1980"
@@ -26,3 +28,5 @@ tibetischen Buddhacarita 1980
 Буддизм • Индия
 
 см. https://vk.com/samskrtamru?w=wall-88831040_21151
+
+_Dr. Mārcis Gasūns_

@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 646058082304
 subject: "How to type in Russian ?"
@@ -856,3 +858,5 @@ On 13 О©╫О©╫О©╫, 08:58, "narayan prasad" <hin...@…> wrote:
 > > I'm using Charis SIL font for typing unicode diacritics as well ...- О©╫О©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫ -
 >
 > - О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫ -
+
+_Dr. Mārcis Gasūns_

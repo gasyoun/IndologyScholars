@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 6841221041255088128
 subject: "Suparṇādhyāya (सुपर्णाध्याय)"
@@ -168,3 +170,5 @@ source_url: https://groups.google.com/d/msgid/nagari/bca2ad62-fe5b-45ad-9f76-8d9
 -- 
 
 С уважением, Анна
+
+_Dr. Mārcis Gasūns_

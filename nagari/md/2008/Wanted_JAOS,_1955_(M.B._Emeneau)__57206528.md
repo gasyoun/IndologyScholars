@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 5125757206528
 subject: "Wanted: JAOS, 1955 (M.B. Emeneau)"
@@ -94,3 +96,5 @@ With Best Regards
 KaliMa
 
 Satyan Nasti Paro Dharma
+
+_Dr. Mārcis Gasūns_

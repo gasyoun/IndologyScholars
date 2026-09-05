@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 12878439514112
 subject: "шрифт Siddhanta"
@@ -129,3 +131,5 @@ http://siddhanta.svayambhava.org/siddhanta.ttf)
 http://rapidshare.com/files/457377444/sarva.pdf
 
 (0.14 mb, 13 страниц)
+
+_Dr. Mārcis Gasūns_

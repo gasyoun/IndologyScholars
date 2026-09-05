@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7580481064907309056
 subject: "Почему ūrmībhis, а не ūrmibhis?"
@@ -252,3 +254,5 @@ dhanvan srotaḥ kṛṇute gātum ūrmiṃ śukrair ūrmibhir abhi nakṣati k�
 > .
 
 >
+
+_Dr. Mārcis Gasūns_

@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 2471691812864
 subject: "Books On Tantra, Mantra, Yantra & Astrology"
@@ -1470,3 +1472,5 @@ Ph No. 91-11-2384 4930
 Fax No.91-11-2384 7336
 E-mail ibcindia@…
 Website: http://www.indianbookscentre.com
+
+_Dr. Mārcis Gasūns_

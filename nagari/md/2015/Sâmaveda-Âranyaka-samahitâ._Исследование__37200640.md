@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 33023737200640
 subject: "Sâmaveda-Âranyaka-samahitâ. Исследование"
@@ -28,3 +30,5 @@ Sâmaveda-Âranyaka-samahitâ - сборники гимнов и священн�
 
 
 http://www.knigafund.ru/books/35411
+
+_Dr. Mārcis Gasūns_

@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 6630468090773635072
 subject: "Books on Indology"
@@ -358,3 +360,5 @@ Delhi-110007.
 India.
 
 divinebooksindia@…
+
+_Dr. Mārcis Gasūns_

@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 3209763487744
 subject: "Rapidshare ressource update"
@@ -33,3 +35,5 @@ http://rapidshare.com/files/49951231/index.djvu
 
 Greetings,
 DS
+
+_Dr. Mārcis Gasūns_

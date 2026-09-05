@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7434131415870996480
 subject: "'The LINGUINDIC Conference: Modern Linguistics and Ancient India'"
@@ -106,3 +108,5 @@ from Ancient India' | Faculty of Asian and Middle Eastern Studies
 Research Fellow | Wolfson College 
 
 University of Oxford
+
+_Dr. Mārcis Gasūns_

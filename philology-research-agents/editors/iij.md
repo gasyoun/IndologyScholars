@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 # Editor profile — Indo-Iranian Journal (IIJ, Brill, Leiden)
 # Профиль редактора — Indo-Iranian Journal
 
@@ -108,3 +110,5 @@ References
 
 > To adapt to yet another journal, copy `ppv.md` or this file to `editors/<journal>.md`
 > and replace the house-style rules. The base editor agent and pipeline are unchanged.
+
+_Dr. Mārcis Gasūns_

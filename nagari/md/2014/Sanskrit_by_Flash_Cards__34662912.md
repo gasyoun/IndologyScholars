@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 25954234662912
 subject: "Sanskrit by Flash Cards"
@@ -89,3 +91,5 @@ http://www.cram.com/tag/sanskrit - Same site- Home page for Sanskrit
 > https://groups.google.com/groups/opt_out.
 
 >
+
+_Dr. Mārcis Gasūns_

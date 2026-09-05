@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7412220062626480128
 subject: "Sanskrit Research Institute"
@@ -22,3 +24,5 @@ Sanskrit Research Institute — наш партнер в Индии
 https://www.youtube.com/@SanskritResearchInstitute
 
 разработчик https://ocr.sanskritdictionary.com
+
+_Dr. Mārcis Gasūns_

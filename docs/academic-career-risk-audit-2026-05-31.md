@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 # Academic Career Risk Audit, 2026-05-31
 
 This is an adversarial audit of the repository as if the reader wanted the
@@ -295,3 +297,5 @@ P3, scholarly strengthening:
 - Add publication-conversion tracking.
 - Document null-model assumptions and release exact reproducibility scripts.
 - Add external comparison corpora before making field-wide claims.
+
+_Dr. Mārcis Gasūns_

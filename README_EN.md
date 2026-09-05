@@ -1,6 +1,6 @@
 # IndologyScholars: Archive of Talks in Russian Indology
 
-_Created: 24-04-2026 · Last updated: 23-07-2026_
+_Created: 24-04-2026 · Last updated: 05-09-2026_
 
 [Русская версия](https://github.com/gasyoun/IndologyScholars/blob/main/README.md) | [Developer documentation](https://github.com/gasyoun/IndologyScholars/blob/main/docs/development-en.md)
 
@@ -87,7 +87,7 @@ pages for interpretive context.
 
 To cite the project, use the
 [citation guidance](https://gasyoun.github.io/IndologyScholars/how-to-cite.html)
-or [CITATION.cff](CITATION.cff).
+or [CITATION.cff](https://github.com/gasyoun/IndologyScholars/blob/main/CITATION.cff).
 
 ## Documentation
 

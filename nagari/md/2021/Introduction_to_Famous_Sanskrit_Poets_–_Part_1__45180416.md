@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 6923215202645180416
 subject: "Introduction to Famous Sanskrit Poets – Part 1"
@@ -160,3 +162,5 @@ The largest repository of structured Sanskrit e-learning content.
 > The largest repository of structured Sanskrit e-learning content.
 
 >
+
+_Dr. Mārcis Gasūns_

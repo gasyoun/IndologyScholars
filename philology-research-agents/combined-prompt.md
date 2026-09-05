@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 # Combined system prompt · Комбинированный системный промпт
 # Philology Research Lab (6 agents) · Филологическая лаборатория (6 агентов)
 
@@ -224,3 +226,5 @@ Critical Analyst:       [evidence quality + A–E]
 Synthesizer:            [reliability X/10, consensus, established / hypothesis / unconfirmed]
 Scholarly Editor:       [normalized terminology/transliteration + References]
 ```
+
+_Dr. Mārcis Gasūns_

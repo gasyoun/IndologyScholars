@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 6283131064421449728
 subject: "Morpheus-03 - FireFox"
@@ -58,3 +60,5 @@ https://addons.mozilla.org/en-US/firefox/addon/diglossa/versions/?page=1#version
 http://diglossa.ru
 
 xmpp://m.bykov@…
+
+_Dr. Mārcis Gasūns_

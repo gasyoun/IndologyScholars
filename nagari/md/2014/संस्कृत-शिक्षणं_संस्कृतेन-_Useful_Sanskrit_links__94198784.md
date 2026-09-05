@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 27421294198784
 subject: "संस्कृत-शिक्षणं संस्कृतेन- Useful Sanskrit links"
@@ -42,3 +44,5 @@ https://sa.wikipedia.org/wiki/सूक्तयः
 Please find good quotes in Samskrt literature on this page. 
 
 Some are really worth learning by heart. :)
+
+_Dr. Mārcis Gasūns_

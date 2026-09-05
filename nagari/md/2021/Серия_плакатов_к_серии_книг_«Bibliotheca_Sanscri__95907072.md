@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7046303461195907072
 subject: "Серия плакатов к серии книг «Bibliotheca Sanscritica»"
@@ -259,3 +261,5 @@ On Wednesday, 9 February 2022 at 19:53:27 UTC+3 अ क wrote:
 >> .
 >>
 >
+
+_Dr. Mārcis Gasūns_

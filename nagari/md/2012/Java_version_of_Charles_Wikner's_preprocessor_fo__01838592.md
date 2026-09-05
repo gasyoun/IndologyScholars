@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 20024201838592
 subject: "Java version of Charles Wikner's preprocessor for SKT LaTeX package"
@@ -57,3 +59,5 @@ Sorry, I don't use dropbox.
 Please would you like to send the both files to me: sworga@…
 
 Thank you very much in advance!
+
+_Dr. Mārcis Gasūns_

@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 5354910908416
 subject: "Textus Sanscritus cum interpretatione latina"
@@ -428,3 +430,5 @@ On Mon, Sep 15, 2008 at 3:25 PM, Duri <fabrizio.ducci@…> wrote:
 -- 
 अद्येरे blog:
 http://adiere-now.blogspot.com
+
+_Dr. Mārcis Gasūns_

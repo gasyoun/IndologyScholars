@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 # SEO authority enrichment — Gemini Flash paste batch
 
 Generated: 2026-05-19
@@ -65,3 +67,5 @@ Rules:
 
 ---
 Reply with a single fenced ```jsonl block, one JSON object per item.
+
+_Dr. Mārcis Gasūns_

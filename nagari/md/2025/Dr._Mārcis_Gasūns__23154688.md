@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7575482488023154688
 subject: "Dr. Mārcis Gasūns"
@@ -36,3 +38,5 @@ language festivals, and workshops. Passionate about bridging ancient
 languages and modern technology. Founded the Sanskrit-Russian Parallel 
 
 Corpus with semi-automated morphological markup.
+
+_Dr. Mārcis Gasūns_

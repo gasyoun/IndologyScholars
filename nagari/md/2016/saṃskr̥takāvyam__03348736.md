@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 6256560429503348736
 subject: "saṃskr̥takāvyam"
@@ -42,3 +44,5 @@ gāyatrī́
 yahvátīrā́po'rnaváṃ prá
 vŕ̥tʰārṣantvā́yóniṃ dʰíyaḥ
 gávyūtimáditerurvī́m
+
+_Dr. Mārcis Gasūns_

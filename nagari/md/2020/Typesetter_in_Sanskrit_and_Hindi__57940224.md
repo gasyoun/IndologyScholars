@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 6852586567157940224
 subject: "Typesetter in Sanskrit and Hindi"
@@ -188,3 +190,5 @@ Oleg Puzyreff
 puzyreff@…
 
 1-857-919-0954
+
+_Dr. Mārcis Gasūns_

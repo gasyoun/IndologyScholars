@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 22505793257472
 subject: "The Soma-hymns of the Ṛgveda by S.S.Bhawe"
@@ -80,3 +82,5 @@ On Sunday, 28 April 2013 06:04:52 UTC+4, Dmitri wrote:
 >
 
 >
+
+_Dr. Mārcis Gasūns_

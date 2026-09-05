@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 19948643549184
 subject: "Vovin, A Reconstruction of Proto-Ainu"
@@ -48,3 +50,5 @@ Please, add the tags. Sorry for that...
 
 Боже мой! :стыд:
 Извините, не в ту группу написал )))
+
+_Dr. Mārcis Gasūns_

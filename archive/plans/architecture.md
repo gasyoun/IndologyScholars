@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 # IndologyScholars Architecture Plan
 
 Date: 2026-05-21  
@@ -5,8 +7,8 @@ Status: historical planning document; implementation has since advanced.
 Scope: architecture hardening for stable identifiers, provenance, schema versions, authority data, and reproducible generated outputs.
 
 > For current build and contribution guidance, see
-> [docs/development-en.md](../../docs/development-en.md) or
-> [docs/development.md](../../docs/development.md). Current publication counts are
+> [docs/development-en.md](https://github.com/gasyoun/IndologyScholars/blob/main/docs/development-en.md) or
+> [docs/development.md](https://github.com/gasyoun/IndologyScholars/blob/main/docs/development.md). Current publication counts are
 > taken from `site_data.json`, not from this dated plan.
 
 ## 1. Purpose
@@ -519,3 +521,5 @@ The most valuable next engineering task is Phase 1:
 4. write an implementation patch only after the churn audit is visible.
 
 This keeps the migration controlled and prevents accidental breakage of current pages, videos, and theme outputs.
+
+_Dr. Mārcis Gasūns_

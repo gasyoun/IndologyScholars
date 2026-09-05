@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 6544597822326439936
 subject: "nagari - Google Groups: сообщения, ожидающие передачи [{IOGEr6_22LSNVioCeXcwB2HUngipgWOF0}]"
@@ -33,3 +35,5 @@ source_url: https://groups.google.com/d/msgid/nagari/1523782919.803456034@f386.i
 
 
 ----------------------------------------------------------------------
+
+_Dr. Mārcis Gasūns_

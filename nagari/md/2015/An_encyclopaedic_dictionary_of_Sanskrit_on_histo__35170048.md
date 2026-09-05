@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 31960935170048
 subject: "An encyclopaedic dictionary of Sanskrit on historical principles (set of 10 Volumes)"
@@ -450,3 +452,5 @@ On Thursday, 29 January 2015 12:59:09 UTC+3, boromir wrote:
 >
 
 Если дать взамен файлы, то бесплатно. Читайте правила.
+
+_Dr. Mārcis Gasūns_

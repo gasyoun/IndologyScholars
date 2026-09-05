@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7049792225458257920
 subject: "Mahabharata"
@@ -799,3 +801,5 @@ Thank you for sharing this info.
 >>>>
 
 >>>
+
+_Dr. Mārcis Gasūns_

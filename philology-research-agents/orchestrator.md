@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 # Orchestrator · Оркестратор
 
 > Master prompt that frames the six-agent pipeline. Use it as the system message when
@@ -157,3 +159,5 @@ Critical Analyst:      [evidence quality + A–E levels]
 Synthesizer:           [reliability X/10, consensus, established / hypothesis / unconfirmed]
 Scholarly Editor:      [normalized terminology/transliteration + References]
 ```
+
+_Dr. Mārcis Gasūns_

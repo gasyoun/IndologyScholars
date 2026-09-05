@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 5357710606336
 subject: "Wanted: Edwin Gerow Review on Verba Indoarica"
@@ -72,3 +74,5 @@ Affiliations: 1: University of California, Los Angeles
     * http://openurl.ingenta.com/content?genre=article&issn=0176-4225&volume=17&issue=1&spage=206&epage=210
 
     * http://dx.doi.org/10.1075/dia.17.1.16fri
+
+_Dr. Mārcis Gasūns_

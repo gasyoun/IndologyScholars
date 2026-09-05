@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 19782124437504
 subject: "Sanskrit-English Dictionary - SanDic v1.0"
@@ -800,3 +802,5 @@ On Monday, May 14, 2012 9:31:26 AM UTC+3, atman wrote:
 >>
 
 >>
+
+_Dr. Mārcis Gasūns_

@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 2662036668416
 subject: "Indologica found @ Rapidshare"
@@ -146,3 +148,5 @@ http://rapidshare.com/files/40137353/AbhyankarDictionaryOfSanskritGrammar1961.ra
 
 http://rapidshare.com/files/40528413/BhattikavyaOfBhatti.zip
 (PDF, ~21 mb)
+
+_Dr. Mārcis Gasūns_

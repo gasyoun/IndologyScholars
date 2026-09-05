@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 6949189413543870464
 subject: "Подскажите для заучивания The Complete Paninian Sutrapath"
@@ -150,3 +152,5 @@ https://www.youtube.com/results?search_query=Maheshwara+Sutras+
 >>
 
 >
+
+_Dr. Mārcis Gasūns_

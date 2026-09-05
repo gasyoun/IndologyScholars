@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 6630468092569845760
 subject: "evam astu iti"
@@ -42,3 +44,5 @@ http://gretil.sub.uni-goettingen.de/gretil/1_sanskr/5_poetry/4_narr/vispancu.htm
 > Подскажите пожалуйста, в каких шастрах, или где конкретно в ведической 
 > литературе применяется словооборот "evamastviti"? заранее благодарю
 >
+
+_Dr. Mārcis Gasūns_

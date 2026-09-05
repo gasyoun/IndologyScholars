@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 24903204995072
 subject: "'The Sanskrit Language' by Walter Harding Maurer (28/32 уроков бесплатно)"
@@ -23,3 +25,5 @@ http://www.thesanskritlanguage.com/ - один из самых дорогих у
 тоже.
 http://www.thesanskritlanguage.com/uploads/7/3/6/5/7365503/lesson_1.pdf 
 ссылка из http://www.thesanskritlanguage.com/lesson-1.html
+
+_Dr. Mārcis Gasūns_

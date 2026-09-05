@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 23174936788992
 subject: "Proceedings (Extract) of XII International Congress of Orientalists, Rome, October 1899"
@@ -2860,3 +2862,5 @@ Notes
    approaching an English bank for a loan, Russia threatened to annex a 
 
    Chinese province as 'compensation' (Younghusband (1898), pp. 79–80).
+
+_Dr. Mārcis Gasūns_

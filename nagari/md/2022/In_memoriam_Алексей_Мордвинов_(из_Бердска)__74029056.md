@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7080111805674029056
 subject: "In memoriam: Алексей Мордвинов (из Бердска)"
@@ -98,3 +100,5 @@ source_url: https://groups.google.com/d/msgid/nagari/547f0ec5-4096-4c96-ba0e-326
 > .
 
 >
+
+_Dr. Mārcis Gasūns_

@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 6725672466099732480
 subject: "Книга Vimaanika Shaastra"
@@ -22,3 +24,5 @@ source_url: https://groups.google.com/d/msgid/nagari/5f76e7f4-b15a-4eaa-a136-1d7
 
 Если знаете где купить, маякните, пожалуйста. 
 Заранее спасибо.
+
+_Dr. Mārcis Gasūns_

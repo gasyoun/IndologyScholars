@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7452286268698787840
 subject: "Tantrāloka Абхинавагупты переведена на русский язык"
@@ -22,3 +24,5 @@ Tantrāloka Абхинавагупты переведена на русский 
 
 
 https://www.sanskrit-trikashaivism.com/ru/tantraloka-5-trika-scriptures-non-dual-shaivism-of-kashmir-ru/
+
+_Dr. Mārcis Gasūns_

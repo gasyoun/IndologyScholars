@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7618241065259106304
 subject: "Vidzemes lībiešu pēcteči (Rasma Noriņa про девять поколений рода Гасунсов)"
@@ -108,3 +110,5 @@ liku kopā, lai varētu izprintēt un tad būs dzimtas kopā nākšana uz
 atvēršanas svētkiem, kad arī stāstīšu un rādīšu visu vēsturi. Ir notikuši 
 
 jau 4 Vidzemes lībiešu pēcteču saieti, kad sanāk kopā visas dzimtas.
+
+_Dr. Mārcis Gasūns_

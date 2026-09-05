@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7060052598715318272
 subject: "candrabindu v Keyswap"
@@ -418,3 +420,5 @@ rašė:
 >>
 
 >
+
+_Dr. Mārcis Gasūns_

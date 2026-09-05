@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 9340514729984
 subject: "The Concept of Verbal Root in Indian Grammar (JSTOR)"
@@ -148,3 +150,5 @@ On May 3, 7:32 pm, "Deshpande, Madhav" <mmd...@…> wrote:
 отправьте сообщение по адресу: 
 
 Nagari-unsubscribe@…
+
+_Dr. Mārcis Gasūns_

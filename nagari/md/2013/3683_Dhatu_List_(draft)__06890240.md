@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 22335706890240
 subject: "3683 Dhatu List (draft)"
@@ -87,3 +89,5 @@ and not included in the scan I made in Moscow?
 
 За неделю тремя подходами был Нараяном проверен 
 весь мой список и к моим 83 еще 130 ошибок обнаружено.
+
+_Dr. Mārcis Gasūns_

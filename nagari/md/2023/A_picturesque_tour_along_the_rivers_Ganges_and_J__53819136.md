@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7278556413753819136
 subject: "A picturesque tour along the rivers Ganges and Jumna, in India"
@@ -40,3 +42,5 @@ map. : ill. - (Archives in India historical reprints). - Подзаг. указ.
 
 
 см. https://vk.com/samskrtamru?w=wall-88831040_19917
+
+_Dr. Mārcis Gasūns_

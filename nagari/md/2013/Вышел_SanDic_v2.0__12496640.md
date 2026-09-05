@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 22360112496640
 subject: "Вышел SanDic v2.0"
@@ -3348,3 +3350,5 @@ On Tuesday, 19 November 2013 17:50:37 UTC+4, Aspasios wrote:
 >
 
 Я даже новый словарь не смог добавить, не то, чтобы сборку сделать :)
+
+_Dr. Mārcis Gasūns_

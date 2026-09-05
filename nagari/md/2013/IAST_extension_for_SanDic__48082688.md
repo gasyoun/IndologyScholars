@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 21976148082688
 subject: "IAST extension for SanDic"
@@ -3297,3 +3299,5 @@ On Tuesday, March 19, 2013 5:56:48 AM UTC-7, Artem Novikov wrote:
 >>>> (там шрифт системный и программно не меняется)?
 >>>>
 >>>>
+
+_Dr. Mārcis Gasūns_

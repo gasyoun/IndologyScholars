@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 6766900419589308416
 subject: "Помогите очистить словари http://www.sanskrit-lexicon.uni-koeln.de от мусора!"
@@ -585,3 +587,5 @@ On Thursday, 19 December 2019 20:47:30 UTC+3, Serge A wrote:
 >
 
 Тебе наверное приснилось. На сайте нифига нет.
+
+_Dr. Mārcis Gasūns_

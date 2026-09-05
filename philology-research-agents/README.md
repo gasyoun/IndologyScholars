@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 # Philology Research Agents · Филологическая исследовательская лаборатория
 
 > A portable, tool-agnostic multi-agent prompt module for **evidence-based scholarship
@@ -135,3 +137,5 @@ philology-research-agents/
 ## License / Лицензия
 
 Inherits the license of the host repository. · Наследует лицензию репозитория-носителя.
+
+_Dr. Mārcis Gasūns_

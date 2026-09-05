@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 21162419552256
 subject: "German Indology: A List of Institutions and Persons, 2005"
@@ -4738,3 +4740,5 @@ Indian Studies, 2 Divinity Avenue, Cambridge, MA 02459; Tel. -617-496-2990;
 witzel@…, http://www.people.fas.harvard.edu/~witzel/mwpage.htm 
 
 ) Veda, Old Iranian, History of Brahmins
+
+_Dr. Mārcis Gasūns_

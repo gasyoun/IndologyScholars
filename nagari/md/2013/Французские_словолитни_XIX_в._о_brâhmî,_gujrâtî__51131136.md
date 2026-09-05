@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 21796551131136
 subject: "Французские словолитни XIX в. о brâhmî, gujrâtî и javanais"
@@ -98,3 +100,5 @@ Zonen, de Harlem, avait fait réaliser un alphabet javanais cursif et
 l’Impr. nat. en avait acquis 170 matrices. Delafond et Marcellin Legrand 
 
 allaient, en 1845, créer un corps 14 de 222 poinçons d’acier.
+
+_Dr. Mārcis Gasūns_

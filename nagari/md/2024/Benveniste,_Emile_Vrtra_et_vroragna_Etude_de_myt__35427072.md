@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7348483047735427072
 subject: "Benveniste, Emile / Vrtra et vroragna: Etude de mythologie indo-iranienne"
@@ -30,3 +32,5 @@ Par E. Benveniste et L. Renou. - Paris, 1934. - 207 p. - (Cahiers de la
 
 
 см. https://vk.com/samskrtamru?w=wall-88831040_21207
+
+_Dr. Mārcis Gasūns_

@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 400619995136
 subject: "Обсуждение на kartoteka-slovarya"
@@ -813,3 +815,5 @@ Phase Six 	Electronic Processing.
 
 On 10 О©╫О©╫О©╫, 15:03, "prp...@…" <prp...@…> wrote:
 > О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ О©╫ О©╫О©╫О©╫О©╫О©╫О©╫?, О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫http://forum.vostokopedia.ru/index.php?showtopic=1850
+
+_Dr. Mārcis Gasūns_
