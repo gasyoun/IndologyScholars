@@ -1,4 +1,4 @@
-_Created: 15-08-2026 · Last updated: 05-09-2026_
+_Created: 15-08-2026 · Last updated: 06-09-2026_
 
 # Russian Indological Research Archive: A Conference Corpus for Prosopography
 
@@ -8,7 +8,7 @@ ORCID: 0000-0003-4513-884X
 
 ## Abstract
 
-We present the IndologyScholars corpus: a structured, open-access dataset
+I present the IndologyScholars corpus: a structured, open-access dataset
 of 1,362 conference presentations, 268 scholar profiles, and 1,388 author
 participations drawn from published programs of the Zograf Readings (St.
 Petersburg) and Roerich Readings (Moscow) between 2004 and 2026. The dataset
@@ -45,11 +45,11 @@ PDFs, and web pages. This corpus is the first machine-readable normalization
 of those programs across all available years, including the 2026 Zograf
 program as a preliminary snapshot.
 
-This paper describes the corpus construction, data model, and reuse
-potential. A companion analytical article (Gasūns, submitted) discusses the
-sociological findings derived from the dataset. The present work focuses on
-the infrastructure: what was built, how it was built, and how international
-scholars can access and extend it.
+In this paper I describe the corpus construction, the data model, and the
+reuse potential. A companion analytical article (Gasūns, submitted) discusses
+the sociological findings derived from the dataset. The present work focuses
+on the infrastructure: what was built, how it was built, and how
+international scholars can access and extend it.
 
 ## 2. Corpus Construction
 
@@ -81,7 +81,7 @@ A full rebuild runs in under 2 minutes on consumer hardware.
 
 ### 2.3 Identity resolution
 
-Speaker names were normalized from program-level variants (initials,
+I normalized speaker names from program-level variants (initials,
 abbreviated first names, inconsistent Latin transliterations) into
 deterministic person identifiers (`PERS_XXXX`). The normalization pipeline
 uses patronymic matching, Cyrillic-to-Latin transliteration, and manual
@@ -361,7 +361,7 @@ family; pin the **version DOI** when a specific release must be reproducible.
 7. **Name-heuristic false positives.** Identity resolution and roster
    expansion rely on heuristics over Russian name morphology (patronymic
    detection, transliteration matching, name-order parsing), and these
-   heuristics are known to produce occasional false positives — for
+   heuristics are known to produce occasional false positives. For
    example, surnames ending in *-вич* were at one point mis-parsed as
    patronymics, creating a spurious person entry that was later detected
    and removed. All counts in this paper are therefore re-derived from the
@@ -389,7 +389,7 @@ snapshot:
 
 ## 8. Acknowledgments
 
-The author thanks the organizers of the Zograf and Roerich Readings for
+I thank the organizers of the Zograf and Roerich Readings for
 decades of publicly distributed programs, and the open-source digital
 humanities community for the tools that made this corpus possible.
 
@@ -409,7 +409,9 @@ against the committed data by `article/check_data_paper_numbers.py`);
 2026-07-17 (snapshot re-frozen, cross-model κ re-derived from
 `analytics_output/interrater_crossmodel_claude.csv`, dataset title
 harmonized across §5.4/§7, `article/zenodo_metadata.json`, and
-`CITATION.cff`, DOI slots split into concept/version; backfilled 2026-08-08 from live Zenodo record after GitHub integration confirmed).
+`CITATION.cff`, DOI slots split into concept/version; backfilled 2026-08-08 from live Zenodo record after GitHub integration confirmed);
+author-voice pass 06-09-2026
+([SIGNOFF_A26_author_pass.md](https://github.com/gasyoun/IndologyScholars/blob/main/article/SIGNOFF_A26_author_pass.md)).
 Target journal: Research Data Journal for the Humanities and Social
 Sciences (Brill). Word count target: 3,000–4,000.*
 
