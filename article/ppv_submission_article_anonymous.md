@@ -1,5 +1,3 @@
-_Created: 15-08-2026 · Last updated: 05-09-2026_
-
 <!-- Anonymized copy of ppv_submission_article.md for the ППВ double-blind review. Author metadata, e-mail, ORCID, and the pre-УДК drafting block are removed. The full attributed version remains in ppv_submission_article.md. -->
 
 УДК 061.3:001.32(470:540)
@@ -213,4 +211,3 @@ Schreibman, Susan; Siemens, Ray; Unsworth, John (eds.). *A Companion to Digital 
 
 Stone, Lawrence. Prosopography. *Daedalus*. 1971. Vol. 100, no. 1. P. 46-79.
 
-_Dr. Mārcis Gasūns_
