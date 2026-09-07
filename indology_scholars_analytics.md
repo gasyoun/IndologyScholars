@@ -1,5 +1,3 @@
-_Created: 15-08-2026 · Last updated: 05-09-2026_
-
 # Russian Indological Scholarship: Comparative Statistical Analytics
 
 > [!NOTE]
@@ -159,5 +157,3 @@ We analyze the structure of Russian Indological conferences through the lens of 
 **Edges Generated:** 8127
 
 The network is exported into standard edge list and node list CSV formats (`network_nodes.csv` and `network_edges.csv`) for use in external graphing tools like Gephi or Cytoscape.
-
-_Dr. Mārcis Gasūns_
