@@ -116,10 +116,10 @@ _Created: 15-08-2026 · Last updated: 05-09-2026_
 
 Если удобно ориентироваться на единый формат, держите в уме принцип
 **одна строка = один доклад**. Образцы для заполнения (необязательные):
-- [zograf-contributor-template.docx](../scratch/zograf-contributor-template.docx) —
+- zograf-contributor-template.docx —
   готовая таблица в Word (альбомная, с примером и памяткой); проще всего заполнять
   прямо в Word;
-- [zograf-contributor-template.csv](../scratch/zograf-contributor-template.csv) —
+- zograf-contributor-template.csv —
   то же для Excel/текстового редактора.
 
 | Колонка | Что писать | Обязательна |

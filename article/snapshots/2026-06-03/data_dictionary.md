@@ -2,7 +2,7 @@ _Created: 15-08-2026 · Last updated: 05-09-2026_
 
 # IndologyScholars Data Dictionary
 
-[Documentation index](docs/README.md) | [Development guide](https://github.com/gasyoun/IndologyScholars/blob/main/docs/development-en.md) | [Русская техническая документация](https://github.com/gasyoun/IndologyScholars/blob/main/docs/development.md)
+Documentation index | [Development guide](https://github.com/gasyoun/IndologyScholars/blob/main/docs/development-en.md) | [Русская техническая документация](https://github.com/gasyoun/IndologyScholars/blob/main/docs/development.md)
 
 Date: 2026-05-25  
 Dataset schema version: 1.0.0  

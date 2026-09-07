@@ -141,11 +141,11 @@ huṛkā* (B.); *huḍukka* (Skṭ); *huṛa, haṛi* to shackle, gyve, to fette
 
 in the stocks, chain (the feet), detain (Santali); *hurkaṛ* the wooden bar 
 
-or bolt (of a door), to shut with a bar [to dialectical variants of the 
+or bolt (of a door), to shut with a bar to dialectical variants of the 
 
 same word are combined to form an 'echo word' which is a very common 
 
-phenomenon in Santali](Santali); *karhaṛ* a kind of gate with movable bars 
+phenomenon in Santali; *karhaṛ* a kind of gate with movable bars 
 
 (at the entrance of cattle-sheds)(Santali); *aṛkhaṛ* the spar that supports 
 

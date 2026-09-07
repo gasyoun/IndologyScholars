@@ -1381,7 +1381,7 @@ set./ Trans.by H.H.Wilson,2002, US$ 200 (6 vols. set)
 [743-0], ,2002,US$ 20
 
 269-270 Vedic Hymns: Hymns to the Maruts, Rudra, Vayu and Vata/ F.Max
-Muller, [755-4](set), 2003, US$ 40 (2 Vols)
+Muller, 755-4, 2003, US$ 40 (2 Vols)
 
 271. Mimamsa Philosophy of Language/ Ujjwala Jha, [761- 9], 2002, US$
 10
