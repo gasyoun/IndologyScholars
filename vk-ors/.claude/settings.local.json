@@ -1,0 +1,10 @@
+{
+  "enabledMcpjsonServers": [
+    "graymatter"
+  ],
+  "permissions": {
+    "allow": [
+      "Bash(gh auth *)"
+    ]
+  }
+}
