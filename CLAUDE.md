@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-_Created: 19-05-2026 · Last updated: 26-08-2026_
+_Created: 19-05-2026 · Last updated: 12-09-2026_
 
 `IndologyScholars` is an open **navigation archive of two Russian Indology
 forums** — Зографские чтения (St Petersburg) and Рериховские чтения (Moscow) —
@@ -65,8 +65,9 @@ Frozen DOI snapshot: `python tools/freeze_article_data.py` →
 
 - Derived artifacts: `conferences.db`, `site_data.json`, `search-index.json`,
   `analytics_output/`, generated trees (`s/`, `p/`, `conferences/`, `themes/`,
-  `cities/`, `institutions/`, `generations/`, `findings/`), generated HTML
-  (`known-relationships.html`, `gender.html`, `mobility.html`, `voting.html`).
+  `cities/`, `institutions/`, `generations/`, `findings/`), generated HTML —
+  root `known-relationships.html`, `voting.html`; inside the generated
+  `findings/` tree: `findings/gender.html`, `findings/mobility.html`.
 - `scratch/` — experiments only; never publish from it.
 - `article/snapshots/` — freeze via the tool, do not hand-patch.
 
