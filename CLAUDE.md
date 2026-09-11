@@ -2,9 +2,10 @@
 
 _Created: 19-05-2026 · Last updated: 12-09-2026_
 
-`IndologyScholars` is an open **navigation archive of two Russian Indology
-forums** — Зографские чтения (St Petersburg) and Рериховские чтения (Moscow) —
-linking speakers, talk titles, years, affiliations, themes, and video.
+What this repo is: `IndologyScholars`, an open **navigation archive of two
+Russian Indology forums** — Зографские чтения (St Petersburg) and
+Рериховские чтения (Moscow) — linking speakers, talk titles, years,
+affiliations, themes, and video.
 Live site: [gasyoun.github.io/IndologyScholars](https://gasyoun.github.io/IndologyScholars/).
 
 Org conventions live in [`../CLAUDE.md`](https://github.com/gasyoun/github-spine/blob/main/CLAUDE.md).
