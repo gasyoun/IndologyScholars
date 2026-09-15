@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-_Created: 19-05-2026 · Last updated: 26-08-2026_
+_Created: 19-05-2026 · Last updated: 15-09-2026_
 
 `IndologyScholars` is an open **navigation archive of two Russian Indology
 forums** — Зографские чтения (St Petersburg) and Рериховские чтения (Moscow) —
@@ -80,5 +80,9 @@ Danger facts:
 [Uprava DANGER_FACTS.md](https://github.com/gasyoun/Uprava/blob/main/DANGER_FACTS.md)
 and the generated block of
 [AGENTS.md](https://github.com/gasyoun/IndologyScholars/blob/main/AGENTS.md).
+
+## Memory store
+
+This repo keeps a committed memory store at [`.claude/projects/IndologyScholars/memory/`](https://github.com/gasyoun/IndologyScholars/tree/main/.claude/projects/IndologyScholars/memory) per the org Memory-routing rule ([`/danger-memory`](https://github.com/gasyoun/claude-config/blob/main/commands/danger-memory.md)) — write dangerous/durable facts there and index each in its `MEMORY.md` (H4547).
 
 _Dr. Mārcis Gasūns_
