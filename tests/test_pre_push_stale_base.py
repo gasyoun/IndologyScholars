@@ -23,6 +23,9 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 CHECKER = REPO_ROOT / "scripts" / "pre_push_stale_base_check.py"
 HOOK = REPO_ROOT / ".githooks" / "pre-push"
 EOL_CENSUS = REPO_ROOT / "scripts" / "eol_census.py"
+GIT_OPS = REPO_ROOT / "scripts" / "git_ops.py"
+PYFLOOR = REPO_ROOT / "scripts" / "pyfloor.py"
+_COMMON = REPO_ROOT / "scripts" / "_common.py"
 
 sys.path.insert(0, str(REPO_ROOT / "scripts"))
 import pre_push_stale_base_check as check  # noqa: E402
@@ -119,6 +122,17 @@ def world(tmp: Path) -> tuple[Path, Path, Path]:
     )
     (us / "scripts" / "eol_census.py").write_text(
         EOL_CENSUS.read_text(encoding="utf-8"), encoding="utf-8", newline="\n"
+    )
+    # eol_census imports git_ops from its own dir (#274) — the sandbox must ship it
+    (us / "scripts" / "git_ops.py").write_text(
+        GIT_OPS.read_text(encoding="utf-8"), encoding="utf-8", newline="\n"
+    )
+    # git_ops imports pyfloor from its own dir — ship the whole dep chain
+    (us / "scripts" / "pyfloor.py").write_text(
+        PYFLOOR.read_text(encoding="utf-8"), encoding="utf-8", newline="\n"
+    )
+    (us / "scripts" / "_common.py").write_text(
+        _COMMON.read_text(encoding="utf-8"), encoding="utf-8", newline="\n"
     )
     hook_path = us / ".githooks" / "pre-push"
     hook_path.chmod(hook_path.stat().st_mode | stat.S_IEXEC)
