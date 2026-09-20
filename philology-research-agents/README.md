@@ -1,4 +1,4 @@
-_Created: 15-08-2026 · Last updated: 05-09-2026_
+_Created: 15-08-2026 · Last updated: 20-09-2026_
 
 # Philology Research Agents · Филологическая исследовательская лаборатория
 
@@ -12,8 +12,9 @@ _Created: 15-08-2026 · Last updated: 05-09-2026_
 
 ## RU — Что это
 
-Это модуль из шести системных промптов («агентов»), которые работают как единый
-последовательный конвейер «исследовательской лаборатории внутри одной модели».
+Это модуль из семи системных промптов («агентов»): шесть работают как единый
+последовательный конвейер «исследовательской лаборатории внутри одной модели», седьмой
+(Опровержитель) подключается при критике — см. таблицу ниже.
 Он создан для гуманитарных дисциплин, где доказательством служат **первоисточники,
 критические издания, рукописные свидетели, засвидетельствованность форм,
 сравнительно-исторический метод и текстология**, а не выборки, p-значения и RCT.
@@ -22,7 +23,7 @@ _Created: 15-08-2026 · Last updated: 05-09-2026_
 но доказательная модель полностью переработана под филологию: см.
 `shared/evidence-scale.md` и `shared/source-hierarchy.md`.
 
-### Шесть агентов (конвейер)
+### Семь агентов (конвейер + цикл опровержения)
 
 | # | Агент | Назначение |
 |---|-------|-----------|
@@ -32,17 +33,19 @@ _Created: 15-08-2026 · Last updated: 05-09-2026_
 | 4 | **Критический аналитик** | Аргументативное и методологическое качество; шкала доказательности A–E |
 | 5 | **Синтезатор** | Сводный вердикт, надёжность 1–10, уровень консенсуса |
 | 6 | **Редактор-оформитель** | Терминология, нормализация транслитерации (IAST и др.), цитирование, References на латинице (правила ППВ/ГОСТ) |
+| 7 | **Опровержитель** (условный) | Ответ на критику Источниковеда новыми адресными проверками (grep, скрипты, pull источников); ≤ 2 раундов, затем эскалация человеку; прозу статьи не меняет |
 
 ### Как использовать
 
 **Вариант A — всё в одной модели (проще всего).**
 Скопируйте содержимое `combined-prompt.md` в системное сообщение (ChatGPT custom
 instructions, Claude.ai Project instructions, system-промпт через API) и задавайте
-вопросы. Модель сама прогонит все шесть ролей и выдаст структурированный ответ.
+вопросы. Модель сама прогонит все роли и выдаст структурированный ответ.
 
 **Вариант B — по-агентно (точный контроль).**
 Используйте `orchestrator.md` как ведущий промпт, затем подавайте на вход каждому
-агенту (`agents/1-researcher.md` … `agents/6-editor.md`) выход предыдущего. Подходит
+агенту (`agents/1-researcher.md` … `agents/6-editor.md`; при возражениях Источниковеда —
+цикл с `agents/7-rebuttal.md`, максимум 2 раунда) выход предыдущего. Подходит
 для API-оркестрации и для сложных тем, где нужен контроль на каждом шаге.
 
 **Вариант C — выборочно.**
@@ -62,8 +65,9 @@ References к латинице под подачу в журнал.
 
 ## EN — What this is
 
-Six system prompts ("agents") that run as one sequential "research-lab-inside-a-model"
-pipeline, built for the humanities — where evidence means **primary sources, critical
+Seven system prompts ("agents"): six run as one sequential "research-lab-inside-a-model"
+pipeline, and the seventh (Rebuttal) is invoked on criticism — see the table below. Built
+for the humanities — where evidence means **primary sources, critical
 editions, manuscript witnesses, attestation, the comparative method, and textual
 criticism**, not samples, p-values, and RCTs.
 
@@ -71,7 +75,7 @@ It descends from a general-science prompt (`../article/scientific_paper_prompt.m
 but its evidence model has been fully rebuilt for philology: see
 `shared/evidence-scale.md` and `shared/source-hierarchy.md`.
 
-### Six agents (pipeline)
+### Seven agents (pipeline + rebuttal loop)
 
 | # | Agent | Purpose |
 |---|-------|---------|
@@ -81,6 +85,7 @@ but its evidence model has been fully rebuilt for philology: see
 | 4 | **Critical Analyst** | Argumentative & methodological quality; A–E evidence scale |
 | 5 | **Synthesizer** | Integrated verdict, 1–10 reliability, level of consensus |
 | 6 | **Scholarly Editor** | Terminology, transliteration normalization (IAST etc.), citation, Latin-script References (ППВ/GOST) |
+| 7 | **Rebuttal** (conditional) | Answers the Critic's objections with new targeted checks (greps, scripts, source pulls); ≤ 2 rounds, then human escalation; never touches the prose |
 
 ### How to use
 
@@ -110,7 +115,8 @@ philology-research-agents/
 │   ├── 3-verifier.md
 │   ├── 4-analyst.md
 │   ├── 5-synthesizer.md
-│   └── 6-editor.md           # Редактор-оформитель (new · новый)
+│   ├── 6-editor.md           # Редактор-оформитель (new · новый)
+│   └── 7-rebuttal.md         # Опровержитель / Rebuttal: checks, not prose · проверки, не проза (≤2 rounds · раундов)
 ├── shared/
 │   ├── source-hierarchy.md   # priority of source types in the humanities
 │   ├── evidence-scale.md     # A–E redesigned + the "recency" correction
