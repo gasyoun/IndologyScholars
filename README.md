@@ -95,6 +95,11 @@ historical`).
 [рекомендации по цитированию](https://gasyoun.github.io/IndologyScholars/how-to-cite.html)
 или файл [CITATION.cff](https://github.com/gasyoun/IndologyScholars/blob/main/CITATION.cff).
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21360652.svg)](https://doi.org/10.5281/zenodo.21360652)
+Данные: Zenodo concept DOI `10.5281/zenodo.21360652` (все версии); версия
+`10.5281/zenodo.21847873` (релиз v1.6.7, 2026-08-08, включает снапшот анализа
+2026-07-17).
+
 ## Документация
 
 - [Разработка и воспроизводимость, на русском](https://github.com/gasyoun/IndologyScholars/blob/main/docs/development.md)

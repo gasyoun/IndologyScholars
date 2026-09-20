@@ -929,6 +929,14 @@ repository-code: "https://github.com/gasyoun/IndologyScholars"
 date-released: "{BUILD_DATE}"
 version: "{RELEASE_VERSION}"
 license: "CC-BY-4.0"
+doi: "10.5281/zenodo.21360652"
+identifiers:
+  - identifier: "10.5281/zenodo.21360652"
+    type: "doi"
+    description: "Concept DOI (all versions) — preferred citation"
+  - identifier: "10.5281/zenodo.21847873"
+    type: "doi"
+    description: "Version DOI for Zenodo-GitHub release v1.6.7 (2026-08-08; includes the 2026-07-17 analysis snapshot)"
 abstract: "A curated relational archive of Zograf Readings and Roerich Readings conference programs, scholars, presentations, affiliations, cities, and thematic classifications."
 keywords:
   - Indology
