@@ -1,13 +1,14 @@
-_Created: 15-08-2026 · Last updated: 05-09-2026_
+_Created: 15-08-2026 · Last updated: 20-09-2026_
 
 # Orchestrator · Оркестратор
 
-> Master prompt that frames the six-agent pipeline. Use it as the system message when
-> driving the agents one by one, or read it as the design contract behind
-> `combined-prompt.md`.
+> Master prompt that frames the six-step pipeline plus the bounded rebuttal loop
+> (agent 7). Use it as the system message when driving the agents one by one, or read it
+> as the design contract behind `combined-prompt.md`.
 >
-> Ведущий промпт, задающий рамку конвейера из шести агентов. Используйте как системное
-> сообщение при по-агентном прогоне или читайте как «контракт» за `combined-prompt.md`.
+> Ведущий промпт, задающий рамку конвейера из шести шагов и ограниченного цикла
+> опровержения (агент 7). Используйте как системное сообщение при по-агентном прогоне
+> или читайте как «контракт» за `combined-prompt.md`.
 
 ---
 
@@ -49,6 +50,12 @@ _Created: 15-08-2026 · Last updated: 05-09-2026_
 6. **Редактор-оформитель** — приводит терминологию и транслитерацию к норме,
    оформляет цитаты и **References на латинице** (по умолчанию стиль ППВ). Не вводит
    новых содержательных утверждений.
+7. **Опровержитель** (условный, не шаг конвейера) — при критических замечаниях
+   Источниковеда (агента 2) отвечает на них **новыми адресными проверками** (grep,
+   скрипты, pull источников), а не прозой; каждый пункт — с проверочным артефактом
+   (вывод команды, файл:строка, цитата). Цикл ограничен: **≤ 2 раундов**, затем
+   эскалация человеку. Прозу статьи не изменяет — результаты проверок передаёт
+   оркестратору/редактору.
 
 Промпт каждого агента — в `agents/`.
 
@@ -85,6 +92,7 @@ _Created: 15-08-2026 · Last updated: 05-09-2026_
 Критический аналитик: [качество доказательств + уровни A–E]
 Синтезатор:           [надёжность X/10, консенсус, установлено / гипотеза / не подтверждено]
 Редактор-оформитель:  [нормализованная терминология/транслитерация + References]
+Опровержитель:        [условный блок: при критике — проверки и вердикты по замечаниям; ≤2 раундов]
 ```
 
 ---
@@ -123,6 +131,12 @@ Agents run **sequentially**; each receives the query and the prior outputs.
    is established / hypothesis / unconfirmed.
 6. **Scholarly Editor** — normalizes terminology and transliteration, formats citations
    and **Latin-script References** (default ППВ style). Introduces no new claims.
+7. **Rebuttal** (conditional, not a pipeline step) — when the Source & Textual Critic
+   (agent 2) raises objections, answers them with **new targeted checks** (greps,
+   scripts, source pulls), not prose; every point backed by a check artifact (command
+   output, file:line, quotation). Loop bounded: **≤ 2 rounds**, then escalation to a
+   human. Never modifies the paper's prose — hands check results to the
+   orchestrator/editor.
 
 Each agent's prompt lives in `agents/`.
 
@@ -158,6 +172,7 @@ Verifier:              [checks, corrections, likely hallucinations, claim↔sour
 Critical Analyst:      [evidence quality + A–E levels]
 Synthesizer:           [reliability X/10, consensus, established / hypothesis / unconfirmed]
 Scholarly Editor:      [normalized terminology/transliteration + References]
+Rebuttal:              [conditional block: on criticism — checks and verdicts per objection; ≤2 rounds]
 ```
 
 _Dr. Mārcis Gasūns_
