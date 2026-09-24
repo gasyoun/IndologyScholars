@@ -15,8 +15,7 @@ Sibling subsystems cover the closed Google Group of the Sanskrit Zealots Society
 
 ## Archive Coverage
 
-The published speaker collection (`site_data.json` summary, current as of
-23 July 2026) contains:
+The published speaker collection (`site_data.json` summary of 2026-09-24) contains:
 
 | Measure | Value |
 | --- | ---: |

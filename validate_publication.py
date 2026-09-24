@@ -97,8 +97,14 @@ def main():
     if not data.get("generated"):
         fail(errors, "site_data.json missing generated date")
 
+    # H5426: the snapshot-date caption is pinned to site_data.json's own `generated`
+    # field too -- the numbers below were already checked, but the caption read
+    # "23 июля 2026" while the payload had been regenerated to 2026-09-24, so the
+    # one unchecked token in the sentence was the one that rotted.
+    generated = data.get("generated", "")
     public_count_snippets = {
         "README.md": [
+            f"снимок `site_data.json` от {generated}",
             f"| Профили докладчиков | {total_scholars} |",
             f"| Уникальные доклады | {unique_presentations} |",
             f"| Авторские участия | {author_participations} |",
@@ -108,6 +114,7 @@ def main():
             f"| Только Рериховские чтения | {roerich_only} |",
         ],
         "README_EN.md": [
+            f"`site_data.json` summary of {generated}",
             f"| Speaker profiles | {total_scholars} |",
             f"| Unique talks | {unique_presentations} |",
             f"| Author participations | {author_participations} |",
