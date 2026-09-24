@@ -1,4 +1,4 @@
-_Created: 30-07-2026 · Last updated: 30-07-2026_
+_Created: 30-07-2026 · Last updated: 25-09-2026_
 
 # Metadoc — ROADMAP_IndologyScholars_sanskrit-community-lenses_2026H2.md
 
@@ -17,7 +17,9 @@ does not duplicate the roadmap itself.
   of the comparison package.
 - **Contract:** dated plain Markdown, full blob URLs, wave-by-wave deliverables
   and timeboxes.
-- **Status:** active, local, uncommitted this pass (H1893 landed Wave 1A only).
+- **Status:** archived 25-09-2026 (H5388) — verdict pass found zero unminted
+  prose work (H1893–H1900 chain shipped every wave); the roadmap moved here
+  with a tombstone at the old docs path.
 
 ## Provenance
 
