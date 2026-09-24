@@ -6,7 +6,7 @@
     "pipeline_version": "2026-05-25",
     "generator": "generate_publication_pages.py"
   },
-  "file_count": 4228,
+  "file_count": 4227,
   "files": [
     {
       "path": "404.html",
@@ -550,8 +550,8 @@
     },
     {
       "path": "analytics_output/nlp_cache.pkl",
-      "size_bytes": 148375,
-      "sha256": "c631478125542cb6453459a9ae7b9bf0b4c0a4bc52a52d906d0b74cfbf37fb13"
+      "size_bytes": 148377,
+      "sha256": "374278314919ff11fa4ca4fcfa88342b4dc58b28c6be1a8348321c66b3464384"
     },
     {
       "path": "analytics_output/no_affiliation_history.md",
@@ -1000,8 +1000,8 @@
     },
     {
       "path": "assets/nlp_data.js",
-      "size_bytes": 424330,
-      "sha256": "e85c09ef61f9f46ab36c48630a7673012a3df0b1d21e0dcb2030e3e372d84118"
+      "size_bytes": 424327,
+      "sha256": "b37e279c66f49341e4f4fdb1ddb29423cd4e2c81f0a0dd7417263f9b5cb27f8a"
     },
     {
       "path": "assets/og-image.png",
@@ -10040,13 +10040,8 @@
     },
     {
       "path": "docs/ROADMAP_IndologyScholars_sanskrit-community-lenses_2026H2.md",
-      "size_bytes": 9206,
-      "sha256": "1376b098a98aa6b3999490561cdafdbf3f8d1734dcdb26d22f1bcc3e0553681f"
-    },
-    {
-      "path": "docs/ROADMAP_IndologyScholars_sanskrit-community-lenses_2026H2.meta.md",
-      "size_bytes": 3719,
-      "sha256": "fc7c2d7215e0ed1015e72b73b02066fd5e1e72ca523429b4cc3856160aa226f6"
+      "size_bytes": 2861,
+      "sha256": "17411563923cdc10092b19a7dc291043e117ad3c96925feeece8f7d765e2e516"
     },
     {
       "path": "docs/ROADMAP_SANSKRITOLOGY_INDOLOGY_SECTIONS_2026_2027.md",
@@ -10231,7 +10226,7 @@
     {
       "path": "download-data.html",
       "size_bytes": 37534,
-      "sha256": "2223d90abb993da5aa05322a264b2575dab455819477b8aaa2d967338079fa09"
+      "sha256": "d4f0ad05569d83d94add3cd909d3c7e91db32d2e6be65dc134657acc56a98d6a"
     },
     {
       "path": "en.html",
@@ -10271,7 +10266,7 @@
     {
       "path": "findings/visualisations.html",
       "size_bytes": 493638,
-      "sha256": "bd5124f6274d23bfed45736924b2135709872798ab9a4c1d7783bef4457387c3"
+      "sha256": "3e97b5285e0529b40718b0466ae4b42e09210e1d61870d66050fbec77458571f"
     },
     {
       "path": "gatekeeping-en.html",
