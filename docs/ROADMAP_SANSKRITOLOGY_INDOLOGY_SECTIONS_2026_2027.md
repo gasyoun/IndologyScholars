@@ -1,6 +1,17 @@
 # Роадмап разделов «Санскритология в России» и «Индология в России»
 
-_Created: 10-07-2026 · Last updated: 29-07-2026_
+_Created: 10-07-2026 · Last updated: 25-09-2026_
+
+> **Truth-pass 25-09-2026** (H5389, verdict pass E015 wave 1) — re-verified against the handoff
+> registry and the live database. Фаза 1 SHIPPED: [H473](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H473-Opus_IndologyScholars_sections_spine_phase1_10.07.26.md) ✅
+> (PR [#77](https://github.com/gasyoun/IndologyScholars/pull/77) merged; D1 —
+> [PR #78](https://github.com/gasyoun/IndologyScholars/pull/78); обе посадочные страницы на main).
+> Фаза 2, транш 1 SHIPPED: [H484](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H484-Opus_IndologyScholars_historical-prosopography-phase2_10.07.26.md) ✅ —
+> live-проба 25-09: 26 исторических фигур с `birth_year<1918` в `conferences.db`, 84 строки `person_role`,
+> все сущности схемы (`work`/`person_role`/`discipline`/`relation`) подняты. НЕ архивирован —
+> остаются unminted prose work (Фазы 2-продолжение/3/4/5: таблица `work` пуста, `narrative`-сущности
+> и очерков нет) за четырьмя открытыми человеческими развилками D2–D5 — см. **What is left** ниже,
+> каждый human-гейт заведён строкой GTD @WAITING (0GN–0GQ).
 
 Проектный план двух новых разделов сайта [IndologyScholars](https://github.com/gasyoun/IndologyScholars),
 построенных по образцу [«Дравидология в России»](https://iocs.hse.ru/news/395622778.html) —
@@ -208,6 +219,29 @@ presentation → presentation_person`. Она отлично описывает,
 
 Именно это делает R3 (гибрид) не компромиссом, а единственным форматом, в котором
 наш материал сильнее исходного образца.
+
+## What is left (truth-pass 25-09-2026, H5389)
+
+| Item | Evidence | Verdict |
+| --- | --- | --- |
+| Фаза 1 — спайн, посадочные, discipline-фасет, шаблон по `death_year` | [H473](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H473-Opus_IndologyScholars_sections_spine_phase1_10.07.26.md) ✅, [PR #77](https://github.com/gasyoun/IndologyScholars/pull/77) merged; D1 — [PR #78](https://github.com/gasyoun/IndologyScholars/pull/78); обе страницы live | SHIPPED |
+| Сверка 268↔270 (риск P4) | снят в самом файле 10-07-2026, `validate_publication.py` сверяет жёстко | SHIPPED |
+| Фаза 2, транш 1 — 26 исторических фигур | [H484](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H484-Opus_IndologyScholars_historical-prosopography-phase2_10.07.26.md) ✅: `curation/historical_persons.csv`, сидер `pipeline/historical.py`; live-проба 25-09: 26 персон `birth_year<1918`, 84 `person_role` | SHIPPED |
+| Фаза 2-продолжение — транши 27–40 + `person_role` институций | «разворачивать итеративно», живого H### нет, сидер готов | UNMINTED (agent-doable) |
+| Фаза 3 — narrative-сущность, очерк 6–8 периодов, мемориальные очерки | в схеме нет `narrative`, очерков нет | UNMINTED — gated D2/D3 |
+| Фаза 4 — наполнить `work` из SanskritLexicography, связка с лексикографией | live-проба 25-09: `work` = 0 строк | UNMINTED — gated D4 |
+| Фаза 5 — публикация разделов, перекрёстная ссылка с «Дравидологией» | не начиналась | UNMINTED — gated D5 |
+| Открытые вопросы D2–D5 | таблица «Открытые вопросы» выше | HUMAN-GATED → [GTD @WAITING](https://github.com/gasyoun/Uprava/blob/main/GTD_NEXT_ACTIONS.md) 0GN–0GQ |
+
+- [ ] **Фаза 2-продолжение: транши 27–40 исторических фигур + `person_role` институций** — агентно-исполнимо
+  (сидер `pipeline/historical.py` готов), не человеческий гейт; минтится дроном в общем порядке.
+- [ ] **Фаза 3: нарративный слой (`narrative` + очерки)** — гейт human: D2 (режим авторства,
+  [@WAITING 0GN](https://github.com/gasyoun/Uprava/blob/main/GTD_NEXT_ACTIONS.md)) и D3 (язык,
+  [@WAITING 0GO](https://github.com/gasyoun/Uprava/blob/main/GTD_NEXT_ACTIONS.md)), no date.
+- [ ] **Фаза 4: биобиблиографический спайн (`work`, связка с SanskritLexicography)** — гейт human: D4
+  (правовой режим Милибанда, [@WAITING 0GP](https://github.com/gasyoun/Uprava/blob/main/GTD_NEXT_ACTIONS.md)), no date.
+- [ ] **Фаза 5: публикация разделов + перекрёстная ссылка с «Дравидологией в России»** — гейт human: D5
+  (кооперация с ИВКА, [@WAITING 0GQ](https://github.com/gasyoun/Uprava/blob/main/GTD_NEXT_ACTIONS.md)), no date.
 
 ## Запуск
 
