@@ -1,4 +1,4 @@
-_Created: 15-08-2026 · Last updated: 05-09-2026_
+_Created: 15-08-2026 · Last updated: 24-09-2026_
 
 # План выноса модуля агентов в отдельный репозиторий
 
@@ -39,8 +39,8 @@ philology-research-agents/
 
 3. **Конфигурация:**
    - `ANTHROPIC_API_KEY` из `.env`
-   - Модель: `claude-sonnet-4-20250514` (по умолчанию) / `claude-opus-4-20250514` (для сложных тем)
-   - Temperature: 0.0 (консистентность для науки)
+   - Модель: `claude-sonnet-5` (по умолчанию) / `claude-opus-5` (для сложных тем)
+   - Temperature: не передаётся на ветке Anthropic — Sonnet 5 отвергает `temperature`/`top_p`/`top_k` с ошибкой 400; на OpenAI-совместимой ветке остаётся 0.0 (консистентность для науки)
    - Max tokens: 4096 на агента
 
 ### Prompt caching

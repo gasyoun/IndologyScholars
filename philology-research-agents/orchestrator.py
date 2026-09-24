@@ -10,7 +10,7 @@ Usage:
   python orchestrator.py --dry-run "Вопрос..."   # load prompts only, no API
 
 Configuration (environment, first match wins for provider):
-  ANTHROPIC_API_KEY + optional ANTHROPIC_MODEL (default claude-sonnet-4-20250514)
+  ANTHROPIC_API_KEY + optional ANTHROPIC_MODEL (default claude-sonnet-5)
   OPENMODEL_API_KEY / OPENMODEL_BASE_URL / OPENMODEL_MODEL
   DEEPSEEK_API_KEY  / DEEPSEEK_MODEL (default deepseek-v4-flash)
   Or set PROVIDER=anthropic|openmodel|deepseek|openai explicitly.
@@ -86,7 +86,7 @@ def resolve_provider() -> dict:
         return {
             "provider": "anthropic",
             "api_key": anthropic_key,
-            "model": os.environ.get("ANTHROPIC_MODEL", "claude-sonnet-4-20250514"),
+            "model": os.environ.get("ANTHROPIC_MODEL", "claude-sonnet-5"),
             "base_url": None,
         }
     if forced == "openmodel" or (not forced and openmodel_key):
@@ -129,9 +129,10 @@ def run_agent(system_prompt: str, user_message: str, agent_label: str, cfg: dict
                 raise RuntimeError("Install anthropic: pip install anthropic>=0.39.0") from exc
             client = anthropic.Anthropic(api_key=cfg["api_key"])
             response = client.messages.create(
+                # No temperature: Claude Sonnet 5 rejects temperature/top_p/top_k
+                # with a 400. The OpenAI-compatible branch below keeps it.
                 model=cfg["model"],
                 max_tokens=MAX_TOKENS,
-                temperature=TEMPERATURE,
                 system=system_prompt,
                 messages=[{"role": "user", "content": user_message}],
             )
@@ -180,7 +181,9 @@ def run_pipeline(
     if dry_run:
         print("Mode: dry-run (prompts only)")
     else:
-        print(f"Provider: {cfg.get('provider')} | Model: {cfg.get('model')} | temp={TEMPERATURE}")
+        # temperature is only sent on the OpenAI-compatible branch (see run_agent)
+        temp_label = "n/a (Anthropic)" if cfg.get("provider") == "anthropic" else TEMPERATURE
+        print(f"Provider: {cfg.get('provider')} | Model: {cfg.get('model')} | temp={temp_label}")
     print()
 
     user_msg = question
@@ -201,7 +204,7 @@ def run_pipeline(
         f"# Philology Research Lab — Pipeline Output\n\n"
         f"**Question:** {question}\n"
         f"**Model:** {cfg.get('model') if not dry_run else 'dry-run'} | "
-        f"**Temperature:** {TEMPERATURE}\n"
+        f"**Temperature:** {'n/a (Anthropic)' if cfg.get('provider') == 'anthropic' else TEMPERATURE}\n"
         f"**Editor profile:** {editor_profile or 'default (ППВ)'}\n\n"
         f"---\n\n"
     )
