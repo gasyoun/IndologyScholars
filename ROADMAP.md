@@ -1,6 +1,15 @@
 # ROADMAP — IndologyScholars
 
-_Created: 27-05-2026 · Last updated: 29-07-2026_
+_Created: 27-05-2026 · Last updated: 24-09-2026_
+
+> **TRUTH-PASS 24-09-2026 (H5392, OxAlpha `glm-5.3-flash`): REFRESHED, not archive.**
+> Verdict pass per [21-09 grill](https://github.com/gasyoun/Uprava/blob/main/docs/GRILL_ROADMAP_CLOSEOUT_OXALPHA_MASS_MINT_21-09-2026.md) Phase 2 (2, 9, 10): найдена незаведённая
+> agent-работа (публикационная конверсия, ВАК-прогон, spinout Фаза 2, наукометрия,
+> международная версия ППВ, видеоархив, расширение корпуса) — roadmap остаётся живым.
+> Все открытые пункты переписаны как gated checkboxes; каждая human-виза заведена
+> строкой **IS-1…IS-6 (24-09-2026)** в [GTD_NEXT_ACTIONS.md](https://github.com/gasyoun/Uprava/blob/main/GTD_NEXT_ACTIONS.md).
+> Полная таблица item → evidence → verdict — в verdict-PR IndologyScholars.
+> Секции с ✅ ниже — историческая запись shipped-работы.
 
 > Integrated roadmap across data/DB, generated site, the ППВ article, and the
 > `philology-research-agents` module. Three horizons: **Now / Next / Later**.
@@ -15,8 +24,9 @@ _Created: 27-05-2026 · Last updated: 29-07-2026_
 **TL;DR (EN).** ППВ article submitted. Roster merge **shipped** (94 non-participants
 + participant linker). OpenAlex queue: **181 persons / 496 candidate rows**
 (`todo`). English **data paper** (`article/data_paper_draft.md`) is
-**Zenodo deposit-ready** (snapshot `2026-07-17`, H1072); remaining human steps
-are Zenodo login → mint DOI → Brill submission (+ deferred human IRR).
+**deposited on Zenodo** (concept DOI `10.5281/zenodo.21360652`,
+[PR #281](https://github.com/gasyoun/IndologyScholars/pull/281) merged); remaining
+human steps: Brill RDJ submission (+ deferred human IRR).
 Siblings: `nagari/`, `vk-ors/`; INDOLOGY atlas spun out to
 [`IndologyArchiveAtlas`](https://github.com/gasyoun/IndologyArchiveAtlas).
 Long-range: video-archive, agents module spinout, international ППВ translation.
@@ -47,23 +57,23 @@ A. 🅳 🟡 **Ростер русскоязычных индологов → с
    - ✅ Реализовано: `curation/non_participant_indologists.csv` (94), линкер участников, страница `indologists.html`, тесты, build+validate зелёные
    - ✅ Исторический слой: 26 `person_kind=historical` (H484)
    - ✅ Runbook Phase 5: `docs/ru-enrichment-runbook.md`
-   - ⬜ Phase 5 прогон (clean-egress / .ru): Q-ID/годы жизни → `candidate`→`verified`
-   - ⬜ P0 `wikidata_enrich.py` / `expand_wikipedia_indologists.py` / Playwright institutions (где сеть доступна)
-   - ⬜ P1 Ручной добор имперского периода (~15 имён)
-   - ⬜ P2 Постсоветские республики через en.wiki нац-категории + мост
+   - [ ] Phase 5 прогон (clean-egress / .ru): Q-ID/годы жизни → `candidate`→`verified` — **human gate (IS-3)**, сессия редактора изнутри .ru: [MG @WAITING 24-09-2026](https://github.com/gasyoun/Uprava/blob/main/GTD_NEXT_ACTIONS.md)
+   - [ ] P0 `wikidata_enrich.py` / `expand_wikipedia_indologists.py` / Playwright institutions (где сеть доступна) — **human gate (IS-3)**, тот же clean-egress прогон: [MG @WAITING 24-09-2026](https://github.com/gasyoun/Uprava/blob/main/GTD_NEXT_ACTIONS.md)
+   - [ ] P1 Ручной добор имперского периода (~15 имён) — **human gate (IS-3)**, ручной шаг того же прогона: [MG @WAITING 24-09-2026](https://github.com/gasyoun/Uprava/blob/main/GTD_NEXT_ACTIONS.md)
+   - [ ] P2 Постсоветские республики через en.wiki нац-категории + мост — **human gate (IS-3)**, clean-egress: [MG @WAITING 24-09-2026](https://github.com/gasyoun/Uprava/blob/main/GTD_NEXT_ACTIONS.md)
 B. 🅳 🟡 **Контроль авторитетов (OpenAlex → Wikidata/ORCID).**
    - ✅ OpenAlex-очередь: **181** персон / **496** строк-кандидатов (`analytics_output/openalex_author_candidates.csv`; все `todo` на 2026-07-23)
-   - ⬜ Ручная сверка 181 персон (статус `todo` → `confirmed`)
-   - ⬜ Инъекция при `relevance_score ≥ 0.8` (порог подтверждён), `confidence='candidate'`
+   - [ ] Ручная сверка 181 персон (статус `todo` → `confirmed`) — **human gate (IS-1)**: [MG @DO 24-09-2026](https://github.com/gasyoun/Uprava/blob/main/GTD_NEXT_ACTIONS.md)
+   - [ ] Инъекция при `relevance_score ≥ 0.8` (порог подтверждён), `confidence='candidate'` — **гейт IS-2**, после сверки IS-1: [MG @WAITING 24-09-2026](https://github.com/gasyoun/Uprava/blob/main/GTD_NEXT_ACTIONS.md)
    - ✅ Исправлены Q-ID в `generate_wikidata_batch.py`: P106 → `Q18524037`, P101 → `Q625510`, удалён фиктивный `Q126692818`, источник как референс `S854`
-   - ⬜ Отправить Wikidata-батч **только после** полной сверки OpenAlex-кандидатов
+   - [ ] Отправить Wikidata-батч **только после** полной сверки OpenAlex-кандидатов — **гейт IS-2**, после сверки IS-1: [MG @WAITING 24-09-2026](https://github.com/gasyoun/Uprava/blob/main/GTD_NEXT_ACTIONS.md)
    - Руководство: `docs/wikidata-guide.md`
 C. 🅳🅜 🟡 **Англоязычный data paper (A26).**
    - ✅ Черновик `article/data_paper_draft.md` — **единоличное авторство (Gasūns)**, инструменты в acknowledgements
    - ✅ Deposit-ready снимок `article/snapshots/2026-07-17/` + `article/zenodo_metadata.json` (H1072); number gate hardened (H1467)
-   - ⬜ **DOI на Zenodo** (human login) → вписать concept+version DOI поверх `PENDING`
-   - ⬜ Подача в **Research Data Journal for the Humanities and Social Sciences (Brill)**
-   - ⬜ Human inter-rater agreement (`tools/compute_interrater_agreement.py`) — отложено на 2026
+   - [x] **DOI на Zenodo** — **shipped**: concept `10.5281/zenodo.21360652` + version `10.5281/zenodo.21847873` в [CITATION.cff](CITATION.cff) ([PR #281](https://github.com/gasyoun/IndologyScholars/pull/281) merged)
+   - [ ] Подача в **Research Data Journal for the Humanities and Social Sciences (Brill)** — **human gate (IS-4)**: [MG @DO 24-09-2026](https://github.com/gasyoun/Uprava/blob/main/GTD_NEXT_ACTIONS.md)
+   - [ ] Human inter-rater agreement (`tools/compute_interrater_agreement.py`) — **human gate (IS-5)**, отложено: [MG @WAITING, пересмотр 31-12-2026](https://github.com/gasyoun/Uprava/blob/main/GTD_NEXT_ACTIONS.md)
 D. 🅜 ✅ **Runbook для .ru-шагов.** `docs/ru-enrichment-runbook.md` — пошагово:
    Wikidata годы жизни, ru-инфобоксы, Playwright-скрапинг институтов, OpenAlex,
    идемпотентный re-seed реестра, rebuild/validate/commit. Прогон — за редактором
@@ -101,29 +111,29 @@ D. 🅜 ✅ **Runbook для .ru-шагов.** `docs/ru-enrichment-runbook.md` �
    - ✅ Баг соавторов исправлен (`presentation_person_exclusions.csv`)
    - ✅ Bengal taxonomy избыточность устранена
    - ✅ `tools/scrape_birth_years.py` + `tools/apply_birth_years.py` — скрапер дат
-   - ⬜ 33 учёных без дат рождения (30 city-only, 3 с институциями)
+   - [ ] 33 учёных без дат рождения (30 city-only, 3 с институциями) — **unminted agent work** (аудит: [analytics_output/birth_year_gap_audit.csv](analytics_output/birth_year_gap_audit.csv), 65 строк на 24-09-2026)
    - ✅ Фильтрация мусорных ключевых слов (`keyword_filtering.py` + keywords pages; stoplist extended 2026-07-23)
-9. 🅜 ⬜ **Публикационная конверсия.** Какие доклады стали статьями/сборниками.
+9. 🅳🅜 ⬜ **Публикационная конверсия.** Какие доклады стали статьями/сборниками. — **unminted agent work** (в реестре H### нет, 24-09-2026)
 10. 🅼 🟡 **Перечень ВАК.**
     - ✅ `tools/vak_parser.py` — парсер Excel в CSV + генератор `editors/*.md`
-    - ⬜ Загрузить актуальный .xlsx с сайта ВАК и прогнать
+    - [ ] Загрузить актуальный .xlsx с сайта ВАК и прогнать — **unminted agent work** (парсер shipped, сам прогон не заведён)
 11. 🅼 🟡 **Зрелость модуля агентов.**
     - ✅ `philology-research-agents/SPINOUT_PLAN.md` — 3-фазный план выноса
     - ✅ Python-оркестратор (`orchestrator.py`: Anthropic / OpenModel / DeepSeek) + offline + anti-fabrication tests
-    - ⬜ Фаза 2: вынос в отдельный репозиторий
+    - [ ] Фаза 2: вынос в отдельный репозиторий — **unminted agent work** (отдельного репо нет, проба 24-09-2026; = LATER-17)
 12. 🅢 🟡 **Сайт/UX.**
     - ✅ `positionTooltip()` — tooltip clamp на всех визуализациях
     - ✅ Клик по городу на карте → страница города
     - ✅ `.profile-facts` горизонтальная вёрстка (3 колонки)
     - ✅ «Соавторы (0)» скрыты (уже было)
     - ✅ «засвидетельствованный профиль» для 1 доклада (уже было)
-    - ⬜ Фильтр «выпускник Востфака» — ждёт ручной верификации alumni
+    - [ ] Фильтр «выпускник Востфака» — **human gate (IS-6)**, ручная верификация alumni: [MG @DO 24-09-2026](https://github.com/gasyoun/Uprava/blob/main/GTD_NEXT_ACTIONS.md)
     - ✅ Страница ключевых слов (`keywords/index.html` + review + visualisations)
 13. 🅳 ✅ **Качество данных.** Баг соавторов, Bengal taxonomy, связи в CSV — всё сделано.
 14. 🅜 🟡 **Наукометрия и новые фичи.**
     - ✅ Caveat о программах + inline-ссылки на рисунки в статье
     - ✅ Расширенные подписи к иллюстрациям
-    - ⬜ Наукометрические расширения (eLIBRARY, OpenAlex, ORCID)
+    - [ ] Наукометрические расширения (eLIBRARY, OpenAlex, ORCID) — **unminted agent work** (OpenAlex-очередь живёт в NOW-B)
 
 ---
 
@@ -136,17 +146,16 @@ D. 🅜 ✅ **Runbook для .ru-шагов.** `docs/ru-enrichment-runbook.md` �
 
 ## LATER — стратегическое (6–12 месяцев)
 
-15. 🅜 **Видеоархив и цифровая доступность.**
-16. 🅳 🟡 **Воспроизводимость и открытые данные.** DOI на датасет — снимок
-    заморожен (`article/snapshots/2026-06-03/`), data paper в работе (см. NOW-C);
-    осталась Zenodo-депозиция и подача в Research Data Journal (Brill).
-17. 🅼 **Вынос модуля агентов в отдельный репозиторий.** (План: `SPINOUT_PLAN.md`)
+15. 🅜 **Видеоархив и цифровая доступность.** — **unminted prose work** (LATER; реального триггера/даты в roadmap нет)
+16. 🅳 🟡 **Воспроизводимость и открытые данные.** DOI на датасет — **Zenodo-депозиция shipped** (concept DOI `10.5281/zenodo.21360652`, [PR #281](https://github.com/gasyoun/IndologyScholars/pull/281)); осталась только подача в Research Data Journal (Brill) — **human gate IS-4** (см. NOW-C).
+17. 🅼 **Вынос модуля агентов в отдельный репозиторий.** (План: `SPINOUT_PLAN.md`) — **unminted agent work** (= NEXT-11 Фаза 2; репо нет, 24-09-2026)
 18. 🅰️ **Международная версия статьи.** Исходник: `article/ppv_submission_article.md`.
     Целевой журнал: Indo-Iranian Journal (Brill) — профиль `editors/iij.md` готов.
     Задачи: (1) машинный перевод (DeepL/Claude), (2) адаптация References под
     Chicago author-date, (3) контекст для международной аудитории,
-    (4) рецензия носителем. Оценка: ~1 неделя. Статус: отложено до подачи ППВ.
-19. 🅳 **Расширение корпуса.** Другие индологические площадки.
+    (4) рецензия носителем. Оценка: ~1 неделя. Статус: отложено до подачи ППВ —
+    **триггер сработал** (ППВ подан); **unminted agent work** (в реестре нет, 24-09-2026).
+19. 🅳 **Расширение корпуса.** Другие индологические площадки. — **unminted prose work** (LATER; реального триггера/даты нет)
 
 ---
 
