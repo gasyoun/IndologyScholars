@@ -10030,8 +10030,8 @@
     },
     {
       "path": "docs/ROADMAP_2026.md",
-      "size_bytes": 13542,
-      "sha256": "a2b738871872a8445eaf6f519a4bd71bc102cf6e7673f204c69e168c8acb30b7"
+      "size_bytes": 1730,
+      "sha256": "7485f74ef3aad431af43bdf8e9ad893b837d3671f8692b8993ea54bad92a9538"
     },
     {
       "path": "docs/ROADMAP_INDOLOGYSCHOLARS_INTERCONNECTION_2026-08.md",
@@ -10271,7 +10271,7 @@
     {
       "path": "findings/visualisations.html",
       "size_bytes": 493638,
-      "sha256": "dbe2a7e405329eaab92fdc059b82dd01391fe82461df0ab80e206ba143c0542d"
+      "sha256": "bd5124f6274d23bfed45736924b2135709872798ab9a4c1d7783bef4457387c3"
     },
     {
       "path": "gatekeeping-en.html",
