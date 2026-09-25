@@ -1,6 +1,6 @@
 # IndologyScholars: Archive of Talks in Russian Indology
 
-_Created: 24-04-2026 · Last updated: 05-09-2026_
+_Created: 24-04-2026 · Last updated: 25-09-2026_
 
 [Русская версия](https://github.com/gasyoun/IndologyScholars/blob/main/README.md) | [Developer documentation](https://github.com/gasyoun/IndologyScholars/blob/main/docs/development-en.md)
 
@@ -15,7 +15,7 @@ Sibling subsystems cover the closed Google Group of the Sanskrit Zealots Society
 
 ## Archive Coverage
 
-The published speaker collection (`site_data.json` summary of 2026-09-24) contains:
+The published speaker collection (`site_data.json` summary of 2026-09-25) contains:
 
 | Measure | Value |
 | --- | ---: |
