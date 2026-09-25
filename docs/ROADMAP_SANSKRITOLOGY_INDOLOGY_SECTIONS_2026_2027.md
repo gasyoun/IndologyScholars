@@ -19,6 +19,13 @@ _Created: 10-07-2026 · Last updated: 25-09-2026_
 > университеты и др.), дисциплины 14 новых фигур проставлены вручную в `curation/person_disciplines.csv`
 > (P1: не из дефектного классификатора). Live-проба после ребилда: 40 `historical`, 0 упавших в
 > `unattested` sentinel сверх уже существовавшей 1 строки. `total_scholars`=268 не затронут (P3/H484 контракт).
+> **Корректура номера PR:** три ссылки на `pull/295` выше и ниже в этом файле указывают неверный
+> номер — PR минтился до создания и получил номер [#296](https://github.com/gasyoun/IndologyScholars/pull/296),
+> не #295 (тот занят соседним, не связанным PR). Не правится in-place той же сессией из-за
+> [pre-push stale-base guard](https://github.com/gasyoun/IndologyScholars/blob/main/docs/PRE_PUSH_STALE_BASE_OPERATOR.md)
+> (второй push той же сессии, удаляющий строки первого push, требует `ALLOW_STALE_BASE_PUSH=1`,
+> который сессия не вправе выставлять себе сама — см. `agent-never-self-authorizes-an-escape`).
+> Правильный номер — #296 везде, где встречается #295.
 
 Проектный план двух новых разделов сайта [IndologyScholars](https://github.com/gasyoun/IndologyScholars),
 построенных по образцу [«Дравидология в России»](https://iocs.hse.ru/news/395622778.html) —
