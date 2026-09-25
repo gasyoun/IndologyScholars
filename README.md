@@ -1,6 +1,6 @@
 # IndologyScholars: архив докладов по российской индологии
 
-_Created: 24-04-2026 · Last updated: 29-08-2026_
+_Created: 24-04-2026 · Last updated: 25-09-2026_
 
 [English version](https://github.com/gasyoun/IndologyScholars/blob/main/README_EN.md) | [Документация для разработчиков](https://github.com/gasyoun/IndologyScholars/blob/main/docs/development.md)
 
@@ -16,7 +16,7 @@ _Created: 24-04-2026 · Last updated: 29-08-2026_
 
 ## Состав архива
 
-Опубликованная выборка докладчиков (снимок `site_data.json` от 2026-09-24) содержит:
+Опубликованная выборка докладчиков (снимок `site_data.json` от 2026-09-25) содержит:
 
 | Показатель | Значение |
 | --- | ---: |

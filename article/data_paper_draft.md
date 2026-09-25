@@ -1,4 +1,4 @@
-_Created: 15-08-2026 · Last updated: 06-09-2026_
+_Created: 15-08-2026 · Last updated: 25-09-2026_
 
 # Russian Indological Research Archive: A Conference Corpus for Prosopography
 
@@ -145,7 +145,7 @@ labeling (`speaker`, `coauthor`).
 
 The `person` table carries a `person_kind` discriminator separating the 268
 conference participants from a curated historical prosopographical layer of
-26 pre-contemporary Russian Indologists (`historical`), seeded from
+40 pre-contemporary Russian Indologists (`historical`), seeded from
 `curation/historical_persons.csv` with Wikidata-sourced dates and
 identifiers. All presentation-level counts reported in this paper (and all
 published aggregate statistics) are computed over conference participants
