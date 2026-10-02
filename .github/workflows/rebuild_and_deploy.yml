@@ -72,6 +72,14 @@ jobs:
           python tools/build_sociology_visuals.py
           python generate_renou_layer.py
 
+      - name: Sync README snapshots to the fresh payload
+        # validate_publication.py (H5426) pins the README caption AND summary
+        # table to site_data.json's own generated date/numbers; without this
+        # step every data change re-rotted the caption and failed the gate
+        # (seen 2026-10-01: payload 2026-10-01 vs README 2026-09-25).
+        run: |
+          python tools/sync_readme_snapshot.py
+
       - name: Generate Static Pages for Individual Scholars
         run: |
           python generate_scholars_pages.py
@@ -100,6 +108,7 @@ jobs:
           # alongside site_data_timeline.json — generate_site_data.py rewrites
           # both from one dict, but omitting the chunks here let them rot until
           # tests/test_site_data_schema.py::test_site_data_timeline_chunks failed.
+          git add README.md README_EN.md
           git add html_cache/*.html conferences.db site_data.json site_data_summary.json site_data_scholars.json site_data_timeline.json site_data_timeline_*.json site_data_network.json public_ids.json analytics_output/*.csv analytics_output/*.json indology_scholars_analytics.md
           git add article/hypothesis_output/*.csv article/hypothesis_output/*.json article/hypothesis_output/*.md article/figures/*.svg
           git add assets/*.png assets/*.svg assets/*.js assets/img/*.png assets/img/*.svg
