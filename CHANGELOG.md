@@ -1,10 +1,16 @@
-_Created: 15-08-2026 · Last updated: 05-09-2026_
+_Created: 15-08-2026 · Last updated: 03-10-2026_
 
 # История изменений (Changelog)
 
 Все заметные изменения в этом проекте будут отражены в данном файле.
 
 Этот проект представляет собой высокоточный академический конвейер для оцифровки, интеллектуального анализа и визуализации истории российской индологической науки.
+
+## 2026-10-03
+
+### Nightly bug hunt 03.10.2026 — 0 HIGH, 4 MEDIUM, 5 LOW (report-only)
+
+Read-only bug hunt of the code surface ([BUGHUNT-FINDINGS-IndologyScholars-03.10.2026.md](https://github.com/gasyoun/IndologyScholars/blob/main/BUGHUNT-FINDINGS-IndologyScholars-03.10.2026.md)): no committed secrets, no HIGH findings; MEDIUMs cover published mixed-script `full_name_en` (5 scholars), an exclusive-end contract violation in `calendar_sync.py`, a hardcoded 2026 in age analytics, and `requirements.txt` failing on the declared 3.9 floor. Full suite verified green on 3.13 (464 passed, 13 skipped). MEDIUM/LOW report-only per MG ruling 26-09-2026; fix lane to follow.
 
 ## 2026-08-29
 
