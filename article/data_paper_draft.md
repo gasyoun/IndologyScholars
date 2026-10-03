@@ -301,7 +301,7 @@ A citable version of the dataset is archived at Zenodo (GitHub↔Zenodo integrat
 **Gasūns, M. (2026).** *IndologyScholars: Russian Indological Research
 Archive — Zograf and Roerich Readings Conference Corpus (2004–2026)*
 [Data set]. Zenodo. Concept DOI: `10.5281/zenodo.21360652` (all versions);
-version DOI: `10.5281/zenodo.21847873` (GitHub release `v1.6.7`, 2026-08-08). Both DOIs were
+version DOI: `10.5281/zenodo.23123747` (GitHub release `v1.12.19`, 2026-10-03, corpus amended with the 2005 Roerich program; prior version `v1.6.7` = 10.5281/zenodo.21847873). Both DOIs were
 minted automatically by the Zenodo↔GitHub integration on release publish.
 
 The frozen paper snapshot `article/snapshots/2026-10-03/` (supersedes 2026-07-17 after the 2005-program corpus amendment; produced by
@@ -396,7 +396,7 @@ snapshot:
 > Gasūns, M. (2026). *IndologyScholars: Russian Indological Research
 > Archive — Zograf and Roerich Readings Conference Corpus (2004–2026)*
 > [Data set]. Zenodo. https://doi.org/10.5281/zenodo.21360652
-> (concept DOI; version \1.6.7\ = https://doi.org/10.5281/zenodo.21847873).
+> (concept DOI; version \v1.12.19\ = https://doi.org/10.5281/zenodo.23123747).
 
 ## 8. Acknowledgments
 
@@ -419,7 +419,7 @@ humanities community for the tools that made this corpus possible.
 against the committed data by `article/check_data_paper_numbers.py`);
 2026-10-03 (snapshot re-frozen as 2026-10-03 after the 2005 Roerich-program corpus
 amendment — 276/1385/1411, manual classification `source=manual_program2005`, version
-2026.10.03 staged for Zenodo via GitHub release v1.9.0; version DOI backfill pending);
+2026.10.03 deposited via GitHub release v1.12.19; version DOI 10.5281/zenodo.23123747 backfilled same day);
 2026-07-17 (snapshot re-frozen, cross-model κ re-derived from
 `analytics_output/interrater_crossmodel_claude.csv`, dataset title
 harmonized across §5.4/§7, `article/zenodo_metadata.json`, and
