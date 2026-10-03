@@ -1,5 +1,5 @@
 {
- "_status": "DEPOSITED via Zenodo↔GitHub integration. Concept DOI 10.5281/zenodo.21360652; version 2026.07.17 = 10.5281/zenodo.21847873 (v1.6.7). New version 2026.10.03 (corpus amended with the 2005 Roerich program: 276/1385/1411) staged for release v1.9.0; version DOI to be backfilled after the release is processed by Zenodo.",
+ "_status": "DEPOSITED via Zenodo↔GitHub integration. Concept DOI 10.5281/zenodo.21360652; latest version DOI 10.5281/zenodo.23123747 (v1.12.19, 2026-10-03, corpus 276/1385/1411 with the 2005 Roerich program). Backfilled into data_paper_draft.md and CITATION.cff 2026-10-03.",
  "_prepared": "2026-07-11, H674, Fable 5 (claude-fable-5); deposit-ready 2026-07-17, H1072, Fable 5 (claude-fable-5)",
  "metadata": {
   "upload_type": "dataset",
@@ -41,6 +41,6 @@
   "language": "rus"
  },
  "concept_doi": "10.5281/zenodo.21360652",
- "version_doi": "10.5281/zenodo.21847873",
- "version_tag": "v1.6.7"
+ "version_doi": "10.5281/zenodo.23123747",
+ "version_tag": "v1.12.19"
 }
