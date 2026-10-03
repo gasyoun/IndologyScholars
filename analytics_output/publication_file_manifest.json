@@ -951,7 +951,7 @@
     {
       "path": "assets/img/gatekeeping_network_layers.svg",
       "size_bytes": 5657,
-      "sha256": "a1fa98fdc9cff6bf921ad49574ae1bb0f2f3acaaf6eba621eceeb4d13febad69"
+      "sha256": "f0c289dfa2459412141bdf43d5d52d2ebc03cc7d463f2f13213e8d00a3c5a3ee"
     },
     {
       "path": "assets/img/network_degradation.png",
@@ -10496,7 +10496,7 @@
     {
       "path": "findings/visualisations.html",
       "size_bytes": 495900,
-      "sha256": "33f7bccdf762eb392c7c4ac932ae5f5da30c22c2193070ade6bafd287b16aea4"
+      "sha256": "7c5015386e67f300d861122913c43d404fb4625e90fac325661dfa816a2d7370"
     },
     {
       "path": "gatekeeping-en.html",
