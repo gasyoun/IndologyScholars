@@ -9,7 +9,7 @@ ORCID: 0000-0003-4513-884X
 ## Abstract
 
 I present the IndologyScholars corpus: a structured, open-access dataset
-of 1,362 conference presentations, 268 scholar profiles, and 1,388 author
+of 1,385 conference presentations, 276 scholar profiles, and 1,411 author
 participations drawn from published programs of the Zograf Readings (St.
 Petersburg) and Roerich Readings (Moscow) between 2004 and 2026. The dataset
 includes normalized speaker identities, institutional affiliations with
@@ -55,10 +55,21 @@ international scholars can access and extend it.
 
 ### 2.1 Source material
 
-The primary sources are the published conference programs for 40 event
-records (22 program years): the Zograf Readings (2004–2026, 22 events) and
-the Roerich Readings (2007–2025, 18 events). Programs were preserved as
-HTML in `html_cache/`. Five supplementary data layers are manually curated:
+The primary sources are the published conference programs for 41 event
+records (23 program years): the Zograf Readings (2004–2026, 22 events) and
+the Roerich Readings (2005–2025, 19 events). Programs were preserved as
+HTML in `html_cache/`; the 2005 Roerich Readings program (23 talks) entered
+by a copy preserved in the author's correspondence with the organizer, since
+the series' online archive begins in 2007. Its 23 rows were classified manually
+under the same closed vocabularies (`source=manual_program2005`).
+
+Beyond the published programs, the author holds two documented application-stage
+rejection letters: a December 2020 Roerich Readings rejection with the paraphrased
+rationale of an "applied rather than fundamental character" of the submission, and an
+August 2025 Dubyanskiy Readings rejection citing a record volume of submissions. These
+letters are preserved as private correspondence; they are paraphrased here without
+verbatim quotation, signatories are not named in this text, and they are analysed as
+source material on the project's gatekeeping page rather than as corpus records. Five supplementary data layers are manually curated:
 
 - `authority_ids.json` — external person identifiers with per-record confidence
 - `curation/verified_affiliation_spans.csv` — dated institutional trajectories
@@ -143,7 +154,7 @@ last stores per-fact provenance for curated assertions). The
 `presentation_person` table supports multi-author presentations with role
 labeling (`speaker`, `coauthor`).
 
-The `person` table carries a `person_kind` discriminator separating the 268
+The `person` table carries a `person_kind` discriminator separating the 276
 conference participants from a curated historical prosopographical layer of
 40 pre-contemporary Russian Indologists (`historical`), seeded from
 `curation/historical_persons.csv` with Wikidata-sourced dates and
@@ -158,7 +169,7 @@ containing:
 
 | Section | Contents |
 |---------|----------|
-| `scholars` | 268 profiles with talks, affiliations, themes, external IDs |
+| `scholars` | 276 profiles with talks, affiliations, themes, external IDs |
 | `timeline` | Year-by-year presentation grids per series |
 | `summary` | Aggregate statistics |
 | `stats` | Year-over-year talk counts |
@@ -179,13 +190,13 @@ where available. The graph is importable into standard triple stores
 Public authority records in `authority_ids.json` carry a per-record
 confidence field (`manual`/`confirmed` vs. `candidate`); machine-suggested
 matches enter the file only as `candidate` and are excluded from verified
-counts until a human confirms them. Coverage over the 268 scholar profiles:
+counts until a human confirms them. Coverage over the 276 scholar profiles:
 
 | Identifier | Coverage (as of 2026-07-11) | Of which unverified `candidate` |
 |------------|------------------------------|---------------------------------|
 | Wikidata | 3 (1.1%) | 2 |
-| ORCID | 7 (2.6%) | 6 |
-| OpenAlex | 14 (5.2%) | 13 |
+| ORCID | 7 (2.5%) | 6 |
+| OpenAlex | 14 (5.1%) | 13 |
 | VIAF | 0 | — |
 | RINC/eLIBRARY | 0 | — |
 | Google Scholar | tracked but not yet mapped | — |
@@ -203,8 +214,8 @@ follows automatically.
 
 The dataset supports quantitative prosopography of an academic community:
 participation trajectories, institutional mobility, generational cohorts,
-and inter-venue permeability. All 268 scholars have standardized Latin
-transliterations, birth years (87.3% coverage), and talk-level thematic
+and inter-venue permeability. All 276 scholars have standardized Latin
+transliterations, birth years (84.8% coverage), and talk-level thematic
 classification.
 
 ### 4.2 Network analysis
@@ -222,7 +233,7 @@ visualization.
 
 ### 4.3 Text analysis
 
-The corpus contains 1,362 Russian-language presentation titles suitable for:
+The corpus contains 1,385 Russian-language presentation titles suitable for:
 - Keyword extraction and co-occurrence analysis
 - Topic modeling (LDA)
 - Diachronic vocabulary tracking
@@ -293,7 +304,7 @@ Archive — Zograf and Roerich Readings Conference Corpus (2004–2026)*
 version DOI: `10.5281/zenodo.21847873` (GitHub release `v1.6.7`, 2026-08-08). Both DOIs were
 minted automatically by the Zenodo↔GitHub integration on release publish.
 
-The frozen paper snapshot `article/snapshots/2026-07-17/` (produced by
+The frozen paper snapshot `article/snapshots/2026-10-03/` (supersedes 2026-07-17 after the 2005-program corpus amendment; produced by
 `tools/freeze_article_data.py`) remains the scholarly freeze for A26 numbers;
 it includes `conferences.db`, `site_data.json`, analytics CSVs, curation
 files, and a SHA-256 manifest. The live Zenodo record archives the GitHub
@@ -346,7 +357,7 @@ family; pin the **version DOI** when a specific release must be reproducible.
    cross-dataset linking and international discoverability. A
    candidate-matching pipeline exists and results are under human review.
 
-7. **Birth-year coverage.** 34 of 268 scholars (12.7%) lack a birth year.
+7. **Birth-year coverage.** 42 of 276 scholars (15.2%) lack a birth year.
    This is a genuine source gap, not a name-matching failure: a Wikidata +
    `ru.wikipedia` identity pass and a further hand-curation search over
    institutional/dissertation sources resolved 0 of 34. The gap is
@@ -406,6 +417,9 @@ humanities community for the tools that made this corpus possible.
 
 *Draft: 2026-06-03. Revised: 2026-07-11 (all derivable figures re-verified
 against the committed data by `article/check_data_paper_numbers.py`);
+2026-10-03 (snapshot re-frozen as 2026-10-03 after the 2005 Roerich-program corpus
+amendment — 276/1385/1411, manual classification `source=manual_program2005`, version
+2026.10.03 staged for Zenodo via GitHub release v1.9.0; version DOI backfill pending);
 2026-07-17 (snapshot re-frozen, cross-model κ re-derived from
 `analytics_output/interrater_crossmodel_claude.csv`, dataset title
 harmonized across §5.4/§7, `article/zenodo_metadata.json`, and

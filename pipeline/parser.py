@@ -531,45 +531,49 @@ def populate_zograf_talks(conn):
 
 def populate_roerich_talks(conn):
     cursor = conn.cursor()
-    ROERICH_YEARS = sorted(list(range(2007, 2026)))
+    ROERICH_YEARS = sorted([2005] + list(range(2007, 2026)))
     ROMAN_MAP = {
         2025: "LXV", 2024: "LXIV", 2023: "LXIII", 2022: "LXII", 2021: "LXI",
         2020: "LX", 2019: "LIX", 2018: "LVIII", 2017: "LVII", 2016: "LVI",
         2015: "LV", 2014: "LIV", 2013: "LIII", 2012: "LII", 2011: "LI",
-        2010: "L", 2009: "XLIX", 2008: "XLVIII", 2007: "XLVII"
+        2010: "L", 2009: "XLIX", 2008: "XLVIII", 2007: "XLVII", 2005: "XLV"
     }
-    
+
     for year in ROERICH_YEARS:
+        prog_url = ("correspondence:orgcommittee-program-2005-11-26-dlel"
+                    if year == 2005 else
+                    prog_url)
         filename = f"roerich_{year}.html"
         filepath = os.path.join(CACHE_DIR, filename)
         if not os.path.exists(filepath):
             continue
-            
+
         with open(filepath, 'r', encoding='utf-8') as f:
             html = f.read()
-            
+
         parser = SmartHTMLParser()
         parser.feed(html)
         text = parser.get_text()
-        
+
         lines = [line.strip() for line in text.split('\n') if line.strip()]
-        
+
         start_date = f"{year}-12-09"
         end_date = f"{year}-12-11"
         theme = "Древняя и средневековая Индия и Центральная Азия. История. Филология. Культура"
-        
+
         for line in lines[:40]:
-            date_match = re.search(r'(\d{1,2})[–-]\s*(\d{1,2})\s+декабря\s+(\d{4})', line)
+            date_match = re.search(r'(\d{1,2})[–-]\s*(\d{1,2})\s+(ноября|декабря)\s+(\d{4})', line)
             if date_match:
-                start_date = f"{year}-12-{int(date_match.group(1)):02d}"
-                end_date = f"{year}-12-{int(date_match.group(2)):02d}"
+                month_num = {"ноября": 11, "декабря": 12}[date_match.group(3)]
+                start_date = f"{year}-{month_num:02d}-{int(date_match.group(1)):02d}"
+                end_date = f"{year}-{month_num:02d}-{int(date_match.group(2)):02d}"
                 break
                 
         event_id = f"ER{year}"
         roman = ROMAN_MAP.get(year, "unspecified")
         
         cursor.execute("INSERT OR IGNORE INTO event VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
-                       (event_id, 2, year - 1960, roman, year, theme, None, start_date, end_date, "in_person", 0, None, None, f"https://ancient.ivran.ru/novosti?year={year}", extract_program_last_updated(year, "roerich"), None))
+                       (event_id, 2, year - 1960, roman, year, theme, None, start_date, end_date, "in_person", 0, None, None, prog_url, extract_program_last_updated(year, "roerich"), None))
         
         day_number = 0
         current_day_id = None
@@ -585,11 +589,11 @@ def populate_roerich_talks(conn):
                 day_date = f"{day_match.group(3)}-{int(day_match.group(2)):02d}-{int(day_match.group(1)):02d}"
                 
                 cursor.execute("INSERT OR IGNORE INTO event_day VALUES (?,?,?,?,?,?,?)",
-                               (current_day_id, event_id, day_number, day_date, line, f"https://ancient.ivran.ru/novosti?year={year}", None))
+                               (current_day_id, event_id, day_number, day_date, line, prog_url, None))
                                
                 current_edv_id = f"DVR{year}_{day_number}_1"
                 cursor.execute("INSERT OR IGNORE INTO event_day_venue VALUES (?,?,?,?,?,?,?,?)",
-                               (current_edv_id, current_day_id, "V100", 1, "222 ауд.", "11:00", f"https://ancient.ivran.ru/novosti?year={year}", "IV RAS"))
+                               (current_edv_id, current_day_id, "V100", 1, "222 ауд.", "11:00", prog_url, "IV RAS"))
                 
                 current_session_id = None
                 conn.commit()
@@ -611,10 +615,10 @@ def populate_roerich_talks(conn):
                 if current_edv_id:
                     session_order += 1
                     current_session_id = stable_session_id(
-                        "roerich", year, current_edv_id, sess_title, raw_t, f"https://ancient.ivran.ru/novosti?year={year}", f"{session_order}|{line}"
+                        "roerich", year, current_edv_id, sess_title, raw_t, prog_url, f"{session_order}|{line}"
                     )
                     cursor.execute("INSERT INTO session VALUES (?,?,?,?,?,?,?,?,?,?,?)",
-                                   (current_session_id, current_edv_id, sess_title, "panel", start_t, end_t, raw_t, None, f"https://ancient.ivran.ru/novosti?year={year}", line, room))
+                                   (current_session_id, current_edv_id, sess_title, "panel", start_t, end_t, raw_t, None, prog_url, line, room))
                     conn.commit()
             
             if "модератор" in line.lower() and current_session_id:
@@ -632,27 +636,27 @@ def populate_roerich_talks(conn):
                     current_day_id = f"DR{year}_1"
                     day_date = f"{year}-12-09"
                     cursor.execute("INSERT OR IGNORE INTO event_day VALUES (?,?,?,?,?,?,?)",
-                                   (current_day_id, event_id, 1, day_date, "Понедельник", f"https://ancient.ivran.ru/novosti?year={year}", None))
+                                   (current_day_id, event_id, 1, day_date, "Понедельник", prog_url, None))
                     current_edv_id = f"DVR{year}_1_1"
                     cursor.execute("INSERT OR IGNORE INTO event_day_venue VALUES (?,?,?,?,?,?,?,?)",
-                                   (current_edv_id, current_day_id, "V100", 1, "222 ауд.", "11:00", f"https://ancient.ivran.ru/novosti?year={year}", "IV RAS"))
+                                   (current_edv_id, current_day_id, "V100", 1, "222 ауд.", "11:00", prog_url, "IV RAS"))
                 
                 if not current_session_id:
                     session_order += 1
                     current_session_id = stable_session_id(
-                        "roerich", year, current_edv_id, "Научное заседание", "11:00–18:00", f"https://ancient.ivran.ru/novosti?year={year}", f"{session_order}|Default"
+                        "roerich", year, current_edv_id, "Научное заседание", "11:00–18:00", prog_url, f"{session_order}|Default"
                     )
                     cursor.execute("INSERT INTO session VALUES (?,?,?,?,?,?,?,?,?,?,?)",
-                                   (current_session_id, current_edv_id, "Научное заседание", "panel", "11:00", "18:00", "11:00–18:00", None, f"https://ancient.ivran.ru/novosti?year={year}", "Default", None))
+                                   (current_session_id, current_edv_id, "Научное заседание", "panel", "11:00", "18:00", "11:00–18:00", None, prog_url, "Default", None))
                 
                 pres_id = stable_presentation_id("roerich", year, title_raw, speakers_with_affil[0][0], session_order)
                 is_online_val = 1 if 'онлайн' in line.lower() else 0
                 cursor.execute("INSERT INTO presentation VALUES (?,?,?,?,?,?,?,?,?,?,?)",
-                               (pres_id, current_session_id, title_raw, None, "ru", None, is_online_val, None, f"https://ancient.ivran.ru/novosti?year={year}", line, None))
+                               (pres_id, current_session_id, title_raw, None, "ru", None, is_online_val, None, prog_url, line, None))
                 
                 for order_idx, (speaker_raw, affil_raw) in enumerate(speakers_with_affil, start=1):
-                    person_id = get_or_create_person(conn, speaker_raw, f"https://ancient.ivran.ru/novosti?year={year}")
+                    person_id = get_or_create_person(conn, speaker_raw, prog_url)
                     role = "speaker" if order_idx == 1 else "coauthor"
                     cursor.execute("INSERT INTO presentation_person VALUES (?,?,?,?,?,?,?,?)",
-                                   (pres_id, person_id, role, order_idx, affil_raw, None, f"https://ancient.ivran.ru/novosti?year={year}", None))
+                                   (pres_id, person_id, role, order_idx, affil_raw, None, prog_url, None))
                 conn.commit()

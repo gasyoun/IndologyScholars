@@ -1,0 +1,896 @@
+presentation_id,event_id,year,series,title,l1,l1_conf,l2,l2_conf,l3,l3_conf,l4,l4_conf
+PRES_920f42a4,E2004,2004,Zograf Readings,Деви-гита из Девибхагавата-пураны,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_d22a4e6a,E2004,2004,Zograf Readings,Психология акта самопожертвования в изображении драматургов 7-го века,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_9f6be07a,E2004,2004,Zograf Readings,Литературные реминисценции в «Гаудавахо» Вакпатираджи,literature,1.0,,0.0,,0.0,fundamental,0.0
+PRES_a831b4b9,E2004,2004,Zograf Readings,Проблема интерпретации специальной санскритской терминологии: термин адхьякша в индийской традиции,linguistics,1.0,,0.0,,0.0,fundamental,0.0
+PRES_ac8a171c,E2004,2004,Zograf Readings,Шанкара как критик категорий вайшешики,philosophy,1.0,classical,1.0,,0.0,fundamental,0.0
+PRES_091df98c,E2004,2004,Zograf Readings,Концепция спхоты в «Спхотасиддхи» Манданамишры,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_08ae0d5f,E2004,2004,Zograf Readings,О взаимоотношении религиозных конфессий в средневековом Тамилнаде,,0.0,medieval,1.0,,0.0,fundamental,0.0
+PRES_c7ed4157,E2004,2004,Zograf Readings,О «священной географии» в творчестве Тирунянасамбандара (шиваитский поэтический комплекс «Деварам»),philosophy,0.85,,0.0,,0.0,fundamental,0.0
+PRES_8e72d8e9,E2004,2004,Zograf Readings,Буддизм в творчестве Джаяшанкара Прасада,religion,1.0,classical,1.0,,0.0,fundamental,0.0
+PRES_23fcc75e,E2004,2004,Zograf Readings,Сюжет «Повести о Насикете» Садала Мишры в контексте истории прозы хинди,literature,1.0,modern,1.0,text,1.0,fundamental,0.0
+PRES_fffc5305,E2004,2004,Zograf Readings,Богини и деревья желаний в индуизме Центральных Гималаев,religion,1.0,,0.0,,0.0,fundamental,0.0
+PRES_f6b5ca3d,E2006,2006,Zograf Readings,К проблеме древнеиндийской хронологии,,0.0,,0.0,,0.0,methodological,1.0
+PRES_b2249eb0,E2006,2006,Zograf Readings,Завершающие строфы «Махабхараты»: лексика и семантика,linguistics,1.0,classical,1.0,,0.0,fundamental,0.0
+PRES_6c2c0439,E2006,2006,Zograf Readings,Тема деревни в «Саттасаи»,literature,1.0,,0.0,,0.0,fundamental,0.0
+PRES_83d61a7f,E2006,2006,Zograf Readings,О соотношении санскритского и тибетского текстов «Гимна,tibetology,1.0,,0.0,text,1.0,fundamental,0.0
+PRES_e3d95058,E2006,2006,Zograf Readings,Вытеснение согласного во избежание возникновения тяжелой группы трех шумных согласных в индоиранском,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_3229f04e,E2006,2006,Zograf Readings,Технические приспособления для рубрикации корней в,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_e5db3c22,E2006,2006,Zograf Readings,Представления об обществе и власти в «Бхагавата-пуране»,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_27dd6326,E2006,2006,Zograf Readings,Место «Девибхагавата-пураны» в процессе эволюции шактизма,religion,1.0,,0.0,,0.0,fundamental,0.0
+PRES_3515727e,E2006,2006,Zograf Readings,Изображение и текст: древнеиндийские рельефы и буддийские вербальные тексты,religion,1.0,,0.0,text,0.85,fundamental,0.0
+PRES_a48d03aa,E2006,2006,Zograf Readings,Царь − установитель дхармы. Практический аспект идеологической концепции,religion,1.0,,0.0,,0.0,fundamental,0.0
+PRES_447ccd2a,E2006,2006,Zograf Readings,Некоторые наблюдения над царской титулатурой индо-греков,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_cc5f6c66,E2006,2006,Zograf Readings,Санскритское upa-śru-: «слышать» или «вслушиваться»? Об одном древнеиндийском способе гадания,linguistics,1.0,,0.0,,0.0,fundamental,0.0
+PRES_8f26b9e5,E2006,2006,Zograf Readings,Отряхивающийся ныряльщик: о специфическом фольклорном мотиве в эпических и пуранических версиях «Сказания о Вепре» (Varāha-kathā),literature,1.0,,0.0,,0.0,fundamental,0.0
+PRES_7c39bd4a,E2006,2006,Zograf Readings,Об особенностях самосознания представителей «низких каст» в современных условиях,,0.0,modern,1.0,,0.0,fundamental,0.0
+PRES_f8c2c7bf,E2006,2006,Zograf Readings,Символика и способы почитания богини Тары в индуизме (с демонстрацией видеоматериалов),religion,1.0,,0.0,,0.0,fundamental,0.0
+PRES_dcb1d6f5,E2006,2006,Zograf Readings,Комментарий к комментарию (Г.С.Лебедев и культурная жизнь Калькутты в 1790-х годах),,0.0,,0.0,text,1.0,fundamental,0.0
+PRES_ea8d18b3,E2006,2006,Zograf Readings,Интерпретация идей Упанишад у Раммохона Роя и Дебендронатха Тагора,literature,0.85,vedic,0.85,,0.0,fundamental,0.0
+PRES_49b28904,E2006,2006,Zograf Readings,Безымянный герой (о романах Хазарипрасада Двиведи),literature,1.0,,0.0,,0.0,fundamental,0.0
+PRES_3ec60898,E2006,2006,Zograf Readings,К вопросу о сюжетных и стилистических истоках ранних приключенческих романов на хинди,literature,1.0,modern,1.0,,0.0,fundamental,0.0
+PRES_cfad7c49,E2006,2006,Zograf Readings,Модели христианского и индо-буддийского времени в современной литературе,literature,0.85,modern,1.0,,0.0,fundamental,0.0
+PRES_420e9c61,E2006,2006,Zograf Readings,Индийские философские тексты: композиция как часть содержания,philosophy,1.0,,0.0,text,1.0,fundamental,0.0
+PRES_818b8d4a,E2006,2006,Zograf Readings,Механизмы передачи сакрального текста в школах раннего буддизма (К постановке проблемы),religion,1.0,,0.0,text,1.0,fundamental,0.0
+PRES_747d61c4,E2006,2006,Zograf Readings,Бхартрихари и Дхармакирти о возможности рефлексивного акта познания,religion,1.0,,0.0,,0.0,fundamental,0.0
+PRES_5e122b1b,E2006,2006,Zograf Readings,Тема уточняется,literature,1.0,,0.0,,0.0,fundamental,0.0
+PRES_23abf628,E2006,2006,Zograf Readings,«Ādau vāda āsīt»: о переводах Библии на санскрит,linguistics,1.0,,0.0,text,1.0,fundamental,0.0
+PRES_6061e2e5,E2007,2007,Zograf Readings,Санскритское письмо как последовательная фонетическая транскрипция,linguistics,1.0,,0.0,,0.0,fundamental,0.0
+PRES_c4a95228,E2007,2007,Zograf Readings,«Великие» и «малые» в надписях Ашоки,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_7e8f1029,E2007,2007,Zograf Readings,«Очерки Цейлона и Индии» И. П. Минаева как источник по изучению культурной истории Индии,history,1.0,,0.0,,0.0,fundamental,0.0
+PRES_58f3d883,E2007,2007,Zograf Readings,Описания военной техники в индийском сочинении XI века «Шри Калачакра тантра раджа»,religion,1.0,medieval,1.0,,0.0,fundamental,0.0
+PRES_9c12145b,E2007,2007,Zograf Readings,От смерти к новому рождению. Учение о промежуточном существовании в «Абхидхармакоше» Васубандху,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_869fc621,E2007,2007,Zograf Readings,В чем непосредственность непосредственного восприятия в буддийской эпистемологии?,philosophy,0.85,,0.0,,0.0,fundamental,0.0
+PRES_bbce25c3,E2007,2007,Zograf Readings,Философ Нагарджуна – персонаж пракритского романа «Лилаваи»,literature,1.0,,0.0,,0.0,fundamental,0.0
+PRES_211b356c,E2007,2007,Zograf Readings,«Гимн Таре» Сарваджнямитры и его тибетские переводы,tibetology,1.0,,0.0,text,1.0,fundamental,0.0
+PRES_eb09fb04,E2007,2007,Zograf Readings,К вопросу о статусе «естественного описания» в индийской поэтике,literature,1.0,,0.0,,0.0,fundamental,0.0
+PRES_61efc627,E2007,2007,Zograf Readings,Сезонный и суточный циклы в санскритской драме (структура санскритской драмы),linguistics,1.0,,0.0,,0.0,fundamental,0.0
+PRES_eaf99217,E2007,2007,Zograf Readings,Плач в составе древней махакавьи,literature,1.0,classical,1.0,,0.0,fundamental,0.0
+PRES_bc00c93c,E2007,2007,Zograf Readings,О быках и людях (Образ «Стада» в скотоводческом эпосе Южной Индии),literature,1.0,classical,1.0,,0.0,fundamental,0.0
+PRES_1c56a045,E2007,2007,Zograf Readings,Индийские памятники героям в сравнительном освещении (К вопросу о материальном соответствии поэтической формуле «непреходящая слава»),art_archaeology,1.0,,0.0,artefact,1.0,fundamental,0.0
+PRES_1fcf5a72,E2007,2007,Zograf Readings,К вопросу об эндогамии касты,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_45b62019,E2007,2007,Zograf Readings,Миф о Махишасурамардани в Девибхагавата- и Калика-пуранах,religion,1.0,,0.0,,0.0,fundamental,0.0
+PRES_57d733e8,E2007,2007,Zograf Readings,«Мадхан-кам» – народная драма Северной Бенгалии (с демонстрацией видеоматериалов),linguistics,1.0,modern,1.0,,0.0,fundamental,0.0
+PRES_a19a2614,E2007,2007,Zograf Readings,«Рассказ о рани Кетаки» Инш-алла Хана в контексте развития ранней прозы на хинди и урду,linguistics,0.85,modern,1.0,text,1.0,fundamental,0.0
+PRES_800b83e3,E2007,2007,Zograf Readings,Дидактические шатаки в литературе телугу (К характеристике жанровых особенностей),literature,1.0,,0.0,,0.0,fundamental,0.0
+PRES_4c37397a,E2007,2007,Zograf Readings,Некоторые проблемы становления вишишта-адвайты,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_b06d3a16,E2007,2007,Zograf Readings,Язык как источник аргументации (на примере рассуждений о самбандхе),linguistics,0.85,,0.0,,0.0,fundamental,0.0
+PRES_0954ae8b,E2007,2007,Zograf Readings,Теоретические аспекты учения тантрической школы кула (согласно «Куларнава-тантре»),religion,1.0,medieval,1.0,,0.0,fundamental,0.0
+PRES_ad4e9097,E2007,2007,Zograf Readings,Образ Чайтаньи в традиционных бенгальских текстах,linguistics,0.85,modern,1.0,text,1.0,fundamental,0.0
+PRES_bfd49e24,E2007,2007,Zograf Readings,Лингвофилософское в «Пара-тримшика-виварана» Абхинавагупты,philosophy,1.0,classical,1.0,,0.0,fundamental,0.0
+PRES_d93a83cf,E2010,2010,Zograf Readings,«Рагхуванша» Калидасы глазами тамилиста,,0.0,classical,1.0,,0.0,fundamental,0.0
+PRES_630be828,E2010,2010,Zograf Readings,Царица в дворцовом парке,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_bed347e3,E2010,2010,Zograf Readings,«Археология» раннебуддийского доктринального текста на примере главы о буддхакшетрах («полях Будд») из Махавасту,history,0.85,,0.0,text,1.0,fundamental,0.0
+PRES_f79250fa,E2010,2010,Zograf Readings,Миф о Ветале и Бхайраве в «Калика-пуране»,religion,1.0,,0.0,,0.0,fundamental,0.0
+PRES_daf846e5,E2010,2010,Zograf Readings,Сравнительный анализ генезиса рефлексии в индийской и европейской философских традициях: визуальные и лингвистические детерминанты,philosophy,1.0,,0.0,,0.0,fundamental,0.0
+PRES_f76d178c,E2010,2010,Zograf Readings,Потенциальное и актуальное в буддийском учении о восприятии,religion,1.0,,0.0,,0.0,fundamental,0.0
+PRES_fab252aa,E2010,2010,Zograf Readings,Проблема уникальности природы человеческой души в философской системе Ямуначарьи,philosophy,1.0,,0.0,,0.0,fundamental,0.0
+PRES_04d7c778,E2010,2010,Zograf Readings,Индийский эпос «Дхола-Мару» и «Сказка о царе Салтане» А.С.Пушкина,literature,1.0,classical,1.0,,0.0,fundamental,0.0
+PRES_c48cf519,E2010,2010,Zograf Readings,Концепция игры в индийской традиции (кридаяника в «Натьяшастре»),,0.0,,0.0,,0.0,fundamental,0.0
+PRES_141ded21,E2010,2010,Zograf Readings,Ордалия раскаленной монетой (taptamàşa): текст и реальность,,0.0,,0.0,text,0.85,fundamental,0.0
+PRES_f82cda7b,E2010,2010,Zograf Readings,Mārgī/deśī: о двух способах интерпретации индийского танца,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_ee3bcbd5,E2011,2011,Zograf Readings,Тема весны в старой тамильской поэзии,literature,1.0,,0.0,,0.0,fundamental,0.0
+PRES_e1ef4b4b,E2011,2011,Zograf Readings,О композиции вступительных глав «Сказания о Шакунтале»,art_archaeology,1.0,,0.0,artefact,1.0,fundamental,0.0
+PRES_fc656e63,E2011,2011,Zograf Readings,Прием почетного гостя-атитхи по материалам древнеиндийских ритуальных текстов,religion,1.0,,0.0,text,1.0,fundamental,0.0
+PRES_d58ac091,E2011,2011,Zograf Readings,Индия в поэзии йафиитов (Южная Аравия),literature,1.0,,0.0,,0.0,fundamental,0.0
+PRES_43ebab27,E2011,2011,Zograf Readings,Существует ли психофизическая проблема (mind-body problem) в буддизме?,religion,1.0,,0.0,,0.0,fundamental,0.0
+PRES_37ea1d7c,E2011,2011,Zograf Readings,Метафора в «Махабхарате»,,0.0,classical,1.0,,0.0,fundamental,0.0
+PRES_5e04c215,E2011,2011,Zograf Readings,Драупади в Зале собрания (роль бога Дхармы),religion,1.0,,0.0,,0.0,fundamental,0.0
+PRES_0e595f77,E2011,2011,Zograf Readings,Интерпретация учения об аватарах Вишну в «Девибхагавата-пуране»,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_9b43f028,E2011,2011,Zograf Readings,Поэтические жанры индийской литературы в тибетском буддийском каноне,tibetology,1.0,,0.0,,0.0,fundamental,0.0
+PRES_971bcae9,E2011,2011,Zograf Readings,Об изучении четвертой главы «Абхисамая-аланкары»,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_a54c7a6a,E2011,2011,Zograf Readings,Интерпретация символов ‘ом’ и ‘сиддхам’ в мангала-шлоках санскритских рукописей,linguistics,1.0,,0.0,text,0.85,fundamental,0.0
+PRES_8d1cd3aa,E2011,2011,Zograf Readings,Проблема энергии в тантре,religion,1.0,medieval,1.0,,0.0,fundamental,0.0
+PRES_532e4753,E2011,2011,Zograf Readings,Энергийный прагматизм в тамильской культуре,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_19d8162e,E2011,2011,Zograf Readings,Некоторые аспекты полемического дискурса в индийских религиозно-философских традициях,philosophy,1.0,,0.0,,0.0,fundamental,0.0
+PRES_91eaaa2e,E2011,2011,Zograf Readings,Samarasa и svasamvedya в абхишека-патале Хеваджра-тантры согласно Муктавалихеваджрапаньджике Ратнакарашанти,religion,1.0,medieval,1.0,,0.0,fundamental,0.0
+PRES_9f52c109,E2011,2011,Zograf Readings,Другой в традиции индуизма и философии Бенгальского Возрождения: Опыт сопоставления,linguistics,0.8,modern,1.0,,0.0,fundamental,0.0
+PRES_399ec7a6,E2011,2011,Zograf Readings,Санскритизация и философские проблемы языковой политики,linguistics,1.0,,0.0,,0.0,fundamental,0.0
+PRES_11377a5e,E2011,2011,Zograf Readings,Рабиндранат Тагор: уровни поэтического высказывания,literature,1.0,modern,1.0,,0.0,fundamental,0.0
+PRES_226ea2f7,E2011,2011,Zograf Readings,Словесные фигуры и принцип «непрямого высказывания» (вакрокти) в средневековой поэтике,literature,1.0,medieval,1.0,,0.0,fundamental,0.0
+PRES_9c7399d6,E2011,2011,Zograf Readings,«Ярость» Рушди,literature,1.0,modern,1.0,,0.0,fundamental,0.0
+PRES_7eb58580,E2011,2011,Zograf Readings,«Будда из пригорода» Ханифа Курейши: иммигрантский текст индо-британской литературы,literature,1.0,,0.0,text,1.0,fundamental,0.0
+PRES_6306a86d,E2011,2011,Zograf Readings,Концепт svadharma в кастовой идеологии,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_fd2aece3,E2011,2011,Zograf Readings,Мифологии северных мунда как источник для реконструкции сюжета создания человека у населения евразийских степей в эпоху бронзы,literature,0.8,,0.0,,0.0,fundamental,0.0
+PRES_d37ce91f,E2011,2011,Zograf Readings,Половозрастная стратификация общества в ведийских текстах,religion,1.0,vedic,1.0,text,1.0,fundamental,0.0
+PRES_2b083ca8,E2011,2011,Zograf Readings,"«Юные» в окружении царя Раджасинхи II—го (XVII век, Шри Ланка)",,0.0,,0.0,,0.0,fundamental,0.0
+PRES_83b062c0,E2011,2011,Zograf Readings,Герасим Лебедев и британская элита колониальной Калькутты,,0.0,colonial,1.0,,0.0,fundamental,0.0
+PRES_d0193c36,E2011,2011,Zograf Readings,О первых христианских миссионерах в Индии,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_96ca04c8,E2011,2011,Zograf Readings,Глава о надзирателе за архивом в «Артхашастре» Каутильи в контексте информации надписей времени Гуптов,history,1.0,,0.0,text,0.85,fundamental,0.0
+PRES_d533f5af,E2011,2011,Zograf Readings,Саттрия: рождение нового индийского классического танца в Ассаме,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_e79a95a1,E2012,2012,Zograf Readings,«Рамаяна»  в драме Бхавабхути «Последние деяния Рамы»,literature,1.0,classical,1.0,,0.0,fundamental,0.0
+PRES_e8eb2449,E2012,2012,Zograf Readings,Практики движения праны в текстах кашмирских авторов,,0.0,,0.0,text,0.85,fundamental,0.0
+PRES_d3f5e3d8,E2012,2012,Zograf Readings,Особенности композиции «Апастамба-дхармасутры»,religion,1.0,,0.0,,0.0,fundamental,0.0
+PRES_516e0951,E2012,2012,Zograf Readings,Агамический текст как способ самоопределения ведической традиции (на примере «Шива сутры»),,0.0,,0.0,text,1.0,fundamental,0.0
+PRES_8b51545e,E2012,2012,Zograf Readings,Версия мифа о Вритре в «Девибхагаватапуране»,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_c2127c29,E2012,2012,Zograf Readings,Еще раз о теме разлуки в тамильской поэзии,literature,1.0,,0.0,,0.0,fundamental,0.0
+PRES_38d4f35c,E2012,2012,Zograf Readings,Дискуссия о значении термина анангу в тамильской литературе,literature,1.0,,0.0,,0.0,fundamental,0.0
+PRES_1630a310,E2012,2012,Zograf Readings,Текст по культу Ваджрапани и восьми царей нагов в свитке XIII века Дх-178 из собрания ИВР РАН,,0.0,,0.0,text,1.0,fundamental,0.0
+PRES_a3c90f7f,E2012,2012,Zograf Readings,"Ян Потоцкий и тибетская рукопись, найденная в Калмыкии",tibetology,1.0,,0.0,text,0.85,fundamental,0.0
+PRES_251ba409,E2012,2012,Zograf Readings,Непосредственное восприятие как знание из слов по материалам «Веданта-парибхаши» Дхармараджи,religion,1.0,,0.0,,0.0,fundamental,0.0
+PRES_b24bfaf6,E2012,2012,Zograf Readings,Матрики вне буддийских текстов,religion,1.0,,0.0,text,1.0,fundamental,0.0
+PRES_4778ea8f,E2012,2012,Zograf Readings,Две парадигмы монизма в интерпретации «Бхагавадгиты»: Шанкара и Рамануджа,philosophy,1.0,classical,1.0,,0.0,fundamental,0.0
+PRES_38a7aad6,E2012,2012,Zograf Readings,Г. Оберхаммер и его принципы изучения религиозно-философских текстов школы вишишта-адвайта-веданты,philosophy,1.0,,0.0,text,1.0,fundamental,0.0
+PRES_45a28bad,E2012,2012,Zograf Readings,Формула «бхукти — мукти» и сотериологический антиномизм индуистской тантры,religion,1.0,medieval,1.0,,0.0,fundamental,0.0
+PRES_4a9195e3,E2012,2012,Zograf Readings,Эволюция буддистского учения о не-«я»: две концепции анатмавады,religion,1.0,,0.0,,0.0,fundamental,0.0
+PRES_a6954cf5,E2012,2012,Zograf Readings,Дхарма и буддология. Актуальные проблемы,religion,1.0,,0.0,,0.0,fundamental,0.0
+PRES_ace875b8,E2012,2012,Zograf Readings,Образ индуизма в религиозно-философской мысли Бенгальского Ренессанса,linguistics,0.77,modern,1.0,,0.0,fundamental,0.0
+PRES_d5ced50a,E2012,2012,Zograf Readings,Загадки поэмы Джаяси «Падмават»,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_cb0b06a1,E2012,2012,Zograf Readings,«Кадамбари» в современном мире,,0.0,modern,1.0,,0.0,fundamental,0.0
+PRES_a4624b92,E2012,2012,Zograf Readings,Эволюция жанра шахрашуб в контексте взаимодействия персоязычной литературы и литературы урду,literature,1.0,,0.0,text,1.0,fundamental,0.0
+PRES_8f5fd441,E2012,2012,Zograf Readings,«Третье измерение» в непальской поэзии,literature,1.0,,0.0,,0.0,fundamental,0.0
+PRES_33345b20,E2012,2012,Zograf Readings,Индия и индийцы в автобиографической книге  В. С. Найпола «The Writer's People»,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_105d5dbe,E2012,2012,Zograf Readings,Символические фигуры «Ригведы» (на примере  гимна «К Речи»),,0.0,,0.0,,0.0,fundamental,0.0
+PRES_e957db9d,E2012,2012,Zograf Readings,Осел/бык в индоиранской картине мира,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_f257552d,E2012,2012,Zograf Readings,Чудесный сосуд Манимехалей: попытка интерпретации,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_8e1f8ee8,E2012,2012,Zograf Readings,Неварский «повествовательный свиток» в собрании  МАЭ РАН (коллекция И. П. Минаева). Предварительное сообщение,literature,0.85,,0.0,archive,1.0,fundamental,0.0
+PRES_ec6f0d71,E2012,2012,Zograf Readings,Живая традиция ритуальных росписей Питхоро в Гуджарате: полевые данные 2012 г,religion,1.0,,0.0,fieldwork,1.0,fundamental,0.0
+PRES_605ce7b2,E2012,2012,Zograf Readings,«Юный» как представитель измененного состояния сознания,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_f94ec3ef,E2012,2012,Zograf Readings,Особенности календарной обрядности у раджпутов,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_8fdcd593,E2012,2012,Zograf Readings,"«Бенгальский стиль» в индийском танце: традиционное, креативное, политическое измерения",linguistics,1.0,modern,1.0,,0.0,fundamental,0.0
+PRES_e650e050,E2013,2013,Zograf Readings,Страсти и бесстрастие Бхартирихари,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_5636b8e4,E2013,2013,Zograf Readings,История Агададатты в романе Сангхадасы «Странствия Васудевы»,literature,0.85,,0.0,,0.0,fundamental,0.0
+PRES_de3ddb23,E2013,2013,Zograf Readings,Жемчужный остров в «Девибхагавата-пуране»,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_dd039883,E2013,2013,Zograf Readings,Буддийские рукописи в Индийском фонде ИВР РАН,religion,1.0,,0.0,text,0.85,fundamental,0.0
+PRES_f31c93a6,E2013,2013,Zograf Readings,Образ Махендры/Махинды в записках китайских паломников,literature,1.0,,0.0,,0.0,fundamental,0.0
+PRES_454deb18,E2013,2013,Zograf Readings,Эпитеты Будды в тексте «Аджатасена-вьякараны»,,0.0,,0.0,text,1.0,fundamental,0.0
+PRES_0fe185dc,E2013,2013,Zograf Readings,Тамильские женские божества в средневековой литературе,literature,0.85,medieval,1.0,,0.0,fundamental,0.0
+PRES_b1e1dd3e,E2013,2013,Zograf Readings,"Садханы Харихарихаривахана-Авалокитешвары (Авалокитешвары, восседающего на Вишну, гаруде и льве) из тибетского буддийского канона",religion,1.0,,0.0,,0.0,fundamental,0.0
+PRES_32f2e12d,E2013,2013,Zograf Readings,Проблема языка в веданте и европейском романтизме,linguistics,0.8,,0.0,,0.0,fundamental,0.0
+PRES_bec8d3e7,E2013,2013,Zograf Readings,"Варна – это фонема, буква, звук или …?",,0.0,,0.0,,0.0,fundamental,0.0
+PRES_8b3b9e6f,E2013,2013,Zograf Readings,Классификация наук в традиционной индийской культуре,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_a5524d97,E2013,2013,Zograf Readings,Восьмиугольные понятийные схемы в индийской рациональности,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_e3e4dd7f,E2013,2013,Zograf Readings,Читта и бодхичитта. Раздумья о переводе некоторых буддийских терминов,religion,1.0,,0.0,text,1.0,fundamental,0.0
+PRES_eca42271,E2013,2013,Zograf Readings,Представление о Брахмане в ранней вишишта-адвайте,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_9c006d7d,E2013,2013,Zograf Readings,Концепт «майя» у Шанкары и Абхинавагупты: сходство и различие,,0.0,classical,1.0,,0.0,fundamental,0.0
+PRES_dcf93074,E2013,2013,Zograf Readings,Элементы культурного синтеза в бенгальской поэзии XVII века,linguistics,0.85,modern,1.0,,0.0,fundamental,0.0
+PRES_5150db33,E2013,2013,Zograf Readings,Образ Кришны в поэзии Миры Баи,literature,1.0,,0.0,,0.0,fundamental,0.0
+PRES_94d7ae49,E2013,2013,Zograf Readings,«Открытие Индии» сквозь призму традиционного текста: опыт мыслителей Бенгальского Возрождения,linguistics,1.0,modern,1.0,text,1.0,fundamental,0.0
+PRES_6016ca94,E2013,2013,Zograf Readings,Реальное и ирреальное в «„Новой поэзии“ хинди»,linguistics,0.85,modern,1.0,,0.0,fundamental,0.0
+PRES_27b358fd,E2013,2013,Zograf Readings,Причастие-герундий в хинди и бенгальском языке,linguistics,1.0,modern,1.0,,0.0,fundamental,0.0
+PRES_c460301d,E2013,2013,Zograf Readings,О формульности надписей на санскрите,linguistics,1.0,,0.0,,0.0,fundamental,0.0
+PRES_bcfa1180,E2013,2013,Zograf Readings,О символическом языке вещей,linguistics,1.0,,0.0,,0.0,fundamental,0.0
+PRES_9f3a0ccb,E2013,2013,Zograf Readings,Герасим Лебедев и британская элита колониальной Калькутты: момент разрыва,,0.0,colonial,1.0,,0.0,fundamental,0.0
+PRES_b87959e9,E2013,2013,Zograf Readings,Современные баулы: от деревни до концертного зала,,0.0,modern,1.0,,0.0,fundamental,0.0
+PRES_dd122252,E2013,2013,Zograf Readings,Современное искусство адиваси: некоторые особенности музейной репрезентации в Индии и Европе,ethnography,1.0,modern,1.0,,0.0,fundamental,0.0
+PRES_5f44c698,E2013,2013,Zograf Readings,Образ Локешвара в календарном обряде непальцев,literature,1.0,,0.0,,0.0,fundamental,0.0
+PRES_5d99c188,E2013,2013,Zograf Readings,"Материальные атрибуты (лук, стрелы, топорик) как этнические символы автохтонов Шри Ланки",,0.0,,0.0,,0.0,fundamental,0.0
+PRES_582afc76,E2013,2013,Zograf Readings,Айодхья через 20 лет после конфликта: о современных проявлениях индуистского фундаментализма (наблюдения и немного размышлений),religion,1.0,modern,1.0,,0.0,fundamental,0.0
+PRES_1ec8176f,E2013,2013,Zograf Readings,"«Песни якшей», игры людей: о социальных, культурных и художественных особенностях якшаганы Карнатаки",,0.0,,0.0,,0.0,fundamental,0.0
+PRES_050a152c,E2014,2014,Zograf Readings,Абхидхармакоша: проблема авторства,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_e53cbcbb,E2014,2014,Zograf Readings,И. П. Минаев как собиратель рукописей,,0.0,,0.0,text,0.85,fundamental,0.0
+PRES_5edccc61,E2014,2014,Zograf Readings,Ранние китайские версии биографии Будды: сюжет подношения рисовой каши,literature,1.0,,0.0,,0.0,fundamental,0.0
+PRES_5e1e0eed,E2014,2014,Zograf Readings,"О гимне Авалокитешваре, приписываемом тибетскому царю Сонгцэн-гампо",tibetology,1.0,,0.0,,0.0,fundamental,0.0
+PRES_8c319c1e,E2014,2014,Zograf Readings,What is Ahi Budhnya: some remarks on the Serpent of the Deep as in the Rigveda and elsewhere,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_b1b092bf,E2014,2014,Zograf Readings,"The ideal man in the Mahābhārata. The consciousness of the ""budhyamāna"" on one's way to salvation",,0.0,,0.0,,0.0,fundamental,0.0
+PRES_1ca13c4b,E2014,2014,Zograf Readings,Древнеиндийская риторика и традиция санскритского театра (Тригата в «Натьяшастре»),linguistics,1.0,,0.0,,0.0,fundamental,0.0
+PRES_a663501a,E2014,2014,Zograf Readings,Концепция аватар Вишну в поэме Магхи «Шишупалавадха»,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_b3e495f1,E2014,2014,Zograf Readings,Версия «Рамаяны» в «Махабхагавата-пуране»,literature,1.0,classical,1.0,,0.0,fundamental,0.0
+PRES_8de60bcb,E2014,2014,Zograf Readings,Тангутские ксилографы письмом ‘сиддхам’ из собрания ИВР РАН,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_f29a5cbe,E2014,2014,Zograf Readings,«Апофатический» подход в буддийской теории восприятия,religion,1.0,,0.0,,0.0,methodological,1.0
+PRES_b0ee93bb,E2014,2014,Zograf Readings,"Мандала-классификация нечестных трансакций в ответ на упрек (Ангуттара-никая. Аттаканипата, Ассаколанкасутта)",,0.0,,0.0,,0.0,fundamental,0.0
+PRES_685e6130,E2014,2014,Zograf Readings,Психология Бога в кашмирском шиваизме и у Якоба Беме,philosophy,0.85,,0.0,,0.0,fundamental,0.0
+PRES_8f6ad883,E2014,2014,Zograf Readings,"Спхота, джати, пашьянти и пратибха в «Вакьяпадии» — к проблеме разграничения терминов",,0.0,,0.0,,0.0,methodological,1.0
+PRES_d1dec2d6,E2014,2014,Zograf Readings,«Стотра-ратна» Ямуны: философия vis-à-vis поэзия,philosophy,0.85,,0.0,,0.0,fundamental,0.0
+PRES_22a8b7b0,E2014,2014,Zograf Readings,Южноиндийские божества: некоторые аспекты гендерных взаимоотношений,religion,1.0,,0.0,,0.0,fundamental,0.0
+PRES_fc7a4051,E2014,2014,Zograf Readings,Животный мир пословиц и поговорок хинди,linguistics,1.0,modern,1.0,,0.0,fundamental,0.0
+PRES_38f8dfbb,E2014,2014,Zograf Readings,Традиционная классификация санскритских стихотворных размеров,linguistics,1.0,,0.0,,0.0,fundamental,0.0
+PRES_79ef12eb,E2014,2014,Zograf Readings,«Лирическая героиня» Миры Баи,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_9a0fe8e4,E2014,2014,Zograf Readings,Форма смыслового глагола в модальных конструкциях возможности/способности в хинди,linguistics,1.0,modern,1.0,,0.0,fundamental,0.0
+PRES_ff864906,E2014,2014,Zograf Readings,Феномен Рамакришны Парамахамсы и формирование неоиндуизма в Бенгалии XIX века,linguistics,0.85,colonial,0.85,,0.0,fundamental,0.0
+PRES_473bfef5,E2014,2014,Zograf Readings,Религия как инструмент внутренней политики Индии,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_d69d050b,E2014,2014,Zograf Readings,Гимн-падигам как основная форма поэзии тамильских шиваитов,literature,0.85,,0.0,,0.0,fundamental,0.0
+PRES_2d9cf481,E2014,2014,Zograf Readings,Значение творчества Тирумулара для формирования изобразительного канона Шивы Натараджи в Чидамбараме,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_9cdb71b7,E2014,2014,Zograf Readings,К реконструкции ритуальной семантики дравидского kāvaṭi,religion,1.0,,0.0,,0.0,fundamental,0.0
+PRES_2ab964ce,E2014,2014,Zograf Readings,Древние южноазиатско-африканские связи (по данным фольклора и мифологии),literature,0.85,,0.0,,0.0,fundamental,0.0
+PRES_f9eac97d,E2014,2014,Zograf Readings,Концепция «марьяда» в непальских надписях,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_bd52cd90,E2014,2014,Zograf Readings,Хити/дхара — «неиссякаемый источник»: Иконография и функции (по материалам Непала),history,0.85,,0.0,artefact,1.0,fundamental,0.0
+PRES_11dedb1f,E2014,2014,Zograf Readings,Неварский «повествовательный свиток» на темы «Лалитавистары»: «одомашнивание» классической буддийской сутры,literature,0.85,,0.0,,0.0,fundamental,0.0
+PRES_6f36452a,E2014,2014,Zograf Readings,Брахманы намбудири: некоторые особенности традиции передачи ведийских текстов,religion,1.0,vedic,1.0,text,1.0,fundamental,0.0
+PRES_b1cf1496,E2014,2014,Zograf Readings,Грамматика Панини и механизм кодирования ведийского текста,linguistics,1.0,vedic,0.85,text,1.0,fundamental,0.0
+PRES_42dff96e,E2014,2014,Zograf Readings,В деревне Ампития (Шри Ланка) через 100 лет после Людмилы Мерварт,history,1.0,colonial,1.0,,0.0,fundamental,0.0
+PRES_8e5cf89c,E2014,2014,Zograf Readings,О стереотипизации адиваси в популярной культуре Индии,ethnography,1.0,,0.0,,0.0,fundamental,0.0
+PRES_98e6dcdc,E2014,2014,Zograf Readings,Община парсов в мультикультурном Бомбее (по произведениям Рохинтона Мистри),,0.0,modern,1.0,,0.0,fundamental,0.0
+PRES_2eec136d,E2014,2014,Zograf Readings,Духи умерших в представлениях и обрядовой жизни веддов Шри Ланки,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_170689d0,E2014,2014,Zograf Readings,"Одержимость, служение и лицедейство. Традиции Bhoota-kolam и Theyyam Тулунаду",,0.0,,0.0,,0.0,fundamental,0.0
+PRES_347397b5,E2014,2014,Zograf Readings,", Dr. Prof., Head of the department for Indian Philology and Religion, Cotman University (Panama). Nâgârjuna - tetraktus & catuskotis - Pythagorean sources of Buddhism",,0.0,,0.0,,0.0,fundamental,0.0
+PRES_47afe338,E2018,2018,Zograf Readings,101 синоним воды в ведийском словаре «Нигханту»,religion,1.0,vedic,1.0,,0.0,fundamental,0.0
+PRES_355a0f54,E2018,2018,Zograf Readings,Мантра и сутра как форма построения ведийских текстов,religion,1.0,vedic,1.0,text,1.0,fundamental,0.0
+PRES_ebd20d36,E2018,2018,Zograf Readings,От демонической к человеческой сексуальности? Индо-иранский миф о первобытном инцесте Ями и Ямы и его индоевропейские корни,religion,1.0,,0.0,,0.0,fundamental,0.0
+PRES_4f7c7130,E2018,2018,Zograf Readings,Женские образы древнеиндийского эпоса и позднейшего фольклора на фоне норм дхармашастры,literature,1.0,classical,1.0,,0.0,fundamental,0.0
+PRES_3d322c48,E2018,2018,Zograf Readings,Оговорка как композиционный прием в санскритской драме,linguistics,1.0,,0.0,,0.0,fundamental,0.0
+PRES_d055381a,E2018,2018,Zograf Readings,Индийские истоки тибетской историографии буддизма,tibetology,1.0,,0.0,,0.0,fundamental,0.0
+PRES_ca58bb2a,E2018,2018,Zograf Readings,"Будда Дипанкара, идущий по дороге. Сюжеты пророчества в ранней буддийской литературе",literature,1.0,,0.0,,0.0,fundamental,0.0
+PRES_40018c94,E2018,2018,Zograf Readings,Обучение Бодхисаттвы в «Лалитавистаре»,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_3d1372b9,E2018,2018,Zograf Readings,О джатакаставе как разновидности буддийского гимна,religion,1.0,,0.0,,0.0,fundamental,0.0
+PRES_bc382c4b,E2018,2018,Zograf Readings,"Источники сознания, компоненты познавательного акта и учение о трех мирах в Абхидхарма-самуччае Асанги",history,1.0,,0.0,,0.0,fundamental,0.0
+PRES_a932a8e8,E2018,2018,Zograf Readings,Путешествие И. П. Минаева в Непал: обстоятельства и результаты,history,1.0,,0.0,,0.0,fundamental,0.0
+PRES_af12b4e1,E2018,2018,Zograf Readings,«Мысленный эксперимент» Васубандху,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_f996fe9d,E2018,2018,Zograf Readings,«Функциональный подход» в «Вакьяпадии» и артхакрия в философии Дхармакирти,philosophy,0.85,,0.0,,0.0,methodological,1.0
+PRES_b42464b8,E2018,2018,Zograf Readings,"Содержательное обоснование  порядка в перечне прамей  (Ньяя-сутра, Ньяя-бхашья)",philosophy,1.0,,0.0,,0.0,fundamental,0.0
+PRES_1df62a8d,E2018,2018,Zograf Readings,Роль мифов о творении мира в индийской философии,philosophy,1.0,,0.0,,0.0,fundamental,0.0
+PRES_4d2f52dd,E2018,2018,Zograf Readings,Вьявахара как универсум установления достоверности знания в индийской эпистемологии и логике (праманаваде),philosophy,1.0,,0.0,,0.0,fundamental,0.0
+PRES_c09885b3,E2018,2018,Zograf Readings,Концепция причинности в текстах «Абхидхамма-питаки»,,0.0,,0.0,text,1.0,fundamental,0.0
+PRES_a7394fc0,E2018,2018,Zograf Readings,Индуистская тантрическая телеология,religion,1.0,medieval,1.0,,0.0,fundamental,0.0
+PRES_d2f2ba28,E2018,2018,Zograf Readings,Тантра в учении Ошо,religion,1.0,medieval,1.0,,0.0,fundamental,0.0
+PRES_e2097a06,E2018,2018,Zograf Readings,Учение д-ра Маханамбраты Брахмачари как квинтэссенция идей бенгальского ренессанса и его влияние на Томаса Мертона,linguistics,1.0,modern,1.0,,0.0,fundamental,0.0
+PRES_66543577,E2018,2018,Zograf Readings,История индийской философии глазами Свами Вивекананды: опыт реконструкции,philosophy,0.85,,0.0,,0.0,fundamental,0.0
+PRES_7a501c8c,E2018,2018,Zograf Readings,Сравнительный анализ образов сакрального в тамильских храмовых мифах и в сказах П. П. Бажова,religion,1.0,,0.0,artefact,1.0,fundamental,0.0
+PRES_95da6f47,E2018,2018,Zograf Readings,Формулы и заимствования в средневековой лирике бхакти,philosophy,0.85,medieval,1.0,,0.0,fundamental,0.0
+PRES_d38fd8cc,E2018,2018,Zograf Readings,«Чариягити» и Тагор,literature,1.0,modern,1.0,,0.0,fundamental,0.0
+PRES_8287c5bd,E2018,2018,Zograf Readings,Родство по крови и родство по духу: М. К. Ганди о мотивах отказа Арджуны от сражения,literature,1.0,,0.0,,0.0,fundamental,0.0
+PRES_b1e75075,E2018,2018,Zograf Readings,Семантика терминологии родства в малых дравидийских языках: когнитивные аспекты,linguistics,1.0,,0.0,,0.0,fundamental,0.0
+PRES_e0927b20,E2018,2018,Zograf Readings,Борьба за собственный язык в Ладакхе (на материале полевых исследований),linguistics,1.0,,0.0,fieldwork,1.0,fundamental,0.0
+PRES_9bf12d4b,E2018,2018,Zograf Readings,Два новых сборника «индийских текстов» Далджита Награ,,0.0,,0.0,text,1.0,fundamental,0.0
+PRES_f1f31cb5,E2018,2018,Zograf Readings,«Экологический» роман Махуа Маджи,literature,1.0,,0.0,,0.0,fundamental,0.0
+PRES_c5acbcc9,E2018,2018,Zograf Readings,Современные интерпретации санскритской «Рамаяны» в кино,linguistics,0.85,classical,0.85,,0.0,fundamental,0.0
+PRES_46d4e9c6,E2018,2018,Zograf Readings,Образ жизни в шри-вишнуизме: самашраяна (панчасамскара) и ее основания,literature,1.0,,0.0,,0.0,fundamental,0.0
+PRES_25094949,E2018,2018,Zograf Readings,Культ Рудры-Кхандобы в исследованиях Г. Д. Зонтхаймера  и его индоевропейские параллели,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_3c1d417e,E2018,2018,Zograf Readings,Кумаонский Голудев: локальный вариант индуизма,religion,1.0,,0.0,,0.0,fundamental,0.0
+PRES_4d65b062,E2018,2018,Zograf Readings,Тамильская пьеса о Карне,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_dec79cc8,E2018,2018,Zograf Readings,«Тирумурейканда-пуранам» Умапати Шивачарьи как завершающее звено в формировании тамильского шиваитского канона,philosophy,0.85,,0.0,,0.0,fundamental,0.0
+PRES_085ca0aa,E2018,2018,Zograf Readings,Ведды в современном укладе жизни Шри Ланки,,0.0,modern,1.0,,0.0,fundamental,0.0
+PRES_fbb67547,E2018,2018,Zograf Readings,Музыкальные инструменты в руках богов. К вопросу об иконографических атрибутах в искусстве Индии V—Х вв,religion,0.85,,0.0,artefact,1.0,fundamental,0.0
+PRES_f97af582,E2018,2018,Zograf Readings,Иконография и функции непальских дхара/хити,art_archaeology,1.0,,0.0,artefact,1.0,fundamental,0.0
+PRES_448ae9b6,E2018,2018,Zograf Readings,Меч-посох из собрания МАЭ,,0.0,,0.0,archive,1.0,fundamental,0.0
+PRES_278bb88b,E2018,2018,Zograf Readings,Опись Л. А. Мерварт коллекции № 3015 в собрании МАЭ РАН как образец музейного документа,history,1.0,colonial,1.0,archive,1.0,fundamental,0.0
+PRES_0ce7eabb,E2018,2018,Zograf Readings,Раджа Рави Варма: художник и основатель «Рави Варма Пресс»,art_archaeology,1.0,,0.0,,0.0,fundamental,0.0
+PRES_dacf2ad6,E2018,2018,Zograf Readings,Mārganātyam. Театральная практика и теория «Натьяшастры» сегодня,,0.0,,0.0,fieldwork,1.0,fundamental,0.0
+PRES_18e177b2,E2019,2019,Zograf Readings,Атхарваведа 1.2. (Шаунака): дополнение к переводам,religion,1.0,,0.0,text,1.0,fundamental,0.0
+PRES_80f7d7e7,E2019,2019,Zograf Readings,«Махабхарата» и мотив «заточенных в пещере»,literature,1.0,classical,1.0,,0.0,fundamental,0.0
+PRES_3fc610f3,E2019,2019,Zograf Readings,Реминисценции мифа Вала в припамирском регионе,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_64d41c6b,E2019,2019,Zograf Readings,Боги «из разряда синих» в предании о дарении чаши в «Лалитавистаре»,religion,1.0,,0.0,,0.0,fundamental,0.0
+PRES_11e958ee,E2019,2019,Zograf Readings,Конь без всадника и дерево джамбу: к интерпретации рельефа на восточных воротах Большой Ступы в Санчи,art_archaeology,1.0,,0.0,artefact,1.0,fundamental,0.0
+PRES_73704e51,E2019,2019,Zograf Readings,Четыре народа в «Йогини-тантре»,religion,1.0,medieval,1.0,,0.0,fundamental,0.0
+PRES_375cc6fe,E2019,2019,Zograf Readings,Речь во сне и грезы наяву в классической санскритской драме,linguistics,1.0,,0.0,,0.0,fundamental,0.0
+PRES_b0f702d4,E2019,2019,Zograf Readings,Санскритские очки европейской лингвистики XIX века,linguistics,1.0,colonial,1.0,,0.0,fundamental,0.0
+PRES_944f41fd,E2019,2019,Zograf Readings,Парибхаша  —  интерпретационные правила грамматики Панини,linguistics,1.0,classical,1.0,,0.0,fundamental,0.0
+PRES_8c1ad48d,E2019,2019,Zograf Readings,Индийские и тибетские лингвистические штудии Д. Г. Мессершмидта,tibetology,1.0,,0.0,,0.0,fundamental,0.0
+PRES_78c1c683,E2019,2019,Zograf Readings,Двести лет санскритской лексикографии (1819‒2019),linguistics,1.0,,0.0,,0.0,fundamental,0.0
+PRES_fce35cf2,E2019,2019,Zograf Readings,Британское колониальное чиновничество в литературном наследии Дж. Оруэлла,literature,1.0,colonial,1.0,,0.0,fundamental,0.0
+PRES_a1aaa57a,E2019,2019,Zograf Readings,О предмете индийской философии,philosophy,1.0,,0.0,,0.0,fundamental,0.0
+PRES_7808139f,E2019,2019,Zograf Readings,Категория санграха в буддийском философском дискурсе,philosophy,0.85,,0.0,,0.0,fundamental,0.0
+PRES_161bdf0d,E2019,2019,Zograf Readings,Понятие nirodha в истории буддийской философии,philosophy,0.8,,0.0,,0.0,fundamental,0.0
+PRES_c102614a,E2019,2019,Zograf Readings,Атман как синоним дравьи в «Вакьяпадии» (ВП 3.2.1),,0.0,,0.0,,0.0,fundamental,0.0
+PRES_de1c3345,E2019,2019,Zograf Readings,«Гадья» Рамануджи: венец или крест исследователя философии вишишта-адвайты?,philosophy,1.0,,0.0,,0.0,fundamental,0.0
+PRES_450bc766,E2019,2019,Zograf Readings,Роль Умапати Шивачарьи в формировании окончательной редакции канона шайва-сиддханты,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_5e453d49,E2019,2019,Zograf Readings,Понятие блаженства (ананды) в индуистском тантризме,religion,1.0,medieval,1.0,,0.0,fundamental,0.0
+PRES_ffbd2f7d,E2019,2019,Zograf Readings,«Унмада нирукта». «Безумная этимология»: об особенностях мистической герменевтики тантры (на примере интерпретации первой мангала-шлоки «Тантралоки»),linguistics,0.85,medieval,1.0,,0.0,fundamental,0.0
+PRES_e9fc7ee5,E2019,2019,Zograf Readings,"Отношение к женщине в эпосе (на примере «Рамаяны» Вальмики, «Адбхута Рамаяны» и «Адхьятма Рамаяны»)",literature,1.0,classical,1.0,,0.0,fundamental,0.0
+PRES_cc065edb,E2019,2019,Zograf Readings,Понимание искусства в учении Ошо,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_132d6acd,E2019,2019,Zograf Readings,Этико-интуитивистский подход М.К. Ганди к пониманию традиционных текстов,,0.0,,0.0,text,1.0,methodological,1.0
+PRES_bf466f0e,E2019,2019,Zograf Readings,Современные баулы: мистики или артисты,,0.0,modern,1.0,,0.0,fundamental,0.0
+PRES_947e4189,E2019,2019,Zograf Readings,Структура «Чарья-гити»,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_08a4bc45,E2019,2019,Zograf Readings,Прием лейтмотива в классической индийской поэзии,literature,1.0,,0.0,,0.0,fundamental,0.0
+PRES_6d2513cc,E2019,2019,Zograf Readings,«Зачин» в североиндийской поэзии бхакти,philosophy,0.8,medieval,1.0,,0.0,fundamental,0.0
+PRES_46c9e484,E2019,2019,Zograf Readings,«Сумеречный язык» в поэзии тамильских сиддхов,linguistics,0.85,,0.0,,0.0,fundamental,0.0
+PRES_841aaade,E2019,2019,Zograf Readings,", М. Рамдхари (Маврикий). Индийские языки и нарративы на Маврикии: Рама-катха и поэзия на бходжпури",linguistics,0.85,,0.0,,0.0,fundamental,0.0
+PRES_c91fccad,E2019,2019,Zograf Readings,«Религия Человека»: свобода и традиция в философствовании Рабиндраната Тагора,philosophy,0.85,modern,1.0,,0.0,fundamental,0.0
+PRES_26c65f54,E2019,2019,Zograf Readings,Трансформации культурной идентичности парсов Бомбея,,0.0,modern,1.0,,0.0,fundamental,0.0
+PRES_3636c350,E2019,2019,Zograf Readings,Семантика терминологии родства в языке брахуи в общедравидийском контексте,linguistics,1.0,,0.0,text,1.0,fundamental,0.0
+PRES_7154b37a,E2019,2019,Zograf Readings,Ритуалы жизненного цикла у народности лимбу,religion,1.0,,0.0,,0.0,fundamental,0.0
+PRES_1b58bb6e,E2019,2019,Zograf Readings,Социовозрастная инициация и монашеское посвящение в неварском буддизме,religion,1.0,,0.0,,0.0,fundamental,0.0
+PRES_586c5884,E2019,2019,Zograf Readings,Функции вождя в традиционном обществе веддов в прошлом и настоящем,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_0ad73c95,E2019,2019,Zograf Readings,"Народные песни о Хардоле, принце Орччхи",,0.0,,0.0,,0.0,fundamental,0.0
+PRES_f1c3105f,E2019,2019,Zograf Readings,«Возрожденные» ведийские ритуалы: яджна на Асси гхат и в школе девочек «Панини Канья Махавидьялая» в Варанаси,religion,1.0,vedic,0.85,,0.0,fundamental,0.0
+PRES_a3c157be,E2019,2019,Zograf Readings,Почитание Индры в Непале: живая архаика,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_d0017fd9,E2019,2019,Zograf Readings,О некоторых специфических жестах в бытовом этикете сингалов,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_6524954c,E2019,2019,Zograf Readings,Каталоги знаков хараппской письменности: материалы к сравнению,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_6c855fa3,E2019,2019,Zograf Readings,Элементы шаманских практик в воинских традициях Индии,,0.0,,0.0,fieldwork,1.0,fundamental,0.0
+PRES_a36f10f9,E2019,2019,Zograf Readings,Ритуальная жизнь делийского даргаха,religion,1.0,,0.0,,0.0,fundamental,0.0
+PRES_f0a4df51,E2019,2019,Zograf Readings,Основные сюжеты и персонажи индийского театра теней,literature,1.0,,0.0,,0.0,fundamental,0.0
+PRES_3590a421,E2019,2019,Zograf Readings,Мифология танца и  образ Индры в джайнизме,religion,1.0,,0.0,,0.0,fundamental,0.0
+PRES_79fd19d4,E2019,2019,Zograf Readings,Кукольный театр Западной Бенгалии,linguistics,1.0,modern,1.0,,0.0,fundamental,0.0
+PRES_fd59133f,E2019,2019,Zograf Readings,Эстетика религиозной драмы: теория и практика драмы в контексте бенгальского вайшнавизма,linguistics,1.0,modern,1.0,text,0.85,fundamental,0.0
+PRES_279c016e,E2019,2019,Zograf Readings,"Серайкела, Майюрбхандж, Пурулиа: феномен чхау на плато Чхота Нагпур (Восточная Индия)",,0.0,,0.0,,0.0,fundamental,0.0
+PRES_543364e2,E2020,2020,Zograf Readings,О сравнениях в индийской философской литературе,philosophy,0.85,,0.0,,0.0,fundamental,0.0
+PRES_7992adfb,E2020,2020,Zograf Readings,Параллельный санскритско-русский корпус,linguistics,1.0,,0.0,,0.0,fundamental,0.0
+PRES_47355c29,E2020,2020,Zograf Readings,Фоносемантическая структура ведийского текста (на  примере гимна Ригведы I.7),religion,1.0,vedic,1.0,text,1.0,fundamental,0.0
+PRES_50ce1a84,E2020,2020,Zograf Readings,О телесном и духовном бессмертии в индуистском тантризме,religion,1.0,medieval,1.0,,0.0,fundamental,0.0
+PRES_f076ea23,E2020,2020,Zograf Readings,Традиции и ритуалы почитания манускриптов в писаниях шайва,religion,1.0,,0.0,,0.0,fundamental,0.0
+PRES_6f0f9343,E2020,2020,Zograf Readings,Техническая терминология тантрийской йоги в «Виджняна Бхайрава тантре»,religion,1.0,medieval,1.0,,0.0,fundamental,0.0
+PRES_788a249e,E2020,2020,Zograf Readings,Еще раз к вопросу о теме нейдаль в тамильской поэзии,literature,1.0,,0.0,,0.0,fundamental,0.0
+PRES_1c0dc1a9,E2020,2020,Zograf Readings,Тело бхакта и тело Шивы: о проблемах телесности в тамильском шайва-бхакти,philosophy,0.8,medieval,1.0,,0.0,fundamental,0.0
+PRES_95263100,E2020,2020,Zograf Readings,Эстетика комического,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_11671acc,E2020,2020,Zograf Readings,Терминология родства,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_9061fc60,E2020,2020,Zograf Readings,Абхидхарма как когнитивная стратегия,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_dd37c3fa,E2020,2020,Zograf Readings,Трактовка состояний удрученности и умопомешательства в буддийских экзегетических источниках,history,0.85,,0.0,,0.0,fundamental,0.0
+PRES_8ca48450,E2020,2020,Zograf Readings,К вопросу об определении понятия apratiṣṭhita-nirvāṇa,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_06a1eeb4,E2020,2020,Zograf Readings,Буддизм пудгалавады: к постановке вопроса о субъекте-пудгале,religion,1.0,,0.0,,0.0,fundamental,0.0
+PRES_1ec87eef,E2020,2020,Zograf Readings,Текущие переводческие проекты Фонда «Сохраним Тибет!» и изд-ва «Нартанг»,tibetology,1.0,,0.0,text,1.0,fundamental,0.0
+PRES_164d6136,E2020,2020,Zograf Readings,Так называемый парадокс беллетристики и подсказки от компаративной онтологии,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_6066a0b9,E2020,2020,Zograf Readings,Абсолютная встреча как феномен трансцендентальной герменевтики Г. Оберхаммера,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_c8490c74,E2020,2020,Zograf Readings,Г. Оберхаммер и проблема исследования когнитивного потенциала религиозного опыта,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_3768531f,E2020,2020,Zograf Readings,Понятие религиозного инклюзивизма,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_0aa24cc5,E2020,2020,Zograf Readings,Инклюзивизм как концептуальное средство для изучения индийской культуры,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_f597bd54,E2020,2020,Zograf Readings,К (посмертному) изданию полного перевода (В. С. Семенцова) «Гитабхашьи» Рамануджи на русском языке,linguistics,1.0,,0.0,text,1.0,fundamental,0.0
+PRES_5e4a44a2,E2020,2020,Zograf Readings,О философской и религиозной значимости некоторых текстов Веданта Дешики,philosophy,1.0,,0.0,text,1.0,fundamental,0.0
+PRES_101f03e5,E2020,2020,Zograf Readings,Пример использования парибхаш при прочтении сутр Панини,linguistics,1.0,classical,1.0,,0.0,fundamental,0.0
+PRES_adaf3be8,E2020,2020,Zograf Readings,Санскритские наречия в трудах бенгальских грамматистов (Дживы Госвамина и Баларамы Панчананы),linguistics,1.0,medieval,0.85,,0.0,fundamental,0.0
+PRES_b18b67bb,E2020,2020,Zograf Readings,Work of Patañjali on Yoga Philosophy and Sanskrit Vyākaraṇa,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_6b2fd44c,E2020,2020,Zograf Readings,"О толковании первой строфы «Аштанга-хридаи» средневековыми комментаторами (на примере Арунадатты, Хемадри и Инду)",,0.0,medieval,1.0,text,1.0,fundamental,0.0
+PRES_94c2e38f,E2020,2020,Zograf Readings,Дискурсивные слова в языке хинди,linguistics,1.0,modern,1.0,,0.0,fundamental,0.0
+PRES_9739d2d4,E2020,2020,Zograf Readings,Разрази его гром! Метеорологические явления в песенном фольклоре на диалектах хинди Центральной Индии,linguistics,1.0,modern,1.0,,0.0,fundamental,0.0
+PRES_dacfd197,E2020,2020,Zograf Readings,Онлайн-корпус текстов на языках южных мунда: задачи и специфика,linguistics,1.0,,0.0,text,1.0,fundamental,0.0
+PRES_6b82ee7c,E2020,2020,Zograf Readings,О некоторых особенностях языка «Калачакра-тантры»,linguistics,0.85,medieval,1.0,,0.0,fundamental,0.0
+PRES_c12ab90f,E2020,2020,Zograf Readings,История Ситы и Рамы глазами современных индийских поэтов-мистиков и ее релевантность для современного индийского общества,history,1.0,modern,1.0,,0.0,fundamental,0.0
+PRES_696ac3f0,E2020,2020,Zograf Readings,«Мини-Бхагавадгита» в четвертой «книге» «Рамаяны» Вальмики,literature,1.0,classical,1.0,,0.0,fundamental,0.0
+PRES_ff183124,E2020,2020,Zograf Readings,Индийский мифологический сериал как средство идеологической пропаганды,religion,1.0,,0.0,,0.0,fundamental,0.0
+PRES_ad4f1d84,E2020,2020,Zograf Readings,М. К. Ганди — неортодоксальный „ортодокс“,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_dd500358,E2020,2020,Zograf Readings,Д. Д. Руднев как радетель пополнения коллекций МАЭ РАН,history,1.0,,0.0,archive,1.0,fundamental,0.0
+PRES_ee7ae143,E2020,2020,Zograf Readings,Очаги обнаружения санскритских рукописей на территории Тибета,tibetology,1.0,,0.0,text,0.85,fundamental,0.0
+PRES_2b10e8ab,E2020,2020,Zograf Readings,Тханки в собрании И. П. Минаева (МАЭ РАН),,0.0,,0.0,archive,1.0,fundamental,0.0
+PRES_c3e246cd,E2020,2020,Zograf Readings,Индия в воспоминаниях востоковеда В. А. Иванова,religion,1.0,,0.0,,0.0,fundamental,0.0
+PRES_3f75bc5f,E2020,2020,Zograf Readings,«Индийская „игра знания“: один эпизод культурного трансфера»,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_5e82aabf,E2020,2020,Zograf Readings,Великая галлюцинация сознания по «Вимшике» Васубандху,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_e3ebd54e,E2020,2020,Zograf Readings,Об особенностях традиционной пищи веддов,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_ffc2a550,E2020,2020,Zograf Readings,Танцы с сосудами и вокруг. Гарба Гуджарата и сходные обряды и представления Южной Азии,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_0a114be4,E2020,2020,Zograf Readings,Ритуалы божественной старости,religion,1.0,,0.0,,0.0,fundamental,0.0
+PRES_2168c58f,E2020,2020,Zograf Readings,Интерпретация кровавых событий раздела Индии и Пакистана в романе Кхушванта Сингха «Поезд в Пакистан»,literature,1.0,,0.0,,0.0,fundamental,0.0
+PRES_4cad6450,E2021,2021,Zograf Readings,Интерпретация канонической типологии архатов в буддийских экзегетических источниках,history,0.85,,0.0,,0.0,fundamental,0.0
+PRES_492864f5,E2021,2021,Zograf Readings,Традиция «Лалитавистары»: возможные истоки,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_b39bd79a,E2021,2021,Zograf Readings,Место «Компендиума Абхидхармы» Асанги в философии буддизма махаяны,philosophy,0.8,,0.0,,0.0,fundamental,0.0
+PRES_6091b9e4,E2021,2021,Zograf Readings,Санскритский перевод  одного тибетского текста,tibetology,1.0,,0.0,text,1.0,fundamental,0.0
+PRES_a85ede9e,E2021,2021,Zograf Readings,О двух родственных джатакаставах в «Лалитавистаре» и «Раштрапалапариприччха-сутре»,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_ef27418a,E2021,2021,Zograf Readings,Палийская и санскритские версии сюжетов о самопожертвовании бодхисатвы-зайца,linguistics,0.85,,0.0,,0.0,fundamental,0.0
+PRES_1752218f,E2021,2021,Zograf Readings,Ведийский ритуал Ваджапея: древняя традиция и современная практика*,religion,1.0,vedic,0.85,fieldwork,1.0,fundamental,0.0
+PRES_a40a4f63,E2021,2021,Zograf Readings,Миф о Гхоре и Богине в Йогини-тантре*,religion,1.0,medieval,1.0,,0.0,fundamental,0.0
+PRES_a0147cce,E2021,2021,Zograf Readings,Некоторые структурные особенности пролога классической санскритской драмы»*,linguistics,1.0,,0.0,,0.0,fundamental,0.0
+PRES_cb10ac69,E2021,2021,Zograf Readings,«К истолкованию мифа о Махишамардани» в научном наследии М.И. Тубянского,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_9379953c,E2021,2021,Zograf Readings,Санскритский фрагмент «Артхавинишчая-сутры» из Сериндийского фонда ИВР РАН,linguistics,1.0,,0.0,,0.0,fundamental,0.0
+PRES_82dd959e,E2021,2021,Zograf Readings,Инклюзивизм в индийской культуре и его ведийские истоки,religion,1.0,vedic,1.0,,0.0,fundamental,0.0
+PRES_439721f1,E2021,2021,Zograf Readings,Мифы об Индии: 2400 лет «фейковой индологии»,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_33f05609,E2021,2021,Zograf Readings,Приемы композиции групп текстов в палийской «Типитаке»,,0.0,,0.0,text,1.0,fundamental,0.0
+PRES_381be266,E2021,2021,Zograf Readings,«Йога-сутры» Патанджали в арабском переводе ал-Бируни,,0.0,,0.0,text,1.0,fundamental,0.0
+PRES_8a22d228,E2021,2021,Zograf Readings,Истоки учения о Шри в вишишта-адвайта веданте,philosophy,0.85,,0.0,,0.0,fundamental,0.0
+PRES_67696e79,E2021,2021,Zograf Readings,Сотериологическая доктрина Шри-вайшнавизма в трактате Пиллея Локачарьи «Мумукшупади»,philosophy,0.85,,0.0,text,1.0,fundamental,0.0
+PRES_abfd0a1e,E2021,2021,Zograf Readings,Две формы атомизма в буддизме*,religion,1.0,,0.0,,0.0,fundamental,0.0
+PRES_d73a1158,E2021,2021,Zograf Readings,Конструкция odanam pacyate и ее анализ в традиции Панини*,linguistics,1.0,classical,1.0,,0.0,fundamental,0.0
+PRES_a5e6f738,E2021,2021,Zograf Readings,О «новых» теориях действия в грамматических трудах Нагеши Бхатты*,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_6c431187,E2021,2021,Zograf Readings,Проблемы датировки «Нандикешваракашики»*,history,1.0,,0.0,,0.0,fundamental,0.0
+PRES_f60ed815,E2021,2021,Zograf Readings,Трактовка панинийского термина savarṇa комментаторами парибхаш,linguistics,1.0,classical,1.0,text,1.0,fundamental,0.0
+PRES_3cb1fcfc,E2021,2021,Zograf Readings,Ведийский санскрит и индийская философия в творчестве композитора А. Н. Скрябина*,linguistics,0.8,vedic,1.0,,0.0,fundamental,0.0
+PRES_d1e44f94,E2021,2021,Zograf Readings,Неприzнанный zнак: вопрос о модернизации бенгальского алфавита в современном медиапространстве,linguistics,1.0,modern,1.0,,0.0,fundamental,0.0
+PRES_50f2703e,E2021,2021,Zograf Readings,Проблемы понимания санскритской метрики,linguistics,1.0,,0.0,,0.0,fundamental,0.0
+PRES_f2a55ee7,E2021,2021,Zograf Readings,Камень-трава или плод из города Синтры: история одного индийского фитонима*,history,1.0,,0.0,,0.0,fundamental,0.0
+PRES_b2e17c60,E2021,2021,Zograf Readings,"Ранние священные тексты на соранг-сомпенг как ключ к истории создания культа «Матар Баном» у племени сора (южные мунда, Орисса)",history,0.85,,0.0,text,1.0,fundamental,0.0
+PRES_e8e8d83d,E2021,2021,Zograf Readings,Кофейная Одиссея Индии,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_199a4048,E2021,2021,Zograf Readings,Пушп-Ватика: Цветущий сад поэзии,literature,1.0,,0.0,,0.0,fundamental,0.0
+PRES_6df6684c,E2021,2021,Zograf Readings,Народно-разговорная речь и приемы ее стилизации в поэзии североиндийского бхакти,philosophy,0.8,medieval,1.0,,0.0,fundamental,0.0
+PRES_e6735674,E2021,2021,Zograf Readings,Полемика с мимансаками об атмане в «Таттвасанграхе» Шантаракшиты*,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_fcad91ba,E2021,2021,Zograf Readings,Опыт построения словаря-тезауруса древнеиндийской лингвистической терминологии (на материале грамматики Панини)*,linguistics,1.0,classical,1.0,,0.0,fundamental,0.0
+PRES_b5bc8f75,E2021,2021,Zograf Readings,Понимание истории Индии в социальной философии Рабиндраната Тагора*,philosophy,0.8,modern,1.0,,0.0,fundamental,0.0
+PRES_7c4c27cb,E2021,2021,Zograf Readings,Характерные черты и особенности индийского мифологического сериала (на материале сериалов на сюжет «Рамаяны»)*,literature,1.0,classical,1.0,,0.0,fundamental,0.0
+PRES_ab377d3d,E2021,2021,Zograf Readings,Неопознанные индоевропейские мотивы в санскритском эпосе,literature,1.0,classical,1.0,,0.0,fundamental,0.0
+PRES_6b6e1809,E2021,2021,Zograf Readings,Раса как сок поэзии*,literature,1.0,,0.0,,0.0,fundamental,0.0
+PRES_75bbe89a,E2021,2021,Zograf Readings,Высмеивание пороков врачей в санскритской литературе (на примере «Кали-видамбханам» Нилакантхи Дикшиты)*,linguistics,0.85,,0.0,,0.0,fundamental,0.0
+PRES_e06fdda1,E2021,2021,Zograf Readings,Шива-бхакти и Шива-йога в тамильском шайва-бхакти*,philosophy,0.85,medieval,1.0,,0.0,fundamental,0.0
+PRES_0a2f3edc,E2021,2021,Zograf Readings,Удвоение знаков в протоиндийской письменности,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_a8fc20fc,E2021,2021,Zograf Readings,Голубые лотосы санскритской лексикографии*,linguistics,1.0,,0.0,,0.0,fundamental,0.0
+PRES_d8f239b0,E2021,2021,Zograf Readings,Архетип двойничества в романе С. Рушди «Ярость»: этнографический субстрат,literature,1.0,modern,1.0,fieldwork,1.0,fundamental,0.0
+PRES_ba935f25,E2021,2021,Zograf Readings,Миниатюры рагамала в отечественных собраниях,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_cbb0f5a9,E2021,2021,Zograf Readings,«Давай поженимся»: Свадебные ритуалы в неварском буддизме*,religion,1.0,,0.0,,0.0,fundamental,0.0
+PRES_b1511092,E2021,2021,Zograf Readings,Интеллектуальная история модернизма: Стелла Крамриш и индийский авангард,history,1.0,,0.0,,0.0,fundamental,0.0
+PRES_98f066ba,E2021,2021,Zograf Readings,Искусство протеста. Политический театр в Индии: истоки и развитие,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_dc1f9dcf,E2022,2022,Zograf Readings,Брахман,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_10dd9b6a,E2022,2022,Zograf Readings,,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_2c964ef8,E2022,2022,Zograf Readings,,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_79535730,E2022,2022,Zograf Readings,К,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_2117a141,E2022,2022,Zograf Readings,,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_5f783d17,E2022,2022,Zograf Readings,,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_d0969155,E2022,2022,Zograf Readings,Формирование,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_f73d1d07,E2022,2022,Zograf Readings,Комментарий,,0.0,,0.0,text,1.0,fundamental,0.0
+PRES_89316d20,E2022,2022,Zograf Readings,,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_1ca80314,E2022,2022,Zograf Readings,,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_357a21a5,E2022,2022,Zograf Readings,,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_3b4892b7,E2022,2022,Zograf Readings,,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_feb979fb,E2022,2022,Zograf Readings,,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_f7ea7209,E2022,2022,Zograf Readings,Проблема,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_8d322c4f,E2022,2022,Zograf Readings,,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_93c8e280,E2022,2022,Zograf Readings,,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_e33d416c,E2022,2022,Zograf Readings,,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_26401f35,E2022,2022,Zograf Readings,,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_b7a1356d,E2022,2022,Zograf Readings,Кришнаитские,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_543acf06,E2022,2022,Zograf Readings,Ведийское vrā́- «барышня»,religion,1.0,vedic,1.0,,0.0,fundamental,0.0
+PRES_89ed4c3c,E2022,2022,Zograf Readings,Рамаитская поэзия,literature,1.0,,0.0,,0.0,fundamental,0.0
+PRES_07050f9e,E2022,2022,Zograf Readings,«Барахмах»,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_3c6127f6,E2022,2022,Zograf Readings,Буддийский,religion,1.0,,0.0,,0.0,fundamental,0.0
+PRES_b6aa3bd9,E2022,2022,Zograf Readings,Новый,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_a8c9dfa8,E2022,2022,Zograf Readings,"«Глупец»,",,0.0,,0.0,,0.0,fundamental,0.0
+PRES_8892d994,E2022,2022,Zograf Readings,Отличительные,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_feeaf642,E2022,2022,Zograf Readings,Вивекананда,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_7d97b8a8,E2022,2022,Zograf Readings,Живое,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_662ac3f0,E2022,2022,Zograf Readings,Вклад,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_326880c9,E2022,2022,Zograf Readings,Этапы,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_00ef3d2b,E2022,2022,Zograf Readings,Ритуальный,religion,1.0,,0.0,,0.0,fundamental,0.0
+PRES_2f75b267,E2022,2022,Zograf Readings,Многообразие,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_7619a6d5,E2022,2022,Zograf Readings,,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_ae69c6f5,E2022,2022,Zograf Readings,"""Нисхождение",,0.0,,0.0,,0.0,fundamental,0.0
+PRES_9700867d,E2022,2022,Zograf Readings,Загадка,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_d47d92d8,E2022,2022,Zograf Readings,Смысл,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_03fc0f79,E2022,2022,Zograf Readings,"""Бхагавата",,0.0,,0.0,,0.0,fundamental,0.0
+PRES_d979ff4a,E2023,2023,Zograf Readings,О не-волшебной помощнице в сказках парья: вариант фольклорного мотива.Комиссаров Дмитрий Алексеевич (Москва). Склонность к конфликтам в образе Махакашьяпы в буддийских канонических текстах,literature,1.0,,0.0,text,1.0,fundamental,0.0
+PRES_b8dda570,E2023,2023,Zograf Readings,Дворец небесный и дворец земной: две схожие главы  «Лалитавистары» и их функциональная роль в общей композиции текста,,0.0,,0.0,text,1.0,fundamental,0.0
+PRES_1b46027b,E2023,2023,Zograf Readings,Мантры в ведийских шраута-ритуалах.,religion,1.0,vedic,1.0,,0.0,fundamental,0.0
+PRES_60e53486,E2023,2023,Zograf Readings,Почему Брахман наделен природой звука (шабда-таттва)?,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_ff2376eb,E2023,2023,Zograf Readings,Типология индийских аскетов по санскритским источникам,linguistics,0.85,,0.0,,0.0,fundamental,0.0
+PRES_35badd75,E2023,2023,Zograf Readings,"«Брахма-стути» из «Бхушунди Рамаяны»: текстология, смыслы, параллели",literature,1.0,classical,1.0,text,1.0,fundamental,0.0
+PRES_49afe71b,E2023,2023,Zograf Readings,Драма как категория и жанр в древнеиндийской поэтике. Челнокова Анна Витальевна (Санкт-Петербург). Россия и русские в произведениях Салмана Рушди.Леонов Максим Владимирович (Москва). О возможности передачи санскритских стихотворных размеров в русских переводах,literature,1.0,modern,1.0,text,1.0,fundamental,0.0
+PRES_48fd597f,E2023,2023,Zograf Readings,Анализ аморальных поступков в «Абхидхармакоше» Васубандху.Ермакова Татьяна Викторовна (Санкт-Петербург). Научные связи Ф.И.Щербатского с британскими востоковедами в 1930-е гг.Гордийчук Николай Валентинович (Москва). Тема угона скота (veṭci) в древнетамильской поэзии и литературной теории.Котин Игорь Юрьевич (Санкт-Петербург). Политик читает и пересказывает эпос. «Рамаяна» и «Махабхарата» в переложении Чакраварти Раджагопалачари.Смирнитская Анна Александровна (Москва).  «Моя мать и твоя мать – какая родня?» Об обозначениях братьев и сестер и возможностях прадравидийской реконструкции.Костина Екатерина Александровна (Санкт-Петербург). Значения и функционирование лексемы ye в бенгальском языке,literature,1.0,classical,1.0,artefact,1.0,fundamental,0.0
+PRES_b727aacd,E2023,2023,Zograf Readings,Средний залог в санскрите. К семантике категории.Скороходова Татьяна Григорьевна (Пенза).  Найти нормативную этику в традиционных текстах: сверхзадача и её решение мыслителями Бенгальского Возрождения..Лекарева Ева Павловна (Санкт-Петербург). Поздний Р.Тагор и «Бхагавадгита»: переосмысляя концепцию о долге.Гасунс Марцис Юрьевич (Обнинск). Древнеиндийская ономастика в «Вишнусахасранаме»,linguistics,0.85,modern,1.0,text,1.0,fundamental,0.0
+PRES_bf23ead2,E2023,2023,Zograf Readings,Об особенностях индийской философии на основе южноазиатской схемы рациональности.Лысенко Виктория Георгиевна (Москва). Трудности в изучении философского наследия Дигнаги: опыт переводчика и историка философии.Псху Рузана Владимировна (Москва). Переоценка различных методологических подходов по исследованию индийской философии: по следам книги В. Адлури и Д. Багчи «The Nay Science: A History of German Indology».Лобанов Сергей Владимирович (Москва). Проблема интерпретации действия в комментарии Шанкары на Бхагавадгиту,philosophy,0.8,classical,1.0,text,1.0,methodological,1.0
+PRES_0c411d55,E2023,2023,Zograf Readings,Философская компаративистика В. Хальбфасса.Роман Лилия Геннадьевна (Москва). К вопросу об истинности в пурва-мимансе.Пахомов Сергей Владимирович (Санкт-Петербург). Сотериологический ракурс «йогического суицида» (utkrānti) в традиционной индуистской йоге и тантре,religion,1.0,medieval,1.0,,0.0,methodological,1.0
+PRES_9146d9ec,E2023,2023,Zograf Readings,"Мотивы «Сказания о Джаландхаре в «Падма-пуране».[Olga Vecherina], Ruzana Pskhu (Moscow, RUDN-University). Female-Mystic in Medieval Tamil Literature and Early Sufism: Structural Similarity of Images.Жукова Любовь Евгеньевна («Москва»). Проповедь Личного Безличного Бога в учении Свами Вивекананды.Денисенко Валерия Леонтьевна (Новосибирск). «Юга-пурана» как исторический источник",history,1.0,,0.0,,0.0,fundamental,0.0
+PRES_93e33fc2,E2023,2023,Zograf Readings,"Коллекция № ВХ ЭФЗК 495 для МАЭ (состав и значение). Дубянская Татьяна Александровна (Москва). В поисках современного подхода к прозе Премчанда.Коровина Евгения Владимировна, Ренковская Евгения Алексеевна (Москва). Экспедиция к памятникам протоиндийской цивилизации на территории Индии.Коровина Евгения Владимировна (Москва). Надписи на медных предметах протоиндийской письменностью.Альбедиль Маргарита Федоровна (Санкт-Петербург). Антропология индийской куклы: контексты и ракурсы.Столярова Екатерина Владимировна (Санкт-Петербург). Кукольный театр Западной Бенгалии.Рыбакова Анна Геннадьевна (Москва). Ритуальный комплекс родильных обрядов в неварском буддизме",religion,1.0,modern,1.0,archive,1.0,methodological,1.0
+PRES_a2301ddd,E2023,2023,Zograf Readings,"«… Есть некая рыба, которая чюдовидна имать»: возможные истоки и неочевидные связи одного композитного существа индийской миниатюры.Танонова Елена Викторовна (Санкт-Петербург). Коллекция тамильских рукописей М.С. Андреева из Индийского фонда ИВР РАН.Соболева Елена Станиславовна (Санкт-Петербург). Этнографические сборы В.И. Липского на Цейлоне в начале XX в.Меренкова Ольга Николаевна (Санкт-Петербург). Вспомнить все: ганджифа и забытая карточная игра «Сидаста» из коллекции А.М. и Л.А. Мервартов.Воробьева Дарья Николаевна (Москва). Скульптура Нритья Шивы из храма Мандапешвара в Мумбаи. Стиль, иконография, аналогии.Рыжакова Светлана Игоревна (Москва). Падаяни, мудиетту, тиятту: ритуальные исполнительские традиции центральной Кералы",history,1.0,colonial,1.0,artefact,1.0,fundamental,0.0
+PRES_95c36e91,E2024,2024,Zograf Readings,Бодхисаттва — стрелок из лука. Буддийский сюжет и его аналоги.Островская Е.П. (СПб) Интерпретация эвтаназии в буддийской картине мира.Комиссаров Д.А. (Москва) Бодхисаттва в образе пишачи: следы комической традиции в описании аскезы Гаутамы.Фивейская А.В. (Москва) От эпического предания до буддийского сказания и обратно: история Шьямы.Крапивина Р.Н. (СПб) Абхисамаяланкара как предмет буддийского образования.Леонов М.В. (Москва) Образ времени в поэзии Бхартрихари,literature,1.0,,0.0,,0.0,fundamental,0.0
+PRES_3f1a5d68,E2024,2024,Zograf Readings,Телеологический аргумент в пользу существования Бога в учении Свами Вивекананды. Пахомов С.В. (Санкт-Петербург) Модели интерпретации телесности в хатха-йоге. Лобанов С.В. (Москва) Монистический теизм (адвайта-ишваравада) Абхинавагупты в сопоставлении с ишваравадой адвайты Шанкары на материале их комментариев к «Бхагавадгите»..Игнатьев А.А. (Калининград) Обряд панчамакара в каулических тантрах,religion,1.0,classical,1.0,text,1.0,fundamental,0.0
+PRES_231043e9,E2025,2025,Zograf Readings,«Третий поворот колеса дхармы» и его первые брахманистские оппоненты,religion,1.0,,0.0,,0.0,fundamental,0.0
+PRES_18c1e431,E2025,2025,Zograf Readings,Формульное выражение yāvatī yānasya bhūmis в буддийских канонических текстах,religion,1.0,,0.0,text,1.0,fundamental,0.0
+PRES_be51a661,E2025,2025,Zograf Readings,"Начальный сюжет в житийной литературе раннего буддизма, его вариативность и смысловое наполнение",literature,1.0,,0.0,,0.0,fundamental,0.0
+PRES_bea40537,E2025,2025,Zograf Readings,Наука абхидхармы в буддийской ментальной традиции средневековой Индии,religion,1.0,medieval,1.0,,0.0,fundamental,0.0
+PRES_38e26e50,E2025,2025,Zograf Readings,Сесил Бендалл как публикатор буддийских письменных памятников,religion,0.85,,0.0,artefact,1.0,fundamental,0.0
+PRES_f68e1859,E2025,2025,Zograf Readings,Проблемы изучения традиционного индийского текста «Абхисамая-аланкара» (на тибетском языке),tibetology,1.0,,0.0,text,1.0,fundamental,0.0
+PRES_f86d0c46,E2025,2025,Zograf Readings,Метафора зеркала в «Бхаванакраме» Камалашилы,tibetology,1.0,,0.0,,0.0,fundamental,0.0
+PRES_717fe6c2,E2025,2025,Zograf Readings,Арьядэва и Чандракирти о концепции anātma,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_9fefd2c5,E2025,2025,Zograf Readings,Пещера дивов в сказке на языке парья,linguistics,1.0,,0.0,,0.0,fundamental,0.0
+PRES_d96cabc7,E2025,2025,Zograf Readings,К интерпретации Ригведы: śiśnadevāḥ,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_1c0ffd7d,E2025,2025,Zograf Readings,В защиту Вишну Шипивишты: «Аз есьм Шипивишта!» (РВ 7.100.6),,0.0,,0.0,,0.0,fundamental,0.0
+PRES_3ab7942a,E2025,2025,Zograf Readings,Учение санкхьи в «Брихадараньяка-упанишаде»,philosophy,0.85,vedic,0.85,,0.0,fundamental,0.0
+PRES_b72026c0,E2025,2025,Zograf Readings,Према Рамаяна и Шри Ситарама-чаритра-дарпана как примеры Рамаян XX века в контексте современной литературы на бходжпури и майтхили,literature,1.0,classical,0.85,text,1.0,fundamental,0.0
+PRES_90cce0be,E2025,2025,Zograf Readings,Возвращаясь к третьей книге Махабхараты: новый взгляд,,0.0,classical,1.0,,0.0,fundamental,0.0
+PRES_91eed5d4,E2025,2025,Zograf Readings,О понятиях «канон» и «классика» в контексте древнеиндийской литературы,literature,1.0,,0.0,text,1.0,fundamental,0.0
+PRES_27453d21,E2025,2025,Zograf Readings,"Ведийский гапакс batá- и частица bata / vata: семантика, контекст, этимология",linguistics,0.85,vedic,1.0,text,1.0,fundamental,0.0
+PRES_6c9390ef,E2025,2025,Zograf Readings,Новые древнеиндийские праформы на материале этимологий лексики языка куллуи,linguistics,1.0,,0.0,,0.0,fundamental,0.0
+PRES_ebfa0e88,E2025,2025,Zograf Readings,О семантических переходах с участием терминов родства в старотамильском языке,linguistics,1.0,,0.0,,0.0,fundamental,0.0
+PRES_0425cfee,E2025,2025,Zograf Readings,"Отражение концепции ""нисходящего времени"" (descending time) в Катха Упанишаде",religion,1.0,vedic,1.0,,0.0,fundamental,0.0
+PRES_45bee8dd,E2025,2025,Zograf Readings,Синтез глагольной словоформы в грамматике Панини,linguistics,1.0,classical,1.0,,0.0,fundamental,0.0
+PRES_8c8fe323,E2025,2025,Zograf Readings,Образ вишаканья в художественной культуре древней и средневековой Индии,literature,1.0,medieval,1.0,,0.0,fundamental,0.0
+PRES_852a48b9,E2025,2025,Zograf Readings,Опровержение позиции вайшешики Дигнагой,philosophy,1.0,,0.0,,0.0,fundamental,0.0
+PRES_23cc57a4,E2025,2025,Zograf Readings,Метафора воды как сюжетообразующий прием романа Абрахама Вергезе «Завет воды»,literature,1.0,,0.0,,0.0,fundamental,0.0
+PRES_c779a201,E2025,2025,Zograf Readings,Восхождение Урмилы в поэме Майтхилишарана Гупты «Сакет»,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_cf1fcbf3,E2025,2025,Zograf Readings,Социально-политический контекст романов Даймонд Шамшера Рана,literature,1.0,,0.0,text,1.0,fundamental,0.0
+PRES_8eafff30,E2025,2025,Zograf Readings,Еще раз о структуре Чарьягити,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_221ed8e1,E2025,2025,Zograf Readings,Проблема индианизации колониальной армии на страницах индийской прессы в 1910-х — 1940-х годах,,0.0,colonial,1.0,,0.0,fundamental,0.0
+PRES_75c78869,E2025,2025,Zograf Readings,Анализ переводов М. Зощенко на хинди и на бенгали с помощью метрик readability,linguistics,1.0,modern,1.0,text,1.0,fundamental,0.0
+PRES_8942483b,E2025,2025,Zograf Readings,О «Yogavārttika» Виджнянабхикшу: Ansatz,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_1bf2d27f,E2025,2025,Zograf Readings,Квази-трансцендентальные разоблачение объектных областей индрий в буддийской йоге,religion,1.0,,0.0,,0.0,fundamental,0.0
+PRES_4cb7eac6,E2025,2025,Zograf Readings,Проблемы реконструкции системы йоги Патанджали на основе переводов «корневого» текста «Йога-сутр» и толкования Бходжи («Rājamārtaṇḍa»),,0.0,,0.0,text,1.0,fundamental,0.0
+PRES_143abd43,E2025,2025,Zograf Readings,«Наишкармья-сиддхи» (I. 52) Сурешвары как структура для реконструкции учения Шанкары об освобождении,,0.0,classical,1.0,,0.0,fundamental,0.0
+PRES_14f39c3d,E2025,2025,Zograf Readings,Интерпретация теизма «Бхагавадгиты» Шанкарой и Абхинавагуптой (на материале их комментариев к «Бхагавадгите),,0.0,classical,1.0,text,1.0,fundamental,0.0
+PRES_bc408399,E2025,2025,Zograf Readings,Что такое тантра? К вопросу об определении тантры/тантризма в современной тантрологии,religion,1.0,medieval,0.85,,0.0,fundamental,0.0
+PRES_aa2b07b2,E2025,2025,Zograf Readings,Комментарии Б. Н. Пандита на «Шивасутры»: новый взгляд на коренной текст трики,,0.0,,0.0,text,1.0,fundamental,0.0
+PRES_ab54f02d,E2025,2025,Zograf Readings,Роль и значение школы крама в структуре философии кашмирского шиваизма,philosophy,1.0,,0.0,,0.0,fundamental,0.0
+PRES_dea361e4,E2025,2025,Zograf Readings,Тантрические парадигмы в игровых системах Востока: сравнительный анализ “Джняна чаупады” и “Салам намшак” сквозь призму индуистской и буддийской тантры,religion,1.0,medieval,1.0,,0.0,fundamental,0.0
+PRES_9bc65ef7,E2025,2025,Zograf Readings,Kaṇita Caturam 108: тамильский числовой квадрат из храма Натараджи в Чидамбараме,religion,1.0,,0.0,artefact,1.0,fundamental,0.0
+PRES_eda66332,E2025,2025,Zograf Readings,Ауробиндо Гхош: между разумом и мистической интуицией,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_4f722e8b,E2025,2025,Zograf Readings,Особенности толкования Нового Завета в учении Свами Вивекананды,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_8f11cc61,E2025,2025,Zograf Readings,Индийские истоки и источники философствования Р. Тагора: «Садхана» как опыт объяснения Своего Другому,philosophy,0.8,modern,1.0,,0.0,fundamental,0.0
+PRES_3391ef7d,E2025,2025,Zograf Readings,Женщины и сатьяграха: взгляд М. К. Ганди,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_ff980a79,E2025,2025,Zograf Readings,Самбхары в обряде установления жертвенных огней (agnyādheya),,0.0,,0.0,,0.0,fundamental,0.0
+PRES_391516e0,E2025,2025,Zograf Readings,Рождение концепции иконографии Шивы Натараджи в скульптуре пещерных храмов Южной Индии,art_archaeology,1.0,,0.0,artefact,1.0,fundamental,0.0
+PRES_05eb40e5,E2025,2025,Zograf Readings,Инородные предметы в ушах Благословенного: к слову об одной редкой иконографической схеме в буддийском искусстве,religion,0.85,,0.0,artefact,1.0,fundamental,0.0
+PRES_3ceeb369,E2025,2025,Zograf Readings,Непальский Маччхендранатх: ритуально-мифологический контекст,religion,1.0,,0.0,text,1.0,fundamental,0.0
+PRES_4bce5437,E2025,2025,Zograf Readings,Будда Дипанкара и традиция его почитания в Долине Катманду,religion,0.85,,0.0,,0.0,fundamental,0.0
+PRES_2eaa507e,E2025,2025,Zograf Readings,От демоницы к мстительнице: Переосмысление образа ведьмы в современном индийском кинематографе,,0.0,modern,1.0,,0.0,fundamental,0.0
+PRES_afc630e7,E2025,2025,Zograf Readings,"Павакутху Кералы: артисты и основные сюжеты, мифо-ритуальные истоки исполнительских традиций",literature,0.85,,0.0,,0.0,fundamental,0.0
+PRES_b1439b56,E2025,2025,Zograf Readings,Скрытое / явное: представления о знании у племенных народов Южной Карнатаки,ethnography,1.0,,0.0,,0.0,fundamental,0.0
+PRES_445fd9e1,E2025,2025,Zograf Readings,Миф о Потопе и тыкве у дравидийских племен: к вопросу об истории контактов дравидов и мунда,history,0.8,,0.0,,0.0,fundamental,0.0
+PRES_dc1d52e8,E2025,2025,Zograf Readings,Внешние и внутренние связи индийского фольклора по данным каталога Ю.Е. Березкина и Е.Н. Дувакина,literature,1.0,,0.0,,0.0,fundamental,0.0
+PRES_4c514c25,E2025,2025,Zograf Readings,Проблемы интерпретации традиционного текста в произведениях индийских художников конца XIX – начала XX века,art_archaeology,1.0,colonial,1.0,text,1.0,fundamental,0.0
+PRES_b66d9641,E2025,2025,Zograf Readings,Бенгальский стихотворный размер пояр и его разновидности,linguistics,1.0,modern,1.0,,0.0,fundamental,0.0
+PRES_3ae2efba,E2025,2025,Zograf Readings,Сикхи в диаспоре: ритуалы детства,religion,1.0,modern,1.0,,0.0,fundamental,0.0
+PRES_2aa11346,E2025,2025,Zograf Readings,Экспедиция Психо-Неврологического института в Индию в 1913,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_d87a49f2,E2026,2026,Zograf Readings,,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_cc845379,E2026,2026,Zograf Readings,Дхармакирти о существовании,religion,1.0,,0.0,,0.0,fundamental,0.0
+PRES_3b15c2e2,E2026,2026,Zograf Readings,Предание в тексте и,,0.0,,0.0,text,1.0,fundamental,0.0
+PRES_dc7ea7ac,E2026,2026,Zograf Readings,Заметки о роли индийской,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_bba56f84,E2026,2026,Zograf Readings,«Шри Рамананда-чаритам»,,0.0,medieval,1.0,,0.0,fundamental,0.0
+PRES_165729d7,E2026,2026,Zograf Readings,Эпическая санкхья в,philosophy,1.0,classical,1.0,,0.0,fundamental,0.0
+PRES_746e376b,E2026,2026,Zograf Readings,Теория познания в,philosophy,1.0,,0.0,,0.0,fundamental,0.0
+PRES_34886267,E2026,2026,Zograf Readings,Абхисамаяаланкара:,tibetology,1.0,,0.0,,0.0,fundamental,0.0
+PRES_683d9048,E2026,2026,Zograf Readings,Зачем спорили хэшан,tibetology,1.0,,0.0,,0.0,fundamental,0.0
+PRES_31571d9a,E2026,2026,Zograf Readings,А.А. Сталь-Гольштейн,history,1.0,colonial,1.0,,0.0,fundamental,0.0
+PRES_7e61bb52,E2026,2026,Zograf Readings,По следам Петербуржца в,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_dda98592,E2026,2026,Zograf Readings,Александр,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_48f800cc,E2026,2026,Zograf Readings,Седукова Надежда Александровна,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_604561ac,E2026,2026,Zograf Readings,«Они из секты Пифагора»:,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_3900f186,E2026,2026,Zograf Readings,Вера Александровна Новикова,,0.0,colonial,1.0,,0.0,fundamental,0.0
+PRES_86e97fa7,E2026,2026,Zograf Readings,,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_da00d84a,E2026,2026,Zograf Readings,Паришишты как исторический,history,1.0,,0.0,,0.0,fundamental,0.0
+PRES_7a619ce1,E2026,2026,Zograf Readings,Kumāra: этимология и мифология,linguistics,0.85,,0.0,,0.0,fundamental,0.0
+PRES_df89674a,E2026,2026,Zograf Readings,Синтез сложных слов tatpuruṣa и,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_0acfe46b,E2026,2026,Zograf Readings,Имперфект в древнеиндийском,linguistics,1.0,,0.0,,0.0,fundamental,0.0
+PRES_a205212c,E2026,2026,Zograf Readings,Сита и Агни в «Рамаяне» Вальмики,literature,1.0,classical,1.0,,0.0,fundamental,0.0
+PRES_bbcd752b,E2026,2026,Zograf Readings,Средневековая,,0.0,medieval,1.0,,0.0,fundamental,0.0
+PRES_3aa66607,E2026,2026,Zograf Readings,Чему и как учит,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_7e9d5c05,E2026,2026,Zograf Readings,Метод кодировки чисел в трудах,linguistics,1.0,,0.0,,0.0,fundamental,0.0
+PRES_1688f747,E2026,2026,Zograf Readings,Сон Урмилы в современной индийской,,0.0,modern,1.0,,0.0,fundamental,0.0
+PRES_0a5b4fbd,E2026,2026,Zograf Readings,Салман Рушди и русская,literature,1.0,modern,1.0,,0.0,fundamental,0.0
+PRES_8f231f1c,E2026,2026,Zograf Readings,«Местный колорит» в,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_0b382eb2,E2026,2026,Zograf Readings,Лексика языка куллуи: этимологии,linguistics,1.0,,0.0,,0.0,fundamental,0.0
+PRES_90a1d5e1,E2026,2026,Zograf Readings,Южноандаманские языки: к,linguistics,1.0,,0.0,,0.0,fundamental,0.0
+PRES_5721585a,E2026,2026,Zograf Readings,"""Башни с нишами"" в",,0.0,,0.0,,0.0,fundamental,0.0
+PRES_87290fb6,E2026,2026,Zograf Readings,Перевод в практике,,0.0,,0.0,text,0.85,fundamental,0.0
+PRES_b6b2ffde,E2026,2026,Zograf Readings,Пословицы и поговорки,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_2a88565a,E2026,2026,Zograf Readings,Коннотативные особенности,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_3362a1e2,E2026,2026,Zograf Readings,Уроки Герхарда Оберхаммера. По,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_5a2bff5f,E2026,2026,Zograf Readings,Индийская философия в свете,philosophy,1.0,,0.0,,0.0,methodological,1.0
+PRES_2f431266,E2026,2026,Zograf Readings,Вклад Абхинавагупты в развитие,,0.0,classical,1.0,,0.0,fundamental,0.0
+PRES_25f1e068,E2026,2026,Zograf Readings,Традиция толкования упанишад:,religion,1.0,vedic,1.0,,0.0,fundamental,0.0
+PRES_0cfad806,E2026,2026,Zograf Readings,Интерпретация идей Упанишад в,religion,1.0,vedic,1.0,,0.0,fundamental,0.0
+PRES_f785a015,E2026,2026,Zograf Readings,"Санньяса и Брахмалока: смерть,",religion,1.0,,0.0,,0.0,fundamental,0.0
+PRES_199465c7,E2026,2026,Zograf Readings,«Сказание о Лиле» в «Йога-,literature,1.0,,0.0,,0.0,fundamental,0.0
+PRES_8b4d1a1f,E2026,2026,Zograf Readings,Структура ниданы,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_83557874,E2026,2026,Zograf Readings,Можно ли считать мадхьямаку,philosophy,1.0,classical,1.0,,0.0,fundamental,0.0
+PRES_366772d1,E2026,2026,Zograf Readings,Идеи йогачары в трактате Асанги,philosophy,1.0,classical,1.0,text,1.0,fundamental,0.0
+PRES_c7b7eb25,E2026,2026,Zograf Readings,Особая священная,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_c9cba930,E2026,2026,Zograf Readings,Прамана-вада «Таттва-сандарбхи» Дживы,philosophy,1.0,,0.0,,0.0,fundamental,0.0
+PRES_e1106a5b,E2026,2026,Zograf Readings,Ведийский ритуал Праваргья,religion,1.0,vedic,1.0,,0.0,fundamental,0.0
+PRES_08487e4a,E2026,2026,Zograf Readings,"Jati, gotra and marriage system in Haryana: a",,0.0,,0.0,,0.0,fundamental,0.0
+PRES_4e213573,E2026,2026,Zograf Readings,Непальский вариант,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_b72b0b4c,E2026,2026,Zograf Readings,Златоликие образы,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_4e92387d,E2026,2026,Zograf Readings,"Яйцо, курица и Тримурти:",religion,1.0,,0.0,,0.0,fundamental,0.0
+PRES_7c4642e4,E2026,2026,Zograf Readings,Миф о Потопе и тыкве у племен,religion,0.85,,0.0,,0.0,fundamental,0.0
+PRES_bd92a1ee,E2026,2026,Zograf Readings,"Огонь, вода и память:",,0.0,,0.0,,0.0,fundamental,0.0
+PRES_280c834c,E2026,2026,Zograf Readings,Тело агхори как «живой текст»:,religion,0.85,,0.0,text,1.0,fundamental,0.0
+PRES_d4d533dc,E2026,2026,Zograf Readings,Адиваси. Загадочное племя тода,ethnography,1.0,,0.0,,0.0,fundamental,0.0
+PRES_be7eea93,E2026,2026,Zograf Readings,К истории,history,1.0,,0.0,,0.0,fundamental,0.0
+PRES_d74aca4f,E2026,2026,Zograf Readings,Голод в Бенгалии 1943,linguistics,0.85,modern,1.0,,0.0,fundamental,0.0
+PRES_d76d053c,E2026,2026,Zograf Readings,Окна в иной мир: изобразительные,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_d86e3dee,E2026,2026,Zograf Readings,,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_R_bdfc2845,ER2010,2010,Roerich Readings,Философское приложение шикши в кашмирском шиваизме,philosophy,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_00d20d18,ER2012,2012,Roerich Readings,Намтар  Будды Шакьямуни в тибетской и китайской (пекинской) традициях (танки из коллекций Одесского и Киевского музеев Украины),tibetology,1.0,,0.0,archive,1.0,fundamental,0.0
+PRES_R_55902c36,ER2012,2012,Roerich Readings,Ю.Н. Рерих — выдающийся лингвист-тибетолог,tibetology,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_da4bd465,ER2012,2012,Roerich Readings,Бог и человек в поэзии Тагора. От «Иша-упанишады» до «Писем о России»,literature,1.0,vedic,0.85,,0.0,fundamental,0.0
+PRES_R_0cb1f7d7,ER2012,2012,Roerich Readings,Непосредственное восприятие через слово. По «Веданта-парибхаше» Дхармараджи,religion,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_ca7ead6e,ER2012,2012,Roerich Readings,Śradīḥ  púraḥ: ранневедийский текст и ритуал,religion,1.0,vedic,1.0,text,1.0,fundamental,0.0
+PRES_R_4664bbe1,ER2012,2012,Roerich Readings,Актуализация информативной основы средневекового текста Центральной Азии в современном мире (на примере «Тарих-и Рашиди» Мирзы Хайдара Дуглата»),,0.0,medieval,0.85,text,1.0,fundamental,0.0
+PRES_R_876c53d0,ER2012,2012,Roerich Readings,К этимологии ведийского sarámā,linguistics,0.85,vedic,1.0,,0.0,fundamental,0.0
+PRES_R_3f53de32,ER2012,2012,Roerich Readings,О тамильском поэтическом жанре каламбахам,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_R_b374cba5,ER2012,2012,Roerich Readings,Рамаяна в драме Бхавабхути «Последние приключения Рамы»,literature,1.0,classical,1.0,,0.0,fundamental,0.0
+PRES_R_ddeec943,ER2012,2012,Roerich Readings,Песенная техника проповеди Миры Баи: подступы к исследованию,art_archaeology,1.0,,0.0,artefact,1.0,fundamental,0.0
+PRES_R_be19882f,ER2012,2012,Roerich Readings,Сакральная защита пространства долины Катманду,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_R_1341cebe,ER2012,2012,Roerich Readings,Описание Индии в средневековых ирландских источниках,history,1.0,medieval,1.0,,0.0,fundamental,0.0
+PRES_R_1b0c89af,ER2012,2012,Roerich Readings,Летописный текст и  феномен «изображение» в буддийской традиции Тибета,tibetology,1.0,,0.0,text,1.0,fundamental,0.0
+PRES_R_033c7974,ER2012,2012,Roerich Readings,Дом-музей семьи Рерихов в Улан-Баторе,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_R_45f8cdb7,ER2012,2012,Roerich Readings,Традиционный индийский комментарий как источник по изучению синтаксиса древнеиндийских языков,linguistics,1.0,,0.0,text,1.0,fundamental,0.0
+PRES_R_62efd87e,ER2012,2012,Roerich Readings,Элементы игровой поэтики в махаянском описании ступеней бодхисаттвы в текстах «Большой Праджняпарамиты»,literature,0.8,,0.0,text,0.85,fundamental,0.0
+PRES_R_7a08196b,ER2012,2012,Roerich Readings,Символизм десяти воплощений Вишну во внутренней Калачакра-тантре,religion,1.0,medieval,1.0,,0.0,fundamental,0.0
+PRES_R_b21862c8,ER2012,2012,Roerich Readings,Представления об Арьяварте в санскритских источниках в исторической перспективе,history,1.0,,0.0,text,1.0,methodological,1.0
+PRES_R_9af34334,ER2012,2012,Roerich Readings,У истоков Праджняпарамиты (стихотворное ядро традиции),,0.0,,0.0,,0.0,fundamental,0.0
+PRES_R_8137b0ee,ER2012,2012,Roerich Readings,Сновидение в древнеиндийских философских текстах,philosophy,1.0,,0.0,text,1.0,fundamental,0.0
+PRES_R_f57c5e0e,ER2012,2012,Roerich Readings,О значении пал. sutta (p.p. от supati «спать») в медитации осознанности (сатипаттхана),,0.0,,0.0,,0.0,fundamental,0.0
+PRES_R_70421801,ER2012,2012,Roerich Readings,Сакральная «геология» в системе знаний вастувидьи (науки о строительстве и зодчестве) в пуранах,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_R_c77490e7,ER2012,2012,Roerich Readings,Мотив caṅkrama в буддийском нарративе и изображении,literature,0.85,,0.0,,0.0,fundamental,0.0
+PRES_R_33b1ea6d,ER2012,2012,Roerich Readings,О формульности индийских дарственных надписей,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_R_7625dff7,ER2012,2012,Roerich Readings,К проблеме складывания сикхского двора и придворной культуры при последних шести гуру,religion,1.0,,0.0,,0.0,methodological,1.0
+PRES_R_a021492d,ER2012,2012,Roerich Readings,Смех в традиции древнеиндийского театра (по материалам Натьяшастры),,0.0,,0.0,,0.0,fundamental,0.0
+PRES_R_0828c5b4,ER2012,2012,Roerich Readings,Танцовщица и покровитель: начни и расик восточных областей Индии. Контексты взаимоотношений,,0.0,,0.0,text,1.0,fundamental,0.0
+PRES_R_44a3f625,ER2012,2012,Roerich Readings,Теория преемственности Дхармы в доктрине «сангоку маппо» в японском буддизме,religion,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_281489ef,ER2012,2012,Roerich Readings,К проблеме возрастных категорий у древних тюрков VI—X вв,,0.0,,0.0,,0.0,methodological,1.0
+PRES_R_407bd365,ER2012,2012,Roerich Readings,Ю. Рерих о роли буддизма в культурном единстве Азии,religion,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_7d80ebe1,ER2015,2015,Roerich Readings,Стиль кавья в двух описаниях спящего гарема – в «Рамаяне» и в «Жизни Будды» Ашвагхоши,literature,1.0,classical,1.0,,0.0,fundamental,0.0
+PRES_R_31864bb1,ER2015,2015,Roerich Readings,Могольская концепция богоизбранности и светоносности и ее визуальное воплощение,religion,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_67e8a333,ER2015,2015,Roerich Readings,Язык жреца – язык поэта. О сакральности речи в древнейших формах санскритской драмы,linguistics,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_a38a1f7b,ER2015,2015,Roerich Readings,Наги как персонажи непальских легенд,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_R_81cee187,ER2015,2015,Roerich Readings,Дидактика и символика в тибетской литературе (на примере «Песни о роге яка» из собрания «сто тысяч песен Миларепы»),tibetology,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_0a468148,ER2015,2015,Roerich Readings,Изменение межкастовых взаимоотношений в домусульманском Кашмире,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_R_cd92f6c9,ER2015,2015,Roerich Readings,"Белый Старец. Танка из коллекции Кабинета Юрия Рериха (ИВ РАН, Москва)",history,1.0,,0.0,archive,1.0,fundamental,0.0
+PRES_R_79ef4dc1,ER2015,2015,Roerich Readings,Проблемы датировки трактата Бхамахи и пути ее решения,history,1.0,,0.0,text,1.0,fundamental,0.0
+PRES_R_a0cf1226,ER2015,2015,Roerich Readings,Образ потока в тамильской поэзии,literature,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_42dda819,ER2015,2015,Roerich Readings,Обряд освящения статуи (адхивасана) и его роль в текстах по строительству (вастувидье) в пуранах,,0.0,,0.0,text,1.0,fundamental,0.0
+PRES_R_fbe21911,ER2015,2015,Roerich Readings,Сакральная география Бодхгаи и текстовая традиция,,0.0,,0.0,text,1.0,fundamental,0.0
+PRES_R_aedf0192,ER2015,2015,Roerich Readings,О термине татхагата в палийском каноне,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_R_53ab062e,ER2015,2015,Roerich Readings,О брахманических этимологиях,linguistics,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_45f3b535,ER2015,2015,Roerich Readings,Проповедь Кабира: некоторые особенности языка и стиля,linguistics,1.0,medieval,1.0,,0.0,fundamental,0.0
+PRES_R_8ceaad71,ER2015,2015,Roerich Readings,Образ Сомы в ведийской и эпической традиции,literature,0.85,vedic,1.0,,0.0,fundamental,0.0
+PRES_R_9520e28c,ER2015,2015,Roerich Readings,Проблемы интерпретации концепции восьми опровержений в «Катхаватху»,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_R_143f0a0e,ER2015,2015,Roerich Readings,Интерпретация рельефа с изображением Дурги с музыкальными инструментами из буддийского пещерного храма Аурангабада,religion,1.0,,0.0,artefact,1.0,fundamental,0.0
+PRES_R_34fb73e9,ER2015,2015,Roerich Readings,От Индии до Кара-тепе: к типологии древнеиндийского эпиграфического текста,history,1.0,,0.0,text,1.0,fundamental,0.0
+PRES_R_230b135b,ER2015,2015,Roerich Readings,Неизвестный иллюстрированный манускрипт из Непала из собрания кабинета Ю.Н. Рериха Института востоковедения РАН,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_R_a2f8f726,ER2015,2015,Roerich Readings,Социально-философские концепции Калачакратантры с некоторыми параллелями в Кашмирском Шиваизме,philosophy,1.0,medieval,1.0,,0.0,fundamental,0.0
+PRES_R_4d884ba5,ER2015,2015,Roerich Readings,Будда Вайрочана и космология «Аватамсака- сутры» в Японии,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_R_e6711870,ER2015,2015,Roerich Readings,Рождение героя или сакрального персонажа в индийской повествовательной традиции (к интерпретации композиции «Сон Майи»),literature,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_f8e0adc6,ER2015,2015,Roerich Readings,Воспоминание как основание для тождества «Я» в «Ишварапратьябхиджня-вимаршини» Абхинавагупты,,0.0,classical,1.0,,0.0,fundamental,0.0
+PRES_R_f2250887,ER2015,2015,Roerich Readings,Об индийских названиях нуля,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_R_b8a9af34,ER2015,2015,Roerich Readings,Индийские гана в зеркале китайских гуа,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_R_04d5049e,ER2015,2015,Roerich Readings,Санскритизация перформанса: преобразования традиций Bhūta-kolam (Тулунаду) и Chhau (Орисса),linguistics,0.85,,0.0,fieldwork,1.0,fundamental,0.0
+PRES_R_2f0b9230,ER2015,2015,Roerich Readings,«Торговцы» или «богачи»? К истории племенного подразделения байат,history,0.8,,0.0,,0.0,fundamental,0.0
+PRES_R_5adabc00,ER2015,2015,Roerich Readings,Юрий Рерих и буддийский храм в Санкт- Петербурге,religion,1.0,,0.0,artefact,1.0,fundamental,0.0
+PRES_R_67b34c38,ER2015,2015,Roerich Readings,Тюркский каган и сасанидский шаханшах: к вопросу об идеологических заимствованиях древних тюрков у иранцев,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_R_787a8b1f,ER2016,2016,Roerich Readings,Всадник Шамбалы (танка из собрания Мемориального кабинета Ю.Н. Рериха ИВ РАН),,0.0,,0.0,,0.0,fundamental,0.0
+PRES_R_16d08a64,ER2016,2016,Roerich Readings,Некоторые аспекты взаимопроникновения индуизма и буддизма в контексте непальских легенд и религиозной практики,religion,1.0,,0.0,text,0.85,fundamental,0.0
+PRES_R_5a2d14d5,ER2016,2016,Roerich Readings,Диалект амдо – нетоновый диалект тибетского языка,linguistics,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_de05c2d7,ER2016,2016,Roerich Readings,О происхождении некоторых ашрамных практик в произведениях Калидасы,,0.0,classical,1.0,fieldwork,1.0,fundamental,0.0
+PRES_R_86bd530e,ER2016,2016,Roerich Readings,Мотив dad-u dām в могольском монаршем портрете: к вопросу о генезисе и семантике,literature,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_08cfe225,ER2016,2016,Roerich Readings,Бхаджаны-проповеди Миры Баи: к вопросу о стилистике жанра,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_R_41f7d2e7,ER2016,2016,Roerich Readings,Еретики локаятики и ортодокс Каутса,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_R_26017aac,ER2016,2016,Roerich Readings,Особенности художественной структуры тамильской антологии «Калиттохей» (на примере песни 92),,0.0,,0.0,,0.0,fundamental,0.0
+PRES_R_88a7c56f,ER2016,2016,Roerich Readings,Образ мира в индийской настольной игре jñãna-caupãr,literature,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_125cfa55,ER2016,2016,Roerich Readings,К проблеме взаимодействия буддизма и воинской культуры у ойратов,religion,1.0,,0.0,,0.0,methodological,1.0
+PRES_R_e392b421,ER2016,2016,Roerich Readings,Китайские переводы ранних буддийских сутр: возможности реконструкции истории индийского текста,history,0.85,,0.0,text,1.0,fundamental,0.0
+PRES_R_322104a7,ER2016,2016,Roerich Readings,Опровержение существования субъекта в полемике с вайшешиками по вопросу о существовании субъекта в «Пудгалавинишчае» Васубандху,philosophy,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_615187f4,ER2016,2016,Roerich Readings,Классификационные списки (матики) в раннем буддизме,religion,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_ec2416c9,ER2016,2016,Roerich Readings,Европейская феноменология и буддизм в свете спора представителей кашмирской школы Пратьябхиджня с буддистами,religion,1.0,,0.0,,0.0,methodological,1.0
+PRES_R_5dc93a1a,ER2016,2016,Roerich Readings,Механизмы интертекста в раннебуддийской текстовой традиции,religion,1.0,,0.0,text,1.0,fundamental,0.0
+PRES_R_fdb10554,ER2016,2016,Roerich Readings,Ритуал poṣadha в буддийских монастырях кушанского Термеза I – IV в. н. э. (реконструкция),religion,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_8050c843,ER2016,2016,Roerich Readings,Винадхара и Ардханаришвара – проблема переходной иконографии Шивы,art_archaeology,1.0,,0.0,artefact,1.0,fundamental,0.0
+PRES_R_61807405,ER2016,2016,Roerich Readings,Прогулки по городу с Хануманом (один эпизод из «Рамаяны» и его параллели в Артхашастре Каутильи и в палийском каноне),literature,1.0,classical,1.0,,0.0,fundamental,0.0
+PRES_R_901c3134,ER2016,2016,Roerich Readings,Образ Рахулы в японских ритуальных текстах косики,literature,0.85,,0.0,text,1.0,fundamental,0.0
+PRES_R_a9f1fb66,ER2016,2016,Roerich Readings,Санскара «посвящение в ученики» (упанаяна): её место и значение в ряду других  санскар и в древней разработке стратификации индийского общества,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_R_36c0c404,ER2016,2016,Roerich Readings,Культ Нарасинхи в трактатах по вастувидье в пуранах,,0.0,,0.0,text,1.0,fundamental,0.0
+PRES_R_a9c48031,ER2016,2016,Roerich Readings,"Восхождение на Кайласу. История шайва-бхактов Сундарара и Черамана Перумаля, рассказанная в «Перияпуранам» Секкижара и на фреске храма Брихадишвары в Танджоре",history,0.85,,0.0,artefact,1.0,fundamental,0.0
+PRES_R_79c1ea09,ER2016,2016,Roerich Readings,Миф о сожжении Трипуры  на перекрестках ведийской и эпической традиции,religion,1.0,vedic,1.0,,0.0,fundamental,0.0
+PRES_R_a0c13985,ER2016,2016,Roerich Readings,Литературный канон и инновации в поэме Джаянкондара «Парани о войне в Калинге»,literature,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_70f63145,ER2016,2016,Roerich Readings,Символический язык буддизма ваджраяны на примере «Калачакра Тантры»,religion,1.0,medieval,1.0,,0.0,fundamental,0.0
+PRES_R_ad4afdc3,ER2016,2016,Roerich Readings,Власть как дар Неба,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_R_5b32cf03,ER2016,2016,Roerich Readings,Рерих и проблема истории тохар,history,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_3a00610d,ER2016,2016,Roerich Readings,Чувство времени (венок сонетов),,0.0,,0.0,,0.0,fundamental,0.0
+PRES_R_6fe905a8,ER2016,2016,Roerich Readings,Ритуальный текст о структуре вселенной (опыт литературного перевода),literature,0.85,,0.0,text,1.0,fundamental,0.0
+PRES_R_4d002cd6,ER2016,2016,Roerich Readings,Пушкин на языке непали,linguistics,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_f2b83bd6,ER2017,2017,Roerich Readings,"Изображение Канакавасты, архата из Кашмира: часть полиптиха или отдельная танка? (Танка из собрания Кабинета Ю.Н. Рериха, ИВ РАН, Москва)",,0.0,,0.0,,0.0,fundamental,0.0
+PRES_R_4349ac60,ER2017,2017,Roerich Readings,Ю.Н. Рерих о лхасском диалекте тибетского языка,linguistics,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_f0e164bf,ER2017,2017,Roerich Readings,Тибетский идиом области Амдо в наши дни: между диалектом и языком,linguistics,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_e6d198f9,ER2017,2017,Roerich Readings,Вопрос о дардском элементе в дотибетском населении Ладакха и Балтистана как лингвистическая проблема,tibetology,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_96d292eb,ER2017,2017,Roerich Readings,Некоторые типичные моменты появления сонма божеств в Непале,religion,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_48e0453d,ER2017,2017,Roerich Readings,Почему Дигнага называет определение восприятия Васубандху асара (лишенным сути)? Медленное чтение «Прамана-самуччая-вритти» (1.13–16) Дигнаги,philosophy,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_9a14e70f,ER2017,2017,Roerich Readings,Теория и практика заимствований санскритской литературной традиции,linguistics,0.85,,0.0,fieldwork,1.0,fundamental,0.0
+PRES_R_5354a4c9,ER2017,2017,Roerich Readings,К вопросу о могольском изобразительном «мультилингвизме» и культурной экстравертности,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_R_990c1ebe,ER2017,2017,Roerich Readings,Синтаксические конструкции с ti и -bhāva в языке пали,linguistics,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_50812f49,ER2017,2017,Roerich Readings,Риторический вопрос и его функция в индийской средневековой поэзии бхакти,philosophy,0.8,medieval,1.0,,0.0,fundamental,0.0
+PRES_R_79c477ee,ER2017,2017,Roerich Readings,Ученичество как сюжет раннебуддийской литературы,literature,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_1ed161be,ER2017,2017,Roerich Readings,Использование вторичного текста (цитирование) как средство ведения дискуссии в «Вопросе о субъекте (пудгале)» в «Катхаваттху 1.1»,,0.0,,0.0,text,1.0,fundamental,0.0
+PRES_R_e12c875b,ER2017,2017,Roerich Readings,Полемика о субъекте между буддистами и ньяя-вайшешиками в «Таттвасанграхе» Шантаракшиты,philosophy,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_be1217a3,ER2017,2017,Roerich Readings,Сюжет о Будде в ранних буддийских сакральных текстах,literature,0.85,,0.0,text,1.0,fundamental,0.0
+PRES_R_0b90c075,ER2017,2017,Roerich Readings,Проблемы методологии при интертекстуальном анализе палийских и санскритских текстов,,0.0,,0.0,text,1.0,methodological,1.0
+PRES_R_f3edb2a0,ER2017,2017,Roerich Readings,К выходу Антологии индо-ирландских текстов,,0.0,,0.0,text,1.0,fundamental,0.0
+PRES_R_ad6ef663,ER2017,2017,Roerich Readings,Об интерпретационном коде ранневедийской литературы (вед. śatabhuji),literature,0.85,vedic,1.0,,0.0,fundamental,0.0
+PRES_R_15cec081,ER2017,2017,Roerich Readings,Тибетский институт чой-йон (наставник-покровитель) в китайских источниках 17–18 вв,tibetology,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_2b5b12d6,ER2017,2017,Roerich Readings,Война в контексте истории буддистов-ойратов,history,0.85,,0.0,text,1.0,fundamental,0.0
+PRES_R_d3dbc38e,ER2017,2017,Roerich Readings,Дивьядхвани и девадундубхи – иконографические мотивы божественной музыки в джайнской скульптуре Эллоры,art_archaeology,1.0,,0.0,artefact,1.0,fundamental,0.0
+PRES_R_d7c71dfc,ER2017,2017,Roerich Readings,Первые известные изображения раг. Тексты и контекст,,0.0,,0.0,text,1.0,fundamental,0.0
+PRES_R_2212aa97,ER2017,2017,Roerich Readings,Культ Нарасинхи в трактатах по вастувидье в пуранах,,0.0,,0.0,text,1.0,fundamental,0.0
+PRES_R_4ec73dfb,ER2017,2017,Roerich Readings,Тамильская баллада «Сказание о Кусалаване» (kucalavaṉ katai): особенности трактовки фрагмента «Рамаяны»,literature,1.0,classical,1.0,,0.0,fundamental,0.0
+PRES_R_f41b4a3f,ER2017,2017,Roerich Readings,Место и роль Сундарара в структуре шиваитского канона «Панниру Тирумурей»,philosophy,0.85,,0.0,,0.0,fundamental,0.0
+PRES_R_487e5ff5,ER2017,2017,Roerich Readings,Становление культа Рудры-Шивы по древнеиндийским священным текстам традиции шрути: от мифологемы к философскому принципу,philosophy,0.85,,0.0,text,1.0,fundamental,0.0
+PRES_R_3e62b10f,ER2017,2017,Roerich Readings,"Анкхья-нат: обряд и драма средневекового Ассама, и их возрождение сегодня",,0.0,medieval,1.0,,0.0,fundamental,0.0
+PRES_R_668ca70b,ER2017,2017,Roerich Readings,Смена мотивировок в средневековом тексте: две «Рамаяны»,literature,1.0,classical,0.85,text,1.0,fundamental,0.0
+PRES_R_2944c6fc,ER2017,2017,Roerich Readings,Семантика изображений птицы на каменных изваяниях степей Евразии,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_R_66747c63,ER2017,2017,Roerich Readings,Ю.Н. Рерих и монгольский язык,linguistics,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_4e70f879,ER2017,2017,Roerich Readings,Переводы стихов на язык непали,linguistics,1.0,,0.0,text,1.0,fundamental,0.0
+PRES_R_dbc4f9a8,ER2017,2017,Roerich Readings,Поэма «Десять песен»: перевод и чтение на тамильском языке,linguistics,1.0,,0.0,text,1.0,fundamental,0.0
+PRES_R_f65a61cb,ER2017,2017,Roerich Readings,Из санскритской поэзии,linguistics,0.85,,0.0,,0.0,fundamental,0.0
+PRES_R_8d530417,ER2017,2017,Roerich Readings,Из поэзии на диалектах,linguistics,0.85,,0.0,,0.0,fundamental,0.0
+PRES_R_a18dffeb,ER2017,2017,Roerich Readings,Ритуальный текст из «Махавасту»,religion,1.0,,0.0,text,1.0,fundamental,0.0
+PRES_R_b4fea228,ER2018,2018,Roerich Readings,"Поталака – местопребывание Авалокитешвары и один из его образов в тибетской традиции. (Танка из собрания Кабинета Ю.Н. Рериха, ИВ РАН, Москва)",tibetology,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_faaaa57f,ER2018,2018,Roerich Readings,Этнокультурные особенности «Тибетско-русско-английского словаря с санскритскими параллелями» Ю.Н. Рериха,tibetology,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_6c4ca400,ER2018,2018,Roerich Readings,Тибетский принцип чой-йон и его значение для тибето-цинских отношений,tibetology,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_f5852a56,ER2018,2018,Roerich Readings,Нетибетская лексика в тибетских диалектах Балтистана и Каргила: попытка этимологической классификации,linguistics,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_dece64d7,ER2018,2018,Roerich Readings,Индийские нумерационные системы. По материалам трактата Махавирачарьи «Собрание основных положений науки о вычислениях» (сер. IX в.),,0.0,,0.0,text,1.0,fundamental,0.0
+PRES_R_36fd0323,ER2018,2018,Roerich Readings,Традиция «Лалитавистары» и ее истоки. Новые наблюдения,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_R_798f8c50,ER2018,2018,Roerich Readings,Идеал sajjana в литературе гуптской эпохи,literature,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_63e67efc,ER2018,2018,Roerich Readings,Некоторые аспекты культа живой богини Кумари в Непале,religion,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_ed3f2bdf,ER2018,2018,Roerich Readings,Деепричастия пассивного залога в языке пали?,linguistics,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_420696f8,ER2018,2018,Roerich Readings,Ирония: «риторическая фигура» в Североиндийской поэзии бхакти,philosophy,0.8,medieval,1.0,,0.0,fundamental,0.0
+PRES_R_c68675a5,ER2018,2018,Roerich Readings,«Видимый» и «невидимый» мир в теоретико-культурном дискурсе Древней Индии,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_R_1fca299a,ER2018,2018,Roerich Readings,"Вопрос о соотношении субъекта-пудгалы, дискретности мышления-читты и устойчивости характеристик личности в тексте «Катхаваттху» (фрагмент 1.1.193-1.1.196)",,0.0,,0.0,text,1.0,fundamental,0.0
+PRES_R_e0da7404,ER2018,2018,Roerich Readings,Дискуссия между буддистами и санкхьяиками о существовании и природе атмана в разделе «Атмапарикша» «Таттвасанграхи» Шанатаракшиты,philosophy,0.85,classical,1.0,,0.0,fundamental,0.0
+PRES_R_260d2ab0,ER2018,2018,Roerich Readings,Брахмадева и его комментарий к «Дравья-санграха-вритти» в контексте джайнской текстовой традиции,,0.0,,0.0,text,1.0,fundamental,0.0
+PRES_R_6857248b,ER2018,2018,Roerich Readings,«Ратнавали» Нагарджуны и «Дашабхумика-сутра»: явные и неявные связи,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_R_e477242d,ER2018,2018,Roerich Readings,"Вратьи и чакравартины: образ Миродержца в Древней Индии в палийских, санскритских и ведийских источниках",linguistics,0.8,vedic,1.0,,0.0,fundamental,0.0
+PRES_R_135511ce,ER2018,2018,Roerich Readings,Обращение к буддийским сутрам «неясного» происхождения при императорском дворе в Японии в VIII в,religion,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_cb348803,ER2018,2018,Roerich Readings,Образ Йусуфа в могольской живописи: к вопросу атрибуции,literature,0.85,,0.0,,0.0,fundamental,0.0
+PRES_R_3ef3ec55,ER2018,2018,Roerich Readings,Еще раз к вопросу о сандаловой статуе Будды,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_R_2f3b44c3,ER2018,2018,Roerich Readings,"Майтхуна, слияние лотоса и ваджры, или о некоторых особенностях символического языка сандхья-бхаша буддизма ваджраяны",linguistics,0.85,,0.0,,0.0,fundamental,0.0
+PRES_R_c76c6203,ER2018,2018,Roerich Readings,Богиня с гхантой и гхатом. Дурга (?) в иконографической программе буддийского храма Аурангабада,religion,1.0,,0.0,artefact,1.0,fundamental,0.0
+PRES_R_bf764667,ER2018,2018,Roerich Readings,Живопись и графика Гималайского региона в коллекции И.П.Минаева (МАЭ РАН): некоторые аспекты атрибуции и интерпретации,history,0.85,,0.0,archive,1.0,fundamental,0.0
+PRES_R_d818b31c,ER2018,2018,Roerich Readings,Тантрическая традиция в искусстве индийского модернизма,religion,1.0,medieval,1.0,,0.0,fundamental,0.0
+PRES_R_31d340ea,ER2018,2018,Roerich Readings,Несколько слов о «я» и Адвайте в свете узнавания себя как предельного обладающего в толкованиях Абхинавагупты на «Ишварапратьябхиджня-карике» Утпаладевы,,0.0,classical,1.0,,0.0,methodological,1.0
+PRES_R_d6623cf4,ER2018,2018,Roerich Readings,Вода и водоемы в трактатах по вастувидье в пуранах,,0.0,,0.0,text,1.0,fundamental,0.0
+PRES_R_7ec9bfe9,ER2018,2018,Roerich Readings,Тема «мадаль» (обряд самоистязания) в тамильской поэзии,literature,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_66c22c2b,ER2018,2018,Roerich Readings,Чидамбарам и его дикшитары в зеркале «Панниру тирумурей»,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_R_42d56d1e,ER2018,2018,Roerich Readings,Текст в контексте: образ идеального сикхского правителя в кодексе Прем Сумараг в позднесредневековых панджабских реалиях,religion,1.0,medieval,1.0,text,1.0,fundamental,0.0
+PRES_R_fb48b930,ER2018,2018,Roerich Readings,К вопросу об обработке первоисточника в литературной санскритской джатаке,linguistics,0.8,,0.0,,0.0,fundamental,0.0
+PRES_R_8afe1d47,ER2018,2018,Roerich Readings,Имперская идея или этнический стереотип? Концепт «монгол» в первой половине XIII в,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_R_f3f6d9a3,ER2018,2018,Roerich Readings,Путешествие «Тысячи и одной ночи» в Ирландию,history,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_1dbec425,ER2018,2018,Roerich Readings,Семантика глагольного корня bhram и его дериватов на материале древнеиндийского эпоса и поэзии,literature,1.0,classical,1.0,,0.0,fundamental,0.0
+PRES_R_ef15975c,ER2018,2018,Roerich Readings,Буддийская миссия Н.К. Рериха в Лхасу,religion,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_621a9734,ER2019,2019,Roerich Readings,Тибето-китайские параллели в наименованиях и титулах регентов на примере текста декрета Далай-ламы V о назначении Сангье Гьяцо дэсридом (1679 г.),tibetology,1.0,,0.0,text,1.0,fundamental,0.0
+PRES_R_8469df28,ER2019,2019,Roerich Readings,«Белые шапки»: интерпретации и эндемичность религиозного символа в начале XVIII в,,0.0,colonial,1.0,,0.0,fundamental,0.0
+PRES_R_70a0423a,ER2019,2019,Roerich Readings,Вербальный панегирик индийского монаршего портрета эпохи Моголов. 9.12.19,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_R_903b8beb,ER2019,2019,Roerich Readings,Старый парк Пушпакарандаки (одна из загадок «Глиняной повозки»),,0.0,,0.0,,0.0,fundamental,0.0
+PRES_R_4c7216ab,ER2019,2019,Roerich Readings,"О стихах, приписываемых Бхартрихари",,0.0,,0.0,,0.0,fundamental,0.0
+PRES_R_66a850cb,ER2019,2019,Roerich Readings,Кабир о бхакти,philosophy,0.85,medieval,1.0,,0.0,fundamental,0.0
+PRES_R_7dd47364,ER2019,2019,Roerich Readings,К вопросу о замещениях (pratinidhi) при проведении шраута-ритуалов,religion,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_2bc59e4f,ER2019,2019,Roerich Readings,Монгольские ритуалы в русских летописях,religion,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_d32de8fc,ER2019,2019,Roerich Readings,Сюжет встречи с Дипанкарой: функциональная роль в текстовой традиции и возможные генетические связи,literature,0.8,,0.0,text,1.0,fundamental,0.0
+PRES_R_4636dcea,ER2019,2019,Roerich Readings,Sarvajña-bhāṣā — всеведущий и синкретический язык Калачакра-тантры,linguistics,0.85,medieval,1.0,,0.0,fundamental,0.0
+PRES_R_a50a96c3,ER2019,2019,Roerich Readings,К вопросу о дхарани и Дхаранипитаке,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_R_cea56adf,ER2019,2019,Roerich Readings,"Семь сокровищ чакравартина и их пространственная локализация (палийский канон, «Артхашастра»)",,0.0,,0.0,,0.0,fundamental,0.0
+PRES_R_b81315de,ER2019,2019,Roerich Readings,Место «Беседы о субъекте-пудгале» в структуре палийского канона и в истории буддийской философии,philosophy,0.8,,0.0,,0.0,fundamental,0.0
+PRES_R_4b99d32d,ER2019,2019,Roerich Readings,Образ Ганеши в японском буддизме,literature,0.85,,0.0,,0.0,fundamental,0.0
+PRES_R_4baf8c71,ER2019,2019,Roerich Readings,«Цветомыслие» в Древней Индии (вербальный текст и стенопись),,0.0,,0.0,text,1.0,fundamental,0.0
+PRES_R_f5fb177e,ER2019,2019,Roerich Readings,Музыкальные колонны Южной Индии,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_R_f0e0c0c2,ER2019,2019,Roerich Readings,Фронтальное и трёхчетвертное изображение лица в западно-индийской миниатюре XII–XV вв,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_R_117f5ca4,ER2019,2019,Roerich Readings,Феномен недосказанной речи ардхокти в санскритской драме,linguistics,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_0264060a,ER2019,2019,Roerich Readings,Дайва-арадхана Тулунаду (Южная Индия): сценарий и воплощение,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_R_f4039da2,ER2019,2019,Roerich Readings,«Парамаартхасара» Абхинавагупты: руководство по обретению «сингулярности» или свидетельство о невозможности бытия Бога (Бытия/Бога),religion,1.0,classical,1.0,,0.0,fundamental,0.0
+PRES_R_1ee72dd9,ER2019,2019,Roerich Readings,Обряд адхивасана («вселение») и его роль в формировании образов храма и города,religion,1.0,,0.0,artefact,1.0,fundamental,0.0
+PRES_R_9a85c2a8,ER2019,2019,Roerich Readings,Сюжетные схемы санскритских джатак Харибхатты (IV–V в.),linguistics,0.85,,0.0,,0.0,fundamental,0.0
+PRES_R_75637607,ER2019,2019,Roerich Readings,«Унмей вилаккам» как источник по иконологии Шивы Натараджи,history,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_a1c378b1,ER2019,2019,Roerich Readings,Поэтические формы средневекового тамильского бхакти,philosophy,0.85,medieval,1.0,,0.0,fundamental,0.0
+PRES_R_5d693fcb,ER2019,2019,Roerich Readings,Восхваление табака в поэме «Пухейилей видутуду» тамильского поэта Сини Саккарей Пулавара,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_R_b7bf220e,ER2019,2019,Roerich Readings,Роль представителя династии Тхакури (Тхакуджуджу) в ритуальной передаче власти в Непале,religion,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_a003881d,ER2019,2019,Roerich Readings,Как уложить пять формул в одну строфу? «Архивирующие» возможности санскрита в математических сочинениях средневековой Индии,linguistics,0.8,medieval,1.0,archive,1.0,fundamental,0.0
+PRES_R_6ff65ab8,ER2019,2019,Roerich Readings,Ю.Н. Рерих и история индологии в России,history,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_cf30ab87,ER2019,2019,Roerich Readings,Опыт передачи эпической шлоки в русской переводческой традиции,pedagogy_applied,1.0,,0.0,text,1.0,fundamental,0.0
+PRES_R_6cbeaa02,ER2019,2019,Roerich Readings,Возможности понимания и написания термина «санскрит»,linguistics,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_104a0205,ER2020,2020,Roerich Readings,Некоторые тангка из собрания Ю.Н. Рериха. Новые исследования,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_R_a4e15fc1,ER2020,2020,Roerich Readings,Кангдзей: «Подношения гневным божеcтвам»,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_R_b78c7c80,ER2020,2020,Roerich Readings,Две тханки из собрания И.П. Минаева (МАЭ РАН) и традиция странствующих рассказчиков (лама манипа) в Гималайском регионе,,0.0,,0.0,archive,1.0,fundamental,0.0
+PRES_R_13620e82,ER2020,2020,Roerich Readings,"«Во отдаленном краю границы пребывающий, исповедая веру манджушринову»: о буддийском дискурсе в калмыцкой политике императора Юнчжэна (1723–1735)",religion,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_d70d75be,ER2020,2020,Roerich Readings,"Происхождение китайского иероглифа 佛 «фо» (Будда, буддизм)",religion,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_ce054575,ER2020,2020,Roerich Readings,Отражение монгольских имперских идей в тибетской историографии. LX РЕРИХОВСКИЕ ЧТЕНИЯ,tibetology,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_8dadf792,ER2020,2020,Roerich Readings,Некоторые особенности праздника семи неварских селений юго-западной части Долины Катманду,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_R_2c3fa8aa,ER2020,2020,Roerich Readings,Ṛddhi и священные следы прошлого: чудо в картине мира буддиста-паломника,religion,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_759dd8f6,ER2020,2020,Roerich Readings,Интерпретация датировки появления буддизма в Японии в традиционных источниках и храмовых хрониках энги,history,1.0,,0.0,artefact,1.0,methodological,1.0
+PRES_R_ecfada6a,ER2020,2020,Roerich Readings,Способы изображения животных в литературной санскритской джатаке,linguistics,0.85,,0.0,,0.0,fundamental,0.0
+PRES_R_203d278f,ER2020,2020,Roerich Readings,Мотивный анализ сюжета «Джатаки о павлине» Харибхатты (IV–V вв. н.э.),literature,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_459031cd,ER2020,2020,Roerich Readings,Что отличает индийскую эпистемическую культуру от западной?,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_R_7ef73ba6,ER2020,2020,Roerich Readings,"Шива Саптасварамурти из Пареля. Иконография, интерпретации, параллели",art_archaeology,1.0,,0.0,artefact,1.0,fundamental,0.0
+PRES_R_4faf8842,ER2020,2020,Roerich Readings,Антропоморфная образность «игры знания»: телесная метафора и метафора путешествия,history,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_7954566e,ER2020,2020,Roerich Readings,Некоторые особенности текстов по вастувидье в пуранах и их интерпретация в современной массовой культуре,,0.0,modern,1.0,text,1.0,fundamental,0.0
+PRES_R_59123fb6,ER2020,2020,Roerich Readings,Ю.Н. Рерих о кочевниках Тибета,tibetology,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_249f32e4,ER2020,2020,Roerich Readings,Небывальщины и парадоксы в древне- индийской поэзии,literature,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_3916314f,ER2020,2020,Roerich Readings,Небывальщины и парадоксы в средневековой североиндийской поэзии,literature,1.0,medieval,1.0,,0.0,fundamental,0.0
+PRES_R_a09d2b2c,ER2020,2020,Roerich Readings,"К анализу стиха Ригведа 1.120.11, или Предварительные заметки о ведийском автомобиле",religion,1.0,vedic,1.0,,0.0,fundamental,0.0
+PRES_R_09cf50c0,ER2020,2020,Roerich Readings,"Загадка эдуки – монумента опрокинутого мира (эпиграфика, эпос, пураны)",literature,0.85,classical,1.0,,0.0,fundamental,0.0
+PRES_R_f7cab388,ER2020,2020,Roerich Readings,Проблемы атомизма по «Вимшике» Васубандху и «Аламбана-парикше» Дигнаги,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_R_4c66555b,ER2020,2020,Roerich Readings,Санскритская грамматика и мирская мудрость,linguistics,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_3aae7d39,ER2020,2020,Roerich Readings,Роль «Тируттондар тирувандади» Намби Андар Намби в формировании шиваитского канона,philosophy,0.85,,0.0,,0.0,fundamental,0.0
+PRES_R_c725e624,ER2020,2020,Roerich Readings,Поэтический цикл Кабилара о князе Пари,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_R_bc6d3f97,ER2020,2020,Roerich Readings,Модели мотивации понятий «муж» и «жена» в дравидийских языках,linguistics,0.85,,0.0,,0.0,fundamental,0.0
+PRES_R_391fb8fe,ER2020,2020,Roerich Readings,Санскрит и индийская философия в творчестве композитора А.Н. Скрябина,linguistics,0.85,,0.0,,0.0,fundamental,0.0
+PRES_R_0c4ef1b8,ER2020,2020,Roerich Readings,Смена парадигмы? Числовые «коды» в структуре индийских математических сочинений древности и средневековья,literature,1.0,medieval,1.0,,0.0,fundamental,0.0
+PRES_R_05c79ab8,ER2020,2020,Roerich Readings,Опыт применения интертекстуального подхода при изучении санскритских и палийских памятников,linguistics,0.85,,0.0,text,0.85,methodological,1.0
+PRES_R_2d16f0c3,ER2020,2020,Roerich Readings,Феномен речевого сбоя как средство художественной выразительности в структуре классической санскритской драмы,linguistics,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_95da3b41,ER2020,2020,Roerich Readings,О некоторых основных понятиях пратьябхиджни,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_R_b467f161,ER2021,2021,Roerich Readings,Образы бодхисаттвы Авалокитешвары в коллекции Кабинета Рериха: Авалокитешвара – податель прозрения,literature,1.0,,0.0,archive,1.0,fundamental,0.0
+PRES_R_e028b861,ER2021,2021,Roerich Readings,Захват джунгарами Тибета в 1717 г,tibetology,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_f0f8ff4c,ER2021,2021,Roerich Readings,О буддологии в тексте Abhisamayālaṅkāra (тиб. Mngon rtogs rgyan),,0.0,,0.0,text,1.0,fundamental,0.0
+PRES_R_5dec0388,ER2021,2021,Roerich Readings,Особенности топонимов Западного края Китая（西域): лингвокультурный аспект,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_R_f0c1f157,ER2021,2021,Roerich Readings,Магические средства ведения войны на монголо-тибетском фронте,tibetology,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_aec549e1,ER2021,2021,Roerich Readings,"Волосы Будды: паломнический и житийный нарратив, изобразительная традиция",religion,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_d7f99ba4,ER2021,2021,Roerich Readings,Зороастрийский культ огня и ритуалы парсов Индии,religion,1.0,modern,1.0,,0.0,fundamental,0.0
+PRES_R_20a95c6b,ER2021,2021,Roerich Readings,О роли змея (nāga) в вайшнавском культе раннего периода индуизма,religion,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_c3a24216,ER2021,2021,Roerich Readings,О манерах театральной игры: категория вритти в «Натьяшастре»,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_R_f218b425,ER2021,2021,Roerich Readings,Эволюция струнного музыкального инструмента вины на материале скульптуры пещерных храмов южной Индии (I–X вв.),religion,0.85,,0.0,artefact,1.0,fundamental,0.0
+PRES_R_f94af2b9,ER2021,2021,Roerich Readings,Начало гирлянды. Первые известные серии миниатюр рагамала,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_R_4ce55d24,ER2021,2021,Roerich Readings,Визуальная поэзия или поэтический рисунок Рабиндраната Тагора: традиция каллиграфии и фигуры-лампы,literature,1.0,modern,1.0,,0.0,fundamental,0.0
+PRES_R_7d83f647,ER2021,2021,Roerich Readings,Танец суфийских дервишейволчков ритуала «сама» и сакральный «танец вихря» (fr. dance vertige) «Мистерии» А.Н. Скрябина,religion,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_2fedeb0a,ER2021,2021,Roerich Readings,Панчатантра как шастра и как тантра,literature,0.85,medieval,1.0,,0.0,fundamental,0.0
+PRES_R_22aa9178,ER2021,2021,Roerich Readings,"Эпитет, образ, мотив в средневековой поэзии бхакти",literature,1.0,medieval,1.0,,0.0,fundamental,0.0
+PRES_R_cd8836cb,ER2021,2021,Roerich Readings,Мотивационные доминанты как «система ожидания» в санскритском и палийском повествовании,literature,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_744164a4,ER2021,2021,Roerich Readings,Особенности представлений о творении вселенной и ее истории в пуранах,history,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_1d678de2,ER2021,2021,Roerich Readings,Прагматика перечней в эпиграфическом тексте (к открытию надписей брахми III–II вв. до н.э. в Центральной Индии),history,1.0,,0.0,text,1.0,fundamental,0.0
+PRES_R_46d7891e,ER2021,2021,Roerich Readings,Был ли Панчашихка Материалистом?,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_R_70926d9e,ER2021,2021,Roerich Readings,«История Тирумулара»: биография бхакта и биография сиддха,history,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_960f878c,ER2021,2021,Roerich Readings,Любовные и религиозные мотивы в средневековой тамильской поэме «Тирукковейар» Маниккавасахара,literature,1.0,medieval,1.0,,0.0,fundamental,0.0
+PRES_R_e9668d0d,ER2021,2021,Roerich Readings,", Е. А. Ренковская (ИЯз РАН, ИВ РАН) Астрологические манускрипты на танкри из коллекции Кхубрама Кхушдиля (Химачал-Прадеш): особенности текстов и датировка",history,1.0,,0.0,text,0.85,fundamental,0.0
+PRES_R_647e6623,ER2021,2021,Roerich Readings,Жизнь и реалии Кумаона в народных песнях-ньоли,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_R_6cef0566,ER2021,2021,Roerich Readings,"Зеркало, конец иллюзии. Или как удовлетворить тайно влюбленную, касающуюся кувшинами грудей отражения возлюбленного. Учение об отражении в 3-й главе «Тантра-алоки» Абхинавагупты",religion,1.0,classical,0.85,,0.0,fundamental,0.0
+PRES_R_a42eb7e0,ER2021,2021,Roerich Readings,Индийское царство и индийские диковины в средневековых ирландских рукописях XV в. «Романа об Александре»,literature,1.0,medieval,1.0,text,0.85,fundamental,0.0
+PRES_R_c86555de,ER2021,2021,Roerich Readings,Пятнистый охотничий зверь индоевропейцев и «Атхарваведа» 19.49.4 (заметки об индоиранском бестиарии),religion,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_5925dee4,ER2021,2021,Roerich Readings,Предварительные замечания к проблеме речевого сбоя в древнеиндийской теории драмы,,0.0,,0.0,,0.0,methodological,1.0
+PRES_R_4931e483,ER2021,2021,Roerich Readings,Вклад Ю.Н. Рериха в развитие тибетского языкознания,tibetology,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_3b624bcc,ER2021,2021,Roerich Readings,«Культурологический поворот» в исследованиях Ю.Н. Рериха и Л.Н. Гумилёва,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_R_66770a63,ER2021,2021,Roerich Readings,Вклад Ю.Н. Рериха в формирование «транскультурного пространства» Калимпонга (1950-е гг. ХХ в.),,0.0,,0.0,,0.0,fundamental,0.0
+PRES_R_96fde301,ER2022,2022,Roerich Readings,Памятные даты – стимул к новым поискам: 150 лет со дня рождения Павла Риттера и 120 лет со дня рождения Юрия Рериха. (доклад онлайн),,0.0,,0.0,,0.0,fundamental,0.0
+PRES_R_2c192cb9,ER2022,2022,Roerich Readings,Дарджилингский период в научной карьере Ю.Н. Рериха,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_R_a9379eb3,ER2022,2022,Roerich Readings,Некоторые особенности культа Белого старца в Сиккиме. (доклад онлайн),,0.0,,0.0,,0.0,fundamental,0.0
+PRES_R_c9acf1c9,ER2022,2022,Roerich Readings,К реконструкции языковых контактов в области Шангшунг в дотибетскую эпоху,tibetology,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_b655771f,ER2022,2022,Roerich Readings,"Трактат Марко Паллиса, предостерегающий Тибет о последствиях Кали-юги (об атрибутировании и содержании тибетского ксилографа из Архива музея Рерихов (Филиал Государственного музея Востока))",tibetology,1.0,,0.0,text,1.0,fundamental,0.0
+PRES_R_8c3c3a8f,ER2022,2022,Roerich Readings,Лексикализация дезидератива в классическом санскрите,linguistics,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_47861aa5,ER2022,2022,Roerich Readings,Проявление чувств в лирике кришнаитского бхакти XVI в,philosophy,0.85,medieval,1.0,,0.0,fundamental,0.0
+PRES_R_979558a0,ER2022,2022,Roerich Readings,Стилистика Амаравати и поэтика «Лалитавистары»,literature,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_5e6684f1,ER2022,2022,Roerich Readings,«Жизнь Будды» Ашвагхоши и Серебряный век русской культуры,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_R_2328f6a1,ER2022,2022,Roerich Readings,Учение о цвете Ксенократа Сикионского и теория цвето-культурной компетенции чхави Древней Индии,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_R_68c4735e,ER2022,2022,Roerich Readings,Представления о времени и пространстве в «Прета-канде» «Гаруда-пураны»,religion,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_22f6fbeb,ER2022,2022,Roerich Readings,Композиция «Апастамба-шраутасутры»: базовые ритуалы (prakṛti) и их модификации (vikṛti),religion,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_5db25000,ER2022,2022,Roerich Readings,К вопросу о русском переводе «Мимансакапарикальпита-атма-парикши» «Таттва-санграхи» Шантаракшиты с комментарием Камалашилы «Панджика»,tibetology,1.0,,0.0,text,1.0,fundamental,0.0
+PRES_R_04b08bd5,ER2022,2022,Roerich Readings,Недосказанность/прерванность речи в классической санскритской драме,linguistics,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_276c6c23,ER2022,2022,Roerich Readings,Священные зороастрийские тексты и переписка парсийских жрецов с зороастрийскими жрецами Ирана,,0.0,modern,1.0,text,1.0,fundamental,0.0
+PRES_R_d29c3770,ER2022,2022,Roerich Readings,Философия и практики самоповреждающего поведения в тамильском бхакти (доклад онлайн),philosophy,1.0,medieval,1.0,fieldwork,1.0,fundamental,0.0
+PRES_R_c3e58a05,ER2022,2022,Roerich Readings,Несколько замечаний о введении и первой части «Тирумантирама»,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_R_5e6c5372,ER2022,2022,Roerich Readings,Тригата в «Натьяшастре»: религиозное и символическое значение,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_R_cb3ac8dc,ER2022,2022,Roerich Readings,Связка текст-смысл-мышление в «Артхашастре» Каутильи: уникальность и стандартность,,0.0,,0.0,text,1.0,fundamental,0.0
+PRES_R_06782b8a,ER2022,2022,Roerich Readings,Немногие сведения о Нилакантхадикшитеграмматисте,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_R_29beb1c8,ER2022,2022,Roerich Readings,Полисемия в области терминологии родства – дравидийские и индоарийские языки,linguistics,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_9a06d660,ER2022,2022,Roerich Readings,Этимологическая классификация лексики в индийской и европейской грамматической традиции на примере языка куллуи,linguistics,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_2ea19339,ER2022,2022,Roerich Readings,Рецепция тантрического текста в совеременной культуре: случай Аллена Гинзберга,religion,1.0,medieval,1.0,text,1.0,fundamental,0.0
+PRES_R_9508e42c,ER2022,2022,Roerich Readings,О предельном предмете в «Парамартхасаре» Абхинавагупты,,0.0,classical,1.0,,0.0,fundamental,0.0
+PRES_R_5c8f1fff,ER2022,2022,Roerich Readings,Сообщение о смерти Чингис-хана в русских летописях,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_R_666aca53,ER2022,2022,Roerich Readings,", Б.У. Китинов (ИВ РАН). «Стела монастыря Шакья 释迦院碑» 1257 г. в Монголии – изучение и анализ текста",,0.0,,0.0,text,1.0,fundamental,0.0
+PRES_R_50f5cac0,ER2023,2023,Roerich Readings,Надписи на колонне Гелиодора,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_R_c1222b35,ER2023,2023,Roerich Readings,Ритуал приема почетного гостя при жертвоприношениях сомы,religion,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_fca552b0,ER2023,2023,Roerich Readings,Представление о годе в концепции времени пуран,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_R_0a95fbe7,ER2023,2023,Roerich Readings,Культ корзины в Древней Индии и смена религиозной парадигмы,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_R_4fff3b4e,ER2023,2023,Roerich Readings,Социоскрипторная ситуация в Древней Индии,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_R_58633b60,ER2023,2023,Roerich Readings,Несколько замечаний о Брахмане и сущем,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_R_a43239ab,ER2023,2023,Roerich Readings,Обсценная брань и её следы в РВ 10.10: возможна ли реконструкция текста?,,0.0,,0.0,text,1.0,fundamental,0.0
+PRES_R_659b4900,ER2023,2023,Roerich Readings,"Karaṇīya-mettasutta – «Любовь всеобъемлющая», как императив, освобождающий от страданий сансары",linguistics,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_f1cc8f8c,ER2023,2023,Roerich Readings,О понятии «вкус» (rasa) в древнеиндийской традиции,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_R_19cb5a8b,ER2023,2023,Roerich Readings,«Не одне грандиозныя прелести Гималаев»: итоги путешествия И. П. Минаева в Кумаон (1875),history,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_2db952a6,ER2023,2023,Roerich Readings,Исследования древнеиндийских текстов как ключевое направление в ранней японской буддологии,,0.0,,0.0,text,1.0,fundamental,0.0
+PRES_R_1d6efc68,ER2023,2023,Roerich Readings,Словослияние в куллуи как способ словообразования,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_R_5c9ac730,ER2023,2023,Roerich Readings,Этимология и семантика цветообозначения «красный» в китайской культуре,linguistics,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_9ec71611,ER2023,2023,Roerich Readings,Тексты праджняпарамиты в ойратской религиозной культуре и законоположениях,,0.0,,0.0,text,1.0,fundamental,0.0
+PRES_R_07d17a12,ER2023,2023,Roerich Readings,Отражение монгольских имперских идей в средневековых вьетнамских источниках,history,1.0,medieval,1.0,,0.0,fundamental,0.0
+PRES_R_f6f63b98,ER2023,2023,Roerich Readings,"Журнал “Stepping stones” – гималайская культура, буддизм и философия перенниализма сквозь призму взглядов европейских исследователей",philosophy,0.85,,0.0,,0.0,fundamental,0.0
+PRES_R_f661cb1b,ER2023,2023,Roerich Readings,Улан-Баторский период в научной карьере Ю.Н. Рериха. 1926-1927 годы,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_R_7202bada,ER2024,2024,Roerich Readings,Вступительное слово от организаторов конференции,art_archaeology,1.0,,0.0,artefact,1.0,fundamental,0.0
+PRES_R_b42c5951,ER2024,2024,Roerich Readings,Посох Чанакьи,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_R_532937ef,ER2024,2024,Roerich Readings,Новый поворот традиции шраута: Сагничит Трисахасра Атиратра Сомаяга 2024 в Западной Бенгалии,linguistics,1.0,modern,1.0,,0.0,fundamental,0.0
+PRES_R_e5b7bfe2,ER2024,2024,Roerich Readings,Покаяние (prāyaścitta) и наказание (daṇḍa) в дхармасутрах,religion,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_9b10a70c,ER2024,2024,Roerich Readings,К проблеме происхождения варны кшатриев: культ воинской элиты в индоарийской традиции (по данным археологии и петроглифики),history,1.0,,0.0,,0.0,methodological,1.0
+PRES_R_320577bf,ER2024,2024,Roerich Readings,Похищение и возвращение жён в древнеиндийском эпосе и параллели в древнегреческих сюжетах,literature,1.0,classical,1.0,,0.0,fundamental,0.0
+PRES_R_92049b03,ER2024,2024,Roerich Readings,Индийские классификации: принципы различения поэтических украшений (аланкар),,0.0,,0.0,,0.0,fundamental,0.0
+PRES_R_8dfe5b5a,ER2024,2024,Roerich Readings,"Традиционные индийские классификации: образцовые, удобные, проблематичные",,0.0,,0.0,,0.0,fundamental,0.0
+PRES_R_6b7a6314,ER2024,2024,Roerich Readings,Ведантийско-буддийский полемический диалог в «Брахмасутрабхашье»,religion,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_b8d50092,ER2024,2024,Roerich Readings,Сюжет «обращения братьев Кашьяпов» в «Сутре о благом явлении царевича»: неожиданные повороты,literature,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_de413bd7,ER2024,2024,Roerich Readings,Планиметрические модели тела человека в санскритских трактатах по искусству и в стенописи Аджанты,linguistics,1.0,,0.0,text,1.0,fundamental,0.0
+PRES_R_4922e50f,ER2024,2024,Roerich Readings,Обряды «жизненного цикла» скульптуры по материалам пуран,art_archaeology,1.0,,0.0,artefact,1.0,fundamental,0.0
+PRES_R_538a59b0,ER2024,2024,Roerich Readings,О нарративной символике бронзовой фигурки танцующего Бала-Кришны,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_R_0e28b069,ER2024,2024,Roerich Readings,Некоторые тхангка из коллекции Ю.Н. Рериха (Новые исследования),history,1.0,,0.0,archive,1.0,fundamental,0.0
+PRES_R_4e136405,ER2024,2024,Roerich Readings,Феномен в jalacārin в архитектуре храмов Карнатаки древних и средних веков,religion,0.85,,0.0,artefact,1.0,fundamental,0.0
+PRES_R_45d3c241,ER2024,2024,Roerich Readings,Морфология деревянной храмовой архитектуры Химачал-Прадеша (Индия),linguistics,0.8,,0.0,artefact,1.0,fundamental,0.0
+PRES_R_7a27c926,ER2024,2024,Roerich Readings,"Культ корзины у гондов, джайнская икона аягапатта и буддийский алтарь: еще раз о смене религиозной парадигмы в Древней Индии",religion,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_94778c1c,ER2024,2024,Roerich Readings,", А.В. Осокин (ИВ РАН, онлайн). К идентификации тантрических изображений Ямантаки в монастыре Юнъань-сы 永安寺 провинции Шаньси 山西省",religion,1.0,medieval,1.0,,0.0,fundamental,0.0
+PRES_R_aecdcf59,ER2024,2024,Roerich Readings,«Наука поэзии» (Кавьяшастра) в трудах ранних аланкариков,literature,1.0,classical,1.0,,0.0,fundamental,0.0
+PRES_R_36b9c648,ER2024,2024,Roerich Readings,Ирония в пьесе Ватсараджи «Киратарджуния» (XII в.),,0.0,,0.0,,0.0,fundamental,0.0
+PRES_R_21c03257,ER2024,2024,Roerich Readings,Принципы построения верениц древнеиндийских имён в «Вишнусахасранаме» («Махабхарата» XII.135),,0.0,classical,1.0,,0.0,fundamental,0.0
+PRES_R_03cc38de,ER2024,2024,Roerich Readings,Тема леса в поэтических антологиях Бхартрихари и Видьякары,literature,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_1bc106d7,ER2024,2024,Roerich Readings,Многообразие культурных традиций и влияний в средневековой Индии: от династий до социальных изменений,,0.0,medieval,1.0,,0.0,fundamental,0.0
+PRES_R_bee7961f,ER2024,2024,Roerich Readings,Буддизм в Восточном Туркестане,religion,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_dbd4c427,ER2024,2024,Roerich Readings,Угроза монгольских вторжений в Японию глазами Нитирэна,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_R_9047795c,ER2024,2024,Roerich Readings,Этимология и семантика цветообозначения «черный» в культуре Китая,linguistics,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_23453ba5,ER2024,2024,Roerich Readings,"О письмах Ю.Н. Рериха из коллекции Д. Тарчина (Колумбийский университет, Нью-Йорк, США)",history,1.0,,0.0,archive,1.0,fundamental,0.0
+PRES_R_e8cc370f,ER2024,2024,Roerich Readings,Ю.Н. Рерих о происхождении монгольской письменности,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_R_72f59ec0,ER2024,2024,Roerich Readings,Микушевич как переводчик санскритской поэзии,linguistics,0.8,,0.0,text,1.0,fundamental,0.0
+PRES_R_ce4976e3,ER2025,2025,Roerich Readings,Зачем в санскрите три прошедших времени?,linguistics,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_b7815fb1,ER2025,2025,Roerich Readings,Священные огни в шраута-ритуалах,religion,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_098db71b,ER2025,2025,Roerich Readings,Аланкара как аспект стилистики текста,,0.0,,0.0,text,1.0,fundamental,0.0
+PRES_R_ce78a73a,ER2025,2025,Roerich Readings,Почему у монаха-дигамбара рог на голове? Попытка интерпретации одной строфы из философского диспута в прахасане «Латакамелака»,philosophy,0.85,,0.0,,0.0,fundamental,0.0
+PRES_R_b0f57b5a,ER2025,2025,Roerich Readings,Очеловечивание божеств в пьесе Ватсараджи «Самудраматхана» (XII вв.),religion,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_ac821d1e,ER2025,2025,Roerich Readings,", О. В. Лундышева (РНБ Сектор восточных фондов Отдела рукописей; ИКВИА НИУ ВШЭ, Санкт-Петербург - Москва). Prasādapratibhodbhava (Śatapañcāśatka) Матричеты: тохарский перевод и комментарий",,0.0,,0.0,text,1.0,fundamental,0.0
+PRES_R_74856194,ER2025,2025,Roerich Readings,", М.А. Овчинникова (ИВ РАН, Москва). Исторические и историографические особенности монгольской летописи начала XVIII в.: Гомбоджаб. «Течение Ганга»",history,1.0,colonial,1.0,,0.0,fundamental,0.0
+PRES_R_82708d75,ER2025,2025,Roerich Readings,Отношения между государством Корё и Тибетом в эпоху Юань (конец XIII – начало XIV вв.),tibetology,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_6f04966b,ER2025,2025,Roerich Readings,Этапы сложения имперской идеологии у средневековых монголов,,0.0,medieval,1.0,,0.0,fundamental,0.0
+PRES_R_7197067c,ER2025,2025,Roerich Readings,Описание Центральной Азии в «Хождении в пять индийских царств»,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_R_f49f8b44,ER2025,2025,Roerich Readings,Чанпинская битва 260 г. до н.э.: когда встречаются источники и археология,history,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_951ca52b,ER2025,2025,Roerich Readings,Представления пуран о священном тексте как культовом предмете,,0.0,,0.0,text,1.0,fundamental,0.0
+PRES_R_4fec1fcf,ER2025,2025,Roerich Readings,Небесные боги в картине мира буддийской агиографии: признаки эволюции («Лалитавистара»),religion,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_ec7a74e1,ER2025,2025,Roerich Readings,Сита и Агни в «Рамаяне» Вальмики,literature,1.0,classical,1.0,,0.0,fundamental,0.0
+PRES_R_a1bd733f,ER2025,2025,Roerich Readings,О теории просодии в «Натьяшастре»,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_R_0a153884,ER2025,2025,Roerich Readings,Список тамильских каст у Бартоломеуса Цигенбальга: книжная традиция vs историческая реальность,history,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_d489418f,ER2025,2025,Roerich Readings,Выкуп невесты (śulka) в Древней Индии: шастрическая и эпическая традиции,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_R_706771fa,ER2025,2025,Roerich Readings,Эволюция архитектуры джайнских пещерных храмов Махараштры в контексте скального зодчества Индии,religion,0.85,,0.0,artefact,1.0,fundamental,0.0
+PRES_R_a7fac43c,ER2025,2025,Roerich Readings,Значение иконографии Будды Мучилинды в культуре и искусстве Кхмерской империи XII–XIII вв,art_archaeology,1.0,,0.0,artefact,1.0,fundamental,0.0
+PRES_R_b8917dbf,ER2025,2025,Roerich Readings,Образ Деви с младенцем Шивой в контексте развития иконографии Богини-Матери в скульптуре Бенгалии,art_archaeology,1.0,modern,1.0,artefact,1.0,fundamental,0.0
+PRES_R_af3c3ec4,ER2025,2025,Roerich Readings,Треугольник Паскаля или Пингалы?,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_R_acade807,ER2025,2025,Roerich Readings,Metta–Karaṇīya – Любовь как этический императив в раннебуддийской сотериологии на материале Метта сутты и Тевиджджа сутты Палийского канона,religion,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_47c32666,ER2025,2025,Roerich Readings,Яджня Ригведы и «другая яджня» палийского канона,,0.0,,0.0,,0.0,fundamental,0.0
+PRES_R_344c964c,ER2025,2025,Roerich Readings,Проблема бхакти в «Ожерельи Величаний Шивы» — «Шивастотравали» (Śivastotrāvalī) Утпаладевы,philosophy,0.85,medieval,1.0,,0.0,fundamental,0.0
+PRES_R_160d2bc4,ER2025,2025,Roerich Readings,Индийская философия сознания через призму цивилизационной демаркации «Восток-Запад»,philosophy,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_daf57ec4,ER2025,2025,Roerich Readings,Роль языка в познании абсолютного согласно школе Гелук,linguistics,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_69aea57c,ER2025,2025,Roerich Readings,Индийские шастры с точки зрения современной методологии познания,,0.0,modern,1.0,,0.0,methodological,1.0
+PRES_R_aef57a45,ER2025,2025,Roerich Readings,Рецепция Маджджхима-никаи в рукописях Э. Гуссерля,,0.0,,0.0,text,0.85,fundamental,0.0
+PRES_R_a40c98fd,ER2025,2025,Roerich Readings,Анаттавада «палийского Будды» в её философских и сотериологических координатах,philosophy,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_347337c7,ER2025,2025,Roerich Readings,Калмаки в литературе и искусстве могольской Индии,literature,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_cb1b5e86,ER2025,2025,Roerich Readings,К вопросу о переводе буддийского термина бодхи (菩提) на китайский язык,linguistics,0.85,,0.0,text,1.0,fundamental,0.0
+PRES_R_dd671734,ER2025,2025,Roerich Readings,Об этимологии слова «мангус»,linguistics,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_f9bc0d0f,ER2025,2025,Roerich Readings,Из истории фиксации традиционного сказителя хобуксарких ойратов Аримпиля (1923–1994),history,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_ed24011c,ER2025,2025,Roerich Readings,Этнорелигиозная картина уйгуров по китайским источникам XIV-XIX вв,history,1.0,colonial,1.0,,0.0,fundamental,0.0
+PRES_R_4e73d434,ER2025,2025,Roerich Readings,Вклад Ю.Н. Рериха в историю российских экспедиций в Центральную Азию. К 100-летию начала Центрально-Азиатской экспедиции Н.К. Рериха,history,1.0,,0.0,,0.0,fundamental,0.0
+PRES_R_f7e5bdb7,ER2025,2025,Roerich Readings,Исторические идеи просветительства Ахамади Дониша в культурном коде Таджикистана,history,1.0,,0.0,,0.0,fundamental,0.0
