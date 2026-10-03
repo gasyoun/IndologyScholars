@@ -10,8 +10,8 @@
 <text x="28" y="200" fill="#a8b7ae" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="start">last 2011-2016</text>
 <text x="28" y="260" fill="#a8b7ae" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="start">last 2017-2022</text>
 <text x="28" y="320" fill="#a8b7ae" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="start">last 2023-2026</text>
-<rect x="210" y="105" width="142" height="52" rx="8" fill="#7ccf9b" opacity="0.37"/>
-<text x="281.0" y="139" fill="#eef6f0" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="800" text-anchor="middle">21</text>
+<rect x="210" y="105" width="142" height="52" rx="8" fill="#7ccf9b" opacity="0.46"/>
+<text x="281.0" y="139" fill="#eef6f0" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="800" text-anchor="middle">29</text>
 <rect x="360" y="105" width="142" height="52" rx="8" fill="#7ccf9b" opacity="0.12"/>
 <text x="431.0" y="139" fill="#eef6f0" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="800" text-anchor="middle">0</text>
 <rect x="510" y="105" width="142" height="52" rx="8" fill="#7ccf9b" opacity="0.12"/>
