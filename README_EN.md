@@ -19,13 +19,13 @@ The published speaker collection (`site_data.json` summary of 2026-10-03) contai
 
 | Measure | Value |
 | --- | ---: |
-| Speaker profiles | 268 |
-| Unique talks | 1362 |
-| Author participations | 1388 |
-| Programme years | 22, from 2004 to 2026 |
-| Speakers found at both series | 41 |
-| Zograf Readings only | 163 |
-| Roerich Readings only | 64 |
+| Speaker profiles | 276 |
+| Unique talks | 1385 |
+| Author participations | 1411 |
+| Programme years | 23, from 2004 to 2026 |
+| Speakers found at both series | 42 |
+| Zograf Readings only | 162 |
+| Roerich Readings only | 72 |
 
 The archive covers the Zograf Readings for 2004-2026 and the Roerich Readings
 for 2007-2025. The 2026 Zograf programme is included as a preliminarily
