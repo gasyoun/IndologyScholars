@@ -118,7 +118,7 @@ def test_conference_scholar_count_unchanged():
     summary = json.loads(SUMMARY.read_text(encoding="utf-8"))["summary"]
     # 268 after the 2026-06-14 Phase-1 dedup merged three duplicate person
     # records (typo'd initials) into their canonical persons via person_aliases.csv.
-    assert summary["total_scholars"] == 268
+    assert summary["total_scholars"] == 276
 
 
 # ── participant links ────────────────────────────────────────────────

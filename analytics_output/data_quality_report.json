@@ -7,20 +7,20 @@
     "generator": "generate_publication_pages.py"
   },
   "summary": {
-    "total_scholars": 268,
-    "total_presentations": 1388,
-    "unique_presentations": 1362,
-    "author_participations": 1388,
-    "total_events": 40,
-    "years_covered": 22,
+    "total_scholars": 276,
+    "total_presentations": 1411,
+    "unique_presentations": 1385,
+    "author_participations": 1411,
+    "total_events": 41,
+    "years_covered": 23,
     "start_year": 2004,
     "end_year": 2026,
-    "overlap_scholars": 41,
-    "zograf_only_scholars": 163,
-    "roerich_only_scholars": 64,
-    "person_rows": 308,
-    "presentation_rows": 1362,
-    "event_rows": 40
+    "overlap_scholars": 42,
+    "zograf_only_scholars": 162,
+    "roerich_only_scholars": 72,
+    "person_rows": 316,
+    "presentation_rows": 1385,
+    "event_rows": 41
   },
   "checks": [
     {
