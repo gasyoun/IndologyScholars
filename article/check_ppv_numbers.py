@@ -188,6 +188,27 @@ def read_appendix_summary() -> dict[str, float]:
     return out
 
 
+def character_shares() -> dict[str, float]:
+    """Character-axis (L4) shares by series from the classification CSV."""
+    counts: dict[str, Counter[str]] = {"Zograf": Counter(), "Roerich": Counter()}
+    if not CLASS_CSV.exists():
+        return {}
+    with open(CLASS_CSV, encoding="utf-8-sig") as fh:
+        for row in csv.DictReader(fh):
+            bucket = "Zograf" if "Zograf" in row.get("series", "") else (
+                "Roerich" if "Roerich" in row.get("series", "") else None)
+            ch = (row.get("character_l4") or "").strip()
+            if bucket and ch:
+                counts[bucket][ch] += 1
+    out: dict[str, float] = {}
+    for name, bucket in (("zograf", "Zograf"), ("roerich", "Roerich")):
+        total = sum(counts[bucket].values())
+        if total:
+            for kind in ("fundamental", "applied", "methodological"):
+                out[f"{name}_{kind}_pct"] = pct(counts[bucket][kind], total)
+    return out
+
+
 def read_retention_by_city() -> dict[str, float]:
     """Read geographic_speaker_retention.csv (retention % by city marker) if present."""
     out: dict[str, float] = {}
@@ -326,6 +347,7 @@ def build_snapshot() -> dict[str, object]:
         "meso_counts": meso_counts,
         "appendix": read_appendix_summary(),
         "retention_by_city": read_retention_by_city(),
+        "character_shares": character_shares(),
     }
     return snapshot
 
@@ -709,6 +731,28 @@ def find_drifts(text: str, snap: dict[str, object]) -> list[dict]:
         out += check("City-only share, Roerich (§ 4 summary table)",
             r"только\s+город\"\s+\d+\.\d+%\s+на\s+Зографе\s+и\s+(\d+\.\d+)%\s+на\s+Рерихе",
             A["H4_roerich_cityonly_pct"], text)
+
+    # --- Character-axis shares (L4: fundamental/applied/methodological, § 4 prose) ---
+    C = snap.get("character_shares") or {}
+    if C:
+        out += check("Character: fundamental share, Zograf (§ 4 prose)",
+            r"фундаментальные\s+исследования\s+составляют\s+(\d+\.\d+)%\s+докладов\s+на\s+Зографских",
+            C.get("zograf_fundamental_pct"), text)
+        out += check("Character: fundamental share, Roerich (§ 4 prose)",
+            r"а\s+на\s+Рериховских\s+-\s+(\d+\.\d+)%,",
+            C.get("roerich_fundamental_pct"), text)
+        out += check("Character: applied share, Zograf (§ 4 prose)",
+            r"прикладные\s+-\s+(\d+\.\d+)%\s+и",
+            C.get("zograf_applied_pct"), text)
+        out += check("Character: applied share, Roerich (§ 4 prose)",
+            r"прикладные\s+-\s+(?:\d+\.\d+)%\s+и\s+(\d+\.\d+)%,",
+            C.get("roerich_applied_pct"), text)
+        out += check("Character: methodological share, Zograf (§ 4 prose)",
+            r"методологические\s+-\s+(\d+\.\d+)%\s+и",
+            C.get("zograf_methodological_pct"), text)
+        out += check("Character: methodological share, Roerich (§ 4 prose)",
+            r"методологические\s+-\s+(?:\d+\.\d+)%\s+и\s+(\d+\.\d+)%\.",
+            C.get("roerich_methodological_pct"), text)
 
     # --- Retention by city marker (§ 4) ---
     R = snap.get("retention_by_city") or {}
