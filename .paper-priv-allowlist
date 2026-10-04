@@ -5,3 +5,6 @@
 # Manuscripts live only in gasyoun/Uprava/papers
 # (STANDING_POLICY_PAPER_WORK_PRIVATE_REPOS_ONLY, 04-10-2026).
 # No active exemptions below — add lines only with a documented reason.
+article/SIGNOFF_A26_author_pass.md	# load-bearing: Validate Publication Build CI requires it (live portal pipeline)
+article/ppv_cover_letter.md	# load-bearing: publication build manifest input (portal CI green on main)
+article/ppv_submission_checklist.md	# load-bearing: publication build manifest input (portal CI green on main)
