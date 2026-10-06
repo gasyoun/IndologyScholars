@@ -1,0 +1,458 @@
+{
+  "generated": "2026-10-06",
+  "handoff": "H6060",
+  "method": {
+    "citing_document": "nagari googlegroup thread (nagari/md/<year>/*.md)",
+    "unit": "capitalised surname-stem co-occurrence within one thread",
+    "node_filter": "mentioned in >= 2 threads",
+    "deterministic": true
+  },
+  "corpus": {
+    "threads_scanned": 2928,
+    "db_persons": 316,
+    "persons_matched_any_thread": 240,
+    "surname_stems_indexed": 649,
+    "ambiguous_surnames_skipped": 26,
+    "ambiguous_surnames_list": [
+      "Александра",
+      "Александрова",
+      "Анастасия",
+      "Анна",
+      "Антон",
+      "Васильев",
+      "Виктор",
+      "Виктория",
+      "Георгий",
+      "Глеб",
+      "Денис",
+      "Евгения",
+      "Елизаренкова",
+      "Игорь",
+      "Корнеева",
+      "Ксения",
+      "Кудрявцева",
+      "Лилия",
+      "Максим",
+      "Нина",
+      "Ольга",
+      "Полина",
+      "Роман",
+      "Семён",
+      "Соболева",
+      "Татьяна"
+    ]
+  },
+  "network": {
+    "nodes": 172,
+    "edges": 5905,
+    "density": 0.401537,
+    "total_cocitation_weight": 10808,
+    "components": 3,
+    "largest_component": 170,
+    "communities": 5,
+    "communities_isolate_nodes": 13,
+    "modularity_q": 0.246232,
+    "backbone": {
+      "edge_min_weight": 2,
+      "nodes": 159,
+      "edges": 2607
+    }
+  },
+  "top_hubs_strength": [
+    {
+      "person_id": "PERS_8516d1e4",
+      "name": "Гасунс Марцис Юрьевич",
+      "strength": 702,
+      "threads": 367,
+      "community": "PERS_0665f215"
+    },
+    {
+      "person_id": "PERS_829c1de5",
+      "name": "Васильков Ярослав Владимирович",
+      "strength": 361,
+      "threads": 23,
+      "community": "PERS_05d56645"
+    },
+    {
+      "person_id": "PERS_bd77e495",
+      "name": "Корнеев Геннадий Батыревич",
+      "strength": 317,
+      "threads": 14,
+      "community": "PERS_05d56645"
+    },
+    {
+      "person_id": "PERS_d98da899",
+      "name": "Рыжакова Светлана Игоревна",
+      "strength": 301,
+      "threads": 8,
+      "community": "PERS_05d56645"
+    },
+    {
+      "person_id": "PERS_1a097e52",
+      "name": "Парибок Андрей Всеволодович",
+      "strength": 300,
+      "threads": 31,
+      "community": "PERS_05d56645"
+    },
+    {
+      "person_id": "PERS_9d99092c",
+      "name": "Рыбаков Р. Б.",
+      "strength": 300,
+      "threads": 15,
+      "community": "PERS_05d56645"
+    },
+    {
+      "person_id": "PERS_260a598a",
+      "name": "Пахомов Сергей Владимирович",
+      "strength": 299,
+      "threads": 15,
+      "community": "PERS_05d56645"
+    },
+    {
+      "person_id": "PERS_45cebd8f",
+      "name": "Минаев Иван Павлович",
+      "strength": 298,
+      "threads": 16,
+      "community": "PERS_0665f215"
+    },
+    {
+      "person_id": "PERS_72506535",
+      "name": "Крылова Анастасия Сергеевна",
+      "strength": 286,
+      "threads": 12,
+      "community": "PERS_05d56645"
+    },
+    {
+      "person_id": "PERS_56508328",
+      "name": "Десницкая Евгения Алексеевна",
+      "strength": 282,
+      "threads": 7,
+      "community": "PERS_05d56645"
+    },
+    {
+      "person_id": "PERS_7542d270",
+      "name": "Демченко Максим Борисович",
+      "strength": 279,
+      "threads": 17,
+      "community": "PERS_05d56645"
+    },
+    {
+      "person_id": "PERS_3e105f43",
+      "name": "Игнатьев Андрей Александрович",
+      "strength": 278,
+      "threads": 15,
+      "community": "PERS_05d56645"
+    },
+    {
+      "person_id": "PERS_a901d460",
+      "name": "Фаградян Марина Александровна",
+      "strength": 278,
+      "threads": 68,
+      "community": "PERS_0665f215"
+    },
+    {
+      "person_id": "PERS_ab6bf9e3",
+      "name": "Смирнов Борис Леонидович",
+      "strength": 273,
+      "threads": 57,
+      "community": "PERS_0665f215"
+    },
+    {
+      "person_id": "PERS_6e211759",
+      "name": "Иванов Владимир Павлович",
+      "strength": 272,
+      "threads": 41,
+      "community": "PERS_0665f215"
+    }
+  ],
+  "top_channels_betweenness": [
+    {
+      "person_id": "PERS_8516d1e4",
+      "name": "Гасунс Марцис Юрьевич",
+      "betweenness": 8827.987698,
+      "degree": 153
+    },
+    {
+      "person_id": "PERS_bd77e495",
+      "name": "Корнеев Геннадий Батыревич",
+      "betweenness": 1524.201899,
+      "degree": 122
+    },
+    {
+      "person_id": "PERS_a901d460",
+      "name": "Фаградян Марина Александровна",
+      "betweenness": 896.86829,
+      "degree": 120
+    },
+    {
+      "person_id": "PERS_6e211759",
+      "name": "Иванов Владимир Павлович",
+      "betweenness": 714.6921,
+      "degree": 120
+    },
+    {
+      "person_id": "PERS_ab6bf9e3",
+      "name": "Смирнов Борис Леонидович",
+      "betweenness": 653.083333,
+      "degree": 100
+    },
+    {
+      "person_id": "PERS_d9d69ac2",
+      "name": "Петров Павел Яковлевич",
+      "betweenness": 544.010714,
+      "degree": 101
+    },
+    {
+      "person_id": "PERS_1dd32cc2",
+      "name": "Кнауэр Фёдор Иванович",
+      "betweenness": 512.25,
+      "degree": 52
+    },
+    {
+      "person_id": "PERS_587b08ec",
+      "name": "Леонов Михаил Васильевич",
+      "betweenness": 491.936616,
+      "degree": 123
+    },
+    {
+      "person_id": "PERS_f56c5a7e",
+      "name": "Жукова Любовь Евгеньевна",
+      "betweenness": 464.416667,
+      "degree": 110
+    },
+    {
+      "person_id": "PERS_5228da95",
+      "name": "Вертоградова Виктория Викторовна",
+      "betweenness": 412.638889,
+      "degree": 87
+    },
+    {
+      "person_id": "PERS_829c1de5",
+      "name": "Васильков Ярослав Владимирович",
+      "betweenness": 398.248761,
+      "degree": 127
+    },
+    {
+      "person_id": "PERS_9d99092c",
+      "name": "Рыбаков Р. Б.",
+      "betweenness": 371.110594,
+      "degree": 123
+    },
+    {
+      "person_id": "PERS_260a598a",
+      "name": "Пахомов Сергей Владимирович",
+      "betweenness": 369.198846,
+      "degree": 115
+    },
+    {
+      "person_id": "PERS_a0f3d86d",
+      "name": "Сергеева Варвара Алексеевна",
+      "betweenness": 267.2921,
+      "degree": 103
+    },
+    {
+      "person_id": "PERS_b76851a7",
+      "name": "Митруев Бембя Леонидович",
+      "betweenness": 168.0,
+      "degree": 46
+    }
+  ],
+  "schools": [
+    {
+      "community": "PERS_0665f215",
+      "size": 72,
+      "top_members": [
+        {
+          "person_id": "PERS_8516d1e4",
+          "name": "Гасунс Марцис Юрьевич",
+          "strength": 702
+        },
+        {
+          "person_id": "PERS_45cebd8f",
+          "name": "Минаев Иван Павлович",
+          "strength": 298
+        },
+        {
+          "person_id": "PERS_a901d460",
+          "name": "Фаградян Марина Александровна",
+          "strength": 278
+        },
+        {
+          "person_id": "PERS_ab6bf9e3",
+          "name": "Смирнов Борис Леонидович",
+          "strength": 273
+        },
+        {
+          "person_id": "PERS_6e211759",
+          "name": "Иванов Владимир Павлович",
+          "strength": 272
+        },
+        {
+          "person_id": "PERS_d9d69ac2",
+          "name": "Петров Павел Яковлевич",
+          "strength": 236
+        },
+        {
+          "person_id": "PERS_cfb92c5f",
+          "name": "Уланский Евгений Андреевич",
+          "strength": 232
+        },
+        {
+          "person_id": "PERS_34c0d384",
+          "name": "Павлова Мария Борисовна",
+          "strength": 228
+        }
+      ]
+    },
+    {
+      "community": "PERS_05d56645",
+      "size": 67,
+      "top_members": [
+        {
+          "person_id": "PERS_829c1de5",
+          "name": "Васильков Ярослав Владимирович",
+          "strength": 361
+        },
+        {
+          "person_id": "PERS_bd77e495",
+          "name": "Корнеев Геннадий Батыревич",
+          "strength": 317
+        },
+        {
+          "person_id": "PERS_d98da899",
+          "name": "Рыжакова Светлана Игоревна",
+          "strength": 301
+        },
+        {
+          "person_id": "PERS_1a097e52",
+          "name": "Парибок Андрей Всеволодович",
+          "strength": 300
+        },
+        {
+          "person_id": "PERS_9d99092c",
+          "name": "Рыбаков Р. Б.",
+          "strength": 300
+        },
+        {
+          "person_id": "PERS_260a598a",
+          "name": "Пахомов Сергей Владимирович",
+          "strength": 299
+        },
+        {
+          "person_id": "PERS_72506535",
+          "name": "Крылова Анастасия Сергеевна",
+          "strength": 286
+        },
+        {
+          "person_id": "PERS_56508328",
+          "name": "Десницкая Евгения Алексеевна",
+          "strength": 282
+        }
+      ]
+    },
+    {
+      "community": "PERS_003adcfe",
+      "size": 9,
+      "top_members": [
+        {
+          "person_id": "PERS_587b08ec",
+          "name": "Леонов Михаил Васильевич",
+          "strength": 253
+        },
+        {
+          "person_id": "PERS_310b2911",
+          "name": "Толчельников Иван Евгеньевич",
+          "strength": 144
+        },
+        {
+          "person_id": "PERS_003adcfe",
+          "name": "Псху Рузана Владимировна",
+          "strength": 111
+        },
+        {
+          "person_id": "PERS_23abae7d",
+          "name": "Пушкарева Юлия Георгиевна",
+          "strength": 72
+        },
+        {
+          "person_id": "PERS_36dabb79",
+          "name": "Гурия Анастасия Георгиевна",
+          "strength": 69
+        },
+        {
+          "person_id": "PERS_68e9019d",
+          "name": "Малютин Иван Иванович",
+          "strength": 67
+        },
+        {
+          "person_id": "PERS_bbd15f4f",
+          "name": "Степин А. А.",
+          "strength": 54
+        },
+        {
+          "person_id": "PERS_ebc1c3c2",
+          "name": "Лундышева Ольга Владимировна",
+          "strength": 29
+        }
+      ]
+    },
+    {
+      "community": "PERS_2fd442aa",
+      "size": 9,
+      "top_members": [
+        {
+          "person_id": "PERS_2fd442aa",
+          "name": "Офертас Станислав Чеславович",
+          "strength": 55
+        },
+        {
+          "person_id": "PERS_3ccc9bd7",
+          "name": "А. Солька",
+          "strength": 55
+        },
+        {
+          "person_id": "PERS_45a76880",
+          "name": "Кораблин Денис Александрович",
+          "strength": 55
+        },
+        {
+          "person_id": "PERS_5ed752d9",
+          "name": "Китинов Баатр Учаевич",
+          "strength": 55
+        },
+        {
+          "person_id": "PERS_6578b52d",
+          "name": "Тюлина Елена Владимировна",
+          "strength": 55
+        },
+        {
+          "person_id": "PERS_9374fd12",
+          "name": "Вырщиков Евгений Геннадьевич",
+          "strength": 55
+        },
+        {
+          "person_id": "PERS_da862dde",
+          "name": "Дробышев Юлий Игорьевич",
+          "strength": 55
+        },
+        {
+          "person_id": "PERS_e9545a0b",
+          "name": "Шустова Алла Михайловна",
+          "strength": 55
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "co-mention in community discourse (one googlegroup thread), not bibliometric co-citation from reference lists",
+    "surname-stem matching: same-surname persons outside the DB are inseparable; skipped ambiguous stems are listed in corpus.ambiguous_surnames_list",
+    "name homonyms (Ivanov, Smirnov, …) can produce false positives; edge weights read as order of magnitude, not exact counts",
+    "export author lines use pseudonyms, not surnames; authorship contribution to co-mention is minimal but non-zero"
+  ],
+  "anchor_h5931_cappeller_kochergina": {
+    "threads_cappeller": 4,
+    "threads_kochergina": 193,
+    "threads_both": 0,
+    "note": "Cappeller and Kochergina are corpus-mentioned indologists outside the conferences.db person table; they anchor the H5931 dictionary-channel result (rho 0.571 by article lengths) but are not graph nodes."
+  }
+}
