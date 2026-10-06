@@ -523,6 +523,9 @@ def main(argv=None) -> int:
              "edge weights read as order of magnitude, not exact counts"),
             ("export author lines use pseudonyms, not surnames; authorship "
              "contribution to co-mention is minimal but non-zero"),
+            ("outputs are stamped with the build date (generated), as the "
+             "repo's other builders do: cross-day regeneration differs only "
+             "in that field, the algorithm itself is deterministic"),
         ],
         "anchor_h5931_cappeller_kochergina": {
             "threads_cappeller": scan["anchor_cappeller"],
@@ -593,8 +596,8 @@ def build_report(metrics, node_rows, edges):
       f"рёбер: **{n['edges']}**, суммарный вес: **{n['total_cocitation_weight']}**")
     a(f"- Плотность: {n['density']}; компонент: {n['components']}"
       f" (крупнейшая {n['largest_component']})")
-    a(f"- Сообществ (label propagation): **{n['communities']}**, модулярность Q = "
-      f"**{n['modularity_q']}**\n")
+    a(f"- Сообществ (жадная модулярность, CNM): **{n['communities']}**, "
+      f"модулярность Q = **{n['modularity_q']}**\n")
     a("## Хабы (по суммарному весу со-цитирований)\n")
     a("| # | Индолог | Вес | Тредов |")
     a("|---|---------|-----|--------|")
@@ -636,6 +639,9 @@ def build_report(metrics, node_rows, edges):
       "авторства в со-цитирования минимален, но не нулевой.")
     a("- Это со-упоминания в дискурсе сообщества (co-mention), а не строгие "
       "библиометрические со-цитирования по спискам литературы.")
+    a(f"- Артефакты помечены датой сборки (`generated: {metrics['generated']}`, "
+      "как и остальные билдеры репозитория): повторная генерация в другой день "
+      "отличается только этим полем, алгоритм детерминирован.")
     a("- Визуализация: [cocitation-network.html](https://gasyoun.github.io/"
       "IndologyScholars/cocitation-network.html); данные: "
       "`analytics_output/cocitation_network_data.json`.\n")

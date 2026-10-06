@@ -447,7 +447,8 @@
     "co-mention in community discourse (one googlegroup thread), not bibliometric co-citation from reference lists",
     "surname-stem matching: same-surname persons outside the DB are inseparable; skipped ambiguous stems are listed in corpus.ambiguous_surnames_list",
     "name homonyms (Ivanov, Smirnov, …) can produce false positives; edge weights read as order of magnitude, not exact counts",
-    "export author lines use pseudonyms, not surnames; authorship contribution to co-mention is minimal but non-zero"
+    "export author lines use pseudonyms, not surnames; authorship contribution to co-mention is minimal but non-zero",
+    "outputs are stamped with the build date (generated), as the repo's other builders do: cross-day regeneration differs only in that field, the algorithm itself is deterministic"
   ],
   "anchor_h5931_cappeller_kochergina": {
     "threads_cappeller": 4,
