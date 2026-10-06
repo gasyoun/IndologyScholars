@@ -82,23 +82,57 @@ old_nlp = '''    vectorizer = TfidfVectorizer(max_df=0.95, min_df=2, max_feature
         top_features = [feature_names[i] for i in top_features_ind]
         topic_terms.append(top_features)'''
 
-new_nlp = '''    import pickle
-    
+new_nlp = '''    import numpy as np
+    from scipy import sparse
+
     corpus_hash = hashlib.sha256(json.dumps(corpus).encode("utf-8")).hexdigest()
-    cache_path = Path("analytics_output/nlp_cache.pkl")
-    
-    lda_fit = False
-    if cache_path.exists():
+    cache_dir = Path("analytics_output")
+    cache_npz = cache_dir / "nlp_cache.npz"
+    cache_tfidf = cache_dir / "nlp_tfidf.npz"
+    cache_meta = cache_dir / "nlp_cache_meta.json"
+
+    def _nlp_cache_load():
+        # Non-executable cache only: .npz arrays (allow_pickle=False) + JSON
+        # meta. Any failure or hash mismatch falls back to a fresh fit.
         try:
-            cached = pickle.loads(cache_path.read_bytes())
-            if cached.get("corpus_hash") == corpus_hash:
-                tfidf_matrix = cached["tfidf_matrix"]
-                topic_distributions = cached["topic_distributions"]
-                topic_terms = cached["topic_terms"]
-                dominant_topics = topic_distributions.argmax(axis=1)
-                lda_fit = True
+            meta = json.loads(cache_meta.read_text(encoding="utf-8"))
+            if meta.get("corpus_hash") != corpus_hash:
+                return None
+            arrays = np.load(cache_npz, allow_pickle=False)
+            return {
+                "tfidf_matrix": sparse.load_npz(cache_tfidf),
+                "topic_distributions": arrays["topic_distributions"],
+                "topic_terms": meta["topic_terms"],
+                "feature_names": meta["feature_names"],
+                "idf_weights": list(arrays["idf_weights"]),
+            }
         except Exception:
-            pass
+            return None
+
+    def _nlp_cache_save(fit):
+        cache_dir.mkdir(parents=True, exist_ok=True)
+        sparse.save_npz(cache_tfidf, fit["tfidf_matrix"])
+        np.savez_compressed(
+            cache_npz,
+            topic_distributions=np.asarray(fit["topic_distributions"]),
+            idf_weights=np.asarray(fit["idf_weights"], dtype=float),
+        )
+        cache_meta.write_text(json.dumps({
+            "corpus_hash": corpus_hash,
+            "topic_terms": fit["topic_terms"],
+            "feature_names": list(fit["feature_names"]),
+        }, ensure_ascii=False), encoding="utf-8")
+
+    lda_fit = False
+    cached = _nlp_cache_load()
+    if cached is not None:
+        tfidf_matrix = cached["tfidf_matrix"]
+        topic_distributions = cached["topic_distributions"]
+        topic_terms = cached["topic_terms"]
+        feature_names = cached["feature_names"]
+        idf_weights = cached["idf_weights"]
+        dominant_topics = topic_distributions.argmax(axis=1)
+        lda_fit = True
             
     if not lda_fit:
         vectorizer = TfidfVectorizer(max_df=0.95, min_df=2, max_features=400)
@@ -118,13 +152,13 @@ new_nlp = '''    import pickle
             top_features = [feature_names[i] for i in top_features_ind]
             topic_terms.append(top_features)
             
-        cache_path.parent.mkdir(parents=True, exist_ok=True)
-        cache_path.write_bytes(pickle.dumps({
-            "corpus_hash": corpus_hash,
+        _nlp_cache_save({
             "tfidf_matrix": tfidf_matrix,
             "topic_distributions": topic_distributions,
             "topic_terms": topic_terms,
-        }))'''
+            "feature_names": feature_names,
+            "idf_weights": idf_weights,
+        })'''
 
 if "corpus_hash = hashlib" not in content:
     content = content.replace(old_nlp, new_nlp)
