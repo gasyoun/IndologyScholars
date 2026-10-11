@@ -153,7 +153,18 @@ jobs:
               gh pr create --head "$PAYLOAD_BRANCH" --base main \
                 --title "Auto-rebuilt indology database, analytics and site payload" \
                 --body "Automated payload rebuild from run $GITHUB_RUN_ID (H6377 landing flow). paper-priv-guard is dispatched on the payload branch so the required check reports on the head SHA before merge." \
-                || echo "Payload PR already open — reusing it."
+              || {
+                # A create failure is only OK if an open payload PR already
+                # exists to reuse (first run landed here masked as "already
+                # open" the real error: "GitHub Actions is not permitted to
+                # create or approve pull requests" — repo setting, H6377).
+                if gh pr view "$PAYLOAD_BRANCH" --json number >/dev/null 2>&1; then
+                  echo "Payload PR already open — reusing it."
+                else
+                  echo "::error::gh pr create failed and no open payload PR exists to reuse"
+                  return 1
+                fi
+              }
               OLD_ID="$(gh run list --workflow paper-priv-guard.yml --branch "$PAYLOAD_BRANCH" --event workflow_dispatch --limit 1 --json databaseId --jq '.[0].databaseId' 2>/dev/null || true)"
               gh workflow run paper-priv-guard.yml --ref "$PAYLOAD_BRANCH"
               # dispatch is async: wait for the run to register (must be a NEW one,
