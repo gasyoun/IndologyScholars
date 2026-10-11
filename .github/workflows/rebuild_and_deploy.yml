@@ -15,6 +15,11 @@ permissions:
   contents: write
   pages: write
   id-token: write
+  # H6377: payload lands via a bot PR — pull-requests:write to create/merge it,
+  # actions:write to dispatch paper-priv-guard on the payload branch so the
+  # required check reports on the head SHA.
+  pull-requests: write
+  actions: write
 
 concurrency:
   group: rebuild-and-deploy-${{ github.ref }}
@@ -99,7 +104,10 @@ jobs:
           python article/check_anonymity.py
           python article/check_data_paper_numbers.py
 
-      - name: Commit & Push Compiled Artifacts
+      - name: Commit & Land Compiled Artifacts (guard-compliant PR)
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PAYLOAD_BRANCH: auto/rebuild-payload
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
@@ -130,11 +138,45 @@ jobs:
           if git diff-index --quiet HEAD --; then
             echo "No new changes detected. Database is up-to-date!"
           else
-            git commit -m "Auto-rebuilt indology database, analytics and site payload [skip ci]"
-            git push origin main || {
+            git commit -m "Auto-rebuilt indology database, analytics and site payload"
+            # main requires the paper-priv-guard status check (H5901/H5909), so a
+            # direct GITHUB_TOKEN push is rejected (GH006) and GitHub also refuses
+            # the built-in Actions identity as a ruleset bypass actor. A bot PR
+            # alone would hang: GITHUB_TOKEN-caused events don't trigger
+            # workflows, so the required check would never report. workflow_dispatch
+            # is the documented exemption — push the payload branch, open the PR,
+            # dispatch the guard ON that branch (its check run lands on this exact
+            # SHA), then merge. The merge's push event is token-caused → suppressed
+            # → no re-trigger loop. (H6377)
+            land_payload() {
+              git push --force origin "HEAD:refs/heads/$PAYLOAD_BRANCH"
+              gh pr create --head "$PAYLOAD_BRANCH" --base main \
+                --title "Auto-rebuilt indology database, analytics and site payload" \
+                --body "Automated payload rebuild from run $GITHUB_RUN_ID (H6377 landing flow). paper-priv-guard is dispatched on the payload branch so the required check reports on the head SHA before merge." \
+                || echo "Payload PR already open — reusing it."
+              OLD_ID="$(gh run list --workflow paper-priv-guard.yml --branch "$PAYLOAD_BRANCH" --event workflow_dispatch --limit 1 --json databaseId --jq '.[0].databaseId' 2>/dev/null || true)"
+              gh workflow run paper-priv-guard.yml --ref "$PAYLOAD_BRANCH"
+              # dispatch is async: wait for the run to register (must be a NEW one,
+              # not the stale run of a previous attempt), then watch it
+              RUN_ID=""
+              for _ in $(seq 1 36); do
+                sleep 5
+                RUN_ID="$(gh run list --workflow paper-priv-guard.yml --branch "$PAYLOAD_BRANCH" --event workflow_dispatch --limit 1 --json databaseId --jq '.[0].databaseId' 2>/dev/null)"
+                if [ -n "$RUN_ID" ] && [ "$RUN_ID" != "$OLD_ID" ]; then break; fi
+                RUN_ID=""
+              done
+              [ -n "$RUN_ID" ] || { echo "::error::dispatched paper-priv-guard run never appeared"; return 1; }
+              gh run watch "$RUN_ID" --exit-status
+              gh pr merge "$PAYLOAD_BRANCH" --merge
+            }
+            land_payload || {
+              # merge race (main moved under us) or transient API error: rebase
+              # onto fresh main and retry once; a genuine guard failure re-fails
+              # here and turns the run red, as it should.
+              echo "First landing attempt failed — rebasing on fresh main and retrying once."
               git fetch origin main
               git rebase --autostash origin/main
-              git push origin main
+              land_payload
             }
           fi
 

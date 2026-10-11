@@ -14,6 +14,11 @@ on:
   push:
     branches:
       - main
+  # H6377: rebuild_and_deploy dispatches this workflow on the auto/rebuild-payload
+  # branch. GITHUB_TOKEN-caused events (bot PR/push) don't trigger workflows, but
+  # workflow_dispatch is the documented exemption — the dispatched run reports the
+  # required `paper-priv-guard` check on the payload PR's head SHA so it can merge.
+  workflow_dispatch: {}
 
 permissions:
   contents: read
