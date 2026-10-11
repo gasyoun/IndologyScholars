@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-06",
+  "generated": "2026-10-11",
   "handoff": "H6060",
   "method": {
     "citing_document": "nagari googlegroup thread (nagari/md/<year>/*.md)",
@@ -8,7 +8,7 @@
     "deterministic": true
   },
   "corpus": {
-    "threads_scanned": 2928,
+    "threads_scanned": 2930,
     "db_persons": 316,
     "persons_matched_any_thread": 240,
     "surname_stems_indexed": 649,
