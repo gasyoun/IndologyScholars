@@ -57,9 +57,13 @@ editors/vak_generated*
 html_cache/vak/
 
 
-# Build-time NLP cache (pickle): self-produced, regenerated on demand.
-# Never commit it — a committed pickle is loaded at build time and would be a
-# code-execution vector if a PR swapped it.
+# Build-time NLP cache (non-executable npz+JSON): self-produced, regenerated
+# on demand. Never commit it — and never go back to pickle: a committed
+# pickle is loaded at build time and would be a code-execution vector
+# if a PR swapped it (H5538).
+analytics_output/nlp_cache.npz
+analytics_output/nlp_tfidf.npz
+analytics_output/nlp_cache_meta.json
 analytics_output/nlp_cache.pkl
 
 # One-way feed fetched from gasyoun/IndologyArchiveAtlas (H460 split) by
