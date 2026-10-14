@@ -11488,23 +11488,27 @@ def generate_nlp_page(data, records):
             "slug": r.get("slug") or ""
         })
 
-    import pickle
+    import numpy as _np_cache
+    from scipy.sparse import csr_matrix
     
     corpus_hash = hashlib.sha256(json.dumps(corpus).encode("utf-8")).hexdigest()
-    cache_path = Path("analytics_output/nlp_cache.pkl")
+    cache_path = Path("analytics_output/nlp_cache.npz")
     
     lda_fit = False
     if cache_path.exists():
         try:
-            cached = pickle.loads(cache_path.read_bytes())
-            if cached.get("corpus_hash") == corpus_hash:
-                tfidf_matrix = cached["tfidf_matrix"]
-                topic_distributions = cached["topic_distributions"]
-                topic_terms = cached["topic_terms"]
-                feature_names = cached["feature_names"]
-                idf_weights = cached["idf_weights"]
-                dominant_topics = topic_distributions.argmax(axis=1)
-                lda_fit = True
+            with _np_cache.load(cache_path, allow_pickle=False) as saved:
+                if str(saved["corpus_hash"]) == corpus_hash:
+                    tfidf_matrix = csr_matrix(
+                        (saved["tfidf_data"], saved["tfidf_indices"], saved["tfidf_indptr"]),
+                        shape=tuple(int(v) for v in saved["tfidf_shape"]),
+                    )
+                    topic_distributions = _np_cache.asarray(saved["topic_distributions"])
+                    topic_terms = json.loads(str(saved["topic_terms_json"]))
+                    feature_names = [str(v) for v in saved["feature_names"]]
+                    idf_weights = [float(v) for v in saved["idf_weights"]]
+                    dominant_topics = topic_distributions.argmax(axis=1)
+                    lda_fit = True
         except Exception:
             pass
             
@@ -11527,14 +11531,18 @@ def generate_nlp_page(data, records):
             topic_terms.append(top_features)
             
         cache_path.parent.mkdir(parents=True, exist_ok=True)
-        cache_path.write_bytes(pickle.dumps({
-            "corpus_hash": corpus_hash,
-            "tfidf_matrix": tfidf_matrix,
-            "topic_distributions": topic_distributions,
-            "topic_terms": topic_terms,
-            "feature_names": feature_names,
-            "idf_weights": idf_weights,
-        }))
+        _np_cache.savez(
+            cache_path,
+            corpus_hash=_np_cache.array(corpus_hash),
+            tfidf_data=tfidf_matrix.data,
+            tfidf_indices=tfidf_matrix.indices,
+            tfidf_indptr=tfidf_matrix.indptr,
+            tfidf_shape=_np_cache.array(tfidf_matrix.shape),
+            topic_distributions=topic_distributions,
+            topic_terms_json=_np_cache.array(json.dumps(topic_terms)),
+            feature_names=_np_cache.array(feature_names),
+            idf_weights=_np_cache.array(idf_weights, dtype=float),
+        )
 
     topic_titles = [
         "Лингвистика и грамматика",

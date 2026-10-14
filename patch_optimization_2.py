@@ -82,21 +82,27 @@ old_nlp = '''    vectorizer = TfidfVectorizer(max_df=0.95, min_df=2, max_feature
         top_features = [feature_names[i] for i in top_features_ind]
         topic_terms.append(top_features)'''
 
-new_nlp = '''    import pickle
+new_nlp = '''    import numpy as _np_cache
+    from scipy.sparse import csr_matrix
     
     corpus_hash = hashlib.sha256(json.dumps(corpus).encode("utf-8")).hexdigest()
-    cache_path = Path("analytics_output/nlp_cache.pkl")
+    cache_path = Path("analytics_output/nlp_cache.npz")
     
     lda_fit = False
     if cache_path.exists():
         try:
-            cached = pickle.loads(cache_path.read_bytes())
-            if cached.get("corpus_hash") == corpus_hash:
-                tfidf_matrix = cached["tfidf_matrix"]
-                topic_distributions = cached["topic_distributions"]
-                topic_terms = cached["topic_terms"]
-                dominant_topics = topic_distributions.argmax(axis=1)
-                lda_fit = True
+            with _np_cache.load(cache_path, allow_pickle=False) as saved:
+                if str(saved["corpus_hash"]) == corpus_hash:
+                    tfidf_matrix = csr_matrix(
+                        (saved["tfidf_data"], saved["tfidf_indices"], saved["tfidf_indptr"]),
+                        shape=tuple(int(v) for v in saved["tfidf_shape"]),
+                    )
+                    topic_distributions = _np_cache.asarray(saved["topic_distributions"])
+                    topic_terms = json.loads(str(saved["topic_terms_json"]))
+                    feature_names = [str(v) for v in saved["feature_names"]]
+                    idf_weights = [float(v) for v in saved["idf_weights"]]
+                    dominant_topics = topic_distributions.argmax(axis=1)
+                    lda_fit = True
         except Exception:
             pass
             
@@ -119,12 +125,18 @@ new_nlp = '''    import pickle
             topic_terms.append(top_features)
             
         cache_path.parent.mkdir(parents=True, exist_ok=True)
-        cache_path.write_bytes(pickle.dumps({
-            "corpus_hash": corpus_hash,
-            "tfidf_matrix": tfidf_matrix,
-            "topic_distributions": topic_distributions,
-            "topic_terms": topic_terms,
-        }))'''
+        _np_cache.savez(
+            cache_path,
+            corpus_hash=_np_cache.array(corpus_hash),
+            tfidf_data=tfidf_matrix.data,
+            tfidf_indices=tfidf_matrix.indices,
+            tfidf_indptr=tfidf_matrix.indptr,
+            tfidf_shape=_np_cache.array(tfidf_matrix.shape),
+            topic_distributions=topic_distributions,
+            topic_terms_json=_np_cache.array(json.dumps(topic_terms)),
+            feature_names=_np_cache.array(feature_names),
+            idf_weights=_np_cache.array(idf_weights, dtype=float),
+        )'''
 
 if "corpus_hash = hashlib" not in content:
     content = content.replace(old_nlp, new_nlp)
