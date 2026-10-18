@@ -61,6 +61,7 @@ html_cache/vak/
 # Never commit it — a committed pickle is loaded at build time and would be a
 # code-execution vector if a PR swapped it.
 analytics_output/nlp_cache.pkl
+analytics_output/nlp_cache.npz
 
 # One-way feed fetched from gasyoun/IndologyArchiveAtlas (H460 split) by
 # tools/fetch_indology_feed.py. Not duplicated here — CI re-fetches it every
