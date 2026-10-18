@@ -1,26 +1,26 @@
 renou_matched_talks,renou_registers,renou_states,scholar,scholar_id,scholar_url,talk_count
 23,kavya,III; IV,Tsvetkova Svetlana Olegovna,PERS_c52dfaa0,s/sofia-tsvetkova.html,27
-20,bauddha; katha; kavya; sutra,IV; V,Alexandrova Natalia Vladimirovna,PERS_f074f69f,s/natalia-alexandrova.html,27
-20,epic; kavya; natya,III; IV,Dubyansky Alexander Mikhailovich,PERS_1fa7cc0c,s/alexander-dubyansky.html,21
+21,epic; kavya; natya; purana,III; IV,Dubyansky Alexander Mikhailovich,PERS_1fa7cc0c,s/alexander-dubyansky.html,22
+20,bauddha; katha; kavya; sutra,IV; V,Alexandrova Natalia Vladimirovna,PERS_f074f69f,s/natalia-alexandrova.html,28
 20,atharva; bhasya; brahmana; kavya; tantra; vyakarana,I; II; III; IV; V,Tavastsherna Sergey Sergeevich,PERS_11da326d,s/sergey-tavastsherna.html,28
 17,epic; kavya; purana; tantra,III; IV,Ignatyev Andrey Alexandrovich,PERS_3e105f43,s/ignatev-andrei.html,18
+16,epic; katha; kavya; natya,III; IV,Alikhanova Yulia Markovna,PERS_61202bf3,s/yulia-alikhanova.html,16
 16,brahmana; smrti; sutra; vyakarana,I; II; III; IV,Korneeva Natalia Afanasyevna,PERS_40862f5e,s/natalia-korneeva.html,29
 16,bauddha; brahmana; kavya; vyakarana,I; II; IV; V,Ostrovskaya Elena Petrovna,PERS_c48611e0,s/ostrovskaya-elena.html,16
-15,epic; katha; kavya; natya,III; IV,Alikhanova Yulia Markovna,PERS_61202bf3,s/yulia-alikhanova.html,15
-15,purana,III,Tyulina Elena Vladimirovna,PERS_6578b52d,s/tyulina-elena.html,16
+16,purana,III,Tyulina Elena Vladimirovna,PERS_6578b52d,s/tyulina-elena.html,17
 13,atharva; bhasya; kavya; natya; rgveda,I; IV,Lidova Natalia Rostislavovna,PERS_e1dd6b3e,s/natalia-lidova.html,16
 13,rgveda,I,Vytis Vidunas,PERS_88d163c1,s/vidunas-vitis.html,15
 12,bauddha; bhasya,I; V,Lysenko Victoria Georgievna,PERS_12125da9,s/victoria-lysenko.html,25
 12,tantra; upanisad,I; III,Pakhomov Sergey Vladimirovich,PERS_260a598a,s/pakhomov-sergei.html,16
+12,bauddha; brahmana; epic; jaina; katha; kavya; rgveda,I; III; IV; V,Vyrshchikov Evgeny Gennadievich,PERS_9374fd12,s/vyrshchikov-evgenii.html,17
 11,bauddha; kavya; tantra; upanisad,I; II; III; IV; V,Areg Mekhakyan,PERS_f2fef030,s/areg-mekhakyan.html,20
 11,bauddha; epic; katha; kavya; purana; smrti; sutra,I; III; IV; V,Vasilkov Yaroslav Vladimirovich,PERS_829c1de5,s/vasilkov-yaroslav.html,20
-11,bauddha; epic; jaina; katha; kavya; rgveda,I; III; IV; V,Vyrshchikov Evgeny Gennadievich,PERS_9374fd12,s/vyrshchikov-evgenii.html,16
 11,epic; katha; kavya; natya; purana,III; IV,Yuditskaya Ekaterina Alekseevna,PERS_8e117242,s/ekaterina-yuditskaya.html,12
+11,bauddha; katha; kavya; sutra,IV; V,Zhutaev Dar Igorevich,PERS_92868e4f,s/dmitry-zhutaev.html,16
 10,bhasya; kavya; natya,IV,Brosalina Elena Kirillovna,PERS_dd7de77e,s/brosalina-elena.html,11
 10,bauddha; epic; katha; kavya,III; IV; V,Guriya Anastasia Georgievna,PERS_36dabb79,s/anastasia-guriya.html,10
 10,bhasya; brahmana; kavya; sutra; vyakarana,I; II; III; IV,Pskhu Ruzana Vladimirovna,PERS_003adcfe,s/pskhu-ruzana.html,19
-10,bauddha; epic; epig; purana,I; III; V,Vertogradova Victoria Viktorovna,PERS_5228da95,s/victoria-vertogradova.html,17
-10,bauddha; katha; kavya; sutra,IV; V,Zhutaev Dar Igorevich,PERS_92868e4f,s/dmitry-zhutaev.html,15
+10,bauddha; epic; epig; purana,I; III; V,Vertogradova Victoria Viktorovna,PERS_5228da95,s/victoria-vertogradova.html,18
 9,epic; katha; kavya,III; IV,Chelnokova Anna Vitalyevna,PERS_91b473b1,s/chelnokova-anna.html,10
 9,bauddha; kavya; sutra,IV; V,Komissarov Dmitry Alekseevich,PERS_93e2effb,s/dmitry-komissarov.html,10
 9,bauddha; katha; kavya,IV; V,Rusanov Maxim Albertovich,PERS_23215083,s/rusanov-maksim.html,10
@@ -32,7 +32,7 @@ renou_matched_talks,renou_registers,renou_states,scholar,scholar_id,scholar_url,
 8,bauddha,V,Rybakova Anna Gennadyevna,PERS_287fe378,s/rybakova-anna.html,10
 8,katha; kavya; natya; purana,IV,Ryzhakova Svetlana Igorevna,PERS_d98da899,s/svetlana-ryzhakova.html,27
 7,brahmana; epic; kavya; upanisad,I; IV,Desnitskaya Evgenia Alekseevna,PERS_56508328,s/desnitskaya-evgeniya.html,16
-7,epic; epig,III; IV,Lelyukhin Dmitry Nikolaevich,PERS_9ad66151,s/lelyukhin-dmitrii.html,11
+7,epic; epig,III; IV,Lelyukhin Dmitry Nikolaevich,PERS_9ad66151,s/lelyukhin-dmitrii.html,12
 7,bauddha; bhasya; sutra; tantra; vyakarana,II; III; IV; V,Paribok Andrey Vsevolodovich,PERS_1a097e52,s/paribok-andrei.html,17
 7,rgveda; sutra; vyakarana,I; II,Voloshina Oksana Anatolyevna,PERS_5d34c947,s/voloshina-oksana.html,9
 6,bauddha,I; V,Burmistrov Sergey Leonidovich,PERS_a0264ac5,s/burmistrov-sergei.html,11
@@ -43,13 +43,13 @@ renou_matched_talks,renou_registers,renou_states,scholar,scholar_id,scholar_url,
 6,bauddha; brahmana; karika; tantra,I; III; V,Ofertas Stanislav Cheslavovich,PERS_2fd442aa,s/ofertas-stanislav.html,14
 6,epic; kavya,IV,Oranskaya Tatyana Iosifovna,PERS_f8ab5755,s/oranskaya-tatyana.html,7
 6,epic; katha; kavya,III; IV,Sabirova Rimma Nailevna,PERS_db046be0,s/sabirova-rimma.html,7
+6,bauddha; katha; kavya,IV; V,Strelkova Guzel Vladimirovna,PERS_f940c5b3,s/strelkova-gyuzel.html,6
 5,bauddha; epic; katha; kavya,III; IV; V,Albedil Margarita Fedorovna,PERS_9a855a7b,s/albedil-margarita.html,19
 5,katha; kavya,IV,Donchenko Sergey Sergeevich,PERS_8df3730a,s/donchenko-sergei.html,8
 5,sutra; tantra,I; II; III,Erchenkov Oleg Nikolaevich,PERS_8108c314,s/erchenkov-oleg.html,6
 5,kavya; purana,III; IV,Kokova Yulia Georgievna,PERS_ba81468a,s/kokova-yuliya.html,8
 5,katha; kavya,IV; V,Maxim Fomin,PERS_3c7d41ac,s/fomin-maksim.html,6
 5,katha; natya,,Stolyarova Ekaterina Vladimirovna,PERS_5e2a5a5c,s/stolyarova-ekaterina.html,7
-5,bauddha; katha; kavya,IV; V,Strelkova Guzel Vladimirovna,PERS_f940c5b3,s/strelkova-gyuzel.html,5
 5,bauddha; bhasya,V,Titlin Lev Igorevich,PERS_0e0a154e,s/lev-titlin.html,7
 5,bauddha; jaina,V,Vorobyeve Daria Nikolaevna,PERS_41d6aa73,s/daria-vorobyeva.html,14
 4,bauddha; tantra,III; V,Dylykova Vilena Sandzhievna,PERS_b6d1bf05,s/dylykova-vilena.html,4
@@ -59,7 +59,7 @@ renou_matched_talks,renou_registers,renou_states,scholar,scholar_id,scholar_url,
 4,epic; katha; kavya,III; IV,Molina Anna Valerievna,PERS_ced3d7b4,s/molina-anna.html,4
 4,,I,Natalya Safina,PERS_01aafd44,s/safina-natalya.html,5
 4,brahmana; kavya,I; IV,Polina Khrushcheva,PERS_92f293f8,s/khrushcheva-polina.html,7
-4,bauddha; kavya,IV; V,Shrestha Krishna Prakash,PERS_b8bade8d,s/shrestkha-krishna.html,12
+4,bauddha; kavya,IV; V,Shrestha Krishna Prakash,PERS_b8bade8d,s/shrestkha-krishna.html,13
 4,bauddha; hors_inde,V,Shustova Alla Mikhailovna,PERS_e9545a0b,s/shustova-alla.html,15
 4,kavya,IV,Streltsova Liliya Alexandrovna,PERS_7f908d49,s/streltsova-liliya.html,6
 4,bhasya; sutra; vyakarana,II,Ulansky Evgeny Andreevich,PERS_cfb92c5f,s/evgeny-ulansky.html,7
@@ -75,12 +75,12 @@ renou_matched_talks,renou_registers,renou_states,scholar,scholar_id,scholar_url,
 3,epic; katha; kavya,III; IV,Maretina Ksenia Александровна,PERS_50c46233,s/maretina-kseniya.html,5
 3,kavya,IV,Maria Pavlova,PERS_34c0d384,s/pavlova-mariya.html,3
 3,kavya; natya,IV,Minaeva Margarita Denisovna,PERS_4fff9d16,s/minaeva-margarita.html,3
-3,bauddha,V,Ogneva Elena Dmitrievna,PERS_e72d4c09,s/ogneva-elena.html,13
+3,bauddha,V,Ogneva Elena Dmitrievna,PERS_e72d4c09,s/ogneva-elena.html,14
 3,bauddha; brahmana,I; V,Shokhin Vladimir Kirillovich,PERS_0665f215,s/vladimir-shokhin.html,5
 3,bauddha; sutra; vyakarana,II; V,Shomakhmadov Safarali Khaibulloevich,PERS_a84aedaa,s/shomakhmadov-safarali.html,9
 3,purana,III,Valdas Jaskunas,PERS_71e9dee1,s/yaskunas-valdas.html,3
 3,katha; kavya; purana,III; IV,Vecherina Olga Pavlovna,PERS_e31ca12d,s/olga-vecherina.html,16
-3,epig; rgveda,I,Vigasin Alexey Alexeevich,PERS_f5b8b340,s/alexey-vigasin.html,7
+3,epig; rgveda,I,Vigasin Alexey Alexeevich,PERS_f5b8b340,s/alexey-vigasin.html,8
 3,bhasya; kavya; tantra,III; IV,Yakovlev Viktor Mikhailovich,PERS_0ca995ac,s/yakovlev-viktor.html,8
 3,bhasya; jaina,V,Zheleznova Natalia Anatolyevna,PERS_38c5f03f,s/zheleznova-natalya.html,4
 3,bauddha; bhasya; kavya,IV; V,Zorin Alexey Valerievich,PERS_c5677a3f,s/zorin-aleksei.html,12
@@ -88,7 +88,7 @@ renou_matched_talks,renou_registers,renou_states,scholar,scholar_id,scholar_url,
 2,kavya; tantra,III; IV,Anna Kavalevskaya,PERS_a1484b38,s/kavalevskaya-anna.html,3
 2,bauddha; katha,V,Babin Alexander Nikolaevich,PERS_05d56645,s/alexander-babin.html,13
 2,epic; kavya,III; IV,Brosalina Elena Kirillovna,PERS_7bbed51a,s/brosalina-elena.html,2
-2,epic; kavya; vyakarana,II; III; IV,Gasuns Marcis,PERS_8516d1e4,s/marcis-gasuns.html,8
+2,epic; kavya; vyakarana,II; III; IV,Gasuns Marcis,PERS_8516d1e4,s/marcis-gasuns.html,9
 2,bhasya,V,Gleb Sharygin,PERS_de59a2bc,s/sharygin-gleb.html,3
 2,bhasya,I,Ivan Tolchelnikov,PERS_310b2911,s/tolchelnikov-ivan.html,3
 2,epig; kavya,IV,Korovina Evgeniya Vladimirovna,PERS_2a2e5602,s/korovina-evgeniya.html,5
@@ -123,6 +123,7 @@ renou_matched_talks,renou_registers,renou_states,scholar,scholar_id,scholar_url,
 1,kavya,IV,Ekaterina Akimushkina,PERS_3d4df70f,s/akimushkina-ekaterina.html,1
 1,kavya,IV,Ekaterina Kesharpu,PERS_fb73fb38,s/kesharpu-ekaterina.html,1
 1,katha,,Elena Soboleva,PERS_6441d568,s/krasnodembskaya-nina.html,8
+1,rgveda,I,Elizarenkova T. V.,PERS_dcead901,s/elizarenkova.html,1
 1,rgveda,I,Elizarenkova Tatyana Yakovlevna,PERS_2f26a47a,s/elizarenkova-tatyana.html,1
 1,bauddha,V,Elmira Galimova,PERS_68270eaf,s/galimova-elmira.html,1
 1,kavya; natya,IV,Elvira Vvedenskaya,PERS_23f54085,s/vvedenskaya-elvira.html,1
@@ -156,6 +157,7 @@ renou_matched_talks,renou_registers,renou_states,scholar,scholar_id,scholar_url,
 1,bauddha,V,N. A. Aleksandrova,PERS_fa58484d,s/aleksandrova.html,1
 1,sutra; vyakarana,II,Natalia Senina,PERS_f82b6a8e,s/senina-natalya.html,1
 1,epic; kavya,III; IV,Nina Budziszewska,PERS_26ce5ec1,s/nina-budzishevska.html,1
+1,upanisad,I,Pastuhova È. R.,PERS_0f484cb0,s/pastukhova.html,1
 1,upanisad,I,Pushkareva Yulia Georgievna,PERS_23abae7d,s/pushkareva-yuliya.html,1
 1,kavya,IV,Rodionov Mikhail Anatolyevich,PERS_47ad46f1,s/rodionov-mikhail.html,1
 1,epic; kavya,III; IV,Serebryany Sergey Dmitrivelch,PERS_1130c736,s/serebryanyi-sergei.html,1
@@ -176,6 +178,7 @@ renou_matched_talks,renou_registers,renou_states,scholar,scholar_id,scholar_url,
 1,epic,I,Yakov Borisov,PERS_dfaf6803,s/borisov-yakov.html,1
 1,upanisad,I,Û. V. Predtečenskaâ,PERS_929cab5a,s/predtechenskaya.html,2
 1,bauddha,V,Č. Sančaj,PERS_48b3bec3,s/sanchai.html,1
+1,kavya,IV,Čehonadskaâ N. Û.,PERS_de0a5fd9,s/chekhonadskaya.html,1
 0,,,A. Solʹka,PERS_3ccc9bd7,s/solka.html,2
 0,,,Aleshina Irina Evgenyevna,PERS_51e0a171,s/aleshina-irina.html,1
 0,,,Andrey Drachuk,PERS_c2ffc606,s/drachuk-andrei.html,1
@@ -197,7 +200,7 @@ renou_matched_talks,renou_registers,renou_states,scholar,scholar_id,scholar_url,
 0,,,Demichev Kirill Anderson,PERS_7da0afff,s/demichev-kirill.html,2
 0,,,Denis Paramonov,PERS_7700f517,s/paramonov-denis.html,2
 0,,,Dmitry Vozchikov,PERS_e4aab278,s/vozchikov-dmitrii.html,1
-0,,,Drobyshev Yuliy Igorevich,PERS_da862dde,s/drobyshev-yulii.html,15
+0,,,Drobyshev Yuliy Igorevich,PERS_da862dde,s/drobyshev-yulii.html,16
 0,,,E. I. Malozemova,PERS_04a4bbbb,s/kurochkin-aleksandr.html,1
 0,,,Edgar Leitan,PERS_07adc1e6,s/leitan-edgar.html,1
 0,,,Ekaterina Smirnova,PERS_6b867946,s/smirnova-ekaterina.html,1
@@ -222,11 +225,13 @@ renou_matched_talks,renou_registers,renou_states,scholar,scholar_id,scholar_url,
 0,,,Khokhlov Alexander Nikolaevich,PERS_3e952361,s/khokhlov-aleksandr.html,3
 0,,,Kinâeva A. V.,PERS_d17a6a92,s/kinyaeva.html,1
 0,,,Kogan Anton Ilyich,PERS_3009a9e0,s/kogan-anton.html,4
-0,,,Komarova Irina Nigmatovna,PERS_db0a826b,s/komarova-irina.html,5
+0,,,Kolupaev V. E.,PERS_4619427f,s/kolupaev.html,1
+0,,,Komarova Irina Nigmatovna,PERS_db0a826b,s/komarova-irina.html,6
 0,,,Komissaruk Ekaterina Lvovna,PERS_3fd690ee,s/komissaruk-ekaterina.html,3
 0,,,Ksenia Khazizova,PERS_6a165aa7,s/khazizova-kseniya.html,1
 0,,,Ksenia Nikolskaya,PERS_147ab928,s/nikolskaya-kseniya.html,1
 0,,,Kurochkin Alexander Yurievich,PERS_b62a9567,s/kurochkin-aleksandr.html,5
+0,,,Ledkov A. A.,PERS_a4aa0836,s/ledkov.html,1
 0,,,Liliya Roman,PERS_40f75cf9,s/roman-liliya.html,2
 0,,,Lyudmila Kryshtop,PERS_9366fe2c,s/kryshtop-lyudmila.html,1
 0,,,M. A. Azarkina,PERS_ddb70dc9,s/azarkina.html,1
@@ -243,6 +248,7 @@ renou_matched_talks,renou_registers,renou_states,scholar,scholar_id,scholar_url,
 0,,,Pakhomova Alexandra Mikhailovna,PERS_5f6fa17b,s/pakhomova-aleksandra.html,2
 0,,,Popova Irina Fyodorovna,PERS_d3c5382c,s/popova-irina.html,11
 0,,,Radha Blinderman,PERS_18fcab2a,s/blinderman-radkha.html,2
+0,,,Rybakov R. B.,PERS_9d99092c,s/rybakov.html,1
 0,,,S. S. Čistâkov,PERS_72d46eb6,s/chistyakov.html,1
 0,,,Sattar Mazhitov,PERS_e1d622e5,s/mazhitov-sattar.html,1
 0,,,Sedukova Nadežda Aleksandrovna,PERS_377db63e,s/motyleva-vera.html,1
@@ -264,6 +270,8 @@ renou_matched_talks,renou_registers,renou_states,scholar,scholar_id,scholar_url,
 0,,,V. V. Donskih,PERS_f7c7adc7,s/donskikh.html,3
 0,,,Vlada Belimova,PERS_4a0de87e,s/belimova-vlada.html,1
 0,,,Vladimir Abinyakin,PERS_f1a308b7,s/abinyakin-vladimir.html,1
+0,,,Zagorodnikova T.,PERS_c473589c,s/zagorodnikova.html,1
 0,,,Zastrozhnova Evgeniya Grigoryevna,PERS_94f33410,s/zastrozhnova-evgeniya.html,1
 0,,,Zevatsky Timofey Yurievich,PERS_900efc73,s/zevatskii-timofei.html,1
 0,,,Zhukova Lyubov Evgenievna,PERS_f56c5a7e,s/zhukova-lyubov.html,4
+0,,,Zotov O. V.,PERS_c5c16152,s/zotov.html,1

@@ -1,4 +1,5 @@
 node_id,node_type,label,local_id,weight
+event:ER2005,event,Roerich Readings 2005,ER2005,23
 event:ER2008,event,Roerich Readings 2008,ER2008,20
 event:ER2009,event,Roerich Readings 2009,ER2009,20
 event:ER2010,event,Roerich Readings 2010,ER2010,31
@@ -44,12 +45,12 @@ organization:ГМВ,organization,ГМВ,ГМВ,2
 organization:ГММ Скрябина,organization,ГММ Скрябина,ГММ Скрябина,4
 organization:Государственный Эрмитаж,organization,Государственный Эрмитаж,Государственный Эрмитаж,1
 organization:ИВ НАН Украины,organization,ИВ НАН Украины,ИВ НАН Украины,8
-organization:ИВ РАН,organization,ИВ РАН,ИВ РАН,164
+organization:ИВ РАН,organization,ИВ РАН,ИВ РАН,176
 organization:ИВР РАН,organization,ИВР РАН,ИВР РАН,11
 organization:ИИЕТ РАН,organization,ИИЕТ РАН,ИИЕТ РАН,1
 organization:ИИЭ Валиханова,organization,ИИЭ Валиханова,ИИЭ Валиханова,1
 organization:ИМБТ СО РАН,organization,ИМБТ СО РАН,ИМБТ СО РАН,1
-organization:ИМЛИ РАН,organization,ИМЛИ РАН,ИМЛИ РАН,8
+organization:ИМЛИ РАН,organization,ИМЛИ РАН,ИМЛИ РАН,9
 organization:ИСАА,organization,ИСАА,ИСАА,5
 organization:ИФ РАН,organization,ИФ РАН,ИФ РАН,12
 organization:ИЭА РАН,organization,ИЭА РАН,ИЭА РАН,4
@@ -60,7 +61,7 @@ organization:МАИ,organization,МАИ,МАИ,1
 organization:МАЭ РАН,organization,МАЭ РАН,МАЭ РАН,2
 organization:МГППУ,organization,МГППУ,МГППУ,6
 organization:МГТУ им. Баумана,organization,МГТУ им. Баумана,МГТУ им. Баумана,1
-organization:МГУ,organization,МГУ,МГУ,37
+organization:МГУ,organization,МГУ,МГУ,43
 organization:МЦР,organization,МЦР,МЦР,2
 organization:НИУ ВШЭ,organization,НИУ ВШЭ,НИУ ВШЭ,16
 organization:Независимые исследователи,organization,Независимые исследователи,Независимые исследователи,13
@@ -80,9 +81,9 @@ person:PERS_3ccc9bd7,person,А. Солька,PERS_3ccc9bd7,2
 person:PERS_c1cc76b9,person,А. Я. Таран,PERS_c1cc76b9,1
 person:PERS_f1a308b7,person,Абинякин Владимир Александрович,PERS_f1a308b7,1
 person:PERS_3d4df70f,person,Акимушкина Екатерина Олеговна,PERS_3d4df70f,1
-person:PERS_f074f69f,person,Александрова Наталия Владимировна,PERS_f074f69f,27
+person:PERS_f074f69f,person,Александрова Наталия Владимировна,PERS_f074f69f,28
 person:PERS_51e0a171,person,Алешина Ирина Евгеньевна,PERS_51e0a171,1
-person:PERS_61202bf3,person,Алиханова Юлия Марковна,PERS_61202bf3,15
+person:PERS_61202bf3,person,Алиханова Юлия Марковна,PERS_61202bf3,16
 person:PERS_9a855a7b,person,Альбедиль Маргарита Федоровна,PERS_9a855a7b,19
 person:PERS_37d557c2,person,Анисимова Дарья Дмитриевна,PERS_37d557c2,2
 person:PERS_180c5e5c,person,Арапов Александр Владиленович,PERS_180c5e5c,1
@@ -108,9 +109,9 @@ person:PERS_40375fef,person,Васильев Алексей Константин
 person:PERS_829c1de5,person,Васильков Ярослав Владимирович,PERS_829c1de5,20
 person:PERS_2c9b38ec,person,Ватман Семён Викторович,PERS_2c9b38ec,1
 person:PERS_23f54085,person,Введенская Эльвира Игоревна,PERS_23f54085,1
-person:PERS_5228da95,person,Вертоградова Виктория Викторовна,PERS_5228da95,17
+person:PERS_5228da95,person,Вертоградова Виктория Викторовна,PERS_5228da95,18
 person:PERS_e31ca12d,person,Вечерина Ольга Павловна,PERS_e31ca12d,16
-person:PERS_f5b8b340,person,Вигасин Алексей Алексеевич,PERS_f5b8b340,7
+person:PERS_f5b8b340,person,Вигасин Алексей Алексеевич,PERS_f5b8b340,8
 person:PERS_a8983673,person,Вигель Нарине Липаритовна,PERS_a8983673,1
 person:PERS_88d163c1,person,Видунас Витис,PERS_88d163c1,15
 person:PERS_e8396809,person,Вишну Шукла,PERS_e8396809,1
@@ -118,10 +119,10 @@ person:PERS_0fd718a7,person,Воздиган Ксения Михайловна,P
 person:PERS_e4aab278,person,Возчиков Дмитрий Викторович,PERS_e4aab278,1
 person:PERS_5d34c947,person,Волошина Оксана Анатольевна,PERS_5d34c947,9
 person:PERS_41d6aa73,person,Воробьева Дарья Николаевна,PERS_41d6aa73,14
-person:PERS_9374fd12,person,Вырщиков Евгений Геннадьевич,PERS_9374fd12,16
+person:PERS_9374fd12,person,Вырщиков Евгений Геннадьевич,PERS_9374fd12,17
 person:PERS_e30ad8b7,person,Гавриков Денис Сергеевич,PERS_e30ad8b7,1
 person:PERS_68270eaf,person,Галимова Эльмира Валитовна,PERS_68270eaf,1
-person:PERS_8516d1e4,person,Гасунс Марцис Юрьевич,PERS_8516d1e4,8
+person:PERS_8516d1e4,person,Гасунс Марцис Юрьевич,PERS_8516d1e4,9
 person:PERS_51524b11,person,Гладкова Анна Геннадьевна,PERS_51524b11,1
 person:PERS_3b196639,person,Гордийчук Николай Валентинович,PERS_3b196639,10
 person:PERS_44440578,person,Грановская Хелена,PERS_44440578,1
@@ -138,10 +139,10 @@ person:PERS_56508328,person,Десницкая Евгения Алексеевн
 person:PERS_5f6689e8,person,Дмитриева Виктория Алексеевна,PERS_5f6689e8,1
 person:PERS_8df3730a,person,Донченко Сергей Сергеевич,PERS_8df3730a,8
 person:PERS_c2ffc606,person,Драчук Андрей Олегович,PERS_c2ffc606,1
-person:PERS_da862dde,person,Дробышев Юлий Игорьевич,PERS_da862dde,15
+person:PERS_da862dde,person,Дробышев Юлий Игорьевич,PERS_da862dde,16
 person:PERS_bcaec2d8,person,Дружинин Владимир Юрьевич,PERS_bcaec2d8,3
 person:PERS_28317057,person,Дубянская Татьяна Александровна,PERS_28317057,5
-person:PERS_1fa7cc0c,person,Дубянский Александр Михайлович,PERS_1fa7cc0c,21
+person:PERS_1fa7cc0c,person,Дубянский Александр Михайлович,PERS_1fa7cc0c,22
 person:PERS_b6d1bf05,person,Дылыкова Вилена Санджиевна,PERS_b6d1bf05,4
 person:PERS_4831e64b,person,Е. Анохина,PERS_4831e64b,1
 person:PERS_14dec06b,person,Е. Б. Кудрявцева,PERS_14dec06b,1
@@ -150,19 +151,22 @@ person:PERS_e8f935aa,person,Е. К. Кудрявцева,PERS_e8f935aa,1
 person:PERS_5d38cbae,person,Е. Н. Аникеева,PERS_5d38cbae,1
 person:PERS_79ed852e,person,Евграфов Д. А.,PERS_79ed852e,1
 person:PERS_35c57654,person,Егорова Мария Александровна,PERS_35c57654,2
+person:PERS_dcead901,person,Елизаренкова Т. В.,PERS_dcead901,1
 person:PERS_2f26a47a,person,Елизаренкова Татьяна Яковлевна,PERS_2f26a47a,1
 person:PERS_06ee047f,person,Елихина Юлия Игоревна,PERS_06ee047f,4
 person:PERS_fb25c80f,person,Ермакова Татьяна Викторовна,PERS_fb25c80f,15
 person:PERS_8108c314,person,Ерченков Олег Николаевич,PERS_8108c314,6
 person:PERS_38c5f03f,person,Железнова Наталья Анатольевна,PERS_38c5f03f,4
 person:PERS_f56c5a7e,person,Жукова Любовь Евгеньевна,PERS_f56c5a7e,4
-person:PERS_92868e4f,person,Жутаев Дар Игоревич,PERS_92868e4f,15
+person:PERS_92868e4f,person,Жутаев Дар Игоревич,PERS_92868e4f,16
+person:PERS_c473589c,person,Загородникова Т.,PERS_c473589c,1
 person:PERS_36c30cf9,person,Загорулько Андрей Владиславович,PERS_36c30cf9,1
 person:PERS_10547db9,person,Загуменнов Борис Иванович,PERS_10547db9,6
 person:PERS_94f33410,person,Застрожнова Евгения Григорьевна,PERS_94f33410,1
 person:PERS_900efc73,person,Зевацкий Тимофей Юрьевич,PERS_900efc73,1
 person:PERS_7eb0dc30,person,Зимина Татьяна Александровна,PERS_7eb0dc30,8
 person:PERS_c5677a3f,person,Зорин Алексей Валерьевич,PERS_c5677a3f,12
+person:PERS_c5c16152,person,Зотов О. В.,PERS_c5c16152,1
 person:PERS_a4c4c35e,person,И. В. Калинина,PERS_a4c4c35e,1
 person:PERS_c5aeda15,person,И. Урнова,PERS_c5aeda15,2
 person:PERS_6e211759,person,Иванов Владимир Павлович,PERS_6e211759,6
@@ -184,8 +188,9 @@ person:PERS_467d4dbb,person,Клебанов Андрей Александров
 person:PERS_3009a9e0,person,Коган Антон Ильич,PERS_3009a9e0,4
 person:PERS_d6ade703,person,Кожевникова Маргарита Николаевна,PERS_d6ade703,1
 person:PERS_ba81468a,person,Кокова Юлия Георгиевна,PERS_ba81468a,8
+person:PERS_4619427f,person,Колупаев В. Е.,PERS_4619427f,1
 person:PERS_fc976255,person,Комаров Эрик Наумович,PERS_fc976255,2
-person:PERS_db0a826b,person,Комарова Ирина Нигматовна,PERS_db0a826b,5
+person:PERS_db0a826b,person,Комарова Ирина Нигматовна,PERS_db0a826b,6
 person:PERS_93e2effb,person,Комиссаров Дмитрий Алексеевич,PERS_93e2effb,10
 person:PERS_3fd690ee,person,Комиссарук Екатерина Львовна,PERS_3fd690ee,3
 person:PERS_45a76880,person,Кораблин Денис Александрович,PERS_45a76880,4
@@ -209,9 +214,10 @@ person:PERS_9f398436,person,Куликов Леонид Игоревич,PERS_9f
 person:PERS_cdbd7a15,person,Кулланда Сергей Всеволодович,PERS_cdbd7a15,5
 person:PERS_b62a9567,person,Курочкин Александр Юрьевич,PERS_b62a9567,5
 person:PERS_29607432,person,Лапшин Иван Евгеньевич,PERS_29607432,1
+person:PERS_a4aa0836,person,Ледков А. А.,PERS_a4aa0836,1
 person:PERS_07adc1e6,person,Лейтан Эдгар Зигфридович,PERS_07adc1e6,1
 person:PERS_9e9c9566,person,Лекарева Ева Павловна,PERS_9e9c9566,4
-person:PERS_9ad66151,person,Лелюхин Дмитрий Николаевич,PERS_9ad66151,11
+person:PERS_9ad66151,person,Лелюхин Дмитрий Николаевич,PERS_9ad66151,12
 person:PERS_cb52ebc2,person,Лемешкина Ксения Вячеславовна,PERS_cb52ebc2,4
 person:PERS_587b08ec,person,Леонов Михаил Васильевич,PERS_587b08ec,4
 person:PERS_d2559ba1,person,Лепехова Елена Сергеевна,PERS_d2559ba1,8
@@ -253,13 +259,14 @@ person:PERS_9ddf9210,person,Нестеркин Сергей Петрович,PER
 person:PERS_147ab928,person,Никольская Ксения Дмитриевна,PERS_147ab928,1
 person:PERS_26ce5ec1,person,Нина Будзишевска,PERS_26ce5ec1,1
 person:PERS_ecdfe667,person,Новосёлова Евгения Олеговна,PERS_ecdfe667,1
-person:PERS_e72d4c09,person,Огнева Елена Дмитриевна,PERS_e72d4c09,13
+person:PERS_e72d4c09,person,Огнева Елена Дмитриевна,PERS_e72d4c09,14
 person:PERS_f8ab5755,person,Оранская Татьяна Иосифовна,PERS_f8ab5755,7
 person:PERS_c48611e0,person,Островская Елена Петровна,PERS_c48611e0,16
 person:PERS_2fd442aa,person,Офертас Станислав Чеславович,PERS_2fd442aa,14
 person:PERS_34c0d384,person,Павлова Мария Борисовна,PERS_34c0d384,3
 person:PERS_7700f517,person,Парамонов Денис Олегович,PERS_7700f517,2
 person:PERS_1a097e52,person,Парибок Андрей Всеволодович,PERS_1a097e52,17
+person:PERS_0f484cb0,person,Пастухова Э. Р.,PERS_0f484cb0,1
 person:PERS_260a598a,person,Пахомов Сергей Владимирович,PERS_260a598a,16
 person:PERS_5f6fa17b,person,Пахомова Александра Михайловна,PERS_5f6fa17b,2
 person:PERS_37bb2d43,person,Покатилов Сергей Андреевич,PERS_37bb2d43,2
@@ -273,6 +280,7 @@ person:PERS_3e38ff72,person,Рожнова Дарья Антоновна,PERS_3e
 person:PERS_40f75cf9,person,Роман Лилия Геннадьевна,PERS_40f75cf9,2
 person:PERS_37f98454,person,Рудой Валерий Исаакович,PERS_37f98454,2
 person:PERS_23215083,person,Русанов Максим Альбертович,PERS_23215083,10
+person:PERS_9d99092c,person,Рыбаков Р. Б.,PERS_9d99092c,1
 person:PERS_287fe378,person,Рыбакова Анна Геннадьевна,PERS_287fe378,10
 person:PERS_d98da899,person,Рыжакова Светлана Игоревна,PERS_d98da899,27
 person:PERS_72d46eb6,person,С. С. Чистяков,PERS_72d46eb6,1
@@ -296,7 +304,7 @@ person:PERS_58e18506,person,Соколова Ирина Александровн
 person:PERS_bbd15f4f,person,Степин А. А.,PERS_bbd15f4f,1
 person:PERS_5e2a5a5c,person,Столярова Екатерина Владимировна,PERS_5e2a5a5c,7
 person:PERS_3d22e8d4,person,Стрелков Андрей Михайлович,PERS_3d22e8d4,1
-person:PERS_f940c5b3,person,Стрелкова Гюзэль Владимировна,PERS_f940c5b3,5
+person:PERS_f940c5b3,person,Стрелкова Гюзэль Владимировна,PERS_f940c5b3,6
 person:PERS_7f908d49,person,Стрельцова Лилия Александровна,PERS_7f908d49,6
 person:PERS_42da4866,person,Стукалин Глеб Дмитриевич,PERS_42da4866,3
 person:PERS_11da326d,person,Тавастшерна Сергей Сергеевич,PERS_11da326d,28
@@ -305,7 +313,7 @@ person:PERS_3074a8e5,person,Терентьев Андрей Анатольеви
 person:PERS_0e0a154e,person,Титлин Лев Игоревич,PERS_0e0a154e,7
 person:PERS_0a2e5f24,person,Тишин Владимир Владимирович,PERS_0a2e5f24,3
 person:PERS_310b2911,person,Толчельников Иван Евгеньевич,PERS_310b2911,3
-person:PERS_6578b52d,person,Тюлина Елена Владимировна,PERS_6578b52d,16
+person:PERS_6578b52d,person,Тюлина Елена Владимировна,PERS_6578b52d,17
 person:PERS_bf91d4b8,person,Уймина Юлия Александровна,PERS_bf91d4b8,4
 person:PERS_cfb92c5f,person,Уланский Евгений Андреевич,PERS_cfb92c5f,7
 person:PERS_168a3a8b,person,Усенко Иван Сергеевич,PERS_168a3a8b,1
@@ -326,6 +334,7 @@ person:PERS_f619aeed,person,Цендина Анна Дамдиновна,PERS_f6
 person:PERS_48b3bec3,person,Ч. Санчай,PERS_48b3bec3,1
 person:PERS_91b473b1,person,Челнокова Анна Витальевна,PERS_91b473b1,10
 person:PERS_94aa5d0a,person,Чернавин Георгий Игоревич,PERS_94aa5d0a,1
+person:PERS_de0a5fd9,person,Чехонадская Н. Ю.,PERS_de0a5fd9,1
 person:PERS_2095dc59,person,Шалахов Евгений Геннадьевич,PERS_2095dc59,1
 person:PERS_526da44f,person,Шапошникова Дарья Сергеевна,PERS_526da44f,1
 person:PERS_874cbfb7,person,Шарапова Александра Владимировна,PERS_874cbfb7,1
@@ -333,7 +342,7 @@ person:PERS_de59a2bc,person,Шарыгин Глеб Витальевич,PERS_de
 person:PERS_8a8c5d8b,person,Шелкович Владимир Михайлович,PERS_8a8c5d8b,1
 person:PERS_a84aedaa,person,Шомахмадов Сафарали Хайбуллоевич,PERS_a84aedaa,9
 person:PERS_0665f215,person,Шохин Владимир Кириллович,PERS_0665f215,5
-person:PERS_b8bade8d,person,Шрестха Кришна Пракаш,PERS_b8bade8d,12
+person:PERS_b8bade8d,person,Шрестха Кришна Пракаш,PERS_b8bade8d,13
 person:PERS_e9545a0b,person,Шустова Алла Михайловна,PERS_e9545a0b,15
 person:PERS_00c3b0cc,person,Щербак Мария Борисовна,PERS_00c3b0cc,1
 person:PERS_b4cdbfb8,person,Эрман Владимир Гансович,PERS_b4cdbfb8,1
@@ -342,9 +351,9 @@ person:PERS_8e117242,person,Юдицкая Екатерина Алексеевн
 person:PERS_0ca995ac,person,Яковлев Виктор Михайлович,PERS_0ca995ac,8
 person:PERS_b881461b,person,Яковлева Мария Николаевна,PERS_b881461b,3
 person:PERS_71e9dee1,person,Яскунас Валдас,PERS_71e9dee1,3
-theme:art_and_material_culture,theme,art_and_material_culture,art_and_material_culture,93
-theme:history_and_culture,theme,history_and_culture,history_and_culture,256
+theme:art_and_material_culture,theme,art_and_material_culture,art_and_material_culture,94
+theme:history_and_culture,theme,history_and_culture,history_and_culture,266
 theme:linguistics_and_philology,theme,linguistics_and_philology,linguistics_and_philology,125
-theme:literature_and_poetry,theme,literature_and_poetry,literature_and_poetry,285
-theme:religion_and_philosophy,theme,religion_and_philosophy,religion_and_philosophy,575
-theme:unspecified,theme,unspecified,unspecified,54
+theme:literature_and_poetry,theme,literature_and_poetry,literature_and_poetry,289
+theme:religion_and_philosophy,theme,religion_and_philosophy,religion_and_philosophy,582
+theme:unspecified,theme,unspecified,unspecified,55

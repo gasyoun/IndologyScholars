@@ -1,15 +1,15 @@
 # Russian Indological Scholarship: Comparative Statistical Analytics
 
 > [!NOTE]
-> This analytical report is generated dynamically based on the relational SQL database compiled from Zograf Readings (2004–2026) and Roerich Readings (2007–2025) conference programs.
+> This analytical report is generated dynamically based on the relational SQL database compiled from Zograf Readings (2004–2026) and Roerich Readings (2005–2025) conference programs.
 
 ## 1. High-Level Executive Summary
 
-- **Total Unique Scholars Identified**: 268
-- **Total Historical Presentations/Talks**: 1388
-- **Scholars in Zograf Readings only**: 163
-- **Scholars in Roerich Readings only**: 64
-- **Scholars Active in BOTH Conferences (Overlapping Cohort)**: 41
+- **Total Unique Scholars Identified**: 276
+- **Total Historical Presentations/Talks**: 1411
+- **Scholars in Zograf Readings only**: 162
+- **Scholars in Roerich Readings only**: 72
+- **Scholars Active in BOTH Conferences (Overlapping Cohort)**: 42
 
 ## 2. Overlapping Cohort (The Core of Russian Indology)
 These scholars are active in both major Petersburg (Zograf) and Moscow (Roerich) forums, representing the intellectual bridge of the community:
@@ -17,34 +17,34 @@ These scholars are active in both major Petersburg (Zograf) and Moscow (Roerich)
 | Scholar Name | Total Talks | Zograf Talks | Roerich Talks | Active Period |
 | :--- | :---: | :---: | :---: | :---: |
 | Корнеева Наталья Афанасьевна | 29 | 15 | 14 | 2008–2026 |
+| Александрова Наталия Владимировна | 28 | 12 | 16 | 2005–2026 |
 | Тавастшерна Сергей Сергеевич | 28 | 16 | 12 | 2004–2026 |
-| Александрова Наталия Владимировна | 27 | 12 | 15 | 2008–2026 |
 | Рыжакова Светлана Игоревна | 27 | 22 | 5 | 2004–2026 |
 | Цветкова Светлана Олеговна | 27 | 15 | 12 | 2007–2026 |
 | Лысенко Виктория Георгиевна | 25 | 19 | 6 | 2004–2025 |
-| Дубянский Александр Михайлович | 21 | 10 | 11 | 2004–2020 |
+| Дубянский Александр Михайлович | 22 | 10 | 12 | 2004–2020 |
 | Васильков Ярослав Владимирович | 20 | 19 | 1 | 2004–2026 |
 | Мехакян Арег Гайкович | 20 | 5 | 15 | 2007–2025 |
-| Вертоградова Виктория Викторовна | 17 | 1 | 16 | 2006–2024 |
+| Вертоградова Виктория Викторовна | 18 | 1 | 17 | 2005–2024 |
+| Алиханова Юлия Марковна | 16 | 7 | 9 | 2004–2019 |
 | Вечерина Ольга Павловна | 16 | 9 | 7 | 2014–2023 |
+| Жутаев Дар Игоревич | 16 | 3 | 13 | 2005–2019 |
 | Лидова Наталья Ростиславовна | 16 | 8 | 8 | 2008–2026 |
-| Алиханова Юлия Марковна | 15 | 7 | 8 | 2004–2019 |
-| Жутаев Дар Игоревич | 15 | 3 | 12 | 2006–2019 |
 | Воробьева Дарья Николаевна | 14 | 5 | 9 | 2013–2025 |
+| Огнева Елена Дмитриевна | 14 | 1 | 13 | 2005–2022 |
 | Бабин Александр Николаевич | 13 | 7 | 6 | 2017–2025 |
-| Огнева Елена Дмитриевна | 13 | 1 | 12 | 2008–2022 |
+| Лелюхин Дмитрий Николаевич | 12 | 6 | 6 | 2004–2014 |
 | Юдицкая Екатерина Алексеевна | 12 | 3 | 9 | 2010–2022 |
 | Крылова Анастасия Сергеевна | 11 | 8 | 3 | 2016–2026 |
-| Лелюхин Дмитрий Николаевич | 11 | 6 | 5 | 2004–2014 |
 | Гордийчук Николай Валентинович | 10 | 5 | 5 | 2016–2023 |
 | Гурия Анастасия Георгиевна | 10 | 1 | 9 | 2007–2024 |
 | Комиссаров Дмитрий Алексеевич | 10 | 9 | 1 | 2016–2026 |
+| Гасунс Марцис Юрьевич | 9 | 6 | 3 | 2005–2024 |
 | Ложкина Анастасия Витальевна | 9 | 3 | 6 | 2013–2019 |
 | Смирнитская Анна Александровна | 9 | 7 | 2 | 2017–2025 |
-| Гасунс Марцис Юрьевич | 8 | 6 | 2 | 2006–2024 |
+| Вигасин Алексей Алексеевич | 8 | 3 | 5 | 2005–2025 |
 | Куликов Леонид Игоревич | 8 | 5 | 3 | 2015–2026 |
 | Ренковская Евгения Алексеевна | 8 | 6 | 2 | 2019–2026 |
-| Вигасин Алексей Алексеевич | 7 | 3 | 4 | 2006–2025 |
 | Крапивина Раиса Николаевна | 7 | 5 | 2 | 2004–2026 |
 
 ## 3. Top 15 Most Active Zograf Readings Participants
@@ -71,21 +71,21 @@ These scholars are active in both major Petersburg (Zograf) and Moscow (Roerich)
 
 | Scholar Name | Roerich Talks | Active Period |
 | :--- | :---: | :---: |
-| Вертоградова Виктория Викторовна | 16 | 2006–2024 |
-| Вырщиков Евгений Геннадьевич | 16 | 2008–2025 |
-| Тюлина Елена Владимировна | 16 | 2008–2025 |
-| Александрова Наталия Владимировна | 15 | 2008–2026 |
+| Вертоградова Виктория Викторовна | 17 | 2005–2024 |
+| Вырщиков Евгений Геннадьевич | 17 | 2005–2025 |
+| Тюлина Елена Владимировна | 17 | 2005–2025 |
+| Александрова Наталия Владимировна | 16 | 2005–2026 |
+| Дробышев Юлий Игорьевич | 16 | 2005–2025 |
 | Мехакян Арег Гайкович | 15 | 2007–2025 |
-| Дробышев Юлий Игорьевич | 15 | 2008–2025 |
 | Шустова Алла Михайловна | 15 | 2009–2025 |
 | Корнеева Наталья Афанасьевна | 14 | 2008–2026 |
 | Офертас Станислав Чеславович | 14 | 2008–2025 |
+| Жутаев Дар Игоревич | 13 | 2005–2019 |
+| Огнева Елена Дмитриевна | 13 | 2005–2022 |
+| Шрестха Кришна Пракаш | 13 | 2005–2020 |
 | Тавастшерна Сергей Сергеевич | 12 | 2004–2026 |
 | Цветкова Светлана Олеговна | 12 | 2007–2026 |
-| Жутаев Дар Игоревич | 12 | 2006–2019 |
-| Огнева Елена Дмитриевна | 12 | 2008–2022 |
-| Шрестха Кришна Пракаш | 12 | 2008–2020 |
-| Дубянский Александр Михайлович | 11 | 2004–2020 |
+| Дубянский Александр Михайлович | 12 | 2004–2020 |
 
 ## 5. CSV Export Deliverables
 The complete structured lists have been generated and exported to the `analytics_output` folder:
@@ -98,7 +98,7 @@ The complete structured lists have been generated and exported to the `analytics
 ## 6. Демографический тренд: возраст участников на день конференции
 
 > Возраст = год начала конференции − год рождения участника (погрешность ≤1 год).
-> Год рождения известен для **234** из 268 учёных (34 отсутствуют, см. `missing_birth_years.md`).
+> Год рождения известен для **234** из 276 учёных (42 отсутствуют, см. `missing_birth_years.md`).
 
 ### Зографские чтения (май, Санкт-Петербург)
 
@@ -131,6 +131,7 @@ The complete structured lists have been generated and exported to the `analytics
 
 | Год | Дата | N | Ср. возраст | Медиана | P25–P75 | Мин–Макс |
 | :---: | :--- | :---: | :---: | :---: | :--- | :--- |
+| 2005 | 2005-11-28 | 15 | 51.0 | 49 | 39.0–68.0 | 22–73 |
 | 2008 | 2008-12-09 | 19 | 51.2 | 52 | 36.0–67.0 | 20–79 |
 | 2009 | 2009-12-09 | 20 | 48.4 | 44.5 | 33.2–63.8 | 22–76 |
 | 2010 | 2010-12-09 | 31 | 48.7 | 44 | 33.0–66.0 | 22–83 |
@@ -152,8 +153,8 @@ The complete structured lists have been generated and exported to the `analytics
 
 We analyze the structure of Russian Indological conferences through the lens of participation networks. Unlike traditional bibliometric networks (which map who cites whom), our networks map **co-presence and shared scholarly context**. They help identify institutional centers of gravity, disciplinary clustering, and bridge scholars between the Zograf and Roerich readings.
 
-**Nodes Generated:** 349
+**Nodes Generated:** 358
 
-**Edges Generated:** 8127
+**Edges Generated:** 8254
 
 The network is exported into standard edge list and node list CSV formats (`network_nodes.csv` and `network_edges.csv`) for use in external graphing tools like Gephi or Cytoscape.

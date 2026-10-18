@@ -185,7 +185,7 @@
 <text x="28" y="309" fill="#a8b7ae" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="400" text-anchor="start">рожд. 1944; виден до 2022</text>
 <rect x="190" y="275" width="132" height="24" rx="8" fill="#7ccf9b" opacity="0.18"/><text x="202" y="291" fill="#7ccf9b" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700">post-2022 + 2026</text>
 <circle cx="306" cy="295" r="2" fill="#304139" opacity="0.75"/>
-<circle cx="340" cy="295" r="2" fill="#304139" opacity="0.75"/>
+<circle cx="340" cy="295" r="6.5" fill="#7ccf9b"/>
 <circle cx="374" cy="295" r="2" fill="#304139" opacity="0.75"/>
 <circle cx="408" cy="295" r="2" fill="#304139" opacity="0.75"/>
 <circle cx="442" cy="295" r="6.5" fill="#7ccf9b"/>
@@ -241,7 +241,7 @@
 <text x="28" y="385" fill="#a8b7ae" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="400" text-anchor="start">рожд. 1933; виден до 2024</text>
 <rect x="190" y="351" width="86" height="24" rx="8" fill="#f87171" opacity="0.18"/><text x="202" y="367" fill="#f87171" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700">2026</text>
 <circle cx="306" cy="371" r="2" fill="#304139" opacity="0.75"/>
-<circle cx="340" cy="371" r="2" fill="#304139" opacity="0.75"/>
+<circle cx="340" cy="371" r="6.5" fill="#7ccf9b"/>
 <circle cx="374" cy="371" r="6.5" fill="#76a9ff"/>
 <circle cx="408" cy="371" r="2" fill="#304139" opacity="0.75"/>
 <circle cx="442" cy="371" r="6.5" fill="#7ccf9b"/>
@@ -269,7 +269,7 @@
 <text x="28" y="423" fill="#a8b7ae" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="400" text-anchor="start">рожд. 1958; виден до 2024</text>
 <rect x="190" y="389" width="86" height="24" rx="8" fill="#f87171" opacity="0.18"/><text x="202" y="405" fill="#f87171" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700">2026</text>
 <circle cx="306" cy="409" r="6.5" fill="#76a9ff"/>
-<circle cx="340" cy="409" r="2" fill="#304139" opacity="0.75"/>
+<circle cx="340" cy="409" r="6.5" fill="#7ccf9b"/>
 <circle cx="374" cy="409" r="6.5" fill="#76a9ff"/>
 <circle cx="408" cy="409" r="2" fill="#304139" opacity="0.75"/>
 <circle cx="442" cy="409" r="2" fill="#304139" opacity="0.75"/>
@@ -297,7 +297,7 @@
 <text x="28" y="461" fill="#a8b7ae" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="400" text-anchor="start">рожд. 1946; виден до 2025</text>
 <rect x="190" y="427" width="86" height="24" rx="8" fill="#f87171" opacity="0.18"/><text x="202" y="443" fill="#f87171" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700">2026</text>
 <circle cx="306" cy="447" r="2" fill="#304139" opacity="0.75"/>
-<circle cx="340" cy="447" r="2" fill="#304139" opacity="0.75"/>
+<circle cx="340" cy="447" r="6.5" fill="#7ccf9b"/>
 <circle cx="374" cy="447" r="6.5" fill="#76a9ff"/>
 <circle cx="408" cy="447" r="6.5" fill="#76a9ff"/>
 <circle cx="442" cy="447" r="2" fill="#304139" opacity="0.75"/>

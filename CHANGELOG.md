@@ -1,10 +1,22 @@
-_Created: 15-08-2026 · Last updated: 05-09-2026_
+_Created: 15-08-2026 · Last updated: 03-10-2026_
 
 # История изменений (Changelog)
 
 Все заметные изменения в этом проекте будут отражены в данном файле.
 
 Этот проект представляет собой высокоточный академический конвейер для оцифровки, интеллектуального анализа и визуализации истории российской индологической науки.
+
+## 2026-10-06
+
+### H6060 — сеть со-цитирований индологов над корпусом nagari (builder + визуализация)
+
+Новый детерминированный билдер [tools/build_cocitation_network.py](https://github.com/gasyoun/IndologyScholars/blob/main/tools/build_cocitation_network.py): тред гуглгруппы «Общество ревнителей санскрита» (`nagari/md/`, 2 928 тредов) — цитирующий документ; два персоны из `conferences.db` со-цитированы, если стемы их фамилий (оба падежных усечения, патронимики и имена-омонимы отфильтрованы) встретились в одном треде. Сеть: 172 узла (≥2 тредов), 5 905 рёбер, суммарный вес 10 808, Q = 0.246, 4 школы ≥3 узлов (жадная модулярность на скелете weight≥2) + изоляты. Метрики per-node: degree, strength, betweenness (Брандес на весах), PageRank, сообщество. Мост к H5931: Цапеллер и Кочергина в корпусе совместно не обсуждаются (0 общих тредов при 4/193) — канал словаря остаётся лексикографическим фактом (ρ 0.571), дискурсом не проговариваемым. Визуализация [cocitation-network.html](https://github.com/gasyoun/IndologyScholars/blob/main/cocitation-network.html) (house-style vis-network, как networks.html); данные и отчёт — `analytics_output/cocitation_*` (внесены в Makefile `analytics` и rebuild CI). 17 юнит-тестов: `tests/test_cocitation_network.py`. Guardrails: со-упоминания ≠ библиометрические со-цитирования, веса читаются как порядок — оговорено в отчёте и на странице.
+
+## 2026-10-03
+
+### Nightly bug hunt 03.10.2026 — 0 HIGH, 4 MEDIUM, 5 LOW (report-only)
+
+Read-only bug hunt of the code surface ([BUGHUNT-FINDINGS-IndologyScholars-03.10.2026.md](https://github.com/gasyoun/IndologyScholars/blob/main/BUGHUNT-FINDINGS-IndologyScholars-03.10.2026.md)): no committed secrets, no HIGH findings; MEDIUMs cover published mixed-script `full_name_en` (5 scholars), an exclusive-end contract violation in `calendar_sync.py`, a hardcoded 2026 in age analytics, and `requirements.txt` failing on the declared 3.9 floor. Full suite verified green on 3.13 (464 passed, 13 skipped). MEDIUM/LOW report-only per MG ruling 26-09-2026; fix lane to follow.
 
 ## 2026-08-29
 
