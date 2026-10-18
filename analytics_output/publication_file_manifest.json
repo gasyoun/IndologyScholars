@@ -574,9 +574,9 @@
       "sha256": "fb6a544dca4533e68cf728bff39bc0b2e81c980636a4a62febaecfd20a114df9"
     },
     {
-      "path": "analytics_output/nlp_cache.pkl",
-      "size_bytes": 150521,
-      "sha256": "2d6d0b4a66e6d8f41ee685284c1723d8f5baa469527338c746624162827b65d3"
+      "path": "analytics_output/nlp_cache.npz",
+      "size_bytes": 176082,
+      "sha256": "b7bb0e46d6e0211f424080a72fc3cf53503ab98b390eea7341c90e954798d0b5"
     },
     {
       "path": "analytics_output/no_affiliation_history.md",
@@ -10521,7 +10521,7 @@
     {
       "path": "findings/visualisations.html",
       "size_bytes": 495900,
-      "sha256": "3789a8c6e5797c9e31006c69c4afd1904c92e68ae38e53c173c725e8e55e53b1"
+      "sha256": "4cd7af5d1672b4c72225e8ea9a21410a3763ecfd1158f5cb27b706b672d366cc"
     },
     {
       "path": "gatekeeping-en.html",
