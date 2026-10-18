@@ -350,8 +350,8 @@
     },
     {
       "path": "analytics_output/field_provenance_biographical.csv",
-      "size_bytes": 250821,
-      "sha256": "fabb19b9445f52687ce22fe0aef3554c5b3c0f294ce1a2ce4edde51c1e588a0d"
+      "size_bytes": 250786,
+      "sha256": "aa4e924d3c7e174141cf49c6a75b55daaaf5caded2f6c0f1bf51ae20b065cefb"
     },
     {
       "path": "analytics_output/field_provenance_themes.csv",
@@ -575,8 +575,8 @@
     },
     {
       "path": "analytics_output/nlp_cache.pkl",
-      "size_bytes": 150507,
-      "sha256": "35de83c1aec3858c5d3a1c688baf13389bfda69fd130a92334298f749d0dbd95"
+      "size_bytes": 150521,
+      "sha256": "2d6d0b4a66e6d8f41ee685284c1723d8f5baa469527338c746624162827b65d3"
     },
     {
       "path": "analytics_output/no_affiliation_history.md",
@@ -640,8 +640,8 @@
     },
     {
       "path": "analytics_output/renou_presentations.csv",
-      "size_bytes": 828806,
-      "sha256": "df8a592a1740943d9b48cab5740b852af37d1dc906dc6f06e2fc4f37b727b061"
+      "size_bytes": 828645,
+      "sha256": "386a1909ce11fc375cffb95a8ea0de9fb4837ad344d6f3a69f940bc852424f16"
     },
     {
       "path": "analytics_output/renou_register_atharva_presentations.csv",
@@ -665,8 +665,8 @@
     },
     {
       "path": "analytics_output/renou_register_epic_presentations.csv",
-      "size_bytes": 37480,
-      "sha256": "b55f94b71cd993885a9386ecd8a8ca9910132d9e0f2db8bbab9b87832537d383"
+      "size_bytes": 37457,
+      "sha256": "4e1b28a207b5cdda0786069c0e06152a86d45bd0a2248b616107507c0211f991"
     },
     {
       "path": "analytics_output/renou_register_epig_presentations.csv",
@@ -690,13 +690,13 @@
     },
     {
       "path": "analytics_output/renou_register_katha_presentations.csv",
-      "size_bytes": 36220,
-      "sha256": "615e7912ada916d2fc483ae06b60ef51563bc62d36fb6bad5ec1a3c7bffa032c"
+      "size_bytes": 36207,
+      "sha256": "852e613f2ea73b265e64a56ac7b82c72f89f3d3d57bfc528ecc197b5c2b42a4b"
     },
     {
       "path": "analytics_output/renou_register_kavya_presentations.csv",
-      "size_bytes": 183446,
-      "sha256": "e8232b798dcb1ec3e716e797d4eb422e38b33f07ebbdadc6ebf0231e1a61f727"
+      "size_bytes": 183395,
+      "sha256": "f9a3c7e7e1afe08f8361c78f04b51aa4d75708432646bfa5335c5d2cf97af021"
     },
     {
       "path": "analytics_output/renou_register_natya_presentations.csv",
@@ -745,8 +745,8 @@
     },
     {
       "path": "analytics_output/renou_scholar_summary.csv",
-      "size_bytes": 21633,
-      "sha256": "b5c55b88cf305cbad9ff61f34c22e9939bc2fe0733e242a7d958a47240505b39"
+      "size_bytes": 21598,
+      "sha256": "3766f228da5c4473b8632469ab9379c762983c7ec09cafb2aef4b58edc18fa8a"
     },
     {
       "path": "analytics_output/renou_state_i_presentations.csv",
@@ -760,13 +760,13 @@
     },
     {
       "path": "analytics_output/renou_state_iii_presentations.csv",
-      "size_bytes": 86569,
-      "sha256": "8f9f4a380c0a4f2c236f3c0fa2938c43796e3c349390174bf8b6ff4b7242c787"
+      "size_bytes": 86556,
+      "sha256": "2c0493ad4de0a008c812b4647991b8d499d6a783025f19bd1b1bc8f683f3b302"
     },
     {
       "path": "analytics_output/renou_state_iv_presentations.csv",
-      "size_bytes": 194871,
-      "sha256": "8225c8fcb05c9aa0894663ec7ed0b85149553da73cc377935dccce50b9ff598b"
+      "size_bytes": 194820,
+      "sha256": "7b1e40b8920ee9552bf96f1e57547d6d89826d8961c60f9c347bebd56a7c9f95"
     },
     {
       "path": "analytics_output/renou_state_summary.csv",
@@ -1025,8 +1025,8 @@
     },
     {
       "path": "assets/nlp_data.js",
-      "size_bytes": 430784,
-      "sha256": "89012aaaba977fcf7131bab9c45cc491bcdf19d1f01edde29eb4276cc99ffb47"
+      "size_bytes": 430771,
+      "sha256": "3f66c67870a15d677eca903964dea6502d5866bd4144e903b4932dcb3bd041cd"
     },
     {
       "path": "assets/og-image.png",
@@ -10481,7 +10481,7 @@
     {
       "path": "download-data.html",
       "size_bytes": 37531,
-      "sha256": "199ee417f3c2bd140c4a5b36ac5124b9ecc901fd2e979c976df40f22ce4d399a"
+      "sha256": "df0ac5c6704fc29897731a16655dc75a59bf30a0575602dd6ac19a23e071a3dd"
     },
     {
       "path": "en.html",
@@ -10521,7 +10521,7 @@
     {
       "path": "findings/visualisations.html",
       "size_bytes": 495900,
-      "sha256": "2fa9e39acf7f278c37006e8295b12447123291fa50279aeb75f51f17f44cd30a"
+      "sha256": "3789a8c6e5797c9e31006c69c4afd1904c92e68ae38e53c173c725e8e55e53b1"
     },
     {
       "path": "gatekeeping-en.html",
@@ -19615,8 +19615,8 @@
     },
     {
       "path": "s/atmanova-yuliya.html",
-      "size_bytes": 34342,
-      "sha256": "e2912c32a38147d489ee50aca052c566945055bdb285de406da3db032a86c5aa"
+      "size_bytes": 34312,
+      "sha256": "2b9cb4b5a234db193e792b77c76f3dce74807455e55c68cf635204ae2e52b7c5"
     },
     {
       "path": "s/azarkina.html",
@@ -19950,8 +19950,8 @@
     },
     {
       "path": "s/evgenia-renkovskaya.html",
-      "size_bytes": 40516,
-      "sha256": "32dddd755ec34cdf19a8f86f59ab6aeb70835d5388ca92d0b496dbc5374a95e8"
+      "size_bytes": 40884,
+      "sha256": "afd4d3813854936cc6989c89822b6d3825e86a168f7d77b02ebbc7a19e619920"
     },
     {
       "path": "s/evgeny-ulansky.html",
@@ -20580,8 +20580,8 @@
     },
     {
       "path": "s/maretina-kseniya.html",
-      "size_bytes": 34371,
-      "sha256": "900843a47493cd5bfa7b30f662e64020acb7f26bc42d14b47f459ecf0bae3090"
+      "size_bytes": 34332,
+      "sha256": "90f11a2c2315665e6bd0ed312e90cad635bdbee16b7264ce4a85e0519285bd73"
     },
     {
       "path": "s/maretina.html",
@@ -21140,8 +21140,8 @@
     },
     {
       "path": "s/soboleva-diana.html",
-      "size_bytes": 30487,
-      "sha256": "c66493f6e907230fb265c770e35e026606e52dfb2d963eb402933aa52b09363c"
+      "size_bytes": 30451,
+      "sha256": "16429257e16019beb9324b07202a66ebdf84ed93a4a0390d566d65edcd95f601"
     },
     {
       "path": "s/soboleva-elena.html",
@@ -21575,8 +21575,8 @@
     },
     {
       "path": "search-index.json",
-      "size_bytes": 1189866,
-      "sha256": "8da3d3be7160c88e9bf516acccb1ecb26d0af9d7b23d3f94dd31bcc7dde5fd6e"
+      "size_bytes": 1189831,
+      "sha256": "0367f67061bcf6ea51032fcb220556bf6cad6980025830c64dbaf005ebf063a2"
     },
     {
       "path": "search.html",
@@ -21595,8 +21595,8 @@
     },
     {
       "path": "site_data.json",
-      "size_bytes": 5045514,
-      "sha256": "86c2e578fa5adbebcdabb6ebe6fc52260f210da590896bc014299611b23569a9"
+      "size_bytes": 5045572,
+      "sha256": "74ce206cb6a78d125a9491da0b16720d96cea36e97da4420970f03b5340bcf6e"
     },
     {
       "path": "sitemap.xml",
