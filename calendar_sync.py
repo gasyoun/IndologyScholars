@@ -1,6 +1,7 @@
 import sqlite3
 import re
 import os.path
+from datetime import date, timedelta
 from google.auth.transport.requests import Request
 from google.oauth2.credentials import Credentials
 from google_auth_oauthlib.flow import InstalledAppFlow
@@ -49,6 +50,20 @@ def parse_date(date_str, current_year=2026):
         # Резервная дата: 30 января
         return f"{current_year}-01-30", hist_year, False
 
+def _exclusive_end(date_str):
+    """Google Calendar all-day events use an EXCLUSIVE end date (start + 1 day)."""
+    y, m, d = (int(x) for x in date_str.split("-"))
+    return (date(y, m, d) + timedelta(days=1)).isoformat()
+
+
+def _event_exists(service, calendar_id, summary):
+    """Idempotency guard: never insert the same anniversary twice."""
+    resp = service.events().list(
+        calendarId=calendar_id, q=summary, maxResults=10, singleEvents=False
+    ).execute()
+    return any(item.get("summary") == summary for item in resp.get("items", []))
+
+
 def create_anniversary_events():
     service = authenticate_google_calendar()
     try:
@@ -80,15 +95,17 @@ def create_anniversary_events():
             desc = f"Историческая дата рождения: {b_date_raw}"
             if not b_exact: desc += "\n\nПримечание: Точный месяц и день неизвестны. Дата установлена на 30 января."
             
-            event = {
-                'summary': f"Birth Anniversary: {full_name} (b. {b_year})",
-                'description': desc,
-                'start': {'date': b_event_date},
-                'end': {'date': b_event_date},
-                'recurrence': ['RRULE:FREQ=YEARLY'],
-            }
-            service.events().insert(calendarId=calendar_id, body=event).execute()
-            events_created += 1
+            summary = f"Birth Anniversary: {full_name} (b. {b_year})"
+            if not _event_exists(service, calendar_id, summary):
+                event = {
+                    'summary': summary,
+                    'description': desc,
+                    'start': {'date': b_event_date},
+                    'end': {'date': _exclusive_end(b_event_date)},
+                    'recurrence': ['RRULE:FREQ=YEARLY'],
+                }
+                service.events().insert(calendarId=calendar_id, body=event).execute()
+                events_created += 1
 
         # События: Дни смерти
         d_event_date, d_year, d_exact = parse_date(d_date_raw)
@@ -96,15 +113,17 @@ def create_anniversary_events():
             desc = f"Историческая дата смерти: {d_date_raw}"
             if not d_exact: desc += "\n\nПримечание: Точный месяц и день неизвестны. Дата установлена на 30 января."
             
-            event = {
-                'summary': f"Death Anniversary: {full_name} (d. {d_year})",
-                'description': desc,
-                'start': {'date': d_event_date},
-                'end': {'date': d_event_date},
-                'recurrence': ['RRULE:FREQ=YEARLY'],
-            }
-            service.events().insert(calendarId=calendar_id, body=event).execute()
-            events_created += 1
+            summary = f"Death Anniversary: {full_name} (d. {d_year})"
+            if not _event_exists(service, calendar_id, summary):
+                event = {
+                    'summary': summary,
+                    'description': desc,
+                    'start': {'date': d_event_date},
+                    'end': {'date': _exclusive_end(d_event_date)},
+                    'recurrence': ['RRULE:FREQ=YEARLY'],
+                }
+                service.events().insert(calendarId=calendar_id, body=event).execute()
+                events_created += 1
 
     print(f"Успешно добавлено {events_created} событий в календарь 'Indology'.")
     conn.close()
