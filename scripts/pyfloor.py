@@ -35,7 +35,7 @@ FLOOR_STR = "3.9"
 # .githooks/pre-commit and the CI workflows resolve their interpreter by bare
 # PATH lookup. A floor above the system interpreter has to be re-satisfied at
 # every invocation path forever; a floor at it is satisfied by default.
-# Full rationale: docs/DECISION_PYTHON_INTERPRETER_FLOOR_2026.md
+# Rationale: see the repo AGENTS.md section on the interpreter floor.
 
 _ENV_SKIP = "UPRAVA_PYFLOOR_SKIP"
 # Test seam. A box that already satisfies the floor cannot otherwise prove the

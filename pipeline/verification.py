@@ -129,7 +129,9 @@ def ingest_video_media(conn):
             video_title = (row.get("video_title") or "").strip()
             title_hint = (row.get("title_hint") or "").strip()
             speaker_hint = (row.get("speaker_hint") or "").strip()
-            if not video_url or not title_hint:
+            # bughunt 03-10-2026 L2: an empty video_id would collapse every
+            # such row into one YT_ media row (DELETE+INSERT, last wins).
+            if not video_url or not title_hint or not video_id:
                 skipped += 1
                 continue
 
@@ -155,4 +157,4 @@ def ingest_video_media(conn):
             )
             inserted += 1
     conn.commit()
-    print(f"  Video media: {inserted} inserted, {no_match} could not be matched against current DB, {skipped} skipped (status != auto/manual_confirmed)")
+    print(f"  Video media: {inserted} inserted, {no_match} could not be matched against current DB, {skipped} skipped (filtered rows)")

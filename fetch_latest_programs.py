@@ -95,11 +95,10 @@ def fetch_latest_roerich(year):
                             break
             
             if not found_program:
-                # If no specific card is found, cache the main news page for that year which might list them
-                print(f"No specific news article card found. Caching news overview for {year}.")
-                with open(filepath, 'w', encoding='utf-8') as f:
-                    f.write(r.text)
-                print(f"Successfully cached Roerich main news overview to {filepath}")
+                # bughunt 03-10-2026 L3: do NOT cache the news overview under the
+                # programme filename - the sticky cache would feed the parser a
+                # non-programme page on every later run.
+                print(f"No specific news article card found for {year}; not caching the overview page.")
     except Exception as e:
         print(f"Error checking Roerich online directory: {e}")
 

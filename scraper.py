@@ -68,8 +68,12 @@ def scrape_karttunen_database(conn):
                     ''', (current_name, full_raw_text, page_url))
                 
                 # Начинаем собирать нового ученого
-                name_match = re.split(r'\.', text, maxsplit=1)
+                # Split after the name only: a period preceded by a single
+                # capital is an initial ("Ivanov, I. V."), not the name end.
+                name_match = re.split(r'\.\s+(?=[A-ZА-ЯЁ][a-zа-яё]{2,})', text, maxsplit=1)
                 current_name = name_match[0].replace('*', '').strip() if name_match else "Unknown"
+                if len(name_match) > 1 and current_name and not current_name.endswith('.'):
+                    current_name += '.'
                 current_block = [text] 
             else:
                 # Продолжение текущей статьи (например, списки трудов)
