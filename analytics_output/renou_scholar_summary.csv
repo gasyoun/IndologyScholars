@@ -72,7 +72,7 @@ renou_matched_talks,renou_registers,renou_states,scholar,scholar_id,scholar_url,
 3,bauddha; epic; katha; kavya,IV; V,Fiveyskaya Anastasia Vasilyevna,PERS_6ae5c779,s/anastasia-fiveyskaya.html,3
 3,kavya,I; IV,Kryukova Viktoriya Yurievna,PERS_d218805b,s/kryukova-viktoriya.html,5
 3,kavya; tantra,III; IV,Kuzina Elizaveta Olegovna,PERS_1c6fcce5,s/elizaveta-kuzina.html,7
-3,epic; katha; kavya,III; IV,Maretina Ksenia Александровна,PERS_50c46233,s/maretina-kseniya.html,5
+3,epic; katha; kavya,III; IV,Maretina Ksenia Aleksandrovna,PERS_50c46233,s/maretina-kseniya.html,5
 3,kavya,IV,Maria Pavlova,PERS_34c0d384,s/pavlova-mariya.html,3
 3,kavya; natya,IV,Minaeva Margarita Denisovna,PERS_4fff9d16,s/minaeva-margarita.html,3
 3,bauddha,V,Ogneva Elena Dmitrievna,PERS_e72d4c09,s/ogneva-elena.html,14
@@ -110,7 +110,7 @@ renou_matched_talks,renou_registers,renou_states,scholar,scholar_id,scholar_url,
 1,tantra,III,A. V. Osokin,PERS_b9a0e40c,s/bryleva-natalya.html,1
 1,kavya,IV,A. Â. Taran,PERS_c1cc76b9,s/taran.html,1
 1,kavya; rgveda,I; IV,Aleta Chomichenkiene,PERS_5cb1449b,s/khomichenkene-aleta.html,1
-1,epic,,Atmanova Yulia Георгиевна,PERS_088c4df7,s/atmanova-yuliya.html,6
+1,epic,,Atmanova Yulia Georgievna,PERS_088c4df7,s/atmanova-yuliya.html,6
 1,kavya,IV,Audrius Beinorius,PERS_bff5de3e,s/beinoryus-audryus.html,4
 1,katha,,Berezkin Yuri Evgenievich,PERS_c31236d2,s/berezkin-yurii.html,2
 1,kavya,IV,Bogolyubov Mikhail Nikolaevich,PERS_96b8b195,s/bogolyubov-mikhail.html,2
@@ -163,7 +163,7 @@ renou_matched_talks,renou_registers,renou_states,scholar,scholar_id,scholar_url,
 1,epic; kavya,III; IV,Serebryany Sergey Dmitrivelch,PERS_1130c736,s/serebryanyi-sergei.html,1
 1,tantra,III,Sergey Pokatilov,PERS_37bb2d43,s/pokatilov-sergei.html,2
 1,bauddha; kavya,IV; V,Shelkovich Vladimir Mikhailovich,PERS_8a8c5d8b,s/vladimir-shelkovich.html,1
-1,kavya,IV,Soboleva Diana Владимировна,PERS_3d3b302d,s/soboleva-diana.html,3
+1,kavya,IV,Soboleva Diana Vladimirovna,PERS_3d3b302d,s/soboleva-diana.html,3
 1,sutra,,Stepin A. A.,PERS_bbd15f4f,s/stepin.html,1
 1,tantra,III,Strelkov Andrey Mikhailovich,PERS_3d22e8d4,s/strelkov-andrei.html,1
 1,rgveda,I,Svetlana Kardinskaya,PERS_4ebb20aa,s/kardinskaya-svetlana.html,1
