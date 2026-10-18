@@ -3399,7 +3399,9 @@ def generate_registry_page(data):
     table_rows = []
     for row in rows:
         table_rows.append(
-            "<tr>"
+            # id = the stable RIND_ registry_id, so a PD-page (or any external) record can
+            # deep-link one row instead of the whole table (H6971).
+            f'<tr id="{esc((row.get("registry_id") or "").strip())}">'
             f"<td>{name_cell(row)}</td>"
             f"<td>{esc(life_years(row))}</td>"
             f"<td>{esc(row.get('field') or '')}</td>"
@@ -3411,7 +3413,7 @@ def generate_registry_page(data):
     body = f"""
         <header>
             <h1>Индологи вне программы чтений</h1>
-            <p>Реестр русскоязычных индологов, которые <strong>ни разу не выступали</strong> на Зографских или Рериховских чтениях. Это отдельный от каталога докладчиков слой: эти учёные не входят в конференционную статистику ({esc(str(data.get('summary', {}).get('total_scholars', '')))} докладчиков / {esc(str(data.get('summary', {}).get('unique_presentations', '')))} докладов).</p>
+            <p>Реестр индологов, которые <strong>ни разу не выступали</strong> на Зографских или Рериховских чтениях. Это отдельный от каталога докладчиков слой: эти учёные не входят в конференционную статистику ({esc(str(data.get('summary', {}).get('total_scholars', '')))} докладчиков / {esc(str(data.get('summary', {}).get('unique_presentations', '')))} докладов).</p>
         </header>
         <div class="article-container">
             <article>
@@ -3472,11 +3474,11 @@ def generate_registry_page(data):
         "indologists.html",
         page_shell(
             f"Индологи вне программы чтений | {SITE_NAME}",
-            "Реестр русскоязычных индологов, не выступавших на Зографских и Рериховских чтениях; отдельный от каталога докладчиков слой.",
+            "Реестр индологов, не выступавших на Зографских и Рериховских чтениях; отдельный от каталога докладчиков слой.",
             "indologists.html",
             body,
             [
-                page_data("Индологи вне программы чтений", "Реестр русскоязычных индологов, не входящих в конференционный корпус.", "indologists.html"),
+                page_data("Индологи вне программы чтений", "Реестр индологов, не входящих в конференционный корпус.", "indologists.html"),
                 make_breadcrumbs([("Главная", ""), ("Индологи вне программы чтений", "indologists.html")]),
             ],
             extra_head=ARTICLE_STYLE,
