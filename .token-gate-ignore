@@ -1,0 +1,11 @@
+# token-size-gate: files here are not agent-authored — generated data/assets.
+# Code, docs and reports stay under the 5000-token limit.
+s/**
+article/snapshots/**
+analytics_output/**
+html_cache/**
+conferences/**
+meso/**
+site_data*.json
+search-index.json
+*.html
