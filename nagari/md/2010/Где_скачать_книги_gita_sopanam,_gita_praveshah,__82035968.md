@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 10997982035968
 subject: "Где скачать книги gita sopanam, gita praveshah, satwalekar - teach samskritam yourself?"
@@ -18,3 +20,5 @@ source_url: https://groups.google.com/d/msgid/nagari/AANLkTinRL_TO8xmape%2BL0CVh
 ## 1. kalindi dd kalindi dd — 2010-10-29 16:55:50
 
 Подскажите, плиз!
+
+_Dr. Mārcis Gasūns_

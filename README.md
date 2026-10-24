@@ -1,6 +1,6 @@
 # IndologyScholars: архив докладов по российской индологии
 
-_Created: 24-04-2026 · Last updated: 23-07-2026_
+_Created: 24-04-2026 · Last updated: 25-09-2026_
 
 [English version](https://github.com/gasyoun/IndologyScholars/blob/main/README_EN.md) | [Документация для разработчиков](https://github.com/gasyoun/IndologyScholars/blob/main/docs/development.md)
 
@@ -16,18 +16,17 @@ _Created: 24-04-2026 · Last updated: 23-07-2026_
 
 ## Состав архива
 
-Опубликованная выборка докладчиков (снимок `site_data.json`, актуален на
-23 июля 2026 г.) содержит:
+Опубликованная выборка докладчиков (снимок `site_data.json` от 2026-10-24) содержит:
 
 | Показатель | Значение |
 | --- | ---: |
-| Профили докладчиков | 268 |
-| Уникальные доклады | 1362 |
-| Авторские участия | 1388 |
-| Программные годы | 22, с 2004 по 2026 г. |
-| Участники обеих площадок | 41 |
-| Только Зографские чтения | 163 |
-| Только Рериховские чтения | 64 |
+| Профили докладчиков | 276 |
+| Уникальные доклады | 1385 |
+| Авторские участия | 1411 |
+| Программные годы | 23, с 2004 по 2026 г. |
+| Участники обеих площадок | 42 |
+| Только Зографские чтения | 162 |
+| Только Рериховские чтения | 72 |
 
 В архив включены Зографские чтения 2004-2026 гг. и Рериховские чтения
 2007-2025 гг. Программа Зографских чтений 2026 г. учитывается как
@@ -95,6 +94,11 @@ historical`).
 [рекомендации по цитированию](https://gasyoun.github.io/IndologyScholars/how-to-cite.html)
 или файл [CITATION.cff](https://github.com/gasyoun/IndologyScholars/blob/main/CITATION.cff).
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21360652.svg)](https://doi.org/10.5281/zenodo.21360652)
+Данные: Zenodo concept DOI `10.5281/zenodo.21360652` (все версии); версия
+`10.5281/zenodo.21847873` (релиз v1.6.7, 2026-08-08, включает снапшот анализа
+2026-07-17).
+
 ## Документация
 
 - [Разработка и воспроизводимость, на русском](https://github.com/gasyoun/IndologyScholars/blob/main/docs/development.md)
@@ -105,6 +109,52 @@ historical`).
 Исторические аналитические тексты и рукописи в репозитории могут описывать
 более ранние снимки корпуса; актуальными для сайта являются опубликованные
 страницы и выгрузки данных.
+
+## Как этот репозиторий связан с остальными
+
+Архив — часть организационного «хребта» из примерно 85 репозиториев; ниже — что
+он отдаёт наружу, кто это читает и куда записывать находки.
+
+- **Что производит.** Просопографический слой докладов: перекрёстную таблицу
+  мезо-код → дисциплина
+  [`curation/meso_discipline_crosswalk.csv`](https://github.com/gasyoun/IndologyScholars/blob/main/curation/meso_discipline_crosswalk.csv)
+  (50 сопоставлений с оценкой уверенности), справочник дисциплин
+  [`curation/disciplines.csv`](https://github.com/gasyoun/IndologyScholars/blob/main/curation/disciplines.csv)
+  и ручные назначения
+  [`curation/person_disciplines.csv`](https://github.com/gasyoun/IndologyScholars/blob/main/curation/person_disciplines.csv).
+  Внутри репозитория их читает
+  [`pipeline/disciplines.py`](https://github.com/gasyoun/IndologyScholars/blob/main/pipeline/disciplines.py),
+  собирая таблицу `person_discipline`.
+- **Кто читает.** Перекрёстная таблица зарегистрирована как ребро графа в
+  [PROJECT_INTERLINKS.md](https://github.com/gasyoun/Uprava/blob/main/PROJECT_INTERLINKS.md)
+  и [interlinks_edges.tsv](https://github.com/gasyoun/Uprava/blob/main/interlinks_edges.tsv)
+  (26-08-2026): её не следует пересобирать заново в соседних репозиториях.
+  **С 29-08-2026 (решение F5c) у неё есть и зарегистрированные потребители** —
+  [`csl-atlas`](https://github.com/gasyoun/csl-atlas) и
+  [`kosha`](https://github.com/gasyoun/kosha), строки `consumes` со статусом `proposed`.
+  ⚠️ **Статус `proposed` — не украшение:** замер 29-08-2026 (`git grep -il
+  meso_discipline_crosswalk|person_disciplines|disciplines.csv`) показывает, что **ни один из
+  них таблицу пока не читает**. Строки держатся на *намерении*, признанном решением F5
+  обязательным: брать эту перекрёстную таблицу, а не собирать свою таксономию дисциплин
+  русской индологии заново, и никогда не откатываться к `keyword_filtering.py` с его
+  погрешностью ≥ 7,1 %. **Условие снятия:** если к следующей переписи связности ни один из
+  них так и не будет её читать, обе строки-потребителя удаляются; строка-производитель
+  остаётся в любом случае. До этого момента отсутствие чтения — известное датированное
+  состояние, а не дефект.
+  Из соседей архив сам потребляет ленту
+  [`gasyoun/IndologyArchiveAtlas`](https://github.com/gasyoun/IndologyArchiveAtlas)
+  (`feed/*.csv` → `tools/fetch_indology_feed.py`).
+- **Куда писать находки.** Инфраструктура и процесс →
+  [Uprava/FINDINGS.md](https://github.com/gasyoun/Uprava/blob/main/FINDINGS.md);
+  санскритские данные →
+  [SanskritLexicography/FINDINGS.md](https://github.com/gasyoun/SanskritLexicography/blob/master/FINDINGS.md).
+  Своих реестров этот репозиторий не держит.
+- **Общий код.** Прежде чем писать нормализатор, транскриптор или парсер —
+  [SHARED_CODE.md](https://github.com/gasyoun/github-spine/blob/main/SHARED_CODE.md).
+- **Что уже существует.**
+  [FEATURES_INDEX.md](https://github.com/gasyoun/SanskritLexicography/blob/master/FEATURES_INDEX.md).
+- **Что делать дальше.**
+  [GTD_NEXT_ACTIONS.md](https://github.com/gasyoun/Uprava/blob/main/GTD_NEXT_ACTIONS.md).
 
 ## Лицензия
 

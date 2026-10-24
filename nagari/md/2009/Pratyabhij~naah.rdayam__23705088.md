@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 6849023705088
 subject: "Pratyabhij~naah.rdayam"
@@ -529,3 +531,5 @@ On 21 мар, 01:18, "vladimir" <nath...@…> wrote:
 > > Если есть интерес, то я могу послать с текстом -- пошлите мне e-mail.
 >
 > > Dmitri.
+
+_Dr. Mārcis Gasūns_

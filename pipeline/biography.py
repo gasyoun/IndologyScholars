@@ -138,7 +138,7 @@ BIOGRAPHICAL_DATA = {
     "пахомова а м": ("Пахомова Александра Михайловна", "Pakhomova Alexandra Mikhailovna", 1992, None),
     "немчинов в м": ("Немчинов Виктор Михайлович", "Nemchinov Viktor Mikhailovich", 1953, None),
     "березкин ю е": ("Березкин Юрий Евгеньевич", "Berezkin Yuri Evgenievich", 1946, None),
-    "соболева д в": ("Соболева Диана Владимировна", "Soboleva Diana Владимировна", 1989, None),
+    "соболева д в": ("Соболева Диана Владимировна", "Soboleva Diana Vladimirovna", 1989, None),
     "курочкин а ю": ("Курочкин Александр Юрьевич", "Kurochkin Alexander Yurievich", 1968, None),
     "уймина ю а": ("Уймина Юлия Александровна", "Uymina Yulia Alexandrovna", 1988, None),
     "митруев б л": ("Митруев Бембя Леонидович", "Mitruev Bembya Leonidovich", 1977, None),
@@ -184,7 +184,7 @@ BIOGRAPHICAL_DATA = {
     "ренкоская е а": ("Ренковская Евгения Алексеевна", "Renkovskaya Evgeniya Alekseevna", 1991, None),
     "костина е а": ("Костина Екатерина Александровна", "Kostina Ekaterina Alexandrovna", 1977, None),
     "хмуркин г г": ("Хмуркин Георгий Георгиевич", "Khmurkin Georgiy Georgievich", 1983, None),
-    "атманова ю г": ("Атманова Юлия Георгиевна", "Atmanova Yulia Георгиевна", 1985, None),
+    "атманова ю г": ("Атманова Юлия Георгиевна", "Atmanova Yulia Georgievna", 1985, None),
     "юдицкая е а": ("Юдицкая Екатерина Алексеевна", "Yuditskaya Ekaterina Alekseevna", 1987, None),
     "терентьев а а": ("Терентьев Андрей Анатольевич", "Terentyev Andrey Anatolyevich", 1948, None),
     "коробов в б": ("Коробов Владимир Борисович", "Korobov Vladimir Borisovich", 1957, None),
@@ -226,12 +226,12 @@ BIOGRAPHICAL_DATA = {
     "уфимцева е в": ("Уфимцева Евгения Владимировна", "Ufimtseva Evgenia Vladimirovna", 1983, None),
     "соколова о с": ("Соколова Ольга Сергеевна", "Sokolova Olga Sergeyevna", 1987, None),
     "лемешкина к в": ("Лемешкина Ксения Вячеславовна", "Lemeshkina Ksenia Vyacheslavovna", 1985, None),
-    "маретина к а": ("Маретина Ксения Александровна", "Maretina Ksenia Александровна", 1982, None),
+    "маретина к а": ("Маретина Ксения Александровна", "Maretina Ksenia Aleksandrovna", 1982, None),
     "аникина а а": ("Аникина Анна Андреевна", "Anikina Anna Andreevna", 1986, None),
-    "бычихина о в": ("Бычихина Ольга Владимировна", "Bychikhina Olga Владимировна", 1978, None),
+    "бычихина о в": ("Бычихина Ольга Владимировна", "Bychikhina Olga Vladimirovna", 1978, None),
     "яковлева м н": ("Яковлева Мария Николаевна", "Yakovleva Maria Nikolaevna", 1989, None),
     "ершова е м": ("Ершова Елизавета Михайловна", "Ershova Elizaveta Mikhailovna", 1993, None),
-    "голубев с в": ("Голубев Сергей Владимирович", "Golubev Sergey Владимирович", 1980, None),
+    "голубев с в": ("Голубев Сергей Владимирович", "Golubev Sergey Vladimirovich", 1980, None),
     "челнокова а в": ("Челнокова Анна Витальевна", "Chelnokova Anna Vitalyevna", 1971, None),
     
     # Newly resolved scholars from official institutional pages
@@ -385,11 +385,12 @@ DEGREE_DATA = {
     "эрман в г": ("доктор филологических наук", "", "https://ru.wikipedia.org/wiki/Эрман,_Владимир_Гансович"),
     "попова и ф": ("доктор исторических наук", "2000", "https://ru.wikipedia.org/wiki/Попова,_Ирина_Фёдоровна"),
     "невелева с л": ("доктор филологических наук", "1993", "https://ru.wikipedia.org/wiki/Невелева,_Светлана_Леонидовна"),
-    "доктор исторических наук": ("доктор исторических наук", "2012", "https://www.hse.ru/org/persons/209813167/"),
+    # (bughunt 03-10-2026 L1) a degree string used as a person key was dropped:
+    # it could never match canonical_person_key(any person) and carried no reachable data.
     "комиссаров д а": ("кандидат филологических наук", "2012", "https://www.hse.ru/org/persons/209813167/"),
     "роберт о": ("доктор исторических наук", "2012", "https://www.hse.ru/org/persons/209813167/"),
     "шохин в к": ("доктор философских наук", "", "https://iphras.ru/shokhin.htm"),
-    "renkovskaya е а": ("кандидат филологических наук", "2021", "https://istina.msu.ru/profile/Zumrutanka/"),
+    "ренковская е а": ("кандидат филологических наук", "2021", "https://istina.msu.ru/profile/Zumrutanka/"),
     "крапивина р н": ("кандидат исторических наук", "1983", "http://www.orientalstudies.ru/rus/index.php?option=com_personalities&Itemid=74&person=34"),
     "кулланда с в": ("кандидат исторических наук", "1988", "https://ru.wikipedia.org/wiki/Кулланда,_Сергей_Всеволодович"),
     

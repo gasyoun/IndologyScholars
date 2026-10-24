@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 5749265661952
 subject: "SALARY: £60-65K per annum plus uplifts see our web site for details."
@@ -18,3 +20,5 @@ source_url: https://groups.google.com/d/msgid/nagari/be26b1330809290549q7a89f2ep
 ## 1. anan lies — 2008-09-29 15:49:13
 
 career  http://career-oil.blogspot.com/ <Auto%20Mail%20Sender.lnk>
+
+_Dr. Mārcis Gasūns_

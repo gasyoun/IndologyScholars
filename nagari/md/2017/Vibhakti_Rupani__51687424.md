@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 6425989256051687424
 subject: "Vibhakti Rupani"
@@ -17,16 +19,26 @@ source_url: https://groups.google.com/d/msgid/nagari/CANe-L0msr3qsgMwGkdi46poJ-Z
 
 ## 1. Usha Sanka — 2017-05-30 21:00:07 · 📎 1
 
-Namaste to one and all
-Please have a look at this work of mine, just finished drafting. (Attached)
-It contains all general shabda rupas arranged in vibhakti order.
-Suggestions/ comments are welcome.
-Please do not hesitate to point out errors, (I shall deal with them again
-as well)
-धन्यवादाः
---उषा
-
--- 
+Namaste to one and all
+
+Please have a look at this work of mine, just finished drafting. (Attached)
+
+It contains all general shabda rupas arranged in vibhakti order.
+
+Suggestions/ comments are welcome.
+
+Please do not hesitate to point out errors, (I shall deal with them again
+
+as well)
+
+धन्यवादाः
+
+--उषा
+
+
+
+-- 
+
 *"-यद्गत्वा न निवर्तन्ते तद्धाम परमं मम"*
 
 ## 2. Тихвинский Виталий Игоревич — 2017-05-30 22:16:16
@@ -36,9 +48,12 @@ In my opinion, very good work!
 30.05.2017, 21:00, "Usha Sanka" <usha.sanka@…>:Namaste to one and allPlease have a look at this work of mine, just finished drafting. (Attached)It contains all general shabda rupas arranged in vibhakti order.Suggestions/ comments are welcome.Please do not hesitate to point out errors, (I shall deal with them again as well)धन्यवादाः--उषा
 --
 "-यद्गत्वा न निवर्तन्ते तद्धाम परमं मम"
-
-
-
+
+
+
+
+
+
 
 
 
@@ -46,9 +61,11 @@ In my opinion, very good work!
 --
 
 Чтобы отменить подписку на группу, посвященную санскриту,
-
+
+
 отправьте сообщение по адресу - мы поймем, простим даже:
-
+
+
 Nagari-unsubscribe@…
 
 ---
@@ -84,3 +101,5 @@ Nagari-unsubscribe@…
 >Вы получили это сообщение, поскольку подписаны на группу "Общество ревнителей санскрита (Sanscrit)".
 >Чтобы отменить подписку на эту группу и больше не получать от нее сообщения, отправьте письмо на электронный адрес  nagari+unsubscribe@… .
 >Чтобы настроить другие параметры, перейдите по ссылке  https://groups.google.com/d/optout .
+
+_Dr. Mārcis Gasūns_

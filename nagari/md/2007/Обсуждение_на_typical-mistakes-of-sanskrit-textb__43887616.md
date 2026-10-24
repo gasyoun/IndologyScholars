@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 123643887616
 subject: "Обсуждение на typical-mistakes-of-sanskrit-textbooks"
@@ -28,3 +30,5 @@ source_url: https://groups.google.com/d/msgid/nagari/1172253272.017524.91740@a75
 ## 3. Wrd — 2007-02-23 21:38:36
 
 О©╫О©╫О©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫О©╫О©╫. О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫О©╫!
+
+_Dr. Mārcis Gasūns_

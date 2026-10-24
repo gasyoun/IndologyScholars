@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7518778895854731264
 subject: "The Little Red Book (справочник парадигм санскрита)"
@@ -17,8 +19,14 @@ source_url: https://groups.google.com/d/msgid/nagari/5dfcecfa-d953-4abf-821e-8fe
 
 ## 1. Mārcis — 2025-06-22 17:22:09 · 📎 1
 
-https://archive.org/details/the-little-red-book PDF файл
-
-https://sanskritdictionary.com/sites/little-red-book HTML страница
-
+https://archive.org/details/the-little-red-book PDF файл
+
+
+
+https://sanskritdictionary.com/sites/little-red-book HTML страница
+
+
+
 [image: апввпавпава.png]
+
+_Dr. Mārcis Gasūns_

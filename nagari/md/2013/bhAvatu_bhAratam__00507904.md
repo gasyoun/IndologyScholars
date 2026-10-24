@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 23353600507904
 subject: "bhAvatu bhAratam"
@@ -74,3 +76,5 @@ http://www.youtube.com/watch?v=DcYC5wjjQjA
 > слух разобрать там пару слов. Может быть есть где-нибудь текст? Подскажите 
 > пожалуйста.
 >  Заранее спасибо!
+
+_Dr. Mārcis Gasūns_

@@ -35,7 +35,7 @@ jobs:
 
       - name: Compile Python Generators
         run: |
-          python -m py_compile build_and_populate_db.py generate_analytics.py generate_site_data.py generate_renou_layer.py generate_scholars_pages.py generate_publication_pages.py validate_publication.py prepare_pages_artifact.py publication_helpers.py article/work_title_keywords.py article/check_ppv_numbers.py article/check_anonymity.py article/check_data_paper_numbers.py tools/export_presentation_id_manifest.py tools/compare_id_manifests.py tools/build_classification_reliability_sample.py tools/build_scientometrics_guardrails.py tools/build_human_review_index.py tools/build_sociology_visuals.py tests/test_stable_ids.py
+          python -m py_compile build_and_populate_db.py generate_analytics.py generate_site_data.py generate_renou_layer.py generate_scholars_pages.py generate_publication_pages.py validate_publication.py prepare_pages_artifact.py publication_helpers.py scripts/publish_safety_gate.py article/work_title_keywords.py article/check_ppv_numbers.py article/check_anonymity.py article/check_data_paper_numbers.py tools/export_presentation_id_manifest.py tools/compare_id_manifests.py tools/build_classification_reliability_sample.py tools/build_scientometrics_guardrails.py tools/build_human_review_index.py tools/build_sociology_visuals.py tests/test_stable_ids.py
 
       - name: Run Regression Tests
         run: |
@@ -60,8 +60,20 @@ jobs:
           python tools/build_human_review_index.py
           python generate_publication_pages.py
 
+      - name: Sync README snapshots to the fresh payload
+        # The generators above stamp site_data.json `generated: today`, so
+        # validating READMEs against them without this sync would fail every
+        # PR made after the last README touch (seen 2026-10-02). The rebuild
+        # lane runs the same sync before committing, so this PR-lane check
+        # guards the sync tool's assumptions (every pattern must match
+        # exactly one line) while freshness is enforced where publishing
+        # actually happens.
+        run: |
+          python tools/sync_readme_snapshot.py
+
       - name: Validate Publication Artifacts
         run: |
+          python scripts/publish_safety_gate.py
           python validate_publication.py
           python article/check_ppv_numbers.py
           python article/check_anonymity.py

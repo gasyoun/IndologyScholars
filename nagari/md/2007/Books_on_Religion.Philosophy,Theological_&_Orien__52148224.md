@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 2388052148224
 subject: "Books on Religion.Philosophy,Theological & Oriental Studies"
@@ -1379,7 +1381,7 @@ set./ Trans.by H.H.Wilson,2002, US$ 200 (6 vols. set)
 [743-0], ,2002,US$ 20
 
 269-270 Vedic Hymns: Hymns to the Maruts, Rudra, Vayu and Vata/ F.Max
-Muller, [755-4](set), 2003, US$ 40 (2 Vols)
+Muller, 755-4, 2003, US$ 40 (2 Vols)
 
 271. Mimamsa Philosophy of Language/ Ujjwala Jha, [761- 9], 2002, US$
 10
@@ -2340,3 +2342,5 @@ E-mail indianbookscentre@…
 
 
 Website: http://www.indianbookscentre.com
+
+_Dr. Mārcis Gasūns_

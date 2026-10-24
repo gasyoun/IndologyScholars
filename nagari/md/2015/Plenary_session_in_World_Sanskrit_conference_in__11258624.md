@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 6199171912511258624
 subject: "Plenary session in World Sanskrit conference in Bangkok, June 28,2015"
@@ -21,3 +23,5 @@ source_url: https://groups.google.com/d/msgid/nagari/3eb3842b-a639-43de-a763-c53
 поднимаются!
 https://www.youtube.com/watch?v=JfXtf2YWOs8
 https://www.youtube.com/watch?t=593&v=FBBVfkTGmK8
+
+_Dr. Mārcis Gasūns_

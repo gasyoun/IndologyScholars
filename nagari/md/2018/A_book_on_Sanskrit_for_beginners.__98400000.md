@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 6554052650598400000
 subject: "A book on Sanskrit for beginners."
@@ -17,11 +19,20 @@ source_url: https://groups.google.com/d/msgid/nagari/f08d9e12-aa6b-4fc4-8c01-720
 
 ## 1. josé antonio estrella mora — 2018-05-10 23:29:00
 
-Hi Marcis, I am interested in the study of Sanskrit. I've read your remarks 
-on your books and I'd like to buy one of them for me to start learning as 
-an ABSOLUTE BEGINNER in that language. But, if your books are WRITTEN IN 
-RUSSIAN, then I WON'T UNDERSTAND THEM. My knowledge of Russian is limited 
-to just some words and phrases. If your books are mainly in Russian, then , 
-please, could you be so kind as to advice me any GOOD BOOK for a BEGINNER 
-to start learning Sanskrit? Or any other ONLINE RESOURCE for that purpose? 
+Hi Marcis, I am interested in the study of Sanskrit. I've read your remarks 
+
+on your books and I'd like to buy one of them for me to start learning as 
+
+an ABSOLUTE BEGINNER in that language. But, if your books are WRITTEN IN 
+
+RUSSIAN, then I WON'T UNDERSTAND THEM. My knowledge of Russian is limited 
+
+to just some words and phrases. If your books are mainly in Russian, then , 
+
+please, could you be so kind as to advice me any GOOD BOOK for a BEGINNER 
+
+to start learning Sanskrit? Or any other ONLINE RESOURCE for that purpose? 
+
 Thanks in advance for your time. Jose
+
+_Dr. Mārcis Gasūns_

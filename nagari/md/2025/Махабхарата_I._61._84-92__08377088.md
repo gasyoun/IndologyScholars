@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7588798356508377088
 subject: "Махабхарата I. 61. 84-92"
@@ -56,3 +58,5 @@ evamanye manuṣyendra bahavoṃ'śā divaukasām ।
 jajñire vasudevasya kule kulavivardhanāḥ ॥92॥
 
 [image: ChatGPT Image Dec 28, 2025, 09_41_55 AM.png]
+
+_Dr. Mārcis Gasūns_

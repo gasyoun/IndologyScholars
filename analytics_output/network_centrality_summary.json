@@ -1,0 +1,144 @@
+{
+  "generated": "2026-08-07",
+  "source": "db",
+  "handoff": "H2411",
+  "layers": {
+    "collaboration": {
+      "nodes": 294,
+      "nodes_with_degree": 33,
+      "undirected_edges": 18,
+      "max_degree": 2,
+      "max_betweenness": 4.675300388049932e-05,
+      "top3": [
+        {
+          "person_id": "PERS_bc97fb65",
+          "display_name": "Краснодембская Нина Георгиевна",
+          "degree": 2,
+          "betweenness": 4.7e-05,
+          "series_attended": "zograf_only"
+        },
+        {
+          "person_id": "PERS_6441d568",
+          "display_name": "Соболева Елена Станиславовна",
+          "degree": 2,
+          "betweenness": 4.7e-05,
+          "series_attended": "zograf_only"
+        },
+        {
+          "person_id": "PERS_b62a9567",
+          "display_name": "Курочкин Александр Юрьевич",
+          "degree": 2,
+          "betweenness": 2.3e-05,
+          "series_attended": "zograf_only"
+        }
+      ],
+      "csv": "analytics_output/network_centrality_collaboration.csv"
+    },
+    "session": {
+      "nodes": 294,
+      "nodes_with_degree": 268,
+      "undirected_edges": 3091,
+      "max_degree": 101,
+      "max_betweenness": 0.06171747264094198,
+      "top3": [
+        {
+          "person_id": "PERS_d98da899",
+          "display_name": "Рыжакова Светлана Игоревна",
+          "degree": 101,
+          "betweenness": 0.061717,
+          "series_attended": "both"
+        },
+        {
+          "person_id": "PERS_c52dfaa0",
+          "display_name": "Цветкова Светлана Олеговна",
+          "degree": 99,
+          "betweenness": 0.051042,
+          "series_attended": "both"
+        },
+        {
+          "person_id": "PERS_829c1de5",
+          "display_name": "Васильков Ярослав Владимирович",
+          "degree": 97,
+          "betweenness": 0.04761,
+          "series_attended": "both"
+        }
+      ],
+      "csv": "analytics_output/network_centrality_session.csv"
+    },
+    "event": {
+      "nodes": 294,
+      "nodes_with_degree": 268,
+      "undirected_edges": 10911,
+      "max_degree": 242,
+      "max_betweenness": 0.036219078854351855,
+      "top3": [
+        {
+          "person_id": "PERS_11da326d",
+          "display_name": "Тавастшерна Сергей Сергеевич",
+          "degree": 242,
+          "betweenness": 0.036219,
+          "series_attended": "both"
+        },
+        {
+          "person_id": "PERS_40862f5e",
+          "display_name": "Корнеева Наталья Афанасьевна",
+          "degree": 239,
+          "betweenness": 0.03173,
+          "series_attended": "both"
+        },
+        {
+          "person_id": "PERS_c52dfaa0",
+          "display_name": "Цветкова Светлана Олеговна",
+          "degree": 234,
+          "betweenness": 0.029951,
+          "series_attended": "both"
+        }
+      ],
+      "csv": "analytics_output/network_centrality_event.csv"
+    }
+  },
+  "series_bridge_people": 41,
+  "series_bridge_csv": "analytics_output/network_series_bridges.csv",
+  "series_bridge_top5": [
+    {
+      "display_name": "Тавастшерна Сергей Сергеевич",
+      "zograf_talks": 16,
+      "roerich_talks": 12,
+      "event_betweenness": 0.036219,
+      "collaboration_degree": 0
+    },
+    {
+      "display_name": "Корнеева Наталья Афанасьевна",
+      "zograf_talks": 15,
+      "roerich_talks": 14,
+      "event_betweenness": 0.03173,
+      "collaboration_degree": 0
+    },
+    {
+      "display_name": "Цветкова Светлана Олеговна",
+      "zograf_talks": 15,
+      "roerich_talks": 12,
+      "event_betweenness": 0.029951,
+      "collaboration_degree": 0
+    },
+    {
+      "display_name": "Александрова Наталия Владимировна",
+      "zograf_talks": 12,
+      "roerich_talks": 15,
+      "event_betweenness": 0.02737,
+      "collaboration_degree": 0
+    },
+    {
+      "display_name": "Лысенко Виктория Георгиевна",
+      "zograf_talks": 19,
+      "roerich_talks": 6,
+      "event_betweenness": 0.026823,
+      "collaboration_degree": 0
+    }
+  ],
+  "notes": [
+    "Betweenness is structural connectivity, not scholarly quality.",
+    "Collaboration layer uses programme co-presentation only (n edges small).",
+    "Do not mix edge types into one undifferentiated network (see network_robustness_checks.csv)."
+  ]
+}

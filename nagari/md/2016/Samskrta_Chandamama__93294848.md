@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 6244733755193294848
 subject: "Samskrta Chandamama"
@@ -44,26 +46,50 @@ On Thursday, January 28, 2016 at 12:16:19 AM UTC-7, Usha Sanka wrote:
 
 ## 3. Usha Sanka — 2016-02-06 13:41:16
 
-Namaste
-On Friday, January 29, 2016 at 10:45:14 PM UTC+5:30, Dmitri wrote:
->
-> Thank you, Usha Sanka for continuing to expose us to texts some of us 
-> would not be exposed to otherwise.
->
-Thank you so much. It gives me immense pleasure to share good things. 
- 
-
-> Do not take lack of reactions for lack of interest!
->
-:) Not always, but sometimes sure-  I look for response / reaction.. and in 
-absence of a single word- I feel lonely..!! But fine..! Will anyways 
-continue. If what I share is of some use, (even if unexpressed) I feel 
-happy. :) 
-Was stuck up with something very important. Will be back soon with the 
-regular works. Thanks again.
-
->
-> Best,
->      Dmitri.
->
+Namaste
+
+On Friday, January 29, 2016 at 10:45:14 PM UTC+5:30, Dmitri wrote:
+
+>
+
+> Thank you, Usha Sanka for continuing to expose us to texts some of us 
+
+> would not be exposed to otherwise.
+
+>
+
+Thank you so much. It gives me immense pleasure to share good things. 
+
+ 
+
+
+
+> Do not take lack of reactions for lack of interest!
+
+>
+
+:) Not always, but sometimes sure-  I look for response / reaction.. and in 
+
+absence of a single word- I feel lonely..!! But fine..! Will anyways 
+
+continue. If what I share is of some use, (even if unexpressed) I feel 
+
+happy. :) 
+
+Was stuck up with something very important. Will be back soon with the 
+
+regular works. Thanks again.
+
+
+
+>
+
+> Best,
+
+>      Dmitri.
+
+>
+
 उषा
+
+_Dr. Mārcis Gasūns_

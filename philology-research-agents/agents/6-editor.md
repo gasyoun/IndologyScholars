@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 # Agent 6 — Scholarly Editor · Агент 6 — Редактор-оформитель
 
 > Pipeline step 6 (final pass). The agent that did not exist in the parent prompt.
@@ -106,3 +108,5 @@ Primary sources (editions):
 Literature / References (Latin script):
 1. [Author]. [year]. [Transliterated title] [Translated title]. [Venue], [pages]. [ID]
 ```
+
+_Dr. Mārcis Gasūns_

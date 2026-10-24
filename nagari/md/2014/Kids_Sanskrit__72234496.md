@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 26804272234496
 subject: "Kids Sanskrit"
@@ -29,3 +31,5 @@ http://www.youtube.com/watch?v=Zp-T7W3J2c0
 http://www.youtube.com/watch?v=RTV0i5ODNAQ
 Many more here-
 http://www.youtube.com/channel/UCeakgNb9PlRxSJ2oty64wcA/videos
+
+_Dr. Mārcis Gasūns_

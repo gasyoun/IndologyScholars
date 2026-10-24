@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 8608912769024
 subject: "Co-creation: Sanskrit roots in Slavic languages dictionary via Google Wave"
@@ -39,3 +41,5 @@ https://wave.google.com/wave/?pli=1#restored:wave:googlewave.com!w%252Bnm6edy4tA
 После того как вы вышлите ваши логины@gwave.com/запрос на приглашение
 в сервис/ мне на yurypanikov#гмэил^com (или оставите здесь в
 комментариях) я добавлю вас в редакторы этой волны.
+
+_Dr. Mārcis Gasūns_

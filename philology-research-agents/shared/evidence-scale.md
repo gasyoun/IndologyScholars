@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 # Evidence scale & quality criteria · Шкала и критерии доказательности
 
 > Shared building block. The **A–E scale** below is rebuilt for textual and linguistic
@@ -155,3 +157,5 @@ Use a **supersession** test instead of age:
 
 Recency matters where philology meets empirical work: new manuscript finds, new
 inscriptions, datings, corpus statistics, field linguistics.
+
+_Dr. Mārcis Gasūns_

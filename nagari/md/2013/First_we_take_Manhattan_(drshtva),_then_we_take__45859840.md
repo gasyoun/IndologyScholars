@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 20985245859840
 subject: "First we take Manhattan (drshtva), then we take Berlin (sarve)"
@@ -26,3 +28,5 @@ OpenType собрал "sarve" - чересчур большой пробел п�
 http://paratype.ru/help/designers/designer.asp?code=PT_EV. На этот раз сами 
 предоставлены себе. Разве что Михас поможет чуток подсказкой. Этим он 
 сократил бы годы мучений.
+
+_Dr. Mārcis Gasūns_

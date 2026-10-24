@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 5048145805312
 subject: "Просмотреть эту страницу 'Transliteration Map & Pronunciation Key for"
@@ -17,6 +19,10 @@ source_url: https://groups.google.com/d/msgid/nagari/95e8b86b-0ee7-41ac-aab7-5ed
 
 ## 1. Rustem — 2008-06-14 22:39:05
 
-Нажмите на ссылку http://groups.google.com/group/Nagari/web/transliteration-map-pronunciation-key-for-sanskrit
-или, если ссылку открыть не удается, скопируйте ее и вставьте в
+Нажмите на ссылку http://groups.google.com/group/Nagari/web/transliteration-map-pronunciation-key-for-sanskrit
+
+или, если ссылку открыть не удается, скопируйте ее и вставьте в
+
 адресную строку браузера.
+
+_Dr. Mārcis Gasūns_

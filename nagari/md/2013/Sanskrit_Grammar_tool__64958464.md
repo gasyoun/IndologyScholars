@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 23624064958464
 subject: "Sanskrit Grammar tool"
@@ -46,21 +48,36 @@ https://www.dropbox.com/sh/s4etqb0qo26eznq/e3PuKjEgpK
 
 ## 3. Marcis — 2013-09-05 19:40:51
 
-ak, [ak]{i} <san>lakSaNe</san>
-1A, seT, sak
-to mark
-
-
-Откуда английские значения беруться, не подскажете?
-
-
-On Thursday, 5 September 2013 14:53:02 UTC+4, Mandala Pati wrote:
->
-> И понемногу из этих книг леплю текстовый файл со всеми этими формами.
->
-> https://www.dropbox.com/sh/s4etqb0qo26eznq/e3PuKjEgpK
->
->
+ak, [ak]{i} <san>lakSaNe</san>
+
+1A, seT, sak
+
+to mark
+
+
+
+
+
+Откуда английские значения беруться, не подскажете?
+
+
+
+
+
+On Thursday, 5 September 2013 14:53:02 UTC+4, Mandala Pati wrote:
+
+>
+
+> И понемногу из этих книг леплю текстовый файл со всеми этими формами.
+
+>
+
+> https://www.dropbox.com/sh/s4etqb0qo26eznq/e3PuKjEgpK
+
+>
+
+>
+
 >
 
 ## 4. Mandala Pati — 2013-09-06 03:53:33
@@ -78,3 +95,5 @@ On Thursday, 5 September 2013 14:53:02 UTC+4, Mandala Pati wrote:
 > Перевод был сделан моим учителем санскрита, Матсья-аватарой (Вриндаван, 
 Индия). У него своя маленькая школа, где он преподаёт грамматику Дживы 
 Госвами (Хари-намамрта-вйакарану).
+
+_Dr. Mārcis Gasūns_

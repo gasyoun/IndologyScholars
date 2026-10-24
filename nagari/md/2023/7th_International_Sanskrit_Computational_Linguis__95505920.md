@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7214569086695505920
 subject: "7th International Sanskrit Computational Linguistics Symposium (2024)"
@@ -30,3 +32,5 @@ https://iscls.github.io очередном всемирном съезде са�
 С уверениями искреннего уважения,
 к.ф.н. Марцис Юрьевич Гасунс
 директор Общества ревнителей санскрита
+
+_Dr. Mārcis Gasūns_

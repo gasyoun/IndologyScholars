@@ -1,6 +1,8 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 # Технический аудит классификации докладов
 
-[English version](classification-audit-en.md) | [Разработка и воспроизводимость](development.md)
+[English version](https://github.com/gasyoun/IndologyScholars/blob/main/docs/classification-audit-en.md) | [Разработка и воспроизводимость](https://github.com/gasyoun/IndologyScholars/blob/main/docs/development.md)
 
 Дата прохода: 2026-05-25  
 Версия промпта разметки: `expanded-corpus-v1-2026-05-25`  
@@ -46,3 +48,5 @@
 доклада, географический охват материала или статус автора. Регион, язык,
 эпоха, два сопоставляемых объекта и слово «традиция» сами по себе не переводят
 частный случай в `L2` или `L3`.
+
+_Dr. Mārcis Gasūns_

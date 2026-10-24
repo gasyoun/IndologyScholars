@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 6400418876798009344
 subject: "Sama Veda (Chamakam & Rudra Suktam)"
@@ -56,14 +58,22 @@ SamaVeda http://gretil.sub.uni-goettingen.de/gretil/1_sanskr/1_veda/1_sam/samave
 
 ## 3. Marcis — 2017-05-22 21:07:51
 
-On Monday, 22 May 2017 15:55:40 UTC+3, Andrey Terentyev wrote:
->
->
->
-> Есть книга Матвеевой с переводом на русский. 
-> http://depositfiles.com/files/33um2fxkp
->
->
+On Monday, 22 May 2017 15:55:40 UTC+3, Andrey Terentyev wrote:
+
+>
+
+>
+
+>
+
+> Есть книга Матвеевой с переводом на русский. 
+
+> http://depositfiles.com/files/33um2fxkp
+
+>
+
+>
+
 Матвеев - он. И не стоит его брать, не стоит.
 
 ## 4. Serge A — 2017-05-23 16:20:16
@@ -101,3 +111,5 @@ Suktham*, т.е. это как бы должен быть гимн, восхва
 Брать стоит. Просто надо понимать, что это не труд великого санскритолога, 
 а перевод с английского, не всегда удачный. И относиться к нему надо 
 соответственно. Но ничего другого у нас пока не издано.
+
+_Dr. Mārcis Gasūns_

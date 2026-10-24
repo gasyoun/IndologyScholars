@@ -13,7 +13,7 @@ This notebook demonstrates:
 
 To cite this dataset:
     Gasūns, M. (2026). IndologyScholars: Archive of Talks in Russian Indology
-    [Data set]. Zenodo. https://doi.org/10.5281/zenodo.XXXXXXX
+    [Data set]. Zenodo. https://doi.org/10.5281/zenodo.21360652
 """
 
 import json
@@ -169,5 +169,5 @@ null_model_overlap(10000)
 print("\n--- Analysis complete ---")
 print("To publish findings, cite:")
 print("  Gasūns, M. (2026). IndologyScholars: Archive of Talks in Russian Indology.")
-print("  Zenodo. https://doi.org/10.5281/zenodo.XXXXXXX")
+print("  Zenodo. https://doi.org/10.5281/zenodo.21360652")
 print("  Data dictionary: https://gasyoun.github.io/IndologyScholars/data_dictionary_en.html")

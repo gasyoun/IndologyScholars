@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 25281175748608
 subject: "MW List of Works and Authors (список аббревиатур MW)"
@@ -278,3 +280,5 @@ H. WilsonYA1jn5.Authorयाज्ञवल्क्यYa1jn5.Authorयाज्
 categoryयजुर्-वेदYogas.Titleयोग-सूत्रYogas3Up.Titleयोगशिखा-उपनिषद्S3ikhUp.
 Titleयोगशिखा-उपनिषद्YogatUp.Titleयोगतत्त्व-उपनिषद्Yogava1s.Title
 योगवासिष्ठ-सार
+
+_Dr. Mārcis Gasūns_

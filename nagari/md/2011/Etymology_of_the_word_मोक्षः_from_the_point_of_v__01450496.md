@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 11715001450496
 subject: "Etymology of the word मोक्षः from the point of view of Panini Grammar"
@@ -330,3 +332,5 @@ Sharada Publishing House.
 
 
 Is everything fine here?
+
+_Dr. Mārcis Gasūns_

@@ -1,6 +1,8 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 # Политика персональных данных
 
-[English version](persons-data-policy.md) | [Права повторного использования](reuse-rights.md) | [Заметки для разработчиков](development.md)
+[English version](https://github.com/gasyoun/IndologyScholars/blob/main/docs/persons-data-policy.md) | [Права повторного использования](https://github.com/gasyoun/IndologyScholars/blob/main/docs/reuse-rights.md) | [Заметки для разработчиков](https://github.com/gasyoun/IndologyScholars/blob/main/docs/development.md)
 
 Архив описывает живущих и недавно ушедших учёных. На этой странице
 сказано, какие персональные сведения публикует архив, на каком основании и
@@ -62,3 +64,5 @@
 Замороженные снимки, уже депонированные для цитирования (DOI), неизменяемы
 по построению; исправления попадают в последующие версии с пометкой в
 истории версий.
+
+_Dr. Mārcis Gasūns_

@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 # Tool — VAK philology-journal parser (for Haiku)
 # Инструмент — парсер филологических журналов из Перечня ВАК (для Haiku)
 
@@ -119,3 +121,5 @@ title,issn,vak_category,philology_specialties,date_included,other_branches,flag
 - **Source · Источник.** Официальный Перечень — на сайте ВАК
   (vak.minobrnauki.gov.ru), выгрузка в Excel/PDF → текст. Haiku не ходит в сеть:
   он парсит только переданный ему текст.
+
+_Dr. Mārcis Gasūns_

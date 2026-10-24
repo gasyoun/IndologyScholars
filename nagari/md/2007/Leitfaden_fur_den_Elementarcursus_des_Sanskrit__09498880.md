@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 3761509498880
 subject: "Leitfaden fur den Elementarcursus des Sanskrit"
@@ -35,3 +37,5 @@ me? It than will be included in the Preface of the book, that will
 come out in year 2008.
 
  Regards, Marcis
+
+_Dr. Mārcis Gasūns_

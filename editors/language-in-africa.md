@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 # Language in Africa
 
 - **ISSN:** 2686-8946
@@ -20,3 +22,5 @@
 ## Контакты
 
 <!-- E-mail редакции, адрес для отправки -->
+
+_Dr. Mārcis Gasūns_

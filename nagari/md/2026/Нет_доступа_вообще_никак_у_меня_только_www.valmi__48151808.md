@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7649130589148151808
 subject: "Нет доступа вообще никак у меня только ? www.valmiki.iitk.ac.in"
@@ -17,18 +19,26 @@ source_url: https://groups.google.com/d/msgid/nagari/d7103c28-64d0-47c3-a325-cff
 
 ## 1. ли ла — 2026-06-08 23:53:18
 
-И сюда тоже : *gitasupersite.iitk.ac.in* 
+И сюда тоже : *gitasupersite.iitk.ac.in* 
+
 <https://www.gitasupersite.iitk.ac.in/>
 
 ## 2. Mārcis Gasūns — 2026-06-09 22:49:29 · 📎 1
 
-ERR_NAME_NOT_RESOLVED   Вальмики уже не тот, что прежде
-
-[image: 706830115_26899136663086224_8076873162503664808_n (1).jpg]
-
-On Monday, 8 June 2026 at 23:53:18 UTC+3 ли ла wrote:
-
-> И сюда тоже : *gitasupersite.iitk.ac.in* 
+ERR_NAME_NOT_RESOLVED   Вальмики уже не тот, что прежде
+
+
+
+[image: 706830115_26899136663086224_8076873162503664808_n (1).jpg]
+
+
+
+On Monday, 8 June 2026 at 23:53:18 UTC+3 ли ла wrote:
+
+
+
+> И сюда тоже : *gitasupersite.iitk.ac.in* 
+
 > <https://www.gitasupersite.iitk.ac.in/>
 
 ## 3. Serge A — 2026-06-10 13:42:14
@@ -39,3 +49,5 @@ On Monday, 8 June 2026 at 23:53:18 UTC+3 ли ла wrote:
 
 > И сюда тоже : *gitasupersite.iitk.ac.in* 
 > <https://www.gitasupersite.iitk.ac.in/>
+
+_Dr. Mārcis Gasūns_

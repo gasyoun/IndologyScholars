@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 5755305459712
 subject: "Managing Security with Snort and IDS Tools"
@@ -33,3 +35,5 @@ Defense<http://bookscabinet.blogspot.com/2008/09/art-of-computer-virus-research-
 Erickson<http://bookscabinet.blogspot.com/2008/09/art-of-exploitation-by-jon-erickson.html>
    - Expert Visual C++/CLI: .NET for Visual C++
 Programmers<http://bookscabinet.blogspot.com/2008/09/expert-visual-ccli-net-for-visual-c.html>
+
+_Dr. Mārcis Gasūns_

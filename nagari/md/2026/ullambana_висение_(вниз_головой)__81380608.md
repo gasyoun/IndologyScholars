@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7624927836381380608
 subject: "ullambana 'висение (вниз головой)'"
@@ -25,3 +27,5 @@ source_url: https://groups.google.com/d/msgid/nagari/82f95da8-4cac-4968-beff-92d
 только в одном словаре, у SCH:
 ullambana [Printed book page 121-2]
 °ullambana n. Aufhängen, S II,220,1.  [ID=8856 ]
+
+_Dr. Mārcis Gasūns_

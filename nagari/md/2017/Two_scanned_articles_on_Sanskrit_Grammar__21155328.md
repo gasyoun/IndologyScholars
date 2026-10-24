@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 6485277477021155328
 subject: "Two scanned articles on Sanskrit Grammar"
@@ -18,3 +20,5 @@ source_url: https://groups.google.com/d/msgid/nagari/CAKmACT%3DRZg%2B-2cROvtRpes
 ## 1. Narayan Prasad — 2017-11-06 15:28:35 · 📎 2
 
 Attached.
+
+_Dr. Mārcis Gasūns_

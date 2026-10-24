@@ -14,6 +14,53 @@ from pathlib import Path
 DEFAULT_MAP = Path(__file__).resolve().parents[1] / "data" / "lemma_map.json"
 TOKEN_RE = re.compile(r"[а-яёА-ЯЁa-zA-ZāīūṛṝḷḹṃṁḥñṅṇṭḍśṣĀĪŪṚṜḶḸṂṀḤÑṄṆṬḌŚṢ]+", re.U)
 
+# The Google Groups unsubscribe/footer block is auto-appended verbatim to
+# nearly every message and re-appears in every quoted reply below it -- left
+# unstripped it dominates term/phrase frequency counts (H1518 finding,
+# 18-08-2026). Cut the body at the first footer marker; this also drops the
+# quoted-reply chain below it, which is standard signature-block position.
+_FOOTER_MARKERS = (
+    "Чтобы отменить подписку",
+    "чтобы отменить подписку",
+    "unsubscribe@googlegroups.com",
+    "Вы получили это сообщение, поскольку подписаны",
+    "groups.google.com/d/msgid/nagari",
+)
+_QUOTE_LINE = re.compile(r"^\s*>+", re.M)
+# A raw email address inline is, in this corpus, always part of a quote-intro
+# line ("On ... <name> <email> wrote:", "..., пользователь <name> <email>
+# написал:", etc.) or the unsubscribe footer -- never legitimate discussion
+# content. Google Groups' many client/locale intro formats accumulated over
+# 20 years often wrap the name+email and the wrote:/написал: keyword onto
+# separate lines, so anchoring on the keyword alone misses them; anchoring on
+# the email address itself is the reliable cut point (H1518 finding,
+# 18-08-2026). A residual keyword-only fallback (no email on the line, e.g. a
+# bare "Имя Фамилия:" before a nested quote) covers what that misses.
+_EMAIL = re.compile(r"[\w.+-]+@[\w.-]+\.\w+")
+_QUOTE_INTRO_NO_EMAIL = re.compile(
+    r"^.{0,80}(wrote|пишет|написал[аи]?)\s*:\s*$", re.M,
+)
+
+
+def strip_footer_and_quotes(body: str) -> str:
+    """Cut the Google Groups footer + any quoted-reply chain from a message body."""
+    text = body or ""
+    cut = len(text)
+    for marker in _FOOTER_MARKERS:
+        idx = text.find(marker)
+        if idx != -1:
+            cut = min(cut, idx)
+    m = _EMAIL.search(text)
+    if m:
+        cut = min(cut, m.start())
+    m = _QUOTE_INTRO_NO_EMAIL.search(text)
+    if m:
+        cut = min(cut, m.start())
+    text = text[:cut]
+    # Drop remaining ">"-quoted lines (older replies quoted inline, not just below).
+    text = _QUOTE_LINE.sub("", text)
+    return text
+
 
 @lru_cache(maxsize=1)
 def load_lemma_map(path: str | None = None) -> dict[str, str]:

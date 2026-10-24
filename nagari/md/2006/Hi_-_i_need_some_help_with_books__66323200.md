@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 41366323200
 subject: "Hi - i need some help with books"
@@ -94,3 +96,5 @@ am 18 years old. A friend of my father registered buma.ro to me. I
 don't have the money to register another one...
 
 Thank you
+
+_Dr. Mārcis Gasūns_

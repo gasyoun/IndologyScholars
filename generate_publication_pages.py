@@ -1,6 +1,7 @@
 import datetime as dt
 import csv
 import hashlib
+import html
 import json
 import re
 import sqlite3
@@ -69,19 +70,66 @@ VOTE_TEACHER_FORM_URL = "https://forms.yandex.ru/u/6a28f0e995add5b922d0f14c"
 BUILD_DATE = dt.date.today().isoformat()
 
 
+def _recorded_citation_version():
+    """The version already published in CITATION.cff, or None if unreadable.
+
+    Read as a FLOOR, never as the answer: see `_latest_release_version`.
+    """
+    try:
+        with open("CITATION.cff", encoding="utf-8") as fh:
+            for line in fh:
+                m = re.match(r'\s*version:\s*"?(\d+\.\d+\.\d+)"?\s*$', line)
+                if m:
+                    return m.group(1)
+    except Exception:
+        pass
+    return None
+
+
 def _latest_release_version():
-    """Latest git tag (CITATION.cff version), so a manual version bump
+    """Latest RELEASE tag (CITATION.cff version), so a manual version bump
     survives the next auto-rebuild instead of being clobbered by a hardcoded
     string (H790 finding: v1.1.0 was bumped in CITATION.cff then silently
-    reverted to 1.0.0 by the next rebuild commit)."""
+    reverted to 1.0.0 by the next rebuild commit).
+
+    Only `v<semver>` tags count. A bare `git describe --tags` takes ANY tag,
+    including the `reserve-vX.Y.Z` refs that `Uprava/tools/cut_release.py`
+    pushes to claim a version number before a release exists — on 06-08-2026
+    exactly that leaked into a published `CITATION.cff` as
+    `version: "reserve-v1.6.0"`, and came back as a rebase conflict during the
+    very release the reservation was protecting (H1899).
+
+    The tag list alone is still not enough, because it is read in a RACE with
+    the release itself: the rebuild is triggered by the release commit, and the
+    tag is pushed after that commit lands. On 14-08-2026 the run for
+    `chore(release): 1.12.1 (#233)` started 3 s after the merge, saw only up to
+    `v1.7.0`, and rewrote the freshly published `version: "1.12.1"` back to
+    `"1.7.0"` — the exact H790 regression, re-entering through a door H790's
+    tag lookup had left open. `fetch-depth: 0` does not help; the tag did not
+    exist yet. So the version already recorded in CITATION.cff is taken as a
+    FLOOR: this function may raise the published version, never lower it.
+    """
+    recorded = _recorded_citation_version()
+    tagged = None
     try:
-        tag = subprocess.run(
-            ["git", "describe", "--tags", "--abbrev=0"],
+        tags = subprocess.run(
+            ["git", "tag", "--list", "v[0-9]*", "--sort=-v:refname"],
             capture_output=True, text=True, check=True,
-        ).stdout.strip()
-        return tag[1:] if tag.startswith("v") else tag
+        ).stdout.split()
+        for tag in tags:
+            if re.fullmatch(r"v\d+\.\d+\.\d+", tag):
+                tagged = tag[1:]
+                break
     except Exception:
+        tagged = None
+
+    def _key(v):
+        return tuple(int(p) for p in v.split("."))
+
+    candidates = [v for v in (tagged, recorded) if v]
+    if not candidates:
         return "1.0.0"
+    return max(candidates, key=_key)
 
 
 RELEASE_VERSION = _latest_release_version()
@@ -881,6 +929,14 @@ repository-code: "https://github.com/gasyoun/IndologyScholars"
 date-released: "{BUILD_DATE}"
 version: "{RELEASE_VERSION}"
 license: "CC-BY-4.0"
+doi: "10.5281/zenodo.21360652"
+identifiers:
+  - identifier: "10.5281/zenodo.21360652"
+    type: "doi"
+    description: "Concept DOI (all versions) — preferred citation"
+  - identifier: "10.5281/zenodo.21847873"
+    type: "doi"
+    description: "Version DOI for Zenodo-GitHub release v1.6.7 (2026-08-08; includes the 2026-07-17 analysis snapshot)"
 abstract: "A curated relational archive of Zograf Readings and Roerich Readings conference programs, scholars, presentations, affiliations, cities, and thematic classifications."
 keywords:
   - Indology
@@ -1954,7 +2010,7 @@ def generate_keyword_stats_page(records):
     kw_json = _json.dumps(kw_data, ensure_ascii=False)
 
     with open("analytics_output/keyword_stats.csv", "w", encoding="utf-8", newline="") as handle:
-        writer = csv.DictWriter(handle, fieldnames=["keyword", "presentations", "zograf", "roerich", "examples"])
+        writer = csv.DictWriter(handle, fieldnames=["keyword", "presentations", "zograf", "roerich", "examples"], lineterminator="\n")
         writer.writeheader()
         writer.writerows({key: row[key] for key in writer.fieldnames} for row in rows)
 
@@ -1977,7 +2033,7 @@ def generate_keyword_stats_page(records):
         )
 
     with open("analytics_output/keyword_filter_audit.csv", "w", encoding="utf-8", newline="") as handle:
-        writer = csv.DictWriter(handle, fieldnames=["keyword", "label", "status", "reason", "presentations", "zograf", "roerich", "examples"])
+        writer = csv.DictWriter(handle, fieldnames=["keyword", "label", "status", "reason", "presentations", "zograf", "roerich", "examples"], lineterminator="\n")
         writer.writeheader()
         writer.writerows(audit_rows)
 
@@ -2522,6 +2578,7 @@ def generate_theme_evolution_page():
         writer = csv.DictWriter(
             handle,
             fieldnames=["year", "meso_code", "label", "count", "presentations", "share"],
+            lineterminator="\n",
         )
         writer.writeheader()
         writer.writerows(out_rows)
@@ -2621,52 +2678,150 @@ def generate_theme_evolution_page():
 
 
 def generate_mobility_page():
+    """Phase-2 geographic mobility page (H2416): recomputable metrics + gravity tables."""
+    summary = {}
+    summary_path = Path("analytics_output/geographic_mobility_summary.json")
+    if summary_path.exists():
+        try:
+            summary = json.loads(summary_path.read_text(encoding="utf-8"))
+        except (json.JSONDecodeError, OSError):
+            summary = {}
+
+    mover_rows = load_csv_rows("analytics_output/geographic_mobility_movers.csv")
+    dist_rows = load_csv_rows("analytics_output/geographic_mobility_distribution.csv")
+    if not dist_rows:
+        dist_rows = load_csv_rows("article/hypothesis_output/geographic_presentation_distribution.csv")
+    ret_rows = load_csv_rows("analytics_output/geographic_mobility_retention.csv")
+    if not ret_rows:
+        ret_rows = load_csv_rows("article/hypothesis_output/geographic_speaker_retention.csv")
+
+    # Fall back to live site_data if mobility CSVs not yet generated
     scholars = load_site_data().get("scholars", [])
-    city_list = []
-    for s in scholars:
-        cities = set()
-        for t in s.get("talks", []):
-            g = t.get("geography", {})
-            c = g.get("ru", "") if isinstance(g, dict) else ""
-            if c and c not in ("Не указана", ""):
-                cities.add(c)
-        if len(cities) > 1:
-            city_list.append((s.get("full_name_ru") or s.get("name", ""), sorted(cities), s.get("url_slug", "")))
-    city_list.sort(key=lambda x: -len(x[1]))
+    if not mover_rows:
+        city_list = []
+        for s in scholars:
+            cities = set()
+            for t in s.get("talks", []):
+                g = t.get("geography", {})
+                c = g.get("ru", "") if isinstance(g, dict) else ""
+                if c and c not in ("Не указана", ""):
+                    cities.add(c)
+            if len(cities) > 1:
+                city_list.append((s.get("full_name_ru") or s.get("name", ""), sorted(cities), s.get("url_slug", "")))
+        city_list.sort(key=lambda x: -len(x[1]))
+        aff_changes = sum(1 for s in scholars if s.get("has_changed_affiliations"))
+        total = len(scholars)
+        avg_cities = round(sum(len(c[1]) for c in city_list) / len(city_list), 1) if city_list else 0
+        mobility_pct = round(100 * len(city_list) / total, 1) if total else 0
+        aff_change_pct = round(100 * aff_changes / total, 1) if total else 0
+        n_movers = len(city_list)
+        rows = "".join(
+            f'<tr><td><a href="../s/{esc(slug)}.html">{esc(name)}</a></td><td>{esc(", ".join(cities))}</td></tr>'
+            for name, cities, slug in city_list[:40]
+        )
+    else:
+        total = int(summary.get("n_scholars") or len(scholars) or 0)
+        n_movers = int(summary.get("multi_city_movers") or len(mover_rows))
+        aff_changes = int(summary.get("affiliation_changers") or 0)
+        if not aff_changes:
+            aff_changes = sum(1 for s in scholars if s.get("has_changed_affiliations"))
+        avg_cities = summary.get("avg_cities_among_movers") or 0
+        mobility_pct = summary.get("multi_city_pct")
+        if mobility_pct is None:
+            mobility_pct = round(100 * n_movers / total, 1) if total else 0
+        aff_change_pct = summary.get("affiliation_changer_pct")
+        if aff_change_pct is None:
+            aff_change_pct = round(100 * aff_changes / total, 1) if total else 0
+        rows = "".join(
+            (
+                f'<tr><td><a href="../s/{esc(r.get("url_slug") or r.get("person_id"))}.html">'
+                f'{esc(r.get("display_name"))}</a></td>'
+                f'<td>{esc((r.get("cities") or "").replace("; ", ", "))}</td></tr>'
+            )
+            for r in mover_rows[:40]
+            if r.get("url_slug") or r.get("person_id")
+        )
 
-    aff_changes = sum(1 for s in scholars if s.get("has_changed_affiliations"))
-    total = len(scholars)
+    def data_table(headers, body_cells):
+        th = "".join(f"<th>{esc(h)}</th>" for h in headers)
+        trs = []
+        for cells in body_cells:
+            trs.append("<tr>" + "".join(f"<td>{esc(c)}</td>" for c in cells) + "</tr>")
+        return (
+            f'<div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;">'
+            f'<thead><tr>{th}</tr></thead><tbody>{"".join(trs)}</tbody></table></div>'
+        )
 
-    rows = "".join(
-        f'<tr><td><a href="../s/{esc(slug)}.html">{esc(name)}</a></td><td>{esc(", ".join(cities))}</td></tr>'
-        for name, cities, slug in city_list[:40]
-    )
+    dist_html = ""
+    if dist_rows:
+        dist_html = (
+            "<h2>Географическая гравитация площадок</h2>"
+            "<p>Доли докладов по городу аффилиации (SPb / Москва / регионы и зарубежье), "
+            "отдельно для Зографских и Рериховских чтений. Бакеты выводятся из текста аффилиации "
+            "в программе (те же правила, что в paper hypothesis H9).</p>"
+            + data_table(
+                ["Город", "Зограф докладов", "Зограф %", "Рерих докладов", "Рерих %"],
+                [
+                    [
+                        r.get("city"),
+                        r.get("zograf_talks"),
+                        r.get("zograf_pct"),
+                        r.get("roerich_talks"),
+                        r.get("roerich_pct"),
+                    ]
+                    for r in dist_rows
+                ],
+            )
+        )
 
-    avg_cities = round(sum(len(c[1]) for c in city_list) / len(city_list), 1) if city_list else 0
-    mobility_pct = round(100 * len(city_list) / total, 1) if total else 0
-    aff_change_pct = round(100 * aff_changes / total, 1) if total else 0
+    ret_html = ""
+    if ret_rows:
+        ret_html = (
+            "<h2>Удержание по домашнему городу</h2>"
+            "<p>Доля участников с докладами в ≥2 разных годах внутри своего city-bucket. "
+            "Регионы/зарубежье удерживаются слабее столиц — это corpus-level retention, "
+            "не доказательство «прекаризации».</p>"
+            + data_table(
+                ["Город", "Спикеров", "Возвращавшихся", "Retention %"],
+                [
+                    [
+                        r.get("city"),
+                        r.get("total_speakers"),
+                        r.get("returning_speakers"),
+                        r.get("retention_pct"),
+                    ]
+                    for r in ret_rows
+                ],
+            )
+        )
 
     body = f'''<header>
 <h1>Межинституциональная мобильность</h1>
 <p>Анализ переходов учёных между городами и институциями за период 2004–2026 по данным опубликованных программ.</p>
 </header>
 <section class="grid">
-<article class="card"><strong>Учёных с переездами</strong><div class="metric">{len(city_list)}</div><div class="meta">из {total} ({mobility_pct}%)</div></article>
+<article class="card"><strong>Учёных с переездами</strong><div class="metric">{n_movers}</div><div class="meta">из {total} ({mobility_pct}%)</div></article>
 <article class="card"><strong>Меняли аффилиацию</strong><div class="metric">{aff_changes}</div><div class="meta">из {total} ({aff_change_pct}%)</div></article>
-<article class="card"><strong>Среднее городов</strong><div class="metric">{avg_cities}</div></article>
+<article class="card"><strong>Среднее городов</strong><div class="metric">{avg_cities}</div><div class="meta">среди multi-city</div></article>
 </section>
+<div class="note" style="border-left:3px solid var(--accent);background:var(--panel);padding:1rem 1.25rem;margin:1.5rem 0;color:var(--muted);">
+Город в программе ≠ место работы. City-only аффилиация часто формат Зографа, а не биографический «отрыв от института» (см. paper H4).
+Регенерация: <code>python tools/compute_geographic_mobility.py</code> → затем пересборка страницы.
+</div>
+{dist_html}
+{ret_html}
 <h2>Учёные, выступавшие из нескольких городов</h2>
 <div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;">
 <thead><tr><th>Учёный</th><th>Города</th></tr></thead>
 <tbody>{rows}</tbody>
 </table></div>
-<p style="color:var(--muted);margin-top:1.5rem;">Данные основаны на указанных в программах городах. Город не всегда равен институции.</p>'''
+<p style="color:var(--muted);margin-top:1.5rem;">Источник: <code>analytics_output/geographic_mobility_*.csv</code> + <code>geographic_mobility_summary.json</code> (H2416). Города извлекаются из текста аффилиации в программах через <code>geography.json</code>.</p>'''
 
     write_text(
         "findings/mobility.html",
         page_shell(
             "Мобильность | " + SITE_NAME,
-            f"Анализ мобильности: {len(city_list)} учёных с переездами, {aff_changes} меняли аффилиацию.",
+            f"Анализ мобильности: {n_movers} учёных с переездами, {aff_changes} меняли аффилиацию.",
             "findings/mobility.html",
             body,
             [page_data("Мобильность", "Анализ переходов учёных между городами и институциями.", "findings/mobility.html", page_type="Article"),
@@ -3244,7 +3399,9 @@ def generate_registry_page(data):
     table_rows = []
     for row in rows:
         table_rows.append(
-            "<tr>"
+            # id = the stable RIND_ registry_id, so a PD-page (or any external) record can
+            # deep-link one row instead of the whole table (H6971).
+            f'<tr id="{esc((row.get("registry_id") or "").strip())}">'
             f"<td>{name_cell(row)}</td>"
             f"<td>{esc(life_years(row))}</td>"
             f"<td>{esc(row.get('field') or '')}</td>"
@@ -3256,7 +3413,7 @@ def generate_registry_page(data):
     body = f"""
         <header>
             <h1>Индологи вне программы чтений</h1>
-            <p>Реестр русскоязычных индологов, которые <strong>ни разу не выступали</strong> на Зографских или Рериховских чтениях. Это отдельный от каталога докладчиков слой: эти учёные не входят в конференционную статистику ({esc(str(data.get('summary', {}).get('total_scholars', '')))} докладчиков / {esc(str(data.get('summary', {}).get('unique_presentations', '')))} докладов).</p>
+            <p>Реестр индологов, которые <strong>ни разу не выступали</strong> на Зографских или Рериховских чтениях. Это отдельный от каталога докладчиков слой: эти учёные не входят в конференционную статистику ({esc(str(data.get('summary', {}).get('total_scholars', '')))} докладчиков / {esc(str(data.get('summary', {}).get('unique_presentations', '')))} докладов).</p>
         </header>
         <div class="article-container">
             <article>
@@ -3317,11 +3474,11 @@ def generate_registry_page(data):
         "indologists.html",
         page_shell(
             f"Индологи вне программы чтений | {SITE_NAME}",
-            "Реестр русскоязычных индологов, не выступавших на Зографских и Рериховских чтениях; отдельный от каталога докладчиков слой.",
+            "Реестр индологов, не выступавших на Зографских и Рериховских чтениях; отдельный от каталога докладчиков слой.",
             "indologists.html",
             body,
             [
-                page_data("Индологи вне программы чтений", "Реестр русскоязычных индологов, не входящих в конференционный корпус.", "indologists.html"),
+                page_data("Индологи вне программы чтений", "Реестр индологов, не входящих в конференционный корпус.", "indologists.html"),
                 make_breadcrumbs([("Главная", ""), ("Индологи вне программы чтений", "indologists.html")]),
             ],
             extra_head=ARTICLE_STYLE,
@@ -3410,11 +3567,11 @@ def generate_download_page(data):
         <article class="card" style="margin-bottom:1.5rem; border-color:rgba(98,174,146,0.3); background:rgba(98,174,146,0.05);">
             <strong>Dataset DOI</strong>
             <div class="meta" style="margin-top:0.3rem;">
-                <a href="https://doi.org/10.5281/zenodo.XXXXXXX"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.XXXXXXX.svg" alt="DOI" style="height:20px;"></a>
+                <a href="https://doi.org/10.5281/zenodo.21360652"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.21360652.svg" alt="DOI" style="height:20px;"></a>
                 <br>
-                Cite as: Gasūns, M. (2026). <em>IndologyScholars: Archive of Talks in Russian Indology</em> [Data set]. Zenodo. https://doi.org/10.5281/zenodo.XXXXXXX
+                Cite as: Gasūns, M. (2026). <em>IndologyScholars: Archive of Talks in Russian Indology</em> [Data set]. Zenodo. https://doi.org/10.5281/zenodo.21360652
                 <br>
-                <span style="color:var(--muted);">Replace XXXXXXX with the actual Zenodo ID after uploading <code>article/snapshots/2026-06-03/</code></span>
+                <span style="color:var(--muted);">Concept DOI from Zenodo-GitHub (all versions). Pin version DOI <code>10.5281/zenodo.21847873</code> for v1.6.7.</span>
             </div>
         </article>
         <h2>Files</h2>
@@ -3787,7 +3944,7 @@ def generate_authority_coverage(data, authority):
             "has_orcid", "has_wikidata", "has_viaf", "has_openalex", "has_wikipedia", "has_rinc", "has_google_scholar",
             "has_vk", "has_official_url", "has_any_external_id", "authority_confidence", "checked_at"
         ]
-        writer = csv.DictWriter(f, fieldnames=fieldnames)
+        writer = csv.DictWriter(f, fieldnames=fieldnames, lineterminator="\n")
         writer.writeheader()
         for r in coverage_rows:
             writer.writerow(r)
@@ -3798,7 +3955,7 @@ def generate_authority_coverage(data, authority):
             "reason", "suggested_query", "rinc_search_url", "openalex_search_url",
             "wikipedia_search_url", "review_status"
         ]
-        writer = csv.DictWriter(f, fieldnames=fieldnames)
+        writer = csv.DictWriter(f, fieldnames=fieldnames, lineterminator="\n")
         writer.writeheader()
         for r in review_queue:
             writer.writerow(r)
@@ -3857,7 +4014,7 @@ def generate_provenance_sidecars(data, authority, records):
             "entity_type", "entity_id", "display_name", "field_name", "field_value",
             "source_type", "source_url", "confidence", "checked_at", "notes",
         ]
-        writer = csv.DictWriter(f, fieldnames=fieldnames)
+        writer = csv.DictWriter(f, fieldnames=fieldnames, lineterminator="\n")
         writer.writeheader()
         writer.writerows(bio_rows)
 
@@ -3909,7 +4066,7 @@ def generate_provenance_sidecars(data, authority, records):
             "entity_type", "entity_id", "field_name", "field_value",
             "source_type", "confidence", "checked_at", "notes",
         ]
-        writer = csv.DictWriter(f, fieldnames=fieldnames)
+        writer = csv.DictWriter(f, fieldnames=fieldnames, lineterminator="\n")
         writer.writeheader()
         writer.writerows(authority_rows)
 
@@ -3957,7 +4114,7 @@ def generate_provenance_sidecars(data, authority, records):
             "confidence", "checked_at", "title", "l1_review_candidate", "l1_confidence",
             "l3_review_candidate", "l3_confidence", "notes",
         ]
-        writer = csv.DictWriter(f, fieldnames=fieldnames)
+        writer = csv.DictWriter(f, fieldnames=fieldnames, lineterminator="\n")
         writer.writeheader()
         writer.writerows(theme_rows)
 
@@ -4102,7 +4259,7 @@ def generate_theme_review_queue(records: list) -> int:
         "review_status", "notes",
     ]
     with open(out_path, "w", encoding="utf-8", newline="") as f:
-        writer = csv.DictWriter(f, fieldnames=fieldnames)
+        writer = csv.DictWriter(f, fieldnames=fieldnames, lineterminator="\n")
         writer.writeheader()
         writer.writerows(queue)
 
@@ -11333,23 +11490,27 @@ def generate_nlp_page(data, records):
             "slug": r.get("slug") or ""
         })
 
-    import pickle
+    import numpy as _np_cache
+    from scipy.sparse import csr_matrix
     
     corpus_hash = hashlib.sha256(json.dumps(corpus).encode("utf-8")).hexdigest()
-    cache_path = Path("analytics_output/nlp_cache.pkl")
+    cache_path = Path("analytics_output/nlp_cache.npz")
     
     lda_fit = False
     if cache_path.exists():
         try:
-            cached = pickle.loads(cache_path.read_bytes())
-            if cached.get("corpus_hash") == corpus_hash:
-                tfidf_matrix = cached["tfidf_matrix"]
-                topic_distributions = cached["topic_distributions"]
-                topic_terms = cached["topic_terms"]
-                feature_names = cached["feature_names"]
-                idf_weights = cached["idf_weights"]
-                dominant_topics = topic_distributions.argmax(axis=1)
-                lda_fit = True
+            with _np_cache.load(cache_path, allow_pickle=False) as saved:
+                if str(saved["corpus_hash"]) == corpus_hash:
+                    tfidf_matrix = csr_matrix(
+                        (saved["tfidf_data"], saved["tfidf_indices"], saved["tfidf_indptr"]),
+                        shape=tuple(int(v) for v in saved["tfidf_shape"]),
+                    )
+                    topic_distributions = _np_cache.asarray(saved["topic_distributions"])
+                    topic_terms = json.loads(str(saved["topic_terms_json"]))
+                    feature_names = [str(v) for v in saved["feature_names"]]
+                    idf_weights = [float(v) for v in saved["idf_weights"]]
+                    dominant_topics = topic_distributions.argmax(axis=1)
+                    lda_fit = True
         except Exception:
             pass
             
@@ -11372,14 +11533,18 @@ def generate_nlp_page(data, records):
             topic_terms.append(top_features)
             
         cache_path.parent.mkdir(parents=True, exist_ok=True)
-        cache_path.write_bytes(pickle.dumps({
-            "corpus_hash": corpus_hash,
-            "tfidf_matrix": tfidf_matrix,
-            "topic_distributions": topic_distributions,
-            "topic_terms": topic_terms,
-            "feature_names": feature_names,
-            "idf_weights": idf_weights,
-        }))
+        _np_cache.savez(
+            cache_path,
+            corpus_hash=_np_cache.array(corpus_hash),
+            tfidf_data=tfidf_matrix.data,
+            tfidf_indices=tfidf_matrix.indices,
+            tfidf_indptr=tfidf_matrix.indptr,
+            tfidf_shape=_np_cache.array(tfidf_matrix.shape),
+            topic_distributions=topic_distributions,
+            topic_terms_json=_np_cache.array(json.dumps(topic_terms)),
+            feature_names=_np_cache.array(feature_names),
+            idf_weights=_np_cache.array(idf_weights, dtype=float),
+        )
 
     topic_titles = [
         "Лингвистика и грамматика",
@@ -12921,8 +13086,95 @@ def generate_sociology_page():
     )
 
 
+def _gatekeeping_centrality_block(lang="ru"):
+    """Live tables from tools/compute_network_centrality.py (H2411)."""
+    summary_path = Path("analytics_output/network_centrality_summary.json")
+    summary = {}
+    if summary_path.exists():
+        try:
+            summary = json.loads(summary_path.read_text(encoding="utf-8"))
+        except (json.JSONDecodeError, OSError):
+            summary = {}
+    session_rows = load_csv_rows("analytics_output/network_centrality_session.csv")[:10]
+    collab_rows = [r for r in load_csv_rows("analytics_output/network_centrality_collaboration.csv") if int(r.get("degree") or 0) > 0][:10]
+    bridge_rows = load_csv_rows("analytics_output/network_series_bridges.csv")[:10]
+    layers = summary.get("layers") or {}
+    n_bridge = summary.get("series_bridge_people", len(load_csv_rows("analytics_output/network_series_bridges.csv")))
+    sess_edges = (layers.get("session") or {}).get("undirected_edges", "—")
+    collab_edges = (layers.get("collaboration") or {}).get("undirected_edges", "—")
+    event_edges = (layers.get("event") or {}).get("undirected_edges", "—")
+
+    def esc_cell(value):
+        return html.escape(str(value if value is not None else ""))
+
+    def person_cell(row):
+        name = row.get("display_name") or row.get("person_id") or ""
+        return esc_cell(name)
+
+    def table(headers, body_rows):
+        th = "".join(f"<th>{esc_cell(h)}</th>" for h in headers)
+        trs = []
+        for cells in body_rows:
+            trs.append("<tr>" + "".join(f"<td>{c}</td>" for c in cells) + "</tr>")
+        return f'<table class="data"><thead><tr>{th}</tr></thead><tbody>{"".join(trs)}</tbody></table>'
+
+    if lang == "en":
+        cards = f"""
+            <div class="three-col">
+                <div class="mini-card"><span class="kicker">Collaboration edges</span><strong>{esc_cell(collab_edges)}</strong><div>co-presentation pairs (programme lines)</div></div>
+                <div class="mini-card"><span class="kicker">Session edges</span><strong>{esc_cell(sess_edges)}</strong><div>same-session co-presence (not co-authorship)</div></div>
+                <div class="mini-card"><span class="kicker">Series bridges</span><strong>{esc_cell(n_bridge)}</strong><div>people with talks in both Zograf and Roerich</div></div>
+            </div>
+            <p class="note">Betweenness is a structural connectivity score, not scholarly quality. Edge types are never mixed into one undifferentiated network (see <code>analytics_output/network_robustness_checks.csv</code>). Recipe: <code>python tools/compute_network_centrality.py</code>.</p>
+            <h3>Top session-layer betweenness</h3>
+            {table(
+                ["Scholar", "Betweenness", "Degree", "Series"],
+                [[person_cell(r), esc_cell(r.get("betweenness")), esc_cell(r.get("degree")), esc_cell(r.get("series_attended"))] for r in session_rows],
+            )}
+            <h3>Zograf ↔ Roerich bridges (both series)</h3>
+            {table(
+                ["Scholar", "Zograf", "Roerich", "Event betweenness", "Co-talk degree"],
+                [[person_cell(r), esc_cell(r.get("zograf_talks")), esc_cell(r.get("roerich_talks")), esc_cell(r.get("event_betweenness")), esc_cell(r.get("collaboration_degree"))] for r in bridge_rows],
+            )}
+            <h3>Collaboration degree (co-presentation partners)</h3>
+            {table(
+                ["Scholar", "Partners", "Betweenness", "Series"],
+                [[person_cell(r), esc_cell(r.get("degree")), esc_cell(r.get("betweenness")), esc_cell(r.get("series_attended"))] for r in collab_rows],
+            ) if collab_rows else "<p>No multi-person presentation edges in the current export.</p>"}
+            <p class="article-caption">Source CSVs: <code>network_centrality_session.csv</code>, <code>network_centrality_collaboration.csv</code>, <code>network_series_bridges.csv</code>, <code>network_centrality_summary.json</code> (H2411).</p>
+        """
+    else:
+        cards = f"""
+            <div class="three-col">
+                <div class="mini-card"><span class="kicker">Рёбра коллаборации</span><strong>{esc_cell(collab_edges)}</strong><div>пары со-докладчиков (строка программы)</div></div>
+                <div class="mini-card"><span class="kicker">Рёбра сессий</span><strong>{esc_cell(sess_edges)}</strong><div>соприсутствие в сессии (не соавторство)</div></div>
+                <div class="mini-card"><span class="kicker">Мосты серий</span><strong>{esc_cell(n_bridge)}</strong><div>участники и Зографа, и Рериха</div></div>
+            </div>
+            <p class="note">Betweenness — мера структурной связности, а не «качества» учёного. Типы рёбер не смешиваются в один недифференцированный граф (см. <code>analytics_output/network_robustness_checks.csv</code>). Рецепт: <code>python tools/compute_network_centrality.py</code>.</p>
+            <h3>Топ by betweenness (слой сессий)</h3>
+            {table(
+                ["Учёный", "Betweenness", "Степень", "Серии"],
+                [[person_cell(r), esc_cell(r.get("betweenness")), esc_cell(r.get("degree")), esc_cell(r.get("series_attended"))] for r in session_rows],
+            )}
+            <h3>Мосты Зограф ↔ Рерих (обе серии)</h3>
+            {table(
+                ["Учёный", "Зограф", "Рерих", "Event betweenness", "Степень со-докладов"],
+                [[person_cell(r), esc_cell(r.get("zograf_talks")), esc_cell(r.get("roerich_talks")), esc_cell(r.get("event_betweenness")), esc_cell(r.get("collaboration_degree"))] for r in bridge_rows],
+            )}
+            <h3>Степень коллаборации (партнёры по со-докладу)</h3>
+            {table(
+                ["Учёный", "Партнёры", "Betweenness", "Серии"],
+                [[person_cell(r), esc_cell(r.get("degree")), esc_cell(r.get("betweenness")), esc_cell(r.get("series_attended"))] for r in collab_rows],
+            ) if collab_rows else "<p>В текущем экспорте нет рёбер многоавторских докладов.</p>"}
+            <p class="article-caption">Источник: <code>network_centrality_session.csv</code>, <code>network_centrality_collaboration.csv</code>, <code>network_series_bridges.csv</code>, <code>network_centrality_summary.json</code> (H2411).</p>
+        """
+    return cards
+
+
 def generate_gatekeeping_page():
-    body = """
+    centrality_ru = _gatekeeping_centrality_block("ru")
+    centrality_en = _gatekeeping_centrality_block("en")
+    body = f"""
         <header>
             <h1>Гейткипинг как проверяемая гипотеза: сетевые посредники и программа 2026 года</h1>
             <p>Сетевые эффекты, конфликт поколений и институциональные фильтры в российской индологии.</p>
@@ -12944,6 +13196,7 @@ def generate_gatekeeping_page():
             <h2>Наланда: позитивная модель допуска</h2>
             <p>В классическом и популярном употреблении gatekeeper не обязательно является цензором. В примере Наланды «привратник» описывается как интеллектуальный порог: он защищает вход в сложную ученую традицию, проверяет подготовку и тем самым поддерживает стандарты сообщества (<a href="http://nalanda-insatiableinoffering.blogspot.com/2009/10/what-was-role-of-gatekeepers-at.html" rel="noopener">обсуждение роли gatekeepers at Nalanda University</a>).</p>
             <p>Для рецензируемого текста это важная контрольная рамка: легитимный гейткипинг возможен, когда критерии понятны, соразмерны качеству работы и открыты для сильных, но неконвенциональных заявок. Нелегитимная версия начинается там, где контроль стандартов подменяется закрытым доступом, кумовством, фаворитизмом или наказанием за периферийность и отсутствие правильной аффилиации.</p>
+            <p>В самом предании о Наланде порог доброжелателен: по рассказам, сохраненным паломниками (Сюаньцзан, Ицзин), допуск в обитель шел через диспут у ворот - состязание доводов, а не проверка анкеты, знакомства или аффилиации; храмовые дварапалы, стражи порога, грозны только вовне и гостеприимны изнутри. Эта доброжелательная модель служит здесь мерилом: современная практика, в которой допуск подменяется сегрегацией по знакомству, бюрократической волокитой и крючкотворством при формально открытом отборе, противоречит не высоте стандарта, а самой рамке дварапал - порог остался, доброжелательность испарилась. Как и все на этой странице, контраст моделей - структурный, а не персонально-обвинительный.</p>
 
             <h3>Где позитивная функция может исчезать</h3>
             <p>В более жесткой, но все еще проверяемой версии гипотезы старшее поколение не просто поддерживает стандарт, а отсекает наиболее ярких представителей среднего поколения уже после того, как они накопили собственную связность и методологическую самостоятельность. Тогда речь идет не о защите поля от слабых работ, а о программном ограничении сетевых посредников.</p>
@@ -12987,6 +13240,32 @@ def generate_gatekeeping_page():
             <img class="article-figure" src="assets/img/gatekeeping_network_layers.svg" alt="Сравнение типов сетевых связей">
             <div class="article-caption">Рис. 3. Слои сети разведены по смыслу. Это нужно, чтобы визуально убедительный граф не подменял вопрос: соавторство, сосуществование в сессии и общая тематическая область — не одно и то же.</div>
 
+            <h2>Измеренная центральность и мосты (H2411)</h2>
+            <p>Ниже — пересчитываемые таблицы по трём несмешиваемым слоям (коллаборация / сессия / событие) и список участников, наблюдаемых в обеих сериях. Регенерация: <code>python tools/compute_network_centrality.py</code>.</p>
+            {centrality_ru}
+
+            <h2>Документированные эпизоды подачи заявок: 2020 и 2025</h2>
+            <p>Программы фиксируют результат отбора, но не заявки и не мотивировки отказов. У автора архива сохраняются два письма оргкомитетов - редкий случай, когда этап подачи становится наблюдаемым. Имена подписантов приводятся потому, что подпись стоит на документе, хранящемся у автора; формулировки передаются пересказом, без дословного цитирования.</p>
+            <ul>
+                <li><strong>Рериховские чтения, декабрь 2020.</strong> Заявка «Новое в санскритской компьютерной лингвистике» (тезисы от 11.12.2020) на тему года «Текст и смыслопорождение в культуре». Отказ от 13.12.2020 за подписью В. В. Вертоградовой от имени оргкомитета с мотивировкой: несоответствие проблематике конференции, которая имеет «не прикладной, а фундаментальный характер». Наблюдаемый контекст: прикладные по характеру темы составляют 4-8% программ обеих серий, поэтому мотивировка «прикладного характера» не опирается на наблюдаемый тематический состав программ; тот же автор выступал на этой серии в 2019 г. и вернулся в нее в 2024 г.</li>
+                <li><strong>Дубянские чтения, 2025 (5-я конференция, ИКВИА НИУ ВШЭ).</strong> Заявка «А.А. Зализняк как санскритолог» (29.06.2025) - история и методология индологии, заявная категория серии с первых чтений. Отказ от 11.08.2025 за подписью Т. А. Дубянской от имени оргкомитета без тематической мотивировки: рекордное количество заявок при ограниченном времени программы потребовало более строгого отбора.</li>
+            </ul>
+            <p>Сопоставление с 2021 годом показательно: на первых Дубянских чтениях (18-20.11.2021, РУДН, эра организатора Р. В. Псху) тот же автор с докладом того же класса - «Санскритский триптих В. А. Кочергиной», секция «История индологии» - был принят. Одна серия, один класс темы, один автор; между 2021 и 2025 переменной является состав оргкомитета.</p>
+            <table>
+                <thead><tr><th>Площадка / эра</th><th>Год</th><th>Заявка или доклад</th><th>Класс темы</th><th>Исход</th></tr></thead>
+                <tbody>
+                    <tr><td>Дубянские, эра Псху (РУДН)</td><td>2021</td><td>«Санскритский триптих В. А. Кочергиной»</td><td>история индологии</td><td>принят</td></tr>
+                    <tr><td>Дубянские, эра Дубянской (ВШЭ)</td><td>2025</td><td>«А.А. Зализняк как санскритолог»</td><td>история индологии</td><td>отклонен (объем заявок)</td></tr>
+                    <tr><td>Рериховские</td><td>2005</td><td>«Из истории наборных шрифтов нагари» (программа - в переписке с организатором)</td><td>история индологии / книжная культура</td><td>принят (после отказа «слишком молодой»; при поддержке В. М. Алпатова)</td></tr>
+                    <tr><td>Рериховские</td><td>2019</td><td>«Возможности понимания и написания термина „санскрит"»</td><td>санскритология</td><td>принят</td></tr>
+                    <tr><td>Рериховские</td><td>2020</td><td>«Новое в санскритской компьютерной лингвистике»</td><td>санскритология / цифровые методы</td><td>отклонен («прикладной характер»)</td></tr>
+                    <tr><td>Рериховские</td><td>2024</td><td>«Принципы построения верениц древнеиндийских имён» (Вишнусахасранама)</td><td>текстология</td><td>принят</td></tr>
+                    <tr><td>Зографские</td><td>2026</td><td>- (синхронное отсутствие пула, см. кейс 2026)</td><td>смешанный</td><td>отсутствие из программы</td></tr>
+                </tbody>
+            </table>
+            <p>Строка Зографа-2026 - наблюдение отсутствия, а не заявка; участие Р. В. Псху в отборе 2026 г. отражает знание автора и публичными документами не подтверждено. Таблица в целом не доказывает мотив ни в одном случае: она фиксирует наблюдаемую конфигурацию, в которой исход заявки одного класса от одного автора сильнее связан с площадкой и составом комитета, чем с классом темы или с тематической мотивировкой, используемой в отказах. Такая конфигурация совместима с гипотезой избирательного фильтра и несовместима с гипотезой систематического тематического фильтра программ.</p>
+            <p>У ранних строк есть документированная предыстория. Выступлению автора на Рериховских чтениях 2005 г. («Из истории наборных шрифтов нагари»; программа чтений 28-29.11.2005 сохранилась в переписке с организатором) предшествовал отказ с мотивировкой «слишком молодой» (по слову автора; заявка 2004 г. упомянута в письме 2005 г.). Заявку 2005 г. поддержал В. М. Алпатов - по рекомендации Е. П. Челышева; в письме от 24.11.2005 автор передает его оценку: работа информативна, причин не допускать к выступлению нет. Публичный онлайн-архив серии начинается с 2007 г., поэтому программа 2005 г. вошла в корпус настоящего архива по этой переписке (23 доклада; амортизация корпуса 03.10.2026, разметка - вручную по закрытым словарям). Это важная оговорка в обе стороны: поле, отклоняющее заявки по возрасту и по «прикладному характеру», одновременно содержит старших коллег, готовых за молодого периферийного исследователя поручиться - внутри того же поля действует и противоположный отсеву механизм. Это дополнительный аргумент читать страницу структурно, а не как портрет отдельных лиц.</p>
+
             <h2>Кейс 2026 года: проверка нулевой гипотезы</h2>
             <p>В кейсе 2026 года проверяется синхронное отсутствие из программы пула активных исследователей молодого и среднего поколения: М. Гасунс, О. Ерченков, В. Дмитриева, А. Зорин и Сизова как строка дополнительной идентификации. Имена приводятся для аудита источников; интерпретация остается структурной, а не персонально-обвинительной.</p>
 
@@ -13014,7 +13293,7 @@ def generate_gatekeeping_page():
             extra_head=ARTICLE_STYLE,
         ),
     )
-    body_en = """
+    body_en = f"""
         <header>
             <h1>Gatekeeping as a testable hypothesis: network mediators and the 2026 programme</h1>
             <p>Network effects, generational conflict, and institutional filters in Russian Indology.</p>
@@ -13033,6 +13312,7 @@ def generate_gatekeeping_page():
             <h2>Nalanda: a positive model of admission control</h2>
             <p>In classical and popular usage, a gatekeeper is not necessarily a censor. In the Nalanda example, the gatekeeper is described as an intellectual threshold: a role that protects entry into a demanding learned tradition, checks preparation, and thereby maintains communal standards (<a href="http://nalanda-insatiableinoffering.blogspot.com/2009/10/what-was-role-of-gatekeepers-at.html" rel="noopener">discussion of gatekeepers at Nalanda University</a>).</p>
             <p>For peer review, this positive model is a useful control. Legitimate gatekeeping is possible when criteria are visible, proportional to scholarly quality, and open to strong but unconventional submissions. The illegitimate version begins where standards are replaced by closed access, nepotism, favoritism, or penalties for peripheral status and missing institutional affiliation.</p>
+            <p>Within the Nalanda tradition itself the threshold is benevolent: in the accounts preserved by the pilgrims (Xuanzang, Yijing), admission to the monastery ran through a disputation at the gate - a contest of arguments, not of forms, acquaintances, or affiliations - and the temple dvarapalas, guardians of the threshold, are fierce only from the outside and hospitable within. This benevolent model serves here as a yardstick: a modern practice in which admission is replaced by segregation by acquaintance, bureaucratic delay, and pettifogging under a formally open call contradicts not the height of the standard but the dvarapala frame itself - the threshold remains, the benevolence has evaporated. As everywhere on this page, the contrast of models is structural, not a personal accusation.</p>
 
             <h3>Where the positive function may disappear</h3>
             <p>In the stronger but still testable version of the hypothesis, the senior generation is not merely defending standards; it may be excluding unusually visible middle-generation participants after they have already accumulated their own network connectivity and methodological independence.</p>
@@ -13070,6 +13350,32 @@ def generate_gatekeeping_page():
             <p>Joint presentation, same session, same topic, same event, and same institution answer different questions. The argument is stronger when these layers are kept separate.</p>
             <img class="article-figure" src="assets/img/gatekeeping_network_layers.svg" alt="Comparison of network edge types">
             <div class="article-caption">Figure 3. The layers are separated by meaning so that a visually persuasive graph does not answer the wrong question.</div>
+
+            <h2>Measured centrality and bridges (H2411)</h2>
+            <p>The tables below are recomputed from the live archive on three non-mixed layers (collaboration / session / event) plus people observed in both series. Recipe: <code>python tools/compute_network_centrality.py</code>.</p>
+            {centrality_en}
+
+            <h2>Documented application-stage episodes: 2020 and 2025</h2>
+            <p>Programmes record the outcome of selection, but not the submissions or the stated reasons for rejection. The archive's author holds two committee letters - a rare case where the application stage becomes observable. Signatories are named because their signatures stand on documents held by the author; the wording is paraphrased, not quoted verbatim.</p>
+            <ul>
+                <li><strong>Roerich Readings, December 2020.</strong> Submission "Novoe v sanskritskoy kompyuternoy lingvistike" ("New in Sanskrit computational linguistics"; abstract dated 11.12.2020) for the year theme "Text and sense-generation in culture". Rejection of 13.12.2020, signed by V. V. Vertogradova on behalf of the committee, with the rationale: non-correspondence to the conference problematic, which has "not an applied but a fundamental character" (paraphrase). Observable context: applied topics constitute 4-8% of both series' programmes, so an "applied character" rationale is not grounded in the observed thematic composition of the programmes; the same author presented in this series in 2019 and returned to it in 2024.</li>
+                <li><strong>Dubyanskiy Readings, 2025 (5th conference, HSE).</strong> Submission "A.A. Zaliznyak as a Sanskrit Scholar" (29.06.2025) - history and methodology of Indology, a declared category of the series since its first edition. Rejection of 11.08.2025, signed by T. A. Dubyanskaya on behalf of the committee, without a thematic rationale: a record number of submissions under limited programme time required a stricter selection.</li>
+            </ul>
+            <p>The 2021 contrast is telling: at the first Dubyanskiy Readings (18-20.11.2021, RUDN, the era of organizer R. V. Pskhu) the same author with a talk of the same class - "The Sanskrit Triptych of V. A. Kochergina", section "History of Indology" - was accepted. One series, one topic class, one author; between 2021 and 2025 the variable is the composition of the organizing committee.</p>
+            <table>
+                <thead><tr><th>Venue / era</th><th>Year</th><th>Submission or talk</th><th>Topic class</th><th>Outcome</th></tr></thead>
+                <tbody>
+                    <tr><td>Dubyanskiy, Pskhu era (RUDN)</td><td>2021</td><td>"The Sanskrit Triptych of V. A. Kochergina"</td><td>history of Indology</td><td>accepted</td></tr>
+                    <tr><td>Dubyanskiy, Dubyanskaya era (HSE)</td><td>2025</td><td>"A.A. Zaliznyak as a Sanskrit Scholar"</td><td>history of Indology</td><td>rejected (volume of submissions)</td></tr>
+                    <tr><td>Roerich Readings</td><td>2005</td><td>"From the history of Nagari typefaces" (programme - in correspondence with the organizer)</td><td>history of Indology / book culture</td><td>accepted (after a "too young" rejection; supported by V. M. Alpatov)</td></tr>
+                    <tr><td>Roerich Readings</td><td>2019</td><td>"Understanding and writing the term 'Sanskrit'"</td><td>Sanskrit studies</td><td>accepted</td></tr>
+                    <tr><td>Roerich Readings</td><td>2020</td><td>"New in Sanskrit computational linguistics"</td><td>Sanskrit studies / digital methods</td><td>rejected ("applied character")</td></tr>
+                    <tr><td>Roerich Readings</td><td>2024</td><td>"Principles of name-chains in the Vishnusahasranama"</td><td>textology</td><td>accepted</td></tr>
+                    <tr><td>Zograf Readings</td><td>2026</td><td>- (synchronous absence of a pool, see the 2026 case)</td><td>mixed</td><td>absent from the programme</td></tr>
+                </tbody>
+            </table>
+            <p>The Zograf 2026 row is an observed absence, not a submission; R. V. Pskhu's role in the 2026 selection reflects the author's knowledge and is not confirmed by public documents. The table as a whole proves no motive in any case: it records an observed configuration in which the outcome of a same-class submission by the same author correlates more strongly with the venue and the composition of the committee than with the topic class or with the thematic rationale used in rejections. This configuration is compatible with a selective-filter hypothesis and incompatible with a systematic thematic filter at the programme level.</p>
+            <p>The early rows have a documented prehistory. The author's 2005 appearance at the Roerich Readings ("From the history of Nagari typefaces"; the programme of 28-29.11.2005 is preserved in correspondence with the organizer) was preceded by a rejection with the rationale "too young" (per the author's account; the 2004 submission is mentioned in the 2005 letter). The 2005 submission was supported by V. M. Alpatov - on the recommendation of E. P. Chelyshev; in the letter of 24.11.2005 the author conveys his assessment: the work is informative, and there are no reasons not to admit it. The series' public online archive begins in 2007, so the 2005 programme entered this archive's corpus through that correspondence (23 presentations; corpus amendment of 03.10.2026, classified manually under the closed vocabularies). The caveat cuts both ways: a field that rejects submissions by age and by "applied character" also contains senior colleagues ready to vouch for a young peripheral researcher - the mechanism opposite to filtering operates inside the same field. This is a further argument for reading the page structurally rather than as a portrait of individuals.</p>
 
             <h2>The 2026 case</h2>
             <p>The 2026 case tests the synchronous absence of an active group: M. Gasuns, O. Erchenkov, V. Dmitrieva, A. Zorin, and Sizova as an additional identity-check row. Names are used for source auditability; the interpretation remains structural rather than personal.</p>
@@ -13168,7 +13474,7 @@ def generate_classification_criteria_page(records):
         )
     with open("analytics_output/classification_overrides.csv", "w", encoding="utf-8", newline="") as handle:
         ledger_fieldnames = ["presentation_id", "title", "theme_code", "theme_label_ru", "gumilyov_level", "meso_codes", "reason"]
-        writer = csv.DictWriter(handle, fieldnames=ledger_fieldnames)
+        writer = csv.DictWriter(handle, fieldnames=ledger_fieldnames, lineterminator="\n")
         writer.writeheader()
         writer.writerows(ledger_rows)
     body = f"""
@@ -14384,7 +14690,7 @@ def generate_publication_docs(data):
             <p class="bilingual-text" data-ru="Каталог аналитических гипотез, проверенных на массиве данных архива" data-en="Catalog of analytical hypotheses tested on the archive dataset">Каталог аналитических гипотез, проверенных на массиве данных архива</p>
             
             <div class="academic-badges" style="display: flex; gap: 0.5rem; margin-top: 1rem; flex-wrap: wrap; justify-content: center;">
-                <img src="https://img.shields.io/badge/DOI-10.5281%2Fzenodo.10616885-blue" alt="DOI" style="height: 20px;">
+                <img src="https://img.shields.io/badge/DOI-10.5281%2Fzenodo.21360652-blue" alt="DOI" style="height: 20px;">
                 <img src="https://img.shields.io/badge/Open%20Access-Active-success" alt="Open Access" style="height: 20px;">
                 <img src="https://img.shields.io/badge/License-CC--BY--4.0-lightgrey" alt="License CC-BY-4.0" style="height: 20px;">
                 <img src="https://img.shields.io/badge/Data-FAIR-orange" alt="FAIR Data" style="height: 20px;">
@@ -15729,7 +16035,7 @@ ER  - </pre>
 <meta name="citation_publication_date" content="2026/05/30">
 <meta name="citation_online_date" content="2026/05/30">
 <meta name="citation_journal_title" content="Russian Indological Research Archive">
-<meta name="citation_technical_report_number" content="DOI: 10.5281/zenodo.10616885">
+<meta name="citation_technical_report_number" content="DOI: 10.5281/zenodo.21360652">
 <meta name="citation_language" content="rus">
 <meta name="citation_pdf_url" content="https://gasyoun.github.io/IndologyScholars/hypotheses.html">
 <meta name="DC.title" content="Hypotheses Registry of Russian Indology: Far Reading and Sociological Analysis">

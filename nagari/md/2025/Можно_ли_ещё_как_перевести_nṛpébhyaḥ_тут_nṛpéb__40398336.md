@@ -1,3 +1,5 @@
+_Created: 05-09-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7503954478640398336
 subject: "Можно ли ещё как перевести nṛpébhyaḥ тут : nṛpébhyaḥ āhārám pacāmaḥ ?"
@@ -76,3 +78,5 @@ nṛpébhyaḥ āhārám pacāmaḥ
 >> [image: 55552025-05-12_155445.png]
 >>
 >
+
+_Dr. Mārcis Gasūns_

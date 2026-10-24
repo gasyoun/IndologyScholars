@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 # Editor profiles · Профили редакторов
 
 > Agent 6 (`../agents/6-editor.md`) defines **editor behaviour**; a profile in this
@@ -40,3 +42,5 @@ When driving the pipeline, tell the model which profile to load, e.g.:
 If no profile is named, the editor falls back to the generic scholarly style in
 `../agents/6-editor.md` and says so. · Если профиль не указан, редактор работает в общем
 научном стиле из `../agents/6-editor.md` и сообщает об этом.
+
+_Dr. Mārcis Gasūns_

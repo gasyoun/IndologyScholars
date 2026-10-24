@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 6725069904955834368
 subject: "Глагол lih - rih - leh"
@@ -36,3 +38,5 @@ On Wednesday, August 14, 2019 at 8:05:54 PM UTC+3, Konstantin I. wrote:
 > §34, есть только lih2(rih2). Sandic.exe эту форму тоже не находит. В 
 > каком словаре еще смотреть?
 >
+
+_Dr. Mārcis Gasūns_

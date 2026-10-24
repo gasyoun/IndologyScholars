@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 # Executive summary
 
 This report designs a **maximum-detail, normalized PostgreSQL data model** and provides a **complete, CSV-style event/day/venue dataset** for every “Zograf Readings” (Зографские чтения) post in the specified site section (27 posts). The section is a Joomla “blogsection” listing that includes (a) **conference program posts** (HTML pages with schedules), (b) **publication records** (articles in PDF about particular years and one historical overview), and (c) **two monograph notices** that link to publication records with PDF attachments. citeturn5view0turn1view0
@@ -1099,3 +1101,5 @@ Later “Indologists list” workflow (deferred as you requested):
 ---
 
 All venue/day mappings above are taken directly from the official program pages in the specified section, including the explicit online-only statement for 2020 and the day-by-day venue lines for each year. citeturn5view0turn6view0turn3view0turn7view0turn10view0turn9view0turn26view0turn25view0turn11view0turn8view3turn15view0turn16view0turn19view0turn27view0turn28view0turn22view2turn24view0turn23view0turn21view0turn20view1turn46view0
+
+_Dr. Mārcis Gasūns_

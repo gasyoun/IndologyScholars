@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 # Conventions: anti-fabrication, transliteration, IDs, citation, tone
 # Конвенции: запрет выдумывания, транслитерация, идентификаторы, цитирование, тон
 
@@ -143,3 +145,5 @@ Cautious scholarly register. No sensationalism or over-certainty. Do not oversta
 consensus. Never treat the authority of a scholar, school, or press as evidence in
 itself. Do not conflate correlation with causation, typological similarity with genetic
 relationship, or borrowing with inheritance.
+
+_Dr. Mārcis Gasūns_

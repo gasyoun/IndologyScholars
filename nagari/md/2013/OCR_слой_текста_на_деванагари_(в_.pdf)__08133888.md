@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 25248308133888
 subject: "OCR слой текста на деванагари (в .pdf)"
@@ -26,3 +28,5 @@ https://www.youtube.com/channel/UC5b8xpTyAzgS5ZZGEbO4I-Q все, что идет
 новую жизнь https://www.youtube.com/watch?v=RL_HgEwDtn0
 
 М.Г.
+
+_Dr. Mārcis Gasūns_

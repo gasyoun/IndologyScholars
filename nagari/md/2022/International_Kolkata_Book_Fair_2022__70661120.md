@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7071686535670661120
 subject: "International Kolkata Book Fair 2022"
@@ -21,3 +23,5 @@ source_url: https://groups.google.com/d/msgid/nagari/6693f7bd-682b-4086-98b7-84c
 
 Впервые книги Opera Minora представлены на книжной выставке. Калькутта, 2022
 На снимке переводчик первой не-санскритской книги серии, Максим Демченко.
+
+_Dr. Mārcis Gasūns_

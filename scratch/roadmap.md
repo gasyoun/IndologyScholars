@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 # Roadmap: сбор русскоязычных индологов за 200 лет
 
 ## Завершено ✓
@@ -218,3 +220,5 @@ JSON:API/Playwright-скрапер (`scrape_institutions_web.py`), Wikidata-об
 | 🟡 P1 | Ручной добор имперского периода | 1-2 ч | — |
 | 🟢 P2 | Постсоветские республики через en.wiki нац-категории + мост | 1-2 ч | где en.wiki доступна |
 | ❌ снято | `ru.m.wikipedia.org/w/api.php` | — | недостижим |
+
+_Dr. Mārcis Gasūns_

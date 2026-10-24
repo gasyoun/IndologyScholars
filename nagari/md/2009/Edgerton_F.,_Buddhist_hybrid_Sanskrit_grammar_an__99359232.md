@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7491899359232
 subject: "Edgerton F., Buddhist hybrid Sanskrit grammar and dictionary?"
@@ -20,3 +22,5 @@ source_url: https://groups.google.com/d/msgid/nagari/e1c5f18e-a556-41d3-b871-b0e
 Уважаемые коллеги, не знаете ли, имеется в природе скан Edgerton F.,
 Buddhist hybrid Sanskrit grammar and dictionary, или нет?
 Заранее благодарю
+
+_Dr. Mārcis Gasūns_

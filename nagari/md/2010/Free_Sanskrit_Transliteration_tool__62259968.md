@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 11049362259968
 subject: "Free Sanskrit Transliteration tool"
@@ -17,21 +19,36 @@ source_url: https://groups.google.com/d/msgid/nagari/06d88401-a630-488b-9a0f-2d4
 
 ## 1. Worga — 2010-11-21 23:41:03
 
-Here is a free Sanskrit transliteration program - a stand alone
-utility for transliteration from/to Devanāgarī using Harvard-Kyoto,
-ITRANS, IAST, SLP1 and Velthui's transliteration schemes.
-
-The screenshot is here:
-
-http://www.kavitype.com/kavitype/images/kvttranslit.png
-
-Download link is here:
-
-http://www.kavitype.com/download/kvttranslit.zip
-
-(~1.5 mb)
-
-Please post your bug reports (if any) and improvement requests or
+Here is a free Sanskrit transliteration program - a stand alone
+
+utility for transliteration from/to Devanāgarī using Harvard-Kyoto,
+
+ITRANS, IAST, SLP1 and Velthui's transliteration schemes.
+
+
+
+The screenshot is here:
+
+
+
+http://www.kavitype.com/kavitype/images/kvttranslit.png
+
+
+
+Download link is here:
+
+
+
+http://www.kavitype.com/download/kvttranslit.zip
+
+
+
+(~1.5 mb)
+
+
+
+Please post your bug reports (if any) and improvement requests or
+
 requests for additional functionalities here.
 
 ## 2. Serge — 2010-11-26 19:43:00
@@ -478,3 +495,5 @@ On 26 Nov., 17:43, Serge <renuv...@…> wrote:
 > в итрансе k + RRi/R^i + Sh/shh + N + a + H
 > т.е. в итрансе возможно 4 варианта написания
 > kRRiShNaH kRRishhNaH kR^iShNaH kR^ishhNaH
+
+_Dr. Mārcis Gasūns_

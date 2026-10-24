@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "handoff": "H2297",
+  "supersedes": "H1892 pilot output (29-07-2026, destroyed per FINDINGS §314)",
+  "escrowed_at": "2026-08-06T11:52:21+00:00",
+  "escrow_location": "bvp/data/ inside the persistent main IndologyScholars checkout",
+  "run_convention": "run directly in the persistent main checkout (not a throwaway worktree) so raw pages already live in a location that survives worktree GC",
+  "pages": {
+    "1": {
+      "retrieved_at": "2026-08-06T11:50:11+00:00",
+      "row_set_sha256": "5ad11ac86a0051c70185db017eadfa97a847ce4c18e6e1b40ad2213444957fd4",
+      "cursor_evidence_sha256": "35c9ef91b546a75a5912a1cab88e9eddede3f2b255af90a8fc2dc1e8f85a81ee",
+      "raw_html_sha256": "7662da416a42e593ec16702ba7a13df20381f31668037203a70987378bb422c6",
+      "raw_html_path": "bvp/data/raw/listing-page-1.html",
+      "page_first": 1,
+      "page_last": 30,
+      "displayed_total": 23476
+    },
+    "2": {
+      "retrieved_at": "2026-08-06T11:50:17+00:00",
+      "row_set_sha256": "abdcaec93b9e3f80f8ed3ddf36d2c94ccba46743be89ac9d6a71cb8a1f2a841d",
+      "cursor_evidence_sha256": "4f821ae8eb1779fe3c10b8f817b2b49e21d3032da9088d500db4842a83fd6718",
+      "raw_html_sha256": "13c2c92a0415c4de414fead99cbf6f4b4bbbdbaa4c84bfdf428dc28fc3eac8cd",
+      "raw_html_path": "bvp/data/raw/listing-page-2.html",
+      "page_first": 31,
+      "page_last": 60,
+      "displayed_total": 23476
+    },
+    "3": {
+      "retrieved_at": "2026-08-06T11:50:22+00:00",
+      "row_set_sha256": "475c9e72c238398fcf90745d83e1654703d8fa2b08eb3f9416142829266e9af8",
+      "cursor_evidence_sha256": "a1781eada396519ebe5d51e793f04c27fc7d226db4ceb7daac781a79a0916046",
+      "raw_html_sha256": "ab7288747abb8477d147bb595b2708d29d7e57eee34379c6ebdee5e11f8a3e1e",
+      "raw_html_path": "bvp/data/raw/listing-page-3.html",
+      "page_first": 61,
+      "page_last": 90,
+      "displayed_total": 23476
+    }
+  },
+  "reconciliation": {
+    "displayed_total": 23476,
+    "pages_requested": 3,
+    "pages_completed": 3,
+    "listed_rows": 90,
+    "unique_conversation_ids": 90,
+    "duplicate_ids": 0,
+    "unexplained_gap": 23386,
+    "faults": [],
+    "coverage_status": "partial"
+  }
+}

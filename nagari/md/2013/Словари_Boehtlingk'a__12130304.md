@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 23037612130304
 subject: "Словари Boehtlingk'a"
@@ -27,3 +29,5 @@ dictionaries for download. Please watch the download area.*
 Что вообще то радует. Написал следующее письмо со ссылкой на проект, 
 возможно сделает исключение. 
 Как насчет составить петицию? =)
+
+_Dr. Mārcis Gasūns_

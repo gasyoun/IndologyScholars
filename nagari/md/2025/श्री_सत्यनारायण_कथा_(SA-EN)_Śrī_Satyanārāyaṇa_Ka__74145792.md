@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7501620649674145792
 subject: "श्री सत्यनारायण कथा (SA-EN) Śrī Satyanārāyaṇa Kathā. Мультфильм на санскрите."
@@ -30,3 +32,5 @@ source_url: https://groups.google.com/d/msgid/nagari/ab871f9f-c53c-463b-a890-f0b
 Катхаманду (Непал) .
 
 https://nnmclub.to/forum/viewtopic.php?t=1795640
+
+_Dr. Mārcis Gasūns_

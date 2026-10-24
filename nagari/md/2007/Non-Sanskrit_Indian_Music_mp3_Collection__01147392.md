@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 3334201147392
 subject: "Non-Sanskrit Indian Music mp3 Collection"
@@ -70,3 +72,5 @@ On Sep 24, 1:22 am, Marcis <gasy...@…> wrote:
 > http://rapidshare.com/files/57421315/KrishnaDas-Puja.rar
 >
 > http://rapidshare.com/files/57451734/Nectar-Of-Life2001.part1.rarhttp://rapidshare.com/files/57496607/Nectar-Of-Life2001.part2.rar
+
+_Dr. Mārcis Gasūns_

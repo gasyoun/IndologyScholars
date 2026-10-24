@@ -1,6 +1,8 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 # Runbook: Phase-5 enrichment (run inside Russia)
 
-Phase 5 of [roster-merge-design.md](roster-merge-design.md). The CI/automation
+Phase 5 of [roster-merge-design.md](https://github.com/gasyoun/IndologyScholars/blob/main/docs/roster-merge-design.md). The CI/automation
 host can only reach `en.wikipedia.org`; the data sources that fill Q-IDs, life
 years, and institutional affiliations are reachable only from a host **inside
 Russia**. This runbook is the procedure the maintainer runs there; everything
@@ -150,3 +152,5 @@ owns. Stage explicit paths only.
 - No duplicate names appeared in the registry (the `test_no_duplicate_names_in_registry`
   guard catches this; re-run pytest if you hand-edited the CSV).
 - Spot-check that no `verified` row lacks a `source_url`.
+
+_Dr. Mārcis Gasūns_

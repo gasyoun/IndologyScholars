@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 # Agent 1 — Researcher · Агент 1 — Исследователь
 
 > Pipeline step 1. Maps the secondary literature and state of the question.
@@ -98,3 +100,5 @@ Source 1:
 Open questions for the source critic:
 - [what to verify in the primary sources and editions]
 ```
+
+_Dr. Mārcis Gasūns_

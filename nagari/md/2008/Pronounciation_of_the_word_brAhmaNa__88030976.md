@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 5910588030976
 subject: "Pronounciation of the word brAhmaNa"
@@ -17,13 +19,20 @@ source_url: https://groups.google.com/d/msgid/nagari/106437f3-e832-469d-a595-f48
 
 ## 1. yajvan — 2008-11-11 14:01:53
 
-Hello All,
-
-The word brAhmaNa is pronounced as brAmhaNa (at least in south India).
-Is there any pramANa for this interchange of 'mha' to 'hma' in
-pronunciation either in grammatical works or "shiksha" works ?
-
-Many regards
+Hello All,
+
+
+
+The word brAhmaNa is pronounced as brAmhaNa (at least in south India).
+
+Is there any pramANa for this interchange of 'mha' to 'hma' in
+
+pronunciation either in grammatical works or "shiksha" works ?
+
+
+
+Many regards
+
 Venkatesh
 
 ## 2. Vasu Srinivasan — 2009-01-04 21:26:47
@@ -240,3 +249,5 @@ On 1/10/09, N.S. VenkataNarasimha <nsvnarasimha@…> wrote:
 -- 
 Regards,
 Vasu Srinivasan
+
+_Dr. Mārcis Gasūns_

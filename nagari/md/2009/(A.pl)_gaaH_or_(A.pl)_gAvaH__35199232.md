@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 8339935199232
 subject: "(A.pl) gaaH or (A.pl) gAvaH?"
@@ -203,3 +205,5 @@ On 6 ноя, 20:14, Stormwatsch <aq...@…> wrote:
 
 
 Уважаемый Stormwatsch, Вы совершенно правы, я ошибся с падежом!
+
+_Dr. Mārcis Gasūns_

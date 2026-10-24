@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 # Томский журнал лингвистических и антропологических исследований. Tomsk Journal of Linguistics and Anthropology
 
 - **ISSN:** 2307-6119
@@ -20,3 +22,5 @@
 ## Контакты
 
 <!-- E-mail редакции, адрес для отправки -->
+
+_Dr. Mārcis Gasūns_

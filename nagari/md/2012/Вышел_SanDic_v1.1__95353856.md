@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 20314095353856
 subject: "Вышел SanDic v1.1"
@@ -17,14 +19,22 @@ source_url: https://groups.google.com/d/msgid/nagari/9f458033-35c1-4ff4-83d2-459
 
 ## 1. Artem Novikov — 2012-09-24 10:07:09
 
-Добавил поддержку ITRANS да пофиксил пару багов.
-
-Адрес проекта:
-https://sourceforge.net/projects/sandic/
-
-Бинарник под Windows:
-http://sourceforge.net/projects/sandic/files/sandic_w32s.exe/download
-
+Добавил поддержку ITRANS да пофиксил пару багов.
+
+
+
+Адрес проекта:
+
+https://sourceforge.net/projects/sandic/
+
+
+
+Бинарник под Windows:
+
+http://sourceforge.net/projects/sandic/files/sandic_w32s.exe/download
+
+
+
 <https://lh6.googleusercontent.com/-CMg80jDNbp8/UGAGUnafZaI/AAAAAAAAAFY/T7-6IvWfbHc/s1600/sandic.png>
 
 ## 2. Stormwatsch — 2012-09-24 11:15:59
@@ -166,10 +176,14 @@ http://sourceforge.net/projects/sandic/files/sandic.zip/download
 
 ## 21. Artem Novikov — 2012-10-03 11:27:05
 
-Загрузить базу словаря 
-http://sourceforge.net/projects/sandic/files/sandic.zip/download
-
-распаковать в тот же каталог, где находится исполняемый файл
+Загрузить базу словаря 
+
+http://sourceforge.net/projects/sandic/files/sandic.zip/download
+
+
+
+распаковать в тот же каталог, где находится исполняемый файл
+
 http://sourceforge.net/projects/sandic/files/sandic_w32s.exe/download
 
 ## 22. atman — 2012-10-03 16:02:05
@@ -542,49 +556,88 @@ mantale*
 
 ## 30. Artem Novikov — 2013-03-05 09:44:20
 
-Похоже на вашу ошибку
-http://stackoverflow.com/questions/2024895/how-should-i-handle-cast-from-void-to-int-loses-precision-when-compiling
-
-Связано с x64 битной версией Ubunt'ы
-
-
-понедельник, 4 марта 2013 г., 22:55:52 UTC+8 пользователь śrīdṛṣṭvā написал:
->
-> Ubuntu 12.04.2, х64, сделал qmake, получил Makefile, но make выдает такую 
-> ошибку:
-> mainwindow.cpp: In member function ‘void MainWindow::addDock(QWidget*, 
-> QAction*, QString, Qt::DockWidgetArea)’:
-> mainwindow.cpp:97:47: error: cast from ‘QDockWidget*’ to ‘int’ loses 
-> precision [-fpermissive]
->
-> Артем, мне не хватает каких-то компонентов?
+Похоже на вашу ошибку
+
+http://stackoverflow.com/questions/2024895/how-should-i-handle-cast-from-void-to-int-loses-precision-when-compiling
+
+
+
+Связано с x64 битной версией Ubunt'ы
+
+
+
+
+
+понедельник, 4 марта 2013 г., 22:55:52 UTC+8 пользователь śrīdṛṣṭvā написал:
+
+>
+
+> Ubuntu 12.04.2, х64, сделал qmake, получил Makefile, но make выдает такую 
+
+> ошибку:
+
+> mainwindow.cpp: In member function ‘void MainWindow::addDock(QWidget*, 
+
+> QAction*, QString, Qt::DockWidgetArea)’:
+
+> mainwindow.cpp:97:47: error: cast from ‘QDockWidget*’ to ‘int’ loses 
+
+> precision [-fpermissive]
+
+>
+
+> Артем, мне не хватает каких-то компонентов?
+
 >
 
 ## 31. Artem Novikov — 2013-03-05 10:10:33
 
-P.S. Посмотрите какой разрядности у вас установлен Qt 
-
-вторник, 5 марта 2013 г., 14:44:20 UTC+8 пользователь Artem Novikov написал:
->
-> Похоже на вашу ошибку
->
-> http://stackoverflow.com/questions/2024895/how-should-i-handle-cast-from-void-to-int-loses-precision-when-compiling
->
-> Связано с x64 битной версией Ubunt'ы
->
->
-> понедельник, 4 марта 2013 г., 22:55:52 UTC+8 пользователь śrīdṛṣṭvā 
-> написал:
->>
->> Ubuntu 12.04.2, х64, сделал qmake, получил Makefile, но make выдает такую 
->> ошибку:
->> mainwindow.cpp: In member function ‘void MainWindow::addDock(QWidget*, 
->> QAction*, QString, Qt::DockWidgetArea)’:
->> mainwindow.cpp:97:47: error: cast from ‘QDockWidget*’ to ‘int’ loses 
->> precision [-fpermissive]
->>
->> Артем, мне не хватает каких-то компонентов?
->>
+P.S. Посмотрите какой разрядности у вас установлен Qt 
+
+
+
+вторник, 5 марта 2013 г., 14:44:20 UTC+8 пользователь Artem Novikov написал:
+
+>
+
+> Похоже на вашу ошибку
+
+>
+
+> http://stackoverflow.com/questions/2024895/how-should-i-handle-cast-from-void-to-int-loses-precision-when-compiling
+
+>
+
+> Связано с x64 битной версией Ubunt'ы
+
+>
+
+>
+
+> понедельник, 4 марта 2013 г., 22:55:52 UTC+8 пользователь śrīdṛṣṭvā 
+
+> написал:
+
+>>
+
+>> Ubuntu 12.04.2, х64, сделал qmake, получил Makefile, но make выдает такую 
+
+>> ошибку:
+
+>> mainwindow.cpp: In member function ‘void MainWindow::addDock(QWidget*, 
+
+>> QAction*, QString, Qt::DockWidgetArea)’:
+
+>> mainwindow.cpp:97:47: error: cast from ‘QDockWidget*’ to ‘int’ loses 
+
+>> precision [-fpermissive]
+
+>>
+
+>> Артем, мне не хватает каких-то компонентов?
+
+>>
+
 >
 
 ## 32. Artem Novikov — 2013-03-06 09:20:14
@@ -979,23 +1032,36 @@ On Wednesday, March 6, 2013 2:20:14 AM UTC-8, Artem Novikov wrote:
 
 ## 37. Marcis — 2013-03-09 22:24:10
 
-http://dsal.uchicago.edu/dictionaries/macdonell/ Macdonell, Arthur Anthony. 
-*A practical Sanskrit dictionary with transliteration, accentuation, and 
-etymological analysis throughout*. London: Oxford University Press, 1929. - 
+http://dsal.uchicago.edu/dictionaries/macdonell/ Macdonell, Arthur Anthony. 
+
+*A practical Sanskrit dictionary with transliteration, accentuation, and 
+
+etymological analysis throughout*. London: Oxford University Press, 1929. - 
+
 я так понимаю, тоже не включался. Сложности с тем, чтобы спарсить?
 
 ## 38. Artem Novikov — 2013-03-10 10:43:54
 
-Стесняюсь спросить, включался куда? Если в БД, то он всегда там был, 
-смотрите Help->About
-
-воскресенье, 10 марта 2013 г., 3:24:10 UTC+8 пользователь Marcis написал:
->
-> http://dsal.uchicago.edu/dictionaries/macdonell/ Macdonell, Arthur 
-> Anthony. *A practical Sanskrit dictionary with transliteration, 
-> accentuation, and etymological analysis throughout*. London: Oxford 
-> University Press, 1929. - я так понимаю, тоже не включался. Сложности с 
-> тем, чтобы спарсить?
+Стесняюсь спросить, включался куда? Если в БД, то он всегда там был, 
+
+смотрите Help->About
+
+
+
+воскресенье, 10 марта 2013 г., 3:24:10 UTC+8 пользователь Marcis написал:
+
+>
+
+> http://dsal.uchicago.edu/dictionaries/macdonell/ Macdonell, Arthur 
+
+> Anthony. *A practical Sanskrit dictionary with transliteration, 
+
+> accentuation, and etymological analysis throughout*. London: Oxford 
+
+> University Press, 1929. - я так понимаю, тоже не включался. Сложности с 
+
+> тем, чтобы спарсить?
+
 >
 
 ## 39. Marcis — 2013-03-10 12:01:32
@@ -1245,25 +1311,44 @@ On Wednesday, 13 March 2013 13:46:55 UTC+4, Artem Novikov wrote:
 
 ## 49. Dmitri — 2013-03-20 20:41:55
 
-Артём,
-
-А как Вы решили проблему отсутсвия в 
-http://dsal.uchicago.edu/dictionaries/macdonell/   страниц?  (Например там 
-после 99 следует 104)
-
-On Sunday, March 10, 2013 12:43:54 AM UTC-7, Artem Novikov wrote:
->
-> Стесняюсь спросить, включался куда? Если в БД, то он всегда там был, 
-> смотрите Help->About
->
-> воскресенье, 10 марта 2013 г., 3:24:10 UTC+8 пользователь Marcis написал:
->>
->> http://dsal.uchicago.edu/dictionaries/macdonell/ Macdonell, Arthur 
->> Anthony. *A practical Sanskrit dictionary with transliteration, 
->> accentuation, and etymological analysis throughout*. London: Oxford 
->> University Press, 1929. - я так понимаю, тоже не включался. Сложности с 
->> тем, чтобы спарсить?
->>
+Артём,
+
+
+
+А как Вы решили проблему отсутсвия в 
+
+http://dsal.uchicago.edu/dictionaries/macdonell/   страниц?  (Например там 
+
+после 99 следует 104)
+
+
+
+On Sunday, March 10, 2013 12:43:54 AM UTC-7, Artem Novikov wrote:
+
+>
+
+> Стесняюсь спросить, включался куда? Если в БД, то он всегда там был, 
+
+> смотрите Help->About
+
+>
+
+> воскресенье, 10 марта 2013 г., 3:24:10 UTC+8 пользователь Marcis написал:
+
+>>
+
+>> http://dsal.uchicago.edu/dictionaries/macdonell/ Macdonell, Arthur 
+
+>> Anthony. *A practical Sanskrit dictionary with transliteration, 
+
+>> accentuation, and etymological analysis throughout*. London: Oxford 
+
+>> University Press, 1929. - я так понимаю, тоже не включался. Сложности с 
+
+>> тем, чтобы спарсить?
+
+>>
+
 >
 
 ## 50. Marcis — 2013-03-20 21:07:19
@@ -1356,3 +1441,5 @@ On Wednesday, 20 March 2013 21:41:55 UTC+4, Dmitri wrote:
 > Про них речь?
 > *
 >
+
+_Dr. Mārcis Gasūns_

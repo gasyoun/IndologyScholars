@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7504377942804267008
 subject: "Умер датский индолог Johannes Bronkhorst"
@@ -21,3 +23,5 @@ source_url: https://groups.google.com/d/msgid/nagari/2843019e-95c8-4226-b071-551
 Один из величайших светил нашего времени. R.I.P.
 
 [image: j-bronkhorst.jpg]
+
+_Dr. Mārcis Gasūns_

@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 6387656348767617024
 subject: "Raavana EkaPaatraAbhinayah - Ravana in sanskrit play"
@@ -68,3 +70,5 @@ https://www.youtube.com/watch?v=7JOwBdfkjVw
 >Вы получили это сообщение, поскольку подписаны на группу "Общество ревнителей санскрита (Sanscrit)".
 >Чтобы отменить подписку на эту группу и больше не получать от нее сообщения, отправьте письмо на электронный адрес  nagari+unsubscribe@… .
 >Чтобы настроить другие параметры, перейдите по ссылке  https://groups.google.com/d/optout .
+
+_Dr. Mārcis Gasūns_

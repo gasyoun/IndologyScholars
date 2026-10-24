@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7558800888187322368
 subject: "🗣 БАРТЕР (ВРЕМЯ vs. НАВЫКИ)"
@@ -32,3 +34,5 @@ source_url: https://groups.google.com/d/msgid/nagari/235f7b71-98d1-45f6-8d9a-6b9
 нам в телеграм samskrtam.ru/ku, искренне Ваш, Марцис Юрьевич
 
 [image: DSC_0651.JPG]
+
+_Dr. Mārcis Gasūns_

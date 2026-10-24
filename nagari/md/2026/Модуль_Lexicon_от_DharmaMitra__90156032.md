@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7653401877290156032
 subject: "Модуль Lexicon от DharmaMitra"
@@ -23,3 +25,5 @@ source_url: https://groups.google.com/d/msgid/nagari/48d100a6-3d74-4464-93b3-0da
 https://lexicon.dharmamitra.org
 
 [image: fdgdfgfdgfgd.png]
+
+_Dr. Mārcis Gasūns_

@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 1321429106688
 subject: "Diskussion zu history-of-writing"
@@ -64,3 +66,5 @@ http://groups.google.com/group/Nagari/web/personalia-kantselson
 On 21 О©╫О©╫О©╫, 02:35, "sujanasi" <sujan...@…> wrote:
 > ?? О©╫О©╫О©╫О©╫О©╫О©╫ О©╫О©╫ О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫, О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫.
 > О©╫О©╫О©╫ О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫.http://www.krugosvet.ru/articles/69/1006946/1006946a1.htm
+
+_Dr. Mārcis Gasūns_

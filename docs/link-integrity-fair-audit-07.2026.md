@@ -105,7 +105,7 @@ informational classes.
   whether the URL persistence cost is worth the cleaner identifier.
 - Known limitations reported, not re-fixed here (fenced to their own handoffs):
   the Renou rule-table substring defect is
-  [H459](https://github.com/gasyoun/Uprava/blob/main/handoffs/H459-Sonnet_IndologyScholars_renou-rules-anchor-fix-and-dedupe_10.07.26.md)'s
+  [H459](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H459-Sonnet_IndologyScholars_renou-rules-anchor-fix-and-dedupe_10.07.26.md)'s
   scope; the `Indology/` repo split + DOI is
   [H460](https://github.com/gasyoun/Uprava/blob/main/handoffs/H460-Sonnet_IndologyScholars_indology-atlas-repo-split-doi_10.07.26.md)'s;
   Zenodo DOI deposition remains frozen org-wide until after 15-07-2026.

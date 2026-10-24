@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 25435774648320
 subject: "Russian IPA Converter"
@@ -32,3 +34,5 @@ On Monday, December 9, 2013 8:25:11 PM UTC+2, ken p wrote:
 > How one can read Russian language in IPA characters 
 > One may post a link here.
 >
+
+_Dr. Mārcis Gasūns_

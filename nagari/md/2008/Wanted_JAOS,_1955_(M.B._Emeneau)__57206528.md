@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 5125757206528
 subject: "Wanted: JAOS, 1955 (M.B. Emeneau)"
@@ -17,12 +19,18 @@ source_url: https://groups.google.com/d/msgid/nagari/cb54c7a1-e288-4b51-a533-ef9
 
 ## 1. Marcis — 2008-06-24 09:25:08
 
-Namaskar,
-
- If anybody could ever get a copy of M.B. Emeneau, India and
-Linguistics, - JAOS, vol. 75, 1955. I guess I would be one step closer
-to my PhD about the Sanskrit roots.
-
+Namaskar,
+
+
+
+ If anybody could ever get a copy of M.B. Emeneau, India and
+
+Linguistics, - JAOS, vol. 75, 1955. I guess I would be one step closer
+
+to my PhD about the Sanskrit roots.
+
+
+
 M.
 
 ## 2. Deshpande, Madhav — 2008-06-24 13:40:02 · 📎 1
@@ -88,3 +96,5 @@ With Best Regards
 KaliMa
 
 Satyan Nasti Paro Dharma
+
+_Dr. Mārcis Gasūns_

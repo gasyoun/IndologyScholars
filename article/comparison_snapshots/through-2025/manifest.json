@@ -1,0 +1,249 @@
+{
+  "created_at": "2026-08-06T07:25:51Z",
+  "creation_metadata_fields": [
+    "created_at"
+  ],
+  "crosswalk_version": "1.0.0",
+  "cutoff_date": "2025-12-31",
+  "files": [
+    {
+      "bytes": 2091,
+      "path": "DATA_DICTIONARY.md",
+      "sha256": "2255f532fa0ba49ac1d2df0bc53f98d79a5ce98806e992ec04f55cab4bc391c3"
+    },
+    {
+      "bytes": 9239,
+      "path": "claims_ledger.csv",
+      "sha256": "50b16663da2b0c3e04bebdb7bc6c64f19ec7496e140935a909d76434423c32e9"
+    },
+    {
+      "bytes": 1905,
+      "path": "codebooks/argument_level.csv",
+      "sha256": "65b1e70b33b75061b3427eb17c8398b0e4b3d21ade46b4b545fd23a48193c24a"
+    },
+    {
+      "bytes": 4506,
+      "path": "codebooks/community_function.csv",
+      "sha256": "c83143167bbefff3f47a7ef6bde15ccc21e9dc920092ef8f1b7c6ed2ad5282b0"
+    },
+    {
+      "bytes": 3621,
+      "path": "codebooks/intellectual_content.csv",
+      "sha256": "f9fbe2c96640f8f264b726a3f8dc014dc013e1aa547393869d77c1b74d86f6d3"
+    },
+    {
+      "bytes": 2073,
+      "path": "codebooks/native_topic.csv",
+      "sha256": "697cd57a78400213e6fb93541fcfad3c55f06681520dab112363c49913b230c7"
+    },
+    {
+      "bytes": 4525,
+      "path": "codebooks/renou_register.csv",
+      "sha256": "ab17c72fc22cf11dee360f90090ab2d5e94a7d51018b32617573f1f01e94bca2"
+    },
+    {
+      "bytes": 1516,
+      "path": "codebooks/renou_state.csv",
+      "sha256": "46daafbffd9cebd3adb2a65ac54a467163475078b973722deb6445bdf1af3037"
+    },
+    {
+      "bytes": 2921,
+      "path": "codebooks/shared_topic.csv",
+      "sha256": "8b98972b83b11ab4a1be5406ed1490eeb9162b96b30830a4a8823a42a7214cce"
+    },
+    {
+      "bytes": 32735,
+      "path": "codebooks/taxonomy_crosswalk.csv",
+      "sha256": "620d036850a9497c193f94a6af89ed44183fcf92cd6745d3f9834390b11d718f"
+    },
+    {
+      "bytes": 6085,
+      "path": "figures/captions.json",
+      "sha256": "a10a418c6c40f977781925c2ed6b9cb4fb0db8e93da68dd67266b7f27d4d9e0f"
+    },
+    {
+      "bytes": 6563,
+      "path": "figures/captions.md",
+      "sha256": "180bb21c0e73573d7dcd8fe8c50403f7426bb11b6129e6fde60f8f291aa8fd0b"
+    },
+    {
+      "bytes": 11358,
+      "path": "figures/fig1_activity_by_period.svg",
+      "sha256": "2712138e24a59963da9983c49601985934a2ed71290887809dbea8163bd17809"
+    },
+    {
+      "bytes": 8361,
+      "path": "figures/fig2_intellectual_content.svg",
+      "sha256": "393e2ee6f79355a35263915ade2cdadb8d1046b9b876ebb50f7721f50c47f5e7"
+    },
+    {
+      "bytes": 5094,
+      "path": "figures/fig3_community_function.svg",
+      "sha256": "8ca2de6a8ca1440f523c505ddc8aee21de75fa34843b09d17c5de8045821dcb4"
+    },
+    {
+      "bytes": 8113,
+      "path": "figures/fig4_argument_level.svg",
+      "sha256": "f0eb80482e22d5b6a22f72f1dfce6a876dd456d8f72d96e6fcc52522a7a4034d"
+    },
+    {
+      "bytes": 4641,
+      "path": "figures/fig5_person_overlap.svg",
+      "sha256": "66bac3985b742e7d4c4ccaa9bad106e916e1bcd1b06500b6e4453b831027419a"
+    },
+    {
+      "bytes": 4802,
+      "path": "figures/fig6_orientation_contrast.svg",
+      "sha256": "d96e5d6f868c51fe1609c11a3ef86fdc46646fef092b92bd61547adcbf660bd8"
+    },
+    {
+      "bytes": 510,
+      "path": "quotes_exportable.csv",
+      "sha256": "ade3b064658544666a5b51e8777d567c948cc3f0ff60952f5dc0bc9a71e46f2a"
+    },
+    {
+      "bytes": 5327403,
+      "path": "records.csv",
+      "sha256": "4d31b7c2914a837593091ba0005ee188300138440ed2bb553fe82837557a9277"
+    },
+    {
+      "bytes": 2091,
+      "path": "reports/bvp_adapter_reconciliation.md",
+      "sha256": "724e3b73143c8cd68e9d6b29a7a1431c57613e2d8ceefb1fd64a66331dbf0bb4"
+    },
+    {
+      "bytes": 2767,
+      "path": "reports/bvp_source_assessment.md",
+      "sha256": "2ec76617eacf977642290ff4d86ac2a3b3bbb753d254937b5d1525d72267e169"
+    },
+    {
+      "bytes": 6542,
+      "path": "reports/classification_validity.md",
+      "sha256": "c263851ae78230df5e7f38686a927b0012f47932e6304fc478de473dceb6ef40"
+    },
+    {
+      "bytes": 11204,
+      "path": "reports/comparison_validity.md",
+      "sha256": "f6d3e410a8b2bc9415fc085b04dc02af5d0deb20409eb954a8ce3d29f194a061"
+    },
+    {
+      "bytes": 1238,
+      "path": "reports/conferences_coverage.md",
+      "sha256": "b7c52f30d39ce0e21838deac64e2e3c4b0591f9c2d4fa3dcc8e3c9bcafbc8a7f"
+    },
+    {
+      "bytes": 6407,
+      "path": "reports/identity_quote_evidence.md",
+      "sha256": "49a33c87957fc74f8beb894203e4f995a79cc7d70fb8fc1a5ff1cba383c53981"
+    },
+    {
+      "bytes": 950,
+      "path": "reports/indology_l_coverage.md",
+      "sha256": "12bbcd92f54dfcfde7b78dd4ba62b596bff1730bad43d3b6f6e090da0cec233a"
+    },
+    {
+      "bytes": 1157,
+      "path": "reports/nagari_coverage.md",
+      "sha256": "f395658d57234c8a0537203dad3c76e254b95c78956b385ad890f96dce749a9a"
+    },
+    {
+      "bytes": 1105,
+      "path": "reports/vk_ors_coverage.md",
+      "sha256": "90fb9ba4f8f3a69864d381e83c5a9230d2b9903473d9f4d9812982498eb4a9d5"
+    },
+    {
+      "bytes": 9062,
+      "path": "schema.sql",
+      "sha256": "07f64a275e5ff9e0829733c3830a896f5c7f1d3d0b87ce4c462bcd3f5217c92d"
+    },
+    {
+      "bytes": 1632,
+      "path": "source_manifests.csv",
+      "sha256": "a96d26ebdb39961f5a6ca9374bab0bcddc440a016ffc2411bee9549f20222fed"
+    },
+    {
+      "bytes": 5881,
+      "path": "tables/activity_by_period.csv",
+      "sha256": "0b6a28213bbdd082a0dfb4a1afce2c7ede0e2967d5f09c6440247fe5d9dc9b18"
+    },
+    {
+      "bytes": 4114,
+      "path": "tables/argument_level_by_lens.csv",
+      "sha256": "38d664aa29521104a6a841262d1e362087a17b0182481ffe475a874aefde0e1e"
+    },
+    {
+      "bytes": 1830,
+      "path": "tables/community_function_by_lens.csv",
+      "sha256": "918008f6d48db324a8cce31bde52e0a58d38baf96cb6d09c43e100e7284bc6fd"
+    },
+    {
+      "bytes": 5245,
+      "path": "tables/intellectual_content_by_lens.csv",
+      "sha256": "2abd7c4b47b4fdbb793553761483d9b03ab9b98ed2ea96276715720a1ba5565b"
+    },
+    {
+      "bytes": 1561,
+      "path": "tables/lens_source_coverage.csv",
+      "sha256": "65511faaa6528413563722a30dd3d1c4e1b5ab6cb8bd0ccb8725e6350a22712e"
+    },
+    {
+      "bytes": 2618,
+      "path": "tables/orientation_contrast.csv",
+      "sha256": "fa85771c23f7779fd3dfc36755ab910be9ba22442a0f071f10b8f6af7b5f4ab0"
+    },
+    {
+      "bytes": 1708,
+      "path": "tables/person_overlap.csv",
+      "sha256": "20ad3eca92a14230d7f404176c069e031cd60b2f63ecfa288858815badca84fa"
+    }
+  ],
+  "pipeline": {
+    "crosswalk_inserted": 9494,
+    "duplicate_drops": [
+      {
+        "corpus_id": "conferences",
+        "dropped_record_ids": [],
+        "records_dropped_duplicate": 0,
+        "records_total": 1362
+      },
+      {
+        "corpus_id": "nagari",
+        "dropped_record_ids": [
+          "nagari:<1b223956-5244-4ce3-ac1d-600959c95433@40g2000prx.googlegroups.com>",
+          "nagari:<002b01c9627a$efc09e40$160513ac@acerd29f329b82>"
+        ],
+        "records_dropped_duplicate": 2,
+        "records_total": 18729
+      },
+      {
+        "corpus_id": "vk_ors",
+        "dropped_record_ids": [],
+        "records_dropped_duplicate": 0,
+        "records_total": 7608
+      },
+      {
+        "corpus_id": "indology_l",
+        "dropped_record_ids": [],
+        "records_dropped_duplicate": 0,
+        "records_total": 1
+      },
+      {
+        "corpus_id": "bvp",
+        "dropped_record_ids": [],
+        "records_dropped_duplicate": 0,
+        "records_total": 1
+      }
+    ],
+    "mentions_linked": 641,
+    "pilot_inserted": 26335
+  },
+  "record_accounting": {
+    "excluded_other_period": 427,
+    "excluded_undated": 2,
+    "included": 27270
+  },
+  "schema_version": "1.0.0",
+  "snapshot_name": "through-2025",
+  "snapshot_version": "h1899-snapshot-1.0.0",
+  "temporal_rule": "through-2025 holds records dated <= cutoff; partial-2026 holds records dated > cutoff; undated records belong to neither package"
+}

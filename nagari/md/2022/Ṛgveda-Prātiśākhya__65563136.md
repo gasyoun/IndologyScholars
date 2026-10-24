@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7058384443865563136
 subject: "Ṛgveda-Prātiśākhya"
@@ -18,3 +20,5 @@ source_url: https://groups.google.com/d/msgid/nagari/eae0557b-6291-4534-9f2e-165
 ## 1. Marcis — 2022-01-29 01:16:33
 
 см. https://sites.google.com/view/rv-pratishakhya
+
+_Dr. Mārcis Gasūns_

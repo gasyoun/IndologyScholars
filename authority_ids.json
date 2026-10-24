@@ -195,6 +195,10 @@
       "confidence": "candidate",
       "checked_at": "2026-06-10",
       "source": "roster_match"
+    },
+    "PERS_8a8c5d8b": {
+      "preferred_latin_name": "Vladimir Shelkovich",
+      "notes": "MG ruling 30-07-2026: rename url_slug vladimir -> vladimir-shelkovich"
     }
   },
   "organizations": {
@@ -483,6 +487,67 @@
       ],
       "wikidata": "Q7370051",
       "ror": "046a1ah60"
+    },
+    "ГМВ": {
+      "full_name_ru": "Государственный музей Востока",
+      "name_en": "State Museum of Oriental Art",
+      "alternateName": [
+        "ГМВ",
+        "Музей Востока"
+      ],
+      "wikidata": "Q1056108"
+    },
+    "МГТУ им. Баумана": {
+      "full_name_ru": "Московский государственный технический университет имени Н. Э. Баумана",
+      "name_en": "Bauman Moscow State Technical University",
+      "alternateName": [
+        "МГТУ",
+        "МГТУ им. Баумана"
+      ],
+      "wikidata": "Q1472245",
+      "ror": "00pb8h375"
+    },
+    "МАИ": {
+      "full_name_ru": "Московский авиационный институт",
+      "name_en": "Moscow Aviation Institute",
+      "alternateName": [
+        "МАИ"
+      ],
+      "wikidata": "Q1719898",
+      "ror": "033zpbv42"
+    },
+    "РГХПУ им. Строганова": {
+      "full_name_ru": "Российский государственный художественно-промышленный университет имени С. Г. Строганова",
+      "name_en": "Stroganov Moscow State Academy of Arts and Industry",
+      "alternateName": [
+        "РГХПУ",
+        "РГХПУ им. С.Г. Строганова"
+      ],
+      "wikidata": "Q2360835",
+      "ror": "01a233t53"
+    },
+    "УРАО": {
+      "full_name_ru": "Университет Российской академии образования",
+      "name_en": "University of the Russian Academy of Education",
+      "alternateName": [
+        "УРАО",
+        "УРИО",
+        "University of Russian Innovation Education"
+      ],
+      "url": "https://urio-edu.ru",
+      "wikidata": "Q4475813",
+      "ror": "02d2yjc53"
+    },
+    "ГБУ Замок Шереметьева": {
+      "full_name_ru": "Государственное бюджетное учреждение культуры Республики Марий Эл «Замок Шереметева»",
+      "name_en": "Sheremetev Castle (Yurino)",
+      "alternateName": [
+        "ГБУ «Замок Шереметьева»",
+        "Замок Шереметева",
+        "Замок Шереметьева"
+      ],
+      "url": "https://zamoksheremeteva.com",
+      "wikidata": "Q4523096"
     }
   },
   "places": {

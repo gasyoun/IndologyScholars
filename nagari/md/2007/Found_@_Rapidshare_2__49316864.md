@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 2226849316864
 subject: "Found @ Rapidshare 2"
@@ -58,3 +60,5 @@ Fantastich
 On 18 О©╫О©╫О©╫, 01:17, danstender <uzs...@…> wrote:
 http://rapidshare.com/files/26121401/zimmerleben.pdfhttp://rapidshare.com/files/26122703/macdonellmythology.pdfhttp://rapidshare.com/files/26124912/gondavediclit.pdfhttp://rapidshare.com/files/26508660/myliuswb-csx.texhttp://rapidshare.com/files/26510633/hillebrandt_-_vedische_mythologi...http://rapidshare.com/files/26512516/windisch_-_geschichte_sanskritph...http://rapidshare.com/files/26512732/vogel_-_anfaenge_studiums_lexiko...http://rapidshare.com/files/26514050/renou_-_grammaire_vedique.djvuhttp://rapidshare.com/files/26514377/rau_-_vedische_altertumskunde.pdf
 > Daniel Stender
+
+_Dr. Mārcis Gasūns_

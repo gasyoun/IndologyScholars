@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7205878388949516288
 subject: "Klaus Konrad. Die altindische Kosmologie"
@@ -23,3 +25,5 @@ Klaus; Konrad; Die altindische Kosmologie: Nach den Brahmanas dargestellt;
 Индуизм; Источник; Основной фонд
 
 см. https://vk.com/samskrtamru?w=wall-88831040_17680
+
+_Dr. Mārcis Gasūns_

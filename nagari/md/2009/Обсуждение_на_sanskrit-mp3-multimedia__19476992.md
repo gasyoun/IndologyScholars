@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7489419476992
 subject: "Обсуждение на sanskrit-mp3-multimedia"
@@ -17,5 +19,8 @@ source_url: https://groups.google.com/d/msgid/nagari/06a29daa-68c1-41c3-bd55-69e
 
 ## 1. Salmira — 2009-05-09 22:18:08
 
-Files could not be found. Please check the download links or uppload
+Files could not be found. Please check the download links or uppload
+
 once againe...
+
+_Dr. Mārcis Gasūns_

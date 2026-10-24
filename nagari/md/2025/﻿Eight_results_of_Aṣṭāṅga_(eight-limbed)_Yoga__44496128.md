@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7472335780344496128
 subject: "﻿Eight results of Aṣṭāṅga (eight-limbed) Yoga"
@@ -40,3 +42,5 @@ laghutvamārogyamalolupatvaṃ varṇaprasādaḥ svarasauṣṭhavaṃ ca
 gandhaḥ śubho mūtrapurīṣamalpaṃ yogapravṛttiṃ prathamāṃ vadanti
 
 (Śvetāśvataropaniṣad 2.13)
+
+_Dr. Mārcis Gasūns_

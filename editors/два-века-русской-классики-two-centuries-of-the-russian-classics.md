@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 # Два века русской классики/ Two centuries of the Russian classics
 
 - **ISSN:** 2686-7494
@@ -20,3 +22,5 @@
 ## Контакты
 
 <!-- E-mail редакции, адрес для отправки -->
+
+_Dr. Mārcis Gasūns_

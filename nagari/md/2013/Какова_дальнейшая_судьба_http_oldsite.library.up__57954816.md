@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 23076657954816
 subject: "Какова дальнейшая судьба http://oldsite.library.upenn.edu ?"
@@ -93,3 +95,5 @@ http://dla.library.upenn.edu/dla/medren/search.html?fq=collection_facet%3A%22Ind
 > http://dla.library.upenn.edu/dla/medren/search.html?fq=collection_facet%3A%22Indic%20Manuscripts%22%20AND%20facsimile_facet%3A%22Yes%22&
 >
 >
+
+_Dr. Mārcis Gasūns_

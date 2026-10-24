@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 21957758156800
 subject: "Мраморная бумага для обложки книги (XIX в.)"
@@ -17,13 +19,20 @@ source_url: https://groups.google.com/d/msgid/nagari/7d6d08b4-3c85-4589-b1df-a82
 
 ## 1. Marcis — 2013-03-12 20:46:40
 
-Таких книг особенно много в библиотеке Рериха и у Елизаренковой, эти 
-обложки - всегда интересно разглядывать.
-Marbled Paper Texture 
-http://naldzgraphics.net/textures/free-marbled-paper-texture/
-Vintage 18th c. marbled papers 
-http://vintageprintable.com/wordpress/vintage-printable-%E2%80%93-art-and-design/design-textile-and-paper/design-paper-marbleized-papers-and-related/design-paper-marbleized-orange-1-2-4/#
-http://vintageprintable.com/wordpress/vintage-printable-%E2%80%93-art-and-design/design-textile-and-paper/design-paper-marbleized-orange-2/
+Таких книг особенно много в библиотеке Рериха и у Елизаренковой, эти 
+
+обложки - всегда интересно разглядывать.
+
+Marbled Paper Texture 
+
+http://naldzgraphics.net/textures/free-marbled-paper-texture/
+
+Vintage 18th c. marbled papers 
+
+http://vintageprintable.com/wordpress/vintage-printable-%E2%80%93-art-and-design/design-textile-and-paper/design-paper-marbleized-papers-and-related/design-paper-marbleized-orange-1-2-4/#
+
+http://vintageprintable.com/wordpress/vintage-printable-%E2%80%93-art-and-design/design-textile-and-paper/design-paper-marbleized-orange-2/
+
 http://vintageprintable.com/wordpress/vintage-printable-%E2%80%93-art-and-design/design-textile-and-paper/design-paper-marbleized-blue-1/
 
 ## 2. Stormwatsch — 2013-03-12 21:25:08
@@ -52,3 +61,5 @@ http://vintageprintable.com/wordpress/vintage-printable-%E2%80%93-art-and-design
 >
 > http://vintageprintable.com/wordpress/vintage-printable-%E2%80%93-art-and-design/design-textile-and-paper/design-paper-marbleized-blue-1/
 >
+
+_Dr. Mārcis Gasūns_

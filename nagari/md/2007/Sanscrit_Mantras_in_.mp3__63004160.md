@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 3248263004160
 subject: "Sanscrit Mantras in .mp3"
@@ -278,3 +280,5 @@ http://rapidshare.com/files/57512871/Ayyappa-STOTRAMALA.rar
 
 On 14 О©╫О©╫О©╫О©╫, 20:59, О©╫О©╫О©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ <indigo_...@…> wrote:
 > who are you,and how did you now about my interests about sanskrit and mantras?
+
+_Dr. Mārcis Gasūns_

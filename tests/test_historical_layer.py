@@ -65,7 +65,7 @@ def test_speaker_count_is_talk_derived_not_person_count(conn):
         "SELECT COUNT(*) FROM person WHERE person_kind = 'historical'"
     ).fetchone()[0]
     assert with_talk == total_person - historical
-    assert with_talk == 268
+    assert with_talk == 276
 
 
 def test_historical_figures_never_presented(conn):
@@ -106,8 +106,8 @@ def test_historical_figures_carry_a_discipline(conn):
 
 
 def test_site_data_keeps_268_and_lists_historical_apart(site_data):
-    assert site_data["summary"]["total_scholars"] == 268
-    assert len(site_data["scholars"]) == 268
+    assert site_data["summary"]["total_scholars"] == 276
+    assert len(site_data["scholars"]) == 276
     historical = site_data.get("historical_scholars", [])
     assert len(historical) >= 26
     participant_ids = {s["id"] for s in site_data["scholars"]}

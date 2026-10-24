@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7317652598602858496
 subject: "The theories of error in Indian philosophy"
@@ -28,3 +30,5 @@ study. - Delhi : Ajanta, 1978. - X, 146 p. - Библиогр. с.126-142.-Ук�
 Философия • Индия • Древний период
 
 см. https://vk.com/samskrtamru?w=wall-88831040_20783
+
+_Dr. Mārcis Gasūns_

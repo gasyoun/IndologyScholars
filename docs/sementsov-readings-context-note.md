@@ -1,9 +1,11 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 # Sementsov Readings Context Note
 
-[Documentation index](README.md) | [Institutional scope](institutional-scope.md)
+[Documentation index](https://github.com/gasyoun/IndologyScholars/blob/main/docs/README.md) | [Institutional scope](https://github.com/gasyoun/IndologyScholars/blob/main/docs/institutional-scope.md)
 
 This note records how
-[`paribok-recension-sementsovskie-2026.pdf`](paribok-recension-sementsovskie-2026.pdf)
+[`paribok-recension-sementsovskie-2026.pdf`](https://github.com/gasyoun/IndologyScholars/blob/main/docs/paribok-recension-sementsovskie-2026.pdf)
 fits the first PPV article on Zograf and Roerich Readings.
 
 ## Source
@@ -24,7 +26,7 @@ The relevant contribution is:
 ## Relation To The PPV Article
 
 The current article
-[`article/ppv_submission_article.md`](../article/ppv_submission_article.md)
+[`article/ppv_submission_article.md`](https://github.com/gasyoun/IndologyScholars/blob/main/article/ppv_submission_article.md)
 measures two long-running public conference venues: the Zograf Readings and
 the Roerich Readings. The Sementsov Readings are not part of that measured
 two-venue corpus. They begin in 2022, are too recent for the present
@@ -144,3 +146,5 @@ row-level quantitative evidence for the current article.
 Use the Paribok PDF as a qualitative witness to the conference ecology around
 the Zograf/Roerich article. Do not use it as quantitative evidence inside the
 current article's two-venue model.
+
+_Dr. Mārcis Gasūns_

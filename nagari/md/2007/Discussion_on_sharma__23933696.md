@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 3338923933696
 subject: "Discussion on sharma"
@@ -132,3 +134,5 @@ On Oct 3, 7:33 pm, Worga <swo...@…> wrote:
 ## 5. Worga — 2007-10-03 15:33:13
 
 http://rapidshare.com/files/59970720/RamaNathSharmaTheASTAdhyAyIofPANiniVolume6.zip
+
+_Dr. Mārcis Gasūns_

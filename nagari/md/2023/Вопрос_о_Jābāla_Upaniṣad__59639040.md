@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7293416124359639040
 subject: "Вопрос о Jābāla Upaniṣad"
@@ -293,3 +295,5 @@ chin and the head.*
 > Отправлено из Почты Mail.ru <https://trk.mail.ru/c/zzm979>
 >  
 >
+
+_Dr. Mārcis Gasūns_

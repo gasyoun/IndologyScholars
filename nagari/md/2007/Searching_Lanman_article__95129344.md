@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 2881795129344
 subject: "Searching Lanman article"
@@ -88,3 +90,5 @@ I think If there will not be any solution, it is not a bad decision.
 
 Best wishes,
 Sct.
+
+_Dr. Mārcis Gasūns_

@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 # Интерактивные визуализации: Архитектура и сценарии использования / Interactive Visualizations: Architecture & Use Cases
 
 [Открыть страницу визуализаций на сайте / Open visualisations page on the live site](https://gasyoun.github.io/IndologyScholars/findings/visualisations.html)
@@ -87,3 +89,5 @@ To ensure rigorous scientific reproducibility and robust academic citation, ever
 1. **Картирование смены парадигм**:
    - *RU*: Исследователь может проследить, как традиционные текстологические термины (например, «манускрипт», «редакция») перетекали или вытеснялись современными междисциплинарными концептами («дискурс», «гендер») на протяжении 22 лет.
    - *EN*: Scholars can track how traditional philological and textual terms (e.g., "manuscript", "recension") morphed, split, or were superseded by contemporary interdisciplinary frameworks ("discourse", "gender") over more than two decades.
+
+_Dr. Mārcis Gasūns_

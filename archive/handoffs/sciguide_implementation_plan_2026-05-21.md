@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 # SciGuide Integration — Gemini Flash Implementation Plan
 
 Generated: 2026-05-21  
@@ -357,3 +359,5 @@ If you are only asked to plan, return:
 If you are asked to implement in a code-capable environment, make a small patch following this plan and report changed files plus validation output.
 
 Do not produce a broad rewrite. Keep the first sprint practical, reviewable, and boring in the best possible way.
+
+_Dr. Mārcis Gasūns_

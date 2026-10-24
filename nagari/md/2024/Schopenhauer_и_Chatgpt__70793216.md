@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7434043002470793216
 subject: "Schopenhauer и Chatgpt"
@@ -60,3 +62,5 @@ CharGPT:
 Я: 
 Вывод какой? Сначала нужно учить латынь, а потом уже санскрит. А не 
 наоборот.
+
+_Dr. Mārcis Gasūns_

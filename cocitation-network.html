@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сеть со-цитирований индологов | Архив российской индологии</title>
+    <meta name="description" content="Со-цитирования индологов из базы IndologyScholars в корпусе гуглгруппы «Общество ревнителей санскрита» (2005–2026): хабы, каналы, школы.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://gasyoun.github.io/IndologyScholars/cocitation-network.html">
+    <link rel="icon" href="/IndologyScholars/assets/favicon.svg" type="image/svg+xml">
+    <meta name="theme-color" content="#0a0e1a">
+    <script defer src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <style>
+        :root {
+            color-scheme: dark;
+            --bg: #030712; --panel: rgba(17, 24, 39, 0.85); --border: rgba(255,255,255,0.08);
+            --text: #f3f4f6; --muted: #9ca3af; --accent: #8b5cf6; --accent-2: #22d3ee;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; }
+        .wrap { max-width: 1280px; margin: 0 auto; padding: 32px 20px 60px; }
+        header h1 { font-size: clamp(24px, 4vw, 38px); letter-spacing: -0.02em; }
+        header p { color: var(--muted); max-width: 80ch; margin-top: 10px; }
+        header a { color: var(--accent-2); text-decoration: none; }
+        header a:hover { text-decoration: underline; }
+        .grid { display: grid; grid-template-columns: 2fr 1fr; gap: 18px; margin-top: 24px; }
+        @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }
+        .card { background: var(--panel); border: 1px solid var(--border); border-radius: 14px; padding: 18px; }
+        .card h2 { font-size: 15px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 10px; }
+        #net { width: 100%; height: 640px; border-radius: 10px; background: rgba(3,7,18,0.6); }
+        .stats { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+        .stat { background: var(--panel); border: 1px solid var(--border); border-radius: 12px; padding: 12px 18px; min-width: 130px; }
+        .stat b { display: block; font-size: 22px; color: var(--accent-2); }
+        .stat span { color: var(--muted); font-size: 12px; }
+        ol { padding-left: 20px; font-size: 14px; }
+        ol li { margin: 4px 0; }
+        ol li small { color: var(--muted); }
+        .note { color: var(--muted); font-size: 12.5px; margin-top: 18px; border-top: 1px solid var(--border); padding-top: 12px; }
+        #loading { color: var(--muted); padding: 40px; text-align: center; }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <header>
+        <h1>Сеть со-цитирований индологов</h1>
+        <p>Со-цитирование = два индолога из базы <a href="indologists.html">IndologyScholars</a> упомянуты в одном
+        треде закрытой гуглгруппы «Общество ревнителей санскрита» (2005–2026, экспорт
+        <code>nagari/md/</code>). Вес ребра — число тредов, где пара встретилась вместе. Построение:
+        <code>tools/build_cocitation_network.py</code> (H6060), детерминировано. Родственная карта
+        соавторств — <a href="networks.html">networks.html</a>.</p>
+    </header>
+
+    <div class="stats" id="stats"></div>
+
+    <div class="grid">
+        <div class="card">
+            <h2>Граф со-цитирований (цвет = сообщество)</h2>
+            <div id="net"><div id="loading">Чтение analytics_output/cocitation_network_data.json…</div></div>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:18px;">
+            <div class="card">
+                <h2>Хабы — суммарный вес</h2>
+                <ol id="hubs"></ol>
+            </div>
+            <div class="card">
+                <h2>Каналы — betweenness</h2>
+                <ol id="channels"></ol>
+            </div>
+            <div class="card">
+                <h2>Школы — сообщества (weight ≥ 2)</h2>
+                <ol id="schools"></ol>
+            </div>
+        </div>
+    </div>
+
+    <p class="note">Ограничения: со-упоминания по стемам фамилий (падежи учтены усечением); однофамильцы и
+    имена-омонимы дают шум — веса читаются как порядок, а не точные числа; треды со списками
+    (программы конференций) дают «звёздные» сгустки. Это co-mention в дискурсе, а не строгие
+    библиометрические со-цитирования по спискам литературы. Отчёт и данные:
+    <a href="analytics_output/cocitation_report.md" style="color:var(--accent-2)">cocitation_report.md</a>,
+    CSV рядом в <code>analytics_output/</code>.</p>
+</div>
+
+<script>
+const BASE = window.location.pathname.includes('/IndologyScholars/') ? '/IndologyScholars/' : './';
+const PALETTE = ['#8b5cf6','#22d3ee','#f59e0b','#10b981','#ef4444','#3b82f6','#e879f9','#facc15'];
+
+function num(x) { return (x == null) ? '—' : (Math.round(x * 1000) / 1000); }
+
+async function fetchData() {
+    for (const url of [BASE + 'analytics_output/cocitation_network_data.json',
+                       'analytics_output/cocitation_network_data.json']) {
+        try {
+            const r = await fetch(url);
+            if (r.ok) return await r.json();
+        } catch (e) { /* next */ }
+    }
+    throw new Error('data not found');
+}
+
+async function fetchMetrics() {
+    for (const url of [BASE + 'analytics_output/cocitation_network_metrics.json',
+                       'analytics_output/cocitation_network_metrics.json']) {
+        try {
+            const r = await fetch(url);
+            if (r.ok) return await r.json();
+        } catch (e) { /* next */ }
+    }
+    return null;
+}
+
+async function main() {
+    const [data, m] = await Promise.all([fetchData(), fetchMetrics()]);
+
+    const nodes = data.nodes.map(n => ({ ...n,
+        color: PALETTE[n.group % PALETTE.length],
+        font: { color: '#d1d5db', size: 11 },
+        scaling: { min: 6, max: 42, label: { enabled: false } },
+    }));
+    const edges = data.edges.map(e => ({ ...e,
+        color: { color: 'rgba(148, 163, 184, 0.22)', highlight: 'rgba(139, 92, 246, 0.9)', hover: 'rgba(139, 92, 246, 0.5)' },
+        smooth: false,
+    }));
+
+    const container = document.getElementById('net');
+    new vis.Network(container, { nodes: new vis.DataSet(nodes), edges: new vis.DataSet(edges) }, {
+        layout: { improvedLayout: true },
+        physics: { solver: 'forceAtlas2Based', forceAtlas2Based: { gravitationalConstant: -55, centralGravity: 0.008, springLength: 45, springConstant: 0.09, damping: 0.5 }, stabilization: { iterations: 350 } },
+        interaction: { hover: true, tooltipDelay: 120, navigationButtons: false },
+    });
+
+    if (m) {
+        const n = m.network, c = m.corpus;
+        document.getElementById('stats').innerHTML = [
+            [n.nodes, 'узлов (≥2 тредов)'], [n.edges, 'рёбер'], [n.total_cocitation_weight, 'суммарный вес'],
+            [c.threads_scanned, 'тредов корпуса'], [n.communities, 'сообществ'], ['Q ' + n.modularity_q, 'модулярность'],
+        ].map(([v, l]) => `<div class="stat"><b>${v}</b><span>${l}</span></div>`).join('');
+
+        document.getElementById('hubs').innerHTML = m.top_hubs_strength.slice(0, 10)
+            .map(h => `<li>${h.name} <small>вес ${h.strength} · ${h.threads} тредов</small></li>`).join('');
+        document.getElementById('channels').innerHTML = m.top_channels_betweenness.slice(0, 10)
+            .map(h => `<li>${h.name} <small>${num(h.betweenness)} · degree ${h.degree}</small></li>`).join('');
+        document.getElementById('schools').innerHTML = m.schools.map(s =>
+            `<li>${s.top_members.slice(0, 3).map(x => x.name).join(', ')} <small>и ещё ${s.size - 3}… (всего ${s.size})</small></li>`).join('');
+    }
+}
+main().catch(err => { document.getElementById('loading').textContent = 'Ошибка: ' + err.message; });
+</script>
+</body>
+</html>

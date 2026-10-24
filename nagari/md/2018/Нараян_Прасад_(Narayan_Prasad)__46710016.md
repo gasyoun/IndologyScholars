@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 6533197661146710016
 subject: "Нараян Прасад (Narayan Prasad)"
@@ -43,3 +45,5 @@ https://groups.google.com/forum/#!forum/nagari - ибо помимо проче�
 М.Г.,
 
 фото из Деканского колледжа в г. Пуне
+
+_Dr. Mārcis Gasūns_

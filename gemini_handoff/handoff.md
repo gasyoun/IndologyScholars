@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 # Visualisation roadmap handoff — Gemini Flash 3.5
 
 Generated: 2026-05-28  
@@ -189,3 +191,5 @@ The following ideas have been proposed for future development. They fully align 
 3. **Scholar Activity Forest (Ridge/Swarm Plot)**: A timeline tracking the top 30-50 most active scholars over the 22-year span, highlighting career longevity, "new generation" arrivals, and peak activity periods.
 4. **Thematic Hierarchy (Sunburst/Treemap)**: A multi-level hierarchical chart showing volume proportions from Series -> Theme -> Meso Level -> Specific Keywords.
 5. **Dynamic Keyword Bubble Cloud**: A physics-based or packed bubble chart of the most frequent keywords/themes extracted via DeepSeek, without strict hierarchical constraints.
+
+_Dr. Mārcis Gasūns_

@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 9176902270976
 subject: "Yoga Shikha upanishad"
@@ -39,3 +41,5 @@ On 14 апр, 03:55, Serge <renuv...@…> wrote:
 >
 > > Подскажите пожалуйста, где в сети можно найти Yoga Shikha upanishad на
 > > деванагари или в транслитерации.
+
+_Dr. Mārcis Gasūns_

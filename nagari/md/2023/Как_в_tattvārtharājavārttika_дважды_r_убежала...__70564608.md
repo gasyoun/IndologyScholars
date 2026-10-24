@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7225315990970564608
 subject: "Как в tattvārtharājavārttika дважды r убежала..."
@@ -19,3 +21,5 @@ source_url: https://groups.google.com/d/msgid/nagari/98e9a1c8-47a2-41a4-b13b-846
 
 [image: ffdsdssdf.png]Кто не ошибался в (напечатанной) обложке дважды, не 
 ошибался еще никогда...
+
+_Dr. Mārcis Gasūns_

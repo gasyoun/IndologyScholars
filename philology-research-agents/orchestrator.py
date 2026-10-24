@@ -12,7 +12,7 @@ Usage:
 Configuration (environment, first match wins for provider):
   ANTHROPIC_API_KEY + optional ANTHROPIC_MODEL (default claude-sonnet-4-20250514)
   OPENMODEL_API_KEY / OPENMODEL_BASE_URL / OPENMODEL_MODEL
-  DEEPSEEK_API_KEY  / DEEPSEEK_MODEL (default deepseek-chat)
+  DEEPSEEK_API_KEY  / DEEPSEEK_MODEL (default deepseek-v4-flash)
   Or set PROVIDER=anthropic|openmodel|deepseek|openai explicitly.
 """
 
@@ -100,7 +100,7 @@ def resolve_provider() -> dict:
         return {
             "provider": "openai_compat",
             "api_key": deepseek_key,
-            "model": os.environ.get("DEEPSEEK_MODEL", "deepseek-chat"),
+            "model": os.environ.get("DEEPSEEK_MODEL", "deepseek-v4-flash"),
             "base_url": os.environ.get("DEEPSEEK_BASE_URL", "https://api.deepseek.com/v1"),
         }
     if forced == "openai" or (not forced and openai_key):

@@ -26,7 +26,7 @@ all three half-finished.
 - `vk-ors/vk_ors_archive/{ingest,insights,page}.py` + `fetch.py` — the
   existing pipeline (Uprava
   [H1520](https://github.com/gasyoun/Uprava/blob/main/handoffs/H1520-Sonnet_IndologyScholars_vk-ors-wall-archive-extract_23.07.26.md),
-  [H1532](https://github.com/gasyoun/Uprava/blob/main/handoffs/H1532-Sonnet_IndologyScholars_vk-post-inventory-source_23.07.26.md)).
+  [H1532](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H1532-Sonnet_IndologyScholars_vk-post-inventory-source_23.07.26.md)).
   Read `vk-ors/README.md` and `vk-ors/.ai_state.md` first — they document the
   four existing analysis layers and the fetch→ingest→insights→page order.
   This plan **extends** that pipeline; it does not replace it.
@@ -83,7 +83,7 @@ all three half-finished.
 
 ## Execution handoff
 
-Uprava [H1557](https://github.com/gasyoun/Uprava/blob/main/handoffs/H1557-Sonnet_IndologyScholars_vk-ors-advanced-viz-grok-plan_24.07.26.md)
+Uprava [H1557](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H1557-Sonnet_IndologyScholars_vk-ors-advanced-viz-grok-plan_24.07.26.md)
 carries the starter line for Grok.
 
 _Dr. Mārcis Gasūns_

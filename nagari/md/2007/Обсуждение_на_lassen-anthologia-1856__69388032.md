@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 1698569388032
 subject: "Обсуждение на lassen-anthologia-1856"
@@ -31,3 +33,5 @@ On 29 О©╫О©╫О©╫, 14:40, "klaus" <NVMORO...@…> wrote:
 
 May I have a look at the scanned pages? To correct errors and
 misprints.
+
+_Dr. Mārcis Gasūns_

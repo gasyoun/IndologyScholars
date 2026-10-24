@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 2096629809152
 subject: "Grassmanns 'Woerterbuch zum Rigveda'"
@@ -166,3 +168,5 @@ On 15 апр, 10:47, "danstender" <uzs...@…> wrote:
 >
 > Gruss nach Russland,
 > Daniel Stender
+
+_Dr. Mārcis Gasūns_

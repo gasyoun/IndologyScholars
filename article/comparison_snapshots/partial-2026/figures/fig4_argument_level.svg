@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="690" viewBox="0 0 1000 690" role="img" aria-labelledby="t d">
+<title id="t">Рис. 4. Шкала Гумилёва (argument_level) на применимых записях</title>
+<desc id="d">Порог валидности V6 не проверен: межлинзовое распределение Гумилёва НЕ публикуется, пилотные доли приведены только как внутрилинзовая композиция.</desc>
+<rect x="0" y="0" width="1000" height="690" fill="#ffffff"/>
+<text x="24.0" y="34.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="start" fill="#1b1b1b">Рис. 4. Шкала Гумилёва (argument_level) на применимых записях</text>
+<text x="24.0" y="56.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="normal" text-anchor="start" fill="#1b1b1b">Конференции — принятое существующее свидетельство; остальные линзы — детерминированный ПИЛОТ без человеческой проверки.</text>
+<text x="24.0" y="74.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="normal" text-anchor="start" fill="#1b1b1b">Порог валидности V6 не проверен: межлинзовое распределение Гумилёва НЕ публикуется, пилотные доли приведены только как внутрилинзовая композиция.</text>
+<text x="24.0" y="104.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="start" fill="#1b1b1b">Рериховские/Зографские чтения (conferences) · ед. = presentation · полное покрытие · N(записи с этой осью)=1361</text>
+<text x="28.0" y="131.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" font-weight="normal" text-anchor="start" fill="#1b1b1b">G1</text>
+<rect x="250.0" y="122.0" width="369.5" height="12.0" fill="#123a6b"/>
+<text x="623.5" y="132.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="9" font-weight="normal" text-anchor="start" fill="#1b1b1b">1070/1361 (78.6%)</text>
+<text x="28.0" y="151.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" font-weight="normal" text-anchor="start" fill="#1b1b1b">G2</text>
+<rect x="250.0" y="142.0" width="70.4" height="12.0" fill="#123a6b"/>
+<text x="324.4" y="152.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="9" font-weight="normal" text-anchor="start" fill="#1b1b1b">204/1361 (15.0%)</text>
+<text x="28.0" y="171.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" font-weight="normal" text-anchor="start" fill="#1b1b1b">G1</text>
+<rect x="250.0" y="162.0" width="25.9" height="12.0" fill="#123a6b"/>
+<text x="279.9" y="172.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="9" font-weight="normal" text-anchor="start" fill="#1b1b1b">75/1361 (5.5%)</text>
+<text x="28.0" y="191.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" font-weight="normal" text-anchor="start" fill="#1b1b1b">G3</text>
+<rect x="250.0" y="182.0" width="3.8" height="12.0" fill="#123a6b"/>
+<text x="257.8" y="192.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="9" font-weight="normal" text-anchor="start" fill="#1b1b1b">11/1361 (0.8%)</text>
+<text x="28.0" y="211.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" font-weight="normal" text-anchor="start" fill="#1b1b1b">G2</text>
+<rect x="250.0" y="202.0" width="0.3" height="12.0" fill="#123a6b"/>
+<text x="254.3" y="212.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="9" font-weight="normal" text-anchor="start" fill="#1b1b1b">1/1361 (0.1%)</text>
+<text x="24.0" y="244.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="start" fill="#1b1b1b">nagari (закрытая Google-группа) · ед. = message · PILOT · N(записи с этой осью)=18727</text>
+<text x="28.0" y="271.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" font-weight="normal" text-anchor="start" fill="#1b1b1b">unknown</text>
+<rect x="250.0" y="262.0" width="344.0" height="12.0" fill="#b0824a"/>
+<text x="598.0" y="272.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="9" font-weight="normal" text-anchor="start" fill="#1b1b1b">13705/18727 (73.2%)</text>
+<text x="28.0" y="291.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" font-weight="normal" text-anchor="start" fill="#1b1b1b">G1</text>
+<rect x="250.0" y="282.0" width="119.7" height="12.0" fill="#b0824a"/>
+<text x="373.7" y="292.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="9" font-weight="normal" text-anchor="start" fill="#1b1b1b">4769/18727 (25.5%)</text>
+<text x="28.0" y="311.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" font-weight="normal" text-anchor="start" fill="#1b1b1b">G2</text>
+<rect x="250.0" y="302.0" width="4.4" height="12.0" fill="#b0824a"/>
+<text x="258.4" y="312.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="9" font-weight="normal" text-anchor="start" fill="#1b1b1b">174/18727 (0.9%)</text>
+<text x="28.0" y="331.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" font-weight="normal" text-anchor="start" fill="#1b1b1b">not_applicable</text>
+<rect x="250.0" y="322.0" width="1.2" height="12.0" fill="#b0824a"/>
+<text x="255.2" y="332.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="9" font-weight="normal" text-anchor="start" fill="#1b1b1b">47/18727 (0.3%)</text>
+<text x="28.0" y="351.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" font-weight="normal" text-anchor="start" fill="#1b1b1b">G3</text>
+<rect x="250.0" y="342.0" width="0.8" height="12.0" fill="#b0824a"/>
+<text x="254.8" y="352.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="9" font-weight="normal" text-anchor="start" fill="#1b1b1b">32/18727 (0.2%)</text>
+<text x="24.0" y="384.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="start" fill="#1b1b1b">ORS/VK (стена сообщества) · ед. = post · полное покрытие · N(записи с этой осью)=7608</text>
+<text x="28.0" y="411.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" font-weight="normal" text-anchor="start" fill="#1b1b1b">unknown</text>
+<rect x="250.0" y="402.0" width="470.0" height="12.0" fill="#6b8fbc"/>
+<text x="724.0" y="412.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="9" font-weight="normal" text-anchor="start" fill="#1b1b1b">7608/7608 (100.0%)</text>
+<rect x="28.0" y="438.0" width="940.0" height="34.0" fill="none" stroke="#9a9a9a" stroke-width="1" stroke-dasharray="5 4"/>
+<text x="498.0" y="451.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#9a9a9a">INDOLOGY-L: НЕТ НАБЛЮДЕНИЯ</text>
+<text x="498.0" y="468.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" font-weight="normal" text-anchor="middle" fill="#9a9a9a">source_unavailable_on_this_machine</text>
+<rect x="28.0" y="478.0" width="940.0" height="34.0" fill="none" stroke="#9a9a9a" stroke-width="1" stroke-dasharray="5 4"/>
+<text x="498.0" y="491.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#9a9a9a">BVP (Bharatiya Vidvat Parishad): НЕТ НАБЛЮДЕНИЯ</text>
+<text x="498.0" y="508.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" font-weight="normal" text-anchor="middle" fill="#9a9a9a">source_unavailable_on_this_machine</text>
+<text x="24.0" y="664.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" font-weight="normal" text-anchor="start" fill="#1b1b1b">Доли считаются от записей ТОЙ ЖЕ линзы, размеченных по этой оси; не от всех записей и не от суммы линз.</text>
+</svg>

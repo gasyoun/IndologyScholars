@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 20992218890240
 subject: "Vedic chants"
@@ -20,3 +22,5 @@ source_url: https://groups.google.com/d/msgid/nagari/7751bb0c-4bb8-402e-8a83-c46
 В Ведах иногда встречается слог "Гум". И в мантрах - тоже. И произносится и 
 прописывается. 
 Подскажите пожалуйста, что это.
+
+_Dr. Mārcis Gasūns_

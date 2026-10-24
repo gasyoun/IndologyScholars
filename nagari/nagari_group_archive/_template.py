@@ -137,6 +137,7 @@ footer{padding:30px 0 60px;color:var(--muted);font-size:.85rem}
     <a href="#hronologia">Хронология</a>
     <a href="#lyudi">Люди</a>
     <a href="#temy">Темы</a>
+    <a href="#sushchnosti">Сущности</a>
     <a href="#seti">Сети</a>
     <a href="#knigi">Книгохранилище</a>
     <a href="#sanskrit">Санскрит</a>
@@ -212,7 +213,7 @@ footer{padding:30px 0 60px;color:var(--muted);font-size:.85rem}
 <section class="section" id="temy"><div class="wrap">
   <div class="kicker">Темы</div>
   <h2>О чём говорили</h2>
-  <p class="lead">Каждое сообщение размечено по ключевым словам темы группы (тема может попадать в несколько рубрик). Больше всего — о <b>текстах</b> и их чтении, об <b>учебниках и грамматике</b>, о <b>книгах</b> и <b>словарях</b>; отдельная устойчивая линия — <b>шрифты и юникод</b> деванагари.</p>
+  <p class="lead">Каждое сообщение размечено по двухуровневой рубрике — раздел и тема внутри него (сообщение может попадать в несколько тем). Больше всего — о <b>текстах</b> и их чтении, об <b>учебниках и грамматике</b>, о <b>книгах</b> и <b>словарях</b>; отдельная устойчивая линия — <b>шрифты и юникод</b> деванагари.</p>
   <div class="card">
     <button class="tbtn" data-toggle="t_topics">таблица</button>
     <h3>Темы по годам</h3>
@@ -221,6 +222,44 @@ footer{padding:30px 0 60px;color:var(--muted);font-size:.85rem}
     <div id="c_topics"></div>
     <div id="t_topics" class="hidden"></div>
   </div>
+
+  <div class="card">
+    <h3>Разделы и темы внутри них</h3>
+    <p class="note">Столбец — раздел (сумма всех тем внутри). Нажмите на раздел, чтобы раскрыть темы внутри.</p>
+    <div id="c_parents"></div>
+    <div id="c_children"></div>
+  </div>
+
+  <div class="cols">
+    <div class="card">
+      <h3>Какие темы обсуждаются вместе</h3>
+      <p class="note">Пары тем, чаще всего встречающиеся в одном треде (без учёта «разное»/шаблонных пар).</p>
+      <div id="t_cooc"></div>
+    </div>
+    <div class="card">
+      <h3>Устойчивые словосочетания</h3>
+      <p class="note">Вместо частот отдельных слов — многословные коллокации (PMI/логарифм правдоподобия) и TF-IDF термины.</p>
+      <div class="chips" id="ch_phrases"></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="section" id="sushchnosti"><div class="wrap">
+  <div class="kicker">Сущности</div>
+  <h2>О чём и о ком именно</h2>
+  <p class="lead">Помимо тем — какие конкретно тексты, учёные, словари и инструменты упоминались в переписке (сопоставление по эталонным спискам названий, с алиасами на русском/IAST/латинице). Ниже — самые частые сущности по типу и как менялась их упоминаемость по годам.</p>
+  <div id="c_entity_types"></div>
+  <div class="card">
+    <h3>Темы × сущности</h3>
+    <p class="note">Насколько плотно каждая тема связана с каждой сущностью — насыщеннее ячейка, чаще совместное упоминание.</p>
+    <div id="c_topic_entity"></div>
+  </div>
+  <div class="card">
+    <h3>Упоминаемость по годам</h3>
+    <p class="note">12 самых частых сущностей.</p>
+    <div id="c_entity_trends"></div>
+  </div>
+  <div id="c_quotes"></div>
 </div></section>
 
 <section class="section" id="seti"><div class="wrap">
@@ -520,6 +559,108 @@ function chips(mountId,items){
   items.forEach(it=>{const c=document.createElement("span");c.className=cls;c.innerHTML=`${it.t}<b>${fmt(it.c)}</b>`;m.appendChild(c);});
 }
 
+// ---- H1518 Step 7: parent/child topic drill-down ----
+function parentBars(){
+  const mount=$("#c_parents");mount.innerHTML="";
+  const items=DATA.parent_totals;
+  hbars("#c_parents",items,{label:p=>p.parent,value:p=>p.count});
+  mount.querySelectorAll("rect.s1").forEach((rect,i)=>{
+    rect.style.cursor="pointer";
+    rect.addEventListener("click",()=>childBars(items[i].parent));
+  });
+  if(items.length)childBars(items[0].parent);
+}
+function childBars(parent){
+  const kids=DATA.parent_children[parent]||[];
+  const mount=$("#c_children");mount.innerHTML=`<p class="note" style="margin:0 0 6px">${parent} — темы внутри раздела</p><div id="c_children_inner"></div>`;
+  hbars("#c_children_inner",kids,{label:k=>k.tag,value:k=>k.count});
+}
+
+// ---- topic co-occurrence (table, no bodies) ----
+function coocTable(){
+  let h="<table class=data><thead><tr><th>Тема A</th><th>Тема B</th><th class=n>Тредов вместе</th></tr></thead><tbody>";
+  DATA.cooc.forEach(e=>h+=`<tr><td>${e.a}</td><td>${e.b}</td><td class=n>${fmt(e.n)}</td></tr>`);
+  $("#t_cooc").innerHTML=h+"</tbody></table>";
+}
+
+// ---- phrase cloud (multi-word collocations, not single-word frequency) ----
+function phraseCloud(){
+  const m=$("#ch_phrases");m.innerHTML="";
+  const items=DATA.phrases_llr.slice(0,40).map(p=>({t:p,c:0})).concat(
+    DATA.phrases_tfidf.slice(0,15).map(p=>({t:p,c:0})));
+  items.forEach(it=>{const c=document.createElement("span");c.className="chip";c.textContent=it.t;m.appendChild(c);});
+}
+
+// ---- entity types: one horizontal-bar card per type ----
+function entityTypeCards(){
+  const mount=$("#c_entity_types");mount.innerHTML="";
+  DATA.entity_types.forEach((et,ti)=>{
+    const card=document.createElement("div");card.className="card";
+    const id=`c_ent_${ti}`;
+    card.innerHTML=`<h3>${et.label}</h3><p class="note">${et.items.length} из категории, самые частые ниже.</p><div id="${id}"></div>`;
+    mount.appendChild(card);
+    hbars(`#${id}`,et.items,{label:e=>e.name,value:e=>e.count});
+  });
+}
+
+// ---- topic x entity heatmap (categorical, reuses the year x month palette) ----
+function topicEntityHeatmap(){
+  const mount=$("#c_topic_entity");mount.innerHTML="";
+  const M=DATA.topic_entity_matrix, topics=M.topics, ents=M.entities;
+  if(!topics.length||!ents.length){mount.textContent="—";return;}
+  const cell=26,gap=3,m={l:150,t:90,r:10,b:8};
+  const W=m.l+m.r+ents.length*(cell+gap),H=m.t+m.b+topics.length*(cell+gap);
+  const F=frame(mount,W,H,m);
+  let vmax=1;M.cells.forEach(row=>row.forEach(v=>vmax=Math.max(vmax,v)));
+  ents.forEach((e,j)=>{
+    const t=txt(F.svg,m.l+j*(cell+gap)+cell/2,m.t-8,e.length>18?e.slice(0,17)+"…":e,"tick");
+    t.setAttribute("text-anchor","start");t.setAttribute("transform",`rotate(-40 ${m.l+j*(cell+gap)+cell/2} ${m.t-8})`);
+  });
+  topics.forEach((tpc,i)=>{
+    txt(F.svg,m.l-8,m.t+i*(cell+gap)+cell/2+4,tpc,"tick").setAttribute("text-anchor","end");
+    M.cells[i].forEach((v,j)=>{
+      const x=m.l+j*(cell+gap),y=m.t+i*(cell+gap);
+      const t=v/vmax, op=v?0.12+0.88*Math.sqrt(t):0;
+      const c=add(F.svg,"rect",{x,y,width:cell,height:cell,rx:5,fill:"var(--seq)","fill-opacity":op});
+      c.setAttribute("stroke","var(--border)");
+      hoverable(c,`<b>${tpc}</b> × <b>${ents[j]}</b><br>${fmt(v)} упом.`);
+    });
+  });
+}
+
+// ---- entity trend lines (top entities, count per year) ----
+function entityTrendLines(){
+  const mount=$("#c_entity_trends");mount.innerHTML="";
+  const series=DATA.entity_trends;
+  if(!series.length){mount.textContent="—";return;}
+  const years=DATA.activity.map(r=>r.year);
+  const W=1000,H=380,m={l:52,r:16,t:12,b:34};
+  const F=frame(mount,W,H,m);
+  let ymax=1;series.forEach(s=>s.series.forEach(p=>ymax=Math.max(ymax,p.count)));ymax*=1.08;
+  const X=i=>m.l+(i/(years.length-1))*F.iw, Y=v=>m.t+F.ih-(v/ymax)*F.ih;
+  yGrid(F,ymax,4);
+  years.forEach((y,i)=>{if(i%2===0||i===years.length-1)txt(F.svg,X(i),H-14,y,"tick").setAttribute("text-anchor","middle");});
+  const byYear=Object.fromEntries(years.map((y,i)=>[y,i]));
+  series.forEach((s,si)=>{
+    let d="";s.series.forEach((p,i)=>{const xi=byYear[p.year];if(xi==null)return;d+=(i?"L":"M")+X(xi)+","+Y(p.count);});
+    const cls=SERCLS[si%SERCLS.length];
+    const p=add(F.svg,"path",{d,class:cls,fill:"none","stroke-width":2,"stroke-opacity":.85});
+    s.series.forEach(pt=>{const xi=byYear[pt.year];if(xi==null)return;
+      const dot=add(F.svg,"circle",{cx:X(xi),cy:Y(pt.count),r:5,fill:"transparent"});
+      hoverable(dot,`<b>${s.entity}</b> · ${pt.year}<br>${fmt(pt.count)} упом.`);});
+  });
+  const L=document.createElement("div");L.className="legend";
+  series.forEach((s,si)=>{L.innerHTML+=`<span><span class="sw" style="display:inline-block;background:var(--${SERCLS[si%SERCLS.length]})"></span> ${s.entity}</span>`;});
+  mount.parentElement.insertBefore(L,mount);
+}
+
+// ---- quote surface: wired but disabled (Wave-2 human gate, H1518) ----
+function quoteBlock(){
+  if(!DATA.show_quotes){return;}
+  // Intentionally never reached in Wave 1 -- enabling this is a human
+  // @DECIDE after /publish-safety-check, not something this generator does.
+}
+
 // ---- tables ----
 function authorsTable(){
   let h="<table class=data><thead><tr><th>Автор</th><th class=n>Сообщ.</th><th class=n>Начал тем</th><th>Годы</th></tr></thead><tbody>";
@@ -579,6 +720,13 @@ chips("#ch_deva",DATA.deva);
 chips("#ch_iast",DATA.iast);
 notableTable();
 search();
+parentBars();
+coocTable();
+phraseCloud();
+entityTypeCards();
+topicEntityHeatmap();
+entityTrendLines();
+quoteBlock();
 
 // ---- partial-year disclosure (filled only when the data ends mid-year) ----
 if(PARTIAL){

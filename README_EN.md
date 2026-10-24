@@ -1,6 +1,6 @@
 # IndologyScholars: Archive of Talks in Russian Indology
 
-_Created: 24-04-2026 · Last updated: 23-07-2026_
+_Created: 24-04-2026 · Last updated: 25-09-2026_
 
 [Русская версия](https://github.com/gasyoun/IndologyScholars/blob/main/README.md) | [Developer documentation](https://github.com/gasyoun/IndologyScholars/blob/main/docs/development-en.md)
 
@@ -15,18 +15,17 @@ Sibling subsystems cover the closed Google Group of the Sanskrit Zealots Society
 
 ## Archive Coverage
 
-The published speaker collection (`site_data.json` summary, current as of
-23 July 2026) contains:
+The published speaker collection (`site_data.json` summary of 2026-10-24) contains:
 
 | Measure | Value |
 | --- | ---: |
-| Speaker profiles | 268 |
-| Unique talks | 1362 |
-| Author participations | 1388 |
-| Programme years | 22, from 2004 to 2026 |
-| Speakers found at both series | 41 |
-| Zograf Readings only | 163 |
-| Roerich Readings only | 64 |
+| Speaker profiles | 276 |
+| Unique talks | 1385 |
+| Author participations | 1411 |
+| Programme years | 23, from 2004 to 2026 |
+| Speakers found at both series | 42 |
+| Zograf Readings only | 162 |
+| Roerich Readings only | 72 |
 
 The archive covers the Zograf Readings for 2004-2026 and the Roerich Readings
 for 2007-2025. The 2026 Zograf programme is included as a preliminarily
@@ -87,7 +86,7 @@ pages for interpretive context.
 
 To cite the project, use the
 [citation guidance](https://gasyoun.github.io/IndologyScholars/how-to-cite.html)
-or [CITATION.cff](CITATION.cff).
+or [CITATION.cff](https://github.com/gasyoun/IndologyScholars/blob/main/CITATION.cff).
 
 ## Documentation
 

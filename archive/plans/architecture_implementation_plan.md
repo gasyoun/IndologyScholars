@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 # Architecture Implementation Plan
 
 Date: 2026-05-21  
@@ -6,8 +8,8 @@ Goal: implement architecture hardening in reviewable steps, starting with ID sta
 
 > This is a dated implementation record. For current build instructions and
 > publication-state figures, see
-> [docs/development-en.md](../../docs/development-en.md) or
-> [docs/development.md](../../docs/development.md).
+> [docs/development-en.md](https://github.com/gasyoun/IndologyScholars/blob/main/docs/development-en.md) or
+> [docs/development.md](https://github.com/gasyoun/IndologyScholars/blob/main/docs/development.md).
 
 ## 0. Implementation Status
 
@@ -572,3 +574,5 @@ Expected output:
 - a visible measurement of ID churn;
 - a list of duplicate stable-key candidates;
 - enough evidence to implement deterministic IDs safely in PR 3.
+
+_Dr. Mārcis Gasūns_

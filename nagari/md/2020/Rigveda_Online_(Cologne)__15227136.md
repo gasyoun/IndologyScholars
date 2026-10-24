@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 6786183539915227136
 subject: "Rigveda Online (Cologne)"
@@ -23,3 +25,5 @@ By far the best site there is
 https://vedaweb.uni-koeln.de/rigveda/view/index/0
 
 M.
+
+_Dr. Mārcis Gasūns_

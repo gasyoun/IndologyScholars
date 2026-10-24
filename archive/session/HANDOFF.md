@@ -1,8 +1,10 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 # HANDOFF: IndologyScholars
 
 > Historical session handoff retained for audit context. It is not the current
-> data or development guide. See [docs/development-en.md](../../docs/development-en.md)
-> or [docs/development.md](../../docs/development.md) for maintained instructions and
+> data or development guide. See [docs/development-en.md](https://github.com/gasyoun/IndologyScholars/blob/main/docs/development-en.md)
+> or [docs/development.md](https://github.com/gasyoun/IndologyScholars/blob/main/docs/development.md) for maintained instructions and
 > current publication-state figures.
 
 **Last Updated:** 2026-05-24
@@ -114,3 +116,5 @@ graph TD
 ---
 
 **END OF HANDOFF**
+
+_Dr. Mārcis Gasūns_

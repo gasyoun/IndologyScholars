@@ -1,0 +1,191 @@
+CREATE
+LAST	Len	"Korneeva Natalia Afanasyevna"
+LAST	Lru	"Корнеева Наталья Афанасьевна"
+LAST	P31	Q5	S854	"https://gasyoun.github.io/IndologyScholars/s/natalia-korneeva.html"
+LAST	P106	Q18524037	S854	"https://gasyoun.github.io/IndologyScholars/s/natalia-korneeva.html"
+LAST	P101	Q625510
+LAST	P569	+1972-00-00T00:00:00Z/9
+LAST	P27	Q159
+
+CREATE
+LAST	Len	"Tavastsherna Sergey Sergeevich"
+LAST	Lru	"Тавастшерна Сергей Сергеевич"
+LAST	P31	Q5	S854	"https://gasyoun.github.io/IndologyScholars/s/sergey-tavastsherna.html"
+LAST	P106	Q18524037	S854	"https://gasyoun.github.io/IndologyScholars/s/sergey-tavastsherna.html"
+LAST	P101	Q625510
+LAST	P569	+1969-00-00T00:00:00Z/9
+LAST	P27	Q159
+LAST	P108	Q27621	S854	"https://gasyoun.github.io/IndologyScholars/s/sergey-tavastsherna.html"
+
+CREATE
+LAST	Len	"Alexandrova Natalia Vladimirovna"
+LAST	Lru	"Александрова Наталия Владимировна"
+LAST	P31	Q5	S854	"https://gasyoun.github.io/IndologyScholars/s/natalia-alexandrova.html"
+LAST	P106	Q18524037	S854	"https://gasyoun.github.io/IndologyScholars/s/natalia-alexandrova.html"
+LAST	P101	Q625510
+LAST	P569	+1965-00-00T00:00:00Z/9
+LAST	P27	Q159
+LAST	P108	Q1414442	S854	"https://gasyoun.github.io/IndologyScholars/s/natalia-alexandrova.html"
+
+CREATE
+LAST	Len	"Ryzhakova Svetlana Igorevna"
+LAST	Lru	"Рыжакова Светлана Игоревна"
+LAST	P31	Q5	S854	"https://gasyoun.github.io/IndologyScholars/s/svetlana-ryzhakova.html"
+LAST	P106	Q18524037	S854	"https://gasyoun.github.io/IndologyScholars/s/svetlana-ryzhakova.html"
+LAST	P101	Q625510
+LAST	P569	+1970-00-00T00:00:00Z/9
+LAST	P27	Q159
+
+CREATE
+LAST	Len	"Tsvetkova Svetlana Olegovna"
+LAST	Lru	"Цветкова Светлана Олеговна"
+LAST	P31	Q5	S854	"https://gasyoun.github.io/IndologyScholars/s/sofia-tsvetkova.html"
+LAST	P106	Q18524037	S854	"https://gasyoun.github.io/IndologyScholars/s/sofia-tsvetkova.html"
+LAST	P101	Q625510
+LAST	P569	+1978-00-00T00:00:00Z/9
+LAST	P27	Q159
+LAST	P108	Q27621	S854	"https://gasyoun.github.io/IndologyScholars/s/sofia-tsvetkova.html"
+
+CREATE
+LAST	Len	"Lysenko Victoria Georgievna"
+LAST	Lru	"Лысенко Виктория Георгиевна"
+LAST	P31	Q5	S854	"https://gasyoun.github.io/IndologyScholars/s/victoria-lysenko.html"
+LAST	P106	Q18524037	S854	"https://gasyoun.github.io/IndologyScholars/s/victoria-lysenko.html"
+LAST	P101	Q625510
+LAST	P569	+1953-00-00T00:00:00Z/9
+LAST	P27	Q159
+LAST	P108	Q4201389	S854	"https://gasyoun.github.io/IndologyScholars/s/victoria-lysenko.html"
+
+CREATE
+LAST	Len	"Dubyansky Alexander Mikhailovich"
+LAST	Lru	"Дубянский Александр Михайлович"
+LAST	P31	Q5	S854	"https://gasyoun.github.io/IndologyScholars/s/alexander-dubyansky.html"
+LAST	P106	Q18524037	S854	"https://gasyoun.github.io/IndologyScholars/s/alexander-dubyansky.html"
+LAST	P101	Q625510
+LAST	P569	+1941-00-00T00:00:00Z/9
+LAST	P27	Q159
+LAST	P108	Q13164	S854	"https://gasyoun.github.io/IndologyScholars/s/alexander-dubyansky.html"
+
+CREATE
+LAST	Len	"Vasilkov Yaroslav Vladimirovich"
+LAST	Lru	"Васильков Ярослав Владимирович"
+LAST	P31	Q5	S854	"https://gasyoun.github.io/IndologyScholars/s/vasilkov-yaroslav.html"
+LAST	P106	Q18524037	S854	"https://gasyoun.github.io/IndologyScholars/s/vasilkov-yaroslav.html"
+LAST	P101	Q625510
+LAST	P569	+1943-00-00T00:00:00Z/9
+LAST	P27	Q159
+LAST	P108	Q618774	S854	"https://gasyoun.github.io/IndologyScholars/s/vasilkov-yaroslav.html"
+
+CREATE
+LAST	Len	"Areg Mekhakyan"
+LAST	Lru	"Мехакян Арег Гайкович"
+LAST	P31	Q5	S854	"https://gasyoun.github.io/IndologyScholars/s/areg-mekhakyan.html"
+LAST	P106	Q18524037	S854	"https://gasyoun.github.io/IndologyScholars/s/areg-mekhakyan.html"
+LAST	P101	Q625510
+LAST	P569	+1978-00-00T00:00:00Z/9
+LAST	P27	Q159
+LAST	P108	Q1414442	S854	"https://gasyoun.github.io/IndologyScholars/s/areg-mekhakyan.html"
+
+CREATE
+LAST	Len	"Albedil Margarita Fedorovna"
+LAST	Lru	"Альбедиль Маргарита Федоровна"
+LAST	P31	Q5	S854	"https://gasyoun.github.io/IndologyScholars/s/albedil-margarita.html"
+LAST	P106	Q18524037	S854	"https://gasyoun.github.io/IndologyScholars/s/albedil-margarita.html"
+LAST	P101	Q625510
+LAST	P569	+1946-00-00T00:00:00Z/9
+LAST	P27	Q159
+
+CREATE
+LAST	Len	"Pskhu Ruzana Vladimirovna"
+LAST	Lru	"Псху Рузана Владимировна"
+LAST	P31	Q5	S854	"https://gasyoun.github.io/IndologyScholars/s/pskhu-ruzana.html"
+LAST	P106	Q18524037	S854	"https://gasyoun.github.io/IndologyScholars/s/pskhu-ruzana.html"
+LAST	P101	Q625510
+LAST	P569	+1976-00-00T00:00:00Z/9
+LAST	P27	Q159
+
+CREATE
+LAST	Len	"Ignatyev Andrey Alexandrovich"
+LAST	Lru	"Игнатьев Андрей Александрович"
+LAST	P31	Q5	S854	"https://gasyoun.github.io/IndologyScholars/s/ignatev-andrei.html"
+LAST	P106	Q18524037	S854	"https://gasyoun.github.io/IndologyScholars/s/ignatev-andrei.html"
+LAST	P101	Q625510
+LAST	P569	+1974-00-00T00:00:00Z/9
+LAST	P27	Q159
+
+CREATE
+LAST	Len	"Skorokhodova Tatyana Grigorievna"
+LAST	Lru	"Скороходова Татьяна Григорьевна"
+LAST	P31	Q5	S854	"https://gasyoun.github.io/IndologyScholars/s/skorokhodova-tatyana.html"
+LAST	P106	Q18524037	S854	"https://gasyoun.github.io/IndologyScholars/s/skorokhodova-tatyana.html"
+LAST	P101	Q625510
+LAST	P569	+1970-00-00T00:00:00Z/9
+LAST	P27	Q159
+
+CREATE
+LAST	Len	"Vertogradova Victoria Viktorovna"
+LAST	Lru	"Вертоградова Виктория Викторовна"
+LAST	P31	Q5	S854	"https://gasyoun.github.io/IndologyScholars/s/victoria-vertogradova.html"
+LAST	P106	Q18524037	S854	"https://gasyoun.github.io/IndologyScholars/s/victoria-vertogradova.html"
+LAST	P101	Q625510
+LAST	P569	+1933-00-00T00:00:00Z/9
+LAST	P27	Q159
+LAST	P108	Q1414442	S854	"https://gasyoun.github.io/IndologyScholars/s/victoria-vertogradova.html"
+
+CREATE
+LAST	Len	"Paribok Andrey Vsevolodovich"
+LAST	Lru	"Парибок Андрей Всеволодович"
+LAST	P31	Q5	S854	"https://gasyoun.github.io/IndologyScholars/s/paribok-andrei.html"
+LAST	P106	Q18524037	S854	"https://gasyoun.github.io/IndologyScholars/s/paribok-andrei.html"
+LAST	P101	Q625510
+LAST	P569	+1952-00-00T00:00:00Z/9
+LAST	P27	Q159
+LAST	P108	Q27621	S854	"https://gasyoun.github.io/IndologyScholars/s/paribok-andrei.html"
+
+CREATE
+LAST	Len	"Vecherina Olga Pavlovna"
+LAST	Lru	"Вечерина Ольга Павловна"
+LAST	P31	Q5	S854	"https://gasyoun.github.io/IndologyScholars/s/olga-vecherina.html"
+LAST	P106	Q18524037	S854	"https://gasyoun.github.io/IndologyScholars/s/olga-vecherina.html"
+LAST	P101	Q625510
+LAST	P569	+1960-00-00T00:00:00Z/9
+LAST	P27	Q159
+
+CREATE
+LAST	Len	"Vyrshchikov Evgeny Gennadievich"
+LAST	Lru	"Вырщиков Евгений Геннадьевич"
+LAST	P31	Q5	S854	"https://gasyoun.github.io/IndologyScholars/s/vyrshchikov-evgenii.html"
+LAST	P106	Q18524037	S854	"https://gasyoun.github.io/IndologyScholars/s/vyrshchikov-evgenii.html"
+LAST	P101	Q625510
+LAST	P569	+1978-00-00T00:00:00Z/9
+LAST	P27	Q159
+LAST	P108	Q1414442	S854	"https://gasyoun.github.io/IndologyScholars/s/vyrshchikov-evgenii.html"
+
+CREATE
+LAST	Len	"Desnitskaya Evgenia Alekseevna"
+LAST	Lru	"Десницкая Евгения Алексеевна"
+LAST	P31	Q5	S854	"https://gasyoun.github.io/IndologyScholars/s/desnitskaya-evgeniya.html"
+LAST	P106	Q18524037	S854	"https://gasyoun.github.io/IndologyScholars/s/desnitskaya-evgeniya.html"
+LAST	P101	Q625510
+LAST	P569	+1978-00-00T00:00:00Z/9
+LAST	P27	Q159
+LAST	P108	Q27621	S854	"https://gasyoun.github.io/IndologyScholars/s/desnitskaya-evgeniya.html"
+
+CREATE
+LAST	Len	"Lidova Natalia Rostislavovna"
+LAST	Lru	"Лидова Наталья Ростиславовна"
+LAST	P31	Q5	S854	"https://gasyoun.github.io/IndologyScholars/s/natalia-lidova.html"
+LAST	P106	Q18524037	S854	"https://gasyoun.github.io/IndologyScholars/s/natalia-lidova.html"
+LAST	P101	Q625510
+LAST	P569	+1954-00-00T00:00:00Z/9
+LAST	P27	Q159
+
+CREATE
+LAST	Len	"Ostrovskaya Elena Petrovna"
+LAST	Lru	"Островская Елена Петровна"
+LAST	P31	Q5	S854	"https://gasyoun.github.io/IndologyScholars/s/ostrovskaya-elena.html"
+LAST	P106	Q18524037	S854	"https://gasyoun.github.io/IndologyScholars/s/ostrovskaya-elena.html"
+LAST	P101	Q625510
+LAST	P569	+1950-00-00T00:00:00Z/9
+LAST	P27	Q159
+LAST	P108	Q1414442	S854	"https://gasyoun.github.io/IndologyScholars/s/ostrovskaya-elena.html"

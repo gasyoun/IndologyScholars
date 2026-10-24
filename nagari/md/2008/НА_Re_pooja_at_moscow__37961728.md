@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 5036837961728
 subject: "НА: Re: pooja at moscow"
@@ -14,14 +16,22 @@ last: 2008-05-09T12:52:04+03:00
 
 ## 1. Max Levin — 2008-05-09 12:52:04
 
-Max Levin
-
------ Исходное сообщение -----
-От: Vasu Srinivasan <vasya10@…>
-Отправлено: 28 апреля 2008 г. 22:35
-Кому: Nagari@…
-Тема: Re: pooja at moscow
-
+Max Levin
+
+
+
+----- Исходное сообщение -----
+
+От: Vasu Srinivasan <vasya10@…>
+
+Отправлено: 28 апреля 2008 г. 22:35
+
+Кому: Nagari@…
+
+Тема: Re: pooja at moscow
+
+
+
 Let me take the liberty to translate acharya-ji's reply to English.
 
 ---
@@ -60,3 +70,5 @@ On 4/28/08, Serge <renuvate@…> wrote:
 > & translated the question for you, as you don't speak r
 
 [Включено не все содержимое сообщения]
+
+_Dr. Mārcis Gasūns_

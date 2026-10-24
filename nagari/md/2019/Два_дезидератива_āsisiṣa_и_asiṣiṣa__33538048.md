@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 6762603936033538048
 subject: "Два дезидератива: āsisiṣa и asiṣiṣa"
@@ -76,3 +78,5 @@ s : asisiṣa-. Или гипотетически из as-3 (=aś > des. aśiśi
 "браться". (От ram дезид. riraṁsati.)
 
 >
+
+_Dr. Mārcis Gasūns_

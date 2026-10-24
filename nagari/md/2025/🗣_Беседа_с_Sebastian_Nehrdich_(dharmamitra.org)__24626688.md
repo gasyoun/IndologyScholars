@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7476445887424626688
 subject: "🗣 Беседа с Sebastian Nehrdich (dharmamitra.org)"
@@ -30,3 +32,5 @@ source_url: https://groups.google.com/d/msgid/nagari/daa923d3-5361-4a87-bce5-86f
 3) https://www.youtube.com/@MarcisGasuns
 
 [image: cover.png]
+
+_Dr. Mārcis Gasūns_

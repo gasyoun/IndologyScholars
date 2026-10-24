@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 16509898326016
 subject: "Triyyardha Madheehibho"
@@ -17,10 +19,18 @@ source_url: https://groups.google.com/d/msgid/nagari/ec872c2d-04e3-41da-a1bd-b98
 
 ## 1. Live to Love to Live — 2011-10-21 11:18:36
 
-Hi Members,
-
-Can any one help me with what is the meaning of "Triyyardha
-Madheehibho"?
-
-Regards,
+Hi Members,
+
+
+
+Can any one help me with what is the meaning of "Triyyardha
+
+Madheehibho"?
+
+
+
+Regards,
+
 Deekshith
+
+_Dr. Mārcis Gasūns_

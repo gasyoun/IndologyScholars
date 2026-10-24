@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 1199236448256
 subject: "Обсуждение на renou-histoire-1956"
@@ -674,3 +676,5 @@ On 5 О©╫О©╫О©╫, 11:21, "narayan prasad" <hin...@…> wrote:
 > > "Tahoma" font installed to see what's in the box.- О©╫О©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫ -
 >
 > - О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫ -
+
+_Dr. Mārcis Gasūns_

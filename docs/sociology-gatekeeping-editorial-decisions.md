@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 # Sociology and Gatekeeping Pages: Editorial Decisions
 
 Updated: 2026-06-01
@@ -155,3 +157,17 @@ Preferred Russian terms:
 - "сетевые сообщества".
 
 Avoid using "брокер" as the main public-facing term.
+
+_Dr. Mārcis Gasūns_
+
+## Naming from private-correspondence documents (added 2026-10-03)
+
+For the application-stage cases (section "Documented application-stage episodes: 2020 and 2025") an
+additional rule applies: a signatory of a committee letter may be named, because the signature stands
+on a document held by the archive's author. Conditions: (1) the name is presented as the signatory of
+a document, not as an accused party; (2) the letter's wording is paraphrased - verbatim quoting is
+possible only with the letter author's written consent; (3) structural vocabulary and the "motive not
+proven" caveat remain alongside. Documents: correspondence with the Roerich Readings committee
+(December 2020) and the Dubyanskiy Readings committee (June-August 2025); an archival copy is kept in
+a local (unpublished) repository annex. R. V. Pskhu's role in the 2026 Zograf Readings selection
+reflects the author's knowledge, is not confirmed by public documents, and is marked as such on the page.

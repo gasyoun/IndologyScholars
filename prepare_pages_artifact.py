@@ -1,5 +1,6 @@
 import shutil
 import re
+import sys
 from pathlib import Path
 
 
@@ -242,8 +243,22 @@ def prune_og_images(dest_root):
         shutil.rmtree(og_dir)
 
 
-def main():
-    dest = Path("_site")
+def _repo_root() -> Path:
+    return Path(__file__).resolve().parent
+
+
+def evaluate_gate(repo_root: Path | None = None):
+    """Import the H2578 gate without making ``scripts`` a package."""
+    scripts = _repo_root() / "scripts"
+    if str(scripts) not in sys.path:
+        sys.path.insert(0, str(scripts))
+    import publish_safety_gate as psg  # noqa: WPS433 — sibling script
+
+    return psg.evaluate(repo_root or _repo_root()), psg.format_report
+
+
+def populate_site(dest: Path) -> None:
+    dest = Path(dest)
     if dest.exists():
         shutil.rmtree(dest)
     dest.mkdir()
@@ -256,11 +271,30 @@ def main():
         copy_dir_as(source, dest, public_name)
     prune_og_images(dest)
     write_indology_archive_landing(dest)
-
     minify_site(dest)
-
     print(f"Prepared GitHub Pages artifact at {dest.resolve()}")
 
 
+def publish(dest: Path | None = None, upload=None, repo_root: Path | None = None) -> int:
+    """Run the rights gate, then build (and optionally upload) the Pages tree.
+
+    The upload callback is invoked only after a GO. Tests pass a recorder to
+    prove an unsafe publish never reaches artifact upload.
+    """
+    dest = Path(dest) if dest is not None else Path("_site")
+    verdict, format_report = evaluate_gate(repo_root)
+    print(format_report(verdict), end="")
+    if not verdict.ok:
+        return 1
+    populate_site(dest)
+    if upload is not None:
+        upload(dest)
+    return 0
+
+
+def main() -> int:
+    return publish()
+
+
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())

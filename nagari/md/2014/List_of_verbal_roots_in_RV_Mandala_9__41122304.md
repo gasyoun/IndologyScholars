@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 26247041122304
 subject: "List of verbal roots in RV Mandala 9"
@@ -17,14 +19,22 @@ source_url: https://groups.google.com/d/msgid/nagari/f12e2c7f-e176-4c16-897b-98c
 
 ## 1. Dmitri — 2014-02-28 22:38:14 · 📎 1
 
-Friday special for Marcis:
-
-Velthius encoding.
-Only verbal roots happening in RV9 are in the list along with the actual 
-frequency of occurrence.  
-RV9 has many words that do not have a clear etymology from a verbal root 
-(nakta, a.nu, svar, etc.).
-
+Friday special for Marcis:
+
+
+
+Velthius encoding.
+
+Only verbal roots happening in RV9 are in the list along with the actual 
+
+frequency of occurrence.  
+
+RV9 has many words that do not have a clear etymology from a verbal root 
+
+(nakta, a.nu, svar, etc.).
+
+
+
 Может сгодится на что.
 
 ## 2. Marcis — 2014-03-04 12:14:27
@@ -44,3 +54,5 @@ On Tuesday, March 4, 2014 2:14:27 AM UTC-7, Marcis wrote:
 > 481 корень - не мало. Вопрос - по омонимам, 2е это 2е по какой системе? 
 > Грасману или как? Например, √a"s2 или √yu2.
 >
+
+_Dr. Mārcis Gasūns_

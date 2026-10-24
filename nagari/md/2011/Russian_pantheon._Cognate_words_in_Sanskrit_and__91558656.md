@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 12250991558656
 subject: "Russian pantheon. Cognate words in Sanskrit and Russian."
@@ -16851,3 +16853,5 @@ reach.
 
 I read somewhere Lithuanian has even more words cognate with Sanskrit
 words. Any thoughts by readers?
+
+_Dr. Mārcis Gasūns_

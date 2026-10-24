@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 11061932589056
 subject: "The open manifesto - flood problem at nagari@…"
@@ -19260,3 +19262,5 @@ The open manifesto - flood problem at nagari@…
 >>
 >
 >
+
+_Dr. Mārcis Gasūns_

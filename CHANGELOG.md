@@ -1,10 +1,481 @@
+_Created: 15-08-2026 · Last updated: 24-10-2026_
+
 # История изменений (Changelog)
 
 Все заметные изменения в этом проекте будут отражены в данном файле.
 
 Этот проект представляет собой высокоточный академический конвейер для оцифровки, интеллектуального анализа и визуализации истории российской индологической науки.
 
+## 2026-10-24
+
+### H7243 — `prog_url` в `populate_roerich_talks` был unbound (F821)
+
+`pipeline/parser.py`: троичное присваивание `prog_url = ("correspondence:…-2005-11-26-dlel" if year == 2005 else prog_url)` ссылалось на само себя, поэтому для любого года, кроме 2005, имя оставалось несвязанным — ruff `F821`, а при исполнении `NameError` на `ROERICH_YEARS[1]`. Все годы получают один и тот же провенанс-URL: корпус уже несёт ровно это значение в строках 2005–2018 (`source_url` в `analytics_output/…`), то есть константа, а не вычисление. Присваивание вынесено из цикла; семантика данных не изменилась. Проверено: `ruff check --select F821 pipeline/parser.py` → 0, `python -m py_compile` → OK.
+
+## 2026-10-18
+
+### H7003 — bughunt 03.10.2026: 9 находок закрыты
+
+- M1: 5 смешанных EN-имён (кириллица в поле `full_name_en`) транслитерированы; биография больше не публикует кириллицу в английском поле.
+- M2: `calendar_sync.py` — all-day события получают exclusive `end = start + 1 день` (контракт Google Calendar) и идемпотентность через проверку существующего summary.
+- M3: возраст в аналитике считается от текущего года, а не от захардкоженного 2026.
+- M4: `Pillow>=10.4,<12` — установка снова возможна на заявленном полу Python 3.9.
+- L1: мёртвые ключи `DEGREE_DATA` (mixed-script `renkovskaya е а`; строка-степень вместо персоны) устранены.
+- L2: пустой `video_id` отбрасывается до сборки `YT_` media-id.
+- L3: обзорная страница Roerich больше не кэшируется под именем программы.
+- L4: битая ссылка на несуществующий doc в `pyfloor.py` убрана.
+- L5: скрапер сохраняет инициалы в имени (`Ivanov, I. V.`, а не `Ivanov, I`).
+
+---
+## 2026-10-06
+
+### H6060 — сеть со-цитирований индологов над корпусом nagari (builder + визуализация)
+
+Новый детерминированный билдер [tools/build_cocitation_network.py](https://github.com/gasyoun/IndologyScholars/blob/main/tools/build_cocitation_network.py): тред гуглгруппы «Общество ревнителей санскрита» (`nagari/md/`, 2 928 тредов) — цитирующий документ; два персоны из `conferences.db` со-цитированы, если стемы их фамилий (оба падежных усечения, патронимики и имена-омонимы отфильтрованы) встретились в одном треде. Сеть: 172 узла (≥2 тредов), 5 905 рёбер, суммарный вес 10 808, Q = 0.246, 4 школы ≥3 узлов (жадная модулярность на скелете weight≥2) + изоляты. Метрики per-node: degree, strength, betweenness (Брандес на весах), PageRank, сообщество. Мост к H5931: Цапеллер и Кочергина в корпусе совместно не обсуждаются (0 общих тредов при 4/193) — канал словаря остаётся лексикографическим фактом (ρ 0.571), дискурсом не проговариваемым. Визуализация [cocitation-network.html](https://github.com/gasyoun/IndologyScholars/blob/main/cocitation-network.html) (house-style vis-network, как networks.html); данные и отчёт — `analytics_output/cocitation_*` (внесены в Makefile `analytics` и rebuild CI). 17 юнит-тестов: `tests/test_cocitation_network.py`. Guardrails: со-упоминания ≠ библиометрические со-цитирования, веса читаются как порядок — оговорено в отчёте и на странице.
+
+## 2026-10-03
+
+### Nightly bug hunt 03.10.2026 — 0 HIGH, 4 MEDIUM, 5 LOW (report-only)
+
+Read-only bug hunt of the code surface ([BUGHUNT-FINDINGS-IndologyScholars-03.10.2026.md](https://github.com/gasyoun/IndologyScholars/blob/main/BUGHUNT-FINDINGS-IndologyScholars-03.10.2026.md)): no committed secrets, no HIGH findings; MEDIUMs cover published mixed-script `full_name_en` (5 scholars), an exclusive-end contract violation in `calendar_sync.py`, a hardcoded 2026 in age analytics, and `requirements.txt` failing on the declared 3.9 floor. Full suite verified green on 3.13 (464 passed, 13 skipped). MEDIUM/LOW report-only per MG ruling 26-09-2026; fix lane to follow.
+
+## 2026-08-29
+
+### H3646 — восстановлен базовый gate pre_push_stale_base_check.py (base_state), потерянный слиянием устаревшей ветки
+
+[scripts/pre_push_stale_base_check.py](https://github.com/gasyoun/IndologyScholars/blob/main/scripts/pre_push_stale_base_check.py)
+после `ba9cce6c5` (H2579, 14-08-2026) вводил gate классификации базы push
+(`clean`/`behind`/`diverged`/`remote-advanced`) со своим JSON-контрактом
+(`base_state`). Слияние устаревшей ветки `b47685068` (PR #245, 17-08-2026) не
+видело этот коммит и молча откатило его код — тот самый класс дефекта
+Uprava#1516, который сам файл призван ловить, — оставив только докстринг
+позднейшей ревизии «BLOCKS BY DEFAULT» без соответствующего кода. 9 тестов в
+[tests/test_pre_push_stale_base.py](https://github.com/gasyoun/IndologyScholars/blob/main/tests/test_pre_push_stale_base.py)
+падали с `AttributeError`/пропавшим `base_state`.
+
+- Восстановлены `classify_base`, `fetch_with_cap`, `resolve_live_tip`,
+  `report_base_block`, `BASE_BLOCK`/`FETCH_TRIES` из `ba9cce6c5`, поверх уже
+  существующих исключений `archive_normalized`/`is_registry_bookkeeping`.
+- [.githooks/pre-push](https://github.com/gasyoun/IndologyScholars/blob/main/.githooks/pre-push)
+  теперь передаёт `--remote-sha` из stdin пуша, чтобы gate видел
+  «remote-advanced» без лишнего fetch.
+- `test_silent_revert_warns_by_default_blocks_when_strict` мигрирован в
+  `test_silent_revert_blocks_by_default_strict_is_a_no_op`: докстринг файла
+  фиксирует решение MG от 16-08-2026 о переходе построчного скана с warn на
+  block-by-default, а этот тест остался нетронутым с исходного H2579-коммита
+  и проверял уже отменённое поведение.
+- `CITATION.cff` уже соответствует последнему тегу (`v1.12.17`) — подъём
+  версии не потребовался.
+- «Зависание >60с» из постановки задачи — не бесконечный цикл, а накладные
+  расходы git-подпроцессов на Windows в тестах, поднимающих реальные
+  bare/clone/push миры (~107с на 10 тестов); отдельный вызов чекера
+  завершается за доли секунды.
+
+### Перекрёстная таблица дисциплин получила зарегистрированных потребителей: csl-atlas и kosha (решение F5c)
+
+Решение F5a (26-08-2026) оставило ребро
+[`curation/meso_discipline_crosswalk.csv`](https://github.com/gasyoun/IndologyScholars/blob/main/curation/meso_discipline_crosswalk.csv)
+**только со стороны производителя**: Gate 2 программы связности бюджетирует ровно одну
+спекулятивную строку на всю программу, и её занимал конвейер печатной готовности
+RussianRamayana. 29-08-2026 решение F5b освободило слот (потребителем того конвейера признана
+сама печатная книга), и решение **F5c** — «gains, free the slot» — потратило освободившийся
+слот сюда.
+
+- Добавлены две строки `consumes` со статусом `proposed` в
+  [interlinks_edges.tsv](https://github.com/gasyoun/Uprava/blob/main/interlinks_edges.tsv)
+  с разрешающимися маркерами в
+  [PROJECT_INTERLINKS.md](https://github.com/gasyoun/Uprava/blob/main/PROJECT_INTERLINKS.md):
+  [`csl-atlas`](https://github.com/gasyoun/csl-atlas) и
+  [`kosha`](https://github.com/gasyoun/kosha).
+- ⚠️ **Замер 29-08-2026, а не унаследованный:** ни один из них таблицу не читает — три дня
+  спустя после того, как F5 их назвало. Строки держатся на намерении, признанном
+  обязательным: не пересобирать таксономию дисциплин заново и не откатываться к
+  `keyword_filtering.py` (погрешность ≥ 7,1 %).
+- ⚠️ **Учёт бюджета:** пара csl-atlas + kosha считается **одной** спекулятивной регистрацией
+  (одно решение, один актив; две строки только потому, что TSV ключуется по
+  `(source, target, asset, kind)`), поэтому единственный слот **снова занят** и третьей
+  спекулятивной строки нигде быть не может.
+- **Условие снятия:** если к следующей переписи связности ни один из них не начнёт читать
+  таблицу, обе строки-потребителя удаляются, а слот возвращается в свободное состояние.
+  Строка-производитель не затрагивается.
+
 ## [Unreleased]
+<!-- entries land in changelog_queue/ -- appended via tools/changelog_queue_consume.py, consumed by cut_release.py at release-cut (H3355); direct bullets here are hook-blocked -->
+
+## [1.12.18] - 2026-09-01
+### Fixed
+
+- **H3646 — pre_push_stale_base_check.py base_state gate restored** (Sonnet 5 `claude-sonnet-5`, 29-08-2026). The H2579 base-state classification gate (`ba9cce6c5`, 14-08-2026) was silently dropped by a stale-branch PR merge (`b47685068`, PR #245, 17-08-2026) — restored `classify_base`/`fetch_with_cap`/`remote-advanced` detection, wired `--remote-sha` through [.githooks/pre-push](https://github.com/gasyoun/IndologyScholars/blob/main/.githooks/pre-push), migrated the one stale test to the current block-by-default contract. See [`.ai_state.md`](https://github.com/gasyoun/IndologyScholars/blob/main/.ai_state.md) WIP for detail.
+
+## [1.12.17] - 2026-08-28
+### Added
+
+- **H3269 — affiliation org tail vs `authority_ids.json`** (Grok 4.6 `grok-4.6`, 28-08-2026). Census of the A12 leftover: minted Wikidata/ROR for **УРАО** ([Q4475813](https://www.wikidata.org/wiki/Q4475813)) and **ГБУ Замок Шереметьева** ([Q4523096](https://www.wikidata.org/wiki/Q4523096)); mapped programme shorthand **НИ / ни** onto `Независимые исследователи`; listed three single mentions as unresolvable (Администрация Главы Республики Калмыкия; МРЦ; ММС). Report: [`docs/AFFILIATION_ORG_TAIL_H3269_2026-08-28.md`](https://github.com/gasyoun/IndologyScholars/blob/main/docs/AFFILIATION_ORG_TAIL_H3269_2026-08-28.md). Did **not** regenerate the co-authorship network.
+
+## [1.12.16] - 2026-08-26
+### Added
+
+- **H3567 — репозиторий подключён к организационному «хребту»** (Opus 5 `claude-opus-5`, 26-08-2026, [PR #258](https://github.com/gasyoun/IndologyScholars/pull/258)). Правило F5 отменяет вердикт `standalone-by-design`: [`curation/meso_discipline_crosswalk.csv`](https://github.com/gasyoun/IndologyScholars/blob/main/curation/meso_discipline_crosswalk.csv) (50 сопоставлений мезо-код → дисциплина с оценкой уверенности, читается [`pipeline/disciplines.py`](https://github.com/gasyoun/IndologyScholars/blob/main/pipeline/disciplines.py) в таблицу `person_discipline`) зарегистрирована как ребро-производитель одновременно в [interlinks_edges.tsv](https://github.com/gasyoun/Uprava/blob/main/interlinks_edges.tsv) и [PROJECT_INTERLINKS.md](https://github.com/gasyoun/Uprava/blob/main/PROJECT_INTERLINKS.md); вердикт в [INTERLINKS_COVERAGE_LEDGER.tsv](https://github.com/gasyoun/Uprava/blob/main/INTERLINKS_COVERAGE_LEDGER.tsv) переведён в `edges-registered` тем же коммитом. Правило F1 — строка-указатель в [CLAUDE.md](https://github.com/gasyoun/IndologyScholars/blob/main/CLAUDE.md) на два хабовых реестра находок, своих реестров репозиторий не заводит. Правило F11 — раздел «Как этот репозиторий связан с остальными» в [README.md](https://github.com/gasyoun/IndologyScholars/blob/main/README.md). Проверка второго шлюза выполнена измерением, а не допущением: ни csl-atlas, ни kosha сегодня не читают никакого отображения дисциплин, поэтому ребро зарегистрировано только со стороны производителя и несёт условие снятия.
+
+## [1.12.15] - 2026-08-24
+
+
+### Changed
+
+- **H2820 — CLAUDE.md truth-pass** (Grok 4.6 `grok-4.6`, 16-08-2026). One-sentence
+  what (Zograf + Roerich archive), how to run (`make all`,
+  `validate_publication.py`, `pytest`), do-not-touch (derived `site_data.json`
+  / generated trees / `scratch/`). AGENTS.md twin regenerated.
+## [1.12.14] - 2026-08-15
+### Added
+- **Publish-safety gate for the four H1899 artifacts (H2578)** — rights
+  approval is now a machine check, not "the file is untracked / gitignored"
+  ([PR #181](https://github.com/gasyoun/IndologyScholars/pull/181) /
+  [PR #183](https://github.com/gasyoun/IndologyScholars/pull/183)).
+  [`scripts/publish_safety_gate.py`](https://github.com/gasyoun/IndologyScholars/blob/main/scripts/publish_safety_gate.py)
+  fails closed when `rights_approver` / `scope` / `date` / `permitted_use`
+  in [`curation/rights_approvals.json`](https://github.com/gasyoun/IndologyScholars/blob/main/curation/rights_approvals.json)
+  are absent, malformed, or inconsistent with the artifact, and it never
+  treats `.gitignore` or untracked status as approval. Git probes retry at
+  most 5 times then fail closed.
+  [`prepare_pages_artifact.py`](https://github.com/gasyoun/IndologyScholars/blob/main/prepare_pages_artifact.py)
+  runs the gate *before* `_site` is written, so an unsafe publish exits
+  non-zero before `upload-pages-artifact`. Four named cases in
+  [`tests/test_publish_safety_gate.py`](https://github.com/gasyoun/IndologyScholars/blob/main/tests/test_publish_safety_gate.py).
+  Operator notes:
+  [`docs/PUBLISH_SAFETY_GATE_OPERATOR.md`](https://github.com/gasyoun/IndologyScholars/blob/main/docs/PUBLISH_SAFETY_GATE_OPERATOR.md).
+  Grok 4.5 (`grok-4.5`).
+
+### Changed
+- **Три одобренные цитаты теперь `exportable_approved` (H2771)** — строки
+  `Q-VK-22289`, `Q-NG-PANINI-ASK` (Уланский) и `Q-NG-PANINI-ANSWER` в
+  [`curation/community_quotes.csv`](https://github.com/gasyoun/IndologyScholars/blob/main/curation/community_quotes.csv)
+  несли полную запись одобрения с
+  [PR #183](https://github.com/gasyoun/IndologyScholars/pull/183), но
+  `rights_review_status` оставался `non_exportable` после fail-closed
+  нормализации H2573. Человеческое «flip» снимает парковку: `exportable_rows()`
+  возвращает эти три строки. Замороженные пакеты
+  `article/comparison_snapshots/` не переписывались. Grok 4.6 (`grok-4.6`).
+
+## [1.12.13] - 2026-08-14
+### Fixed
+- **Закрытый список nagari больше не валит `validate` на строке Уланского (H2767)** —
+  [PR #183](https://github.com/gasyoun/IndologyScholars/pull/183) / коммит
+  [26dad1db4](https://github.com/gasyoun/IndologyScholars/commit/26dad1db4)
+  уже записал одобрение правообладателя (07-08-2026) и выставил
+  `exportable=yes` на всех 13 строках
+  [`curation/community_person_links.csv`](https://github.com/gasyoun/IndologyScholars/blob/main/curation/community_person_links.csv),
+  но
+  [`tests/test_community_lenses_identity.py`](https://github.com/gasyoun/IndologyScholars/blob/main/tests/test_community_lenses_identity.py)
+  всё ещё требовал безусловное `exportable=no`. Первый красный ряд — Евгений
+  Уланский — был единственной причиной красного `validate` на `main`
+  (1 failed / rest passed). Тест теперь снимает замок только при полной
+  записи одобрения в
+  [`curation/community_quotes.csv`](https://github.com/gasyoun/IndologyScholars/blob/main/curation/community_quotes.csv)
+  (approver / scope / date / permitted-use); без неё правило fail-closed
+  сохраняется. Статусы цитат (`Q-VK-22289` и nagari quotes) в этом проходе
+  не трогались. Grok 4.6 (`grok-4.6`).
+
+## [1.12.12] - 2026-08-14
+### Added
+- **Pre-push base-state gate + regression suite (H2579)** — the hook from
+  [PR #179](https://github.com/gasyoun/IndologyScholars/pull/179) now
+  **blocks** a push whose local base is `behind`, `diverged`, or
+  `remote-advanced` *before objects are sent* (including `--force`), fetches
+  at most 5 times then fails closed, and keeps the CRLF-in-blob gate as a
+  hard block. Line-level silent-revert stays WARN-by-default and prints
+  `PUSH WARNING` (not a false `PUSH BLOCKED`) unless `STALE_BASE_PUSH_STRICT=1`
+  (H2656 banner honesty, ported). Four named cases plus CRLF / warn / escape
+  in [`tests/test_pre_push_stale_base.py`](https://github.com/gasyoun/IndologyScholars/blob/main/tests/test_pre_push_stale_base.py).
+  Operator notes:
+  [`docs/PRE_PUSH_STALE_BASE_OPERATOR.md`](https://github.com/gasyoun/IndologyScholars/blob/main/docs/PRE_PUSH_STALE_BASE_OPERATOR.md).
+  Grok 4.6 (`grok-4.6`).
+
+## [1.12.11] - 2026-08-14
+### Fixed
+- **Версия в `CITATION.cff` теперь только повышается — пересборка не может её понизить (H2734)** —
+  [PR #234](https://github.com/gasyoun/IndologyScholars/pull/234). Автопересборка, запущенная
+  **самим релизным коммитом** [51a6fd625](https://github.com/gasyoun/IndologyScholars/commit/51a6fd625)
+  (`chore(release): 1.12.1`), стартовала через **3 секунды** после merge — раньше, чем был запушен тег
+  `v1.12.1`, — и переписала только что опубликованное `version: "1.12.1"` обратно в `"1.7.0"`
+  ([6e57a85bf](https://github.com/gasyoun/IndologyScholars/commit/6e57a85bf)). Цитируемая версия почти
+  сутки отставала от собственного тега на пять минорных релизов.
+  [`generate_publication_pages.py`](https://github.com/gasyoun/IndologyScholars/blob/main/generate_publication_pages.py)
+  берёт версию из `git tag --list v[0-9]*` — это была правка H790 (вместо захардкоженной строки),
+  сужённая в H1899 до отсева `reserve-v*`; обе предполагали, что тег **уже существует**. Здесь он не
+  существует по построению, и `fetch-depth: 0` не помогает. Теперь уже опубликованная в `CITATION.cff`
+  версия читается как **нижняя граница**: настоящий более новый тег по-прежнему поднимает версию,
+  `reserve-v*` по-прежнему игнорируется, сравнение — по кортежу чисел (лексически `"1.7.0" > "1.12.1"`).
+  Регрессия закреплена шестью проверками в
+  [`tests/test_citation_version_floor.py`](https://github.com/gasyoun/IndologyScholars/blob/main/tests/test_citation_version_floor.py),
+  включая живую: **закоммиченный** `CITATION.cff` не может быть ниже новейшего тега в чекауте.
+
+## [1.12.1] - 2026-08-14
+### Fixed
+- **Оба замороженных пакета сравнения снова проходят `verify_snapshot` (H2573)** —
+  манифесты в
+  [`article/comparison_snapshots/through-2025`](https://github.com/gasyoun/IndologyScholars/tree/main/article/comparison_snapshots/through-2025)
+  и
+  [`article/comparison_snapshots/partial-2026`](https://github.com/gasyoun/IndologyScholars/tree/main/article/comparison_snapshots/partial-2026)
+  хранили sha256 от CRLF-байтов: `freeze` писал `schema.sql`, `DATA_DICTIONARY.md`,
+  фигуры/подписи и отчёты через `Path.write_text` в текстовом режиме по умолчанию,
+  тогда как `.gitattributes` (`* text=auto eol=lf`) хранит LF. Все **52** не-CSV
+  файла (26 × 2 пакета) не сходились со своим же манифестом с самого дня коммита.
+  Писатели уже исправлены (`newline="\n"`, PR #228); здесь пересчитаны сами
+  манифесты по фактически закоммиченному payload — **не** пересборкой пакета
+  (это благословило бы возможный дрейф). Полезная нагрузка не менялась:
+  52/52 старых хеша воспроизводятся, если LF-байты с диска раздуть до CRLF.
+  `tests/test_community_lenses_snapshot.py` — 15 passed. Opus 5 (`claude-opus-5`).
+
+### Added
+- **W1 Flash remainder labels (H2678)** — ran the existing
+  `deepseek-v4-flash` scripts from PR #222 on unpublished remainder:
+  34 theme-v1 + 20 theme-v2 review-queue titles and 1 work_expanded talk
+  (`PRES_f4113dc86a`). Schema-valid sidecar writes only; published finals
+  untouched. JSONL spend log in `analytics_output/deepseek_flash_calls.jsonl`
+  (~$0.0104 upper bound). Research-agent orchestrator parked (no remainder
+  corpus). Report:
+  [`docs/FLASH_REMAINDER_LABELS_H2678_2026-08-14.md`](https://github.com/gasyoun/IndologyScholars/blob/main/docs/FLASH_REMAINDER_LABELS_H2678_2026-08-14.md).
+  Grok 4.6 (`grok-4.6`).
+
+## [1.7.0] - 2026-08-10
+### Added
+- **Русская сравнительная редакция статьи ППВ (H1900)** — новый документ
+  [`article/ppv_comparative_revision_ru.md`](https://github.com/gasyoun/IndologyScholars/blob/main/article/ppv_comparative_revision_ru.md):
+  Рериховские/Зографские чтения в контексте пяти линз, ~2/3 объёма — ядро,
+  ~1/3 — сравнительный контекст. Отправленная статья и её анонимная копия
+  не изменялись. Каждое сравнительное число цитируется по `metric_id` из
+  замороженных таблиц H1899; доли — только внутри линзы; 2026 год вне трендов;
+  INDOLOGY-L и BVP — пробелы наблюдения, не нули; кроссволк-доли помечены как
+  предварительные; межлинзовая шкала Гумилёва не публикуется; 3 цитаты
+  дословно под записанным одобрением от 07-08-2026. Fable 5 (`claude-fable-5`).
+- **Числовой шлюз сравнительной редакции** —
+  [`article/check_comparative_revision_numbers.py`](https://github.com/gasyoun/IndologyScholars/blob/main/article/check_comparative_revision_numbers.py):
+  62 проверки, переисчисляющие каждое утверждение из замороженных таблиц,
+  посимвольная сверка цитат с реестром и отказ при запрещённых межлинзовых
+  суммах. Внесён в исключения `.gitignore` по существующему соглашению репозитория.
+
+### Fixed
+- **Дословность цитаты Q-VK-22289** — в черновике редакции дефисы библиографической
+  карточки были типографски заменены на тире; восстановлены байты реестра
+  (найдено новым шлюзом, а не глазами).
+
+## [1.6.8] - 2026-08-08
+### Fixed
+- **Live Pages DOI badges** — replace remaining \zenodo.XXXXXXX\ / stale badge
+  IDs on \download-data.html\ and \hypotheses.html\ with concept DOI
+  .5281/zenodo.21360652\; align submission retention numbers with H2416
+  CSV so rebuild-and-deploy validation passes and Pages can publish.
+
+### Fixed
+- **Zenodo DOIs backfilled** — concept `10.5281/zenodo.21360652`, version `10.5281/zenodo.21847873` (v1.6.7) from live Zenodo↔GitHub record into `data_paper_draft.md`, `CITATION.cff`, `zenodo_metadata.json`, roadmap. Packaging docs had stale "human login" language after integration was already live.
+
+## [1.6.7] - 2026-08-08
+### Changed
+- **Phase-4 PPV four-analyses prose (H2421)** — submission article
+  `ppv_submission_article.md` gains §6 (networks, centrality, mobility,
+  theme evolution) + fifth conclusion; cover letter and roadmap Phase-4
+  figures/prose checkbox updated; `make_ppv_figures.py` re-run. Char count
+  remains under PPV 40k. Grok 4.5 (`grok-4.5`).
+
+## [1.6.6] - 2026-08-08
+### Added
+- **Geographic mobility formalisation (H2416)** —
+  `tools/compute_geographic_mobility.py` writes multi-city movers,
+  affiliation changers, SPb/Moscow/Regions gravity + retention CSVs and
+  summary JSON; `findings/mobility.html` shows live tables and methods
+  caveats. Phase-2 mobility checkbox ticked. Report:
+  `docs/GEOGRAPHIC_MOBILITY_H2416_2026-08-08.md`. Grok 4.5 (`grok-4.5`).
+
+## [1.6.5] - 2026-08-07
+### Added
+- **Gatekeeping multi-layer centrality (H2411)** — `tools/compute_network_centrality.py`
+  writes collaboration / session / event betweenness+degree CSVs,
+  `network_series_bridges.csv` (41 Zograf↔Roerich dual-series people), and
+  `network_centrality_summary.json`; live tables on `gatekeeping.html` + EN.
+  Report: `docs/NETWORK_CENTRALITY_GATEKEEPING_H2411_2026-08-07.md`. Phase-2
+  gatekeeping checkbox ticked. Grok 4.5 (`grok-4.5`).
+
+## [1.6.4] - 2026-08-07
+### Changed
+- **Co-authorship network regen truth-pass (H2367)** — re-ran
+  `generate_analytics.py` + `generate_network_json.py` against live
+  `conferences.db`; export counts are **344** nodes / **8095** CSV edges /
+  **8115** JSON edges (incl. 20 genealogy), with **26** true co-presentation
+  edges. Five high-weight co-author pairs re-checked against the DB (all
+  confirmed). Byte-identical to the current auto-rebuild payload; durable
+  recipe + audit in
+  [`docs/NETWORK_COAUTHORSHIP_REGEN_H2367_2026-08-07.md`](https://github.com/gasyoun/IndologyScholars/blob/main/docs/NETWORK_COAUTHORSHIP_REGEN_H2367_2026-08-07.md);
+  Phase-2 roadmap checkbox ticked. Grok 4.5 (`grok-4.5`).
+
+## [1.6.3] - 2026-08-07
+### Added
+- **Гейтированный H1899-слой курации опубликован по явному согласованию прав**
+  (Opus 5 1M `claude-opus-5[1m]`, 07-08-2026,
+  [PR #183](https://github.com/gasyoun/IndologyScholars/pull/183)).
+  Правообладатель (Mārcis Gasūns, ORCID 0000-0003-4513-884X) дал согласование
+  со scope «все четыре артефакта, публичный репозиторий» и permitted use
+  «дословное цитирование и полные построчные данные»; маскировка local-part
+  аккаунтов сохранена как записано (`contact_data_removed = 1`).
+  Соответственно: `curation/community_quotes.csv` — 3 строки переведены из
+  `non_exportable`/`pending_review` в `approved` с заполненными approver /
+  scope / date / permitted-use (до этого все четыре поля были пустыми);
+  `curation/community_person_links.csv` — все 13 строк `exportable = no` →
+  `yes`; добавлены `article/comparison_snapshots/` (80 файлов, 5,8 МБ, два
+  замороженных пакета through-2025 и partial-2026) и
+  `analytics_output/community_lenses/reports/identity_quote_evidence.md`.
+  Правила `.gitignore`, добавленные накануне по
+  [#180](https://github.com/gasyoun/IndologyScholars/issues/180), сняты — они
+  фиксировали именно ту пометку о запрете экспорта, которую это согласование
+  отменяет, и снятие идёт документированным путём (approver + scope +
+  permitted use), а не тихим удалением правил. **Оговорка о точности:** 5 из 13
+  person-link строк имеют `decision = ambiguous`; они публикуются как есть,
+  вместе со своим `confidence_rationale`, и не должны читаться как
+  подтверждённые отождествления.
+
+## [1.6.2] - 2026-08-07
+### Fixed
+- **Гейтированный H1899-слой курации теперь игнорируется git'ом, а не «памятью
+  сессии»** (Opus 5 1M `claude-opus-5[1m]`,
+  [#180](https://github.com/gasyoun/IndologyScholars/issues/180)). Четыре
+  артефакта — `curation/community_person_links.csv`,
+  `curation/community_quotes.csv`, `article/comparison_snapshots/` (80 файлов,
+  5,8 МБ) и `analytics_output/community_lenses/reports/identity_quote_evidence.md`
+  — несут явную пометку о запрете экспорта в собственной схеме
+  (`rights_review_status = non_exportable/pending_review` без approver/scope/
+  permitted-use; `exportable = no` во всех 13 строках person-links) и называют
+  живых людей по имени вместе с маскированным local-part аккаунта из закрытой
+  рассылки. При этом `git check-ignore` не находил ни одного из этих путей: они
+  были защищены только тем, что их никто не добавил в индекс. Репозиторий
+  ПУБЛИЧНЫЙ, а публикация необратима (блобы остаются в истории, форках и
+  зеркалах), поэтому обычный `git add -A` в worktree `IndologyScholars-h1899-34220`
+  опубликовал бы всё четыре. Тот же класс, что и
+  [#169](https://github.com/gasyoun/IndologyScholars/issues/169): статус
+  local-only существовал в прозе (строка реестра H1899, фраза внутри самого
+  отчёта), но нигде, куда смотрит инструментарий. Ни один из путей не был
+  отслеживаемым, так что правила действуют сразу. Продвигать наверх — только
+  через явное согласование прав (approver + scope + permitted use).
+- **Renormalized 1,311 CR-carrying blobs to LF** (H2315, Sonnet 5
+  `claude-sonnet-5`), closing the org EOL census violation
+  ([Uprava/tools/eol_census.py](https://github.com/gasyoun/Uprava/blob/main/tools/eol_census.py))
+  and [#178](https://github.com/gasyoun/IndologyScholars/issues/178). 1,302
+  files under `nagari/md/` (2007-era archival Google-Group export) plus
+  `article/ppv_draft.md` and `scratch/decode_out.txt` carried a mix of CRLF
+  line endings and lone `\r` (old Mac-style) line breaks; `git add
+  --renormalize` fixed the CRLF pairs, a universal-newline follow-up pass
+  fixed the lone-`\r` remainder. Verified 0 remaining CR bytes, 0 files
+  deleted, no line merged/lost.
+
+## [1.6.1] - 2026-08-06
+### Added
+- **BVP pagination pilot v2 + recovered pagination driver** (H2297, Sonnet 5
+  `claude-sonnet-5`): H1892's 30-07-2026 three-page BVP pagination pilot
+  output was destroyed when its worktree was removed before durable escrow
+  ([FINDINGS §314](https://github.com/gasyoun/Uprava/blob/main/FINDINGS.md),
+  [#169](https://github.com/gasyoun/IndologyScholars/issues/169)). Recovered
+  `bvp/pagination.py`/`bvp/paginate_live.py`/`tests/test_bvp_pagination.py`
+  (built + tested during H1892 but stranded on an unmerged branch, never
+  landed on `main` at all — [#174](https://github.com/gasyoun/IndologyScholars/pull/174)),
+  re-ran the pilot (3/3 pages, 90/90 unique conversation IDs, 0 duplicates,
+  0 faults, `displayed_total=23476`), and this time escrowed the small
+  hash/pointer record `bvp/data/meta/manifest_pin.json` durably — force-added
+  past the `bvp/data/` ignore, committed, and reachability-verified from a
+  fresh `origin/main` worktree before teardown
+  ([#175](https://github.com/gasyoun/IndologyScholars/pull/175)).
+
+## [1.6.0] - 2026-08-06
+### Added
+- **Wave 1E: comparison validity report, six figures, frozen packages, Russian revision outline**
+  (H1899, Opus 5 `claude-opus-5`): `community_lenses/{metrics,figures,report,snapshot,cli}.py` —
+  7 denominator-aware metric tables (every row names numerator, denominator, unit, period,
+  missingness, snapshot, method+version), 6 deterministic hand-written SVG figures with
+  denominators and coverage caveats in every caption, `comparison_validity.md` over the V1–V11
+  evidence classes, a 14-row `claims_ledger.csv` with zero unlinked claims, freeze/verify/compare
+  for the `through-2025` (27 270 records) and `partial-2026` (427 records) packages, 17 CLI
+  verification gates, and `article/ppv_comparative_revision_outline_ru.md`.
+  40 new tests (`tests/test_community_lenses_{metrics,snapshot}.py`), repo-wide suite 347 passed.
+  Suppressed by evidence, not by omission: cross-lens Gumilev (pilot unreviewed), any
+  Russia–West–India magnitude comparison (INDOLOGY-L and BVP absent — gaps, not zeros), and the
+  Renou layer (gold gate binding). The frozen packages themselves, the reviewed identity/quote
+  registers and the identity evidence report stay **local** until the closed-group rights gate is
+  approved — see the landing split in `analytics_output/community_lenses/reports/H1899_completion_note.md`.
+- **Wave 1D identity/quote layer** (H1898, Fable 5 `claude-fable-5`):
+  `community_lenses/{identity,quotes}.py` with 35 tests and a fully synthetic fixture; the
+  reviewed decision tables themselves remain unpublished under the same rights gate.
+- **Wave 1B community-lens adapters: conferences, nagari, vk_ors, indology_l**
+  (H1895, Sonnet 5 `claude-sonnet-5`):
+  `community_lenses/adapters/{conferences,nagari,vk_ors,indology_l}.py`, each
+  exposing `build_fixture()`/`coverage_report()` into the H1893 shared
+  contract, plus per-source coverage reports under
+  `analytics_output/community_lenses/reports/` and
+  `tests/test_community_lenses_adapters.py` (37 tests: idempotence, stable
+  IDs, fail-closed validation, graceful-degrade, rights defaults, no
+  `shared_topic` pre-emption). **conferences** and **vk_ors** are `complete`
+  (real `conferences.db` / `vk-ors/data/vk_ors.db` reads, native hashtags only,
+  no fabricated identities). **nagari** is a bounded 300-message `pilot` (the
+  1.88 GB Takeout mbox lives only in the main tree) reusing the group's own
+  taxonomy/redaction, never auto-linking authors. **indology_l** is
+  deliberately `unavailable`: H1894 (atomic feed hardening) was never actually
+  built despite being registry-marked Done, so this adapter refuses the old
+  unhardened fetcher output and reports a named gap instead of fabricating a
+  snapshot. Also fixed a real idempotence bug in
+  `community_lenses/adapters/_shared.py::unavailable_fixture` — it stamped
+  `acquired_at` with wall-clock `datetime.now()`, breaking the
+  build-twice-identically contract for any `unavailable` corpus; pinned to a
+  deterministic placeholder instead. `theme_codes_final_v2.csv` l1-l4
+  crosswalk mapping deliberately NOT done (H1897's scope). Local
+  implementation only per handoff scope. Verification matrix green: `pytest`
+  (287 passed), `unittest discover -s tests` (36 passed),
+  `validate_publication.py`, `nagari/scripts/audit_publish_surface.py`,
+  `git diff --check`.
+
+- **BVP community-lens adapter** (H1896, Sonnet 5 `claude-sonnet-5`):
+  `community_lenses/adapters/bvp.py` — read-only `LensAdapter` over the frozen,
+  gitignored H1892 acquisition (`bvp/data/meta/state.json` +
+  `bvp/data/parsed/*.json`). Pinned manifest `bvp:partial:2026-07-29:386f655244ed`;
+  30/23,467 conversations enumerated (0.128%), 156 native messages → 155
+  included / 1 kept-explicit-but-excluded (semantic-DOM-fallback record with no
+  public author/body). `coverage_status` stays `partial`;
+  `supports_population_metrics=False` is mechanically enforced via
+  `require_population_metrics()` (raises `PopulationMetricsDisabled`), proven
+  flippable only against a fully synthetic `complete` fixture in tests, never the
+  live snapshot. 23 tests in `tests/test_bvp_adapter.py` (partial manifest,
+  incomplete record, exclusion, interrupted-manifest parse failure, duplicate-ID
+  rejection, deterministic ordering, denominator mismatch, population-query
+  rejection, gate flip). Local implementation only per handoff scope — not
+  committed/released this pass.
+
+
+## [1.5.0] - 2026-07-31
+### Changed
+- **Shelkovich url_slug `vladimir` → `vladimir-shelkovich` + redirect** (MG ruling 30-07-2026 in-Grok vote 1b, Grok 4.5 `grok-4.5`, [H1948](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H1948-Grok_Uprava_quick-decide-votes-apply_30.07.26.md)): `authority_ids.json` preferred_latin_name, `slug_redirects.json` row for old `vladimir`, site_data slug patch, scholar pages regenerated.
+
+### Added
+- **BVP public acquisition unit** (PR #153, Grok 4.5 `grok-4.5`): bounded,
+  resumable first-page scraper for
+  [Bharatiya Vidvat Parishat](https://groups.google.com/g/bvparishat)
+  (`bvp/scrape.py`, `bvp/fetch_hardening.py`, `bvp/README.md`), parser tests
+  (`tests/test_bvp_scrape.py`), gitignore for raw/parsed captures under
+  `bvp/data/`, and source assessment
+  (`analytics_output/community_lenses/reports/bvp_source_assessment.md`).
+  Coverage is `partial` (first listing page only; pagination is a separate unit).
+
+- **`community_lenses/` shared five-lens schema + versioned codebook contracts**
+  (H1893, Sonnet 5 `claude-sonnet-5`): stable source-namespaced IDs (`ids.py`),
+  16-table SQLite schema (`schema.py`) covering sources/snapshots/containers/
+  records/actors/reviewed-identity-links/annotations/quotes/provenance,
+  manifest contract (`manifests.py`), versioned codebook shells for
+  `native_topic`/`shared_topic`/`community_function`/`renou_state`/
+  `renou_register`/`argument_level` (`taxonomy.py` + `codebooks/*.csv`,
+  `renou_state`/`renou_register` reuse `generate_renou_layer.py`'s vocabulary),
+  and a fixture/build layer (`build.py`) with a representative fixture for all
+  five lenses (conferences, nagari, vk_ors, indology_l, bvp-unavailable).
+  Fail-closed on invalid IDs/references, missing provenance/rights, and
+  native/derived mixing; quote/person fields default non-exportable/pending.
+  Architecture + ACL-standards-adaptation notes in
+  [docs/ARCHITECTURE_IndologyScholars_sanskrit-community-lenses.md](https://github.com/gasyoun/IndologyScholars/blob/main/docs/ARCHITECTURE_IndologyScholars_sanskrit-community-lenses.md).
+  Local implementation only per handoff scope — not committed/released this
+  pass; unblocks H1894/H1895.
 
 ## [1.4.3] - 2026-07-24
 
@@ -47,7 +518,7 @@
 
 ### Changed
 - **Docs micro-residual after H1528**
-  ([H1529](https://github.com/gasyoun/Uprava/blob/main/handoffs/H1529-Sonnet_IndologyScholars_stale-docs-micro-v141-phase4_23.07.26.md),
+  ([H1529](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H1529-Sonnet_IndologyScholars_stale-docs-micro-v141-phase4_23.07.26.md),
   Grok 4.5): `.ai_state.md` header release line → **v1.4.2**;
   `docs/ROADMAP_2026.md` Phase 4 deposit item marked package-ready (H1072) with
   only the human Zenodo login remaining. Restores `CITATION.cff` to the live
@@ -58,7 +529,7 @@
 
 ### Changed
 - **Stale living documentation refreshed to post-v1.4.0 reality**
-  ([H1528](https://github.com/gasyoun/Uprava/blob/main/handoffs/H1528-Sonnet_IndologyScholars_stale-docs-refresh_23.07.26.md),
+  ([H1528](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H1528-Sonnet_IndologyScholars_stale-docs-refresh_23.07.26.md),
   Grok 4.5). README/README_EN now surface nagari, vk-ors, the historical layer,
   and the spun-out [IndologyArchiveAtlas](https://github.com/gasyoun/IndologyArchiveAtlas)
   (no longer imply the atlas still lives under this Pages root). `.ai_state.md`
@@ -71,7 +542,7 @@
   guides, `CLAUDE.md`, and `nagari/README.md` point at the sibling subsystems.
 - **`article/check_data_paper_numbers.py` hardened from substring containment to
   anchored value assertions**
-  ([H1467](https://github.com/gasyoun/Uprava/blob/main/handoffs/H1467-Opus_IndologyScholars_harden-data-paper-number-gate_22.07.26.md),
+  ([H1467](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H1467-Opus_IndologyScholars_harden-data-paper-number-gate_22.07.26.md),
   Opus 4.8 `claude-opus-4-8`). The data-paper submission gate now verifies each
   quoted figure with a phrase-anchored regex that captures the number and compares
   it with word boundaries, reusing the `check()`/`check_word()` drift helpers already
@@ -87,7 +558,7 @@
 ### Added
 - **`sources/vigasin/`** — 27 full-text `.mdx` conversions of A.A. Vigasin's *Изучение Индии
   в России* landed as raw source material for future scholar-page work
-  ([H1443](https://github.com/gasyoun/Uprava/blob/main/handoffs/H1443-Sonnet_IndologyScholars_vigasin-corpus-extract-route_22.07.26.md),
+  ([H1443](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H1443-Sonnet_IndologyScholars_vigasin-corpus-extract-route_22.07.26.md),
   Sonnet 5 `claude-sonnet-5`), routed by scholar where a `/s/<slug>` registry row already
   exists in `curation/historical_persons.csv`, else under `scholars/_unregistered/`. Not wired
   into `generate_scholars_pages.py` — that pipeline has no MDX support and its Phase 3/4
@@ -526,6 +997,12 @@ handoff.)_
 ### Changed
 - Released the current changelog state as version 1.
 
+> **Ниже — ЛЕГАСИ-нумерация до перезапуска версий 13-06-2026** (`## [1.0.0] - 2026-06-13`
+> выше: «Released the current changelog state as version 1»). Серия 1.0.0–1.12.0 за май–июнь
+> 2026 **никогда не тегировалась** — git-тегов `v1.6.0`…`v1.12.0` из неё не существует, и
+> номера в актуальной серии переиспользуются законно. Читать нумерацию ниже как
+> самостоятельную историческую шкалу, а не как продолжение текущей.
+
 ## [1.12.0] — 2026-06-10
 
 ### Сбор отметок голосования: «кто как проголосовал»
@@ -757,24 +1234,24 @@ handoff.)_
     *   Все временные/статусные маркеры (`"сначала"`, `"затем"`, `"ранее (взаимодействие завершено)"`) перенесены из типов/ярлыков связей в новый структурированный столбец `temporal`.
     *   Ярлыки связей стандартизованы (например, `"ученица сначала"` / `"ученица затем"` приведены к `"ученица"`), а `"раньше работал на"` исправлено на `"работал у"`, чтобы отделить смысловую связь от её временного состояния.
     *   Статусы сомнительных или требующих источника связей (`needs_source`) переведены в подтверждённые (`confirmed`) на основании прямого указания редактора, с соответствующим основанием `"Согласно редактору"`.
-    *   Интерактивная таблица на странице [known-relationships.html](known-relationships.html) дополнена новой колонкой «Период / время».
+    *   Интерактивная таблица на странице [known-relationships.html](https://github.com/gasyoun/IndologyScholars/blob/main/known-relationships.html) дополнена новой колонкой «Период / время».
 
 ## [1.9.0] — 2026-06-01
 
 ### Добавлено
 
-*   **Внесетевые связи (Known Relationships)**: добавлены `curation/known_relationships.csv` (межличностные и академические связи) и интерактивная страница [known-relationships.html](known-relationships.html) для отображения межличностных отношений, не выводимых напрямую из сети соавторства/соприсутствия.
-*   **Верификация выпускников Восточного факультета СПбГУ**: добавлен воспроизводимый кураторский фильтр `curation/eastern_faculty_alumni.csv` и скрипт генерации кандидатов [tools/extract_eastern_faculty_alumni.py](tools/extract_eastern_faculty_alumni.py).
+*   **Внесетевые связи (Known Relationships)**: добавлены `curation/known_relationships.csv` (межличностные и академические связи) и интерактивная страница [known-relationships.html](https://github.com/gasyoun/IndologyScholars/blob/main/known-relationships.html) для отображения межличностных отношений, не выводимых напрямую из сети соавторства/соприсутствия.
+*   **Верификация выпускников Восточного факультета СПбГУ**: добавлен воспроизводимый кураторский фильтр `curation/eastern_faculty_alumni.csv` и скрипт генерации кандидатов [tools/extract_eastern_faculty_alumni.py](https://github.com/gasyoun/IndologyScholars/blob/main/tools/extract_eastern_faculty_alumni.py).
 *   **Двуязычная социология и гейткипинг**: реализованы полноценные английские версии аналитических страниц `sociology-en.html` и `gatekeeping-en.html` для внешнего рецензирования.
-*   **Отметки слушателя по докладам**: создана статичная страница [voting.html](voting.html) для клиентского ведения локальных отметок «прослушано» (heard) и «понравилось» (liked) с выгрузкой в CSV/JSON.
+*   **Отметки слушателя по докладам**: создана статичная страница [voting.html](https://github.com/gasyoun/IndologyScholars/blob/main/voting.html) для клиентского ведения локальных отметок «прослушано» (heard) и «понравилось» (liked) с выгрузкой в CSV/JSON.
 
 ### Изменено
 
-*   **Редакционная и доказательная политика**: добавлены русский [docs/sociology-gatekeeping-editorial-decisions-ru.md](docs/sociology-gatekeeping-editorial-decisions-ru.md) и английский [docs/sociology-gatekeeping-editorial-decisions.md](docs/sociology-gatekeeping-editorial-decisions.md) мета-документы, фиксирующие стандарты доказательности, правила именования людей и разведение механизмов отсутствия (после 2022 и в 2026 гг.).
+*   **Редакционная и доказательная политика**: добавлены русский [docs/sociology-gatekeeping-editorial-decisions-ru.md](https://github.com/gasyoun/IndologyScholars/blob/main/docs/sociology-gatekeeping-editorial-decisions-ru.md) и английский [docs/sociology-gatekeeping-editorial-decisions.md](https://github.com/gasyoun/IndologyScholars/blob/main/docs/sociology-gatekeeping-editorial-decisions.md) мета-документы, фиксирующие стандарты доказательности, правила именования людей и разведение механизмов отсутствия (после 2022 и в 2026 гг.).
 *   **Обновление документации**:
-    *   [data_dictionary.md](data_dictionary.md) расширен описанием `known-relationships.html`, `voting.html` и новыми кураторскими таблицами.
-    *   [docs/development.md](docs/development.md) и [docs/development-en.md](docs/development-en.md) обновлены: добавлены разделы по внесетевым связям и верификации выпускников, а также новые скрипты и документы в карты путей.
-    *   [docs/README.md](docs/README.md) дополнен ссылками на новые редакционные регламенты.
+    *   [data_dictionary.md](https://github.com/gasyoun/IndologyScholars/blob/main/data_dictionary.md) расширен описанием `known-relationships.html`, `voting.html` и новыми кураторскими таблицами.
+    *   [docs/development.md](https://github.com/gasyoun/IndologyScholars/blob/main/docs/development.md) и [docs/development-en.md](https://github.com/gasyoun/IndologyScholars/blob/main/docs/development-en.md) обновлены: добавлены разделы по внесетевым связям и верификации выпускников, а также новые скрипты и документы в карты путей.
+    *   [docs/README.md](https://github.com/gasyoun/IndologyScholars/blob/main/docs/README.md) дополнен ссылками на новые редакционные регламенты.
 
 ## [1.8.9] — 2026-05-29
 
@@ -1167,3 +1644,5 @@ handoff.)_
     *   Создана детальная интерактивная хронология конференций в виде вертикального таймлайна с раскрывающимися списками.
     *   Реализованы интерактивные SVG-графики годовой динамики публикационной активности и гео-сродства.
 *   **Модуль сериализации (`generate_site_data.py`):** Сборка реляционных таблиц SQLite в высокопроизводительный статический JSON-объект `site_data.json` для работы клиентского фронтенда.
+
+_Dr. Mārcis Gasūns_

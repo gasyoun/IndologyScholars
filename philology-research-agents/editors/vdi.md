@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 # Editor profile — ВДИ «Вестник древней истории» (ИВИ РАН, Наука)
 # Профиль редактора — Journal of Ancient History (Vestnik drevnei istorii)
 
@@ -130,3 +132,5 @@ References
 > To adapt to another journal, copy `editors/ppv.md` or this file to
 > `editors/<journal>.md` and replace the house-style rules. The base editor
 > agent and pipeline are unchanged.
+
+_Dr. Mārcis Gasūns_

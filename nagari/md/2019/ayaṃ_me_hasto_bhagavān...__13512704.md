@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 6728841518413512704
 subject: "ayaṃ me hasto bhagavān..."
@@ -45,3 +47,5 @@ ayaṃ me viśvabheṣajo ayaṃ śivābhimarśanaḥ ॥
 >
 > Если есть возможность, дайте пожалуйста наиболее точный и полный перевод.
 >
+
+_Dr. Mārcis Gasūns_

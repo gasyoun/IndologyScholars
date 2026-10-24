@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 # Keyword and Talk-Marking Notes
 
 Updated: 2026-06-01
@@ -98,3 +100,5 @@ The 2026-06-01 implementation was checked with:
 - `python article/check_ppv_numbers.py`;
 - browser checks of `s/pushkareva-yuliya.html`, `keywords/review.html`, and
   `voting.html` on the local generated site.
+
+_Dr. Mārcis Gasūns_

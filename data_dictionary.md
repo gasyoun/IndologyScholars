@@ -1,6 +1,8 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 # IndologyScholars Data Dictionary
 
-[Documentation index](docs/README.md) | [Development guide](docs/development-en.md) | [Русская техническая документация](docs/development.md)
+[Documentation index](https://github.com/gasyoun/IndologyScholars/blob/main/docs/README.md) | [Development guide](https://github.com/gasyoun/IndologyScholars/blob/main/docs/development-en.md) | [Русская техническая документация](https://github.com/gasyoun/IndologyScholars/blob/main/docs/development.md)
 
 Date: 2026-05-25  
 Dataset schema version: 1.0.0  
@@ -32,6 +34,11 @@ This dictionary describes the reusable data outputs produced by the IndologyScho
 | `analytics_output/conference_role_taxonomy.csv` | CSV | `tools/build_scientometrics_guardrails.py` | Conference-program role taxonomy for credit and role claims. |
 | `analytics_output/event_ecology_audit.csv` | CSV | `tools/build_scientometrics_guardrails.py` | Event/session/venue/format/media coverage audit for conference ecology. |
 | `analytics_output/network_robustness_checks.csv` | CSV | `tools/build_scientometrics_guardrails.py` | Typed network-model sensitivity and forbidden-inference checks. |
+| `analytics_output/cocitation_network_nodes.csv` | CSV | `tools/build_cocitation_network.py` | Per-person co-citation metrics (mentions, threads, degree, strength, betweenness, PageRank, community) over the nagari corpus (H6060). |
+| `analytics_output/cocitation_network_edges.csv` | CSV | `tools/build_cocitation_network.py` | Weighted co-citation edges between persons, with first/last co-cited year. |
+| `analytics_output/cocitation_network_metrics.json` | JSON | `tools/build_cocitation_network.py` | Deterministic summary: hubs, betweenness channels, greedy-modularity schools, H5931 Cappeller/Kochergina anchor counts, limitations metadata. |
+| `analytics_output/cocitation_network_data.json` | JSON | `tools/build_cocitation_network.py` | vis-network payload for `cocitation-network.html`. |
+| `analytics_output/cocitation_report.md` | Markdown | `tools/build_cocitation_network.py` | Dated human-readable report over the co-citation network. |
 | `analytics_output/inter_rater_reliability_plan.csv` | CSV | `tools/build_scientometrics_guardrails.py` | Double-coding plan and minimum reliability rules. |
 | `analytics_output/fair_reuse_maturity_audit.csv` | CSV | `tools/build_scientometrics_guardrails.py` | FAIR and reuse maturity evidence checklist. |
 | `analytics_output/coauthorship_review.csv` | CSV | `generate_analytics.py` | Review queue for source-backed multi-person presentation lines before public coauthorship claims. |
@@ -392,3 +399,5 @@ Theme labels are navigational aids derived primarily from presentation titles. T
 4. Treat `candidate`, `heuristic`, and `unknown` confidence values as review targets.
 5. Do not interpret same-session network edges as collaboration without independent evidence.
 6. Cite both the original conference program and this archive when making claims about exact historical wording.
+
+_Dr. Mārcis Gasūns_

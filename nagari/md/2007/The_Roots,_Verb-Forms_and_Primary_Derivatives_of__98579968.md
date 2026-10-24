@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 3405898579968
 subject: "'The Roots, Verb-Forms and Primary Derivatives of the Sanskrit Language' by William Dwight Whitney"
@@ -548,3 +550,5 @@ On 29 set, 12:16, KK <Kartik...@…> wrote:
 >
 > Thanks,
 > K
+
+_Dr. Mārcis Gasūns_

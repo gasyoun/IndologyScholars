@@ -1,0 +1,41 @@
+{
+ "metadata": {
+  "upload_type": "dataset",
+  "title": "IndologyScholars: Russian Indological Research Archive — Zograf and Roerich Readings Conference Corpus (2004–2026)",
+  "creators": [
+   {
+    "name": "Gasūns, Mārcis",
+    "affiliation": "Independent researcher, Obninsk, Russia",
+    "orcid": "0000-0003-4513-884X"
+   }
+  ],
+  "description": "A structured, open-access dataset of 1,385 conference presentations, 276 scholar profiles, and 1,411 author participations drawn from the published programs of the Zograf Readings (St. Petersburg, 2004–2026) and Roerich Readings (Moscow, 2005–2025; the 2005 program enters by a copy preserved in correspondence with the organizer, classified manually under the same closed vocabularies), with a curated historical prosopographical layer of pre-contemporary Russian Indologists. Includes normalized speaker identities, institutional affiliations with explicit provenance tagging, thematic classification (L1/L2), three-level argument-scale coding (G1–G3), video-record mapping, and external authority identifiers (Wikidata, ORCID, OpenAlex). Formats: SQLite (conferences.db), JSON (site_data.json), 100+ analytics CSV exports, RDF/Turtle knowledge graph, Frictionless Data Package manifest, and a SHA-256 snapshot manifest. Companion data paper: Gasūns, M. (2026), Russian Indological Research Archive: A Conference Corpus for Prosopography, Research Data Journal for the Humanities and Social Sciences (submission pending).",
+  "access_right": "open",
+  "license": "cc-by-4.0",
+  "keywords": [
+   "Indology",
+   "conference proceedings",
+   "prosopography",
+   "digital humanities",
+   "knowledge graph",
+   "linked open data",
+   "Russian academia",
+   "Zograf Readings",
+   "Roerich Readings"
+  ],
+  "related_identifiers": [
+   {
+    "relation": "isSupplementTo",
+    "identifier": "https://github.com/gasyoun/IndologyScholars",
+    "resource_type": "software"
+   },
+   {
+    "relation": "isDescribedBy",
+    "identifier": "https://gasyoun.github.io/IndologyScholars/",
+    "resource_type": "publication"
+   }
+  ],
+  "version": "2026.10.03",
+  "language": "rus"
+ }
+}

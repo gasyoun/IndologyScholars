@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 23347860602880
 subject: "Некролог Times New Indologique (конвертор Times New Indologique)"
@@ -19,3 +21,5 @@ source_url: https://groups.google.com/d/msgid/nagari/91a30a89-aaf5-4e15-941e-a90
 
 Крупицы истории создания конвертора.
 Конверторирует в EmEditor, в Word 2007.
+
+_Dr. Mārcis Gasūns_

@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7358857284004347904
 subject: "cent studies in Sanskrit and Indology"
@@ -29,3 +31,5 @@ Felicitation vol. Ed. by Dharmendra Kumar Gupta. Delhi, Ajanta, 1982. XXVI,
 Основной фонд
 
 см. https://vk.com/samskrtamru?w=wall-88831040_21368
+
+_Dr. Mārcis Gasūns_

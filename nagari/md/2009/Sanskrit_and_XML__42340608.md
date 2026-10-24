@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 8033542340608
 subject: "Sanskrit and XML"
@@ -17,6 +19,10 @@ source_url: https://groups.google.com/d/msgid/nagari/e66913cf-e63a-4dce-bf24-b72
 
 ## 1. Duri — 2009-09-26 01:06:30
 
-Can anybody help me find resources on this topic? In particular I am
-looking for an example of DTD (Document Type Definition) and a list of
+Can anybody help me find resources on this topic? In particular I am
+
+looking for an example of DTD (Document Type Definition) and a list of
+
 Devanagari entities. Thank you.
+
+_Dr. Mārcis Gasūns_

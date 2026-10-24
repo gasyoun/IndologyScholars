@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 29893962235904
 subject: "Errata Бхагавадгиты Д. Бурбы (2009)"
@@ -151,3 +153,5 @@ http://www.bhagavadgita.eu/en/
 >
 > М.
 >
+
+_Dr. Mārcis Gasūns_

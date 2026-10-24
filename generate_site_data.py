@@ -1105,7 +1105,7 @@ def main():
     for s in scholars:
         if s["birth_year"]:
             try:
-                age = 2026 - int(s["birth_year"])
+                age = datetime.date.today().year - int(s["birth_year"])
                 if age < 35:
                     age_groups["young"] += 1
                 elif age <= 50:

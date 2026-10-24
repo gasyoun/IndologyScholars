@@ -1,6 +1,8 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 # Personal Data Policy
 
-[Русская версия](persons-data-policy-ru.md) | [Reuse rights](reuse-rights.md) | [Development notes](development-en.md)
+[Русская версия](https://github.com/gasyoun/IndologyScholars/blob/main/docs/persons-data-policy-ru.md) | [Reuse rights](https://github.com/gasyoun/IndologyScholars/blob/main/docs/reuse-rights.md) | [Development notes](https://github.com/gasyoun/IndologyScholars/blob/main/docs/development-en.md)
 
 This archive describes living and recently deceased scholars. This page
 states what personal information the archive publishes, on what basis, and
@@ -60,3 +62,5 @@ is documented.
 Frozen snapshots already deposited for citation (DOI) are immutable by
 design; corrections are carried by subsequent versions, with the erratum
 noted in the version history.
+
+_Dr. Mārcis Gasūns_

@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 1535550423040
 subject: "Обсуждение на kalachakra"
@@ -34,3 +36,5 @@ hello Friends,
 Would anybody upload pdf file with Sanskrit text of Kalachakra tantra?
 
 many thanks,
+
+_Dr. Mārcis Gasūns_

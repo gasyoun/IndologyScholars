@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7274370266774372352
 subject: "Sanskrit and allied indological studies in Europe"
@@ -17,11 +19,20 @@ source_url: https://groups.google.com/d/msgid/nagari/079b5dd9-0195-4899-9bcd-7ad
 
 ## 1. Marcis — 2023-09-03 02:11:51
 
-Raghavan,V. Sanskrit and allied indological studies in Europe / By 
-V.Raghavan; With forew. by A.L.Mudaliar [a.o.]. - Madras : University of 
-Madras, 1956. - 117 p., front. - (Madras univ. sanskrit. ser; 22).
-
-Изучение санскрита и смежных индологических дисциплин в странах Западной 
-Европы. Обзор по странам
-
+Raghavan,V. Sanskrit and allied indological studies in Europe / By 
+
+V.Raghavan; With forew. by A.L.Mudaliar [a.o.]. - Madras : University of 
+
+Madras, 1956. - 117 p., front. - (Madras univ. sanskrit. ser; 22).
+
+
+
+Изучение санскрита и смежных индологических дисциплин в странах Западной 
+
+Европы. Обзор по странам
+
+
+
 см. https://vk.com/samskrtamru?w=wall-88831040_19760
+
+_Dr. Mārcis Gasūns_

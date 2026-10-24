@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 # Editor profile — Journal of the American Oriental Society (JAOS)
 # Профиль редактора — JAOS (Американское восточное общество)
 
@@ -105,3 +107,5 @@ JAOS — старейший западный востоковедческий ж
 
 > Differs from IIJ (author-date) in using **footnotes** for citations; differs
 > from ППВ in being English-language with no Cyrillic-script Литература block.
+
+_Dr. Mārcis Gasūns_

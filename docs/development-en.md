@@ -1,6 +1,8 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 # Development and Reproducibility
 
-[Русская версия](development.md) | [User guide](../README_EN.md) | [Documentation index](README.md)
+[Русская версия](https://github.com/gasyoun/IndologyScholars/blob/main/docs/development.md) | [User guide](https://github.com/gasyoun/IndologyScholars/blob/main/README_EN.md) | [Documentation index](https://github.com/gasyoun/IndologyScholars/blob/main/docs/README.md)
 
 This document is for developers and data curators working on
 **IndologyScholars**. Build instructions are deliberately kept out of the
@@ -9,10 +11,10 @@ user-facing project page.
 ## Current Published Snapshot
 
 The source for figures published on the site is the `summary` object in
-`site_data.json`. As of 23 July 2026 it reports 268 speaker profiles,
-1362 unique talks, 1388 author participations, and 40 events across 22
-programme years (2004-2026). 41 speakers occur in both series, 163
-occur only in the Zograf Readings, and 64 only in the Roerich Readings.
+`site_data.json`. As of 23 July 2026 it reports 276 speaker profiles,
+1385 unique talks, 1411 author participations, and 41 events across 23
+programme years (2004-2026). 42 speakers occur in both series, 162
+occur only in the Zograf Readings, and 72 only in the Roerich Readings.
 A separate historical prosopographical layer (26 figures) is stored under
 `person_kind = historical` and does **not** change the speaker counts above.
 
@@ -36,7 +38,7 @@ Editable inputs and curation rules:
 | --- | --- |
 | `html_cache/` | Preserved conference programmes, the primary programme source. |
 | `zograf-roerich-db.md` | Manually maintained source information on series, events, and places. |
-| `curation/` | Verified corrections and dated affiliation trajectories. |
+| `curation/` | Verified corrections and dated affiliation trajectories. Gated H1899 files (`community_person_links.csv`, `community_quotes.csv`) need a complete record in [`curation/rights_approvals.json`](https://github.com/gasyoun/IndologyScholars/blob/main/curation/rights_approvals.json); [`scripts/publish_safety_gate.py`](https://github.com/gasyoun/IndologyScholars/blob/main/scripts/publish_safety_gate.py) fails closed before Pages upload (H2578). |
 | `authority_ids.json` | Verified external person identifiers. |
 | `analytics_output/classification_overrides.csv` | Editorial decisions for public classification examples. |
 | `curation/teacher_student.csv` | Curated advisor/student relationships (issue #9 genealogy track). Schema and editing rules: `curation/teacher_student_schema.md`. |
@@ -133,8 +135,8 @@ new institution is found.
 
 Argument-scale levels `L1`-`L3` are published only after valid coding. The
 separate strict audit of elevated levels is documented in
-[classification-audit-en.md](classification-audit-en.md); the Russian version
-is [classification-audit.md](classification-audit.md).
+[classification-audit-en.md](https://github.com/gasyoun/IndologyScholars/blob/main/docs/classification-audit-en.md); the Russian version
+is [classification-audit.md](https://github.com/gasyoun/IndologyScholars/blob/main/docs/classification-audit.md).
 
 ### Known Relationships Layer
 Extra-network personal, academic, or professional ties that are not directly visible from joint presentations or shared sessions are manually recorded in `curation/known_relationships.csv`. These ties (such as advisor-student, spouses, or former co-workers) provide necessary contextual evidence for the gatekeeping case. This data is rendered interactively on `known-relationships.html` and reviewed according to the editorial policy in `docs/sociology-gatekeeping-editorial-decisions.md`.
@@ -147,6 +149,22 @@ Alumni of the St Petersburg University Faculty of Asian and African Studies (Ori
 Run `validate_publication.py` and the unit tests before publication. The
 validator checks consistency between the public summary and the database,
 identifier stability, required public pages, and export metadata.
+
+Pre-push (after `git config core.hooksPath .githooks`): the hook in
+[`.githooks/pre-push`](https://github.com/gasyoun/IndologyScholars/blob/main/.githooks/pre-push)
+blocks a local base that is behind, diverged, or remote-advanced, and blocks
+new CRLF blobs, before objects are sent. Line-level silent-revert is a warning
+by default. Operator notes:
+[PRE_PUSH_STALE_BASE_OPERATOR.md](https://github.com/gasyoun/IndologyScholars/blob/main/docs/PRE_PUSH_STALE_BASE_OPERATOR.md).
+Regression: `python -m pytest tests/test_pre_push_stale_base.py -q`.
+
+Publish-safety (H2578): before `_site` is built and before
+`upload-pages-artifact`,
+[`scripts/publish_safety_gate.py`](https://github.com/gasyoun/IndologyScholars/blob/main/scripts/publish_safety_gate.py)
+checks the four H1899 artifacts. `.gitignore` and untracked status are not
+approval. Operator notes:
+[PUBLISH_SAFETY_GATE_OPERATOR.md](https://github.com/gasyoun/IndologyScholars/blob/main/docs/PUBLISH_SAFETY_GATE_OPERATOR.md).
+Regression: `python -m pytest tests/test_publish_safety_gate.py -q`.
 
 The `.github/workflows/rebuild_and_deploy.yml` workflow fetches new programmes,
 runs the full build and validation, and deploys GitHub Pages on 20 June and
@@ -247,23 +265,27 @@ ru-/Wikidata-dependent steps must run from a host with access.
 
 | Document | Purpose |
 | --- | --- |
-| [../data_dictionary.md](../data_dictionary.md) | Public data schema and field provenance. |
-| [classification-audit-en.md](classification-audit-en.md) | Audit of argument-scale coding. |
-| [rinc-review-en.md](rinc-review-en.md) | Manual review of RINC/eLIBRARY profiles. |
-| [ux-ui-audit.md](ux-ui-audit.md) | Interface audit and prioritized improvements to the user workflow (in Russian). |
-| [visualisations.md](visualisations.md) | Stable IDs and use cases for interactive public visualisations. |
-| [sociology-gatekeeping-editorial-decisions.md](sociology-gatekeeping-editorial-decisions.md) | Editorial, audience, naming, and claim-strength decisions for sociology and gatekeeping analyses. |
+| [../data_dictionary.md](https://github.com/gasyoun/IndologyScholars/blob/main/data_dictionary.md) | Public data schema and field provenance. |
+| [classification-audit-en.md](https://github.com/gasyoun/IndologyScholars/blob/main/docs/classification-audit-en.md) | Audit of argument-scale coding. |
+| [rinc-review-en.md](https://github.com/gasyoun/IndologyScholars/blob/main/docs/rinc-review-en.md) | Manual review of RINC/eLIBRARY profiles. |
+| [ux-ui-audit.md](https://github.com/gasyoun/IndologyScholars/blob/main/docs/ux-ui-audit.md) | Interface audit and prioritized improvements to the user workflow (in Russian). |
+| [visualisations.md](https://github.com/gasyoun/IndologyScholars/blob/main/docs/visualisations.md) | Stable IDs and use cases for interactive public visualisations. |
+| [sociology-gatekeeping-editorial-decisions.md](https://github.com/gasyoun/IndologyScholars/blob/main/docs/sociology-gatekeeping-editorial-decisions.md) | Editorial, audience, naming, and claim-strength decisions for sociology and gatekeeping analyses. |
 | [archive/README.md](https://github.com/gasyoun/IndologyScholars/blob/main/archive/README.md) | Index of historical plans, snapshots, and handoff files. |
 | [archive/plans/architecture.md](https://github.com/gasyoun/IndologyScholars/blob/main/archive/plans/architecture.md) | Historical architecture plan. |
 | [archive/plans/architecture_implementation_plan.md](https://github.com/gasyoun/IndologyScholars/blob/main/archive/plans/architecture_implementation_plan.md) | Record of implemented architecture hardening. |
 | [../philology-research-agents/README.md](https://github.com/gasyoun/IndologyScholars/blob/main/philology-research-agents/README.md) | Portable six-agent evidence-lab prompt module for philology, linguistics, and Oriental studies, with journal-specific editor profiles (ППВ, IIJ, ВДИ, ВЯ, JAOS, OLZ) and a Haiku-based VAK *Perechen'* parser. Designed to be moved into its own repository. |
-| [wikidata-guide.md](wikidata-guide.md) | Step-by-step guide to mapping scholars to Wikidata Q-IDs via the OpenAlex → Wikidata pipeline and QuickStatements. |
-| [persons-data-policy.md](persons-data-policy.md) | What personal data the archive publishes, the research basis, and the correction/objection procedure for living scholars (Russian version: [persons-data-policy-ru.md](persons-data-policy-ru.md)). |
+| [wikidata-guide.md](https://github.com/gasyoun/IndologyScholars/blob/main/docs/wikidata-guide.md) | Step-by-step guide to mapping scholars to Wikidata Q-IDs via the OpenAlex → Wikidata pipeline and QuickStatements. |
+| [persons-data-policy.md](https://github.com/gasyoun/IndologyScholars/blob/main/docs/persons-data-policy.md) | What personal data the archive publishes, the research basis, and the correction/objection procedure for living scholars (Russian version: [persons-data-policy-ru.md](https://github.com/gasyoun/IndologyScholars/blob/main/docs/persons-data-policy-ru.md)). |
 | [../article/data_paper_draft.md](https://github.com/gasyoun/IndologyScholars/blob/main/article/data_paper_draft.md) | English data paper describing corpus construction, data model, and reuse (target: Research Data Journal for the Humanities and Social Sciences). |
-| [roster-merge-design.md](roster-merge-design.md) | Design for merging the `scratch/` Russian-indologist roster into the corpus (participants enriched, non-participants as a separate registry). |
-| [ru-enrichment-runbook.md](ru-enrichment-runbook.md) | Step-by-step procedure for the Phase-5 enrichment that must run inside Russia (Wikidata life years, ru.wikipedia infoboxes, institutional scrapers). |
-| [deepseek-clean-host-runbook.md](deepseek-clean-host-runbook.md) | Procedure for running the DeepSeek k-fold classification and video segmentation runners from a clean-egress host, because `api.openmodel.ai` inference is severed (DPI) from the automation host. |
+| [roster-merge-design.md](https://github.com/gasyoun/IndologyScholars/blob/main/docs/roster-merge-design.md) | Design for merging the `scratch/` Russian-indologist roster into the corpus (participants enriched, non-participants as a separate registry). |
+| [ru-enrichment-runbook.md](https://github.com/gasyoun/IndologyScholars/blob/main/docs/ru-enrichment-runbook.md) | Step-by-step procedure for the Phase-5 enrichment that must run inside Russia (Wikidata life years, ru.wikipedia infoboxes, institutional scrapers). |
+| [PRE_PUSH_STALE_BASE_OPERATOR.md](https://github.com/gasyoun/IndologyScholars/blob/main/docs/PRE_PUSH_STALE_BASE_OPERATOR.md) | Pre-push base-state (behind / diverged / clean / remote-advanced) + CRLF blob gate: what blocks, how to recover, escape hatches (H2579). |
+| [PUBLISH_SAFETY_GATE_OPERATOR.md](https://github.com/gasyoun/IndologyScholars/blob/main/docs/PUBLISH_SAFETY_GATE_OPERATOR.md) | H1899 rights gate: four named cases, catalog schema, fail-closed before Pages upload, 5-try git cap (H2578). |
+| [deepseek-clean-host-runbook.md](https://github.com/gasyoun/IndologyScholars/blob/main/docs/deepseek-clean-host-runbook.md) | Procedure for running the DeepSeek k-fold classification and video segmentation runners from a clean-egress host, because `api.openmodel.ai` inference is severed (DPI) from the automation host. |
 
 `CHANGELOG.md` and materials under `article/` are logs or research snapshots;
 read their figures in the context of their stated date. Working documents
 removed from the current documentation surface are retained under `archive/`.
+
+_Dr. Mārcis Gasūns_

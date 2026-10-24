@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 21329595072512
 subject: "Трансляторы ITRANS/HK/IAST/SLP1/Velthuis <-> UTF8"
@@ -130,3 +132,5 @@ http://www.sanskrit-sanscrito.com.ar/en/sanskrit-transliterating-transliterating
 >>
 >>
 >>
+
+_Dr. Mārcis Gasūns_

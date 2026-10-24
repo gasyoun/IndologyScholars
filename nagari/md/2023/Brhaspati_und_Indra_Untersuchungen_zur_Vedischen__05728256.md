@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7279269365605728256
 subject: "Brhaspati und Indra: Untersuchungen zur Vedischen Mythologie und Kulturgeschichte"
@@ -26,3 +28,5 @@ Mythologie und Kulturgeschichte. - Wiesbaden : Harrassowitz, 1968. - 260 S.
 божествами. Религии мира • Индуизм
 
 см. https://vk.com/samskrtamru?w=wall-88831040_19952
+
+_Dr. Mārcis Gasūns_

@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 15829072609280
 subject: "Useful list of Sanskrit Resources: Весьма полезный список интернет-ресурсов по Санскриту"
@@ -35,12 +37,22 @@ On Sep 1, 11:43 pm, Dmitri <kanc...@…> wrote:
 
 ## 3. Arvind_Kolhatkar — 2011-10-27 06:06:53
 
-Off the hat, I suggest visits to
-
-i) http://sanskritdocuments.org/
-ii) http://www.khapre.in/index.aspx
-iii) Digital Library of India (rather poorly managed) http://www.dli.gov.in/
-and
-iv) archive.org
-
+Off the hat, I suggest visits to
+
+
+
+i) http://sanskritdocuments.org/
+
+ii) http://www.khapre.in/index.aspx
+
+iii) Digital Library of India (rather poorly managed) http://www.dli.gov.in/
+
+and
+
+iv) archive.org
+
+
+
 Arvind Kolhatkar, Toronto, October 26, 2011.
+
+_Dr. Mārcis Gasūns_

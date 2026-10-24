@@ -1,6 +1,8 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 # Разработка и воспроизводимость
 
-[English version](development-en.md) | [Пользовательское описание](../README.md) | [Указатель документации](README.md)
+[English version](https://github.com/gasyoun/IndologyScholars/blob/main/docs/development-en.md) | [Пользовательское описание](https://github.com/gasyoun/IndologyScholars/blob/main/README.md) | [Указатель документации](https://github.com/gasyoun/IndologyScholars/blob/main/docs/README.md)
 
 Этот документ предназначен для разработчиков и кураторов данных
 **IndologyScholars**. Пользовательская страница проекта намеренно не содержит
@@ -9,10 +11,10 @@
 ## Актуальный публичный снимок
 
 Источник чисел для публикуемого сайта - объект `summary` в
-`site_data.json`. На 23 июля 2026 г. он содержит 268 профилей докладчиков,
-1362 уникальных доклада, 1388 авторских участий и 40 событий за 22
-программных года (2004-2026). Участников обеих серий - 41, только
-Зографских чтений - 163, только Рериховских - 64. Отдельный исторический
+`site_data.json`. На 23 июля 2026 г. он содержит 276 профилей докладчиков,
+1385 уникальных доклада, 1411 авторских участий и 41 событий за 23
+программных года (2004-2026). Участников обеих серий - 42, только
+Зографских чтений - 162, только Рериховских - 72. Отдельный исторический
 просопографический слой (26 фигур, `person_kind = historical`) **не** входит
 в счётчик докладчиков.
 
@@ -36,7 +38,7 @@
 | --- | --- |
 | `html_cache/` | Сохраненные программы конференций, первичный программный источник. |
 | `zograf-roerich-db.md` | Ручные исходные сведения о сериях, событиях и местах. |
-| `curation/` | Проверенные исправления и датированные траектории аффилиаций. |
+| `curation/` | Проверенные исправления и датированные траектории аффилиаций. Закрытые файлы H1899 (`community_person_links.csv`, `community_quotes.csv`) требуют полной записи в [`curation/rights_approvals.json`](https://github.com/gasyoun/IndologyScholars/blob/main/curation/rights_approvals.json); [`scripts/publish_safety_gate.py`](https://github.com/gasyoun/IndologyScholars/blob/main/scripts/publish_safety_gate.py) закрывается fail-closed до выгрузки Pages (H2578). |
 | `authority_ids.json` | Проверенные внешние идентификаторы персон. |
 | `analytics_output/classification_overrides.csv` | Редакционные решения по публичным примерам классификации. |
 | `curation/teacher_student.csv` | Кураторские связи руководитель/ученик (issue #9, генеалогический трек). Схема и правила правок: `curation/teacher_student_schema.md`. |
@@ -134,8 +136,8 @@ flowchart TD
 
 Уровни аргументации `L1`-`L3` публикуются только после валидной разметки.
 Отдельный строгий аудит повышенных уровней описан в
-[classification-audit.md](classification-audit.md); английская версия -
-[classification-audit-en.md](classification-audit-en.md).
+[classification-audit.md](https://github.com/gasyoun/IndologyScholars/blob/main/docs/classification-audit.md); английская версия -
+[classification-audit-en.md](https://github.com/gasyoun/IndologyScholars/blob/main/docs/classification-audit-en.md).
 
 ### Внесетевые связи (Known Relationships)
 Межличностные, академические или профессиональные связи участников, которые не выводятся напрямую из совместных докладов или сессий, фиксируются вручную в `curation/known_relationships.csv`. Эти связи (такие как научный руководитель-аспирант, супруги или бывшие коллеги) служат контекстом для гипотезы гейткипинга. Они отображаются на интерактивной странице `known-relationships.html` и регулируются редакционной политикой, описанной в `docs/sociology-gatekeeping-editorial-decisions-ru.md`.
@@ -149,6 +151,21 @@ flowchart TD
 тесты. Валидатор проверяет согласованность публичной сводки с базой,
 стабильность идентификаторов, полноту обязательных страниц и метаданные
 выгрузок.
+
+Pre-push (после `git config core.hooksPath .githooks`): хук
+[`.githooks/pre-push`](https://github.com/gasyoun/IndologyScholars/blob/main/.githooks/pre-push)
+блокирует локальную базу behind / diverged / remote-advanced и новые CRLF-блобы
+до отправки объектов. Молчаливый revert на уровне строк — предупреждение по
+умолчанию. Операторские заметки:
+[PRE_PUSH_STALE_BASE_OPERATOR.md](https://github.com/gasyoun/IndologyScholars/blob/main/docs/PRE_PUSH_STALE_BASE_OPERATOR.md).
+Регрессия: `python -m pytest tests/test_pre_push_stale_base.py -q`.
+
+Publish-safety (H2578): перед сборкой `_site` и `upload-pages-artifact` гейт
+[`scripts/publish_safety_gate.py`](https://github.com/gasyoun/IndologyScholars/blob/main/scripts/publish_safety_gate.py)
+проверяет четыре артефакта H1899. `.gitignore` и untracked — не одобрение.
+Операторские заметки:
+[PUBLISH_SAFETY_GATE_OPERATOR.md](https://github.com/gasyoun/IndologyScholars/blob/main/docs/PUBLISH_SAFETY_GATE_OPERATOR.md).
+Регрессия: `python -m pytest tests/test_publish_safety_gate.py -q`.
 
 Workflow `.github/workflows/rebuild_and_deploy.yml` выполняет загрузку новых
 программ, полную сборку, валидацию и развертывание GitHub Pages по расписанию
@@ -243,22 +260,24 @@ Humanities and Social Sciences, Brill); `notebooks/example_analysis.py` —
 
 | Документ | Назначение |
 | --- | --- |
-| [../data_dictionary.md](../data_dictionary.md) | Схема публичных данных и происхождение полей. |
-| [classification-audit.md](classification-audit.md) | Аудит разметки масштаба аргументации. |
-| [rinc-review.md](rinc-review.md) | Ручная проверка профилей РИНЦ/eLIBRARY. |
-| [ux-ui-audit.md](ux-ui-audit.md) | Аудит интерфейса и приоритеты улучшения пользовательского сценария. |
-| [visualisations.md](visualisations.md) | Постоянные ID и исследовательские сценарии для интерактивных визуализаций. |
-| [sociology-gatekeeping-editorial-decisions-ru.md](sociology-gatekeeping-editorial-decisions-ru.md) | Редакционные решения по доказательствам, именованию людей и силе утверждений для страниц социологии и гейткипинга. |
+| [../data_dictionary.md](https://github.com/gasyoun/IndologyScholars/blob/main/data_dictionary.md) | Схема публичных данных и происхождение полей. |
+| [classification-audit.md](https://github.com/gasyoun/IndologyScholars/blob/main/docs/classification-audit.md) | Аудит разметки масштаба аргументации. |
+| [rinc-review.md](https://github.com/gasyoun/IndologyScholars/blob/main/docs/rinc-review.md) | Ручная проверка профилей РИНЦ/eLIBRARY. |
+| [ux-ui-audit.md](https://github.com/gasyoun/IndologyScholars/blob/main/docs/ux-ui-audit.md) | Аудит интерфейса и приоритеты улучшения пользовательского сценария. |
+| [visualisations.md](https://github.com/gasyoun/IndologyScholars/blob/main/docs/visualisations.md) | Постоянные ID и исследовательские сценарии для интерактивных визуализаций. |
+| [sociology-gatekeeping-editorial-decisions-ru.md](https://github.com/gasyoun/IndologyScholars/blob/main/docs/sociology-gatekeeping-editorial-decisions-ru.md) | Редакционные решения по доказательствам, именованию людей и силе утверждений для страниц социологии и гейткипинга. |
 | [archive/README.md](https://github.com/gasyoun/IndologyScholars/blob/main/archive/README.md) | Указатель исторических планов, снимков и handoff-файлов. |
 | [archive/plans/architecture.md](https://github.com/gasyoun/IndologyScholars/blob/main/archive/plans/architecture.md) | Исторический архитектурный план. |
 | [archive/plans/architecture_implementation_plan.md](https://github.com/gasyoun/IndologyScholars/blob/main/archive/plans/architecture_implementation_plan.md) | Запись выполненного усиления архитектуры. |
 | [../philology-research-agents/README.md](https://github.com/gasyoun/IndologyScholars/blob/main/philology-research-agents/README.md) | Портативный модуль из шести агентов-промптов для филологии, языкознания и востоковедения, с журнальными профилями редакторов (ППВ, IIJ, ВДИ, ВЯ, JAOS, OLZ) и Haiku-промптом для парсинга Перечня ВАК. Спроектирован для выноса в отдельный репозиторий. |
-| [wikidata-guide.md](wikidata-guide.md) | Пошаговое руководство по привязке учёных к Wikidata Q-ID через пайплайн OpenAlex → Wikidata и QuickStatements. |
-| [persons-data-policy-ru.md](persons-data-policy-ru.md) | Какие персональные данные публикует архив, исследовательское основание и порядок исправления/возражения для живущих учёных (английская версия: [persons-data-policy.md](persons-data-policy.md)). |
+| [wikidata-guide.md](https://github.com/gasyoun/IndologyScholars/blob/main/docs/wikidata-guide.md) | Пошаговое руководство по привязке учёных к Wikidata Q-ID через пайплайн OpenAlex → Wikidata и QuickStatements. |
+| [persons-data-policy-ru.md](https://github.com/gasyoun/IndologyScholars/blob/main/docs/persons-data-policy-ru.md) | Какие персональные данные публикует архив, исследовательское основание и порядок исправления/возражения для живущих учёных (английская версия: [persons-data-policy.md](https://github.com/gasyoun/IndologyScholars/blob/main/docs/persons-data-policy.md)). |
 | [../article/data_paper_draft.md](https://github.com/gasyoun/IndologyScholars/blob/main/article/data_paper_draft.md) | Англоязычный data paper: построение корпуса, модель данных, повторное использование (цель: Research Data Journal for the Humanities and Social Sciences). |
-| [roster-merge-design.md](roster-merge-design.md) | Дизайн слияния `scratch/`-ростера русскоязычных индологов в корпус (участники обогащаются, неучастники — отдельным реестром). |
-| [ru-enrichment-runbook.md](ru-enrichment-runbook.md) | Пошаговая инструкция Phase-5 обогащения, которое запускается внутри РФ (годы жизни из Wikidata, ru-инфобоксы, скраперы институтов). |
+| [roster-merge-design.md](https://github.com/gasyoun/IndologyScholars/blob/main/docs/roster-merge-design.md) | Дизайн слияния `scratch/`-ростера русскоязычных индологов в корпус (участники обогащаются, неучастники — отдельным реестром). |
+| [ru-enrichment-runbook.md](https://github.com/gasyoun/IndologyScholars/blob/main/docs/ru-enrichment-runbook.md) | Пошаговая инструкция Phase-5 обогащения, которое запускается внутри РФ (годы жизни из Wikidata, ru-инфобоксы, скраперы институтов). |
 
 `CHANGELOG.md` и материалы `article/` служат журналом или исследовательскими
 снимками; содержащиеся в них числа нужно читать в контексте указанной даты.
 Снятые с текущего контура рабочие документы помещаются в `archive/`.
+
+_Dr. Mārcis Gasūns_

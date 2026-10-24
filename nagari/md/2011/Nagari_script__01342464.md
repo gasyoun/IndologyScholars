@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 9523601342464
 subject: "Nagari script"
@@ -194,3 +196,5 @@ On Fri, Oct 7, 2011 at 6:11 PM, tulasi <tulasird@…> wrote:
 http://dl.dropbox.com/u/9150422/Devanagari%20Fonts/dev-macro.rar
 http://pastie.org/2665480 разные конверторы письменности деванагари,
 обновление 2011 г.
+
+_Dr. Mārcis Gasūns_

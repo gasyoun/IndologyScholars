@@ -239,7 +239,7 @@ exactly the 14%-of-sample gap this document flagged.
 
 **Scope item 3 (deduplicate the rule table into one canonical file) is
 intentionally not done.** It is gated behind the `@DECIDE` this document and
-[H459](https://github.com/gasyoun/Uprava/blob/main/handoffs/H459-Sonnet_IndologyScholars_renou-rules-anchor-fix-and-dedupe_10.07.26.md)
+[H459](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H459-Sonnet_IndologyScholars_renou-rules-anchor-fix-and-dedupe_10.07.26.md)
 both name — canonical home in `SanskritLexicography/RussianTranslation` next
 to `RENOU.md`, or in `sanskrit-util` — and that ruling has not been made. The
 table therefore still exists in the same three places (now anchored in one of

@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7234644392227635200
 subject: "Le Gitalamkara (индийская музыка)"
@@ -21,3 +23,5 @@ Le Gitalamkara: L'ouvrage original de Bharata sur la musique / Trad.
 francaise et introd. par Alain Danielou et N. R. Bhatt. - Ed. critique. - 
 Pondichery, 1959. - XXXIII, 232 p. - (Publications de l'Inst. francais 
 d'indologie; N. 16).
+
+_Dr. Mārcis Gasūns_

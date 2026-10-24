@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 6202290377088565248
 subject: "Lantsa(Landza) monogram"
@@ -41,3 +43,5 @@ On Tuesday, 6 October 2015 01:14:20 UTC+3, Vladimir Rozhko wrote:
 >
 > Пример--монограмма Мани Мантра в ланца
 >
+
+_Dr. Mārcis Gasūns_

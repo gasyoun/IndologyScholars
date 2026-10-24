@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 6256560429503348736
 subject: "saṃskr̥takāvyam"
@@ -17,14 +19,22 @@ source_url: https://groups.google.com/d/msgid/nagari/1fc11893-65e0-443d-a2eb-0be
 
 ## 1. Dmitri — 2016-02-29 07:09:51
 
-virā́j
-
-ví bʰāsaya tvé
-pántʰāmr̥tásya
-síṣāsate'pi
-akalpámágne 
-------------------------
-
+virā́j
+
+
+
+ví bʰāsaya tvé
+
+pántʰāmr̥tásya
+
+síṣāsate'pi
+
+akalpámágne 
+
+------------------------
+
+
+
 (Не всё ж переводить!)
 
 ## 2. Dmitri — 2016-02-29 21:56:29
@@ -34,3 +44,5 @@ gāyatrī́
 yahvátīrā́po'rnaváṃ prá
 vŕ̥tʰārṣantvā́yóniṃ dʰíyaḥ
 gávyūtimáditerurvī́m
+
+_Dr. Mārcis Gasūns_

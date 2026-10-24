@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 23712460963840
 subject: "Лечим запор DLI, или качаем индийские .tiff оптом"
@@ -27,3 +29,5 @@ http://dli-downloader.blogspot.in/2013/06/experimental-version-40-what-is-new.ht
 Но попробовал выкачать http://www.dli.ernet.in/ по Caraka - посмотрим, как 
 быстро осилит и осилит ли
 вообще 17 books with 11602 pages.
+
+_Dr. Mārcis Gasūns_

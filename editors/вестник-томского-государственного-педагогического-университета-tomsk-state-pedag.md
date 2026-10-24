@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 # Вестник Томского государственного педагогического университета (Tomsk State Pedagogical University Bulletin)
 
 - **ISSN:** 1609-624X
@@ -20,3 +22,5 @@
 ## Контакты
 
 <!-- E-mail редакции, адрес для отправки -->
+
+_Dr. Mārcis Gasūns_

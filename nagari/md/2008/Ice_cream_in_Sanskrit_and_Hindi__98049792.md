@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 5376198049792
 subject: "Ice cream in Sanskrit and Hindi"
@@ -278,43 +280,80 @@ http://freetranslationblog.blogspot.com
 
 ## 6. Puneet Madaan — 2008-08-27 16:01:20
 
-Was just considering barf-gola ;)
-
-----
-Puneet Madaan
-
-On 27.08.2008, at 14:36, "Kiran Paranjape" <kiranparanjape@…>  
-wrote:
-
-> In Sanskrit,
-> Ice  = him = हिम
-> cream = shara = शर ( also means arrrow as per the context)
->          or saara = सार ( also means essence as per the context)
-> So either himashara or himasaara as per your liking.
->
-> As for Hindi,
-> Icecream is a very commonly used word in Hindi.
-> As are many English words incrporated in daily usage Hindi language.
->
-> Webmaster - translations
-> http://freetranslationblog.blogspot.com
->
-> On Wed, Aug 27, 2008 at 1:28 PM, kalindi dd kalindi dd <kalindi.kaliningrad@… 
-> > wrote:
-> Dear friends, please tell me, how is ice cream (and ice) in Sanskrit  
-> and Hindi.
-> I need the word, which will resound beautiful for Russians:).
->
-> Thank you very much.
->
->
->
->
->
-> -- 
-> Webmaster - Translations
-> http://freetranslationblog.blogspot.com
->
+Was just considering barf-gola ;)
+
+
+
+----
+
+Puneet Madaan
+
+
+
+On 27.08.2008, at 14:36, "Kiran Paranjape" <kiranparanjape@…>  
+
+wrote:
+
+
+
+> In Sanskrit,
+
+> Ice  = him = हिम
+
+> cream = shara = शर ( also means arrrow as per the context)
+
+>          or saara = सार ( also means essence as per the context)
+
+> So either himashara or himasaara as per your liking.
+
+>
+
+> As for Hindi,
+
+> Icecream is a very commonly used word in Hindi.
+
+> As are many English words incrporated in daily usage Hindi language.
+
+>
+
+> Webmaster - translations
+
+> http://freetranslationblog.blogspot.com
+
+>
+
+> On Wed, Aug 27, 2008 at 1:28 PM, kalindi dd kalindi dd <kalindi.kaliningrad@… 
+
+> > wrote:
+
+> Dear friends, please tell me, how is ice cream (and ice) in Sanskrit  
+
+> and Hindi.
+
+> I need the word, which will resound beautiful for Russians:).
+
+>
+
+> Thank you very much.
+
+>
+
+>
+
+>
+
+>
+
+>
+
+> -- 
+
+> Webmaster - Translations
+
+> http://freetranslationblog.blogspot.com
+
+>
+
 > >
 
 ## 7. doc — 2008-08-28 05:33:34
@@ -377,15 +416,28 @@ Doc
 
 ## 8. narakeshvara — 2008-08-28 09:55:47
 
-Try कुल्फी (kulfi) - traditional Indian ice-cream
-
------Original Message-----
-From: Nagari@… [mailto:Nagari@…] On Behalf Of kalindi dd kalindi dd
-Sent: Wednesday, August 27, 2008 1:59 PM
-To: Nagari@…
-Subject: Ice cream in Sanskrit and Hindi
-
-Dear friends, please tell me, how is ice cream (and ice) in Sanskrit and Hindi.
-I need the word, which will resound beautiful for Russians:).
-
+Try कुल्फी (kulfi) - traditional Indian ice-cream
+
+
+
+-----Original Message-----
+
+From: Nagari@… [mailto:Nagari@…] On Behalf Of kalindi dd kalindi dd
+
+Sent: Wednesday, August 27, 2008 1:59 PM
+
+To: Nagari@…
+
+Subject: Ice cream in Sanskrit and Hindi
+
+
+
+Dear friends, please tell me, how is ice cream (and ice) in Sanskrit and Hindi.
+
+I need the word, which will resound beautiful for Russians:).
+
+
+
 Thank you very much.
+
+_Dr. Mārcis Gasūns_

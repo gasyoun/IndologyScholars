@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 6411538402265530368
 subject: "Veda Chanting"
@@ -65,3 +67,5 @@ https://drive.google.com/drive/folders/0B1koPPpTKGEwSVhla3UzWkxKeW8
 >Вы получили это сообщение, поскольку подписаны на группу "Общество ревнителей санскрита (Sanscrit)".
 >Чтобы отменить подписку на эту группу и больше не получать от нее сообщения, отправьте письмо на электронный адрес  nagari+unsubscribe@… .
 >Чтобы настроить другие параметры, перейдите по ссылке  https://groups.google.com/d/optout .
+
+_Dr. Mārcis Gasūns_

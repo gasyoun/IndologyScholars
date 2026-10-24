@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 22723625484288
 subject: "Indology at HathiTrust’s digital library"
@@ -17,12 +19,22 @@ source_url: https://groups.google.com/d/msgid/nagari/25b0818b-b2b1-426d-a194-ae9
 
 ## 1. Marcis — 2013-05-24 19:31:20
 
-Dear friends from US,
-
-  I'm asking for a favour (only US universities), to Download whole book 
-(PDF) for
-http://babel.hathitrust.org/cgi/pt?id=hvd.32044055056659;view=1up;seq=1
-Vikramorvaśí : a drama, by Kálidása. Edited, for ... . Kālidāsa.
-
-Warm regards from cold Novosibirsk,
+Dear friends from US,
+
+
+
+  I'm asking for a favour (only US universities), to Download whole book 
+
+(PDF) for
+
+http://babel.hathitrust.org/cgi/pt?id=hvd.32044055056659;view=1up;seq=1
+
+Vikramorvaśí : a drama, by Kálidása. Edited, for ... . Kālidāsa.
+
+
+
+Warm regards from cold Novosibirsk,
+
 Marcis Gasuns, in hunt for MW's books
+
+_Dr. Mārcis Gasūns_

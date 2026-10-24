@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 # Design: Merging the Russian-Indologist Roster into the Corpus
 
 **Status:** implemented (2026-06-10) · **Decision source:** roadmap session
@@ -156,8 +158,10 @@ matcher, CSV curation, page generation, and tests run anywhere.
 ## Remaining for the maintainer
 
 - Phase 5 enrichment (`wikidata_enrich.py`, ru-infobox fetch) is .ru-gated and
-  runs by runbook ([ru-enrichment-runbook.md](ru-enrichment-runbook.md)); it
+  runs by runbook ([ru-enrichment-runbook.md](https://github.com/gasyoun/IndologyScholars/blob/main/docs/ru-enrichment-runbook.md)); it
   will raise Q-ID/life-year coverage and flip more `candidate` rows to
   `verified`.
 - The 70 `candidate` rows need a human-supplied `source_url` before they count
   as verified.
+
+_Dr. Mārcis Gasūns_

@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 3906465693696
 subject: "Sanskrit Grammars for download"
@@ -45,3 +47,5 @@ On 7 Nov., 23:55, JudasFawley <poe...@…> wrote:
 > Thanks,
 >
 > JudasFawley
+
+_Dr. Mārcis Gasūns_

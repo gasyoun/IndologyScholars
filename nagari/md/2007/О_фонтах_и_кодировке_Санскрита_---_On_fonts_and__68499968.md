@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 1831068499968
 subject: "О фонтах и кодировке Санскрита --- On fonts and encodings of Sanskrit"
@@ -509,3 +511,5 @@ On 6 апр, 09:50, "klaus" <NVMORO...@…> wrote:
 Рома.
 ---
 om namah shivaya
+
+_Dr. Mārcis Gasūns_

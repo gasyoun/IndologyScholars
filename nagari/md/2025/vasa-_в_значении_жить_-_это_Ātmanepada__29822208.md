@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7496837563529822208
 subject: "vasa- в значении жить - это Ātmanepada?"
@@ -48,3 +50,5 @@ source_url: https://groups.google.com/d/msgid/nagari/aef25202-2189-441a-925f-f95
 > [image: вопрос.png]
 >
 >
+
+_Dr. Mārcis Gasūns_

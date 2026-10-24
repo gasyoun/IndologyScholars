@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 # Agent 4 — Critical Analyst · Агент 4 — Критический аналитик
 
 > Pipeline step 4. Judges the **argumentative and methodological quality** of the
@@ -96,3 +98,5 @@ Critical Analyst:
 - Evidence level per conclusion (A–E):
 - What remains unknown:
 ```
+
+_Dr. Mārcis Gasūns_

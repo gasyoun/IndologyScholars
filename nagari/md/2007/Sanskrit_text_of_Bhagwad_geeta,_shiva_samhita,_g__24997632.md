@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 3345724997632
 subject: "Sanskrit text of Bhagwad geeta, shiva samhita, gheranda samhita, ...."
@@ -44,3 +46,5 @@ On 22/09/2007, Puneet Madaan <puneetmadaan@…> wrote:
 > -----PM
 > >
 >
+
+_Dr. Mārcis Gasūns_

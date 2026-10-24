@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7119007046671794176
 subject: "'Bibliotheca Sanscritica'"
@@ -24,3 +26,5 @@ source_url: https://groups.google.com/d/msgid/nagari/ef494fea-180f-4d44-8b7d-c69
 (исключительно типографская составляющая).
 
 [image: bibi.jpg]
+
+_Dr. Mārcis Gasūns_

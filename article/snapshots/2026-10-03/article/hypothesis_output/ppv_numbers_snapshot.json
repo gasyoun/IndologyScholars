@@ -1,0 +1,176 @@
+{
+  "total": {
+    "unique_scholars": 276,
+    "presentations": 1385,
+    "author_participations": 1411,
+    "known_birth_years": 234,
+    "cross_cohort": 42,
+    "zograf_only": 162,
+    "roerich_only": 72,
+    "events": 41,
+    "program_years": 23
+  },
+  "cross_cohort_pct": 15.2,
+  "combined_activity": {
+    "one_talk_share_pct": 42.8,
+    "core_share_pct": 35.5,
+    "retention_pct": 57.2,
+    "gini": 0.558
+  },
+  "series": {
+    "Zograf": {
+      "unique_scholars": 204,
+      "presentations": 890,
+      "author_participations": 911,
+      "one_talk_share_pct": 40.2,
+      "core_share_pct": 35.3,
+      "retention_pct": 59.8,
+      "gini": 0.522
+    },
+    "Roerich": {
+      "unique_scholars": 114,
+      "presentations": 495,
+      "author_participations": 500,
+      "one_talk_share_pct": 40.4,
+      "core_share_pct": 31.6,
+      "retention_pct": 59.6,
+      "gini": 0.519
+    }
+  },
+  "zograf_until_2025": {
+    "unique_scholars": 185,
+    "presentations": 831,
+    "author_participations": 849,
+    "one_talk_share_pct": 35.7,
+    "core_share_pct": 36.8,
+    "retention_pct": 64.3,
+    "gini": 0.506
+  },
+  "zograf_2026": {
+    "presentations": 59,
+    "unique_scholars": 62,
+    "author_participations": 62
+  },
+  "g_levels": {
+    "1": 1168,
+    "2": 208,
+    "3": 9
+  },
+  "g_levels_raw": {
+    "1": 1168,
+    "2": 206,
+    "3": 11
+  },
+  "editorial_reclassifications": {
+    "PRES_5f75a74856": [
+      "3",
+      "2"
+    ],
+    "PRES_787b14a0e0": [
+      "3",
+      "2"
+    ]
+  },
+  "override_errors": [],
+  "theme_counts": {
+    "Zograf": {
+      "philosophy": 190,
+      "literature": 197,
+      "religion": 204,
+      "linguistics": 87,
+      "history": 88,
+      "other": 19,
+      "art_archaeology": 47,
+      "ethnography": 53,
+      "tibetology": 3,
+      "pedagogy_applied": 2
+    },
+    "Roerich": {
+      "history": 101,
+      "religion": 147,
+      "philosophy": 51,
+      "art_archaeology": 43,
+      "literature": 93,
+      "ethnography": 9,
+      "linguistics": 44,
+      "tibetology": 2,
+      "other": 5
+    }
+  },
+  "meso_counts": {
+    "bhakti_vaishnava": 45,
+    "tibetology_himalaya": 69,
+    "dravidology_south_india": 64,
+    "yoga_ayurveda": 11,
+    "hindi_urdu_new_indo_aryan": 12,
+    "buddhist_studies": 218,
+    "sanskrit_grammar_panini": 50,
+    "himalaya": 10,
+    "philosophy_epistemology": 116,
+    "literary_studies": 48,
+    "epic_ramayana_mahabharata": 69,
+    "etymology": 24,
+    "bengal": 49,
+    "translation_reception": 43,
+    "vedic_studies": 81,
+    "modern_literature": 28,
+    "comparative_analysis": 67,
+    "colonial_encounters": 32,
+    "visual_material_culture": 56,
+    "ritual_studies": 49,
+    "modern_society_politics": 31,
+    "vaishnava": 20,
+    "travel_history": 6,
+    "manuscripts_epigraphy": 39,
+    "ethnography_performance": 42,
+    "pali_early_buddhism": 34,
+    "china_mongolia_inner_asia": 28,
+    "expeditions": 26,
+    "history_of_indology": 65,
+    "museum_collections": 28,
+    "nepal_newar_kathmandu": 39,
+    "jain_studies": 12,
+    "roerich_studies": 9,
+    "metrics": 9,
+    "prosody": 7,
+    "assam": 5,
+    "cosmology": 8,
+    "english_literature": 2,
+    "life_cycle_rituals": 8,
+    "bengal_bhakti_modernity": 6,
+    "fieldwork": 3,
+    "sikh_studies": 4,
+    "new_indo_aryan_languages": 7,
+    "board_games": 5,
+    "twentieth_century": 2
+  },
+  "appendix": {
+    "H1_overlap_observed": 42.0,
+    "H1_overlap_expected_mean": 132.05,
+    "H1_overlap_expected_sd": 3.84,
+    "H1_z": -23.478,
+    "H1_p_one_sided_low": 4.999750012499375e-05,
+    "H2_logrank_chi2": 1.141,
+    "H2_logrank_p": 0.2854046292057644,
+    "H2_median_span_zograf": 15.0,
+    "H2_median_span_roerich": 12.0,
+    "H4_zograf_cityonly_pct": 70.3,
+    "H4_roerich_cityonly_pct": 9.6,
+    "H4_cmh_OR": 20.52,
+    "H4_cmh_chi2": 462.0,
+    "H4_cmh_p": 1.7827144702717767e-102
+  },
+  "retention_by_city": {
+    "Moscow": 64.7,
+    "SPb": 67.5,
+    "Regions/Foreign": 39.1
+  },
+  "character_shares": {
+    "zograf_fundamental_pct": 88.7,
+    "zograf_applied_pct": 8.1,
+    "zograf_methodological_pct": 3.3,
+    "roerich_fundamental_pct": 92.9,
+    "roerich_applied_pct": 4.0,
+    "roerich_methodological_pct": 3.0
+  }
+}

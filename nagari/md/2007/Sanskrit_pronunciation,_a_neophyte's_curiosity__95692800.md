@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 4271295692800
 subject: "Sanskrit pronunciation, a neophyte's curiosity"
@@ -17,11 +19,16 @@ source_url: https://groups.google.com/d/msgid/nagari/a93a30f5-6d3a-4f28-a111-7b8
 
 ## 1. Duri — 2007-12-21 11:50:21
 
-In Sanskrit there is no f. Sansrkit v sometimes results from u before
-vowel, thus showing its semivocalic nature. Therefore there isn't a
-fricative v either. Instead we have such sounds as ph and bh, the
-latter being nearly unpronounceable and otherwise unknown from any
-other language (at least that I know of). Is it possible that, v being
+In Sanskrit there is no f. Sansrkit v sometimes results from u before
+
+vowel, thus showing its semivocalic nature. Therefore there isn't a
+
+fricative v either. Instead we have such sounds as ph and bh, the
+
+latter being nearly unpronounceable and otherwise unknown from any
+
+other language (at least that I know of). Is it possible that, v being
+
 pronounced w, ph and bh were pronounced like f and v respectively?
 
 ## 2. Alexandre V. Elizariev — 2007-12-21 14:49:21
@@ -48,3 +55,5 @@ Subject: Sanskrit pronunciation, a neophyte's curiosity
 > other language (at least that I know of). Is it possible that, v being
 > pronounced w, ph and bh were pronounced like f and v respectively?
 > >
+
+_Dr. Mārcis Gasūns_

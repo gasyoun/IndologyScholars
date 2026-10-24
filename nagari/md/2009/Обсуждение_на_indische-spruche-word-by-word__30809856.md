@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7065730809856
 subject: "Обсуждение на indische-spruche-word-by-word"
@@ -1647,3 +1649,5 @@ Subject: Re: Обсуждение на indische-spruche-word-by-word
 >> > > руки делающего горшок гончара (не "руки делающего горшка гончара")
 > >
 >
+
+_Dr. Mārcis Gasūns_

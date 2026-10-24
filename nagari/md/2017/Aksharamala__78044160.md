@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 6407441757278044160
 subject: "Aksharamala"
@@ -22,3 +24,5 @@ source_url: https://groups.google.com/d/msgid/nagari/8cca233b-b589-413f-8147-f5f
 приложение Aksharamala. Cейчас у меня Windows 10, но Aksharamala, кажется, 
 не работает на Windows 10, или я чего-то не понимаю. Не подскажете, как 
 быть? Заранее спасибо!
+
+_Dr. Mārcis Gasūns_

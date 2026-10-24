@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 20024201838592
 subject: "Java version of Charles Wikner's preprocessor for SKT LaTeX package"
@@ -26,16 +28,26 @@ Regards,
 
 ## 2. Marcis — 2012-07-16 11:47:46
 
-Upload to dropbox with a public link?
-
-вторник, 10 июля 2012 г., 4:39:58 UTC+7 пользователь Dmitri написал:
->
-> I made a java port of the SKT.C preprocessor for SKT LaTeX package.
-> If anyone is interested, it I can send both jar and java files for it.  
-> Feel free to use and post on the WWW.
->
-> Regards,
->              Dmitri.
+Upload to dropbox with a public link?
+
+
+
+вторник, 10 июля 2012 г., 4:39:58 UTC+7 пользователь Dmitri написал:
+
+>
+
+> I made a java port of the SKT.C preprocessor for SKT LaTeX package.
+
+> If anyone is interested, it I can send both jar and java files for it.  
+
+> Feel free to use and post on the WWW.
+
+>
+
+> Regards,
+
+>              Dmitri.
+
 >
 
 ## 3. Dmitri — 2012-07-17 17:47:07
@@ -47,3 +59,5 @@ Sorry, I don't use dropbox.
 Please would you like to send the both files to me: sworga@…
 
 Thank you very much in advance!
+
+_Dr. Mārcis Gasūns_

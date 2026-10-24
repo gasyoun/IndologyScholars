@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 # Русские индологи: участие в Рериховских и Зографских чтениях
 
 Сопоставление списка индологов из Википедии (категории [Индологи России](https://ru.wikipedia.org/wiki/Категория:Индологи_России) и [Санскритологи России](https://ru.wikipedia.org/wiki/Категория:Санскритологи_России)) с базой докладов [Рериховских и Зографских чтений](https://gasyoun.github.io/IndologyScholars) за 2004–2026 гг.
@@ -277,3 +279,5 @@
 - [Категория:Санскритологи России](https://ru.wikipedia.org/wiki/Категория:Санскритологи_России) — Wikipedia
 - [Архив Рериховских и Зографских чтений](https://gasyoun.github.io/IndologyScholars) — М.Ю. Гасунс
 - Скрипты: `scratch/expand_wikipedia_indologists.py`, `scratch/crossref_nonparticipants.py`
+
+_Dr. Mārcis Gasūns_

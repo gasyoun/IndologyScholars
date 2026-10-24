@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7307161613103005696
 subject: "Деванагари в системе LaTeX и Microsoft Word"
@@ -77,32 +79,50 @@ UPD:
 
 ## 4. Mārcis — 2023-12-02 22:05:25
 
-Dominik Wujastyk все давно продумал 
+Dominik Wujastyk все давно продумал 
+
 https://cikitsa.blogspot.com/2010/07/xelatex-for-sanskrit.html
 
 ## 5. Valera — 2023-12-03 06:29:08
 
-ctrl-c
-
-суббота, 2 декабря 2023 г. в 22:05:25 UTC+3, Mārcis: 
-
-Dominik Wujastyk все давно продумал 
+ctrl-c
+
+
+
+суббота, 2 декабря 2023 г. в 22:05:25 UTC+3, Mārcis: 
+
+
+
+Dominik Wujastyk все давно продумал 
+
 https://cikitsa.blogspot.com/2010/07/xelatex-for-sanskrit.html
 
 ## 6. Valera — 2023-12-03 07:10:01 · 📎 1
 
-молодец Доминик Вужастик. Сработало!
-[image: Снимок экрана (3).png]
-
-воскресенье, 3 декабря 2023 г. в 06:29:08 UTC+3, Valera: 
-
-> ctrl-c
->
-> суббота, 2 декабря 2023 г. в 22:05:25 UTC+3, Mārcis: 
->
-> Dominik Wujastyk все давно продумал 
-> https://cikitsa.blogspot.com/2010/07/xelatex-for-sanskrit.html
->
+молодец Доминик Вужастик. Сработало!
+
+[image: Снимок экрана (3).png]
+
+
+
+воскресенье, 3 декабря 2023 г. в 06:29:08 UTC+3, Valera: 
+
+
+
+> ctrl-c
+
+>
+
+> суббота, 2 декабря 2023 г. в 22:05:25 UTC+3, Mārcis: 
+
+>
+
+> Dominik Wujastyk все давно продумал 
+
+> https://cikitsa.blogspot.com/2010/07/xelatex-for-sanskrit.html
+
+>
+
 >
 
 ## 7. Alexander Myltsev — 2023-12-08 12:08:08
@@ -285,6 +305,10 @@ On Sunday 24 December 2023 at 12:38:03 UTC+3 Serge A wrote:
 
 ## 14. Valera — 2024-01-01 09:28:02
 
-На з-библиотеку слили новый латех компанион.
-
+На з-библиотеку слили новый латех компанион.
+
+
+
 http://bookszlibb74ugqojhzhg2a63w5i2atv5bqarulgczawnbmsb6s6qead.onion/book/27283967/c696bb/the-latex-companion-parts-i-ii-3rd-edition-tools-and-techniques-for-computer-typesetting.html
+
+_Dr. Mārcis Gasūns_

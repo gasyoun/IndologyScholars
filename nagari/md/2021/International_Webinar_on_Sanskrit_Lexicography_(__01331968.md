@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 6988190702101331968
 subject: "International Webinar on Sanskrit Lexicography (25-е июля, воскр., 15:00)"
@@ -29,3 +31,5 @@ https://youtu.be/Suwvh7AHIKo
 санскритские словари и компьютерную лексикографию
 
 М.Г.
+
+_Dr. Mārcis Gasūns_

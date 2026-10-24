@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 6200452186112
 subject: "Learning Sanskrit"
@@ -220,3 +222,5 @@ If you spin an oriental man, does he become disoriented?
 
 is der net süß » ε(●̮̮̃•̃)з
 -----PM
+
+_Dr. Mārcis Gasūns_

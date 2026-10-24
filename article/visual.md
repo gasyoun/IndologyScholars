@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 # Visualisation roadmap — IndologyScholars
 
 Updated: 2026-05-28. Scope: publication figures, public site interactives, and internal
@@ -148,3 +150,5 @@ After the ППВ gate, implement `findings/` visuals in order: cross-cohort orbi
 affiliation opacity timeline, video heatmap, keyword/meso alluvial. Public video coverage
 may include `needs_review` mappings as uncertainty. Any Sankey/alluvial dependency should
 be vendored locally for static reliability.
+
+_Dr. Mārcis Gasūns_

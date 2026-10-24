@@ -1,6 +1,31 @@
 # Роадмап разделов «Санскритология в России» и «Индология в России»
 
-_Created: 10-07-2026 · Last updated: 10-07-2026_
+_Created: 10-07-2026 · Last updated: 25-09-2026_
+
+> **Truth-pass 25-09-2026** (H5389, verdict pass E015 wave 1) — re-verified against the handoff
+> registry and the live database. Фаза 1 SHIPPED: [H473](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H473-Opus_IndologyScholars_sections_spine_phase1_10.07.26.md) ✅
+> (PR [#77](https://github.com/gasyoun/IndologyScholars/pull/77) merged; D1 —
+> [PR #78](https://github.com/gasyoun/IndologyScholars/pull/78); обе посадочные страницы на main).
+> Фаза 2, транш 1 SHIPPED: [H484](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H484-Opus_IndologyScholars_historical-prosopography-phase2_10.07.26.md) ✅ —
+> live-проба 25-09: 26 исторических фигур с `birth_year<1918` в `conferences.db`, 84 строки `person_role`,
+> все сущности схемы (`work`/`person_role`/`discipline`/`relation`) подняты. НЕ архивирован —
+> остаются unminted prose work (Фазы 3/4/5: таблица `work` пуста, `narrative`-сущности
+> и очерков нет) за четырьмя открытыми человеческими развилками D2–D5 — см. **What is left** ниже,
+> каждый human-гейт заведён строкой GTD @WAITING (0GN–0GQ).
+> Фаза 2-продолжение SHIPPED 25-09-2026 (транши 27–40, agent-drain A10, PR
+> [#295](https://github.com/gasyoun/IndologyScholars/pull/295)) — `curation/historical_persons.csv`
+> расширен до 40 фигур (роздан по `tools/resolve_historical_wikidata.py`), `curation/historical_person_roles.csv`
+> до 106 строк `person_role` (институции: Азиатский музей, ИВ РАН, ИВР РАН, Казанский/Петербургский/Дерптский
+> университеты и др.), дисциплины 14 новых фигур проставлены вручную в `curation/person_disciplines.csv`
+> (P1: не из дефектного классификатора). Live-проба после ребилда: 40 `historical`, 0 упавших в
+> `unattested` sentinel сверх уже существовавшей 1 строки. `total_scholars`=268 не затронут (P3/H484 контракт).
+> **Корректура номера PR:** три ссылки на `pull/295` выше и ниже в этом файле указывают неверный
+> номер — PR минтился до создания и получил номер [#296](https://github.com/gasyoun/IndologyScholars/pull/296),
+> не #295 (тот занят соседним, не связанным PR). Не правится in-place той же сессией из-за
+> [pre-push stale-base guard](https://github.com/gasyoun/IndologyScholars/blob/main/docs/PRE_PUSH_STALE_BASE_OPERATOR.md)
+> (второй push той же сессии, удаляющий строки первого push, требует `ALLOW_STALE_BASE_PUSH=1`,
+> который сессия не вправе выставлять себе сама — см. `agent-never-self-authorizes-an-escape`).
+> Правильный номер — #296 везде, где встречается #295.
 
 Проектный план двух новых разделов сайта [IndologyScholars](https://github.com/gasyoun/IndologyScholars),
 построенных по образцу [«Дравидология в России»](https://iocs.hse.ru/news/395622778.html) —
@@ -130,6 +155,9 @@ presentation → presentation_person`. Она отлично описывает,
 
 ### Фаза 2 — исторический просопографический слой (недели)
 
+> **Прогресс (29-07-2026, H1880):** 26/40 фигур целевого транша уже загружены (H484);
+> доработка этого файла отставала от `.ai_state.md`, где прогресс зафиксирован.
+
 - Целевой первый транш: **~40 фигур первого ряда** XVIII — середины XX в.
   (Лебедев, Ленц, Коссович, Петров, Минаев, Ольденбург, Щербатской, Обермиллер,
   Баранников, Востриков…), а не «все». Разворачивать итеративно.
@@ -183,7 +211,7 @@ presentation → presentation_person`. Она отлично описывает,
 
 | ID | Риск | Смягчение |
 | --- | --- | --- |
-| P1 | **Классификатор ключевых слов дефектен.** Незаякорённые кириллические основы в [`keyword_filtering.py`](https://github.com/gasyoun/IndologyScholars/blob/main/keyword_filtering.py): основа «тика» срабатывает внутри «Эротика», «практика». Ошибочно ≥7,1% совпадений — это пол, а не оценка ([docs/renou-precision-audit.md](https://github.com/gasyoun/IndologyScholars/blob/main/docs/renou-precision-audit.md)) | Фасет `discipline` в Фазе 1 **не выводить** из этих основ. Сначала дождаться [H459](https://github.com/gasyoun/Uprava/blob/main/handoffs/H459-Sonnet_IndologyScholars_renou-rules-anchor-fix-and-dedupe_10.07.26.md) (якорение основ + дедуп), затем перепроверить. До того — ручная разметка 268 персон |
+| P1 | **Классификатор ключевых слов дефектен.** Незаякорённые кириллические основы в [`keyword_filtering.py`](https://github.com/gasyoun/IndologyScholars/blob/main/keyword_filtering.py): основа «тика» срабатывает внутри «Эротика», «практика». Ошибочно ≥7,1% совпадений — это пол, а не оценка ([docs/renou-precision-audit.md](https://github.com/gasyoun/IndologyScholars/blob/main/docs/renou-precision-audit.md)) | Фасет `discipline` в Фазе 1 **не выводить** из этих основ. Сначала дождаться [H459](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H459-Sonnet_IndologyScholars_renou-rules-anchor-fix-and-dedupe_10.07.26.md) (якорение основ + дедуп), затем перепроверить. До того — ручная разметка 268 персон |
 | P2 | Рабочее дерево `IndologyScholars` содержит 1590 изменённых файлов на ветке `codex/indology-archive-atlas-v0.1.0` — идёт параллельная сессия | Вся работа по H473 ведётся в отдельном worktree от `origin/main`. Не коммитить в общее дерево |
 | P3 | Мемориальный жанр требует `death_year`, заполненного у 26 из 268 | Не выводить «жив/умер» из отсутствия данных. Пустой `death_year` означает «неизвестно», и шаблон обязан трактовать его как реестр, а не как мемориал. Для исторических персон Фазы 2 поле обязательно |
 | P4 | ~~README заявляет 270 персон, БД содержит 268~~ — **снят 10-07-2026**; посылка риска сама оказалась устаревшей: README уже заявлял 268 | Расхождение объяснено. Коммит [`52b05255f`](https://github.com/gasyoun/IndologyScholars/commit/52b05255f) (30-06-2026) пересобрал БД и в том же коммите поправил README. Две курируемые склейки личностей (Котин В. В. → Игорь Юрьевич; Бушуев Е. А. → Евгений Сергеевич — обе в уже существовавшие полные профили) плюс три переименования карточек-инициалов дают −5 +3 = −2. [`validate_publication.py`](https://github.com/gasyoun/IndologyScholars/blob/main/validate_publication.py) жёстко сверяет README с `summary.total_scholars`, поэтому 268 — проверяемая величина, а не декларация. Устаревшие «270» остались лишь во вторичных документах и вычищены |
@@ -205,6 +233,30 @@ presentation → presentation_person`. Она отлично описывает,
 
 Именно это делает R3 (гибрид) не компромиссом, а единственным форматом, в котором
 наш материал сильнее исходного образца.
+
+## What is left (truth-pass 25-09-2026, H5389)
+
+| Item | Evidence | Verdict |
+| --- | --- | --- |
+| Фаза 1 — спайн, посадочные, discipline-фасет, шаблон по `death_year` | [H473](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H473-Opus_IndologyScholars_sections_spine_phase1_10.07.26.md) ✅, [PR #77](https://github.com/gasyoun/IndologyScholars/pull/77) merged; D1 — [PR #78](https://github.com/gasyoun/IndologyScholars/pull/78); обе страницы live | SHIPPED |
+| Сверка 268↔270 (риск P4) | снят в самом файле 10-07-2026, `validate_publication.py` сверяет жёстко | SHIPPED |
+| Фаза 2, транш 1 — 26 исторических фигур | [H484](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H484-Opus_IndologyScholars_historical-prosopography-phase2_10.07.26.md) ✅: `curation/historical_persons.csv`, сидер `pipeline/historical.py`; live-проба 25-09: 26 персон `birth_year<1918`, 84 `person_role` | SHIPPED |
+| Фаза 2-продолжение — транши 27–40 + `person_role` институций | agent-drain A10, 25-09-2026, PR [#295](https://github.com/gasyoun/IndologyScholars/pull/295): `curation/historical_persons.csv` 26→40, `curation/historical_person_roles.csv` 84→106; live-проба: 40 персон `birth_year<1918`, `total_scholars`=268 не затронут | SHIPPED |
+| Фаза 3 — narrative-сущность, очерк 6–8 периодов, мемориальные очерки | в схеме нет `narrative`, очерков нет | UNMINTED — gated D2/D3 |
+| Фаза 4 — наполнить `work` из SanskritLexicography, связка с лексикографией | live-проба 25-09: `work` = 0 строк | UNMINTED — gated D4 |
+| Фаза 5 — публикация разделов, перекрёстная ссылка с «Дравидологией» | не начиналась | UNMINTED — gated D5 |
+| Открытые вопросы D2–D5 | таблица «Открытые вопросы» выше | HUMAN-GATED → [GTD @WAITING](https://github.com/gasyoun/Uprava/blob/main/GTD_NEXT_ACTIONS.md) 0GN–0GQ |
+
+- [x] **Фаза 2-продолжение: транши 27–40 исторических фигур + `person_role` институций** — агентно-исполнимо
+  (сидер `pipeline/historical.py` готов), не человеческий гейт. SHIPPED 25-09-2026, agent-drain A10, PR
+  [#295](https://github.com/gasyoun/IndologyScholars/pull/295).
+- [ ] **Фаза 3: нарративный слой (`narrative` + очерки)** — гейт human: D2 (режим авторства,
+  [@WAITING 0GN](https://github.com/gasyoun/Uprava/blob/main/GTD_NEXT_ACTIONS.md)) и D3 (язык,
+  [@WAITING 0GO](https://github.com/gasyoun/Uprava/blob/main/GTD_NEXT_ACTIONS.md)), no date.
+- [ ] **Фаза 4: биобиблиографический спайн (`work`, связка с SanskritLexicography)** — гейт human: D4
+  (правовой режим Милибанда, [@WAITING 0GP](https://github.com/gasyoun/Uprava/blob/main/GTD_NEXT_ACTIONS.md)), no date.
+- [ ] **Фаза 5: публикация разделов + перекрёстная ссылка с «Дравидологией в России»** — гейт human: D5
+  (кооперация с ИВКА, [@WAITING 0GQ](https://github.com/gasyoun/Uprava/blob/main/GTD_NEXT_ACTIONS.md)), no date.
 
 ## Запуск
 

@@ -97,8 +97,14 @@ def main():
     if not data.get("generated"):
         fail(errors, "site_data.json missing generated date")
 
+    # H5426: the snapshot-date caption is pinned to site_data.json's own `generated`
+    # field too -- the numbers below were already checked, but the caption read
+    # "23 июля 2026" while the payload had been regenerated to 2026-09-24, so the
+    # one unchecked token in the sentence was the one that rotted.
+    generated = data.get("generated", "")
     public_count_snippets = {
         "README.md": [
+            f"снимок `site_data.json` от {generated}",
             f"| Профили докладчиков | {total_scholars} |",
             f"| Уникальные доклады | {unique_presentations} |",
             f"| Авторские участия | {author_participations} |",
@@ -108,6 +114,7 @@ def main():
             f"| Только Рериховские чтения | {roerich_only} |",
         ],
         "README_EN.md": [
+            f"`site_data.json` summary of {generated}",
             f"| Speaker profiles | {total_scholars} |",
             f"| Unique talks | {unique_presentations} |",
             f"| Author participations | {author_participations} |",
@@ -885,6 +892,20 @@ def main():
             fail(errors, "id_stability_audit.json reports stable-key drift")
         if audit_summary.get("after_duplicate_stable_key_rows") != 0:
             fail(errors, "id_stability_audit.json reports duplicate stable-key rows")
+
+    scripts_dir = Path(__file__).resolve().parent / "scripts"
+    if scripts_dir.is_dir():
+        if str(scripts_dir) not in sys.path:
+            sys.path.insert(0, str(scripts_dir))
+        import publish_safety_gate as psg  # noqa: WPS433
+
+        verdict = psg.evaluate(Path(__file__).resolve().parent)
+        if not verdict.ok:
+            for item in verdict.findings:
+                fail(
+                    errors,
+                    f"publish-safety [{item.code}] {item.path}: {item.detail}",
+                )
 
     if errors:
         print("Publication validation failed:")

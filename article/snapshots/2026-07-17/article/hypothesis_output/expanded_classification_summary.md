@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 # Expanded Classification Summary
 
 DeepSeek prompt version: `expanded-corpus-v1-2026-05-25`.
@@ -72,3 +74,5 @@ Presentations classified: 1362.
 - `shaiva_siddhanta`: 1
 - `corpus_linguistics`: 1
 - `advaita_vedanta`: 1
+
+_Dr. Mārcis Gasūns_

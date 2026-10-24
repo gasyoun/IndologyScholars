@@ -1,0 +1,55 @@
+# Comparison snapshot `through-2025` — manifest
+
+_Created: 06-08-2026 · Last updated: 11-08-2026_
+
+Frozen by `community_lenses/snapshot.py` (h1899-snapshot-1.0.0); cutoff `2025-12-31`.
+Creation metadata (the only field allowed to vary across identical rebuilds): `created_at = 2026-08-06T07:25:51Z`.
+
+| Records included | Excluded (other period) | Excluded (undated) |
+|---:|---:|---:|
+| 27270 | 427 | 2 |
+
+| File | Bytes | SHA-256 |
+|---|---:|---|
+| `DATA_DICTIONARY.md` | 2091 | `2255f532fa0ba49ac1d2df0bc53f98d79a5ce98806e992ec04f55cab4bc391c3` |
+| `claims_ledger.csv` | 9239 | `50b16663da2b0c3e04bebdb7bc6c64f19ec7496e140935a909d76434423c32e9` |
+| `codebooks/argument_level.csv` | 1905 | `65b1e70b33b75061b3427eb17c8398b0e4b3d21ade46b4b545fd23a48193c24a` |
+| `codebooks/community_function.csv` | 4506 | `c83143167bbefff3f47a7ef6bde15ccc21e9dc920092ef8f1b7c6ed2ad5282b0` |
+| `codebooks/intellectual_content.csv` | 3621 | `f9fbe2c96640f8f264b726a3f8dc014dc013e1aa547393869d77c1b74d86f6d3` |
+| `codebooks/native_topic.csv` | 2073 | `697cd57a78400213e6fb93541fcfad3c55f06681520dab112363c49913b230c7` |
+| `codebooks/renou_register.csv` | 4525 | `ab17c72fc22cf11dee360f90090ab2d5e94a7d51018b32617573f1f01e94bca2` |
+| `codebooks/renou_state.csv` | 1516 | `46daafbffd9cebd3adb2a65ac54a467163475078b973722deb6445bdf1af3037` |
+| `codebooks/shared_topic.csv` | 2921 | `8b98972b83b11ab4a1be5406ed1490eeb9162b96b30830a4a8823a42a7214cce` |
+| `codebooks/taxonomy_crosswalk.csv` | 32735 | `620d036850a9497c193f94a6af89ed44183fcf92cd6745d3f9834390b11d718f` |
+| `figures/captions.json` | 6085 | `a10a418c6c40f977781925c2ed6b9cb4fb0db8e93da68dd67266b7f27d4d9e0f` |
+| `figures/captions.md` | 6563 | `180bb21c0e73573d7dcd8fe8c50403f7426bb11b6129e6fde60f8f291aa8fd0b` |
+| `figures/fig1_activity_by_period.svg` | 11358 | `2712138e24a59963da9983c49601985934a2ed71290887809dbea8163bd17809` |
+| `figures/fig2_intellectual_content.svg` | 8361 | `393e2ee6f79355a35263915ade2cdadb8d1046b9b876ebb50f7721f50c47f5e7` |
+| `figures/fig3_community_function.svg` | 5094 | `8ca2de6a8ca1440f523c505ddc8aee21de75fa34843b09d17c5de8045821dcb4` |
+| `figures/fig4_argument_level.svg` | 8113 | `f0eb80482e22d5b6a22f72f1dfce6a876dd456d8f72d96e6fcc52522a7a4034d` |
+| `figures/fig5_person_overlap.svg` | 4641 | `66bac3985b742e7d4c4ccaa9bad106e916e1bcd1b06500b6e4453b831027419a` |
+| `figures/fig6_orientation_contrast.svg` | 4802 | `d96e5d6f868c51fe1609c11a3ef86fdc46646fef092b92bd61547adcbf660bd8` |
+| `quotes_exportable.csv` | 510 | `ade3b064658544666a5b51e8777d567c948cc3f0ff60952f5dc0bc9a71e46f2a` |
+| `records.csv` | 5327403 | `4d31b7c2914a837593091ba0005ee188300138440ed2bb553fe82837557a9277` |
+| `reports/bvp_adapter_reconciliation.md` | 2091 | `724e3b73143c8cd68e9d6b29a7a1431c57613e2d8ceefb1fd64a66331dbf0bb4` |
+| `reports/bvp_source_assessment.md` | 2767 | `2ec76617eacf977642290ff4d86ac2a3b3bbb753d254937b5d1525d72267e169` |
+| `reports/classification_validity.md` | 6542 | `c263851ae78230df5e7f38686a927b0012f47932e6304fc478de473dceb6ef40` |
+| `reports/comparison_validity.md` | 11204 | `f6d3e410a8b2bc9415fc085b04dc02af5d0deb20409eb954a8ce3d29f194a061` |
+| `reports/conferences_coverage.md` | 1238 | `b7c52f30d39ce0e21838deac64e2e3c4b0591f9c2d4fa3dcc8e3c9bcafbc8a7f` |
+| `reports/identity_quote_evidence.md` | 6407 | `49a33c87957fc74f8beb894203e4f995a79cc7d70fb8fc1a5ff1cba383c53981` |
+| `reports/indology_l_coverage.md` | 950 | `12bbcd92f54dfcfde7b78dd4ba62b596bff1730bad43d3b6f6e090da0cec233a` |
+| `reports/nagari_coverage.md` | 1157 | `f395658d57234c8a0537203dad3c76e254b95c78956b385ad890f96dce749a9a` |
+| `reports/vk_ors_coverage.md` | 1105 | `90fb9ba4f8f3a69864d381e83c5a9230d2b9903473d9f4d9812982498eb4a9d5` |
+| `schema.sql` | 9062 | `07f64a275e5ff9e0829733c3830a896f5c7f1d3d0b87ce4c462bcd3f5217c92d` |
+| `source_manifests.csv` | 1632 | `a96d26ebdb39961f5a6ca9374bab0bcddc440a016ffc2411bee9549f20222fed` |
+| `tables/activity_by_period.csv` | 5881 | `0b6a28213bbdd082a0dfb4a1afce2c7ede0e2967d5f09c6440247fe5d9dc9b18` |
+| `tables/argument_level_by_lens.csv` | 4114 | `38d664aa29521104a6a841262d1e362087a17b0182481ffe475a874aefde0e1e` |
+| `tables/community_function_by_lens.csv` | 1830 | `918008f6d48db324a8cce31bde52e0a58d38baf96cb6d09c43e100e7284bc6fd` |
+| `tables/intellectual_content_by_lens.csv` | 5245 | `2abd7c4b47b4fdbb793553761483d9b03ab9b98ed2ea96276715720a1ba5565b` |
+| `tables/lens_source_coverage.csv` | 1561 | `65511faaa6528413563722a30dd3d1c4e1b5ab6cb8bd0ccb8725e6350a22712e` |
+| `tables/orientation_contrast.csv` | 2618 | `fa85771c23f7779fd3dfc36755ab910be9ba22442a0f071f10b8f6af7b5f4ab0` |
+| `tables/person_overlap.csv` | 1708 | `20ad3eca92a14230d7f404176c069e031cd60b2f63ecfa288858815badca84fa` |
+
+Total files: 38.
+
+_Dr. Mārcis Gasūns_

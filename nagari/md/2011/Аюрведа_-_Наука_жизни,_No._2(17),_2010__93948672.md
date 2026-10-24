@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 12162193948672
 subject: "Аюрведа - Наука жизни, No. 2(17), 2010"
@@ -29,3 +31,5 @@ http://pics.qip.ru/002MAR-1045sFY/
 Журнал для ознакомления:
 
 http://rapidshare.com/files/447633957/AyurvedaNaukaZhizni2172010.zip
+
+_Dr. Mārcis Gasūns_

@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 9371382710272
 subject: "The Language of the Gods in the World of Men : Sheldon Pollock"
@@ -20,7 +22,12 @@ source_url: https://groups.google.com/d/msgid/nagari/f970efbb-a137-47db-a708-d64
 здравствуйте! а не существует ли перевода на русский книги Sheldon
 Pollock -The Language of the Gods in the World of Men ?
 
--- 
-Чтобы отменить подписку на эту группу, 
-отправьте сообщение по адресу: 
+-- 
+
+Чтобы отменить подписку на эту группу, 
+
+отправьте сообщение по адресу: 
+
 Nagari-unsubscribe@…
+
+_Dr. Mārcis Gasūns_

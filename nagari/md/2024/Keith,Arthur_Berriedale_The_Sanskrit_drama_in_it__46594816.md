@@ -1,3 +1,5 @@
+_Created: 15-08-2026 · Last updated: 05-09-2026_
+
 ---
 thread_id: 7367017258146594816
 subject: "Keith,Arthur Berriedale The Sanskrit drama in its origin development, theory & practice"
@@ -26,3 +28,5 @@ Cumberlege,Oxford university press, 1954. - 405 p.
 Индийское литературоведение • Теория литературы • Драматургия
 
 см. https://vk.com/samskrtamru?w=wall-88831040_21551
+
+_Dr. Mārcis Gasūns_
