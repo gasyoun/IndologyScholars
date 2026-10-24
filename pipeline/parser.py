@@ -539,10 +539,14 @@ def populate_roerich_talks(conn):
         2010: "L", 2009: "XLIX", 2008: "XLVIII", 2007: "XLVII", 2005: "XLV"
     }
 
+    # Single correspondence source for every Roerich programme year: the data
+    # already carries this exact provenance for 2005-2018 rows, so the value is
+    # constant. The former per-year ternary fell back to `prog_url` itself,
+    # leaving the name unbound (and every site after the first resolving to a
+    # NameError) on any year other than 2005.
+    prog_url = "correspondence:orgcommittee-program-2005-11-26-dlel"
+
     for year in ROERICH_YEARS:
-        prog_url = ("correspondence:orgcommittee-program-2005-11-26-dlel"
-                    if year == 2005 else
-                    prog_url)
         filename = f"roerich_{year}.html"
         filepath = os.path.join(CACHE_DIR, filename)
         if not os.path.exists(filepath):
