@@ -5,5 +5,5 @@ jsonschema
 scikit-learn
 pymorphy3
 jinja2
-Pillow>=12.3.0,<13  # Pillow 12 dropped Python 3.9; floor is declared 3.9 (scripts/pyfloor.py)
+Pillow>=13.0.0,<14  # Pillow 12 dropped Python 3.9; floor is declared 3.9 (scripts/pyfloor.py)
 pytest
