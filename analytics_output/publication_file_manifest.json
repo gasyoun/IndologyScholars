@@ -6,7 +6,7 @@
     "pipeline_version": "2026-05-25",
     "generator": "generate_publication_pages.py"
   },
-  "file_count": 4349,
+  "file_count": 4350,
   "files": [
     {
       "path": "404.html",
@@ -10309,6 +10309,11 @@
       "sha256": "24b423aa4cc60eadcb2f8e81841c1a7a2a174803aae380ba9ec1c4e5f5b15da1"
     },
     {
+      "path": "docs/TEMPLATE_EXTRACTION_H7242.md",
+      "size_bytes": 2408,
+      "sha256": "0807b05969b0ba51ed21709d3026977235c28a64f6359be565cf471124ae9f9b"
+    },
+    {
       "path": "docs/VERIFICATION_IndologyScholars_sanskrit-community-lenses.md",
       "size_bytes": 17404,
       "sha256": "179aec6a1ebd0d23014395d8efe722a8ca60db292f1c13db2e887b0a998d8e5c"
@@ -10481,7 +10486,7 @@
     {
       "path": "download-data.html",
       "size_bytes": 37531,
-      "sha256": "48e08c9b32c5985861151b93244cb074effd110b42f7d37b29614422470e7f7c"
+      "sha256": "0753ec23058816756093fbb8e18e57c889d1c7e98e69a6cf979b951fee444742"
     },
     {
       "path": "en.html",
@@ -10521,7 +10526,7 @@
     {
       "path": "findings/visualisations.html",
       "size_bytes": 495900,
-      "sha256": "473f1f1d69028d99251a6b4191a5d4ae089ada94463439402e824b618b48cb24"
+      "sha256": "733f80e828b4fcdb9b14291402e1e0715ebd0097b6bd5aa1483f4ebd9f811e8c"
     },
     {
       "path": "gatekeeping-en.html",
