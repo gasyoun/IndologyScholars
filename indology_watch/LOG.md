@@ -8,3 +8,4 @@
 | 2026-10-13 | 6 | да | Mokṣopāya полное критическое издание в SAL (корпус-ресурс, etext-acquire кандидат); отсеяны: Paths to Liberation ×2, Book ×3 |
 | 2026-10-22 | 27 (бэклог 15–21; прогоны пропущены) | да ×3 | КРИТ: ISCLS-9 дедлайн продлён 30-10 AoE (notification 10-12, camera-ready 20-12, демо 30-10); Mokṣopāya-ṭīkā в SAL; некролог Ramanath Sharma 1939–2026 (scholars-DB). Отсеяны: Enkidu-тред ×10, manuscript queries, вакансия Rice, Book, BibTeX |
 | 2026-10-27 | 29 (бэклог 22–26; прогоны 23–26 пропущены) | да ×2 | CDSL транзиентный VPN-инцидент (закрыт) + Android-приложение официально; Ṛgveda-unaccented в SAL; отсеяны: Dhammasākacchā CFP ×4 (студ. конф., мимо), вакансия, учебник ×2, филология |
+| 2026-10-28 | 2 | да | Некролог Ashok Aklujkar †27-10 (UBC, Pāṇini-studies; scholars-DB кандидат); отсеян: Jain Journal publications |
