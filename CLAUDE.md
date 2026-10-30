@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-_Created: 19-05-2026 · Last updated: 18-09-2026_
+_Created: 19-05-2026 · Last updated: 30-10-2026_
 
 What this repo is: `IndologyScholars`, an open **navigation archive of two
 Russian Indology forums** — Зографские чтения (St Petersburg) and
@@ -56,7 +56,8 @@ Frozen DOI snapshot: `python tools/freeze_article_data.py` →
   `UPDATE person SET birth_year` as durable — rebuild reseeds `person`.
 - Historical figures (`person_kind=historical`, from
   `curation/historical_persons.csv`) must **not** mix into published speaker
-  counts (268).
+  counts (276 as of the 28-10-2026 auto-rebuild; recheck `site_data.json`
+  `summary.total_scholars` — this figure drifts as conferences are added).
 - Sibling subsystems are **not** produced by `generate_publication_pages.py`:
   `nagari/` (closed Google Group), `vk-ors/` (VK wall). The INDOLOGY-L atlas
   lives in `gasyoun/IndologyArchiveAtlas`; this repo only fetches a small
