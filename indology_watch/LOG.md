@@ -10,3 +10,4 @@
 | 2026-10-27 | 29 (бэклог 22–26; прогоны 23–26 пропущены) | да ×2 | CDSL транзиентный VPN-инцидент (закрыт) + Android-приложение официально; Ṛgveda-unaccented в SAL; отсеяны: Dhammasākacchā CFP ×4 (студ. конф., мимо), вакансия, учебник ×2, филология |
 | 2026-10-28 | 2 | да | Некролог Ashok Aklujkar †27-10 (UBC, Pāṇini-studies; scholars-DB кандидат); отсеян: Jain Journal publications |
 | 2026-10-31 | 6 | да | SAL +705 текстов из Wikisource (крупнейший дамп серии; vyākaraṇa 32, stotra 352) — etext-кандидат; отсеяны: вебинар Kūṭiyāṭṭam, Aklujkar ×2, e-visa-тред (уже покрыт), LC Moeson fellowship (применимости нет) |
+| 2026-11-01 | 2 (смена месяца: окт-хвост + ноябрь) | да | e-visa-тред: ministry clearance организатора → Conference E-Visa для делегатов (Gorisse) — чек-пункт для решения о Пуне; обновляет сигнал 10-10 |
