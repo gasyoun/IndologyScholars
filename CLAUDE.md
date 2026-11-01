@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-_Created: 19-05-2026 · Last updated: 30-10-2026_
+_Created: 19-05-2026 · Last updated: 01-11-2026 — H7274 claims pass: validate_publication.py, Makefile, pytest.ini, index.html all present_
 
 What this repo is: `IndologyScholars`, an open **navigation archive of two
 Russian Indology forums** — Зографские чтения (St Petersburg) and
