@@ -1,6 +1,6 @@
 # IndologyScholars: архив докладов по российской индологии
 
-_Created: 24-04-2026 · Last updated: 25-09-2026_
+_Created: 24-04-2026 · Last updated: 05-11-2026_
 
 [English version](https://github.com/gasyoun/IndologyScholars/blob/main/README_EN.md) | [Документация для разработчиков](https://github.com/gasyoun/IndologyScholars/blob/main/docs/development.md)
 
@@ -29,16 +29,16 @@ _Created: 24-04-2026 · Last updated: 25-09-2026_
 | Только Рериховские чтения | 72 |
 
 В архив включены Зографские чтения 2004-2026 гг. и Рериховские чтения
-2007-2025 гг. Программа Зографских чтений 2026 г. учитывается как
+2005-2025 гг. Программа Зографских чтений 2026 г. учитывается как
 предварительно опубликованная программа. Отдельно от счётчика докладчиков
-ведётся **исторический просопографический слой** (26 фигур; `person_kind =
+ведётся **исторический просопографический слой** (40 фигур; `person_kind =
 historical`).
 
 ## Что можно найти
 
 - [Главный каталог](https://gasyoun.github.io/IndologyScholars/) с поиском по
   именам, докладам, городам и институциям.
-- [Реестр научных гипотез](https://gasyoun.github.io/IndologyScholars/hypotheses.html) — многомерный фильтр по 35 гипотезам российской индологии с 7 наукометрическими шкалами и HSL glassmorphism дизайном.
+- [Реестр научных гипотез](https://gasyoun.github.io/IndologyScholars/hypotheses.html) — многомерный фильтр по 35 гипотезам российской индологии с 12 шкалами и HSL glassmorphism дизайном.
 - [Интерактивные визуализации](https://gasyoun.github.io/IndologyScholars/findings/visualisations.html) —
   визуальный дашборд: пересечение когорт Зограф × Рерих, траектории аффилиаций и тепловые карты.
 - [Сетевую карту](https://gasyoun.github.io/IndologyScholars/networks.html)
@@ -59,7 +59,7 @@ historical`).
   ретроспектива закрытой гуглгруппы (`nagari/`; исходник прав-ограничен).
 - [VK-архив «Общество ревнителей санскрита»](https://github.com/gasyoun/IndologyScholars/tree/main/vk-ors) —
   стена vk.com, SQLite+FTS5 и четырёхслойный анализ (`vk-ors/`).
-- [INDOLOGY Archive Atlas](https://gasyoun.github.io/IndologyArchiveAtlas/) —
+- [INDOLOGY Archive Atlas](https://gasyoun.github.io/IndologyArchiveAtlas/dashboard/index.html) —
   атлас публичной рассылки INDOLOGY-L, **выделен** в отдельный репозиторий
   [`gasyoun/IndologyArchiveAtlas`](https://github.com/gasyoun/IndologyArchiveAtlas)
   (H460). Старый путь
@@ -96,8 +96,8 @@ historical`).
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21360652.svg)](https://doi.org/10.5281/zenodo.21360652)
 Данные: Zenodo concept DOI `10.5281/zenodo.21360652` (все версии); версия
-`10.5281/zenodo.21847873` (релиз v1.6.7, 2026-08-08, включает снапшот анализа
-2026-07-17).
+`10.5281/zenodo.23123747` (релиз v1.12.19, 2026-10-03, «Corpus 2026.10.03:
+Roerich 2005 program enters the archive»).
 
 ## Документация
 
@@ -164,4 +164,4 @@ historical`).
 программы конференций, цитаты из источников и сторонние материалы сохраняют
 права исходных правообладателей; подробнее см. [reuse-rights](https://github.com/gasyoun/IndologyScholars/blob/main/docs/reuse-rights.md).
 
-_Dr. Mārcis Gasūns_
+_к.ф.н. М.Ю. Гасунс_
