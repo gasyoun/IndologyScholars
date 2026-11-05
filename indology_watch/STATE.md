@@ -1,6 +1,6 @@
 # STATE — INDOLOGY daily watch watermark
 
-watermark_message_id: <yifL79b-3wtow8cLb-YQtvemBgnfi2GneBymKEneRWSN-nttQb75W-R8DN4F3pAgXSMVg1a32vFRFl9v1RAhjXg234No2KFDEAa17q0OYx4=@proton.me>
-watermark_date: 2026-10-10T13:57:21+00:00
-watermark_source: pipermail 2026-October.txt (35 сообщений; бэклог-прогон 10-10-2026: прогоны 06–09 отсутствовали)
-last_run: 2026-10-10 09:30 (cron, ZCode GLM-5.3)
+watermark_message_id: <MA9PR10MB978616EFB37A22BEE2633FE342906A2@MA9PR10MB978616.EURPRD10.PROD.OUTLOOK.COM>
+watermark_date: 2026-11-02T19:30:49+00:00
+watermark_source: pipermail 2026-November.txt (3 сообщения, утренний прогон 03-11-2026)
+last_run: 2026-11-04 09:30 (cron, ZCode GLM-5.3; 0 новых — mbox без изменений)
