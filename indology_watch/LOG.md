@@ -11,3 +11,4 @@
 | 2026-10-28 | 2 | да | Некролог Ashok Aklujkar †27-10 (UBC, Pāṇini-studies; scholars-DB кандидат); отсеян: Jain Journal publications |
 | 2026-10-31 | 6 | да | SAL +705 текстов из Wikisource (крупнейший дамп серии; vyākaraṇa 32, stotra 352) — etext-кандидат; отсеяны: вебинар Kūṭiyāṭṭam, Aklujkar ×2, e-visa-тред (уже покрыт), LC Moeson fellowship (применимости нет) |
 | 2026-11-01 | 2 (смена месяца: окт-хвост + ноябрь) | да | e-visa-тред: ministry clearance организатора → Conference E-Visa для делегатов (Gorisse) — чек-пункт для решения о Пуне; обновляет сигнал 10-10 |
+| 2026-11-05 | 2 | да | Ars Inquirendi 2026 (Оксфорд, 20–22.11): панель Pāṇini→LLM Кулькарни + Дуньхуан-LLM — приор-арт наших осей, онлайн возможно; отсеян: DRBU CFP «Reading as Transformative Practice» (религиозная герменевтика, мимо) |
