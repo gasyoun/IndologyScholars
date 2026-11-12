@@ -9,3 +9,6 @@ meso/**
 site_data*.json
 search-index.json
 *.html
+# 12-11-2026, MG ruling: exact-path exception — catalog reference data that
+# legitimately outgrows the 5000-token gate on every quarterly facet rebuild.
+library/libfl-rubrics.md
