@@ -12,3 +12,10 @@ search-index.json
 # 12-11-2026, MG ruling: exact-path exception — catalog reference data that
 # legitimately outgrows the 5000-token gate on every quarterly facet rebuild.
 library/libfl-rubrics.md
+# 13-11-2026, MG ruling (grill-with-docs scan-priority deliverable): machine-generated
+# catalog enumeration / scoring artifacts of libfl-scan-* — data, not prose.
+library/libfl-scan-priority.md
+library/libfl-scan-candidates.csv
+scratch/libfl-scan-scores.csv
+scratch/demand_index.csv
+scratch/ia_cache.json
