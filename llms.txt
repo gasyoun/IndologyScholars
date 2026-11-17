@@ -1,0 +1,26 @@
+# Российская индологическая наука: единый архив и статистический дашборд
+
+> Interactive database and analytics panel unifying conference talks of the «Зографские чтения» and «Рериховские чтения» series (2004–2026) — scholars, institutions, cities, networks and citations.
+
+## Overview
+
+- [Dashboard home](https://gasyoun.github.io/IndologyScholars/)
+- [Methodology](https://gasyoun.github.io/IndologyScholars/methodology.html)
+- [Classification criteria](https://gasyoun.github.io/IndologyScholars/classification-criteria.html)
+- [Data quality](https://gasyoun.github.io/IndologyScholars/data-quality.html)
+- [Hypotheses](https://gasyoun.github.io/IndologyScholars/hypotheses.html)
+- [How to cite](https://gasyoun.github.io/IndologyScholars/how-to-cite.html)
+
+## Views
+
+- [Conferences](https://gasyoun.github.io/IndologyScholars/conferences/) · [Networks](https://gasyoun.github.io/IndologyScholars/networks.html) · [Known relationships](https://gasyoun.github.io/IndologyScholars/known-relationships.html) · [Sociology](https://gasyoun.github.io/IndologyScholars/sociology.html)
+- [Индология в России](https://gasyoun.github.io/IndologyScholars/indologiya-v-rossii.html) · [Санскритология в России](https://gasyoun.github.io/IndologyScholars/sanskritologiya-v-rossii.html)
+- [Findings — visualisations](https://gasyoun.github.io/IndologyScholars/findings/visualisations.html)
+
+## Data
+
+- [Download data](https://gasyoun.github.io/IndologyScholars/download-data.html)
+- [Site data summary (JSON)](https://gasyoun.github.io/IndologyScholars/site_data_summary.json)
+- [Search](https://gasyoun.github.io/IndologyScholars/search.html)
+
+Source: https://github.com/gasyoun/IndologyScholars
