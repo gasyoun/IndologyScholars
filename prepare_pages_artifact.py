@@ -51,6 +51,7 @@ PUBLIC_PATHS = [
     "indology_scholars_analytics.md",
     "missing_birth_years.md",
     "missing_birth_years.html",
+    "llms.txt",
 ]
 
 PUBLIC_DIRS = [
