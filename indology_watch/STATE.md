@@ -1,6 +1,6 @@
 # STATE — INDOLOGY daily watch watermark
 
-watermark_message_id: <CANz3S9s4w4ExNP-5NQup5rh-mVQ+xPHXT+X6kYT4R91F-r7+Kw@mail.gmail.com>
-watermark_date: 2026-11-04T13:33:31-08:00
-watermark_source: pipermail 2026-November.txt (5 сообщений, утренний прогон 05-11-2026, сигнал-день)
-last_run: 2026-11-05 09:30 (cron, ZCode GLM-5.3)
+watermark_message_id: <CAJ3b0o8mhk_pATjN_V3X-2Y5StdUWtU1ba0USafrVdWYmZr2ZA@mail.gmail.com>
+watermark_date: 2026-11-20T16:58:26-05:00
+watermark_source: pipermail 2026-November.txt (38 сообщений; бэклог-прогон 21-11-2026: прогоны 06–20 отсутствовали, локальные записи 06–08 утеряны ресетом — восстановлены строкой LOG)
+last_run: 2026-11-21 09:30 (cron, ZCode GLM-5.3)
